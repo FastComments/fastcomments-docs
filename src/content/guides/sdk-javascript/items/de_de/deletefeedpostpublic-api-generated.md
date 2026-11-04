@@ -1,4 +1,3 @@
----
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
@@ -35,5 +34,3 @@ Rückgabe: [`DeleteFeedPostPublicResponse`](https://github.com/FastComments/fast
   );
 })();
 [inline-code-end]
-
----

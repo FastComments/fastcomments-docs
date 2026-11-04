@@ -34,5 +34,3 @@ async function runDeleteModerationVote(): Promise<void> {
   console.log(result);
 }
 [inline-code-end]
-
----

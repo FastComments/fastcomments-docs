@@ -65,5 +65,3 @@ interface ModeratorPostResponse {
     moderator?: Moderator; // Restituiamo il Moderator completo creato in caso di successo.
 }
 [inline-code-end]
-
----

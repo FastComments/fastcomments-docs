@@ -26,5 +26,3 @@ api->getFeedPostsStats(tenantId, postIds, sso)
         (void)response;
     });
 [inline-code-end]
-
----

@@ -37,5 +37,3 @@ async function example() {
   console.log(result);
 }
 [inline-code-end]
-
----

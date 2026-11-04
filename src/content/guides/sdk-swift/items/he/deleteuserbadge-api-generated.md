@@ -1,4 +1,3 @@
----
 ## פרמטרים
 
 | שם | סוג | מיקום | חובה | תיאור |
@@ -31,5 +30,3 @@ DefaultAPI.deleteUserBadge(tenantId: tenantId, id: id) { (response, error) in
     }
 }
 [inline-code-end]
-
----

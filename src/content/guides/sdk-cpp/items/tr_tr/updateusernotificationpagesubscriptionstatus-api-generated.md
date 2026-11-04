@@ -1,22 +1,21 @@
-Enable or disable notifications for a page. When users are subscribed to a page, notifications are created
-for new root comments, and also
+Bir sayfa için bildirimleri etkinleştirin veya devre dışı bırakın. Kullanıcılar bir sayfaya abone olduğunda, yeni kök yorumlar için ve ayrıca
 
-## Parameters
+## Parametreler
 
-| Name | Type | Required | Description |
+| Ad | Tür | Zorunlu | Açıklama |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| urlId | string | Yes |  |
-| url | string | Yes |  |
-| pageTitle | string | Yes |  |
-| subscribedOrUnsubscribed | string | Yes |  |
-| sso | string | No |  |
+| tenantId | string | Evet |  |
+| urlId | string | Evet |  |
+| url | string | Evet |  |
+| pageTitle | string | Evet |  |
+| subscribedOrUnsubscribed | string | Evet |  |
+| sso | string | Hayır |  |
 
-## Response
+## Yanıt
 
-Returns: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/UpdateUserNotificationPageSubscriptionStatusResponse.h)
+Döndürür: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/UpdateUserNotificationPageSubscriptionStatusResponse.h)
 
-## Example
+## Örnek
 
 [inline-code-attrs-start title = 'updateUserNotificationPageSubscriptionStatus Örneği'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -29,6 +28,6 @@ boost::optional<utility::string_t> sso = boost::make_optional<utility::string_t>
 
 api->updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitle, subscription, sso)
     .then([](std::shared_ptr<UpdateUserNotificationPageSubscriptionStatusResponse> resp) {
-        // gerektiğinde resp'i işleyin
+        // gerekiyorsa resp'yi işleyin
     });
 [inline-code-end]

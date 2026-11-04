@@ -1,4 +1,3 @@
----
 Ovaj endpoint vam omogućava da dohvatite određeni zapis napretka korisničke značke po njegovom jedinstvenom ID-u.
 
 Primer zahteva:
@@ -54,4 +53,3 @@ Mogući odgovori sa greškom:
   "reason": "The user badge progress progress123 was not found."
 }
 [inline-code-end]
----

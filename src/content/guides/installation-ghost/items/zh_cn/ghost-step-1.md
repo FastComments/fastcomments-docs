@@ -1,4 +1,3 @@
----
 要将 FastComments 正确添加到 Ghost，我们必须编辑主题文件。
 
 因此，我们先下载您当前或想要的主题。
@@ -37,5 +36,3 @@
     <div class="title">下载主题</div>
     <img class="screenshot-image" src="/images/installation-guides/ghost-step-1-5-download.png" alt="下载主题" />
 </div>
-
----

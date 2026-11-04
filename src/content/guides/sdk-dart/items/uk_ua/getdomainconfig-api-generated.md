@@ -30,5 +30,3 @@ try {
     print('Exception when calling DefaultApi->getDomainConfig: $e\n');
 }
 [inline-code-end]
-
----

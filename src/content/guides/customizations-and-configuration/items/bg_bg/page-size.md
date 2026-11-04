@@ -1,4 +1,3 @@
----
 По подразбиране, размерът на страницата в FastComments е `30`. Това включва отговори в нишки.
 
 Размерът на страницата може да се персонализира в [Widget Configuration UI](https://fastcomments.com/auth/my-account/customize-widget) с различни размери, вариращи от `10` до `200`.

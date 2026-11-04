@@ -1,4 +1,3 @@
----
 C'est tout ! Vous devriez maintenant avoir ajouté des commentaires en direct à votre cours GoHighLevel.
 
 <div class="screenshot white-bg">
@@ -7,5 +6,3 @@ C'est tout ! Vous devriez maintenant avoir ajouté des commentaires en direct à
 </div>
 
 Si vous avez rencontré une erreur « permission denied », ou si vous souhaitez personnaliser FastComments, lisez la suite.
-
----

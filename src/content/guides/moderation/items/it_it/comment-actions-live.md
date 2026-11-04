@@ -1,4 +1,3 @@
----
 Tutte le azioni eseguite nella pagina di moderazione sono **in tempo reale**.
 
 Se qualcuno sta visualizzando la discussione dei commenti, e approvi un commento precedentemente non approvato, apparirà automaticamente per loro.
@@ -13,5 +12,3 @@ lista dei commenti che mostra quanti nuovi commenti sono in attesa. Cliccando il
 Questo funziona con tutti i filtri — se stai visualizzando solo commenti spam, sarai notificato solo per nuovi commenti spam. Se stai cercando commenti che contengono una frase specifica, solo i commenti corrispondenti attiveranno la notifica.
 
 Se la tua connessione viene temporaneamente interrotta, il sistema recupera automaticamente eventuali commenti che ti sei perso quando si riconnette.
-
----

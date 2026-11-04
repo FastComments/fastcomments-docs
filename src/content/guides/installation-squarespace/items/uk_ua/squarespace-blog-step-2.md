@@ -1,4 +1,3 @@
----
 Тепер ми можемо скопіювати наступний фрагмент коду (використайте кнопку копіювання у верхньому правому куті фрагмента):
 
 [inline-code-attrs-start title = 'Код коментарів блогу Squarespace'; type = 'html'; isFunctional = false; inline-code-attrs-end]
@@ -32,5 +31,3 @@
     <div class="title">Вставити та зберегти</div>
     <img class="screenshot-image" src="/images/installation-guides/squarespace-step-2-1-add-code-and-save.png" alt="Вставити та зберегти" />
 </div>
-
----

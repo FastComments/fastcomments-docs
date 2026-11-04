@@ -1,4 +1,3 @@
----
 ## Paramètres
 
 | Nom | Type | Obligatoire | Description |
@@ -19,5 +18,3 @@ if response.isSome:
   let userInfo = response.get()
   discard userInfo
 [inline-code-end]
-
----

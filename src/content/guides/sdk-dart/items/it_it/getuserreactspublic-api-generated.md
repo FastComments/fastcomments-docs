@@ -28,5 +28,3 @@ try {
     print('Exception when calling PublicApi->getUserReactsPublic: $e\n');
 }
 [inline-code-end]
-
----

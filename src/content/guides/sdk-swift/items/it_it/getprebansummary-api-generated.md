@@ -38,5 +38,3 @@ ModerationAPI.getPreBanSummary(tenantId: tenantId, commentId: commentId, options
     }
 }
 [inline-code-end]
-
----

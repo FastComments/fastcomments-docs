@@ -1,16 +1,16 @@
 [api-resource-header-start name = 'TenantUser'; route = 'PATCH /api/v1/tenant-users/:id'; creditsCost = 1; api-resource-header-end]
 
-This route provides the ability to update a single `TenantUser`.
+Цей маршрут надає можливість оновити один `TenantUser`.
 
-Updating a `TenantUser` has the following restrictions:
+Оновлення `TenantUser` має такі обмеження:
 
-- The `signUpDate` may not be in the future.
-- The `locale` must be in the list of [Підтримувані локалі](https://github.com/FastComments/fastcomments-typescript/blob/main/src/constants.ts#L1).
-- The `username` must be unique across all of FastComments.com. If this is an issue, we suggest using SSO instead.
-- The `email` must be unique across all of FastComments.com. If this is an issue, we suggest using SSO instead.
-- You cannot update the `tenantId` of a user.
+- `signUpDate` не може бути в майбутньому.
+- `locale` має бути в списку [підтримуваних локалей](https://github.com/FastComments/fastcomments-typescript/blob/main/src/constants.ts#L1).
+- `username` має бути унікальним на всьому FastComments.com. Якщо це проблема, ми рекомендуємо використовувати SSO.
+- `email` має бути унікальним на всьому FastComments.com. Якщо це проблема, ми рекомендуємо використовувати SSO.
+- Ви не можете оновити `tenantId` користувача.
 
-We can create a `TenantUser` as follows
+Ми можемо оновити `TenantUser` наступним чином
 
 [inline-code-attrs-start title = 'Приклад cURL-запиту оновлення TenantUser'; type = 'bash'; useDemoTenantUser = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -23,23 +23,23 @@ curl --request PATCH \
 }'
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Структура запиту для оновлення TenantUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Структура запиту оновлення TenantUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface TenantUserPatchQueryParams {
     tenantId: string
     API_KEY: string
-    /** Якщо змінюється email або username, ви можете встановити це в true, щоб також оновити коментарі користувача. Це подвоїть вартість у кредитах. **/
+    /** When email or username is changed, you can set this to true to also update the user's comments. This will double the credit cost. **/
     updateComments: 'true' | 'false'
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Структура відповіді для оновлення TenantUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Структура відповіді на оновлення TenantUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface TenantUserPatchResponse {
     status: 'success' | 'failed'
-    /** Включається при невдачі. **/
+    /** Included on failure. **/
     code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'sign-up-date-in-future' | 'unsupported-locale' | 'unauthorized' | 'username-taken' | 'email-taken' | 'unauthorized' | 'no-package' | 'invalid-package' | 'tenant-user-limit-reached' | 'user-does-not-exist'
-    /** Включається при невдачі. **/
+    /** Included on failure. **/
     reason?: string
 }
 [inline-code-end]

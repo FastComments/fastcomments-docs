@@ -17,5 +17,3 @@ Dopo aver aggiunto il codice, Webflow ti informerà che il widget non verrà vis
     <div class="title">Nota: i commenti non appariranno fino alla pubblicazione</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-webflow-step-3.png" alt="I commenti non appariranno fino alla pubblicazione" />
 </div>
-
----

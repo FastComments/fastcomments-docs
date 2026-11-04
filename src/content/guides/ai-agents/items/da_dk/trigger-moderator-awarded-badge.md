@@ -22,5 +22,3 @@ En handling udført af en menneskelig moderator.
 - **Gensidig anerkendelse** - en agent kan poste et "tak for det gode bidrag"-svar, når et bestemt badge tildeles.
 - **Ekstern anerkendelsesarbejdsgang** via [Webhooks](#webhooks-overview) - spejl badge-tildelinger ind i dit eget system for brugerengagement.
 - **Hukommelsesregistrering** - noter som "denne bruger er en anerkendt bidragyder", som fremtidige moderationsagenter bør tillægge vægt i deres beslutninger.
-
----

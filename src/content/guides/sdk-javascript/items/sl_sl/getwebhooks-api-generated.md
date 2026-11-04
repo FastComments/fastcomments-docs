@@ -1,4 +1,3 @@
----
 Našteje spletne kuke, konfigurirane za najemnika, tako vrstice, ki jih upravlja nadzorna plošča, kot tudi naročnine na API.
 
 ## Parameters
@@ -30,5 +29,3 @@ Vrne: [`GetWebhooksResponse`](https://github.com/FastComments/fastcomments-sdk-j
   const minimalResponse: GetWebhooksResponse = await getWebhooks(tenantId);
 })();
 [inline-code-end]
-
----

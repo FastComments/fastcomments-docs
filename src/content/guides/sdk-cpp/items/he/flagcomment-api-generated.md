@@ -25,5 +25,3 @@ api->flagComment(utility::conversions::to_string_t("my-tenant-123"),
         auto resp = t.get();
     });
 [inline-code-end]
-
----

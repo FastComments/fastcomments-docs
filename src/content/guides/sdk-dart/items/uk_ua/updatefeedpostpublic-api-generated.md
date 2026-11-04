@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Назва | Тип | Розташування | Обов’язковий | Опис |
@@ -32,5 +31,3 @@ try {
     print('Exception when calling PublicApi->updateFeedPostPublic: $e\n');
 }
 [inline-code-end]
-
----

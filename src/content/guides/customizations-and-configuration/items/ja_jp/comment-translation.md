@@ -1,20 +1,20 @@
-By default, FastComments translates the widget's own interface (buttons, labels, error messages) into the viewer's language, but comments are shown exactly as they were written.
+デフォルトでは、FastCommentsはウィジェット自体のインターフェース(ボタン、ラベル、エラーメッセージ)を閲覧者の言語に翻訳しますが、コメントは書かれた通りにそのまま表示されます。
 
-Comment Translation adds translation of the comments themselves, so a community that writes in more than one language can read every comment in its own.
+コメント翻訳(Comment Translation)はコメント自体の翻訳を追加する機能で、複数の言語で書き込まれるコミュニティでも、すべてのコメントを自分の言語で読むことができます。
 
-There are two modes:
+2つのモードがあります:
 
-- **Automatic**: comments written in a language other than the widget's language are shown translated. A "Translated from Spanish" line appears under the comment with a **Show original** link that switches between the translation and the untranslated text.
-- **Manual**: every comment gets a **Translate** link. Clicking it translates that one comment into the viewer's language, with the same **Show original** toggle afterwards. Comments that are already in the viewer's language say so instead.
+- **自動**: ウィジェットの言語以外の言語で書かれたコメントは、翻訳されて表示されます。コメントの下に「スペイン語から翻訳」という行が表示され、**原文を表示**リンクで翻訳と未翻訳のテキストを切り替えることができます。
+- **手動**: すべてのコメントに**翻訳**リンクが付きます。クリックすると、そのコメントだけが閲覧者の言語に翻訳され、その後は同じ**原文を表示**の切り替えが使えます。すでに閲覧者の言語で書かれているコメントは、その旨が表示されます。
 
-The target language is the widget's language: the [ロケール / 言語](#locale) setting on the same customization rule if it is set, otherwise the visitor's browser language. Nothing is required from the visitor, no account, extension or extra software, and it works the same in the embedded widget and on standalone comment pages.
+翻訳先の言語はウィジェットの言語です。同じカスタマイズルールに[ロケール / 言語](#locale)の設定があればそれが使われ、なければ訪問者のブラウザの言語が使われます。訪問者側ではアカウント、拡張機能、追加ソフトウェアなどは一切不要で、埋め込みウィジェットでもスタンドアロンのコメントページでも同じように動作します。
 
-This is turned on per <a href="https://fastcomments.com/auth/my-account/customize-widget" target="_blank">カスタマイズルール</a>, so it can apply to your whole site, one domain, or a single page. It is off by default.
+この機能は<a href="https://fastcomments.com/auth/my-account/customize-widget" target="_blank">カスタマイズルール</a>ごとに有効化されるため、サイト全体、1つのドメイン、または単一のページに適用できます。デフォルトではオフです。
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.comment-translation']; selector = '.comment-translation'; alt='ウィジェットのカスタマイズページにある、オフ、 自動、 手動 オプションがあるコメント翻訳ドロップダウン'; title='コメント翻訳' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.comment-translation']; selector = '.comment-translation'; alt='ウィジェットカスタマイズページのコメント翻訳ドロップダウン。オフ、自動、手動のオプションが表示されています'; title='コメント翻訳' app-screenshot-end]
 
-Translation is a server-side setting. Passing `commentTranslation` in the widget's JavaScript configuration does not enable it; the rule does.
+翻訳はサーバー側の設定です。ウィジェットのJavaScript設定で `commentTranslation` を渡しても有効にはなりません。ルールによって有効化されます。
 
-Each comment is translated at most once per target language and the result is stored with the comment, so a comment read by a thousand Spanish speakers is translated once. If the author or a moderator edits the comment, the stored translation is discarded and the comment is translated again on the next view. Translated text goes through the same sanitization and link rules as the original comment. Comments that are too long, or whose language cannot be detected, are shown untranslated.
+各コメントは翻訳先の言語ごとに最大1回だけ翻訳され、その結果はコメントとともに保存されます。そのため、1,000人のスペイン語話者に読まれたコメントも1回しか翻訳されません。投稿者またはモデレーターがコメントを編集すると、保存されていた翻訳は破棄され、次の閲覧時に再度翻訳されます。翻訳されたテキストは、元のコメントと同じサニタイズおよびリンクのルールを通ります。長すぎるコメントや、言語を検出できないコメントは、翻訳されずに表示されます。
 
-Usage is billed as LLM tokens at the same rate as [AI エージェント](/guide-ai-agents.html#plans-and-eligibility) and appears in the same place in your billing details.
+使用量は[AIエージェント](/guide-ai-agents.html#plans-and-eligibility)と同じレートでLLMトークンとして課金され、請求詳細の同じ場所に表示されます。

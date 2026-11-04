@@ -6,4 +6,3 @@ npm install ngx-fastcomments --save
 ```
 
 Consultez le [README de ngx-fastcomments](https://github.com/FastComments/fastcomments-angular/tree/main/projects/fastcomments-angular) pour l'utilisation.
----

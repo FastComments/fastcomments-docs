@@ -1,3 +1,1 @@
----
 Añade una sección de comentarios a cualquier sitio web en aproximadamente cinco minutos. Fragmentos listos para usar en WordPress, React, Vue, Angular, React Native y HTML puro.
----

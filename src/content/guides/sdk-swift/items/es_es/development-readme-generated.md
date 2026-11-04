@@ -1,4 +1,3 @@
----
 ### Regenerar el cliente
 
 Para regenerar el cliente de la API a partir de la última especificación de OpenAPI:
@@ -14,4 +13,3 @@ Esto hará:
 - Descargar la última especificación de OpenAPI
 - Generar el código cliente en Swift (con la documentación de la API en client/docs)
 - Compilar el paquete para verificar que todo funciona
----

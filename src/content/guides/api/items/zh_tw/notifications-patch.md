@@ -37,5 +37,3 @@ interface NotificationPatchResponse {
     reason?: string
 }
 [inline-code-end]
-
----

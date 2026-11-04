@@ -41,5 +41,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.GetTranslations`: %v\n", resp)
 }
 [inline-code-end]
-
----

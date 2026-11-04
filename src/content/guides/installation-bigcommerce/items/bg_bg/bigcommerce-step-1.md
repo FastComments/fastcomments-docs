@@ -1,45 +1,43 @@
 Първо, нека създадем персонализирана тема, която ще редактираме. Ако вече имате настроена персонализирана тема, можете да пропуснете тази стъпка.
 
-To do this, we will go to `Storefront` and then `Themes`.
+За целта ще отидем на `Storefront` и след това на `Themes`.
 
 <div class="screenshot white-bg">
-    <div class="title">Изберете Storefront</div>
-    <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-1-select-storefront.png" alt="Изберете Storefront" />
+    <div class="title">Избор на Storefront</div>
+    <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-1-select-storefront.png" alt="Избор на Storefront" />
 </div>
 
 <div class="screenshot white-bg">
-    <div class="title">Изберете Themes</div>
-    <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-1-select-themes.png" alt="Изберете Themes" />
+    <div class="title">Избор на Themes</div>
+    <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-1-select-themes.png" alt="Избор на Themes" />
 </div>
 
-For the purposes of this tutorial we will use the default theme, but the instructions are the same for all themes.
+За целите на това ръководство ще използваме темата по подразбиране, но инструкциите са еднакви за всички теми.
 
-Next, we are **няма** going to click Customize. Instead, click `Advanced` and `Make a Copy`.
+След това **няма** да кликнем върху Customize. Вместо това кликнете върху `Advanced` и `Make a Copy`.
 
 <div class="screenshot white-bg">
     <div class="title">Направете копие</div>
     <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-1-select-make-a-copy.png" alt="Направете копие" />
 </div>
 
-Confirm copying the theme:
+Потвърдете копирането на темата:
 
 <div class="screenshot white-bg">
     <div class="title">Запазете копието</div>
     <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-1-save-copy.png" alt="Запазете копието" />
 </div>
 
-Once complete, you should see your theme listed under `Themes` on the bottom of the page, like so.
+След като приключите, трябва да видите вашата тема изброена под `Themes` в долната част на страницата, както следва.
 
 <div class="screenshot white-bg">
-    <div class="title">Създадена персонализирана тема</div>
-    <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-1-custom-theme-created.png" alt="Създадена персонализирана тема" />
+    <div class="title">Персонализираната тема е създадена</div>
+    <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-1-custom-theme-created.png" alt="Персонализираната тема е създадена" />
 </div>
 
-Now we can edit our new theme to add FastComments.
+Сега можем да редактираме новата си тема, за да добавим FastComments.
 
 <div class="screenshot white-bg">
-    <div class="title">Редактирайте файловете на темата</div>
-    <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-1-edit-theme-files.png" alt="Редактирайте файловете на темата" />
+    <div class="title">Редактиране на файловете на темата</div>
+    <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-1-edit-theme-files.png" alt="Редактиране на файловете на темата" />
 </div>
-
----

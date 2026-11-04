@@ -1,4 +1,3 @@
----
 ## 매개변수
 
 | 이름 | 형식 | 위치 | 필수 | 설명 |
@@ -32,5 +31,3 @@ DefaultAPI.createTicket(tenantId: tenantId, userId: userId, createTicketBody: cr
     }
 }
 [inline-code-end]
-
----

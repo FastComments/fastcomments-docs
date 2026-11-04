@@ -1,4 +1,3 @@
----
 Ορίστε το tenant id σας μία φορά στο `_config.yml`:
 
 ```yaml
@@ -14,4 +13,3 @@ fastcomments:
 
 Αυτό είναι όλο. Αντικαταστήστε το `demo` με το tenant id σας στο FastComments (βρείτε το κάτω από
 [Ρυθμίσεις > API/SSO](https://fastcomments.com/auth/my-account/api)).
----

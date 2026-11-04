@@ -19,5 +19,3 @@ FastComments се интегрише са Drupal-овим системом ко�
 <sup>(Опционо)</sup> Додајте своје администраторе у [Корисници и администратори](https://fastcomments.com/auth/my-account/users) и модераторе у [Модератори коментара](https://fastcomments.com/auth/my-account/moderate-comments/moderators) да побољшате њихово искуство и омогућите праћење статистике за модераторе.
 
 За детаљнији увид у то како SSO ради, погледајте [одељак о SSO](/guide-customizations-and-configuration.html#sso) у документацији за прилагођавање.
-
----

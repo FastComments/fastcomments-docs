@@ -1,4 +1,3 @@
----  
 צופים מקוונים כרגע של דף: אנשים שהחיבור WebSocket שלהם מנוי לדף ברגע זה.  
 מחזיר anonCount + totalCount (מנויים ברמת החדר, כולל צופים אנונימיים שאינם נספרים).
 
@@ -37,5 +36,3 @@ async function fetchOnlineUsers() {
 
 fetchOnlineUsers();
 [inline-code-end]
-
----

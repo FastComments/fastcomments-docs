@@ -43,5 +43,3 @@ try {
     echo 'Exception when calling ModerationApi->getModerationComment: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

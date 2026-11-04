@@ -1,4 +1,3 @@
----
 ## 參數
 
 | Name | Type | Required | Description |
@@ -35,5 +34,3 @@ async fn example() -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
-
----

@@ -1,21 +1,24 @@
-The `TenantPackage` definira informacije o paketu dostupnom za `Tenant`. Tenant može imati mnogo dostupnih paketa, ali je u upotrebi samo jedan u određenom trenutku.
+Objekt `TenantPackage` definira informacije o paketu dostupne `Tenant`u. Najamnik (tenant) može imati više dostupnih paketa, ali samo
+jedan u upotrebi u datom trenutku.
 
-A `Tenant` se ne može koristiti za bilo koje proizvode dok njegov `packageId` ne pokazuje na valjani `TenantPackage`.
+`Tenant` se ne može koristiti ni za jedan proizvod dok njegov `packageId` ne pokazuje na valjani `TenantPackage`.
 
-Postoje dvije vrste objekata `TenantPackage`:
+Postoje dvije vrste `TenantPackage` objekata:
 
-1. Fixed-pricing packages - where `hasFlexPricing` is false.
-2. Flexible pricing - where `hasFlexPricing` is true.
+1. Paketi s fiksnim cijenama - gdje je `hasFlexPricing` false.
+2. Fleksibilno određivanje cijena - gdje je `hasFlexPricing` true.
 
-U oba slučaja ograničenja su definirana na računu koji koristi paket, međutim kod Flex-a tenant se naplaćuje osnovna cijena plus ono što je koristio, definirano parametrima `flex*`.
+U oba slučaja ograničenja su definirana na računu koji koristi paket, no uz Flex najamnik se naplaćuje osnovna cijena plus
+ono što je potrošio, što definiraju `flex*` parametri.
 
-`Tenant` može imati više tenant paketa i mogućnost promjene paketa sami sa [Stranica s informacijama o naplati.](https://fastcomments.com/auth/my-account/billing-info)
+Najamnik može imati više tenant paketa i može sam promijeniti paket sa [stranice s podacima za naplatu.](https://fastcomments.com/auth/my-account/billing-info)
 
-Ako ćete sami voditi naplatu za tenante, i dalje ćete morati definirati paket za svaki tenant kako biste definirali njihova ograničenja. Jednostavno postavite `billingHandledExternally` na `true` na `Tenant` i oni neće moći sami mijenjati svoje podatke za naplatu ili aktivni paket.
+Ako ćete sami obrađivati naplatu za najamnike, i dalje ćete morati definirati paket za svakog najamnika kako biste definirali njegova ograničenja. Jednostavno postavite `billingHandledExternally` na `true` na `Tenant`u i oni
+neće moći sami mijenjati svoje podatke za naplatu niti aktivni paket.
 
-Ne smijete kreirati pakete s većim ograničenjima nego što ima roditeljski tenant.
+Ne možete stvarati pakete s višim ograničenjima od nadređenog najamnika.
 
-The structure for the `TenantPackage` object is as follows:
+Struktura objekta `TenantPackage` je sljedeća:
 
 [inline-code-attrs-start title = 'Struktura TenantPackage'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -47,7 +50,7 @@ export interface TenantPackage {
     flexPageLoadUnit?: null
     flexCommentCostCents?: null
     flexCommentUnit?: null
-    flexSSOUserCostCents?: null // Trošak po običnom SSO korisniku (bez administratorskih/moderatorskih dozvola)
+    flexSSOUserCostCents?: null // Cijena po redovnom SSO korisniku (bez admin/moderator ovlasti)
     flexSSOUserUnit?: null
     flexAPICreditCostCents?: null
     flexAPICreditUnit?: null
@@ -57,9 +60,9 @@ export interface TenantPackage {
     flexAdminUnit?: null
     flexDomainCostCents?: null
     flexDomainUnit?: null
-    flexSSOAdminCostCents?: null // Trošak po SSO korisniku s administratorskim pravima (zastavice isAccountOwner ili isAdminAdmin)
+    flexSSOAdminCostCents?: null // Cijena po SSO korisniku s admin ovlastima (isAccountOwner ili isAdminAdmin zastavice)
     flexSSOAdminUnit?: null
-    flexSSOModeratorCostCents?: null // Trošak po SSO korisniku s moderatorskim pravima (zastavica isCommentModeratorAdmin)
+    flexSSOModeratorCostCents?: null // Cijena po SSO korisniku s moderator ovlastima (isCommentModeratorAdmin zastavica)
     flexSSOModeratorUnit?: null
     flexMinimumCostCents?: null
 }

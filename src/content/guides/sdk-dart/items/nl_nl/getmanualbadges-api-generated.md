@@ -26,5 +26,3 @@ try {
     print('Exception when calling ModerationApi->getManualBadges: $e\n');
 }
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 ## Parâmetros
 
 | Nome | Tipo | Obrigatório | Descrição |
@@ -30,5 +29,3 @@ let (response, httpResponse) = client.deleteCommentVote(
 if response.isSome:
   let voteDelete = response.get()
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 Visualizzatori attualmente online di una pagina: persone la cui sessione websocket è iscritta alla pagina in questo momento.  
 Restituisce anonCount + totalCount (sottoscrittori dell’intera stanza, inclusi visualizzatori anonimi che non elenchiamo).
 

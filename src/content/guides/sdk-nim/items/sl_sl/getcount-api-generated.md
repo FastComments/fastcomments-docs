@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Ime | Vrsta | Obvezno | Opis |
@@ -18,5 +17,3 @@ let (countOpt, httpResponse) = client.getCount(tenantId = "my-tenant-123", optio
 if countOpt.isSome:
   let count = countOpt.get()
 [inline-code-end]
-
----

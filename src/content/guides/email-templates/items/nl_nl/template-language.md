@@ -1,4 +1,3 @@
----
 FastComments E-mailsjablonen gebruiken de [EJS-sjabloontaal](https://ejs.co/#docs).
 
 Voorbeeldsyntaxis is `<%= object.someValue %>` om variabelen weer te geven, en voorwaardelijke instructies kunnen als volgt worden geschreven:
@@ -12,5 +11,3 @@ Voorbeeldsyntaxis is `<%= object.someValue %>` om variabelen weer te geven, en v
 Ruwe HTML weergeven, bijvoorbeeld voor de inhoud van een opmerking, gebeurt als volgt: `<%- comment.commentHTML %>`. Let op het `-` in plaats van `=`.
 
 Raadpleeg de bovenstaande link voor meer documentatie over de syntaxis.
-
----

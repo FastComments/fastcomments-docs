@@ -1,4 +1,3 @@
----
 | Κλειδί | Μεταβλητή περιβάλλοντος | Προεπιλογή | Περιγραφή |
 |-----|-------------|---------|-------------|
 | `tenant_id` | `FASTCOMMENTS_TENANT_ID` | `''` | Το tenant ID του FastComments σας |
@@ -9,4 +8,3 @@
 | `sso.login_url` | `FASTCOMMENTS_SSO_LOGIN_URL` | `null` | URL σύνδεσης (εάν δεν δοθεί, χρησιμοποιεί τη διαδρομή Laravel) |
 | `sso.logout_url` | `FASTCOMMENTS_SSO_LOGOUT_URL` | `null` | URL αποσύνδεσης (εάν δεν δοθεί, χρησιμοποιεί τη διαδρομή Laravel) |
 | `widget_defaults` | — | `[]` | Προεπιλεγμένες επιλογές διαμόρφωσης του widget |
----

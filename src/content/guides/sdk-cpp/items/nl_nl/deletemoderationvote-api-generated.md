@@ -24,5 +24,3 @@ opts.hardDelete = boost::optional<bool>(true);
 api->deleteModerationVote(tenantId, commentId, voteId, opts)
     .then([](std::shared_ptr<VoteDeleteResponse> resp){});
 [inline-code-end]
-
----

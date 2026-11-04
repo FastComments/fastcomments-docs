@@ -82,5 +82,3 @@ O widget é renderizado com a seguinte estrutura HTML:
     box-shadow: none !important;
 }
 [inline-code-end]
-
----

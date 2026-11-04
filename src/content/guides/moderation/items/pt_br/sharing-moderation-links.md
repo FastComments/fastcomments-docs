@@ -8,5 +8,3 @@ Por exemplo, o seguinte caso de uso:
 - Moderador A encontra algo interessante na segunda página dos comentários pesquisados resultantes.
 - Moderador A pode **compartilhar o link** desta página diretamente com o Moderador B.
 - Moderador B pode ver o que o Moderador A fez.
-
----

@@ -31,5 +31,3 @@ try {
     print('Exception when calling ModerationApi->postAdjustCommentVotes: $e\n');
 }
 [inline-code-end]
-
----

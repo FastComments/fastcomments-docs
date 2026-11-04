@@ -1,4 +1,3 @@
----
 ## Parametreler
 
 | Ad | Tip | Konum | Gerekli | Açıklama |
@@ -33,5 +32,3 @@ try {
     print('Exception when calling ModerationApi->getSearchCommentsSummary: $e\n');
 }
 [inline-code-end]
-
----

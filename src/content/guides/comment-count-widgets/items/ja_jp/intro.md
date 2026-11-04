@@ -6,5 +6,3 @@ There are two types of comment count widgets available:
 2. **Bulk Comment Count Widget** - 同一ページ上で複数のページにわたるコメント数を効率的に表示するためのウィジェット
 
 This article covers the VanillaJS widgets. Our React/Angular/etc libraries also have their own widgets。
-
----

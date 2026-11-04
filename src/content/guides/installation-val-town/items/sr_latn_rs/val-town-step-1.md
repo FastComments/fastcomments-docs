@@ -1,6 +1,6 @@
-The widget is a script tag and a container element, so it drops into whatever your val already renders. This example uses Hono JSX, which is what Val Town's HTTP templates use.
+Widget je script tag i kontejnerski element, tako da se ubacuje u bilo šta što vaš val već renderuje. Ovaj primer koristi Hono JSX, što je ono što Val Town-ovi HTTP šabloni koriste.
 
-[inline-code-attrs-start title = 'Widget za komentare u HTTP val-u'; type='javascript' inline-code-attrs-end]
+[inline-code-attrs-start title = 'Comment widget u HTTP valu'; type='javascript' inline-code-attrs-end]
 [inline-code-start]
 /** @jsxImportSource npm:hono@4/jsx */
 import { Hono } from "npm:hono@4";
@@ -37,15 +37,15 @@ app.get("/:slug", (c) => {
 export default app.fetch;
 [inline-code-end]
 
-## Izaberite urlId pre nego što objavite
+## Izaberite urlId pre objavljivanja
 
-`urlId` određuje u koju nit komentar ulazi. Ako ga ostavite nepostavljenim, podrazumeva se očišćena verzija trenutnog URL-a stranice, što je upravo ono što se menja na Val Town-u: val ima dugačko `*.web.val.run` ime hosta dok ne rezervišete poddomen, grane dobijaju svoje URL-ove, a preimenovanje stranice menja put. Svaka varijacija tiho postaje zasebna, prazna nit, i simptom se manifestuje kao „moji komentari su nestali“.
+`urlId` određuje u koji thread komentari upadaju. Ako ga ostavite nedefinisan, podrazumevano se koristi očišćena verzija URL-a trenutne stranice, što je upravo ono što se menja na Val Town-u: val ima dugačak `*.web.val.run` hostname dok ne preuzmete subdomenu, branch-ovi dobijaju svoje URL-ove, a preimenovanje stranice menja putanju. Svaka varijacija tiho postaje poseban, prazan thread, a simptom se čita kao "moji komentari su nestali".
 
-Postavite ga na nešto stabilno što vi kontrolišete, poput slug-a posta ili ID-a iz baze podataka, kao što je gore prikazano. Takođe prosledite `url`, kako bi e‑mail obaveštenja i alati za moderaciju mogli da se povežu nazad na pravu stranicu.
+Postavite ga na nešto stabilno što kontrolišete, kao što je slug objave ili database id, kao u primeru iznad. Prosledite i `url`, kako bi notifikacije mejlom i moderacioni alati mogli da linkuju ka pravoj stranici.
 
-## Čuvanje komentara bez JavaScripta
+## Zadržavanje komentara bez JavaScripta
 
-FastComments renderuje kompletnu nit na serveru, što val može ubaciti u `<noscript>` blok:
+FastComments renderuje ceo thread server-side, što val može da ubaci u `<noscript>` blok:
 
 [inline-code-attrs-start title = 'Fallback bez JavaScripta'; type='html' inline-code-attrs-end]
 [inline-code-start]
@@ -56,6 +56,4 @@ FastComments renderuje kompletnu nit na serveru, što val može ubaciti u `<nosc
 </noscript>
 [inline-code-end]
 
-URL‑enkodujte parametre. Server‑side verzija podržava anonimno i prijavljeno komentarisanje, SSO i ugnježdene odgovore.
-
----
+URL-enkodirajte parametre. Server-side verzija podržava anonimno i prijavljeno komentiranje, SSO i ugnježdene odgovore.

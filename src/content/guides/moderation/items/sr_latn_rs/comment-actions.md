@@ -1,19 +1,19 @@
-With FastComments, there are a number of actions that Admini i Moderatori can take on each comment, namely:
+Sa FastComments, postoji niz akcija koje Administratori i Moderatori mogu preduzeti na svakom komentaru, naime:
 
 - **Brisanje** tog komentara
-- **Obrisati** taj komentar + **Zabraniti korisnika** (Trajno ili Shadow, više detalja kasnije)
-- **Urediti** taj komentar
-- **Podesiti glasove** tog komentara
-- Obeležiti taj komentar kao **Pregledan** ili **Nepregledan**
-- Obeležiti taj komentar kao **Odobren** ili **Nije odobren**
-- Obeležiti taj komentar kao **Spam** ili **Nije spam**
-- Pregledati sve komentare sa iste IP adrese *<sup>1</sup>.
-- Resetovati broj prijava na komentaru.
+- **Brisanje** tog komentara + **Banovanje korisnika** (Trajno ili Shadow, više detalja kasnije)
+- **Izmena** tog komentara
+- **Podešavanje glasova** tog komentara
+- Označavanje komentara kao **Reviewed** ili **Not Reviewed**
+- Označavanje komentara kao **Approved** ili **Not Approved**
+- Označavanje komentara kao **Spam** ili **Not Spam**
+- Pregled svih komentara sa iste IP adrese *<sup>1</sup>.
+- Resetovanje Flag Count na komentaru.
 
-Na primer, da zadržimo komentar ali ga sakrijemo, jednostavno ga možemo označiti kao **Nije odobren**.
+Na primer, da bismo zadržali komentar ali ga sakrili, jednostavno možemo da ga označimo kao **Not Approved**.
 
-Pored toga, Admini i Moderatori mogu prikačiti komentare, ali to se može uraditi samo iz same niti komentara.
+Pored toga, Administratori i Moderatori mogu da zakače komentare, ali to se može uraditi samo iz samog niza komentara.
 
-Sve gore navedene radnje su takođe dostupne putem prečica na tastaturi. Vidi odeljak [Prečice na tastaturi](#keyboard-shortcuts) za detalje.
+Sve gore navedene akcije su dostupne i putem prečica na tastaturi. Pogledajte sekciju [Keyboard Shortcuts](#keyboard-shortcuts) za detalje.
 
-*<sup>1</sup> Ne čuvamo sirove IP adrese za ovu funkcionalnost.
+*<sup>1</sup> Ne čuvamo sirove IP adrese za ovu funkciju.

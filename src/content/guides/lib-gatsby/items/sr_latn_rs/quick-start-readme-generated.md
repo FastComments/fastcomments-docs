@@ -1,4 +1,3 @@
----
 1.  **Pogledajte u akciji.**
 
     Uđite u direktorijum vašeg novog sajta i pokrenite ga.
@@ -16,4 +15,3 @@
     ```
     return <FastCommentsCommentWidget tenantId="demo" />;
     ```
----

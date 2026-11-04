@@ -1,10 +1,10 @@
-FastComments provides an easy to use SSO solution. Atualizar as informações de um usuário com a integração baseada em HMAC é
+O FastComments fornece uma solução de SSO fácil de usar. Atualizar as informações de um usuário com a integração baseada em HMAC é
 tão simples quanto fazer o usuário carregar a página com um payload atualizado.
 
 No entanto, pode ser desejável gerenciar um usuário fora desse fluxo, para melhorar a consistência da sua aplicação.
 
-A SSO User API fornece uma forma de CRUD de objetos que chamamos SSOUsers. Esses objetos são diferentes dos Users regulares e
-mantidos separados por segurança de tipos.
+A API SSO User fornece uma forma de realizar CRUD em objetos que chamamos de SSOUsers. Esses objetos são diferentes dos Users regulares e
+são mantidos separados por segurança de tipos.
 
 A estrutura do objeto SSOUser é a seguinte:
 
@@ -23,68 +23,64 @@ interface SSOUser {
     optedInSubscriptionNotifications?: boolean
     displayLabel?: string
     displayName?: string
-    isAccountOwner?: boolean // Permissão de administrador - usuários SSO com esta flag são faturados como Administradores SSO (separados dos usuários SSO regulares)
-    isAdminAdmin?: boolean // Permissão de administrador - usuários SSO com esta flag são faturados como Administradores SSO (separados dos usuários SSO regulares)
-    isCommentModeratorAdmin?: boolean // Permissão de moderador - usuários SSO com esta flag são faturados como Moderadores SSO (separados dos usuários SSO regulares)
-    /** Se null, o Controle de Acesso não será aplicado ao usuário. Se uma lista vazia, este usuário não poderá ver nenhuma página nem @mencionar outros usuários. **/
+    isAccountOwner?: boolean // Permissão de Admin - usuários SSO com esta flag são cobrados como SSO Admins (separados dos usuários SSO regulares)
+    isAdminAdmin?: boolean // Permissão de Admin - usuários SSO com esta flag são cobrados como SSO Admins (separados dos usuários SSO regulares)
+    isCommentModeratorAdmin?: boolean // Permissão de Moderador - usuários SSO com esta flag são cobrados como SSO Moderadores (separados dos usuários SSO regulares)
+    /** Se null, o Controle de Acesso não será aplicado ao usuário. Se for uma lista vazia, este usuário não poderá ver nenhuma página nem @mencionar outros usuários. **/
     groupIds?: string[] | null
     createdFromSimpleSSO?: boolean
-    /** Não permita que outros usuários vejam a atividade deste usuário, incluindo comentários, em seu perfil. O padrão é true para fornecer perfis seguros por padrão. **/
+    /** Não permite que outros usuários vejam a atividade deste usuário, incluindo comentários, em seu perfil. O padrão é true para fornecer perfis seguros por padrão. **/
     isProfileActivityPrivate?: boolean
-    /** Não permita que outros usuários deixem comentários no perfil do usuário, ou vejam comentários de perfil existentes. Padrão false. **/
+    /** Não permite que outros usuários deixem comentários no perfil do usuário, ou vejam os comentários existentes do perfil. Padrão é false. **/
     isProfileCommentsPrivate?: boolean
-    /** Não permita que outros usuários enviem mensagens diretas para este usuário. Padrão false. **/
+    /** Não permite que outros usuários enviem mensagens diretas para este usuário. Padrão é false. **/
     isProfileDMDisabled?: boolean
     karma?: number
-    /** Configuração opcional para badges de usuário. **/
+    /** Configuração opcional para emblemas do usuário. **/
     badgeConfig?: {
-        /** Array de IDs de badges para atribuir ao usuário. Limitado a 30 badges. A ordem é respeitada. Estes são badges globais visíveis em todas as páginas. **/
+        /** Array de IDs de emblemas a serem atribuídos ao usuário. Limitado a 30 emblemas. A ordem é respeitada. Estes são emblemas globais visíveis em todas as páginas. **/
         badgeIds: string[]
-        /** Array de IDs de badges com escopo para a página atual (urlId). Esses badges são exibidos apenas na página onde foram atribuídos. **/
+        /** Array de IDs de emblemas com escopo na página atual (urlId). Esses emblemas são exibidos apenas na página onde foram atribuídos. **/
         pageBadgeIds?: string[]
-        /** Se true, substitui todos os badges exibidos existentes pelos fornecidos. Badges globais e com escopo de página são substituídos independentemente. Se false, adiciona aos badges existentes. **/
+        /** Se true, substitui todos os emblemas exibidos existentes pelos fornecidos. Emblemas globais e com escopo de página são substituídos de forma independente. Se false, adiciona aos emblemas existentes. **/
         override?: boolean
-        /** Se true, atualiza as propriedades de exibição dos badges a partir da configuração do tenant. **/
+        /** Se true, atualiza as propriedades de exibição dos emblemas a partir da configuração do tenant. **/
         update?: boolean
     }
 }
 [inline-code-end]
 
-### Billing for SSO Users
+### Cobrança de Usuários SSO
 
-Usuários SSO são faturados de maneira diferente com base em suas flags de permissão:
+Os usuários SSO são cobrados de forma diferente com base em suas flags de permissão:
 
-- **Regular SSO Users**: Usuários sem permissões de administrador ou moderador são faturados como usuários SSO regulares
-- **SSO Admins**: Usuários com `isAccountOwner` ou `isAdminAdmin` flags são faturados separadamente como Administradores SSO (mesma tarifa que administradores regulares do tenant)
-- **SSO Moderators**: Usuários com a flag `isCommentModeratorAdmin` são faturados separadamente como Moderadores SSO (mesma tarifa que moderadores regulares)
+- **Usuários SSO Regulares**: Usuários sem permissões de admin ou moderador são cobrados como usuários SSO regulares
+- **SSO Admins**: Usuários com as flags `isAccountOwner` ou `isAdminAdmin` são cobrados separadamente como SSO Admins (mesma tarifa que admins de tenant regulares)
+- **SSO Moderadores**: Usuários com a flag `isCommentModeratorAdmin` são cobrados separadamente como SSO Moderadores (mesma tarifa que moderadores regulares)
 
-**Importante**: Para evitar cobrança dupla, o sistema desduplicará automaticamente os usuários SSO em relação aos usuários e moderadores regulares do tenant pelo endereço de email. Se um usuário SSO tiver o mesmo email que um usuário ou moderador regular do tenant, ele não será cobrado duas vezes.
+**Importante**: Para evitar cobrança duplicada, o sistema deduplica automaticamente usuários SSO em relação a usuários e moderadores de tenant regulares por endereço de e-mail. Se um usuário SSO tiver o mesmo e-mail que um usuário ou moderador de tenant regular, ele não será cobrado duas vezes.
 
-### Access Control
+### Controle de Acesso
 
-Os usuários podem ser divididos em grupos. É para isso que serve o campo `groupIds`, e é opcional.
+Os usuários podem ser divididos em grupos. É para isso que serve o campo `groupIds`, que é opcional.
 
-### @Mentions
+### @Menções
 
-Por padrão `@mentions` usará `username` para buscar outros usuários sso quando o caractere `@` for digitado. Se `displayName` for usado, então resultados correspondentes a
-`username` serão ignorados quando houver uma correspondência para `displayName`, e os resultados da busca de `@mention` usarão `displayName`.
+Por padrão, as `@menções` usarão `username` para buscar outros usuários SSO quando o caractere `@` for digitado. Se `displayName` for usado, os resultados correspondentes a `username` serão ignorados quando houver uma correspondência para `displayName`, e os resultados da busca de `@menções` usarão `displayName`.
 
-### Subscriptions
+### Assinaturas
 
-Com o FastComments, os usuários podem assinar uma página clicando no ícone de sino no widget de comentários e clicando em Inscrever-se.
+Com o FastComments, os usuários podem assinar uma página clicando no ícone de sino no widget de comentários e clicando em Assinar.
 
-Com um usuário regular, nós enviamos emails de notificação com base nas configurações de notificação dele.
+Com um usuário regular, enviamos e-mails de notificação com base nas suas configurações de notificação.
 
-Com Usuários SSO, nós separamos isso por compatibilidade retroativa. Os usuários só receberão esses emails adicionais de notificação de assinatura
-se você definir `optedInSubscriptionNotifications` como `true`.
+Com Usuários SSO, separamos isso por compatibilidade com versões anteriores. Os usuários só receberão esses e-mails adicionais de notificação de assinatura se você definir `optedInSubscriptionNotifications` como `true`.
 
-### Badges
+### Emblemas
 
-Você pode atribuir badges a usuários SSO usando a propriedade `badgeConfig`. Badges são indicadores visuais que aparecem ao lado do nome de um usuário nos comentários.
+Você pode atribuir emblemas a usuários SSO usando a propriedade `badgeConfig`. Emblemas são indicadores visuais que aparecem ao lado do nome de um usuário nos comentários.
 
-- `badgeIds` - Um array de IDs de badge para atribuir ao usuário. Estes são badges globais visíveis em todas as páginas. Devem ser IDs de badge válidos criados na sua conta FastComments. Limitado a 30 badges.
-- `pageBadgeIds` - Um array opcional de IDs de badge com escopo para a página atual (`urlId`). Esses badges são exibidos apenas na página onde foram atribuídos. Páginas diferentes podem ter badges com escopo de página diferentes para o mesmo usuário.
-- `override` - Se true, todos os badges exibidos existentes serão substituídos pelos fornecidos. Badges globais e com escopo de página são substituídos independentemente — substituir badges globais não afeta badges com escopo de página, e vice-versa. Se false ou omitido, os badges fornecidos serão adicionados aos badges existentes.
-- `update` - Se true, as propriedades de exibição dos badges serão atualizadas a partir da configuração do tenant sempre que o usuário fizer login.
-
----
+- `badgeIds` - Um array de IDs de emblemas a serem atribuídos ao usuário. Estes são emblemas globais visíveis em todas as páginas. Devem ser IDs de emblemas válidos criados na sua conta FastComments. Limitado a 30 emblemas.
+- `pageBadgeIds` - Um array opcional de IDs de emblemas com escopo na página atual (`urlId`). Esses emblemas são exibidos apenas na página onde foram atribuídos. Páginas diferentes podem ter emblemas com escopo de página diferentes para o mesmo usuário.
+- `override` - Se true, todos os emblemas exibidos existentes serão substituídos pelos fornecidos. Emblemas globais e com escopo de página são substituídos de forma independente — substituir emblemas globais não afeta emblemas com escopo de página, e vice-versa. Se false ou omitido, os emblemas fornecidos serão adicionados aos emblemas existentes.
+- `update` - Se true, as propriedades de exibição dos emblemas serão atualizadas a partir da configuração do tenant sempre que o usuário fizer login.

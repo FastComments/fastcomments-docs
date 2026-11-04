@@ -1,31 +1,31 @@
-**Template ID:** `gaslight_detector`
+**ID šablona:** `gaslight_detector`
 
-Gaslight Detector prati izmene komentara koje prepisuju istoriju usred konverzacije - one gde autor menja značenje ranijeg komentara nakon što su odgovori već napisani, ostavljajući naknadne odgovore van konteksta ili pogrešne. Kada agent odluči da izmena prelazi tu granicu, on vraća originalni tekst i šalje autoru direktnu poruku da objasni.
+Gaslight Detector prati izmene komentara kojima se prepravlja istorija usred razgovora - one gde autor menja značenje ranijeg komentara nakon što su odgovori već napisani, tako da naredni odgovori deluju van konteksta ili pogrešno. Kada agent odluči da izmena prelazi tu granicu, on vraća originalni tekst i šalje autoru DM sa objašnjenjem.
 
-Ovo je šablon sa većim rizikom jer menja korisnički sadržaj. Pokrenite ga u režimu [dry-run](#dry-run-mode) duže nego što biste to uradili za šablon samo za čitanje, i stavite `edit_comment` iza [odobrenja](#approval-workflow) dok ne poverite prosudbi modela na vašem saobraćaju.
+Ovo je šablon sa većim rizikom jer menja sadržaj korisnika. Pokrenite ga u [dry-run](#dry-run-mode) režimu duže nego što bi pokrenuli šablon koji samo čita, i ograničite `edit_comment` kroz [odobravanje](#approval-workflow) dok ne poverujete u modelovu procenu na vašem saobraćaju.
 
-### Triggers
+### Okidači
 
-- **Comment edited** (`COMMENT_EDIT`) - agent upoređuje novi i prethodni tekst i odlučuje da li izmena izobličava odgovore koji već postoje.
+- **Komentar izmenjen** (`COMMENT_EDIT`) - agent poredi novi i prethodni tekst i odlučuje da li izmena narušava odgovore koji već postoje.
 
-Pogledajte [Trigger: Comment Edited](#trigger-comment-edit) za potpuni payload, uključujući prethodni tekst komentara i broj odgovora u trenutku izmene.
+Pogledajte [Trigger: Comment Edited](#trigger-comment-edit) za kompletan payload, uključujući prethodni tekst komentara i broj odgovora u trenutku izmene.
 
-### Allowed tools
+### Dozvoljeni alati
 
-- [`edit_comment`](#tool-edit-comment) - koristi se za vraćanje originalnog teksta kada se proceni da je izmena gaslighting.
+- [`edit_comment`](#tool-edit-comment) - koristi se za vraćanje originalnog teksta kada se izmena proceni kao gaslighting.
 - [`warn_user`](#tool-warn-user) - izdaje blago upozorenje koje korisnik vidi pri sledećoj poseti.
-- [`send_dm`](#tools-overview) - kanal objašnjenja; korisnik dobija direktnu poruku koja opisuje zašto je njihova izmena poništena.
+- [`send_dm`](#tools-overview) - kanal za objašnjenje; korisnik dobija direktnu poruku koja opisuje zašto je njegova izmena vraćena.
 
-Ne može banovati, označavati kao spam, glasati ili objavljivati nove komentare - pokrivenost je namerno ograničena.
+Ne može da banuje, označi spam, glasa niti objavljuje nove komentare - opseg je namerno uzak.
 
-### Recommended additions before going live
+### Preporučene dopune pre prelaska u produkciju
 
-- **Stavite `edit_comment` iza [odobrenja](#approval-workflow).** Vraćanje komentara je vidljivo autoru i svima koji su videli izmenjenu verziju, tako da je lažno pozitivan rezultat neprijatan. Držite odobrenja uključena dok dry-run ne pokaže da je agent dosledan.
-- **Precizirajte prompt sa primerima šta se na vašem sajtu računa kao gaslighting.** Podrazumevani prompt je kratak namerno. Dajte modelu konkretne primere - "promena tvrdnje iz da/ne", "brisanje broja na koji se odgovori pozivaju", "dodavanje neprijateljske rečenice nakon što su odgovori već postavljeni" - i eksplicitne ne-primere kao što su ispravke tipografskih grešaka, formatiranje ili dodavanje izvora.
-- **Koristite broj odgovora iz konteksta okidača.** Izmene komentara sa nula odgovora ne mogu izobličiti konverzaciju; prompt bi trebalo da kaže modelu da preskoči takve izmene.
-- **Označite "Include commenter's trust factor, account age, ban history, and recent comments"** u [Context Options](#context-options). Model je znatno manje agresivan kada može da vidi dugogodišnji nalog koji radi u dobroj veri.
-- **Razmislite o kratkom periodu milosti za izmene u promptu.** Mnoge izmene u prvih 30–60 sekundi su ispravke tipa; uputite model da ignoriše izmene te brze.
+- **Ograničite `edit_comment` kroz [odobravanje](#approval-workflow).** Vraćanje komentara je vidljivo autoru i svima koji su videli izmenjenu verziju, pa je lažni pozitivan rezultat sramota. Držite odobravanja uključenim dok dry-run ne pokaže da agent deluje dosledno.
+- **Pojačajte prompt sa onim što se na vašem sajtu računa kao gaslighting.** Podrazumevani prompt je namerno kratak. Dajte modelu konkretne primere - "okretanje yes/no tvrdnje", "brisanje broja koji odgovori citiraju", "dodavanje neprijateljske rečenice nakon što su odgovori objavljeni" - i eksplicitne ne-primere poput ispravki kucnih grešaka, sređivanja formatiranja ili dodavanja izvora.
+- **Koristite broj odgovora iz konteksta okidača.** Izmene komentara bez ijednog odgovora ne mogu narušiti razgovor; prompt treba da modelu kaže da ih preskoči.
+- **Uključite "Include commenter's trust factor, account age, ban history, and recent comments"** u [Context Options](#context-options). Model je znatno manje agresivan kada vidi dugogodišnji nalog u dobrom verovanju.
+- **Razmotrite kratak period milosti za izmene u promptu.** Mnoge izmene u prvih 30-60 sekundi su ispravke kucnih grešaka; uputite model da ignoriše tako brze izmene.
 
-### Recommended dry-run window
+### Preporučeni period dry-run-a
 
-Pokrećite najmanje dve nedelje sa stvarnim saobraćajem u režimu [dry-run](#dry-run-mode) pre nego što pređete na Enabled, i pregledajte svaku označenu izmenu tokom tog perioda. Koristite [Test Runs (Replays)](#test-runs-replays) da replay-ujete poslednjih 30 dana izmena protiv agenta pre puštanja u rad.
+Pokrenite najmanje dve nedelje stvarnog saobraćaja u [dry-run](#dry-run-mode) pre prelaska na Enabled, i pregledajte svaku označenu izmenu tokom tog perioda. Koristite [Test Runs (Replays)](#test-runs-replays) da ponovite poslednjih 30 dana izmena protiv agenta pre prelaska u produkciju.

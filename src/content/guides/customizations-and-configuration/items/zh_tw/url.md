@@ -11,5 +11,3 @@
 [code-example-start config = {url: 'https://example.com/article-5', urlId: 'article-5'}; linesToHighlight = [6, 7]; title = 'Defining Custom URL and URL IDs together'; code-example-end]
 
 URL 不會移除常見的行銷參數。預設情況下，會以當前頁面的 URL 作為與留言一起儲存的 URL。
-
----

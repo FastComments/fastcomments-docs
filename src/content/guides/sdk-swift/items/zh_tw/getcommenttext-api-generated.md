@@ -1,4 +1,3 @@
----
 ## 參數
 
 | Name | Type | Location | Required | Description |
@@ -35,5 +34,3 @@ PublicAPI.getCommentText(tenantId: tenantId, commentId: commentId, options: Publ
     }
 }
 [inline-code-end]
-
----

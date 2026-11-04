@@ -1,4 +1,3 @@
----
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
@@ -35,5 +34,3 @@ async fn run() -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
-
----

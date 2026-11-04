@@ -1,11 +1,11 @@
-FastComments υποστηρίζει SSO για να ενσωματωθεί με το υπάρχον σύστημα αυθεντικοποίησης χρηστών σας. **Η λειτουργία SSO είναι διαθέσιμη μόνο στο server export** καθώς απαιτεί δυνατότητες crypto του Node.js.
+Το FastComments υποστηρίζει SSO για ενσωμάτωση με το υπάρχον σύστημα ελέγχου ταυτότητας χρηστών σας. **Η λειτουργία SSO είναι διαθέσιμη μόνο στο server export** καθώς απαιτεί δυνατότητες κρυπτογραφίας του Node.js.
 
-### Simple SSO (Server-Side Only)
+### Απλό SSO (Μόνο Server-Side)
 
-Το απλό SSO πρέπει να δημιουργείται στο server και να αποστέλλεται στον client:
+Το απλό SSO πρέπει να δημιουργείται server-side και να αποστέλλεται στον client:
 
 ```typescript
-// Κώδικας στο server (Node.js/backend)
+// Server-side code (Node.js/backend)
 import { FastCommentsSSO, PublicApi } from 'fastcomments-sdk/server';
 
 // Create simple SSO using the built-in helper  
@@ -27,12 +27,12 @@ const ssoToken = sso.createToken();
 // Client-side code can then use this token with the browser SDK
 ```
 
-### Secure SSO (Server-Side, Recommended)
+### Ασφαλές SSO (Server-Side, Προτεινόμενο)
 
-Το Ασφαλές SSO πρέπει να υλοποιηθεί στο server και παρέχει καλύτερη ασφάλεια:
+Το ασφαλές SSO πρέπει να υλοποιείται server-side και παρέχει καλύτερη ασφάλεια:
 
 ```typescript
-// Κώδικας στο server (Node.js/backend)
+// Server-side code (Node.js/backend)
 import { FastCommentsSSO, PublicApi } from 'fastcomments-sdk/server';
 
 // Create secure SSO using the built-in helper
@@ -64,12 +64,10 @@ const response = await publicApi.getCommentsPublic({
 // Or send ssoConfig to client for browser usage
 ```
 
-### Using SSO from Browser (with Server-Generated Token)
-
-Χρήση SSO από το πρόγραμμα περιήγησης (με token που δημιουργείται από τον server)
+### Χρήση SSO από τον Browser (με Token που Δημιουργείται από τον Server)
 
 ```typescript
-// Κώδικας client-side (πρόγραμμα περιήγησης)
+// Client-side code (browser)
 import { PublicApi } from 'fastcomments-sdk/browser';
 
 // Get SSO token from your server endpoint
@@ -79,13 +77,11 @@ const publicApi = new PublicApi();
 const response = await publicApi.getCommentsPublic({
   tenantId: 'your-tenant-id',
   urlId: 'page-url-id',
-  sso: ssoToken // Χρησιμοποιήστε το SSO token που δημιουργήθηκε από τον server
+  sso: ssoToken // Use the server-generated SSO token
 });
 ```
 
-### SSO with Comment Creation
-
-SSO με δημιουργία σχολίου
+### SSO με Δημιουργία Σχολίου
 
 ```typescript
 // Server-side: Create SSO and comment

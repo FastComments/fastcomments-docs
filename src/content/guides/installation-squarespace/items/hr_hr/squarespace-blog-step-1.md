@@ -25,5 +25,3 @@ Trebali biste vidjeti prazan prostor za kod kao u nastavku:
     <div class="title">Prazno Područje Koda</div>
     <img class="screenshot-image" src="/images/installation-guides/squarespace-step-1-4-code-area.png" alt="Prazno Područje Koda" />
 </div>
-
----

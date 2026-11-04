@@ -28,5 +28,3 @@ try {
     print('Exception when calling DefaultApi->getPages: $e\n');
 }
 [inline-code-end]
-
----

@@ -1,10 +1,10 @@
-List pages for a tenant. Used by the FChat desktop client to populate its room list.  
-Requires `enableFChat` to be true on the resolved custom config for each page.  
-Pages that require SSO are filtered against the requesting user's group access.
+Bir kiracı için sayfaları listeler. FChat masaüstü istemcisi tarafından oda listesini doldurmak için kullanılır.
+Her sayfa için çözümlenen özel yapılandırmada `enableFChat` değerinin true olması gerekir.
+SSO gerektiren sayfalar, istekte bulunan kullanıcının grup erişimine göre filtrelenir.
 
-## Parameters
+## Parametreler
 
-| Ad | Tür | Gerekli | Açıklama |
+| Ad | Tür | Zorunlu | Açıklama |
 |------|------|----------|-------------|
 | tenantId | string | Evet |  |
 | options | const GetPagesPublicOptions& | Evet |  |
@@ -26,7 +26,7 @@ api->getPagesPublic(tenantId, options).then([](pplx::task<std::shared_ptr<GetPub
         auto response = task.get();
         // gerekirse yanıtı işle
     }catch(const std::exception&){
-        // gerekirse hatayı işle
+        // gerekirse hatayı ele al
     }
 });
 [inline-code-end]

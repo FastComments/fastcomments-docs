@@ -6,5 +6,3 @@ FastComments añade comentarios en hilos a tus cursos de Canvas. El widget está
 </div>
 
 Los comentarios se adjuntan a cada página del curso o enlace de recurso, por lo que las discusiones se mantienen organizadas por página, tarea o módulo.
-
----

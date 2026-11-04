@@ -31,5 +31,3 @@ interface PollGetResponse {
 [inline-code-end]
 
 Komentar koji nema anketu, komentar koji je obrisan i ID komentara koji ne postoji svi odgovaraju na isti način, sa `poll-not-found`.
-
----

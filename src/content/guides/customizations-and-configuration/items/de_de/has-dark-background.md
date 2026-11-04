@@ -1,4 +1,3 @@
----
 [related-parameter-start name = 'hasDarkBackground'; type = 'boolean'; related-parameter-end]
 
 Standardmäßig erkennt das FastComments-Kommentar-Widget auf den meisten Websites automatisch den Dunkelmodus.
@@ -10,5 +9,3 @@ Beim Laden der Seite versucht das Widget zu ermitteln, wie dunkel der Hintergrun
 Der Erkennungsmechanismus, der auf der Bestimmung der "luminance" beruht, kann den Dunkelmodus jedoch möglicherweise nicht dann aktivieren, wenn Sie es wünschen. Um ihn zwangsweise zu aktivieren, setzen Sie das Flag *hasDarkBackground* auf true wie folgt:
 
 [code-example-start config = {hasDarkBackground: true}; linesToHighlight = [6]; title = 'Force Dark Background Mode'; additionalDemoCode = '<style>body { background: black; }</style>'; code-example-end]
-
----

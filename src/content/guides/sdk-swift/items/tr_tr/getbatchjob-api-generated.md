@@ -1,4 +1,3 @@
----
 Bir toplu işin durumu, ilerlemesi ve tamamlandığında sonucu.
 
 ## Parameters
@@ -33,5 +32,3 @@ DefaultAPI.getBatchJob(tenantId: tenantId, id: id) { (response, error) in
     }
 }
 [inline-code-end]
-
----

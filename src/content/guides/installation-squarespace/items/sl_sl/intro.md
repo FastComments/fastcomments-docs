@@ -1,4 +1,3 @@
----
 Z FastComments lahko enostavno dodamo živo komentiranje na katerokoli spletno mesto Squarespace.
 
 Navodila spodaj so razdeljena na tri razdelke, odvisno od tega, kaj želite narediti:
@@ -7,5 +6,3 @@ Navodila spodaj so razdeljena na tri razdelke, odvisno od tega, kaj želite nare
 3. [Dodajte komentarje na določeno stran](#squarespace-pages-specific-page-step-0)
 
 Upoštevajte, da ta vodič zahteva račun FastComments. Priporočamo, da se najprej registrirate in se nato vrnete sem. [Račun lahko ustvarite tukaj.](https://fastcomments.com/auth/tenant-signup?packageId=flex)
-
----

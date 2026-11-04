@@ -1,4 +1,3 @@
----
 ## Parâmetros
 
 | Nome | Tipo | Local | Obrigatório | Descrição |
@@ -31,5 +30,3 @@ DefaultAPI.getCachedNotificationCount(tenantId: tenantId, id: id) { (response, e
     }
 }
 [inline-code-end]
-
----

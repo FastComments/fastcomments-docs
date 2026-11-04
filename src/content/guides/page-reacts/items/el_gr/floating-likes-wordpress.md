@@ -1,4 +1,3 @@
----
 Για το WordPress, αυτή η λειτουργία μπορεί να ενεργοποιηθεί εγκαθιστώντας ένα πρόσθετο όπως το WPCode και προσθέτοντας το παρακάτω απόσπασμα HTML στο υποσέλιδο (footer) του ιστολογίου:
 
 [inline-code-attrs-start title = 'Κώδικας Floating Likes για WordPress'; type = 'bash'; useDemoTenant = true; isFunctional = false; type = 'html';  inline-code-attrs-end]
@@ -26,5 +25,3 @@
     })();
 </script>
 [inline-code-end]
-
----

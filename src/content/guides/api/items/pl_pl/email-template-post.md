@@ -1,19 +1,19 @@
 [api-resource-header-start name = 'EmailTemplate'; route = 'POST /api/v1/email-templates'; creditsCost = 1; api-resource-header-end]
 
-This API endpoint provides the ability to create email templates.
+Ten punkt końcowy API umożliwia tworzenie szablonów e-mail.
 
-Notes:
+Uwagi:
 
-- You can't have multiple templates with the same `emailTemplateId` with the same domain.
-- But you can have a wildcard template (`domain` = `*` and a domain specific template for the same `emailTemplateId`).
-- Specifying `domain` is only relevant if you have different domains, or want to use specific templates for testing (`domain` set to `localhost` etc).
-- If you do specify `domain` it must match a `DomainConfig`. On error a list of valid domains is provided.
-- The template syntax is EJS and is rendered with a 500ms timeout. P99 for rendering is <5ms, so if you hit 500ms something is wrong.
-- **Your template must render with your given `testData`** to save. Render errors are aggregated and reported on in the dashboard (soon available via API). 
+- Nie możesz mieć wielu szablonów z tym samym `emailTemplateId` dla tej samej domeny.
+- Ale możesz mieć szablon wieloznaczny (`domain` = `*` oraz szablon specyficzny dla domeny dla tego samego `emailTemplateId`).
+- Określanie `domain` ma znaczenie tylko wtedy, gdy masz różne domeny lub chcesz używać specyficznych szablonów do testów (`domain` ustawione na `localhost` itd.).
+- Jeśli określisz `domain`, musi ono pasować do `DomainConfig`. W przypadku błędu zwracana jest lista prawidłowych domen.
+- Składnia szablonu to EJS i jest renderowana z limitem czasu 500 ms. P99 dla renderowania wynosi <5 ms, więc jeśli osiągniesz 500 ms, coś jest nie tak.
+- **Twój szablon musi się wyrenderować z podanym `testData`**, aby mógł zostać zapisany. Błędy renderowania są agregowane i raportowane w panelu (wkrótce dostępne przez API).
 
-The minimum data required to add a template is as follows:
+Minimalne dane wymagane do dodania szablonu są następujące:
 
-[inline-code-attrs-start title = 'Minimalny przykład cURL POST dla EmailTemplate'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Minimalny przykład cURL POST EmailTemplate'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request POST \
   --url 'https://fastcomments.com/api/v1/email-templates?tenantId=demo&API_KEY=DEMO_API_SECRET' \
@@ -25,9 +25,9 @@ curl --request POST \
 }'
 [inline-code-end]
 
-You may want to have templates per-site, in which case you define `domain`:
+Możesz chcieć mieć szablony per strona — w takim przypadku definiujesz `domain`:
 
-[inline-code-attrs-start title = 'Przykład cURL POST dla EmailTemplate'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Przykład cURL POST EmailTemplate'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request POST \
   --url 'https://fastcomments.com/api/v1/email-templates?tenantId=demo&API_KEY=DEMO_API_SECRET' \
@@ -53,13 +53,11 @@ interface EmailTemplatePostQueryParams {
 
 interface EmailTemplatePostResponse {
     status: 'success' | 'failed'
-    /** Zawarte w przypadku niepowodzenia. **/
+    /** Included on failure. **/
     code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'unauthorized' | 'unexpected-param' | 'invalid-email-template-id' | 'domain-invalid' | 'duplicate' | 'does-not-render';
-    /** Zawarte w przypadku niepowodzenia. **/
+    /** Included on failure. **/
     reason?: string
-    /** Utworzony szablon. **/
+    /** The created template. **/
     emailTemplate?: EmailTemplate
 }
 [inline-code-end]
-
----

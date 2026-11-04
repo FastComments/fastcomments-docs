@@ -23,5 +23,3 @@ api->deleteHashTag(tenantId, tag, requestBody)
     .then([](std::shared_ptr<APIEmptyResponse> resp) {
     });
 [inline-code-end]
-
----

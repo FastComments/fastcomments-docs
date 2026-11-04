@@ -31,5 +31,3 @@ try {
     print('Εξαίρεση κατά την κλήση του DefaultApi->updateModerator: $e\n');
 }
 [inline-code-end]
-
----

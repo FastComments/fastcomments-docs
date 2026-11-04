@@ -1,4 +1,3 @@
----
 Ten endpoint pozwala pobrać konkretną odznakę użytkownika według jej unikalnego ID.
 
 Przykład żądania:
@@ -52,4 +51,3 @@ Możliwe odpowiedzi z błędem:
   "reason": "The user badge badge123 was not found."
 }
 [inline-code-end]
----

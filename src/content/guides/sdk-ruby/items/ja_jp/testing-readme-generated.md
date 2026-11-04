@@ -1,4 +1,3 @@
----
 必要な環境変数を設定します:
 
 ```bash
@@ -11,4 +10,3 @@ export FASTCOMMENTS_TENANT_ID="your-tenant-id"
 ```bash
 bundle exec rspec
 ```
----

@@ -15,5 +15,3 @@ To lahko storimo v kodi tako, da nastavimo zastavico **enableThirdPartyCookieByp
 To lahko nastavite tudi prek uporabniškega vmesnika za prilagajanje gradnika, pod `Enable Third-Party Cookie Popup`:
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.enable-third-party-cookie-bypass'; clickSelectors = ['.enable-third-party-cookie-bypass']; alt='Stran prilagajanja gradnika z označeno potrditveno polje Omogoči pojavno okno piškotkov tretjih oseb'; title='Omogočanje zaobidenja piškotkov tretjih oseb' app-screenshot-end]
-
----

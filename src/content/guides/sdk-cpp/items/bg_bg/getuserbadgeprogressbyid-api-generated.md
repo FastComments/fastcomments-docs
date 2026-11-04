@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Име | Тип | Задължително | Описание |
@@ -25,5 +24,3 @@ api->getUserBadgeProgressById(tenantId, userId)
         }catch(const std::exception&){}
     });
 [inline-code-end]
-
----

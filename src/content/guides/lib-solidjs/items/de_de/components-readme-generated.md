@@ -1,4 +1,3 @@
----
 Jedes Widget aus `fastcomments-react` ist unter demselben Namen verfügbar:
 
 | Komponente | Handle-Typ | Geladene Einbettung |
@@ -40,4 +39,3 @@ export default function ImageChat() {
 ### Regionen
 
 Geben Sie `region="eu"` an, um den Widget-Verkehr über den EU-Cluster zu leiten.
----

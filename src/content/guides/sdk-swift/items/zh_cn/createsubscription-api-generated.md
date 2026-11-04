@@ -1,4 +1,3 @@
----
 ## 参数
 
 | Name | Type | Location | Required | Description |
@@ -30,5 +29,3 @@ DefaultAPI.createSubscription(tenantId: tenantId, createAPIUserSubscriptionData:
     }
 }
 [inline-code-end]
-
----

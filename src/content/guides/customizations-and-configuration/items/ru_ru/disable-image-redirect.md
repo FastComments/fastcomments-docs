@@ -5,5 +5,3 @@
 [code-example-start config = {disableImageRedirect: true}; linesToHighlight = [6]; title = 'Disable Image Redirect'; code-example-end]
 
 Если вы не планируете обрабатывать щелчок по изображению самостоятельно (см. [onImageClicked](#callbacks)), мы рекомендуем сочетать это с применением стилей, чтобы убрать видимость того, что изображение можно нажать.
-
----

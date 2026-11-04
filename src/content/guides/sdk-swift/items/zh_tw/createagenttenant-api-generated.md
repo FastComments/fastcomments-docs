@@ -1,23 +1,16 @@
-Creates a new trial account for an AI agent without a human signup. No API key is needed to call this.
+為 AI 代理建立新的試用帳戶，無需人工註冊。呼叫此 API 不需要 API 金鑰。
 
-為 AI 代理建立一個新的試用帳戶，無需人工註冊。呼叫此功能不需要 API 金鑰。
+回應包含租戶 ID、可立即用於 REST API 與 MCP 伺服器的 API 金鑰，以及一個認領 URL。請將認領 URL 提供給您所服務的人員：在登入 FastComments 的狀態下開啟該連結，即可將帳戶綁定至該使用者。未認領的帳戶及其金鑰將在建立後 72 小時刪除。在認領之前，該帳戶受標準試用限制約束。
 
-The response contains the tenant id, an API key that works immediately against the REST API and the
-MCP server, and a claim URL. Give the claim URL to the human you are working for: opening it while
-logged in to FastComments attaches the account to them. Unclaimed accounts, and their keys, are
-deleted 72 hours after creation. Until claimed, the account has the standard trial limits.
+## 回應
 
-回應包含租戶 ID、可立即用於 REST API 與 MCP 伺服器的 API 金鑰，以及領取 URL。將領取 URL 提供給您所協助的人員：在登入 FastComments 後開啟該 URL，即可將帳戶與其關聯。未領取的帳戶及其金鑰會在建立後 72 小時內被刪除。未領取前，帳戶遵循標準的試用限制。
+回傳：[`CreateAgentTenantResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateAgentTenantResponse.swift)
 
-## Response
-
-Returns: [`CreateAgentTenantResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateAgentTenantResponse.swift)
-
-## Example
+## 範例
 
 [inline-code-attrs-start title = 'createAgentTenant 範例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 以下程式碼範例仍屬測試版。若有任何問題，請透過 http://github.com/OpenAPITools/openapi-generator/issues/new 回報。
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let createAgentTenantBody = CreateAgentTenantBody(name: "name_example", domains: ["domains_example"], agent: "agent_example") // CreateAgentTenantBody | 
@@ -33,5 +26,3 @@ DefaultAPI.createAgentTenant(createAgentTenantBody: createAgentTenantBody) { (re
     }
 }
 [inline-code-end]
-
----

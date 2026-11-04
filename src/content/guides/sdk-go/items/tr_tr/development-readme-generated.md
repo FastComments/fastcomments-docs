@@ -1,4 +1,3 @@
----
 Oluşturulan istemciyi OpenAPI spesifikasyonundan güncellemek için:
 
 ```bash
@@ -6,4 +5,3 @@ Oluşturulan istemciyi OpenAPI spesifikasyonundan güncellemek için:
 ```
 
 Bu, çalışan bir FastComments sunucusundan en son OpenAPI spesifikasyonunu indirir (veya yerel bir kopya kullanır) ve istemci kodunu yeniden oluşturur.
----

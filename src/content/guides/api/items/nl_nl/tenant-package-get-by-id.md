@@ -27,5 +27,3 @@ interface TenantPackageByIdResponse {
     tenantPackage: TenantPackage
 }
 [inline-code-end]
-
----

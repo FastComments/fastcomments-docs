@@ -32,5 +32,3 @@ try {
     print('Exception when calling ModerationApi->postSetCommentReviewStatus: $e\n');
 }
 [inline-code-end]
-
----

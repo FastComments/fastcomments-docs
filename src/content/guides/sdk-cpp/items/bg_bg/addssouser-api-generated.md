@@ -23,5 +23,3 @@ api->addSSOUser(tenantId, createAPISSOUserData)
     .then([](std::shared_ptr<AddSSOUserAPIResponse> resp) {
     });
 [inline-code-end]
-
----

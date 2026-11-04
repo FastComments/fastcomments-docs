@@ -1,15 +1,12 @@
----
-Eğer FastComments'i Shopify App Store'dan yüklediyseniz, mağaza alan adınız otomatik olarak kiracının yetkili alanlarına eklenir ve bir alan hatası görmemeniz gerekir. Bu sayfa, manuel kurulum yolunu izlediyseniz veya mağaza ön yüzünüz uygulama yüklendiğinde Shopify'a kayıtlı olmayan özel bir alan adında sunuluyorsa geçerlidir.
+FastComments'u Shopify App Store'dan yüklediyseniz, mağaza alan adınız kiracının yetkili alan adlarına otomatik olarak eklenir ve alan adı hatası görmemeniz gerekir. Bu sayfa, manuel yükleme yolunu izlediyseniz veya mağazanız, uygulama yüklendiği sırada Shopify'a kaydedilmemiş özel bir alan adı üzerinden sunuluyorsa geçerlidir.
 
-You may get an authorization error that looks like this:
+Şuna benzer bir yetkilendirme hatası alabilirsiniz:
 
 <div class="screenshot white-bg">
-    <div class="title">Alan Yapılandırması Eksik</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-webflow-step-5.png" alt="Alan Yapılandırması Eksik" />
+    <div class="title">Alan Adı Yapılandırması Eksik</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-webflow-step-5.png" alt="Alan Adı Yapılandırması Eksik" />
 </div>
 
-This means FastComments doesn't recognize the domain the widget is loading on as authorized for your tenant.
+Bu, FastComments'un widget'ın yüklendiği alan adını kiracınız için yetkili olarak tanımadığı anlamına gelir.
 
-To fix it, add the domain to your FastComments account: [Etki Alanlarını Yapılandır](https://fastcomments.com/auth/my-account/configure-domains).
-
----
+Bunu düzeltmek için alan adını FastComments hesabınıza ekleyin: [Alan Adlarını Yapılandır](https://fastcomments.com/auth/my-account/configure-domains).

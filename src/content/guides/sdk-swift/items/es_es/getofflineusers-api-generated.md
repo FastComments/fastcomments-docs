@@ -1,4 +1,3 @@
----
 Comentadores anteriores en la página que NO están actualmente en línea. Ordenados por displayName.  
 Utilízalo después de agotar /users/online para renderizar una sección "Members".  
 Paginación por cursor en commenterName: el servidor recorre el parcial {tenantId, urlId, commenterName} index desde afterName hacia adelante mediante $gt, sin costo de $skip.
@@ -39,5 +38,3 @@ PublicAPI.getOfflineUsers(tenantId: tenantId, urlId: urlId, options: PublicAPI.G
     }  
 }  
 [inline-code-end]  
-
----

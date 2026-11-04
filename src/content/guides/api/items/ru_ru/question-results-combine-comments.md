@@ -1,10 +1,10 @@
 [api-resource-header-start name = 'QuestionResultsCombinedWithComments'; route = 'GET /api/v1/question-results-aggregate/combine/comments'; creditsCost = 2; api-resource-header-end]
 
-Здесь происходит объединение результатов с комментариями. Полезно, например, для создания "recent positive and negative comments" графика для продукта.
+Здесь происходит объединение результатов с комментариями. Полезно, например, для создания графика «недавних положительных и отрицательных комментариев» для продукта.
 
-Вы можете выполнять поиск по диапазону значений (включительно), по одному или нескольким вопросам и по дате начала (включительно).
+Вы можете выполнять поиск по диапазону значений (включительно), по одному или нескольким вопросам, а также по начальной дате (включительно).
 
-The response structure is as follows:
+Структура ответа выглядит следующим образом:
 
 [inline-code-attrs-start title = 'Структура QuestionResultsCombinedWithCommentsResponse'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -27,20 +27,20 @@ interface CommentAndResult {
 }
 
 interface QuestionResultsCombinedWithCommentsResponse {
-    /** Строка даты, представляющая время вычисления этих данных, так как они могут быть из кэша. **/
+    /** Строка даты, представляющая момент расчёта этих данных, так как они могут быть получены из кэша. **/
     createdAt: string
     results: CommentAndResult[]
 }
 [inline-code-end]
 
-Here are the query parameters available for aggregation:
+Вот параметры запроса, доступные для агрегации:
 
 [inline-code-attrs-start title = 'Структура запроса QuestionResultsCombineComments'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface QuestionResultsAggregateRequestQueryParams {
     tenantId: string
     API_KEY: string
-    /** You can aggregate results for one or more questions. **/
+    /** Вы можете агрегировать результаты по одному или нескольким вопросам. **/
     questionId: string | string[]
     startDate?: string | number
     urlId?: string
@@ -51,7 +51,7 @@ interface QuestionResultsAggregateRequestQueryParams {
 }
 [inline-code-end]
 
-Here's an example request:
+Пример запроса:
 
 [inline-code-attrs-start title = 'Пример QuestionResultsCombineComments'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -59,7 +59,7 @@ curl --request GET \
   --url 'https://fastcomments.com/api/v1/question-results-aggregation/combine/comments?tenantId=demo&API_KEY=DEMO_API_SECRET&questionId=some-question-id&minValue=5&maxValue=10'
 [inline-code-end]
 
-Example response:
+Пример ответа:
 
 [inline-code-attrs-start title = 'Пример ответа QuestionResultsCombineComments'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -100,18 +100,16 @@ Example response:
 [inline-code-start]
 interface QuestionResultsCombineCommentsResponse {
     status: 'success' | 'failed'
-    /** Included on failure. **/
+    /** Включается при ошибке. **/
     code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key'
-    /** Included on failure. **/
+    /** Включается при ошибке. **/
     reason?: string
     data: QuestionResultsCombinedWithCommentsResponse
 }
 [inline-code-end]
 
-### Примечания по кэшированию и стоимости
+### Примечания о кэшировании и стоимости
 
-- When `forceRecalculate` is specified the cost is always `10`, instead of the normal `2`.
-- If the cache expires and data is recalculated, the cost is still a constant `2` if `forceRecalculate` is not specified.
+- Если указан параметр `forceRecalculate`, стоимость всегда составляет `10` вместо обычных `2`.
+- Если кэш истёк и данные пересчитываются, стоимость остаётся постоянной — `2`, если `forceRecalculate` не указан.
 - Это сделано для стимулирования использования кэша.
-
----

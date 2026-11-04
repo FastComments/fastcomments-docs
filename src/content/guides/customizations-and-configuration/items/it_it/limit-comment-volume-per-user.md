@@ -1,4 +1,3 @@
----
 Per impostazione predefinita, ogni utente può inviare fino a `5 commenti` nello stesso minuto.
 
 Questo viene tracciato tramite ID utente, ID utente anonimo e indirizzo IP (hashato).
@@ -9,5 +8,3 @@ Questo può essere personalizzato senza codice, nella pagina di personalizzazion
 
 Nota che se stai usando l'API di creazione dei commenti potresti voler passare l'indirizzo `ip` originale dell'utente nella richiesta al nostro backend affinché il limitatore di velocità venga applicato
 per utente e non globalmente al tuo account.
-
----

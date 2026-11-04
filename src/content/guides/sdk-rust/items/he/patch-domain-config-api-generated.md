@@ -28,5 +28,3 @@ async fn run_example() -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
-
----

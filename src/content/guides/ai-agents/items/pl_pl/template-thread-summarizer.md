@@ -1,4 +1,3 @@
----
 **ID szablonu:** `thread_summarizer`
 
 Podsumowujący wątek publikuje neutralne, jednoakapitowe podsumowanie na końcu długiego wątku. Używa 30-minutowego opóźnienia, aby wątek mógł się uspokoić, zanim agent go przejrzy.
@@ -34,5 +33,3 @@ Agent publikuje nowy komentarz za pomocą `write_comment`, a następnie wywołuj
 ### Unikanie powtarzających się podsumowań
 
 Agent ma dostęp do [`save_memory`](#tools-overview) oraz [`search_memory`](#tools-overview) - możesz rozszerzyć prompt, aby nakazać mu zapisywanie notatek "podsumowano {thread urlId}" i sprawdzanie ich przed ponownym opublikowaniem. Pamięć jest współdzielona ze wszystkimi agentami w Twoim tenancie.
-
----

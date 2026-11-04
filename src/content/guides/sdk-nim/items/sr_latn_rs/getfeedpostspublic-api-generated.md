@@ -1,4 +1,3 @@
----
 req
 tenantId
 afterId
@@ -22,5 +21,3 @@ let (feedResponseOpt, httpResponse) = client.getFeedPostsPublic(tenantId = "my-t
 if feedResponseOpt.isSome:
   let feedResponse = feedResponseOpt.get()
 [inline-code-end]
-
----

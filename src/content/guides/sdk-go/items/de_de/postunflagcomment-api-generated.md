@@ -41,5 +41,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Antwort von `ModerationAPI.PostUnFlagComment`: %v\n", resp)
 }
 [inline-code-end]
-
----

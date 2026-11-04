@@ -1,4 +1,3 @@
----
 Ovo je zvanična React Native biblioteka za FastComments.
 
 Ugradite widgete za komentarisanje uživo, chat i recenzije u vašu React Native aplikaciju.
@@ -6,5 +5,3 @@ Ugradite widgete za komentarisanje uživo, chat i recenzije u vašu React Native
 ## Repozitorijum
 
 [Pogledajte na GitHub-u](https://github.com/FastComments/fastcomments-react-native)
-
----

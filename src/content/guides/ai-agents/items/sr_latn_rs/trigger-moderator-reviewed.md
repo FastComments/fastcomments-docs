@@ -19,5 +19,3 @@ Radnja ljudskog moderatora na strani za moderaciju, u widgetu komentara, ili pre
 
 - "Reviewed" je jedno od stanja u redu za moderaciju koja se prate odvojeno od "approved" i "spam". Komentar može biti approved-and-reviewed, approved-but-not-reviewed, itd. Pogledajte [How Approvals Work](/guide-moderation.html#moderation-approvals) u vodiču za moderaciju.
 - Ovaj okidač se često aktivira na tenantima sa mnogo moderatora. Pretplatite se selektivno i planirajte budžet u skladu s tim.
-
----

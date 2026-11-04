@@ -1,3 +1,1 @@
----
 Postavite uživo komentare na blog objave i stranice proizvoda u BigCommerceu uređivanjem predloška teme, s posebnim isječkom za Page Builder.
----

@@ -1,24 +1,24 @@
-If your val already knows who the visitor is, Secure SSO hands that identity to the widget so they never see a second login. There are no endpoints to build and nothing to call at runtime: you compute three values server-side and pass them in the widget config.
+Als je val al weet wie de bezoeker is, geeft Secure SSO die identiteit door aan de widget zodat deze nooit een tweede login te zien krijgt. Er zijn geen endpoints om te bouwen en niets om tijdens runtime aan te roepen: je berekent drie waarden server-side en geeft ze door in de widget-config.
 
-Val Town ships zero-config login with `std/oauth`, so the visitor can sign in with the Val Town account they already have. Swap that for whatever your app uses; the FastComments half does not change.
+Val Town levert zero-config login mee met `std/oauth`, zodat de bezoeker kan inloggen met het Val Town-account dat hij al heeft. Vervang dat door wat jouw app gebruikt; het FastComments-gedeelte verandert niet.
 
-## Build the payload on the server
+## Bouw de payload op de server
 
-The API secret signs the payload and must never reach browser code. Install the SDK from npm, which works on Val Town's Deno runtime as-is:
+De API secret ondertekent de payload en mag nooit in browsercode terechtkomen. Installeer de SDK vanaf npm, die op Val Town's Deno-runtime direct werkt:
 
 [inline-code-attrs-start title = 'sso.ts'; type='javascript' inline-code-attrs-end]
 [inline-code-start]
 import { SecureSSOPayloadBuilder } from "npm:fastcomments-sdk/server";
 
 export function buildSSOPayload(user) {
-  // id must be stable for the same person, or they get a new comment identity on every login.
+  // id moet stabiel zijn voor dezelfde persoon, anders krijgt die bij elke login een nieuwe comment-identiteit.
   const id = `vt-${user.id}`;
 
   return new SecureSSOPayloadBuilder(Deno.env.get("FASTCOMMENTS_API_SECRET"), {
     id,
-    // email is required and must be unique.
+    // email is verplicht en moet uniek zijn.
     email: user.email ?? `${id}@users.noreply.val.town`,
-    // username is required and cannot be an email.
+    // username is verplicht en mag geen e-mailadres zijn.
     username: user.username ?? id,
     displayName: user.username ?? undefined,
     avatar: user.links.profileImageUrl ?? undefined,
@@ -26,11 +26,11 @@ export function buildSSOPayload(user) {
 }
 [inline-code-end]
 
-`getPayload()` returns `{ userDataJSONBase64, verificationHash, timestamp }`. Those three values are all that reach the browser. The secret signs them and is then dropped, so nothing in the page lets a reader forge a different user.
+`getPayload()` geeft `{ userDataJSONBase64, verificationHash, timestamp }` terug. Die drie waarden zijn alles wat de browser bereikt. De secret ondertekent ze en wordt daarna weggegooid, dus niets op de pagina stelt een lezer in staat om een andere gebruiker te vervalsen.
 
-## Pass it to the widget
+## Geef het door aan de widget
 
-[inline-code-attrs-start title = 'Widgetconfiguratie met SSO'; type='javascript' inline-code-attrs-end]
+[inline-code-attrs-start title = 'Widget config met SSO'; type='javascript' inline-code-attrs-end]
 [inline-code-start]
 import { getOAuthUserData, oauthMiddleware } from "https://esm.town/v/std/oauth/middleware.ts";
 
@@ -46,20 +46,20 @@ app.get("/", async (c) => {
       : { sso: { loginURL: "/auth/login" } }),
   };
 
-  // ...render the widget with this config
+  // ...render de widget met deze config
 });
 
 export default oauthMiddleware(app.fetch);
 [inline-code-end]
 
-`oauthMiddleware` adds `GET /auth/login`, `GET /auth/callback` and `POST /auth/logout` for you. Note that logout is a **POST**, while the widget navigates to `logoutURL` with a GET, so point `logoutURL` at a small route of your own that submits the POST.
+`oauthMiddleware` voegt `GET /auth/login`, `GET /auth/callback` en `POST /auth/logout` voor je toe. Let op: logout is een **POST**, terwijl de widget naar `logoutURL` navigeert met een GET, dus laat `logoutURL` wijzen naar een eigen kleine route die de POST verstuurt.
 
-When the visitor is logged out, pass `sso` with only a `loginURL`. The widget then shows a login prompt instead of an anonymous comment box.
+Wanneer de bezoeker is uitgelogd, geef je `sso` door met alleen een `loginURL`. De widget toont dan een login-prompt in plaats van een anoniem commentaarvak.
 
-## Things that go wrong
+## Dingen die misgaan
 
-`timestamp` is epoch **milliseconds**, must not be in the future, and must not be more than two days old. Generate it on the server in the same request that computes the hash. Generating it in the browser is the classic failure: the value differs from the one that was hashed and every comment is rejected.
+`timestamp` is epoch in **milliseconden**, mag niet in de toekomst liggen en mag niet ouder zijn dan twee dagen. Genereer het op de server in dezelfde request waarin de hash wordt berekend. Het in de browser genereren is de klassieke fout: de waarde verschilt van degene die gehasht is en elk commentaar wordt geweigerd.
 
-Never set `isAdmin` or `isModerator` from the identity provider. Signing in with a Val Town account says nothing about who should moderate your site.
+Zet `isAdmin` of `isModerator` nooit op basis van de identity provider. Inloggen met een Val Town-account zegt niets over wie jouw site moet modereren.
 
-See the [SSO guide](/guide-customizations-and-configuration.html#sso-secure) for the full field list, group-gated threads, and badges.
+Zie de [SSO-gids](/guide-customizations-and-configuration.html#sso-secure) voor de volledige lijst met velden, threads met groepstoegang en badges.

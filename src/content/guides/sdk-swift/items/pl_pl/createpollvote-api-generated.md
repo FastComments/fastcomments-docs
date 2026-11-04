@@ -1,13 +1,11 @@
-Record a vote on a poll, or move an existing one to a different option. A voter has at most one vote per
-poll, so calling this again for the same voter moves their vote rather than adding one.
+Zagłosuj w ankiecie lub przenieś istniejący głos na inną opcję. Głosujący ma co najwyżej jeden głos na ankietę, więc ponowne wywołanie dla tego samego głosującego przenosi jego głos, a nie dodaje nowego.
 
-This obeys the site's poll settings: if voting is set to logged-in users only, a vote with just an
-anonUserId is rejected, and anonymous votes are rate limited per IP per poll.
+Funkcja respektuje ustawienia ankiet witryny: jeśli głosowanie jest ograniczone do zalogowanych użytkowników, głos z samym anonUserId zostanie odrzucony, a anonimowe głosy są ograniczone limitem na IP na ankietę.
 
 ## Parametry
 
-| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
-|------|------|----------|----------|------|
+| Nazwa | Typ | Lokalizacja | Wymagany | Opis |
+|------|------|----------|----------|-------------|
 | tenantId | string | query | Tak |  |
 
 ## Odpowiedź
@@ -16,9 +14,9 @@ Zwraca: [`CreatePollVoteResponse`](https://github.com/FastComments/fastcomments-
 
 ## Przykład
 
-[inline-code-attrs-start title = 'createPollVote Przykład'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Przykład createPollVote'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Następujące przykłady kodu są nadal w wersji beta. W przypadku jakichkolwiek problemów, proszę zgłosić je pod adresem http://github.com/OpenAPITools/openapi-generator/issues/new
+// Poniższe przykłady kodu są wciąż w wersji beta. W przypadku problemów zgłoś je na http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 

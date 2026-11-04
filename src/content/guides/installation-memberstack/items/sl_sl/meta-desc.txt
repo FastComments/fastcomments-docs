@@ -1,3 +1,1 @@
----
 Omejite svoj oddelek za komentarje na prijavljene člane Memberstack z enim samim odlomkom, tako da lahko objavljajo le plačani člani.
----

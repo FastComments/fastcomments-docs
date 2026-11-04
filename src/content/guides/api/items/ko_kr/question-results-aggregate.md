@@ -1,62 +1,62 @@
 [api-resource-header-start name = 'QuestionResultsAggregate'; route = 'GET /api/v1/question-results-aggregate'; creditsCost = 2; api-resource-header-end]
 
-여기서 결과의 집계가 수행됩니다.
+여기서 결과 집계가 이루어집니다.
 
-The aggregation response structure is as follows:
+집계 응답 구조는 다음과 같습니다:
 
 [inline-code-attrs-start title = 'QuestionResultsAggregationResult 구조'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface QuestionResultDataPoint {
-    /** 현재 데이터 포인트(날짜 버킷 또는 페이지)에 대해 값별 발생 횟수를 저장한 맵. **/
+    /** 현재 데이터 포인트(날짜 버킷 또는 페이지)에서 해당 값의 발생 횟수를 값별로 매핑한 것입니다. **/
     v: Map<ValueAsString, number>
     total: number
 }
 
 interface QuestionResultsAggregationResult {
-    /** 참고 - timeBucket이 지정되지 않으면 null입니다. **/
+    /** 참고 - timeBucket이 지정되지 않은 경우 null입니다. **/
     dataByDateBucket?: Map<DateString, QuestionResultDataPoint>
     dataByUrlId?: Map<URLIdString, QuestionResultDataPoint>
     countsByValue?: Map<ValueAsString, number>
-    /** 집계된 결과의 총 수입니다. **/
+    /** 집계된 결과의 총 개수입니다. **/
     total: number
-    /** 계산된 가중 평균입니다. 보통 소수점 둘째 자리 또는 그 이하입니다. **/
+    /** 계산된 가중 평균입니다. 부동 소수점 수이며, 보통 소수점 둘째 자리 이하입니다. **/
     average: number
-    /** 데이터가 캐시에서 제공될 수 있으므로 이 데이터가 계산된 시점을 나타내는 날짜 문자열입니다. **/
+    /** 이 데이터가 계산된 시점을 나타내는 날짜 문자열입니다. 캐시에서 가져올 수 있기 때문입니다. **/
     createdAt: string
 }
 [inline-code-end]
 
-Here are the query parameters available for aggregation:
+집계에 사용할 수 있는 쿼리 파라미터는 다음과 같습니다:
 
 [inline-code-attrs-start title = 'QuestionResultsAggregation 요청 구조'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface QuestionResultsAggregateRequestQueryParams {
     tenantId: string
     API_KEY: string
-    /** You can aggregate results for one or more questions. **/
+    /** 하나 이상의 질문에 대해 결과를 집계할 수 있습니다. **/
     questionId: string | string[]
     startDate?: string | number
     timeBucket?: 'day' | 'month' | 'year'
-    /** Aggregate for a specific page. **/
+    /** 특정 페이지에 대해 집계합니다. **/
     urlId?: string
-    /** Aggregate for a specific user. **/
+    /** 특정 사용자에 대해 집계합니다. **/
     userId?: string
-    /** Force recalculate now and update the cache. **/
+    /** 지금 즉시 재계산하고 캐시를 업데이트합니다. **/
     forceRecalculate?: boolean
 }
 [inline-code-end]
 
-Here's an example request:
+요청 예시는 다음과 같습니다:
 
-[inline-code-attrs-start title = 'QuestionResultsAggregation 예제'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'QuestionResultsAggregation 예시'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/question-results-aggregation?tenantId=demo&API_KEY=DEMO_API_SECRET&questionId=some-question-id'
 [inline-code-end]
 
-Example response:
+응답 예시:
 
-[inline-code-attrs-start title = 'QuestionResultsAggregation 응답 예제'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'QuestionResultsAggregation 응답 예시'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
     {
         "average": 8.33,
@@ -82,23 +82,21 @@ Example response:
 [inline-code-start]
 interface QuestionResultsAggregationResponse {
     status: 'success' | 'failed'
-    /** Included on failure. **/
+    /** 실패 시 포함됩니다. **/
     code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key'
-    /** Included on failure. **/
+    /** 실패 시 포함됩니다. **/
     reason?: string
     data: QuestionResultsAggregationResult
 }
 [inline-code-end]
 
-### Performance Notes
+### 성능 참고 사항
 
-- For a cache miss aggregations generally take five seconds per million results.
-- Otherwise, requests are constant-time.
+- 캐시 미스 시 집계는 일반적으로 백만 개의 결과당 약 5초가 걸립니다.
+- 그 외의 경우 요청은 일정한 시간 내에 처리됩니다.
 
-### Caching and Cost Notes
+### 캐싱 및 비용 참고 사항
 
-- When `forceRecalculate` is specified the cost is always `10`, instead of the normal `2`.
-- If the cache expires and data is recalculated, the cost is still a constant `2` if `forceRecalculate` is not specified. The cache expires based on the data set size aggregated (can vary between 30 seconds and 5 minutes).
-- This is to incentivize using the cache.
-
----
+- `forceRecalculate`가 지정되면 비용은 일반적인 `2` 대신 항상 `10`입니다.
+- 캐시가 만료되어 데이터가 재계산되더라도, `forceRecalculate`가 지정되지 않은 경우 비용은 여전히 일정하게 `2`입니다. 캐시는 집계된 데이터 세트 크기에 따라 만료됩니다(30초에서 5분 사이로 변동 가능).
+- 이는 캐시 사용을 장려하기 위한 것입니다.

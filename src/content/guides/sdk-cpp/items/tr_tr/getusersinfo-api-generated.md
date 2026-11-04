@@ -1,19 +1,19 @@
-Bulk user info for a tenant. Given userIds, return display info from User / SSOUser.  
-Used by the comment widget to enrich users that just appeared via a presence event.  
-No page context: privacy is enforced uniformly (private profiles are masked).
+Bir kiracı (tenant) için toplu kullanıcı bilgisi. Verilen userIds değerlerine göre, User / SSOUser kaynaklarından görüntüleme bilgilerini döndürür.
+Yorum widget'ı tarafından, bir varlık (presence) olayı aracılığıyla yeni görünen kullanıcıları zenginleştirmek için kullanılır.
+Sayfa bağlamı yoktur: gizlilik tek tip olarak uygulanır (özel profiller maskelenir).
 
-## Parameters
+## Parametreler
 
-| Name | Type | Required | Description |
+| Ad | Tür | Zorunlu | Açıklama |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| ids | string | Yes |  |
+| tenantId | string | Evet |  |
+| ids | string | Evet |  |
 
-## Response
+## Yanıt
 
 Döndürür: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PageUsersInfoResponse.h)
 
-## Example
+## Örnek
 
 [inline-code-attrs-start title = 'getUsersInfo Örneği'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -26,7 +26,7 @@ api->getUsersInfo(tenantId, ids).then([](pplx::task<std::shared_ptr<PageUsersInf
         auto response = t.get();
         // yanıtı işle
     }catch(const std::exception&){
-        // hatayı işle
+        // hatayı yönet
     }
 });
 [inline-code-end]

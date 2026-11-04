@@ -1,4 +1,3 @@
----
 ## Parameters
 
 | Naam | Type | Vereist | Beschrijving |
@@ -19,5 +18,3 @@ if pkgOpt.isSome:
   let pkg = pkgOpt.get()
   echo pkg
 [inline-code-end]
-
----

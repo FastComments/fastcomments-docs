@@ -28,5 +28,3 @@ try {
     print('Exception when calling ModerationApi->getUserInternalProfile: $e\n');
 }
 [inline-code-end]
-
----

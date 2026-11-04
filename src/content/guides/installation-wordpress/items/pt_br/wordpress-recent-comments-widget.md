@@ -1,4 +1,3 @@
----
 O widget Recent Comments exibe os comentários mais recentes publicados em todo o seu site. É útil em barras laterais, rodapés ou em qualquer lugar onde você queira destacar atividade recente para incentivar mais leitura.
 
 ## Opções
@@ -30,5 +29,3 @@ Abra o **Editor do Site** em **Aparência > Editor**. Navegue até a parte do te
 ## Solução de problemas
 
 O widget só é exibido depois que a configuração do FastComments estiver concluída e um tenant ID for armazenado. Se a área do widget estiver em branco, conclua a configuração em **FastComments** no painel do WordPress e recarregue a página.
-
----

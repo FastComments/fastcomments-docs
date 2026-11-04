@@ -1,6 +1,6 @@
 먼저 웹사이트 빌더에서 사이트를 엽니다.
 
-Now if you don't already have a section where you want the comments to go, add a blank section:
+댓글을 넣고 싶은 섹션이 아직 없다면, 빈 섹션을 추가하세요:
 
 <div class="screenshot white-bg">
     <div class="title">섹션 추가</div>
@@ -11,18 +11,18 @@ Now if you don't already have a section where you want the comments to go, add a
     <img class="screenshot-image" src="/images/installation-guides/hostinger-step-1-add-section-2.png" alt="섹션 추가" />
 </div>
 
-Now add the Zyro Embed widget by clicking our new section and clicking `Add element` in the top and then `Embed code`:
+이제 새로 추가한 섹션을 클릭하고 상단에서 `Add element`를 클릭한 다음 `Embed code`를 클릭하여 Zyro Embed 위젯을 추가하세요:
 
 <div class="screenshot white-bg">
-    <div class="title">임베드 코드</div>
-    <img class="screenshot-image" src="/images/installation-guides/hostinger-step-1-add-section-3.png" alt="임베드 코드" />
+    <div class="title">Embed code</div>
+    <img class="screenshot-image" src="/images/installation-guides/hostinger-step-1-add-section-3.png" alt="Embed code" />
 </div>
 
-You'll get something like this:
+다음과 같은 화면이 나타납니다:
 
 <div class="screenshot white-bg">
     <div class="title">코드 섹션 추가됨</div>
     <img class="screenshot-image" src="/images/installation-guides/hostinger-step-1-add-section-4.png" alt="코드 섹션 추가됨" />
 </div>
 
-Now we're ready for `Step 2`.
+이제 `Step 2`를 진행할 준비가 되었습니다.

@@ -68,5 +68,3 @@ interface AuditLogsResponse {
     auditLogs: AuditLog[]
 }
 [inline-code-end]
-
----

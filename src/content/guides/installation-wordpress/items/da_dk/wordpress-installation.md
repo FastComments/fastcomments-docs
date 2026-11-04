@@ -1,4 +1,3 @@
----
 The FastComments WordPress-plugininstallation er designet til at være nem og begrænse eventuel nedetid for kommentarfunktionen på dit site. Pluginet skifter ikke over fra WordPress-pluginet, før synkroniseringen er fuldført.
 
 Først bør du indstille forventningerne hos dine moderatorer i overensstemmelse med detaljerne i afsnittet `Moderation` nedenfor. Gør dem opmærksomme på, at de snart vil moderere fra FastComments og ikke fra WordPress-dashboardet.
@@ -14,5 +13,3 @@ Dernæst har du mulighed for at vælge, om du allerede har en FastComments-konto
 Kommentarer uploades i batches og sorteres ved hjælp af eksisterende indeks i din WordPress-database for at begrænse belastningen på dit site.
 
 Når synkroniseringen er fuldført, vil det standard WordPress-kommentarsystem blive erstattet af FastComments. Vi håber, du vil elske vores platform, men hvis ikke, så [kontakt os](https://fastcomments.com/auth/my-account/help).  
-
----

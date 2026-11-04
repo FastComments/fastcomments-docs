@@ -1,21 +1,21 @@
-Remove a poll from its comment, along with every vote cast on it. The comment itself is left alone.
+Usuwa ankietę z komentarza, wraz ze wszystkimi oddanymi na nią głosami. Sam komentarz pozostaje nietknięty.
 
-## Parameters
+## Parametry
 
-| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
-|------|------|----------|----------|------|
-| tenantId | string | query | Yes |  |
-| commentId | string | path | Yes |  |
+| Nazwa | Typ | Lokalizacja | Wymagany | Opis |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Tak |  |
+| commentId | string | path | Tak |  |
 
-## Response
+## Odpowiedź
 
-Returns: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
+Zwraca: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
-## Example
+## Przykład
 
-[inline-code-attrs-start title = 'deletePoll Przykład'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Przykład deletePoll'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importuj klasy:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -28,10 +28,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Skonfiguruj autoryzację kluczem API: api_key
+    // Configure API key authorization: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Odkomentuj następującą linię, aby ustawić prefiks dla klucza API, np. "Token" (defaults to null)
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -42,14 +42,12 @@ public class Example {
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Wyjątek podczas wywoływania DefaultApi#deletePoll");
-      System.err.println("Kod statusu: " + e.getCode());
-      System.err.println("Powód: " + e.getResponseBody());
-      System.err.println("Nagłówki odpowiedzi: " + e.getResponseHeaders());
+      System.err.println("Exception when calling DefaultApi#deletePoll");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }
 }
 [inline-code-end]
-
----

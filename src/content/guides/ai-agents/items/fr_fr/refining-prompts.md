@@ -53,5 +53,3 @@ Trois ou quatre cycles d'affinage + replay suffisent généralement pour obtenir
 ### Alternative : édition directe
 
 Vous n'êtes pas obligé d'utiliser Affiner l'invite - vous pouvez aussi simplement modifier l'agent via le formulaire principal d'édition. Le seul avantage d'Affiner l'invite est d'épingler un cas échouant spécifique afin que vous ne perdiez pas de vue ce que vous êtes en train de corriger.
-
----

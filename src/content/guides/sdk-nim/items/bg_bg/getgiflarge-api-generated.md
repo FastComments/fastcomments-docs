@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Име | Тип | Задължително | Описание |
@@ -21,5 +20,3 @@ if gifOpt.isSome:
   let gif = gifOpt.get()
   echo gif
 [inline-code-end]
-
----

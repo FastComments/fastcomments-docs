@@ -1,4 +1,3 @@
----
 ב-FastComments, אנחנו כותבים את התוספים שלנו בעצמנו, תוך שימוש באותו ה-API. אתה יכול לצפות בקוד הלא-ממוזער
 של התוספים האלה בנקודות הקצה הבאות:
 
@@ -22,5 +21,3 @@ https://fastcomments.com/js/comment-ui/extensions/comment-ui.moderation.extensio
 תוסף הצ'אט החי (בשילוב עם תצורה ועיצוב אחרים) הופך את ווידג'ט התגובות לרכיב צ'אט חי.
 
 https://fastcomments.com/js/comment-ui/extensions/live-chat.extension.js
-
----

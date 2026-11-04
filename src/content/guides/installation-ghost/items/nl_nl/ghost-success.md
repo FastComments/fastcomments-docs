@@ -1,4 +1,3 @@
----
 Nu zouden we FastComments Live Commenting ingeschakeld moeten hebben voor onze leden!
 
 <div class="screenshot white-bg">
@@ -7,5 +6,3 @@ Nu zouden we FastComments Live Commenting ingeschakeld moeten hebben voor onze l
 </div>
 
 Gefeliciteerd met het opzetten van FastComments met Ghost! Als je een Domain Error bent tegengekomen, of als je wilt leren hoe je het commentaargedeelte kunt aanpassen, lees verder!
-
----

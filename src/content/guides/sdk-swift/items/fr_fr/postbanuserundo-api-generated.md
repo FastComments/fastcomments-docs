@@ -31,5 +31,3 @@ ModerationAPI.postBanUserUndo(tenantId: tenantId, banUserUndoParams: banUserUndo
     }
 }
 [inline-code-end]
-
----

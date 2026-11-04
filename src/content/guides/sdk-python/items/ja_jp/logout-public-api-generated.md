@@ -1,4 +1,3 @@
----
 ## レスポンス
 
 戻り値: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/api_empty_response.py)
@@ -31,5 +30,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->logout_public: %s\n" % e)
 [inline-code-end]
-
----

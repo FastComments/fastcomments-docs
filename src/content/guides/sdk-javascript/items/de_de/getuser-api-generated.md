@@ -1,4 +1,3 @@
----
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
@@ -22,5 +21,3 @@ async function main(): Promise<void> {
 }
 main();
 [inline-code-end]
-
----

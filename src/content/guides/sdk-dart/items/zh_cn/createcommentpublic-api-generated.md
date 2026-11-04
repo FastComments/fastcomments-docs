@@ -1,4 +1,3 @@
----
 ## 参数
 
 | 名称 | 类型 | 位置 | 必需 | 描述 |
@@ -34,5 +33,3 @@ try {
     print('Exception when calling PublicApi->createCommentPublic: $e\n');
 }
 [inline-code-end]
-
----

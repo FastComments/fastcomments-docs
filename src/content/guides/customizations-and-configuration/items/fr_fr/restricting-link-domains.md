@@ -1,4 +1,3 @@
----
 Par défaut, FastComments autorise les liens vers n'importe quel site externe.
 
 Cela peut être limité à une liste souhaitée de sites ou de domaines. Tenter de publier un lien vers un site ou un domaine qui ne figure pas dans la liste définie entraînera l'affichage d'une erreur à l'utilisateur.

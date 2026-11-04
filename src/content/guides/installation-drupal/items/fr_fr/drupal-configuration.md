@@ -39,5 +39,3 @@ Voir la section `Single Sign-On (SSO)` pour plus de détails.
 - **Email notifications** - Envoyer un e‑mail à l’auteur du contenu lorsqu’un nouveau commentaire est publié sur son contenu.
 
 Pour la résidence des données UE, voir la section `EU Data Residency`.
-
----

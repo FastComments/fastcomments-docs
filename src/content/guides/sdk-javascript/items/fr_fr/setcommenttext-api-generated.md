@@ -37,5 +37,3 @@ Renvoie : [`PublicAPISetCommentTextResponse`](https://github.com/FastComments/fa
   );
 })();
 [inline-code-end]
-
----

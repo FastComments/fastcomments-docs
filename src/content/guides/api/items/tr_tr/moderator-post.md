@@ -1,4 +1,3 @@
----
 [api-resource-header-start name = 'Moderator'; route = 'POST /api/v1/moderators'; creditsCost = 1; api-resource-header-end]
 
 Bu rota tek bir `Moderator` ekleme yeteneği sağlar.
@@ -66,5 +65,3 @@ interface ModeratorPostResponse {
     moderator?: Moderator; // Başarılı olduğunda oluşturulan moderatorun tamamını döndürürüz.
 }
 [inline-code-end]
-
----

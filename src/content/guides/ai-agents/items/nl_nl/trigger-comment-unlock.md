@@ -17,5 +17,3 @@ Wordt geactiveerd wanneer een reactie wordt ontgrendeld.
 ### Tegenhanger
 
 Zie [Trigger: Comment Locked](#trigger-comment-lock).
-
----

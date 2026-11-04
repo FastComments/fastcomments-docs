@@ -38,5 +38,3 @@
 </div>
 
 이제 다음 단계의 FastComments Framer 코드 스니펫을 적용할 준비가 되었습니다.
-
----

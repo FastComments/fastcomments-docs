@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Ім'я | Тип | Розташування | Обов'язково | Опис |
@@ -30,5 +29,3 @@ DefaultAPI.createTenant(tenantId: tenantId, createTenantBody: createTenantBody) 
     }
 }
 [inline-code-end]
-
----

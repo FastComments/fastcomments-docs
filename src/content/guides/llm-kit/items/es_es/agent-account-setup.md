@@ -1,4 +1,3 @@
----
 Un agente de codificación como Claude Code, Cursor o un asistente basado en MCP puede configurar FastComments para ti sin que tengas que rellenar el formulario de registro. Esto es útil cuando le pides a un agente que "añada comentarios a mi sitio" y aún no tienes una cuenta.
 
 ### Cómo funciona
@@ -19,5 +18,3 @@ Cada inicio de sesión posee una cuenta. Si abres un enlace de reclamación mien
 ### Para autores de agentes
 
 Las instrucciones para agentes en [fastcomments.com/agents.md](https://fastcomments.com/agents.md) describen la llamada de creación de cuenta, los campos en la respuesta y cómo entregar el enlace de reclamación a la persona para la que trabajas. La llamada no necesita una clave API y está limitada por tasa por dirección IP.
-
----

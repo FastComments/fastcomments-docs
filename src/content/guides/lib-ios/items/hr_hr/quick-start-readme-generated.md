@@ -1,4 +1,3 @@
----
 Minimalna konfiguracija za prikaz widgeta za komentare:
 
 ```swift

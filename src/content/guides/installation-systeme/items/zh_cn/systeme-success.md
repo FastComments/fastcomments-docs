@@ -6,5 +6,3 @@
 </div>
 
 恭喜你已在 Systeme.io 上设置好 FastComments！如果你遇到 Domain Error，或想了解如何自定义评论区域，请继续阅读！
-
----

@@ -1,4 +1,3 @@
----
 ## Parameter
 
 | Name | Typ | Speicherort | Erforderlich | Beschreibung |
@@ -58,5 +57,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.GetUserNotifications`: %v\n", resp)
 }
 [inline-code-end]
-
----

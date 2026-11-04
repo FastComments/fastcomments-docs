@@ -1,3 +1,1 @@
----
 Beslut per bruger, hvem der kan læse, og hvem der kan poste, direkte fra din SSO-payload. Specifikationen, hvordan du implementerer den, og eksempler på API‑kald.
----

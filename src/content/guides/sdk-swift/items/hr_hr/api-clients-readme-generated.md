@@ -1,29 +1,29 @@
-The FastComments SDK pruža tri API klijenta:
+FastComments SDK pruža tri API klijenta:
 
-### PublicAPI – Metode sigurne za klijenta
+### PublicAPI - Metode sigurne za klijenta
 
-The `PublicAPI` contains methods that are safe to call from client-side code (iOS/macOS apps). These methods:
-- Do not require an API key
-- Can use SSO tokens for authentication
-- Are rate-limited per user/device
-- Are suitable for end-user facing applications
+`PublicAPI` sadrži metode koje je sigurno pozivati iz koda na strani klijenta (iOS/macOS aplikacije). Ove metode:
+- Ne zahtijevaju API ključ
+- Mogu koristiti SSO tokene za autentifikaciju
+- Ograničene su brzinom po korisniku/uređaju
+- Pogodne su za aplikacije namijenjene krajnjim korisnicima
 
-**Primjer upotrebe**: Fetching and creating comments in your iOS app
+**Primjer upotrebe**: Dohvaćanje i stvaranje komentara u vašoj iOS aplikaciji
 
-### DefaultAPI – Metode na strani servera
+### DefaultAPI - Metode na strani poslužitelja
 
-The `DefaultAPI` contains authenticated methods that require an API key. These methods:
-- Require your FastComments API key
-- Should ONLY be called from server-side code
-- Provide full access to your FastComments data
-- Are rate-limited per tenant
+`DefaultAPI` sadrži autentificirane metode koje zahtijevaju API ključ. Ove metode:
+- Zahtijevaju vaš FastComments API ključ
+- Trebaju se pozivati SAMO iz koda na strani poslužitelja
+- Pružaju potpuni pristup vašim FastComments podacima
+- Ograničene su brzinom po tenantu
 
-**Primjer upotrebe**: Administrative operations, bulk data export, user management
+**Primjer upotrebe**: Administrativne operacije, izvoz podataka u serijama, upravljanje korisnicima
 
-### ModerationAPI – Metode nadzorne ploče moderatora
+### ModerationAPI - Metode moderatorske ploče
 
-The `ModerationAPI` provides an extensive suite of live and fast moderation APIs. Every `ModerationAPI` method accepts an `sso` parameter and can authenticate via SSO or a FastComments.com session cookie.
+`ModerationAPI` pruža opsežan skup API-ja za moderaciju uživo i brzu moderaciju. Svaka metoda `ModerationAPI` prihvaća `sso` parametar i može se autentificirati putem SSO-a ili FastComments.com kolačića sesije.
 
-**Primjer upotrebe**: Building a moderation experience for moderators of your community
+**Primjer upotrebe**: Izgradnja iskustva moderacije za moderatore vaše zajednice
 
-**VAŽNO**: Never expose your API key in client-side code. API keys should only be used server-side.
+**VAŽNO**: Nikada ne otkrivajte svoj API ključ u kodu na strani klijenta. API ključevi trebaju se koristiti samo na strani poslužitelja.

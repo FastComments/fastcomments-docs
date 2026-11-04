@@ -1,4 +1,3 @@
----
 AB veri merkezini kullanmak için, yapılandırmanızda `region` alanını şu şekilde ayarlayın:
 
 ```swift

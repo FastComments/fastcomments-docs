@@ -1,4 +1,3 @@
----
 Sproži se, ko je komentar odklenjen.
 
 ### Kontekst, ki ga prejme agent
@@ -18,5 +17,3 @@ Sproži se, ko je komentar odklenjen.
 ### Par
 
 Glej [Sprožilec: Komentar zaklenjen](#trigger-comment-lock).
-
----

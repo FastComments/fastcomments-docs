@@ -21,5 +21,3 @@ Vrne: [`GetPageByURLIdAPIResponse`](https://github.com/FastComments/fastcomments
   const page: APIPage | undefined = response.page;
 })();
 [inline-code-end]
-
----

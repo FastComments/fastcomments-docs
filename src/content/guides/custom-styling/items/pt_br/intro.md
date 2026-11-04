@@ -10,5 +10,3 @@ Entender o CSS padrão permite que você:
 ## Como sobrescrever estilos
 
 Sobrescrever estilos varia conforme o widget. Para o widget de comentários, você deve usar o parâmetro de configuração `customCSS` para passar o CSS para o `iframe`, ou especificar o CSS na página de Personalização no painel de administração, que servirá o CSS a partir da nossa CDN.
-
----

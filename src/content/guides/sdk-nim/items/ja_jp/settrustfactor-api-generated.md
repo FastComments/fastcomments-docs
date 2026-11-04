@@ -18,5 +18,3 @@ let (trustResponse, httpResponse) = client.setTrustFactor(tenantId = "my-tenant-
 if trustResponse.isSome:
   let result = trustResponse.get()
 [inline-code-end]
-
----

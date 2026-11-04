@@ -44,5 +44,3 @@ Możemy poczekać na początkowe załadowanie strony i ręcznie ponownie wyrende
     }
 })();
 [inline-code-end]
-
----

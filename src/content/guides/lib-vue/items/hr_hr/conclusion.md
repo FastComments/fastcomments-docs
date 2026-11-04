@@ -1,4 +1,3 @@
----
 ## Trebate pomoć?
 
 Ako naiđete na bilo kakve probleme ili imate pitanja o biblioteci Vue 2, molimo:
@@ -9,5 +8,3 @@ Ako naiđete na bilo kakve probleme ili imate pitanja o biblioteci Vue 2, molimo
 ## Doprinosi
 
 Doprinosi su dobrodošli! Molimo posjetite [GitHub repozitorij](https://github.com/FastComments/fastcomments-vue) za smjernice o doprinosu.
-
----

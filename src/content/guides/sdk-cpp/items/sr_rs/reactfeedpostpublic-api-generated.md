@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Име | Тип | Обавезно | Опис |
@@ -27,5 +26,3 @@ api->reactFeedPostPublic(tenantId, postId, reactBody, options)
     .then([](std::shared_ptr<ReactFeedPostResponse> resp) {
     });
 [inline-code-end]
-
----

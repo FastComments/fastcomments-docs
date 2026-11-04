@@ -53,5 +53,3 @@ Trzy lub cztery cykle doprecyzowania + odtworzenia zwykle wystarczą, aby uzyska
 ### Alternatywa: bezpośrednia edycja
 
 Nie musisz korzystać z funkcji "Doprecyzuj prompt" — możesz też po prostu edytować agenta na głównym formularzu edycji. Jedyną zaletą funkcji "Doprecyzuj prompt" jest to, że przypina konkretny nieudany przypadek, dzięki czemu nie tracisz z oczu, co poprawiasz dla.
-
----

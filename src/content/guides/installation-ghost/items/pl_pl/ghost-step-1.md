@@ -36,5 +36,3 @@ W prawym górnym rogu wybierz `Advanced`:
     <div class="title">Pobierz motyw</div>
     <img class="screenshot-image" src="/images/installation-guides/ghost-step-1-5-download.png" alt="Pobierz motyw" />
 </div>
-
----

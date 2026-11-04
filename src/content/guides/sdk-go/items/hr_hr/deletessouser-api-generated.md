@@ -41,5 +41,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.DeleteSSOUser`: %v\n", resp)
 }
 [inline-code-end]
-
----

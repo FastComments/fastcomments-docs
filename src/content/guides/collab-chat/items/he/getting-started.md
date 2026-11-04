@@ -1,21 +1,21 @@
 ### התחלה מהירה
 
-התחלה עם Collab Chat פשוטה. אתה צריך את סקריפט FastComments Collab Chat, אלמנט HTML שמכיל את הטקסט שתרצה להוסיף לו הערות, ואובייקט תצורה עם ה-Tenant ID שלך.
+התחלת העבודה עם Collab Chat פשוטה. אתם צריכים את סקריפט FastComments Collab Chat, אלמנט HTML המכיל את הטקסט שברצונכם להוסיף לו הערות, ואובייקט תצורה עם ה-Tenant ID שלכם.
 
 ### התקנה
 
-Add the Collab Chat script to your page:
+הוסיפו את סקריפט Collab Chat לדף שלכם:
 
 [inline-code-attrs-start title = 'טעינת סקריפט Collab Chat'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-collab-chat.min.js"></script>
 [inline-code-end]
 
-### יישום בסיסי
+### מימוש בסיסי
 
-Here's a minimal example:
+הנה דוגמה מינימלית:
 
-[inline-code-attrs-start title = 'יישום בסיסי של Collab Chat'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'מימוש בסיסי של Collab Chat'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <!DOCTYPE html>
 <html>
@@ -23,7 +23,7 @@ Here's a minimal example:
     <title>My Article with Collab Chat</title>
 </head>
 <body>
-    <!-- מיכל התוכן שלך -->
+    <!-- Your content container -->
     <div id="article-content" style="min-height: 500px;">
         <h1>My Article Title</h1>
         <p>This is a paragraph that users can annotate. Simply highlight any text to start a discussion!</p>
@@ -33,7 +33,7 @@ Here's a minimal example:
     <!-- Load the Collab Chat script -->
     <script src="https://cdn.fastcomments.com/js/embed-collab-chat.min.js"></script>
 
-    <!-- אתחל את Collab Chat -->
+    <!-- Initialize Collab Chat -->
     <script>
         FastCommentsCollabChat(document.getElementById('article-content'), {
             tenantId: 'demo'
@@ -43,20 +43,20 @@ Here's a minimal example:
 </html>
 [inline-code-end]
 
-Replace `'demo'` with your actual FastComments Tenant ID if it's not already, which you can find in your [FastComments dashboard](https://fastcomments.com/auth/my-account/api-secret).
+החליפו את `'demo'` ב-Tenant ID האמיתי שלכם ב-FastComments אם זה עדיין לא כך, אותו תוכלו למצוא ב-[לוח הבקרה של FastComments](https://fastcomments.com/auth/my-account/api-secret).
 
-### כיצד זה עובד
+### איך זה עובד
 
-Once initialized, users can select any text within the target element. After a brief delay (3.5 seconds on desktop), a prompt appears allowing them to start a discussion. When a discussion is created, a visual highlight appears on the text. Other users can hover over or click the highlight to view and participate in the discussion. All discussions sync in real-time across all visitors.
+לאחר האתחול, משתמשים יכולים לסמן כל טקסט בתוך האלמנט הממוקד. לאחר השהיה קצרה (3.5 שניות בדסקטופ), מופיעה הודעה המאפשרת להם להתחיל דיון. כאשר נוצר דיון, מופיע סימון חזותי על הטקסט. משתמשים אחרים יכולים לרחף מעל הסימון או ללחוץ עליו כדי לצפות בדיון ולהשתתף בו. כל הדיונים מסתנכרנים בזמן אמת אצל כל המבקרים.
 
 ### הדגמה חיה
 
-You can see Collab Chat in action on our [live demo page](https://fastcomments.com/product/collab-chat).
+תוכלו לראות את Collab Chat בפעולה ב-[דף ההדגמה החיה](https://fastcomments.com/product/collab-chat) שלנו.
 
 ### הצעדים הבאים
 
-Now that you have the basics working, you can customize the appearance and behavior in the Configuration Options guide. Check out the Text Selection Behavior guide to understand how text selection works. Learn about styling and dark mode support in the Customization guide. For advanced integrations, explore the API Reference.
+עכשיו כשהבסיס עובד, תוכלו להתאים אישית את המראה וההתנהגות במדריך אפשרויות התצורה. עיינו במדריך התנהגות סימון טקסט כדי להבין כיצד פועל סימון טקסט. למדו על עיצוב ותמיכה במצב כהה במדריך ההתאמה האישית. לאינטגרציות מתקדמות, חקרו את ה-API Reference.
 
-### Frontend Libraries
+### ספריות Frontend
 
-All FastComments frontend libraries (react, vue, angular, etc) have Collab Chat.
+כל ספריות ה-Frontend של FastComments (react, vue, angular וכו') כוללות את Collab Chat.

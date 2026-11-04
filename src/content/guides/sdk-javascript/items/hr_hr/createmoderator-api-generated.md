@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Name | Type | Required | Description |
@@ -24,5 +23,3 @@ const moderatorPayload: CreateModeratorBody = {
 
 const response: CreateModeratorResponse = await createModerator(tenantId, moderatorPayload);
 [inline-code-end]
-
----

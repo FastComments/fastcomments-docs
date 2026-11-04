@@ -1,4 +1,3 @@
----
 FastComments también admite el widget Page Reacts (también conocido como botón Me gusta flotante) para Hostinger.
 
 ¡Puedes verlo en acción en la esquina inferior derecha de esta página!
@@ -36,5 +35,3 @@ usando [WPCode](https://wordpress.org/plugins/insert-headers-and-footers/), que 
 4. Selecciona Integraciones.
 5. Añade el nuevo código al *final* del campo `Custom code`, y publica tu sitio.
 6. No verás el widget en el modo de vista previa, pero aparecerá en la versión publicada del sitio.
-
----

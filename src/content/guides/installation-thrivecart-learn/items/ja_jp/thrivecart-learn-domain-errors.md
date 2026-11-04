@@ -1,4 +1,3 @@
----
 次のような認証エラーが発生することがあります。
 
 <div class="screenshot white-bg">
@@ -13,5 +12,3 @@
 この場合、修正は簡単です。自分のサイトを FastComments.com のアカウントに追加するだけです。
 
 [アカウントにサイトを追加するにはここをクリックしてください。](https://fastcomments.com/auth/my-account/configure-domains)
-
----

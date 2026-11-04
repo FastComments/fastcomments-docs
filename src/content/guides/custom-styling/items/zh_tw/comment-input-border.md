@@ -1,17 +1,17 @@
-The border around the comment box is made of the text area's own border plus a few thin lines the widget draws around it. To change its color or corner roundness, set these CSS variables instead of styling the `textarea` directly. The variables restyle every part of the border at once, so the corners and colors always line up.
+留言框周圍的邊框由文字區域自身的邊框加上小工具在其周圍繪製的幾條細線組成。若要更改其顏色或圓角，請設定這些 CSS 變數，而不是直接為 `textarea` 設定樣式。這些變數會一次重新設定邊框的每個部分，因此圓角和顏色始終保持一致。
 
-| 變數 | 變更內容 | 預設 |
+| 變數 | 作用 | 預設值 |
 |---|---|---|
 | `--fc-input-border-color` | 邊框顏色 | `#bfbfbf` |
 | `--fc-input-border-color-focus` | 使用者輸入時的邊框顏色 | `#555` |
-| `--fc-input-border-radius` | 圓角的圓潤程度 | `11px` |
-| `--fc-input-border-start-start-radius` | 左上角（在從右至左語言中為右上角）方形角的圓潤程度 | `0` |
+| `--fc-input-border-radius` | 圓角的弧度 | `11px` |
+| `--fc-input-border-start-start-radius` | 方形左上角的弧度（在從右到左的語言中為右上角） | `0` |
 
-Add the CSS to the **Custom CSS** box on the [Widget Customization page](https://fastcomments.com/auth/my-account/customize-widget), or pass it with the `customCSS` option. You only need to set the variables you want to change.
+將 CSS 新增至 [Widget Customization 頁面](https://fastcomments.com/auth/my-account/customize-widget) 上的 **Custom CSS** 方塊，或透過 `customCSS` 選項傳遞。您只需設定想要更改的變數。
 
-You can also use the **Comment box border** helper right under the Custom CSS box, which writes this CSS for you.
+您也可以使用 Custom CSS 方塊正下方的 **Comment box border** 輔助工具，它會為您自動產生此 CSS。
 
-## 變更邊框顏色
+## 更改邊框顏色
 
 [inline-code-attrs-start title = '邊框顏色'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -20,7 +20,7 @@ You can also use the **Comment box border** helper right under the Custom CSS bo
 }
 [inline-code-end]
 
-## 輸入時變更邊框顏色
+## 更改輸入時的邊框顏色
 
 [inline-code-attrs-start title = '輸入時的邊框顏色'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -29,11 +29,11 @@ You can also use the **Comment box border** helper right under the Custom CSS bo
 }
 [inline-code-end]
 
-## 圓化所有四個角
+## 讓四個角全部變圓
 
-By default the top-left corner is square. Set both radius variables to round all four corners the same:
+預設情況下左上角是方形的。將兩個圓角變數都設定為相同的值，即可讓四個角全部變圓：
 
-[inline-code-attrs-start title = '圓化所有四個角'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = '讓四個角全部變圓'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 :root {
     --fc-input-border-radius: 12px;
@@ -41,18 +41,18 @@ By default the top-left corner is square. Set both radius variables to round all
 }
 [inline-code-end]
 
-## 方形角
+## 方形邊角
 
-[inline-code-attrs-start title = '方形角'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = '方形邊角'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 :root {
     --fc-input-border-radius: 0;
 }
 [inline-code-end]
 
-## 與您的品牌相符
+## 符合您的品牌風格
 
-[inline-code-attrs-start title = '品牌顏色與角落'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = '品牌顏色與圓角'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 :root {
     --fc-input-border-color: #c7d2fe;
@@ -62,11 +62,11 @@ By default the top-left corner is square. Set both radius variables to round all
 }
 [inline-code-end]
 
-## 暗色模式下的不同顏色
+## 在深色模式中使用不同的顏色
 
-When the widget is in dark mode it has the `dark` class, so you can set different values for dark mode:
+當小工具處於深色模式時，它會帶有 `dark` class，因此您可以為深色模式設定不同的值：
 
-[inline-code-attrs-start title = '暗色模式邊框顏色'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = '深色模式的邊框顏色'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 :root {
     --fc-input-border-color: #d1d5db;
@@ -77,6 +77,6 @@ When the widget is in dark mode it has the `dark` class, so you can set differen
 }
 [inline-code-end]
 
-## 為何不直接為文字區域設定樣式？
+## 為什麼不直接為文字區域設定樣式？
 
-The widget draws part of the comment box border itself, around the text area. If you set `border-color` or `border-radius` only on the `textarea`, those lines keep the default style and the border looks mismatched, for example a square line running through a rounded corner. The variables above change both at once.
+小工具會自行在文字區域周圍繪製留言框邊框的一部分。如果您只為 `textarea` 設定 `border-color` 或 `border-radius`，那些線條將保持預設樣式，邊框看起來會不一致，例如一條方形線條穿過圓角。上述變數會同時更改兩者。

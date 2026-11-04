@@ -38,5 +38,3 @@ interface QuestionConfigPostResponse {
     questionConfig?: QuestionConfig
 }
 [inline-code-end]
-
----

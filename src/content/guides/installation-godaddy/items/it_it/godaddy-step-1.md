@@ -31,5 +31,3 @@ Fai clic sull'area di codice vuota che hai aggiunto. In basso a destra vedrai or
 </div>
 
 Questo è tutto per il primo passo! Nel secondo passo aggiungeremo il nostro codice specifico per Godaddy.
-
----

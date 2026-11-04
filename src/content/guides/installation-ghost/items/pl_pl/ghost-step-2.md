@@ -23,5 +23,3 @@ Pomyślny wynik będzie wyglądać tak (możesz zignorować ostrzeżenia):
 </div>
 
 To skonfiguruje zależności motywu dla poleceń, które uruchomimy później. Eksport zależy również od zainstalowania zależności motywu; w przeciwnym razie ponowny import nie będzie działać prawidłowo.
-
----

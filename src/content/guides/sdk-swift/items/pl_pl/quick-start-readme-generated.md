@@ -1,4 +1,4 @@
-### Using the Public API
+### Korzystanie z publicznego API
 
 ```swift
 import FastCommentsSwift
@@ -19,15 +19,15 @@ do {
 }
 ```
 
-### Using the Authenticated API
+### Korzystanie z uwierzytelnionego API
 
 ```swift
 import FastCommentsSwift
 
-// Skonfiguruj swój klucz API w udostępnionej konfiguracji (wysyłany jako nagłówek x-api-key)
+// Skonfiguruj swój klucz API we współdzielonej konfiguracji (wysyłany jako nagłówek x-api-key)
 FastCommentsSwiftAPIConfiguration.shared.customHeaders["x-api-key"] = "your-api-key"
 
-// Pobierz komentarze przy użyciu uwierzytelnionego API
+// Pobierz komentarze za pomocą uwierzytelnionego API
 do {
     let response = try await DefaultAPI.getComments(
         tenantId: "your-tenant-id",
@@ -43,12 +43,12 @@ do {
 }
 ```
 
-### Using the Moderation API
+### Korzystanie z API moderacji
 
 ```swift
 import FastCommentsSwift
 
-// Metody moderacji są autoryzowane tokenem `sso` dla działającego moderatora
+// Metody moderacji są autoryzowane tokenem `sso` działającego moderatora
 // (wygeneruj go za pomocą FastCommentsSSO, zobacz sekcję SSO powyżej).
 do {
     let response = try await ModerationAPI.getApiComments(
@@ -68,9 +68,9 @@ do {
 }
 ```
 
-### Using SSO for Authentication
+### Korzystanie z SSO do uwierzytelniania
 
-#### Secure SSO (Recommended for Production)
+#### Bezpieczne SSO (zalecane dla produkcji)
 
 ```swift
 import FastCommentsSwift
@@ -80,7 +80,7 @@ let apiKey = "your-api-key"
 // Utwórz bezpieczne dane użytkownika SSO (tylko po stronie serwera!)
 let userData = SecureSSOUserData(
     id: "user-123",              // ID użytkownika
-    email: "user@example.com",   // E-mail
+    email: "user@example.com",   // Email
     username: "johndoe",         // Nazwa użytkownika
     avatar: "https://example.com/avatar.jpg" // URL awatara
 )
@@ -97,12 +97,12 @@ do {
 }
 ```
 
-#### Simple SSO (For Development/Testing)
+#### Proste SSO (do rozwoju/testowania)
 
 ```swift
 import FastCommentsSwift
 
-// Utwórz proste dane użytkownika SSO (klucz API nie jest potrzebny)
+// Utwórz proste dane użytkownika SSO (nie wymaga klucza API)
 let userData = SimpleSSOUserData(
     username: "johndoe",
     email: "user@example.com",

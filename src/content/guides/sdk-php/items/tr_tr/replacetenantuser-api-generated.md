@@ -1,4 +1,3 @@
----
 ## Parametreler
 
 | Ad | Tür | Konum | Gereklidir | Açıklama |
@@ -45,5 +44,3 @@ try {
     echo 'Exception when calling DefaultApi->replaceTenantUser: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

@@ -21,5 +21,3 @@ if maybeResp.isSome:
   let resp = maybeResp.get()
   # χρησιμοποιήστε resp όπως χρειάζεται
 [inline-code-end]
-
----

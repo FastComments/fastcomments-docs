@@ -28,5 +28,3 @@ async fn update_review_status(configuration: &configuration::Configuration) -> R
     Ok(())
 }
 [inline-code-end]
-
----

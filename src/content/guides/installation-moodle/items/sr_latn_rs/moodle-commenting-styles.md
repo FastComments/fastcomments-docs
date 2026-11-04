@@ -26,5 +26,3 @@ Oba režima aktivna istovremeno. Vidžet za komentare pojavljuje se ispod sadrž
     <div class="title">Collab Chat + Komentari Zajedno</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-page-comments.png" alt="FastComments Collab Chat i komentari na Moodle" />
 </div>
-
----

@@ -1,4 +1,3 @@
----
 ## Parámetros
 
 | Nombre | Tipo | Ubicación | Obligatorio | Descripción |
@@ -31,5 +30,3 @@ DefaultAPI.getDomainConfig(tenantId: tenantId, domain: domain) { (response, erro
     }
 }
 [inline-code-end]
-
----

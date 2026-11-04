@@ -1,19 +1,19 @@
-Bulk user info for a tenant. Given userIds, return display info from User / SSOUser.  
-Used by the comment widget to enrich users that just appeared via a presence event.  
-No page context: privacy is enforced uniformly (private profiles are masked).
+Масова інформація про користувачів для орендаря. За заданими userIds повертає інформацію для відображення з User / SSOUser.
+Використовується віджетом коментарів для збагачення користувачів, які щойно з'явилися через подію присутності.
+Без контексту сторінки: приватність застосовується однаково (приватні профілі маскуються).
 
-## Parameters
+## Параметри
 
-| Назва | Тип | Обов'язково | Опис |
+| Назва | Тип | Обов'язковий | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| ids | string | Yes |  |
+| tenantId | string | Так |  |
+| ids | string | Так |  |
 
-## Response
+## Відповідь
 
-Returns: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PageUsersInfoResponse.h)
+Повертає: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PageUsersInfoResponse.h)
 
-## Example
+## Приклад
 
 [inline-code-attrs-start title = 'Приклад getUsersInfo'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -24,9 +24,9 @@ boost::optional<utility::string_t> locale = boost::make_optional(U("en-US"));
 api->getUsersInfo(tenantId, ids).then([](pplx::task<std::shared_ptr<PageUsersInfoResponse>> t){
     try{
         auto response = t.get();
-        // обробити відповідь
+        // обробка відповіді
     }catch(const std::exception&){
-        // обробити помилку
+        // обробка помилки
     }
 });
 [inline-code-end]

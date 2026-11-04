@@ -1,22 +1,20 @@
-Each instance of the comment widget is isolated. Because of this, FastComments inherently supports more than one instance per page, or multiple
-instances pointing to the same chat thread.
+כל מופע של ווידג'ט התגובות מבודד. בגלל זה, FastComments תומך באופן מובנה ביותר ממופע אחד בכל דף, או במספר מופעים המצביעים על אותו שרשור צ'אט.
 
-In the case of the VanillaJS library for example, you simply have to tie the comment widget to different DOM nodes. If you want to simply
-update the current thread on the page, see [Switching Comment Threads Without Reloading The Page](guide-customizations-and-configuration.html#switching-comment-threads);
+לדוגמה, בספריית VanillaJS פשוט קושרים את ווידג'ט התגובות לצמתי DOM שונים. אם ברצונך פשוט לעדכן את השרשור הנוכחי בדף, ראה [Switching Comment Threads Without Reloading The Page](guide-customizations-and-configuration.html#switching-comment-threads);
 
-### סנכרון מצב האימות בין מופעים מרובים
+### סנכרון מצב האימות בין מספר מופעים
 
-בואו נסקור את הדוגמה של יישום עמוד יחיד מותאם אישית שהוא רשימת שאלות נפוצות עם שרשור ההערות שלהן.
+נעבור על הדוגמה של אפליקציית דף יחיד (SPA) מותאמת אישית שהיא רשימת שאלות נפוצות עם שרשור תגובות משלהן.
 
-במקרה זה, יש לנו מספר מופעים של FastComments ב‑DOM בו‑זמנית.
+במקרה זה, יש לנו מספר מופעים של FastComments ב-DOM בו-זמנית.
 
-זה בסדר, אך זה מציב כמה אתגרים בחוויית המשתמש.
+זה בסדר, אבל זה מציב כמה אתגרים מבחינת חוויית המשתמש.
 
-שקלו את הזרימה הזו:
+שקול את התהליך הבא:
 
-1. המשתמש מבקר בעמוד עם רשימת שאלות, שלכל אחת יש וידג'ט ההערות שלה.
-2. המשתמש מזין שם משתמש וכתובת אימייל ומשאיר שאלה באחד מהשרשורים.
-3. הוא רואה פריט FAQ נוסף שיש לו שאלה לגביו.
-4. הוא חוזר להוסיף תגובה. האם הוא צריך להזין שוב את האימייל ושם המשתמש שלו?
+1. המשתמש מגיע לדף עם רשימת שאלות, ולכל אחת ווידג'ט תגובות משלה.
+2. המשתמש מזין את שם המשתמש והאימייל שלו ומשאיר שאלה באחד השרשורים.
+3. הוא רואה פריט שאלות נפוצות נוסף שיש לו שאלה לגביו.
+4. הוא הולך להגיב שוב. האם עליו להזין שוב את האימייל ושם המשתמש?
 
-במקרה זה, FastComments מטפל בסנכרון מצב האימות בין מופעי הווידג'ט עבורך. בצעד הרביעי, המשתמש כבר יהיה מאומת זמנית מכיוון שהזין את שם המשתמש והאימייל שלו באותו עמוד.
+במקרה זה, FastComments מטפל בסנכרון מצב האימות בין מופעי הווידג'ט עבורך. בשלב הרביעי, המשתמש כבר יהיה מאומת זמנית מכיוון שהזין את שם המשתמש והאימייל באותו דף.

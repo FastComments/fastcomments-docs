@@ -1,4 +1,3 @@
----
 Če iščete izrezek kode za komentiranje v živo za ClickFunnels, poskusite to:
 
 [inline-code-attrs-start title = 'Izrezek za komentarje v živo za ClickFunnels'; type = 'html'; isFunctional = false; inline-code-attrs-end]
@@ -32,5 +31,3 @@
     })();
 </script>
 [inline-code-end]
-
----

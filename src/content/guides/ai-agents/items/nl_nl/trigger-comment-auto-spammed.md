@@ -19,5 +19,3 @@ De spam-pijplijn van het platform. Zie [Spamdetectie](/guide-moderation.html#spa
 - De trigger wordt **niet** geactiveerd voor door een moderator gemarkeerde spam (gebruik [Trigger: Door moderator gemarkeerde spam](#trigger-moderator-spammed)) noch voor door een andere agent gemarkeerde spam.
 - Een reactie die automatisch als spam is gemarkeerd en vervolgens later door een moderator als Not Spam wordt aangemerkt, activeert de trigger niet opnieuw.
 - Abonneren op deze trigger is het meest nuttig in tenants waar de engine's auto-spammodus is ingeschakeld onder Moderation Settings. Anders zal de trigger niet afgaan.
-
----

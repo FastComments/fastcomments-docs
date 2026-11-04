@@ -1,29 +1,29 @@
 #### Sakai
 
-Sakai は LTI Advantage を含むリリースで LTI 1.3 の Dynamic Registration をサポートしています。Administration Workspace から:
+Sakaiは、LTI Advantageを備えたリリースにおいてLTI 1.3 Dynamic Registrationをサポートしています。Administration Workspaceから:
 
-1. Sakai の管理者としてサインインし、**Administration Workspace** を開きます。
-2. **External Tools** > **Install LTI 1.3 Tool** を選択します。
-3. FastComments の登録用 URL（<a href="https://fastcomments.com/auth/my-account/lti-config" target="_blank">ここで取得</a>）を貼り付けて送信します。
-4. ハンドシェイクが完了したらツールを承認します。
+1. Sakai管理者としてサインインし、**Administration Workspace**を開きます。
+2. **External Tools** > **Install LTI 1.3 Tool**を選択します。
+3. FastCommentsの登録URL(<a href="https://fastcomments.com/auth/my-account/lti-config" target="_blank">こちらから取得</a>)を貼り付けて送信します。
+4. ハンドシェイクが完了したら、ツールを承認します。
 
-ツールはその後 **External Tools** に表示され、サイトの管理者によってサイトに追加できます。
+その後、ツールは**External Tools**の下に表示され、サイトの管理者がサイトに追加できるようになります。
 
 #### Schoology
 
-Schoology の Enterprise インスタンスは LTI 1.3 をサポートしますが、Dynamic Registration の利用可否はデプロイによって異なります。Schoology のアカウントマネージャーに確認してください。
+Schoology EnterpriseインスタンスはLTI 1.3をサポートしていますが、Dynamic Registrationの利用可否はデプロイメントによって異なります。Schoologyのアカウントマネージャーにご確認ください。
 
-お使いの Schoology インスタンスで Dynamic Registration が利用できない場合、次のエンドポイントを使って統合を手動で設定する必要があります:
+お使いのSchoologyインスタンスでDynamic Registrationが利用できない場合は、以下のエンドポイントを使用して統合を手動で設定する必要があります:
 
 - **OIDC Login URL**: `https://fastcomments.com/lti/v1p3/login`
 - **Target Link URL**: `https://fastcomments.com/lti/v1p3/launch`
 - **Public Keyset URL (JWKS)**: `https://fastcomments.com/lti/v1p3/jwks`
 - **Redirect URLs**: `https://fastcomments.com/lti/v1p3/launch`
 
-Schoology から Client ID と Deployment ID が提供されたら、テナント上で設定を登録するために FastComments サポートへ連絡してください。
+SchoologyからClient IDとDeployment IDが発行されたら、FastCommentsサポートに連絡して、テナントに設定を登録してください。
 
-#### Other LTI 1.3 Platforms
+#### その他のLTI 1.3プラットフォーム
 
-IMS LTI 1.3 Advantage 仕様に準拠する任意の LMS は、同じ登録 URL（<a href="https://fastcomments.com/auth/my-account/lti-config" target="_blank">ここで取得</a>）で動作するはずです。設定項目として "Dynamic Registration", "Tool Registration URL", "Tool initiation registration endpoint", またはそれに類する項目を探してください。
+IMS LTI 1.3 Advantage仕様に準拠したLMSであれば、同じ登録URL(<a href="https://fastcomments.com/auth/my-account/lti-config" target="_blank">こちらから取得</a>)で動作するはずです。「Dynamic Registration」、「Tool Registration URL」、「Tool initiation registration endpoint」などのラベルが付いた設定を探してください。
 
-プラットフォームが手動での LTI 1.3 設定のみをサポートする場合は、上の Schoology セクションに記載された 4 つのエンドポイントを使用し、設定完了のためにサポートに連絡してください。
+お使いのプラットフォームがLTI 1.3の手動設定のみをサポートしている場合は、上記のSchoologyセクションに記載されている4つのエンドポイントを使用し、サポートに連絡して設定を完了してください。

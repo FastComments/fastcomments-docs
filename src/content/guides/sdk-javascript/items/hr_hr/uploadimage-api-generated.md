@@ -1,4 +1,3 @@
----
 Prenesite i promijenite veličinu slike
 
 ## Parametri

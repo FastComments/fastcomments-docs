@@ -1,12 +1,12 @@
 ### Genel Bakış
 
-FastComments Image Chat, standart FastComments yorum bileşenini genişletir; böylece temel bileşenin tüm yapılandırma seçeneklerini miras alır ve görüntü notlarıyla ilgili birkaç seçenek ekler.
+FastComments Image Chat, standart FastComments yorum widget'ını genişletir; böylece temel widget'ın tüm yapılandırma seçeneklerini devralır ve görüntü ek açıklamalarına özgü birkaç seçenek ekler.
 
 ### Gerekli Yapılandırma
 
 #### tenantId
 
-FastComments Tenant ID'niz gereklidir. Bunu [FastComments kontrol panelinizde](https://fastcomments.com/auth/my-account/api-secret) bulabilirsiniz.
+FastComments Tenant ID'niz gereklidir. Bunu [FastComments panonuzda](https://fastcomments.com/auth/my-account/api-secret) bulabilirsiniz.
 
 ```javascript
 FastCommentsImageChat(imageElement, {
@@ -18,7 +18,7 @@ FastCommentsImageChat(imageElement, {
 
 #### urlId
 
-Varsayılan olarak Image Chat, her konuşma için sayfa URL'si, görüntü kaynağı ve X/Y koordinatlarına dayanarak benzersiz bir tanımlayıcı oluşturur. Bunu özel bir `urlId` ile geçersiz kılabilirsiniz.
+Varsayılan olarak, Image Chat her konuşma için sayfa URL'si, görüntü kaynağı ve X/Y koordinatlarına dayalı benzersiz bir tanımlayıcı oluşturur. Bunu özel bir `urlId` ile geçersiz kılabilirsiniz.
 
 ```javascript
 FastCommentsImageChat(imageElement, {
@@ -27,11 +27,11 @@ FastCommentsImageChat(imageElement, {
 });
 ```
 
-Bu, URL yapınız değişebileceği halde aynı konuşmaları korumak istediğinizde veya notları birden fazla sayfa arasında paylaşmak istediğinizde faydalıdır.
+Bu, URL yapınız değişebileceğinde ancak aynı konuşmaları korumak istediğinizde veya ek açıklamaları birden fazla sayfada paylaşmak istediğinizde kullanışlıdır.
 
 #### chatSquarePercentage
 
-Tıklanabilir sohbet işaretçilerinin boyutunu görüntü genişliğinin yüzde olarak kontrol eder. Varsayılan 5%'tir; bu, her işaretçinin görüntü genişliğinin %5'i olduğu anlamına gelir.
+Tıklanabilir sohbet işaretçilerinin boyutunu, görüntü genişliğinin yüzdesi olarak kontrol eder. Varsayılan %5'tir, yani her işaretçi görüntü genişliğinin %5'idir.
 
 ```javascript
 FastCommentsImageChat(imageElement, {
@@ -40,11 +40,11 @@ FastCommentsImageChat(imageElement, {
 });
 ```
 
-Daha küçük değerler daha az müdahaleci işaretçiler oluşturur ve ayrıntılı görüntüler için daha iyi çalışır. Daha büyük değerler, yoğun görüntülerde veya mobil cihazlardaki kullanıcılar için işaretçilerin görülmesini ve tıklanmasını kolaylaştırır.
+Daha küçük değerler, detaylı görüntüler için daha iyi çalışan, daha az dikkat dağıtan işaretçiler oluşturur. Daha büyük değerler, işaretçileri yoğun görüntülerde veya mobil cihaz kullanan kullanıcılar için daha kolay görünür ve tıklanabilir hale getirir.
 
 #### hasDarkBackground
 
-Sayfanız koyu arka plana sahipse koyu mod stilini etkinleştirir.
+Sayfanız koyu bir arka plana sahipken koyu mod stili etkinleştirin.
 
 ```javascript
 FastCommentsImageChat(imageElement, {
@@ -55,36 +55,36 @@ FastCommentsImageChat(imageElement, {
 
 #### commentCountUpdated
 
-Yorum sayısı değiştiğinde tetiklenen bir geri çağırma fonksiyonu. Rozetler veya sayfa başlıkları gibi UI öğelerini güncellemek için yararlıdır.
+Yorum sayısı her değiştiğinde tetiklenen bir geri çağırma fonksiyonu. Bu, rozetler veya sayfa başlıkları gibi UI öğelerini güncellemek için kullanışlıdır.
 
 ```javascript
 FastCommentsImageChat(imageElement, {
     tenantId: 'demo',
     commentCountUpdated: function(count) {
-        console.log('Total comments:', count);
+        console.log('Toplam yorum:', count);
         document.getElementById('badge').textContent = count;
     }
 });
 ```
 
-### Miras Alınan Yapılandırma Seçenekleri
+### Devralınan Yapılandırma Seçenekleri
 
-Image Chat standart yorum bileşenini genişlettiği için, temel FastComments bileşeninin herhangi bir yapılandırma seçeneğini kullanabilirsiniz. İşte yaygın olarak kullanılan bazı seçenekler:
+Image Chat standart yorum widget'ını genişlettiğinden, temel FastComments widget'ından herhangi bir yapılandırma seçeneğini kullanabilirsiniz. İşte yaygın olarak kullanılan bazı seçenekler:
 
 #### locale
 
-Bileşenin UI'si için dili ayarlar. FastComments düzinelerce dili destekler.
+Widget UI'sinin dilini ayarlayın. FastComments onlarca dili destekler.
 
 ```javascript
 FastCommentsImageChat(imageElement, {
     tenantId: 'demo',
-    locale: 'es'  // Spanish
+    locale: 'es'  // İspanyolca
 });
 ```
 
 #### readonly
 
-Tüm konuşmaları salt okunur yapar. Kullanıcılar mevcut işaretçileri ve tartışmaları görüntüleyebilir, ancak yenisini oluşturamaz veya yanıtlayamaz.
+Tüm konuşmaları salt okunur yapın. Kullanıcılar mevcut işaretçileri ve tartışmaları görüntüleyebilir ancak yenilerini oluşturamaz veya yanıt veremez.
 
 ```javascript
 FastCommentsImageChat(imageElement, {
@@ -93,9 +93,9 @@ FastCommentsImageChat(imageElement, {
 });
 ```
 
-#### sso and simpleSSO
+#### sso ve simpleSSO
 
-Tek Oturum Açma (SSO) kullanarak kimlik doğrulama sisteminizle entegre edin.
+Tek Oturum Açma (Single Sign-On) kullanarak kimlik doğrulama sisteminizle entegre olun.
 
 ```javascript
 FastCommentsImageChat(imageElement, {
@@ -106,42 +106,42 @@ FastCommentsImageChat(imageElement, {
 });
 ```
 
-Kimlik doğrulama seçenekleri hakkında tam ayrıntılar için SSO belgelerine bakın.
+Kimlik doğrulama seçenekleriyle ilgili tüm ayrıntılar için SSO belgelerine bakın.
 
 #### maxReplyDepth
 
-Yanıtların kaç seviye derinliğe kadar olabileceğini kontrol edin. Varsayılan olarak Image Chat bunu 0 olarak ayarlar; bu, tüm yorumların düz olduğu (iç içe yanıt yok) anlamına gelir. Konuşmaların dallanmasını istiyorsanız bunu değiştirebilirsiniz.
+Yanıtların kaç seviye derine gidebileceğini kontrol edin. Varsayılan olarak, Image Chat bunu 0 olarak ayarlar, yani tüm yorumlar düzdür (iç içe yanıtlar yok). Dallı konuşmalar istiyorsanız bunu değiştirebilirsiniz.
 
 ```javascript
 FastCommentsImageChat(imageElement, {
     tenantId: 'demo',
-    maxReplyDepth: 3  // 3 seviye iç içe izni ver
+    maxReplyDepth: 3  // 3 seviyeye kadar iç içe geçmeye izin ver
 });
 ```
 
 ### Dahili Yapılandırma
 
-Bu seçenekler Image Chat tarafından otomatik olarak ayarlanır ve üzerine yazılmamalıdır:
+Bu seçenekler Image Chat tarafından otomatik olarak ayarlanır ve geçersiz kılınmamalıdır:
 
-`productId` Image Chat için otomatik olarak `2` olarak ayarlanır. Sohbet penceresi işlevselliği sağlamak için `floating-chat` uzantısı otomatik olarak yüklenir. Bileşen, mobil cihazları (genişliği 768px'den az ekranlar) otomatik olarak algılar ve UI'yi buna göre tam ekran sohbet pencereleriyle ayarlar.
+`productId`, Image Chat için otomatik olarak `2` olarak ayarlanır. Sohbet penceresi işlevselliğini sağlamak için `floating-chat` uzantısı otomatik olarak yüklenir. Widget, mobil cihazları (768px'den dar ekranlar) otomatik olarak algılar ve UI'yi buna göre tam ekran sohbet pencereleriyle uyarlar.
 
 ### Hedef Öğe Esnekliği
 
-`FastCommentsImageChat`'e verilen ilk parametre ya doğrudan bir `<img>` elementi ya da içinde bir görüntü bulunan bir konteyner elementi olabilir:
+`FastCommentsImageChat`'in ilk parametresi, doğrudan bir `<img>` öğesi veya içinde görüntü bulunan bir kapsayıcı öğe olabilir:
 
 ```javascript
-// Doğrudan görüntü elementi
+// Doğrudan görüntü öğesi
 FastCommentsImageChat(document.getElementById('my-image'), config);
 
-// İçinde görüntü olan konteyner
+// İçinde görüntü bulunan kapsayıcı
 FastCommentsImageChat(document.querySelector('.image-wrapper'), config);
 ```
 
-Bir konteyner elementi geçirirseniz bileşen görüntüyü otomatik olarak bulacaktır.
+Bir kapsayıcı öğe geçirirseniz widget, görüntüyü otomatik olarak bulur.
 
 ### Tam Örnek
 
-İşte birden fazla yapılandırma seçeneğini bir arada gösteren bir örnek:
+Birden fazla yapılandırma seçeneğini birlikte gösteren bir örnek:
 
 ```javascript
 FastCommentsImageChat(document.getElementById('product-image'), {
@@ -151,7 +151,7 @@ FastCommentsImageChat(document.getElementById('product-image'), {
     hasDarkBackground: false,
     locale: 'en',
     commentCountUpdated: function(count) {
-        document.title = count > 0 ? `(${count}) Product Photo` : 'Product Photo';
+        document.title = count > 0 ? `(${count}) Ürün Fotoğrafı` : 'Ürün Fotoğrafı';
     },
     sso: {
         // SSO yapılandırmanız
@@ -160,4 +160,4 @@ FastCommentsImageChat(document.getElementById('product-image'), {
 });
 ```
 
-Temel bileşenden miras alınan tüm kullanılabilir yapılandırma seçeneklerinin eksiksiz listesi için ana FastComments yapılandırma belgelerine bakın.
+Temel widget'tan devralınan tüm kullanılabilir yapılandırma seçeneklerinin tam listesi için ana FastComments yapılandırma belgelerine bakın.

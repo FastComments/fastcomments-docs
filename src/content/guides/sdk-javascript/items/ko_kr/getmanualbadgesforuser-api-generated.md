@@ -1,4 +1,3 @@
----
 ## 매개변수
 
 | 이름 | 유형 | 필수 | 설명 |
@@ -33,5 +32,3 @@ async () => {
   console.log(basicResponse, fullResponse);
 }();
 [inline-code-end]
-
----

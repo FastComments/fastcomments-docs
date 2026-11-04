@@ -19,5 +19,3 @@ Au fur et à mesure que la tâche s'exécute, elle affichera le nombre de commen
 ### Migration de domaines via API
 
 Les domaines peuvent également être migrés avec [`POST /api/v1/pages/migrations`](/guide-api.html#pages-migrations-post), en utilisant `type` défini sur `domain`. La progression est disponible via [`GET /api/v1/batch-jobs/:id`](/guide-api.html#batch-job-get-by-id), et la migration peut être annulée pendant 90 jours.
-
----

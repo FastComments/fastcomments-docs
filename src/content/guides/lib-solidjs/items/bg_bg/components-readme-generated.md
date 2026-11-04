@@ -1,4 +1,3 @@
----
 Всеки widget от `fastcomments-react` е наличен под същото име:
 
 | Component | Handle type | Вградено съдържание |
@@ -39,4 +38,3 @@ export default function ImageChat() {
 ### Региони
 
 Задайте `region="eu"` за да пренасочите трафика на widget-а през клъстъра в ЕС.
----

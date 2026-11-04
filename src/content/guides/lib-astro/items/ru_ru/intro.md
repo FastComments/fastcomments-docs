@@ -5,5 +5,3 @@
 ## Репозиторий
 
 [Просмотреть на GitHub](https://github.com/FastComments/fastcomments-astro)
-
----

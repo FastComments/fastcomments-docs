@@ -1,4 +1,3 @@
----
 | 키 | 환경 변수 | 기본값 | 설명 |
 |-----|-------------|---------|-------------|
 | `tenant_id` | `FASTCOMMENTS_TENANT_ID` | `''` | 귀하의 FastComments 테넌트 ID |
@@ -9,4 +8,3 @@
 | `sso.login_url` | `FASTCOMMENTS_SSO_LOGIN_URL` | `null` | 로그인 URL (Laravel 라우트로 대체됨) |
 | `sso.logout_url` | `FASTCOMMENTS_SSO_LOGOUT_URL` | `null` | 로그아웃 URL (Laravel 라우트로 대체됨) |
 | `widget_defaults` | — | `[]` | 기본 위젯 구성 옵션 |
----

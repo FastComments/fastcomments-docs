@@ -15,5 +15,3 @@ Prevenção de loop: eventos de fixação originados por agentes não disparam n
 ### Observação sobre o par
 
 Eventos de fixação e desafixação são gatilhos separados. Inscreva-se em ambos se quiser comportamento simétrico. Veja [Gatilho: Comentário Desafixado](#trigger-comment-unpin).
-
----

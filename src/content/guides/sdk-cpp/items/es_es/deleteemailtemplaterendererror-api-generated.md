@@ -1,4 +1,3 @@
----
 ## Parámetros
 
 | Nombre | Tipo | Obligatorio | Descripción |
@@ -25,5 +24,3 @@ api->deleteEmailTemplateRenderError(
         try { t.get(); } catch (...) {}
     });
 [inline-code-end]
-
----

@@ -1,37 +1,37 @@
-Agent ma jeden z trzech statusów:
+Agent może mieć jeden z trzech statusów:
 
-### Disabled
+### Disabled (Wyłączony)
 
-Agent jest wyłączony. Żadne wyzwalacze nie są przetwarzane i agent nie pojawia się w ścieżce przesyłania. Jego historia uruchomień, analityka i pamięć pozostają — jeśli ponownie go włączysz, dane historyczne nadal będą dostępne.
+Agent jest wyłączony. Żadne triggery nie są przetwarzane, a agent nie pojawia się w ścieżce dispatch. Historia uruchomień, analityka i pamięć pozostają - jeśli ponownie go włączysz później, dane historyczne nadal tam będą.
 
-Use `Disabled` when:
-- Chcesz wycofać agenta z rotacji bez jego usuwania.
-- Agent zachowuje się nieprawidłowo i musisz go natychmiast zatrzymać, aby przeprowadzić dochodzenie.
-- Sezonowo rotujesz agentami wchodzącymi i wychodzącymi (np. powitanie dostępne tylko w okresie świątecznym).
+Użyj `Disabled`, gdy:
+- Chcesz wycofać agenta z rotacji bez jego utraty.
+- Agent źle się zachowuje i musisz go natychmiast zatrzymać podczas dochodzenia.
+- Sezonowo rotujesz agentów (np. powitalny agent działający tylko w okresie świątecznym).
 
-### Dry Run - domyślnie dla nowych agentów
+### Dry Run - domyślny dla nowych agentów
 
-Agent działa end-to-end - przetwarza wyzwalacze, wywołuje LLM, wybiera wywołania narzędzi, oblicza uzasadnienia i poziom pewności - ale **żadne rzeczywiste działanie nie jest wykonywane**. Każde uruchomienie jest zapisywane z odznaką **Dry Run** w [Historii uruchomień](#run-history).
+Agent działa end-to-end - przetwarza triggery, wywołuje LLM, wybiera wywołania narzędzi, oblicza uzasadnienia i poziom pewności - ale **żadna prawdziwa akcja nie jest podejmowana**. Każde uruchomienie jest zapisywane z plakietką **Dry Run** w [Run History](#run-history).
 
-Use `Dry Run` when:
-- Nowy agent dopiero co został uruchomiony. Każdy szablon startowy trafia do trybu dry-run.
-- Edytowałeś prompt lub zmieniłeś zestaw wyzwalaczy i chcesz zobaczyć, jak zmiana działa, zanim ją zatwierdzisz.
-- Przeprowadzasz [testowe uruchomienie / powtórkę](#test-runs-replays) (powtórki wymuszają tryb dry-run niezależnie od statusu agenta).
+Użyj `Dry Run`, gdy:
+- Nowy agent jest świeżo po instalacji. Każdy szablon startowy ląduje w trybie dry-run.
+- Edytowałeś prompt lub zmieniłeś zestaw triggerów i chcesz zobaczyć, jak zmiana się sprawdzi, zanim ją zatwierdzisz.
+- Uruchamiasz [test run / replay](#test-runs-replays) (replaye wymuszają tryb dry-run niezależnie od statusu agenta).
 
-Platforma pobiera tokeny za uruchomienia w trybie dry-run - wywołanie LLM nadal ma miejsce, pomijane są jedynie skutki uboczne. Limity budżetu dotyczą także dry-run. Zobacz [Przegląd budżetów](#budgets-overview).
+Platforma nalicza tokeny za uruchomienia dry-run - wywołanie LLM nadal się odbywa, pomijane są tylko efekty uboczne. Limity budżetu dotyczą również dry-run. Zobacz [Budgets Overview](#budgets-overview).
 
-### Enabled
+### Enabled (Włączony)
 
-Agent wykonuje rzeczywiste działania. Wywołania narzędzi są wykonywane - lub trafiają do kolejki oczekujących na [zatwierdzenie](#approval-workflow), jeśli wykonanie akcji wymaga zatwierdzenia.
+Agent podejmuje prawdziwe akcje. Wywołania narzędzi są wykonywane - lub trafiają do kolejki [zatwierdzania](#approval-workflow), jeśli akcja jest chroniona.
 
-Use `Enabled` after dry-run output looks correct.
+Użyj `Enabled`, gdy wyniki dry-run wyglądają poprawnie.
 
-### Switching status
+### Zmiana statusu
 
-Możesz przełączać się między dowolnymi dwoma statusami na formularzu edycji. Przełączenie z Dry Run na Enabled nie powoduje retroaktywnego ponownego wykonania działań z dry-run - te pozostają w historii dry-run. Nowe wyzwalacze od tego momentu będą działać na żywo.
+Możesz przełączać się między dowolnymi dwoma statusami w formularzu edycji. Przełączenie z Dry Run na Enabled nie powoduje wstecznego ponownego wykonania akcji dry-run - pozostają one jako historia dry-run. Nowe triggery od tego momentu działają na żywo.
 
-Przełączenie z Enabled na Disabled w trakcie trwania uruchomienia **nie** przerywa bieżącego uruchomienia. Aktualnie wykonywany wyzwalacz kończy się (z tym, co już rozpoczął); następny wyzwalacz jest pomijany, ponieważ agent jest teraz Disabled.
+Przełączenie z Enabled na Disabled w trakcie uruchomienia **nie** przerywa uruchomienia w toku. Aktualnie wykonywany trigger kończy działanie (z tym, co już rozpoczął); kolejny trigger jest odrzucany, ponieważ agent jest teraz Disabled.
 
-### Status during billing problems
+### Status podczas problemów z rozliczeniami
 
-Jeżeli rozliczenia Twojego najemcy staną się nieprawidłowe, wszystkie agenty są de facto wstrzymane niezależnie od zapisanego statusu - wyzwalacze są odrzucane z powodem `BILLING_INVALID` aż do przywrócenia rozliczeń. Pole zapisanego statusu nie zostaje zmienione; dispatcher po prostu odmawia uruchomienia. Zobacz [Plany i uprawnienia](#plans-and-eligibility).
+Jeśli rozliczenia Twojego tenanta staną się nieprawidłowe, wszyscy agenci są skutecznie wstrzymani niezależnie od zapisanego statusu - triggery są odrzucane z `BILLING_INVALID` do czasu przywrócenia rozliczeń. Zapisane pole statusu nie jest zmieniane; dispatcher po prostu odmawia uruchomienia. Zobacz [Plans and Eligibility](#plans-and-eligibility).

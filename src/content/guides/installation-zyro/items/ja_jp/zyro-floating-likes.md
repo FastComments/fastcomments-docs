@@ -30,5 +30,3 @@ FastComments は Zyro 向けに Page Reacts（いわゆる Floating Like ボタ�
 4. Integrations を選択します。
 5. 新しいコードを `Custom code` フィールドの *末尾* に追加し、サイトを公開します。
 6. プレビューモードではウィジェットは表示されませんが、公開されたサイトで表示されます。
-
----

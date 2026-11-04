@@ -36,5 +36,3 @@ Returns: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fast
   console.log(response);
 })();
 [inline-code-end]
-
----

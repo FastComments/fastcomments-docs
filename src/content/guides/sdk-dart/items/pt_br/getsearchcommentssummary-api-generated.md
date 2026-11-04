@@ -32,5 +32,3 @@ try {
     print('Exceção ao chamar ModerationApi->getSearchCommentsSummary: $e\n');
 }
 [inline-code-end]
-
----

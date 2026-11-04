@@ -1,29 +1,27 @@
-It is possible to ban users using certain email providers using wildcards.
+Можно блокировать пользователей, использующих определённых почтовых провайдеров, с помощью подстановочных знаков.
 
-For example, if you find that all comments from **@bademail.com** are spam, you can simply ban
-that whole email provider by entering "*@bademail.com" in the email input field when adding a banned user.
+Например, если вы обнаружили, что все комментарии с **@bademail.com** являются спамом, вы можете просто заблокировать
+весь этот почтовый домен, введя "*@bademail.com" в поле email при добавлении заблокированного пользователя.
 
-Note the "*" before the @ in the email.
+Обратите внимание на "*" перед @ в адресе email.
 
 ### Поддомены
 
-A domain ban also covers every subdomain of that domain. Banning `*@bademail.com` also bans
-`someone@mail.bademail.com` and `someone@eu.mail.bademail.com`, so there is no need to add a separate ban for each subdomain.
+Блокировка домена также распространяется на все его поддомены. Блокировка `*@bademail.com` также блокирует
+`someone@mail.bademail.com` и `someone@eu.mail.bademail.com`, поэтому не нужно добавлять отдельную блокировку для каждого поддомена.
 
-If you only want to ban a specific subdomain, enter that subdomain instead, for example `*@mail.bademail.com`. That ban
-does not affect `someone@bademail.com`.
+Если вы хотите заблокировать только конкретный поддомен, укажите его, например `*@mail.bademail.com`. Такая блокировка
+не затрагивает `someone@bademail.com`.
 
-### Запрет домена из комментария
+### Блокировка домена из комментария
 
-You do not have to type the pattern yourself. When you ban a user from a comment on the Moderate Comments page, the ban dialog
-has a "Ban All @domain Users" checkbox that creates the same `*@domain` ban for the commenter's email domain.
+Вам не нужно вводить шаблон вручную. Когда вы блокируете пользователя из комментария на странице Moderate Comments, в диалоге
+блокировки есть флажок "Ban All @domain Users", который создаёт такую же блокировку `*@domain` для домена email комментатора.
 
 ### Поддерживаемые шаблоны
 
-The only supported wildcard form is a single `*` in place of the whole name part, followed by `@` and a domain. Other forms
-are rejected when you try to save them:
+Единственная поддерживаемая форма подстановочного знака — это одиночный `*` вместо всей части имени, за которым следуют `@` и домен. Другие формы
+отклоняются при попытке сохранения:
 
-- `*@*.bademail.com` is not needed, because `*@bademail.com` already covers subdomains.
-- `name*@bademail.com` and `*bademail.com` are not supported.
-
----
+- `*@*.bademail.com` не нужен, так как `*@bademail.com` уже покрывает поддомены.
+- `name*@bademail.com` и `*bademail.com` не поддерживаются.

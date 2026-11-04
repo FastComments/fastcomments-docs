@@ -51,5 +51,3 @@ try {
     echo 'Exception when calling DefaultApi->deleteSSOUser: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

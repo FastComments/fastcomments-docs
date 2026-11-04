@@ -45,5 +45,3 @@ Polje je ograničeno na **4000 karaktera** (primenjuje se i na formi i na ruti z
 ### Verzije
 
 Nema ugrađene istorije verzija za dokument smernica - poslednja sačuvana vrednost je ta koju agent koristi. Ako želite istoriju, kopirajte dokument u svoj sistem za praćenje pre svakog većeg izmena. [Refine Prompts](#refining-prompts) tok može da zabeleži promene *početnog prompta* ali ne vrši verzionisanje dokumenta smernica.
-
----

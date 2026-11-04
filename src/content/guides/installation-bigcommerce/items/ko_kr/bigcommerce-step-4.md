@@ -13,5 +13,3 @@
     <div class="title">변경 사항 적용됨</div>
     <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-4-live.png" alt="Changes Live" />
 </div>
-
----

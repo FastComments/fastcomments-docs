@@ -1,4 +1,3 @@
----
 ## Parameters
 
 | Naam | Type | Locatie | Vereist | Beschrijving |
@@ -32,5 +31,3 @@ DefaultAPI.updateQuestionConfig(tenantId: tenantId, id: id, updateQuestionConfig
     }
 }
 [inline-code-end]
-
----

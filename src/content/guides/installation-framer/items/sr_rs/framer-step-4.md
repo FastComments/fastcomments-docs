@@ -1,18 +1,18 @@
-Можемо побољшати позиционирање видгета на два начина.
+Можемо побољшати позиционирање виџета тако што ћемо урадити две ствари.
 
-Прво, у левом панелу, подесите висину видгета на `fill` и `1fr`:
-
-<div class="screenshot white-bg">
-    <div class="title">Висина коментарског видгета</div>
-    <img class="screenshot-image" src="/images/installation-guides/framer-step-4-widget-height.png" alt="Висина коментарског видгета" />
-</div>
-
-Next we need to fix the default Framer page config. By default it sets the page height to a fixed size, which can cut off
-ните коментара. Зато хајде да и то подесимо на `fill`.
+Прво, у левом панелу, поставите висину виџета на `fill` и `1fr`:
 
 <div class="screenshot white-bg">
-    <div class="title">Поставите висину странице</div>
-    <img class="screenshot-image" src="/images/installation-guides/framer-step-4-page-height.png" alt="Поставите висину странице" />
+    <div class="title">Висина виџета за коментаре</div>
+    <img class="screenshot-image" src="/images/installation-guides/framer-step-4-widget-height.png" alt="Висина виџета за коментаре" />
 </div>
 
-Можда ћете морати да поиграте са висином странице да бисте је поставили онако како желите.
+Затим морамо да исправимо подразумевану конфигурацију Framer странице. Подразумевано она поставља висину странице на фиксну величину, што може да одсече
+нити коментара. Дакле, поставимо и ово на `fill`.
+
+<div class="screenshot white-bg">
+    <div class="title">Постављање висине странице</div>
+    <img class="screenshot-image" src="/images/installation-guides/framer-step-4-page-height.png" alt="Постављање висине странице" />
+</div>
+
+Можда ћете морати да експериментишете са висином странице да бисте је подесили како желите.

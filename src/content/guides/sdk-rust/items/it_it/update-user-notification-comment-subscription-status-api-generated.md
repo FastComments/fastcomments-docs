@@ -1,4 +1,3 @@
----
 Abilita o disabilita le notifiche per un commento specifico.
 
 ## Parameters
@@ -31,5 +30,3 @@ async fn run_example(configuration: &configuration::Configuration) -> Result<(),
     Ok(())
 }
 [inline-code-end]
-
----

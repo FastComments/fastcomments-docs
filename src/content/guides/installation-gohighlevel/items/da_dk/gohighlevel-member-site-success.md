@@ -1,4 +1,3 @@
----
 Det var det! Du skulle nu have live-kommentering tilføjet til dit GoHighLevel-kursus.
 
 <div class="screenshot white-bg">
@@ -7,5 +6,3 @@ Det var det! Du skulle nu have live-kommentering tilføjet til dit GoHighLevel-k
 </div>
 
 Hvis du er stødt på en permission denied-fejl, eller ønsker at tilpasse FastComments, så læs videre.
-
----

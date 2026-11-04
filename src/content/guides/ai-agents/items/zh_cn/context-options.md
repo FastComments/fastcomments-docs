@@ -1,65 +1,65 @@
-The **Context** 部分位于编辑表单上，控制每次运行时代理接收多少信息。更多的上下文会产生更好的决策，但会提高每次运行的令牌成本，因此你只应包含代理实际需要的内容。
+编辑表单中的 **Context** 部分控制代理每次运行时接收多少信息。更多的上下文能产生更好的决策，但会增加每次运行的 token 成本，因此你只应提供代理真正需要的内容。
 
-### What's always included
+### 始终包含的内容
 
-即使每个复选框都未选中，代理的上下文消息仍然包括：
+即使所有复选框都未勾选，代理的上下文消息也会包含：
 
-- The **trigger event type**（例如 `COMMENT_ADD`, `COMMENT_FLAG_THRESHOLD`）。
-- The **page URL and URL ID**（在已知的情况下）。
-- 触发运行的 **comment**（如果存在）——ID、author user ID、author display name、comment text、vote counts、flag count、spam/approved/reviewed flags、parent ID。作者的电子邮件**绝不会**发送给 LLM 提供商（PII 最小化）。
-- 对于 `COMMENT_EDIT` 触发器的 **previous comment text**（以便代理可以比较修改前后）。
-- 对于 `COMMENT_VOTE_THRESHOLD` 触发器的 **vote direction**。
-- 触发操作的 **triggering user ID** 和 **badge ID**（用于版主徽章触发）。
-- 当代理被允许授予徽章时，你的租户的 **badge catalog**（name、display label、description），以便代理可以在不需要你在提示中详细列出徽章的情况下选择合适的徽章。
+- **触发事件类型**（例如 `COMMENT_ADD`、`COMMENT_FLAG_THRESHOLD`）。
+- **页面 URL 和 URL ID**（在已知的情况下）。
+- 触发本次运行的**评论**（如果有的话）—— ID、作者用户 ID、作者显示名称、评论文本、投票数、标记数、垃圾/已批准/已审核标志、父评论 ID。作者的电子邮件**绝不会**发送给 LLM 提供商（PII 最小化）。
+- `COMMENT_EDIT` 触发时的**先前评论文本**（以便代理可以对比修改前后的内容）。
+- `COMMENT_VOTE_THRESHOLD` 触发时的**投票方向**。
+- **触发用户 ID** 和 **badge ID**（用于版主徽章触发）。
+- 当允许代理授予徽章时，你的租户的**徽章目录**（名称、显示标签、描述），这样代理就可以选择合适的徽章，而无需你在提示词中详细说明徽章。
 
-所有不受信任的文本——评论正文、作者名、页面标题、指导文件本身——在上下文消息中都用类似 `<<<COMMENT_TEXT>>> ... <<<END>>>` 的标记进行**围栏**处理。平台的 system prompt 指示模型永远不要遵循这些围栏内的指令。这是平台的提示注入（prompt-injection）防御；你无需在你的提示中重复它。
+所有不可信的文本——评论正文、作者名称、页面标题、准则文档本身——都会在上下文消息中用诸如 `<<<COMMENT_TEXT>>> ... <<<END>>>` 之类的标记进行**围栏**处理。平台的系统提示词会指示模型永远不要遵循这些围栏内的指令。这是平台的提示词注入防御机制；你无需在自己的提示词中重复它。
 
-### The three checkboxes
+### 三个复选框
 
-#### Include parent comment and prior replies in the same thread
+#### 包含同一线程中的父评论和先前回复
 
 添加：
-- **parent comment**——ID、author、text。
-- **Sibling replies**——同一线程中对相同父评论的先前回复。
+- **父评论**—— ID、作者、文本。
+- **同级回复**——同一线程中对同一父评论的先前回复。
 
-适用于：任何在上下文中回应评论的代理（欢迎问候者、线程摘要器、在对话中阅读回复的版主）。
+适用于：任何在上下文中对评论做出响应的代理（欢迎问候者、线程摘要器、阅读对话中回复的版主）。
 
-成本：小到中等。受限于给定线程上存在多少同级回复。
+成本：小到中等。取决于给定线程中存在多少同级回复。
 
-#### Include commenter's trust factor, account age, ban history, and recent comments
+#### 包含评论者的信任因子、账号年龄、封禁历史和近期评论
 
-添加 **AUTHOR_HISTORY** 区块：
+添加 **AUTHOR_HISTORY** 块：
 
-- 注册以来的 **Account age in days**。
-- **Trust factor (0-100)**——FastComments 对该用户在本站点上的信任度评分。参见版主指南中的 [Spam Detection](/guide-moderation.html#spam-detection) 页面。
-- 以前的 **ban count**。
-- 在本站点的 **Total comments**。
-- **Duplicate-content count**——如果用户最近发布了相同的文本（反垃圾信号）。
-- **Same-IP cross-account signal**——来自同一 IP 在其他账户下的评论计数（备用账户信号）。IP 哈希本身**永远**不会发送给 LLM。
-- **Recent comments**——该用户最多 5 条最近评论，每条截断为 300 个字符，并作为不受信任的文本围栏处理。
+- **自注册以来的账号年龄（天数）**。
+- **信任因子（0-100）**—— FastComments 的评分，概括了用户在本站的可信程度。请参阅审核指南中的 [Spam Detection](/guide-moderation.html#spam-detection) 页面。
+- **先前封禁次数。**
+- **在本站的评论总数。**
+- **重复内容计数**——如果用户最近发布过相同的文本（反垃圾信号）。
+- **同 IP 跨账号信号**——同一 IP 下其他账号的评论数（小号信号）。IP 哈希本身绝不会发送给 LLM。
+- **近期评论**——用户最近的最多 5 条评论，每条截断至 300 个字符，并作为不可信文本进行围栏处理。
 
-适用于：任何审 moderation 代理。没有这些信息时，模型会把新账户和长期良好行为的用户以相同的立场处理并封禁。
+适用于：任何审核代理。没有这些信息，模型会以同样的姿态封禁新账号和长期善意使用的老用户。
 
-成本：中等。最近的评论会增加最多的令牌数。
+成本：中等。近期评论增加的 token 最多。
 
-#### Include page title, subtitle, description, and meta tags
+#### 包含页面标题、副标题、描述和 meta 标签
 
-添加 **PAGE_CONTEXT** 区块——title、subtitle、description，以及 FastComments 为该页面收集的任何 meta 标签。
+添加 **PAGE_CONTEXT** 块—— FastComments 为该页面捕获的标题、副标题、描述以及任何 meta 标签。
 
-适用于：欢迎问候者和线程摘要器，在这些情况下了解页面内容会显著提高输出质量。
+适用于：欢迎问候者和线程摘要器，了解页面的内容能显著提升输出质量。
 
 成本：小。
 
-### Community guidelines
+### 社区准则
 
-第四个字段，**Community guidelines**，是一个免费文本的策略区块，包含在每次运行的 user-role 上下文消息中，并像评论正文和其他用户提供的内容一样作为不受信任的文本围栏处理。代理将其作为策略文本读取，但平台不会将其视为系统指令。有关应放入内容的说明，请参见 [Community Guidelines](#community-guidelines)。
+第四个字段 **Community guidelines** 是一个自由文本策略块，每次运行时都会包含在用户角色上下文消息中，并以与评论正文和其他用户提供内容相同的方式作为不可信文本进行围栏处理。代理将其作为策略文本阅读，但平台不会将其视为系统指令。关于其中应包含什么内容，请参阅 [Community Guidelines](#community-guidelines)。
 
-### Adding context selectively
+### 有选择地添加上下文
 
-这些复选框按代理应用，而不是全局应用。一种常见的模式：
+这些复选框是按代理设置的，而非全局设置。常见的模式：
 
-- 欢迎问候者：page context **开启**，thread context **关闭**，user history **关闭**。
-- 版主：thread context **关闭**，user history **开启**，page context **关闭**。
-- 线程摘要器：thread context **开启**，page context **开启**，user history **关闭**。
+- 欢迎问候者：页面上下文**开启**，线程上下文**关闭**，用户历史**关闭**。
+- 版主：线程上下文**关闭**，用户历史**开启**，页面上下文**关闭**。
+- 线程摘要器：线程上下文**开启**，页面上下文**开启**，用户历史**关闭**。
 
-在代理实际执行的调用上，尽量只提供代理需要的最少上下文——额外的上下文会在每次运行时增加令牌成本，即使代理并未使用它。
+只为代理在其实际执行的调用中正确工作所需的最少上下文——额外的上下文在每次运行时都会消耗 token，即使代理并不使用它。

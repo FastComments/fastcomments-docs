@@ -1,4 +1,3 @@
----
 Підписує URL на подію коментаря (REST hook subscribe). Підписка того самого URL на ту ж подію та домен знову повертає існуючу підписку. Доставки підписані HMAC, дивіться посібник з вебхук‑ів; застарілий заголовок `token` ніколи не надсилається в підписки API.
 
 ## Параметри
@@ -32,5 +31,3 @@ DefaultAPI.createWebhook(tenantId: tenantId, createWebhookParams: createWebhookP
     }
 }
 [inline-code-end]
-
----

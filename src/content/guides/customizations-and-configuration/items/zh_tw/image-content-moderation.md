@@ -1,4 +1,3 @@
----
 [related-parameter-start name = 'imageContentProfanityLevel'; type = 'string'; related-parameter-end]
 
 預設情況下，FastComments 評論小工具的圖像內容審核已設定為 `off`。

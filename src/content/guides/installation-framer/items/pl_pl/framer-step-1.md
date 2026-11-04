@@ -6,5 +6,3 @@ W naszym przykładzie dodamy FastComments do stron bloga, ale każdy rodzaj stro
     <div class="title">Otwórz edytor</div>
     <img class="screenshot-image" src="/images/installation-guides/framer-step-1-open-editor.png" alt="Otwórz edytor" />
 </div>
-
----

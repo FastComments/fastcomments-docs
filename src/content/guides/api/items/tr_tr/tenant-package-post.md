@@ -94,5 +94,3 @@ interface TenantPackagePostResponse {
     tenantPackage?: TenantPackage; // Başarı durumunda oluşturulan tenant paketinin tamamını döneriz.
 }
 [inline-code-end]
-
----

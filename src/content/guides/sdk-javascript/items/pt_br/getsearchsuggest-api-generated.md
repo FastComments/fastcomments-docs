@@ -22,5 +22,3 @@ Retorna: [`ModerationSuggestResponse`](https://github.com/FastComments/fastcomme
   const minimalResponse: ModerationSuggestResponse = await getSearchSuggest(tenantId);
 })();
 [inline-code-end]
-
----

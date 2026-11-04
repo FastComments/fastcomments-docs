@@ -26,5 +26,3 @@ if optResp.isSome:
 else:
   echo "No response"
 [inline-code-end]
-
----

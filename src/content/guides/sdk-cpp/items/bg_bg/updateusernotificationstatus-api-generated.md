@@ -23,5 +23,3 @@ api->updateUserNotificationStatus(
 ).then([](std::shared_ptr<UpdateUserNotificationStatusResponse> resp) {
 }).wait();
 [inline-code-end]
-
----

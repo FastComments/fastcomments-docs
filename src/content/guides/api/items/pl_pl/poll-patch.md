@@ -68,5 +68,3 @@ interface PollPatchResponse {
 - W przeciwieństwie do tworzenia ankiety, `closesAt` może być w przeszłości – tak zamykasz ankietę natychmiast.
 - Prywatność ankiety może być ograniczona, ale nie może być rozszerzona po otrzymaniu głosów.
 - Zablokowany komentarz nie może mieć zmienionej ankiety i zwraca błąd `locked`.
-
----

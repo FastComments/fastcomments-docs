@@ -34,5 +34,3 @@ try {
     print('Exception when calling DefaultApi->deleteComment: $e\n');
 }
 [inline-code-end]
-
----

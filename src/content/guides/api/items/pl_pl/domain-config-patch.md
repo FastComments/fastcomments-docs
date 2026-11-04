@@ -33,5 +33,3 @@ interface DomainConfigPatchResponse {
     configuration?: DomainConfig
 }
 [inline-code-end]
-
----

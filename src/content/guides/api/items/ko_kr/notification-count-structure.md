@@ -1,4 +1,3 @@
----
 `NotificationCount` 객체는 사용자의 읽지 않은 알림 수와 메타데이터를 나타냅니다.
 
 읽지 않은 알림이 없으면 해당 사용자에 대한 `NotificationCount`가 존재하지 않습니다.
@@ -18,5 +17,3 @@ interface NotificationCount {
     expireAt: string // 날짜 문자열
 }
 [inline-code-end]
-
----

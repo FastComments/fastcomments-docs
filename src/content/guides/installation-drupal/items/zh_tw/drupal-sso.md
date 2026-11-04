@@ -1,4 +1,3 @@
----
 FastComments 透過 SSO（單一登入）與 Drupal 的使用者系統整合。使用者登入您的 Drupal 網站後，模組會自動將他們的身分傳送到 FastComments。無需建立額外帳號，也不需要執行初始同步。
 
 The module supports three SSO modes, set under `Administration > Configuration > Content > FastComments`.
@@ -20,5 +19,3 @@ User identity is passed to FastComments each time a user views a comment thread.
 <sup>(Optional)</sup> 將您的管理員加入 [Users & Administrators](https://fastcomments.com/auth/my-account/users)，並將版主加入 [Comment Moderators](https://fastcomments.com/auth/my-account/moderate-comments/moderators)，以改善他們的使用體驗並啟用版主的統計追蹤。
 
 如要深入了解 SSO 的運作方式，請參閱自訂文件的 [SSO 章節](/guide-customizations-and-configuration.html#sso)。
-
----

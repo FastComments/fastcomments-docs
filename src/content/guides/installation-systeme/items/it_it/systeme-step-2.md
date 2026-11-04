@@ -1,4 +1,3 @@
----
 Ora copieremo il nostro codice. Se lo snippet di codice riporta `tenantId: "demo"` sulla riga 6 allora dovresti accedere al tuo account FastComments e poi aggiornare questa pagina in modo che lo snippet copiato contenga l'id del tuo account.
 
 [inline-code-attrs-start title = 'Snippet di Systeme.io'; type = 'html'; isFunctional = false; inline-code-attrs-end]
@@ -21,5 +20,3 @@ Ora incollalo nell'editor e fai clic su Salva:
 </div>
 
 ... poi salva il tuo sito. Ecco fatto!
-
----

@@ -7,5 +7,3 @@ Sada kad smo dodali widget za komentare, posložimo ga na našoj stranici.
 
 S ovim vodičem moći ćemo promijeniti trenutnu nit ovisno o aktivnoj stranici. Međutim, nećemo moći dinamički mijenjati veličinu widgeta za komentare
 dok Wix ne omogući tu funkcionalnost. Do tada ćete morati odlučiti koliko veliko želite područje za komentare na svojoj stranici i odgovarajuće ga dimenzionirati.
-
----

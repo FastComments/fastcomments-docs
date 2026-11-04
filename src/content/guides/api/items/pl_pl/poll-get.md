@@ -31,5 +31,3 @@ interface PollGetResponse {
 [inline-code-end]
 
 Komentarz, który nie ma ankiety, komentarz, który został usunięty, oraz identyfikator komentarza, który nie istnieje, wszystkie odpowiadają w ten sam sposób, z `poll-not-found`.
-
----

@@ -1,22 +1,27 @@
-Det er muligt at blokere brugere fra bestemte e‑mailudbydere ved hjælp af jokertegn.
+Det er muligt at bande brugere fra bestemte e-mail-udbydere ved hjælp af wildcards.
 
-For eksempel, hvis du opdager at alle kommentarer fra **@bademail.com** er spam, kan du blot blokere hele e‑mailudbyderen ved at indtaste "*@bademail.com" i e‑mail‑inputfeltet, når du tilføjer en blokeret bruger.
+For eksempel, hvis du opdager, at alle kommentarer fra **@bademail.com** er spam, kan du simpelthen bande
+hele den e-mail-udbyder ved at indtaste "*@bademail.com" i e-mail-inputfeltet, når du tilføjer en bandlyst bruger.
 
-Bemærk "*" før @ i e‑mailen.
+Bemærk "*" før @ i e-mailen.
 
-### Subdomains
+### Subdomæner
 
-Et domæneforbud dækker også alle underdomæner til det pågældende domæne. At blokere `*@bademail.com` blokerer også `someone@mail.bademail.com` og `someone@eu.mail.bademail.com`, så der er ingen grund til at tilføje et separat forbud for hvert underdomæne.
+En domænebannelse dækker også alle subdomæner af det domæne. At bande `*@bademail.com` bandler også
+`someone@mail.bademail.com` og `someone@eu.mail.bademail.com`, så der er ikke behov for at tilføje en separat bannelse for hvert subdomæne.
 
-Hvis du kun vil blokere et specifikt underdomæne, indtast da det underdomæne i stedet, for eksempel `*@mail.bademail.com`. Dette forbud påvirker ikke `someone@bademail.com`.
+Hvis du kun vil bande et bestemt subdomæne, skal du indtaste det subdomæne i stedet, for eksempel `*@mail.bademail.com`. Den bannelse
+påvirker ikke `someone@bademail.com`.
 
-### Banning a Domain From a Comment
+### Bannelse af et domæne fra en kommentar
 
-Du behøver ikke at skrive mønsteret selv. Når du blokerer en bruger fra en kommentar på siden Moderate Comments, har forbudsdialogen en afkrydsningsboks "Ban All @domain Users", som opretter det samme `*@domain` forbud for kommentatorens e‑mail‑domæne.
+Du behøver ikke selv at skrive mønsteret. Når du bandler en bruger fra en kommentar på siden Moderate Comments, har bannelsesdialogen
+et afkrydsningsfelt "Ban All @domain Users", der opretter den samme `*@domain` bannelse for kommentarens e-mail-domæne.
 
-### Supported Patterns
+### Understøttede mønstre
 
-Den eneste understøttede jokertegnsform er et enkelt `*` i stedet for hele navnedelen, efterfulgt af `@` og et domæne. Andre former afvises, når du forsøger at gemme dem:
+Den eneste understøttede wildcard-form er en enkelt `*` i stedet for hele navnedelen, efterfulgt af `@` og et domæne. Andre former
+afvises, når du forsøger at gemme dem:
 
-- `*@*.bademail.com` er ikke nødvendigt, fordi `*@bademail.com` allerede dækker underdomæner.
+- `*@*.bademail.com` er ikke nødvendigt, fordi `*@bademail.com` allerede dækker subdomæner.
 - `name*@bademail.com` og `*bademail.com` understøttes ikke.

@@ -25,5 +25,3 @@ D'autres questions auront une configuration spécifique pour ce type. Par exempl
 En bas de cette page, vous voyez une grande question de notation par étoiles, puis quelques petites. Les petites sont des sous-notes. Après avoir configuré toutes vos questions, vous pouvez retourner modifier votre question de niveau supérieur et sélectionner lesquelles sont des sous-questions.
 
 Les sous-questions peuvent être configurées pour s'afficher avec chaque avis, s'afficher dans les widgets de résumé, ou être rendues accessibles uniquement en interne via la Configuration des widgets (montrée ci-dessous).
-
----

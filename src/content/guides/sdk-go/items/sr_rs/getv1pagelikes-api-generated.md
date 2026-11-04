@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Name | Type | Location | Required | Description |
@@ -38,5 +37,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.GetV1PageLikes`: %v\n", resp)
 }
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 req
 tenantId
 urlId
@@ -32,5 +31,3 @@ api->getGlobalEventLog(
     (void)resp;
 });
 [inline-code-end]
-
----

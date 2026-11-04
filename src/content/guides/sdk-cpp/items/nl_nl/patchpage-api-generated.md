@@ -29,5 +29,3 @@ api->patchPage(tenantId, pageId, update)
         try { t.get(); } catch (const std::exception&) {}
     });
 [inline-code-end]
-
----

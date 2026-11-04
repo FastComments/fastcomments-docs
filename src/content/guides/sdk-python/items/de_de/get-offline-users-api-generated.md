@@ -1,21 +1,22 @@
-Past commenters on the page who are NOT currently online. Sorted by displayName.  
-Use this after exhausting /users/online to render a "Members" section.  
-Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName} index from afterName forward via $gt, no $skip cost.
+Frühere Kommentatoren auf der Seite, die derzeit NICHT online sind. Sortiert nach displayName.
+Verwenden Sie dies nach dem Ausschöpfen von /users/online, um einen „Members“-Abschnitt darzustellen.
+Cursor-Paginierung über commenterName: Der Server durchläuft den partiellen {tenantId, urlId, commenterName}
+Index ab afterName vorwärts über $gt, ohne $skip-Kosten.
 
-## Parameters
+## Parameter
 
-| Name | Type | Location | Required | Description |
+| Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| urlId | string | query | Yes | Seiten-URL-Identifikator (serverseitig bereinigt). |
-| afterName | string | query | No | Cursor: übergebe nextAfterName aus der vorherigen Antwort. |
-| afterUserId | string | query | No | Cursor-Tiebreaker: übergebe nextAfterUserId aus der vorherigen Antwort. Erforderlich, wenn afterName gesetzt ist, damit Namens‑Ties keine Einträge verlieren. |
+| tenantId | string | path | Ja |  |
+| urlId | string | query | Ja | Seiten-URL-Identifikator (serverseitig bereinigt). |
+| afterName | string | query | Nein | Cursor: nextAfterName aus der vorherigen Antwort übergeben. |
+| afterUserId | string | query | Nein | Cursor-Tiebreaker: nextAfterUserId aus der vorherigen Antwort übergeben. Erforderlich, wenn afterName gesetzt ist, damit Namensgleichheiten keine Einträge verlieren. |
 
-## Response
+## Antwort
 
-Returns: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/page_users_offline_response.py)
+Gibt zurück: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/page_users_offline_response.py)
 
-## Example
+## Beispiel
 
 [inline-code-attrs-start title = 'get_offline_users Beispiel'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -25,21 +26,21 @@ from client.models.page_users_offline_response import PageUsersOfflineResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Das Definieren des Hosts ist optional und standardmäßig https://fastcomments.com
-# Siehe configuration.py für eine Liste aller unterstützten Konfigurationsparameter.
+# Defining the host is optional and defaults to https://fastcomments.com
+# See configuration.py for a list of all supported configuration parameters.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Betrete einen Kontext mit einer Instanz des API-Clients
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # Erstelle eine Instanz der API-Klasse
+    # Create an instance of the API class
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    url_id = 'url_id_example' # str | Page URL identifier (cleaned server-side).
-    after_name = 'after_name_example' # str | Cursor: übergebe nextAfterName aus der vorherigen Antwort. (optional)
-    after_user_id = 'after_user_id_example' # str | Cursor-Tiebreaker: übergebe nextAfterUserId aus der vorherigen Antwort. Erforderlich, wenn afterName gesetzt ist, damit Namens‑Ties keine Einträge verlieren. (optional)
+    url_id = 'url_id_example' # str | Seiten-URL-Identifikator (serverseitig bereinigt).
+    after_name = 'after_name_example' # str | Cursor: nextAfterName aus der vorherigen Antwort übergeben. (optional)
+    after_user_id = 'after_user_id_example' # str | Cursor-Tiebreaker: nextAfterUserId aus der vorherigen Antwort übergeben. Erforderlich, wenn afterName gesetzt ist, damit Namensgleichheiten keine Einträge verlieren. (optional)
 
     try:
         api_response = api_instance.get_offline_users(tenant_id, url_id, GetOfflineUsersOptions(after_name=after_name, after_user_id=after_user_id))

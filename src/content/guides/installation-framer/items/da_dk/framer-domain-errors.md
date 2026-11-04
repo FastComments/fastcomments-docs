@@ -10,5 +10,3 @@ Det skyldes, at FastComments ikke ved, at din konto skal være tilladt på dette
 I dette tilfælde er løsningen enkel. Du skal blot tilføje din side til din FastComments.com-konto.
 
 [Gå her for at tilføje din side til din konto.](https://fastcomments.com/auth/my-account/configure-domains)
-
----

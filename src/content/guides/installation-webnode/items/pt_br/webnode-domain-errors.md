@@ -19,5 +19,3 @@ Adicione o domínio, como no exemplo a seguir:
 </div>
 
 Agora você deve ter comentários rápidos e em tempo real adicionados ao seu site Webnode!
-
----

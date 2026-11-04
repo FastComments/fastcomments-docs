@@ -6,5 +6,3 @@ To je to! Na vašo spletno stran Hostinger bi morali biti zdaj dodani komentarji
 </div>
 
 Če ste naleteli na napako 'permission denied', ali želite prilagoditi FastComments, nadaljujte z branjem.
-
----

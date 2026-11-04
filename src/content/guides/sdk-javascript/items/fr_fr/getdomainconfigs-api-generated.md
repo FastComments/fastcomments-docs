@@ -18,5 +18,3 @@ async function fetchDomainConfigs(): Promise<void> {
   console.log(configs);
 }
 [inline-code-end]
-
----

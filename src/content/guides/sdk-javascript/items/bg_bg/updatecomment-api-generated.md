@@ -37,5 +37,3 @@ const response: APIEmptyResponse = await updateComment(
   isLive
 );
 [inline-code-end]
-
----

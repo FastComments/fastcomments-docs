@@ -21,5 +21,3 @@ const ssoToken: string = "sso-abc123";
 const reactsWithSso: GetV2PageReacts = await getV2PageReacts(tenantId, urlId, ssoToken);
 const reactsWithoutSso: GetV2PageReacts = await getV2PageReacts(tenantId, urlId);
 [inline-code-end]
-
----

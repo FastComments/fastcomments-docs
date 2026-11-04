@@ -11,5 +11,3 @@ Cela est actuellement inclus dans tous les forfaits FastComments.
 ### Remarque !
 
 N'oubliez pas que la colonne `URL ID` dans le fichier CSV doit correspondre à la `URL` du cours/vidéo. 
-
----

@@ -1,4 +1,3 @@
----
 ## Hulp nodig?
 
 Als u problemen ondervindt of vragen heeft over de Go SDK, doe dan het volgende:
@@ -9,5 +8,3 @@ Als u problemen ondervindt of vragen heeft over de Go SDK, doe dan het volgende:
 ## Bijdragen
 
 Bijdragen zijn welkom! Bezoek de [GitHub-repository](https://github.com/FastComments/fastcomments-go) voor richtlijnen voor bijdragen.
-
----

@@ -18,5 +18,3 @@
 這也可以不使用程式碼完成。在小工具自訂頁面，請參閱「Disable Notification Bell」區段。
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-notification-bell']; selector = '.disable-notification-bell'; alt='已勾選「Disable Notification Bell」核取方塊的小工具自訂頁面'; title='停用通知鈴' app-screenshot-end]
-
----

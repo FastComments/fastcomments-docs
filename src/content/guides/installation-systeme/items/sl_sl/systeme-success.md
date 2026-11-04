@@ -1,4 +1,3 @@
----
 Zdaj, če si ogledamo objavo na blogu, bi morali videti FastComments!
 
 <div class="screenshot white-bg">
@@ -7,5 +6,3 @@ Zdaj, če si ogledamo objavo na blogu, bi morali videti FastComments!
 </div>
 
 Čestitke ob nastavitvi FastComments z Systeme.io! Če ste naleteli na Domain Error, ali bi radi izvedeli, kako prilagoditi območje komentarjev, berite naprej!
-
----

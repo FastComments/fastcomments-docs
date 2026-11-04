@@ -18,5 +18,3 @@ if pendingCountOpt.isSome:
   let pendingCount = pendingCountOpt.get()
   echo pendingCount
 [inline-code-end]
-
----

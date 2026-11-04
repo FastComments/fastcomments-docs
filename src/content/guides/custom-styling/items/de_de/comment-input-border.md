@@ -80,5 +80,3 @@ Wenn das Widget im Dark Mode ist, hat es die Klasse `dark`, sodass Sie für den 
 ## Warum das Textfeld nicht direkt stylen?
 
 Das Widget zeichnet einen Teil des Kommentarfeld‑Randes selbst, um den Textbereich herum. Wenn Sie `border-color` oder `border-radius` nur am `textarea` setzen, behalten diese Linien den Standardstil bei und der Rand wirkt nicht übereinstimmend, zum Beispiel eine quadratische Linie, die durch eine abgerundete Ecke verläuft. Die oben genannten Variablen ändern beides gleichzeitig.
-
----

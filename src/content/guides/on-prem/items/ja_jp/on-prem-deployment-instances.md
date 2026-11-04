@@ -1,26 +1,25 @@
-### 必須コンポーネント
+### 必要なコンポーネント
 
-For On-Prem, FastComments just consists of an application server and a database. We have simplified the deployment so that
-the application can serve all traffic directly without adding other components.
+On-Prem の場合、FastComments はアプリケーションサーバーとデータベースだけで構成されています。デプロイを簡素化しており、他のコンポーネントを追加することなく、アプリケーションがすべてのトラフィックを直接処理できます。
 
-The application server is provided in a Docker image and can be deployed with any container management solution.
+アプリケーションサーバーは Docker イメージとして提供されており、任意のコンテナ管理ソリューションでデプロイできます。
 
-The database, MongoDB, can be self-ran or hosted by another provider like AWS DocumentDB or MongoDB Atlas.
+データベースである MongoDB は、セルフホストでも、AWS DocumentDB や MongoDB Atlas などの他のプロバイダーによるホスティングでも利用できます。
 
-FastComments is currently tested with MongoDB 7, however we aim to be DocumentDB compatible to ease deployment.
+FastComments は現在 MongoDB 7 でテストされていますが、デプロイを容易にするため、DocumentDB 互換性も目指しています。
 
 ### インスタンスサイズ
 
-You will find that FastComments is fairly well optimized and doesn't require large machines for the application itself to keep low P99s.
+FastComments はかなり最適化されており、低い P99 を維持するためにアプリケーション自体に大型マシンを必要としないことがわかるでしょう。
 
-All batch and cron jobs use streaming to limit total memory usage.
+すべてのバッチジョブおよび cron ジョブは、総メモリ使用量を抑えるためにストリーミングを使用します。
 
-The below tables for the application server and database can assist with sizing.
+以下のアプリケーションサーバーおよびデータベースの表が、サイジングの参考になります。
 
-### アプリケーションサーバのインスタンス
+### アプリケーションサーバーインスタンス
 
 
-| 同時ユーザー数 | クラスタ合計 CPU | クラスタ合計メモリ |
+| 同時ユーザー数 | クラスター合計 CPU | クラスター合計メモリ |
 |------------------|--------------------|----------------------|
 | 100              | 1                  | 256mb                |
 | 1K               | 2                  | 512mb                |
@@ -28,16 +27,15 @@ The below tables for the application server and database can assist with sizing.
 | 100K             | 32                 | 8gb                  |
 | 1M               | 64                 | 64gb                 |
 
-For example, a single core serving around 100 comment threads a second usually never uses more than 250mb RSS.
+例えば、1 コアで毎秒約 100 のコメントスレッドを処理する場合でも、RSS は通常 250mb を超えることはほとんどありません。
 
-### データベースサーバのインスタンス
+### データベースサーバーインスタンス
 
-Sizing the database depends on working set size, which is the amount of data you access at a given point in time, as well as concurrent requests.
+データベースのサイジングは、ワーキングセットサイズ(ある時点でアクセスするデータ量)と同時リクエスト数によって異なります。
 
-FastComments is fairly kind to Mongo, in that for the hot queries it uses index hints, streaming cursors, and has concurrency limits in various areas
-to prevent overloading of downstream systems.
+FastComments は MongoDB に比較的優しい作りになっており、ホットなクエリではインデックスヒントやストリーミングカーソルを使用し、さまざまな箇所で同時実行数の制限を設けることで、下流システムへの過負荷を防いでいます。
 
-The below is a general guideline on database instance sizes. **Note that this is __per instance__, not total resources in the cluster**.
+以下は、データベースインスタンスサイズの一般的なガイドラインです。**これはクラスター全体のリソースではなく、__1 インスタンスあたり__の値であることに注意してください**。
 
 | 同時ユーザー数 | 保存コメント数 | インスタンスあたり CPU | インスタンスあたりメモリ |
 |------------------|-----------------|-------------------|---------------------|
@@ -47,4 +45,4 @@ The below is a general guideline on database instance sizes. **Note that this is
 | 100K             | 500k            | 16                | 8gb                 |
 | 1M               | 5M              | 32                | 32gb                |
 
-The above tables are conservative estimates. You may find actual requirements differ based on your specific configuration (page sizes, comment volume, etc).
+上記の表は控えめな推定値です。実際の要件は、お客様の特定の構成(ページサイズ、コメント量など)によって異なる場合があります。

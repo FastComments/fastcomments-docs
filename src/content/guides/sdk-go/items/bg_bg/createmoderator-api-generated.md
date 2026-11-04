@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Name | Type | Location | Required | Description |
@@ -37,5 +36,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.CreateModerator`: %v\n", resp)
 }
 [inline-code-end]
-
----

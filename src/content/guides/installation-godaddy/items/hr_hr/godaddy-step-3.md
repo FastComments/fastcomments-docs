@@ -1,4 +1,3 @@
----
 Napokon možemo objaviti naše promjene.
 
 Na vrhu stranice kliknite gumb `Publish`:
@@ -7,5 +6,3 @@ Na vrhu stranice kliknite gumb `Publish`:
     <div class="title">Objavi</div>
     <img class="screenshot-image" src="/images/installation-guides/godaddy-step-3-publish.png" alt="Objavi" />
 </div>
-
----

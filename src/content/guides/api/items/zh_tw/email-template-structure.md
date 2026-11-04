@@ -36,5 +36,3 @@ interface EmailTemplate {
 - 您可以從 `/definitions` 端點取得有效的 `emailTemplateId` 值。
 - `/definitions` 端點也包含預設翻譯和測試資料。
 - 如果結構或測試資料無效，範本將無法儲存。
-
----

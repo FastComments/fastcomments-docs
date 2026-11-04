@@ -1,4 +1,3 @@
----
 ## Parameters
 
 | Name | Type | Location | Required | Description |
@@ -43,5 +42,3 @@ ModerationAPI.getApiIds(tenantId: tenantId, options: ModerationAPI.GetApiIdsOpti
     }
 }
 [inline-code-end]
-
----

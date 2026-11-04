@@ -18,5 +18,3 @@ if response.isSome:
   let configs = response.get()
   echo configs
 [inline-code-end]
-
----

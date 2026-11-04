@@ -1,4 +1,3 @@
----
 ## Parametreler
 
 | Ad | Tür | Gerekli | Açıklama |
@@ -27,5 +26,3 @@ api->searchUsers(tenantId, urlId, options).then([](pplx::task<std::shared_ptr<Se
     }catch(const std::exception&){}
 });
 [inline-code-end]
-
----

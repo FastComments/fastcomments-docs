@@ -1,4 +1,3 @@
----
 | Componente | Descripción |
 | --- | --- |
 | `FastComments` | Widget de comentarios con respuestas, votos y más |
@@ -16,4 +15,3 @@ Todos los componentes se exportan desde la raíz del paquete:
 import { FastComments, FastCommentsLiveChat } from 'fastcomments-astro';
 ---
 ```
----

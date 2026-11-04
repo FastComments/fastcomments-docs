@@ -1,4 +1,3 @@
----
 `Commenters` gehören zu keinem Mandanten. `SSO Commenters` werden automatisch im Rahmen der SSO-Integration erstellt.
 
 ---

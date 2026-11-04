@@ -1,4 +1,3 @@
----
 Prethodni komentatori na stranici koji trenutno NISU online. Sortirano po displayName.
 Koristite ovo nakon iscrpljivanja /users/online da biste prikazali sekciju "Members".
 Kursor paginacija po commenterName: server pretražuje delimični indeks {tenantId, urlId, commenterName}
@@ -54,5 +53,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

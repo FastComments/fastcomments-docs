@@ -1,4 +1,3 @@
----
 ## 参数
 
 | 名称 | 类型 | 位置 | 必填 | 描述 |
@@ -51,5 +50,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

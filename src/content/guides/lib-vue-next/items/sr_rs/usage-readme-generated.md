@@ -1,4 +1,3 @@
----
 ### Коментар видгет
 
 Компонента FastCommentsVueNext садржи видгет FastComments за коментаре у реалном времену.
@@ -21,4 +20,3 @@ export default {
 }
 </script>
 ```
----

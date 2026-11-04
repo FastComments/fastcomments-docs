@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Име | Тип | Локација | Обавезно | Опис |
@@ -31,5 +30,3 @@ DefaultAPI.getTenantPackages(tenantId: tenantId, skip: skip) { (response, error)
     }
 }
 [inline-code-end]
-
----

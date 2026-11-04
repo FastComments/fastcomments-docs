@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Назив | Тип | Обавезно | Опис |
@@ -23,5 +22,3 @@ async fn example(configuration: &configuration::Configuration) -> Result<(), Err
     Ok(())
 }
 [inline-code-end]
-
----

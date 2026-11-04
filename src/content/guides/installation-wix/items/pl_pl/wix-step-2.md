@@ -11,5 +11,3 @@ To da nam na początek smutnie wyglądające pole:
     <div class="title">Blok początkowy</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-1-sad.png" alt="Blok początkowy" />
 </div>
-
----

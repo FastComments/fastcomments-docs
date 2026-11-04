@@ -1,3 +1,1 @@
----
 Ponovno stilizirajte svaki dio widgeta za komentare pomoću vlastitog CSS-a. Potpuni zadani stil za v2, plus widgeti za najnovije komentare i najraspravljanije.
----

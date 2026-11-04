@@ -15,4 +15,3 @@ Con maxReplyDepth impostato su 2:
 Impostarlo su 1 consentirebbe solo risposte ai commenti di livello principale, creando una struttura di discussione più piatta.
 
 Impostare maxReplyDepth a 0 disabiliterebbe tutte le risposte, permettendo solo commenti di livello principale. Se non specificato, le risposte possono essere annidate senza limiti.
----

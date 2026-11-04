@@ -11,5 +11,3 @@ Poleg tega lahko za krmarjenje po tem seznamu uporabite tipki puščica gor in p
 Vemo, da boste morda želeli uporabiti simbol `@` brez označevanja uporabnika. FastComments bo to zaznal in ne bo motil vašega tipkanja.
 
 Upoštevajte, da samodokončanje najprej daje prednost ujemanjem, občutljivim na velikost črk, nato pa bo poskusilo poiskati tudi ujemanja, neobčutljiva na velikost črk.
-
----

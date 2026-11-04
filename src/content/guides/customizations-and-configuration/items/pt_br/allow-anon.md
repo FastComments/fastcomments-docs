@@ -1,4 +1,3 @@
----
 Por padrão, o FastComments exigirá um e‑mail para comentar. Não precisa ser um e‑mail válido, porém até que o usuário clique no link enviado a ele,
 seu comentário exibirá um rótulo "Comentário Não Verificado".
 

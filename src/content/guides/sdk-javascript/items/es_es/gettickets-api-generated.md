@@ -33,5 +33,3 @@ Devuelve: [`GetTicketsResponse`](https://github.com/FastComments/fastcomments-sd
   );
 })();
 [inline-code-end]
-
----

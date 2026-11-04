@@ -26,5 +26,3 @@ api->updateComment(tenantId, commentId, updatable, options)
     .then([](std::shared_ptr<APIEmptyResponse>) {})
     .then([](pplx::task<void> t) { try { t.get(); } catch(const std::exception&) {} });
 [inline-code-end]
-
----

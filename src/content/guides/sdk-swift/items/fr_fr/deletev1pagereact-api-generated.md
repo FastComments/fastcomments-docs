@@ -1,4 +1,3 @@
----
 ## Paramètres
 
 | Nom | Type | Emplacement | Obligatoire | Description |
@@ -33,5 +32,3 @@ PublicAPI.deleteV1PageReact(tenantId: tenantId, urlId: urlId, sso: sso) { (respo
     }
 }
 [inline-code-end]
-
----

@@ -32,5 +32,3 @@ ModerationAPI.getCommentBanStatus(tenantId: tenantId, commentId: commentId, sso:
     }
 }
 [inline-code-end]
-
----

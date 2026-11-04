@@ -1,4 +1,3 @@
----
 FastComments는 Comment 리소스에 대해서만 웹훅을 지원합니다.
 
 우리는 댓글 생성, 삭제 및 업데이트에 대한 웹훅을 지원합니다.
@@ -8,5 +7,3 @@ FastComments는 Comment 리소스에 대해서만 웹훅을 지원합니다.
 
 대시보드 또는 API를 통해 동일한 이벤트에 여러 엔드포인트가
 (Managing Webhooks via the API 참조). 각 웹훅은 독립적으로 전달됩니다.
-
----

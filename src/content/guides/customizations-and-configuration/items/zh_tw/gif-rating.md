@@ -1,4 +1,3 @@
----
 [related-parameter-start name = 'gifRating'; type = 'string'; related-parameter-end]
 
 預設情況下，FastComments 評論小工具會將 `gif rating` 設為 `pg`。
@@ -12,5 +11,3 @@
 在 UI 中，只要未勾選 `Disable Image Uploads?`，您就會在 `Gif Picker Rating` 下找到此設定。
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.gif-rating'; alt='小工具自訂頁面上的 Gif Picker Rating 下拉選單，提供 g、pg、pg-13 和 r'; title='設定 Gif 評分' app-screenshot-end]
-
----

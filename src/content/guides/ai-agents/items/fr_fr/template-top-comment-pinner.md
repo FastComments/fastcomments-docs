@@ -26,5 +26,3 @@ L'épinglage est non destructif — il peut être annulé instantanément — do
 ### Remarque sur l'épinglage en double
 
 L'invite de l'agent lui demande de désépingler d'abord avant d'épingler, mais si le modèle manque cette étape, la plateforme elle-même n'impose pas la règle d'un seul élément épinglé par fil (vous pouvez en avoir plusieurs). Si l'épinglage en double pose problème sur votre site, soumettez `pin_comment` à approbation et révisez chaque épinglage — ou rédigez une invite plus stricte.
-
----

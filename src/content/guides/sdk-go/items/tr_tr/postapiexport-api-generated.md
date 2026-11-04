@@ -47,5 +47,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "`ModerationAPI.PostApiExport`'ten Gelen Yanıt: %v\n", resp)
 }
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 Stel de vereiste omgevingsvariabelen in:
 
 ```bash
@@ -11,4 +10,3 @@ Voer de tests uit:
 ```bash
 go test ./tests
 ```
----

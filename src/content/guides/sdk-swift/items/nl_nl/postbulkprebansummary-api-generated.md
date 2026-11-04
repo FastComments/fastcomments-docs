@@ -37,5 +37,3 @@ ModerationAPI.postBulkPreBanSummary(tenantId: tenantId, bulkPreBanParams: bulkPr
     }
 }
 [inline-code-end]
-
----

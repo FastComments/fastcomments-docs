@@ -44,5 +44,3 @@ interface TenantUserPostResponse {
     tenantUser?: TenantUser; // 成功時に作成された完全な tenantUser を返します。
 }
 [inline-code-end]
-
----

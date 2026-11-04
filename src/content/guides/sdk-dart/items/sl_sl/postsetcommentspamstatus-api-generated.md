@@ -34,5 +34,3 @@ try {
     print('Exception when calling ModerationApi->postSetCommentSpamStatus: $e\n');
 }
 [inline-code-end]
-
----

@@ -28,5 +28,3 @@ Od 2023 roku pole `URL ID` w dostosowywaniu widgetu przyjmuje również wzorce! 
 
 1. Jeśli Twoja strona ma parametry hash (np. example.com#page-1) – będzie to część URL ID, domyślnie.  
 2. Podczas migracji, na przykład z WordPressa do Gatsby, może być konieczne przeniesienie wartości komentarzy URL ID po początkowej migracji. W takim przypadku skontaktuj się z nami.
-
----

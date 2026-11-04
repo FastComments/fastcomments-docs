@@ -39,4 +39,3 @@ export default function ImageChat() {
 ### Regioni
 
 Passa `region="eu"` per instradare il traffico del widget attraverso il cluster UE.
----

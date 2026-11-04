@@ -27,5 +27,3 @@ async fn restore_comment() -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
-
----

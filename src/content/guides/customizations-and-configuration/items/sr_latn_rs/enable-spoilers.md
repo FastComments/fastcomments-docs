@@ -1,4 +1,3 @@
----
 [related-parameter-start name = 'enableSpoilers'; type = 'boolean'; related-parameter-end]
 
 Možemo omogućiti podršku za spoiler postavljanjem **enableSpoilers** zastavice na true:
@@ -12,5 +11,3 @@ Ovo se takođe može uraditi bez koda. Na stranici za prilagođavanje widgeta, p
 Kada se tekst označi, a sada vidljivo dugme `SPOILER` se klikne, tekst će biti maskiran dok korisnik ne pređe mišem preko njega. Za tamni režim radimo isto, sa različitim bojama koje bolje odgovaraju tamnom režimu.
 
 Ovo je takođe kompatibilno sa WYSIWYG editorom.
-
----

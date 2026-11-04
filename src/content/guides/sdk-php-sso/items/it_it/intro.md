@@ -5,5 +5,3 @@ SDK PHP per l'integrazione SSO di FastComments
 ## Repository
 
 [Visualizza su GitHub](https://github.com/FastComments/fastcomments-php-sso)
-
----

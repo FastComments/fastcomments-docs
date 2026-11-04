@@ -1,4 +1,3 @@
----  
 Todos os métodos de API neste SDK retornam `pplx::task<std::shared_ptr<ResponseType>>` da C++ REST SDK. Isso lhe oferece flexibilidade na forma como você trata as respostas da API.
 
 ### Chamadas síncronas com `.get()`

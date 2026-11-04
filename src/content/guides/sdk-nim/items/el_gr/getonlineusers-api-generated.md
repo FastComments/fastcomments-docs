@@ -1,4 +1,3 @@
----
 Παρόντες online θεατές μιας σελίδας: άτομα των οποίων η συνεδρία websocket είναι εγγεγραμμένη στη σελίδα αυτή τη στιγμή.  
 Επιστρέφει anonCount + totalCount (συνδρομητές σε ολόκληρο το δωμάτιο, συμπεριλαμβανομένων των ανώνυχων θεατών που δεν απαριθμούμε).
 
@@ -24,5 +23,3 @@ if onlineUsersOpt.isSome:
   let onlineUsers = onlineUsersOpt.get()
   echo onlineUsers
 [inline-code-end]
-
----

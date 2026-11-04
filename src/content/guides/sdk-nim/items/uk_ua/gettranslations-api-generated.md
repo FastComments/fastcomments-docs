@@ -20,5 +20,3 @@ if maybeResp.isSome:
   let resp = maybeResp.get()
   echo resp
 [inline-code-end]
-
----

@@ -1,22 +1,22 @@
-Past commenters on the page who are NOT currently online. Sorted by displayName.
-Use this after exhausting /users/online to render a "Members" section.
-Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName}
-index from afterName forward via $gt, no $skip cost.
+Sayfada daha önce yorum yapmış, şu anda çevrimiçi OLMAYAN yorumcular. displayName'e göre sıralanır.
+"Üyeler" bölümünü oluşturmak için /users/online kaynağını tükettikten sonra bunu kullanın.
+commenterName üzerinde imleç tabanlı sayfalama: sunucu, {tenantId, urlId, commenterName} kısmi indeksini
+afterName'den $gt ile ileriye doğru tarar, $skip maliyeti yoktur.
 
-## Parameters
+## Parametreler
 
-| Name | Type | Required | Description |
+| Ad | Tür | Zorunlu | Açıklama |
 |------|------|----------|-------------|
-| tenant_id | String | Yes |  |
-| url_id | String | Yes |  |
-| after_name | String | No |  |
-| after_user_id | String | No |  |
+| tenant_id | String | Evet |  |
+| url_id | String | Evet |  |
+| after_name | String | Hayır |  |
+| after_user_id | String | Hayır |  |
 
-## Response
+## Yanıt
 
-Returns: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/page_users_offline_response.rs)
+Döndürür: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/page_users_offline_response.rs)
 
-## Example
+## Örnek
 
 [inline-code-attrs-start title = 'get_offline_users Örneği'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -31,5 +31,3 @@ async fn fetch_offline(config: &configuration::Configuration) -> Result<(), Erro
     Ok(())
 }
 [inline-code-end]
-
----

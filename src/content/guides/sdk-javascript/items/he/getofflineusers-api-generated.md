@@ -1,28 +1,24 @@
-Past commenters on the page who are NOT currently online. Sorted by displayName.  
-מגיבים קודמים בעמוד שאינם מחוברים כעת. ממוינים לפי displayName.
+מגיבים בעבר בדף שאינם מחוברים כרגע. ממוינים לפי displayName.
+השתמשו בזה לאחר אזילת /users/online כדי להציג מקטע "Members".
+עימוד באמצעות סמן על commenterName: השרת ממשיך לאורך האינדקס החלקי {tenantId, urlId, commenterName}
+מ-afterName קדימה באמצעות $gt, ללא עלות $skip.
 
-Use this after exhausting /users/online to render a "Members" section.  
-השתמש בזה לאחר שמיצית את /users/online כדי להציג סעיף "Members".
+## פרמטרים
 
-Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName} index from afterName forward via $gt, no $skip cost.  
-דפדוף עם סמן על commenterName: השרת הולך על החלקית {tenantId, urlId, commenterName} אינדקס מ‑afterName קדימה באמצעות $gt, ללא עלות $skip.
-
-## Parameters
-
-| שם | סוג | נדרש | תיאור |
+| שם | סוג | חובה | תיאור |
 |------|------|----------|-------------|
 | tenantId | string | כן |  |
 | urlId | string | כן |  |
 | afterName | string | לא |  |
 | afterUserId | string | לא |  |
 
-## Response
+## תגובה
 
 מחזיר: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersOfflineResponse.ts)
 
-## Example
+## דוגמה
 
-[inline-code-attrs-start title = 'getOfflineUsers דוגמה'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל-getOfflineUsers'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async function fetchOfflineUsers(): Promise<void> {
   const tenantId: string = "tenant_12345";
@@ -40,5 +36,3 @@ async function fetchOfflineUsers(): Promise<void> {
   console.log(offlineResponse);
 }
 [inline-code-end]
-
----

@@ -80,5 +80,3 @@ Assim, toda estilização personalizada que funciona para o widget de comentári
 Com SSR, não há JavaScript para controlar a altura do contêiner renderizado. Nos navegadores, uma barra de rolagem vertical pode aparecer para discussões longas.
 
 Portanto, você deve ajustar isso conforme desejado.
-
----

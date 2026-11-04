@@ -1,4 +1,3 @@
----
 FastComments предоставляет лёгкие автономные виджеты подсчёта комментариев, которые могут отображать количество комментариев для конкретных страниц или постов. Эти виджеты отделены от основного виджета комментариев и предназначены для использования в любых местах, где вы хотите показать количество комментариев без полного интерфейса комментариев.
 
 There are two types of comment count widgets available:
@@ -7,5 +6,3 @@ There are two types of comment count widgets available:
 2. **Bulk Comment Count Widget** - Для эффективного отображения количества комментариев для нескольких страниц на одной странице
 
 This article covers the VanillaJS widgets. Our React/Angular/etc libraries also have their own widgets.
-
----

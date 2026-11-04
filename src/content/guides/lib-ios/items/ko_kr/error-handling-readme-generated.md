@@ -1,4 +1,3 @@
----
 SDK 메서드는 `FastCommentsError`를 던지며, 이는 `LocalizedError`를 준수합니다:
 
 ```swift

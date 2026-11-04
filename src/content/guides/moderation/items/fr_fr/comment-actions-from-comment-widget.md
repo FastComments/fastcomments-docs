@@ -40,5 +40,3 @@ Par exemple, pour les utilisateurs `A (commenter)`, `B (Moderator 1)`, et `C (Mo
 2. Pour `User A (commenter)` ce commentaire est immédiatement masqué.
 3. Pour `User C (Moderator 2)` ce commentaire est immédiatement masqué.
 4. Pour l'utilisateur qui a effectué le changement, `User B (Moderator 1)`, le commentaire reste sur son écran, mais est mis en évidence comme supprimé. Il a la possibilité d'annuler son action, auquel cas les autres utilisateurs verront la mise à jour, à nouveau en temps réel.
-
----

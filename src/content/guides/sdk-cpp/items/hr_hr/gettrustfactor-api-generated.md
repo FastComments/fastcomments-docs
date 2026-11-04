@@ -23,5 +23,3 @@ api->getTrustFactor(tenantId, options).then([](std::shared_ptr<GetUserTrustFacto
     }
 });
 [inline-code-end]
-
----

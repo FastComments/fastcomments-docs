@@ -94,5 +94,3 @@ interface TenantPackagePostResponse {
     tenantPackage?: TenantPackage; // Ми повертаємо повністю створений TenantPackage у разі успіху.
 }
 [inline-code-end]
-
----

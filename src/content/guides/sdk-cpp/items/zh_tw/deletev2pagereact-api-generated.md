@@ -1,4 +1,3 @@
----
 ## 參數
 
 | 名稱 | 類型 | 必填 | 描述 |
@@ -25,5 +24,3 @@ api->deleteV2PageReact(tenantId, urlId, reactId)
         auto result = t.get();
     });
 [inline-code-end]
-
----

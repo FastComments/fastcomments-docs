@@ -23,5 +23,3 @@ async function demo(): Promise<void> {
 
 demo();
 [inline-code-end]
-
----

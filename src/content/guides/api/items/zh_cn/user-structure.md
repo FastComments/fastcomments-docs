@@ -1,26 +1,24 @@
-`User` 是表示所有用户的最通用属性的对象。
+`User` 是一个对象，代表所有用户的最小公共集合。
 
-请记住，在 FastComments 中，我们有多种不同的用户使用场景：
+请记住，在 FastComments 中我们有许多不同的用户使用场景：
 
 - Secure SSO
 - Simple SSO
-- Tenant Users (例如：管理员)
-- Commenters
+- 租户用户（例如：管理员）
+- 评论者
 
-This API is for **Commenters** and users created via **Simple SSO**. Basically, any user created
-through your site can be accessed via this API. Tenant Users can also be fetched this way, but you'll get more information by interacting with the `/tenant-users/` API.
+此 API 适用于**评论者**以及通过 **Simple SSO** 创建的用户。基本上，任何通过您的网站创建的用户都可以通过此 API 访问。租户用户也可以通过这种方式获取，但通过与 `/tenant-users/` API 交互，您将获得更多信息。
 
-For `Secure SSO` please use the `/sso-users/` API.
+对于 `Secure SSO`，请使用 `/sso-users/` API。
 
-You cannot update these types of users. They created their account through your site, so we provide some basic read-only access, but
-you cannot make changes. If you want to have this type of flow - you need to setup `Secure SSO`.
+您无法更新这些类型的用户。他们是通过您的网站创建的账户，因此我们提供一些基本的只读访问权限，但您无法进行更改。如果您想要这种类型的流程，您需要设置 `Secure SSO`。
 
-The structure for the `User` object is as follows:
+`User` 对象的结构如下：
 
-[inline-code-attrs-start title = '用户结构'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'User 结构'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 export interface User {
-    /** 这也是在评论对象上作为 userId 使用的 id。 **/
+    /** 这也是评论对象上用作 userId 的 id。 **/
     id: string
     username: string
     /** 例如，指向评论者博客的链接。 **/
@@ -35,5 +33,3 @@ export interface User {
     karma?: number
 }
 [inline-code-end]
-
----

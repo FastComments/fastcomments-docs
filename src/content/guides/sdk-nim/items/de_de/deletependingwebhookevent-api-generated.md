@@ -17,5 +17,3 @@ let (response, httpResponse) = client.deletePendingWebhookEvent(tenantId = "my-t
 if response.isSome:
   let empty = response.get()
 [inline-code-end]
-
----

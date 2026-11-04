@@ -1,3 +1,1 @@
----
 Tilføj kommentarer til en React-app med den officielle pakke. Installer den, render komponenten, og send din lejer og side-ID for at starte en tråd.
----

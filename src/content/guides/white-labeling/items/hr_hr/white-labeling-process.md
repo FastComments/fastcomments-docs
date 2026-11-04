@@ -1,4 +1,3 @@
----
 Postupak za postavljanje White Labelinga je sljedeći:
 
 1. Odaberite kako će se naplata obavljati.
@@ -11,5 +10,3 @@ Postupak za postavljanje White Labelinga je sljedeći:
    2. `TenantUser` je administrator s nizom privilegija u `Tenant`.
    3. `TenantPackage` je paket s nizom ograničenja i cijena dostupnih `Tenant`u.
 3. Integrirajte se s našim [API](/guide-api.html) ili koristite [skripte](https://github.com/FastComments/fastcomments-code-examples/tree/master/white-labeling) za uvođenje tenant-a.
-
----

@@ -34,5 +34,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->post_un_flag_comment: #{e}"
 end
 [inline-code-end]
-
----

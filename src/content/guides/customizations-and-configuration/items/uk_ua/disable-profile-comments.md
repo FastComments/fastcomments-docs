@@ -9,5 +9,3 @@
 Це також можна зробити без коду. На сторінці налаштування віджету перегляньте розділ "Вимкнути коментарі профілю".
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-profile-comments']; selector = '.disable-profile-comments'; alt='Сторінка налаштування віджету з позначеним прапорцем «Вимкнути коментарі профілю», щоб приховати вкладку коментарів профілю'; title='Вимкнути коментарі профілю' app-screenshot-end]
-
----

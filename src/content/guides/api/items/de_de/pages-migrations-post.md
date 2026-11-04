@@ -67,5 +67,3 @@ interface PageMigrationsResponse {
 
 - Jobs für einen Mandanten werden nacheinander ausgeführt, zuerst die ältesten. Eine zweite Migration wartet, bis die erste abgeschlossen ist.
 - `PATCH /api/v1/pages/:id` mit einer neuen `urlId` ändert nur die Seite, nicht deren Kommentare. Verwenden Sie diese Route, um die Kommentare einer Seite zu verschieben.
-
----

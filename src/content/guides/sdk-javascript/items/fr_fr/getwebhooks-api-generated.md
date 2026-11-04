@@ -29,5 +29,3 @@ Renvoie : [`GetWebhooksResponse`](https://github.com/FastComments/fastcomments-
   const minimalResponse: GetWebhooksResponse = await getWebhooks(tenantId);
 })();
 [inline-code-end]
-
----

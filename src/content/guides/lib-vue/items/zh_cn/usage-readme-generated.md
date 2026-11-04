@@ -1,4 +1,3 @@
----
 ### 评论小部件
 
 FastCommentsVue 组件包含实时 FastComments 评论小部件。
@@ -26,4 +25,3 @@ export default Vue.extend({
   </div>
 </template>
 ```
----

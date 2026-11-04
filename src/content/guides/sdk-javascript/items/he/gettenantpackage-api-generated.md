@@ -25,5 +25,3 @@ async function runExample(): Promise<void> {
     const pkg: TenantPackage | undefined = response.package;
 }
 [inline-code-end]
-
----

@@ -30,5 +30,3 @@ const response: APIEmptyResponse = await replaceTenantUser(
   "Migrated user to new tenant"
 );
 [inline-code-end]
-
----

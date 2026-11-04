@@ -1,4 +1,3 @@
----
 Teraz, gdy mamy motyw otwarty w edytorze, otwórz `package.json` i zmień pole `name` na coś innego. W naszym przypadku po prostu dodajemy `-fastcomments` na końcu:
 
 <div class="screenshot white-bg">
@@ -7,5 +6,3 @@ Teraz, gdy mamy motyw otwarty w edytorze, otwórz `package.json` i zmień pole `
 </div>
 
 Jeśli używasz IDE, plik zostanie automatycznie zapisany po wprowadzeniu tej zmiany.
-
----

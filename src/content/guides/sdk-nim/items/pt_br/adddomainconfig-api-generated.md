@@ -1,4 +1,3 @@
----
 ## Parâmetros
 
 | Nome | Tipo | Obrigatório | Descrição |
@@ -22,5 +21,3 @@ let (respOpt, httpResp) = client.addDomainConfig(
 if respOpt.isSome:
   let cfg = respOpt.get()
 [inline-code-end]
-
----

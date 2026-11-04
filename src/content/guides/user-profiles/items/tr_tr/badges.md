@@ -91,5 +91,3 @@ Bu rozetler, profilinizde otomatik olarak kazanılmış rozetlerin yanında gör
 ### Daha Fazla Bilgi İçin
 
 Rozet sistemi hakkında tüm rozet türleri, kazanma kriterleri ve yönetim yapılandırması dahil olmak üzere eksiksiz bilgiler için kapsamlı [Rozetler Kılavuzu](/guide-badges.html) bölümüne bakın.
-
----

@@ -1,4 +1,3 @@
----
 | Component | 説明 |
 | --- | --- |
 | `FastComments` | 返信、投票などの機能を備えたコメントウィジェット |
@@ -16,4 +15,3 @@
 import { FastComments, FastCommentsLiveChat } from 'fastcomments-astro';
 ---
 ```
----

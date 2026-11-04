@@ -14,5 +14,3 @@
     }];
 </script>
 [inline-code-end]
-
----

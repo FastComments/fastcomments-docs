@@ -6,4 +6,3 @@ npm install ngx-fastcomments --save
 ```
 
 Se the [ngx-fastcomments README](https://github.com/FastComments/fastcomments-angular/tree/main/projects/fastcomments-angular) for brug.
----

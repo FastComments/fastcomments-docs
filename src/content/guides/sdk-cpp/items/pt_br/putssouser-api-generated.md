@@ -30,5 +30,3 @@ api->putSSOUser(
     auto response = t.get();
 });
 [inline-code-end]
-
----

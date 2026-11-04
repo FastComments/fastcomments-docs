@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Назва | Тип | Розташування | Обов'язково | Опис |
@@ -28,5 +27,3 @@ try {
     print('Exception when calling ModerationApi->postCommentsByIds: $e\n');
 }
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 | Shortcode | Description |
 | --- | --- |
 | `fastcomments` | 답글, 투표, 그리고 @멘션을 지원하는 스레드형 댓글 |
@@ -56,4 +55,3 @@ This page has \{{< fastcomments-comment-count >}} comments.
 ```text
 \{{< fastcomments-user-activity-feed userId="demo:demo-user" >}}
 ```
----

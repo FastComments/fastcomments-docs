@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Име | Тип | Обавезно | Опис |
@@ -30,5 +29,3 @@ let params = CreateCommentPublicParams {
 };
 let response = create_comment_public(&configuration, params).await?;
 [inline-code-end]
-
----

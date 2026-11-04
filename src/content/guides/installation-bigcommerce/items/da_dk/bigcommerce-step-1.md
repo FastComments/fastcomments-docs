@@ -1,6 +1,6 @@
-Først skal vi oprette et brugerdefineret tema, som vi vil redigere. Hvis du allerede har et brugerdefineret tema sat op, kan du springe dette trin over.
+Først opretter vi et brugerdefineret tema, som vi skal redigere. Hvis du allerede har et brugerdefineret tema sat op, kan du springe dette trin over.
 
-To do this, we will go to `Storefront` and then `Themes`.
+For at gøre dette går vi til `Storefront` og derefter `Themes`.
 
 <div class="screenshot white-bg">
     <div class="title">Vælg Storefront</div>
@@ -12,9 +12,9 @@ To do this, we will go to `Storefront` and then `Themes`.
     <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-1-select-themes.png" alt="Vælg Themes" />
 </div>
 
-Til dette vejledningsformål vil vi bruge standardtemaet, men instruktionerne er de samme for alle temaer.
+Til formålet med denne vejledning bruger vi standardtemaet, men instruktionerne er de samme for alle temaer.
 
-Dernæst vil vi **ikke** klikke på Tilpas. I stedet skal du klikke på `Advanced` og `Make a Copy`.
+Dernæst skal vi **ikke** klikke på Customize. I stedet skal du klikke på `Advanced` og `Make a Copy`.
 
 <div class="screenshot white-bg">
     <div class="title">Lav en kopi</div>
@@ -28,7 +28,7 @@ Bekræft kopiering af temaet:
     <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-1-save-copy.png" alt="Gem kopien" />
 </div>
 
-Når det er gennemført, bør du se dit tema listet under `Themes` nederst på siden, sådan som vist.
+Når det er fuldført, bør du se dit tema opført under `Themes` i bunden af siden, som vist her.
 
 <div class="screenshot white-bg">
     <div class="title">Brugerdefineret tema oprettet</div>
@@ -38,8 +38,6 @@ Når det er gennemført, bør du se dit tema listet under `Themes` nederst på s
 Nu kan vi redigere vores nye tema for at tilføje FastComments.
 
 <div class="screenshot white-bg">
-    <div class="title">Rediger tema-filer</div>
-    <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-1-edit-theme-files.png" alt="Rediger tema-filer" />
+    <div class="title">Rediger temafiler</div>
+    <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-1-edit-theme-files.png" alt="Rediger temafiler" />
 </div>
-
----

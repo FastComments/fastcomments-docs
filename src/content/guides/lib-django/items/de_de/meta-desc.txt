@@ -1,3 +1,1 @@
----
 Fügen Sie Kommentare zu einer Django‑App mit Template‑Tags hinzu, einschließlich automatischer Secure SSO vom angemeldeten Benutzer, serverseitigem API‑Zugriff und Unterstützung für die EU‑Region.
----

@@ -1,4 +1,3 @@
----
 ## 參數
 
 | 名稱 | 類型 | 位置 | 必填 | 描述 |
@@ -32,5 +31,3 @@ DefaultAPI.updateQuestionConfig(tenantId: tenantId, id: id, updateQuestionConfig
     }
 }
 [inline-code-end]
-
----

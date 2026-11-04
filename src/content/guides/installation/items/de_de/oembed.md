@@ -1,4 +1,3 @@
----
 Möchten Sie Kommentare zu Ihren Notion-Seiten, Google Sites oder Nimbus Notes hinzufügen? Wir haben die passende Lösung.
 
 ### Notion
@@ -27,5 +26,3 @@ Das Hinzufügen von Live-Kommentaren zu einer Nimbus Note wird ebenfalls unterst
 2. Beim Bearbeiten Ihrer Notiz fügen Sie einen Embed-Block hinzu.
 3. Verwenden Sie die URL aus Schritt 1 als die einzubettende URL.
 4. Fertig!
-
----

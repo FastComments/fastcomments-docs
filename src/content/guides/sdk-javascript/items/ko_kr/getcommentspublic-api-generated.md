@@ -87,5 +87,3 @@ async function loadComments(): Promise<void> {
   );
 }
 [inline-code-end]  
-
----

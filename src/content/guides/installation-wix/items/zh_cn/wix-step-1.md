@@ -10,5 +10,3 @@
     <div class="title">第一步：编辑动态文章页面</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-1-open-page.png" alt="编辑动态文章页面" />
 </div>
-
----

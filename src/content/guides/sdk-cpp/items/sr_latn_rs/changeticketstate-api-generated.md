@@ -21,5 +21,3 @@ body->comment = boost::optional<utility::string_t>(U("Ticket resolved"));
 api->changeTicketState(U("my-tenant-123"), U("user@example.com"), U("ticket-456"), *body)
     .then([](std::shared_ptr<ChangeTicketStateResponse>) {});
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 [related-parameter-start name = 'hasDarkBackground'; type = 'boolean'; related-parameter-end]
 
 כברירת מחדל, וידג'ט ההערות של FastComments יזהה אוטומטית מצב כהה ברוב האתרים.
@@ -13,5 +12,3 @@
 *hasDarkBackground* flag to true as follows:
 
 [code-example-start config = {hasDarkBackground: true}; linesToHighlight = [6]; title = 'Force Dark Background Mode'; additionalDemoCode = '<style>body { background: black; }</style>'; code-example-end]
-
----

@@ -2,21 +2,21 @@
 
 Цей маршрут надає можливість додати один авторизований `Vote`. Голоси можуть бути `up` (+1) або `down` (-1).
 
-[inline-code-attrs-start title = 'Приклад cURL запиту для створення голосу'; type = 'bash'; useDemoTenantUser = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад cURL для створення голосу'; type = 'bash'; useDemoTenantUser = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request POST \
   --url 'https://fastcomments.com/api/v1/votes?tenantId=demo&API_KEY=DEMO_API_SECRET&userId=user-id&commentId=comment-id&direction=up' \
   --header 'Content-Type: application/json'
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Приклад cURL запиту для створення анонімного голосу'; type = 'bash'; useDemoTenantUser = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад cURL для створення анонімного голосу'; type = 'bash'; useDemoTenantUser = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request POST \
   --url 'https://fastcomments.com/api/v1/votes?tenantId=demo&API_KEY=DEMO_API_SECRET&anonUserId=some-randomly-generated-identifier&commentId=comment-id&direction=up' \
   --header 'Content-Type: application/json'
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Структура запиту для створення голосу'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Структура запиту створення голосу'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface VotePostQueryParams {
     tenantId: string
@@ -28,31 +28,31 @@ interface VotePostQueryParams {
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Структура відповіді при створенні голосу'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Структура відповіді на створення голосу'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface VotePostResponse {
     status: 'success' | 'failed'
-    /** Включається у разі невдачі. **/
+    /** Included on failure. **/
     code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-user-id' | 'invalid-user-id' | 'invalid-comment-id' | 'invalid-direction' | 'duplicate' | 'voting-disabled'
-    /** Включається у разі невдачі. **/
+    /** Included on failure. **/
     reason?: string
     voteId?: string
 }
 [inline-code-end]
 
-### Creating Anonymous Votes
+### Створення анонімних голосів
 
-Анонімні голоси можна створити, встановивши `anonUserId` в параметрах запиту замість `userId`.
+Анонімні голоси можна створити, вказавши `anonUserId` у параметрах запиту замість `userId`.
 
-This id does not have to correspond to a user object anywhere (hence anonymous). It is simply an identifier
-for the session, so you can fetch votes again in the same session, to check if a comment has
-been voted.
+Цей ідентифікатор не має відповідати жодному об'єкту користувача (звідси й «анонімний»). Це просто ідентифікатор
+сесії, тож ви можете знову отримати голоси в тій самій сесії, щоб перевірити, чи був
+проголосований коментар.
 
-If you do not have such a thing as "anonymous sessions" like FastComments does - you can simply
-set this to a random ID, like a UUID (although we appreciate smaller identifiers to save space).
+Якщо у вас немає такого поняття, як «анонімні сесії», як у FastComments — ви можете просто
+встановити випадковий ідентифікатор, наприклад UUID (хоча ми віддаємо перевагу коротшим ідентифікаторам для економії місця).
 
-### Other Notes
+### Інші примітки
 
-- This API obeys tenant-level settings. For example, if you disable voting for a given page, and you attempt to create a vote via the API, it will fail with error code `voting-disabled`.
-- This API is live by default.
-- This API will update the `votes` of the corresponding `Comment`.
+- Цей API дотримується налаштувань на рівні тенанта. Наприклад, якщо ви вимкнули голосування для певної сторінки і спробуєте створити голос через API, це завершиться помилкою з кодом `voting-disabled`.
+- Цей API є «живим» за замовчуванням.
+- Цей API оновлює поле `votes` відповідного `Comment`.

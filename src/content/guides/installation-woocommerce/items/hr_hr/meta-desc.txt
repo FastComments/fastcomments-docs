@@ -1,3 +1,1 @@
----
 Dodajte komentare uživo i raspravu o proizvodu u WooCommerce trgovinu koristeći FastComments WordPress dodatak, bez potrebe za uređivanjem teme.
----

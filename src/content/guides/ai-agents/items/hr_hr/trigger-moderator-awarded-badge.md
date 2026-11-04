@@ -22,5 +22,3 @@ Akcija ljudskog moderatora.
 - **Međusobno priznanje** - agent može objaviti odgovor "hvala na sjajnom doprinosu" kada je dodijeljena određena značka.
 - **Vanjski tijek rada priznavanja** preko [Webhooks](#webhooks-overview) - preslikajte dodjele znački u vlastiti sustav za angažman korisnika.
 - **Zapis u memoriji** - bilješke poput "ovaj korisnik je priznati suradnik" koje bi budući moderacijski agenti trebali uzeti u obzir pri donošenju odluka.
-
----

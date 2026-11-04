@@ -1,4 +1,3 @@
----
 On-Prem için ön uç kod parçacıkları ve kütüphaneler SaaS ürünü ile aynıdır. Ancak `apiHost` ve doğru betik yolunu belirtmelisiniz:
 
 [inline-code-attrs-start title = 'On-Prem İçin Yorum Kodu'; type = 'html'; isFunctional = false; inline-code-attrs-end]
@@ -16,5 +15,3 @@ On-Prem için ön uç kod parçacıkları ve kütüphaneler SaaS ürünü ile ay
 [inline-code-end]
 
 Yukarıdaki çok basit bir örnektir. Ayrıca birinci taraf React, Angular, Vue, Svelte vb. kütüphaneleri de kullanabiliriz.
-
----

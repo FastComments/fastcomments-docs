@@ -1,20 +1,19 @@
-Enable or disable notifications for a page. When users are subscribed to a page, notifications are created
-for new root comments, and also
+Bir sayfa için bildirimleri etkinleştirin veya devre dışı bırakın. Kullanıcılar bir sayfaya abone olduğunda, yeni kök yorumlar için bildirimler oluşturulur ve ayrıca
 
-## Parameters
+## Parametreler
 
-| Ad | Tip | Gerekli | Açıklama |
+| Ad | Tür | Zorunlu | Açıklama |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| urlId | string | Yes |  |
-| url | string | No |  |
-| pageTitle | string | No |  |
-| subscribedOrUnsubscribed | string | No |  |
-| sso | string = "" | No |  |
+| tenantId | string | Evet |  |
+| urlId | string | Evet |  |
+| url | string | Hayır |  |
+| pageTitle | string | Hayır |  |
+| subscribedOrUnsubscribed | string | Hayır |  |
+| sso | string = "" | Hayır |  |
 
-## Response
+## Yanıt
 
-Returns: [`Option[UpdateUserNotificationPageSubscriptionStatusResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_user_notification_page_subscription_status_response.nim)
+Döndürür: [`Option[UpdateUserNotificationPageSubscriptionStatusResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_user_notification_page_subscription_status_response.nim)
 
 ## Örnek
 
@@ -31,5 +30,5 @@ let (optResp, httpResp) = client.updateUserNotificationPageSubscriptionStatus(
 
 if optResp.isSome:
   let resp = optResp.get()
-  # resp ile daha fazla işleme
+  # resp ile ileri işlemler
 [inline-code-end]

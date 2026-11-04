@@ -1,4 +1,3 @@
----
 ## 参数
 
 | Name | Type | Location | Required | Description |
@@ -33,5 +32,3 @@ DefaultAPI.deleteEmailTemplateRenderError(tenantId: tenantId, id: id, errorId: e
     }
 }
 [inline-code-end]
-
----

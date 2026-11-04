@@ -1,8 +1,8 @@
 [api-resource-header-start name = 'QuestionResultsCombinedWithComments'; route = 'GET /api/v1/question-results-aggregate/combine/comments'; creditsCost = 2; api-resource-header-end]
 
-Овде се врши комбиновање резултата са коментарима. Корисно за прављење "недавни позитивни и негативни коментари" графика за производ, на пример.
+Овде се врши комбиновање резултата са коментарима. Корисно је, на пример, за креирање графикона „скорашњи позитивни и негативни коментари" за производ.
 
-Можете претраживати по опсегу вредности (укључиво), за једно или више питања, и по почетном датуму (укључиво).
+Можете претраживати помоћу опсега вредности (укључиво), једног или више питања, као и помоћу почетног датума (укључиво).
 
 Структура одговора је следећа:
 
@@ -27,20 +27,20 @@ interface CommentAndResult {
 }
 
 interface QuestionResultsCombinedWithCommentsResponse {
-    /** Стринг датума који представља када су ови подаци израчунати, пошто могу доћи из кеша. **/
+    /** A date string representing when this data was calculated, since it might come from cache. **/
     createdAt: string
     results: CommentAndResult[]
 }
 [inline-code-end]
 
-Here are the query parameters available for aggregation:
+Ево параметара упита доступних за агрегацију:
 
-[inline-code-attrs-start title = 'QuestionResultsCombineComments Структура захтева'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Структура захтева QuestionResultsCombineComments'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface QuestionResultsAggregateRequestQueryParams {
     tenantId: string
     API_KEY: string
-    /** Можете агрегирати резултате за једно или више питања. **/
+    /** You can aggregate results for one or more questions. **/
     questionId: string | string[]
     startDate?: string | number
     urlId?: string
@@ -51,17 +51,17 @@ interface QuestionResultsAggregateRequestQueryParams {
 }
 [inline-code-end]
 
-Here's an example request:
+Ево примера захтева:
 
-[inline-code-attrs-start title = 'QuestionResultsCombineComments Пример'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример QuestionResultsCombineComments'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/question-results-aggregation/combine/comments?tenantId=demo&API_KEY=DEMO_API_SECRET&questionId=some-question-id&minValue=5&maxValue=10'
 [inline-code-end]
 
-Example response:
+Пример одговора:
 
-[inline-code-attrs-start title = 'QuestionResultsCombineComments Пример одговора'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример одговора QuestionResultsCombineComments'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
     "createdAt": "2023-08-30T00:00:00.000Z",
@@ -96,13 +96,13 @@ Example response:
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'QuestionResultsCombineComments Структура одговора'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Структура одговора QuestionResultsCombineComments'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface QuestionResultsCombineCommentsResponse {
     status: 'success' | 'failed'
-    /** Укључено у случају неуспеха. **/
+    /** Included on failure. **/
     code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key'
-    /** Укључено у случају неуспеха. **/
+    /** Included on failure. **/
     reason?: string
     data: QuestionResultsCombinedWithCommentsResponse
 }
@@ -110,8 +110,6 @@ interface QuestionResultsCombineCommentsResponse {
 
 ### Напомене о кеширању и трошковима
 
-- Када је `forceRecalculate` назначено, трошак је увек `10`, уместо уобичајених `2`.
-- Ако кеш истекне и подаци се поново израчунају, трошак је и даље константан `2` ако `forceRecalculate` није назначено.
-- Ово је да подстакне коришћење кеша.
-
----
+- Када је наведен `forceRecalculate`, трошак је увек `10`, уместо уобичајених `2`.
+- Ако кеш истекне и подаци се поново израчунају, трошак је и даље константних `2` ако `forceRecalculate` није наведен.
+- Ово служи као подстицај за коришћење кеша.

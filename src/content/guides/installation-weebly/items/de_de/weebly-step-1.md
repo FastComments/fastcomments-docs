@@ -26,5 +26,3 @@ Stellen wir nun das `Commenting system` auf `Default` und `Comment Default` auf 
 </div>
 
 Als Nächstes müssen wir nur noch den FastComments.com-Widget-Code hinzufügen!
-
----

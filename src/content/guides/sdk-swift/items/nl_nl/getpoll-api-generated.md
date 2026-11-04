@@ -1,4 +1,3 @@
----
 ## Parameters
 
 | Naam | Type | Locatie | Verplicht | Beschrijving |
@@ -31,5 +30,3 @@ DefaultAPI.getPoll(tenantId: tenantId, commentId: commentId) { (response, error)
     }
 }
 [inline-code-end]
-
----

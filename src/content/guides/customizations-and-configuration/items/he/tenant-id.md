@@ -13,5 +13,3 @@
 תוכל גם למצוא את מזהה השוכר שלך ולנהל את מפתחות ה-API שלך [בעמוד האישורים של ה-API](https://fastcomments.com/auth/my-account/api-secret).
 
 מרגע זה, אם אתה מחובר ל-FastComments, דוגמאות הקוד ישתמשו במזהה השוכר האמיתי שלך (אם אתה מחובר ב־https://fastcomments.com).
-
----

@@ -1,4 +1,3 @@
----
 ## Parâmetros
 
 | Nome | Tipo | Localização | Obrigatório | Descrição |
@@ -30,5 +29,3 @@ DefaultAPI.addSSOUser(tenantId: tenantId, createAPISSOUserData: createAPISSOUser
     }
 }
 [inline-code-end]
-
----

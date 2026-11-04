@@ -1,28 +1,28 @@
-First, open up your site in the Website Builder.
+ראשית, פתחו את האתר שלכם ב-Website Builder.
 
-אם עדיין אין לך קטע שבו אתה רוצה שהתגובות ימוקמו, הוסף קטע ריק:
-
-<div class="screenshot white-bg">
-    <div class="title">הוספת קטע</div>
-    <img class="screenshot-image" src="/images/installation-guides/hostinger-step-1-add-section.png" alt="הוספת קטע" />
-</div>
-<div class="screenshot white-bg">
-    <div class="title">הוספת קטע</div>
-    <img class="screenshot-image" src="/images/installation-guides/hostinger-step-1-add-section-2.png" alt="הוספת קטע" />
-</div>
-
-כעת הוסף את ה-Hostinger Embed widget על ידי לחיצה על הקטע החדש שלנו ולחיצה על `Add element` בחלק העליון ואז על `Embed code`:
+כעת, אם עדיין אין לכם מקטע שבו תרצו שהתגובות יופיעו, הוסיפו מקטע ריק:
 
 <div class="screenshot white-bg">
-    <div class="title">הטמעת קוד</div>
-    <img class="screenshot-image" src="/images/installation-guides/hostinger-step-1-add-section-3.png" alt="הטמעת קוד" />
+    <div class="title">הוספת מקטע</div>
+    <img class="screenshot-image" src="/images/installation-guides/hostinger-step-1-add-section.png" alt="הוספת מקטע" />
+</div>
+<div class="screenshot white-bg">
+    <div class="title">הוספת מקטע</div>
+    <img class="screenshot-image" src="/images/installation-guides/hostinger-step-1-add-section-2.png" alt="הוספת מקטע" />
 </div>
 
-תקבל משהו כזה:
+כעת הוסיפו את ווידג'ט ה-Hostinger Embed על ידי לחיצה על המקטע החדש שלנו, לחיצה על `Add element` למעלה ואז על `Embed code`:
 
 <div class="screenshot white-bg">
-    <div class="title">קטע קוד נוסף</div>
-    <img class="screenshot-image" src="/images/installation-guides/hostinger-step-1-add-section-4.png" alt="קטע קוד נוסף" />
+    <div class="title">קוד הטמעה</div>
+    <img class="screenshot-image" src="/images/installation-guides/hostinger-step-1-add-section-3.png" alt="קוד הטמעה" />
 </div>
 
-עכשיו אנחנו מוכנים ל-`Step 2`.
+תקבלו משהו כזה:
+
+<div class="screenshot white-bg">
+    <div class="title">מקטע הקוד נוסף</div>
+    <img class="screenshot-image" src="/images/installation-guides/hostinger-step-1-add-section-4.png" alt="מקטע הקוד נוסף" />
+</div>
+
+כעת אנחנו מוכנים ל-`Step 2`.

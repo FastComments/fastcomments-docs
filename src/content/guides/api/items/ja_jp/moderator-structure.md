@@ -1,4 +1,3 @@
----
 A `Moderator` オブジェクトはモデレーターの設定を表します。
 
 モデレーターには3つのタイプがあります:
@@ -37,5 +36,3 @@ interface Moderator {
     moderationGroupIds?: string[]|null
 }
 [inline-code-end]
-
----

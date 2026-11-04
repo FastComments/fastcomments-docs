@@ -26,5 +26,3 @@ if apiResp.isSome:
 else:
   discard
 [inline-code-end]
-
----

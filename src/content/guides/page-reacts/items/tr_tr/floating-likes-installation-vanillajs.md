@@ -85,5 +85,3 @@ Ayrıca Secure SSO veya Simple SSO yükleri de iletebiliriz:
     });
 </script>
 [inline-code-end]
-
----

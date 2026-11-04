@@ -33,5 +33,3 @@ DefaultAPI.migratePages(tenantId: tenantId, migrateAPIPagesData: migrateAPIPages
     }
 }
 [inline-code-end]
-
----

@@ -1,8 +1,8 @@
-All API methods in this SDK return tuples of `(Option[ResponseType], Response)`. The first element contains the parsed response if successful, and the second element is the raw HTTP response.
+Tutti i metodi API in questo SDK restituiscono tuple di `(Option[ResponseType], Response)`. Il primo elemento contiene la risposta analizzata in caso di successo, mentre il secondo elemento è la risposta HTTP grezza.
 
-I parametri obbligatori e il corpo della richiesta vengono passati positionalmente. I restanti parametri opzionali vengono raccolti in un unico oggetto `Api<Operation>Options`, che è l'ultimo argomento. Le operazioni senza parametri opzionali non richiedono alcun oggetto di opzioni.
+I parametri obbligatori e il corpo della richiesta vengono passati posizionalmente. I restanti parametri opzionali sono raccolti in un unico oggetto `Api<Operation>Options`, che è l'ultimo argomento. Le operazioni senza parametri opzionali non accettano alcun oggetto di opzioni.
 
-### Esempio: Recupero dei commenti
+### Esempio: Recupero dei Commenti
 
 ```nim
 import httpclient
@@ -28,4 +28,3 @@ if httpResponse.code == Http200:
     if resp.comments.isSome:
       echo "Found ", resp.comments.get().len, " comments"
 ```
----

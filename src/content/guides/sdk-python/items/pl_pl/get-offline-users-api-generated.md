@@ -1,20 +1,20 @@
-Past commenters on the page who are NOT currently online. Sorted by displayName.  
-Use this after exhausting /users/online to render a "Członkowie" section.  
-Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName}  
-index from afterName forward via $gt, no $skip cost.
+Osoby komentujące w przeszłości na stronie, które NIE są obecnie online. Sortowane według displayName.
+Użyj tego po wyczerpaniu /users/online, aby wyrenderować sekcję „Members".
+Paginacja kursorowa po commenterName: serwer przechodzi po częściowym indeksie {tenantId, urlId, commenterName}
+od afterName w przód za pomocą $gt, bez kosztu $skip.
 
-## Parameters
+## Parametry
 
-| Name | Type | Location | Required | Description |
+| Nazwa | Typ | Lokalizacja | Wymagany | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Tak |  |
-| urlId | string | query | Tak | Identyfikator URL strony (czyszczony po stronie serwera). |
+| urlId | string | query | Tak | Identyfikator URL strony (oczyszczany po stronie serwera). |
 | afterName | string | query | Nie | Kursor: przekaż nextAfterName z poprzedniej odpowiedzi. |
-| afterUserId | string | query | Nie | Kursor‑rozstrzygnięcie: przekaż nextAfterUserId z poprzedniej odpowiedzi. Wymagane, gdy ustawiono afterName, aby powiązania nazw nie pomijały wpisów. |
+| afterUserId | string | query | Nie | Kursor rozstrzygający remisy: przekaż nextAfterUserId z poprzedniej odpowiedzi. Wymagany, gdy ustawiono afterName, aby remisy nazw nie gubiły wpisów. |
 
 ## Odpowiedź
 
-Returns: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/page_users_offline_response.py)
+Zwraca: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/page_users_offline_response.py)
 
 ## Przykład
 
@@ -26,8 +26,8 @@ from client.models.page_users_offline_response import PageUsersOfflineResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Definiowanie hosta jest opcjonalne i domyślnie ustawione na https://fastcomments.com
-# Zobacz configuration.py, aby uzyskać listę wszystkich obsługiwanych parametrów konfiguracyjnych.
+# Defining the host is optional and defaults to https://fastcomments.com
+# See configuration.py for a list of all supported configuration parameters.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -35,12 +35,12 @@ configuration = client.Configuration(
 
 # Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # Utwórz instancję klasy API
+    # Create an instance of the API class
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    url_id = 'url_id_example' # str | Identyfikator URL strony (czyszczony po stronie serwera).
+    url_id = 'url_id_example' # str | Identyfikator URL strony (oczyszczany po stronie serwera).
     after_name = 'after_name_example' # str | Kursor: przekaż nextAfterName z poprzedniej odpowiedzi. (optional)
-    after_user_id = 'after_user_id_example' # str | Kursor‑rozstrzygnięcie: przekaż nextAfterUserId z poprzedniej odpowiedzi. Wymagane, gdy ustawiono afterName, aby powiązania nazw nie pomijały wpisów. (optional)
+    after_user_id = 'after_user_id_example' # str | Kursor rozstrzygający remisy: przekaż nextAfterUserId z poprzedniej odpowiedzi. Wymagany, gdy ustawiono afterName, aby remisy nazw nie gubiły wpisów. (optional)
 
     try:
         api_response = api_instance.get_offline_users(tenant_id, url_id, GetOfflineUsersOptions(after_name=after_name, after_user_id=after_user_id))

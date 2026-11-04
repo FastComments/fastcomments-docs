@@ -28,5 +28,3 @@ Menos frecuentemente sometido a aprobación que [Ban user](#tool-ban-user). Mere
 
 - [Ban user](#tool-ban-user) - el siguiente paso en la escalada.
 - [Sistema de memoria del agente](#agent-memory-system) - donde se almacenan los registros de advertencias.
-
----

@@ -1,4 +1,3 @@
----
 Standardmäßig erlaubt FastComments den Benutzern, ihre Kommentare zu bearbeiten.
 
 Es ist jedoch möglich, dies zu verhindern.
@@ -9,5 +8,3 @@ Auf der Seite zur Widget-Anpassung finden Sie die Option „Bearbeitung deaktivi
 
 - Dies betrifft nur reguläre Kommentatoren und nicht Moderatoren oder Administratoren, die weiterhin bearbeiten können.
 - Dies wirkt sich auch auf API-Integrationen aus, wenn `contextUserId` übergeben wird. 
-
----

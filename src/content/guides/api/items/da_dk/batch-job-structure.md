@@ -61,5 +61,3 @@ interface PageMigrationUndoResult {
 #### Gentagelser
 
 Hvis serveren, der kører et page migration-job, genstartes, sættes jobbet tilbage i køen og fortsætter efter den sidste færdige migration. Et job forsøges op til 3 gange, hvorefter dets `status` er `failed`.
-
----

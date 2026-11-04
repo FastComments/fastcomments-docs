@@ -19,5 +19,3 @@ Da biste prebrisali font, preporučujemo da definišete svoj CSS koristeći sele
     font-family: 'Roboto', sans-serif;
 }
 [inline-code-end]
-
----

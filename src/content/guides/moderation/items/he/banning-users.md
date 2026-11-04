@@ -1,56 +1,51 @@
----
-There are two ways to ban users from commenting on your site with FastComments.
+ישנן שתי דרכים לחסום משתמשים מתגובות באתר שלכם באמצעות FastComments.
 
-The first is if you already know their email, you can enter it on the <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">משתמשים חסומים</a> page.
+הראשונה היא שאם כבר ידוע לכם האימייל שלהם, תוכלו להזין אותו בעמוד <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">משתמשים חסומים</a>.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .account-block'; alt='רשימת משתמשים חסומים תחת מודרציה של תגובות, עם כתובות האימייל החסומות וכפתור להוספת חסימה חדשה'; title='דף המשתמשים החסומים' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .account-block'; alt='רשימת משתמשים חסומים תחת ניהול תגובות, עם כתובות האימייל החסומות וכפתור להוספת חסימה חדשה'; title='עמוד המשתמשים החסומים' app-screenshot-end]
 
-This page can be accessed via Moderate Comments -> Banned Users
+ניתן להגיע לעמוד זה דרך Moderate Comments -> Banned Users
 
-When we go to ban a user, we can pick a type, either Permanent or Permanent Shadow Ban:
+כאשר אנו חוסמים משתמש, ניתן לבחור סוג חסימה, קבועה או Permanent Shadow Ban:
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users/new'; selector = '.content .account-block'; alt='טופס חסימה חדשה עם שדה אימייל ובחירת סוג החסימה קבוע או חסימה צללית קבועה'; title='חסימת משתמש' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users/new'; selector = '.content .account-block'; alt='טופס חסימה חדשה עם שדה אימייל ובחירת סוג חסימה - קבועה או Permanent Shadow Ban'; title='חסימת משתמש' app-screenshot-end]
 
-The second way to ban a user is by clicking the ban button that is placed on each comment on the Comment Moderation page.
+הדרך השנייה לחסום משתמש היא בלחיצה על כפתור החסימה המופיע ליד כל תגובה בעמוד ניהול התגובות.
 
-When we click the ban button, you'll be presented with some options, where we can specify the ban type and duration.
+כאשר לוחצים על כפתור החסימה, יוצגו בפניכם מספר אפשרויות, שבהן ניתן לציין את סוג החסימה ואת משך הזמן.
 
-### כינויים של אימייל
+### כינויי אימייל
 
-When banning a user by email, FastComments automatically ignores `+` aliases. For example, banning `user+alias@gmail.com` will
-also ban `user@gmail.com` and any other `+` variation of that address, such as `user+other@gmail.com`.
+בעת חסימת משתמש לפי אימייל, FastComments מתעלמת אוטומטית מכינויים עם `+`. לדוגמה, חסימה של `user+alias@gmail.com` תחסום גם את `user@gmail.com` וכל וריאציה אחרת עם `+` של אותה כתובת, כגון `user+other@gmail.com`.
 
-### חסימות צללית
+### חסימת צל (Shadow Ban)
 
-A shadow-ban is a type of ban that makes it appear that the user's comment or vote was saved successfully, when in fact it was not. This may be
-desirable in certain situations.
+חסימת צל היא סוג של חסימה שגורמת לכך שנראה כאילו התגובה או ההצבעה של המשתמש נשמרו בהצלחה, כאשר למעשה זה לא קרה. פתרון זה עשוי להיות רצוי במצבים מסוימים.
 
-### חסימה באמצעות כתובת IP
+### חסימה לפי כתובת IP
 
-Unless a tenant wishes to opt out, FastComments supports banning via IP by storing a hashed version of the commenter's IP address.
+אלא אם דייר (tenant) מעוניין לבטל את האפשרות, FastComments תומכת בחסימה לפי IP על ידי שמירת גרסה מוצפנת (hash) של כתובת ה-IP של המגיב.
 
 ### חיפוש משתמשים חסומים
 
-Once your list grows past a page or two, you can narrow it with the search row above the table.
+ברגע שהרשימה שלכם חורגת מעמוד או שניים, תוכלו לצמצם אותה באמצעות שורת החיפוש שמעל הטבלה.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .filter-form'; alt='שורת חיפוש בדף המשתמשים החסומים עם תפריט נפתח Search By, תפריט נפתח Match, ושדה קלט Value'; title='חיפוש משתמשים חסומים' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .filter-form'; alt='שורת חיפוש בעמוד המשתמשים החסומים עם תפריט חיפוש לפי, תפריט התאמה ושדה ערך'; title='חיפוש משתמשים חסומים' app-screenshot-end]
 
-There are three controls:
+ישנם שלושה פקדים:
 
-- **Search By** picks which field to look in: Any Field, Email, Name, Banned By, or Banned For Saying. ארבעת האחרונים תואמים לעמודות באותו שם בטבלה.
-- **Match** picks how to compare. **Contains** finds your value anywhere in the field, and **Equals** matches the whole field.
-- **Value** is the text to look for.
+- **Search By** בוחר באיזה שדה לחפש: Any Field, Email, Name, Banned By, או Banned For Saying. ארבעת האחרונים מתאימים לעמודות בעלות אותם שמות בטבלה.
+- **Match** בוחר כיצד להשוות. **Contains** מוצא את הערך שלכם בכל מקום בשדה, ו-**Equals** מתאים רק לשדה המלא.
+- **Value** הוא הטקסט שיש לחפש.
 
-Every field is matched without regard to case, so searching for `SPAMMER@EXAMPLE.COM` finds a ban stored as `spammer@example.com`.
+כל שדה נבדק ללא התחשבות באותיות גדולות או קטנות, ולכן חיפוש של `SPAMMER@EXAMPLE.COM` ימצא חסימה שנשמרה כ-`spammer@example.com`.
 
-A few things worth knowing:
+מספר דברים שכדאי לדעת:
 
-- **Banned For Saying** searches the text of the comment that got the user banned. This is how you find everyone banned over a particular phrase.
-- **Banned By** searches the name of the moderator who issued the ban, which is useful for reviewing another moderator's decisions.
-- Wildcard bans are stored with their `*`, so a **Contains** search for `bademail.com` finds a `*@bademail.com` ban.
-- **Name** matches the name shown in the Name column, so it finds a user even if they have changed their name since being banned, and even if you created the ban by entering an email address and no name was recorded at the time. The name recorded on the ban still matches too, so searching for either the old or the current name works.
-- **Any Field** searches the email, name, banned-by moderator, and banned comment text together.
+- **Banned For Saying** מחפש בטקסט התגובה שבגינה המשתמש נחסם. כך תוכלו למצוא את כל מי שנחסם בגין ביטוי מסוים.
+- **Banned By** מחפש את שם המנחה שהוציא את החסימה, מה שמועיל לסקירת החלטות של מנחה אחר.
+- חסימות עם תו כללי (wildcard) נשמרות עם ה-`*` שלהן, ולכן חיפוש **Contains** של `bademail.com` ימצא חסימה של `*@bademail.com`.
+- **Name** מתאים לשם המוצג בעמודת Name, ולכן הוא מוצא משתמש גם אם שינה את שמו מאז שנחסם, וגם אם יצרתם את החסימה על ידי הזנת כתובת אימייל ולא נרשם שם באותה עת. השם שנרשם בחסימה עדיין מתאים גם כן, ולכן חיפוש לפי השם הישן או הנוכחי יעבוד.
+- **Any Field** מחפש בו-זמנית באימייל, בשם, במנחה שחסם, ובטקסט התגובה החסומה.
 
-Your search is part of the page URL, so you can share a filtered list with other moderators the same way you share other moderation links. Paging through results keeps the search applied, starting a new search returns you to the first page, and **Clear** returns to the full list.
-
----
+החיפוש שלכם הוא חלק מה-URL של העמוד, ולכן תוכלו לשתף רשימה מסוננת עם מנחים אחרים באותה צורה שבה אתם משתפים קישורי ניהול אחרים. דפדוף בתוצאות שומר על החיפוש הפעיל, התחלת חיפוש חדש מחזירה אתכם לעמוד הראשון, ו-**Clear** מחזיר לרשימה המלאה.

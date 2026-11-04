@@ -1,4 +1,3 @@
----
 Potresti ricevere un errore di autorizzazione, simile al seguente:
 
 <div class="screenshot white-bg">
@@ -20,5 +19,3 @@ Aggiungi il dominio, come nell'esempio seguente:
 </div>
 
 Ora dovresti avere commenti veloci e in tempo reale aggiunti al tuo sito Webnode!
-
----

@@ -34,5 +34,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->set_trust_factor: #{e}"
 end
 [inline-code-end]
-
----

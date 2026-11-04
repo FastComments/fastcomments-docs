@@ -22,5 +22,3 @@ Lütfen bu sihirli bağlantıların bir süre sonra süresinin dolduğunu unutma
 #### Bildirim Türleri
 
 FastComments, Moderatörler ve Yöneticilere birden fazla e-posta türü gönderir. İstenirse, `Comment Reply` bildirimlerinden çıkmak mümkündür, aynı zamanda yukarıda gösterilen `Edit Notifications` sayfasındaki uygun seçenekleri seçerek `New Comment` bildirimlerini almaya devam edebilirsiniz.
-
----

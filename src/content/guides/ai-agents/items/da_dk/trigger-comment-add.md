@@ -18,5 +18,3 @@ Udløser agenten hver gang en ny kommentar bliver postet på en side omfattet af
 - **Moderering** - tjek kommentaren op imod fællesskabets retningslinjer, markér spam eller advær førstegangsbrugere.
 - **Velkomsthilsen** - selvom [Trigger: New User First Comment](#trigger-new-user-first-comment) normalt er et bedre match til hilsner, da den affyres én gang pr. bruger.
 - **Trådopsummering** - normalt parret med en [trigger delay](#trigger-deferred-delay), så tråden roer sig, før agenten kører.
-
----

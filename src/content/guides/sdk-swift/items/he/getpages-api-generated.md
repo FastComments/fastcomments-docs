@@ -1,4 +1,3 @@
----
 ## פרמטרים
 
 | שם | סוג | מיקום | נדרש | תיאור |
@@ -29,5 +28,3 @@ DefaultAPI.getPages(tenantId: tenantId) { (response, error) in
     }
 }
 [inline-code-end]
-
----

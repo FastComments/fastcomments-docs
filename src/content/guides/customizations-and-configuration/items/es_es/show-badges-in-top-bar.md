@@ -1,4 +1,3 @@
----
 [related-parameter-start name = 'showBadgesInTopBar'; type = 'boolean'; related-parameter-end]
 
 Por defecto, FastComments mostrará los distintivos de usuario solo en sus comentarios dentro del hilo de comentarios.
@@ -12,4 +11,3 @@ Esto mostrará los distintivos del usuario junto a su nombre en el área de la b
 Tenga en cuenta que esta función debe estar habilitada en la interfaz de personalización del widget para funcionar. Opcionalmente, puede establecer la bandera **showBadgesInTopBar** en false en la configuración de su código para desactivarla selectivamente incluso cuando esté activada a nivel del servidor:
 
 [code-example-start config = {showBadgesInTopBar: false}; linesToHighlight = [6]; title = 'Desactivar Mostrar Distintivos en la Barra Superior'; code-example-end]
----

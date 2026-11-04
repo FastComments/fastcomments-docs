@@ -38,6 +38,3 @@ interface SSOUserPutResponse {
     user?: SSOUser; // Na uspeh vrnemo posodobljenega uporabnika.
 }
 [inline-code-end]
-
-
----

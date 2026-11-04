@@ -1,4 +1,3 @@
----
 Met FastComments zijn er een aantal acties die beheerders en moderators op elke reactie kunnen uitvoeren, namelijk:
 
 - **Verwijderen** van die reactie
@@ -18,5 +17,3 @@ Daarnaast kunnen beheerders en moderators reacties vastpinnen, maar dit kan alle
 Al bovenstaande acties zijn ook beschikbaar via sneltoetsen. Zie de sectie [Sneltoetsen](#keyboard-shortcuts) voor details.
 
 *<sup>1</sup> We slaan geen ruwe IP-adressen op voor deze functie.
-
----

@@ -1,4 +1,3 @@
----
 Відписки (REST hook unsubscribe). Тільки підписки, створені через цей API, можна видалити тут; вебхуки, керовані через панель, редагуються в панелі.
 
 ## Параметри
@@ -33,5 +32,3 @@ DefaultAPI.deleteWebhook(tenantId: tenantId, id: id) { (response, error) in
     }
 }
 [inline-code-end]
-
----

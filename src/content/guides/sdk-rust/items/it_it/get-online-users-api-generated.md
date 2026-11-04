@@ -1,4 +1,3 @@
----
 Attualmente-online visualizzatori di una pagina: persone la cui sessione websocket è iscritta alla pagina in questo momento.
 Restituisce anonCount + totalCount (abbonati a livello di stanza, inclusi gli spettatori anonimi che non enumeriamo).
 
@@ -30,5 +29,3 @@ async fn example() -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
-
----

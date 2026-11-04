@@ -36,5 +36,3 @@ interface EmailTemplate {
 - Puoi ottenere i valori validi di `emailTemplateId` dall'endpoint `/definitions`.
 - L'endpoint `/definitions` include anche le traduzioni predefinite e i dati di test.
 - I template non verranno salvati se la struttura o i dati di test non sono validi.
-
----

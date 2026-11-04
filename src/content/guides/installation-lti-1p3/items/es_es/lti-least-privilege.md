@@ -1,75 +1,75 @@
-The FastComments LTI 1.3 integration follows the principle of least privilege: it uses only the launch claims required to identify the user, attach comments to the correct course and resource, and apply role-based permissions.
+La integración de LTI 1.3 de FastComments sigue el principio de mínimo privilegio: utiliza solo las claims de lanzamiento necesarias para identificar al usuario, adjuntar comentarios al curso y recurso correctos, y aplicar permisos basados en roles.
 
-The rest of this page maps every claim the integration consumes, every LTI Advantage service it does not request, and every category of data it does not collect. Security and procurement reviewers can lift answers directly from the tables below.
+El resto de esta página detalla cada claim que consume la integración, cada servicio de LTI Advantage que no solicita y cada categoría de datos que no recopila. Los revisores de seguridad y adquisiciones pueden extraer respuestas directamente de las tablas siguientes.
 
-## Data Elements Received From the LMS
+## Elementos de Datos Recibidos del LMS
 
-Every LTI 1.3 launch carries a signed JWT from the LMS. FastComments extracts the following claims from that JWT and uses nothing else:
+Cada lanzamiento de LTI 1.3 lleva un JWT firmado por el LMS. FastComments extrae las siguientes claims de ese JWT y no usa nada más:
 
-| Field | LTI claim | Purpose | Required | Stored |
+| Campo | Claim de LTI | Propósito | Requerido | Almacenado |
 |-------|-----------|---------|----------|--------|
-| User identifier | `sub` | Identifies the user consistently across launches so the same person resolves to the same FastComments SSO user | Yes | Yes, as part of a stable internal SSO ID |
-| Display name | `name` | Attribution shown next to the user's comments | Yes (falls back to "LMS User" if absent) | Yes |
-| Email | `email` | Account matching, notifications, moderation, support correspondence | Optional (the integration works without it) | Yes when provided |
-| Avatar URL | `picture` | Displayed on the user's comments | Optional | URL only; FastComments does not download or rehost the image |
-| Roles | `https://purl.imsglobal.org/spec/lti/claim/roles` | Determines whether the user is administrator, instructor (moderator), or learner | Yes | Derived `isAdmin` / `isModerator` flags on the SSO session |
-| Course context | `https://purl.imsglobal.org/spec/lti/claim/context` (`id`, `title`) | Associates the comment thread with the correct LMS course | Yes | Yes, as part of the resolved page identifier |
-| Resource link | `https://purl.imsglobal.org/spec/lti/claim/resource_link` (`id`) | Associates comments with the correct activity or tool placement inside the course | Yes when present | Yes, as part of the resolved page identifier |
-| Deployment ID | `https://purl.imsglobal.org/spec/lti/claim/deployment_id` | Routes the launch to the correct FastComments tenant configuration | Yes | Yes, on the FastComments LTI configuration record |
+| Identificador de usuario | `sub` | Identifica al usuario de forma consistente entre lanzamientos para que la misma persona resuelva al mismo usuario SSO de FastComments | Sí | Sí, como parte de un ID SSO interno estable |
+| Nombre para mostrar | `name` | Atribución mostrada junto a los comentarios del usuario | Sí (usa "LMS User" como alternativa si está ausente) | Sí |
+| Correo electrónico | `email` | Coincidencia de cuentas, notificaciones, moderación, correspondencia de soporte | Opcional (la integración funciona sin él) | Sí cuando se proporciona |
+| URL del avatar | `picture` | Mostrado en los comentarios del usuario | Opcional | Solo la URL; FastComments no descarga ni rehospeda la imagen |
+| Roles | `https://purl.imsglobal.org/spec/lti/claim/roles` | Determina si el usuario es administrador, instructor (moderador) o estudiante | Sí | Flags derivados `isAdmin` / `isModerator` en la sesión SSO |
+| Contexto del curso | `https://purl.imsglobal.org/spec/lti/claim/context` (`id`, `title`) | Asocia el hilo de comentarios con el curso correcto del LMS | Sí | Sí, como parte del identificador de página resuelto |
+| Enlace de recurso | `https://purl.imsglobal.org/spec/lti/claim/resource_link` (`id`) | Asocia los comentarios con la actividad o ubicación de herramienta correcta dentro del curso | Sí cuando está presente | Sí, como parte del identificador de página resuelto |
+| ID de despliegue | `https://purl.imsglobal.org/spec/lti/claim/deployment_id` | Enruta el lanzamiento a la configuración de tenant de FastComments correcta | Sí | Sí, en el registro de configuración LTI de FastComments |
 
-## Claims and Scopes Declared at Registration
+## Claims y Scopes Declarados en el Registro
 
-During LTI 1.3 Dynamic Registration, FastComments registers itself with `scope: ""` (no additional OAuth scopes) and declares only these OpenID Connect claims:
+Durante el Registro Dinámico de LTI 1.3, FastComments se registra con `scope: ""` (sin scopes OAuth adicionales) y declara solo estas claims de OpenID Connect:
 
 `iss`, `sub`, `name`, `email`, `picture`
 
-It registers two message types:
+Registra dos tipos de mensaje:
 
-- `LtiResourceLinkRequest` - the standard course launch into FastComments.
-- `LtiDeepLinkingRequest` - allows instructors to place the FastComments tool inside a course.
+- `LtiResourceLinkRequest` - el lanzamiento estándar del curso hacia FastComments.
+- `LtiDeepLinkingRequest` - permite a los instructores colocar la herramienta de FastComments dentro de un curso.
 
-No additional access tokens are requested from the LMS.
+No se solicitan tokens de acceso adicionales al LMS.
 
-## LTI Advantage Services Not Requested
+## Servicios de LTI Advantage No Solicitados
 
-| Service / scope | Requested? | Reason |
+| Servicio / scope | ¿Solicitado? | Razón |
 |------------------|------------|--------|
-| Names and Role Provisioning Services (NRPS) | No | The integration does not need a course roster; user identity arrives with each launch |
-| Assignment and Grade Services (AGS) - lineitem, score, result scopes | No | The integration is not gradebook-aware |
-| Deep Linking beyond the standard placement return | No additional data | Deep linking is used only for instructor placement of the tool; no course content is enumerated |
+| Names and Role Provisioning Services (NRPS) | No | La integración no necesita una lista de estudiantes del curso; la identidad del usuario llega con cada lanzamiento |
+| Assignment and Grade Services (AGS) - scopes lineitem, score, result | No | La integración no es consciente del libro de calificaciones |
+| Deep Linking más allá del retorno estándar de colocación | Sin datos adicionales | Deep linking se usa solo para la colocación de la herramienta por parte del instructor; no se enumera contenido del curso |
 
-## Data Not Collected
+## Datos No Recopilados
 
-Beyond LTI itself, FastComments does not request or receive the following from the LMS or user:
+Más allá de LTI en sí, FastComments no solicita ni recibe lo siguiente del LMS o del usuario:
 
-| Category | Collected? |
+| Categoría | ¿Recopilado? |
 |----------|------------|
-| Student grades | No |
-| Assignment submissions | No |
-| Attendance records | No |
-| Full course rosters | No |
-| Government identifiers | No |
-| Date of birth | No |
-| Postal address or phone number | No |
-| Financial information | No |
-| LMS administrator credentials | No |
+| Calificaciones de estudiantes | No |
+| Entregas de tareas | No |
+| Registros de asistencia | No |
+| Listas completas de estudiantes del curso | No |
+| Identificadores gubernamentales | No |
+| Fecha de nacimiento | No |
+| Dirección postal o número de teléfono | No |
+| Información financiera | No |
+| Credenciales de administrador del LMS | No |
 
-## Access Boundaries
+## Límites de Acceso
 
-- FastComments only receives data inside an authorized LTI 1.3 launch signed by the LMS's registered keys. The integration does not call back into the LMS for additional information.
-- Launch tokens are single-use and short-lived. Replayed or expired tokens are rejected.
-- LMS administrators control where the tool is deployed inside their platform. D2L Brightspace, for example, supports per-deployment org-unit scoping and per-deployment security settings, which allows administrators to restrict the tool to specific courses or org units rather than making it available globally. Moodle, Blackboard, Sakai, and Schoology offer equivalent per-deployment controls in their LTI 1.3 implementations.
+- FastComments solo recibe datos dentro de un lanzamiento de LTI 1.3 autorizado y firmado por las claves registradas del LMS. La integración no llama de vuelta al LMS para obtener información adicional.
+- Los tokens de lanzamiento son de un solo uso y de corta duración. Los tokens reutilizados o expirados son rechazados.
+- Los administradores del LMS controlan dónde se despliega la herramienta dentro de su plataforma. D2L Brightspace, por ejemplo, admite el scoping por unidad organizativa por despliegue y configuraciones de seguridad por despliegue, lo que permite a los administradores restringir la herramienta a cursos o unidades organizativas específicas en lugar de hacerla disponible globalmente. Moodle, Blackboard, Sakai y Schoology ofrecen controles equivalentes por despliegue en sus implementaciones de LTI 1.3.
 
-## Storage and Retention
+## Almacenamiento y Retención
 
-FastComments retains LTI-derived data for the duration of the active commenting service and according to customer-configured retention settings. Comment data is stored in encrypted-at-rest production storage. On account termination or written deletion request, FastComments deletes or anonymizes customer data per the applicable agreement.
+FastComments retiene los datos derivados de LTI durante la duración del servicio de comentarios activo y de acuerdo con las configuraciones de retención definidas por el cliente. Los datos de comentarios se almacenan en almacenamiento de producción cifrado en reposo. En caso de terminación de la cuenta o solicitud escrita de eliminación, FastComments elimina o anonimiza los datos del cliente según el acuerdo aplicable.
 
-For full storage and data-handling details, see the <a href="https://fastcomments.com/privacy-policy" target="_blank">Política de privacidad de FastComments</a>.
+Para obtener detalles completos sobre el almacenamiento y el manejo de datos, consulte la <a href="https://fastcomments.com/privacy-policy" target="_blank">Política de Privacidad de FastComments</a>.
 
-## Review Cadence
+## Cadencia de Revisión
 
-Any new LTI feature that would require additional claims, scopes, or LTI Advantage services is reviewed before release to confirm the requested access is necessary and proportionate to the feature being shipped.
+Cualquier nueva función de LTI que requiera claims, scopes o servicios de LTI Advantage adicionales se revisa antes de su lanzamiento para confirmar que el acceso solicitado es necesario y proporcional a la función que se está publicando.
 
-## Short Statement for Security Questionnaires
+## Declaración Breve para Cuestionarios de Seguridad
 
-> FastComments applies least privilege and data minimization to its LTI 1.3 integration. The integration uses only the LTI launch claims required to authenticate the user (`sub`, `name`, `email`, `picture`), determine their role, and identify the course and resource that comments belong to. FastComments does not request Names and Role Provisioning Services, Assignment and Grade Services, gradebook data, attendance, full rosters, or LMS administrative access. LMS administrators retain control over which org units, courses, and deployments the tool is available in.
+> FastComments aplica el mínimo privilegio y la minimización de datos a su integración de LTI 1.3. La integración utiliza solo las claims de lanzamiento de LTI necesarias para autenticar al usuario (`sub`, `name`, `email`, `picture`), determinar su rol e identificar el curso y recurso al que pertenecen los comentarios. FastComments no solicita Names and Role Provisioning Services, Assignment and Grade Services, datos del libro de calificaciones, asistencia, listas completas de estudiantes ni acceso administrativo al LMS. Los administradores del LMS mantienen el control sobre en qué unidades organizativas, cursos y despliegues está disponible la herramienta.

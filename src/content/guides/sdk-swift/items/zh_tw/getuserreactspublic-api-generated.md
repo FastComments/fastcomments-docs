@@ -1,4 +1,3 @@
----
 ## 參數
 
 | 名稱 | 類型 | 位置 | 必需 | 描述 |
@@ -33,5 +32,3 @@ PublicAPI.getUserReactsPublic(tenantId: tenantId, options: PublicAPI.GetUserReac
     }
 }
 [inline-code-end]
-
----

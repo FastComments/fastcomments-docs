@@ -1,4 +1,4 @@
-Solid nie śledzi automatycznie głębokich mutacji w dowolnych obiektach, więc zmiany konfiguracji po pierwszym renderze muszą być zastosowane jawnie. Każdy widget akceptuje `apiRef`, który zwraca uchwyt; wywołaj `handle.update(partial)` z `createEffect`, aby napędzać reaktywność:
+Solid nie śledzi automatycznie głębokich mutacji na dowolnych obiektach, więc zmiany konfiguracji po pierwszym renderze muszą być przekazywane jawnie. Każdy widget przyjmuje `apiRef`, który zwraca uchwyt; wywołaj `handle.update(partial)` z poziomu `createEffect`, aby napędzać reaktywność:
 
 ```tsx
 import { createEffect, createSignal } from 'solid-js';
@@ -22,22 +22,22 @@ export default function Paginated() {
 }
 ```
 
-`update()` is safe to call at any time:
-- Przed załadowaniem skryptu: partial jest odłożony i zastosowany podczas inicjalizacji.
-- Podczas asynchronicznej inicjalizacji (reviews-summary, user-activity-feed): partial jest umieszczony w kolejce i zastosowany, gdy callback się zakończy.
+`update()` można bezpiecznie wywołać w dowolnym momencie:
+- Zanim skrypt się załaduje: partial jest przechowywany i stosowany przy inicjalizacji.
+- Podczas asynchronicznej inicjalizacji (reviews-summary, user-activity-feed): partial jest kolejkowany i stosowany, gdy callback się zakończy.
 - Po inicjalizacji: jest przekazywany bezpośrednio do metody `.update()` działającego widgetu.
 
-### Imperative handle API
+### Imperatywne API uchwytu
 
 ```ts
 interface WidgetHandle<Config> {
-  getInstance: () => WidgetInstance | null;   // ostatnia aktywna instancja (lub null przed zamontowaniem)
-  onInstance: (cb: (instance: WidgetInstance) => void) => void; // wywoływane, gdy instancja jest gotowa
-  update: (partial: Partial<Config>) => void; // scal i zastosuj konfigurację
+  getInstance: () => WidgetInstance | null;   // latest live instance (or null before mount)
+  onInstance: (cb: (instance: WidgetInstance) => void) => void; // fires once instance is ready
+  update: (partial: Partial<Config>) => void; // merge-and-push config
 }
 ```
 
-Use `getInstance()` for imperative actions that aren't covered by `.update()`, e.g. `openProfile`:
+Użyj `getInstance()` dla akcji imperatywnych, które nie są objęte przez `.update()`, np. `openProfile`:
 
 ```tsx
 const openProfile = () =>

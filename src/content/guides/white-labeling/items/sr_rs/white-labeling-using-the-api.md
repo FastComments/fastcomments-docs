@@ -1,4 +1,3 @@
----
 Да бисмо користили API да креирамо tenant са прилагођеним брендом, морамо урадити следеће:
 
 1. Позовите [Tenants API](/guide-api.html#tenant-structure) да бисте креирали tenant.
@@ -9,5 +8,3 @@
 6. Опционално, [Setup SSO](/guide-customizations-and-configuration.html#sso).
 
 Све ово се може урадити током пробног периода.
-
----

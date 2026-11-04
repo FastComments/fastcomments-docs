@@ -36,5 +36,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->update_question_result: #{e}"
 end
 [inline-code-end]
-
----

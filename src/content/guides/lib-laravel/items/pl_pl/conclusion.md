@@ -8,5 +8,3 @@ Jeśli napotkasz jakiekolwiek problemy lub masz pytania dotyczące pakietu Larav
 ## Wkład
 
 Wkłady są mile widziane! Odwiedź [repozytorium GitHub](https://github.com/FastComments/fastcomments-laravel) po wytyczne dotyczące wkładu.
-
----

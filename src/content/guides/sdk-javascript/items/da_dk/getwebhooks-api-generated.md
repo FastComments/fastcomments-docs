@@ -1,4 +1,3 @@
----
 Lister de webhooks, der er konfigureret for lejeren, både dashboard‑styrede rækker og API‑abonnementer.
 
 ## Parametre
@@ -30,5 +29,3 @@ Returnerer: [`GetWebhooksResponse`](https://github.com/FastComments/fastcomments
   const minimalResponse: GetWebhooksResponse = await getWebhooks(tenantId);
 })();
 [inline-code-end]
-
----

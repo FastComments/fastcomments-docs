@@ -39,5 +39,3 @@ async function runVote() {
 }
 runVote();
 [inline-code-end]
-
----

@@ -1,6 +1,6 @@
 [api-resource-header-start name = 'Page'; route = 'PATCH /api/v1/pages/:id'; creditsCost = 1; api-resource-header-end]
 
-Ovaj endpoint omogućava ažuriranje jedne `Page`. Odgovarajući komentari će biti ažurirani.
+Ova ruta omogućava ažuriranje jednog `Page`. Odgovarajući komentari će biti ažurirani.
 
 [inline-code-attrs-start title = 'Primer cURL zahteva za ažuriranje stranice'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -20,20 +20,20 @@ interface PagePatchQueryParams {
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Struktura odgovora za ažuriranje stranice'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Struktura odgovora na ažuriranje stranice'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface PagePatchResponse {
     status: 'success' | 'failed'
-    /** Uključeno u slučaju neuspeha. **/
+    /** Included on failure. **/
     code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-url-id' | 'missing-id' | 'page-does-not-exist' | 'empty-request' | 'internal' | 'invalid-input' | 'invalid-title' | 'extra-params' | 'accessible-by-group-ids-not-array' | 'too-many-group-ids' | 'group-id-too-large'
-    /** Uključeno u slučaju neuspeha. **/
+    /** Included on failure. **/
     reason?: string
-    user?: Page; // Vraćamo kompletan ažurirani Page pri uspehu.
+    user?: Page; // We return the complete updated page on success.
 }
 [inline-code-end]
 
 #### Napomena
 
-Neki parametri u Page objektu se automatski ažuriraju. To su atributi counts i title. Counts se ne mogu ažurirati
-putem API-ja jer su to izračunate vrednosti. The page `title` can be set via the API, but would get overwritten if the comment widget is used on
-a page with the same `urlId` and a different page title.
+Neki parametri u Page objektu se automatski ažuriraju. To su atributi za brojače i naslov. Brojači se ne mogu ažurirati
+putem API-ja jer su izračunate vrednosti. Naslov stranice (`title`) može se postaviti putem API-ja, ali biće prepisan ako se widget za komentare koristi
+na stranici sa istim `urlId` ali drugačijim naslovom stranice.

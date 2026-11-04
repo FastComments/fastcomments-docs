@@ -1,23 +1,23 @@
-Queues a batch job that reverses every migration from one migrate-pages job, newest first. Available for 90 days.  
-Records changed since the migration are left alone, so a later edit is never overwritten.  
-Poll GET /api/v1/batch-jobs/{batchJobId} for the restored/skipped counts.
+하나의 migrate-pages 작업에서 수행된 모든 마이그레이션을 되돌리는 배치 작업을 큐에 추가합니다. 가장 최근 것부터 역순으로 처리됩니다. 90일 동안 사용할 수 있습니다.
+마이그레이션 이후 변경된 레코드는 그대로 유지되므로, 이후의 편집 내용이 덮어쓰이지 않습니다.
+복원됨/건너뜀 개수를 확인하려면 GET /api/v1/batch-jobs/{batchJobId}를 폴링하세요.
 
-## Parameters
+## 매개변수
 
-| Name | Type | Location | Required | Description |
+| 이름 | 타입 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| undoId | string | path | Yes |  |
+| tenantId | string | query | 예 |  |
+| undoId | string | path | 예 |  |
 
-## Response
+## 응답
 
-반환: [`QueuePageMigrationJobAPIResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/QueuePageMigrationJobAPIResponse.java)
+반환값: [`QueuePageMigrationJobAPIResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/QueuePageMigrationJobAPIResponse.java)
 
-## Example
+## 예제
 
 [inline-code-attrs-start title = 'undoPageMigrations 예제'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 클래스 가져오기:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -30,10 +30,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // API 키 인증 구성: api_key
+    // Configure API key authorization: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // 다음 줄의 주석을 해제하여 API 키에 접두사를 설정합니다. 예: "Token" (기본값은 null)
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -53,5 +53,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

@@ -33,5 +33,3 @@ Når den er valideret, tryk på `Save`.
 ### Trin 4: Tilføj en kommentar
 
 Nu kan du tilføje, redigere eller slette kommentarer og bør se, at vi kalder din lokale udviklingsmaskine med begivenhederne ved hjælp af din test‑API‑nøgle. Der kan gå op til 30 sekunder, før begivenhederne når din maskine.
-
----

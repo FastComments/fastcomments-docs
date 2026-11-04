@@ -1,12 +1,12 @@
-### Overview
+### Pregled
 
-FastComments Collab Chat proširuje standardni FastComments komentarski widget, tako da nasleđuje sve opcije konfigurisanja iz osnovnog widgeta uz dodatak nekoliko opcija specifičnih za tekstualne anotacije.
+FastComments Collab Chat proširuje standardni FastComments vidžet za komentare, tako da nasleđuje sve konfiguracione opcije osnovnog vidžeta, uz dodavanje nekoliko specifičnih za tekstualne anotacije.
 
-### Required Configuration
+### Obavezna konfiguracija
 
 #### tenantId
 
-Vaš FastComments Tenant ID je obavezan. Možete ga pronaći na vašoj [FastComments kontrolnoj tabli](https://fastcomments.com/auth/my-account/api-secret).
+Vaš FastComments Tenant ID je obavezan. Možete ga pronaći na svom [FastComments dashboard-u](https://fastcomments.com/auth/my-account/api-secret).
 
 [inline-code-attrs-start title = "Primer konfiguracije"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -15,11 +15,11 @@ FastCommentsCollabChat(element, {
 });
 [inline-code-end]
 
-### Collab Chat Specific Options
+### Opcije specifične za Collab Chat
 
 #### urlId
 
-Po defaultu, Collab Chat generiše jedinstveni identifikator za svaku konverzaciju zasnovan na URL-u stranice, DOM putanji do elementa i izabranom rasponu teksta. Možete ga prebrisati prilagođenim `urlId`.
+Podrazumevano, Collab Chat generiše jedinstveni identifikator za svaku konverzaciju na osnovu URL-a stranice, DOM putanje do elementa i izabranog opsega teksta. Ovo možete zameniti prilagođenim `urlId`.
 
 [inline-code-attrs-start title = "Primer konfiguracije"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -29,21 +29,21 @@ FastCommentsCollabChat(element, {
 });
 [inline-code-end]
 
-Ovo je korisno kada se struktura vaših URL-ova može promeniti, ali želite sačuvati iste konverzacije, ili kada želite deliti anotacije preko više stranica.
+Ovo je korisno kada se struktura vašeg URL-a može promeniti, ali želite da zadržite iste konverzacije, ili kada želite da delite anotacije na više stranica.
 
 #### topBarTarget
 
-Kontroliše prikaz gornje trake koja prikazuje broj korisnika i broj diskusija. Postavite na `null` da potpuno onemogućite gornju traku, ili navedite DOM element da biste je renderovali na određenoj lokaciji.
+Kontroliše prikaz gornje trake koja prikazuje broj korisnika i broj diskusija. Postavite na `null` da biste potpuno onemogućili gornju traku, ili navedite DOM element da biste je prikazali na određenoj lokaciji.
 
 [inline-code-attrs-start title = "Primer konfiguracije"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Onemogući gornju traku
+// Disable top bar
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
     topBarTarget: null
 });
 
-// Prikaži gornju traku na prilagođenoj lokaciji
+// Render top bar in custom location
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
     topBarTarget: document.getElementById('custom-header')
@@ -52,7 +52,7 @@ FastCommentsCollabChat(element, {
 
 #### hasDarkBackground
 
-Omogućite tamni stil kada vaša stranica ima tamnu pozadinu. Ova detekcija je automatska, ali može biti poželjno da je prepišete.
+Omogućite stil tamnog režima kada vaša stranica ima tamnu pozadinu. Ova detekcija je automatska, ali može biti poželjno da je zamenite.
 
 [inline-code-attrs-start title = "Primer konfiguracije"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -64,7 +64,7 @@ FastCommentsCollabChat(element, {
 
 #### commentCountUpdated
 
-Funkcija povratnog poziva koja se poziva kad god se promeni broj komentara. Ovo je korisno za ažuriranje UI elemenata kao što su bedževi ili naslovi stranica.
+Callback funkcija koja se aktivira svaki put kada se broj komentara promeni. Ovo je korisno za ažuriranje UI elemenata poput bedževa ili naslova stranica.
 
 [inline-code-attrs-start title = "Primer konfiguracije"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -77,19 +77,19 @@ FastCommentsCollabChat(element, {
 });
 [inline-code-end]
 
-### Inherited Configuration Options
+### Nasleđene konfiguracione opcije
 
-Pošto Collab Chat proširuje standardni komentarski widget, možete koristiti bilo koju opciju konfigurisanja iz osnovnog FastComments widgeta. Evo nekoliko često korišćenih opcija:
+Pošto Collab Chat proširuje standardni vidžet za komentare, možete koristiti bilo koju konfiguracionu opciju osnovnog FastComments vidžeta. Evo nekih često korišćenih opcija:
 
 #### locale
 
-Podesite jezik za UI widgeta. FastComments podržava desetine jezika.
+Postavite jezik za UI vidžeta. FastComments podržava desetine jezika.
 
 [inline-code-attrs-start title = "Primer konfiguracije"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
-    locale: 'es'  // španski
+    locale: 'es'  // Spanish
 });
 [inline-code-end]
 
@@ -105,16 +105,16 @@ FastCommentsCollabChat(element, {
 });
 [inline-code-end]
 
-#### sso and simpleSSO
+#### sso i simpleSSO
 
-Integracija sa vašim sistemom autentifikacije korišćenjem Single Sign-On.
+Integrišite se sa svojim sistemom autentifikacije korišćenjem Single Sign-On-a.
 
 [inline-code-attrs-start title = "Primer konfiguracije"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
     sso: {
-        // SSO konfiguracija
+        // SSO configuration
     }
 });
 [inline-code-end]
@@ -123,25 +123,25 @@ Pogledajte SSO dokumentaciju za potpune detalje o opcijama autentifikacije.
 
 #### maxReplyDepth
 
-Kontrolišite koliko nivoa duboko mogu ići odgovori. Po defaultu, Collab Chat postavlja ovo na 0, što znači da su svi komentari pljosnati (nema ugnježdenih odgovora). Možete ovo promeniti ako želite threaded konverzacije.
+Kontrolišite koliko nivoa dubine odgovori mogu ići. Podrazumevano, Collab Chat postavlja ovo na 0, što znači da su svi komentari ravni (bez ugnježdenih odgovora). Ovo možete promeniti ako želite razgovore u nitima.
 
 [inline-code-attrs-start title = "Primer konfiguracije"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
-    maxReplyDepth: 3  // Dozvoli 3 nivoa ugnježđivanja
+    maxReplyDepth: 3  // Allow 3 levels of nesting
 });
 [inline-code-end]
 
-### Internal Configuration
+### Interna konfiguracija
 
-Ove opcije se automatski postavljaju od strane Collab Chat-a i ne bi trebalo da ih prepisujete:
+Ove opcije postavlja automatski Collab Chat i ne bi trebalo da budu zamenjene:
 
-The `productId` is automatically set to `3` for Collab Chat. The `floating-chat` extension is automatically loaded to provide the chat window functionality. The widget automatically detects mobile devices (screens under 768px wide) and adjusts the UI accordingly.
+`productId` se automatski postavlja na `3` za Collab Chat. `floating-chat` ekstenzija se automatski učitava kako bi obezbedila funkcionalnost prozora za ćaskanje. Vidžet automatski detektuje mobilne uređaje (ekrani širi manje od 768px) i prilagođava UI u skladu s tim.
 
-### Complete Example
+### Kompletan primer
 
-Evo primera koji prikazuje više opcija konfigurisanja zajedno:
+Evo primera koji prikazuje više konfiguracionih opcija zajedno:
 
 [inline-code-attrs-start title = "Primer konfiguracije"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -155,10 +155,10 @@ FastCommentsCollabChat(document.getElementById('article'), {
         document.title = count > 0 ? `(${count}) My Article` : 'My Article';
     },
     sso: {
-        // Vaša SSO konfiguracija
+        // Your SSO config
     },
     maxReplyDepth: 1
 });
 [inline-code-end]
 
-Za potpuni spisak svih dostupnih opcija konfigurisanja nasledjenih iz osnovnog widgeta, pogledajte glavnu FastComments dokumentaciju o konfiguraciji.
+Za kompletnu listu svih dostupnih konfiguracionih opcija nasleđenih iz osnovnog vidžeta, pogledajte glavnu FastComments dokumentaciju o konfiguraciji.

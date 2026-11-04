@@ -1,4 +1,3 @@
----
 Swift パッケージマネージャーを使用して FastCommentsUI をプロジェクトに追加します。
 
 Xcode では: **File > Add Package Dependencies**、その後リポジトリ URL を入力します。
@@ -28,4 +27,3 @@ dependencies: [
 import FastCommentsUI
 import FastCommentsSwift
 ```
----

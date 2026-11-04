@@ -9,5 +9,3 @@ Vous êtes facturé (sur Flex) ou limité (sur les forfaits fixes) en fonction d
 - Utilisation de l'API (l'utilisation des crédits pour chaque appel d'API est incluse dans la documentation respective).
 
 Lorsque les résultats sont agrégés via l'API ou via les widgets récapitulatifs, vous êtes également facturé.
-
----

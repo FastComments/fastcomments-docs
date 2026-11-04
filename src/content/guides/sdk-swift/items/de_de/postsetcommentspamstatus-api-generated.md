@@ -38,5 +38,3 @@ ModerationAPI.postSetCommentSpamStatus(tenantId: tenantId, commentId: commentId,
     }
 }
 [inline-code-end]
-
----

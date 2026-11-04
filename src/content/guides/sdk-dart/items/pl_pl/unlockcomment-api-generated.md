@@ -30,5 +30,3 @@ try {
     print('Exception when calling PublicApi->unLockComment: $e\n');
 }
 [inline-code-end]
-
----

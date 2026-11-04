@@ -1,4 +1,3 @@
----
 FastComments 提供了一种构建问题并汇总其结果的方式。一个问题的示例（以下称为 `QuestionConfig`）可以是星级评分、滑块，或 NPS 问题（由 `type` 决定）。
 
 问题数据可以按单个、组合、随时间、总体、按页面等方式汇总。
@@ -35,6 +34,3 @@ interface QuestionConfig {
     reportingOrder: number
 }
 [inline-code-end]
-
-
----

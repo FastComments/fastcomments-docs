@@ -1,4 +1,3 @@
----
 ## Параметры
 
 | Имя | Тип | Обязательно | Описание |
@@ -19,5 +18,3 @@ let (respOpt, httpResp) = client.deleteTenant(tenantId = "my-tenant-123", id = "
 if respOpt.isSome:
   let emptyResp = respOpt.get()
 [inline-code-end]
-
----

@@ -11,4 +11,3 @@ Ovo će prikazati korisničke značke pored njihovog imena u području gornje tr
 Napomena da ova funkcija mora biti omogućena u UI‑u za prilagođavanje widgeta da bi radila. Opcionalno možete postaviti **showBadgesInTopBar** zastavicu na false u vašoj konfiguraciji koda da je selektivno onemogućite čak i kada je uključena na nivou servera:
 
 [code-example-start config = {showBadgesInTopBar: false}; linesToHighlight = [6]; title = 'Onemogući Prikaz Značaka u Gornjoj Traci'; code-example-end]
----

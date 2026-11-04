@@ -24,5 +24,3 @@ async function runDeletePollVoteExample(): Promise<void> {
   console.log(result);
 }
 [inline-code-end]
-
----

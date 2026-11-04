@@ -1,4 +1,3 @@
----  
 Kiracı için toplu kullanıcı bilgisi. Verilen userIds ile User / SSOUser'dan görüntüleme bilgisi döndürülür.  
 Yorum widget'ı tarafından, varlık olayıyla yeni görünen kullanıcıları zenginleştirmek için kullanılır.  
 Sayfa bağlamı yok: gizlilik tutarlı bir şekilde uygulanır (özel profiller maskeleştirilir).
@@ -24,5 +23,3 @@ let params = GetUsersInfoParams {
 };  
 let page: PageUsersInfoResponse = get_users_info(&configuration, params).await?;  
 [inline-code-end]  
-
----

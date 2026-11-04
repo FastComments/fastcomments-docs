@@ -1,21 +1,21 @@
-A `HashTag` object represents a tag that can be left by a user. HashTags can be used to link to an external piece of content or to
-tie related comments together.
+Um objeto `HashTag` representa uma tag que pode ser deixada por um usuário. HashTags podem ser usadas para vincular a um conteúdo externo ou para
+conectar comentários relacionados.
 
-The structure for the `HashTag` object is as follows:
+A estrutura do objeto `HashTag` é a seguinte:
 
-[inline-code-attrs-start title = 'Estrutura do HashTag'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Estrutura de HashTag'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface HashTag {
-    /** Deve começar com "#" ou com o caractere desejado. **/
+    /** Deve começar com o caractere "#" ou o desejado. **/
     tag: string
-    /** Uma URL opcional para a qual a hashtag pode apontar. Em vez de filtrar comentários pela hashtag, a interface do usuário redirecionará para esta ao clicar. **/
+    /** Uma URL opcional para a qual a hashtag pode apontar. Em vez de filtrar comentários por hashtag, a UI redirecionará para esta URL ao clicar. **/
     url?: string
     /** READONLY **/
     createdAt: string
 }
 [inline-code-end]
 
-Notes:
+Notas:
 
-- In some API endpoints you will see that the hashtag is used in the URL. Remember to URI-Encoded values. For example, `#` should instead be represented as `%23`.
-- Some of these fields are marked `READONLY` - these are returned by the API but cannot be set.
+- Em alguns endpoints da API você verá que a hashtag é usada na URL. Lembre-se de usar valores com URI-Encoded. Por exemplo, `#` deve ser representado como `%23`.
+- Alguns desses campos estão marcados como `READONLY` - eles são retornados pela API, mas não podem ser definidos.

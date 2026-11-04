@@ -8,5 +8,3 @@ Ako naiđete na bilo kakve probleme ili imate pitanja u vezi C++ SDK-a, molimo:
 ## Doprinosi
 
 Doprinosi su dobrodošli! Molimo posetite [GitHub repozitorijum](https://github.com/FastComments/fastcomments-cpp) za smernice o doprinosu.
-
----

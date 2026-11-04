@@ -1,4 +1,3 @@
----
 Información masiva de usuarios para un tenant. Dado userIds, devuelve información para mostrar de User / SSOUser.
 Usado por el widget de comentarios para enriquecer a los usuarios que acaban de aparecer vía un evento de presencia.
 Sin contexto de página: la privacidad se aplica de forma uniforme (los perfiles privados están enmascarados).
@@ -42,5 +41,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.GetUsersInfo`: %v\n", resp)
 }
 [inline-code-end]
-
----

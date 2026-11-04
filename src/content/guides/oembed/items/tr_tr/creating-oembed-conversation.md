@@ -1,12 +1,11 @@
-With FastComments, a conversation has to be first created before it can be embedded.
+FastComments ile bir sohbet gömülebilmesi için önce oluşturulması gerekir.
 
-To do so, simply visit [fastcomments.com/create](https://fastcomments.com/create).
+Bunu yapmak için [fastcomments.com/create](https://fastcomments.com/create) adresini ziyaret etmeniz yeterlidir.
 
-[app-screenshot-start url='/create'; selector = '.content'; alt='fastcomments.com/create sayfası, konuşma adı alanı ve güvenli bir bağlantı oluşturan düğme ile'; title='Konuşma Oluşturma Formu' app-screenshot-end]
+[app-screenshot-start url='/create'; selector = '.content'; alt='Sohbet adı alanını ve güvenli bir bağlantı oluşturan düğmeyi içeren fastcomments.com/create sayfası'; title='Sohbet Oluşturma Formu' app-screenshot-end]
 
-Once choosing a name, a secure link will be created. 
+Bir ad seçtikten sonra güvenli bir bağlantı oluşturulacaktır.
 
-This link can be visited and used as its own chat. Or, it can be provided directly to an application that supports oEmbed, or https://embed.ly, to
-insert the conversation.
+Bu bağlantı ziyaret edilebilir ve kendi başına bir sohbet olarak kullanılabilir. Ya da sohbeti eklemek için oEmbed veya https://embed.ly destekleyen bir uygulamaya doğrudan verilebilir.
 
-Embedded conversations can be customized just like any other FastComments installation using the Customization UI. Read about customizing the comment widget [here](/guide-customizations-and-configuration.html).
+Gömülü sohbetler, diğer tüm FastComments kurulumları gibi Özelleştirme Arayüzü kullanılarak özelleştirilebilir. Yorum widget\'ını özelleştirme hakkında daha fazla bilgiyi [burada](/guide-customizations-and-configuration.html) okuyabilirsiniz.

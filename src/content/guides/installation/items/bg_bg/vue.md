@@ -1,4 +1,3 @@
----
 За да добавите коментари към вашия уебсайт, изграден с Vue, можете да намерите нашата библиотека за Vue в NPM <a href="https://www.npmjs.com/package/fastcomments-vue" target="_blank">тук</a>.
 
 Освен това библиотека vue-next е налична в NPM <a href="https://www.npmjs.com/package/fastcomments-vue-next" target="_blank">тук</a>
@@ -50,5 +49,3 @@ export default {
 Библиотеките `fastcomments-vue` и `fastcomments-vue-next` поддържат същата конфигурация като коментарния widget на VanillaJS.
 
 Можете да намерите конфигурацията, която Vue компонентът поддържа, <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">тук</a>.
-
----

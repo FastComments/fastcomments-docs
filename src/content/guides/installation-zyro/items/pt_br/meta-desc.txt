@@ -1,3 +1,1 @@
----
 Adicione comentários ao vivo a um site Zyro com o widget de código e adicione o botão flutuante de curtidas para que os leitores possam reagir sem escrever um comentário.
----

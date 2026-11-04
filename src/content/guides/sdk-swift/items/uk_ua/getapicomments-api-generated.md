@@ -46,5 +46,3 @@ ModerationAPI.getApiComments(tenantId: tenantId, options: ModerationAPI.GetApiCo
     }
 }
 [inline-code-end]
-
----

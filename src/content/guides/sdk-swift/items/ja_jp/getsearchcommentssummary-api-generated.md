@@ -1,4 +1,3 @@
----
 ## パラメータ
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
@@ -37,5 +36,3 @@ ModerationAPI.getSearchCommentsSummary(tenantId: tenantId, options: ModerationAP
     }
 }
 [inline-code-end]
-
----

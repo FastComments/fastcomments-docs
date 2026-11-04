@@ -1,4 +1,3 @@
----
 ## Parametry
 
 | Nazwa | Typ | Wymagane | Opis |
@@ -21,5 +20,3 @@ async fn fetch_pages(configuration: &configuration::Configuration) -> Result<(),
     Ok(())
 }
 [inline-code-end]
-
----

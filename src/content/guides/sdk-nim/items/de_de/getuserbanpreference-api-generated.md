@@ -1,4 +1,3 @@
----
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
@@ -19,5 +18,3 @@ if maybePref.isSome:
   let pref = maybePref.get()
   echo pref
 [inline-code-end]
-
----

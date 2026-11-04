@@ -1,6 +1,6 @@
-Queues a batch job that reverses every migration from one migrate-pages job, newest first. Available for 90 days.  
-Records changed since the migration are left alone, so a later edit is never overwritten.  
-Poll GET /api/v1/batch-jobs/{batchJobId} for the restored/skipped counts.
+Stellt einen Batch-Job in die Warteschlange, der jede Migration eines migrate-pages-Jobs rückgängig macht, beginnend mit der neuesten. 90 Tage lang verfügbar.
+Datensätze, die sich seit der Migration geändert haben, bleiben unangetastet, damit eine spätere Bearbeitung nie überschrieben wird.
+Fragen Sie GET /api/v1/batch-jobs/{batchJobId} ab, um die Anzahl der wiederhergestellten/übersprungenen Einträge zu erhalten.
 
 ## Parameter
 
@@ -11,13 +11,13 @@ Poll GET /api/v1/batch-jobs/{batchJobId} for the restored/skipped counts.
 
 ## Antwort
 
-Rückgabe: [`QueuePageMigrationJobAPIResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/QueuePageMigrationJobAPIResponse.java)
+Gibt zurück: [`QueuePageMigrationJobAPIResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/QueuePageMigrationJobAPIResponse.java)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'undoPageMigrations Beispiel'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Klassen importieren:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -30,10 +30,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // API-Schlüssel-Authentifizierung konfigurieren: api_key
+    // Configure API key authorization: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Entkommentieren Sie die folgende Zeile, um ein Präfix für den API-Schlüssel festzulegen, z. B. "Token" (Standard ist null)
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -44,14 +44,12 @@ public class Example {
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Ausnahme beim Aufruf von DefaultApi#undoPageMigrations");
-      System.err.println("Statuscode: " + e.getCode());
-      System.err.println("Grund: " + e.getResponseBody());
-      System.err.println("Antwort-Header: " + e.getResponseHeaders());
+      System.err.println("Exception when calling DefaultApi#undoPageMigrations");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }
 }
 [inline-code-end]
-
----

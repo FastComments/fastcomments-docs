@@ -1,11 +1,11 @@
-Four public vals you can remix, each covering one piece of this guide.
+Cztery publiczne valy do remiksu, z których każdy obejmuje jeden element tego przewodnika.
 
-**[Blog with comments](https://www.val.town/x/fastcomments/blog-with-comments)** ([live](https://fastcomments-blog.val.run)) jest blogiem w formacie Markdown z wątkiem pod każdym postem i zbiorczymi licznikami komentarzy na indeksie. Działa od razu po remixowaniu, a jedna zmienna środowiskowa wskazuje na twoje własne konto.
+**[Blog with comments](https://www.val.town/x/fastcomments/blog-with-comments)** ([live](https://fastcomments-blog.val.run)) to blog w Markdown z wątkiem komentarzy pod każdym wpisem i zbiorczymi licznikami komentarzy na stronie głównej. Działa od razu po remiksie, a jedna zmienna środowiskowa wskazuje go na Twoje własne konto.
 
-**[SSO demo](https://www.val.town/x/fastcomments/sso-demo)** ([live](https://fastcomments-sso.val.run)) loguje odwiedzającego przy użyciu jego konta Val Town i przekazuje tę tożsamość do widgetu, więc nie ma drugiego logowania.
+**[SSO demo](https://www.val.town/x/fastcomments/sso-demo)** ([live](https://fastcomments-sso.val.run)) loguje odwiedzającego za pomocą konta Val Town i przekazuje tę tożsamość do widgetu, więc nie ma drugiego logowania.
 
-**[Webhook receiver](https://www.val.town/x/fastcomments/webhook-receiver)** ([live](https://fastcomments-webhooks.val.run)) weryfikuje podpis HMAC przy każdej dostawie i przechowuje zdarzenia w SQLite. Ma przycisk, który podpisuje testowy payload i dostarcza go do siebie, więc możesz obserwować pomyślną weryfikację przed skonfigurowaniem prawdziwego webhooka.
+**[Webhook receiver](https://www.val.town/x/fastcomments/webhook-receiver)** ([live](https://fastcomments-webhooks.val.run)) weryfikuje podpis HMAC przy każdej dostawie i zapisuje zdarzenia w SQLite. Ma przycisk, który podpisuje testowy payload i dostarcza go do samego siebie, więc możesz zobaczyć, jak weryfikacja działa, zanim skonfigurujesz prawdziwy webhook.
 
-**[Agent skills](https://www.val.town/x/fastcomments/skills)** ([live](https://fastcomments-skills.val.run)) jest biblioteką umiejętności agenta FastComments obejmującą widget, SSO, REST API, moderację i migrację z Disqus. Remixuj ją, a agent Val Town, Townie, automatycznie pobiera umiejętności z `skills/`, więc twój agent wie, jak podłączyć komentarze bez wklejania dokumentacji do czatu.
+**[Agent skills](https://www.val.town/x/fastcomments/skills)** ([live](https://fastcomments-skills.val.run)) to biblioteka umiejętności agenta FastComments obejmująca widget, SSO, REST API, moderację i migrację z Disqus. Zremiksuj ją, a agent Val Town, Townie, automatycznie pobierze umiejętności z `skills/`, więc Twój agent będzie wiedział, jak podłączyć komentarze, bez wklejania dokumentacji do czatu.
 
-The same skills install anywhere else with `npx skills add fastcomments/skills`.
+Te same umiejętności można zainstalować gdziekolwiek indziej za pomocą `npx skills add fastcomments/skills`.

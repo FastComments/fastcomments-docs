@@ -26,5 +26,3 @@ interface ModeratorDeleteResponse {
     reason?: string
 }
 [inline-code-end]
-
----

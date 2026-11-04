@@ -1,5 +1,1 @@
----
-
 ## Kod Kesitlerini Paylaşma
-
----

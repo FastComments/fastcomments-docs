@@ -1,4 +1,3 @@
----
 ## Parameters
 
 | Naam | Type | Verplicht | Beschrijving |
@@ -24,5 +23,3 @@ async function run() {
 
 run();
 [inline-code-end]
-
----

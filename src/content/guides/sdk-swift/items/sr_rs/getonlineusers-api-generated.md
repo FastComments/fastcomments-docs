@@ -40,5 +40,3 @@ PublicAPI.getOnlineUsers(tenantId: tenantId, urlId: urlId, options: PublicAPI.Ge
     }
 }
 [inline-code-end]
-
----

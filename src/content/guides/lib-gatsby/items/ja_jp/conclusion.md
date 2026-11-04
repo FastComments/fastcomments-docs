@@ -8,5 +8,3 @@ GatsbyJS ライブラリに関して問題が発生したり質問がある場�
 ## 貢献
 
 貢献は歓迎します！ 貢献のガイドラインについては[GitHubリポジトリ](https://github.com/FastComments/fastcomments-gatsbyjs-example)をご覧ください。
-
----

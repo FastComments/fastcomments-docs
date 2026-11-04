@@ -1,4 +1,3 @@
----
 ## 参数
 
 | 名称 | 类型 | 必填 | 描述 |
@@ -23,5 +22,3 @@ if suggestOpt.isSome:
   let suggest = suggestOpt.get()
   echo suggest
 [inline-code-end]
-
----

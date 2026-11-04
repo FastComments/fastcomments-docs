@@ -42,5 +42,3 @@ DefaultAPI.getPollVotes(tenantId: tenantId, commentId: commentId, options: Defau
     }
 }
 [inline-code-end]
-
----

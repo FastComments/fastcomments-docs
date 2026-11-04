@@ -15,5 +15,3 @@ Akcja wykonana przez ludzkiego moderatora. Oznaczenia spamu pochodzące od agent
 - **Zapisywanie pamięci** - niech agent zapisze notatkę pamięciową o użytkowniku oznaczonym jako spam (np. "wcześniej oznaczony jako spam za X przez moderatora"), aby przyszłe agenty moderujące miały kontekst.
 - **Egzekwowanie na poziomie użytkownika** - oznaczenie komentarza jako spam przez moderatora może być sygnałem dla agenta do wystawienia ostrzeżenia lub krótkiego bana, pod warunkiem zatwierdzenia.
 - **Lustrzane odzwierciedlenie w systemie zewnętrznym** poprzez [Webhooks](#webhooks-overview).
-
----

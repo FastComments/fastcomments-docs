@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Име | Тип | Обавезно | Опис |
@@ -23,5 +22,3 @@ const poll: CommentPoll | undefined = pollResponse.poll;
 const privacy: PollPrivacy | undefined = poll?.privacy;
 const options: CommentPollOption[] | undefined = poll?.options;
 [inline-code-end]
-
----

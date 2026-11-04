@@ -1,4 +1,3 @@
----
 [api-resource-header-start name = 'Comment'; route = 'DELETE /api/v1/comments/:id'; creditsCost = 1; api-resource-header-end]
 
 このAPIエンドポイントはコメントを削除する機能を提供します。
@@ -40,5 +39,3 @@ interface CommentDeleteResponse {
     reason?: string
 }
 [inline-code-end]
-
----

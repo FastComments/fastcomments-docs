@@ -1,3 +1,1 @@
----
 Intégrez les widgets de commentaires en direct et de chat dans une application React Native avec SSO, ainsi que le moment où il faut privilégier le SDK natif plutôt que le widget webview.
----

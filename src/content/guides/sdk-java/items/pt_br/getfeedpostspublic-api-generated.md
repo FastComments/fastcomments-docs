@@ -1,5 +1,3 @@
----
-
 req
 tenantId
 afterId
@@ -64,5 +62,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

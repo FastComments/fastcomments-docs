@@ -1,4 +1,3 @@
----
 Hver widget fra `fastcomments-react` er tilgængelig under samme navn:
 
 | Component | Handle type | Embed loaded |
@@ -39,4 +38,3 @@ export default function ImageChat() {
 ### Regioner
 
 Angiv `region="eu"` for at rute widget-trafik gennem EU-klyngen.
----

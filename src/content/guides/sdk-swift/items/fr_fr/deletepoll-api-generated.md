@@ -1,4 +1,3 @@
----
 Supprimez un sondage de son commentaire, ainsi que chaque vote qui y a été casté. Le commentaire lui‑même reste inchangé.
 
 ## Paramètres
@@ -33,5 +32,3 @@ DefaultAPI.deletePoll(tenantId: tenantId, commentId: commentId) { (response, err
     }
 }
 [inline-code-end]
-
----

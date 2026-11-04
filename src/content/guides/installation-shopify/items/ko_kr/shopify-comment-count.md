@@ -1,31 +1,31 @@
-The **FastComments - Comment Count** block renders a small comment count for a single page. Use it in blog post lists, product cards, or any template that links to a page with comments, so visitors can see how active each thread is before clicking through.
+**FastComments - Comment Count** 블록은 단일 페이지에 대한 작은 댓글 수를 표시합니다. 블로그 포스트 목록, 제품 카드 또는 댓글이 있는 페이지로 연결되는 모든 템플릿에 사용하여 방문자가 클릭하기 전에 각 스레드의 활성화 정도를 확인할 수 있습니다.
 
-### Add the block
+### 블록 추가하기
 
-1. Open the Shopify theme editor.
-2. Open the template where you want the count to appear. For example, the **Blog** template (the post list) or a product listing section.
-3. Click **Add block** in the section that renders each item.
-4. Under **Apps**, select **FastComments - Comment Count**.
-5. Click **Save**.
+1. Shopify 테마 편집기를 엽니다.
+2. 댓글 수를 표시하려는 템플릿을 엽니다. 예를 들어 **Blog** 템플릿(포스트 목록) 또는 제품 목록 섹션입니다.
+3. 각 항목을 렌더링하는 섹션에서 **Add block**을 클릭합니다.
+4. **Apps**에서 **FastComments - Comment Count**를 선택합니다.
+5. **Save**를 클릭합니다.
 
-### Settings
+### 설정
 
-| Setting | What it does | Default |
+| 설정 | 기능 | 기본값 |
 |---|---|---|
-| Tenant ID (optional) | 카운트가 읽어올 FastComments 테넌트를 재정의합니다. 상점의 자동 구성된 테넌트를 사용하려면 비워두세요. | (비어 있음) |
-| Custom URL ID | 카운트가 찾는 페이지 식별자를 재정의합니다. 카운트가 추적하려는 FastComments 블록과 다른 페이지에 있는 경우에 사용하세요. | (자동 감지됨) |
+| Tenant ID (선택 사항) | 댓글 수를 읽어오는 FastComments 테넌트를 재정의합니다. 스토어에 자동으로 구성된 테넌트를 사용하려면 비워 두세요. | (비어 있음) |
+| Custom URL ID | 댓글 수가 조회하는 페이지 식별자를 재정의합니다. 댓글 수가 추적하는 FastComments 블록과 다른 페이지에 있는 경우 이를 사용하세요. | (자동 감지) |
 
-### How the count matches the comment thread
+### 댓글 수와 댓글 스레드의 일치 방식
 
-The Comment Count block uses the same auto-detection logic as the **FastComments** block:
+Comment Count 블록은 **FastComments** 블록과 동일한 자동 감지 로직을 사용합니다:
 
-- Blog post template: `shopify-article-{article.id}`
-- Product template: `shopify-product-{product.id}`
-- Other templates: the request path
+- 블로그 포스트 템플릿: `shopify-article-{article.id}`
+- 제품 템플릿: `shopify-product-{product.id}`
+- 기타 템플릿: 요청 경로
 
-If you set a **Custom URL ID** on the **FastComments** block on a page, set the same Custom URL ID on the Comment Count block so they point at the same thread.
+페이지의 **FastComments** 블록에 **Custom URL ID**를 설정한 경우, Comment Count 블록에도 동일한 Custom URL ID를 설정하여 동일한 스레드를 가리키도록 하세요.
 
-### Tips
+### 팁
 
-- Counts for every item on the page are fetched in one request, so adding the block to every item in a long list has no extra round-trip cost.
-- One Comment Count block per article or product in a listing is the expected usage; the block can be added as many times as you need.
+- 페이지의 모든 항목에 대한 댓글 수는 하나의 요청으로 가져오므로, 긴 목록의 모든 항목에 블록을 추가해도 추가 왕복 비용이 발생하지 않습니다.
+- 목록의 각 아티클 또는 제품당 하나의 Comment Count 블록이 예상되는 사용 방식입니다. 블록은 필요한 만큼 여러 번 추가할 수 있습니다.

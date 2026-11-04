@@ -30,5 +30,3 @@ DefaultAPI.getPageByURLId(tenantId: tenantId, urlId: urlId) { (response, error) 
     }
 }
 [inline-code-end]
-
----

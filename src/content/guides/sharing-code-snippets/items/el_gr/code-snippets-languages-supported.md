@@ -1,5 +1,5 @@
-When sharing code snippets, FastComments does its best to automatically determine which
-programming language the code snippet is in to automatically format and apply syntax highlighting.
+Κατά τον διαμοιρασμό αποσπασμάτων κώδικα, το FastComments καταβάλλει κάθε προσπάθεια να προσδιορίσει αυτόματα σε ποια
+γλώσσα προγραμματισμού βρίσκεται το απόσπασμα κώδικα, ώστε να το μορφοποιήσει αυτόματα και να εφαρμόσει επισήμανση σύνταξης.
 
 Η επισήμανση σύνταξης του FastComments υποστηρίζει επί του παρόντος 39 κοινές γλώσσες:
 
@@ -46,5 +46,5 @@ programming language the code snippet is in to automatically format and apply sy
 - Visual Basic .NET
 - YAML
 
-When sharing a code snippet in a language we don't support, it will still be rendered like code -
-but no syntax highlighting or reformatting will be applied.
+Κατά τον διαμοιρασμό ενός αποσπάσματος κώδικα σε γλώσσα που δεν υποστηρίζουμε, θα εξακολουθεί να εμφανίζεται ως κώδικας -
+αλλά δεν θα εφαρμοστεί επισήμανση σύνταξης ή επαναμορφοποίηση.

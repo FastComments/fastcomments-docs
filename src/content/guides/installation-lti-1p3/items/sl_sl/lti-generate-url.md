@@ -1,34 +1,34 @@
-#### Navigate to LTI 1.3 Configuration
+#### Pomaknite se na konfiguracijo LTI 1.3
 
-Sign in to FastComments and go to <a href="https://fastcomments.com/auth/my-account/lti-config" target="_blank">vašo stran konfiguracije LTI 1.3</a>.
+Prijavite se v FastComments in pojdite na <a href="https://fastcomments.com/auth/my-account/lti-config" target="_blank">stran za konfiguracijo LTI 1.3</a>.
 
-If your account doesn't yet have LTI access, you'll see "LTI not enabled for this account" - contact support to enable it on your plan.
+Če vaš račun še nima dostopa do LTI, boste videli sporočilo "LTI not enabled for this account" – za omogočitev na vašem paketu se obrnite na podporo.
 
-#### Pick a Platform (Optional)
+#### Izberite platformo (neobvezno)
 
-Under **Generate a Dynamic Registration URL**, use the **Platform** dropdown to tell FastComments which LMS you're connecting:
+Pod **Generate a Dynamic Registration URL** uporabite spustni meni **Platform**, da FastComments pove, s katerim LMS se povezujete:
 
 - D2L Brightspace
 - Moodle
 - Blackboard Learn
 - Sakai
 - Schoology
-- Other LTI 1.3 platform
+- Druga platforma LTI 1.3
 
-You can also leave it on **Auto-detect**. The platform is read out of your LMS's openid-configuration during registration; the dropdown only seeds the display label for the resulting configuration.
+Lahko pa pustite na **Auto-detect**. Platforma se med registracijo prebere iz openid-configuration vašega LMS; spustni meni le nastavi prikazano oznako za nastalo konfiguracijo.
 
-#### Generate the URL
+#### Ustvarite URL
 
-Click **Generate URL**. FastComments creates a one-time registration token and shows you a URL that looks like:
+Kliknite **Generate URL**. FastComments ustvari enkratni registracijski žeton in prikaže URL, ki izgleda takole:
 
 `https://fastcomments.com/lti/v1p3/register/<long-token>`
 
-Copy it. This URL:
+Kopirajte ga. Ta URL:
 
-- Is **single-use** - once your LMS calls it successfully, the token is consumed.
-- Expires after **30 minutes** if not used.
-- Should be kept private - anyone with the URL can register a tool against your tenant within those 30 minutes.
+- Je **za enkratno uporabo** – ko ga vaš LMS uspešno pokliče, je žeton porabljen.
+- Poteče po **30 minutah**, če ni uporabljen.
+- Naj ostane zaseben – kdorkoli z URL-jem lahko v teh 30 minutah registrira orodje proti vašemu najemniku.
 
-#### Existing Configurations
+#### Obstoječe konfiguracije
 
-Once a registration completes successfully, the new configuration shows up in the **Existing Configurations** table on the same page, with its Platform, Issuer, Client ID, and Status. You can delete configurations from this table if you ever need to unregister.
+Ko se registracija uspešno zaključi, se nova konfiguracija prikaže v tabeli **Existing Configurations** na isti strani, s podatki Platform, Issuer, Client ID in Status. Konfiguracije lahko iz te tabele izbrišete, če kdaj potrebujejo odjavo.

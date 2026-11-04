@@ -1,6 +1,6 @@
-此端點允許您建立新的使用者徽章指派。
+此端點可讓您建立新的使用者徽章指派。
 
-Example Request:
+請求範例：
 
 [inline-code-attrs-start title = 'POST 請求範例'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
@@ -13,17 +13,17 @@ curl -X POST "https://fastcomments.com/api/v1/user-badges?tenantId=demo&API_KEY=
 }'
 [inline-code-end]
 
-The request body must contain the following parameters:
+請求主體必須包含以下參數：
 
-- `userId` (required) - 要指派徽章之使用者的 ID
-- `badgeId` (required) - 要指派之徽章的 ID
-- `displayedOnComments` (optional) - 是否應在使用者的留言上顯示該徽章（預設為 true）
+- `userId`（必要）- 要指派徽章的使用者 ID
+- `badgeId`（必要）- 要指派的徽章 ID
+- `displayedOnComments`（選填）- 徽章是否應顯示在使用者的留言上（預設為 true）
 
-Important Notes:
-1. The badge must exist and be enabled in your tenant's badge catalog
-2. You can only assign badges to users who belong to your tenant or have commented on your site
+重要注意事項：
+1. 該徽章必須存在於您租戶的徽章目錄中且已啟用
+2. 您只能將徽章指派給屬於您租戶的使用者，或曾在您的網站上留言的使用者
 
-Example Response:
+回應範例：
 
 [inline-code-attrs-start title = '回應'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -48,7 +48,7 @@ Example Response:
 }
 [inline-code-end]
 
-Possible Error Responses:
+可能的錯誤回應：
 
 [inline-code-attrs-start title = '錯誤：缺少租戶 ID'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

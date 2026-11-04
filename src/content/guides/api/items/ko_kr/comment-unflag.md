@@ -45,5 +45,3 @@ interface CommentUnFlagResponse {
     reason?: string
 }
 [inline-code-end]
-
----

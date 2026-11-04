@@ -1,18 +1,18 @@
-Edit a poll in place, keeping its tallies: change the question, relabel an option, close or reopen it,
-or change who may see the voters. Options are addressed by id - to add, remove or reorder them, PUT the full list.
+Modifiez un sondage en place, en conservant ses décomptes de voix : changez la question, renommez une option, fermez ou rouvrez le sondage,
+ou changez qui peut voir les votants. Les options sont adressées par id - pour en ajouter, supprimer ou réordonner, envoyez la liste complète via PUT.
 
-## Parameters
+## Paramètres
 
-| Nom | Type | Emplacement | Obligatoire | Description |
+| Nom | Type | Emplacement | Requis | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Oui |  |
 | commentId | string | path | Oui |  |
 
-## Response
+## Réponse
 
 Retourne : [`SavePollResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/SavePollResponse.swift)
 
-## Example
+## Exemple
 
 [inline-code-attrs-start title = 'Exemple patchPoll'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -34,5 +34,3 @@ DefaultAPI.patchPoll(tenantId: tenantId, commentId: commentId, commentPollPatch:
     }
 }
 [inline-code-end]
-
----

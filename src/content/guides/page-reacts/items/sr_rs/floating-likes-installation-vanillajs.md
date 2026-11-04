@@ -85,5 +85,3 @@ Instalacija je jednostavna:
     });
 </script>
 [inline-code-end]
-
----

@@ -31,5 +31,3 @@
     })();
 </script>
 [inline-code-end]
-
----

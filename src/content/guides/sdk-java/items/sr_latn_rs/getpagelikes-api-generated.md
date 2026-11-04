@@ -1,20 +1,20 @@
-Like count for a page, optionally with the users who liked it.
+Broj lajkova za stranicu, opciono sa korisnicima koji su lajkovali.
 
-## Parameters
+## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
-| tenantId | string | query | Yes |  |
-| urlId | string | query | Yes |  |
-| includeUserInfo | string | query | No | "public" izostavlja korisnike sa privatnim profilima, "include-private" ih uključuje. |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Da |  |
+| urlId | string | query | Da |  |
+| includeUserInfo | string | query | Ne | "public" izostavlja korisnike sa privatnim profilima, "include-private" ih uključuje. |
 
-## Response
+## Odgovor
 
-Returns: [`GetPageLikesAPIResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetPageLikesAPIResponse.java)
+Vraća: [`GetPageLikesAPIResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetPageLikesAPIResponse.java)
 
-## Example
+## Primer
 
-[inline-code-attrs-start title = 'Primer getPageLikes'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getPageLikes Primer'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Import classes:
 import com.fastcomments.invoker.ApiClient;

@@ -1,25 +1,20 @@
-Past commenters on the page who are NOT currently online. Sorted by displayName.  
-ページ上の過去のコメント投稿者で、現在オンラインではないもの。displayName でソートされます。
+現在オンラインではない、そのページの過去のコメント投稿者。displayName でソートされます。
+/users/online を使い切った後に、この API を使用して「メンバー」セクションをレンダリングしてください。
+commenterName によるカーソルページネーション: サーバーは部分インデックス {tenantId, urlId, commenterName} を afterName から $gt を使って前方に走査し、$skip のコストはかかりません。
 
-Use this after exhausting /users/online to render a "Members" section.  
-`/users/online` をすべて取得した後に、"Members" セクションを表示するために使用します。
+## パラメータ
 
-Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName} index from afterName forward via $gt, no $skip cost.  
-commenterName に対するカーソルページネーション: サーバーは部分的な {tenantId, urlId, commenterName} インデックスを afterName 以降に $gt で進め、$skip コストはかかりません。
-
-## Parameters
-
-| Name | Type | Required | Description |
+| 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| urlId | string | Yes |  |
-| options | GetOfflineUsersOptions | No |  |
+| tenantId | string | はい |  |
+| urlId | string | はい |  |
+| options | GetOfflineUsersOptions | いいえ |  |
 
-## Response
+## レスポンス
 
-返却: [`Option[PageUsersOfflineResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_page_users_offline_response.nim)
+戻り値: [`Option[PageUsersOfflineResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_page_users_offline_response.nim)
 
-## Example
+## 例
 
 [inline-code-attrs-start title = 'getOfflineUsers の例'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

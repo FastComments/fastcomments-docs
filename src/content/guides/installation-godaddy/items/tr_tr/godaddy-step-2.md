@@ -39,5 +39,3 @@ Sağ üst köşedeki Done'a tıklayın:
 </div>
 
 İkinci adım bu kadar!
-
----

@@ -37,5 +37,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Απόκριση από `ModerationAPI.GetManualBadges`: %v\n", resp)
 }
 [inline-code-end]
-
----

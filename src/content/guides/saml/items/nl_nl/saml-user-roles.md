@@ -1,65 +1,65 @@
-FastComments maps SAML user roles to internal permissions, enabling role-based access control for your organization.
+FastComments koppelt SAML-gebruikersrollen aan interne machtigingen, waardoor op rollen gebaseerde toegangscontrole mogelijk is voor uw organisatie.
 
-### FastComments Role System
+### FastComments Rollensysteem
 
-FastComments gebruikt een op rollen gebaseerd permissiesysteem waarbij gebruikers één of meerdere rollen kunnen hebben die hun toegangslevels en mogelijkheden bepalen.
+FastComments gebruikt een op rollen gebaseerd machtigingssysteem waarbij gebruikers een of meerdere rollen kunnen hebben die hun toegangsniveaus en mogelijkheden bepalen.
 
-### Available FastComments Roles
+### Beschikbare FastComments Rollen
 
-#### Administrative Roles
+#### Administratieve Rollen
 
 **fc-account-owner**
-- **Permissions**: Complete administrative access
-- **Capabilities**: All features, billing management, user management
-- **Use Case**: Primary account administrators and owners
+- **Machtigingen**: Volledige administratieve toegang
+- **Mogelijkheden**: Alle functies, facturatiebeheer, gebruikersbeheer
+- **Gebruiksscenario**: Primaire accountbeheerders en eigenaren
 
 **fc-admin-admin**  
-- **Permissions**: Administrative access to most features
-- **Capabilities**: User management, configuration, moderation. **Can administer other admins.**
-- **Use Case**: Secondary administrators and IT staff
+- **Machtigingen**: Administratieve toegang tot de meeste functies
+- **Mogelijkheden**: Gebruikersbeheer, configuratie, moderatie. **Kan andere beheerders beheren.**
+- **Gebruiksscenario**: Secundaire beheerders en IT-personeel
 
 **fc-billing-admin**
-- **Permissions**: Billing and subscription management
-- **Capabilities**: Payment methods, invoices, subscription changes
-- **Use Case**: Finance team members and billing contacts
+- **Machtigingen**: Facturatie- en abonnementsbeheer
+- **Mogelijkheden**: Betaalmethoden, facturen, abonnementswijzigingen
+- **Gebruiksscenario**: Leden van het financiële team en facturatiecontacten
 
-#### Specialized Roles
+#### Gespecialiseerde Rollen
 
 **fc-analytics-admin**
-- **Permissions**: Access to analytics and reporting
-- **Capabilities**: View site statistics, user engagement data
-- **Use Case**: Marketing teams and data analysts
+- **Machtigingen**: Toegang tot analyses en rapportage
+- **Mogelijkheden**: Bekijk sitestatistieken, gegevens over gebruikersbetrokkenheid
+- **Gebruiksscenario**: Marketingteams en data-analisten
 
 **fc-api-admin**
-- **Permissions**: API access and management
-- **Capabilities**: API credentials, webhook configuration
-- **Use Case**: Developers and technical integrators
+- **Machtigingen**: API-toegang en -beheer
+- **Mogelijkheden**: API-referenties, webhookconfiguratie
+- **Gebruiksscenario**: Ontwikkelaars en technische integrators
 
 **fc-moderator**
-- **Permissions**: Comment moderation capabilities
-- **Capabilities**: Approve/reject comments, manage spam
-- **Use Case**: Community moderators and content managers
+- **Machtigingen**: Mogelijkheden voor commentaarmoderatie
+- **Mogelijkheden**: Commentaar goedkeuren/afwijzen, spam beheren
+- **Gebruiksscenario**: Communitymoderators en contentmanagers
 
-### Role Mapping Configuration
+### Configuratie van Roltoewijzing
 
-#### SAML Attribute Sources
+#### SAML-attribuutbronnen
 
-FastComments accepteert rolinformatie van verschillende SAML-attribuutnamen om compatibiliteit met verschillende identity providers te waarborgen:
+FastComments accepteert rolinformatie via verschillende SAML-attribuutnamen om compatibiliteit met verschillende identity providers te waarborgen:
 
-**Standard Attribute Names**:
+**Standaard attribuutnamen**:
 - `roles`
 - `groups` 
 - `memberOf`
 - `role`
 - `group`
 
-**Microsoft/ADFS Attributes**:
+**Microsoft/ADFS-attributen**:
 - `http://schemas.microsoft.com/ws/2008/06/identity/claims/role`
 - `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/role`
 
-#### Role Format Support
+#### Ondersteuning voor rolformaten
 
-**Array Format** *(Preferred)*:
+**Array-formaat** *(Voorkeur)*:
 ```xml
 <saml:Attribute Name="roles">
     <saml:AttributeValue>fc-admin-admin</saml:AttributeValue>
@@ -67,147 +67,145 @@ FastComments accepteert rolinformatie van verschillende SAML-attribuutnamen om c
 </saml:Attribute>
 ```
 
-**Comma-Separated Format**:
+**Komengescheiden formaat**:
 ```xml
 <saml:Attribute Name="roles">
     <saml:AttributeValue>fc-admin-admin,fc-moderator</saml:AttributeValue>
 </saml:Attribute>
 ```
 
-**Single Role Format**:
+**Enkelvoudig rolformaat**:
 ```xml
 <saml:Attribute Name="roles">
     <saml:AttributeValue>fc-admin-admin</saml:AttributeValue>
 </saml:Attribute>
 ```
 
-### Identity Provider Role Configuration
+### Rolconfiguratie bij Identity Providers
 
 #### Microsoft Azure AD
 
-1. **App Roles Configuration**:
-   - Define FastComments roles in your Azure AD application
-   - Assign users to appropriate app roles
-   - Configure claims to include assigned roles
+1. **App-rollenconfiguratie**:
+   - Definieer FastComments-rollen in uw Azure AD-applicatie
+   - Wijs gebruikers toe aan de juiste app-rollen
+   - Configureer claims om toegewezen rollen op te nemen
 
-2. **Attribute Mapping**:
+2. **Attribuuttoewijzing**:
    ```
-   Attribute Name: roles
-   Source Attribute: user.assignedroles
+   Attribuutnaam: roles
+   Bronattribuut: user.assignedroles
    ```
 
 #### Okta
 
-1. **Group Assignment**:
-   - Create groups matching FastComments role names
-   - Assign users to appropriate groups
-   - Configure attribute statements
+1. **Groepstoewijzing**:
+   - Maak groepen aan die overeenkomen met FastComments-rolnamen
+   - Wijs gebruikers toe aan de juiste groepen
+   - Configureer attribuutverklaringen
 
-2. **Attribute Statement**:
+2. **Attribuutverklaring**:
    ```
-   Name: roles
-   Value: user.groups
-   Filter: Starts with "fc-"
+   Naam: roles
+   Waarde: user.groups
+   Filter: Begint met "fc-"
    ```
 
 #### Google Workspace
 
-1. **Group Mapping**:
-   - Create organizational units or groups
-   - Name groups with FastComments role prefixes
-   - Configure attribute mapping
+1. **Groepstoewijzing**:
+   - Maak organisatie-eenheden of groepen aan
+   - Geef groepen namen met FastComments-rolprefixen
+   - Configureer attribuuttoewijzing
 
-2. **Custom Attributes**:
+2. **Aangepaste attributen**:
    ```
-   Attribute Name: roles
-   Value: Groups or custom schema attribute
+   Attribuutnaam: roles
+   Waarde: Groepen of aangepast schema-attribuut
    ```
 
-### Default User Behavior
+### Standaardgedrag van Gebruikers
 
-#### Users Without Roles
+#### Gebruikers Zonder Rollen
 
-When a SAML user has no roles or unrecognized roles:
-- User is created as a standard commenter
-- No administrative access is granted
-- Can post and manage their own comments
-- Cannot access admin dashboard features
+Wanneer een SAML-gebruiker geen rollen of onherkende rollen heeft:
+- De gebruiker wordt aangemaakt als standaardcommentator
+- Er wordt geen administratieve toegang verleend
+- Kan eigen commentaar plaatsen en beheren
+- Kan geen toegang krijgen tot functies van het beheerdersdashboard
 
-#### Role Inheritance
+#### Rolovererving
 
-- Users can have multiple roles simultaneously
-- Permissions are cumulative (highest permission level applies)
-- Role changes in IdP are reflected on next login
+- Gebruikers kunnen meerdere rollen tegelijkertijd hebben
+- Machtigingen zijn cumulatief (hoogste machtigingsniveau geldt)
+- Rolwijzigingen in de IdP worden weerspiegeld bij de volgende login
 
-### Managing SAML Users
+### Beheer van SAML-gebruikers
 
-#### User Creation
+#### Gebruikersaanmaak
 
-When a user logs in via SAML for the first time:
-1. **User Account**: Automatically created with email as identifier
-2. **Role Assignment**: Roles applied based on SAML attributes
-3. **Profile Information**: First/last name populated if provided
-4. **Permission Activation**: Roles become active immediately
+Wanneer een gebruiker voor het eerst inlogt via SAML:
+1. **Gebruikersaccount**: Automatisch aangemaakt met e-mail als identificatie
+2. **Roltoewijzing**: Rollen toegepast op basis van SAML-attributen
+3. **Profielinformatie**: Voor-/achternaam ingevuld indien opgegeven
+4. **Machtigingsactivering**: Rollen worden onmiddellijk actief
 
-#### Role Updates
+#### Rolupdates
 
-Existing SAML users receive role updates:
-1. **Login Trigger**: Role updates occur during each SAML login
-2. **Immediate Effect**: New permissions apply immediately
-3. **Role Removal**: Removed roles are revoked automatically
-4. **Audit Trail**: Role changes are logged in audit logs
+Bestaande SAML-gebruikers ontvangen rolupdates:
+1. **Login-trigger**: Rolupdates vinden plaats bij elke SAML-login
+2. **Onmiddellijk effect**: Nieuwe machtigingen gelden onmiddellijk
+3. **Rolverwijdering**: Verwijderde rollen worden automatisch ingetrokken
+4. **Audittrail**: Rolwijzigingen worden geregistreerd in auditlogboeken
 
-### Custom Role Mapping
+### Aangepaste Roltoewijzing
 
-#### Enterprise Customization
+#### Enterprise-aanpassing
 
-For enterprise customers with specific requirements:
-- Custom role names can be mapped to FastComments permissions
-- Complex role hierarchies can be implemented
-- Department-specific access controls can be configured
+Voor enterprise-klanten met specifieke vereisten:
+- Aangepaste rolnamen kunnen worden toegewezen aan FastComments-machtigingen
+- Complexe rolhiërarchieën kunnen worden geïmplementeerd
+- Afdelingsspecifieke toegangscontroles kunnen worden geconfigureerd
 
-Contact FastComments support for custom role mapping configurations.
+Neem contact op met FastComments-ondersteuning voor aangepaste roltoewijzingsconfiguraties.
 
-#### Role Validation
+#### Rolvalidatie
 
-FastComments validates incoming roles:
-- Unrecognized roles are ignored (not rejected)
-- Malformed role attributes are logged for troubleshooting
-- Users maintain existing roles if SAML assertion lacks role information
+FastComments valideert binnenkomende rollen:
+- Onherkende rollen worden genegeerd (niet afgewezen)
+- Misvormde rolattributen worden gelogd voor probleemoplossing
+- Gebruikers behouden bestaande rollen als de SAML-assertie geen rolinformatie bevat
 
-### Best Practices
+### Beste Praktijken
 
-#### Role Management
+#### Rolbeheer
 
-1. **Principle of Least Privilege**: Assign minimal necessary permissions
-2. **Regular Auditing**: Review user roles and access periodically  
-3. **Clear Naming**: Use descriptive group names in your IdP
-4. **Documentation**: Maintain documentation of role assignments
+1. **Principe van minimale privileges**: Wijs de minimaal noodzakelijke machtigingen toe
+2. **Regelmatige auditing**: Controleer gebruikersrollen en toegang periodiek  
+3. **Duidelijke naamgeving**: Gebruik beschrijvende groepsnamen in uw IdP
+4. **Documentatie**: Onderhoud documentatie van roltoewijzingen
 
-#### Security Considerations
+#### Beveiligingsoverwegingen
 
-1. **Role Attributes**: Ensure role attributes are properly secured in SAML responses
-2. **Attribute Validation**: Verify that only authorized systems can assign roles
-3. **Access Reviews**: Regularly review administrative role assignments
-4. **Monitoring**: Monitor role changes and administrative actions
+1. **Rolattributen**: Zorg ervoor dat rolattributen goed beveiligd zijn in SAML-responses
+2. **Attribuutvalidatie**: Controleer dat alleen geautoriseerde systemen rollen kunnen toewijzen
+3. **Toegangsreviews**: Beoordeel administratieve roltoewijzingen regelmatig
+4. **Monitoring**: Monitor rolwijzigingen en administratieve acties
 
-### Troubleshooting Role Issues
+### Problemen met Rollen Oplossen
 
-#### Common Problems
+#### Veelvoorkomende Problemen
 
-**Roles Not Applied**:
-- Check SAML attribute names match supported formats
-- Verify IdP is sending role information
-- Confirm role values match FastComments role names exactly
+**Rollen Niet Toegepast**:
+- Controleer of SAML-attribuutnamen overeenkomen met ondersteunde formaten
+- Controleer of de IdP rolinformatie verzendt
+- Bevestig dat rolwaarden exact overeenkomen met FastComments-rolnamen
 
-**Access Denied**:
-- Verify user has appropriate role assigned in IdP
-- Check role spelling and case sensitivity
-- Confirm role is properly formatted in SAML response
+**Toegang Geweigerd**:
+- Controleer of de gebruiker de juiste rol heeft toegewezen in de IdP
+- Controleer de spelling van rollen en hoofdlettergevoeligheid
+- Bevestig dat de rol correct is geformatteerd in de SAML-response
 
-**Missing Permissions**:
-- Review role definitions and required permissions
-- Check for conflicting role assignments
-- Verify user has logged in after role changes
-
----
+**Ontbrekende Machtigingen**:
+- Bekijk roldefinities en vereiste machtigingen
+- Controleer op conflicterende roltoewijzingen
+- Controleer of de gebruiker heeft ingelogd na rolwijzigingen

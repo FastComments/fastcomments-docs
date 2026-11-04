@@ -1,4 +1,3 @@
----
 启用或禁用页面的通知。当用户订阅页面时，会为新的根评论创建通知，并且还
 
 ## 参数
@@ -41,5 +40,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->update_user_notification_page_subscription_status: #{e}"
 end
 [inline-code-end]
-
----

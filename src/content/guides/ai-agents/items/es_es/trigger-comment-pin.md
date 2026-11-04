@@ -15,5 +15,3 @@ Prevención de bucles: los eventos de anclado originados por un agente no activa
 ### Nota sobre el par
 
 Los eventos de anclado y desanclado son disparadores separados. Suscríbase a ambos si desea un comportamiento simétrico. Vea [Disparador: Comentario Desanclado](#trigger-comment-unpin).
-
----

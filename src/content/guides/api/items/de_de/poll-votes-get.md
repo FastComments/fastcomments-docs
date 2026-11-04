@@ -1,12 +1,14 @@
 [api-resource-header-start name = 'PollVote'; route = 'GET /api/v1/poll-votes'; creditsCost = 1; api-resource-header-end]
 
-Listet die einzelnen Stimmen hinter den Zählerwerten einer Umfrage auf, älteste zuerst. Ein Guthaben pro 100 zurückgegebene Stimmen.
+Listet die einzelnen Stimmen hinter den Zählungen einer Umfrage auf, älteste zuerst. Ein Credit pro 100 zurückgegebenen Stimmen.
 
-Eine Umfrage gehört zu einem Kommentar, daher werden Stimmen jeweils einer Umfrage nach gelesen und `commentId` ist erforderlich. Eingrenzen kann man weiter mit `voterId`, um zu prüfen, wie eine Person abgestimmt hat, oder mit `optionId`, um alle aufzulisten, die eine bestimmte Option gewählt haben.
+Eine Umfrage gehört zu einem Kommentar, daher werden die Stimmen immer eine Umfrage nach der anderen gelesen und `commentId` ist erforderlich. Grenzen Sie die Ergebnisse weiter ein
+mit `voterId`, um zu prüfen, wie eine bestimmte Person abgestimmt hat, oder mit `optionId`, um alle aufzulisten, die eine bestimmte Option gewählt haben.
 
-Pro Aufruf werden maximal 1000 Stimmen zurückgegeben. Verwenden Sie `skip`, um weitere Seiten abzurufen.
+Es werden höchstens 1000 Stimmen pro Aufruf zurückgegeben. Verwenden Sie `skip`, um durch weitere Ergebnisse zu blättern.
 
-Die `privacy`‑Einstellung der Umfrage wird respektiert: Die Stimmen einer anonymen Umfrage können nicht gelesen werden, und die Anfrage schlägt mit `poll-anonymous` fehl. Siehe die `PollVote`‑Struktur für Details.
+Die `privacy`-Einstellung der Umfrage wird respektiert: Die Stimmen einer anonymen Umfrage können nicht gelesen werden, und die Anfrage schlägt
+mit `poll-anonymous` fehl. Details finden Sie in der `PollVote`-Struktur.
 
 [inline-code-attrs-start title = 'PollVotes Get cURL Beispiel'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -14,7 +16,7 @@ curl --request GET \
   --url 'https://fastcomments.com/api/v1/poll-votes?tenantId=demo&API_KEY=DEMO_API_SECRET&commentId=comment-id'
 [inline-code-end]
 
-[inline-code-attrs-start title = 'PollVotes Get Anforderungsstruktur'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'PollVotes Get Anfragestruktur'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface PollVotesGetQueryParams {
     tenantId: string
@@ -38,10 +40,13 @@ interface PollVotesGetResponse {
 }
 [inline-code-end]
 
-### Counting Votes Per Option
+### Stimmen pro Option zählen
 
-Sie müssen diese nicht zusammenzählen, um die Ergebnisse zu erhalten – die Umfrage enthält ihre eigenen Zähler. Lesen Sie stattdessen die Umfrage mit `GET /api/v1/polls/:commentId` und verwenden Sie diese API, wenn Sie wissen müssen, wer abgestimmt hat.
+Sie müssen diese nicht zusammenrechnen, um die Ergebnisse zu erhalten - die Umfrage führt ihre eigenen Zählungen. Lesen Sie die Umfrage stattdessen mit
+`GET /api/v1/polls/:commentId` und verwenden Sie diese API, wenn Sie wissen möchten, wer abgestimmt hat.
 
-### Every Poll On A Page
+### Jede Umfrage auf einer Seite
 
-Es gibt keine seitenweite Auflistung der Stimmen. Um über eine gesamte Seite zu berichten, rufen Sie deren Kommentare mit `GET /api/v1/comments` ab, die für jeden Kommentar die Umfrage und deren Zähler zurückgeben, und lesen Sie anschließend die Stimmen der Umfragen, die Sie interessieren.
+Es gibt keine seitenweite Auflistung der Stimmen. Um einen Bericht über eine ganze Seite zu erstellen, rufen Sie deren Kommentare mit
+`GET /api/v1/comments` ab, was die Umfrage jedes Kommentars und dessen Zählungen zurückgibt, und lesen Sie dann die Stimmen für die
+Umfragen, die Sie interessieren.

@@ -15,5 +15,3 @@ Vi foreslår, at du læser Pages-dokumentationen først for at begrænse forvirr
 ### Webhooks
 
 Webhook-abonnementer har deres egen vejledning. `POST`, `GET` og `DELETE /api/v1/webhooks` samt `GET /api/v1/webhooks/sample-payloads` er dokumenteret under [Managing Subscriptions via API](/guide-webhooks.html#webhooks-api-subscriptions), og hændelses‑payloads under [Webhook Structures](/guide-webhooks.html#webhooks-structures).
-
----

@@ -44,5 +44,3 @@ Bu kapalı olduğunda, Simple SSO bu izinleri vermez. Bu izinlere sahip bir kull
 Simple SSO yükleri imzalanmamıştır, bu yüzden bu açık olduğunda, bir yöneticinin e-posta adresini veya kullanıcı kimliğini bilen herkes onun gibi davranabilir. Bu siteniz için önemliyse, bu ayarı kapalı tutun ve yöneticileriniz için Secure SSO kullanın.
 
 Secure SSO veya API tarafından oluşturulan kullanıcılar, Simple SSO tarafından erişilemez; bu ayar açık olsun ya da olmasın.
-
----

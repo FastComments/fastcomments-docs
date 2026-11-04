@@ -46,5 +46,3 @@ FastComments sözdizimi vurgulaması şu anda 39 yaygın dili desteklemektedir:
 - YAML
 
 Desteklemediğimiz bir dilde kod parçacığı paylaşıldığında, yine de kod olarak görüntülenecektir — ancak sözdizimi vurgulaması veya yeniden biçimlendirme uygulanmayacaktır.
-
----

@@ -1,4 +1,3 @@
----
 ## パラメータ
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
@@ -33,5 +32,3 @@ DefaultAPI.sendInvite(tenantId: tenantId, id: id, fromName: fromName) { (respons
     }
 }
 [inline-code-end]
-
----

@@ -9,5 +9,3 @@
 Αυτό μπορεί επίσης να γίνει χωρίς κώδικα. Στη σελίδα προσαρμογής widget, δείτε την ενότητα "Απενεργοποίηση Προφίλ".
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-profiles']; selector = '.disable-profiles'; alt='Σελίδα προσαρμογής widget με το πλαίσιο ελέγχου Απενεργοποίηση Προφίλ επιλεγμένο ώστε τα avatar να μην ανοίγουν πλέον προφίλ'; title='Απενεργοποίηση Προφίλ' app-screenshot-end]
-
----

@@ -36,5 +36,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error al llamar a DefaultApi->patch_hash_tag: #{e}"
 end
 [inline-code-end]
-
----

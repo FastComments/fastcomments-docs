@@ -1,4 +1,3 @@
----
 ## Parámetros
 
 | Nombre | Tipo | Requerido | Descripción |
@@ -19,5 +18,3 @@ if response.isSome:
   let pageLikes = response.get()
   # usar pageLikes según sea necesario
 [inline-code-end]
-
----

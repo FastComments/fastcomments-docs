@@ -26,5 +26,3 @@ api->getSearchUsers(tenantId, opts)
         }
     });
 [inline-code-end]
-
----

@@ -27,5 +27,3 @@ if blockResult.isSome:
   let success = blockResult.get()
   discard success
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 [related-parameter-start name = 'tenantId'; type = 'string'; related-parameter-end]
 
 您可能会注意到，评论小部件可以使用 Tenant ID 为 "demo"，例如：
@@ -14,4 +13,3 @@
 还可以在 [API 凭证页面](https://fastcomments.com/auth/my-account/api-secret) 找到您的 Tenant ID 并管理您的 API 密钥。
 
 从此之后，如果您已登录 FastComments，代码示例将使用您的真实 Tenant ID（如果您在 https://fastcomments.com 上已登录）。
----

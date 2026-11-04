@@ -1,4 +1,3 @@
----
 Ορίστε το tenant ID σας μία φορά στο `hugo.toml`:
 
 ```toml
@@ -11,4 +10,3 @@
 ```text
 \{{< fastcomments >}}
 ```
----

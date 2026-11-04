@@ -1,51 +1,53 @@
-There are two ways to ban users from commenting on your site with FastComments.
+Postoje dva načina da se zabrani komentarisanje korisnicima na vašem sajtu pomoću FastComments.
 
-The first is if you already know their email, you can enter it on the <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">zabranjeni korisnici</a> page.
+Prvi je ako već znate njihovu imejl adresu, možete je uneti na stranici <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">banned users</a>.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .account-block'; alt='Lista zabranjenih korisnika pod Moderirani komentari, sa zabranjenim email adresama i dugmetom za dodavanje nove zabrane'; title='Stranica zabranjenih korisnika' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .account-block'; alt='Lista banovanih korisnika pod Moderate Comments, sa banovanim imejl adresama i dugmetom za dodavanje nove zabrane'; title='Stranica Banned Users' app-screenshot-end]
 
-This page can be accessed via Moderirani komentari -> Zabranjeni korisnici
+Ovoj stranici se može pristupiti preko Moderate Comments -> Banned Users
 
-When we go to ban a user, we can pick a type, either Permanent or Permanent Shadow Ban:
+Kada banujemo korisnika, možemo izabrati tip, bilo Permanent ili Permanent Shadow Ban:
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users/new'; selector = '.content .account-block'; alt='Novi formular za zabranu sa poljem za email i izborom tipa zabrane: Trajna ili Trajna senka zabrana'; title='Zabranjivanje korisnika' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users/new'; selector = '.content .account-block'; alt='Forma za novu zabranu sa poljem za imejl i izborom tipa zabrane Permanent ili Permanent Shadow Ban'; title='Banovanje korisnika' app-screenshot-end]
 
-The second way to ban a user is by clicking the ban button that is placed on each comment on the Comment Moderation page.
+Drugi način da se banuje korisnik je klikom na dugme za banovanje koje se nalazi na svakom komentaru na stranici Comment Moderation.
 
-When we click the ban button, you'll be presented with some options, where we can specify the ban type and duration.
+Kada kliknemo na dugme za banovanje, biće vam prikazane neke opcije, gde možemo specificirati tip i trajanje zabrane.
 
-### Email aliasi
+### Email Aliases
 
-When banning a user by email, FastComments automatically ignores `+` aliases. For example, banning `user+alias@gmail.com` will also ban `user@gmail.com` and any other `+` variation of that address, such as `user+other@gmail.com`.
+Prilikom banovanja korisnika po imejlu, FastComments automatski ignoriše `+` aliase. Na primer, banovanje `user+alias@gmail.com` će
+takođe banovati `user@gmail.com` i svaku drugu `+` varijantu te adrese, kao što je `user+other@gmail.com`.
 
-### Senka zabrane
+### Shadow Bans
 
-A shadow-ban is a type of ban that makes it appear that the user's comment or vote was saved successfully, when in fact it was not. This may be desirable in certain situations.
+Shadow-ban je tip zabrane koji stvara utisak da je komentar ili glas korisnika uspešno sačuvan, iako zapravo nije. Ovo može biti
+poželjno u određenim situacijama.
 
-### Zabrana putem IP adrese
+### Banovanje preko IP adrese
 
-Unless a tenant wishes to opt out, FastComments supports banning via IP by storing a hashed version of the commenter's IP address.
+Osim ako tenant ne želi da se isključi iz ove opcije, FastComments podržava banovanje preko IP adrese čuvanjem heširane verzije IP adrese komentatora.
 
-### Pretraga zabranjenih korisnika
+### Pretraga banovanih korisnika
 
-Once your list grows past a page or two, you can narrow it with the search row above the table.
+Kada vaša lista naraste na stranicu ili dve, možete je suziti pomoću reda za pretragu iznad tabele.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .filter-form'; alt='Red za pretragu na stranici Zabranjenih korisnika sa padajućim menijem \'Search By\', padajućim menijem \'Match\' i poljem \'Value\''; title='Pretraga zabranjenih korisnika' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .filter-form'; alt='Red za pretragu na stranici Banned Users sa padajućim menijem Search By, padajućim menijem Match i poljem Value'; title='Pretraga banovanih korisnika' app-screenshot-end]
 
-There are three controls:
+Postoje tri kontrole:
 
-- **Search By** picks which field to look in: Any Field, Email, Name, Banned By, or Banned For Saying. The last four correspond to the columns of the same name in the table.
-- **Match** picks how to compare. **Contains** finds your value anywhere in the field, and **Equals** matches the whole field.
-- **Value** is the text to look for.
+- **Search By** bira u kom polju se traži: Any Field, Email, Name, Banned By, ili Banned For Saying. Poslednja četiri odgovaraju kolonama istog imena u tabeli.
+- **Match** bira kako se poredi. **Contains** pronalazi vašu vrednost bilo gde u polju, a **Equals** podudara celo polje.
+- **Value** je tekst koji se traži.
 
-Every field is matched without regard to case, so searching for `SPAMMER@EXAMPLE.COM` finds a ban stored as `spammer@example.com`.
+Svako polje se podudara bez obzira na velika i mala slova, tako da pretraga za `SPAMMER@EXAMPLE.COM` pronalazi ban sačuvan kao `spammer@example.com`.
 
-A few things worth knowing:
+Nekoliko stvari vrednih pažnje:
 
-- **Banned For Saying** searches the text of the comment that got the user banned. This is how you find everyone banned over a particular phrase.
-- **Banned By** searches the name of the moderator who issued the ban, which is useful for reviewing another moderator's decisions.
-- Wildcard bans are stored with their `*`, so a **Contains** search for `bademail.com` finds a `*@bademail.com` ban.
-- **Name** matches the name shown in the Name column, so it finds a user even if they have changed their name since being banned, and even if you created the ban by entering an email address and no name was recorded at the time. The name recorded on the ban still matches too, so searching for either the old or the current name works.
-- **Any Field** searches the email, name, banned-by moderator, and banned comment text together.
+- **Banned For Saying** pretražuje tekst komentara zbog kojeg je korisnik banovan. Ovako pronalazite sve banovane zbog određene fraze.
+- **Banned By** pretražuje ime moderatora koji je izdao zabranu, što je korisno za pregled odluka drugog moderatora.
+- Wildcard banovi se čuvaju sa svojim `*`, tako da **Contains** pretraga za `bademail.com` pronalazi ban `*@bademail.com`.
+- **Name** podudara ime prikazano u koloni Name, tako da pronalazi korisnika čak i ako je promenio ime od banovanja, i čak i ako ste napravili ban unosom imejl adrese a ime nije zabeleženo u tom trenutku. Ime zabeleženo na banu takođe i dalje podudara, tako da pretraga za staro ili trenutno ime radi.
+- **Any Field** pretražuje imejl, ime, moderatora koji je banovao i tekst banovanog komentara zajedno.
 
-Your search is part of the page URL, so you can share a filtered list with other moderators the same way you share other moderation links. Paging through results keeps the search applied, starting a new search returns you to the first page, and **Clear** returns to the full list.
+Vaša pretraga je deo URL-a stranice, tako da možete deliti filtriranu listu sa drugim moderatorima na isti način na koji delite druge linkove za moderaciju. Listanje kroz rezultate zadržava primenjenu pretragu, pokretanje nove pretrage vas vraća na prvu stranicu, a **Clear** vraća na celu listu.

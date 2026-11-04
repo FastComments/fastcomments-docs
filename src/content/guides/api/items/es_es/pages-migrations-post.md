@@ -67,5 +67,3 @@ interface PageMigrationsResponse {
 
 - Los trabajos para un inquilino se ejecutan uno a la vez, del más antiguo al más reciente. Una segunda migración espera a que la primera termine.
 - `PATCH /api/v1/pages/:id` con un nuevo `urlId` solo cambia la página, no sus comentarios. Use esta ruta para mover los comentarios de una página.
-
----

@@ -26,5 +26,3 @@ async fn remove_comment_example(config: &configuration::Configuration) -> Result
     Ok(())
 }
 [inline-code-end]
-
----

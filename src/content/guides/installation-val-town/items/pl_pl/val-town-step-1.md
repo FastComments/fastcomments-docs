@@ -1,6 +1,6 @@
-The widget is a script tag and a container element, so it drops into whatever your val already renders. This example uses Hono JSX, which is what Val Town's HTTP templates use.
+Widżet to tag skryptu i element kontenera, więc pasuje do tego, co Twoja val już renderuje. Ten przykład używa Hono JSX, czyli tego, czego używają szablony HTTP Val Town.
 
-[inline-code-attrs-start title = 'Widżet komentarzy w HTTP val'; type='javascript' inline-code-attrs-end]
+[inline-code-attrs-start title = 'Widżet komentarzy w val HTTP'; type='javascript' inline-code-attrs-end]
 [inline-code-start]
 /** @jsxImportSource npm:hono@4/jsx */
 import { Hono } from "npm:hono@4";
@@ -37,17 +37,17 @@ app.get("/:slug", (c) => {
 export default app.fetch;
 [inline-code-end]
 
-## Wybierz urlId przed wypuszczeniem
+## Wybierz urlId przed publikacją
 
-`urlId` decyduje, w którym wątku pojawi się komentarz. Jeśli pozostawisz go nieustawionym, domyślnie przyjmuje wyczyszczoną wersję bieżącego adresu URL strony, co jest dokładnie tym, co zmienia się w Val Town: val ma długą nazwę hosta `*.web.val.run`, dopóki nie zarezerwujesz subdomeny, gałęzie otrzymują własne adresy URL, a zmiana nazwy strony zmienia ścieżkę. Każda wariacja cicho staje się osobnym, pustym wątkiem, a objaw wygląda jak „moje komentarze zniknęły”.
+`urlId` decyduje o tym, do którego wątku trafi komentarz. Jeśli go nie ustawisz, domyślnie będzie to oczyszczona wersja adresu URL bieżącej strony — a to dokładnie to, co zmienia się w Val Town: val ma długi hostname `*.web.val.run`, dopóki nie zajmiesz subdomeny, gałęzie mają własne adresy URL, a zmiana nazwy strony zmienia ścieżkę. Każda wariacja po cichu staje się osobnym, pustym wątkiem, a objaw wygląda jak „moje komentarze zniknęły”.
 
-Ustaw go na coś stabilnego, co kontrolujesz, np. slug posta lub identyfikator w bazie danych, jak powyżej. Przekaż także `url`, aby e‑maile z powiadomieniami i narzędzia moderacji mogły odwoływać się do rzeczywistej strony.
+Ustaw coś stabilnego, czym sterujesz, np. slug posta lub identyfikator z bazy danych, jak powyżej. Przekaż też `url`, aby e-maile z powiadomieniami i narzędzia moderacji mogły linkować z powrotem do prawdziwej strony.
 
-## Zachowanie komentarzy bez JavaScriptu
+## Zachowywanie komentarzy bez JavaScript
 
-FastComments renderuje pełny wątek po stronie serwera, który val może wstawić do bloku `<noscript>`:
+FastComments renderuje cały wątek po stronie serwera, a val może wstawić go do bloku `<noscript>`:
 
-[inline-code-attrs-start title = 'Zapasowy tryb bez JavaScriptu'; type='html' inline-code-attrs-end]
+[inline-code-attrs-start title = 'Rozwiązanie zastępcze bez JavaScript'; type='html' inline-code-attrs-end]
 [inline-code-start]
 <noscript>
   <iframe src="https://fastcomments.com/ssr/comments?tenantId=demo&urlId=POST_SLUG&url=PAGE_URL"
@@ -56,4 +56,4 @@ FastComments renderuje pełny wątek po stronie serwera, który val może wstawi
 </noscript>
 [inline-code-end]
 
-Zakoduj parametry w formacie URL. Wersja po stronie serwera obsługuje komentowanie anonimowe i zalogowane, SSO oraz zagnieżdżone odpowiedzi.
+Zakoduj parametry w URL. Wersja po stronie serwera obsługuje komentowanie anonimowe i zalogowane, SSO oraz zagnieżdżone odpowiedzi.

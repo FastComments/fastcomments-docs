@@ -1,4 +1,3 @@
----
 ### Swift пакет менаџер
 
 Додајте следеће у ваш `Package.swift` фајл:
@@ -18,4 +17,3 @@ dependencies: [
 
 - Swift 5.9+
 - iOS 13.0+ / macOS 10.15+ / tvOS 13.0+ / watchOS 6.0+
----

@@ -37,5 +37,3 @@ try {
     echo 'Exception when calling PublicApi->createV1PageReact: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

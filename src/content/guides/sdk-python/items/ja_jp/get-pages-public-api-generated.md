@@ -1,4 +1,3 @@
----
 テナントのページを一覧取得します。FChat デスクトップクライアントがルームリストを生成する際に使用されます。  
 `enableFChat` が各ページの解決されたカスタム設定で true であることが必要です。  
 SSO が必要なページは、リクエストしたユーザーのグループアクセスに基づいてフィルタリングされます。
@@ -54,5 +53,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->get_pages_public: %s\n" % e)
 [inline-code-end]
-
----

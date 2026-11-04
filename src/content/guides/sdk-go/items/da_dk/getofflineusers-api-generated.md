@@ -1,4 +1,3 @@
----
 Tidligere kommentatorer på siden, som IKKE er online i øjeblikket. Sorteret efter displayName.
 Brug dette efter at have udtømt /users/online for at gengive en 'Medlemmer'-sektion.
 Cursor-paginering på commenterName: serveren går igennem det delvise {tenantId, urlId, commenterName}-index fra afterName fremad via $gt, uden $skip-omkostning.
@@ -46,5 +45,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.GetOfflineUsers`: %v\n", resp)
 }
 [inline-code-end]
-
----

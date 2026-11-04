@@ -1,34 +1,31 @@
----
-The Recent Comments widget displays the most recent comments posted across your entire site. It's useful in sidebars, footers, or anywhere you want to surface fresh activity to encourage further reading.
+Recent Commentsウィジェットは、サイト全体に投稿された最新のコメントを表示します。サイドバーやフッターなど、新着アクティビティを見せてさらなる閲覧を促したい場所で便利です。
 
-## Options
+## オプション
 
-- **Title** (optional): The heading shown above the list. Defaults to "最近のコメント".
-- **Count** (optional): How many comments to show. Range 1 to 50. Defaults to 5.
+- **タイトル**(任意): リストの上に表示される見出し。デフォルトは「Recent Comments」です。
+- **件数**(任意): 表示するコメントの数。1から50の範囲で指定します。デフォルトは5です。
 
-## How to Add It
+## 追加方法
 
-### Inside a Post or Page
+### 投稿またはページ内
 
-In the block editor, add a **Shortcode** block and paste:
+ブロックエディターで**ショートコード**ブロックを追加し、以下を貼り付けます:
 
-[inline-code-attrs-start title = '最近のコメントのショートコード'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Recent Commentsショートコード'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 [fastcomments_recent_comments count="5"]
 [inline-code-end]
 
-The `count` attribute accepts any value between 1 and 50.
+`count`属性には1から50までの任意の値を指定できます。
 
-### In a Sidebar or Footer (Classic Themes)
+### サイドバーまたはフッター(クラシックテーマ)
 
-Go to **Appearance > Widgets** in your WordPress admin. From the block inserter, search for "FastComments" and choose **FastComments: Recent Comments**. Drag it into a sidebar, header, or footer area, then configure the title and count from the widget panel.
+WordPress管理画面で**外観 > ウィジェット**に移動します。ブロック挿入ツールで「FastComments」を検索し、**FastComments: Recent Comments**を選択します。サイドバー、ヘッダー、またはフッターエリアにドラッグし、ウィジェットパネルからタイトルと件数を設定します。
 
-### In a Block Theme (Full Site Editing)
+### ブロックテーマ(サイトエディター)
 
-Open the **Site Editor** under **Appearance > Editor**. Navigate to the template part where the widget should appear, insert a **Legacy Widget** block, and select **FastComments: Recent Comments** from the dropdown.
+**外観 > エディター**から**サイトエディター**を開きます。ウィジェットを表示したいテンプレートパートに移動し、**Legacy Widget**ブロックを挿入して、ドロップダウンから**FastComments: Recent Comments**を選択します。
 
-## Troubleshooting
+## トラブルシューティング
 
-The widget only renders after FastComments setup is complete and a tenant ID is stored. If the widget area is blank, complete setup under **FastComments** in the WordPress admin and reload the page.
-
----
+このウィジェットは、FastCommentsのセットアップが完了し、テナントIDが保存された後にのみ表示されます。ウィジェットエリアが空白の場合は、WordPress管理画面の**FastComments**でセットアップを完了し、ページを再読み込みしてください。

@@ -1,15 +1,15 @@
-Το FastComments υποστηρίζει επίσης το widget Page Reacts (γνωστό και ως πλωτό κουμπί Like) για το Hostinger.
+Το FastComments υποστηρίζει επίσης το widget Page Reacts (aka κουμπί Floating Like) για το Hostinger.
 
-Μπορείτε να το δείτε σε δράση στο κάτω δεξί μέρος αυτής της σελίδας!
+Μπορείτε να το δείτε σε δράση στο κάτω δεξιά μέρος αυτής της σελίδας!
 
 ### Σημείωση!
 
-Οι παρακάτω οδηγίες αφορούν τον Hostinger Site Builder. Αν χρησιμοποιείτε Hostinger *WordPress*, τότε απλώς αντιγράψτε τον παρακάτω κώδικα και προσθέστε τον στην ιστοσελίδα WordPress σας
-using [WPCode](https://wordpress.org/plugins/insert-headers-and-footers/), which is a free and easy plugin for adding small code snippets to your site.
+Αυτές οι οδηγίες αφορούν το Hostinger Site Builder. Αν χρησιμοποιείτε το Hostinger *WordPress*, τότε απλώς πάρτε τον παρακάτω κώδικα και προσθέστε τον στον ιστότοπό σας στο WordPress
+χρησιμοποιώντας το [WPCode](https://wordpress.org/plugins/insert-headers-and-footers/), ένα δωρεάν και εύκολο plugin για την προσθήκη μικρών τμημάτων κώδικα στον ιστότοπό σας.
 
-1. Πρώτα, αντιγράψτε τον κώδικα:
+1. Πρώτα, πάρτε τον κώδικα:
 
-[inline-code-attrs-start title = 'Κώδικας Πλωτού κουμπιού Like για Hostinger'; type = 'bash'; useDemoTenant = false; isFunctional = false; type = 'html';  inline-code-attrs-end]
+[inline-code-attrs-start title = 'Κώδικας Floating Likes για Hostinger'; type = 'bash'; useDemoTenant = false; isFunctional = false; type = 'html';  inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-page-likes-floating.min.js?v=2" async></script>
 <div id="fastcomments-page-likes-floating"></div>
@@ -30,8 +30,8 @@ using [WPCode](https://wordpress.org/plugins/insert-headers-and-footers/), which
 </script>
 [inline-code-end]
 
-2. Στη συνέχεια, στο Hostinger, ανοίξτε τον Site Builder.
+2. Στη συνέχεια, στο Hostinger, ανοίξτε το site builder.
 3. Μεταβείτε στο Website Settings στο κάτω αριστερό μέρος.
 4. Επιλέξτε Integrations.
-5. Προσθέστε τον νέο κώδικα στο *τέλος* του `Custom code` πεδίου, και δημοσιεύστε την ιστοσελίδα σας.
-6. Δεν θα δείτε το widget σε λειτουργία προεπισκόπησης, αλλά θα εμφανιστεί στην δημοσιευμένη έκδοση του ιστότοπου.
+5. Προσθέστε τον νέο κώδικα στο *τέλος* του πεδίου `Custom code` και δημοσιεύστε τον ιστότοπό σας.
+6. Δεν θα δείτε το widget στη λειτουργία προεπισκόπησης, αλλά θα εμφανιστεί στη δημοσιευμένη έκδοση του ιστότοπου.

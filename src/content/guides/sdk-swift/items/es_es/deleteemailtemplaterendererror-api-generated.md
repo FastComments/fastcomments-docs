@@ -1,4 +1,3 @@
----
 ## Parámetros
 
 | Nombre | Tipo | Ubicación | Obligatorio | Descripción |
@@ -33,5 +32,3 @@ DefaultAPI.deleteEmailTemplateRenderError(tenantId: tenantId, id: id, errorId: e
     }
 }
 [inline-code-end]
-
----

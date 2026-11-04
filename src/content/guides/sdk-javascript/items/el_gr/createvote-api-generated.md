@@ -26,5 +26,3 @@ const voteResult: VoteResponse = await createVote(tenantId, commentId, direction
 const anonUserId: string = "anon_zyxwv";
 const anonVoteResult: VoteResponse = await createVote(tenantId, commentId, direction, undefined, anonUserId);
 [inline-code-end]
-
----

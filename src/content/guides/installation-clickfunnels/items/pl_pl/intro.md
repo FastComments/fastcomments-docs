@@ -5,5 +5,3 @@ Zwróć uwagę, że ten samouczek dotyczy modułu Kurs, ale kroki są podobne pr
 Krótko omówimy także konfigurację automatycznych komentarzy, aby zachęcić użytkowników do zaangażowania.
 
 Zwróć uwagę, że ten samouczek wymaga konta FastComments. Zalecamy najpierw zarejestrowanie się, a następnie powrót tutaj. [Możesz założyć konto tutaj.](https://fastcomments.com/auth/tenant-signup?packageId=flex)
-
----

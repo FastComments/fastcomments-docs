@@ -1,4 +1,3 @@
----
 Ein ausführbares Beispiel befindet sich in [`example/`](https://github.com/FastComments/fastcomments-django/tree/main/example): eine linke Leiste + Hauptbereich‑App mit einer Seite pro Widget und einer **Anmeldeseite, die vorab angelegte Demo‑Benutzer auflistet**.  
 Melden Sie sich mit einem beliebigen dieser Benutzer an und die Kommentar‑ und Live‑Chat‑Widgets authentifizieren diese Identität über **Secure SSO**. Aus diesem Verzeichnis:
 

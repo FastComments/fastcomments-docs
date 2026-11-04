@@ -1,4 +1,3 @@
----
 Bir yorumun bayrak sayısı yapılandırılmış eşik değerine **tam olarak** ulaştığında tetiklenir.
 
 ### Gerekli yapılandırma
@@ -28,5 +27,3 @@ Eşik 3 ise ve üç kullanıcı yorumu bayraklarsa, ajan üçüncü bayrakta bir
 ### Eşleştirme önerileri
 
 Hem `COMMENT_ADD` hem de `COMMENT_FLAG_THRESHOLD`'e abone olun eğer ilk bakışta bariz vakaları yakalayan ve bayraklar biriktikçe sınırdaki vakaları yeniden değerlendiren bir moderasyon ajanı istiyorsanız. İki olay bağımsız olarak tetiklenir - her ikisine de abone olunduysa ve her ikisi de tetiklenirse ajan iki kez çalışacaktır, fakat ikinci çalışmada artık bayraklanmış durumu görür.
-
----

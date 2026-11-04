@@ -1,4 +1,3 @@
----
 ## Parametre
 
 | Navn | Type | Placering | Påkrævet | Beskrivelse |
@@ -31,5 +30,3 @@ DefaultAPI.getSubscriptions(tenantId: tenantId, userId: userId) { (response, err
     }
 }
 [inline-code-end]
-
----

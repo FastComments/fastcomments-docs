@@ -1,4 +1,3 @@
----
 ## Potrebujete pomoč?
 
 Če naletite na težave ali imate vprašanja glede PHP SSO SDK, prosimo:
@@ -9,5 +8,3 @@
 ## Prispevanje
 
 Prispevki so dobrodošli! Prosimo, obiščite [GitHub repozitorij](https://github.com/FastComments/fastcomments-php-sso) za smernice glede prispevkov.
-
----

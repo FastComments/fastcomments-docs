@@ -17,5 +17,3 @@
 ### Αντίστοιχο
 
 Δείτε [Trigger: Comment Unlocked](#trigger-comment-unlock) για τον αντίστοιχο trigger.
-
----

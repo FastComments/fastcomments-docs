@@ -1,4 +1,3 @@
----
 ## Trebate pomoć?
 
 Ako naiđete na bilo kakve probleme ili imate pitanja o GatsbyJS biblioteci, molimo:
@@ -9,5 +8,3 @@ Ako naiđete na bilo kakve probleme ili imate pitanja o GatsbyJS biblioteci, mol
 ## Doprinosi
 
 Doprinosi su dobrodošli! Posjetite [GitHub repozitorij](https://github.com/FastComments/fastcomments-gatsbyjs-example) za smjernice o doprinosu.
-
----

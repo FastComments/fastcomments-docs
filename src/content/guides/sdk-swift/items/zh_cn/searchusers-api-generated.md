@@ -38,5 +38,3 @@ PublicAPI.searchUsers(tenantId: tenantId, urlId: urlId, options: PublicAPI.Searc
     }
 }
 [inline-code-end]
-
----

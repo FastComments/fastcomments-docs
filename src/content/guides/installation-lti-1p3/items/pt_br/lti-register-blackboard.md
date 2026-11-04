@@ -1,4 +1,3 @@
----
 Blackboard Learn SaaS e Ultra oferecem suporte ao Registro Dinâmico LTI 1.3.
 
 #### Abra a tela do Provedor de Ferramenta
@@ -25,5 +24,3 @@ Por padrão, o Blackboard marca as ferramentas recém-registradas como **Approve
 4. Em **Institution Policies**, revise quais dados do usuário são enviados (nome, e-mail, função). Salve.
 
 A ferramenta agora está disponível para instrutores quando adicionam conteúdo aos cursos.
-
----

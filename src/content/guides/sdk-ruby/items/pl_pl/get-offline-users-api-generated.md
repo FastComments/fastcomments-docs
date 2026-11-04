@@ -1,4 +1,3 @@
----
 Poprzedni komentujący na stronie, którzy NIE są obecnie online. Posortowane według displayName.
 Użyj tego po wyczerpaniu /users/online, aby wyrenderować sekcję "Członkowie".
 Paginacja kursorowa na commenterName: serwer przeszukuje częściowy {tenantId, urlId, commenterName}
@@ -40,5 +39,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_offline_users: #{e}"
 end
 [inline-code-end]
-
----

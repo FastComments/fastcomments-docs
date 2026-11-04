@@ -1,24 +1,24 @@
-Past commenters on the page who are NOT currently online. Sorted by displayName.  
-Use this after exhausting /users/online to render a "Members" section.  
-Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName}  
-index from afterName forward via $gt, no $skip cost.
+Komentujący z przeszłości na stronie, którzy NIE są obecnie online. Sortowanie według displayName.
+Użyj tego po wyczerpaniu /users/online, aby wyrenderować sekcję „Members”.
+Paginacja kursorowa po commenterName: serwer przechodzi po częściowym indeksie {tenantId, urlId, commenterName}
+od afterName w przód za pomocą $gt, bez kosztu $skip.
 
-## Parameters
+## Parametry
 
-| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
-|------|------|--------------|----------|------|
-| tenantId | string | path | Yes |  |
-| urlId | string | query | Yes | Identyfikator URL strony (czyszczony po stronie serwera). |
-| afterName | string | query | No | Kursor: przekazać nextAfterName z poprzedniej odpowiedzi. |
-| afterUserId | string | query | No | Rozstrzygacz kursora: przekazać nextAfterUserId z poprzedniej odpowiedzi. Wymagane, gdy afterName jest ustawione, aby powiązania nazw nie pomijały wpisów. |
+| Nazwa | Typ | Lokalizacja | Wymagany | Opis |
+|------|------|----------|----------|-------------|
+| tenantId | string | path | Tak |  |
+| urlId | string | query | Tak | Identyfikator URL strony (czyszczony po stronie serwera). |
+| afterName | string | query | Nie | Kursor: przekaż nextAfterName z poprzedniej odpowiedzi. |
+| afterUserId | string | query | Nie | Kursor rozstrzygający remisy: przekaż nextAfterUserId z poprzedniej odpowiedzi. Wymagany, gdy ustawiono afterName, aby remisy nazw nie powodowały utraty wpisów. |
 
-## Response
+## Odpowiedź
 
-Returns: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PageUsersOfflineResponse.php)
+Zwraca: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PageUsersOfflineResponse.php)
 
-## Example
+## Przykład
 
-[inline-code-attrs-start title = 'getOfflineUsers Przykład'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Przykład getOfflineUsers'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -26,16 +26,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Jeśli chcesz użyć własnego klienta HTTP, przekaż swój klient implementujący `GuzzleHttp\ClientInterface`.
-    // To jest opcjonalne, `GuzzleHttp\Client` zostanie użyty jako domyślny.
+    // Jeśli chcesz użyć niestandardowego klienta http, przekaż swój klient implementujący `GuzzleHttp\ClientInterface`.
+    // To opcjonalne, `GuzzleHttp\Client` będzie używany domyślnie.
     new GuzzleHttp\Client()
 );
 
 $tenant_id = 'tenant_id_example'; // string
 $url_id = 'url_id_example'; // string | Identyfikator URL strony (czyszczony po stronie serwera).
 $options = [
-    'after_name' => 'after_name_example', // string | Kursor: przekazać nextAfterName z poprzedniej odpowiedzi.
-    'after_user_id' => 'after_user_id_example', // string | Rozstrzygacz kursora: przekazać nextAfterUserId z poprzedniej odpowiedzi. Wymagane, gdy afterName jest ustawione, aby powiązania nazw nie pomijały wpisów.
+    'after_name' => 'after_name_example', // string | Kursor: przekaż nextAfterName z poprzedniej odpowiedzi.
+    'after_user_id' => 'after_user_id_example', // string | Kursor rozstrzygający remisy: przekaż nextAfterUserId z poprzedniej odpowiedzi. Wymagany, gdy ustawiono afterName, aby remisy nazw nie powodowały utraty wpisów.
 ];
 
 

@@ -40,5 +40,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->put_sso_user: #{e}"
 end
 [inline-code-end]
-
----

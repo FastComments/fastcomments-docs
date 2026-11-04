@@ -1,12 +1,12 @@
-Webhooks 也可以透過 REST API 進行管理。這就是像 Zapier 這樣的整合在不觸碰儀表板的情況下訂閱評論事件的方式，且它遵循 REST Hooks 模式：訂閱、接收事件、取消訂閱。
+Webhooks 也可以透過 REST API 管理。像 Zapier 這類整合服務就是透過這種方式訂閱留言事件，而無需操作儀表板，並且遵循 REST Hooks 模式：訂閱、接收事件、取消訂閱。
 
-API 訂閱與儀表板中設定的 Webhooks 同時存在。評論事件會傳送給每一個符合其 domain 的 webhook，各自作為獨立的傳遞，無論 webhook 是以何種方式建立。
+API 訂閱與儀表板中設定的 webhooks 並存。留言事件會傳送給每個符合其網域的 webhook，每個都是獨立的傳送，無論該 webhook 是以何種方式建立的。
 
-## Authentication
+## 驗證
 
-每個請求都需要在 `x-api-key` 標頭（或 `API_KEY` 查詢參數）中提供您的 API 金鑰，並在 `tenantId` 查詢參數中提供您的租戶 ID。兩者皆可在儀表板的 API Secret 頁面上看到。
+每個請求都需要在 `x-api-key` 標頭(或 `API_KEY` 查詢參數)中提供您的 API Key,並在 `tenantId` 查詢參數中提供您的租戶 ID。兩者都顯示在儀表板的 API Secret 頁面上。
 
-## Subscribe
+## 訂閱
 
 ```
 POST https://fastcomments.com/api/v1/webhooks?tenantId=YOUR_TENANT_ID
@@ -23,10 +23,10 @@ Content-Type: application/json
 |-------|----------|-------------|
 | `url` | 是 | 絕對的 http 或 https URL。 |
 | `event` | 是 | `comment-created`、`comment-updated` 或 `comment-deleted`。 |
-| `domain` | 否 | 您帳號設定中的一個 domain。預設為 `*`，會接收所有 domain 的事件。 |
-| `method` | 否 | `POST`（預設）、`PUT` 或 `DELETE`。 |
+| `domain` | 否 | 您帳戶設定中的網域。預設為 `*`,會接收所有網域的事件。 |
+| `method` | 否 | `POST`(預設)、`PUT` 或 `DELETE`。 |
 
-回應中會包含此訂閱資訊：
+回應包含該訂閱:
 
 ```json
 {
@@ -44,35 +44,35 @@ Content-Type: application/json
 }
 ```
 
-將相同的 URL、相同的事件與 domain 再次訂閱時，會回傳已存在的訂閱，而不是建立重複項目，讓客戶端可以安全地重試。每個租戶最多可有 50 個 API 訂閱。
+將相同的 URL 再次訂閱相同的事件與網域時,會回傳現有的訂閱而非建立重複項,因此用戶端可以安全地重試。每個租戶最多可有 50 個 API 訂閱。
 
-## List
+## 列出
 
 ```
 GET https://fastcomments.com/api/v1/webhooks?tenantId=YOUR_TENANT_ID
 ```
 
-返回該租戶的所有 webhook，包括儀表板中管理的（`"source": "dashboard"`）。可使用 `event`、`domain` 或 `source` 進行過濾。
+回傳該租戶的所有 webhook,包括在儀表板中管理的那些(`"source": "dashboard"`)。可以使用 `event`、`domain` 或 `source` 進行篩選。
 
-## Unsubscribe
+## 取消訂閱
 
 ```
 DELETE https://fastcomments.com/api/v1/webhooks/SUBSCRIPTION_ID?tenantId=YOUR_TENANT_ID
 ```
 
-刪除訂閱同時會丟棄仍在佇列中的任何事件。只有透過 API 建立的訂閱才能以此方式刪除；儀表板的 webhook，或是帳號中不存在的 ID，會回傳 `404` 並帶有 `not-found` 錯誤碼。儀表板的 webhook 可在 Webhooks 頁面上編輯。
+刪除訂閱時,也會一併捨棄仍在佇列中的事件。只有透過 API 建立的訂閱才能以這種方式刪除;儀表板 webhook,或您帳戶中不存在的 id,會回應 `404` 與代碼 `not-found`。儀表板 webhook 請在 Webhooks 頁面上編輯。
 
-## Payloads and signing
+## 負載與簽署
 
-傳遞使用與儀表板 webhook 相同的 payload（請參閱 Data Structures），並以相同的 HMAC 方式簽名（請參閱 Security & API Tokens）。API 訂閱永不會收到舊版的 `token` 標頭，請改為驗證 `X-FastComments-Signature` 標頭。
+傳送內容使用與儀表板 webhook 相同的負載(參閱 Data Structures),並以相同的 HMAC 方案簽署(參閱 Security & API Tokens)。API 訂閱永遠不會收到舊版的 `token` 標頭,因此請改為驗證 `X-FastComments-Signature` 標頭。
 
-## Sample payloads
+## 範例負載
 
 ```
 GET https://fastcomments.com/api/v1/webhooks/sample-payloads?tenantId=YOUR_TENANT_ID&event=comment-created&limit=3
 ```
 
-返回帳號最近的評論，完全符合傳遞的資料結構，讓整合在第一個事件到達前就能顯示真實的範例資料。`event` 為可選項且僅作驗證，因為每個事件都會傳遞相同的評論物件。`limit` 預設為 3，接受 1 到 10 的值。耗費 2 個 API 點數。
+以傳送內容的確切格式回傳帳戶最近的留言,讓整合服務可以在第一個事件到達之前顯示真實的範例資料。`event` 為選填且僅做驗證,因為每個事件都傳送相同的留言物件。`limit` 預設為 3,接受 1 到 10。花費 2 個 API 點數。
 
 ```json
 {
@@ -90,10 +90,10 @@ GET https://fastcomments.com/api/v1/webhooks/sample-payloads?tenantId=YOUR_TENAN
 }
 ```
 
-## Responding with 410 Gone
+## 以 410 Gone 回應
 
-如果 API 訂閱的端點回應 HTTP `410 Gone`，FastComments 會將其視為取消訂閱：訂閱會被刪除，佇列中的事件也會一起清除，且不會再嘗試傳遞。儀表板中設定的 webhook 永不會自動刪除；對它們而言 410 只是普通的失敗。其他任何失敗狀態都會重試，最終會停用該 webhook，詳情請參閱 How it Works & Handling Retries。
+如果 API 訂閱的端點以 HTTP `410 Gone` 回應,FastComments 會將其視為取消訂閱:該訂閱會連同其佇列中的事件一起刪除,並且不再嘗試任何後續傳送。在儀表板中設定的 webhooks 永遠不會被自動刪除;對它們而言,410 只是一般的失敗。任何其他失敗狀態會被重試,並最終停用該 webhook,如 How it Works & Handling Retries 中所述。
 
-## Dashboard
+## 儀表板
 
-API 訂閱會在 Webhooks 列表中顯示來源 **API**，管理員可以編輯、停用、重新啟用或刪除它們。
+API 訂閱會以來源 **API** 顯示在 Webhooks 清單中,管理員可以在那裡編輯、停用、重新啟用或刪除它們。

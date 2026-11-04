@@ -1,12 +1,10 @@
-Тепер нам потрібно упакувати файли теми назад у zip-файл. Для цього використайте вбудовані можливості Ghost.
+Тепер нам потрібно упакувати файли теми назад у zip-файл. Для цього використовуйте вбудовані функції Ghost.
 
-Open your editor's terminal again and run `npm run zip`.
+Знову відкрийте термінал вашого редактора та виконайте `npm run zip`.
 
 <div class="screenshot white-bg">
     <div class="title">Експортуйте вашу тему</div>
     <img class="screenshot-image" src="/images/installation-guides/ghost-step-6-1-export.png" alt="Експортуйте вашу тему" />
 </div>
 
-This will package the theme into a zip file in `dist/casper-fastcomments.zip` (if that is what you've named the theme in `Step Three`).
-
----
+Це упакує тему в zip-файл у `dist/casper-fastcomments.zip` (якщо саме так ви назвали тему у `Кроці Третьому`).

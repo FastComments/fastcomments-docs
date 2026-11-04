@@ -1,4 +1,3 @@
----
 Aby zobaczyć wszystkie shortcode'y i fragmenty motywu uruchomione lokalnie wobec publicznego tenanta `demo`, sklonuj repozytorium i uruchom dołączone `exampleSite`:
 
 ```bash
@@ -8,4 +7,3 @@ hugo server
 ```
 
 Każdy widget ma własną stronę w katalogu `exampleSite/content/`, którą możesz skopiować bezpośrednio do swojej witryny.
----

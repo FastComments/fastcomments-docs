@@ -1,10 +1,10 @@
-의존성을 `npm install` (또는 `pnpm install` 또는 `yarn`)로 설치한 후, 개발 서버를 시작하세요:
+`npm install`(또는 `pnpm install`이나 `yarn`)로 의존성을 설치한 후, 개발 서버를 시작하세요:
 
 ```bash
 npm run dev
 
-# or start the server and open the app in a new browser tab
+# 또는 서버를 시작하고 새 브라우저 탭에서 앱 열기
 npm run dev -- --open
 ```
 
-Everything inside `src/lib` is part of the library, everything inside `src/routes` is the showcase.
+`src/lib` 안의 모든 것은 라이브러리의 일부이고, `src/routes` 안의 모든 것은 쇼케이스입니다.

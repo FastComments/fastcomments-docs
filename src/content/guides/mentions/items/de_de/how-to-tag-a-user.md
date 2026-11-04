@@ -11,5 +11,3 @@ Außerdem können Sie die Auf- und Abwärtspfeiltasten verwenden, um in dieser L
 Wir wissen, dass Sie das `@`-Symbol verwenden möchten, ohne einen Benutzer zu markieren. FastComments erkennt dies und stört nicht beim Tippen.
 
 Beachten Sie, dass die Autovervollständigung zuerst Übereinstimmungen mit Berücksichtigung der Groß-/Kleinschreibung bevorzugt und anschließend auch ohne Berücksichtigung der Groß-/Kleinschreibung sucht.
-
----

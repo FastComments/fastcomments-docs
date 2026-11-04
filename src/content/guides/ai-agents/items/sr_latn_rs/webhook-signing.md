@@ -1,27 +1,27 @@
-Svaki agent webhook potpisan je pomoću HMAC-SHA256 koristeći API secret vašeg tenanta. Isti način potpisivanja se koristi i za FastComments-ove webhook-ove za komentare - ako ste već integrisali te, agent webhook-ovi ponovo koriste isti signature header i tok verifikacije.
+Svaki agent webhook je potpisan sa HMAC-SHA256 koristeći API secret vašeg tenanta. Isti šema potpisivanja se koristi za FastComments webhook-ove za komentare - ako ste već integrisali te, agent webhook-ovi koriste isti signature header i tok verifikacije.
 
 ### Zašto potpisivanje
 
-Bez potpisa, napadač koji zna vaš webhook URL može poslati lažne događaje koji izgledaju kao da su poslati od FastComments-a. Potpisivanje znači da vaš endpoint može da verifikuje svaku isporuku kao autentičnu pre nego što preduzme bilo kakvu akciju.
+Bez potpisa, napadač koji zna URL vašeg webhook-a mogao je da POSTuje lažne evente koji izgledaju kao da dolaze od FastComments. Potpisivanje znači da vaš endpoint može da proveri da je svaka dostava autentična pre nego što reaguje na nju.
 
-### Kako potpisi funkcionišu
+### Kako rade potpisi
 
-Za svaku isporuku:
+Za svaku dostavu:
 
-1. Platforma traži API secret za tenant + odgovarajući domen (vidi [Webhooks Overview](#webhooks-overview)).
-2. Emituje trenutni Unix timestamp (u milisekundama) u `X-FastComments-Timestamp` headeru.
-3. Izračunava `HMAC-SHA256(api_secret, "${timestamp}.${raw_request_body}")` (u Stripe stilu) i emituje rezultat kao `sha256=<hex>` u `X-FastComments-Signature` headeru.
-4. Vaš endpoint čita timestamp header, ponovo računa HMAC preko `${timestamp}.${body}` koji je primio, upoređuje ga sa `sha256=<hex>` vrednošću u signature headeru i odbacuje neusaglašenosti.
+1. Platforma traži API secret za tenant + upareni domen (vidi [Pregled Webhook-ova](#webhooks-overview)).
+2. Emituje trenutni Unix timestamp (u milisekundama) u `X-FastComments-Timestamp` header-u.
+3. Računa `HMAC-SHA256(api_secret, "${timestamp}.${raw_request_body}")` (Stripe-stil) i emituje rezultat kao `sha256=<hex>` u `X-FastComments-Signature` header-u.
+4. Vaš endpoint čita timestamp header, ponovo računa HMAC preko `${timestamp}.${body}` koji je primio, poredi sa `sha256=<hex>` vrednošću u signature header-u i odbija neusaglašenosti.
 
-Telo koje se potpisuje su **tačni bajtovi** koje je platforma poslala, prefiksovani sa `${timestamp}.` - vaš verifikator mora da koristi raw request body, a ne ponovo-serializovani JSON string (redosled ključeva i razmaci bi u suprotnom bili različiti).
+Telo koje je potpisano su **tačni bajtovi** koje je platforma poslala, sa prefiksom `${timestamp}.` - vaš verifikator mora da koristi sirovo telo zahteva, a ne ponovo serijalizovani JSON string (redosled ključeva i razmaci bi inače bili drugačiji).
 
 ### API secret
 
-Isti API Secret koji se koristi za [webhook-ove za komentare](/guide-webhooks.html). On je po (tenant, domen) i upravlja se u podešavanjima API-ja vašeg tenanta. Ako promenite secret, treba da ponovo postavite vaš verifikator da pročita novu vrednost pre sledeće isporuke.
+Isti API Secret koji koriste [webhook-ovi za komentare](/guide-webhooks.html). Odnosi se na (tenant, domen) par i upravlja se u API podešavanjima vašeg tenanta. Ako rotirate secret, trebalo bi da ponovo primenite svoj verifikator da bi čitao novu vrednost pre sledeće dostave.
 
-Kada platforma ne pronađe **nijedan API secret** za odgovarajući domen, isporuka se ne izvršava. Webhook log beleži neuspeh sa razlogom "no API secret".
+Kada platforma ne pronađe **API secret** za upareni domen, dostava se ne dešava. Webhook log beleži neuspeh sa razlogom "no API secret".
 
-### Verification example (Node.js)
+### Primer verifikacije (Node.js)
 
 [inline-code-attrs-start title = 'Primer verifikacije potpisa webhook-a'; type='javascript' inline-code-attrs-end]
 [inline-code-start]
@@ -39,28 +39,28 @@ function verifyAgentWebhook(rawBody, signatureHeader, timestampHeader, secret) {
 }
 [inline-code-end]
 
-Koristite `timingSafeEqual` umesto `===` kako biste izbegli curenja informacija kroz timing-kanal potpisa.
+Koristite `timingSafeEqual` umesto `===` da biste izbegli curenje potpisa kroz timing kanal.
 
 ### Šta se nalazi u potpisanom telu
 
-Cela omotnica (envelope) plus event-specifičan `data` blok. Vidi [Webhook Payloads](#webhook-payloads).
+Kompletan envelope plus event-specifični `data` blok. Vidite [Webhook Payloads](#webhook-payloads).
 
 ### Preporuke
 
-- **Verifikujte pri svakoj isporuci.** Ako vaš endpoint prihvata nepotpisane zahteve, nemate garanciju integriteta.
-- **Odbacite pri neusaglašenom potpisu.** Vratite 401 ili 403; ne vraćajte 200 OK na pogrešan potpis, jer ćete na taj način sakriti napade u vašim logovima isporuke.
+- **Verifikujte pri svakoj dostavi.** Ako vaš endpoint prihvata nepotpisane zahteve, nemate garanciju integriteta.
+- **Odbijajte pri neusaglašenosti potpisa.** Vratite 401 ili 403; ne vraćajte 200 OK na loš potpis, ili ćete prikrivati napade u svojim logovima dostava.
 - **Koristite HTTPS.** Potpisi štite integritet; TLS štiti poverljivost (i vaš secret i tekst komentara u payload-u).
 - **Rotirajte secret-e** kada članovi tima sa pristupom odu, ili po rasporedu.
 
 ### Zaštita od replay napada
 
-Samo potpisivanje ne sprečava replay napade - napadač koji je zabeležio pravu potpisanu isporuku može je ponovo poslati. Zaštita od replay-a je na strani vašeg endpoint-a:
+Samo potpisivanje ne sprečava replay napade - napadač koji je uhvatio stvarnu potpisanu dostavu može da je ponovo pošalje. Zaštita od replay napada je na vašem endpoint-u:
 
-- Koristite `occurredAt` polje iz omotnice i odbacite isporuke starije od, recimo, 5 minuta.
-- Koristite `triggerId` ili `approvalId` kao ključ za deduplikaciju - ako ste ga već obradili, ignorišite duplikat.
+- Koristite `occurredAt` polje envelope-a i odbijajte dostave starije od, recimo, 5 minuta.
+- Koristite `triggerId` ili `approvalId` kao dedup ključ - ako ste ga već obradili, ignorišite duplikat.
 
-### Vidi takođe
+### Vidite takođe
 
-- [Webhooks Overview](#webhooks-overview).
+- [Pregled Webhook-ova](#webhooks-overview).
 - [Webhook Payloads](#webhook-payloads).
-- Glavni [Webhooks guide](/guide-webhooks.html) za širu infrastrukturu potpisivanja.
+- Glavni [vodič za Webhooks](/guide-webhooks.html) za širu infrastrukturu potpisivanja.

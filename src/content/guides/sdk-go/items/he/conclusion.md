@@ -8,5 +8,3 @@
 ## תרומה
 
 נשמח לתרומות! אנא בקרו ב-[מאגר GitHub](https://github.com/FastComments/fastcomments-go) להנחיות לתרומת קוד.
-
----

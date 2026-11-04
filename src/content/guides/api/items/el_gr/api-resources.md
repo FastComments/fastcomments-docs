@@ -1,4 +1,3 @@
----
 ### Χρήση Πόρων
 
 Θα πρέπει να σημειωθεί ότι η λήψη δεδομένων από το API μετράται ως χρήση στον λογαριασμό σας.
@@ -16,5 +15,3 @@
 ### Webhooks
 
 Οι συνδρομές Webhook έχουν τον δικό τους οδηγό. Τα `POST`, `GET` και `DELETE /api/v1/webhooks`, καθώς και το `GET /api/v1/webhooks/sample-payloads`, τεκμηριώνονται στο [Managing Subscriptions via API](/guide-webhooks.html#webhooks-api-subscriptions), και τα payloads των γεγονότων στο [Webhook Structures](/guide-webhooks.html#webhooks-structures).
-
----

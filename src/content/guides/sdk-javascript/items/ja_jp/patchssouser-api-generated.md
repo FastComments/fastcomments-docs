@@ -36,5 +36,3 @@ const responseWithoutComments: PatchSSOUserAPIResponse = await patchSSOUser(
   updateData
 );
 [inline-code-end]
-
----

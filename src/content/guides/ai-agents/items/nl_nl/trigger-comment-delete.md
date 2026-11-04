@@ -1,21 +1,21 @@
-Wordt geactiveerd wanneer een opmerking is verwijderd.
+Wordt geactiveerd wanneer een reactie wordt verwijderd.
 
-### Context the agent receives
+### Context die de agent ontvangt
 
-- De opmerking die zojuist is verwijderd - tekst, auteur, pagina.
-- Optionele thread / gebruikersgeschiedenis / pagina-context zoals geconfigureerd.
+- De reactie die zojuist is verwijderd - tekst, auteur, pagina.
+- Optionele thread-/gebruikersgeschiedenis-/paginacontext zoals geconfigureerd.
 
-### Belangrijk
+### Opmerkelijk
 
-- Vindt plaats bij zowel **soft deletes** (waarbij de opmerking verborgen is maar bewaard voor audit) als **hard deletes** (waarbij de opmerking volledig wordt verwijderd). De trigger handler haalt de opmerking op uit de cascade delete pipeline; wat de agent ziet is de laatst bekende staat.
-- Zodra een opmerking volledig is verwijderd, zullen tools die daarop gericht zijn (`pin_comment`, `mark_comment_spam`, etc.) op dat comment ID falen.
+- Wordt geactiveerd voor zowel **soft deletes** (waarbij de reactie verborgen blijft maar bewaard wordt voor audit) als **hard deletes** (waarbij de reactie volledig wordt verwijderd). De trigger-handler haalt de reactie op uit de cascade delete-pipeline; wat de agent ziet is de laatst bekende status.
+- Zodra een reactie volledig is verwijderd, zullen tools die erop gericht zijn (`pin_comment`, `mark_comment_spam`, enz.) op die reactie-ID mislukken.
 
 ### Veelvoorkomende toepassingen
 
-- **Audit doorsturen via [Webhooks](#webhooks-overview)** - zend een `trigger.succeeded` event zodat een extern systeem registreert wat er is verwijderd.
-- **Memory writes** - laat de agent een [memory note](#tools-overview) vastleggen over een verwijderingspatroon (de verwijderde opmerking was de derde van de gebruiker in 24 uur, enz.).
-- **Cross-thread effects** - merk op wanneer een verwijdering de structuur van een thread verandert die de agent eerder heeft samengevat, en overweeg of opnieuw samenvatten nodig is.
+- **Audit forwarding via [Webhooks](#webhooks-overview)** - zend een `trigger.succeeded`-event uit zodat een extern systeem registreert wat er is verwijderd.
+- **Geheugenwrites** - laat de agent een [geheugennotitie](#tools-overview) vastleggen over een verwijderpatroon (de verwijderde reactie was de derde van de gebruiker in 24 uur, enz.).
+- **Cross-thread effecten** - merk op wanneer een verwijdering de structuur wijzigt van een thread die de agent eerder heeft samengevat, en overweeg of opnieuw moet worden samengevat.
 
-### Opmerking over operationele kosten
+### Kostennotitie
 
-Als je een site hebt met een hoog aantal verwijderingen (intensieve menselijke moderatie), kan deze trigger vaak afgaan.
+Als je een site hebt met een hoog verwijderingsvolume (veel menselijke moderatie), kan deze trigger vaak worden geactiveerd.

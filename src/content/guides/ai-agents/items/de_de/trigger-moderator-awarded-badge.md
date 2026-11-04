@@ -22,5 +22,3 @@ Eine Aktion eines menschlichen Moderators.
 - **Gegenseitige Anerkennung** - Ein Agent kann eine Antwort wie "Danke für den großartigen Beitrag" posten, wenn ein bestimmtes Abzeichen verliehen wird.
 - **Externer Anerkennungs-Workflow** über [Webhooks](#webhooks-overview) - Abzeichenverleihungen in Ihr eigenes Nutzer-Engagement-System spiegeln.
 - **Gedächtnisaufzeichnung** - Hinweise wie „Dieser Benutzer ist ein anerkannter Mitwirkender“, die künftige Moderationsagenten bei ihren Entscheidungen stärker gewichten sollten.
-
----

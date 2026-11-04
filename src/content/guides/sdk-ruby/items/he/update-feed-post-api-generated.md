@@ -36,5 +36,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->update_feed_post: #{e}"
 end
 [inline-code-end]
-
----

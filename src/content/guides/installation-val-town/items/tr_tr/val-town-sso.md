@@ -1,24 +1,24 @@
-If your val already knows who the visitor is, Secure SSO hands that identity to the widget so they never see a second login. There are no endpoints to build and nothing to call at runtime: you compute three values server-side and pass them in the widget config.
+Val'iniz ziyaretçinin kim olduğunu zaten biliyorsa, Secure SSO bu kimliği widget'a aktarır ve ziyaretçi ikinci bir giriş ekranı görmez. Oluşturulacak bir uç nokta yok ve çalışma zamanında çağrılacak bir şey yok: üç değeri sunucu tarafında hesaplar ve widget yapılandırmasına geçirirsiniz.
 
-Val Town ships zero-config login with `std/oauth`, so the visitor can sign in with the Val Town account they already have. Swap that for whatever your app uses; the FastComments half does not change.
+Val Town, `std/oauth` ile sıfır yapılandırmalı giriş sunar, böylece ziyaretçi zaten sahip olduğu Val Town hesabıyla oturum açabilir. Bunu uygulamanızın kullandığı herhangi bir şeyle değiştirebilirsiniz; FastComments tarafı değişmez.
 
-## Build the payload on the server
+## Payload'ı sunucuda oluşturun
 
-The API secret signs the payload and must never reach browser code. Install the SDK from npm, which works on Val Town's Deno runtime as-is:
+API gizli anahtarı payload'ı imzalar ve asla tarayıcı koduna ulaşmamalıdır. SDK'yı npm'den yükleyin; Val Town'un Deno çalışma zamanında olduğu gibi çalışır:
 
 [inline-code-attrs-start title = 'sso.ts'; type='javascript' inline-code-attrs-end]
 [inline-code-start]
 import { SecureSSOPayloadBuilder } from "npm:fastcomments-sdk/server";
 
 export function buildSSOPayload(user) {
-  // id aynı kişi için sabit olmalı, aksi takdirde her oturum açmada yeni bir yorum kimliği alırlar.
+  // id aynı kişi için sabit olmalıdır, aksi halde her girişte yeni bir yorum kimliği alır.
   const id = `vt-${user.id}`;
 
   return new SecureSSOPayloadBuilder(Deno.env.get("FASTCOMMENTS_API_SECRET"), {
     id,
-    // email gereklidir ve benzersiz olmalıdır.
+    // email zorunludur ve benzersiz olmalıdır.
     email: user.email ?? `${id}@users.noreply.val.town`,
-    // kullanıcı adı gereklidir ve bir email olamaz.
+    // username zorunludur ve bir e-posta olamaz.
     username: user.username ?? id,
     displayName: user.username ?? undefined,
     avatar: user.links.profileImageUrl ?? undefined,
@@ -26,11 +26,11 @@ export function buildSSOPayload(user) {
 }
 [inline-code-end]
 
-`getPayload()` returns `{ userDataJSONBase64, verificationHash, timestamp }`. Those three values are all that reach the browser. The secret signs them and is then dropped, so nothing in the page lets a reader forge a different user.
+`getPayload()`, `{ userDataJSONBase64, verificationHash, timestamp }` değerlerini döndürür. Tarayıcıya ulaşan yalnızca bu üç değerdir. Gizli anahtar bunları imzalar ve ardından atılır, böylece sayfadaki hiçbir şey bir okuyucunun farklı bir kullanıcı taklit etmesini sağlamaz.
 
-## Pass it to the widget
+## Widget'a geçirin
 
-[inline-code-attrs-start title = 'SSO ile Widget yapılandırması'; type='javascript' inline-code-attrs-end]
+[inline-code-attrs-start title = 'SSO ile widget yapılandırması'; type='javascript' inline-code-attrs-end]
 [inline-code-start]
 import { getOAuthUserData, oauthMiddleware } from "https://esm.town/v/std/oauth/middleware.ts";
 
@@ -46,20 +46,20 @@ app.get("/", async (c) => {
       : { sso: { loginURL: "/auth/login" } }),
   };
 
-  // ...bu yapılandırma ile widget'ı render edin
+  // ...widget'ı bu yapılandırmayla render edin
 });
 
 export default oauthMiddleware(app.fetch);
 [inline-code-end]
 
-`oauthMiddleware` adds `GET /auth/login`, `GET /auth/callback` and `POST /auth/logout` for you. Note that logout is a **POST**, while the widget navigates to `logoutURL` with a GET, so point `logoutURL` at a small route of your own that submits the POST.
+`oauthMiddleware`, sizin için `GET /auth/login`, `GET /auth/callback` ve `POST /auth/logout` uç noktalarını ekler. Çıkış işleminin bir **POST** olduğunu, ancak widget'ın `logoutURL` adresine GET ile gittiğini unutmayın; bu nedenle `logoutURL` adresini, POST isteğini gönderen kendi küçük bir rotanıza yönlendirin.
 
-When the visitor is logged out, pass `sso` with only a `loginURL`. The widget then shows a login prompt instead of an anonymous comment box.
+Ziyaretçi oturum açmamışken, yalnızca bir `loginURL` içeren `sso` değerini geçirin. Widget daha sonra anonim yorum kutusu yerine bir giriş istemi gösterir.
 
-## Things that go wrong
+## Ters gidebilecek şeyler
 
-`timestamp` is epoch **milliseconds**, must not be in the future, and must not be more than two days old. Generate it on the server in the same request that computes the hash. Generating it in the browser is the classic failure: the value differs from the one that was hashed and every comment is rejected.
+`timestamp` epoch **milisaniyesi** olmalıdır, gelecekte olmamalı ve iki günden eski olmamalıdır. Hash'i hesaplayan aynı istekte sunucu tarafında oluşturun. Bunu tarayıcıda oluşturmak klasik hatadır: değer, hash'lenenden farklı olur ve her yorum reddedilir.
 
-Never set `isAdmin` or `isModerator` from the identity provider. Signing in with a Val Town account says nothing about who should moderate your site.
+Kimlik sağlayıcıdan asla `isAdmin` veya `isModerator` ayarlamayın. Bir Val Town hesabıyla oturum açmak, sitenizi kimin yönetmesi gerektiği hakkında hiçbir şey söylemez.
 
-See the [SSO guide](/guide-customizations-and-configuration.html#sso-secure) for the full field list, group-gated threads, and badges.
+Alan listesinin tamamı, grup korumalı konular ve rozetler için [SSO rehberine](/guide-customizations-and-configuration.html#sso-secure) bakın.

@@ -1,11 +1,11 @@
-Queues a batch job that moves comments, pages and related records from one urlId or domain to another.  
-"urlId" migrations only match the exact urlId. "domain" migrations find/replace the value inside every urlId and url.  
-Poll GET /api/v1/batch-jobs/{batchJobId}: once it is done it carries per-migration results and an undoId.
+Поставя на опашка пакетна задача, която премества коментари, страници и свързани записи от един urlId или домейн към друг.
+Миграциите по "urlId" съвпадат само с точния urlId. Миграциите по "domain" търсят/заместват стойността във всеки urlId и url.
+Анкетирайте GET /api/v1/batch-jobs/{batchJobId}: когато задачата приключи, тя съдържа резултати за всяка миграция и undoId.
 
 ## Параметри
 
-| Име | Тип | Местоположение | Задължително | Описание |
-|------|------|----------------|--------------|----------|
+| Име | Тип | Местоположение | Задължителен | Описание |
+|------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 
 ## Отговор
@@ -14,9 +14,9 @@ Poll GET /api/v1/batch-jobs/{batchJobId}: once it is done it carries per-migrati
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример migratePages'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'migratePages пример'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Импорт на класове:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -29,10 +29,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Конфигуриране на API ключ за упълномощаване: api_key
+    // Configure API key authorization: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Разкоментирайте следния ред, за да зададете префикс за API ключа, напр. "Token" (по подразбиране null)
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -52,5 +52,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

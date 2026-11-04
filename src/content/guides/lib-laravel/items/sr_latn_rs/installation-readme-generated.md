@@ -1,4 +1,3 @@
----
 ```bash
 composer require fastcomments/laravel
 ```
@@ -21,4 +20,3 @@ Za region EU:
 ```env
 FASTCOMMENTS_REGION=eu
 ```
----

@@ -1,3 +1,1 @@
----
 Dovolite komentatorjem, da v vaših temah objavijo izvajljivo, sintaktično poudarjeno kodo. Kateri jeziki so podprti in kako omogočiti deljenje izrezkov kode.
----

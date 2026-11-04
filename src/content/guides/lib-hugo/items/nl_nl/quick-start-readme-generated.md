@@ -1,4 +1,3 @@
----
 Stel uw tenant ID eenmalig in in `hugo.toml`:
 
 ```toml
@@ -11,4 +10,3 @@ Verbind daarna ofwel de reacties-widget met uw thema (zie [Thema-integratie](#th
 ```text
 \{{< fastcomments >}}
 ```
----

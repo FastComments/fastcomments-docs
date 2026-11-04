@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Ime | Tip | Lokacija | Obavezno | Opis |
@@ -35,5 +34,3 @@ try {
     print('Exception when calling PublicApi->searchUsers: $e\n');
 }
 [inline-code-end]
-
----

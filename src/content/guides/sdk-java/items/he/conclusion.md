@@ -8,5 +8,3 @@
 ## תרומות
 
 תרומות רצויות! אנא בקרו ב-[מאגר GitHub](https://github.com/FastComments/fastcomments-java) לקבלת הנחיות לתרומה.
-
----

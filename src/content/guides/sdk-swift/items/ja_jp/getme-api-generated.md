@@ -1,4 +1,3 @@
----
 使用中の認証情報を識別します: 所属するテナントと、OAuth トークンの場合はそれを認可したユーザーです。  
 統合はこれを使用して接続をテストし、ラベル付けします。
 
@@ -32,5 +31,3 @@ DefaultAPI.getMe(tenantId: tenantId) { (response, error) in
     }
 }
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 Učitaj i promijeni veličinu slike
 
 ## Parametri
@@ -27,5 +26,3 @@ api->uploadImage(U("my-tenant-123"), file, options).then([](pplx::task<std::shar
     auto resp = t.get();
 });
 [inline-code-end]
-
----

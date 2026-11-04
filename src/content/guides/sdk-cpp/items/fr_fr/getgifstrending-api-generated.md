@@ -1,4 +1,3 @@
----
 ## Paramètres
 
 | Nom | Type | Obligatoire | Description |
@@ -24,5 +23,3 @@ api->getGifsTrending(tenantId, options).then([](std::shared_ptr<GetGifsTrendingR
     }
 });
 [inline-code-end]
-
----

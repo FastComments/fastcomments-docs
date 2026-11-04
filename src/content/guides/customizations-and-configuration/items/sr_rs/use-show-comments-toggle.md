@@ -20,5 +20,3 @@
 Ово се може омогућити без кода креирањем правила прилагођавања и укључивањем „Кликните за приказ коментара“:
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.click-to-show-comments']; selector = '.click-to-show-comments'; alt='Поље за потврду „Кликните за приказ коментара“ означено у правилу прилагођавања на страници за прилагођавање виџета'; title='Омогући Кликните за приказ коментара' app-screenshot-end]
-
----

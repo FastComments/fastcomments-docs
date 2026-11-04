@@ -7,5 +7,3 @@ Prema zadanim postavkama FastComments dopušta učitavanje slika. To se može on
 Ovo se može prilagoditi bez koda, na stranici za prilagodbu widgeta:
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.disable-image-uploads'; selector = '.disable-image-uploads'; alt='Potvrdni okvir za onemogućavanje učitavanja slika uključen u postavkama stranice za prilagodbu widgeta'; title='Onemogućavanje učitavanja slika' app-screenshot-end]
-
----

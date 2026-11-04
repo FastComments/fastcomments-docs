@@ -1,25 +1,25 @@
-Teraz wygenerujemy dla Ciebie niestandardowy kod FastComments. Użyj poniższego kreatora, aby skonfigurować, jak chcesz, aby FastComments działał na Twojej stronie GoHighLevel:
+Teraz wygenerujemy Twój niestandardowy kod FastComments. Użyj kreatora poniżej, aby skonfigurować sposób działania FastComments na Twojej stronie GoHighLevel:
 
 [snippet id="gohighlevel-wizard"]
 
-### Różne typy okienka komentarzy
+### Różne typy pól komentarzy
 
-Możesz skonfigurować linię `TYPE = 'commenting'`, aby przełączyć używany produkt (na przykład możesz zmienić ją na `live` dla czatu na żywo lub `collab` dla czatu kolaboracyjnego).
+Możesz skonfigurować linię `TYPE = 'commenting'`, aby przełączyć używany produkt (na przykład możesz zmienić ją na `live` dla czatu na żywo lub `collab` dla czatu współpracy).
 
-### Umieszczanie okienka komentarzy tam, gdzie chcesz
+### Umieszczanie pola komentarzy w wybranym miejscu
 
-Załóżmy, że chcesz umieścić pola komentarzy w konkretnych częściach strony, a nie w domyślnych miejscach.
+Załóżmy, że chcesz umieścić pola komentarzy w określonych częściach strony, a nie w domyślnych lokalizacjach.
 Zmień tę linię:
 
-    const TARGET_ELEMENT_ID = ''; // ustaw, aby użyć trybu docelowego elementu div
+    const TARGET_ELEMENT_ID = ''; // set to use target div mode
 
 Na:
 
-    const TARGET_ELEMENT_ID = 'fc_box'; // ustaw, aby użyć trybu docelowego elementu div
+    const TARGET_ELEMENT_ID = 'fc_box'; // set to use target div mode
 
-Then in the GHL editor, click the "code" button and add where you want the comments to go:
+Następnie w edytorze GHL kliknij przycisk "code" i dodaj tam, gdzie mają się znaleźć komentarze:
 
-[inline-code-attrs-start title = 'Div FastComments dla GoHighLevel'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'GoHighLevel FastComments Div'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <div
   id="fc_box"
@@ -28,25 +28,27 @@ Then in the GHL editor, click the "code" button and add where you want the comme
 ></div>
 [inline-code-end]
 
-### Różny typ okienka komentarzy na stronę
+### Różny typ pola komentarzy na każdej stronie
 
-Załóżmy, że chcesz, aby użytkownicy mogli wyróżniać i dyskutować fragmenty tekstu lub zamiast tego korzystać z interfejsu czatu na żywo.
+Załóżmy, że chcesz, aby użytkownicy mogli wyróżniać i omawiać fragmenty tekstu, albo chcesz użyć interfejsu czatu na żywo.
 
-Najpierw wykonaj powyższe kroki z sekcji „Umieszczanie okienka komentarzy tam, gdzie chcesz”.
+Najpierw wykonaj powyższe kroki z sekcji "Umieszczanie pola komentarzy w wybranym miejscu".
 
-Note in that small snippet there's `type="commenting"`.
+Zauważ, że w tym małym fragmencie znajduje się `type="commenting"`.
 
-If you want to enable collab chat for example change type to `type="collab"`.
+Jeśli chcesz na przykład włączyć czat współpracy, zmień typ na `type="collab"`.
 
-### Wyświetlaj tylko na wybranych stronach
+### Wyświetlanie tylko na określonych stronach
 
-Jeśli nie ustawisz `TARGET_ELEMENT_ID`, możesz zamiast tego skonfigurować zmienną `VALID_PATTERNS`, aby określić, na których trasach URL mają się wyświetlać komentarze. Domyślnie będą one wyświetlane na stronach, których URL zawiera `/post`.
+Jeśli nie ustawisz `TARGET_ELEMENT_ID`, możesz zamiast tego skonfigurować zmienną `VALID_PATTERNS`, aby określić, na jakich ścieżkach URL mają się wyświetlać komentarze. Domyślnie będą wyświetlać się
+na stronach zawierających `/post` w adresie URL.
 
-### Konfigurowanie czatu kolaboracyjnego
+### Konfiguracja czatu współpracy
 
-Możesz skonfigurować czat kolaboracyjny tak, aby dodawał funkcje współpracy tylko wokół HTML-a wewnątrz określonego obszaru, na przykład załóżmy, że dodałeś powyższy kod w stopce, a następnie dodajesz ten div w treści posta/strony, aby włączyć czat kolaboracyjny:
+Możesz nakazać czatowi współpracy dodawanie funkcji współpracy tylko wokół HTML w określonym obszarze. Na przykład, załóżmy, że
+dodajesz powyższy kod stopki, a następnie dodajesz ten div w treści wpisu/strony, aby włączyć czat współpracy:
 
-[inline-code-attrs-start title = 'Czat kolaboracyjny z określoną zawartością'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Czat współpracy z określoną treścią'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <div
   id="fc_box"
@@ -55,6 +57,5 @@ Możesz skonfigurować czat kolaboracyjny tak, aby dodawał funkcje współpracy
 ><p>This content will have collab chat!</p></div>
 [inline-code-end]
 
-Wówczas element paragrafu wewnątrz `<div>` będzie miał włączony czat kolaboracyjny, a nic więcej na stronie. Jeśli nie umieścisz żadnej zawartości w `<div>`, wówczas włączy to czat kolaboracyjny dla całej treści posta.
-
----
+Wtedy element akapitu wewnątrz `<div>` będzie miał włączony czat współpracy, a nic innego na stronie. Jeśli nie
+umieścisz żadnej treści w `<div>`, czat współpracy zostanie włączony na całej treści wpisu.

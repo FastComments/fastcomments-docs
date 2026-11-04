@@ -1,4 +1,3 @@
----
 Désabonnements (désabonnement de hook REST). Seules les souscriptions créées via cette API peuvent être supprimées ici ; les webhooks gérés depuis le tableau de bord sont modifiés dans le tableau de bord.
 
 ## Paramètres
@@ -52,5 +51,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

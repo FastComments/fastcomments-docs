@@ -1,4 +1,3 @@
----
 ## Parametry
 
 | Nazwa | Typ | Wymagane | Opis |
@@ -37,5 +36,3 @@ const responseWithoutComments: PatchSSOUserAPIResponse = await patchSSOUser(
   updateData
 );
 [inline-code-end]
-
----

@@ -1,12 +1,11 @@
-Unsubscribes (REST hook unsubscribe). Only subscriptions created through this API can be
-deleted here; dashboard-managed webhooks are edited in the dashboard.
+Odjave (REST hook unsubscribe). Ovde se mogu obrisati samo pretplate kreirane putem ovog API-ja; webhook-ovi kojima upravlja kontrolna tabla se menjaju u kontrolnoj tabli.
 
 ## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Da |  |
+| id | string | path | Da |  |
 
 ## Odgovor
 

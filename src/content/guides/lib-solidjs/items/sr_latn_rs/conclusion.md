@@ -8,5 +8,3 @@ Ako naiđete na bilo kakve probleme ili imate pitanja u vezi sa SolidJS Library,
 ## Doprinos
 
 Doprinosi su dobrodošli! Molimo posetite [GitHub repozitorijum](https://github.com/FastComments/fastcomments-solidjs) za smernice za doprinos.
-
----

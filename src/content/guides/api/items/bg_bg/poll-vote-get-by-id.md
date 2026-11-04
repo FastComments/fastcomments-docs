@@ -1,4 +1,3 @@
----
 [api-resource-header-start name = 'PollVote'; route = 'GET /api/v1/poll-votes/:id'; creditsCost = 1; api-resource-header-end]
 
 Чете един глас от анкета по неговото ID.
@@ -30,5 +29,3 @@ interface PollVoteGetResponse {
     pollVote: PollVote
 }
 [inline-code-end]
-
----

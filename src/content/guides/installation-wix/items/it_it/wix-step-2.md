@@ -11,5 +11,3 @@ Questo ci darà un riquadro dall'aspetto triste da cui partire:
     <div class="title">Il blocco iniziale</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-1-sad.png" alt="Il blocco iniziale" />
 </div>
-
----

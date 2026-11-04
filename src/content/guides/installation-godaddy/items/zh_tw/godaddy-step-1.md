@@ -1,4 +1,3 @@
----
 要將 FastComments 新增到我們的 Godaddy 網站，我們將新增一個區域來放置 FastComments.com 的小工具程式碼。
 
 **注意！** 繼續之前請確保您已在網站加入部落格區段並至少新增一篇部落格文章。
@@ -32,5 +31,3 @@
 </div>
 
 That's it for step one! In step two we will be adding our custom Godaddy-specific code.
-
----

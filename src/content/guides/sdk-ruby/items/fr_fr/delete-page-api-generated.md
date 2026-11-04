@@ -35,5 +35,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Erreur lors de l'appel de DefaultApi->delete_page : #{e}"
 end
 [inline-code-end]
-
----

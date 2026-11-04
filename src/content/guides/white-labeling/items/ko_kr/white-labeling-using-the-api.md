@@ -1,4 +1,3 @@
----
 API를 사용하여 화이트 라벨 테넌트를 생성하려면 다음을 수행해야 합니다:
 
 1. 테넌트를 생성하려면 [Tenants API](/guide-api.html#tenant-structure)를 호출합니다.
@@ -9,4 +8,3 @@ API를 사용하여 화이트 라벨 테넌트를 생성하려면 다음을 수�
 6. 선택적으로, [Setup SSO](/guide-customizations-and-configuration.html#sso).
 
 이 모든 작업은 체험 기간 내에 수행할 수 있습니다.
----

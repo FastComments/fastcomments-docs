@@ -1,20 +1,20 @@
-Enable or disable notifications for a page. When users are subscribed to a page, notifications are created
-for new root comments, and also
+Aktivieren oder deaktivieren Sie Benachrichtigungen für eine Seite. Wenn Benutzer eine Seite abonniert haben, werden Benachrichtigungen
+für neue Hauptkommentare erstellt, sowie
 
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
-|------|------|--------------|---------------|
-| tenantId | string | Yes |  |
-| urlId | string | Yes |  |
-| url | string | No |  |
-| pageTitle | string | No |  |
-| subscribedOrUnsubscribed | string | No |  |
-| sso | string = "" | No |  |
+|------|------|----------|-------------|
+| tenantId | string | Ja |  |
+| urlId | string | Ja |  |
+| url | string | Nein |  |
+| pageTitle | string | Nein |  |
+| subscribedOrUnsubscribed | string | Nein |  |
+| sso | string = "" | Nein |  |
 
 ## Antwort
 
-Rückgabe: [`Option[UpdateUserNotificationPageSubscriptionStatusResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_user_notification_page_subscription_status_response.nim)
+Gibt zurück: [`Option[UpdateUserNotificationPageSubscriptionStatusResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_user_notification_page_subscription_status_response.nim)
 
 ## Beispiel
 
@@ -33,5 +33,3 @@ if optResp.isSome:
   let resp = optResp.get()
   # weitere Verarbeitung mit resp
 [inline-code-end]
-
----

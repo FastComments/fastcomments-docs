@@ -1,4 +1,3 @@
----
 1. **Preprost primer**
 
     http://localhost:8000/commenting
@@ -20,4 +19,3 @@
     Koda: [src/pages/page-transition-test-start.tsx](https://github.com/FastComments/fastcomments-gatsbyjs-example/blob/master/src/pages/page-transition-test-start.tsx).
 
 Oglejte si več na http://localhost:8000
----

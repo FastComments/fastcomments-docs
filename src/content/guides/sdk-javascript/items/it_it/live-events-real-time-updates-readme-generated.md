@@ -1,8 +1,8 @@
 Iscriviti agli eventi live per ricevere aggiornamenti in tempo reale su commenti, voti e altre attività.
 
-### Eventi a livello di pagina
+### Eventi a Livello di Pagina
 
-Ascolta gli eventi live per una pagina specifica (commenti, voti, ecc.):
+Ascolta gli eventi live su una pagina specifica (commenti, voti, ecc.):
 
 ```typescript
 import { subscribeToChanges, LiveEvent, LiveEventType } from 'fastcomments-sdk/browser';
@@ -12,19 +12,19 @@ const config = {
   urlId: 'page-url-id',
 };
 
-// Subscribe to live events for a page
+// Iscriviti agli eventi live per una pagina
 const subscription = subscribeToChanges(
   config,
   'your-tenant-id', // tenantIdWS
   'page-url-id',    // urlIdWS  
-  'user-session-id', // userIdWS (get this from getComments response)
+  'user-session-id', // userIdWS (ottienilo dalla risposta di getComments)
   (event: LiveEvent) => {
     console.log('Live event received:', event);
     
     switch (event.type) {
       case LiveEventType.new_comment:
         console.log('New comment:', event.comment);
-        // Aggiorna la UI con il nuovo commento
+        // Aggiorna la tua UI con il nuovo commento
         break;
       case LiveEventType.new_vote:
         console.log('New vote:', event.vote);
@@ -44,11 +44,11 @@ const subscription = subscribeToChanges(
   }
 );
 
-// Close the subscription when done
+// Chiudi la sottoscrizione quando hai finito
 subscription.close();
 ```
 
-### Iscriviti agli eventi utente
+### Iscriversi agli Eventi Utente
 
 Ascolta gli eventi specifici dell'utente (notifiche, menzioni, ecc.):
 
@@ -56,10 +56,10 @@ Ascolta gli eventi specifici dell'utente (notifiche, menzioni, ecc.):
 import { subscribeToUserFeed, LiveEvent, LiveEventType } from 'fastcomments-sdk/browser';
 
 const userConfig = {
-  userIdWS: 'user-session-id', // Get this from getComments response
+  userIdWS: 'user-session-id', // Ottienilo dalla risposta di getComments
 };
 
-// Subscribe to user's personal feed
+// Iscriviti al feed personale dell'utente
 const userSubscription = subscribeToUserFeed(
   userConfig,
   (event: LiveEvent) => {
@@ -84,13 +84,13 @@ const userSubscription = subscribeToUserFeed(
   }
 );
 
-// Close when done
+// Chiudi quando hai finito
 userSubscription.close();
 ```
 
 ### Ottenere userIdWS
 
-The `userIdWS` parameter is required for live events and can be obtained from API responses:
+Il parametro `userIdWS` è necessario per gli eventi live e può essere ottenuto dalle risposte API:
 
 ```typescript
 const response = await sdk.publicApi.getCommentsPublic({
@@ -98,11 +98,11 @@ const response = await sdk.publicApi.getCommentsPublic({
   urlId: 'page-id'
 });
 
-// Extract userIdWS from the response
+// Estrai userIdWS dalla risposta
 const userIdWS = response.data?.userSessionInfo?.userIdWS;
 
 if (userIdWS) {
-  // Now you can subscribe to live events
+  // Ora puoi iscriverti agli eventi live
   const subscription = subscribeToChanges(config, tenantIdWS, urlIdWS, userIdWS, handleEvent);
 }
 ```

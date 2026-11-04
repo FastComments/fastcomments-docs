@@ -43,5 +43,3 @@ Włącz to w sekcji „Show Advanced” na stronie My Domains, w sekcji „Email
 Po włączeniu, linki w e‑mailach typu mention, reply, new-comment, subscribed-page, profile-comment i digest są przekształcane w krótkie tokeny, które po kliknięciu przekierowują do oryginalnej strony. Docelowy adres jest powiązany z Twoim najemcą: przekierowanie działa tylko do URL‑ów, których host pasuje do jednej z Twoich skonfigurowanych domen, a tokeny automatycznie wygasają po 30 dniach.
 
 Doświadczenie po kliknięciu pozostaje niezmienione. Czytelnicy nadal trafiają na Twoją stronę, a komentarz jest przewinięty do widoku.
-
----

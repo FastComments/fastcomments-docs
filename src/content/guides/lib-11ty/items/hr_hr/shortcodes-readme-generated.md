@@ -1,4 +1,3 @@
----
 | Kratki kod | Opis |
 | --- | --- |
 | `fastcomments` | Widget za komentare s odgovorima, glasovanjem i ostalim značajkama |
@@ -37,4 +36,3 @@ This page has {% fastcommentsCommentCount { tenantId: "demo" } %} comments.
 {# Feed aktivnosti korisnika #}
 {% fastcommentsUserActivityFeed { tenantId: "demo", userId: "demo:demo-user" } %}
 ```
----

@@ -1,15 +1,15 @@
-Elija una de las dos formas estándar para añadir un componente de tema de Hugo.
+Elige una de las dos formas estándar de añadir un componente de tema de Hugo.
 
 ### Opción A: Módulo de Hugo (recomendado)
 
-Desde la raíz de su sitio:
+Desde la raíz de tu sitio:
 
 ```bash
-hugo mod init github.com/you/your-site   # solo si su sitio aún no es un módulo
+hugo mod init github.com/you/your-site   # solo si tu sitio aún no es un módulo
 hugo mod get github.com/FastComments/fastcomments-hugo
 ```
 
-Then add the import to your `hugo.toml`:
+Luego añade la importación a tu `hugo.toml`:
 
 ```toml
 [module]
@@ -17,13 +17,13 @@ Then add the import to your `hugo.toml`:
     path = "github.com/FastComments/fastcomments-hugo"
 ```
 
-### Opción B: Componente de tema (submódulo Git)
+### Opción B: Componente de tema (submódulo de Git)
 
 ```bash
 git submodule add https://github.com/FastComments/fastcomments-hugo.git themes/fastcomments-hugo
 ```
 
-Then reference it from your `hugo.toml`. List it alongside your own theme; later entries win, so keep your theme first:
+Luego referéncialo desde tu `hugo.toml`. Colócalo junto a tu propio tema; las entradas posteriores tienen prioridad, así que mantén tu tema primero:
 
 ```toml
 theme = ["your-theme", "fastcomments-hugo"]

@@ -29,5 +29,3 @@ Brightspace 会打开一个弹出窗口与 FastComments 通信、交换密钥并
 3. 为部署命名（例如 "FastComments - All Courses"），选择其应可用的组织单元，然后保存。
 
 通过此部署首次启动后，FastComments 会将 `deployment_id` 固定到其配置记录 - 在同一客户端下来自不同部署的后续启动将被拒绝，除非您重新注册。
-
----

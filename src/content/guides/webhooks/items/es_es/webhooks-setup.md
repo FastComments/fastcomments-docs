@@ -1,4 +1,3 @@
----
 Siga los mismos pasos para `localhost` que haría en producción. Asegúrese de que tiene configurados los dominios de producción y los secretos de API.
 
 Primero, navegue a la [administración de Webhooks](https://fastcomments.com/auth/my-account/manage-data/webhooks). Esto es accesible a través de Administrar datos -> Webhooks.
@@ -18,5 +17,3 @@ Antes de guardar, haga clic en **Enviar carga de prueba** para verificar que el 
 Desde la lista puede editar, desactivar, volver a activar o eliminar un webhook. Desactivar mantiene los eventos en cola hasta que el webhook se vuelva a activar; eliminar los descarta.
 
 Los webhooks también pueden crearse a través de la API, por ejemplo mediante Zapier. Estos aparecen en la misma lista con la fuente **API**. Consulte la gestión de webhooks a través de la API.
-
----

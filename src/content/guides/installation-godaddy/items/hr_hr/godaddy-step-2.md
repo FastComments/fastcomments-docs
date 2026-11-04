@@ -1,4 +1,3 @@
----
 Sada kada ste dodali prilagođeni HTML blok, možemo dodati kôd widgeta FastComments.
 
 **Upotrijebite sljedeći kôd za Godaddy, ne kôd iz drugih vodiča. Ovaj kôd je specifičan za Godaddy.**
@@ -40,5 +39,3 @@ Pritisnite Done u gornjem desnom kutu:
 </div>
 
 To je to za drugi korak!
-
----

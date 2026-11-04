@@ -1,21 +1,21 @@
-You may get an authorization error, like the following:
+Möglicherweise erhalten Sie einen Autorisierungsfehler, wie den folgenden:
 
 <div class="screenshot white-bg">
-    <div class="title">Domain-Konfiguration fehlt</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-webflow-step-5.png" alt="Domain-Konfiguration fehlt" />
+    <div class="title">Domänenkonfiguration fehlt</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-webflow-step-5.png" alt="Domänenkonfiguration fehlt" />
 </div>
 
-This is because FastComments doesn't know it's supposed to allow your account to be used on this domain.
+Das liegt daran, dass FastComments nicht weiß, dass Ihr Konto auf dieser Domäne verwendet werden darf.
 
-In this case, the fix is simple. You just have to add your site to your FastComments.com account.
+In diesem Fall ist die Lösung einfach. Sie müssen nur Ihre Website zu Ihrem FastComments.com-Konto hinzufügen.
 
-[Hier können Sie Ihre Website zu Ihrem Konto hinzufügen.](https://fastcomments.com/auth/my-account/configure-domains)
+[Klicken Sie hier, um Ihre Website zu Ihrem Konto hinzuzufügen.](https://fastcomments.com/auth/my-account/configure-domains)
 
-Add the domain, like the following:
+Fügen Sie die Domäne hinzu, wie folgt:
 
 <div class="screenshot white-bg">
-    <div class="title">Fügen Sie Ihre Domain hinzu</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-webflow-step-6.png" alt="Fügen Sie Ihre Domain hinzu" />
+    <div class="title">Domäne hinzufügen</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-webflow-step-6.png" alt="Domäne hinzufügen" />
 </div>
 
-Now you should have fast, live, commenting added to your Webflow site!
+Jetzt sollten Sie schnelle, Live-Kommentarfunktionen zu Ihrer Webflow-Website hinzugefügt haben!

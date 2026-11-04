@@ -1,4 +1,3 @@
----
 ## 需要幫助？
 
 如果您在使用 Android 函式庫時遇到任何問題或有任何疑問，請：
@@ -9,5 +8,3 @@
 ## 貢獻
 
 歡迎投稿！請造訪 [GitHub 儲存庫](https://github.com/FastComments/fastcomments-android) 以取得貢獻指南。
-
----

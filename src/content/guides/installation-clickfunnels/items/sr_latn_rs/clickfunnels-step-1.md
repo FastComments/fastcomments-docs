@@ -20,5 +20,3 @@ Kursevi se sastoje od različitih šablona. Želimo da prikažemo komentare na l
 </div>
 
 To je to! Sada ste spremni za drugi korak.
-
----

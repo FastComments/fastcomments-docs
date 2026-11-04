@@ -9,5 +9,3 @@ Upoštevajte, da ta vadnica zahteva račun FastComments. Priporočamo, da se naj
 Ta vadnica je razdeljena na dve kategoriji: članska spletna mesta in običajna GoHighLevel spletna mesta.
 
 Začnemo z navodili za članska spletna mesta.
-
----

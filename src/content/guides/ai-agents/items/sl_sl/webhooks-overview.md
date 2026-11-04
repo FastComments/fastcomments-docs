@@ -1,65 +1,65 @@
-Agent webhooki so HTTP povratni klici, ki jih platforma sproži, ko se izvedba agenta zaključi ali ko se stanje odobritve spremeni. Uporabite jih za posredovanje dejavnosti agenta v svoje sisteme - nadzorne plošče za moderiranje, revizijske dnevnike, kanale Slack, orodja za eskalacijo.
+Agent webhooki so HTTP povratni klici, ki jih platforma sproži, ko se agentova izvedba zaključi ali ko se stanje odobritve spremeni. Uporabite jih lahko za posredovanje aktivnosti agentov v lastne sisteme - nadzorne plošče za moderiranje, revizijske dnevnike, Slack kanale, orodja za eskalacijo.
 
-Nastavijo se pod zavihkom **Webhooks** na strani [AI Agents page](https://fastcomments.com/auth/my-account/ai-agents).
+Konfigurirajo se pod zavihkom **Webhooks** na [strani AI Agents](https://fastcomments.com/auth/my-account/ai-agents).
 
-### What gets delivered
+### Kaj se dostavi
 
 Štiri vrste dogodkov:
 
 - **`trigger.succeeded`** - izvedba agenta se je uspešno zaključila.
-- **`trigger.failed`** - izvedba agenta je povzročila napako.
-- **`approval.requested`** - dejanje je bilo uvrščeno v čakalno vrsto za ročno odobritev.
-- **`approval.decided`** - odobritev je bila odobrjena, zavrnjena ali pa je izvedba spodletela.
+- **`trigger.failed`** - izvedba agenta je javila napako.
+- **`approval.requested`** - dejanje je bilo postavljeno v vrsto za človeško odobritev.
+- **`approval.decided`** - odobritev je bila odobrena, zavrnjena ali je izvedba spodletela.
 
-Oglejte si [Webhook Events](#webhook-events), kdaj kateri dogodki sprožijo, in [Webhook Payloads](#webhook-payloads) za shemo vsakega.
+Glejte [Webhook Events](#webhook-events) za to, kdaj se kateri dogodki sprožijo, in [Webhook Payloads](#webhook-payloads) za shemo vsakega od njih.
 
-### What's not delivered
+### Kaj se ne dostavi
 
-- **Per-tool-action webhooks.** Zagon, ki pokliče `pin_comment`, ne sproži ločenega webhooka za pripenjanje - dejanje je vključeno v `trigger.succeeded` payload izvedbe. Če želite dostavo za posamezno dejanje, razčlenite polje `actions` v triggerjevem payloadu.
-- **Dropped triggers.** Sprožilec, ki se ne izvede (prekoračen proračun, napačen obseg), ne sproži webhooka. Izpadi so vidni samo na strani [Analytics page](#analytics-page).
-- **Replay-produced triggers.** Testni teki ne sprožijo webhookov. Oglejte si [Test Runs (Replays)](#test-runs-replays).
+- **Webhooki za posamezna dejanja orodij.** Izvedba, ki pokliče `pin_comment`, ne sproži ločenega webhooka za pripinjanje - dejanje je vključeno v payload `trigger.succeeded` izvedbe. Če želite dostavo na ravni dejanj, razčlenite polje `actions` v payloadu sprožilca.
+- **Zavrgljeni sprožilci.** Sprožilec, ki se ne izvrši (presežen proračun, napačen obseg), ne sproži webhooka. Zavrgelne so vidne samo na [strani Analytics](#analytics-page).
+- **Sprožilci, ustvarjeni s predvajanjem.** Testne izvedbe ne sprožijo webhookov. Glejte [Test Runs (Replays)](#test-runs-replays).
 
-### Configuration
+### Konfiguracija
 
-Za vsak webhook, ki ga nastavite:
+Za vsak webhook nastavite:
 
-- **URL** - HTTPS končna točka, na katero se pošlje POST.
-- **Domain** - domena komentarjev, na katero se ta webhook nanaša (vaš najemnik lahko gosti več domen). `*` ustreza vsem domenam; `*.example.com` je glob; natančna domena ustreza samo tej eni.
-- **Events** - na katere od štirih vrst dogodkov se naročiti.
-- **Agents** - prazno pomeni "all agents", ali seznam določenih ID-jev agentov za filtriranje.
+- **URL** - končna točka HTTPS, na katero se pošiljajo POST zahteve.
+- **Domain** - domena komentarjev, na katero se ta webhook nanaša (vaš najemnik lahko gosti več domen). `*` ustreza vsem domenam; `*.example.com` je glob; natančna domena ustreza samo njej sami.
+- **Events** - na katere od štirih vrst dogodkov se naročite.
+- **Agents** - prazno pomeni "vsi agenti", ali pa seznam določenih ID-jev agentov za filtriranje.
 - **Method** - POST ali PUT (privzeto POST).
-- **No-retry status codes** - HTTP odzivni kod, ki jih je treba obravnavati kot končne napake in jih ne ponavljati (npr. 410 Gone, 422 Unprocessable). Oglejte si [Webhook Retries](#webhook-retries).
+- **No-retry status codes** - kode odgovorov HTTP, ki naj se obravnavajo kot končne napake in ne poskušajo znova (npr. 410 Gone, 422 Unprocessable). Glejte [Webhook Retries](#webhook-retries).
 
-Več webhookov se lahko naroči na isti dogodek - vsak se postavi v čakalno vrsto neodvisno in se dostavi na svoj URL.
+Več webhookov se lahko naroči na isti dogodek - vsak se čaka v svoji vrsti in se dostavi na svoj URL.
 
-### Per-domain matching
+### Ujemanje po domenah
 
-Dani dogodek se dostavi **vsem webhookom, katerih polje `domain` se ujema z domeno komentarja**. Ujemanje uporablja preprost glob:
+Določen dogodek se dostavi **vsakemu webhooku, katerega polje `domain` ustreza domeni komentarja**. Ujemanje uporablja preprost glob:
 
-- Exact: `example.com` se ujema samo z `example.com`.
-- Wildcard star: `*` ustreza vsaki domeni.
-- Subdomain glob: `*.example.com` ustreza `blog.example.com`, `forum.example.com`, vendar ne `example.com` samemu.
+- Natančno: `example.com` ustreza samo `example.com`.
+- Zvezdica: `*` ustreza vsem domenam.
+- Glob za poddomene: `*.example.com` ustreza `blog.example.com`, `forum.example.com`, ne pa tudi `example.com` sami.
 
-Domena v payloadu je prvi nenull rezultat iz: `domain` komentarja, URL analiziran glede na konfiguracijo domen vašega najemnika, ali iskanje `Page` po `urlId`.
+Domena v payloadu je prvi rezultat, ki ni ničelen, od: domene komentarja, URL-ja, razčlenjenega glede na konfiguracijo domen vašega najemnika, ali iskanja `Page` po `urlId`.
 
-### Per-agent filtering
+### Filtriranje po agentih
 
-Polje **Agents** omogoča, da se webhook naroči samo na določene agente. Prazno pomeni "vsi agenti". Ko ni prazno, se webhook sproži samo za agente s seznama.
+Polje **Agents** webhooku omogoča naročnino samo na določene agente. Prazno pomeni "vsi agenti". Ko ni prazno, se webhook sproži samo za agente na seznamu.
 
-To je uporabno, ko imate en webhook za dogodke moderiranja in drugega za dogodke angažiranosti, oba pa usmerjata v različne sisteme v ozadju.
+To je uporabno, kadar imate en webhook za dogodke moderiranja in drugega za dogodke angažiranosti, ki usmerjata v različne sisteme.
 
-### Test send
+### Testna pošiljka
 
-Vmesnik za konfiguracijo webhookov ima gumb **Test send**, ki pošlje lažen payload na URL, da lahko preverite povezljivost, podpisovanje in odzivno kodo vaše končne točke, brez čakanja na resničen dogodek.
+Vmesnik za konfiguracijo webhookov ima gumb **Test send**, ki na URL pošlje lažni payload, da lahko preverite povezljivost, podpisovanje in kodo odgovora vaše končne točke, ne da bi čakali na pravi dogodek.
 
-### Delivery logs
+### Dnevniki dostave
 
-Vsaka dostava (in vsak ponovni poskus) se zabeleži na strani [Webhook Delivery Logs](#webhook-logs), tako da lahko vidite, kaj se je zgodilo na omrežju.
+Vsaka dostava (in vsak ponovni poskus) se zapiše na stran [Webhook Delivery Logs](#webhook-logs), da lahko vidite, kaj se je zgodilo na povezavi.
 
-### Signing
+### Podpisovanje
 
-Vsak webhook je podpisan z HMAC-SHA256 z uporabo API skrivnosti vašega najemnika. Oglejte si [Webhook Signing](#webhook-signing).
+Vsak webhook je podpisan z HMAC-SHA256 z uporabo API skrivnosti vašega najemnika. Glejte [Webhook Signing](#webhook-signing).
 
-### Eligibility
+### Upravičenost
 
-Agent webhooki zahtevajo veljavno obračunavanje na najemniku. Uporabljajo isto infrastrukturo podpisovanja/skrivnosti kot vaši obstoječi webhooki za komentarje - če ste že integrirali comment webhooks (glejte [Webhooks guide](/guide-webhooks.html)), je integracija agent webhookov enake oblike z novimi vrstami dogodkov.
+Agent webhooki zahtevajo veljavno obračunavanje na najemniku. Uporabljajo isto infrastrukturo podpisovanja/skrivnosti kot vaši obstoječi webhooki za komentarje - če ste že integrirali webhooka za komentarje (glejte [vodnik Webhooks](/guide-webhooks.html)), ima integracija agent webhookov enako obliko z novimi vrstami dogodkov.

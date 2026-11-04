@@ -1,35 +1,35 @@
-List pages for a tenant. Used by the FChat desktop client to populate its room list.  
-Requires `enableFChat` to be true on the resolved custom config for each page.  
-Pages that require SSO are filtered against the requesting user's group access.
+Navede strani za najemnika. Uporablja namizni odjemalec FChat za izpolnitev svojega seznama sob.
+Zahteva, da je `enableFChat` nastavljen na true v razrešeni prilagojeni konfiguraciji za vsako stran.
+Strani, ki zahtevajo SSO, so filtrirane glede na dostop do skupin zahtevajočega uporabnika.
 
 ## Parametri
 
-| Ime | Tip | Lokacija | Obvezno | Opis |
-|------|------|----------|----------|------|
+| Ime | Vrsta | Lokacija | Obvezno | Opis |
+|------|------|----------|----------|-------------|
 | tenantId | string | path | Da |  |
-| cursor | string | query | Ne | Neprozoren krmarilni kazalec, vrnjen kot `nextCursor` iz prejšnje zahteve. Vezen na enak `sortBy`. |
+| cursor | string | query | Ne | Neprozoren kazalec za paginacijo, vrnjen kot `nextCursor` iz prejšnje zahteve. Povezan z istim `sortBy`. |
 | limit | integer | query | Ne | 1..200, privzeto 50 |
-| q | string | query | Ne | Neobvezni filter predpone naslova, ki ne upošteva velikosti črk. |
-| sortBy | string | query | Ne | Vrstni red. `updatedAt` (privzeto, najnovejše najprej), `commentCount` (največ komentarjev najprej) ali `title` (abeceden). |
-| hasComments | boolean | query | Ne | Če je true, vrne le strani z vsaj enim komentarjem. |
+| q | string | query | Ne | Neobvezen filter predpone naslova, neobčutljiv na velikost črk. |
+| sortBy | string | query | Ne | Vrstni red sortiranja. `updatedAt` (privzeto, najnovejše najprej), `commentCount` (največ komentarjev najprej) ali `title` (abecedno). |
+| hasComments | boolean | query | Ne | Če je true, vrni samo strani z vsaj enim komentarjem. |
 
-## Odgovor
+## Odziv
 
 Vrne: `GetPublicPagesResponse`
 
 ## Primer
 
-[inline-code-attrs-start title = 'getPagesPublic Primer'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getPagesPublic'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
 
 final api_instance = PublicApi();
 final tenantId = tenantId_example; // String | 
-final cursor = cursor_example; // String | Neprozoren krmarilni kazalec, vrnjen kot `nextCursor` iz prejšnje zahteve. Vezen na enak `sortBy`.
+final cursor = cursor_example; // String | Neprozoren kazalec za paginacijo, vrnjen kot `nextCursor` iz prejšnje zahteve. Povezan z istim `sortBy`.
 final limit = 56; // int | 1..200, privzeto 50
-final q = q_example; // String | Neobvezni filter predpone naslova, ki ne upošteva velikosti črk.
-final sortBy = ; // PagesSortBy | Vrstni red. `updatedAt` (privzeto, najnovejše najprej), `commentCount` (največ komentarjev najprej) ali `title` (abeceden).
-final hasComments = true; // bool | Če je true, vrne le strani z vsaj enim komentarjem.
+final q = q_example; // String | Neobvezen filter predpone naslova, neobčutljiv na velikost črk.
+final sortBy = ; // PagesSortBy | Vrstni red sortiranja. `updatedAt` (privzeto, najnovejše najprej), `commentCount` (največ komentarjev najprej) ali `title` (abecedno).
+final hasComments = true; // bool | Če je true, vrni samo strani z vsaj enim komentarjem.
 
 try {
     final result = api_instance.getPagesPublic(tenantId, GetPagesPublicOptions(cursor: cursor, limit: limit, q: q, sortBy: sortBy, hasComments: hasComments));

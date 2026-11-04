@@ -1,4 +1,3 @@
----
 Ustaw identyfikator najemcy raz w `hugo.toml`:
 
 ```toml
@@ -11,4 +10,3 @@ Następnie albo podłącz widget komentarzy do motywu (zobacz [Integracja motywu
 ```text
 \{{< fastcomments >}}
 ```
----

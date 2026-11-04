@@ -30,5 +30,3 @@ DefaultAPI.getSSOUserByEmail(tenantId: tenantId, email: email) { (response, erro
     }
 }
 [inline-code-end]
-
----

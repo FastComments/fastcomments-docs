@@ -23,5 +23,3 @@ const sso: string = "sso_user_5678";
 const resultWithSso: APIEmptyResponse = await flagCommentPublic(tenantId, commentId, isFlagged, sso);
 const resultWithoutSso: APIEmptyResponse = await flagCommentPublic(tenantId, commentId, false);
 [inline-code-end]
-
----

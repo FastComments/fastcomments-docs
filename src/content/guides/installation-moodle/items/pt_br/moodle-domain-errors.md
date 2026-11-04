@@ -1,4 +1,3 @@
----
 Você pode receber um erro de autorização, como o seguinte:
 
 <div class="screenshot white-bg">
@@ -13,4 +12,3 @@ Nesse caso, a correção é simples. Você só precisa adicionar seu site à sua
 [Vá aqui para adicionar seu site à sua conta.](https://fastcomments.com/auth/my-account/configure-domains)
 
 Agora você deve ter comentários rápidos e em tempo real adicionados ao seu site!
----

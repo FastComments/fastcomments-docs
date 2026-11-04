@@ -29,5 +29,3 @@ Sada možemo sačuvati datoteku:
     <div class="title">Uredi uređivač</div>
     <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-3-exit.png" alt="Uredi uređivač" />
 </div>
-
----

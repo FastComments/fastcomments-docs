@@ -10,5 +10,3 @@ Dans la navigation de gauche, allez à `templates->pages->blog-post.html`.
     <div class="title">Ouvrir le modèle</div>
     <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-2-open-blog-post-template.png" alt="Ouvrir le modèle" />
 </div>
-
----

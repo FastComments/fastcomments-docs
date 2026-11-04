@@ -25,5 +25,3 @@ ha fallado al renderizar.
 
 Hay un botón de restablecer ubicado junto a cada error y su recuento, para que podamos reiniciar el contador
 después de haber resuelto un problema.
-
----

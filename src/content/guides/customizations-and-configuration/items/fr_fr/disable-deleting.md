@@ -1,4 +1,3 @@
----
 Par défaut, FastComments autorise les utilisateurs à supprimer leurs commentaires.
 
 Cependant, il est possible d'empêcher cela.
@@ -9,5 +8,3 @@ Dans la page de personnalisation du widget, voyez l'option "Disable Deleting".
 
 - Cela n'affecte que les commentateurs ordinaires et non les modérateurs ou administrateurs, qui pourront toujours supprimer.  
 - Cela affectera également les intégrations API lorsque `contextUserId` est passé. 
-
----

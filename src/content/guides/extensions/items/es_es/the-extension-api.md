@@ -44,5 +44,3 @@ Podemos esperar a la carga inicial de la página y volver a renderizar manualmen
     }
 })();
 [inline-code-end]
-
----

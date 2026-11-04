@@ -1,4 +1,3 @@
----
 ## Parámetros
 
 | Name | Type | Location | Requerido | Descripción |
@@ -40,5 +39,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.DeleteVote`: %v\n", resp)
 }
 [inline-code-end]
-
----

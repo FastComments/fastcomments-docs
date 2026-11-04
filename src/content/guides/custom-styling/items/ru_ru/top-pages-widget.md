@@ -1,8 +1,8 @@
-The Most Discussed Pages Widget displays a ranked list of your most commented pages. It includes a heading, numbered ranks, comment counts with icons, last activity dates, and automatic dark mode detection.
+Виджет «Самые обсуждаемые страницы» отображает ранжированный список ваших страниц с наибольшим количеством комментариев. Он включает заголовок, нумерованные позиции, количество комментариев с иконками, даты последней активности и автоматическое определение тёмного режима.
 
-## Basic Installation
+## Базовая установка
 
-[inline-code-attrs-start title = 'Установка виджета наиболее обсуждаемых страниц'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Установка виджета «Самые обсуждаемые страницы»'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/widget-top-pages-v2.min.js"></script>
 <div id="fastcomments-widget-top-pages"></div>
@@ -13,16 +13,16 @@ The Most Discussed Pages Widget displays a ranked list of your most commented pa
 </script>
 [inline-code-end]
 
-## Configuration Options
+## Параметры конфигурации
 
-- **tenantId** (обязательно): ID вашего аккаунта FastComments
-- **hasDarkBackground** (необязательно): Принудительно включает тёмную тему оформления. Если не задано, тема определяется автоматически по фону страницы
+- **tenantId** (обязательно): ID вашего тенанта FastComments
+- **hasDarkBackground** (необязательно): Принудительно включает тёмное оформление. Если не задано, определяется автоматически по фону страницы
 
-## Widget Structure
+## Структура виджета
 
-The widget renders with the following HTML structure:
+Виджет отображается со следующей HTML-структурой:
 
-[inline-code-attrs-start title = 'HTML-структура виджета наиболее обсуждаемых страниц'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'HTML-структура виджета «Самые обсуждаемые страницы»'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <div class="fc-tp2">
     <div class="fc-tp2-heading">Most Discussed Pages</div>
@@ -39,9 +39,9 @@ The widget renders with the following HTML structure:
 </div>
 [inline-code-end]
 
-## Default CSS Reference
+## Справочник CSS по умолчанию
 
-[inline-code-attrs-start title = 'Стандартный CSS виджета наиболее обсуждаемых страниц'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'CSS по умолчанию виджета «Самые обсуждаемые страницы»'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-tp2 {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -62,25 +62,23 @@ The widget renders with the following HTML structure:
 .fc-tp2-count { font-size: 12px; font-weight: 600; color: #666; }
 [inline-code-end]
 
-## Customization Examples
+## Примеры настройки
 
-### Remove the Rank Badges
+### Удалить значки позиций
 
-[inline-code-attrs-start title = 'Удалить значки ранга'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Удаление значков позиций'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-tp2-rank {
     display: none !important;
 }
 [inline-code-end]
 
-### Remove the Container Border
+### Удалить рамку контейнера
 
-[inline-code-attrs-start title = 'Удалить границу контейнера'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Удаление рамки контейнера'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-tp2 {
     border: none !important;
     box-shadow: none !important;
 }
 [inline-code-end]
-
----

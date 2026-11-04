@@ -1,22 +1,22 @@
-Ovaj endpoint vam omogućava da preuzmete korisničke bedževe na osnovu različitih kriterijuma.
+Ovaj endpoint vam omogućava da dohvatite korisničke bedževe na osnovu različitih kriterijuma.
 
-Example Request:
+Primer zahteva:
 
-[inline-code-attrs-start title = 'Lista korisničkih bedževa - primer GET'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Listanje korisničkih bedževa - GET primer'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 curl -X GET "https://fastcomments.com/api/v1/user-badges?tenantId=demo&API_KEY=DEMO_API_SECRET"
 [inline-code-end]
 
-You can add various query parameters to filter the results:
+Možete dodati različite query parametre za filtriranje rezultata:
 
-- `userId` - Pribavite bedževe za određenog korisnika
-- `badgeId` - Pribavite instance određenog bedža
-- `type` - Filtrirajte po tipu bedža (0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, etc. See UserBadge structure for full list)
-- `displayedOnComments` - Filtrirajte po tome da li se bedž prikazuje na komentarima (true/false)
-- `limit` - Maksimalan broj bedževa za vraćanje (podrazumevano 30, max 200)
+- `userId` - Dohvatanje bedževa za određenog korisnika
+- `badgeId` - Dohvatanje instanci određenog bedža
+- `type` - Filtriranje po tipu bedža (0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, itd. Pogledajte strukturu UserBadge za kompletnu listu)
+- `displayedOnComments` - Filtriranje po tome da li se bedž prikazuje na komentarima (true/false)
+- `limit` - Maksimalan broj bedževa za vraćanje (podrazumevano 30, maksimum 200)
 - `skip` - Broj bedževa koje treba preskočiti (za paginaciju)
 
-Example Response:
+Primer odgovora:
 
 [inline-code-attrs-start title = 'Odgovor'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -60,7 +60,7 @@ Example Response:
 }
 [inline-code-end]
 
-Possible Error Responses:
+Mogući odgovori sa greškom:
 
 [inline-code-attrs-start title = 'Greška: Nedostaje Tenant ID'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -71,7 +71,7 @@ Possible Error Responses:
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Greška: Neispravan limit'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Greška: Nevažeći limit'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",

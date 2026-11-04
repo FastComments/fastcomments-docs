@@ -32,5 +32,3 @@ interface PageReactUsersResponse {
     userNames: string[]
 }
 [inline-code-end]
-
----

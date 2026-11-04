@@ -1,4 +1,3 @@
----
 Todas las URIs son relativas a *https://fastcomments.com*
 
 Clase | Método | Solicitud HTTP | Descripción
@@ -212,4 +211,3 @@ Clase | Método | Solicitud HTTP | Descripción
 *PublicApi* | **updateUserNotificationStatus** | **POST** /user-notifications/{notificationId}/mark/{newStatus} | 
 *PublicApi* | **uploadImage** | **POST** /upload-image/{tenantId} | 
 *PublicApi* | **voteComment** | **POST** /comments/{tenantId}/{commentId}/vote |
----

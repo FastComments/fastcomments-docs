@@ -1,4 +1,3 @@
----
 列出租户的页面。供 FChat 桌面客户端填充其房间列表使用。  
 每个页面的解析自定义配置中，需要将 `enableFChat` 设置为 true。  
 需要 SSO 的页面将根据请求用户的组访问权限进行过滤。
@@ -31,5 +30,3 @@ api->getPagesPublic(tenantId, options).then([](pplx::task<std::shared_ptr<GetPub
     }
 });
 [inline-code-end]
-
----

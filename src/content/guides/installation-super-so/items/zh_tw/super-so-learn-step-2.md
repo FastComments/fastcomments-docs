@@ -1,8 +1,8 @@
-在下一步，您需要複製下方預先製作的小工具程式碼。
+在下一步中，您需要複製下方預先製作好的小工具程式碼。
 
-只要您已在 FastComments.com 登入，以下程式碼片段就會自動包含您的帳戶資訊。現在來複製它：
+只要您已登入 FastComments.com，下方的程式碼片段就會已包含您的帳戶資訊。讓我們來複製它：
 
-[inline-code-attrs-start title = 'Super.so FastComments 協作聊天程式碼'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Super.so FastComments Collab Chat 程式碼'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-collab-chat.min.js"></script>
 <script>
@@ -23,17 +23,17 @@
                 return setTimeout(load, 100);
             }
 
-            // 清除現有的實例
+            // Clean up existing instance
             if (target.fastCommentsInstance) {
                 target.fastCommentsInstance.destroy();
             }
 
-            // 若存在則清除現有的頂部列
+            // Clean up existing top bar if it exists
             if (currentTopBar && currentTopBar.parentNode) {
                 currentTopBar.parentNode.removeChild(currentTopBar);
             }
 
-            // 建立新的頂部列
+            // Create new top bar
             const topBarTarget = document.createElement('div');
             target.parentNode.insertBefore(topBarTarget, target);
             topBarTarget.style.maxWidth = 'var(--layout-max-width)';
@@ -41,36 +41,36 @@
             currentTopBar = topBarTarget;
             currentWidget = target;
 
-            // 初始化 FastComments Collab Chat
+            // Initialize FastComments Collab Chat
             target.fastCommentsInstance = FastCommentsCollabChat(target, {
                 tenantId: "demo",
                 topBarTarget: topBarTarget
             });
 
-            // 更新目前的 pathname
+            // Update current pathname
             currentPathname = window.location.pathname;
         }
 
-        // 初始載入
+        // Initial load
         load();
 
-        // 每 500ms 檢查變更
+        // Check every 500ms for changes
         setInterval(() => {
-            // 若 pathname 改變則重新載入
+            // Reload if pathname changed
             if (window.location.pathname !== currentPathname) {
                 console.log('Pathname changed, reloading...');
                 load();
                 return;
             }
 
-            // 若小工具被移除則重新載入
+            // Reload if widget was removed
             if (currentWidget && !currentWidget.parentNode) {
                 console.log('Widget removed, reloading...');
                 load();
                 return;
             }
 
-            // 若容器被清空則重新載入
+            // Reload if container was emptied
             const target = document.querySelector('.super-content');
             if (target && target.innerHTML.length < 100) {
                 console.log('Container emptied, reloading...');
@@ -81,15 +81,15 @@
 </script>
 [inline-code-end]
 
-Now paste in the `Body` area:
+現在貼到 `Body` 區域：
 
 <div class="screenshot white-bg">
-    <div class="title">已貼上程式碼</div>
-    <img class="screenshot-image" src="/images/installation-guides/super-so-step-3-pasted-code.png" alt="已貼上程式碼" />
+    <div class="title">已貼上的程式碼</div>
+    <img class="screenshot-image" src="/images/installation-guides/super-so-step-3-pasted-code.png" alt="已貼上的程式碼" />
 </div>
 
-If you see a "this is a demo message" after pasting the code:
+如果您在貼上程式碼後看到「this is a demo message」訊息：
 
-- 確保您已登入您的 fastcomments.com 帳戶。
-- 確保已啟用第三方 Cookie。
+- 請確認您已登入您的 fastcomments.com 帳戶。
+- 請確認您已啟用第三方 Cookie。
 - 然後重新整理此頁面並再次複製程式碼片段。它應該會在 `tenantId` 中填入您租戶的識別碼。

@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Име | Тип | Задължително | Описание |
@@ -29,5 +28,3 @@ const ssoToken: string = "sso-token-789xyz";
 const unblockResult: UnblockSuccess = await unBlockCommentPublic(tenantId, commentId, unblockParams, ssoToken);
 const unblockResultNoSso: UnblockSuccess = await unBlockCommentPublic(tenantId, commentId, unblockParams);
 [inline-code-end]
-
----

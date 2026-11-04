@@ -20,5 +20,3 @@ async function fetchTranslations() {
   const userProfileFr: GetTranslationsResponse = await getTranslations('user', 'profile', 'fr-FR', true);
 }
 [inline-code-end]
-
----

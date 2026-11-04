@@ -1,35 +1,35 @@
-A `PollVote` is one person's answer to a poll. The counts shown on the poll itself are kept in step with these,
-so you only need these when you want to know *who* voted for what, rather than the totals.
+Een `PollVote` is het antwoord van één persoon op een poll. De aantallen die op de poll zelf worden getoond worden synchroon gehouden met deze,
+dus je hebt deze alleen nodig als je wilt weten *wie* op wat heeft gestemd, in plaats van de totalen.
 
-A voter has at most one vote per poll. Voting again moves their existing vote to the new option instead of
-adding a second one, and `updatedAt` records when that happened.
+Een stemmer heeft maximaal één stem per poll. Als er opnieuw gestemd wordt, wordt de bestaande stem verplaatst naar de nieuwe optie in plaats van
+dat er een tweede wordt toegevoegd, en `updatedAt` registreert wanneer dat gebeurde.
 
-`voterId` is the `userId` when the voter was logged in, and the `anonUserId` otherwise.
+`voterId` is de `userId` wanneer de stemmer was ingelogd, en anders de `anonUserId`.
 
-[inline-code-attrs-start title = 'PollVote-structuur'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'PollVote Structuur'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface PollVote {
     id: string
     tenantId: string
     commentId: string
     urlId: string
-    /** De userId wanneer de kiezer was ingelogd, anders de anonUserId. **/
+    /** De userId wanneer de stemmer was ingelogd, anders de anonUserId. **/
     voterId: string
     optionId: string
     createdAt: string
-    /** Wanneer de kiezer voor het laatst zijn stem naar een andere optie heeft verplaatst. **/
+    /** Wanneer de stemmer zijn of haar stem voor het laatst naar een andere optie heeft verplaatst. **/
     updatedAt?: string
 }
 [inline-code-end]
 
 ### Privacy
 
-The poll's `privacy` setting applies to this API the same way it applies in the comment widget:
+De `privacy`-instelling van de poll geldt voor deze API op dezelfde manier als in de comment-widget:
 
-- **Anoniem** (the default): nobody can see how anyone voted, so the votes cannot be read.
-  `GET /api/v1/poll-votes` and `GET /api/v1/poll-votes/:id` respond with `poll-anonymous`. The poll's counts
-  are still available from `GET /api/v1/polls/:commentId`.
-- **Admins and moderators**: your API key belongs to your site's admin, so it can read the votes.
-- **Everyone**: the votes can be read.
+- **Anoniem** (de standaardinstelling): niemand kan zien hoe iemand heeft gestemd, dus de stemmen kunnen niet worden uitgelezen.
+  `GET /api/v1/poll-votes` en `GET /api/v1/poll-votes/:id` reageren met `poll-anonymous`. De aantallen van de poll zijn
+  nog steeds beschikbaar via `GET /api/v1/polls/:commentId`.
+- **Admins en moderatoren**: je API-sleutel behoort toe aan de admin van je site, dus deze kan de stemmen uitlezen.
+- **Iedereen**: de stemmen kunnen worden uitgelezen.
 
-Poll privacy can be narrowed but not widened once it has votes.
+De privacy van een poll kan worden versmald, maar niet worden verruimd zodra er stemmen zijn.

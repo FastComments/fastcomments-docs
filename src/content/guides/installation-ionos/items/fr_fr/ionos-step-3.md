@@ -1,4 +1,3 @@
----
 Il ne nous reste plus qu'à publier notre site et c'est tout.
 
 Retournez à l'éditeur de contenu en cliquant sur `Content` en haut à gauche:
@@ -21,5 +20,3 @@ C'est tout ! FastComments devrait être en ligne sur votre site. Vous devriez vo
     <div class="title">Terminé !</div>
     <img class="screenshot-image" src="/images/installation-guides/ionos-step-3-done.png" alt="Terminé !" />
 </div>
-
----

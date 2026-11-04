@@ -6,5 +6,3 @@ FastComments tem um plugin dedicado para Moodle que adiciona comentários em tem
 </div>
 
 O plugin suporta comentários encadeados, chat colaborativo em tempo real e múltiplos modos de SSO. Obtenha-o no <a href="https://github.com/FastComments/fastcomments-moodle/" target="_blank">repositório no GitHub</a>.
-
----

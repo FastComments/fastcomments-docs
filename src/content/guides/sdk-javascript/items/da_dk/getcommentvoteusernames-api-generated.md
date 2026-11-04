@@ -25,5 +25,3 @@ async function example() {
   const resultWithoutSso: GetCommentVoteUserNamesSuccessResponse = await getCommentVoteUserNames(tenantId, commentId, dir);
 }
 [inline-code-end]
-
----

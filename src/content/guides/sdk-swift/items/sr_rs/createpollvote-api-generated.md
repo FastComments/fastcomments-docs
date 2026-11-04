@@ -33,5 +33,3 @@ DefaultAPI.createPollVote(tenantId: tenantId, createPollVoteBody: createPollVote
     }
 }
 [inline-code-end]
-
----

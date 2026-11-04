@@ -1,25 +1,25 @@
-Every agent webhook is signed with HMAC-SHA256 using your tenant's API secret. The same signing scheme is used for FastComments' comment webhooks - if you have already integrated those, the agent webhooks reuse the same signature header and verification flow.
+כל webhook של סוכן חתום באמצעות HMAC-SHA256 עם סוד ה-API של הטננט שלך. אותה סכמת חתימה משמשת את webhooks התגובות של FastComments - אם כבר שילבת אותם, webhooks הסוכנים עושים שימוש חוזר באותו כותרת חתימה ובאותו תהליך אימות.
 
-### למה החתימה
+### למה חתימה
 
-Without a signature, an attacker who knows your webhook URL could POST forged events that look like they came from FastComments. Signing means your endpoint can verify each delivery is authentic before acting on it.
+ללא חתימה, תוקף שמכיר את כתובת ה-webhook שלך יכול לשלוח אירועים מזויפים ב-POST שנראים כאילו הגיעו מ-FastComments. חתימה מאפשרת לנקודת הקצה שלך לוודא שכל מסירה אותנטית לפני שהיא פועלת על סמך התוכן שלה.
 
-### איך החתימות עובדות
+### איך חתימות עובדות
 
-For each delivery:
+עבור כל מסירה:
 
-1. The platform looks up the API secret for the tenant + matched domain (see [Webhooks Overview](#webhooks-overview)).
-2. It emits the current Unix timestamp (in milliseconds) in the `X-FastComments-Timestamp` header.
-3. It computes `HMAC-SHA256(api_secret, "${timestamp}.${raw_request_body}")` (Stripe-style) and emits the result as `sha256=<hex>` in the `X-FastComments-Signature` header.
-4. Your endpoint reads the timestamp header, recomputes the HMAC over `${timestamp}.${body}` it received, compares to the `sha256=<hex>` value in the signature header, and rejects mismatches.
+1. הפלטפורמה מאתרת את סוד ה-API עבור הטננט + הדומיין שנמצא התאמה (ראה [סקירת Webhooks](#webhooks-overview)).
+2. היא משדרת את חותמת הזמן הנוכחית של Unix (במילישניות) בכותרת `X-FastComments-Timestamp`.
+3. היא מחשבת `HMAC-SHA256(api_secret, "${timestamp}.${raw_request_body}")` (בסגנון Stripe) ומשדרת את התוצאה כ-`sha256=<hex>` בכותרת `X-FastComments-Signature`.
+4. נקודת הקצה שלך קוראת את כותרת חותמת הזמן, מחשבת מחדש את ה-HMAC על `${timestamp}.${body}` שקיבלה, משווה לערך `sha256=<hex>` בכותרת החתימה, ודוחה אי-התאמות.
 
-The body that is signed is the **exact bytes** the platform sent, prefixed with `${timestamp}.` - your verifier must use the raw request body, not a re-serialized JSON string (key ordering and whitespace would otherwise differ).
+הגוף החתום הוא **בדיוק הבייטים** שהפלטפורמה שלחה, עם קידומת של `${timestamp}.` - המאמת שלך חייב להשתמש בגוף הבקשה הגולמי, ולא במחרוזת JSON שנבנתה מחדש (סדר המפתחות והרווחים יהיו אחרת).
 
-### סוד ה‑API
+### סוד ה-API
 
-The same API Secret used by [comment webhooks](/guide-webhooks.html). It is per (tenant, domain) and managed in your tenant's API settings. If you rotate the secret, you should re-deploy your verifier to read the new value before the next delivery.
+אותו סוד API המשמש את [webhooks התגובות](/guide-webhooks.html). הוא נפרד לכל (טננט, דומיין) ומנוהל בהגדרות ה-API של הטננט שלך. אם אתה מחליף את הסוד, עליך לפרוס מחדש את המאמת שלך כדי שיקרא את הערך החדש לפני המסירה הבאה.
 
-When the platform finds **no API secret** for the matched domain, the delivery does not happen. The webhook log records the failure with reason "no API secret".
+כאשר הפלטפורמה לא מוצאת **סוד API** עבור הדומיין שנמצא התאמה, המסירה לא מתבצעת. יומן ה-webhook רושם את הכישלון עם הסיבה "no API secret".
 
 ### דוגמת אימות (Node.js)
 
@@ -39,30 +39,28 @@ function verifyAgentWebhook(rawBody, signatureHeader, timestampHeader, secret) {
 }
 [inline-code-end]
 
-Use `timingSafeEqual` rather than `===` to avoid timing-channel leaks of the signature.
+השתמש ב-`timingSafeEqual` ולא ב-`===` כדי למנוע דליפות של החתימה דרך ערוצי תזמון.
 
 ### מה נמצא בגוף החתום
 
-The full envelope plus the event-specific `data` block. See [Webhook Payloads](#webhook-payloads).
+המעטפת המלאה ועוד בלוק ה-`data` הספציפי לאירוע. ראה [מטענים של Webhook](#webhook-payloads).
 
 ### המלצות
 
-- **אמת בכל משלוח.** If your endpoint accepts unsigned requests, you have no integrity guarantee.
-- **דחה במקרים של חוסר התאמה בחתימה.** Return 401 or 403; do not 200 OK on a bad signature, or you will mask attacks in your delivery logs.
-- **השתמש ב‑HTTPS.** Signatures protect integrity; TLS protects confidentiality (both your secret and the comment text in the payload).
-- **סובב סודות** when team members with access leave, or on a schedule.
+- **אמת בכל מסירה.** אם נקודת הקצה שלך מקבלת בקשות ללא חתימה, אין לך ערבות שלמות.
+- **דחה במקרה של אי-התאמת חתימה.** החזר 401 או 403; אל תחזיר 200 OK על חתימה שגויה, אחרת תסתיר התקפות ביומני המסירה שלך.
+- **השתמש ב-HTTPS.** חתימות מגנות על שלמות; TLS מגן על סודיות (הן על הסוד שלך והן על טקסט התגובות במטען).
+- **החלף סודות** כאשר חברי צוות בעלי גישה עוזבים, או לפי לוח זמנים.
 
-### הגנה מפני השמעה חוזרת
+### הגנה מפני שידור חוזר (Replay)
 
-Signing alone does not prevent replay attacks - an attacker who captured a real signed delivery can re-send it. Replay protection is up to your endpoint:
+חתימה לבדה אינה מונעת התקפות שידור חוזר - תוקף שתפס מסירה חתומה אמיתית יכול לשלוח אותה שוב. ההגנה מפני שידור חוזר היא באחריות נקודת הקצה שלך:
 
-- Use the `occurredAt` envelope field and reject deliveries older than, say, 5 minutes.
-- Use the `triggerId` or `approvalId` as a dedup key - if you have already processed it, ignore the duplicate.
+- השתמש בשדה המעטפת `occurredAt` ודחה מסירות ישנות מ-, למשל, 5 דקות.
+- השתמש ב-`triggerId` או ב-`approvalId` כמפתח למניעת כפילויות - אם כבר עיבדת אותו, התעלם מהכפילות.
 
 ### ראה גם
 
-- [Webhooks Overview](#webhooks-overview).
-- [Webhook Payloads](#webhook-payloads).
-- The main [Webhooks guide](/guide-webhooks.html) for the broader signing infrastructure.
-
----
+- [סקירת Webhooks](#webhooks-overview).
+- [מטענים של Webhook](#webhook-payloads).
+- המדריך הראשי [ל-Webhooks](/guide-webhooks.html) לתשתית החתימה הרחבה יותר.

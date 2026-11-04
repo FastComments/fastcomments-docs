@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Nome | Tipo | Posizione | Obbligatorio | Descrizione |
@@ -32,5 +31,3 @@ DefaultAPI.updateQuestionResult(tenantId: tenantId, id: id, updateQuestionResult
     }
 }
 [inline-code-end]
-
----

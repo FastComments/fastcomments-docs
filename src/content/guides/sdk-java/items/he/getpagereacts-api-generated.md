@@ -1,12 +1,12 @@
-Custom react counts for a page, optionally with the users who reacted.
+ספירות תגובות (reacts) מותאמות עבור עמוד, אופציונלית עם המשתמשים שהגיבו.
 
 ## פרמטרים
 
 | שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| urlId | string | query | Yes |  |
-| includeUserInfo | string | query | No | "public" משמיט משתמשים עם פרופילים פרטיים, "include-private" כולל אותם. |
+| tenantId | string | query | כן |  |
+| urlId | string | query | כן |  |
+| includeUserInfo | string | query | לא | "public" משמיט משתמשים עם פרופילים פרטיים, "include-private" כולל אותם. |
 
 ## תגובה
 
@@ -14,9 +14,9 @@ Custom react counts for a page, optionally with the users who reacted.
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמת getPageReacts'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל-getPageReacts'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// ייבא מחלקות:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -29,10 +29,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // הגדר הרשאת מפתח API: api_key
+    // Configure API key authorization: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // בטל את ההערה של השורה הבאה כדי להגדיר קידומת למפתח ה-API, לדוגמה "Token" (ברירת מחדל היא null)
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -45,7 +45,7 @@ public class Example {
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("חריגה בעת קריאה ל-DefaultApi#getPageReacts");
+      System.err.println("Exception when calling DefaultApi#getPageReacts");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -54,5 +54,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

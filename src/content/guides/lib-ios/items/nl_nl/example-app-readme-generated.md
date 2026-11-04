@@ -1,4 +1,3 @@
----
 De repository bevat een volledige voorbeeld-app in `ExampleApp/` met demonstraties van:
 
 - Geneste reacties met SSO en aangepaste thema's
@@ -6,4 +5,3 @@ De repository bevat een volledige voorbeeld-app in `ExampleApp/` met demonstrati
 - Livechat
 - Eenvoudige en veilige SSO-flows
 - Aangepaste werkbalkknoppen (reacties en feed)
----

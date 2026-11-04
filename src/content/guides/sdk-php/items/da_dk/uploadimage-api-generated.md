@@ -1,4 +1,3 @@
----
 Upload og ændre størrelse på et billede
 
 ## Parameters
@@ -43,5 +42,3 @@ try {
     echo 'Exception when calling PublicApi->uploadImage: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

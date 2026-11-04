@@ -17,5 +17,3 @@ Pokreće se kada je komentar zaključan.
 ### Par
 
 Pogledajte [Okidač: Komentar otključan](#trigger-comment-unlock) za zrcalni okidač.
-
----

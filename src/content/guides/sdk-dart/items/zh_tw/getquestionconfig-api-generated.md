@@ -1,4 +1,3 @@
----
 ## 參數
 
 | 名稱 | 類型 | 位置 | 必要 | 描述 |
@@ -32,4 +31,3 @@ try {
     print('Exception when calling DefaultApi->getQuestionConfig: $e\n');
 }
 [inline-code-end]
----

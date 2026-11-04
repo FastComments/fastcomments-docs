@@ -1,15 +1,15 @@
-Remove a poll from its comment, along with every vote cast on it. The comment itself is left alone.
+コメントから投票を削除します。投じられたすべての票も併せて削除されます。コメント自体はそのまま残ります。
 
-## パラメータ
+## パラメーター
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| commentId | string | path | Yes |  |
+| tenantId | string | query | はい |  |
+| commentId | string | path | はい |  |
 
-## 応答
+## レスポンス
 
-返却: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
+戻り値: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
 ## 例
 
@@ -31,7 +31,7 @@ public class Example {
     // APIキー認証を設定: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // 以下の行のコメントを外すと、APIキーのプレフィックスを設定できます。例: "Token" (デフォルトは null)
+    // APIキーにプレフィックスを設定する場合は以下の行のコメントを解除してください。例: "Token" (デフォルトは null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -42,10 +42,10 @@ public class Example {
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("DefaultApi#deletePoll の呼び出し時の例外");
-      System.err.println("ステータスコード: " + e.getCode());
-      System.err.println("理由: " + e.getResponseBody());
-      System.err.println("レスポンスヘッダー: " + e.getResponseHeaders());
+      System.err.println("Exception when calling DefaultApi#deletePoll");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }

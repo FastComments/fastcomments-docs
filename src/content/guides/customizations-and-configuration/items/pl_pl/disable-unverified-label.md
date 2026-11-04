@@ -7,5 +7,3 @@ Domyślnie FastComments wyświetli etykietę „Niezweryfikowany komentarz” dl
 Dodatkowo tę funkcję można wykorzystać, bez pisania kodu, w interfejsie UI dostosowywania:
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-unverified-comment-label']; selector = '.disable-unverified-comment-label'; alt='Strona dostosowywania widgetu z zaznaczonym polem wyboru Wyłącz etykietę niezweryfikowanego komentarza'; title='Wyłącz etykietę niezweryfikowanego komentarza' app-screenshot-end]
-
----

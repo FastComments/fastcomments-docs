@@ -30,5 +30,3 @@ DefaultAPI.getHashTags(tenantId: tenantId, page: page) { (response, error) in
     }
 }
 [inline-code-end]
-
----

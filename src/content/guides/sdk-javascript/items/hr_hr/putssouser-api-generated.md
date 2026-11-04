@@ -28,5 +28,3 @@ Vraća: [`PutSSOUserAPIResponse`](https://github.com/FastComments/fastcomments-s
   const response: PutSSOUserAPIResponse = await putSSOUser(tenantId, userId, updateData, true);
 })();
 [inline-code-end]
-
----

@@ -9,5 +9,3 @@
 Це можна налаштувати без коду на сторінці налаштування віджета в розділі Розширені параметри:
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.show-advanced-option', '.absolute-dates']; selector = '.absolute-dates'; alt='Розширені параметри на сторінці налаштування віджета з увімкненим перемикачем абсолютних дат'; title='Використання абсолютних дат' app-screenshot-end]
-
----

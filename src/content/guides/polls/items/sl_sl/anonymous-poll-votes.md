@@ -1,4 +1,3 @@
----
 Privzeto lahko glasujejo v anketah le prijavljeni uporabniki. Obiskovalci, ki niso prijavljeni, vidijo namesto gumbov za glasovanje poziv **Prijavite se za glasovanje**.
 
 Označite **Allow Anonymous Poll Votes**, da omogočite glasovanje kdorkoli brez računa.
@@ -8,4 +7,3 @@ Označite **Allow Anonymous Poll Votes**, da omogočite glasovanje kdorkoli brez
 Da bi ohranili poštene rezultate, so anonimni glasovi v anketi omejeni na tri na IP naslov na uro.
 
 To je ločeno od [Allow Anonymous Voting](/guide-customizations-and-configuration.html#allow-anon-votes), ki nadzoruje glasove gor in dol pri komentarjih.
----

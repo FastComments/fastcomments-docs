@@ -1,24 +1,24 @@
-Record a vote on a poll, or move an existing one to a different option. A voter has at most one vote per
-poll, so calling this again for the same voter moves their vote rather than adding one.
+Zabilježite glas na anketi ili premjestite postojeći glas na drugu opciju. Glasatelj ima najviše jedan glas po
+anketi, tako da ponovni poziv za istog glasatelja premješta njegov glas umjesto da dodaje novi.
 
-This obeys the site's poll settings: if voting is set to logged-in users only, a vote with just an
-anonUserId is rejected, and anonymous votes are rate limited per IP per poll.
+Ovo poštuje postavke anketa stranice: ako je glasovanje ograničeno samo na prijavljene korisnike, glas s
+samo anonUserId je odbijen, a anonimni glasovi su ograničeni brzinom po IP adresi po anketi.
 
-## Parameters
+## Parametri
 
-| Name | Type | Location | Required | Description |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
+| tenantId | string | query | Da |  |
 
-## Response
+## Odgovor
 
-Returns: [`CreatePollVoteResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreatePollVoteResponse.swift)
+Vraća: [`CreatePollVoteResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreatePollVoteResponse.swift)
 
-## Example
+## Primjer
 
-[inline-code-attrs-start title = 'Primjer createPollVote'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createPollVote Primjer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sljedeći primjeri koda su još u beta fazi. Za bilo koji problem, molimo prijavite ga putem http://github.com/OpenAPITools/openapi-generator/issues/new
+// Sljedeći primjeri koda su još uvijek u beti. Za bilo koji problem, molimo prijavite putem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -35,5 +35,3 @@ DefaultAPI.createPollVote(tenantId: tenantId, createPollVoteBody: createPollVote
     }
 }
 [inline-code-end]
-
----

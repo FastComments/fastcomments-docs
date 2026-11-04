@@ -28,5 +28,3 @@ async fn run_example(configuration: &configuration::Configuration) -> Result<(),
     Ok(())
 }
 [inline-code-end]
-
----

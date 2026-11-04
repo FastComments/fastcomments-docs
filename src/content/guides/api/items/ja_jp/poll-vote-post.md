@@ -1,10 +1,10 @@
 [api-resource-header-start name = 'PollVote'; route = 'POST /api/v1/poll-votes'; creditsCost = 1; api-resource-header-end]
 
-投票を記録します。
+投票の記録を行います。
 
-投票者は各投票で最大1票しか持てません。同じ投票者に対して再度呼び出すと、2票目を追加するのではなく、投票が新しいオプションに移動します。また、すでに選択したオプションに投票しても何も起こりません。
+投票者は1つの投票につき最大1票を持てます。同じ投票者に対して再度このAPIを呼び出すと、2票目を追加するのではなく、その投票を新しい選択肢に移動します。すでに選択した選択肢への投票は何もしません。
 
-レスポンスには投票が含まれるため、2回目のリクエストを行わずに更新されたカウントを取得できます。
+レスポンスには投票が含まれるため、2回目のリクエストなしで更新されたカウントを取得できます。
 
 [inline-code-attrs-start title = 'PollVote 作成 cURL 例'; type = 'bash'; useDemoTenantUser = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -31,7 +31,7 @@ curl --request POST \
 }'
 [inline-code-end]
 
-[inline-code-attrs-start title = 'PollVote 作成 リクエスト構造'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'PollVote 作成リクエスト構造'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface PollVoteCreateQueryParams {
     tenantId: string
@@ -44,12 +44,12 @@ interface PollVoteCreateBody {
     /** userId または anonUserId のいずれかが必須です。 **/
     userId?: string
     anonUserId?: string
-    /** エンドユーザーの IP。匿名レートリミットに使用されます。デフォルトは呼び出し元の IP です。 **/
+    /** エンドユーザーのIP。匿名のレート制限に使用されます。デフォルトは呼び出し元のIPです。 **/
     ip?: string
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'PollVote 作成 レスポンス構造'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'PollVote 作成レスポンス構造'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface PollVoteCreateResponse {
     status: 'success' | 'failed'
@@ -63,18 +63,16 @@ interface PollVoteCreateResponse {
 }
 [inline-code-end]
 
-### Anonymous Votes
+### 匿名投票
 
-`anonUserId` を `userId` の代わりに設定して、ログインしていないユーザーの投票を記録します。その ID はどこかのユーザーに対応している必要はなく、セッションを識別するだけなので、同一人物が二重にカウントされることはありません。
+ログインしていないユーザーの投票を記録するには、`userId` の代わりに `anonUserId` を設定します。このIDはどこかのユーザーに対応している必要はなく、セッションを識別するだけのものなので、同じ人が二重にカウントされることはありません。
 
-匿名投票はサイトで有効にする必要があります。投票がログインユーザーに限定されている場合、`anonUserId` のみを使用した投票は `poll-login-required` エラーで失敗します。
+匿名投票はサイトで有効化されている必要があります。ログインユーザーに投票が制限されている場合、`anonUserId` のみの投票は `poll-login-required` で失敗します。
 
-匿名投票は投票ごとに IP 単位でレート制限されます。これにより、1人がセッションをクリアして投票を大量に行うことを防止します。エンドユーザーの `ip` を送信すると、制限がサーバーではなくそのユーザーに適用されます。
+匿名投票は、セッションをクリアすることによる一つの投票への連投を防ぐため、IPごと・投票ごとにレート制限がかかります。エンドユーザーの `ip` を送信することで、その制限があなたのサーバーではなくエンドユーザーに適用されます。
 
-### Other Notes
+### その他の注意事項
 
-- `userId` はサイト上に存在するユーザーである必要があります。他のサイトに属するユーザーへの投票は拒否されます。
-- 閉じられた投票に対する投票は `poll-closed` エラーで失敗します。
-- この API は投票のカウントを更新し、接続されたウィジェットにリアルタイムでプッシュします。
-
----
+- `userId` はあなたのサイトに存在するユーザーである必要があります。他のサイトに属するユーザーへの投票は拒否されます。
+- 終了した投票への投票は `poll-closed` で失敗します。
+- このAPIは投票のカウントを更新し、接続されているウィジェットにリアルタイムで反映します。

@@ -19,5 +19,3 @@ FastComments призначений для налаштування, і шриф
     font-family: 'Roboto', sans-serif;
 }
 [inline-code-end]
-
----

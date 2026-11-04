@@ -10,5 +10,3 @@
     <div class="title">Стъпка 1: Редактирайте динамичната страница на публикацията</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-1-open-page.png" alt="Редактирайте динамичната страница на публикацията" />
 </div>
-
----

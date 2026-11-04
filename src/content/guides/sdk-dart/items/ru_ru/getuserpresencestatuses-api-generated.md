@@ -28,5 +28,3 @@ try {
     print('Exception when calling PublicApi->getUserPresenceStatuses: $e\n');
 }
 [inline-code-end]
-
----

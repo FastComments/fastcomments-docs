@@ -25,5 +25,3 @@ let (optResp, httpResp) = client.updateNotification(
 if optResp.isSome:
   let _ = optResp.get()
 [inline-code-end]
-
----

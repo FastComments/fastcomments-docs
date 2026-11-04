@@ -8,5 +8,3 @@ PHP SSO SDK ile ilgili herhangi bir sorunla karşılaşırsanız veya soruların
 ## Katkıda Bulunma
 
 Katkılar memnuniyetle karşılanır! Katkı yönergeleri için lütfen [GitHub deposunu](https://github.com/FastComments/fastcomments-php-sso) ziyaret edin.
-
----

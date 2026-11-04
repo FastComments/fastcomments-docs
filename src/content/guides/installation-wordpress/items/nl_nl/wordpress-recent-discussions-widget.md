@@ -1,4 +1,3 @@
----
 De widget Recent Discussions toont de pagina's op uw site met de meest recente reactie-activiteit. Het is handig om threads te benadrukken waar nog reacties aan worden toegevoegd, zodat bezoekers terug kunnen springen in actieve gesprekken in plaats van op rustige pagina's te belanden.
 
 ## Opties

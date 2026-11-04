@@ -51,5 +51,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->change_ticket_state: %s\n" % e)
 [inline-code-end]
-
----

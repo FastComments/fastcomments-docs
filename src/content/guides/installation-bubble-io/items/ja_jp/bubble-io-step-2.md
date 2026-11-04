@@ -1,4 +1,3 @@
----
 クリックしたのは、先ほど追加した HTML 要素です。表示されるプロパティエディタの HTML フィールドに、次のコードを貼り付けてください:
 
 [inline-code-attrs-start title = 'Bubble.io ライブコメント用コードスニペット'; type = 'html'; isFunctional = false; inline-code-attrs-end]
@@ -44,5 +43,3 @@ Note: このコードには、Bubbleの動的な環境でFastCommentsが正し�
 他のコードスニペットは動作しません。
 
 サインアップ後、'demo' を実際の FastComments テナント ID に置き換えることを忘れないでください。FastComments.com にログインしている場合は、すでに置き換えられているはずです。
-
----

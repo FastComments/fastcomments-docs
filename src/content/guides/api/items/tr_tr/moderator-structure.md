@@ -1,28 +1,24 @@
-Bir `Moderator` object represents configuration for a moderator.
+Bir `Moderator` nesnesi, bir moderatörün yapılandırmasını temsil eder.
 
-There are three types of moderators:
+Üç tür moderatör vardır:
 
-1. `isCommentModeratorAdmin` bayrağına sahip yönetici kullanıcılar.
-2. `isCommentModeratorAdmin` bayrağına sahip SSO kullanıcıları.
+1. `isCommentModeratorAdmin` bayrağına sahip Yönetici kullanıcılar.
+2. `isCommentModeratorAdmin` bayrağına sahip SSO Kullanıcıları.
 3. Moderatör olarak davet edilen normal yorumcular veya FastComments.com kullanıcıları.
 
-The `Moderator` structure is used to represent the Moderation State of use case `3`.
+`Moderator` yapısı, `3` numaralı kullanım senaryosunun Moderasyon Durumunu temsil etmek için kullanılır.
 
-If you want to invite a user to be a moderator, via the API, use the `Moderator` API by creating a `Moderator` and `inviting` them.
+Bir kullanıcıyı API üzerinden moderatör olarak davet etmek isterseniz, bir `Moderator` oluşturarak ve onları `inviting` (davet ederek) `Moderator` API'sini kullanın.
 
-If the user does not have a FastComments.com account, the invite email will help them get setup. If they already have an account, they will
-be given moderation access to your tenant and the `Moderator` object's `userId` will be updated to point to their user. You will not have API
-access to their user, as in this case it belongs to themselves and managed by FastComments.com.
+Kullanıcının FastComments.com hesabı yoksa, davet e-postası kurulum yapmasına yardımcı olacaktır. Zaten bir hesabı varsa, kiracınıza (tenant) moderasyon erişimi verilecek ve `Moderator` nesnesinin `userId` alanı, kullanıcısını işaret edecek şekilde güncellenecektir. Bu durumda kullanıcı onlara ait olduğu ve FastComments.com tarafından yönetildiği için, kullanıcısına API erişiminiz olmayacaktır.
 
-If you require complete management of the user's account, we recommend either using SSO, or adding them as a [Tenant Kullanıcısı](https://fastcomments.com/auth/my-account/users) and
-then adding a `Moderator` object to track their stats.
+Kullanıcının hesabının tam yönetimine ihtiyacınız varsa, ya SSO kullanmanızı ya da onları bir [Tenant User](https://fastcomments.com/auth/my-account/users) olarak eklemenizi ve ardından istatistiklerini takip etmek için bir `Moderator` nesnesi eklemenizi öneririz.
 
-The `Moderator` structure can be used as a stat tracking mechanism for use cases `1` and `2`. After creating the user, add a `Moderator`
-object with their `userId` defined and their stats will be tracked on the [Yorum Moderatörleri Sayfası](https://fastcomments.com/auth/my-account/moderate-comments/moderators).
+`Moderator` yapısı, `1` ve `2` numaralı kullanım senaryoları için bir istatistik takip mekanizması olarak kullanılabilir. Kullanıcıyı oluşturduktan sonra, `userId` alanı tanımlanmış bir `Moderator` nesnesi ekleyin; böylece istatistikleri [Comment Moderators Page](https://fastcomments.com/auth/my-account/moderate-comments/moderators) sayfasında takip edilecektir.
 
-The structure for the `Moderator` object is as follows:
+`Moderator` nesnesinin yapısı aşağıdaki gibidir:
 
-[inline-code-attrs-start title = 'Moderatör Yapısı'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Moderator Yapısı'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface Moderator {
     name: string
@@ -40,5 +36,3 @@ interface Moderator {
     moderationGroupIds?: string[]|null
 }
 [inline-code-end]
-
----

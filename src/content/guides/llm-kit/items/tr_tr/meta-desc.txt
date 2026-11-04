@@ -1,3 +1,1 @@
----
 Claude, ChatGPT veya Cursor'ı FastComments belgelerine yönlendirin, böylece doğru entegrasyon kodunu yazarlar. LLM Kit snippet'ini ekleyin veya MCP sunucusuna bağlanın.
----

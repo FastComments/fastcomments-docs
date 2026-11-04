@@ -1,4 +1,3 @@
----
 문서를 그룹화(groupBy가 제공된 경우)하여 여러 연산을 적용해 집계합니다. 서로 다른 연산(예: sum, countDistinct, avg 등)을 지원합니다.
 
 ## 매개변수
@@ -57,5 +56,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

@@ -1,50 +1,50 @@
-When a trigger fires for an agent but does **not** result in an LLM call, the platform records a "drop" with a reason. Drops appear in the [Analytics-Seite](#analytics-page) unter "Triggers skipped (this month)".
+Wenn ein Trigger für einen Agenten auslöst, aber **keinen** LLM-Aufruf zur Folge hat, zeichnet die Plattform einen „Drop" mit einem Grund auf. Drops erscheinen auf der [Analytics-Seite](#analytics-page) unter „Triggers skipped (this month)".
 
-### The full list of drop reasons
+### Die vollständige Liste der Drop-Gründe
 
-| Reason | What happened |
+| Grund | Was passiert ist |
 |---|---|
-| `agentDaily` | Das tägliche Budgetlimit des Agents wurde erreicht. |
-| `agentMonthly` | Das monatliche Budgetlimit des Agents wurde erreicht. |
-| `tenantDaily` | Das tägliche Budgetlimit des Mandanten wurde erreicht. |
-| `tenantMonthly` | Das monatliche Budgetlimit des Mandanten wurde erreicht. |
-| `qps` | Das per-Minute Rate-Limit des Agents (rollierendes 60‑Sekunden‑Fenster) wurde erreicht. |
-| `concurrency` | Die maximale Anzahl gleichzeitiger Ausführungen des Agents war bereits ausgelastet. |
+| `agentDaily` | Das tägliche Budgetlimit des Agenten wurde erreicht. |
+| `agentMonthly` | Das monatliche Budgetlimit des Agenten wurde erreicht. |
+| `tenantDaily` | Das tägliche Budgetlimit des Tenants wurde erreicht. |
+| `tenantMonthly` | Das monatliche Budgetlimit des Tenants wurde erreicht. |
+| `qps` | Das Ratenlimit des Agenten pro Minute (rollierendes 60-Sekunden-Fenster) wurde erreicht. |
+| `concurrency` | Die maximal gleichzeitigen Ausführungen des Agenten waren bereits ausgelastet. |
 
-### What's not in this list
+### Was nicht in dieser Liste steht
 
-Ein Trigger, der nie den Dispatch-Pfad erreicht, wird nicht mit einem Grund "gedroppt" — er wird einfach nicht dispatched. Dazu gehört:
+Ein Trigger, der den Dispatch-Pfad nie erreicht, wird nicht als „Drop" mit einem Grund gewertet – er wird einfach nicht ausgelöst. Das umfasst:
 
-- Der Agent ist **Deaktiviert**.
-- Der auslösende Kommentar stimmt nicht mit dem [URL-/Locale-Bereich](#scope-url-locale) des Agents überein.
-- Die auslösende Aktion wurde vom selben Agenten vorgenommen (Schleifenverhinderung).
-- Der Mandant hat ungültige Abrechnung.
-- Der Agent ist nicht im Plan des Mandanten.
+- Der Agent ist **Disabled**.
+- Der auslösende Kommentar entspricht nicht dem [URL/locale scope](#scope-url-locale) des Agenten.
+- Die auslösende Aktion wurde vom selben Agenten durchgeführt (Schleifenvermeidung).
+- Der Tenant hat eine ungültige Abrechnung.
+- Der Agent ist nicht im Plan des Tenants enthalten.
 
-Dies sind stille Übersprünge, keine Drops. Sie erscheinen nicht im Drops-Diagramm auf der Analytics-Seite.
+Dies sind stille Übersprünge, keine Drops. Sie erscheinen nicht im Drops-Diagramm auf Analytics.
 
-### Drops auf der Analytics-Seite lesen
+### Drops auf Analytics lesen
 
 Die [Analytics-Seite](#analytics-page) zeigt:
 
-- **Triggers skipped (this month)** - Zählungen gruppiert nach Abbruchgrund.
-- **Agents at or near their cap** - Aufschlüsselung pro Agent, welche Agents das Limit erreichen, mit einer Anzahl gedropter Trigger im aktuellen Zeitraum.
+- **Triggers skipped (this month)** – Zählungen gruppiert nach Drop-Grund.
+- **Agents at or near their cap** – Aufschlüsselung pro Agent, welche Agenten das Limit belasten, mit einer Anzahl verworfener Trigger im aktuellen Zeitraum.
 
-### Was zu tun ist, wenn Sie Abbrüche sehen
+### Was tun, wenn Sie Drops sehen?
 
-- **`agentDaily` / `agentMonthly`** - Das eigene Limit des Agents ist zu restriktiv. Erhöhen Sie das Limit im Bearbeitungsformular oder schränken Sie den Agenten ein (URL/Locale, engere Trigger).
-- **`tenantDaily` / `tenantMonthly`** - Das kontoübergreifende Limit ist zu restriktiv. Erhöhen Sie es in den Abrechnungseinstellungen des Mandanten oder verteilen Sie die Ausgaben auf weniger Agents.
-- **`qps`** - Der Traffic trifft das pro-Minute rollierende Fenster-Limit. Oft ein Zeichen dafür, dass ein viraler Thread Trigger schneller auslöst, als der Agent sie abarbeiten kann. Die Felder `maxTriggersPerMinute` und `maxConcurrent` des Agents begrenzen dies; eine Erhöhung steigert den Durchsatz, erhöht aber auch die Kosten bei Spitzenbelastung.
-- **`concurrency`** - Gleiche Ursache wie bei `qps`, aber bezogen auf die Anzahl der laufenden Instanzen. Erhöhen Sie `maxConcurrent`, wenn Sie mehr Parallelität benötigen.
+- **`agentDaily` / `agentMonthly`** – das eigene Limit des Agenten ist zu knapp. Erhöhen Sie entweder das Limit im Bearbeitungsformular oder grenzen Sie den Agenten ein (URL/locale, engere Trigger).
+- **`tenantDaily` / `tenantMonthly`** – das Limit auf Kontoebene ist zu knapp. Erhöhen Sie es in den Tenant-Abrechnungseinstellungen oder verteilen Sie die Ausgaben auf weniger Agenten.
+- **`qps`** – der Traffic stößt an das rollierende Minutenlimit. Oft ein Zeichen dafür, dass ein viraler Thread Trigger schneller erzeugt, als der Agent sie ausführen kann. Die Felder `maxTriggersPerMinute` und `maxConcurrent` des Agenten begrenzen dies; eine Erhöhung steigert den Durchsatz, aber auch die Burst-Kosten.
+- **`concurrency`** – gleiche Ursache wie `qps`, aber bei der Anzahl der laufenden Ausführungen. Erhöhen Sie `maxConcurrent`, wenn Sie mehr Parallelität benötigen.
 
-### Drops vs errors
+### Drops vs. Fehler
 
-Ein Drop bedeutet, "der Trigger lief nie". Ein **Fehler** bedeutet, "der Trigger lief, aber der LLM-Aufruf oder das Tool-Dispatch ist fehlgeschlagen". Fehler werden separat auf der [Run-History-Seite](#run-history) verfolgt (Status `Error`).
+Ein Drop bedeutet „der Trigger lief nie". Ein **Fehler** bedeutet „der Trigger lief, aber der LLM-Aufruf oder das Tool-Dispatch schlug fehl". Fehler werden separat auf der [Run History](#run-history)-Seite erfasst (Status `Error`).
 
 ### Drops können auch Replays stoppen
 
-Die gleichen Abbruchgründe stoppen laufende [Testläufe / Wiedergaben](#test-runs-replays). Die Wiedergabe endet mit einem Fehlerstatus und einer Nachricht, die angibt, welches Budget erreicht wurde (zum Beispiel das tägliche Budget des Agents).
+Dieselben Drop-Gründe stoppen laufende [Testläufe / Replays](#test-runs-replays). Das Replay stoppt mit dem Status Error und einer Meldung, die angibt, welches Budget erreicht wurde (z. B. das tägliche Budget des Agenten).
 
-### Schleifenverhinderung ist absichtlich still
+### Schleifenvermeidung ist absichtlich still
 
-Es gibt keinen Abbruchgrund für "dieser Trigger kam von einem anderen Agenten und wurde zur Verhinderung einer Schleife übersprungen". Das zu protokollieren würde die Analytics ohne nützlichen Hinweis verunreinigen — per Design sollte Fan-Out von Agents niemals zu einer Explosion von Triggern führen. Wenn Sie vermuten, dass eine Schleife unterdrückt wird, obwohl sie das nicht sollte, prüfen Sie die [Kommentarprotokolle](/guide-moderation.html#comment-logs) — die `botId` bei bot-verfassten Kommentaren ist der Wert, auf den die Schleifenprüfung prüft.
+Es gibt keinen Drop-Grund für „dieser Trigger kam von einem anderen Agenten und wurde zur Vermeidung einer Schleife übersprungen". Das Protokollieren würde die Analytics ohne nützliches Signal überladen – by Design sollte das Fan-out von Agenten niemals zu einer Trigger-Explosion führen. Wenn Sie vermuten, dass eine Schleife unterdrückt wird, obwohl sie es nicht sollte, prüfen Sie die [Comment Logs](/guide-moderation.html#comment-logs) – die `botId` auf von Bots verfassten Kommentaren ist der Schlüssel für die Schleifenprüfung.

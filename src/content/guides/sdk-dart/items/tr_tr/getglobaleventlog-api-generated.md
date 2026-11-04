@@ -1,4 +1,3 @@
----
 req
 tenantId
 urlId
@@ -38,5 +37,3 @@ try {
     print('Exception when calling PublicApi->getGlobalEventLog: $e\n');
 }
 [inline-code-end]
-
----

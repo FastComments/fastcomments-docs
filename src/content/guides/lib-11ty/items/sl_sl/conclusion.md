@@ -8,5 +8,3 @@
 ## Prispevanje
 
 Prispevki so dobrodošli! Prosimo, obiščite [GitHub repozitorij](https://github.com/FastComments/fastcomments-11ty) za smernice glede prispevkov.
-
----

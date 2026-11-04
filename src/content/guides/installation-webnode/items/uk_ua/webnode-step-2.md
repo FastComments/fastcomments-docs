@@ -1,19 +1,16 @@
----
-Next, determine where you want to add comments. Mouse over the bottom of the previous content area
-and click to add a section:
+Далі визначте, де саме ви хочете додати коментарі. Наведіть курсор на нижню частину попередньої області вмісту
+та клацніть, щоб додати розділ:
 
 <div class="screenshot white-bg">
-    <div class="title">Крок два: Додати розділ</div>
+    <div class="title">Крок другий: Додайте розділ</div>
     <img class="screenshot-image" src="/images/installation-guides/webnode-step-2.png" alt="Додати розділ" />
 </div>
 
-Now let's put an HTML block in that section, where the code snippet will go. Select `HTML`:
+Тепер давайте розмістимо HTML-блок у цьому розділі, саме там буде розташовано фрагмент коду. Виберіть `HTML`:
 
-> **Примітка:** As of June 26, 2023, Webnode's HTML block is a paid feature. It is not available on the free plan, and for projects created after that date it requires a premium package. If you don't see the `HTML` option, upgrade your Webnode plan to enable it.
+> **Примітка:** Станом на 26 червня 2023 року HTML-блок у Webnode є платною функцією. Він недоступний на безкоштовному плані, а для проєктів, створених після цієї дати, вимагає преміум-пакету. Якщо ви не бачите опцію `HTML`, оновіть свій план Webnode, щоб її активувати.
 
 <div class="screenshot white-bg">
-    <div class="title">Крок три: Додати блок коду</div>
-    <img class="screenshot-image" src="/images/installation-guides/webnode-step-3.png" alt="Додати HTML Block" />
+    <div class="title">Крок третій: Додайте блок коду</div>
+    <img class="screenshot-image" src="/images/installation-guides/webnode-step-3.png" alt="Додати HTML-блок" />
 </div>
-
----

@@ -1,27 +1,24 @@
 [related-parameter-start name = 'urlId'; type = 'string'; related-parameter-end]
 
-Wir haben behandelt, wie `urlId` die Seiten- oder Artikel-ID ist, an die die Kommentare gebunden sind.
+Wir haben bereits behandelt, wie `urlId` die ID der Seite oder des Artikels ist, mit der die Kommentare verknüpft sind.
 
-Außerdem, zur Erinnerung: wenn nicht definiert, wird die `urlId` standardmäßig auf die aktuelle Seiten-URL gesetzt.
+Zur Erinnerung: Wenn `urlId` nicht definiert ist, wird standardmäßig die URL der aktuellen Seite verwendet.
 
-Wie sieht es mit SPAs, oder Single-Page-Applications, aus, bei denen die Seite oder der Inhalt, an den die Kommentare gebunden sind, sich
-dynamisch ändert, ohne dass die Seite neu geladen wird?
+Was ist mit SPAs (Single-Page-Applications), bei denen sich die Seite oder der Inhalt, mit dem die Kommentare verknüpft sind, dynamisch ändert, ohne dass die Seite neu geladen wird?
 
-#### Angular, React, Vue, etc
+#### Angular, React, Vue, etc.
 
-Mit unseren Bibliotheken wie Angular und React bewirkt das einfache Aktualisieren der an das Widget übergebenen `urlId`-Eigenschaft,
-dass das Kommentar-Widget aktualisiert wird. Sie können dies beispielsweise in der React-App <a href="https://github.com/FastComments/fastcomments-react/blob/master/examples/example-paginated/src/PaginatedApp.tsx#L39" target="_blank">hier</a> sehen.
+Mit unseren Bibliotheken wie Angular und React genügt es, die `urlId`-Eigenschaft zu aktualisieren, die an das Widget übergeben wird, damit das Kommentar-Widget neu geladen wird. Sie können das in Aktion sehen, zum Beispiel in der React-App, <a href="https://github.com/FastComments/fastcomments-react/blob/master/examples/example-paginated/src/PaginatedApp.tsx#L39" target="_blank">hier</a>.
 
 #### VanillaJS
 
-Wenn Sie die VanillaJS-Bibliothek verwenden, ist es etwas komplizierter, da es kein Framework wie Angular oder React gibt,
-das die Datenbindung oder Zustandsweitergabe übernimmt.
+Wenn Sie die VanillaJS-Bibliothek verwenden, ist es etwas komplizierter, da es kein Framework wie Angular oder React gibt, das das Data Binding oder die State-Propagation übernimmt.
 
-Wenn Sie das VanillaJS-Widget instanziieren, gibt es einige Funktionen zurück, die aufgerufen werden können, um es zu aktualisieren.
+Wenn Sie das VanillaJS-Widget instanziieren, werden einige Funktionen zurückgegeben, die aufgerufen werden können, um es zu aktualisieren.
 
-Hier ein funktionales Beispiel, in dem wir den Seiten-Hash ändern und das Kommentar-Widget aktualisieren:
+Hier ist ein funktionales Beispiel, bei dem wir den Seiten-Hash ändern und das Kommentar-Widget aktualisieren:
 
-[inline-code-attrs-start title = 'Beispiel zum Wechseln des Seiten-Hashes'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Beispiel zum Wechseln des Seiten-Hashs'; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
 <button id="change-page"></button>
@@ -49,7 +46,7 @@ Hier ein funktionales Beispiel, in dem wir den Seiten-Hash ändern und das Komme
             window.location.hash = page;
             let locationString = window.location.toString();
 
-            config.url = locationString; // We update url, too, so notifications can link back to the right page
+            config.url = locationString; // Wir aktualisieren auch url, damit Benachrichtigungen auf die richtige Seite verlinken können
             config.urlId = locationString;
 
             instance.update(config);
@@ -59,5 +56,3 @@ Hier ein funktionales Beispiel, in dem wir den Seiten-Hash ändern und das Komme
     })();
 </script>
 [inline-code-end]
-
----

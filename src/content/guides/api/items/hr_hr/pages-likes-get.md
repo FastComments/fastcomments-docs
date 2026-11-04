@@ -50,5 +50,3 @@ interface PageReactUser {
 #### Korisni savjet
 
 Zapamtite da URI‑enkodirate vrijednosti poput `urlId`.
-
----

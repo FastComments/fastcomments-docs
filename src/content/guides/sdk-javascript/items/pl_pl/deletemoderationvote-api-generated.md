@@ -1,4 +1,3 @@
----
 ## Parametry
 
 | Nazwa | Typ | Wymagane | Opis |
@@ -35,5 +34,3 @@ async function runDeleteModerationVote(): Promise<void> {
   console.log(result);
 }
 [inline-code-end]
-
----

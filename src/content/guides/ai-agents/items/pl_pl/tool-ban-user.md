@@ -1,4 +1,4 @@
-The Ban tool is the most consequential action an agent can call. It bans a user from your community, with a fixed duration and a few options.
+Narzędzie Ban to najbardziej doniosła akcja, jaką agent może wywołać. Blokuje użytkownika w Twojej społeczności na określony czas, z kilkoma opcjami.
 
 ### Co robi
 
@@ -11,38 +11,38 @@ Agent wybiera jeden z sześciu okresów:
 - Sześć miesięcy
 - Jeden rok
 
-Agent wybiera także między **widocznym zbanowaniem** (użytkownik widzi wyraźny komunikat o zbanowaniu i może się odwołać) a **shadow ban** (użytkownik może dalej publikować, ale jego treści są ukryte przed innymi użytkownikami). Instrukcje platformy nakazują agentowi preferować widoczne bany w przypadku pierwszych lub granicznych przypadków, a shadow bany wobec wyraźnie złośliwych powtarzających się naruszycieli.
+Wybiera też między **widocznym banem** (użytkownik widzi wyraźny komunikat o banie i może się odwołać) a **shadow banem** (użytkownik może dalej publikować, ale jego treści są ukryte przed innymi użytkownikami). Instrukcje platformy nakazują agentowi preferować widoczne bany w przypadkach pierwszego razu lub granicznych, a shadow bany dla ewidentnie złośliwych recydywistów.
 
 ### Dwie destrukcyjne podopcje
 
-Dwie dodatkowe opcje są domyślnie **ukryte przed agentem**. Aby włączyć którąkolwiek, zaznacz odpowiednie pole wyboru w sekcji **Opcje bana** na formularzu edycji agenta:
+Dwie dodatkowe opcje są **domyślnie ukryte przed agentem**. Aby którąkolwiek włączyć, zaznacz odpowiednie pole wyboru w sekcji **Ban options** na formularzu edycji agenta:
 
-- **Allow deleting all of the user's comments.** Po włączeniu agent może również zdecydować o usunięciu wszystkich komentarzy, które zbanowany użytkownik kiedykolwiek opublikował w Twoim tenant. Zarezerwuj to dla wyraźnego spamu, doxxingu lub skoordynowanego nadużycia, gdzie istniejące treści nie mają wartości. **Destrukcyjne i nieodwracalne.**
-- **Allow banning by IP.** Po włączeniu agent może również zbanować adres IP, z którego opublikowano komentarz. Przydatne przeciwko omijaniu bana przez konta alternatywne. **Unikaj dla współdzielonych adresów IP** (firmowe, szkolne, operatorzy mobilni) - niewinni użytkownicy w tej samej sieci zostaną zablokowani.
+- **Allow deleting all of the user's comments.** Po włączeniu agent może zdecydować o usunięciu każdego komentarza, jaki zbanowany użytkownik kiedykolwiek opublikował w Twojej tenancie. Zarezerwuj dla ewidentnego spamu, doxxingu lub skoordynowanych nadużyć, gdzie istniejąca treść nie ma wartości. **Destrukcyjne i nieodwracalne.**
+- **Allow banning by IP.** Po włączeniu agent może zdecydować o zbanowaniu również IP, z którego opublikowano komentarz. Przydatne przeciw omijaniu bana przez konta alternatywne. **Unikaj dla współdzielonych IP** (firmowych, szkolnych, operatorów mobilnych) - niewinni użytkownicy w tej samej sieci zostaną zablokowani.
 
-Platforma dodatkowo narzuca te ograniczenia po stronie serwera: nawet jeśli agent zbuntuje się i spróbuje wywołać opcję, żądanie zostanie odrzucone, chyba że włączyłeś taką opcję.
+Platforma dodatkowo ogranicza te opcje po stronie serwera: nawet jeśli agent wymknie się spod kontroli i spróbuje wywołać opcję, żądanie zostanie odrzucone, chyba że ją włączyłeś.
 
 ### Polityka eskalacji
 
-Zanim zbanować, platforma instruuje agenta, aby:
+Przed banem platforma nakazuje agentowi:
 
-1. Przeszukać [pamięć agenta](#agent-memory-system) w poszukiwaniu wcześniejszych ostrzeżeń lub notatek dotyczących użytkownika.
-2. W pierwszej kolejności woleć [ostrzeżenie](#tool-warn-user) użytkownika niż jego zbanowanie za pierwsze przewinienia.
-3. Pominąć krok ostrzeżenia tylko w oczywistych, rażących przypadkach (treści nielegalne, doxxing, skoordynowany spam) — i wyjaśnić powód w uzasadnieniu.
+1. Wyszukać w [pamięci agenta](#agent-memory-system) wcześniejsze ostrzeżenia lub notatki o użytkowniku.
+2. Preferować [ostrzeżenie](#tool-warn-user) użytkownika zamiast bana przy pierwszych przewinieniach.
+3. Pominąć krok ostrzeżenia tylko w rażąco poważnych przypadkach (treści nielegalne, doxxing, skoordynowany spam) - i wyjaśnić dlaczego w swojej uzasadnieniu.
 
-Ta polityka znajduje się w instrukcjach agenta, a nie jest twardą regułą po stronie serwera, dlatego **mocno zaleca się uzależnienie banów od zatwierdzenia**.
+Ta polityka znajduje się w instrukcjach agenta, a nie jest twardą regułą serwerową, dlatego **ograniczanie banów zatwierdzeniem jest zdecydowanie zalecane**.
 
-### Region UE: wymagana akceptacja przez człowieka
+### Region UE: wymagane zatwierdzenie przez człowieka
 
-W regionie UE to narzędzie jest **włączone z obowiązkiem zatwierdzenia** na mocy Artykułu 17 Rozporządzenia o usługach cyfrowych. Każdy ban od dowolnego agenta na tenant z regionu UE trafia do [skrzynki zatwierdzeń](#approval-workflow) do przeglądu przez człowieka. Zobacz [EU DSA Article 17 Compliance](#eu-dsa-compliance).
+W regionie UE to narzędzie jest **na stałe zablokowane za zatwierdzeniem** na mocy art. 17 Aktu o usługach cyfrowych. Każdy ban od dowolnego agenta na tenancie w regionie UE trafia do [skrzynki zatwierdzeń](#approval-workflow) do weryfikacji przez człowieka. Zobacz [Zgodność z EU DSA Article 17](#eu-dsa-compliance).
 
-### Rekomendacje
+### Zalecenia
 
-- Uzależnij od zatwierdzenia we wszystkich miejscach przynajmniej przez pierwszy miesiąc.
-- Zawsze uzależniaj opcję **delete-all-comments** jeśli ją włączysz - jest nieodwracalna.
-- Rozważ uzależnienie opcji **IP ban** nawet po zdobyciu zaufania agenta - koszt zbanowania IP w sieci współdzielonej nie pojawia się w historii działań agenta.
+- Włącz zatwierdzanie wszędzie przez co najmniej pierwszy miesiąc.
+- Zawsze ograniczaj zatwierdzeniem opcję **delete-all-comments**, jeśli ją włączysz - jest nieodwracalna.
+- Rozważ ograniczenie zatwierdzeniem opcji **IP ban** nawet po tym, jak agent zdobędzie zaufanie - koszt IP bana w sieci współdzielonej nie uwidacznia się w historii uruchomień agenta.
 
 ### Zobacz także
 
-- [Banning Users](/guide-moderation.html#banning-users) i [Banning Users With Wildcards](/guide-moderation.html#banning-users-wildcards) w przewodniku moderacji, aby dowiedzieć się, jak bany działają na całej platformie.
-- [Ostrzeż użytkownika](#tool-warn-user) - łagodniejszy krok eskalacji.
+- [Banning Users](/guide-moderation.html#banning-users) i [Banning Users With Wildcards](/guide-moderation.html#banning-users-wildcards) w przewodniku moderacji, aby dowiedzieć się, jak działają bany na poziomie całej platformy.
+- [Warn user](#tool-warn-user) - łagodniejszy krok eskalacji.

@@ -69,5 +69,3 @@ export class AppModule { }
 הווידג'ט משתמש בזיהוי שינויים, ולכן שינוי של כל אחת מהתכונות של אובייקט הקונפיגורציה יגרום לטעינה מחדש שלו.
 
 ניתן למצוא את הקונפיגורציה שהקומפוננטה של Angular תומכת בה <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">כאן</a>.
-
----

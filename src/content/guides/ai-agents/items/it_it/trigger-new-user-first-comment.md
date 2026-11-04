@@ -18,5 +18,3 @@ Quando il contesto della cronologia utente è attivato, l'elenco dei commenti re
 - **Saluto di benvenuto** - il [modello Welcome Greeter](#template-welcome-greeter) è costruito attorno a questo trigger.
 - **Onboarding** - invia un [DM warning](#tool-warn-user) (usato qui come un gentile avviso piuttosto che una ammonizione) indicando all'utente le linee guida della community.
 - **Notifica al revisore** - se vuoi che una persona esamini il primo post di ogni nuovo commentatore, [`mark_comment_reviewed`](#tools-overview) può contrassegnarli per la revisione.
-
----

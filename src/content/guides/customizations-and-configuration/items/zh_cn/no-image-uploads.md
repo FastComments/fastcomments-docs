@@ -7,5 +7,3 @@
 可以在小部件自定义页面上无需代码进行自定义：
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.disable-image-uploads'; selector = '.disable-image-uploads'; alt='在小部件自定义页面设置中，已启用禁用图片上传的复选框'; title='禁用图片上传' app-screenshot-end]
-
----

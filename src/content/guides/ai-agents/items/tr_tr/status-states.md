@@ -1,37 +1,37 @@
-An agent has one of three statuses:
+Bir ajan üç durumdan birine sahip olabilir:
 
-### Disabled
+### Devre Dışı (Disabled)
 
-The agent is turned off. No triggers are processed and the agent does not appear in the dispatch path. Its run history, analytics, and memory remain - if you re-enable it later, the historical data is still there.
+Ajan kapatılmıştır. Hiçbir tetikleyici işlenmez ve ajan dağıtım yolunda görünmez. Çalışma geçmişi, analitikler ve bellek korunur - daha sonra yeniden etkinleştirirseniz, geçmiş veriler hâlâ oradadır.
 
-Use `Disabled` when:
-- You want to take an agent out of rotation without losing it.
-- An agent is misbehaving and you need to stop it immediately while you investigate.
-- You are seasonally rotating agents in and out (e.g. a holiday-only greeter).
+`Disabled` durumunu şu durumlarda kullanın:
+- Bir ajanı kaybetmeden devreden çıkarmak istediğinizde.
+- Bir ajan yanlış davranıyordur ve araştırma yaparken hemen durdurmanız gerektiğinde.
+- Ajanları mevsimsel olarak devreye alıp çıkardığınızda (örn. yalnızca tatillerde çalışan bir karşılama ajanı).
 
 ### Dry Run - yeni ajanlar için varsayılan
 
-The agent runs end-to-end - it processes triggers, calls the LLM, picks tool calls, computes justifications and confidence - but **no real action is taken**. Each run is recorded with the **Dry Run** badge in [Run History](#run-history).
+Ajan uçtan uca çalışır - tetikleyicileri işler, LLM'i çağırır, araç çağrılarını seçer, gerekçeleri ve güven düzeylerini hesaplar - ancak **gerçek bir eylem yapılmaz**. Her çalışma, [Run History](#run-history) bölümünde **Dry Run** rozetiyle kaydedilir.
 
-Use `Dry Run` when:
-- A new agent is just out of the box. Every starter template lands in dry-run.
-- You have edited the prompt or changed the trigger set and want to see how the change plays out before committing.
-- You are running a [test run / replay](#test-runs-replays) (replays force dry-run regardless of agent status).
+`Dry Run` durumunu şu durumlarda kullanın:
+- Yeni bir ajan daha kutusundan yeni çıkmıştır. Her başlangıç şablonu dry-run modunda gelir.
+- Prompt'u düzenlediyseniz veya tetikleyici setini değiştirdiyseniz ve taahhüt etmeden önce değişikliğin nasıl sonuçlanacağını görmek istiyorsanız.
+- Bir [test çalışması / yeniden oynatma](#test-runs-replays) yürüttüğünüzde (yeniden oynatmalar, ajan durumundan bağımsız olarak dry-run'ı zorunlu kılar).
 
-The platform charges tokens for dry-run runs - the LLM call still happens, only the side-effects are skipped. Budget caps apply to dry-run too. See [Budgets Overview](#budgets-overview).
+Platform, dry-run çalışmaları için token ücretlendirir - LLM çağrısı yine de gerçekleşir, yalnızca yan etkiler atlanır. Bütçe limitleri dry-run için de geçerlidir. Bkz. [Budgets Overview](#budgets-overview).
 
-### Enabled
+### Etkin (Enabled)
 
-The agent takes real actions. Tool calls execute - or get queued for [approval](#approval-workflow) if the action is gated.
+Ajan gerçek eylemler gerçekleştirir. Araç çağrıları yürütülür - veya eylem kısıtlanmışsa [onay](#approval-workflow) için kuyruğa alınır.
 
-Use `Enabled` after dry-run output looks correct.
+Dry-run çıktısı doğru göründükten sonra `Enabled` durumunu kullanın.
 
-### Durum değişikliği
+### Durum değiştirme
 
-You can flip between any two statuses on the edit form. Switching from Dry Run to Enabled does not retroactively re-execute the dry-run actions - those stay as dry-run history. New triggers from that moment forward run live.
+Düzenleme formunda herhangi iki durum arasında geçiş yapabilirsiniz. Dry Run'dan Enabled'a geçiş, dry-run eylemlerini geriye dönük olarak yeniden yürütmez - bunlar dry-run geçmişi olarak kalır. O andan itibaren gelen yeni tetikleyiciler canlı çalışır.
 
-Switching from Enabled to Disabled mid-run does **not** abort an in-flight run. The currently-executing trigger finishes (with whatever it has already started); the next trigger is dropped because the agent is now Disabled.
+Çalışma sırasında Enabled'dan Disabled'a geçmek, devam eden bir çalışmayı **durdurmaz**. Şu anda yürütülmekte olan tetikleyici tamamlanır (zaten başlatıldığı şeylerle birlikte); sonraki tetikleyici, ajan artık Disabled olduğu için atılır.
 
 ### Faturalandırma sorunları sırasında durum
 
-If your tenant's billing becomes invalid, all agents are effectively paused regardless of saved status - triggers are dropped with `BILLING_INVALID` until billing is restored. The saved status field is not changed; the dispatcher just refuses to run. See [Plans and Eligibility](#plans-and-eligibility).
+Kiracınızın (tenant) faturalandırması geçersiz hale gelirse, kaydedilmiş durumdan bağımsız olarak tüm ajanlar fiilen duraklatılır - faturalandırma geri yüklenene kadar tetikleyiciler `BILLING_INVALID` ile atılır. Kaydedilen durum alanı değiştirilmez; yalnızca dağıtıcı çalıştırmayı reddeder. Bkz. [Plans and Eligibility](#plans-and-eligibility).

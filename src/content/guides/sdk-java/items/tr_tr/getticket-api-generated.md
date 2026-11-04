@@ -1,4 +1,3 @@
----
 ## Parametreler
 
 | Ad | Tür | Konum | Gerekli | Açıklama |
@@ -53,5 +52,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

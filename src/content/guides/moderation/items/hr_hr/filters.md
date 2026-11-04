@@ -19,5 +19,3 @@ Dakle, Odobreno znači da drugi korisnici na vašoj stranici mogu vidjeti koment
 Pregledano je jednostavno alat za administratore i moderatore i nema utjecaja na vidljivost komentara.
 
 Oznaka Pregledano olakšava pronalaženje komentara koje ste pregledali.
-
----

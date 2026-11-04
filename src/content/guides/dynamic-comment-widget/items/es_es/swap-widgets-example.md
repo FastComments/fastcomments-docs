@@ -1,11 +1,9 @@
----
-This is all done by configuring the [urlId](/guide-customizations-and-configuration.html#url-id) and related parameters and
-calling `update()` on the widget instances to swap them out with a different thread.
+Esto se hace configurando el [urlId](/guide-customizations-and-configuration.html#url-id) y los parámetros relacionados, y llamando a `update()` en las instancias del widget para reemplazarlas por un hilo de comentarios diferente.
 
-El siguiente es un ejemplo interactivo (pulsa Ejecutar en la esquina superior izquierda) que te permite añadir e intercambiar hilos de comentarios bajo demanda.
+A continuación se muestra un ejemplo interactivo (pulsa run en la parte superior izquierda) que te permite añadir e intercambiar hilos de comentarios a demanda.
 También podríamos eliminarlos llamando a `instance.destroy` en lugar de update.
 
-[inline-code-attrs-start title = 'Agregar e intercambiar hilos de comentarios'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Añadir e intercambiar hilos de comentarios'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
     <script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
 
@@ -35,7 +33,7 @@ También podríamos eliminarlos llamando a `instance.destroy` en lugar de update
     <script>
         (function () {
             const target = document.getElementById('fastcomments-widgets');
-            const tenantId = "demo"; // PON TU TENANT ID AQUÍ
+            const tenantId = "demo"; // PON AQUÍ TU TENANT ID
     
             function setHeading(heading, {name, productID}) {
                 heading.innerHTML = `${name} (${productID})`;
@@ -53,8 +51,8 @@ También podríamos eliminarlos llamando a `instance.destroy` en lugar de update
                 target.append(outer);
                 window.FastCommentsUI(widgetTarget, {
                     "tenantId": tenantId,
-                    "pageTitle": name, // para los correos de notificación y el panel de moderación
-                    "url": productURL, // para los correos de notificación y el panel de moderación
+                    "pageTitle": name, // para correos de notificación y el panel de moderación
+                    "url": productURL, // para correos de notificación y el panel de moderación
                     "urlId": productID,
                     "showLiveRightAway": true
                 });
@@ -78,7 +76,7 @@ También podríamos eliminarlos llamando a `instance.destroy` en lugar de update
                 alert(`Product ${oldId} not found to replace!`);
             }
     
-            // agregar algunos widgets
+            // añadir algunos widgets
             addWidget({name: "Product A", productID: 'product-id-a', productURL: 'https://example.com/a'});
             addWidget({name: "Product B", productID: 'product-id-b', productURL: 'https://example.com/b'});
     
@@ -118,9 +116,7 @@ También podríamos eliminarlos llamando a `instance.destroy` en lugar de update
 
 Esto es similar a cómo funciona la paginación.
 
-Con React y librerías relacionadas podemos simplemente actualizar la configuración y la biblioteca (React, Angular, Vue)
-se encargará de actualizar el widget por nosotros. Con VanillaJS tenemos que gestionarlo nosotros mismos como se muestra.
+Con React y las librerías relacionadas podemos simplemente actualizar la configuración y la librería (React, Angular, Vue)
+se encargará de refrescar el widget por nosotros. Con VanillaJS tenemos que gestionarlo nosotros mismos, como se muestra.
 
-No dudes en hacer cualquier pregunta a continuación y haremos todo lo posible por ayudar!
-
----
+¡No dudes en hacer cualquier pregunta abajo y haremos nuestro mejor esfuerzo por ayudarte!

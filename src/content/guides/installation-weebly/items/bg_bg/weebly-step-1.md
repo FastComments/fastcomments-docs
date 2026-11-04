@@ -1,30 +1,28 @@
-Първо се уверете, че имате добавени няколко публикации в блога на вашия сайт, за да видите резултатите от това ръководство.
+Първо, уверете се, че имате добавени публикации в блога на сайта си, за да видите резултата от това ръководство.
 
-Once ready, we can go ahead and open the Weebly editor, and click `Settings` at the top.
-
-<div class="screenshot white-bg">
-    <div class="title">Отворете настройките</div>
-    <img class="screenshot-image" src="/images/installation-guides/weebly-step-1-1-open-settings.png" alt="Open Settings" />
-</div>
-
-Now let's open the settings for our blog by going to `Blog` on the left:
+Когато сте готови, отворете Weebly редактора и кликнете `Settings` в горната част.
 
 <div class="screenshot white-bg">
-    <div class="title">Отворете настройките на блога</div>
-    <img class="screenshot-image" src="/images/installation-guides/weebly-step-1-2-open-blog-settings.png" alt="Open Blog Settings" />
+    <div class="title">Отваряне на Settings</div>
+    <img class="screenshot-image" src="/images/installation-guides/weebly-step-1-1-open-settings.png" alt="Отваряне на Settings" />
 </div>
 
-Now what we need to do is disable the default Weebly comment system, which we will replace.
-
-**Забележка** ако желаете да мигрирате съществуващите коментари от вашия сайт в Weebly към FastComments, вашият представител за поддръжка може да помогне с тази миграция.
-
-Now let's set the `Commenting system` to `Default` and `Comment Default` to `Closed`:
+Сега нека отворим настройките на блога, като изберем `Blog` отляво:
 
 <div class="screenshot white-bg">
-    <div class="title">Деактивирайте системата по подразбиране</div>
-    <img class="screenshot-image" src="/images/installation-guides/weebly-step-1-3-disable-default.png" alt="Disable The Default System" />
+    <div class="title">Отваряне на настройките на блога</div>
+    <img class="screenshot-image" src="/images/installation-guides/weebly-step-1-2-open-blog-settings.png" alt="Отваряне на настройките на блога" />
 </div>
 
-Next we just have to add the FastComments.com widget code!
+Сега трябва да деактивираме системата за коментари по подразбиране на Weebly, която ще заменим.
 
----
+**Забележка** ако желаете да мигрирате съществуващи коментари от вашия Weebly сайт към FastComments, вашият представител от поддръжката може да помогне с тази миграция.
+
+Сега нека зададем `Commenting system` на `Default` и `Comment Default` на `Closed`:
+
+<div class="screenshot white-bg">
+    <div class="title">Деактивиране на системата по подразбиране</div>
+    <img class="screenshot-image" src="/images/installation-guides/weebly-step-1-3-disable-default.png" alt="Деактивиране на системата по подразбиране" />
+</div>
+
+След това остава само да добавим кода на уиджета на FastComments.com!

@@ -1,4 +1,3 @@
----
 ## Parâmetros
 
 | Nome | Tipo | Obrigatório | Descrição |
@@ -20,5 +19,3 @@ let (maybeResp, httpResp) = client.resetUserNotifications(
 if maybeResp.isSome:
   let resp = maybeResp.get()
 [inline-code-end]
-
----

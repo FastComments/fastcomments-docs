@@ -1,54 +1,54 @@
-User Profiles in FastComments provide a dedicated space for each user to showcase their identity, activity, and contributions across your community.
+Profili uporabnikov v FastComments ponujajo namenski prostor za vsakega uporabnika, kjer lahko predstavi svojo identiteto, aktivnost in prispevke v vaši skupnosti.
 
-### Kaj je uporabniški profil?
+### Kaj je profil uporabnika?
 
-Uporabniški profil je personalizirana stran za vsakega uporabnika FastComments, ki prikazuje:
+Profil uporabnika je personalizirana stran za vsakega uporabnika FastComments, ki prikazuje:
 
-- **Profile Header** - Prilagodljiva ozadna slika, ki personalizira profil
-- **Avatar** - Uporabnikova profilna slika z indikatorjem online/offline statusa
-- **Display Information** - Uporabniško ime, prikazno ime in opcijska državna zastava
-- **Bio** - Osebni opis ali uvod
-- **Social Links** - Povezave do uporabnikovih profilov na družbenih omrežjih in spletne strani
-- **Badges** - Pridobljena priznanja in nagrade
-- **Statistics** - Uporabnikova karma in skupno število komentarjev
-- **Communities** - Na katerih spletnih mestih/domenah je uporabnik aktiven
+- **Glava profila** - Prilagodljiva slika ozadja, ki personalizira profil
+- **Avatar** - Profilna slika uporabnika z indikatorjem stanja (na spletu/izven spleta)
+- **Prikazni podatki** - Uporabniško ime, prikazano ime in neobvezna državna zastava
+- **Bio** - Osebni opis ali predstavitev
+- **Povezave do družbenih omrežij** - Povezave do profilov uporabnika na družbenih omrežjih in njegovega spletnega mesta
+- **Značke** - Dosežki in priznanja
+- **Statistika** - Karma uporabnika in skupno število komentarjev
+- **Skupnosti** - Na katerih spletnih mestih/domenah je uporabnik aktiven
 
-### Dostop do uporabniških profilov
+### Dostop do profilov uporabnikov
 
-Do uporabniškega profila lahko dostopate na več načinov:
+Do profila uporabnika lahko dostopate na več načinov:
 
-1. **Klik na avatar** - V pripomočku za komentarje kliknite avatar katerega koli uporabnika, da si ogledate njegov profil
+1. **Klik na avatar** - V gradniku za komentarje kliknite avatar katerega koli uporabnika za ogled njegovega profila
 2. **Klik na uporabniško ime** - Uporabniška imena v komentarjih so klikljive povezave do profilov
 3. **Neposredni URL** - Obiščite `https://fastcomments.com/auth/user-profile/[userId]`
 
 ### Pogledi profila
 
-Ob ogledu profila boste videli različne zavihke, odvisno od tega, ali gledate svoj profil ali nekoga drugega:
+Pri ogledu profila boste videli različne zavihke, odvisno od tega, ali si ogledujete svoj profil ali profil nekoga drugega:
 
-#### Vaš profil
-- **Notifications** - Vaša obvestila in omembe
-- **Recent Activity** - Vaša zgodovina komentarjev v vseh skupnostih
-- **Profile Comments** - Komentarji, ki so jih drugi pustili na vaši strani profila
-- **Direct Messages** - Zasebni pogovori z drugimi uporabniki
+#### Vaš lastni profil
+- **Obvestila** - Vaša obvestila in omembe
+- **Nedavna aktivnost** - Zgodovina vaših komentarjev v vseh skupnostih
+- **Komentarji na profilu** - Komentarji, ki so jih drugi pustili na vaši strani profila
+- **Neposredna sporočila** - Zasebni pogovori z drugimi uporabniki
 
 #### Profili drugih uporabnikov
-- **Recent Activity** - Njihova javna zgodovina komentarjev (če ni nastavljena kot zasebna)
-- **Profile Comments** - Komentarji na njihovem profilu (če ni nastavljeno kot zasebno)
-- **Direct Messages** - Začnite ali nadaljujte zaseben pogovor (če dovolijo zasebna sporočila)
+- **Nedavna aktivnost** - Njihova javna zgodovina komentarjev (če ni nastavljena kot zasebna)
+- **Komentarji na profilu** - Komentarji na njihovem profilu (če niso nastavljeni kot zasebni)
+- **Neposredna sporočila** - Začnite ali nadaljujte zasebni pogovor (če to dovoljujejo)
 
-### Spletni status
+### Stanje na spletu
 
-Uporabniški profili prikazujejo status prisotnosti v realnem času:
-- **Green indicator** - Uporabnik je trenutno na spletu
-- **No indicator** - Uporabnik je brez povezave
+Profili uporabnikov prikazujejo stanje na spletu v realnem času:
+- **Zeleni indikator** - Uporabnik je trenutno na spletu
+- **Brez indikatorja** - Uporabnik ni na spletu
 
-To vam pomaga vedeti, kdaj je nekdo aktiven na platformi, kar je še posebej uporabno pri zasebnih sporočilih.
+To vam pomaga vedeti, kdaj nekdo aktivno uporablja platformo, kar je še posebej uporabno za neposredna sporočila.
 
 ### Vrste uporabnikov
 
 FastComments podpira dve vrsti uporabnikov s profili:
 
-1. **Regular Users** - Uporabniki, ki so se prijavili neposredno pri FastComments
-2. **SSO Users** - Uporabniki, ki se overijo prek integracije enkratne prijave (Single Sign-On) vašega spletnega mesta
+1. **Navadni uporabniki** - Uporabniki, ki so se registrirali neposredno pri FastComments
+2. **SSO uporabniki** - Uporabniki, ki se avtentikirajo prek integracije Single Sign-On na vašem spletnem mestu
 
-Obe vrsti uporabnikov imata dostop do celotnega sistema profilov, čeprav imajo SSO uporabniki morda omejitve pri urejanju določenih polj (na primer avatarjev), odvisno od vaše konfiguracije SSO.
+Oba tipa uporabnikov imata dostop do celotnega sistema profilov, čeprav imajo SSO uporabniki lahko določene omejitve pri urejanju nekaterih polj (kot so avatarji), odvisno od vaše SSO konfiguracije.

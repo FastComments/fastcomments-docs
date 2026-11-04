@@ -1,4 +1,4 @@
-Below is the Vanilla JS code for installing the Summary Widget. The React library also has this widget.
+Aşağıda, Özet Widget'ını kurmak için gereken Vanilla JS kodu yer almaktadır. React kütüphanesinde de bu widget bulunmaktadır.
 
 [inline-code-attrs-start title = 'Özet Widget Kurulumu'; type = 'html'; isFunctional = true; type = 'html';  inline-code-attrs-end]
 [inline-code-start]
@@ -11,12 +11,12 @@ Below is the Vanilla JS code for installing the Summary Widget. The React librar
 </script>
 [inline-code-end]
 
-The widget will automatically find the questions to show in the summary based on the corresponding widget configuration for that page/site.
+Widget, ilgili sayfa/site için karşılık gelen widget yapılandırmasına dayanarak özette gösterilecek soruları otomatik olarak bulacaktır.
 
-### Yorumları Puanına Göre Filtreleme
+### Yorumları Puana Göre Filtreleme
 
-When the comment widget for the same page is also on the page, and it is configured to show each commenter's answer on their comment, the rows of the breakdown become clickable. Clicking a row, for example "5", filters the comment widget to the comments that gave that answer. Clicking the row again, or the X on the "Showing only" chip in the comment widget, shows all the comments again. This needs no configuration: the Summary Widget finds the comment widget with the same `tenantId` and `urlId`.
+Aynı sayfanın yorum widget'ı da sayfada bulunuyorsa ve her yorumcunun cevabının yorumunda gösterilmesi şekilde yapılandırılmışsa, dökümdeki satırlar tıklanabilir hale gelir. Örneğin "5" satırına tıklamak, yorum widget'ını o cevabı veren yorumlara filtreler. Satıra tekrar tıklamak veya yorum widget'ındaki "Yalnızca gösteriliyor" etiketindeki X'e tıklamak, tüm yorumları tekrar gösterir. Bu, yapılandırma gerektirmez: Özet Widget'ı, aynı `tenantId` ve `urlId` değerlerine sahip yorum widget'ını bulur.
 
-This works for star, thumbs, emoji, scale and single choice questions. The breakdown the comment widget shows above the comment box can be clicked the same way.
+Bu, yıldız, başparmak, emoji, ölçek ve tek seçimli sorular için çalışır. Yorum widget'ının yorum kutusunun üzerinde gösterdiği döküm de aynı şekilde tıklanabilir.
 
-If you require the widget in one of our other libraries that does not have it, file a support ticket so that we know to add it.
+Widget'ı, sahip olmadığımız diğer kütüphanelerimizden birinde istiyorsanız, eklememiz gerektiğini bilmemiz için bir destek talebi oluşturun.

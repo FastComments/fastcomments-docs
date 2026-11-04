@@ -26,5 +26,3 @@ async fn unpin_example(configuration: &configuration::Configuration) -> Result<(
     Ok(())
 }
 [inline-code-end]
-
----

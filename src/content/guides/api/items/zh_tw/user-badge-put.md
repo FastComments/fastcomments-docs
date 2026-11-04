@@ -1,4 +1,3 @@
----
 此端點允許您更新使用者徽章指派。
 
 目前，唯一可更新的屬性是 `displayedOnComments`，它用來控制該徽章是否在使用者的評論上顯示。
@@ -51,4 +50,3 @@ Possible Error Responses:
   "reason": "The user badge badge123 was not found."
 }
 [inline-code-end]
----

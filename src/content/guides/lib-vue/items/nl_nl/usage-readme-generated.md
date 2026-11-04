@@ -1,4 +1,3 @@
----
 ### De Reactie-widget
 
 De FastCommentsVue-component bevat de live FastComments-reactie-widget.
@@ -26,4 +25,3 @@ export default Vue.extend({
   </div>
 </template>
 ```
----

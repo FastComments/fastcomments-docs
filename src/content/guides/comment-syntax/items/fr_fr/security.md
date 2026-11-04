@@ -43,5 +43,3 @@ Les balises HTML que nous autorisons sont les suivantes :
 - `<br>`
 
 La balise `<iframe>` n'est pas autorisée par défaut. Si vous activez Autoriser l'intégration de médias, les iframes sont également autorisés, mais uniquement lorsque leur source figure parmi une liste intégrée de fournisseurs de confiance (tels que YouTube, Vimeo, SoundCloud et Spotify) ou un nom d'hôte que vous avez explicitement ajouté. Les iframes provenant de toute autre source sont supprimés.
-
----

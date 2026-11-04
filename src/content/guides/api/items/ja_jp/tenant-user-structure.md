@@ -50,5 +50,3 @@ export interface TenantUser {
     karma?: number
 }
 [inline-code-end]
-
----

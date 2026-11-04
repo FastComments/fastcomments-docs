@@ -1,4 +1,3 @@
----
 Ora che abbiamo il tema aperto nel nostro editor, apri `package.json` e modifica il campo `name` con qualcos'altro. Nel nostro caso aggiungiamo semplicemente `-fastcomments` alla fine:
 
 <div class="screenshot white-bg">
@@ -7,5 +6,3 @@ Ora che abbiamo il tema aperto nel nostro editor, apri `package.json` e modifica
 </div>
 
 Se stai usando un IDE, si salverà automaticamente dopo aver apportato questa modifica.
-
----

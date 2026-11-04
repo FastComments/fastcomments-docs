@@ -1,4 +1,3 @@
----
 Identifie les informations d’identification utilisées : le locataire auquel elles appartiennent et, pour les jetons OAuth, l’utilisateur qui les a autorisées.  
 Les intégrations utilisent cela pour tester une connexion et l’étiqueter.
 
@@ -32,5 +31,3 @@ DefaultAPI.getMe(tenantId: tenantId) { (response, error) in
     }
 }
 [inline-code-end]
-
----

@@ -20,5 +20,3 @@
 [code-example-start config = {extensions: [{id: "my-extension", path: "https://example.com/my-extension.min.js"}]}; linesToHighlight = [6,7,8,9,10,11]; title = 'Using a Custom Extension'; code-example-end]
 
 機能的な例については、次のセクションを参照してください。
-
----

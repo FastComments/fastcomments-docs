@@ -25,5 +25,3 @@ Isso pode ser sobrescrito com um locale desejado.
 ### Observação sobre SSO
 
 Se você estiver usando SSO, talvez queira passar o locale do usuário no objeto do usuário, para que e‑mails e outras coisas sejam localizados corretamente para ele.
-
----

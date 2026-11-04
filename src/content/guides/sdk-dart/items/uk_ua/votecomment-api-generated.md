@@ -35,5 +35,3 @@ try {
     print('Exception when calling PublicApi->voteComment: $e\n');
 }
 [inline-code-end]
-
----

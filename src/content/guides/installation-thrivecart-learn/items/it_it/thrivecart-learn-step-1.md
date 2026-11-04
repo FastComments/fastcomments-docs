@@ -1,4 +1,3 @@
----
 A causa del funzionamento di ThriveCart Learn+, dobbiamo inserire il codice FastComments in ogni pagina del corso in cui vogliamo visualizzare i commenti.
 
 Possiamo usare lo stesso frammento di codice su ogni pagina, e i thread di commenti separati saranno automaticamente collegati a ciascuna pagina.
@@ -15,5 +14,3 @@ Sulla sinistra dovresti vedere un'opzione per un blocco HTML. Trascinala nella p
 Ora seleziona il nuovo elemento HTML. Apparirà un blocco sulla sinistra dove possiamo incollare il nostro codice.
 
 Ora sei pronto per il Passo 2.
-
----

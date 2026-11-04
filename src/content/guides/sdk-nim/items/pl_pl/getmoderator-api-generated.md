@@ -18,5 +18,3 @@ if moderatorOpt.isSome:
   let moderator = moderatorOpt.get()
   discard moderator
 [inline-code-end]
-
----

@@ -48,5 +48,3 @@ interface ModeratorPatchResponse {
     reason?: string
 }
 [inline-code-end]
-
----

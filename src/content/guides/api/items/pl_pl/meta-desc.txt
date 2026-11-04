@@ -1,3 +1,1 @@
----
 Twórz, pobieraj, moderuj i eksportuj komentarze przez HTTP. Każdy endpoint FastComments wraz z typami żądań i odpowiedzi, w tym głosy, użytkownicy i strony.
----

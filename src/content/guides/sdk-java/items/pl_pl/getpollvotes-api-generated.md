@@ -1,19 +1,19 @@
-The individual votes behind one poll's tallies, oldest first.
+Pojedyncze głosy stojące za wynikami jednej ankiety, od najstarszych.
 
-A poll belongs to a comment, so votes are always read one poll at a time - commentId is required. That
-keeps every query on the indexes the collection already has.
+Ankieta należy do komentarza, więc głosy są zawsze odczytywane dla jednej ankiety naraz - commentId jest wymagane. Dzięki
+to każde zapytanie korzysta z indeksów, które kolekcja już posiada.
 
-Obeys the poll's privacy: an anonymous poll's votes cannot be read (poll-anonymous), here or by id.
+Respektuje prywatność ankiety: głosów w anonimowej ankiecie nie można odczytać (poll-anonymous), ani tutaj, ani po id.
 
-## Parameters
+## Parametry
 
-| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
+| Nazwa | Typ | Lokalizacja | Wymagany | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| commentId | string | query | Yes |  |
-| voterId | string | query | No |  |
-| optionId | string | query | No |  |
-| skip | integer | query | No |  |
+| tenantId | string | query | Tak |  |
+| commentId | string | query | Tak |  |
+| voterId | string | query | Nie |  |
+| optionId | string | query | Nie |  |
+| skip | integer | query | Nie |  |
 
 ## Odpowiedź
 
@@ -23,7 +23,7 @@ Zwraca: [`GetPollVotesResponse`](https://github.com/FastComments/fastcomments-ja
 
 [inline-code-attrs-start title = 'Przykład getPollVotes'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importuj klasy:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -36,10 +36,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Skonfiguruj autoryzację klucza API: api_key
+    // Configure API key authorization: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Odkomentuj poniższą linię, aby ustawić prefiks dla klucza API, np. "Token" (defaults to null)
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);

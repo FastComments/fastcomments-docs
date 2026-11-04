@@ -1,8 +1,7 @@
----
-Solid følger ikke automatisk dybe mutationer på vilkårlige objekter, så
-konfigurationsændringer efter den første render skal skubbes eksplicit. Hvert widget
-accepterer en `apiRef` som returnerer et håndtag; kald `handle.update(partial)` fra
-et `createEffect` for at drive reaktivitet:
+Solid sporer ikke automatisk dybe mutationer på vilkårlige objekter, så
+konfigurationsændringer efter første render skal pushes eksplicit. Hver widget
+accepterer en `apiRef`, der returnerer et handle; kald `handle.update(partial)` fra
+en `createEffect` for at drive reaktivitet:
 
 ```tsx
 import { createEffect, createSignal } from 'solid-js';
@@ -26,26 +25,25 @@ export default function Paginated() {
 }
 ```
 
-`update()` er sikkert at kalde når som helst:
-- Before the script has loaded: the partial is stashed and applied at init.
-- During an async init (reviews-summary, user-activity-feed): the partial is queued and applied when the callback resolves.
-- After init: it forwards straight to the live widget's `.update()` method.
+`update()` kan trygt kaldes når som helst:
+- Før scriptet er indlæst: den partielle konfiguration gemmes og anvendes ved init.
+- Under en asynkron init (reviews-summary, user-activity-feed): den partielle konfiguration sættes i kø og anvendes, når callback'en resolves.
+- Efter init: den videresendes direkte til den live widgets `.update()`-metode.
 
-### Imperativt handle API
+### Imperativt handle-API
 
 ```ts
 interface WidgetHandle<Config> {
   getInstance: () => WidgetInstance | null;   // seneste live-instans (eller null før mount)
-  onInstance: (cb: (instance: WidgetInstance) => void) => void; // kaldes når instansen er klar
-  update: (partial: Partial<Config>) => void; // slå config sammen og skub den
+  onInstance: (cb: (instance: WidgetInstance) => void) => void; // udløses én gang, når instansen er klar
+  update: (partial: Partial<Config>) => void; // merge-and-push konfiguration
 }
 ```
 
-Brug `getInstance()` til imperative handlinger, som ikke dækkes af `.update()`, f.eks. `openProfile`:
+Brug `getInstance()` til imperative handlinger, der ikke er dækket af `.update()`, f.eks. `openProfile`:
 
 ```tsx
 const openProfile = () =>
   (handle?.getInstance() as { openProfile?: (o: { userId: string }) => void } | null)
     ?.openProfile?.({ userId: 'demo' });
 ```
----

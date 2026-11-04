@@ -1,43 +1,43 @@
-Прво, хајде да креирамо прилагођену тему коју ћемо уредити. Ако већ имате подешену прилагођену тему, можете прескочити овај корак.
+Прво, хајде да направимо прилагођену тему коју ћемо уређивати. Ако већ имате подешену прилагођену тему, можете прескочити овај корак.
 
-To do this, we will go to `Storefront` and then `Themes`.
+Да бисмо то урадили, ићи ћемо на `Storefront`, а затим на `Themes`.
 
 <div class="screenshot white-bg">
-    <div class="title">Изаберите Storefront</div>
-    <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-1-select-storefront.png" alt="Select Storefront" />
+    <div class="title">Избор Storefront</div>
+    <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-1-select-storefront.png" alt="Избор Storefront" />
 </div>
 
 <div class="screenshot white-bg">
-    <div class="title">Изаберите Themes</div>
-    <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-1-select-themes.png" alt="Select Themes" />
+    <div class="title">Избор Themes</div>
+    <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-1-select-themes.png" alt="Избор Themes" />
 </div>
 
 За потребе овог упутства користићемо подразумевану тему, али упутства су иста за све теме.
 
-Next, we are **not** going to click Customize. Instead, click `Advanced` and `Make a Copy`.
+Затим, **нећемо** кликнути на Customize. Уместо тога, кликните на `Advanced` и `Make a Copy`.
 
 <div class="screenshot white-bg">
-    <div class="title">Make a Copy</div>
-    <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-1-select-make-a-copy.png" alt="Make a Copy" />
+    <div class="title">Направи копију</div>
+    <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-1-select-make-a-copy.png" alt="Направи копију" />
 </div>
 
 Потврдите копирање теме:
 
 <div class="screenshot white-bg">
-    <div class="title">Save The Copy</div>
-    <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-1-save-copy.png" alt="Save The Copy" />
+    <div class="title">Сачувај копију</div>
+    <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-1-save-copy.png" alt="Сачувај копију" />
 </div>
 
-Када се заврши, требало би да видите вашу тему наведну под `Themes` на дну странице, као у наставку.
+Када завршите, требало би да видите своју тему наведену под `Themes` на дну странице, овако.
 
 <div class="screenshot white-bg">
-    <div class="title">Прилагођена тема је креирана</div>
-    <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-1-custom-theme-created.png" alt="Custom Theme Created" />
+    <div class="title">Прилагођена тема је направљена</div>
+    <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-1-custom-theme-created.png" alt="Прилагођена тема је направљена" />
 </div>
 
 Сада можемо уредити нашу нову тему да додамо FastComments.
 
 <div class="screenshot white-bg">
-    <div class="title">Уреди фајлове теме</div>
-    <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-1-edit-theme-files.png" alt="Edit Theme Files" />
+    <div class="title">Уређивање датотека теме</div>
+    <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-1-edit-theme-files.png" alt="Уређивање датотека теме" />
 </div>

@@ -1,4 +1,3 @@
----
 Questo è tutto! Dovresti ora avere i commenti in tempo reale aggiunti al tuo corso GoHighLevel.
 
 <div class="screenshot white-bg">
@@ -7,5 +6,3 @@ Questo è tutto! Dovresti ora avere i commenti in tempo reale aggiunti al tuo co
 </div>
 
 Se hai riscontrato un errore di permesso negato, o desideri personalizzare FastComments, continua a leggere.
-
----

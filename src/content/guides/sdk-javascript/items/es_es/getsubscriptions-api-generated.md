@@ -21,5 +21,3 @@ Devuelve: [`GetSubscriptionsAPIResponse`](https://github.com/FastComments/fastco
     const responseWithoutUser: GetSubscriptionsAPIResponse = await getSubscriptions(tenantId);
 })();
 [inline-code-end]
-
----

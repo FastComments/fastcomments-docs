@@ -1,4 +1,3 @@
----
 ## פרמטרים
 
 | שם | סוג | נדרש | תיאור |
@@ -18,5 +17,3 @@ if domainConfigsOpt.isSome:
   let domainConfigs = domainConfigsOpt.get()
   echo domainConfigs
 [inline-code-end]
-
----

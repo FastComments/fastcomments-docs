@@ -1,4 +1,3 @@
----
 De plugin ondersteunt drie commentaarstijlen. U kunt dit configureren in de plugininstellingen.
 
 #### Reacties
@@ -27,5 +26,3 @@ Beide modi actief tegelijk. De reactie-widget verschijnt onder de paginainhoud, 
     <div class="title">Collab Chat + Reacties Samen</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-page-comments.png" alt="FastComments Collab Chat en Reacties op Moodle" />
 </div>
-
----

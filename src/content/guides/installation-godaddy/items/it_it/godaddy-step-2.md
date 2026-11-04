@@ -39,5 +39,3 @@ Premi Fatto in alto a destra:
 </div>
 
 Questo è tutto per il secondo passo!
-
----

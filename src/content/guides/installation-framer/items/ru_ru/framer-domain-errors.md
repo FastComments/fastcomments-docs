@@ -10,5 +10,3 @@
 В этом случае исправление простое. Вам нужно просто добавить ваш сайт в аккаунт FastComments.com.
 
 [Перейдите сюда, чтобы добавить ваш сайт в аккаунт.](https://fastcomments.com/auth/my-account/configure-domains)
-
----

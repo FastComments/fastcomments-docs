@@ -1,4 +1,3 @@
----
 Včasih FastComments mora poslati e‑pošto vašim uporabnikom, še posebej, če ne uporabljate varnega SSO.
 
 Primeri tega vključujejo preverjanje njihovega računa ali dejavnosti, ko komentirajo prvič. FastComments jim bo prav tako poslal obvestila o odgovorih na njihove komentarje.

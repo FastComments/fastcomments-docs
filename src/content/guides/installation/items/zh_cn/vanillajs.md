@@ -13,5 +13,3 @@ The VanillaJS 版本的 widget 是向您的网站添加评论的最简单方式�
 您可以在 <a href="/guide-customizations-and-configuration.html" target="_blank">此处</a> 找到有关配置该组件的文档。
 
 所有版本的 FastComments widget 都是围绕核心 VanillaJS 库的封装。这使我们能够在一个地方添加功能并修复问题——更改会自动传播到评论组件的其他变体。
-
----

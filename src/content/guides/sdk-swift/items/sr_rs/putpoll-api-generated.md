@@ -1,28 +1,26 @@
-Attach a poll to a comment, or set the full state of the poll it already has.
+Прикачите анкету на коментар или поставите целокупно стање анкете коју већ има.
 
-Options are matched by id: an option sent with the id of an existing option keeps its votes (and takes the
-new label and position), an option sent without an id is added, and existing options left out of the list
-are removed along with the votes cast on them.
+Опције се упарују по id: опција послата са id постојеће опције задржава своје гласове (и добија нову ознаку и позицију), опција послата без id се додаје, а постојеће опције које нису наведене на листи се уклањају заједно са гласовима датим на њима.
 
-Keeping no existing option ids on a poll that has votes deletes all of them, so that needs replaceVotes=true.
+Ако се на анкети која има гласове не задржи ниједан постојећи id опције, сви гласови се бришу, тако да то захтева replaceVotes=true.
 
-## Parameters
+## Параметри
 
-| Име | Тип | Локација | Обавезно | Опис |
-|------|------|----------|----------|------|
+| Назив | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | commentId | string | path | Да |  |
 | replaceVotes | boolean | query | Не |  |
 
 ## Одговор
 
-Returns: [`SavePollResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/SavePollResponse.swift)
+Враћа: [`SavePollResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/SavePollResponse.swift)
 
 ## Пример
 
-[inline-code-attrs-start title = 'putPoll Пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'putPoll пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следећи примери кода су још у бета фази. За било који проблем, молимо пријавите га преко http://github.com/OpenAPITools/openapi-generator/issues/new
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -41,5 +39,3 @@ DefaultAPI.putPoll(tenantId: tenantId, commentId: commentId, commentPollPutInput
     }
 }
 [inline-code-end]
-
----

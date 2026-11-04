@@ -1,4 +1,3 @@
----
 ## Parametreler
 
 | Ad | Tür | Gerekli | Açıklama |
@@ -21,5 +20,3 @@ if flagRes.isSome:
   let res = flagRes.get()
   discard res
 [inline-code-end]
-
----

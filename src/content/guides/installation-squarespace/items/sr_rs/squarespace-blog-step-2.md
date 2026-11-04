@@ -1,4 +1,3 @@
----
 Сада можемо копирати следећи исечак кода (користите дугме за копирање у горњем десном углу исечка):
 
 [inline-code-attrs-start title = 'Код коментара за Squarespace блог'; type = 'html'; isFunctional = false; inline-code-attrs-end]
@@ -32,5 +31,3 @@
     <div class="title">Налепите и сачувајте</div>
     <img class="screenshot-image" src="/images/installation-guides/squarespace-step-2-1-add-code-and-save.png" alt="Налепите и сачувајте" />
 </div>
-
----

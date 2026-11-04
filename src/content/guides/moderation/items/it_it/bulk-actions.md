@@ -12,5 +12,3 @@ essere messe in pausa, interrotte o riprese.
 Se selezioni la casella "Seleziona tutto" per impostazione predefinita verranno selezionati solo i commenti visibili nella pagina, ma ti verrà
 presentata un'opzione per selezionare tutti i commenti sul server che corrispondono ai tuoi filtri. Quindi anche se devi approvare, eliminare, ecc.
 milioni di commenti, puoi farlo con pochi clic.
-
----

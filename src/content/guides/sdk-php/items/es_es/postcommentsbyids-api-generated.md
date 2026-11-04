@@ -36,5 +36,3 @@ try {
     echo 'Exception when calling ModerationApi->postCommentsByIds: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

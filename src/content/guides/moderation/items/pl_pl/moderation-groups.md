@@ -1,16 +1,16 @@
-Moderators can be placed into groups to moderate different pages or categories of content.
+Moderatorzy mogą być przypisywani do grup w celu moderowania różnych stron lub kategorii treści.
 
-When a Moderator belongs to one or more groups, they will only see comments from those groups in the Moderate Comments page.
+Gdy Moderator należy do jednej lub więcej grup, będzie widział komentarze tylko z tych grup na stronie Moderate Comments.
 
-For example, let's say we run a site that displays videos by category. We may want to have different moderators for Cat, Dog, and Parrot videos, so [let's add those groups](https://fastcomments.com/auth/my-account/moderate-comments/moderation-groups).
+Na przykład, załóżmy, że prowadzimy stronę wyświetlającą filmy wideo według kategorii. Możemy chcieć mieć różnych moderatorów dla filmów o kotach, psach i papugach, więc [dodajmy te grupy](https://fastcomments.com/auth/my-account/moderate-comments/moderation-groups).
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/moderation-groups?demo=true'; linkUrl='/auth/my-account/moderate-comments/moderation-groups'; selector = '.content'; alt='Lista grup moderacji z grupami Kot, Pies i Papuga utworzonymi dla każdej kategorii wideo'; title='Strona grup moderacji' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/moderation-groups?demo=true'; linkUrl='/auth/my-account/moderate-comments/moderation-groups'; selector = '.content'; alt='Lista grup moderacyjnych z utworzonymi grupami Cat, Dog i Parrot dla każdej kategorii filmów'; title='Strona grup moderacyjnych' app-screenshot-end]
 
-When we add a moderator, we now have the option to select one or more groups the moderator will belong to:
+Gdy dodajemy moderatora, mamy teraz możliwość wybrania jednej lub więcej grup, do których moderator będzie należał:
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/moderator/new?demo=true'; linkUrl='/auth/my-account/moderate-comments/moderator/new'; selector = '.account-block'; alt='Formularz dodawania moderatora z selektorem grup używanym do przypisania moderatora do jednej lub wielu grup'; title='Dodawanie moderatora i wybieranie grupy' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/moderator/new?demo=true'; linkUrl='/auth/my-account/moderate-comments/moderator/new'; selector = '.account-block'; alt='Formularz dodawania moderatora z selektorem grup służącym do przypisania moderatora do jednej lub więcej grup'; title='Dodawanie moderatora i wybieranie grupy' app-screenshot-end]
 
-Finally, comments need to be tied to one or more groups so that the correct moderators see them.
+Na koniec, komentarze muszą być powiązane z jedną lub więcej grupami, aby widzieli je właściwi moderatorzy.
 
-This can be setup by [adding some groups](https://fastcomments.com/auth/my-account/moderate-comments/moderation-groups) and then specifying the corresponding `Moderation Group` ids in the comment widget,
-[as instructed here](/guide-customizations-and-configuration.html#moderation-group-ids).
+Można to skonfigurować poprzez [dodanie grup](https://fastcomments.com/auth/my-account/moderate-comments/moderation-groups), a następnie określenie odpowiednich identyfikatorów `Moderation Group` w widżecie komentarzy,
+[ zgodnie z instrukcjami tutaj](/guide-customizations-and-configuration.html#moderation-group-ids).

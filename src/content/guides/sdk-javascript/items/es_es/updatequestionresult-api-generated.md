@@ -28,5 +28,3 @@ const updateBody: UpdateQuestionResultBody = {
 
 const response: APIEmptyResponse = await updateQuestionResult(tenantId, questionId, updateBody);
 [inline-code-end]
-
----

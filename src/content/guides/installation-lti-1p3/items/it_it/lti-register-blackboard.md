@@ -24,5 +24,3 @@ Blackboard contrassegna gli strumenti appena registrati come **Approvato ma escl
 4. Sotto **Politiche dell'istituzione**, verifica quali dati utente vengono inviati (nome, email, ruolo). Salva.
 
 Lo strumento è ora disponibile per i docenti quando aggiungono contenuti ai corsi.
-
----

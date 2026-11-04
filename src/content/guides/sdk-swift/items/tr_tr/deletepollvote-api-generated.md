@@ -1,4 +1,3 @@
----
 Oy birimini geri al. Oy verilen seçenek, sayısını geri verir.
 
 ## Parametreler
@@ -33,5 +32,3 @@ DefaultAPI.deletePollVote(tenantId: tenantId, id: id) { (response, error) in
     }
 }
 [inline-code-end]
-
----

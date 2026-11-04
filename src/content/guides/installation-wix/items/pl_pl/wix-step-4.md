@@ -6,5 +6,3 @@ Teraz, gdy dodaliśmy widżet komentarzy, ustawmy go na naszej stronie.
 </div>
 
 Dzięki temu samouczkowi będziemy mogli zmieniać bieżący wątek w zależności od aktywnej strony. Jednak nie będziemy mogli dynamicznie zmieniać rozmiaru widżetu komentarzy, dopóki Wix nie udostępni tej funkcjonalności. Do tego czasu będziesz musiał zdecydować, jak duży ma być obszar komentarzy na Twojej stronie i odpowiednio go rozmiarować.
-
----

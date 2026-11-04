@@ -1,4 +1,3 @@
----
 Podemos configurar o FastComments para notificar o Google Analytics 4 quando alguém interagir com o widget de comentários.
 
 Podemos rastrear quando os usuários:
@@ -36,5 +35,3 @@ Isso adicionará dois eventos:
 
 - Rótulo: `Comment Posted`, Categoria: `Engagement`, ID: `post_comment`
 - Rótulo: `User Voted on a Comment`, Categoria: `Engagement`, ID: `vote_comment`
-
----

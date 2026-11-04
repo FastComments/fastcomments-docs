@@ -1,107 +1,107 @@
-Dopo aver configurato SAML in FastComments, è necessario configurare FastComments come Service Provider nel vostro identity provider.
+Dopo aver configurato SAML in FastComments, è necessario configurare FastComments come Service Provider nel proprio identity provider.
 
-### General IdP Configuration
+### Configurazione generale dell'IdP
 
 La maggior parte degli identity provider richiede le seguenti informazioni per aggiungere FastComments come applicazione SAML:
 
-#### Required Service Provider Information
+#### Informazioni richieste sul Service Provider
 
-Questi valori vengono generati automaticamente e mostrati nella pagina di configurazione SAML di FastComments:
+Questi valori vengono generati automaticamente e visualizzati nella pagina di configurazione SAML di FastComments:
 
 **SP Entity ID / Audience**
-- Format: `https://fastcomments.com/saml/{your-tenant-id}`
-- Questo identifica in modo univoco la vostra istanza FastComments
+- Formato: `https://fastcomments.com/saml/{your-tenant-id}`
+- Identifica in modo univoco la propria istanza FastComments
 
 **Assertion Consumer Service (ACS) URL**
-- Format: `https://fastcomments.com/saml/callback/{your-tenant-id}`
-- Dove il vostro IdP invia le risposte SAML dopo l'autenticazione
+- Formato: `https://fastcomments.com/saml/callback/{your-tenant-id}`
+- Dove l'IdP invia le risposte SAML dopo l'autenticazione
 
-**SP Metadata URL** *(if supported by your IdP)*
-- Format: `https://fastcomments.com/saml/metadata/{your-tenant-id}`
+**SP Metadata URL** *(se supportato dal proprio IdP)*
+- Formato: `https://fastcomments.com/saml/metadata/{your-tenant-id}`
 - Fornisce la configurazione SAML completa in formato XML
 
 **SAML Login URL**
-- Format: `https://fastcomments.com/saml/login/{your-tenant-id}`
-- Link diretto per iniziare l'autenticazione SAML
+- Formato: `https://fastcomments.com/saml/login/{your-tenant-id}`
+- Link diretto per avviare l'autenticazione SAML
 
-### Required SAML Attributes
+### Attributi SAML richiesti
 
-Configura il tuo identity provider per inviare questi attributi con le risposte SAML:
+Configurare l'identity provider per inviare questi attributi con le risposte SAML:
 
-#### Essential Attributes
+#### Attributi essenziali
 
-**Email Address** *(Required)*
-- **Attribute Name**: `email`, `emailAddress`, or `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`
-- **Purpose**: Identificazione univoca dell'utente e notifiche
-- **Format**: Indirizzo email valido
+**Indirizzo Email** *(Richiesto)*
+- **Nome attributo**: `email`, `emailAddress`, oppure `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`
+- **Scopo**: Identificazione univoca dell'utente e notifiche
+- **Formato**: Indirizzo email valido
 
-#### Optional Attributes
+#### Attributi opzionali
 
-**First Name**
-- **Attribute Names**: `firstName`, `givenName`, or `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname`
-- **Purpose**: Nome visualizzato dell'utente
+**Nome**
+- **Nomi attributo**: `firstName`, `givenName`, oppure `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname`
+- **Scopo**: Nome visualizzato dall'utente
 
-**Last Name**
-- **Attribute Names**: `lastName`, `surname`, or `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname`
-- **Purpose**: Cognome visualizzato dell'utente
+**Cognome**
+- **Nomi attributo**: `lastName`, `surname`, oppure `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname`
+- **Scopo**: Nome visualizzato dall'utente
 
-**Roles** *(Important for access control)*
-- **Attribute Names**: `roles`, `groups`, `memberOf`, or custom attribute names
-- **Purpose**: Assegnazione ruoli e permessi in FastComments
-- **Format**: Array di stringhe di ruolo o valori separati da virgola
+**Ruoli** *(Importante per il controllo degli accessi)*
+- **Nomi attributo**: `roles`, `groups`, `memberOf`, oppure nomi di attributi personalizzati
+- **Scopo**: Assegnazione dei ruoli e permessi in FastComments
+- **Formato**: Array di stringhe di ruoli o valori separati da virgole
 
-### Common Identity Provider Configurations
+### Configurazioni comuni degli identity provider
 
 #### Microsoft Azure AD
 
-1. **Add Enterprise Application**
-   - Cerca "FastComments" o crea una applicazione SAML personalizzata
-   - Usa le informazioni SP fornite da FastComments
+1. **Aggiungi applicazione aziendale**
+   - Cercare "FastComments" o creare un'applicazione SAML personalizzata
+   - Utilizzare le informazioni SP fornite da FastComments
 
-2. **Configure Attributes**
-   - Email: `user.mail` or `user.userprincipalname`
-   - First Name: `user.givenname`
-   - Last Name: `user.surname`
-   - Roles: `user.assignedroles` or directory groups
+2. **Configura attributi**
+   - Email: `user.mail` oppure `user.userprincipalname`
+   - Nome: `user.givenname`
+   - Cognome: `user.surname`
+   - Ruoli: `user.assignedroles` oppure gruppi della directory
 
 #### Okta
 
-1. **Create SAML Application**
-   - Usa "Create New App" e seleziona SAML 2.0
-   - Configura con le informazioni SP di FastComments
+1. **Crea applicazione SAML**
+   - Utilizzare "Create New App" e selezionare SAML 2.0
+   - Configurare con le informazioni SP di FastComments
 
 2. **Attribute Statements**
    - Email: `user.email`
    - FirstName: `user.firstName`
    - LastName: `user.lastName`
-   - Roles: `user.groups` or custom attributes
+   - Ruoli: `user.groups` oppure attributi personalizzati
 
 #### Google Workspace
 
-1. **Add SAML Application**
-   - Vai su Apps > Web and mobile apps > Add App > Add custom SAML app
-   - Configura con le informazioni SP di FastComments
+1. **Aggiungi applicazione SAML**
+   - Andare su App > App Web e mobile > Aggiungi app > Aggiungi app SAML personalizzata
+   - Configurare con le informazioni SP di FastComments
 
-2. **Attribute Mapping**
-   - Email: Primary email
-   - First Name: First name
-   - Last Name: Last name
-   - Roles: Groups or custom attributes
+2. **Mappatura degli attributi**
+   - Email: Email principale
+   - Nome: Nome
+   - Cognome: Cognome
+   - Ruoli: Gruppi oppure attributi personalizzati
 
 #### Active Directory Federation Services (ADFS)
 
-1. **Add Relying Party Trust**
-   - Usa l'URL dei metadata di FastComments o la configurazione manuale
-   - Configura le informazioni SP come fornite
+1. **Aggiungi Relying Party Trust**
+   - Utilizzare l'URL dei metadati di FastComments o la configurazione manuale
+   - Configurare le informazioni SP come fornite
 
-2. **Claim Rules**
-   - Email: Email Address claim
-   - Name: Name ID claim
-   - Roles: Group membership or custom claims
+2. **Regole di attestazione (Claim Rules)**
+   - Email: Attestazione Email Address
+   - Nome: Attestazione Name ID
+   - Ruoli: Appartenenza a gruppi oppure attestazioni personalizzate
 
-### Attribute Name Flexibility
+### Flessibilità dei nomi degli attributi
 
-FastComments accetta le informazioni sui ruoli da più nomi di attributo per adattarsi a diverse configurazioni di IdP:
+FastComments accetta informazioni sui ruoli da più nomi di attributi per adattarsi a diverse configurazioni IdP:
 
 - `roles`
 - `groups`
@@ -111,16 +111,16 @@ FastComments accetta le informazioni sui ruoli da più nomi di attributo per ada
 - `http://schemas.microsoft.com/ws/2008/06/identity/claims/role`
 - `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/role`
 
-Questa flessibilità garantisce la compatibilità con vari identity provider senza richiedere convenzioni di denominazione specifiche per gli attributi.
+Questa flessibilità garantisce la compatibilità con vari identity provider senza richiedere convenzioni di denominazione degli attributi specifiche.
 
-### Testing Your Configuration
+### Test della configurazione
 
-Dopo aver configurato il vostro identity provider:
+Dopo aver configurato l'identity provider:
 
-1. Salva la configurazione IdP
-2. Testa con un account utente dedicato per i test
-3. Verifica che gli attributi vengano inviati correttamente
-4. Controlla che i ruoli siano mappati correttamente
-5. Assicurati che il flusso di autenticazione venga completato con successo
+1. Salvare la configurazione dell'IdP
+2. Effettuare un test con un account utente di test dedicato
+3. Verificare che gli attributi vengano inviati correttamente
+4. Controllare che i ruoli siano mappati correttamente
+5. Assicurarsi che il flusso di autenticazione si completi con successo
 
-La maggior parte degli identity provider offre strumenti di test SAML per convalidare la configurazione prima di distribuirla agli utenti di produzione.
+La maggior parte degli identity provider offre strumenti di test SAML per validare la configurazione prima del rilascio agli utenti di produzione.

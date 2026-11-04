@@ -36,5 +36,3 @@ ModerationAPI.getSearchCommentsSummary(tenantId: tenantId, options: ModerationAP
     }
 }
 [inline-code-end]
-
----

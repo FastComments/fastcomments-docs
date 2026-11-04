@@ -30,5 +30,3 @@ async fn fetch_audit_logs(config: &configuration::Configuration) -> Result<(), E
     Ok(())
 }
 [inline-code-end]
-
----

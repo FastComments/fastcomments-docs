@@ -1,3 +1,1 @@
----
 Llama a la API de FastComments desde Swift. Añade el paquete con Swift Package Manager, luego crea, recupera y modera comentarios, con los ayudantes SSO incluidos.
----

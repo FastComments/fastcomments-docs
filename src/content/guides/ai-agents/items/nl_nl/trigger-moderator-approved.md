@@ -21,5 +21,3 @@ Een handeling van een menselijke moderator.
 - **Welcome / engagement** - een agent kan reageren op reageerders die voor het eerst posten op het moment dat een moderator hen goedkeurt, in plaats van bij het plaatsen.
 - **Cross-agent coordination** - als een aparte agent de reactie had gemarkeerd voor review, is de goedkeuring het teken dat menselijke beoordeling is afgerond.
 - **Auditspoor** via [Webhooks](#webhooks-overview).
-
----

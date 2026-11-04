@@ -33,5 +33,3 @@ async function awardBadgeExample(): Promise<void> {
   console.log(result);
 }
 [inline-code-end]
-
----

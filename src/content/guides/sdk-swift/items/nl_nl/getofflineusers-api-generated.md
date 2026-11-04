@@ -1,31 +1,32 @@
-Past commenters on the page who are NOT currently online. Sorted by displayName.  
-Use this after exhausting /users/online to render a “Members” section.  
-Cursor pagination on commenterName: server walks the partial `{tenantId, urlId, commenterName}` index from afterName forward via `$gt`, no `$skip` cost.
+Eerdere commenters op de pagina die momenteel NIET online zijn. Gesorteerd op displayName.
+Gebruik dit na het doorlopen van /users/online om een "Leden"-sectie weer te geven.
+Cursorpaginering op commenterName: de server loopt via $gt door de partiële {tenantId, urlId, commenterName}
+index vanaf afterName vooruit, zonder $skip-kosten.
 
 ## Parameters
 
-| Name | Type | Location | Required | Description |
+| Naam | Type | Locatie | Verplicht | Beschrijving |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| urlId | string | query | Yes | Pagina-URL-identificatie (schoongemaakt server-side). |
-| afterName | string | query | No | Cursor: geef nextAfterName door van de vorige response. |
-| afterUserId | string | query | No | Cursor-onderbreker: geef nextAfterUserId door van de vorige response. Vereist wanneer afterName is ingesteld zodat naam-ties geen items laten vallen. |
+| tenantId | string | path | Ja |  |
+| urlId | string | query | Ja | Pagina-URL-identificatie (serverzijde opgeschoond). |
+| afterName | string | query | Nee | Cursor: geef nextAfterName uit het vorige antwoord door. |
+| afterUserId | string | query | Nee | Cursor-tiebreaker: geef nextAfterUserId uit het vorige antwoord door. Verplicht wanneer afterName is ingesteld, zodat gelijke namen geen items verliezen. |
 
 ## Response
 
-Returns: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PageUsersOfflineResponse.swift)
+Retourneert: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PageUsersOfflineResponse.swift)
 
-## Example
+## Voorbeeld
 
 [inline-code-attrs-start title = 'getOfflineUsers Voorbeeld'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// De volgende codevoorbeelden zijn nog in beta. Meld eventuele problemen via http://github.com/OpenAPITools/openapi-generator/issues/new
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let urlId = "urlId_example" // String | Pagina-URL-identificatie (schoongemaakt server-side).
-let afterName = "afterName_example" // String | Cursor: geef nextAfterName door van de vorige response. (optional)
-let afterUserId = "afterUserId_example" // String | Cursor-onderbreker: geef nextAfterUserId door van de vorige response. Vereist wanneer afterName is ingesteld zodat naam-ties geen items laten vallen. (optional)
+let urlId = "urlId_example" // String | Pagina-URL-identificatie (serverzijde opgeschoond).
+let afterName = "afterName_example" // String | Cursor: geef nextAfterName uit het vorige antwoord door. (optional)
+let afterUserId = "afterUserId_example" // String | Cursor-tiebreaker: geef nextAfterUserId uit het vorige antwoord door. Verplicht wanneer afterName is ingesteld, zodat gelijke namen geen items verliezen. (optional)
 
 PublicAPI.getOfflineUsers(tenantId: tenantId, urlId: urlId, options: PublicAPI.GetOfflineUsersOptions(afterName: afterName, afterUserId: afterUserId)) { (response, error) in
     guard error == nil else {

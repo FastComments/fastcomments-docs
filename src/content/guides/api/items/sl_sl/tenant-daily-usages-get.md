@@ -35,5 +35,3 @@ interface TenantDailyUsageResponse {
     tenantDailyUsages: TenantDailyUsage[]
 }
 [inline-code-end]
-
----

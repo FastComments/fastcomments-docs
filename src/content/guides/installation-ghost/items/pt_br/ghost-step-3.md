@@ -6,5 +6,3 @@ Agora que temos o tema aberto no nosso editor, abra o `package.json` e altere o 
 </div>
 
 Se você estiver usando um IDE, ele salvará automaticamente depois que você fizer essa alteração.
-
----

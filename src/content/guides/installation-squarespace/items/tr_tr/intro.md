@@ -6,5 +6,3 @@ Aşağıdaki talimatlar yapmak istediğinize bağlı olarak üç bölüme ayrıl
 3. [Belirli Bir Sayfaya Yorum Ekleme](#squarespace-pages-specific-page-step-0)
 
 Bu öğreticinin bir FastComments hesabı gerektirdiğini unutmayın. Önce kaydolmanız ve sonra buraya geri dönmeniz önerilir. [Buradan bir hesap oluşturabilirsiniz.](https://fastcomments.com/auth/tenant-signup?packageId=flex)
-
----

@@ -8,5 +8,3 @@
 [code-example-start config = {startingPage: 1}; linesToHighlight = [6]; title = 'Specifying The Page to Render'; code-example-end]
 
 Σημειώστε ότι οι αριθμοί σελίδων ξεκινούν από το μηδέν, οπότε το παραπάνω παράδειγμα αποδίδει τη δεύτερη σελίδα.
-
----

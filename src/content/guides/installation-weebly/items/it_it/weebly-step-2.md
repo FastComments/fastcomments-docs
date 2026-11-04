@@ -1,4 +1,3 @@
----
 Per far funzionare correttamente l'integrazione tra Weebly e FastComments, dobbiamo aggiungere **due** piccoli frammenti di codice.
 
 Il primo frammento serve a nascondere il messaggio di Weebly "I commenti sono chiusi", e il secondo serve a caricare effettivamente FastComments.
@@ -94,5 +93,3 @@ Ora incolliamo il nostro codice footer:
 </div>
 
 Questo è tutto!
-
----

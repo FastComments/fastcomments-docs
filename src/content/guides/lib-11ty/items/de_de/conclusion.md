@@ -8,5 +8,3 @@ Wenn Sie auf Probleme stoßen oder Fragen zur Eleventy (11ty)-Bibliothek haben, 
 ## Mitwirken
 
 Beiträge sind willkommen! Bitte besuchen Sie das [GitHub-Repository](https://github.com/FastComments/fastcomments-11ty) für Richtlinien zum Mitwirken.
-
----

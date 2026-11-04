@@ -1,4 +1,3 @@
----
 Bir sayfanın şu anda çevrimiçi izleyicileri: websocket oturumu şu anda sayfaya abone olan kişiler.
 anonCount + totalCount döndürür (oda genelindeki aboneler, saymadığımız anonim izleyiciler dahil).
 
@@ -38,5 +37,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_online_users: #{e}"
 end
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 Existem múltiplos aspectos de segurança ao permitir que pessoas adicionem conteúdo a um site
 e então renderizar esse conteúdo em muitos tipos diferentes de dispositivos.
 
@@ -44,4 +43,3 @@ As tags HTML que permitimos são as seguintes:
 - `<br>`
 
 A tag `<iframe>` não é permitida por padrão. Se você ativar Permitir Incorporações de Mídia, iframes também são permitidos, mas somente quando sua fonte for um dos provedores confiáveis incorporados (como YouTube, Vimeo, SoundCloud e Spotify) ou um hostname que você tenha adicionado explicitamente. Iframes de qualquer outra fonte são removidos.
----

@@ -1,33 +1,33 @@
-The Recent Discussions widget displays the pages on your site with the most recent comment activity. It's useful for highlighting threads that are still being added to, so visitors can jump back into active conversations rather than landing on quiet pages.
+Виџет Недавне дискусије приказује странице на вашем сајту са најскоријом активношћу коментара. Користан је за истакнуте теме у које се још додају коментари, тако да посетиоци могу да се врате у активне разговоре уместо да доспеју на тихе странице.
 
-## Options
+## Опције
 
-- **Title** (optional): Наслов приказан изнад листе. Подразумевано је "Recent Discussions".
-- **Count** (optional): Колико дискусија приказати. Опсег од 1 до 50. Подразумевано је 20.
+- **Наслов** (опционо): Наслов приказан изнад листе. Подразумевано је "Недавне дискусије".
+- **Број** (опционо): Колико дискусија приказати. Опсег од 1 до 50. Подразумевано је 20.
 
-## How to Add It
+## Како да га додате
 
-### Inside a Post or Page
+### Унутар чланка или странице
 
-У блоку уређивача, додајте блок **Shortcode** и налепите:
+У блок уреднику додајте блок **Shortcode** и налепите:
 
-[inline-code-attrs-start title = 'Recent Discussions скратени код'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Shortcode за недавне дискусије'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 [fastcomments_recent_discussions count="20"]
 [inline-code-end]
 
 Атрибут `count` прихвата било коју вредност између 1 и 50.
 
-### In a Sidebar or Footer (Classic Themes)
+### У бочној траци или подножју (класичне теме)
 
-Идите на **Appearance > Widgets** у вашој WordPress администраторској панелу. Из уметача блокова, потражите "FastComments" и изаберите **FastComments: Recent Discussions**. Превуците га у бочну траку, заглавље или подножје, а затим подесите наслов и број у панелу виџета.
+Идите на **Appearance > Widgets** у WordPress администрацији. Из блок убацивача потражите "FastComments" и изаберите **FastComments: Recent Discussions**. Превуците га у бочну траку, заглавље или подножје, а затим подесите наслов и број из панела виџета.
 
-### In a Block Theme (Full Site Editing)
+### У блок теми (Full Site Editing)
 
-Отворите **Site Editor** под **Appearance > Editor**. Идите до дела шаблона где би требало да се појави виџет, уметните блок **Legacy Widget**, и изаберите **FastComments: Recent Discussions** из падајућег менија.
+Отворите **Site Editor** под **Appearance > Editor**. Пређите на део шаблона где виџет треба да се појави, убаците блок **Legacy Widget** и изаберите **FastComments: Recent Discussions** из падајуће листе.
 
-## Troubleshooting
+## Решавање проблема
 
-Виџет се приказује тек након што је FastComments подешавање завршено и ID станара (tenant ID) сачуван. Ако је област виџета празна, завршите подешавање под **FastComments** у WordPress администраторском панелу и поново учитајте страницу.
+Виџет се приказује тек након што је FastComments подешавање завршено и ID станара је сачуван. Ако је област виџета празна, завршите подешавање под **FastComments** у WordPress администрацији и поново учитајте страницу.
 
-Ако редослед дискусија изгледа застарело, проверите да ли су основне странице завршиле синхронизацију у FastComments контролној табли. Виџет чита живе податке, тако да ново увезени коментари могу да потраје неко време да се појаве.
+Ако редослед дискусија делује застарело, проверите да ли су основне странице завршиле синхронизацију у FastComments контролном столу. Виџет чита податке уживо, тако да свеже увезени коментари могу тренутак да сачекају пре него што се појаве.

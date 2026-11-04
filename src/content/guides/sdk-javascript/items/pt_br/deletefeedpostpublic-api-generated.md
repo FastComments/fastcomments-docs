@@ -34,5 +34,3 @@ Retorna: [`DeleteFeedPostPublicResponse`](https://github.com/FastComments/fastco
   );
 })();
 [inline-code-end]
-
----

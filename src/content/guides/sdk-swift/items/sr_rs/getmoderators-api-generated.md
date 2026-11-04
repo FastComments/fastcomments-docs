@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Име | Тип | Локација | Обавезно | Опис |
@@ -31,5 +30,3 @@ DefaultAPI.getModerators(tenantId: tenantId, skip: skip) { (response, error) in
     }
 }
 [inline-code-end]
-
----

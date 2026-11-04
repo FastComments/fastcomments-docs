@@ -11,5 +11,3 @@
 ניתן להתאים זאת ללא קוד, בדף התאמה אישית של הווידג'ט:
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.max-comment-size'; alt='שדה גודל תגובה מקסימלי בדף התאמה אישית של הווידג\'ט, משמש להגבלת מספר התווים שהתגובה יכולה להכיל'; title='הגבלת אורך תגובה' app-screenshot-end]
-
----

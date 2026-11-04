@@ -1,27 +1,27 @@
-The individual votes behind one poll's tallies, oldest first.
+Pojedinačni glasovi iza zbirnih rezultata jedne ankete, od najstarijih ka najnovijim.
 
-A poll belongs to a comment, so votes are always read one poll at a time - commentId is required. That
-keeps every query on the indexes the collection already has.
+Anketa pripada komentaru, pa se glasovi uvek čitaju za jednu anketu istovremeno - commentId je obavezan. To
+omogućava da svaki upit koristi indekse koje kolekcija već ima.
 
-Obeys the poll's privacy: an anonymous poll's votes cannot be read (poll-anonymous), here or by id.
+Poštuje privatnost ankete: glasovi anonimne ankete ne mogu se čitati (poll-anonymous), ni ovde ni po id-u.
 
-## Parameters
+## Parametri
 
-| Name | Type | Location | Required | Description |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| commentId | string | query | Yes |  |
-| voterId | string | query | No |  |
-| optionId | string | query | No |  |
-| skip | integer | query | No |  |
+| tenantId | string | query | Da |  |
+| commentId | string | query | Da |  |
+| voterId | string | query | Ne |  |
+| optionId | string | query | Ne |  |
+| skip | integer | query | Ne |  |
 
-## Response
+## Odgovor
 
-Returns: [`GetPollVotesResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetPollVotesResponse.java)
+Vraća: [`GetPollVotesResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetPollVotesResponse.java)
 
-## Example
+## Primer
 
-[inline-code-attrs-start title = 'Primer getPollVotes'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer za getPollVotes'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Import classes:
 import com.fastcomments.invoker.ApiClient;

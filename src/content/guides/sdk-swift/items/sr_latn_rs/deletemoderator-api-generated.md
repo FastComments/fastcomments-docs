@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
@@ -33,5 +32,3 @@ DefaultAPI.deleteModerator(tenantId: tenantId, id: id, sendEmail: sendEmail) { (
     }
 }
 [inline-code-end]
-
----

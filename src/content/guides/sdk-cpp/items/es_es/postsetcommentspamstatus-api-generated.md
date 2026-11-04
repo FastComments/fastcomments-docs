@@ -26,5 +26,3 @@ api->postSetCommentSpamStatus(U("my-tenant-123"), U("comment-789"), options)
         try { t.get(); } catch(const std::exception&) {}
     });
 [inline-code-end]
-
----

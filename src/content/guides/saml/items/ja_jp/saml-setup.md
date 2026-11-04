@@ -1,96 +1,96 @@
-Setting up SAML authentication in FastComments requires both configuration in your admin dashboard and setup in your identity provider.
+FastCommentsでSAML認証を設定するには、管理ダッシュボードでの設定と、アイデンティティプロバイダー(IdP)側でのセットアップの両方が必要です。
 
-### Prerequisites
+### 前提条件
 
-Before configuring SAML, ensure you have:
+SAMLを設定する前に、以下を確認してください:
 
-- A FastComments Flex or Pro plan (SAML is not available on the Creators plan)
-- Administrative access to your FastComments account
-- Administrative access to your identity provider
-- Your IdP's SAML metadata or certificate information
+- FastCommentsのFlexまたはProプラン(SAMLはCreatorsプランでは利用できません)
+- FastCommentsアカウントへの管理者アクセス権
+- アイデンティティプロバイダーへの管理者アクセス権
+- IdPのSAMLメタデータまたは証明書情報
 
-### Accessing SAML Configuration
+### SAML設定へのアクセス
 
-1. Log into your [FastComments 管理ダッシュボード](https://fastcomments.com/auth/my-account)
-2. Navigate to **API/SSO 設定** in the left sidebar
-3. Click the **SAML 設定** button
+1. [FastComments管理ダッシュボード](https://fastcomments.com/auth/my-account)にログインします
+2. 左側のサイドバーで **API/SSO Settings** に移動します
+3. **SAML Config** ボタンをクリックします
 
-If you don't see the SAML 設定 button, verify that:
-- Your account has the required package (Flex or Pro)
-- You have administrative permissions
-- Your user has API Admin or Admin Admin roles
+SAML Configボタンが表示されない場合は、以下を確認してください:
+- アカウントに必要なパッケージ(FlexまたはPro)が含まれていること
+- 管理者権限を持っていること
+- ユーザーにAPI AdminまたはAdmin Adminロールが割り当てられていること
 
-### Basic SAML Configuration
+### SAMLの基本設定
 
-#### Enable SAML Authentication
+#### SAML認証の有効化
 
-1. Check the **Enable SAML Authentication** checkbox
-2. This activates SAML for your tenant and makes the configuration fields available
+1. **Enable SAML Authentication** チェックボックスをオンにします
+2. これにより、テナントでSAMLが有効になり、設定フィールドが利用可能になります
 
-#### Required Fields
+#### 必須フィールド
 
 **IdP Single Sign-On URL** *(必須)*
-- The URL where users will be redirected for authentication
-- Usually provided by your identity provider
-- Example: `https://your-company.okta.com/app/fastcomments/sso/saml`
+- ユーザーが認証のためにリダイレクトされるURL
+- 通常はアイデンティティプロバイダーから提供されます
+- 例: `https://your-company.okta.com/app/fastcomments/sso/saml`
 
 **IdP X.509 Certificate** *(必須)*
-- The public certificate from your identity provider
-- Used to verify the authenticity of SAML responses
-- Must include the full certificate with BEGIN/END markers
-- Example format:
+- アイデンティティプロバイダーの公開証明書
+- SAMLレスポンスの真正性を検証するために使用されます
+- BEGIN/ENDマーカーを含む完全な証明書を指定する必要があります
+- 形式の例:
 ```
 -----BEGIN CERTIFICATE-----
 MIICXjCCAcegAwIBAgIBADANBgkqhkiG9w0BAQsFADA...
 -----END CERTIFICATE-----
 ```
 
-#### Optional Fields
+#### 任意フィールド
 
 **IdP Entity ID / Issuer**
-- Identifies your identity provider
-- If left blank, defaults to your FastComments URL
-- Should match the issuer configured in your IdP
+- アイデンティティプロバイダーを識別します
+- 空欄のままにした場合、FastCommentsのURLがデフォルトとして使用されます
+- IdPで設定されたissuerと一致している必要があります
 
-### Advanced Configuration
+### 高度な設定
 
-#### Security Settings
+#### セキュリティ設定
 
 **Signature Algorithm**
-- Defaults to SHA-256 (recommended)
-- Options: SHA-1, SHA-256, SHA-512
-- Should match your IdP's configuration
+- デフォルトはSHA-256(推奨)
+- 選択肢: SHA-1、SHA-256、SHA-512
+- IdPの設定と一致している必要があります
 
 **Digest Algorithm**
-- Defaults to SHA-256 (recommended)
-- Used for digest computation in SAML responses
-- Should match your IdP's configuration
+- デフォルトはSHA-256(推奨)
+- SAMLレスポンスのダイジェスト計算に使用されます
+- IdPの設定と一致している必要があります
 
 **Name ID Format**
-- Defaults to Email Address format
-- Determines how user identifiers are formatted
-- Common options: Email Address, Persistent, Transient
+- デフォルトはメールアドレス形式
+- ユーザー識別子のフォーマット方法を決定します
+- 一般的な選択肢: メールアドレス、Persistent、Transient
 
-#### Encryption (Optional)
+#### 暗号化(任意)
 
 **Private Key for Decryption**
-- Only needed if your IdP encrypts SAML assertions
-- Paste your private key used for decryption
-- Most deployments don't require assertion encryption
+- IdPがSAMLアサーションを暗号化する場合にのみ必要です
+- 復号に使用する秘密鍵を貼り付けてください
+- ほとんどの環境ではアサーションの暗号化は必要ありません
 
-### Saving Configuration
+### 設定の保存
 
-1. Review all settings for accuracy
-2. Click **Save SAML Configuration**
-3. The system will validate your configuration
-4. If successful, you'll see a confirmation message
+1. すべての設定が正確であることを確認します
+2. **Save SAML Configuration** をクリックします
+3. システムが設定を検証します
+4. 成功すると、確認メッセージが表示されます
 
-### Next Steps
+### 次のステップ
 
-After saving your FastComments SAML configuration:
+FastCommentsのSAML設定を保存した後:
 
-1. Configure your identity provider using the Service Provider information
-2. Test the authentication flow
-3. Set up user roles and permissions as needed
+1. Service Providerの情報を使用してアイデンティティプロバイダーを設定します
+2. 認証フローをテストします
+3. 必要に応じてユーザーロールと権限を設定します
 
-The Service Provider information needed for your IdP configuration will be displayed once SAML is enabled.
+SAMLを有効にすると、IdPの設定に必要なService Provider情報が表示されます。

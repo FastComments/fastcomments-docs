@@ -1,4 +1,3 @@
----
 `Tenant`, FastComments.com müşterisini tanımlar. Bunlar API aracılığıyla white-label erişimine sahip kiracılar tarafından oluşturulabilir. White-label kiracılar
 başka white-label kiracılar oluşturamaz (sadece bir düzey iç içe izin verilir).
 
@@ -78,5 +77,3 @@ export interface Tenant {
     meta?: Record<string, string | null>
 }
 [inline-code-end]
-
----

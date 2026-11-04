@@ -1,4 +1,3 @@
----
 ## 参数
 
 | 名称 | 类型 | 位置 | 必填 | 描述 |
@@ -35,5 +34,3 @@ PublicAPI.deleteV2PageReact(tenantId: tenantId, urlId: urlId, id: id, sso: sso) 
     }
 }
 [inline-code-end]
-
----

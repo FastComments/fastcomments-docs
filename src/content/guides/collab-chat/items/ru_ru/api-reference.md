@@ -1,12 +1,12 @@
 ### Обзор API
 
-Collab Chat предоставляет три REST API конечные точки для управления текстовыми разговорами программно. Эти конечные точки позволяют получать, создавать и удалять аннотации без использования виджета в браузере.
+Collab Chat предоставляет три REST API-эндпоинта для программного управления текстовыми беседами. Эти эндпоинты позволяют получать, создавать и удалять аннотации без использования браузерного виджета.
 
-Это публичные конечные точки, которые аутентифицируют пользователей через куки браузера. Они не используют API-ключи. Пользователи должны быть авторизованы в FastComments в своём браузере для доступа к этим конечным точкам.
+Это публичные эндпоинты, которые аутентифицируют пользователей через cookies браузера. Они не используют API-ключи. Пользователи должны быть авторизованы в FastComments в своём браузере для доступа к этим эндпоинтам.
 
-### Base URL
+### Базовый URL
 
-Все конечные точки Collab Chat API находятся по адресу:
+Все эндпоинты API Collab Chat находятся по адресу:
 
 [inline-code-attrs-start title = 'Базовый URL'; type = 'text'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -15,32 +15,32 @@ https://fastcomments.com/comment-collab-chats
 
 ### Аутентификация
 
-Эти конечные точки аутентифицируют пользователей через куки браузера. Они не используют API-ключи. Пользователи должны быть авторизованы в FastComments в своём браузере для доступа к этим конечным точкам.
+Эти эндпоинты аутентифицируют пользователей через cookies браузера. Они не используют API-ключи. Пользователи должны быть авторизованы в FastComments в своём браузере для доступа к этим эндпоинтам.
 
-### Получить все разговоры
+### Получение всех бесед
 
-Получите все текстовые разговоры для конкретной страницы.
+Получить все текстовые беседы для конкретной страницы.
 
-#### Endpoint
+#### Эндпоинт
 
-[inline-code-attrs-start title = 'GET-эндпоинт'; type = 'text'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'GET Эндпоинт'; type = 'text'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 GET /comment-collab-chats/:tenantId?urlId=<urlId>
 [inline-code-end]
 
 #### Параметры
 
-`tenantId` (параметр пути, обязательный) — ваш FastComments Tenant ID.
+`tenantId` (параметр пути, обязательный) — это ваш FastComments Tenant ID.
 
-`urlId` (параметр запроса, обязательный) — идентификатор страницы, для которой вы хотите получить разговоры.
+`urlId` (параметр запроса, обязательный) — это идентификатор страницы, для которой вы хотите получить беседы.
 
 #### Ответ
 
-В ответе возвращаются статус API, информация о текущей сессии пользователя, если он аутентифицирован, массив разговоров с их ID, URL и диапазонами текста, очищенный идентификатор URL, флаг, указывающий, является ли текущий пользователь администратором сайта или модератором, и данные для подключения по WebSocket для синхронизации в реальном времени, включая `tenantIdWS`, `urlIdWS` и `userIdWS`.
+Ответ включает статус API, информацию о текущей сессии пользователя, если он аутентифицирован, массив бесед с их ID, URL и текстовыми диапазонами, очищенный идентификатор URL, флаг, указывающий, является ли текущий пользователь администратором сайта или модератором, а также детали WebSocket-соединения для синхронизации в реальном времени, включая `tenantIdWS`, `urlIdWS` и `userIdWS`.
 
 #### Пример запроса
 
-[inline-code-attrs-start title = 'Пример запроса GET'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример GET-запроса'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl "https://fastcomments.com/comment-collab-chats/demo?urlId=my-article-page" \
   --cookie "your-session-cookie"
@@ -48,7 +48,7 @@ curl "https://fastcomments.com/comment-collab-chats/demo?urlId=my-article-page" 
 
 #### Пример ответа
 
-[inline-code-attrs-start title = 'Пример ответа GET'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример GET-ответа'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "success",
@@ -76,44 +76,44 @@ curl "https://fastcomments.com/comment-collab-chats/demo?urlId=my-article-page" 
 }
 [inline-code-end]
 
-### Создать разговор
+### Создание беседы
 
-Создайте новый текстовый разговор для выбранного фрагмента текста.
+Создать новую текстовую беседу для конкретного выделенного текста.
 
-#### Endpoint
+#### Эндпоинт
 
-[inline-code-attrs-start title = 'POST-эндпоинт'; type = 'text'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'POST Эндпоинт'; type = 'text'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 POST /comment-collab-chats/:tenantId
 [inline-code-end]
 
 #### Параметры
 
-`tenantId` (параметр пути, обязательный) — ваш FastComments Tenant ID.
+`tenantId` (параметр пути, обязательный) — это ваш FastComments Tenant ID.
 
-Тело запроса должно быть в формате JSON и содержать следующие обязательные поля.
+Тело запроса должно быть в формате JSON и включать следующие обязательные поля.
 
-`urlId` (string, обязательный) — базовый идентификатор страницы.
+`urlId` (строка, обязательный) — это базовый идентификатор страницы.
 
-`urlIdWithRange` (string, обязательный) — URL в сочетании с диапазоном текста, например `my-page:p:0:15,0:45{abc123}`.
+`urlIdWithRange` (строка, обязательный) — это URL, объединённый с текстовым диапазоном, например `my-page:p:0:15,0:45{abc123}`.
 
-`pageTitle` (string, обязательный) — заголовок страницы.
+`pageTitle` (строка, обязательный) — это заголовок страницы.
 
-`selector` (string, обязательный) — путь в DOM к элементу, содержащему выделенный текст.
+`selector` (строка, обязательный) — это DOM-путь к элементу, содержащему выделенный текст.
 
-`range` (string, обязательный) — сериализованный диапазон текста в формате `startOffset:endOffset,startOffset:endOffset{checksum}`.
+`range` (строка, обязательный) — это сериализованный текстовый диапазон в формате `startOffset:endOffset,startOffset:endOffset{checksum}`.
 
-`createdFromCommentId` (string, обязательный) — ID комментария, который инициировал этот чат.
+`createdFromCommentId` (строка, обязательный) — это ID комментария, который инициировал эту беседу.
 
-`broadcastId` (string, обязательный) — UUID для синхронизации в реальном времени, чтобы предотвратить эффект эха.
+`broadcastId` (строка, обязательный) — это UUID для синхронизации в реальном времени, предотвращающий эффект эха.
 
 #### Ответ
 
-В ответе возвращаются статус API и ID вновь созданного разговора.
+Ответ включает статус API и ID новой созданной беседы.
 
 #### Пример запроса
 
-[inline-code-attrs-start title = 'Пример запроса POST'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример POST-запроса'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl -X POST "https://fastcomments.com/comment-collab-chats/demo" \
   --cookie "your-session-cookie" \
@@ -131,7 +131,7 @@ curl -X POST "https://fastcomments.com/comment-collab-chats/demo" \
 
 #### Пример ответа
 
-[inline-code-attrs-start title = 'Пример ответа POST'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример POST-ответа'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "success",
@@ -139,28 +139,28 @@ curl -X POST "https://fastcomments.com/comment-collab-chats/demo" \
 }
 [inline-code-end]
 
-### Удалить разговор
+### Удаление беседы
 
-Удалите существующий текстовый разговор. Для этого эндпоинта требуются права администратора или модератора сайта, либо разговор должен был быть создан аутентифицированным пользователем.
+Удалить существующую текстовую беседу. Этот эндпоинт требует прав администратора или модератора, либо беседа должна быть создана аутентифицированным пользователем.
 
-#### Endpoint
+#### Эндпоинт
 
-[inline-code-attrs-start title = 'DELETE-эндпоинт'; type = 'text'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'DELETE Эндпоинт'; type = 'text'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 DELETE /comment-collab-chats/:tenantId/:chatId
 [inline-code-end]
 
 #### Параметры
 
-`tenantId` (параметр пути, обязательный) — ваш FastComments Tenant ID.
+`tenantId` (параметр пути, обязательный) — это ваш FastComments Tenant ID.
 
-`chatId` (параметр пути, обязательный) — ID разговора, который нужно удалить.
+`chatId` (параметр пути, обязательный) — это ID беседы, которую нужно удалить.
 
-`broadcastId` (тело запроса, обязательный) — UUID для синхронизации в реальном времени.
+`broadcastId` (тело запроса, обязательный) — это UUID для синхронизации в реальном времени.
 
 #### Пример запроса
 
-[inline-code-attrs-start title = 'Пример запроса DELETE'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример DELETE-запроса'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl -X DELETE "https://fastcomments.com/comment-collab-chats/demo/conv789" \
   --cookie "your-session-cookie" \
@@ -172,22 +172,22 @@ curl -X DELETE "https://fastcomments.com/comment-collab-chats/demo/conv789" \
 
 #### Пример ответа
 
-[inline-code-attrs-start title = 'Пример ответа DELETE'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример DELETE-ответа'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "success"
 }
 [inline-code-end]
 
-### Ограничение скорости (Rate Limiting)
+### Ограничение частоты запросов
 
-Эти конечные точки подпадают под стандартные ограничения скорости FastComments API. Middleware ограничения скорости применяется по каждому tenant, чтобы предотвратить злоупотребления и при этом позволять нормальные сценарии использования.
+Эти эндпоинты подчиняются стандартным ограничениям частоты запросов FastComments API. Middleware ограничения частоты применяется для каждого тенанта, чтобы предотвратить злоупотребления, при этом допуская нормальные сценарии использования.
 
 ### Ответы с ошибками
 
-Все конечные точки возвращают стандартные коды состояния HTTP. Ответ 400 указывает на неверные параметры запроса. Ответ 401 означает ошибку аутентификации. Ответ 403 указывает на недостаточные права. Ответ 404 означает, что разговор не найден. Ответ 429 указывает на превышение лимита запросов.
+Все эндпоинты возвращают стандартные HTTP-коды состояния. Ответ 400 указывает на недопустимые параметры запроса. Ответ 401 означает, что аутентификация не пройдена. Ответ 403 указывает на недостаточные права. Ответ 404 означает, что беседа не найдена. Ответ 429 указывает на превышение лимита частоты запросов.
 
-Ответы с ошибками содержат JSON-тело с подробностями:
+Ответы с ошибками включают JSON-тело с деталями:
 
 [inline-code-attrs-start title = 'Пример ответа с ошибкой'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -197,6 +197,6 @@ curl -X DELETE "https://fastcomments.com/comment-collab-chats/demo/conv789" \
 }
 [inline-code-end]
 
-### Отслеживание использования
+### Учёт использования
 
-Создание разговоров увеличивает вашу метрику использования `conversationCreateCount`. Вся активность синхронизации WebSocket увеличивает `pubSubMessageCount` и `pubSubBandwidth`. Вы можете отслеживать эти метрики в панели управления FastComments в разделе аналитики использования.
+Создание бесед увеличивает вашу метрику использования `conversationCreateCount`. Вся активность синхронизации через WebSocket увеличивает `pubSubMessageCount` и `pubSubBandwidth`. Вы можете отслеживать эти метрики в панели управления FastComments в разделе аналитики использования.

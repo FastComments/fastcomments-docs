@@ -113,5 +113,3 @@ interface QuestionResultsCombineCommentsResponse {
 - Ko je določen `forceRecalculate`, je strošek vedno `10`, namesto običajnega `2`.
 - Če predpomnilnik poteče in so podatki ponovno izračunani, je strošek še vedno konstanten `2`, če `forceRecalculate` ni določen.
 - To je namenjeno spodbujanju uporabe predpomnilnika.
-
----

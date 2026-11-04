@@ -8,5 +8,3 @@ PHP SDK に関して問題が発生した場合や質問がある場合は、次
 ## 貢献
 
 貢献を歓迎します！貢献ガイドラインについては、[GitHub リポジトリ](https://github.com/FastComments/fastcomments-php) をご覧ください。
-
----

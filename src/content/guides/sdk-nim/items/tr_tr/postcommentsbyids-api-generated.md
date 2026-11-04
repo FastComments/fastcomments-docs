@@ -1,4 +1,3 @@
----
 ## Parametreler
 
 | Ad | Tür | Gerekli | Açıklama |
@@ -22,5 +21,3 @@ if maybeResp.isSome:
   let resp = maybeResp.get()
   # ihtiyaca göre yanıtı kullan
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 ## Parametreler
 
 | Ad | Tür | Gerekli | Açıklama |
@@ -30,5 +29,3 @@ async function addTenantUser() {
 }
 addTenantUser();
 [inline-code-end]
-
----

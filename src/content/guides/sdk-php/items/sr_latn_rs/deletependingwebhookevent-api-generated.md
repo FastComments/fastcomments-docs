@@ -40,5 +40,3 @@ try {
     echo 'Exception when calling DefaultApi->deletePendingWebhookEvent: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

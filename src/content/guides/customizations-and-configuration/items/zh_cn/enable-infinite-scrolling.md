@@ -23,5 +23,3 @@
 [code-example-start config = {enableInfiniteScrolling: true, customCSS: '.comments { max-height: 500px;  overflow-y: auto; }'}; linesToHighlight = [6, 7]; title = 'Enabling Infinite Scrolling'; code-example-end]
 
 在上例中我们使用了 `customCSS` 属性，但出于性能原因，建议改为使用 Widget Configuration UI。 [查看自定义 CSS 文档。](/guide-customizations-and-configuration.html#custom-css)
-
----

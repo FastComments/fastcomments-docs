@@ -1,4 +1,3 @@
----
 [api-resource-header-start name = 'Comment'; route = 'POST /api/v1/comments/:id/block'; creditsCost = 1; api-resource-header-end]
 
 Цей API-ендпоінт надає можливість заблокувати користувача, який написав певний коментар. Підтримується блокування коментарів, написаних користувачами FastComments.com, SSO-користувачами та користувачами орендаря.
@@ -52,5 +51,3 @@ interface CommentBlockResponse {
     commentStatuses?: Record<string, boolean>;
 }
 [inline-code-end]
-
----

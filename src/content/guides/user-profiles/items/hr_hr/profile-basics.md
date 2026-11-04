@@ -52,5 +52,3 @@ FastComments podržava dvije vrste korisnika s profilima:
 2. **SSO Users** - Korisnici koji se autentificiraju putem integracije Single Sign-On na vašoj stranici
 
 Obje vrste korisnika imaju pristup potpunom sustavu profila, iako SSO korisnici mogu imati neka ograničenja pri uređivanju određenih polja (poput avatara), ovisno o konfiguraciji SSO-a.
-
----

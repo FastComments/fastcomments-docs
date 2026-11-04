@@ -1,4 +1,3 @@
----
 Konfiguracja pochodzi z trzech miejsc. Późniejsze źródła mają pierwszeństwo:
 
 1. **Domyślne ustawienia globalne** w `_config.yml` pod kluczem `fastcomments:`.
@@ -42,4 +41,3 @@ fastcomments:
 ```
 
 lub dla poszczególnego tagu: `{% raw %}{% fastcomments region="eu" %}{% endraw %}`. Widgety będą wtedy ładowane z europejskiego CDN.
----

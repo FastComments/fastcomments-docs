@@ -1,4 +1,3 @@
----
 이 엔드포인트를 통해 사용자 배지 할당을 삭제할 수 있습니다.
 
 요청 예시:
@@ -45,4 +44,3 @@ curl -X DELETE "https://fastcomments.com/api/v1/user-badges/badge123?tenantId=de
   "reason": "The user badge badge123 was not found."
 }
 [inline-code-end]
----

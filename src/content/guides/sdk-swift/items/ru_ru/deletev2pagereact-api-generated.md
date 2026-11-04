@@ -1,4 +1,3 @@
----
 ## Параметры
 
 | Имя | Тип | Расположение | Обязательно | Описание |
@@ -35,5 +34,3 @@ PublicAPI.deleteV2PageReact(tenantId: tenantId, urlId: urlId, id: id, sso: sso) 
     }
 }
 [inline-code-end]
-
----

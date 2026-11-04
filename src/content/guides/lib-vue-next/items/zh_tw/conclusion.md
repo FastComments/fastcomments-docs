@@ -8,5 +8,3 @@
 ## 貢獻
 
 歡迎提出貢獻！請造訪 [GitHub 儲存庫](https://github.com/FastComments/fastcomments-vue-next) 以取得貢獻指南。
-
----

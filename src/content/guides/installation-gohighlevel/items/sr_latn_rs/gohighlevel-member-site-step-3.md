@@ -56,5 +56,3 @@ Možete reći collab chatu da doda kolaborativnu funkcionalnost samo oko HTML-a 
 [inline-code-end]
 
 Tada će paragraf unutar `<div>` elementa imati omogućen collab chat, a ništa drugo na stranici neće. Ako ne stavite nikakav sadržaj u `<div>` tada će collab chat biti omogućen na celom sadržaju posta.
-
----

@@ -1,44 +1,44 @@
 ### Aperçu de l'API
 
-Collab Chat fournit trois endpoints REST API pour gérer les conversations textuelles de manière programmatique. Ces endpoints vous permettent de récupérer, créer et supprimer des annotations sans utiliser le widget du navigateur.
+Collab Chat fournit trois points d'API REST pour gérer des conversations textuelles de manière programmatique. Ces points d'accès vous permettent de récupérer, créer et supprimer des annotations sans utiliser le widget du navigateur.
 
-Ce sont des points de terminaison publics qui authentifient les utilisateurs via les cookies du navigateur. Ils n'utilisent pas de clés API. Les utilisateurs doivent être connectés à FastComments dans leur navigateur pour accéder à ces endpoints.
+Ce sont des points d'accès publics qui authentifient les utilisateurs via les cookies du navigateur. Ils n'utilisent pas de clés API. Les utilisateurs doivent être connectés à FastComments dans leur navigateur pour accéder à ces points d'accès.
 
-### Base URL
+### URL de base
 
-All Collab Chat API endpoints are under:
+Tous les points d'API de Collab Chat se trouvent sous :
 
 [inline-code-attrs-start title = 'URL de base'; type = 'text'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 https://fastcomments.com/comment-collab-chats
 [inline-code-end]
 
-### Authentication
+### Authentification
 
-These endpoints authenticate users via browser cookies. They do not use API keys. Users must be logged into FastComments in their browser to access these endpoints.
+Ces points d'accès authentifient les utilisateurs via les cookies du navigateur. Ils n'utilisent pas de clés API. Les utilisateurs doivent être connectés à FastComments dans leur navigateur pour accéder à ces points d'accès.
 
-### Get All Conversations
+### Récupérer toutes les conversations
 
-Retrieve all text conversations for a specific page.
+Récupère toutes les conversations textuelles pour une page spécifique.
 
-#### Endpoint
+#### Point d'accès
 
-[inline-code-attrs-start title = 'Point de terminaison GET'; type = 'text'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Point d\'accès GET'; type = 'text'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 GET /comment-collab-chats/:tenantId?urlId=<urlId>
 [inline-code-end]
 
-#### Parameters
+#### Paramètres
 
-`tenantId` (path parameter, required) is your FastComments Tenant ID.
+`tenantId` (paramètre de chemin, requis) est votre ID de tenant FastComments.
 
-`urlId` (query parameter, required) is the page identifier you want to retrieve conversations for.
+`urlId` (paramètre de requête, requis) est l'identifiant de la page pour laquelle vous souhaitez récupérer les conversations.
 
-#### Response
+#### Réponse
 
-The response includes the API status, current user session information if authenticated, an array of conversations with their IDs, URLs, and text ranges, a cleaned URL identifier, a flag indicating if the current user is a site admin or moderator, and WebSocket connection details for live sync including `tenantIdWS`, `urlIdWS`, and `userIdWS`.
+La réponse inclut le statut de l'API, les informations de session de l'utilisateur actuel si authentifié, un tableau de conversations avec leurs ID, URL et plages de texte, un identifiant d'URL nettoyé, un indicateur indiquant si l'utilisateur actuel est un administrateur ou un modérateur du site, et les détails de connexion WebSocket pour la synchronisation en direct incluant `tenantIdWS`, `urlIdWS` et `userIdWS`.
 
-#### Example Request
+#### Exemple de requête
 
 [inline-code-attrs-start title = 'Exemple de requête GET'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -46,7 +46,7 @@ curl "https://fastcomments.com/comment-collab-chats/demo?urlId=my-article-page" 
   --cookie "your-session-cookie"
 [inline-code-end]
 
-#### Example Response
+#### Exemple de réponse
 
 [inline-code-attrs-start title = 'Exemple de réponse GET'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -76,42 +76,42 @@ curl "https://fastcomments.com/comment-collab-chats/demo?urlId=my-article-page" 
 }
 [inline-code-end]
 
-### Create Conversation
+### Créer une conversation
 
-Create a new text conversation for a specific text selection.
+Crée une nouvelle conversation textuelle pour une sélection de texte spécifique.
 
-#### Endpoint
+#### Point d'accès
 
-[inline-code-attrs-start title = 'Point de terminaison POST'; type = 'text'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Point d\'accès POST'; type = 'text'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 POST /comment-collab-chats/:tenantId
 [inline-code-end]
 
-#### Parameters
+#### Paramètres
 
-`tenantId` (path parameter, required) is your FastComments Tenant ID.
+`tenantId` (paramètre de chemin, requis) est votre ID de tenant FastComments.
 
-The request body must be JSON and include these required fields.
+Le corps de la requête doit être en JSON et inclure ces champs requis.
 
-`urlId` (string, required) is the base page identifier.
+`urlId` (chaîne, requis) est l'identifiant de base de la page.
 
-`urlIdWithRange` (string, required) is the URL combined with the text range, for example `my-page:p:0:15,0:45{abc123}`.
+`urlIdWithRange` (chaîne, requis) est l'URL combinée avec la plage de texte, par exemple `my-page:p:0:15,0:45{abc123}`.
 
-`pageTitle` (string, required) is the title of the page.
+`pageTitle` (chaîne, requis) est le titre de la page.
 
-`selector` (string, required) is the DOM path to the element containing the selected text.
+`selector` (chaîne, requis) est le chemin DOM vers l'élément contenant le texte sélectionné.
 
-`range` (string, required) is the serialized text range in the format `startOffset:endOffset,startOffset:endOffset{checksum}`.
+`range` (chaîne, requis) est la plage de texte sérialisée au format `startOffset:endOffset,startOffset:endOffset{checksum}`.
 
-`createdFromCommentId` (string, required) is the ID of the comment that initiated this chat.
+`createdFromCommentId` (chaîne, requis) est l'ID du commentaire qui a initié ce chat.
 
-`broadcastId` (string, required) is a UUID for live synchronization to prevent echo effects.
+`broadcastId` (chaîne, requis) est un UUID pour la synchronisation en direct afin de prévenir les effets d'écho.
 
-#### Response
+#### Réponse
 
-The response includes the API status and the ID of the newly created conversation.
+La réponse inclut le statut de l'API et l'ID de la conversation nouvellement créée.
 
-#### Example Request
+#### Exemple de requête
 
 [inline-code-attrs-start title = 'Exemple de requête POST'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -129,7 +129,7 @@ curl -X POST "https://fastcomments.com/comment-collab-chats/demo" \
   }'
 [inline-code-end]
 
-#### Example Response
+#### Exemple de réponse
 
 [inline-code-attrs-start title = 'Exemple de réponse POST'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -139,26 +139,26 @@ curl -X POST "https://fastcomments.com/comment-collab-chats/demo" \
 }
 [inline-code-end]
 
-### Delete Conversation
+### Supprimer une conversation
 
-Delete an existing text conversation. This endpoint requires admin or moderator permissions, or the conversation must have been created by the authenticated user.
+Supprime une conversation textuelle existante. Ce point d'accès nécessite des permissions d'administrateur ou de modérateur, ou la conversation doit avoir été créée par l'utilisateur authentifié.
 
-#### Endpoint
+#### Point d'accès
 
-[inline-code-attrs-start title = 'Point de terminaison DELETE'; type = 'text'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Point d\'accès DELETE'; type = 'text'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 DELETE /comment-collab-chats/:tenantId/:chatId
 [inline-code-end]
 
-#### Parameters
+#### Paramètres
 
-`tenantId` (path parameter, required) is your FastComments Tenant ID.
+`tenantId` (paramètre de chemin, requis) est votre ID de tenant FastComments.
 
-`chatId` (path parameter, required) is the ID of the conversation to delete.
+`chatId` (paramètre de chemin, requis) est l'ID de la conversation à supprimer.
 
-`broadcastId` (request body, required) is a UUID for live synchronization.
+`broadcastId` (corps de la requête, requis) est un UUID pour la synchronisation en direct.
 
-#### Example Request
+#### Exemple de requête
 
 [inline-code-attrs-start title = 'Exemple de requête DELETE'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -170,7 +170,7 @@ curl -X DELETE "https://fastcomments.com/comment-collab-chats/demo/conv789" \
   }'
 [inline-code-end]
 
-#### Example Response
+#### Exemple de réponse
 
 [inline-code-attrs-start title = 'Exemple de réponse DELETE'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -179,17 +179,17 @@ curl -X DELETE "https://fastcomments.com/comment-collab-chats/demo/conv789" \
 }
 [inline-code-end]
 
-### Rate Limiting
+### Limitation de débit
 
-These endpoints are subject to standard FastComments API rate limiting. The rate limit middleware applies per-tenant to prevent abuse while allowing normal usage patterns.
+Ces points d'accès sont soumis à la limitation de débit standard de l'API FastComments. Le middleware de limitation de débit s'applique par tenant pour prévenir les abus tout en permettant des modèles d'utilisation normaux.
 
-### Error Responses
+### Réponses d'erreur
 
-All endpoints return standard HTTP status codes. A 400 response indicates invalid request parameters. A 401 response means authentication failed. A 403 response indicates insufficient permissions. A 404 response means the conversation was not found. A 429 response indicates rate limit exceeded.
+Tous les points d'accès renvoient des codes de statut HTTP standards. Une réponse 400 indique des paramètres de requête invalides. Une réponse 401 signifie que l'authentification a échoué. Une réponse 403 indique des permissions insuffisantes. Une réponse 404 signifie que la conversation n'a pas été trouvée. Une réponse 429 indique que la limite de débit a été dépassée.
 
-Error responses include a JSON body with details:
+Les réponses d'erreur incluent un corps JSON avec des détails :
 
-[inline-code-attrs-start title = "Exemple de réponse d'erreur"; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple de réponse d\'erreur'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "error",
@@ -197,8 +197,6 @@ Error responses include a JSON body with details:
 }
 [inline-code-end]
 
-### Usage Tracking
+### Suivi de l'utilisation
 
-Creating conversations increments your `conversationCreateCount` usage metric. All WebSocket sync activity increments `pubSubMessageCount` and `pubSubBandwidth`. You can monitor these metrics in your FastComments dashboard under usage analytics.
-
----
+La création de conversations incrémente votre métrique d'utilisation `conversationCreateCount`. Toute activité de synchronisation WebSocket incrémente `pubSubMessageCount` et `pubSubBandwidth`. Vous pouvez surveiller ces métriques dans votre tableau de bord FastComments sous les analyses d'utilisation.

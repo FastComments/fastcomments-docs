@@ -25,5 +25,3 @@
 ### 更改当前页面
 
 FastComments 支持单页应用（SPA）和复杂的应用程序。更改当前页面非常简单，相关内容在[此处](/guide-customizations-and-configuration.html#switching-comment-threads)有说明。
-
----

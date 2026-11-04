@@ -23,5 +23,3 @@ api->getTenantUsers(tenantId, skip).then([](pplx::task<std::shared_ptr<GetTenant
     }
 });
 [inline-code-end]
-
----

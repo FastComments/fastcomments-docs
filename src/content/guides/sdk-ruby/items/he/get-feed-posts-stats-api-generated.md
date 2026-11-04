@@ -1,4 +1,3 @@
----
 ## פרמטרים
 
 | Name | Type | Location | Required | Description |
@@ -33,5 +32,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_feed_posts_stats: #{e}"
 end
 [inline-code-end]
-
----

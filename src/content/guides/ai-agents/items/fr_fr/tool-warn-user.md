@@ -1,30 +1,30 @@
-L'outil Warn envoie un avertissement privé par DM à un utilisateur au sujet d'un commentaire spécifique, et en même temps enregistre l'avertissement dans la [mémoire d'agent](#agent-memory-system) partagée. Les deux écritures sont atomiques - l'utilisateur ne voit jamais un avertissement qui n'est pas également consigné.
+L'outil Warn envoie un avertissement privé en DM à un utilisateur au sujet d'un commentaire spécifique, et enregistre en même temps l'avertissement dans la [mémoire d'agent](#agent-memory-system) partagée. Les deux écritures sont atomiques - l'utilisateur ne voit jamais un avertissement qui n'est pas également consigné.
 
-### Why it exists
+### Pourquoi il existe
 
-La politique d'escalade de la plateforme est **avertir d'abord, bannir seulement en cas de récidive**. L'outil Warn rend cette politique applicable : il donne à l'utilisateur une chance de se corriger, et l'enregistrement de l'avertissement est ce qu'un futur agent trouve lorsqu'il consulte la mémoire avant d'envisager un bannissement.
+La politique d'escalade de la plateforme est **avertir d'abord, bannir uniquement si l'utilisateur récidive**. L'outil Warn est ce qui rend cette politique actionnable : il donne à l'utilisateur une chance de se corriger, et c'est l'enregistrement de l'avertissement qu'un futur agent trouvera lorsqu'il cherchera dans la mémoire avant d'envisager un bannissement.
 
-L'outil évite aussi les doublons : si l'agent a déjà émis un avertissement au même utilisateur concernant le même commentaire, un deuxième avertissement est sans effet. Ainsi, un LLM qui boucle ou se déclenche à nouveau sur le même commentaire ne peut pas inonder l'utilisateur de multiples avertissements.
+L'outil déduplique également : si l'agent a déjà émis un avertissement au même utilisateur au sujet du même commentaire, un second avertissement est sans effet. Ainsi, un LLM qui boucle ou se déclenche à nouveau sur le même commentaire ne peut pas spammer l'utilisateur avec plusieurs avertissements.
 
-### What goes in the warning
+### Ce qui doit figurer dans l'avertissement
 
-Un message court (limité à 1000 caractères) affiché à l'utilisateur en DM. Un bon avertissement est :
+Un message court (limité à 1000 caractères) montré à l'utilisateur sous forme de DM. Les bons avertissements sont :
 
-- **Specific** - "Personal attacks on named users are not allowed in this community" bat "your comment was flagged."
-- **Short** - a few sentences max.
-- **Actionable** - tell the user what to change. "Please edit your comment to remove the named user, or it will be removed."
+- **Spécifiques** - « Les attaques personnelles contre des utilisateurs nommés ne sont pas autorisées dans cette communauté » est plus efficace que « votre commentaire a été signalé ».
+- **Courts** - quelques phrases au maximum.
+- **Actionnables** - indiquez à l'utilisateur ce qu'il doit changer. « Veuillez modifier votre commentaire pour retirer l'utilisateur nommé, sinon il sera supprimé. »
 
-Vous n'écrivez pas le message vous-même ; l'agent le fait, en se basant sur le [initial prompt](#personality-prompt) et les [community guidelines](#community-guidelines). Votre travail consiste à rédiger un prompt qui produit de bons avertissements.
+Vous n'écrivez pas le message vous-même ; c'est l'agent qui le fait, en se basant sur le [prompt initial](#personality-prompt) et les [règles de la communauté](#community-guidelines). Votre rôle est d'écrire un prompt qui produit de bons avertissements.
 
-### When to allow it
+### Quand l'autoriser
 
-Pour tout agent de type modération. Le modèle Moderator l'active par défaut.
+Pour tout agent de type modération. Le template Moderator l'active par défaut.
 
-### Approvals
+### Approbations
 
-Moins souvent soumis à approbation que [Ban user](#tool-ban-user). Il est utile de le soumettre à approbation pendant les premières semaines de la vie d'un agent afin de repérer les mauvais avertissements avant leur envoi, mais la plupart des opérateurs lèvent cette approbation une fois que l'agent produit des résultats fiables.
+Moins souvent soumis à approbation que [Ban user](#tool-ban-user). Il est utile de l'activer pendant les premières semaines de vie d'un agent afin de repérer les mauvais avertissements avant leur envoi, mais la plupart des opérateurs suppriment cette approbation une fois que l'agent produit des résultats fiables.
 
-### See also
+### Voir aussi
 
-- [Ban user](#tool-ban-user) - the next step up in escalation.
-- [Agent Memory System](#agent-memory-system) - where warning records live.
+- [Ban user](#tool-ban-user) - l'étape suivante dans l'escalade.
+- [Agent Memory System](#agent-memory-system) - là où sont conservés les enregistrements d'avertissements.

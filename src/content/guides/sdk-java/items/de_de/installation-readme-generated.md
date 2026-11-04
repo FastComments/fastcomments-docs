@@ -1,6 +1,6 @@
 ### Maven
 
-Fügen Sie das Repsy-Repository zu Ihrer Projekt-POM hinzu:
+Fügen Sie das Repsy-Repository zur POM Ihres Projekts hinzu:
 
 ```xml
 <repositories>
@@ -63,16 +63,18 @@ dependencies {
 }
 ```
 
-### Library Contents
+### Inhalt der Bibliothek
 
-Diese Bibliothek enthält drei Module: den generierten API-Client, die Kern-Java-Bibliothek, die handgeschriebene Hilfsprogramme enthält, um die Arbeit mit der API zu erleichtern, und das `pubsub`-Modul, das eine Bibliothek zum Abonnieren von Änderungsfeeds ist.
+Diese Bibliothek enthält drei Module: den generierten API-Client, die Core-Java-Bibliothek mit handgeschriebenen Hilfsfunktionen
+zur Vereinfachung der Arbeit mit der API sowie das `pubsub`-Modul, eine Bibliothek zum Abonnieren von Change-Feeds.
 
 - [API Client Library Docs](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
 - [Core Library Docs, Including SSO Examples](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
 - [PubSub Library Docs](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
-### Public vs Secured APIs
+### Öffentliche vs. gesicherte APIs
 
-Für den API-Client gibt es drei Klassen, `DefaultApi`, `PublicApi` und `ModerationApi`. Die `DefaultApi` enthält Methoden, die Ihren API-Schlüssel erfordern, und die `PublicApi` enthält Methoden, die direkt von einem Browser/Mobilgerät/etc. ohne Authentifizierung aufgerufen werden können.
+Für den API-Client gibt es drei Klassen: `DefaultApi`, `PublicApi` und `ModerationApi`. Die `DefaultApi` enthält Methoden, die Ihren API-Schlüssel benötigen, und die `PublicApi` enthält Methoden,
+die direkt aus einem Browser/Mobilgerät/etc. ohne Authentifizierung aufgerufen werden können.
 
-Die `ModerationApi` bietet eine umfangreiche Palette von Live- und schnellen Moderations-APIs. Jede `ModerationApi`-Methode akzeptiert einen `sso`-Parameter und kann sich über SSO oder ein FastComments.com‑Sitzungs‑Cookie authentifizieren.
+Die `ModerationApi` bietet eine umfangreiche Suite an Live- und schnellen Moderations-APIs. Jede `ModerationApi`-Methode akzeptiert einen `sso`-Parameter und kann sich über SSO oder ein FastComments.com-Session-Cookie authentifizieren.

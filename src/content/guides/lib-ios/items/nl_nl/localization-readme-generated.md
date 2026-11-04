@@ -1,4 +1,3 @@
----
 Geef in de config een locale-code op om door de server geleverde tekst te lokaliseren:
 
 ```swift

@@ -1,4 +1,3 @@
----
 ¡Eso es todo! Ahora deberías tener comentarios en vivo añadidos a tu sitio Zyro.
 
 <div class="screenshot white-bg">
@@ -7,5 +6,3 @@
 </div>
 
 Si te has encontrado con un error de permiso denegado, o te gustaría personalizar FastComments, sigue leyendo.
-
----

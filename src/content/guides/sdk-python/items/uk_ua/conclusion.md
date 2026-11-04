@@ -8,5 +8,3 @@
 ## Участь
 
 Внески вітаються! Будь ласка, відвідайте [репозиторій GitHub](https://github.com/FastComments/fastcomments-python) для отримання вказівок щодо внесків.
-
----

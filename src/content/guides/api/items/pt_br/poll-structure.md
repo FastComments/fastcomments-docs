@@ -38,5 +38,3 @@ Enquetes obedecem à configuração do seu site, que pode ser alterada em Person
 
 - As enquetes devem estar habilitadas antes que uma enquete possa ser criada, ou a API responderá com `polls-disabled`.
 - A votação pode ser limitada a usuários autenticados, caso em que um voto enviado apenas com um `anonUserId` será rejeitado com `poll-login-required`.
-
----

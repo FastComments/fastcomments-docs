@@ -1,14 +1,14 @@
-Custom react counts for a page, optionally with the users who reacted.
+Prilagođeni brojanja reakcija za stranicu, opciono sa korisnicima koji su reagovali.
 
-## Parameters
+## Parametri
 
-| Name | Type | Location | Required | Description |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| urlId | string | query | Yes |  |
-| includeUserInfo | string | query | No | "public" izostavlja korisnike sa privatnim profilima, "include-private" ih uključuje. |
+| tenantId | string | query | Da |  |
+| urlId | string | query | Da |  |
+| includeUserInfo | string | query | Ne | "public" izostavlja korisnike sa privatnim profilima, "include-private" ih uključuje. |
 
-## Response
+## Odgovor
 
 Vraća: [`GetPageReactsAPIResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetPageReactsAPIResponse.java)
 
@@ -54,5 +54,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

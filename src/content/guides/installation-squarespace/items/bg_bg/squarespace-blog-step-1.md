@@ -25,5 +25,3 @@
     <div class="title">Празно поле за код</div>
     <img class="screenshot-image" src="/images/installation-guides/squarespace-step-1-4-code-area.png" alt="Празно поле за код" />
 </div>
-
----

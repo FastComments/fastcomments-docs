@@ -8,5 +8,3 @@ Si encuentras algún problema o tienes preguntas sobre el SDK de JavaScript/Type
 ## Contribuciones
 
 ¡Las contribuciones son bienvenidas! Visita el [repositorio de GitHub](https://github.com/FastComments/fastcomments-sdk-js) para las pautas de contribución.
-
----

@@ -1,24 +1,23 @@
-Translates the given comments into the widget locale. Only available when the matching widget
-customization rule has Comment Translation set to Automatic or Manual.
+주어진 댓글들을 위젯 로케일로 번역합니다. 일치하는 위젯 커스터마이즈 규칙의 Comment Translation이 Automatic 또는 Manual로 설정된 경우에만 사용할 수 있습니다.
 
 ## 매개변수
 
-| 이름 | 유형 | 위치 | 필수 | 설명 |
+| 이름 | 타입 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | 예 |  |
 | urlId | string | query | 예 |  |
-| sso | string | query | 아니오 |  |
-| locale | string | query | 아니오 |  |
+| sso | string | query | 아니요 |  |
+| locale | string | query | 아니요 |  |
 
 ## 응답
 
-반환: [`CommentTranslationsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CommentTranslationsResponse.java)
+반환값: [`CommentTranslationsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CommentTranslationsResponse.java)
 
-## 예시
+## 예제
 
-[inline-code-attrs-start title = 'translateComments 예시'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'translateComments 예제'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 클래스 가져오기:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;

@@ -30,5 +30,3 @@ try {
     print('Exception when calling PublicApi->getCommentVoteUserNames: $e\n');
 }
 [inline-code-end]
-
----

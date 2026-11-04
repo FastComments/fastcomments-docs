@@ -1,4 +1,3 @@
----
 ## 매개변수
 
 | 이름 | 형식 | 위치 | 필수 | 설명 |
@@ -35,5 +34,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->create_moderator: #{e}"
 end
 [inline-code-end]
-
----

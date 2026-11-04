@@ -5,5 +5,3 @@ Uradni Swift SDK za FastComments API
 ## Repozitorij
 
 [Oglej si na GitHubu](https://github.com/FastComments/fastcomments-swift)
-
----

@@ -7,5 +7,3 @@ No entanto, entendemos que alguns clientes não podem armazenar suas informaçõ
 hospedar todos os seus dados em suas próprias instalações.
 
 Esta documentação cobre esse caso de uso.
-
----

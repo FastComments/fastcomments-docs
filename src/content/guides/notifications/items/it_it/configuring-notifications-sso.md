@@ -17,5 +17,3 @@ Per SSO esiste la seguente configurazione da considerare per le notifiche:
   - Questo si ottiene tramite la proprietà `footerUnsubscribeURL` sull'oggetto `DomainConfig`.
   - Questo può essere impostato tramite l'API.
   - Potresti anche voler considerare di impostare gli header di disiscrizione pertinenti tramite `emailHeaders` nello stesso oggetto.
-
----

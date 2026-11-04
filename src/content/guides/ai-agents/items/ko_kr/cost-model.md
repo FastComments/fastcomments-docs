@@ -1,47 +1,47 @@
-Agent 비용은 **토큰 기반**입니다. Every LLM call returns a token count, the platform converts that to USD cents using the model's per-token rate, and the cents are billed against the agent's and tenant's budgets.
+에이전트 비용은 **토큰 기반**입니다. 모든 LLM 호출은 토큰 수를 반환하며, 플랫폼은 모델의 토큰당 요율을 사용해 이를 USD 센트로 변환하고, 해당 센트는 에이전트와 테넌트의 예산에 청구됩니다.
 
-### What's billed
+### 청구되는 항목
 
-- **All LLM calls**, including the call that produces zero tool actions ("the agent decided to do nothing"). Inference is paid even when no action results.
-- **Dry-run calls**. Dry-run is "do not act, but still call the LLM" - the LLM call costs the same. See [Dry-Run Mode](#dry-run-mode).
-- **Replay calls**. Replays are dry-run runs against historical comments. They cost tokens. See [Test Runs (Replays)](#test-runs-replays).
+- **모든 LLM 호출**, 도구 액션이 0개인 호출("에이전트가 아무것도 하지 않기로 결정")도 포함됩니다. 액션이 발생하지 않아도 추론 비용은 지불됩니다.
+- **드라이런(dry-run) 호출**. 드라이런은 "액션은 하지 않되, LLM은 호출"하는 방식이므로 LLM 호출 비용은 동일합니다. [드라이런 모드](#dry-run-mode)를 참고하세요.
+- **리플레이(Replay) 호출**. 리플레이는 과거 댓글에 대한 드라이런 실행이며 토큰 비용이 발생합니다. [테스트 실행(리플레이)](#test-runs-replays)을 참고하세요.
 
-### What's not billed
+### 청구되지 않는 항목
 
-- **Triggers that never produce an LLM call.** Dropped-before-LLM cases (over budget, rate limited, scope mismatch, billing invalid, loop prevention) cost zero tokens. See [Drop Reasons](#drop-reasons).
-- **Tool dispatch.** Calling `pin_comment` or any other tool does not itself cost tokens - only the LLM round-trip does.
-- **`search_memory`.** It is read-only and does not produce its own LLM round-trip.
+- **LLM 호출을 생성하지 않는 트리거.** LLM 호출 전에 중단되는 경우(예산 초과, 레이트 리밋, 범위 불일치, 청구 무효, 루프 방지)는 토큰 비용이 0입니다. [중단 사유(Drop Reasons)](#drop-reasons)를 참고하세요.
+- **도구 디스패치.** `pin_comment` 또는 기타 도구를 호출하는 것 자체는 토큰 비용이 발생하지 않습니다 - LLM 왕복 호출에만 비용이 발생합니다.
+- **`search_memory`.** 읽기 전용이며 별도의 LLM 왕복 호출을 생성하지 않습니다.
 
-### Cost per run
+### 실행당 비용
 
-A single agent run can call the LLM multiple times - each tool call result is fed back into the model so it can either call another tool or finish. So `tokensUsed` on a run is the sum across all LLM round-trips in that run.
+한 번의 에이전트 실행은 LLM을 여러 번 호출할 수 있습니다 - 각 도구 호출 결과가 모델에 다시 전달되어 모델이 다른 도구를 호출하거나 종료할 수 있기 때문입니다. 따라서 실행의 `tokensUsed`는 해당 실행의 모든 LLM 왕복 호출의 합계입니다.
 
-The biggest contributors to per-run token cost:
+실행당 토큰 비용에 가장 큰 영향을 주는 요소:
 
-- **Long [initial prompts](#personality-prompt) and [community guidelines](#community-guidelines)** - they go in on every run.
-- **[Context options](#context-options)** - thread context, user history, page metadata. Each adds tokens.
-- **The comment text itself** - long comments cost more.
-- **Multiple tool calls in one run** - each tool's result message is sent back to the model.
-- **Memory reads** - `search_memory` returns up to 25 records (capped at 8000 chars total content). Most of those bytes go into the next prompt.
+- **긴 [초기 프롬프트](#personality-prompt)와 [커뮤니티 가이드라인](#community-guidelines)** - 매 실행마다 포함됩니다.
+- **[컨텍스트 옵션](#context-options)** - 스레드 컨텍스트, 사용자 기록, 페이지 메타데이터. 각 항목이 토큰을 추가합니다.
+- **댓글 텍스트 자체** - 긴 댓글일수록 비용이 더 많이 듭니다.
+- **한 번의 실행에서 여러 도구 호출** - 각 도구의 결과 메시지가 모델에 다시 전송됩니다.
+- **메모리 읽기** - `search_memory`는 최대 25개 레코드(총 콘텐츠 8000자 제한)를 반환합니다. 이 바이트 대부분이 다음 프롬프트에 포함됩니다.
 
-**Max Tokens Per Trigger** (default 20,000) caps the **response** size per LLM call. It does not cap the input size.
+**트리거당 최대 토큰(Max Tokens Per Trigger)**(기본값 20,000)은 LLM 호출당 **응답** 크기를 제한합니다. 입력 크기는 제한하지 않습니다.
 
-### Token-to-cents conversion
+### 토큰-센트 변환
 
-The platform applies a single per-tenant-package rate (`flexLLMCostCents` per `flexLLMUnit` tokens). Cost-per-token is package-level, not per-model - both available models ([GLM 5.1 and GPT-OSS Turbo](#choosing-a-model)) bill at the same rate on a given package. The [Run Detail View](#run-detail-view) shows the per-run cost in your currency once a run completes.
+플랫폼은 테넌트 패키지별 단일 요율(`flexLLMUnit` 토큰당 `flexLLMCostCents`)을 적용합니다. 토큰당 비용은 모델별이 아닌 패키지 수준입니다 - 사용 가능한 두 모델([GLM 5.1 및 GPT-OSS Turbo](#choosing-a-model))은 동일한 패키지에서 동일한 요율로 청구됩니다. [실행 상세 보기(Run Detail View)](#run-detail-view)는 실행이 완료되면 귀하의 통화로 실행당 비용을 표시합니다.
 
-### Where cost is recorded
+### 비용이 기록되는 위치
 
-Each run records its raw token count and per-run cost. Daily and monthly totals roll up into the [Analytics page](#analytics-page).
+각 실행은 원시 토큰 수와 실행당 비용을 기록합니다. 일별 및 월별 합계는 [분석 페이지(Analytics page)](#analytics-page)로 집계됩니다.
 
-### How to read cost
+### 비용 확인 방법
 
-- **Per-run cost**: [Run Detail View](#run-detail-view) -> `Cost` field.
-- **Daily / monthly aggregate**: [Analytics page](#analytics-page) -> Budget usage and Daily cost charts.
-- **Per-action cost**: also on Run Detail View, useful for tuning when an agent's tool-loop is unusually long.
+- **실행당 비용**: [실행 상세 보기](#run-detail-view) -> `Cost` 필드.
+- **일별 / 월별 집계**: [분석 페이지](#analytics-page) -> 예산 사용량 및 일별 비용 차트.
+- **액션당 비용**: 실행 상세 보기에서도 확인 가능하며, 에이전트의 도구 루프가 비정상적으로 길 때 튜닝에 유용합니다.
 
-### See also
+### 참고 항목
 
-- [Choosing a Model](#choosing-a-model) - the bigger lever on cost.
-- [Context Options](#context-options) - where added cost comes from.
-- [Budgets Overview](#budgets-overview) - hard caps that prevent runaway cost.
+- [모델 선택](#choosing-a-model) - 비용에 더 큰 영향을 주는 요소.
+- [컨텍스트 옵션](#context-options) - 추가 비용이 발생하는 위치.
+- [예산 개요](#budgets-overview) - 비용 무한 증가를 방지하는 하드 캡.

@@ -76,5 +76,3 @@ Les votes anonymes sont également limités en fréquence par IP et par sondage,
 - Un `userId` doit correspondre à un utilisateur qui existe sur votre site. Les votes pour un utilisateur appartenant à un autre site sont rejetés.
 - Voter sur un sondage fermé échoue avec `poll-closed`.
 - Cette API met à jour les comptes du sondage et les pousse en direct vers les widgets connectés.
-
----

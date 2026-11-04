@@ -1,10 +1,10 @@
-Queues a batch job that moves comments, pages and related records from one urlId or domain to another.  
-"urlId" migrations only match the exact urlId. "domain" migrations find/replace the value inside every urlId and url.  
-Poll GET /api/v1/batch-jobs/{batchJobId}: once it is done it carries per-migration results and an undoId.
+Ставит в очередь пакетное задание, которое перемещает комментарии, страницы и связанные записи с одного urlId или домена на другой.
+Миграция по "urlId" соответствует только точному urlId. Миграция по "domain" выполняет поиск и замену значения внутри каждого urlId и url.
+Опрашивайте GET /api/v1/batch-jobs/{batchJobId}: после завершения задание содержит результаты по каждой миграции и undoId.
 
 ## Параметры
 
-| Имя | Тип | Расположение | Обязательно | Описание |
+| Имя | Тип | Расположение | Обязательный | Описание |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 
@@ -16,7 +16,7 @@ Poll GET /api/v1/batch-jobs/{batchJobId}: once it is done it carries per-migrati
 
 [inline-code-attrs-start title = 'Пример migratePages'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Импортировать классы:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -29,10 +29,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Настроить авторизацию API-ключа: api_key
+    // Configure API key authorization: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Раскомментировать следующую строку, чтобы установить префикс для API-ключа, например "Token" (по умолчанию null)
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);

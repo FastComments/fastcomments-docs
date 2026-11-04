@@ -1,4 +1,3 @@
----
 ## Parametry
 
 | Nazwa | Typ | Wymagane | Opis |
@@ -21,5 +20,3 @@ async function runDeletion() {
   console.log(result);
 }
 [inline-code-end]
-
----

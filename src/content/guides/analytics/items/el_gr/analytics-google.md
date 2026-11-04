@@ -35,5 +35,3 @@
 
 - Ετικέτα: `Comment Posted`, Κατηγορία: `Engagement`, ID: `post_comment`
 - Ετικέτα: `User Voted on a Comment`, Κατηγορία: `Engagement`, ID: `vote_comment`
-
----

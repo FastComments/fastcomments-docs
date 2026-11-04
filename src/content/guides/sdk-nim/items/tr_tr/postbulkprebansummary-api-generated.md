@@ -1,4 +1,3 @@
----
 ## Parametreler
 
 | İsim | Tür | Gerekli | Açıklama |
@@ -21,5 +20,3 @@ let (summaryOpt, httpResp) = client.postBulkPreBanSummary(tenantId = "my-tenant-
 if summaryOpt.isSome:
   let _ = summaryOpt.get()
 [inline-code-end]
-
----

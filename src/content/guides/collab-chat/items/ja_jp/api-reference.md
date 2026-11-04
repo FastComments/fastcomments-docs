@@ -200,5 +200,3 @@ curl -X DELETE "https://fastcomments.com/comment-collab-chats/demo/conv789" \
 ### 使用状況の追跡
 
 会話を作成すると `conversationCreateCount` の使用量メトリクスが増加します。すべての WebSocket 同期アクティビティは `pubSubMessageCount` と `pubSubBandwidth` を増加させます。これらのメトリクスは FastComments ダッシュボードの使用状況分析で監視できます。
-
----

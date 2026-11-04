@@ -20,5 +20,3 @@ Antallet opdateres live med kommentartråden. Knapperne vises ikke, hvis der ing
 Dette kan aktiveres uden kode ved at oprette en tilpasningsregel og aktivere "Klik for at vise kommentarer":
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.click-to-show-comments']; selector = '.click-to-show-comments'; alt='Klik for at vise kommentarer afkrydsningsfelt markeret i en tilpasningsregel på widgetens tilpasningsside'; title='Aktiver Klik for at vise kommentarer' app-screenshot-end]
-
----

@@ -126,5 +126,3 @@ Comentários do Perfil são ótimos para:
 - Comentários do perfil seguem as mesmas diretrizes da comunidade que comentários em artigos
 - Denuncie comentários do perfil inadequados se você os encontrar
 - Moderadores podem tomar medidas sobre comentários do perfil que violem as regras
-
----

@@ -15,5 +15,3 @@ Akcija ljudskog moderatora. Obeležavanja kao spam koja dolaze od agenta (putem 
 - **Snimanje memorije** - neka agent sačuva belešku u memoriji o korisniku označenom kao spam (npr., "ranije označen kao spam zbog X od strane moderatora") kako bi budući moderatori-agenti imali kontekst.
 - **Sprovođenje na nivou korisnika** - označavanje komentara kao spam od strane moderatora može biti signal agentu da takođe izrekne upozorenje ili kratku zabranu, uz prethodno odobrenje.
 - **Zrcaljenje spoljnog sistema** putem [Webhooks](#webhooks-overview).
-
----

@@ -1,12 +1,12 @@
-With the `[api]` extra installed, call the FastComments REST API through the SDK,
-pre-configured with your API key and region:
+Z nameščenim dodatkom `[api]` lahko kličete FastComments REST API prek SDK,
+ki je vnaprej nastavljen z vašim API ključem in regijo:
 
 ```python
 from fastcomments_django import admin, public_api, get_manager
 
-admin().get_comments("YOUR_TENANT_ID", ...)     # avtenticirano (DefaultApi)
-public_api().get_comments_public(...)            # javno (PublicApi)
+admin().get_comments("YOUR_TENANT_ID", ...)     # authenticated (DefaultApi)
+public_api().get_comments_public(...)            # public (PublicApi)
 
-# Ustvari SSO žeton za API klice ali prenos stranke:
+# Generate an SSO token for API calls or client hand-off:
 token = get_manager().sso().token_for(request.user)
 ```

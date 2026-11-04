@@ -19,5 +19,3 @@ Ko se naloga izvaja, bo prikazala število najdenih komentarjev za migracijo in 
 ### Migriranje domen prek API-ja
 
 Domen lahko tudi migrirate z [`POST /api/v1/pages/migrations`](/guide-api.html#pages-migrations-post), pri čemer je `type` nastavljen na `domain`. Napredek je na voljo prek [`GET /api/v1/batch-jobs/:id`](/guide-api.html#batch-job-get-by-id), migracijo pa je mogoče razveljaviti 90 dni.
-
----

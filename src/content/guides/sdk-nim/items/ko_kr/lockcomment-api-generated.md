@@ -25,5 +25,3 @@ if lockResult.isSome:
   let resp = lockResult.get()
   discard resp
 [inline-code-end]
-
----

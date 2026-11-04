@@ -42,5 +42,3 @@ async function runExample(): Promise<void> {
   );
 }
 [inline-code-end]
-
----

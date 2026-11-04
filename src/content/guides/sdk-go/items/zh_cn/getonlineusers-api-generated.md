@@ -1,4 +1,3 @@
----
 当前在线的页面查看者：其 websocket 会话当前订阅了该页面的人。返回 anonCount + totalCount（房间范围的订阅者，包括我们不枚举的匿名观众）。
 
 ## 参数
@@ -44,5 +43,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.GetOnlineUsers`: %v\n", resp)
 }
 [inline-code-end]
-
----

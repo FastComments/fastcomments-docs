@@ -40,6 +40,3 @@
     <div class="title">פתח את עורך הקוד</div>
     <img class="screenshot-image" src="/images/installation-guides/gohighlevel-site-step-6-open-code-editor.png" alt="פתח את עורך הקוד" />
 </div>
-
-
----

@@ -41,5 +41,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "来自 `ModerationAPI.GetManualBadgesForUser` 的响应：%v\n", resp)
 }
 [inline-code-end]
-
----

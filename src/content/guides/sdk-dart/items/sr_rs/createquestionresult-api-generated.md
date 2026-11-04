@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Име | Тип | Локација | Обавезно | Опис |
@@ -30,5 +29,3 @@ try {
     print('Exception when calling DefaultApi->createQuestionResult: $e\n');
 }
 [inline-code-end]
-
----

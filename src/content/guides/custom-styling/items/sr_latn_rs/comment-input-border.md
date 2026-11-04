@@ -1,39 +1,39 @@
-The border around the comment box is made of the text area's own border plus a few thin lines the widget draws around it. To change its color or corner roundness, set these CSS variables instead of styling the `textarea` directly. The variables restyle every part of the border at once, so the corners and colors always line up.
+Okvir oko polja za komentar čine sami okvir tekstualnog područja plus nekoliko tankih linija koje vidžet iscrtava oko njega. Da biste promenili boju ili zaobljenost uglova, postavite ove CSS promenljive umesto da stilizujete `textarea` direktno. Promenljive restilizuju sve delove okvira odjednom, tako da se uglovi i boje uvek poklapaju.
 
 | Promenljiva | Šta menja | Podrazumevano |
 |---|---|---|
-| `--fc-input-border-color` | Border color | `#bfbfbf` |
-| `--fc-input-border-color-focus` | Border color while the user is typing | `#555` |
-| `--fc-input-border-radius` | Roundness of the rounded corners | `11px` |
-| `--fc-input-border-start-start-radius` | Roundness of the square top-left corner (top-right in right-to-left languages) | `0` |
+| `--fc-input-border-color` | Boja okvira | `#bfbfbf` |
+| `--fc-input-border-color-focus` | Boja okvira dok korisnik kuca | `#555` |
+| `--fc-input-border-radius` | Zaobljenost zaobljenih uglova | `11px` |
+| `--fc-input-border-start-start-radius` | Zaobljenost kvadratnog gornjeg levog ugla (gornji desni u jezicima koji se pišu s desna na levo) | `0` |
 
-Add the CSS to the **Custom CSS** box on the [Widget Customization page](https://fastcomments.com/auth/my-account/customize-widget), or pass it with the `customCSS` option. You only need to set the variables you want to change.
+Dodajte CSS u polje **Custom CSS** na [stranici za prilagođavanje vidžeta](https://fastcomments.com/auth/my-account/customize-widget), ili ga prosledite kroz opciju `customCSS`. Potrebno je da postavite samo promenljive koje želite da promenite.
 
-You can also use the **Comment box border** helper right under the Custom CSS box, which writes this CSS for you.
+Takođe možete koristiti pomoćnik **Comment box border** odmah ispod polja Custom CSS, koji ovaj CSS napiše umesto vas.
 
-## Promeni boju ivice
+## Promena boje okvira
 
-[inline-code-attrs-start title = 'Boja ivice'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Boja okvira'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 :root {
     --fc-input-border-color: #d1d5db;
 }
 [inline-code-end]
 
-## Promeni boju ivice dok se kuca
+## Promena boje okvira dok kucate
 
-[inline-code-attrs-start title = 'Boja ivice dok se kuca'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Boja okvira dok kucate'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 :root {
     --fc-input-border-color-focus: #2563eb;
 }
 [inline-code-end]
 
-## Zaobli sve četiri uglove
+## Zaobljavanje sva četiri ugla
 
-By default the top-left corner is square. Set both radius variables to round all four corners the same:
+Podrazumevano je gornji levi ugao kvadratan. Postavite obe promenljive za poluprečnik da biste zaoblili sva četiri ugla isto:
 
-[inline-code-attrs-start title = 'Zaobli sve četiri uglove'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Zaobljavanje sva četiri ugla'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 :root {
     --fc-input-border-radius: 12px;
@@ -50,9 +50,9 @@ By default the top-left corner is square. Set both radius variables to round all
 }
 [inline-code-end]
 
-## Uskladi sa brendom
+## Usklađivanje sa brendom
 
-[inline-code-attrs-start title = 'Boje brenda i uglovi'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Boje i uglovi brenda'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 :root {
     --fc-input-border-color: #c7d2fe;
@@ -64,9 +64,9 @@ By default the top-left corner is square. Set both radius variables to round all
 
 ## Različite boje u tamnom režimu
 
-When the widget is in dark mode it has the `dark` class, so you can set different values for dark mode:
+Kada je vidžet u tamnom režimu, ima `dark` klasu, tako da možete postaviti različite vrednosti za tamni režim:
 
-[inline-code-attrs-start title = 'Boje ivice u tamnom režimu'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Boje okvira u tamnom režimu'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 :root {
     --fc-input-border-color: #d1d5db;
@@ -77,6 +77,6 @@ When the widget is in dark mode it has the `dark` class, so you can set differen
 }
 [inline-code-end]
 
-## Zašto ne stilizovati textarea direktno?
+## Zašto ne stilizovati tekstualno područje direktno?
 
-The widget draws part of the comment box border itself, around the text area. If you set `border-color` or `border-radius` only on the `textarea`, those lines keep the default style and the border looks mismatched, for example a square line running through a rounded corner. The variables above change both at once.
+Vidžet sam iscrtava deo okvira polja za komentar, oko tekstualnog područja. Ako postavite `border-color` ili `border-radius` samo na `textarea`, te linije zadržavaju podrazumevani stil i okvir deluje neusklađeno, na primer kvadratna linija koja prolazi kroz zaobljeni ugao. Gore navedene promenljive menjaju oba odjednom.

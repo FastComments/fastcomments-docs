@@ -1,4 +1,3 @@
----
 ## 參數
 
 | Name | Type | Location | Required | Description |
@@ -37,5 +36,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->patch_page: #{e}"
 end
 [inline-code-end]
-
----

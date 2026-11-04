@@ -6,5 +6,3 @@ Mevcut iki tür yorum sayısı bileşeni vardır:
 2. **Bulk Comment Count Widget** - Aynı sayfada birden çok sayfanın yorum sayılarını verimli şekilde görüntülemek için
 
 Bu makale VanillaJS bileşenlerini kapsar. Our React/Angular/etc libraries also have their own widgets.
-
----

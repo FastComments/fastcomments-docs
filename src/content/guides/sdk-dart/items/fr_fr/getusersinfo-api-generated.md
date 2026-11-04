@@ -1,27 +1,27 @@
-Bulk user info for a tenant. Given userIds, return display info from User / SSOUser.  
-Used by the comment widget to enrich users that just appeared via a presence event.  
-No page context: privacy is enforced uniformly (private profiles are masked).
+Informations utilisateur en masse pour un tenant. Étant donné des userIds, renvoie les informations d'affichage de User / SSOUser.
+Utilisé par le widget de commentaires pour enrichir les utilisateurs qui viennent d'apparaître via un événement de présence.
+Pas de contexte de page : la confidentialité est appliquée de manière uniforme (les profils privés sont masqués).
 
-## Parameters
+## Paramètres
 
-| Nom | Type | Emplacement | Obligatoire | Description |
+| Nom | Type | Emplacement | Requis | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Oui |  |
-| ids | string | query | Oui | Identifiants d'utilisateur séparés par des virgules. |
+| ids | string | query | Oui | userIds délimités par des virgules. |
 
-## Response
+## Réponse
 
-Returns: `PageUsersInfoResponse`
+Renvoie : `PageUsersInfoResponse`
 
-## Example
+## Exemple
 
-[inline-code-attrs-start title = 'Exemple getUsersInfo'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple de getUsersInfo'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
 
 final api_instance = PublicApi();
-final tenantId = tenantId_example; // Chaîne | 
-final ids = ids_example; // Chaîne | Identifiants d'utilisateur séparés par des virgules.
+final tenantId = tenantId_example; // String | 
+final ids = ids_example; // String | userIds délimités par des virgules.
 
 try {
     final result = api_instance.getUsersInfo(tenantId, ids);

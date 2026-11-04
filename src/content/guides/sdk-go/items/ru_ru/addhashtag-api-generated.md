@@ -36,5 +36,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Ответ от `DefaultAPI.AddHashTag`: %v\n", resp)
 }
 [inline-code-end]
-
----

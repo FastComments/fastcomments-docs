@@ -29,5 +29,3 @@ Brightspace'ta, LTI araçlarının derslerde kullanılabilmesi için bir **deplo
 3. Dağıtıma bir isim verin (örn. "FastComments - All Courses"), kullanılacağı organizasyon birimlerini seçin ve kaydedin.
 
 Bu dağıtım üzerinden ilk başlatmadan sonra FastComments, `deployment_id`'yi yapılandırma kaydına sabitler - aynı istemci altındaki farklı bir dağıtımdan sonraki başlatmalar, yeniden kayıt yapmadığınız sürece reddedilecektir.
-
----

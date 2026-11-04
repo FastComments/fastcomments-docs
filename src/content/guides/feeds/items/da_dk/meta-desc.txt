@@ -1,3 +1,1 @@
----
 Byg et socialt stillet indholdsfeed på web, Android og iOS. Tilpas hvad hver læser ser, og lever forskelligt indhold efter region.
----

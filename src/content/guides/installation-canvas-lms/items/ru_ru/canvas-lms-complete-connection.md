@@ -1,28 +1,28 @@
 #### Введите Client ID в FastComments
 
-Вернитесь к <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">your FastComments LTI Config</a>. Мастер должен быть на **Step 2: Connect**.
+Вернитесь на <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">страницу конфигурации LTI в FastComments</a>. Мастер должен быть на **Шаге 2: Подключение**.
 
-Вставьте **Client ID**, который вы скопировали из Canvas, в поле **Client ID**. При желании введите **Deployment ID**, если ваша LMS предоставляет его.
+Вставьте **Client ID**, скопированный из Canvas, в поле **Client ID**. При необходимости введите **Deployment ID**, если ваша LMS его предоставляет.
 
 Нажмите **Save & Continue**.
 
-#### Enable the Integration
+#### Включите интеграцию
 
-Мастер перейдёт к **Step 3: Go Live**. Отображается сводка вашей конфигурации (name, platform URL, Client ID, and deployment ID).
+Мастер перейдёт к **Шагу 3: Запуск**. Будет показана сводка вашей конфигурации (название, URL платформы, Client ID и Deployment ID).
 
-Просмотрите данные, затем нажмите **Enable Integration**, чтобы активировать LTI-подключение.
+Проверьте данные, затем нажмите **Enable Integration**, чтобы активировать LTI-подключение.
 
-После включения мастер покажет **Management View**, где вы можете отредактировать конфигурацию, просмотреть все LTI URLs, или добавить дополнительные deployments.
+После включения мастер покажет **Management View**, где вы сможете изменить конфигурацию, просмотреть все LTI URL или добавить дополнительные развёртывания.
 
-#### Install the External App in Canvas
+#### Установите внешнее приложение в Canvas
 
-В Canvas перейдите в **Admin** > выберите вашу учетную запись > **Settings** > вкладка **Apps**.
+В Canvas перейдите в **Admin** > выберите ваш аккаунт > **Settings** > вкладка **Apps**.
 
 Нажмите **+ App** и настройте:
 
-1. Установите **Configuration Type** в **By Client ID**.
+1. Установите **Configuration Type** на **By Client ID**.
 2. Вставьте **Client ID** из таблицы Developer Keys.
 3. Нажмите **Submit**.
-4. Подтвердите установку, когда появится запрос.
+4. Подтвердите установку при появлении запроса.
 
-FastComments теперь установлена на уровне аккаунта и доступна во всех курсах.
+FastComments теперь установлен на уровне аккаунта и доступен для всех курсов.

@@ -2,36 +2,36 @@ De plugin-instellingenpagina bevindt zich op **Site Administration > Plugins > L
 
 #### Tenant ID
 
-Uw FastComments Tenant ID. Vind dit in het <a href="https://fastcomments.com/auth/my-account" target="_blank">FastComments dashboard</a> onder uw accountinstellingen.
+Je FastComments Tenant ID. Je vindt dit in het <a href="https://fastcomments.com/auth/my-account" target="_blank">FastComments dashboard</a> onder je accountinstellingen.
 
 #### API Secret
 
-Uw API Secret-sleutel, vereist voor Secure SSO-modus. Vind deze op <a href="https://fastcomments.com/auth/my-account/api-secret" target="_blank">Mijn account &gt; API Secret</a>.
+Je API Secret key, vereist voor Secure SSO modus. Je vindt dit op <a href="https://fastcomments.com/auth/my-account/api-secret" target="_blank">My Account > API Secret</a>.
 
 #### SSO Mode
 
-Kies hoe gebruikers worden geverifieerd. Zie de [SSO-modi](#moodle-sso-modes) sectie voor details over elke optie.
+Kies hoe gebruikers worden geauthenticeerd. Zie de sectie [SSO Modes](#moodle-sso-modes) voor details over elke optie.
 
-- **Beveiligd** (aanbevolen) - server-side HMAC-SHA256 ondertekende authenticatie
-- **Eenvoudig** - client-side gebruikersgegevens zonder handtekening
-- **Geen** - anoniem reageren, geen Moodle-loginintegratie
+- **Secure** (aanbevolen) - server-side HMAC-SHA256 ondertekende authenticatie
+- **Simple** - client-side gebruikersgegevens zonder handtekening
+- **None** - anoniem reageren, geen Moodle-login-integratie
 
 #### Page Contexts
 
 Bepaalt waar reacties verschijnen:
 
-- **Cursuspagina's** - reacties op de hoofdpagina's van de cursus
-- **Module/activiteitspagina's** - reacties op individuele activiteiten en bronnen
-- **Beide** - reacties op alle pagina-typen
+- **Course pages** - reacties op de hoofdpagina's van cursussen
+- **Module/activity pages** - reacties op individuele activiteiten en bronnen
+- **Both** - reacties op alle paginatypen
 
 #### Commenting Style
 
-Kies de commentaarervaring. Zie [Commentaarstijlen](#moodle-commenting-styles) voor screenshots van elke modus.
+Kies de reactie-ervaring. Zie [Commenting Styles](#moodle-commenting-styles) voor screenshots van elke modus.
 
-- **Reacties** - standaard gelaagde reactiewidget onder de paginainhoud
-- **Collab Chat** - inline discussies bij tekstselectie met aanwezigheidindicatoren
-- **Beide** - reacties en Collab Chat tegelijk actief
+- **Comments** - standaard geneste reactiewidget onder de pagina-inhoud
+- **Collab Chat** - inline discussies bij tekstselectie met aanwezigheidsindicatoren
+- **Both** - reacties en collab chat tegelijk actief
 
 #### CDN URL
 
-De FastComments CDN URL. Standaard is `https://cdn.fastcomments.com`. Wijzig dit naar de EU CDN-URL als uw gegevens in de EU-regio worden gehost.
+De FastComments CDN URL. Standaard is dit `https://cdn.fastcomments.com`. Wijzig dit naar de EU CDN URL als je data in de EU-regio wordt gehost.

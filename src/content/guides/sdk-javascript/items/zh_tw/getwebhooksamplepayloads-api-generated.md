@@ -1,4 +1,3 @@
----
 最近的評論以 webhook 傳遞使用的確切形狀呈現，用於建構整合（例如 Zapier 範例資料）。每個事件都會傳遞相同的評論物件，因此 `event` 只需要是有效的。
 
 ## 參數
@@ -34,5 +33,3 @@ const responseBasic: GetWebhookSamplePayloadsResponse = await getWebhookSamplePa
   tenantId
 );
 [inline-code-end]
-
----

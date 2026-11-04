@@ -91,5 +91,3 @@ interface CommentPostResponse {
     user?: User
 }
 [inline-code-end]
-
----

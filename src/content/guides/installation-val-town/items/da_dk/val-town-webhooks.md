@@ -56,5 +56,3 @@ app.delete("/", receive);
 Svar hurtigt. FastComments forsøger igen ved et svar, der ikke er 2xx, og et endpoint, der fortsat fejler, deaktiveres til sidst automatisk, så udfør reelt arbejde efter at have svaret i stedet for inline.
 
 Gør arbejdet idempotent på kommentar-id'et. Et retry bliver gen-signeret med en frisk tidsstempel, og det samme kommentar-id ankommer igen ved redigering og sletning, så der er intet stabilt at deduplere på.
-
----

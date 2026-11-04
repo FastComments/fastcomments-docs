@@ -1,17 +1,14 @@
----
-FastComments is getest met de browsers die het overgrote deel van het browsermarktaandeel uitmaken.
+FastComments is getest met de browsers die samen de overgrote meerderheid van het browsermarktaandeel uitmaken.
 
-This includes:
+Dit omvat:
 
 - Microsoft Edge
 - FireFox
 - Chrome
 - Safari
 - iOS Safari
-- Chrome for Android
+- Chrome voor Android
 - Samsung Internet
 
-For the sake of security and providing the best experience for the majority of our customers, we do not
-ondersteunen we geen
-support browsers that no longer receive security updates or have a very small amount of traffic.
----
+Met het oog op beveiliging en het bieden van de beste ervaring aan de meerderheid van onze klanten, ondersteunen we
+geen browsers die geen beveiligingsupdates meer ontvangen of die slechts zeer weinig verkeer hebben.

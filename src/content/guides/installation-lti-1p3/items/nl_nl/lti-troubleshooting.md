@@ -1,31 +1,31 @@
 #### "Registratietoken niet gevonden, verlopen of al gebruikt"
 
-Het token in uw registratie-URL (<a href="https://fastcomments.com/auth/my-account/lti-config" target="_blank">haal het hier op</a>) is 30 minuten geldig en kan slechts één keer worden gebruikt. Als uw LMS daar langer over deed, of als de registratie opnieuw werd geprobeerd nadat deze al geslaagd was, wordt het token geweigerd. Genereer een nieuwe URL op de FastComments LTI 1.3 Configuration-pagina en begin opnieuw.
+Het token in je registratie-URL (<a href="https://fastcomments.com/auth/my-account/lti-config" target="_blank">haal het hier op</a>) is 30 minuten geldig en kan slechts één keer worden gebruikt. Als je LMS er langer over deed, of als de registratie opnieuw werd geprobeerd nadat deze al was geslaagd, wordt het token geweigerd. Genereer een nieuwe URL op de FastComments LTI 1.3 Configuratiepagina en begin opnieuw.
 
-#### "Platform rejected registration"
+#### "Platform heeft registratie geweigerd"
 
-Uw LMS weigerde de registratie-handshake. De meest voorkomende oorzaken:
+Je LMS heeft de registratie-handshake geweigerd. De meest voorkomende oorzaken:
 
-- **Tool already registered with the same client name.** Sommige platforms (vooral D2L) weigeren een tweede registratie van "FastComments" totdat de vorige is verwijderd. Verwijder het oude tool in uw LMS en probeer het opnieuw.
-- **Wrong field in the LMS.** Zorg ervoor dat u de URL hebt geplakt in het veld **registration / tool initiation registration endpoint**, niet in het launch URL- of login URL-veld.
-- **The LMS doesn't actually support Dynamic Registration.** Oudere versies van Moodle en Blackboard adverteren LTI 1.3 maar staan alleen handmatige configuratie toe. Controleer de documentatie van uw platform.
+- **Tool al geregistreerd met dezelfde clientnaam.** Sommige platforms (met name D2L) weigeren een tweede registratie van "FastComments" totdat de vorige is verwijderd. Verwijder de oude tool in je LMS en probeer het opnieuw.
+- **Verkeerd veld in het LMS.** Zorg ervoor dat je de URL hebt geplakt in het veld **registration / tool initiation registration endpoint**, niet in het veld voor de launch-URL of login-URL.
+- **Het LMS ondersteunt eigenlijk geen Dynamic Registration.** Oudere Moodle- en Blackboard-versies adverteren met LTI 1.3 maar staan alleen handmatige configuratie toe. Raadpleeg de documentatie van je platform.
 
-#### "Failed to fetch platform configuration"
+#### "Kan platformconfiguratie niet ophalen"
 
-FastComments kon het openid-configuration-document van uw LMS niet lezen. Dit is zeldzaam en betekent meestal dat het LMS een foutieve of onbereikbare discovery URL heeft opgegeven. Neem contact op met de ondersteuning van uw LMS.
+FastComments kon het openid-configuration-document van je LMS niet lezen. Dit is zeldzaam en betekent meestal dat het LMS een onjuist gevormde of onbereikbare discovery-URL heeft opgegeven. Neem contact op met de support van je LMS.
 
-#### Launch shows "Configuration not found"
+#### Launch toont "Configuration not found"
 
-Ofwel is de configuratie in FastComments verwijderd, of de launch kwam van een `iss`/`client_id`-paar dat we niet herkennen. Als u de configuratie hebt verwijderd en opnieuw hebt geregistreerd, geef uw LMS de opdracht om de FastComments-tool te verwijderen en opnieuw toe te voegen zodat deze de nieuwe client_id krijgt.
+Ofwel is de configuratie in FastComments verwijderd, of de launch kwam van een `iss`/`client_id`-combinatie die we niet herkennen. Als je hebt verwijderd en opnieuw geregistreerd, geef je LMS dan de opdracht om de FastComments-tool te verwijderen en opnieuw toe te voegen, zodat deze de nieuwe client_id ontvangt.
 
-#### Launch shows "Deployment not registered"
+#### Launch toont "Deployment not registered"
 
-U hebt FastComments gestart vanuit een Brightspace/Moodle/Blackboard-deployment die verschilt van degene waarin het voor het eerst werd gestart. FastComments legt de `deployment_id` vast bij de eerste start als beveiligingscontrole. Om een nieuwe deployment onder dezelfde client toe te voegen, neem contact op met support - wij voegen de deployment ID toe aan de configuratie.
+Je hebt FastComments gestart vanuit een Brightspace/Moodle/Blackboard-deployment die anders is dan degene waarin het voor het eerst werd gestart. FastComments pinnt de `deployment_id` bij de eerste launch als beveiligingscontrole. Om een nieuwe deployment onder dezelfde client toe te voegen, neem je contact op met support - wij voegen de deployment-ID toe aan de configuratie.
 
-#### Launch shows "Unsupported message_type"
+#### Launch toont "Unsupported message_type"
 
-Het LMS stuurde een LTI-bericht dat FastComments niet afhandelt (bijv. `LtiSubmissionReviewRequest`). FastComments ondersteunt alleen de standaard resource-link launch- en deep-linking-flows. Neem contact op als u een specifiek berichttype toegevoegd wilt hebben.
+Het LMS heeft een LTI-bericht verzonden dat FastComments niet verwerkt (bijv. `LtiSubmissionReviewRequest`). FastComments ondersteunt alleen de standaard resource-link launch en deep-linking-flows. Neem contact op als je een specifiek berichttype toegevoegd nodig hebt.
 
-#### Iframe doesn't resize
+#### Iframe past grootte niet aan
 
-De meeste LMS'en schalen LTI-iframes automatisch. Als dat bij uw LMS niet het geval is, controleer dan of de launch-instellingen van het LMS toestaan dat de tool postMessage-events naar het ouderframe stuurt. FastComments stuurt zowel Canvas-stijl (`lti.frameResize`) als IMS-specificatie (`org.imsglobal.lti.frameResize`) resize-berichten.
+De meeste LMS'en passen de grootte van LTI-iframes automatisch aan. Als dat bij jou niet het geval is, controleer dan of de launch-instellingen van het LMS de tool toestaan postMessage-events naar het bovenliggende frame te sturen. FastComments stuurt zowel Canvas-stijl (`lti.frameResize`) als IMS-spec (`org.imsglobal.lti.frameResize`) resize-berichten.

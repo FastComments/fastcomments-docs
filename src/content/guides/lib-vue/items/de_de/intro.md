@@ -5,5 +5,3 @@ Binden Sie Live-Kommentarfunktionen, Chat- und Review-Widgets in Ihre Vue 2-App 
 ## Repository
 
 [Auf GitHub ansehen](https://github.com/FastComments/fastcomments-vue)
-
----

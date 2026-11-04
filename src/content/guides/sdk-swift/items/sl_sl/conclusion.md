@@ -1,4 +1,3 @@
----
 ## Potrebujete pomoč?
 
 Če naletite na težave ali imate vprašanja o Swift SDK, prosimo:
@@ -9,5 +8,3 @@
 ## Prispevanje
 
 Prispevki so dobrodošli! Prosimo, obiščite [GitHub repozitorij](https://github.com/FastComments/fastcomments-swift) za smernice za prispevanje.
-
----

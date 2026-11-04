@@ -1,4 +1,3 @@
----
 Claude Code, Cursor veya bir MCP tabanlı asistan gibi bir kodlama ajanı, kayıt formunu doldurmanıza gerek kalmadan FastComments'ı sizin için kurabilir. Bu, bir ajana "siteme yorum ekle" dediğinizde ve henüz bir hesabınız olmadığında faydalıdır.
 
 ### Nasıl çalışır
@@ -19,5 +18,3 @@ Her oturum bir hesabı sahiptir. Mevcut bir hesaba giriş yapmışken bir talep 
 ### Ajan yazarları için
 
 Ajan talimatları [fastcomments.com/agents.md](https://fastcomments.com/agents.md) adresinde, hesap oluşturma çağrısını, yanıt içindeki alanları ve talep bağlantısını çalıştığınız kişiye nasıl teslim edeceğinizi açıklar. Bu çağrı bir API anahtarı gerektirmez ve IP adresine göre oran sınırlamasına sahiptir.
-
----

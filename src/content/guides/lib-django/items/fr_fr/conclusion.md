@@ -1,10 +1,10 @@
 ## Besoin d'aide ?
 
-If you encounter any issues or have questions about the Django Package, please:
+Si vous rencontrez des problèmes ou avez des questions concernant le package Django, veuillez :
 
-- [Ouvrir une issue sur GitHub](https://github.com/FastComments/fastcomments-django/issues)
+- [Ouvrir un ticket sur GitHub](https://github.com/FastComments/fastcomments-django/issues)
 - [Contacter le support FastComments](https://fastcomments.com/auth/my-account/help)
 
 ## Contribuer
 
-Les contributions sont les bienvenues ! Veuillez visiter le [dépôt GitHub](https://github.com/FastComments/fastcomments-django) pour les directives de contribution.
+Les contributions sont les bienvenues ! Veuillez consulter le [dépôt GitHub](https://github.com/FastComments/fastcomments-django) pour connaître les directives de contribution.

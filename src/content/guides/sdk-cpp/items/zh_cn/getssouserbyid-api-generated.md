@@ -24,5 +24,3 @@ api->getSSOUserById(tenantId, ssoUserId)
         }
     });
 [inline-code-end]
-
----

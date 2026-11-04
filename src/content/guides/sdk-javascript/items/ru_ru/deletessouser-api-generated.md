@@ -32,5 +32,3 @@ const simpleResult: DeleteSSOUserAPIResponse = await deleteSSOUser(
   userId
 );
 [inline-code-end]
-
----

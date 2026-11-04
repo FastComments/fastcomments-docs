@@ -1,8 +1,8 @@
 [api-resource-header-start name = 'SSOUser'; route = 'POST /api/v1/sso-users'; creditsCost = 1; api-resource-header-end]
 
-이 경로는 단일 SSO 사용자를 생성합니다.
+이 라우트는 단일 SSO 사용자의 생성을 제공합니다.
 
-동일한 ID로 두 사용자를 생성하려 하면 오류가 발생합니다.
+동일한 ID로 두 명의 사용자를 생성하려고 하면 오류가 발생합니다.
 
 [inline-code-attrs-start title = 'SSOUser 생성 cURL 예제'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -18,7 +18,7 @@ curl --request POST \
 }'
 [inline-code-end]
 
-In this example we specify `groupIds` for access control, but this is optional.
+이 예제에서는 접근 제어를 위해 `groupIds`를 지정하지만, 이는 선택 사항입니다.
 
 [inline-code-attrs-start title = 'SSOUser 생성 요청 구조'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -32,18 +32,18 @@ interface SSOUserPostQueryParams {
 [inline-code-start]
 interface SSOUserPostResponse {
     status: 'success' | 'failed'
-    /** 실패 시 포함됩니다. **/
+    /** Included on failure. **/
     code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'empty-request' | 'invalid-input' | 'missing-id' | 'user-exists'
-    /** 실패 시 포함됩니다. **/
+    /** Included on failure. **/
     reason?: string
-    user?: SSOUser; // 성공 시 생성된 사용자를 반환합니다.
+    user?: SSOUser; // We return the created user on success.
 }
 [inline-code-end]
 
-#### 통합 참고
+#### 통합 참고 사항
 
-API로 전달된 데이터는 다른 SSO User HMAC 페이로드를 전달하는 것만으로 간단히 덮어쓸 수 있습니다. For example, if
-API를 통해 username을 설정했지만 페이지 로드 시 SSO 흐름에서 다른 username을 전달하면, 우리는 자동으로 업데이트
-해당 사용자의 username.
+API를 통해 전달된 데이터는 다른 SSO 사용자 HMAC 페이로드를 전달하는 것만으로 간단히 재정의할 수 있습니다. 예를 들어,
+API를 통해 사용자 이름을 설정한 후, 페이지 로드 시 SSO 흐름을 통해 다른 사용자 이름을 전달하면 자동으로
+해당 사용자의 사용자 이름이 업데이트됩니다.
 
-We will not update user parameters in this flow unless you explicitly specify them or set them to null (not undefined).
+이 흐름에서는 사용자 매개변수를 명시적으로 지정하거나 null로 설정하지 않는 한( undefined가 아닌 경우) 업데이트하지 않습니다.

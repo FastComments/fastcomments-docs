@@ -1,4 +1,3 @@
----
 Om opmerkingen toe te voegen aan je website die gebouwd is met Vue, kun je onze Vue-bibliotheek op NPM <a href="https://www.npmjs.com/package/fastcomments-vue" target="_blank">hier</a> vinden.
 
 Daarnaast is er een vue-next-bibliotheek op NPM <a href="https://www.npmjs.com/package/fastcomments-vue-next" target="_blank">hier</a>
@@ -50,5 +49,3 @@ Als je in de EU bent, wil je de `region` op `EU` zetten:
 De `fastcomments-vue` en `fastcomments-vue-next` bibliotheken ondersteunen dezelfde configuratie als de VanillaJS-commentaarwidget.
 
 Je kunt de configuratie die de Vue-component ondersteunt <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">hier</a> vinden.
-
----

@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
@@ -25,5 +24,3 @@ let (respOpt, httpResponse) = client.updateUserNotificationStatus(
 if respOpt.isSome:
   let status = respOpt.get()
 [inline-code-end]
-
----

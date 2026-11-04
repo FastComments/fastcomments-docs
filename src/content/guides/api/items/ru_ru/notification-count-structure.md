@@ -17,5 +17,3 @@ interface NotificationCount {
     expireAt: string // строковое представление даты
 }
 [inline-code-end]
-
----

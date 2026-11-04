@@ -1,4 +1,3 @@
----
 ## Paramètres
 
 | Nom | Type | Emplacement | Requis | Description |
@@ -37,5 +36,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.CreateTenantUser`: %v\n", resp)
 }
 [inline-code-end]
-
----

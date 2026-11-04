@@ -20,5 +20,3 @@ api->getTenantPackages(tenantId, skip)
         (void)resp;
     });
 [inline-code-end]
-
----

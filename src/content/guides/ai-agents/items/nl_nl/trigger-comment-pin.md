@@ -1,4 +1,3 @@
----
 Wordt geactiveerd wanneer een opmerking wordt vastgezet.
 
 ### Context die de agent ontvangt
@@ -16,5 +15,3 @@ Looppreventie: door een agent veroorzaakte pin-events activeren geen agent-trigg
 ### Opmerking over het paar
 
 Pin- en unpin-events zijn aparte triggers. Abonneer je op beide als je symmetrisch gedrag wilt. Zie [Trigger: Opmerking Ontpind](#trigger-comment-unpin).
-
----

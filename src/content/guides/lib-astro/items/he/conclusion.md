@@ -8,5 +8,3 @@
 ## תרומות
 
 תרומות יתקבלו בברכה! אנא בקרו ב-[מאגר GitHub](https://github.com/FastComments/fastcomments-astro) לקבלת הנחיות לתרומה.
-
----

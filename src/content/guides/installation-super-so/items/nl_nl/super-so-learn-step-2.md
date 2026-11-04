@@ -93,5 +93,3 @@ Als je na het plakken van de code een "this is a demo message" ziet:
 - Zorg dat je bent ingelogd op je fastcomments.com-account.
 - Zorg dat je cookies van derden hebt ingeschakeld.
 - Vernieuw vervolgens deze pagina en kopieer het codefragment opnieuw. Het zou `tenantId` gevuld moeten hebben met de identificatie van je tenant.
-
----

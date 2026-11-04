@@ -1,4 +1,3 @@
----
 Wil je opmerkingen toevoegen aan je Notion-pagina's, Google Sites of Nimbus Notes? Wij regelen het.
 
 ### Notion
@@ -27,5 +26,3 @@ Het toevoegen van live-opmerkingen aan een Nimbus Note wordt ook ondersteund, en
 2. Wanneer je je notitie bewerkt, voeg een embed-blok toe.
 3. Gebruik de URL uit stap 1 als de URL om in te voegen.
 4. Klaar!
-
----

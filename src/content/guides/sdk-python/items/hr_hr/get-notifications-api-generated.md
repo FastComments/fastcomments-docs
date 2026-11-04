@@ -56,5 +56,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->get_notifications: %s\n" % e)
 [inline-code-end]
-
----

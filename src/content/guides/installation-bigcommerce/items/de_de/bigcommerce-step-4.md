@@ -13,5 +13,3 @@ Jetzt können wir unsere Seite überprüfen! Wenn Sie zu einem Blog-Beitrag gehe
     <div class="title">Änderungen live</div>
     <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-4-live.png" alt="Änderungen live" />
 </div>
-
----

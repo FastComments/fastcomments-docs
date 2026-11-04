@@ -8,5 +8,3 @@ Si encuentras algún problema o tienes preguntas sobre el Nim SDK, por favor:
 ## Contribuciones
 
 ¡Las contribuciones son bienvenidas! Por favor visita el [repositorio de GitHub](https://github.com/FastComments/fastcomments-nim) para las directrices de contribución.
-
----

@@ -1,4 +1,3 @@
----
 Moderators kunnen in groepen worden geplaatst om verschillende pagina's of categorieën van inhoud te modereren.
 
 Wanneer een Moderator tot één of meer groepen behoort, ziet hij/zij alleen reacties van die groepen op de pagina Modereren van reacties.
@@ -15,4 +14,3 @@ Ten slotte moeten reacties aan één of meer groepen worden gekoppeld zodat de j
 
 Dit kan worden ingesteld door [enkele groepen toe te voegen](https://fastcomments.com/auth/my-account/moderate-comments/moderation-groups) en vervolgens de bijbehorende `Moderation Group`-ids in de commentaarwidget op te geven,
 [zoals hier beschreven](/guide-customizations-and-configuration.html#moderation-group-ids).
----

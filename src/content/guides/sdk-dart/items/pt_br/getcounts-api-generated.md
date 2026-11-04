@@ -26,5 +26,3 @@ try {
     print('Exception when calling ModerationApi->getCounts: $e\n');
 }
 [inline-code-end]
-
----

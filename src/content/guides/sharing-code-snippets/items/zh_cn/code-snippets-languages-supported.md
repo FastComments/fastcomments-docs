@@ -1,7 +1,6 @@
----
-在分享代码片段时，FastComments 会尽力自动判断代码片段所使用的编程语言，以自动格式化并应用语法高亮。
+分享代码片段时，FastComments 会尽力自动判断代码片段所使用的编程语言，以便自动格式化并应用语法高亮。
 
-FastComments 的语法高亮当前支持 39 种常见语言：
+FastComments 的语法高亮目前支持 39 种常见语言：
 
 - .properties
 - Apache
@@ -46,7 +45,4 @@ FastComments 的语法高亮当前支持 39 种常见语言：
 - Visual Basic .NET
 - YAML
 
-When sharing a code snippet in a language we don't support, it will still be rendered like code -
-but no syntax highlighting or reformatting will be applied.
-
----
+当分享的代码片段使用我们不支持的语言时，它仍会以代码形式渲染——但不会应用语法高亮或重新格式化。

@@ -86,5 +86,3 @@ A página de configuração gera esta URL para cada uma de suas chaves de API.
 ### Segurança
 
 Uma URL de endpoint que contém uma chave de API é um segredo: não cole‑a em chats públicos, capturas de tela ou commits. Se uma chave for exposta, rotacione‑a na página de Chaves de API no seu painel. Tokens OAuth não apresentam esse risco porque são vinculados a uma única aplicação e podem ser revogados em Aplicativos Conectados.
-
----

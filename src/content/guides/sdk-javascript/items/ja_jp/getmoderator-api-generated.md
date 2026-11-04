@@ -21,5 +21,3 @@ async function fetchModerator() {
   const statusCode: number | undefined = response.status?.code;
 }
 [inline-code-end]
-
----

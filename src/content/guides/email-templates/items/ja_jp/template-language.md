@@ -1,4 +1,3 @@
----
 FastComments Email Templates は [EJS テンプレート言語](https://ejs.co/#docs) を使用します。
 
 変数を出力する例は `<%= object.someValue %>` で、条件文は次のように記述できます:
@@ -12,5 +11,3 @@ FastComments Email Templates は [EJS テンプレート言語](https://ejs.co/#
 コメント内容のような生のHTMLを出力するには `<%- comment.commentHTML %>` のようにします。 `=` の代わりに `-` を使う点に注意してください。
 
 構文の詳細は上記のリンクを参照してください。
-
----

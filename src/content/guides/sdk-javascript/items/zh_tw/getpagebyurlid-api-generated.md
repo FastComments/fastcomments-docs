@@ -21,5 +21,3 @@
   const page: APIPage | undefined = response.page;
 })();
 [inline-code-end]
-
----

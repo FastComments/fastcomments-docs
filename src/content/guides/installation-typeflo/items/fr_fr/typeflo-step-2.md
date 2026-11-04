@@ -1,4 +1,3 @@
----
 Dans la section **Pied de page** de l'onglet Code personnalisé, collez le code suivant :
 
 [inline-code-attrs-start title = 'Extrait de code pour les commentaires en direct Typeflo.io'; type = 'html'; isFunctional = false; inline-code-attrs-end]
@@ -54,4 +53,3 @@ Après avoir collé le code, cliquez sur le bouton **Enregistrer** pour applique
 Remarque : ce code inclut une logique permettant de placer dynamiquement le widget FastComments à l'emplacement optimal dans vos articles Typeflo.io. Les autres extraits de code ne fonctionneront pas correctement avec la mise en page de Typeflo.io.
 
 N'oubliez pas de remplacer `'demo'` par votre identifiant de locataire FastComments réel après votre inscription. Si vous êtes connecté à FastComments.com, il devrait déjà être remplacé.
----

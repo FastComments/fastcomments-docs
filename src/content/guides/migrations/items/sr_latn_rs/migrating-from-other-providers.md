@@ -1,4 +1,3 @@
----
 Prilikom migracije sa drugog provajdera, treba uzeti u obzir nekoliko stvari:
 
 1. Postojeći podaci o komentarima, uključujući odgovore.
@@ -7,5 +6,3 @@ Prilikom migracije sa drugog provajdera, treba uzeti u obzir nekoliko stvari:
 
 Samo-uslužni uvoz podataka, koji je opisan u narednim odeljcima, obuhvata prve dve stavke. Za prilagođavanje, pogledajte naš
 [vodič za prilagođavanje](/guide-customizations-and-configuration.html).
-
----

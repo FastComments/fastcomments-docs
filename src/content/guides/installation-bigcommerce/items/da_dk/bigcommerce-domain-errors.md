@@ -1,4 +1,3 @@
----
 Du kan få en autorisationsfejl, som vist nedenfor:
 
 <div class="screenshot white-bg">
@@ -11,5 +10,3 @@ Det skyldes, at FastComments ikke ved, at din konto skal kunne bruges på dette 
 I dette tilfælde er løsningen enkel. Du skal blot tilføje dit websted til din FastComments.com-konto.
 
 [Gå her for at tilføje dit websted til din konto.](https://fastcomments.com/auth/my-account/configure-domains)
-
----

@@ -36,5 +36,3 @@ try {
     print('Exception when calling DefaultApi->aggregate: $e\n');
 }
 [inline-code-end]
-
----

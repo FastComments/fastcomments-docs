@@ -1,6 +1,6 @@
-First, open up your site in the Website Builder.
+Πρώτα, ανοίξτε τον ιστότοπό σας στο Website Builder.
 
-Now if you don't already have a section where you want the comments to go, add a blank section:
+Τώρα, αν δεν έχετε ήδη μια ενότητα όπου θέλετε να εμφανίζονται τα σχόλια, προσθέστε μια κενή ενότητα:
 
 <div class="screenshot white-bg">
     <div class="title">Προσθήκη Ενότητας</div>
@@ -11,18 +11,18 @@ Now if you don't already have a section where you want the comments to go, add a
     <img class="screenshot-image" src="/images/installation-guides/hostinger-step-1-add-section-2.png" alt="Προσθήκη Ενότητας" />
 </div>
 
-Now add the Hostinger Embed widget by clicking our new section and clicking `Add element` in the top and then `Embed code`:
+Τώρα προσθέστε το widget Hostinger Embed κάνοντας κλικ στη νέα μας ενότητα και κάνοντας κλικ στο `Add element` στην κορυφή και μετά στο `Embed code`:
 
 <div class="screenshot white-bg">
-    <div class="title">Εισαγωγή κώδικα</div>
-    <img class="screenshot-image" src="/images/installation-guides/hostinger-step-1-add-section-3.png" alt="Εισαγωγή κώδικα" />
+    <div class="title">Embed code</div>
+    <img class="screenshot-image" src="/images/installation-guides/hostinger-step-1-add-section-3.png" alt="Embed code" />
 </div>
 
-You'll get something like this:
+Θα λάβετε κάτι τέτοιο:
 
 <div class="screenshot white-bg">
-    <div class="title">Ενότητα κώδικα προστέθηκε</div>
-    <img class="screenshot-image" src="/images/installation-guides/hostinger-step-1-add-section-4.png" alt="Ενότητα κώδικα προστέθηκε" />
+    <div class="title">Προστέθηκε Ενότητα Κώδικα</div>
+    <img class="screenshot-image" src="/images/installation-guides/hostinger-step-1-add-section-4.png" alt="Προστέθηκε Ενότητα Κώδικα" />
 </div>
 
-Now we're ready for `Step 2`.
+Τώρα είμαστε έτοιμοι για το `Βήμα 2`.

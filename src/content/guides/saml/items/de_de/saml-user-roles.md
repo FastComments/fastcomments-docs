@@ -209,5 +209,3 @@ FastComments validiert eingehende Rollen:
 - Überprüfen Sie Rollendefinitionen und erforderliche Berechtigungen
 - Prüfen Sie auf widersprüchliche Rollenzuweisungen
 - Vergewissern Sie sich, dass sich der Benutzer nach Rollenänderungen angemeldet hat
-
----

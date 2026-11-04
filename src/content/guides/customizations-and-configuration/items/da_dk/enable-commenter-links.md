@@ -13,5 +13,3 @@ Når den pågældende URL er angivet, vil brugerens konto blive opdateret, og de
 Dette kan tilpasses uden kode på widget‑tilpasningssiden:
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.click-to-show-comments', '.commenter-links']; selector = '.commenter-links'; alt='Widget-tilpasningsside med kommentatorlink‑afkrydsningsfeltet markeret for at tilføje et website‑URL‑felt til kommentarfeltet'; title='Aktivering af kommentatorlinks' app-screenshot-end]
-
----

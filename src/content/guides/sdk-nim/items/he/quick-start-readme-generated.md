@@ -1,4 +1,3 @@
----
 ### שימוש בממשקי API מאומתים (DefaultAPI)
 
 **חשוב:** קצוות מאומתים דורשים שהמפתח API שלך יוגדר ככותרת `x-api-key`.
@@ -89,4 +88,3 @@ if response.isSome:
 
 1. **שגיאת אימות 401**: ודא שהגדרת את כותרת `x-api-key` ב-HttpClient שלך לפני ביצוע בקשות DefaultAPI: `client.headers["x-api-key"] = "your-api-key"`
 2. **מחלקת API שגויה**: השתמש ב-`api_default` לבקשות מאומתות בצד השרת, `api_public` לבקשות בצד הלקוח/ציבוריות, ו-`api_moderation` לבקשות של לוח הבקרה של המנחה.
----

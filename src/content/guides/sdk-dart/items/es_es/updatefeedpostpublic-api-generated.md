@@ -1,4 +1,3 @@
----
 ## Parámetros
 
 | Nombre | Tipo | Ubicación | Requerido | Descripción |
@@ -32,4 +31,3 @@ try {
     print('Exception when calling PublicApi->updateFeedPostPublic: $e\n');
 }
 [inline-code-end]
----

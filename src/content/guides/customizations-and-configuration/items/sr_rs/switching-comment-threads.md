@@ -1,24 +1,27 @@
 [related-parameter-start name = 'urlId'; type = 'string'; related-parameter-end]
 
-Размотрили смо како је `urlId` идентификатор странице или чланка за који су коментари везани.
+Објаснили смо како је `urlId` идентификатор странице или чланка на који су коментари везани.
 
-Такође, да резимирамо, ако није дефинисан, `urlId` ће по подразумеваној вредности бити URL текуће странице.
+Такође, да поновимо, ако није дефинисан, `urlId` ће подразумевано бити URL тренутне странице.
 
-А шта је са SPA-овима, односно једностраничним апликацијама, где се страница или садржај за који су коментари везани мења динамички без поновног учитавања целе странице?
+А шта је са SPA апликацијама, односно Single-Page-Application апликацијама, где се страница или садржај на који су коментари везани мења
+динамички, без поновног учитавања странице?
 
-#### Angular, React, Vue, etc
+#### Angular, React, Vue, итд
 
-Са нашим библиотекама као што су Angular и React, једноставно ажурирање `urlId` својства које се прослеђује видгету ће натерати видгет за коментаре да се освежи. Ово можете видети у акцији за React апликацију, на пример, <a href="https://github.com/FastComments/fastcomments-react/blob/master/examples/example-paginated/src/PaginatedApp.tsx#L39" target="_blank">овде</a>.
+Са нашим библиотекама као што су Angular и React, једноставна измена `urlId` својства које се прослеђује виџету
+изазваће освежавање виџета за коментаре. Ово можете видети у акцији за React апликацију, на пример, <a href="https://github.com/FastComments/fastcomments-react/blob/master/examples/example-paginated/src/PaginatedApp.tsx#L39" target="_blank">овде</a>.
 
 #### VanillaJS
 
-Ако користите VanillaJS библиотеку, то је мало компликованије јер нема фрејмворка као што су Angular или React који би управљао везивањем података или пропагацијом стања.
+Ако користите VanillaJS библиотеку, нешто је компликованије јер не постоји фрејмворк попут Angular или React
+који би обрадио data binding или пропагацију стања.
 
-Када иницијализујете VanillaJS видгет, он враћа неке функције које могу бити позване да га ажурирају.
+Када инстанцирате VanillaJS виџет, он враћа неке функције које се могу позвати да би се ажурирао.
 
-Ево функционалног примера где мењамо хеш странице и ажурирамо видгет за коментаре:
+Ево функционалног примера у коме мењамо hash странице и ажурирамо виџет за коментаре:
 
-[inline-code-attrs-start title = 'Пример промене хеша странице'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример промене hash вредности странице'; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
 <button id="change-page"></button>
@@ -46,7 +49,7 @@
             window.location.hash = page;
             let locationString = window.location.toString();
 
-            config.url = locationString; // Ажурирамо и url, тако да обавештења могу да упућују назад на исправну страницу
+            config.url = locationString; // Ажурирамо и url, како обавештења могу да воде ка правој страници
             config.urlId = locationString;
 
             instance.update(config);
@@ -56,5 +59,3 @@
     })();
 </script>
 [inline-code-end]
-
----

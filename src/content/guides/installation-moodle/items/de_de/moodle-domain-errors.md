@@ -1,4 +1,3 @@
----
 Sie erhalten möglicherweise einen Autorisierungsfehler, wie den folgenden:
 
 <div class="screenshot white-bg">
@@ -13,5 +12,3 @@ In diesem Fall ist die Lösung einfach. Sie müssen lediglich Ihre Website zu Ih
 [Hier können Sie Ihre Website zu Ihrem Konto hinzufügen.](https://fastcomments.com/auth/my-account/configure-domains)
 
 Jetzt sollten schnelle, Live-Kommentare auf Ihrer Website vorhanden sein!
-
----

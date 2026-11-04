@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Име | Тип | Местоположение | Задължително | Описание |
@@ -36,5 +35,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_question_config: #{e}"
 end
 [inline-code-end]
-
----

@@ -1,24 +1,24 @@
-If your val already knows who the visitor is, Secure SSO hands that identity to the widget so they never see a second login. There are no endpoints to build and nothing to call at runtime: you compute three values server-side and pass them in the widget config.
+すでに訪問者が誰であるかを val が把握している場合、Secure SSO はその ID をウィジェットに渡すため、訪問者は2回目のログインを目にすることはありません。構築すべきエンドポイントも、実行時に呼び出すべき API もありません。3つの値をサーバー側で計算し、ウィジェットの設定に渡すだけです。
 
-Val Town ships zero-config login with `std/oauth`, so the visitor can sign in with the Val Town account they already have. Swap that for whatever your app uses; the FastComments half does not change.
+Val Town は `std/oauth` による設定不要のログインを提供しているため、訪問者は既に持っている Val Town アカウントでサインインできます。これをお使いのアプリで使用している認証方式に差し替えても、FastComments 側は変更不要です。
 
-## サーバー側でペイロードを構築する
+## サーバーでペイロードを構築する
 
-The API secret signs the payload and must never reach browser code. Install the SDK from npm, which works on Val Town's Deno runtime as-is:
+API シークレットはペイロードに署名するためのもので、ブラウザーコードに到達してはいけません。npm から SDK をインストールしてください。Val Town の Deno ランタイムでそのまま動作します:
 
 [inline-code-attrs-start title = 'sso.ts'; type='javascript' inline-code-attrs-end]
 [inline-code-start]
 import { SecureSSOPayloadBuilder } from "npm:fastcomments-sdk/server";
 
 export function buildSSOPayload(user) {
-  // id は同一人物に対して安定している必要があります。さもなければ、ログインのたびに新しいコメントIDが付与されます。
+  // id must be stable for the same person, or they get a new comment identity on every login.
   const id = `vt-${user.id}`;
 
   return new SecureSSOPayloadBuilder(Deno.env.get("FASTCOMMENTS_API_SECRET"), {
     id,
-    // email は必須で、かつ一意である必要があります。
+    // email is required and must be unique.
     email: user.email ?? `${id}@users.noreply.val.town`,
-    // username は必須で、メールアドレスであってはなりません。
+    // username is required and cannot be an email.
     username: user.username ?? id,
     displayName: user.username ?? undefined,
     avatar: user.links.profileImageUrl ?? undefined,
@@ -26,11 +26,11 @@ export function buildSSOPayload(user) {
 }
 [inline-code-end]
 
-`getPayload()` returns `{ userDataJSONBase64, verificationHash, timestamp }`. Those three values are all that reach the browser. The secret signs them and is then dropped, so nothing in the page lets a reader forge a different user.
+`getPayload()` は `{ userDataJSONBase64, verificationHash, timestamp }` を返します。ブラウザーに到達するのはこの3つの値だけです。シークレットはこれらに署名した後で破棄されるため、ページ内のどの情報を使っても別のユーザーを偽装することはできません。
 
 ## ウィジェットに渡す
 
-[inline-code-attrs-start title = 'SSO を使用したウィジェット設定'; type='javascript' inline-code-attrs-end]
+[inline-code-attrs-start title = 'Widget config with SSO'; type='javascript' inline-code-attrs-end]
 [inline-code-start]
 import { getOAuthUserData, oauthMiddleware } from "https://esm.town/v/std/oauth/middleware.ts";
 
@@ -46,20 +46,20 @@ app.get("/", async (c) => {
       : { sso: { loginURL: "/auth/login" } }),
   };
 
-  // ...この設定でウィジェットをレンダリングする
+  // ...render the widget with this config
 });
 
 export default oauthMiddleware(app.fetch);
 [inline-code-end]
 
-`oauthMiddleware` adds `GET /auth/login`, `GET /auth/callback` and `POST /auth/logout` for you. Note that logout is a **POST**, while the widget navigates to `logoutURL` with a GET, so point `logoutURL` at a small route of your own that submits the POST.
+`oauthMiddleware` は `GET /auth/login`、`GET /auth/callback`、`POST /auth/logout` を自動的に追加します。なお、ログアウトは **POST** ですが、ウィジェットは `logoutURL` に GET で遷移するため、`logoutURL` には POST を送信する小さな独自ルートを指定してください。
 
-When the visitor is logged out, pass `sso` with only a `loginURL`. The widget then shows a login prompt instead of an anonymous comment box.
+訪問者がログアウトしている場合は、`loginURL` のみを含む `sso` を渡します。するとウィジェットは匿名コメントボックスの代わりにログインプロンプトを表示します。
 
-## 問題が起きたとき
+## よくある問題
 
-`timestamp` is epoch **milliseconds**, must not be in the future, and must not be more than two days old. Generate it on the server in the same request that computes the hash. Generating it in the browser is the classic failure: the value differs from the one that was hashed and every comment is rejected.
+`timestamp` はエポック**ミリ秒**であり、未来の時刻であってはならず、2日以上古くてもいけません。ハッシュを計算するのと同じリクエスト内でサーバー側で生成してください。ブラウザー側で生成するのが典型的な失敗パターンです。その場合、値がハッシュ化されたものと異なり、すべてのコメントが拒否されます。
 
-Never set `isAdmin` or `isModerator` from the identity provider. Signing in with a Val Town account says nothing about who should moderate your site.
+ID プロバイダーから `isAdmin` や `isModerator` を設定してはいけません。Val Town アカウントでのサインインは、誰があなたのサイトをモデレートすべきかを示すものではありません。
 
-See the [SSO guide](/guide-customizations-and-configuration.html#sso-secure) for the full field list, group-gated threads, and badges.
+フィールドの一覧、グループ制限付きスレッド、バッジの詳細については、[SSO ガイド](/guide-customizations-and-configuration.html#sso-secure) を参照してください。

@@ -1,4 +1,3 @@
----
 Dat is alles! Je zou nu live reacties aan je Hostinger-site moeten hebben toegevoegd.
 
 <div class="screenshot white-bg">
@@ -7,5 +6,3 @@ Dat is alles! Je zou nu live reacties aan je Hostinger-site moeten hebben toegev
 </div>
 
 Als je een 'toegang geweigerd'-fout bent tegengekomen, of FastComments wilt aanpassen, lees verder.
-
----

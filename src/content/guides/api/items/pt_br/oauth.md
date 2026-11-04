@@ -1,10 +1,10 @@
-FastComments é um servidor de autorização OAuth 2.1. Uma aplicação pode obter um token que está vinculado a uma conta FastComments e usá-lo em todos os endpoints deste guia no lugar de uma chave de API. É assim que o aplicativo Zapier, o servidor MCP e outras integrações de terceiros se conectam.
+O FastComments é um servidor de autorização OAuth 2.1. Um aplicativo pode obter um token vinculado a uma conta do FastComments e usá-lo em todos os endpoints deste guia no lugar de uma chave de API. É assim que o aplicativo Zapier, o servidor MCP e outras integrações de terceiros se conectam.
 
-Os tokens são emitidos através do fluxo de código de autorização com PKCE. Não há concessão de credenciais de cliente nem concessão implícita.
+Os tokens são emitidos por meio do fluxo de código de autorização com PKCE. Não há client credentials nem grant implícito.
 
 ### Discovery
 
-Os locais dos endpoints, concessões suportadas e métodos de autenticação são publicados na URL padrão de metadados:
+As localizações dos endpoints, os grants suportados e os métodos de autenticação são publicados na URL de metadados padrão:
 
 [inline-code-attrs-start title = 'Metadados do Servidor de Autorização'; type = 'text'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -21,30 +21,30 @@ POST https://fastcomments.com/oauth/revoke
 POST https://fastcomments.com/oauth/register
 [inline-code-end]
 
-Contas na região da UE usam `https://eu.fastcomments.com` como emissor, com os mesmos caminhos.
+Contas na região da UE usam `https://eu.fastcomments.com` como issuer, com os mesmos caminhos.
 
-### Registering a client
+### Registrando um cliente
 
-Um cliente precisa de um `client_id` e de um `redirect_uri` registrado antes de iniciar o fluxo. Existem duas maneiras de obter um:
+Um cliente precisa de um `client_id` e de um `redirect_uri` registrado antes de poder iniciar o fluxo. Há duas maneiras de obter um:
 
-- **Registro Dinâmico de Cliente.** `POST /oauth/register` com um corpo JSON conforme RFC 7591 (`redirect_uris`, `client_name`, `client_uri`, `logo_uri`, `token_endpoint_auth_method`). A resposta contém o `client_id` e, para clientes confidenciais, o `client_secret`. O registro não requer autenticação e tem limite de taxa por IP.
-- **Documento de Metadados de ID de Cliente.** O cliente usa uma URL `https` que controla como seu `client_id`. FastComments busca essa URL e lê os mesmos campos de metadados dela. Nenhuma chamada de registro é necessária.
+- **Registro Dinâmico de Cliente.** `POST /oauth/register` com um corpo JSON conforme a RFC 7591 (`redirect_uris`, `client_name`, `client_uri`, `logo_uri`, `token_endpoint_auth_method`). A resposta contém o `client_id` e, para clientes confidenciais, o `client_secret`. O registro não é autenticado e tem limite de taxa por IP.
+- **Documento de Metadados de Client ID.** O cliente usa uma URL `https` que ele controla como seu `client_id`. O FastComments busca essa URL e lê os mesmos campos de metadados dela. Nenhuma chamada de registro é necessária.
 
-Aplicações parceiras listadas no painel do FastComments, como Zapier, são registradas diretamente pelo FastComments. Entre em contato com o suporte se você estiver criando uma listagem de marketplace e precisar de um cliente de primeira parte.
+Aplicativos parceiros listados no painel do FastComments, como o Zapier, são registrados pelo FastComments diretamente. Entre em contato com o suporte se você estiver criando um anúncio de marketplace e precisar de um cliente de primeira parte.
 
 ### Scopes
 
-[inline-code-attrs-start title = 'Escopos'; type = 'text'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Scopes'; type = 'text'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 read   GET and HEAD requests
 write  every other method
 [inline-code-end]
 
-Uma solicitação que não pede nenhum escopo recebe ambos. O usuário vê os escopos solicitados na página de consentimento. Uma solicitação por um escopo diferente desses dois falha com `invalid_scope`.
+Uma solicitação que não pede nenhum scope recebe ambos. O usuário vê os scopes solicitados na página de consentimento. Uma solicitação de um scope diferente desses dois falha com `invalid_scope`.
 
-### Step 1 - Authorization request
+### Etapa 1 - Solicitação de autorização
 
-Envie o navegador do usuário para o endpoint de autorização. PKCE com o método `S256` é obrigatório para todo cliente.
+Envie o navegador do usuário para o endpoint de autorização. PKCE com o método `S256` é obrigatório para todos os clientes.
 
 [inline-code-attrs-start title = 'Solicitação de Autorização'; type = 'text'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -77,15 +77,15 @@ interface OAuthAuthorizeQueryParams {
 }
 [inline-code-end]
 
-O usuário faz login no FastComments, se necessário, e vê uma página de consentimento nomeando sua aplicação, a conta à qual será conectada e os escopos solicitados. O usuário deve possuir a permissão **API Admin** nessa conta; qualquer outra pessoa vê um erro de permissão em vez do formulário de consentimento. Aprovar redireciona o navegador para seu `redirect_uri` com `code` e `state`. Negar redireciona com `error=access_denied`.
+O usuário faz login no FastComments, se necessário, e vê uma página de consentimento que nomeia seu aplicativo, a conta à qual ele será conectado e os scopes solicitados. O usuário deve ter a permissão **API Admin** nessa conta; qualquer outra pessoa vê um erro de permissão em vez do formulário de consentimento. Aprovar redireciona o navegador para o seu `redirect_uri` com `code` e `state`. Recusar redireciona com `error=access_denied`.
 
-O código de autorização é válido por 10 minutos e pode ser trocado uma única vez. Uma segunda troca do mesmo código revoga todos os tokens produzidos na primeira troca.
+O código de autorização é válido por 10 minutos e pode ser trocado uma vez. Uma segunda troca do mesmo código revoga todos os tokens produzidos pela primeira troca.
 
-### Step 2 - Token request
+### Etapa 2 - Solicitação de token
 
-Troque o código por tokens. O corpo é codificado como formulário. Clientes confidenciais autenticam com `client_secret_basic` (HTTP Basic) ou `client_secret_post` (segredo no corpo). Clientes públicos enviam apenas `client_id`.
+Troque o código por tokens. O corpo é codificado como form. Clientes confidenciais se autenticam com `client_secret_basic` (HTTP Basic) ou `client_secret_post` (segredo no corpo). Clientes públicos enviam apenas `client_id`.
 
-[inline-code-attrs-start title = 'Exemplo cURL de Solicitação de Token'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo de Solicitação de Token com cURL'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request POST \
   --url 'https://fastcomments.com/oauth/token' \
@@ -128,24 +128,24 @@ interface OAuthTokenResponse {
 }
 [inline-code-end]
 
-Erros seguem a RFC 6749: um corpo JSON com `error` e `error_description`, HTTP 400 para `invalid_request`, `invalid_grant`, `invalid_scope`, `invalid_target` e `unsupported_grant_type`, HTTP 401 para `invalid_client`, HTTP 429 quando há limite de taxa.
+Os erros seguem a RFC 6749: um corpo JSON com `error` e `error_description`, HTTP 400 para `invalid_request`, `invalid_grant`, `invalid_scope`, `invalid_target` e `unsupported_grant_type`, HTTP 401 para `invalid_client`, HTTP 429 quando há limite de taxa.
 
-### Step 3 - Calling the API
+### Etapa 3 - Chamando a API
 
-Envie o token de acesso como token bearer. O tenant é implícito no token, portanto `tenantId` é opcional. Quando fornecido, deve corresponder ao token ou a solicitação falhará.
+Envie o access token como um bearer token. O tenant é implícito pelo token, então `tenantId` é opcional. Quando fornecido, deve corresponder ao token ou a solicitação falha.
 
-[inline-code-attrs-start title = 'Exemplo cURL de Token Bearer'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo de Bearer Token com cURL'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/me' \
   --header 'Authorization: Bearer fcat_...'
 [inline-code-end]
 
-`GET /api/v1/me` retorna o tenant, o usuário autorizador e os escopos concedidos, o que o torna a chamada correta para um teste de conexão. Uma solicitação com um token expirado ou revogado recebe HTTP 401. Uma solicitação cujo método requer um escopo que o token não possui recebe HTTP 403.
+`GET /api/v1/me` retorna o tenant, o usuário autorizante e os scopes concedidos, o que o torna a chamada certa para um teste de conexão. Uma solicitação com um token expirado ou revogado recebe HTTP 401. Uma solicitação cujo método precisa de um scope que o token não possui recebe HTTP 403.
 
-### Step 4 - Refreshing
+### Etapa 4 - Atualizando
 
-[inline-code-attrs-start title = 'Exemplo cURL de Solicitação de Atualização'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo de Solicitação de Refresh com cURL'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request POST \
   --url 'https://fastcomments.com/oauth/token' \
@@ -169,13 +169,13 @@ interface OAuthTokenRequestRefreshToken {
 }
 [inline-code-end]
 
-A resposta tem o mesmo formato da troca de código. Tokens de atualização giram: cada atualização retorna um novo `refresh_token` e revoga o antigo após uma janela de 30 segundos para solicitações concorrentes. Apresentar um token de atualização que foi girado há mais de 30 segundos é tratado como replay e revoga toda a concessão. Aplicações parceiras registradas pelo FastComments são isentas da rotação e recebem o mesmo refresh token com sua validade estendida por mais 30 dias.
+A resposta tem a mesma forma da troca de código. Os refresh tokens rotacionam: cada refresh retorna um novo `refresh_token` e revoga o antigo após uma janela de carência de 30 segundos para solicitações concorrentes. Apresentar um refresh token que foi rotacionado há mais de 30 segundos é tratado como replay e revoga todo o grant. Aplicativos parceiros registrados pelo FastComments são isentos da rotação e recebem de volta o mesmo refresh token com sua validade estendida por mais 30 dias.
 
-Uma atualização também verifica novamente se o usuário autorizador ainda possui API Admin na conta. Caso não, a concessão é revogada e a resposta é `invalid_grant`.
+Um refresh também verifica novamente se o usuário autorizante ainda possui API Admin na conta. Caso contrário, o grant é revogado e a resposta é `invalid_grant`.
 
-### Revocation
+### Revogação
 
-[inline-code-attrs-start title = 'Exemplo cURL de Solicitação de Revogação'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo de Solicitação de Revogação com cURL'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request POST \
   --url 'https://fastcomments.com/oauth/revoke' \
@@ -186,6 +186,6 @@ curl --request POST \
   --data 'token_type_hint=refresh_token'
 [inline-code-end]
 
-Revogar um refresh token revoga todos os tokens de acesso emitidos a partir da mesma concessão. Revogar um token de acesso revoga apenas esse token. O endpoint retorna HTTP 200 com um objeto JSON vazio, independentemente de o token ter sido encontrado, conforme RFC 7009.
+Revogar um refresh token revoga todos os access tokens emitidos a partir do mesmo grant. Revogar um access token revoga apenas esse token. O endpoint retorna HTTP 200 com um objeto JSON vazio, independentemente de o token ter sido encontrado ou não, conforme a RFC 7009.
 
-Os usuários também podem revogar uma conexão a partir de **Aplicativos Conectados** no painel do FastComments. Todos os tokens para essa aplicação deixam de funcionar imediatamente.
+Os usuários também podem revogar uma conexão em **Connected Apps** no painel do FastComments. Todos os tokens desse aplicativo param de funcionar imediatamente.

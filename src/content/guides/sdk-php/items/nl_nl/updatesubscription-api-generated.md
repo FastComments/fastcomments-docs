@@ -44,5 +44,3 @@ try {
     echo 'Exceptie bij het aanroepen DefaultApi->updateSubscription: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

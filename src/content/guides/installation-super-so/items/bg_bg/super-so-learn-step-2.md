@@ -1,9 +1,8 @@
----
-В следващата стъпка трябва да копирате готовия код на джаджа по-долу.
+В следващата стъпка трябва да копирате предварително подготвения код за уиджета по-долу.
 
-Докато сте влезли в профила си в FastComments.com, следният кодов откъс вече ще съдържа информацията за вашия акаунт. Нека го копираме:
+Докато сте влезли в FastComments.com, кодовият фрагмент по-долу вече ще съдържа информацията за вашия акаунт. Нека го копираме:
 
-[inline-code-attrs-start title = 'Код за Collab Chat на Super.so FastComments'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Код за Super.so FastComments Collab Chat'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-collab-chat.min.js"></script>
 <script>
@@ -24,17 +23,17 @@
                 return setTimeout(load, 100);
             }
 
-            // Почистване на съществуващия екземпляр
+            // Clean up existing instance
             if (target.fastCommentsInstance) {
                 target.fastCommentsInstance.destroy();
             }
 
-            // Почистване на съществуващата горна лента, ако съществува
+            // Clean up existing top bar if it exists
             if (currentTopBar && currentTopBar.parentNode) {
                 currentTopBar.parentNode.removeChild(currentTopBar);
             }
 
-            // Създаване на нова горна лента
+            // Create new top bar
             const topBarTarget = document.createElement('div');
             target.parentNode.insertBefore(topBarTarget, target);
             topBarTarget.style.maxWidth = 'var(--layout-max-width)';
@@ -42,36 +41,36 @@
             currentTopBar = topBarTarget;
             currentWidget = target;
 
-            // Инициализация на FastComments Collab Chat
+            // Initialize FastComments Collab Chat
             target.fastCommentsInstance = FastCommentsCollabChat(target, {
                 tenantId: "demo",
                 topBarTarget: topBarTarget
             });
 
-            // Актуализиране на текущия pathname
+            // Update current pathname
             currentPathname = window.location.pathname;
         }
 
-        // Първоначално зареждане
+        // Initial load
         load();
 
-        // Проверка за промени на всеки 500 ms
+        // Check every 500ms for changes
         setInterval(() => {
-            // Презареждане ако pathname се е променил
+            // Reload if pathname changed
             if (window.location.pathname !== currentPathname) {
                 console.log('Pathname changed, reloading...');
                 load();
                 return;
             }
 
-            // Презареждане ако джаджата е премахната
+            // Reload if widget was removed
             if (currentWidget && !currentWidget.parentNode) {
                 console.log('Widget removed, reloading...');
                 load();
                 return;
             }
 
-            // Презареждане ако контейнерът е изпразнен
+            // Reload if container was emptied
             const target = document.querySelector('.super-content');
             if (target && target.innerHTML.length < 100) {
                 console.log('Container emptied, reloading...');
@@ -82,17 +81,15 @@
 </script>
 [inline-code-end]
 
-Сега го поставете в областта `Body`:
+Сега поставете кода в областта `Body`:
 
 <div class="screenshot white-bg">
     <div class="title">Поставен код</div>
     <img class="screenshot-image" src="/images/installation-guides/super-so-step-3-pasted-code.png" alt="Поставен код" />
 </div>
 
-If you see a "this is a demo message" after pasting the code:
+Ако след поставянето на кода видите съобщение „this is a demo message":
 
-- Уверете се, че сте влязли във вашия акаунт в fastcomments.com.
-- Уверете се, че имате разрешени бисквитки на трети страни.
-- След това презаредете тази страница и копирайте кода отново. Той трябва да има попълнен `tenantId` с идентификатора на вашия tenant.
-
----
+- Уверете се, че сте влезли в акаунта си в fastcomments.com.
+- Уверете се, че бисквитките на трети страни са разрешени.
+- След това опреснете тази страница и копирайте кодовия фрагмент отново. Той трябва да има `tenantId` попълнен с идентификатора на вашия tenant.

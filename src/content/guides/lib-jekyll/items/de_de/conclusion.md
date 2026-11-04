@@ -8,5 +8,3 @@ Wenn Sie auf Probleme stoßen oder Fragen zur Jekyll-Bibliothek haben, kontaktie
 ## Mitwirken
 
 Beiträge sind willkommen! Bitte besuchen Sie das [GitHub-Repository](https://github.com/FastComments/fastcomments-jekyll) für die Beitragsrichtlinien.
-
----

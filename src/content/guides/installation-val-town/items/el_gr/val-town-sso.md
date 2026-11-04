@@ -1,24 +1,24 @@
-If your val already knows who the visitor is, Secure SSO hands that identity to the widget so they never see a second login. There are no endpoints to build and nothing to call at runtime: you compute three values server-side and pass them in the widget config.
+Αν το val σας γνωρίζει ήδη ποιος είναι ο επισκέπτης, το Secure SSO μεταφέρει αυτή την ταυτότητα στο widget ώστε να μη δει ποτέ δεύτερη σύνδεση. Δεν υπάρχουν endpoints προς κατασκευή και τίποτα προς κλήση κατά την εκτέλεση: υπολογίζετε τρεις τιμές server-side και τις περνάτε στη διαμόρφωση του widget.
 
-Val Town ships zero-config login with `std/oauth`, so the visitor can sign in with the Val Town account they already have. Swap that for whatever your app uses; the FastComments half does not change.
+Το Val Town προσφέρει σύνδεση χωρίς διαμόρφωση με το `std/oauth`, ώστε ο επισκέπτης να συνδεθεί με τον λογαριασμό Val Town που ήδη έχει. Αντικαταστήστε το με ό,τι χρησιμοποιεί η εφαρμογή σας· το κομμάτι του FastComments δεν αλλάζει.
 
-## Build the payload on the server
+## Κατασκευάστε το payload στον server
 
-The API secret signs the payload and must never reach browser code. Install the SDK from npm, which works on Val Town's Deno runtime as-is:
+Το API secret υπογράφει το payload και δεν πρέπει ποτέ να φτάσει σε κώδικα browser. Εγκαταστήστε το SDK από το npm, που λειτουργεί ως έχει στο Deno runtime του Val Town:
 
 [inline-code-attrs-start title = 'sso.ts'; type='javascript' inline-code-attrs-end]
 [inline-code-start]
 import { SecureSSOPayloadBuilder } from "npm:fastcomments-sdk/server";
 
 export function buildSSOPayload(user) {
-  // Το id πρέπει να είναι σταθερό για το ίδιο άτομο, αλλιώς θα λαμβάνει νέα ταυτότητα σχολίου σε κάθε σύνδεση.
+  // Το id πρέπει να είναι σταθερό για το ίδιο άτομο, αλλιώς παίρνει νέα ταυτότητα σχολίων σε κάθε σύνδεση.
   const id = `vt-${user.id}`;
 
   return new SecureSSOPayloadBuilder(Deno.env.get("FASTCOMMENTS_API_SECRET"), {
     id,
     // Το email είναι υποχρεωτικό και πρέπει να είναι μοναδικό.
     email: user.email ?? `${id}@users.noreply.val.town`,
-    // Το όνομα χρήστη είναι υποχρεωτικό και δεν μπορεί να είναι email.
+    // Το username είναι υποχρεωτικό και δεν μπορεί να είναι email.
     username: user.username ?? id,
     displayName: user.username ?? undefined,
     avatar: user.links.profileImageUrl ?? undefined,
@@ -26,11 +26,11 @@ export function buildSSOPayload(user) {
 }
 [inline-code-end]
 
-`getPayload()` returns `{ userDataJSONBase64, verificationHash, timestamp }`. Those three values are all that reach the browser. The secret signs them and is then dropped, so nothing in the page lets a reader forge a different user.
+Το `getPayload()` επιστρέφει `{ userDataJSONBase64, verificationHash, timestamp }`. Αυτές οι τρεις τιμές είναι το μόνο που φτάνει στον browser. Το secret τις υπογράφει και στη συνέχεια απορρίπτεται, ώστε τίποτα στη σελίδα να μην επιτρέπει σε έναν αναγνώστη να πλαστογραφήσει διαφορετικό χρήστη.
 
-## Pass it to the widget
+## Περάστε το στο widget
 
-[inline-code-attrs-start title = 'Διαμόρφωση widget με SSO'; type='javascript' inline-code-attrs-end]
+[inline-code-attrs-start title = 'Widget config with SSO'; type='javascript' inline-code-attrs-end]
 [inline-code-start]
 import { getOAuthUserData, oauthMiddleware } from "https://esm.town/v/std/oauth/middleware.ts";
 
@@ -46,20 +46,20 @@ app.get("/", async (c) => {
       : { sso: { loginURL: "/auth/login" } }),
   };
 
-  // ...απόδοση του widget με αυτή τη διαμόρφωση
+  // ...αποδώστε το widget με αυτή τη διαμόρφωση
 });
 
 export default oauthMiddleware(app.fetch);
 [inline-code-end]
 
-`oauthMiddleware` adds `GET /auth/login`, `GET /auth/callback` and `POST /auth/logout` for you. Note that logout is a **POST**, while the widget navigates to `logoutURL` with a GET, so point `logoutURL` at a small route of your own that submits the POST.
+Το `oauthMiddleware` προσθέτει για εσάς τα `GET /auth/login`, `GET /auth/callback` και `POST /auth/logout`. Σημειώστε ότι το logout είναι **POST**, ενώ το widget πλοηγείται στο `logoutURL` με GET, οπότε δείξτε το `logoutURL` σε ένα μικρό δικό σας route που υποβάλλει το POST.
 
-When the visitor is logged out, pass `sso` with only a `loginURL`. The widget then shows a login prompt instead of an anonymous comment box.
+Όταν ο επισκέπτης είναι αποσυνδεδεμένος, περάστε το `sso` με μόνο ένα `loginURL`. Το widget τότε εμφανίζει προτροπή σύνδεσης αντί για ανώνυμο πλαίσιο σχολίων.
 
-## Things that go wrong
+## Πράγματα που πηγαίνουν στραβά
 
-`timestamp` is epoch **milliseconds**, must not be in the future, and must not be more than two days old. Generate it on the server in the same request that computes the hash. Generating it in the browser is the classic failure: the value differs from the one that was hashed and every comment is rejected.
+Το `timestamp` είναι σε epoch **milliseconds**, δεν πρέπει να είναι στο μέλλον και δεν πρέπει να είναι παλαιότερο από δύο ημέρες. Δημιουργήστε το στον server στο ίδιο request που υπολογίζει το hash. Η δημιουργία του στον browser είναι η κλασική αποτυχία: η τιμή διαφέρει από αυτή που υπογράφηκε και κάθε σχόλιο απορρίπτεται.
 
-Never set `isAdmin` or `isModerator` from the identity provider. Signing in with a Val Town account says nothing about who should moderate your site.
+Ποτέ μην ορίζετε `isAdmin` ή `isModerator` από τον πάροχο ταυτότητας. Η σύνδεση με λογαριασμό Val Town δεν λέει τίποτα για το ποιος πρέπει να συντονίζει τον ιστότοπό σας.
 
-See the [οδηγός SSO](/guide-customizations-and-configuration.html#sso-secure) for the full field list, group-gated threads, and badges.
+Δείτε τον [οδηγό SSO](/guide-customizations-and-configuration.html#sso-secure) για την πλήρη λίστα πεδίων, τα threads με περιορισμό ομάδας και τα badges.

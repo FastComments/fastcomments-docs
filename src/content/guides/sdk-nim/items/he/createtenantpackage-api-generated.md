@@ -21,5 +21,3 @@ let (responseOpt, httpResponse) = client.createTenantPackage(
 if responseOpt.isSome:
   let response = responseOpt.get()
 [inline-code-end]
-
----

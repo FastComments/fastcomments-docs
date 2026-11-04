@@ -1,4 +1,3 @@
----
 ## パラメータ
 
 | 名前 | 型 | 必須 | 説明 |
@@ -18,5 +17,3 @@ let (apiResult, httpResponse) = client.deleteQuestionConfig(tenantId = "my-tenan
 if apiResult.isSome:
   let empty = apiResult.get()
 [inline-code-end]
-
----

@@ -25,5 +25,3 @@ Retourneert: [`ChangeCommentPinStatusResponse`](https://github.com/FastComments/
   const resultWithoutSso: ChangeCommentPinStatusResponse = await unPinComment(tenantId, commentId, broadcastId);
 })();
 [inline-code-end]
-
----

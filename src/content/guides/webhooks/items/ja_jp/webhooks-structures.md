@@ -1,145 +1,146 @@
-The only structure sent via webhooks is the WebhookComment object, outlined in TypeScript below.
+Webhook経由で送信される構造はWebhookCommentオブジェクトのみで、以下にTypeScriptで示します。
 
-#### WebhookComment オブジェクト構造
+#### WebhookCommentオブジェクトの構造
 
-##### 「Create」イベント構造  
-The "create" event request body is a WebhookComment object.
+##### "Create"イベントの構造
+"create"イベントのリクエストボディはWebhookCommentオブジェクトです。
 
-##### 「Update」イベント構造  
-The "update" event request body is a WebhookComment object.
+##### "Update"イベントの構造
+"update"イベントのリクエストボディはWebhookCommentオブジェクトです。
 
-##### 「Delete」イベント構造  
-The "delete" event request body is a WebhookComment object.
+##### "Delete"イベントの構造
+"delete"イベントのリクエストボディはWebhookCommentオブジェクトです。
 
-    変更 (2023年11月14日現在)
-    以前は「delete」イベントのリクエストボディはコメント ID のみが含まれていましたが、現在は削除時点の完全なコメントが含まれます。
+    2023年11月14日時点の変更
+    以前は"delete"イベントのリクエストボディにはコメントIDのみが含まれていました。現在は削除時点のコメント全体が含まれます。
 
-ボディには常にすべてのキーが存在します。フィールドに値がない場合、ボディは `null`（ブール値の場合は `false`、リストの場合は `[]`）を保持するため、配信の形状はコメントごとに変わりません。
 
-[inline-code-attrs-start title = 'WebhookComment オブジェクト'; type = 'typescript'; inline-code-attrs-end]
+すべてのキーは常にボディに存在します。コメントにフィールドの値がない場合、ボディには `null`(ブール値の場合は `false`、リストの場合は `[]`)が格納されるため、配信の形式はコメントごとに変わりません。
+
+[inline-code-attrs-start title = 'WebhookCommentオブジェクト'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface WebhookComment {
-    /** The id of the comment. **/
+    /** コメントのID。 **/
     id: string
-    /** The id or URL that identifies the comment thread. Normalized. **/
+    /** コメントスレッドを識別するIDまたはURL。正規化されています。 **/
     urlId: string
-    /** The URL that points to where the comment was left. **/
+    /** コメントが投稿された場所を指すURL。 **/
     url: string | null
-    /** The user id that left the comment. If SSO, prefixed with tenant id. **/
+    /** コメントを投稿したユーザーのID。SSOの場合はテナントIDが接頭辞として付きます。 **/
     userId: string | null
-    /** The email of the user left the comment. **/
+    /** コメントを投稿したユーザーのメールアドレス。 **/
     commenterEmail: string | null
-    /** The name of the user that shows in the comment widget. With SSO, can be displayName. **/
+    /** コメントウィジェットに表示されるユーザーの名前。SSOの場合はdisplayNameになることがあります。 **/
     commenterName: string
-    /** Raw comment text. **/
+    /** 生のコメントテキスト。 **/
     comment: string
-    /** Comment text after parsing. **/
+    /** パース後のコメントテキスト。 **/
     commentHTML: string
-    /** Comment external id. **/
+    /** コメントの外部ID。 **/
     externalId: string | null
-    /** The id of the parent comment. **/
+    /** 親コメントのID。 **/
     parentId: string | null
-    /** The UTC date when the comment was left. **/
+    /** コメントが投稿されたUTC日時。 **/
     date: UTC_ISO_DateString
-    /** Combined karma (up - down) of votes. **/
+    /** 投票の合計カルマ(賛成 - 反対)。 **/
     votes: number
     votesUp: number
     votesDown: number
-    /** True if the user was logged in when they commented, or their verified the comment, or if they verified their session when the comment was left. **/
+    /** ユーザーがコメント時にログインしていたか、コメントを認証したか、コメント投稿時にセッションを認証した場合にtrue。 **/
     verified: boolean
-    /** The UTC date when the comment was verified. **/
+    /** コメントが認証されたUTC日時。 **/
     verifiedDate: UTC_ISO_DateString | null
-    /** If a moderator marked the comment reviewed. **/
+    /** モデレーターがコメントをレビュー済みとしてマークしたかどうか。 **/
     reviewed: boolean
-    /** The location, or base64 encoding, of the avatar. Will only be base64 if that was the value passed with SSO. **/
+    /** アバターの場所、またはbase64エンコーディング。base64になるのはSSOでその値が渡された場合のみです。 **/
     avatarSrc: string | null
-    /** Was the comment manually or automatically marked as spam? **/
+    /** コメントが手動または自動でスパムとしてマークされたかどうか。 **/
     isSpam: boolean
-    /** Was the comment automatically marked as spam? **/
+    /** コメントが自動的にスパムとしてマークされたかどうか。 **/
     aiDeterminedSpam: boolean
-    /** Are there images in the comment? **/
+    /** コメントに画像が含まれているかどうか。 **/
     hasImages: boolean
-    /** The page number the comment is on for the "Most Relevant" sort direction. **/
+    /** "Most Relevant"ソート方向でのコメントのページ番号。 **/
     pageNumber: number | null
-    /** The page number the comment is on for the "Oldest First" sort direction. **/
+    /** "Oldest First"ソート方向でのコメントのページ番号。 **/
     pageNumberOF: number | null
-    /** The page number the comment is on for the "Newest First" sort direction. **/
+    /** "Newest First"ソート方向でのコメントのページ番号。 **/
     pageNumberNF: number | null
-    /** Was the comment approved automatically or manually? **/
+    /** コメントが自動または手動で承認されたかどうか。 **/
     approved: boolean
-    /** The locale code (format: en_us) of the user when the comment was written. **/
+    /** コメント作成時のユーザーのロケールコード(形式: en_us)。 **/
     locale: string | null
-    /** The @mentions written in the comment that were successfully parsed. Empty when there are none. **/
+    /** コメント内で正常にパースされた@メンション。ない場合は空。 **/
     mentions: CommentUserMention[]
-    /** The domain the comment is from. **/
+    /** コメントの送信元ドメイン。 **/
     domain: string | null
-    /** The moderation group ids associated with this comment. Empty when there are none. **/
+    /** このコメントに関連付けられたモデレーショングループのID。ない場合は空。 **/
     moderationGroupIds: string[]
-    /** The badges shown next to the commenter's name on this comment, as of when the event was created. Empty when there are none. **/
+    /** このコメントでコメント投稿者の名前の横に表示されるバッジ(イベント作成時点のもの)。ない場合は空。 **/
     badges: CommentUserBadgeInfo[]
 }
 [inline-code-end]
 
-コメント内でユーザーがタグ付けされると、その情報は `mentions` というリストに保存されます。そのリスト内の各オブジェクトは以下の構造です。
+コメント内でユーザーがタグ付けされると、その情報は `mentions` というリストに保存されます。そのリスト内の各オブジェクトは以下の構造を持ちます。
 
-[inline-code-attrs-start title = 'Webhook メンション オブジェクト'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Webhookメンションオブジェクト'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentUserMention {
-    /** The user id. For SSO users, this will have your tenant id prefixed. **/
+    /** ユーザーID。SSOユーザーの場合はテナントIDが接頭辞として付きます。 **/
     id: string
-    /** The final @mention tag text, including the @ symbol. **/
+    /** @記号を含む最終的な@メンションタグのテキスト。 **/
     tag: string
-    /** The original @mention tag text, including the @ symbol. **/
+    /** @記号を含む元の@メンションタグのテキスト。 **/
     rawTag: string
-    /** What type of user was tagged. user = FastComments.com account. sso = SSOUser. **/
+    /** タグ付けされたユーザーの種類。user = FastComments.comアカウント。sso = SSOUser。 **/
     type: 'user'|'sso'
-    /** If the user opts out of notifications, this will still be set to true. **/
+    /** ユーザーが通知をオプトアウトしていても、これはtrueに設定されたままになります。 **/
     sent: boolean
 }
 [inline-code-end]
 
-`badges` リストの各エントリは以下の構造です。バッジの種類については [Badges guide](/guide-badges.html) を参照してください。
+`badges` リストの各エントリは以下の構造を持ちます。バッジの種類については[バッジガイド](/guide-badges.html)を参照してください。
 
-[inline-code-attrs-start title = 'Webhook バッジ オブジェクト'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Webhookバッジオブジェクト'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentUserBadgeInfo {
-    /** The id of the badge awarded to this user. **/
+    /** このユーザーに付与されたバッジのID。 **/
     id: string
-    /** The badge type. **/
+    /** バッジの種類。 **/
     type: number
-    /** The badge description, shown when hovering over the badge. **/
+    /** バッジの説明。バッジにホバーすると表示されます。 **/
     description: string
-    /** The text shown on the badge. **/
+    /** バッジに表示されるテキスト。 **/
     displayLabel?: string | null
-    /** The image shown for the badge, if it uses one. **/
+    /** バッジに表示される画像(使用する場合)。 **/
     displaySrc?: string | null
     backgroundColor?: string | null
     borderColor?: string | null
     textColor?: string | null
-    /** An extra CSS class applied to the badge. **/
+    /** バッジに適用される追加のCSSクラス。 **/
     cssClass?: string | null
 }
 [inline-code-end]
 
-#### HTTP メソッド
+#### HTTPメソッド
 
-管理パネルで各 webhook イベントタイプの HTTP メソッドを設定できます：
+管理パネルで各WebhookイベントタイプのHTTPメソッドを設定できます:
 
-- **Create Event**: POST または PUT（デフォルト: PUT）
-- **Update Event**: POST または PUT（デフォルト: PUT）
-- **Delete Event**: DELETE、POST、または PUT（デフォルト: DELETE）
+- **Createイベント**: POSTまたはPUT(デフォルト: PUT)
+- **Updateイベント**: POSTまたはPUT(デフォルト: PUT)
+- **Deleteイベント**: DELETE、POST、またはPUT(デフォルト: DELETE)
 
-すべてのリクエストに ID が含まれるため、Create と Update の操作はデフォルトで冪等（PUT）です。同じ Create または Update リクエストを繰り返しても、側で重複したオブジェクトは作成されません。
+すべてのリクエストにIDが含まれているため、CreateおよびUpdate操作はデフォルト(PUT)で冪等です。同じCreateまたはUpdateリクエストを繰り返しても、こちら側で重複したオブジェクトが作成されることはありません。
 
 #### リクエストヘッダー
 
-各 webhook リクエストには以下のヘッダーが含まれます：
+各Webhookリクエストには以下のヘッダーが含まれます:
 
-| Header | Description |
+| ヘッダー | 説明 |
 |--------|-------------|
 | `Content-Type` | `application/json` |
-| `token` | あなたの API シークレット |
-| `X-FastComments-Timestamp` | リクエストが署名されたときの Unix タイムスタンプ（秒） |
-| `X-FastComments-Signature` | HMAC-SHA256 署名（`sha256=<hex>`） |
+| `token` | あなたのAPIシークレット |
+| `X-FastComments-Timestamp` | リクエストが署名された時点のUnixタイムスタンプ(秒) |
+| `X-FastComments-Signature` | HMAC-SHA256署名(`sha256=<hex>`) |
 
-HMAC 署名の検証に関する情報は [Security & API Tokens](/guide-webhooks.html#webhooks-api-tokens) を参照してください。
+HMAC署名の検証方法については、[セキュリティとAPIトークン](/guide-webhooks.html#webhooks-api-tokens)を参照してください。

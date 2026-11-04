@@ -15,5 +15,3 @@ Prévention des boucles : les événements d'épinglage provenant d'un agent n'e
 ### Remarque sur la paire
 
 Les événements d'épinglage et de désépinglage sont des déclencheurs distincts. Abonnez-vous aux deux si vous souhaitez un comportement symétrique. Voir [Déclencheur : Commentaire désépinglé](#trigger-comment-unpin).
-
----

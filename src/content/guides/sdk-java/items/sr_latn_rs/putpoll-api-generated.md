@@ -1,15 +1,13 @@
-Attach a poll to a comment, or set the full state of the poll it already has.
+Priložite anketu komentaru ili postavite kompletno stanje ankete koju već ima.
 
-Options are matched by id: an option sent with the id of an existing option keeps its votes (and takes the
-new label and position), an option sent without an id is added, and existing options left out of the list
-are removed along with the votes cast on them.
+Opcije se uparuju po id: opcija poslata sa id-jem postojeće opcije zadržava svoje glasove (i preuzima novi naziv i poziciju), opcija poslata bez id-ja se dodaje, a postojeće opcije koje nisu uključene u listu se uklanjaju zajedno sa glasovima datim na njima.
 
-Keeping no existing option ids on a poll that has votes deletes all of them, so that needs replaceVotes=true.
+Ako se ne zadrži nijedan id postojeće opcije na anketi koja ima glasove, svi glasovi se brišu, pa je za to potrebno replaceVotes=true.
 
-## Parameters
+## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
+|------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | commentId | string | path | Da |  |
 | replaceVotes | boolean | query | Ne |  |
@@ -22,7 +20,7 @@ Vraća: [`SavePollResponse`](https://github.com/FastComments/fastcomments-java/b
 
 [inline-code-attrs-start title = 'putPoll Primer'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Uvezi klase:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -35,10 +33,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Konfiguriši autorizaciju API ključa: api_key
+    // Configure API key authorization: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Odkomentarišite sledeću liniju da postavite prefiks za API ključ, npr. "Token" (podrazumevano null)
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);

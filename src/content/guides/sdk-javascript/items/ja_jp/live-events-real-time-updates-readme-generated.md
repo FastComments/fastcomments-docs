@@ -1,8 +1,8 @@
-ライブイベントを購読して、コメント、投票、その他のアクティビティのリアルタイム更新を取得します。
+ライブイベントを購読すると、コメント、投票、その他のアクティビティのリアルタイム更新を受け取ることができます。
 
 ### ページレベルのイベント
 
-特定のページのライブイベント（コメント、投票など）を監視します:
+特定のページのライブイベント(コメント、投票など)を購読します:
 
 ```typescript
 import { subscribeToChanges, LiveEvent, LiveEventType } from 'fastcomments-sdk/browser';
@@ -12,23 +12,23 @@ const config = {
   urlId: 'page-url-id',
 };
 
-// Subscribe to live events for a page
+// ページのライブイベントを購読する
 const subscription = subscribeToChanges(
   config,
   'your-tenant-id', // tenantIdWS
   'page-url-id',    // urlIdWS  
-  'user-session-id', // userIdWS (get this from getComments response)
+  'user-session-id', // userIdWS (getComments レスポンスから取得します)
   (event: LiveEvent) => {
     console.log('Live event received:', event);
     
     switch (event.type) {
       case LiveEventType.new_comment:
         console.log('New comment:', event.comment);
-        // Update your UI with the new comment
+        // 新しいコメントでUIを更新する
         break;
       case LiveEventType.new_vote:
         console.log('New vote:', event.vote);
-        // Update vote counts in your UI
+        // UI内の投票数を更新する
         break;
       case LiveEventType.updated_comment:
         console.log('Comment updated:', event.comment);
@@ -37,29 +37,29 @@ const subscription = subscribeToChanges(
         console.log('Other event type:', event.type);
     }
     
-    return true; // Return true if event was handled
+    return true; // イベントが処理された場合は true を返す
   },
   (isConnected: boolean) => {
     console.log('Connection status:', isConnected ? 'Connected' : 'Disconnected');
   }
 );
 
-// Close the subscription when done
+// 完了したら購読を閉じる
 subscription.close();
 ```
 
-### ユーザーイベントを購読
+### ユーザーイベントの購読
 
-ユーザー固有のイベント（通知、メンションなど）を監視します:
+ユーザー固有のイベント(通知、メンションなど)を購読します:
 
 ```typescript
 import { subscribeToUserFeed, LiveEvent, LiveEventType } from 'fastcomments-sdk/browser';
 
 const userConfig = {
-  userIdWS: 'user-session-id', // Get this from getComments response
+  userIdWS: 'user-session-id', // getComments レスポンスから取得します
 };
 
-// Subscribe to user's personal feed
+// ユーザーの個人フィードを購読する
 const userSubscription = subscribeToUserFeed(
   userConfig,
   (event: LiveEvent) => {
@@ -68,7 +68,7 @@ const userSubscription = subscribeToUserFeed(
     switch (event.type) {
       case LiveEventType.notification:
         console.log('New notification:', event.notification);
-        // Show notification in your UI
+        // UIに通知を表示する
         break;
       case LiveEventType.notification_update:
         console.log('Notification updated:', event.notification);
@@ -84,13 +84,13 @@ const userSubscription = subscribeToUserFeed(
   }
 );
 
-// Close when done
+// 完了したら閉じる
 userSubscription.close();
 ```
 
 ### userIdWS の取得
 
-The `userIdWS` parameter is required for live events and can be obtained from API responses:
+`userIdWS` パラメータはライブイベントに必要で、APIレスポンスから取得できます:
 
 ```typescript
 const response = await sdk.publicApi.getCommentsPublic({
@@ -98,11 +98,11 @@ const response = await sdk.publicApi.getCommentsPublic({
   urlId: 'page-id'
 });
 
-// Extract userIdWS from the response
+// レスポンスから userIdWS を抽出する
 const userIdWS = response.data?.userSessionInfo?.userIdWS;
 
 if (userIdWS) {
-  // Now you can subscribe to live events
+  // これでライブイベントを購読できます
   const subscription = subscribeToChanges(config, tenantIdWS, urlIdWS, userIdWS, handleEvent);
 }
 ```

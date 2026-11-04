@@ -11,5 +11,3 @@ Stranica za moderaciju će vas također obavijestiti kada stignu novi komentari 
 Ovo radi sa svim filterima — ako gledate samo komentare koji su označeni kao neželjena pošta, bit ćete obaviješteni samo o novoj neželjenoj pošti. Ako pretražujete komentare koji sadrže određenu frazu, obavijest će se pokrenuti samo za komentare koji se podudaraju.
 
 Ako se vaša veza privremeno prekine, sustav će se automatski uskladiti i dohvatiti sve komentare koje ste propustili kada se veza ponovno uspostavi.
-
----

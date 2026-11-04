@@ -19,5 +19,3 @@ Eine Aktion eines menschlichen Moderators auf der Moderationsseite, im Kommentar
 
 - "Reviewed" ist einer der Zustände der Moderationswarteschlange, die separat von "approved" und "spam" verfolgt werden. Ein Kommentar kann "approved-and-reviewed", "approved-but-not-reviewed" usw. sein. Siehe [Wie Genehmigungen funktionieren](/guide-moderation.html#moderation-approvals) im Moderationsleitfaden.
 - Dieser Trigger tritt bei Mandanten mit vielen Moderatoren häufig auf. Abonniere selektiv und plane das Budget entsprechend.
-
----

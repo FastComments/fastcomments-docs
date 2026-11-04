@@ -1,4 +1,3 @@
----
 これは FastComments の公式 Dart SDK です。
 
 Dart および Flutter アプリケーションからコメント、ユーザー、SSO、モデレーションを管理します。

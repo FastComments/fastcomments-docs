@@ -22,5 +22,3 @@ Så hvilken passer til dig?
 
 - Dine grupper har specifikke sider.
 - For eksempel bør brugere i gruppen "Public Pages" aldrig kunne se artiklerne i "Top Secret" artiklerne.
-
----

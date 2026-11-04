@@ -18,5 +18,3 @@ The **FastComments - Top Pages** 블록은 상점에서 전체적으로 댓글 �
 
 - **Top Pages**는 총 참여도를 기준으로 순위를 매깁니다. 따라서 동일한 게시물들이 한동안 상단에 머무르는 경향이 있습니다. "popular posts" 사이드바에 적합합니다.
 - **Recent Discussions**는 최신 활동을 기준으로 순위를 매겨 목록이 자주 교체됩니다. "what's hot right now" 패널에 적합합니다.
-
----

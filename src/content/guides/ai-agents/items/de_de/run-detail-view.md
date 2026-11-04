@@ -1,4 +1,3 @@
----
 Wenn Sie in einer Zeile des [Ausführungsverlaufs](#run-history) auf **View** klicken, öffnet sich die Detailseite für den jeweiligen Durchlauf. Hier können Sie die Begründung des Agents lesen und seine Entscheidungen bewerten.
 
 ### Oben: Zusammenfassung des Durchlaufs
@@ -66,4 +65,3 @@ Bei Durchläufen im `Error`-Status zeigt die Detailseite die zugrunde liegende F
 - **Budget während des Durchlaufs erschöpft** - das Limit des Agents wurde getroffen, während der Durchlauf lief. Der Durchlauf wurde gestoppt.
 
 Fehler rollen teilweise ausgeführte Aktionen nicht zurück – alle Tool-Aufrufe, die vor dem Fehler abgeschlossen wurden, bleiben bestehen.
----

@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Name | Type | Required | Description |
@@ -28,5 +27,3 @@ let (response, httpResponse) = client.getUserReactsPublic(
 if response.isSome:
   let userReacts = response.get()
 [inline-code-end]
-
----

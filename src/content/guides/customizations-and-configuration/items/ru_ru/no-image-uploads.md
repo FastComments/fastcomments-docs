@@ -7,5 +7,3 @@
 Это можно настроить без кода на странице настройки виджета:
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.disable-image-uploads'; selector = '.disable-image-uploads'; alt='Флажок отключения загрузки изображений включён в настройках страницы настройки виджета'; title='Отключение загрузки изображений' app-screenshot-end]
-
----

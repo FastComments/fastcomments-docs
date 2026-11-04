@@ -1,4 +1,3 @@
----
 ## Parametreler
 
 | Ad | Tür | Konum | Gerekli | Açıklama |
@@ -35,5 +34,3 @@ PublicAPI.getCommentText(tenantId: tenantId, commentId: commentId, options: Publ
     }
 }
 [inline-code-end]
-
----

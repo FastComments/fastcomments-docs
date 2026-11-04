@@ -77,5 +77,3 @@ Bir ajanın çağırabileceği en sonuçları ağır araç. Bir kullanıcıyı s
 ### Ban-aracı alt-seçenekleri
 
 Ban aracı iki yıkıcı seçenek sunar - delete-all-comments ve ban-by-IP - ve bunlar, düzenleme formundaki **Ban options** bölümünde bunları etkinleştirene kadar modelden tamamen gizlenir. Model parametreleri hayal etse bile, platform etkinleştirmediğiniz değerleri reddeder. Bkz. [Ban user](#tool-ban-user).
-
----

@@ -43,5 +43,3 @@ const result: AggregateResponse = await aggregate(
   includeStats
 );
 [inline-code-end]
-
----

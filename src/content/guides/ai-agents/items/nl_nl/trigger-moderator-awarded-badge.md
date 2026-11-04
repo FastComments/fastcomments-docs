@@ -1,4 +1,3 @@
----
 Wordt geactiveerd wanneer een moderator een badge toekent aan een gebruiker.
 
 ### Context die de agent ontvangt
@@ -23,5 +22,3 @@ Een handeling door een menselijke moderator.
 - **Wederzijdse erkenning** - een agent kan een antwoord plaatsen met "dank voor de geweldige bijdrage" wanneer een specifieke badge wordt toegekend.
 - **Externe erkenningsworkflow** via [Webhooks](#webhooks-overview) - spiegel badge-toekenningen naar je eigen systeem voor gebruikersbetrokkenheid.
 - **Geheugenregistratie** - aantekeningen zoals "deze gebruiker is een erkende bijdrager" zodat toekomstige moderatieagenten dit kunnen meenemen in hun beslissingen.
-
----

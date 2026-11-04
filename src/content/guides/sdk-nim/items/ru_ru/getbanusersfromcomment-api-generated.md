@@ -19,5 +19,3 @@ if response.isSome:
   let banInfo = response.get()
   echo banInfo
 [inline-code-end]
-
----

@@ -37,5 +37,3 @@ async function demoGetTenantDailyUsages() {
   );
 }
 [inline-code-end]
-
----

@@ -5,5 +5,3 @@
 5. Indtast din **Tenant ID** og **API Secret** fra <a href="https://fastcomments.com/auth/my-account/api-secret" target="_blank">FastComments-dashboardet</a>.
 
 Det er det! Kommentarer vil blive vist på dine kursus- og aktivitetsider.
-
----

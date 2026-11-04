@@ -1,5 +1,4 @@
----
-Wszystkie opcje widżetu FastComments ustawiane są w sekcji `[params.fastcomments]` w `hugo.toml`, i mogą być nadpisane dla każdej strony we front matter pod `[fastcomments]`. Kolejność priorytetu, od najniższego do najwyższego: parametry witryny, front matter strony, parametry shortcode.
+Wszystkie opcje widżetu FastComments są ustawiane w sekcji `[params.fastcomments]` w pliku `hugo.toml` i mogą być nadpisywane per strona w front matter w sekcji `[fastcomments]`. Pierwszeństwo, od najniższego do najwyższego: parametry witryny, front matter strony, parametry shortcode.
 
 ```toml
 # hugo.toml
@@ -11,7 +10,7 @@ Wszystkie opcje widżetu FastComments ustawiane są w sekcji `[params.fastcommen
 ```
 
 ```toml
-# a page's front matter
+# front matter strony
 +++
 title = "Article"
 [fastcomments]
@@ -20,11 +19,11 @@ title = "Article"
 +++
 ```
 
-When neither `url` nor `urlId` is provided, `url` defaults to the page's permalink so comment threads stay tied to a stable URL.
+Gdy nie podano ani `url`, ani `urlId`, `url` domyślnie przyjmuje permalink strony, dzięki czemu wątki komentarzy pozostają powiązane ze stabilnym adresem URL.
 
 ### Rezydencja danych w UE
 
-Klienci z UE ustawiają `region = "eu"` aby kierować widżet do `cdn-eu.fastcomments.com`:
+Klienci z UE ustawiają `region = "eu"`, aby kierować widżet do `cdn-eu.fastcomments.com`:
 
 ```toml
 [params.fastcomments]
@@ -32,7 +31,6 @@ Klienci z UE ustawiają `region = "eu"` aby kierować widżet do `cdn-eu.fastcom
   region = "eu"
 ```
 
-### Uwaga dotycząca wielkości liter kluczy
+### Uwaga dotycząca wielkości liter w kluczach
 
-Hugo zamienia na małe litery każdy klucz w `hugo.toml` i we front matter, ale widżety FastComments wymagają kluczy w formacie camelCase (`tenantId`, `hasDarkBackground`). Ten komponent automatycznie przywraca poprawne odmiany wielkości liter dla każdej znanej opcji najwyższego poziomu, więc wpisuj opcje w ich normalnej formie camelCase. Klucze zagnieżdżone wewnątrz wartości obiektu (na przykład klucze mapy `translations` lub pola `pageReactConfig`) nie są przywracane. Skonfiguruj je zamiast tego poprzez interfejs dostosowywania w panelu FastComments.
----
+Hugo zamienia wszystkie klucze w `hugo.toml` i front matter na małe litery, ale widżety FastComments wymagają kluczy w formacie camelCase (`tenantId`, `hasDarkBackground`). Ten komponent automatycznie przywraca poprawną wielkość liter dla każdej znanej opcji najwyższego poziomu, więc zapisuj opcje w ich normalnej formie camelCase. Klucze zagnieżdżone wewnątrz wartości obiektu (na przykład klucze mapy `translations` lub pola `pageReactConfig`) nie są przywracane. Skonfiguruj je zamiast tego przez interfejs dostosowywania w panelu FastComments.

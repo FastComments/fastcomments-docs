@@ -1,4 +1,3 @@
----
 ## パラメータ
 
 | 名前 | タイプ | 場所 | 必須 | 説明 |
@@ -32,5 +31,3 @@ try {
     print('Exception when calling DefaultApi->patchDomainConfig: $e\n');
 }
 [inline-code-end]
-
----

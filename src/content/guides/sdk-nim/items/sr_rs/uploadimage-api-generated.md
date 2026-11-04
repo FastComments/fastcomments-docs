@@ -1,4 +1,3 @@
----
 Отпремање и промена величине слике
 
 ## Параметри
@@ -27,5 +26,3 @@ if uploadResult.isSome:
   let result = uploadResult.get()
   # користите резултат по потреби
 [inline-code-end]
-
----

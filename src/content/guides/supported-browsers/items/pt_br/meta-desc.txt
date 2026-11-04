@@ -1,3 +1,1 @@
----
 Quais navegadores o widget FastComments suporta, onde o Internet Explorer se posiciona, como testamos cada versão e qual JavaScript o widget necessita.
----

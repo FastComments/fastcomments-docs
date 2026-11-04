@@ -18,5 +18,3 @@ if configOpt.isSome:
   let cfg = configOpt.get()
   discard cfg
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 Plaatst een batchtaak in de wachtrij die opmerkingen, pagina's en gerelateerde records van de ene urlId of domein naar de andere verplaatst.  
 "urlId"-migraties komen alleen overeen met de exacte urlId. "domain"-migraties zoeken/vervangen de waarde binnen elke urlId en url.  
 Poll GET /api/v1/batch-jobs/{batchJobId}: zodra deze voltooid is, bevat hij per-migratie resultaten en een undoId.
@@ -34,5 +33,3 @@ DefaultAPI.migratePages(tenantId: tenantId, migrateAPIPagesData: migrateAPIPages
     }
 }
 [inline-code-end]
-
----

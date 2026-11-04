@@ -32,5 +32,3 @@ try {
     print('Exception when calling DefaultApi->getTicket: $e\n');
 }
 [inline-code-end]
-
----

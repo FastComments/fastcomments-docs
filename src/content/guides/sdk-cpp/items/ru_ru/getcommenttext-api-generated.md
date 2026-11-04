@@ -26,5 +26,3 @@ api->getCommentText(tenantId, commentId, *options).then([](pplx::task<std::share
     }catch(...){}
 });
 [inline-code-end]
-
----

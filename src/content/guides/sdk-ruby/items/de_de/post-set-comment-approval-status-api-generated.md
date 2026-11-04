@@ -36,5 +36,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->post_set_comment_approval_status: #{e}"
 end
 [inline-code-end]
-
----

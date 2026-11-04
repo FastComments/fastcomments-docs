@@ -8,5 +8,3 @@ So sollte es aussehen - Sie sollten in der Lage sein, einen Text auszuwählen, u
 </div>
 
 Herzlichen Glückwunsch zur Einrichtung von FastComments mit Super! Wenn Sie auf einen Domain Error gestoßen sind, oder erfahren möchten, wie Sie den Kommentarbereich anpassen können, lesen Sie weiter!
-
----

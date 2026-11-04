@@ -18,5 +18,3 @@ if maybeResp.isSome:
   let resp = maybeResp.get()
   # un traitement supplémentaire peut être effectué avec `resp`
 [inline-code-end]
-
----

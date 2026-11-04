@@ -26,5 +26,3 @@ api->getUserBadgeProgressList(tenantId, options)
         }
     });
 [inline-code-end]
-
----

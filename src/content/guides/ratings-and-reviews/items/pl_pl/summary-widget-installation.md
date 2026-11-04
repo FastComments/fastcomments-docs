@@ -1,6 +1,6 @@
-Below is the Vanilla JS code for installing the Summary Widget. The React library also has this widget.
+Poniżej znajduje się kod Vanilla JS do instalacji widżetu Podsumowania. Biblioteka React również posiada ten widżet.
 
-[inline-code-attrs-start title = 'Instalacja widżetu podsumowania'; type = 'html'; isFunctional = true; type = 'html';  inline-code-attrs-end]
+[inline-code-attrs-start title = 'Instalacja widżetu Podsumowania'; type = 'html'; isFunctional = true; type = 'html';  inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-reviews-summary.min.js"></script>
 <div id="summary-widget"></div>
@@ -11,12 +11,14 @@ Below is the Vanilla JS code for installing the Summary Widget. The React librar
 </script>
 [inline-code-end]
 
-The widget will automatically find the questions to show in the summary based on the corresponding widget configuration for that page/site.
+Widżet automatycznie znajdzie pytania do wyświetlenia w podsumowaniu na podstawie odpowiedniej konfiguracji widżetu dla danej strony/witryny.
 
-### Filtering Comments by Rating
+### Filtrowanie komentarzy według oceny
 
-When the comment widget for the same page is also on the page, and it is configured to show each commenter's answer on their comment, the rows of the breakdown become clickable. Clicking a row, for example "5", filters the comment widget to the comments that gave that answer. Clicking the row again, or the X on the "Showing only" chip in the comment widget, shows all the comments again. This needs no configuration: the Summary Widget finds the comment widget with the same `tenantId` and `urlId`.
+Gdy widżet komentarzy dla tej samej strony znajduje się również na stronie i jest skonfigurowany tak, aby wyświetlać odpowiedź każdego komentującego przy jego komentarzu, wiersze podziału
+stają się klikalne. Kliknięcie wiersza, na przykład "5", filtruje widżet komentarzy do komentarzy, które udzieliły tej odpowiedzi. Ponowne kliknięcie wiersza lub X na plakietce "Wyświetlanie tylko"
+w widżecie komentarzy ponownie pokazuje wszystkie komentarze. Nie wymaga to żadnej konfiguracji: Widżet Podsumowania znajduje widżet komentarzy z tym samym `tenantId` i `urlId`.
 
-This works for star, thumbs, emoji, scale and single choice questions. The breakdown the comment widget shows above the comment box can be clicked the same way.
+Działa to w przypadku pytań typu gwiazdki, kciuki, emoji, skala i pojedynczy wybór. Podział wyświetlany przez widżet komentarzy nad polem komentarza można klikać w ten sam sposób.
 
-If you require the widget in one of our other libraries that does not have it, file a support ticket so that we know to add it.
+Jeśli potrzebujesz tego widżetu w jednej z naszych innych bibliotek, która go nie posiada, zgłoś zgłoszenie do wsparcia, abyśmy wiedzieli, że należy go dodać.

@@ -38,5 +38,3 @@ ModerationAPI.putRemoveBadge(tenantId: tenantId, badgeId: badgeId, options: Mode
     }
 }
 [inline-code-end]
-
----

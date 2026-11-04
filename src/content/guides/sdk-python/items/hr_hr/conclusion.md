@@ -8,5 +8,3 @@ Ako naiđete na bilo kakve probleme ili imate pitanja u vezi s Python SDK, molim
 ## Doprinosi
 
 Doprinosi su dobrodošli! Posjetite [GitHub repozitorij](https://github.com/FastComments/fastcomments-python) za smjernice za doprinos.
-
----

@@ -100,5 +100,3 @@
     box-shadow: none !important;
 }
 [inline-code-end]
-
----

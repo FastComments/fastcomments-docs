@@ -23,5 +23,3 @@
   console.log(presence);
 })();
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 ## Параметры
 
 | Имя | Тип | Обязательно | Описание |
@@ -33,5 +32,3 @@ async () => {
   console.log(basicResponse, fullResponse);
 }();
 [inline-code-end]
-
----

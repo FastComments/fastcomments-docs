@@ -43,5 +43,3 @@ try {
     echo 'Виняток при виклику ModerationApi->deleteModerationVote: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

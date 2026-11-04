@@ -1,4 +1,3 @@
----
 Stellt einen Batch‑Job in die Warteschlange, der jede Migration von einem *migrate‑pages*‑Job umkehrt, beginnend mit dem neuesten. Verfügbar für 90 Tage. Änderungen, die seit der Migration vorgenommen wurden, bleiben unverändert, sodass eine spätere Bearbeitung niemals überschrieben wird. Abfragen Sie **GET** `/api/v1/batch-jobs/{batchJobId}` für die wiederhergestellten/übersprungenen Zähler.
 
 ## Parameter
@@ -33,5 +32,3 @@ DefaultAPI.undoPageMigrations(tenantId: tenantId, undoId: undoId) { (response, e
     }
 }
 [inline-code-end]
-
----

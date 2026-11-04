@@ -1,4 +1,3 @@
----  
 Quatro vals públicos que você pode remixar, cada um cobrindo uma parte deste guia.
 
 **[Blog com comentários](https://www.val.town/x/fastcomments/blog-with-comments)** ([live](https://fastcomments-blog.val.run)) é um blog em Markdown com um tópico sob cada post e contagens de comentários em massa no índice. Ele funciona no momento em que você o remixar, e uma variável de ambiente aponta para sua própria conta.

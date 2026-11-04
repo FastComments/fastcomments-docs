@@ -8,5 +8,3 @@ Ako naiđete na bilo kakve probleme ili imate pitanja u vezi Java SDK-a, molimo:
 ## Doprinosi
 
 Doprinosi su dobrodošli! Molimo posetite [GitHub repozitorijum](https://github.com/FastComments/fastcomments-java) za smernice o doprinosu.
-
----

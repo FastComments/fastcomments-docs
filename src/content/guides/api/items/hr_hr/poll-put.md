@@ -1,20 +1,26 @@
 [api-resource-header-start name = 'Poll'; route = 'PUT /api/v1/polls/:commentId'; creditsCost = 1; api-resource-header-end]
 
-Prilaže anketu postojećem komentaru ili postavlja cijelo stanje ankete koju već ima.
+Prilaže anketu postojećem komentaru ili postavlja potpuno stanje ankete koju već ima.
 
-Body je kompletna anketa, a opcije koje pošaljete postaju opcije ankete, u tom redoslijedu. Svaka opcija podudara se prema svom `id`-u:
+Tijelo je potpuna anketa, a opcije koje pošaljete postaju opcije ankete, tim redoslijedom. Svaka opcija
+se usklađuje prema svom `id`:
 
-- Opcija poslana s `id`-om postojeće opcije zadržava tu opciju i njene glasove. Njena oznaka i položaj ažuriraju se prema onome što ste poslali.
-- Opcija poslana bez `id`-a se dodaje, bez glasova.
-- Postojeća opcija koju izostavite uklanja se, zajedno s glasovima koji su na nju dati. `totalVotes` pada za isti iznos.
+- Opcija poslana s `id` postojeće opcije zadržava tu opciju i njezine glasove. Njezina oznaka i pozicija
+  ažuriraju se na ono što ste poslali.
+- Opcija poslana bez `id` dodaje se, bez glasova.
+- Postojeća opcija koju izostavite uklanja se, zajedno s glasovima danima na nju. `totalVotes` pada za isti
+  iznos.
 
-Dakle, da biste dodali opciju, pošaljite trenutne opcije s njihovim id-ovima plus novu bez id-a. Da biste uklonili opciju, pošaljite popis bez nje. Id-ovi opcija nalaze se u anketi koju vrati `GET /api/v1/polls/:commentId`.
+Dakle, za dodavanje opcije pošaljite trenutne opcije s njihovim id-jevima plus novu bez id-ja. Za uklanjanje
+opcije pošaljite popis bez nje. Id-jevi opcija nalaze se na anketi vraćenoj putem `GET /api/v1/polls/:commentId`.
 
-Slanje bez ikakvih id-ova zamjenjuje svaku opciju i briše svaki glas koji je već dan na anketi. Ako anketa ima glasove, to zahtijeva `replaceVotes=true`, a bez toga API odgovara s `replace-votes-required`.
+Ako uopće ne pošaljete id-jeve, svaka se opcija zamjenjuje i briše se svaki glas već dan na anketi. Ako anketa
+ima glasove, to zahtijeva `replaceVotes=true`, a bez toga API odgovara s `replace-votes-required`.
 
-Ostala polja također se zamjenjuju: izostavljanje `closesAt`, `privacy` ili `requireVoteToSeeResults` vraća ih na zadane vrijednosti. Za promjenu jednog polja i ostavljanje ostalih nepromijenjenima, koristite `PATCH /api/v1/polls/:commentId`.
+Ostala polja također se zamjenjuju: izostavljanjem `closesAt`, `privacy` ili `requireVoteToSeeResults` resetira
+se na zadanu vrijednost. Za promjenu jednog polja uz ostavljanje ostalih netaknutima, koristite `PATCH /api/v1/polls/:commentId`.
 
-[inline-code-attrs-start title = 'Primjer cURL zahtjeva za anketu (PUT)'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer Poll Put cURL zahtjeva'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request PUT \
   --url 'https://fastcomments.com/api/v1/polls/comment-id?tenantId=demo&API_KEY=DEMO_API_SECRET' \
@@ -29,7 +35,7 @@ curl --request PUT \
 }'
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Struktura zahtjeva za anketu (PUT)'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Struktura Poll Put zahtjeva'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface PollPutQueryParams {
     tenantId: string
@@ -56,7 +62,7 @@ interface PollPutBody {
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Struktura odgovora za anketu (PUT)'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Struktura Poll Put odgovora'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface PollPutResponse {
     status: 'success' | 'failed'
@@ -68,10 +74,12 @@ interface PollPutResponse {
 }
 [inline-code-end]
 
-### Other Notes
+### Ostale napomene
 
-- `id` koji nije u anketi, ili isti `id` naveden dvaput, uzrokuje grešku `poll-invalid`. Komentar bez ankete još nema id-ove opcija, pa svaka opcija poslana njemu mora izostaviti `id`.
+- `id` koji nije na anketi, ili isti `id` dan dvaput, ne uspijeva s `poll-invalid`. Komentar bez
+  ankete još nema id-jeve opcija, pa svaka opcija poslana njemu mora izostaviti `id`.
 - Privatnost ankete može se suziti, ali ne i proširiti nakon što ima glasove.
-- Ovaj API poštuje postavke vaše stranice. Ako ankete nisu omogućene za stranicu ili podstranicu, vraća grešku `polls-disabled`.
-- Zaključani komentar ne može imati promijenjenu anketu i vraća grešku `locked`.
-- Povezani widgeti se ažuriraju u stvarnom vremenu, pa posjetitelji vide novu anketu bez ponovnog učitavanja.
+- Ovaj API poštuje postavke vaše stranice. Ako ankete nisu omogućene za stranicu ili stranicu, ne uspijeva s
+  `polls-disabled`.
+- Zaključanom komentaru ne može se promijeniti anketa i ne uspijeva s `locked`.
+- Povezani widgeti ažuriraju se uživo, tako da gledatelji vide novu anketu bez ponovnog učitavanja.

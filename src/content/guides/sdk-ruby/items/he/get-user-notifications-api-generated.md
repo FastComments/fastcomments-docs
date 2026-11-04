@@ -1,4 +1,3 @@
----
 ## פרמטרים
 
 | שם | סוג | מיקום | חובה | תיאור |
@@ -51,5 +50,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_user_notifications: #{e}"
 end
 [inline-code-end]
-
----

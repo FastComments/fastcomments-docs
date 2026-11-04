@@ -31,5 +31,3 @@ async function demoSetTrustFactor() {
   const minimalResponse: SetUserTrustFactorResponse = await setTrustFactor(tenantId);
 }
 [inline-code-end]
-
----

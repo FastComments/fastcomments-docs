@@ -21,5 +21,3 @@ Chaque déclencheur renvoie le commentaire complet : id, URL de la page et ID 
 Activer un Zap crée une souscription webhook sur votre compte, visible sur la page Webhooks avec la source **API**. Désactiver le Zap la supprime. Les limites propres à Zapier s'appliquent au nombre d'événements qu'il accepte par minute ; FastComments réessaye une livraison qui échoue, avec un délai croissant, et désactive une souscription qui continue d'échouer pendant six jours. Une souscription désactivée peut être réactivée depuis la page Webhooks, ou il suffit de désactiver puis réactiver le Zap pour en créer une nouvelle.
 
 Un compte peut contenir jusqu'à 50 souscriptions API. Chaque Zap utilisant un déclencheur FastComments en utilise une.
-
----

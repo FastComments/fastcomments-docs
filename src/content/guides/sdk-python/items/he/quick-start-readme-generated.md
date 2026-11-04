@@ -161,5 +161,3 @@ result.close()
    - לקוח API: `from client import ...`
    - כלי SSO: `from sso import ...`
    - מנויים חיים: `from pubsub import ...` (דורש את התוספת `pubsub`)
-
----

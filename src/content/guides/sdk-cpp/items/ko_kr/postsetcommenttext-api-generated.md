@@ -1,4 +1,3 @@
----
 ## 매개변수
 
 | 이름 | 형식 | 필수 | 설명 |
@@ -30,5 +29,3 @@ api->postSetCommentText(tenantId, commentId, params, options)
         try { t.get(); } catch (const std::exception&) {}
     });
 [inline-code-end]
-
----

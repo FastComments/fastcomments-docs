@@ -6,5 +6,3 @@ Kada posjetite svoju stranicu, sada biste trebali vidjeti FastComments komentars
 </div>
 
 Čestitamo na postavljanju FastComments with Godaddy! Ako ste naišli na Domain Error, ili želite naučiti kako prilagoditi područje komentara, nastavite čitati!
-
----

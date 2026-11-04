@@ -11,5 +11,3 @@ Moderationssiden advarer dig også, når nye kommentarer ankommer, som matcher d
 Dette fungerer med alle filtre — hvis du kun ser spam-kommentarer, bliver du kun underrettet om nyt spam. Hvis du søger efter kommentarer, der indeholder en bestemt sætning, udløser kun matchende kommentarer underretningen.
 
 Hvis din forbindelse midlertidigt afbrydes, indhenter systemet automatisk eventuelle kommentarer, du gik glip af, når det genopretter forbindelsen.
-
----

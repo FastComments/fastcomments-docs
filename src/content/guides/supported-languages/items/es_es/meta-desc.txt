@@ -1,3 +1,1 @@
----
 Cada idioma en el que se envía el widget de FastComments, qué partes del producto están traducidas y cómo solicitar un idioma que aún no cubrimos.
----

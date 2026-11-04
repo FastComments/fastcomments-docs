@@ -65,5 +65,3 @@ Una volta pronto, copia il codice del widget FastComments.com:
 </div>
 
 Codice inserito. Ora dobbiamo solo reimportare il nostro tema!
-
----

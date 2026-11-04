@@ -8,5 +8,3 @@
 ## Принос
 
 Приноси са добре дошли! Моля посетете [репозиторията в GitHub](https://github.com/FastComments/fastcomments-gatsbyjs-example) за указания относно приноса.
-
----

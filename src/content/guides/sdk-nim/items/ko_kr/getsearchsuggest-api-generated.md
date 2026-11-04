@@ -22,5 +22,3 @@ if suggestOpt.isSome:
   let suggest = suggestOpt.get()
   echo suggest
 [inline-code-end]
-
----

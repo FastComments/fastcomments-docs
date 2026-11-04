@@ -17,5 +17,3 @@ stukjes informatie te taggen als links, die via onze API kunnen worden gedefinie
 - Tickets in een ticketsysteem.
 - Documenten of pagina's in CRM.
 - Bestanden.
-
----

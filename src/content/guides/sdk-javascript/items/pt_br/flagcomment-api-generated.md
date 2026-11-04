@@ -25,5 +25,3 @@ Retorna: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-sd
   console.log(response);
 })();
 [inline-code-end]
-
----

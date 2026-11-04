@@ -1,4 +1,3 @@
----
 FastComments godkender anmodninger til din konto for at sikre, at de kommer fra dit websted. Derfor har vi brug for at vide, hvilket websted eller hvilke websteder du vil installere FastComments på.
 
 FastComments understøtter godkendelse via domæne såvel som subdomæner.
@@ -28,5 +27,3 @@ Du behøver **ikke** at tilføje `localhost` for lokal udvikling – det er till
 #### Via API'en
 
 Domæner kan også tilføjes og konfigureres [via DomainConfigs API](/guide-api.html#domain-config-structure).
-
----

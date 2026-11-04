@@ -15,5 +15,3 @@ HashTag'lar, topluluk üyelerinin ilgili tartışmaları bulmak için gezinmesin
 - Bir ticketing sistemindeki biletler.
 - CRM'deki belgeler veya sayfalar.
 - Dosyalar.
-
----

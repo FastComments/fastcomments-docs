@@ -1,4 +1,3 @@
----
 req
 tenantId
 urlId
@@ -34,5 +33,3 @@ if eventLogOpt.isSome:
   let eventLog = eventLogOpt.get()
   echo eventLog
 [inline-code-end]
-
----

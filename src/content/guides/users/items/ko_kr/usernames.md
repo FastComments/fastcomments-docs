@@ -1,15 +1,13 @@
-FastComments에서는 `username`이 모든 사이트와 커뮤니티에서 유일해야 합니다. 이는 해당 값으로 fastcomments.com에 로그인하던 방식이었기 때문입니다.
+FastComments에서 `username`은 모든 사이트와 커뮤니티 전반에서 고유해야 합니다. 이는 fastcomments.com에 로그인할 때 사용되기 때문입니다.
 
-The exception is SSO - since SSO users are tied to a specific FastComments.com Tenant - they can have any username within that community.
+예외는 SSO입니다. SSO 사용자는 특정 FastComments.com 테넌트에 연결되어 있으므로, 해당 커뮤니티 내에서는 어떤 사용자 이름이든 사용할 수 있습니다.
 
 #### 표시 이름
 
-FastComments는 `Display Name`도 지원합니다. 표시 이름은 반드시 유일할 필요가 없으며 이모지를 포함할 수 있습니다. [계정 세부정보](https://fastcomments.com/auth/my-account/edit-details) 페이지에서 표시 이름을 설정할 수 있습니다.
+FastComments는 `표시 이름(Display Name)`도 지원합니다. 표시 이름은 고유할 필요가 없으며 이모지를 포함할 수 있습니다. 표시 이름은 [계정 세부 정보](https://fastcomments.com/auth/my-account/edit-details) 페이지에서 설정할 수 있습니다.
 
-#### 표시 이름의 고유성
+#### 표시 이름 고유성
 
-If two FastComments.com users, on two very different major communities both have similar names, then we'd like
-them to just be able to set their preferred display name. However, we can't restrict where people comment with their global FastComments account, so sometimes this may
-result in confusion.
+서로 매우 다른 두 개의 주요 커뮤니티에 있는 두 FastComments.com 사용자가 비슷한 이름을 가지고 있다면, 각자 원하는 표시 이름을 설정할 수 있도록 하는 것이 좋습니다. 하지만 전역 FastComments 계정으로 어디에 댓글을 달 수 있는지 제한할 수는 없기 때문에, 때때로 혼란이 발생할 수 있습니다.
 
-다른 사용자나 중재자와 비슷한 이름을 가지는 것 자체만으로는 남용 사례가 아닙니다. 그러나 이를 악용하여 의도적으로 다른 사용자를 사칭하는 경우, 우리는 귀하의 계정에서 이 기능을 비활성화할 수 있으며, 귀하는 `username`만 사용할 수 있도록 제한될 수 있습니다.
+다른 사용자 또는 중재자와 비슷한 이름을 가지고 있는 것 자체는 악용 사례가 아닙니다. 그러나 이를 악용하여 의도적으로 다른 사용자를 사칭하는 경우, 귀하의 계정에서 이 기능을 비활성화할 수 있으며, `username`만 사용하도록 제한될 수 있습니다.

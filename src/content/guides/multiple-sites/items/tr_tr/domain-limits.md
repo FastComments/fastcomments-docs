@@ -1,4 +1,3 @@
----
 Hesabınızdaki alan adı sayısı limitini öğrenmek için, [Fatura Sayfası](https://fastcomments.com/auth/my-account/billing-info) ziyaret edin.
 
 ### Fiyatlandırma
@@ -19,5 +18,3 @@ Fiyatlandırma pakete göre değişir:
 Özetle, trafik sınırlamaları hesap bazındadır, alan adı bazında değildir.
 
 Farklı büyüklükte siteler için özel paketler sunmaktayız; destek ile iletişime geçin.
-
----

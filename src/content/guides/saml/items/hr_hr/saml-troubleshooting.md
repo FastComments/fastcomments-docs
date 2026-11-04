@@ -1,284 +1,284 @@
-Ovaj vodič pokriva uobičajene probleme s SAML autentikacijom i njihova rješenja.
+Ovaj vodič pokriva uobičajene probleme s SAML autentifikacijom i njihova rješenja.
 
-### Certificate and Security Issues
+### Problemi s certifikatom i sigurnošću
 
-#### Invalid Certificate Error
+#### Pogreška nevažećeg certifikata
 
-**Symptoms**:
-- "Certificate validation failed" greška
-- Korisnici ne mogu dovršiti SAML autentikaciju
-- SAML odgovori se odbijaju
+**Simptomi**:
+- Pogreška "Certificate validation failed"
+- Korisnici ne mogu završiti SAML autentifikaciju
+- SAML odgovori su odbijeni
 
-**Common Causes**:
+**Uobičajeni uzroci**:
 - Format certifikata je neispravan
 - Certifikat je istekao
-- Pružен je pogrešan certifikat
+- Pružen je pogrešan certifikat
 - Dodatni znakovi ili razmaci u certifikatu
 
-**Solutions**:
-1. **Verify Certificate Format**:
-   - Osigurajte da certifikat sadrži markere `-----BEGIN CERTIFICATE-----` i `-----END CERTIFICATE-----`
-   - Uklonite dodatne razmake ili prijelome linija
+**Rješenja**:
+1. **Provjerite format certifikata**:
+   - Osigurajte da certifikat uključuje oznake `-----BEGIN CERTIFICATE-----` i `-----END CERTIFICATE-----`
+   - Uklonite sve dodatne razmake ili prijelome redaka
    - Kopirajte certifikat izravno iz IdP metapodataka ili konfiguracije
 
-2. **Check Certificate Validity**:
+2. **Provjerite valjanost certifikata**:
    - Provjerite da certifikat nije istekao
    - Potvrdite da je certifikat za ispravan IdP
    - Koristite online validatore certifikata za provjeru formata
 
-3. **Re-download Certificate**:
+3. **Ponovno preuzmite certifikat**:
    - Preuzmite svježi certifikat s IdP-a
-   - Koristite IdP URL metapodataka ako je dostupan
+   - Koristite URL IdP metapodataka ako je dostupan
    - Potvrdite da certifikat odgovara trenutnoj IdP konfiguraciji
 
-#### Signature Verification Failed
+#### Provjera potpisa nije uspjela
 
-**Symptoms**:
-- Pogreške pri provjeri potpisa SAML asercije
-- Autentikacija ne uspijeva nakon prijave na IdP
+**Simptomi**:
+- Pogreške provjere potpisa SAML tvrdnje
+- Autentifikacija ne uspijeva nakon IdP prijave
 - Poruke o pogrešci "Invalid signature"
 
-**Solutions**:
-1. **Algorithm Mismatch**:
+**Rješenja**:
+1. **Neslaganje algoritma**:
    - Provjerite da algoritam potpisa u FastComments odgovara IdP-u
    - Isprobajte različite algoritme potpisa (SHA-256, SHA-1, SHA-512)
-   - Provjerite da digest algoritam odgovara IdP konfiguraciji
+   - Provjerite da algoritam sažetka odgovara IdP konfiguraciji
 
-2. **Certificate Issues**:
+2. **Problemi s certifikatom**:
    - Osigurajte da je konfiguriran ispravan certifikat za potpisivanje
-   - Potvrdite da certifikat odgovara privatnom ključu koji koristi IdP
-   - Provjerite rotaciju certifikata u IdP-u
+   - Provjerite da certifikat odgovara privatnom ključu koji koristi IdP
+   - Provjerite postoji li rotacija certifikata u IdP-u
 
-### Configuration Issues
+### Problemi s konfiguracijom
 
-#### Wrong Entity ID or ACS URL
+#### Pogrešan Entity ID ili ACS URL
 
-**Symptoms**:
+**Simptomi**:
 - IdP prijavljuje "Unknown Service Provider"
-- SAML odgovori idu na pogrešni endpoint
-- Autentikacija se ne dovrši
+- SAML odgovori idu na pogrešnu krajnju točku
+- Autentifikacija se ne završava
 
-**Solutions**:
-1. **Verify SP Information**:
+**Rješenja**:
+1. **Provjerite SP informacije**:
    - Kopirajte točan Entity ID iz FastComments konfiguracije
    - Osigurajte da ACS URL odgovara formatu: `https://fastcomments.com/saml/callback/{tenant-id}`
-   - Provjerite tipfeler u tenant ID-u
+   - Provjerite ima li pogrešaka u tenant ID-u
 
-2. **IdP Configuration**:
-   - Ažurirajte IdP s točnim SP Entity ID-jem
-   - Konfigurirajte ispravan ACS/Reply URL
-   - Provjerite IdP binding postavke (preferira se HTTP-POST)
+2. **IdP konfiguracija**:
+   - Ažurirajte IdP s ispravnim SP Entity ID-om
+   - Konfigurirajte odgovarajući ACS/Reply URL
+   - Provjerite postavke IdP bindinga (poželjan HTTP-POST)
 
-#### Missing or Incorrect Attributes
+#### Nedostajući ili neispravni atributi
 
-**Symptoms**:
-- Korisnici se kreiraju bez odgovarajućih uloga
-- Nedostaju informacije u korisničkom profilu
-- Greške "Email required"
+**Simptomi**:
+- Korisnici stvoreni bez odgovarajućih uloga
+- Nedostaju podaci korisničkog profila
+- Pogreške "Email required"
 
-**Solutions**:
-1. **Email Attribute**:
-   - Osigurajte da IdP šalje atribut email
-   - Provjerite mapiranje naziva atributa (email, emailAddress, itd.)
-   - Potvrdite da je vrijednost emaila valjana adresa e-pošte
+**Rješenja**:
+1. **Atribut e-pošte**:
+   - Osigurajte da IdP šalje atribut e-pošte
+   - Provjerite mapiranje naziva atributa (email, emailAddress itd.)
+   - Provjerite da je vrijednost e-pošte valjana adresa e-pošte
 
-2. **Role Attributes**:
+2. **Atributi uloga**:
    - Potvrdite da IdP šalje informacije o ulogama/grupama
-   - Provjerite da nazivi atributa uloga odgovaraju očekivanjima FastComments-a
-   - Provjerite da vrijednosti uloga točno odgovaraju imenima uloga u FastComments-u
+   - Provjerite da nazivi atributa uloga odgovaraju očekivanjima FastComments
+   - Provjerite da vrijednosti uloga točno odgovaraju nazivima uloga FastComments
 
-3. **Attribute Format**:
-   - Testirajte i niz (array) i formate s vrijednostima odvojenim zarezom za uloge
+3. **Format atributa**:
+   - Testirajte i format uloga kao niza i kao vrijednosti odvojene zarezima
    - Osigurajte da vrijednosti atributa nemaju dodatne razmake
-   - Provjerite osjetljivost na velika/mala slova u nazivima uloga
+   - Provjerite osjetljivost na velika i mala slova u nazivima uloga
 
-### Authentication Flow Issues
+### Problemi s tijekom autentifikacije
 
-#### Redirect Loop
+#### Petlja preusmjeravanja
 
-**Symptoms**:
-- Preglednik se beskrajno preusmjerava između FastComments-a i IdP-a
-- Autentikacija nikada ne završi
-- Višestruka preusmjeravanja se prikazuju u alatima za razvoj preglednika
+**Simptomi**:
+- Preglednik beskonačno preusmjerava između FastComments i IdP-a
+- Autentifikacija se nikada ne završava
+- Višestruka preusmjeravanja prikazana u razvojnim alatima preglednika
 
-**Solutions**:
-1. **Check SP Configuration**:
+**Rješenja**:
+1. **Provjerite SP konfiguraciju**:
    - Provjerite da Entity ID točno odgovara IdP konfiguraciji
    - Osigurajte da je ACS URL ispravno konfiguriran u IdP-u
-   - Provjerite završne kosine (trailing slashes) u URL-ovima
+   - Provjerite ima li kosih crta na kraju URL-ova
 
-2. **Session Issues**:
+2. **Problemi sa sesijom**:
    - Očistite kolačiće preglednika i pokušajte ponovno
-   - Testirajte u incognito/privatnom prozoru preglednika
+   - Testirajte u anonimnom/privatnom prozoru preglednika
    - Provjerite postavke isteka sesije
 
-#### Access Denied After Authentication
+#### Odbijen pristup nakon autentifikacije
 
-**Symptoms**:
-- SAML autentikacija uspijeva
+**Simptomi**:
+- SAML autentifikacija uspijeva
 - Korisnik je preusmjeren na FastComments
-- Prikazuje se poruka "Access denied" ili greška s dozvolama
+- Prikazuje se "Access denied" ili pogreška dozvola
 
-**Solutions**:
-1. **Role Assignment**:
+**Rješenja**:
+1. **Dodjela uloga**:
    - Provjerite ima li korisnik odgovarajuće uloge u IdP-u
-   - Provjerite šalje li se atribut uloge u SAML odgovoru
-   - Potvrdite da nazivi uloga točno odgovaraju zahtjevima FastComments-a
+   - Provjerite se atribut uloge šalje u SAML odgovoru
+   - Potvrdite da nazivi uloga točno odgovaraju zahtjevima FastComments
 
-2. **Package Limitations**:
+2. **Ograničenja paketa**:
    - Provjerite ima li račun Flex ili Pro plan
    - Provjerite je li SAML značajka omogućena za paket
    - Kontaktirajte podršku ako paket uključuje SAML, ali značajka nije dostupna
 
-### Identity Provider Specific Issues
+### Problemi specifični za davatelja identiteta
 
 #### Microsoft Azure AD
 
-**Common Issues**:
-- Dodjele uloga aplikaciji se ne odražavaju u tokenima
-- Claimovi se ne šalju ispravno
-- Zahtjevi za dodjelu korisnika
+**Uobičajeni problemi**:
+- Dodjele uloga aplikacije se ne odražavaju u tokenima
+- Tvrdnje (claims) se ne šalju ispravno
+- Zahtjevi za dodjelom korisnika
 
-**Solutions**:
+**Rješenja**:
 - Provjerite dodjelu korisnika aplikaciji FastComments
-- Provjerite jesu li app role pravilno konfigurirane
-- Osigurajte da mapiranje claimova uključuje potrebne atribute
+- Provjerite jesu li uloge aplikacije ispravno konfigurirane
+- Osigurajte da mapiranje tvrdnji uključuje potrebne atribute
 
 #### Okta
 
-**Common Issues**:
-- Filtri grupa ne rade ispravno
-- Atributne izjave su krivo konfigurirane
+**Uobičajeni problemi**:
+- Filteri grupa ne rade ispravno
+- Pogrešno konfigurirane izjave atributa
 - Problemi s dodjelom aplikacije
 
-**Solutions**:
-- Pregledajte konfiguraciju atributne izjave
-- Provjerite pravila dodjele i filtriranja grupa
-- Potvrdite da je aplikacija dodijeljena odgovarajućim korisnicima/grupama
+**Rješenja**:
+- Pregledajte konfiguraciju izjava atributa
+- Provjerite pravila dodjele grupa i filtriranja
+- Provjerite je li aplikacija dodijeljena odgovarajućim korisnicima/grupama
 
 #### Google Workspace
 
-**Common Issues**:
+**Uobičajeni problemi**:
 - Prilagođeni atributi se ne mapiraju ispravno
 - Članstvo u grupama se ne šalje
 - Pogreške u konfiguraciji SAML aplikacije
 
-**Solutions**:
+**Rješenja**:
 - Konfigurirajte prilagođenu shemu za atribute uloga
 - Provjerite propagaciju članstva u grupama
-- Potvrdite mapiranje atributa SAML aplikacije
+- Provjerite mapiranje atributa SAML aplikacije
 
-### Network and Connectivity Issues
+### Problemi s mrežom i povezivošću
 
-#### Timeout Errors
+#### Pogreške isteka vremena
 
-**Symptoms**:
-- Proces autentikacije ističe
-- "Request timeout" ili slične pogreške
-- Spori tijek autentikacije
+**Simptomi**:
+- Proces autentifikacije istječe
+- Pogreške "Request timeout" ili slične
+- Spor tijek autentifikacije
 
-**Solutions**:
-1. **Network Connectivity**:
-   - Provjerite firewall pravila da dopuštaju komunikaciju s FastComments-om
-   - Potvrdite DNS rezoluciju za fastcomments.com
-   - Testirajte mrežnu povezanost s IdP-a prema FastComments-u
+**Rješenja**:
+1. **Mrežna povezanost**:
+   - Provjerite pravila vatrozida koja dopuštaju komunikaciju s FastComments
+   - Provjerite DNS razrješavanje za fastcomments.com
+   - Testirajte mrežnu povezanost od IdP-a do FastComments
 
-2. **Performance Issues**:
+2. **Problemi s performansama**:
    - Provjerite vrijeme odgovora IdP-a
-   - Potvrdite da provjera lanca certifikata nije spora
+   - Provjerite da provjera lanca certifikata nije spora
    - Razmotrite mrežnu latenciju između IdP-a i korisnika
 
-#### SSL/TLS Issues
+#### SSL/TLS problemi
 
-**Symptoms**:
-- Upozorenja o certifikatu tijekom autentikacije
-- Neuspjesi SSL rukovanja (handshake)
-- Poruke "Secure connection failed"
+**Simptomi**:
+- Upozorenja o certifikatima tijekom autentifikacije
+- Neuspjeli SSL handshake
+- Pogreške "Secure connection failed"
 
-**Solutions**:
-- Osigurajte da svi SAML endpointi koriste HTTPS
+**Rješenja**:
+- Osigurajte da sve SAML krajnje točke koriste HTTPS
 - Provjerite valjanost certifikata za sve uključene domene
-- Potvrdite kompatibilnost verzije TLS-a
+- Provjerite kompatibilnost TLS verzije
 
-### Debugging and Logging
+### Otklanjanje pogrešaka i zapisivanje
 
-#### Enabling Debug Information
+#### Omogućavanje informacija za otklanjanje pogrešaka
 
-1. **Browser Developer Tools**:
-   - Pratite Network karticu tijekom SAML tijeka
-   - Provjerite Console za JavaScript pogreške
-   - Ispitajte SAML POST zahtjeve (ako su vidljivi)
+1. **Razvojni alati preglednika**:
+   - Pratite karticu Network tijekom SAML toka
+   - Provjerite konzolu za JavaScript pogreške
+   - Istražite SAML POST zahtjeve (ako su vidljivi)
 
-2. **IdP Logging**:
-   - Omogućite SAML debug u vašem IdP-u
-   - Pregledajte IdP logove za detalje SAML zahtjeva/odgovora
-   - Provjerite probleme s mapiranjem atributa
+2. **IdP zapisivanje**:
+   - Omogućite SAML otklanjanje pogrešaka u vašem IdP-u
+   - Pregledajte IdP zapise za detalje SAML zahtjeva/odgovora
+   - Provjerite postoje li problemi s mapiranjem atributa
 
-#### Common Log Messages
+#### Uobičajene poruke zapisa
 
-**FastComments Logs**:
-- "SAML config not found" - SAML nije omogućen ili je krivo konfiguriran
-- "Invalid certificate" - Validacija certifikata nije uspjela
-- "Missing email attribute" - Obavezni email nije poslan u SAML odgovoru
+**FastComments zapisi**:
+- "SAML config not found" - SAML nije omogućen ili je pogrešno konfiguriran
+- "Invalid certificate" - Provjera certifikata nije uspjela
+- "Missing email attribute" - Potrebna e-pošta nije pružena u SAML odgovoru
 
-**IdP Logs**:
-- "Unknown service provider" - Neusklađenost Entity ID-a
-- "Invalid ACS URL" - Assertion Consumer Service URL je netočan
+**IdP zapisi**:
+- "Unknown service provider" - Nepodudaranje Entity ID-a
+- "Invalid ACS URL" - URL Assertion Consumer Service-a je neispravan
 - "User not assigned" - Korisnik nema pristup SAML aplikaciji
 
-### Getting Help
+### Traženje pomoći
 
-#### Information to Gather
+#### Informacije koje treba prikupiti
 
-Prilikom kontaktiranja podrške, dostavite:
-- Točne poruke o pogrešci i vremenske oznake
+Kada kontaktirate podršku, pružite:
+- Točne poruke o pogreškama i vremenske oznake
 - Detalje SAML konfiguracije (bez osjetljivih podataka)
-- Tip i verziju IdP-a
+- Vrstu i verziju IdP-a
 - Korake za reprodukciju problema
 - Informacije o pregledniku i mreži
 
-#### FastComments Support
+#### FastComments podrška
 
-Za SAML povezane probleme:
-1. Koristite [support portal](https://fastcomments.com/auth/my-account/help)
-2. Uključite tenant ID i e-mail adrese pogođenih korisnika
-3. Dostavite poruke o pogrešci i detalje konfiguracije
-4. Navedite tip IdP-a i pristup konfiguraciji
+Za probleme vezane uz SAML:
+1. Koristite [portal za podršku](https://fastcomments.com/auth/my-account/help)
+2. Uključite tenant ID i e-poštu pogođenih korisnika
+3. Pružite poruke o pogreškama i detalje konfiguracije
+4. Navedite vrstu IdP-a i pristup konfiguraciji
 
-#### IdP Support
+#### IdP podrška
 
 Za probleme specifične za IdP:
-- Konzultirajte IdP dokumentaciju za rješavanje SAML problema
+- Posavjetujte se s IdP dokumentacijom za rješavanje SAML problema
 - Koristite IdP kanale podrške za probleme s konfiguracijom
-- Iskoristite IdP community forume za uobičajene probleme
+- Iskoristite IdP forumne zajednice za uobičajene probleme
 
-### Prevention Tips
+### Savjeti za prevenciju
 
-#### Best Practices
+#### Najbolje prakse
 
-1. **Test Thoroughly**:
+1. **Temeljito testirajte**:
    - Testirajte promjene konfiguracije u neprodukcijskom okruženju
    - Provjerite s više testnih korisnika
-   - Dokumentirajte radne konfiguracije
+   - Dokumentirajte ispravne konfiguracije
 
-2. **Monitor Regularly**:
-   - Postavite nadzor za SAML neuspjehe autentikacije
-   - Pregledavajte datume isteka certifikata
-   - Pratite promjene u IdP konfiguraciji
+2. **Redovito pratite**:
+   - Postavite praćenje neuspjeha SAML autentifikacije
+   - Pregledajte datume isteka certifikata
+   - Pratite promjene IdP konfiguracije
 
-3. **Documentation**:
+3. **Dokumentacija**:
    - Održavajte dokumentaciju SAML konfiguracije
    - Dokumentirajte sve prilagođene konfiguracije ili zaobilazna rješenja
-   - Čuvajte kontakt informacije administratora IdP-a
+   - Čuvajte kontakt informacije IdP administratora
 
-#### Proactive Maintenance
+#### Proaktivno održavanje
 
-1. **Certificate Management**:
+1. **Upravljanje certifikatima**:
    - Pratite datume isteka certifikata
    - Planirajte postupke rotacije certifikata
    - Testirajte ažuriranja certifikata prije isteka
 
-2. **Configuration Reviews**:
+2. **Pregledi konfiguracije**:
    - Redovito pregledavajte SAML konfiguraciju
-   - Potvrdite da IdP konfiguracija ostaje ažurirana
-   - Ažurirajte dokumentaciju kad se naprave promjene
+   - Provjerite je li IdP konfiguracija i dalje aktualna
+   - Ažurirajte dokumentaciju kako se mijene prave

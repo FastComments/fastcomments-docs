@@ -18,5 +18,3 @@ if response.isSome:
   let pageLikes = response.get()
   # use pageLikes as needed
 [inline-code-end]
-
----

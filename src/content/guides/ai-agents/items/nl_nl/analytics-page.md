@@ -1,75 +1,75 @@
-Analytics is het agent-overstijgende dashboard. Te bereiken vanaf de AI Agents-pagina via het tabblad **Analytics** (tenant-breed) of per agent via de knop **Analytics** in de rij van elke agent.
+Analytics is het cross-agent dashboard. Bereikbaar vanaf de AI Agents-pagina via het **Analytics**-tabblad (tenant-breed) of per agent via de **Analytics**-knop op de rij van elke agent.
 
 ### Filter
 
-Een uitklapmenu bovenaan - **Alle agents** of een specifieke agent. De rest van de pagina wordt dienovereenkomstig aangepast.
+Een dropdown bovenaan - **Alle agents** of een specifieke agent. De rest van de pagina wordt dienovereenkomstig aangepast.
 
-### Budget usage
+### Budgetgebruik
 
-Vier voortgangsbalken die de uitgaven in de huidige periode tonen ten opzichte van de limiet:
+Vier voortgangsbalken die de uitgaven van de huidige periode tonen ten opzichte van het maximum:
 
-- **Agent today** (wanneer gefilterd op een specifieke agent) - dagelijkse agentlimiet.
-- **Agent this month** - maandelijkse agentlimiet.
-- **Account today** - tenant-dagelijkse limiet.
-- **Account this month** - tenant-maandelijkse limiet.
+- **Agent vandaag** (wanneer gefilterd op een specifieke agent) - dagelijkse agent-limiet.
+- **Agent deze maand** - maandelijkse agent-limiet.
+- **Account vandaag** - dagelijkse tenant-limiet.
+- **Account deze maand** - maandelijkse tenant-limiet.
 
-Wanneer een limiet niet is ingesteld, leest de balk "(no cap set)" en toont de ruwe uitgaven.
+Wanneer een limiet niet is ingesteld, toont de balk "(geen limiet ingesteld)" en worden de ruwe uitgaven getoond.
 
-### Daily cost (last 30 days)
+### Dagelijkse kosten (laatste 30 dagen)
 
-Een tabel met kosten per dag in de valuta van uw tenant voor het geselecteerde bereik. Nuttig om te ontdekken:
+Een tabel met kosten per dag in de valuta van je tenant voor de geselecteerde scope. Handig voor het opsporen van:
 
-- **Sudden cost spikes** - meestal veroorzaakt door een uit de hand gelopen lus of een viraal commentaar dat triggers verspreidt.
-- **Cost drift** - geleidelijke toename van de dagelijkse kosten naarmate je community groeit.
+- **Plotselinge kostenpieken** - meestal door een runaway loop of een virale reactie die triggers doet uitwaaieren.
+- **Kostendrift** - geleidelijk stijgende dagelijkse kosten naarmate je community groeit.
 
-### Actions taken
+### Uitgevoerde acties
 
-Een uitsplitsing van actietypen over de huidige maand - "Reactie geplaatst: 47", "Reactie als spam gemarkeerd: 12", enzovoort. Nuttig om te controleren of de agent doet wat je verwacht.
+Een uitsplitsing van actietypes over de huidige maand - "Heeft een reactie geschreven: 47", "Heeft een reactie als spam gemarkeerd: 12", enzovoort. Handig om te controleren dat de agent doet wat je verwachtte.
 
-### Triggers skipped (this month)
+### Overgeslagen triggers (deze maand)
 
-Tellingen gegroepeerd op [Redenen voor drops](#drop-reasons):
+Aantallen gegroepeerd per [afwijzingsreden](#drop-reasons):
 
-- Overschrijding van agent-daglimiet / agent-maandlimiet / account-daglimiet / account-maandlimiet.
-- Door rate limiting beperkt.
-- Gelijktijdigheid verzadigd.
+- Over agent dagelijks / agent maandelijks / account dagelijks / account maandelijks.
+- Rate-limited.
+- Concurrency verzadigd.
 
-Als je hier drops ziet, bereikt je agent een budget- of ratelimiet en mist hij triggers waarop hij anders zou zijn uitgevoerd. Zie [Redenen voor drops](#drop-reasons).
+Als je hier afwijzingen ziet, stoot je agent tegen een budget- of ratelimiet aan en mist hij triggers waarop hij anders zou hebben gedraaid. Zie [Afwijzingsredenen](#drop-reasons).
 
-### Dry-run vs live (this month)
+### Dry-run vs live (deze maand)
 
-- **Enabled runs** - aantal runs die echte acties hebben uitgevoerd deze maand.
+- **Enabled runs** - aantal runs die deze maand echte acties hebben uitgevoerd.
 - **Dry runs** - aantal runs in dry-run-modus deze maand.
 
-Een nuttig afstemsignaal: een gloednieuwe agent die nog niet naar 'Ingeschakeld' is gepromoveerd, zal alleen dry runs tonen. Een agent die 'Ingeschakeld' is maar in deze sectie overal nul aantallen heeft, zit inactief — ofwel wordt hij niet geactiveerd, ofwel wordt hij uitgefilterd, ofwel zijn de triggers niet correct geconfigureerd.
+Een nuttig afstemsignaal: een gloednieuwe agent die nog niet is gepromoveerd naar Enabled toont alleen dry runs. Een agent in Enabled met alléén nullen in deze sectie zit stil - of hij wordt niet getriggerd, of hij wordt buitengesloten, of zijn triggers zijn niet correct geconfigureerd.
 
-### Top agents by monthly cost
+### Top agents op maandkosten
 
-Wanneer het filter op **Alle agents** staat, toont de pagina agents gerangschikt op maand-tot-datum kosten. Het vinden van je duurste agent is de eerste stap in kostenoptimalisatie — meestal is het antwoord "verscherp de [contextopties](#context-options)" of "verlaag de [budgetlimiet](#budgets-overview)".
+Wanneer het filter **Alle agents** is, toont de pagina agents gerangschikt op kosten van maand-tot-datum. Je duurste agent opsporen is de eerste stap in kostenoptimalisatie - meestal is het antwoord "zijn [contextopties](#context-options) verstrakken" of "zijn [budgetlimiet](#budgets-overview) verlagen".
 
-### Agents at or near their cap
+### Agents op of nabij hun limiet
 
-Per-agent uitsplitsing van agents waarvan de uitgaven in de huidige periode bij of nabij hun per-agent limieten liggen:
+Per-agent uitsplitsing van agents waarvan de uitgaven op of nabij hun per-agent limieten zitten in de huidige periode:
 
 - **near cap** - boven een configureerbaar percentage van de limiet.
-- **over cap** - daadwerkelijk beperkt, met `{count} dropped` triggers in die periode.
+- **over cap** - daadwerkelijk afgekap, met `{count} dropped` triggers in die periode.
 
-Klik op de agent in deze tabel om de limiet te verhogen, het bereik te verkleinen, of deze te pauzeren.
+Klik in deze tabel op de agent om de limiet te verhogen, de scope te verkleinen of de agent te pauzeren.
 
-### Account summary
+### Accountoverzicht
 
-Wanneer het filter op **Alle agents** staat:
+Wanneer het filter **Alle agents** is:
 
-- **Triggers today** - aantal.
-- **Triggers this month** - aantal.
-- Voor elk: een `dropped` suffix dat toont hoeveel zijn overgeslagen.
+- **Triggers vandaag** - aantal.
+- **Triggers deze maand** - aantal.
+- Voor elk: een `dropped`-suffix die toont hoeveel zijn overgeslagen.
 
-### Currency
+### Valuta
 
-Alle geldwaarden worden weergegeven in de valuta van uw tenant.
+Alle geldbedragen worden getoond in de valuta van je tenant.
 
-### What this page does not do
+### Wat deze pagina niet doet
 
-- Het toont geen **kostenuitsplitsing per actie** - die zijn te vinden op [Weergave met rundetails](#run-detail-view).
-- Het toont geen **transcripten** of **LLM-responsen**.
-- Het stelt je niet in staat om acties uit te voeren op agents - bewerken, pauzeren, verwijderen gebeuren allemaal vanuit de agentlijst / bewerkpagina.
+- Het toont **geen per-actie kosten-uitsplitsingen** - die staan in [Run Detail View](#run-detail-view).
+- Het toont **geen transcripts** of **LLM-responses**.
+- Het laat je geen acties uitvoeren op agents - bewerken, pauzeren en verwijderen gebeuren allemaal vanuit de agentlijst / bewerkingspagina.

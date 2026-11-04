@@ -1,4 +1,3 @@
----
 ## Har du brug for hjælp?
 
 Hvis du støder på problemer eller har spørgsmål om iOS-biblioteket, så:
@@ -9,5 +8,3 @@ Hvis du støder på problemer eller har spørgsmål om iOS-biblioteket, så:
 ## Bidrag
 
 Bidrag er velkomne! Besøg venligst [GitHub-repositoriet](https://github.com/FastComments/fastcomments-ios) for retningslinjer for bidrag.
-
----

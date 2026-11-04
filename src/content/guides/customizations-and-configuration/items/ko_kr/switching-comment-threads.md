@@ -56,5 +56,3 @@ VanillaJS 위젯을 인스턴스화하면, 이를 업데이트할 수 있는 몇
     })();
 </script>
 [inline-code-end]
-
----

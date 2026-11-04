@@ -1,4 +1,3 @@
----
 [api-resource-header-start name = 'SSOUser'; route = 'PUT /api/v1/sso-users'; creditsCost = 1; api-resource-header-end]
 
 Questa route consente di aggiornare un singolo utente SSO.
@@ -39,6 +38,3 @@ interface SSOUserPutResponse {
     user?: SSOUser; // Restituiamo l'utente aggiornato in caso di successo.
 }
 [inline-code-end]
-
-
----

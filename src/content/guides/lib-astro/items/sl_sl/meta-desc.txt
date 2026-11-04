@@ -1,3 +1,1 @@
----
 Dodajte komentarje na Astro spletno mesto z uradno integracijo. Uvozite komponento, podajte svoj ID najemnika in se bo izrisala kjerkoli jo postavite.
----

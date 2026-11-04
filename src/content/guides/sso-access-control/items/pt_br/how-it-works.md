@@ -14,5 +14,3 @@ Se um usuário tentar acessar uma página à qual não tem acesso, verá uma men
 </div>
 
 O texto da mensagem pode ser personalizado.
-
----

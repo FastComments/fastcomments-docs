@@ -9,5 +9,3 @@ Vendar lahko to funkcionalnost onemogočimo:
 To je mogoče storiti tudi brez kode. Na strani za prilagajanje gradnika si oglejte razdelek "Onemogoči profile".
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-profiles']; selector = '.disable-profiles'; alt='Stran za prilagajanje gradnika z izbranim potrditvenim poljem Onemogoči profile, tako da avatari ne odpirajo več profilov'; title='Onemogoči profile' app-screenshot-end]
-
----

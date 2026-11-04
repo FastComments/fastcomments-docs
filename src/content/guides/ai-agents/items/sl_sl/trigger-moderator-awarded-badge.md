@@ -22,5 +22,3 @@ Dejanje človeškega moderatorja.
 - **Vzajemno priznanje** - agent lahko objavi odgovor "hvala za odličen prispevek", ko je podeljena določena značka.
 - **Zunanji potek priznanj** preko [Webhooks](#webhooks-overview) - zrcalite podelitve značk v vaš sistem za angažiranje uporabnikov.
 - **Shranitev v spomin** - zapiski, kot na primer "ta uporabnik je priznan prispevalec", da bodo prihodnji moderacijski agenti to upoštevali pri svojih odločitvah.
-
----

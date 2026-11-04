@@ -1,4 +1,3 @@
----
 識別正在使用的憑證：它所屬的租戶，以及對於 OAuth 令牌，授權該令牌的使用者。  
 整合使用此資訊來測試連線並為其加上標籤。
 
@@ -32,5 +31,3 @@ DefaultAPI.getMe(tenantId: tenantId) { (response, error) in
     }
 }
 [inline-code-end]
-
----

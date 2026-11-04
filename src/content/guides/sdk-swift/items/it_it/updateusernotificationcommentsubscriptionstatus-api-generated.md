@@ -1,4 +1,3 @@
----
 Abilita o disabilita le notifiche per un commento specifico.
 
 ## Parametri
@@ -39,5 +38,3 @@ PublicAPI.updateUserNotificationCommentSubscriptionStatus(tenantId: tenantId, no
     }
 }
 [inline-code-end]
-
----

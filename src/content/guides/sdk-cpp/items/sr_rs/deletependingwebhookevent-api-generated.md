@@ -25,5 +25,3 @@ api->deletePendingWebhookEvent(optTenant.value(), eventId)
         try { t.get(); } catch (const std::exception& e) { }
     });
 [inline-code-end]
-
----

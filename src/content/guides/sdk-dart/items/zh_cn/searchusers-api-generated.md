@@ -34,5 +34,3 @@ try {
     print('Exception when calling PublicApi->searchUsers: $e\n');
 }
 [inline-code-end]
-
----

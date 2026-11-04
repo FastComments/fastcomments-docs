@@ -35,5 +35,3 @@ try {
     print('Exception when calling PublicApi->getOfflineUsers: $e\n');
 }
 [inline-code-end]
-
----

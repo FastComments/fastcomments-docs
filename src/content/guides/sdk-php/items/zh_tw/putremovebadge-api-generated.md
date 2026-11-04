@@ -45,5 +45,3 @@ try {
     echo 'Exception when calling ModerationApi->putRemoveBadge: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 Dit eindpunt stelt u in staat om een specifiek voortgangsrecord van een gebruikersbadge op te halen met behulp van het unieke ID.
 
 Voorbeeldaanvraag:
@@ -54,4 +53,3 @@ Mogelijke foutreacties:
   "reason": "The user badge progress progress123 was not found."
 }
 [inline-code-end]
----

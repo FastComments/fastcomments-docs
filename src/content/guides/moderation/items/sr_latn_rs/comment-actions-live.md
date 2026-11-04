@@ -13,5 +13,3 @@ Ovo radi sa svim filterima — ako gledate samo spam komentare, bićete obavešt
 komentare koji sadrže određenu frazu, samo odgovarajući komentari pokreću obaveštenje.
 
 Ako je vaša veza privremeno prekinuta, sistem će se automatski sinhronizovati i dohvatiti sve komentare koje ste propustili kada se ponovo poveže.
-
----

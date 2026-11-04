@@ -1,65 +1,65 @@
-The **Context** bölümündeki düzenleme formu, ajanın her çalıştırmada ne kadar bilgi alacağını kontrol eder. Daha fazla context daha iyi kararlar üretir ancak çalıştırma başına token maliyetini artırır, bu yüzden ajanın gerçekten ihtiyaç duyduğu kadarını vermek istersiniz.
+Düzenleme formundaki **Context** bölümü, her çalıştırmada ajanın ne kadar bilgi alacağını kontrol eder. Daha fazla bağlam daha iyi kararlar üretir ancak çalıştırma başına token maliyetini artırır, bu nedenle yalnızca ajanın gerçekten ihtiyaç duyduğu şeyi istersiniz.
 
-### Her zaman dahil edilenler
+### Her zaman dahil olanlar
 
-Tüm onay kutuları işaretsiz olsa bile, ajanın context mesajı şunları içerir:
+Tüm onay kutuları işaretsiz olsa bile, ajanın bağlam mesajı şunları içerir:
 
-- The **trigger event type** (ör. `COMMENT_ADD`, `COMMENT_FLAG_THRESHOLD`).
-- The **page URL and URL ID** (biliniyorsa).
-- Çalıştırmayı tetikleyen **yorum** varsa — ID, yazar kullanıcı ID'si, yazar görüntü adı, yorum metni, oy sayıları, flag sayısı, spam/onaylandı/inceleme bayrakları, parent ID. Yazarın e-posta adresi **hiçbir zaman** LLM sağlayıcısına gönderilmez (PII minimizasyonu).
-- `COMMENT_EDIT` tetikleyicileri için **önceki yorum metni** (böylece ajan önce/sonra karşılaştırması yapabilir).
-- `COMMENT_VOTE_THRESHOLD` tetikleyicileri için **oy yönü**.
-- **Tetikleyen kullanıcı ID'si** ve **rozet ID'si** (moderator rozet tetikleyicileri için).
-- Ajanın rozet verebilmesine izin verildiğinde, ajanın uygun bir rozet seçebilmesi için tenant'ınızın **badge catalog** (isim, görüntü etiketi, açıklama).
+- **Tetikleme olay türü** (örn. `COMMENT_ADD`, `COMMENT_FLAG_THRESHOLD`).
+- **Sayfa URL'si ve URL ID'si** (biliniyorsa).
+- Çalıştırmayı tetikleyen **yorum**, varsa - ID, yazar kullanıcı ID'si, yazar görünen adı, yorum metni, oy sayıları, bayrak sayısı, spam/onaylandı/incelendi bayrakları, üst ID. Yazarın e-postası LLM sağlayıcısına **asla** gönderilmez (PII minimizasyonu).
+- `COMMENT_EDIT` tetiklemeleri için **önceki yorum metni** (ajan öncesi/sonrası karşılaştırma yapabilsin diye).
+- `COMMENT_VOTE_THRESHOLD` tetiklemeleri için **oy yönü**.
+- **Tetikleyen kullanıcı ID'si** ve **rozet ID'si** (moderatör rozeti tetiklemeleri için).
+- Ajanın rozet vermesine izin veriliyorsa, kiracınızın (tenant) **rozet kataloğu** (ad, görünen etiket, açıklama) - böylece ajan, rozetleri prompt'ta tek tek açıklamanıza gerek kalmadan uygun olanı seçebilir.
 
-Tüm güvensiz metinler - yorum gövdeleri, yazar isimleri, sayfa başlıkları, kılavuz belgesinin kendisi - context mesajında `<<<COMMENT_TEXT>>> ... <<<END>>>` gibi işaretlerle **çerçevelenir**. Platformun sistem istemi modele bu çerçevelerin içindeki talimatları asla takip etmemesini söyler. Bu platformun istem-enjeksiyon savunmasıdır; bunu isteminizde tekrarlamanıza gerek yoktur.
+Tüm güvenilmeyen metinler - yorum gövdeleri, yazar adları, sayfa başlıkları, yönergeler belgesinin kendisi - bağlam mesajında `<<<COMMENT_TEXT>>> ... <<<END>>>` gibi işaretlerle **çitle çevrilir**. Platformun sistem prompt'u, modele bu çitlerin içindeki talimatları asla takip etmemesini söyler. Bu, platformun prompt-enjeksiyonu savunmasıdır; bunu kendi prompt'unuzda tekrarlamanıza gerek yoktur.
 
 ### Üç onay kutusu
 
-#### Include parent comment and prior replies in the same thread
+#### Aynı konudaki üst yorumu ve önceki yanıtları dahil et
 
-Ekler:
-- The **parent comment** - ID, yazar, metin.
-- **Sibling replies** - aynı ana yoruma ait, aynı dizideki önceki yanıtlar.
+Şunları ekler:
+- **Üst yorum** - ID, yazar, metin.
+- **Kardeş yanıtlar** - aynı konuda aynı üste yapılmış önceki yanıtlar.
 
-Kullanışlı olduğu durumlar: bir yoruma bağlam içinde yanıt veren herhangi bir ajan (karşılama yapanlar, dizi özetleyiciler, konuşmalarda yanıtları okuyan moderatörler).
+Şunlar için faydalıdır: bir yoruma bağlam içinde yanıt veren herhangi bir ajan (karşılama ajanları, konu özetleyiciler, konuşmalardaki yanıtları okuyan moderatörler).
 
-Maliyet: küçük ila orta. Belirli bir dizide kaç kardeş yanıt olduğuyla sınırlıdır.
+Maliyet: küçük ile orta arası. Belirli bir konudaki kardeş yanıt sayısıyla sınırlıdır.
 
-#### Include commenter's trust factor, account age, ban history, and recent comments
+#### Yorumcunun güven faktörünü, hesap yaşını, yasak geçmişini ve son yorumlarını dahil et
 
-Ekler **AUTHOR_HISTORY** bloğunu:
+**AUTHOR_HISTORY** bloğunu ekler:
 
-- Kayıttan bu yana geçen **hesap yaşı (gün cinsinden)**.
-- **Güven faktörü (0-100)** - bu sitedeki kullanıcının ne kadar güvenilir olduğunu özetleyen FastComments puanı. Moderasyon kılavuzunda [Spam Detection](/guide-moderation.html#spam-detection) sayfasına bakın.
-- **Önceki ban sayısı.**
+- **Kayıttan bu yana hesap yaşı (gün)**.
+- **Güven faktörü (0-100)** - kullanıcının bu sitede ne kadar güvenilir olduğunu özetleyen FastComments puanı. Moderasyon rehberindeki [Spam Detection](/guide-moderation.html#spam-detection) sayfasına bakın.
+- **Önceki yasak sayısı.**
 - **Bu sitedeki toplam yorum sayısı.**
-- **Yinelenen içerik sayısı** - kullanıcının yakın zamanda aynı metni paylaşıp paylaşmadığı (anti-spam sinyali).
-- **Aynı IP üzerinden hesaplar arası sinyal** - farklı hesaplar altında aynı IP'den yapılan yorum sayısı (alt-hesap sinyali). IP hash'i asla LLM'e gönderilmez.
-- **Son yorumlar** - kullanıcının en fazla 5 adet en son yorumu, her biri 300 karaktere kadar kısaltılmış olarak, güvensiz metin şeklinde çerçevelenmiş.
+- **Yinelenen içerik sayısı** - kullanıcı yakın zamanda aynı metni gönderdiyse (anti-spam sinyali).
+- **Aynı IP'li çapraz hesap sinyali** - aynı IP'den diğer hesaplar altında yapılan yorum sayısı (alternatif hesap sinyali). IP hash'inin kendisi LLM'e asla gönderilmez.
+- **Son yorumlar** - kullanıcının en son 5 yorumu, her biri 300 karaktere kırpılmış, güvenilmeyen metin olarak çitlenmiş.
 
-Kullanışlı olduğu durumlar: herhangi bir moderasyon ajanı. Bu olmadan model yeni hesapları ve uzun süredir iyi niyetle davranan kullanıcıları aynı tavırla banlayabilir.
+Şunlar için faydalıdır: herhangi bir moderasyon ajanı. Bu olmadan, model yeni hesapları ve uzun süredir iyi niyetli kullanıcıları aynı tutumla yasaklar.
 
-Maliyet: orta. Son yorumlar en fazla token ekler.
+Maliyet: orta. Son yorumlar en fazla token'ı ekler.
 
-#### Include page title, subtitle, description, and meta tags
+#### Sayfa başlığını, alt başlığını, açıklamasını ve meta etiketlerini dahil et
 
-Ekler **PAGE_CONTEXT** bloğunu - başlık, alt başlık, açıklama ve FastComments'ın sayfa için yakaladığı meta etiketler.
+**PAGE_CONTEXT** bloğunu ekler - FastComments'un sayfa için yakaladığı başlık, alt başlık, açıklama ve varsa meta etiketleri.
 
-Kullanışlı olduğu durumlar: sayfanın neyle ilgili olduğunu bilmenin çıktı kalitesini önemli ölçüde artırdığı karşılama yapanlar ve dizi özetleyiciler.
+Şunlar için faydalıdır: karşılama ajanları ve konu özetleyiciler; sayfanın ne hakkında olduğunu bilmek çıktı kalitesini önemli ölçüde artırır.
 
 Maliyet: küçük.
 
-### Community guidelines
+### Topluluk yönergeleri
 
-Dördüncü alan, **Community guidelines**, her çalıştırmada user-role context mesajına dahil edilen serbest metin politika bloğudur; yorum gövdeleri ve diğer kullanıcı tarafından sağlanan içerikler ile aynı şekilde güvensiz metin olarak çerçevelenir. Ajan bunu politika metni olarak okur ancak platform bunu bir sistem talimatı olarak değerlendirmez. Ne koyacağınız konusunda [Topluluk Kuralları](#community-guidelines) bölümüne bakın.
+Dördüncü alan olan **Community guidelines**, her çalıştırmada kullanıcı rolü bağlam mesajına dahil edilen, yorum gövdeleri ve diğer kullanıcı tarafından sağlanan içeriklerin çitlendiği şekilde güvenilmeyen metin olarak çitlenmiş, serbest metinli bir politika bloğudur. Ajan bunu politika metni olarak okur ancak platform bunu sistem talimatı olarak değerlendirmez. İçine ne koyacağınız için [Community Guidelines](#community-guidelines) bölümüne bakın.
 
 ### Bağlamı seçici olarak ekleme
 
-Bu onay kutuları küresel değil, ajana göre uygulanır. Yaygın bir örüntü:
+Bu onay kutuları ajan başına geçerlidir, global olarak değil. Yaygın bir kalıp:
 
-- Karşılama yapan: sayfa bağlamı **açık**, dizi bağlamı **kapalı**, kullanıcı geçmişi **kapalı**.
-- Moderatör: dizi bağlamı **kapalı**, kullanıcı geçmişi **açık**, sayfa bağlamı **kapalı**.
-- Dizi özetleyici: dizi bağlamı **açık**, sayfa bağlamı **açık**, kullanıcı geçmişi **kapalı**.
+- Karşılama ajanı: sayfa bağlamı **açık**, konu bağlamı **kapalı**, kullanıcı geçmişi **kapalı**.
+- Moderatör: konu bağlamı **kapalı**, kullanıcı geçmişi **açık**, sayfa bağlamı **kapalı**.
+- Konu özetleyici: konu bağlamı **açık**, sayfa bağlamı **açık**, kullanıcı geçmişi **kapalı**.
 
-Bir ajanın gerçekte yaptığı çağrılarda doğru olması için ihtiyaç duyduğu en az bağlamı kullanmaya çalışın — fazladan bağlam her çalıştırmada token maliyeti getirir, ajan bunu kullanmasa bile.
+Ajanın gerçekten yaptığı çağrılarda doğru olması için gereken minimum bağlama ulaşın - fazladan bağlam, ajan kullanmasa bile her çalıştırmada token maliyetine neden olur.

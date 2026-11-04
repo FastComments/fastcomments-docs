@@ -30,5 +30,3 @@ Privzeto so podatki komentarjev FastComments javno berljivi. Kdor koli, ki lahko
 Odprite svojo <a href="https://fastcomments.com/auth/my-account/customize-widget" target="_blank">stran za prilagoditev vtičnika</a> in ustvarite pravilo z omogočeno možnostjo **Zahtevaj SSO za ogled komentarjev**, nato nastavite varnostno raven na **Varni SSO**, tako da se niti lahko naložijo samo preko podpisanega LTI launch.
 
 Oglejte si [Zaščita niti komentarjev z enkratno prijavo](/guide-customizations-and-configuration.html#sso-require-to-view-comments) za celoten vodnik, vključno s tem, kako omejiti pravilo na eno domeno ali stran.
-
----

@@ -31,5 +31,3 @@ interface HashTagPatchResponse {
     hashTag?: HashTag; // Мы возвращаем полностью обновлённый хэштег при успешном выполнении.
 }
 [inline-code-end]
-
----

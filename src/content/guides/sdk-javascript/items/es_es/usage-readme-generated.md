@@ -1,52 +1,52 @@
-Este SDK proporciona puntos de entrada separados para entornos de navegador y servidor para garantizar la compatibilidad y seguridad óptimas:
+Este SDK proporciona puntos de entrada separados para entornos de navegador y servidor para garantizar una compatibilidad y seguridad óptimas:
 
-### Browser Usage (Client-Side)
+### Uso en el navegador (lado del cliente)
 
-Para aplicaciones de navegador/frontend, use la exportación segura para navegadores que excluye dependencias de Node.js:
+Para aplicaciones de navegador/frontend, utilice la exportación segura para el navegador que excluye las dependencias de Node.js:
 
 ```typescript
-// Browser-safe import (no Node.js dependencies)
+// Importación segura para el navegador (sin dependencias de Node.js)
 import { createFastCommentsBrowserSDK } from 'fastcomments-sdk/browser';
 
-// Create browser SDK instance
+// Crear instancia del SDK para navegador
 const sdk = createFastCommentsBrowserSDK({
-  basePath: 'https://fastcomments.com' // optional, defaults to https://fastcomments.com
+  basePath: 'https://fastcomments.com' // opcional, por defecto es https://fastcomments.com
 });
 
-// Use public APIs (no API key needed - safe for browsers)
+// Usar APIs públicas (no se necesita clave de API - seguro para navegadores)
 const comments = await sdk.publicApi.getCommentsPublic({ 
   tenantId: 'your-tenant-id',
   urlId: 'page-url-id'
 });
 ```
 
-### Server Usage (Node.js)
+### Uso en el servidor (Node.js)
 
-Para aplicaciones de servidor/backend, use el SDK completo con SSO y características de autenticación:
+Para aplicaciones de servidor/backend, utilice el SDK completo con funciones de SSO y autenticación:
 
 ```typescript
-// Server-side import (includes SSO and designed to work with NodeJS)
+// Importación del lado del servidor (incluye SSO y está diseñado para funcionar con NodeJS)
 import { createFastCommentsSDK } from 'fastcomments-sdk/server';
 
-// Create server SDK instance
+// Crear instancia del SDK para servidor
 const sdk = createFastCommentsSDK({
-  apiKey: 'your-api-key', // Keep this secret on the server!
-  basePath: 'https://fastcomments.com' // optional, defaults to https://fastcomments.com
+  apiKey: 'your-api-key', // ¡Mantenga esto en secreto en el servidor!
+  basePath: 'https://fastcomments.com' // opcional, por defecto es https://fastcomments.com
 });
 
-// Use secured APIs with your API key
+// Usar APIs protegidas con su clave de API
 const comments = await sdk.defaultApi.getComments({ 
   tenantId: 'your-tenant-id',
   urlId: 'page-url-id'
 });
 ```
 
-### Types Only Import
+### Importación solo de tipos
 
-Si solo necesita tipos de TypeScript (sin código en tiempo de ejecución), use la importación por defecto:
+Si solo necesita los tipos de TypeScript (sin código en tiempo de ejecución), utilice la importación por defecto:
 
 ```typescript
-// Types only (no runtime dependencies - safe everywhere)
+// Solo tipos (sin dependencias en tiempo de ejecución - seguro en todas partes)
 import type { 
   PublicComment, 
   CreateCommentParams, 
@@ -54,9 +54,9 @@ import type {
 } from 'fastcomments-sdk';
 ```
 
-### Using Individual API Classes
+### Uso de clases de API individuales
 
-#### Browser Environment
+#### Entorno de navegador
 
 ```typescript
 import { PublicApi, Configuration } from 'fastcomments-sdk/browser';
@@ -68,7 +68,7 @@ const config = new Configuration({
 const publicApi = new PublicApi(config);
 ```
 
-#### Server Environment  
+#### Entorno de servidor  
 
 ```typescript
 import { DefaultApi, PublicApi, Configuration } from 'fastcomments-sdk/server';

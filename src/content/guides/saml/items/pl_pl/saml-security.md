@@ -1,249 +1,249 @@
-Bezpieczeństwo implementacji SAML jest kluczowe dla ochrony infrastruktury uwierzytelniania oraz danych użytkowników Twojej organizacji.
+Bezpieczeństwo implementacji SAML ma kluczowe znaczenie dla ochrony infrastruktury uwierzytelniania Twojej organizacji oraz danych użytkowników.
 
-### SAML Security Fundamentals
+### Podstawy bezpieczeństwa SAML
 
-#### Digital Signatures
+#### Podpisy cyfrowe
 
-**SAML Response Signing**:
-- All SAML responses must be digitally signed by the IdP
-- FastComments validates signatures using the IdP's public certificate
-- Prevents tampering with authentication assertions
-- Ensures responses originate from trusted IdP
+**Podpisywanie odpowiedzi SAML**:
+- Wszystkie odpowiedzi SAML muszą być cyfrowo podpisane przez IdP
+- FastComments weryfikuje podpisy przy użyciu certyfikatu publicznego IdP
+- Zapobiega manipulacji asercjami uwierzytelniania
+- Zapewnia, że odpowiedzi pochodzą z zaufanego IdP
 
-**Certificate Validation**:
-- Certificates are validated against configured IdP certificate
-- Certificate chain validation ensures trust hierarchy
-- Expired or invalid certificates are rejected
-- Certificate rotation should be planned and coordinated
+**Walidacja certyfikatów**:
+- Certyfikaty są walidowane względem skonfigurowanego certyfikatu IdP
+- Walidacja łańcucha certyfikatów zapewnia hierarchię zaufania
+- Wygasłe lub nieprawidłowe certyfikaty są odrzucane
+- Rotacja certyfikatów powinna być zaplanowana i skoordynowana
 
-#### Assertion Security
+#### Bezpieczeństwo asercji
 
-**Audience Restriction**:
-- SAML assertions include audience restriction (SP Entity ID)
-- Prevents assertion replay attacks against other service providers
-- FastComments validates audience matches tenant configuration
-- Reject assertions intended for other applications
+**Ograniczenie odbiorcy (Audience Restriction)**:
+- Asercje SAML zawierają ograniczenie odbiorcy (SP Entity ID)
+- Zapobiega atakom polegającym na ponownym odtworzeniu asercji wobec innych dostawców usług
+- FastComments weryfikuje zgodność odbiorcy z konfiguracją tenanta
+- Odrzuca asercje przeznaczone dla innych aplikacji
 
-**Time-Based Validation**:
-- Assertions include time-based validity windows
-- `NotBefore` and `NotOnOrAfter` conditions are enforced
-- Prevents replay of old assertions
-- Clock skew tolerance is configurable
+**Walidacja oparta na czasie**:
+- Asercje zawierają okna ważności oparte na czasie
+- Warunki `NotBefore` i `NotOnOrAfter` są egzekwowane
+- Zapobiega ponownemu wykorzystaniu starych asercji
+- Tolerancja przesunięcia zegara jest konfigurowalna
 
-### Communication Security
+### Bezpieczeństwo komunikacji
 
-#### Transport Layer Security
+#### Bezpieczeństwo warstwy transportowej
 
-**HTTPS Requirements**:
-- All SAML communication occurs over HTTPS
-- TLS 1.2 or higher is required
-- Certificate validation prevents man-in-the-middle attacks
-- Secure communication protects sensitive authentication data
+**Wymagania HTTPS**:
+- Cała komunikacja SAML odbywa się przez HTTPS
+- Wymagany jest TLS 1.2 lub wyższy
+- Walidacja certyfikatów zapobiega atakom man-in-the-middle
+- Bezpieczna komunikacja chroni wrażliwe dane uwierzytelniania
 
-**Endpoint Security**:
-- SAML endpoints use secure, authenticated connections
-- IdP and SP endpoints must support modern TLS
-- Weak cipher suites are rejected
-- Certificate pinning may be implemented for additional security
+**Bezpieczeństwo punktów końcowych**:
+- Punkty końcowe SAML używają bezpiecznych, uwierzytelnionych połączeń
+- Punkty końcowe IdP i SP muszą obsługiwać nowoczesny TLS
+- Słabe zestawy szyfrów są odrzucane
+- Pinning certyfikatów może być zaimplementowany dla dodatkowego bezpieczeństwa
 
-#### Data Protection
+#### Ochrona danych
 
-**Sensitive Data Handling**:
-- SAML assertions may contain sensitive user information
-- Data is encrypted in transit and processed securely
-- Temporary storage is minimized and secured
-- User data retention follows privacy requirements
+**Obsługa danych wrażliwych**:
+- Asercje SAML mogą zawierać wrażliwe informacje o użytkownikach
+- Dane są szyfrowane podczas transmisji i przetwarzane w bezpieczny sposób
+- Tymczasowe przechowywanie jest zminimalizowane i zabezpieczone
+- Przechowywanie danych użytkowników uwzględnia wymogi prywatności
 
-**Assertion Encryption** *(Optional)*:
-- SAML assertions can be encrypted for additional security
-- Useful when assertions traverse untrusted networks
-- Requires private key configuration in FastComments
-- Most deployments rely on TLS encryption instead
+**Szyfrowanie asercji** *(Opcjonalne)*:
+- Asercje SAML mogą być szyfrowane dla dodatkowego bezpieczeństwa
+- Przydatne, gdy asercje przechodzą przez niezaufane sieci
+- Wymaga konfiguracji klucza prywatnego w FastComments
+- Większość wdrożeń opiera się zamiast tego na szyfrowaniu TLS
 
-### Authentication Security
+### Bezpieczeństwo uwierzytelniania
 
-#### Single Sign-On Benefits
+#### Korzyści z logowania jednokrotnego
 
-**Centralized Authentication**:
-- Reduces password-related security risks
-- Enables consistent security policies
-- Provides single point for access control
-- Facilitates compliance with security standards
+**Scentralizowane uwierzytelnianie**:
+- Zmniejsza ryzyko związane z hasłami
+- Umożliwia spójne zasady bezpieczeństwa
+- Zapewnia pojedynczy punkt kontroli dostępu
+- Ułatwia zgodność ze standardami bezpieczeństwa
 
-**Session Management**:
-- SAML enables secure session establishment
-- Session timeouts can be centrally managed
-- Single logout capabilities (if supported by IdP)
-- Reduces credential exposure across applications
+**Zarządzanie sesjami**:
+- SAML umożliwia bezpieczne ustanawianie sesji
+- Limity czasu sesji mogą być zarządzane centralnie
+- Możliwości pojedynczego wylogowania (jeśli obsługiwane przez IdP)
+- Zmniejsza ekspozycję poświadczeń w różnych aplikacjach
 
-#### Multi-Factor Authentication
+#### Uwierzytelnianie wieloskładnikowe
 
-**IdP MFA Integration**:
-- MFA requirements enforced by identity provider
-- FastComments inherits IdP security policies
-- Supports various MFA methods (SMS, authenticator apps, hardware tokens)
-- Centralized MFA policy management
+**Integracja MFA z IdP**:
+- Wymogi MFA egzekwowane przez dostawcę tożsamości
+- FastComments dziedziczy zasady bezpieczeństwa IdP
+- Obsługuje różne metody MFA (SMS, aplikacje uwierzytelniające, tokeny sprzętowe)
+- Scentralizowane zarządzanie zasadami MFA
 
-### Access Control Security
+### Bezpieczeństwo kontroli dostępu
 
-#### Role-Based Access Control
+#### Kontrola dostępu oparta na rolach
 
-**Principle of Least Privilege**:
-- Assign minimum necessary permissions to users
-- Use specific roles rather than overly broad permissions
-- Regular review of role assignments
-- Remove access when no longer needed
+**Zasada najmniejszych uprawnień**:
+- Przydzielaj użytkownikom minimalne niezbędne uprawnienia
+- Używaj konkretnych ról zamiast zbyt szerokich uprawnień
+- Regularnie przeglądaj przypisania ról
+- Odbieraj dostęp, gdy nie jest już potrzebny
 
-**Role Validation**:
-- SAML role attributes are validated and sanitized
-- Unknown roles are ignored (not rejected)
-- Role changes are applied immediately upon login
-- Audit trail maintained for role changes
+**Walidacja ról**:
+- Atrybuty ról SAML są walidowane i oczyszczane
+- Nieznane role są ignorowane (a nie odrzucane)
+- Zmiany ról są stosowane natychmiast po zalogowaniu
+- Prowadzona jest ścieżka audytu zmian ról
 
-#### Administrative Access
+#### Dostęp administracyjny
 
-**Admin Role Protection**:
-- Administrative roles require explicit assignment
-- Monitor administrative access and activities
-- Implement approval workflows for sensitive role assignments
-- Regular auditing of administrative accounts
+**Ochrona roli administratora**:
+- Role administracyjne wymagają jawnego przypisania
+- Monitoruj dostęp administracyjny i aktywności
+- Wdrażaj procesy zatwierdzania dla wrażliwych przypisań ról
+- Regularnie audytuj konta administracyjne
 
-### Identity Provider Security
+### Bezpieczeństwo dostawcy tożsamości
 
-#### IdP Configuration Security
+#### Bezpieczeństwo konfiguracji IdP
 
-**Certificate Management**:
-- Use strong certificates (RSA-2048 or higher)
-- Implement proper certificate rotation procedures
-- Secure private key storage at IdP
-- Monitor certificate expiration dates
+**Zarządzanie certyfikatami**:
+- Używaj silnych certyfikatów (RSA-2048 lub wyższy)
+- Wdrażaj odpowiednie procedury rotacji certyfikatów
+- Zabezpiecz przechowywanie klucza prywatnego w IdP
+- Monitoruj daty wygaśnięcia certyfikatów
 
-**Access Control**:
-- Restrict who can modify SAML application configuration
-- Implement approval processes for configuration changes
-- Monitor configuration changes and access
-- Regular security reviews of IdP configuration
+**Kontrola dostępu**:
+- Ogranicz, kto może modyfikować konfigurację aplikacji SAML
+- Wdrażaj procesy zatwierdzania zmian konfiguracji
+- Monitoruj zmiany konfiguracji i dostęp
+- Regularne przeglądy bezpieczeństwa konfiguracji IdP
 
-#### Attribute Security
+#### Bezpieczeństwo atrybutów
 
-**Sensitive Attribute Protection**:
-- Minimize sensitive data in SAML attributes
-- Use role identifiers rather than sensitive group names
-- Encrypt assertions containing sensitive information
-- Follow data minimization principles
+**Ochrona wrażliwych atrybutów**:
+- Minimalizuj dane wrażliwe w atrybutach SAML
+- Używaj identyfikatorów ról zamiast wrażliwych nazw grup
+- Szyfruj asercje zawierające wrażliwe informacje
+- Stosuj zasady minimalizacji danych
 
-**Attribute Validation**:
-- Validate all incoming SAML attributes
-- Sanitize attribute values to prevent injection attacks
-- Implement attribute value restrictions where appropriate
-- Log suspicious or malformed attributes
+**Walidacja atrybutów**:
+- Waliduj wszystkie przychodzące atrybuty SAML
+- Oczyszczaj wartości atrybutów, aby zapobiec atakom polegającym na wstrzyknięciu
+- Wdrażaj ograniczenia wartości atrybutów tam, gdzie to odpowiednie
+- Rejestruj podejrzane lub nieprawidłowo sformatowane atrybuty
 
-### Monitoring and Auditing
+### Monitorowanie i audyt
 
-#### Authentication Monitoring
+#### Monitorowanie uwierzytelniania
 
-**Failed Authentication Tracking**:
-- Monitor failed SAML authentication attempts
-- Alert on unusual authentication patterns
-- Track certificate validation failures
-- Log configuration-related errors
+**Śledzenie nieudanych uwierzytelnień**:
+- Monitoruj nieudane próby uwierzytelnienia SAML
+- Alarmuj o nietypowych wzorcach uwierzytelniania
+- Śledź niepowodzenia walidacji certyfikatów
+- Rejestruj błędy związane z konfiguracją
 
-**Success Monitoring**:
-- Monitor successful authentication rates
-- Track user role assignments and changes
-- Verify normal authentication flow timing
-- Monitor for unexpected user creation
+**Monitorowanie sukcesów**:
+- Monitoruj wskaźniki udanych uwierzytelnień
+- Śledź przypisania ról użytkowników i ich zmiany
+- Weryfikuj normalny czas przepływu uwierzytelniania
+- Monitoruj nieoczekiwane tworzenie użytkowników
 
-#### Security Event Logging
+#### Rejestrowanie zdarzeń bezpieczeństwa
 
-**Audit Trail Maintenance**:
-- Log all SAML authentication events
-- Maintain records of configuration changes
-- Track administrative actions and access
-- Store logs securely with tamper protection
+**Prowadzenie ścieżki audytu**:
+- Rejestruj wszystkie zdarzenia uwierzytelniania SAML
+- Prowadź rejestry zmian konfiguracji
+- Śledź działania administracyjne i dostęp
+- Przechowuj logi bezpiecznie, z ochroną przed manipulacją
 
-**Alert Configuration**:
-- Set up alerts for security-relevant events
-- Monitor for certificate expiration
-- Alert on repeated authentication failures
-- Notify of unusual administrative activity
+**Konfiguracja alertów**:
+- Skonfiguruj alerty dla zdarzeń istotnych dla bezpieczeństwa
+- Monitoruj wygaśnięcie certyfikatów
+- Alarmuj o powtarzających się niepowodzeniach uwierzytelniania
+- Powiadamiaj o nietypowej aktywności administracyjnej
 
-### Compliance Considerations
+### Kwestie zgodności
 
-#### Data Privacy
+#### Prywatność danych
 
-**User Data Protection**:
-- Follow GDPR, CCPA, and relevant privacy regulations
-- Minimize personal data collection and processing
-- Provide user control over personal information
-- Implement data retention and deletion policies
+**Ochrona danych użytkowników**:
+- Przestrzegaj RODO, CCPA i odpowiednich przepisów o prywatności
+- Minimalizuj zbieranie i przetwarzanie danych osobowych
+- Zapewniaj użytkownikom kontrolę nad ich danymi osobowymi
+- Wdrażaj zasady przechowywania i usuwania danych
 
-**Cross-Border Data Transfer**:
-- Consider data residency requirements
-- Implement appropriate safeguards for international transfers
-- Document data flows between IdP and FastComments
-- Ensure compliance with local privacy laws
+**Transgraniczny transfer danych**:
+- Uwzględnij wymogi dotyczące rezydencji danych
+- Wdrażaj odpowiednie zabezpieczenia dla transferów międzynarodowych
+- Dokumentuj przepływy danych między IdP a FastComments
+- Zapewnij zgodność z lokalnymi przepisami o prywatności
 
-#### Security Standards
+#### Standardy bezpieczeństwa
 
-**Industry Standards Compliance**:
-- Follow SAML 2.0 security best practices
-- Implement NIST authentication guidelines
-- Consider SOC 2 and ISO 27001 requirements
-- Regular security assessments and penetration testing
+**Zgodność ze standardami branżowymi**:
+- Przestrzegaj najlepszych praktyk bezpieczeństwa SAML 2.0
+- Wdrażaj wytyczne uwierzytelniania NIST
+- Uwzględnij wymagania SOC 2 i ISO 27001
+- Regularne oceny bezpieczeństwa i testy penetracyjne
 
-### Incident Response
+### Reagowanie na incydenty
 
-#### Security Incident Procedures
+#### Procedury postępowania w przypadku incydentów bezpieczeństwa
 
-**Breach Response**:
-- Immediate containment of security incidents
-- Notification of affected parties
-- Investigation and root cause analysis
-- Implementation of corrective measures
+**Reakcja na naruszenie**:
+- Natychmiastowa izolacja incydentów bezpieczeństwa
+- Powiadamianie stron dotkniętych incydentem
+- Badanie i analiza przyczyny źródłowej
+- Wdrażanie środków naprawczych
 
-**Certificate Compromise**:
-- Immediate revocation of compromised certificates
-- Emergency certificate rotation procedures
-- User notification and re-authentication requirements
-- Security review and strengthening measures
+**Kompromitacja certyfikatu**:
+- Natychmiastowe unieważnienie skompromitowanych certyfikatów
+- Procedury awaryjnej rotacji certyfikatów
+- Powiadomienie użytkowników i wymóg ponownego uwierzytelnienia
+- Przegląd bezpieczeństwa i działania wzmacniające
 
-#### Business Continuity
+#### Ciągłość działania biznesowego
 
-**Backup Authentication Methods**:
-- Maintain alternative authentication methods
-- Document emergency access procedures
-- Regular testing of backup authentication
-- Clear communication during outages
+**Zapasowe metody uwierzytelniania**:
+- Utrzymuj alternatywne metody uwierzytelniania
+- Dokumentuj procedury dostępu awaryjnego
+- Regularnie testuj zapasowe uwierzytelnianie
+- Jasna komunikacja podczas przerw w działaniu
 
-**Disaster Recovery**:
-- Document SAML configuration for disaster recovery
-- Maintain copies of certificates and configuration
-- Test recovery procedures regularly
-- Coordinate with IdP disaster recovery plans
+**Odtwarzanie po awarii**:
+- Dokumentuj konfigurację SAML na potrzeby odtwarzania po awarii
+- Przechowuj kopie certyfikatów i konfiguracji
+- Regularnie testuj procedury odtwarzania
+- Koordynuj z planami odtwarzania po awarii IdP
 
-### Security Best Practices Summary
+### Podsumowanie najlepszych praktyk bezpieczeństwa
 
-#### Implementation Security
+#### Bezpieczeństwo implementacji
 
-1. **Use Strong Certificates**: RSA-2048 or higher with proper validation
-2. **Enforce HTTPS**: All communication over secure, encrypted channels
-3. **Validate All Input**: Sanitize and validate all SAML attributes
-4. **Monitor Continuously**: Implement comprehensive monitoring and alerting
-5. **Regular Reviews**: Conduct periodic security reviews and updates
+1. **Używaj silnych certyfikatów**: RSA-2048 lub wyższy z odpowiednią walidacją
+2. **Egzekwuj HTTPS**: Cała komunikacja przez bezpieczne, szyfrowane kanały
+3. **Waliduj wszystkie dane wejściowe**: Oczyszczaj i waliduj wszystkie atrybuty SAML
+4. **Monitoruj w sposób ciągły**: Wdrażaj kompleksowe monitorowanie i alerty
+5. **Regularne przeglądy**: Przeprowadzaj okresowe przeglądy i aktualizacje bezpieczeństwa
 
-#### Operational Security
+#### Bezpieczeństwo operacyjne
 
-1. **Principle of Least Privilege**: Assign minimal necessary permissions
-2. **Regular Auditing**: Review access, roles, and configurations regularly
-3. **Documentation**: Maintain current security documentation
-4. **Training**: Ensure staff understand SAML security requirements
-5. **Incident Preparedness**: Have incident response procedures ready
+1. **Zasada najmniejszych uprawnień**: Przydzielaj minimalne niezbędne uprawnienia
+2. **Regularny audyt**: Regularnie przeglądaj dostęp, role i konfiguracje
+3. **Dokumentacja**: Utrzymuj aktualną dokumentację bezpieczeństwa
+4. **Szkolenia**: Zapewnij, że personel rozumie wymagania bezpieczeństwa SAML
+5. **Gotowość na incydenty**: Miej gotowe procedury reagowania na incydenty
 
-#### Organizational Security
+#### Bezpieczeństwo organizacyjne
 
-1. **Change Management**: Implement controlled change processes
-2. **Separation of Duties**: Divide administrative responsibilities
-3. **Regular Updates**: Keep all systems and certificates current
-4. **Vendor Management**: Monitor security of IdP and related services
-5. **Compliance Monitoring**: Ensure ongoing compliance with regulations
+1. **Zarządzanie zmianami**: Wdrażaj kontrolowane procesy zmian
+2. **Rozdzielenie obowiązków**: Dziel odpowiedzialności administracyjne
+3. **Regularne aktualizacje**: Utrzymuj wszystkie systemy i certyfikaty w aktualnym stanie
+4. **Zarządzanie dostawcami**: Monitoruj bezpieczeństwo IdP i powiązanych usług
+5. **Monitorowanie zgodności**: Zapewnij ciągłą zgodność z przepisami

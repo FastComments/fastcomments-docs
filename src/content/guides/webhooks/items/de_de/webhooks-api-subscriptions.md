@@ -97,5 +97,3 @@ Wenn der Endpunkt eines API‑Abonnements mit HTTP `410 Gone` antwortet, behande
 ## Dashboard
 
 API‑Abonnements erscheinen in der Webhooks‑Liste mit der Quelle **API**, wo ein Administrator sie bearbeiten, deaktivieren, wieder aktivieren oder löschen kann.
-
----

@@ -27,5 +27,3 @@ export interface TenantDailyUsage {
     ignored: boolean
 }
 [inline-code-end]
-
----

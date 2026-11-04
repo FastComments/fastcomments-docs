@@ -1,4 +1,3 @@
----
 ## Parametreler
 
 | Ad | Tür | Konum | Gerekli | Açıklama |
@@ -35,5 +34,3 @@ PublicAPI.unPinComment(tenantId: tenantId, commentId: commentId, broadcastId: br
     }
 }
 [inline-code-end]
-
----

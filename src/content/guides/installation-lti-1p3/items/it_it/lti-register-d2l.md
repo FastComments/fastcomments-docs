@@ -1,31 +1,31 @@
-D2L Brightspace espone la Registrazione Dinamica tramite l'interfaccia di amministrazione LTI Advantage. Avrai bisogno di accesso amministrativo.
+D2L Brightspace espone la Dynamic Registration tramite l'interfaccia di amministrazione LTI Advantage. Sarà necessario l'accesso come amministratore.
 
-#### Open the Registration Screen
+#### Aprire la Schermata di Registrazione
 
 1. Accedi alla tua istanza Brightspace come amministratore.
-2. Vai a **Admin Tools** > **Manage Extensibility** > **LTI Advantage**.
-3. Fai clic su **Register Tool**. (L'URL diretto è `https://<your-brightspace-host>/d2l/le/ltiadvantage/registrations/create`.)
+2. Vai su **Admin Tools** > **Manage Extensibility** > **LTI Advantage**.
+3. Clicca su **Register Tool**. (L'URL diretto è `https://<your-brightspace-host>/d2l/le/ltiadvantage/registrations/create`.)
 
-#### Paste the URL
+#### Incollare l'URL
 
 Vedrai un modulo di registrazione. Il campo chiave è **Tool initiation registration endpoint** (alcune versioni di Brightspace lo etichettano come "Tool Initiation Registration URL").
 
-Incolla l'URL di registrazione di FastComments (<a href="https://fastcomments.com/auth/my-account/lti-config" target="_blank">ottienilo qui</a>) in quel campo. Lascia gli altri campi vuoti - vengono compilati automaticamente da FastComments durante lo scambio di registrazione.
+Incolla l'URL di registrazione di FastComments (<a href="https://fastcomments.com/auth/my-account/lti-config" target="_blank">lo trovi qui</a>) in quel campo. Lascia vuoti gli altri campi - vengono compilati automaticamente da FastComments durante l'handshake di registrazione.
 
-Fai clic su **Register**.
+Clicca su **Register**.
 
-#### Approve the Tool
+#### Approvare lo Strumento
 
-Brightspace apre una finestra pop-up che comunica con FastComments, scambia le chiavi e mostra una schermata di conferma. La finestra pop-up si chiude automaticamente quando la registrazione è completata.
+Brightspace apre un popup che comunica con FastComments, scambia le chiavi e mostra una schermata di conferma. Il popup si chiude da solo al termine della registrazione.
 
-Il nuovo strumento appare nell'elenco degli strumenti LTI Advantage. Per impostazione predefinita Brightspace contrassegna i nuovi strumenti come **disabled** - attiva l'interruttore su **enabled** affinché i tuoi corsi possano utilizzarlo.
+Il nuovo strumento appare nell'elenco degli strumenti LTI Advantage. Per impostazione predefinita, Brightspace contrassegna i nuovi strumenti come **disabled** - attiva l'interruttore su **enabled** affinché i tuoi corsi possano utilizzarlo.
 
-#### Add a Deployment
+#### Aggiungere un Deployment
 
 In Brightspace, gli strumenti LTI necessitano di un **deployment** prima di poter essere utilizzati nei corsi:
 
 1. Apri lo strumento FastComments appena registrato.
-2. Fai clic su **View Deployments** > **New Deployment**.
-3. Dai al deployment un nome (es. "FastComments - All Courses"), seleziona le unità organizzative in cui deve essere disponibile e salva.
+2. Clicca su **View Deployments** > **New Deployment**.
+3. Assegna un nome al deployment (es. "FastComments - All Courses"), seleziona le unità organizzative in cui deve essere disponibile e salva.
 
-Dopo il primo avvio tramite questo deployment, FastComments associa il `deployment_id` al suo record di configurazione - i successivi avvii da un deployment diverso sotto lo stesso client saranno rifiutati a meno che non ti registri nuovamente.
+Dopo il primo avvio tramite questo deployment, FastComments fissa il `deployment_id` nel suo record di configurazione - gli avvii successivi da un deployment diverso sotto lo stesso client verranno rifiutati a meno che tu non effettui una nuova registrazione.

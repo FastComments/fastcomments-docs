@@ -1,4 +1,3 @@
----
 De Edit-tool stelt de agent in staat om de tekst van een bestaand commentaar te vervangen. Het is op een manier destructief die de meeste andere moderatiehulpmiddelen niet zijn: het overschrijft door gebruikers geschreven inhoud. Gebruik het alleen voor beperkte, eenduidige gevallen.
 
 ### Wat het doet
@@ -27,5 +26,3 @@ Voor agenten die PII-redactie afhandelen, of voor zelfbewerkende samenvattings-/
 
 - [Trigger: Comment Edited](#trigger-comment-edit) - de trigger die afgaat wanneer de tekst van een commentaar verandert.
 - [Approval Workflow](#approval-workflow) - hoe je het hulpmiddel achter menselijke beoordeling kunt plaatsen.
-
----

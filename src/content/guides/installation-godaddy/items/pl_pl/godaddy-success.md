@@ -1,4 +1,3 @@
----
 Odwiedzając swoją stronę, powinieneś teraz zobaczyć widoczne pole komentarzy FastComments przy wpisach na blogu:
 
 <div class="screenshot white-bg">
@@ -7,4 +6,3 @@ Odwiedzając swoją stronę, powinieneś teraz zobaczyć widoczne pole komentarz
 </div>
 
 Gratulacje za skonfigurowanie FastComments z Godaddy! Jeśli napotkałeś błąd Domain Error lub chciałbyś dowiedzieć się, jak dostosować obszar komentarzy, czytaj dalej!
----

@@ -26,5 +26,3 @@ async function runExample() {
   console.log(unflaggedByUser, unflaggedByAnon);
 }
 [inline-code-end]
-
----

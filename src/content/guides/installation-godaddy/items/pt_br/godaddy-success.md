@@ -6,5 +6,3 @@ Ao visitar seu site, você agora deve ver a caixa de comentários do FastComment
 </div>
 
 Parabéns por configurar o FastComments com Godaddy! Se você encontrou um Domain Error, ou gostaria de aprender como personalizar a área de comentários, continue lendo!
-
----

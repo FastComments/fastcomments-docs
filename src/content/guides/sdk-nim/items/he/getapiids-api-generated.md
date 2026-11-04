@@ -1,4 +1,3 @@
----
 ## פרמטרים
 
 | שם | סוג | נדרש | תיאור |
@@ -20,5 +19,3 @@ if maybeResponse.isSome:
   let response = maybeResponse.get()
   echo response
 [inline-code-end]
-
----

@@ -18,5 +18,3 @@ let (flagRespOpt, httpResp) = client.unFlagComment(tenantId = "my-tenant-123", i
 if flagRespOpt.isSome:
   let flagResp = flagRespOpt.get()
 [inline-code-end]
-
----

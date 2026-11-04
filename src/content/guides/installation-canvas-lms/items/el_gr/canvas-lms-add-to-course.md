@@ -1,32 +1,32 @@
-#### Πώς εμφανίζονται τα σχόλια στα μαθήματά σας
+#### Πώς Εμφανίζονται τα Σχόλια στα Μαθήματά σας
 
-Μόλις η ενσωμάτωση LTI ενεργοποιηθεί και η External App εγκατασταθεί, το FastComments λειτουργεί αυτόματα με βάση τα placements που έχετε ρυθμίσει:
+Μόλις ενεργοποιηθεί η ενσωμάτωση LTI και εγκατασταθεί η Εξωτερική Εφαρμογή, το FastComments λειτουργεί αυτόματα με βάση τις τοποθετήσεις που ρυθμίσατε:
 
-#### Assignment View
+#### Προβολή Εργασίας
 
-If the **Assignment View** placement is enabled, comments appear automatically below every assignment in the course. Students and instructors see a threaded comment section when they view an assignment — no extra setup is needed per assignment.
+Αν είναι ενεργοποιημένη η τοποθέτηση **Assignment View**, τα σχόλια εμφανίζονται αυτόματα κάτω από κάθε εργασία στο μάθημα. Οι φοιτητές και οι εκπαιδευτές βλέπουν ένα ενότητα σχολίων με νήματα όταν προβάλλουν μια εργασία — δεν απαιτείται πρόσθετη ρύθμιση ανά εργασία.
 
-Each assignment gets its own separate comment thread.
+Κάθε εργασία αποκτά το δικό της ξεχωριστό νήμα σχολίων.
 
-#### Rich Content Editor Button
+#### Κουμπί Επεξεργαστή Εμπλουτισμένου Περιεχομένου
 
-If the **Editor Button** placement is enabled, instructors can embed FastComments into any content that uses the Rich Content Editor:
+Αν είναι ενεργοποιημένη η τοποθέτηση **Editor Button**, οι εκπαιδευτές μπορούν να ενσωματώσουν το FastComments σε οποιοδήποτε περιεχόμενο χρησιμοποιεί τον Επεξεργαστή Εμπλουτισμένου Περιεχομένου:
 
-1. Edit a **Page**, **Quiz**, or **Announcement**.
-2. In the Rich Content Editor toolbar, click the **FastComments** button.
-3. FastComments is automatically embedded into the content.
-4. Save the page.
+1. Επεξεργαστείτε μια **Σελίδα**, ένα **Quiz** ή μια **Ανακοίνωση**.
+2. Στη γραμμή εργαλείων του Επεξεργαστή Εμπλουτισμένου Περιεχομένου, κάντε κλικ στο κουμπί **FastComments**.
+3. Το FastComments ενσωματώνεται αυτόματα στο περιεχόμενο.
+4. Αποθηκεύστε τη σελίδα.
 
-When students view the page, the embedded FastComments widget loads with a comment thread unique to that page.
+Όταν οι φοιτητές προβάλλουν τη σελίδα, το ενσωματωμένο widget FastComments φορτώνεται με ένα νήμα σχολίων μοναδικό για τη συγκεκριμένη σελίδα.
 
 #### Αυτόματο SSO
 
-In both placements, students are signed in via their Canvas account automatically. Names, emails, and avatars are synced through the LTI launch, no separate login is needed.
+Σε обе τις τοποθετήσεις, οι φοιτητές συνδέονται αυτόματα μέσω του λογαριασμού τους στο Canvas. Τα ονόματα, τα emails και τα avatars συγχρονίζονται μέσω της εκκίνησης LTI, χωρίς ξεχωριστή σύνδεση.
 
-#### Lock Down Public Access (Recommended)
+#### Περιορισμός Δημόσιας Πρόσβασης (Συνιστάται)
 
-By default, FastComments comment data is publicly readable. Anyone who can guess a thread's URL or API endpoint can view its comments, even outside Canvas. For course discussions you almost certainly want to restrict viewing to enrolled students only.
+Από προεπιλογή, τα δεδομένα σχολίων του FastComments είναι δημόσια αναγνώσιμα. Όποιος μπορεί να μαντέψει το URL ενός νήματος ή ένα API endpoint μπορεί να δει τα σχόλιά του, ακόμα και εκτός του Canvas. Για συζητήσεις μαθημάτων, σχεδόν σίγουρα θέλετε να περιορίσετε την προβολή μόνο σε εγγεγραμμένους φοιτητές.
 
-Open your <a href="https://fastcomments.com/auth/my-account/customize-widget" target="_blank">σελίδα προσαρμογής του widget</a> and create a rule with **Require SSO To View Comments** enabled, then set the security level to **Secure SSO** so threads can only be loaded through the signed LTI launch.
+Ανοίξτε τη <a href="https://fastcomments.com/auth/my-account/customize-widget" target="_blank">σελίδα προσαρμογής του widget</a> και δημιουργήστε έναν κανόνα με ενεργοποιημένο το **Require SSO To View Comments**, και μετά ορίστε το επίπεδο ασφαλείας σε **Secure SSO**, ώστε τα νήματα να μπορούν να φορτώνονται μόνο μέσω της υπογεγραμμένης εκκίνησης LTI.
 
-See [Προστασία νημάτων σχολίων με Single-Sign-On](/guide-customizations-and-configuration.html#sso-require-to-view-comments) for the full walkthrough, including how to scope the rule to a single domain or page.
+Δείτε το [Protecting Comment Threads With Single-Sign-On](/guide-customizations-and-configuration.html#sso-require-to-view-comments) για την πλήρη περιγραφή, συμπεριλαμβανομένου του πώς να περιορίσετε τον κανόνα σε ένα μόνο domain ή σελίδα.

@@ -1,4 +1,3 @@
----
 [api-resource-header-start name = 'Poll'; route = 'DELETE /api/v1/polls/:commentId'; creditsCost = 1; api-resource-header-end]
 
 從其評論中移除投票，並同時刪除所有已投的票。評論本身保持不變。
@@ -29,5 +28,3 @@ interface PollDeleteResponse {
     reason?: string
 }
 [inline-code-end]
-
----

@@ -65,5 +65,3 @@ const results: SaveCommentsBulkResponse[] = await saveCommentsBulk(
   populateNotifications
 );
 [inline-code-end]
-
----

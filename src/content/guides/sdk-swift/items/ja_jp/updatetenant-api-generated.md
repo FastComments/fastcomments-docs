@@ -31,5 +31,3 @@ DefaultAPI.updateTenant(tenantId: tenantId, id: id, updateTenantBody: updateTena
     }
 }
 [inline-code-end]
-
----

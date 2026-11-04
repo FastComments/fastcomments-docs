@@ -1,4 +1,3 @@
----
 Shopify blog gönderilerinizde zaten yorumlar varsa ve bunları saklamak istiyorsanız, Shopify'ın yerleşik yorum özelliğini devre dışı bırakmadan önce bunları FastComments'a aktarın.
 
 İçe aktarma, Shopify'ın yerleşik yorumları hâlâ etkin ve görünürken çalıştırılmalıdır. Bunları devre dışı bıraktığınızda FastComments artık bunları okuyamaz.
@@ -14,4 +13,3 @@ Shopify blog gönderilerinizde zaten yorumlar varsa ve bunları saklamak istiyor
 Mevcut yorumlar FastComments'a alındıktan sonra, blog gönderisi şablonunuza **FastComments** bloğunu ekleyin ve Shopify'ın yerleşik yorumlarını kaldırın veya devre dışı bırakın. Bakınız [Blog Gönderilerine ve Ürünlere Yorum Ekle](/guide-installation-shopify.html#shopify-add-comments).
 
 Mevcut yorumları saklamanız gerekmiyorsa, bu sayfayı atlayabilirsiniz.
----

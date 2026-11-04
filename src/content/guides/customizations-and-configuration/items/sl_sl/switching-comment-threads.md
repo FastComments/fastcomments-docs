@@ -1,22 +1,22 @@
 [related-parameter-start name = 'urlId'; type = 'string'; related-parameter-end]
 
-Opisali smo, kako je `urlId` identifikator strani ali članka, s katerim so komentarji povezani.
+Pokrili smo, kako je `urlId` id strani ali članka, na katerega so vezani komentarji.
 
-Poleg tega, če povzamemo: če ni določen, bo `urlId` privzeto URL trenutne strani.
+Pravtako, za povzetek: če ni definiran, se `urlId` privzeto nastavi na URL trenutne strani.
 
-Kaj pa SPAs oziroma Single-Page Applications, kjer se stran ali vsebina, s katero so povezani komentarji, spreminja dinamično brez ponovnega nalaganja strani?
+Kaj pa SPA-ji (Single-Page-Applications), kjer se stran ali vsebina, na katero so vezani komentarji, dinamično spreminja brez ponovnega nalaganja strani?
 
-#### Angular, React, Vue, etc
+#### Angular, React, Vue itd.
 
-Z našimi knjižnicami, kot sta Angular in React, bo preprosta posodobitev lastnosti `urlId`, posredovane pripomočku, povzročila osvežitev komentarnega pripomočka. To si lahko ogledate v delovanju za aplikacijo React, na primer <a href="https://github.com/FastComments/fastcomments-react/blob/master/examples/example-paginated/src/PaginatedApp.tsx#L39" target="_blank">tukaj</a>.
+Z našimi knjižnicami, kot sta Angular in React, preprosta posodobitev lastnosti `urlId`, podane gradniku, povzroči osvežitev gradnika komentarjev. To lahko vidite v akciji za React aplikacijo na primer <a href="https://github.com/FastComments/fastcomments-react/blob/master/examples/example-paginated/src/PaginatedApp.tsx#L39" target="_blank">tukaj</a>.
 
 #### VanillaJS
 
-Če uporabljate knjižnico VanillaJS, je nekoliko bolj zapleteno, saj ni ogrodja, kot sta Angular ali React, ki bi upravljalo vezanje podatkov ali propagacijo stanja.
+Če uporabljate knjižnico VanillaJS, je to nekoliko bolj zapleteno, saj ni ogrodja, kot sta Angular ali React, ki bi upravljalo vezavo podatkov ali propagacijo stanja.
 
-Ko ustvarite instanco VanillaJS pripomočka, ta vrne nekaj funkcij, ki jih je mogoče poklicati za njegovo posodobitev.
+Ko instancirate VanillaJS gradnik, ta vrne nekatere funkcije, ki jih lahko pokličete za njegovo posodobitev.
 
-Tukaj je funkcionalen primer, kjer spremenimo hash strani in posodobimo komentarni pripomoček:
+Tu je funkcionalen primer, kjer spremenimo hash strani in posodobimo gradnik komentarjev:
 
 [inline-code-attrs-start title = 'Primer preklopa hash strani'; inline-code-attrs-end]
 [inline-code-start]
@@ -46,7 +46,7 @@ Tukaj je funkcionalen primer, kjer spremenimo hash strani in posodobimo komentar
             window.location.hash = page;
             let locationString = window.location.toString();
 
-            config.url = locationString; // We update url, too, so notifications can link back to the right page
+            config.url = locationString; // Posodobimo tudi url, da se lahko obvestila povežejo nazaj na pravo stran
             config.urlId = locationString;
 
             instance.update(config);
@@ -56,5 +56,3 @@ Tukaj je funkcionalen primer, kjer spremenimo hash strani in posodobimo komentar
     })();
 </script>
 [inline-code-end]
-
----

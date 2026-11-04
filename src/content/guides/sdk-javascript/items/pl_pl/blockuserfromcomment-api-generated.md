@@ -1,4 +1,3 @@
----
 ## Parametry
 
 | Nazwa | Typ | Wymagane | Opis |
@@ -31,5 +30,3 @@ async function demo() {
 }
 demo();
 [inline-code-end]
-
----

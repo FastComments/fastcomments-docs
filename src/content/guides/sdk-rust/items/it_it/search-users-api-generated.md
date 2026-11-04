@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Nome | Tipo | Obbligatorio | Descrizione |
@@ -31,5 +30,3 @@ async fn run_search() -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
-
----

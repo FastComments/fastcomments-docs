@@ -1,4 +1,3 @@
----
 다음과 같은 권한 오류가 발생할 수 있습니다:
 
 <div class="screenshot white-bg">
@@ -11,4 +10,3 @@
 이 경우 해결 방법은 간단합니다. 사이트를 FastComments.com 계정에 추가하면 됩니다.
 
 [사이트를 계정에 추가하려면 여기를 방문하세요.](https://fastcomments.com/auth/my-account/configure-domains)
----

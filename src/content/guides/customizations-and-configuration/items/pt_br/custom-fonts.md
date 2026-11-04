@@ -19,5 +19,3 @@ Para sobrescrever a fonte, recomendamos definir seu CSS usando os seletores `.fa
     font-family: 'Roboto', sans-serif;
 }
 [inline-code-end]
-
----

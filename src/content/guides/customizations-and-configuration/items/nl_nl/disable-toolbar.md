@@ -10,5 +10,3 @@ Deze werkbalk kan worden uitgeschakeld in code of via de Aanpassings-UI.
 Dit kan ook zonder code worden gedaan. Op de widget-aanpassingspagina, zie de optie "Disable The Reply Toolbar".
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-toolbar']; selector = '.disable-toolbar'; alt='Widget-aanpassingspagina met het selectievakje Disable The Reply Toolbar aangevinkt om opmaak‑snelkoppelingen te verwijderen'; title='De werkbalk uitschakelen' app-screenshot-end]
-
----

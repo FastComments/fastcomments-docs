@@ -34,5 +34,3 @@ ModerationAPI.getManualBadgesForUser(tenantId: tenantId, options: ModerationAPI.
     }
 }
 [inline-code-end]
-
----

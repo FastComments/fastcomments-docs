@@ -44,5 +44,3 @@ Nyttige mønstre:
 - Det ændrer ikke **agent slot count** (se [Planer og berettigelse](#plans-and-eligibility)) - en afgrænset agent optager stadig én slot.
 - Det ændrer ikke [Budget caps](#budgets-overview) - de daglige og månedlige grænser per agent gælder på tværs af alle matchende triggers.
 - Det afgrænser ikke historiske køringer retroaktivt - kørselshistorikken viser alt agenten gjorde, selv hvis du indsnævrer den efterfølgende.
-
----

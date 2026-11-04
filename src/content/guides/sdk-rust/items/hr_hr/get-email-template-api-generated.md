@@ -22,5 +22,3 @@ async fn fetch_template() -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
-
----

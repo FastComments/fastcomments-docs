@@ -1,4 +1,3 @@
----
 [related-parameter-start name = 'enableWYSIWYG'; type = 'boolean'; related-parameter-end]
 
 По умолчанию функции форматирования в FastComments реализуются добавлением видимых тегов‑якорей, таких как `<b></b>`, вокруг вашего текста. Нажатие на панель инструментов
@@ -11,5 +10,3 @@ WYSIWYG (what you see is what you get) редактора. Этот редакт
 Это также можно сделать без кода. На странице настройки виджета смотрите опцию "Enable Advanced Formatting".
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-wysiwyg']; selector = '.enable-search-label'; alt='Страница настройки виджета с отмеченным флажком Enable Advanced Formatting для включения редактора WYSIWYG'; title='Включить WYSIWYG' app-screenshot-end]
-
----

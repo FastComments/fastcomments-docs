@@ -28,5 +28,3 @@
   const response: PutSSOUserAPIResponse = await putSSOUser(tenantId, userId, updateData, true);
 })();
 [inline-code-end]
-
----

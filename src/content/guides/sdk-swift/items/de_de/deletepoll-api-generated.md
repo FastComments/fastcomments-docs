@@ -1,4 +1,3 @@
----
 Entfernt eine Umfrage aus ihrem Kommentar, zusammen mit allen abgegebenen Stimmen. Der Kommentar selbst bleibt unverändert.
 
 ## Parameter
@@ -33,5 +32,3 @@ DefaultAPI.deletePoll(tenantId: tenantId, commentId: commentId) { (response, err
     }
 }
 [inline-code-end]
-
----

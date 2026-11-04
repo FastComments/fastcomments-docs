@@ -8,5 +8,3 @@
 ## Учествовање
 
 Допринеси су добродошли! Посетите [GitHub репозиторијум](https://github.com/FastComments/fastcomments-php) за смернице о доприносу.
-
----

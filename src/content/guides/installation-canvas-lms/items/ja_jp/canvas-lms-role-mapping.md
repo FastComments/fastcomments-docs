@@ -13,5 +13,3 @@ CanvasのロールはLTI起動時に自動的にFastCommentsのロールにマ�
 ユーザーがCanvasからFastCommentsを起動すると、LTI 1.3プロトコルにそのユーザーのCanvasロールが含まれます。FastCommentsはこのロールを読み取り、適切な権限を自動的に割り当てます。
 
 ユーザーが複数のロールを持っている場合（例: InstructorでありAdminでもある場合）、最も高い権限のロールが適用されます。
-
----

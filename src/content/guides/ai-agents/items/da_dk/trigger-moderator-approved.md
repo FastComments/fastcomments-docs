@@ -21,5 +21,3 @@ En handling udført af en menneskelig moderator.
 - **Velkomst / engagement** - en agent kan svare førstegangs-kommentatorer i det øjeblik en moderator godkender dem, i stedet for ved kommentarens oprettelsestidspunkt.
 - **Koordination mellem agenter** - hvis en separat agent havde markeret kommentaren til gennemgang, er godkendelsen signalet om, at den menneskelige gennemgang er færdig.
 - **Revisionsspor** via [Webhooks](#webhooks-overview).
-
----

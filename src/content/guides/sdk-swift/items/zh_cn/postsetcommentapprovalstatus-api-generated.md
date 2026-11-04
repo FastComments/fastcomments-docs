@@ -36,5 +36,3 @@ ModerationAPI.postSetCommentApprovalStatus(tenantId: tenantId, commentId: commen
     }
 }
 [inline-code-end]
-
----

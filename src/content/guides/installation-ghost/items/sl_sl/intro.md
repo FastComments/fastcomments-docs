@@ -9,5 +9,3 @@ V tej vadnici bomo ciljali na blog zgrajen z Ghostom, vendar z malo znanja ista 
 Ta vadnica se začne z vidika uporabnika, ki je povsem nov v Ghostu. Uporabniki, izkušeni pri urejanju svojih tem, lahko preskočijo na `Step 4`.
 
 Če imate težave, lahko svojo izvozno predlogo teme pošljete svojemu predstavniku za podporo (še vedno zahteva korake 1 - 5).
-
----

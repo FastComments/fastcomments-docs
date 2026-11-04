@@ -18,5 +18,3 @@ Cuando el contexto de historial de usuario está activado, la lista de comentari
 - **Mensaje de bienvenida** - la [plantilla Welcome Greeter](#template-welcome-greeter) está diseñada en torno a este disparador.
 - **Incorporación** - enviar un [DM warning](#tool-warn-user) (usado aquí como un aviso amistoso más que como una advertencia) que señale al usuario las pautas de la comunidad.
 - **Notificación al revisor** - si quieres que un humano revise la primera publicación de cada nuevo comentarista, [`mark_comment_reviewed`](#tools-overview) puede marcarlos para revisión.
-
----

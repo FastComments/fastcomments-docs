@@ -1,4 +1,3 @@
----
 ```bash
 composer require fastcomments/laravel
 ```
@@ -21,4 +20,3 @@ FASTCOMMENTS_API_KEY=your-api-key
 ```env
 FASTCOMMENTS_REGION=eu
 ```
----

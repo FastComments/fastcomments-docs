@@ -25,5 +25,3 @@ Andere Fragen haben konfigurationsspezifische Einstellungen für diesen Typ. Zum
 Am unteren Ende dieser Seite sehen Sie eine große Sternebewertungsfrage und dann einige kleine. Die kleinen sind Unterbewertungen. Nachdem Sie alle Fragen eingerichtet haben, können Sie zur Bearbeitung Ihrer obersten Frage zurückkehren und auswählen, welche Unterfragen sein sollen.
 
 Unterfragen können so konfiguriert werden, dass sie zusammen mit jeder Bewertung angezeigt werden, in den Zusammenfassungs-Widgets erscheinen oder nur intern über die Widget-Konfiguration (siehe unten) verfügbar sind.
-
----

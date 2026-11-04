@@ -22,5 +22,3 @@ api->getTenantPackage(tenantId, packageId).then([](pplx::task<std::shared_ptr<Ge
     }catch(...){}
 });
 [inline-code-end]
-
----

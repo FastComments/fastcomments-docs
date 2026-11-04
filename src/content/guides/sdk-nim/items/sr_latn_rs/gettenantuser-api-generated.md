@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
@@ -19,5 +18,3 @@ if maybeUser.isSome:
   let user = maybeUser.get()
   echo user
 [inline-code-end]
-
----

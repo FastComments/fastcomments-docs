@@ -1,5 +1,5 @@
-Enable or disable notifications for a page. When users are subscribed to a page, notifications are created
-for new root comments, and also
+Aktivieren oder deaktivieren Sie Benachrichtigungen für eine Seite. Wenn Benutzer eine Seite abonniert haben, werden Benachrichtigungen
+für neue Root-Kommentare erstellt und auch
 
 ## Parameter
 
@@ -14,7 +14,7 @@ for new root comments, and also
 
 ## Antwort
 
-Rückgabe: `UpdateUserNotificationPageSubscriptionStatusResponse`
+Gibt zurück: `UpdateUserNotificationPageSubscriptionStatusResponse`
 
 ## Beispiel
 
@@ -37,5 +37,3 @@ try {
     print('Exception when calling PublicApi->updateUserNotificationPageSubscriptionStatus: $e\n');
 }
 [inline-code-end]
-
----

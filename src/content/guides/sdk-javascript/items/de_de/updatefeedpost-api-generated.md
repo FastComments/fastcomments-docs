@@ -50,5 +50,3 @@ async function runUpdate() {
 
 runUpdate();
 [inline-code-end]
-
----

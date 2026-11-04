@@ -144,5 +144,3 @@ interface CommentUserBadgeInfo {
 | `X-FastComments-Signature` | HMAC‑SHA256 подпись (`sha256=<hex>`) |
 
 Смотрите [Безопасность и API‑токены](/guide-webhooks.html#webhooks-api-tokens) для информации о проверке HMAC‑подписи.
-
----

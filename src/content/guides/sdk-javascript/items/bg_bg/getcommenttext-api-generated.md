@@ -32,5 +32,3 @@ const commentBasic: PublicAPIGetCommentTextResponse = await getCommentText(
   commentId
 );
 [inline-code-end]
-
----

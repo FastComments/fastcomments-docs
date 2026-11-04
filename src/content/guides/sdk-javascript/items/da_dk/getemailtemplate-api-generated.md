@@ -21,5 +21,3 @@ async function fetchTemplate() {
   const customTemplate: CustomEmailTemplate | undefined = response.template;
 }
 [inline-code-end]
-
----

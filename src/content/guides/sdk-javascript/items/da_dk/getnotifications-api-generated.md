@@ -38,5 +38,3 @@ async function fetchNotifications(): Promise<void> {
   console.log(notifications);
 }
 [inline-code-end]
-
----

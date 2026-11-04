@@ -1,4 +1,3 @@
----
 Varsayılan olarak, FastComments kullanıcıların yorumlarını silmelerine izin verir.
 
 Ancak, bunu önlemek mümkündür.
@@ -9,5 +8,3 @@ Widget özelleştirme sayfasında, "Silme İşlemini Devre Dışı Bırak" seçe
 
 - Bu sadece normal Yorumcuları etkiler ve moderatorleri ya da yöneticileri etkilemez; onlar hâlâ silebilir.
 - Bu ayrıca `contextUserId` geçirildiğinde API entegrasyonlarını da etkiler. 
-
----

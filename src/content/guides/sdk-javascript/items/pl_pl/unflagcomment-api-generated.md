@@ -1,4 +1,3 @@
----
 ## Parametry
 
 | Nazwa | Typ | Wymagane | Opis |
@@ -27,5 +26,3 @@ async function runExample() {
   console.log(unflaggedByUser, unflaggedByAnon);
 }
 [inline-code-end]
-
----

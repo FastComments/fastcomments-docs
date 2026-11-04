@@ -1,4 +1,3 @@
----
 ## 매개변수
 
 | 이름 | 형식 | 필수 | 설명 |
@@ -21,5 +20,3 @@ api->getEmailTemplates(tenantId, skip)
         (void)resp;
     });
 [inline-code-end]
-
----

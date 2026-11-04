@@ -1,4 +1,3 @@
----
 Pour ajouter FastComments à Ghost correctement, nous devons modifier les fichiers du thème.
 
 Commençons donc par télécharger votre thème existant ou souhaité.
@@ -37,5 +36,3 @@ En haut à droite, sélectionnez `Advanced` :
     <div class="title">Télécharger le thème</div>
     <img class="screenshot-image" src="/images/installation-guides/ghost-step-1-5-download.png" alt="Télécharger le thème" />
 </div>
-
----

@@ -1,4 +1,3 @@
----
 ## 參數
 
 | 名稱 | 類型 | 必需 | 說明 |
@@ -31,5 +30,3 @@ if response.isSome:
   let comments = response.get()
   discard comments
 [inline-code-end]
-
----

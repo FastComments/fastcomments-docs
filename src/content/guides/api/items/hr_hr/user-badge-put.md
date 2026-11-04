@@ -1,4 +1,3 @@
----
 Ovaj endpoint omogućuje ažuriranje dodjele korisničke značke.
 
 Trenutno se može ažurirati samo svojstvo `displayedOnComments`, koje kontrolira hoće li se značka prikazivati na komentarima korisnika.
@@ -51,4 +50,3 @@ Possible Error Responses:
   "reason": "The user badge badge123 was not found."
 }
 [inline-code-end]
----

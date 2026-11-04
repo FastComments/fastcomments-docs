@@ -1,47 +1,48 @@
-Sometimes FastComments has to email your users, especially if you are not using Secure SSO.
+FastComments bazen kullanıcılarınıza e-posta göndermek zorunda kalır, özellikle Secure SSO kullanmıyorsanız.
 
-Examples of this includes verifying their account or activity when commenting for the first time. FastComments will also send them notifications for replies to their comments.
+Buna örnek olarak, ilk kez yorum yaptıklarında hesaplarını veya etkinliklerini doğrulamak verilebilir. FastComments
+ayrıca yorumlarına gelen yanıtlar için onlara bildirimler gönderir.
 
-When FastComments emails your users, we will use a default From Name and Email of `FastComments Robot` and `noreply@fastcomments.com`.
+FastComments kullanıcılarınıza e-posta gönderdiğinde, varsayılan olarak `FastComments Robot` Gönderen Adı ve `noreply@fastcomments.com` Gönderen E-postası kullanılacaktır.
 
-We'll also use our own logo in the footer of these emails.
+Bu e-postaların alt bilgisinde (footer) ayrıca kendi logomuzu kullanırız.
 
-If you have FastComments Flex or Pro, this all can be customized on a per-domain basis via the "My Domains page":
+FastComments Flex veya Pro aboneliğiniz varsa, tüm bunlar "My Domains sayfası" üzerinden alan adı (domain) bazında özelleştirilebilir:
 
-[app-screenshot-start url='/auth/my-account/configure-domains'; selector = '.content form'; alt='Alan bazında e-posta ayarları formu, Gönderen Adı, Gönderen E-posta ve logo yükleme alanlarıyla'; title='Gönderen Adı, E-posta ve Logoyu Özelleştirme' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/configure-domains'; selector = '.content form'; alt='Gönderen Adı, Gönderen E-postası ve logo yükleme alanlarını içeren alan adı bazlı e-posta ayarları formu'; title='Gönderen Adı, E-posta ve Logoyu Özelleştirme' app-screenshot-end]
 
-When customizing the logo shown in emails, ensure that the size you are uploading is the same size that you want to show in the footer of the email.
+E-postalarda gösterilen logoyu özelleştirirken, yüklediğiniz boyutun e-postanın alt bilgisinde gösterilmesini istediğiniz boyutla aynı olduğundan emin olun.
 
-### `From Domain` Özelleştirildiğinde
+### `From Domain` Özelleştirilirken
 
-If you customize the `From Domain`, Email providers and clients need to know that FastComments is authorized to send emails on your behalf. Otherwise,
-defining the `From Domain` and not following the below steps likely will result in emails going to spam.
+`From Domain` değerini özelleştirirseniz, e-posta sağlayıcıları ve istemcileri FastComments'un sizin adınıza e-posta göndermeye yetkili olduğunu bilmelidir. Aksi takdirde,
+`From Domain` tanımlayıp aşağıdaki adımları izlememek, büyük olasılıkla e-postaların spam'e gitmesine neden olur.
 
 #### 1. SPF Kurulumu
 
-To allow FastComments to securely send email as your domain, ensure you add an SPF record that allows us to do so.
+FastComments'un alan adınız adına güvenli bir şekilde e-posta gönderebilmesine izin vermek için, bunu mümkün kılan bir SPF kaydı eklediğinizden emin olun.
 
-Ensure there are SPF records to allow `mail.fastcomments.com` and `sib.fastcomments.com` to send mail as your domain.
+`mail.fastcomments.com` ve `sib.fastcomments.com` adreslerinin alan adınız adına e-posta gönderebilmesine izin veren SPF kayıtlarının bulunduğundan emin olun.
 
-Some more information on how to do this is here: https://mailtrap.io/blog/multiple-spf-records/
+Bunun nasıl yapılacağı hakkında daha fazla bilgi burada: https://mailtrap.io/blog/multiple-spf-records/
 
 #### 2. DKIM Kurulumu
 
-In addition to SPF, you should set up DKIM. Once your DNS configuration is ready, you can click "Show Advanced" in the domain configurations page
-to show the DKIM settings per-domain.
+SPF'ye ek olarak, DKIM kurulumunu da yapmalısınız. DNS yapılandırmanız hazır olduğunda, alan adı yapılandırma sayfasında "Show Advanced" seçeneğine tıklayarak
+alan adı bazında DKIM ayarlarını görüntüleyebilirsiniz.
 
-You can also [invoke the API](/guide-api.html#domain-config-structure) to set DKIM configuration.
+Ayrıca DKIM yapılandırmasını ayarlamak için [API'yi çağırabilirsiniz](/guide-api.html#domain-config-structure).
 
 ### Abonelikten Çıkma Bağlantıları
 
-When using SSO, the unsubscribe features used in emails and notifications can be customized [via the DomainConfigs API](/guide-api.html#domain-config-structure).
+SSO kullanırken, e-postalarda ve bildirimlerde kullanılan abonelikten çıkma özellikleri [DomainConfigs API'si aracılığıyla](/guide-api.html#domain-config-structure) özelleştirilebilir.
 
-### E-posta Bağlantı Gizleme
+### E-posta Bağlantısı Gizleme (Obfuscation)
 
-If your site's domain reputation is causing notification emails to land in spam, you can route the "view comment" buttons through `fastcomments.com` instead of linking directly to your page. Mailbox providers score every link in the email body against the destination's reputation, so when your domain is being flagged the bare links contribute to the spam score regardless of how clean your sending setup is.
+Sitenizin alan adı itibarı, bildirim e-postalarının spam'e düşmesine neden oluyorsa, "yorumu görüntüle" düğmelerini doğrudan sayfanıza bağlamak yerine `fastcomments.com` üzerinden yönlendirebilirsiniz. E-posta sağlayıcıları, e-posta gövdesindeki her bağlantıyı hedefin itibarına göre puanlar; bu nedenle alan adınız işaretlenmişken çıplak bağlantılar, gönderim kurulumunuz ne kadar temiz olursa olsun spam puanına katkıda bulunur.
 
-Enable this under "Show Advanced" on the My Domains page, in the "Email Link Obfuscation" section. The setting is per-domain.
+Bunu My Domains sayfasındaki "Show Advanced" bölümünde, "Email Link Obfuscation" bölümünde etkinleştirebilirsiniz. Bu ayar alan adı bazındadır.
 
-When enabled, links in mention, reply, new-comment, subscribed-page, profile-comment, and digest emails are rewritten to short tokens that redirect to the original page on click. The destination is bound to your tenant: the redirect only forwards to URLs whose host matches one of your configured domains, and tokens auto-expire after 30 days.
+Etkinleştirildiğinde, bahsetme (mention), yanıt, yeni yorum, abone olunan sayfa, profil yorumu ve özet e-postalarındaki bağlantılar, tıklandığında orijinal sayfaya yönlendiren kısa token'lara dönüştürülür. Hedef, kiracınıza (tenant) bağlıdır: yönlendirme yalnızca ana makinesi (host) yapılandırılmış alan adlarınızdan biriyle eşleşen URL'lere iletilir ve token'lar 30 gün sonra otomatik olarak sona erer.
 
-The clicked-through experience is unchanged. Readers still land on your page with the comment scrolled into view.
+Tıklama sonrası deneyim değişmez. Okuyucular yine sayfanıza, yorum görünüme kaydırılmış şekilde ulaşır.

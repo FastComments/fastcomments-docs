@@ -1,13 +1,13 @@
 ### 防止記憶體洩漏
 
-為了在 Activity 或 Fragment 中使用 FastComments 視圖時防止記憶體洩漏，當不再需要該視圖時，請務必呼叫 `cleanup()`：
+為了避免在 Activity 或 Fragment 中使用 FastComments 檢視時發生記憶體洩漏，請在檢視不再需要時務必呼叫 `cleanup()`:
 
-#### In Activities:
+#### 在 Activity 中：
 ```java
 @Override
 protected void onDestroy() {
     super.onDestroy();
-    // 清理 FastComments 視圖以防止記憶體洩漏
+    // Clean up FastComments views to prevent memory leaks
     if (feedView != null) {
         feedView.cleanup();
     }
@@ -17,12 +17,12 @@ protected void onDestroy() {
 }
 ```
 
-#### In Fragments:
+#### 在 Fragment 中：
 ```java
 @Override
 public void onDestroyView() {
     super.onDestroyView();
-    // 當 Fragment 視圖被銷毀時，清理 FastComments 視圖
+    // Clean up FastComments views when fragment view is destroyed
     if (feedView != null) {
         feedView.cleanup();
         feedView = null;
@@ -32,7 +32,7 @@ public void onDestroyView() {
 @Override
 public void onDestroy() {
     super.onDestroy();
-    // Fragment 被銷毀時的額外清理
+    // Additional cleanup when fragment is destroyed
     if (feedSDK != null) {
         feedSDK.cleanup();
         feedSDK = null;
@@ -40,22 +40,22 @@ public void onDestroy() {
 }
 ```
 
-#### When Switching Fragments:
+#### 切換 Fragment 時：
 ```java
-// 在替換或移除包含 FastComments 視圖的 Fragment 之前
+// Before replacing or removing a fragment containing FastComments views
 Fragment currentFragment = getSupportFragmentManager().findFragmentById(R.id.container);
 if (currentFragment instanceof YourFragmentWithFeedView) {
     ((YourFragmentWithFeedView) currentFragment).cleanupFeedView();
 }
 
-// 然後繼續執行 Fragment 交易
+// Then proceed with fragment transaction
 getSupportFragmentManager().beginTransaction()
     .replace(R.id.container, newFragment)
     .commit();
 ```
 
-**重要**：請務必在以下情況呼叫 `cleanup()` 方法以防止記憶體洩漏，特別是在：
-- Activities 被銷毀時
-- Fragment 視圖被銷毀時
-- 切換 Fragment 時
-- 從包含 FastComments 元件的畫面導覽離開時
+**重要**：請務必呼叫 `cleanup()` 方法以防止記憶體洩漏，特別是在以下情況：
+- Activity 被銷毀時
+- Fragment 檢視被銷毀時
+- 在 Fragment 之間切換時
+- 離開包含 FastComments 元件的畫面時

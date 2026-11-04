@@ -43,5 +43,3 @@ interface TenantsResponse {
     tenants?: Tenant[]
 }
 [inline-code-end]
-
----

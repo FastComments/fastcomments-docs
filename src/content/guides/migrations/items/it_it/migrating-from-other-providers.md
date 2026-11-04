@@ -6,5 +6,3 @@ Quando si migra da un altro fornitore, ci sono alcune cose da considerare:
 
 L'importazione dati self-service descritta nelle sezioni successive copre i primi due punti. Per la personalizzazione, vedi la nostra
 [guida alla personalizzazione](/guide-customizations-and-configuration.html).
-
----

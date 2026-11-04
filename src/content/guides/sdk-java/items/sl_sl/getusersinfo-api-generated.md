@@ -1,4 +1,3 @@
----
 Skupinske informacije o uporabnikih za najemnika. Glede na userIds vrne prikazne informacije iz User / SSOUser.
 Uporabljeno v pripomočku za komentarje za obogatitev uporabnikov, ki so se pravkar pojavili prek dogodka prisotnosti.
 Brez konteksta strani: zasebnost se uveljavlja enotno (zasebni profili so zamaskirani).
@@ -47,5 +46,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 Domyślnie rozmiar strony FastComments wynosi `30`. Obejmuje to odpowiedzi w wątkach.
 
 Rozmiar strony można dostosować w [Widget Configuration UI](https://fastcomments.com/auth/my-account/customize-widget) w różnych rozmiarach od `10` do `200`.
@@ -14,4 +13,3 @@ Przykładowa konfiguracja jest pokazana poniżej:
 Rozmiary stron można dostosować globalnie, lub per-domena, lub per-strona, tworząc różne reguły dostosowywania.
 
 Będzie to miało wpływ na wszystkich klientów, integracje i frameworki, które możesz używać do wyświetlania komentarzy za pośrednictwem naszej platformy.
----

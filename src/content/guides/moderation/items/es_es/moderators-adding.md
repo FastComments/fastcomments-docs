@@ -19,5 +19,3 @@ Se enviará un enlace de invitación al moderador, que puede iniciar sesión aut
 un enlace para iniciar sesión.
 
 A menos que cierre sesión, permanecerá conectado durante treinta días.
-
----

@@ -1,27 +1,25 @@
-La mayoría de FastComments se personaliza a través de la [Personalización de la IU](https://fastcomments.com/auth/my-account/customize-widget). Esto incluye Valoraciones y reseñas.
+La mayor parte de FastComments se personaliza a través de [Customize UI](https://fastcomments.com/auth/my-account/customize-widget). Esto incluye Ratings & Reviews.
 
-Una vez que agregues preguntas, todavía no se usarán en ningún sitio.
+Una vez que agregas preguntas, aún no se usarán en ningún lugar.
 
 Para usarlas, crea o edita una regla de personalización y habilita la opción `Enable Ratings or Other Questions`. Esto mostrará algunas otras opciones:
 
 - Style
-  - Vertical or Side-by-Side
+  - Vertical o Side-by-Side
 - When to Save?
-  - Should we save the feedback as the user answers questions, or at once at the end when they submit their review?
+  - ¿Debemos guardar el feedback a medida que el usuario responde las preguntas, o todo junto al final cuando envía su reseña?
 - Ask Sub Questions
-  - Whether to show the defined sub questions.
+  - Si se deben mostrar las sub preguntas definidas.
 - Questions Required?
-  - Whether all the questions are required.
+  - Si todas las preguntas son obligatorias.
 - Show Answers on Comments?
-  - Whether to show the rating or rating & sub ratings with each review.
+  - Si se debe mostrar la calificación o la calificación y sub calificaciones con cada reseña.
 - Show Results Breakdown After Answering
-  - When enabled, after a user answers a question, an aggregated breakdown of all responses for that page is displayed. This includes average values, distribution bars, and response counts. Supported for Star, NPS, Thumbs, and Slider question types, including sub-questions.
+  - Cuando está habilitado, después de que un usuario responde una pregunta, se muestra un desglose agregado de todas las respuestas para esa página. Esto incluye valores promedio, barras de distribución y conteos de respuestas. Compatible con los tipos de pregunta Star, NPS, Thumbs y Slider, incluidas las sub preguntas.
 - Question to Show?
-  - The top level question you want to show. Only one is supported today.
+  - La pregunta de nivel superior que deseas mostrar. Por ahora solo se admite una.
 
-Esta configuración está pensada para cubrir un par de casos de uso principales (reacciones de página y también valoraciones y reseñas), ya que puede usarse para ambos y también para encuestas sencillas.
+Esta configuración está pensada para cubrir un par de casos de uso principales (reacciones de página y también ratings & reviews), ya que puede usarse para ambos y también para encuestas simples.
 
-La razón por la que usamos la IU de Personalización es que desacoplar esta configuración de las propias preguntas te permite definir preguntas distintas para diferentes sitios o diferentes
-páginas personalizando la configuración del widget, lo que te permite seleccionar ya sea todos los sitios/páginas, o un dominio y una página específicos.
-
----
+La razón por la que usamos la Customization UI es que desacoplar esta configuración de las preguntas mismas te permite definir diferentes preguntas para diferentes sitios o diferentes
+páginas personalizando la configuración del widget, lo que te permite seleccionar todos los sitios/páginas, o un dominio y página específicos.

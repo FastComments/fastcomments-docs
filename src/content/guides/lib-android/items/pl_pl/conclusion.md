@@ -8,5 +8,3 @@ Jeśli napotkasz jakiekolwiek problemy lub masz pytania dotyczące biblioteki An
 ## Wkład
 
 Wkłady są mile widziane! Prosimy odwiedzić [repozytorium GitHub](https://github.com/FastComments/fastcomments-android) po wytyczne dotyczące kontrybucji.
-
----

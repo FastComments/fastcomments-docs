@@ -1,4 +1,3 @@
----
 Das war's! Sie sollten jetzt Live-Kommentare auf Ihrer GoHighLevel-Website hinzugefügt haben.
 
 <div class="screenshot white-bg">
@@ -7,5 +6,3 @@ Das war's! Sie sollten jetzt Live-Kommentare auf Ihrer GoHighLevel-Website hinzu
 </div>
 
 Wenn Sie auf einen 'permission denied'-Fehler gestoßen sind, oder FastComments anpassen möchten, lesen Sie weiter.
-
----

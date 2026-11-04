@@ -1,12 +1,12 @@
-A `Poll` is attached to a comment, rather than being an object of its own. It is created with the comment
-(see `POST /api/v1/comments`), or added to an existing comment later with `PUT /api/v1/polls/:commentId`.
+`Poll` jest dołączony do komentarza, a nie jest samodzielnym obiektem. Jest tworzony razem z komentarzem
+(zobacz `POST /api/v1/comments`) lub dodawany do istniejącego komentarza później za pomocą `PUT /api/v1/polls/:commentId`.
 
-The vote counts are kept on the poll itself, so reading a poll gives you the results without having to add
-anything up. The individual votes behind those counts are `PollVote` objects.
+Liczniki głosów są przechowywane bezpośrednio w ankiecie, więc odczyt ankiety daje wyniki bez konieczności
+czegokolwiek sumowania. Poszczególne głosy stojące za tymi licznikami to obiekty `PollVote`.
 
-Each option has an `id` that is generated when the poll is created. That id is what you use to cast a vote,
-to relabel an option, and to keep an option (and its votes) when you `PUT` the poll with options added or
-removed. It is the only safe way to refer to an option - never its position in the list.
+Każda opcja ma `id` generowane w momencie utworzenia ankiety. Tego id używa się do oddania głosu,
+zmiany etykiety opcji oraz do zachowania opcji (i jej głosów), gdy wysyłasz `PUT` ankiety z dodanymi lub
+usuniętymi opcjami. To jedyny bezpieczny sposób odwoływania się do opcji - nigdy jej pozycja na liście.
 
 [inline-code-attrs-start title = 'Struktura ankiety'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -29,16 +29,18 @@ interface CommentPoll {
 }
 [inline-code-end]
 
-### Limits
+### Limity
 
-- Pytanie jest wymagane i może mieć maksymalnie 200 znaków.
+- Pytanie jest wymagane i ma maksymalnie 200 znaków.
 - Ankieta ma od 2 do 10 opcji.
-- Etykieta opcji jest wymagana, może mieć maksymalnie 100 znaków i musi być unikalna w ankiecie (bez uwzględniania wielkości liter).
-- `closesAt` musi być w przyszłości w momencie tworzenia ankiety. Aby zamknąć ankietę natychmiast, wykonaj `PATCH` z datą w przeszłości.
+- Etykieta opcji jest wymagana, ma maksymalnie 100 znaków i musi być unikalna w obrębie ankiety (bez rozróżniania wielkości liter).
+- `closesAt` musi być datą w przyszłości w momencie utworzenia ankiety. Aby natychmiast zamknąć ankietę, wykonaj `PATCH` z
+  datą w przeszłości.
 
-### Site Settings
+### Ustawienia witryny
 
-Polls obey your site configuration, which you can change under Customize Widget:
+Ankiety podlegają konfiguracji witryny, którą możesz zmienić w sekcji Customize Widget:
 
-- Ankiety muszą być włączone, zanim będzie można utworzyć ankietę, w przeciwnym razie API zwróci `polls-disabled`.
-- Głosowanie może być ograniczone do zalogowanych użytkowników; w takim przypadku głos wysłany jedynie z `anonUserId` zostanie odrzucony z kodem `poll-login-required`.
+- Ankiety muszą być włączone, zanim będzie można utworzyć ankietę, w przeciwnym razie API odpowiada błędem `polls-disabled`.
+- Głosowanie może być ograniczone do zalogowanych użytkowników - w takim przypadku głos wysłany tylko z `anonUserId` zostanie
+  odrzucony z błędem `poll-login-required`.

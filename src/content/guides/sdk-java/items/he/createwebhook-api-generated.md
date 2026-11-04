@@ -1,12 +1,10 @@
-Subscribes a URL to a comment event (REST hook subscribe). Subscribing the same URL to the same
-event and domain again returns the existing subscription. Deliveries are HMAC signed, see the
-webhooks guide; the legacy `token` header is never sent to API subscriptions.
+מנויה URL לאירוע תגובה (REST hook subscribe). רישום אותו URL שוב לאותו אירוע ודומיין מחזיר את המינוי הקיים. המשלוחים חתומים ב-HMAC, ראו את מדריך ה-webhooks; כותרת ה-`token` הישנה לעולם אינה נשלחת למינויי API.
 
 ## פרמטרים
 
-| שם | סוג | מיקום | נדרש | תיאור |
+| שם | סוג | מיקום | חובה | תיאור |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
+| tenantId | string | query | כן |  |
 
 ## תגובה
 

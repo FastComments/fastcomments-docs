@@ -30,5 +30,3 @@ api->getPagesPublic(tenantId, options).then([](pplx::task<std::shared_ptr<GetPub
     }
 });
 [inline-code-end]
-
----

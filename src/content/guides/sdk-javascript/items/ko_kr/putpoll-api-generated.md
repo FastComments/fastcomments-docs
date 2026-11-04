@@ -1,25 +1,23 @@
-Attach a poll to a comment, or set the full state of the poll it already has.
+댓글에 투표를 추가하거나, 이미 연결된 투표의 전체 상태를 설정합니다.
 
-Options are matched by id: an option sent with the id of an existing option keeps its votes (and takes the
-new label and position), an option sent without an id is added, and existing options left out of the list
-are removed along with the votes cast on them.
+옵션은 id로 매칭됩니다: 기존 옵션의 id와 함께 전송된 옵션은 기존 투표 수를 유지하며(새 라벨과 위치를 적용), id 없이 전송된 옵션은 추가되고, 목록에서 누락된 기존 옵션은 해당 옵션에 대한 투표와 함께 제거됩니다.
 
-Keeping no existing option ids on a poll that has votes deletes all of them, so that needs replaceVotes=true.
+투표가 있는 투표에서 기존 옵션 id를 하나도 유지하지 않으면 모든 투표가 삭제되므로, 이 경우 replaceVotes=true가 필요합니다.
 
-## Parameters
+## 매개변수
 
-| 이름 | 유형 | 필수 | 설명 |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | 예 |  |
-| commentId | string | 예 |  |
-| commentPollPutInput | CommentPollPutInput | 예 |  |
-| replaceVotes | boolean | 아니오 |  |
+| tenantId | string | Yes |  |
+| commentId | string | Yes |  |
+| commentPollPutInput | CommentPollPutInput | Yes |  |
+| replaceVotes | boolean | No |  |
 
-## Response
+## 응답
 
-반환: [`SavePollResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/SavePollResponse.ts)
+반환값: [`SavePollResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/SavePollResponse.ts)
 
-## Example
+## 예제
 
 [inline-code-attrs-start title = 'putPoll 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

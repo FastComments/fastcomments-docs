@@ -1,3 +1,1 @@
----
 Installeer de WordPress-plug-in voor live reacties, moderatie vanuit je dashboard, alleen‑leden‑threads via SSO, en reactietellingen gesynchroniseerd terug naar berichten.
----

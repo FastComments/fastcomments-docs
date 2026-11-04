@@ -1,4 +1,3 @@
----
 Volg dezelfde stappen voor `localhost` als voor productie. Zorg ervoor dat je productiedomeinen en API‑geheimen hebt ingesteld.
 
 Ga eerst naar de [Webhooks-beheer](https://fastcomments.com/auth/my-account/manage-data/webhooks). Dit is toegankelijk via Beheer Data -> Webhooks.
@@ -18,5 +17,3 @@ Klik vóór het opslaan op **Testpayload Verzenden** om te controleren of het ei
 Vanaf de lijst kun je een webhook bewerken, uitschakelen, opnieuw inschakelen of verwijderen. Uitschakelen houdt de in de wachtrij staande gebeurtenissen vast totdat de webhook opnieuw wordt ingeschakeld; verwijderen gooit ze weg.
 
 Webhooks kunnen ook via de API worden aangemaakt, bijvoorbeeld door Zapier. Deze verschijnen in dezelfde lijst met de bron **API**. Zie Webhooks beheren via de API.
-
----

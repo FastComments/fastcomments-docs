@@ -1,4 +1,3 @@
----
 - 🔄 Commenti in tempo reale con aggiornamenti in diretta
 - 📱 Componenti UI Android nativi
 - 🧵 Discussioni a thread con risposte
@@ -9,4 +8,3 @@
 - 📱 Integrazione con feed social
 - ♾️ Paginazione con scorrimento infinito
 - 🎨 Personalizzazione completa del tema
----

@@ -62,5 +62,3 @@ Prečaci se automatski onemogućuju kada:
 
 - Kursor je u polju za pretraživanje, tekstualnom unosu ili u polju s uređivim sadržajem. Pritisnite `Escape` da biste uklonili fokus s polja i vratili se na prečace.
 - Otvoren je dijalog. Prvo zatvorite dijalog.
-
----

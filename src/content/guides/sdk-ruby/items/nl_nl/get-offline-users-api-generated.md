@@ -1,4 +1,3 @@
----
 Vorige commentatoren op de pagina die NIET momenteel online zijn. Gesorteerd op displayName.
 Gebruik dit nadat /users/online is uitgeput om een "Leden" sectie weer te geven.
 Cursor-paginering op commenterName: server doorloopt de gedeeltelijke {tenantId, urlId, commenterName}
@@ -40,5 +39,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_offline_users: #{e}"
 end
 [inline-code-end]
-
----

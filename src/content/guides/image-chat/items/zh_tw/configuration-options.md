@@ -1,12 +1,12 @@
 ### 概覽
 
-FastComments Image Chat 擴充了標準的 FastComments 評論小工具，因此它繼承了基礎小工具的所有設定選項，同時新增了一些專屬於影像註解的設定。
+FastComments Image Chat 擴展了標準的 FastComments 留言小工具，因此它繼承了基礎小工具的所有配置選項，同時新增了幾個專屬於圖片標註的選項。
 
-### 必要設定
+### 必要配置
 
 #### tenantId
 
-需要提供您的 FastComments Tenant ID。您可以在您的 [FastComments dashboard](https://fastcomments.com/auth/my-account/api-secret) 找到它。
+必須提供您的 FastComments Tenant ID。您可以在 [FastComments 儀表板](https://fastcomments.com/auth/my-account/api-secret) 中找到它。
 
 ```javascript
 FastCommentsImageChat(imageElement, {
@@ -14,11 +14,11 @@ FastCommentsImageChat(imageElement, {
 });
 ```
 
-### 圖像聊天特定選項
+### Image Chat 專屬選項
 
 #### urlId
 
-預設情況下，Image Chat 會根據頁面 URL、影像來源和 X/Y 座標為每個對話產生唯一識別碼。您可以用自訂的 `urlId` 覆寫這個行為。
+預設情況下，Image Chat 會根據頁面 URL、圖片來源以及 X/Y 座標，為每個對話產生一個唯一識別碼。您可以使用自訂的 `urlId` 來覆蓋此行為。
 
 ```javascript
 FastCommentsImageChat(imageElement, {
@@ -27,24 +27,24 @@ FastCommentsImageChat(imageElement, {
 });
 ```
 
-這在您的 URL 結構可能會改變但想保留相同對話時很有用，或是當您想要在多個頁面之間共用註解時也很有用。
+當您的 URL 結構可能會變動但您希望保留相同的對話時，或者當您想在多個頁面之間共享標註時，這會很有用。
 
 #### chatSquarePercentage
 
-控制可點擊聊天標記的大小，為影像寬度的百分比。預設為 5%，表示每個標記為影像寬度的 5%。
+以圖片寬度的百分比控制可點擊聊天標記的大小。預設值為 5%，表示每個標記佔圖片寬度的 5%。
 
 ```javascript
 FastCommentsImageChat(imageElement, {
     tenantId: 'demo',
-    chatSquarePercentage: 8  // 較大、更顯眼的標記
+    chatSquarePercentage: 8  // 更大、更醒目的標記
 });
 ```
 
-較小的值會產生不那麼突兀的標記，較適合細節豐富的影像。較大的值則讓標記在繁忙的影像或行動裝置上更容易看見和點擊。
+較小的值會產生較不干擾的標記，更適合細節豐富的圖片。較大的值則讓標記在內容繁雜的圖片上或對行動裝置使用者來說更容易看到和點擊。
 
 #### hasDarkBackground
 
-當您的頁面為深色背景時啟用深色模式的樣式。
+當您的頁面具有深色背景時，啟用深色模式樣式。
 
 ```javascript
 FastCommentsImageChat(imageElement, {
@@ -55,7 +55,7 @@ FastCommentsImageChat(imageElement, {
 
 #### commentCountUpdated
 
-當評論數變化時會觸發的回呼函式。這對更新 UI 元素（例如徽章或頁面標題）很有用。
+每當留言數變更時觸發的回呼函式。這對於更新徽章或頁面標題等 UI 元素很有用。
 
 ```javascript
 FastCommentsImageChat(imageElement, {
@@ -67,9 +67,9 @@ FastCommentsImageChat(imageElement, {
 });
 ```
 
-### 繼承的設定選項
+### 繼承的配置選項
 
-由於 Image Chat 擴充了標準評論小工具，您可以使用基礎 FastComments 小工具的任何設定選項。以下是一些常用的選項：
+由於 Image Chat 擴展了標準留言小工具，您可以使用基礎 FastComments 小工具的任何配置選項。以下是一些常用的選項：
 
 #### locale
 
@@ -84,7 +84,7 @@ FastCommentsImageChat(imageElement, {
 
 #### readonly
 
-將所有對話設為唯讀。使用者可以檢視現有標記和討論，但無法建立新項目或回覆。
+將所有對話設為唯讀。使用者可以檢視現有的標記與討論，但無法建立新的標記或回覆。
 
 ```javascript
 FastCommentsImageChat(imageElement, {
@@ -93,55 +93,55 @@ FastCommentsImageChat(imageElement, {
 });
 ```
 
-#### sso and simpleSSO
+#### sso 和 simpleSSO
 
-使用單一登入整合您的驗證系統。
+使用單一登入（Single Sign-On）與您的驗證系統整合。
 
 ```javascript
 FastCommentsImageChat(imageElement, {
     tenantId: 'demo',
     sso: {
-        // SSO 設定
+        // SSO 配置
     }
 });
 ```
 
-完整的驗證選項請參閱 SSO 文件。
+有關驗證選項的完整詳細資訊，請參閱 SSO 文件。
 
 #### maxReplyDepth
 
-控制回覆可以有多少層深度。預設情況下，Image Chat 將此設為 0，表示所有評論為平鋪（無巢狀回覆）。如果您想要線程式對話，可以變更此數值。
+控制回覆可以嵌套多少層。預設情況下，Image Chat 將此值設為 0，表示所有留言都是扁平的（沒有嵌套回覆）。如果您想要有討論串式的對話，可以更改此值。
 
 ```javascript
 FastCommentsImageChat(imageElement, {
     tenantId: 'demo',
-    maxReplyDepth: 3  // 允許 3 層巢狀
+    maxReplyDepth: 3  // 允許 3 層嵌套
 });
 ```
 
-### 內部設定
+### 內部配置
 
-這些選項由 Image Chat 自動設定，不應被覆寫：
+這些選項由 Image Chat 自動設定，不應被覆蓋：
 
-`productId` 會自動為 Image Chat 設為 `2`。會自動載入 `floating-chat` 擴充以提供聊天視窗功能。小工具會自動偵測行動裝置（螢幕寬度小於 768px）並相應調整 UI，使用全螢幕聊天視窗。
+`productId` 會自動設為 `2` 以供 Image Chat 使用。`floating-chat` 擴充功能會自動載入以提供聊天視窗功能。小工具會自動偵測行動裝置（寬度低於 768px 的螢幕），並相應地以全螢幕聊天視窗調整 UI。
 
 ### 目標元素的彈性
 
-傳遞給 `FastCommentsImageChat` 的第一個參數可以是直接的 `<img>` 元素，或是內含影像的容器元素：
+`FastCommentsImageChat` 的第一個參數可以直接是 `<img>` 元素，或是內含圖片的容器元素：
 
 ```javascript
-// 直接的圖像元素
+// 直接傳入圖片元素
 FastCommentsImageChat(document.getElementById('my-image'), config);
 
-// 包含圖像的容器
+// 傳入內含圖片的容器
 FastCommentsImageChat(document.querySelector('.image-wrapper'), config);
 ```
 
-如果您傳入容器元素，小工具會自動尋找影像。
+如果您傳入的是容器元素，小工具會自動找到其中的圖片。
 
 ### 完整範例
 
-下面是一個示範多個設定選項一起使用的範例：
+以下是一個同時展示多個配置選項的範例：
 
 ```javascript
 FastCommentsImageChat(document.getElementById('product-image'), {
@@ -154,10 +154,10 @@ FastCommentsImageChat(document.getElementById('product-image'), {
         document.title = count > 0 ? `(${count}) Product Photo` : 'Product Photo';
     },
     sso: {
-        // 您的 SSO 設定
+        // 您的 SSO 配置
     },
     maxReplyDepth: 1
 });
 ```
 
-有關從基礎小工具繼承的所有可用設定選項的完整清單，請參閱主要的 FastComments 設定文件。
+有關從基礎小工具繼承的所有可用配置選項的完整清單，請參閱 FastComments 主要配置文件。

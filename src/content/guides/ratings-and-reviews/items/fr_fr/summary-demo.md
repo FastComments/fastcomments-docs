@@ -12,5 +12,3 @@ Voici une petite démo du widget de résumé :
 ### Mise en cache
 
 Notez que les résumés sont mis en cache pendant 30 secondes, ou cinq minutes s'il y a un grand nombre d'avis. En conséquence, votre avis peut ne pas apparaître immédiatement dans le résumé, mais cela nous permet de réduire le coût de diffusion du widget de résumé.
-
----

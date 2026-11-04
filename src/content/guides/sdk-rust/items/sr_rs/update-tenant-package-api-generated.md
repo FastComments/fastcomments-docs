@@ -29,5 +29,3 @@ async fn run_update(configuration: &configuration::Configuration) -> Result<(), 
     Ok(())
 }
 [inline-code-end]
-
----

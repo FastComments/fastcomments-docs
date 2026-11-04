@@ -1,4 +1,3 @@
----
 ## Parametry
 
 | Name | Type | Required | Description |
@@ -25,5 +24,3 @@ const firstMeta: MetaItem | undefined = response.meta?.[0];
 
 console.log(response);
 [inline-code-end]
-
----

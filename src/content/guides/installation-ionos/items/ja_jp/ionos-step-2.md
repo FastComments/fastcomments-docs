@@ -1,26 +1,24 @@
----
-Next we're going to add the FastComments widget code to your site. This code will search for all forms with the title `FastComments Goes Here` and
-replace it with FastComments.
+次に、FastCommentsウィジェットのコードをサイトに追加します。このコードは、タイトルが `FastComments Goes Here` であるすべてのフォームを検索し、FastCommentsに置き換えます。
 
-So let's go to `Settings` in the bottom left of the site editor:
+それでは、サイトエディターの左下にある `Settings` に移動しましょう:
 
 <div class="screenshot white-bg">
     <div class="title">設定を開く</div>
     <img class="screenshot-image" src="/images/installation-guides/ionos-step-2-open-settings.png" alt="設定を開く" />
 </div>
 
-Open the `Custom Head Code` section:
+`Custom Head Code` セクションを開きます:
 
 <div class="screenshot white-bg">
-    <div class="title">カスタムヘッドコードを開く</div>
-    <img class="screenshot-image" src="/images/installation-guides/ionos-step-2-open-custom-head-code.png" alt="カスタムヘッドコードを開く" />
+    <div class="title">Custom Head Codeを開く</div>
+    <img class="screenshot-image" src="/images/installation-guides/ionos-step-2-open-custom-head-code.png" alt="Custom Head Codeを開く" />
 </div>
 
-For Ionos we need a **special version** of the FastComments widget code. Code snippets from **other tutorials will not work.**
+Ionosの場合は、FastCommentsウィジェットコードの**特別なバージョン**が必要です。**他のチュートリアルのコードスニペットは動作しません。**
 
-Now copy the following code:
+以下のコードをコピーします:
 
-[inline-code-attrs-start title = 'Ionos の FastComments スニペット'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ionos FastCommentsスニペット'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
 <script>
@@ -53,11 +51,9 @@ Now copy the following code:
 </script>
 [inline-code-end]
 
-...and paste it in as shown:
+...そして、以下のように貼り付けます:
 
 <div class="screenshot white-bg">
     <div class="title">貼り付けて保存</div>
     <img class="screenshot-image" src="/images/installation-guides/ionos-step-2-paste-and-save.png" alt="貼り付けて保存" />
 </div>
-
----

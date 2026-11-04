@@ -1,25 +1,33 @@
-Når e-mails sendt af FastComments bliver afvist (bounce) eller markeret som spam af modtageren, tilføjer e-mailudbyderen den adresse til en blokeringsliste. FastComments synkroniserer disse blokeringslister dagligt, så der ikke sendes yderligere e-mails til adresser, der ikke kan modtage dem.
+Når e-mails sendt af FastComments afvises (bounce) eller markeres som spam af modtageren, tilføjer e-mail-udbyderen adressen til en
+suppressionsliste. FastComments synkroniserer disse suppressionslister dagligt, så der ikke sendes flere e-mails til adresser, der
+ikke kan modtage dem.
 
-Brugere og moderatorer med blokerede e-mailadresser vil ikke modtage nogen e-mailnotifikationer, inklusive svarnotifikationer, mentions, administratoradvarsler og sammendragsemails. Et rødt "Email Suppressed"-mærke vises ved siden af berørte brugere og moderatorer i admin-UI'en.
+Brugere og moderatorer med undertrykte e-mailadresser modtager ingen e-mailnotifikationer, herunder svarnotifikationer,
+omtale-notifikationer, admin-advarsler og digest-e-mails. Et rødt "Email Suppressed"-mærke vises ved siden af berørte brugere
+og moderatorer i admin-brugergrænsefladen.
 
-#### Visning af blokerede e-mails
+#### Visning af undertrykte e-mails
 
-Lejeradministratorer med tilladelsen Manage Data kan se blokerede e-mails på siden
-[Blokerede e-mails](https://fastcomments.com/auth/my-account/suppressed-emails), under Manage Data.
+Tenant-administratorer med Manage Data-tilladelsen kan se undertrykte e-mails på siden
+[Suppressed Emails](https://fastcomments.com/auth/my-account/suppressed-emails) under Manage Data.
 
-Siden viser en tabel over alle blokerede e-mailadresser, der er knyttet til din lejers brugere, moderatorer og kommentatorer. Du kan filtrere efter e-mailadresse ved hjælp af søgefeltet.
+Siden viser en tabel over alle undertrykte e-mailadresser tilknyttet din tenants brugere, moderatorer og kommentatorer.
+Du kan filtrere efter e-mailadresse via søgefeltet.
 
-#### Fjernelse af en blokering
+#### Fjernelse af en suppression
 
-For at fjerne en blokering skal du klikke på **Remove**-knappen ved siden af posten i tabellen. Du føres til en bekræftelsesside, der viser detaljer om blokeringen. Klik på **Confirm Removal** for at fortsætte.
+For at fjerne en suppression skal du klikke på knappen **Remove** ved siden af posten i tabellen. Du føres til en bekræftelsesside,
+der viser detaljerne for suppressionen. Klik på **Confirm Removal** for at fortsætte.
 
-Når en blokering fjernes, kontakter FastComments e-mailudbyderen for at åbne adressen igen og rydder blokeringflaget fra alle tilknyttede bruger- og moderatoroptegnelser.
+Når en suppression fjernes, kontakter FastComments e-mail-udbyderen for at fjerne blokeringen af adressen og nulstiller
+suppressionsflaget fra alle tilknyttede bruger- og moderatorposter.
 
-#### Rate Limits
+#### Hastighedsbegrænsninger
 
-For at forhindre misbrug er fjernelser underlagt begrænsninger:
+For at forhindre misbrug er fjernelser hastighedsbegrænsede:
 
-- Hver e-mailadresse kan kun fjernes fra blokeringen én gang hver 30. dag.
-- Hver lejer kan foretage op til 5 fjernelser pr. kalendermåned.
+- Hver e-mailadresse kan kun frigøres fra suppression én gang hver 30. dag.
+- Hver tenant kan udføre op til 5 fjernelser pr. kalendermåned.
 
-Hvis en blokering genopstår efter fjernelsen, betyder det, at e-mailadressen igen blev afvist (bounce) eller rapporteret som spam. I så fald bør det underliggende leveringsproblem løses, før du forsøger endnu en fjernelse.
+Hvis en suppression viser sig igen efter fjernelse, betyder det, at e-mailadressen er afvist (bounce) eller igen er blevet rapporteret som spam. I så fald
+bør det underliggende leveringsproblem løses, før man forsøger en ny fjernelse.

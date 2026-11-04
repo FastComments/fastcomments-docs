@@ -1,28 +1,26 @@
-Attach a poll to a comment, or set the full state of the poll it already has.
+コメントに投票(ポール)を添付するか、既に添付されている投票の状態全体を設定します。
 
-Options are matched by id: an option sent with the id of an existing option keeps its votes (and takes the
-new label and position), an option sent without an id is added, and existing options left out of the list
-are removed along with the votes cast on them.
+選択肢はidによって照合されます。既存の選択肢と同じidを持つ選択肢を送信した場合は投票数が保持され(新しいラベルと位置が適用され)、idなしで送信された選択肢は追加され、リストに含まれていない既存の選択肢は、それに対して投じられた投票とともに削除されます。
 
-Keeping no existing option ids on a poll that has votes deletes all of them, so that needs replaceVotes=true.
+投票が存在する投票で既存の選択肢のidを1つも保持しない場合、それらはすべて削除されるため、replaceVotes=true が必要です。
 
-## Parameters
+## パラメータ
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| commentId | string | path | Yes |  |
-| replaceVotes | boolean | query | No |  |
+| tenantId | string | query | はい |  |
+| commentId | string | path | はい |  |
+| replaceVotes | boolean | query | いいえ |  |
 
-## Response
+## レスポンス
 
-返却: [`SavePollResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/SavePollResponse.java)
+戻り値: [`SavePollResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/SavePollResponse.java)
 
-## Example
+## 例
 
 [inline-code-attrs-start title = 'putPoll の例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// クラスをインポート:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -35,10 +33,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // API キー認証を設定: api_key
+    // Configure API key authorization: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // 以下の行のコメントを解除して API キーのプレフィックスを設定します（例: "Token"、デフォルトは null）
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);

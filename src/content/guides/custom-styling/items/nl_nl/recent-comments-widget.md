@@ -1,8 +1,8 @@
-De Recent Comments-widget toont een lijst met de meest recente reacties op uw site of voor een specifieke pagina. Deze bevat een koptekst, ronde avatars, voorbeeldweergaven van reacties, aanklikbare datums die doorlinken naar de reactie, en automatische detectie van de donkere modus.
+De Recent Comments Widget toont een lijst met de meest recente reacties op uw hele site of op een specifieke pagina. Het bevat een kop, afgeronde avatars, reactiepreviews, klikbare datums die dieplinken naar de reactie, en automatische detectie van de donkere modus.
 
 ## Basisinstallatie
 
-[inline-code-attrs-start title = 'Installatie van de Recent Comments-widget'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Installatie van de Recent Comments Widget'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/widget-recent-comments-v2.min.js"></script>
 <div id="fastcomments-widget-recent-comments"></div>
@@ -15,16 +15,16 @@ De Recent Comments-widget toont een lijst met de meest recente reacties op uw si
 
 ## Configuratieopties
 
-- **tenantId** (required): Your FastComments tenant ID
-- **urlId** (optional): Filter to a single page. Leave null for all pages
-- **count** (optional): Number of comments to show. Default is `10`
-- **hasDarkBackground** (optional): Force dark mode styling. Auto-detected from the page background if not set
+- **tenantId** (vereist): Uw FastComments tenant ID
+- **urlId** (optioneel): Filteren op één pagina. Laat null staan voor alle pagina's
+- **count** (optioneel): Aantal weer te geven reacties. Standaard is `10`
+- **hasDarkBackground** (optioneel): Forceer donkere modus styling. Wordt automatisch gedetecteerd op basis van de pagina-achtergrond indien niet ingesteld
 
 ## Widgetstructuur
 
-De widget wordt weergegeven met de volgende HTML-structuur:
+De widget wordt gerenderd met de volgende HTML-structuur:
 
-[inline-code-attrs-start title = 'HTML-structuur van de Recent Comments-widget'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'HTML-structuur van de Recent Comments Widget'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <div class="fc-rc2">
     <div class="fc-rc2-heading">Recent Comments</div>
@@ -46,7 +46,7 @@ De widget wordt weergegeven met de volgende HTML-structuur:
 
 ## Standaard CSS-referentie
 
-[inline-code-attrs-start title = 'Standaard-CSS van de Recent Comments-widget'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Standaard CSS van de Recent Comments Widget'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rc2 {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -70,11 +70,11 @@ De widget wordt weergegeven met de volgende HTML-structuur:
 .fc-rc2-page-link:hover { color: #0066cc; text-decoration: underline; }
 [inline-code-end]
 
-## Voorbeelden van aanpassingen
+## Aanpassingsvoorbeelden
 
-### Avatargrootte wijzigen
+### Avatarformaat wijzigen
 
-[inline-code-attrs-start title = 'Aangepaste avatargrootte'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Aangepast avatarformaat'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rc2-avatar {
     width: 40px !important;
@@ -82,16 +82,16 @@ De widget wordt weergegeven met de volgende HTML-structuur:
 }
 [inline-code-end]
 
-### Meer regels van commentaar tonen
+### Meer regels reactietekst tonen
 
-[inline-code-attrs-start title = 'Meer regels commentaar tonen'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Meer reactieregels tonen'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rc2-body {
     -webkit-line-clamp: 5 !important;
 }
 [inline-code-end]
 
-### Containerrand verwijderen
+### De containerrand verwijderen
 
 [inline-code-attrs-start title = 'Containerrand verwijderen'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -100,5 +100,3 @@ De widget wordt weergegeven met de volgende HTML-structuur:
     box-shadow: none !important;
 }
 [inline-code-end]
-
----

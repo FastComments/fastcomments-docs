@@ -37,5 +37,3 @@ try {
     print('Exception when calling PublicApi->getEventLog: $e\n');
 }
 [inline-code-end]
-
----

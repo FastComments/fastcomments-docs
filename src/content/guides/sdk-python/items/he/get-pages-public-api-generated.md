@@ -1,25 +1,25 @@
-List pages for a tenant. Used by the FChat desktop client to populate its room list.
-Requires `enableFChat` to be true on the resolved custom config for each page.
-Pages that require SSO are filtered against the requesting user's group access.
+מפרט עמודים עבור טננט. משמש את לקוח שולחן העבודה FChat לאכלוס רשימת החדרים שלו.
+דורש ש-`enableFChat` יהיה true בתצורה המותאמת שנפתרה עבור כל עמוד.
+עמודים הדורשים SSO מסוננים מול הרשאות הקבוצה של המשתמש המבקש.
 
 ## Parameters
 
 | Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| cursor | string | query | No | סמן עמודה עכורה להפלוגה שהוחזר כ‑`nextCursor` מבקשת קודמת. קשור לאותו `sortBy`. |
-| limit | integer | query | No | 1..200, default 50 |
-| q | string | query | No | מסנן קידומת כותרת לא רגיש לאותיות (אופציונלי). |
-| sortBy | string | query | No | סדר מיון. `updatedAt` (ברירת מחדל, החדש ביותר ראשון), `commentCount` (התגובות הרבות ביותר ראשון), או `title` (אלפביתי). |
-| hasComments | boolean | query | No | אם true, מחזיר רק דפים עם לפחות תגובה אחת. |
+| tenantId | string | path | כן |  |
+| cursor | string | query | לא | סמן עימוד אטום שהוחזר כ-`nextCursor` מבקשה קודמת. קשור לאותו `sortBy`. |
+| limit | integer | query | לא | 1..200, ברירת מחדל 50 |
+| q | string | query | לא | מסנן תחילית כותרת אופציונלי, ללא תלות ברישיות. |
+| sortBy | string | query | לא | סדר מיון. `updatedAt` (ברירת מחדל, החדש ביותר ראשון), `commentCount` (הכי הרבה תגובות ראשון), או `title` (אלפביתי). |
+| hasComments | boolean | query | לא | אם true, מחזיר רק עמודים עם לפחות תגובה אחת. |
 
 ## Response
 
 מחזיר: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_public_pages_response.py)
 
-## דוגמה
+## Example
 
-[inline-code-attrs-start title = 'דוגמה get_pages_public'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל-get_pages_public'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
 from client.api.public_api import GetPagesPublicOptions
@@ -28,23 +28,23 @@ from client.models.pages_sort_by import PagesSortBy
 from client.rest import ApiException
 from pprint import pprint
 
-# הגדרת ה‑host היא אופציונלית ובברירת מחדל https://fastcomments.com
-# ראה configuration.py לקבלת רשימה של כל פרמטרי התצורה הנתמכים.
+# Defining the host is optional and defaults to https://fastcomments.com
+# See configuration.py for a list of all supported configuration parameters.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# הכנס להקשר עם מופע של לקוח ה‑API
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # צור מופע של מחלקת ה‑API
+    # Create an instance of the API class
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    cursor = 'cursor_example' # str | סמן עמודה עכורה להפלוגה שהוחזר כ‑`nextCursor` מבקשת קודמת. קשור לאותו `sortBy`. (אופציונלי)
-    limit = 56 # int | 1..200, default 50 (אופציונלי)
-    q = 'q_example' # str | מסנן קידומת כותרת לא רגיש לאותיות (אופציונלי)
-    sort_by = client.PagesSortBy() # PagesSortBy | סדר מיון. `updatedAt` (ברירת מחדל, החדש ביותר ראשון), `commentCount` (התגובות הרבות ביותר ראשון), או `title` (אלפביתי). (אופציונלי)
-    has_comments = True # bool | אם true, מחזיר רק דפים עם לפחות תגובה אחת. (אופציונלי)
+    cursor = 'cursor_example' # str | סמן עימוד אטום שהוחזר כ-`nextCursor` מבקשה קודמת. קשור לאותו `sortBy`. (optional)
+    limit = 56 # int | 1..200, ברירת מחדל 50 (optional)
+    q = 'q_example' # str | מסנן תחילית כותרת אופציונלי, ללא תלות ברישיות. (optional)
+    sort_by = client.PagesSortBy() # PagesSortBy | סדר מיון. `updatedAt` (ברירת מחדל, החדש ביותר ראשון), `commentCount` (הכי הרבה תגובות ראשון), או `title` (אלפביתי). (optional)
+    has_comments = True # bool | אם true, מחזיר רק עמודים עם לפחות תגובה אחת. (optional)
 
     try:
         api_response = api_instance.get_pages_public(tenant_id, GetPagesPublicOptions(cursor=cursor, limit=limit, q=q, sort_by=sort_by, has_comments=has_comments))

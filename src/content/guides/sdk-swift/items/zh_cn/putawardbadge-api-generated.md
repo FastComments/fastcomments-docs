@@ -38,5 +38,3 @@ ModerationAPI.putAwardBadge(tenantId: tenantId, badgeId: badgeId, options: Moder
     }
 }
 [inline-code-end]
-
----

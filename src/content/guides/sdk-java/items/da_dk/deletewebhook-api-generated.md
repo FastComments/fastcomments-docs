@@ -1,12 +1,11 @@
-Unsubscribes (REST hook unsubscribe). Only subscriptions created through this API can be
-deleted here; dashboard-managed webhooks are edited in the dashboard.
+Afmeldinger (REST hook unsubscribe). Kun abonnementer oprettet via denne API kan slettes her; dashboard-styrede webhooks redigeres i dashboardet.
 
 ## Parametre
 
 | Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
+| tenantId | string | query | Ja |  |
+| id | string | path | Ja |  |
 
 ## Svar
 
@@ -16,7 +15,7 @@ Returnerer: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-ja
 
 [inline-code-attrs-start title = 'deleteWebhook Eksempel'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importer klasser:
+// Importér klasser:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -29,10 +28,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Konfigurer API-nøgle autorisation: api_key
+    // Konfigurér API-nøgleautentificering: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Fjern kommentaren på følgende linje for at sætte et præfiks for API-nøglen, f.eks. "Token" (defaults to null)
+    // Fjern kommentering af følgende linje for at sætte et præfiks for API-nøglen, f.eks. "Token" (standard er null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -43,14 +42,12 @@ public class Example {
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling DefaultApi#deleteWebhook");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
+      System.err.println("Exception ved kald af DefaultApi#deleteWebhook");
+      System.err.println("Statuskode: " + e.getCode());
+      System.err.println("Årsag: " + e.getResponseBody());
+      System.err.println("Svarheadere: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }
 }
 [inline-code-end]
-
----

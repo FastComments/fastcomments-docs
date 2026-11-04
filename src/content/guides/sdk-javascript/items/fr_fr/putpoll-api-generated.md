@@ -36,5 +36,3 @@ const replaceVotes: boolean = true;
 
 const result: SavePollResponse = await putPoll(tenantId, commentId, pollInput, replaceVotes);
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 ## 參數
 
 | Name | Type | Location | Required | Description |
@@ -48,5 +47,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->add_page: %s\n" % e)
 [inline-code-end]
-
----

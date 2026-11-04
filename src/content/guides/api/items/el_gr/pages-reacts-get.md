@@ -1,13 +1,13 @@
 [api-resource-header-start name = 'Page Reacts'; route = 'GET /api/v1/pages/reacts'; creditsCost = 1; api-resource-header-end]
 
-Επιστρέφει τον αριθμό για κάθε αντίδραση σε μια σελίδα, και προαιρετικά τους χρήστες που αντέδρασαν, ως μία καταχώρηση ανά αντίδραση με το αναγνωριστικό της αντίδρασης, πιο πρόσφατες πρώτες. Αυτή είναι η έκδοση διακομιστή του [`GET /page-reacts/v2/:tenantId`](/guide-api.html#page-reacts-get).
+Επιστρέφει τον αριθμό για κάθε αντίδραση σε μια σελίδα, και προαιρετικά τους χρήστες που αντέδρασαν, ως μία καταχώρηση ανά αντίδραση με το reaction id της, με τις πιο πρόσφατες πρώτες. Αυτή είναι η server-side έκδοση του [`GET /page-reacts/v2/:tenantId`](/guide-api.html#page-reacts-get).
 
-`includeUserInfo` ελέγχει ποιοι χρήστες επιστρέφονται:
+Το `includeUserInfo` ελέγχει ποιες χρήστες επιστρέφονται:
 
-- `public` παραλείπει τους χρήστες που έχουν κάνει την δραστηριότητα του προφίλ τους ιδιωτική.
-- `include-private` τους περιλαμβάνει. Χρησιμοποιήστε το μόνο όταν η λίστα δεν εμφανίζεται στο κοινό.
+- Το `public` αφήνει εκτός τους χρήστες που έχουν κάνει ιδιωτική τη δραστηριότητα του προφίλ τους.
+- Το `include-private` τους συμπεριλαμβάνει. Χρησιμοποιήστε το μόνο όταν η λίστα δεν εμφανίζεται στο κοινό.
 
-Οι ανώνυμοι χρήστες δεν περιλαμβάνονται ποτέ, και αναζητούνται έως 100 αντιδράσεις. Σελίδες που δεν υπάρχουν επιστρέφουν κανένα `counts` και μια κενή λίστα `users`.
+Οι ανώνυμοι χρήστες δεν συμπεριλαμβάνονται ποτέ, και αναζητούνται έως 100 αντιδράσεις. Σελίδες που δεν υπάρχουν δεν επιστρέφουν `counts` και επιστρέφουν κενή λίστα `users`.
 
 [inline-code-attrs-start title = 'Παράδειγμα cURL για Page Reacts'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -21,27 +21,27 @@ interface PageReactsRequestQueryParams {
     tenantId: string
     API_KEY: string
     urlId: string
-    /** Omit to only get the counts. **/
+    /** Παραλείψτε το για να λάβετε μόνο τα counts. **/
     includeUserInfo?: 'public' | 'include-private'
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Δομή Απόκρισης Page Reacts'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Δομή Απάντησης Page Reacts'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface PageReactsResponse {
     status: 'success' | 'failed'
-    /** Included on failure. **/
+    /** Συμπεριλαμβάνεται σε αποτυχία. **/
     code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-url-id'
-    /** Included on failure. **/
+    /** Συμπεριλαμβάνεται σε αποτυχία. **/
     reason?: string
-    /** Count per reaction id, for example {"heart": 12, "laugh": 3}. Not set when the page has no reactions. **/
+    /** Πλήθος ανά reaction id, για παράδειγμα {"heart": 12, "laugh": 3}. Δεν ορίζεται όταν η σελίδα δεν έχει αντιδράσεις. **/
     counts?: Record<string, number>
-    /** One entry per react, most recent first. Only set when includeUserInfo is passed. **/
+    /** Μία καταχώρηση ανά αντίδραση, με τις πιο πρόσφατες πρώτες. Ορίζεται μόνο όταν περνάει το includeUserInfo. **/
     users?: PageCustomReactUser[]
 }
 
 interface PageCustomReactUser {
-    /** The reaction id, for example "heart". **/
+    /** Το reaction id, για παράδειγμα "heart". **/
     reactId: string
     userId: string
     username: string
@@ -50,6 +50,6 @@ interface PageCustomReactUser {
 }
 [inline-code-end]
 
-#### Helpful Tip
+#### Χρήσιμη Συμβουλή
 
-Θυμηθείτε να κωδικοποιείτε URI τις τιμές όπως το `urlId`.
+Θυμηθείτε να κάνετε URI Encode τιμές όπως το `urlId`.

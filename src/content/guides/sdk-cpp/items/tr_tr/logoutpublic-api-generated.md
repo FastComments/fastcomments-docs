@@ -18,5 +18,3 @@ api->logoutPublic()
         }
     });
 [inline-code-end]
-
----

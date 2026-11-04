@@ -5,5 +5,3 @@
 ## 저장소
 
 [GitHub에서 보기](https://github.com/FastComments/fastcomments-solidjs)
-
----

@@ -69,5 +69,3 @@ export class AppModule { }
 Виджет использует обнаружение изменений, поэтому изменение любых свойств объекта конфигурации приведёт к его перезагрузке.
 
 Конфигурацию, которую поддерживает Angular-компонент, можно найти <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">здесь</a>.
-
----

@@ -1,4 +1,3 @@
----
 Bir moderatör bir yorumu incelendi olarak işaretlediğinde tetiklenir.
 
 ### Ajanın aldığı bağlam
@@ -20,5 +19,3 @@ Moderasyon sayfasında, yorum bileşeninde veya API aracılığıyla gerçekleş
 
 - "Reviewed" is one of the moderation queue states tracked separately from "approved" and "spam". A comment can be approved-and-reviewed, approved-but-not-reviewed, etc. See [Onayların Nasıl Çalıştığı](/guide-moderation.html#moderation-approvals) in the moderation guide.
 - Bu tetikleyici, çok sayıda moderatöre sahip tenants'larda yüksek sıklıkta tetiklenir. Abone olurken seçici davranın ve buna göre bütçe ayırın.
-
----

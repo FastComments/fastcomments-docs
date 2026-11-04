@@ -17,5 +17,3 @@
 ### 対応するトリガー
 
 See [Trigger: Comment Unlocked](#trigger-comment-unlock) for the mirror trigger.
-
----

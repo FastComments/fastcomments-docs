@@ -139,5 +139,3 @@ Je kunt Image Chat op meerdere afbeeldingen initialiseren. Elke afbeelding krijg
     });
 </script>
 [inline-code-end]
-
----

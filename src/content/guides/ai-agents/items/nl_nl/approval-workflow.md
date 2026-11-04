@@ -67,5 +67,3 @@ Goedkeuringen weigeren het in de wachtrij plaatsen van elke toolnaam die geen er
 
 - Ze vertragen niet de andere tool-aanroepen van de agent. De run van de agent kan meerdere tools aanroepen, en alleen de gegateerde worden in de wachtrij geplaatst - de rest wordt normaal uitgevoerd.
 - Ze draaien de run van de agent niet terug als een mens weigert. Het niet-gegateerde deel van de run is al voltooid.
-
----

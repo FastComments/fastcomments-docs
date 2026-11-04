@@ -1,4 +1,3 @@
----
 Liste sider for en lejer. Bruges af FChat skrivebordsklienten til at udfylde sin rumliste.
 Kræver, at `enableFChat` er sand på den løste brugerdefinerede konfiguration for hver side.
 Sider, der kræver SSO, filtreres i forhold til den anmodende brugers gruppeadgang.
@@ -23,5 +22,3 @@ if response.isSome:
   let pages = response.get()
   echo pages
 [inline-code-end]
-
----

@@ -55,5 +55,3 @@ try {
     echo 'Exception when calling ModerationApi->postBanUserFromComment: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

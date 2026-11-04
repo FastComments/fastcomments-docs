@@ -100,5 +100,3 @@ interface QuestionResultsAggregationResponse {
 - `forceRecalculate` 指定时，费用始终为 `10`，而不是通常的 `2`。
 - 如果缓存到期且数据被重新计算，在未指定 `forceRecalculate` 的情况下费用仍然是固定的 `2`。缓存到期时间取决于所聚合的数据集大小（可在 30 秒到 5 分钟之间变化）。
 - 这是为了鼓励使用缓存。
-
----

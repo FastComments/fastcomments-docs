@@ -1,22 +1,22 @@
-Queues a batch job that moves comments, pages and related records from one urlId or domain to another.  
-"urlId" migrations only match the exact urlId. "domain" migrations find/replace the value inside every urlId and url.  
-Poll GET /api/v1/batch-jobs/{batchJobId}: once it is done it carries per-migration results and an undoId.
+Σειροθέτησε μια εργασία δέσμης που μεταφέρει σχόλια, σελίδες και σχετικά αρχεία από ένα urlId ή domain σε άλλο.
+Οι μεταφορές "urlId" ταιριάζουν μόνο το ακριβές urlId. Οι μεταφορές "domain" κάνουν εύρεση/αντικατάσταση της τιμής μέσα σε κάθε urlId και url.
+Κάντε poll στο GET /api/v1/batch-jobs/{batchJobId}: όταν ολοκληρωθεί, περιέχει αποτελέσματα ανά μεταφορά και ένα undoId.
 
 ## Παράμετροι
 
-| Name | Type | Location | Required | Description |
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
+| tenantId | string | query | Ναι |  |
 
 ## Απάντηση
 
-Returns: [`QueuePageMigrationJobAPIResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/QueuePageMigrationJobAPIResponse.java)
+Επιστρέφει: [`QueuePageMigrationJobAPIResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/QueuePageMigrationJobAPIResponse.java)
 
 ## Παράδειγμα
 
 [inline-code-attrs-start title = 'Παράδειγμα migratePages'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Εισαγωγή κλάσεων:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -29,7 +29,7 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Διαμόρφωση εξουσιοδότησης κλειδιού API: api_key
+    // Configure API key authorization: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)

@@ -54,5 +54,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->delete_sso_user: %s\n" % e)
 [inline-code-end]
-
----

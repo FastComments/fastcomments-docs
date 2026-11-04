@@ -25,5 +25,3 @@ Para WordPress, esta función se puede habilitar instalando un complemento como 
     })();
 </script>
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Име | Тип | Местоположение | Задължително | Описание |
@@ -42,5 +41,3 @@ try {
     echo 'Exception when calling PublicApi->getCommentText: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

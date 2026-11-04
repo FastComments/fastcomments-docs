@@ -5,5 +5,3 @@ Osadź widgety komentowania na żywo, czatu i recenzji w swojej aplikacji React 
 ## Repozytorium
 
 [Zobacz na GitHub](https://github.com/FastComments/fastcomments-react-native)
-
----

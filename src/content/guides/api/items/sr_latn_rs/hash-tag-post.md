@@ -32,5 +32,3 @@ interface HashTagPostResponse {
     hashTag?: HashTag; // Vraćamo kompletan kreirani HashTag pri uspehu.
 }
 [inline-code-end]
-
----

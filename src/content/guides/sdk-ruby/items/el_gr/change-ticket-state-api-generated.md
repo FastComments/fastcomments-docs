@@ -1,4 +1,3 @@
----
 ## Παράμετροι
 
 | Name | Type | Location | Required | Description |
@@ -39,5 +38,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->change_ticket_state: #{e}"
 end
 [inline-code-end]
-
----

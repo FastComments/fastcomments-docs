@@ -1,4 +1,3 @@
----
 ## 매개변수
 
 | 이름 | 유형 | 위치 | 필수 | 설명 |
@@ -48,5 +47,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->delete_tenant: %s\n" % e)
 [inline-code-end]
-
----

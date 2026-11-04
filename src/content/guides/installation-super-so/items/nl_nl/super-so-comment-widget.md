@@ -82,5 +82,3 @@ Kopieer de volgende code en plak deze in de `Body`-sectie van uw Super.so site-i
 - Elke pagina krijgt een eigen unieke discussiedraad op basis van het URL-pad
 - Zorg ervoor dat u `"demo"` vervangt door uw echte tenant-ID uit uw FastComments-account
 - De widget handelt automatisch de dynamische paginalading van Super.so af
-
----

@@ -8,5 +8,3 @@ Se você encontrar algum problema ou tiver dúvidas sobre a Biblioteca Astro, po
 ## Contribuindo
 
 Contribuições são bem-vindas! Por favor, visite o [repositório no GitHub](https://github.com/FastComments/fastcomments-astro) para as diretrizes de contribuição.
-
----

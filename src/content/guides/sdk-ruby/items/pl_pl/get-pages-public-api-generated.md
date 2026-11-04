@@ -1,4 +1,3 @@
----
 Zwraca listę stron dla najemcy. Używane przez desktopowego klienta FChat do wypełnienia jego listy pokoi.
 Wymaga, aby `enableFChat` było ustawione na true w ostatecznej niestandardowej konfiguracji dla każdej strony.
 Strony wymagające SSO są filtrowane pod kątem dostępu grupowego użytkownika wysyłającego żądanie.
@@ -43,5 +42,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_pages_public: #{e}"
 end
 [inline-code-end]
-
----

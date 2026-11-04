@@ -1,22 +1,22 @@
-This endpoint allows you to fetch user badges based on various criteria.
+Este endpoint permite obtener insignias de usuario según varios criterios.
 
-Example Request:
+Ejemplo de solicitud:
 
-[inline-code-attrs-start title = 'Listar insignias de usuario - Ejemplo GET'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo GET de insignias de usuario'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 curl -X GET "https://fastcomments.com/api/v1/user-badges?tenantId=demo&API_KEY=DEMO_API_SECRET"
 [inline-code-end]
 
-You can add various query parameters to filter the results:
+Puede añadir varios parámetros de consulta para filtrar los resultados:
 
-- `userId` - Obtener insignias de un usuario específico
+- `userId` - Obtener las insignias de un usuario específico
 - `badgeId` - Obtener instancias de una insignia específica
-- `type` - Filtrar por tipo de insignia (0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, etc. See UserBadge structure for full list)
-- `displayedOnComments` - Filtrar según si la insignia se muestra en los comentarios (true/false)
-- `limit` - Número máximo de insignias a devolver (predeterminado 30, máximo 200)
+- `type` - Filtrar por tipo de insignia (0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, etc. Consulte la estructura UserBadge para ver la lista completa)
+- `displayedOnComments` - Filtrar por si la insignia se muestra en los comentarios (true/false)
+- `limit` - Número máximo de insignias a devolver (por defecto 30, máximo 200)
 - `skip` - Número de insignias a omitir (para paginación)
 
-Example Response:
+Ejemplo de respuesta:
 
 [inline-code-attrs-start title = 'Respuesta'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -60,9 +60,9 @@ Example Response:
 }
 [inline-code-end]
 
-Possible Error Responses:
+Posibles respuestas de error:
 
-[inline-code-attrs-start title = 'Error: Falta Tenant ID'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Error: Falta el ID de tenant'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",
@@ -71,7 +71,7 @@ Possible Error Responses:
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Error: Límite inválido'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Error: Límite no válido'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",

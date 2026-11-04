@@ -1,4 +1,3 @@
----
 Aktivieren oder Deaktivieren von Benachrichtigungen für eine Seite. Wenn Benutzer eine Seite abonniert haben, werden Benachrichtigungen
 für neue Root-Kommentare erstellt, und auch
 
@@ -42,5 +41,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->update_user_notification_page_subscription_status: #{e}"
 end
 [inline-code-end]
-
----

@@ -20,5 +20,3 @@ Devuelve: [`APIEmptySuccessResponse`](https://github.com/FastComments/fastcommen
   console.log(result);
 })();
 [inline-code-end]
-
----

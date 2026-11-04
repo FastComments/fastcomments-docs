@@ -1,4 +1,3 @@
----
 ## Параметры
 
 | Имя | Тип | Местоположение | Обязательно | Описание |
@@ -42,5 +41,3 @@ try {
     echo 'Exception when calling PublicApi->getTranslations: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

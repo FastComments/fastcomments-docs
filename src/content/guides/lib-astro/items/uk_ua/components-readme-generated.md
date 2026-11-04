@@ -1,4 +1,3 @@
----
 | Компонент | Опис |
 | --- | --- |
 | `FastComments` | Віджет коментарів з відповідями, голосуванням та іншими можливостями |
@@ -16,4 +15,3 @@
 import { FastComments, FastCommentsLiveChat } from 'fastcomments-astro';
 ---
 ```
----

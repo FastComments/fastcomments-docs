@@ -1,12 +1,12 @@
 ### Przegląd
 
-FastComments Collab Chat rozszerza standardowy widżet komentarzy FastComments, dzięki czemu dziedziczy wszystkie opcje konfiguracyjne z podstawowego widżetu, jednocześnie dodając kilka specyficznych dla adnotacji tekstowych.
+FastComments Collab Chat rozszerza standardowy widget komentarzy FastComments, więc dziedziczy wszystkie opcje konfiguracji z bazowego widgetu, dodając jednocześnie kilka opcji specyficznych dla adnotacji tekstowych.
 
 ### Wymagana konfiguracja
 
 #### tenantId
 
-Wymagane jest Twoje Tenant ID FastComments. Możesz je znaleźć w swoim [panelu FastComments](https://fastcomments.com/auth/my-account/api-secret).
+Wymagany jest Twój FastComments Tenant ID. Możesz go znaleźć w swoim [panelu FastComments](https://fastcomments.com/auth/my-account/api-secret).
 
 [inline-code-attrs-start title = "Przykład konfiguracji"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -19,7 +19,7 @@ FastCommentsCollabChat(element, {
 
 #### urlId
 
-Domyślnie Collab Chat generuje unikalny identyfikator dla każdej konwersacji na podstawie URL strony, ścieżki DOM do elementu i wybranego zakresu tekstu. Możesz to nadpisać własnym `urlId`.
+Domyślnie Collab Chat generuje unikalny identyfikator dla każdej rozmowy na podstawie adresu URL strony, ścieżki DOM do elementu oraz wybranego zakresu tekstu. Możesz to nadpisać własnym `urlId`.
 
 [inline-code-attrs-start title = "Przykład konfiguracji"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -29,21 +29,21 @@ FastCommentsCollabChat(element, {
 });
 [inline-code-end]
 
-Jest to przydatne, gdy struktura URL może się zmieniać, ale chcesz zachować te same rozmowy, lub gdy chcesz udostępniać adnotacje na wielu stronach.
+Jest to przydatne, gdy struktura Twoich adresów URL może się zmienić, ale chcesz zachować te same rozmowy, lub gdy chcesz udostępniać adnotacje na wielu stronach.
 
 #### topBarTarget
 
-Kontroluje wyświetlanie paska górnego, który pokazuje liczbę użytkowników i liczbę dyskusji. Ustaw na `null`, aby całkowicie wyłączyć pasek górny, lub podaj element DOM, aby renderować go w określonym miejscu.
+Kontroluje wyświetlanie górnego paska, który pokazuje liczbę użytkowników i liczbę dyskusji. Ustaw na `null`, aby całkowicie wyłączyć górny pasek, lub podaj element DOM, aby wyrenderować go w określonym miejscu.
 
 [inline-code-attrs-start title = "Przykład konfiguracji"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Wyłącz pasek górny
+// Disable top bar
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
     topBarTarget: null
 });
 
-// Renderuj pasek górny w niestandardowej lokalizacji
+// Render top bar in custom location
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
     topBarTarget: document.getElementById('custom-header')
@@ -52,7 +52,7 @@ FastCommentsCollabChat(element, {
 
 #### hasDarkBackground
 
-Włącz stylizację trybu ciemnego, gdy Twoja strona ma ciemne tło. To wykrywanie jest automatyczne, ale możesz chcieć je nadpisać.
+Włącza stylizację trybu ciemnego, gdy Twoja strona ma ciemne tło. Wykrywanie jest automatyczne, ale czasem warto je nadpisać.
 
 [inline-code-attrs-start title = "Przykład konfiguracji"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -64,7 +64,7 @@ FastCommentsCollabChat(element, {
 
 #### commentCountUpdated
 
-Funkcja zwrotna (callback), która jest wywoływana zawsze, gdy zmienia się liczba komentarzy. Przydatne do aktualizowania elementów UI, takich jak odznaki lub tytuły stron.
+Funkcja zwrotna wywoływana za każdym razem, gdy zmienia się liczba komentarzy. Jest to przydatne do aktualizacji elementów interfejsu, takich jak plakietki czy tytuły stron.
 
 [inline-code-attrs-start title = "Przykład konfiguracji"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -77,25 +77,25 @@ FastCommentsCollabChat(element, {
 });
 [inline-code-end]
 
-### Dziedziczone opcje konfiguracji
+### Odziedziczone opcje konfiguracji
 
-Ponieważ Collab Chat rozszerza standardowy widżet komentarzy, możesz użyć dowolnej opcji konfiguracyjnej z podstawowego widżetu FastComments. Oto kilka często używanych opcji:
+Ponieważ Collab Chat rozszerza standardowy widget komentarzy, możesz użyć dowolnej opcji konfiguracji z bazowego widgetu FastComments. Oto niektóre z najczęściej używanych opcji:
 
 #### locale
 
-Ustaw język interfejsu widżetu. FastComments obsługuje dziesiątki języków.
+Ustawia język interfejsu widgetu. FastComments obsługuje dziesiątki języków.
 
 [inline-code-attrs-start title = "Przykład konfiguracji"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
-    locale: 'es'  // hiszpański
+    locale: 'es'  // Spanish
 });
 [inline-code-end]
 
 #### readonly
 
-Ustaw wszystkie konwersacje jako tylko do odczytu. Użytkownicy mogą przeglądać istniejące adnotacje, ale nie mogą tworzyć nowych ani odpowiadać.
+Ustawia wszystkie rozmowy jako tylko do odczytu. Użytkownicy mogą przeglądać istniejące adnotacje, ale nie mogą tworzyć nowych ani odpowiadać.
 
 [inline-code-attrs-start title = "Przykład konfiguracji"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -105,16 +105,16 @@ FastCommentsCollabChat(element, {
 });
 [inline-code-end]
 
-#### sso and simpleSSO
+#### sso i simpleSSO
 
-Zintegruj z systemem uwierzytelniania za pomocą Single Sign-On.
+Integracja z Twoim systemem uwierzytelniania przy użyciu Single Sign-On.
 
 [inline-code-attrs-start title = "Przykład konfiguracji"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
     sso: {
-        // Konfiguracja SSO
+        // SSO configuration
     }
 });
 [inline-code-end]
@@ -123,13 +123,13 @@ Zobacz dokumentację SSO, aby uzyskać pełne informacje o opcjach uwierzytelnia
 
 #### maxReplyDepth
 
-Kontroluj, jak głęboko mogą sięgać odpowiedzi. Domyślnie Collab Chat ustawia to na 0, co oznacza, że wszystkie komentarze są płaskie (bez zagnieżdżonych odpowiedzi). Możesz to zmienić, jeśli chcesz rozmów w formie wątków.
+Kontroluje, na ile poziomów w głąb mogą schodzić odpowiedzi. Domyślnie Collab Chat ustawia tę wartość na 0, co oznacza, że wszystkie komentarze są płaskie (bez zagnieżdżonych odpowiedzi). Możesz to zmienić, jeśli chcesz mieć wątkowe rozmowy.
 
 [inline-code-attrs-start title = "Przykład konfiguracji"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
-    maxReplyDepth: 3  // Pozwól na 3 poziomy zagnieżdżenia
+    maxReplyDepth: 3  // Allow 3 levels of nesting
 });
 [inline-code-end]
 
@@ -137,11 +137,11 @@ FastCommentsCollabChat(element, {
 
 Te opcje są ustawiane automatycznie przez Collab Chat i nie powinny być nadpisywane:
 
-Wartość `productId` jest automatycznie ustawiana na `3` dla Collab Chat. Rozszerzenie `floating-chat` jest automatycznie ładowane, aby zapewnić funkcjonalność okna czatu. Widżet automatycznie wykrywa urządzenia mobilne (ekrany poniżej 768px szerokości) i odpowiednio dostosowuje UI.
+`productId` jest automatycznie ustawiane na `3` dla Collab Chat. Rozszerzenie `floating-chat` jest automatycznie ładowane, aby zapewnić funkcjonalność okna czatu. Widget automatycznie wykrywa urządzenia mobilne (ekrany o szerokości poniżej 768px) i odpowiednio dostosowuje interfejs.
 
-### Pełny przykład
+### Kompletny przykład
 
-Poniżej przykład pokazujący kilka opcji konfiguracyjnych razem:
+Oto przykład pokazujący kilka opcji konfiguracji razem:
 
 [inline-code-attrs-start title = "Przykład konfiguracji"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -155,10 +155,10 @@ FastCommentsCollabChat(document.getElementById('article'), {
         document.title = count > 0 ? `(${count}) My Article` : 'My Article';
     },
     sso: {
-        // Twoja konfiguracja SSO
+        // Your SSO config
     },
     maxReplyDepth: 1
 });
 [inline-code-end]
 
-Pełną listę wszystkich dostępnych opcji konfiguracyjnych dziedziczonych z podstawowego widżetu znajdziesz w głównej dokumentacji konfiguracji FastComments.
+Aby uzyskać pełną listę wszystkich dostępnych opcji konfiguracji odziedziczonych z bazowego widgetu, zobacz główną dokumentację konfiguracji FastComments.

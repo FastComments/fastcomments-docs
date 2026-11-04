@@ -1,21 +1,21 @@
-List pages for a tenant. Used by the FChat desktop client to populate its room list.  
-Requires `enableFChat` to be true on the resolved custom config for each page.  
-Pages that require SSO are filtered against the requesting user's group access.
+列出租户的页面。由 FChat 桌面客户端使用以填充其房间列表。
+要求每个页面的已解析自定义配置中 `enableFChat` 为 true。
+需要 SSO 的页面会根据请求用户的组访问权限进行过滤。
 
 ## 参数
 
 | 名称 | 类型 | 必填 | 描述 |
-|------|------|------|------|
-| tenant_id | String | Yes |  |
-| cursor | String | No |  |
-| limit | i32 | No |  |
-| q | String | No |  |
-| sort_by | models::PagesSortBy | No |  |
-| has_comments | bool | No |  |
+|------|------|----------|-------------|
+| tenant_id | String | 是 |  |
+| cursor | String | 否 |  |
+| limit | i32 | 否 |  |
+| q | String | 否 |  |
+| sort_by | models::PagesSortBy | 否 |  |
+| has_comments | bool | 否 |  |
 
 ## 响应
 
-Returns: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_public_pages_response.rs)
+返回:[`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_public_pages_response.rs)
 
 ## 示例
 

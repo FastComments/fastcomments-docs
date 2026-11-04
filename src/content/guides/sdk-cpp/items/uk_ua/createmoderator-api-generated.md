@@ -20,5 +20,3 @@ moderatorBody.notes = boost::optional<utility::string_t>(utility::conversions::t
 api->createModerator(utility::conversions::to_string_t("my-tenant-123"), moderatorBody)
     .then([](std::shared_ptr<CreateModeratorResponse> resp) {});
 [inline-code-end]
-
----

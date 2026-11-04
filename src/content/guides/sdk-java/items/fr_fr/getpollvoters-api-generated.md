@@ -1,4 +1,3 @@
----
 Qui a voté pour quelle option. Les sondages anonymes ne répondent jamais, les sondages réservés aux administrateurs ne répondent que pour un administrateur ou un modérateur.
 
 ## Parameters
@@ -57,5 +56,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

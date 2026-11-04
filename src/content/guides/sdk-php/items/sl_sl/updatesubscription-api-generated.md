@@ -47,5 +47,3 @@ try {
     echo 'Exception when calling DefaultApi->updateSubscription: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

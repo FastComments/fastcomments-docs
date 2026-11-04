@@ -1,15 +1,16 @@
-Past commenters on the page who are NOT currently online. Sorted by displayName.  
-Χρησιμοποιήστε το αυτό μετά την εξάντληση του /users/online για να αποδώσετε μια ενότητα "Members".  
-Σελιδοποίηση με κέρσορα στο commenterName: ο διακομιστής διασχίζει το μερικό {tenantId, urlId, commenterName} ευρετήριο από το afterName προς μπροστά μέσω $gt, χωρίς κόστος $skip.
+Προηγούμενοι σχολιαστές της σελίδας που ΔΕΝ είναι επί του παρόντος συνδεδεμένοι. Ταξινομημένοι κατά displayName.
+Χρησιμοποιήστε το αφού εξαντλήσετε το /users/online για να αποδώσετε μια ενότητα "Members".
+Σελιδοποίηση με δείκτη (cursor) στο commenterName: ο διακομιστής διασχίζει το μερικό ευρετήριο {tenantId, urlId, commenterName}
+ξεκινώντας από το afterName προς τα εμπρός μέσω $gt, χωρίς κόστος $skip.
 
 ## Παράμετροι
 
-| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
+| Όνομα | Τύπος | Απαραίτητο | Περιγραφή |
 |------|------|----------|-------------|
-| tenant_id | String | Yes |  |
-| url_id | String | Yes |  |
-| after_name | String | No |  |
-| after_user_id | String | No |  |
+| tenant_id | String | Ναι |  |
+| url_id | String | Ναι |  |
+| after_name | String | Όχι |  |
+| after_user_id | String | Όχι |  |
 
 ## Απάντηση
 

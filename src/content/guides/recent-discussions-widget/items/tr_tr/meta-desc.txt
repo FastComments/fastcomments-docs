@@ -1,3 +1,1 @@
----
 En aktif son yorum dizilerini sitenizin herhangi bir yerinde Recent Discussions widget'ı ile gösterin, böylece okuyucular kaçırdıkları konuşmayı bulabilir.
----

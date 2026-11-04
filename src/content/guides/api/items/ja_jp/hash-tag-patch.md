@@ -31,5 +31,3 @@ interface HashTagPatchResponse {
     hashTag?: HashTag; // 成功時には更新されたハッシュタグ全体を返します。
 }
 [inline-code-end]
-
----

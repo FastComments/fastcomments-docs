@@ -1,11 +1,11 @@
-Subscribes a URL to a comment event (REST hook subscribe). Subscribing the same URL to the same
-event and domain again returns the existing subscription. Deliveries are HMAC signed, see the
-webhooks guide; the legacy `token` header is never sent to API subscriptions.
+Пријављује URL на догађај коментара (REST hook subscribe). Поновна пријава истог URL-а на исти
+догађај и домен враћа постојећу претплату. Доставе су потписане HMAC-ом, погледајте водич за
+webhooks; застарели `token` header се никада не шаље API претплатама.
 
 ## Параметри
 
-| Име | Тип | Локација | Обавезно | Опис |
-|------|------|----------|----------|------|
+| Назив | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 
 ## Одговор
@@ -14,7 +14,7 @@ webhooks guide; the legacy `token` header is never sent to API subscriptions.
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример createWebhook'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createWebhook пример'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Import classes:
 import com.fastcomments.invoker.ApiClient;

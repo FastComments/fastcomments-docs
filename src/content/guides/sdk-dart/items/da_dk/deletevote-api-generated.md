@@ -32,5 +32,3 @@ try {
     print('Undtagelse ved kald af DefaultApi->deleteVote: $e\n');
 }
 [inline-code-end]
-
----

@@ -1,9 +1,8 @@
----
-次の手順では、以下の既成ウィジェットコードをコピーする必要があります。
+次のステップでは、以下の事前作成済みウィジェットコードをコピーする必要があります。
 
-FastComments.com にログインしている限り、以下のコードスニペットには既にアカウント情報が含まれています。コピーしましょう：
+FastComments.com にログインしていれば、以下のコードスニペットにはすでにあなたのアカウント情報が含まれています。コピーしましょう:
 
-[inline-code-attrs-start title = 'Super.so FastComments コラボチャットのコード'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Super.so FastComments Collab Chat コード'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-collab-chat.min.js"></script>
 <script>
@@ -24,17 +23,17 @@ FastComments.com にログインしている限り、以下のコードスニペ
                 return setTimeout(load, 100);
             }
 
-            // 既存のインスタンスをクリーンアップ
+            // Clean up existing instance
             if (target.fastCommentsInstance) {
                 target.fastCommentsInstance.destroy();
             }
 
-            // 既存のトップバーが存在する場合はクリーンアップ
+            // Clean up existing top bar if it exists
             if (currentTopBar && currentTopBar.parentNode) {
                 currentTopBar.parentNode.removeChild(currentTopBar);
             }
 
-            // 新しいトップバーを作成
+            // Create new top bar
             const topBarTarget = document.createElement('div');
             target.parentNode.insertBefore(topBarTarget, target);
             topBarTarget.style.maxWidth = 'var(--layout-max-width)';
@@ -42,36 +41,36 @@ FastComments.com にログインしている限り、以下のコードスニペ
             currentTopBar = topBarTarget;
             currentWidget = target;
 
-            // FastComments Collab Chat を初期化
+            // Initialize FastComments Collab Chat
             target.fastCommentsInstance = FastCommentsCollabChat(target, {
                 tenantId: "demo",
                 topBarTarget: topBarTarget
             });
 
-            // 現在のパス名を更新
+            // Update current pathname
             currentPathname = window.location.pathname;
         }
 
-        // 初期ロード
+        // Initial load
         load();
 
-        // 変更を500msごとにチェック
+        // Check every 500ms for changes
         setInterval(() => {
-            // パス名が変更された場合はリロード
+            // Reload if pathname changed
             if (window.location.pathname !== currentPathname) {
                 console.log('Pathname changed, reloading...');
                 load();
                 return;
             }
 
-            // ウィジェットが削除された場合はリロード
+            // Reload if widget was removed
             if (currentWidget && !currentWidget.parentNode) {
                 console.log('Widget removed, reloading...');
                 load();
                 return;
             }
 
-            // コンテナの内容が空になった場合はリロード
+            // Reload if container was emptied
             const target = document.querySelector('.super-content');
             if (target && target.innerHTML.length < 100) {
                 console.log('Container emptied, reloading...');
@@ -82,17 +81,15 @@ FastComments.com にログインしている限り、以下のコードスニペ
 </script>
 [inline-code-end]
 
-Now paste in the `Body` area:
+次に `Body` エリアに貼り付けてください:
 
 <div class="screenshot white-bg">
     <div class="title">貼り付けたコード</div>
     <img class="screenshot-image" src="/images/installation-guides/super-so-step-3-pasted-code.png" alt="貼り付けたコード" />
 </div>
 
-If you see a "this is a demo message" after pasting the code:
+コードを貼り付けた後に「this is a demo message」というメッセージが表示される場合は:
 
 - fastcomments.com のアカウントにログインしていることを確認してください。
-- サードパーティのクッキーが有効になっていることを確認してください。
-- このページをリフレッシュし、コードスニペットを再度コピーしてください。`tenantId` があなたのテナント識別子で埋められているはずです。
-
----
+- サードパーティの Cookie が有効になっていることを確認してください。
+- その後、このページを更新してコードスニペットを再度コピーしてください。`tenantId` にあなたのテナントの識別子が設定されているはずです。

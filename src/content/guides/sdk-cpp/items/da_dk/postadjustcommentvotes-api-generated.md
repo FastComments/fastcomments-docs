@@ -30,5 +30,3 @@ api->postAdjustCommentVotes(tenantId, commentId, params, opts).then([](pplx::tas
     }
 });
 [inline-code-end]
-
----

@@ -33,6 +33,3 @@ interface SSOUserPatchResponse {
     user?: SSOUser; // 성공 시 업데이트된 전체 사용자를 반환합니다.
 }
 [inline-code-end]
-
-
----

@@ -1,10 +1,10 @@
-### The Main Widget Component
+### Die Haupt-Widget-Komponente
 
-Die Komponente FastCommentsCommentWidget enthält das Live-Kommentar-Widget von FastComments.
+Die FastCommentsCommentWidget-Komponente enthält das Live-FastComments-Kommentar-Widget.
 
-Ersetzen Sie "demo" unten durch Ihre "tenantId" - verfügbar [hier](https://fastcomments.com/auth/my-account/api) im FastComments-Adminbereich.
+Ersetzen Sie unten "demo" durch Ihre "tenantId" – verfügbar [hier](https://fastcomments.com/auth/my-account/api) im FastComments-Adminbereich.
 
-Das Widget unterstützt viele Optionen - siehe FastCommentsCommentWidgetConfig in src/index.tsx.
+Das Widget unterstützt viele Optionen – siehe FastCommentsCommentWidgetConfig in src/index.tsx.
 
 ```tsx
 import React, { Component } from 'react'
@@ -18,22 +18,22 @@ class Example extends Component {
 }
 ```
 
-### Updating The Current Page (For SPAs)
-Um die Seite/den Artikel zu aktualisieren, an den der Kommentar-Thread gebunden ist, müssen Sie die Konfigurationsparameter "urlId" und "url" aktualisieren.
-Siehe das Beispiel und die Erklärung [hier](https://github.com/FastComments/fastcomments-react/blob/master/examples/example-paginated/src/PaginatedApp.tsx).
+### Aktualisieren der aktuellen Seite (für SPAs)
+Um die Seite/den Artikel zu aktualisieren, mit dem der Kommentar-Thread verknüpft ist, müssen Sie die Konfigurationsparameter "urlId" und "url" aktualisieren.
+Sehen Sie sich das Beispiel und die Erklärung [hier](https://github.com/FastComments/fastcomments-react/blob/master/examples/example-paginated/src/PaginatedApp.tsx) an.
 
-### Account Region (ATTENTION: EU Customers)
+### Konto-Region (ACHTUNG: EU-Kunden)
 
-Wenn Sie in der EU sind, sollten Sie den Client-Widgets mitteilen, in welcher Region Sie sich befinden. Siehe [examples/example-eu](https://github.com/FastComments/fastcomments-react/blob/master/examples/example-eu/src/App.tsx);
+Wenn Sie in der EU sind, müssen Sie den Client-Widgets mitteilen, in welcher Region Sie sich befinden. Siehe [examples/example-eu](https://github.com/FastComments/fastcomments-react/blob/master/examples/example-eu/src/App.tsx);
 Andernfalls müssen Sie `region` nicht definieren.
 
-### The Comment Count Widget
+### Das Kommentaranzahl-Widget
 
-Die Komponente FastCommentsCommentCountWidget enthält das Live-Widget zur Anzeige der Kommentaranzahl von FastComments.
+Die FastCommentsCommentCountWidget-Komponente enthält das Live-FastComments-Kommentaranzahl-Widget.
 
-Ersetzen Sie "demo" unten durch Ihre "tenantId" - verfügbar [hier](https://fastcomments.com/auth/my-account/api) im FastComments-Adminbereich.
+Ersetzen Sie unten "demo" durch Ihre "tenantId" – verfügbar [hier](https://fastcomments.com/auth/my-account/api) im FastComments-Adminbereich.
 
-Siehe FastCommentsCommentCountConfig in src/index.tsx für die unterstützten Konfigurationsoptionen.
+Die unterstützten Konfigurationsoptionen finden Sie in FastCommentsCommentCountConfig in src/index.tsx.
 
 ```tsx
 import React, { Component } from 'react'
@@ -49,6 +49,6 @@ class Example extends Component {
 
 ### Native
 
-Für eine vollständig native Implementierung von FastComments siehe [fastcomments-react-native-sdk](https://github.com/FastComments/fastcomments-react-native-sdk).
+Eine vollständig native Implementierung von FastComments finden Sie unter [fastcomments-react-native-sdk](https://github.com/FastComments/fastcomments-react-native-sdk).
 
-Für einen React Native-Wrapper dieser Bibliothek, der eine Webview verwendet, siehe [fastcomments-react-native](https://github.com/FastComments/fastcomments-react-native).
+Einen React-Native-Wrapper dieser Bibliothek, der ein Webview verwendet, finden Sie unter [fastcomments-react-native](https://github.com/FastComments/fastcomments-react-native).

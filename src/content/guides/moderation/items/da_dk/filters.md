@@ -19,5 +19,3 @@ Så, Godkendt betyder, at kommentaren kan ses af andre brugere på dit site.
 Gennemgået er blot et værktøj for administratorer og moderatorer og har ingen indflydelse på synligheden af en kommentar.
 
 Flaget 'Gennemgået' gør det lettere at finde kommentarer, som du har gennemgået.
-
----

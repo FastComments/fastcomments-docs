@@ -22,5 +22,3 @@ Então, qual é o certo para você?
 
 - Seus grupos têm páginas específicas.
 - Por exemplo, usuários no grupo "Páginas Públicas" nunca devem ver artigos "Top Secret".
-
----

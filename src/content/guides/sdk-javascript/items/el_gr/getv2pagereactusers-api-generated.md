@@ -25,5 +25,3 @@ async function demoGetUsers() {
   const responseWithoutSso: GetV2PageReactUsersResponse = await getV2PageReactUsers(tenantId, urlId, userId);
 }
 [inline-code-end]
-
----

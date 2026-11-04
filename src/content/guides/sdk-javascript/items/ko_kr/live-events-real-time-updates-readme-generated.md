@@ -1,8 +1,8 @@
-댓글, 투표 및 기타 활동에 대한 실시간 업데이트를 받기 위해 라이브 이벤트를 구독하세요.
+실시간 이벤트를 구독하여 댓글, 투표 및 기타 활동에 대한 실시간 업데이트를 받아보세요.
 
 ### 페이지 수준 이벤트
 
-특정 페이지의 라이브 이벤트(댓글, 투표 등)를 수신합니다:
+특정 페이지에서 실시간 이벤트(댓글, 투표 등)를 수신하려면:
 
 ```typescript
 import { subscribeToChanges, LiveEvent, LiveEventType } from 'fastcomments-sdk/browser';
@@ -12,23 +12,23 @@ const config = {
   urlId: 'page-url-id',
 };
 
-// 특정 페이지의 라이브 이벤트를 구독합니다
+// 페이지에 대한 실시간 이벤트 구독
 const subscription = subscribeToChanges(
   config,
   'your-tenant-id', // tenantIdWS
   'page-url-id',    // urlIdWS  
-  'user-session-id', // userIdWS (getComments 응답에서 가져옵니다)
+  'user-session-id', // userIdWS (getComments 응답에서 가져오세요)
   (event: LiveEvent) => {
     console.log('Live event received:', event);
     
     switch (event.type) {
       case LiveEventType.new_comment:
         console.log('New comment:', event.comment);
-        // 새 댓글로 UI를 업데이트합니다
+        // 새 댓글로 UI를 업데이트하세요
         break;
       case LiveEventType.new_vote:
         console.log('New vote:', event.vote);
-        // UI의 투표 수를 업데이트합니다
+        // UI에서 투표 수를 업데이트하세요
         break;
       case LiveEventType.updated_comment:
         console.log('Comment updated:', event.comment);
@@ -50,16 +50,16 @@ subscription.close();
 
 ### 사용자 이벤트 구독
 
-사용자별 이벤트(알림, 멘션 등)를 수신합니다:
+사용자별 이벤트(알림, 멘션 등)를 수신하려면:
 
 ```typescript
 import { subscribeToUserFeed, LiveEvent, LiveEventType } from 'fastcomments-sdk/browser';
 
 const userConfig = {
-  userIdWS: 'user-session-id', // getComments 응답에서 가져옵니다
+  userIdWS: 'user-session-id', // getComments 응답에서 가져오세요
 };
 
-// 사용자의 개인 피드를 구독합니다
+// 사용자의 개인 피드 구독
 const userSubscription = subscribeToUserFeed(
   userConfig,
   (event: LiveEvent) => {
@@ -68,7 +68,7 @@ const userSubscription = subscribeToUserFeed(
     switch (event.type) {
       case LiveEventType.notification:
         console.log('New notification:', event.notification);
-        // UI에 알림을 표시합니다
+        // UI에 알림을 표시하세요
         break;
       case LiveEventType.notification_update:
         console.log('Notification updated:', event.notification);
@@ -90,7 +90,7 @@ userSubscription.close();
 
 ### userIdWS 가져오기
 
-The `userIdWS` parameter is required for live events and can be obtained from API responses:
+`userIdWS` 매개변수는 실시간 이벤트에 필요하며 API 응답에서 얻을 수 있습니다:
 
 ```typescript
 const response = await sdk.publicApi.getCommentsPublic({
@@ -98,11 +98,11 @@ const response = await sdk.publicApi.getCommentsPublic({
   urlId: 'page-id'
 });
 
-// 응답에서 userIdWS를 추출합니다
+// 응답에서 userIdWS 추출
 const userIdWS = response.data?.userSessionInfo?.userIdWS;
 
 if (userIdWS) {
-  // 이제 라이브 이벤트를 구독할 수 있습니다
+  // 이제 실시간 이벤트를 구독할 수 있습니다
   const subscription = subscribeToChanges(config, tenantIdWS, urlIdWS, userIdWS, handleEvent);
 }
 ```

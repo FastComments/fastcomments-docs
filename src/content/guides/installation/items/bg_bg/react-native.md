@@ -47,5 +47,3 @@ import { FastCommentsCommentWidget } from 'fastcomments-react-native';
 [inline-code-end]
 
 Можете да намерите конфигурацията, която компонентът за React Native поддържа <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">тук</a>.
-
----

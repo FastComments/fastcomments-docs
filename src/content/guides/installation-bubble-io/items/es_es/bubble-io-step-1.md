@@ -1,4 +1,3 @@
----
 Primero, navega a la página/diseño donde quieres añadir FastComments. En el editor de Bubble, arrastra y suelta un elemento **HTML** desde la barra lateral Visual Elements en tu página.
 
 <div class="screenshot white-bg">
@@ -7,5 +6,3 @@ Primero, navega a la página/diseño donde quieres añadir FastComments. En el e
 </div>
 
 El elemento HTML nos permitirá incrustar el widget de FastComments directamente en tu aplicación de Bubble.
-
----

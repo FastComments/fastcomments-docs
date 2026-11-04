@@ -44,5 +44,3 @@ Možemo pričekati početno učitavanje stranice i ručno ponovno prikazati kome
     }
 })();
 [inline-code-end]
-
----

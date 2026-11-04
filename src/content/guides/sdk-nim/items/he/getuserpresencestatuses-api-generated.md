@@ -18,5 +18,3 @@ let (presenceOpt, httpResp) = client.getUserPresenceStatuses(tenantId = "my-tena
 if presenceOpt.isSome:
   let presence = presenceOpt.get()
 [inline-code-end]
-
----

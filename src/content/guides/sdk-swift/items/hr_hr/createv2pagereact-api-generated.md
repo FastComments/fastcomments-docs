@@ -36,5 +36,3 @@ PublicAPI.createV2PageReact(tenantId: tenantId, urlId: urlId, id: id, options: P
     }
 }
 [inline-code-end]
-
----

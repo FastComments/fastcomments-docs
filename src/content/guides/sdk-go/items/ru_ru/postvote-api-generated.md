@@ -43,5 +43,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Ответ от `ModerationAPI.PostVote`: %v\n", resp)
 }
 [inline-code-end]
-
----

@@ -56,5 +56,3 @@ Puedes indicar al chat colaborativo que solo añada funcionalidad colaborativa a
 [inline-code-end]
 
 Entonces el elemento párrafo dentro del `<div>` tendrá el chat colaborativo habilitado, y nada más en la página. Si no pones ningún contenido en el `<div>`, entonces habilitará el chat colaborativo en todo el cuerpo de la publicación.
-
----

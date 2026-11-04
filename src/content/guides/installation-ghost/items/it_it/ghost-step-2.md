@@ -23,5 +23,3 @@ L'output risultante sarà simile a questo (puoi ignorare gli avvisi):
 </div>
 
 Questo imposterà le dipendenze del tema per i comandi che eseguiremo in seguito. Inoltre, l'esportazione dipende dall'installazione delle dipendenze del tema; altrimenti la reimportazione non funzionerà correttamente.
-
----

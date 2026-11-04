@@ -1,4 +1,3 @@
----
 ## Параметры
 
 | Имя | Тип | Расположение | Обязательно | Описание |
@@ -30,5 +29,3 @@ DefaultAPI.createEmailTemplate(tenantId: tenantId, createEmailTemplateBody: crea
     }
 }
 [inline-code-end]
-
----

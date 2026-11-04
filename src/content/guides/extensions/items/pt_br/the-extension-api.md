@@ -1,6 +1,6 @@
-Interacting with the `Extension` is simple, as we simply define references to functions we want invoked.
+Interagir com a `Extension` é simples, pois apenas definimos referências para as funções que queremos que sejam invocadas.
 
-To build off the example earlier, let's say we want to add HTML to the top of each comment:
+Para continuar o exemplo anterior, digamos que queremos adicionar HTML ao topo de cada comentário:
 
 [inline-code-attrs-start title = 'Uma Extensão Simples - Continuação'; type = 'javascript'; inline-code-attrs-end]
 [inline-code-start]
@@ -15,13 +15,13 @@ To build off the example earlier, let's say we want to add HTML to the top of ea
 })();
 [inline-code-end]
 
-Whenever you return HTML like this, it will get merged into the UI via a dom-diffing algorithm.
+Sempre que você retornar HTML como este, ele será mesclado na UI por meio de um algoritmo de dom-diffing.
 
-#### Manually triggering the re-render of a comment
+#### Acionando manualmente a re-renderização de um comentário
 
-We can wait for the initial page load and manually re-render a comment by invoking `reRenderComment`:
+Podemos aguardar o carregamento inicial da página e re-renderizar manualmente um comentário invocando `reRenderComment`:
 
-[inline-code-attrs-start title = 'Re-renderizando um Comentário'; type = 'javascript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Re-Renderizando um Comentário'; type = 'javascript'; inline-code-attrs-end]
 [inline-code-start]
 (function () {
     const extension = FastCommentsUI.extensions.find((extension) => {
@@ -40,9 +40,7 @@ We can wait for the initial page load and manually re-render a comment by invoki
             extension.reRenderComment(extension.commentsById[Object.keys(extension.commentsById)[0]], function renderDone() {
                 console.log('Comment re-render done.');
             });
-        }, 2000); // timeout não é necessário, apenas um exemplo.
+        }, 2000); // o timeout não é obrigatório, é apenas um exemplo.
     }
 })();
 [inline-code-end]
-
----

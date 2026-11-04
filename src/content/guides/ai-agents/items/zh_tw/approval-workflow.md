@@ -1,69 +1,69 @@
-一個 **審核** 是一個排入佇列的工具呼叫，平台在執行前需要由人員批准或拒絕。
+**核准**是指需要人工核准或拒絕後，平台才會執行的排隊工具呼叫。
 
-### Configuring approvals
+### 設定核准
 
-在代理編輯表單上，**Approvals** 區段列出代理被允許調用的每個工具（允許清單），並讓您勾選那些必須由人工審查的工具。未勾選的工具會立即執行。勾選的工具會被排入佇列。
+在代理程式編輯表單中，**核准**區段會列出代理程式允許呼叫的每個工具（允許清單），並讓您勾選必須由人工審核的工具。未勾選的工具會立即執行。已勾選的工具則會排隊等待。
 
-被拒絕的工具會被*直接拒絕*，不會排入佇列——審核僅適用於其他情況下被允許的工具。
+不允許的工具會被*直接拒絕*，而不是排隊——核准僅適用於原本就允許的工具。
 
-### What happens when a gated action fires
+### 當受限制的動作觸發時會發生什麼
 
-1. 代理挑選一個工具呼叫（例如 `ban_user`）以及參數、理由和信心水準。
-2. 平台不會執行該呼叫，而是將一個處於 `PENDING` 狀態的審核排入佇列，包含工具名稱、參數、理由、信心水準，以及描述觸發來源的上下文快照。
-3. 通知會發送給審核者（參見 [Approval Notifications](#approval-notifications)）。
-4. 代理的執行完成並被記錄——在 [Run Detail View](#run-detail-view) 中該動作會顯示為 **等待審核**。
+1. 代理程式選擇一個工具呼叫（例如 `ban_user`），包含參數、理由與信心度。
+2. 平台不會直接執行，而是將核准排入 `PENDING` 狀態的佇列，其中包含工具名稱、參數、理由、信心度，以及描述觸發來源的情境快照。
+3. 通知會發送給審核者（請參閱[核准通知](#approval-notifications)）。
+4. 代理程式的執行會完成並被記錄——該動作會在[執行詳細檢視](#run-detail-view)中顯示為**等待核准**。
 
-### Reviewing approvals
+### 審核核准
 
-位於 [my-account/ai-agent-approvals](https://fastcomments.com/auth/my-account/ai-agent-approvals) 的審核收件匣會列出待處理、已批准、已拒絕和執行失敗的審核。對於每一項：
+位於 [my-account/ai-agent-approvals](https://fastcomments.com/auth/my-account/ai-agent-approvals) 的核准收件匣會列出待處理、已核准、已拒絕以及執行失敗的核准。每個項目包含：
 
-- **Tool name and arguments** - 代理欲執行的內容（精確）。
-- **Agent reasoning** - 代理提供的理由。
-- **Confidence** - 代理自評的信心水準，介於 0.0 到 1.0。
-- **Context snapshot** - 該動作所針對的評論、頁面與使用者。
+- **工具名稱與參數** - 代理程式想要執行的確切內容。
+- **代理程式推理** - 代理程式提供的理由。
+- **信心度** - 代理程式自行評估的信心度，範圍為 0.0 到 1.0。
+- **情境快照** - 該動作針對的留言、頁面與使用者。
 
-兩個按鈕：**Approve** 與 **Reject**。Approve 會實際執行該工具；Reject 則會捨棄該請求。
+有兩個按鈕：**核准**與**拒絕**。核准會實際執行該工具；拒絕則會捨棄。
 
-### Approval status states
+### 核准狀態
 
-一個審核會經過這些狀態：
+核准會經歷以下狀態：
 
-| State | Meaning |
+| 狀態 | 意義 |
 |---|---|
 | `PENDING` | 等待人工決定。 |
-| `APPROVED` | 已被人工批准且動作已執行。 |
-| `REJECTED` | 已被人工拒絕。該動作未執行。 |
-| `EXECUTION_FAILED` | 已被人工批准但執行失敗（例如目標評論已被刪除）。 |
-| `EXECUTING` | 短暫狀態：人工點選 Approve 後動作正在執行。用於序列化同時的批准點擊，確保有實際副作用的工具不會被執行兩次。 |
+| `APPROVED` | 已由人工核准且動作已執行。 |
+| `REJECTED` | 已由人工拒絕。動作未執行。 |
+| `EXECUTION_FAILED` | 已由人工核准但動作執行失敗（例如，目標留言已被刪除）。 |
+| `EXECUTING` | 暫時性狀態：人工已點擊核准且動作正在執行。用於序列化並發的核准點擊，確保具有實際副作用的工具不會執行兩次。 |
 
-當兩名審核者同時點選 Approve 時，`EXECUTING` 狀態很重要——一人會成功，另一人會看到該審核已經改變狀態。
+當兩位審核者同時點擊核准時，`EXECUTING` 狀態就很重要——其中一方會成功，另一方則會看到核准已經移動。
 
-### What gets cleaned up
+### 什麼會被清理
 
-待處理的審核會維持待處理狀態直到有人決定。它們會在建立後 **90 天** 自動過期。任何其他狀態的審核也會為了儲存維護而在 90 天後清除。
+待處理的核准會保持待處理狀態，直到被決定為止。它們會在建立後 **90 天**自動過期。處於其他任何狀態的核准也會在 90 天後被清除，以維持儲存空間的整潔。
 
-審核的「決定者（decided by）」/「決定時間（decided at）」/「執行時間（executed at）」/「執行結果（execution result）」欄位會隨著審核狀態變動而被填入——所有這些都可在收件匣的詳細檢視中看到。
+核准的「決定者」/「決定時間」/「執行時間」/「執行結果」欄位會隨著核准狀態的變化而填入——全部都可以在收件匣詳細檢視中查看。
 
-### Webhook integration
+### Webhook 整合
 
-當審核狀態變動時，會觸發兩個 webhook 事件：
+當核准狀態變動時，會觸發兩個 webhook 事件：
 
-- **`approval.requested`** - 在插入為 `PENDING` 時觸發。
-- **`approval.decided`** - 在轉為 `APPROVED`、`REJECTED` 或 `EXECUTION_FAILED` 時觸發。
+- **`approval.requested`** - 在插入 PENDING 時。
+- **`approval.decided`** - 在轉換為 APPROVED、REJECTED 或 EXECUTION_FAILED 時。
 
-兩者的簽名方式與其他 webhook 相同。請參閱 [Webhook Events](#webhook-events) 與 [Webhook Payloads](#webhook-payloads)。
+兩者都像其他所有 webhook 一樣經過簽署。請參閱[Webhook 事件](#webhook-events)與[Webhook 負載](#webhook-payloads)。
 
-### Hardening: known-tool gate
+### 強化：已知工具閘門
 
-審核機制會拒絕將任何非已識別代理工具名稱排入佇列。這是一道深度防禦檢查：即便未來某個程式路徑將由 LLM 產生的工具名稱傳入審核流程，那個字串也永遠無法成為排隊的審核項目。已知工具名稱的集合與 [Tools Reference](#tools-overview) 中列出的集合相同。
+核准機制會拒絕將任何未被識別為代理程式工具的工具名稱加入佇列。這是一項縱深防禦檢查：即使未來的程式碼路徑將 LLM 產生的工具名稱傳入核准流程，該字串也永遠不會成為排隊的核准。已知工具名稱的集合與[工具參考](#tools-overview)中列出的集合相同。
 
-### Common gating patterns
+### 常見的限制模式
 
-- **Brand-new moderation agent** - 對 `ban_user`、`mark_comment_spam`、`mark_comment_approved`、`send_email` 設置閘控。觀察收件匣幾週，之後可從低錯誤率的工具移除閘控。
-- **Long-term moderation agent** - 保持 `ban_user` 以及任何不可逆的操作（`deleteAllUsersComments`, `banIP`）永久受閘控。
-- **EU region** - 不論您勾選與否，依據第 17 條，`ban_user` 在 Article 17 下會被強制啟用。請參閱 [EU DSA Article 17 Compliance](#eu-dsa-compliance)。
+- **全新的審核代理程式** - 限制 `ban_user`、`mark_comment_spam`、`mark_comment_approved`、`send_email`。觀察收件匣幾週，然後取消對低錯誤率工具的限制。
+- **長期運作的審核代理程式** - 永遠保持 `ban_user` 以及任何不可逆轉的動作（`deleteAllUsersComments`、`banIP`）受到限制。
+- **EU 地區** - 無論您勾選什麼，`ban_user` 都會依據第 17 條強制鎖定。請參閱[EU DSA 第 17 條合規](#eu-dsa-compliance)。
 
-### What approvals do **not** do
+### 核准**不**會做的事
 
-- 它們不會延遲代理的其他工具呼叫。代理的一次執行可能呼叫多個工具，只有受閘控的那些會排入佇列——其餘的會照常執行。
-- 若人工拒絕，它們不會回滾代理的執行。未受閘控的執行部分已經完成。
+- 它們不會延遲代理程式的其他工具呼叫。代理程式的執行可以呼叫多個工具，只有受限制的工具會排隊——其餘的照常執行。
+- 如果人工拒絕，它們不會復原代理程式的執行。執行中未受限制的部分已經完成。

@@ -1,4 +1,3 @@
----
 在 `settings.py` 中配置您的租户：
 
 ```python
@@ -16,4 +15,3 @@ FASTCOMMENTS = {
 
 {% fastcomments url_id="my-page" %}
 ```
----

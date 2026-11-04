@@ -8,5 +8,3 @@
 ## Принос
 
 Приноси са добре дошли! Моля, посетете [GitHub хранилището](https://github.com/FastComments/fastcomments-php-sso) за указания за приноси.
-
----

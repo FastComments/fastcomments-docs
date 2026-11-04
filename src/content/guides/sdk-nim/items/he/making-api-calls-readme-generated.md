@@ -1,8 +1,8 @@
-All API methods in this SDK return tuples of `(Option[ResponseType], Response)`. The first element contains the parsed response if successful, and the second element is the raw HTTP response.
+כל שיטות ה-API ב-SDK הזה מחזירות tuples של `(Option[ResponseType], Response)`. האלמנט הראשון מכיל את התגובה המפורסרת אם הפעולה הצליחה, והאלמנט השני הוא תגובת ה-HTTP הגולמית.
 
-Required parameters and the request body are passed positionally. The remaining optional parameters are collected into a single `Api<Operation>Options` object, which is the last argument. Operations with no optional parameters take no options object.
+פרמטרים נדרשים וגוף הבקשה מועברים לפי מיקום (positionally). שאר הפרמטרים האופציונליים נאספים לאובייקט יחיד `Api<Operation>Options`, שהוא הארגומנט האחרון. פעולות ללא פרמטרים אופציונליים לא מקבלות אובייקט אפשרויות.
 
-### דוגמה: הבאת תגובות
+### דוגמה: שליפת תגובות
 
 ```nim
 import httpclient

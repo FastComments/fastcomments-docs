@@ -56,5 +56,3 @@ app.delete("/", receive);
 Responda rapidamente. FastComments tenta novamente em caso de resposta não‑2xx, e um endpoint que continua falhando é eventualmente desativado automaticamente, portanto faça o trabalho real após responder, em vez de inline.
 
 Torne esse trabalho idempotente com base no ID do comentário. Uma nova tentativa é assinada novamente com um timestamp novo, e o mesmo ID de comentário chega novamente em edição e exclusão, portanto não há nada estável para desduplicar.
-
----

@@ -69,5 +69,3 @@ Pour commencer, nous passons un objet de configuration pour le tenant de démons
 Le widget utilise la détection des modifications, donc la modification de n'importe quelle propriété de l'objet de configuration provoquera son rechargement.
 
 Vous pouvez trouver la configuration prise en charge par le composant Angular <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">ici</a>.
-
----

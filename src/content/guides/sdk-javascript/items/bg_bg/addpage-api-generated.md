@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Име | Тип | Задължително | Описание |
@@ -29,5 +28,3 @@ const pageData: CreateAPIPageData = {
 
 const response: AddPageAPIResponse = await addPage(tenantId, pageData);
 [inline-code-end]
-
----

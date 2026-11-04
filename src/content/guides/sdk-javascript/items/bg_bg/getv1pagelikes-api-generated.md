@@ -23,5 +23,3 @@
   const likesWithoutSSO: GetV1PageLikes = await getV1PageLikes(tenantId, urlId);
 })();
 [inline-code-end]
-
----

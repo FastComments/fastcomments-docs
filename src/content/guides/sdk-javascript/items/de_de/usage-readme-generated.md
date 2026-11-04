@@ -81,4 +81,3 @@ const config = new Configuration({
 const defaultApi = new DefaultApi(config);
 const publicApi = new PublicApi(config);
 ```
----

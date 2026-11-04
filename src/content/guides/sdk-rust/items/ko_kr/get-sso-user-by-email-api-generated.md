@@ -1,4 +1,3 @@
----
 ## 매개변수
 
 | 이름 | 타입 | 필수 | 설명 |
@@ -25,5 +24,3 @@ async fn run_example(configuration: &configuration::Configuration) -> Result<(),
     Ok(())
 }
 [inline-code-end]
-
----

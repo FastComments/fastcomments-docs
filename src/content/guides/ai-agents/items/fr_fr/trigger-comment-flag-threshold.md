@@ -27,5 +27,3 @@ Si le seuil est 3 et que trois utilisateurs signalent le commentaire, l'agent se
 ### Recommandations d'association
 
 Abonnez-vous aux **deux** `COMMENT_ADD` et `COMMENT_FLAG_THRESHOLD` si vous voulez un agent de modération qui attrape les cas évidents dès la première vue et réévalue les cas limites une fois les signalements accumulés. Les deux événements se déclenchent indépendamment - l'agent s'exécutera deux fois si les deux sont abonnés et se déclenchent, mais la deuxième exécution verra l'état désormais signalé.
-
----

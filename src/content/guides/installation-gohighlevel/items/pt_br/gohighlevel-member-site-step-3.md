@@ -1,26 +1,25 @@
----
-Now we're going to generate your custom FastComments code. Use the wizard below to configure how you want FastComments to work on your GoHighLevel site:
+Agora vamos gerar o seu código personalizado do FastComments. Use o assistente abaixo para configurar como você quer que o FastComments funcione no seu site GoHighLevel:
 
 [snippet id="gohighlevel-wizard"]
 
-### Different Comment Box Types
+### Diferentes Tipos de Caixa de Comentários
 
-You can configure the `TYPE = 'commenting'` line to switch the product used (for example you can change it to `live` for streaming chat or `collab` for collab chat).
+Você pode configurar a linha `TYPE = 'commenting'` para alternar o produto usado (por exemplo, você pode alterá-la para `live` para chat de transmissão ao vivo ou `collab` para chat colaborativo).
 
-### Putting The Comment Box Where You Want
+### Colocando a Caixa de Comentários Onde Você Quiser
 
-Let's say you want to put comment boxes on specific parts of the page and not the default locations.
-Change this line:
+Digamos que você queira colocar caixas de comentários em partes específicas da página e não nos locais padrão.
+Altere esta linha:
 
-    const TARGET_ELEMENT_ID = ''; // definir para usar o modo de div alvo
+    const TARGET_ELEMENT_ID = ''; // set to use target div mode
 
-To:
+Para:
 
-    const TARGET_ELEMENT_ID = 'fc_box'; // definir para usar o modo de div alvo
+    const TARGET_ELEMENT_ID = 'fc_box'; // set to use target div mode
 
-Then in the GHL editor, click the "code" button and add where you want the comments to go:
+Em seguida, no editor do GHL, clique no botão "code" e adicione onde você quer que os comentários apareçam:
 
-[inline-code-attrs-start title = 'Div do FastComments no GoHighLevel'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Div do FastComments para GoHighLevel'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <div
   id="fc_box"
@@ -29,27 +28,27 @@ Then in the GHL editor, click the "code" button and add where you want the comme
 ></div>
 [inline-code-end]
 
-### Different Comment Box Type Per-Page
+### Tipo Diferente de Caixa de Comentários Por Página
 
-Let's say you want users to highlight and discuss pieces of text, or use the streaming chat UI instead.
+Digamos que você queira que os usuários destaquem e discutam trechos de texto, ou usem a interface de chat de transmissão ao vivo.
 
-First follow the steps above in "Putting The Comment Box Where You Want".
+Primeiro, siga os passos acima em "Colocando a Caixa de Comentários Onde Você Quiser".
 
-Note in that small snippet there's `type="commenting"`.
+Note que nesse pequeno trecho há `type="commenting"`.
 
-If you want to enable collab chat for example change type to `type="collab"`.
+Se você quiser habilitar o chat colaborativo, por exemplo, altere o type para `type="collab"`.
 
-### Only Show On Specific Pages
+### Mostrar Apenas Em Páginas Específicas
 
-If you don't set `TARGET_ELEMENT_ID`, you can instead configure the `VALID_PATTERNS` variable, to set which URL routes the comments should show. By default, it will show
-on pages that contain `/post` in the URL.
+Se você não definir `TARGET_ELEMENT_ID`, você pode, em vez disso, configurar a variável `VALID_PATTERNS`, para definir em quais rotas de URL os comentários devem aparecer. Por padrão, eles serão exibidos
+em páginas que contenham `/post` na URL.
 
-### Configuring Collab Chat
+### Configurando o Chat Colaborativo
 
-You can tell collab chat to only add collaborative functionality around HTML inside a specific area, for example, let's say you
-add the footer code above and then add this div in the post/page content to enable collab chat:
+Você pode instruir o chat colaborativo a adicionar funcionalidades colaborativas apenas em torno do HTML dentro de uma área específica. Por exemplo, digamos que você
+adicione o código de rodapé acima e, em seguida, adicione esta div no conteúdo da postagem/página para habilitar o chat colaborativo:
 
-[inline-code-attrs-start title = 'Collab Chat com Conteúdo Especificado'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Chat Colaborativo Com Conteúdo Especificado'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <div
   id="fc_box"
@@ -58,7 +57,5 @@ add the footer code above and then add this div in the post/page content to enab
 ><p>This content will have collab chat!</p></div>
 [inline-code-end]
 
-Then the paragraph element inside the `<div>` will have collab chat enabled, and nothing else on the page. If you don't
-put any content in the `<div>` then it will enable collab chat on the entire post body.
-
----
+Então o elemento de parágrafo dentro da `<div>` terá o chat colaborativo habilitado, e nada mais na página. Se você não
+colocar nenhum conteúdo na `<div>`, o chat colaborativo será habilitado em todo o corpo da postagem.

@@ -1,4 +1,3 @@
----
 ## パラメータ
 
 | Name | Type | Location | Required | Description |
@@ -27,5 +26,3 @@ try {
     print('Exception when calling ModerationApi->getManualBadges: $e\n');
 }
 [inline-code-end]
-
----

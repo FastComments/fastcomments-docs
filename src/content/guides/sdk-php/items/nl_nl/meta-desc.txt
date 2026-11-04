@@ -1,3 +1,1 @@
----
 Roep de FastComments API aan vanuit PHP. Installeer met Composer, en maak vervolgens, haal op en modereer opmerkingen, met request-modellen en SSO-hulpmiddelen inbegrepen.
----

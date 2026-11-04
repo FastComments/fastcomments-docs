@@ -32,5 +32,3 @@ const detailedCount: ModerationAPICountCommentsResponse = await getCount(
   "sso_token_abc"
 );
 [inline-code-end]
-
----

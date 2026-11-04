@@ -1,4 +1,3 @@
----
 此端點允許您根據各種條件取得使用者徽章進度紀錄。
 
 範例請求：
@@ -75,4 +74,3 @@ curl -X GET "https://fastcomments.com/api/v1/user-badge-progress?tenantId=demo&A
   "reason": "The limit (query param: limit) is too large (> 200)."
 }
 [inline-code-end]
----

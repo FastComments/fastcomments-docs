@@ -1,4 +1,3 @@
----
 现在我们来添加小部件代码。
 
 复制下面的代码。请确保您已登录到 [fastcomments.com](https://fastcomments.com)  
@@ -47,5 +46,3 @@
 </div>
 
 ……现在预览并保存！
-
----

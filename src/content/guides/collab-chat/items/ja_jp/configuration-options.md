@@ -1,14 +1,14 @@
 ### 概要
 
-FastComments Collab Chat は標準の FastComments コメントウィジェットを拡張しており、ベースウィジェットのすべての設定オプションを継承しつつ、テキスト注釈に特有のいくつかのオプションを追加します。
+FastComments Collab Chat は標準の FastComments コメントウィジェットを拡張したものであり、ベースウィジェットのすべての設定オプションを継承しつつ、テキストアノテーションに特化したいくつかのオプションを追加しています。
 
 ### 必須の設定
 
 #### tenantId
 
-FastComments の Tenant ID が必要です。これは [FastComments ダッシュボード](https://fastcomments.com/auth/my-account/api-secret) で確認できます。
+FastComments のテナント ID(tenantId)が必要です。[FastComments ダッシュボード](https://fastcomments.com/auth/my-account/api-secret) から確認できます。
 
-[inline-code-attrs-start title = "構成例"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = "設定例"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(element, {
     tenantId: 'demo'
@@ -19,9 +19,9 @@ FastCommentsCollabChat(element, {
 
 #### urlId
 
-デフォルトでは、Collab Chat はページの URL、要素への DOM パス、および選択されたテキスト範囲に基づいて各会話の一意の識別子を生成します。カスタムの `urlId` でこれを上書きできます。
+デフォルトでは、Collab Chat はページ URL、要素への DOM パス、選択されたテキスト範囲に基づいて、会話ごとに一意の識別子を生成します。カスタムの `urlId` を指定してこれを上書きできます。
 
-[inline-code-attrs-start title = "構成例"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = "設定例"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
@@ -29,13 +29,13 @@ FastCommentsCollabChat(element, {
 });
 [inline-code-end]
 
-これは、URL 構造が変わる可能性があるが会話を維持したい場合、または注釈を複数ページで共有したい場合に便利です。
+これは、URL 構造が変更される可能性があるが同じ会話を維持したい場合や、複数のページ間でアノテーションを共有したい場合に便利です。
 
 #### topBarTarget
 
-ユーザー数とディスカッション数を表示するトップバーの表示を制御します。トップバーを完全に無効にするには `null` を設定するか、特定の場所にレンダリングするための DOM 要素を指定します。
+ユーザー数とディスカッション数を表示するトップバーの表示を制御します。`null` を設定するとトップバーを完全に無効化でき、DOM 要素を指定すると特定の場所にレンダリングできます。
 
-[inline-code-attrs-start title = "構成例"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = "設定例"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // トップバーを無効化
 FastCommentsCollabChat(element, {
@@ -43,7 +43,7 @@ FastCommentsCollabChat(element, {
     topBarTarget: null
 });
 
-// カスタム位置にトップバーをレンダリング
+// トップバーをカスタム位置にレンダリング
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
     topBarTarget: document.getElementById('custom-header')
@@ -52,9 +52,9 @@ FastCommentsCollabChat(element, {
 
 #### hasDarkBackground
 
-ページにダークな背景がある場合にダークモードのスタイリングを有効にします。この検出は自動ですが、上書きしたい場合もあります。
+ページの背景が暗い場合にダークモードのスタイリングを有効にします。この検出は自動的に行われますが、手動で上書きしたい場合もあるでしょう。
 
-[inline-code-attrs-start title = "構成例"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = "設定例"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
@@ -64,9 +64,9 @@ FastCommentsCollabChat(element, {
 
 #### commentCountUpdated
 
-コメント数が変化するたびに呼び出されるコールバック関数です。バッジやページタイトルなどの UI 要素を更新するのに便利です。
+コメント数が変化するたびに呼び出されるコールバック関数です。バッジやページタイトルなどの UI 要素の更新に便利です。
 
-[inline-code-attrs-start title = "構成例"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = "設定例"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
@@ -77,15 +77,15 @@ FastCommentsCollabChat(element, {
 });
 [inline-code-end]
 
-### 継承された設定オプション
+### 継承される設定オプション
 
-Collab Chat は標準のコメントウィジェットを拡張しているため、ベースの FastComments ウィジェットの任意の設定オプションを使用できます。ここではよく使われるオプションを示します:
+Collab Chat は標準のコメントウィジェットを拡張しているため、ベースの FastComments ウィジェットの任意の設定オプションを使用できます。よく使われるオプションの例を以下に示します:
 
 #### locale
 
-ウィジェット UI の言語を設定します。FastComments は多数の言語をサポートしています。
+ウィジェット UI の言語を設定します。FastComments は数十の言語をサポートしています。
 
-[inline-code-attrs-start title = "構成例"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = "設定例"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
@@ -95,9 +95,9 @@ FastCommentsCollabChat(element, {
 
 #### readonly
 
-すべての会話を読み取り専用にします。ユーザーは既存の注釈を閲覧できますが、新しい注釈を作成したり返信したりすることはできません。
+すべての会話を読み取り専用にします。ユーザーは既存のアノテーションを閲覧できますが、新規作成や返信はできません。
 
-[inline-code-attrs-start title = "構成例"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = "設定例"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
@@ -105,45 +105,45 @@ FastCommentsCollabChat(element, {
 });
 [inline-code-end]
 
-#### sso and simpleSSO
+#### sso と simpleSSO
 
-シングルサインオンを使用して認証システムと統合します。
+シングルサインオン(SSO)を使用して、お使いの認証システムと統合できます。
 
-[inline-code-attrs-start title = "構成例"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = "設定例"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
     sso: {
-        // SSO の設定
+        // SSO 設定
     }
 });
 [inline-code-end]
 
-認証オプションの詳細については SSO ドキュメントを参照してください。
+認証オプションの詳細については、SSO ドキュメントを参照してください。
 
 #### maxReplyDepth
 
-返信の階層の深さ（ネストのレベル）を制御します。デフォルトでは Collab Chat はこれを 0 に設定しており、すべてのコメントはフラット（ネストされた返信なし）になります。スレッド化された会話にしたい場合はこれを変更できます。
+返信が何階層までネストできるかを制御します。デフォルトでは Collab Chat はこれを 0 に設定しており、すべてのコメントがフラット(ネストされた返信なし)になります。スレッド形式の会話を希望する場合は変更できます。
 
-[inline-code-attrs-start title = "構成例"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = "設定例"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
-    maxReplyDepth: 3  // 3レベルのネストを許可
+    maxReplyDepth: 3  // 3 階層までのネストを許可
 });
 [inline-code-end]
 
 ### 内部設定
 
-これらのオプションは Collab Chat によって自動的に設定され、上書きすべきではありません：
+これらのオプションは Collab Chat によって自動的に設定されるため、上書きしないでください:
 
-The `productId` is automatically set to `3` for Collab Chat. The `floating-chat` extension is automatically loaded to provide the chat window functionality. The widget automatically detects mobile devices (screens under 768px wide) and adjusts the UI accordingly.
+Collab Chat では `productId` が自動的に `3` に設定されます。チャットウィンドウ機能を提供するために `floating-chat` 拡張が自動的に読み込まれます。また、ウィジェットはモバイルデバイス(幅 768px 未満の画面)を自動的に検出し、それに応じて UI を調整します。
 
 ### 完全な例
 
-複数の設定オプションを組み合わせた例を以下に示します：
+複数の設定オプションを組み合わせた例を以下に示します:
 
-[inline-code-attrs-start title = "構成例"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = "設定例"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(document.getElementById('article'), {
     tenantId: 'demo',
@@ -155,10 +155,10 @@ FastCommentsCollabChat(document.getElementById('article'), {
         document.title = count > 0 ? `(${count}) My Article` : 'My Article';
     },
     sso: {
-        // あなたの SSO 設定
+        // お使いの SSO 設定
     },
     maxReplyDepth: 1
 });
 [inline-code-end]
 
-For a complete list of all available configuration options inherited from the base widget, see the main FastComments configuration documentation.
+ベースウィジェットから継承されるすべての設定オプションの一覧については、FastComments のメイン設定ドキュメントを参照してください。

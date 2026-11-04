@@ -29,5 +29,3 @@ interface APIEmptyResponse {
   const result: APIEmptyResponse = await deleteEmailTemplate(tenantId, templateId);
 })();
 [inline-code-end]
-
----

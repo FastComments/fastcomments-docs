@@ -1,4 +1,4 @@
-在你的 `.env` 中啟用 SSO：
+在你的 `.env` 中啟用 SSO:
 
 ```env
 FASTCOMMENTS_API_KEY=your-api-key
@@ -6,11 +6,11 @@ FASTCOMMENTS_SSO_ENABLED=true
 FASTCOMMENTS_SSO_MODE=secure
 ```
 
-The API key is required for secure SSO — it is used to sign the SSO payload.
+安全 SSO 需要 API 金鑰——它用於簽署 SSO 負載。
 
-### 設定檔對應
+### 基於設定的映射
 
-在 `config/fastcomments.php` 中，將 FastComments 欄位對應到你的 User 模型屬性：
+在 `config/fastcomments.php` 中,將 FastComments 欄位映射到你的 User 模型屬性:
 
 ```php
 'sso' => [
@@ -20,16 +20,16 @@ The API key is required for secure SSO — it is used to sign the SSO payload.
         'id' => 'id',
         'email' => 'email',
         'username' => 'name',
-        'avatar' => 'profile.avatar_url', // 支援點記法
+        'avatar' => 'profile.avatar_url', // 支援點號表示法
     ],
     'is_admin' => fn ($user) => $user->hasRole('admin'),
     'is_moderator' => fn ($user) => $user->hasRole('moderator'),
 ],
 ```
 
-### 介面式對應
+### 基於介面的映射
 
-若需更細緻的控制，在你的 User 模型上實作 `MapsToFastCommentsUser` 介面：
+若需要更多控制權,請在你的 User 模型上實作 `MapsToFastCommentsUser` 介面:
 
 ```php
 use FastComments\Laravel\SSO\Contracts\MapsToFastCommentsUser;
@@ -49,8 +49,8 @@ class User extends Authenticatable implements MapsToFastCommentsUser
 }
 ```
 
-When the interface is implemented, it takes precedence over config-based mapping.
+當實作了該介面時,它將優先於基於設定的映射。
 
 ### 在 Blade 中使用 SSO
 
-當啟用 SSO 時，`<x-fastcomments />` 元件會自動為已驗證的使用者注入 SSO 資料。
+當啟用 SSO 時,`<x-fastcomments />` 元件會自動為已驗證的使用者注入 SSO 資料。

@@ -1,15 +1,12 @@
----
-You may get an authorization error, like the following:
+ייתכן שתקבלו שגיאת הרשאה, כמו זו:
 
 <div class="screenshot white-bg">
-    <div class="title">תצורת הדומיין חסרה</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-webflow-step-5.png" alt="תצורת הדומיין חסרה" />
+    <div class="title">הגדרת דומיין חסרה</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-webflow-step-5.png" alt="הגדרת דומיין חסרה" />
 </div>
 
-This is because FastComments doesn't know it's supposed to allow your account to be used on this domain.
+הסיבה לכך היא ש-FastComments לא יודע שהחשבון שלכם אמור להיות מורשה לשימוש בדומיין זה.
 
-In this case, the fix is simple. You just have to add your site to your FastComments.com account.
+במקרה זה, הפתרון פשוט. כל שעליכם לעשות הוא להוסיף את האתר שלכם לחשבון FastComments.com שלכם.
 
-[לחץ כאן כדי להוסיף את האתר שלך לחשבון.](https://fastcomments.com/auth/my-account/configure-domains)
-
----
+[עברו לכאן כדי להוסיף את האתר שלכם לחשבון.](https://fastcomments.com/auth/my-account/configure-domains)

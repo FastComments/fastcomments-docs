@@ -24,5 +24,3 @@ api->renderEmailTemplate(U("my-tenant-123"), body, locale)
         std::cout << "Email template rendered successfully\n";
     });
 [inline-code-end]
-
----

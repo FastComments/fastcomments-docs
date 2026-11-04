@@ -34,5 +34,3 @@ DefaultAPI.getVotesForUser(tenantId: tenantId, urlId: urlId, options: DefaultAPI
     }
 }
 [inline-code-end]
-
----

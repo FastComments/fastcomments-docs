@@ -27,5 +27,3 @@
   console.log(response);
 })();
 [inline-code-end]
-
----

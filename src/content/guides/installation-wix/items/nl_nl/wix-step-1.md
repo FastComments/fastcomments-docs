@@ -10,5 +10,3 @@ We willen ervoor zorgen dat we voor elk blogbericht een unieke reactietraad tone
     <div class="title">Stap één: Bewerk de dynamische berichtpagina</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-1-open-page.png" alt="Bewerk de dynamische berichtpagina" />
 </div>
-
----

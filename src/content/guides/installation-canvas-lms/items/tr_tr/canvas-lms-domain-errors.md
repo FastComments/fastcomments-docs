@@ -1,4 +1,3 @@
----
 Aşağıdakine benzer bir yetkilendirme hatası alabilirsiniz:
 
 <div class="screenshot white-bg">
@@ -13,5 +12,3 @@ Bu durumda çözüm basittir. Tek yapmanız gereken Canvas örneğinizin alan ad
 <a href="https://fastcomments.com/auth/my-account/configure-domains" target="_blank">Hesabınıza sitenizi eklemek için buraya gidin.</a>
 
 Canvas alan adınızı ekleyin (ör. `yourschool.instructure.com`) ve yorumlar düzgün şekilde yüklenecektir.
-
----

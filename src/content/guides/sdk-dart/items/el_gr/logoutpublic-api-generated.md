@@ -17,5 +17,3 @@ try {
     print('Exception when calling PublicApi->logoutPublic: $e\n');
 }
 [inline-code-end]
-
----

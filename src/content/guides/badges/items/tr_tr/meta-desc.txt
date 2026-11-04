@@ -1,3 +1,1 @@
----
 Yorumcuları yorum sayısı, beğeni, yanıtlar, eski üye durumu ve gece kuşu etkinliği için rozetlerle otomatik olarak ödüllendirin veya rozetleri elle atayın.
----

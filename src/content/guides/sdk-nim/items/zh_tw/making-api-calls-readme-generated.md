@@ -1,8 +1,8 @@
-All API methods in this SDK return tuples of `(Option[ResponseType], Response)`. The first element contains the parsed response if successful, and the second element is the raw HTTP response.
+此 SDK 中的所有 API 方法皆回傳 `(Option[ResponseType], Response)` 的元組。第一個元素包含成功時的解析後回應，第二個元素則是原始的 HTTP 回應。
 
-Required parameters and the request body are passed positionally. The remaining optional parameters are collected into a single `Api<Operation>Options` object, which is the last argument. Operations with no optional parameters take no options object.
+必要參數與請求主體以位置參數方式傳遞。其餘的選用參數會被收集到單一 `Api<Operation>Options` 物件中，作為最後一個參數。沒有選用參數的操作則不接受選項物件。
 
-### 範例：取得評論
+### 範例：取得留言
 
 ```nim
 import httpclient

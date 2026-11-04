@@ -27,5 +27,3 @@ api->getV2PageReactUsers(tenantId, urlId, id).then([](pplx::task<std::shared_ptr
     }
 });
 [inline-code-end]
-
----

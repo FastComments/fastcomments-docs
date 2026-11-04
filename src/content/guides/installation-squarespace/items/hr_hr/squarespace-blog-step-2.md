@@ -31,5 +31,3 @@ Sada možemo kopirati sljedeći isječak koda (upotrijebite gumb za kopiranje u 
     <div class="title">Zalijepi i spremi</div>
     <img class="screenshot-image" src="/images/installation-guides/squarespace-step-2-1-add-code-and-save.png" alt="Zalijepi i spremi" />
 </div>
-
----

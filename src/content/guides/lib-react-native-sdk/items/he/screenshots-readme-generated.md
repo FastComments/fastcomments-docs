@@ -1,40 +1,40 @@
-Live threaded commenting with avatars, nested replies, votes, and the built-in rich-text composer, plus a dark theme and a live-chat preset (shown here rendered via `react-native-web`):
+תגובות חיות בשרשור עם אווטארים, תגובות מקוננות, הצבעות ומחבר הטקסט העשיר המובנה, ובנוסף ערכת נושא כהה והגדרה מוכנה של צ'אט חי (מוצג כאן ברינדור באמצעות `react-native-web`):
 
 <table>
   <tr>
-    <td align="center"><b>תגובות בזמן אמת</b><br/><img src="images/sdk-images/lib-react-native-sdk--demo-screenshots-light.png" width="260" alt="תגובות בזמן אמת, נושא בהיר"/></td>
-    <td align="center"><b>נושא כהה</b><br/><img src="images/sdk-images/lib-react-native-sdk--demo-screenshots-dark.png" width="260" alt="תגובות בזמן אמת, נושא כהה"/></td>
-    <td align="center"><b>צ'אט בזמן אמת</b><br/><img src="images/sdk-images/lib-react-native-sdk--demo-screenshots-chat.png" width="260" alt="הגדרת צ'אט בזמן אמת"/></td>
+    <td align="center"><b>תגובות חיות</b><br/><img src="images/sdk-images/lib-react-native-sdk--demo-screenshots-light.png" width="260" alt="תגובות חיות, ערכת נושא בהירה"/></td>
+    <td align="center"><b>ערכת נושא כהה</b><br/><img src="images/sdk-images/lib-react-native-sdk--demo-screenshots-dark.png" width="260" alt="תגובות חיות, ערכת נושא כהה"/></td>
+    <td align="center"><b>צ'אט חי</b><br/><img src="images/sdk-images/lib-react-native-sdk--demo-screenshots-chat.png" width="260" alt="הגדרת צ'אט חי"/></td>
   </tr>
 </table>
 
 ### עורך טקסט עשיר
 
-This library uses [`react-native-enriched`](https://github.com/software-mansion/react-native-enriched-html) for rich text editing, which provides a powerful WYSIWYG editing experience. The same editor powers iOS, Android, and the web (via `react-native-web`), so the composer behaves consistently across every platform with a single implementation.
+הספרייה משתמשת ב-[`react-native-enriched`](https://github.com/software-mansion/react-native-enriched-html) לעריכת טקסט עשיר, המספק חוויית עריכת WYSIWYG חזקה. אותו עורך מניע את iOS, Android והאינטרנט (דרך `react-native-web`), כך שהמחבר מתנהג באופן עקבי בכל הפלטפורמות עם מימוש אחד.
 
-`react-native-enriched` requires the React Native New Architecture (Fabric) on native (the default since RN 0.76, opt-in on RN 0.72-0.75), and a bundler that resolves package `exports` conditions. This SDK is developed and tested against RN 0.81 / React 19. The same editor also runs on web through `react-native-web`; the enriched editor's web build is still marked experimental upstream.
+`react-native-enriched` דורש את הארכיטקטורה החדשה של React Native (Fabric) בסביבה המקורית (ברירת המחדל מאז RN 0.76, הפעלה ידנית ב-RN 0.72-0.75), ו-bundler שתומך בתנאי `exports` של חבילות. ה-SDK מפותח ונבדק מול RN 0.81 / React 19. אותו עורך רץ גם באינטרנט דרך `react-native-web`; ה-build לאינטרנט של העורך המועשר עדיין מסומן כניסיוני במקור.
 
 ### ווידג'טים
 
-The SDK ships three widgets, mirroring the FastComments Android SDK:
+ה-SDK כולל שלושה ווידג'טים, בהתאמה ל-FastComments Android SDK:
 
-- `FastCommentsLiveCommenting` - תגובות משורשרות עם הצבעות, תגובות, דפדוף, אזכורים, התראות, ועדכונים בזמן אמת.
-- `FastCommentsLiveChat` - הגדרת צ'אט על אותו מנוע: הודעות כרונולוגיות עם חדשות בתחתית, הקומפוזר מתחת לרשימה, שורת כותרת חיה (נקודת חיבור + מספר משתמשים), היסטוריה אינסופית נטענת בגלילה למעלה, גלילה אוטומטית להודעות חדשות, ללא הצבעות או שרשור תגובות. ניתן לשנות כל הגדרה באמצעות `config`.
-- `FastCommentsFeed` - פיד חברתי עם קומפוזר פוסט, מדיה, תגובות, מעקב, ובאנרים חיה של פוסטים חדשים.
+- `FastCommentsLiveCommenting` - תגובות בשרשור עם הצבעות, תגובות השבה, עימוד, אזכורים, התראות ועדכונים חיים.
+- `FastCommentsLiveChat` - הגדרת צ'אט על אותו מנוע: הודעות כרונולוגיות עם חדשות בתחתית, המחבר מתחת לרשימה, פס כותרת חי (נקודת חיבור + מספר משתמשים), היסטוריה אינסופית הנטענת בגלילה למעלה, גלילה אוטומטית להודעות חדשות, ללא הצבעות או שרשור תגובות. ניתן לדרוס כל הגדרה באמצעות `config`.
+- `FastCommentsFeed` - פיד חברתי עם מחבר פוסטים, מדיה, תגובות (reactions), מעקבים ובאנרים חיים של פוסטים חדשים.
 
 ```tsx
     <FastCommentsLiveChat config=\{{ tenantId: 'demo', urlId: 'my-room' }}/>
 ```
 
-### התאמת נושא
+### עיצוב (Theming)
 
-The default look is generated from a set of semantic design tokens (`FastCommentsTheme`): colors, spacing, radius, font sizes, font weights, and avatar sizes. Pass partial token overrides (typed `FastCommentsThemeOverrides`) through the `theme` prop on any widget and the entire style tree restyles consistently:
+מראה ברירת המחדל נוצר מקבוצת טוקנים סמנטיים לעיצוב (`FastCommentsTheme`): צבעים, מרווחים, רדיוס, גדלי גופן, משקלי גופן וגדלי אווטאר. העבירו עדכונים חלקיים לטוקנים (מסוג `FastCommentsThemeOverrides`) דרך ה-prop של `theme` בכל ווידג'ט ועץ הסגנון כולו יעוצב מחדש באופן עקבי:
 
 ```tsx
     <FastCommentsLiveCommenting config={config} theme=\{{ colors: { primary: '#FF5500' } }}/>
 ```
 
-Dark mode is one token set away:
+מצב כהה נמצא במרחק סט טוקנים אחד:
 
 ```tsx
     import { getDarkTheme } from 'fastcomments-react-native-sdk';
@@ -42,38 +42,34 @@ Dark mode is one token set away:
     <FastCommentsLiveCommenting config={config} theme={getDarkTheme()}/>
 ```
 
-The `styles` prop still accepts a raw `IFastCommentsStyles` tree for surgical control. When `theme` and `styles` are both provided, the explicit styles win over the themed tree; when only `styles` is provided, it replaces the defaults entirely (the original behavior, so existing integrations and skins are unaffected). `setupDarkModeSkin` is deprecated in favor of the `theme` prop.
+ה-prop של `styles` עדיין מקבל עץ `IFastCommentsStyles` גולמי לשליטה מדויקת. כאשר `theme` ו-`styles` מסופקים שניהם, הסגנונות המפורשים גוברים על עץ העיצוב; כאשר רק `styles` מסופק, הוא מחליף לחלוטין את ברירות המחדל (ההתנהגות המקורית, כך שאינטגרציות וסקינים קיימים אינם מושפעים). `setupDarkModeSkin` אינו בשימוש עוד לטובת ה-prop של `theme`.
 
 ### אפשרויות תצורה
 
-This library aims to support all configuration options defined in [fastcomments-typescript](https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts), just like the web implementation.
+הספרייה שואפת לתמוך בכל אפשרויות התצורה המוגדרות ב-[fastcomments-typescript](https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts), בדיוק כמו מימוש האינטרנט.
 
-On top of those, React Native adds a few SDK-specific options via `FastCommentsRNConfig`:
+בנוסף לאלה, React Native מוסיף כמה אפשרויות ייחודיות ל-SDK דרך `FastCommentsRNConfig`:
 
-- `hideTopBar` - הסתרת שורת המשתמש המחובר / פעמון ההתראות המופיעה מעל הקומפוזר.
-- `usePressToEdit` - לחיצה ממושכת על תגובה לפתיחת התפריט שלה.
+- `hideTopBar` - הסתרת הפס של המשתמש המחובר / פעמון ההתראות המוצג מעל המחבר.
+- `usePressToEdit` - לחיצה ארוכה על תגובה פותחת את התפריט שלה.
 - `disableDownVoting` - הסתרת כפתורי הצבעה שלילית.
-- `renderCommentInline` - הצגת מידע על המגיב בתוך אותו בלוק HTML של תוכן התגובה.
-- `renderLikesToRight` - העברת אזור ההצבעה/לייק לימין התגובה במקום מתחתיה.
+- `renderCommentInline` - הצגת פרטי המגיב בתוך אותו בלוק HTML כתוכן התגובה.
+- `renderLikesToRight` - העברת אזור ההצבעה/לייקים לימין התגובה במקום מתחתיה.
 - `renderDateBelowComment` - הצגת התאריך מתחת לתגובה.
-- `showLiveStatus` - הצגת שורת כותרת בסגנון צ'אט "Live" + מספר משתמשים מעל לתגובות.
-- `useInlineSubmitButton` - הצגת כפתור השליחה כאייקון בתוך הקומפוזר.
-- `countAboveToggle` - יחד עם `useShowCommentsToggle`, כמה תגובות יוצגו מעל למתג "הצג תגובות".
-- `preserveFeedScrollPosition` - `FastCommentsFeed` זוכר את מיקום הגלילה שלו בין ניתוק/חיבור מחדש (ברירת מחדל true).
+- `showLiveStatus` - הצגת פס כותרת בסגנון צ'אט "Live" + מספר משתמשים מעל התגובות.
+- `useInlineSubmitButton` - הצגת כפתור השליחה כאייקון בתוך המחבר.
+- `countAboveToggle` - עם `useShowCommentsToggle`, כמה תגובות יוצגו מעל מתג "Show Comments".
+- `preserveFeedScrollPosition` - `FastCommentsFeed` זוכר את מצב הגלילה שלו בין פריקה לטעינה מחדש (ברירת מחדל true).
 
-### מושגים ב-FastComments
+### מושגי FastComments
 
-The main concepts to be aware of to get started are `tenantId` and `urlId`. `tenantId` is your FastComments.com account identifier. `urlId` is where comment threads
-will be tied to. This could be a page URL, or a product id, an article id, etc.
+המושגים העיקריים שיש להכיר כדי להתחיל הם `tenantId` ו-`urlId`. `tenantId` הוא מזהה חשבון FastComments.com שלכם. `urlId` הוא המקום אליו יהיו קשורים שרשורי התגובות. זה יכול להיות כתובת URL של עמוד, או מזהה מוצר, מזהה מאמר וכו'.
 
 ### לוקליזציה
 
-All user-facing text in these widgets (button labels, placeholders, empty states, relative
-dates like "5 minutes ago", error messages, etc.) is **server-driven**. The components do not
-hard-code English strings; they render the translations FastComments serves for the requested
-locale.
+כל הטקסטים המוצגים למשתמש בווידג'טים אלה (תוויות כפתורים, placeholders, מצבים ריקים, תאריכים יחסיים כמו "לפני 5 דקות", הודעות שגיאה וכו') מנוהלים **על ידי השרת**. הרכיבים אינם מקודדים מחרוזות באנגלית; הם מציגים את התרגומים ש-FastComments מספקת עבור ה-locale המבוקש.
 
-To request a locale, set `locale` in your config:
+כדי לבקש locale, הגדירו `locale` בתצורה שלכם:
 
 ```ts
 const config = {
@@ -83,30 +79,22 @@ const config = {
 };
 ```
 
-When no `locale` is set, FastComments serves the tenant's default language.
+כאשר לא מוגדר `locale`, FastComments מספקת את שפת ברירת המחדל של החשבון.
 
-**Editing the text:** translations are managed in your FastComments dashboard, not in this SDK.
-To change wording, override the default copy, or add a language, edit the translations for your
-account in the dashboard - the change is picked up by the widgets automatically with no app
-release required. The SDK ships no English fallbacks, so any key you blank out in the dashboard
-renders empty; keep the keys populated for every locale you support.
+**עריכת הטקסטים:** התרגומים מנוהלים בדשבורד FastComments שלכם, לא ב-SDK הזה. כדי לשנות ניסוח, לדרוס את טקסט ברירת המחדל או להוסיף שפה, ערכו את התרגומים עבור החשבון שלכם בדשבורד - השינוי נקלט בווידג'טים אוטומטית ללא צורך בשחרור גרסה של האפליקציה. ה-SDK אינו כולל fallbacks באנגלית, כך שכל מפתח שתנקו בדשבורד יוצג ריק; שמרו על מילוי המפתחות עבור כל locale שאתם תומכים בו.
 
 ### התראות משתמש
 
-FastComments supports notifications for [רבות תרחישים](https://docs.fastcomments.com/guide-notifications.html). Notifications are configurable,
-can be opted-out globally or at a notification/comment level, and supports page-level subscriptions so that users can subscribe to threads of a
-specific page or article.
+FastComments תומכת בהתראות עבור [תרחישים רבים](https://docs.fastcomments.com/guide-notifications.html). ההתראות ניתנות להגדרה, ניתן לבטל הצטרפות ברמה גלובלית או ברמת התראה/תגובה, וקיימת תמיכה בהרשמות ברמת עמוד כך שמשתמשים יכולים להירשם לשרשורים של עמוד או מאמר ספציפי.
 
-For example, it is possible to use Secure SSO to authenticate the user and then periodically poll for unread notifications and push them to the user.
+לדוגמה, ניתן להשתמש ב-SSO מאובטח לאימות המשתמש ואז לבצע polling תקופתי להתראות שלא נקראו ולהציג אותן למשתמש.
 
-See [the example AppNotificationSecureSSO](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src/AppNotificationsSecureSSO.tsx) for how to get and translate unread user notifications.
+ראו [את הדוגמה AppNotificationSecureSSO](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src/AppNotificationsSecureSSO.tsx) לאופן קבלה ותרגום של התראות משתמש שלא נקראו.
 
 ### דפדפן GIF
 
-By default, no image or gif selection is enabled. See [example/src/AppCommentingImageSelection.tsx](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src/AppCommentingImageSelection.tsx) for how
-to support image and gif uploads. There is a Gif Browser that anonymizes searches and images provided in this library, you simply have to use it.
+כברירת מחדל, בחירת תמונות או GIF אינה מופעלת. ראו [example/src/AppCommentingImageSelection.tsx](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src/AppCommentingImageSelection.tsx) לאופן תמיכה בהעלאת תמונות ו-GIF. קיים דפדפן GIF שמאנונימז חיפושים ותמונות המסופק בספרייה הזו, כל שעליכם לעשות הוא להשתמש בו.
 
 ### ביצועים
 
-Please open a ticket with an example to reproduce, including device used, if you identify any performance problems. Performance is a first-class citizen
-of all FastComments libraries.
+אם אתם מזהים בעיות ביצועים, אנא פתחו כרטיס עם דוגמה לשחזור, כולל המכשיר בו נעשה שימוש. ביצועים הם עדיפות ראשונה בכל הספריות של FastComments.

@@ -1,4 +1,3 @@
----
 ## Parameters
 
 | Naam | Type | Vereist | Omschrijving |
@@ -21,5 +20,3 @@ else:
   echo "No pages returned"
 echo httpResp
 [inline-code-end]
-
----

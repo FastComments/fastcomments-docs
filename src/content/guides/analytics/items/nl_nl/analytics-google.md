@@ -35,5 +35,3 @@ Dit voegt twee gebeurtenissen toe:
 
 - Label: `Comment Posted`, Categorie: `Engagement`, ID: `post_comment`
 - Label: `User Voted on a Comment`, Categorie: `Engagement`, ID: `vote_comment`
-
----

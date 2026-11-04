@@ -1,4 +1,3 @@
----
 ## Parameters
 
 | Name | Type | Location | Required | Description |
@@ -53,5 +52,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.CombineCommentsWithQuestionResults`: %v\n", resp)
 }
 [inline-code-end]
-
----

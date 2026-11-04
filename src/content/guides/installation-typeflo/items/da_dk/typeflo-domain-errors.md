@@ -1,4 +1,3 @@
----
 Du kan få en autorisationsfejl, som denne:
 
 <div class="screenshot white-bg">
@@ -13,4 +12,3 @@ I dette tilfælde er løsningen simpel. Du skal blot tilføje dit Typeflo.io-blo
 [Gå her for at tilføje dit websted til din konto.](https://fastcomments.com/auth/my-account/configure-domains)
 
 Bemærk: Sørg for at tilføje både dit brugerdefinerede domæne (hvis du har et) og dit Typeflo.io-underdomæne for at sikre, at FastComments fungerer i alle scenarier.
----

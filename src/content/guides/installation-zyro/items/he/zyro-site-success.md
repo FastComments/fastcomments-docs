@@ -1,4 +1,3 @@
----
 זהו! כעת נוספה אפשרות תגובות חיות לאתר Zyro שלך.
 
 <div class="screenshot white-bg">
@@ -7,5 +6,3 @@
 </div>
 
 אם נתקלת בשגיאת 'permission denied', או ברצונך להתאים אישית את FastComments, המשך לקרוא.
-
----

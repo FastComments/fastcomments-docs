@@ -25,5 +25,3 @@ Ovo se može prepisati željenom lokalizacijom.
 ### Napomena o SSO
 
 Ako koristite SSO, možda ćete želeti da prosledite korisnikovu lokalizaciju u objektu korisnika, kako bi e‑mailovi i druge stvari bile pravilno lokalizovane za njih.
-
----

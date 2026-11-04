@@ -23,5 +23,3 @@ Dakle, koja je prava za vas?
 
 - Vaše grupe imaju određene stranice.
 - Na primjer, korisnici u grupi "Public Pages" nikada ne bi smjeli pregledavati članke iz grupe "Top Secret".
-
----

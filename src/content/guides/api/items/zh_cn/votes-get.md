@@ -49,5 +49,3 @@ interface VotesResponse {
 注意：通过此 API 创建的匿名投票将出现在 `appliedAuthorizedVotes` 列表中。因为它们是使用 API 密钥通过 API 创建的，所以被视为已授权。
 
 `appliedAnonymousVotes` 结构用于没有电子邮件、API 密钥等的投票。
-
----

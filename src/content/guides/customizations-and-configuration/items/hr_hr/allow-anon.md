@@ -1,4 +1,3 @@
----
 Prema zadanim postavkama, FastComments će zahtijevati e‑mail za komentiranje. Ne mora biti valjani e‑mail, ali dok korisnik ne klikne na poslanu poveznicu,
 njegov komentar će prikazati oznaku "Neprovjeren komentar".
 
@@ -11,5 +10,3 @@ Ovo se može konfigurirati putem UI‑ja za prilagodbu widgeta:
 Korisničko ime i dalje je potrebno. Da biste uklonili i taj korak, možete
 [postaviti zadano korisničko ime](/guide-customizations-and-configuration.html#default-username) koje svi dijele, ili FastComments
 [generirati jedinstveno korisničko ime](/guide-customizations-and-configuration.html#auto-generate-username) za svakog posjetitelja.
-
----

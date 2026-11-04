@@ -1,4 +1,3 @@
----
 ## 参数
 
 | 名称 | 类型 | 位置 | 必填 | 描述 |
@@ -32,5 +31,3 @@ DefaultAPI.createTicket(tenantId: tenantId, userId: userId, createTicketBody: cr
     }
 }
 [inline-code-end]
-
----

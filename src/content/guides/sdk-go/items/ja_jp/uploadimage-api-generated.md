@@ -42,5 +42,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.UploadImage`: %v\n", resp)
 }
 [inline-code-end]
-
----

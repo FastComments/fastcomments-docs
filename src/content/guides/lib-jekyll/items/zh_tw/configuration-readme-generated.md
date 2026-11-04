@@ -1,46 +1,47 @@
-設定來源有三處。後面的來源會勝出：
+設定來自三個地方，後面的來源會覆蓋前面的：
 
-1. **全域預設** 在 `_config.yml` 底下的 `fastcomments:` 鍵。
-2. **頁面上下文**，自動為頁面作用域的小工具派生（見下方）。
-3. **標籤屬性** 直接寫在標籤本身。
+1. `_config.yml` 中 `fastcomments:` 鍵下的**全域預設值**。
+2. **頁面上下文**，針對頁面範圍的小工具自動推導（見下方）。
+3. 寫在標籤本身的**標籤屬性**。
 
-因此，標籤上的 `url_id` 會覆蓋由頁面派生的值，而頁面派生的值又會覆蓋任何全域預設。
+因此標籤上的 `url_id` 會覆蓋頁面推導的值，而後者又會覆蓋任何全域預設值。
 
 ### 屬性語法
 
-屬性為 `key=value` 的配對，使用 `snake_case`：
+屬性是以 `snake_case` 表示的 `key=value` 配對：
 
 ```liquid
 {% raw %}{% fastcomments url_id="my-stable-id" readonly=true count=20 %}{% endraw %}
 ```
 
-- **Quoted** values (`"..."` or `'...'`) are literal strings.
-- **Unquoted** `true`/`false` become booleans, and numbers become numbers.
-- **Unquoted** anything else is resolved as a Liquid variable from the page context, e.g.
-  `url_id=page.slug`. (Liquid does not expand `{% raw %}\{{ ... }}{% endraw %}` inside a tag's
-  attributes, so use the bare `page.slug` form rather than `"{% raw %}\{{ page.slug }}{% endraw %}"`.)
+- **加引號**的值（`"..."` 或 `'...'`）為字面字串。
+- **未加引號**的 `true`/`false` 會轉為布林值，數字則轉為數字。
+- **未加引號**的其他任何內容會從頁面上下文中解析為 Liquid 變數，例如
+  `url_id=page.slug`。（Liquid 不會在標籤的屬性中展開 `{% raw %}\{{ ... }}{% endraw %}`，
+  因此請使用裸的 `page.slug` 形式，而不是 `"{% raw %}\{{ page.slug }}{% endraw %}"`。）
 
-Snake_case attribute and config keys are mapped automatically to the camelCase keys FastComments
-expects (`tenant_id` → `tenantId`, `url_id` → `urlId`, `page_title` → `pageTitle`,
-`has_dark_background` → `hasDarkBackground`, and so on). Any other option from the
-[widget configuration](https://docs.fastcomments.com/guide-customizations-and-configuration.html)
-passes straight through the same way.
+snake_case 的屬性與設定鍵會自動對應到 FastComments 預期的 camelCase 鍵
+（`tenant_id` → `tenantId`、`url_id` → `urlId`、`page_title` → `pageTitle`、
+`has_dark_background` → `hasDarkBackground`，依此類推）。
+[小工具設定](https://docs.fastcomments.com/guide-customizations-and-configuration.html)中的任何其他選項
+也會以相同方式直接傳遞。
 
-### 由頁面派生的值
+### 頁面推導的值
 
-對於頁面作用域的 widgets (`fastcomments`, `fastcomments_comment_count`, `fastcomments_live_chat`,
-`fastcomments_collab_chat`, `fastcomments_image_chat`)，這些值會自動從當前頁面填入，除非你自行設定：
+對於頁面範圍的小工具（`fastcomments`、`fastcomments_comment_count`、`fastcomments_live_chat`、
+`fastcomments_collab_chat`、`fastcomments_image_chat`），除非您自行設定，否則以下值會從
+目前頁面自動填入：
 
-- `url_id` ← `page.url` (a stable identifier independent of the visiting domain)
-- `url` ← `site.url` + `page.url` (only when `url` is set in `_config.yml`)
+- `url_id` ← `page.url`（與造訪網域無關的穩定識別碼）
+- `url` ← `site.url` + `page.url`（僅當 `_config.yml` 中設定了 `url` 時）
 - `page_title` ← `page.title`
 
-Site-wide widgets (recent comments/discussions, top pages, reviews summary, user activity feed,
-bulk count) are not tied to a page and do not derive these.
+全站小工具（最新留言/討論、熱門頁面、評論摘要、使用者活動動態、
+批次計數）不綁定於特定頁面，因此不會推導這些值。
 
-### 歐盟資料駐留
+### EU 資料駐留
 
-歐盟客戶請新增 `region: eu`，可以全域設定：
+EU 客戶可新增 `region: eu`，可以全域設定：
 
 ```yaml
 fastcomments:
@@ -48,4 +49,4 @@ fastcomments:
   region: eu
 ```
 
-或是每個標籤設定： `{% raw %}{% fastcomments region="eu" %}{% endraw %}`。小工具將會從歐盟的 CDN 載入。
+或在每個標籤上設定：`{% raw %}{% fastcomments region="eu" %}{% endraw %}`。小工具屆時會從 EU CDN 載入。

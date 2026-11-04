@@ -1,4 +1,3 @@
----
 Bir ankette oy kaydedin veya mevcut bir oyu farklı bir seçeneğe taşıyın. Bir seçmen bir anket başına en fazla bir oy alabilir, bu yüzden aynı seçmen için bu yöntemi tekrar çağırmak, oy eklemek yerine mevcut oyunu taşır.
 
 Bu, sitenin anket ayarlarına uyar: oy verme yalnızca oturum açmış kullanıcılar için ayarlanmışsa, sadece anonUserId içeren bir oy reddedilir ve anonim oylar IP başına anket başına sınırlanır.
@@ -34,5 +33,3 @@ DefaultAPI.createPollVote(tenantId: tenantId, createPollVoteBody: createPollVote
     }
 }
 [inline-code-end]
-
----

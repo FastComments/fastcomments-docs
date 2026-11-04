@@ -8,5 +8,3 @@
 ## Допринасяне
 
 Приноси са добре дошли! Моля, посетете [хранилище в GitHub](https://github.com/FastComments/fastcomments-svelte) за указания относно приноса.
-
----

@@ -47,5 +47,3 @@ interface PageReactUser {
     avatarSrc?: string
 }
 [inline-code-end]
-
----

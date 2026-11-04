@@ -200,5 +200,3 @@ curl -X DELETE "https://fastcomments.com/comment-collab-chats/demo/conv789" \
 ### 사용량 추적
 
 대화를 생성하면 `conversationCreateCount` 사용량 지표가 증가합니다. 모든 WebSocket 동기화 활동은 `pubSubMessageCount` 및 `pubSubBandwidth`를 증가시킵니다. 이러한 지표는 FastComments 대시보드의 사용량 분석에서 모니터링할 수 있습니다.
-
----

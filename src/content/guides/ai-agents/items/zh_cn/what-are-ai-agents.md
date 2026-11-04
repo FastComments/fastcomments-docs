@@ -1,40 +1,37 @@
----
-一个 **AI Agent** 是一个自主工作者，受限于您的 FastComments 租户，监视社区中的事件并代表您采取行动。
+**AI Agent（AI 智能体）** 是一个自主工作的程序，作用于您的 FastComments 租户范围内，它会监视您社区中的事件，并代表您采取行动。
 
-每个代理都有三项您可以控制的内容：
+每个智能体都有三个由您控制的部分：
 
-1. **A personality.** 一个自由文本的初始提示，定义语气、角色和决策风格（例如“You are a warm community greeter”, “You enforce the community rules but err toward warning over banning”，等等）。
-2. **One or more triggers.** 一组触发条件的列表，使代理醒来——新评论、评论达到投票或标记阈值、版主操作、用户在站点的首次评论等。完整列表请参见 [Trigger Events Overview](#triggers-overview)。
-3. **An allowlist of tools.** 代理被允许执行的操作——发布评论、投票、置顶、锁定、标记为垃圾、封禁用户、通过私信警告、授予徽章、发送电子邮件、保存和搜索共享记忆。完整列表请参见 [Allowed Tool Calls Overview](#tools-overview)。
+1. **一个性格设定。** 一段自由文本的初始提示词，用于定义语气、角色和决策风格（例如“你是一位热情的社区迎宾员”、“你执行社区规则，但在警告和封禁之间倾向于警告”等等）。
+2. **一个或多个触发器。** 一系列唤醒智能体的事件列表——新评论、评论达到投票或举报阈值、版主操作、用户在网站上的第一条评论等等。完整列表见 [触发事件概览](#triggers-overview)。
+3. **一个工具允许列表。** 智能体被允许执行的操作——发表评论、投票、置顶、锁定、标记垃圾信息、封禁用户、通过私信警告、授予徽章、发送邮件、保存和搜索共享记忆。完整列表见 [允许的工具调用概览](#tools-overview)。
 
-当触发条件被触发时，代理会收到一条上下文消息，描述发生的情况（评论、页面，可选的线程/用户/页面上下文），并使用其初始提示和您的社区指南进行提示。随后它调用工具执行操作，并在每次调用时记录理由和置信度分数。
+当触发器被触发时，智能体会收到一条描述所发生事件的上下文消息（评论、页面、可选的线程/用户/页面上下文），并会结合其初始提示词和您的社区准则进行处理。然后它会调用工具来采取行动，并在每次调用时记录一条理由和一个置信度评分。
 
-### Agents run asynchronously
+### 智能体异步运行
 
-代理 **永不阻塞触发它们的用户操作**。读者发布评论，评论被保存并显示在线程中，响应返回后，*此时* 代理才会对其进行处理——可以立即执行，也可以在配置的延迟后执行（参见 [Deferred Triggers](#trigger-deferred-delay)）。代理的任何操作都不会给面向用户的体验增加延迟。
+智能体**绝不会阻塞触发它们的用户操作**。读者发表评论后，评论会被保存并显示在线程中，响应会被返回，只有*在此之后*智能体才会对其运行——要么立即运行，要么在配置的延迟之后运行（参见 [延迟触发器](#trigger-deferred-delay)）。智能体所做的任何事情都不会给面向用户的体验增加延迟。
 
-### Why use them
+### 为什么使用它们
 
-- **Moderate at scale.** 标记明显的垃圾信息并封禁重复违规者，无需全天候监控队列。
-- **Welcome new commenters.** 以您的口吻回复首次评论的用户。
-- **Surface the best content.** 当实质性顶层评论达到投票阈值时将其置顶。
-- **Enforce your guidelines consistently.** 对每条边缘评论使用相同的政策文本。
-- **Summarize long threads.** 发布多页辩论的中立摘要。
+- **大规模审核。** 无需全天候盯着队列，即可标记明显的垃圾信息并封禁屡犯者。
+- **欢迎新评论者。** 用您的口吻回复首次评论的用户。
+- **突出优质内容。** 当有实质内容的顶层评论达到投票阈值后将其置顶。
+- **一致地执行您的准则。** 对每条处于边缘的评论应用相同的政策文本。
+- **总结长线程。** 对多页的争论发布中立的总结。
 
-### What keeps you in control
+### 什么让您保持掌控
 
-- **Dry-run mode.** 每个新代理默认以 **Dry Run** 模式发布：它处理触发条件，运行模型，并记录它 *本会* 执行的操作，但不采取真实行动。参见 [Dry-Run Mode](#dry-run-mode)。
-- **Approvals.** 任意子集的操作都可以设置为需要人工批准。参见 [Approval Workflow](#approval-workflow)。
-- **Per-agent and per-account budgets.** 严格的每日和每月上限。参见 [Budgets Overview](#budgets-overview)。
-- **Tool allowlist.** 被禁止的工具会从模型的调色板中剔除——代理根本无法请求这些工具。参见 [Allowed Tool Calls Overview](#tools-overview)。
-- **Audit fields on every action.** 模型必须包含理由和置信度分数。这两项会出现在运行时间线和每次批准中。参见 [Run Detail View](#run-detail-view)。
-- **EU DSA Article 17.** 在欧盟地区，完全自动化的封禁被阻止。参见 [EU DSA Article 17 Compliance](#eu-dsa-compliance)。
-- **No training on your data.** FastComments 使用的提供商不会在您的提示或评论上进行训练。
+- **试运行模式。** 每个新智能体默认处于**试运行（Dry Run）**状态：它会处理触发器、运行模型，并记录它*将会*做什么，但不采取任何真实行动。参见 [试运行模式](#dry-run-mode)。
+- **审批。** 任何一部分操作都可以设置为需要人工审批。参见 [审批工作流](#approval-workflow)。
+- **按智能体和按账户的预算。** 硬性的每日和每月上限。参见 [预算概览](#budgets-overview)。
+- **工具允许列表。** 不允许的工具会从模型的工具面板中剔除——智能体根本无法请求它们。参见 [允许的工具调用概览](#tools-overview)。
+- **每次操作都有审计字段。** 模型必须包含一条理由和一个置信度评分。两者都会显示在运行时间线以及每次审批中。参见 [运行详情视图](#run-detail-view)。
+- **欧盟 DSA 第 17 条。** 在欧盟地区，全自动封禁会被阻止。参见 [欧盟 DSA 第 17 条合规](#eu-dsa-compliance)。
+- **不使用您的数据进行训练。** FastComments 使用的服务商不会用您的提示词或评论进行训练。
 
-### Where they fit alongside human moderation
+### 智能体与人工审核如何协同工作
 
-代理和人工版主共享同一评论平台：代理通过相同的渠道（批准、垃圾、封禁、徽章、置顶、锁定、写入）执行操作，这些操作会出现在相同的 [Comment Logs](/guide-moderation.html#comment-logs)、相同的 [Moderation Page](/guide-moderation.html#moderate-comments-page) 和相同的通知流中。代理和人工版主可以看到彼此的工作，并可以相互响应——版主操作本身也是有效的代理触发条件（参见 [Trigger: Moderator Reviewed Comment](#trigger-moderator-reviewed) 等）。
+智能体和人工版主共享同一个评论平台：智能体通过相同的渠道采取行动（批准、标记垃圾、封禁、授予徽章、置顶、锁定、撰写），这些操作会出现在相同的 [评论日志](/guide-moderation.html#comment-logs)、相同的 [审核页面](/guide-moderation.html#moderate-comments-page) 以及相同的通知流中。智能体和人类可以看到彼此的工作，并且可以对彼此的行动做出反应——版主操作本身就是有效的智能体触发器（参见 [触发器：版主已审核的评论](#trigger-moderator-reviewed) 等）。
 
-如果您也需要人工参与队列，FastComments 提供 [Human Moderation Services](/guide-moderation.html#human-moderation-services)：我们的版主会与您的代理一起工作，出现在您的仪表板中，遵循您的指南。
-
----
+如果您还需要人工参与队列审核，FastComments 提供 [人工审核服务](/guide-moderation.html#human-moderation-services)：我们的版主会在您的仪表板中、按照您的准则，与您的智能体协同工作。

@@ -1,12 +1,12 @@
-Custom react counts for a page, optionally with the users who reacted.
+Recuentos de reacciones personalizados para una página, opcionalmente con los usuarios que reaccionaron.
 
 ## Parámetros
 
-| Nombre | Tipo | Ubicación | Obligatorio | Descripción |
-|--------|------|-----------|-------------|-------------|
+| Nombre | Tipo | Ubicación | Requerido | Descripción |
+|------|------|----------|----------|-------------|
 | tenantId | string | query | Sí |  |
 | urlId | string | query | Sí |  |
-| includeUserInfo | string | query | No | "\"public\" omite a los usuarios con perfiles privados, \"include-private\" los incluye." |
+| includeUserInfo | string | query | No | "public" omite los usuarios con perfiles privados, "include-private" los incluye. |
 
 ## Respuesta
 
@@ -14,9 +14,9 @@ Devuelve: [`GetPageReactsAPIResponse`](https://github.com/FastComments/fastcomme
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo getPageReacts'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo de getPageReacts'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importar clases:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -29,16 +29,16 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configurar autorización de clave API: api_key
+    // Configure API key authorization: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Descomente la siguiente línea para establecer un prefijo para la clave API, p. ej. \"Token\" (por defecto null)
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
-    PageReactIncludeUserInfo includeUserInfo = PageReactIncludeUserInfo.fromValue("public"); // PageReactIncludeUserInfo | \"public\" omite a los usuarios con perfiles privados, \"include-private\" los incluye.
+    PageReactIncludeUserInfo includeUserInfo = PageReactIncludeUserInfo.fromValue("public"); // PageReactIncludeUserInfo | \"public\" omite los usuarios con perfiles privados, \"include-private\" los incluye.
     try {
       GetPageReactsAPIResponse result = apiInstance.getPageReacts(tenantId, urlId)
             .includeUserInfo(includeUserInfo)

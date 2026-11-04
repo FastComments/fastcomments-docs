@@ -1,7 +1,7 @@
-Edit a poll in place, keeping its tallies: change the question, relabel an option, close or reopen it,
-or change who may see the voters. Options are addressed by id - to add, remove or reorder them, PUT the full list.
+Επεξεργασία μιας ψηφοφορίας επιτόπου, διατηρώντας τα αποτελέσματά της: αλλάξτε την ερώτηση, μετονομάστε μια επιλογή, κλείστε ή ανοίξτε ξανά την ψηφοφορία,
+ή αλλάξτε ποιοι μπορούν να δουν τους ψηφοφόρους. Οι επιλογές προσδιορίζονται με id - για να προσθέσετε, να αφαιρέσετε ή να αναδιατάξετε επιλογές, στείλτε PUT με την πλήρη λίστα.
 
-## Parameters
+## Παράμετροι
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
@@ -33,5 +33,3 @@ or change who may see the voters. Options are addressed by id - to add, remove o
   console.log(response);
 })();
 [inline-code-end]
-
----

@@ -1,12 +1,12 @@
 FastComments תומך בשלושה מצבי אימות:
 
-1. **Anonymous** -- ללא אסימון SSO; למשתמשים ניתנות זהויות מבוססות סשן
-2. **Simple SSO** -- אסימון בצד הלקוח עבור הדגמות ובדיקות (לא מאובטח)
-3. **Secure SSO** -- אסימון החתום על ידי השרת לשימוש בייצור
+1. **אנונימי** -- ללא אסימון SSO; משתמשים מקבלים זהויות מבוססות הפעלה
+2. **SSO פשוט** -- אסימון בצד הלקוח להדגמות ובדיקות (לא מאובטח)
+3. **SSO מאובטח** -- אסימון חתום בצד השרת לסביבת פרודקשן
 
-### Simple SSO
+### SSO פשוט
 
-שימושי להדגמות ובדיקות מקומיות. כל אחד יכול להתחפש לכל משתמש עם Simple SSO, לכן אל תשתמשו בו בפרודקשן.
+שימושי להדגמות ובדיקות מקומיות. כל אחד יכול להתחזות לכל משתמש עם SSO פשוט, ולכן אין להשתמש בו בפרודקשן.
 
 ```swift
 import FastCommentsSwift
@@ -29,18 +29,18 @@ let sdk = FastCommentsSDK(config: config)
 
 `SimpleSSOUserData` תומך גם בשדות אופציונליים:
 
-- `id` -- מזהה משתמש (ברירת מחדל: דואר אלקטרוני אם לא מוגדר)
+- `id` -- מזהה המשתמש (ברירת מחדל היא האימייל אם לא הוגדר)
 - `displayName` -- שם תצוגה נפרד
-- `displayLabel` -- תווית מותאמת שמוצגת לצד השם (למשל "VIP")
+- `displayLabel` -- תווית מותאמת אישית המוצגת ליד השם (למשל "VIP")
 - `websiteUrl` -- קישור על שם המשתמש
-- `locale` -- קוד שפה/אזור
-- `isProfileActivityPrivate` -- הסתרת פעילות הפרופיל (ברירת מחדל: true)
+- `locale` -- קוד לוקאל
+- `isProfileActivityPrivate` -- הסתרת פעילות הפרופיל (ברירת מחדל היא true)
 
-### Secure SSO
+### SSO מאובטח
 
-בפרודקשן, ה-backend שלכם מייצר אסימון SSO חתום באמצעות סוד ה-API שלכם. אפליקציית iOS מקבלת את האסימון מהשרת שלכם ומעבירה אותו לקונפיגורציה.
+בפרודקשן, הבקאנד שלך מייצר אסימון SSO חתום באמצעות סוד ה-API שלך. אפליקציית ה-iOS מביאה את האסימון הזה מהשרת שלך ומעבירה אותו לקונפיגורציה.
 
-**בצד השרת שלכם** (באמצעות ה-FastComments Swift SDK או בכל שפה):
+**בבקאנד שלך** (באמצעות ה-SDK של FastComments ל-Swift או בכל שפה אחרת):
 
 ```swift
 let userData = SecureSSOUserData(
@@ -51,10 +51,10 @@ let userData = SecureSSOUserData(
 )
 let sso = try FastCommentsSSO.createSecure(apiKey: "YOUR_API_KEY", secureSSOUserData: userData)
 let token = try sso.prepareToSend()
-// Return this token to your iOS app via your API
+// החזר את האסימון הזה לאפליקציית ה-iOS שלך דרך ה-API שלך
 ```
 
-**ביישום ה-iOS שלכם:**
+**באפליקציית ה-iOS שלך:**
 
 ```swift
 struct MyView: View {
@@ -75,9 +75,9 @@ struct MyView: View {
             }
         }
         .task {
-            // Fetch the token from your backend
+            // הבא את האסימון מהבקאנד שלך
             let token = try? await fetchSSOTokenFromYourBackend()
-            // Create a new config with the token, or set it before load
+            // צור קונפיגורציה חדשה עם האסימון, או הגדר אותו לפני הטעינה
             isLoadingToken = false
             try? await sdk.load()
         }
@@ -87,11 +87,14 @@ struct MyView: View {
 
 `SecureSSOUserData` תומך בשדות נוספים:
 
-- `optedInNotifications` -- הסכמה לקבלת התראות בדואר אלקטרוני
-- `displayLabel` -- תווית מותאמת
+- `optedInNotifications` -- הסכמה להתראות אימייל
+- `displayLabel` -- תווית מותאמת אישית
 - `displayName` -- שם תצוגה
-- `websiteUrl` -- כתובת האתר
-- `groupIds` -- שייכות לקבוצות
+- `websiteUrl` -- כתובת אתר
+- `groupIds` -- חברויות בקבוצות
 - `isAdmin` -- הרשאות מנהל
-- `isModerator` -- הרשאות מודרטור
-- `isProfileActivityPrivate` -- פרטיות פעילות הפרופיל
+- `isModerator` -- הרשאות מפקח
+- `isProfileActivityPrivate` -- פרטיות הפרופיל
+
+---
+---

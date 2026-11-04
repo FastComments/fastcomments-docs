@@ -1,4 +1,3 @@
----
 Visionneurs actuellement en ligne d'une page : les personnes dont la session websocket est abonnée à la page en ce moment.  
 Renvoie anonCount + totalCount (abonnés de la salle, y compris les visionneurs anonymes que nous n'énumérons pas).
 
@@ -30,5 +29,3 @@ async fn example() -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
-
----

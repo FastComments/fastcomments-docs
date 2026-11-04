@@ -38,5 +38,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Svar fra `DefaultAPI.DeleteHashTag`: %v\n", resp)
 }
 [inline-code-end]
-
----

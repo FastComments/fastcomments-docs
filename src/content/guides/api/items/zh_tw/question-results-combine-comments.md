@@ -113,5 +113,3 @@ interface QuestionResultsCombineCommentsResponse {
 - 當指定 `forceRecalculate` 時，成本固定為 `10`，而非通常的 `2`。
 - 如果快取過期且資料被重新計算，若未指定 `forceRecalculate`，成本仍維持常數 `2`。
 - 這是為了鼓勵使用快取。
-
----

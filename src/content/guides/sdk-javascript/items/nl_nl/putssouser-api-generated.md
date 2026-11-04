@@ -28,5 +28,3 @@ Retourneert: [`PutSSOUserAPIResponse`](https://github.com/FastComments/fastcomme
   const response: PutSSOUserAPIResponse = await putSSOUser(tenantId, userId, updateData, true);
 })();
 [inline-code-end]
-
----

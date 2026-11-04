@@ -1,4 +1,3 @@
----
 Comentadores anteriores en la página que NO están actualmente en línea. Ordenados por displayName.
 Usar esto después de agotar /users/online para mostrar una sección "Members".
 Paginación por cursor en commenterName: el servidor recorre el índice parcial {tenantId, urlId, commenterName} desde afterName hacia adelante mediante $gt, sin costo de $skip.
@@ -39,5 +38,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_offline_users: #{e}"
 end
 [inline-code-end]
-
----

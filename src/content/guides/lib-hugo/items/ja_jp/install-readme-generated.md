@@ -1,4 +1,3 @@
----
 Hugo テーマコンポーネントを追加するための標準的な2つの方法のうち、いずれかを選んでください。
 
 ### オプション A: Hugo モジュール（推奨）
@@ -29,4 +28,3 @@ git submodule add https://github.com/FastComments/fastcomments-hugo.git themes/f
 ```toml
 theme = ["your-theme", "fastcomments-hugo"]
 ```
----

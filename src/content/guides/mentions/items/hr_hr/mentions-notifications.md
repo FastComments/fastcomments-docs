@@ -1,11 +1,11 @@
-Tagged users will receive an email letting them know that they have been tagged, or mentioned, in a comment.
+Označeni korisnici primit će e-mail kojim se obavještavaju da su označeni, odnosno spomenuti, u komentaru.
 
-[app-screenshot-start url='/test-e2e/email/comment-user-mention?comment=%7B"commenterName"%3A"Alexander"%2C"comment"%3A"Hey%20%40winrid%20I%20wanted%20you%20to%20see%20this."%2C"commentHTML"%3A"Hey%20<b>%40winrid<%2Fb>%20I%20wanted%20you%20to%20see%20this."%2C"date"%3A1633998787864%2C"pageTitle"%3A"Some%20Page%20Title"%7D&username=winrid&FC_DOMAIN=https%3A%2F%2Ffastcomments.com&INTRO=Hey%20winrid%2C&tenant=%7B"removeUnverifiedComments"%3Atrue%7D&unsubscribeLink=%7B"url"%3A"%2Fauth%2Fmy-account%2Fedit-notifications"%2C"textId"%3A"UNSUBSCRIBE_HERE"%7D&viewCommentUrl=https%3A%2F%2Fexample.com%23fast-comments-jt%3Dsome-db-id&locale=en_us&canReplyByEmail=true&API_KEY=T0ph%20123!'; linkUrl=false; selector = '.content'; alt='Tijelo e‑mail obavijesti koje citira komentar s @winrid spomenom podebljanim, plus veze za pregled i odjavu'; title='Obavijest o spomenutom korisniku' app-screenshot-end]
+[app-screenshot-start url='/test-e2e/email/comment-user-mention?comment=%7B"commenterName"%3A"Alexander"%2C"comment"%3A"Hey%20%40winrid%20I%20wanted%20you%20to%20see%20this."%2C"commentHTML"%3A"Hey%20<b>%40winrid<%2Fb>%20I%20wanted%20you%20to%20see%20this."%2C"date"%3A1633998787864%2C"pageTitle"%3A"Some%20Page%20Title"%7D&username=winrid&FC_DOMAIN=https%3A%2F%2Ffastcomments.com&INTRO=Hey%20winrid%2C&tenant=%7B"removeUnverifiedComments"%3Atrue%7D&unsubscribeLink=%7B"url"%3A"%2Fauth%2Fmy-account%2Fedit-notifications"%2C"textId"%3A"UNSUBSCRIBE_HERE"%7D&viewCommentUrl=https%3A%2F%2Fexample.com%23fast-comments-jt%3Dsome-db-id&locale=en_us&canReplyByEmail=true&API_KEY=T0ph%20123!'; linkUrl=false; selector = '.content'; alt='Tijelo e-maila s obavijesti koje citira komentar s podebljanim @winrid spomenom, uz poveznice za pregled i odjavu'; title='Obavijest o spomenutom korisniku' app-screenshot-end]
 
-Turning off notifications will prevent these emails, and a header is provided in every email so that email clients can let the user unsubscribe seamlessly.
+Isključivanje obavijesti spriječit će ove e-poruke, a svaki e-mail sadrži zaglavlje kako bi klijenti e-pošte mogli korisniku omogućiti nesmetanu odjavu s obavijesti.
 
-Tagged users also get an in-app notification, even when they have no email address on file.
+Označeni korisnici također dobivaju obavijest unutar aplikacije, čak i kada nemaju unesenu adresu e-pošte.
 
-If the comment is waiting for moderator approval, the mention email is held and sent once the comment is approved. It is not sent if the comment is marked as spam, deleted, or not approved within 7 days.
+Ako komentar čeka odobrenje moderatora, e-mail sa spomenom se zadržava i šalje se nakon što je komentar odobren. Ne šalje se ako je komentar označen kao spam, izbrisan ili nije odobren u roku od 7 dana.
 
-To see whether a mentioned user was emailed, or why they were not, open the comment's [Zapisnici komentara](/guide-moderation.html#comment-logs) from the Moderate Comments page.
+Da biste vidjeli je li spomenuti korisnik dobio e-mail ili zašto nije, otvorite [Zapisnike komentara](/guide-moderation.html#comment-logs) komentara sa stranice Moderiraj komentare.

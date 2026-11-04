@@ -1,18 +1,18 @@
-Queues a batch job that moves comments, pages and related records from one urlId or domain to another.  
-"urlId" migrations only match the exact urlId. "domain" migrations find/replace the value inside every urlId and url.  
-Poll GET /api/v1/batch-jobs/{batchJobId}: once it is done it carries per-migration results and an undoId.
+Ставить у чергу пакетне завдання, яке переміщує коментарі, сторінки та пов'язані записи з одного urlId або домену на інший.
+Міграції "urlId" збігаються лише з точним urlId. Міграції "domain" виконують пошук/заміну значення всередині кожного urlId та url.
+Опитуйте GET /api/v1/batch-jobs/{batchJobId}: коли завдання завершиться, воно міститиме результати кожної міграції та undoId.
 
-## Parameters
+## Параметри
 
-| Назва | Тип | Розташування | Обов’язково | Опис |
+| Назва | Тип | Розташування | Обов'язковий | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Так |  |
 
-## Response
+## Відповідь
 
 Повертає: [`QueuePageMigrationJobAPIResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/QueuePageMigrationJobAPIResponse.java)
 
-## Example
+## Приклад
 
 [inline-code-attrs-start title = 'Приклад migratePages'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

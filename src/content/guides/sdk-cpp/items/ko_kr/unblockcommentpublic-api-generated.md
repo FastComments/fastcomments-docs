@@ -1,4 +1,3 @@
----
 ## 매개변수
 
 | 이름 | 유형 | 필수 | 설명 |
@@ -25,5 +24,3 @@ api->unBlockCommentPublic(
     boost::optional<utility::string_t>(U("sso-token-abc"))  
 ).then([](std::shared_ptr<UnblockSuccess> result){ });
 [inline-code-end]
-
----

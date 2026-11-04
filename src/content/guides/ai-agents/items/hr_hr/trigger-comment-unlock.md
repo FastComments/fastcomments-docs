@@ -1,4 +1,3 @@
----
 Pokreće se kada je komentar otključan.
 
 ### Kontekst koji agent prima
@@ -18,5 +17,3 @@ Pokreće se kada je komentar otključan.
 ### Par
 
 Pogledajte [Okidač: Komentar zaključan](#trigger-comment-lock).
-
----

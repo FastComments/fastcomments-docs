@@ -13,5 +13,3 @@ Se volessimo che il conteggio riflettesse solo i commenti di primo livello, impo
 [code-example-start config = {countAll: false}; linesToHighlight = [6]; title = 'Counting Top Level Comments'; code-example-end]
 
 Attualmente questo non può essere personalizzato senza modifiche al codice.
-
----

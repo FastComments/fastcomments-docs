@@ -25,5 +25,3 @@ WordPress에서는 WPCode와 같은 플러그인을 설치하고 다음 HTML 스
     })();
 </script>
 [inline-code-end]
-
----

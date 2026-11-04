@@ -1,4 +1,3 @@
----
 Сада само треба да објавимо наш сајт и готово је.
 
 Вратите се у уређивач садржаја кликом на `Content` у горњем левом углу:
@@ -21,5 +20,3 @@
     <div class="title">Готово!</div>
     <img class="screenshot-image" src="/images/installation-guides/ionos-step-3-done.png" alt="Готово!" />
 </div>
-
----

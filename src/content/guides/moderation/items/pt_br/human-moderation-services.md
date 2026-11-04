@@ -1,29 +1,29 @@
-Human Moderation Services is managed moderation by the FastComments team. Our moderators work your queue, in your dashboard, under your guidelines. There is no separate tool and no export of your data to a third party: the service runs on the moderation features every account already has.
+Os Serviços de Moderação Humana são uma moderação gerenciada pela equipe do FastComments. Nossos moderadores trabalham na sua fila, no seu painel, seguindo as suas diretrizes. Não há ferramenta separada e não há exportação dos seus dados para terceiros: o serviço roda nos recursos de moderação que toda conta já possui.
 
 ### Como funciona
 
-1. **Concordamos com as regras.** You share your community guidelines and tell us what to approve, remove, and escalate. Both sides sign off on a written playbook before anyone touches your queue.
-2. **Entramos na sua conta.** FastComments moderators are added through [Adding Moderators](/guide-moderation.html#moderators-adding) and scoped with [Moderation Groups](/guide-moderation.html#moderation-groups), so they only see the pages, categories, or sites you assign.
-3. **Máquinas primeiro, pessoas depois.** [Spam Detection](/guide-moderation.html#spam-detection) and [AI Agents](/guide-ai-agents.html) handle the obvious cases. Our moderators work what is left: context, tone, appeals, and anything an agent escalated.
-4. **Você vê tudo.** Each action is recorded in [Comment Logs](/guide-moderation.html#comment-logs) and [Moderator Stats](/guide-moderation.html#moderator-stats) with the moderator's name on it. Policy questions go to your named escalation contact.
+1. **Combinamos as regras.** Você compartilha as diretrizes da sua comunidade e nos diz o que aprovar, remover e escalar. Ambas as partes aprovam um playbook por escrito antes de alguém tocar na sua fila.
+2. **Entramos na sua conta.** Os moderadores do FastComments são adicionados por meio de [Adicionando Moderadores](/guide-moderation.html#moderators-adding) e delimitados com [Grupos de Moderação](/guide-moderation.html#moderation-groups), para que vejam apenas as páginas, categorias ou sites que você atribuir.
+3. **Máquinas primeiro, pessoas depois.** A [Detecção de Spam](/guide-moderation.html#spam-detection) e os [Agentes de IA](/guide-ai-agents.html) tratam dos casos óbvios. Nossos moderadores trabalham o que sobra: contexto, tom, apelações e qualquer coisa que um agente tenha escalado.
+4. **Você vê tudo.** Cada ação é registrada nos [Logs de Comentários](/guide-moderation.html#comment-logs) e nas [Estatísticas de Moderadores](/guide-moderation.html#moderator-stats) com o nome do moderador. Dúvidas de política vão para o seu contato de escalonamento designado.
 
 ### O que você controla
 
-- **Diretrizes.** Our moderators follow the playbook written from your guidelines. When a case is not covered, it is escalated to you rather than decided for you.
-- **Escopo.** Widen or narrow access at any time by editing the Moderation Group our moderators belong to.
-- **Contatos de escalonamento.** You name who on your side receives policy questions, and we name who on ours owns the queue.
-- **Acesso.** [Removing a moderator](/guide-moderation.html#moderators-removing) ends their access immediately.
+- **Diretrizes.** Nossos moderadores seguem o playbook escrito a partir das suas diretrizes. Quando um caso não é coberto, ele é escalado para você em vez de decidido por nós.
+- **Escopo.** Amplie ou restrinja o acesso a qualquer momento editando o Grupo de Moderação ao qual nossos moderadores pertencem.
+- **Contatos de escalonamento.** Você indica quem, do seu lado, recebe dúvidas de política, e nós indicamos quem, do nosso, é responsável pela fila.
+- **Acesso.** [Remover um moderador](/guide-moderation.html#moderators-removing) encerra o acesso dele imediatamente.
 
-### Trabalhando ao lado de AI Agents
+### Trabalhando junto com Agentes de IA
 
-Agents and FastComments moderators act through the same tools, so every action shows up in the same logs and the same moderation page. A typical setup runs spam detection and AI Agents as the first pass, with human moderators handling the comments agents flag for review. See [AI Agents](/guide-ai-agents.html) for how agents escalate to a human.
+Os agentes e os moderadores do FastComments atuam pelas mesmas ferramentas, então cada ação aparece nos mesmos logs e na mesma página de moderação. Uma configuração típica executa a detecção de spam e os Agentes de IA como primeira passagem, com moderadores humanos tratando os comentários que os agentes sinalizam para revisão. Veja [Agentes de IA](/guide-ai-agents.html) para saber como os agentes escalam para um humano.
 
-The [trust factor](/guide-moderation.html#spam-detection) ties the two together. Each commenter carries a 0 to 100 score built from tenure, comment count, and pinned comments. Spam detection and AI Agents read it to decide how strictly to treat a comment, and our moderators adjust it by hand when the automatic score is wrong. Every change is recorded in [Comment Logs](/guide-moderation.html#comment-logs), so a human decision today changes how the automated layers treat that person from then on.
+O [fator de confiança](/guide-moderation.html#spam-detection) conecta os dois. Cada comentarista carrega uma pontuação de 0 a 100 construída a partir do tempo de casa, da contagem de comentários e de comentários fixados. A detecção de spam e os Agentes de IA leem essa pontuação para decidir com quanta rigidez tratar um comentário, e nossos moderadores a ajustam manualmente quando a pontuação automática está errada. Cada alteração é registrada nos [Logs de Comentários](/guide-moderation.html#comment-logs), então uma decisão humana hoje muda a forma como as camadas automatizadas tratam essa pessoa a partir de então.
 
-### Onde nossos moderadores estão
+### Onde estão nossos moderadores
 
-For global and US customers, FastComments moderators are based in the United States, so your data does not leave the country. On the EU deployment, only EU-based moderators work your queue, so comment data does not leave the EU.
+Para clientes globais e dos EUA, os moderadores do FastComments ficam nos Estados Unidos, então seus dados não saem do país. Na implantação da UE, apenas moderadores baseados na UE trabalham na sua fila, então os dados de comentários não saem da UE.
 
 ### Termos
 
-Coverage hours, languages, response targets, reporting cadence, and pricing are agreed per contract. To start, read more at [fastcomments.com/human-moderation](https://fastcomments.com/human-moderation) or [contact us](https://fastcomments.com/contact-us) with a description of your community, your guidelines, and your traffic.
+Horas de cobertura, idiomas, metas de resposta, frequência de relatórios e preços são acordados por contrato. Para começar, leia mais em [fastcomments.com/human-moderation](https://fastcomments.com/human-moderation) ou [entre em contato](https://fastcomments.com/contact-us) com uma descrição da sua comunidade, suas diretrizes e seu tráfego.

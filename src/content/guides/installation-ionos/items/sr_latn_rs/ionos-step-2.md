@@ -1,25 +1,25 @@
-Next we're going to add the FastComments widget code to your site. This code will search for all forms with the title `FastComments Goes Here` and
-replace it with FastComments.
+Zatim ćemo dodati FastComments widget kod na vaš sajt. Ovaj kod će pretražiti sve forme sa naslovom `FastComments Goes Here` i
+zameniti ih sa FastComments.
 
-So let's go to `Settings` in the bottom left of the site editor:
+Dakle, idemo na `Settings` u donjem levom uglu editora sajta:
 
 <div class="screenshot white-bg">
-    <div class="title">Otvorite podešavanja</div>
-    <img class="screenshot-image" src="/images/installation-guides/ionos-step-2-open-settings.png" alt="Otvorite podešavanja" />
+    <div class="title">Otvorite Settings</div>
+    <img class="screenshot-image" src="/images/installation-guides/ionos-step-2-open-settings.png" alt="Otvorite Settings" />
 </div>
 
-Open the `Custom Head Code` section:
+Otvorite sekciju `Custom Head Code`:
 
 <div class="screenshot white-bg">
     <div class="title">Otvorite Custom Head Code</div>
     <img class="screenshot-image" src="/images/installation-guides/ionos-step-2-open-custom-head-code.png" alt="Otvorite Custom Head Code" />
 </div>
 
-For Ionos we need a **special version** of the FastComments widget code. Code snippets from **other tutorials will not work.**
+Za Ionos nam je potrebna **specijalna verzija** FastComments widget koda. Delovi koda iz **drugih tutorijala neće raditi.**
 
-Now copy the following code:
+Sada kopirajte sledeći kod:
 
-[inline-code-attrs-start title = 'Isečak FastComments za Ionos'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ionos FastComments Snippet'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
 <script>
@@ -32,7 +32,7 @@ Now copy the following code:
 
             nodes.forEach(function (node) {
                 if (node.innerText && node.innerText.trim() === 'FastComments Goes Here') {
-                    // uzimamo element koji nije pune širine
+                    // preuzimamo element koji nije pune širine
                     const target = node.parentNode.parentNode.parentNode.parentNode.parentNode;
                     target.innerHTML = '';
                     FastCommentsUI(target, {
@@ -52,11 +52,9 @@ Now copy the following code:
 </script>
 [inline-code-end]
 
-...and paste it in as shown:
+...i nalepite ga kao što je prikazano:
 
 <div class="screenshot white-bg">
     <div class="title">Nalepite i sačuvajte</div>
     <img class="screenshot-image" src="/images/installation-guides/ionos-step-2-paste-and-save.png" alt="Nalepite i sačuvajte" />
 </div>
-
----

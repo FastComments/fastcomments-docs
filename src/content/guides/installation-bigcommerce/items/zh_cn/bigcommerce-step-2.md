@@ -10,5 +10,3 @@
     <div class="title">打开模板</div>
     <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-2-open-blog-post-template.png" alt="打开模板" />
 </div>
-
----

@@ -14,5 +14,3 @@ FastComments 的存取控制透過將 `Pages` 和 `Users` 指派到所需的群�
 </div>
 
 訊息文字可以自訂。
-
----

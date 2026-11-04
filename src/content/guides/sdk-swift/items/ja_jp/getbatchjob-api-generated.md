@@ -1,21 +1,21 @@
-Status, progress and, once done, the result of one batch job.
+1つのバッチジョブのステータス、進捗状況、および完了後の結果。
 
-## Parameters
+## パラメータ
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
+| tenantId | string | query | はい |  |
+| id | string | path | はい |  |
 
-## Response
+## レスポンス
 
-返却: [`GetBatchJobAPIResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetBatchJobAPIResponse.swift)
+戻り値: [`GetBatchJobAPIResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetBatchJobAPIResponse.swift)
 
-## Example
+## 例
 
 [inline-code-attrs-start title = 'getBatchJob の例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 以下のコードサンプルはまだベータ版です。問題がある場合は、http://github.com/OpenAPITools/openapi-generator/issues/new へ報告してください
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -32,5 +32,3 @@ DefaultAPI.getBatchJob(tenantId: tenantId, id: id) { (response, error) in
     }
 }
 [inline-code-end]
-
----

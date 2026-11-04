@@ -68,5 +68,3 @@ export class AppModule { }
 ウィジェットは変更検出を使用するため、構成オブジェクトの任意のプロパティを変更するとウィジェットが再読み込みされます。
 
 Angularコンポーネントがサポートする構成は <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">こちら</a> で確認できます。
-
----

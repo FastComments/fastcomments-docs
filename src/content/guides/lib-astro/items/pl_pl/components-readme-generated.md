@@ -15,4 +15,3 @@ Wszystkie komponenty są eksportowane z głównego katalogu pakietu:
 import { FastComments, FastCommentsLiveChat } from 'fastcomments-astro';
 ---
 ```
----

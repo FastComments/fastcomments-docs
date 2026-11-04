@@ -1,8 +1,8 @@
 [api-resource-header-start name = 'Page'; route = 'PATCH /api/v1/pages/:id'; creditsCost = 1; api-resource-header-end]
 
-Ta trasa zapewnia możliwość aktualizacji pojedynczej `Page`. Odpowiadające jej komentarze zostaną zaktualizowane.
+Ta trasa umożliwia aktualizację pojedynczego `Page`. Odpowiadające komentarze zostaną zaktualizowane.
 
-[inline-code-attrs-start title = 'Przykład żądania cURL aktualizacji strony'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Przykład cURL aktualizacji strony'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request PATCH \
   --url 'https://fastcomments.com/api/v1/pages/my-page-id?tenantId=demo&API_KEY=DEMO_API_SECRET' \
@@ -24,16 +24,16 @@ interface PagePatchQueryParams {
 [inline-code-start]
 interface PagePatchResponse {
     status: 'success' | 'failed'
-    /** Dołączone w przypadku niepowodzenia. **/
+    /** Included on failure. **/
     code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-url-id' | 'missing-id' | 'page-does-not-exist' | 'empty-request' | 'internal' | 'invalid-input' | 'invalid-title' | 'extra-params' | 'accessible-by-group-ids-not-array' | 'too-many-group-ids' | 'group-id-too-large'
-    /** Dołączone w przypadku niepowodzenia. **/
+    /** Included on failure. **/
     reason?: string
-    user?: Page; // Zwracamy kompletnie zaktualizowaną stronę w przypadku powodzenia.
+    user?: Page; // We return the complete updated page on success.
 }
 [inline-code-end]
 
-#### Note
+#### Uwaga
 
-Some parameters in the Page object get automatically updated. These are the counts and title attributes. Counts cannot be updated
-via the API since they are calculated values. The page `title` can be set via the API, but would get overwritten if the comment widget is used on
-a page with the same `urlId` and a different page title.
+Niektóre parametry w obiekcie Page są automatycznie aktualizowane. Są to atrybuty counts i title. Wartości counts nie mogą być aktualizowane
+przez API, ponieważ są to wartości obliczane. Pole `title` strony można ustawić przez API, ale zostanie nadpisane, jeśli widżet komentarzy zostanie użyty
+na stronie z tym samym `urlId` i innym tytułem strony.

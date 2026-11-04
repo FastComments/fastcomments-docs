@@ -1,4 +1,3 @@
----
 [related-parameter-start name = 'disableLiveCommenting'; type = 'boolean'; related-parameter-end]
 
 Подразумевано, FastComments ће имати омогућено живо коментарисање.
@@ -15,5 +14,3 @@
 Ово се такође може урадити без кода. На страници за прилагођавање виџета, погледајте одељак „Disable Live Commenting“.
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-live-commenting']; selector = '.disable-live-commenting'; alt='Одељак „Disable Live Commenting“ на страници за прилагођавање виџета, искључује ажурирања нити у реалном времену'; title='Онемогућено живо коментарисање' app-screenshot-end]
-
----

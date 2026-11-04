@@ -10,5 +10,3 @@ Bu, FastComments'ın hesabınızın bu alan adında kullanılmasına izin vermes
 Bu durumda çözüm basittir. Sitenizi FastComments.com hesabınıza eklemeniz yeterlidir.
 
 [Sitenizi hesabınıza eklemek için buraya gidin.](https://fastcomments.com/auth/my-account/configure-domains)
-
----

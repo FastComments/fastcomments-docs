@@ -1,4 +1,3 @@
----
 Activer ou désactiver les notifications pour une page. Lorsque les utilisateurs sont abonnés à une page, des notifications sont créées pour les nouveaux commentaires racine, et également
 
 ## Paramètres
@@ -32,5 +31,3 @@ async fn example() -> Result<UpdateUserNotificationPageSubscriptionStatusRespons
     update_user_notification_page_subscription_status(&configuration, params).await
 }
 [inline-code-end]
-
----

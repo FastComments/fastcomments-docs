@@ -1,4 +1,3 @@
----
 Плъгинът поддържа три стила за коментиране. Можете да ги конфигурирате в настройките на плъгина.
 
 #### Коментари
@@ -27,5 +26,3 @@
     <div class="title">Collab Chat + Коментари заедно</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-page-comments.png" alt="FastComments Collab Chat и Коментари в Moodle" />
 </div>
-
----

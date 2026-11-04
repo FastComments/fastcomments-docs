@@ -11,5 +11,3 @@ Przykładowa składnia to `<%= object.someValue %>` do wypisywania zmiennych, a 
 Aby wypisać surowy HTML, na przykład zawartość komentarza, użyj: `<%- comment.commentHTML %>`. Zwróć uwagę na `-` zamiast `=`.
 
 Szczegółową dokumentację składni znajdziesz w powyższym linku.
-
----

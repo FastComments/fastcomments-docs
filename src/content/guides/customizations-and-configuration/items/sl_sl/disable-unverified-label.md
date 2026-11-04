@@ -7,5 +7,3 @@ Privzeto bo FastComments prikazal oznako "Neoverjen komentar" za komentarje, ki 
 Ta funkcija se lahko uporablja tudi brez pisanja kode v uporabniškem vmesniku za prilagajanje:
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-unverified-comment-label']; selector = '.disable-unverified-comment-label'; alt='Stran za prilagajanje gradnika z označeno potrditveno polje Onemogoči oznako neoverjenega komentarja'; title='Onemogoči oznako neoverjenega komentarja' app-screenshot-end]
-
----

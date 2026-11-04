@@ -1,4 +1,3 @@
----
 ### 리소스 사용량
 
 API에서 데이터를 가져오는 것이 계정 사용량에 포함된다는 점에 유의하십시오.
@@ -16,5 +15,3 @@ Comment API에서 `urlId`에 전달할 값을 결정할 때 혼란을 줄이기 
 ### 웹훅
 
 Webhook 구독에는 별도의 가이드가 있습니다. `POST`, `GET` 및 `DELETE /api/v1/webhooks`, 그리고 `GET /api/v1/webhooks/sample-payloads`는 [Managing Subscriptions via API](/guide-webhooks.html#webhooks-api-subscriptions)에서 문서화되어 있으며, 이벤트 페이로드는 [Webhook Structures](/guide-webhooks.html#webhooks-structures)에서 확인할 수 있습니다.
-
----

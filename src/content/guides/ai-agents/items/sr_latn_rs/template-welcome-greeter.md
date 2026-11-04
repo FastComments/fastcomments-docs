@@ -1,4 +1,3 @@
----
 **ID šablona:** `welcome_greeter`
 
 Welcome Greeter srdačno odgovara korisnicima koji prvi put komentarišu. To je najmanje rizičan šablon (bez destruktivnih alata) i dobar prvi agent za puštanje uživo.
@@ -24,5 +23,3 @@ To je jedini alat — agent bukvalno ne može da moderira, glasa, blokira ili š
 ### Zašto odobrenja nisu potrebna
 
 Agent samo piše nove komentare i to samo na jednokratni okidač. Najgori slučaj: neprijatan pozdrav. Ne postoji destruktivna akcija koju treba ograničiti. Većina operatera pokreće ovaj šablon bez ikakvih odobrenja nakon što rezultati u probnom režimu deluju čisto.
-
----

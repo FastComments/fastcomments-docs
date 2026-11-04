@@ -1,37 +1,37 @@
-Every widget has its own tag. All of them accept `**extra` keyword arguments,  
-which are merged into the widget config as‑is (use camelCase keys) for anything  
-not covered by the named arguments below.
+לכל ווידג'ט יש תג משלו. כולם מקבלים ארגומנטים של מילות מפתח `**extra`,
+אשר ממוזגים לתצורת הווידג'ט כפי שהם (השתמשו במפתחות camelCase) עבור כל דבר
+שאינו מכוסה על ידי הארגומנטים המכוננים למטה.
 
-| תג | וידג'ט |
+| תג | ווידג'ט |
 |---|---|
 | `{% fastcomments %}` | תגובות |
-| `{% fastcomments_live_chat %}` | צ’אט חי |
-| `{% fastcomments_comment_count %}` | תג צבע ספירת תגובות |
-| `{% fastcomments_comment_count_bulk %}` + `{% fastcomments_count_marker %}` | ספירות תגובות גורפות |
-| `{% fastcomments_collab_chat target="#el" %}` | צ’אט שיתופי (מוטמע) |
-| `{% fastcomments_image_chat target="#el" %}` | צ’אט הערת תמונה |
+| `{% fastcomments_live_chat %}` | צ'אט חי |
+| `{% fastcomments_comment_count %}` | תג ספירת תגובות |
+| `{% fastcomments_comment_count_bulk %}` + `{% fastcomments_count_marker %}` | ספירות תגובות מרובות |
+| `{% fastcomments_collab_chat target="#el" %}` | צ'אט שיתופי (מוטמע) |
+| `{% fastcomments_image_chat target="#el" %}` | צ'אט הערות על תמונות |
 | `{% fastcomments_recent_comments %}` | תגובות אחרונות |
 | `{% fastcomments_recent_discussions %}` | דיונים אחרונים |
 | `{% fastcomments_reviews_summary %}` | סיכום ביקורות |
-| `{% fastcomments_top_pages %}` | דפים עם הכי הרבה דיונים |
+| `{% fastcomments_top_pages %}` | הדפים המדוברים ביותר |
 | `{% fastcomments_user_activity user_id="..." %}` | פיד פעילות של משתמש |
 
-Named arguments map to the widget's camelCase config keys:
+הארגומנטים המכוננים ממופים למפתחות התצורה ב-camelCase של הווידג'ט:
 
-| ארגומנט | מפתח תצורה | תגיות |
+| ארגומנט | מפתח תצורה | תגים |
 |---|---|---|
-| `url_id` | `urlId` | comments, live chat, comment count, collab/image chat, recent comments, reviews summary |
-| `url` | `url` | comments, live chat, collab/image chat |
-| `readonly` | `readonly` | comments, live chat, collab/image chat |
-| `locale` | `locale` | comments, live chat, collab/image chat, user activity |
-| `has_dark_background` | `hasDarkBackground` | all |
-| `default_sort_direction` | `defaultSortDirection` | comments, live chat, collab/image chat |
-| `number_only` | `numberOnly` | comment count |
-| `is_live` | `isLive` | comment count |
-| `count` | `count` | recent comments, recent discussions |
-| `target` | (querySelector, not sent) | collab chat, image chat |
-| `chat_square_percentage` | `chatSquarePercentage` | image chat |
-| `user_id` | `userId` | user activity |
+| `url_id` | `urlId` | תגובות, צ'אט חי, ספירת תגובות, צ'אט שיתופי/תמונות, תגובות אחרונות, סיכום ביקורות |
+| `url` | `url` | תגובות, צ'אט חי, צ'אט שיתופי/תמונות |
+| `readonly` | `readonly` | תגובות, צ'אט חי, צ'אט שיתופי/תמונות |
+| `locale` | `locale` | תגובות, צ'אט חי, צ'אט שיתופי/תמונות, פעילות משתמש |
+| `has_dark_background` | `hasDarkBackground` | הכול |
+| `default_sort_direction` | `defaultSortDirection` | תגובות, צ'אט חי, צ'אט שיתופי/תמונות |
+| `number_only` | `numberOnly` | ספירת תגובות |
+| `is_live` | `isLive` | ספירת תגובות |
+| `count` | `count` | תגובות אחרונות, דיונים אחרונים |
+| `target` | (querySelector, לא נשלח) | צ'אט שיתופי, צ'אט תמונות |
+| `chat_square_percentage` | `chatSquarePercentage` | צ'אט תמונות |
+| `user_id` | `userId` | פעילות משתמש |
 
 דוגמאות:
 
@@ -44,11 +44,11 @@ Named arguments map to the widget's camelCase config keys:
 
 Comments: {% fastcomments_comment_count url_id="my-page" number_only=True %}
 
-{# Collab chat מצורף לאלמנט קיים בדף #}
+{# Collab chat attaches to an existing element on the page #}
 <article id="post-body">...</article>
 {% fastcomments_collab_chat target="#post-body" %}
 
-{# ספירות מרובות: מיקום מסמנים, ואז טוען קבוצתי אחד ממלא את כולם #}
+{# Bulk counts: place markers, then one bulk loader fills them all in #}
 {% for post in posts %}
     <a href="\{{ post.url }}">\{{ post.title }}</a>
     {% fastcomments_count_marker url_id=post.url_id %}

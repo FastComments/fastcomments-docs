@@ -1,4 +1,3 @@
----
 ## 매개변수
 
 | 이름 | 유형 | 위치 | 필수 | 설명 |
@@ -33,5 +32,3 @@ PublicAPI.getUserPresenceStatuses(tenantId: tenantId, urlIdWS: urlIdWS, userIds:
     }
 }
 [inline-code-end]
-
----

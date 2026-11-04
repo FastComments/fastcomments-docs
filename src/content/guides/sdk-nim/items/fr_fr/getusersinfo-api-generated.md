@@ -1,21 +1,21 @@
-Bulk user info for a tenant. Given userIds, return display info from User / SSOUser.  
-Used by the comment widget to enrich users that just appeared via a presence event.  
-No page context: privacy is enforced uniformly (private profiles are masked).
+Informations utilisateur en masse pour un tenant. Étant donné des userIds, renvoie les informations d'affichage depuis User / SSOUser.
+Utilisé par le widget de commentaires pour enrichir les utilisateurs qui viennent d'apparaître via un événement de présence.
+Pas de contexte de page : la confidentialité est appliquée de manière uniforme (les profils privés sont masqués).
 
-## Parameters
+## Paramètres
 
-| Name | Type | Required | Description |
+| Nom | Type | Requis | Description |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| ids | string | No |  |
+| tenantId | string | Oui |  |
+| ids | string | Non |  |
 
-## Response
+## Réponse
 
-Renvoie : [`Option[PageUsersInfoResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_page_users_info_response.nim)
+Renvoie : [`Option[PageUsersInfoResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_page_users_info_response.nim)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple getUsersInfo'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple de getUsersInfo'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (usersInfoOpt, httpResp) = client.getUsersInfo(tenantId = "my-tenant-123", ids = "user42")
 if usersInfoOpt.isSome:

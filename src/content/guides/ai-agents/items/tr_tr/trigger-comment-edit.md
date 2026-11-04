@@ -1,4 +1,3 @@
----
 Ajanı, bir yorum düzenlendiğinde tetikler.
 
 ### Ajanın aldığı bağlam
@@ -21,5 +20,3 @@ Ajanı, bir yorum düzenlendiğinde tetikler.
 ### Maliyet notu
 
 Düzenleme tetikleyicileri, yorum metninin iki kopyasını görür (standart COMMENT bloğundaki yeni sürüm ve PREVIOUS_TEXT bloğundaki eski sürüm). Uzun yorumlar için bu, çalıştırmanın token maliyetini yaklaşık olarak bir `COMMENT_ADD` tetikleyicisine göre iki katına çıkarır - bütçe yaparken bunu göz önünde bulundurun.
-
----

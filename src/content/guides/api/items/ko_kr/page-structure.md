@@ -20,5 +20,3 @@ interface Page {
     isClosed?: boolean
 }
 [inline-code-end]
-
----

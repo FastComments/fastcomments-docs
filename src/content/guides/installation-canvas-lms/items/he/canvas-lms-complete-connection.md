@@ -1,28 +1,28 @@
-#### Enter the Client ID in FastComments
+#### הזנת ה-Client ID ב-FastComments
 
-חזור אל <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">ה-FastComments LTI Config שלך</a>. האשף אמור להיות על **Step 2: Connect**.
+חזרו אל <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">הגדרות ה-LTI של FastComments שלכם</a>. אשף ההתקנה אמור להיות בשלב **Step 2: Connect**.
 
-הדבק את ה-**Client ID** שהעתקת מ-Canvas לשדה **Client ID**. ניתן לבחור להזין גם את ה-**Deployment ID** אם מערכת ה-LMS שלך מספקת אחת.
+הדביקו את ה-**Client ID** שהעתקתם מ-Canvas בשדה **Client ID**. באפשרותכם להזין את ה-**Deployment ID** אם ה-LMS שלכם מספק כזה.
 
-לחץ על **Save & Continue**.
+לחצו על **Save & Continue**.
 
-#### Enable the Integration
+#### הפעלת האינטגרציה
 
-האשף מתקדם ל- **Step 3: Go Live**. מוצג תקציר של התצורה שלך (name, platform URL, Client ID, and deployment ID).
+אשף ההתקנה מתקדם לשלב **Step 3: Go Live**. מוצג סיכום של ההגדרות שלכם (שם, כתובת URL של הפלטפורמה, Client ID ו-Deployment ID).
 
-סקור את הפרטים, ואז לחץ על **Enable Integration** כדי להפעיל את חיבור ה-LTI.
+עיינו בפרטים, ולאחר מכן לחצו על **Enable Integration** כדי להפעיל את חיבור ה-LTI.
 
-לאחר ההפעלה, האשף מציג את ה- **Management View** שבו ניתן לערוך את התצורה שלך, לצפות בכל ה-LTI URLs, או להוסיף deployments נוספים.
+לאחר ההפעלה, אשף ההתקנה מציג את **Management View** שבו תוכלו לערוך את ההגדרות שלכם, לצפות בכל כתובות ה-LTI או להוסיף הפצות נוספות (deployments).
 
-#### Install the External App in Canvas
+#### התקנת האפליקציה החיצונית ב-Canvas
 
-ב-Canvas, עבור אל **Admin** > בחר את החשבון שלך > **Settings** > לשונית **Apps**.
+ב-Canvas, עברו אל **Admin** > בחרו את החשבון שלכם > **Settings** > לשונית **Apps**.
 
-לחץ על **+ App** והגדר:
+לחצו על **+ App** והגדירו:
 
-1. קבע את **Configuration Type** ל- **By Client ID**.
-2. הדבק את ה-**Client ID** מתוך טבלת Developer Keys.
-3. לחץ על **Submit**.
-4. אשר את ההתקנה כאשר תתבקש.
+1. הגדירו את **Configuration Type** ל-**By Client ID**.
+2. הדביקו את ה-**Client ID** מטבלת מפתחות המפתחים (Developer Keys).
+3. לחצו על **Submit**.
+4. אשרו את ההתקנה כאשר תתבקשו.
 
-FastComments מותקן כעת ברמת החשבון וזמין לכל הקורסים.
+כעת FastComments מותקן ברמת החשבון וזמין לכל הקורסים.

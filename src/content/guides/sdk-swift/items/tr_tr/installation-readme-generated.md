@@ -1,6 +1,6 @@
 ### Swift Package Manager
 
-Aşağıdakileri `Package.swift` dosyanıza ekleyin:
+`Package.swift` dosyanıza aşağıdakini ekleyin:
 
 ```swift
 dependencies: [
@@ -13,7 +13,7 @@ Veya Xcode'da:
 2. Depo URL'sini girin: `https://github.com/fastcomments/fastcomments-swift.git`
 3. Kullanmak istediğiniz sürümü seçin
 
-### Requirements
+### Gereksinimler
 
 - Swift 5.9+
 - iOS 13.0+ / macOS 10.15+ / tvOS 13.0+ / watchOS 6.0+

@@ -1,16 +1,16 @@
 [api-resource-header-start name = 'TenantUser'; route = 'PATCH /api/v1/tenant-users/:id'; creditsCost = 1; api-resource-header-end]
 
-This route provides the ability to update a single `TenantUser`.
+Bu rota, tek bir `TenantUser` güncelleme olanağı sağlar.
 
-Updating a `TenantUser` has the following restrictions:
+Bir `TenantUser` güncellemenin aşağıdaki kısıtlamaları vardır:
 
-- The `signUpDate` may not be in the future.
-- The `locale` must be in the list of [Supported Locales](https://github.com/FastComments/fastcomments-typescript/blob/main/src/constants.ts#L1).
-- The `username` must be unique across all of FastComments.com. If this is an issue, we suggest using SSO instead.
-- The `email` must be unique across all of FastComments.com. If this is an issue, we suggest using SSO instead.
-- You cannot update the `tenantId` of a user.
+- `signUpDate` gelecekte bir tarih olamaz.
+- `locale`, [Desteklenen Diller](https://github.com/FastComments/fastcomments-typescript/blob/main/src/constants.ts#L1) listesinde yer almalıdır.
+- `username`, tüm FastComments.com genelinde benzersiz olmalıdır. Bu bir sorunsa, bunun yerine SSO kullanmanızı öneririz.
+- `email`, tüm FastComments.com genelinde benzersiz olmalıdır. Bu bir sorunsa, bunun yerine SSO kullanmanızı öneririz.
+- Bir kullanıcının `tenantId` değerini güncelleyemezsiniz.
 
-We can create a `TenantUser` as follows
+Bir `TenantUser`'ı aşağıdaki gibi güncelleyebiliriz
 
 [inline-code-attrs-start title = 'TenantUser Güncelleme cURL Örneği'; type = 'bash'; useDemoTenantUser = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -28,7 +28,7 @@ curl --request PATCH \
 interface TenantUserPatchQueryParams {
     tenantId: string
     API_KEY: string
-    /** E-posta veya kullanıcı adı değiştirildiğinde, kullanıcının yorumlarını da güncellemek için bunu true olarak ayarlayabilirsiniz. Bu kredi maliyetini iki katına çıkarır. **/
+    /** When email or username is changed, you can set this to true to also update the user's comments. This will double the credit cost. **/
     updateComments: 'true' | 'false'
 }
 [inline-code-end]
@@ -37,11 +37,9 @@ interface TenantUserPatchQueryParams {
 [inline-code-start]
 interface TenantUserPatchResponse {
     status: 'success' | 'failed'
-    /** Başarısızlık durumunda dahil edilir. **/
+    /** Included on failure. **/
     code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'sign-up-date-in-future' | 'unsupported-locale' | 'unauthorized' | 'username-taken' | 'email-taken' | 'unauthorized' | 'no-package' | 'invalid-package' | 'tenant-user-limit-reached' | 'user-does-not-exist'
-    /** Başarısızlık durumunda dahil edilir. **/
+    /** Included on failure. **/
     reason?: string
 }
 [inline-code-end]
-
----

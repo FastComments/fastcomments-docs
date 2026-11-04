@@ -1,4 +1,3 @@
----
 Wenn wir jetzt einen Blogbeitrag ansehen, sollten wir FastComments sehen!
 
 <div class="screenshot white-bg">
@@ -7,5 +6,3 @@ Wenn wir jetzt einen Blogbeitrag ansehen, sollten wir FastComments sehen!
 </div>
 
 Herzlichen Glückwunsch zur Einrichtung von FastComments mit Systeme.io! Wenn Sie auf einen Domain Error gestoßen sind oder erfahren möchten, wie Sie den Kommentarbereich anpassen können, lesen Sie weiter!
-
----

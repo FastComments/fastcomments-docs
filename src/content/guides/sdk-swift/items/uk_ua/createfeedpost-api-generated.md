@@ -1,4 +1,3 @@
----
 ## Parameters
 
 | Назва | Тип | Розташування | Обов’язковий | Опис |
@@ -38,5 +37,3 @@ DefaultAPI.createFeedPost(tenantId: tenantId, createFeedPostParams: createFeedPo
     }
 }
 [inline-code-end]
-
----

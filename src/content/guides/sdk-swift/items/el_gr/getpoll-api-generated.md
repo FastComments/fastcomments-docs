@@ -1,4 +1,3 @@
----
 ## Παράμετροι
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
@@ -31,5 +30,3 @@ DefaultAPI.getPoll(tenantId: tenantId, commentId: commentId) { (response, error)
     }
 }
 [inline-code-end]
-
----

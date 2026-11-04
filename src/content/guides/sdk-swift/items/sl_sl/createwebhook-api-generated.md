@@ -1,4 +1,3 @@
----
 Naroči URL na dogodek komentarja (REST hook naročnina). Ponovno naročanje istega URL‑ja na isti
 dogodek in domeno vrne obstoječo naročnino. Dostave so podpisane s HMAC, glejte
 priročnik za webhooke; starejši `token` glavi nikoli ni poslan v API naročnine.
@@ -34,5 +33,3 @@ DefaultAPI.createWebhook(tenantId: tenantId, createWebhookParams: createWebhookP
     }
 }
 [inline-code-end]
-
----

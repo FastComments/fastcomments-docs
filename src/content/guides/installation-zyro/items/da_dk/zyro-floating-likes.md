@@ -30,5 +30,3 @@ Du kan se den i aktion nederst til højre på denne side!
 4. Vælg Integrationer.
 5. Tilføj den nye kode til *enden* af feltet `Custom code`, og publicer dit site.
 6. Du vil ikke se widget'en i forhåndsvisningstilstand, men den vil fremgå i den publicerede version af sitet.
-
----

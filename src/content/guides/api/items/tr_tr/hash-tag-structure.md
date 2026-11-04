@@ -1,4 +1,3 @@
----
 Bir `HashTag` nesnesi, bir kullanıcı tarafından bırakılabilecek bir etiketi temsil eder. HashTags harici bir içeriğe bağlamak veya ilişkili yorumları birbirine bağlamak için kullanılabilir.
 
 `HashTag` nesnesinin yapısı aşağıdaki gibidir:
@@ -19,5 +18,3 @@ Notlar:
 
 - Bazı API uç noktalarında hashtag'in URL içinde kullanıldığını göreceksiniz. Değerleri URI ile kodlamayı unutmayın. Örneğin, `#` yerine `%23` olarak temsil edilmelidir.
 - Bu alanların bazıları `READONLY` olarak işaretlenmiştir - bunlar API tarafından döndürülür ancak ayarlanamaz.
- 
----

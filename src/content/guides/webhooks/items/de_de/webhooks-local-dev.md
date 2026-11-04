@@ -33,5 +33,3 @@ Sobald es validiert ist, klicken Sie auf `Save`.
 ### Schritt 4: Einen Kommentar hinzufügen
 
 Jetzt können Sie Kommentare hinzufügen, bearbeiten oder löschen und sollten sehen, dass wir Ihre lokale Entwicklungsmaschine mit den Ereignissen aufrufen, wobei Sie Ihren Test‑API‑Schlüssel verwenden. Es kann bis zu 30 Sekunden dauern, bis die Ereignisse Ihre Maschine erreichen.
-
----

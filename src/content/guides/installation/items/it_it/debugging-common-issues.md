@@ -77,5 +77,3 @@ Nota che dopo aver effettuato questa modifica, sarà necessario eseguire una mig
 In FastComments dedichiamo molti sforzi per garantire che l'invio delle email sia il più affidabile possibile. Tuttavia, alcuni provider di posta elettronica sono notoriamente difficili da raggiungere in modo affidabile. Controlla la cartella spam per i messaggi provenienti da fastcomments.com.
 
 Se [ci contatti](https://fastcomments.com/auth/my-account/help) di solito possiamo fornire maggiori informazioni sul motivo per cui potresti non ricevere le nostre email.
-
----

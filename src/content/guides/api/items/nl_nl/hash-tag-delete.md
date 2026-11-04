@@ -28,5 +28,3 @@ interface HashTagDeleteResponse {
     reason?: string
 }
 [inline-code-end]
-
----

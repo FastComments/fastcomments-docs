@@ -1,4 +1,3 @@
----
 Activez le SSO dans votre `.env` :
 
 ```env
@@ -55,4 +54,3 @@ Lorsque l'interface est implémentée, elle prend la priorité sur le mappage ba
 ### SSO dans Blade
 
 Lorsque le SSO est activé, le composant `<x-fastcomments />` injecte automatiquement les données SSO pour l'utilisateur authentifié.
----

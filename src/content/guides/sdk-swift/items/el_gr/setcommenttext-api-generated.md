@@ -1,4 +1,3 @@
----
 ## Παράμετροι
 
 | Name | Type | Location | Required | Description |
@@ -38,5 +37,3 @@ PublicAPI.setCommentText(tenantId: tenantId, commentId: commentId, broadcastId: 
     }
 }
 [inline-code-end]
-
----

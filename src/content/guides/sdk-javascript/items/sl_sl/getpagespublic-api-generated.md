@@ -1,17 +1,17 @@
-List pages for a tenant. Used by the FChat desktop client to populate its room list.
-Requires `enableFChat` to be true on the resolved custom config for each page.
-Pages that require SSO are filtered against the requesting user's group access.
+Navedi strani za najemnika. Uporablja namizni odjemalec FChat za polnjenje svojega seznama sob.
+Zahteva, da je `enableFChat` nastavljen na true v razrešeni prilagojeni konfiguraciji za vsako stran.
+Strani, ki zahtevajo SSO, so filtrirane glede na skupinski dostop zahtevajočega uporabnika.
 
 ## Parametri
 
-| Ime | Tip | Obvezno | Opis |
+| Ime | Vrsta | Obvezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| cursor | string | No |  |
-| limit | number | No |  |
-| q | string | No |  |
-| sortBy | PagesSortBy | No |  |
-| hasComments | boolean | No |  |
+| tenantId | string | Da |  |
+| cursor | string | Ne |  |
+| limit | number | Ne |  |
+| q | string | Ne |  |
+| sortBy | PagesSortBy | Ne |  |
+| hasComments | boolean | Ne |  |
 
 ## Odgovor
 

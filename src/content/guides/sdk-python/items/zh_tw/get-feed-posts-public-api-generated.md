@@ -54,5 +54,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("呼叫 PublicApi->get_feed_posts_public 時發生例外: %s\n" % e)
 [inline-code-end]
-
----

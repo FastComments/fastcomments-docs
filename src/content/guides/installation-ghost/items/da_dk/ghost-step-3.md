@@ -6,5 +6,3 @@ Nu hvor vi har temaet åbent i vores editor, åbn `package.json` og ændr `name`
 </div>
 
 Hvis du bruger en IDE, vil den automatisk gemme, efter du har foretaget denne ændring.
-
----

@@ -31,5 +31,3 @@ Ako tražite isječak koda za komentarisanje uživo na ClickFunnels-u, probajte 
     })();
 </script>
 [inline-code-end]
-
----

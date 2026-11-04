@@ -24,5 +24,3 @@ async function runExample() {
 }
 runExample();
 [inline-code-end]
-
----

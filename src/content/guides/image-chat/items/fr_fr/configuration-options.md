@@ -1,12 +1,12 @@
-### Aperçu
+### Vue d'ensemble
 
-FastComments Image Chat étend le widget de commentaires standard FastComments, donc il hérite de toutes les options de configuration du widget de base tout en ajoutant quelques-unes spécifiques aux annotations d'image.
+FastComments Image Chat étend le widget de commentaires FastComments standard, il hérite donc de toutes les options de configuration du widget de base tout en ajoutant quelques options spécifiques aux annotations d'images.
 
 ### Configuration requise
 
 #### tenantId
 
-Votre Tenant ID FastComments est requis. Vous pouvez le trouver dans votre [FastComments dashboard](https://fastcomments.com/auth/my-account/api-secret).
+Votre ID de locataire FastComments est requis. Vous pouvez le trouver dans votre [tableau de bord FastComments](https://fastcomments.com/auth/my-account/api-secret).
 
 ```javascript
 FastCommentsImageChat(imageElement, {
@@ -18,7 +18,7 @@ FastCommentsImageChat(imageElement, {
 
 #### urlId
 
-Par défaut, Image Chat génère un identifiant unique pour chaque conversation basé sur l'URL de la page, la source de l'image et les coordonnées X/Y. Vous pouvez remplacer cela avec un `urlId` personnalisé.
+Par défaut, Image Chat génère un identifiant unique pour chaque conversation basé sur l'URL de la page, la source de l'image et les coordonnées X/Y. Vous pouvez le remplacer par un `urlId` personnalisé.
 
 ```javascript
 FastCommentsImageChat(imageElement, {
@@ -27,11 +27,11 @@ FastCommentsImageChat(imageElement, {
 });
 ```
 
-Ceci est utile lorsque la structure de vos URL peut changer mais que vous souhaitez conserver les mêmes conversations, ou lorsque vous voulez partager des annotations entre plusieurs pages.
+C'est utile lorsque la structure de votre URL peut changer mais que vous souhaitez conserver les mêmes conversations, ou lorsque vous voulez partager des annotations sur plusieurs pages.
 
 #### chatSquarePercentage
 
-Contrôle la taille des marqueurs cliquables en pourcentage de la largeur de l'image. La valeur par défaut est 5 %, ce qui signifie que chaque marqueur occupe 5 % de la largeur de l'image.
+Contrôle la taille des marqueurs de discussion cliquables en pourcentage de la largeur de l'image. La valeur par défaut est 5 %, ce qui signifie que chaque marqueur représente 5 % de la largeur de l'image.
 
 ```javascript
 FastCommentsImageChat(imageElement, {
@@ -40,11 +40,11 @@ FastCommentsImageChat(imageElement, {
 });
 ```
 
-Des valeurs plus petites créent des marqueurs moins intrusifs, mieux adaptés aux images détaillées. Des valeurs plus grandes rendent les marqueurs plus faciles à voir et à cliquer sur des images chargées ou pour les utilisateurs sur appareils mobiles.
+Des valeurs plus petites créent des marqueurs moins intrusifs qui fonctionnent mieux pour les images détaillées. Des valeurs plus grandes rendent les marqueurs plus faciles à voir et à cliquer sur des images chargées ou pour les utilisateurs sur appareils mobiles.
 
 #### hasDarkBackground
 
-Active le style en mode sombre lorsque votre page a un arrière-plan foncé.
+Active le style en mode sombre lorsque votre page a un arrière-plan sombre.
 
 ```javascript
 FastCommentsImageChat(imageElement, {
@@ -55,7 +55,7 @@ FastCommentsImageChat(imageElement, {
 
 #### commentCountUpdated
 
-Une fonction de rappel qui est déclenchée chaque fois que le nombre de commentaires change. Cela est utile pour mettre à jour des éléments d'interface tels que des badges ou le titre de la page.
+Une fonction de rappel qui se déclenche chaque fois que le nombre de commentaires change. C'est utile pour mettre à jour des éléments d'interface comme des badges ou des titres de page.
 
 ```javascript
 FastCommentsImageChat(imageElement, {
@@ -69,11 +69,11 @@ FastCommentsImageChat(imageElement, {
 
 ### Options de configuration héritées
 
-Puisque Image Chat étend le widget de commentaires standard, vous pouvez utiliser n'importe quelle option de configuration du widget FastComments de base. Voici quelques options couramment utilisées :
+Comme Image Chat étend le widget de commentaires standard, vous pouvez utiliser n'importe quelle option de configuration du widget FastComments de base. Voici quelques options couramment utilisées :
 
 #### locale
 
-Définissez la langue de l'interface du widget. FastComments prend en charge des dizaines de langues.
+Définit la langue de l'interface du widget. FastComments prend en charge des dizaines de langues.
 
 ```javascript
 FastCommentsImageChat(imageElement, {
@@ -84,7 +84,7 @@ FastCommentsImageChat(imageElement, {
 
 #### readonly
 
-Rendre toutes les conversations en lecture seule. Les utilisateurs peuvent voir les marqueurs et discussions existants mais ne peuvent pas en créer de nouveaux ni répondre.
+Rend toutes les conversations en lecture seule. Les utilisateurs peuvent voir les marqueurs et discussions existants mais ne peuvent pas en créer de nouveaux ni répondre.
 
 ```javascript
 FastCommentsImageChat(imageElement, {
@@ -93,9 +93,9 @@ FastCommentsImageChat(imageElement, {
 });
 ```
 
-#### sso and simpleSSO
+#### sso et simpleSSO
 
-Intégrez-vous à votre système d'authentification en utilisant l'authentification unique (SSO).
+Intégrez votre système d'authentification en utilisant l'authentification unique (Single Sign-On).
 
 ```javascript
 FastCommentsImageChat(imageElement, {
@@ -110,7 +110,7 @@ Consultez la documentation SSO pour tous les détails sur les options d'authenti
 
 #### maxReplyDepth
 
-Contrôlez combien de niveaux de profondeur les réponses peuvent atteindre. Par défaut, Image Chat définit ceci à 0, ce qui signifie que tous les commentaires sont plats (pas de réponses en fil). Vous pouvez changer cela si vous souhaitez des conversations en thread.
+Contrôle le nombre de niveaux de profondeur des réponses. Par défaut, Image Chat définit cette valeur à 0, ce qui signifie que tous les commentaires sont à plat (pas de réponses imbriquées). Vous pouvez modifier cette valeur si vous souhaitez des conversations en fil de discussion.
 
 ```javascript
 FastCommentsImageChat(imageElement, {
@@ -121,23 +121,23 @@ FastCommentsImageChat(imageElement, {
 
 ### Configuration interne
 
-Ces options sont automatiquement définies par Image Chat et ne doivent pas être remplacées :
+Ces options sont définies automatiquement par Image Chat et ne doivent pas être remplacées :
 
-Le `productId` est automatiquement défini sur `2` pour Image Chat. L'extension `floating-chat` est automatiquement chargée pour fournir la fonctionnalité de fenêtre de discussion. Le widget détecte automatiquement les appareils mobiles (écrans de moins de 768px de large) et ajuste l'interface en conséquence avec des fenêtres de discussion en plein écran.
+Le `productId` est automatiquement défini à `2` pour Image Chat. L'extension `floating-chat` est automatiquement chargée pour fournir la fonctionnalité de fenêtre de discussion. Le widget détecte automatiquement les appareils mobiles (écrans de moins de 768px de large) et adapte l'interface en conséquence avec des fenêtres de discussion plein écran.
 
 ### Flexibilité de l'élément cible
 
-Le premier paramètre de `FastCommentsImageChat` peut être soit un élément `<img>` directement, soit un élément conteneur contenant une image :
+Le premier paramètre de `FastCommentsImageChat` peut être soit un élément `<img>` directement, soit un élément conteneur avec une image à l'intérieur :
 
 ```javascript
-// Élément <img> direct
+// Élément image direct
 FastCommentsImageChat(document.getElementById('my-image'), config);
 
-// Conteneur contenant une image
+// Conteneur avec image à l'intérieur
 FastCommentsImageChat(document.querySelector('.image-wrapper'), config);
 ```
 
-Le widget trouvera automatiquement l'image si vous passez un élément conteneur.
+Le widget trouvera l'image automatiquement si vous passez un élément conteneur.
 
 ### Exemple complet
 
@@ -160,4 +160,4 @@ FastCommentsImageChat(document.getElementById('product-image'), {
 });
 ```
 
-Pour une liste complète de toutes les options de configuration disponibles héritées du widget de base, consultez la documentation principale de configuration FastComments.
+Pour une liste complète de toutes les options de configuration disponibles héritées du widget de base, consultez la documentation principale de configuration de FastComments.

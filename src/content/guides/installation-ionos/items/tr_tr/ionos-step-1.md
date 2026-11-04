@@ -26,5 +26,3 @@ Başlığı `FastComments Goes Here` olarak ayarlayacağız. Büyük/küçük ha
 </div>
 
 Bu birinci adımın sonu!
-
----

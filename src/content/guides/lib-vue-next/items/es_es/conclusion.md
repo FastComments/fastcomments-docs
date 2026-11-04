@@ -8,5 +8,3 @@ Si encuentra algún problema o tiene preguntas sobre la biblioteca de Vue 3, por
 ## Contribuciones
 
 ¡Las contribuciones son bienvenidas! Por favor visite el [repositorio de GitHub](https://github.com/FastComments/fastcomments-vue-next) para las directrices de contribución.
-
----

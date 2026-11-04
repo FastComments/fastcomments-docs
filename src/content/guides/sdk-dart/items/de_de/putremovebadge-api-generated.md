@@ -1,4 +1,3 @@
----
 ## Parameter
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
@@ -35,5 +34,3 @@ try {
     print('Exception when calling ModerationApi->putRemoveBadge: $e\n');
 }
 [inline-code-end]
-
----

@@ -9,5 +9,3 @@ FastComments 有已驗證（Verified）與未驗證（Unverified）的概念。�
 要求手動核准未驗證的評論可以幫助對抗垃圾留言，因為機器人很少會透過電子郵件驗證他們的評論。在這種情況下，您會想啟用自動核准評論，但啟用 `Only Auto Approve Verified Comments`。
 
 管理員可以在 [審核設定](https://fastcomments.com/auth/my-account/moderate-comments/settings) 中設定這些選項。
-
----

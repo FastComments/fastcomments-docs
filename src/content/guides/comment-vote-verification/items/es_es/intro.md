@@ -4,5 +4,3 @@ FastComments ofrece una serie de mecanismos para prevenir el spam, gestionar cue
 de que los nuevos usuarios publiquen comentarios y creen una cuenta al mismo tiempo.
 
 En este documento aprenderá sobre un aspecto importante de FastComments - Verificación de Comentarios y Votos.
-
----

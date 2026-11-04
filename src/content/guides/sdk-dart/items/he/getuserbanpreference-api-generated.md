@@ -1,4 +1,3 @@
----
 ## פרמטרים
 
 | שם | סוג | מיקום | נדרש | תיאור |
@@ -27,5 +26,3 @@ try {
     print('Exception when calling ModerationApi->getUserBanPreference: $e\n');
 }
 [inline-code-end]
-
----

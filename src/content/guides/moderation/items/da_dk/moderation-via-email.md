@@ -1,4 +1,3 @@
----
 FastComments understøtter et dagligt, ugentligt eller månedligt e‑mail‑oversigtsbrev for moderatorer og administratorer.
 
 Hyppigheden kan konfigureres <a href="" target="_blank">her</a>.
@@ -23,5 +22,3 @@ Bemærk venligst, at disse magiske links udløber efter et stykke tid.
 #### Notifikationstyper
 
 FastComments sender flere typer e‑mails til moderatorer og administratorer. Hvis ønsket, kan du fravælge `Comment Reply`‑notifikationer, mens du stadig modtager `New Comment`‑notifikationer ved at vælge de relevante indstillinger på siden `Edit Notifications`, som vist ovenfor.
-
----

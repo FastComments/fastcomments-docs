@@ -1,17 +1,17 @@
-Bulk user info for a tenant. Given userIds, return display info from User / SSOUser.  
-Used by the comment widget to enrich users that just appeared via a presence event.  
-No page context: privacy is enforced uniformly (private profiles are masked).
+Масова інформація про користувачів для орендаря. За заданими userIds повертає інформацію для відображення з User / SSOUser.
+Використовується віджетом коментарів для збагачення користувачів, які щойно з'явилися через подію присутності.
+Без контексту сторінки: приватність застосовується однаково (приватні профілі маскуються).
 
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Назва | Тип | Розташування | Обов'язковий | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Так |  |
-| ids | string | query | Так | Кома‑розділені userIds. |
+| ids | string | query | Так | userIds, розділені комами. |
 
 ## Відповідь
 
-Returns: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PageUsersInfoResponse.php)
+Повертає: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PageUsersInfoResponse.php)
 
 ## Приклад
 
@@ -22,14 +22,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-// $apiInstance = new FastComments\Client\Api\PublicApi(
-//     // Якщо ви хочете використовувати власний HTTP‑клієнт, передайте свій клієнт, який реалізує `GuzzleHttp\ClientInterface`.
-//     // Це не обов’язково, за замовчуванням буде використано `GuzzleHttp\Client`.
-//     new GuzzleHttp\Client()
-// );
+$apiInstance = new FastComments\Client\Api\PublicApi(
+    // Якщо хочете використати власний http-клієнт, передайте свій клієнт, який реалізує `GuzzleHttp\ClientInterface`.
+    // Це необов'язково, за замовчуванням буде використано `GuzzleHttp\Client`.
+    new GuzzleHttp\Client()
+);
 
 $tenant_id = 'tenant_id_example'; // string
-$ids = 'ids_example'; // string | Кома‑розділені userIds.
+$ids = 'ids_example'; // string | userIds, розділені комами.
 
 
 try {

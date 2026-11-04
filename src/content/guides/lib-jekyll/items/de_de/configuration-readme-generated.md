@@ -1,12 +1,12 @@
-Config stammt aus drei Quellen. Spätere Quellen haben Vorrang:
+Die Konfiguration stammt aus drei Quellen. Spätere Quellen haben Vorrang:
 
-1. **Globale Standardwerte** in `_config.yml` unter dem `fastcomments:`-Schlüssel.
-2. **Seitenkontext**, der automatisch für seitenbezogene Widgets abgeleitet wird (siehe unten).
-3. **Tag-Attribute**, die direkt am Tag selbst geschrieben werden.
+1. **Globale Standardwerte** in `_config.yml` unter dem Schlüssel `fastcomments:`.
+2. **Seitenkontext**, der automatisch für seitenspezifische Widgets abgeleitet wird (siehe unten).
+3. **Tag-Attribute**, die direkt am Tag geschrieben werden.
 
-Ein `url_id` im Tag überschreibt also den seitenabgeleiteten Wert, der wiederum jeden globalen Standard überschreibt.
+Ein `url_id` am Tag überschreibt also den seitenspezifisch abgeleiteten Wert, welcher wiederum jeden globalen Standardwert überschreibt.
 
-### Attributsyntax
+### Attribut-Syntax
 
 Attribute sind `key=value`-Paare in `snake_case`:
 
@@ -14,23 +14,30 @@ Attribute sind `key=value`-Paare in `snake_case`:
 {% raw %}{% fastcomments url_id="my-stable-id" readonly=true count=20 %}{% endraw %}
 ```
 
-- **Quoted** values (`"..."` or `'...'`) are literal strings.
-- **Unquoted** `true`/`false` become booleans, and numbers become numbers.
-- **Unquoted** anything else is resolved as a Liquid variable from the page context, e.g.
-  `url_id=page.slug`. (Liquid does not expand `{% raw %}\{{ ... }}{% endraw %}` inside a tag's
-  attributes, so use the bare `page.slug` form rather than `"{% raw %}\{{ page.slug }}{% endraw %}"`.)
+- **In Anführungszeichen gesetzte** Werte (`"..."` oder `'...'`) sind literale Zeichenketten.
+- **Ohne Anführungszeichen** werden `true`/`false` zu Booleans und Zahlen zu Zahlen.
+- **Ohne Anführungszeichen** wird alles andere als Liquid-Variable aus dem Seitenkontext aufgelöst, z. B.
+  `url_id=page.slug`. (Liquid expandiert `{% raw %}\{{ ... }}{% endraw %}` nicht innerhalb der
+  Attribute eines Tags, daher verwenden Sie die nackte Form `page.slug` statt `"{% raw %}\{{ page.slug }}{% endraw %}"`.)
 
-Snake_case-Attribute und Konfigurationsschlüssel werden automatisch auf die camelCase-Schlüssel abgebildet, die FastComments erwartet (`tenant_id` → `tenantId`, `url_id` → `urlId`, `page_title` → `pageTitle`, `has_dark_background` → `hasDarkBackground` usw.). Jede andere Option aus der [widget configuration](https://docs.fastcomments.com/guide-customizations-and-configuration.html) wird auf dieselbe Weise direkt durchgereicht.
+Snake_case-Attribut- und Konfigurationsschlüssel werden automatisch auf die camelCase-Schlüssel gemappt, die
+FastComments erwartet (`tenant_id` → `tenantId`, `url_id` → `urlId`, `page_title` → `pageTitle`,
+`has_dark_background` → `hasDarkBackground` usw.). Jede andere Option aus der
+[Widget-Konfiguration](https://docs.fastcomments.com/guide-customizations-and-configuration.html)
+wird auf dieselbe Weise direkt durchgereicht.
 
-### Von der Seite abgeleitete Werte
+### Seitenspezifisch abgeleitete Werte
 
-Für die seitenbezogenen Widgets (`fastcomments`, `fastcomments_comment_count`, `fastcomments_live_chat`, `fastcomments_collab_chat`, `fastcomments_image_chat`) werden diese automatisch aus der aktuellen Seite gefüllt, sofern Sie sie nicht selbst setzen:
+Für die seitenspezifischen Widgets (`fastcomments`, `fastcomments_comment_count`, `fastcomments_live_chat`,
+`fastcomments_collab_chat`, `fastcomments_image_chat`) werden diese automatisch aus der
+aktuellen Seite gefüllt, sofern Sie sie nicht selbst setzen:
 
-- `url_id` ← `page.url` (ein stabiler Bezeichner, unabhängig von der besuchenden Domain)
+- `url_id` ← `page.url` (ein stabiler Bezeichner, unabhängig von der besuchten Domain)
 - `url` ← `site.url` + `page.url` (nur wenn `url` in `_config.yml` gesetzt ist)
 - `page_title` ← `page.title`
 
-Site-weite Widgets (neueste Kommentare/Diskussionen, Top-Seiten, Bewertungsübersicht, Benutzeraktivitäts-Feed, Sammelzählung) sind nicht an eine Seite gebunden und leiten diese Werte nicht ab.
+Seitenweite Widgets (neueste Kommentare/Diskussionen, Top-Seiten, Bewertungsübersicht, Benutzeraktivitäts-Feed,
+Bulk-Count) sind nicht an eine Seite gebunden und leiten diese Werte nicht ab.
 
 ### EU-Datenresidenz
 
@@ -42,4 +49,4 @@ fastcomments:
   region: eu
 ```
 
-oder pro Tag: `{% raw %}{% fastcomments region="eu" %}{% endraw %}`. Widgets werden dann vom EU-CDN geladen.
+oder pro Tag: `{% raw %}{% fastcomments region="eu" %}{% endraw %}`. Widgets werden dann über das EU-CDN geladen.

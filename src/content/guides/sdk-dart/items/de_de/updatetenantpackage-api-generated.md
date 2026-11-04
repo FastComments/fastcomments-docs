@@ -31,5 +31,3 @@ try {
     print('Exception when calling DefaultApi->updateTenantPackage: $e\n');
 }
 [inline-code-end]
-
----

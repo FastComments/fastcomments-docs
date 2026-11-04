@@ -1,4 +1,3 @@
----
 W przypadku WordPressa tę funkcję można włączyć, instalując wtyczkę taką jak WPCode i dodając następujący fragment HTML do stopki bloga:
 
 [inline-code-attrs-start title = 'Kod pływających polubień dla WordPress'; type = 'bash'; useDemoTenant = true; isFunctional = false; type = 'html';  inline-code-attrs-end]
@@ -26,5 +25,3 @@ W przypadku WordPressa tę funkcję można włączyć, instalując wtyczkę tak�
     })();
 </script>
 [inline-code-end]
-
----

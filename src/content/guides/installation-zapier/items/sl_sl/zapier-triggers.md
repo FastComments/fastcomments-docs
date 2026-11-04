@@ -21,5 +21,3 @@ Vsak sprožilec vrne celoten komentar: id, URL strani in URL ID, ime in e‑mail
 Vklop Zap-a ustvari naročnino na webhook v vašem računu, vidno na strani Webhooks s virom **API**. Izklop Zap-a jo odstrani. Zapierjeve lastne omejitve veljajo za število dogodkov, ki jih sprejme na minuto; FastComments ponovi pošiljanje, ki ne uspe, z naraščajočim zamikom, in onemogoči naročnino, ki ne uspe šest dni. Onemogočeno naročnino lahko ponovno omogočite na strani Webhooks ali preprosto izklopite in ponovno vklopite Zap, da ustvarite novo.
 
 Račun lahko vsebuje največ 50 API naročnin. Vsak Zap, ki uporablja sprožilec FastComments, uporabi eno.
-
----

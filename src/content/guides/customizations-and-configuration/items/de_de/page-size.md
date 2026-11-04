@@ -1,4 +1,3 @@
----
 Standardmäßig beträgt die FastComments‑Seitengröße `30`. Dies schließt Antworten in Threads ein.
 
 Die Seitengröße kann in der [Widget Configuration UI](https://fastcomments.com/auth/my-account/customize-widget) in verschiedenen Größen von `10` bis `200` angepasst werden.
@@ -14,4 +13,3 @@ Ein Beispiel für die Konfiguration wird unten gezeigt:
 Seitengrößen können global, pro Domain oder pro Seite angepasst werden, indem verschiedene Anpassungsregeln erstellt werden.
 
 Dies wirkt sich auf alle Clients, Integrationen und Frameworks aus, die Sie möglicherweise verwenden, um Kommentare über unsere Plattform anzuzeigen.
----

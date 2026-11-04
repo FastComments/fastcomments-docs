@@ -1,4 +1,3 @@
----
 Ko delite odlomke kode, FastComments poskuša samodejno določiti, v katerem programskem jeziku je vsak odlomek, da ga ustrezno oblikuje in uporabi poudarjanje sintakse.
 
 FastComments syntax highlighting trenutno podpira 39 pogostih jezikov:
@@ -47,4 +46,3 @@ FastComments syntax highlighting trenutno podpira 39 pogostih jezikov:
 - YAML
 
 Če delite odlomek kode v jeziku, ki ga ne podpiramo, bo še vedno prikazan kot koda - vendar ne bo uporabljeno poudarjanje sintakse ali preoblikovanje.
----

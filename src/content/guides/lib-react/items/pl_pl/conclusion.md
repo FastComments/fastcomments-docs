@@ -8,5 +8,3 @@ Jeśli napotkasz jakiekolwiek problemy lub masz pytania dotyczące biblioteki Re
 ## Współtworzenie
 
 Wkład jest mile widziany! Odwiedź [repozytorium na GitHub](https://github.com/FastComments/fastcomments-react) po wytyczne dotyczące kontrybucji.
-
----

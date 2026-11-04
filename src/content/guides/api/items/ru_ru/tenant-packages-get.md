@@ -1,4 +1,3 @@
----
 [api-resource-header-start name = 'TenantPackage'; route = 'GET /api/v1/tenant-packages'; creditsCost = 1; api-resource-header-end]
 
 Этот API использует пагинацию, осуществляемую с помощью параметра запроса `skip`. TenantPackages возвращаются страницами по `100`, упорядоченные по `createdAt` и `id`.
@@ -32,5 +31,3 @@ interface TenantPackagesResponse {
     tenantPackages?: TenantPackage[]
 }
 [inline-code-end]
-
----

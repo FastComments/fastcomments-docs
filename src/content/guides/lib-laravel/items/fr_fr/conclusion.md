@@ -8,5 +8,3 @@ Si vous rencontrez des problèmes ou avez des questions concernant le package La
 ## Contribuer
 
 Les contributions sont les bienvenues ! Veuillez consulter le [dépôt GitHub](https://github.com/FastComments/fastcomments-laravel) pour les consignes de contribution.
-
----

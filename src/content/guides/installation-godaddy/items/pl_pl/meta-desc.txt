@@ -1,3 +1,1 @@
----
 Dodaj komentarze na żywo do witryny GoDaddy za pomocą obszaru kodu, opublikuj i napraw błąd domeny, który pojawia się, gdy widget działa na niezarejestrowanej domenie.
----

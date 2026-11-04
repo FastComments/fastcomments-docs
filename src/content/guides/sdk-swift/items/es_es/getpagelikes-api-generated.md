@@ -1,4 +1,3 @@
----
 Recuento de likes para una página, opcionalmente con los usuarios que la han marcado como me gusta.
 
 ## Parameters
@@ -35,5 +34,3 @@ DefaultAPI.getPageLikes(tenantId: tenantId, urlId: urlId, includeUserInfo: inclu
     }
 }
 [inline-code-end]
-
----

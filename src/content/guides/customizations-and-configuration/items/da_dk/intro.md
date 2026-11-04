@@ -11,5 +11,3 @@ Kodeeksempler vil blive vist, med relevante linjer fremhævet. Skærmbilleder af
 Kodeeksemplerne vil bruge vores vanilla JavaScript-bibliotek, men konfigurationsmulighederne bruger de præcis samme navne for alle versioner af kommentar-widget'en (React, Vue osv.).
 
 De fleste konfigurationer og funktioner, der er skitseret i denne guide, kræver ikke, at der skrives kode.
-
----

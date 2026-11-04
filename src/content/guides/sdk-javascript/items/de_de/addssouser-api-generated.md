@@ -25,5 +25,3 @@ const newUser: CreateAPISSOUserData = {
 
 const result: AddSSOUserAPIResponse = await addSSOUser(tenantId, newUser);
 [inline-code-end]
-
----

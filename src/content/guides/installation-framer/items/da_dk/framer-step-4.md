@@ -1,4 +1,3 @@
----
 Vi kan forbedre widget'ens placering ved at gøre to ting.
 
 Først, i venstre panel, sæt widget'ens højde til `fill` og `1fr`:
@@ -16,5 +15,3 @@ Dernæst skal vi rette standard Framer-sidekonfigurationen. Som standard sætter
 </div>
 
 Du kan blive nødt til at justere sidehøjden for at få den, som du ønsker.
-
----

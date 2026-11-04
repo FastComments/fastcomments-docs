@@ -1,33 +1,27 @@
-The individual votes behind one poll's tallies, oldest first.
+Отдельные голоса, стоящие за итогами одного опроса, начиная с самых старых.
 
-Отдельные голоса, стоящие за подсчетами одного опроса, от старых к новым.
+Опрос принадлежит комментарию, поэтому голоса всегда читаются по одному опросу за раз — commentId обязателен. Это
+позволяет каждому запросу использовать уже существующие индексы коллекции.
 
-A poll belongs to a comment, so votes are always read one poll at a time - commentId is required. That
-keeps every query on the indexes the collection already has.
+Соблюдает настройки приватности опроса: голоса анонимного опроса нельзя прочитать (poll-anonymous), ни здесь, ни по id.
 
-Опрос принадлежит комментарию, поэтому голоса всегда читаются по одному опросу за раз — требуется commentId. Это сохраняет каждый запрос в пределах индексов, которые уже есть в коллекции.
+## Параметры
 
-Obeys the poll's privacy: an anonymous poll's votes cannot be read (poll-anonymous), here or by id.
-
-Соблюдает конфиденциальность опроса: голоса анонимного опроса не могут быть прочитаны (poll-anonymous), ни здесь, ни по идентификатору.
-
-## Parameters
-
-| Имя | Тип | Обязательно | Описание |
+| Имя | Тип | Обязательный | Описание |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| commentId | string | Yes |  |
-| voterId | string | No |  |
-| optionId | string | No |  |
-| skip | number | No |  |
+| tenantId | string | Да |  |
+| commentId | string | Да |  |
+| voterId | string | Нет |  |
+| optionId | string | Нет |  |
+| skip | number | Нет |  |
 
-## Response
+## Ответ
 
-Returns: [`GetPollVotesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPollVotesResponse.ts)
+Возвращает: [`GetPollVotesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPollVotesResponse.ts)
 
-## Example
+## Пример
 
-[inline-code-attrs-start title = 'getPollVotes Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример getPollVotes'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 const tenantId: string = "tenant_12345";
 const commentId: string = "cmt_98765";
@@ -45,5 +39,3 @@ const pollResult: GetPollVotesResponse = await getPollVotes(
 
 console.log(pollResult);
 [inline-code-end]
-
----

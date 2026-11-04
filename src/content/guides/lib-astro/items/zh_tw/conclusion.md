@@ -1,4 +1,3 @@
----
 ## 需要幫助？
 
 如果您在使用 Astro Library 時遇到任何問題或有任何疑問，請：
@@ -9,5 +8,3 @@
 ## 貢獻
 
 歡迎您的貢獻！請造訪 [GitHub 儲存庫](https://github.com/FastComments/fastcomments-astro) 以查看貢獻指南。
-
----

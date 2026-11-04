@@ -1,4 +1,3 @@
----
 | Shortcode | Description |
 | --- | --- |
 | `fastcomments` | Widget de commentaires avec réponses, votes et plus |
@@ -37,4 +36,3 @@ This page has {% fastcommentsCommentCount { tenantId: "demo" } %} comments.
 {# Fil d'activité utilisateur #}
 {% fastcommentsUserActivityFeed { tenantId: "demo", userId: "demo:demo-user" } %}
 ```
----

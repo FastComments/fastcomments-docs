@@ -1,6 +1,6 @@
 ## Parametreler
 
-| Ad | Tür | Konum | Gerekli | Açıklama |
+| Ad | Tür | Konum | Zorunlu | Açıklama |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Evet |  |
 | userId | string | path | Evet |  |
@@ -11,12 +11,12 @@ Döndürür: `APIGetUserBadgeProgressResponse`
 
 ## Örnek
 
-[inline-code-attrs-start title = 'getUserBadgeProgressByUserId Örnek'; type = ''; isFunctional = false; inline-code-attrs-end]
-```dart
+[inline-code-attrs-start title = 'getUserBadgeProgressByUserId Örneği'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
 import 'package:fastcomments_dart/api.dart';
-// TODO API anahtarı yetkilendirmesini yapılandırın: api_key
+// TODO API anahtar yetkilendirmesini yapılandırın: api_key
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKey = 'YOUR_API_KEY';
-// Aşağıdakini yorumdan kaldırarak API anahtarı için ön ek (ör. Bearer) ayarlayın, gerekirse
+// gerekirse API anahtarı için önek (örn. Bearer) ayarlamak üzere aşağıdaki satırın yorumunu kaldırın
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKeyPrefix = 'Bearer';
 
 final api_instance = DefaultApi();
@@ -27,6 +27,6 @@ try {
     final result = api_instance.getUserBadgeProgressByUserId(tenantId, userId);
     print(result);
 } catch (e) {
-    print('Exception when calling DefaultApi->getUserBadgeProgressByUserId: $e\n');
+    print('DefaultApi->getUserBadgeProgressByUserId çağrılırken istisna oluştu: $e\n');
 }
-```
+[inline-code-end]

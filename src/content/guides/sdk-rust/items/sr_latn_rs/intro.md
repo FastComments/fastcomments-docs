@@ -5,5 +5,3 @@ Zvanični Rust SDK za FastComments API
 ## Repozitorijum
 
 [Prikaži na GitHub-u](https://github.com/FastComments/fastcomments-rust)
-
----

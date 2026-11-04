@@ -1,29 +1,29 @@
-Об'єкт `DomainConfig` представляє конфігурацію для домену для орендаря.
+Об'єкт `DomainConfig` представляє конфігурацію домену для орендаря (tenant).
 
 Структура об'єкта `DomainConfig` виглядає так:
 
 [inline-code-attrs-start title = 'Структура конфігурації домену'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface DomainConfig {
-    /** Домен, а не URL, наприклад "fastcomments.com" або "www.example.com". Можна вказати піддомен, якщо потрібно обмежити до піддомену. Максимум 1000 символів. **/
+    /** Домен, а не URL, наприклад "fastcomments.com" або "www.example.com". Субдомен може бути включений, якщо потрібно обмежити його субдоменом. Максимум 1000 символів. **/
     domain: string
-    /** Ім'я відправника, яке використовується при надсиланні електронних листів. **/
+    /** Ім'я відправника (From-Name), що використовується при надсиланні електронних листів. **/
     emailFromName?: string
-    /** Адреса електронної пошти відправника (From-Email), яка використовується при надсиланні листів. Переконайтеся, що SPF налаштовано, щоб дозволити mail.fastcomments.com відправляти листи від імені домену, вказаного в цьому атрибуті. **/
+    /** Email відправника (From-Email), що використовується при надсиланні електронних листів. Переконайтеся, що SPF налаштовано так, щоб mail.fastcomments.com міг надсилати листи від імені домену, вказаного в цьому атрибуті. **/
     emailFromEmail?: string
-    /** READONLY. When the object was created. **/
+    /** ЛИШЕ ДЛЯ ЧИТАННЯ. Коли було створено об'єкт. **/
     createdAt: string
-    /** Логотип, пов'язаний із цим доменом. Використовується в листах. Використовуйте HTTPS. **/
+    /** Логотип, пов'язаний з цим доменом. Використовується в електронних листах. Використовуйте HTTPS. **/
     logoSrc?: string
-    /** Менший логотип, пов'язаний із цим доменом. Використовуйте HTTPS. **/
+    /** Менший логотип, пов'язаний з цим доменом. Використовуйте HTTPS. **/
     logoSrc100px?: string
-    /** SSO ONLY. The URL used in the footer of every email sent. Supports a "[userId]" variable. **/
+    /** ЛИШЕ ДЛЯ SSO. URL, що використовується у нижньому колонтитулі кожного надісланого листа. Підтримує змінну "[userId]". **/
     footerUnsubscribeURL?: string
-    /** SSO ONLY. The headers used in of every email sent. Useful for example for setting unsubscribe related headers to improve delivery. The List-Unsubscribe entry in this Record, if it exists, supports a "[userId]" variable. **/
+    /** ЛИШЕ ДЛЯ SSO. Заголовки, що використовуються в кожному надісланому листі. Корисно, наприклад, для встановлення заголовків, пов'язаних із відпискою, щоб покращити доставку. Запис List-Unsubscribe у цьому Record, якщо він існує, підтримує змінну "[userId]". **/
     emailHeaders?: Record<string, string>
-    /** Disable all unsubscribe links. Not recommended, may hurt delivery rates. **/
+    /** Вимкнути всі посилання для відписки. Не рекомендується, може погіршити показники доставки. **/
     disableUnsubscribeLinks?: boolean
-    /** DKIM Configuration. **/
+    /** Конфігурація DKIM. **/
     dkim?: DomainConfigDKIM
 }
 [inline-code-end]
@@ -31,35 +31,31 @@ interface DomainConfig {
 [inline-code-attrs-start title = 'Структура конфігурації DKIM'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface DomainConfigDKIM {
-    /** The domain name in your DKIM record. **/
+    /** Ім'я домену у вашому DKIM-записі. **/
     domainName: string
-    /** The DKIM key selector to use. **/
+    /** Селектор ключа DKIM, який слід використовувати. **/
     keySelector: string
-    /** The public key, in PEM format. Returned in GET responses. **/
+    /** Публічний ключ у форматі PEM. Повертається у відповідях GET. **/
     publicKey: string
-    /** @deprecated No longer returned in API responses. Accepted on write for backwards compatibility. **/
+    /** @deprecated Більше не повертається у відповідях API. Приймається при записі для зворотної сумісності. **/
     privateKey?: string
 }
 [inline-code-end]
 
 ### Для автентифікації
 
-Domain Configuration is used to determine which sites can host the FastComments widget for your account. This is a basic form
-of authentication, meaning adding or removing any Domain Configurations can impact the availability of your FastComments installation
-in production.
+Конфігурація домену використовується для визначення того, які сайти можуть розміщувати віджет FastComments для вашого облікового запису. Це базова форма автентифікації, тобто додавання або видалення будь-яких конфігурацій доменів може вплинути на доступність вашого встановлення FastComments у продуктивному середовищі.
 
-Don't remove or update the `domain` property of a `Domain Config` for a domain that is currently in use unless disabling that domain is intended.
+Не видаляйте і не оновлюйте властивість `domain` у `Domain Config` для домену, який зараз використовується, якщо ви не маєте намір вимкнути цей домен.
 
-This has the same behavior as removing a domain from [/auth/my-account/configure-domains](https://fastcomments.com/auth/my-account/configure-domains).
+Це має таку саму поведінку, як видалення домену з [/auth/my-account/configure-domains](https://fastcomments.com/auth/my-account/configure-domains).
 
-Also note that removing a domain from the `My Domains` UI will remove any corresponding configuration for that domain that may have been added via this UI.
+Також зверніть увагу, що видалення домену з інтерфейсу `My Domains` видалить будь-яку відповідну конфігурацію для цього домену, яка могла бути додана через цей інтерфейс.
 
 ### Для налаштування електронної пошти
 
-The unsubscribe link in the email footer, and the one-click-unsubscribe feature offered by many email clients, can be configured via this API by defining `footerUnsubscribeURL` and `emailHeaders`, respectively.
+Посилання для відписки у нижньому колонтитулі листа, а також функція відписки одним кліком, яку пропонують багато поштових клієнтів, можуть бути налаштовані через цей API шляхом визначення `footerUnsubscribeURL` та `emailHeaders` відповідно.
 
 ### Для DKIM
 
-After defining your DKIM DNS records, simply update the DomainConfig with your DKIM configuration using the defined structure. 
-
----
+Після визначення ваших DNS-записів DKIM просто оновіть DomainConfig вашою конфігурацією DKIM, використовуючи визначену структуру.

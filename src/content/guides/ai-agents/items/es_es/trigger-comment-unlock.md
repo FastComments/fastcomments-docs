@@ -1,4 +1,3 @@
----
 Se desencadena cuando se desbloquea un comentario.
 
 ### Contexto que recibe el agente
@@ -18,5 +17,3 @@ Se desencadena cuando se desbloquea un comentario.
 ### Par
 
 Vea [Disparador: Comentario Bloqueado](#trigger-comment-lock).
-
----

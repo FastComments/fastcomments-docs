@@ -5,5 +5,3 @@ Integrieren Sie Live-Kommentare, Chat- und Bewertungs-Widgets in Ihre Vue-App.
 ## Repository
 
 [Auf GitHub ansehen](https://github.com/FastComments/fastcomments-vue-next)
-
----

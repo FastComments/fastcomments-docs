@@ -1,4 +1,3 @@
----
 Primero, vamos a añadir un formulario de contacto que FastComments reemplazará.
 
 Para ello, abra el editor del sitio y haga clic en `Add Section` en la página deseada.
@@ -27,5 +26,3 @@ Cuando haya terminado, debería aparecer de la siguiente manera:
 </div>
 
 ¡Eso es todo para el paso uno!
-
----

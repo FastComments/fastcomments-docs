@@ -1,4 +1,3 @@
----
 **Şablon Kimliği:** `welcome_greeter`
 
 Welcome Greeter, ilk kez yorum yapanlara sıcak bir şekilde yanıt verir. Bu en düşük riskli şablondur (yıkıcı araç yok) ve canlıya göndermek için iyi bir ilk ajandır.
@@ -24,5 +23,3 @@ Bu tek araçtır - ajan gerçekten moderasyon yapamaz, oy kullanamaz, kullanıc�
 ### Neden onay gerekmez
 
 Ajan yalnızca yeni yorumlar yazar ve yalnızca tek seferlik bir tetikleyicide. En kötü senaryo: garip bir selamlama. Engellenmesi gereken yıkıcı bir eylem yok. Çoğu işletmeci, deneme çalışması (dry-run) temiz göründüğünde bunu tamamen onaysız olarak çalıştırır.
-
----

@@ -1,4 +1,3 @@
----
 Annuler un vote. L'option sur laquelle il a été exprimé récupère son total.
 
 ## Paramètres
@@ -33,5 +32,3 @@ DefaultAPI.deletePollVote(tenantId: tenantId, id: id) { (response, error) in
     }
 }
 [inline-code-end]
-
----

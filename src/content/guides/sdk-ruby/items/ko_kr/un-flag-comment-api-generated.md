@@ -1,4 +1,3 @@
----
 ## 매개변수
 
 | 이름 | 유형 | 위치 | 필수 | 설명 |
@@ -42,5 +41,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->un_flag_comment: #{e}"
 end
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 针对租户的批量用户信息。给定 userIds，返回来自 User / SSOUser 的显示信息。
 由评论小部件用于丰富刚通过 presence 事件出现的用户。
 无页面上下文：隐私统一强制执行（私人资料将被屏蔽）。
@@ -44,5 +43,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->get_users_info: %s\n" % e)
 [inline-code-end]
-
----

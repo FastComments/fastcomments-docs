@@ -64,5 +64,3 @@ function verifyAgentWebhook(rawBody, signatureHeader, timestampHeader, secret) {
 - [Преглед вебхукова](#webhooks-overview).
 - [Пакети података вебхука](#webhook-payloads).
 - Главни [Водич за вебхукове](/guide-webhooks.html) за ширу инфраструктуру потписивања.
-
----

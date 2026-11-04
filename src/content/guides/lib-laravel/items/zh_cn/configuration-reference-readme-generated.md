@@ -1,4 +1,3 @@
----
 | 键 | 环境变量 | 默认值 | 描述 |
 |-----|-------------|---------|-------------|
 | `tenant_id` | `FASTCOMMENTS_TENANT_ID` | `''` | 您的 FastComments 租户 ID |
@@ -9,4 +8,3 @@
 | `sso.login_url` | `FASTCOMMENTS_SSO_LOGIN_URL` | `null` | 登录 URL (回退到 Laravel 路由) |
 | `sso.logout_url` | `FASTCOMMENTS_SSO_LOGOUT_URL` | `null` | 登出 URL (回退到 Laravel 路由) |
 | `widget_defaults` | — | `[]` | 默认 widget 配置选项 |
----

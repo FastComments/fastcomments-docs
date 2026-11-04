@@ -1,20 +1,26 @@
 [api-resource-header-start name = 'Poll'; route = 'PUT /api/v1/polls/:commentId'; creditsCost = 1; api-resource-header-end]
 
-Fügt einer bestehenden Kommentar eine Umfrage hinzu oder setzt den vollständigen Zustand der bereits vorhandenen Umfrage.
+Fügt eine Umfrage an einen bestehenden Kommentar an oder setzt den vollständigen Zustand der Umfrage, die er bereits hat.
 
-Der Body ist die komplette Umfrage, und die Optionen, die Sie senden, werden zu den Umfrageoptionen, in dieser Reihenfolge. Jede Option wird anhand ihrer `id` zugeordnet:
+Der Body ist die vollständige Umfrage, und die Optionen, die Sie senden, werden in dieser Reihenfolge zu den Optionen der Umfrage. Jede Option
+wird über ihre `id` abgeglichen:
 
-- Eine Option, die mit der `id` einer bestehenden Option gesendet wird, behält diese Option und deren Stimmen. Ihre Bezeichnung und Position werden auf das von Ihnen gesendete aktualisiert.
-- Eine Option, die ohne `id` gesendet wird, wird hinzugefügt, ohne Stimmen.
-- Eine bestehende Option, die Sie weglassen, wird entfernt, zusammen mit den darauf abgegebenen Stimmen. `totalVotes` sinkt um denselben Betrag.
+- Eine Option, die mit der `id` einer bestehenden Option gesendet wird, behält diese Option und ihre Stimmen. Ihr Label und ihre Position
+  werden auf die gesendeten Werte aktualisiert.
+- Eine Option, die ohne `id` gesendet wird, wird ohne Stimmen hinzugefügt.
+- Eine bestehende Option, die Sie weglassen, wird zusammen mit den auf sie abgegebenen Stimmen entfernt. `totalVotes` sinkt um denselben
+  Betrag.
 
-Um also eine Option hinzuzufügen, senden Sie die aktuellen Optionen mit ihren IDs plus die neue ohne ID. Um eine zu entfernen, senden Sie die Liste ohne sie. Die Options-IDs finden Sie in der Umfrage, die von `GET /api/v1/polls/:commentId` zurückgegeben wird.
+Um also eine Option hinzuzufügen, senden Sie die aktuellen Optionen mit ihren ids plus die neue ohne id. Um eine zu entfernen,
+senden Sie die Liste ohne sie. Die Option-ids finden sich in der Umfrage, die von `GET /api/v1/polls/:commentId` zurückgegeben wird.
 
-Wenn Sie überhaupt keine IDs senden, werden alle Optionen ersetzt und jede bereits abgegebene Stimme in der Umfrage gelöscht. Hat die Umfrage Stimmen, erfordert dies `replaceVotes=true`; ohne diese Angabe antwortet die API mit `replace-votes-required`.
+Wenn Sie gar keine ids senden, werden alle Optionen ersetzt und alle bereits auf die Umfrage abgegebenen Stimmen gelöscht. Wenn die Umfrage
+Stimmen hat, ist dafür `replaceVotes=true` erforderlich; ohne diesen Parameter antwortet die API mit `replace-votes-required`.
 
-Die anderen Felder werden ebenfalls ersetzt: Wenn Sie `closesAt`, `privacy` oder `requireVoteToSeeResults` weglassen, wird der Standardwert wiederhergestellt. Um ein einzelnes Feld zu ändern und die anderen unverändert zu lassen, verwenden Sie `PATCH /api/v1/polls/:commentId`.
+Die anderen Felder werden ebenfalls ersetzt: Wenn Sie `closesAt`, `privacy` oder `requireVoteToSeeResults` weglassen, wird das jeweilige
+Feld auf seinen Standardwert zurückgesetzt. Um ein einzelnes Feld zu ändern und den Rest unangetastet zu lassen, verwenden Sie `PATCH /api/v1/polls/:commentId`.
 
-[inline-code-attrs-start title = 'Poll Put cURL Beispiel'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Poll Put cURL-Beispiel'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request PUT \
   --url 'https://fastcomments.com/api/v1/polls/comment-id?tenantId=demo&API_KEY=DEMO_API_SECRET' \
@@ -29,7 +35,7 @@ curl --request PUT \
 }'
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Poll Put Anforderungsstruktur'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Poll Put Anfrage-Struktur'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface PollPutQueryParams {
     tenantId: string
@@ -56,7 +62,7 @@ interface PollPutBody {
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Poll Put Antwortstruktur'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Poll Put Antwort-Struktur'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface PollPutResponse {
     status: 'success' | 'failed'
@@ -68,10 +74,12 @@ interface PollPutResponse {
 }
 [inline-code-end]
 
-### Other Notes
+### Weitere Hinweise
 
-- Eine `id`, die nicht in der Umfrage vorhanden ist, oder dieselbe `id` zweimal angegeben, schlägt mit `poll-invalid` fehl. Ein Kommentar ohne Umfrage hat noch keine Options-IDs, daher muss jede an ihn gesendete Option die `id` weglassen.
-- Die Umfrage‑Privatsphäre kann nach Stimmen eingeschränkt, aber nicht erweitert werden.
-- Diese API beachtet Ihre Site‑Einstellungen. Wenn Umfragen für die Site oder Seite nicht aktiviert sind, schlägt sie mit `polls-disabled` fehl.
-- Ein gesperrter Kommentar kann seine Umfrage nicht ändern und schlägt mit `locked` fehl.
-- Verbundenen Widgets werden live aktualisiert, sodass Betrachter die neue Umfrage ohne Neuladen sehen.
+- Eine `id`, die nicht auf der Umfrage vorhanden ist, oder dieselbe `id`, die zweimal angegeben wird, führt zu einem Fehler mit `poll-invalid`. Ein Kommentar ohne
+  Umfrage hat noch keine Option-ids, daher muss bei jeder an ihn gesendeten Option `id` weggelassen werden.
+- Die Privatsphäre-Einstellung einer Umfrage kann nach abgegebenen Stimmen eingeschränkt, aber nicht erweitert werden.
+- Diese API folgt Ihren Seiteneinstellungen. Wenn Umfragen für die Seite oder die Seiten-URL nicht aktiviert sind, schlägt sie mit
+  `polls-disabled` fehl.
+- Ein gesperrter Kommentar kann nicht geändert werden und schlägt mit `locked` fehl.
+- Verbundene Widgets werden live aktualisiert, sodass Betrachter die neue Umfrage ohne Neuladen sehen.

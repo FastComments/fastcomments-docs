@@ -1,28 +1,28 @@
-If you can't install the [Shopify App Store app](https://apps.shopify.com/fastcomments), you can still add FastComments by editing your theme. This path is useful when you want to wire up a FastComments tenant you already own, or when you're embedding on a Shopify storefront where the app isn't an option.
+Якщо ви не можете встановити застосунок із [Shopify App Store](https://apps.shopify.com/fastcomments), ви все одно можете додати FastComments, відредагувавши свою тему. Цей шлях корисний, коли ви хочете підключити вже наявний у вас тенант FastComments, або коли ви вбудовуєте віджети на вітрину Shopify, де застосунок недоступний.
 
-The app-based install is the supported path for most stores. Reach for this only if the app doesn't fit.
+Встановлення через застосунок є підтримуваним шляхом для більшості магазинів. Використовуйте цей спосіб, лише якщо застосунок вам не підходить.
 
-### Крок 1: Вимкнути вбудовані коментарі Shopify
+### Крок 1: Вимкніть нативні коментарі Shopify
 
-In your Shopify admin, go to **Пости блогу > Керування блогами**, open each blog, and set **Коментарі вимкнено** in the right-hand panel. Save.
+В адмінпанелі Shopify перейдіть до **Blog posts > Manage blogs**, відкрийте кожен блог і встановіть **Comments are disabled** на панелі праворуч. Збережіть.
 
-This stops Shopify's built-in commenting from showing alongside FastComments.
+Це запобігає показу вбудованих коментарів Shopify разом із FastComments.
 
-### Крок 2: Відкрити шаблон теми блогу
+### Крок 2: Відкрийте шаблон теми блогу
 
-In your Shopify admin:
+В адмінпанелі Shopify:
 
-1. Go to **Онлайн-магазин > Теми**.
-2. Under your current theme, click **Дії > Редагувати код**.
-3. In the file browser on the left, open **Секції** and click `main-article.liquid`.
+1. Перейдіть до **Online Store > Themes**.
+2. Під вашою поточною темою натисніть **Actions > Edit code**.
+3. У файловому браузері ліворуч відкрийте **Sections** і натисніть `main-article.liquid`.
 
-This is the template Shopify renders for a single blog article.
+Це шаблон, який Shopify відображає для окремої статті блогу.
 
-### Крок 3: Вставити фрагмент FastComments
+### Крок 3: Вставте фрагмент FastComments
 
-Scroll to roughly line 100 of `main-article.liquid`, just after the closing `</div>` of the article body. Paste the following snippet:
+Прокрутіть приблизно до 100-го рядка `main-article.liquid`, одразу після закриваючого `</div>` тіла статті. Вставте наступний фрагмент:
 
-[inline-code-attrs-start title = 'Сніпет Shopify FastComments'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Фрагмент FastComments для Shopify'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget" class="page-width page-width--narrow"></div>
@@ -33,14 +33,14 @@ Scroll to roughly line 100 of `main-article.liquid`, just after the closing `</d
         urlId: window.location.pathname
     }];
 </script>
-[inline-end]
+[inline-code-end]
 
-Replace `"demo"` with your own Tenant ID from [fastcomments.com/auth/my-account/api-secret](https://fastcomments.com/auth/my-account/api-secret). Click **Зберегти**.
+Замініть `"demo"` на власний Tenant ID зі сторінки [fastcomments.com/auth/my-account/api-secret](https://fastcomments.com/auth/my-account/api-secret). Натисніть **Save**.
 
-### Крок 4: Авторизувати домен вашого магазину
+### Крок 4: Авторизуйте домен вашого магазину
 
-Open a blog post on your live store. If you see an authorization error instead of the comment widget, FastComments needs to know your store is allowed to use this tenant. See [Domain Errors](/guide-installation-shopify.html#shopify-domain-errors).
+Відкрийте запис у блозі на вашому працюючому магазині. Якщо замість віджета коментарів ви бачите помилку авторизації, FastComments потрібно знати, що вашому магазину дозволено використовувати цей тенант. Дивіться [Помилки домену](/guide-installation-shopify.html#shopify-domain-errors).
 
 ### Додавання FastComments на інші сторінки
 
-The same snippet works on any Liquid template, including product pages, custom pages, and the home page. Paste it where you want comments to appear and adjust `urlId` if you want a stable identifier per page (for example, `urlId: "{{ product.id }}"` on a product template).
+Цей самий фрагмент працює на будь-якому шаблоні Liquid, включно зі сторінками товарів, користувацькими сторінками та головною сторінкою. Вставте його там, де ви хочете бачити коментарі, і за потреби змініть `urlId`, щоб отримати стабільний ідентифікатор для кожної сторінки (наприклад, `urlId: "{{ product.id }}"` у шаблоні товару).

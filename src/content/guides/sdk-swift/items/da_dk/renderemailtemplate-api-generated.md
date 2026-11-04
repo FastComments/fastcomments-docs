@@ -1,4 +1,3 @@
----
 ## Parametre
 
 | Navn | Type | Placering | Obligatorisk | Beskrivelse |
@@ -32,5 +31,3 @@ DefaultAPI.renderEmailTemplate(tenantId: tenantId, renderEmailTemplateBody: rend
     }
 }
 [inline-code-end]
-
----

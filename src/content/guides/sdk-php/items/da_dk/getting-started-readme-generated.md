@@ -1,4 +1,3 @@
----
 Følg venligst [installationsproceduren](#installation-usage-readme-generated) og kør derefter følgende:
 
 ```php
@@ -30,4 +29,3 @@ try {
 }
 
 ```
----

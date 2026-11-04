@@ -1,6 +1,6 @@
-In the **Footer** section of the Custom Code tab, paste the following code:
+У розділі **Footer** на вкладці Custom Code вставте наступний код:
 
-[inline-code-attrs-start title = 'Фрагмент коду для живих коментарів Typeflo.io'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Фрагмент коду живого коментування Typeflo.io'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-v2.min.js" async></script>
 <script>
@@ -48,8 +48,8 @@ In the **Footer** section of the Custom Code tab, paste the following code:
     <img class="screenshot-image" src="/images/installation-guides/typeflo-step-3-paste-code-in-footer-section.png" alt="Вставте код FastComments у розділ Footer" />
 </div>
 
-After pasting the code, click the **Save** button to apply your changes.
+Після вставки коду натисніть кнопку **Save**, щоб застосувати зміни.
 
-Note: This code includes logic to dynamically place the FastComments widget in the optimal location on your Typeflo.io blog posts. Other code snippets will not work properly with Typeflo.io's layout.
+Примітка: Цей код містить логіку для динамічного розміщення віджета FastComments в оптимальному місці у ваших публікаціях блогу Typeflo.io. Інші фрагменти коду не працюватимуть належним чином із макетом Typeflo.io.
 
-Remember to replace `'demo'` with your actual FastComments tenant ID after signing up. If you're logged in to FastComments.com, it should already be replaced.
+Не забудьте замінити `'demo'` на ваш фактичний ідентифікатор орендаря FastComments після реєстрації. Якщо ви увійшли на FastComments.com, він, ймовірно, вже замінений.

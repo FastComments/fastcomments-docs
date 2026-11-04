@@ -12,5 +12,3 @@ Ecco una piccola demo del widget di riepilogo:
 ### Memorizzazione nella cache
 
 Nota che i riepiloghi vengono memorizzati nella cache per 30 secondi, o cinque minuti se c'è un gran numero di recensioni. Per questo motivo, la tua recensione potrebbe non comparire immediatamente nel riepilogo, ma questo ci permette di ridurre il costo di erogazione del widget di riepilogo.
-
----

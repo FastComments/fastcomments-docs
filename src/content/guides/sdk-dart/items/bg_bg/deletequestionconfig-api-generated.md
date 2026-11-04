@@ -30,5 +30,3 @@ try {
     print('Exception when calling DefaultApi->deleteQuestionConfig: $e\n');
 }
 [inline-code-end]
-
----

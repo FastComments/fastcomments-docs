@@ -77,5 +77,3 @@ window.fcConfigs = [{
 在 FastComments，我们投入大量工作以确保邮件投递尽可能可靠。然而，一些邮件服务提供商的投递可靠性 notoriously 有问题。请检查您来自 fastcomments.com 的邮件是否被放入了垃圾邮件文件夹。
 
 如果您[联系我们](https://fastcomments.com/auth/my-account/help)，我们通常可以提供更多关于您可能未看到我们邮件的原因的见解。
-
----

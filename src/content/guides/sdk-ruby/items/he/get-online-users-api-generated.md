@@ -37,5 +37,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_online_users: #{e}"
 end
 [inline-code-end]
-
----

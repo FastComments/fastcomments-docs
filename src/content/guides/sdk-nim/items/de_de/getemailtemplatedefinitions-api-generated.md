@@ -17,5 +17,3 @@ if responseOpt.isSome:
   let definitions = responseOpt.get()
   echo definitions
 [inline-code-end]
-
----

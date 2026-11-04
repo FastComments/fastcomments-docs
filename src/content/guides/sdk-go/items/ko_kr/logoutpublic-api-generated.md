@@ -28,5 +28,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.LogoutPublic`: %v\n", resp)
 }
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 В FastComments ние пишем собствените си разширения, използвайки същия API. Можете да прегледате неминифицирания код
 за тези разширения на следните крайни точки:
 
@@ -23,5 +22,3 @@ https://fastcomments.com/js/comment-ui/extensions/comment-ui.moderation.extensio
 компонент.
 
 https://fastcomments.com/js/comment-ui/extensions/live-chat.extension.js
-
----

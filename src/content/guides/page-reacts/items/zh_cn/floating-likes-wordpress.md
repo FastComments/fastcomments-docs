@@ -1,4 +1,3 @@
----
 对于 WordPress，可以通过安装类似 WPCode 的插件并将以下 HTML 片段添加到博客页脚来启用此功能：
 
 [inline-code-attrs-start title = '适用于 WordPress 的浮动点赞代码'; type = 'bash'; useDemoTenant = true; isFunctional = false; type = 'html';  inline-code-attrs-end]
@@ -26,5 +25,3 @@
     })();
 </script>
 [inline-code-end]
-
----

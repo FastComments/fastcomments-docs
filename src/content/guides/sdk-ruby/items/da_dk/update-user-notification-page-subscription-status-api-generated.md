@@ -1,4 +1,3 @@
----
 Aktivér eller deaktiver notifikationer for en side. Når brugere er abonneret på en side, oprettes der notifikationer
 for nye rodkommentarer, og også
 
@@ -42,5 +41,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->update_user_notification_page_subscription_status: #{e}"
 end
 [inline-code-end]
-
----

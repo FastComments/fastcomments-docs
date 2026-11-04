@@ -1,4 +1,3 @@
----
 Subir y redimensionar una imagen
 
 ## Parámetros
@@ -29,5 +28,3 @@ async fn example() -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
-
----

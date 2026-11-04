@@ -19,5 +19,3 @@ Možemo je uključiti na sledeći način:
 Ovo se može prilagoditi bez koda, na stranici za prilagođavanje vidžeta:
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.collapse-live-comments'; selector = '.collapse-live-comments'; alt='Postavka za sakrivanje live komentara je prebačena tako da se novi komentari pojavljuju odmah umesto iza dugmeta'; title='Prikaži live komentare odmah' app-screenshot-end]
-
----

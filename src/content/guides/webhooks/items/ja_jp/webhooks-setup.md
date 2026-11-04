@@ -1,4 +1,3 @@
----
 `localhost` に対しても本番と同じ手順を実行してください。プロダクション用ドメインと API シークレットが設定されていることを確認してください。
 
 まず、[Webhooks 管理](https://fastcomments.com/auth/my-account/manage-data/webhooks) に移動します。これは「Manage Data」→「Webhooks」からアクセスできます。
@@ -18,5 +17,3 @@
 一覧からWebhookを編集、無効化、再有効化、削除できます。無効化すると、Webhookが再有効化されるまでキューに入ったイベントは保持されます。削除するとそれらは破棄されます。
 
 WebhookはAPI経由でも作成できます（例: Zapier）。この場合、同じ一覧にソースが **API** として表示されます。API を使用した Webhook の管理については、Managing Webhooks via the API を参照してください。
-
----

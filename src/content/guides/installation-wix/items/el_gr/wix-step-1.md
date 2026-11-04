@@ -10,5 +10,3 @@
     <div class="title">Βήμα Πρώτο: Επεξεργασία της Δυναμικής Σελίδας Ανάρτησης</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-1-open-page.png" alt="Επεξεργασία της Δυναμικής Σελίδας Ανάρτησης" />
 </div>
-
----

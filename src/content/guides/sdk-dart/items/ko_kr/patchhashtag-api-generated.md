@@ -31,5 +31,3 @@ try {
     print('Exception when calling DefaultApi->patchHashTag: $e\n');
 }
 [inline-code-end]
-
----

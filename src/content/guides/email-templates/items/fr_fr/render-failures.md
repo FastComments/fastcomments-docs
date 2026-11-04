@@ -1,4 +1,3 @@
----
 Puisque les modèles d'e-mail prennent en charge des variables et de la logique, il est possible de créer des modèles qui ne s'affichent pas, parfois de manière intermittente.
 
 Cela peut être très frustrant à diagnostiquer et à déboguer, surtout si le problème est intermittent ou s'il ne survient que lorsque les données ont un certain aspect.
@@ -19,5 +18,3 @@ La réponse est que les erreurs sont affichées à deux endroits. D'abord, la li
 Ensuite, en consultant un modèle, nous pouvons voir un décompte, par type d'erreur, du nombre de fois où le modèle a échoué à se rendre.
 
 Un bouton de réinitialisation est situé à côté de chaque erreur et de son compteur, afin que nous puissions réinitialiser le compteur après avoir résolu un problème.
-
----

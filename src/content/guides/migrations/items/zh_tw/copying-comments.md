@@ -21,5 +21,3 @@
 #### WordPress
 
 如果您使用 WordPress，則可以在遷移工具的「目標/來源」`URL ID` 欄位中直接輸入文章 ID，而非 URL。
-
----

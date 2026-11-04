@@ -1,147 +1,148 @@
-The only structure sent via webhooks is the WebhookComment object, outlined in TypeScript below.
+Jedyną strukturą wysyłaną przez webhooki jest obiekt WebhookComment, przedstawiony poniżej w TypeScript.
 
 #### Struktura obiektu WebhookComment
 
-##### Struktura zdarzenia „Create”
-The "create" event request body is a WebhookComment object.
+##### Struktura zdarzenia "Create"
+Treść żądania zdarzenia "create" jest obiektem WebhookComment.
 
-##### Struktura zdarzenia „Update”
-The "update" event request body is a WebhookComment object.
+##### Struktura zdarzenia "Update"
+Treść żądania zdarzenia "update" jest obiektem WebhookComment.
 
-##### Struktura zdarzenia „Delete”
-The "delete" event request body is a WebhookComment object.
+##### Struktura zdarzenia "Delete"
+Treść żądania zdarzenia "delete" jest obiektem WebhookComment.
 
-    Zmiana od 14 listopada 2023
-    Wcześniej ciało żądania zdarzenia „delete” zawierało tylko identyfikator komentarza. Teraz zawiera pełny komentarz w momencie usunięcia.
+    Zmiana z 14 listopada 2023
+    Wcześniej treść żądania zdarzenia "delete" zawierała tylko identyfikator komentarza. Teraz zawiera pełny komentarz w momencie usunięcia.
 
-Każdy klucz jest zawsze obecny w ciele. Gdy komentarz nie ma wartości dla pola, ciało zawiera `null` (lub `false` dla wartości logicznych i `[]` dla list), więc struktura dostawy nigdy nie różni się między kolejnymi komentarzami.
+
+Każdy klucz jest zawsze obecny w treści. Gdy komentarz nie ma wartości dla danego pola, treść zawiera `null`
+(lub `false` dla wartości logicznych oraz `[]` dla list), dzięki czemu kształt dostarczanych danych nigdy nie różni się między komentarzami.
 
 [inline-code-attrs-start title = 'Obiekt WebhookComment'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface WebhookComment {
-    /** Identyfikator komentarza. **/
+    /** The id of the comment. **/
     id: string
-    /** Identyfikator lub URL identyfikujący wątek komentarza. Znormalizowany. **/
+    /** The id or URL that identifies the comment thread. Normalized. **/
     urlId: string
-    /** URL wskazujący miejsce, w którym pozostano komentarz. **/
+    /** The URL that points to where the comment was left. **/
     url: string | null
-    /** Identyfikator użytkownika, który pozostawił komentarz. W przypadku SSO poprzedzony identyfikatorem najemcy. **/
+    /** The user id that left the comment. If SSO, prefixed with tenant id. **/
     userId: string | null
-    /** Adres e‑mail użytkownika, który pozostawił komentarz. **/
+    /** The email of the user left the comment. **/
     commenterEmail: string | null
-    /** Nazwa użytkownika wyświetlana w widżecie komentarza. W przypadku SSO może być displayName. **/
+    /** The name of the user that shows in the comment widget. With SSO, can be displayName. **/
     commenterName: string
-    /** Surowy tekst komentarza. **/
+    /** Raw comment text. **/
     comment: string
-    /** Tekst komentarza po przetworzeniu. **/
+    /** Comment text after parsing. **/
     commentHTML: string
-    /** Zewnętrzny identyfikator komentarza. **/
+    /** Comment external id. **/
     externalId: string | null
-    /** Identyfikator komentarza nadrzędnego. **/
+    /** The id of the parent comment. **/
     parentId: string | null
-    /** Data w formacie UTC, kiedy komentarz został pozostany. **/
+    /** The UTC date when the comment was left. **/
     date: UTC_ISO_DateString
-    /** Łączna karma (głosy w górę - w dół). **/
+    /** Combined karma (up - down) of votes. **/
     votes: number
     votesUp: number
     votesDown: number
-    /** Prawda, jeśli użytkownik był zalogowany podczas komentowania, zweryfikował komentarz lub zweryfikował sesję w momencie pozostawienia komentarza. **/
+    /** True if the user was logged in when they commented, or their verified the comment, or if they verified their session when the comment was left. **/
     verified: boolean
-    /** Data w formacie UTC, kiedy komentarz został zweryfikowany. **/
+    /** The UTC date when the comment was verified. **/
     verifiedDate: UTC_ISO_DateString | null
-    /** Jeśli moderator oznaczył komentarz jako sprawdzony. **/
+    /** If a moderator marked the comment reviewed. **/
     reviewed: boolean
-    /** Lokalizacja lub kodowanie base64 awatara. Będzie base64 tylko wtedy, gdy taka wartość została przekazana z SSO. **/
+    /** The location, or base64 encoding, of the avatar. Will only be base64 if that was the value passed with SSO. **/
     avatarSrc: string | null
-    /** Czy komentarz został oznaczony jako spam ręcznie lub automatycznie? **/
+    /** Was the comment manually or automatically marked as spam? **/
     isSpam: boolean
-    /** Czy komentarz został automatycznie oznaczony jako spam? **/
+    /** Was the comment automatically marked as spam? **/
     aiDeterminedSpam: boolean
-    /** Czy w komentarzu znajdują się obrazy? **/
+    /** Are there images in the comment? **/
     hasImages: boolean
-    /** Numer strony, na której znajduje się komentarz w sortowaniu „Most Relevant”. **/
+    /** The page number the comment is on for the "Most Relevant" sort direction. **/
     pageNumber: number | null
-    /** Numer strony, na której znajduje się komentarz w sortowaniu „Oldest First”. **/
+    /** The page number the comment is on for the "Oldest First" sort direction. **/
     pageNumberOF: number | null
-    /** Numer strony, na której znajduje się komentarz w sortowaniu „Newest First”. **/
+    /** The page number the comment is on for the "Newest First" sort direction. **/
     pageNumberNF: number | null
-    /** Czy komentarz został zatwierdzony automatycznie lub ręcznie? **/
+    /** Was the comment approved automatically or manually? **/
     approved: boolean
-    /** Kod lokalizacji (format: en_us) użytkownika w momencie napisania komentarza. **/
+    /** The locale code (format: en_us) of the user when the comment was written. **/
     locale: string | null
-    /** Wzmianki @ zapisane w komentarzu, które zostały pomyślnie przetworzone. Puste, gdy ich brak. **/
+    /** The @mentions written in the comment that were successfully parsed. Empty when there are none. **/
     mentions: CommentUserMention[]
-    /** Domena, z której pochodzi komentarz. **/
+    /** The domain the comment is from. **/
     domain: string | null
-    /** Identyfikatory grup moderacji powiązane z tym komentarzem. Puste, gdy ich brak. **/
+    /** The moderation group ids associated with this comment. Empty when there are none. **/
     moderationGroupIds: string[]
-    /** Odznaki wyświetlane obok nazwy komentującego w tym komentarzu, w momencie utworzenia zdarzenia. Puste, gdy ich brak. **/
+    /** The badges shown next to the commenter's name on this comment, as of when the event was created. Empty when there are none. **/
     badges: CommentUserBadgeInfo[]
 }
 [inline-code-end]
 
-Gdy użytkownicy są oznaczani w komentarzu, informacje są przechowywane na liście o nazwie `mentions`. Każdy obiekt na tej liście ma następującą strukturę.
+Gdy użytkownicy są oznaczani w komentarzu, informacje są przechowywane na liście o nazwie `mentions`. Każdy obiekt na tej liście
+ma następującą strukturę.
 
-[inline-code-attrs-start title = 'Obiekt Wzmianki Webhook'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Obiekt Webhook Mentions'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentUserMention {
-    /** Identyfikator użytkownika. Dla użytkowników SSO będzie poprzedzony identyfikatorem najemcy. **/
+    /** The user id. For SSO users, this will have your tenant id prefixed. **/
     id: string
-    /** Końcowy tekst tagu @mention, włącznie z symbolem @. **/
+    /** The final @mention tag text, including the @ symbol. **/
     tag: string
-    /** Oryginalny tekst tagu @mention, włącznie z symbolem @. **/
+    /** The original @mention tag text, including the @ symbol. **/
     rawTag: string
-    /** Typ oznaczonego użytkownika. user = konto FastComments.com. sso = SSOUser. **/
+    /** What type of user was tagged. user = FastComments.com account. sso = SSOUser. **/
     type: 'user'|'sso'
-    /** Jeśli użytkownik rezygnuje z powiadomień, to pole nadal będzie ustawione na true. **/
+    /** If the user opts out of notifications, this will still be set to true. **/
     sent: boolean
 }
 [inline-code-end]
 
-Każdy wpis na liście `badges` ma następującą strukturę. Zobacz [przewodnik po odznakach](/guide-badges.html) aby poznać typy odznak.
+Każdy wpis na liście `badges` ma następującą strukturę. Zobacz [przewodnik po odznakach](/guide-badges.html), aby poznać typy odznak.
 
-[inline-code-attrs-start title = 'Obiekt Odznaki Webhook'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Obiekt Webhook Badge'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentUserBadgeInfo {
-    /** Identyfikator odznaki przyznanej temu użytkownikowi. **/
+    /** The id of the badge awarded to this user. **/
     id: string
-    /** Typ odznaki. **/
+    /** The badge type. **/
     type: number
-    /** Opis odznaki, wyświetlany po najechaniu na odznakę. **/
+    /** The badge description, shown when hovering over the badge. **/
     description: string
-    /** Tekst wyświetlany na odznace. **/
+    /** The text shown on the badge. **/
     displayLabel?: string | null
-    /** Obraz wyświetlany dla odznaki, jeśli jest używany. **/
+    /** The image shown for the badge, if it uses one. **/
     displaySrc?: string | null
     backgroundColor?: string | null
     borderColor?: string | null
     textColor?: string | null
-    /** Dodatkowa klasa CSS zastosowana do odznaki. **/
+    /** An extra CSS class applied to the badge. **/
     cssClass?: string | null
 }
 [inline-code-end]
 
 #### Metody HTTP
 
-Możesz skonfigurować metodę HTTP dla każdego typu zdarzenia webhook w panelu administracyjnym:
+Metodę HTTP dla każdego typu zdarzenia webhooka można skonfigurować w panelu administracyjnym:
 
 - **Zdarzenie Create**: POST lub PUT (domyślnie: PUT)
 - **Zdarzenie Update**: POST lub PUT (domyślnie: PUT)
 - **Zdarzenie Delete**: DELETE, POST lub PUT (domyślnie: DELETE)
 
-Ponieważ wszystkie żądania zawierają identyfikator, operacje Create i Update są domyślnie idempotentne (PUT). Powtarzanie tego samego żądania Create lub Update nie powinno tworzyć duplikatów obiektów po Twojej stronie.
+Ponieważ wszystkie żądania zawierają identyfikator, operacje Create i Update są domyślnie idempotentne (PUT). Powtórzenie tego samego żądania Create lub Update nie powinno tworzyć duplikatów obiektów po Twojej stronie.
 
 #### Nagłówki żądania
 
-Każde żądanie webhook zawiera następujące nagłówki:
+Każde żądanie webhooka zawiera następujące nagłówki:
 
-| Header | Description |
+| Nagłówek | Opis |
 |--------|-------------|
 | `Content-Type` | `application/json` |
 | `token` | Twój sekret API |
 | `X-FastComments-Timestamp` | Znacznik czasu Unix (sekundy) w momencie podpisania żądania |
 | `X-FastComments-Signature` | Podpis HMAC-SHA256 (`sha256=<hex>`) |
 
-Zobacz [Bezpieczeństwo i tokeny API](/guide-webhooks.html#webhooks-api-tokens) aby uzyskać informacje o weryfikacji podpisu HMAC.
-
----
+Zobacz [Bezpieczeństwo i tokeny API](/guide-webhooks.html#webhooks-api-tokens), aby uzyskać informacje na temat weryfikacji podpisu HMAC.

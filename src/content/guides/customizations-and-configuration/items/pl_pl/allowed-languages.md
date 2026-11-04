@@ -1,4 +1,3 @@
----
 Domyślnie FastComments nie ogranicza języków używanych w komentarzach. 
 
 Może być pożądane ograniczenie języków, które społeczność używa.
@@ -10,5 +9,3 @@ Można to skonfigurować bez kodu, na stronie dostosowywania widgetu:
 System przetworzy ich komentarz, określi jego język, a następnie dopasuje go do listy dozwolonych.
 
 Jeśli komentarz zostanie napisany w języku, który nie jest dozwolony, wyświetlony zostanie zlokalizowany komunikat o błędzie. 
-
----

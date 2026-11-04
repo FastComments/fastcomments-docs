@@ -1,6 +1,6 @@
 ### Maven
 
-將 Repsy 儲存庫加入您的專案 POM：
+在您專案的 POM 中加入 Repsy 儲存庫：
 
 ```xml
 <repositories>
@@ -12,7 +12,7 @@
 </repositories>
 ```
 
-然後加入您需要的相依套件：
+然後加入您需要的依賴：
 
 ```xml
 <dependencies>
@@ -41,7 +41,7 @@
 
 ### Gradle
 
-將 Repsy 儲存庫加入您的 `build.gradle` 檔案：
+在您的 build.gradle 檔案中加入 Repsy 儲存庫：
 
 ```groovy
 repositories {
@@ -63,16 +63,16 @@ dependencies {
 }
 ```
 
-### Library Contents
+### 函式庫內容
 
-此函式庫包含三個模組：產生的 API 客戶端、包含手寫工具函式以簡化 API 使用的核心 Java 函式庫，以及 `pubsub` 模組（用於訂閱變更資訊的函式庫）。
+此函式庫包含三個模組：自動產生的 API 用戶端、包含手寫工具程式以簡化 API 操作的核心 Java 函式庫，以及用於訂閱變更串流的 `pubsub` 模組。
 
-- [API Client Library Docs](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
-- [Core Library Docs, Including SSO Examples](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
-- [PubSub Library Docs](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
+- [API Client Library 文件](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
+- [Core Library 文件，包含 SSO 範例](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
+- [PubSub Library 文件](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
-### Public vs Secured APIs
+### 公開 API 與受保護 API
 
-對於 API 客戶端，有三個類別：`DefaultApi`、`PublicApi` 與 `ModerationApi`。`DefaultApi` 包含需要您的 API 金鑰的方法，`PublicApi` 包含可直接從瀏覽器/行動裝置等無需驗證即可呼叫的方法。
+API 用戶端包含三個類別：`DefaultApi`、`PublicApi` 與 `ModerationApi`。`DefaultApi` 包含需要您的 API 金鑰的方法，而 `PublicApi` 包含可直接從瀏覽器/行動裝置等進行呼叫、無需驗證的方法。
 
-`ModerationApi` 提供廣泛的即時與快速審核 API。每個 `ModerationApi` 方法皆接受 `sso` 參數，並可透過 SSO 或 FastComments.com 的會話 Cookie 進行驗證。
+`ModerationApi` 提供一套廣泛且即時快速的審核 API。每個 `ModerationApi` 方法都接受 `sso` 參數，並可透過 SSO 或 FastComments.com 的 session cookie 進行驗證。

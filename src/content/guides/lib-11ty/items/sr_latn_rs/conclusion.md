@@ -8,5 +8,3 @@ Ako naiđete na bilo kakve probleme ili imate pitanja u vezi sa Eleventy (11ty) 
 ## Doprinosi
 
 Doprinosi su dobrodošli! Posetite [GitHub repository](https://github.com/FastComments/fastcomments-11ty) za smernice o doprinosima.
-
----

@@ -1,27 +1,27 @@
-Tutti i payload dei webhook degli agent condividono un involucro comune e aggiungono un blocco `data` specifico per l'evento. Questa pagina elenca lo schema completo per ciascuno.
+Tutti i payload dei webhook degli agent condividono una busta comune e aggiungono un blocco `data` specifico per l'evento. Questa pagina elenca lo schema completo per ciascuno.
 
-### Involucro (ogni evento)
+### Busta (ogni evento)
 
 Ogni payload, indipendentemente dal tipo di evento, ha questi campi di primo livello:
 
-[inline-code-attrs-start title = 'Schema dell\'involucro webhook'; type='json' inline-code-attrs-end]
+[inline-code-attrs-start title = 'Schema della busta del webhook'; type='json' inline-code-attrs-end]
 [inline-code-start]
 {
   "event": "trigger.succeeded | trigger.failed | approval.requested | approval.decided",
   "eventType": 0 | 1 | 2 | 3,
   "tenantId": "string",
-  "domain": "string - il dominio corrispondente per questa consegna",
+  "domain": "string - the matched domain for this delivery",
   "agentId": "string",
   "agentInternalName": "string",
   "agentDisplayName": "string",
-  "occurredAt": "string - timestamp ISO 8601",
-  "data": { /* specifico per l'evento, vedi sotto */ }
+  "occurredAt": "string - ISO 8601 timestamp",
+  "data": { /* event-specific, see below */ }
 }
 [inline-code-end]
 
 ### `trigger.succeeded` / `trigger.failed`
 
-Lo schema di `data`:
+Schema di `data`:
 
 [inline-code-attrs-start title = 'Schema dei dati dell\'evento trigger'; type='json' inline-code-attrs-end]
 [inline-code-start]
@@ -34,32 +34,32 @@ Lo schema di `data`:
   "actions": [
     {
       "type": 0,
-      "commentId": "string - opzionale",
-      "userId": "string - opzionale",
-      "badgeId": "string - opzionale",
+      "commentId": "string - optional",
+      "userId": "string - optional",
+      "badgeId": "string - optional",
       "pending": false,
       "justification": "string",
       "confidence": 0.92
     }
   ],
-  "errorMessage": "string - presente in trigger.failed",
-  "url": "string - opzionale",
-  "urlId": "string - opzionale",
-  "commentId": "string - opzionale"
+  "errorMessage": "string - present on trigger.failed",
+  "url": "string - optional",
+  "urlId": "string - optional",
+  "commentId": "string - optional"
 }
 [inline-code-end]
 
-`triggerType` è un enum numerico dall'[elenco degli eventi trigger](#triggers-overview).
+`triggerType` è un enum numerico dell'[elenco degli eventi trigger](#triggers-overview).
 
-`actions[].type` è un enum numerico dalla [lista degli strumenti](#tools-overview).
+`actions[].type` è un enum numerico dell'[elenco degli strumenti](#tools-overview).
 
-`actions[].pending` è `true` quando l'azione è stata messa in coda per [approvazione](#approval-workflow) invece di essere eseguita.
+`actions[].pending` è `true` quando l'azione è stata messa in coda per l'[approvazione](#approval-workflow) invece di essere eseguita.
 
 ### `approval.requested`
 
-Lo schema di `data`:
+Schema di `data`:
 
-[inline-code-attrs-start title = 'Schema dei dati di richiesta di approvazione'; type='json' inline-code-attrs-end]
+[inline-code-attrs-start title = 'Schema dei dati di approval.requested'; type='json' inline-code-attrs-end]
 [inline-code-start]
 {
   "approvalId": "string",
@@ -67,30 +67,30 @@ Lo schema di `data`:
   "toolName": "ban_user | mark_comment_spam | ...",
   "actionType": 10,
   "status": "PENDING",
-  "args": { /* per strumento, vedi sotto */ },
+  "args": { /* per-tool, see below */ },
   "createdAt": "string - ISO 8601",
-  "justification": "string - opzionale, ragionamento dell'agente",
+  "justification": "string - optional, agent reasoning",
   "confidence": 0.85,
-  "contextSnapshot": { /* il contesto del commento/pagina a cui si riferisce la richiesta di approvazione */ }
+  "contextSnapshot": { /* the comment/page context the approval is about */ }
 }
 [inline-code-end]
 
-L'oggetto **`args`** è qualunque cosa la chiamata allo strumento LLM abbia trasportato. La sua forma dipende dallo strumento:
+L'oggetto **`args`** è ciò che la chiamata allo strumento LLM ha trasportato. La sua forma dipende dallo strumento:
 
 - Per `ban_user`: `{ userId, commentId, duration, shadowBan, deleteAllUsersComments?, banIP? }`.
 - Per `mark_comment_spam`: `{ commentId, isSpam }`.
 - Per `write_comment`: `{ comment, urlId, parentId? }`.
 - ...e così via.
 
-L'insieme delle forme degli argomenti degli strumenti **non è un contratto pubblico stabile**. Possono essere aggiunti strumenti in futuro e la piattaforma passa `args` così come sono. I consumatori dovrebbero trattare `args` come un blob opaco a meno che non comprendano esplicitamente lo strumento coinvolto.
+L'insieme delle forme degli argomenti degli strumenti **non è un contratto pubblico stabile**. Gli strumenti possono essere aggiunti in futuro e la piattaforma passa gli argomenti così come sono. I consumatori dovrebbero trattare gli args come un blob opaco a meno che non comprendano esplicitamente lo strumento coinvolto.
 
-Il **`contextSnapshot`** cattura il contesto del commento, della pagina e dell'utente da cui è stata messa in coda l'approvazione. La sua struttura rispecchia il messaggio di contesto del trigger.
+**`contextSnapshot`** cattura il contesto di commento, pagina e utente da cui l'approvazione è stata messa in coda. La sua forma rispecchia il messaggio di contesto del trigger.
 
 ### `approval.decided`
 
-Lo schema di `data`:
+Schema di `data`:
 
-[inline-code-attrs-start title = 'Schema dei dati della decisione di approvazione'; type='json' inline-code-attrs-end]
+[inline-code-attrs-start title = 'Schema dei dati di approval.decided'; type='json' inline-code-attrs-end]
 [inline-code-start]
 {
   "approvalId": "string",
@@ -106,17 +106,17 @@ Lo schema di `data`:
 }
 [inline-code-end]
 
-### TenantAgentAction shape
+### Forma di TenantAgentAction
 
 All'interno di `actions[]` nei payload dei trigger, ogni azione ha:
 
-[inline-code-attrs-start title = 'Schema TenantAgentAction'; type='json' inline-code-attrs-end]
+[inline-code-attrs-start title = 'Schema di TenantAgentAction'; type='json' inline-code-attrs-end]
 [inline-code-start]
 {
   "type": 0,
-  "commentId": "string - opzionale",
-  "userId": "string - opzionale",
-  "badgeId": "string - opzionale",
+  "commentId": "string - optional",
+  "userId": "string - optional",
+  "badgeId": "string - optional",
   "pending": false,
   "justification": "string",
   "confidence": 0.92
@@ -140,7 +140,7 @@ I valori dell'enum `type` corrispondono a `AgentActionType`:
 - 12: `WARNED_USER`
 - 13: `SAVED_MEMORY`
 
-`SEARCH_MEMORY` non appare in `actions[]` perché è di sola lettura e non è tracciato/auditato.
+`SEARCH_MEMORY` non compare in `actions[]` perché è di sola lettura e non auditato.
 
 ### Valori dell'enum `triggerType`
 
@@ -161,15 +161,15 @@ I valori dell'enum `type` corrispondono a `AgentActionType`:
 - 12: `COMMENT_FLAG_THRESHOLD`
 - 13: `NEW_USER_FIRST_COMMENT`
 - 14: `COMMENT_AUTO_SPAMMED`
-- 15: `REPLAY` (interno; non inviato ai webhook)
+- 15: `REPLAY` (interno; non consegnato ai webhook)
 
-### Headers
+### Header
 
-Ogni invio include:
+Ogni consegna include:
 
 - `X-FastComments-Agent-Event` - il nome canonico dell'evento (`trigger.succeeded`, ecc.).
-- `X-FastComments-Signature` - HMAC-SHA256 del corpo grezzo usando il tuo secret API. Vedi [Webhook Signing](#webhook-signing).
+- `X-FastComments-Signature` - HMAC-SHA256 del corpo grezzo utilizzando il tuo segreto API. Vedi [Firma dei webhook](#webhook-signing).
 
 ### Stabilità
 
-I campi dell'involucro e i campi `data` documentati per evento fanno parte del contratto pubblico. Aggiungere nuovi campi opzionali ai payload esistenti è consentito e non è considerato una breaking change: il tuo consumer dovrebbe ignorare i campi sconosciuti. La forma di `args` e `contextSnapshot` **non** fa parte del contratto.
+I campi della busta e i campi `data` documentati per ogni evento fanno parte del contratto pubblico. L'aggiunta di nuovi campi opzionali ai payload esistenti è consentita e non è considerata una modifica breaking - il tuo consumatore dovrebbe ignorare i campi sconosciuti. La forma di `args` e `contextSnapshot` **non** fa parte del contratto.

@@ -8,5 +8,3 @@ Apri di nuovo il terminale del tuo editor ed esegui `npm run zip`.
 </div>
 
 Questo impacchetterà il tema in un file zip in `dist/casper-fastcomments.zip` (se è questo il nome che hai dato al tema in `Step Three`).
-
----

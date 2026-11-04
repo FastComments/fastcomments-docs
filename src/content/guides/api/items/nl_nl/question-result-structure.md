@@ -1,4 +1,3 @@
----
 Om resultaten voor vragen op te slaan, maakt u een `QuestionResult`. U kunt vervolgens vraagresultaten aggregeren, en ook
 ze aan opmerkingen koppelen voor rapportagedoeleinden.
 
@@ -22,5 +21,3 @@ interface QuestionResult {
     meta?: QuestionResultMeta[]
 }
 [inline-code-end]
-
----

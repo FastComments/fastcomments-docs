@@ -29,5 +29,3 @@ const request: BulkAggregateQuestionResultsRequest = {
 
 const response: BulkAggregateQuestionResultsResponse = await bulkAggregateQuestionResults(tenantId, request, true);
 [inline-code-end]
-
----

@@ -18,5 +18,3 @@ if optResp.isSome:
   let user = optResp.get()
   discard user
 [inline-code-end]
-
----

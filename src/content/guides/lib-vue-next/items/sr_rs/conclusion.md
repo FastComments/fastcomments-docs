@@ -8,5 +8,3 @@
 ## Допринес
 
 Доприноси су добродошли! Молимо вас да посетите [GitHub репозиторијум](https://github.com/FastComments/fastcomments-vue-next) за смернице за допринос.
-
----

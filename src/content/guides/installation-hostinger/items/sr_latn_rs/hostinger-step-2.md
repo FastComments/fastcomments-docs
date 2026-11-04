@@ -46,5 +46,3 @@ Sada prevucite widget da postignete željenu veličinu — videćete da se pojav
 </div>
 
 ...i sada pregledajte i sačuvajte!
-
----

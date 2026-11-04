@@ -1,21 +1,21 @@
-Queues a batch job that reverses every migration from one migrate-pages job, newest first. Available for 90 days.  
-Records changed since the migration are left alone, so a later edit is never overwritten.  
-Poll GET /api/v1/batch-jobs/{batchJobId} for the restored/skipped counts.
+Uvrsti paketno opravilo, ki obrne vsako migracijo iz enega opravila migrate-pages, od najnovejše naprej. Na voljo 90 dni.
+Zapisi, spremenjeni od migracije, ostanejo nespremenjeni, tako da kasnejše urejanje ni nikoli prepisano.
+Anketirajte GET /api/v1/batch-jobs/{batchJobId} za število obnovljenih/izpuščenih.
 
-## Parameters
+## Parametri
 
 | Ime | Vrsta | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| undoId | string | path | Yes |  |
+| tenantId | string | query | Da |  |
+| undoId | string | path | Da |  |
 
-## Response
+## Odgovor
 
 Vrne: [`QueuePageMigrationJobAPIResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/QueuePageMigrationJobAPIResponse.java)
 
-## Example
+## Primer
 
-[inline-code-attrs-start title = 'undoPageMigrations Primer'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer undoPageMigrations'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Import classes:
 import com.fastcomments.invoker.ApiClient;
@@ -44,10 +44,10 @@ public class Example {
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Izjema pri klicu DefaultApi#undoPageMigrations");
-      System.err.println("Koda statusa: " + e.getCode());
-      System.err.println("Razlog: " + e.getResponseBody());
-      System.err.println("Glave odgovora: " + e.getResponseHeaders());
+      System.err.println("Exception when calling DefaultApi#undoPageMigrations");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }

@@ -32,5 +32,3 @@ interface PagesResponse {
 #### Yararlı İpucu
 
 `urlId` gibi değerleri URI Encode (URI Kodlama) yapmayı unutmayın.
-
----

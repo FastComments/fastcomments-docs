@@ -23,5 +23,3 @@
   const statusWithoutSso: GetCommentBanStatusResponse = await getCommentBanStatus(tenantId, commentId);
 })();
 [inline-code-end]
-
----

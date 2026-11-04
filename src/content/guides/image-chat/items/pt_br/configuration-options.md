@@ -1,12 +1,12 @@
 ### Visão geral
 
-FastComments Image Chat estende o widget de comentários padrão do FastComments, herdando todas as opções de configuração do widget base e adicionando algumas específicas para anotações em imagens.
+O FastComments Image Chat estende o widget de comentários padrão do FastComments, herdando todas as opções de configuração do widget base e adicionando algumas específicas para anotações em imagens.
 
-### Configuração necessária
+### Configuração obrigatória
 
 #### tenantId
 
-Seu Tenant ID do FastComments é obrigatório. Você pode encontrá-lo no [painel do FastComments](https://fastcomments.com/auth/my-account/api-secret).
+O seu FastComments Tenant ID é obrigatório. Você pode encontrá-lo no seu [painel do FastComments](https://fastcomments.com/auth/my-account/api-secret).
 
 ```javascript
 FastCommentsImageChat(imageElement, {
@@ -27,11 +27,11 @@ FastCommentsImageChat(imageElement, {
 });
 ```
 
-Isso é útil quando a estrutura da sua URL pode mudar, mas você quer manter as mesmas conversas, ou quando deseja compartilhar anotações entre várias páginas.
+Isso é útil quando a estrutura da sua URL pode mudar, mas você deseja manter as mesmas conversas, ou quando deseja compartilhar anotações entre várias páginas.
 
 #### chatSquarePercentage
 
-Controla o tamanho dos marcadores de chat clicáveis como porcentagem da largura da imagem. O padrão é 5%, o que significa que cada marcador tem 5% da largura da imagem.
+Controla o tamanho dos marcadores de chat clicáveis como uma porcentagem da largura da imagem. O padrão é 5%, o que significa que cada marcador tem 5% da largura da imagem.
 
 ```javascript
 FastCommentsImageChat(imageElement, {
@@ -40,11 +40,11 @@ FastCommentsImageChat(imageElement, {
 });
 ```
 
-Valores menores criam marcadores menos intrusivos que funcionam melhor para imagens detalhadas. Valores maiores tornam os marcadores mais fáceis de ver e clicar em imagens ocupadas ou para usuários em dispositivos móveis.
+Valores menores criam marcadores menos intrusivos, que funcionam melhor para imagens detalhadas. Valores maiores tornam os marcadores mais fáceis de ver e clicar em imagens carregadas ou para usuários em dispositivos móveis.
 
 #### hasDarkBackground
 
-Ative o estilo em modo escuro quando sua página tiver um fundo escuro.
+Ativa o estilo do modo escuro quando sua página tem um fundo escuro.
 
 ```javascript
 FastCommentsImageChat(imageElement, {
@@ -55,7 +55,7 @@ FastCommentsImageChat(imageElement, {
 
 #### commentCountUpdated
 
-Uma função de callback que é executada sempre que a contagem de comentários muda. Isso é útil para atualizar elementos da interface como badges ou títulos da página.
+Uma função de callback que é acionada sempre que a contagem de comentários muda. Isso é útil para atualizar elementos da interface, como badges ou títulos de página.
 
 ```javascript
 FastCommentsImageChat(imageElement, {
@@ -73,7 +73,7 @@ Como o Image Chat estende o widget de comentários padrão, você pode usar qual
 
 #### locale
 
-Defina o idioma da interface do widget. O FastComments oferece suporte a dezenas de idiomas.
+Define o idioma da interface do widget. O FastComments suporta dezenas de idiomas.
 
 ```javascript
 FastCommentsImageChat(imageElement, {
@@ -84,7 +84,7 @@ FastCommentsImageChat(imageElement, {
 
 #### readonly
 
-Deixe todas as conversas em modo somente leitura. Os usuários podem visualizar marcadores e discussões existentes, mas não podem criar novos nem responder.
+Torna todas as conversas somente leitura. Os usuários podem ver os marcadores e discussões existentes, mas não podem criar novos nem responder.
 
 ```javascript
 FastCommentsImageChat(imageElement, {
@@ -93,24 +93,24 @@ FastCommentsImageChat(imageElement, {
 });
 ```
 
-#### sso and simpleSSO
+#### sso e simpleSSO
 
-Integre com seu sistema de autenticação usando Single Sign-On.
+Integre com o seu sistema de autenticação usando Single Sign-On.
 
 ```javascript
 FastCommentsImageChat(imageElement, {
     tenantId: 'demo',
     sso: {
-        // Configuração SSO
+        // Configuração do SSO
     }
 });
 ```
 
-Consulte a documentação de SSO para detalhes completos sobre as opções de autenticação.
+Consulte a documentação do SSO para obter detalhes completos sobre as opções de autenticação.
 
 #### maxReplyDepth
 
-Controle quantos níveis de profundidade as respostas podem ter. Por padrão, o Image Chat define isso como 0, significando que todos os comentários são planos (sem respostas aninhadas). Você pode alterar isso se quiser conversas encadeadas.
+Controla quantos níveis de profundidade as respostas podem ter. Por padrão, o Image Chat define isso como 0, o que significa que todos os comentários são planos (sem respostas aninhadas). Você pode alterar isso se quiser conversas encadeadas.
 
 ```javascript
 FastCommentsImageChat(imageElement, {
@@ -121,13 +121,13 @@ FastCommentsImageChat(imageElement, {
 
 ### Configuração interna
 
-Essas opções são definidas automaticamente pelo Image Chat e não devem ser sobrescritas:
+Estas opções são definidas automaticamente pelo Image Chat e não devem ser sobrescritas:
 
-O `productId` é definido automaticamente como `2` para o Image Chat. A extensão `floating-chat` é carregada automaticamente para fornecer a funcionalidade da janela de chat. O widget detecta automaticamente dispositivos móveis (telas com menos de 768px de largura) e ajusta a interface com janelas de chat em tela cheia.
+O `productId` é definido automaticamente como `2` para o Image Chat. A extensão `floating-chat` é carregada automaticamente para fornecer a funcionalidade da janela de chat. O widget detecta automaticamente dispositivos móveis (telas com menos de 768px de largura) e ajusta a interface de acordo, com janelas de chat em tela cheia.
 
-### Flexibilidade do elemento alvo
+### Flexibilidade do elemento de destino
 
-O primeiro parâmetro para `FastCommentsImageChat` pode ser tanto um elemento `<img>` diretamente quanto um elemento contêiner com uma imagem dentro:
+O primeiro parâmetro de `FastCommentsImageChat` pode ser um elemento `<img>` diretamente ou um elemento contêiner com uma imagem dentro:
 
 ```javascript
 // Elemento de imagem direto
@@ -160,4 +160,4 @@ FastCommentsImageChat(document.getElementById('product-image'), {
 });
 ```
 
-Para uma lista completa de todas as opções de configuração disponíveis herdadas do widget base, consulte a documentação principal de configuração do FastComments.
+Para obter uma lista completa de todas as opções de configuração disponíveis herdadas do widget base, consulte a documentação principal de configuração do FastComments.

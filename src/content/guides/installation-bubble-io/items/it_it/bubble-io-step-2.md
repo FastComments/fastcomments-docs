@@ -1,4 +1,3 @@
----
 Fai clic sull'elemento HTML che hai appena aggiunto. Nell'editor delle proprietà che appare, incolla il seguente codice nel campo HTML:
 
 [inline-code-attrs-start title = 'Snippet di codice per commenti live di Bubble.io'; type = 'html'; isFunctional = false; inline-code-attrs-end]
@@ -43,5 +42,3 @@ Fai clic sull'elemento HTML che hai appena aggiunto. Nell'editor delle propriet�
 Nota: Questo codice include un meccanismo di ritentativo per garantire che FastComments si carichi correttamente nell'ambiente dinamico di Bubble. Altri frammenti di codice non funzioneranno.
 
 Ricorda di sostituire `'demo'` con il tuo reale tenant ID di FastComments dopo esserti registrato. Se hai eseguito l'accesso su FastComments.com, dovrebbe essere già sostituito.
-
----

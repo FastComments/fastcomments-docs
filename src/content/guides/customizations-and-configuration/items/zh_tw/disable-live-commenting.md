@@ -1,4 +1,3 @@
----
 [related-parameter-start name = 'disableLiveCommenting'; type = 'boolean'; related-parameter-end]
 
 預設情況下，FastComments 會啟用即時評論功能。
@@ -15,5 +14,3 @@
 也可以不使用程式碼完成。在小工具自訂頁面，請參閱「停用即時評論」區段。
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-live-commenting']; selector = '.disable-live-commenting'; alt='小工具自訂頁面的「停用即時評論」區段，關閉即時串更新'; title='停用即時評論' app-screenshot-end]
-
----

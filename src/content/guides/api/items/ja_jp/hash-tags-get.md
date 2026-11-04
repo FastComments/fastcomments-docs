@@ -30,5 +30,3 @@ interface HashTagsResponse {
     hashTags: HashTag[]
 }
 [inline-code-end]
-
----

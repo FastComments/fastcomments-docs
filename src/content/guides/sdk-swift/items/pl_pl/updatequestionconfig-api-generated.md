@@ -1,4 +1,3 @@
----
 ## Parametry
 
 | Nazwa | Typ | Lokalizacja | Wymagane | Opis |
@@ -32,5 +31,3 @@ DefaultAPI.updateQuestionConfig(tenantId: tenantId, id: id, updateQuestionConfig
     }
 }
 [inline-code-end]
-
----

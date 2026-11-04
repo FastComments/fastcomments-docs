@@ -1,4 +1,3 @@
----
 ## Paramètres
 
 | Nom | Type | Obligatoire | Description |
@@ -18,5 +17,3 @@ let (apiRespOpt, httpResp) = client.deleteNotificationCount(tenantId = "my-tenan
 if apiRespOpt.isSome:
   let _ = apiRespOpt.get()
 [inline-code-end]
-
----

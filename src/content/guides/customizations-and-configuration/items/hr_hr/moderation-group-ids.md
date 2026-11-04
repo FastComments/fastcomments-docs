@@ -8,5 +8,3 @@ Ako `Moderator` ima jednu ili više [Grupe za moderiranje](https://fastcomments.
 vidjeti samo komentare na stranici `Moderate Comments` povezane s njihovim grupama.
 
 [code-example-start config = {moderationGroupIds: ['mxZAhjzdb', 'FT19nXbqA']}; linesToHighlight = [6, 7, 8, 9]; title = 'Specify Moderation Groups'; code-example-end]
-
----

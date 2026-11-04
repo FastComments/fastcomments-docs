@@ -58,5 +58,3 @@ async function unlike() {
     await fetch(likesUrl(), {method: 'DELETE', credentials: 'include'});
 }
 [inline-code-end]
-
----

@@ -7,5 +7,3 @@ Wenn gewünscht, kann die genaue zu rendende Seite dem Kommentar-Widget als Eins
 [code-example-start config = {startingPage: 1}; linesToHighlight = [6]; title = 'Specifying The Page to Render'; code-example-end]
 
 Beachte, dass die Seitennummern bei null beginnen, daher zeigt das obige Beispiel die zweite Seite an.
-
----

@@ -1,4 +1,3 @@
----
 页面上过去的评论者（当前不在线）。按 displayName 排序。  
 在耗尽 /users/online 之后使用，以渲染“成员”部分。  
 对 commenterName 进行游标分页：服务器从部分 `{tenantId, urlId, commenterName}` 索引在 `afterName` 之后通过 `$gt` 前进，无 `$skip` 开销。

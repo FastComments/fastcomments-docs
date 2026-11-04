@@ -1,4 +1,3 @@
----
 ## Параметры
 
 | Имя | Тип | Обязательно | Описание |
@@ -25,5 +24,3 @@ async fn fetch_profile() -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 Dla administratorów, u góry strony Moderacji komentarzy znajduje się przycisk Dodaj moderatorów.
 
 [app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=3&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = '.moderation-settings-options'; alt='Rząd przycisków u góry strony Moderacji komentarzy, w tym przycisk Dodaj moderatorów'; title='Przyciski ustawień moderacji komentarzy' app-screenshot-end]
@@ -20,5 +19,3 @@ Link zaproszenia zostanie wysłany do moderatora, co może automatycznie go zalo
 link do logowania.
 
 O ile nie wylogują się, będą zalogowani przez trzydzieści dni.
-
----

@@ -1,4 +1,3 @@
----
 [api-resource-header-start name = 'QuestionResult'; route = 'PATCH /api/v1/question-results/:id'; creditsCost = 1; api-resource-header-end]
 
 Ova ruta omogućava ažuriranje pojedinačnog `QuestionResult`.
@@ -46,5 +45,3 @@ interface QuestionResultPatchResponse {
     reason?: string
 }
 [inline-code-end]
-
----

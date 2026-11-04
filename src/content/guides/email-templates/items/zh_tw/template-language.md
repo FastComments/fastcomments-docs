@@ -1,4 +1,3 @@
----
 FastComments 電子郵件範本使用 [EJS 範本語言](https://ejs.co/#docs)。
 
 範例語法為 `<%= object.someValue %>` 用於輸出變數，條件敘述可以如下撰寫：
@@ -12,5 +11,3 @@ FastComments 電子郵件範本使用 [EJS 範本語言](https://ejs.co/#docs)�
 輸出原始 HTML（例如評論內容）可使用 `<%- comment.commentHTML %>`。注意這裡使用 `-` 而非 `=`。
 
 有關語法的更多文件，請參考上方連結。
-
----

@@ -1,50 +1,50 @@
-Next, let's set things up so that the comment thread changes based on the current page, allowing users to discuss the currently displayed content.
+A continuación, configuremos las cosas para que el hilo de comentarios cambie según la página actual, permitiendo que los usuarios discutan el contenido que se muestra en ese momento.
 
-Without the following steps, you will only have one global comment thread for your entire site - which is not very useful.
+Sin los siguientes pasos, solo tendrás un hilo de comentarios global para todo tu sitio, lo cual no es muy útil.
 
-#### Dev Mode
+#### Modo de Desarrollo
 
-To add this functionality, we'll have to go into what Wix calls `Dev Mode`.
+Para agregar esta funcionalidad, tendremos que entrar en lo que Wix llama `Dev Mode`.
 
-Click the `Dev Mode` option at the top of the screen.
-
-<div class="screenshot white-bg">
-    <div class="title">Activar Dev Mode</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-5-dev-mode.png" alt="Activar Dev Mode" />
-</div>
-
-#### Set the Element ID
-
-We're going to add custom code to accomplish this, but first we need to give the new embed element an ID to refer to it by.
-
-Let's call it `fastcomments`.
-
-Click the new embed element we added, and in dev mode in the bottom right you should see an ID field with a value like `html1`:
+Haz clic en la opción `Dev Mode` en la parte superior de la pantalla.
 
 <div class="screenshot white-bg">
-    <div class="title">El campo ID</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-5-id-0.png" alt="El campo ID" />
+    <div class="title">Habilitar el Modo de Desarrollo</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-5-dev-mode.png" alt="Habilitar el Modo de Desarrollo" />
 </div>
 
-Change this to `fastcomments` and hit enter:
+#### Establecer el ID del Elemento
+
+Vamos a agregar código personalizado para lograr esto, pero primero necesitamos darle al nuevo elemento de inserción un ID para poder referirnos a él.
+
+Llamémoslo `fastcomments`.
+
+Haz clic en el nuevo elemento de inserción que agregamos, y en el modo de desarrollo, en la parte inferior derecha deberías ver un campo de ID con un valor como `html1`:
+
+<div class="screenshot white-bg">
+    <div class="title">El Campo de ID</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-5-id-0.png" alt="El Campo de ID" />
+</div>
+
+Cámbialo a `fastcomments` y presiona enter:
 
 <div class="screenshot white-bg">
     <div class="title">Establecer el ID</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-5-id-1.png" alt="Establecer el ID" />
 </div>
 
-Now we can add our custom code that tells the comment area what page we are viewing.
+Ahora podemos agregar nuestro código personalizado que le indica al área de comentarios qué página estamos viendo.
 
-At the bottom of the screen you should see a code editor like this:
+En la parte inferior de la pantalla deberías ver un editor de código como este:
 
 <div class="screenshot white-bg">
-    <div class="title">Abrir el editor</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-7-open-editor.png" alt="Abrir el editor" />
+    <div class="title">Abrir el Editor</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-7-open-editor.png" alt="Establecer el ID" />
 </div>
 
-Copy the following code and paste it in there:
+Copia el siguiente código y pégalo ahí:
 
-[inline-code-attrs-start title = 'Fragmento de navegación de Wix Comments'; type = 'javascript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Fragmento de Navegación de Comentarios de Wix'; type = 'javascript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import wixLocation from 'wix-location';
 
@@ -66,8 +66,6 @@ $w.onReady(function () {
 [inline-code-end]
 
 <div class="screenshot white-bg">
-    <div class="title">Añadir el código de navegación</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-7-paste-code.png" alt="Añadir el código de navegación" />
+    <div class="title">Agregar el Código de Navegación</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-7-paste-code.png" alt="Agregar el Código de Navegación" />
 </div>
-
----

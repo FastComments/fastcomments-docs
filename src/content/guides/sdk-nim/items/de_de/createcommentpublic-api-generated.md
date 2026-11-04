@@ -1,4 +1,3 @@
----
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
@@ -34,5 +33,3 @@ if maybeResp.isSome:
   let resp = maybeResp.get()
   echo resp
 [inline-code-end]
-
----

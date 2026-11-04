@@ -26,5 +26,3 @@ Quando terminar, deverá aparecer da seguinte forma:
 </div>
 
 Isso conclui o primeiro passo!
-
----

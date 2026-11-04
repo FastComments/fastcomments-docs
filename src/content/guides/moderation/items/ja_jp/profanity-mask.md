@@ -1,14 +1,10 @@
-By default, FastComments comes with a word blacklist of ~450 phrases and words.
+デフォルトでは、FastCommentsには約450のフレーズと単語のブラックリストが付属しています。
 
-デフォルトでは、FastComments には約 450 のフレーズと単語からなるワードブラックリストが用意されています。
+ブラックリスト内の単語が新しいコメントに含まれていた場合、そのテキストはアスタリスク(***)に置き換えられます。
 
-If text in the word blacklist is found in a new comment that text will be replaced with asterisks (***).
+ブラックリストをカスタマイズするページには、Moderate Comments -> Edit Moderation Settings -> Edit Word Blacklistからアクセスするか、
+直接<a href="https://fastcomments.com/auth/my-account/moderate-comments/blacklist" target="_blank">こちら</a>からアクセスできます。
 
-新しいコメントでワードブラックリストに含まれるテキストが見つかった場合、そのテキストはアスタリスク（***）に置き換えられます。
+[app-screenshot-start url='/auth/my-account/moderate-comments/blacklist?blurList=true'; linkUrl='/auth/my-account/moderate-comments/blacklist'; selector = '.account-block'; alt='デフォルトでブロックされる単語やフレーズを追加・削除できるワードブラックリストエディター'; title='コメントワードブラックリスト' app-screenshot-end]
 
-The page to customize the blacklist can be found via Moderate Comments -> Edit Moderation Settings -> Edit Word Blacklist, or
-by going directly <a href="https://fastcomments.com/auth/my-account/moderate-comments/blacklist" target="_blank">こちら</a>.
-
-[app-screenshot-start url='/auth/my-account/moderate-comments/blacklist?blurList=true'; linkUrl='/auth/my-account/moderate-comments/blacklist'; selector = '.account-block'; alt='デフォルトでブロックされている単語やフレーズを追加または削除できるワードブラックリストエディタ'; title='Comment Word Blacklist' app-screenshot-end]
-
-Additionally, you can disable Profanity Detection on the <a href="https://fastcomments.com/auth/my-account/moderate-comments/settings" target="_blank">編集モデレーション設定</a> page.
+また、<a href="https://fastcomments.com/auth/my-account/moderate-comments/settings" target="_blank">Edit Moderation Settings</a>ページで不適切な言葉の検出を無効にすることもできます。

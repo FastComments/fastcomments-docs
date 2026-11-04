@@ -200,5 +200,3 @@ Zalepite to u prozor editora koji smo otvorili:
 Sada možemo kliknuti na `Yes, Save` u donjem desnom uglu tog prozora.
 
 Na vrhu stranice sada kliknite na `Save`, a zatim na `Preview`.
-
----

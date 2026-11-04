@@ -1,4 +1,3 @@
----
 Avec FastComments, de nombreux utilisateurs peuvent être ajoutés à votre locataire, et leurs autorisations peuvent être configurées en fonction des rôles de votre  
 organisation.
 
@@ -11,5 +10,3 @@ Pour ajouter des modérateurs, consultez [la documentation correspondante](/guid
 ### Une note sur l'authentification
 
 Vos utilisateurs peuvent chercher un endroit où saisir leur mot de passe. FastComments utilise "magic links" pour se connecter – aucun mot de passe n'est requis.
-
----

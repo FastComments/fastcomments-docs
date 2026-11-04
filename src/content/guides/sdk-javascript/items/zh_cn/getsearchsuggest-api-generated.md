@@ -22,5 +22,3 @@
   const minimalResponse: ModerationSuggestResponse = await getSearchSuggest(tenantId);
 })();
 [inline-code-end]
-
----

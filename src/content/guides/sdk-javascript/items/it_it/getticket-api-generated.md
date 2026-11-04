@@ -23,5 +23,3 @@ async function fetchTickets() {
   const ticketWithoutUser: GetTicketResponse = await getTicket(tenantId, ticketId);
 }
 [inline-code-end]
-
----

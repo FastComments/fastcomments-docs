@@ -1,4 +1,3 @@
----
 状态、进度以及完成后批处理作业的结果。
 
 ## 参数
@@ -33,5 +32,3 @@ DefaultAPI.getBatchJob(tenantId: tenantId, id: id) { (response, error) in
     }
 }
 [inline-code-end]
-
----

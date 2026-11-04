@@ -1,13 +1,13 @@
-By default FastComments does not allow iframes in comments. When you enable media embeds, commenters can paste the embed code (the `<iframe>` snippet) from trusted providers like YouTube, Vimeo, SoundCloud, and Spotify, and it will render inline in the comment.
+כברירת מחדל, FastComments אינו מאפשר iframes בתגובות. כאשר מפעילים הטמעות מדיה, מגיבים יכולים להדביק את קוד ההטמעה (קטע ה-`<iframe>`) מספקים מהימנים כמו YouTube, Vimeo, SoundCloud ו-Spotify, והוא יוצג בתוך התגובה.
 
-For security, this is not a client-side widget config flag. It is a server-side setting, validated when each comment is saved, so it cannot be turned on from the page. Only iframes pointing at a built-in list of trusted providers are allowed. Any other iframe is removed.
+מטעמי אבטחה, זהו לא דגל הגדרות בצד הלקוח של הווידג'ט. זוהי הגדרה בצד השרת, המאומתת בעת שמירת כל תגובה, ולכן לא ניתן להפעיל אותה מהדף. רק iframes המצביעים על רשימה מובנית של ספקים מהימנים מותרים. כל iframe אחר מוסר.
 
-This is done without code, on the widget customization page:
+זה נעשה ללא קוד, בדף התאמה אישית של הווידג'ט:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.allow-embeds'; selector = '.allow-embeds'; alt='הגדרת הטמעת מדיה מופעלת בעמוד התאמה אישית של הווידג\'ט, מאפשרת למגיבים להדביק הטמעות iframe מהימנות'; title='אפשר הטמעת מדיה' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.allow-embeds'; selector = '.allow-embeds'; alt='הגדרת הטמעות מדיה מופעלת בדף התאמה אישית של הווידג\'ט, המאפשרת למגיבים להדביק הטמעות iframe מהימנות'; title='אפשר הטמעות מדיה' app-screenshot-end]
 
-### Adding Your Own Providers
+### הוספת ספקים משלך
 
-If you want to allow embeds from a provider that is not on the built-in trusted list, add its hostname in the "תחומי הטמעה נוספים" field on the same page. These hostnames are allowed in addition to the built-in providers. Matching is exact, so include the full hostname (for example, player.example.com). Anything you do not list stays blocked.
+אם ברצונך לאפשר הטמעות מספק שאינו ברשימה המובנית של הספקים המהימנים, הוסף את שם המארח שלו בשדה "Additional Embed Domains" באותו דף. שמות מארחים אלה מותרים בנוסף לספקים המובנים. ההתאמה היא מדויקת, ולכן יש לכלול את שם המארח המלא (לדוגמה, player.example.com). כל דבר שלא תוסיף לרשימה יישאר חסום.
 
-Both the plain comment box and the WYSIWYG editor support pasting an embed. In the WYSIWYG editor the embed is inserted as a removable block.
+גם תיבת התגובות הרגילה וגם עורך ה-WYSIWYG תומכים בהדבקת הטמעה. בעורך ה-WYSIWYG ההטמעה מוכנסת כבלוק ניתן להסרה.

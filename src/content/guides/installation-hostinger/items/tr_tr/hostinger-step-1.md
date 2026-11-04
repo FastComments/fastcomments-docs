@@ -1,6 +1,6 @@
 Öncelikle sitenizi Website Builder'da açın.
 
-Now if you don't already have a section where you want the comments to go, add a blank section:
+Şimdi, yorumların görünmesini istediğiniz bir bölümünüz yoksa, boş bir bölüm ekleyin:
 
 <div class="screenshot white-bg">
     <div class="title">Bölüm Ekleme</div>
@@ -11,18 +11,18 @@ Now if you don't already have a section where you want the comments to go, add a
     <img class="screenshot-image" src="/images/installation-guides/hostinger-step-1-add-section-2.png" alt="Bölüm Ekleme" />
 </div>
 
-Now add the Hostinger Embed widget by clicking our new section and clicking `Add element` in the top and then `Embed code`:
+Şimdi yeni bölümümüze tıklayarak Hostinger Embed widget'ını ekleyin, ardından üstteki `Add element` seçeneğine ve sonra `Embed code` seçeneğine tıklayın:
 
 <div class="screenshot white-bg">
-    <div class="title">Gömme Kodu</div>
-    <img class="screenshot-image" src="/images/installation-guides/hostinger-step-1-add-section-3.png" alt="Gömme Kodu" />
+    <div class="title">Embed code</div>
+    <img class="screenshot-image" src="/images/installation-guides/hostinger-step-1-add-section-3.png" alt="Embed code" />
 </div>
 
-You'll get something like this:
+Şuna benzer bir şey göreceksiniz:
 
 <div class="screenshot white-bg">
     <div class="title">Kod Bölümü Eklendi</div>
     <img class="screenshot-image" src="/images/installation-guides/hostinger-step-1-add-section-4.png" alt="Kod Bölümü Eklendi" />
 </div>
 
-Now we're ready for `Step 2`.
+Artık `Adım 2` için hazırız.

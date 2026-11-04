@@ -3,10 +3,10 @@
 ```php
 use FastComments\Laravel\Facades\FastComments;
 
-// Admin-API (kræver API-nøgle)
+// Admin API (kræver API-nøgle)
 $comments = FastComments::admin()->getComments('tenant-id');
 
-// Offentlig API
+// Public API
 $comments = FastComments::publicApi()->getCommentsPublic('tenant-id', 'url-id');
 
 // SSO
@@ -14,7 +14,7 @@ $ssoPayload = FastComments::sso()->forWidget();
 $token = FastComments::sso()->tokenFor($user);
 ```
 
-### Via Afhængighedsinjektion
+### Via Dependency Injection
 
 ```php
 use FastComments\Laravel\FastCommentsManager;

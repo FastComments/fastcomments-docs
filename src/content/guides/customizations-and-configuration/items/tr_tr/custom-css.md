@@ -55,5 +55,3 @@ FastComments'ta, müşterilerimizin yorum widget'ını özelleştirdiğini biliy
 Bu, ürünümüzün önemli bir parçası olduğundan, her sürümde müşteri bazında yorum widget'ındaki değişiklikleri incelememizi sağlayan bir derleme hattına sahibiz.
 
 Küçük sorunlar bulursak, sürümün sorunsuz ilerlemesini sağlamak için hesabınızı güncelleriz. Büyük kırıcı değişiklikler görürsek, sürümü durdurmamıza olanak tanır.
-
----

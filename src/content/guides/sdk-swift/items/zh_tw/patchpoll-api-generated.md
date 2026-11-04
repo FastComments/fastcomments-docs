@@ -1,24 +1,21 @@
-Edit a poll in place, keeping its tallies: change the question, relabel an option, close or reopen it,
-or change who may see the voters. Options are addressed by id - to add, remove or reorder them, PUT the full list.
+原地編輯投票並保留其票數統計：變更問題、重新標記選項、關閉或重新開啟投票，或變更誰可以查看投票者。選項以 id 定位 - 若要新增、移除或重新排序選項，請 PUT 完整清單。
 
-在原位編輯投票，保留其票數：變更問題、重新標記選項、關閉或重新開啟投票，或變更誰可以看到投票者。選項以 ID 為依據——若要新增、刪除或重新排序，請使用 PUT 整個列表。
-
-## Parameters
+## 參數
 
 | 名稱 | 類型 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 是 |  |
 | commentId | string | path | 是 |  |
 
-## Response
+## 回應
 
-返回：[`SavePollResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/SavePollResponse.swift)
+回傳：[`SavePollResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/SavePollResponse.swift)
 
-## Example
+## 範例
 
 [inline-code-attrs-start title = 'patchPoll 範例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 以下程式碼範例仍屬測試版。如有任何問題，請透過 http://github.com/OpenAPITools/openapi-generator/issues/new 回報
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -36,5 +33,3 @@ DefaultAPI.patchPoll(tenantId: tenantId, commentId: commentId, commentPollPatch:
     }
 }
 [inline-code-end]
-
----

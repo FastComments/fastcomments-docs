@@ -1,4 +1,3 @@
----
 Vsak pripomoček iz `fastcomments-react` je na voljo pod istim imenom:
 
 | Komponenta | Tip ročaja | Naložena vdelava |
@@ -40,4 +39,3 @@ export default function ImageChat() {
 ### Regije
 
 Posredujte `region="eu"` za usmerjanje prometa vdelav prek EU grozda.
----

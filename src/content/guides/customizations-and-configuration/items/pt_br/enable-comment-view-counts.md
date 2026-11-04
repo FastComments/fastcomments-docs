@@ -18,5 +18,3 @@ Rastreamos o ID do usuário* que visualizou o comentário por uma semana, de mod
 após a semana ter passado, a contagem será incrementada novamente.
 
 - *Nota: ou o ID da sessão anônima, ou o IP do usuário como um valor hashado.
-
----

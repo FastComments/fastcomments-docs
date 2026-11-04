@@ -12,5 +12,3 @@ Pokreće se када се коментар уклони са приквачењ�
 ### Par
 
 Pogledajte [Trigger: Comment Pinned](#trigger-comment-pin) за zrcalni okidač.
-
----

@@ -1,4 +1,3 @@
----
 Sistem feed-a je zaseban SDK (`FastCommentsFeedSDK`) sa sopstvenim prikazom.
 
 ### Učitavanje i prikaz feeda

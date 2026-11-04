@@ -1,4 +1,3 @@
----
 ## Parametre
 
 | Navn | Type | Påkrævet | Beskrivelse |
@@ -28,5 +27,3 @@ Returnerer: [`CreateSubscriptionAPIResponse`](https://github.com/FastComments/fa
     console.log(result);
 })();
 [inline-code-end]
-
----

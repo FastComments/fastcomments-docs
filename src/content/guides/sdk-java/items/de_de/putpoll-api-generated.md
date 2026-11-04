@@ -1,4 +1,3 @@
----
 Fügen Sie einer Kommentar‑Umfrage eine Umfrage hinzu oder setzen Sie den vollständigen Zustand der bereits vorhandenen Umfrage.
 
 Optionen werden anhand ihrer ID abgeglichen: Eine Option, die mit der ID einer bestehenden Option gesendet wird, behält ihre Stimmen (und übernimmt das neue Label und die Position), eine Option ohne ID wird hinzugefügt, und bestehende Optionen, die in der Liste ausgelassen werden, werden zusammen mit den darauf abgegebenen Stimmen entfernt.
@@ -60,5 +59,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

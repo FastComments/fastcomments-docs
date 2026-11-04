@@ -1,5 +1,3 @@
----
 - [ドキュメント](https://docs.fastcomments.com)
 - [GitHubの課題](https://github.com/fastcomments/fastcomments-python/issues)
 - [FastComments サポート](https://fastcomments.com/auth/my-account/help)
----

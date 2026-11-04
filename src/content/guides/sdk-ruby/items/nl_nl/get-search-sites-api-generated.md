@@ -1,4 +1,3 @@
----
 ## Parameters
 
 | Name | Type | Location | Required | Description |
@@ -33,5 +32,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_search_sites: #{e}"
 end
 [inline-code-end]
-
----

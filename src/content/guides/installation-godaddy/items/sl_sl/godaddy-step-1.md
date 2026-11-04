@@ -1,33 +1,33 @@
-To add FastComments to our Godaddy site we're going to add an area to put the FastComments.com widget code.
+Za dodajanje FastComments na našo spletno stran Godaddy bomo dodali območje za vstavljanje kode pripomočka FastComments.com.
 
-**Opomba!** Pred nadaljevanjem se prepričajte, da ste na svoje spletno mesto dodali razdelek za blog in vsaj eno objavo v blogu.
+**Pozor!** Pred nadaljevanjem poskrbite, da ste na svojem spletnem mestu dodali razdelek za blog in vsaj eno objavo v blogu.
 
-Dodajmo območje za HTML kodo tako, da v urejevalniku spletnega mesta premaknemo miško pod objavo v blogu in kliknemo `Add Section`, kot sledi:
+Dodajmo območje za HTML kodo tako, da v urejevalniku spletnega mesta premaknemo miško pod objavo v blogu in kliknemo `Add Section` na naslednji način:
 
 <div class="screenshot white-bg">
     <div class="title">Dodaj razdelek</div>
     <img class="screenshot-image" src="/images/installation-guides/godaddy-step-1-add-section.png" alt="Dodaj razdelek" />
 </div>
 
-Now search for `HTML`. Once the "Embed custom code on the page" box shows up, click `Add`.
+Zdaj poiščite `HTML`. Ko se prikaže polje »Embed custom code on the page«, kliknite `Add`.
 
 <div class="screenshot white-bg">
-    <div class="title">Dodaj HTML polje</div>
-    <img class="screenshot-image" src="/images/installation-guides/godaddy-step-1-add-html.png" alt="Dodaj HTML polje" />
+    <div class="title">Dodajanje polja HTML</div>
+    <img class="screenshot-image" src="/images/installation-guides/godaddy-step-1-add-html.png" alt="Dodajanje polja HTML" />
 </div>
 
-You should now see an empty code area in the editor.
+V urejevalniku bi zdaj morali videti prazno območje za kodo.
 
 <div class="screenshot white-bg">
-    <div class="title">Prazno območje kode</div>
-    <img class="screenshot-image" src="/images/installation-guides/godaddy-step-1-section-added.png" alt="Prazno območje kode" />
+    <div class="title">Prazno območje za kodo</div>
+    <img class="screenshot-image" src="/images/installation-guides/godaddy-step-1-section-added.png" alt="Prazno območje za kodo" />
 </div>
 
-Click on the empty code area you've added. On the bottom right you'll now see a `Custom Code` input field.
+Kliknite na prazno območje za kodo, ki ste ga dodali. V spodnjem desnem kotu boste zdaj videli vnosno polje `Custom Code`.
 
 <div class="screenshot white-bg">
-    <div class="title">Vnosno polje za lastno kodo</div>
-    <img class="screenshot-image" src="/images/installation-guides/godaddy-step-1-add-code-area.png" alt="Vnosno polje za lastno kodo" />
+    <div class="title">Vnosno območje za kodo po meri</div>
+    <img class="screenshot-image" src="/images/installation-guides/godaddy-step-1-add-code-area.png" alt="Vnosno območje za kodo po meri" />
 </div>
 
-That's it for step one! In step two we will be adding our custom Godaddy-specific code.
+To je vse za prvi korak! V drugem koraku bomo dodali našo kodo po meri, specifično za Godaddy.

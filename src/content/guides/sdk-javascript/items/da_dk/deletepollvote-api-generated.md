@@ -1,4 +1,3 @@
----
 Træk en stemme tilbage. Den mulighed, den blev afgivet på, får sin optælling tilbage.
 
 ## Parametre
@@ -25,5 +24,3 @@ async function runDeletePollVoteExample(): Promise<void> {
   console.log(result);
 }
 [inline-code-end]
-
----

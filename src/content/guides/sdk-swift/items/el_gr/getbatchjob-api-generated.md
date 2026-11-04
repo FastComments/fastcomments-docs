@@ -1,4 +1,3 @@
----
 Κατάσταση, πρόοδος και, όταν ολοκληρωθεί, το αποτέλεσμα μιας παρτίδας εργασίας.
 
 ## Παράμετροι
@@ -33,5 +32,3 @@ DefaultAPI.getBatchJob(tenantId: tenantId, id: id) { (response, error) in
     }
 }
 [inline-code-end]
-
----

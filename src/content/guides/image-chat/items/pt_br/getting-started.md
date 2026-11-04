@@ -1,39 +1,39 @@
-### Use Cases
+### Casos de Uso
 
-Image Chat works great for design feedback where teams need to discuss specific elements in mockups or screenshots. Product review sites can let customers discuss specific features visible in product photos. Educational platforms can use it for discussing diagrams, maps, or scientific images. Photo galleries can become interactive with location-specific commentary. Real estate sites can let viewers discuss specific features visible in property photos.
+O Image Chat funciona muito bem para feedback de design, onde equipes precisam discutir elementos específicos em mockups ou capturas de tela. Sites de avaliação de produtos podem permitir que clientes discutam recursos específicos visíveis em fotos de produtos. Plataformas educacionais podem usá-lo para discutir diagramas, mapas ou imagens científicas. Galerias de fotos podem se tornar interativas com comentários específicos por localização. Sites imobiliários podem permitir que visitantes discutam recursos específicos visíveis em fotos de imóveis.
 
-### Quick Start
+### Início Rápido
 
-Getting started with Image Chat is simple. You need the FastComments Image Chat script, an image element or container with an image, and a configuration object with your Tenant ID.
+Começar com o Image Chat é simples. Você precisa do script do FastComments Image Chat, um elemento de imagem ou contêiner com uma imagem, e um objeto de configuração com seu Tenant ID.
 
-### Installation
+### Instalação
 
-Add the Image Chat script to your page:
+Adicione o script do Image Chat à sua página:
 
 [inline-code-attrs-start title = 'Carregando o Script do Image Chat'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-image-chat.min.js"></script>
 [inline-code-end]
 
-### Basic Implementation
+### Implementação Básica
 
-Here's a minimal example:
+Aqui está um exemplo mínimo:
 
 [inline-code-attrs-start title = 'Implementação Básica do Image Chat'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Image Gallery with Image Chat</title>
+    <title>Minha Galeria de Imagens com Image Chat</title>
 </head>
 <body>
     <!-- Sua imagem -->
     <img id="my-image" src="https://fastcomments.com/images/image-chat-demo-1.jpg" alt="Pretty Trail" />
 
-    <!-- Carregue o script do Image Chat -->
+    <!-- Carregar o script do Image Chat -->
     <script src="https://cdn.fastcomments.com/js/embed-image-chat.min.js"></script>
 
-    <!-- Inicialize o Image Chat -->
+    <!-- Inicializar o Image Chat -->
     <script>
         FastCommentsImageChat(document.getElementById('my-image'), {
             tenantId: 'demo'
@@ -43,22 +43,22 @@ Here's a minimal example:
 </html>
 [inline-code-end]
 
-Replace `'demo'` with your actual FastComments Tenant ID if it's not already, which you can find in your [FastComments dashboard](https://fastcomments.com/auth/my-account).
+Substitua `'demo'` pelo seu Tenant ID real do FastComments, caso ainda não o tenha feito, que você pode encontrar no seu [painel do FastComments](https://fastcomments.com/auth/my-account).
 
-### How It Works
+### Como Funciona
 
-Once initialized, users can click anywhere on the image. When a click occurs, a visual square marker appears at that location and a chat window opens. Other users can see all the markers and click them to view or participate in those discussions. All discussions sync in real-time across all visitors.
+Uma vez inicializado, os usuários podem clicar em qualquer lugar da imagem. Quando um clique ocorre, um marcador visual quadrado aparece naquele local e uma janela de chat se abre. Outros usuários podem ver todos os marcadores e clicar neles para visualizar ou participar dessas discussões. Todas as discussões são sincronizadas em tempo real entre todos os visitantes.
 
-The widget uses percentage-based positioning, so markers stay in the correct location even when the image resizes or is viewed on different screen sizes.
+O widget usa posicionamento baseado em porcentagem, então os marcadores permanecem no local correto mesmo quando a imagem é redimensionada ou visualizada em diferentes tamanhos de tela.
 
-### Live Demo
+### Demonstração ao Vivo
 
-You can see Image Chat in action on our [live demo page](https://fastcomments.com/product/image-chat).
+Você pode ver o Image Chat em ação em nossa [página de demonstração ao vivo](https://fastcomments.com/product/image-chat).
 
-### Next Steps
+### Próximos Passos
 
-Now that you have the basics working, you can customize the appearance and behavior in the Configuration Options guide. Check out the Responsive Design guide to understand how percentage-based positioning works. Learn about styling and dark mode support in the Customization guide. For advanced integrations, explore the API Reference.
+Agora que você tem o básico funcionando, pode personalizar a aparência e o comportamento no guia de Opções de Configuração. Confira o guia de Design Responsivo para entender como o posicionamento baseado em porcentagem funciona. Aprenda sobre estilização e suporte ao modo escuro no guia de Personalização. Para integrações avançadas, explore a Referência da API.
 
-### Frontend Libraries
+### Bibliotecas de Frontend
 
-All FastComments frontend libraries (react, vue, angular, etc) have Image Chat.
+Todas as bibliotecas de frontend do FastComments (react, vue, angular, etc) possuem o Image Chat.

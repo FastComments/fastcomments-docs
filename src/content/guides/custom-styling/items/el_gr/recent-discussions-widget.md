@@ -1,8 +1,8 @@
-The Recent Discussions Widget displays a list of pages sorted by the most recent comment activity. It includes a heading, last activity dates, comment counts with icons, and automatic dark mode detection.
+Το widget Recent Discussions εμφανίζει μια λίστα σελίδων ταξινομημένων κατά την πιο πρόσφατη δραστηριότητα σχολίων. Περιλαμβάνει μια επικεφαλίδα, ημερομηνίες τελευταίας δραστηριότητας, μετρητές σχολίων με εικονίδια και αυτόματη ανίχνευση σκοτεινής λειτουργίας.
 
-## Basic Installation
+## Βασική Εγκατάσταση
 
-[inline-code-attrs-start title = 'Διαμόρφωση Στυλ Γραφικού Στοιχείου Πρόσφατες Συζητήσεις'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ρύθμιση Στυλ Widget Recent Discussions'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/widget-recent-discussions-v2.min.js"></script>
 <div id="fastcomments-widget-recent-discussions"></div>
@@ -13,17 +13,17 @@ The Recent Discussions Widget displays a list of pages sorted by the most recent
 </script>
 [inline-code-end]
 
-## Configuration Options
+## Επιλογές Διαμόρφωσης
 
-- **tenantId** (απαιτείται): Το tenant ID του FastComments
-- **count** (προαιρετικό): Αριθμός σελίδων που θα εμφανιστούν. Η προεπιλογή είναι `20`, μέγιστο `100`
-- **hasDarkBackground** (προαιρετικό): Εξαναγκασμός στυλ σκοτεινής λειτουργίας. Αυτόματη ανίχνευση από το φόντο της σελίδας εάν δεν οριστεί
+- **tenantId** (απαιτείται): Το tenant ID σας στο FastComments
+- **count** (προαιρετικό): Αριθμός σελίδων προς εμφάνιση. Προεπιλογή είναι `20`, μέγιστο `100`
+- **hasDarkBackground** (προαιρετικό): Εξαναγκάζει το στυλ σκοτεινής λειτουργίας. Ανιχνεύεται αυτόματα από το φόντο της σελίδας αν δεν οριστεί
 
-## Widget Structure
+## Δομή του Widget
 
-The widget renders with the following HTML structure:
+Το widget αποδίδεται με την ακόλουθη δομή HTML:
 
-[inline-code-attrs-start title = 'Δομή HTML Γραφικού Στοιχείου Πρόσφατες Συζητήσεις'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Δομή HTML του Widget Recent Discussions'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <div class="fc-rd2">
     <div class="fc-rd2-heading">Recent Discussions</div>
@@ -39,9 +39,9 @@ The widget renders with the following HTML structure:
 </div>
 [inline-code-end]
 
-## Default CSS Reference
+## Αναφορά Προεπιλεγμένου CSS
 
-[inline-code-attrs-start title = 'Προεπιλεγμένο CSS Γραφικού Στοιχείου Πρόσφατες Συζητήσεις'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Προεπιλεγμένο CSS του Widget Recent Discussions'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rd2 {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -61,11 +61,11 @@ The widget renders with the following HTML structure:
 .fc-rd2-count { font-size: 12px; font-weight: 600; color: #666; }
 [inline-code-end]
 
-## Customization Examples
+## Παραδείγματα Προσαρμογής
 
-### Remove the Container Border
+### Αφαίρεση του Πλαισίου του Container
 
-[inline-code-attrs-start title = 'Αφαίρεση Περιγράμματος Κοντέινερ'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Αφαίρεση Πλαισίου Container'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rd2 {
     border: none !important;
@@ -73,13 +73,11 @@ The widget renders with the following HTML structure:
 }
 [inline-code-end]
 
-### Custom Link Color
+### Προσαρμοσμένο Χρώμα Συνδέσμων
 
-[inline-code-attrs-start title = 'Προσαρμοσμένο Χρώμα Συνδέσμου'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Προσαρμοσμένο Χρώμα Συνδέσμων'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 a.fc-rd2-title:hover {
     color: #e63946 !important;
 }
 [inline-code-end]
-
----

@@ -1,27 +1,25 @@
-**Template ID:** `welcome_greeter`
+**ID predloška:** `welcome_greeter`
 
-Pozdravnik dobrodošlice srdačno odgovara korisnicima koji prvi put komentiraju. To je predložak s najmanjim rizikom (bez destruktivnih alata) i dobar je prvi agent za puštanje uživo.
+Welcome Greeter toplo odgovara prvim komentatorima. To je predložak s najmanjim rizikom (bez destruktivnih alata) i dobar prvi agent za objavu uživo.
 
-### Triggers
+### Okidači
 
-- **Novi korisnik objavi svoj prvi komentar na ovoj stranici** (`NEW_USER_FIRST_COMMENT`).
+- **Novi korisnik objavljuje svoj prvi komentar na ovom sajtu** (`NEW_USER_FIRST_COMMENT`).
 
-Ovaj događaj pokreće se točno jednom po korisniku, tako da agent ne može ući u petlju. Vidi [Okidač: Novi korisnik - prvi komentar](#trigger-new-user-first-comment).
+Ovaj se događaj aktivira točno jednom po korisniku, pa agent ne može ući u petlju. Pogledajte [Okidač: Prvi komentar novog korisnika](#trigger-new-user-first-comment).
 
-### Allowed tools
+### Dopušteni alati
 
 - [`write_comment`](#tools-overview)
 
-To je jedini alat - agent doslovno ne može moderirati, glasovati, zabranjivati ili slati privatne poruke (DM).
+To je jedini alat - agent doslovno ne može moderirati, glasati, banirati niti slati DM.
 
-### Recommended additions before going live
+### Preporučene dopune prije objave uživo
 
-- **Postavite prikazano ime** na nešto primamljivo - "Community Bot", maskotu vaše stranice ili naziv vašeg brenda. Prikazano ime je ono što čitatelji vide uz odgovor dobrodošlice.
-- **Označite "Uključi naslov stranice, podnaslov, opis i meta oznake"** u [Opcije konteksta](#context-options). Odgovori pozdravitelja znatno se poboljšaju kada može referencirati o čemu je stranica.
-- **Razmotrite ograničenja jezika (lokale)** ako poslujete na više jezika. Pozdravna poruka na pogrešnom jeziku je neugodnija od propuštene poruke. Vidi [Opseg: URL i filtri jezika](#scope-url-locale).
+- **Postavite Display name** na nešto privlačno - "Community Bot", maskotu vašeg sajta ili naziv vašeg brenda. Display name je ono što čitatelji vide uz odgovor dobrodošlice.
+- **Označite "Include page title, subtitle, description, and meta tags"** u [Context Options](#context-options). Odgovori dobrodošlice primjetno su bolji kada agent može referencirati o čemu stranica stvarno govori.
+- **Razmotrite ograničenja po jeziku (locale)** ako djelujete na više jezika. Odgovor dobrodošlice u pogrešnom jeziku više smeta nego izostanak odgovora. Pogledajte [Opseg: URL i filteri jezika](#scope-url-locale).
 
-### Why no approvals are needed
+### Zašto odobrenja nisu potrebna
 
-Agent piše samo nove komentare i samo pri jednokratnom okidaču. U najgorem slučaju: neugodan pozdrav. Nema destruktivne radnje koju treba kontrolirati. Većina operatora pokreće ovaj predložak bez ikakvih odobrenja nakon što probni rad izgleda uredno.
-
----
+Agent samo piše nove komentare i samo na jednokratni okidač. Najgore što se može dogoditi: nezgrapan pozdrav. Nema destruktivne radnje koju treba ograničiti. Većina operatora pokreće ovaj agent bez ikakvih odobrenja čim dry-run izgleda uredno.

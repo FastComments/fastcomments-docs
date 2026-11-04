@@ -1,4 +1,3 @@
----
 ## 매개변수
 
 | 이름 | 유형 | 위치 | 필수 | 설명 |
@@ -50,5 +49,3 @@ try {
     echo 'Exception when calling DefaultApi->getTickets: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

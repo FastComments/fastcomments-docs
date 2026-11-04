@@ -1,4 +1,3 @@
----
 Bir kiracı için toplu kullanıcı bilgisi. Verilen userIds ile User / SSOUser'dan görüntülenebilir bilgileri döndürür.
 Yorum bileşeni tarafından, bir presence event ile yeni görünen kullanıcıları zenginleştirmek için kullanılır.
 Sayfa bağlamı yok: gizlilik tutarlı şekilde uygulanır (özel profiller maskelenir).
@@ -44,5 +43,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->get_users_info: %s\n" % e)
 [inline-code-end]
-
----

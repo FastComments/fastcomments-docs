@@ -19,5 +19,3 @@ FastComments предоставя автоматизиран начин за п�
 ### Мигриране на домейни чрез API
 
 Домейните също могат да бъдат мигрирани с [`POST /api/v1/pages/migrations`](/guide-api.html#pages-migrations-post), като се зададе `type` на `domain`. Напредъкът е достъпен от [`GET /api/v1/batch-jobs/:id`](/guide-api.html#batch-job-get-by-id), а миграцията може да бъде отменена в продължение на 90 дни.
-
----

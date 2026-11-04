@@ -1,4 +1,3 @@
----
 Podrazumevano, korisnici mogu da brišu svoje komentare. Takođe, brisanje njihovog komentara automatski briše sve podkomentare i privremene komentare u niti. Ovo ponašanje je takođe aktivno.
 
 Možete da ograničite ovo na sledeće načine:
@@ -10,5 +9,3 @@ Možete da ograničite ovo na sledeće načine:
 Ovo se može konfigurisati putem sekcije `Comment Thread Deletion` u UI prilagođavanja widgeta.
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.comment-thread-deletion-mode']; selector = '.comment-thread-deletion-mode'; alt='Opcije za brisanje niti komentara u UI prilagođavanja widgeta za anonimizaciju ili ograničavanje brisanja sa odgovorima'; title='Prilagodite ponašanje brisanja za odgovore' app-screenshot-end]
-
----

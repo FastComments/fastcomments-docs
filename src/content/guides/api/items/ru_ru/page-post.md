@@ -1,18 +1,18 @@
 [api-resource-header-start name = 'Page'; route = 'POST /api/v1/pages'; creditsCost = 1; api-resource-header-end]
 
-This API endpoint provides the ability to create pages.
+Этот API-эндпоинт предоставляет возможность создавать страницы.
 
-Одним из распространённых случаев использования является контроль доступа.
+Распространённый сценарий использования — контроль доступа.
 
-Notes:
+Примечания:
 
-- If you've commented on a comment thread, or called the API to create a `Comment`, you've already created a `Page` object! You can try fetching it via
-  the `/by-url-id` `Page` route, passing in the same `urlId` passed to the comment widget.
-- The `Page` structure contains some **calculated** values.
-  Currently, these are `commentCount` and `rootCommentCount`.
-  They are populated automatically and cannot be set by the API. Attempting to do so will cause the API to return an error.
+- Если вы оставляли комментарий в ветке комментариев или вызывали API для создания `Comment`, вы уже создали объект `Page`! Вы можете попробовать получить его через
+  маршрут `Page` `/by-url-id`, передав тот же `urlId`, который был передан виджету комментариев.
+- Структура `Page` содержит некоторые **вычисляемые** значения.
+  В настоящее время это `commentCount` и `rootCommentCount`.
+  Они заполняются автоматически и не могут быть заданы через API. Попытка сделать это приведёт к тому, что API вернёт ошибку.
 
-[inline-code-attrs-start title = 'Пример cURL-запроса для Page POST'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример cURL-запроса POST для Page'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request POST \
   --url 'https://fastcomments.com/api/v1/pages?tenantId=demo&API_KEY=DEMO_API_SECRET' \
@@ -25,7 +25,7 @@ curl --request POST \
 }'
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Структура запроса Page POST'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Структура POST-запроса Page'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface PagePostQueryParams {
     tenantId: string
@@ -33,7 +33,7 @@ interface PagePostQueryParams {
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Структура ответа Page POST'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Структура POST-ответа Page'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 
 interface PagePostResponse {

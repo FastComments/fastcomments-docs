@@ -11,5 +11,3 @@ Codevoorbeelden worden verstrekt, met relevante regels gemarkeerd. Schermafbeeld
 De codevoorbeelden gebruiken onze vanilla JavaScript-bibliotheek, maar de configuratieopties gebruiken exact dezelfde namen voor alle versies van de commentaarwidget (React, Vue, enz.).
 
 De meeste configuraties en functies die in deze handleiding worden beschreven vereisen geen code te schrijven.
-
----

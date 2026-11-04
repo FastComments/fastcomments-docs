@@ -23,5 +23,3 @@ let (optResp, httpResp) = client.addHashTagsBulk(
 if optResp.isSome:
   let resp = optResp.get()
 [inline-code-end]
-
----

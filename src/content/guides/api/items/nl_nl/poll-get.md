@@ -33,5 +33,3 @@ interface PollGetResponse {
 
 Een opmerking zonder poll, een opmerking die is verwijderd, en een opmerking-id die niet bestaat reageren
 op dezelfde manier, met `poll-not-found`.
-
----

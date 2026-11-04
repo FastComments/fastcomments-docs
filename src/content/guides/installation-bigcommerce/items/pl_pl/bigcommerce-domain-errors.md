@@ -1,4 +1,3 @@
----
 Może pojawić się błąd autoryzacji, taki jak poniższy:
 
 <div class="screenshot white-bg">
@@ -11,5 +10,3 @@ Dzieje się tak, ponieważ FastComments nie wie, że powinno zezwolić na użyci
 W takim przypadku naprawa jest prosta. Wystarczy dodać swoją stronę do konta FastComments.com.
 
 [Przejdź tutaj, aby dodać swoją stronę do konta.](https://fastcomments.com/auth/my-account/configure-domains)
-
----

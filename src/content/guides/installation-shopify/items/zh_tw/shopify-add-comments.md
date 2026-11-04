@@ -1,45 +1,45 @@
-The **FastComments** 區塊是主要的留言小工具。將它加入部落格文章範本、商品範本，或任何你想要討論串或即時聊天的頁面。
+**FastComments** 區塊是主要的留言小工具。可將它加入部落格文章範本、商品範本，或任何您想要討論串或即時聊天的頁面。
 
-### Add the block
+### 新增區塊
 
-1. Open the Shopify theme editor (**Online Store > Themes > Customize**).
-2. Pick the template you want comments on: **Blog post**, **Product**, or any other page or section template.
-3. In the section where you want comments to appear, click **Add block**.
-4. Under **Apps**, select **FastComments**.
-5. Click **Save**.
+1. 開啟 Shopify 佈景主題編輯器（**線上商店 > 佈景主題 > 自訂**）。
+2. 選擇您想要留言的範本：**部落格文章**、**商品**，或任何其他頁面或區段範本。
+3. 在您希望留言出現的區段中，點擊**新增區塊**。
+4. 在**應用程式**下方，選擇 **FastComments**。
+5. 點擊**儲存**。
 
-The block appears immediately. There is no Tenant ID to enter; your store's tenant is wired up automatically when you install the app.
+區塊會立即顯示。無需輸入 Tenant ID；安裝應用程式時，您商店的租戶會自動完成設定。
 
-### Settings
+### 設定
 
-| Setting | What it does | Default |
+| 設定 | 功能說明 | 預設值 |
 |---|---|---|
-| Tenant ID (optional) | 覆蓋此區塊所渲染的 FastComments 租戶。留空以使用商店自動設定的租戶。可在 fastcomments.com/auth/my-account/api-secret 找到手動的租戶 ID。 | （空白） |
-| SSO | 在留言前自動將訪客以其 Shopify 客戶帳號登入。請參見 [Auto-Login Shopify Customers](/guide-installation-shopify.html#shopify-sso)。 | 開啟 |
-| Commenting Style | 使用 **Threaded** 以支援巢狀回覆與投票，或使用 **Streaming** 以實時顯示像聊天訊息流的留言。 | Threaded |
-| Custom URL ID | 覆蓋自動偵測的頁面識別碼。當你希望兩個 URL 共用同一討論串時使用此項。 | （自動偵測） |
+| Tenant ID（選填） | 覆寫區塊所使用的 FastComments 租戶。留空則使用商店自動設定的租戶。手動租戶 ID 可在 fastcomments.com/auth/my-account/api-secret 查詢。 | （空白） |
+| SSO | 在留言前自動以訪客的 Shopify 顧客帳號登入。請參閱 [Auto-Login Shopify Customers](/guide-installation-shopify.html#shopify-sso)。 | 開啟 |
+| 留言樣式 | **Threaded**（巢狀回覆與投票）或 **Streaming**（即時聊天動態）。 | Threaded |
+| 自訂 URL ID | 覆寫自動偵測的頁面識別碼。當您希望兩個網址共用同一個留言串時可使用此選項。 | （自動偵測） |
 
-### How the page identifier is chosen
+### 頁面識別碼的決定方式
 
-Each comment thread is keyed by a URL ID. The block picks one automatically:
+每個留言串都以 URL ID 作為索引。區塊會自動選擇一個：
 
-- **Blog post template:** `shopify-article-{article.id}`, which is stable across slug and title changes.
-- **Product template:** `shopify-product-{product.id}`, which is stable across slug and title changes.
-- **Other templates:** the request path.
+- **部落格文章範本：** `shopify-article-{article.id}`，在網址代稱與標題變更時保持穩定。
+- **商品範本：** `shopify-product-{product.id}`，在網址代稱與標題變更時保持穩定。
+- **其他範本：** �求路徑。
 
-If you set **Custom URL ID**, that value is used instead. Use the same Custom URL ID across multiple blocks (for example, on a localized variant of a product page) to share one comment thread.
+如果您設定了**自訂 URL ID**，則會改用該值。在多個區塊中使用相同的自訂 URL ID（例如在商品頁面的本地化版本上），即可共用同一個留言串。
 
-### Threaded vs Streaming
+### Threaded 與 Streaming 的比較
 
-**Threaded** is the default. Visitors reply to each other, vote, and moderation tools work as expected. Best for blog posts and product reviews.
+**Threaded** 是預設值。訪客可以互相回覆、投票，且審核工具可正常運作。最適合部落格文章與商品評論。
 
-**Streaming** drops the threading and shows new comments in real time as they're posted, like a chat feed. Best for product launches, live events, and community pages.
+**Streaming** 則移除巢狀結構，即時顯示新留言，就像聊天動態一樣。最適合產品發表、直播活動與社群頁面。
 
-### Multiple blocks on the same page
+### 同一頁面上的多個區塊
 
-The block can be added more than once to the same template. For example, a Reviews Summary at the top of a product page and a FastComments block at the bottom. The blocks share a URL ID, so the summary reflects the comments below.
+同一個範本可以加入多個區塊。例如，在商品頁面頂端放置評論摘要，底部放置 FastComments 區塊。這些區塊共用同一個 URL ID，因此摘要會反映下方的留言。
 
-### Tips
+### 提示
 
-- The block hides itself in the theme editor preview with a yellow notice if it can't find a tenant. If that appears in your live store, reinstall the FastComments app.
-- For a product page, the FastComments block doubles as your product reviews widget. Pair it with **FastComments - Reviews Summary** for a star-rating summary at the top of the page.
+- 如果區塊找不到租戶，它會在佈景主題編輯器預覽中隱藏自己並顯示黃色提示。如果此情況出現在您的正式商店中，請重新安裝 FastComments 應用程式。
+- 對於商品頁面，FastComments 區塊可同時作為您的商品評論小工具。搭配 **FastComments - Reviews Summary** 使用，即可在頁面頂端顯示星級評分摘要。

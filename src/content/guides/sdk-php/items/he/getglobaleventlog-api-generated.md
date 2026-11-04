@@ -1,4 +1,3 @@
----
 req
 tenantId
 urlId
@@ -47,5 +46,3 @@ try {
     echo 'Exception when calling PublicApi->getGlobalEventLog: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

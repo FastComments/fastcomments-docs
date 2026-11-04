@@ -1,4 +1,3 @@
----
 ## Besoin d'aide ?
 
 Si vous rencontrez des problèmes ou avez des questions concernant le SDK Python, veuillez :
@@ -9,5 +8,3 @@ Si vous rencontrez des problèmes ou avez des questions concernant le SDK Python
 ## Contribuer
 
 Les contributions sont les bienvenues ! Veuillez consulter le [dépôt GitHub](https://github.com/FastComments/fastcomments-python) pour les consignes de contribution.
-
----

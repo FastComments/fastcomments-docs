@@ -1,4 +1,3 @@
----
 Wenn Sie die [Shopify App Store app](https://apps.shopify.com/fastcomments) nicht installieren können, können Sie FastComments weiterhin hinzufügen, indem Sie Ihr Theme bearbeiten. Dieser Weg ist nützlich, wenn Sie einen FastComments-Tenant, den Sie bereits besitzen, anbinden möchten, oder wenn Sie auf einem Shopify-Storefront einbetten, wo die App keine Option ist.
 
 Die Installation über die App ist der unterstützte Weg für die meisten Shops. Greifen Sie nur darauf zurück, wenn die App nicht passt.
@@ -45,5 +44,3 @@ Ersetzen Sie `"demo"` durch Ihre eigene Tenant ID von [fastcomments.com/auth/my-
 ### Hinzufügen von FastComments zu anderen Seiten
 
 Dasselbe Snippet funktioniert in jeder Liquid-Vorlage, einschließlich Produktseiten, benutzerdefinierten Seiten und der Startseite. Fügen Sie es dort ein, wo Kommentare erscheinen sollen, und passen Sie `urlId` an, wenn Sie pro Seite einen stabilen Bezeichner möchten (z. B. `urlId: "{{ product.id }}"` in einer Produktvorlage).
-
----

@@ -1,4 +1,3 @@
----
 ## Παράμετροι
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
@@ -32,5 +31,3 @@ async function runExample() {
 }
 runExample();
 [inline-code-end]
-
----

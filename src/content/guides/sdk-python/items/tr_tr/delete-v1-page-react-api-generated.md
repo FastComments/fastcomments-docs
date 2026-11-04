@@ -1,4 +1,3 @@
----
 ## Parametreler
 
 | Ad | Tür | Konum | Gerekli | Açıklama |
@@ -40,5 +39,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->delete_v1_page_react: %s\n" % e)
 [inline-code-end]
-
----

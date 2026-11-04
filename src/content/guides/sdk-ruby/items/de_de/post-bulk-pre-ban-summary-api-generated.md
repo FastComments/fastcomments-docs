@@ -37,5 +37,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->post_bulk_pre_ban_summary: #{e}"
 end
 [inline-code-end]
-
----

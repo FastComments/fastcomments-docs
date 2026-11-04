@@ -1,15 +1,15 @@
-By default, the FastComments page size is `30`. This includes replies in threads.
+Per impostazione predefinita, la dimensione della pagina di FastComments è `30`. Questo include le risposte nei thread.
 
-The page size can be customized in the [Widget Configuration UI](https://fastcomments.com/auth/my-account/customize-widget) in varying sizes ranging from `10` to `200`.
+La dimensione della pagina può essere personalizzata nella [UI di Configurazione del Widget](https://fastcomments.com/auth/my-account/customize-widget) in varie dimensioni da `10` a `200`.
 
-Note that changing the page size requires recalculating all the comment threads in your account. This may take a couple of minutes.
+Nota che la modifica della dimensione della pagina richiede il ricalcolo di tutti i thread di commenti nel tuo account. Questo potrebbe richiedere un paio di minuti.
 
-This cannot be configured in the client side widget as pages are calculated server-side.
+Non è possibile configurarla lato client nel widget, poiché le pagine vengono calcolate lato server.
 
-Example configuration is shown below:
+Un esempio di configurazione è mostrato di seguito:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.page-size'; alt='Selettore della dimensione della pagina nella pagina di personalizzazione del widget, dove è possibile scegliere un valore da 10 a 200'; title='Dimensioni della pagina personalizzate' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.page-size'; alt='Selettore della dimensione della pagina nella pagina di personalizzazione del widget, dove è possibile scegliere un valore da 10 a 200'; title='Dimensioni di Pagina Personalizzate' app-screenshot-end]
 
-Page sizes can be customized globally, or per-domain, or per-page, by creating different customization rules.
+Le dimensioni della pagina possono essere personalizzate a livello globale, per dominio o per pagina, creando diverse regole di personalizzazione.
 
-This will affect all clients, integrations, and frameworks that you may be using to show comments via our platform.
+Questo influenzerà tutti i client, le integrazioni e i framework che potresti utilizzare per mostrare i commenti tramite la nostra piattaforma.

@@ -37,5 +37,3 @@ DefaultAPI.saveComment(tenantId: tenantId, createCommentParams: createCommentPar
     }
 }
 [inline-code-end]
-
----

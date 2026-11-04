@@ -1,4 +1,3 @@
----
 ## Paramètres
 
 | Nom | Type | Emplacement | Obligatoire | Description |
@@ -39,5 +38,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.UpdateEmailTemplate`: %v\n", resp)
 }
 [inline-code-end]
-
----

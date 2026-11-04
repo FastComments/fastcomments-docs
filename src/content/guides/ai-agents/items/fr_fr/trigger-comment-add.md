@@ -1,4 +1,3 @@
----
 Déclenche l'agent à chaque fois qu'un nouveau commentaire est publié sur une page couverte par le [périmètre](#scope-url-locale) de l'agent.
 
 ### Contexte que l'agent reçoit
@@ -19,5 +18,3 @@ Déclenche l'agent à chaque fois qu'un nouveau commentaire est publié sur une 
 - **Modération** - vérifier le commentaire par rapport aux directives de la communauté, marquer comme spam ou avertir les nouveaux utilisateurs.
 - **Message de bienvenue** - bien que [Déclencheur : Premier commentaire d'un nouvel utilisateur](#trigger-new-user-first-comment) soit généralement plus adapté pour les messages de bienvenue puisqu'il se déclenche une fois par utilisateur.
 - **Résumé du fil** - généralement associé à un [délai du déclencheur](#trigger-deferred-delay) afin que le fil se stabilise avant l'exécution de l'agent.
-
----

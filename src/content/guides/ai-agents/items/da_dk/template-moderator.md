@@ -29,5 +29,3 @@ Den kan ikke poste kommentarer, stemme, fastgøre, låse, tildele badges eller s
 ### Anbefalet dry-run-periode
 
 Kør denne skabelon i [dry-run](#dry-run-mode) i mindst en uge mod din reelle trafik, før du skifter til Enabled. Brug [Testkørsler (Genspil)](#test-runs-replays) til også at forhåndsvise imod de foregående 30 dage.
-
----

@@ -56,5 +56,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

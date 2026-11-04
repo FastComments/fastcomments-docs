@@ -1,4 +1,3 @@
----
 Se activa cuando un moderador marca un comentario como revisado.
 
 ### Contexto que recibe el agente
@@ -20,5 +19,3 @@ Una acción de un moderador humano en la página de moderación, el widget de co
 
 - "Revisado" es uno de los estados de la cola de moderación rastreados por separado de "aprobado" y "spam". Un comentario puede estar aprobado-y-revisado, aprobado-pero-no-revisado, etc. Véase [Cómo funcionan las aprobaciones](/guide-moderation.html#moderation-approvals) en la guía de moderación.
 - Este disparador tiene alta frecuencia en tenants con muchos moderadores. Suscríbase selectivamente y ajuste su presupuesto en consecuencia.
-
----

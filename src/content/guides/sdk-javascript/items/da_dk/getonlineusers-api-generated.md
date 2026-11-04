@@ -1,4 +1,3 @@
----
 Aktuelt online seere af en side: personer, hvis websocket‑session er abonneret på siden lige nu.
 Returnerer anonCount + totalCount (rum‑omfattende abonnenter, inklusive anonyme seere som vi ikke tæller op).
 
@@ -37,5 +36,3 @@ async function fetchOnlineUsers() {
 
 fetchOnlineUsers();
 [inline-code-end]
-
----

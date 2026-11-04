@@ -9,5 +9,3 @@ Może być konieczne lub pożądane użycie dat absolutnych, w takim przypadku u
 Można to dostosować bez kodu, na stronie dostosowywania widgetu, w sekcji Zaawansowane opcje:
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.show-advanced-option', '.absolute-dates']; selector = '.absolute-dates'; alt='Zaawansowane opcje na stronie dostosowywania widgetu z włączonym przełącznikiem dat absolutnych'; title='Użyj dat absolutnych' app-screenshot-end]
-
----

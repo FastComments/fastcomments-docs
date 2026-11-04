@@ -1,29 +1,30 @@
-Add this line to your application's Gemfile:
+Fügen Sie diese Zeile zur Gemfile Ihrer Anwendung hinzu:
 
 ```ruby
 gem 'fastcomments'
 ```
 
-And then execute:
+Und führen Sie dann aus:
 
 ```bash
 bundle install
 ```
 
-Or install it yourself as:
+Oder installieren Sie es selbst mit:
 
 ```bash
 gem install fastcomments
 ```
 
-### Bibliotheksinhalt
+### Bibliotheksinhalte
 
-Diese Bibliothek enthält den generierten API‑Client und die SSO‑Hilfsprogramme, um die Arbeit mit der API zu erleichtern.
+Diese Bibliothek enthält den generierten API-Client und die SSO-Dienstprogramme, um die Arbeit mit der API zu erleichtern.
 
-- [API Client Library Docs](https://github.com/FastComments/fastcomments-ruby/blob/master/client/README.md)
+- [API-Client-Bibliothek Dokumentation](https://github.com/FastComments/fastcomments-ruby/blob/master/client/README.md)
 
-### Öffentliche vs gesicherte APIs
+### Öffentliche vs. gesicherte APIs
 
-Für den API‑Client gibt es drei Klassen, `DefaultApi`, `PublicApi` und `ModerationApi`. Die `DefaultApi` enthält Methoden, die Ihren API‑Schlüssel benötigen, und `PublicApi` enthält API‑Aufrufe, die direkt von einem Browser/Mobilgerät/etc. ohne Authentifizierung durchgeführt werden können. Die `ModerationApi` enthält die Methoden, die das Moderator‑Dashboard betreiben.
+Für den API-Client gibt es drei Klassen: `DefaultApi`, `PublicApi` und `ModerationApi`. Die `DefaultApi` enthält Methoden, die Ihren API-Schlüssel erfordern, und die `PublicApi` enthält API-Aufrufe,
+die direkt von einem Browser/Mobilgerät/usw. ohne Authentifizierung durchgeführt werden können. Die `ModerationApi` enthält die Methoden, die das Moderator-Dashboard antreiben.
 
-Die `ModerationApi` bietet eine umfangreiche Suite von Live‑ und schnellen Moderations‑APIs. Jede `ModerationApi`‑Methode akzeptiert einen `sso`‑Parameter und kann sich über SSO oder ein FastComments.com‑Session‑Cookie authentifizieren.
+Die `ModerationApi` bietet eine umfangreiche Suite von Live- und schnellen Moderations-APIs. Jede `ModerationApi`-Methode akzeptiert einen `sso`-Parameter und kann sich über SSO oder ein FastComments.com-Session-Cookie authentifizieren.

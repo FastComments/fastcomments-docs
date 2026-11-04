@@ -1,4 +1,3 @@
----
 ## Parameter
 
 | Name | Typ | Location | Erforderlich | Beschreibung |
@@ -39,5 +38,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.UpdateQuestionResult`: %v\n", resp)
 }
 [inline-code-end]
-
----

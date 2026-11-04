@@ -69,5 +69,3 @@ $w.onReady(function () {
     <div class="title">添加导航代码</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-7-paste-code.png" alt="添加导航代码" />
 </div>
-
----

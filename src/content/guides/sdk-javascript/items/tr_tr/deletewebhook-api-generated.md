@@ -1,4 +1,3 @@
----
 Abonelik iptalleri (REST kanca abonelik iptali). Yalnızca bu API aracılığıyla oluşturulan abonelikler burada silinebilir; kontrol paneli tarafından yönetilen web kancaları kontrol panelinde düzenlenir.
 
 ## Parametreler
@@ -21,5 +20,3 @@ const webhookId: string = "wh_98765";
 
 const result: APIEmptyResponse = await deleteWebhook(tenantId, webhookId);
 [inline-code-end]
-
----

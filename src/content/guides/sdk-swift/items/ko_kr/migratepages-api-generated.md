@@ -1,22 +1,22 @@
-Queues a batch job that moves comments, pages and related records from one urlId or domain to another.  
-"urlId" migrations only match the exact urlId. "domain" migrations find/replace the value inside every urlId and url.  
-Poll GET /api/v1/batch-jobs/{batchJobId}: once it is done it carries per-migration results and an undoId.
+하나의 urlId 또는 도메인에서 다른 urlId 또는 도메인으로 댓글, 페이지 및 관련 레코드를 이동하는 배치 작업을 큐에 추가합니다.
+"urlId" 마이그레이션은 정확히 일치하는 urlId만 대상으로 합니다. "domain" 마이그레이션은 모든 urlId와 url 내에서 값을 찾아 교체합니다.
+GET /api/v1/batch-jobs/{batchJobId}를 폴링하세요: 완료되면 마이그레이션별 결과와 undoId를 포함합니다.
 
 ## 매개변수
 
-| 이름 | 유형 | 위치 | 필수 | 설명 |
+| 이름 | 타입 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 예 |  |
 
 ## 응답
 
-반환: [`QueuePageMigrationJobAPIResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/QueuePageMigrationJobAPIResponse.swift)
+반환값: [`QueuePageMigrationJobAPIResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/QueuePageMigrationJobAPIResponse.swift)
 
 ## 예제
 
 [inline-code-attrs-start title = 'migratePages 예제'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 다음 코드 샘플은 아직 베타 버전입니다. 문제가 있으면 http://github.com/OpenAPITools/openapi-generator/issues/new 로 보고해 주세요
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 

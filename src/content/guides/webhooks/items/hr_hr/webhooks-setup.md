@@ -1,4 +1,3 @@
----
 Slijedite iste korake za `localhost` kao i za produkciju. Provjerite imate li postavljene produkcijske domene i API tajne.
 
 Prvo, idite na [Webhooks admin](https://fastcomments.com/auth/my-account/manage-data/webhooks). Ovo je dostupno putem Manage Data -> Webhooks.
@@ -18,5 +17,3 @@ Prije spremanja, kliknite **Send Test Payload** kako biste provjerili prihvaća 
 Sa popisa možete uređivati, onemogućiti, ponovo omogućiti ili izbrisati webhook. Onemogućavanje zadržava zakazane događaje dok se webhook ne ponovo omogući; brisanje ih odbacuje.
 
 Webhookove je također moguće kreirati putem API-ja, na primjer pomoću Zapiera. Oni se pojavljuju u istom popisu s izvorom **API**. Pogledajte Managing Webhooks via the API.
-
----

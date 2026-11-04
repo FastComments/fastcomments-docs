@@ -1,4 +1,3 @@
----
 Los fragmentos de código y las bibliotecas del front-end para On-Prem son los mismos que los del producto SaaS. Sin embargo, debe especificar `apiHost` y la ruta correcta del script:
 
 [inline-code-attrs-start title = 'Código de comentarios para On Prem'; type = 'html'; isFunctional = false; inline-code-attrs-end]
@@ -16,5 +15,3 @@ Los fragmentos de código y las bibliotecas del front-end para On-Prem son los m
 [inline-code-end]
 
 Lo anterior es un ejemplo muy simple. También podríamos usar las bibliotecas oficiales o de primera parte para React, Angular, Vue, Svelte, etc.
-
----

@@ -27,5 +27,3 @@
   const resultWithOptional: PublicAPIDeleteCommentResponse = await deleteCommentPublic(tenantId, commentId, broadcastId, editKey, sso);
 })();
 [inline-code-end]
-
----

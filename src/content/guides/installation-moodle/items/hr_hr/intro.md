@@ -6,5 +6,3 @@ FastComments ima namjenski Moodle dodatak koji dodaje komentiranje uživo na va�
 </div>
 
 Dodatak podržava ugniježdene komentare, chat u stvarnom vremenu s mogućnošću suradnje i više SSO načina rada. Nabavite ga iz <a href="https://github.com/FastComments/fastcomments-moodle/" target="_blank">GitHub repozitorija</a>.
-
----

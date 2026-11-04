@@ -1,24 +1,24 @@
-Wyzwalane, gdy moderator przyznaje użytkownikowi odznakę.
+Uruchamia się, gdy moderator przyznaje odznakę użytkownikowi.
 
-### Kontekst, który otrzymuje agent
+### Kontekst otrzymywany przez agenta
 
-- The **badge ID** of the badge awarded.
-- The **triggering user ID** - the moderator who awarded the badge.
-- Opcjonalny kontekst wątku / historii użytkownika / strony zgodnie z konfiguracją.
+- **Identyfikator odznaki** przyznanej odznaki.
+- **Identyfikator użytkownika wywołującego** - moderator, który przyznał odznakę.
+- Opcjonalny kontekst wątku / historii użytkownika / strony, zgodnie z konfiguracją.
 
-Źródło wywołania nie zawiera `commentId` w ładunku wyzwalacza, nawet jeśli odznaka została przyznana w odniesieniu do konkretnego komentarza.
+Zdarzenie **nie** zawiera `commentId` w ładunku wyzwalacza, nawet jeśli odznaka została przyznana w odniesieniu do konkretnego komentarza.
 
-### Kto wyzwala to
+### Kto to uruchamia
 
-Ręczna akcja moderatora.
+Działanie moderatora (człowieka).
 
-### Ważne
+### Istotne informacje
 
-- The badge ID alone is included; the agent does not receive the badge metadata (name, image). Jeśli agent musi rozpoznać, *która* odznaka została przyznana, osadź ten kontekst w [początkowym poleceniu](#personality-prompt) lub w [wytycznych społeczności](#community-guidelines).
-- Wyzwalacz uruchamia się raz na każde przyznanie odznaki, nie raz na użytkownika. Przyznanie tej samej odznaki temu samemu użytkownikowi dwukrotnie spowoduje dwukrotne wyzwolenie (każde przyznanie to odrębne zdarzenie).
+- Zawarty jest sam identyfikator odznaki; agent nie otrzymuje metadanych odznaki (nazwa, obraz). Jeśli agent musi rozumować o tym, *która* odznaka została przyznana, osadź ten kontekst w [początkowym promptcie](#personality-prompt) lub [wytycznych społeczności](#community-guidelines).
+- Wyzwalacz uruchamia się raz na przyznanie odznaki, a nie na użytkownika. Przyznanie tej samej odznaki użytkownikowi dwukrotnie uruchamia go dwukrotnie (każde przyznanie to odrębne zdarzenie).
 
 ### Typowe zastosowania
 
-- **Reciprocal recognition** - agent może opublikować odpowiedź „dziękujemy za wspaniały wkład”, gdy przyznana zostanie określona odznaka.
-- **External recognition workflow** via [Webhooki](#webhooks-overview) - odzwierciedlaj przyznania odznak w swoim systemie zaangażowania użytkowników.
-- **Memory recording** - notatki „ten użytkownik jest uznanym współtwórcą”, które przyszłe agenty moderujące powinny brać pod uwagę w swoich decyzjach.
+- **Wzajemne uznanie** - agent może opublikować odpowiedź "dziękuję za świetny wkład", gdy zostanie przyznana konkretna odznaka.
+- **Zewnętrzny przepływ uznania** za pośrednictwem [Webhooks](#webhooks-overview) - odzwierciedlaj przyznawanie odznak we własnym systemie zaangażowania użytkowników.
+- **Zapisywanie w pamięci** - notatki "ten użytkownik jest uznanym współtwórcą", które przyszłe agenty moderacji powinny uwzględniać w swoich decyzjach.

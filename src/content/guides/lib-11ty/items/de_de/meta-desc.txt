@@ -1,3 +1,1 @@
----
 Fügen Sie Kommentare zu einer Eleventy‑Website mit dem offiziellen Plugin hinzu. Platzieren Sie einen Shortcode in Ihrem Template oder binden Sie das Widget manuell ein und verzichten Sie auf das Plugin.
----

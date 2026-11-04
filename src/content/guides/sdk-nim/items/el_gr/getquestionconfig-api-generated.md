@@ -1,4 +1,3 @@
----
 ## Παράμετροι
 
 | Name | Type | Required | Description |
@@ -19,5 +18,3 @@ if questionConfigOpt.isSome:
   let config = questionConfigOpt.get()
   echo config
 [inline-code-end]
-
----

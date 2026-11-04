@@ -1,54 +1,54 @@
-### API Overview
+### API 總覽
 
-Collab Chat 提供三個用於以程式化方式管理文字對話的 REST API 端點。這些端點可讓您在不使用瀏覽器外掛程式的情況下檢索、建立和刪除註解。
+Collab Chat 提供三個 REST API 端點，用於以程式方式管理文字對話。這些端點讓您無需使用瀏覽器小工具即可擷取、建立和刪除標註。
 
-這些為公開端點，透過瀏覽器 cookie 驗證使用者。它們不使用 API 金鑰。使用者必須在瀏覽器中登入 FastComments 才能存取這些端點。
+這些是透過瀏覽器 Cookie 對使用者進行身分驗證的公開端點。它們不使用 API 金鑰。使用者必須在其瀏覽器中登入 FastComments 才能存取這些端點。
 
-### Base URL
+### 基底 URL
 
-All Collab Chat API endpoints are under:
+所有 Collab Chat API 端點都位於：
 
-[inline-code-attrs-start title = '基本 URL'; type = 'text'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = '基底 URL'; type = 'text'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 https://fastcomments.com/comment-collab-chats
 [inline-code-end]
 
-### Authentication
+### 身分驗證
 
-These endpoints authenticate users via browser cookies. They do not use API keys. Users must be logged into FastComments in their browser to access these endpoints.
+這些端點透過瀏覽器 Cookie 對使用者進行身分驗證。它們不使用 API 金鑰。使用者必須在其瀏覽器中登入 FastComments 才能存取這些端點。
 
-### Get All Conversations
+### 取得所有對話
 
-Retrieve all text conversations for a specific page.
+擷取特定頁面的所有文字對話。
 
-#### Endpoint
+#### 端點
 
 [inline-code-attrs-start title = 'GET 端點'; type = 'text'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 GET /comment-collab-chats/:tenantId?urlId=<urlId>
 [inline-code-end]
 
-#### Parameters
+#### 參數
 
-`tenantId` (path parameter, required) 是您的 FastComments Tenant ID。
+`tenantId`（路徑參數，必填）是您的 FastComments 租戶 ID。
 
-`urlId` (query parameter, required) 是您要檢索對話的頁面識別碼。
+`urlId`（查詢參數，必填）是您要擷取對話的頁面識別碼。
 
-#### Response
+#### 回應
 
-回應包含 API 狀態、若已驗證則的當前使用者會話資訊、一個包含對話 ID、URL 和文字範圍的對話陣列、清理後的 URL 識別碼、一個表示當前使用者是否為網站管理員或版主的旗標，以及用於即時同步的 WebSocket 連線細節，包括 `tenantIdWS`、`urlIdWS` 和 `userIdWS`。
+回應包含 API 狀態、已驗證時的目前使用者工作階段資訊、包含對話 ID、URL 與文字範圍的對話陣列、清理後的 URL 識別碼、表示目前使用者是否為網站管理員或版主的旗標，以及用於即時同步的 WebSocket 連線詳細資訊，包括 `tenantIdWS`、`urlIdWS` 和 `userIdWS`。
 
-#### Example Request
+#### 請求範例
 
-[inline-code-attrs-start title = 'GET 範例請求'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'GET 請求範例'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl "https://fastcomments.com/comment-collab-chats/demo?urlId=my-article-page" \
   --cookie "your-session-cookie"
 [inline-code-end]
 
-#### Example Response
+#### 回應範例
 
-[inline-code-attrs-start title = 'GET 範例回應'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'GET 回應範例'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "success",
@@ -76,44 +76,44 @@ curl "https://fastcomments.com/comment-collab-chats/demo?urlId=my-article-page" 
 }
 [inline-code-end]
 
-### Create Conversation
+### 建立對話
 
-Create a new text conversation for a specific text selection.
+為特定文字選取範圍建立新的文字對話。
 
-#### Endpoint
+#### 端點
 
 [inline-code-attrs-start title = 'POST 端點'; type = 'text'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 POST /comment-collab-chats/:tenantId
 [inline-code-end]
 
-#### Parameters
+#### 參數
 
-`tenantId` (path parameter, required) 是您的 FastComments Tenant ID。
+`tenantId`（路徑參數，必填）是您的 FastComments 租戶 ID。
 
-The request body must be JSON and include these required fields.
+請求主體必須是 JSON，並包含以下必填欄位。
 
-`urlId` (string, required) 是基本頁面識別碼。
+`urlId`（字串，必填）是基底頁面識別碼。
 
-`urlIdWithRange` (string, required) 是結合文字範圍的 URL，例如 `my-page:p:0:15,0:45{abc123}`。
+`urlIdWithRange`（字串，必填）是與文字範圍結合的 URL，例如 `my-page:p:0:15,0:45{abc123}`。
 
-`pageTitle` (string, required) 是頁面的標題。
+`pageTitle`（字串，必填）是頁面的標題。
 
-`selector` (string, required) 是包含已選取文字之元素的 DOM 路徑。
+`selector`（字串，必填）是包含所選文字之元素的 DOM 路徑。
 
-`range` (string, required) 是序列化的文字範圍，格式為 `startOffset:endOffset,startOffset:endOffset{checksum}`。
+`range`（字串，必填）是格式為 `startOffset:endOffset,startOffset:endOffset{checksum}` 的序列化文字範圍。
 
-`createdFromCommentId` (string, required) 是啟動此聊天的評論 ID。
+`createdFromCommentId`（字串，必填）是發起此對話的留言 ID。
 
-`broadcastId` (string, required) 是用於即時同步以避免回波效應的 UUID。
+`broadcastId`（字串，必填）是用於即時同步以防止回音效應的 UUID。
 
-#### Response
+#### 回應
 
-回應包含 API 狀態以及新建立對話的 ID。
+回應包含 API 狀態以及新建對話的 ID。
 
-#### Example Request
+#### 請求範例
 
-[inline-code-attrs-start title = 'POST 範例請求'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'POST 請求範例'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl -X POST "https://fastcomments.com/comment-collab-chats/demo" \
   --cookie "your-session-cookie" \
@@ -129,9 +129,9 @@ curl -X POST "https://fastcomments.com/comment-collab-chats/demo" \
   }'
 [inline-code-end]
 
-#### Example Response
+#### 回應範例
 
-[inline-code-attrs-start title = 'POST 範例回應'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'POST 回應範例'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "success",
@@ -139,28 +139,28 @@ curl -X POST "https://fastcomments.com/comment-collab-chats/demo" \
 }
 [inline-code-end]
 
-### Delete Conversation
+### 刪除對話
 
-Delete an existing text conversation. This endpoint requires admin or moderator permissions, or the conversation must have been created by the authenticated user.
+刪除現有的文字對話。此端點需要管理員或版主權限，或者該對話必須是由已驗證的使用者所建立。
 
-#### Endpoint
+#### 端點
 
 [inline-code-attrs-start title = 'DELETE 端點'; type = 'text'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 DELETE /comment-collab-chats/:tenantId/:chatId
 [inline-code-end]
 
-#### Parameters
+#### 參數
 
-`tenantId` (path parameter, required) 是您的 FastComments Tenant ID。
+`tenantId`（路徑參數，必填）是您的 FastComments 租戶 ID。
 
-`chatId` (path parameter, required) 是要刪除的對話 ID。
+`chatId`（路徑參數，必填）是要刪除的對話 ID。
 
-`broadcastId` (request body, required) 是用於即時同步的 UUID。
+`broadcastId`（請求主體，必填）是用於即時同步的 UUID。
 
-#### Example Request
+#### 請求範例
 
-[inline-code-attrs-start title = 'DELETE 範例請求'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'DELETE 請求範例'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl -X DELETE "https://fastcomments.com/comment-collab-chats/demo/conv789" \
   --cookie "your-session-cookie" \
@@ -170,24 +170,24 @@ curl -X DELETE "https://fastcomments.com/comment-collab-chats/demo/conv789" \
   }'
 [inline-code-end]
 
-#### Example Response
+#### 回應範例
 
-[inline-code-attrs-start title = 'DELETE 範例回應'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'DELETE 回應範例'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "success"
 }
 [inline-code-end]
 
-### Rate Limiting
+### 速率限制
 
-These endpoints are subject to standard FastComments API rate limiting. The rate limit middleware applies per-tenant to prevent abuse while allowing normal usage patterns.
+這些端點受標準 FastComments API 速率限制約束。速率限制中介軟體按租戶套用，以防止濫用，同時允許正常的使用模式。
 
-### Error Responses
+### 錯誤回應
 
-All endpoints return standard HTTP status codes. A 400 response indicates invalid request parameters. A 401 response means authentication failed. A 403 response indicates insufficient permissions. A 404 response means the conversation was not found. A 429 response indicates rate limit exceeded.
+所有端點都會回傳標準 HTTP 狀態碼。400 回應表示請求參數無效。401 回應表示身分驗證失敗。403 回應表示權限不足。404 回應表示找不到該對話。429 回應表示超出速率限制。
 
-Error responses include a JSON body with details:
+錯誤回應包含帶有詳細資訊的 JSON 主體：
 
 [inline-code-attrs-start title = '錯誤回應範例'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -197,8 +197,6 @@ Error responses include a JSON body with details:
 }
 [inline-code-end]
 
-### Usage Tracking
+### 用量追蹤
 
-Creating conversations increments your `conversationCreateCount` usage metric. All WebSocket sync activity increments `pubSubMessageCount` and `pubSubBandwidth`. You can monitor these metrics in your FastComments dashboard under usage analytics.
-
----
+建立對話會增加您的 `conversationCreateCount` 用量指標。所有 WebSocket 同步活動會增加 `pubSubMessageCount` 和 `pubSubBandwidth`。您可以在 FastComments 儀表板的用量分析中監控這些指標。

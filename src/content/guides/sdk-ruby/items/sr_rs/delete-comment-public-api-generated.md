@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Name | Type | Location | Required | Description |
@@ -37,5 +36,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->delete_comment_public: #{e}"
 end
 [inline-code-end]
-
----

@@ -31,5 +31,3 @@ async fn fetch_offline(config: &configuration::Configuration) -> Result<(), Erro
     Ok(())
 }
 [inline-code-end]
-
----

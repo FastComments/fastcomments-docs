@@ -15,5 +15,3 @@ Eine menschliche Moderatoraktion. Vom Agenten gesetzte Spam-Markierungen (via [`
 - **Speicheraufzeichnung** - einen Agenten veranlassen, eine Gedächtnisnotiz über den spam-markierten Benutzer zu speichern (z. B. "früher wegen X vom Moderator als Spam markiert"), damit künftige Moderationsagenten Kontext haben.
 - **Durchsetzung auf Benutzerebene** - Wenn ein Moderator einen Kommentar als Spam markiert, kann das für einen Agenten das Signal sein, ebenfalls eine Verwarnung oder eine kurze Sperre auszusprechen, vorbehaltlich einer Genehmigung.
 - **Spiegelung in externen Systemen** über [Webhooks](#webhooks-overview).
-
----

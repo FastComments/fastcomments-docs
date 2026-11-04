@@ -1,18 +1,17 @@
-Past commenters on the page who are NOT currently online. Sorted by displayName.
-Use this after exhausting /users/online to render a "Members" section.
-Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName}
-index from afterName forward via $gt, no $skip cost.
+Прошлые комментаторы страницы, которые НЕ в сети в данный момент. Отсортированы по displayName.
+Используйте этот метод после исчерпания /users/online для отображения раздела «Участники».
+Курсорная пагинация по commenterName: сервер проходит по частичному индексу {tenantId, urlId, commenterName} от afterName вперёд через $gt, без затрат на $skip.
 
-## Parameters
+## Параметры
 
-| Имя | Тип | Местоположение | Обязательно | Описание |
+| Имя | Тип | Расположение | Обязательный | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| urlId | string | query | Yes | Идентификатор URL-страницы (очищен на сервере). |
-| afterName | string | query | No | Курсор: передайте nextAfterName из предыдущего ответа. (необязательно) |
-| afterUserId | string | query | No | Счётчик-тайбрейкер курсора: передайте nextAfterUserId из предыдущего ответа. Требуется, когда afterName установлен, чтобы совпадения имён не пропускали записи. (необязательно) |
+| tenantId | string | path | Да |  |
+| urlId | string | query | Да | Идентификатор URL страницы (очищается на сервере). |
+| afterName | string | query | Нет | Курсор: передайте nextAfterName из предыдущего ответа. |
+| afterUserId | string | query | Нет | Дополнительный ключ курсора: передайте nextAfterUserId из предыдущего ответа. Обязателен, когда задан afterName, чтобы совпадения имён не приводили к потере записей. |
 
-## Response
+## Ответ
 
 Возвращает: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PageUsersOfflineResponse.swift)
 
@@ -20,13 +19,13 @@ index from afterName forward via $gt, no $skip cost.
 
 [inline-code-attrs-start title = 'Пример getOfflineUsers'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следующие образцы кода находятся в бета-версии. При возникновении проблем, пожалуйста, сообщайте по адресу http://github.com/OpenAPITools/openapi-generator/issues/new
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let urlId = "urlId_example" // String | Идентификатор URL-страницы (очищен на сервере).
-let afterName = "afterName_example" // String | Курсор: передайте nextAfterName из предыдущего ответа. (необязательно)
-let afterUserId = "afterUserId_example" // String | Счётчик-тайбрейкер курсора: передайте nextAfterUserId из предыдущего ответа. Требуется, когда afterName установлен, чтобы совпадения имён не пропускали записи. (необязательно)
+let urlId = "urlId_example" // String | Идентификатор URL страницы (очищается на сервере).
+let afterName = "afterName_example" // String | Курсор: передайте nextAfterName из предыдущего ответа. (optional)
+let afterUserId = "afterUserId_example" // String | Дополнительный ключ курсора: передайте nextAfterUserId из предыдущего ответа. Обязателен, когда задан afterName, чтобы совпадения имён не приводили к потере записей. (optional)
 
 PublicAPI.getOfflineUsers(tenantId: tenantId, urlId: urlId, options: PublicAPI.GetOfflineUsersOptions(afterName: afterName, afterUserId: afterUserId)) { (response, error) in
     guard error == nil else {

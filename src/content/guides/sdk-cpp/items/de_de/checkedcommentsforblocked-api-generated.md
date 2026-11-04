@@ -1,4 +1,3 @@
----
 ## Parameters
 
 | Name | Typ | Erforderlich | Beschreibung |
@@ -23,5 +22,3 @@ api->checkedCommentsForBlocked(tenantId, commentIds, sso).then([](std::shared_pt
     (void)resp;
 });
 [inline-code-end]
-
----

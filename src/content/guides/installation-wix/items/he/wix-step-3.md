@@ -1,16 +1,15 @@
----
-דוגמה זו משתמשת בקוד מותאם כדי להיות תואמת ל-Wix. **לא תוכלו להשתמש בקטעי הקוד של FastComments מההדרכות האחרות.**
+דוגמה זו משתמשת בקוד מותאם אישית לצורך תאימות ל-Wix. **לא תוכלו להשתמש בקטעי הקוד של FastComments ממדריכים אחרים.**
 
-Open the form to add our custom HTML dialog by clicking `Enter Code` and selecting `HTML`:
+פתחו את הטופס כדי להוסיף את דיאלוג ה-HTML המותאם אישית שלנו על ידי לחיצה על `Enter Code` ובחירה ב-`HTML`:
 
 <div class="screenshot white-bg">
-    <div class="title">שלב 3: פתח חלונית HTML</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-3-open-form.png" alt="שלב 3: פתח חלונית HTML" />
+    <div class="title">שלב 3: פתיחת דיאלוג ה-HTML</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-3-open-form.png" alt="שלב 3: פתיחת דיאלוג ה-HTML" />
 </div>
 
-Copy the following HTML snippet and paste it into the dialog, and click Update:
+העתיקו את קטע ה-HTML הבא והדביקו אותו בדיאלוג, ולאחר מכן לחצו על Update:
 
-[inline-code-attrs-start title = 'קטע קוד לתגובות Wix'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'קטע קוד תגובות של Wix'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
 <div id="fastcomments-widget"></div>
@@ -35,17 +34,15 @@ Copy the following HTML snippet and paste it into the dialog, and click Update:
 [inline-code-end]
 
 <div class="screenshot white-bg">
-    <div class="title">שלב 3: הדבק ושמור</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-3-paste-and-save.png" alt="שלב 3: הדבק ושמור" />
+    <div class="title">שלב 3: הדבקה ושמירה</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-3-paste-and-save.png" alt="שלב 3: הדבקה ושמירה" />
 </div>
 
-You should now see a very tiny version of the comment widget:
+כעת אמורה להופיע בפניכם גרסה קטנטנה של ווידג'ט התגובות:
 
 <div class="screenshot white-bg">
     <div class="title">שלב 3: התוצאה</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-3-result.png" alt="שלב 3: התוצאה" />
 </div>
 
-Next we will position and size this to fit our page.
-
----
+בשלב הבא נמקם ונגדיר את הגודל שלו כך שיתאים לעמוד שלנו.

@@ -34,5 +34,3 @@ try {
     print('Исключение при вызове DefaultApi->unFlagComment: $e\n');
 }
 [inline-code-end]
-
----

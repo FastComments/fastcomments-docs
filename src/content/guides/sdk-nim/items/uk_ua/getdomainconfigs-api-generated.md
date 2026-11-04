@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Назва | Тип | Обов’язковий | Опис |
@@ -18,5 +17,3 @@ if domainConfigsOpt.isSome:
   let domainConfigs = domainConfigsOpt.get()
   echo domainConfigs
 [inline-code-end]
-
----

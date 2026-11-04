@@ -1,29 +1,28 @@
-まず、FastComments が置き換えるコンタクトフォームを追加します。
+まず、FastCommentsが置き換えるコンタクトフォームを追加します。
 
-To do this, open the site editor, and click `Add Section` on the desired page.
+そのために、サイトエディターを開き、対象のページで `Add Section` をクリックします。
 
-Then, go to `Content -> Contact -> Contact Form` on the left, as shown:
-
-<div class="screenshot white-bg">
-    <div class="title">コンタクトフォームを追加</div>
-    <img class="screenshot-image" src="/images/installation-guides/ionos-step-1-add-contact-section.png" alt="Add Contact Form" />
-</div>
-
-Next, we need to tell FastComments to replace our form. Click on the default form title:
+次に、以下に示すように、左側の `Content -> Contact -> Contact Form` に移動します:
 
 <div class="screenshot white-bg">
-    <div class="title">フォームタイトルを設定</div>
-    <img class="screenshot-image" src="/images/installation-guides/ionos-step-1-change-title.png" alt="Set Form Title" />
+    <div class="title">コンタクトフォームの追加</div>
+    <img class="screenshot-image" src="/images/installation-guides/ionos-step-1-add-contact-section.png" alt="コンタクトフォームの追加" />
 </div>
 
-We'll set the title to `FastComments Goes Here`. It's very important that the casing
-and spacing is the same, or else it won't work, so we recommend you copy this text and paste it in.
-
-When done, it should appear as follows:
+次に、FastCommentsにフォームを置き換えるよう指示する必要があります。デフォルトのフォームタイトルをクリックしてください:
 
 <div class="screenshot white-bg">
-    <div class="title">タイトル設定完了</div>
-    <img class="screenshot-image" src="/images/installation-guides/ionos-step-1-add-contact-section-done.png" alt="Done Setting Title" />
+    <div class="title">フォームタイトルの設定</div>
+    <img class="screenshot-image" src="/images/installation-guides/ionos-step-1-change-title.png" alt="フォームタイトルの設定" />
 </div>
 
-That's the end of step one!
+タイトルを `FastComments Goes Here` に設定します。大文字小文字とスペースが同一でないと動作しないため、このテキストをコピーして貼り付けることをおすすめします。
+
+完了すると、以下のように表示されます:
+
+<div class="screenshot white-bg">
+    <div class="title">タイトル設定の完了</div>
+    <img class="screenshot-image" src="/images/installation-guides/ionos-step-1-add-contact-section-done.png" alt="タイトル設定の完了" />
+</div>
+
+これでステップ1は完了です！

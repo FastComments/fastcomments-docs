@@ -1,4 +1,3 @@
----
 ## Parametreler
 
 | İsim | Tür | Konum | Zorunlu | Açıklama |
@@ -41,5 +40,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.PutSSOUser`: %v\n", resp)
 }
 [inline-code-end]
-
----

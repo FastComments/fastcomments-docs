@@ -23,5 +23,3 @@ Renvoie : [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastc
     const responseWithoutSso: CheckBlockedCommentsResponse = await checkedCommentsForBlocked(tenantId, commentIds);
 })();
 [inline-code-end]
-
----

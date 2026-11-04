@@ -1,4 +1,3 @@
----
 특정 댓글에 대한 알림을 활성화하거나 비활성화합니다.
 
 ## 매개변수
@@ -35,5 +34,3 @@ try {
     print('Exception when calling PublicApi->updateUserNotificationCommentSubscriptionStatus: $e\n');
 }
 [inline-code-end]
-
----

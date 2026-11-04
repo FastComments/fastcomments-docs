@@ -1,4 +1,3 @@
----
 Chez FastComments, nous écrivons nos propres extensions en utilisant la même API. Vous pouvez consulter le code non minifié de ces extensions aux points de terminaison suivants :
 
 #### Mode sombre
@@ -20,5 +19,3 @@ https://fastcomments.com/js/comment-ui/extensions/comment-ui.moderation.extensio
 L'extension Chat en direct (en combinaison avec d'autres configurations et styles) transforme le widget de commentaires en un composant de chat en direct.
 
 https://fastcomments.com/js/comment-ui/extensions/live-chat.extension.js
-
----

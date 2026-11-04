@@ -24,5 +24,3 @@ async function main(): Promise<void> {
 
 main();
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 FastComments에서는 댓글이 연결되는 기사 ID 또는 페이지를 URL ID라고 합니다. 이는 URL이거나 ID일 수 있습니다.
 URL ID는 다음과 같이 정의합니다. 컴포넌트는 config 객체의 변화를 감시하여 리로드하므로, "url"과 "urlId" 설정만 업데이트하면 됩니다.
 
@@ -23,4 +22,3 @@ npm run serve-pagination
 ```
 
 그렇지 않으면 `region`을 정의할 필요가 없습니다.
----

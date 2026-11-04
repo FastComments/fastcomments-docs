@@ -1,4 +1,3 @@
----
 ### Widget komentara
 
 Komponenta FastCommentsVueNext sadrži FastComments widget za komentare uživo.
@@ -21,4 +20,3 @@ export default {
 }
 </script>
 ```
----

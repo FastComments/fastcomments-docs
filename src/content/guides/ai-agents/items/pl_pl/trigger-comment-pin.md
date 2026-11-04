@@ -15,5 +15,3 @@ Zapobieganie pętlom: zdarzenia przypięcia pochodzące od agenta nie uruchamiaj
 ### Uwaga dotycząca pary
 
 Zdarzenia przypięcia i odpięcia są oddzielnymi wyzwalaczami. Subskrybuj oba, jeśli chcesz symetrycznego zachowania. Zobacz [Wyzwalacz: Komentarz odpięty](#trigger-comment-unpin).
-
----

@@ -64,5 +64,3 @@ export interface TenantPackage {
     flexMinimumCostCents?: null
 }
 [inline-code-end]
-
----

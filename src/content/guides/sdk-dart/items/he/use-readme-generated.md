@@ -3,14 +3,13 @@ dependencies:
   fastcomments_dart: ^3.0.0
 ```
 
-SSO helpers are included in the package (`package:fastcomments_dart/sso/...`).
+פונקציות עזר ל-SSO כלולות בחבילה (`package:fastcomments_dart/sso/...`).
 
 הלקוח חושף שלוש מחלקות API:
 
-- `DefaultApi` - שיטות המאומתות במפתח API לשימוש בצד השרת.
-- `PublicApi` - שיטות ציבוריות שאין צורך במפתח API, בטוחות לדפדפן ו
-  ללקוחות ניידים.
-- `ModerationApi` - חבילה מקיפה של APIיות מודרציה בזמן אמת ומהירות. כל שיטה של `ModerationApi` מקבלת פרמטר `sso` ויכולה לאמת באמצעות SSO או באמצעות עוגיית סשן של FastComments.com.
+- `DefaultApi` - מתודות המאומתות באמצעות מפתח API לשימוש בצד השרת.
+- `PublicApi` - מתודות ציבוריות שאינן דורשות מפתח API, בטוחות לשימוש בדפדפן ובלקוחות מובייל.
+- `ModerationApi` - סוויטה נרחבת של ממשקי API לניהול (מודרציה) מהיר ובזמן אמת. כל מתודה של `ModerationApi` מקבלת פרמטר `sso` ויכולה לאמת באמצעות SSO או עוגיית סשן של FastComments.com.
 
 ```dart
 import 'package:fastcomments_dart/api.dart';

@@ -26,5 +26,3 @@ Kada završite, trebalo bi da izgleda ovako:
 </div>
 
 To je kraj prvog koraka!
-
----

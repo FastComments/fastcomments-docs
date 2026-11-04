@@ -31,5 +31,3 @@ interface APIEmptyResponse {
   const responseWithoutRedirect: APIEmptyResponse = await sendLoginLink(tenantId, userId);
 })();
 [inline-code-end]
-
----

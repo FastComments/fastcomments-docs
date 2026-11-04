@@ -1,4 +1,3 @@
----
 ### Le widget de commentaires
 
 Le composant FastCommentsVueNext contient le widget de commentaires FastComments en direct.
@@ -21,4 +20,3 @@ export default {
 }
 </script>
 ```
----

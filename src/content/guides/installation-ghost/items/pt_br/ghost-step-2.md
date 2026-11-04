@@ -1,25 +1,25 @@
-Agora que baixamos o arquivo zip, extraia-o para uma pasta. Eu baixei o `casper.zip` padrão e extraí para `Downloads\casper` no Windows.
+Agora que baixamos o arquivo zip, extraia-o para uma pasta. Eu baixei o `casper.zip` padrão e extraí em `Downloads\casper` no Windows.
 
-Next, you'll want to make sure you have the LTS or newer version of NodeJS installed. You can get that here: https://nodejs.org/en/download/
+Em seguida, você vai querer garantir que tem a versão LTS ou mais recente do NodeJS instalada. Você pode obtê-la aqui: https://nodejs.org/en/download/
 
-Once NodeJS is installed, you'll want to install a code editor.
+Depois que o NodeJS estiver instalado, você vai querer instalar um editor de código.
 
-We recommend (and use) Webstorm, which you can get here with a 30-day trial (no credit card needed): https://www.jetbrains.com/webstorm/
+Recomendamos (e usamos) o Webstorm, que você pode obter aqui com um teste de 30 dias (sem necessidade de cartão de crédito): https://www.jetbrains.com/webstorm/
 
-The next best free option would probably be Visual Studio Code: https://code.visualstudio.com/download
+A próxima melhor opção gratuita provavelmente seria o Visual Studio Code: https://code.visualstudio.com/download
 
-Once you have your editor setup, and the theme folder open in the editor, open the terminal in the IDE and run:
+Depois de ter seu editor configurado e a pasta do tema aberta no editor, abra o terminal no IDE e execute:
 
-[inline-code-attrs-start title = 'Instalar o Tema'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Instalar o tema'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 npm install
 [inline-code-end]
 
-A saída bem-sucedida será parecida com isto (você pode ignorar avisos):
+A saída bem-sucedida ficará assim (você pode ignorar os avisos):
 
 <div class="screenshot white-bg">
     <div class="title">Saída bem-sucedida do npm install</div>
     <img class="screenshot-image" src="/images/installation-guides/ghost-step-2-1-install.png" alt="Saída bem-sucedida do npm install" />
 </div>
 
-Isto configurará as dependências do tema para os comandos posteriores que iremos executar. Além disso, a exportação depende das dependências do tema estarem instaladas; caso contrário, a reimportação não funcionará corretamente.
+Isso configurará as dependências do tema para os comandos que executaremos mais tarde. Além disso, a exportação depende de as dependências do tema estarem instaladas, caso contrário a reimportação não funcionará corretamente.

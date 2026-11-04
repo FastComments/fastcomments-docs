@@ -1,10 +1,12 @@
-The `TenantUser` definira `User` kojeg upravlja određeni tenant. Račun tog korisnika je u potpunoj kontroli tena kojem je pridružen te se račun može ažurirati ili izbrisati putem [UI](https://fastcomments.com/auth/my-account/users) ili API-ja.
+`TenantUser` definira `User` kojim upravlja određeni tenant. Njihov račun ima potpunu kontrolu nad tenantom
+s kojim su povezani, a njihov račun može se ažurirati ili izbrisati putem [UI-ja](https://fastcomments.com/auth/my-account/users) ili API-ja.
 
-Korisnici koje upravlja tenant mogu biti administratori s punim dopuštenjima i pristupom `Tenant`u, ili mogu imati ograničena dopuštenja za moderiranje komentara, pristup API ključevima itd.
+Tenant korisnici mogu biti administratori sa svim dozvolama i pristupom `Tenant`-u, ili mogu biti ograničeni na specifične dozvole
+za moderiranje komentara, pristup API ključevima itd.
 
-The structure for the `TenantUser` object is as follows:
+Struktura objekta `TenantUser` je sljedeća:
 
-[inline-code-attrs-start title = 'Struktura objekta TenantUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Struktura TenantUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 /** Ovo je za obavijesti. **/
 export enum UserDigestEmailFrequency {
@@ -18,7 +20,7 @@ export interface TenantUser {
     id: string
     tenantId: string
     username: string
-    /** Poveznica na blog komentatora, na primjer. **/
+    /** Na primjer, poveznica na blog komentatora. **/
     websiteUrl?: string
     email: string
     signUpDate: number
@@ -48,5 +50,3 @@ export interface TenantUser {
     karma?: number
 }
 [inline-code-end]
-
----

@@ -1,12 +1,9 @@
-By default, FastComments comes with a word blacklist of ~450 phrases and words.
+預設情況下，FastComments 附帶一個包含約 450 個詞語和短語的單字黑名單。
 
-If text in the word blacklist is found in a new comment that text will be replaced with asterisks (***).
+如果新留言中發現黑名單中的文字，該文字將被替換為星號（***）。
 
-The page to customize the blacklist can be found via Moderate Comments -> Edit Moderation Settings -> Edit Word Blacklist, or
-by going directly <a href="https://fastcomments.com/auth/my-account/moderate-comments/blacklist" target="_blank">此處</a>.
+自訂黑名單的頁面可以透過 Moderate Comments -> Edit Moderation Settings -> Edit Word Blacklist 找到，或直接前往 <a href="https://fastcomments.com/auth/my-account/moderate-comments/blacklist" target="_blank">這裡</a>。
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/blacklist?blurList=true'; linkUrl='/auth/my-account/moderate-comments/blacklist'; selector = '.account-block'; alt='字詞黑名單編輯器，可在此新增或移除預設被阻擋的字詞與片語'; title='評論字詞黑名單' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/blacklist?blurList=true'; linkUrl='/auth/my-account/moderate-comments/blacklist'; selector = '.account-block'; alt='單字黑名單編輯器，可新增或移除預設封鎖的詞語和短語'; title='留言單字黑名單' app-screenshot-end]
 
-Additionally, you can disable Profanity Detection on the <a href="https://fastcomments.com/auth/my-account/moderate-comments/settings" target="_blank">編輯審核設定</a> page.
-
----
+此外，您可以在 <a href="https://fastcomments.com/auth/my-account/moderate-comments/settings" target="_blank">Edit Moderation Settings</a> 頁面上停用不雅用語偵測。

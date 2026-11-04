@@ -1,4 +1,3 @@
----
 ## 參數
 
 | 名稱 | 類型 | 必填 | 說明 |
@@ -25,5 +24,3 @@ let (respOpt, httpResponse) = client.updateUserNotificationStatus(
 if respOpt.isSome:
   let status = respOpt.get()
 [inline-code-end]
-
----

@@ -24,5 +24,3 @@ api->getCommentBanStatus(tenantId, commentId, sso).then([](pplx::task<std::share
     }catch(const std::exception&){ }
 });
 [inline-code-end]
-
----

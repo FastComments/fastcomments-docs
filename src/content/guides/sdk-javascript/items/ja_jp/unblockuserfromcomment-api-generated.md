@@ -35,5 +35,3 @@
   console.log(result);
 })();
 [inline-code-end]
-
----

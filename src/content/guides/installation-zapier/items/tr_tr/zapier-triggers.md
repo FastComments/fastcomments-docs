@@ -21,5 +21,3 @@ Her tetikleyici tam yorumu döndürür: id, sayfa URL'si ve URL ID'si, yorum yap
 Bir Zap'ı açmak, hesabınızda bir webhook aboneliği oluşturur; bu, Webhooks sayfasında **API** kaynağıyla görünür. Zap'ı kapatmak ise aboneliği kaldırır. Zapier'in kendi limitleri, dakikada kabul ettiği olay sayısına uygulanır; FastComments, başarısız olan bir teslimatı artan bir gecikmeyle yeniden dener ve altı gün boyunca başarısız olan bir aboneliği devre dışı bırakır. Devre dışı bırakılan bir abonelik, Webhooks sayfasından yeniden etkinleştirilebilir veya sadece Zap'ı kapatıp tekrar açarak yeni bir abonelik oluşturulabilir.
 
 Bir hesap en fazla 50 API aboneliği tutabilir. FastComments tetikleyicisini kullanan her Zap bir abonelik kullanır.
-
----

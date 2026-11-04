@@ -1,4 +1,3 @@
----
 Informazioni utente in blocco per un tenant. Dato userIds, restituisce informazioni di visualizzazione da User / SSOUser.
 Usato dal widget dei commenti per arricchire gli utenti che sono appena apparsi tramite un evento di presenza.
 Nessun contesto di pagina: la privacy è applicata in modo uniforme (i profili privati sono mascherati).
@@ -35,5 +34,3 @@ PublicAPI.getUsersInfo(tenantId: tenantId, ids: ids) { (response, error) in
     }
 }
 [inline-code-end]
-
----

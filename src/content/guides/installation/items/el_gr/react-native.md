@@ -47,5 +47,3 @@ import { FastCommentsCommentWidget } from 'fastcomments-react-native';
 [inline-code-end]
 
 Μπορείτε να βρείτε τη διαμόρφωση που υποστηρίζει το component React Native <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">εδώ</a>.
-
----

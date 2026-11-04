@@ -40,5 +40,3 @@ For example, given users `A (commenter)`, `B (Moderator 1)`, and `C (Moderator 2
 2. Voor `User A (commenter)` wordt die opmerking onmiddellijk verborgen.
 3. Voor `User C (Moderator 2)` wordt die opmerking onmiddellijk verborgen.
 4. Voor de gebruiker die de wijziging heeft aangebracht, `User B (Moderator 1)`, blijft de opmerking op hun scherm staan, maar wordt gemarkeerd als verwijderd. Zij hebben de mogelijkheid om hun actie ongedaan te maken, in welk geval de andere gebruikers de update weer live zullen zien.
-
----

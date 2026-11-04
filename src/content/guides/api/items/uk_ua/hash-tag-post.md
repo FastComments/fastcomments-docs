@@ -32,5 +32,3 @@ interface HashTagPostResponse {
     hashTag?: HashTag; // Ми повертаємо повністю створений хештег у разі успіху.
 }
 [inline-code-end]
-
----

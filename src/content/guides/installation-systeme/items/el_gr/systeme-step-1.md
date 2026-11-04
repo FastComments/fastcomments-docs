@@ -27,5 +27,3 @@
     <div class="title">Επεξεργασία κώδικα</div>
     <img class="screenshot-image" src="/images/installation-guides/systeme-edit-block-button.png" alt="Επεξεργασία κώδικα" />
 </div>
-
----

@@ -1,4 +1,3 @@
----
 Por padrão um agente é executado **imediatamente** depois que seu gatilho dispara. O campo **Delay before running** no formulário de edição altera isso: a plataforma enfileira o gatilho e executa o agente no horário agendado.
 
 ### Quando usar um atraso
@@ -25,5 +24,3 @@ Os gatilhos diferidos são registrados **antes** de serem executados. Um pico de
 ### Replay não respeita o atraso
 
 O recurso [Test Runs (Replays)](#test-runs-replays) executa o agente imediatamente contra comentários históricos — ele não espera pelo atraso configurado. Considere isso um recurso: replays servem para visualizar o que o agente **faria** dado o contexto, não para reproduzir o agendamento em tempo real.
-
----

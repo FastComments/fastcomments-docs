@@ -1,43 +1,43 @@
-First, let's create a custom theme that we're going to edit. If you already have a custom theme setup, you can skip this step.
+Πρώτα, ας δημιουργήσουμε ένα προσαρμοσμένο θέμα που θα επεξεργαστούμε. Αν έχετε ήδη ρυθμίσει ένα προσαρμοσμένο θέμα, μπορείτε να παραλείψετε αυτό το βήμα.
 
-To do this, we will go to `Storefront` and then `Themes`.
+Για να το κάνουμε αυτό, θα μεταβούμε στο `Storefront` και μετά στο `Themes`.
 
 <div class="screenshot white-bg">
-    <div class="title">Επιλέξτε Storefront</div>
-    <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-1-select-storefront.png" alt="Επιλέξτε Storefront" />
+    <div class="title">Επιλογή Storefront</div>
+    <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-1-select-storefront.png" alt="Επιλογή Storefront" />
 </div>
 
 <div class="screenshot white-bg">
-    <div class="title">Επιλέξτε Themes</div>
-    <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-1-select-themes.png" alt="Επιλέξτε Themes" />
+    <div class="title">Επιλογή Themes</div>
+    <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-1-select-themes.png" alt="Επιλογή Themes" />
 </div>
 
-For the purposes of this tutorial we will use the default theme, but the instructions are the same for all themes.
+Για τους σκοπούς αυτού του οδηγού θα χρησιμοποιήσουμε το προεπιλεγμένο θέμα, αλλά οι οδηγίες είναι οι ίδιες για όλα τα θέματα.
 
-Next, we are **not** going to click Customize. Instead, click `Advanced` and `Make a Copy`.
+Στη συνέχεια, **δεν** θα κάνουμε κλικ στο Customize. Αντίθετα, κάντε κλικ στο `Advanced` και στο `Make a Copy`.
 
 <div class="screenshot white-bg">
-    <div class="title">Make a Copy</div>
-    <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-1-select-make-a-copy.png" alt="Make a Copy" />
+    <div class="title">Δημιουργία Αντιγράφου</div>
+    <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-1-select-make-a-copy.png" alt="Δημιουργία Αντιγράφου" />
 </div>
 
-Confirm copying the theme:
+Επιβεβαιώστε την αντιγραφή του θέματος:
 
 <div class="screenshot white-bg">
-    <div class="title">Save The Copy</div>
-    <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-1-save-copy.png" alt="Save The Copy" />
+    <div class="title">Αποθήκευση του Αντιγράφου</div>
+    <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-1-save-copy.png" alt="Αποθήκευση του Αντιγράφου" />
 </div>
 
-Once complete, you should see your theme listed under `Themes` on the bottom of the page, like so.
+Μόλις ολοκληρωθεί, θα δείτε το θέμα σας να εμφανίζεται κάτω από το `Themes` στο κάτω μέρος της σελίδας, όπως παρακάτω.
 
 <div class="screenshot white-bg">
-    <div class="title">Custom Theme Created</div>
-    <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-1-custom-theme-created.png" alt="Custom Theme Created" />
+    <div class="title">Το Προσαρμοσμένο Θέμα Δημιουργήθηκε</div>
+    <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-1-custom-theme-created.png" alt="Το Προσαρμοσμένο Θέμα Δημιουργήθηκε" />
 </div>
 
-Now we can edit our new theme to add FastComments.
+Τώρα μπορούμε να επεξεργαστούμε το νέο μας θέμα για να προσθέσουμε το FastComments.
 
 <div class="screenshot white-bg">
-    <div class="title">Επεξεργασία αρχείων θέματος</div>
-    <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-1-edit-theme-files.png" alt="Επεξεργασία αρχείων θέματος" />
+    <div class="title">Επεξεργασία Αρχείων Θέματος</div>
+    <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-1-edit-theme-files.png" alt="Επεξεργασία Αρχείων Θέματος" />
 </div>

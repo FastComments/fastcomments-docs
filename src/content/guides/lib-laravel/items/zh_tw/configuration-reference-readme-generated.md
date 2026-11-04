@@ -8,4 +8,3 @@
 | `sso.login_url` | `FASTCOMMENTS_SSO_LOGIN_URL` | `null` | Login URL (falls back to Laravel route) |
 | `sso.logout_url` | `FASTCOMMENTS_SSO_LOGOUT_URL` | `null` | Logout URL (falls back to Laravel route) |
 | `widget_defaults` | — | `[]` | 預設 widget 設定選項 |
----

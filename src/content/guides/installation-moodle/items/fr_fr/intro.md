@@ -6,5 +6,3 @@ FastComments propose un plugin Moodle dédié qui ajoute des commentaires en dir
 </div>
 
 Le plugin prend en charge les fils de discussion, le chat collaboratif en temps réel et plusieurs modes SSO. Récupérez-le depuis le <a href="https://github.com/FastComments/fastcomments-moodle/" target="_blank">dépôt GitHub</a>.
-
----

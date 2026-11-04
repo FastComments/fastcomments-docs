@@ -1,4 +1,3 @@
----
 Dit eindpunt stelt je in staat het badge-voortgangsrecord van een gebruiker op te halen op basis van hun user ID.
 
 Voorbeeldverzoek:
@@ -63,4 +62,3 @@ Mogelijke foutreacties:
   "reason": "No badge progress found for user user456 in tenant tenant001."
 }
 [inline-code-end]
----

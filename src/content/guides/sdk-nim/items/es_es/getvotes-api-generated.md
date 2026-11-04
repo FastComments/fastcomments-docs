@@ -18,5 +18,3 @@ if optVotes.isSome:
   let votes = optVotes.get()
   discard votes
 [inline-code-end]
-
----

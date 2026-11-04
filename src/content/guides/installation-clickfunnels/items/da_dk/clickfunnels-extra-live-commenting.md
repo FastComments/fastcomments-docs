@@ -1,4 +1,3 @@
----
 Hvis du leder efter ClickFunnels Live Commenting-kodesnippet, prøv dette:
 
 [inline-code-attrs-start title = 'ClickFunnels Live Commenting-kodesnippet'; type = 'html'; isFunctional = false; inline-code-attrs-end]
@@ -32,5 +31,3 @@ Hvis du leder efter ClickFunnels Live Commenting-kodesnippet, prøv dette:
     })();
 </script>
 [inline-code-end]
-
----

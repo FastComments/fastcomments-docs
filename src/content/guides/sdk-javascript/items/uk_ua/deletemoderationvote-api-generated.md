@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Назва | Тип | Обов'язковий | Опис |
@@ -35,5 +34,3 @@ async function runDeleteModerationVote(): Promise<void> {
   console.log(result);
 }
 [inline-code-end]
-
----

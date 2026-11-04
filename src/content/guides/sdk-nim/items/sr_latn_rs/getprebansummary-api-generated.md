@@ -18,5 +18,3 @@ let (preBanSummaryOpt, httpResponse) = client.getPreBanSummary(tenantId = "my-te
 if preBanSummaryOpt.isSome:
   let summary = preBanSummaryOpt.get()
 [inline-code-end]
-
----

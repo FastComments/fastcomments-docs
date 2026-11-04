@@ -1,22 +1,22 @@
-Custom react counts for a page, optionally with the users who reacted.
+Brugerdefinerede react-tællinger for en side, eventuelt med de brugere, der har reageret.
 
-## Parameters
+## Parametre
 
-| Name | Type | Location | Required | Description |
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| urlId | string | query | Yes |  |
-| includeUserInfo | string | query | No | "public" udelader brugere med private profiler, "include-private" inkluderer dem. |
+| tenantId | string | query | Ja |  |
+| urlId | string | query | Ja |  |
+| includeUserInfo | string | query | Nej | "public" udelader brugere med private profiler, "include-private" inkluderer dem. |
 
-## Response
+## Svar
 
 Returnerer: [`GetPageReactsAPIResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetPageReactsAPIResponse.swift)
 
-## Example
+## Eksempel
 
 [inline-code-attrs-start title = 'getPageReacts Eksempel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// De følgende kodeeksempler er stadig i beta. For eventuelle problemer, rapporter venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 

@@ -8,5 +8,3 @@ Wenn Sie auf Probleme stoßen oder Fragen zum Go SDK haben, dann:
 ## Contributing
 
 Beiträge sind willkommen! Bitte besuchen Sie das [GitHub-Repository](https://github.com/FastComments/fastcomments-go) für Richtlinien zur Mitwirkung.
-
----

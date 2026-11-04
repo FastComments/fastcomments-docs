@@ -19,5 +19,3 @@ Taşımanız başlamadan önce bir gecikme olabilir. Bu normaldir, çünkü sist
 ### API ile Alan Taşıma
 
 Alanlar, `type` değerini `domain` olarak ayarlayarak [`POST /api/v1/pages/migrations`](/guide-api.html#pages-migrations-post) ile de taşınabilir. İlerleme, [`GET /api/v1/batch-jobs/:id`](/guide-api.html#batch-job-get-by-id) üzerinden alınabilir ve taşıma 90 gün boyunca geri alınabilir.
-
----

@@ -37,5 +37,3 @@ Devuelve: [`SetCommentApprovedResponse`](https://github.com/FastComments/fastcom
   );
 })();
 [inline-code-end]
-
----

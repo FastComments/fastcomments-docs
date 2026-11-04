@@ -1,4 +1,3 @@
----
 U kunt een autorisatiefout krijgen, zoals de volgende:
 
 <div class="screenshot white-bg">
@@ -13,5 +12,3 @@ In dit geval is de oplossing eenvoudig. U hoeft alleen het domein van uw Canvas-
 <a href="https://fastcomments.com/auth/my-account/configure-domains" target="_blank">Ga hierheen om uw site aan uw account toe te voegen.</a>
 
 Voeg uw Canvas-domein toe (bijv. `yourschool.instructure.com`) en de reacties zouden correct moeten laden.
-
----

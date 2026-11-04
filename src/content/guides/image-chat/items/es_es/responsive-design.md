@@ -47,5 +47,3 @@ El widget calcula los porcentajes en relación con el propio elemento de la imag
 ### Preparación para el futuro
 
 El enfoque basado en porcentajes hace que las discusiones sobre sus imágenes sean resistentes a cambios en el diseño, la disposición o el ecosistema de dispositivos. A medida que surjan nuevos tamaños de pantalla y dispositivos, las discusiones existentes seguirán mostrándose correctamente sin requerir actualizaciones o migraciones.
-
----

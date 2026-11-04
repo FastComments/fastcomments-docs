@@ -32,5 +32,3 @@ DefaultAPI.deletePoll(tenantId: tenantId, commentId: commentId) { (response, err
     }
 }
 [inline-code-end]
-
----

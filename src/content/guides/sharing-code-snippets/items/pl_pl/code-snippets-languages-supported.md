@@ -1,7 +1,7 @@
-Udostępniając fragmenty kodu, FastComments dokłada starań, aby automatycznie określić, w jakim
-języku programowania jest dany fragment kodu, aby automatycznie go sformatować i zastosować podświetlanie składni.
+Podczas udostępniania fragmentów kodu FastComments dokłada wszelkich starań, aby automatycznie określić,
+w jakim języku programowania napisany jest fragment kodu, aby automatycznie go sformatować i zastosować podświetlanie składni.
 
-FastComments syntax highlighting currently supports 39 common languages:
+Podświetlanie składni FastComments obsługuje obecnie 39 popularnych języków:
 
 - .properties
 - Apache
@@ -46,5 +46,5 @@ FastComments syntax highlighting currently supports 39 common languages:
 - Visual Basic .NET
 - YAML
 
-When sharing a code snippet in a language we don't support, it will still be rendered like code -
-but no syntax highlighting or reformatting will be applied.
+Podczas udostępniania fragmentu kodu w języku, którego nie obsługujemy, nadal będzie on renderowany jako kod -
+ale podświetlanie składni ani ponowne formatowanie nie zostaną zastosowane.

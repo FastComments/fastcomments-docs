@@ -38,5 +38,3 @@ DefaultAPI.getWebhooks(tenantId: tenantId, options: DefaultAPI.GetWebhooksOption
     }
 }
 [inline-code-end]
-
----

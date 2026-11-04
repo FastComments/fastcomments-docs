@@ -1,26 +1,24 @@
-Большая часть FastComments настраивается через [Интерфейс настройки](https://fastcomments.com/auth/my-account/customize-widget). Это включает рейтинги и отзывы.
+Большая часть FastComments настраивается через [Customize UI](https://fastcomments.com/auth/my-account/customize-widget). Это относится и к Ratings & Reviews.
 
-Как только вы добавите вопросы, они пока нигде не будут использоваться.
+После добавления вопросов они пока нигде не будут использоваться.
 
-Чтобы использовать их, создайте или отредактируйте правило настройки и включите опцию `Enable Ratings or Other Questions`. Это покажет несколько других параметров:
+Чтобы использовать их, создайте или отредактируйте правило кастомизации и включите опцию `Enable Ratings or Other Questions`. Это откроет несколько других опций:
 
 - Style
-  - Vertical or Side-by-Side
+  - Vertical или Side-by-Side
 - When to Save?
-  - Should we save the feedback as the user answers questions, or at once at the end when they submit their review?
+  - Сохранять ли отзыв по мере ответов пользователя на вопросы, или всё сразу в конце, когда он отправляет отзыв?
 - Ask Sub Questions
-  - Whether to show the defined sub questions.
+  - Показывать ли определенные подвопросы.
 - Questions Required?
-  - Whether all the questions are required.
+  - Обязательны ли все вопросы.
 - Show Answers on Comments?
-  - Whether to show the rating or rating & sub ratings with each review.
+  - Показывать ли рейтинг или рейтинг и подвопросы вместе с каждым отзывом.
 - Show Results Breakdown After Answering
-  - When enabled, after a user answers a question, an aggregated breakdown of all responses for that page is displayed. This includes average values, distribution bars, and response counts. Supported for Star, NPS, Thumbs, and Slider question types, including sub-questions.
+  - Если включено, после ответа пользователя на вопрос отображается агрегированная разбивка всех ответов для этой страницы. Это включает средние значения, столбцы распределения и количество ответов. Поддерживается для типов вопросов Star, NPS, Thumbs и Slider, включая подвопросы.
 - Question to Show?
-  - The top level question you want to show. Only one is supported today.
+  - Вопрос верхнего уровня, который вы хотите показать. На данный момент поддерживается только один.
 
-Эта конфигурация предназначена для нескольких основных сценариев использования (реакции на страницу, а также рейтинги и отзывы), поскольку она может использоваться для обоих, а также для простых опросов.
+Эта конфигурация рассчитана на несколько основных сценариев использования (реакции на страницы, а также ratings & reviews), так как может использоваться для обоих, а также для простых опросов.
 
-Причина, по которой мы используем Интерфейс настройки, заключается в том, что разделение этой конфигурации от самих вопросов позволяет вам определять разные вопросы для разных сайтов или разных страниц путем настройки виджета, что позволяет выбирать либо все сайты/страницы, либо конкретный домен и страницу.
-
----
+Причина, по которой мы используем Customization UI, заключается в том, что разделение этой конфигурации от самих вопросов позволяет определять разные вопросы для разных сайтов или разных страниц, настраивая конфигурацию виджета, которая позволяет выбрать либо все сайты/страницы, либо конкретный домен и страницу.

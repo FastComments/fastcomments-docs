@@ -1,21 +1,31 @@
-## Connect Your Account
+## Forbind din konto
 
-1. I Zapier skal du tilføje et FastComments-trin til en Zap, eller åbne FastComments‑app‑siden i Zapier App Directory.  
-2. Vælg **Sign in to FastComments**. Zapier spørger først om din region: vælg **United States**, medmindre din konto blev oprettet i EU‑regionen (`eu.fastcomments.com`).  
-3. Et FastComments‑vindue åbnes. Log ind, hvis du ikke allerede er logget ind.  
-4. Gennemgå samtykkesiden. Den viser Zapier‑applikationen, den konto den vil blive forbundet til, og de anmodede tilladelser (læse og skrive). Vælg **Approve**.  
-5. Zapier gemmer forbindelsen og mærker den med dit webstedsnavn og brugernavn.
+1. I Zapier skal du tilføje et FastComments-trin til en Zap eller åbne FastComments-appsiden i Zapier App Directory.
+2. Vælg **Sign in to FastComments**. Zapier spørger først til din region: vælg **United States**, medmindre din
+   konto blev oprettet i EU-regionen (`eu.fastcomments.com`).
+3. Et FastComments-vindue åbnes. Log ind, hvis du ikke allerede er logget ind.
+4. Gennemgå samtykkesiden. Den viser Zapier-applikationen, den konto, der skal forbindes, og de
+   anmodede tilladelser (læs og skriv). Vælg **Approve**.
+5. Zapier gemmer forbindelsen og mærker den med dit webstedsnavn og dit brugernavn.
 
-Forbindelsen bruger OAuth. Ingen API‑nøgle kopieres til Zapier, og tokenet som Zapier har, fungerer kun for den konto, du har godkendt.
+Forbindelsen bruger OAuth. Ingen API-nøgle kopieres ind i Zapier, og den token, Zapier har, virker kun for
+den konto, du godkendte.
 
-## Who can connect
+## Hvem kan forbinde
 
-Personen, der godkender forbindelsen, skal være en **API admin** på FastComments‑kontoen. Kontoejere har denne tilladelse; andre teammedlemmer kan få den på siden Users. En person uden denne tilladelse ser en side med "du har ikke tilladelse" i stedet for samtykkesformularen.
+Den person, der godkender forbindelsen, skal være **API-administrator** på FastComments-kontoen. Kontoejere
+har denne tilladelse; andre teammedlemmer kan få den tildelt på Users-siden. En person uden denne tilladelse
+ser en "du har ikke tilladelse"-side i stedet for samtykkeformularen.
 
-## Connecting the right site
+## Forbindelse af det rigtige websted
 
-Samtykkesiden forbinder den konto, du er logget ind på i øjeblikket. Hvis du administrerer flere konti, skal du skifte til den rigtige fra kontoskifteren inden godkendelse, eller bruge linket **switch account** på samtykkesiden. Forbindelsesetiketten i Zapier viser webstedsnavnet, så et forkert valg er let at opdage.
+Samtykkesiden forbinder den konto, du i øjeblikket er logget ind på. Hvis du administrerer flere konti,
+skift til den rigtige via kontoskifteren, før du godkender, eller brug linket **switch account** på
+samtykkesiden. Forbindelsesmærkaten i Zapier viser webstedsnavnet, så et forkert valg er let at opdage.
 
-## Reviewing and revoking access
+## Gennemgang og tilbagekaldelse af adgang
 
-Alle forbindelser vises under **Connected Apps** i FastComments‑dashboardet, med de tilladelser den har, og hvornår den sidst blev brugt. At tilbagekalde den derfra afbryder Zapier med det samme; enhver Zap, der bruger den forbindelse, stopper, indtil den genoprettes. Du kan også fjerne forbindelsen fra Zapier‑siden under **My Apps**.
+Enhver forbindelse vises under **Connected Apps** i FastComments-dashboardet, med de tilladelser, den har,
+og hvornår den sidst blev brugt. Hvis du tilbagekalder den der, afbrydes Zapier straks; enhver Zap, der bruger
+denne forbindelse, stopper, indtil den genforbindes. Du kan også fjerne forbindelsen fra Zapier-siden under
+**My Apps**.

@@ -31,5 +31,3 @@ DefaultAPI.patchPage(tenantId: tenantId, id: id, updateAPIPageData: updateAPIPag
     }
 }
 [inline-code-end]
-
----

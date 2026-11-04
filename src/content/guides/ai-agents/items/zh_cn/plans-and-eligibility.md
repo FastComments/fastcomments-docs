@@ -1,21 +1,21 @@
-AI 代理在 **Flex** 和 **Pro** 计划中可用。Creator 计划不包括它们。
+AI Agents 在 **Flex** 和 **Pro** 套餐中可用。Creator 套餐不包含此功能。
 
-### Plan-level limits
+### 套餐级限制
 
-每个计划层级设置：
+每个套餐级别设置了：
 
-- **默认每日和每月预算上限。** 您可以为每个代理降低这些上限；提升每个账户的上限需要更高上限的计划。参见 [Budgets Overview](#budgets-overview)。
+- **默认的每日和每月预算上限。** 您可以为每个 Agent 单独调低这些上限；提高账户级上限则需要更高上限的套餐。请参阅 [预算概览](#budgets-overview)。
 
-确切的数字显示在[pricing page](https://fastcomments.com/traffic-pricing)和您账户的账单页面上。它们也会在代理编辑表单中内联显示，这样您无需离开表单即可查看上限。
+具体数字显示在 [定价页面](https://fastcomments.com/traffic-pricing) 和您账户的账单页面上。它们也会直接显示在 Agent 编辑表单中，因此您无需离开表单即可查看您的上限。
 
-FastComments Pro 包含价值 $200/mo 的 AI 使用量。Flex 按每百万 token $20 的费率计费，适用于所有模型（目前为 GLM 5.2 或 gpt-oss-120B）。
+FastComments Pro 包含每月 $200 的 AI 使用额度。Flex 按所有模型（目前为 GLM 5.2 或 gpt-oss-120B）每百万 token $20 的费率计费。
 
-### Billing must be valid
+### 账单必须有效
 
-AI 代理仅在租户拥有 **valid billing on file** 时运行。如果付款方式失效，所有代理将被暂停，AI Agents 页面会显示横幅，指示拥有 **Billing Admin** 角色的人员更新账单。账单恢复后，代理会自行恢复运行——不会重新执行或补填在停机期间触发的触发器。
+只有当租户存有**有效账单信息**时，AI Agents 才会运行。如果支付方式失效，所有 Agent 将被暂停，并且 AI Agents 页面会显示一个横幅，指引拥有 **Billing Admin** 角色的用户更新账单信息。账单恢复后，Agent 会自动恢复运行——不会重放或回填中断期间触发的触发器。
 
-这是一个严格的前提条件：token spend 计入您的账户，因此平台在没有有效付款方式的情况下不会发起任何 LLM 调用。
+这是一个硬性前提条件：token 消耗会计入您的账户账单，因此平台在没有有效支付方式的情况下不会分发任何 LLM 调用。
 
-### Who can manage agents
+### 谁可以管理 Agent
 
-代理管理页面受 **Customization Admin** 仪表板角色的限制。**Comment Moderator Admins** 可以审查并决定批准（参见 [Approval Workflow](#approval-workflow)），但不能创建或编辑代理。**Billing Admins** 无论是否拥有代理访问权限，都会收到 [budget alert emails](#budget-alerts)。
+Agent 管理页面受 **Customization Admin** 仪表板角色限制。**Comment Moderator Admins** 可以审核并决定批准（请参阅 [审批工作流](#approval-workflow)），但不能创建或编辑 Agent。**Billing Admins** 无论是否拥有 Agent 访问权限，都会收到 [预算提醒邮件](#budget-alerts)。

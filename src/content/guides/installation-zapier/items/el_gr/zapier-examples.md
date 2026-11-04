@@ -1,37 +1,23 @@
-## Example Zaps
+## Παραδείγματα Zaps
 
-A few workflows that take minutes to set up.
+Μερικές ροές εργασίας που ρυθμίζονται μέσα σε λίγα λεπτά.
 
-**Λάβετε ειδοποίηση για νέα σχόλια.** New Comment, then Slack "Send Channel Message" or Discord "Send
-Channel Message". Map the commenter name, the comment text, and the page URL into the message. Add the
-domain filter to notify a different channel per site.
+**Ενημέρωση για νέα σχόλια.** New Comment, και μετά Slack "Send Channel Message" ή Discord "Send Channel Message". Αντιστοιχίστε το όνομα του σχολιαστή, το κείμενο του σχολίου και το URL της σελίδας στο μήνυμα. Προσθέστε το φίλτρο domain για να ειδοποιείτε διαφορετικό κανάλι ανά ιστότοπο.
 
-**Διατηρήστε ένα αρχείο για κάθε σχόλιο.** New Comment, then Google Sheets "Create Spreadsheet Row". Add Deleted
-Comment as a second Zap that appends a row with the comment id, so the sheet doubles as an audit trail.
+**Καταγραφή κάθε σχολίου σε log.** New Comment, και μετά Google Sheets "Create Spreadsheet Row". Προσθέστε το Deleted Comment ως δεύτερο Zap που προσθέτει μια γραμμή με το id του σχολίου, ώστε το φύλλο να λειτουργεί και ως audit trail.
 
-**Στείλτε email στον συγγραφέα όταν ένα σχόλιο εγκριθεί.** Updated Comment with a Zapier filter on Approved is true,
-then Gmail "Send Email". Because Updated Comment fires on every change, the filter is what makes this Zap
-react only to approvals.
+**Email στον συγγραφέα όταν εγκρίνεται ένα σχόλιο.** Updated Comment με φίλτρο Zapier στο Approved is true, και μετά Gmail "Send Email". Επειδή το Updated Comment ενεργοποιείται σε κάθε αλλαγή, το φίλτρο είναι αυτό που κάνει το Zap να αντιδρά μόνο στις εγκρίσεις.
 
-**Προσθέστε τους σχολιαστές στο CRM ή στη λίστα αλληλογραφίας σας.** New Comment, then HubSpot "Create or Update Contact" or
-Mailchimp "Add or Update Subscriber" using the commenter email. Respect your privacy policy and local law
-before adding anyone to a marketing list.
+**Προσθήκη σχολιαστών στο CRM ή στη λίστα αλληλογραφίας σας.** New Comment, και μετά HubSpot "Create or Update Contact" ή Mailchimp "Add or Update Subscriber" χρησιμοποιώντας το email του σχολιαστή. Σεβαστείτε την πολιτική απορρήτου σας και την τοπική νομοθεσία πριν προσθέσετε οποιονδήποτε σε λίστα μάρκετινγκ.
 
-**Δημιουργήστε ένα σχόλιο από μια φόρμα.** Typeform or Google Forms "New Response", then FastComments Create Comment
-with the page URL ID your site uses for testimonials. Leave Approved unchecked to review each one before it
-appears.
+**Δημιουργία σχολίου από φόρμα.** Typeform ή Google Forms "New Response", και μετά FastComments Create Comment με το page URL ID που χρησιμοποιεί ο ιστότοπός σας για μαρτυρίες (testimonials). Αφήστε το Approved ανενεργό για να ελέγχετε το καθένα πριν εμφανιστεί.
 
-**Δημοσιεύστε ανακοινώσεις σε ένα feed.** RSS by Zapier "New Item in Feed", then Create Feed Post with the item's
-title, content, and link.
+**Δημοσίευση ανακοινώσεων σε feed.** RSS by Zapier "New Item in Feed", και μετά Create Feed Post με τον τίτλο, το περιεχόμενο και τον σύνδεσμο του στοιχείου.
 
-**Παρέχετε μέλη ως χρήστες SSO.** Memberstack, Memberful, or your own webhook, then Find SSO User followed
-by Create SSO User in "find or create" mode.
+**Δημιουργία μελών ως χρήστες SSO.** Memberstack, Memberful ή το δικό σας webhook, και μετά Find SSO User ακολουθούμενο από Create SSO User σε λειτουργία "find or create".
 
-**Αναβάθμιση αναφερόμενων σχολίων.** Updated Comment, filtered on a flag count above zero, then Trello "Create
-Card" or Linear "Create Issue" with the comment id and a link to the moderation page.
+**Κλιμάκωση αναφερθέντων σχολίων.** Updated Comment, φιλτραρισμένο σε αριθμό σημάνσεων (flags) πάνω από μηδέν, και μετά Trello "Create Card" ή Linear "Create Issue" με το id του σχολίου και έναν σύνδεσμο προς τη σελίδα διαχείρισης.
 
-**Δημοσιεύστε σελίδες καθώς γίνονται ζωντανές.** WordPress or Ghost "New Post", then Create Page with the post URL, so the
-page is listed and restricted before the first comment.
+**Δημοσίευση σελίδων καθώς βγαίνουν live.** WordPress ή Ghost "New Post", και μετά Create Page με το URL της ανάρτησης, ώστε η σελίδα να είναι καταχωρημένη και περιορισμένη πριν το πρώτο σχόλιο.
 
-**Αρχειοθετήστε διαγραμμένα σχόλια.** Deleted Comment, then Airtable "Create Record" with the full comment for
-compliance retention.
+**Αρχειοθέτηση διαγραμμένων σχολίων.** Deleted Comment, και μετά Airtable "Create Record" με το πλήρες σχόλιο για συμμόρφωση με απαιτήσεις διατήρησης δεδομένων.

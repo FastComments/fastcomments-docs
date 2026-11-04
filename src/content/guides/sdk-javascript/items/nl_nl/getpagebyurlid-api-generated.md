@@ -21,5 +21,3 @@ Retourneert: [`GetPageByURLIdAPIResponse`](https://github.com/FastComments/fastc
   const page: APIPage | undefined = response.page;
 })();
 [inline-code-end]
-
----

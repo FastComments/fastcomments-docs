@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Име | Тип | Местоположение | Задължително | Описание |
@@ -29,5 +28,3 @@ try {
     print('Exception when calling PublicApi->getV2PageReactUsers: $e\n');
 }
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 To oficjalne SDK JavaScript/TypeScript dla FastComments.
 
 Zarządzaj komentarzami, użytkownikami, SSO i moderacją z Node.js lub przeglądarki.
@@ -6,5 +5,3 @@ Zarządzaj komentarzami, użytkownikami, SSO i moderacją z Node.js lub przeglą
 ## Repozytorium
 
 [Zobacz na GitHub](https://github.com/FastComments/fastcomments-sdk-js)
-
----

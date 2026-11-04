@@ -1,4 +1,3 @@
----
 **FastComments - Top Pages** 區塊會列出您商店中整體留言活動最多的頁面。用它來突顯討論最熱烈的文章或商品。
 
 ### 新增此區塊
@@ -19,5 +18,3 @@
 
 - **Top Pages** 以總參與度排名，因此相同的文章傾向在一段時間內保持靠前。適合用於 "popular posts" 側邊欄。
 - **Recent Discussions** 依最近活動排序，因此列表會快速變動。適合用於 "what's hot right now" 面板。
-
----

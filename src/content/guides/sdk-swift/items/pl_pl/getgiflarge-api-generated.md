@@ -1,4 +1,3 @@
----
 ## Parametry
 
 | Name | Type | Location | Required | Description |
@@ -31,5 +30,3 @@ PublicAPI.getGifLarge(tenantId: tenantId, largeInternalURLSanitized: largeIntern
     }
 }
 [inline-code-end]
-
----

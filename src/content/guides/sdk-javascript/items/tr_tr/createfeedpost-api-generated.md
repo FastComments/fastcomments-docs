@@ -53,5 +53,3 @@ Döndürür: [`CreateFeedPostsResponse`](https://github.com/FastComments/fastcom
   console.log(response);
 })();
 [inline-code-end]
-
----

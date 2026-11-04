@@ -1,4 +1,3 @@
----
 ## Parámetros
 
 | Nombre | Tipo | Ubicación | Requerido | Descripción |
@@ -31,5 +30,3 @@ DefaultAPI.deleteQuestionConfig(tenantId: tenantId, id: id) { (response, error) 
     }
 }
 [inline-code-end]
-
----

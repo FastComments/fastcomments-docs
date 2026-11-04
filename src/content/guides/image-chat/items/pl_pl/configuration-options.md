@@ -1,12 +1,12 @@
-### Overview
+### Przegląd
 
-FastComments Image Chat rozszerza standardowy widżet komentarzy FastComments, dzięki czemu dziedziczy wszystkie opcje konfiguracyjne podstawowego widżetu, jednocześnie dodając kilka ustawień specyficznych dla adnotacji obrazów.
+FastComments Image Chat rozszerza standardowy widget komentarzy FastComments, więc dziedziczy wszystkie opcje konfiguracji z bazowego widgetu, dodając jednocześnie kilka opcji specyficznych dla adnotacji obrazów.
 
-### Required Configuration
+### Wymagana konfiguracja
 
 #### tenantId
 
-Wymagane jest Twoje ID najemcy (FastComments Tenant ID). Możesz je znaleźć w swoim [panelu FastComments](https://fastcomments.com/auth/my-account/api-secret).
+Wymagany jest Twój FastComments Tenant ID. Możesz go znaleźć w swoim [panelu FastComments](https://fastcomments.com/auth/my-account/api-secret).
 
 ```javascript
 FastCommentsImageChat(imageElement, {
@@ -14,11 +14,11 @@ FastCommentsImageChat(imageElement, {
 });
 ```
 
-### Image Chat Specific Options
+### Opcje specyficzne dla Image Chat
 
 #### urlId
 
-Domyślnie Image Chat generuje unikalny identyfikator dla każdej rozmowy na podstawie URL strony, źródła obrazu oraz współrzędnych X/Y. Możesz go nadpisać za pomocą niestandardowego `urlId`.
+Domyślnie Image Chat generuje unikalny identyfikator dla każdej rozmowy na podstawie adresu URL strony, źródła obrazu oraz współrzędnych X/Y. Możesz to nadpisać własnym `urlId`.
 
 ```javascript
 FastCommentsImageChat(imageElement, {
@@ -27,11 +27,11 @@ FastCommentsImageChat(imageElement, {
 });
 ```
 
-Jest to przydatne, gdy struktura Twoich URL może się zmieniać, ale chcesz zachować te same rozmowy, lub gdy chcesz udostępniać adnotacje na wielu stronach.
+Jest to przydatne, gdy struktura Twoich adresów URL może się zmienić, ale chcesz zachować te same rozmowy, lub gdy chcesz udostępniać adnotacje na wielu stronach.
 
 #### chatSquarePercentage
 
-Steruje rozmiarem klikalnych znaczników czatu jako procent szerokości obrazu. Domyślnie wynosi 5%, co oznacza, że każdy znacznik ma szerokość równą 5% szerokości obrazu.
+Kontroluje rozmiar klikalnych znaczników czatu jako procent szerokości obrazu. Wartość domyślna to 5%, co oznacza, że każdy znacznik ma 5% szerokości obrazu.
 
 ```javascript
 FastCommentsImageChat(imageElement, {
@@ -40,11 +40,11 @@ FastCommentsImageChat(imageElement, {
 });
 ```
 
-Mniejsze wartości tworzą mniej inwazyjne znaczniki, które lepiej sprawdzają się przy szczegółowych obrazach. Większe wartości ułatwiają widoczność i klikanie znaczników na zatłoczonych obrazach lub dla użytkowników na urządzeniach mobilnych.
+Mniejsze wartości tworzą mniej nachalne znaczniki, które lepiej sprawdzają się na szczegółowych obrazach. Większe wartości ułatwiają widzenie i klikanie znaczników na zatłoczonych obrazach lub dla użytkowników urządzeń mobilnych.
 
 #### hasDarkBackground
 
-Włącz stylizację w trybie ciemnym, gdy Twoja strona ma ciemne tło.
+Włącz stylizację trybu ciemnego, gdy Twoja strona ma ciemne tło.
 
 ```javascript
 FastCommentsImageChat(imageElement, {
@@ -55,7 +55,7 @@ FastCommentsImageChat(imageElement, {
 
 #### commentCountUpdated
 
-Funkcja zwrotna wywoływana za każdym razem, gdy zmienia się liczba komentarzy. Przydatne do aktualizowania elementów UI, takich jak odznaki lub tytuły stron.
+Funkcja zwrotna wywoływana przy każdej zmianie liczby komentarzy. Jest to przydatne do aktualizacji elementów interfejsu, takich jak plakietki czy tytuły stron.
 
 ```javascript
 FastCommentsImageChat(imageElement, {
@@ -67,13 +67,13 @@ FastCommentsImageChat(imageElement, {
 });
 ```
 
-### Inherited Configuration Options
+### Odziedziczone opcje konfiguracji
 
-Ponieważ Image Chat rozszerza standardowy widżet komentarzy, możesz używać dowolnej opcji konfiguracyjnej z podstawowego widżetu FastComments. Oto niektóre często używane opcje:
+Ponieważ Image Chat rozszerza standardowy widget komentarzy, możesz użyć dowolnej opcji konfiguracji z bazowego widgetu FastComments. Oto niektóre z najczęściej używanych opcji:
 
 #### locale
 
-Ustaw język interfejsu widżetu. FastComments obsługuje dziesiątki języków.
+Ustawia język interfejsu widgetu. FastComments obsługuje dziesiątki języków.
 
 ```javascript
 FastCommentsImageChat(imageElement, {
@@ -84,7 +84,7 @@ FastCommentsImageChat(imageElement, {
 
 #### readonly
 
-Ustaw wszystkie rozmowy jako tylko do odczytu. Użytkownicy mogą przeglądać istniejące znaczniki i dyskusje, ale nie mogą tworzyć nowych ani odpowiadać.
+Ustawia wszystkie rozmowy jako tylko do odczytu. Użytkownicy mogą przeglądać istniejące znaczniki i dyskusje, ale nie mogą tworzyć nowych ani odpowiadać.
 
 ```javascript
 FastCommentsImageChat(imageElement, {
@@ -93,9 +93,9 @@ FastCommentsImageChat(imageElement, {
 });
 ```
 
-#### sso and simpleSSO
+#### sso i simpleSSO
 
-Zintegruj się z systemem uwierzytelniania za pomocą Single Sign-On.
+Integracja z Twoim systemem uwierzytelniania przy użyciu Single Sign-On.
 
 ```javascript
 FastCommentsImageChat(imageElement, {
@@ -106,11 +106,11 @@ FastCommentsImageChat(imageElement, {
 });
 ```
 
-Zobacz dokumentację SSO, aby uzyskać pełne informacje o opcjach uwierzytelniania.
+Zobacz dokumentację SSO, aby uzyskać pełne informacje na temat opcji uwierzytelniania.
 
 #### maxReplyDepth
 
-Kontroluje, jak głęboko mogą sięgać odpowiedzi (liczba poziomów zagnieżdżeń). Domyślnie Image Chat ustawia tę wartość na 0, co oznacza, że wszystkie komentarze są płaskie (bez zagnieżdżonych odpowiedzi). Możesz to zmienić, jeśli chcesz wątki konwersacji.
+Kontroluje, na ile poziomów w głąb mogą schodzić odpowiedzi. Domyślnie Image Chat ustawia tę wartość na 0, co oznacza, że wszystkie komentarze są płaskie (bez zagnieżdżonych odpowiedzi). Możesz to zmienić, jeśli chcesz mieć wątkowe rozmowy.
 
 ```javascript
 FastCommentsImageChat(imageElement, {
@@ -119,29 +119,29 @@ FastCommentsImageChat(imageElement, {
 });
 ```
 
-### Internal Configuration
+### Konfiguracja wewnętrzna
 
-Te opcje są automatycznie ustawiane przez Image Chat i nie powinny być nadpisywane:
+Te opcje są ustawiane automatycznie przez Image Chat i nie powinny być nadpisywane:
 
-The `productId` is automatically set to `2` for Image Chat. The `floating-chat` extension is automatically loaded to provide the chat window functionality. The widget automatically detects mobile devices (screens under 768px wide) and adjusts the UI accordingly with fullscreen chat windows.
+`productId` jest automatycznie ustawiane na `2` dla Image Chat. Rozszerzenie `floating-chat` jest automatycznie ładowane, aby zapewnić funkcjonalność okna czatu. Widget automatycznie wykrywa urządzenia mobilne (ekrany o szerokości poniżej 768px) i odpowiednio dostosowuje interfejs, używając pełnoekranowych okien czatu.
 
-### Target Element Flexibility
+### Elastyczność elementu docelowego
 
-Pierwszy parametr funkcji `FastCommentsImageChat` może być bezpośrednio elementem `<img>` lub elementem kontenera z obrazem wewnątrz:
+Pierwszy parametr `FastCommentsImageChat` może być bezpośrednio elementem `<img>` lub elementem kontenera zawierającym obraz:
 
 ```javascript
-// Bezpośredni element obrazu
+// Bezpośrednio element obrazu
 FastCommentsImageChat(document.getElementById('my-image'), config);
 
-// Kontener z obrazem wewnątrz
+// Kontener z obrazem w środku
 FastCommentsImageChat(document.querySelector('.image-wrapper'), config);
 ```
 
-Widżet automatycznie znajdzie obraz, jeśli przekażesz element kontenera.
+Widget automatycznie znajdzie obraz, jeśli przekażesz element kontenera.
 
-### Complete Example
+### Kompletny przykład
 
-Oto przykład pokazujący kilka opcji konfiguracyjnych razem:
+Oto przykład pokazujący kilka opcji konfiguracji razem:
 
 ```javascript
 FastCommentsImageChat(document.getElementById('product-image'), {
@@ -160,4 +160,4 @@ FastCommentsImageChat(document.getElementById('product-image'), {
 });
 ```
 
-Pełną listę wszystkich dostępnych opcji konfiguracyjnych odziedziczonych po podstawowym widżecie znajdziesz w głównej dokumentacji konfiguracji FastComments.
+Aby uzyskać pełną listę wszystkich dostępnych opcji konfiguracji odziedziczonych z bazowego widgetu, zobacz główną dokumentację konfiguracji FastComments.

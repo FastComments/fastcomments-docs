@@ -29,5 +29,3 @@ interface PageReactDeleteResponse {
     reason?: string
 }
 [inline-code-end]
-
----

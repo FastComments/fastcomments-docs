@@ -47,5 +47,3 @@ Eğer AB'deyseniz, `region` parametresini ayarlamak isteyeceksiniz:
 [inline-code-end]
 
 React Native bileşeninin desteklediği yapılandırmayı <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">burada</a> bulabilirsiniz.
-
----

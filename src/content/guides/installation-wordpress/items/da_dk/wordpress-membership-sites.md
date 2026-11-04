@@ -13,5 +13,3 @@ Der er ingen initial eller kontinuerlig synkronisering, der skal køres for at k
 ## Navne og Avatarer
 
 Plugin'et opdaterer automatisk brugerens visningsnavn og avatar på alle deres kommentarer i FastComments, når de ser enhver kommentartråd. Avatarer understøttes via Gravatar eller ethvert avatar-håndteringsplugin i WordPress, da plugin'et vil kalde `get_avatar_url`.
-
----

@@ -1,6 +1,6 @@
 ## Параметри
 
-| Име̏н|тип|обавезно|опис|
+| Име | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | createUserBadgeParams | CreateUserBadgeParams | Да |  |
@@ -23,4 +23,4 @@ api->createUserBadge(tenantId, badgeParams).then([](std::shared_ptr<APICreateUse
         auto result = std::make_shared<APICreateUserBadgeResponse>(*resp);
     }
 });
-inline-code-end
+[inline-code-end]

@@ -1,24 +1,23 @@
-Our [WordPress Plugin](https://wordpress.org/plugins/fastcomments/) has a powerful UI-based importing mechanism. Upon installing the plugin,
-it will guide you through linking your WordPress installation with FastComments and copying your existing comment data over.
+[WordPress eklentimiz](https://wordpress.org/plugins/fastcomments/), güçlü bir arayüz tabanlı içe aktarma mekanizmasına sahiptir. Eklentiyi yükledikten sonra,
+WordPress kurulumunuzu FastComments ile bağlama ve mevcut yorum verilerinizi kopyalama adımlarında size rehberlik edecektir.
 
-**Bu, hiçbir şeyi manuel olarak kopyalamadan veya indirmeden yapılır.**
+**Bu işlem, hiçbir şeyi manuel olarak kopyalamayı veya indirmeyi gerektirmeden yapılır.**
 
-The migration process will be indicated to you via the UI during the migration. Most migrations only take a couple of minutes.
+Geçiş süreci, geçiş sırasında arayüz üzerinden size gösterilecektir. Geçişlerin çoğu yalnızca birkaç dakika sürer.
 
-The mechanism is designed to not put excessive load on your WordPress installation during the migration.
+Bu mekanizma, geçiş sırasında WordPress kurulumunuza aşırı yük bindirmemek üzere tasarlanmıştır.
 
-If you are moving your site off of WordPress, you can import a WordPress XML or CSV export instead of using the plugin. See
-[Moving Your Comments to a New Site](/guide-installation-wordpress.html#wordpress-moving-off-wordpress).
+Sitenizi WordPress'ten taşıyorsanız, eklentiyi kullanmak yerine bir WordPress XML veya CSV dışa aktarımını içe aktarabilirsiniz. Bkz.
+[Yorumlarınızı Yeni Bir Siteye Taşımak](/guide-installation-wordpress.html#wordpress-moving-off-wordpress).
 
-### CloudFlare & FireWalls
+### CloudFlare ve Güvenlik Duvarları
 
-In order for the automated WordPress setup to work, we have to make calls to your WordPress installation.
-Firewalls like Cloudflare may block us and cause the integration to fail. In such cases, [we can provide
-you](https://fastcomments.com/auth/my-account/help) with a set of IPs to whitelist for the integration.
+Otomatik WordPress kurulumunun çalışabilmesi için WordPress kurulumunuza çağrılar yapmamız gerekir.
+Cloudflare gibi güvenlik duvarları bizi engelleyebilir ve entegrasyonun başarısız olmasına neden olabilir. Bu gibi durumlarda, entegrasyon için
+beyaz listeye eklemeniz gereken bir IP seti [size sağlayabiliriz](https://fastcomments.com/auth/my-account/help).
 
-### Data Ownership
+### Veri Sahipliği
 
-In the case of our WordPress migration, any new or updated comment data is automatically synced back to your WordPress installation
-behind the scenes. This means that, while the comments are served by FastComments itself to take load off of your WordPress deployment,
-we **also** save them in your database as a backup. This also means if you desire to switch away from FastComments, your data is
-already migrated and up to date.
+WordPress geçişimiz söz konusu olduğunda, yeni veya güncellenen yorum verileri arka planda otomatik olarak WordPress kurulumunuza geri senkronize edilir.
+Bu, yorumlar WordPress dağıtımınızın yükünü hafifletmek için FastComments tarafından sunulsa da, bunları **aynı zamanda** yedek olarak veritabanınıza da kaydettiğimiz anlamına gelir.
+Bu aynı zamanda, FastComments'ten ayrılmak isterseniz verilerinizin zaten taşınmış ve güncel olduğu anlamına gelir.

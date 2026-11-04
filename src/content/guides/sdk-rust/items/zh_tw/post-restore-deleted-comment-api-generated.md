@@ -1,4 +1,3 @@
----
 ## 參數
 
 | 名稱 | 類型 | 必填 | 說明 |
@@ -28,5 +27,3 @@ async fn restore_comment() -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 Belirli bir yorum için bildirimleri etkinleştir veya devre dışı bırak.
 
 ## Parametreler
@@ -46,5 +45,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.UpdateUserNotificationCommentSubscriptionStatus`: %v\n", resp)
 }
 [inline-code-end]
-
----

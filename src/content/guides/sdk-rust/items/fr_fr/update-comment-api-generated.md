@@ -34,5 +34,3 @@ async fn run_update() -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
-
----

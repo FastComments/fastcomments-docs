@@ -8,5 +8,3 @@ Python SDK ile ilgili herhangi bir sorunla karşılaşırsanız veya soruların�
 ## Katkıda Bulunma
 
 Katkılar memnuniyetle karşılanır! Lütfen katkı yönergeleri için [GitHub deposunu](https://github.com/FastComments/fastcomments-python) ziyaret edin.
-
----

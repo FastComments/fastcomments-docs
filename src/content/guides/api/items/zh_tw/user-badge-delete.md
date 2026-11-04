@@ -1,4 +1,3 @@
----
 此端點允許您刪除使用者徽章指派。
 
 範例請求：
@@ -45,4 +44,3 @@ curl -X DELETE "https://fastcomments.com/api/v1/user-badges/badge123?tenantId=de
   "reason": "The user badge badge123 was not found."
 }
 [inline-code-end]
----

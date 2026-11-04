@@ -10,5 +10,3 @@ Dit komt omdat FastComments niet weet dat uw account op dit domein mag worden ge
 In dit geval is de oplossing eenvoudig. U hoeft alleen uw site toe te voegen aan uw FastComments.com-account.
 
 [Klik hier om uw site aan uw account toe te voegen.](https://fastcomments.com/auth/my-account/configure-domains)
-
----

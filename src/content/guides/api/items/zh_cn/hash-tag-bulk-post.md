@@ -36,5 +36,3 @@ interface HashTagBulkPostResponse {
     results?: HashTagPostResponse[]; // 对于每个提供的标签，我们返回一个 HashTagPostResponse 对象的列表。
 }
 [inline-code-end]
-
----

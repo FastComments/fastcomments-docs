@@ -7,5 +7,3 @@ Per impostazione predefinita, FastComments mostrerà un'etichetta "Commento non 
 Inoltre, questa funzionalità può essere utilizzata, senza scrivere codice, nell'interfaccia di personalizzazione UI:
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-unverified-comment-label']; selector = '.disable-unverified-comment-label'; alt='Pagina di personalizzazione del widget con la casella Disabilita l\'etichetta del commento non verificato selezionata'; title='Disabilita l\'etichetta non verificata' app-screenshot-end]
-
----

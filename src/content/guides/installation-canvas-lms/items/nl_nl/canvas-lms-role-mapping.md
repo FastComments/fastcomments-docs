@@ -13,5 +13,3 @@ Canvas-rollen worden tijdens de LTI-launch automatisch toegewezen aan FastCommen
 Wanneer een gebruiker FastComments vanuit Canvas start, bevat het LTI 1.3-protocol hun Canvas-rol. FastComments leest deze rol en wijst automatisch de juiste machtigingen toe.
 
 Als een gebruiker meerdere rollen heeft (bijv. een Instructor die ook een Admin is), wordt de rol met de hoogste bevoegdheden gebruikt.
-
----

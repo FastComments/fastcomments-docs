@@ -1,15 +1,15 @@
-This example uses custom code to be compatible with Wix. **You won't be able to use the FastComments code snippets from other tutorials.**
+В этом примере используется специальный код для совместимости с Wix. **Вы не сможете использовать фрагменты кода FastComments из других руководств.**
 
-Open the form to add our custom HTML dialog by clicking `Enter Code` and selecting `HTML`:
+Откройте форму, чтобы добавить наш диалог пользовательского HTML, нажав `Enter Code` и выбрав `HTML`:
 
 <div class="screenshot white-bg">
-    <div class="title">Шаг 3: Открыть HTML-диалог</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-3-open-form.png" alt="Шаг 3: Открыть HTML-диалог" />
+    <div class="title">Шаг 3: Открытие HTML-диалога</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-3-open-form.png" alt="Шаг 3: Открытие HTML-диалога" />
 </div>
 
-Copy the following HTML snippet and paste it into the dialog, and click Update:
+Скопируйте следующий HTML-фрагмент, вставьте его в диалог и нажмите Update:
 
-[inline-code-attrs-start title = 'Фрагмент кода для Wix Comments'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Фрагмент кода комментариев для Wix'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
 <div id="fastcomments-widget"></div>
@@ -34,17 +34,15 @@ Copy the following HTML snippet and paste it into the dialog, and click Update:
 [inline-code-end]
 
 <div class="screenshot white-bg">
-    <div class="title">Шаг 3: Вставить и сохранить</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-3-paste-and-save.png" alt="Шаг 3: Вставить и сохранить" />
+    <div class="title">Шаг 3: Вставка и сохранение</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-3-paste-and-save.png" alt="Шаг 3: Вставка и сохранение" />
 </div>
 
-You should now see a very tiny version of the comment widget:
+Теперь вы должны увидеть очень маленькую версию виджета комментариев:
 
 <div class="screenshot white-bg">
     <div class="title">Шаг 3: Результат</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-3-result.png" alt="Шаг 3: Результат" />
 </div>
 
-Next we will position and size this to fit our page.
-
----
+Далее мы настроим положение и размер этого виджета, чтобы он соответствовал нашей странице.

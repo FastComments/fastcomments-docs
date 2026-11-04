@@ -60,5 +60,3 @@ DefaultAPI.getComments(tenantId: tenantId, options: DefaultAPI.GetCommentsOption
     }
 }
 [inline-code-end]
-
----

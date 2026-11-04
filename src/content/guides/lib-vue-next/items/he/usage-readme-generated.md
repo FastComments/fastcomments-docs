@@ -1,4 +1,3 @@
----
 ### וידג'ט התגובות
 
 הקומפוננטה FastCommentsVueNext מכילה את ווידג'ט התגובות החי של FastComments.
@@ -21,4 +20,3 @@ export default {
 }
 </script>
 ```
----

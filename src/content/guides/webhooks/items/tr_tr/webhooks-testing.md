@@ -1,24 +1,24 @@
-The new and edit webhook pages have a `Send Test Payload` button that sends a request to the URL currently in the form, whether or not it has been saved. The Create and Update events send a dummy WebhookComment object, while testing Delete will send a dummy request body with just an ID.
+Yeni webhook ekleme ve düzenleme sayfalarında, formda o an bulunan URL'ye kaydedilmiş olup olmadığına bakılmaksızın istek gönderen bir `Send Test Payload` düğmesi bulunur. Create ve Update olayları sahte bir WebhookComment nesnesi gönderirken, Delete testi yalnızca bir ID içeren sahte bir istek gövdesi gönderir.
 
 ## Payload'ları Doğrulama
 
-When testing your webhook integration, verify the incoming requests include the following headers:
+Webhook entegrasyonunuzu test ederken, gelen isteklerin aşağıdaki başlıkları içerdiğini doğrulayın:
 
-1. **`X-FastComments-Timestamp`** - Unix timestamp (seconds)
-2. **`X-FastComments-Signature`** - HMAC-SHA256 signature
+1. **`X-FastComments-Timestamp`** - Unix zaman damgası (saniye)
+2. **`X-FastComments-Signature`** - HMAC-SHA256 imzası
 
-Webhooks created before the signature scheme was introduced also receive a **`token`** header containing your API Secret. New webhooks do not.
+İmza şeması tanıtılmadan önce oluşturulmuş webhooks, API Secret'ınızı içeren bir **`token`** başlığı da alır. Yeni webhooks bunu almaz.
 
-Use the HMAC signature verification to ensure payloads are authentic.
+Payload'ların orijinal olduğundan emin olmak için HMAC imza doğrulamasını kullanın.
 
 ## Test Araçları
 
-You can use tools like [webhook.site](https://webhook.site) or [ngrok](https://ngrok.com) to inspect incoming webhook payloads during development.
+Geliştirme sırasında gelen webhook payload'larını incelemek için [webhook.site](https://webhook.site) veya [ngrok](https://ngrok.com) gibi araçları kullanabilirsiniz.
 
 ## Olay Türleri
 
-- **Create Event**: Triggered when a new comment is created.
-- **Update Event**: Triggered when a comment is edited.
-- **Delete Event**: Triggered when a comment is deleted.
+- **Create Event**: Yeni bir yorum oluşturulduğunda tetiklenir.
+- **Update Event**: Bir yorum düzenlendiğinde tetiklenir.
+- **Delete Event**: Bir yorum silindiğinde tetiklenir.
 
-Each webhook is tied to one event and one HTTP method (POST, PUT or DELETE). Each event includes the full comment data in the request body (see [Data Structures](/guide-webhooks.html#webhooks-structures) for the payload format).
+Her webhook tek bir olaya ve tek bir HTTP metoduna (POST, PUT veya DELETE) bağlıdır. Her olay, istek gövdesinde tam yorum verisini içerir (payload formatı için [Veri Yapıları](/guide-webhooks.html#webhooks-structures) bölümüne bakın).

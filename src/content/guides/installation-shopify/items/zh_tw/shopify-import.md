@@ -1,4 +1,3 @@
----
 如果您的 Shopify 部落格文章已有留言，且想保留它們，請在停用 Shopify 原生留言功能之前，將這些留言匯入 FastComments。
 
 匯入必須在 Shopify 原生留言仍處於啟用且可見的情況下執行。一旦您停用它們，FastComments 就無法再讀取這些留言。
@@ -14,5 +13,3 @@
 當既有留言匯入到 FastComments 後，請在部落格文章範本中加入 **FastComments** 區塊，然後移除或停用 Shopify 的原生留言。參見 [將留言加入部落格文章與商品](/guide-installation-shopify.html#shopify-add-comments)。
 
 如果您不需要保留既有留言，可以跳過此頁。
-
----

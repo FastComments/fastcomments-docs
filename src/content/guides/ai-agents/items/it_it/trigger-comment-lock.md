@@ -17,5 +17,3 @@ Si attiva quando un commento viene bloccato.
 ### Evento corrispondente
 
 Vedi [Trigger: Commento sbloccato](#trigger-comment-unlock) per il trigger speculare.
-
----

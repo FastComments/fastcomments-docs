@@ -200,5 +200,3 @@ Le risposte di errore includono un corpo JSON con i dettagli:
 ### Monitoraggio dell'utilizzo
 
 La creazione delle conversazioni incrementa la metrica di utilizzo `conversationCreateCount`. Tutta l'attività di sincronizzazione WebSocket incrementa `pubSubMessageCount` e `pubSubBandwidth`. Puoi monitorare queste metriche nella dashboard di FastComments nella sezione analytics sull'utilizzo.
-
----

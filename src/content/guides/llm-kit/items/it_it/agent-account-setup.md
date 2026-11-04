@@ -1,4 +1,3 @@
----
 Un agente di programmazione come Claude Code, Cursor o un assistente basato su MCP può configurare FastComments per te senza che tu debba compilare il modulo di registrazione. Questo è utile quando chiedi a un agente di "aggiungere commenti al mio sito" e non hai ancora un account.
 
 ### Come funziona
@@ -19,5 +18,3 @@ Ogni accesso possiede un account. Se apri un link di rivendicazione mentre sei c
 ### Per gli autori di agenti
 
 Le istruzioni per gli agenti su [fastcomments.com/agents.md](https://fastcomments.com/agents.md) descrivono la chiamata di creazione dell'account, i campi nella risposta e come consegnare il link di rivendicazione alla persona per cui stai lavorando. La chiamata non richiede una chiave API ed è limitata per indirizzo IP.
-
----

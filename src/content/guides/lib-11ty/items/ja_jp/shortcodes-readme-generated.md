@@ -1,4 +1,3 @@
----
 | Shortcode | 説明 |
 | --- | --- |
 | `fastcomments` | 返信、投票などを備えたコメントウィジェット |
@@ -37,4 +36,3 @@ This page has {% fastcommentsCommentCount { tenantId: "demo" } %} comments.
 {# ユーザーアクティビティフィード #}
 {% fastcommentsUserActivityFeed { tenantId: "demo", userId: "demo:demo-user" } %}
 ```
----

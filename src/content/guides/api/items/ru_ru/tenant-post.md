@@ -52,5 +52,3 @@ interface TenantPostResponse {
     tenant?: Tenant; // При успешном выполнении возвращаем полностью созданный tenant.
 }
 [inline-code-end]
-
----

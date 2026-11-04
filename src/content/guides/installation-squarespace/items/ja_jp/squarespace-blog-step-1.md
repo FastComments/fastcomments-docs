@@ -25,5 +25,3 @@
     <div class="title">空のコード領域</div>
     <img class="screenshot-image" src="/images/installation-guides/squarespace-step-1-4-code-area.png" alt="空のコード領域" />
 </div>
-
----

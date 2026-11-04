@@ -1,17 +1,17 @@
-When users comment or vote, and they are not logged in, they will be asked to provide their email and username.
+Коли користувачі коментують або голосують, і вони не авторизовані, їх попросять вказати електронну пошту та ім'я користувача.
 
-In the case of anonymous commenting, sometimes it is desirable to define a default username to reduce the friction
-when commenting. This can be done from the Customization UI. Anonymous Commenting must be enabled first.
+У разі анонімного коментування іноді бажано визначити ім'я користувача за замовчуванням, щоб зменшити перешкоди
+під час коментування. Це можна зробити через інтерфейс налаштування. Спочатку має бути увімкнено анонімне коментування.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allow-anonymous-comments']; selector = '.default-username-label'; alt='Поле типового імені користувача, яке з\'являється в інтерфейсі налаштувань після ввімкнення анонімних коментарів'; title='Налаштування типового імені користувача' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allow-anonymous-comments']; selector = '.default-username-label'; alt='Поле імені користувача за замовчуванням, яке з\'являється в інтерфейсі налаштування після увімкнення анонімного коментування'; title='Налаштування імені користувача за замовчуванням' app-screenshot-end]
 
-#### Sharing The Default Username
+#### Спільне використання імені користувача за замовчуванням
 
-The default username is a shared display name, not an identity. A visitor who keeps the default and enters their email
-gets their own account, with the default shown as their public name. Any number of visitors can keep the same default,
-so "Anonymous" is never reported as already taken.
+Ім'я користувача за замовчуванням — це спільне відображуване ім'я, а не ідентичність. Відвідувач, який залишає ім'я за замовчуванням і вводить свою електронну пошту,
+отримує власний обліковий запис, де ім'я за замовчуванням відображається як його публічне ім'я. Будь-яка кількість відвідувачів може залишити те саме ім'я за замовчуванням,
+тому "Anonymous" ніколи не повідомляється як уже зайняте.
 
-Usernames that a visitor types themselves still have to be unique.
+Імена користувачів, які відвідувач вводить самостійно, все одно мають бути унікальними.
 
-If you would rather each visitor get a distinct name without having to think of one, see
-[Автоматичне генерування імен користувачів](/guide-customizations-and-configuration.html#auto-generate-username).
+Якщо ви бажаєте, щоб кожен відвідувач отримував окреме ім'я без необхідності його вигадувати, див.
+[Генерувати імена користувачів автоматично](/guide-customizations-and-configuration.html#auto-generate-username).

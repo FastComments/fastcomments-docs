@@ -1,14 +1,14 @@
-Attach a poll to a comment, or set the full state of the poll it already has.
+Attachez un sondage à un commentaire, ou définissez l'état complet du sondage qu'il possède déjà.
 
-Options are matched by id: an option sent with the id of an existing option keeps its votes (and takes the
-new label and position), an option sent without an id is added, and existing options left out of the list
-are removed along with the votes cast on them.
+Les options sont associées par id : une option envoyée avec l'id d'une option existante conserve ses votes (et prend le
+nouveau libellé et la nouvelle position), une option envoyée sans id est ajoutée, et les options existantes absentes de la
+liste sont supprimées avec les votes qui leur ont été exprimés.
 
-Keeping no existing option ids on a poll that has votes deletes all of them, so that needs replaceVotes=true.
+Ne conserver aucun id d'option existante sur un sondage ayant des votes supprime tous ces votes, ce qui nécessite replaceVotes=true.
 
 ## Paramètres
 
-| Nom | Type | Emplacement | Obligatoire | Description |
+| Nom | Type | Emplacement | Requis | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Oui |  |
 | commentId | string | path | Oui |  |
@@ -16,13 +16,13 @@ Keeping no existing option ids on a poll that has votes deletes all of them, so 
 
 ## Réponse
 
-Retourne: [`SavePollResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/SavePollResponse.java)
+Retourne : [`SavePollResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/SavePollResponse.java)
 
 ## Exemple
 
 [inline-code-attrs-start title = 'Exemple putPoll'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importer les classes:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -35,10 +35,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configurer l'autorisation de la clé API : api_key
+    // Configure API key authorization: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Décommentez la ligne suivante pour définir un préfixe pour la clé API, par ex. "Token" (par défaut null)
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -52,11 +52,10 @@ public class Example {
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      // Exception lors de l'appel de DefaultApi#putPoll
       System.err.println("Exception when calling DefaultApi#putPoll");
-      System.err.println("Code d'état: " + e.getCode());
-      System.err.println("Raison: " + e.getResponseBody());
-      System.err.println("En-têtes de réponse: " + e.getResponseHeaders());
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }

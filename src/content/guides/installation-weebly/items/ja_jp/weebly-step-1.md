@@ -1,31 +1,28 @@
----
-First, make sure you have some blog posts added to your site to see the results of this tutorial.
+まず、このチュートリアルの結果を確認できるよう、サイトにブログ記事をいくつか追加しておいてください。
 
-Once ready, we can go ahead and open the Weebly editor, and click `Settings` at the top.
+準備ができたら、Weeblyエディターを開き、上部の `Settings` をクリックします。
 
 <div class="screenshot white-bg">
     <div class="title">設定を開く</div>
     <img class="screenshot-image" src="/images/installation-guides/weebly-step-1-1-open-settings.png" alt="設定を開く" />
 </div>
 
-Now let's open the settings for our blog by going to `Blog` on the left:
+次に、左側の `Blog` に移動して、ブログの設定を開きます:
 
 <div class="screenshot white-bg">
     <div class="title">ブログ設定を開く</div>
     <img class="screenshot-image" src="/images/installation-guides/weebly-step-1-2-open-blog-settings.png" alt="ブログ設定を開く" />
 </div>
 
-Now what we need to do is disable the default Weebly comment system, which we will replace.
+次に、置き換える対象となるWeeblyのデフォルトコメントシステムを無効にします。
 
-**Note** if you'd like to migrate over existing comments from your Weebly site to FastComments, your support representative can assist with this migration.
+**注意** WeeblyサイトからFastCommentsへ既存のコメントを移行したい場合は、サポート担当者がこの移行を支援できます。
 
-Now let's set the `Commenting system` to `Default` and `Comment Default` to `Closed`:
+それでは、`Commenting system` を `Default` に、`Comment Default` を `Closed` に設定しましょう:
 
 <div class="screenshot white-bg">
     <div class="title">デフォルトシステムを無効にする</div>
     <img class="screenshot-image" src="/images/installation-guides/weebly-step-1-3-disable-default.png" alt="デフォルトシステムを無効にする" />
 </div>
 
-Next we just have to add the FastComments.com widget code!
-
----
+最後に、FastComments.comのウィジェットコードを追加するだけです!

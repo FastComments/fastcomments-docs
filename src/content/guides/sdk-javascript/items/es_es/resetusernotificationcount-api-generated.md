@@ -1,4 +1,3 @@
----
 ## Parámetros
 
 | Nombre | Tipo | Requerido | Descripción |
@@ -24,5 +23,3 @@ async function demoReset() {
 
 demoReset();
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 `settings.py`でテナントを構成します:
 
 ```python
@@ -16,4 +15,3 @@ FASTCOMMENTS = {
 
 {% fastcomments url_id="my-page" %}
 ```
----

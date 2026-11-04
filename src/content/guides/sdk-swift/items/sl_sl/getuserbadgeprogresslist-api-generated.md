@@ -34,5 +34,3 @@ DefaultAPI.getUserBadgeProgressList(tenantId: tenantId, options: DefaultAPI.GetU
     }
 }
 [inline-code-end]
-
----

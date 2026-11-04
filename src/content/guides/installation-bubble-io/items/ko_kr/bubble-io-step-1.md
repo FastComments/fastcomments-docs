@@ -6,5 +6,3 @@
 </div>
 
 HTML 요소를 사용하면 FastComments 위젯을 Bubble 앱에 직접 삽입할 수 있습니다.
-
----

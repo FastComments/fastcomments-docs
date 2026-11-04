@@ -1,24 +1,23 @@
-Translates the given comments into the widget locale. Only available when the matching widget
-customization rule has Comment Translation set to Automatic or Manual.
+Übersetzt die angegebenen Kommentare in die Widget-Sprache. Nur verfügbar, wenn die entsprechende Widget-Anpassungsregel mit Comment Translation auf Automatic oder Manual eingestellt ist.
 
-## Parameters
+## Parameter
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| urlId | string | query | Yes |  |
-| sso | string | query | No |  |
-| locale | string | query | No |  |
+| tenantId | string | path | Ja |  |
+| urlId | string | query | Ja |  |
+| sso | string | query | Nein |  |
+| locale | string | query | Nein |  |
 
 ## Antwort
 
-Rückgabe: [`CommentTranslationsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CommentTranslationsResponse.java)
+Gibt zurück: [`CommentTranslationsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CommentTranslationsResponse.java)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'translateComments Beispiel'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Klassen importieren:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;

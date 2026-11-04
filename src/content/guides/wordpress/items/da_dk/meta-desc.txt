@@ -1,3 +1,1 @@
----
 Tilføj live‑kommentarer til WordPress med den officielle plugin: dashboard‑moderation, SSO for medlemswebsteder og kommentarantal synkroniseret tilbage til indlæg.
----

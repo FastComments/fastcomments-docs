@@ -8,5 +8,3 @@ Swift SDK에 관해 문제가 발생하거나 질문이 있으시면, 다음을 
 ## 기여하기
 
 기여를 환영합니다! 기여 지침은 [GitHub 저장소](https://github.com/FastComments/fastcomments-swift)를 방문해 확인하세요.
-
----

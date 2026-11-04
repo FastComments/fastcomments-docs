@@ -1,8 +1,8 @@
-最近讨论小部件显示您网站上具有最新评论活动的页面。每个条目显示页面标题、最后活动日期和总评论数。它会自动检测深色背景并相应调整其样式。
+最近讨论组件显示您网站上具有最新评论活动的页面。每个条目显示页面标题、最后活动日期和评论总数。它会自动检测深色背景并相应地调整样式。
 
 ## 基本安装
 
-[inline-code-attrs-start title = '最近讨论小部件安装'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = '最近讨论组件安装'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/widget-recent-discussions-v2.min.js"></script>
 <div id="fastcomments-widget-recent-discussions"></div>
@@ -15,17 +15,17 @@
 
 ## 配置选项
 
-函数 `FastCommentsRecentDiscussionsV2` 接受以下配置选项：
+`FastCommentsRecentDiscussionsV2` 函数接受以下配置选项：
 
-- **tenantId** (required): Your FastComments tenant ID
-- **count** (optional): Number of pages to show. Default is `20`, max `100`
-- **hasDarkBackground** (optional): Force dark mode styling. Auto-detected from the page background if not set
+- **tenantId**（必填）：您的 FastComments 租户 ID
+- **count**（可选）：显示的页面数量。默认为 `20`，最大为 `100`
+- **hasDarkBackground**（可选）：强制使用深色模式样式。如果未设置，将自动从页面背景检测
 
 ## 高级示例
 
 ### 自定义数量
 
-[inline-code-attrs-start title = '使用自定义数量的最近讨论'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = '自定义数量的最近讨论'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/widget-recent-discussions-v2.min.js"></script>
 <div id="fastcomments-widget-recent-discussions"></div>
@@ -39,7 +39,7 @@
 
 ### 强制深色模式
 
-[inline-code-attrs-start title = '使用深色模式的最近讨论'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = '深色模式的最近讨论'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/widget-recent-discussions-v2.min.js"></script>
 <div id="fastcomments-widget-recent-discussions"></div>
@@ -50,5 +50,3 @@
     });
 </script>
 [inline-code-end]
-
----

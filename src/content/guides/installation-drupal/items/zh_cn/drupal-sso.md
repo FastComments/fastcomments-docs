@@ -19,5 +19,3 @@ FastComments 通过 SSO（单点登录）与 Drupal 的用户系统集成。您�
 <sup>(可选)</sup> 将您的管理员添加到 [Users & Administrators](https://fastcomments.com/auth/my-account/users) ，将版主添加到 [Comment Moderators](https://fastcomments.com/auth/my-account/moderate-comments/moderators) ，以改善他们的体验并为版主启用统计跟踪。
 
 有关 SSO 工作原理的更深入说明，请参阅自定义文档的 [SSO 部分](/guide-customizations-and-configuration.html#sso)。
-
----

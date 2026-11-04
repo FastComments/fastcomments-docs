@@ -1,4 +1,3 @@
----
 Предишни коментирали на страницата, които НЕ са в момента онлайн. Подредени по displayName.
 Използвайте това след изчерпване на /users/online, за да рендерирате секция "Членове".
 Пагинация с курсор върху commenterName: сървърът обхожда частичния индекс {tenantId, urlId, commenterName}
@@ -40,5 +39,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_offline_users: #{e}"
 end
 [inline-code-end]
-
----

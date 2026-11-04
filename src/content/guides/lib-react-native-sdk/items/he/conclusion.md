@@ -1,4 +1,3 @@
----
 ## זקוקים לעזרה?
 
 אם אתם נתקלים בבעיות או יש לכם שאלות לגבי ה-React Native SDK, אנא:
@@ -9,5 +8,3 @@
 ## תרומות
 
 תרומות מתקבלות בברכה! בקרו במאגר ה-[GitHub repository](https://github.com/FastComments/fastcomments-react-native-sdk) לקבלת הנחיות לתרומה.
-
----

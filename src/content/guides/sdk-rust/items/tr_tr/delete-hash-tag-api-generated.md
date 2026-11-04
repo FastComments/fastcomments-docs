@@ -1,4 +1,3 @@
----
 ## Parametreler
 
 | Ad | Tür | Gerekli | Açıklama |
@@ -25,4 +24,3 @@ async fn example() -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
----

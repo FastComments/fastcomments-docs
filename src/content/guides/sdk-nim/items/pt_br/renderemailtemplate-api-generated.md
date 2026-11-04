@@ -1,4 +1,3 @@
----
 ## Parâmetros
 
 | Nome | Tipo | Obrigatório | Descrição |
@@ -22,5 +21,3 @@ if responseOpt.isSome:
   discard response
 discard httpResponse
 [inline-code-end]
-
----

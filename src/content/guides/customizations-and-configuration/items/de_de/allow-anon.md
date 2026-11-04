@@ -1,12 +1,11 @@
-By default, FastComments will require an email to comment. It does not have to be a valid email, however until the user clicks a link sent to them,
-their comment will display an "Unverified Comment" label.
+Standardmäßig erfordert FastComments eine E-Mail-Adresse, um zu kommentieren. Sie muss jedoch keine gültige E-Mail-Adresse sein. Bis der Nutzer auf einen ihm zugesandten Link klickt, wird sein Kommentar mit dem Label „Unverified Comment" angezeigt.
 
-However, we can remove the email requirement. The email input field will still show, but it will no longer be required.
+Wir können die E-Mail-Pflicht jedoch entfernen. Das E-Mail-Eingabefeld wird weiterhin angezeigt, ist aber nicht mehr erforderlich.
 
-This can be configured via the widget customization UI:
+Dies kann über die Widget-Anpassungs-UI konfiguriert werden:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.allow-anonymous-comments'; alt='Option für anonyme Kommentare in der Widget‑Anpassungs‑UI, die das E‑Mail‑Feld optional macht'; title='Aktivieren anonymer Kommentare' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.allow-anonymous-comments'; alt='Option für anonyme Kommentare in der Widget-Anpassungs-UI, die das E-Mail-Feld optional macht'; title='Anonyme Kommentare aktivieren' app-screenshot-end]
 
-A username is still required. To remove that step as well, you can
-[einen Standard‑Benutzernamen festlegen](/guide-customizations-and-configuration.html#default-username) that everyone shares, or have FastComments
-[einen eindeutigen Benutzernamen generieren](/guide-customizations-and-configuration.html#auto-generate-username) for each visitor.
+Ein Benutzername ist weiterhin erforderlich. Um auch diesen Schritt zu entfernen, können Sie
+[einen Standard-Benutzernamen festlegen](/guide-customizations-and-configuration.html#default-username), den alle teilen, oder FastComments
+für jeden Besucher [einen eindeutigen Benutzernamen generieren lassen](/guide-customizations-and-configuration.html#auto-generate-username).

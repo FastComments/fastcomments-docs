@@ -1,4 +1,3 @@
----
 Grupne informacije o korisnicima za tenant. Za zadate userIds, vrati prikazne informacije iz User / SSOUser.
 Koristi comment widget da obogati korisnike koji su se upravo pojavili putem presence događaja.
 Nema konteksta stranice: privatnost se primenjuje jednako (privatni profili su maskirani).
@@ -42,5 +41,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.GetUsersInfo`: %v\n", resp)
 }
 [inline-code-end]
-
----

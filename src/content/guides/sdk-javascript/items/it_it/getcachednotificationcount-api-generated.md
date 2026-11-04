@@ -19,5 +19,3 @@ Restituisce: [`GetCachedNotificationCountResponse`](https://github.com/FastComme
   const response: GetCachedNotificationCountResponse = await getCachedNotificationCount(tenantId, id);
 })();
 [inline-code-end]
-
----

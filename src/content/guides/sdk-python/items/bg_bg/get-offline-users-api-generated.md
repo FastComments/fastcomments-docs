@@ -1,21 +1,22 @@
-Past commenters on the page who are NOT currently online. Sorted by displayName.  
-Use this after exhausting /users/online to render a "Members" section.  
-Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName} index from afterName forward via $gt, no $skip cost.
+Коментатори на страницата от минали посещения, които в момента НЕ са онлайн. Подредени по displayName.
+Използвайте това след изчерпване на /users/online, за да визуализирате секция "Членове".
+Пагинация с курсор по commenterName: сървърът обходява частичния индекс {tenantId, urlId, commenterName}
+от afterName напред чрез $gt, без разход за $skip.
 
-## Parameters
+## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Местоположение | Задължителен | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| urlId | string | query | Yes | Идентификатор на URL на страницата (почистен от сървъра). |
-| afterName | string | query | No | Курсор: предайте nextAfterName от предишния отговор. |
-| afterUserId | string | query | No | Курсор за разтегляне на равенства: предайте nextAfterUserId от предишния отговор. Необходимо, когато afterName е зададен, за да именните равенства не изтриват записи. |
+| tenantId | string | path | Да |  |
+| urlId | string | query | Да | Идентификатор на URL на страницата (почиства се от сървъра). |
+| afterName | string | query | Не | Курсор: подайте nextAfterName от предишния отговор. |
+| afterUserId | string | query | Не | Допълнителен критерий за курсора: подайте nextAfterUserId от предишния отговор. Задължителен, когато afterName е зададен, така че съвпадащите имена да не пропуснат записи. |
 
-## Response
+## Отговор
 
-Returns: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/page_users_offline_response.py)
+Връща: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/page_users_offline_response.py)
 
-## Example
+## Пример
 
 [inline-code-attrs-start title = 'Пример за get_offline_users'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -25,21 +26,21 @@ from client.models.page_users_offline_response import PageUsersOfflineResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Дефинирането на хоста е по избор и по подразбиране е https://fastcomments.com
-# Вижте configuration.py за списък на всички поддържани параметри на конфигурацията.
+# Defining the host is optional and defaults to https://fastcomments.com
+# See configuration.py for a list of all supported configuration parameters.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Въведете контекст с инстанция на API клиента
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # Създайте инстанция на API класа
+    # Create an instance of the API class
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    url_id = 'url_id_example' # str | Идентификатор на URL на страницата (почистен от сървъра).
-    after_name = 'after_name_example' # str | Курсор: предайте nextAfterName от предишния отговор. (по избор)
-    after_user_id = 'after_user_id_example' # str | Курсор за разтегляне на равенства: предайте nextAfterUserId от предишния отговор. Необходимо, когато afterName е зададен, за да именните равенства не изтриват записи. (по избор)
+    url_id = 'url_id_example' # str | Идентификатор на URL на страницата (почиства се от сървъра).
+    after_name = 'after_name_example' # str | Курсор: подайте nextAfterName от предишния отговор. (optional)
+    after_user_id = 'after_user_id_example' # str | Допълнителен критерий за курсора: подайте nextAfterUserId от предишния отговор. Задължителен, когато afterName е зададен, така че съвпадащите имена да не пропуснат записи. (optional)
 
     try:
         api_response = api_instance.get_offline_users(tenant_id, url_id, GetOfflineUsersOptions(after_name=after_name, after_user_id=after_user_id))

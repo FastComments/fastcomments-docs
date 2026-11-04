@@ -8,5 +8,3 @@
 ## תרומה
 
 תרומות מוזמנות! אנא בקרו ב[מאגר GitHub](https://github.com/FastComments/fastcomments-django) לקבלת הנחיות תרומה.
-
----

@@ -31,5 +31,3 @@ interface HashTagPatchResponse {
     hashTag?: HashTag; // Başarılı olduğunda güncellenen hashtag'in tamamını döneriz.
 }
 [inline-code-end]
-
----

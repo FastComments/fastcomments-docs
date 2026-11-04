@@ -1,14 +1,12 @@
-Attach a poll to a comment, or set the full state of the poll it already has.
+Прикрепите опрос к комментарию или задайте полное состояние опроса, который уже есть.
 
-Options are matched by id: an option sent with the id of an existing option keeps its votes (and takes the
-new label and position), an option sent without an id is added, and existing options left out of the list
-are removed along with the votes cast on them.
+Опции сопоставляются по id: опция, отправленная с id существующей опции, сохраняет свои голоса (и получает новую метку и позицию), опция без id добавляется, а существующие опции, отсутствующие в списке, удаляются вместе с отданными за них голосами.
 
-Keeping no existing option ids on a poll that has votes deletes all of them, so that needs replaceVotes=true.
+Если не сохранить ни один из существующих id опций в опросе, за который уже есть голоса, все они будут удалены, поэтому требуется replaceVotes=true.
 
-## Parameters
+## Параметры
 
-| Имя | Тип | Расположение | Обязательно | Описание |
+| Имя | Тип | Расположение | Обязательный | Описание |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | commentId | string | path | Да |  |
@@ -22,7 +20,7 @@ Keeping no existing option ids on a poll that has votes deletes all of them, so 
 
 [inline-code-attrs-start title = 'Пример putPoll'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следующие примеры кода находятся в бета-версии. При возникновении проблем, пожалуйста, сообщайте по адресу http://github.com/OpenAPITools/openapi-generator/issues/new
+// Следующие примеры кода всё ещё в бета-версии. О любых проблемах сообщайте по адресу http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 

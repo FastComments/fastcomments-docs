@@ -1,4 +1,3 @@
----
 ## パラメータ
 
 | 名前 | 型 | 必須 | 説明 |
@@ -27,5 +26,3 @@ api->createTenantPackage(tenantId, body).then([](pplx::task<std::shared_ptr<Crea
     }
 });
 [inline-code-end]
-
----

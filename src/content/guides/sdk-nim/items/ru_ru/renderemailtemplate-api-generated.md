@@ -21,5 +21,3 @@ if responseOpt.isSome:
   discard response
 discard httpResponse
 [inline-code-end]
-
----

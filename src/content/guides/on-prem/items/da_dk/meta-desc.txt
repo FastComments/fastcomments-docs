@@ -1,3 +1,1 @@
----
 Kør FastComments helt på din egen infrastruktur. Instanser, konfiguration, vedligeholdelsestilstand, låse, flere domæner og sikkerhedsmodellen.
----

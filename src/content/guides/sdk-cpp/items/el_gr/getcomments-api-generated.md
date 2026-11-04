@@ -1,4 +1,3 @@
----
 ## Παράμετροι
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
@@ -29,5 +28,3 @@ api->getComments(tenantId, options).then([](pplx::task<std::shared_ptr<APIGetCom
     }
 });
 [inline-code-end]
-
----

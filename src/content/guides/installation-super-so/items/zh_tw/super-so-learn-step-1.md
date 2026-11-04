@@ -1,4 +1,3 @@
----
 首先我們需要開啟程式碼編輯器。如果您想要將 FastComments 加到所有頁面，只要在左下角選取 Code：
 
 <div class="screenshot white-bg">
@@ -16,5 +15,3 @@
 </div>
 
 現在您已經準備好進行步驟 2。
-
----

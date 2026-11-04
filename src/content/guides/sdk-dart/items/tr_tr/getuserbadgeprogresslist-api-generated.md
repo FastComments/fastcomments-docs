@@ -34,5 +34,3 @@ try {
     print('Exception when calling DefaultApi->getUserBadgeProgressList: $e\n');
 }
 [inline-code-end]
-
----

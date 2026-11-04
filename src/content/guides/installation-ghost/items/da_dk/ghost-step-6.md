@@ -1,4 +1,3 @@
----
 Nu skal vi pakke tema-filerne tilbage i en zip-fil. Brug de indbyggede funktioner i Ghost til dette.
 
 Åbn din editors terminal igen og kør `npm run zip`.
@@ -9,5 +8,3 @@ Nu skal vi pakke tema-filerne tilbage i en zip-fil. Brug de indbyggede funktione
 </div>
 
 Dette pakker temaet i en zip-fil i `dist/casper-fastcomments.zip` (hvis det er det, du har navngivet temaet i `Step Three`).
-
----

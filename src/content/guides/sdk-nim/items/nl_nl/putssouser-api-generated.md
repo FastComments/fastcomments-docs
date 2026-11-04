@@ -25,5 +25,3 @@ if apiRespOpt.isSome:
   let apiResp = apiRespOpt.get()
   echo apiResp
 [inline-code-end]
-
----

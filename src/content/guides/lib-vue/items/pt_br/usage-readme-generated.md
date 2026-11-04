@@ -1,4 +1,3 @@
----
 ### O Widget de Comentários
 
 O componente FastCommentsVue contém o widget de comentários do FastComments em tempo real.
@@ -26,4 +25,3 @@ export default Vue.extend({
   </div>
 </template>
 ```
----

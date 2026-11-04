@@ -23,5 +23,3 @@ api->getModerator(tenantId, moderatorId)
         }
     });
 [inline-code-end]
-
----

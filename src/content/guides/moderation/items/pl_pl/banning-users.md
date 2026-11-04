@@ -1,51 +1,51 @@
-There are two ways to ban users from commenting on your site with FastComments.
+Istnieją dwa sposoby zablokowania użytkownikom możliwości komentowania na Twojej stronie za pomocą FastComments.
 
-The first is if you already know their email, you can enter it on the <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">banned users</a> page.
+Pierwszy z nich: jeśli znasz już adres e-mail użytkownika, możesz go wprowadzić na stronie <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">banned users</a>.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .account-block'; alt='Lista zbanowanych użytkowników w sekcji Moderate Comments, z zbanowanymi adresami e‑mail i przyciskiem dodawania nowego zakazu'; title='Strona zbanowanych użytkowników' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .account-block'; alt='Lista zablokowanych użytkowników w sekcji Moderate Comments, z zablokowanymi adresami e-mail i przyciskiem dodawania nowej blokady'; title='Strona Banned Users' app-screenshot-end]
 
-This page can be accessed via Moderate Comments -> Banned Users
+Strona ta jest dostępna poprzez Moderate Comments -> Banned Users
 
-When we go to ban a user, we can pick a type, either Permanent or Permanent Shadow Ban:
+Gdy chcemy zablokować użytkownika, możemy wybrać typ blokady: Permanent lub Permanent Shadow Ban:
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users/new'; selector = '.content .account-block'; alt='Nowy formularz zakazu z polem e‑mail i wyborem typu zakazu: Permanent lub Permanent Shadow Ban'; title='Zbanowanie użytkownika' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users/new'; selector = '.content .account-block'; alt='Formularz nowej blokady z polem e-mail i wyborem typu blokady: Permanent lub Permanent Shadow Ban'; title='Blokowanie użytkownika' app-screenshot-end]
 
-The second way to ban a user is by clicking the ban button that is placed on each comment on the Comment Moderation page.
+Drugim sposobem zablokowania użytkownika jest kliknięcie przycisku blokady, który znajduje się przy każdym komentarzu na stronie Comment Moderation.
 
-When we click the ban button, you'll be presented with some options, where we can specify the ban type and duration.
+Po kliknięciu przycisku blokady pojawią się opcje, w których można określić typ i czas trwania blokady.
 
-### Email Aliases
+### Aliasy e-mail
 
-When banning a user by email, FastComments automatically ignores `+` aliases. For example, banning `user+alias@gmail.com` will also ban `user@gmail.com` and any other `+` variation of that address, such as `user+other@gmail.com`.
+Podczas blokowania użytkownika po adresie e-mail FastComments automatycznie ignoruje aliasy z `+`. Na przykład zablokowanie `user+alias@gmail.com` zablokuje również `user@gmail.com` oraz wszelkie inne warianty z `+` tego adresu, takie jak `user+other@gmail.com`.
 
-### Shadow Bans
+### Shadow Bany
 
-A shadow-ban is a type of ban that makes it appear that the user's comment or vote was saved successfully, when in fact it was not. This may be desirable in certain situations.
+Shadow ban to rodzaj blokady, przy którym wygląda na to, że komentarz lub głos użytkownika został pomyślnie zapisany, choć w rzeczywistości nie został. Może to być pożądane w pewnych sytuacjach.
 
-### Banning Via IP Address
+### Blokowanie po adresie IP
 
-Unless a tenant wishes to opt out, FastComments supports banning via IP by storing a hashed version of the commenter's IP address.
+O ile klient nie zdecyduje inaczej, FastComments obsługuje blokowanie po IP poprzez przechowywanie zahaszowanej wersji adresu IP komentującego.
 
-### Searching Banned Users
+### Wyszukiwanie zablokowanych użytkowników
 
-Once your list grows past a page or two, you can narrow it with the search row above the table.
+Gdy lista urośnie do ponad jednej lub dwóch stron, możesz ją zawęzić za pomocą wiersza wyszukiwania nad tabelą.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .filter-form'; alt='Wiersz wyszukiwania na stronie zbanowanych użytkowników z rozwijanym menu Search By, rozwijanym menu Match i polem Value'; title='Wyszukiwanie zbanowanych użytkowników' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .filter-form'; alt='Wiersz wyszukiwania na stronie Banned Users z listą rozwijaną Search By, listą rozwijaną Match i polem Value'; title='Wyszukiwanie zablokowanych użytkowników' app-screenshot-end]
 
-There are three controls:
+Dostępne są trzy kontrolki:
 
-- **Search By** picks which field to look in: Any Field, Email, Name, Banned By, or Banned For Saying. The last four correspond to the columns of the same name in the table.
-- **Match** picks how to compare. **Contains** finds your value anywhere in the field, and **Equals** matches the whole field.
-- **Value** is the text to look for.
+- **Search By** wybiera pole, w którym szukać: Any Field, Email, Name, Banned By lub Banned For Saying. Ostatnie cztery odpowiadają kolumnom o tych samych nazwach w tabeli.
+- **Match** wybiera sposób porównania. **Contains** znajduje wartość w dowolnym miejscu pola, a **Equals** dopasowuje całe pole.
+- **Value** to tekst do wyszukania.
 
-Every field is matched without regard to case, so searching for `SPAMMER@EXAMPLE.COM` finds a ban stored as `spammer@example.com`.
+Każde pole jest dopasowywane bez rozróżniania wielkości liter, więc wyszukiwanie `SPAMMER@EXAMPLE.COM` znajdzie blokadę zapisaną jako `spammer@example.com`.
 
-A few things worth knowing:
+Kilka rzeczy warte uwagi:
 
-- **Banned For Saying** searches the text of the comment that got the user banned. This is how you find everyone banned over a particular phrase.
-- **Banned By** searches the name of the moderator who issued the ban, which is useful for reviewing another moderator's decisions.
-- Wildcard bans are stored with their `*`, so a **Contains** search for `bademail.com` finds a `*@bademail.com` ban.
-- **Name** matches the name shown in the Name column, so it finds a user even if they have changed their name since being banned, and even if you created the ban by entering an email address and no name was recorded at the time. The name recorded on the ban still matches too, so searching for either the old or the current name works.
-- **Any Field** searches the email, name, banned-by moderator, and banned comment text together.
+- **Banned For Saying** przeszukuje treść komentarza, za który użytkownik został zablokowany. W ten sposób znajdziesz wszystkich zablokowanych za konkretne sformułowanie.
+- **Banned By** przeszukuje nazwę moderatora, który nałożył blokadę, co jest przydatne przy weryfikacji decyzji innego moderatora.
+- Blokady z symbolami wieloznacznymi są przechowywane ze swoim `*`, więc wyszukiwanie **Contains** dla `bademail.com` znajdzie blokadę `*@bademail.com`.
+- **Name** dopasowuje nazwę wyświetlaną w kolumnie Name, więc znajdzie użytkownika nawet jeśli zmienił nazwę po zablokowaniu, a także jeśli blokadę utworzyłeś, podając tylko adres e-mail i nazwa nie została wtedy zapisana. Nazwa zapisana w blokadzie również nadal pasuje, więc wyszukiwanie działa zarówno dla starej, jak i aktualnej nazwy.
+- **Any Field** przeszukuje jednocześnie e-mail, nazwę, moderatora blokującego oraz treść zablokowanego komentarza.
 
-Your search is part of the page URL, so you can share a filtered list with other moderators the same way you share other moderation links. Paging through results keeps the search applied, starting a new search returns you to the first page, and **Clear** returns to the full list.
+Twoje wyszukiwanie jest częścią adresu URL strony, więc możesz udostępnić przefiltrowaną listę innym moderatorom w ten sam sposób, w jaki udostępniasz inne linki moderacyjne. Przechodzenie między stronami wyników zachowuje wyszukiwanie, rozpoczęcie nowego wyszukiwania przenosi Cię na pierwszą stronę, a **Clear** przywraca pełną listę.

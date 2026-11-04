@@ -1,4 +1,3 @@
----
 Standardmäßig erlaubt FastComments den Benutzern, ihre Kommentare zu löschen.
 
 Es ist jedoch möglich, dies zu verhindern.
@@ -9,5 +8,3 @@ Auf der Seite zur Widget-Anpassung sehen Sie die Option „Löschen deaktivieren
 
 - Dies betrifft nur reguläre Kommentatoren und nicht Moderatoren oder Administratoren, die weiterhin löschen können.
 - Dies wirkt sich auch auf API-Integrationen aus, wenn `contextUserId` übergeben wird. 
-
----

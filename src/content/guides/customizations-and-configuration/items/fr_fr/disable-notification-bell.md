@@ -1,4 +1,3 @@
----
 [related-parameter-start name = 'disableNotificationBell'; type = 'boolean'; related-parameter-end]
 
 Par défaut, FastComments affichera une cloche de notification en haut à droite de la zone de commentaires.
@@ -19,5 +18,3 @@ Cependant, nous pouvons désactiver complètement la cloche de notification :
 Cela peut également être fait sans code. Dans la page de personnalisation du widget, voir la section « Désactiver la cloche de notification ».
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-notification-bell']; selector = '.disable-notification-bell'; alt='Page de personnalisation du widget avec la case à cocher Désactiver la cloche de notification cochée'; title='Désactiver la cloche de notification' app-screenshot-end]
-
----

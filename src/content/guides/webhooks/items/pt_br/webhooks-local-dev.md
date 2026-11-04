@@ -1,4 +1,3 @@
----
 Para desenvolvimento local, use uma ferramenta como o [ngrok](https://ngrok.com/).
 
 Para simplificar a manutenção da segurança do sistema, o desenvolvimento local segue o mesmo processo de configuração e proteção de outros ambientes. 

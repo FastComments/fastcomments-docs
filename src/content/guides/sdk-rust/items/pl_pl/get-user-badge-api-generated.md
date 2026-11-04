@@ -22,5 +22,3 @@ async fn fetch_badge() -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
-
----

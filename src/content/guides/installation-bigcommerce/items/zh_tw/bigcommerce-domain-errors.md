@@ -10,5 +10,3 @@
 在此情況下，解決方法很簡單。您只需將您的網站新增到您的 FastComments.com 帳號中。
 
 [前往此處將您的網站新增到您的帳號。](https://fastcomments.com/auth/my-account/configure-domains)
-
----

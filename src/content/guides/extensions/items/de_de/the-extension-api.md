@@ -44,5 +44,3 @@ Wir können auf das initiale Laden der Seite warten und einen Kommentar manuell 
     }
 })();
 [inline-code-end]
-
----

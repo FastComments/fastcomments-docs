@@ -1,4 +1,3 @@
----
 Za SSO postoji sljedeća konfiguracija koju treba razmotriti za obavijesti:
 
 - Je li se korisnik prijavio za primanje obavijesti.
@@ -18,5 +17,3 @@ Za SSO postoji sljedeća konfiguracija koju treba razmotriti za obavijesti:
   - To se radi svojstvom `footerUnsubscribeURL` na objektu `DomainConfig`.
   - To se može postaviti putem API-ja.
   - Možda ćete također htjeti razmotriti postavljanje relevantnih zaglavlja za odjavu putem `emailHeaders` u istom objektu.
-
----

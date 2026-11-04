@@ -1,4 +1,3 @@
----
 [api-resource-header-start name = 'TenantDailyUsage'; route = 'GET /api/v1/tenant-daily-usage'; creditsCost = 1; api-resource-header-end]
 
 このルートでは、年・月・日ごとにテナントの使用状況を検索できます。最大365件のオブジェクトが返され、コストは10件ごとに1 APIクレジットです。
@@ -36,5 +35,3 @@ interface TenantDailyUsageResponse {
     tenantDailyUsages: TenantDailyUsage[]
 }
 [inline-code-end]
-
----

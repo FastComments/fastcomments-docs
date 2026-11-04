@@ -52,5 +52,3 @@ interface QuestionConfigPatchResponse {
     reason?: string
 }
 [inline-code-end]
-
----

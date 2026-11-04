@@ -24,5 +24,3 @@ api->createEmailTemplate(utility::string_t("my-tenant-123"), *body)
         std::cout << "Created template ID: " << resp->id << std::endl;
     });
 [inline-code-end]
-
----

@@ -28,5 +28,3 @@ DefaultAPI.getEmailTemplateDefinitions(tenantId: tenantId) { (response, error) i
     }
 }
 [inline-code-end]
-
----

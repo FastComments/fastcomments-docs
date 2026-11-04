@@ -1,20 +1,20 @@
-Like count for a page, optionally with the users who liked it.
+Numero di like di una pagina, opzionalmente con gli utenti che hanno messo like.
 
-## Parameters
+## Parametri
 
 | Nome | Tipo | Posizione | Obbligatorio | Descrizione |
-|------|------|-----------|--------------|-------------|
-| tenantId | string | query | Yes |  |
-| urlId | string | query | Yes |  |
-| includeUserInfo | string | query | No | "\"public\" omette gli utenti con profili privati, \"include-private\" li include." |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Sì |  |
+| urlId | string | query | Sì |  |
+| includeUserInfo | string | query | No | "public" omette gli utenti con profili privati, "include-private" li include. |
 
-## Response
+## Risposta
 
 Restituisce: [`GetPageLikesAPIResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetPageLikesAPIResponse.java)
 
-## Example
+## Esempio
 
-[inline-code-attrs-start title = 'Esempio getPageLikes'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio di getPageLikes'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Import classes:
 import com.fastcomments.invoker.ApiClient;

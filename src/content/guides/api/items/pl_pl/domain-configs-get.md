@@ -28,5 +28,3 @@ interface GetDomainConfigsResponse {
     configurations: DomainConfig[] | null
 }
 [inline-code-end]
-
----

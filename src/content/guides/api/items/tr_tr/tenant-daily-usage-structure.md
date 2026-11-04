@@ -1,10 +1,8 @@
----
-Bir `TenantDailyUsage` nesnesi, belirli bir gün için bir kiracının kullanımını temsil eder. Eğer belirli bir kiracı için belirli bir
-günde hiçbir etkinlik yoksa, o gün için bir `TenantDailyUsage` nesnesi olmayacaktır.
+Bir `TenantDailyUsage` nesnesi, belirli bir gün için bir kiracının (tenant) kullanımını temsil eder. Belirli bir kiracı için belirli bir günde hiçbir etkinlik olmadıysa, o gün için bir `TenantDailyUsage` nesnesi bulunmaz.
 
-The `TenantDailyUsage` object is **not** real time and may be minutes behind actual usage.
+`TenantDailyUsage` nesnesi gerçek zamanlı **değildir** ve gerçek kullanımın birkaç dakika gerisinde kalabilir.
 
-The structure for the `TenantDailyUsage` object is as follows:
+`TenantDailyUsage` nesnesinin yapısı aşağıdaki gibidir:
 
 [inline-code-attrs-start title = 'TenantDailyUsage Yapısı'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -24,9 +22,7 @@ export interface TenantDailyUsage {
     apiCreditsUsed?: number
     createdAt: string
     billed: boolean
-    /** Faturalama için dikkate alınmaz. **/
+    /** Faturalandırma için yok sayılır. **/
     ignored: boolean
 }
 [inline-code-end]
-
----

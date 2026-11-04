@@ -1,15 +1,12 @@
-Creates a new trial account for an AI agent without a human signup. No API key is needed to call this.
+Kreira novi probni nalog za AI agenta bez ljudske registracije. Za pozivanje nije potreban API ključ.
 
-The response contains the tenant id, an API key that works immediately against the REST API and the
-MCP server, and a claim URL. Give the claim URL to the human you are working for: opening it while
-logged in to FastComments attaches the account to them. Unclaimed accounts, and their keys, are
-deleted 72 hours after creation. Until claimed, the account has the standard trial limits.
+Odgovor sadrži ID tenanta, API ključ koji odmah funkcioniše sa REST API-jem i MCP serverom, kao i URL za preuzimanje naloga. Dajte URL za preuzimanje osobi za koju radite: otvaranjem tog URL-a dok je prijavljen na FastComments, nalog se povezuje sa njim. Nepreuzeti nalozi, kao i njihovi ključevi, brišu se 72 sata nakon kreiranja. Dok se ne preuzme, nalog ima standardna ograničenja probnog perioda.
 
-## Response
+## Odgovor
 
-Returns: [`CreateAgentTenantResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateAgentTenantResponse.swift)
+Vraća: [`CreateAgentTenantResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateAgentTenantResponse.swift)
 
-## Example
+## Primer
 
 [inline-code-attrs-start title = 'createAgentTenant Primer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -29,5 +26,3 @@ DefaultAPI.createAgentTenant(createAgentTenantBody: createAgentTenantBody) { (re
     }
 }
 [inline-code-end]
-
----

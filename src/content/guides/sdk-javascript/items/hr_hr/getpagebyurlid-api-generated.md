@@ -21,5 +21,3 @@ Vraća: [`GetPageByURLIdAPIResponse`](https://github.com/FastComments/fastcommen
   const page: APIPage | undefined = response.page;
 })();
 [inline-code-end]
-
----

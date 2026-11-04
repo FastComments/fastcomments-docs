@@ -43,5 +43,3 @@ try {
     echo 'Exception when calling DefaultApi->getEmailTemplateRenderErrors: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

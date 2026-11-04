@@ -82,5 +82,3 @@ Gradnik se prikaže z naslednjo HTML strukturo:
     box-shadow: none !important;
 }
 [inline-code-end]
-
----

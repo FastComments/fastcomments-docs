@@ -1,4 +1,3 @@
----
 [related-parameter-start name = 'disableNotificationBell'; type = 'boolean'; related-parameter-end]
 
 기본적으로 FastComments는 댓글 영역 오른쪽 상단에 알림 벨을 표시합니다.
@@ -19,5 +18,3 @@
 코드를 사용하지 않고도 할 수 있습니다. 위젯 사용자 정의 페이지에서 "알림 벨 끄기" 섹션을 확인하세요.
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-notification-bell']; selector = '.disable-notification-bell'; alt='알림 벨 끄기 체크박스가 선택된 위젯 사용자 정의 페이지'; title='알림 벨 끄기' app-screenshot-end]
-
----

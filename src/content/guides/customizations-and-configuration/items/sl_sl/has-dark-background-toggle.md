@@ -40,5 +40,3 @@ temnega načina z uporabo pripomočka VanillaJS.
     }
 </style>
 [inline-code-end]
-
----

@@ -22,5 +22,3 @@ api->deleteTenantUser(U("my-tenant-123"), U("user@example.com"), options)
         (void)resp;
     });
 [inline-code-end]
-
----

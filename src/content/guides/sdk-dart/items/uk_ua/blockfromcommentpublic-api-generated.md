@@ -29,5 +29,3 @@ try {
     print('Exception when calling PublicApi->blockFromCommentPublic: $e\n');
 }
 [inline-code-end]
-
----

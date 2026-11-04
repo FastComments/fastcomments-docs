@@ -27,5 +27,3 @@ api->getTranslations(ns, comp, *optsPtr)
         }
     });
 [inline-code-end]
-
----

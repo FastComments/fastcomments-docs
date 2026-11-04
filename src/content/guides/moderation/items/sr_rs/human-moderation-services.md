@@ -1,29 +1,29 @@
-Human Moderation Services is managed moderation by the FastComments team. Our moderators work your queue, in your dashboard, under your guidelines. There is no separate tool and no export of your data to a third party: the service runs on the moderation features every account already has.
+Услуге људске модерације су модерација коју обавља FastComments тим. Наши модератори раде на вашем реду чекања, у вашем контролном панелу, по вашим правилима. Не постоји засебан алат и не постоји извоз ваших података трећој страни: услуга ради на функцијама модерације које сваки налог већ има.
 
-### Како функционише
+### Како то функционише
 
-1. **Сагласимо се о правилима.** You share your community guidelines and tell us what to approve, remove, and escalate. Both sides sign off on a written playbook before anyone touches your queue.
-2. **Придружимо се вашем налогу.** FastComments moderators are added through [Adding Moderators](/guide-moderation.html#moderators-adding) and scoped with [Moderation Groups](/guide-moderation.html#moderation-groups), so they only see the pages, categories, or sites you assign.
-3. **Машине прво, људи друго.** [Spam Detection](/guide-moderation.html#spam-detection) and [AI Agents](/guide-ai-agents.html) handle the obvious cases. Our moderators work what is left: context, tone, appeals, and anything an agent escalated.
-4. **Ви видите све.** Each action is recorded in [Comment Logs](/guide-moderation.html#comment-logs) and [Moderator Stats](/guide-moderation.html#moderator-stats) with the moderator's name on it. Policy questions go to your named escalation contact.
+1. **Договарамо правила.** Делите смернице своје заједнице и кажете нам шта да одобравамо, уклањамо и ескалирамо. Обе стране потписују писани приручник пре него што ико додирне ваш ред чекања.
+2. **Придружујемо се вашем налогу.** FastComments модератори се додају преко [Додавање модератора](/guide-moderation.html#moderators-adding) и ограничавају помоћу [Групе модерације](/guide-moderation.html#moderation-groups), тако да виде само странице, категорије или сајтове које доделите.
+3. **Прво машине, па људи.** [Откривање спама](/guide-moderation.html#spam-detection) и [AI агенти](/guide-ai-agents.html) обрађују очигледне случајеве. Наши модератори раде оно што остане: контекст, тон, жалбе и све што је агент ескалирао.
+4. **Видите све.** Свака радња се бележи у [Евиденцији коментара](/guide-moderation.html#comment-logs) и [Статистици модератора](/guide-moderation.html#moderator-stats) са именом модератора. Питања о политици иду вашој именованој особи за ескалацију.
 
 ### Шта контролишете
 
-- **Смернице.** Our moderators follow the playbook written from your guidelines. When a case is not covered, it is escalated to you rather than decided for you.
-- **Опсег.** Widen or narrow access at any time by editing the Moderation Group our moderators belong to.
-- **Контакти за ескалацију.** You name who on your side receives policy questions, and we name who on ours owns the queue.
-- **Приступ.** [Removing a moderator](/guide-moderation.html#moderators-removing) ends their access immediately.
+- **Смернице.** Наши модератори прате приручник написан на основу ваших смерница. Када случај није покривен, ескалира се вама уместо да се одлучује уместо вас.
+- **Обим.** Проширите или сузите приступ у било ком тренутку уређивањем Групе модерације којој наши модератори припадају.
+- **Контакти за ескалацију.** Ви именујете ко на вашој страни прима питања о политици, а ми именујемо ко на нашој страни води ред чекања.
+- **Приступ.** [Уклањање модератора](/guide-moderation.html#moderators-removing) одмах окончава њихов приступ.
 
-### Рад са AI агентима
+### Рад уз AI агенте
 
-Agents and FastComments moderators act through the same tools, so every action shows up in the same logs and the same moderation page. A typical setup runs spam detection and AI Agents as the first pass, with human moderators handling the comments agents flag for review. See [AI Agents](/guide-ai-agents.html) for how agents escalate to a human.
+Агенти и FastComments модератори делују преко истих алата, тако да се свака радња појављује у истим евиденцијама и на истој страници модерације. Типично подешавање покреће откривање спама и AI агенте као први пролаз, док људски модератори обрађују коментаре које агенти означе за преглед. Погледајте [AI агенти](/guide-ai-agents.html) за то како агенти ескалирају људима.
 
-The [trust factor](/guide-moderation.html#spam-detection) ties the two together. Each commenter carries a 0 to 100 score built from tenure, comment count, and pinned comments. Spam detection and AI Agents read it to decide how strictly to treat a comment, and our moderators adjust it by hand when the automatic score is wrong. Every change is recorded in [Comment Logs](/guide-moderation.html#comment-logs), so a human decision today changes how the automated layers treat that person from then on.
+[Фактор поверења](/guide-moderation.html#spam-detection) повезује ово двоје. Сваки коментатор носи резултат од 0 до 100, изграђен на основу стажа, броја коментара и закачених коментара. Откривање спама и AI агенти читају га да одлуче колико строго третирати коментар, а наши модератори га ручно прилагођавају када аутоматски резултат погреши. Свака промена се бележи у [Евиденцији коментара](/guide-moderation.html#comment-logs), тако да људска одлука данас мења начин на који аутоматски слојеви третирају ту особу од тада.
 
-### Где се налазе наши модератори
+### Где су наши модератори
 
-For global and US customers, FastComments moderators are based in the United States, so your data does not leave the country. On the EU deployment, only EU-based moderators work your queue, so comment data does not leave the EU.
+За глобалне и америчке кориснике, FastComments модератори се налазе у Сједињеним Америчким Државама, тако да ваши подаци не напуштају земљу. На EU распореду, само модератори из EU раде на вашем реду чекања, тако да подаци о коментарима не напуштају EU.
 
 ### Услови
 
-Coverage hours, languages, response targets, reporting cadence, and pricing are agreed per contract. To start, read more at [fastcomments.com/human-moderation](https://fastcomments.com/human-moderation) or [contact us](https://fastcomments.com/contact-us) with a description of your community, your guidelines, and your traffic.
+Сати покривености, језици, циљеви одговора, учесталост извештавања и цене се договарају по уговору. Да почнете, прочитајте више на [fastcomments.com/human-moderation](https://fastcomments.com/human-moderation) или нас [контактирајте](https://fastcomments.com/contact-us) са описом ваше заједнице, ваших смерница и вашег саобраћаја.

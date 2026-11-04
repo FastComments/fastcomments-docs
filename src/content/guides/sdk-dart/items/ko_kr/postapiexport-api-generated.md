@@ -36,5 +36,3 @@ try {
     print('Exception when calling ModerationApi->postApiExport: $e\n');
 }
 [inline-code-end]
-
----

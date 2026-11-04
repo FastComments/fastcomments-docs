@@ -1,3 +1,1 @@
----
 Dodajte komentare uživo na Framer stranicu pomoću ugrađenog bloka i Framer‑specifičnog isječka, uz postavke visine koje sprječavaju odrezivanje widgeta.
----

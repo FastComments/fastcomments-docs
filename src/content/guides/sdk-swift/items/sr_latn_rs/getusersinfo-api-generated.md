@@ -1,4 +1,3 @@
----
 Masovni podaci o korisnicima za tenant. Za zadate userIds, vraća prikazne informacije iz User / SSOUser.
 Koristi se u widgetu za komentare da obogati korisnike koji su se upravo pojavili preko presence događaja.
 Nema konteksta stranice: privatnost se primenjuje dosledno (privatni profili su maskirani).
@@ -35,5 +34,3 @@ PublicAPI.getUsersInfo(tenantId: tenantId, ids: ids) { (response, error) in
     }
 }
 [inline-code-end]
-
----

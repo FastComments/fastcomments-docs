@@ -1,24 +1,19 @@
-Past commenters on the page who are NOT currently online. Sorted by displayName.  
-使用页面上过去的评论者，且当前不在线。按 displayName 排序。
+页面上当前不在线的历史评论者。按 displayName 排序。
+在用尽 /users/online 之后，使用此接口渲染“成员”部分。
+基于 commenterName 的游标分页：服务器通过 $gt 从 afterName 开始向前遍历部分索引 {tenantId, urlId, commenterName}，没有 $skip 的开销。
 
-Use this after exhausting /users/online to render a "Members" section.  
-在用完 /users/online 后使用它来渲染“Members”部分。
+## 参数
 
-Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName} index from afterName forward via $gt, no $skip cost.  
-在 commenterName 上进行游标分页：服务器从 afterName 向前遍历部分 {tenantId, urlId, commenterName} 索引，使用 $gt，没有 $skip 成本。
-
-## Parameters
-
-| Name | Type | Required | Description |
+| 名称 | 类型 | 必填 | 描述 |
 |------|------|----------|-------------|
-| tenant_id | String | Yes |  |
-| url_id | String | Yes |  |
-| after_name | String | No |  |
-| after_user_id | String | No |  |
+| tenant_id | String | 是 |  |
+| url_id | String | 是 |  |
+| after_name | String | 否 |  |
+| after_user_id | String | 否 |  |
 
-## Response
+## 响应
 
-Returns: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/page_users_offline_response.rs)
+返回：[`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/page_users_offline_response.rs)
 
 ## 示例
 

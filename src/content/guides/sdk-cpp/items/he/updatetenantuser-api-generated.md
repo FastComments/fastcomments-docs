@@ -25,5 +25,3 @@ boost::optional<utility::string_t> updateComments = U("Promoted to admin");
 api->updateTenantUser(tenantId, userId, body, updateComments)
     .then([](std::shared_ptr<APIEmptyResponse>){ });
 [inline-code-end]
-
----

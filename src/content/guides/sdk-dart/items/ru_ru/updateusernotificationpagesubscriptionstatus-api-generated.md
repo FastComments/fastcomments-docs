@@ -1,9 +1,9 @@
-Enable or disable notifications for a page. When users are subscribed to a page, notifications are created
-for new root comments, and also
+Включение или отключение уведомлений для страницы. Когда пользователи подписаны на страницу, уведомления создаются
+для новых корневых комментариев, а также
 
-## Parameters
+## Параметры
 
-| Имя | Тип | Местоположение | Обязательно | Описание |
+| Имя | Тип | Расположение | Обязательный | Описание |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | urlId | string | query | Да |  |
@@ -12,7 +12,7 @@ for new root comments, and also
 | subscribedOrUnsubscribed | string | path | Да |  |
 | sso | string | query | Нет |  |
 
-## Response
+## Ответ
 
 Возвращает: `UpdateUserNotificationPageSubscriptionStatusResponse`
 
@@ -37,5 +37,3 @@ try {
     print('Exception when calling PublicApi->updateUserNotificationPageSubscriptionStatus: $e\n');
 }
 [inline-code-end]
-
----

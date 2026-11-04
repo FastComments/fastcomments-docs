@@ -1,31 +1,31 @@
-The Recent Comments widget displays the most recent comments posted across your entire site. It's useful in sidebars, footers, or anywhere you want to surface fresh activity to encourage further reading.
+Widget Nedavni komentarji prikazuje najnovejše komentarje, objavljene na vašem celotnem spletnem mestu. Uporaben je v stranskih vrsticah, nogah ali kjer koli, kjer želite pokazati svežo dejavnost in spodbuditi nadaljnje branje.
 
 ## Možnosti
 
-- **Naslov** (neobvezno): Naslov, prikazan nad seznamom. Privzeto: "Nedavni komentarji".
-- **Število** (neobvezno): Koliko komentarjev prikazati. Obseg 1 do 50. Privzeto: 5.
+- **Naslov** (neobvezno): Naslov, prikazan nad seznamom. Privzeto "Nedavni komentarji".
+- **Števec** (neobvezno): Koliko komentarjev prikazati. Območje od 1 do 50. Privzeto 5.
 
 ## Kako ga dodati
 
-### V objavi ali strani
+### Znotraj objave ali strani
 
-V urejevalniku blokov dodajte blok **kratka koda** in prilepite:
+V urejevalniku blokov dodajte blok **Shortcode** in prilepite:
 
-[inline-code-attrs-start title = 'Kratka koda za Nedavne komentarje'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Kratka koda Nedavni komentarji'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 [fastcomments_recent_comments count="5"]
 [inline-code-end]
 
-Atribut `count` sprejme katerokoli vrednost med 1 in 50.
+Atribut `count` sprejme katero koli vrednost med 1 in 50.
 
-### V stranski vrstici ali podnožju (klasične teme)
+### V stranski vrstici ali nogi (klasične teme)
 
-Pojdite v **Videz > Pripomočki** v WordPress skrbništvu. Iz vstavljalca blokov poiščite "FastComments" in izberite **FastComments: Nedavni komentarji**. Povlecite ga v stransko vrstico, glavo ali podnožje in nato konfigurirajte naslov in število v panelu pripomočka.
+Pojdite na **Videz > Widgeti** v skrbniškem vmesniku WordPress. Iz vstavljalnika blokov poiščite "FastComments" in izberite **FastComments: Nedavni komentarji**. Povlecite ga v stransko vrstico, glavo ali nogo, nato pa nastavite naslov in števec v plošči widgeta.
 
-### V temi z bloki (urejanje celotnega mesta)
+### V blokovni temi (polno urejanje spletnega mesta)
 
-Odprite **Urejevalnik mesta** pod **Videz > Urejevalnik**. Pomaknite se do dela predloge, kjer naj se pripomoček prikaže, vstavite blok **Legacy Widget** in iz spustnega seznama izberite **FastComments: Nedavni komentarji**.
+Odprite **Urejevalnik spletnega mesta** pod **Videz > Urejevalnik**. Pomaknite se do dela predloge, kjer naj se widget prikaže, vstavite blok **Legacy Widget** in iz spustnega seznama izberite **FastComments: Nedavni komentarji**.
 
 ## Odpravljanje težav
 
-Pripomoček se prikaže šele, ko je namestitev FastComments zaključena in je shranjen tenant ID. Če je območje pripomočka prazno, dokončajte nastavitev v razdelku **FastComments** v WordPress skrbništvu in osvežite stran.
+Widget se prikaže šele, ko je nastavitev FastComments zaključena in je ID najemnika shranjen. Če je območje widgeta prazno, dokončajte nastavitev pod **FastComments** v skrbniškem vmesniku WordPress in ponovno naložite stran.

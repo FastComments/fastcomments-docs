@@ -1,6 +1,6 @@
-FastComments נבדק בדפדפנים המהווים את מרבית נתח שוק הדפדפנים.
+FastComments נבדק עם הדפדפנים המהווים את הרוב המכריע של נתח השוק של הדפדפנים.
 
-This includes:
+זה כולל:
 
 - Microsoft Edge
 - FireFox
@@ -10,5 +10,4 @@ This includes:
 - Chrome for Android
 - Samsung Internet
 
-For the sake of security and providing the best experience for the majority of our customers, we do not
-תומכים בדפדפנים שאינם מקבלים עוד עדכוני אבטחה או שיש להם כמות תנועה מועטה מאוד.
+לצורך אבטחה ומתן החוויה הטובה ביותר לרוב הלקוחות שלנו, אנו לא תומכים בדפדפנים שכבר אינם מקבלים עדכוני אבטחה או שיש להם כמות תנועה קטנה מאוד.

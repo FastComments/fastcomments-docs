@@ -5,5 +5,3 @@ Laravelアプリケーションにライブコメント、チャットなどを�
 ## リポジトリ
 
 [GitHubで表示](https://github.com/FastComments/fastcomments-laravel)
-
----

@@ -23,5 +23,3 @@ api->getQuestionResults(tenantId, options)
         // обработка ответа
     });
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 ההרחבה הקטנה ביותר האפשרית תהיה:
 
 [inline-code-attrs-start title = 'תוסף פשוט'; type = 'javascript'; inline-code-attrs-end]
@@ -21,5 +20,3 @@
 [code-example-start config = {extensions: [{id: "my-extension", path: "https://example.com/my-extension.min.js"}]}; linesToHighlight = [6,7,8,9,10,11]; title = 'Using a Custom Extension'; code-example-end]
 
 לדוגמות פונקציונליות, ראה את הסעיף הבא.
-
----

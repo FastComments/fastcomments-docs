@@ -11,5 +11,3 @@ Derudover kan du bruge op- og ned-piletasterne til at navigere i denne liste, og
 Vi ved, at du måske vil bruge `@`-symbolet uden at tagge en bruger. FastComments vil registrere dette og ikke forstyrre din skriveoplevelse.
 
 Bemærk, at autoudfyld først foretrækker matches med respekt for store/små bogstaver, og derefter også forsøger at søge efter resultater uden hensyn til store/små bogstaver.
-
----

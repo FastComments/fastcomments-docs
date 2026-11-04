@@ -1,4 +1,3 @@
----
 Skupni podaci o korisnicima za najmodavca. Na temelju userIds, vraća informacije za prikaz iz User / SSOUser.  
 Koristi se od strane widgeta za komentare kako bi obogatio korisnike koji su se upravo pojavili putem događaja prisutnosti.  
 Nema konteksta stranice: privatnost se dosljedno provodi (privatni profili su maskirani).
@@ -31,5 +30,3 @@ try {
     print('Exception when calling PublicApi->getUsersInfo: $e\n');
 }
 [inline-code-end]
-
----

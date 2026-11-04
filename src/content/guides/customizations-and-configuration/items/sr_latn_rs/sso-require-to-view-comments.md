@@ -39,5 +39,3 @@ Omogućavanje ove opcije zaštitiće stranicu ili domen od komentarisanja osim a
 #### Zamke
 
 Korisnici koji su kreirali komentare pre vaše SSO integracije neće moći da ih vide, osim ako se ne prijave putem vaše SSO integracije.
-
----

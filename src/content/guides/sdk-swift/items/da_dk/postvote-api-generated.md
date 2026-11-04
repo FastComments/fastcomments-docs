@@ -36,5 +36,3 @@ ModerationAPI.postVote(tenantId: tenantId, commentId: commentId, options: Modera
     }
 }
 [inline-code-end]
-
----

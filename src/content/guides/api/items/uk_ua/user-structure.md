@@ -33,5 +33,3 @@ export interface User {
     karma?: number
 }
 [inline-code-end]
-
----

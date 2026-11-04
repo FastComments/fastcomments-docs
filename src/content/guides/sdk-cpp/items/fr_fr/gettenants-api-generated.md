@@ -1,4 +1,3 @@
----
 ## Paramètres
 
 | Nom | Type | Obligatoire | Description |
@@ -23,5 +22,3 @@ api->getTenants(utility::string_t(U("my-tenant-123")), options)
     })
     .then([](pplx::task<void> t){ try{ t.get(); }catch(...){} });
 [inline-code-end]
-
----

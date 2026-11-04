@@ -1,4 +1,3 @@
----
 Fjern en afstemning fra dens kommentar, sammen med hver stemme afgivet på den. Kommentaren selv forbliver uændret.
 
 ## Parametre
@@ -23,5 +22,3 @@ async function runDeletePoll(): Promise<void> {
   console.log(result);
 }
 [inline-code-end]
-
----

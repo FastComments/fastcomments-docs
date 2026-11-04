@@ -22,5 +22,3 @@ if maybeEmpty.isSome:
 else:
   echo "Failed to unlock comment"
 [inline-code-end]
-
----

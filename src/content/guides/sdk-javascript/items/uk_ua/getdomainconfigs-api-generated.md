@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Назва | Тип | Обов’язково | Опис |
@@ -19,5 +18,3 @@ async function fetchDomainConfigs(): Promise<void> {
   console.log(configs);
 }
 [inline-code-end]
-
----

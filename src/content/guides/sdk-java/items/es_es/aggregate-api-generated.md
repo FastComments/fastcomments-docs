@@ -1,4 +1,3 @@
----
 Agrega documentos agrupándolos (si se proporciona groupBy) y aplicando múltiples operaciones.
 Se admiten diferentes operaciones (p. ej. sum, countDistinct, avg, etc.).
 
@@ -58,5 +57,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

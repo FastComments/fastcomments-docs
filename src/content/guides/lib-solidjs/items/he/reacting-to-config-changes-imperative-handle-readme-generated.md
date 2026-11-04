@@ -1,7 +1,4 @@
-Solid לא עוקבת באופן אוטומטי אחרי שינויים עמוקים על אובייקטים אקראיים, כך
-ששינויים בקונפיגורציה לאחר ה-render הראשון חייבים להיות מועברים במפורש. כל ווידג'ט
-מקבל `apiRef` שמחזיר handle; קראו ל-`handle.update(partial)` מתוך
-`createEffect` כדי להניע ריאקטיביות:
+Solid אינו עוקב אוטומטית אחר שינויים עמוקים באובייקטים שרירותיים, ולכן שינויי קונפיגורציה לאחר הרינדור הראשון חייבים להידחף באופן מפורש. כל ווידג'ט מקבל `apiRef` שמחזיר handle; קראו ל-`handle.update(partial)` מתוך `createEffect` כדי להניע את הריאקטיביות:
 
 ```tsx
 import { createEffect, createSignal } from 'solid-js';
@@ -26,21 +23,21 @@ export default function Paginated() {
 ```
 
 `update()` בטוח לקריאה בכל עת:
-- Before the script has loaded: the partial is stashed and applied at init.
-- During an async init (reviews-summary, user-activity-feed): the partial is queued and applied when the callback resolves.
-- After init: it forwards straight to the live widget's `.update()` method.
+- לפני שהסקריפט נטען: ה-partial נשמר בצד ומיושם בעת האתחול.
+- במהלך אתחול אסינכרוני (reviews-summary, user-activity-feed): ה-partial נכנס לתור ומיושם כשה-callback מסתיים.
+- לאחר האתחול: הוא מועבר ישירות למתודת `.update()` של הווידג'ט החי.
 
-### API אימפרטיבי של ה-handle
+### API של imperative handle
 
 ```ts
 interface WidgetHandle<Config> {
-  getInstance: () => WidgetInstance | null;   // המופע החי האחרון (או null לפני ההרכבה)
-  onInstance: (cb: (instance: WidgetInstance) => void) => void; // נקרא פעם אחת כשהמופע מוכן
-  update: (partial: Partial<Config>) => void; // מיזוג ודחיפת הקונפיגורציה
+  getInstance: () => WidgetInstance | null;   // המופע החי העדכני ביותר (או null לפני ה-mount)
+  onInstance: (cb: (instance: WidgetInstance) => void) => void; // מופעל פעם אחת כשהמופע מוכן
+  update: (partial: Partial<Config>) => void; // מיזוג ודחיפה של הקונפיגורציה
 }
 ```
 
-Use `getInstance()` for imperative actions that aren't covered by `.update()`, e.g. `openProfile`:
+השתמשו ב-`getInstance()` עבור פעולות imperative שאינן מכוסות על ידי `.update()`, למשל `openProfile`:
 
 ```tsx
 const openProfile = () =>

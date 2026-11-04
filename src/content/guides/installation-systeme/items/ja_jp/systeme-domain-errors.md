@@ -1,4 +1,3 @@
----
 次のような認可エラーが発生する場合があります:
 
 <div class="screenshot white-bg">
@@ -11,5 +10,3 @@
 この場合、対処は簡単です。あなたのサイトを FastComments.com アカウントに追加するだけです。
 
 [サイトをアカウントに追加するにはこちらにアクセスしてください。](https://fastcomments.com/auth/my-account/configure-domains)
-
----

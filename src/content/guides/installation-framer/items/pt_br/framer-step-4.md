@@ -15,5 +15,3 @@ Em seguida precisamos corrigir a configuração de página padrão do Framer. Po
 </div>
 
 Talvez você precise ajustar a altura da página até ficar do jeito que deseja.
-
----

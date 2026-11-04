@@ -1,4 +1,3 @@
----
 ## 参数
 
 | 名称 | 类型 | 必填 | 描述 |
@@ -24,5 +23,3 @@ async function demoReset() {
 
 demoReset();
 [inline-code-end]
-
----

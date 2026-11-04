@@ -19,5 +19,3 @@ Tożsamość użytkownika jest przekazywana do FastComments za każdym razem, gd
 <sup>(Opcjonalne)</sup> Dodaj swoich administratorów do [Użytkownicy i administratorzy](https://fastcomments.com/auth/my-account/users) i moderatorów do [Moderatorzy komentarzy](https://fastcomments.com/auth/my-account/moderate-comments/moderators), aby poprawić ich doświadczenie i włączyć śledzenie statystyk dla moderatorów.
 
 Aby lepiej zrozumieć, jak działa SSO, zobacz [sekcję SSO](/guide-customizations-and-configuration.html#sso) w dokumentacji dotyczącej dostosowań.
-
----

@@ -1,6 +1,6 @@
-Queues a batch job that moves comments, pages and related records from one urlId or domain to another.  
-"urlId" migrations only match the exact urlId. "domain" migrations find/replace the value inside every urlId and url.  
-Poll GET /api/v1/batch-jobs/{batchJobId}: once it is done it carries per-migration results and an undoId.
+将批量任务加入队列，把评论、页面及相关记录从一个 urlId 或 domain 迁移到另一个。
+"urlId" 迁移仅匹配完全相同的 urlId。"domain" 迁移会在每个 urlId 和 url 中查找并替换该值。
+轮询 GET /api/v1/batch-jobs/{batchJobId}：任务完成后会包含每次迁移的结果和一个 undoId。
 
 ## 参数
 
@@ -16,7 +16,7 @@ Poll GET /api/v1/batch-jobs/{batchJobId}: once it is done it carries per-migrati
 
 [inline-code-attrs-start title = 'migratePages 示例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 以下代码示例仍处于测试阶段。如有任何问题，请通过 http://github.com/OpenAPITools/openapi-generator/issues/new 报告。
+// 以下代码示例仍处于测试阶段。如有问题，请通过 http://github.com/OpenAPITools/openapi-generator/issues/new 反馈
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -33,5 +33,3 @@ DefaultAPI.migratePages(tenantId: tenantId, migrateAPIPagesData: migrateAPIPages
     }
 }
 [inline-code-end]
-
----

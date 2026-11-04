@@ -61,5 +61,3 @@ Afmeldingslinket i e-mail-footeren og one-click-unsubscribe-funktionen, som tilb
 ### Til DKIM
 
 Efter du har defineret dine DKIM DNS-poster, opdater blot DomainConfig med din DKIM-konfiguration ved hjælp af den definerede struktur. 
-
----

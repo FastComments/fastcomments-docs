@@ -1,4 +1,3 @@
----
 [related-parameter-start name = 'enableWYSIWYG'; type = 'boolean'; related-parameter-end]
 
 Par défaut, les fonctionnalités de formatage dans FastComments sont réalisées en ajoutant des balises d'ancrage visibles comme `<b></b>` autour de votre texte. Cliquer sur la barre d'outils
@@ -11,5 +10,3 @@ code supplémentaire qui permet aux utilisateurs de mettre du texte en gras, sou
 Cela peut également être fait sans code. Dans la page de personnalisation du widget, voyez l'option "Enable Advanced Formatting".
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-wysiwyg']; selector = '.enable-search-label'; alt='Page de personnalisation du widget avec la case à cocher Enable Advanced Formatting cochée pour activer l\'éditeur WYSIWYG'; title='Activer WYSIWYG' app-screenshot-end]
-
----

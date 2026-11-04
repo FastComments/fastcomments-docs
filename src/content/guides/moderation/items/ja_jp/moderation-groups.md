@@ -1,4 +1,3 @@
----
 モデレーターは、異なるページやコンテンツのカテゴリを管理するためにグループに配置できます。
 
 モデレーターが1つ以上のグループに所属している場合、そのモデレーターは「コメントのモデレート」ページでそのグループのコメントのみを見ることができます。
@@ -15,4 +14,3 @@
 
 これは、[いくつかのグループを追加する](https://fastcomments.com/auth/my-account/moderate-comments/moderation-groups)で設定でき、コメントウィジェットで対応する `Moderation Group` ID を指定します、  
 [ここで指示されているように](/guide-customizations-and-configuration.html#moderation-group-ids)。
----

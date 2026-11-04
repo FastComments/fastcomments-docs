@@ -1,19 +1,19 @@
-Remove a poll from its comment, along with every vote cast on it. The comment itself is left alone.
+Elimina la encuesta de su comentario, junto con todos los votos emitidos en ella. El comentario en sí queda intacto.
 
-## Parameters
+## Parámetros
 
 | Nombre | Tipo | Ubicación | Requerido | Descripción |
-|--------|------|-----------|-----------|-------------|
+|------|------|----------|----------|-------------|
 | tenantId | string | query | Sí |  |
 | commentId | string | path | Sí |  |
 
-## Response
+## Respuesta
 
 Devuelve: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
-## Example
+## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo deletePoll'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo de deletePoll'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Importar clases:
 import com.fastcomments.invoker.ApiClient;
@@ -28,10 +28,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configurar autorización de clave API: api_key
+    // Configurar la autorización mediante clave de API: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Descomente la siguiente línea para establecer un prefijo para la clave API, p. ej. "Token" (por defecto es null)
+    // Descomenta la siguiente línea para establecer un prefijo para la clave de API, p. ej. "Token" (por defecto es null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -42,10 +42,10 @@ public class Example {
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling DefaultApi#deletePoll");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
+      System.err.println("Excepción al llamar a DefaultApi#deletePoll");
+      System.err.println("Código de estado: " + e.getCode());
+      System.err.println("Motivo: " + e.getResponseBody());
+      System.err.println("Cabeceras de respuesta: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }

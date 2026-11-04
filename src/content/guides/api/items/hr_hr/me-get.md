@@ -32,5 +32,3 @@ interface MeResponse {
     email?: string
 }
 [inline-code-end]
-
----

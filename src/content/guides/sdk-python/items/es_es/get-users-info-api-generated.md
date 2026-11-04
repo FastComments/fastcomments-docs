@@ -1,14 +1,13 @@
----
-Bulk user info for a tenant. Given userIds, return display info from User / SSOUser.
-Used by the comment widget to enrich users that just appeared via a presence event.
-No page context: privacy is enforced uniformly (private profiles are masked).
+Información de usuario en lote para un tenant. Dados userIds, devuelve la información de visualización de User / SSOUser.
+Lo utiliza el widget de comentarios para enriquecer a los usuarios que acaban de aparecer mediante un evento de presencia.
+Sin contexto de página: la privacidad se aplica de manera uniforme (los perfiles privados se enmascaran).
 
 ## Parámetros
 
 | Nombre | Tipo | Ubicación | Requerido | Descripción |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| ids | string | query | Yes | userIds separados por comas. |
+| tenantId | string | path | Sí |  |
+| ids | string | query | Sí | userIds delimitados por comas. |
 
 ## Respuesta
 
@@ -35,7 +34,7 @@ with client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    ids = 'ids_example' # str | userIds separados por comas.
+    ids = 'ids_example' # str | Comma-delimited userIds.
 
     try:
         api_response = api_instance.get_users_info(tenant_id, ids)
@@ -44,5 +43,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->get_users_info: %s\n" % e)
 [inline-code-end]
-
----

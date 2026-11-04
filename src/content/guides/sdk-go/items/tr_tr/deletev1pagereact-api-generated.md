@@ -37,5 +37,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.DeleteV1PageReact`: %v\n", resp)
 }
 [inline-code-end]
-
----

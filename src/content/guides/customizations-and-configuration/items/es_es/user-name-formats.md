@@ -1,4 +1,3 @@
----
 Por defecto, FastComments mostrará el nombre del usuario tal como lo ingresó, o como se le pasó a través de SSO.
 
 Sin embargo, puede ser deseable enmascarar o mostrar el nombre del usuario de una manera diferente. Por ejemplo, si el nombre del usuario es Allen Rex, quizás quieras mostrar solo "Allen R.".
@@ -17,5 +16,3 @@ Los formatos disponibles son:
 El efecto de cambiar esto es inmediato. Los usuarios seguirán viendo su nombre de usuario completo en la parte superior del área de comentarios, para ellos mismos, pero sus comentarios mostrarán el nombre de usuario modificado.
 
 Los nombres de usuario se enmascaran del lado del servidor para proteger a los usuarios.
-
----

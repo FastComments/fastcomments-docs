@@ -1,4 +1,3 @@
----
 | 短碼 | 描述 |
 | --- | --- |
 | `fastcomments` | 具有回覆、投票等功能的留言小工具 |
@@ -37,4 +36,3 @@ This page has {% fastcommentsCommentCount { tenantId: "demo" } %} comments.
 {# 使用者活動動態 #}
 {% fastcommentsUserActivityFeed { tenantId: "demo", userId: "demo:demo-user" } %}
 ```
----

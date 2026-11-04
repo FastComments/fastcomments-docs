@@ -56,5 +56,3 @@ app.delete("/", receive);
 Répondez rapidement. FastComments réessaye en cas de réponse non‑2xx, et un point de terminaison qui échoue continuellement est finalement désactivé automatiquement, il faut donc effectuer le vrai travail après avoir répondu plutôt qu’en ligne.
 
 Rendez cela idempotent sur l'ID du commentaire. Un nouveau essai est re‑signé avec un nouveau horodatage, et le même ID de commentaire arrive de nouveau lors d'une modification ou d'une suppression, il n’y a donc rien de stable sur quoi dédupliquer.
-
----

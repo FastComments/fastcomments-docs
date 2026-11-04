@@ -1,4 +1,3 @@
----
 ## Parametreler
 
 | Name | Type | Location | Required | Description |
@@ -40,5 +39,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->send_login_link: #{e}"
 end
 [inline-code-end]
-
----

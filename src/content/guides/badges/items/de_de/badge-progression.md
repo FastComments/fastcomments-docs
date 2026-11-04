@@ -1,26 +1,25 @@
----
-FastComments zeigt Fortschritte mithilfe von Abzeichen auf verschiedene Weise.
+FastComments zeigt den Fortschritt auf verschiedene Arten über Badges an.
 
-Für die folgenden Beispiele haben wir die Abzeichen wie folgt eingerichtet:
+Für die folgenden Beispiele haben wir die Badges wie folgt eingerichtet:
 
-1. New User (Kommentaranzahl-Badge mit Schwellenwert = 1)
-2. Newbie (Kommentaranzahl-Badge mit Schwellenwert = 10)
-3. Top Member (Kommentaranzahl-Badge mit Schwellenwert = 100)
+1. Neuer Benutzer (Kommentaranzahl-Badge mit Schwellenwert = 1)
+2. Neuling (Kommentaranzahl-Badge mit Schwellenwert = 10)
+3. Top-Mitglied (Kommentaranzahl-Badge mit Schwellenwert = 100)
 
-### Badge Stacking
+### Badge-Stapelung
 
-Das Stapeln ist das Standardverhalten für Abzeichen. Wenn ein Benutzer ein neues Abzeichen erhält, wird es einfach zu seinem Profil hinzugefügt und
-bei all seinen Kommentaren angezeigt. Bis zu 15 Abzeichen werden angezeigt.
+Stapelung ist das Standardverhalten für Badges. Wenn ein Benutzer einen neuen Badge verdient, wird dieser einfach zu seinem Profil hinzugefügt und
+auf allen seinen Kommentaren angezeigt. Es werden bis zu 15 Badges angezeigt.
 
-### Replacing Badges
+### Badges ersetzen
 
-Abzeichen können so konfiguriert werden, dass sie andere Abzeichen ersetzen. Beim Bearbeiten eines Abzeichens können Sie auswählen, welches Abzeichen das neue Abzeichen ersetzt.
+Badges können so konfiguriert werden, dass sie andere Badges ersetzen. Beim Bearbeiten eines Badges können Sie auswählen, welchen Badge der neue Badge ersetzen soll.
 
-Wir können `Newbie` so konfigurieren, dass es `New User` ersetzt, und `Top Member`, dass es `Newbie` ersetzt. Auf diese Weise wird das vorherige Abzeichen
-automatisch ausgeblendet und das neue glänzende Abzeichen angezeigt. Alle Versionen bleiben weiterhin im Konto des Benutzers vorhanden. Sie können jederzeit
-das `Top Member`-Abzeichen ausblenden, wenn sie möchten, und das `Newbie`-Abzeichen anzeigen.
+Wir können `Neuling` so konfigurieren, dass er `Neuer Benutzer` ersetzt, und `Top-Mitglied` so, dass es `Neuling` ersetzt. Auf diese Weise wird der vorherige Badge
+automatisch ausgeblendet und der neue glänzende Badge angezeigt. Alle Versionen bleiben weiterhin im Konto des Benutzers erhalten. Er kann den
+`Top-Mitglied`-Badge jederzeit ausblenden und stattdessen den `Neuling`-Badge anzeigen.
 
-### Checking Progress
+### Fortschritt überprüfen
 
-Ein Benutzer kann den Fortschritt zum Erreichen eines Abzeichens in seinem Profil sehen. Oben in seinem Profil wird angezeigt, wie weit er beim Erlangen eines Abzeichens ist (zum Beispiel, wie viele Kommentare er geschrieben hat und wie viele er noch schreiben muss, oder wie lange er bereits Mitglied ist, usw.).
----
+Ein Benutzer kann den Fortschritt beim Erreichen eines Badges in seinem Profil sehen. Am oberen Rand seines Profils wird angezeigt, wie weit er
+beim Erreichen eines Badges ist (z. B. wie viele Kommentare er hinterlassen hat und wie viele er noch hinterlassen muss, oder wie lange er bereits Mitglied ist usw.).

@@ -13,5 +13,3 @@ Agora podemos verificar nosso site! Se você acessar uma postagem do blog, dever
     <div class="title">Alterações no Ar</div>
     <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-4-live.png" alt="Alterações no Ar" />
 </div>
-
----

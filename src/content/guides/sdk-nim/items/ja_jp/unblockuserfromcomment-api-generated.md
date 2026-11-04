@@ -1,4 +1,3 @@
----
 ## パラメータ
 
 | 名前 | 型 | 必須 | 説明 |
@@ -26,5 +25,3 @@ let (response, httpResponse) = client.unBlockUserFromComment(
 if response.isSome:
   let unblockSuccess = response.get()
 [inline-code-end]
-
----

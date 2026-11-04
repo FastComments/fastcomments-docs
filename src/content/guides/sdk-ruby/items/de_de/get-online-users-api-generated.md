@@ -1,4 +1,3 @@
----
 Derzeit online befindliche Betrachter einer Seite: Personen, deren WebSocket-Sitzung derzeit auf die Seite abonniert ist.
 Gibt anonCount + totalCount zurück (raumweite Abonnenten, einschließlich anonymer Zuschauer, die wir nicht einzeln auflisten).
 
@@ -38,5 +37,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_online_users: #{e}"
 end
 [inline-code-end]
-
----

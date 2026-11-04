@@ -1,4 +1,3 @@
----
 Ko uporabniki komentirajo ali glasujejo, in niso prijavljeni, bodo pozvani, da vpišejo svoj e‑mail in uporabniško ime.
 
 V primeru anonimnega komentiranja je včasih zaželeno določiti privzeto uporabniško ime, da se zmanjša ovira pri komentiranju. To je mogoče storiti prek vmesnika za prilagoditve. Anonimno komentiranje mora biti najprej omogočeno.
@@ -12,5 +11,3 @@ Privzeto uporabniško ime je skupno prikazno ime, ne identiteta. Obiskovalec, ki
 Uporabniška imena, ki jih obiskovalec vnese sam, morajo biti še vedno edinstvena.
 
 Če želite, da vsak obiskovalec dobi edinstveno ime, ne da bi moral razmišljati o tem, si oglejte [Samodejno ustvarjanje uporabniških imen](/guide-customizations-and-configuration.html#auto-generate-username).
-
----

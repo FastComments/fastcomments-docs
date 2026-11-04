@@ -1,9 +1,7 @@
----
-Every poll has a privacy setting, chosen by its author when creating it. The poll shows its setting under the options, so voters know who can see their vote before they cast it.
+Hver afstemning har en privatlivsindstilling, som dens forfatter vælger, når den oprettes. Afstemningen viser sin indstilling under mulighederne, så vælgerne ved, hvem der kan se deres stemme, før de afgiver den.
 
-- **Anonymous** (standardindstillingen): kun totalerne vises. Ingen, inklusive administratorer, kan se, hvem der stemte på hvad.
-- **Admins can see who voted**: kun administratorer og moderatorer kan åbne **See who voted**, som viser en liste over hver vælger og deres valg.
-- **Public**: enhver besøgende kan klikke på **See who voted** og se, hvem der stemte på hvad.
+- **Anonym** (standardindstillingen): kun totalerne vises. Ingen, inklusive administratorer, kan se, hvem der stemte på hvad.
+- **Administratorer kan se, hvem der stemte**: kun administratorer og moderatorer kan åbne **Se, hvem der stemte**, som viser hver vælger og deres valg.
+- **Offentlig**: enhver beskuer kan klikke på **Se, hvem der stemte** og se, hvem der stemte på hvad.
 
-Votes from visitors who are not logged in are counted but have no name attached, so they do not appear in the voter list.
----
+Stemmer fra besøgende, der ikke er logget ind, tælles med, men har intet navn knyttet, så de vises ikke på vælgerlisten.

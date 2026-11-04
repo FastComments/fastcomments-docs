@@ -6,5 +6,3 @@ FastComments tilføjer trådede kommentarer til dine Canvas-kurser. Den standard
 </div>
 
 Kommentarer er knyttet til hver kursusside eller ressourcelink, så diskussioner forbliver organiserede pr. side, opgave eller modul.
-
----

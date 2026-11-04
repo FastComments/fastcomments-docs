@@ -1,4 +1,3 @@
----
 ## 매개변수
 
 | 이름 | 유형 | 필수 | 설명 |
@@ -21,5 +20,3 @@ let params: GetGifLargeParams = GetGifLargeParams {
 
 let response: GifGetLargeResponse = get_gif_large(&configuration, params).await?;
 [inline-code-end]
-
----

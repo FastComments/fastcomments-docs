@@ -1,4 +1,3 @@
----
 Bulk-gebruikersinformatie voor een tenant. Gegeven userIds, retourneert weergave-informatie van User / SSOUser.
 Gebruikt door de commentaarwidget om gebruikers die net verschenen zijn via een presence-event te verrijken.
 Geen pagina-context: privacy wordt uniform afgedwongen (privéprofielen worden gemaskeerd).
@@ -44,5 +43,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->get_users_info: %s\n" % e)
 [inline-code-end]
-
----

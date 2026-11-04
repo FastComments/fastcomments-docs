@@ -1,4 +1,3 @@
----
 此端點允許您透過其唯一 ID 擷取特定使用者徽章進度紀錄。
 
 範例請求:
@@ -54,4 +53,3 @@ curl -X GET "https://fastcomments.com/api/v1/user-badge-progress/progress123?ten
   "reason": "The user badge progress progress123 was not found."
 }
 [inline-code-end]
----

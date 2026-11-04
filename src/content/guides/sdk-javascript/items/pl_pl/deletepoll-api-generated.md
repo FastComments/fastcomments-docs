@@ -1,19 +1,19 @@
-Remove a poll from its comment, along with every vote cast on it. The comment itself is left alone.
+Usuwa ankietę z komentarza, wraz ze wszystkimi oddanymi na nią głosami. Sam komentarz pozostaje nietknięty.
 
-## Parameters
+## Parametry
 
-| Nazwa | Typ | Wymagane | Opis |
-|------|------|----------|------|
+| Nazwa | Typ | Wymagany | Opis |
+|------|------|----------|-------------|
 | tenantId | string | Tak |  |
 | commentId | string | Tak |  |
 
-## Response
+## Odpowiedź
 
-Returns: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+Zwraca: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
-## Example
+## Przykład
 
-[inline-code-attrs-start title = 'deletePoll Przykład'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Przykład deletePoll'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async function runDeletePoll(): Promise<void> {
   const tenantId: string = "tenant_9f8b7c6d";
@@ -22,5 +22,3 @@ async function runDeletePoll(): Promise<void> {
   console.log(result);
 }
 [inline-code-end]
-
----

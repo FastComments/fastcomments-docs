@@ -1,65 +1,65 @@
-FastComments mapuje role użytkowników SAML na wewnętrzne uprawnienia, umożliwiając kontrolę dostępu opartą na rolach dla Twojej organizacji.
+FastComments mapuje role użytkowników SAML na wewnętrzne uprawnienia, umożliwiając kontrolę dostępu opartą na rolach w Twojej organizacji.
 
-### FastComments Role System
+### System ról FastComments
 
-FastComments używa systemu uprawnień opartego na rolach, gdzie użytkownicy mogą mieć jedną lub więcej ról, które określają ich poziomy dostępu i możliwości.
+FastComments korzysta z systemu uprawnień opartego na rolach, w którym użytkownicy mogą mieć jedną lub więcej ról, które określają ich poziomy dostępu i możliwości.
 
-### Available FastComments Roles
+### Dostępne role FastComments
 
-#### Administrative Roles
+#### Role administracyjne
 
 **fc-account-owner**
-- **Permissions**: Pełny dostęp administracyjny
-- **Capabilities**: Wszystkie funkcje, zarządzanie płatnościami, zarządzanie użytkownikami
-- **Use Case**: Główni administratorzy konta i właściciele
+- **Uprawnienia**: Pełny dostęp administracyjny
+- **Możliwości**: Wszystkie funkcje, zarządzanie rozliczeniami, zarządzanie użytkownikami
+- **Przypadek użycia**: Główni administratorzy i właściciele kont
 
 **fc-admin-admin**  
-- **Permissions**: Dostęp administracyjny do większości funkcji
-- **Capabilities**: Zarządzanie użytkownikami, konfiguracja, moderacja. **Może zarządzać innymi administratorami.**
-- **Use Case**: Administratorzy drugiego poziomu i personel IT
+- **Uprawnienia**: Dostęp administracyjny do większości funkcji
+- **Możliwości**: Zarządzanie użytkownikami, konfiguracja, moderacja. **Może administrować innymi administratorami.**
+- **Przypadek użycia**: Administratorzy drugiego szczebla i personel IT
 
 **fc-billing-admin**
-- **Permissions**: Zarządzanie rozliczeniami i subskrypcjami
-- **Capabilities**: Metody płatności, faktury, zmiany subskrypcji
-- **Use Case**: Członkowie zespołu finansowego i osoby kontaktowe ds. rozliczeń
+- **Uprawnienia**: Zarządzanie rozliczeniami i subskrypcjami
+- **Możliwości**: Metody płatności, faktury, zmiany subskrypcji
+- **Przypadek użycia**: Członkowie zespołu finansowego i osoby kontaktowe ds. rozliczeń
 
-#### Specialized Roles
+#### Role specjalistyczne
 
 **fc-analytics-admin**
-- **Permissions**: Dostęp do analityki i raportów
-- **Capabilities**: Przeglądanie statystyk serwisu, danych zaangażowania użytkowników
-- **Use Case**: Zespoły marketingowe i analitycy danych
+- **Uprawnienia**: Dostęp do analityki i raportowania
+- **Możliwości**: Przeglądanie statystyk witryny, danych o zaangażowaniu użytkowników
+- **Przypadek użycia**: Zespoły marketingowe i analitycy danych
 
 **fc-api-admin**
-- **Permissions**: Dostęp do API i zarządzanie nim
-- **Capabilities**: Dane uwierzytelniające API, konfiguracja webhooków
-- **Use Case**: Programiści i integratorzy techniczni
+- **Uprawnienia**: Dostęp do API i jego zarządzanie
+- **Możliwości**: Poświadczenia API, konfiguracja webhooków
+- **Przypadek użycia**: Programiści i integratorzy techniczni
 
 **fc-moderator**
-- **Permissions**: Możliwości moderacji komentarzy
-- **Capabilities**: Zatwierdzanie/odrzucanie komentarzy, zarządzanie spamem
-- **Use Case**: Moderatorzy społeczności i menedżerowie treści
+- **Uprawnienia**: Możliwości moderacji komentarzy
+- **Możliwości**: Zatwierdzanie/odrzucanie komentarzy, zarządzanie spamem
+- **Przypadek użycia**: Moderatorzy społeczności i menedżerowie treści
 
-### Role Mapping Configuration
+### Konfiguracja mapowania ról
 
-#### SAML Attribute Sources
+#### Źródła atrybutów SAML
 
-FastComments akceptuje informacje o rolach z różnych nazw atrybutów SAML, aby zapewnić kompatybilność z różnymi dostawcami tożsamości:
+FastComments akceptuje informacje o rolach z różnych nazw atrybutów SAML, aby zapewnić zgodność z różnymi dostawcami tożsamości:
 
-**Standard Attribute Names**:
+**Standardowe nazwy atrybutów**:
 - `roles`
 - `groups` 
 - `memberOf`
 - `role`
 - `group`
 
-**Microsoft/ADFS Attributes**:
+**Atrybuty Microsoft/ADFS**:
 - `http://schemas.microsoft.com/ws/2008/06/identity/claims/role`
 - `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/role`
 
-#### Role Format Support
+#### Obsługiwane formaty ról
 
-**Array Format** *(Preferred)*:
+**Format tablicowy** *(Preferowany)*:
 ```xml
 <saml:Attribute Name="roles">
     <saml:AttributeValue>fc-admin-admin</saml:AttributeValue>
@@ -67,30 +67,30 @@ FastComments akceptuje informacje o rolach z różnych nazw atrybutów SAML, aby
 </saml:Attribute>
 ```
 
-**Comma-Separated Format**:
+**Format rozdzielany przecinkami**:
 ```xml
 <saml:Attribute Name="roles">
     <saml:AttributeValue>fc-admin-admin,fc-moderator</saml:AttributeValue>
 </saml:Attribute>
 ```
 
-**Single Role Format**:
+**Format pojedynczej roli**:
 ```xml
 <saml:Attribute Name="roles">
     <saml:AttributeValue>fc-admin-admin</saml:AttributeValue>
 </saml:Attribute>
 ```
 
-### Identity Provider Role Configuration
+### Konfiguracja ról u dostawcy tożsamości
 
 #### Microsoft Azure AD
 
-1. **App Roles Configuration**:
-   - Zdefiniuj role FastComments w aplikacji Azure AD
+1. **Konfiguracja ról aplikacji**:
+   - Zdefiniuj role FastComments w swojej aplikacji Azure AD
    - Przypisz użytkowników do odpowiednich ról aplikacji
-   - Skonfiguruj roszczenia, aby uwzględniały przypisane role
+   - Skonfiguruj claims tak, aby zawierały przypisane role
 
-2. **Attribute Mapping**:
+2. **Mapowanie atrybutów**:
    ```
    Attribute Name: roles
    Source Attribute: user.assignedroles
@@ -98,12 +98,12 @@ FastComments akceptuje informacje o rolach z różnych nazw atrybutów SAML, aby
 
 #### Okta
 
-1. **Group Assignment**:
+1. **Przypisanie grup**:
    - Utwórz grupy odpowiadające nazwom ról FastComments
    - Przypisz użytkowników do odpowiednich grup
-   - Skonfiguruj deklaracje atrybutów
+   - Skonfiguruj instrukcje atrybutów
 
-2. **Attribute Statement**:
+2. **Instrukcja atrybutu**:
    ```
    Name: roles
    Value: user.groups
@@ -112,102 +112,100 @@ FastComments akceptuje informacje o rolach z różnych nazw atrybutów SAML, aby
 
 #### Google Workspace
 
-1. **Group Mapping**:
+1. **Mapowanie grup**:
    - Utwórz jednostki organizacyjne lub grupy
-   - Nazwij grupy z prefiksami ról FastComments
+   - Nadaj grupom nazwy z prefiksami ról FastComments
    - Skonfiguruj mapowanie atrybutów
 
-2. **Custom Attributes**:
+2. **Atrybuty niestandardowe**:
    ```
    Attribute Name: roles
    Value: Groups or custom schema attribute
    ```
 
-### Default User Behavior
+### Domyślne zachowanie użytkowników
 
-#### Users Without Roles
+#### Użytkownicy bez ról
 
-When a SAML user has no roles or unrecognized roles:
+Gdy użytkownik SAML nie ma ról ani ma role nierozpoznane:
 - Użytkownik jest tworzony jako standardowy komentujący
-- Nie przyznaje się dostępu administracyjnego
+- Nie otrzymuje dostępu administracyjnego
 - Może publikować i zarządzać własnymi komentarzami
 - Nie ma dostępu do funkcji panelu administracyjnego
 
-#### Role Inheritance
+#### Dziedziczenie ról
 
-- Użytkownicy mogą mieć jednocześnie wiele ról
-- Uprawnienia sumują się (stosuje się najwyższy poziom uprawnień)
+- Użytkownicy mogą mieć wiele ról jednocześnie
+- Uprawnienia są kumulatywne (stosuje się najwyższy poziom uprawnień)
 - Zmiany ról w IdP są odzwierciedlane przy następnym logowaniu
 
-### Managing SAML Users
+### Zarządzanie użytkownikami SAML
 
-#### User Creation
+#### Tworzenie użytkownika
 
-When a user logs in via SAML for the first time:
-1. **User Account**: Automatycznie tworzone konto z adresem e-mail jako identyfikatorem
-2. **Role Assignment**: Role przypisywane na podstawie atrybutów SAML
-3. **Profile Information**: Imię/nazwisko wypełniane, jeśli są dostarczone
-4. **Permission Activation**: Role stają się aktywne natychmiastowo
+Gdy użytkownik loguje się przez SAML po raz pierwszy:
+1. **Konto użytkownika**: Automatycznie tworzone z adresem e-mail jako identyfikatorem
+2. **Przypisanie ról**: Role stosowane na podstawie atrybutów SAML
+3. **Informacje o profilu**: Imię/nazwisko uzupełniane, jeśli zostały podane
+4. **Aktywacja uprawnień**: Role stają się aktywne natychmiast
 
-#### Role Updates
+#### Aktualizacje ról
 
-Existing SAML users receive role updates:
-1. **Login Trigger**: Aktualizacje ról następują podczas każdego logowania SAML
-2. **Immediate Effect**: Nowe uprawnienia obowiązują natychmiast
-3. **Role Removal**: Usunięte role są automatycznie wycofywane
-4. **Audit Trail**: Zmiany ról są rejestrowane w logach audytu
+Istniejący użytkownicy SAML otrzymują aktualizacje ról:
+1. **Wyzwalacz logowania**: Aktualizacje ról następują przy każdym logowaniu SAML
+2. **Natychmiastowy efekt**: Nowe uprawnienia stosowane są natychmiast
+3. **Usunięcie roli**: Usunięte role są automatycznie cofane
+4. **Ślad audytu**: Zmiany ról są rejestrowane w dziennikach audytu
 
-### Custom Role Mapping
+### Niestandardowe mapowanie ról
 
-#### Enterprise Customization
+#### Dostosowanie dla przedsiębiorstw
 
-For enterprise customers with specific requirements:
-- Nazwy niestandardowe ról mogą być mapowane na uprawnienia FastComments
+Dla klientów enterprise ze specyficznymi wymaganiami:
+- Niestandardowe nazwy ról mogą być mapowane na uprawnienia FastComments
 - Można wdrożyć złożone hierarchie ról
-- Można skonfigurować kontrolę dostępu specyficzną dla działów
+- Można skonfigurować kontrole dostępu specyficzne dla działów
 
-Contact FastComments support for custom role mapping configurations.
+Skontaktuj się z pomocą techniczną FastComments w sprawie niestandardowych konfiguracji mapowania ról.
 
-#### Role Validation
+#### Walidacja ról
 
-FastComments validates incoming roles:
-- Nieznane role są ignorowane (nie odrzucane)
-- Błędnie sformatowane atrybuty ról są rejestrowane do celów rozwiązywania problemów
+FastComments waliduje przychodzące role:
+- Nierozpoznane role są ignorowane (nie odrzucane)
+- Nieprawidłowo sformatowane atrybuty ról są rejestrowane w celu rozwiązywania problemów
 - Użytkownicy zachowują istniejące role, jeśli asercja SAML nie zawiera informacji o rolach
 
-### Best Practices
+### Najlepsze praktyki
 
-#### Role Management
+#### Zarządzanie rolami
 
-1. **Principle of Least Privilege**: Przypisuj minimalnie niezbędne uprawnienia
-2. **Regular Auditing**: Regularnie przeglądaj role użytkowników i dostęp  
-3. **Clear Naming**: Używaj opisowych nazw grup w swoim IdP
-4. **Documentation**: Prowadź dokumentację przypisań ról
+1. **Zasada najmniejszych uprawnień**: Przypisuj minimalne niezbędne uprawnienia
+2. **Regularne audyty**: Okresowo przeglądaj role i dostępy użytkowników  
+3. **Jasne nazewnictwo**: Używaj opisowych nazw grup w swoim IdP
+4. **Dokumentacja**: Prowadź dokumentację przypisań ról
 
-#### Security Considerations
+#### Kwestie bezpieczeństwa
 
-1. **Role Attributes**: Upewnij się, że atrybuty ról są odpowiednio zabezpieczone w odpowiedziach SAML
-2. **Attribute Validation**: Sprawdź, że tylko upoważnione systemy mogą przypisywać role
-3. **Access Reviews**: Regularnie przeglądaj przypisania ról administracyjnych
-4. **Monitoring**: Monitoruj zmiany ról i działania administracyjne
+1. **Atrybuty ról**: Upewnij się, że atrybuty ról są odpowiednio zabezpieczone w odpowiedziach SAML
+2. **Walidacja atrybutów**: Zweryfikuj, że tylko autoryzowane systemy mogą przypisywać role
+3. **Przeglądy dostępu**: Regularnie przeglądaj przypisania ról administracyjnych
+4. **Monitorowanie**: Monitoruj zmiany ról i działania administracyjne
 
-### Troubleshooting Role Issues
+### Rozwiązywanie problemów z rolami
 
-#### Common Problems
+#### Częste problemy
 
-**Roles Not Applied**:
+**Role nie są stosowane**:
 - Sprawdź, czy nazwy atrybutów SAML odpowiadają obsługiwanym formatom
 - Zweryfikuj, czy IdP wysyła informacje o rolach
-- Potwierdź, czy wartości ról dokładnie odpowiadają nazwom ról FastComments
+- Upewnij się, że wartości ról dokładnie odpowiadają nazwom ról FastComments
 
-**Access Denied**:
-- Zweryfikuj, czy użytkownik ma odpowiednią rolę przypisaną w IdP
+**Odmowa dostępu**:
+- Zweryfikuj, czy użytkownik ma przypisaną odpowiednią rolę w IdP
 - Sprawdź pisownię roli i wielkość liter
-- Potwierdź, że rola jest poprawnie sformatowana w odpowiedzi SAML
+- Upewnij się, że rola jest poprawnie sformatowana w odpowiedzi SAML
 
-**Missing Permissions**:
+**Brakujące uprawnienia**:
 - Przejrzyj definicje ról i wymagane uprawnienia
-- Sprawdź konfliktujące przypisania ról
-- Sprawdź, czy użytkownik zalogował się po zmianach ról
-
----
+- Sprawdź, czy nie ma konfliktowych przypisań ról
+- Zweryfikuj, czy użytkownik zalogował się po zmianach ról

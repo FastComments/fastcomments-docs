@@ -1,4 +1,3 @@
----
 Processen for opsætning af White Labeling er som følger:
 
 1. Vælg, hvordan fakturering skal håndteres.
@@ -11,5 +10,3 @@ Processen for opsætning af White Labeling er som følger:
    2. `TenantUser` er en administrator med et sæt privilegier i `Tenant`.
    3. `TenantPackage` er en pakke med et sæt grænser og priser tilgængelige for en `Tenant`.
 3. Integrer med vores [API](/guide-api.html) eller brug [skripter](https://github.com/FastComments/fastcomments-code-examples/tree/master/white-labeling) til at onboarde tenants.
-
----

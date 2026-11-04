@@ -1,4 +1,3 @@
----
 #### Télécharger le plugin
 
 Téléchargez le ZIP de la dernière version depuis le <a href="https://github.com/FastComments/fastcomments-moodle/" target="_blank">dépôt GitHub FastComments Moodle</a>.
@@ -20,5 +19,3 @@ Connectez-vous en tant qu'administrateur du site et naviguez vers **Administrati
 #### Configurer le plugin
 
 Après l'installation, allez dans **Administration du site > Plugins > Plugins locaux > FastComments** pour saisir vos paramètres. Consultez la section [Configuration](#moodle-configuration) pour les détails sur chaque option.
-
----

@@ -1,4 +1,3 @@
----
 ## Parameter
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
@@ -34,5 +33,3 @@ DefaultAPI.updateNotification(tenantId: tenantId, id: id, updateNotificationBody
     }
 }
 [inline-code-end]
-
----

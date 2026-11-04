@@ -1,4 +1,3 @@
----
 [api-resource-header-start name = 'PendingWebhookEvent'; route = 'GET /api/v1/pending-webhook-events'; creditsCost = 2; api-resource-header-end]
 
 Questa route restituisce un elenco di eventi webhook in sospeso sotto il parametro `pendingWebhookEvents`.
@@ -37,5 +36,3 @@ interface PendingWebhookEventsGetResponse {
     pendingWebhookEvents?: PendingWebhookEvent[]
 }
 [inline-code-end]
-
----

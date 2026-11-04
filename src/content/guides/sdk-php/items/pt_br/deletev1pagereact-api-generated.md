@@ -35,5 +35,3 @@ try {
     echo 'Exception when calling PublicApi->deleteV1PageReact: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

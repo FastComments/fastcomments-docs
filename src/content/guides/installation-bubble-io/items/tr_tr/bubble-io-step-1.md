@@ -1,4 +1,3 @@
----
 Öncelikle FastComments eklemek istediğiniz sayfa/yerleşime gidin. Bubble editöründe, Görsel Öğeler kenar çubuğundan bir **HTML** öğesini sayfanıza sürükleyip bırakın.
 
 <div class="screenshot white-bg">
@@ -7,5 +6,3 @@
 </div>
 
 HTML öğesi, FastComments widget'ını doğrudan Bubble uygulamanıza gömmenize olanak tanır.
-
----

@@ -1,55 +1,55 @@
-### Real-Time Updates
+### Gerçek Zamanlı Güncellemeler
 
-Image Chat, tüm bağlı kullanıcılar arasında tüm konuşmaları gerçek zamanlı senkronize etmek için WebSocket bağlantıları kullanır. Biri yeni bir işaretçi oluşturduğunda, yorum eklediğinde veya bir tartışmayı sildiğinde, aynı resmi görüntüleyen diğer tüm kullanıcılar sayfayı yenilemeye gerek kalmadan güncellemeyi hemen görür.
+Image Chat, tüm konuşmaları bağlı tüm kullanıcılar arasında gerçek zamanlı olarak senkronize etmek için WebSocket bağlantıları kullanır. Birisi yeni bir işaretleyici oluşturduğunda, yorum eklediğinde veya bir tartışmayı sildiğinde, aynı görüntüyü görüntüleyen diğer tüm kullanıcılar sayfayı yenilemeden güncellemeyi anında görür.
 
-### How WebSocket Sync Works
+### WebSocket Senkronizasyonu Nasıl Çalışır
 
-Image Chat başlatıldığında, widget FastComments sunucularına bir WebSocket bağlantısı kurar. Bu bağlantı kullanıcının oturumu süresince açık kalır ve geçerli resimle ilgili güncellemeleri dinler.
+Image Chat'i başlattığınızda, widget FastComments sunucularına bir WebSocket bağlantısı kurar. Bu bağlantı, kullanıcının oturumu boyunca açık kalır ve mevcut görüntüyle ilgili güncellemeleri dinler.
 
-WebSocket sistemi Image Chat için üç tür yayın mesajı kullanır. `new-image-chat` olayı birisi resme yeni bir işaretçi oluşturduğunda tetiklenir. `image-chat-updated` olayı birisi mevcut bir konuşmayı güncellediğinde tetiklenir. `deleted-image-chat` olayı birisi bir işaretçiyi sildiğinde tetiklenir.
+WebSocket sistemi, Image Chat için üç tür yayın mesajı kullanır. `new-image-chat` olayı, birisi görüntü üzerinde yeni bir işaretleyici oluşturduğunda tetiklenir. `image-chat-updated` olayı, birisi mevcut bir konuşmayı güncellediğinde tetiklenir. `deleted-image-chat` olayı, birisi bir işaretleyiciyi sildiğinde tetiklenir.
 
-### Broadcast ID System
+### Yayın Kimliği Sistemi
 
-Kullanıcıların kendi eylemlerinin kendilerine geri yayıldığını görerek yankı etkilerini önlemek için her güncelleme benzersiz bir `broadcastId` içerir. Bir kullanıcı bir işaretçi oluşturduğunda veya güncellediğinde, istemcisi o işlem için bir UUID üretir. WebSocket güncellemeyi tüm istemcilere yayınladığında, kaynağı oluşturan istemci kendi `broadcastId` ile eşleştiği için güncellemeyi yok sayar.
+Kullanıcıların kendi eylemlerinin kendilerine geri yayınlandığı yankı etkilerini önlemek için her güncelleme benzersiz bir `broadcastId` içerir. Bir kullanıcı bir işaretleyici oluşturduğunda veya güncellediğinde, istemcisi bu işlem için bir UUID oluşturur. WebSocket güncellemeyi tüm istemcilere geri yayınladığında, kaynak istemci, güncelleme kendi `broadcastId` değeriyle eşleştiği için onu yok sayar.
 
-Bu, kullanıcıların sunucu üzerinden gidip gelmeyi beklemeden değişikliklerini arayüzde anında görmesini sağlarken, diğer tüm kullanıcıların da güncellemeyi almasını garanti eder.
+Bu, kullanıcıların değişikliklerini sunucu üzerinden gidiş-dönüşü beklemek zorunda kalmadan UI'da anında görmesini sağlarken, diğer tüm kullanıcıların da güncellemeyi almasını garanti eder.
 
-### Connection Resilience
+### Bağlantı Dayanıklılığı
 
-WebSocket bağlantısı ağ sorunları veya sunucu bakımı nedeniyle kesilirse, widget otomatik olarak yeniden bağlanmaya çalışır. Yeniden bağlanma süresince kullanıcılar mevcut işaretçilerle etkileşime devam edebilir, ancak bağlantı yeniden kurulana kadar diğer kullanıcıların gerçek zamanlı güncellemelerini göremezler.
+WebSocket bağlantısı ağ sorunları veya sunucu bakımı nedeniyle kesilirse, widget otomatik olarak yeniden bağlanmayı dener. Yeniden bağlanma süresi boyunca kullanıcılar mevcut işaretleyicilerle etkileşime devam edebilir, ancak bağlantı yeniden kurulana kadar diğer kullanıcılardan gelen gerçek zamanlı güncellemeleri göremezler.
 
-Bir kez yeniden bağlanıldığında, widget herhangi bir güncellemenin kaçırılmadığından emin olmak için yeniden senkronize olur. Bu, kullanıcı müdahalesi gerektirmeden şeffaf bir şekilde gerçekleşir.
+Yeniden bağlandıktan sonra, widget hiçbir güncellemenin kaçırılmadığından emin olmak için yeniden senkronize olur. Bu, kullanıcı müdahalesi gerektirmeden şeffaf bir şekilde gerçekleşir.
 
-### Bandwidth Considerations
+### Bant Genişliği Hususları
 
-WebSocket mesajları hafiftir ve yalnızca durumu senkronize etmek için gerekli temel bilgileri içerir. Yeni bir işaretçi oluşturmak genellikle 1KB'den daha az bant genişliği kullanır. Sistem ayrıca yüksek etkinlik dönemlerinde mesaj sıklığını azaltmak için akıllı toplu işlemeyi içerir.
+WebSocket mesajları hafiftir ve durumu senkronize etmek için gereken yalnızca temel bilgileri içerir. Yeni bir işaretleyici oluşturmak genellikle 1KB'den daha az bant genişliği kullanır. Sistem ayrıca, yüksek etkinlik dönemlerinde mesaj sıklığını azaltmak için akıllı toplu işlem (batching) içerir.
 
-FastComments kontrol panelinizdeki kullanım metrikleriniz `pubSubMessageCount` ve `pubSubBandwidth` ile gerçek zamanlı senkronizasyon etkinliğini siteleriniz genelinde izlemenizi sağlar.
+FastComments panelindeki kullanım metrikleriniz `pubSubMessageCount` ve `pubSubBandwidth` değerlerini takip eder, böylece siteleriniz genelindeki gerçek zamanlı senkronizasyon etkinliğini izleyebilirsiniz.
 
-### Cross-Tab Synchronization
+### Sekmeler Arası Senkronizasyon
 
-Kullanıcının aynı sayfayı birden fazla tarayıcı sekmesinde açık tutması durumunda, bir sekmedeki güncellemeler diğer sekmelerde hemen görünür. Bu, aynı WebSocket senkronizasyon mekanizmasıyla çalışır ve ek bir yapılandırma gerektirmez.
+Bir kullanıcının aynı sayfayı birden fazla tarayıcı sekmesinde açık tutması durumunda, bir sekmedeki güncellemeler diğer sekmelerde anında görünür. Bu, aynı WebSocket senkronizasyon mekanizmasıyla çalışır ve ek yapılandırma gerektirmez.
 
-Kullanıcılar sitenizi aynı anda birden fazla cihazda açık tutabilir ve hepsi senkronize kalır. Masaüstünde oluşturulan bir işaretçi, her iki cihaz da aynı resmi görüntülüyorsa kullanıcının tabletinde anında görünür.
+Kullanıcılar sitenizi aynı anda birden fazla cihazda açık tutabilir ve tümü senkronize kalır. Masaüstü bilgisayarda oluşturulan bir işaretleyici, her iki cihaz da aynı görüntüyü görüntülüyorsa kullanıcının tabletinde anında görünür.
 
-### Security
+### Güvenlik
 
-WebSocket mesajları güvenli bağlantılar (WSS) üzerinden aktarılır ve kullanıcıların yalnızca yetkili oldukları konuşmalar için güncellemeleri almasını sağlamak üzere kiracı doğrulaması içerir. Sunucu, yetkisiz erişimi veya manipülasyonu önlemek için yayınlamadan önce tüm işlemleri doğrular.
+WebSocket mesajları güvenli bağlantılar (WSS) üzerinden iletilir ve kullanıcıların yalnızca görmeye yetkili oldukları konuşmaların güncellemelerini almasını sağlamak için kiracı (tenant) doğrulaması içerir. Sunucu, yetkisiz erişimi veya manipülasyonu önlemek için tüm işlemleri yayınlamadan önce doğrular.
 
-### Offline Behavior
+### Çevrimdışı Davranış
 
-Kullanıcılar tamamen çevrimdışıyken mevcut işaretçileri görüntüleyebilirler ancak yeni bir işaretçi oluşturamaz veya başkalarının güncellemelerini göremezler. Widget çevrimdışı durumu algılar ve uygun bir ileti gösterir.
+Kullanıcılar tamamen çevrimdışıyken mevcut işaretleyicileri görüntülemeye devam edebilir, ancak yenilerini oluşturamaz veya başkalarından gelen güncellemeleri göremezler. Widget çevrimdışı durumu algılar ve uygun bir mesaj görüntüler.
 
-Bir kullanıcı çevrimdışıyken bir işaretçi oluşturmaya çalışır ve ardından çevrimiçi hale gelirse, işlem kuyruklanmak yerine başarısız olur; bu, veri tutarlılığını sağlar. Kullanıcılar bağlantıları geri geldiğinde işlemi yeniden denemelidir.
+Bir kullanıcı çevrimdışıyken bir işaretleyici oluşturmaya çalışır ve ardından tekrar çevrimiçi olursa, işlem veri tutarlılığını sağlamak için kuyruğa alınmak yerine başarısız olur. Kullanıcılar bağlantıları geri yüklendikten sonra işlemi yeniden denemelidir.
 
-### Performance Impact
+### Performans Etkisi
 
-WebSocket bağlantısının performans üzerinde minimal etkisi vardır. Güncelleme olmadığında bağlantı boşta kalır ve yalnızca etkinlik olduğunda mesajları işler. Orta düzey işaretçi etkinliğine sahip tipik bir resimde, WebSocket görüntünün kendisini render etmekten daha az CPU kullanır.
+WebSocket bağlantısının performans üzerindeki etkisi minimumdur. Güncelleme olmadığında bağlantı boşta kalır ve yalnızca etkinlik gerçekleştiğinde mesajları işler. Orta düzeyde işaretleyici etkinliğine sahip tipik bir görüntüde, WebSocket, görüntünün kendisini oluşturmaktan daha az CPU kullanır.
 
-Yüzlerce eşzamanlı kullanıcı ve yüksek işaretçi oluşturma etkinliği olan sayfalarda, sistem bireysel istemci bağlantılarını etkilemeden performansı korumak için yatay olarak ölçeklenir.
+Aynı anda yüzlerce kullanıcıya ve yüksek işaretleyici oluşturma etkinliğine sahip sayfalarda, sistem bireysel istemci bağlantılarını etkilemeden performansı korumak için yatay olarak ölçeklenir.
 
-### Collaborative Use Cases
+### İşbirliğine Dayalı Kullanım Senaryoları
 
-Gerçek zamanlı senkronizasyon, Image Chat'i işbirlikçi iş akışları için özellikle güçlü kılar. Tasarım ekipleri, herkes işaretçi yerleşimlerini gerçek zamanlı görerek mockup'ları birlikte gözden geçirebilir. Müşteri destek ekipleri, sorunları belirlemek için ekran görüntülerini birlikte notlandırabilir. Eğitim grupları, oluşturuldukça herkesin birbirinin işaretçilerini gördüğü diyagramları tartışabilir.
+Gerçek zamanlı senkronizasyon, Image Chat'i işbirliğine dayalı iş akışları için özellikle güçlü kılar. Tasarım ekipleri, herkes işaretleyici yerleşimlerini gerçek zamanlı görerek mockup'ları birlikte inceleyebilir. Müşteri destek ekipleri, sorunları belirlemek için ekran görüntülerini işbirliği içinde işaretleyebilir. Eğitim grupları, tüm katılımcıların birbirlerinin işaretleyicilerini oluşturuldukları anda gördüğü diyagramları tartışabilir.
 
 Anında geri bildirim, kullanıcıların güncellemeleri görmek için yenileme yapması gereken geleneksel yorum sistemlerine kıyasla daha ilgi çekici ve üretken bir işbirliği deneyimi yaratır.

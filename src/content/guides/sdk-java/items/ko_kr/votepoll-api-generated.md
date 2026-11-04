@@ -1,4 +1,3 @@
----
 ## 매개변수
 
 | 이름 | 타입 | 위치 | 필수 | 설명 |
@@ -53,5 +52,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

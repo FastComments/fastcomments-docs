@@ -23,5 +23,3 @@ api->addHashTag(utility::conversions::to_string_t("my-tenant-123"), request)
         (void)resp;
     });
 [inline-code-end]
-
----

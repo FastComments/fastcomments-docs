@@ -1,4 +1,3 @@
----
 ## Параметры
 
 | Имя | Тип | Местоположение | Обязательно | Описание |
@@ -38,5 +37,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetUserBadgeProgressByUserId`: %v\n", resp)
 }
 [inline-code-end]
-
----

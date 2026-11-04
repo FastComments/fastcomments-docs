@@ -1,4 +1,3 @@
----
 Alle ændringer af Comment-objektet i systemet udløser en begivenhed, som ender i en kø.
 
 Den indledende webhook-begivenhed sendes normalt inden for seks sekunder efter, at begivenhedskilden indtræffer.
@@ -12,5 +11,3 @@ et minut. Hvis det fejler to gange, vil det derefter vente to minutter, og så v
 overbelaster din API, hvis den går ned på grund af belastning.
 
 Webhooks kan annulleres fra [log-siden](https://fastcomments.com/auth/my-account/manage-data/webhooks/logs).
-
----

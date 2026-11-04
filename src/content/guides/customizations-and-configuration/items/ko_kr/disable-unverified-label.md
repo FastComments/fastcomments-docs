@@ -8,5 +8,3 @@
 또한, 이 기능은 코드를 작성하지 않고도 커스터마이제이션 UI에서 사용할 수 있습니다:
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-unverified-comment-label']; selector = '.disable-unverified-comment-label'; alt='비활성화된 확인되지 않은 댓글 라벨 체크박스가 선택된 위젯 커스터마이징 페이지'; title='확인되지 않은 라벨 비활성화' app-screenshot-end]
-
----

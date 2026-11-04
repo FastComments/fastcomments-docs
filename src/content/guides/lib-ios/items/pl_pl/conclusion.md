@@ -8,5 +8,3 @@ Jeśli napotkasz jakiekolwiek problemy lub masz pytania dotyczące biblioteki iO
 ## Współtworzenie
 
 Zapraszamy do współpracy! Odwiedź [repozytorium GitHub](https://github.com/FastComments/fastcomments-ios), aby zapoznać się z wytycznymi dotyczącymi kontrybucji.
-
----

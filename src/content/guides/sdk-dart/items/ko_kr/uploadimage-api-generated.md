@@ -1,4 +1,3 @@
----
 이미지 업로드 및 리사이즈
 
 ## Parameters
@@ -32,5 +31,3 @@ try {
     print('Exception when calling PublicApi->uploadImage: $e\n');
 }
 [inline-code-end]
-
----

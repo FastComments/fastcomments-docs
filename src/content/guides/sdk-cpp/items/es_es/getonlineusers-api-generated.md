@@ -29,5 +29,3 @@ api->getOnlineUsers(tenantId, urlId, *options).then([](pplx::task<std::shared_pt
     }
 });
 [inline-code-end]
-
----

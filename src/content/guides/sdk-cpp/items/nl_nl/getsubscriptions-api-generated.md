@@ -27,5 +27,3 @@ api->getSubscriptions(tenant, user).then(
     }
 );
 [inline-code-end]
-
----

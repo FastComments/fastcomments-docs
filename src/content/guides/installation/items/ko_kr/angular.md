@@ -69,5 +69,3 @@ export class AppModule { }
 위젯은 변경 감지를 사용하므로 구성 객체의 어떤 속성이든 변경되면 위젯이 다시 로드됩니다.
 
 Angular 컴포넌트가 지원하는 구성은 <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">여기</a>에서 확인할 수 있습니다.
-
----

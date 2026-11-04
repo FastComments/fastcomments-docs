@@ -1,22 +1,21 @@
-Enable or disable notifications for a page. When users are subscribed to a page, notifications are created
-for new root comments, and also
+啟用或停用頁面的通知。當使用者訂閱某個頁面時，系統會為新的根留言建立通知，並且
 
-## Parameters
+## 參數
 
-| 名稱 | 類型 | 必要 | 說明 |
+| 名稱 | 類型 | 必填 | 說明 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| urlId | string | Yes |  |
-| url | string | Yes |  |
-| pageTitle | string | Yes |  |
-| subscribedOrUnsubscribed | string | Yes |  |
-| sso | string | No |  |
+| tenantId | string | 是 |  |
+| urlId | string | 是 |  |
+| url | string | 是 |  |
+| pageTitle | string | 是 |  |
+| subscribedOrUnsubscribed | string | 是 |  |
+| sso | string | 否 |  |
 
-## Response
+## 回應
 
-返回: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/UpdateUserNotificationPageSubscriptionStatusResponse.h)
+回傳：[`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/UpdateUserNotificationPageSubscriptionStatusResponse.h)
 
-## Example
+## 範例
 
 [inline-code-attrs-start title = 'updateUserNotificationPageSubscriptionStatus 範例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -29,6 +28,6 @@ boost::optional<utility::string_t> sso = boost::make_optional<utility::string_t>
 
 api->updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitle, subscription, sso)
     .then([](std::shared_ptr<UpdateUserNotificationPageSubscriptionStatusResponse> resp) {
-        // 如有需要，處理 resp
+        // process resp if needed
     });
 [inline-code-end]

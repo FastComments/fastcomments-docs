@@ -23,5 +23,3 @@ let (response, httpResponse) = client.putAwardBadge(
 if response.isSome:
   let award = response.get()
 [inline-code-end]
-
----

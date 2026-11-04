@@ -32,5 +32,3 @@ DefaultAPI.deleteTenant(tenantId: tenantId, id: id, sure: sure) { (response, err
     }
 }
 [inline-code-end]
-
----

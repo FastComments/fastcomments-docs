@@ -1,4 +1,3 @@
----
 - Python >= 3.8
 
 Базова установка є чистою стандартною бібліотекою і надає утиліти SSO. Згенерований
@@ -9,4 +8,3 @@ API‑клієнт (`DefaultApi`/`PublicApi`/`ModerationApi`) потребує �
 ```bash
 pip install "fastcomments[client] @ git+https://github.com/fastcomments/fastcomments-python.git@v3.1.0"
 ```
----

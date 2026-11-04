@@ -6,5 +6,3 @@ Agora, se visualizarmos uma postagem do blog, devemos ver o FastComments!
 </div>
 
 Parabéns por configurar o FastComments com Systeme.io! Se você encontrou um Domain Error, ou gostaria de aprender como personalizar a área de comentários, continue lendo!
-
----

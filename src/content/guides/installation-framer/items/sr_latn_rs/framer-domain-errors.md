@@ -10,5 +10,3 @@ Razlog je što FastComments ne zna da treba da dozvoli korišćenje vašeg nalog
 U tom slučaju, rešenje je jednostavno. Potrebno je samo da dodate svoj sajt na vaš FastComments.com nalog.
 
 [Idite ovde da dodate svoj sajt na vaš nalog.](https://fastcomments.com/auth/my-account/configure-domains)
-
----

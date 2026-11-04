@@ -40,5 +40,3 @@ Kod parçacıkları her zaman soldan sağa okunur.
 ### Çoğul Formlar
 
 Bir sayıyı içeren metinler, örneğin "3 yorum", her dil için doğru çoğul formu kullanır. Örneğin, Arapça tek, iki, birkaç ve çok için ayrı formlara sahiptir, Rusça ve Lehçe ise birkaç ve çok için ayrı formlara sahiptir.
-
----

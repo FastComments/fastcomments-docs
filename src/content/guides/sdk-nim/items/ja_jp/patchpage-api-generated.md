@@ -1,4 +1,3 @@
----
 ## パラメータ
 
 | 名前 | タイプ | 必須 | 説明 |
@@ -24,5 +23,3 @@ let (response, httpResponse) = client.patchPage(
 if response.isSome:
   let resp = response.get()
 [inline-code-end]
-
----

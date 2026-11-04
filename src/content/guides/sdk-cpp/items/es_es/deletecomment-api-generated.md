@@ -26,5 +26,3 @@ api->deleteComment(tenantId, commentId, options).then([](pplx::task<std::shared_
     }
 });
 [inline-code-end]
-
----

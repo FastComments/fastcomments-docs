@@ -31,5 +31,3 @@ interface PageLikeResponse {
     reason?: string
 }
 [inline-code-end]
-
----

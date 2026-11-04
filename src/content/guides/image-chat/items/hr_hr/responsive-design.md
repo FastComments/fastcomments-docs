@@ -1,49 +1,49 @@
-### Percentage-Based Positioning
+### Pozicioniranje na temelju postotaka
 
-Image Chat koristi koordinate temeljene na postocima umjesto pikselnih koordinata za pozicioniranje markera razgovora na slikama. Kada korisnik klikne na sliku, widget pretvara pikselne koordinate klika u postotke širine i visine slike. Ovaj pristup osigurava da markeri ostanu na ispravnom mjestu bez obzira na način prikaza slike.
+Image Chat koristi koordinate na temelju postotaka umjesto pikselnih koordinata za pozicioniranje oznaka razgovora na slikama. Kada korisnik klikne na sliku, widget pretvara pikselne koordinate klika u postotke širine i visine slike. Ovaj pristup osigurava da oznake ostaju na ispravnoj lokaciji bez obzira na to kako je slika prikazana.
 
-Na primjer, ako korisnik klikne 250 piksela od lijeve ivice slike širine 1000px, widget to pohranjuje kao 25% od lijeve strane. Kada drugi korisnik pogleda istu sliku široku 500px na mobilnom uređaju, marker se pojavljuje 125 piksela od lijeve strane, što je opet 25% širine.
+Na primjer, ako korisnik klikne 250 piksela od lijevog ruba slike širine 1000px, widget to sprema kao 25% s lijeva. Kada drugi korisnik pregledava istu sliku širine 500px na mobilnom uređaju, oznaka se pojavljuje 125 piksela od lijevog ruba, što je i dalje 25% širine.
 
-### Benefits for Responsive Layouts
+### Prednosti za responzivne rasporede
 
-Sustav temeljen na postocima omogućuje da Image Chat besprijekorno radi na svim veličinama i orijentacijama uređaja. Vaše se slike mogu prikazivati u različitim veličinama ovisno o širini ekrana, CSS pravilima ili ograničenjima kontejnera, ali se markeri uvijek pravilno poravnaju s namjenjenim lokacijama.
+Ovaj postotni sustav omogućuje da Image Chat besprijekorno radi na svim veličinama i orijentacijama uređaja. Vaše slike mogu biti prikazane u različitim veličinama ovisno o širini zaslona, CSS pravilima ili ograničenjima spremnika, ali se oznake uvijek ispravno poravnavaju s namijenjenim lokacijama.
 
-Korisnici na stolnim računalima s velikim monitorima vide markere na istim relativnim pozicijama kao i korisnici na pametnim telefonima s malim ekranima. Markeri se proporcionalno skaliraju sa samom slikom.
+Korisnici na stolnim računalima s velikim monitorima vide oznake u istim relativnim pozicijama kao korisnici na pametnim telefonima s malim zaslonima. Oznake se skaliraju proporcionalno sa samom slikom.
 
-### Image Scaling and Aspect Ratio
+### Skaliranje slika i omjer slike
 
-Dokle god vaša slika zadržava svoj omjer širine i visine pri skaliranju (što je zadano ponašanje preglednika), markeri temeljeni na postocima ostat će savršeno poravnati. Widget pretpostavlja da se slike proporcionalno skaliraju i izračunava pozicije na temelju te pretpostavke.
+Dok god vaša slika zadržava omjer pri skaliranju (što je zadano ponašanje preglednika), oznake na temelju postotaka ostat će savršeno poravnate. Widget pretpostavlja da se slike skaliraju proporcionalno i izračunava pozicije na temelju te pretpostavke.
 
-Ako primijenite CSS koji izobličuje omjer slike (kao npr. korištenjem `object-fit: cover` s određenim dimenzijama), pozicije markera možda se neće pravilno poravnati. Za najbolje rezultate dopustite slikama da se prirodno skaliraju ili koristite `object-fit: contain` kako biste održali omjer.
+Ako primijenite CSS koji iskrivljuje omjer slike (poput korištenja `object-fit: cover` s određenim dimenzijama), pozicije oznaka možda se neće ispravno poravnati. Za najbolje rezultate dopustite slikama da se prirodno skaliraju ili koristite `object-fit: contain` za očuvanje omjera slike.
 
-### Chat Square Sizing
+### Veličina kvadrata razgovora
 
-Vizualna veličina markera razgovora također je temeljena na postotcima. Opcija konfiguracije `chatSquarePercentage` zadano je postavljena na 5%, što znači da je svaki kvadrat 5% širine slike. To osigurava konzistentnu vizualnu težinu na različitim veličinama slika.
+Vizualna veličina oznaka razgovora također se temelji na postocima. Konfiguracijska opcija `chatSquarePercentage` ima zadanu vrijednost od 5%, što znači da je svaki kvadrat 5% širine slike. To osigurava dosljednu vizualnu težinu u različitim veličinama slika.
 
-Na slici širine 1000px sa zadanim postavkama od 5%, markeri su kvadratni od 50px. Na slici širine 500px isti markeri su kvadratni od 25px. Oni ostaju proporcionalni veličini slike.
+Na slici širine 1000px sa zadanom postavkom od 5%, oznake su kvadrati od 50px. Na slici širine 500px, iste oznake su kvadrati od 25px. Ostaju proporcionalne veličini slike.
 
-### Mobile Behavior
+### Ponašanje na mobilnim uređajima
 
-Na zaslonima širine manjom od 768px, Image Chat prelazi na izgled optimiziran za mobilne uređaje. Prozori razgovora se otvaraju preko cijelog zaslona umjesto da lebde pored markera. To poboljšava upotrebljivost na malim ekranima gdje bi lebdeći prozori previše zakrivali sliku.
+Na zaslonima širine manje od 768px, Image Chat prelazi na mobilno optimizirani raspored. Prozori razgovora otvaraju se preko cijelog zaslona umjesto da lebde uz oznaku. To pruža bolju upotrebljivost na malim zaslonima gdje bi leteći prozori prekrili previše slike.
 
-Sami markeri ostaju vidljivi i klikabilni na svojim pozicijama temeljenim na postocima. Korisnici i dalje mogu vidjeti gdje se nalaze sve rasprave i dodirnuti markere kako bi otvorili sučelje za razgovor preko cijelog zaslona.
+Same oznake ostaju vidljive i klikabilne na svojim pozicijama temeljenim na postocima. Korisnici i dalje mogu vidjeti gdje se nalaze svi razgovori i dodirnuti oznake za otvaranje sučelja razgovora preko cijelog zaslona.
 
-### Dynamic Image Loading
+### Dinamičko učitavanje slika
 
-Sustav temeljen na postocima radi ispravno čak i kada se slike učitavaju asinkrono ili mijenjaju veličinu nakon učitavanja stranice. Widget prati element slike i preračunava pozicije markera kad god se dimenzije slike promijene.
+Postotni sustav ispravno radi čak i kada se slike učitavaju asinkrono ili mijenjaju veličinu nakon učitavanja stranice. Widget prati element slike i ponovno izračunava pozicije oznaka svaki put kada se dimenzije slike promijene.
 
-Ako koristite lijeno učitavanje slika ili implementirate responzivne slike s različitim veličinama na različitim prekidnim točkama, markeri se automatski prilagođavaju kada se veličina slike promijeni.
+Ako koristite lazy-loading slika ili implementirate responzivne slike s različitim veličinama na različitim prijelomnim točkama, oznake se automatski prilagođavaju kada se veličina slike promijeni.
 
-### Cross-Device Consistency
+### Dosljednost među uređajima
 
-Budući da se koordinate pohranjuju u bazi podataka kao postoci, rasprava stvorena na stolnom računalu pojavljuje se na točno istoj relativnoj lokaciji kada se pogleda na tabletu ili telefonu. Korisnici mogu surađivati preko uređaja bez bilo kakvih neslaganja u pozicioniranju.
+Budući da se koordinate spremaju kao postoci u bazi podataka, razgovor stvoren na stolnom računalu pojavljuje se na potpuno istoj relativnoj lokaciji kada se pregledava na tabletu ili telefonu. Korisnici mogu surađivati na različitim uređajima bez ikakvih nekonzistentnosti u pozicioniranju.
 
-Ovo radi obostrano. Rasprava stvorena dodirom određene točke na mobilnom uređaju pojavljuje se na istoj relativnoj poziciji kada se pogleda na velikom stolnom monitoru.
+Ovo radi u oba smjera. Razgovor stvoren dodirivanjem određene točke na mobilnom uređaju pojavljuje se na istoj relativnoj poziciji kada se pregledava na velikom monitoru stolnog računala.
 
-### Viewport Considerations
+### Razmatranja o vidljivom području
 
-Widget izračunava postotke u odnosu na sam element slike, a ne u odnosu na viewport. To znači da pomicanje stranice ili promjena veličine prozora preglednika ne utječe na pozicije markera. Markeri ostaju vezani za svoje lokacije na slici bez obzira na promjene prikaza.
+Widget izračunava postotke u odnosu na sam element slike, a ne na vidljivo područje (viewport). To znači da pomicanje stranice ili promjena veličine prozora preglednika ne utječe na pozicije oznaka. Oznake ostaju usidrene na svojim lokacijama na slici bez obzira na promjene vidljivog područja.
 
-### Future-Proofing Content
+### Buduća otpornost sadržaja
 
-Pristup temeljen na postocima čini vaše rasprave o slikama otpornima na promjene u izgledu, dizajnu ili ekosustavu uređaja. Kako se pojavljuju nove veličine zaslona i uređaji, postojeće rasprave nastavit će se pravilno prikazivati bez potrebe za ažuriranjima ili migracijama.
+Pristup temeljen na postocima čini vaše slikovne razgovore otpornima na promjene u rasporedu, dizajnu ili ekosustavu uređaja. Kako se pojavljuju nove veličine zaslona i uređaji, postojeći razgovori nastavit će se ispravno prikazivati bez potrebe za bilo kakvim ažuriranjima ili migracijama.

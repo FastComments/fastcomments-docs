@@ -25,5 +25,3 @@
 ### Промяна на текущата страница
 
 FastComments поддържа SPA и сложни приложения. Промяната на текущата страница е лесна и е описана [тук](/guide-customizations-and-configuration.html#switching-comment-threads).
-
----

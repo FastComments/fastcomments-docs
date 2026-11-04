@@ -9,5 +9,3 @@
 Αυτό μπορεί επίσης να γίνει χωρίς κώδικα. Στη σελίδα προσαρμογής widget, δείτε την επιλογή "Disable The Reply Toolbar".
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-toolbar']; selector = '.disable-toolbar'; alt='Σελίδα προσαρμογής widget με το πλαίσιο ελέγχου «Απενεργοποίηση της γραμμής εργαλείων απάντησης» επιλεγμένο για την αφαίρεση των συντομεύσεων μορφοποίησης'; title='Απενεργοποίηση της γραμμής εργαλείων' app-screenshot-end]
-
----

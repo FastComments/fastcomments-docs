@@ -40,5 +40,3 @@ try {
     print('Exception when calling DefaultApi->aggregateQuestionResults: $e\n');
 }
 [inline-code-end]
-
----

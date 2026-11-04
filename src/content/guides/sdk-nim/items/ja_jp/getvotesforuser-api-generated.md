@@ -1,4 +1,3 @@
----
 ## パラメータ
 
 | 名前 | 型 | 必須 | 説明 |
@@ -25,5 +24,3 @@ if optResp.isSome:
   let resp = optResp.get()
   echo resp
 [inline-code-end]
-
----

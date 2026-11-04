@@ -1,4 +1,3 @@
----
 Lijst pagina's voor een tenant. Gebruikt door de FChat desktopclient om zijn kamerlijst te vullen.  
 Vereist dat `enableFChat` true is in de opgeloste aangepaste configuratie voor elke pagina.  
 Pagina's die SSO vereisen worden gefilterd op basis van de groepsrechten van de aanvragende gebruiker.
@@ -35,5 +34,3 @@ async fn example(configuration: &configuration::Configuration) -> Result<(), Err
     Ok(())
 }
 [inline-code-end]
-
----

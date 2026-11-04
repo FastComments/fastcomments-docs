@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Name | Type | Required | Description |
@@ -24,5 +23,3 @@ let (response, httpResponse) = client.searchUsers(
 if response.isSome:
   let result = response.get()
 [inline-code-end]
-
----

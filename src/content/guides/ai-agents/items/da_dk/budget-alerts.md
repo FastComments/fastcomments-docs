@@ -1,67 +1,67 @@
-Budget-advarsels-e-mails sendes, når en agents forbrug krydser en konfigurerbar procentdel af dens grænse. De sendes til de personer, der ejer regningen.
+Budgetadvarsels-e-mails udsendes, når en agents forbrug overskrider en konfigurerbar procentdel af dens grænse. De sendes til de personer, der ejer regningen.
 
-### How alerts work
+### Sådan fungerer advarsler
 
-Hver agent har et felt **Alert thresholds** på redigeringsformularen. Standardværdierne er `80%` og `100%`. Du kan afkrydse eller fjerne kryds ved individuelle thresholds, og du kan tilføje andre procenter.
+Hver agent har et felt **Advarselstærskler** på redigeringsformularen. Som standard er det `80%` og `100%`. Du kan markere eller fjerne markeringen af individuelle tærskler, og du kan tilføje andre procenter.
 
-Når agentens forbrug i et givet scope (dagligt eller månedligt) krydser en threshold for første gang i den periode, sender platformen én e-mail per modtager. At krydse threshold igen senere i samme periode (f.eks. forbruget faldt under 80% og steg over igen) genudsender **ikke** e-mailen.
+Når agentens forbrug i et givet scope (dagligt eller månedligt) overskrider en tærskel for første gang i den periode, sender platformen én e-mail pr. modtager. At overskride tærsklen igen senere i samme periode (f.eks. hvis forbruget faldt under 80% og kom over igen) udløser **ikke** en ny e-mail.
 
-Dette gælder per periode: en ny daglig nulstilling starter threshold-krydse-logikken for den dag.
+Dette er pr. periode: en ny daglig nulstilling starter tærskel-logikken for den pågældende dag forfra.
 
-### Tenant-scope alerts
+### Advarsler på tenant-niveau
 
-Tenanten (kontoen) har sine egne daglige og månedlige grænser. Tenant-scope alerts udløses ved faste thresholds (`80%` og `100%`). Disse kan ikke konfigureres per agent, fordi de gælder for hele tenant'en.
+Tenanten (kontoen) har sine egne daglige og månedlige grænser. Advarsler på tenant-niveau udløses ved faste tærskler (`80%` og `100%`). Disse kan ikke konfigureres pr. agent, fordi de gælder for hele tenanten.
 
-### Recipients
+### Modtagere
 
-Budget-advarsler sendes til:
+Budgetadvarsler sendes til:
 
-- Enhver bruger markeret **Super admin** på tenant'en.
-- Enhver bruger markeret **Billing Admin** på tenant'en.
+- Alle brugere, der er markeret som **Super admin** på tenanten.
+- Alle brugere, der er markeret som **Billing Admin** på tenanten.
 
 Det inkluderer foreningen af de to roller - en bruger med begge roller modtager én e-mail.
 
-### Why both roles
+### Hvorfor begge roller
 
-Super admins er typisk de operatører, som har brug for at vide, når en agent rammer sin grænse. Billing admins ejer fakturaen og skal kende til omkostningsspidser uanset om de administrerer agenter til daglig. For rent faktisk at redigere agenten (hæv grænsen, sæt den på pause) har modtageren også brug for rollen **Customization Admin** - som beskytter agent-redigeringssiden.
+Super admins er typisk de operatører, der har brug for at vide, hvornår en agent nærmer sig sin grænse. Billing-admins ejer fakturaen og har brug for at vide, om der er omkostningsspidninger, uanset om de administrerer agenter til daglig. For faktisk at redigere agenten (hæve grænsen, sætte den på pause) kræver det dog også rollen **Customization Admin** - som styrer adgangen til agentens redigeringsside.
 
-### Per-user opt-out
+### Framelding pr. bruger
 
-Modtagere, der har frameldt sig admin-notifikationer på deres profil, springes over. Dette er den samme frameldingsknap, der styrer andre admin-notifikationer.
+Modtagere, der har meldt sig fra admin-notifikationer på deres profil, springes over. Det er den samme frameldingsknap, der styrer andre admin-notifikationer.
 
-Hvis **alle** modtagere er frameldt, logges advarslen (advarselsniveau) og der sendes ingen e-mail.
+Hvis **alle** modtagere har meldt sig fra, logges advarslen (på advarselsniveau), og der sendes ingen e-mail.
 
-### Email content
+### E-mail-indhold
 
 E-mailen indeholder:
 
-- Agentens **display name** og interne navn.
-- Det **scope**, der blev krydset (f.eks. "agent daily budget", "agent monthly budget", "account daily budget", "account monthly budget").
-- Den krydsede **threshold percentage**.
-- **Usage** i tenant'ens valuta.
-- **Cap** i tenant'ens valuta.
-- Et **one-click signed login link**, som tager modtageren direkte til:
-  - Agent-redigeringssiden, for agent-scope alerts.
-  - AI Agents list page, for tenant-scope alerts.
+- Agentens **viste navn** og interne navn.
+- Det **scope**, der blev overskredet (f.eks. "agent daily budget", "agent monthly budget", "account daily budget", "account monthly budget").
+- Den overskredne **tærskelprocent**.
+- **Forbrug** i tenantens valuta.
+- **Grænse** i tenantens valuta.
+- Et **one-click signeret login-link**, der fører modtageren direkte til:
+  - Agentens redigeringsside, for advarsler på agent-niveau.
+  - Listen over AI-agenter, for advarsler på tenant-niveau.
 
-Linket er præ-autentificeret, så modtageren er kun ét klik fra at hæve grænsen eller deaktivere agenten.
+Linket er forudautentificeret, så modtageren kun er ét klik fra at hæve grænsen eller deaktivere agenten.
 
-### How thresholds fire
+### Sådan udløses tærskler
 
-Platformen sporer, hvilke thresholds der allerede er udløst denne periode, separat for agenten og tenant'en. Så:
+Platformen registrerer, hvilke tærskler der allerede er udløst i denne periode, separat for agenten og tenanten. Så:
 
-- At krydse 80% og derefter 100% i samme periode udløser begge, i rækkefølge.
-- At gå direkte fra 0% til 100% i ét stort hop udløser den **højeste** krydsede threshold (100%), ikke 80%, så den mest alvorlige advarsel er den, der sendes.
+- At overskride 80% og derefter 100% i samme periode udløser begge, i rækkefølge.
+- At gå direkte fra 0% til 100% i ét stort spring udløser den **højeste** overskredne tærskel (100%), ikke 80%, så det mest alvorlige advarsel er den, der leveres.
 
-### When you stop getting alerts
+### Når du holder op med at modtage advarsler
 
-Hvis agentens forbrug aldrig når den næste threshold i denne periode, modtager du ikke flere e-mails i perioden. Næste daglige nulstilling (eller månedlige nulstilling) rydder sporingstavlen.
+Hvis agentens forbrug aldrig når den næste tærskel i denne periode, modtager du ikke flere e-mails i denne periode. Den næste daglige nulstilling (eller månedlige nulstilling) rydder registreringen.
 
-### Disabling alerts
+### Deaktivering af advarsler
 
-Fjern krydset ved den threshold, du ikke ønsker. Hvis du ikke ønsker nogen advarsler for en specifik agent, fjern krydset ved alle procenter. Tenant-scope alerts kan ikke deaktiveres per agent (de er tenant-wide).
+Fjern markeringen af den tærskel, du ikke ønsker. Hvis du ikke vil have nogen advarsler på en bestemt agent, fjerner du markeringen af alle procenter. Advarsler på tenant-niveau kan ikke deaktiveres pr. agent (de gælder for hele tenanten).
 
-### See also
+### Se også
 
 - [Budgets Overview](#budgets-overview).
 - [Drop Reasons](#drop-reasons) - hvad der sker, når grænsen er fuldt nået.

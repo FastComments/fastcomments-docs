@@ -200,5 +200,3 @@ Wklej to w oknie edytora, które otworzyliśmy:
 Teraz możemy kliknąć `Yes, Save` w prawym dolnym rogu tego okna.
 
 Na górze strony kliknij teraz `Save`, a następnie `Preview`.
-
----

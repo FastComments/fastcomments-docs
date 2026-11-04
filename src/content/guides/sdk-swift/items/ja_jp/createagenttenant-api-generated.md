@@ -1,19 +1,16 @@
-Creates a new trial account for an AI agent without a human signup. No API key is needed to call this.
+人間のサインアップなしで、AIエージェント用の新しいトライアルアカウントを作成します。この呼び出しにはAPIキーは不要です。
 
-The response contains the tenant id, an API key that works immediately against the REST API and the
-MCP server, and a claim URL. Give the claim URL to the human you are working for: opening it while
-logged in to FastComments attaches the account to them. Unclaimed accounts, and their keys, are
-deleted 72 hours after creation. Until claimed, the account has the standard trial limits.
+レスポンスには、テナントID、REST APIおよびMCPサーバーに対して即座に使用可能なAPIキー、そしてクレームURLが含まれます。クレームURLは、あなたが作業している依頼者(人間)に渡してください。FastCommentsにログインした状態でこのURLを開くと、アカウントがその人に紐付けられます。クレームされていないアカウントとそのキーは、作成から72時間後に削除されます。クレームされるまで、アカウントには標準のトライアル制限が適用されます。
 
 ## レスポンス
 
-Returns: [`CreateAgentTenantResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateAgentTenantResponse.swift)
+戻り値: [`CreateAgentTenantResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateAgentTenantResponse.swift)
 
 ## 例
 
 [inline-code-attrs-start title = 'createAgentTenant の例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 以下のコードサンプルはまだベータ版です。問題がある場合は、http://github.com/OpenAPITools/openapi-generator/issues/new へ報告してください
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let createAgentTenantBody = CreateAgentTenantBody(name: "name_example", domains: ["domains_example"], agent: "agent_example") // CreateAgentTenantBody | 
@@ -29,5 +26,3 @@ DefaultAPI.createAgentTenant(createAgentTenantBody: createAgentTenantBody) { (re
     }
 }
 [inline-code-end]
-
----

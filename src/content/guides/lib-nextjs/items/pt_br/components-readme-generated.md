@@ -1,4 +1,3 @@
----
 | Componente | Descrição |
 | --- | --- |
 | `FastComments` | Widget de comentários com respostas, votação e mais |
@@ -18,4 +17,3 @@ import {
     FastCommentsReviewsSummary,
 } from 'fastcomments-nextjs';
 ```
----

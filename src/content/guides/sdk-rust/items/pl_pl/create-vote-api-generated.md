@@ -1,4 +1,3 @@
----
 ## Parametry
 
 | Nazwa | Typ | Wymagane | Opis |
@@ -29,5 +28,3 @@ async fn submit_vote() -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
-
----

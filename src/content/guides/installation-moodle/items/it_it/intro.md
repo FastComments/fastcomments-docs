@@ -6,5 +6,3 @@ FastComments dispone di un plugin dedicato per Moodle che aggiunge commenti in t
 </div>
 
 Il plugin supporta commenti annidati, chat collaborativa in tempo reale e più modalità SSO. Scaricalo dal <a href="https://github.com/FastComments/fastcomments-moodle/" target="_blank">repository GitHub</a>.
-
----

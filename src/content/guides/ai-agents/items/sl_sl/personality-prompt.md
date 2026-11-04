@@ -55,5 +55,3 @@ Pozivi redko zadenejo na prvo shranjevanje. Pričakovani potek dela je:
 2. Poglejte [Run Detail View](#run-detail-view) za dejanja, s katerimi se ne strinjate.
 3. Uporabite tok [Refine Prompt](#refining-prompts) iz zavrnjenega odobritvenega postopka ali pa poziv preprosto uredite neposredno.
 4. Ponovite, dokler izhod iz dry-runa ne izgleda prav.
-
----

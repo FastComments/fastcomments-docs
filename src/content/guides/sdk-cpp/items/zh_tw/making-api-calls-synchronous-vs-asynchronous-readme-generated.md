@@ -1,8 +1,8 @@
-All API methods in this SDK return `pplx::task<std::shared_ptr<ResponseType>>` from the C++ REST SDK. This gives you flexibility in how you handle API responses.
+此 SDK 中的所有 API 方法都會從 C++ REST SDK 回傳 `pplx::task<std::shared_ptr<ResponseType>>`。這讓您可以靈活地處理 API 回應。
 
-### 使用 `.get()` 的同步呼叫
+### 使用 `.get()` 進行同步呼叫
 
-Use `.get()` to block the calling thread until the request completes and retrieve the result synchronously:
+使用 `.get()` 來阻塞呼叫執行緒，直到請求完成並同步取得結果：
 
 ```cpp
 auto config = std::make_shared<org::openapitools::client::api::ApiConfiguration>();
@@ -13,24 +13,24 @@ config->setApiKey(utility::conversions::to_string_t("api_key"),
 auto apiClient = std::make_shared<org::openapitools::client::api::ApiClient>(config);
 org::openapitools::client::api::DefaultApi api(apiClient);
 
-// Required parameters are positional; optional ones go in the options struct
+// 必要參數以位置參數傳入；選用參數則放在 options 結構中
 org::openapitools::client::api::GetCommentsOptions options;
 options.urlId = utility::conversions::to_string_t("your-url-id");
 
-// Call .get() to block and get the result synchronously
+// 呼叫 .get() 以阻塞方式同步取得結果
 auto response = api.getComments(
     utility::conversions::to_string_t("your-tenant-id"),
     options
-).get();  // Blocks until the HTTP request completes
+).get();  // 阻塞直到 HTTP 請求完成
 
 if (response && response->comments) {
     std::cout << "Found " << response->comments->size() << " comments" << std::endl;
 }
 ```
 
-### 使用 `.then()` 的非同步呼叫
+### 使用 `.then()` 進行非同步呼叫
 
-Use `.then()` for non-blocking asynchronous execution with callbacks:
+使用 `.then()` 進行非阻塞的非同步執行與回呼處理：
 
 ```cpp
 auto config = std::make_shared<org::openapitools::client::api::ApiConfiguration>();
@@ -41,40 +41,40 @@ config->setApiKey(utility::conversions::to_string_t("api_key"),
 auto apiClient = std::make_shared<org::openapitools::client::api::ApiClient>(config);
 org::openapitools::client::api::DefaultApi api(apiClient);
 
-// Required parameters are positional; optional ones go in the options struct
+// 必要參數以位置參數傳入；選用參數則放在 options 結構中
 org::openapitools::client::api::GetCommentsOptions options;
 options.urlId = utility::conversions::to_string_t("your-url-id");
 
-// Use .then() for asynchronous callback-based execution
+// 使用 .then() 進行基於回呼的非同步執行
 api.getComments(
     utility::conversions::to_string_t("your-tenant-id"),
     options
 ).then([](std::shared_ptr<GetComments_200_response> response) {
-    // This runs asynchronously when the request completes
+    // 當請求完成時，此段程式碼會以非同步方式執行
     if (response && response->comments) {
         std::cout << "Found " << response->comments->size() << " comments" << std::endl;
     }
 });
 
-// Execution continues immediately without blocking
+// 執行會立即繼續，不會阻塞
 std::cout << "Request sent, continuing..." << std::endl;
 ```
 
-### 在同步與非同步之間的選擇
+### 在同步與非同步之間做選擇
 
-The choice depends on your runtime environment and application architecture:
+選擇取決於您的執行環境與應用程式架構：
 
 **`.get()`（同步阻塞）**
 - 阻塞呼叫執行緒，直到 HTTP 請求完成
-- 程式流程較簡單，較易理解
-- 適用於專用工作執行緒、批次處理或命令列工具
-- **不適合** 用於事件迴圈、GUI 執行緒或單執行緒伺服器
+- 程式流程較簡單，較容易理解
+- 適合專用的工作者執行緒、批次處理或命令列工具
+- **不適合**事件迴圈、GUI 執行緒或單執行緒伺服器
 
 **`.then()`（非同步非阻塞）**
-- 立即返回，回呼在請求完成時執行
+- 立即回傳，回呼會在請求完成時執行
 - 不會阻塞呼叫執行緒
-- 在事件驅動架構、GUI 應用程式或單執行緒事件迴圈中是必需的
-- 允許串接多個操作
-- 較為複雜的控制流程
+- 對於事件驅動架構、GUI 應用程式或單執行緒事件迴圈為必要選擇
+- 允許鏈接多個操作
+- 控制流程較為複雜
 
-The SDK's test suite uses `.get()` exclusively, but this is appropriate for the test environment where blocking is acceptable.
+此 SDK 的測試套件僅使用 `.get()`，但這在阻塞可被接受的測試環境中是合適的。

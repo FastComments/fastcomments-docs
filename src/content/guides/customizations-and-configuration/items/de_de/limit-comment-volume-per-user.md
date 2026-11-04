@@ -1,4 +1,3 @@
----
 Standardmäßig kann jeder Benutzer bis zu `5 Kommentare` in derselben Minute senden.
 
 Dies wird anhand der Benutzer-ID, der anonymen Benutzer-ID und der IP-Adresse (gehasht) verfolgt.
@@ -9,5 +8,3 @@ Dies kann ohne Code auf der Widget-Anpassungsseite angepasst werden:
 
 Beachten Sie, dass Sie, wenn Sie die Kommentar-Erstellungs-API verwenden, möglicherweise die ursprüngliche `ip`-Adresse des Benutzers in der Anfrage an unser Backend übergeben möchten, damit die Ratenbegrenzung angewendet wird
 pro Benutzer und nicht global für Ihr Konto.
-
----

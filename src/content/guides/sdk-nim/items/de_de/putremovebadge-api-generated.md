@@ -23,5 +23,3 @@ let (maybeResp, httpResp) = client.putRemoveBadge(
 if maybeResp.isSome:
   let badgeResp = maybeResp.get()
 [inline-code-end]
-
----

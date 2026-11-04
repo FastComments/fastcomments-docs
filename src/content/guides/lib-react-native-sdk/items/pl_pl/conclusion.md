@@ -8,5 +8,3 @@ Jeśli napotkasz jakiekolwiek problemy lub masz pytania dotyczące SDK dla React
 ## Współpraca
 
 Wkład jest mile widziany! Prosimy odwiedzić [repozytorium GitHub](https://github.com/FastComments/fastcomments-react-native-sdk) w celu zapoznania się z wytycznymi dotyczącymi wkładu.
-
----

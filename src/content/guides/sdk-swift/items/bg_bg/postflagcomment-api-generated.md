@@ -34,5 +34,3 @@ ModerationAPI.postFlagComment(tenantId: tenantId, commentId: commentId, options:
     }
 }
 [inline-code-end]
-
----

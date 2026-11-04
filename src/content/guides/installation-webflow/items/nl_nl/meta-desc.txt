@@ -1,3 +1,1 @@
----
 Voeg live reacties toe aan Webflow met een embed‑blok, op een statische pagina of over een hele collectie, en publiceer vervolgens om ze live te maken.
----

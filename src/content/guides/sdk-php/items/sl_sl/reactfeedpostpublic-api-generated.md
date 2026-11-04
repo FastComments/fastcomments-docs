@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Ime | Vrsta | Lokacija | Obvezno | Opis |
@@ -45,5 +44,3 @@ try {
     echo 'Exception when calling PublicApi->reactFeedPostPublic: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

@@ -32,5 +32,3 @@ interface PagesResponse {
 #### Przydatna wskazówka
 
 Pamiętaj o zakodowaniu URI wartości takich jak `urlId`.
-
----

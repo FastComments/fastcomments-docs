@@ -8,5 +8,3 @@ Ako naiđete na bilo kakve probleme ili imate pitanja u vezi sa Jekyll bibliotek
 ## Doprinosi
 
 Doprinosi su dobrodošli! Molimo posetite [GitHub repozitorijum](https://github.com/FastComments/fastcomments-jekyll) za smernice za doprinos.
-
----

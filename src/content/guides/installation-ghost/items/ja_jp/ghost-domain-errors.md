@@ -1,12 +1,12 @@
-次のような認可エラーが発生することがあります:
+次のような認証エラーが発生することがあります:
 
 <div class="screenshot white-bg">
-    <div class="title">ドメイン設定がありません</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-webflow-step-5.png" alt="Domain Configuration Missing" />
+    <div class="title">ドメイン設定が未完了です</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-webflow-step-5.png" alt="ドメイン設定が未完了です" />
 </div>
 
-This is because FastComments doesn't know it's supposed to allow your account to be used on this domain.
+これは、FastCommentsがこのドメインであなたのアカウントの使用を許可すべきことを認識していないためです。
 
-In this case, the fix is simple. You just have to add your site to your FastComments.com account.
+この場合、修正は簡単です。FastComments.comアカウントにあなたのサイトを追加するだけです。
 
-[アカウントにサイトを追加するにはここをクリックしてください。](https://fastcomments.com/auth/my-account/configure-domains)
+[こちらからサイトをアカウントに追加してください。](https://fastcomments.com/auth/my-account/configure-domains)

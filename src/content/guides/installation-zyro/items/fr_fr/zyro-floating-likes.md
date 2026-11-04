@@ -1,4 +1,3 @@
----
 FastComments prend également en charge le widget Page Reacts (également appelé bouton Like flottant) pour Zyro.
 
 Vous pouvez le voir en action en bas à droite de cette page !
@@ -31,5 +30,3 @@ Vous pouvez le voir en action en bas à droite de cette page !
 4. Sélectionnez Intégrations.
 5. Ajoutez le nouveau code à la *fin* du champ `Custom code`, puis publiez votre site.
 6. Vous ne verrez pas le widget en mode aperçu, mais il apparaîtra sur la version publiée du site.
-
----

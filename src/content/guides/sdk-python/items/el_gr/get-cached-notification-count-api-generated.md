@@ -1,4 +1,3 @@
----
 ## Παράμετροι
 
 | Name | Type | Location | Required | Description |
@@ -50,5 +49,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->get_cached_notification_count: %s\n" % e)
 [inline-code-end]
-
----

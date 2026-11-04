@@ -23,5 +23,3 @@ Dus welke is geschikt voor jou?
 
 - Je groepen hebben specifieke pagina's.
 - Bijvoorbeeld, gebruikers in de groep "Public Pages" mogen nooit artikelen bekijken op de "Top Secret"-pagina's.
-
----

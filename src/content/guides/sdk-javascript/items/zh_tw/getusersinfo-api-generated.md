@@ -1,4 +1,3 @@
----
 批次取得租戶的使用者資訊。根據 userIds，回傳來自 User / SSOUser 的顯示資訊。此功能被評論小工具使用，以在使用者透過在場事件剛出現時豐富其資訊。沒有頁面上下文：隱私權會一致地被強制執行（私人檔案會被遮蔽）。
 
 ## Parameters
@@ -24,5 +23,3 @@ async function fetchUsersInfo(): Promise<void> {
 }
 fetchUsersInfo();
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 ## Parameters
 
 | Naam | Type | Verplicht | Beschrijving |
@@ -27,5 +26,3 @@ if pinResult.isSome:
   let response = pinResult.get()
   echo response
 [inline-code-end]
-
----

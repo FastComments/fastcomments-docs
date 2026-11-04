@@ -32,5 +32,3 @@ ModerationAPI.getSearchSites(tenantId: tenantId, options: ModerationAPI.GetSearc
     }
 }
 [inline-code-end]
-
----

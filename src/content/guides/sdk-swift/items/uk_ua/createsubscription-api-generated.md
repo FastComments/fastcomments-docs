@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Назва | Тип | Розташування | Обов'язково | Опис |
@@ -30,5 +29,3 @@ DefaultAPI.createSubscription(tenantId: tenantId, createAPIUserSubscriptionData:
     }
 }
 [inline-code-end]
-
----

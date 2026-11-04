@@ -39,5 +39,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.CreateV1PageReact`: %v\n", resp)
 }
 [inline-code-end]
-
----

@@ -40,5 +40,3 @@ tamnog režima sa VanillaJS widgetom.
     }
 </style>
 [inline-code-end]
-
----

@@ -40,5 +40,3 @@ Execuções produzidas por replay são excluídas da visualização de execuçõ
 ### Filtragem entre agentes
 
 A tabela de execuções é por agente. Não existe uma visualização de execuções entre agentes - a [página de Analytics](#analytics-page) é o resumo entre agentes. Se você precisa inspecionar execuções em vários agentes, os eventos do [Webhooks](#webhooks-overview) `trigger.succeeded` and `trigger.failed` são aqueles que você deve encaminhar para o seu próprio sistema.
-
----

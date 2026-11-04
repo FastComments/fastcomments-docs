@@ -1,4 +1,3 @@
----
 ## Параметры
 
 | Имя | Тип | Обязательно | Описание |
@@ -31,5 +30,3 @@ async fn run_example(configuration: &configuration::Configuration) -> Result<(),
     Ok(())
 }
 [inline-code-end]
-
----

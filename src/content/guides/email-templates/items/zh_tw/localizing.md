@@ -1,20 +1,13 @@
-FastComments is a localized platform. All of our widgets, emails, and notifications are localized.
+FastComments 是一個本地化的平台。我們所有的元件、電子郵件和通知都已本地化。
 
-在地化意味著我們會根據使用者的位置
-和偏好語言，顯示不同的語言與格式。我們是依據使用者瀏覽器提供的資訊來判定這些設定。
+本地化意味著我們會根據使用者的位置和偏好的語言，顯示不同的語言和格式。我們根據使用者的瀏覽器提供的資訊來判斷這一點。
 
-We can customize the text in the email by going to the `Translations` tab, selecting a `Locale`
-並編輯文字。從預設值變更的文字會在使用者介面中以外框表示。你可以
-在不同語系之間切換並在最後儲存，而不會遺失變更。
+我們可以前往 `Translations` 分頁，選擇一個 `Locale` 並編輯文字，來自訂電子郵件中的文字。與預設值不同的文字會在 UI 中以框線標示。您可以在不同語系之間切換，最後再儲存，而不會遺失變更。
 
-Localized text is accessed via the `TEXT` object, for example: `<%= TEXT.INTRO %>`.
+本地化文字可透過 `TEXT` 物件存取，例如：`<%= TEXT.INTRO %>`。
 
 ### SSO 注意事項
 
-For SSO integrations, if `locale` is not specified, it will be updated every time the user
-以不同語系存取評論小工具時，`locale` 都會被更新。這表示他們的語言偏好
-會自動更新，未來寄出的電子郵件也會以該語系發送。
+對於 SSO 整合，如果未指定 `locale`，則每次使用者以不同的語系存取留言元件時，該語系都會被更新。這表示使用者的語言偏好會自動更新，未來的電子郵件將以該語系發送。
 
-This can also be set manually by providing `locale` in the SSO payload.
-
----
+也可以透過在 SSO payload 中提供 `locale` 來手動設定。

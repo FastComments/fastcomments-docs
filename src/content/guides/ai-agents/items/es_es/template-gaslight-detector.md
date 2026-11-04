@@ -29,5 +29,3 @@ No puede banear, marcar como spam, votar ni publicar nuevos comentarios: el ámb
 ### Ventana recomendada en modo dry-run
 
 Ejecuta al menos dos semanas de tráfico real en [modo dry-run](#dry-run-mode) antes de cambiar a Activado, y revisa cada edición marcada durante ese periodo. Usa [Test Runs (Replays)](#test-runs-replays) para reproducir los últimos 30 días de ediciones contra el agente antes de ponerlo en producción.
-
----

@@ -1,5 +1,3 @@
----
 - [תיעוד FastComments](https://docs.fastcomments.com)
 - [התאמה אישית ותצורה](https://docs.fastcomments.com/guide-customizations-and-configuration.html)
 - [תיעוד Astro](https://docs.astro.build)
----

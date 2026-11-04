@@ -1,21 +1,21 @@
-Queues a batch job that reverses every migration from one migrate-pages job, newest first. Available for 90 days.
-Records changed since the migration are left alone, so a later edit is never overwritten.
-Poll GET /api/v1/batch-jobs/{batchJobId} for the restored/skipped counts.
+Стави у ред групни посао који поништава сваку миграцију из једног migrate-pages посла, од најновијег. Доступно 90 дана.
+Записи промењени од миграције се не дирају, тако да каснија измена никада неће бити преписана.
+Питај GET /api/v1/batch-jobs/{batchJobId} за бројеве враћених/прескочених.
 
-## Parameters
+## Параметри
 
-| Име | Тип | Локација | Обавезно | Опис |
+| Назив | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | undoId | string | path | Да |  |
 
-## Response
+## Одговор
 
-Returns: [`QueuePageMigrationJobAPIResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/QueuePageMigrationJobAPIResponse.swift)
+Враћа: [`QueuePageMigrationJobAPIResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/QueuePageMigrationJobAPIResponse.swift)
 
-## Example
+## Пример
 
-[inline-code-attrs-start title = 'undoPageMigrations Пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'undoPageMigrations пример'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
@@ -34,5 +34,3 @@ DefaultAPI.undoPageMigrations(tenantId: tenantId, undoId: undoId) { (response, e
     }
 }
 [inline-code-end]
-
----

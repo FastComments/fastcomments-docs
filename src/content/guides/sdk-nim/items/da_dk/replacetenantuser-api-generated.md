@@ -1,4 +1,3 @@
----
 ## Parametre
 
 | Navn | Type | Påkrævet | Beskrivelse |
@@ -25,5 +24,3 @@ let (response, httpResponse) = client.replaceTenantUser(
 if response.isSome:
   let empty = response.get()
 [inline-code-end]
-
----

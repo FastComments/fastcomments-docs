@@ -1,4 +1,3 @@
----
 נווט אל לוח המחוונים של החשבון שלך ועבור אל [דף RSS Feed](https://fastcomments.com/auth/my-account/rss).
 
 [app-screenshot-start url='/auth/my-account/rss'; selector = '.content'; alt='דף RSS Feed של החשבון עם תיבת הסימון Enable RSS Feed Access, כתובת ה‑feed, וכפתורי Copy ו‑View Feed'; title='RSS Feed Configuration' app-screenshot-end]
@@ -14,5 +13,3 @@
 אתה יכול גם ללחוץ על הכפתור "View Feed" בדף RSS Feed כדי לראות את ה‑feed שלך ישירות בדפדפן.
 
 כדי לבטל את הגישה ל‑RSS Feed שלך, פשוט בטל את סימון תיבת "Enable RSS Feed Access". פעולה זו תמנע גישה ל‑feed, אך הכתובת תישאר זהה אם תפעיל אותה מחדש מאוחר יותר.
-
----

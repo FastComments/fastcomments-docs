@@ -11,5 +11,3 @@ Inoltre, puoi usare i tasti freccia su e giù per navigare questa lista e premer
 Sappiamo che potresti voler usare il simbolo `@` senza menzionare un utente. FastComments rileverà questo e non interferirà con la tua esperienza di digitazione.
 
 Nota che l'autocompletamento preferisce prima le corrispondenze sensibili alle maiuscole/minuscole, e poi cercherà anche risultati non sensibili alle maiuscole/minuscole.
-
----

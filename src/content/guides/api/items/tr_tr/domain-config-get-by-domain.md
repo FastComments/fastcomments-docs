@@ -27,5 +27,3 @@ interface DomainConfigResponse {
     configuration?: DomainConfig | null
 }
 [inline-code-end]
-
----

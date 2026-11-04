@@ -46,5 +46,3 @@ Vous devriez maintenant voir une version très réduite du widget de commentaire
 </div>
 
 Ensuite, nous allons positionner et redimensionner ceci pour l'adapter à notre page.
-
----

@@ -69,5 +69,3 @@ Da die Konfiguration ziemlich komplex werden kann, können wir eine Objektrefere
 Das Widget verwendet Change Detection, sodass das Ändern von Eigenschaften des Konfigurationsobjekts dazu führt, dass es neu geladen wird.
 
 Die Konfiguration, die die Angular-Komponente unterstützt, finden Sie <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">hier</a>.
-
----

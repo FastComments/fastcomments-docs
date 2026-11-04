@@ -1,4 +1,3 @@
----
 La configuración mínima para mostrar un widget de comentarios:
 
 ```swift

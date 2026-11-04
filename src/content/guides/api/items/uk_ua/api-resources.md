@@ -1,4 +1,3 @@
----
 ### Використання ресурсів
 
 Слід зазначити, що отримання даних з API враховується як використання вашого облікового запису.
@@ -16,5 +15,3 @@
 ### Вебхуки
 
 Підписки на вебхуки мають власний посібник. `POST`, `GET` і `DELETE /api/v1/webhooks`, а також `GET /api/v1/webhooks/sample-payloads`, задокументовані в розділі [Managing Subscriptions via API](/guide-webhooks.html#webhooks-api-subscriptions), а структури подій — у [Webhook Structures](/guide-webhooks.html#webhooks-structures).
-
----

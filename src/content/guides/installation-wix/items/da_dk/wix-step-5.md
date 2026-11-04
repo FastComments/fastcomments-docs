@@ -1,50 +1,50 @@
-Næste skal vi sætte tingene op, så kommentartråden ændrer sig baseret på den aktuelle side, hvilket tillader brugerne at diskutere det aktuelt viste indhold.
+Dernæst lad os indstille det, så kommentartråden ændrer sig baseret på den aktuelle side, så brugerne kan diskutere det indhold, der vises i øjeblikket.
 
-Uden de følgende trin vil du kun have én global kommentartråd for hele dit site - hvilket ikke er særligt nyttigt.
+Uden følgende trin vil du kun have én global kommentartråd for hele dit websted - hvilket ikke er særlig nyttigt.
 
 #### Dev Mode
 
-For at tilføje denne funktionalitet må vi gå ind i det, Wix kalder `Dev Mode`.
+For at tilføje denne funktionalitet skal vi gå ind i det, Wix kalder `Dev Mode`.
 
-Klik på indstillingen `Dev Mode` øverst på skærmen.
+Klik på `Dev Mode`-indstillingen øverst på skærmen.
 
 <div class="screenshot white-bg">
     <div class="title">Aktivér Dev Mode</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-5-dev-mode.png" alt="Aktivér Dev Mode" />
 </div>
 
-#### Angiv elementets ID
+#### Sæt Element-ID'et
 
-Vi vil tilføje tilpasset kode for at gøre dette, men først skal vi give det nye embed-element et ID, som vi kan henvise til.
+Vi kommer til at tilføje brugerdefineret kode for at opnå dette, men først skal vi give det nye indlejringselement et ID, som vi kan referere til det med.
 
 Lad os kalde det `fastcomments`.
 
-Klik på det nye embed-element, vi tilføjede, og i Dev Mode nederst til højre bør du se et ID-felt med en værdi som `html1`:
+Klik på det nye indlejringselement, vi tilføjede, og i dev mode nederst til højre bør du se et ID-felt med en værdi som `html1`:
 
 <div class="screenshot white-bg">
     <div class="title">ID-feltet</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-5-id-0.png" alt="ID-feltet" />
 </div>
 
-Ændr dette til `fastcomments` og tryk Enter:
+Ændr dette til `fastcomments` og tryk enter:
 
 <div class="screenshot white-bg">
-    <div class="title">Angiv ID</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-5-id-1.png" alt="Angiv ID" />
+    <div class="title">Sæt ID'et</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-5-id-1.png" alt="Sæt ID'et" />
 </div>
 
-Nu kan vi tilføje vores tilpassede kode, der fortæller kommentarfeltet, hvilken side vi ser.
+Nu kan vi tilføje vores brugerdefinerede kode, der fortæller kommentarområdet, hvilken side vi ser.
 
-Nederst på skærmen skulle du se en kodeeditor som denne:
+Nederst på skærmen bør du se en kodeeditor som denne:
 
 <div class="screenshot white-bg">
-    <div class="title">Åbn editoren</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-7-open-editor.png" alt="Åbn editoren" />
+    <div class="title">Åbn Editoren</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-7-open-editor.png" alt="Sæt ID'et" />
 </div>
 
-Kopier følgende kode og indsæt den dér:
+Kopiér følgende kode og indsæt den der:
 
-[inline-code-attrs-start title = 'Wix-kommentarers navigationsudsnit'; type = 'javascript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Wix Kommentarer Navigationssnippet'; type = 'javascript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import wixLocation from 'wix-location';
 
@@ -66,8 +66,6 @@ $w.onReady(function () {
 [inline-code-end]
 
 <div class="screenshot white-bg">
-    <div class="title">Tilføj navigationskoden</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-7-paste-code.png" alt="Tilføj navigationskoden" />
+    <div class="title">Tilføj Navigationskoden</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-7-paste-code.png" alt="Tilføj Navigationskoden" />
 </div>
-
----

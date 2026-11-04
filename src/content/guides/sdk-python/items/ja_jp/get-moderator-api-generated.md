@@ -1,4 +1,3 @@
----
 ## パラメータ
 
 | 名前 | 型 | Location | 必須 | 説明 |
@@ -50,5 +49,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->get_moderator: %s\n" % e)
 [inline-code-end]
-
----

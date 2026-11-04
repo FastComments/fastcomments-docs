@@ -8,5 +8,3 @@ Ako naiđete na bilo kakve probleme ili imate pitanja o Go SDK-u, molimo:
 ## Doprinosi
 
 Doprinosi su dobrodošli! Posjetite [GitHub repository](https://github.com/FastComments/fastcomments-go) za smjernice za doprinos.
-
----

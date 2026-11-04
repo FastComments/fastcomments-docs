@@ -15,4 +15,3 @@ bundle install
 ```
 
 (Kompatibilno sa Jekyll 3.7+ i 4.x.)
----

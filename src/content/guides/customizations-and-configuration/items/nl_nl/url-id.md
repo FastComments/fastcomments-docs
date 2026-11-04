@@ -28,5 +28,3 @@ Vanaf 2023 accepteert het `URL ID`‑veld in widget‑aanpassing nu ook patronen
 
 1. Als je pagina hash‑parameters heeft (zoals example.com#page-1) – dit wordt standaard onderdeel van de URL ID.
 2. Tijdens migraties, bijvoorbeeld van WordPress naar Gatsby, moet je mogelijk de URL ID‑commentaarwaarden migreren na de initiële migratie. Neem hiervoor contact met ons op.
-
----

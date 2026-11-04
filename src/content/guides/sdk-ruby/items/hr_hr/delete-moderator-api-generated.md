@@ -39,5 +39,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->delete_moderator: #{e}"
 end
 [inline-code-end]
-
----

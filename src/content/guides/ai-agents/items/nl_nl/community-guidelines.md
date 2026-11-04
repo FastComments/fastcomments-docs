@@ -45,5 +45,3 @@ Het veld is beperkt tot **4000 tekens** (afgedwongen zowel door het formulier al
 ### Versiebeheer
 
 Er is geen ingebouwde versiegeschiedenis voor het richtlijndocument - de laatst opgeslagen waarde is wat de agent gebruikt. Als je een geschiedenis wilt, kopieer het document in je eigen registratiesysteem voordat je een grote wijziging aanbrengt. De [Refine Prompts](#refining-prompts) flow kan wijzigingen in de *initial prompt* registreren, maar versieert het richtlijndocument niet.
-
----

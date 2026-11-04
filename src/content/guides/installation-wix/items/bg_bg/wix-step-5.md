@@ -1,50 +1,50 @@
-Next, let's set things up so that the comment thread changes based on the current page, allowing users to discuss the currently displayed content.
+След това нека настроим нещата така, че нишката с коментари да се променя според текущата страница, позволявайки на потребителите да обсъждат показваното в момента съдържание.
 
-Without the following steps, you will only have one global comment thread for your entire site - which is not very useful.
+Без следните стъпки ще имате само една глобална нишка с коментари за целия ви сайт - което не е много полезно.
 
-#### Режим на разработка
+#### Dev Mode
 
-To add this functionality, we'll have to go into what Wix calls `Dev Mode`.
+За да добавим тази функционалност, ще трябва да влезем в това, което Wix нарича `Dev Mode`.
 
-Click the `Dev Mode` option at the top of the screen.
+Кликнете върху опцията `Dev Mode` в горната част на екрана.
 
 <div class="screenshot white-bg">
     <div class="title">Активиране на Dev Mode</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-5-dev-mode.png" alt="Активиране на Dev Mode" />
 </div>
 
-#### Задайте ID на елемента
+#### Задаване на Element ID
 
-We're going to add custom code to accomplish this, but first we need to give the new embed element an ID to refer to it by.
+Ще добавим персонализиран код, за да постигнем това, но първо трябва да дадем на новия вграден елемент ID, чрез който да го препращаме.
 
-Let's call it `fastcomments`.
+Нека го наречем `fastcomments`.
 
-Click the new embed element we added, and in dev mode in the bottom right you should see an ID field with a value like `html1`:
-
-<div class="screenshot white-bg">
-    <div class="title">Полето за ID</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-5-id-0.png" alt="Полето за ID" />
-</div>
-
-Change this to `fastcomments` and hit enter:
+Кликнете върху новия вграден елемент, който добавихме, и в dev mode в долния десен ъгъл трябва да видите поле ID със стойност като `html1`:
 
 <div class="screenshot white-bg">
-    <div class="title">Задайте ID</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-5-id-1.png" alt="Задайте ID" />
+    <div class="title">Полето ID</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-5-id-0.png" alt="Полето ID" />
 </div>
 
-Now we can add our custom code that tells the comment area what page we are viewing.
-
-At the bottom of the screen you should see a code editor like this:
+Променете това на `fastcomments` и натиснете enter:
 
 <div class="screenshot white-bg">
-    <div class="title">Отворете редактора</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-7-open-editor.png" alt="Задайте ID" />
+    <div class="title">Задаване на ID</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-5-id-1.png" alt="Задаване на ID" />
 </div>
 
-Copy the following code and paste it in there:
+Сега можем да добавим нашия персонализиран код, който казва на зоната с коментари коя страница разглеждаме.
 
-[inline-code-attrs-start title = 'Навигационен фрагмент за коментари на Wix'; type = 'javascript'; isFunctional = false; inline-code-attrs-end]
+В долната част на екрана трябва да видите редактор на код като този:
+
+<div class="screenshot white-bg">
+    <div class="title">Отваряне на редактора</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-7-open-editor.png" alt="Задаване на ID" />
+</div>
+
+Копирайте следния код и го поставете там:
+
+[inline-code-attrs-start title = 'Wix Comments Navigation Snippet'; type = 'javascript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import wixLocation from 'wix-location';
 
@@ -66,8 +66,6 @@ $w.onReady(function () {
 [inline-code-end]
 
 <div class="screenshot white-bg">
-    <div class="title">Добавете кода за навигация</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-7-paste-code.png" alt="Добавете кода за навигация" />
+    <div class="title">Добавяне на кода за навигация</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-7-paste-code.png" alt="Добавяне на кода за навигация" />
 </div>
-
----

@@ -26,5 +26,3 @@ async fn flag_comment_example() -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
-
----

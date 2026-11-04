@@ -1,4 +1,3 @@
----
 A precificação é baseada na precificação de comentários, isto é, você é cobrado por classificações e avaliações da mesma forma que por comentários - dependendo do seu pacote.
 
 Você é cobrado (no Flex) ou limitado (em planos fixos) com base no seguinte:
@@ -10,5 +9,3 @@ Você é cobrado (no Flex) ou limitado (em planos fixos) com base no seguinte:
 - Uso da API (uso de créditos para cada chamada de API incluído na respectiva documentação).
 
 Quando os resultados são agregados via a API ou via os widgets de resumo, você também é cobrado.
-
----

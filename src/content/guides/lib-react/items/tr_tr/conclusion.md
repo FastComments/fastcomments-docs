@@ -8,5 +8,3 @@ React Kütüphanesi ile ilgili herhangi bir sorunla karşılaşırsanız veya so
 ## Katkıda Bulunma
 
 Katkılar memnuniyetle karşılanır! Lütfen katkı yönergeleri için [GitHub deposunu](https://github.com/FastComments/fastcomments-react) ziyaret edin.
-
----

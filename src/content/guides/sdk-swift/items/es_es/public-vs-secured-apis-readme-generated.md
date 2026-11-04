@@ -1,25 +1,23 @@
----
 El SDK de FastComments proporciona dos tipos de endpoints de API:
 
-### PublicAPI - Client-Safe Endpoints
+### PublicAPI - Endpoints Seguros para el Cliente
 
-The `PublicAPI` contains endpoints that are safe to call from client-side code (iOS/macOS apps). These endpoints:
-- No requieren una API key
-- Pueden usar SSO tokens para la autenticación
-- Están sujetas a límites de tasa por usuario/dispositivo
+La `PublicAPI` contiene endpoints que son seguros para llamar desde código del lado del cliente (aplicaciones iOS/macOS). Estos endpoints:
+- No requieren una clave de API
+- Pueden usar tokens SSO para la autenticación
+- Están limitados por tarifa por usuario/dispositivo
 - Son adecuados para aplicaciones orientadas al usuario final
 
-**Ejemplo de uso**: Recuperar y crear comentarios en tu app iOS
+**Ejemplo de caso de uso**: Obtener y crear comentarios en tu aplicación iOS
 
-### DefaultAPI - Server-Side Endpoints
+### DefaultAPI - Endpoints del Lado del Servidor
 
-The `DefaultAPI` contains authenticated endpoints that require an API key. These endpoints:
-- Requieren tu API key de FastComments
-- DEBEN llamarse SÓLO desde código del lado del servidor
+La `DefaultAPI` contiene endpoints autenticados que requieren una clave de API. Estos endpoints:
+- Requieren tu clave de API de FastComments
+- Deben llamarse ÚNICAMENTE desde código del lado del servidor
 - Proporcionan acceso completo a tus datos de FastComments
-- Están sujetas a límites de tasa por tenant
+- Están limitados por tarifa por tenant
 
-**Ejemplo de uso**: Operaciones administrativas, exportación masiva de datos, herramientas de moderación
+**Ejemplo de caso de uso**: Operaciones administrativas, exportación masiva de datos, herramientas de moderación
 
-**IMPORTANTE**: Nunca expongas tu API key en código del lado del cliente. Las API keys sólo deben usarse del lado del servidor.
----
+**IMPORTANTE**: Nunca expongas tu clave de API en código del lado del cliente. Las claves de API solo deben usarse del lado del servidor.

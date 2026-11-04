@@ -1,24 +1,23 @@
-Translates the given comments into the widget locale. Only available when the matching widget
-customization rule has Comment Translation set to Automatic or Manual.
+指定されたコメントをウィジェットのロケールに翻訳します。対応するウィジェットのカスタマイズルールで「Comment Translation」が「Automatic」または「Manual」に設定されている場合にのみ利用可能です。
 
 ## パラメータ
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| urlId | string | query | Yes |  |
-| sso | string | query | No |  |
-| locale | string | query | No |  |
+| tenantId | string | path | はい |  |
+| urlId | string | query | はい |  |
+| sso | string | query | いいえ |  |
+| locale | string | query | いいえ |  |
 
 ## レスポンス
 
-返却: [`CommentTranslationsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CommentTranslationsResponse.swift)
+戻り値: [`CommentTranslationsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CommentTranslationsResponse.swift)
 
 ## 例
 
-[inline-code-attrs-start title = 'translateComments 例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'translateComments の例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 以下のコードサンプルはまだベータ版です。問題がある場合は、http://github.com/OpenAPITools/openapi-generator/issues/new へ報告してください
+// 以下のコードサンプルはまだベータ版です。問題があれば http://github.com/OpenAPITools/openapi-generator/issues/new まで報告してください
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -38,5 +37,3 @@ PublicAPI.translateComments(tenantId: tenantId, urlId: urlId, commentTranslation
     }
 }
 [inline-code-end]
-
----

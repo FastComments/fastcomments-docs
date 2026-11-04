@@ -59,5 +59,3 @@ Povezavo za odjavo v nogi e-poštnega sporočila in funkcijo enoklikne odjave, k
 ### Za DKIM
 
 Po tem, ko definirate svoje DKIM DNS zapise, preprosto posodobite `DomainConfig` s svojo DKIM konfiguracijo z uporabo zgornje strukture.
-
----

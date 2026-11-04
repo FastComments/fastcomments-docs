@@ -1,4 +1,3 @@
----
 ## Parameters
 
 | Naam | Type | Verplicht | Beschrijving |
@@ -26,5 +25,3 @@ Retourneert: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-s
   console.log(result1, result2);
 })();
 [inline-code-end]
-
----

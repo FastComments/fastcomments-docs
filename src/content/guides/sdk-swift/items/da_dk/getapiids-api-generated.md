@@ -1,4 +1,3 @@
----
 ## Parametre
 
 | Navn | Type | Placering | Påkrævet | Beskrivelse |
@@ -43,5 +42,3 @@ ModerationAPI.getApiIds(tenantId: tenantId, options: ModerationAPI.GetApiIdsOpti
     }
 }
 [inline-code-end]
-
----

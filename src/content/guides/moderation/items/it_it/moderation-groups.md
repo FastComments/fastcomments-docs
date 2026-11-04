@@ -1,4 +1,3 @@
----
 I moderatori possono essere inseriti in gruppi per moderare diverse pagine o categorie di contenuti.
 
 Quando un moderatore appartiene a uno o più gruppi, vedrà solo i commenti di quei gruppi nella pagina Modera Commenti.
@@ -15,5 +14,3 @@ Infine, i commenti devono essere associati a uno o più gruppi affinché i moder
 
 Questo può essere configurato [aggiungendo alcuni gruppi](https://fastcomments.com/auth/my-account/moderate-comments/moderation-groups) e poi specificando gli ID del `Moderation Group` corrispondenti nel widget dei commenti,
 [come indicato qui](/guide-customizations-and-configuration.html#moderation-group-ids).
-
----

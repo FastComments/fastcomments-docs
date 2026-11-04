@@ -1,24 +1,24 @@
-Enable or disable notifications for a page. When users are subscribed to a page, notifications are created
-for new root comments, and also
+Abilita o disabilita le notifiche per una pagina. Quando gli utenti sono iscritti a una pagina, le notifiche vengono create
+per i nuovi commenti principali e anche
 
-## Parameters
+## Parametri
 
-| Nome | Tipo | Posizione | Richiesto | Descrizione |
+| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| urlId | string | query | Yes |  |
-| url | string | query | Yes |  |
-| pageTitle | string | query | Yes |  |
-| subscribedOrUnsubscribed | string | path | Yes |  |
+| tenantId | string | query | Sì |  |
+| urlId | string | query | Sì |  |
+| url | string | query | Sì |  |
+| pageTitle | string | query | Sì |  |
+| subscribedOrUnsubscribed | string | path | Sì |  |
 | sso | string | query | No |  |
 
-## Response
+## Risposta
 
-Returns: `UpdateUserNotificationPageSubscriptionStatusResponse`
+Restituisce: `UpdateUserNotificationPageSubscriptionStatusResponse`
 
-## Example
+## Esempio
 
-[inline-code-attrs-start title = 'Esempio updateUserNotificationPageSubscriptionStatus'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio di updateUserNotificationPageSubscriptionStatus'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
 

@@ -1,4 +1,3 @@
----
 | Sleutel | Standaard | Beschrijving |
 |---|---|---|
 | `TENANT_ID` | `""` | Uw FastComments-tenant-ID (`demo` voor testen). |
@@ -11,4 +10,3 @@
 | `SSO.IS_ADMIN` / `IS_MODERATOR` / `GROUP_IDS` | `None` | `callable(user)` of puntnotatie‑pad. |
 | `SSO.USER_MAPPER` | `None` | Puntnotatie‑pad naar `callable(user) -> dict`; hoogste prioriteit. |
 | `WIDGET_DEFAULTS` | `{}` | Configuratie samengevoegd in elke widget (camelCase‑sleutels). |
----

@@ -1,15 +1,15 @@
-Ta primer uporablja lastno kodo za združljivost z Wixom. **Ne boste mogli uporabiti odlomkov kode FastComments iz drugih navodil.**
+Ta primer uporablja prilagojeno kodo za združljivost z Wix. **Kosov kode FastComments iz drugih vodičev ne boste mogli uporabiti.**
 
-Open the form to add our custom HTML dialog by clicking `Enter Code` and selecting `HTML`:
+Odprite obrazec za dodajanje našega prilagojenega HTML pogovornega okna s klikom na `Enter Code` in izbiro `HTML`:
 
 <div class="screenshot white-bg">
-    <div class="title">Korak 3: Odprite HTML pogovorno okno</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-3-open-form.png" alt="Korak 3: Odprite HTML pogovorno okno" />
+    <div class="title">Korak 3: Odpri HTML pogovorno okno</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-3-open-form.png" alt="Korak 3: Odpri HTML pogovorno okno" />
 </div>
 
-Copy the following HTML snippet and paste it into the dialog, and click Posodobi:
+Kopirajte naslednji HTML delček, prilepite ga v pogovorno okno in kliknite Update:
 
-[inline-code-attrs-start title = 'Vstavek kode komentarjev za Wix'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Kos kode za komentarje Wix'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
 <div id="fastcomments-widget"></div>
@@ -34,8 +34,8 @@ Copy the following HTML snippet and paste it into the dialog, and click Posodobi
 [inline-code-end]
 
 <div class="screenshot white-bg">
-    <div class="title">Korak 3: Prilepi in shrani</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-3-paste-and-save.png" alt="Korak 3: Prilepi in shrani" />
+    <div class="title">Korak 3: Prilepite in shranite</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-3-paste-and-save.png" alt="Korak 3: Prilepite in shranite" />
 </div>
 
 Zdaj bi morali videti zelo majhno različico pripomočka za komentarje:
@@ -45,6 +45,4 @@ Zdaj bi morali videti zelo majhno različico pripomočka za komentarje:
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-3-result.png" alt="Korak 3: Rezultat" />
 </div>
 
-Naslednje bomo to postavili in spremenili velikost, da bo ustrezalo naši strani.
-
----
+Nato bomo to pozicionirali in prilagodili velikost, da bo ustrezala naši strani.

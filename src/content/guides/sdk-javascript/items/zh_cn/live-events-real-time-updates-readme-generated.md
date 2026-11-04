@@ -1,4 +1,4 @@
-订阅实时事件以获取有关评论、投票和其他活动的实时更新。
+订阅实时事件以获取评论、投票和其他活动的实时更新。
 
 ### 页面级事件
 
@@ -12,23 +12,23 @@ const config = {
   urlId: 'page-url-id',
 };
 
-// Subscribe to live events for a page
+// 订阅页面的实时事件
 const subscription = subscribeToChanges(
   config,
   'your-tenant-id', // tenantIdWS
   'page-url-id',    // urlIdWS  
-  'user-session-id', // userIdWS (get this from getComments response)
+  'user-session-id', // userIdWS（从 getComments 响应中获取）
   (event: LiveEvent) => {
     console.log('Live event received:', event);
     
     switch (event.type) {
       case LiveEventType.new_comment:
         console.log('New comment:', event.comment);
-        // Update your UI with the new comment
+        // 用新评论更新你的 UI
         break;
       case LiveEventType.new_vote:
         console.log('New vote:', event.vote);
-        // Update vote counts in your UI
+        // 更新 UI 中的投票数
         break;
       case LiveEventType.updated_comment:
         console.log('Comment updated:', event.comment);
@@ -37,29 +37,29 @@ const subscription = subscribeToChanges(
         console.log('Other event type:', event.type);
     }
     
-    return true; // Return true if event was handled
+    return true; // 如果事件已处理则返回 true
   },
   (isConnected: boolean) => {
     console.log('Connection status:', isConnected ? 'Connected' : 'Disconnected');
   }
 );
 
-// Close the subscription when done
+// 完成后关闭订阅
 subscription.close();
 ```
 
 ### 订阅用户事件
 
-监听特定于用户的事件（通知、提及等）：
+监听用户特定的事件（通知、提及等）：
 
 ```typescript
 import { subscribeToUserFeed, LiveEvent, LiveEventType } from 'fastcomments-sdk/browser';
 
 const userConfig = {
-  userIdWS: 'user-session-id', // Get this from getComments response
+  userIdWS: 'user-session-id', // 从 getComments 响应中获取
 };
 
-// Subscribe to user's personal feed
+// 订阅用户的个人动态
 const userSubscription = subscribeToUserFeed(
   userConfig,
   (event: LiveEvent) => {
@@ -68,7 +68,7 @@ const userSubscription = subscribeToUserFeed(
     switch (event.type) {
       case LiveEventType.notification:
         console.log('New notification:', event.notification);
-        // Show notification in your UI
+        // 在你的 UI 中显示通知
         break;
       case LiveEventType.notification_update:
         console.log('Notification updated:', event.notification);
@@ -84,13 +84,13 @@ const userSubscription = subscribeToUserFeed(
   }
 );
 
-// Close when done
+// 完成后关闭
 userSubscription.close();
 ```
 
 ### 获取 userIdWS
 
-The `userIdWS` parameter is required for live events and can be obtained from API responses:
+`userIdWS` 参数是实时事件所必需的，可以从 API 响应中获取：
 
 ```typescript
 const response = await sdk.publicApi.getCommentsPublic({
@@ -98,11 +98,11 @@ const response = await sdk.publicApi.getCommentsPublic({
   urlId: 'page-id'
 });
 
-// Extract userIdWS from the response
+// 从响应中提取 userIdWS
 const userIdWS = response.data?.userSessionInfo?.userIdWS;
 
 if (userIdWS) {
-  // Now you can subscribe to live events
+  // 现在你可以订阅实时事件了
   const subscription = subscribeToChanges(config, tenantIdWS, urlIdWS, userIdWS, handleEvent);
 }
 ```

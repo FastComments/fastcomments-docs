@@ -1,4 +1,3 @@
----
 ## Parameters
 
 | 이름 | 유형 | 위치 | 필수 | 설명 |
@@ -36,5 +35,3 @@ try {
     print('Exception when calling PublicApi->voteComment: $e\n');
 }
 [inline-code-end]
-
----

@@ -1,22 +1,22 @@
-Custom react counts for a page, optionally with the users who reacted.
+ページのカスタムリアクション数を取得します。オプションでリアクションしたユーザーも含められます。
 
-## Parameters
+## パラメーター
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| urlId | string | query | Yes |  |
-| includeUserInfo | string | query | No | "public" はプライベートプロファイルのユーザーを除外し、"include-private" はそれらを含めます。 |
+| tenantId | string | query | はい |  |
+| urlId | string | query | はい |  |
+| includeUserInfo | string | query | いいえ | "public" はプライベートプロフィールのユーザーを除外し、"include-private" はそれらを含めます。 |
 
-## Response
+## レスポンス
 
-返却: [`GetPageReactsAPIResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetPageReactsAPIResponse.java)
+戻り値: [`GetPageReactsAPIResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetPageReactsAPIResponse.java)
 
-## Example
+## 例
 
 [inline-code-attrs-start title = 'getPageReacts の例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// クラスをインポート:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -29,16 +29,16 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // APIキー認証を設定: api_key
+    // Configure API key authorization: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // 次の行のコメントを外すと、APIキーのプレフィックスを設定できます（例: "Token"、デフォルトは null）
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
-    PageReactIncludeUserInfo includeUserInfo = PageReactIncludeUserInfo.fromValue("public"); // PageReactIncludeUserInfo | \"public\" はプライベートプロファイルのユーザーを除外し、\"include-private\" はそれらを含めます。
+    PageReactIncludeUserInfo includeUserInfo = PageReactIncludeUserInfo.fromValue("public"); // PageReactIncludeUserInfo | \"public\" はプライベートプロフィールのユーザーを除外し、\"include-private\" はそれらを含めます。
     try {
       GetPageReactsAPIResponse result = apiInstance.getPageReacts(tenantId, urlId)
             .includeUserInfo(includeUserInfo)

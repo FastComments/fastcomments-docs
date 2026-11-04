@@ -82,5 +82,3 @@ Collab Chat 외에도 Notion 문서 하단에 전통적인 댓글 위젯을 추�
 - 각 페이지는 URL 경로를 기반으로 고유한 댓글 스레드를 가집니다
 - FastComments 계정에서 실제 tenant ID로 "demo"를 반드시 교체하세요
 - 이 위젯은 Super.so의 동적 페이지 로딩을 자동으로 처리합니다
-
----

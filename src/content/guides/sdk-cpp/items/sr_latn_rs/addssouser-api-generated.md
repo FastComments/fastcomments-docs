@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Name | Type | Required | Description |

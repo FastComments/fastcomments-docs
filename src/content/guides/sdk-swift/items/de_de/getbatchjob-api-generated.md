@@ -1,4 +1,3 @@
----
 Status, Fortschritt und, nach Abschluss, das Ergebnis eines Batch-Jobs.
 
 ## Parameter
@@ -33,5 +32,3 @@ DefaultAPI.getBatchJob(tenantId: tenantId, id: id) { (response, error) in
     }
 }
 [inline-code-end]
-
----

@@ -25,5 +25,3 @@ api->getUserBadges(U("my-tenant-123"), opts)
        }
    });
 [inline-code-end]
-
----

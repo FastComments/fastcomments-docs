@@ -12,5 +12,3 @@
 ### 대응
 
 See [트리거: 댓글 고정](#trigger-comment-pin) for the mirror trigger.
-
----

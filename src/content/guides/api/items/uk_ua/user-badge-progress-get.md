@@ -1,4 +1,3 @@
----
 Цей endpoint дозволяє отримувати записи про прогрес значків користувачів на основі різних критеріїв.
 
 Приклад запиту:
@@ -75,4 +74,3 @@ curl -X GET "https://fastcomments.com/api/v1/user-badge-progress?tenantId=demo&A
   "reason": "The limit (query param: limit) is too large (> 200)."
 }
 [inline-code-end]
----

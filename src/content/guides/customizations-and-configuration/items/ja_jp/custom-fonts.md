@@ -19,5 +19,3 @@ FastComments はカスタマイズ可能になるよう設計されており、�
     font-family: 'Roboto', sans-serif;
 }
 [inline-code-end]
-
----

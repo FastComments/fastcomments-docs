@@ -30,5 +30,3 @@ try {
     print('Exception when calling DefaultApi->getUserBadge: $e\n');
 }
 [inline-code-end]
-
----

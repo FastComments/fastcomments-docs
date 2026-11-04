@@ -1,4 +1,3 @@
----
 [api-resource-header-start name = 'TenantDailyUsage'; route = 'GET /api/v1/tenant-daily-usage'; creditsCost = 1; api-resource-header-end]
 
 此路由允许按年、月和日搜索租户的使用情况。最多可返回 365 个对象，费用为每 10 个对象 1 个 API 积分。
@@ -36,5 +35,3 @@ interface TenantDailyUsageResponse {
     tenantDailyUsages: TenantDailyUsage[]
 }
 [inline-code-end]
-
----

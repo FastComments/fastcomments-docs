@@ -1,65 +1,65 @@
-Agent webhooks are HTTP callbacks fired by the platform when an agent run completes or an approval changes state. Use them to forward agent activity into your own systems - moderation dashboards, audit logs, Slack channels, escalation tools.
+에이전트 웹훅은 에이전트 실행이 완료되거나 승인 상태가 변경될 때 플랫폼에서 발생하는 HTTP 콜백입니다. 이를 사용하여 에이전트 활동을 자체 시스템(모더레이션 대시보드, 감사 로그, Slack 채널, 에스컬레이션 도구 등)으로 전달할 수 있습니다.
 
-Configured under the **웹훅** 탭 on the [AI 에이전트 페이지](https://fastcomments.com/auth/my-account/ai-agents).
+[AI Agents 페이지](https://fastcomments.com/auth/my-account/ai-agents)의 **Webhooks** 탭에서 구성합니다.
 
-### What gets delivered
+### 전달되는 항목
 
-Four event types:
+네 가지 이벤트 유형:
 
-- **`trigger.succeeded`** - an agent run completed successfully.
-- **`trigger.failed`** - an agent run errored.
-- **`approval.requested`** - an action was queued for human approval.
-- **`approval.decided`** - an approval was approved, rejected, or execution-failed.
+- **`trigger.succeeded`** - 에이전트 실행이 성공적으로 완료되었습니다.
+- **`trigger.failed`** - 에이전트 실행 중 오류가 발생했습니다.
+- **`approval.requested`** - 작업이 사람의 승인을 위해 대기열에 추가되었습니다.
+- **`approval.decided`** - 승인이 승인, 거부 또는 실행 실패 처리되었습니다.
 
-See [웹훅 이벤트](#webhook-events) for which events fire when, and [웹훅 페이로드](#webhook-payloads) for the schema of each.
+어떤 이벤트가 언제 발생하는지는 [Webhook Events](#webhook-events)를, 각각의 스키마는 [Webhook Payloads](#webhook-payloads)를 참조하세요.
 
-### What's not delivered
+### 전달되지 않는 항목
 
-- **Per-tool-action webhooks.** A run that calls `pin_comment` does not fire a separate webhook for the pin - the action is included in the run's `trigger.succeeded` payload. If you want per-action delivery, parse the `actions` array on the trigger payload.
-- **Dropped triggers.** A trigger that does not dispatch (over budget, wrong scope) does not fire a webhook. Drops are visible only in the [Analytics page](#analytics-page).
-- **Replay-produced triggers.** Test runs do not fire webhooks. See [테스트 실행(리플레이)](#test-runs-replays).
+- **도구별 액션 웹훅.** `pin_comment`를 호출하는 실행은 핀에 대해 별도의 웹훅을 발생시키지 않습니다. 해당 액션은 실행의 `trigger.succeeded` 페이로드에 포함됩니다. 액션별 전달이 필요하면 트리거 페이로드의 `actions` 배열을 파싱하세요.
+- **드롭된 트리거.** 디스패치되지 않는 트리거(예산 초과, 잘못된 범위)는 웹훅을 발생시키지 않습니다. 드롭은 [Analytics 페이지](#analytics-page)에서만 확인할 수 있습니다.
+- **리플레이로 생성된 트리거.** 테스트 실행은 웹훅을 발생시키지 않습니다. [Test Runs (Replays)](#test-runs-replays)를 참조하세요.
 
-### Configuration
+### 구성
 
-For each webhook you set:
+각 웹훅에 대해 다음을 설정합니다:
 
-- **URL** - the HTTPS endpoint to POST to.
-- **Domain** - the comment domain this webhook applies to (your tenant may host multiple domains). `*` matches all domains; `*.example.com` is a glob; an exact domain matches only that one.
-- **Events** - which of the four event types to subscribe to.
-- **Agents** - empty for "all agents", or a list of specific agent IDs to filter.
-- **Method** - POST or PUT (default POST).
-- **No-retry status codes** - HTTP response codes that should be treated as terminal failures, not retried (e.g., 410 Gone, 422 Unprocessable). See [웹훅 재시도](#webhook-retries).
+- **URL** - POST 요청을 보낼 HTTPS 엔드포인트입니다.
+- **Domain** - 이 웹훅이 적용되는 댓글 도메인입니다(테넌트는 여러 도메인을 호스팅할 수 있습니다). `*`는 모든 도메인과 일치하고, `*.example.com`은 글롭이며, 정확한 도메인은 해당 도메인에만 일치합니다.
+- **Events** - 구독할 네 가지 이벤트 유형 중 선택합니다.
+- **Agents** - 비어 있으면 "모든 에이전트"이며, 특정 에이전트 ID 목록으로 필터링할 수 있습니다.
+- **Method** - POST 또는 PUT (기본값 POST).
+- **No-retry status codes** - 재시도하지 않고 최종 실패로 처리해야 하는 HTTP 응답 코드입니다(예: 410 Gone, 422 Unprocessable). [Webhook Retries](#webhook-retries)를 참조하세요.
 
-Multiple webhooks can subscribe to the same event - each one queues independently and is delivered to its own URL.
+여러 웹훅이 동일한 이벤트를 구독할 수 있습니다. 각각 독립적으로 대기열에 추가되며 자체 URL로 전달됩니다.
 
-### Per-domain matching
+### 도메인별 매칭
 
-A given event is delivered to **every webhook whose `domain` field matches the comment's domain**. The matching uses a simple glob:
+주어진 이벤트는 **댓글의 도메인과 `domain` 필드가 일치하는 모든 웹훅**에 전달됩니다. 매칭은 간단한 글롭을 사용합니다:
 
-- Exact: `example.com` matches only `example.com`.
-- Wildcard star: `*` matches every domain.
-- Subdomain glob: `*.example.com` matches `blog.example.com`, `forum.example.com`, but not `example.com` itself.
+- 정확히 일치: `example.com`은 `example.com`에만 일치합니다.
+- 와일드카드 별표: `*`는 모든 도메인과 일치합니다.
+- 서브도메인 글롭: `*.example.com`은 `blog.example.com`, `forum.example.com`과 일치하지만 `example.com` 자체와는 일치하지 않습니다.
 
-The domain on a payload is the first non-null result from: the comment's `domain`, the URL parsed against your tenant's domain configuration, or the `Page` lookup by `urlId`.
+페이로드의 도메인은 다음 중 첫 번째 non-null 결과입니다: 댓글의 `domain`, 테넌트의 도메인 구성에 대해 파싱된 URL, 또는 `urlId`로 조회한 `Page`.
 
-### Per-agent filtering
+### 에이전트별 필터링
 
-The **Agents** field lets a webhook subscribe to only certain agents. Empty means "all agents". When non-empty, the webhook only fires for agents in the list.
+**Agents** 필드를 사용하면 웹훅이 특정 에이전트만 구독할 수 있습니다. 비어 있으면 "모든 에이전트"를 의미합니다. 비어 있지 않으면 웹훅은 목록에 있는 에이전트에 대해서만 발생합니다.
 
-This is useful when you have one webhook for moderation events and another for engagement events, both routing to different downstream systems.
+모더레이션 이벤트용 웹훅 하나와 참여 이벤트용 웹훅 하나를 서로 다른 다운스트림 시스템으로 라우팅할 때 유용합니다.
 
-### Test send
+### 테스트 전송
 
-The webhook config UI has a **Test send** button that posts a fake payload to the URL so you can verify connectivity, signing, and your endpoint's response code without waiting for a real event.
+웹훅 구성 UI에는 **Test send** 버튼이 있어 실제 이벤트를 기다리지 않고도 연결, 서명, 엔드포인트의 응답 코드를 확인할 수 있도록 가짜 페이로드를 URL로 전송합니다.
 
-### Delivery logs
+### 전달 로그
 
-Every delivery (and every retry) lands in the [Webhook Delivery Logs](#webhook-logs) page so you can see what happened on the wire.
+모든 전달(및 모든 재시도)은 [Webhook Delivery Logs](#webhook-logs) 페이지에 기록되므로 네트워크에서 무슨 일이 일어났는지 확인할 수 있습니다.
 
-### Signing
+### 서명
 
-Every webhook is signed with HMAC-SHA256 using your tenant's API secret. See [웹훅 서명](#webhook-signing).
+모든 웹훅은 테넌트의 API 시크릿을 사용하여 HMAC-SHA256으로 서명됩니다. [Webhook Signing](#webhook-signing)을 참조하세요.
 
-### Eligibility
+### 자격 요건
 
-Agent webhooks require valid billing on the tenant. They use the same signing/secret infrastructure as your existing comment webhooks - if you have already integrated comment webhooks (see the [웹훅 가이드](/guide-webhooks.html)), the agent webhook integration is the same shape with new event types.
+에이전트 웹훅은 테넌트에 유효한 결제 정보가 필요합니다. 기존 댓글 웹훅과 동일한 서명/시크릿 인프라를 사용합니다. 이미 댓글 웹훅을 통합했다면([Webhooks 가이드](/guide-webhooks.html) 참조), 에이전트 웹훅 통합은 새로운 이벤트 유형이 추가된 동일한 형태입니다.

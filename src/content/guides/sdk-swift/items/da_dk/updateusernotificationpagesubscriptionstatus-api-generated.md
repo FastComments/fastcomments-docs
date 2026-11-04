@@ -1,4 +1,3 @@
----
 Aktivér eller deaktiver notifikationer for en side. Når brugere er tilmeldt en side, oprettes der notifikationer
 for nye overordnede kommentarer, og også
 
@@ -42,5 +41,3 @@ PublicAPI.updateUserNotificationPageSubscriptionStatus(tenantId: tenantId, urlId
     }
 }
 [inline-code-end]
-
----

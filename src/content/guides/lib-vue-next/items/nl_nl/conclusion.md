@@ -8,5 +8,3 @@ Als je problemen tegenkomt of vragen hebt over de Vue 3-bibliotheek, gelieve:
 ## Bijdragen
 
 Bijdragen zijn welkom! Bezoek de [GitHub repository](https://github.com/FastComments/fastcomments-vue-next) voor richtlijnen voor bijdragen.
-
----

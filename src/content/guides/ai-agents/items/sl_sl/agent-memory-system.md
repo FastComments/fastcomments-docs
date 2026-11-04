@@ -1,74 +1,74 @@
-Agent memory is a tenant-scoped, **shared** key-value pool that every agent in your tenant can read from and write to. It exists so agents can carry context across runs.
+Spomin agenta je obseg na najemnika (tenant-scoped), **skupni** ključ-vrednost skladišče, iz katerega lahko vsak agent v vašem najemniku bere in vanj piše. Obstaja zato, da lahko agenti prenašajo kontekst med zagoni.
 
-### Zakaj pomnilnik obstaja
+### Zakaj spomin obstaja
 
-LLM kontekst je za posamezen zagon. Brez pomnilnika agent, ki uporabniku izreče opozorilo, ob naslednjem srečanju z istim uporabnikom ne more vedeti za to opozorilo. Politika eskalacije platforme - "opozori pred prepovedjo" - je odvisna od tega, da agent najde prejšnje opozorilo. Pomnilnik omogoča, da to deluje.
+Kontekst LLM je vezan na posamezen zagon. Brez spomina agent, ki izda opozorilo uporabniku, nima načina, da bi naslednjič, ko vidi istega uporabnika, vedel za to opozorilo. Politika eskalacije platforme - "opozori pred izključitvijo" - je odvisna od tega, da agent najde prejšnje opozorilo. Spomin je tisto, kar to omogoča.
 
-### Dve vrsti pomnilnika
+### Dve vrsti spomina
 
-- **WARNING** - zapisuje se samodejno kot del toka [`warn_user`](#tool-warn-user). Agent ne piše zapisov `WARNING` ročno; ti so stranski učinek opozarjanja uporabnika.
-- **NOTE** - zapisuje se z [`save_memory`](#tools-overview). Splošen kontekst, ki ga agent želi, da ga bodo vedeli prihodnji agenti.
+- **WARNING** - zapisan samodejno kot del toka [`warn_user`](#tool-warn-user). Agent ne zapisuje zapisov `WARNING` ročno; ti so stranski učinek opozorila uporabnika.
+- **NOTE** - zapisan z [`save_memory`](#tools-overview). Splošni kontekst, ki ga agent želi, da bodoči agenti vedo.
 
-Politika eskalacije posebej išče zapise vrste `WARNING`, ko odloča, ali je prepoved utemeljena.
+Politika eskalacije pri odločanju, ali je izključitev upravičena, išče posebej zapise `WARNING`.
 
-### Omejeno na najemnika, deljeno med agenti
+### Obseg na najemnika, skupno agentom
 
-Vsi agenti v vašem najemniku delijo **en sklop pomnilnika**. Opomba, ki jo shrani Agent A, je vidna klicem `search_memory` Agenta B. To je namenoma - želite, da opombe triažnega agenta obveščajo odločitve moderirnega agenta.
+Vsi agenti v vašem najemniku si delijo **en skladišče spomina**. Zapisek, ki ga shrani Agent A, je viden klicem `search_memory` Agenta B. To je namerno - želite, da zapiski agenta za triažo obveščajo odločitve moderatorskega agenta.
 
-`tenantId` nastavi izvrševalec iz lastnega najemnika agenta - nikoli iz LLM argumentov - zato so puščanja pomnilnika med najemniki po zasnovi nemogoča.
+`tenantId` nastavi izvajalnik iz najemnika samega agenta - nikoli iz argumentov LLM - tako da puščanja spomina med najemniki so po konstrukciji nemogoča.
 
-### Kaj vsebuje zapis pomnilnika
+### Kaj vsebuje zapis spomina
 
-Vsak zapis pomnilnika vsebuje:
+Vsak vnos spomina vsebuje:
 
 - **Kateri agent ga je zapisal**, in kdaj.
-- **O kom je** - uporabnik, ki ga ta pomnilnik opisuje. Agenta tega ne more izmišljati; platforma to avtomatsko izpolni iz sprožilca, ki je aktiviral agenta.
-- **Skrit signal alt-racuna** - platforma prav tako (zasebno) zabeleži IP prstni odtis izvirnega komentarja, tako da lahko prihodnja iskanja pomnilnika prikažejo opombe o drugih računih, ki objavljajo z istega IP. Prstni odtis agentu ali LLM ni nikoli prikazan.
-- **Sama opomba** - do 2000 znakov prostega besedila.
-- **Oznake** za pridobivanje - do 10 kratkih oznak.
-- **Vrsta** - bodisi opozorilo ali splošna opomba.
-- **Neobvezna povezava do komentarja** - če je pomnilnik vezan na konkreten komentar.
+- **O kom gre** - uporabnik, ki ga ta spomin opisuje. Agent tega ne more izmisliti; platforma ga samodejno izpolni iz tistega, kar je sprožilo agenta.
+- **Skriti signal alternativnega računa** - platforma zasebno zapiše tudi prstni odtis IP izvornega komentarja, tako da bodoča iskanja po spominu lahko razkrijejo zapise o drugih računih, ki objavljajo z istega IP. Prstnega odtisa agent ali LLM nikoli ne vidi.
+- **Sam zapisek** - do 2000 znakov prostega besedila.
+- **Oznake** za iskanje - do 10 kratkih oznak.
+- **Vrsto** - bodisi opozorilo bodisi splošen zapisek.
+- **Neobvezno povezavo do komentarja** - če je spomin vezan na določen komentar.
 
 ### Vedenje iskanja
 
-[`search_memory`](#tools-overview) vrne do 25 zapisov, razvrščenih od najnovejših navzdol, samodejno omejenih na (sprožilčevega uporabnika) ALI (druge račune na IP sprožilca). Rezultati so tudi omejeni na skupno 8000 znakov po vsebini vseh vrnjenih zapisov - starejši vnosi se zavržejo, če je omejitev dosežena.
+[`search_memory`](#tools-overview) vrne do 25 zapisov, razvrščenih od najnovejšega, samodejno obseganih na (uporabnika sprožilca) ALI (druge račune na IP sprožilca). Rezultati so omejeni tudi po skupno 8000 znakih vse vrnjene vsebine - starejši vnosi so odstranjeni, če je omejitev dosežena.
 
-Agent ne posreduje `userId` ali `targetIpHash`. Obe vrednosti nastavi izvrševalec.
+Agent ne podaja `userId` ali `targetIpHash`. Oboje nastavi izvajalnik.
 
 ### Trajnost
 
-Pomnilnik nima **TTL**. Zapisi obstajajo dokler niso izrecno odstranjeni. Zapisi WARNING o uporabniku se namenoma nikoli samodejno ne brišejo - zgodovina eskalacij mora biti najdljiva za nedoločen čas, sicer je platformina preverba "iskanje pred prepovedjo" brez pomena.
+Spomin **nima TTL**. Zapisi ostanejo, dokler niso izrecno odstranjeni. Zapisi WARNING o uporabniku se namenoma nikoli ne samodejno izbrišejo - zgodovina eskalacije mora biti nedoločeno najdena, sicer je preverjanje "išči pred izključitvijo" platforme brez smisla.
 
-Trije načini, kako se pomnilnik odstrani:
+Trije načini, kako se spomin odstrani:
 
-- Moderator izbriše osnovni komentar - vsak pomnilnik, vezan na ta komentar, se posledično izbriše.
-- Uporabnik je izbrisan - vsi zapisi pomnilnika o tem uporabniku se odstranijo v isti transakciji.
+- Moderator izbriše izvorni komentar - vsak spomin, vezan na ta komentar, se kaskadno izbriše.
+- Uporabnik je izbrisan - vsi vnosi spomina o tem uporabniku se odstranijo v isti transakciji.
 - Vaš najemnik je izbrisan.
 
-Danes ne obstaja skrbniški uporabniški vmesnik za brisanje posameznih zapisov pomnilnika.
+Danes ni skrbniškega vmesnika za brisanje posameznih zapisov spomina.
 
-### Pomnilnik v poskusnem izvajanju
+### Spomin v poskusnem zagonu (dry-run)
 
-Agenti v poskusnem izvajanju **ne** pišejo pomnilnika. To je zasnovano namenoma: hipotetične odločitve agenta v poskusnem izvajanju ne bi smele onesnažiti skupnega sklada pomnilnika. Branje nazaj preko `search_memory` v poskusnem izvajanju deluje normalno - agent lahko vidi resnične spomine od živih agentov - le dodajati jih ne more.
+Agenti v poskusnem zagonu **ne** zapisujejo spomina. To je po načrtu: hipotetične odločitve agenta v poskusnem zagonu ne smejo onesnažiti skupnega skladišča spomina. Branje prek `search_memory` deluje v poskusnem zagonu normalno - agent lahko vidi prave spomine od živih agentov - le dodajati jim ne more.
 
-### Pomnilnik pri ponovitvah
+### Spomin v ponovitvah (replays)
 
-Enako kot pri poskusnem izvajanju: agenti v ponovitvah ne pišejo pomnilnika. Ponovitve so samo pregled. Glejte [Test Runs (Replays)](#test-runs-replays).
+Enako kot pri poskusnem zagonu: agenti ponovitev ne zapisujejo spomina. Ponovitve so samo predogled. Glejte [Testni zagoni (ponovitve)](#test-runs-replays).
 
 ### Povzetek omejitev
 
-| Limit | Value |
+| Omejitev | Vrednost |
 |---|---|
-| Memory content max length | 2000 chars |
-| Memory tag max length | 64 chars |
-| Memory tags max count | 10 |
-| Memory query max length | 200 chars |
-| Memory search result limit | 25 records |
-| Memory search total content cap | 8000 chars |
+| Največja dolžina vsebine spomina | 2000 znakov |
+| Največja dolžina oznake spomina | 64 znakov |
+| Največje število oznak spomina | 10 |
+| Največja dolžina poizvedbe spomina | 200 znakov |
+| Omejitev rezultatov iskanja spomina | 25 zapisov |
+| Skupna omejitev vsebine iskanja spomina | 8000 znakov |
 
-### Oglejte si tudi
+### Glejte tudi
 
-- [Tool: save_memory](#tools-overview) za zapisovanje.
-- [Tool: search_memory](#tools-overview) za branje.
-- [Tool: warn_user](#tool-warn-user) - edino orodje, ki zapiše pomnilnik vrste WARNING.
-- [Tool: ban_user](#tool-ban-user) - sistemski prompt zahteva, da se pred tem pokliče `search_memory`.
+- [Orodje: save_memory](#tools-overview) za pisanje.
+- [Orodje: search_memory](#tools-overview) za branje.
+- [Orodje: warn_user](#tool-warn-user) - edino orodje, ki zapisuje spomin vrste WARNING.
+- [Orodje: ban_user](#tool-ban-user) - sistemski poziv zahteva, da se `search_memory` pokliče pred tem.

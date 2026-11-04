@@ -1,4 +1,3 @@
----
 `UserBadgeProgress` je objekat koji predstavlja napredak korisnika u sticanju različitih znački u FastComments sistemu.
 
 Ovo praćenje pomaže da se odredi kada korisnici treba da dobiju automatske značke na osnovu njihove aktivnosti i učešća u vašoj zajednici.
@@ -55,4 +54,3 @@ export interface UserBadgeProgress {
     }
 }
 [inline-code-end]
----

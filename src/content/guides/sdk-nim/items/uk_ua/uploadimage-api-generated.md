@@ -1,4 +1,3 @@
----
 Завантажити та змінити розмір зображення
 
 ## Параметри
@@ -27,5 +26,3 @@ if uploadResult.isSome:
   let result = uploadResult.get()
   # use result as needed
 [inline-code-end]
-
----

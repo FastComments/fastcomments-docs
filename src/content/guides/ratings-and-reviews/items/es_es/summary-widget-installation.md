@@ -1,6 +1,6 @@
-Below is the Vanilla JS code for installing the Summary Widget. The React library also has this widget.
+A continuación se muestra el código Vanilla JS para instalar el Summary Widget. La librería React también tiene este widget.
 
-[inline-code-attrs-start title = 'Instalación del Widget de Resumen'; type = 'html'; isFunctional = true; type = 'html';  inline-code-attrs-end]
+[inline-code-attrs-start title = 'Instalación del Summary Widget'; type = 'html'; isFunctional = true; type = 'html';  inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-reviews-summary.min.js"></script>
 <div id="summary-widget"></div>
@@ -11,12 +11,14 @@ Below is the Vanilla JS code for installing the Summary Widget. The React librar
 </script>
 [inline-code-end]
 
-The widget will automatically find the questions to show in the summary based on the corresponding widget configuration for that page/site.
+El widget encontrará automáticamente las preguntas que se mostrarán en el resumen según la configuración del widget correspondiente para esa página/sitio.
 
-### Filtering Comments by Rating
+### Filtrar Comentarios por Calificación
 
-When the comment widget for the same page is also on the page, and it is configured to show each commenter's answer on their comment, the rows of the breakdown become clickable. Clicking a row, for example "5", filters the comment widget to the comments that gave that answer. Clicking the row again, or the X on the "Showing only" chip in the comment widget, shows all the comments again. This needs no configuration: the Summary Widget finds the comment widget with the same `tenantId` and `urlId`.
+Cuando el widget de comentarios de la misma página también está en la página, y está configurado para mostrar la respuesta de cada comentarista en su comentario, las filas del desglose
+se vuelven clicables. Al hacer clic en una fila, por ejemplo "5", se filtra el widget de comentarios a los comentarios que dieron esa respuesta. Al hacer clic en la fila de nuevo, o en la X del chip "Mostrando solo"
+en el widget de comentarios, se muestran todos los comentarios de nuevo. Esto no requiere configuración: el Summary Widget encuentra el widget de comentarios con el mismo `tenantId` y `urlId`.
 
-This works for star, thumbs, emoji, scale and single choice questions. The breakdown the comment widget shows above the comment box can be clicked the same way.
+Esto funciona para preguntas de estrellas, pulgares, emojis, escala y de opción única. El desglose que el widget de comentarios muestra sobre el cuadro de comentarios se puede hacer clic de la misma manera.
 
-If you require the widget in one of our other libraries that does not have it, file a support ticket so that we know to add it.
+Si necesita el widget en una de nuestras otras librerías que no lo tiene, abra un ticket de soporte para que sepamos que debemos añadirlo.

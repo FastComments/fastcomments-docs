@@ -6,5 +6,3 @@
 </div>
 
 恭喜您已在 Squarespace 上设置 FastComments！如果您遇到 Domain Error，或想了解如何自定义评论区域，请继续阅读！
-
----

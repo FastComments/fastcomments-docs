@@ -19,5 +19,3 @@ Za preglasitev pisave priporočamo, da svoj CSS definirate z selektorjema `.fast
     font-family: 'Roboto', sans-serif;
 }
 [inline-code-end]
-
----

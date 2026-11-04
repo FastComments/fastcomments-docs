@@ -1,4 +1,3 @@
----
 ## Yardıma mı ihtiyacınız var?
 
 Laravel Paketi ile ilgili herhangi bir sorunla karşılaşırsanız veya sorularınız varsa, lütfen:
@@ -9,5 +8,3 @@ Laravel Paketi ile ilgili herhangi bir sorunla karşılaşırsanız veya sorular
 ## Katkıda Bulunma
 
 Katkılar memnuniyetle kabul edilir! Katkı yönergeleri için lütfen [GitHub deposunu](https://github.com/FastComments/fastcomments-laravel) ziyaret edin.
-
----

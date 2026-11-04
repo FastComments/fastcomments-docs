@@ -34,5 +34,3 @@ Returns: [`CreatePollVoteResponse`](https://github.com/FastComments/fastcomments
   console.log(result);
 })();
 [inline-code-end]
-
----

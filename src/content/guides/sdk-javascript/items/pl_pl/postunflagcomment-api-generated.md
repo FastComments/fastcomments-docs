@@ -1,4 +1,3 @@
----
 ## Parametry
 
 | Name | Type | Required | Description |
@@ -28,5 +27,3 @@ async function runExample() {
 
 runExample();
 [inline-code-end]
-
----

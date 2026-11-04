@@ -1,4 +1,3 @@
----
 `TenantPackage` 定义了可供 `Tenant` 使用的套餐信息。一个租户可能有多个可用的套餐，但在任意时刻只有一个处于使用中。
 
 `Tenant` 在其 `packageId` 指向一个有效的 `TenantPackage` 之前，不能用于任何产品。
@@ -65,5 +64,3 @@ export interface TenantPackage {
     flexMinimumCostCents?: null
 }
 [inline-code-end]
-
----

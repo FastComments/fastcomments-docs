@@ -1,4 +1,3 @@
----
 ## Παράμετροι
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
@@ -27,5 +26,3 @@ api->reactFeedPostPublic(tenantId, postId, reactBody, options)
     .then([](std::shared_ptr<ReactFeedPostResponse> resp) {
     });
 [inline-code-end]
-
----

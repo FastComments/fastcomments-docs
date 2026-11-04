@@ -1,4 +1,3 @@
----
 Ta vodnik pokriva pogoste težave z avtentikacijo SAML in njihove rešitve.
 
 ### Težave s certifikati in varnostjo
@@ -283,4 +282,3 @@ Za specifične težave pri IdP:
    - Redno pregledujte konfiguracijo SAML
    - Potrdite, da je konfiguracija IdP še vedno aktualna
    - Posodobite dokumentacijo ob spremembah
----

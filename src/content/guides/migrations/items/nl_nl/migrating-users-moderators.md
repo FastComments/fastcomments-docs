@@ -9,5 +9,3 @@ Voor het toevoegen van moderators, zie [de bijbehorende documentatie](/guide-mod
 ### Een opmerking over authenticatie
 
 Uw gebruikers zoeken mogelijk een plek om hun wachtwoord in te voeren. FastComments gebruikt "magische links" voor het inloggen - dus er zijn geen wachtwoorden nodig.
-
----

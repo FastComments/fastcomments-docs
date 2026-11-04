@@ -1,4 +1,3 @@
----
 ## パラメータ
 
 | 名前 | 型 | 必須 | 説明 |
@@ -26,5 +25,3 @@ api->getUserBadges(U("my-tenant-123"), opts)
        }
    });
 [inline-code-end]
-
----

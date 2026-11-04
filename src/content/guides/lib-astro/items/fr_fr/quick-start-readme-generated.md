@@ -1,4 +1,3 @@
----
 ```astro
 ---
 import { FastComments } from 'fastcomments-astro';
@@ -8,4 +7,3 @@ import { FastComments } from 'fastcomments-astro';
 ```
 
 Remplacez `"demo"` par l'identifiant (tenant ID) de votre compte FastComments.
----

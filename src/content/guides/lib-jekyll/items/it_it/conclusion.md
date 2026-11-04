@@ -8,5 +8,3 @@ Se riscontri problemi o hai domande sulla libreria Jekyll, per favore:
 ## Contribuire
 
 I contributi sono benvenuti! Visita il [repository GitHub](https://github.com/FastComments/fastcomments-jekyll) per le linee guida per i contributi.
-
----

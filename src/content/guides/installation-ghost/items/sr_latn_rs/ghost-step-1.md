@@ -36,5 +36,3 @@ U gornjem desnom uglu izaberite `Advanced`:
     <div class="title">Preuzmite temu</div>
     <img class="screenshot-image" src="/images/installation-guides/ghost-step-1-5-download.png" alt="Preuzmite temu" />
 </div>
-
----

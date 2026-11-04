@@ -17,5 +17,3 @@ let (response, httpResponse) = client.getUserBadgeProgressList(tenantId = "my-te
 if response.isSome:
   let badgeProgress = response.get()
 [inline-code-end]
-
----

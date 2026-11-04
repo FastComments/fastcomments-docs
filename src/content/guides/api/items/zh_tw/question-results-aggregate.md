@@ -1,52 +1,52 @@
 [api-resource-header-start name = 'QuestionResultsAggregate'; route = 'GET /api/v1/question-results-aggregate'; creditsCost = 2; api-resource-header-end]
 
-這裡是結果彙總的地方。
+這裡是結果聚合的地方。
 
-彙總回應結構如下：
+聚合回應的結構如下：
 
 [inline-code-attrs-start title = 'QuestionResultsAggregationResult 結構'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface QuestionResultDataPoint {
-    /** 當前資料點（日期區段或頁面）中，將值映射到該值出現次數的映射。 **/
+    /** 目前資料點(日期區間或頁面)中,每個值出現次數的映射。 **/
     v: Map<ValueAsString, number>
     total: number
 }
 
 interface QuestionResultsAggregationResult {
-    /** Note - is null when timeBucket not specified. **/
+    /** 注意 - 未指定 timeBucket 時為 null。 **/
     dataByDateBucket?: Map<DateString, QuestionResultDataPoint>
     dataByUrlId?: Map<URLIdString, QuestionResultDataPoint>
     countsByValue?: Map<ValueAsString, number>
-    /** 彙總的結果總數。 **/
+    /** 聚合的結果總數。 **/
     total: number
-    /** 計算出的加權平均值。為浮點數，通常為兩位小數或更少。 **/
+    /** 加權平均結果。為浮點數,通常不超過兩位小數。 **/
     average: number
-    /** 表示此資料計算時間的日期字串，因為資料可能來自快取。 **/
+    /** 代表此資料計算時間的日期字串,因為可能來自快取。 **/
     createdAt: string
 }
 [inline-code-end]
 
-Here are the query parameters available for aggregation:
+以下是聚合可用的查詢參數:
 
 [inline-code-attrs-start title = 'QuestionResultsAggregation 請求結構'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface QuestionResultsAggregateRequestQueryParams {
     tenantId: string
     API_KEY: string
-    /** You can aggregate results for one or more questions. **/
+    /** 您可以針對一或多個問題聚合結果。 **/
     questionId: string | string[]
     startDate?: string | number
     timeBucket?: 'day' | 'month' | 'year'
-    /** Aggregate for a specific page. **/
+    /** 針對特定頁面進行聚合。 **/
     urlId?: string
-    /** Aggregate for a specific user. **/
+    /** 針對特定使用者進行聚合。 **/
     userId?: string
-    /** Force recalculate now and update the cache. **/
+    /** 強制立即重新計算並更新快取。 **/
     forceRecalculate?: boolean
 }
 [inline-code-end]
 
-Here's an example request:
+以下是請求範例:
 
 [inline-code-attrs-start title = 'QuestionResultsAggregation 範例'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -54,7 +54,7 @@ curl --request GET \
   --url 'https://fastcomments.com/api/v1/question-results-aggregation?tenantId=demo&API_KEY=DEMO_API_SECRET&questionId=some-question-id'
 [inline-code-end]
 
-Example response:
+回應範例:
 
 [inline-code-attrs-start title = 'QuestionResultsAggregation 回應範例'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -82,23 +82,21 @@ Example response:
 [inline-code-start]
 interface QuestionResultsAggregationResponse {
     status: 'success' | 'failed'
-    /** Included on failure. **/
+    /** 失敗時包含。 **/
     code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key'
-    /** Included on failure. **/
+    /** 失敗時包含。 **/
     reason?: string
     data: QuestionResultsAggregationResult
 }
 [inline-code-end]
 
-### 效能注意事項
+### 效能說明
 
-- 對於快取未命中，彙總通常每百萬筆結果約需五秒。
-- 否則，請求為常數時間。
+- 快取未命中時,每百萬筆結果的聚合通常需要五秒鐘。
+- 否則,請求為常數時間。
 
-### 快取與費用說明
+### 快取與成本說明
 
-- 當 `forceRecalculate` 是指定時，費用恆為 `10`，而不是一般的 `2`。
-- 如果快取過期且資料被重新計算，若未指定 `forceRecalculate`，費用仍為固定的 `2`。快取的過期時間取決於被彙總資料集的大小（可介於 30 秒到 5 分鐘之間）。
-- 此機制是為了鼓勵使用快取。
-
----
+- 當指定 `forceRecalculate` 時,成本一律為 `10`,而非一般的 `2`。
+- 如果快取過期且資料被重新計算,在未指定 `forceRecalculate` 的情況下,成本仍為固定的 `2`。快取會根據聚合的資料集大小過期(介於 30 秒到 5 分鐘之間)。
+- 這是為了鼓勵使用快取。

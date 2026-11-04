@@ -33,5 +33,3 @@ Thread Summarizer は、長いスレッドの最後に中立的な単一段落�
 ### 繰り返し要約を避ける方法
 
 エージェントは [`save_memory`](#tools-overview) と [`search_memory`](#tools-overview) にアクセスできます — プロンプトを拡張して「summarized {thread urlId}」のようなメモを記録し、再投稿する前にそれらをチェックするよう指示できます。メモリはテナント内のすべてのエージェントで共有されます。
-
----

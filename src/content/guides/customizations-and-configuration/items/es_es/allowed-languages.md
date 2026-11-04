@@ -1,11 +1,11 @@
-By default, FastComments does not limit languages used to comment.  
+Por defecto, FastComments no limita los idiomas utilizados para comentar.
 
-It may be desirable to limit the languages a community uses.
+Puede ser deseable limitar los idiomas que utiliza una comunidad.
 
-This can be configured without code, on the widget customization page:
+Esto se puede configurar sin código, en la página de personalización del widget:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allowed-languages']; selector = '.allowed-languages'; alt='Selector de idiomas permitidos en la página de personalización del widget para limitar qué idiomas pueden usar los comentarios'; title='Idiomas permitidos' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allowed-languages']; selector = '.allowed-languages'; alt='Selector de idiomas permitidos en la página de personalización del widget para limitar qué idiomas pueden usar los comentarios'; title='Idiomas Permitidos' app-screenshot-end]
 
-The system will parse their comment and determine its language, and then match it with the allowed list.
+El sistema analizará su comentario y determinará su idioma, y luego lo comparará con la lista de idiomas permitidos.
 
-If the comment is written in a language that is not allowed, then a localized error message is shown.
+Si el comentario está escrito en un idioma que no está permitido, se mostrará un mensaje de error localizado.

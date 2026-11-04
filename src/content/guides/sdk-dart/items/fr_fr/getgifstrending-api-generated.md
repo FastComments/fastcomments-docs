@@ -30,5 +30,3 @@ try {
     print('Exception when calling PublicApi->getGifsTrending: $e\n');
 }
 [inline-code-end]
-
----

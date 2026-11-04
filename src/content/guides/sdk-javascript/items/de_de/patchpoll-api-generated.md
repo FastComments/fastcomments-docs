@@ -1,17 +1,17 @@
-Edit a poll in place, keeping its tallies: change the question, relabel an option, close or reopen it,
-or change who may see the voters. Options are addressed by id - to add, remove or reorder them, PUT the full list.
+Bearbeiten Sie eine Umfrage direkt, ohne die Stimmen zu verlieren: Ändern Sie die Frage, benennen Sie eine Option um, schließen oder öffnen Sie sie erneut,
+oder ändern Sie, wer die Wähler sehen darf. Optionen werden über die id adressiert – um sie hinzuzufügen, zu entfernen oder neu zu ordnen, senden Sie die vollständige Liste per PUT.
 
-## Parameters
+## Parameter
 
-| Name | Type | Required | Description |
+| Name | Typ | Erforderlich | Beschreibung |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| commentId | string | Yes |  |
-| commentPollPatch | CommentPollPatch | Yes |  |
+| tenantId | string | Ja |  |
+| commentId | string | Ja |  |
+| commentPollPatch | CommentPollPatch | Ja |  |
 
-## Response
+## Antwort
 
-Rückgabe: [`SavePollResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/SavePollResponse.ts)
+Gibt zurück: [`SavePollResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/SavePollResponse.ts)
 
 ## Beispiel
 

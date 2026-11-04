@@ -8,5 +8,3 @@ Hvis du oplever problemer eller har spørgsmål om C++ SDK, så:
 ## Bidrag
 
 Bidrag er velkomne! Besøg venligst [GitHub-repositoriet](https://github.com/FastComments/fastcomments-cpp) for retningslinjer for bidrag.
-
----

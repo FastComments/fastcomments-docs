@@ -1,4 +1,3 @@
----
 ## Parámetros
 
 | Name | Type | Location | Required | Description |
@@ -40,5 +39,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->get_v2_page_reacts: %s\n" % e)
 [inline-code-end]
-
----

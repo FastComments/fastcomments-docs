@@ -14,5 +14,3 @@ Ako korisnik pokuša da pristupi stranici za koju nema pristup, videće poruku o
 </div>
 
 Tekst poruke može biti prilagođen.
-
----

@@ -22,5 +22,3 @@ Houd er rekening mee dat deze magic‑links na enige tijd verlopen.
 #### Notificatietypen
 
 FastComments stuurt verschillende soorten e‑mails naar moderators en beheerders. Indien gewenst kunt u zich afmelden voor `Comment Reply`‑meldingen, terwijl u nog steeds `New Comment`‑meldingen ontvangt door de juiste opties te kiezen op de pagina `Edit Notifications` die hierboven wordt getoond.
-
----

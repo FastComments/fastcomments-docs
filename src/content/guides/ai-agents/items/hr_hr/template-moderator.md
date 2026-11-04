@@ -29,5 +29,3 @@ Ne može objavljivati komentare, glasovati, prikvačiti, zaključavati, dodjelji
 ### Preporučeni probni period
 
 Pokrenite ovaj predložak u [probnom načinu](#dry-run-mode) najmanje tjedan dana na stvarnom prometu prije nego što ga uključite. Upotrijebite [Testna pokretanja (Replays)](#test-runs-replays) da biste također pregledali prethodnih 30 dana.
-
----

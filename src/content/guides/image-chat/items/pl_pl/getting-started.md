@@ -1,10 +1,10 @@
 ### Przypadki użycia
 
-Image Chat sprawdza się doskonale przy opiniowaniu projektów, gdy zespoły muszą omawiać konkretne elementy w makietach lub zrzutach ekranu. Serwisy z recenzjami produktów mogą pozwolić klientom dyskutować o konkretnych cechach widocznych na zdjęciach produktów. Platformy edukacyjne mogą wykorzystywać go do omawiania diagramów, map lub obrazów naukowych. Galerie zdjęć mogą stać się interaktywne dzięki komentarzom przypisanym do określonych miejsc. Serwisy nieruchomości mogą pozwolić widzom dyskutować o konkretnych cechach widocznych na zdjęciach nieruchomości.
+Image Chat świetnie sprawdza się przy opiniach na temat projektów, gdzie zespoły muszą omawiać konkretne elementy w makietach lub zrzutach ekranu. Strony z recenzjami produktów mogą pozwolić klientom omawiać konkretne funkcje widoczne na zdjęciach produktów. Platformy edukacyjne mogą go używać do omawiania diagramów, map lub obrazów naukowych. Galerie zdjęć mogą stać się interaktywne dzięki komentarzom przypisanym do konkretnych lokalizacji. Strony nieruchomości mogą pozwolić oglądającym omawiać konkretne cechy widoczne na zdjęciach nieruchomości.
 
 ### Szybki start
 
-Rozpoczęcie pracy z Image Chat jest proste. Potrzebujesz skryptu FastComments Image Chat, elementu obrazu lub kontenera z obrazem oraz obiektu konfiguracji z Twoim Tenant ID.
+Rozpoczęcie pracy z Image Chat jest proste. Potrzebujesz skryptu FastComments Image Chat, elementu obrazu lub kontenera z obrazem oraz obiektu konfiguracyjnego z Twoim Tenant ID.
 
 ### Instalacja
 
@@ -17,7 +17,7 @@ Dodaj skrypt Image Chat do swojej strony:
 
 ### Podstawowa implementacja
 
-Here's a minimal example:
+Oto minimalny przykład:
 
 [inline-code-attrs-start title = 'Podstawowa implementacja Image Chat'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
@@ -27,13 +27,13 @@ Here's a minimal example:
     <title>My Image Gallery with Image Chat</title>
 </head>
 <body>
-    <!-- Twój obraz -->
+    <!-- Your image -->
     <img id="my-image" src="https://fastcomments.com/images/image-chat-demo-1.jpg" alt="Pretty Trail" />
 
-    <!-- Załaduj skrypt Image Chat -->
+    <!-- Load the Image Chat script -->
     <script src="https://cdn.fastcomments.com/js/embed-image-chat.min.js"></script>
 
-    <!-- Zainicjalizuj Image Chat -->
+    <!-- Initialize Image Chat -->
     <script>
         FastCommentsImageChat(document.getElementById('my-image'), {
             tenantId: 'demo'
@@ -43,22 +43,22 @@ Here's a minimal example:
 </html>
 [inline-code-end]
 
-Replace `'demo'` with your actual FastComments Tenant ID if it's not already, which you can find in your [panelu FastComments](https://fastcomments.com/auth/my-account).
+Zamień `'demo'` na swój rzeczywisty FastComments Tenant ID, jeśli jeszcze tego nie zrobiłeś — znajdziesz go w swoim [panelu FastComments](https://fastcomments.com/auth/my-account).
 
 ### Jak to działa
 
-Po zainicjowaniu użytkownicy mogą kliknąć dowolne miejsce na obrazie. Po kliknięciu w tym miejscu pojawia się wizualny kwadratowy znacznik, a okno czatu się otwiera. Inni użytkownicy widzą wszystkie znaczniki i mogą w nie klikać, aby wyświetlić dyskusję lub wziąć w niej udział. Wszystkie dyskusje synchronizują się w czasie rzeczywistym między odwiedzającymi.
+Po inicjalizacji użytkownicy mogą klikać w dowolne miejsce na obrazie. Po kliknięciu w tej lokalizacji pojawia się wizualny znacznik w kształcie kwadratu i otwiera się okno czatu. Inni użytkownicy mogą widzieć wszystkie znaczniki i klikać je, aby wyświetlić lub dołączyć do tych dyskusji. Wszystkie dyskusje synchronizują się w czasie rzeczywistym u wszystkich odwiedzających.
 
-Widżet wykorzystuje pozycjonowanie oparte na procentach, dzięki czemu znaczniki pozostają we właściwej pozycji nawet wtedy, gdy obraz zmienia rozmiar lub jest oglądany na różnych rozmiarach ekranu.
+Widżet używa pozycjonowania opartego na procentach, więc znaczniki pozostają we właściwym miejscu nawet gdy obraz zmienia rozmiar lub jest oglądany na ekranach o różnych rozmiarach.
 
 ### Demo na żywo
 
-Możesz zobaczyć Image Chat w akcji na naszej [stronie z demo na żywo](https://fastcomments.com/product/image-chat).
+Możesz zobaczyć Image Chat w akcji na naszej [stronie demo na żywo](https://fastcomments.com/product/image-chat).
 
-### Kolejne kroki
+### Następne kroki
 
-Teraz, gdy masz podstawy działające, możesz dostosować wygląd i zachowanie, korzystając z przewodnika Opcje konfiguracji. Zapoznaj się z przewodnikiem Projekt responsywny, aby zrozumieć, jak działa pozycjonowanie oparte na procentach. Dowiedz się o stylizacji i wsparciu trybu ciemnego w przewodniku Dostosowywanie. Dla zaawansowanych integracji przejrzyj Referencję API.
+Teraz, gdy masz działające podstawy, możesz dostosować wygląd i zachowanie w przewodniku Opcje konfiguracji. Zapoznaj się z przewodnikiem Projektowanie responsywne, aby zrozumieć, jak działa pozycjonowanie oparte na procentach. Dowiedz się o stylowaniu i obsłudze trybu ciemnego w przewodniku Dostosowywanie. W przypadku zaawansowanych integracji zapoznaj się z dokumentacją API.
 
 ### Biblioteki frontendowe
 
-Wszystkie biblioteki front-end FastComments (react, vue, angular itp.) zawierają Image Chat.
+Wszystkie biblioteki frontendowe FastComments (react, vue, angular itd.) obsługują Image Chat.

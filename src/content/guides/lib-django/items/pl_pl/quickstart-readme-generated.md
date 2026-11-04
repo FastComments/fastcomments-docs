@@ -1,4 +1,3 @@
----
 Skonfiguruj swojego najemcę w `settings.py`:
 
 ```python
@@ -16,4 +15,3 @@ Umieść widget w dowolnym szablonie:
 
 {% fastcomments url_id="my-page" %}
 ```
----

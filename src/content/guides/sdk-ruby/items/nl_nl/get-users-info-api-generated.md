@@ -1,4 +1,3 @@
----
 Bulk-gebruikersinformatie voor een tenant. Gegeven userIds, retourneert weergave-informatie van User / SSOUser.
 Wordt gebruikt door de commentaarwidget om gebruikers die zojuist zijn verschenen via een presence-event te verrijken.
 Geen paginacontext: privacy wordt uniform gehandhaafd (privéprofielen worden gemaskeerd).
@@ -33,5 +32,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_users_info: #{e}"
 end
 [inline-code-end]
-
----

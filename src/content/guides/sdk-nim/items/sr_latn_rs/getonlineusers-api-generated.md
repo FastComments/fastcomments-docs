@@ -22,5 +22,3 @@ if onlineUsersOpt.isSome:
   let onlineUsers = onlineUsersOpt.get()
   echo onlineUsers
 [inline-code-end]
-
----

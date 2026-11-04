@@ -26,5 +26,3 @@ Sada postavimo `Commenting system` na `Default` i `Comment Default` na `Closed`:
 </div>
 
 Sljedeće, samo trebamo dodati FastComments.com widget kôd!
-
----

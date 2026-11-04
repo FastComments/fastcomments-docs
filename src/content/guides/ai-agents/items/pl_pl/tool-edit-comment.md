@@ -1,4 +1,3 @@
----
 Narzędzie Edit pozwala agentowi zastąpić tekst istniejącego komentarza. Jest ono destrukcyjne w sposób, w jaki większość innych narzędzi moderacyjnych nie jest: nadpisuje treść stworzoną przez użytkownika. Stosuj je tylko w wąskich, jednoznacznych przypadkach.
 
 ### Co robi
@@ -27,5 +26,3 @@ Dla agentów zajmujących się redakcją PII (danych osobowych), lub dla agentó
 
 - [Trigger: Comment Edited](#trigger-comment-edit) - wyzwalacz uruchamiany, gdy tekst komentarza się zmienia.
 - [Approval Workflow](#approval-workflow) - jak objąć narzędzie przeglądem wykonywanym przez człowieka.
-
----

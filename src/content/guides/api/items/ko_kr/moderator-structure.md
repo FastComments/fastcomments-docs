@@ -36,5 +36,3 @@ interface Moderator {
     moderationGroupIds?: string[]|null
 }
 [inline-code-end]
-
----

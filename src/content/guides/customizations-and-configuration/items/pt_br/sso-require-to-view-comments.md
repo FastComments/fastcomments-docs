@@ -39,5 +39,3 @@ Ativar esta opção protegerá a página ou domínio de ser comentado, a menos q
 #### Armadilhas
 
 Qualquer usuário que tenha criado comentários antes da sua integração SSO não poderá vê-los, a menos que faça login via sua integração SSO.
-
----

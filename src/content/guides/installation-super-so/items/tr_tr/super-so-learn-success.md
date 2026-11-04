@@ -8,5 +8,3 @@ Bu şöyle görünmelidir - bazı metinleri seçip tartışabilmeniz gerekir. E�
 </div>
 
 FastComments'i Super ile kurduğunuz için tebrikler! Eğer bir Domain Error ile karşılaştıysanız, veya yorum alanını nasıl özelleştireceğinizi öğrenmek istiyorsanız, okumaya devam edin!
-
----

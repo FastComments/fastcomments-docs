@@ -113,5 +113,3 @@ interface QuestionResultsCombineCommentsResponse {
 - `forceRecalculate`가 지정된 경우 비용은 일반적인 `2` 대신 항상 `10`입니다.
 - 캐시가 만료되어 데이터가 재계산되는 경우에도, `forceRecalculate`가 지정되지 않았다면 비용은 여전히 고정된 `2`입니다.
 - 이는 캐시 사용을 장려하기 위한 조치입니다.
-
----

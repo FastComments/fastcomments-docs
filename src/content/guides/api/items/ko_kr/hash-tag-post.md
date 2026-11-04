@@ -32,5 +32,3 @@ interface HashTagPostResponse {
     hashTag?: HashTag; // 성공 시 생성된 전체 해시태그를 반환합니다.
 }
 [inline-code-end]
-
----

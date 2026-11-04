@@ -52,5 +52,3 @@ Kuru çalışmadan ve replay çıktılarından memnunsanız, ajanı düzenleyin 
 - [Budgets](#budgets-overview) ve [Budget Alerts](#budget-alerts) ayarlayın.
 - Ajan olaylarına harici sistemlerin tepki vermesini istiyorsanız [Webhooks](#webhooks-overview) yapılandırın.
 - Ajan kararlarını yazılı politikanızla uyumlu tutmak için [Community Guidelines](#community-guidelines) ekleyin.
-
----

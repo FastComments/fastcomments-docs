@@ -1,31 +1,31 @@
-**Template ID:** `tos_enforcer`
+**Sjabloon-ID:** `tos_enforcer`
 
-Het Moderator-sjabloon is het aanbevolen uitgangspunt als je doel het verminderen van handmatige moderatiebelasting is. Het beoordeelt nieuwe en geflagde reacties en past jouw communityregels toe.
+Het Moderator-sjabloon is het aanbevolen startpunt als je doel is om de handmatige moderatielast te verminderen. Het beoordeelt nieuwe en gemarkeerde reacties en past jouw communityregels toe.
 
-Je wilt bijna altijd de **ingebouwde prompt uitbreiden** met concrete voorbeelden van wat jouw site wel en niet toestaat. Het platform-eigen escalatiebeleid (waarschuwen vóór verbanning, geheugen doorzoeken vóór verbanning) is al ingebakken in de system prompt die de agent ontvangt, dus dat hoef je niet te herhalen.
+Je zult bijna altijd de **ingebouwde prompt willen uitbreiden** met concrete voorbeelden van wat jouw site wel en niet toestaat. Het eigen escalatiebeleid van het platform (waarschuwen vóór verbanning, geheugen raadplegen vóór verbanning) zit al ingebakken in de systeemprompt die de agent ontvangt, dus je hoeft het niet te herhalen.
 
 ### Triggers
 
-- **New comment posted** (`COMMENT_ADD`) - de agent bekijkt elke nieuwe reactie.
-- **Comment crosses a flag threshold** (`COMMENT_FLAG_THRESHOLD`, default threshold: 3) - de agent evalueert opnieuw een reactie die door andere gebruikers is geflagd.
+- **Nieuwe reactie geplaatst** (`COMMENT_ADD`) - de agent bekijkt elke nieuwe reactie.
+- **Reactie overschrijdt een markeerdrempel** (`COMMENT_FLAG_THRESHOLD`, standaarddrempel: 3) - de agent beoordeelt een reactie opnieuw die door andere gebruikers is gemarkeerd.
 
-### Allowed tools
+### Toegestane tools
 
-- [`mark_comment_approved`](#tools-overview) - nuttig voor pre-moderatie tenants waarbij de agent schone reacties vrijgeeft en de rest verbergt.
+- [`mark_comment_approved`](#tools-overview) - nuttig voor pre-moderatie-tenants waar de agent schone reacties vrijgeeft en de rest verbergt.
 - [`mark_comment_spam`](#tools-overview)
 - [`warn_user`](#tool-warn-user)
 - [`ban_user`](#tool-ban-user)
 
-Hij kan geen reacties plaatsen, stemmen, vastpinnen, vergrendelen, badges toekennen of e-mail verzenden - de prompt is opzettelijk beperkt.
+Het kan geen reacties plaatsen, stemmen, vastpinnen, vergrendelen, badges uitreiken of e-mail versturen - de prompt is opzettelijk beperkt.
 
-### Recommended additions before going live
+### Aanbevolen toevoegingen vóór livegang
 
-- **Set [Gemeenschapsrichtlijnen](#community-guidelines).** Een paar zinnen met geschreven beleid is voldoende; de agent past dit toe bij elke run.
-- **Gate `ban_user` behind [goedkeuring](#approval-workflow).** Dit staat standaard aan in de EU-regio (zie [Naleving EU DSA Artikel 17](#eu-dsa-compliance)) en wordt overal aangeraden.
-- **Overweeg ook om `mark_comment_spam` achter goedkeuring te plaatsen** als je weinig volume maar hoge risico-inhoud hebt.
-- **Plaats `mark_comment_approved` achter goedkeuring als je pre-moderatie uitvoert.** Het goedkeuren van een slechte reactie plaatst deze voor lezers; zet er een hek om totdat de agent vertrouwen heeft verdiend via dry-run.
-- **Vink "Include commenter's trust factor, account age, ban history, and recent comments" aan** in [Contextopties](#context-options). Het model zal veel minder agressief waarschuwen wanneer het kan zien dat iemand een langdurige goedbedoelde gebruiker is.
+- **Stel [Communityrichtlijnen](#community-guidelines) in.** Een paar zinnen geschreven beleid is voldoende; de agent past het bij elke run toe.
+- **Zet `ban_user` achter een [goedkeuringsworkflow](#approval-workflow).** Dit staat standaard aan in de EU-regio (zie [EU DSA Artikel 17-naleving](#eu-dsa-compliance)) en wordt overal aanbevolen.
+- **Overweeg ook `mark_comment_spam` achter goedkeuring te zetten** als je content hebt met een laag volume maar hoge inzet.
+- **Zet `mark_comment_approved` achter goedkeuring als je pre-moderatie gebruikt.** Het goedkeuren van een slechte reactie plaatst deze voor lezers; zet het achter goedkeuring totdat de agent vertrouwen heeft verdiend via een dry-run.
+- **Vink "Include commenter's trust factor, account age, ban history, and recent comments" aan** in [Contextopties](#context-options). Het model zal veel minder agressief waarschuwen wanneer het kan zien dat iemand een langdurige gebruiker met goede bedoelingen is.
 
-### Recommended dry-run window
+### Aanbevolen dry-run-periode
 
-Draai dit sjabloon in [testmodus](#dry-run-mode) gedurende minstens een week tegen je echte verkeer voordat je het op Enabled zet. Gebruik [Testuitvoeringen (Replays)](#test-runs-replays) om ook te previewen tegen de afgelopen 30 dagen.
+Draai dit sjabloon in [dry-run](#dry-run-mode) gedurende ten minste een week tegen je echte verkeer voordat je het inschakelt als Enabled. Gebruik [Testruns (Replays)](#test-runs-replays) om ook een voorbeeld te bekijken tegen de afgelopen 30 dagen.

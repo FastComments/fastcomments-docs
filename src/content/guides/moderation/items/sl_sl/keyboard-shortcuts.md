@@ -60,5 +60,3 @@ Bližnjice se samodejno onemogočijo, ko:
 
 - Kazalec je v iskalnem polju, besedilnem vnosu ali polju z možnostjo urejanja vsebine. Pritisnite `Escape`, da odvzamete fokus polju in se vrnete k bližnjicam.
 - Odprto je pogovorno okno. Najprej ga zaprite.
-
----

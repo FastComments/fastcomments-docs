@@ -50,5 +50,3 @@ interface BatchJobResponse {
     }
 }
 [inline-code-end]
-
----

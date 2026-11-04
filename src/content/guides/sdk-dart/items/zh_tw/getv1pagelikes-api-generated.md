@@ -26,5 +26,3 @@ try {
     print('Exception when calling PublicApi->getV1PageLikes: $e\n');
 }
 [inline-code-end]
-
----

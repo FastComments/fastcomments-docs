@@ -1,4 +1,3 @@
----
 ## Parametre
 
 | Navn | Type | Påkrævet | Beskrivelse |
@@ -38,5 +37,3 @@ Returnerer: [`PublicAPISetCommentTextResponse`](https://github.com/FastComments/
   );
 })();
 [inline-code-end]
-
----

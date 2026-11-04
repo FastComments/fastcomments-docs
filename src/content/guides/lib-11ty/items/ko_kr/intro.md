@@ -5,5 +5,3 @@ Eleventy (11ty) 사이트에 실시간 댓글, 채팅 및 리뷰 위젯을 임�
 ## 저장소
 
 [GitHub에서 보기](https://github.com/FastComments/fastcomments-11ty)
-
----

@@ -1,4 +1,3 @@
----
 Odjave (REST hook unsubscribe). Samo pretplate kreirane putem ovog API-ja mogu se
 obrisati ovdje; webhook‑ovi upravljani putem nadzorne ploče uređuju se u nadzornoj ploči.
 
@@ -22,5 +21,3 @@ const webhookId: string = "wh_98765";
 
 const result: APIEmptyResponse = await deleteWebhook(tenantId, webhookId);
 [inline-code-end]
-
----

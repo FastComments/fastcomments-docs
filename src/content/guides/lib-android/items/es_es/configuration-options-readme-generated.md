@@ -1,4 +1,3 @@
----
 El SDK ofrece muchas opciones de configuración a través de la clase `CommentWidgetConfig`:
 
 | Option | Description |
@@ -15,4 +14,3 @@ El SDK ofrece muchas opciones de configuración a través de la clase `CommentWi
 | `readonly` | Desactivar la posibilidad de comentar pero mostrar los comentarios |
 | `disableVoting` | Desactivar la funcionalidad de votación |
 | `disableLiveCommenting` | Desactivar las actualizaciones en tiempo real |
----

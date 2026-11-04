@@ -1,17 +1,17 @@
-List pages for a tenant. Used by the FChat desktop client to populate its room list.
-Requires `enableFChat` to be true on the resolved custom config for each page.
-Pages that require SSO are filtered against the requesting user's group access.
+Списък на страниците за даден tenant. Използва се от FChat десктоп клиента за попълване на списъка с му стаи.
+Изисква `enableFChat` да е true в резолвнатата персонализирана конфигурация за всяка страница.
+Страниците, изискващи SSO, се филтрират спрямо груповия достъп на заявяващия потребител.
 
 ## Параметри
 
-| Име | Тип | Задължително | Описание |
+| Име | Тип | Задължителен | Описание |
 |------|------|----------|-------------|
-| tenant_id | String | Yes |  |
-| cursor | String | No |  |
-| limit | i32 | No |  |
-| q | String | No |  |
-| sort_by | models::PagesSortBy | No |  |
-| has_comments | bool | No |  |
+| tenant_id | String | Да |  |
+| cursor | String | Не |  |
+| limit | i32 | Не |  |
+| q | String | Не |  |
+| sort_by | models::PagesSortBy | Не |  |
+| has_comments | bool | Не |  |
 
 ## Отговор
 
@@ -19,7 +19,7 @@ Pages that require SSO are filtered against the requesting user's group access.
 
 ## Пример
 
-[inline-code-attrs-start title = 'get_pages_public Пример'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример за get_pages_public'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn example(configuration: &configuration::Configuration) -> Result<(), Error> {
     let params = GetPagesPublicParams {

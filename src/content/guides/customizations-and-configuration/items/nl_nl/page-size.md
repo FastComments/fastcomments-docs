@@ -1,4 +1,3 @@
----
 Standaard is de paginagrootte van FastComments `30`. Dit omvat antwoorden in threads.
 
 De paginagrootte kan worden aangepast in de [Widget Configuration UI](https://fastcomments.com/auth/my-account/customize-widget) in verschillende groottes variërend van `10` tot `200`.
@@ -14,5 +13,3 @@ Voorbeeldconfiguratie wordt hieronder getoond:
 Paginagroottes kunnen globaal, per domein of per pagina worden aangepast door verschillende aanpassingsregels te maken.
 
 Dit zal alle clients, integraties en frameworks beïnvloeden die u mogelijk gebruikt om opmerkingen weer te geven via ons platform.
-
----

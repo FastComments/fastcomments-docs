@@ -1,4 +1,3 @@
----
 Обе `FastCommentsSDK` и `FastCommentsFeedSDK` являются классами `ObservableObject` с свойствами `@Published`. Вы можете наблюдать за ними в ваших SwiftUI представлениях для реактивных обновлений интерфейса.
 
 ### Свойства @Published в FastCommentsSDK

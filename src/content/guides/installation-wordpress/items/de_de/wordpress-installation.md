@@ -1,4 +1,3 @@
----
 Die Installation des FastComments WordPress plugin ist darauf ausgelegt, einfach zu sein und Ausfallzeiten der Kommentarfunktion Ihrer Seite zu begrenzen. Das Plugin wird nicht vom WordPress-Plugin umgeschaltet, bis die Synchronisation abgeschlossen ist.
 
 Zuerst sollten Sie Ihre Moderatoren gemäß den Details im folgenden Abschnitt `Moderation` informieren. Teilen Sie ihnen mit, dass sie bald über FastComments moderieren werden und nicht über das WordPress-Dashboard.
@@ -14,4 +13,3 @@ Anschließend haben Sie die Möglichkeit anzugeben, ob Sie bereits ein FastComme
 Kommentare werden in Chargen hochgeladen und mithilfe vorhandener Indizes in Ihrer WordPress-Datenbank sortiert, um die Belastung Ihrer Seite zu begrenzen.
 
 Sobald die Synchronisation abgeschlossen ist, wird das standardmäßige WordPress-Kommentarsystem durch FastComments ersetzt. Wir hoffen, Ihnen gefällt unsere Plattform, aber falls nicht, [kontaktieren Sie uns](https://fastcomments.com/auth/my-account/help).  
----

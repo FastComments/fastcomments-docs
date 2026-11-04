@@ -27,5 +27,3 @@ I venstre side får vi nu mulighed for at klikke på `Edit Code` - klik på den:
     <div class="title">Rediger kode</div>
     <img class="screenshot-image" src="/images/installation-guides/systeme-edit-block-button.png" alt="Rediger kode" />
 </div>
-
----

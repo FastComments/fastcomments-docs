@@ -1,48 +1,46 @@
-預設情況下，agent 在整個租戶執行 —— 每個頁面、每個語系。編輯表單上的 **Scope** 和 **Locales** 區段讓你可以縮小範圍。
+預設情況下，代理會在您的整個租戶範圍內執行——涵蓋每個頁面、每個語系。編輯表單上的 **Scope** 與 **Locales** 區段可讓您縮小該範圍。
 
-### Restrict to specific pages
+### 限制於特定頁面
 
-**Restrict to specific pages** 欄位接受每行一個 URL pattern，採用 url-pattern glob syntax。agent 只會在頁面 URL 符合至少一個模式的留言上執行。範例：
+**Restrict to specific pages** 欄位每行接受一個 URL 模式，採用 url-pattern glob 語法。代理僅在頁面 URL 符合至少一個模式的留言上執行。範例：
 
-- `/news/*` - `/news` 底下的任何頁面。
-- `/forums/*` - `/forums` 底下的任何頁面。
-- `/blog/2026/*` - `/blog/2026` 底下的任何頁面。
-- (多行一起) - 如果 **任一** 模式符合，agent 就會執行。
+- `/news/*` - `/news` 下的任何頁面。
+- `/forums/*` - `/forums` 下的任何頁面。
+- `/blog/2026/*` - `/blog/2026` 下的任何頁面。
+- （多行同時使用）- 只要**任一**模式符合，代理就會執行。
 
-最多：每個 agent 50 個模式。模式必須是有效的 url-pattern globs——表單會以特定錯誤拒絕格式錯誤的模式。
+上限：每個代理 50 個模式。模式必須是有效的 url-pattern glob——表單會以具體的錯誤訊息拒絕格式錯誤的模式。
 
-當此欄位為 **空白** 時，agent 會在租戶中的每個頁面上執行。
+當該欄位**空白**時，代理會在租戶中的每個頁面上執行。
 
-當此欄位為 **非空白** 時，agent 採取封閉失敗（fails closed）：任何留言沒有 `urlId`（例如沒有頁面上下文的租戶層級事件）的觸發都會被跳過。這是設計使然——「限定為 /news/*」不應該悄悄地變成「全部」。
+當該欄位**非空白**時，代理採取「預設關閉」策略：任何留言沒有 `urlId` 的觸發（例如沒有頁面內容的租戶層級事件）都會被略過。這是有意為之——「限定於 /news/*」不應默默退回為「全部執行」。
 
-### Restrict to specific locales
+### 限制於特定語系
 
-**Restrict to specific locales** 的雙欄選擇器接受 FastComments 的 locale ID（`en_us`, `zh_cn`, `de_de` 等）。agent 只會在偵測到的語系位於所選清單內的留言上執行。
+**Restrict to specific locales** 雙列表選擇器接受 FastComments 語系 ID（`en_us`、`zh_cn`、`de_de` 等）。代理僅在偵測到的語系位於所選清單中的留言上執行。
 
-偵測到的語系來自留言的 `locale` 欄位，該欄位由留言元件在發佈時根據頁面語系設定。
+偵測到的語系來自留言的 `locale` 欄位，該欄位由留言小工具在發佈時根據頁面語系設定。
 
-當**未選取任何語系**時，agent 會在所有語系上執行。
+當**未選取任何語系**時，代理會在每個語系上執行。
 
-當**選取一個或多個語系**時，agent 採取封閉失敗：沒有留言的觸發，或留言沒有 `locale` 欄位的觸發，會被跳過。
+當**選取一個或多個語系**時，代理採取「預設關閉」策略：沒有留言的觸發，或留言沒有 `locale` 欄位的觸發，都會被略過。
 
-### Combined scoping
+### 組合範圍限定
 
-URL 與語系篩選是以 AND 的方式共同套用。只有在 **兩者** 都允許時，觸發器才會啟動 agent。
+URL 與語系篩選條件以 AND 結合。只有當**兩個**篩選條件都允許時，觸發才會啟動代理。
 
-實用範例：
-- `/news/*` URL pattern + `en_us` locale - 只有英文的新聞區域。
-- 沒有 URL 篩選 + 多個語系 - 在整個租戶有效，但僅限為這個 agent 的提示所撰寫的語言。
+實用的模式：
+- `/news/*` URL 模式 + `en_us` 語系 - 僅限英文新聞區塊。
+- 無 URL 篩選 + 多個語系 - 全租戶範圍，但僅限此代理提示所針對的語言。
 
-### Why scope an agent
+### 為什麼要限定代理範圍
 
-- **Cost.** 範圍限制會減少 agent 必須處理的觸發數量，從而降低 token 花費。
-- **Correctness.** 為技術性文章調校的摘要提示詞在產品頁面上可能會產生不良輸出。設定範圍比起用英文要求提示詞「跳過非技術性頁面」更為精確。
-- **Locale-specific behavior.** 一個只用德文寫歡迎詞的歡迎機器人應該只在德文語系的留言上執行。將 `de_de` 語系範圍與在 [initial prompt](#personality-prompt) 中使用德語語調結合。
+- **成本。** 限定範圍可減少代理需要處理的觸發數量，從而降低 token 支出。
+- **正確性。** 針對技術文章調校的摘要提示，在產品頁面上可能產出品質不佳的輸出。限定範圍比在提示中用英文要求「略過非技術頁面」更為精準。
+- **語系特定行為。** 只用德文撰寫的歡迎代理應只在德文語系的留言上執行。將 `de_de` 語系範圍與 [initial prompt](#personality-prompt) 中的德文語氣結合。
 
-### What scoping does *not* do
+### 範圍限定**不會**做的事
 
-- 它不會改變 **agent slot count**（參見 [Plans and Eligibility](#plans-and-eligibility)）——被範圍限制的 agent 仍然佔用一個槽位。
-- 它不會改變 [Budget caps](#budgets-overview) —— 每個 agent 的每日與每月上限會套用於所有符合條件的觸發。
-- 它不會回溯地套用在過去的執行紀錄上——執行記錄會顯示 agent 過去所做的一切，即使你之後把範圍縮小。
-
----
+- 它不會改變**代理槽位數量**（參見 [Plans and Eligibility](#plans-and-eligibility)）——限定範圍的代理仍佔用一個槽位。
+- 它不會改變 [Budget caps](#budgets-overview)——每個代理的每日與每月上限適用於所有符合的觸發。
+- 它不會追溯套用於過去的執行——執行歷史會顯示代理做過的所有事情，即使您之後將範圍縮得更緊。

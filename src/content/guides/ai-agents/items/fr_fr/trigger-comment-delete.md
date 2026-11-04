@@ -19,5 +19,3 @@ Se déclenche lorsqu'un commentaire est supprimé.
 ### Remarque relative aux coûts d'exploitation
 
 Si votre site a un volume élevé de suppressions (modération humaine intense), ce déclencheur peut se produire fréquemment.
-
----

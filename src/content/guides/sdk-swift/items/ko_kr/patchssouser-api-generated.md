@@ -33,5 +33,3 @@ DefaultAPI.patchSSOUser(tenantId: tenantId, id: id, updateAPISSOUserData: update
     }
 }
 [inline-code-end]
-
----

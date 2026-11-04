@@ -1,32 +1,32 @@
-Past commenters on the page who are NOT currently online. Sorted by displayName.  
-Use this after exhausting /users/online to render a "Members" section.  
-Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName}  
-index from afterName forward via $gt, no $skip cost.
+Προηγούμενοι σχολιαστές της σελίδας που ΔΕΝ είναι αυτή τη στιγμή συνδεδεμένοι. Ταξινομούνται κατά displayName.
+Χρησιμοποιήστε το αυτό αφού εξαντλήσετε το /users/online για να αποδώσετε μια ενότητα "Members".
+Σελιδοποίηση με cursor στο commenterName: ο διακομιστής διασχίζει το μερικό ευρετήριο {tenantId, urlId, commenterName}
+από το afterName και μετά μέσω $gt, χωρίς κόστος $skip.
 
-## Parameters
+## Παράμετροι
 
-| Όνομα | Τύπος | Θέση | Απαιτείται | Περιγραφή |
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| urlId | string | query | Yes | Αναγνωριστικό URL σελίδας (καθαρισμένο στην πλευρά του διακομιστή). |
-| afterName | string | query | No | Δείκτης: περάστε nextAfterName από την προηγούμενη απάντηση. (προαιρετικό) |
-| afterUserId | string | query | No | Δεσμευτής ισοπαλίας δείκτη: περάστε nextAfterUserId από την προηγούμενη απάντηση. Απαιτείται όταν afterName ορίζεται ώστε οι ισοτιμίες ονομασιών να μην αφαιρούν εγγραφές. (προαιρετικό) |
+| tenantId | string | path | Ναι |  |
+| urlId | string | query | Ναι | Αναγνωριστικό URL της σελίδας (καθαρίζεται από τον διακομιστή). |
+| afterName | string | query | Όχι | Cursor: περάστε το nextAfterName από την προηγούμενη απάντηση. |
+| afterUserId | string | query | Όχι | Tiebreaker του cursor: περάστε το nextAfterUserId από την προηγούμενη απάντηση. Απαιτείται όταν ορίζεται το afterName ώστε οι ισοβαθμίες ονομάτων να μην απορρίπτουν εγγραφές. |
 
-## Response
+## Απάντηση
 
-Returns: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PageUsersOfflineResponse.swift)
+Επιστρέφει: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PageUsersOfflineResponse.swift)
 
-## Example
+## Παράδειγμα
 
 [inline-code-attrs-start title = 'Παράδειγμα getOfflineUsers'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Τα παρακάτω δείγματα κώδικα είναι ακόμη σε beta. Για τυχόν πρόβλημα, παρακαλούμε αναφέρετέ το μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
+// Τα ακόλουθα δείγματα κώδικα είναι ακόμη σε beta. Για οποιοδήποτε πρόβλημα, παρακαλούμε αναφέρετέ το στο http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let urlId = "urlId_example" // String | Αναγνωριστικό URL σελίδας (καθαρισμένο στην πλευρά του διακομιστή).
-let afterName = "afterName_example" // String | Δείκτης: περάστε nextAfterName από την προηγούμενη απάντηση. (προαιρετικό)
-let afterUserId = "afterUserId_example" // String | Δεσμευτής ισοπαλίας δείκτη: περάστε nextAfterUserId από την προηγούμενη απάντηση. Απαιτείται όταν afterName ορίζεται ώστε οι ισοτιμίες ονομασιών να μην αφαιρούν εγγραφές. (προαιρετικό)
+let urlId = "urlId_example" // String | Αναγνωριστικό URL της σελίδας (καθαρίζεται από τον διακομιστή).
+let afterName = "afterName_example" // String | Cursor: περάστε το nextAfterName από την προηγούμενη απάντηση. (optional)
+let afterUserId = "afterUserId_example" // String | Tiebreaker του cursor: περάστε το nextAfterUserId από την προηγούμενη απάντηση. Απαιτείται όταν ορίζεται το afterName ώστε οι ισοβαθμίες ονομάτων να μην απορρίπτουν εγγραφές. (optional)
 
 PublicAPI.getOfflineUsers(tenantId: tenantId, urlId: urlId, options: PublicAPI.GetOfflineUsersOptions(afterName: afterName, afterUserId: afterUserId)) { (response, error) in
     guard error == nil else {

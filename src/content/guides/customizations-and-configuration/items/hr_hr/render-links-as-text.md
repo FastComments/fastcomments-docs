@@ -1,8 +1,8 @@
-By default, FastComments will render links like this: [https://exmaple.com](https://exmaple.com) - where the link URL becomes a clickable
+Prema zadanim postavkama, FastComments će prikazati poveznice ovako: [https://exmaple.com](https://exmaple.com) - pri čemu URL poveznice postaje klikabilni
 HTML anchor tag.
 
-Some sites may want to disable this, for example to discourage scammers. We provide this by setting the `Comment HTML Rendering Option` to `Links as Text`.
+Neke web-lokacije mogu željeti onemogućiti ovo, na primjer kako bi obeshrabrile prevarante. To omogućujemo postavljanjem opcije `Comment HTML Rendering Option` na `Links as Text`.
 
-This can be customized without code, on the widget customization page, for an entire domain, or page:
+Ovo se može prilagoditi bez koda, na stranici za prilagodbu widgeta, za cijelu domenu ili stranicu:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.show-advanced-option']; selector = '.comment-html-rendering-mode'; alt='Opcija prikaza HTML komentara postavljena na Veze kao tekst pod Naprednim opcijama u prilagodbi widgeta'; title='Prikazivanje veza kao tekst' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.show-advanced-option']; selector = '.comment-html-rendering-mode'; alt='Opcija Comment HTML Rendering Option postavljena na Links as Text pod Naprednim opcijama u prilagodbi widgeta'; title='Prikaz poveznica kao teksta' app-screenshot-end]

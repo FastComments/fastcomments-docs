@@ -1,4 +1,3 @@
----
 De plugin ondersteunt drie SSO-modi voor het integreren van Moodle-gebruikersaccounts met FastComments.
 
 #### Beveiligde SSO (Aanbevolen)
@@ -19,5 +18,3 @@ Gebruikersgegevens (naam, e-mail, avatar) worden client-side verzonden zonder cr
 #### Geen
 
 Geen SSO-integratie. Gebruikers plaatsen anoniem reacties of moeten afzonderlijk inloggen bij FastComments. Gebruik dit als u niet wilt dat Moodle-gebruikersaccounts aan reacties gekoppeld worden.
-
----

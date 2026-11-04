@@ -48,5 +48,3 @@ with client.ApiClient(configuration) as api_client:
         print("Exception when calling ModerationApi->post_set_comment_text: %s\n" % e)
         # שגיאה בעת קריאת ModerationApi->post_set_comment_text: %s\n
 [inline-code-end]
-
----

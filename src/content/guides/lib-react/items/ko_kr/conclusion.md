@@ -8,5 +8,3 @@ React 라이브러리와 관련하여 문제가 발생하거나 질문이 있는
 ## 기여
 
 기여는 환영합니다! 기여 지침은 [GitHub 저장소](https://github.com/FastComments/fastcomments-react)를 방문해 주세요.
-
----

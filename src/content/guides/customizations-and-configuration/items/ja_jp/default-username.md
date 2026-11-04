@@ -1,17 +1,13 @@
-When users comment or vote, and they are not logged in, they will be asked to provide their email and username.
+ユーザーがログインせずにコメントや投票を行うと、メールアドレスとユーザー名の入力を求められます。
 
-In the case of anonymous commenting, sometimes it is desirable to define a default username to reduce the friction
-when commenting. This can be done from the Customization UI. Anonymous Commenting must be enabled first.
+匿名コメントの場合、コメント時の摩擦を減らすためにデフォルトのユーザー名を定義しておくと便利なことがあります。これはカスタマイズUIから設定できます。まず匿名コメントを有効にする必要があります。
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allow-anonymous-comments']; selector = '.default-username-label'; alt='匿名コメントが有効になるとカスタマイズ UI に表示されるデフォルトユーザー名フィールド'; title='デフォルトユーザー名の設定' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allow-anonymous-comments']; selector = '.default-username-label'; alt='匿名コメントを有効にした後にカスタマイズUIに表示されるデフォルトユーザー名フィールド'; title='デフォルトユーザー名の設定' app-screenshot-end]
 
 #### デフォルトユーザー名の共有
 
-The default username is a shared display name, not an identity. A visitor who keeps the default and enters their email
-gets their own account, with the default shown as their public name. Any number of visitors can keep the same default,
-so "Anonymous" is never reported as already taken.
+デフォルトのユーザー名は共有される表示名であり、識別情報ではありません。デフォルトのままメールアドレスを入力した訪問者は、それぞれ自分のアカウントを取得し、デフォルトの名前が公開名として表示されます。任意の数の訪問者が同じデフォルト名を使えるため、「Anonymous」が既に使用されていると報告されることはありません。
 
-Usernames that a visitor types themselves still have to be unique.
+訪問者自身が入力したユーザー名は、引き続き一意である必要があります。
 
-If you would rather each visitor get a distinct name without having to think of one, see
-[Generate Usernames Automatically](/guide-customizations-and-configuration.html#auto-generate-username).
+訪問者ごとに名前を考える手間なく、異なる名前を自動的に付与したい場合は、[ユーザー名の自動生成](/guide-customizations-and-configuration.html#auto-generate-username)をご覧ください。

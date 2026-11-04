@@ -24,5 +24,3 @@ api->putDomainConfig(tenantId, domainToUpdate, updateParams)
     .then([](std::shared_ptr<PutDomainConfigResponse> resp) {
     });
 [inline-code-end]
-
----

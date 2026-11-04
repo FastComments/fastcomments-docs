@@ -1,4 +1,3 @@
----
 ## Parameters
 
 | Имя | Тип | Обязательно | Описание |
@@ -29,5 +28,3 @@ api->deleteQuestionConfig(tenantId, configId)
         }
     });
 [inline-code-end]
-
----

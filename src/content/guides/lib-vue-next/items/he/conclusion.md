@@ -8,5 +8,3 @@
 ## תרומות
 
 נשמח לתרומות! אנא בקרו ב-[מאגר GitHub](https://github.com/FastComments/fastcomments-vue-next) לקבלת הנחיות לתרומה.
-
----

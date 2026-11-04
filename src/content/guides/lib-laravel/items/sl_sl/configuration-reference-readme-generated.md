@@ -1,4 +1,3 @@
----
 | Ključ | Spremenljivka okolja | Privzeto | Opis |
 |-----|-------------|---------|-------------|
 | `tenant_id` | `FASTCOMMENTS_TENANT_ID` | `''` | ID vašega FastComments najemnika |
@@ -9,4 +8,3 @@
 | `sso.login_url` | `FASTCOMMENTS_SSO_LOGIN_URL` | `null` | URL za prijavo (če ni nastavljen, uporabi Laravelovo pot) |
 | `sso.logout_url` | `FASTCOMMENTS_SSO_LOGOUT_URL` | `null` | URL za odjavo (če ni nastavljen, uporabi Laravelovo pot) |
 | `widget_defaults` | — | `[]` | Privzete možnosti konfiguracije widgeta |
----

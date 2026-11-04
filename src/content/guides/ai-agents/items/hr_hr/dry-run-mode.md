@@ -38,5 +38,3 @@ Također možete prebaciti i u suprotnom smjeru — iz **Omogućeno** natrag u *
 ### Reprodukcije prisiljavaju probno pokretanje
 
 Značajka [Test Runs (Replays)](#test-runs-replays) pokreće agenta protiv povijesnih komentara **uvijek u probnom pokretanju**, bez obzira na spremljeni status agenta. Reprodukcije ne mogu poduzimati stvarne radnje na prošlim komentarima. To je po dizajnu - reprodukcija je alat za pregled, ne alat za moderiranje.
-
----

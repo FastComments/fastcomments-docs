@@ -1,4 +1,3 @@
----
 租戶的批次使用者資訊。給定 userIds，回傳來自 User / SSOUser 的顯示資訊。
 由評論小工具使用，以豐富剛透過 presence 事件出現的使用者。
 沒有頁面上下文：隱私以一致的方式強制執行（私人檔案會被遮蔽）。
@@ -42,5 +41,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.GetUsersInfo`: %v\n", resp)
 }
 [inline-code-end]
-
----

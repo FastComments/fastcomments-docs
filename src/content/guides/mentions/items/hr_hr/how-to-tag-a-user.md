@@ -1,13 +1,13 @@
-When writing, or editing, a comment, simply type the `@` symbol, and the start of the user's name.
+Prilikom pisanja ili uređivanja komentara, jednostavno upišite simbol `@` i početak korisničkog imena.
 
 <div class="text-center">
     <img src="https://blog.fastcomments.com/images/fc-mentions.png" alt="Primjer spominjanja" title="Primjer spominjanja" />
 </div>
 
-Simply click the user's name you wish to tag.
+Jednostavno kliknite korisničko ime koje želite označiti.
 
-Additionally, you can use the up and down arrow keys to navigate this list, and hit enter to select, or escape to leave.
+Također, možete koristiti tipke s strelicama gore i dolje za navigaciju kroz ovaj popis, pritisnuti Enter za odabir ili Escape za izlaz.
 
-We know that you may want to use the `@` symbol without tagging a user. FastComments will detect this and not intrude on your typing experience.
+Znamo da možda želite koristiti simbol `@` bez označavanja korisnika. FastComments će to prepoznati i neće ometati vaše tipkanje.
 
-Note that autocomplete first prefers case-sensitive matches, and then will also attempt to search for case-insensitive results.
+Imajte na umu da autocomplete prvo preferira podudaranja osjetljiva na velika i mala slova, a zatim će također pokušati pretražiti rezultate bez obzira na velika i mala slova.

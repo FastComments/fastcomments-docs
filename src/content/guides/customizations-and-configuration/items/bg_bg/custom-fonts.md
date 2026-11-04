@@ -19,5 +19,3 @@ FastComments е предназначен да бъде персонализир�
     font-family: 'Roboto', sans-serif;
 }
 [inline-code-end]
-
----

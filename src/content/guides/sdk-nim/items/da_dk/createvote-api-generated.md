@@ -1,4 +1,3 @@
----
 ## Parametre
 
 | Navn | Type | Påkrævet | Beskrivelse |
@@ -27,5 +26,3 @@ if voteOpt.isSome:
   let vote = voteOpt.get()
   echo vote
 [inline-code-end]
-
----

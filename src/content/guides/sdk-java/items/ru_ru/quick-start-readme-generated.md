@@ -1,6 +1,6 @@
-### Using Authenticated APIs (DefaultApi)
+### Использование аутентифицированных API (DefaultApi)
 
-**Важно:** Вы должны установить ваш API-ключ в ApiClient перед выполнением аутентифицированных запросов. Если вы этого не сделаете, запросы завершатся с ошибкой 401.
+**Важно:** Перед выполнением аутентифицированных запросов необходимо установить ваш API-ключ в ApiClient. Если этого не сделать, запросы завершатся ошибкой 401.
 
 ```java
 import com.fastcomments.invoker.ApiClient;
@@ -10,18 +10,18 @@ import com.fastcomments.model.*;
 
 public class Example {
     public static void main(String[] args) {
-        // Создаём и настраиваем API-клиент
+        // Создание и настройка API-клиента
         ApiClient apiClient = new ApiClient();
 
-        // REQUIRED: Set your API key (get this from your FastComments dashboard)
+        // ОБЯЗАТЕЛЬНО: Установите ваш API-ключ (получите его в панели управления FastComments)
         apiClient.setApiKey("YOUR_API_KEY_HERE");
 
-        // Create the API instance with the configured client
+        // Создание экземпляра API с настроенным клиентом
         DefaultApi api = new DefaultApi(apiClient);
 
-        // Now you can make authenticated API calls
+        // Теперь можно выполнять аутентифицированные вызовы API
         try {
-            // Example: Add an SSO user
+            // Пример: Добавление SSO-пользователя
             CreateAPISSOUserData userData = new CreateAPISSOUserData();
             userData.setId("user-123");
             userData.setEmail("user@example.com");
@@ -33,17 +33,17 @@ public class Example {
 
         } catch (ApiException e) {
             System.err.println("Error: " + e.getResponseBody());
-            // Распространённые ошибки:
+            // Частые ошибки:
             // - 401: API-ключ отсутствует или недействителен
-            // - 400: Ошибка валидации запроса
+            // - 400: Не прошла валидация запроса
         }
     }
 }
 ```
 
-### Using Public APIs (PublicApi)
+### Использование публичных API (PublicApi)
 
-Публичные эндпойнты не требуют аутентификации:
+Публичные эндпоинты не требуют аутентификации:
 
 ```java
 import com.fastcomments.api.PublicApi;
@@ -60,9 +60,9 @@ try {
 }
 ```
 
-### Using Moderation APIs (ModerationApi)
+### Использование API модерации (ModerationApi)
 
-The `ModerationApi` drives the moderator dashboard. Each method accepts an `sso` parameter identifying the SSO-authenticated moderator on whose behalf the request is made:
+`ModerationApi` управляет панелью модератора. Каждый метод принимает параметр `sso`, идентифицирующий SSO-аутентифицированного модератора, от имени которого выполняется запрос:
 
 ```java
 import com.fastcomments.api.ModerationApi;
@@ -82,8 +82,8 @@ try {
 }
 ```
 
-### Common Issues
+### Частые проблемы
 
-1. **401 "missing-api-key" error**: Убедитесь, что вы вызываете `apiClient.setApiKey("YOUR_KEY")` перед созданием экземпляра DefaultApi.
-2. **Wrong API class**: Используйте `DefaultApi` для серверных аутентифицированных запросов, `PublicApi` для клиентских/публичных запросов.
-3. **Null API key**: SDK молча пропустит аутентификацию, если API-ключ равен null, что приведёт к ошибкам 401.
+1. **Ошибка 401 "missing-api-key"**: Убедитесь, что вы вызываете `apiClient.setApiKey("YOUR_KEY")` перед созданием экземпляра DefaultApi.
+2. **Неправильный класс API**: Используйте `DefaultApi` для серверных аутентифицированных запросов, `PublicApi` — для клиентских/публичных запросов.
+3. **Null API-ключ**: SDK молча пропустит аутентификацию, если API-ключ равен null, что приведёт к ошибкам 401.

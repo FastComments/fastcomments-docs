@@ -5,5 +5,3 @@ Exemplo de site GatsbyJS com configuração do FastComments
 ## Repositório
 
 [Ver no GitHub](https://github.com/FastComments/fastcomments-gatsbyjs-example)
-
----

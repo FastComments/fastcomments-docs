@@ -8,5 +8,3 @@ This is how it should look - you should be able to select some text to discuss i
 </div>
 
 Super と FastComments のセットアップ、おめでとうございます！Domain Error に遭遇した場合やコメント欄をカスタマイズする方法を知りたい場合は、読み進めてください。
-
----

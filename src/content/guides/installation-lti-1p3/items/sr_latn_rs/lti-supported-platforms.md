@@ -9,5 +9,3 @@ FastComments LTI 1.3 je testiran na:
 Bilo koji drugi LMS koji implementira IMS LTI 1.3 Advantage specifikaciju sa Dynamic Registration takođe bi trebalo da radi - izaberite **Other LTI 1.3 platform** iz padajućeg menija platforme kada generišete svoj URL za registraciju (<a href="https://fastcomments.com/auth/my-account/lti-config" target="_blank">preuzmite ovde</a>).
 
 Canvas LMS koristi drugačiji tok podešavanja (per-developer-key configuration JSON umesto Dynamic Registration). Pogledajte namenski vodič za instalaciju Canvas LMS-a.
-
----

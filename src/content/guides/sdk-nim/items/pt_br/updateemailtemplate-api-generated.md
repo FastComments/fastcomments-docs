@@ -29,5 +29,3 @@ let (maybeResp, httpResp) = client.updateEmailTemplate(
 if maybeResp.isSome:
   let resp = maybeResp.get()
 [inline-code-end]
-
----

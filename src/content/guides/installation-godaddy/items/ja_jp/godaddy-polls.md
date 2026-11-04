@@ -1,4 +1,3 @@
----
-FastComments が Godaddy サイトに導入されれば、コメント内でライブ投票も実行できます。ウィジェットのカスタマイズ設定で **Enable Polls** をオンにすると、コメントツールバーに投票ボタンが表示されます。投票は 2 から 10 の選択肢を取れ、結果はページ上の全員にリアルタイムで更新され、投票の作成者や投票にログインが必要かどうかを選択できます。Godaddy に他にインストールするものはありません。
+FastCommentsをGodaddyサイトに設置すると、コメント欄内でライブ投票を実行することもできます。ウィジェットのカスタマイズ設定で**Enable Polls**をオンにすると、コメントツールバーに投票ボタンが表示されます。投票には2〜10個の選択肢を設定でき、結果はページ上の全ユーザーに対してリアルタイムで更新されます。また、誰が投票を作成できるか、投票にログインが必要かどうかを選択できます。Godaddyに追加でインストールするものはありません。
 
-[Try the Live Polls demo](https://fastcomments.com/product/live-polls) or read the [Polls documentation](/guide-polls.html) to set them up.
+[ライブ投票のデモを試す](https://fastcomments.com/product/live-polls)か、[投票のドキュメント](/guide-polls.html)を読んで設定方法をご確認ください。

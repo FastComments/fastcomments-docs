@@ -1,4 +1,3 @@
----
 Defina as variáveis de ambiente obrigatórias:
 
 ```bash
@@ -11,4 +10,3 @@ Execute os testes:
 ```bash
 bundle exec rspec
 ```
----

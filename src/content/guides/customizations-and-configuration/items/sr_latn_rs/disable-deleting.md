@@ -1,4 +1,3 @@
----
 Podrazumevano, FastComments će dozvoliti korisnicima da brišu svoje komentare.
 
 Međutim, moguće je sprečiti to.
@@ -9,5 +8,3 @@ Na stranici za prilagođavanje widgeta, pogledajte opciju "Disable Deleting".
 
 - Ovo utiče samo na obične komentatore i ne na moderatore ili administratore, koji i dalje mogu da brišu.
 - Ovo će takođe uticati na API integracije kada se prosledi `contextUserId`. 
-
----

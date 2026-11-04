@@ -1,4 +1,3 @@
----
 Zurück im Ghost-Dashboard laden wir jetzt unser Theme hoch:
 
 <div class="screenshot white-bg">
@@ -14,5 +13,3 @@ Bei mir liegt die ZIP-Datei an folgendem Ort. Beachte den Ordner `dist`:
 </div>
 
 Denke daran, dein neu hochgeladenes Theme zu aktivieren (Ghost sollte dich dazu auffordern).
-
----

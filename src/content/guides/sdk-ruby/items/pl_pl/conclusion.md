@@ -8,5 +8,3 @@ Jeśli napotkasz jakiekolwiek problemy lub masz pytania dotyczące Ruby SDK, pro
 ## Współtworzenie
 
 Wkład jest mile widziany! Prosimy odwiedzić [repozytorium GitHub](https://github.com/FastComments/fastcomments-ruby) po wytyczne dotyczące kontrybucji.
-
----

@@ -1,4 +1,3 @@
----
 Indiquez un code de locale dans la configuration pour localiser les chaînes fournies par le serveur :
 
 ```swift

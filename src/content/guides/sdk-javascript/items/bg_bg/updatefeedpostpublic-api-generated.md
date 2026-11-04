@@ -57,5 +57,3 @@ const response: CreateFeedPostResponse = await updateFeedPostPublic(
   sso
 );
 [inline-code-end]
-
----

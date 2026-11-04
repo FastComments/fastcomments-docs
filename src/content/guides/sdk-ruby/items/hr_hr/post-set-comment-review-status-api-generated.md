@@ -36,5 +36,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Pogreška pri pozivu ModerationApi->post_set_comment_review_status: #{e}"
 end
 [inline-code-end]
-
----

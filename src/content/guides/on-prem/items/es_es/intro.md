@@ -7,5 +7,3 @@ Sin embargo, entendemos que algunos clientes no pueden almacenar su información
 alojar todos sus datos en las instalaciones.
 
 Esta documentación cubre ese caso de uso.
-
----

@@ -2,33 +2,33 @@
 
 Ovde se vrši agregacija rezultata.
 
-Struktura odgovora za agregaciju je sledeća:
+Struktura odgovora agregacije je sledeća:
 
 [inline-code-attrs-start title = 'Struktura QuestionResultsAggregationResult'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface QuestionResultDataPoint {
-    /** Mapa vrednosti na broj pojavljivanja te vrednosti za trenutnu tačku podataka (vremenski bucket ili stranica). **/
+    /** A map of value to count of occurrences of that value for the current data point (date bucket or page). **/
     v: Map<ValueAsString, number>
     total: number
 }
 
 interface QuestionResultsAggregationResult {
-    /** Napomena - null je kada timeBucket nije naveden. **/
+    /** Note - is null when timeBucket not specified. **/
     dataByDateBucket?: Map<DateString, QuestionResultDataPoint>
     dataByUrlId?: Map<URLIdString, QuestionResultDataPoint>
     countsByValue?: Map<ValueAsString, number>
-    /** Ukupan broj agregiranih rezultata. **/
+    /** The total number of results aggregated. **/
     total: number
-    /** Dobijena ponderisana sredina. To je decimalni broj, obično sa dve decimale ili manje. **/
+    /** The resulting weighted average. It is a float, usually two decimals or fewer. **/
     average: number
-    /** Datum u obliku stringa koji predstavlja kada su ovi podaci izračunati, pošto mogu poticati iz keša. **/
+    /** A date string representing when this data was calculated, since it might come from cache. **/
     createdAt: string
 }
 [inline-code-end]
 
-Here are the query parameters available for aggregation:
+Evo parametara upita dostupnih za agregaciju:
 
-[inline-code-attrs-start title = 'Struktura zahteva za QuestionResultsAggregation'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Struktura QuestionResultsAggregation zahteva'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface QuestionResultsAggregateRequestQueryParams {
     tenantId: string
@@ -46,17 +46,17 @@ interface QuestionResultsAggregateRequestQueryParams {
 }
 [inline-code-end]
 
-Here's an example request:
+Evo primera zahteva:
 
-[inline-code-attrs-start title = 'Primer QuestionResultsAggregation'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer agregacije rezultata pitanja'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/question-results-aggregation?tenantId=demo&API_KEY=DEMO_API_SECRET&questionId=some-question-id'
 [inline-code-end]
 
-Example response:
+Primer odgovora:
 
-[inline-code-attrs-start title = 'Primer odgovora za QuestionResultsAggregation'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer odgovora agregacije rezultata pitanja'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
     {
         "average": 8.33,
@@ -78,13 +78,13 @@ Example response:
     }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Struktura odgovora za QuestionResultsAggregation'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Struktura odgovora agregacije rezultata pitanja'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface QuestionResultsAggregationResponse {
     status: 'success' | 'failed'
-    /** Uključeno u slučaju neuspeha. **/
+    /** Included on failure. **/
     code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key'
-    /** Uključeno u slučaju neuspeha. **/
+    /** Included on failure. **/
     reason?: string
     data: QuestionResultsAggregationResult
 }
@@ -92,13 +92,11 @@ interface QuestionResultsAggregationResponse {
 
 ### Napomene o performansama
 
-- Ako dođe do promašaja keša, agregacije obično traju pet sekundi po milionu rezultata.
-- U suprotnom, zahtevi se izvršavaju u konstantnom vremenu.
+- U slučaju promašaja keša, agregacija generalno traje pet sekundi po milionu rezultata.
+- U suprotnom, zahtevi su konstantnog vremena izvršavanja.
 
-### Napomene o keširanju i troškovima
+### Napomene o keširanju i trošku
 
-- Kada je `forceRecalculate` naveden, trošak je uvek `10`, umesto uobičajenih `2`.
-- Ako keš istekne i podaci se ponovo izračunaju, trošak je i dalje konstantan `2` ako `forceRecalculate` nije naveden. Keš ističe u zavisnosti od veličine agregiranog skupa podataka (može varirati između 30 sekundi i 5 minuta).
-- Ovo je da bi se podstaklo korišćenje keša.
-
----
+- Kada je naveden `forceRecalculate`, trošak je uvek `10`, umesto uobičajenog `2`.
+- Ako keš istekne i podaci se ponovo izračunaju, trošak je i dalje konstantan `2` ako `forceRecalculate` nije naveden. Keš ističe na osnovu veličine agregiranog skupa podataka (može varirati između 30 sekundi i 5 minuta).
+- Ovo je kako bi se podstaklo korišćenje keša.

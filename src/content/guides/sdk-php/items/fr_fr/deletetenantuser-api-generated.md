@@ -47,5 +47,3 @@ try {
     echo 'Exception when calling DefaultApi->deleteTenantUser: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

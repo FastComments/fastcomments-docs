@@ -70,6 +70,3 @@ Evo primera sa svim callback-ovima:
     }];
 </script>
 [inline-code-end]
-
-
----

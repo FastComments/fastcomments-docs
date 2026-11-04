@@ -7,5 +7,3 @@
 בנוסף, ניתן להשתמש בתכונה זו, ללא כתיבת קוד, בממשק ההתאמה האישית:
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-unverified-comment-label']; selector = '.disable-unverified-comment-label'; alt='Widget customization page with the Disable Unverified Comment Label checkbox checked'; title='Disable The Unverified Label' app-screenshot-end]
-
----

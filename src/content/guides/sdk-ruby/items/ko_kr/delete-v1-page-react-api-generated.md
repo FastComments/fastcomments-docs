@@ -1,4 +1,3 @@
----
 ## 매개변수
 
 | 이름 | 타입 | 위치 | 필수 | 설명 |
@@ -29,5 +28,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->delete_v1_page_react: #{e}"
 end
 [inline-code-end]
-
----

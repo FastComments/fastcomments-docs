@@ -24,5 +24,3 @@ async fn fetch_children(config: &configuration::Configuration) -> Result<(), Err
     Ok(())
 }
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
@@ -33,5 +32,3 @@ DefaultAPI.getEmailTemplateRenderErrors(tenantId: tenantId, id: id, skip: skip) 
     }
 }
 [inline-code-end]
-
----

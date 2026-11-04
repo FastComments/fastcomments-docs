@@ -1,21 +1,21 @@
-Bulk user info for a tenant. Given userIds, return display info from User / SSOUser.  
-Used by the comment widget to enrich users that just appeared via a presence event.  
-No page context: privacy is enforced uniformly (private profiles are masked).
+Informazioni utente in blocco per un tenant. Dati userIds, restituisce le informazioni di visualizzazione da User / SSOUser.
+Usato dal widget dei commenti per arricchire gli utenti appena comparsi tramite un evento di presenza.
+Nessun contesto di pagina: la privacy è applicata in modo uniforme (i profili privati sono mascherati).
 
-## Parameters
+## Parametri
 
-| Name | Type | Location | Required | Description |
+| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| ids | string | query | Yes | UserIds delimitati da virgola. |
+| tenantId | string | path | Sì |  |
+| ids | string | query | Sì | userIds delimitati da virgole. |
 
-## Response
+## Risposta
 
-Returns: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PageUsersInfoResponse.php)
+Restituisce: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PageUsersInfoResponse.php)
 
-## Example
+## Esempio
 
-[inline-code-attrs-start title = 'Esempio getUsersInfo'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio di getUsersInfo'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -23,13 +23,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Se desideri utilizzare un client HTTP personalizzato, passa il tuo client che implementa `GuzzleHttp\ClientInterface`.
-    // Questo è facoltativo, `GuzzleHttp\Client` verrà usato come predefinito.
+    // Se vuoi usare un client http personalizzato, passa il tuo client che implementa `GuzzleHttp\ClientInterface`.
+    // Questo è opzionale, `GuzzleHttp\Client` verrà usato come predefinito.
     new GuzzleHttp\Client()
 );
 
-$tenant_id = 'tenant_id_example'; // stringa
-$ids = 'ids_example'; // stringa | UserIds delimitati da virgola.
+$tenant_id = 'tenant_id_example'; // string
+$ids = 'ids_example'; // string | userIds delimitati da virgole.
 
 
 try {

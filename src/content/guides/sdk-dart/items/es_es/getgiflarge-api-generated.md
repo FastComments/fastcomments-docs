@@ -1,4 +1,3 @@
----
 ## Parámetros
 
 | Nombre | Tipo | Ubicación | Requerido | Descripción |
@@ -27,5 +26,3 @@ try {
     print('Exception when calling PublicApi->getGifLarge: $e\n');
 }
 [inline-code-end]
-
----

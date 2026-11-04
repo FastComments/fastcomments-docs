@@ -11,5 +11,3 @@ De plus, vous pouvez utiliser les touches flèche haut et flèche bas pour parco
 Nous savons que vous pouvez vouloir utiliser le symbole `@` sans mentionner un utilisateur. FastComments détectera cela et n'interrompra pas votre saisie.
 
 Notez que l'autocomplétion privilégie d'abord les correspondances sensibles à la casse, puis tentera également de rechercher des résultats insensibles à la casse.
-
----

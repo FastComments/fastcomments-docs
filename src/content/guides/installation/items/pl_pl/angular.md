@@ -69,5 +69,3 @@ Ponieważ konfiguracja może być dość skomplikowana, możemy przekazać refer
 Widżet używa wykrywania zmian, więc zmiana dowolnej właściwości obiektu konfiguracyjnego spowoduje jego ponowne załadowanie.
 
 Konfigurację wspieraną przez komponent Angular można znaleźć <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">tutaj</a>.
-
----

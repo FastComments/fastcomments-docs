@@ -26,5 +26,3 @@ Her iki mod birlikte etkin. Yorum bileşeni sayfa içeriğinin altında görün�
     <div class="title">Collab Sohbeti + Yorumlar Birlikte</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-page-comments.png" alt="Moodle'da FastComments Collab Chat ve Yorumlar" />
 </div>
-
----

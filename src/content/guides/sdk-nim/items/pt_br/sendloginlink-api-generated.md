@@ -23,5 +23,3 @@ let (maybeResp, httpResp) = client.sendLoginLink(
 if maybeResp.isSome:
   let emptyResp = maybeResp.get()
 [inline-code-end]
-
----

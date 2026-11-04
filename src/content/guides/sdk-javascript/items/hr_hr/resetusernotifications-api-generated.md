@@ -36,5 +36,3 @@ Vraća: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastc
   console.log(response);
 })();
 [inline-code-end]
-
----

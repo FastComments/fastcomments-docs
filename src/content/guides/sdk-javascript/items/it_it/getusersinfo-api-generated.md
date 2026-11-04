@@ -1,21 +1,21 @@
-Bulk user info for a tenant. Given userIds, return display info from User / SSOUser.  
-Used by the comment widget to enrich users that just appeared via a presence event.  
-No page context: privacy is enforced uniformly (private profiles are masked).
+Informazioni utente in blocco per un tenant. Dati userIds, restituisce le informazioni di visualizzazione da User / SSOUser.
+Utilizzato dal widget dei commenti per arricchire gli utenti appena apparsi tramite un evento di presenza.
+Nessun contesto di pagina: la privacy è applicata in modo uniforme (i profili privati sono mascherati).
 
-## Parameters
+## Parametri
 
 | Nome | Tipo | Obbligatorio | Descrizione |
-|------|------|--------------|-------------|
+|------|------|----------|-------------|
 | tenantId | string | Sì |  |
 | ids | string | Sì |  |
 
-## Response
+## Risposta
 
-Returns: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersInfoResponse.ts)
+Restituisce: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersInfoResponse.ts)
 
-## Example
+## Esempio
 
-[inline-code-attrs-start title = 'Esempio getUsersInfo'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio di getUsersInfo'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async function fetchUsersInfo(): Promise<void> {
   const tenantId: string = "tenant_12345";

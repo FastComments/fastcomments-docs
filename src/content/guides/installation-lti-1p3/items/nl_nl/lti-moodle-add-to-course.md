@@ -87,5 +87,3 @@ Zie [Protecting Comment Threads With Single-Sign-On](/guide-customizations-and-c
 **Activity backup en restore.** Het back-uppen van een cursus en het herstellen in een nieuwe cursus maakt nieuwe resource link IDs aan, dus de herstelde FastComments-activiteiten starten met lege draden. De originele cursus behoudt de originele draden. Dit is het bedoelde gedrag, geen bug.
 
 **Moodle 4.5 TinyMCE-standaard.** Moodle 4.5 wordt geleverd met TinyMCE als standaardeditor voor nieuwe installaties. De External tool-knop bevindt zich onder het **More** (`...`) menu in plaats van de hoofdwerkbalk. Oudere sites die zijn geüpgraded vanaf 4.1 behouden Atto tenzij een beheerder de standaard heeft gewijzigd.
-
----

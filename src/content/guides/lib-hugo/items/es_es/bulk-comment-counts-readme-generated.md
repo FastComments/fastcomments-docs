@@ -1,4 +1,4 @@
-Para mostrar un recuento de comentarios junto a muchas páginas a la vez (un índice de blog, una lista de secciones), use el widget de recuento masivo. Recupera todos los recuentos de la página en una sola solicitud. Hay dos piezas: un marcador junto a cada elemento y una llamada de inicialización después de la lista.
+Para mostrar un recuento de comentarios junto a muchas páginas a la vez (un índice de blog, una lista de sección), usa el widget de recuento masivo. Obtiene todos los recuentos de la página en una sola petición. Hay dos piezas: un marcador junto a cada elemento y una llamada de init después de la lista.
 
 En una plantilla de lista (`layouts/_default/list.html`):
 
@@ -14,9 +14,9 @@ En una plantilla de lista (`layouts/_default/list.html`):
 \{{ partial "fastcomments/bulk-count.html" (dict "page" .) }}
 ```
 
-`count-marker.html` renders `<span class="fast-comments-count" data-fast-comments-url-id="..."></span>`, using the same identifier the comments widget uses for that page (its `urlId`, or its permalink when no `urlId` is set), so the counts line up with the real threads. `bulk-count.html` emits the single request that fills them in.
+`count-marker.html` renderiza `<span class="fast-comments-count" data-fast-comments-url-id="..."></span>`, usando el mismo identificador que el widget de comentarios usa para esa página (su `urlId`, o su permalink cuando no hay `urlId` establecido), de modo que los recuentos coincidan con los hilos reales. `bulk-count.html` emite la única petición que los rellena.
 
-Si escribes los marcadores tú mismo (por ejemplo en el Markdown de una página), usa el shortcode para emitir la llamada de inicialización en su lugar:
+Si escribes los marcadores tú mismo (por ejemplo, en el Markdown de una página), usa el shortcode para emitir la llamada de init en su lugar:
 
 ```text
 <span class="fast-comments-count" data-fast-comments-url-id="article-1"></span>

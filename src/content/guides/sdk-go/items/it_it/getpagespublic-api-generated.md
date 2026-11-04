@@ -47,5 +47,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.GetPagesPublic`: %v\n", resp)
 }
 [inline-code-end]
-
----

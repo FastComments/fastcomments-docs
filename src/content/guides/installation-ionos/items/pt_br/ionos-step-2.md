@@ -58,5 +58,3 @@ Agora copie o código a seguir:
     <div class="title">Colar e Salvar</div>
     <img class="screenshot-image" src="/images/installation-guides/ionos-step-2-paste-and-save.png" alt="Colar e Salvar" />
 </div>
-
----

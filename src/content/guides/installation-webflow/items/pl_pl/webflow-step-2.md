@@ -1,4 +1,3 @@
----
 Następnie skopiujmy kod naszego widżetu FastComments.com:
 
 [code-example-start config = {}; title = 'Installation Code'; isFunctional = false; code-example-end]
@@ -18,5 +17,3 @@ Po dodaniu kodu Webflow poinformuje Cię, że widget nie będzie widoczny w tryb
     <div class="title">Uwaga: komentarze nie będą widoczne przed publikacją</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-webflow-step-3.png" alt="Komentarze nie będą widoczne przed publikacją" />
 </div>
-
----

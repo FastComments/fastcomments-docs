@@ -1,22 +1,22 @@
-Enable or disable notifications for a page. When users are subscribed to a page, notifications are created
-for new root comments, and also
+Ενεργοποίηση ή απενεργοποίηση ειδοποιήσεων για μια σελίδα. Όταν οι χρήστες είναι εγγεγραμμένοι σε μια σελίδα, δημιουργούνται ειδοποιήσεις
+για νέα σχόλια ρίζας, καθώς και
 
-## Parameters
+## Παράμετροι
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| urlId | string | Yes |  |
-| url | string | Yes |  |
-| pageTitle | string | Yes |  |
-| subscribedOrUnsubscribed | string | Yes |  |
-| sso | string | No |  |
+| tenantId | string | Ναι |  |
+| urlId | string | Ναι |  |
+| url | string | Ναι |  |
+| pageTitle | string | Ναι |  |
+| subscribedOrUnsubscribed | string | Ναι |  |
+| sso | string | Όχι |  |
 
-## Response
+## Απάντηση
 
 Επιστρέφει: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/UpdateUserNotificationPageSubscriptionStatusResponse.h)
 
-## Example
+## Παράδειγμα
 
 [inline-code-attrs-start title = 'Παράδειγμα updateUserNotificationPageSubscriptionStatus'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -29,6 +29,6 @@ boost::optional<utility::string_t> sso = boost::make_optional<utility::string_t>
 
 api->updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitle, subscription, sso)
     .then([](std::shared_ptr<UpdateUserNotificationPageSubscriptionStatusResponse> resp) {
-        // process resp if needed
+        // επεξεργασία resp αν χρειάζεται
     });
 [inline-code-end]

@@ -8,5 +8,3 @@
 ## Допринеси
 
 Доприноси су добродошли! Молимо посетите [репозиторијум на GitHub-у](https://github.com/FastComments/fastcomments-python) за смернице о доприносу.
-
----

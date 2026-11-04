@@ -1,4 +1,3 @@
----
 ### Compatibilidad con modo oscuro
 
 Image Chat incluye soporte integrado para modo oscuro. Cuando estableces `hasDarkBackground: true` en tu configuración, las ventanas de chat y los elementos de la interfaz de usuario se ajustan automáticamente para funcionar bien en fondos oscuros.
@@ -91,5 +90,3 @@ Para mejores resultados, asegúrate de que tus fuentes personalizadas estén car
 Los marcadores cuadrados tienen un diseño visual sutil que los hace visibles sin abrumar la imagen. Puedes personalizar su apariencia con CSS si deseas un tratamiento visual diferente.
 
 Los marcadores incluyen estados de hover que proporcionan retroalimentación cuando los usuarios mueven el cursor sobre ellos. En dispositivos táctiles, la interacción de toque proporciona retroalimentación inmediata abriendo la ventana de chat.
-
----

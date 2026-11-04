@@ -1,4 +1,3 @@
----
 SDK-Methoden werfen `FastCommentsError`, der `LocalizedError` entspricht:
 
 ```swift

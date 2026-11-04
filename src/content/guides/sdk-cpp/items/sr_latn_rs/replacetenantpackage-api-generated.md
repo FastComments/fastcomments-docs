@@ -25,5 +25,3 @@ api->replaceTenantPackage(tenantId, pkgId, body)
         try { t.get(); } catch (const std::exception&) { }
     });
 [inline-code-end]
-
----

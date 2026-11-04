@@ -1,4 +1,3 @@
----
 ## Parameters
 
 | Naam | Type | Locatie | Vereist | Beschrijving |
@@ -33,5 +32,3 @@ DefaultAPI.deleteSubscription(tenantId: tenantId, id: id, userId: userId) { (res
     }
 }
 [inline-code-end]
-
----

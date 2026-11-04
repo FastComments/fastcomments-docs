@@ -1,111 +1,111 @@
-Wanneer SAML is ingeschakeld in FastComments, genereert het systeem automatisch Service Provider (SP)-informatie die u moet configureren in uw identiteitsprovider.
+Wanneer SAML is ingeschakeld in FastComments, genereert het systeem automatisch Service Provider (SP)-informatie die je moet configureren in je identity provider.
 
 ### Toegang tot Service Provider-informatie
 
-De SP-informatie wordt weergegeven op uw SAML-configuratiepagina nadat SAML-authenticatie is ingeschakeld. Deze informatie bevat alle details die uw identiteitsprovider nodig heeft om de SAML-trustrelatie tot stand te brengen.
+De SP-informatie wordt weergegeven op je SAML-configuratiepagina na het inschakelen van SAML-authenticatie. Deze informatie bevat alle details die je identity provider nodig heeft om de SAML-vertrouwensrelatie tot stand te brengen.
 
-### Service Provider-eindpunten
+### Service Provider Endpoints
 
 #### SP Entity ID / Audience
-**Doel**: Identificeert uw FastComments-instantie als serviceprovider
+**Doel**: Identificeert je FastComments-instantie op unieke wijze als service provider
 **Formaat**: `https://fastcomments.com/saml/{your-tenant-id}`
-**Gebruik**: Configureer dit als de Entity ID of Audience in uw IdP
+**Gebruik**: Configureer dit als de Entity ID of Audience in je IdP
 
-Deze identifier zorgt ervoor dat SAML-antwoorden bedoeld zijn voor uw specifieke FastComments-tenant en voorkomt dat SAML-antwoorden door andere instanties worden geaccepteerd.
+Deze identifier zorgt ervoor dat SAML-responses bedoeld zijn voor jouw specifieke FastComments-tenant en voorkomt dat SAML-responses door andere instanties worden geaccepteerd.
 
 #### Assertion Consumer Service (ACS) URL
-**Doel**: Het eindpunt waar uw IdP SAML-antwoorden na gebruikersauthenticatie naartoe stuurt
+**Doel**: Het endpoint waar je IdP SAML-responses naartoe stuurt na gebruikersauthenticatie
 **Formaat**: `https://fastcomments.com/saml/callback/{your-tenant-id}`
-**Gebruik**: Configureer dit als de ACS-URL of Reply URL in uw IdP
+**Gebruik**: Configureer dit als de ACS URL of Reply URL in je IdP
 
-Hier worden gebruikers na succesvolle authenticatie bij uw identiteitsprovider naartoe doorgestuurd, samen met de SAML-assertion die gebruikersinformatie bevat.
+Hier worden gebruikers naartoe geleid na succesvolle authenticatie bij je identity provider, samen met de SAML-assertion die gebruikersinformatie bevat.
 
 #### SP Metadata URL
-**Doel**: Biedt volledige SAML-configuratie in standaard XML-formaat
+**Doel**: Biedt complete SAML-configuratie in standaard XML-formaat
 **Formaat**: `https://fastcomments.com/saml/metadata/{your-tenant-id}`
-**Gebruik**: Sommige IdP's kunnen configuratie automatisch importeren met deze URL
+**Gebruik**: Sommige IdP's kunnen de configuratie automatisch importeren via deze URL
 
-De metadata-URL bevat alle benodigde SP-informatie in XML-formaat, wat het eenvoudig maakt om compatibele identiteitsproviders automatisch te configureren.
+De metadata-URL bevat alle benodigde SP-informatie in XML-formaat, waardoor het eenvoudig is om compatibele identity providers automatisch te configureren.
 
 #### SAML Login URL
-**Doel**: Directe link om SAML-authenticatie voor uw tenant te starten
+**Doel**: Directe link om SAML-authenticatie voor je tenant te starten
 **Formaat**: `https://fastcomments.com/saml/login/{your-tenant-id}`
-**Gebruik**: Leid gebruikers rechtstreeks naar SAML-authenticatie of test de flow
+**Gebruik**: Link gebruikers direct naar SAML-authenticatie of test de flow
 
-U kunt deze URL gebruiken om SAML-authenticatie te testen of gebruikers een directe link te geven om zich via SAML aan te melden.
+Je kunt deze URL gebruiken om SAML-authenticatie te testen of gebruikers een directe link te geven om in te loggen via SAML.
 
-### Ondersteunde SAML-bindings
+### Ondersteuning voor SAML-bindings
 
 FastComments ondersteunt de volgende SAML-bindings:
 
-#### HTTP-POST-binding
-- **Primaire methode**: Meest voorkomende binding voor SAML-antwoorden
-- **Beveiliging**: SAML-antwoord wordt via HTTP POST naar de ACS-URL verzonden
-- **Gebruik**: Aanbevolen voor productie-implementaties
+#### HTTP-POST Binding
+- **Primaire methode**: Meest gebruikte binding voor SAML-responses
+- **Beveiliging**: De SAML-response wordt verstuurd via HTTP POST naar de ACS URL
+- **Gebruik**: Aanbevolen voor productieomgevingen
 
-#### HTTP-Redirect-binding
-- **Alternatieve methode**: SAML-antwoord verzonden via HTTP-redirect
-- **Beperkingen**: Beperkte payloadgrootte door URL-lengtebeperkingen
-- **Gebruik**: Ondersteund maar HTTP-POST heeft de voorkeur
+#### HTTP-Redirect Binding
+- **Alternatieve methode**: SAML-response verstuurd via HTTP-redirect
+- **Beperkingen**: Beperkte payload-grootte vanwege URL-lengtebeperkingen
+- **Gebruik**: Wordt ondersteund, maar HTTP-POST heeft de voorkeur
 
-### Name ID-beleid
+### Name ID Policy
 
-FastComments configureert het volgende Name ID-beleid in SAML-verzoeken:
+FastComments configureert het volgende Name ID-beleid in SAML-requests:
 
 - **Standaardformaat**: `urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress`
 - **Alternatieve formaten**: Persistent, Transient, Unspecified (configureerbaar)
-- **Vereiste**: Het e-mailadres wordt gebruikt als de primaire gebruikersidentificator
+- **Vereiste**: Het e-mailadres wordt gebruikt als primaire gebruikersidentificatie
 
-### SAML-verzoekattributen
+### SAML Request-attributen
 
-Bij het initiëren van SAML-authenticatie stuurt FastComments verzoeken met deze eigenschappen:
+Bij het starten van SAML-authenticatie verstuurt FastComments requests met de volgende kenmerken:
 
-#### Ondertekening van verzoeken
+#### Request Signing
 - **Status**: Optioneel (configureerbaar)
 - **Algoritme**: Komt overeen met het geconfigureerde handtekeningalgoritme
-- **Certificaat**: Gebruikt tenant-specifiek certificaat als ondertekening van verzoeken is ingeschakeld
+- **Certificaat**: Gebruikt een tenantspecifiek certificaat als request signing is ingeschakeld
 
-#### Gevraagde attributen
+#### Opgevraagde attributen
 FastComments vraagt de volgende attributen op in SAML AuthnRequests:
 
 - **Email**: Vereist voor gebruikersidentificatie
-- **First Name**: Optioneel voor weergave
-- **Last Name**: Optioneel voor weergave
-- **Roles/Groups**: Optioneel voor toegangscontrole en permissies
+- **First Name**: Optioneel, voor weergavedoeleinden
+- **Last Name**: Optioneel, voor weergavedoeleinden
+- **Roles/Groups**: Optioneel, voor toegangsbeheer en rechten
 
 ### SP-informatie kopiëren
 
-De SAML-configuratiepagina biedt klikbare velden die SP-informatie automatisch naar uw klembord kopiëren:
+De SAML-configuratiepagina biedt klikbare velden die SP-informatie automatisch naar je klembord kopiëren:
 
-1. Klik op een SP-informatief veld (Entity ID, ACS URL, enz.)
-2. De waarde wordt automatisch naar uw klembord gekopieerd
-3. Plak de waarde in de configuratie van uw identiteitsprovider
-4. Een korte markering geeft aan dat het kopiëren succesvol was
+1. Klik op een SP-informatieveld (Entity ID, ACS URL, enz.)
+2. De waarde wordt automatisch naar je klembord gekopieerd
+3. Plak de waarde in de configuratie van je identity provider
+4. Een korte markering geeft aan dat het kopiëren is gelukt
 
-Dit maakt het eenvoudig om de SP-informatie nauwkeurig over te dragen naar uw IdP zonder typefouten.
+Dit maakt het eenvoudig om de SP-informatie nauwkeurig over te zetten naar je IdP zonder typefouten.
 
-### SP-certificaata informatie
+### SP-certificaatinformatie
 
 #### Gebruik van certificaten
-- **Doel**: Versleutelt communicatie en verifieert SP-identiteit
+- **Doel**: Versleutelt communicatie en verifieert de SP-identiteit
 - **Rotatie**: Certificaten worden automatisch beheerd door FastComments
 - **Toegang**: Publieke certificaten zijn beschikbaar via de metadata-URL
 
 #### Certificaatdetails
 - **Algoritme**: RSA-2048 of hoger
-- **Geldigheid**: Certificaten worden automatisch vernieuwd vóór expiratie
+- **Geldigheid**: Certificaten worden automatisch verlengd vóór het verstrijken
 - **Distributie**: Beschikbaar via standaard SAML-metadata
 
-### Problemen oplossen bij SP-configuratie
+### Problemen oplossen met SP-configuratie
 
-Als uw identiteitsprovider problemen meldt met SP-informatie:
+Als je identity provider problemen meldt met de SP-informatie:
 
-1. **Controleer URL's**: Zorg dat alle URL's HTTPS gebruiken en het juiste tenant-ID bevatten
+1. **Controleer URL's**: Zorg ervoor dat alle URL's HTTPS gebruiken en de juiste tenant-ID bevatten
 2. **Controleer metadata**: Gebruik de metadata-URL om de configuratie te verifiëren
-3. **Test connectiviteit**: Zorg dat uw IdP de FastComments-eindpunten kan bereiken
-4. **Valideer formaat**: Bevestig dat uw IdP het SP-informatieformaat ondersteunt
+3. **Test connectiviteit**: Zorg ervoor dat je IdP de FastComments-endpoints kan bereiken
+4. **Valideer het formaat**: Bevestig dat je IdP het formaat van de SP-informatie ondersteunt
 
-Veelvoorkomende problemen zijn onder andere:
-- Onjuist tenant-ID in URL's
+Veelvoorkomende problemen zijn:
+- Onjuiste tenant-ID in URL's
 - Netwerkconnectiviteitsproblemen tussen IdP en FastComments
 - IdP verwacht andere URL-formaten of aanvullende configuratieopties

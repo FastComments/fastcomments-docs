@@ -1,4 +1,3 @@
----
 Агрегує документи шляхом їх групування (якщо вказано **groupBy**) та застосування кількох операцій.  
 Підтримуються різні операції (наприклад, **sum**, **countDistinct**, **avg** тощо).
 
@@ -58,5 +57,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->aggregate: %s\n" % e)
 [inline-code-end]
-
----

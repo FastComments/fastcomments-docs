@@ -49,5 +49,3 @@ interface VotesResponse {
 Zauważ, że anonimowe głosy utworzone za pomocą tego API będą pojawiać się na liście `appliedAuthorizedVotes`. Są one uznawane za autoryzowane, ponieważ zostały utworzone przez API z wykorzystaniem klucza API.
 
 Struktura `appliedAnonymousVotes` dotyczy głosów utworzonych bez adresu e-mail, klucza API itp.
-
----

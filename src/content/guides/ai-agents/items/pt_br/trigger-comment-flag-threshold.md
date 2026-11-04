@@ -27,5 +27,3 @@ Se o limite for 3 e três usuários sinalizarem o comentário, o agente dispara 
 ### Recomendações de combinação
 
 Inscreva-se em **ambos** `COMMENT_ADD` e `COMMENT_FLAG_THRESHOLD` se você quiser um agente de moderação que capture casos óbvios à primeira vista e reavalie casos limítrofes uma vez que as sinalizações se acumulem. Os dois eventos disparam independentemente - o agente será executado duas vezes se ambos estiverem inscritos e ambos dispararem, mas a segunda execução verá o estado agora sinalizado.
-
----

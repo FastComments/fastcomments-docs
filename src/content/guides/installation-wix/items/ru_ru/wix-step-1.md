@@ -10,5 +10,3 @@
     <div class="title">Шаг первый: Редактирование динамической страницы записи</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-1-open-page.png" alt="Редактирование динамической страницы записи" />
 </div>
-
----

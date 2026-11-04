@@ -1,3 +1,1 @@
----
 Aggiungi commenti in tempo reale a un sito Zyro con il widget di codice e aggiungi il pulsante dei like fluttuante così i lettori possono reagire senza scrivere un commento.
----

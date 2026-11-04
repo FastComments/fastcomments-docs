@@ -40,5 +40,3 @@ try {
     print('Exception when calling PublicApi->getFeedPostsPublic: $e\n');
 }
 [inline-code-end]
-
----

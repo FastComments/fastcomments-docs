@@ -35,5 +35,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->post_adjust_comment_votes: #{e}"
 end
 [inline-code-end]
-
----

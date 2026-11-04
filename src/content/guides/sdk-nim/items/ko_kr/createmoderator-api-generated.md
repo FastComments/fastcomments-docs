@@ -1,4 +1,3 @@
----
 ## 매개변수
 
 | 이름 | 형식 | 필수 | 설명 |
@@ -18,5 +17,3 @@ let (moderatorRes, httpResp) = client.createModerator(tenantId = "my-tenant-123"
 if moderatorRes.isSome:
   let moderator = moderatorRes.get()
 [inline-code-end]
-
----

@@ -90,5 +90,3 @@ PublicAPI.getCommentsPublic(tenantId: tenantId, urlId: urlId, options: PublicAPI
     }
 }
 [inline-code-end]
-
----

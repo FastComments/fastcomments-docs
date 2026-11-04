@@ -1,51 +1,51 @@
-The FastComments affiliate kit has everything you need to promote FastComments:
+FastComments ortaklık kiti, FastComments'i tanıtmak için ihtiyacınız olan her şeyi içerir:
 
-- Display banners in 8 standard ad sizes, plus social images for 1200x628 and 1080x1080 posts
-- The FastComments logo and mark as SVG and PNG, in black and white
-- Screenshots of the comment widget and the moderation queue
-- Brand guidelines (PDF) covering logo usage, colors, typography, and promotion rules
-- Swipe copy: descriptions, emails, social posts, review talking points, and approved product claims
+- 8 standart reklam boyutunda banner'lar, ayrıca 1200x628 ve 1080x1080 boyutlarında sosyal medya gönderileri için görseller
+- Siyah ve beyaz, SVG ve PNG formatlarında FastComments logosu ve işareti
+- Yorum widget'ı ve moderasyon kuyruğunun ekran görüntüleri
+- Logo kullanımı, renkler, tipografi ve tanıtım kurallarını kapsayan marka yönergeleri (PDF)
+- Swipe copy: açıklamalar, e-postalar, sosyal medya gönderileri, inceleme konuşma noktaları ve onaylanmış ürün iddiaları
 
-**[Download the affiliate kit (ZIP)](https://s3.us-west-1.wasabisys.com/fastcomments-prod/fastcomments-affiliate-kit.zip)**
+**[Ortaklık kitini indirin (ZIP)](https://s3.us-west-1.wasabisys.com/fastcomments-prod/fastcomments-affiliate-kit.zip)**
 
-### Linking
+### Bağlantı Oluşturma
 
-Every link must go to the FastComments homepage with your affiliate code:
+Her bağlantı, ortaklık kodunuzla birlikte FastComments ana sayfasına gitmelidir:
 
-[inline-code-attrs-start title = 'Ortaklık Bağlantı Formatı'; type = 'text'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ortaklık Bağlantısı Formatı'; type = 'text'; inline-code-attrs-end]
 [inline-code-start]
 https://fastcomments.com/?via=YOUR_CODE
 [inline-code-end]
 
-The code is read on the homepage only. A link to any other page, such as pricing or the demos, does not credit you, even with `?via=` added.
+Kod yalnızca ana sayfada okunur. Fiyatlandırma veya demolar gibi başka bir sayfaya giden bir bağlantı, `?via=` eklenmiş olsa bile size komisyon kazandırmaz.
 
-### Banners
+### Banner'lar
 
-The kit includes two campaigns, each in a light and a dark theme:
+Kit, her biri açık ve koyu temada olmak üzere iki kampanya içerir:
 
-- **live-comments**: "Live comments for any website"
-- **moderation**: "Moderation that keeps up"
+- **live-comments**: "Her web sitesi için canlı yorumlar"
+- **moderation**: "Ayak uyduran moderasyon"
 
-Display banners come in `728x90`, `468x60`, `320x50`, `300x250`, `336x280`, `160x600`, `300x600`, and `970x250`, each in a 1x and a retina @2x version. The social images (1200x628 and 1080x1080) are for uploading to social platforms.
+Görüntülenen banner'lar `728x90`, `468x60`, `320x50`, `300x250`, `336x280`, `160x600`, `300x600` ve `970x250` boyutlarında gelir; her biri 1x ve retina @2x sürümündedir. Sosyal medya görselleri (1200x628 ve 1080x1080) sosyal platformlara yüklemek içindir.
 
-To embed a banner, upload it to your site and wrap it in your affiliate link. When you use a @2x file, set the `width` and `height` of the displayed size:
+Bir banner'ı yerleştirmek için onu sitenize yükleyin ve ortaklık bağlantınızla sarın. Bir @2x dosyası kullandığınızda, görüntülenen boyutun `width` ve `height` değerlerini ayarlayın:
 
-[inline-code-attrs-start title = 'Banner Gömme Kodu'; type = 'html'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Banner Yerleştirme Kodu'; type = 'html'; inline-code-attrs-end]
 [inline-code-start]
 <a href="https://fastcomments.com/?via=YOUR_CODE" rel="sponsored">
     <img src="/images/fastcomments-live-comments-light-300x250@2x.png"
-         width="300" height="250" alt="FastComments: live comments for any website">
+         width="300" height="250" alt="FastComments: her web sitesi için canlı yorumlar">
 </a>
 [inline-code-end]
 
-### Rules
+### Kurallar
 
-- Disclose that you earn a commission wherever you promote FastComments, and add `rel="sponsored"` to affiliate links on web pages.
-- Use only the approved claims listed in the kit's swipe copy. Don't promise a free plan, discounts, or coupon codes, and don't name or compare against competitors.
-- Don't present yourself as FastComments or as an official partner.
+- FastComments'i nerede tanıtıyorsanız orada komisyon kazandığınızı belirtin ve web sayfalarındaki ortaklık bağlantılarına `rel="sponsored"` ekleyin.
+- Yalnızca kitin swipe copy bölümünde listelenen onaylanmış iddiaları kullanın. Ücretsiz bir plan, indirimler veya kupon kodları vaat etmeyin ve rakiplere karşı isim kullanmayın veya karşılaştırma yapmayın.
+- Kendinizi FastComments veya resmi bir ortak olarak sunmayın.
 
-The brand guidelines in the kit have the full details.
+Kitteki marka yönergelerinde tüm ayrıntılar bulunmaktadır.
 
-### Custom Materials
+### Özel Materyaller
 
-Contact us if you need custom sizes or other custom materials, and include your affiliate code.
+Özel boyutlara veya diğer özel materyallere ihtiyacınız varsa bizimle iletişime geçin ve ortaklık kodunuzu ekleyin.

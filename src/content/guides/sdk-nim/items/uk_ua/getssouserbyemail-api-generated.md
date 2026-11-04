@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Назва | Тип | Обов’язковий | Опис |
@@ -19,5 +18,3 @@ if optResp.isSome:
   let user = optResp.get()
   discard user
 [inline-code-end]
-
----

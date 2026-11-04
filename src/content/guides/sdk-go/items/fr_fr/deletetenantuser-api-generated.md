@@ -1,4 +1,3 @@
----
 ## Paramètres
 
 | Name | Type | Emplacement | Obligatoire | Description |
@@ -42,5 +41,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.DeleteTenantUser`: %v\n", resp)
 }
 [inline-code-end]
-
----

@@ -28,5 +28,3 @@ Od 2023. godine polje `URL ID` u prilagodbi widgeta sada također prihvaća uzor
 
 1. Ako vaša stranica ima hash parametre (kao example.com#page-1) - to će po zadanim postavkama postati dio URL ID-a.
 2. Tijekom migracija, na primjer s WordPressa na Gatsby, možda ćete morati migrirati vrijednosti URL ID-a komentara nakon početne migracije. Za to nas kontaktirajte.
-
----

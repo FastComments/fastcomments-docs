@@ -1,4 +1,3 @@
----
 Sitenizi ziyaret ettiğinizde artık blog gönderilerinde FastComments yorum kutusunu görmelisiniz:
 
 <div class="screenshot white-bg">
@@ -7,5 +6,3 @@ Sitenizi ziyaret ettiğinizde artık blog gönderilerinde FastComments yorum kut
 </div>
 
 FastComments'i Godaddy ile kurduğunuz için tebrikler! Bir Domain Error ile karşılaştıysanız veya yorum alanını nasıl özelleştireceğinizi öğrenmek istiyorsanız, okumaya devam edin!
-
----

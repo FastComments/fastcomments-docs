@@ -37,5 +37,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.DeletePage`: %v\n", resp)
 }
 [inline-code-end]
-
----

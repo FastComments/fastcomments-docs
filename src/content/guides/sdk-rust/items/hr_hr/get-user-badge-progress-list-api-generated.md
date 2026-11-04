@@ -26,5 +26,3 @@ async fn fetch_badge_progress(conf: &configuration::Configuration) -> Result<(),
     Ok(())
 }
 [inline-code-end]
-
----

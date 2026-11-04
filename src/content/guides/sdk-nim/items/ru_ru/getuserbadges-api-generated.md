@@ -1,4 +1,3 @@
----
 ## Параметры
 
 | Имя | Тип | Обязательно | Описание |
@@ -19,5 +18,3 @@ let (badgesOpt, httpResp) = client.getUserBadges(tenantId = "my-tenant-123", opt
 if badgesOpt.isSome:
   let badges = badgesOpt.get()
 [inline-code-end]
-
----

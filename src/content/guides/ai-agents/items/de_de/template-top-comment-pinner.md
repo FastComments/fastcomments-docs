@@ -1,30 +1,28 @@
-**Template ID:** `top_comment_pinner`
+**Template-ID:** `top_comment_pinner`
 
-Der Top Comment Pinner beobachtet oberste Kommentare, die eine Stimmen-Schwelle überschreiten, und pinnt sie – wodurch das zuvor im selben Thread angepinnte Element ersetzt wird.
+Der Top Comment Pinner überwacht Kommentare auf oberster Ebene, die eine Stimmschwelle überschreiten, und pinnt sie – wobei er ersetzt, was zuvor im selben Thread gepinnt war.
 
-Die eingebaute Prompt weist den Agenten an, Antworten zu überspringen (Anpinnen funktioniert auf Threads, daher ist das Anpinnen einer Antwort selten nützlich) und werbliche Inhalte herauszufiltern (damit der Agent beliebten Link-Spam nicht fördert).
+Der integrierte Prompt weist den Agenten an, Antworten zu überspringen (Pinnen funktioniert auf Thread-Ebene, daher ist das Pinnen einer Antwort selten sinnvoll) und Werbeinhalte herauszufiltern (damit der Agent beliebten Link-Spam nicht verstärkt).
 
-### Triggers
+### Auslöser
 
-- **A comment crosses a vote threshold** (`COMMENT_VOTE_THRESHOLD`, default vote threshold: 10).
+- **Ein Kommentar überschreitet eine Stimmschwelle** (`COMMENT_VOTE_THRESHOLD`, Standard-Stimmschwelle: 10).
 
-Der Trigger wird ausgelöst, wenn die Nettostimmen des Kommentars (`up - down`) die konfigurierte Schwelle erreichen. Passen Sie die Zahl im Bearbeitungsformular an, je nachdem wie aktiv Ihre Threads sind – 10 ist ein sinnvoller Standardwert für mäßig aktive Websites.
+Der Auslöser wird aktiviert, wenn die Netto-Stimmen des Kommentars (`up - down`) die konfigurierte Schwelle erreichen. Passen Sie die Zahl im Bearbeitungsformular an die Aktivität Ihrer Threads an – 10 ist ein sinnvoller Standardwert für mäßig aktive Websites.
 
-### Allowed tools
+### Erlaubte Tools
 
 - [`pin_comment`](#tools-overview)
 - [`unpin_comment`](#tools-overview)
 
-Pinning ist nicht-destruktiv – es kann sofort rückgängig gemacht werden – daher läuft diese Vorlage in der Regel ohne Genehmigungen.
+Pinnen ist nicht destruktiv – es kann sofort rückgängig gemacht werden – daher läuft diese Vorlage normalerweise ohne Freigaben.
 
-### Recommended additions before going live
+### Empfohlene Ergänzungen vor dem Livegang
 
-- **Tick "Include parent comment and prior replies in the same thread"** in [Context Options](#context-options). Ohne Thread-Kontext kann der Agent nicht zuverlässig erkennen, ob bereits ein angepinnter Kommentar vorhanden ist, den es zu lösen gilt.
-- **Adjust the vote threshold** to your site. On busy threads 10 happens too often; on quiet threads 10 may never happen.
-- **Consider scoping by URL** if you only want pinned comments on certain sections of your site - news threads, say, but not announcement threads.
+- **Aktivieren Sie „Übergeordneten Kommentar und vorherige Antworten im selben Thread einbeziehen“** in den [Context Options](#context-options). Ohne Thread-Kontext kann der Agent nicht zuverlässig erkennen, ob bereits ein gepinnter Kommentar zum Lösen vorhanden ist.
+- **Passen Sie die Stimmschwelle** an Ihre Website an. In stark frequentierten Threads tritt 10 zu oft auf; in ruhigen Threads tritt 10 möglicherweise nie auf.
+- **Erwägen Sie eine Eingrenzung nach URL**, wenn Sie gepinnte Kommentare nur in bestimmten Bereichen Ihrer Website wünschen – etwa in News-Threads, aber nicht in Ankündigungs-Threads.
 
-### Note on duplicate pinning
+### Hinweis zum doppelten Pinnen
 
-The agent's prompt instructs it to unpin first before pinning, but if the model misses that step the platform itself does not enforce a one-pinned-per-thread rule (you can have multiple). If duplicate pinning is a problem on your site, gate `pin_comment` behind approval and review each one - or write a tighter prompt.
-
----
+Der Prompt des Agenten weist ihn an, zuerst zu entpinnen, bevor er pinnt, aber wenn das Modell diesen Schritt übersieht, erzwingt die Plattform selbst keine Regel von einem gepinnten Kommentar pro Thread (mehrere sind möglich). Wenn doppeltes Pinnen auf Ihrer Website ein Problem darstellt, schalten Sie `pin_comment` hinter eine Freigabe und prüfen Sie jeden einzeln – oder schreiben Sie einen strengeren Prompt.

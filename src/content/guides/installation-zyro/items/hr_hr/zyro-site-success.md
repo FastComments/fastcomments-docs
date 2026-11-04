@@ -1,4 +1,3 @@
----
 To je to! Sada biste trebali imati komentiranje uživo dodano na vašu Zyro stranicu.
 
 <div class="screenshot white-bg">
@@ -7,5 +6,3 @@ To je to! Sada biste trebali imati komentiranje uživo dodano na vašu Zyro stra
 </div>
 
 Ako ste naišli na pogrešku 'permission denied', ili želite prilagoditi FastComments, nastavite čitati.
-
----

@@ -1,22 +1,22 @@
-### API Overview
+### API Genel Bakış
 
-Image Chat, görüntü konuşmalarını programlı olarak yönetmek için üç REST API uç noktası sağlar. Bu uç noktalar, tarayıcı widget'ını kullanmadan marker'ları (işaretleri) almanıza, oluşturmanıza ve silmenize olanak tanır.
+Image Chat, görüntü konuşmalarını programatik olarak yönetmek için üç REST API endpoint'i sağlar. Bu endpoint'ler, tarayıcı widget'ını kullanmadan marker'ları almanıza, oluşturmanıza ve silmenize olanak tanır.
 
-Tüm API uç noktaları kimlik doğrulama gerektirir ve standart FastComments API desenlerini izler. Bunlar tarayıcı çerezleri aracılığıyla kimlik doğrulayan herkese açık uç noktalardır; API anahtarları kullanılmaz.
+Tüm API endpoint'leri kimlik doğrulaması gerektirir ve standart FastComments API desenlerini takip eder. Bunlar, API anahtarları yerine tarayıcı çerezleri aracılığıyla kimlik doğrulaması yapan herkese açık endpoint'lerdir.
 
-### Base URL
+### Temel URL
 
-Tüm Image Chat API uç noktaları şunun altında bulunur:
+Tüm Image Chat API endpoint'leri şunun altındadır:
 
 ```
 https://fastcomments.com/comment-image-chats
 ```
 
-### Authentication
+### Kimlik Doğrulama
 
-Bu uç noktalar kullanıcıları tarayıcı çerezleriyle doğrular. API anahtarları kullanılmaz. Bu uç noktalara erişebilmek için kullanıcıların tarayıcılarında FastComments'e giriş yapmış olmaları gerekir.
+Bu endpoint'ler kullanıcıların kimliğini tarayıcı çerezleri aracılığıyla doğrular. API anahtarları kullanmazlar. Bu endpoint'lere erişmek için kullanıcıların tarayıcılarında FastComments'e giriş yapmış olmaları gerekir.
 
-### Get All Conversations
+### Tüm Konuşmaları Getir
 
 Belirli bir görüntü için tüm görüntü konuşmalarını alın.
 
@@ -26,24 +26,24 @@ Belirli bir görüntü için tüm görüntü konuşmalarını alın.
 GET /comment-image-chats/:tenantId?urlId=<urlId>
 ```
 
-#### Parameters
+#### Parametreler
 
-`tenantId` (yol parametresi, zorunlu) FastComments Tenant ID'nizdir.
+`tenantId` (yol parametresi, zorunlu) sizin FastComments Tenant ID'nizdir.
 
-`urlId` (sorgu parametresi, zorunlu) konuşmaları almak istediğiniz görüntü tanımlayıcısıdır.
+`urlId` (sorgu parametresi, zorunlu) konuşmalarını almak istediğiniz görüntü tanımlayıcısıdır.
 
-#### Response
+#### Yanıt
 
-Yanıt, API durumunu, doğrulanmışsa mevcut kullanıcı oturum bilgilerini, kimlikleri, URL'leri ve X/Y koordinatlarıyla birlikte konuşma dizisini, temizlenmiş bir URL tanımlayıcısını, mevcut kullanıcının site yöneticisi veya moderatör olup olmadığını belirten bir bayrağı ve canlı senkronizasyon için `tenantIdWS`, `urlIdWS` ve `userIdWS` dahil WebSocket bağlantı ayrıntılarını içerir.
+Yanıt, API durumunu, kimlik doğrulama yapılmışsa geçerli kullanıcı oturum bilgilerini, ID'leri, URL'leri ve X/Y koordinatlarıyla birlikte konuşmalar dizisini, temizlenmiş bir URL tanımlayıcısını, geçerli kullanıcının site yöneticisi veya moderatör olup olmadığını belirten bir bayrağı ve `tenantIdWS`, `urlIdWS` ve `userIdWS` dahil canlı senkronizasyon için WebSocket bağlantı ayrıntılarını içerir.
 
-#### Example Request
+#### Örnek İstek
 
 ```bash
 curl "https://fastcomments.com/comment-image-chats/demo?urlId=my-product-image" \
   --cookie "your-session-cookie"
 ```
 
-#### Example Response
+#### Örnek Yanıt
 
 ```json
 {
@@ -74,7 +74,7 @@ curl "https://fastcomments.com/comment-image-chats/demo?urlId=my-product-image" 
 }
 ```
 
-### Create Conversation
+### Konuşma Oluştur
 
 Bir görüntü üzerinde belirli bir konum için yeni bir görüntü konuşması oluşturun.
 
@@ -84,33 +84,33 @@ Bir görüntü üzerinde belirli bir konum için yeni bir görüntü konuşması
 POST /comment-image-chats/:tenantId
 ```
 
-#### Parameters
+#### Parametreler
 
-`tenantId` (yol parametresi, zorunlu) FastComments Tenant ID'nizdir.
+`tenantId` (yol parametresi, zorunlu) sizin FastComments Tenant ID'nizdir.
 
-İstek gövdesi JSON olmalı ve aşağıdaki zorunlu alanları içermelidir.
+İstek gövdesi JSON olmalı ve şu zorunlu alanları içermelidir.
 
 `urlId` (string, zorunlu) temel sayfa tanımlayıcısıdır.
 
-`windowUrlId` (string, zorunlu) URL'nin, görüntü kaynağı ve koordinatlarla birleşmiş halidir; örneğin `my-page:/images/photo.jpg:25.5:30.2`.
+`windowUrlId` (string, zorunlu) görüntü kaynağı ve koordinatlarla birleştirilmiş URL'dir, örneğin `my-page:/images/photo.jpg:25.5:30.2`.
 
 `pageTitle` (string, zorunlu) sayfanın başlığıdır.
 
 `src` (string, zorunlu) görüntü kaynak URL'sidir.
 
-`x` (number, zorunlu) X koordinatıdır ve yüzde olarak (0-100) ifade edilir.
+`x` (number, zorunlu) yüzde (0-100) olarak X koordinatıdır.
 
-`y` (number, zorunlu) Y koordinatıdır ve yüzde olarak (0-100) ifade edilir.
+`y` (number, zorunlu) yüzde (0-100) olarak Y koordinatıdır.
 
 `createdFromCommentId` (string, zorunlu) bu sohbeti başlatan yorumun ID'sidir.
 
-`broadcastId` (string, zorunlu) yankı efektlerini önlemek için canlı senkronizasyon amacıyla kullanılan bir UUID'dir.
+`broadcastId` (string, zorunlu) yankı etkilerini önlemek için canlı senkronizasyona yönelik bir UUID'dir.
 
-#### Response
+#### Yanıt
 
 Yanıt, API durumunu ve yeni oluşturulan konuşmanın ID'sini içerir.
 
-#### Example Request
+#### Örnek İstek
 
 ```bash
 curl -X POST "https://fastcomments.com/comment-image-chats/demo" \
@@ -128,7 +128,7 @@ curl -X POST "https://fastcomments.com/comment-image-chats/demo" \
   }'
 ```
 
-#### Example Response
+#### Örnek Yanıt
 
 ```json
 {
@@ -137,9 +137,9 @@ curl -X POST "https://fastcomments.com/comment-image-chats/demo" \
 }
 ```
 
-### Delete Conversation
+### Konuşma Sil
 
-Mevcut bir görüntü konuşmasını silin. Bu uç nokta yönetici veya moderatör izinleri gerektirir veya konuşma doğrulanmış kullanıcı tarafından oluşturulmuş olmalıdır.
+Mevcut bir görüntü konuşmasını silin. Bu endpoint yönetici veya moderatör izinleri gerektirir ya da konuşmanın kimliği doğrulanmış kullanıcı tarafından oluşturulmuş olması gerekir.
 
 #### Endpoint
 
@@ -147,15 +147,15 @@ Mevcut bir görüntü konuşmasını silin. Bu uç nokta yönetici veya moderat�
 DELETE /comment-image-chats/:tenantId/:chatId
 ```
 
-#### Parameters
+#### Parametreler
 
-`tenantId` (yol parametresi, zorunlu) FastComments Tenant ID'nizdir.
+`tenantId` (yol parametresi, zorunlu) sizin FastComments Tenant ID'nizdir.
 
 `chatId` (yol parametresi, zorunlu) silinecek konuşmanın ID'sidir.
 
 `broadcastId` (istek gövdesi, zorunlu) canlı senkronizasyon için bir UUID'dir.
 
-#### Example Request
+#### Örnek İstek
 
 ```bash
 curl -X DELETE "https://fastcomments.com/comment-image-chats/demo/conv789" \
@@ -166,7 +166,7 @@ curl -X DELETE "https://fastcomments.com/comment-image-chats/demo/conv789" \
   }'
 ```
 
-#### Example Response
+#### Örnek Yanıt
 
 ```json
 {
@@ -174,21 +174,21 @@ curl -X DELETE "https://fastcomments.com/comment-image-chats/demo/conv789" \
 }
 ```
 
-### Coordinate System
+### Koordinat Sistemi
 
-X ve Y koordinatları, görüntü boyutlarının yüzdesi olarak saklanır. X, sol kenardan yatay konumu temsil eder (0 = sol kenar, 100 = sağ kenar). Y, üst kenardan dikey konumu temsil eder (0 = üst kenar, 100 = alt kenar).
+X ve Y koordinatları, görüntü boyutlarının yüzdeleri olarak saklanır. X, sol kenardan yatay konumu temsil eder (0 = sol kenar, 100 = sağ kenar). Y, üst kenardan dikey konumu temsil eder (0 = üst kenar, 100 = alt kenar).
 
-Bu yüzde değerleri hassasiyet için ondalık değerler içerebilir. Örneğin, x: 25.5 görüntünün sol kenarından %25.5 uzaklıkta olduğu anlamına gelir.
+Bu yüzde değerleri, hassasiyet için ondalık sayılar içerebilir. Örneğin, x: 25.5, görüntünün sol kenarından %25,5 anlamına gelir.
 
-### Rate Limiting
+### Hız Sınırlandırma
 
-Bu uç noktalar, standart FastComments API hız sınırlamasına tabidir. Hız sınırlama ara yazılımı, kötüye kullanımı önlemek ve normal kullanım desenlerine izin vermek için tenant başına uygulanır.
+Bu endpoint'ler standart FastComments API hız sınırlandırmaya tabidir. Hız sınırı middleware'ı, normal kullanım desenlerine izin verirken kötüye kullanımı önlemek için kiracı (tenant) başına uygulanır.
 
-### Error Responses
+### Hata Yanıtları
 
-Tüm uç noktalar standart HTTP durum kodları döner. 400 yanıtı geçersiz istek parametrelerini gösterir. 401 yanıtı kimlik doğrulamanın başarısız olduğunu belirtir. 403 yanıtı yetersiz izinleri gösterir. 404 yanıtı konuşmanın bulunamadığını belirtir. 429 yanıtı hız sınırının aşıldığını gösterir.
+Tüm endpoint'ler standart HTTP durum kodlarını döndürür. 400 yanıtı geçersiz istek parametrelerini gösterir. 401 yanıtı kimlik doğrulamasının başarısız olduğu anlamına gelir. 403 yanıtı yetersiz izinleri gösterir. 404 yanıtı konuşmanın bulunamadığı anlamına gelir. 429 yanıtı hız sınırının aşıldığını gösterir.
 
-Hata yanıtları şu ayrıntıları içeren bir JSON gövdesi içerir:
+Hata yanıtları, ayrıntılar içeren bir JSON gövdesi içerir:
 
 ```json
 {
@@ -197,6 +197,6 @@ Hata yanıtları şu ayrıntıları içeren bir JSON gövdesi içerir:
 }
 ```
 
-### Usage Tracking
+### Kullanım Takibi
 
-Konuşma oluşturma, `conversationCreateCount` kullanım metriklerinizi artırır. Tüm WebSocket senkronizasyon etkinlikleri `pubSubMessageCount` ve `pubSubBandwidth` değerlerini artırır. Bu metrikleri FastComments kontrol panelinizde kullanım analizleri altında izleyebilirsiniz.
+Konuşma oluşturmak, `conversationCreateCount` kullanım metriğinizi artırır. Tüm WebSocket senkronizasyon etkinliği `pubSubMessageCount` ve `pubSubBandwidth` değerlerini artırır. Bu metrikleri FastComments kontrol panelinizde kullanım analitiği altında izleyebilirsiniz.

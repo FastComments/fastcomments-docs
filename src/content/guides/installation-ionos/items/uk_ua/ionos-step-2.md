@@ -58,5 +58,3 @@
     <div class="title">Вставте та збережіть</div>
     <img class="screenshot-image" src="/images/installation-guides/ionos-step-2-paste-and-save.png" alt="Вставте та збережіть" />
 </div>
-
----

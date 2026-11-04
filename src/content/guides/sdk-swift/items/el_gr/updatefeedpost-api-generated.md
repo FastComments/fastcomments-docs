@@ -31,5 +31,3 @@ DefaultAPI.updateFeedPost(tenantId: tenantId, id: id, feedPost: feedPost) { (res
     }
 }
 [inline-code-end]
-
----

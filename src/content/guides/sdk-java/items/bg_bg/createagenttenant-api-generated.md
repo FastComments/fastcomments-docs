@@ -1,17 +1,14 @@
-Creates a new trial account for an AI agent without a human signup. No API key is needed to call this.
+Създава нов пробен акаунт за AI агент без човешка регистрация. Не е нужен API ключ за извикването му.
 
-The response contains the tenant id, an API key that works immediately against the REST API and the
-MCP server, and a claim URL. Give the claim URL to the human you are working for: opening it while
-logged in to FastComments attaches the account to them. Unclaimed accounts, and their keys, are
-deleted 72 hours after creation. Until claimed, the account has the standard trial limits.
+Отговорът съдържа tenant id, API ключ, който работи веднага срещу REST API-то и MCP сървъра, и claim URL. Предайте claim URL-а на човека, за когото работите: като го отвори, докато е влязъл в FastComments, акаунтът се прикачва към него. Непотъпкани акаунти и техните ключове се изтриват 72 часа след създаването. До потъпкването акаунтът има стандартните пробни ограничения.
 
 ## Отговор
 
-Returns: [`CreateAgentTenantResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateAgentTenantResponse.java)
+Връща: [`CreateAgentTenantResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateAgentTenantResponse.java)
 
 ## Пример
 
-[inline-code-attrs-start title = 'createAgentTenant Пример'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример за createAgentTenant'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Import classes:
 import com.fastcomments.invoker.ApiClient;
@@ -41,5 +38,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

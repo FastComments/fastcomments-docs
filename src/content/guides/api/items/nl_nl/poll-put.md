@@ -75,5 +75,3 @@ interface PollPutResponse {
 - Deze API volgt de instellingen van je site. Als polls niet zijn ingeschakeld voor de site of pagina, faalt het met `polls-disabled`.
 - Een vergrendelde reactie kan zijn poll niet wijzigen, en faalt met `locked`.
 - Verbonden widgets worden live bijgewerkt, zodat kijkers de nieuwe poll zien zonder te herladen.
-
----

@@ -1,24 +1,24 @@
-Past commenters on the page who are NOT currently online. Sorted by displayName.  
-Użyj tego po wyczerpaniu /users/online, aby wygenerować sekcję „Members”.  
-Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName}  
-index from afterName forward via $gt, no $skip cost.  
+Osoby komentujące w przeszłości na stronie, które NIE są obecnie online. Sortowane według displayName.
+Użyj tego po wyczerpaniu /users/online, aby wyrenderować sekcję "Members".
+Paginacja kursorowa po commenterName: serwer przechodzi przez częściowy indeks {tenantId, urlId, commenterName}
+od afterName w przód za pomocą $gt, bez kosztu $skip.
 
-## Parameters
+## Parametry
 
-| Name | Type | Required | Description |
+| Nazwa | Typ | Wymagany | Opis |
 |------|------|----------|-------------|
-| tenant_id | String | Yes |  |
-| url_id | String | Yes |  |
-| after_name | String | No |  |
-| after_user_id | String | No |  |
+| tenant_id | String | Tak |  |
+| url_id | String | Tak |  |
+| after_name | String | Nie |  |
+| after_user_id | String | Nie |  |
 
-## Response
+## Odpowiedź
 
-Returns: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/page_users_offline_response.rs)
+Zwraca: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/page_users_offline_response.rs)
 
-## Example
+## Przykład
 
-[inline-code-attrs-start title = 'get_offline_users Przykład'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Przykład get_offline_users'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn fetch_offline(config: &configuration::Configuration) -> Result<(), Error> {
     let params = GetOfflineUsersParams {

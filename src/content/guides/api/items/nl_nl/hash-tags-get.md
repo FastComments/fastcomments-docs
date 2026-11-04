@@ -1,4 +1,3 @@
----
 [api-resource-header-start name = 'HashTag'; route = 'GET /api/v1/hash-tags'; creditsCost = 1; api-resource-header-end]
 
 Deze API gebruikt paginering, geleverd door de queryparameter `page`. HashTags worden geretourneerd in pagina's van `100`, gesorteerd op `tag`.
@@ -31,5 +30,3 @@ interface HashTagsResponse {
     hashTags: HashTag[]
 }
 [inline-code-end]
-
----

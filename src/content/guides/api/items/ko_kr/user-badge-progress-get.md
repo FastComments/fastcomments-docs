@@ -1,4 +1,3 @@
----
 이 엔드포인트는 다양한 기준에 따라 사용자 배지 진행 기록을 가져올 수 있게 해줍니다.
 
 예제 요청:
@@ -75,4 +74,3 @@ curl -X GET "https://fastcomments.com/api/v1/user-badge-progress?tenantId=demo&A
   "reason": "The limit (query param: limit) is too large (> 200)."
 }
 [inline-code-end]
----

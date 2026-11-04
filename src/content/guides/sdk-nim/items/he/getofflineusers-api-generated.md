@@ -1,4 +1,3 @@
----
 המתגירים הקודמים בדף שאינם מחוברים כעת. ממוין לפי displayName.  
 השתמש בזה לאחר שניצלו /users/online כדי להציג חלק "Members".  
 דף אינדקס עם cursor על commenterName: השרת מתנהל על החלק החלקי {tenantId, urlId, commenterName}  
@@ -29,5 +28,3 @@ if offlineResp.isSome:
   let offline = offlineResp.get()
   echo offline)
 [inline-code-end]
-
----

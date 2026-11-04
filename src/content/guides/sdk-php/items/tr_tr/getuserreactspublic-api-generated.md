@@ -1,4 +1,3 @@
----
 ## Parametreler
 
 | Ad | Tip | Konum | Gerekli | Açıklama |
@@ -40,5 +39,3 @@ try {
     echo 'Exception when calling PublicApi->getUserReactsPublic: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

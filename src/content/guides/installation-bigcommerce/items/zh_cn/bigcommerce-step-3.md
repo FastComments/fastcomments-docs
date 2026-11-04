@@ -29,5 +29,3 @@
     <div class="title">退出编辑器</div>
     <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-3-exit.png" alt="退出编辑器" />
 </div>
-
----

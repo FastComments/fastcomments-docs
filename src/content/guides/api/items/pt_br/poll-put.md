@@ -75,5 +75,3 @@ interface PollPutResponse {
 - Esta API obedece às configurações do seu site. Se enquetes não estiverem habilitadas para o site ou página, falha com `polls-disabled`.
 - Um comentário bloqueado não pode ter sua enquete alterada, e falha com `locked`.
 - Widgets conectados são atualizados em tempo real, então os visualizadores veem a nova enquete sem recarregar.
-
----

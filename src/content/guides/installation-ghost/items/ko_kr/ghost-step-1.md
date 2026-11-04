@@ -36,5 +36,3 @@ FastComments를 Ghost에 올바르게 추가하려면 테마 파일을 편집해
     <div class="title">테마 다운로드</div>
     <img class="screenshot-image" src="/images/installation-guides/ghost-step-1-5-download.png" alt="테마 다운로드" />
 </div>
-
----

@@ -1,19 +1,19 @@
-Bulk user info for a tenant. Given userIds, return display info from User / SSOUser.
-Used by the comment widget to enrich users that just appeared via a presence event.
-No page context: privacy is enforced uniformly (private profiles are masked).
+테넌트의 대량 사용자 정보입니다. userIds가 주어지면 User / SSOUser에서 표시 정보를 반환합니다.
+presence 이벤트를 통해 방금 나타난 사용자를 풍부하게 하기 위해 댓글 위젯에서 사용됩니다.
+페이지 컨텍스트가 없습니다: 프라이버시는 일관되게 적용됩니다(비공개 프로필은 마스킹됩니다).
 
-## Parameters
+## 매개변수
 
-| 이름 | 유형 | 필수 | 설명 |
-|------|------|------|------|
+| 이름 | 타입 | 필수 | 설명 |
+|------|------|----------|-------------|
 | tenantId | string | 예 |  |
-| ids | string | 아니오 |  |
+| ids | string | 아니요 |  |
 
-## Response
+## 응답
 
-Returns: [`Option[PageUsersInfoResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_page_users_info_response.nim)
+반환값: [`Option[PageUsersInfoResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_page_users_info_response.nim)
 
-## Example
+## 예제
 
 [inline-code-attrs-start title = 'getUsersInfo 예제'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

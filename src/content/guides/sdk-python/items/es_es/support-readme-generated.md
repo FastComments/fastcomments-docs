@@ -1,5 +1,3 @@
----
 - [Documentación](https://docs.fastcomments.com)
 - [Incidencias de GitHub](https://github.com/fastcomments/fastcomments-python/issues)
 - [Soporte de FastComments](https://fastcomments.com/auth/my-account/help)
----

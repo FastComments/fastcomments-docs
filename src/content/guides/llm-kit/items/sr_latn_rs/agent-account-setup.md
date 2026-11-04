@@ -1,4 +1,3 @@
----
 A coding agent, poput Claude Code, Cursor ili asistenta zasnovanog na MCP, može postaviti FastComments za vas bez da popunjavate formular za registraciju. Ovo je korisno kada zatražite od agenta da "dodaje komentare na moj sajt" i još nemate nalog.
 
 ### Kako funkcioniše
@@ -19,5 +18,3 @@ Svaka prijava (login) poseduje jedan nalog. Ako otvorite claim link dok ste prij
 ### Za autore agenata
 
 Uputstva za agente na [fastcomments.com/agents.md](https://fastcomments.com/agents.md) opisuju poziv za kreiranje naloga, polja u odgovoru i kako da predate claim link osobi za koju radite. Poziv ne zahteva API ključ i ograničen je po brzini po IP adresi.
-
----

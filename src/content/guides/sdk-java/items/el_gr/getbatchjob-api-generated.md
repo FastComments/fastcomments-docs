@@ -1,11 +1,11 @@
-Status, progress and, once done, the result of one batch job.
+Κατάσταση, πρόοδος και, μόλις ολοκληρωθεί, το αποτέλεσμα μιας εργασίας batch.
 
 ## Παράμετροι
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
-|------|------|----------|------------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Ναι |  |
+| id | string | path | Ναι |  |
 
 ## Απάντηση
 
@@ -15,7 +15,7 @@ Status, progress and, once done, the result of one batch job.
 
 [inline-code-attrs-start title = 'Παράδειγμα getBatchJob'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Εισαγωγή κλάσεων:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -28,10 +28,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Διαμόρφωση εξουσιοδότησης κλειδιού API: api_key
+    // Configure API key authorization: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Απενεργοποιήστε το σχόλιο στην παρακάτω γραμμή για να ορίσετε πρόθεμα για το κλειδί API, π.χ. "Token" (προεπιλογή null)
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);

@@ -1,20 +1,20 @@
-Attach a poll to a comment, or set the full state of the poll it already has.
+Voeg een poll toe aan een comment, of stel de volledige status in van de poll die deze al heeft.
 
-Opties worden gematcht op id: een optie die wordt verzonden met de id van een bestaande optie behoudt zijn stemmen (en krijgt het nieuwe label en de positie), een optie die zonder id wordt verzonden wordt toegevoegd, en bestaande opties die niet in de lijst staan worden verwijderd samen met de daarop uitgebrachte stemmen.
+Opties worden gematcht op id: een optie die wordt verzonden met de id van een bestaande optie behoudt zijn stemmen (en krijgt het nieuwe label en de nieuwe positie), een optie die zonder id wordt verzonden wordt toegevoegd, en bestaande opties die niet in de lijst staan worden verwijderd, samen met de op hen uitgebrachte stemmen.
 
-Als er geen bestaande optie‑id's worden behouden bij een poll die stemmen heeft, worden ze allemaal verwijderd, dus moet replaceVotes=true worden gebruikt.
+Als je geen bestaande optie-ids behoudt op een poll waarop stemmen zijn uitgebracht, worden alle stemmen verwijderd, dus daarvoor is replaceVotes=true nodig.
 
 ## Parameters
 
-| Naam | Type | Locatie | Verplicht | Beschrijving |
-|------|------|----------|-----------|--------------|
-| tenantId | string | query | Ja |  |
-| commentId | string | path | Ja |  |
-| replaceVotes | boolean | query | Nee |  |
+| Name | Type | Location | Required | Description |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Yes |  |
+| commentId | string | path | Yes |  |
+| replaceVotes | boolean | query | No |  |
 
 ## Response
 
-Returns: [`SavePollResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/SavePollResponse.swift)
+Geeft terug: [`SavePollResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/SavePollResponse.swift)
 
 ## Example
 

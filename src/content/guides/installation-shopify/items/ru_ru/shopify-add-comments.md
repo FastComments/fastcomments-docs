@@ -1,45 +1,45 @@
-The **FastComments** block is the main commenting widget. Add it to blog post templates, product templates, or any other page where you want a discussion thread or a live chat.
+Блок **FastComments** — это основной виджет комментариев. Добавьте его в шаблоны записей блога, шаблоны товаров или на любую другую страницу, где вам нужна ветка обсуждения или живой чат.
 
-### Add the block
+### Добавление блока
 
-1. Open the Shopify theme editor (**Online Store > Themes > Customize**).
-2. Pick the template you want comments on: **Blog post**, **Product**, or any other page or section template.
-3. In the section where you want comments to appear, click **Add block**.
-4. Under **Apps**, select **FastComments**.
-5. Click **Save**.
+1. Откройте редактор темы Shopify (**Online Store > Themes > Customize**).
+2. Выберите шаблон, на котором нужны комментарии: **Blog post**, **Product** или любой другой шаблон страницы или секции.
+3. В секции, где должны появиться комментарии, нажмите **Add block**.
+4. В разделе **Apps** выберите **FastComments**.
+5. Нажмите **Save**.
 
-The block appears immediately. There is no Tenant ID to enter; your store's tenant is wired up automatically when you install the app.
+Блок появляется сразу. Вводить Tenant ID не нужно; тенант вашего магазина подключается автоматически при установке приложения.
 
-### Settings
+### Настройки
 
-| Setting | What it does | Default |
+| Настройка | Что делает | По умолчанию |
 |---|---|---|
-| Tenant ID (optional) | Override which FastComments tenant the block renders against. Leave blank to use the store's automatically-configured tenant. Find a manual tenant ID at fastcomments.com/auth/my-account/api-secret. | (пусто) |
-| SSO | Auto-logs the visitor in as their Shopify customer account before commenting. See [Auto-Login Shopify Customers](/guide-installation-shopify.html#shopify-sso). | On |
-| Commenting Style | **Threaded** for nested replies and votes, or **Streaming** for a real-time chat feed. | Threaded |
-| Custom URL ID | Override the auto-detected page identifier. Use this when you want two URLs to share one comment thread. | (автоопределяется) |
+| Tenant ID (необязательно) | Позволяет переопределить, к какому тенанту FastComments привязан блок. Оставьте пустым, чтобы использовать автоматически настроенный тенант магазина. Ручной Tenant ID можно найти на fastcomments.com/auth/my-account/api-secret. | (пусто) |
+| SSO | Автоматически авторизует посетителя под его аккаунтом клиента Shopify перед комментированием. См. [Auto-Login Shopify Customers](/guide-installation-shopify.html#shopify-sso). | Вкл |
+| Стиль комментирования | **Threaded** для вложенных ответов и голосования или **Streaming** для ленты чата в реальном времени. | Threaded |
+| Custom URL ID | Переопределяет автоматически определённый идентификатор страницы. Используйте, если хотите, чтобы два URL использовали одну ветку комментариев. | (автоопределение) |
 
-### How the page identifier is chosen
+### Как выбирается идентификатор страницы
 
-Each comment thread is keyed by a URL ID. The block picks one automatically:
+Каждая ветка комментариев привязана к URL ID. Блок выбирает его автоматически:
 
-- **Blog post template:** `shopify-article-{article.id}`, which is stable across slug and title changes.
-- **Product template:** `shopify-product-{product.id}`, which is stable across slug and title changes.
-- **Other templates:** the request path.
+- **Шаблон записи блога:** `shopify-article-{article.id}` — стабилен при изменении слага и заголовка.
+- **Шаблон товара:** `shopify-product-{product.id}` — стабилен при изменении слага и заголовка.
+- **Другие шаблоны:** путь запроса.
 
-If you set **Custom URL ID**, that value is used instead. Use the same Custom URL ID across multiple blocks (for example, on a localized variant of a product page) to share one comment thread.
+Если задан **Custom URL ID**, используется это значение. Используйте одинаковый Custom URL ID в нескольких блоках (например, на локализованной версии страницы товара), чтобы использовать одну ветку комментариев.
 
-### Threaded vs Streaming
+### Threaded и Streaming
 
-**Threaded** is the default. Visitors reply to each other, vote, and moderation tools work as expected. Best for blog posts and product reviews.
+**Threaded** — режим по умолчанию. Посетители отвечают друг другу, голосуют, и инструменты модерации работают как ожидается. Лучше всего подходит для записей блога и отзывов о товарах.
 
-**Streaming** drops the threading and shows new comments in real time as they're posted, like a chat feed. Best for product launches, live events, and community pages.
+**Streaming** убирает ветвление и показывает новые комментарии в реальном времени по мере их публикации, как в чате. Лучше всего подходит для запусков продуктов, прямых трансляций и страниц сообществ.
 
-### Multiple blocks on the same page
+### Несколько блоков на одной странице
 
-The block can be added more than once to the same template. For example, a Reviews Summary at the top of a product page and a FastComments block at the bottom. The blocks share a URL ID, so the summary reflects the comments below.
+Блок можно добавить на один шаблон несколько раз. Например, «Reviews Summary» вверху страницы товара и блок FastComments внизу. Блоки используют один URL ID, поэтому сводка отражает комментарии ниже.
 
-### Tips
+### Советы
 
-- The block hides itself in the theme editor preview with a yellow notice if it can't find a tenant. If that appears in your live store, reinstall the FastComments app.
-- For a product page, the FastComments block doubles as your product reviews widget. Pair it with **FastComments - Reviews Summary** for a star-rating summary at the top of the page.
+- Блок скрывает себя в предпросмотре редактора темы с жёлтым уведомлением, если не может найти тенант. Если это появляется в вашем рабочем магазине, переустановите приложение FastComments.
+- На странице товара блок FastComments также выполняет роль виджета отзывов о товаре. Используйте его вместе с **FastComments - Reviews Summary** для сводки со звёздным рейтингом вверху страницы.

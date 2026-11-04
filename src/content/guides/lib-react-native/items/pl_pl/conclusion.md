@@ -8,5 +8,3 @@ Jeśli napotkasz jakiekolwiek problemy lub masz pytania dotyczące biblioteki Re
 ## Współtworzenie
 
 Zachęcamy do współpracy! Odwiedź [repozytorium GitHub](https://github.com/FastComments/fastcomments-react-native) po wytyczne dotyczące współtworzenia.
-
----

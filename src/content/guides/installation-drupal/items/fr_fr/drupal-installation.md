@@ -16,5 +16,3 @@ Téléchargez le module depuis [drupal.org/project/fcom](https://www.drupal.org/
 <sup>Remarque !</sup> Le module ne dépend que du noyau de Drupal (`user` et `field`). Aucun autre module Drupal ou bibliothèque n'est requis.
 
 Une fois le module activé, rendez-vous dans la section `Configuration` pour configurer votre Tenant ID et API Secret.
-
----

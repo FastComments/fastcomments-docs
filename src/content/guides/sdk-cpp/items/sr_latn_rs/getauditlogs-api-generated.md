@@ -29,5 +29,3 @@ api->getAuditLogs(tenantId, options).then([](pplx::task<std::shared_ptr<GetAudit
     }
 });
 [inline-code-end]
-
----

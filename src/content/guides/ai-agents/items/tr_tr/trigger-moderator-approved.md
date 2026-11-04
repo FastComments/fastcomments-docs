@@ -1,4 +1,3 @@
----
 Bir moderatör bir yorumu onayladığında tetiklenir.
 
 ### Ajanın aldığı bağlam
@@ -22,5 +21,3 @@ Bir insan moderatör tarafından yapılan işlem.
 - **Karşılama / etkileşim** - bir ajan, bir moderatör onları onayladığı anda, gönderi zamanı yerine ilk kez yorum yapanlara yanıt verebilir.
 - **Ajanlar arası koordinasyon** - ayrı bir ajan yorumu inceleme için işaretlemişse, onay insan incelemesinin bittiğine dair işarettir.
 - **Denetim izi** [Webhooks](#webhooks-overview) aracılığıyla.
-
----

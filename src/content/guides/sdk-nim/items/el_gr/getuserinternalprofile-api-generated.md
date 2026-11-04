@@ -21,5 +21,3 @@ let (profileOpt, httpResp) = client.getUserInternalProfile(
 if profileOpt.isSome:
   let profile = profileOpt.get()
 [inline-code-end]
-
----

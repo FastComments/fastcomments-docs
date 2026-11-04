@@ -44,5 +44,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling ModerationApi->set_trust_factor: %s\n" % e)
 [inline-code-end]
-
----

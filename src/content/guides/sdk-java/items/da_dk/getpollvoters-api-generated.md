@@ -1,4 +1,3 @@
----
 Hvem stemte på hvilken mulighed. Anonyme afstemninger svarer aldrig, admin‑kun afstemninger svarer kun for en administrator eller moderator.
 
 ## Parametre
@@ -57,5 +56,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

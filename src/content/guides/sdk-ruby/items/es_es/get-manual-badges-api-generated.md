@@ -1,4 +1,3 @@
----
 ## Parámetros
 
 | Nombre | Tipo | Ubicación | Obligatorio | Descripción |
@@ -31,5 +30,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_manual_badges: #{e}"
 end
 [inline-code-end]
-
----

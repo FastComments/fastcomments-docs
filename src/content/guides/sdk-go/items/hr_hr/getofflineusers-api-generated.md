@@ -1,4 +1,3 @@
----
 Prošli komentatori na stranici koji trenutno NISU online. Sortirano po displayName.
 Koristite ovo nakon iscrpljenja /users/online kako biste prikazali odjeljak "Članovi".
 Paginacija kursorom po commenterName: server prolazi djelomični {tenantId, urlId, commenterName}
@@ -47,5 +46,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.GetOfflineUsers`: %v\n", resp)
 }
 [inline-code-end]
-
----

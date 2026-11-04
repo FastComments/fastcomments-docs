@@ -24,5 +24,3 @@ api->getUserBanPreference(tenantId, sso)
         }
     });
 [inline-code-end]
-
----

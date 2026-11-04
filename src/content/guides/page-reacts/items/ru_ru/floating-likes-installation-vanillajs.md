@@ -85,5 +85,3 @@
     });
 </script>
 [inline-code-end]
-
----

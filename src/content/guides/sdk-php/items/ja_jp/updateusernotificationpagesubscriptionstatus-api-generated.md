@@ -1,16 +1,15 @@
-Enable or disable notifications for a page. When users are subscribed to a page, notifications are created
-for new root comments, and also
+ページの通知を有効または無効にします。ユーザーがページに登録されている場合、新しいルートコメントに対して通知が作成され、さらに
 
-## パラメータ
+## パラメーター
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| urlId | string | query | Yes |  |
-| url | string | query | Yes |  |
-| pageTitle | string | query | Yes |  |
-| subscribedOrUnsubscribed | string | path | Yes |  |
-| sso | string | query | No |  |
+| tenantId | string | query | はい |  |
+| urlId | string | query | はい |  |
+| url | string | query | はい |  |
+| pageTitle | string | query | はい |  |
+| subscribedOrUnsubscribed | string | path | はい |  |
+| sso | string | query | いいえ |  |
 
 ## レスポンス
 
@@ -27,7 +26,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
     // カスタム HTTP クライアントを使用したい場合は、`GuzzleHttp\ClientInterface` を実装したクライアントを渡してください。
-    // これはオプションで、デフォルトでは `GuzzleHttp\Client` が使用されます。
+    // これは省略可能で、デフォルトでは `GuzzleHttp\Client` が使用されます。
     new GuzzleHttp\Client()
 );
 

@@ -1,68 +1,68 @@
-Agent webhooks retry on failure. Delivery is **שלח ושכח מנקודת המבט של הסוכן** - משלוח נכשל לא חוסם את ביצועי הסוכן או מבטל שום פעולה - ותור + cron מנהלים ניסיונות חוזרים באופן אסינכרוני.
+Webhooks של סוכנים מנסים שוב במקרה של כשל. המסירה היא **fire-and-forget מנקודת מבטו של הסוכן** - מסירה שנכשלה לא חוסמת את ביצוע הסוכן ולא מבצעת rollback לאף פעולה - ותור + cron מנהלים ניסיונות חוזרים באופן אסינכרוני.
 
-### Queue model
+### מודל התור
 
-Each event is queued **once per matching webhook**. So if you have three webhooks subscribed to `trigger.succeeded` for a given agent + domain, the platform queues three deliveries; each is delivered and retried independently. A failure on one webhook never affects the others.
+כל אירוע נכנס לתור **פעם אחת לכל webhook תואם**. כלומר, אם יש לכם שלושה webhooks רשומים ל-`trigger.succeeded` עבור סוכן + דומיין מסוימים, הפלטפורמה מכניסה שלוש מסירות לתור; כל אחת נמסרת ומנוסה שוב באופן עצמאי. כשל ב-webhook אחד לעולם לא משפיע על האחרים.
 
-### What's retried
+### מה מנוסה שוב
 
-A delivery is retried when:
+מסירה מנוסה שוב כאשר:
 
-- The HTTP request **does not complete** (כשל ב-DNS, החיבור נדחה, פסק-זמן).
-- The HTTP response code is any non-`2xx` status that is not in the configured **No-retry status codes** list.
+- בקשת ה-HTTP **אינה מושלמת** (כשל DNS, חיבור נדחה, timeout).
+- קוד התגובה של ה-HTTP הוא כל סטטוס שאינו 2xx שאינו נמצא ברשימת **קודי סטטוס ללא ניסיון חוזר** המוגדרת.
 
-A delivery is **not retried** when:
+מסירה **אינה מנוסה שוב** כאשר:
 
-- The response code is `2xx` (success).
-- The response code is in the configured **No-retry status codes** list. By default this list is empty - any non-`2xx` is retried.
+- קוד התגובה הוא `2xx` (הצלחה).
+- קוד התגובה נמצא ברשימת **קודי סטטוס ללא ניסיון חוזר** המוגדרת. כברירת מחדל הרשימה ריקה - כל סטטוס שאינו 2xx מנוסה שוב.
 
-### Configuring no-retry codes
+### הגדרת קודים ללא ניסיון חוזר
 
-The webhook config form has a **No-retry status codes** field (multi-value). Common entries:
+טופס הגדרות ה-webhook כולל שדה **קודי סטטוס ללא ניסיון חוזר** (רב-ערכי). ערכים נפוצים:
 
-- `410` - Gone. נקודת הקצה הועברה לצמיתות או שהמשאב נעלם. ניסיון חוזר מבזבז רוחב פס משני הצדדים.
-- `422` - Unprocessable Entity. נקודת הקצה הבינה את המטען אך חשבה שהוא לא תקין. ניסיון חוזר עם אותו מטען יחזיר את אותה תשובה.
-- `400` - Bad Request, באותו ההיגיון.
+- `410` - Gone. נקודת הקצה שלכם הועברה באופן קבוע או שהמשאב אינו קיים עוד. ניסיון חוזר רק מבזבז רוחב פס משני הצדדים.
+- `422` - Unprocessable Entity. נקודת הקצה שלכם הבינה את ה-payload אך ראתה אותו כלא תקף. ניסיון חוזר עם אותו payload יניב את אותה תשובה.
+- `400` - Bad Request, באותו רוחב.
 
-Adding a code here means: when the endpoint returns it, mark the delivery as failed-terminal and stop retrying.
+הוספת קוד כאן פירושה: כאשר נקודת הקצה מחזירה אותו, המסירה מסומנת כנכשלה-סופית והניסיונות החוזרים מופסקים.
 
-### Retry schedule
+### לוח זמנים של ניסיונות חוזרים
 
-A background worker runs every few seconds and processes any deliveries whose next attempt time has passed.
+Worker ברקע רץ כל כמה שניות ומעבד כל מסירה שמועת הניסיון הבאה שלה חלפה.
 
-After each failure, the next-attempt time is pushed forward with **linear backoff**: the wait grows as `60 seconds * attempt count` (so attempt 1 waits 1 minute, attempt 2 waits 2 minutes, and so on).
+לאחר כל כשל, מועת הניסיון הבאה נדחפת קדימה עם **backoff ליניארי**: ההמתנה גדלה לפי `60 שניות * מספר הניסיונות` (כך שניסיון 1 ממתין דקה, ניסיון 2 ממתין שתי דקות, וכן הלאה).
 
-After 99 failed attempts (or 3 in local development), the delivery is given up and dropped from the queue. The delivery log entries do persist and remain visible in the [יומני משלוחי Webhook](#webhook-logs) page until they expire.
+לאחר 99 ניסיונות שנכשלו (או 3 בפיתוח מקומי), המסירה נזנחת ומוסרת מהתור. רשומות יומן המסירה נשמרות ונשארות גלויות בעמוד [יומני מסירת Webhook](#webhook-logs) עד שתוקפן פג.
 
-### Idempotence on your side
+### אידמפוטנטיות בצד שלכם
 
-Because we retry, your endpoint **must be idempotent**. The same `triggerId` (or `approvalId`) can arrive more than once. Your endpoint should:
+מכיוון שאנו מנסים שוב, נקודת הקצה שלכם **חייבת להיות אידמפוטנטית**. אותו `triggerId` (או `approvalId`) עשוי להגיע יותר מפעם אחת. נקודת הקצה שלכם צריכה:
 
-- Use a unique key (`triggerId` for trigger events, `approvalId` for approval events) as a dedup token.
-- Accept duplicate deliveries gracefully (return `200` the second time).
+- להשתמש במפתח ייחודי (`triggerId` עבור אירועי trigger, `approvalId` עבור אירועי approval) כאסימון למניעת כפילויות.
+- לקבל מסירות כפולות בחן (להחזיר 200 בפעם השנייה).
 
-A non-idempotent endpoint will eventually double-process some deliveries, especially during transient outages where one timeout retries 30 seconds later but the original request actually succeeded.
+נקודת קצה שאינה אידמפוטנטית בסופו של דבר תעבד חלק מהמסירות פעמיים, במיוחד בזמן תקלות זמניות שבהן timeout אחד מנסה שוב 30 שניות מאוחר יותר אך הבקשה המקורית למעשה הצליחה.
 
-### Ordering
+### סדר
 
-Deliveries are **not strictly ordered**. A `trigger.succeeded` and a downstream `approval.requested` (from the same run) can arrive in either order if one retries and the other does not. Your endpoint should not assume causal ordering.
+מסירות **אינן מסודרות בקפדנות**. `trigger.succeeded` ו-`approval.requested` במורד הזרם (מאותו ריצה) עשויים להגיע בכל סדר שהוא אם אחד מנסה שוב והשני לא. נקודת הקצה שלכם לא צריכה להניח סדר סיבתי.
 
-If you need ordering, use the timestamps - `occurredAt` on the envelope, plus the trigger/approval `createdAt` in the data block - to reconstruct order on your side.
+אם אתם זקוקים לסדר, השתמשו בחותמות הזמן - `occurredAt` על המעטפת, ובנוסף `createdAt` של ה-trigger/approval בבלוק הנתונים - כדי לשחזר את הסדר בצד שלכם.
 
-### Cleanup
+### ניקוי
 
-Deliveries are removed from the queue as soon as they either succeed or hit the attempt cap. The platform does not retain terminally-failed deliveries in the queue itself; the durable record of each attempt lives in the [יומני משלוחי Webhook](#webhook-logs) page.
+מסירות מוסרות מהתור ברגע שהן מצליחות או מגיעות לתקרת הניסיונות. הפלטפורמה אינה שומרת מסירות שנכשלו סופית בתור עצמו; הרשומה העמידה של כל ניסיון נמצאת בעמוד [יומני מסירת Webhook](#webhook-logs).
 
-### Where to look when retries fail
+### היכן לבדוק כאשר ניסיונות חוזרים נכשלים
 
-The [יומני משלוחי Webhook](#webhook-logs) page is the place to see why a webhook is failing. Common causes:
+עמוד [יומני מסירת Webhook](#webhook-logs) הוא המקום לראות מדוע webhook נכשל. סיבות נפוצות:
 
-- **כשל בפתרון DNS** - ה-URL שגוי או הדומיין נעלם.
-- **שגיאות TLS** - התעודה של נקודת הקצה אינה תקפה או פגה.
-- **החיבור נדחה / פסק-זמן** - נקודת הקצה לא פעילה.
-- **תגובות 5xx** - נקודת הקצה פעילה אך אירעה שגיאה. גוף התגובה (מקוצר) נרשם.
-- **תגובות 4xx** - נקודת הקצה דחתה את המטען. אם זה מכוון, הוסף את הקוד ל-**No-retry status codes**.
+- **כשל פתרון DNS** - ה-URL שגוי או שהדומיין אינו קיים עוד.
+- **שגיאות TLS** - התעודה של נקודת הקצה שלכם לא תקפה או פגה.
+- **חיבור נדחה / timeout** - נקודת הקצה שלכם אינה זמינה.
+- **תגובות 5xx** - נקודת הקצה שלכם זמינה אך שגיאה. גוף התגובה (מקוצר) נשמר.
+- **תגובות 4xx** - נקודת הקצה שלכם דחתה את ה-payload. אם זו כוונה, הוסיפו את הקוד ל**קודי סטטוס ללא ניסיון חוזר**.
 
-### Pause an unhealthy webhook
+### השהיית webhook לא בריא
 
-If a webhook is consistently failing, the cleanest fix is to delete it (or temporarily clear its event subscription list). The platform does not auto-disable failing webhooks - they keep retrying until the delivery is given up.
+אם webhook נכשל באופן עקבי, הפתרון הנקי ביותר הוא למחוק אותו (או לרוקן זמנית את רשימת הרשמות האירועים שלו). הפלטפורמה אינה משביתה אוטומטית webhooks שנכשלים - הם ממשיכים לנסות שוב עד שהמסירה נזנחת.

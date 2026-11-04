@@ -1,4 +1,3 @@
----
 La version VanillaJS du widget est la manière la plus simple d'ajouter des commentaires à votre site web, sans nécessiter de systèmes de build ou de code côté serveur.
 
 Ajoutez simplement l'extrait de code suivant à n'importe quelle page pour ajouter des commentaires à votre site :
@@ -14,5 +13,3 @@ De nombreuses applications proposent une option "HTML Embed Code". Sélectionnez
 Vous trouverez la documentation sur la configuration du widget <a href="/guide-customizations-and-configuration.html" target="_blank">ici</a>.
 
 Toutes les versions du widget FastComments sont des wrappers autour de la bibliothèque VanillaJS principale. Cela nous permet d'ajouter des fonctionnalités et de corriger des problèmes en un seul endroit - et les modifications se propagent automatiquement aux autres variantes du widget de commentaires.
-
----

@@ -1,4 +1,3 @@
----
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
@@ -25,5 +24,3 @@ if maybeResp.isSome:
   let apiResult = maybeResp.get()
   # Verwenden Sie apiResult nach Bedarf
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 ## パラメータ
 
 | 名前 | 型 | 必須 | 説明 |
@@ -21,5 +20,3 @@ api->getUserReactsPublic(U("my-tenant-123"), options).then([](pplx::task<std::sh
     auto response = t.get();
 });
 [inline-code-end]
-
----

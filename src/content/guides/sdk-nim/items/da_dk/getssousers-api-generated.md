@@ -1,4 +1,3 @@
----
 ## Parametre
 
 | Navn | Type | Påkrævet | Beskrivelse |
@@ -22,5 +21,3 @@ else:
   echo "No SSO users found"
 echo httpResponse.statusCode
 [inline-code-end]
-
----

@@ -1,29 +1,29 @@
-Всички полезни натоварвания на агентските webhook-и споделят обща обвивка и добавят специфичен за събитието блок `data`. Тази страница изброява пълната схема за всеки.
+Всички webhook полезни товари на агентите споделят общ плик (envelope) и добавят блок `data`, специфичен за събитието. Тази страница изброява пълната схема за всеки.
 
-### Обвивка (всяко събитие)
+### Плик (всяко събитие)
 
-Всяко полезно натоварване, независимо от типа на събитието, има следните основни полета:
+Всеки полезен товар, независимо от типа събитие, има тези полета на най-високо ниво:
 
-[inline-code-attrs-start title = 'Схема на обвивката на Webhook'; type='json' inline-code-attrs-end]
+[inline-code-attrs-start title = 'Схема на webhook плика'; type='json' inline-code-attrs-end]
 [inline-code-start]
 {
   "event": "trigger.succeeded | trigger.failed | approval.requested | approval.decided",
   "eventType": 0 | 1 | 2 | 3,
   "tenantId": "string",
-  "domain": "string - съответстващият домейн за тази доставка",
+  "domain": "string - the matched domain for this delivery",
   "agentId": "string",
   "agentInternalName": "string",
   "agentDisplayName": "string",
-  "occurredAt": "string - ISO 8601 времеви печат",
-  "data": { /* специфично за събитието, вижте по-долу */ }
+  "occurredAt": "string - ISO 8601 timestamp",
+  "data": { /* event-specific, see below */ }
 }
 [inline-code-end]
 
 ### `trigger.succeeded` / `trigger.failed`
 
-`data` schema:
+Схема на `data`:
 
-[inline-code-attrs-start title = 'Схема на данните за тригерното събитие'; type='json' inline-code-attrs-end]
+[inline-code-attrs-start title = 'Схема на данните за събитието trigger'; type='json' inline-code-attrs-end]
 [inline-code-start]
 {
   "triggerId": "string",
@@ -34,32 +34,32 @@
   "actions": [
     {
       "type": 0,
-      "commentId": "string - незадължително",
-      "userId": "string - незадължително",
-      "badgeId": "string - незадължително",
+      "commentId": "string - optional",
+      "userId": "string - optional",
+      "badgeId": "string - optional",
       "pending": false,
       "justification": "string",
       "confidence": 0.92
     }
   ],
-  "errorMessage": "string - присъства при trigger.failed",
-  "url": "string - незадължително",
-  "urlId": "string - незадължително",
-  "commentId": "string - незадължително"
+  "errorMessage": "string - present on trigger.failed",
+  "url": "string - optional",
+  "urlId": "string - optional",
+  "commentId": "string - optional"
 }
 [inline-code-end]
 
-`triggerType` is a numeric enum from the [списък с trigger събития](#triggers-overview).
+`triggerType` е числов enum от [списъка на събитията-тригери](#triggers-overview).
 
-`actions[].type` is a numeric enum from the [списъка с инструменти](#tools-overview).
+`actions[].type` е числов enum от [списъка на инструментите](#tools-overview).
 
-`actions[].pending` е `true` когато действието е поставено в опашка за [одобрение](#approval-workflow) вместо да бъде изпълнено.
+`actions[].pending` е `true`, когато действието е поставено на опашка за [одобрение](#approval-workflow) вместо да бъде изпълнено.
 
 ### `approval.requested`
 
-`data` schema:
+Схема на `data`:
 
-[inline-code-attrs-start title = 'Схема на данните за заявено одобрение'; type='json' inline-code-attrs-end]
+[inline-code-attrs-start title = 'Схема на данните за поискано одобрение'; type='json' inline-code-attrs-end]
 [inline-code-start]
 {
   "approvalId": "string",
@@ -67,30 +67,30 @@
   "toolName": "ban_user | mark_comment_spam | ...",
   "actionType": 10,
   "status": "PENDING",
-  "args": { /* зависи от инструмента, вижте по-долу */ },
+  "args": { /* per-tool, see below */ },
   "createdAt": "string - ISO 8601",
-  "justification": "string - незадължително, мотивировка на агента",
+  "justification": "string - optional, agent reasoning",
   "confidence": 0.85,
-  "contextSnapshot": { /* контекстът на коментара/страницата, относно който е заявката за одобрение */ }
+  "contextSnapshot": { /* the comment/page context the approval is about */ }
 }
 [inline-code-end]
 
-The **`args`** object is whatever the LLM tool call carried. Its shape depends on the tool:
+Обектът **`args`** съдържа това, което е предадено при извикването на LLM инструмента. Формата му зависи от инструмента:
 
-- For `ban_user`: `{ userId, commentId, duration, shadowBan, deleteAllUsersComments?, banIP? }`.
-- For `mark_comment_spam`: `{ commentId, isSpam }`.
-- For `write_comment`: `{ comment, urlId, parentId? }`.
-- ...и така нататък.
+- За `ban_user`: `{ userId, commentId, duration, shadowBan, deleteAllUsersComments?, banIP? }`.
+- За `mark_comment_spam`: `{ commentId, isSpam }`.
+- За `write_comment`: `{ comment, urlId, parentId? }`.
+- ...и т.н.
 
-The set of tool argument shapes is **not a stable public contract**. Tools can be added in future and the platform passes args through verbatim. Consumers should treat args as an opaque blob unless they explicitly understand the tool involved.
+Наборът от форми на аргументите на инструментите **не е стабилен публичен договор**. Инструменти могат да бъдат добавяни в бъдеще, а платформата предава аргументите дословно. Консуматорите трябва да третират args като непрозрачен блок, освен ако изрично не разбират съответния инструмент.
 
-The **`contextSnapshot`** captures the comment, page, and user context the approval was queued from. Its shape mirrors the trigger's context message.
+**`contextSnapshot`** улавя контекста на коментара, страницата и потребителя, от който е поставено на опашка одобрението. Формата му огледално отразява контекстното съобщение на тригера.
 
 ### `approval.decided`
 
-`data` schema:
+Схема на `data`:
 
-[inline-code-attrs-start title = 'Схема на данните при решение за одобрение'; type='json' inline-code-attrs-end]
+[inline-code-attrs-start title = 'Схема на данните за взето решение по одобрение'; type='json' inline-code-attrs-end]
 [inline-code-start]
 {
   "approvalId": "string",
@@ -98,32 +98,32 @@ The **`contextSnapshot`** captures the comment, page, and user context the appro
   "toolName": "ban_user | mark_comment_spam | ...",
   "actionType": 10,
   "status": "APPROVED | REJECTED | EXECUTION_FAILED",
-  "decidedBy": "string - userId на модератора, който взе решението",
-  "decidedAt": "string - ISO 8601 - незадължително, налично само след като е взето решение",
-  "executedAt": "string - ISO 8601 - налично когато е APPROVED и изпълнението е завършено",
-  "executionResult": "string - съобщение с резултата от изпълнителя - налично след изпълнение",
-  "contextSnapshot": { /* същото като approval.requested */ }
+  "decidedBy": "string - the userId of the moderator who decided",
+  "decidedAt": "string - ISO 8601 - optional, only present once decided",
+  "executedAt": "string - ISO 8601 - present when APPROVED and execution finished",
+  "executionResult": "string - executor result message - present after execute",
+  "contextSnapshot": { /* same as approval.requested */ }
 }
 [inline-code-end]
 
-### TenantAgentAction shape
+### Форма на TenantAgentAction
 
-Inside `actions[]` on the trigger payloads, each action has:
+В `actions[]` на полезните товари на тригерите всяко действие има:
 
 [inline-code-attrs-start title = 'Схема на TenantAgentAction'; type='json' inline-code-attrs-end]
 [inline-code-start]
 {
   "type": 0,
-  "commentId": "string - незадължително",
-  "userId": "string - незадължително",
-  "badgeId": "string - незадължително",
+  "commentId": "string - optional",
+  "userId": "string - optional",
+  "badgeId": "string - optional",
   "pending": false,
   "justification": "string",
   "confidence": 0.92
 }
 [inline-code-end]
 
-`type` enum values match `AgentActionType`:
+Стойностите на enum `type` съответстват на `AgentActionType`:
 
 - 0: `WRITE_COMMENT`
 - 1: `VOTE_COMMENT`
@@ -140,9 +140,9 @@ Inside `actions[]` on the trigger payloads, each action has:
 - 12: `WARNED_USER`
 - 13: `SAVED_MEMORY`
 
-`SEARCH_MEMORY` does not appear in `actions[]` because it is read-only and unaudited.
+`SEARCH_MEMORY` не се появява в `actions[]`, защото е само за четене и не се одитира.
 
-### `triggerType` enum values
+### Стойности на enum `triggerType`
 
 `AgentTriggerReasonType`:
 
@@ -161,17 +161,15 @@ Inside `actions[]` on the trigger payloads, each action has:
 - 12: `COMMENT_FLAG_THRESHOLD`
 - 13: `NEW_USER_FIRST_COMMENT`
 - 14: `COMMENT_AUTO_SPAMMED`
-- 15: `REPLAY` (вътрешно; не се доставя до webhook-и)
+- 15: `REPLAY` (вътрешно; не се доставя към webhooks)
 
-### Заглавки
+### Хедъри
 
 Всяка доставка включва:
 
-- `X-FastComments-Agent-Event` - каноничното име на събитието (`trigger.succeeded`, и т.н.).
-- `X-FastComments-Signature` - HMAC-SHA256 на суровото тяло, използвайки вашата API тайна. Вижте [Подписване на Webhook](#webhook-signing).
+- `X-FastComments-Agent-Event` - каноничното име на събитието (`trigger.succeeded` и т.н.).
+- `X-FastComments-Signature` - HMAC-SHA256 на суровото тяло с вашия API секрет. Вижте [Подписване на Webhook](#webhook-signing).
 
 ### Стабилност
 
-Полетата в обвивката и документираните полета `data` за всяко събитие са част от публичния контракт. Добавянето на нови незадължителни полета към съществуващите полезни натоварвания е позволено и не се счита за нарушаваща промяна — получателят трябва да игнорира неизвестните полета. Формата на `args` и `contextSnapshot` **не** е част от контракта.
-
----
+Полетата на плика и документираните полета `data` за всяко събитие са част от публичния договор. Добавянето на нови незадължителни полета към съществуващи полезни товари е разрешено и не се счита за разрушаваща промяна - вашият консуматор трябва да игнорира непознати полета. Формата на `args` и `contextSnapshot` **не** е част от договора.

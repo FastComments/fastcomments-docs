@@ -1,43 +1,50 @@
-If you are moving your site off of WordPress and want FastComments on the new site, you do not need the WordPress plugin. Export your comments from WordPress, then upload the file on the [Página de importación](https://fastcomments.com/auth/my-account/manage-data/import) in the FastComments dashboard.
+Si estás migrando tu sitio fuera de WordPress y quieres FastComments en el nuevo sitio, no necesitas el plugin de WordPress. Exporta tus comentarios desde
+WordPress y luego sube el archivo en la [página de Importación](https://fastcomments.com/auth/my-account/manage-data/import) del panel de FastComments.
 
-We support two WordPress export formats.
+Soportamos dos formatos de exportación de WordPress.
 
 ### WordPress XML (Recomendado)
 
-This is the file from WordPress's built-in exporter, so no extra plugin is needed.
+Este es el archivo del exportador integrado de WordPress, por lo que no se necesita ningún plugin adicional.
 
-1. In your WordPress admin, go to `Tools -> Export`.
-2. Select `All content` and click `Download Export File`.
-3. On the FastComments [Página de importación](https://fastcomments.com/auth/my-account/manage-data/import), select `WordPress (.xml)` and upload the file.
+1. En tu administrador de WordPress, ve a `Tools -> Export`.
+2. Selecciona `All content` y haz clic en `Download Export File`.
+3. En la [página de Importación](https://fastcomments.com/auth/my-account/manage-data/import) de FastComments, selecciona `WordPress (.xml)` y sube el archivo.
 
-Each comment is tied to the URL of the post it was left on, which is already in the file.
+Cada comentario está vinculado a la URL de la publicación en la que se dejó, la cual ya está incluida en el archivo.
 
-The import keeps the author name, email, and website, the date, the content, reply threading, and whether the comment was approved. Commenter avatars are brought over from Gravatar. Votes are not part of this format.
+La importación conserva el nombre del autor, el correo electrónico y el sitio web, la fecha, el contenido, los hilos de respuestas y si el comentario fue aprobado. Los avatares de los comentaristas se
+traen desde Gravatar. Los votos no forman parte de este formato.
 
 ### WordPress CSV
 
-This is the file from [plugin WordPress Comments Import & Export de WebToffee](https://wordpress.org/plugins/comments-import-export-woocommerce/).
+Este es el archivo del [plugin WebToffee's WordPress Comments Import & Export](https://wordpress.org/plugins/comments-import-export-woocommerce/).
 
-1. Install the plugin in your WordPress admin and export your comments as CSV.
-2. Replace each `comment_post_ID` value with the post's URL.
-3. On the FastComments [Página de importación](https://fastcomments.com/auth/my-account/manage-data/import), select `WordPress (.csv)` and upload the file.
+1. Instala el plugin en tu administrador de WordPress y exporta tus comentarios como CSV.
+2. Reemplaza cada valor de `comment_post_ID` con la URL de la publicación.
+3. En la [página de Importación](https://fastcomments.com/auth/my-account/manage-data/import) de FastComments, selecciona `WordPress (.csv)` y sube el archivo.
 
-Each comment is tied to the `comment_post_ID` column. WordPress fills this column with the post ID, and your new site does not have WordPress post IDs, so step 2 replaces it with the URL.
+Cada comentario está vinculado a la columna `comment_post_ID`. WordPress llena esta columna con el ID de la publicación, y tu nuevo sitio no tiene IDs de publicaciones de WordPress,
+por lo que el paso 2 lo reemplaza con la URL.
 
-The import keeps the author name, email, and website, the date, the content, reply threading, and whether the comment was approved. Commenter avatars are brought over from Gravatar. It also keeps WordPress's spam flag, and wpDiscuz likes and dislikes when the file includes them.
+La importación conserva el nombre del autor, el correo electrónico y el sitio web, la fecha, el contenido, los hilos de respuestas y si el comentario fue aprobado. Los avatares de los comentaristas se
+traen desde Gravatar. También conserva la marca de spam de WordPress, y los likes y dislikes de wpDiscuz cuando el archivo los incluye.
 
-### Correspondencia de comentarios con tus nuevas páginas
+### Asociar Comentarios a Tus Nuevas Páginas
 
-If your new site keeps the same URLs as your WordPress site, the comments show up on the matching pages with no extra setup.
+Si tu nuevo sitio mantiene las mismas URLs que tu sitio de WordPress, los comentarios aparecerán en las páginas correspondientes sin configuración adicional.
 
-If the domain changes, run the [herramienta de migración de dominios](/guide-migrations.html#migrating-domains) after the import. If individual page URLs change, you can [migrar cada página](/guide-migrations.html#migrating-pages) from its old URL to the new one.
+Si el dominio cambia, ejecuta la [herramienta de Migración de Dominio](/guide-migrations.html#migrating-domains) después de la importación. Si las URLs de páginas individuales cambian, puedes
+[migrar cada página](/guide-migrations.html#migrating-pages) desde su URL antigua a la nueva.
 
-For bulk page migrations, such as removing the domain from the value you pass to the comment widget's [urlId](/guide-customizations-and-configuration.html#url-id) field, [open a support ticket](https://fastcomments.com/auth/my-account/help) and we will handle it for you.
+Para migraciones de páginas en masa, como eliminar el dominio del valor que pasas al campo [urlId](/guide-customizations-and-configuration.html#url-id)
+del widget de comentarios, [abre un ticket de soporte](https://fastcomments.com/auth/my-account/help) y lo manejaremos por ti.
 
-### Before You Switch
+### Antes de Cambiar
 
-You can run the import as many times as you like. Re-importing the same file [does not create duplicates](/guide-migrations.html#importing-data), so you can import once to test the new site, then import again with your latest comments right before switching over.
+Puedes ejecutar la importación tantas veces como quieras. Reimportar el mismo archivo [no crea duplicados](/guide-migrations.html#importing-data), por lo que puedes
+importar una vez para probar el nuevo sitio, y luego importar de nuevo con tus últimos comentarios justo antes del cambio.
 
-For export files larger than 1GB, [reach out to support](https://fastcomments.com/auth/my-account/help).
+Para archivos de exportación mayores de 1GB, [contacta al soporte](https://fastcomments.com/auth/my-account/help).
 
-To add FastComments to your new site, see the [Installation guide](/guide-installation.html).
+Para agregar FastComments a tu nuevo sitio, consulta la [guía de Instalación](/guide-installation.html).

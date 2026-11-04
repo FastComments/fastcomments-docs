@@ -1,4 +1,3 @@
----
 ## Parámetros
 
 | Nombre | Tipo | Ubicación | Requerido | Descripción |
@@ -29,5 +28,3 @@ try {
     print('Exception when calling ModerationApi->getSearchUsers: $e\n');
 }
 [inline-code-end]
-
----

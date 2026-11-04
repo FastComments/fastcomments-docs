@@ -1,4 +1,3 @@
----
 [api-resource-header-start name = 'Aggregate'; route = 'GET /api/v1/aggregate'; creditsCost = 1; api-resource-header-end]
 
 Цей API агрегує документи, групуючи їх (якщо groupBy надано) і застосовуючи кілька операцій.
@@ -401,5 +400,3 @@ export interface AggregationResponse {
 - UserSubscription
 - UserUsage
 - Vote
-
----

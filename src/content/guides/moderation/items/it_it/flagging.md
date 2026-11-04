@@ -1,4 +1,3 @@
----
 Con FastComments, gli utenti possono segnalare i commenti, il che incrementa un conteggio interno associato a quel commento.
 
 I moderatori possono visualizzare i commenti segnalati e il relativo conteggio di segnalazioni, tramite la pagina Moderazione commenti usando il filtro Segnalati.
@@ -18,5 +17,3 @@ Dalla pagina Moderazione commenti, i moderatori possono rimuovere la segnalazion
 Se il commento era stato nascosto a causa del numero di segnalazioni, allora rimuovere la segnalazione farà riapparire il commento.
 
 La riapprovazione di un commento che era stato non approvato (nascosto) a causa delle segnalazioni azzererà inoltre il conteggio di segnalazioni associato a quel commento.
-
----

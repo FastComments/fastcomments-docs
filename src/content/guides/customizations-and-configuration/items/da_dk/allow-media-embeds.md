@@ -1,13 +1,13 @@
-By default FastComments does not allow iframes in comments. When you enable media embeds, commenters can paste the embed code (the `<iframe>` snippet) from trusted providers like YouTube, Vimeo, SoundCloud, and Spotify, and it will render inline in the comment.
+Som standard tillader FastComments ikke iframes i kommentarer. Når du aktiverer medie-indlejringer, kan kommentatorer indsætte embed-koden (`<iframe>`-uddraget) fra betroede udbydere som YouTube, Vimeo, SoundCloud og Spotify, og den vil blive vist inline i kommentaren.
 
-For security, this is not a client-side widget config flag. It is a server-side setting, validated when each comment is saved, so it cannot be turned on from the page. Only iframes pointing at a built-in list of trusted providers are allowed. Any other iframe is removed.
+Af sikkerhedsmæssige årsager er dette ikke et client-side widget-konfigurationsflag. Det er en server-side indstilling, der valideres, hver gang en kommentar gemmes, så den kan ikke aktiveres fra siden. Kun iframes, der peger på en indbygget liste over betroede udbydere, tillades. Alle andre iframes fjernes.
 
-This is done without code, on the widget customization page:
+Dette gøres uden kode, på widget-tilpasningssiden:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.allow-embeds'; selector = '.allow-embeds'; alt='Indstillingen for medieindlejringer er slået til på widget-tilpasningssiden, så kommentatorer kan indsætte betroede iframe-indlejringer'; title='Tillad medieindlejringer' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.allow-embeds'; selector = '.allow-embeds'; alt='Indstillingen for medie-indlejringer aktiveret på widget-tilpasningssiden, så kommentatorer kan indsætte betroede iframe-embeds'; title='Tillad medie-indlejringer' app-screenshot-end]
 
-### Adding Your Own Providers
+### Tilføj dine egne udbydere
 
-If you want to allow embeds from a provider that is not on the built-in trusted list, add its hostname in the "Additional Embed Domains" field on the same page. These hostnames are allowed in addition to the built-in providers. Matching is exact, so include the full hostname (for example, player.example.com). Anything you do not list stays blocked.
+Hvis du vil tillade indlejringer fra en udbyder, der ikke er på den indbyggede liste over betroede, skal du tilføje dets hostname i feltet "Additional Embed Domains" på samme side. Disse hostnames tillades ud over de indbyggede udbydere. Matchingen er eksakt, så inkluder det fulde hostname (for eksempel player.example.com). Alt, hvad du ikke angiver, forbliver blokeret.
 
-Both the plain comment box and the WYSIWYG editor support pasting an embed. In the WYSIWYG editor the embed is inserted as a removable block.
+Både den almindelige kommentarboks og WYSIWYG-editoren understøtter indsættelse af en embed. I WYSIWYG-editoren indsættes embed'en som en blok, der kan fjernes.

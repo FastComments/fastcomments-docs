@@ -1,8 +1,8 @@
-The Recent Comments Widget prikazuje seznam najnovejših komentarjev po vaši strani ali za določeno stran. Vključuje naslov, zaobljene avatarje, predogled komentarjev, klikljive datume, ki vodijo neposredno do komentarja, in samodejno zaznavanje temnega načina.
+Pripitek nedavnih komentarjev prikazuje seznam najnovejših komentarjev na celotnem spletnem mestu ali za določeno stran. Vključuje naslov, zaobljene avatarje, predoglede komentarjev, klikljive datume, ki globoko povezujejo do komentarja, in samodejno zaznavanje temnega načina.
 
-## Basic Installation
+## Osnovna namestitev
 
-[inline-code-attrs-start title = 'Namestitev gradnika Nedavni komentarji'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Namestitev pripitka nedavnih komentarjev'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/widget-recent-comments-v2.min.js"></script>
 <div id="fastcomments-widget-recent-comments"></div>
@@ -13,18 +13,18 @@ The Recent Comments Widget prikazuje seznam najnovejših komentarjev po vaši st
 </script>
 [inline-code-end]
 
-## Configuration Options
+## Možnosti nastavitve
 
-- **tenantId** (required): ID vašega FastComments najemnika
-- **urlId** (optional): Filtrira na eno stran. Pustite null za vse strani
-- **count** (optional): Število komentarjev za prikaz. Privzeto je `10`
-- **hasDarkBackground** (optional): Prisili temno oblikovanje. Če ni nastavljeno, se samodejno zazna iz ozadja strani
+- **tenantId** (obvezno): ID vašega najemnika FastComments
+- **urlId** (neobvezno): Filtriranje na eno stran. Pustite null za vse strani
+- **count** (neobvezno): Število prikazanih komentarjev. Privzeto je `10`
+- **hasDarkBackground** (neobvezno): Vsili slog temnega načina. Samodejno zaznano iz ozadja strani, če ni nastavljeno
 
-## Widget Structure
+## Struktura pripitka
 
-Gradnik se izriše z naslednjo HTML strukturo:
+Pripitek se izriše s naslednjo strukturo HTML:
 
-[inline-code-attrs-start title = 'HTML struktura gradnika Nedavni komentarji'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Struktura HTML pripitka nedavnih komentarjev'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <div class="fc-rc2">
     <div class="fc-rc2-heading">Recent Comments</div>
@@ -44,9 +44,9 @@ Gradnik se izriše z naslednjo HTML strukturo:
 </div>
 [inline-code-end]
 
-## Default CSS Reference
+## Referenca privzetega CSS
 
-[inline-code-attrs-start title = 'Privzeti CSS gradnika Nedavni komentarji'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Privzeti CSS pripitka nedavnih komentarjev'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rc2 {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -70,11 +70,11 @@ Gradnik se izriše z naslednjo HTML strukturo:
 .fc-rc2-page-link:hover { color: #0066cc; text-decoration: underline; }
 [inline-code-end]
 
-## Customization Examples
+## Primeri prilagajanja
 
-### Sprememba velikosti avatarja
+### Spremeni velikost avatarja
 
-[inline-code-attrs-start title = 'Prilagojena velikost avatarja'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Velikost avatarja po meri'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rc2-avatar {
     width: 40px !important;
@@ -82,18 +82,18 @@ Gradnik se izriše z naslednjo HTML strukturo:
 }
 [inline-code-end]
 
-### Prikaz več vrstic besedila komentarja
+### Prikaži več vrstic besedila komentarja
 
-[inline-code-attrs-start title = 'Prikaz več vrstic komentarja'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Prikaži več vrstic komentarja'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rc2-body {
     -webkit-line-clamp: 5 !important;
 }
 [inline-code-end]
 
-### Odstranitev obrobe vsebnika
+### Odstrani obrobo vsebnika
 
-[inline-code-attrs-start title = 'Odstranitev obrobe vsebnika'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Odstrani obrobo vsebnika'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rc2 {
     border: none !important;

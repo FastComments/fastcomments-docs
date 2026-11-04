@@ -25,5 +25,3 @@ Aşağıdaki gibi boş bir kod alanı görmelisiniz:
     <div class="title">Boş Kod Alanı</div>
     <img class="screenshot-image" src="/images/installation-guides/squarespace-step-1-4-code-area.png" alt="Empty Code Area" />
 </div>
-
----

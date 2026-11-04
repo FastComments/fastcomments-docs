@@ -13,5 +13,3 @@ Isso funciona com todos os filtros — se você estiver visualizando apenas come
 comentários que contenham uma frase específica, somente os comentários correspondentes acionarão a notificação.
 
 Se sua conexão for temporariamente interrompida, o sistema automaticamente recupera quaisquer comentários que você tenha perdido quando a conexão for restabelecida.
-
----

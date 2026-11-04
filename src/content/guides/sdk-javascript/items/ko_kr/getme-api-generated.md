@@ -23,5 +23,3 @@
   const status: APIStatus = me.status;
 })();
 [inline-code-end]
-
----

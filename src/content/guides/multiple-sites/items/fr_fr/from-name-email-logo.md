@@ -1,4 +1,3 @@
----
 Parfois, FastComments doit envoyer des e‑mails à vos utilisateurs, surtout si vous n’utilisez pas le SSO sécurisé.
 
 Cela inclut, par exemple, la vérification de leur compte ou de leur activité lors du premier commentaire. FastComments leur enverra également des notifications pour les réponses à leurs commentaires.
@@ -44,5 +43,3 @@ Activez cette option sous « Show Advanced » sur la page My Domains, dans l
 Lorsqu’elle est activée, les liens dans les e‑mails de mention, de réponse, de nouveau commentaire, de page abonnée, de commentaire de profil et de digest sont réécrits en courts jetons qui redirigent vers la page d’origine au clic. La destination est liée à votre locataire : la redirection ne renvoie que vers les URL dont l’hôte correspond à l’un de vos domaines configurés, et les jetons expirent automatiquement après 30 jours.
 
 L’expérience de navigation reste inchangée. Les lecteurs arrivent toujours sur votre page avec le commentaire affiché à l’écran.
-
----

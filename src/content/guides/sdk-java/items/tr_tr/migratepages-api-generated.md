@@ -1,12 +1,12 @@
-Queues a batch job that moves comments, pages and related records from one urlId or domain to another.  
-"urlId" migrations only match the exact urlId. "domain" migrations find/replace the value inside every urlId and url.  
-Poll GET /api/v1/batch-jobs/{batchJobId}: once it is done it carries per-migration results and an undoId.
+Bir urlId veya domain'den diğerine yorumları, sayfaları ve ilgili kayıtları taşıyan bir toplu iş (batch job) kuyruğa alır.
+"urlId" migrasyonları yalnızca tam urlId ile eşleşir. "domain" migrasyonları her urlId ve url içindeki değeri bulur/değiştirir.
+GET /api/v1/batch-jobs/{batchJobId} uç noktasını polling yapın: tamamlandığında migrasyon başına sonuçlar ve bir undoId içerir.
 
 ## Parametreler
 
-| Ad | Tür | Konum | Gerekli | Açıklama |
+| Ad | Tür | Konum | Zorunlu | Açıklama |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
+| tenantId | string | query | Evet |  |
 
 ## Yanıt
 
@@ -16,7 +16,7 @@ Döndürür: [`QueuePageMigrationJobAPIResponse`](https://github.com/FastComment
 
 [inline-code-attrs-start title = 'migratePages Örneği'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sınıfları içe aktar:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -29,10 +29,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // API anahtarı yetkilendirmesini yapılandır: api_key
+    // Configure API key authorization: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // API anahtarı için bir önek ayarlamak için aşağıdaki satırın yorumunu kaldırın, ör. "Token" (varsayılan null)
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -43,18 +43,12 @@ public class Example {
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      // DefaultApi#migratePages çağrılırken istisna
       System.err.println("Exception when calling DefaultApi#migratePages");
-      // Durum kodu: " + e.getCode()
       System.err.println("Status code: " + e.getCode());
-      // Sebep: " + e.getResponseBody()
       System.err.println("Reason: " + e.getResponseBody());
-      // Yanıt başlıkları: " + e.getResponseHeaders()
       System.err.println("Response headers: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }
 }
 [inline-code-end]
-
----

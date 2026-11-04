@@ -139,5 +139,3 @@ Puoi inizializzare Image Chat su più immagini. Ogni immagine avrà i propri pun
     });
 </script>
 [inline-code-end]
-
----

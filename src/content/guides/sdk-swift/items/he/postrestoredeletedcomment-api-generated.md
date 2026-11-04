@@ -34,5 +34,3 @@ ModerationAPI.postRestoreDeletedComment(tenantId: tenantId, commentId: commentId
     }
 }
 [inline-code-end]
-
----

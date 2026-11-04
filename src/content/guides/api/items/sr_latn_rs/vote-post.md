@@ -56,5 +56,3 @@ postaviti ovo na nasumični ID, kao što je UUID (iako cenimo manje identifikato
 - Ovaj API poštuje podešavanja na nivou tenanta. Na primer, ako onemogućite glasanje za određenu stranicu, i pokušate da kreirate glas preko API-ja, to će se završiti greškom sa kodom `voting-disabled`.
 - Ovaj API je podrazumevano aktivan.
 - Ovaj API će ažurirati `votes` odgovarajućeg `Comment`.
-
----

@@ -1,44 +1,43 @@
-### How Text Selection Works
+### Sådan fungerer tekstmarkering
 
-Når brugere vælger tekst inden for Collab Chat containeren, fanger widgeten det valg og giver dem mulighed for at starte en diskussion. Valget kan være så lille som et enkelt ord eller så stort som flere afsnit, der går på tværs af forskellige elementer.
+Når brugere markerer tekst i Collab Chat-containeren, fanger widgetten markeringen og giver dem mulighed for at starte en diskussion. Markeringen kan være så lille som et enkelt ord eller så stor som flere afsnit, der spænder over forskellige elementer.
 
-### Selection Delay
+### Markeringsforsinkelse
 
-På stationære enheder er der en forsinkelse på 3,5 sekunder mellem tidspunktet, hvor en bruger vælger tekst, og hvor diskussionsprompten vises. Dette forhindrer, at brugergrænsefladen (UI) blinker, når brugere blot markerer tekst for at kopiere eller læse. På mobile enheder vises prompten øjeblikkeligt, da tekstvalg er mere bevidst på touchskærme.
+På stationære enheder er der en forsinkelse på 3,5 sekunder mellem, hvornår en bruger markerer tekst, og hvornår diskussionsprompten vises. Dette forhindrer, at brugerfladen flimrer, når brugere blot markerer tekst for at kopiere eller læse den. På mobile enheder vises prompten med det samme, da tekstmarkering er mere bevidst på touchskærme.
 
+### Unikke samtale-ID'er
 
-### Unique Conversation IDs
+Hver samtale får et unikt `urlId`, der kombinerer sidens URL, DOM-elementstien og det serialiserede tekstområde. Dette sikrer, at hver tekstmarkering skaber en distinkt samtale, som kan findes igen senere.
 
-Hver samtale får et unikt `urlId`, der kombinerer side-URL'en, DOM-elementstien og det serialiserede tekstrækkevidde. Dette sikrer, at hvert tekstvalg opretter en særskilt samtale, som kan findes igen senere.
+Hvis du angiver et brugerdefineret `urlId` i din konfiguration, vil det blive kombineret med elementstien og tekstområdet for at danne den endelige identifikator.
 
-Hvis du angiver et brugerdefineret `urlId` i din konfiguration, kombineres det med elementstien og tekstrækkevidden for at skabe den endelige identifikator.
+### Visuelle fremhævninger
 
-### Visual Highlights
+Når der findes en diskussion for en bestemt tekstmarkering, får teksten en visuel fremhævning. Fremhævningen implementeres med baggrundsfarver og vises ved hover, eller når det tilknyttede chatvindue er åbent.
 
-Når der findes en diskussion for et bestemt tekstvalg, får den tekst en visuel fremhævning. Fremhævningen er implementeret ved hjælp af baggrundsfarver og vises ved museover eller når det tilknyttede chatvindue er åbent.
+Fremhævningssystemet fungerer ved at indpakke den markerede tekst i et specielt element, som kan styles. Denne tilgang sikrer, at fremhævninger forbliver præcise, selv når den underliggende HTML-struktur er kompleks.
 
-Fremhævningssystemet fungerer ved at indpakke den valgte tekst i et specielt element, der kan styles. Denne tilgang sikrer, at fremhævninger forbliver nøjagtige, selv når den underliggende HTML-struktur er kompleks.
+### Placering af chatvinduer
 
-### Chat Window Positioning
+Når en bruger klikker på en fremhævning eller opretter en ny annotering, vises et chatvindue nær den markerede tekst. Widgetten beregner automatisk den bedste placering for dette vindue baseret på den tilgængelige plads i viewporten.
 
-Når en bruger klikker på en fremhævning eller opretter en ny annotation, vises et chatvindue nær den valgte tekst. Widgeten beregner automatisk den bedste position for dette vindue baseret på tilgængelig visningsplads.
+Positioneringssystemet bruger CSS-klasser som `to-right`, `to-left`, `to-top` og `to-bottom` til at angive, i hvilken retning chatvinduet skal strække sig fra fremhævningen. På mobile enheder (skærme under 768px i bredden) vises chatvinduet altid i fuldskærm for bedre brugervenlighed.
 
-Positionssystemet bruger CSS-klasser som `to-right`, `to-left`, `to-top` og `to-bottom` til at angive, i hvilken retning chatvinduet skal udvides fra fremhævningen. På mobile enheder (skærme under 768px i bredden) vises chatvinduet altid i fuldskærm for bedre brugervenlighed.
+### Chatvinduets dimensioner
 
-### Chat Window Dimensions
+Chatvinduer er 410px brede på stationære enheder med 20px afstand og en 16px visuel pil, der peger på den fremhævede tekst. Disse dimensioner er faste for at sikre konsistent adfærd, men du kan tilpasse udseendet med CSS.
 
-Chatvinduer er 410px brede på desktop med 20px afstand og en 16px visuel pil, der peger på den fremhævede tekst. Disse dimensioner er faste for at sikre konsekvent adfærd, men du kan tilpasse udseendet med CSS.
+### Markeringer på tværs af elementer
 
-### Cross-Element Selections
+Brugere kan markere tekst, der spænder over flere HTML-elementer, f.eks. ved at fremhæve fra midten af ét afsnit til begyndelsen af et andet. Range-serialiseringssystemet håndterer dette korrekt og vil fremhæve hele den markerede tekst, selv på tværs af elementgrænser.
 
-Brugere kan vælge tekst, der spænder over flere HTML-elementer, såsom at markere fra midten af et afsnit til starten af et andet. Range-serialiseringssystemet håndterer dette korrekt og vil fremhæve al den valgte tekst, selv på tværs af elementgrænser.
+### Browserkompatibilitet
 
-### Browser Compatibility
+Tekstmarkeringssystemet bruger standard-API'en `window.getSelection()`, som understøttes i alle moderne browsere. For ældre versioner af Internet Explorer falder det tilbage til `document.selection` af hensyn til kompatibiliteten.
 
-Tekstudvælgelsessystemet bruger den standard `window.getSelection()` API, som understøttes i alle moderne browsere. For ældre versioner af Internet Explorer falder det tilbage til `document.selection` for kompatibilitet.
+### Vedvarende markeringer
 
-### Selection Persistence
+Når en samtale er oprettet for en tekstmarkering, forbliver annoteringen, selv hvis siden genindlæses. Det serialiserede område og DOM-stien gør det muligt for widgetten at gendanne fremhævninger på præcis samme sted, når brugerne vender tilbage til siden.
 
-Når en samtale er oprettet for et tekstvalg, bevares den annotation, selv hvis siden genindlæses. Det serialiserede rækkevidde og DOM-stien gør det muligt for widgeten at gendanne fremhævninger på præcis samme sted, når brugere vender tilbage til siden.
-
-Dette fungerer pålideligt, så længe dit sideindhold forbliver stabilt. Hvis du ændrer tekstindholdet eller omstrukturerer din HTML, kan eksisterende annotationer muligvis ikke længere være korrekt tilpasset teksten. Af denne grund er det bedst at undgå større indholdsændringer på sider med aktive annotationer eller overveje at migrere annotationer, når indholdsændringer er nødvendige.
+Dette fungerer pålideligt, så længe dit sideindhold forbliver stabilt. Hvis du ændrer tekstindholdet eller omstrukturerer din HTML, vil eksisterende annoteringer muligvis ikke længere passe korrekt til teksten. Af denne grund er det bedst at undgå større indholdsændringer på sider med aktive annoteringer, eller overveje at migrere annoteringer, når indholdsændringer er nødvendige.

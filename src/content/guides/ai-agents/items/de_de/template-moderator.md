@@ -29,5 +29,3 @@ Er kann keine Kommentare posten, abstimmen, anheften, sperren, Abzeichen vergebe
 ### Empfohlener Trockenlaufzeitraum
 
 Führen Sie diese Vorlage mindestens eine Woche lang im [Trockenlauf](#dry-run-mode) gegen Ihren echten Traffic aus, bevor Sie sie auf Aktiv gesetzt. Verwenden Sie [Testläufe (Wiedergaben)](#test-runs-replays), um auch eine Vorschau für die vorherigen 30 Tage zu erhalten.
-
----

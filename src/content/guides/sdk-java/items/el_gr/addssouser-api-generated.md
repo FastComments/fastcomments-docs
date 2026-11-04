@@ -1,4 +1,3 @@
----
 ## Parameters
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
@@ -49,5 +48,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

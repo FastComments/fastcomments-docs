@@ -25,5 +25,3 @@ api->updateNotification(
     boost::optional<utility::string_t>(utility::conversions::to_string_t("admin-user"))
 ).then([](std::shared_ptr<APIEmptyResponse>){});
 [inline-code-end]
-
----

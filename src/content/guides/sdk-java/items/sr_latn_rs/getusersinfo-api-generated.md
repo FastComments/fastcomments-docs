@@ -1,4 +1,3 @@
----
 Grupne informacije o korisnicima za tenant. Za date userIds, vrati prikazne informacije iz User / SSOUser.
 Koristi ga widget za komentare da obogati korisnike koji su se upravo pojavili putem presence event-a.
 Nema konteksta stranice: privatnost se sprovodi jednako (privatni profili su maskirani).
@@ -47,5 +46,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

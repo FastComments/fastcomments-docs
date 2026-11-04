@@ -1,4 +1,3 @@
----
 这都是通过配置 [urlId](/guide-customizations-and-configuration.html#url-id) 和相关参数并在小部件实例上调用 `update()` 来将其替换为不同的线程完成的。
 
 下面是一个交互示例（在左上角点击运行），允许你按需添加和切换评论线程。
@@ -120,5 +119,3 @@
 对于 React 和相关库，我们可以简单地 update 配置，库（React、Angular、Vue）会为我们处理刷新小部件的工作。对于 VanillaJS，我们必须像上面所示那样自己管理。
 
 如果有任何问题，请随时在下方提问，我们会尽力帮助！
-
----

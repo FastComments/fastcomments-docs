@@ -1,4 +1,3 @@
----
 Schakel meldingen voor een pagina in of uit. Wanneer gebruikers op een pagina zijn geabonneerd, worden er meldingen aangemaakt voor nieuwe root-opmerkingen, en ook
 
 ## Parameters
@@ -50,5 +49,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->update_user_notification_page_subscription_status: %s\n" % e)
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 Das war's! Sie sollten nun Live-Kommentare zu Ihrer Hostinger-Website hinzugefügt haben.
 
 <div class="screenshot white-bg">
@@ -7,5 +6,3 @@ Das war's! Sie sollten nun Live-Kommentare zu Ihrer Hostinger-Website hinzugefü
 </div>
 
 Wenn Sie auf einen 'Permission denied'-Fehler gestoßen sind oder FastComments anpassen möchten, lesen Sie weiter.
-
----

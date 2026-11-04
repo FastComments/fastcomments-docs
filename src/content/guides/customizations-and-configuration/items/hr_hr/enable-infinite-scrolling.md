@@ -23,5 +23,3 @@ Potpuni radni primjer bio bi:
 [code-example-start config = {enableInfiniteScrolling: true, customCSS: '.comments { max-height: 500px;  overflow-y: auto; }'}; linesToHighlight = [6, 7]; title = 'Enabling Infinite Scrolling'; code-example-end]
 
 U gornjem primjeru koristimo svojstvo `customCSS`, međutim preporučuje se korištenje Widget Configuration UI umjesto toga iz razloga izvedbe. [Pogledajte dokumentaciju o prilagođenom CSS-u.](/guide-customizations-and-configuration.html#custom-css)
-
----

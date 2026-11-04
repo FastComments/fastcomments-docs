@@ -82,5 +82,3 @@ try {
     print('Exception when calling PublicApi->getCommentsPublic: $e\n');
 }
 [inline-code-end]
-
----

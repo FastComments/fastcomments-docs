@@ -1,4 +1,3 @@
----
 현재 온라인 상태가 아닌 해당 페이지의 이전 댓글 작성자들입니다. displayName으로 정렬됩니다.
 "/users/online"을 모두 사용한 후 "구성원" 섹션을 렌더링하기 위해 이것을 사용하세요.
 commenterName에 대한 커서 페이지네이션: 서버는 부분 {tenantId, urlId, commenterName} 인덱스를 afterName부터 $gt로 앞으로 탐색하며 $skip 비용이 없습니다.
@@ -39,5 +38,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_offline_users: #{e}"
 end
 [inline-code-end]
-
----

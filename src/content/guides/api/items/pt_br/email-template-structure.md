@@ -1,4 +1,3 @@
----
 Um objeto `EmailTemplate` representa a configuração para um modelo de e-mail personalizado, para um tenant.
 
 O sistema selecionará o modelo de e-mail a ser usado via:
@@ -37,5 +36,3 @@ interface EmailTemplate {
 - Você pode obter os valores válidos de `emailTemplateId` a partir do endpoint `/definitions`.
 - O endpoint `/definitions` também inclui as traduções padrão e os dados de teste.
 - Os modelos não serão salvos se a estrutura ou os dados de teste forem inválidos.
-
----

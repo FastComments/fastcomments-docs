@@ -25,5 +25,3 @@ Powinieneś zobaczyć puste pole kodu, takie jak poniżej:
     <div class="title">Puste pole kodu</div>
     <img class="screenshot-image" src="/images/installation-guides/squarespace-step-1-4-code-area.png" alt="Puste pole kodu" />
 </div>
-
----

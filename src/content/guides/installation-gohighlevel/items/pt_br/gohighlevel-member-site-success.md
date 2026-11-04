@@ -1,4 +1,3 @@
----
 Isso é tudo! Agora você deve ter comentários ao vivo adicionados ao seu curso GoHighLevel.
 
 <div class="screenshot white-bg">
@@ -7,5 +6,3 @@ Isso é tudo! Agora você deve ter comentários ao vivo adicionados ao seu curso
 </div>
 
 Se você se deparou com um erro de permissão negada, ou gostaria de personalizar o FastComments, continue lendo.
-
----

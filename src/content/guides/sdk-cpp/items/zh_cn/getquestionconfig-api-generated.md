@@ -1,4 +1,3 @@
----
 ## 参数
 
 | 名称 | 类型 | 必需 | 描述 |
@@ -27,5 +26,3 @@ api->getQuestionConfig(tenantId, questionId)
         }
     });
 [inline-code-end]
-
----

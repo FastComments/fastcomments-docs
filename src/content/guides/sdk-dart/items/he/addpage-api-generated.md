@@ -1,4 +1,3 @@
----
 ## פרמטרים
 
 | שם | סוג | מיקום | נדרש | תיאור |
@@ -30,5 +29,3 @@ try {
     print('Exception when calling DefaultApi->addPage: $e\n');
 }
 [inline-code-end]
-
----

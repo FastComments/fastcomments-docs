@@ -8,5 +8,3 @@ Jeśli napotkasz jakiekolwiek problemy lub masz pytania dotyczące SDK Pythona, 
 ## Contributing
 
 Wkład jest mile widziany! Proszę odwiedzić [repozytorium GitHub](https://github.com/FastComments/fastcomments-python) w celu zapoznania się z wytycznymi dotyczącymi kontrybucji.
-
----

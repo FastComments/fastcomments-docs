@@ -1,4 +1,3 @@
----
 ### Το Widget Σχολίων
 
 Το συστατικό FastCommentsVue περιέχει το ζωντανό widget σχολίων FastComments.
@@ -26,4 +25,3 @@ export default Vue.extend({
   </div>
 </template>
 ```
----

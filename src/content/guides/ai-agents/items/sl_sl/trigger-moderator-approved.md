@@ -1,4 +1,3 @@
----
 Sproži se, ko moderator odobri komentar.
 
 ### Kontekst, ki ga prejme agent
@@ -22,5 +21,3 @@ Dejanje človeškega moderatorja.
 - **Dobrodošlica / angažiranost** - agent se lahko odzove na prve komentatorje v trenutku, ko jih moderator odobri, namesto ob objavi.
 - **Sodelovanje med agenti** - če je drug agent označil komentar za pregled, je odobritev znak, da je človeški pregled končan.
 - **Revizijska sled** preko [Webhooks](#webhooks-overview).
-
----

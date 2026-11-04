@@ -8,5 +8,3 @@ Jeżeli napotkasz jakiekolwiek problemy lub masz pytania dotyczące SDK JavaScri
 ## Współtworzenie
 
 Wkłady są mile widziane! Odwiedź [repozytorium na GitHubie](https://github.com/FastComments/fastcomments-sdk-js) po wytyczne dotyczące współpracy.
-
----

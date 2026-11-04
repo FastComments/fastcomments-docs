@@ -1,4 +1,3 @@
----
 ## 매개변수
 
 | 이름 | 유형 | 필수 | 설명 |
@@ -21,5 +20,3 @@ const tenantId: string = "tenant_12345";
   console.log(firstPage?.title);
 })();
 [inline-code-end]
-
----

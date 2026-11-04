@@ -1,4 +1,3 @@
----
 [api-resource-header-start name = 'Page Reacts'; route = 'POST /page-reacts/v2/:tenantId'; creditsCost = 0; api-resource-header-end]
 
 作为当前用户向页面添加一个反应。用户每个反应 ID 只能添加一次：再次添加时会成功返回代码 `already-reacted`，且计数不会改变。用户可以对同一页面添加多个不同的反应。
@@ -34,5 +33,3 @@ interface PageReactResponse {
     reason?: string
 }
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 ## Parâmetros
 
 | Nome | Tipo | Localização | Obrigatório | Descrição |
@@ -42,5 +41,3 @@ try {
     echo 'Exception when calling DefaultApi->getPageByURLId: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

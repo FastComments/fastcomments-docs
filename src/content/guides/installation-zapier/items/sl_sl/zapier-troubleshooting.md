@@ -1,21 +1,24 @@
 ## Odpravljanje težav
 
-**"You do not have permission" pri povezovanju.** Prijavljeni uporabnik ni API skrbnik na računu.  
-Prosite lastnika računa, da dodeli API dovoljenje na strani Uporabniki, ali se povežite kot lastnik.
+**"Nimate dovoljenja" pri povezovanju.** Prijavljeni uporabnik ni skrbnik API-ja na računu.
+Prosite lastnika računa, da odobri dovoljenje za API na strani Users, ali pa se povežite kot lastnik.
 
-**Povezava je označena z napačnim spletnim mestom.** Stran za soglasje poveže račun, v katerega ste bili takrat prijavljeni.  
-Prekinite povezavo v Zapierju, preklopite račune v nadzorni plošči FastComments in se ponovno povežite.
+**Povezava je označena z napačnim mestom.** Stran s soglasjem poveže račun, v katerega ste bili
+prijavljeni v tistem trenutku. Prekinite povezavo v Zapier, preklopite račune na nadzorni plošči FastComments in se povežite znova.
 
-**Dogodki so prenehali priti.** Preverite stran Webhookov v nadzorni plošči. Naročnina, katere končna točka je šest dni zaporedno odpovedovala, je samodejno onemogočena in prikazuje razlog.  
-Ponovno jo omogočite tam, ali izklopite in ponovno vklopite Zap. Če naročnina sploh manjka, jo je nekdo izbrisal; izklop in ponovni vklop Zapa jo ponovno ustvari.
+**Dogodki so prenehali prihajati.** Preverite stran Webhooks na nadzorni plošči. Naročnina, katere končna točka je
+šest dni zapored neuspešno odgovarjala, se samodejno onemogoči in prikaže razlog. Tam jo znova omogočite, ali pa Zap izklopite in ponovno vklopite.
+Če naročnina sploh manjka, jo je nekdo izbrisal; izklop in ponovni vklop Zapa jo ponovno ustvari.
 
-**Zapier pravi, da je treba račun ponovno povezati.** Povezava je bila preklicana na strani Povezane aplikacije, uporabnik, ki jo je odobril, je izgubil API dovoljenje, ali je bil račun izbrisan.  
-Ponovno povežite iz Zapierja.
+**Zapier pravi, da je treba račun znova povezati.** Povezava je bila preklicana na strani Connected Apps,
+uporabnik, ki jo je odobril, je izgubil dovoljenje za API, ali pa je bil račun izbrisan. Znova se povežite iz Zapierja.
 
-**Dejanje spodleti z napako "does not have write access".** Povezava je bila odobrena le s pravicami za branje.  
-Ponovno povežite in odobrite obe pravici.
+**Dejanje ne uspe z napako "does not have write access".** Povezava je bila odobrena samo z dovoljenjem za branje.
+Znova se povežite in odobrite obe dovoljenji.
 
-**Omejitve hitrosti in krediti.** Dejanja in iskanja porabijo API kredite iz vašega paketa in so podvržena istim omejitvam hitrosti kot REST API. Sprožilci ne porabijo nobenega. Zap, ki naleti na omejitev, Zapier ponovi po zakasnitvi, ki jo FastComments poroča.
+**Omejitve hitrosti in krediti.** Dejanja in iskanja porabijo API kredite iz vašega paketa in so podvržena
+enakim omejitvam hitrosti kot REST API. Sprožilci ne porabijo ničesar. Zap, ki naleti na omejitev, poskusi Zapier
+znova po zamudi, ki jo sporoči FastComments.
 
-**Spustni seznam Domene je prazen.** Domene se pojavijo, ko so nastavljene na strani Domene v nadzorni plošči FastComments.  
-Pustite polje prazno, da prejemate dogodke za vsako domeno.
+**Spustni seznam Domain je prazen.** Domene se prikažejo, ko so nastavljene na strani Domains na
+nadzorni plošči FastComments. Pustite polje prazno, če želite prejemati dogodke za vse domene.

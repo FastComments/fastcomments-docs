@@ -1,4 +1,3 @@
----
 Şimdi kodumuzu kopyalayacağız. Eğer kod kesitinde 6. satırda `tenantId: "demo"` yazıyorsa FastComments hesabınıza giriş yapın
 ve ardından kopyalanan kod kesitinin hesap kimliğinizi içermesi için bu sayfayı yenileyin.
 
@@ -22,5 +21,3 @@ ve ardından kopyalanan kod kesitinin hesap kimliğinizi içermesi için bu sayf
 </div>
 
 ... sonra sitenizi kaydedin. Hepsi bu!
-
----

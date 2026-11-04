@@ -126,5 +126,3 @@ Komentari na profilu su sjajni za:
 - Komentari na profilu slede ista pravila zajednice kao komentari na člancima
 - Prijavite neprimerene komentare na profilu ako ih primetite
 - Moderatori mogu preduzeti akciju protiv komentara na profilu koji krše pravila
-
----

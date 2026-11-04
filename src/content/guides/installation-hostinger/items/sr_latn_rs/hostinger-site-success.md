@@ -1,4 +1,3 @@
----
 To je to! Sada biste trebali imati uživo komentarisanje dodato na vaš Hostinger sajt.
 
 <div class="screenshot white-bg">
@@ -7,4 +6,3 @@ To je to! Sada biste trebali imati uživo komentarisanje dodato na vaš Hostinge
 </div>
 
 Ako ste naišli na grešku 'permission denied', ili želite da prilagodite FastComments, nastavite dalje.
----

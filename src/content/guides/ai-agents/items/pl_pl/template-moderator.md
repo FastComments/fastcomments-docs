@@ -1,34 +1,31 @@
----
-**Template ID:** `tos_enforcer`
+**Identyfikator szablonu:** `tos_enforcer`
 
-Szablon Moderator jest zalecanym punktem wyjścia, jeśli Twoim celem jest zmniejszenie obciążenia moderacji ręcznej. Przegląda nowe i oznaczone komentarze oraz stosuje zasady Twojej społeczności.
+Szablon Moderator to zalecany punkt wyjścia, jeśli Twoim celem jest zmniejszenie obciążenia ręczną moderacją. Przegląda nowe i oflagowane komentarze oraz stosuje zasady Twojej społeczności.
 
-Zazwyczaj będziesz chciał **rozszerzyć wbudowany prompt** o konkretne przykłady tego, co na Twojej stronie jest dozwolone, a co nie. Własna polityka eskalacji platformy (ostrzeżenie przed banem, przeszukanie pamięci przed zbanowaniem) jest już wbudowana w prompt systemowy, który agent otrzymuje, więc nie musisz jej powtarzać.
+Prawie zawsze będziesz chciał **rozszerzyć wbudowany prompt** o konkretne przykłady tego, co Twoja strona dopuszcza, a czego nie. Wbudowana w platformę polityka eskalacji (ostrzeżenie przed banem, przeszukanie pamięci przed banem) jest już zawarta w promptcie systemowym otrzymywanym przez agenta, więc nie musisz jej powtarzać.
 
-### Triggers
+### Wyzwalacze
 
-- **New comment posted** (`COMMENT_ADD`) - agent przegląda każdy nowy komentarz.
-- **Comment crosses a flag threshold** (`COMMENT_FLAG_THRESHOLD`, default threshold: 3) - agent ponownie ocenia komentarz, który został oznaczony przez innych użytkowników.
+- **Opublikowanie nowego komentarza** (`COMMENT_ADD`) - agent analizuje każdy nowy komentarz.
+- **Komentarz przekracza próg flag** (`COMMENT_FLAG_THRESHOLD`, domyślny próg: 3) - agent ponownie ocenia komentarz oflagowany przez innych użytkowników.
 
-### Allowed tools
+### Dozwolone narzędzia
 
-- [`mark_comment_approved`](#tools-overview) - przydatne w środowiskach z przedmoderacją, gdzie agent publikuje zatwierdzone komentarze i ukrywa pozostałe.
+- [`mark_comment_approved`](#tools-overview) - przydatne w tenantach z pre-moderacją, gdzie agent zwalnia czyste komentarze i ukrywa pozostałe.
 - [`mark_comment_spam`](#tools-overview)
 - [`warn_user`](#tool-warn-user)
 - [`ban_user`](#tool-ban-user)
 
-Nie może publikować komentarzy, głosować, przypinać, blokować, przyznawać odznak ani wysyłać e-maili — prompt jest celowo ograniczony.
+Nie może publikować komentarzy, głosować, przypinać, blokować, przyznawać odznak ani wysyłać e-maili - prompt jest celowo wąski.
 
-### Recommended additions before going live
+### Zalecane kroki przed uruchomieniem
 
-- **Set [Community Guidelines](#community-guidelines).** Kilka zdań pisemnej polityki wystarczy; agent stosuje je przy każdym uruchomieniu.
-- **Gate `ban_user` behind [approval](#approval-workflow).** Jest to domyślnie włączone w regionie UE (zobacz [EU DSA Article 17 Compliance](#eu-dsa-compliance)) i zalecane wszędzie.
-- **Consider also gating `mark_comment_spam` behind approval** jeśli masz mały wolumen, ale treści o dużych konsekwencjach.
-- **Gate `mark_comment_approved` behind approval if you run pre-moderation.** Zatwierdzenie złego komentarza wystawia go przed czytelników; zabezpiecz tę akcję, dopóki agent nie zyska zaufania poprzez tryb próbny.
-- **Tick "Include commenter's trust factor, account age, ban history, and recent comments"** in [Context Options](#context-options). Model będzie ostrzegać znacznie mniej agresywnie, gdy będzie mógł zobaczyć, że ktoś jest długoletnim użytkownikiem działającym w dobrej wierze.
+- **Ustaw [Zasady społeczności](#community-guidelines).** Wystarczy kilka zdań spisanej polityki; agent stosuje ją przy każdym uruchomieniu.
+- **Zabezpiecz `ban_user` za pomocą [zatwierdzania](#approval-workflow).** To jest domyślnie włączone w regionie UE (zobacz [Zgodność z art. 17 DSA UE](#eu-dsa-compliance)) i zalecane wszędzie.
+- **Rozważ również zabezpieczenie `mark_comment_spam` zatwierdzaniem**, jeśli masz treści o małym wolumenie, ale wysokich stawkach.
+- **Zabezpiecz `mark_comment_approved` zatwierdzaniem, jeśli korzystasz z pre-moderacji.** Zatwierdzenie złego komentarza pokazuje go czytelnikom; zabezpiecz to, dopóki agent nie zdobył zaufania w trybie dry-run.
+- **Zaznacz "Uwzględnij czynnik zaufania komentującego, wiek konta, historię banów i ostatnie komentarze"** w [Opcjach kontekstu](#context-options). Model będzie ostrzegał znacznie mniej agresywnie, gdy widzi, że ktoś jest od dawna użytkownikiem działającym w dobrej wierze.
 
-### Recommended dry-run window
+### Zalecane okno dry-run
 
-Uruchom ten szablon w [dry-run](#dry-run-mode) przez co najmniej tydzień na rzeczywistym ruchu przed przełączeniem na Enabled. Użyj [Test Runs (Replays)](#test-runs-replays), aby również podejrzeć wyniki za ostatnie 30 dni.
-
----
+Uruchom ten szablon w trybie [dry-run](#dry-run-mode) przez co najmniej tydzień na rzeczywistym ruchu przed przełączeniem na Włączony. Użyj [Testów (odtworzeń)](#test-runs-replays), aby również zapodglądać działanie na poprzednich 30 dniach.

@@ -1,4 +1,3 @@
----
 ## Hulp nodig?
 
 Als u problemen ondervindt of vragen heeft over de Nim SDK, kunt u:
@@ -9,5 +8,3 @@ Als u problemen ondervindt of vragen heeft over de Nim SDK, kunt u:
 ## Bijdragen
 
 Bijdragen zijn welkom! Bezoek de [GitHub-repository](https://github.com/FastComments/fastcomments-nim) voor richtlijnen voor bijdragen.
-
----

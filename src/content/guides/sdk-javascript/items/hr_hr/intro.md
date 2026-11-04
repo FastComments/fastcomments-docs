@@ -5,5 +5,3 @@ Upravljajte komentarima, korisnicima, SSO-om i moderacijom iz Node.js-a ili preg
 ## Repozitorij
 
 [Pogledajte na GitHubu](https://github.com/FastComments/fastcomments-sdk-js)
-
----

@@ -60,5 +60,3 @@ Sada kada imate osnovno funkcionalnost, možete prilagoditi izgled i ponašanje 
 ### Frontend biblioteke
 
 Sve FastComments frontend biblioteke (react, vue, angular, itd.) imaju Collab Chat.
-
----

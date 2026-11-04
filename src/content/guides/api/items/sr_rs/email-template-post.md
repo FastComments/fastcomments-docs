@@ -61,5 +61,3 @@ interface EmailTemplatePostResponse {
     emailTemplate?: EmailTemplate
 }
 [inline-code-end]
-
----

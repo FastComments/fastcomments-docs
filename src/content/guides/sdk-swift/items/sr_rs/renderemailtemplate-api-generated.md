@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Назив | Тип | Локација | Обавезно | Опис |
@@ -32,5 +31,3 @@ DefaultAPI.renderEmailTemplate(tenantId: tenantId, renderEmailTemplateBody: rend
     }
 }
 [inline-code-end]
-
----

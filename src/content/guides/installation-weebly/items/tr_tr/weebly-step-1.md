@@ -26,5 +26,3 @@ Hazır olduğunuzda, Weebly düzenleyicisini açıp üstteki `Settings`'e tıkla
 </div>
 
 Son olarak FastComments.com widget kodunu eklememiz yeterli!
-
----

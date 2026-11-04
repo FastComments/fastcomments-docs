@@ -27,5 +27,3 @@ try {
     print('Exception when calling ModerationApi->postBanUserUndo: $e\n');
 }
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 Lista stranica za tenant. Koristi se od strane FChat desktop klijenta za popunjavanje njegove liste soba.
 Zahteva da `enableFChat` bude true na razrešenom prilagođenom podešavanju za svaku stranicu.
 Stranice koje zahtevaju SSO filtriraju se u skladu sa pristupom grupa korisnika koji šalje zahtev.
@@ -50,5 +49,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.GetPagesPublic`: %v\n", resp)
 }
 [inline-code-end]
-
----

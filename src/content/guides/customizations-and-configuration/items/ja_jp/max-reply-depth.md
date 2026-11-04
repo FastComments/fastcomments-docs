@@ -1,4 +1,3 @@
----
 [related-parameter-start name = 'maxReplyDepth'; type = 'number'; related-parameter-end]
 
 デフォルトでは、FastComments は返信のネストを無制限に許可し、ユーザーが返信に対して際限なく返信できるスレッド構造を作成します。
@@ -16,4 +15,3 @@ With maxReplyDepth set to 2:
 maxReplyDepth を 1 に設定すると、トップレベルのコメントへの返信のみが許可され、より平坦な議論の構造になります。
 
 maxReplyDepth を 0 に設定すると、すべての返信が無効になり、トップレベルのコメントのみが許可されます。指定しない場合、返信は無制限にネストされます。
----

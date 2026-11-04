@@ -51,5 +51,3 @@ Wenn Ihre Community ein so hohes Volumen hat, dass EU‑Sperrungen nicht in ange
 
 - [Tool: ban_user](#tool-ban-user) für das, was `ban_user` tut, und die destruktiven Optionen hinter zusätzlichen Opt‑Ins.
 - [Approval Workflow](#approval-workflow) für den vollständigen Genehmigungs‑Lebenszyklus.
-
----

@@ -1,29 +1,29 @@
-SAML (Security Assertion Markup Language) je na XML temelječ odprt standard za izmenjavo podatkov o avtentikaciji in avtorizaciji med strankami, 
+SAML (Security Assertion Markup Language) je odprti standard, ki temelji na XML, za izmenjavo podatkov o overjanju in avtorizaciji med strankami,
 predvsem med ponudnikom identitete (IdP) in ponudnikom storitev (SP).
 
-### How SAML Works
+### Kako deluje SAML
 
-SAML omogoča enkratno prijavo (SSO) tako, da uporabnikom dovoli, da se enkrat avtenticirajo pri svojem ponudniku identitete in nato dostopajo do več aplikacij 
+SAML omogoča enotno prijavo (SSO), saj uporabnikom omogoča, da se enkrat overijo pri svojem ponudniku identitete in nato dostopajo do več aplikacij
 brez ponovnega vnašanja poverilnic. Ko uporabnik poskuša dostopati do FastComments:
 
-1. **Authentication Request**: FastComments preusmeri uporabnika na vašega ponudnika identitete
-2. **User Authentication**: Uporabnik se avtenticira pri vašem IdP-ju (npr. Active Directory, Okta, Azure AD)
-3. **SAML Response**: IdP pošlje podpisano SAML trditev nazaj FastComments
-4. **User Access**: FastComments preveri trditev in podeli dostop avtenticiranemu uporabniku
+1. **Zahteva za overjanje**: FastComments preusmeri uporabnika k vašemu ponudniku identitete
+2. **Overjanje uporabnika**: Uporabnik se overi pri vašem IdP (npr. Active Directory, Okta, Azure AD)
+3. **SAML odgovor**: IdP pošlje podpisan SAML assertion nazaj k FastComments
+4. **Dostop uporabnika**: FastComments preveri assertion in podeli dostop overjenemu uporabniku
 
-### Benefits of SAML
+### Prednosti SAML
 
-- **Enhanced Security**: Centralizirana avtentikacija zmanjšuje varnostna tveganja, povezana z gesli
-- **Improved User Experience**: Uporabniki se prijavijo enkrat in nato brez težav dostopajo do več aplikacij
-- **Compliance**: Pomaga izpolnjevati regulativne zahteve za nadzor dostopa in revizijske sledi
-- **Administrative Control**: IT skrbniki ohranjajo centralizirano upravljanje uporabnikov
+- **Izboljšana varnost**: Centralizirano overjanje zmanjša varnostna tveganja, povezana z gesli
+- **Izboljšana uporabniška izkušnja**: Uporabniki se prijavijo enkrat in brez težav dostopajo do več aplikacij
+- **Skladnost**: Pomaga izpolnjevati regulativne zahteve za nadzor dostopa in revizijske sledi
+- **Administrativni nadzor**: IT skrbniki ohranjajo centralizirano upravljanje uporabnikov
 
-### SAML 2.0 Support
+### Podpora za SAML 2.0
 
-FastComments implementira SAML 2.0, najbolj razširjeno različico standarda SAML. Naša implementacija podpira:
+FastComments izvaja SAML 2.0, najbolj razširjeno različico standarda SAML. Naša izvedba podpira:
 
 - HTTP-POST in HTTP-Redirect vezave
-- Podpisani SAML odgovori in trditve
-- Šifrirane trditve (neobvezno)
-- Več algoritmov za podpis in zgoščevanje
+- Podpisane SAML odgovore in assertion
+- Šifrirane assertion (neobvezno)
+- Več algoritmov za podpis in povzetek (digest)
 - Različne formate identifikatorjev imen

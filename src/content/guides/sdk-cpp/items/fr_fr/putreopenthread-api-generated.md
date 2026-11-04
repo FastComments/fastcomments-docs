@@ -19,5 +19,3 @@ api->putReopenThread(utility::string_t(U("my-tenant-123")), utility::string_t(U(
         std::cout << "Thread reopened" << std::endl;
     });
 [inline-code-end]
-
----

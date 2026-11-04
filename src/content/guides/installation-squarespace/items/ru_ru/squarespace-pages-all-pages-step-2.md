@@ -1,6 +1,6 @@
 Теперь мы можем скопировать следующий фрагмент кода. Используйте кнопку копирования, которая появляется в правом верхнем углу фрагмента.
 
-There are a few things you can configure in the code, see lines 4 through 7.
+В коде можно настроить несколько параметров, см. строки с 4 по 7.
 
 [inline-code-attrs-start title = 'Код комментариев для всех страниц Squarespace'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -8,10 +8,10 @@ There are a few things you can configure in the code, see lines 4 through 7.
 <div id="fastcomments-widget"></div>
 <script>
     (function () {
-        const tenantId = 'demo'; // ваш идентификатор аккаунта
+        const tenantId = 'demo'; // идентификатор вашего аккаунта
 
         function tryLoad() {
-            // попытка загрузки для разных макетов
+            // пробуем загрузить для разных макетов
             let targetDiv = document.querySelector('.blog-item-comments-content');
             if (!targetDiv) {
                 targetDiv = document.getElementById('fastcomments-widget');
@@ -27,11 +27,11 @@ There are a few things you can configure in the code, see lines 4 through 7.
 
 [inline-code-end]
 
-...then paste in the code area and click save. It should look like this, with the code in the `FOOTER` block:
+...затем вставьте код в область кода и нажмите сохранить. Это должно выглядеть так, с кодом в блоке `FOOTER`:
 
 <div class="screenshot white-bg">
-    <div class="title">Вставьте и сохраните</div>
-    <img class="screenshot-image" src="/images/installation-guides/squarespace-pages-all-pages-step-2-1-add-code-and-save.png" alt="Вставьте и сохраните" />
+    <div class="title">Вставка и сохранение</div>
+    <img class="screenshot-image" src="/images/installation-guides/squarespace-pages-all-pages-step-2-1-add-code-and-save.png" alt="Вставка и сохранение" />
 </div>
 
-If you're having issues, make sure near the bottom it doesn't say `"tenantId": "demo"`. It should show your tenant id if you are logged in. If not, reach out to support.
+Если у вас возникли проблемы, убедитесь, что внизу не указано `"tenantId": "demo"`. Если вы вошли в систему, должен отображаться ваш идентификатор tenant. Если нет, обратитесь в поддержку.

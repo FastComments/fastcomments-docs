@@ -8,5 +8,3 @@ Als u problemen ondervindt of vragen heeft over de Vue 2 Library, neem dan conta
 ## Bijdragen
 
 Bijdragen zijn welkom! Bezoek de [GitHub-repository](https://github.com/FastComments/fastcomments-vue) voor richtlijnen voor bijdragen.
-
----

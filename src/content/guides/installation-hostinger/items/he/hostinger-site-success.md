@@ -6,5 +6,3 @@
 </div>
 
 אם נתקלת בשגיאת 'Permission denied', או אם ברצונך להתאים אישית את FastComments, המשך לקרוא.
-
----

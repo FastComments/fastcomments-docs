@@ -1,22 +1,23 @@
-Past commenters on the page who are NOT currently online. Sorted by displayName.  
-Use this after exhausting /users/online to render a "Members" section.  
-Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName} index from afterName forward via $gt, no $skip cost.
+Comentaristas anteriores en la página que NO están actualmente en línea. Ordenados por displayName.
+Úselo después de agotar /users/online para renderizar una sección "Members".
+Paginación por cursor sobre commenterName: el servidor recorre el índice parcial {tenantId, urlId, commenterName}
+desde afterName hacia adelante mediante $gt, sin coste de $skip.
 
 ## Parámetros
 
-| Name | Type | Required | Description |
+| Nombre | Tipo | Requerido | Descripción |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| urlId | string | Yes |  |
+| tenantId | string | Sí |  |
+| urlId | string | Sí |  |
 | options | GetOfflineUsersOptions | No |  |
 
 ## Respuesta
 
-Returns: [`Option[PageUsersOfflineResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_page_users_offline_response.nim)
+Devuelve: [`Option[PageUsersOfflineResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_page_users_offline_response.nim)
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo getOfflineUsers'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo de getOfflineUsers'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (offlineResp, httpResponse) = client.getOfflineUsers(
   tenantId = "my-tenant-123",

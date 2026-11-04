@@ -22,5 +22,3 @@ async function removeRenderError() {
   const result: APIEmptyResponse = await deleteEmailTemplateRenderError(tenantId, templateId, errorId);
 }
 [inline-code-end]
-
----

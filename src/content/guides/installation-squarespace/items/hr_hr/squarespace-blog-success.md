@@ -6,5 +6,3 @@ Uspješno! Sada biste trebali vidjeti FastComments Comment Widget na svim svojim
 </div>
 
 Čestitamo na postavljanju FastComments na Squarespace! Ako ste naišli na Domain Error ili želite naučiti kako prilagoditi područje komentara, nastavite čitati!
-
----

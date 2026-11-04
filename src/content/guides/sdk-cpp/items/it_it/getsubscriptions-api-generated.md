@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Nome | Tipo | Obbligatorio | Descrizione |
@@ -28,5 +27,3 @@ api->getSubscriptions(tenant, user).then(
     }
 );
 [inline-code-end]
-
----

@@ -1,10 +1,8 @@
-The `TenantUser` defines a `User` which is managed by a specific tenant. Their account is in complete control of the tenant
-they are associated with, and their account can be updated or deleted via the [UI](https://fastcomments.com/auth/my-account/users) or API.
+`TenantUser`, belirli bir kiracı (tenant) tarafından yönetilen bir `User` tanımlar. Hesapları, ilişkili oldukları kiracının tam kontrolündedir ve hesapları [UI](https://fastcomments.com/auth/my-account/users) veya API aracılığıyla güncellenebilir veya silinebilir.
 
-Tenant users can be administrators with all permissions and access to the `Tenant`, or they can be limited to specific permissions to
-moderate comments, access API keys, etc.
+Kiracı kullanıcıları, `Tenant` üzerinde tüm izinlere ve erişime sahip yöneticiler olabilir veya yalnızca yorumları moderasyon, API anahtarlarına erişim gibi belirli izinlerle sınırlı olabilirler.
 
-The structure for the `TenantUser` object is as follows:
+`TenantUser` nesnesinin yapısı aşağıdaki gibidir:
 
 [inline-code-attrs-start title = 'TenantUser Yapısı'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -20,7 +18,7 @@ export interface TenantUser {
     id: string
     tenantId: string
     username: string
-    /** Örneğin yorumcunun bloguna bir bağlantı. **/
+    /** Örneğin, yorumcu bloguna bir bağlantı. **/
     websiteUrl?: string
     email: string
     signUpDate: number
@@ -32,7 +30,7 @@ export interface TenantUser {
     optedInTenantNotifications: boolean
     hideAccountCode: boolean
     avatarSrc?: string
-    /** Kullanıcı yorumculardan gelen yardım isteklerini alıyor mu? **/
+    /** Kullanıcı, yorumculardan yardım talepleri alıyor mu? **/
     isHelpRequestAdmin: boolean
     isAccountOwner: boolean
     isAdminAdmin: boolean
@@ -50,5 +48,3 @@ export interface TenantUser {
     karma?: number
 }
 [inline-code-end]
-
----

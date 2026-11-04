@@ -28,5 +28,3 @@ interface TenantPackageDeleteResponse {
     reason?: string
 }
 [inline-code-end]
-
----

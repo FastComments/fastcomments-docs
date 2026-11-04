@@ -27,5 +27,3 @@ Sul lato sinistro, ora avremo l'opzione di cliccare `Edit Code` - cliccaci:
     <div class="title">Edit Code</div>
     <img class="screenshot-image" src="/images/installation-guides/systeme-edit-block-button.png" alt="Edit Code" />
 </div>
-
----

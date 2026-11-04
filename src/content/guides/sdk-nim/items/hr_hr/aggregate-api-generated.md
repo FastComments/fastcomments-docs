@@ -23,5 +23,3 @@ if aggResp.isSome:
   echo response
 echo httpResp
 [inline-code-end]
-
----

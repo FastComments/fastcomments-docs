@@ -1,7 +1,7 @@
-Wanneer u codefragmenten deelt, doet FastComments zijn best om automatisch te bepalen welke
-programmeertaal het codefragment heeft, zodat het automatisch kan worden opgemaakt en syntaxisaccentuering kan worden toegepast.
+Bij het delen van codefragmenten doet FastComments zijn best om automatisch te bepalen in welke
+programmeertaal het codefragment is geschreven, zodat het automatisch wordt opgemaakt en syntax highlighting wordt toegepast.
 
-FastComments' syntaxisaccentuering ondersteunt momenteel 39 veelvoorkomende talen:
+FastComments syntax highlighting ondersteunt momenteel 39 veelvoorkomende talen:
 
 - .properties
 - Apache
@@ -41,10 +41,10 @@ FastComments' syntaxisaccentuering ondersteunt momenteel 39 veelvoorkomende tale
 - Shell
 - Session
 - Swift
-- TOML and INI
+- TOML en INI
 - TypeScript
 - Visual Basic .NET
 - YAML
 
-When sharing a code snippet in a language we don't support, it will still be rendered like code -
-but no syntax highlighting or reformatting will be applied.
+Wanneer je een codefragment deelt in een taal die we niet ondersteunen, wordt het nog steeds als code weergegeven -
+maar er wordt geen syntax highlighting of herformattering toegepast.

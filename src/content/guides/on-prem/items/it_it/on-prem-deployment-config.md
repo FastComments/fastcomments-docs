@@ -90,5 +90,3 @@ Nell'esempio sopra definiamo un trasporto email SMTP di default chiamato `mailgu
 ### DocumentDB
 
 Quando ti connetti a `DocumentDB` vorrai specificare `MONGO_ENABLE_SSL=true MONGO_SSL_CA=/some/path.pem` per essere compatibile con le impostazioni di default.
-
----

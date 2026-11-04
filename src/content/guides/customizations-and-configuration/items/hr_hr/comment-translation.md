@@ -1,4 +1,3 @@
----
 Prema zadanim postavkama, FastComments prevodi vlastito sučelje widgeta (gumbove, oznake, poruke o pogreškama) na jezik gledatelja, ali se komentari prikazuju točno onako kako su napisani.
 
 Prevođenje komentara dodaje prijevod samih komentara, tako da zajednica koja piše na više jezika može pročitati svaki komentar na svom jeziku.
@@ -19,5 +18,3 @@ Prevođenje je postavka na strani poslužitelja. Prosljeđivanje `commentTransla
 Svaki komentar se prevede najviše jednom po ciljnom jeziku i rezultat se pohranjuje uz komentar, tako da se komentar koji pročita tisuću španjolskih govornika prevede jednom. Ako autor ili moderator uredi komentar, pohranjeni prijevod se odbacuje i komentar se ponovno prevodi pri sljedećem prikazu. Prevedeni tekst prolazi kroz istu sanitaciju i pravila za poveznice kao izvorni komentar. Komentari koji su predugi ili čiji se jezik ne može otkriti prikazuju se neprevedeni.
 
 Korištenje se naplaćuje kao LLM tokeni po istoj stopi kao [AI Agents](/guide-ai-agents.html#plans-and-eligibility) i pojavljuje se na istom mjestu u vašim podacima o naplati.
-
----

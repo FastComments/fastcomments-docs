@@ -1,3 +1,1 @@
----
 Verkoop commentaar onder uw eigen merk. Maak en beheer tenants via de API of het dashboard, met facturering afgehandeld door u of door FastComments.
----

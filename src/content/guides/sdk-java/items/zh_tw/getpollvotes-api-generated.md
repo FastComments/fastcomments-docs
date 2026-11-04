@@ -1,29 +1,28 @@
-The individual votes behind one poll's tallies, oldest first.
+單一投票背後的個別票數記錄，由舊到新排列。
 
-A poll belongs to a comment, so votes are always read one poll at a time - commentId is required. That
-keeps every query on the indexes the collection already has.
+投票屬於某則留言，因此票數一次只能讀取一個投票 - commentId 為必填。這可確保每個查詢都使用集合既有的索引。
 
-Obeys the poll's privacy: an anonymous poll's votes cannot be read (poll-anonymous), here or by id.
+遵守投票的隱私設定：匿名投票的票數無法被讀取（poll-anonymous），無論是透過此端點或依 id 查詢。
 
 ## 參數
 
 | 名稱 | 類型 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| commentId | string | query | Yes |  |
-| voterId | string | query | No |  |
-| optionId | string | query | No |  |
-| skip | integer | query | No |  |
+| tenantId | string | query | 是 |  |
+| commentId | string | query | 是 |  |
+| voterId | string | query | 否 |  |
+| optionId | string | query | 否 |  |
+| skip | integer | query | 否 |  |
 
 ## 回應
 
-返回：[`GetPollVotesResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetPollVotesResponse.java)
+回傳：[`GetPollVotesResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetPollVotesResponse.java)
 
 ## 範例
 
 [inline-code-attrs-start title = 'getPollVotes 範例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 匯入類別:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -36,10 +35,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // 設定 API 金鑰授權：api_key
+    // Configure API key authorization: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // 取消註解以下行以設定 API 金鑰的前綴，例如 "Token"（預設為 null）
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);

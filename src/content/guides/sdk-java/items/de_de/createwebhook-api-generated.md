@@ -1,22 +1,22 @@
-Subscribes a URL to a comment event (REST hook subscribe). Subscribing the same URL to the same
-event and domain again returns the existing subscription. Deliveries are HMAC signed, see the
-webhooks guide; the legacy `token` header is never sent to API subscriptions.
+Abonniert eine URL für ein Kommentar-Ereignis (REST-Hook-Abonnement). Wird dieselbe URL erneut für dasselbe
+Ereignis und dieselbe Domain abonniert, wird das bestehende Abonnement zurückgegeben. Zustellungen sind HMAC-signiert, siehe
+Webhooks-Leitfaden; der Legacy-`token`-Header wird niemals an API-Abonnements gesendet.
 
 ## Parameter
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
-|------|------|-----|--------------|---------------|
-| tenantId | string | query | Yes |  |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Ja |  |
 
 ## Antwort
 
-Rückgabe: [`CreateWebhookResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateWebhookResponse.java)
+Gibt zurück: [`CreateWebhookResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateWebhookResponse.java)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'createWebhook Beispiel'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Klassen importieren:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -29,10 +29,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // API-Schlüssel-Authentifizierung konfigurieren: api_key
+    // Configure API key authorization: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Kommentieren Sie die folgende Zeile aus, um ein Präfix für den API-Schlüssel festzulegen, z. B. "Token" (Standardwert ist null)
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);

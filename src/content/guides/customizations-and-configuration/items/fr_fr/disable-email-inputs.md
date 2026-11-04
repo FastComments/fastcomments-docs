@@ -1,4 +1,3 @@
----
 Lorsque les utilisateurs commentent et qu'ils ne sont pas connectés, on leur demandera de fournir leur e‑mail.
 
 Cela créera une « session non vérifiée » pour cet utilisateur, et nous lui demanderons de vérifier cette session par e‑mail.
@@ -15,5 +14,3 @@ Notez qu'avec cette configuration, tous les commentaires seront non vérifiés s
 https://fastcomments.com.
 
 Vous pourriez envisager de [désactiver le libellé non vérifié](/guide-customizations-and-configuration.html#disable-unverified-label).
-
----

@@ -1,5 +1,4 @@
----
-Модуль FastComments для Drupal заменяет встроенные комментарии Drupal на быструю систему комментариев в реальном времени. Модуль [опубликован на drupal.org](https://www.drupal.org/project/fcom) и совместим с Drupal 10 и 11.
+Модуль FastComments для Drupal заменяет встроенные комментарии Drupal на быструю систему комментирования в реальном времени. Модуль [опубликован на drupal.org](https://www.drupal.org/project/fcom) и работает с Drupal 10 и 11.
 
 Есть два способа установки.
 
@@ -12,10 +11,8 @@ drush en fastcomments
 
 ## Установка вручную
 
-Download the module from [drupal.org/project/fcom](https://www.drupal.org/project/fcom) and place it in your site's `modules/custom/fastcomments/` directory. Then enable it with `drush en fastcomments`, or from the admin UI at `Extend` (`/admin/modules`).
+Скачайте модуль со страницы [drupal.org/project/fcom](https://www.drupal.org/project/fcom) и поместите его в каталог `modules/custom/fastcomments/` вашего сайта. Затем включите его с помощью `drush en fastcomments` или через административный интерфейс в разделе `Extend` (`/admin/modules`).
 
-<sup>Примечание!</sup> Модуль зависит только от ядра Drupal (`user` и `field`). Другие модули Drupal или библиотеки не требуются.
+<sup>Обратите внимание!</sup> Модуль зависит только от ядра Drupal (`user` и `field`). Другие модули или библиотеки Drupal не требуются.
 
-После включения модуля перейдите в раздел `Configuration` для настройки Tenant ID и API Secret.
-
----
+После включения модуля перейдите в раздел `Configuration`, чтобы настроить ваш Tenant ID и API Secret.

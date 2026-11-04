@@ -1,12 +1,12 @@
-An `AuditLog` bir nesnedir ve bu özelliğe erişimi olan kiracılar için denetlenen bir olayı temsil eder.
+Bir `AuditLog`, bu özelliğe erişimi olan kiracılar (tenant) için denetlenmiş bir olayı temsil eden bir nesnedir.
 
-The structure for the AuditLog object is as follows:
+AuditLog nesnesinin yapısı aşağıdaki gibidir:
 
 [inline-code-attrs-start title = 'AuditLog Yapısı'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface AuditLog {
     id: string;
-    /** Who performed the event. **/
+    /** Olayı gerçekleştiren kişi. **/
     userId?: string;
     username?: string;
     resourceName: string;
@@ -14,23 +14,23 @@ interface AuditLog {
     from: string;
     url?: string;
     ip?: string;
-    /** The browser that performed the event, when it came from one. **/
+    /** Olayı gerçekleştiren tarayıcı, olay bir tarayıcıdan geldiyse. **/
     ua?: string;
-    /** A hash of the session the event came from, for correlating one person's actions. Never the session itself. **/
+    /** Olayın geldiği oturumun hash'i, bir kişinin eylemlerini ilişkilendirmek için. Asla oturumun kendisi değildir. **/
     sIdHashed?: string;
     when: string;
     description?: string;
     serverStartDate: string;
-    /** The id of the object the event was performed on, as opposed to who performed it. **/
+    /** Olayın gerçekleştirildiği nesnenin kimliği, olayı gerçekleştiren kişinin aksine. **/
     targetId?: string;
-    /** A human-readable label for that object, e.g. "jsmith (jsmith@example.com)". **/
+    /** Bu nesne için insan tarafından okunabilir bir etiket, örn. "jsmith (jsmith@example.com)". **/
     targetLabel?: string;
     objectDetails?: object;
 }
 [inline-code-end]
 
-`targetId` ve `targetLabel` olayın ne üzerinde gerçekleştirildiğini tanımlar; `userId` ve `username` ise kim tarafından gerçekleştirildiğini tanımlar. Güncellemeler için, `objectDetails.changes` gerçekte neyin değiştiğini gösteren `{field: {from, to}}` haritasını tutar.
+`targetId` ve `targetLabel`, olayın ne üzerinde gerçekleştirildiğini açıklar; `userId` ve `username` ise onu kimin gerçekleştirdiğini açıklar. Güncellemeler için `objectDetails.changes`, gerçekte neyin değiştiğini gösteren bir `{field: {from, to}}` haritası içerir.
 
-Denetim günlüğü değiştirilemezdir. Ayrıca manuel olarak yazılamaz. FastComments.com yalnızca denetim günlüğüne ne zaman yazılacağına karar verebilir. Bununla birlikte, bu API aracılığıyla denetim günlüğünü okuyabilirsiniz.
+Denetim günlüğü değiştirilemezdir. Ayrıca manuel olarak yazılamaz. FastComments.com, denetim günlüğüne ne zaman yazılacağına yalnızca kendisi karar verebilir. Ancak bu API aracılığıyla ondan okuyabilirsiniz.
 
-Denetim günlüğündeki olaylar iki yıl sonra süresi dolar.
+Denetim günlüğündeki olaylar iki yıl sonra sona erer.

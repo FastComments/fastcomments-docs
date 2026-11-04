@@ -98,5 +98,3 @@ Si el endpoint de una suscripción API responde con HTTP `410 Gone`, FastComment
 ## Panel de control
 
 Las suscripciones API aparecen en la lista de Webhooks con la fuente **API**, donde un administrador puede editar, desactivar, volver a activar o eliminarlas.
-
----

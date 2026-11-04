@@ -1,25 +1,25 @@
-### Comment Toolbar Buttons
+### 댓글 툴바 버튼
 
-댓글 입력 툴바에 버튼을 추가하려면 `CustomToolbarButton` 프로토콜을 구현하세요:
+`CustomToolbarButton` 프로토콜을 구현하여 댓글 입력 툴바에 버튼을 추가합니다:
 
 ```swift
 struct EmojiButton: CustomToolbarButton {
     let id = "emoji"
-    let iconSystemName = "face.smiling"       // SF 심볼 이름
+    let iconSystemName = "face.smiling"       // SF Symbol 이름
     let contentDescription = "Add Emoji"
-    let badgeText: String? = nil              // 선택적 배지 카운트
+    let badgeText: String? = nil              // 선택적 배지 개수
 
     func onClick(text: Binding<String>) {
         text.wrappedValue += "\u{1F44D}"
     }
 
-    // Optional overrides (default to true)
+    // 선택적 오버라이드 (기본값은 true)
     func isEnabled() -> Bool { true }
     func isVisible() -> Bool { true }
 }
 ```
 
-뷰를 생성할 때 커스텀 버튼을 전달하세요:
+뷰를 생성할 때 커스텀 버튼을 전달합니다:
 
 ```swift
 FastCommentsView(
@@ -28,7 +28,7 @@ FastCommentsView(
 )
 ```
 
-또는 SDK에 전역으로 추가하여 모든 인스턴스에 적용할 수 있습니다:
+또는 SDK에 전역으로 추가합니다(모든 인스턴스에 적용됨):
 
 ```swift
 sdk.addGlobalCustomToolbarButton(EmojiButton())
@@ -36,9 +36,9 @@ sdk.removeGlobalCustomToolbarButton(id: "emoji")
 sdk.clearGlobalCustomToolbarButtons()
 ```
 
-### Feed Toolbar Buttons
+### 피드 툴바 버튼
 
-게시물 생성 폼에 대해 `FeedCustomToolbarButton`을 구현하세요:
+게시물 작성 폼에는 `FeedCustomToolbarButton`을 구현합니다:
 
 ```swift
 struct HashtagButton: FeedCustomToolbarButton {
@@ -52,7 +52,7 @@ struct HashtagButton: FeedCustomToolbarButton {
 }
 ```
 
-생성 뷰에 전달하세요:
+작성 뷰에 버튼을 전달합니다:
 
 ```swift
 FeedPostCreateView(
@@ -63,7 +63,7 @@ FeedPostCreateView(
 )
 ```
 
-또는 피드 SDK에서 전역으로 설정하세요:
+또는 피드 SDK에 전역으로 설정합니다:
 
 ```swift
 sdk.globalFeedToolbarButtons = [HashtagButton()]

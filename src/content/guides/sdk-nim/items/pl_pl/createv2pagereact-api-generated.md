@@ -26,5 +26,3 @@ if pageResult.isSome:
   let page = pageResult.get()
   # użyj `page` w razie potrzeby
 [inline-code-end]
-
----

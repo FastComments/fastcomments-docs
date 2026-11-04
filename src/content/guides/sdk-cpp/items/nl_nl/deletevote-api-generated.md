@@ -1,4 +1,3 @@
----
 ## Parameters
 
 | Naam | Type | Verplicht | Beschrijving |
@@ -28,4 +27,3 @@ api->deleteVote(tenantId, voteId, editKey).then([](pplx::task<std::shared_ptr<Vo
     }
 });
 [inline-code-end]
----

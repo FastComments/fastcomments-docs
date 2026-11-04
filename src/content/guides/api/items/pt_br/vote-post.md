@@ -56,5 +56,3 @@ definir isso para um ID aleatório, como um UUID (embora apreciemos identificado
 - Esta API obedece às configurações em nível de tenant. Por exemplo, se você desativar a votação para uma determinada página, e tentar criar um voto via API, isso falhará com o código de erro `voting-disabled`.
 - Esta API está ativa por padrão.
 - Esta API atualizará os `votes` do `Comment` correspondente.
-
----

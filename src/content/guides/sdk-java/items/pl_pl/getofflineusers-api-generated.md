@@ -1,4 +1,3 @@
----
 Użytkownicy, którzy komentowali stronę i którzy NIE są aktualnie online. Posortowane według displayName.
 Użyj tego po wyczerpaniu /users/online, aby wyrenderować sekcję "Members".
 Stronicowanie kursorowe po commenterName: serwer przeszukuje częściowy indeks {tenantId, urlId, commenterName}
@@ -54,5 +53,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

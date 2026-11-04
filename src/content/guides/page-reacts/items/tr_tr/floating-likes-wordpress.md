@@ -25,5 +25,3 @@ WordPress için bu özellik, WPCode gibi bir eklenti yükleyip aşağıdaki HTML
     })();
 </script>
 [inline-code-end]
-
----

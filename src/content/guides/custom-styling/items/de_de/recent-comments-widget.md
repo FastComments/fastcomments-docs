@@ -100,5 +100,3 @@ Das Widget wird mit folgender HTML-Struktur gerendert:
     box-shadow: none !important;
 }
 [inline-code-end]
-
----

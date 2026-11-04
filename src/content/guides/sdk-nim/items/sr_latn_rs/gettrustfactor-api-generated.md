@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
@@ -19,5 +18,3 @@ if trustOpt.isSome:
   let trust = trustOpt.get()
   discard trust
 [inline-code-end]
-
----

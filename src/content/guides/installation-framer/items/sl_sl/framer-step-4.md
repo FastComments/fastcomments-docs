@@ -15,5 +15,3 @@ Nato moramo popraviti privzeto konfiguracijo strani v Framerju. Privzeto nastavi
 </div>
 
 Morda boste morali prilagoditi višino strani, da bo takšna, kot želite.
-
----

@@ -9,5 +9,3 @@
 这也可以在不编写代码的情况下完成。在小部件自定义页面，查看“禁用个人资料”部分。
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-profiles']; selector = '.disable-profiles'; alt='已选中“禁用个人资料”复选框的小部件自定义页面，头像不再打开个人资料'; title='禁用个人资料' app-screenshot-end]
-
----

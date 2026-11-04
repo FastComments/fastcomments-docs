@@ -82,5 +82,3 @@ Kopirajte naslednjo kodo in jo prilepite v razdelek `Body` v nastavitvah vaše s
 - Vsaka stran dobi svojo edinstveno nit komentarjev, ki temelji na poti URL
 - Poskrbite, da boste zamenjali `"demo"` z dejanskim ID-jem najemnika iz vašega FastComments računa
 - Vtičnik samodejno upravlja dinamično nalaganje strani Super.so
-
----

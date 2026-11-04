@@ -1,31 +1,31 @@
-FastComments stellt fünf Starter-Vorlagen bereit, damit Sie keinen funktionierenden Agenten von Grund auf neu schreiben müssen. Sie sind von der [AI Agents page](https://fastcomments.com/auth/my-account/ai-agents) aus über **Browse templates** erreichbar.
+FastComments liefert fünf Starter-Vorlagen mit, damit Sie keinen funktionierenden Agenten von Grund auf schreiben müssen. Sie sind über die [AI Agents-Seite](https://fastcomments.com/auth/my-account/ai-agents) erreichbar, indem Sie auf **Browse templates** klicken.
 
-When you pick a template:
+Wenn Sie eine Vorlage auswählen:
 
-1. The agent is created with **Status: Trockenlauf** and an internal name based on the template (`tos_enforcer`, `welcome_greeter`, `top_comment_pinner`, `thread_summarizer`, `gaslight_detector`). If that name is taken on your tenant, a numeric suffix is added.
-2. You land directly on the edit form with everything pre-filled - prompt, triggers, allowed actions, and any thresholds. A banner across the top reads "Erstellt aus der Vorlage {templateName}. Überprüfen Sie die Einstellungen unten, dann ändern Sie den Status auf Aktiviert, wenn Sie bereit sind."
-3. Nothing is enabled yet. The agent will not act until you save and either keep dry-run on (to observe) or flip to Enabled.
+1. Der Agent wird mit **Status: Dry Run** und einem internen Namen basierend auf der Vorlage erstellt (`tos_enforcer`, `welcome_greeter`, `top_comment_pinner`, `thread_summarizer`, `gaslight_detector`). Falls dieser Name auf Ihrem Tenant bereits vergeben ist, wird ein numerischer Suffix hinzugefügt.
+2. Sie landen direkt auf dem Bearbeitungsformular, in dem alles vorausgefüllt ist - Prompt, Trigger, erlaubte Aktionen und alle Schwellenwerte. Ein Banner am oberen Rand lautet: "Created from the {templateName} template. Review the settings below, then change status to Enabled when you're ready."
+3. Noch ist nichts aktiviert. Der Agent wird erst aktiv, wenn Sie speichern und entweder den Dry-Run-Modus beibehalten (zum Beobachten) oder auf Enabled umschalten.
 
-### The five templates
+### Die fünf Vorlagen
 
-- **[Moderator](#template-moderator)** - reviews new and flagged comments, warns first-time offenders, escalates to ban only after a warning. Triggers on new comments and on flag-threshold crossings (default flag threshold: 3). Allowed tools: `mark_comment_approved`, `mark_comment_spam`, `warn_user`, `ban_user`.
+- **[Moderator](#template-moderator)** - prüft neue und gemeldete Kommentare, warnt Ersttäter und eskaliert erst nach einer Warnung zu einer Sperre. Wird bei neuen Kommentaren und beim Überschreiten des Meldeschwellenwerts ausgelöst (Standard-Meldeschwelle: 3). Erlaubte Tools: `mark_comment_approved`, `mark_comment_spam`, `warn_user`, `ban_user`.
 
-- **[Welcome Greeter](#template-welcome-greeter)** - replies warmly to first-time commenters with a short, personal welcome. Triggers on new-user-first-comment. Allowed tool: `write_comment`.
+- **[Welcome Greeter](#template-welcome-greeter)** - antwortet Erstkommentierern herzlich mit einer kurzen, persönlichen Begrüßung. Wird beim ersten Kommentar eines neuen Benutzers ausgelöst. Erlaubtes Tool: `write_comment`.
 
-- **[Top Comment Pinner](#template-top-comment-pinner)** - pins substantive top-level comments once they cross a vote threshold (default: 10), unpinning the previously pinned comment first. Triggers on vote-threshold crossings. Allowed tools: `pin_comment`, `unpin_comment`.
+- **[Top Comment Pinner](#template-top-comment-pinner)** - pinnt substanzielle Kommentare auf oberster Ebene, sobald sie einen Stimmschwellenwert überschreiten (Standard: 10), und hebt zuvor die Pinning des vorherigen Kommentars auf. Wird beim Überschreiten von Stimmschwellenwerten ausgelöst. Erlaubte Tools: `pin_comment`, `unpin_comment`.
 
-- **[Thread Summarizer](#template-thread-summarizer)** - posts a neutral, single-paragraph summary on long threads after a delay, then pins it. Triggers on new comments with a 30-minute deferral so the thread settles before summarizing. Allowed tools: `write_comment`, `pin_comment`, `unpin_comment`.
+- **[Thread Summarizer](#template-thread-summarizer)** - veröffentlicht nach einer Verzögerung eine neutrale, ein Absatz lange Zusammenfassung in langen Threads und pinnt diese anschließend. Wird bei neuen Kommentaren mit einer Verzögerung von 30 Minuten ausgelöst, damit sich der Thread vor der Zusammenfassung beruhigt. Erlaubte Tools: `write_comment`, `pin_comment`, `unpin_comment`.
 
-- **[Gaslight Detector](#template-gaslight-detector)** - watches comment edits for mid-thread rewrites that warp replies, restores the original text, and DMs the author. Triggers on comment edits. Allowed tools: `edit_comment`, `warn_user`, `send_dm`.
+- **[Gaslight Detector](#template-gaslight-detector)** - überwacht Kommentarbearbeitungen auf Änderungen während des Threads, die Antworten verzerren, stellt den ursprünglichen Text wieder her und sendet dem Autor eine DM. Wird bei Kommentarbearbeitungen ausgelöst. Erlaubte Tools: `edit_comment`, `warn_user`, `send_dm`.
 
-### Customizing a template
+### Anpassen einer Vorlage
 
-Templates are starting points, not contracts. You are expected to:
+Vorlagen sind Ausgangspunkte, keine Verträge. Es wird erwartet, dass Sie:
 
-- Tweak the **Initial prompt** to match your community voice.
-- Add or remove **Triggers** to fit how often the agent should run.
-- Add **Approvals** for any sensitive action - we strongly recommend gating `ban_user` behind approval for moderator-style templates.
-- Add **Community-Richtlinien** so the agent applies your written policy consistently. See [Community-Richtlinien](#community-guidelines).
-- Set per-agent **Budgets** appropriate to how many triggers you expect.
+- Den **Initial prompt** an die Stimme Ihrer Community anpassen.
+- **Triggers** hinzufügen oder entfernen, um festzulegen, wie oft der Agent laufen soll.
+- **Approvals** für jede sensible Aktion hinzufügen - wir empfehlen dringend, `ban_user` bei Moderator-artigen Vorlagen hinter eine Genehmigung zu stellen.
+- **Community guidelines** hinzufügen, damit der Agent Ihre schriftliche Richtlinie konsistent anwendet. Siehe [Community Guidelines](#community-guidelines).
+- Pro Agent **Budgets** festlegen, die zur erwarteten Anzahl an Triggern passen.
 
-The template is just a vehicle that pre-fills sensible defaults; once saved, the agent is yours.
+Die Vorlage ist nur ein Vehikel, das sinnvolle Standardwerte vorausfüllt; nach dem Speichern gehört der Agent Ihnen.

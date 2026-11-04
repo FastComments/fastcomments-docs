@@ -1,74 +1,74 @@
-Agent memory è una pool di coppie chiave-valore a livello di tenant, **condivisa**, che ogni agente del tuo tenant può leggere e scrivere. Esiste affinché gli agenti possano portare contesto tra esecuzioni.
+La memoria degli agent è un pool chiave-valore con ambito tenant, **condiviso**, da cui ogni agent nel tuo tenant può leggere e scrivere. Esiste affinché gli agent possano mantenere il contesto tra le diverse esecuzioni.
 
-### Why memory exists
+### Perché esiste la memoria
 
-Il contesto LLM è per-run. Senza memoria, un agente che emette un avvertimento a un utente non ha modo di conoscere quell'avvertimento la prossima volta che vede lo stesso utente. La policy di escalation della piattaforma - "warn before banning" - dipende dalla capacità dell'agente di trovare il precedente avvertimento. La memoria è ciò che rende questo possibile.
+Il contesto LLM è per singola esecuzione. Senza memoria, un agent che emette un avvertimento a un utente non ha modo di conoscere tale avvertimento la volta successiva in cui incontra lo stesso utente. La policy di escalation della piattaforma - "avvertire prima di bannare" - dipende dalla capacità dell'agent di trovare l'avvertimento precedente. La memoria è ciò che rende possibile questo.
 
-### Two kinds of memory
+### Due tipi di memoria
 
-- **WARNING** - scritto automaticamente come parte del flusso di [`warn_user`](#tool-warn-user). L'agente non scrive manualmente record di tipo `WARNING`; sono un effetto collaterale dell'avvertire un utente.
-- **NOTE** - scritto da [`save_memory`](#tools-overview). Contesto a scopo generale che l'agente vuole che futuri agenti conoscano.
+- **WARNING** - scritto automaticamente come parte del flusso [`warn_user`](#tool-warn-user). L'agent non scrive i record `WARNING` a mano; sono un effetto collaterale dell'avvertimento di un utente.
+- **NOTE** - scritto da [`save_memory`](#tools-overview). Contesto generico che l'agent vuole che i futuri agent conoscano.
 
-La policy di escalation cerca specificamente record `WARNING` quando decide se un ban è giustificato.
+La policy di escalation cerca specificamente i record `WARNING` quando decide se un ban è giustificato.
 
-### Tenant-scoped, agent-shared
+### Con ambito tenant, condivisa tra gli agent
 
-Tutti gli agenti nel tuo tenant condividono **un'unica pool di memoria**. Una nota salvata dall'Agente A è visibile alle chiamate `search_memory` dell'Agente B. Questo è intenzionale: vuoi che le note di un agente di triage informino le decisioni di un agente moderatore.
+Tutti gli agent nel tuo tenant condividono **un unico pool di memoria**. Una nota salvata dall'Agent A è visibile alle chiamate `search_memory` dell'Agent B. Questo è intenzionale - vuoi che le note di un agent di triage informino le decisioni di un agent moderatore.
 
-`tenantId` viene impostato dall'esecutore dal tenant dell'agente stesso - mai dagli argomenti LLM - quindi perdite di memoria tra tenant sono impossibili per costruzione.
+`tenantId` è impostato dall'executor in base al tenant dell'agent stesso - mai dagli argomenti LLM - quindi le fughe di memoria tra tenant sono impossibili per costruzione.
 
-### What's in a memory record
+### Cosa contiene un record di memoria
 
 Ogni voce di memoria contiene:
 
-- **Quale agente l'ha scritta**, e quando.
-- **Di chi tratta** - l'utente che questa memoria descrive. L'agente non può fabbricare questo; la piattaforma lo compila automaticamente da ciò che ha attivato l'agente.
-- **Un segnale nascosto di alt-account** - la piattaforma registra inoltre (privatamente) l'impronta IP del commento originario, così ricerche di memoria future possono far emergere note riguardanti altri account che postano dallo stesso IP. L'impronta non viene mai mostrata all'agente o all'LLM.
+- **Quale agent l'ha scritta**, e quando.
+- **A chi si riferisce** - l'utente descritto da questa memoria. L'agent non può fabbricarlo; la piattaforma lo compila automaticamente in base a ciò che ha attivato l'agent.
+- **Un segnale nascosto di account alternativi** - la piattaforma registra anche (privatamente) l'impronta IP del commento di origine, così le future ricerche in memoria possono far emergere note su altri account che pubblicano dallo stesso IP. L'impronta non viene mai mostrata all'agent o all'LLM.
 - **La nota stessa** - fino a 2000 caratteri di testo libero.
 - **Tag** per il recupero - fino a 10 tag brevi.
-- **Un tipo** - o un avvertimento o una nota generale.
-- **Un link opzionale al commento** - se la memoria è legata a un commento specifico.
+- **Un tipo** - o un avvertimento o una nota generica.
+- **Un link opzionale a un commento** - se la memoria è legata a un commento specifico.
 
-### Search behavior
+### Comportamento di ricerca
 
-[`search_memory`](#tools-overview) restituisce fino a 25 record, ordinati dal più recente al meno recente, automaticamente limitati a (l'utente che ha attivato) O (altri account sull'IP che ha attivato). I risultati sono anche limitati a un totale di 8000 caratteri su tutto il contenuto restituito - le voci più vecchie vengono eliminate se si raggiunge il limite.
+[`search_memory`](#tools-overview) restituisce fino a 25 record, ordinati dal più recente, con ambito automaticamente limitato a (l'utente del trigger) OPPURE (altri account sull'IP del trigger). I risultati sono anche limitati a 8000 caratteri totali per tutto il contenuto restituito - le voci più vecchie vengono scartate se il limite viene raggiunto.
 
-L'agente non passa `userId` o `targetIpHash`. Entrambi sono impostati dall'esecutore.
+L'agent non passa `userId` né `targetIpHash`. Entrambi sono impostati dall'executor.
 
-### Persistence
+### Persistenza
 
-La memoria non ha **TTL**. I record persistono fino a quando non vengono rimossi esplicitamente. I record WARNING su un utente non vengono intenzionalmente mai cancellati automaticamente - la cronologia delle escalation deve essere rintracciabile indefinitamente o il controllo della piattaforma "search before banning" non avrebbe senso.
+La memoria **non ha TTL**. I record persistono finché non vengono rimossi esplicitamente. I record WARNING su un utente non vengono mai eliminati automaticamente intenzionalmente - la cronologia di escalation deve essere ritrovabile indefinitamente, altrimenti il controllo "cerca prima di bannare" della piattaforma non ha senso.
 
 I tre modi in cui la memoria viene rimossa:
 
-- Un moderatore elimina il commento sottostante - qualsiasi memoria legata a quel commento viene cancellata a cascata.
+- Un moderatore elimina il commento sottostante - qualsiasi memoria legata a quel commento viene rimossa a cascata.
 - Un utente viene eliminato - tutte le voci di memoria su quell'utente vengono rimosse nella stessa transazione.
 - Il tuo tenant viene eliminato.
 
-Attualmente non esiste un'interfaccia di amministrazione per eliminare singoli record di memoria.
+Al momento non esiste un'interfaccia di amministrazione per eliminare singoli record di memoria.
 
-### Memory in dry-run
+### Memoria in dry-run
 
-Gli agenti in dry-run non scrivono memoria. Questo è voluto: le decisioni ipotetiche di un agente in dry-run non dovrebbero inquinare la pool di memoria condivisa. La lettura tramite `search_memory` funziona normalmente in dry-run - l'agente può vedere memorie reali da agenti live - semplicemente non può aggiungervi.
+Gli agent in dry-run **non** scrivono memoria. Questo è voluto: le decisioni ipotetiche di un agent in dry-run non dovrebbero inquinare il pool di memoria condiviso. La lettura tramite `search_memory` funziona normalmente in dry-run - l'agent può vedere le memorie reali degli agent attivi - semplicemente non può aggiungerne.
 
-### Memory in replays
+### Memoria nei replay
 
-Stesso comportamento del dry-run: gli agenti di replay non scrivono memoria. I replay sono solo anteprime. Vedi [Test Runs (Replays)](#test-runs-replays).
+Come per il dry-run: gli agent di replay non scrivono memoria. I replay sono solo anteprime. Vedi [Test Runs (Replays)](#test-runs-replays).
 
-### Constraints summary
+### Riepilogo dei vincoli
 
 | Limite | Valore |
 |---|---|
 | Lunghezza massima del contenuto della memoria | 2000 caratteri |
-| Lunghezza massima del tag di memoria | 64 caratteri |
-| Numero massimo di tag di memoria | 10 |
+| Lunghezza massima del tag della memoria | 64 caratteri |
+| Numero massimo di tag della memoria | 10 |
 | Lunghezza massima della query di memoria | 200 caratteri |
-| Limite risultati ricerca memoria | 25 record |
-| Cap totale del contenuto nella ricerca memoria | 8000 caratteri |
+| Limite di risultati della ricerca in memoria | 25 record |
+| Limite totale di contenuto della ricerca in memoria | 8000 caratteri |
 
-### See also
+### Vedi anche
 
-- [Tool: save_memory](#tools-overview) for writing.
-- [Tool: search_memory](#tools-overview) for reading.
-- [Tool: warn_user](#tool-warn-user) - the only tool that writes WARNING-kind memory.
-- [Tool: ban_user](#tool-ban-user) - the system prompt requires `search_memory` to be called before this.
+- [Tool: save_memory](#tools-overview) per la scrittura.
+- [Tool: search_memory](#tools-overview) per la lettura.
+- [Tool: warn_user](#tool-warn-user) - l'unico tool che scrive memoria di tipo WARNING.
+- [Tool: ban_user](#tool-ban-user) - il prompt di sistema richiede che `search_memory` venga chiamato prima di questo.

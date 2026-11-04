@@ -1,4 +1,3 @@
----
 Anexar uma enquete a um comentário, ou definir o estado completo da enquete que já existe.
 
 As opções são correspondidas por id: uma opção enviada com o id de uma opção existente mantém seus votos (e recebe o novo rótulo e posição), uma opção enviada sem id é adicionada, e opções existentes que não estão na lista são removidas juntamente com os votos lançados nelas.
@@ -40,5 +39,3 @@ DefaultAPI.putPoll(tenantId: tenantId, commentId: commentId, commentPollPutInput
     }
 }
 [inline-code-end]
-
----

@@ -1,6 +1,6 @@
-### The Main Widget Component
+### O Componente Principal do Widget
 
-O componente FastCommentsCommentWidget contém o widget de comentários do FastComments em tempo real.
+O componente FastCommentsCommentWidget contém o widget de comentários ao vivo do FastComments.
 
 Substitua "demo" abaixo pelo seu "tenantId" - disponível [aqui](https://fastcomments.com/auth/my-account/api) na área de administração do FastComments.
 
@@ -18,18 +18,18 @@ class Example extends Component {
 }
 ```
 
-### Updating The Current Page (For SPAs)
-Para atualizar a página/artigo ao qual o thread de comentários está vinculado, você deve atualizar os parâmetros de configuração "urlId" e "url".
+### Atualizando a Página Atual (Para SPAs)
+Para atualizar a página/artigo ao qual o tópico de comentários está vinculado, você deve atualizar os parâmetros de configuração "urlId" e "url".
 Veja o exemplo e a explicação [aqui](https://github.com/FastComments/fastcomments-react/blob/master/examples/example-paginated/src/PaginatedApp.tsx).
 
-### Account Region (ATTENTION: EU Customers)
+### Região da Conta (ATENÇÃO: Clientes da UE)
 
-Se você estiver na UE, deverá informar aos widgets do cliente em qual região você está. Veja [examples/example-eu](https://github.com/FastComments/fastcomments-react/blob/master/examples/example-eu/src/App.tsx);
+Se você estiver na UE, será necessário informar aos widgets do cliente em qual região você está. Veja [examples/example-eu](https://github.com/FastComments/fastcomments-react/blob/master/examples/example-eu/src/App.tsx);
 Caso contrário, você não precisa definir `region`.
 
-### The Comment Count Widget
+### O Widget de Contagem de Comentários
 
-O componente FastCommentsCommentCountWidget contém o widget de contagem de comentários do FastComments em tempo real.
+O componente FastCommentsCommentCountWidget contém o widget de contagem de comentários ao vivo do FastComments.
 
 Substitua "demo" abaixo pelo seu "tenantId" - disponível [aqui](https://fastcomments.com/auth/my-account/api) na área de administração do FastComments.
 
@@ -47,8 +47,8 @@ class Example extends Component {
 }
 ```
 
-### Native
+### Nativo
 
-Para uma implementação completamente nativa do FastComments, veja [fastcomments-react-native-sdk](https://github.com/FastComments/fastcomments-react-native-sdk).
+Para uma implementação totalmente nativa do FastComments, veja [fastcomments-react-native-sdk](https://github.com/FastComments/fastcomments-react-native-sdk).
 
-Para um wrapper React Native desta biblioteca, usando um webview, veja [fastcomments-react-native](https://github.com/FastComments/fastcomments-react-native).
+Para um wrapper React Native desta biblioteca, usando uma webview, veja [fastcomments-react-native](https://github.com/FastComments/fastcomments-react-native).

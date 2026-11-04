@@ -1,4 +1,3 @@
----
 ### Видгет коментара
 
 Компонента FastCommentsVue садржи FastComments видгет за коментаре у реалном времену.
@@ -26,4 +25,3 @@ export default Vue.extend({
   </div>
 </template>
 ```
----

@@ -8,5 +8,3 @@
 ## תרומות
 
 תרומות מתקבלות בברכה! אנא בקר ב[מאגר GitHub](https://github.com/FastComments/fastcomments-swift) לקבלת הנחיות לתרומה.
-
----

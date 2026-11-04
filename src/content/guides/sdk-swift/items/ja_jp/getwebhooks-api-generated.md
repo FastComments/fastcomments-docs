@@ -1,6 +1,6 @@
-Lists the webhooks configured for the tenant, both dashboard-managed rows and API subscriptions.
+テナントに設定されたwebhookの一覧を返します。ダッシュボードで管理されている行とAPIサブスクリプションの両方が対象です。
 
-## パラメータ
+## パラメーター
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
@@ -12,13 +12,13 @@ Lists the webhooks configured for the tenant, both dashboard-managed rows and AP
 
 ## レスポンス
 
-返却: [`GetWebhooksResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetWebhooksResponse.swift)
+戻り値: [`GetWebhooksResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetWebhooksResponse.swift)
 
 ## 例
 
 [inline-code-attrs-start title = 'getWebhooks の例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 以下のコードサンプルはまだベータ版です。問題がある場合は、http://github.com/OpenAPITools/openapi-generator/issues/new へ報告してください。
+// 以下のコードサンプルはまだベータ版です。問題があれば http://github.com/OpenAPITools/openapi-generator/issues/new まで報告してください
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 

@@ -1,284 +1,284 @@
-本指南涵蓋常見的 SAML 驗證問題及其解決方法。
+本指南涵蓋常見的 SAML 驗證問題及其解決方案。
 
-### Certificate and Security Issues
+### 憑證與安全性問題
 
-#### Invalid Certificate Error
+#### 無效憑證錯誤
 
-**Symptoms**:
-- "Certificate validation failed" 錯誤
+**症狀**:
+- 「憑證驗證失敗」錯誤
 - 使用者無法完成 SAML 驗證
 - SAML 回應被拒絕
 
-**Common Causes**:
+**常見原因**:
 - 憑證格式不正確
 - 憑證已過期
 - 提供了錯誤的憑證
-- 憑證中有額外字元或空白
+- 憑證中包含多餘的字元或空白
 
-**Solutions**:
-1. **Verify Certificate Format**:
-   - 確認憑證包含 `-----BEGIN CERTIFICATE-----` 和 `-----END CERTIFICATE-----` 標記
+**解決方案**:
+1. **驗證憑證格式**:
+   - 確保憑證包含 `-----BEGIN CERTIFICATE-----` 和 `-----END CERTIFICATE-----` 標記
    - 移除任何多餘的空白或換行
-   - 直接從 IdP 的 metadata 或設定中複製憑證
+   - 直接從 IdP 中繼資料或設定中複製憑證
 
-2. **Check Certificate Validity**:
+2. **檢查憑證有效性**:
    - 驗證憑證尚未過期
    - 確認憑證屬於正確的 IdP
    - 使用線上憑證驗證工具檢查格式
 
-3. **Re-download Certificate**:
-   - 從 IdP 重新下載新的憑證
-   - 若可用，使用 IdP metadata URL
+3. **重新下載憑證**:
+   - 從 IdP 下載最新的憑證
+   - 如有可用,使用 IdP 中繼資料 URL
    - 確認憑證與目前的 IdP 設定相符
 
-#### Signature Verification Failed
+#### 簽章驗證失敗
 
-**Symptoms**:
-- SAML assertion 簽章驗證錯誤
-- 在 IdP 登入後驗證失敗
-- 出現 "Invalid signature" 錯誤訊息
+**症狀**:
+- SAML 斷言簽章驗證錯誤
+- IdP 登入後驗證失敗
+- 「無效簽章」錯誤訊息
 
-**Solutions**:
-1. **Algorithm Mismatch**:
+**解決方案**:
+1. **演算法不符**:
    - 檢查 FastComments 中的簽章演算法是否與 IdP 相符
-   - 嘗試不同的簽章演算法（SHA-256、SHA-1、SHA-512）
-   - 驗證摘要演算法是否與 IdP 設定匹配
+   - 嘗試不同的簽章演算法(SHA-256、SHA-1、SHA-512)
+   - 驗證摘要演算法與 IdP 設定相符
 
-2. **Certificate Issues**:
-   - 確保已配置正確的簽章憑證
-   - 驗證憑證是否對應 IdP 使用的私鑰
-   - 檢查 IdP 是否有憑證輪換
+2. **憑證問題**:
+   - 確保已設定正確的簽署憑證
+   - 驗證憑證對應至 IdP 使用的私密金鑰
+   - 檢查 IdP 是否有憑證輪替
 
-### Configuration Issues
+### 設定問題
 
-#### Wrong Entity ID or ACS URL
+#### 錯誤的 Entity ID 或 ACS URL
 
-**Symptoms**:
-- IdP 報告 "Unknown Service Provider"
-- SAML 回應發送到錯誤的端點
+**症狀**:
+- IdP 回報「未知的服務提供者」
+- SAML 回應傳送至錯誤的端點
 - 驗證無法完成
 
-**Solutions**:
-1. **Verify SP Information**:
-   - 從 FastComments 設定複製完整且精確的 Entity ID
-   - 確保 ACS URL 符合格式：`https://fastcomments.com/saml/callback/{tenant-id}`
-   - 檢查 tenant ID 是否有拼寫錯誤
+**解決方案**:
+1. **驗證 SP 資訊**:
+   - 從 FastComments 設定中複製確切的 Entity ID
+   - 確保 ACS URL 符合格式:`https://fastcomments.com/saml/callback/{tenant-id}`
+   - 檢查租戶 ID 是否有拼字錯誤
 
-2. **IdP Configuration**:
-   - 在 IdP 中更新為正確的 SP Entity ID
-   - 設定正確的 ACS/Reply URL
-   - 驗證 IdP 的 binding 設定（建議使用 HTTP-POST）
+2. **IdP 設定**:
+   - 使用正確的 SP Entity ID 更新 IdP
+   - 設定正確的 ACS/回覆 URL
+   - 驗證 IdP 綁定設定(建議使用 HTTP-POST)
 
-#### Missing or Incorrect Attributes
+#### 缺失或不正確的屬性
 
-**Symptoms**:
-- 使用者建立時沒有正確的角色
-- 遺失使用者設定檔資訊
-- 出現 "Email required" 錯誤
+**症狀**:
+- 建立的使用者沒有正確的角色
+- 缺少使用者個人資料資訊
+- 「需要電子郵件」錯誤
 
-**Solutions**:
-1. **Email Attribute**:
-   - 確保 IdP 傳送 email 屬性
-   - 檢查屬性名稱映射（email、emailAddress 等）
-   - 驗證 email 值為有效的電子郵件地址
+**解決方案**:
+1. **電子郵件屬性**:
+   - 確保 IdP 傳送電子郵件屬性
+   - 檢查屬性名稱對應(email、emailAddress 等)
+   - 驗證電子郵件值是有效的電子郵件地址
 
-2. **Role Attributes**:
+2. **角色屬性**:
    - 確認 IdP 傳送角色/群組資訊
-   - 檢查角色屬性名稱是否與 FastComments 的預期相符
-   - 驗證角色值完全符合 FastComments 的角色名稱
+   - 檢查角色屬性名稱是否符合 FastComments 的預期
+   - 驗證角色值與 FastComments 的角色名稱完全相符
 
-3. **Attribute Format**:
-   - 測試陣列與逗號分隔的角色格式
-   - 確保屬性值沒有多餘空白
-   - 檢查角色名稱是否有大小寫敏感問題
+3. **屬性格式**:
+   - 測試陣列與逗號分隔兩種角色格式
+   - 確保屬性值沒有多餘的空白
+   - 檢查角色名稱的大小寫敏感性
 
-### Authentication Flow Issues
+### 驗證流程問題
 
-#### Redirect Loop
+#### 重新導向迴圈
 
-**Symptoms**:
-- 瀏覽器在 FastComments 與 IdP 之間無限重導
+**症狀**:
+- 瀏覽器在 FastComments 與 IdP 之間無止盡地重新導向
 - 驗證永遠無法完成
-- 在瀏覽器開發工具中看到多次重導
+- 瀏覽器開發者工具中顯示多次重新導向
 
-**Solutions**:
-1. **Check SP Configuration**:
+**解決方案**:
+1. **檢查 SP 設定**:
    - 驗證 Entity ID 與 IdP 設定完全相符
    - 確保 ACS URL 在 IdP 中正確設定
-   - 檢查 URL 是否有尾端斜線差異
+   - 檢查 URL 是否有結尾斜線
 
-2. **Session Issues**:
-   - 清除瀏覽器 Cookies 並重試
-   - 在無痕/私人視窗中測試
-   - 檢查會話逾時設定
+2. **工作階段問題**:
+   - 清除瀏覽器 Cookie 後再試一次
+   - 在無痕/私人瀏覽視窗中測試
+   - 檢查工作階段逾時設定
 
-#### Access Denied After Authentication
+#### 驗證後存取被拒
 
-**Symptoms**:
+**症狀**:
 - SAML 驗證成功
-- 使用者被導回 FastComments
-- 顯示 "Access denied" 或權限錯誤
+- 使用者被重新導向至 FastComments
+- 顯示「存取被拒」或權限錯誤
 
-**Solutions**:
-1. **Role Assignment**:
-   - 驗證使用者在 IdP 中是否有適當的角色
-   - 檢查角色屬性是否在 SAML 回應中傳送
-   - 確認角色名稱與 FastComments 要求完全相符
+**解決方案**:
+1. **角色指派**:
+   - 驗證使用者在 IdP 中具有適當的角色
+   - 檢查 SAML 回應中是否傳送了角色屬性
+   - 確認角色名稱與 FastComments 的要求完全相符
 
-2. **Package Limitations**:
-   - 驗證帳戶是否為 Flex 或 Pro 套餐
-   - 檢查 SAML 功能是否已為該套件啟用
-   - 若套件包含 SAML 但功能無法使用，請聯絡支援
+2. **方案限制**:
+   - 驗證帳戶具有 Flex 或 Pro 方案
+   - 檢查該方案是否已啟用 SAML 功能
+   - 如果方案包含 SAML 但功能無法使用,請聯絡支援
 
-### Identity Provider Specific Issues
+### 身分識別提供者特定問題
 
 #### Microsoft Azure AD
 
-**Common Issues**:
-- App role 指派未反映在 token 中
-- claims 未正確傳送
-- 需要使用者指派
+**常見問題**:
+- 應用程式角色指派未反映在權杖中
+- 宣告未正確傳送
+- 使用者指派需求
 
-**Solutions**:
-- 檢查使用者是否已指派到 FastComments 應用程式
-- 驗證 app role 是否正確設定
-- 確保 claims 映射包含所需屬性
+**解決方案**:
+- 檢查使用者是否已指派至 FastComments 應用程式
+- 驗證應用程式角色已正確設定
+- 確保宣告對應包含必要的屬性
 
 #### Okta
 
-**Common Issues**:
-- 群組過濾器未正常運作
-- 屬性聲明設定錯誤
+**常見問題**:
+- 群組篩選器無法正常運作
+- 屬性陳述設定錯誤
 - 應用程式指派問題
 
-**Solutions**:
-- 檢視屬性聲明設定
-- 檢查群組指派與過濾規則
-- 驗證應用程式是否指派給適當的使用者/群組
+**解決方案**:
+- 檢視屬性陳述設定
+- 檢查群組指派與篩選規則
+- 驗證應用程式已指派給適當的使用者/群組
 
 #### Google Workspace
 
-**Common Issues**:
-- 自訂屬性未正確映射
+**常見問題**:
+- 自訂屬性未正確對應
 - 群組成員資格未傳送
 - SAML 應用程式設定錯誤
 
-**Solutions**:
-- 為角色屬性設定自訂 schema
-- 檢查群組成員資格傳播
-- 驗證 SAML 應用程式的屬性映射
+**解決方案**:
+- 為角色屬性設定自訂架構
+- 檢查群組成員資格的傳播
+- 驗證 SAML 應用程式屬性對應
 
-### Network and Connectivity Issues
+### 網路與連線問題
 
-#### Timeout Errors
+#### 逾時錯誤
 
-**Symptoms**:
-- 驗證流程逾時
-- 出現 "Request timeout" 或類似錯誤
+**症狀**:
+- 驗證程序逾時
+- 「請求逾時」或類似錯誤
 - 驗證流程緩慢
 
-**Solutions**:
-1. **Network Connectivity**:
-   - 檢查防火牆規則是否允許 FastComments 通訊
+**解決方案**:
+1. **網路連線**:
+   - 檢查防火牆規則是否允許與 FastComments 通訊
    - 驗證 fastcomments.com 的 DNS 解析
-   - 從 IdP 測試到 FastComments 的網路連線
+   - 測試從 IdP 到 FastComments 的網路連線
 
-2. **Performance Issues**:
+2. **效能問題**:
    - 檢查 IdP 的回應時間
-   - 驗證憑證鏈驗證是否花費過久
-   - 考量 IdP 與使用者之間的網路延遲
+   - 驗證憑證鏈驗證是否緩慢
+   - 考慮 IdP 與使用者之間的網路延遲
 
-#### SSL/TLS Issues
+#### SSL/TLS 問題
 
-**Symptoms**:
-- 在驗證期間出現憑證警告
-- SSL 握手失敗
-- 出現 "Secure connection failed" 錯誤
+**症狀**:
+- 驗證期間出現憑證警告
+- SSL 交握失敗
+- 「安全連線失敗」錯誤
 
-**Solutions**:
-- 確保所有 SAML 端點使用 HTTPS
+**解決方案**:
+- 確保所有 SAML 端點都使用 HTTPS
 - 檢查所有相關網域的憑證有效性
 - 驗證 TLS 版本相容性
 
-### Debugging and Logging
+### 偵錯與記錄
 
-#### Enabling Debug Information
+#### 啟用偵錯資訊
 
-1. **Browser Developer Tools**:
-   - 在 SAML 流程中監控 Network 標籤
-   - 檢查 Console 是否有 JavaScript 錯誤
-   - 檢視 SAML POST 請求（若可見）
+1. **瀏覽器開發者工具**:
+   - 在 SAML 流程期間監控 Network 分頁
+   - 檢查 Console 中的 JavaScript 錯誤
+   - 檢視 SAML POST 請求(如果可見)
 
-2. **IdP Logging**:
-   - 在 IdP 中啟用 SAML 偵錯
-   - 檢閱 IdP 日誌中的 SAML 請求/回應細節
-   - 檢查屬性映射問題
+2. **IdP 記錄**:
+   - 在您的 IdP 中啟用 SAML 偵錯
+   - 檢視 IdP 記錄中的 SAML 請求/回應詳細資訊
+   - 檢查屬性對應問題
 
-#### Common Log Messages
+#### 常見記錄訊息
 
-**FastComments Logs**:
-- "SAML config not found" - 未啟用 SAML 或設定錯誤
-- "Invalid certificate" - 憑證驗證失敗
-- "Missing email attribute" - SAML 回應中未提供必要的 email
+**FastComments 記錄**:
+- 「找不到 SAML 設定」- SAML 未啟用或設定錯誤
+- 「無效憑證」- 憑證驗證失敗
+- 「缺少電子郵件屬性」- SAML 回應中未提供必要的電子郵件
 
-**IdP Logs**:
-- "Unknown service provider" - Entity ID 不符
-- "Invalid ACS URL" - Assertion Consumer Service URL 錯誤
-- "User not assigned" - 使用者未被指派訪問 SAML 應用程式
+**IdP 記錄**:
+- 「未知的服務提供者」- Entity ID 不符
+- 「無效的 ACS URL」- 斷言消費服務 URL 不正確
+- 「使用者未指派」- 使用者無權存取 SAML 應用程式
 
-### Getting Help
+### 取得協助
 
-#### Information to Gather
+#### 需收集的資訊
 
-聯絡支援時請提供：
-- 精確的錯誤訊息與時間戳記
-- SAML 設定細節（不包括敏感資料）
+聯絡支援時,請提供:
+- 確切的錯誤訊息與時間戳記
+- SAML 設定詳細資訊(不含敏感資料)
 - IdP 類型與版本
 - 重現問題的步驟
 - 瀏覽器與網路資訊
 
-#### FastComments Support
+#### FastComments 支援
 
-針對 SAML 相關問題：
-1. 使用 [support portal](https://fastcomments.com/auth/my-account/help)
-2. 包含 tenant ID 和受影響的使用者電子郵件
-3. 提供錯誤訊息與設定細節
-4. 指定 IdP 類型與設定方式
+關於 SAML 相關問題:
+1. 使用[支援入口網站](https://fastcomments.com/auth/my-account/help)
+2. 提供租戶 ID 與受影響使用者的電子郵件
+3. 提供錯誤訊息與設定詳細資訊
+4. 說明 IdP 類型與設定方式
 
-#### IdP Support
+#### IdP 支援
 
-針對 IdP 特定問題：
-- 參閱 IdP 的文件以取得 SAML 疑難排解資訊
-- 使用 IdP 的支援管道處理設定問題
-- 利用 IdP 的社群論壇尋找常見問題解決方案
+關於 IdP 特定問題:
+- 查閱 IdP 文件中的 SAML 疑難排解
+- 針對設定問題使用 IdP 支援管道
+- 針對常見問題利用 IdP 社群論壇
 
-### Prevention Tips
+### 預防提示
 
-#### Best Practices
+#### 最佳實務
 
-1. **Test Thoroughly**:
-   - 在非生產環境測試設定變更
-   - 使用多個測試使用者驗證
-   - 記錄可用的運作設定
+1. **徹底測試**:
+   - 在非正式環境中測試設定變更
+   - 使用多個測試使用者進行驗證
+   - 記錄可正常運作的設定
 
-2. **Monitor Regularly**:
-   - 建立 SAML 驗證失敗的監控
-   - 檢閱憑證到期日
-   - 監控 IdP 配置變更
+2. **定期監控**:
+   - 為 SAML 驗證失敗設定監控
+   - 檢視憑證到期日
+   - 監控 IdP 設定變更
 
-3. **Documentation**:
-   - 維護 SAML 設定文件
-   - 記錄任何自訂設定或變通方法
+3. **文件記錄**:
+   - 維護 SAML 設定的文件
+   - 記錄任何自訂設定或因應措施
    - 保留 IdP 管理員的聯絡資訊
 
-#### Proactive Maintenance
+#### 主動維護
 
-1. **Certificate Management**:
+1. **憑證管理**:
    - 監控憑證到期日
-   - 規劃憑證輪換程序
+   - 規劃憑證輪替程序
    - 在憑證到期前測試憑證更新
 
-2. **Configuration Reviews**:
-   - 定期檢閱 SAML 設定
-   - 驗證 IdP 設定是否仍為最新
-   - 在變更時更新文件
+2. **設定審查**:
+   - 定期審查 SAML 設定
+   - 驗證 IdP 設定保持最新
+   - 在進行變更時更新文件

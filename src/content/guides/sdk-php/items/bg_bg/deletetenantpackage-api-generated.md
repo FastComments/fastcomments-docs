@@ -45,5 +45,3 @@ try {
     echo 'Exception when calling DefaultApi->deleteTenantPackage: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

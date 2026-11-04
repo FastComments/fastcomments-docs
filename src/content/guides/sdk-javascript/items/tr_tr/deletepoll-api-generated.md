@@ -1,15 +1,15 @@
-Remove a poll from its comment, along with every vote cast on it. The comment itself is left alone.
+Bir anketi ait olduğu yorumdan, üzerinde yapılan tüm oylarla birlikte kaldırır. Yorumun kendisine dokunulmaz.
 
 ## Parametreler
 
-| Ad | Tür | Gerekli | Açıklama |
+| Ad | Tür | Zorunlu | Açıklama |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| commentId | string | Yes |  |
+| tenantId | string | Evet |  |
+| commentId | string | Evet |  |
 
 ## Yanıt
 
-Returns: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+Döndürür: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
 ## Örnek
 

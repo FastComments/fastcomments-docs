@@ -1,20 +1,20 @@
-By default, FastComments will show the user's name as they entered it, or how it was passed to us via SSO.
+За замовчуванням FastComments показує ім'я користувача так, як він його ввів, або так, як воно було передане нам через SSO.
 
-However, it may be desirable to mask or show the user's name in a different way. For example, if the user's name is Allen Rex, maybe
-you want to only show "Allen R.".
+Однак іноді бажано приховати або показати ім'я користувача іншим способом. Наприклад, якщо ім'я користувача — Allen Rex, можливо,
+ви хочете показувати лише "Allen R.".
 
-This can be done without code in the Widget Customization UI, under the setting called `Commenter Name Format`:
+Це можна зробити без коду в інтерфейсі налаштування віджета, у параметрі під назвою `Commenter Name Format`:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.commenter-name-format select'; selector = '.commenter-name-format'; alt='Випадаюче меню Формат імені коментатора відкрито з варіантами, такими як Capitalize, Last Initial та All Initials'; title='Змінити формат імені' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.commenter-name-format select'; selector = '.commenter-name-format'; alt='Розкритий випадаючий список Commenter Name Format з варіантами, такими як Capitalize, Last Initial та All Initials'; title='Зміна формату імені' app-screenshot-end]
 
-The available formats are:
+Доступні формати:
 
-- Capitalize (відображати приклад користувача як Example User)
-- Last Initial (відображати Example User як Example U.)
-- All Initials (відображати Example User як E. U.)
-- Show "Anonymous"
+- Capitalize (приклад користувача відображається як Example User)
+- Last Initial (Example User відображається як Example U.)
+- All Initials (Example User відображається як E. U.)
+- Показувати "Anonymous"
 
-The effect of changing this is immediate. User's will still see their full username at the top of the comment area, for themselves, but their comments will show
-the modified username.
+Зміна набуває чинності негайно. Користувачі, як і раніше, бачитимуть своє повне ім'я користувача вгорі області коментарів, для себе, але їхні коментарі показуватимуть
+змінене ім'я користувача.
 
-Usernames are masked server-side to protect users.
+Імена користувачів маскуються на стороні сервера для захисту користувачів.

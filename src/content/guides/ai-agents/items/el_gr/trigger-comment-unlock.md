@@ -17,5 +17,3 @@
 ### Συνδυασμός
 
 Δείτε [Trigger: Comment Locked](#trigger-comment-lock).
-
----

@@ -8,5 +8,3 @@
 ## Prispevanje
 
 Prispevki so dobrodošli! Obiščite [repozitorij na GitHubu](https://github.com/FastComments/fastcomments-python) za smernice glede prispevkov.
-
----

@@ -1,4 +1,3 @@
----
 ## パラメータ
 
 | 名前 | タイプ | 必須 | 説明 |
@@ -24,5 +23,3 @@ let (optResp, httpResp) = client.addHashTagsBulk(
 if optResp.isSome:
   let resp = optResp.get()
 [inline-code-end]
-
----

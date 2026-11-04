@@ -1,7 +1,7 @@
-Now we're going to copy our code. If the code snippet says `tenantId: "demo"` on line 6 then you should log into your FastComments account
-en vervolgens deze pagina vernieuwen zodat het gekopieerde codefragment je account-id bevat.
+Nu gaan we onze code kopiëren. Als het codefragment `tenantId: "demo"` op regel 6 zegt, dan moet je inloggen op je FastComments-account
+en daarna deze pagina vernieuwen, zodat het gekopieerde codefragment je account-id bevat.
 
-[inline-code-attrs-start title = 'Fragment voor Systeme.io'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Systeme.io Snippet'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
@@ -20,6 +20,4 @@ Plak het nu in de editor en klik op opslaan:
     <img class="screenshot-image" src="/images/installation-guides/systeme-add-code.png" alt="Voeg de FastComments-code toe" />
 </div>
 
-... sla vervolgens je site op. Dat is alles!
-
----
+... en sla vervolgens je site op. Dat is alles!

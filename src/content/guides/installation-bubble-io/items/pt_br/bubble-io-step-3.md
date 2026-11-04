@@ -1,4 +1,3 @@
----
 Para garantir que o widget de comentários seja exibido corretamente, precisamos ajustar a largura do elemento HTML. Procure a guia Layout no editor de propriedades do elemento.
 
 <div class="screenshot white-bg">
@@ -7,5 +6,3 @@ Para garantir que o widget de comentários seja exibido corretamente, precisamos
 </div>
 
 A guia Layout contém opções importantes de dimensionamento que ajudarão o widget de comentários a ser exibido corretamente em diferentes tamanhos de tela.
-
----

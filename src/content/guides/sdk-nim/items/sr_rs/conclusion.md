@@ -8,5 +8,3 @@
 ## Доприноси
 
 Доприноси су добродошли! Посетите [GitHub репозиторијум](https://github.com/FastComments/fastcomments-nim) за смернице о доприносу.
-
----

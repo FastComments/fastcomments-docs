@@ -1,4 +1,3 @@
----
 - Verschachtelte Kommentar-Threads mit Antworten auf mehreren Ebenen und Paginierung
 - Sozialer Feed mit Beitragserstellung, Reaktionen und Medienanhängen
 - Live-Chat-Modus mit automatischem Scrollen und Datums-Trennzeichen
@@ -14,4 +13,3 @@
 - Benutzerpräsenz (Online-/Offline-Indikatoren)
 - Tag-basierte Feed-Filterung
 - Unterstützung für Lokalisierung
----

@@ -1,6 +1,6 @@
-`fastcomments-react-native` requires `react-native-webview`. As such, you should follow the installation steps for `react-native-webview`.
+`fastcomments-react-native` требует `react-native-webview`. Поэтому вам следует выполнить шаги установки для `react-native-webview`.
 
-### Регион аккаунта (ВНИМАНИЕ: клиенты ЕС)
+### Регион аккаунта (ВНИМАНИЕ: для клиентов из ЕС)
 
-Если ваш аккаунт находится в ЕС, установите `region = 'eu'` в конфигурации виджета.
-В противном случае вам не нужно определять `region`.
+Если ваш аккаунт находится в ЕС, укажите `region = 'eu'` в конфигурации виджета.
+В противном случае определять `region` не требуется.

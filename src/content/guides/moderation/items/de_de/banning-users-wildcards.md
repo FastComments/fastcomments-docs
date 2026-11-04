@@ -1,24 +1,26 @@
----
-Es ist möglich, Benutzer, die bestimmte E‑Mail‑Provider verwenden, mit Platzhaltern zu sperren.
+Es ist möglich, Benutzer bestimmter E-Mail-Anbieter mithilfe von Wildcards zu sperren.
 
-Zum Beispiel, wenn Sie feststellen, dass alle Kommentare von **@bademail.com** Spam sind, können Sie den gesamten E‑Mail‑Provider einfach sperren, indem Sie "*@bademail.com" in das E‑Mail‑Eingabefeld eingeben, wenn Sie einen gesperrten Benutzer hinzufügen.
+Wenn Sie beispielsweise feststellen, dass alle Kommentare von **@bademail.com** Spam sind, können Sie einfach den gesamten E-Mail-Anbieter sperren, indem Sie "*@bademail.com" in das E-Mail-Eingabefeld beim Hinzufügen eines gesperrten Benutzers eingeben.
 
-Beachten Sie das "*" vor dem @ in der E‑Mail.
+Beachten Sie das "*" vor dem @ in der E-Mail-Adresse.
 
 ### Subdomains
 
-Ein Domain‑Verbot deckt auch jede Subdomain dieser Domain ab. Das Sperren von `*@bademail.com` sperrt ebenfalls `someone@mail.bademail.com` und `someone@eu.mail.bademail.com`, sodass es nicht nötig ist, für jede Subdomain ein separates Verbot hinzuzufügen.
+Eine Domain-Sperre gilt auch für jede Subdomain dieser Domain. Das Sperren von `*@bademail.com` sperrt auch
+`someone@mail.bademail.com` und `someone@eu.mail.bademail.com`, sodass es nicht erforderlich ist, für jede Subdomain eine separate Sperre hinzuzufügen.
 
-Wenn Sie nur eine bestimmte Subdomain sperren möchten, geben Sie stattdessen diese Subdomain ein, zum Beispiel `*@mail.bademail.com`. Dieses Verbot wirkt sich nicht auf `someone@bademail.com` aus.
+Wenn Sie nur eine bestimmte Subdomain sperren möchten, geben Sie stattdessen diese Subdomain ein, zum Beispiel `*@mail.bademail.com`. Diese Sperre
+wirkt sich nicht auf `someone@bademail.com` aus.
 
-### Banning a Domain From a Comment
+### Sperren einer Domain über einen Kommentar
 
-Sie müssen das Muster nicht selbst eingeben. Wenn Sie einen Benutzer von einem Kommentar auf der Seite "Moderate Comments" sperren, enthält das Sperr‑Dialogfeld ein Kontrollkästchen "Ban All @domain Users", das das gleiche `*@domain` Verbot für die E‑Mail‑Domain des Kommentators erstellt.
+Sie müssen das Muster nicht selbst eingeben. Wenn Sie einen Benutzer über einen Kommentar auf der Seite „Kommentare moderieren" sperren, enthält der Sperrdialog
+ein Kontrollkästchen „Alle @domain-Benutzer sperren", das dieselbe `*@domain`-Sperre für die E-Mail-Domain des Kommentators erstellt.
 
-### Supported Patterns
+### Unterstützte Muster
 
-Die einzige unterstützte Platzhalter‑Form ist ein einzelnes `*` anstelle des gesamten Namensanteils, gefolgt von `@` und einer Domain. Andere Formen werden abgelehnt, wenn Sie versuchen, sie zu speichern:
+Die einzige unterstützte Wildcard-Form ist ein einzelnes `*` anstelle des gesamten Namensanteils, gefolgt von `@` und einer Domain. Andere Formen
+werden beim Speichern abgelehnt:
 
-- `*@*.bademail.com` ist nicht nötig, weil `*@bademail.com` bereits Subdomains abdeckt.
+- `*@*.bademail.com` ist nicht erforderlich, da `*@bademail.com` bereits Subdomains abdeckt.
 - `name*@bademail.com` und `*bademail.com` werden nicht unterstützt.
----

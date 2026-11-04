@@ -1,4 +1,3 @@
----
 Blokken **FastComments - Top Pages** viser de sider i din butik med mest samlet kommentaraktivitet. Brug den til at fremhæve dine mest omdiskuterede indlæg eller produkter.
 
 ### Tilføj blokken
@@ -19,4 +18,3 @@ Blokken **FastComments - Top Pages** viser de sider i din butik med mest samlet 
 
 - **Top Pages** rangerer efter samlet engagement, så de samme indlæg har en tendens til at blive i toppen i et stykke tid. God til et sidepanel med "populære indlæg".
 - **Recent Discussions** rangerer efter den seneste aktivitet, så listen skifter ofte. God til et panel med "hvad der er hot lige nu".
----

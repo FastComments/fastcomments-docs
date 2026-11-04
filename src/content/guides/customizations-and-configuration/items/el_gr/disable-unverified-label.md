@@ -7,5 +7,3 @@
 Επιπλέον, αυτή η λειτουργία μπορεί να χρησιμοποιηθεί, χωρίς να γράψετε κώδικα, στη Διεπαφή Προσαρμογής UI:
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-unverified-comment-label']; selector = '.disable-unverified-comment-label'; alt='Σελίδα προσαρμογής widget με το πλαίσιο ελέγχου Απενεργοποίηση της ετικέτας μη επαληθευμένου σχολίου επιλεγμένο'; title='Απενεργοποίηση της ετικέτας μη επαληθευμένου σχολίου' app-screenshot-end]
-
----

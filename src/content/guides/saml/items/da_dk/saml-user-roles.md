@@ -209,5 +209,3 @@ FastComments validerer indkommende roller:
 - Gennemgå rolledefinitioner og nødvendige tilladelser
 - Tjek for modstridende rolletildelinger
 - Verificer, at brugeren har logget ind efter rolleændringer
-
----

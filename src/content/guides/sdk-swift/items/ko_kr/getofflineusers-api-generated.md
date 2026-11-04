@@ -1,35 +1,31 @@
-Past commenters on the page who are NOT currently online. Sorted by displayName.  
-페이지에 과거에 댓글을 남겼지만 현재 온라인이 아닌 댓글자들. displayName 기준으로 정렬됩니다.  
-Use this after exhausting /users/online to render a "Members" section.  
-/users/online을 모두 사용한 후 "Members" 섹션을 렌더링하기 위해 사용합니다.  
-Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName}  
-index from afterName forward via $gt, no $skip cost.  
-commenterName에 대한 커서 페이지네이션: 서버는 부분 {tenantId, urlId, commenterName} 인덱스를 afterName 이후부터 $gt를 이용해 탐색하며, $skip 비용이 없습니다.
+현재 온라인 상태가 아닌, 해당 페이지의 과거 댓글 작성자입니다. displayName 기준으로 정렬됩니다.
+"멤버" 섹션을 렌더링할 때 /users/online을 모두 조회한 후 이 엔드포인트를 사용하세요.
+commenterName 기준 커서 페이지네이션: 서버는 부분 인덱스 {tenantId, urlId, commenterName}을 afterName부터 $gt로 순회하며, $skip 비용이 없습니다.
 
-## Parameters
+## 매개변수
 
-| Name | Type | Location | Required | Description |
+| 이름 | 타입 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| urlId | string | query | Yes | 페이지 URL 식별자 (서버 측에서 정리됨). |
-| afterName | string | query | No | 커서: 이전 응답의 nextAfterName을 전달합니다. |
-| afterUserId | string | query | No | 커서 동점 해결: 이전 응답의 nextAfterUserId를 전달합니다. afterName이 설정된 경우 이름 동점으로 인한 항목 누락을 방지하기 위해 필요합니다. |
+| tenantId | string | path | 예 |  |
+| urlId | string | query | 예 | 페이지 URL 식별자(서버에서 정리됨). |
+| afterName | string | query | 아니요 | 커서: 이전 응답의 nextAfterName을 전달하세요. |
+| afterUserId | string | query | 아니요 | 커서 동점 결정자: 이전 응답의 nextAfterUserId를 전달하세요. afterName이 설정된 경우 이름이 같은 항목이 누락되지 않도록 필수입니다. |
 
-## Response
+## 응답
 
-Returns: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PageUsersOfflineResponse.swift)
+반환값: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PageUsersOfflineResponse.swift)
 
-## Example
+## 예제
 
-[inline-code-attrs-start title = 'getOfflineUsers 예시'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getOfflineUsers 예제'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 다음 코드 샘플은 아직 베타 버전입니다. 문제가 있으면 http://github.com/OpenAPITools/openapi-generator/issues/new 에 보고해 주세요
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let urlId = "urlId_example" // String | 페이지 URL 식별자 (서버 측에서 정리됨).
-let afterName = "afterName_example" // String | 커서: 이전 응답의 nextAfterName을 전달합니다. (옵션)
-let afterUserId = "afterUserId_example" // String | 커서 동점 해결: 이전 응답의 nextAfterUserId를 전달합니다. afterName이 설정된 경우 이름 동점으로 인한 항목 누락을 방지하기 위해 필요합니다. (옵션)
+let urlId = "urlId_example" // String | 페이지 URL 식별자(서버에서 정리됨).
+let afterName = "afterName_example" // String | 커서: 이전 응답의 nextAfterName을 전달하세요. (optional)
+let afterUserId = "afterUserId_example" // String | 커서 동점 결정자: 이전 응답의 nextAfterUserId를 전달하세요. afterName이 설정된 경우 이름이 같은 항목이 누락되지 않도록 필수입니다. (optional)
 
 PublicAPI.getOfflineUsers(tenantId: tenantId, urlId: urlId, options: PublicAPI.GetOfflineUsersOptions(afterName: afterName, afterUserId: afterUserId)) { (response, error) in
     guard error == nil else {

@@ -19,5 +19,3 @@ Zatwierdzone oznacza, że komentarz może być widoczny dla innych użytkownikó
 Przejrzane jest jedynie narzędziem dla administratorów i moderatorów i nie ma wpływu na widoczność komentarza.
 
 Flaga "Przejrzane" ułatwia znalezienie komentarzy, które już przejrzałeś.
-
----

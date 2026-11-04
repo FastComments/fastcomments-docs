@@ -1,31 +1,31 @@
-#### "註冊令牌未找到、已過期或已被使用"
+#### 「註冊權杖未找到、已過期或已被使用」
 
-您註冊 URL 中的令牌 (<a href="https://fastcomments.com/auth/my-account/lti-config" target="_blank">在此取得</a>) 有效期為 30 分鐘且只能使用一次。如果您的 LMS 花了比較久的時間，或是在註冊成功後又重試，該令牌會被拒絕。請在 FastComments LTI 1.3 Configuration 頁面產生新的 URL 並重新開始。
+註冊 URL 中的權杖（<a href="https://fastcomments.com/auth/my-account/lti-config" target="_blank">在此取得</a>）有效期為 30 分鐘，且只能使用一次。如果您的 LMS 花費的時間超過這個限制，或者註冊在成功後被重試，該權杖將被拒絕。請在 FastComments LTI 1.3 設定頁面產生一個新的 URL 並重新開始。
 
-#### "Platform rejected registration"
+#### 「平台拒絕了註冊」
 
 您的 LMS 拒絕了註冊握手。最常見的原因：
 
-- **Tool already registered with the same client name.** 有些平台（尤其是 D2L）會拒絕再次註冊名稱為 "FastComments" 的工具，除非先刪除先前的設定。請在您的 LMS 中移除舊的工具，然後重試。
-- **Wrong field in the LMS.** 確認您是把 URL 貼到 **registration / tool initiation registration endpoint** 欄位，而不是 launch URL 或 login URL 欄位。
-- **The LMS doesn't actually support Dynamic Registration.** 舊版的 Moodle 和 Blackboard 會宣稱支援 LTI 1.3，但只允許手動設定。請檢查您平台的文件。
+- **工具已以相同的用戶端名稱註冊。** 某些平台（特別是 D2L）會拒絕第二次註冊「FastComments」，直到先前的註冊被刪除。請在您的 LMS 中移除舊的工具，然後重試。
+- **在 LMS 中填錯了欄位。** 請確保您將 URL 貼到 **registration / tool initiation registration endpoint** 欄位，而不是啟動 URL 或登入 URL 欄位。
+- **LMS 實際上不支援動態註冊。** 較舊的 Moodle 和 Blackboard 版本宣稱支援 LTI 1.3，但只允許手動設定。請查看您平台的文件。
 
-#### "Failed to fetch platform configuration"
+#### 「無法取得平台設定」
 
-FastComments 無法讀取您 LMS 的 openid-configuration 文件。這種情況少見，通常表示 LMS 提供了格式錯誤或無法存取的 discovery URL。請聯絡您的 LMS 支援人員。
+FastComments 無法讀取您 LMS 的 openid-configuration 文件。這種情況很少見，通常表示 LMS 提供了格式錯誤或無法存取的探索 URL。請聯絡您的 LMS 支援團隊。
 
-#### Launch shows "Configuration not found"
+#### 啟動時顯示「找不到設定」
 
-要麼是 FastComments 的設定被刪除，要麼是啟動來自我們不認得的 `iss`/`client_id` 組合。如果您刪除並重新註冊過，請指示 LMS 移除並重新加入 FastComments 工具，以便取得新的 client_id。
+可能是 FastComments 中的設定已被刪除，或者啟動請求來自我們無法識別的 `iss`/`client_id` 配對。如果您刪除並重新註冊了，請指示您的 LMS 移除並重新新增 FastComments 工具，以便它取得新的 client_id。
 
-#### Launch shows "Deployment not registered"
+#### 啟動時顯示「部署未註冊」
 
-您是從與最初啟動不同的 Brightspace/Moodle/Blackboard 部署啟動 FastComments。FastComments 會在首次啟動時把 `deployment_id` 鎖定作為安全檢查。要在同一 client 底下新增部署，請聯絡支援 — 我們會把該部署 ID 加到設定中。
+您是從與首次啟動時不同的 Brightspace/Moodle/Blackboard 部署啟動 FastComments 的。FastComments 會在首次啟動時固定 `deployment_id` 作為安全檢查。若要在同一用戶端下新增新的部署，請聯絡支援團隊——我們會將部署 ID 新增到設定中。
 
-#### Launch shows "Unsupported message_type"
+#### 啟動時顯示「不支援的 message_type」
 
-LMS 傳送了 FastComments 不處理的 LTI 訊息（例如 `LtiSubmissionReviewRequest`）。FastComments 僅支援標準的 resource-link 啟動與 deep-linking 流程。如需加入特定的訊息類型，請與我們聯絡。
+LMS 傳送了 FastComments 不處理的 LTI 訊息（例如 `LtiSubmissionReviewRequest`）。FastComments 僅支援標準的資源連結啟動和深層連結流程。如果您需要新增特定的訊息類型，請與我們聯絡。
 
-#### Iframe doesn't resize
+#### Iframe 無法調整大小
 
-大多數 LMS 會自動調整 LTI iframe 的大小。如果您的 LMS 沒有這麼做，請確認 LMS 的啟動設定允許工具向父框架傳送 postMessage 事件。FastComments 會發出 Canvas-style（`lti.frameResize`）和 IMS-spec（`org.imsglobal.lti.frameResize`）兩種調整大小的訊息。
+大多數 LMS 會自動調整 LTI iframe 的大小。如果您的 LMS 不會，請檢查 LMS 的啟動設定是否允許工具向父框架傳送 postMessage 事件。FastComments 會同時發送 Canvas 風格（`lti.frameResize`）和 IMS 規範（`org.imsglobal.lti.frameResize`）的調整大小訊息。

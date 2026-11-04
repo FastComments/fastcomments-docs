@@ -43,5 +43,3 @@ try {
     echo 'Exception when calling DefaultApi->deleteSubscription: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

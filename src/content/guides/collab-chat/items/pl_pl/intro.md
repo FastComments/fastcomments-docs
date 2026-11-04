@@ -1,4 +1,3 @@
----
 ## Dodaj wbudowane komentarze na żywo do dokumentów, książek itp.
 
 FastComments Collab Chat umożliwia użytkownikom wyróżnianie i dodawanie adnotacji do dowolnej treści tekstowej na Twojej stronie, tworząc dyskusje w wątkach powiązane z konkretnymi fragmentami tekstu. Użytkownicy mogą zaznaczać pojedyncze słowa, zdania lub całe akapity, aby rozpocząć wspólne rozmowy bezpośrednio w treści.
@@ -10,5 +9,3 @@ thread-per-page, **bez używania collab chat**. FastComments nie pobiera też op
 chcesz pozwolić użytkownikom zaznaczać tekst i komentować wyróżniony fragment tekstu.
 
 Zobacz [przykład tutaj](https://fastcomments.com/product/collab-chat).
-
----

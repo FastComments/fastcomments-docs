@@ -1,4 +1,3 @@
----
 Komentare možete pretraživati pomoću sljedeće primjerne sintakse:
 
 - Približna pretraga riječi: `cats love`
@@ -15,4 +14,3 @@ Komentare možete pretraživati pomoću sljedeće primjerne sintakse:
 
 Rezultate pretraživanja možete podijeliti s drugim moderatorima ili administratorima dijeljenjem URL-a stranice s stranice za moderaciju. Vrijednost polja za pretraživanje
 bit će uključena u URL u vašem pregledniku nakon što pritisnete "Go".
----

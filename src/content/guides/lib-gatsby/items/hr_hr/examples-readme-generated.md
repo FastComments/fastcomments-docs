@@ -1,4 +1,3 @@
----
 1. **Jednostavan primjer**
 
     http://localhost:8000/commenting
@@ -20,4 +19,3 @@
     Kod: [src/pages/page-transition-test-start.tsx](https://github.com/FastComments/fastcomments-gatsbyjs-example/blob/master/src/pages/page-transition-test-start.tsx).
 
 Pogledajte više posjetom http://localhost:8000
----

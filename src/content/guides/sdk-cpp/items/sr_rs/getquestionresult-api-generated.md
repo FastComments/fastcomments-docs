@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Име | Тип | Обавезно | Опис |
@@ -26,5 +25,3 @@ api->getQuestionResult(tenantId, questionId)
         }
     });
 [inline-code-end]
-
----

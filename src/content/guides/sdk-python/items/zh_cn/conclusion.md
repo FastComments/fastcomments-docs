@@ -8,5 +8,3 @@
 ## 贡献
 
 欢迎贡献！请访问 [GitHub 仓库](https://github.com/FastComments/fastcomments-python) 获取贡献指南。
-
----

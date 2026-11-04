@@ -1,4 +1,3 @@
----
 ## פרמטרים
 
 | Name | Type | Required | Description |
@@ -21,5 +20,3 @@
     console.log(response);
 })();
 [inline-code-end]
-
----

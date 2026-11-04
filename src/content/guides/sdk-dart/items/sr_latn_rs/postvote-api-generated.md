@@ -32,5 +32,3 @@ try {
     print('Exception when calling ModerationApi->postVote: $e\n');
 }
 [inline-code-end]
-
----

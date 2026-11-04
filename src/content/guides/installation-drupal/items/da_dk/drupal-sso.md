@@ -19,5 +19,3 @@ Brugerens identitet videregives til FastComments hver gang en bruger ser en komm
 <sup>(Valgfrit)</sup> Tilføj dine administratorer til [Brugere & Administratorer](https://fastcomments.com/auth/my-account/users) og moderatorer til [Kommentar-moderatorer](https://fastcomments.com/auth/my-account/moderate-comments/moderators) for at forbedre deres oplevelse og aktivere statistiksporing for moderatorer.
 
 For en dybere gennemgang af, hvordan SSO fungerer, se [SSO-afsnittet](/guide-customizations-and-configuration.html#sso) i tilpasningsdokumentationen.
-
----

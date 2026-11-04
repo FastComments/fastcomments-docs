@@ -1,10 +1,10 @@
-Za korak 2 moramo kopirati naš odsek kode. Preverite, da vrstica 50 ne piše "demo" - želite zagotoviti, da tu stoji vaš tenant id. Moral bi biti že izpolnjen za vas.
+Za 2. korak moramo kopirati našo kodo. Preverite, da vrstica 50 ne pravi "demo" – poskrbeli boste, da bo tam vaš ID najemnika (tenant id). Ta bi moral biti že izpolnjen za vas.
 
-Zdaj kopirajmo naš ThriveCart-Learn-specifičen FastComments odsek kode.
+Zdaj kopirajmo našo kodo, specifično za ThriveCart-Learn.
 
-It's quite large, because the integration with ThriveCart has a lot of features, so just click the Copy button in the top right of the code snippet:
+Je precej obsežna, ker ima integracija s ThriveCart veliko funkcionalnosti, zato preprosto kliknite gumb Copy v zgornjem desnem kotu kode:
 
-[inline-code-attrs-start title = 'ThriveCart Learn+ koda komentarjev'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Koda za komentarje ThriveCart Learn+'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
 <div id="fastcomments-widget"></div>
@@ -17,29 +17,29 @@ It's quite large, because the integration with ThriveCart has a lot of features,
             let isAuthenticated = false;
             let profileLink = document.querySelector('.thrivecart-courses-header-profile-link');
             if (!profileLink) {
-                profileLink = document.querySelector('.thrivecart-courses-header-profile'); // razred je drugačen za predogled.
+                profileLink = document.querySelector('.thrivecart-courses-header-profile'); // class is different for preview.
             }
-            // širok selektor polja e-pošte v primeru, da ThriveCart spremeni id.
+            // broad email input field selector incase ThriveCart changes id.
             const emailInputField = document.querySelector('input[type=email]');
             if (emailInputField && emailInputField.value) {
                 isAuthenticated = true;
                 simpleSSO.email = emailInputField.value;
-            } else if (profileLink && !profileLink.innerText.includes('John Smith')) { // dovoli delovanje predogleda - e-pošta ni na voljo.
+            } else if (profileLink && !profileLink.innerText.includes('John Smith')) { // allow preview to work - no email available.
                 attemptsRemaining--;
                 if (!attemptsRemaining) {
                     return console.error('Could not load FastComments - could not determine user information (email). Please reach out to FastComments support.');
                 }
                 console.warn('FastComments: No user email found - waiting and trying again.');
-                return setTimeout(tryLoad, attemptsRemaining < 5 ? 3000 : 100); // povečaj čas čakanja po 5 poskusih v primeru počasnega interneta.
+                return setTimeout(tryLoad, attemptsRemaining < 5 ? 3000 : 100); // increase wait time after 5 attempts incase slow internet.
             }
             if (profileLink) {
-                // uporabi neposredno poizvedbo "img" v primeru, da ThriveCart spremeni selektor razreda slike.
+                // use raw "img" query incase ThriveCart changes image class selector.
                 const avatarImg = profileLink.querySelector('img');
                 if (avatarImg && avatarImg.src) {
                     isAuthenticated = true;
                     simpleSSO.avatar = avatarImg.src;
                 }
-                // uporabi innerText v primeru, da ThriveCart spremeni prikaz imena profila.
+                // use innerText incase ThriveCart changes how profile name is displayed.
                 if (profileLink.innerText) {
                     isAuthenticated = true;
                     simpleSSO.username = profileLink.innerText;
@@ -56,17 +56,17 @@ It's quite large, because the integration with ThriveCart has a lot of features,
                 }
                 console.warn('FastComments: No user profile info found - waiting and trying again.');
                 attemptsRemaining--;
-                return setTimeout(tryLoad, attemptsRemaining < 5 ? 3000 : 100); // povečaj čas čakanja po 5 poskusih v primeru počasnega interneta.
+                return setTimeout(tryLoad, attemptsRemaining < 5 ? 3000 : 100); // increase wait time after 5 attempts incase slow internet.
             }
 
             let url;
             const selectedNavLink = document.querySelector('.tcc-browse-lesson.active a');
 
             if (selectedNavLink) {
-                // včasih TC na isti strani uporablja več povezav, zato jih odstranimo podvojitve.
+                // sometimes TC uses multiple links the same page, so let's de-dupe them.
                 url = getPathnameFromUrl(selectedNavLink.href);
             } else {
-                // odstrani marketinške parametre in ime domene
+                // trim marketing parameters and domain name
                 url = window.location.pathname;
             }
 
@@ -87,11 +87,11 @@ It's quite large, because the integration with ThriveCart has a lot of features,
         function getPathnameFromUrl(url) {
             try {
                 const parsedUrl = new URL(url);
-                // odstrani marketinške parametre in ime domene
+                // trim marketing parameters and domain name
                 return parsedUrl.pathname;
             } catch (error) {
                 console.error("Invalid URL", url, error);
-                return window.location.pathname; // privzeto na trenutno, tako da vsaj včasih deluje
+                return window.location.pathname; // default to current, so at least it works sometimes
             }
         }
 
@@ -99,25 +99,22 @@ It's quite large, because the integration with ThriveCart has a lot of features,
 </script>
 [inline-code-end]
 
-Zdaj ga prilepite v blok kode na levi strani urejevalnika ThriveCart. Izgledalo bi naj takole:
+Zdaj jo prilepite v blok kode na levi strani v ThriveCart urejevalniku. Videti mora biti takole:
 
 <div class="screenshot white-bg">
     <div class="title">Koda dodana</div>
     <img class="screenshot-image" src="/images/installation-guides/thrivecart-learn-step-2-1-paste-code.png" alt="Koda dodana" />
 </div>
 
-To je vse! Zdaj moramo samo še objaviti:
+To je vse! Zdaj moramo le še objaviti:
 
 <div class="screenshot white-bg">
-    <div class="title">Objavi</div>
-    <img class="screenshot-image" src="/images/installation-guides/thrivecart-learn-step-2-2-publish.png" alt="Objavi" />
+    <div class="title">Objava</div>
+    <img class="screenshot-image" src="/images/installation-guides/thrivecart-learn-step-2-2-publish.png" alt="Objava" />
 </div>
 
-To je vse! Zdaj bi morali ob predogledu videti polje za komentarje na vašem tečaju, pravi uporabniki pa bodo lahko pustili komentarje **brez prijave ali ponovnega vnašanja uporabniškega imena/e-pošte**.
+To je to! Zdaj bi morali pri predogledu videti okvir za komentarje v vašem tečaju, pravi uporabniki pa bodo lahko puščali komentarje **brez prijave ali ponovnega vnašanja uporabniškega imena/e-pošte**.
 
 ### Opomba za testiranje!
 
-Če imate anonimno komentiranje onemogočeno, kar je privzeto, ne boste mogli pustiti komentarjev v `Preview` načinu kot uporabnik `John Smith`. Dobili boste avtentikacijsko
-napako, ker privzeti uporabnik `John Smith` nima e-pošte. Če želite testirati, priporočamo, da uporabite kupon in se premikate po svoji strani kot dejanski uporabnik.
-
----
+Če imate onemogočeno anonimno komentiranje (kar je privzeto), ne boste mogli puščati komentarjev v načinu `Preview` kot uporabnik `John Smith`. Prejeli boste napako avtentikacije, saj privzeti uporabnik `John Smith` nima e-pošte. Če želite testirati, priporočamo, da uporabite kodo za kupon in prehodite svojo stran kot pravi uporabnik.

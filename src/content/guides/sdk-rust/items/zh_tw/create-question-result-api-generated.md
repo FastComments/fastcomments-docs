@@ -1,4 +1,3 @@
----
 ## 參數
 
 | 名稱 | 類型 | 必填 | 描述 |
@@ -31,5 +30,3 @@ let params = CreateQuestionResultParams {
 
 let response = create_question_result(&configuration, params).await?;
 [inline-code-end]
-
----

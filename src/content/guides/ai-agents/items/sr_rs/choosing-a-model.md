@@ -1,29 +1,29 @@
-Each agent runs against one of two LLM models, picked on the **Модел** section of the edit form.
+Сваки агент ради на једном од два LLM модела, који се бирају у одељку **Model** на форми за уређивање.
 
-### The two options
+### Две опције
 
-- **GLM 5.1 (DeepInfra) - Паметнији, мало спорији** - the default. Higher reasoning quality, somewhat slower per call. Recommended for moderation-style agents (`Moderator` template, anything that calls `ban_user` or `mark_comment_spam`) where the cost of a wrong call is high.
+- **GLM 5.1 (DeepInfra) - Паметнији, нешто спорији** - подразумевани. Већи квалитет резоновања, нешто спорији по позиву. Препоручује се за агенте типа модерације (`Moderator` шаблон, све што позива `ban_user` или `mark_comment_spam`), где је цена погрешног позива висока.
 
-- **GPT-OSS 120B Turbo (DeepInfra) - Бржи** - faster per call, lower latency. Recommended for high-volume, low-stakes agents (welcome greeter, thread pinner) where you want responses within seconds and the consequences of an off call are minor.
+- **GPT-OSS 120B Turbo (DeepInfra) - Бржи** - бржи по позиву, мања латенција. Препоручује се за агенте са великим обимом и малим улогом (добродошлица, закачивање тема) где желите одговоре у року од неколико секунди, а последице погрешног позива су мале.
 
-Both models support function calling, both run via the same OpenAI-compatible API, and both share the same per-tool schemas - so you can switch a saved agent between them at any time without other config changes.
+Оба модела подржавају позивање функција, оба раде преко истог OpenAI-компатибилног API-ја и оба деле исте шеме по алату - тако да можете у сваком тренутку пребацити сачуваног агента са једног на други без других измена конфигурације.
 
-### Cost differences
+### Разлике у трошковима
 
-The two models have different per-token costs. The agent's [буџетска ограничења](#budgets-overview) are denominated in your account currency, not in tokens, so a switch from one model to the other changes how many runs fit inside your daily and monthly caps. The [Историја покретања](#run-history) page shows the per-run cost in your currency once a run completes - watching a few runs after a switch is the easiest way to gauge the new burn rate.
+Два модела имају различите трошкове по токену. [Ограничења буџета](#budgets-overview) агента изражена су у валути вашег налога, а не у токенима, тако да прелазак са једног модела на други мења колико извршавања стаје у вашим дневним и месечним лимитима. Страница [Run History](#run-history) приказује трошак по извршавању у вашој валути када се извршавање заврши - праћење неколико извршавања након преласка је најлакши начин да процените нову стопу потрошње.
 
-### Tokens per run
+### Токени по извршавању
 
-The model's response token usage is logged on every trigger as **tokensUsed**. It is included on the `trigger.succeeded` and `trigger.failed` webhook payloads (see [Подаци вебхука](#webhook-payloads)) and shown in [Преглед детаља покретања](#run-detail-view). The amount depends on:
+Потрошња токена одговора модела се бележи при сваком окидачу као **tokensUsed**. Укључена је у `trigger.succeeded` и `trigger.failed` webhook payload-ове (види [Webhook Payloads](#webhook-payloads)) и приказана је у [Run Detail View](#run-detail-view). Количина зависи од:
 
-- How much [Контекст](#context-options) you include - thread context, user history, and page metadata all add tokens.
-- How long your [Почетни упит](#personality-prompt) and [Смернице за заједницу](#community-guidelines) are.
-- How many tools the agent calls in a single run (each tool call and its result round-trips through the model).
+- Колико [Контекста](#context-options) укључујете - контекст теме, историја корисника и метаподаци странице сви додају токене.
+- Колико су дуги ваш [Почетни упит](#personality-prompt) и [Смернице заједнице](#community-guidelines).
+- Колико алата агент позива у једном извршавању (сваки позив алата и његов резултат пролазе кроз модел у оба смера).
 
-**Макс. токена по покрету** (default 20,000) is the upper bound per run, set per-agent.
+**Max Tokens Per Trigger** (подразумевано 20.000) је горња граница по извршавању, поставља се по агенту.
 
-### Switching models
+### Пребацивање модела
 
-You can switch models on the edit form at any time. Existing run history and analytics keep their original token and cost numbers - they are recorded at run time. The new model only applies to runs that start after you save.
+Можете пребацити моделе на форми за уређивање у било ком тренутку. Постојећа историја извршавања и аналитика задржавају своје оригиналне бројеве токена и трошкова - бележе се у тренутку извршавања. Нови модел се односи само на извршавања која почињу након што сачувате.
 
-There is no "use whichever model is cheaper" option. The choice is explicit per agent.
+Не постоји опција "користи који год модел је јефтинији". Избор је експлицитан по агенту.

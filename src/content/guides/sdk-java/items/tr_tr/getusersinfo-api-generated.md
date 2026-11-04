@@ -1,4 +1,3 @@
----
 Bir kiracı için toplu kullanıcı bilgisi. Given userIds, return display info from User / SSOUser.
 Yorum bileşeni tarafından, bir presence etkinliği yoluyla yeni görünen kullanıcıları zenginleştirmek için kullanılır.
 Sayfa bağlamı yok: gizlilik tutarlı şekilde uygulanır (özel profiller maskelenir).
@@ -47,5 +46,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

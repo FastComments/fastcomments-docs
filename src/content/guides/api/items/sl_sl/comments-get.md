@@ -181,5 +181,3 @@ Za anonimno komentiranje verjetno želite posredovati `anonUserId` pri pridobiva
 #### Komentarji se ne vračajo
 
 Preverite, da so vaši komentarji odobreni in niso neželeni.
-
----

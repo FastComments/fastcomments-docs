@@ -9,16 +9,14 @@ Najmanjša možna razširitev bi bila:
 })();
 [inline-code-end]
 
-V ta primer shranite datoteko kot `my-extension.js`, in jo naredite dostopno na `https://example.com/my-extension.min.js`.
+Za namen tega primera shranite to kot `my-extension.js` in poskrbite, da bo dostopna na `https://example.com/my-extension.min.js`.
 
-Ta razširitev ne počne ničesar, ob nalaganju pa pridobi objekt razširitve, ki ga ustvari osnovna knjižnica komentarjev.
+Ta razširitev ne naredi ničesar, le ob nalaganju pridobi objekt razširitve, ustvarjen s strani osnovne knjižnice za komentarje.
 
-This `Extension` object is a singleton and is not shared with any other extensions.
+Ta objekt `Extension` je singleton in ni v skupni rabi z drugimi razširitvami.
 
-Da naložimo našo razširitev, moramo pripomočku za komentarje povedati za njo. Na primer:
+Nato, da naložimo našo razširitev, moramo o njej obvestiti gradnik za komentarje. Na primer:
 
-[code-example-start config = {extensions: [{id: "my-extension", path: "https://example.com/my-extension.min.js"}]}; linesToHighlight = [6,7,8,9,10,11]; title = 'Using a Custom Extension'; code-example-end]
+[code-example-start config = {extensions: [{id: "my-extension", path: "https://example.com/my-extension.min.js"}]}; linesToHighlight = [6,7,8,9,10,11]; title = 'Uporaba razširitve po meri'; code-example-end]
 
-Za funkcionalne primere glejte naslednji razdelek.
-
----
+Za funkcionalne primere si oglejte naslednji razdelek.

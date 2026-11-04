@@ -1,4 +1,3 @@
----
 Para usar a API para criar um tenant com marca branca, devemos fazer o seguinte:
 
 1. Chame a [Tenants API](/guide-api.html#tenant-structure) para criar o tenant.
@@ -9,5 +8,3 @@ Para usar a API para criar um tenant com marca branca, devemos fazer o seguinte:
 6. Opcionalmente, [Setup SSO](/guide-customizations-and-configuration.html#sso).
 
 Isto tudo pode ser feito durante o período de avaliação.
-
----

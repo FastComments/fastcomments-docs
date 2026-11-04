@@ -26,5 +26,3 @@ api->createTenantPackage(tenantId, body).then([](pplx::task<std::shared_ptr<Crea
     }
 });
 [inline-code-end]
-
----

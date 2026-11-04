@@ -23,5 +23,3 @@ api->getQuestionResults(tenantId, options)
         // manejar la respuesta
     });
 [inline-code-end]
-
----

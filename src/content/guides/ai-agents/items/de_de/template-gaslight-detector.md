@@ -1,4 +1,3 @@
----
 **Template ID:** `gaslight_detector`
 
 Der Gaslight-Detector überwacht Kommentaränderungen, die die Historie mitten in einer Unterhaltung umschreiben — die Art, bei der ein Autor die Bedeutung eines früheren Kommentars ändert, nachdem bereits Antworten geschrieben wurden, sodass nachfolgende Antworten aus dem Zusammenhang gerissen oder falsch erscheinen. Wenn der Agent entscheidet, dass eine Bearbeitung diese Grenze überschreitet, stellt er den Originaltext wieder her und sendet dem Autor eine DM zur Erklärung.
@@ -30,5 +29,3 @@ Er kann nicht sperren, als Spam markieren, abstimmen oder neue Kommentare posten
 ### Empfohlene Trockentestdauer
 
 Lassen Sie es mindestens zwei Wochen mit echtem Traffic im [Trockentest](#dry-run-mode) laufen, bevor Sie auf Aktiviert umschalten, und prüfen Sie in diesem Zeitraum jede markierte Bearbeitung. Verwenden Sie [Testläufe (Wiedergaben)](#test-runs-replays), um die letzten 30 Tage von Bearbeitungen gegen den Agenten abzuspielen, bevor Sie live gehen.
-
----

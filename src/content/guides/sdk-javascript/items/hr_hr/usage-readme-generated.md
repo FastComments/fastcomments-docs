@@ -1,4 +1,3 @@
----
 Ovaj SDK pruža odvojene ulazne točke za pregledničko i serversko okruženje kako bi se osigurala optimalna kompatibilnost i sigurnost:
 
 ### Korištenje u pregledniku (klijentska strana)
@@ -82,4 +81,3 @@ const config = new Configuration({
 const defaultApi = new DefaultApi(config);
 const publicApi = new PublicApi(config);
 ```
----

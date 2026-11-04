@@ -69,5 +69,3 @@ export class AppModule { }
 Віджет використовує відстеження змін, тож зміна будь-якої властивості об'єкта конфігурації спричинить його перезавантаження.
 
 Ви можете знайти конфігурацію, яку підтримує Angular-компонент, <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">тут</a>.
-
----

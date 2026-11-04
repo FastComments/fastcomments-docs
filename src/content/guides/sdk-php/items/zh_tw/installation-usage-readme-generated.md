@@ -1,4 +1,3 @@
----
 ### 需求
 
 PHP 7.4 或更新版本。  
@@ -32,4 +31,3 @@ PHP 7.4 或更新版本。
 <?php
 require_once('/path/to/fastcomments/client/vendor/autoload.php');
 ```
----

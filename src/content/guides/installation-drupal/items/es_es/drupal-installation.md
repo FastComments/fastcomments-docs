@@ -1,21 +1,18 @@
----
-El módulo FastComments para Drupal reemplaza los comentarios integrados de Drupal por un sistema de comentarios en tiempo real y rápido. El módulo está [publicado en drupal.org](https://www.drupal.org/project/fcom) y es compatible con Drupal 10 y 11.
+El módulo de FastComments para Drupal reemplaza los comentarios integrados de Drupal con un sistema de comentarios rápido y en tiempo real. El módulo está [publicado en drupal.org](https://www.drupal.org/project/fcom) y funciona con Drupal 10 y 11.
 
 Hay dos formas de instalarlo.
 
-## Install with Composer
+## Instalar con Composer
 
 ```
 composer require drupal/fcom
 drush en fastcomments
 ```
 
-## Install manually
+## Instalación manual
 
-Descargue el módulo desde [drupal.org/project/fcom](https://www.drupal.org/project/fcom) y colóquelo en el directorio `modules/custom/fastcomments/` de su sitio. Luego actívelo con `drush en fastcomments`, o desde la interfaz de administración en `Extend` (`/admin/modules`).
+Descarga el módulo desde [drupal.org/project/fcom](https://www.drupal.org/project/fcom) y colócalo en el directorio `modules/custom/fastcomments/` de tu sitio. Luego actívalo con `drush en fastcomments`, o desde la interfaz de administración en `Extend` (`/admin/modules`).
 
-<sup>¡Nota!</sup> El módulo solo depende del núcleo de Drupal (`user` y `field`). No se requieren otros módulos o bibliotecas de Drupal.
+<sup>¡Nota!</sup> El módulo solo depende del núcleo de Drupal (`user` y `field`). No se requieren otros módulos ni librerías de Drupal.
 
-Una vez habilitado el módulo, diríjase a la sección `Configuration` para configurar su Tenant ID y API Secret.
-
----
+Una vez que el módulo esté activado, ve a la sección `Configuration` para configurar tu Tenant ID y API Secret.

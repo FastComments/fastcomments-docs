@@ -1,4 +1,3 @@
----
 ## Παράμετροι
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
@@ -21,5 +20,3 @@ if voteRespOpt.isSome:
   discard voteResp
   discard httpResp
 [inline-code-end]
-
----

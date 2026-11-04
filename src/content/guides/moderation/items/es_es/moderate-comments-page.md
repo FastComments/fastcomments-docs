@@ -1,11 +1,11 @@
-The place where most moderation takes place is the Comment Moderation page. For example, here's a screenshot of our current demo account:
+El lugar donde se realiza la mayor parte de la moderación es la página de Moderación de Comentarios. Por ejemplo, aquí hay una captura de pantalla de nuestra cuenta de demostración actual:
 
-[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=3&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = 'body'; alt='Página completa de Moderación de Comentarios de la cuenta de demostración, mostrando filtros, búsqueda y tres comentarios por página'; title='Página de Moderación de Comentarios' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=3&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = 'body'; alt='Página completa de Moderación de Comentarios para la cuenta de demostración, mostrando filtros, búsqueda y tres comentarios por página'; title='Página de Moderación de Comentarios' app-screenshot-end]
 
-We've set the count per page to three to make this screenshot a reasonable size. In practice, you would be working with 50 comments per page by default.
+Hemos configurado el número de elementos por página en tres para que esta captura de pantalla tenga un tamaño razonable. En la práctica, trabajarías con 50 comentarios por página de forma predeterminada.
 
-The moderation page also supports [Keyboard Shortcuts](#keyboard-shortcuts) for navigating between comments and performing actions without using the mouse. Press **?** on the moderation page to see all available shortcuts.
+La página de moderación también es compatible con [Atajos de Teclado](#keyboard-shortcuts) para navegar entre comentarios y realizar acciones sin usar el ratón. Presiona **?** en la página de moderación para ver todos los atajos disponibles.
 
-The page is also **live** — when new comments arrive that match your current filters, a banner appears at the top alerting you. See [Live Moderating](#comment-actions-live) for details.
+La página también es **en vivo** — cuando llegan nuevos comentarios que coinciden con tus filtros actuales, aparece un banner en la parte superior alertándote. Consulta [Moderación en Vivo](#comment-actions-live) para más detalles.
 
-Let's go into the features shown here.
+Profundicemos en las funciones que se muestran aquí.

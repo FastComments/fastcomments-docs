@@ -3,5 +3,3 @@
 - [질문 구성 자체](/guide-api.html#question-config-structure)
 - [개별 결과](/guide-api.html#question-result-structure)
 - [집계](/guide-api.html#question-results-aggregate)
-
----

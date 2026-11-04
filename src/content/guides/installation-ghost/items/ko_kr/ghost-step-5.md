@@ -1,28 +1,28 @@
-Next we need to identify where to add the FastComments.com widget code.
+다음으로 FastComments.com 위젯 코드를 추가할 위치를 확인해야 합니다.
 
-If you're using the default `casper` theme, you'll see a section like this at line `82`:
+기본 `casper` 테마를 사용하는 경우 `82`번째 줄에서 다음과 같은 섹션을 볼 수 있습니다:
 
 <div class="screenshot white-bg">
     <div class="title">비활성화된 댓글 섹션</div>
     <img class="screenshot-image" src="/images/installation-guides/ghost-step-5-1-identify-section.png" alt="비활성화된 댓글 섹션" />
 </div>
 
-If you're using other themes, you won't see this, and will need to add this code after the last `</section>`:
+다른 테마를 사용하는 경우에는 이 섹션이 보이지 않으며, 마지막 `</section>` 뒤에 이 코드를 추가해야 합니다:
 
-[inline-code-attrs-start title = '섹션 예제'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = '섹션 예시'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <section class="article-comments gh-canvas">
 </section>
 [inline-code-end]
 
-You should have something like this ready:
+다음과 같은 형태가 준비되어 있어야 합니다:
 
 <div class="screenshot white-bg">
-    <div class="title">댓글 코드 삽입을 위한 템플릿 준비</div>
-    <img class="screenshot-image" src="/images/installation-guides/ghost-step-5-2-cleanup.png" alt="댓글 코드 삽입을 위한 템플릿 준비" />
+    <div class="title">댓글 코드를 위한 준비된 템플릿</div>
+    <img class="screenshot-image" src="/images/installation-guides/ghost-step-5-2-cleanup.png" alt="댓글 코드를 위한 준비된 템플릿" />
 </div>
 
-Once ready, copy the FastComments.com widget code:
+준비가 되면 FastComments.com 위젯 코드를 복사합니다:
 
 [inline-code-attrs-start title = 'Ghost FastComments.com 댓글 코드 스니펫'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -57,11 +57,11 @@ Once ready, copy the FastComments.com widget code:
 </script>
 [inline-code-end]
 
-...and it should look like this:
+...그러면 다음과 같이 표시됩니다:
 
 <div class="screenshot white-bg">
     <div class="title">FastComments.com 댓글 코드 추가</div>
     <img class="screenshot-image" src="/images/installation-guides/ghost-step-5-3-paste-code.png" alt="FastComments.com 댓글 코드 추가" />
 </div>
 
-Coding done. Now we just have to re-import our theme!
+코딩이 완료되었습니다. 이제 테마를 다시 가져오기만 하면 됩니다!

@@ -20,5 +20,3 @@ if voteRespOpt.isSome:
   discard voteResp
   discard httpResp
 [inline-code-end]
-
----

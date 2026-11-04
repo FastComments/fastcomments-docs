@@ -1,25 +1,23 @@
-Attach a poll to a comment, or set the full state of the poll it already has.
+Pripnite anketo k komentarju ali nastavite celotno stanje ankete, ki jo že ima.
 
-Options are matched by id: an option sent with the id of an existing option keeps its votes (and takes the
-new label and position), an option sent without an id is added, and existing options left out of the list
-are removed along with the votes cast on them.
+Možnosti se ujemajo po id: možnost, poslana z id obstoječe možnosti, obdrži svoje glasove (in prevzame novo oznako ter položaj), možnost brez id se doda, obstoječe možnosti, ki jih ni na seznamu, pa se odstranijo skupaj z glasovi, oddanimi zanje.
 
-Keeping no existing option ids on a poll that has votes deletes all of them, so that needs replaceVotes=true.
+Če na anketi z glasovi ne obdržite nobenega id obstoječe možnosti, se vsi glasovi izbrišejo, zato je potreben replaceVotes=true.
 
-## Parameters
+## Parametri
 
-| Name | Type | Required | Description |
+| Ime | Vrsta | Obvezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| commentId | string | Yes |  |
-| commentPollPutInput | CommentPollPutInput | Yes |  |
-| replaceVotes | boolean | No |  |
+| tenantId | string | Da |  |
+| commentId | string | Da |  |
+| commentPollPutInput | CommentPollPutInput | Da |  |
+| replaceVotes | boolean | Ne |  |
 
-## Response
+## Odgovor
 
-Returns: [`SavePollResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/SavePollResponse.ts)
+Vrne: [`SavePollResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/SavePollResponse.ts)
 
-## Example
+## Primer
 
 [inline-code-attrs-start title = 'Primer putPoll'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

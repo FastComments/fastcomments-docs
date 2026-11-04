@@ -1,4 +1,3 @@
----  
 Para administradores, no topo da página de Moderação de Comentários há um botão **Adicionar Moderadores**.
 
 [app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=3&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = '.moderation-settings-options'; alt='Linha de botões no topo da página de Moderação de Comentários, incluindo o botão Adicionar Moderadores'; title='Botões de Configuração da Moderação de Comentários' app-screenshot-end]

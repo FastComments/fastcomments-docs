@@ -1,4 +1,3 @@
----
 Visualizadores atualmente online de uma página: pessoas cuja sessão websocket está inscrita na página neste momento.  
 Retorna anonCount + totalCount (assinantes de toda a sala, incluindo visualizadores anônimos que não enumeramos).
 
@@ -37,5 +36,3 @@ async function fetchOnlineUsers() {
 
 fetchOnlineUsers();
 [inline-code-end]
-
----

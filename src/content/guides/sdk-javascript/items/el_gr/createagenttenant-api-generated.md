@@ -25,5 +25,3 @@ const tenantBody: CreateAgentTenantBody = {
 
 const result: CreateAgentTenantResponse = await createAgentTenant(tenantBody);
 [inline-code-end]
-
----

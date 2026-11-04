@@ -30,5 +30,3 @@ try {
     print('Exception when calling DefaultApi->deletePendingWebhookEvent: $e\n');
 }
 [inline-code-end]
-
----

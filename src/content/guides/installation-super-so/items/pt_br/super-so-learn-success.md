@@ -8,5 +8,3 @@ Sucesso! Agora você deve ver o FastComments instalado.
 </div>
 
 Parabéns por configurar o FastComments com o Super! Se você encontrou um Domain Error, ou gostaria de aprender como personalizar a área de comentários, continue lendo!
-
----

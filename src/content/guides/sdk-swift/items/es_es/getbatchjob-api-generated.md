@@ -1,4 +1,3 @@
----
 Estado, progreso y, una vez completado, el resultado de un trabajo por lotes.
 
 ## Parámetros
@@ -33,5 +32,3 @@ DefaultAPI.getBatchJob(tenantId: tenantId, id: id) { (response, error) in
     }
 }
 [inline-code-end]
-
----

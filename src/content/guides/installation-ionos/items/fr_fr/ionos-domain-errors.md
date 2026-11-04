@@ -1,4 +1,3 @@
----
 Vous pouvez rencontrer une erreur d'autorisation, comme celle-ci :
 
 <div class="screenshot white-bg">
@@ -13,5 +12,3 @@ Dans ce cas, la solution est simple. Vous devez simplement ajouter votre site à
 [Allez ici pour ajouter votre site à votre compte.](https://fastcomments.com/auth/my-account/configure-domains)
 
 Vous devriez maintenant avoir un système de commentaires en direct et rapide ajouté à votre site Ionos !
-
----

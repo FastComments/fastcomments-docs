@@ -1,13 +1,13 @@
-The individual votes behind one poll's tallies, oldest first.
+Οι μεμονωμένες ψήφοι πίσω από τα σύνολα μιας ψηφοφορίας, ξεκινώντας από τις παλαιότερες.
 
-A poll belongs to a comment, so votes are always read one poll at a time - commentId is required. That
-keeps every query on the indexes the collection already has.
+Μια ψηφοφορία ανήκει σε ένα σχόλιο, οπότε οι ψήφοι διαβάζονται πάντα μία ψηφοφορία τη φορά - το commentId είναι υποχρεωτικό. Αυτό
+διατηρεί κάθε ερώτημα στα ευρετήρια που έχει ήδη η συλλογή.
 
-Obeys the poll's privacy: an anonymous poll's votes cannot be read (poll-anonymous), here or by id.
+Τηρεί την ιδιωτικότητα της ψηφοφορίας: οι ψήφοι μιας ανώνυμης ψηφοφορίας δεν μπορούν να διαβαστούν (poll-anonymous), ούτε εδώ ούτε μέσω id.
 
-## Parameters
+## Παράμετροι
 
-| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
+| Όνομα | Τύπος | Τοποθεσία | Υποχρεωτικό | Περιγραφή |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ναι |  |
 | commentId | string | query | Ναι |  |
@@ -15,7 +15,7 @@ Obeys the poll's privacy: an anonymous poll's votes cannot be read (poll-anonymo
 | optionId | string | query | Όχι |  |
 | skip | integer | query | Όχι |  |
 
-## Απάντηση
+## Απόκριση
 
 Επιστρέφει: [`GetPollVotesResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetPollVotesResponse.java)
 
@@ -23,7 +23,7 @@ Obeys the poll's privacy: an anonymous poll's votes cannot be read (poll-anonymo
 
 [inline-code-attrs-start title = 'Παράδειγμα getPollVotes'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Εισαγωγή κλάσεων:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -36,18 +36,18 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Διαμόρφωση εξουσιοδότησης κλειδιού API: api_key
+    // Configure API key authorization: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Αφαιρέστε το σχόλιο στην παρακάτω γραμμή για να ορίσετε ένα πρόθεμα για το κλειδί API, π.χ. "Token" (προεπιλογή είναι null)
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
-    String tenantId = "tenantId_example"; // String |
-    String commentId = "commentId_example"; // String |
-    String voterId = "voterId_example"; // String |
-    String optionId = "optionId_example"; // String |
-    Integer skip = 56; // Integer |
+    String tenantId = "tenantId_example"; // String | 
+    String commentId = "commentId_example"; // String | 
+    String voterId = "voterId_example"; // String | 
+    String optionId = "optionId_example"; // String | 
+    Integer skip = 56; // Integer | 
     try {
       GetPollVotesResponse result = apiInstance.getPollVotes(tenantId, commentId)
             .voterId(voterId)

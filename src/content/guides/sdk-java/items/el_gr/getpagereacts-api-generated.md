@@ -1,12 +1,12 @@
-Custom react counts for a page, optionally with the users who reacted.
+Προσαρμοσμένα react counts για μια σελίδα, προαιρετικά με τους χρήστες που έκαναν react.
 
-## Parameters
+## Παράμετροι
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
-|------|------|----------|------------|-----------|
-| tenantId | string | query | Yes |  |
-| urlId | string | query | Yes |  |
-| includeUserInfo | string | query | No | "\"public\" παραλείπει χρήστες με ιδιωτικά προφίλ, \"include-private\" τα περιλαμβάνει." |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Ναι |  |
+| urlId | string | query | Ναι |  |
+| includeUserInfo | string | query | Όχι | Το "public" παραλείπει χρήστες με ιδιωτικά προφίλ, το "include-private" τους συμπεριλαμβάνει. |
 
 ## Απάντηση
 
@@ -16,7 +16,7 @@ Custom react counts for a page, optionally with the users who reacted.
 
 [inline-code-attrs-start title = 'Παράδειγμα getPageReacts'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Εισαγωγή κλάσεων:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -29,30 +29,28 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Διαμόρφωση εξουσιοδότησης κλειδιού API: api_key
+    // Configure API key authorization: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Απενεργοποιήστε το σχόλιο στην παρακάτω γραμμή για να ορίσετε πρόθεμα για το κλειδί API, π.χ. "Token" (προεπιλογή είναι null)
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
-    PageReactIncludeUserInfo includeUserInfo = PageReactIncludeUserInfo.fromValue("public"); // PageReactIncludeUserInfo | \"public\" παραλείπει χρήστες με ιδιωτικά προφίλ, \"include-private\" τα περιλαμβάνει.
+    PageReactIncludeUserInfo includeUserInfo = PageReactIncludeUserInfo.fromValue("public"); // PageReactIncludeUserInfo | Το \"public\" παραλείπει χρήστες με ιδιωτικά προφίλ, το \"include-private\" τους συμπεριλαμβάνει.
     try {
       GetPageReactsAPIResponse result = apiInstance.getPageReacts(tenantId, urlId)
             .includeUserInfo(includeUserInfo)
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Εξαίρεση κατά την κλήση του DefaultApi#getPageReacts");
-      System.err.println("Κωδικός κατάστασης: " + e.getCode());
-      System.err.println("Αιτία: " + e.getResponseBody());
-      System.err.println("Κεφαλίδες απόκρισης: " + e.getResponseHeaders());
+      System.err.println("Exception when calling DefaultApi#getPageReacts");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }
 }
 [inline-code-end]
-
----

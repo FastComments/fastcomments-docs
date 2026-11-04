@@ -1,10 +1,10 @@
-By default, FastComments will allow users to edit their comments.
+Podrazumevano, FastComments dozvoljava korisnicima da uređuju svoje komentare.
 
-However, it is possible to prevent this.
+Međutim, moguće je sprečiti ovo.
 
-In the widget customization page, see the "Disable Editing" option.
+Na stranici za prilagođavanje vidžeta, pogledajte opciju "Disable Editing".
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.disable-commenter-comment-edit'; selector = '.disable-commenter-comment-edit'; alt='Opcija Disable Editing na stranici za prilagođavanje widgeta, sprečava komentatore da uređuju svoje komentare'; title='Onemogući uređivanje komentara' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.disable-commenter-comment-edit'; selector = '.disable-commenter-comment-edit'; alt='Opcija Disable Editing na stranici za prilagođavanje vidžeta, koja sprečava komentatore da uređuju svoje komentare'; title='Onemogući uređivanje komentara' app-screenshot-end]
 
-- This only impacts regular Commenters and not moderators or admins, who will still be able to edit.
-- This will also impact API integrations for when `contextUserId` is passed.
+- Ovo utiče samo na obične komentatore, a ne na moderatore ili administratore, koji i dalje mogu da uređuju.
+- Ovo takođe utiče na API integracije kada se prosleđuje `contextUserId`.

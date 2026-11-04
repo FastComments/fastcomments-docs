@@ -80,5 +80,3 @@ Als zodanig werkt alle aangepaste styling die voor de JavaScript-reactiewidget w
 Bij SSR is er geen JavaScript om de hoogte van de gerenderde container te regelen. In browsers kan bij lange discussies een verticale schuifbalk verschijnen.
 
 Pas dit dus naar wens aan.
-
----

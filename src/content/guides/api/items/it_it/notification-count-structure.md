@@ -17,5 +17,3 @@ interface NotificationCount {
     expireAt: string // stringa della data
 }
 [inline-code-end]
-
----

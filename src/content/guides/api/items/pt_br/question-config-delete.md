@@ -28,5 +28,3 @@ interface QuestionConfigResponse {
     reason?: string
 }
 [inline-code-end]
-
----

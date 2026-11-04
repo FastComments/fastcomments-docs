@@ -28,5 +28,3 @@ if offlineResp.isSome:
   let offline = offlineResp.get()
   echo offline)
 [inline-code-end]
-
----

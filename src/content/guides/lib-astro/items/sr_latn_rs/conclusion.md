@@ -8,5 +8,3 @@ Ako naiđete na bilo kakve probleme ili imate pitanja u vezi Astro biblioteke, m
 ## Doprinosi
 
 Doprinosi su dobrodošli! Molimo posetite [GitHub repository](https://github.com/FastComments/fastcomments-astro) za smernice o doprinosu.
-
----

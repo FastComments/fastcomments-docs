@@ -1,4 +1,3 @@
----
 ### Widget za komentare
 
 Komponenta FastCommentsVue sadrži widget za komentare FastComments uživo.
@@ -26,4 +25,3 @@ export default Vue.extend({
   </div>
 </template>
 ```
----

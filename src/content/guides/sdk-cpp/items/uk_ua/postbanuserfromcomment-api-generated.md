@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Ім'я | Тип | Обов'язковий | Опис |
@@ -29,5 +28,3 @@ api->postBanUserFromComment(tenantId, commentId, options)
         try { t.get(); } catch (const std::exception& e) { /* обробка помилки */ }
     });
 [inline-code-end]
-
----

@@ -28,5 +28,3 @@ api->bulkAggregateQuestionResults(tenantId, request, forceRecalc)
        auto resp = t.get();
    });
 [inline-code-end]
-
----

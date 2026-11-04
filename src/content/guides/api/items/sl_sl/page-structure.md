@@ -1,4 +1,3 @@
----
 Objekt `Page` predstavlja stran, kateremu lahko pripada več komentarjev. Ta povezava je določena z
 `urlId`.
 
@@ -22,5 +21,3 @@ interface Page {
     isClosed?: boolean
 }
 [inline-code-end]
-
----

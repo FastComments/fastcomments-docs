@@ -40,5 +40,3 @@ DefaultAPI.getNotifications(tenantId: tenantId, options: DefaultAPI.GetNotificat
     }
 }
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 [api-resource-header-start name = 'Page Reacts'; route = 'POST /page-reacts/v2/:tenantId'; creditsCost = 0; api-resource-header-end]
 
 Добавя реакция към страница от текущия потребител. Потребителят може да добави всяко ID на реакция само веднъж: повторното добавяне успява с кода `already-reacted` и не променя броя. Потребителят може да добави няколко различни реакции към една и съща страница.
@@ -34,5 +33,3 @@ interface PageReactResponse {
     reason?: string
 }
 [inline-code-end]
-
----

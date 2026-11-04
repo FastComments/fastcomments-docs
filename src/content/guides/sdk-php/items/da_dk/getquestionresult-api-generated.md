@@ -41,5 +41,3 @@ try {
     echo 'Undtagelse ved kald af DefaultApi->getQuestionResult: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

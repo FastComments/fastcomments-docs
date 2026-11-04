@@ -1,8 +1,8 @@
-The Recent Discussions Widget displays a list of pages sorted by the most recent comment activity. It includes a heading, last activity dates, comment counts with icons, and automatic dark mode detection.
+Pripisek Nedavnih razprav prikazuje seznam strani, razvrščenih po najnovejši aktivnosti komentarjev. Vključuje naslov, datume zadnje aktivnosti, števce komentarjev z ikonami in samodejno zaznavanje temnega načina.
 
 ## Osnovna namestitev
 
-[inline-code-attrs-start title = 'Nastavitev oblikovanja pripomočka Nedavne razprave'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Nastavitev stila pripiska Nedavnih razprav'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/widget-recent-discussions-v2.min.js"></script>
 <div id="fastcomments-widget-recent-discussions"></div>
@@ -15,15 +15,15 @@ The Recent Discussions Widget displays a list of pages sorted by the most recent
 
 ## Možnosti konfiguracije
 
-- **tenantId** (obvezno): Vaš FastComments najemniški ID
-- **count** (neobvezno): Število strani za prikaz. Privzeto je `20`, največ `100`
-- **hasDarkBackground** (neobvezno): Vsili oblikovanje temnega načina. Samodejno zaznano iz ozadja strani, če ni nastavljeno
+- **tenantId** (obvezno): ID vašega najemnika FastComments
+- **count** (neobvezno): Število prikazanih strani. Privzeto je `20`, največ `100`
+- **hasDarkBackground** (neobvezno): Vsili stil temnega načina. Če ni nastavljeno, se samodejno zazna iz ozadja strani
 
-## Struktura pripomočka
+## Struktura pripiska
 
-Pripomoček se izriše z naslednjo HTML strukturo:
+Pripisek se izriše s sledečo strukturo HTML:
 
-[inline-code-attrs-start title = 'HTML struktura pripomočka Nedavne razprave'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Struktura HTML pripiska Nedavnih razprav'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <div class="fc-rd2">
     <div class="fc-rd2-heading">Recent Discussions</div>
@@ -41,7 +41,7 @@ Pripomoček se izriše z naslednjo HTML strukturo:
 
 ## Privzeta referenca CSS
 
-[inline-code-attrs-start title = 'Privzeti CSS pripomočka Nedavne razprave'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Privzeti CSS pripiska Nedavnih razprav'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rd2 {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -61,11 +61,11 @@ Pripomoček se izriše z naslednjo HTML strukturo:
 .fc-rd2-count { font-size: 12px; font-weight: 600; color: #666; }
 [inline-code-end]
 
-## Primeri prilagoditev
+## Primeri prilagoditve
 
-### Odstrani obrobo vsebnika
+### Odstranitev obrobe vsebnika
 
-[inline-code-attrs-start title = 'Odstrani obrobo vsebnika'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Odstranitev obrobe vsebnika'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rd2 {
     border: none !important;
@@ -73,13 +73,11 @@ Pripomoček se izriše z naslednjo HTML strukturo:
 }
 [inline-code-end]
 
-### Barva povezave po meri
+### Barva povezav po meri
 
-[inline-code-attrs-start title = 'Barva povezave po meri'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Barva povezav po meri'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 a.fc-rd2-title:hover {
     color: #e63946 !important;
 }
 [inline-code-end]
-
----

@@ -26,5 +26,3 @@ L'ajout de commentaires en direct à une Nimbus Note est également pris en char
 2. Lorsque vous modifiez votre note, ajoutez un bloc d'intégration.
 3. Utilisez l'URL de l'étape 1 comme URL à intégrer.
 4. Terminé !
-
----

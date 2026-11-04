@@ -1,4 +1,3 @@
----
 FastComments-appen for Zapier forbinder dine kommentarer med tusindvis af andre apps uden at skrive kode.
 
 Brug den til at poste en Slack-besked, når nogen kommenterer, logge hver kommentar til et regneark, oprette en  
@@ -10,5 +9,3 @@ Denne vejledning antager, at du har en FastComments-konto. [Du kan oprette en he
 
 Denne vejledning dækker brug af Zapier-appen. De endpoints den kalder, sammen med anmodnings- og svarformater samt OAuth‑  
 flowet bag forbindelsen, er dokumenteret i [API-referencen](./guide-api.html).
-
----

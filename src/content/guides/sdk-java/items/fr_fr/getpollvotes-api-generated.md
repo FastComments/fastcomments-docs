@@ -1,19 +1,19 @@
-The individual votes behind one poll's tallies, oldest first.
+Les votes individuels derrière les totaux d'un sondage, du plus ancien au plus récent.
 
-A poll belongs to a comment, so votes are always read one poll at a time - commentId is required. That
-keeps every query on the indexes the collection already has.
+Un sondage appartient à un commentaire, donc les votes sont toujours lus un sondage à la fois - commentId est requis. Cela
+garantit que chaque requête utilise les index déjà présents dans la collection.
 
-Obeys the poll's privacy: an anonymous poll's votes cannot be read (poll-anonymous), here or by id.
+Respecte la confidentialité du sondage : les votes d'un sondage anonyme ne peuvent pas être lus (poll-anonymous), ni ici ni par identifiant.
 
 ## Paramètres
 
-| Nom | Type | Emplacement | Obligatoire | Description |
+| Nom | Type | Emplacement | Requis | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| commentId | string | query | Yes |  |
-| voterId | string | query | No |  |
-| optionId | string | query | No |  |
-| skip | integer | query | No |  |
+| tenantId | string | query | Oui |  |
+| commentId | string | query | Oui |  |
+| voterId | string | query | Non |  |
+| optionId | string | query | Non |  |
+| skip | integer | query | Non |  |
 
 ## Réponse
 
@@ -23,7 +23,7 @@ Renvoie : [`GetPollVotesResponse`](https://github.com/FastComments/fastcomments-
 
 [inline-code-attrs-start title = 'Exemple getPollVotes'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importer les classes :
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -36,10 +36,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configurer l'autorisation de la clé API : api_key
+    // Configure API key authorization: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Décommentez la ligne suivante pour définir un préfixe pour la clé API, par ex. "Token" (defaults to null)
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);

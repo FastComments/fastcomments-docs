@@ -1,4 +1,3 @@
----
 Sunucu tarafından sağlanan dizeleri yerelleştirmek için yapılandırmaya bir yerel kodu iletin:
 
 ```swift

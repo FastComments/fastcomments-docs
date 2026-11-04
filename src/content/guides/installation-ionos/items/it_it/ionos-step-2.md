@@ -58,5 +58,3 @@ Ora copia il codice seguente:
     <div class="title">Incolla e Salva</div>
     <img class="screenshot-image" src="/images/installation-guides/ionos-step-2-paste-and-save.png" alt="Incolla e Salva" />
 </div>
-
----

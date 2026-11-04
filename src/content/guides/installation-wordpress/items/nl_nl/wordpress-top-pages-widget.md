@@ -28,5 +28,3 @@ Open de **Site-editor** onder **Weergave > Editor**. Navigeer naar het templateg
 ## Problemen oplossen
 
 De widget wordt pas weergegeven nadat de FastComments-installatie is voltooid en er een tenant ID is opgeslagen. Als het widgetgebied leeg is, voltooi de installatie onder **FastComments** in het WordPress-beheer en laad de pagina opnieuw.
-
----

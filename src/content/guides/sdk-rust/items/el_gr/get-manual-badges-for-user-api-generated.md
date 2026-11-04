@@ -1,4 +1,3 @@
----
 ## Parameters
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
@@ -27,5 +26,3 @@ async fn fetch_badges(config: &configuration::Configuration) -> Result<(), Error
     Ok(())
 }
 [inline-code-end]
-
----

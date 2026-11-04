@@ -1,4 +1,3 @@
----
 Questa è la versione "too long; didn't read" (TL;DR) delle istruzioni per Drupal.
 
 1. Installa il modulo con `composer require drupal/fcom`, oppure mettilo in `modules/custom/fastcomments/`.
@@ -8,5 +7,3 @@ Questa è la versione "too long; didn't read" (TL;DR) delle istruzioni per Drupa
 5. Aggiungi il campo `FastComments` a qualsiasi tipo di contenuto tramite `Structure > Content types > [type] > Manage fields`.
 
 Il modulo è pubblicato su [drupal.org/project/fcom](https://www.drupal.org/project/fcom).
-
----

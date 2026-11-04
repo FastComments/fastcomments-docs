@@ -37,5 +37,3 @@ if apiResponse.isSome:
   let saved = apiResponse.get()
   echo saved
 [inline-code-end]
-
----

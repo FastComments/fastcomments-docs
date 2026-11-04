@@ -8,5 +8,3 @@ Svelte Kütüphanesi ile ilgili herhangi bir sorunla karşılaşırsanız veya s
 ## Katkıda Bulunma
 
 Katkılar memnuniyetle karşılanır! Katkıda bulunma yönergeleri için lütfen [GitHub deposunu](https://github.com/FastComments/fastcomments-svelte) ziyaret edin.
-
----

@@ -1,39 +1,39 @@
-The border around the comment box is made of the text area's own border plus a few thin lines the widget draws around it. To change its color or corner roundness, set these CSS variables instead of styling the `textarea` directly. The variables restyle every part of the border at once, so the corners and colors always line up.
+Рамката около полето за коментар се състои от собствения border на textarea плюс няколко тънки линии, които уиджетът изчертава около него. За да промените цвета ѝ или заоблеността на ъглите, задайте тези CSS променливи вместо да стилизирате `textarea` директно. Променливите преоформят всички части на рамката наведнъж, така че ъглите и цветовете винаги съвпадат.
 
-| Променлива | Какво променя | По подразбиране |
+| Променлива | Какво променя | Стойност по подразбиране |
 |---|---|---|
-| `--fc-input-border-color` | Цвят на границата | `#bfbfbf` |
-| `--fc-input-border-color-focus` | Цвят на границата, докато потребителят пише | `#555` |
-| `--fc-input-border-radius` | Закръгленост на закръглените ъгли | `11px` |
-| `--fc-input-border-start-start-radius` | Закръгленост на квадратния горен ляв ъгъл (горен десен в езици с писане отдясно наляво) | `0` |
+| `--fc-input-border-color` | Цвят на рамката | `#bfbfbf` |
+| `--fc-input-border-color-focus` | Цвят на рамката, докато потребителят пише | `#555` |
+| `--fc-input-border-radius` | Заобленост на закръглените ъгли | `11px` |
+| `--fc-input-border-start-start-radius` | Заобленост на квадратния горен ляв ъгъл (горен десен при езици с писане отдясно наляво) | `0` |
 
-Add the CSS to the **Custom CSS** box on the [страница за персонализиране на уиджета](https://fastcomments.com/auth/my-account/customize-widget), or pass it with the `customCSS` option. You only need to set the variables you want to change.
+Добавете CSS в полето **Custom CSS** на [страницата за персонализиране на уиджета](https://fastcomments.com/auth/my-account/customize-widget), или го подайте чрез опцията `customCSS`. Трябва да зададете само променливите, които искате да промените.
 
-You can also use the **Comment box border** helper right under the Custom CSS box, which writes this CSS for you.
+Можете също да използвате помощника **Comment box border** точно под полето Custom CSS, който написва този CSS вместо вас.
 
-## Промяна на цвета на границата
+## Промяна на цвета на рамката
 
-[inline-code-attrs-start title = 'Цвят на границата'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Цвят на рамката'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 :root {
     --fc-input-border-color: #d1d5db;
 }
 [inline-code-end]
 
-## Промяна на цвета на границата докато се пише
+## Промяна на цвета на рамката при писане
 
-[inline-code-attrs-start title = 'Цвят на границата докато се пише'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Цвят на рамката при писане'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 :root {
     --fc-input-border-color-focus: #2563eb;
 }
 [inline-code-end]
 
-## Закръгляне на всички четири ъгъла
+## Заобляне на всичките четири ъгъла
 
-By default the top-left corner is square. Set both radius variables to round all four corners the same:
+По подразбиране горният ляв ъгъл е квадратен. Задайте двете променливи за радиус, за да заоблите всичките четири ъгъла еднакво:
 
-[inline-code-attrs-start title = 'Закръгляне на всички четири ъгъла'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Заобляне на всичките четири ъгъла'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 :root {
     --fc-input-border-radius: 12px;
@@ -50,7 +50,7 @@ By default the top-left corner is square. Set both radius variables to round all
 }
 [inline-code-end]
 
-## Съответства на вашата марка
+## Съгласуване с вашата марка
 
 [inline-code-attrs-start title = 'Цветове и ъгли на марката'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -64,9 +64,9 @@ By default the top-left corner is square. Set both radius variables to round all
 
 ## Различни цветове в тъмен режим
 
-When the widget is in dark mode it has the `dark` class, so you can set different values for dark mode:
+Когато уиджетът е в тъмен режим, той има класа `dark`, така че можете да зададете различни стойности за тъмен режим:
 
-[inline-code-attrs-start title = 'Цветове на границата в тъмен режим'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Цветове на рамката в тъмен режим'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 :root {
     --fc-input-border-color: #d1d5db;
@@ -77,6 +77,6 @@ When the widget is in dark mode it has the `dark` class, so you can set differen
 }
 [inline-code-end]
 
-## Защо да не стилизираме директно текстовото поле?
+## Защо не да стилизирате textarea директно?
 
-The widget draws part of the comment box border itself, around the text area. If you set `border-color` or `border-radius` only on the `textarea`, those lines keep the default style and the border looks mismatched, for example a square line running through a rounded corner. The variables above change both at once.
+Уиджетът изчертава част от рамката на полето за коментар сам, около текстовата област. Ако зададете `border-color` или `border-radius` само на `textarea`, тези линии запазват стила по подразбиране и рамката изглежда несъгласувана — например квадратна линия, минаваща през закръглен ъгъл. Горните променливи променят двете наведнъж.

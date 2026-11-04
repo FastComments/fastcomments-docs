@@ -25,5 +25,3 @@ Sie sollten einen leeren Codebereich wie den folgenden sehen:
     <div class="title">Leerer Codebereich</div>
     <img class="screenshot-image" src="/images/installation-guides/squarespace-step-1-4-code-area.png" alt="Leerer Codebereich" />
 </div>
-
----

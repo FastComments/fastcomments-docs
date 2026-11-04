@@ -1,3 +1,1 @@
----
 Déterminez pour chaque utilisateur qui peut lire et qui peut publier, directement à partir de votre charge utile SSO. La spécification, comment l'implémenter, et des appels d'API d'exemple.
----

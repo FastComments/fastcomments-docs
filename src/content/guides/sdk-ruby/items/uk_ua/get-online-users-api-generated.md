@@ -1,4 +1,3 @@
----
 Користувачі, які наразі онлайн на сторінці: люди, чиї websocket сесії зараз підписані на цю сторінку.
 Повертає anonCount + totalCount (підписники в межах кімнати, включаючи анонімних глядачів, яких ми не перелічуємо).
 
@@ -38,5 +37,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_online_users: #{e}"
 end
 [inline-code-end]
-
----

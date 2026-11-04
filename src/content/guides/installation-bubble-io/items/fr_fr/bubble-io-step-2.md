@@ -1,4 +1,3 @@
----
 Cliquez sur l'élément HTML que vous venez d'ajouter. Dans l'éditeur de propriétés qui apparaît, collez le code suivant dans le champ HTML :
 
 [inline-code-attrs-start title = 'Extrait de code pour commentaires en direct Bubble.io'; type = 'html'; isFunctional = false; inline-code-attrs-end]
@@ -43,5 +42,3 @@ Cliquez sur l'élément HTML que vous venez d'ajouter. Dans l'éditeur de propri
 Remarque : Ce code inclut un mécanisme de réessai pour garantir que FastComments se charge correctement dans l'environnement dynamique de Bubble. Les autres extraits de code ne fonctionneront pas.
 
 N'oubliez pas de remplacer 'demo' par votre identifiant de locataire FastComments après l'inscription. Si vous êtes connecté à FastComments.com, il devrait déjà être remplacé.
-
----

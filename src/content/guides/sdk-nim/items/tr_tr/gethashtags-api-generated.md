@@ -1,4 +1,3 @@
----
 ## Parametreler
 
 | İsim | Tür | Gerekli | Açıklama |
@@ -21,5 +20,3 @@ if hashTagsOpt.isSome:
 else:
   echo "No hashtags found"
 [inline-code-end]
-
----

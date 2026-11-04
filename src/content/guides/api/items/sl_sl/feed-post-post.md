@@ -63,5 +63,3 @@ interface FeedPostPostResponse {
     feedPost?: FeedPost; // Vrnjemo celotno ustvarjeno objavo ob uspehu.
 }
 [inline-code-end]
-
----

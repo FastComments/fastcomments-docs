@@ -1,24 +1,24 @@
-The new and edit webhook pages have a `Send Test Payload` button that sends a request to the URL currently in the form, whether or not it has been saved. The Create and Update events send a dummy WebhookComment object, while testing Delete will send a dummy request body with just an ID.
+На сторінках створення та редагування вебхуків є кнопка `Send Test Payload`, яка надсилає запит на URL, який наразі вказано у формі, незалежно від того, чи було його збережено. Події Create та Update надсилають тестовий об'єкт WebhookComment, а тестування Delete надсилає тестове тіло запиту лише з ID.
 
-## Перевірка payloads
+## Перевірка Payload-ів
 
-When testing your webhook integration, verify the incoming requests include the following headers:
+Під час тестування інтеграції вебхуків переконайтеся, що вхідні запити містять такі заголовки:
 
-1. **`X-FastComments-Timestamp`** - Unix‑часова мітка (секунди)
-2. **`X-FastComments-Signature`** - HMAC‑SHA256 підпис
+1. **`X-FastComments-Timestamp`** - Unix-мітка часу (секунди)
+2. **`X-FastComments-Signature`** - підпис HMAC-SHA256
 
-Webhooks created before the signature scheme was introduced also receive a **`token`** header containing your API Secret. New webhooks do not.
+Вебхуки, створені до впровадження схеми підписів, також отримують заголовок **`token`**, що містить ваш API Secret. Нові вебхуки — ні.
 
-Use the HMAC signature verification to ensure payloads are authentic.
+Використовуйте перевірку підпису HMAC, щоб переконатися, що payload-и автентичні.
 
 ## Інструменти тестування
 
-You can use tools like [webhook.site](https://webhook.site) or [ngrok](https://ngrok.com) to inspect incoming webhook payloads during development.
+Для перегляду вхідних payload-ів вебхуків під час розробки можна використовувати такі інструменти, як [webhook.site](https://webhook.site) або [ngrok](https://ngrok.com).
 
 ## Типи подій
 
-- **Create Event**: Спрацьовує, коли створюється новий коментар.
-- **Update Event**: Спрацьовує, коли коментар редагується.
-- **Delete Event**: Спрацьовує, коли коментар видаляється.
+- **Подія Create**: спрацьовує, коли створюється новий коментар.
+- **Подія Update**: спрацьовує, коли коментар редагується.
+- **Подія Delete**: спрацьовує, коли коментар видаляється.
 
-Each webhook is tied to one event and one HTTP method (POST, PUT or DELETE). Each event includes the full comment data in the request body (see [Data Structures](/guide-webhooks.html#webhooks-structures) for the payload format).
+Кожен вебхук прив'язаний до однієї події та одного HTTP-методу (POST, PUT або DELETE). Кожна подія містить повні дані коментаря в тілі запиту (див. [Структури даних](/guide-webhooks.html#webhooks-structures) для формату payload-а).

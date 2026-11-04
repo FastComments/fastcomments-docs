@@ -35,5 +35,3 @@ interface EmailTemplatePostResponse {
     html?: string
 }
 [inline-code-end]
-
----

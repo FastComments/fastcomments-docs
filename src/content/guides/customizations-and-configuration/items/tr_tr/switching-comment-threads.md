@@ -1,25 +1,22 @@
 [related-parameter-start name = 'urlId'; type = 'string'; related-parameter-end]
 
-We've covered how `urlId` is the page or article id the comments are tied to.
+`urlId` değerinin, yorumların bağlı olduğu sayfa veya makale kimliği olduğunu ele almıştık.
 
-Also, to recap, if not defined the `urlId` will default to the current page URL.
+Ayrıca, tekrar hatırlatmak gerekirse, tanımlanmadığı takdirde `urlId` varsayılan olarak geçerli sayfa URL'sini alır.
 
-What about SPAs, or Single-Page-Applications, where the page or content the comments are tied to changes
-dynamically without a fresh page reload?
+Peki, yorumların bağlı olduğu sayfa veya içerik sayfa yenilenmeden dinamik olarak değişen SPA'larda (Single-Page-Applications), yani Tek Sayfa Uygulamalarında durum nedir?
 
-#### Angular, React, Vue, etc
+#### Angular, React, Vue, vb.
 
-With our libraries such as Angular and React, simply updating the `urlId` property passed to the widget
-will cause the comment widget to refresh. You can see this in action for the React app, for example, <a href="https://github.com/FastComments/fastcomments-react/blob/master/examples/example-paginated/src/PaginatedApp.tsx#L39" target="_blank">burada</a>.
+Angular ve React gibi kütüphanelerimizde, widget'a iletilen `urlId` özelliğini güncellemeniz yeterlidir; bu, yorum widget'ının yenilenmesine neden olur. Bunu, örneğin React uygulaması için <a href="https://github.com/FastComments/fastcomments-react/blob/master/examples/example-paginated/src/PaginatedApp.tsx#L39" target="_blank">burada</a> iş başında görebilirsiniz.
 
 #### VanillaJS
 
-If you're using the VanillaJS library it is slightly more complicated as there isn't a framework like Angular or React
-to handle the data binding or state propagation.
+VanillaJS kütüphanesini kullanıyorsanız, Angular veya React gibi veri bağlamayı veya durum yayılımını yöneten bir framework olmadığı için bu biraz daha karmaşıktır.
 
-When you instantiate the VanillaJS widget, it returns some functions which can be called to update it.
+VanillaJS widget'ını örneklediğinizde, widget'ı güncellemek için çağrılabilecek bazı fonksiyonlar döndürür.
 
-Here's a functional example where we change the page hash and update the comment widget:
+İşte sayfa hash'ini değiştirdiğimiz ve yorum widget'ını güncellediğimiz işlevsel bir örnek:
 
 [inline-code-attrs-start title = 'Sayfa Hash Değiştirme Örneği'; inline-code-attrs-end]
 [inline-code-start]
@@ -49,7 +46,7 @@ Here's a functional example where we change the page hash and update the comment
             window.location.hash = page;
             let locationString = window.location.toString();
 
-            config.url = locationString; // We update url, too, so notifications can link back to the right page
+            config.url = locationString; // Bildirimlerin doğru sayfaya bağlanabilmesi için url değerini de güncelliyoruz
             config.urlId = locationString;
 
             instance.update(config);
@@ -59,5 +56,3 @@ Here's a functional example where we change the page hash and update the comment
     })();
 </script>
 [inline-code-end]
-
----

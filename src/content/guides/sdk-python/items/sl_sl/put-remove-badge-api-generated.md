@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Ime | Vrsta | Lokacija | Obvezno | Opis |
@@ -49,5 +48,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling ModerationApi->put_remove_badge: %s\n" % e)
 [inline-code-end]
-
----

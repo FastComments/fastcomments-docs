@@ -1,17 +1,14 @@
----
-You may get an authorization error, like the following:
+Yetkilendirme hatası alabilirsiniz, örneğin:
 
 <div class="screenshot white-bg">
-    <div class="title">Etki Alanı Yapılandırması Eksik</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-webflow-step-5.png" alt="Etki Alanı Yapılandırması Eksik" />
+    <div class="title">Alan Adı Yapılandırması Eksik</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-webflow-step-5.png" alt="Alan Adı Yapılandırması Eksik" />
 </div>
 
-This is because FastComments doesn't know it's supposed to allow your account to be used on this domain.
+Bunun nedeni, FastComments'un hesabınızın bu alan adında kullanılmasına izin verilmesi gerektiğini bilmemesidir.
 
-In this case, the fix is simple. You just have to add your site to your FastComments.com account.
+Bu durumda çözüm basittir. Sitenizi FastComments.com hesabınıza eklemeniz yeterlidir.
 
-[Go here to add your site to your account.](https://fastcomments.com/auth/my-account/configure-domains)
+[Sitenizi hesabınıza eklemek için buraya gidin.](https://fastcomments.com/auth/my-account/configure-domains)
 
-Now you should have fast, live, commenting added to your site!
-
----
+Artık sitenize hızlı, canlı yorumlama eklenmiş olmalı!

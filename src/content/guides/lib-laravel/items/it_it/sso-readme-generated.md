@@ -1,4 +1,3 @@
----
 Abilita SSO nel tuo `.env`:
 
 ```env
@@ -7,11 +6,11 @@ FASTCOMMENTS_SSO_ENABLED=true
 FASTCOMMENTS_SSO_MODE=secure
 ```
 
-La chiave API è richiesta per l'SSO sicuro — viene usata per firmare il payload SSO.
+La chiave API è necessaria per l'SSO sicuro — viene utilizzata per firmare il payload SSO.
 
-### Mappatura basata sulla configurazione
+### Mappatura Basata su Config
 
-In `config/fastcomments.php`, mappa i campi di FastComments agli attributi del tuo modello User:
+In `config/fastcomments.php`, mappa i campi di FastComments sugli attributi del tuo modello User:
 
 ```php
 'sso' => [
@@ -21,16 +20,16 @@ In `config/fastcomments.php`, mappa i campi di FastComments agli attributi del t
         'id' => 'id',
         'email' => 'email',
         'username' => 'name',
-        'avatar' => 'profile.avatar_url', // notazione a punti supportata
+        'avatar' => 'profile.avatar_url', // notazione a puntini supportata
     ],
     'is_admin' => fn ($user) => $user->hasRole('admin'),
     'is_moderator' => fn ($user) => $user->hasRole('moderator'),
 ],
 ```
 
-### Mappatura basata sull'interfaccia
+### Mappatura Basata su Interfaccia
 
-Per un maggiore controllo, implementa l'interfaccia `MapsToFastCommentsUser` nel tuo modello User:
+Per un maggiore controllo, implementa l'interfaccia `MapsToFastCommentsUser` sul tuo modello User:
 
 ```php
 use FastComments\Laravel\SSO\Contracts\MapsToFastCommentsUser;
@@ -50,9 +49,8 @@ class User extends Authenticatable implements MapsToFastCommentsUser
 }
 ```
 
-Quando l'interfaccia è implementata, ha la precedenza sulla mappatura basata sulla configurazione.
+Quando l'interfaccia è implementata, ha la precedenza sulla mappatura basata su config.
 
 ### SSO in Blade
 
-Quando l'SSO è abilitato, il componente `<x-fastcomments />` inserisce automaticamente i dati SSO per l'utente autenticato.
----
+Quando SSO è abilitato, il componente `<x-fastcomments />` inietta automaticamente i dati SSO per l'utente autenticato.

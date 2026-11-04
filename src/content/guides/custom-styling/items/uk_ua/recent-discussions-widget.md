@@ -1,8 +1,8 @@
-The Recent Discussions Widget displays a list of pages sorted by the most recent comment activity. It includes a heading, last activity dates, comment counts with icons, and automatic dark mode detection.
+Віджет Recent Discussions відображає список сторінок, відсортованих за останньою активністю коментарів. Він містить заголовок, дати останньої активності, кількість коментарів з іконками та автоматичне визначення темного режиму.
 
-## Basic Installation
+## Базове встановлення
 
-[inline-code-attrs-start title = 'Налаштування стилю віджету Недавні обговорення'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Налаштування стилів віджета Recent Discussions'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/widget-recent-discussions-v2.min.js"></script>
 <div id="fastcomments-widget-recent-discussions"></div>
@@ -13,17 +13,17 @@ The Recent Discussions Widget displays a list of pages sorted by the most recent
 </script>
 [inline-code-end]
 
-## Configuration Options
+## Параметри конфігурації
 
-- **tenantId** (required): Ваш ідентифікатор орендаря FastComments
-- **count** (optional): Кількість сторінок для показу. За замовчуванням `20`, максимум `100`
-- **hasDarkBackground** (optional): Примусово застосовувати стиль темного режиму. Якщо не встановлено, визначається автоматично за фоном сторінки
+- **tenantId** (обов'язково): ID вашого тенанта FastComments
+- **count** (необов'язково): Кількість сторінок для показу. За замовчуванням `20`, максимум `100`
+- **hasDarkBackground** (необов'язково): Примусове застосування стилів темного режиму. Автоматично визначається за фоном сторінки, якщо не задано
 
-## Widget Structure
+## Структура віджета
 
-The widget renders with the following HTML structure:
+Віджет рендериться з наступною HTML-структурою:
 
-[inline-code-attrs-start title = 'HTML-структура віджету Недавні обговорення'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'HTML-структура віджета Recent Discussions'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <div class="fc-rd2">
     <div class="fc-rd2-heading">Recent Discussions</div>
@@ -39,9 +39,9 @@ The widget renders with the following HTML structure:
 </div>
 [inline-code-end]
 
-## Default CSS Reference
+## Довідник CSS за замовчуванням
 
-[inline-code-attrs-start title = 'CSS за замовчуванням віджету Недавні обговорення'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'CSS віджета Recent Discussions за замовчуванням'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rd2 {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -61,11 +61,11 @@ The widget renders with the following HTML structure:
 .fc-rd2-count { font-size: 12px; font-weight: 600; color: #666; }
 [inline-code-end]
 
-## Customization Examples
+## Приклади кастомізації
 
-### Remove the Container Border
+### Видалення рамки контейнера
 
-[inline-code-attrs-start title = 'Видалити межу контейнера'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Видалення рамки контейнера'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rd2 {
     border: none !important;
@@ -73,9 +73,9 @@ The widget renders with the following HTML structure:
 }
 [inline-code-end]
 
-### Custom Link Color
+### Власний колір посилань
 
-[inline-code-attrs-start title = 'Користувацький колір посилання'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Власний колір посилань'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 a.fc-rd2-title:hover {
     color: #e63946 !important;

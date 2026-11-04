@@ -110,5 +110,3 @@ function verifyWebhookSignature($headers, $body, $apiSecret) {
 ## Naslijeđena autentikacija
 
 `token` zaglavlje koje sadrži vaš API Secret i dalje se šalje radi kompatibilnosti unatrag. Međutim, preporučujemo prelazak na HMAC provjeru radi poboljšane sigurnosti jer štiti od replay napada.
-
----

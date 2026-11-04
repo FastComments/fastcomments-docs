@@ -1,3 +1,1 @@
----
 Suivez les nouveaux commentaires dans n'importe quel lecteur RSS au lieu de votre boîte de réception. Comment générer l'URL de votre flux, et ce qu'il faut savoir avant de le partager avec quiconque.
----

@@ -154,5 +154,3 @@ Der andere Benutzer hat möglicherweise:
 - Aktualisieren Sie die Seite und versuchen Sie es erneut
 - Stellen Sie sicher, dass Sie nicht blockiert wurden
 - Kontaktieren Sie den Support, wenn das Problem weiterhin besteht
-
----

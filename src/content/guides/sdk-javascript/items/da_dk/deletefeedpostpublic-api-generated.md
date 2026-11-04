@@ -34,5 +34,3 @@ Returnerer: [`DeleteFeedPostPublicResponse`](https://github.com/FastComments/fas
   );
 })();
 [inline-code-end]
-
----

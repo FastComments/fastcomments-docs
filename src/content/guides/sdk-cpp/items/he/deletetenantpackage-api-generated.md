@@ -21,5 +21,3 @@ api->deleteTenantPackage(optTenant.value(), optPackage.value())
     .then([](std::shared_ptr<APIEmptyResponse>){ })
     .then([](pplx::task<void> t){ try{ t.get(); }catch(const std::exception&){ } });
 [inline-code-end]
-
----

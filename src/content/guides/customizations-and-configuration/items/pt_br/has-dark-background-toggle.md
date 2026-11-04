@@ -40,5 +40,3 @@ do modo escuro com o widget VanillaJS.
     }
 </style>
 [inline-code-end]
-
----

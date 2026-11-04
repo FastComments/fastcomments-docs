@@ -39,5 +39,3 @@ Podemos simplemente llamar a la función update cada vez que queramos actualizar
     }
 </style>
 [inline-code-end]
-
----

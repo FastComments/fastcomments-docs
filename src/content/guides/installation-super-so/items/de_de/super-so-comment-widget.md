@@ -1,4 +1,3 @@
----
 ## Hinzufügen eines Live-Kommentar-Widgets zu Ihren Super.so Notion-Artikeln
 
 Zusätzlich zum Collab Chat können Sie am Ende Ihrer Notion-Artikel ein klassisches Kommentar-Widget hinzufügen. Dadurch können Leser Kommentare hinterlassen und Diskussionen über den gesamten Artikel führen.
@@ -83,5 +82,3 @@ Kopieren Sie den folgenden Code und fügen Sie ihn in den `Body`-Abschnitt Ihrer
 - Jede Seite erhält einen eigenen, eindeutigen Kommentar-Thread basierend auf dem URL-Pfad
 - Stellen Sie sicher, dass Sie "demo" durch Ihre tatsächliche Tenant-ID aus Ihrem FastComments-Konto ersetzen
 - Das Widget verarbeitet automatisch das dynamische Laden von Seiten bei Super.so
-
----

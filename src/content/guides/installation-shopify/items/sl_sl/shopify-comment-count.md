@@ -1,4 +1,3 @@
----
 Blok **FastComments - Comment Count** prikaže majhen števec komentarjev za posamezno stran. Uporabite ga v seznamih objav na blogu, karticah izdelkov ali katerikoli predlogi, ki se povezuje s stranjo s komentarji, da lahko obiskovalci vidijo, kako aktivna je posamezna nit, preden kliknejo naprej.
 
 ### Dodajte blok
@@ -30,5 +29,3 @@ Blok Comment Count uporablja enako logiko samodejnega odkrivanja kot blok **Fast
 
 - Števila za vsak element na strani se pridobijo z enim zahtevkom, zato dodajanje bloka za vsak element v dolgem seznamu ne povzroča dodatnih krožnih zahtev.
 - Pričakovana uporaba je en Comment Count block na članek ali izdelek v seznamu; blok lahko dodate tolikokrat, kot potrebujete.
-
----

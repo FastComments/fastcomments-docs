@@ -68,5 +68,3 @@ interface PollPatchResponse {
 - Contrairement à la création d'un sondage, `closesAt` peut être dans le passé ici – c'est ainsi que vous fermez immédiatement un sondage.
 - La confidentialité du sondage peut être restreinte mais pas élargie une fois qu'il possède des votes.
 - Un commentaire verrouillé ne peut pas voir son sondage modifié, et échoue avec `locked`.
-
----

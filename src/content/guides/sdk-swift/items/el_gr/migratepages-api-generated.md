@@ -1,23 +1,22 @@
-Queues a batch job that moves comments, pages and related records from one urlId or domain to another.  
-"urlId" migrations only match the exact urlId. "domain" migrations find/replace the value inside every urlId and url.  
-Poll GET /api/v1/batch-jobs/{batchJobId}: once it is done it carries per-migration results and an undoId.
+Στην ουρά μια εργασία δέσμης που μεταφέρει σχόλια, σελίδες και σχετικά αρχεία από ένα urlId ή domain σε άλλο.
+Οι μετακινήσεις "urlId" ταιριάζουν μόνο το ακριβές urlId. Οι μετακινήσεις "domain" κάνουν αναζήτηση/αντικατάσταση της τιμής μέσα σε κάθε urlId και url.
+Κάντε poll στο GET /api/v1/batch-jobs/{batchJobId}: όταν ολοκληρωθεί, περιέχει αποτελέσματα ανά μετακίνηση και ένα undoId.
 
-## Parameters
+## Παράμετροι
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ναι |  |
 
-## Response
+## Απάντηση
 
 Επιστρέφει: [`QueuePageMigrationJobAPIResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/QueuePageMigrationJobAPIResponse.swift)
 
-## Example
+## Παράδειγμα
 
 [inline-code-attrs-start title = 'Παράδειγμα migratePages'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-```
-// Τα παρακάτω παραδείγματα κώδικα είναι ακόμη beta. Για οποιοδήποτε πρόβλημα, παρακαλούμε αναφέρετέ το μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -33,7 +32,4 @@ DefaultAPI.migratePages(tenantId: tenantId, migrateAPIPagesData: migrateAPIPages
         dump(response)
     }
 }
-```
 [inline-code-end]
-
----

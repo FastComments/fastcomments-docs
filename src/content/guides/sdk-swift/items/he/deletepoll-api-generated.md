@@ -1,8 +1,8 @@
-Remove a poll from its comment, along with every vote cast on it. The comment itself is left alone.
+הסרת הסקר מהתגובה שלו, יחד עם כל ההצבעות שנערכו בו. התגובה עצמה נשארת ללא שינוי.
 
 ## Parameters
 
-| שם | סוג | מיקום | נדרש | תיאור |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
 | commentId | string | path | Yes |  |
@@ -13,9 +13,9 @@ Remove a poll from its comment, along with every vote cast on it. The comment it
 
 ## Example
 
-[inline-code-attrs-start title = 'דוגמת deletePoll'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל-deletePoll'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// דוגמאות הקוד הבאות עדיין בטא. לכל בעיה, אנא דווח דרך http://github.com/OpenAPITools/openapi-generator/issues/new
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 

@@ -1,22 +1,22 @@
-Past commenters on the page who are NOT currently online. Sorted by displayName.  
-Use this after exhausting /users/online to render a "Members" section.  
-Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName}  
-index from afterName forward via $gt, no $skip cost.
+Sayfada daha önce yorum yapmış, şu anda çevrimiçi OLMAYAN yorumcular. displayName'e göre sıralanmıştır.
+"Üyeler" bölümünü görüntülemek için /users/online tükendikten sonra bunu kullanın.
+commenterName üzerinde imleç sayfalama: sunucu, {tenantId, urlId, commenterName} kısmi indeksini
+afterName'den $gt ile ileriye doğru tarar, $skip maliyeti yoktur.
 
-## Parameters
+## Parametreler
 
-| Ad | Tür | Konum | Gerekli | Açıklama |
+| Ad | Tür | Konum | Zorunlu | Açıklama |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Evet |  |
-| urlId | string | query | Evet | Sayfa URL tanımlayıcısı (sunucu tarafında temizlenmiş). |
-| afterName | string | query | Hayır | İmleç: önceki yanıttan nextAfterName'i geçin. |
-| afterUserId | string | query | Hayır | İmleç bağlama kırıcı: önceki yanıttan nextAfterUserId'i geçin. afterName ayarlandığında gereklidir, böylece isim eşitlikleri girişleri düşürmez. |
+| urlId | string | query | Evet | Sayfa URL tanımlayıcısı (sunucu tarafında temizlenir). |
+| afterName | string | query | Hayır | İmleç: önceki yanıttan nextAfterName değerini geçirin. |
+| afterUserId | string | query | Hayır | İmleç eşkırıcı: önceki yanıttan nextAfterUserId değerini geçirin. İsim eşitliklerinde girdilerin düşmemesi için afterName ayarlandığında gereklidir. |
 
-## Response
+## Yanıt
 
 Döndürür: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/page_users_offline_response.py)
 
-## Example
+## Örnek
 
 [inline-code-attrs-start title = 'get_offline_users Örneği'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -26,21 +26,21 @@ from client.models.page_users_offline_response import PageUsersOfflineResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Host tanımlaması isteğe bağlıdır ve varsayılan https://fastcomments.com adresini kullanır
-# Tüm desteklenen yapılandırma parametrelerinin listesi için configuration.py dosyasına bakın.
+# Host tanımlamak isteğe bağlıdır ve varsayılan olarak https://fastcomments.com değerini alır
+# Desteklenen tüm yapılandırma parametrelerinin listesi için configuration.py dosyasına bakın.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# API istemcisi örneğiyle bir bağlam gir
+# API istemcisinin bir örneğiyle bir bağlam girin
 with client.ApiClient(configuration) as api_client:
-    # API sınıfının bir örneğini oluştur
+    # API sınıfının bir örneğini oluşturun
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    url_id = 'url_id_example' # str | Sayfa URL tanımlayıcısı (sunucu tarafında temizlenmiş).
-    after_name = 'after_name_example' # str | İmleç: önceki yanıttan nextAfterName'i geçin. (opsiyonel)
-    after_user_id = 'after_user_id_example' # str | İmleç bağlama kırıcı: önceki yanıttan nextAfterUserId'i geçin. afterName ayarlandığında gereklidir, böylece isim eşitlikleri girişleri düşürmez. (opsiyonel)
+    url_id = 'url_id_example' # str | Sayfa URL tanımlayıcısı (sunucu tarafında temizlenir).
+    after_name = 'after_name_example' # str | İmleç: önceki yanıttan nextAfterName değerini geçirin. (optional)
+    after_user_id = 'after_user_id_example' # str | İmleç eşkırıcı: önceki yanıttan nextAfterUserId değerini geçirin. İsim eşitliklerinde girdilerin düşmemesi için afterName ayarlandığında gereklidir. (optional)
 
     try:
         api_response = api_instance.get_offline_users(tenant_id, url_id, GetOfflineUsersOptions(after_name=after_name, after_user_id=after_user_id))

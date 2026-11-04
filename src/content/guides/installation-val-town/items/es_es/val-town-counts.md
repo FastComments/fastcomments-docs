@@ -1,8 +1,8 @@
-On an index page, don't render one comment-count widget per row. That is one request per post. Use the bulk count, which takes a single request for the whole page.
+En una página de índice, no renderices un widget de recuento de comentarios por fila. Eso es una solicitud por publicación. Usa el recuento masivo, que realiza una única solicitud para toda la página.
 
-Mark each row with the `urlId` its thread uses, then load the bulk widget once:
+Marca cada fila con el `urlId` que usa su hilo, y luego carga el widget masivo una sola vez:
 
-[inline-code-attrs-start title = 'Recuentos de comentarios en bloque en un índice'; type='javascript' inline-code-attrs-end]
+[inline-code-attrs-start title = 'Recuentos masivos de comentarios en un índice'; type='javascript' inline-code-attrs-end]
 [inline-code-start]
 <ul>
   {posts.map((post) => (
@@ -23,8 +23,8 @@ Mark each row with the `urlId` its thread uses, then load the bulk widget once:
 <script src="https://cdn.fastcomments.com/js/embed-widget-comment-count-bulk.min.js"></script>
 [inline-code-end]
 
-The script finds every `.fast-comments-count` element on the page and fills in its count.
+El script busca cada elemento `.fast-comments-count` en la página y completa su recuento.
 
-`data-fast-comments-url-id` has to match the `urlId` that post's comment widget uses. If the widget uses the slug, the marker uses the slug. A mismatch shows zero on a thread that has comments.
+`data-fast-comments-url-id` debe coincidir con el `urlId` que usa el widget de comentarios de esa publicación. Si el widget usa el slug, el marcador usa el slug. Una discrepancia muestra cero en un hilo que tiene comentarios.
 
-The script polls for `window.FastCommentsBulkCountConfig`, so it does not matter whether you set the config before or after the script tag.
+El script sondea `window.FastCommentsBulkCountConfig`, por lo que no importa si configuras la configuración antes o después de la etiqueta del script.

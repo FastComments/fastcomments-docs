@@ -1,4 +1,3 @@
----
 Ein Coding‑Agent wie Claude Code, Cursor oder ein MCP‑basierter Assistent kann FastComments für Sie einrichten, ohne dass Sie das Anmeldeformular ausfüllen müssen. Das ist nützlich, wenn Sie einen Agenten bitten, „Kommentare zu meiner Seite hinzufügen“ und Sie noch kein Konto haben.
 
 ### So funktioniert es
@@ -19,5 +18,3 @@ Jeder Login besitzt ein Konto. Wenn Sie einen Anspruch‑Link öffnen, während 
 ### Für Agenten‑Autoren
 
 Die Agenten‑Anweisungen unter [fastcomments.com/agents.md](https://fastcomments.com/agents.md) beschreiben den Aufruf zur Kontoerstellung, die Felder in der Antwort und wie man den Anspruch‑Link an die Person übergibt, für die Sie arbeiten. Der Aufruf benötigt keinen API‑Schlüssel und ist pro IP‑Adresse rate‑limitiert.
-
----

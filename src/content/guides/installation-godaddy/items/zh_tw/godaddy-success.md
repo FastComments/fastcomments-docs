@@ -6,5 +6,3 @@
 </div>
 
 恭喜您在 Godaddy 上設定 FastComments！如果您遇到 Domain Error，或想了解如何自訂留言區，請繼續閱讀！
-
----

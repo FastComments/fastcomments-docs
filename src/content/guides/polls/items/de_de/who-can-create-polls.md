@@ -1,4 +1,3 @@
----
 Sobald Umfragen aktiviert sind, steuert die Einstellung **Who Can Create Polls** darüber, wer den Umfrage‑Button in der Kommentar‑Symbolleiste sieht:
 
 - **Admins/Moderators Only** (die Standardeinstellung): Nur die Administratoren und Moderatoren Ihrer Website können einer Kommentar eine Umfrage hinzufügen.

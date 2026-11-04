@@ -1,12 +1,12 @@
 FastComments admite tres modos de autenticación:
 
-1. **Anonymous** -- sin token SSO; los usuarios obtienen identidades basadas en sesión
-2. **Simple SSO** -- token del lado del cliente para demos y pruebas (no seguro)
-3. **Secure SSO** -- token firmado por el servidor para producción
+1. **Anónimo** -- sin token SSO; los usuarios obtienen identidades basadas en sesión
+2. **SSO Simple** -- token del lado del cliente para demos y pruebas (no es seguro)
+3. **SSO Seguro** -- token firmado por el servidor para producción
 
-### Simple SSO
+### SSO Simple
 
-Útil para demos y pruebas locales. Cualquiera puede suplantar a cualquier usuario con Simple SSO, por lo que no lo uses en producción.
+Útil para demos y pruebas locales. Cualquiera puede suplantar a cualquier usuario con SSO Simple, así que no lo uses en producción.
 
 ```swift
 import FastCommentsSwift
@@ -27,20 +27,20 @@ let config = FastCommentsWidgetConfig(
 let sdk = FastCommentsSDK(config: config)
 ```
 
-`SimpleSSOUserData` also supports optional fields:
+`SimpleSSOUserData` también admite campos opcionales:
 
-- `id` -- ID de usuario (por defecto email si no se establece)
+- `id` -- ID del usuario (por defecto es el email si no se establece)
 - `displayName` -- nombre para mostrar separado
-- `displayLabel` -- etiqueta personalizada mostrada junto al nombre (por ejemplo "VIP")
+- `displayLabel` -- etiqueta personalizada mostrada junto al nombre (por ejemplo, "VIP")
 - `websiteUrl` -- enlace en el nombre del usuario
-- `locale` -- código de localización
-- `isProfileActivityPrivate` -- ocultar la actividad del perfil (por defecto true)
+- `locale` -- código de configuración regional
+- `isProfileActivityPrivate` -- ocultar la actividad del perfil (por defecto es true)
 
-### Secure SSO
+### SSO Seguro
 
-En producción, tu backend genera un token SSO firmado usando tu secreto de API. La app iOS obtiene este token desde tu servidor y lo pasa a la configuración.
+En producción, tu backend genera un token SSO firmado usando tu secreto de API. La app de iOS obtiene este token de tu servidor y lo pasa a la configuración.
 
-**On your backend** (using the FastComments Swift SDK or any language):
+**En tu backend** (usando el SDK de Swift de FastComments o cualquier lenguaje):
 
 ```swift
 let userData = SecureSSOUserData(
@@ -51,10 +51,10 @@ let userData = SecureSSOUserData(
 )
 let sso = try FastCommentsSSO.createSecure(apiKey: "YOUR_API_KEY", secureSSOUserData: userData)
 let token = try sso.prepareToSend()
-// Devuelve este token a tu app iOS mediante tu API
+// Devuelve este token a tu app de iOS a través de tu API
 ```
 
-**In your iOS app:**
+**En tu app de iOS:**
 
 ```swift
 struct MyView: View {
@@ -69,7 +69,7 @@ struct MyView: View {
     var body: some View {
         Group {
             if isLoadingToken {
-                ProgressView("Loading...")
+                ProgressView("Cargando...")
             } else {
                 FastCommentsView(sdk: sdk)
             }
@@ -85,13 +85,13 @@ struct MyView: View {
 }
 ```
 
-`SecureSSOUserData` supports additional fields:
+`SecureSSOUserData` admite campos adicionales:
 
-- `optedInNotifications` -- suscripción a notificaciones por correo electrónico
+- `optedInNotifications` -- aceptación de notificaciones por email
 - `displayLabel` -- etiqueta personalizada
 - `displayName` -- nombre para mostrar
 - `websiteUrl` -- URL del sitio web
-- `groupIds` -- pertenencia a grupos
+- `groupIds` -- membresías de grupos
 - `isAdmin` -- privilegios de administrador
 - `isModerator` -- privilegios de moderador
 - `isProfileActivityPrivate` -- privacidad del perfil

@@ -26,5 +26,3 @@ api->getSearchCommentsSummary(tenantId, *options).then([](pplx::task<std::shared
     }
 });
 [inline-code-end]
-
----

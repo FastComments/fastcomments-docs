@@ -1,3 +1,1 @@
----
 Instale o plugin WordPress para comentários ao vivo, moderação a partir do seu painel, tópicos apenas para membros via SSO e contagens de comentários sincronizadas de volta aos posts.
----

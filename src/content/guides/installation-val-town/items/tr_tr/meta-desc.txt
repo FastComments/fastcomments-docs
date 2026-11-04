@@ -1,3 +1,1 @@
----
 Val Town uygulamasına canlı yorumlar ekleyin: bir HTTP val içindeki widget, toplu yorum sayımları, std/oauth üzerinden Güvenli SSO ve webhook doğrulama.
----

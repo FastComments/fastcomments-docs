@@ -22,5 +22,3 @@ FastComments는 중재자와 관리자를 위해 일일, 주간 또는 월간 �
 #### 알림 유형
 
 FastComments는 중재자와 관리자를 위해 다양한 유형의 이메일을 보냅니다. 원한다면 위에 표시된 `Edit Notifications` 페이지에서 적절한 옵션을 선택하여 `Comment Reply` 알림을 수신 거부하고, `New Comment` 알림은 계속 받을 수 있습니다.
-
----

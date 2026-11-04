@@ -1,4 +1,3 @@
----
 Esta é a biblioteca oficial React para FastComments.
 
 Incorpore widgets de comentários ao vivo, chat e revisão no seu aplicativo React.
@@ -6,5 +5,3 @@ Incorpore widgets de comentários ao vivo, chat e revisão no seu aplicativo Rea
 ## Repositório
 
 [Ver no GitHub](https://github.com/FastComments/fastcomments-react)
-
----

@@ -27,5 +27,3 @@ No lado esquerdo, agora teremos a opção de clicar em `Edit Code` - clique niss
     <div class="title">Editar código</div>
     <img class="screenshot-image" src="/images/installation-guides/systeme-edit-block-button.png" alt="Editar código" />
 </div>
-
----

@@ -1,4 +1,3 @@
----
 ### Виджет комментариев
 
 Компонент FastCommentsVueNext содержит живой виджет комментариев FastComments.
@@ -21,4 +20,3 @@ export default {
 }
 </script>
 ```
----

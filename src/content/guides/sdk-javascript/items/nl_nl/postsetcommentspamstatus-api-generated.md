@@ -39,5 +39,3 @@ const resultMinimal: APIEmptyResponse = await postSetCommentSpamStatus(
   commentId
 );
 [inline-code-end]
-
----

@@ -8,5 +8,3 @@
 ## Доприноси
 
 Доприноси су добродошли! Молимо посетите [GitHub репозиторијум](https://github.com/FastComments/fastcomments-angular) за смернице о доприносу.
-
----

@@ -24,5 +24,3 @@ api->deleteEmailTemplateRenderError(
         try { t.get(); } catch (...) {}
     });
 [inline-code-end]
-
----

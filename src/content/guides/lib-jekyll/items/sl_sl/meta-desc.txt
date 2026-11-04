@@ -1,3 +1,1 @@
----
 Dodajte komentarje na Jekyllovo stran z uradnim gemom. Namestite ga, dodajte oznako Liquid v postavitev svoje objave in konfigurirajte pripomoček v _config.yml.
----

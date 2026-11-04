@@ -1,4 +1,3 @@
----
 | Oznaka | Opis |
 | --- | --- |
 | `fastcomments` | Komentiranje uživo s odgovorima, glasovanjem, moderiranjem i ažuriranjima u stvarnom vremenu |

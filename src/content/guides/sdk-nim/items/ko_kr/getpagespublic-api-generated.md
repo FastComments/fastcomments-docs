@@ -22,5 +22,3 @@ if response.isSome:
   let pages = response.get()
   echo pages
 [inline-code-end]
-
----

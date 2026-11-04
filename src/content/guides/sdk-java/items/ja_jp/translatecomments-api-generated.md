@@ -1,24 +1,23 @@
-Translates the given comments into the widget locale. Only available when the matching widget
-customization rule has Comment Translation set to Automatic or Manual.
+指定されたコメントをウィジェットのロケールに翻訳します。対応するウィジェットのカスタマイズルールで「Comment Translation」が「Automatic」または「Manual」に設定されている場合にのみ利用可能です。
 
-## Parameters
+## パラメーター
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| urlId | string | query | Yes |  |
-| sso | string | query | No |  |
-| locale | string | query | No |  |
+| tenantId | string | path | はい |  |
+| urlId | string | query | はい |  |
+| sso | string | query | いいえ |  |
+| locale | string | query | いいえ |  |
 
-## Response
+## レスポンス
 
-返却: [`CommentTranslationsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CommentTranslationsResponse.java)
+戻り値: [`CommentTranslationsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CommentTranslationsResponse.java)
 
 ## 例
 
 [inline-code-attrs-start title = 'translateComments の例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Import classes:
+// クラスをインポート:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -52,5 +51,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

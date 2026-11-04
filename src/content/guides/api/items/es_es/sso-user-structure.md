@@ -82,5 +82,3 @@ Puedes asignar insignias a los usuarios SSO usando la propiedad `badgeConfig`. L
 - `pageBadgeIds` - Un array opcional de IDs de insignias con alcance en la página actual (`urlId`). Estas insignias solo se muestran en la página donde fueron asignadas. Diferentes páginas pueden tener distintas insignias con alcance por página para el mismo usuario.
 - `override` - Si es true, todas las insignias mostradas existentes serán reemplazadas por las proporcionadas. Las insignias globales y las con alcance por página se sobrescriben de forma independiente — sobrescribir las insignias globales no afecta a las de alcance por página, y viceversa. Si es false u omitido, las insignias proporcionadas se añadirán a las existentes.
 - `update` - Si es true, las propiedades de visualización de las insignias se actualizarán desde la configuración del tenant cada vez que el usuario inicie sesión.
-
----

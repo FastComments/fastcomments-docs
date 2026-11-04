@@ -1,6 +1,6 @@
-All FastComments products that are **incorporáveis em sua aplicação ou site**, are localized.
+Todos os produtos do FastComments que são **incorporáveis em seu aplicativo ou site**, são localizados.
 
-All **e‑mails** are fully localized. The locale used to render the emails we send are based on the last
-locale the user used when they last logged in or commented with the commenting widget.
+Todos os **e-mails** são totalmente localizados. O locale usado para renderizar os e-mails que enviamos é baseado no último
+locale que o usuário utilizou quando fez login ou comentou pela última vez com o widget de comentários.
 
-The **painel de administração e do usuário** is localized. Each user can pick their preferred language on their account details page.
+O **painel administrativo e do usuário** é localizado. Cada usuário pode escolher seu idioma preferido na página de detalhes da sua conta.

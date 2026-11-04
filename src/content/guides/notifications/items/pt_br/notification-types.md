@@ -1,4 +1,3 @@
----
 Existem alguns tipos de notificações e meios pelos quais o FastComments envia notificações:
 
 - Imediata por e‑mail.
@@ -10,4 +9,3 @@ Existem alguns tipos de notificações e meios pelos quais o FastComments envia 
   - Notificações de resposta a enquetes são enviadas ao autor da enquete como um e‑mail diário.
 - Programada por e‑mail.
   - Exemplos incluem o Resumo do Digest da Comunidade, que pode ser enviado diariamente, semanalmente ou mensalmente (ou desativado).
----

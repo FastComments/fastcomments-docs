@@ -8,5 +8,3 @@
 ## Prispevanje
 
 Prispevki so dobrodošli! Prosimo, obiščite [GitHub repozitorij](https://github.com/FastComments/fastcomments-svelte) za smernice za prispevanje.
-
----

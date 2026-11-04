@@ -1,4 +1,3 @@
----
 ## פרמטרים
 
 | Name | Type | Required | Description |
@@ -21,5 +20,3 @@ async function fetchConfigs() {
   const secondPage: GetQuestionConfigsResponse = await getQuestionConfigs(tenantId, 20);
 }
 [inline-code-end]
-
----

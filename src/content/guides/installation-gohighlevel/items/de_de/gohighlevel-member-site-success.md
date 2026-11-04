@@ -1,4 +1,3 @@
----
 Das war's! Sie sollten jetzt Live-Kommentare zu Ihrem GoHighLevel-Kurs hinzugefügt haben.
 
 <div class="screenshot white-bg">
@@ -7,5 +6,3 @@ Das war's! Sie sollten jetzt Live-Kommentare zu Ihrem GoHighLevel-Kurs hinzugef�
 </div>
 
 Wenn Sie auf einen 'permission denied'-Fehler gestoßen sind oder FastComments anpassen möchten, lesen Sie weiter.
-
----

@@ -21,5 +21,3 @@ Elke trigger retourneert de volledige reactie: id, pagin URL en URL‑ID, naam e
 Het inschakelen van een Zap maakt een webhook‑abonnement aan op uw account, zichtbaar op de Webhooks‑pagina met de bron **API**. Het uitschakelen van de Zap verwijdert dit. De eigen limieten van Zapier gelden voor het aantal evenementen dat per minuut wordt geaccepteerd; FastComments probeert een levering die mislukt opnieuw, met een toenemende vertraging, en schakelt een abonnement uit dat zes dagen lang blijft falen. Een uitgeschakeld abonnement kan opnieuw worden ingeschakeld vanaf de Webhooks‑pagina, of schakel de Zap eenvoudig uit en weer in om een nieuw abonnement te maken.
 
 Een account kan maximaal 50 API‑abonnementen bevatten. Elke Zap die een FastComments‑trigger gebruikt, gebruikt er één.
-
----

@@ -1,4 +1,3 @@
----
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
@@ -26,5 +25,3 @@ Rückgabe: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk
   console.log(result1, result2);
 })();
 [inline-code-end]
-
----

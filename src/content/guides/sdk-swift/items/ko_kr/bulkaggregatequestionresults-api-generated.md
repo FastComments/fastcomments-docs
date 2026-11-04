@@ -31,5 +31,3 @@ DefaultAPI.bulkAggregateQuestionResults(tenantId: tenantId, bulkAggregateQuestio
     }
 }
 [inline-code-end]
-
----

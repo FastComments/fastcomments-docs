@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Назва | Тип | Розташування | Обов'язковий | Опис |
@@ -30,5 +29,3 @@ DefaultAPI.createTenantPackage(tenantId: tenantId, createTenantPackageBody: crea
     }
 }
 [inline-code-end]
-
----

@@ -1,16 +1,16 @@
-Enable or disable notifications for a page. When users are subscribed to a page, notifications are created
-for new root comments, and also
+Активиране или деактивиране на известията за страница. Когато потребителите са абонирани за страница, известията се създават
+за нови основни коментари, а също и
 
-## Parameters
+## Параметри
 
-| Име | Тип | Задължително | Описание |
+| Име | Тип | Задължителен | Описание |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| urlId | string | Yes |  |
-| url | string | Yes |  |
-| pageTitle | string | Yes |  |
-| subscribedOrUnsubscribed | string | Yes |  |
-| sso | string | No |  |
+| tenantId | string | Да |  |
+| urlId | string | Да |  |
+| url | string | Да |  |
+| pageTitle | string | Да |  |
+| subscribedOrUnsubscribed | string | Да |  |
+| sso | string | Не |  |
 
 ## Отговор
 
@@ -29,6 +29,6 @@ boost::optional<utility::string_t> sso = boost::make_optional<utility::string_t>
 
 api->updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitle, subscription, sso)
     .then([](std::shared_ptr<UpdateUserNotificationPageSubscriptionStatusResponse> resp) {
-        // обработете resp, ако е необходимо
+        // обработи resp при нужда
     });
 [inline-code-end]

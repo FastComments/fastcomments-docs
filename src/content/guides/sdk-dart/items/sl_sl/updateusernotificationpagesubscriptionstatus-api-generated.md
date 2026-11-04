@@ -1,24 +1,24 @@
-Enable or disable notifications for a page. When users are subscribed to a page, notifications are created
-for new root comments, and also
+Omogoči ali onemogoči obvestila za stran. Ko so uporabniki naročeni na stran, se obvestila ustvarijo
+za nove korenske komentarje, pa tudi
 
-## Parameters
+## Parametri
 
 | Ime | Vrsta | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| urlId | string | query | Yes |  |
-| url | string | query | Yes |  |
-| pageTitle | string | query | Yes |  |
-| subscribedOrUnsubscribed | string | path | Yes |  |
-| sso | string | query | No |  |
+| tenantId | string | query | Da |  |
+| urlId | string | query | Da |  |
+| url | string | query | Da |  |
+| pageTitle | string | query | Da |  |
+| subscribedOrUnsubscribed | string | path | Da |  |
+| sso | string | query | Ne |  |
 
-## Response
+## Odgovor
 
 Vrne: `UpdateUserNotificationPageSubscriptionStatusResponse`
 
 ## Primer
 
-[inline-code-attrs-start title = 'updateUserNotificationPageSubscriptionStatus Primer'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer updateUserNotificationPageSubscriptionStatus'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
 

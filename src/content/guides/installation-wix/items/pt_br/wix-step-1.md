@@ -10,5 +10,3 @@ Queremos garantir que exibimos um tópico de comentários exclusivo para cada po
     <div class="title">Passo Um: Edite a Página Dinâmica do Post</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-1-open-page.png" alt="Edite a Página Dinâmica do Post" />
 </div>
-
----

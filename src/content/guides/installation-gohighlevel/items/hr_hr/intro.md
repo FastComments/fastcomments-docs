@@ -9,5 +9,3 @@ Prijava prije svega osigurat će da su generirani isječci koda već povezani s 
 Ovaj je vodič podijeljen u dvije kategorije: stranice za članstvo i obične GoHighLevel stranice.
 
 Počinjemo s uputama za stranice za članstvo.
-
----

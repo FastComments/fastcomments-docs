@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Ime | Tip | Obavezno | Opis |
@@ -24,5 +23,3 @@ let (apiResponseOpt, httpResp) = client.postRemoveComment(
 if apiResponseOpt.isSome:
   let apiResponse = apiResponseOpt.get()
 [inline-code-end]
-
----

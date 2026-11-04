@@ -1,34 +1,34 @@
-The FastComments affiliate kit has everything you need to promote FastComments:
+ערכת השותפים של FastComments מכילה את כל מה שצריך כדי לקדם את FastComments:
 
-- הצגת באנרים ב‑8 גדלים סטנדרטיים של מודעות, בנוסף לתמונות חברתיות עבור פוסטים בגודל 1200x628 ו‑1080x1080
-- הלוגו והסמל של FastComments כ‑SVG ו‑PNG, בצבעים שחור ולבן
-- צילומי מסך של וידג׳ט ההערות ותור המודרציה
-- קווי הנחיה למותג (PDF) הכוללים שימוש בלוגו, צבעים, טיפוגרפיה, וכללי קידום
-- טקסטים מוכנים: תיאורים, אימיילים, פוסטים ברשתות חברתיות, נקודות שיחה לביקורות, וטענות מוצר מאושרות
+- באנרים לתצוגה ב-8 גדלי פרסום סטנדרטיים, ובנוסף תמונות סושיאל לפוסטים בגדלים 1200x628 ו-1080x1080
+- הלוגו והסמל של FastComments כקבצי SVG ו-PNG, בשחור ובלבן
+- צילומי מסך של ווידג'ט התגובות ושל תור הפיקוח
+- הנחיות מיתוג (PDF) המכסות שימוש בלוגו, צבעים, טיפוגרפיה וכללי קידום
+- טקסטים מוכנים: תיאורים, מיילים, פוסטים ברשתות חברתיות, נקודות שיח לביקורות, וטענות מאושרות על המוצר
 
-**[הורד את ערכת השותפים (ZIP)](https://s3.us-west-1.wasabisys.com/fastcomments-prod/fastcomments-affiliate-kit.zip)**
+**[הורדת ערכת השותפים (ZIP)](https://s3.us-west-1.wasabisys.com/fastcomments-prod/fastcomments-affiliate-kit.zip)**
 
 ### קישור
 
-Every link must go to the FastComments homepage with your affiliate code:
+כל קישור חייב להפנות לדף הבית של FastComments עם קוד השותפות שלך:
 
-[inline-code-attrs-start title = 'פורמט קישור שותף'; type = 'text'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'פורמט קישור שותפים'; type = 'text'; inline-code-attrs-end]
 [inline-code-start]
 https://fastcomments.com/?via=YOUR_CODE
 [inline-code-end]
 
-The code is read on the homepage only. A link to any other page, such as pricing or the demos, does not credit you, even with `?via=` added.
+הקוד נקרא רק בדף הבית. קישור לכל דף אחר, כמו תמחור או הדמואים, לא זוכה לך קרדיט, גם אם מתווסף `?via=`.
 
 ### באנרים
 
-The kit includes two campaigns, each in a light and a dark theme:
+הערכה כוללת שתי קמפיינים, כל אחד בערכת נושא בהירה וכהה:
 
 - **live-comments**: "תגובות חיות לכל אתר"
-- **moderation**: "ביקורת שמסוגלת לעמוד בקצב"
+- **moderation**: "פיקוח שמספיק לעמוד בקצב"
 
-Display banners come in `728x90`, `468x60`, `320x50`, `300x250`, `336x280`, `160x600`, `300x600`, and `970x250`, each in a 1x and a retina @2x version. The social images (1200x628 and 1080x1080) are for uploading to social platforms.
+באנרים לתצוגה מגיעים בגדלים `728x90`, `468x60`, `320x50`, `300x250`, `336x280`, `160x600`, `300x600`, ו-`970x250`, כל אחד בגרסת 1x וגרסת רטינה @2x. התמונות הסושיאל (1200x628 ו-1080x1080) מיועדות להעלאה לפלטפורמות חברתיות.
 
-To embed a banner, upload it to your site and wrap it in your affiliate link. When you use a @2x file, set the `width` and `height` of the displayed size:
+כדי לשלב באנר, העלה אותו לאתר שלך ועטוף אותו בקישור השותפות שלך. כשמשתמשים בקובץ @2x, יש להגדיר את ה-`width` וה-`height` לגודל המוצג:
 
 [inline-code-attrs-start title = 'קוד הטמעת באנר'; type = 'html'; inline-code-attrs-end]
 [inline-code-start]
@@ -40,12 +40,12 @@ To embed a banner, upload it to your site and wrap it in your affiliate link. Wh
 
 ### כללים
 
-- חשוף שאתה מרוויח עמלה בכל מקום שבו אתה מקדם את FastComments, והוסף `rel="sponsored"` לקישורי השותפים בעמודי האינטרנט.
-- השתמש רק בטענות המאושרות המופיעות בטקסטים המוכנים של הערכה. אל תבטיח תוכנית חינמית, הנחות, או קודי קופון, ואל תזכיר או תשווה למתחרים.
-- אל תציג את עצמך כ‑FastComments או כשותף רשמי.
+- יש לחשוף שאתה מרוויח עמלה בכל מקום שבו אתה מקדם את FastComments, ולהוסיף `rel="sponsored"` לקישורי שותפים בדפי אינטרנט.
+- השתמש רק בטענות המאושרות המופיעות בטקסטים המוכנים של הערכה. אין להבטיח תוכנית חינמית, הנחות או קודי קופון, ואין להזכיר או להשוות מול מתחרים.
+- אין להציג את עצמך כ-FastComments או כשותף רשמי.
 
-The brand guidelines in the kit have the full details.
+הנחיות המיתוג בערכה מכילות את הפרטים המלאים.
 
-### חומרים מותאמים
+### חומרים מותאמים אישית
 
-Contact us if you need custom sizes or other custom materials, and include your affiliate code.
+צור איתנו קשר אם אתה זקוק לגדלים מותאמים או לחומרים מותאמים אחרים, וכלול את קוד השותפות שלך.

@@ -47,5 +47,3 @@ Se você estiver na UE, deverá definir o parâmetro `region`:
 [inline-code-end]
 
 Você pode encontrar a configuração que o componente React Native suporta <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">aqui</a>.
-
----

@@ -5,5 +5,3 @@ Ugrađujte widgete za komentare uživo, chat i recenzije u svoju Svelte aplikaci
 ## Repozitorij
 
 [Pogledajte na GitHubu](https://github.com/FastComments/fastcomments-svelte)
-
----

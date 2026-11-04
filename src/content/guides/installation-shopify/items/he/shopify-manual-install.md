@@ -1,28 +1,28 @@
-אם אינך יכול להתקין את [Shopify App Store app](https://apps.shopify.com/fastcomments), עדיין ניתן להוסיף את FastComments על‑ידי עריכת התבנית (theme) שלך. נתיב זה שימושי כאשר ברצונך לחבר Tenant של FastComments שבבעלותך, או כאשר אתה משלב את המערכת בחנות Shopify שבה האפליקציה אינה אפשרות.
+אם אינכם יכולים להתקין את [אפליקציית Shopify App Store](https://apps.shopify.com/fastcomments), עדיין ניתן להוסיף את FastComments על ידי עריכת התבנית שלכם. מסלול זה שימושי כאשר ברצונכם לחבר טננט FastComments שכבר בבעלותכם, או כאשר אתם מטמיעים בחנות Shopify שבה האפליקציה אינה אפשרות.
 
-התקנה באמצעות האפליקציה היא הנתיב הנתמך לרוב החנויות. השתמש בדרך זו רק אם האפליקציה אינה מתאימה.
+ההתקנה דרך האפליקציה היא המסלול הנתמך עבור רוב החנויות. השתמשו במסלול זה רק אם האפליקציה אינה מתאימה.
 
-### Step 1: Disable Shopify's native comments
+### שלב 1: השבתת התגובות המובנות של Shopify
 
-בלוח הניהול של Shopify, עבור אל **Blog posts > Manage blogs**, פתח כל בלוג והגדר **Comments are disabled** בפאנל הימני. שמור.
+בממשק הניהול של Shopify, עברו אל **Blog posts > Manage blogs**, פתחו כל בלוג והגדירו **Comments are disabled** בפאנל הימני. שמרו.
 
-זה מונע הצגת מערכת התגובות המובנית של Shopify לצד FastComments.
+פעולה זו מונעת ממערכת התגובות המובנית של Shopify להופיע לצד FastComments.
 
-### Step 2: Open the blog theme template
+### שלב 2: פתיחת תבנית הבלוג
 
 בממשק הניהול של Shopify:
 
-1. Go to **Online Store > Themes**.
-2. Under your current theme, click **Actions > Edit code**.
-3. In the file browser on the left, open **Sections** and click `main-article.liquid`.
+1. עברו אל **Online Store > Themes**.
+2. מתחת לתבנית הנוכחית שלכם, לחצו על **Actions > Edit code**.
+3. בסייר הקבצים משמאל, פתחו את **Sections** ולחצו על `main-article.liquid`.
 
-This is the template Shopify renders for a single blog article.
+זו התבנית ש-Shopify מציג עבור מאמר בלוג בודד.
 
-### Step 3: Paste the FastComments snippet
+### שלב 3: הדבקת קטע הקוד של FastComments
 
-Scroll to roughly line 100 of `main-article.liquid`, just after the closing `</div>` of the article body. Paste the following snippet:
+גללו לקו 100 בערך של `main-article.liquid`, מיד אחרי ה-`</div>` הסוגר של גוף המאמר. הדביקו את קטע הקוד הבא:
 
-[inline-code-attrs-start title = 'קטע FastComments ל-Shopify'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'קטע קוד FastComments עבור Shopify'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget" class="page-width page-width--narrow"></div>
@@ -35,12 +35,12 @@ Scroll to roughly line 100 of `main-article.liquid`, just after the closing `</d
 </script>
 [inline-code-end]
 
-Replace `"demo"` with your own Tenant ID from [fastcomments.com/auth/my-account/api-secret](https://fastcomments.com/auth/my-account/api-secret). Click **Save**.
+החליפו את `"demo"` ב-Tenant ID משלכם מ-[fastcomments.com/auth/my-account/api-secret](https://fastcomments.com/auth/my-account/api-secret). לחצו על **Save**.
 
-### Step 4: Authorize your shop domain
+### שלב 4: אישור הדומיין של החנות שלכם
 
-Open a blog post on your live store. If you see an authorization error instead of the comment widget, FastComments needs to know your store is allowed to use this tenant. See [Domain Errors](/guide-installation-shopify.html#shopify-domain-errors).
+פתחו פוסט בבלוג בחנות החיה שלכם. אם אתם רואים שגיאת אישור במקום ווידג'ט התגובות, FastComments צריך לדעת שהחנות שלכם מורשית להשתמש בטננט זה. ראו [שגיאות דומיין](/guide-installation-shopify.html#shopify-domain-errors).
 
-### Adding FastComments to other pages
+### הוספת FastComments לדפים אחרים
 
-The same snippet works on any Liquid template, including product pages, custom pages, and the home page. Paste it where you want comments to appear and adjust `urlId` if you want a stable identifier per page (for example, `urlId: "{{ product.id }}"` on a product template).
+אותו קטע קוד עובד בכל תבנית Liquid, כולל דפי מוצרים, דפים מותאמים אישית ודף הבית. הדביקו אותו במקום שבו ברצונכם שהתגובות יופיעו והתאימו את `urlId` אם ברצונכם מזהה קבוע לכל דף (למשל, `urlId: "{{ product.id }}"` בתבנית מוצר).

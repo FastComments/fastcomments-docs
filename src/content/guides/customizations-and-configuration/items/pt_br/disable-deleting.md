@@ -1,4 +1,3 @@
----
 Por padrão, o FastComments permitirá que os usuários excluam seus comentários.
 
 No entanto, é possível impedir isso.
@@ -9,5 +8,3 @@ Na página de personalização do widget, veja a opção "Desativar Exclusão".
 
 - Isso afeta apenas os Comentadores regulares e não os moderadores ou administradores, que ainda poderão excluir.
 - Isso também afetará integrações de API quando `contextUserId` for passado. 
-
----

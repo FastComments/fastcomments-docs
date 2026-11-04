@@ -1,14 +1,14 @@
-Past commenters on the page who are NOT currently online. Sorted by displayName.  
-Use this after exhausting /users/online to render a "Members" section.  
-Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName} index from afterName forward via $gt, no $skip cost.
+Προηγούμενοι σχολιαστές της σελίδας που ΔΕΝ είναι επί του παρόντος συνδεδεμένοι. Ταξινομημένοι κατά displayName.
+Χρησιμοποιήστε το αφού εξαντλήσετε το /users/online για να αποδώσετε μια ενότητα "Members".
+Σελιδοποίηση με δείκτη (cursor) στο commenterName: ο διακομιστής διασχίζει το μερικό ευρετήριο {tenantId, urlId, commenterName} από το afterName προς τα εμπρός μέσω $gt, χωρίς κόστος $skip.
 
 ## Παράμετροι
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
-|------|------|------------|-----------|
-| tenantId | string | Yes |  |
-| urlId | string | Yes |  |
-| options | const GetOfflineUsersOptions& | Yes |  |
+|------|------|----------|-------------|
+| tenantId | string | Ναι |  |
+| urlId | string | Ναι |  |
+| options | const GetOfflineUsersOptions& | Ναι |  |
 
 ## Απάντηση
 
@@ -16,7 +16,7 @@ Cursor pagination on commenterName: server walks the partial {tenantId, urlId, c
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'getOfflineUsers Παράδειγμα'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Παράδειγμα getOfflineUsers'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
 utility::string_t urlId = U("page-456");

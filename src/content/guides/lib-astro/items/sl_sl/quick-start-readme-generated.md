@@ -7,4 +7,3 @@ import { FastComments } from 'fastcomments-astro';
 ```
 
 Zamenjajte `"demo"` z vašim FastComments tenant ID.
----

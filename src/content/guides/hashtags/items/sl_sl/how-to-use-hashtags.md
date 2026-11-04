@@ -15,5 +15,3 @@ HashTags so koristni članom skupnosti za navigacijo pri iskanju relevantnih raz
 - Vstopnic v sistemu za upravljanje zahtevkov.
 - Dokumentov ali strani v CRM.
 - Datotek.
-
----

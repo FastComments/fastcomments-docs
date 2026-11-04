@@ -15,5 +15,3 @@ Fragmenty kodu front-end i biblioteki dla On-Prem są takie same jak w produkcie
 [inline-code-end]
 
 Powyższy przykład jest bardzo prosty. Możemy też użyć oficjalnych bibliotek React, Angular, Vue, Svelte itp.
-
----

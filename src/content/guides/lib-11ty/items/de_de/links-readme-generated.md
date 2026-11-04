@@ -1,5 +1,3 @@
----
 - [FastComments Dokumentation](https://docs.fastcomments.com)
 - [Anpassung & Konfiguration](https://docs.fastcomments.com/guide-customizations-and-configuration.html)
 - [Eleventy Dokumentation](https://www.11ty.dev/docs/)
----

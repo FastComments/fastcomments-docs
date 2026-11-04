@@ -12,5 +12,3 @@
 [code-example-start config = {url: 'https://example.com/article-5', urlId: 'article-5'}; linesToHighlight = [6, 7]; title = 'Defining Custom URL and URL IDs together'; code-example-end]
 
 ה-URL אינו מנוקה מפרמטרים שיווקיים נפוצים. כברירת מחדל, ה-URL של הדף הנוכחי נשמר עם התגובה.
-
----

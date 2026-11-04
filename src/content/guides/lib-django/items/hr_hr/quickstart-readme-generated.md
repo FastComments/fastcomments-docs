@@ -1,4 +1,3 @@
----
 Konfigurirajte svoj tenant u `settings.py`:
 
 ```python
@@ -16,4 +15,3 @@ Umetnite widget u bilo koji predložak:
 
 {% fastcomments url_id="my-page" %}
 ```
----

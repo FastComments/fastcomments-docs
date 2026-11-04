@@ -41,5 +41,3 @@ try {
     echo 'Exception when calling DefaultApi->getSSOUserByEmail: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

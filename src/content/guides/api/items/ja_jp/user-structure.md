@@ -1,23 +1,21 @@
-`User` はすべてのユーザーの最も一般的な共通要素を表すオブジェクトです。
+`User` は、すべてのユーザーの共通項を表すオブジェクトです。
 
-Keep in mind that at FastComments we have a bunch of different use cases for users:
+FastComments では、ユーザーに複数のユースケースがあることに注意してください:
 
 - Secure SSO
 - Simple SSO
-- Tenant Users (For example: Administrators)
-- Commenters
+- テナントユーザー(例: 管理者)
+- コメント投稿者
 
-This API is for **Commenters** and users created via **Simple SSO**. Basically, any user created
-through your site can be accessed via this API. Tenant Users can also be fetched this way, but you'll get more information by interacting with the `/tenant-users/` API.
+この API は**コメント投稿者**と **Simple SSO** で作成されたユーザー向けです。基本的に、あなたのサイトを通じて作成されたすべてのユーザーはこの API でアクセスできます。テナントユーザーもこの方法で取得できますが、`/tenant-users/` API を使用した方が多くの情報を得られます。
 
-For `Secure SSO` please use the `/sso-users/` API.
+`Secure SSO` の場合は、`/sso-users/` API をご利用ください。
 
-You cannot update these types of users. They created their account through your site, so we provide some basic read-only access, but
-you cannot make changes. If you want to have this type of flow - you need to setup `Secure SSO`.
+これらのタイプのユーザーは更新できません。彼らはあなたのサイトを通じてアカウントを作成したため、基本的な読み取り専用アクセスのみを提供していますが、変更を加えることはできません。このようなフローを実現したい場合は、`Secure SSO` を設定する必要があります。
 
-The structure for the `User` object is as follows:
+`User` オブジェクトの構造は以下の通りです:
 
-[inline-code-attrs-start title = 'User の構造'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'User 構造'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 export interface User {
     /** これはコメントオブジェクトの userId としても使用される id です。 **/
@@ -35,5 +33,3 @@ export interface User {
     karma?: number
 }
 [inline-code-end]
-
----

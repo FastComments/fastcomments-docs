@@ -29,5 +29,3 @@ DefaultAPI.addDomainConfig(tenantId: tenantId, addDomainConfigParams: addDomainC
     }
 }
 [inline-code-end]
-
----

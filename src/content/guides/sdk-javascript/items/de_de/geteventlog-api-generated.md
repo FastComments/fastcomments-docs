@@ -30,5 +30,3 @@ const endTime: number = Date.now();
 const fullLog: GetEventLogResponse = await getEventLog(tenantId, urlId, userIdWS, startTime, endTime);
 const partialLog: GetEventLogResponse = await getEventLog(tenantId, urlId, userIdWS, startTime);
 [inline-code-end]
-
----

@@ -10,5 +10,3 @@ código extra que permite aos usuários deixar o texto em negrito, sublinhado, e
 Isso também pode ser feito sem código. Na página de personalização do widget, veja a opção "Enable Advanced Formatting".
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-wysiwyg']; selector = '.enable-search-label'; alt='Página de personalização do widget com a caixa de seleção Enable Advanced Formatting marcada para ativar o editor WYSIWYG'; title='Ativar WYSIWYG' app-screenshot-end]
-
----

@@ -1,4 +1,3 @@
----
 ### 401 Ошибки Unauthorized
 
 Если вы получаете ошибки 401 при использовании аутентифицированного API:
@@ -28,4 +27,3 @@ FastCommentsSwiftAPIConfiguration.shared.customHeaders["x-api-key"] = "YOUR_API_
 
 1. Убедитесь, что ваш Info.plist приложения позволяет HTTPS‑соединения к fastcomments.com
 2. Проверьте, что вы не используете исключения App Transport Security, которые могут блокировать соединение
----

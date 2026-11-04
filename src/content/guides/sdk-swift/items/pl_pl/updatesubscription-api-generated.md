@@ -33,5 +33,3 @@ DefaultAPI.updateSubscription(tenantId: tenantId, id: id, updateAPIUserSubscript
     }
 }
 [inline-code-end]
-
----

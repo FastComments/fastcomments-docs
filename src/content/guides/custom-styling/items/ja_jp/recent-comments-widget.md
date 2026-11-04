@@ -1,6 +1,6 @@
-Recent Comments ウィジェットは、サイト全体または特定のページの最新コメントを一覧表示します。見出し、丸いアバター、コメントプレビュー、コメントへのディープリンクとなるクリック可能な日付、自動的なダークモード検出が含まれます。
+最近のコメントウィジェットは、サイト全体または特定のページの最新コメントのリストを表示します。見出し、丸型アバター、コメントのプレビュー、コメントへのディープリンクとなるクリック可能な日付、そして自動ダークモード検出が含まれます。
 
-## Basic Installation
+## 基本的なインストール
 
 [inline-code-attrs-start title = '最近のコメントウィジェットのインストール'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
@@ -13,16 +13,16 @@ Recent Comments ウィジェットは、サイト全体または特定のペー�
 </script>
 [inline-code-end]
 
-## Configuration Options
+## 設定オプション
 
-- **tenantId** (required): Your FastComments tenant ID
-- **urlId** (optional): Filter to a single page. Leave null for all pages
-- **count** (optional): Number of comments to show. Default is `10`
-- **hasDarkBackground** (optional): Force dark mode styling. Auto-detected from the page background if not set
+- **tenantId** (必須): あなたのFastCommentsテナントID
+- **urlId** (任意): 単一のページに絞り込みます。すべてのページを対象とする場合はnullのままにしてください
+- **count** (任意): 表示するコメント数。デフォルトは `10` です
+- **hasDarkBackground** (任意): ダークモードのスタイリングを強制します。設定しない場合はページの背景から自動検出されます
 
-## Widget Structure
+## ウィジェットの構造
 
-The widget renders with the following HTML structure:
+ウィジェットは以下のHTML構造でレンダリングされます:
 
 [inline-code-attrs-start title = '最近のコメントウィジェットのHTML構造'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -44,7 +44,7 @@ The widget renders with the following HTML structure:
 </div>
 [inline-code-end]
 
-## Default CSS Reference
+## デフォルトCSSリファレンス
 
 [inline-code-attrs-start title = '最近のコメントウィジェットのデフォルトCSS'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -70,9 +70,9 @@ The widget renders with the following HTML structure:
 .fc-rc2-page-link:hover { color: #0066cc; text-decoration: underline; }
 [inline-code-end]
 
-## Customization Examples
+## カスタマイズ例
 
-### Change Avatar Size
+### アバターサイズの変更
 
 [inline-code-attrs-start title = 'カスタムアバターサイズ'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -82,18 +82,18 @@ The widget renders with the following HTML structure:
 }
 [inline-code-end]
 
-### Show More Lines of Comment Text
+### コメントテキストの表示行数を増やす
 
-[inline-code-attrs-start title = 'コメントテキストの行数を増やす'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'コメント表示行数を増やす'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rc2-body {
     -webkit-line-clamp: 5 !important;
 }
 [inline-code-end]
 
-### Remove the Container Border
+### コンテナの枠線を削除する
 
-[inline-code-attrs-start title = 'コンテナの境界線を削除'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'コンテナの枠線を削除'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rc2 {
     border: none !important;

@@ -72,5 +72,3 @@ Hetzelfde als bij dry-run: replay-agents schrijven geen geheugen. Replays zijn a
 - [Tool: search_memory](#tools-overview) voor het lezen.
 - [Tool: warn_user](#tool-warn-user) - het enige hulpmiddel dat WARNING-type geheugen schrijft.
 - [Tool: ban_user](#tool-ban-user) - de systeemprompt vereist dat `search_memory` wordt aangeroepen voordat dit gebeurt.
-
----

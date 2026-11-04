@@ -1,4 +1,3 @@
----
 ## パラメータ
 
 | 名前 | 型 | 必須 | 説明 |
@@ -21,5 +20,3 @@ if hashTagsOpt.isSome:
 else:
   echo "No hashtags found"
 [inline-code-end]
-
----

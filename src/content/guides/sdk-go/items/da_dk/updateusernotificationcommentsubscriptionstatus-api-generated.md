@@ -1,4 +1,3 @@
----
 Aktiver eller deaktiver notifikationer for en bestemt kommentar.
 
 ## Parametre
@@ -46,5 +45,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.UpdateUserNotificationCommentSubscriptionStatus`: %v\n", resp)
 }
 [inline-code-end]
-
----

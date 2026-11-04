@@ -1,4 +1,3 @@
----
 FastComments Drupal 模块将 Drupal 内置的评论替换为一个快速、实时的评论系统。该模块已在 [drupal.org](https://www.drupal.org/project/fcom) 发布，并适用于 Drupal 10 和 11。
 
 有两种安装方式。
@@ -17,5 +16,3 @@ drush en fastcomments
 <sup>注意！</sup> 该模块仅依赖于 Drupal 核心（`user` 和 `field`）。不需要其他 Drupal 模块或库。
 
 启用模块后，前往 `Configuration` 部分以设置您的 Tenant ID 和 API Secret。
-
----

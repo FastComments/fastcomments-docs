@@ -1,12 +1,9 @@
----
-Када дефинишете питања, администраторска контролна табла ће приказати ставку у навигацији за [Аналитика повратних информација](https://fastcomments.com/auth/my-account/feedback-analytics).
+Када дефинишете питања, админ контролна табла ће приказати ставку навигације за [Feedback Analytics](https://fastcomments.com/auth/my-account/feedback-analytics).
 
-The following roles allow accessing the feedback analytics:
+Следеће улоге омогућавају приступ аналитици повратних информација:
 
-- Супер админ
+- Супер Админ
 - Власник налога
-- Админ модерације коментара
+- Админ модератор коментара
 
-Each question will show an Over Time trend, an Overall Breakdown, and the entire report can be sliced by Day, Month, or Year. You are not billed for viewing the results.
-
----
+Свако питање ће приказати тренд кроз време (Over Time), укупну расподелу (Overall Breakdown), а цео извештај може бити филтриран по дану, месецу или години. Не наплаћује се преглед резултата.

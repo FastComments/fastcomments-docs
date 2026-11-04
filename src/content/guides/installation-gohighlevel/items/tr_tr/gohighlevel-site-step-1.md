@@ -40,6 +40,3 @@ Aşağı kaydırın ve `CUSTOM JS/HTML`'i seçin:
     <div class="title">Kod Editörünü Aç</div>
     <img class="screenshot-image" src="/images/installation-guides/gohighlevel-site-step-6-open-code-editor.png" alt="Open Code Editor" />
 </div>
-
-
----

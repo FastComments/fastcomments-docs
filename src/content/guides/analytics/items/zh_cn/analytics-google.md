@@ -1,4 +1,3 @@
----
 我们可以配置 FastComments，在有人与评论组件交互时通知 Google Analytics 4。
 
 我们可以跟踪用户何时：
@@ -36,5 +35,3 @@
 
 - 标签： `Comment Posted`，类别： `Engagement`，ID： `post_comment`
 - 标签： `User Voted on a Comment`，类别： `Engagement`，ID： `vote_comment`
-
----

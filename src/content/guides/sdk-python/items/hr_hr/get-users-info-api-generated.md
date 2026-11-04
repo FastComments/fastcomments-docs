@@ -1,13 +1,13 @@
-Bulk user info for a tenant. Given userIds, return display info from User / SSOUser.
-Used by the comment widget to enrich users that just appeared via a presence event.
-No page context: privacy is enforced uniformly (private profiles are masked).
+Masovne informacije o korisnicima za najmoprimca (tenant). Za dane userIds, vraća informacije o prikazu iz User / SSOUser.
+Koristi ga widget za komentare za obogaćivanje korisnika koji su upravo pojavili putem presence eventa.
+Bez konteksta stranice: privatnost se provodi jednoliko (privatni profili su maskirani).
 
 ## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| ids | string | query | Yes | UserIds odvojeni zarezom. |
+| tenantId | string | path | Da |  |
+| ids | string | query | Da | userIds odvojeni zarezima. |
 
 ## Odgovor
 
@@ -22,19 +22,19 @@ from client.models.page_users_info_response import PageUsersInfoResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Definiranje hosta je opcionalno i zadano na https://fastcomments.com
-# Pogledajte configuration.py za popis svih podržanih konfiguracijskih parametara.
+# Defining the host is optional and defaults to https://fastcomments.com
+# See configuration.py for a list of all supported configuration parameters.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Uđite u kontekst s instancom API klijenta
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # Kreirajte instancu API klase
+    # Create an instance of the API class
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    ids = 'ids_example' # str | UserIds odvojeni zarezom.
+    ids = 'ids_example' # str | Comma-delimited userIds.
 
     try:
         api_response = api_instance.get_users_info(tenant_id, ids)
@@ -43,5 +43,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->get_users_info: %s\n" % e)
 [inline-code-end]
-
----

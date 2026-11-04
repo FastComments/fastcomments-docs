@@ -1,4 +1,3 @@
----
 Al moderar y ver hilos de comentarios, es deseable poder saltar directamente a un hilo para obtener contexto durante la moderación.
 
 Esto significa que el flujo del usuario comienza en la página de Moderación de Comentarios, y luego tendría que pasar de un comentario individual a la página que contiene ese comentario, esperar a que la página se cargue, esperar a que los comentarios se carguen y luego desplazarse hasta ese comentario.
@@ -14,4 +13,3 @@ Este botón te llevará al **Visor de Hilos de Comentarios**.
 El Visor de Hilos de Comentarios es una aplicación pequeña y de carga rápida alojada por FastComments que renderiza el hilo de comentarios de la página en la que se encuentra el comentario y se desplaza hasta ese comentario.
 
 Esto permite a los moderadores obtener rápidamente el contexto que necesitan, sin tener que esperar a que se cargue otra página.
----

@@ -1,4 +1,3 @@
----
 Bir Hugo tema bileşeni eklemek için iki standart yöntemden birini seçin.
 
 ### Seçenek A: Hugo Modülü (önerilen)
@@ -29,4 +28,3 @@ Ardından bunu `hugo.toml` dosyanızdan referanslayın. Kendi temanızla birlikt
 ```toml
 theme = ["your-theme", "fastcomments-hugo"]
 ```
----

@@ -1,12 +1,10 @@
-Attach a poll to a comment, or set the full state of the poll it already has.
+Επισυνάψτε μια δημοσκόπηση σε ένα σχόλιο, ή ορίστε την πλήρη κατάσταση της δημοσκόπησης που ήδη έχει.
 
-Options are matched by id: an option sent with the id of an existing option keeps its votes (and takes the
-new label and position), an option sent without an id is added, and existing options left out of the list
-are removed along with the votes cast on them.
+Οι επιλογές αντιστοιχίζονται με βάση το id: μια επιλογή που αποστέλλεται με το id μιας υπάρχουσας επιλογής διατηρεί τις ψήφους της (και παίρνει τη νέα ετικέτα και θέση), μια επιλογή που αποστέλλεται χωρίς id προστίθεται, και οι υπάρχουσες επιλογές που παραλείπονται από τη λίστα αφαιρούνται μαζί με τις ψήφους που έχουν καταψηφιστεί σε αυτές.
 
-Keeping no existing option ids on a poll that has votes deletes all of them, so that needs replaceVotes=true.
+Αν δεν διατηρηθεί κανένα υπάρχον id επιλογής σε μια δημοσκόπηση που έχει ψήφους, διαγράφονται όλες, οπότε αυτό απαιτεί replaceVotes=true.
 
-## Parameters
+## Παράμετροι
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
@@ -15,11 +13,11 @@ Keeping no existing option ids on a poll that has votes deletes all of them, so 
 | commentPollPutInput | CommentPollPutInput | Ναι |  |
 | replaceVotes | boolean | Όχι |  |
 
-## Response
+## Απάντηση
 
 Επιστρέφει: [`SavePollResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/SavePollResponse.ts)
 
-## Example
+## Παράδειγμα
 
 [inline-code-attrs-start title = 'Παράδειγμα putPoll'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

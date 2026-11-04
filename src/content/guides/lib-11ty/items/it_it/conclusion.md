@@ -8,5 +8,3 @@ Se riscontri problemi o hai domande sulla libreria Eleventy (11ty), per favore:
 ## Contribuire
 
 I contributi sono benvenuti! Visita il [repository GitHub](https://github.com/FastComments/fastcomments-11ty) per le linee guida sui contributi.
-
----

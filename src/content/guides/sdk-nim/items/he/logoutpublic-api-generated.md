@@ -10,5 +10,3 @@ let (responseOpt, httpResponse) = client.logoutPublic(tenantId = "my-tenant-123"
 if responseOpt.isSome:
   let emptyResponse = responseOpt.get()
 [inline-code-end]
-
----

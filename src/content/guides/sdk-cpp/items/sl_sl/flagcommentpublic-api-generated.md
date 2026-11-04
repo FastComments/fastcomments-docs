@@ -28,5 +28,3 @@ api->flagCommentPublic(tenantId, commentId, isFlagged, sso)
         }
     });
 [inline-code-end]
-
----

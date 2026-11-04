@@ -1,4 +1,3 @@
----
 页面上过去的评论者（当前不在线）。按 displayName 排序。  
 在耗尽 /users/online 之后使用此接口来渲染“成员”部分。  
 在 commenterName 上使用游标分页：服务器遍历部分 {tenantId, urlId, commenterName}，从 afterName 向前通过 $gt 索引，无需 $skip 成本。
@@ -36,5 +35,3 @@ async function fetchOfflineUsers(): Promise<void> {
   console.log(offlineResponse);
 }
 [inline-code-end]
-
----

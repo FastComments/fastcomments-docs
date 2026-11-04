@@ -50,5 +50,3 @@ interface PageReactUser {
 #### 有用提示
 
 请记得对类似 `urlId` 的值进行 URI 编码。
-
----

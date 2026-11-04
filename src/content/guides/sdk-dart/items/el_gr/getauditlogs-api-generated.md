@@ -38,5 +38,3 @@ try {
     print('Exception when calling DefaultApi->getAuditLogs: $e\n');
 }
 [inline-code-end]
-
----

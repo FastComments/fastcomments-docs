@@ -55,5 +55,3 @@ Bij FastComments weten we dat onze klanten de commentaarwidget aanpassen. Dat is
 Aangezien dit een belangrijk onderdeel van ons product is, hebben we een build-pijplijn die ons in staat stelt om wijzigingen aan de commentaarwidget per klant te beoordelen bij elke release.
 
 Als we kleine problemen vinden, zullen we je account bijwerken om ervoor te zorgen dat onze release soepel verloopt. Als we grote brekende wijzigingen zien, stelt dit ons in staat de release te stoppen.
-
----

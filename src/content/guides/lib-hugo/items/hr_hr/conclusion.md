@@ -8,5 +8,3 @@ Ako naiđete na bilo kakve probleme ili imate pitanja u vezi Hugo biblioteke, mo
 ## Doprinosi
 
 Doprinosi su dobrodošli! Posjetite [GitHub repozitorij](https://github.com/FastComments/fastcomments-hugo) za smjernice za doprinos.
-
----

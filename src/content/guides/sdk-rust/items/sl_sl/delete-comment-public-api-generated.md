@@ -29,5 +29,3 @@ async fn run_delete() -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
-
----

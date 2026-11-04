@@ -1,4 +1,3 @@
----
 Morda boste prejeli napako pooblaščanja, kot sledi:
 
 <div class="screenshot white-bg">
@@ -13,5 +12,3 @@ V tem primeru je rešitev preprosta. Preprosto morate dodati svojo spletno stran
 [Kliknite tukaj, da dodate svojo spletno stran v svoj račun.](https://fastcomments.com/auth/my-account/configure-domains)
 
 Domene se med preizkusnim obdobjem samodejno dodajo v vaš račun, vendar se to lahko zgodi tudi pri dodajanju novih spletnih mest v vaš račun FastComments.
-
----

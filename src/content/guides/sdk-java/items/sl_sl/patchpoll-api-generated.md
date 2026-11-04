@@ -1,12 +1,12 @@
-Edit a poll in place, keeping its tallies: change the question, relabel an option, close or reopen it,
-or change who may see the voters. Options are addressed by id - to add, remove or reorder them, PUT the full list.
+Uredite anketo na mestu, pri čemer ohranite njenih števec: spremenite vprašanje, preimenujte možnost, zaprite ali ponovno odprite anketo,
+ali spremenite, kdo lahko vidi volivce. Možnosti se naslavljajo z id - za dodajanje, odstranjevanje ali preurejanje jih pošljite s PUT kot celoten seznam.
 
-## Parameters
+## Parametri
 
 | Ime | Vrsta | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| commentId | string | path | Yes |  |
+| tenantId | string | query | Da |  |
+| commentId | string | path | Da |  |
 
 ## Odgovor
 
@@ -14,7 +14,7 @@ Vrne: [`SavePollResponse`](https://github.com/FastComments/fastcomments-java/blo
 
 ## Primer
 
-[inline-code-attrs-start title = 'patchPoll Primer'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer patchPoll'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Import classes:
 import com.fastcomments.invoker.ApiClient;
@@ -44,7 +44,6 @@ public class Example {
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      // Exception when calling DefaultApi#patchPoll
       System.err.println("Exception when calling DefaultApi#patchPoll");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());

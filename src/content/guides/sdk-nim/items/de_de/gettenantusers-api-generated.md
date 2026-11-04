@@ -1,4 +1,3 @@
----
 ## Parameter
 
 | Name | Type | Required | Description |
@@ -19,5 +18,3 @@ if response.isSome:
   let data = response.get()
   echo data
 [inline-code-end]
-
----

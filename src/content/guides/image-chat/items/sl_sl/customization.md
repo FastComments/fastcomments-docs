@@ -90,5 +90,3 @@ Za najboljše rezultate poskrbite, da bodo vaše prilagojene pisave naložene pr
 Kvadratni označevalci imajo subtilno vizualno zasnovo, zaradi katere so opazni, ne da bi preplavili sliko. Njihov videz lahko prilagodite s CSS, če želite drugačno vizualno obdelavo.
 
 Označevalci vključujejo stanja ob premiku miške, ki nudijo povratne informacije, ko uporabniki premaknejo miško nad njimi. Na napravah na dotik pa interakcija s tapom zagotovi takojšnje povratne informacije z odpiranjem klepetalnega okna.
-
----

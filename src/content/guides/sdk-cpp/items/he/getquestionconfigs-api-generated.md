@@ -19,5 +19,3 @@ api->getQuestionConfigs(tenantId, skip).then([](std::shared_ptr<GetQuestionConfi
     auto config = std::make_shared<GetQuestionConfigsResponse>(*resp);
 });
 [inline-code-end]
-
----

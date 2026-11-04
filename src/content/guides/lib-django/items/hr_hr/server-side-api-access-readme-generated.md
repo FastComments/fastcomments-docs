@@ -1,4 +1,3 @@
----
 S instaliranim dodatkom `[api]`, pozovite FastComments REST API putem SDK-a,
 pre‑konfiguriranog s vašim API ključem i regijom:
 
@@ -11,4 +10,3 @@ public_api().get_comments_public(...)            # javno (PublicApi)
 # Generirajte SSO token za API pozive ili predaju klijentu:
 token = get_manager().sso().token_for(request.user)
 ```
----

@@ -1,4 +1,3 @@
----
 Aktuell online betrachter einer Seite: Personen, deren Websocket‑Sitzung gerade die Seite abonniert hat.  
 Gibt anonCount + totalCount zurück (räumweite Abonnenten, einschließlich anonymer Betrachter, die wir nicht aufzählen).
 
@@ -38,5 +37,3 @@ PublicAPI.getOnlineUsers(tenantId: tenantId, urlId: urlId, options: PublicAPI.Ge
     }
 }
 [inline-code-end]
-
----

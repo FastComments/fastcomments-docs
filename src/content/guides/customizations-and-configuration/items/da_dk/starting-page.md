@@ -8,5 +8,3 @@ Hvis ønsket, kan den præcise side, der skal gengives, sendes til kommentarwidg
 [code-example-start config = {startingPage: 1}; linesToHighlight = [6]; title = 'Specifying The Page to Render'; code-example-end]
 
 Bemærk, at sidetal begynder ved nul, så ovenstående eksempel gengiver den anden side.
-
----

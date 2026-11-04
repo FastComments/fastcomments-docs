@@ -1,67 +1,67 @@
-[Run History](#run-history) içindeki bir satırda **Görüntüle**ye tıklamak her çalışmaya ait detay sayfasını açar. Burada ajanın muhakemesini okur ve aldığı kararları değerlendirirsiniz.
+[Run History](#run-history) bölümündeki bir satırda **View** (Görüntüle) düğmesine tıklamak, çalıştırmaya özel detay sayfasını açar. Burada ajanın akıl yürütmesini okur ve kararlarını değerlendirirsiniz.
 
-### Top: run summary
+### Üst kısım: çalıştırma özeti
 
 - **Agent** - hangi ajanın çalıştığı.
 - **When** - zaman damgası.
-- **Status** - Started / Success / `Error`, ayrıca uygulanabiliyorsa **Kuru Çalıştırma** rozeti.
-- **Cost** - kiracınızın para birimindeki çalışma başına maliyet.
-- **Cost per action** - beklemede olmayan işlem sayısına bölünmüş maliyet; olağandışı pahalı çalışmaları tespit etmek için kullanışlıdır.
+- **Status** - Başlatıldı / Başarılı / Hata, ayrıca uygunsa **Dry Run** rozeti.
+- **Cost** - kiracınızın para birimi cinsinden çalıştırma başına maliyet.
+- **Cost per action** - beklemeyen eylem sayısına bölünmüş maliyet; alışılmadık derecede pahalı çalıştırmaları tespit etmek için kullanışlıdır.
 
-### Actions taken
+### Alınan eylemler
 
-Run sırasında yapılan her araç çağrısının sıralı listesi. Her giriş şunları gösterir:
+Çalıştırmanın yaptığı her araç çağrısının sırayla listesi. Her girdi şunları gösterir:
 
-- **Action label** - "Wrote a comment", "Marked a comment as spam", "Banned a user" vb. Etiket, action type enum'undan eşlenir.
-- **Reference ID** - etkilenen yorum, kullanıcı veya rozet ID'si, monospaced metin olarak gösterilir (hiperlink değildir).
-- **Agent reasoning** - ajanın çağrıyla birlikte sunduğu gerekçe.
-- **Confidence** - ajanın kendi değerlendirdiği güven seviyesi, yüzde olarak gösterilir.
-- **Pending approval** rozeti - eylem yürütülmek yerine [onay gelen kutusunda](#approval-workflow) sıradaysa gösterilir.
+- **Action label** - "Bir yorum yazdı", "Bir yorumu spam olarak işaretledi", "Bir kullanıcıyı yasakladı" vb. Etiket, eylem tipi enum'undan eşlenir.
+- **Reference ID** - etkilenen yorum, kullanıcı veya rozet kimliği, monospace metin olarak gösterilir (köprü değil).
+- **Agent reasoning** - ajanın çağrıyla birlikte sağladığı gerekçe.
+- **Confidence** - ajanın kendi belirlediği güven düzeyi, yüzde olarak gösterilir.
+- **Pending approval** rozeti - eylem yürütülmek yerine [onay gelen kutusunda](#approval-workflow) bekliyorsa.
 
-Eğer run sıfır eylem yaptıysa bölüm şöyle yazar: "Bu çalışmada hiçbir eylem gerçekleştirilmedi."
+Çalıştırma sıfır eylem aldıysa, bölüm şunu gösterir: "Bu çalıştırma sırasında hiçbir eylem alınmadı."
 
-### LLM transcript
+### LLM transkripti
 
-Eylemlerin altında, ajanın LLM ile yaptığı konuşmanın tam dökümü:
+Eylemlerin altında, ajanın LLM ile olan konuşmasının tam transkripti:
 
-- **System** - sistem promptu (platform eki + sizin başlangıç isteminiz + topluluk yönergeleri).
-- **User** - tetikleyiciyi tanımlayan bağlam mesajı.
-- **Assistant** - modelin yanıtları, araç çağrılarını da içerir.
-- **Tool** - modele geri beslenen araç sonucu (ör. `search_memory`'nin döndürdüğü).
+- **System** - sistem istemi (platform son eki + sizin başlangıç isteminiz + topluluk kuralları).
+- **User** - tetikleyiciyi açıklayan bağlam mesajı.
+- **Assistant** - araç çağrıları dahil, modelin yanıtları.
+- **Tool** - modele geri beslenen araç sonucu (örn. `search_memory` ne döndürdüyse).
 
-Uzun mesajlar daraltılabilir; görüntülemek için **Genişlet** / **Daralt**'a tıklayın.
+Uzun mesajlar daraltılabilir; görüntülemek için **Expand** / **Collapse** düğmelerine tıklayın.
 
-### Reading transcripts
+### Transkriptleri okuma
 
-Döküm, ayarlama için en önemli sayfadır. Ajanın aldığı bir karara katılmıyorsanız, tekrar okumak için bakın:
+Transkript, ayarlamalar için en önemli sayfadır. Ajan katılmadığınız bir karar verdiğinde, şunları görmek için geriye okuyun:
 
-- Modelin **ne gördüğünü** (User bağlam mesajı).
-- Modelin **ne kararlaştırdığını** (Assistant araç çağrıları).
-- Modelin **neleri değerlendirdiğini** (herhangi bir araç sonucu - ör. ajan gerçekten `search_memory` çağrısı yaptı mı ve yasaklamadan önce bir şey buldu mu).
+- Modelin **neyi gördüğü** (User bağlam mesajı).
+- Modelin **neye karar verdiği** (Assistant araç çağrıları).
+- Modelin **neyi değerlendirdiği** (varsa araç sonuçları - örn. ajan gerçekten `search_memory` çağırdı mı ve yasaklamadan önce bir şey buldu mu).
 
-Model sürekli aynı tür hata yapıyorsa, [başlangıç istemini](#personality-prompt) düzenleyin — veya reddedilen bir onaydan sonra [İstemleri Geliştirme](#refining-prompts) kullanın.
+Model sürekli olarak aynı türde hata yapıyorsa, [başlangıç istemini](#personality-prompt) düzenleyin - veya reddedilmiş bir onaydan [Refining Prompts](#refining-prompts) özelliğini kullanın.
 
-### Action references
+### Eylem referansları
 
-Referans ID'leri monospaced metin olarak gösterilir (hiperlink değildir):
+Referans kimlikleri monospace metin olarak gösterilir (köprü değil):
 
-- Yorumlar: yorum ID'si.
-- Kullanıcılar: kullanıcı ID'si.
-- Rozetler: rozet ID'si.
+- Yorumlar: yorum kimliği.
+- Kullanıcılar: kullanıcı kimliği.
+- Rozetler: rozet kimliği.
 
-Etkilenen kaydı ilgili moderasyon/yönetici sayfasında aramak için ID'yi kopyalayabilirsiniz.
+Kimliği kopyalayıp ilgili moderasyon/yönetim sayfasında etkilenen kaydı arayabilirsiniz.
 
-### Kuru çalıştırmada eksik olanlar
+### Dry-run modunda eksik olan
 
-Kuru çalıştırma, aynı eylemleri, gerekçeleri ve güven puanlarını gösterir. Tek fark durum satırındaki **Kuru Çalıştırma** rozeti olur. Yorumlar / kullanıcılar / rozetler için referans ID'leri yine gösterilir — ajan sadece bunları etkilemedi.
+Dry-run çalıştırmaları **aynı** eylemleri, gerekçeleri ve güven puanlarını gösterir. Tek fark, durum satırındaki **Dry Run** rozetidir. Yorumlar / kullanıcılar / rozetler için referans kimlikleri yine gösterilir - ajan sadece onları etkilememiştir.
 
-### Errors
+### Hatalar
 
-`Error` durumundaki run'larda detay sayfası altta yatan hata mesajını gösterir. Yaygın hatalar:
+`Error` durumundaki çalıştırmalar için detay sayfası, altta yatan hata mesajını gösterir. Yaygın hatalar:
 
-- **No LLM API key configured** - kiracı veya platform yapılandırma hatası.
-- **LLM call timeout** - LLM sağlayıcısı yavaş veya erişilemezdi.
-- **Tool dispatch failure** - ajan hatalı argümanlarla bir araç seçti (ör. artık var olmayan bir yorum ID'si).
-- **Budget exhausted mid-run** - çalışmanın ortasında ajanın kotası doldu. Çalışma durduruldu.
+- **No LLM API key configured** - kiracı veya platform yanlış yapılandırması.
+- **LLM call timeout** - LLM sağlayıcısı yavaştı veya kullanılamıyordu.
+- **Tool dispatch failure** - ajan hatalı argümanlarla bir araç seçti (örn. artık var olmayan bir yorum kimliği).
+- **Budget exhausted mid-run** - çalıştırma sürerken ajanın limiti doldu. Çalıştırma durduruldu.
 
-Hatalar kısmi eylemleri geri almaz - hatadan önce tamamlanan herhangi bir araç çağrısı kalıcıdır.
+Hatalar kısmi eylemleri geri almaz - hata öncesinde tamamlanan tüm araç çağrıları geçerli kalır.

@@ -10,5 +10,3 @@
 在這種情況下，修復方法很簡單。您只需將您的網站新增到 FastComments.com 帳戶中。
 
 [點此將您的網站新增至帳戶。](https://fastcomments.com/auth/my-account/configure-domains)
-
----

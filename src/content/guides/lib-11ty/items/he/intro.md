@@ -5,5 +5,3 @@
 ## מאגר
 
 [צפה ב-GitHub](https://github.com/FastComments/fastcomments-11ty)
-
----

@@ -1,22 +1,22 @@
-Record a vote on a poll, or move an existing one to a different option. A voter has at most one vote per
-poll, so calling this again for the same voter moves their vote rather than adding one.
+Проголосуйте в опитуванні або перемістіть наявний голос до іншого варіанту. Учасник має щонайбільше один голос за
+опитування, тому повторний виклик для того самого учасника переміщує його голос, а не додає новий.
 
-This obeys the site's poll settings: if voting is set to logged-in users only, a vote with just an
-anonUserId is rejected, and anonymous votes are rate limited per IP per poll.
+Це підпорядковується налаштуванням опитувань сайту: якщо голосування дозволено лише для авторизованих користувачів, голос лише з
+anonUserId буде відхилено, а анонімні голоси обмежуються за частотою на рівні IP для кожного опитування.
 
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Назва | Тип | Розташування | Обов'язково | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
+| tenantId | string | query | Так |  |
 
 ## Відповідь
 
-Returns: [`CreatePollVoteResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreatePollVoteResponse.java)
+Повертає: [`CreatePollVoteResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreatePollVoteResponse.java)
 
 ## Приклад
 
-[inline-code-attrs-start title = 'createPollVote Приклад'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад createPollVote'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Import classes:
 import com.fastcomments.invoker.ApiClient;
@@ -45,10 +45,10 @@ public class Example {
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Виняток під час виклику DefaultApi#createPollVote");
-      System.err.println("Код статусу: " + e.getCode());
-      System.err.println("Причина: " + e.getResponseBody());
-      System.err.println("Заголовки відповіді: " + e.getResponseHeaders());
+      System.err.println("Exception when calling DefaultApi#createPollVote");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }

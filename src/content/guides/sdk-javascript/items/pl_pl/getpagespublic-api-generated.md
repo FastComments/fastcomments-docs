@@ -1,17 +1,17 @@
-List pages for a tenant. Used by the FChat desktop client to populate its room list.  
-Requires `enableFChat` to be true on the resolved custom config for each page.  
-Pages that require SSO are filtered against the requesting user's group access.
+Wyświetla listę stron dla tenanta. Używane przez klienta desktopowego FChat do wypełnienia listy pokoi.
+Wymaga, aby `enableFChat` było ustawione na true w rozwiązanej niestandardowej konfiguracji dla każdej strony.
+Strony wymagające SSO są filtrowane względem dostępu grupowego użytkownika wysyłającego żądanie.
 
 ## Parametry
 
-| Nazwa | Typ | Wymagane | Opis |
-|------|------|----------|------|
-| tenantId | string | Yes |  |
-| cursor | string | No |  |
-| limit | number | No |  |
-| q | string | No |  |
-| sortBy | PagesSortBy | No |  |
-| hasComments | boolean | No |  |
+| Nazwa | Typ | Wymagany | Opis |
+|------|------|----------|-------------|
+| tenantId | string | Tak |  |
+| cursor | string | Nie |  |
+| limit | number | Nie |  |
+| q | string | Nie |  |
+| sortBy | PagesSortBy | Nie |  |
+| hasComments | boolean | Nie |  |
 
 ## Odpowiedź
 

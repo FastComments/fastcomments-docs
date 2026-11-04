@@ -1,4 +1,3 @@
----
 [api-resource-header-start name = 'QuestionResult'; route = 'POST /api/v1/question-results'; creditsCost = 1; api-resource-header-end]
 
 此 API 端点提供创建一个 `QuestionResult` 的功能。
@@ -44,5 +43,3 @@ interface QuestionResultPostResponse {
     questionResult?: QuestionResult
 }
 [inline-code-end]
-
----

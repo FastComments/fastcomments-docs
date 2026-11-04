@@ -1,4 +1,3 @@
----
 - Python >= 3.8
 
 Temel kurulum pure-stdlib'dir ve SSO yardımcı programlarını sağlar. Oluşturulan
@@ -8,4 +7,3 @@ API istemcisi (`DefaultApi`/`PublicApi`/`ModerationApi`) `client` ekstra paketin
 ```bash
 pip install "fastcomments[client] @ git+https://github.com/fastcomments/fastcomments-python.git@v3.1.0"
 ```
----

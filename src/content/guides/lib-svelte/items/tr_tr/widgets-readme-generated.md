@@ -1,4 +1,3 @@
----
 Bu kütüphane şu anda aşağıdaki widget'ları içerir:
 
 - [Collab Chat](https://github.com/FastComments/fastcomments-svelte/blob/main/src/lib/CollabChatWidget.svelte)
@@ -16,4 +15,3 @@ Ayrıca aşağıdaki örnekleri içerir:
 - [Paginating Products or Blog Posts](https://github.com/FastComments/fastcomments-svelte/blob/main/src/routes/paginated-example/+page.svelte)
 - [Secure SSO](https://github.com/FastComments/fastcomments-svelte/blob/main/src/routes/secure-sso-example/+page.svelte)
 - [Simple SSO](https://github.com/FastComments/fastcomments-svelte/blob/main/src/routes/simple-sso-example/+page.svelte)
----

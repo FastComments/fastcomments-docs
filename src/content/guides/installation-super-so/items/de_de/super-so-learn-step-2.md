@@ -1,8 +1,8 @@
-Im nächsten Schritt müssen Sie den vorgefertigten Widget-Code unten kopieren.
+In diesem nächsten Schritt musst du den unten vorbereiteten Widget-Code kopieren.
 
-Solange Sie bei FastComments.com eingeloggt sind, enthält der untenstehende Code-Snippet bereits Ihre Kontoinformationen. Kopieren Sie ihn:
+Solange du bei FastComments.com eingeloggt bist, enthält der folgende Code-Schnipsel bereits deine Kontoinformationen. Kopieren wir ihn:
 
-[inline-code-attrs-start title = 'Super.so FastComments Kollaborations-Chat-Code'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Super.so FastComments Collab Chat Code'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-collab-chat.min.js"></script>
 <script>
@@ -23,17 +23,17 @@ Solange Sie bei FastComments.com eingeloggt sind, enthält der untenstehende Cod
                 return setTimeout(load, 100);
             }
 
-            // Vorhandene Instanz bereinigen
+            // Bestehende Instanz aufräumen
             if (target.fastCommentsInstance) {
                 target.fastCommentsInstance.destroy();
             }
 
-            // Vorhandene Top-Leiste bereinigen, falls vorhanden
+            // Bestehende Top-Bar aufräumen, falls vorhanden
             if (currentTopBar && currentTopBar.parentNode) {
                 currentTopBar.parentNode.removeChild(currentTopBar);
             }
 
-            // Neue Top-Leiste erstellen
+            // Neue Top-Bar erstellen
             const topBarTarget = document.createElement('div');
             target.parentNode.insertBefore(topBarTarget, target);
             topBarTarget.style.maxWidth = 'var(--layout-max-width)';
@@ -51,10 +51,10 @@ Solange Sie bei FastComments.com eingeloggt sind, enthält der untenstehende Cod
             currentPathname = window.location.pathname;
         }
 
-        // Erstinitialisierung
+        // Erstes Laden
         load();
 
-        // Prüfe alle 500 ms auf Änderungen
+        // Alle 500ms auf Änderungen prüfen
         setInterval(() => {
             // Neu laden, wenn sich der Pfad geändert hat
             if (window.location.pathname !== currentPathname) {
@@ -81,15 +81,15 @@ Solange Sie bei FastComments.com eingeloggt sind, enthält der untenstehende Cod
 </script>
 [inline-code-end]
 
-Fügen Sie es jetzt im Bereich `Body` ein:
+Füge nun den Code in den Bereich `Body` ein:
 
 <div class="screenshot white-bg">
     <div class="title">Eingefügter Code</div>
     <img class="screenshot-image" src="/images/installation-guides/super-so-step-3-pasted-code.png" alt="Eingefügter Code" />
 </div>
 
-If you see a "this is a demo message" after pasting the code:
+Wenn du nach dem Einfügen des Codes eine „this is a demo message"-Meldung siehst:
 
-- Stellen Sie sicher, dass Sie in Ihrem fastcomments.com-Konto eingeloggt sind.
-- Stellen Sie sicher, dass Drittanbieter-Cookies aktiviert sind.
-- Aktualisieren Sie dann diese Seite und kopieren Sie den Code-Snippet erneut. Es sollte `tenantId` mit der Kennung Ihres Tenants gefüllt sein.
+- Stelle sicher, dass du in deinem fastcomments.com-Konto eingeloggt bist.
+- Stelle sicher, dass Cookies von Drittanbietern aktiviert sind.
+- Lade dann diese Seite neu und kopiere den Code-Schnipsel erneut. Er sollte mit der Kennung deines Tenants als `tenantId` gefüllt sein.

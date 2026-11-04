@@ -1,23 +1,23 @@
-List pages for a tenant. Used by the FChat desktop client to populate its room list.  
-Requires `enableFChat` to be true on the resolved custom config for each page.  
-Pages that require SSO are filtered against the requesting user's group access.
+テナントのページ一覧を取得します。FChatデスクトップクライアントがルーム一覧を表示するために使用されます。
+各ページの解決されたカスタム設定で `enableFChat` が true である必要があります。
+SSOが必要なページは、リクエストしたユーザーのグループアクセス権に基づいてフィルタリングされます。
 
-## Parameters
+## パラメーター
 
-| 名前 | 型 | ロケーション | 必須 | 説明 |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| cursor | string | query | No | 前回のリクエストで `nextCursor` として返された不透明なページネーションカーソル。同じ `sortBy` に紐付く。 |
-| limit | integer | query | No | 1..200, default 50 |
-| q | string | query | No | オプションの大文字小文字を区別しないタイトルプレフィックスフィルタ。 |
-| sortBy | string | query | No | ソート順。`updatedAt`（デフォルト、最新が最初）、`commentCount`（コメント数が多い順）、または `title`（アルファベット順）。 |
-| hasComments | boolean | query | No | true の場合、少なくとも1つのコメントがあるページのみを返す。 |
+| tenantId | string | path | はい |  |
+| cursor | string | query | いいえ | 以前のリクエストで `nextCursor` として返された不透明なページネーションカーソル。同じ `sortBy` に紐付きます。 |
+| limit | integer | query | いいえ | 1..200、デフォルトは50 |
+| q | string | query | いいえ | オプションの大文字小文字を区別しないタイトルのプレフィックスフィルター。 |
+| sortBy | string | query | いいえ | ソート順。`updatedAt`(デフォルト、新しい順)、`commentCount`(コメント数の多い順)、または `title`(アルファベット順)。 |
+| hasComments | boolean | query | いいえ | trueの場合、少なくとも1つのコメントがあるページのみを返します。 |
 
-## Response
+## レスポンス
 
-Returns: `GetPublicPagesResponse`
+戻り値: `GetPublicPagesResponse`
 
-## Example
+## 例
 
 [inline-code-attrs-start title = 'getPagesPublic の例'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -25,11 +25,11 @@ import 'package:fastcomments_dart/api.dart';
 
 final api_instance = PublicApi();
 final tenantId = tenantId_example; // String | 
-final cursor = cursor_example; // String | 前回のリクエストで `nextCursor` として返された不透明なページネーションカーソル。同じ `sortBy` に紐付く。
-final limit = 56; // int | 1..200, default 50
-final q = q_example; // String | オプションの大文字小文字を区別しないタイトルプレフィックスフィルタ。
-final sortBy = ; // PagesSortBy | ソート順。`updatedAt`（デフォルト、最新が最初）、`commentCount`（コメント数が多い順）、または `title`（アルファベット順）。
-final hasComments = true; // bool | true の場合、少なくとも1つのコメントがあるページのみを返す。
+final cursor = cursor_example; // String | 以前のリクエストで `nextCursor` として返された不透明なページネーションカーソル。同じ `sortBy` に紐付きます。
+final limit = 56; // int | 1..200、デフォルトは50
+final q = q_example; // String | オプションの大文字小文字を区別しないタイトルのプレフィックスフィルター。
+final sortBy = ; // PagesSortBy | ソート順。`updatedAt`(デフォルト、新しい順)、`commentCount`(コメント数の多い順)、または `title`(アルファベット順)。
+final hasComments = true; // bool | trueの場合、少なくとも1つのコメントがあるページのみを返します。
 
 try {
     final result = api_instance.getPagesPublic(tenantId, GetPagesPublicOptions(cursor: cursor, limit: limit, q: q, sortBy: sortBy, hasComments: hasComments));

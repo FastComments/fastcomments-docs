@@ -1,4 +1,3 @@
----
 FastComments は Comment リソースに対してのみ Webhook をサポートしています。
 
 コメントの作成、削除、更新に対する Webhook をサポートしています。
@@ -8,5 +7,3 @@ FastComments は Comment リソースに対してのみ Webhook をサポート�
 
 ダッシュボードまたは API を通じて（「API での Webhook の管理」を参照）、任意の数のエンドポイントが同じイベントを購読できます。
 各 Webhook は個別に配信されます。
-
----

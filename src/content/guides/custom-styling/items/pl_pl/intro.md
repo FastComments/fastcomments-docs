@@ -10,5 +10,3 @@ Zrozumienie domyślnego CSS pozwala Ci na:
 ## Jak nadpisać style
 
 Sposób nadpisywania stylów zależy od widgetu. Dla widgetu komentarzy musisz użyć parametru konfiguracji `customCSS`, aby przekazać CSS do iframe, lub określić CSS na stronie Dostosowywania w panelu administracyjnym, która będzie serwować CSS z naszego CDN.
-
----

@@ -26,5 +26,3 @@ async fn fetch_trending_gifs(configuration: &configuration::Configuration) -> Re
     Ok(())
 }
 [inline-code-end]
-
----

@@ -20,5 +20,3 @@ if maybeCounts.isSome:
 else:
   echo "No counts returned"
 [inline-code-end]
-
----

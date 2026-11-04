@@ -1,4 +1,3 @@
----
 Agrupa documentos agrupándolos (si se proporciona `groupBy`) y aplicando múltiples operaciones.  
 Se admiten diferentes operaciones (p. ej., `sum`, `countDistinct`, `avg`, etc.).
 
@@ -32,5 +31,3 @@ async fn example() -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
-
----

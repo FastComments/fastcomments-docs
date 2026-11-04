@@ -1,4 +1,3 @@
----
 Nu burde vi have FastComments Live Commenting aktiveret for vores medlemmer!
 
 <div class="screenshot white-bg">
@@ -7,5 +6,3 @@ Nu burde vi have FastComments Live Commenting aktiveret for vores medlemmer!
 </div>
 
 Tillykke med opsætningen af FastComments med Ghost! Hvis du er stødt på en Domain Error, eller gerne vil lære, hvordan du tilpasser kommentarfeltet, så læs videre!
-
----

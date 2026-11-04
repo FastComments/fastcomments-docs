@@ -39,5 +39,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("ModerationApi->get_user_ban_preference çağrılırken oluşan istisna: %s\n" % e)
 [inline-code-end]
-
----

@@ -1,8 +1,8 @@
-Il widget Recent Comments visualizza un elenco dei commenti più recenti in tutto il tuo sito o per una pagina specifica. Include un'intestazione, avatar arrotondati, anteprime dei commenti, date cliccabili che collegano direttamente al commento e il rilevamento automatico della modalità scura.
+Il widget Commenti Recenti mostra un elenco dei commenti più recenti su tutto il tuo sito o per una pagina specifica. Include un'intestazione, avatar arrotondati, anteprime dei commenti, date cliccabili con collegamenti diretti al commento e rilevamento automatico della modalità scura.
 
-## Basic Installation
+## Installazione di Base
 
-[inline-code-attrs-start title = 'Installazione del widget Recent Comments'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Installazione del Widget Commenti Recenti'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/widget-recent-comments-v2.min.js"></script>
 <div id="fastcomments-widget-recent-comments"></div>
@@ -13,18 +13,18 @@ Il widget Recent Comments visualizza un elenco dei commenti più recenti in tutt
 </script>
 [inline-code-end]
 
-## Configuration Options
+## Opzioni di Configurazione
 
-- **tenantId** (obbligatorio): Il tuo ID tenant di FastComments
-- **urlId** (opzionale): Filtra per una singola pagina. Lasciare null per tutte le pagine
+- **tenantId** (obbligatorio): Il tuo ID tenant FastComments
+- **urlId** (opzionale): Filtra per una singola pagina. Lascia null per tutte le pagine
 - **count** (opzionale): Numero di commenti da mostrare. Il valore predefinito è `10`
-- **hasDarkBackground** (opzionale): Forza lo stile della modalità scura. Rilevamento automatico dallo sfondo della pagina se non impostato
+- **hasDarkBackground** (opzionale): Forza lo stile della modalità scura. Rilevato automaticamente dallo sfondo della pagina se non impostato
 
-## Widget Structure
+## Struttura del Widget
 
 Il widget viene renderizzato con la seguente struttura HTML:
 
-[inline-code-attrs-start title = 'Struttura HTML del widget Recent Comments'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Struttura HTML del Widget Commenti Recenti'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <div class="fc-rc2">
     <div class="fc-rc2-heading">Recent Comments</div>
@@ -44,9 +44,9 @@ Il widget viene renderizzato con la seguente struttura HTML:
 </div>
 [inline-code-end]
 
-## Default CSS Reference
+## Riferimento CSS Predefinito
 
-[inline-code-attrs-start title = 'CSS predefinito del widget Recent Comments'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'CSS Predefinito del Widget Commenti Recenti'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rc2 {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -70,11 +70,11 @@ Il widget viene renderizzato con la seguente struttura HTML:
 .fc-rc2-page-link:hover { color: #0066cc; text-decoration: underline; }
 [inline-code-end]
 
-## Customization Examples
+## Esempi di Personalizzazione
 
-### Change Avatar Size
+### Modificare la Dimensione dell'Avatar
 
-[inline-code-attrs-start title = 'Dimensione avatar personalizzata'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Dimensione Avatar Personalizzata'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rc2-avatar {
     width: 40px !important;
@@ -82,23 +82,21 @@ Il widget viene renderizzato con la seguente struttura HTML:
 }
 [inline-code-end]
 
-### Show More Lines of Comment Text
+### Mostrare Più Righe di Testo del Commento
 
-[inline-code-attrs-start title = 'Mostra più righe del commento'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Mostrare Più Righe di Commento'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rc2-body {
     -webkit-line-clamp: 5 !important;
 }
 [inline-code-end]
 
-### Remove the Container Border
+### Rimuovere il Bordo del Contenitore
 
-[inline-code-attrs-start title = 'Rimuovere il bordo del contenitore'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Rimuovere il Bordo del Contenitore'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rc2 {
     border: none !important;
     box-shadow: none !important;
 }
 [inline-code-end]
-
----

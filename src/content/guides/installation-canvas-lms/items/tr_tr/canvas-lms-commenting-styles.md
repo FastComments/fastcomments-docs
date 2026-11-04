@@ -6,5 +6,3 @@ FastComments, Canvas derslerinize dallanmış yorumlar ekler. Standart FastComme
 </div>
 
 Yorumlar her ders sayfasına veya kaynak bağlantısına eklenir, böylece tartışmalar sayfa, ödev veya modül bazında düzenli kalır.
-
----

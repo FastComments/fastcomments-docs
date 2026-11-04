@@ -1,4 +1,3 @@
----
 Agent webhooks forsøger igen ved fejl. Levering er **fire-and-forget fra agentens perspektiv** - en mislykket levering blokerer ikke agentens udførsel eller ruller nogen handlinger tilbage - og en kø + cron håndterer genforsøg asynkront.
 
 ### Kømodel
@@ -67,5 +66,3 @@ Siden [Webhook Delivery Logs](#webhook-logs) er stedet at se, hvorfor en webhook
 ### Sæt en fejlbehæftet webhook på pause
 
 Hvis en webhook konsekvent fejler, er den reneste løsning at slette den (eller midlertidigt rydde dens begivenhedsabonnementsliste). Platformen deaktiverer ikke automatisk fejlede webhooks - de bliver ved med at genforsøge, indtil leveringen opgives.
-
----

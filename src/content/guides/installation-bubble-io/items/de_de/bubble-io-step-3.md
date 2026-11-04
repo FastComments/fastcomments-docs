@@ -1,4 +1,3 @@
----
 Damit das Kommentar-Widget korrekt angezeigt wird, müssen wir die Breite des HTML-Elements anpassen. Suchen Sie im Eigenschaftseditor des Elements die Registerkarte "Layout".
 
 <div class="screenshot white-bg">
@@ -7,5 +6,3 @@ Damit das Kommentar-Widget korrekt angezeigt wird, müssen wir die Breite des HT
 </div>
 
 Die Registerkarte "Layout" enthält wichtige Größenoptionen, die unserem Kommentar-Widget helfen, auf verschiedenen Bildschirmgrößen korrekt angezeigt zu werden.
-
----

@@ -1,4 +1,3 @@
----
 [related-parameter-start name = 'moderationGroupIds'; type = 'Array<string>'; related-parameter-end]
 
 從 [審核群組](https://fastcomments.com/auth/my-account/moderate-comments/moderation-groups) 頁面產生的 id 列表。
@@ -9,4 +8,3 @@
 只在 `Moderate Comments` 頁面中看到與其群組相關聯的評論。
 
 [code-example-start config = {moderationGroupIds: ['mxZAhjzdb', 'FT19nXbqA']}; linesToHighlight = [6, 7, 8, 9]; title = 'Specify Moderation Groups'; code-example-end]
----

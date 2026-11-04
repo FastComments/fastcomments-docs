@@ -49,5 +49,3 @@ export default {
 Бібліотеки `fastcomments-vue` та `fastcomments-vue-next` підтримують ту саму конфігурацію, що й віджет коментарів VanillaJS.
 
 Ви можете знайти конфігурацію, яку підтримує компонент Vue, <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">тут</a>.
-
----

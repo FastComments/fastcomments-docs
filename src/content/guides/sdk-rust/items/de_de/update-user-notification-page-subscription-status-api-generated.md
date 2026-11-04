@@ -1,5 +1,5 @@
-Enable or disable notifications for a page. When users are subscribed to a page, notifications are created
-for new root comments, and also
+Aktivieren oder deaktivieren Sie Benachrichtigungen für eine Seite. Wenn Benutzer eine Seite abonniert haben, werden Benachrichtigungen
+für neue Hauptkommentare erstellt und auch
 
 ## Parameter
 
@@ -12,9 +12,9 @@ for new root comments, and also
 | subscribed_or_unsubscribed | String | Ja |  |
 | sso | String | Nein |  |
 
-## Rückgabe
+## Antwort
 
-Rückgabe: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/update_user_notification_page_subscription_status_response.rs)
+Gibt zurück: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/update_user_notification_page_subscription_status_response.rs)
 
 ## Beispiel
 

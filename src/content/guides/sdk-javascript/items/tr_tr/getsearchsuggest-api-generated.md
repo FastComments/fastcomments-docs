@@ -1,4 +1,3 @@
----
 ## Parametreler
 
 | Ad | Tür | Gerekli | Açıklama |
@@ -23,5 +22,3 @@ Döndürür: [`ModerationSuggestResponse`](https://github.com/FastComments/fastc
   const minimalResponse: ModerationSuggestResponse = await getSearchSuggest(tenantId);
 })();
 [inline-code-end]
-
----

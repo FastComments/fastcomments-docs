@@ -1,20 +1,20 @@
-A coding agent such as Claude Code, Cursor, or an MCP-based assistant can set up FastComments for you without you filling in the signup form. This is useful when you ask an agent to "add comments to my site" and you do not have an account yet.
+像 Claude Code、Cursor 或基於 MCP 的助理這類編碼代理可以在您不填寫註冊表單的情況下，為您設定 FastComments。當您要求代理「為我的網站新增留言」而您還沒有帳戶時，這非常實用。
 
 ### 運作方式
 
-1. The agent creates a new account and receives an API key and a claim link. The API key works right away, so the agent can configure the account and install the widget on your site.
-2. The agent gives you the claim link. Open it in your browser, log in or create a login, and confirm the claim. The account is then yours: you manage it, its billing, and its API keys from the dashboard. The page lists the API key the agent holds so you can revoke it if you no longer want the agent, or whoever runs it, to have access.
-3. If nobody opens the claim link within 72 hours, the account and its key are deleted. Ask the agent to create a new one.
+1. 代理會建立一個新帳戶，並取得一組 API 金鑰與一個認領連結。API 金鑰可立即使用，因此代理可以設定該帳戶並在您的網站上安裝小工具。
+2. 代理會將認領連結提供給您。在瀏覽器中開啟該連結，登入或建立登入帳號，然後確認認領。該帳戶隨即歸您所有：您可以從儀表板管理它、它的帳單以及它的 API 金鑰。該頁面會列出代理持有的 API 金鑰，因此如果您不再希望代理（或其營運者）擁有存取權，可以撤銷該金鑰。
+3. 如果 72 小時內沒有人開啟認領連結，該帳戶及其金鑰將被刪除。請要求代理建立一個新的。
 
-Until it is claimed, the account has the same limits as a normal free trial.
+在被認領之前，該帳戶與一般免費試用具有相同的限制。
 
 ### 如果您已經有帳戶
 
-Each login owns one account. If you open a claim link while logged in to an existing account, the page lets you choose:
+每個登入帳號擁有一個帳戶。如果您在登入現有帳戶的狀態下開啟認領連結，頁面會讓您選擇：
 
-- **Attach to my account** makes the new account a managed tenant of the one you are logged in to. This needs a paid plan with white labeling, and the new tenant's usage is billed to your account.
-- **Sign out and claim with another login** signs you out and brings you back to the claim page so you can claim it with a different login.
+- **附加到我的帳戶** 會將新帳戶變成您目前登入帳戶的受管理租戶。這需要具有白標功能的付費方案，且新租戶的使用量將計入您的帳戶帳單。
+- **登出並以其他登入帳號認領** 會將您登出並帶回認領頁面，讓您可以使用不同的登入帳號進行認領。
 
-### 給代理人作者
+### 給代理作者
 
-The agent instructions at [fastcomments.com/agents.md](https://fastcomments.com/agents.md) describe the account creation call, the fields in the response, and how to hand the claim link to the person you are working for. The call needs no API key and is rate limited per IP address.
+[fastcomments.com/agents.md](https://fastcomments.com/agents.md) 上的代理說明描述了帳戶建立呼叫、回應中的欄位，以及如何將認領連結交給您的委託人。該呼叫不需要 API 金鑰，並且每個 IP 位址都有速率限制。

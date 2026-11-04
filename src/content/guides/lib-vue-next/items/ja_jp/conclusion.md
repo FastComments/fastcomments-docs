@@ -8,5 +8,3 @@ Vue 3 ライブラリに関して問題が発生したり質問がある場合�
 ## 貢献
 
 貢献は歓迎します！貢献ガイドラインについては、[GitHub リポジトリ](https://github.com/FastComments/fastcomments-vue-next) をご覧ください。
-
----

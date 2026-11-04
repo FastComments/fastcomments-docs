@@ -1,4 +1,3 @@
----
 ## パラメータ
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
@@ -32,5 +31,3 @@ DefaultAPI.updateModerator(tenantId: tenantId, id: id, updateModeratorBody: upda
     }
 }
 [inline-code-end]
-
----

@@ -19,6 +19,3 @@ Note:
 
 - In alcuni endpoint API vedrai che l'hashtag viene usato nell'URL. Ricordati di codificare i valori per URI. Per esempio, `#` dovrebbe invece essere rappresentato come `%23`.
 - Alcuni di questi campi sono contrassegnati come `READONLY` - vengono restituiti dall'API ma non possono essere impostati.
- 
-
----

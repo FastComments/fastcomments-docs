@@ -1,18 +1,17 @@
 Мы можем улучшить позиционирование виджета, сделав две вещи.
 
-First, on the left pane, set the widget's height to `fill` and `1fr`:
+Во-первых, на левой панели установите высоту виджета на `fill` и `1fr`:
 
 <div class="screenshot white-bg">
     <div class="title">Высота виджета комментариев</div>
     <img class="screenshot-image" src="/images/installation-guides/framer-step-4-widget-height.png" alt="Высота виджета комментариев" />
 </div>
 
-Next we need to fix the default Framer page config. By default it sets the page height to a fixed size, which can cut off
-comment threads. So let's set this to `fill`, too.
+Далее нам нужно исправить конфигурацию страницы Framer по умолчанию. По умолчанию она задаёт фиксированную высоту страницы, что может обрезать ветки комментариев. Поэтому давайте тоже установим значение `fill`.
 
 <div class="screenshot white-bg">
-    <div class="title">Задать высоту страницы</div>
-    <img class="screenshot-image" src="/images/installation-guides/framer-step-4-page-height.png" alt="Задать высоту страницы" />
+    <div class="title">Установка высоты страницы</div>
+    <img class="screenshot-image" src="/images/installation-guides/framer-step-4-page-height.png" alt="Установка высоты страницы" />
 </div>
 
-Возможно, вам придётся поэкспериментировать с высотой страницы, чтобы добиться желаемого результата.
+Возможно, вам придётся поэкспериментировать с высотой страницы, чтобы получить желаемый результат.

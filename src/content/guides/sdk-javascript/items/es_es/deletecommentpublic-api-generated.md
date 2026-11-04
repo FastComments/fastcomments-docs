@@ -27,5 +27,3 @@ Devuelve: [`PublicAPIDeleteCommentResponse`](https://github.com/FastComments/fas
   const resultWithOptional: PublicAPIDeleteCommentResponse = await deleteCommentPublic(tenantId, commentId, broadcastId, editKey, sso);
 })();
 [inline-code-end]
-
----

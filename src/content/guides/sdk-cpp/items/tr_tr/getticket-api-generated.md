@@ -1,4 +1,3 @@
----
 ## Parametreler
 
 | Ad | Tür | Gerekli | Açıklama |
@@ -25,5 +24,3 @@ api->getTicket(tenantId, ticketId, userId).then([](pplx::task<std::shared_ptr<Ge
     }
 });
 [inline-code-end]
-
----

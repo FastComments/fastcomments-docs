@@ -1,4 +1,3 @@
----
 Cada plantilla funciona dentro de un contexto diferente, lo que significa que hay distintos datos disponibles.
 
 Una forma rápida de ver de un vistazo qué datos están disponibles es comprobar los datos de prueba
@@ -7,5 +6,3 @@ una estructura JSON.
 
 También podemos personalizar los datos de prueba en esta área, para ver cómo queda nuestra plantilla
 en distintas situaciones. Los datos de prueba se pueden restablecer a los valores predeterminados con el botón `Reset`.
-
----

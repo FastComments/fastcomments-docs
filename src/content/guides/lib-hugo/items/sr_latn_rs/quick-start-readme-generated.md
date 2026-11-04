@@ -1,4 +1,3 @@
----
 Podesite svoj tenant ID jednom u `hugo.toml`:
 
 ```toml
@@ -11,4 +10,3 @@ Zatim ili povežite comments widget u svoju temu (pogledajte [Integracija teme](
 ```text
 \{{< fastcomments >}}
 ```
----

@@ -1,4 +1,3 @@
----
 Ankete so privzeto izključene. Če jih želite omogočiti, pojdite v nastavitve prilagajanja gradnika in označite **Enable Polls**.
 
 To doda gumb za anketo v orodno vrstico urejevalnika komentarjev. Ankete se prikažejo znotraj komentarja, gledalci pa glasujejo na mestu.
@@ -8,4 +7,3 @@ To doda gumb za anketo v orodno vrstico urejevalnika komentarjev. Ankete se prik
 Podobno kot druge nastavitve gradnika, se to lahko uporabi za celotno spletno mesto ali le za določene strani ali domene.
 
 Če ankete pozneje izključite, gumb za anketo izgine in obstoječe ankete prenehajo biti prikazane v gradniku. Ankete in njihovi glasovi ostanejo shranjeni ter se znova prikažejo, če ankete ponovno omogočite.
----

@@ -1,4 +1,1 @@
----
 Canlı yorumlar, kontrol panelinizden moderasyon, SSO üzerinden yalnızca üyeler için konular ve gönderilere geri senkronize edilen yorum sayıları için WordPress eklentisini kurun.
-
----

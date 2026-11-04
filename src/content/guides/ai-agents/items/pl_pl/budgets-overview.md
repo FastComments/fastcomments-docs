@@ -1,4 +1,3 @@
----
 Każdy agent ma limity wydatków. Platforma przestaje wysyłać zadania agenta, gdy osiągnięty zostanie limit, i wznawia je po rozpoczęciu nowego okresu.
 
 ### Dwa zakresy, dwa okresy
@@ -61,5 +60,3 @@ Kilka zasad orientacyjnych:
 - [Powiadomienia budżetowe](#budget-alerts) — o powiadomieniach e-mail.
 - [Model kosztów](#cost-model) — jak platforma konwertuje tokeny na dolary.
 - [Powody odrzucenia](#drop-reasons) — pełna lista powodów, dla których wyzwalacz nie uruchamia się.
-
----

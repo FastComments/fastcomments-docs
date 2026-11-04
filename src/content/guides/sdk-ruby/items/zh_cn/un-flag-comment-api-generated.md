@@ -1,4 +1,3 @@
----
 ## 参数
 
 | Name | Type | Location | Required | Description |
@@ -42,5 +41,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->un_flag_comment: #{e}"
 end
 [inline-code-end]
-
----

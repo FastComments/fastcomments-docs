@@ -1,6 +1,6 @@
-Below is the Vanilla JS code for installing the Summary Widget. The React library also has this widget.
+Spodaj je Vanilla JS koda za namestitev Povzetnega pripomočka (Summary Widget). Knjižnica React prav tako vsebuje ta pripomoček.
 
-[inline-code-attrs-start title = 'Namestitev pripomočka povzetka'; type = 'html'; isFunctional = true; type = 'html';  inline-code-attrs-end]
+[inline-code-attrs-start title = 'Namestitev Povzetnega pripomočka'; type = 'html'; isFunctional = true; type = 'html';  inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-reviews-summary.min.js"></script>
 <div id="summary-widget"></div>
@@ -11,12 +11,14 @@ Below is the Vanilla JS code for installing the Summary Widget. The React librar
 </script>
 [inline-code-end]
 
-The widget will automatically find the questions to show in the summary based on the corresponding widget configuration for that page/site.
+Pripomoček bo samodejno našel vprašanja za prikaz v povzetku na podlagi ustrezne konfiguracije pripomočka za to stran/spletno mesto.
 
-### Filtering Comments by Rating
+### Filtriranje komentarjev po oceni
 
-When the comment widget for the same page is also on the page, and it is configured to show each commenter's answer on their comment, the rows of the breakdown become clickable. Clicking a row, for example "5", filters the comment widget to the comments that gave that answer. Clicking the row again, or the X on the "Showing only" chip in the comment widget, shows all the comments again. This needs no configuration: the Summary Widget finds the comment widget with the same `tenantId` and `urlId`.
+Ko je pripomoček za komentarje za isto stran tudi na strani in je konfiguriran tako, da prikazuje odgovor komentatorja na njegovem komentarju, postanejo vrstice razčlenitve
+klikljive. Klik na vrstico, na primer "5", filtrira pripomoček za komentarje na komentarje, ki so dali ta odgovor. Ponoven klik na vrstico ali na X na oznaki "Prikazujem samo"
+v pripomočku za komentarje znova prikaže vse komentarje. To ne potrebuje konfiguracije: Povzetni pripomoček najde pripomoček za komentarje z istim `tenantId` in `urlId`.
 
-This works for star, thumbs, emoji, scale and single choice questions. The breakdown the comment widget shows above the comment box can be clicked the same way.
+To deluje za vprašanja z zvezdicami, palčki, emotikoni, lestvico in enojno izbiro. Razčlenitev, ki jo pripomoček za komentarje prikaže nad oknom za komentarje, je mogoče klikniti na enak način.
 
-If you require the widget in one of our other libraries that does not have it, file a support ticket so that we know to add it.
+Če potrebujete pripomoček v eni od naših drugih knjižnic, ki ga nima, oddajte zahtevek za podporo, da vemo, da ga moramo dodati.

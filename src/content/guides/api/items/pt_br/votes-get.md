@@ -49,5 +49,3 @@ interface VotesResponse {
 Observe que votos anônimos criados via esta API aparecerão na lista `appliedAuthorizedVotes`. Eles são considerados autorizados, uma vez que foram criados através da API com uma API key.
 
 A estrutura `appliedAnonymousVotes` é para votos criados sem um email, API key, etc.
-
----

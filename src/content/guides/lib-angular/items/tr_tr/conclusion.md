@@ -8,5 +8,3 @@ Angular kütüphanesi ile ilgili herhangi bir sorunla karşılaşırsanız veya 
 ## Katkıda Bulunma
 
 Katkılarınız memnuniyetle karşılanır! Katkı yönergeleri için lütfen [GitHub deposunu](https://github.com/FastComments/fastcomments-angular) ziyaret edin.
-
----

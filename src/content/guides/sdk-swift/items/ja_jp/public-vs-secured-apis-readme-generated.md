@@ -1,23 +1,23 @@
-The FastComments SDK provides two types of API endpoints:
+FastComments SDKは、2種類のAPIエンドポイントを提供します:
 
-### PublicAPI - クライアント向け安全エンドポイント
+### PublicAPI - クライアントセーフなエンドポイント
 
-The `PublicAPI` contains endpoints that are safe to call from client-side code (iOS/macOS apps). These endpoints:
-- API key を必要としません
-- 認証に SSO tokens を使用できます
-- ユーザー/デバイスごとにレート制限されます
+`PublicAPI` には、クライアント側のコード(iOS/macOSアプリ)から呼び出しても安全なエンドポイントが含まれています。これらのエンドポイントは:
+- APIキーを必要としません
+- 認証にSSOトークンを使用できます
+- ユーザー/デバイスごとにレート制限が適用されます
 - エンドユーザー向けアプリケーションに適しています
 
-**Example use case**: iOSアプリでのコメントの取得と作成
+**使用例**: iOSアプリでのコメントの取得と作成
 
-### DefaultAPI - サーバーサイドエンドポイント
+### DefaultAPI - サーバー側エンドポイント
 
-The `DefaultAPI` contains authenticated endpoints that require an API key. These endpoints:
-- あなたの FastComments API key が必要です
-- サーバー側のコードからのみ呼び出すべきです
-- あなたの FastComments データへのフルアクセスを提供します
-- テナントごとにレート制限されます
+`DefaultAPI` には、APIキーを必要とする認証済みエンドポイントが含まれています。これらのエンドポイントは:
+- FastCommentsのAPIキーが必要です
+- サーバー側のコードからのみ呼び出す必要があります
+- FastCommentsデータへのフルアクセスを提供します
+- テナントごとにレート制限が適用されます
 
-**Example use case**: 管理操作、大量データのエクスポート、モデレーションツール
+**使用例**: 管理操作、一括データエクスポート、モデレーションツール
 
-**IMPORTANT**: クライアント側のコードに API key を決して公開しないでください。API keys はサーバー側でのみ使用してください。
+**重要**: クライアント側のコードにAPIキーを公開しないでください。APIキーはサーバー側でのみ使用してください。

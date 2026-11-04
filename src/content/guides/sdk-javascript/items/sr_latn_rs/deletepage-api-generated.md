@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
@@ -22,5 +21,3 @@ async function example() {
 }
 example();
 [inline-code-end]
-
----

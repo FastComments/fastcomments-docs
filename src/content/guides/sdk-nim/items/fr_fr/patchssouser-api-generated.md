@@ -1,4 +1,3 @@
----
 ## Paramètres
 
 | Nom | Type | Obligatoire | Description |
@@ -27,5 +26,3 @@ if responseOpt.isSome:
   echo response
 echo httpResponse.statusCode
 [inline-code-end]
-
----

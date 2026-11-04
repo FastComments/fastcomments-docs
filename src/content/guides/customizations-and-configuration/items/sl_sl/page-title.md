@@ -7,6 +7,3 @@ Privzeto se pridobi iz **document.title**.
 Če želite, lahko svoj naslov strani določite na naslednji način:
 
 [code-example-start config = {pageTitle: "Article 42"}; linesToHighlight = [6]; title = 'Specifying The Page Title'; code-example-end]
-
-
----

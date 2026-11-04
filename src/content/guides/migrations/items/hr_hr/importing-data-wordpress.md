@@ -1,17 +1,24 @@
-Naš [WordPress Plugin](https://wordpress.org/plugins/fastcomments/) ima moćan mehanizam uvoza temeljen na korisničkom sučelju. Nakon instalacije dodatka, vodit će vas kroz povezivanje vaše WordPress instalacije s FastComments i kopiranje vaših postojećih podataka o komentarima.
+Naš [WordPress Plugin](https://wordpress.org/plugins/fastcomments/) ima moćan mehanizam uvoza temeljen na korisničkom sučelju. Nakon instalacije dodatka,
+on će vas voditi kroz povezivanje vaše WordPress instalacije s FastComments i kopiranje vaših postojećih podataka o komentarima.
 
-**Ovo se radi bez ručnog kopiranja ili preuzimanja bilo čega.**
+**To se radi bez ručnog kopiranja ili preuzimanja bilo čega.**
 
-Proces migracije bit će vam prikazan putem sučelja tijekom migracije. Većina migracija traje samo nekoliko minuta.
+Proces migracije bit će vam prikazan putem korisničkog sučelja tijekom migracije. Većina migracija traje samo nekoliko minuta.
 
-Mehanizam je dizajniran da ne opterećuje previše vašu WordPress instalaciju tijekom migracije.
+Mehanizam je dizajniran tako da ne stavlja pretjerano opterećenje na vašu WordPress instalaciju tijekom migracije.
 
-Ako premještate svoju stranicu s WordPressa, možete uvesti WordPress XML ili CSV izvoz umjesto korištenja dodatka. Pogledajte [Moving Your Comments to a New Site](/guide-installation-wordpress.html#wordpress-moving-off-wordpress).
+Ako premještate svoju stranicu s WordPressa, umjesto korištenja dodatka možete uvesti WordPress XML ili CSV izvoz. Pogledajte
+[Moving Your Comments to a New Site](/guide-installation-wordpress.html#wordpress-moving-off-wordpress).
 
-### CloudFlare & FireWalls
+### CloudFlare i vatrozidi
 
-Kako bi automatizirano postavljanje WordPressa funkcioniralo, moramo izvršavati pozive prema vašoj WordPress instalaciji. Vatrozidi poput Cloudflarea mogu nas blokirati i uzrokovati neuspjeh integracije. U takvim slučajevima, [možemo vam]https://fastcomments.com/auth/my-account/help) pružiti skup IP adresa koje možete staviti na bijelu listu za integraciju.
+Kako bi automatska WordPress postava radila, moramo upućivati pozive na vašu WordPress instalaciju.
+Vatrozidi poput Cloudflarea mogu nas blokirati i uzrokovati neuspjeh integracije. U takvim slučajevima, [možemo vam
+osigurati](https://fastcomments.com/auth/my-account/help) skup IP adresa za whitelisting radi integracije.
 
-### Data Ownership
+### Vlasništvo nad podacima
 
-U slučaju naše WordPress migracije, svi novi ili ažurirani podaci o komentarima automatski se sinkroniziraju natrag u vašu WordPress instalaciju u pozadini. To znači da, iako komentare poslužuje sam FastComments kako bi smanjio opterećenje vaše WordPress implementacije, mi **također** pohranjujemo ih u vašu bazu podataka kao sigurnosnu kopiju. Ovo također znači da, ako želite preći s FastComments, vaši podaci su već migrirani i ažurirani.
+U slučaju naše WordPress migracije, svi novi ili ažurirani podaci o komentarima automatski se sinkroniziraju natrag na vašu WordPress instalaciju
+u pozadini. To znači da, dok komentare poslužuje sam FastComments kako bi smanjio opterećenje vaše WordPress postave,
+mi ih **također** spremamo u vašu bazu podataka kao sigurnosnu kopiju. To također znači da, ako želite prijeći s FastCommentsa, vaši su podaci
+već migrirani i ažurni.

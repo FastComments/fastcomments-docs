@@ -1,28 +1,25 @@
----
-Blok **FastComments - Recent Discussions** prikazuje stranice u vašoj prodavnici sa najnovijom aktivnošću komentara, po jedan unos po stranici. Koristite ga kada želite da posetioci otkriju aktivne teme umesto pojedinačnih komentara.
+Blok **FastComments - Recent Discussions** prikazuje stranice na vašoj prodavnici sa najskorijom aktivnošću komentara, po jedan unos po stranici. Koristite ga kada želite da posetioci otkriju aktivne diskusije, a ne pojedinačne komentare.
 
-### Dodajte blok
+### Dodavanje bloka
 
 1. Otvorite Shopify editor teme.
-2. Otvorite šablon gde želite feed, kao što su bočna traka, footer, indeks bloga ili sekcija početne stranice.
-3. Kliknite **Dodaj blok** u sekciji koja treba da ga sadrži.
-4. Pod **Aplikacije**, izaberite **FastComments - Recent Discussions**.
-5. Kliknite **Sačuvaj**.
+2. Otvorite šablon u kojem želite feed, na primer sidebar, footer, blog indeks ili sekciju početne stranice.
+3. Kliknite **Add block** u sekciji koja treba da ga sadrži.
+4. Pod **Apps**, izaberite **FastComments - Recent Discussions**.
+5. Kliknite **Save**.
 
 ### Podešavanja
 
-| Setting | What it does | Default |
+| Podešavanje | Šta radi | Podrazumevano |
 |---|---|---|
-| Tenant ID (optional) | Zamenite FastComments tenant iz kojeg feed čita podatke. Ostavite prazno da biste koristili automatski konfigurisani tenant prodavnice. | (prazno) |
-| Number of comments | Koliko nedavnih diskusija prikazati. Opseg 1 do 50. | 20 |
+| Tenant ID (opciono) | Odredite iz kog FastComments tenanta feed čita podatke. Ostavite prazno da se koristi automatski konfigurisan tenant prodavnice. | (prazno) |
+| Number of comments | Koliko skorašnjih diskusija prikazati. Opseg od 1 do 50. | 20 |
 
 ### Recent Discussions vs Recent Comments
 
-Oba bloka povlače podatke iz istog izvora, ali prikazuju različite prikaze:
+Oba bloka povlače podatke iz istog izvora, ali prikazuju različite poglede:
 
-- **Recent Comments**: jednostavna lista najnovijih pojedinačnih komentara. Najbolje za "šta je upravo rečeno".
-- **Recent Discussions**: po jedan unos po stranici, sortirano po najnovijoj aktivnosti. Najbolje za "koje teme su trenutno aktivne".
+- **Recent Comments**: ravna lista najnovijih pojedinačnih komentara. Najbolje za "šta je upravo rečeno".
+- **Recent Discussions**: jedan unos po stranici, sortiran po najskorijoj aktivnosti. Najbolje za "koje diskusije su trenutno žive".
 
-Možete koristiti oba u istoj prodavnici. Na primer, Recent Comments u bočnoj traci bloga i Recent Discussions na početnoj strani.
-
----
+Možete koristiti oba na istoj prodavnici. Na primer, Recent Comments u sidebar-u bloga i Recent Discussions na početnoj stranici.

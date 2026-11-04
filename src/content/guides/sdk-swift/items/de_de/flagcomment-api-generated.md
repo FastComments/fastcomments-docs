@@ -34,5 +34,3 @@ DefaultAPI.flagComment(tenantId: tenantId, id: id, options: DefaultAPI.FlagComme
     }
 }
 [inline-code-end]
-
----

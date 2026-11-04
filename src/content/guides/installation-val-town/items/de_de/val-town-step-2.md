@@ -27,5 +27,3 @@ Das Zurückfallen auf `"demo"` lässt den Val für jeden funktionieren, der ihn 
 ## EU-Konten
 
 Ein Konto, seine Daten und seine Schlüssel befinden sich in einer Region. Wenn Ihres auf `eu.fastcomments.com` erstellt wurde, benötigt jede Widget‑Konfiguration ebenfalls `region: "eu"`, und die Skripte werden von `cdn-eu.fastcomments.com` geladen. Andernfalls lassen Sie beide unverändert.
-
----

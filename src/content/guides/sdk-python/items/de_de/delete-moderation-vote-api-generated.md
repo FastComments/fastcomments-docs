@@ -46,5 +46,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Ausnahme beim Aufruf von ModerationApi->delete_moderation_vote: %s\n" % e)
 [inline-code-end]
-
----

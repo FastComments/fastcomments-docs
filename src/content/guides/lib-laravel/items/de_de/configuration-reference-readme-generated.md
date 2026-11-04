@@ -1,4 +1,3 @@
----
 | Schlüssel | Umgebungsvariable | Standard | Beschreibung |
 |-----|-------------|---------|-------------|
 | `tenant_id` | `FASTCOMMENTS_TENANT_ID` | `''` | Ihre FastComments Tenant-ID |
@@ -9,4 +8,3 @@
 | `sso.login_url` | `FASTCOMMENTS_SSO_LOGIN_URL` | `null` | Login-URL (fällt auf die Laravel-Route zurück) |
 | `sso.logout_url` | `FASTCOMMENTS_SSO_LOGOUT_URL` | `null` | Logout-URL (fällt auf die Laravel-Route zurück) |
 | `widget_defaults` | — | `[]` | Standard-Widget-Konfigurationsoptionen |
----

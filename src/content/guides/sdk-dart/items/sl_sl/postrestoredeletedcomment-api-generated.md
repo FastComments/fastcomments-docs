@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Ime | Tip | Lokacija | Obvezno | Opis |
@@ -31,5 +30,3 @@ try {
     print('Exception when calling ModerationApi->postRestoreDeletedComment: $e\n');
 }
 [inline-code-end]
-
----

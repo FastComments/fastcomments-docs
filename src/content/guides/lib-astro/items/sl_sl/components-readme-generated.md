@@ -1,4 +1,3 @@
----
 | Komponenta | Opis |
 | --- | --- |
 | `FastComments` | Vtičnik za komentarje z odgovori, glasovanjem in drugimi funkcijami |
@@ -16,4 +15,3 @@ Vse komponente so izvožene iz korena paketa:
 import { FastComments, FastCommentsLiveChat } from 'fastcomments-astro';
 ---
 ```
----

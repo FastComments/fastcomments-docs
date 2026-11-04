@@ -10,5 +10,3 @@ Vogliamo assicurarci di mostrare un thread di commenti unico per ogni post del b
     <div class="title">Passo Uno: Modifica la pagina dinamica del post</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-1-open-page.png" alt="Modifica la pagina dinamica del post" />
 </div>
-
----

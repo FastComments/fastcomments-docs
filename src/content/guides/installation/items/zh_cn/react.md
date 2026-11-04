@@ -35,5 +35,3 @@ class Example extends Component {
 [inline-code-end]
 
 您可以在 <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">这里</a> 找到 React 组件支持的配置。
-
----

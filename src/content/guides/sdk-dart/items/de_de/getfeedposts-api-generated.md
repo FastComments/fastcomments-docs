@@ -13,16 +13,16 @@ afterId
 
 ## Antwort
 
-Returns: `GetFeedPostsResponse`
+Gibt zurück: `GetFeedPostsResponse`
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'getFeedPosts Beispiel'; type = ''; isFunctional = false; inline-code-attrs-end]
-```dart
+[inline-code-start]
 import 'package:fastcomments_dart/api.dart';
-// TODO API-Schlüssel-Authentifizierung konfigurieren: api_key
+// TODO API-Schlüssel-Autorisierung konfigurieren: api_key
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKey = 'YOUR_API_KEY';
-// Entkommentieren Sie unten, um ein Präfix (z.B. Bearer) für den API-Schlüssel einzurichten, falls nötig
+// unten einkommentieren, um ein Präfix (z. B. Bearer) für den API-Schlüssel einzurichten, falls erforderlich
 //defaultApiClient.getAuthentication<ApiKeyAuth>('api_key').apiKeyPrefix = 'Bearer';
 
 final api_instance = DefaultApi();
@@ -37,6 +37,4 @@ try {
 } catch (e) {
     print('Exception when calling DefaultApi->getFeedPosts: $e\n');
 }
-```
-
----
+[inline-code-end]

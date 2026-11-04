@@ -1,4 +1,3 @@
----
 ## Parámetros
 
 | Nombre | Tipo | Ubicación | Requerido | Descripción |
@@ -33,5 +32,3 @@ try {
     print('Exception when calling ModerationApi->postSetCommentReviewStatus: $e\n');
 }
 [inline-code-end]
-
----

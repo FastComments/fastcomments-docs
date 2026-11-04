@@ -1,13 +1,12 @@
-The individual votes behind one poll's tallies, oldest first.
+Bir anketin toplamlarının ardındaki tek tek oylar, eskiden yeniye doğru.
 
-A poll belongs to a comment, so votes are always read one poll at a time - commentId is required. That
-keeps every query on the indexes the collection already has.
+Bir anket bir yoruma aittir, bu nedenle oylar her zaman tek bir anket üzerinden okunur - commentId zorunludur. Bu, her sorgunun koleksiyonun zaten sahip olduğu indeksler üzerinde kalmasını sağlar.
 
-Obeys the poll's privacy: an anonymous poll's votes cannot be read (poll-anonymous), here or by id.
+Anketin gizlilik ayarına uyar: anonim bir anketin oyları okunamaz (poll-anonymous), ne burada ne de id ile.
 
-## Parameters
+## Parametreler
 
-| Ad | Tür | Gerekli | Açıklama |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | commentId | string | Yes |  |
@@ -15,7 +14,7 @@ Obeys the poll's privacy: an anonymous poll's votes cannot be read (poll-anonymo
 | optionId | string | No |  |
 | skip | number | No |  |
 
-## Response
+## Yanıt
 
 Döndürür: [`GetPollVotesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPollVotesResponse.ts)
 
@@ -39,5 +38,3 @@ const pollResult: GetPollVotesResponse = await getPollVotes(
 
 console.log(pollResult);
 [inline-code-end]
-
----

@@ -1,24 +1,23 @@
-Translates the given comments into the widget locale. Only available when the matching widget
-customization rule has Comment Translation set to Automatic or Manual.
+将给定的评论翻译为组件的语言环境。仅当匹配的组件自定义规则中的“评论翻译”设置为“自动”或“手动”时才可用。
 
-## Parameters
+## 参数
 
 | 名称 | 类型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| urlId | string | query | Yes |  |
-| sso | string | query | No |  |
-| locale | string | query | No |  |
+| tenantId | string | path | 是 |  |
+| urlId | string | query | 是 |  |
+| sso | string | query | 否 |  |
+| locale | string | query | 否 |  |
 
-## Response
+## 响应
 
-返回: [`CommentTranslationsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CommentTranslationsResponse.java)
+返回：[`CommentTranslationsResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CommentTranslationsResponse.java)
 
-## Example
+## 示例
 
 [inline-code-attrs-start title = 'translateComments 示例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 导入类:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;

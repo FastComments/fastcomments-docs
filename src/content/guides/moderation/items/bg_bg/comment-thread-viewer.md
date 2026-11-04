@@ -1,17 +1,16 @@
-When moderating and viewing comment threads it is desirable to be able to jump directly to a thread to get context during moderating.
+При модериране и преглед на нишки с коментари е желателно да можете да преминете директно към дадена нишка, за да получите контекст по време на модерирането.
 
-This means that the user's flow starts in the Comment Moderation page, and would then have to go from an individual comment to
-the page containing that comment, wait for that page to load, wait for the comments to load, and then scroll to that comment.
+Това означава, че потокът на потребителя започва от страницата за модериране на коментари и след това трябва да премине от отделен коментар към
+страницата, съдържаща този коментар, да изчака страницата да се зареди, да изчака коментарите да се заредят и след това да превърти до този коментар.
 
-However, FastComments provides a faster way. In the Moderate Comments page, next to each comment, there is a "Преглед на коментара" button in the bottom right.
+FastComments обаче предлага по-бърз начин. В страницата за модериране на коментари, до всеки коментар, в долния десен ъгъл има бутон „View Comment".
 
-[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=1&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = '.comments .comment-component'; alt='Един единствен коментар в списъка за модериране, с бутон „Преглед на коментара“ в долния му десен ъгъл'; title='Коментар' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=1&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = '.comments .comment-component'; alt='Отделен коментар в списъка за модериране, с бутона View Comment в долния му десен ъгъл'; title='Коментар' app-screenshot-end]
 
-If this comment has replies, the button text will instead say the number of replies, but clicking it takes the same action.
+Ако този коментар има отговори, текстът на бутона вместо това ще показва броя на отговорите, но щракването върху него извършва същото действие.
 
-This button will take you to the **Преглед на нишка от коментари**.
+Този бутон ще ви отведе до **Comment Thread Viewer**.
 
-The Comment Thread Viewer is a small, fast loading application hosted by FastComments that renders the comment thread for the page that
-the comment is on, and scrolls to that comment.
+Comment Thread Viewer е малко приложение с бързо зареждане, хоствано от FastComments, което визуализира нишката с коментари за страницата, на която се намира коментарът, и превърта до този коментар.
 
-This allows moderators to gather the context they need to, quickly, without having to wait for another page to load.
+Това позволява на модераторите бързо да съберат нужния им контекст, без да се налага да чакат друга страница да се зареди.

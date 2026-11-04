@@ -1,4 +1,3 @@
----
 [related-parameter-start name = 'countAll'; type = 'boolean'; related-parameter-end]
 
 El recuento de comentarios que se muestra en la parte superior del widget de comentarios puede mostrar ya sea todos los comentarios "nivel superior", es decir, aquellas respuestas que
@@ -16,5 +15,3 @@ Si quisiéramos que el recuento reflejara sólo los comentarios de nivel superio
 [code-example-start config = {countAll: false}; linesToHighlight = [6]; title = 'Counting Top Level Comments'; code-example-end]
 
 Esto actualmente no puede personalizarse sin cambios en el código.
-
----

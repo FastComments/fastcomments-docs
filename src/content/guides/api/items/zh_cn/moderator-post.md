@@ -65,5 +65,3 @@ interface ModeratorPostResponse {
     moderator?: Moderator; // 成功时返回完整创建的 Moderator。
 }
 [inline-code-end]
-
----

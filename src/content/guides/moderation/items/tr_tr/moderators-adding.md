@@ -1,4 +1,3 @@
----  
 Yöneticiler için, Yorum Moderasyonu sayfasının üst kısmında bir Moderatör Ekle düğmesi bulunur.
 
 [app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=3&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = '.moderation-settings-options'; alt='Yorum Moderasyonu sayfasının üst kısmındaki düğme satırı, Moderatör Ekle düğmesi dahil'; title='Yorum Moderasyonu Ayar Düğmeleri' app-screenshot-end]

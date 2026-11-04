@@ -30,5 +30,3 @@ DefaultAPI.getCachedNotificationCount(tenantId: tenantId, id: id) { (response, e
     }
 }
 [inline-code-end]
-
----

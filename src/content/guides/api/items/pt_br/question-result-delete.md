@@ -1,4 +1,3 @@
----
 [api-resource-header-start name = 'QuestionResult'; route = 'DELETE /api/v1/question-results/:id'; creditsCost = 1; api-resource-header-end]
 
 Esta rota realiza a remoção de um `QuestionResult` pelo id.
@@ -27,5 +26,3 @@ interface QuestionResultResponse {
     reason?: string
 }
 [inline-code-end]
-
----

@@ -18,5 +18,3 @@ Löst den Agenten jedes Mal aus, wenn ein neuer Kommentar auf einer vom [Geltung
 - **Moderation** - prüft den Kommentar anhand der Community-Richtlinien, markiert Spam oder warnt Erstkommentatoren.
 - **Begrüßung** - obwohl [Auslöser: Erster Kommentar eines neuen Nutzers](#trigger-new-user-first-comment) in der Regel besser für Begrüßungen geeignet ist, da er einmal pro Nutzer ausgelöst wird.
 - **Thread-Zusammenfassung** - wird üblicherweise mit einer [Trigger-Verzögerung](#trigger-deferred-delay) kombiniert, damit sich der Thread beruhigt, bevor der Agent ausgeführt wird.
-
----

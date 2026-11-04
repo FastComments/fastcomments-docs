@@ -1,37 +1,23 @@
 ## Primjeri Zapova
 
-Nekoliko radnih tokova koji se postavljaju za par minuta.
+Nekoliko radnih tokova čije postavljanje traje samo nekoliko minuta.
 
-**Primajte obavijesti o novim komentarima.** New Comment, then Slack "Send Channel Message" or Discord "Send
-Channel Message". Mapirajte ime komentatora, tekst komentara i URL stranice u poruku. Dodajte
-filter domene kako biste obavijestili različiti kanal po web mjestu.
+**Dobijte obavijest o novim komentarima.** New Comment, a zatim Slack "Send Channel Message" ili Discord "Send Channel Message". Mapirajte ime komentatora, tekst komentara i URL stranice u poruku. Dodajte filter domene kako biste obavještavali različite kanale za različite stranice.
 
-**Vodite zapis svakog komentara.** New Comment, then Google Sheets "Create Spreadsheet Row". Dodajte Deleted
-Comment kao drugi Zap koji dodaje redak s ID‑om komentara, tako da tablica služi i kao revizijski zapis.
+**Vodite evidenciju svakog komentara.** New Comment, a zatim Google Sheets "Create Spreadsheet Row". Dodajte Deleted Comment kao drugi Zap koji dodaje red s ID-om komentara, tako da tablica istovremeno služi kao revizijski trag.
 
-**Pošaljite e‑mail autoru kada je komentar odobren.** Updated Comment with a Zapier filter on Approved is true,
-then Gmail "Send Email". Budući da Updated Comment aktivira pri svakoj promjeni, filter je ono što
-čini da ovaj Zap reagira samo na odobrenja.
+**Pošaljite e-mail autoru kada je komentar odobren.** Updated Comment s Zapier filterom na Approved is true, a zatim Gmail "Send Email". Budući da se Updated Comment aktivira pri svakoj promjeni, upravo filter čini da ovaj Zap reagira samo na odobrenja.
 
-**Dodajte komentatore u svoj CRM ili mailing listu.** New Comment, then HubSpot "Create or Update Contact" or
-Mailchimp "Add or Update Subscriber" using the commenter email. Poštujte svoju politiku privatnosti i lokalne zakone
-prije nego što ikoga dodate na marketinšku listu.
+**Dodajte komentatore u svoj CRM ili mailing listu.** New Comment, a zatim HubSpot "Create or Update Contact" ili Mailchimp "Add or Update Subscriber" koristeći e-mail komentatora. Poštujte svoju politiku privatnosti i lokalne zakone prije dodavanja ikoga na marketinšku listu.
 
-**Stvorite komentar iz obrasca.** Typeform or Google Forms "New Response", then FastComments Create Comment
-with the page URL ID your site uses for testimonials. Ostavite Approved neoznačeno kako biste pregledali svaki prije nego što se
-prikaže.
+**Stvorite komentar iz obrasca.** Typeform ili Google Forms "New Response", a zatim FastComments Create Comment s ID-om URL-a stranice koji vaša stranica koristi za preporuke. Ostavite Approved neoznačenim kako biste pregledali svaki komentar prije nego što se pojavi.
 
-**Objavite najave u feed.** RSS by Zapier "New Item in Feed", then Create Feed Post with the item's
-title, content, and link.
+**Objavite najave u feed.** RSS by Zapier "New Item in Feed", a zatim Create Feed Post s naslovom, sadržajem i poveznicom stavke.
 
-**Omogućite članove kao SSO korisnike.** Memberstack, Memberful, or your own webhook, then Find SSO User followed
-by Create SSO User in "find or create" mode.
+**Osigurajte članove kao SSO korisnike.** Memberstack, Memberful ili vlastiti webhook, a zatim Find SSO User nakon kojeg slijedi Create SSO User u načinu rada "find or create".
 
-**Eskalirajte prijavljene komentare.** Updated Comment, filtered on a flag count above zero, then Trello "Create
-Card" or Linear "Create Issue" with the comment id and a link to the moderation page.
+**Escalirajte prijavljene komentare.** Updated Comment, filtriran na broj zastavica veći od nule, a zatim Trello "Create Card" ili Linear "Create Issue" s ID-om komentara i poveznicom na stranicu za moderaciju.
 
-**Objavite stranice kada postanu aktivne.** WordPress or Ghost "New Post", then Create Page with the post URL, so the
-page is listed and restricted before the first comment.
+**Objavite stranice čim postanu aktivne.** WordPress ili Ghost "New Post", a zatim Create Page s URL-om objave, tako da je stranica navedena i ograničena prije prvog komentara.
 
-**Arhivirajte izbrisane komentare.** Deleted Comment, then Airtable "Create Record" with the full comment for
-compliance retention.
+**Arhivirajte izbrisane komentare.** Deleted Comment, a zatim Airtable "Create Record" s potpunim komentarom radi usklađenosti s pravilima zadržavanja podataka.

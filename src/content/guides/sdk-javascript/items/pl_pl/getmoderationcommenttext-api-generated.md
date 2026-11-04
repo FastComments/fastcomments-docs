@@ -25,5 +25,3 @@ async function fetchComment() {
 
 fetchComment();
 [inline-code-end]
-
----

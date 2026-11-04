@@ -8,5 +8,3 @@ Ako naiđete na bilo kakve probleme ili imate pitanja o React Native SDK-u, moli
 ## Doprinosi
 
 Doprinosi su dobrodošli! Posjetite [GitHub repozitorij](https://github.com/FastComments/fastcomments-react-native-sdk) za smjernice o doprinosu.
-
----

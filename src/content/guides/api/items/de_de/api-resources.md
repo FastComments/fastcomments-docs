@@ -1,4 +1,3 @@
----
 ### Ressourcennutzung
 
 Es sollte beachtet werden, dass das Abrufen von Daten über die API als Nutzung Ihres Kontos gezählt wird.
@@ -16,5 +15,3 @@ Wir empfehlen, zuerst die Pages-Dokumentation zu lesen, um Verwirrungen zu verme
 ### Webhooks
 
 Webhook-Abonnements haben ihre eigene Anleitung. `POST`, `GET` und `DELETE /api/v1/webhooks` sowie `GET /api/v1/webhooks/sample-payloads` sind unter [Managing Subscriptions via API](/guide-webhooks.html#webhooks-api-subscriptions) dokumentiert, und die Ereignis-Payloads unter [Webhook Structures](/guide-webhooks.html#webhooks-structures).
-
----

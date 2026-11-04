@@ -35,5 +35,3 @@ const locale: string = "en-US";
   console.log(rendered);
 })();
 [inline-code-end]
-
----

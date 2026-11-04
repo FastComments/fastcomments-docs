@@ -25,5 +25,3 @@ Za WordPress lahko to funkcijo omogočite z namestitvijo vtičnika, kot je WPCod
     })();
 </script>
 [inline-code-end]
-
----

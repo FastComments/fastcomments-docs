@@ -1,4 +1,3 @@
----
 Samler dokumenter ved at gruppere dem (hvis groupBy er angivet) og anvende flere operationer.
 Forskellige operationer (f.eks. sum, countDistinct, avg osv.) understøttes.
 
@@ -58,5 +57,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

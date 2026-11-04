@@ -44,5 +44,3 @@ interface TenantUserPostResponse {
     tenantUser?: TenantUser; // Retornamos o tenant user completo criado em caso de sucesso.
 }
 [inline-code-end]
-
----

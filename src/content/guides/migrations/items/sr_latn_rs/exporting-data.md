@@ -8,5 +8,3 @@ Ako želite periodično da povlačite podatke iz FastComments, preporučujemo ko
 
 U slučaju WordPress integracija, FastComments automatski sinhronizuje podatke nazad na vašu WordPress instalaciju
 periodično. Zbog toga, prilikom migracije sa FastComments, potrebno je samo da ga isključite.
-
----

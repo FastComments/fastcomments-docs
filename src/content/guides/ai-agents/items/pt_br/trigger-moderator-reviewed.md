@@ -1,4 +1,3 @@
----
 Dispara quando um moderador marca um comentário como revisado.
 
 ### Contexto que o agente recebe
@@ -20,5 +19,3 @@ Uma ação de um moderador humano na página de moderação, no widget de coment
 
 - "Revisado" é um dos estados da fila de moderação rastreados separadamente de "aprovado" e "spam". Um comentário pode ser aprovado-e-revisado, aprovado-mas-não-revisado, etc. Veja [Como Funcionam as Aprovações](/guide-moderation.html#moderation-approvals) no guia de moderação.
 - Este gatilho possui alta frequência em locatários com muitos moderadores. Inscreva-se seletivamente e planeje o orçamento de acordo.
-
----

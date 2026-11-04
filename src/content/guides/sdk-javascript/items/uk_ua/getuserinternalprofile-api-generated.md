@@ -26,5 +26,3 @@ async function demo() {
 
 demo();
 [inline-code-end]
-
----

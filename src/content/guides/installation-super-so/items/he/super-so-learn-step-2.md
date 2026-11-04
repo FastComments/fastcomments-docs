@@ -1,8 +1,8 @@
-בשלב הבא עליך להעתיק את קוד הווידג'ט המוכן מטה.
+בשלב הבא עליך להעתיק את קוד הוויג'ט המוכן מראש למטה.
 
-כל עוד אתה מחובר ל-FastComments.com הקטע הקוד למטה כבר יכלול את מידע החשבון שלך. בוא נעתיק אותו:
+כל עוד אתה מחובר ל-FastComments.com, קטע הקוד למטה כבר יכיל את פרטי החשבון שלך. בוא נעתיק אותו:
 
-[inline-code-attrs-start title = 'קוד Super.so של FastComments Collab Chat'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'קוד צ\'אט שיתופי של FastComments עבור Super.so'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-collab-chat.min.js"></script>
 <script>
@@ -23,17 +23,17 @@
                 return setTimeout(load, 100);
             }
 
-            // ניקוי מופע קיים
+            // Clean up existing instance
             if (target.fastCommentsInstance) {
                 target.fastCommentsInstance.destroy();
             }
 
-            // הסר את סרגל העליון הקיים אם קיים
+            // Clean up existing top bar if it exists
             if (currentTopBar && currentTopBar.parentNode) {
                 currentTopBar.parentNode.removeChild(currentTopBar);
             }
 
-            // צור סרגל עליון חדש
+            // Create new top bar
             const topBarTarget = document.createElement('div');
             target.parentNode.insertBefore(topBarTarget, target);
             topBarTarget.style.maxWidth = 'var(--layout-max-width)';
@@ -41,36 +41,36 @@
             currentTopBar = topBarTarget;
             currentWidget = target;
 
-            // אתחול FastComments Collab Chat
+            // Initialize FastComments Collab Chat
             target.fastCommentsInstance = FastCommentsCollabChat(target, {
                 tenantId: "demo",
                 topBarTarget: topBarTarget
             });
 
-            // עדכן את currentPathname
+            // Update current pathname
             currentPathname = window.location.pathname;
         }
 
-        // טעינה ראשונית
+        // Initial load
         load();
 
-        // בדוק כל 500ms אם יש שינויים
+        // Check every 500ms for changes
         setInterval(() => {
-            // טען מחדש אם ה-pathname השתנה
+            // Reload if pathname changed
             if (window.location.pathname !== currentPathname) {
                 console.log('Pathname changed, reloading...');
                 load();
                 return;
             }
 
-            // טען מחדש אם הווידג'ט הוסר
+            // Reload if widget was removed
             if (currentWidget && !currentWidget.parentNode) {
                 console.log('Widget removed, reloading...');
                 load();
                 return;
             }
 
-            // טען מחדש אם המכולה התרוקנה
+            // Reload if container was emptied
             const target = document.querySelector('.super-content');
             if (target && target.innerHTML.length < 100) {
                 console.log('Container emptied, reloading...');
@@ -81,15 +81,15 @@
 </script>
 [inline-code-end]
 
-Now paste in the `Body` area:
+כעת הדבק באזור ה-`Body`:
 
 <div class="screenshot white-bg">
-    <div class="title">הקוד שהוצמד</div>
-    <img class="screenshot-image" src="/images/installation-guides/super-so-step-3-pasted-code.png" alt="הקוד שהוצמד" />
+    <div class="title">קוד שהודבק</div>
+    <img class="screenshot-image" src="/images/installation-guides/super-so-step-3-pasted-code.png" alt="קוד שהודבק" />
 </div>
 
-If you see a "this is a demo message" after pasting the code:
+אם אתה רואה "this is a demo message" לאחר הדבקת הקוד:
 
-- Ensure you're logged into your fastcomments.com account.
-- Ensure you have 3rd party cookies enabled.
-- Then refresh this page and copy the code snippet again. It should have `tenantId` populated with your tenant's identifier.
+- ודא שאתה מחובר לחשבון ה-fastcomments.com שלך.
+- ודא שעוגיות של צד שלישי מופעלות.
+- לאחר מכן רענן את הדף והעתק שוב את קטע הקוד. הוא אמור להכיל `tenantId` מאויש עם מזהה הטננט שלך.

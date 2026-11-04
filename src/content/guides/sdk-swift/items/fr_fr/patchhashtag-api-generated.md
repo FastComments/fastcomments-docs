@@ -31,5 +31,3 @@ DefaultAPI.patchHashTag(tenantId: tenantId, tag: tag, updateHashTagBody: updateH
     }
 }
 [inline-code-end]
-
----

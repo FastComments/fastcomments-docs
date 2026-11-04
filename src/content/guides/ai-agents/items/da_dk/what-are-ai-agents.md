@@ -1,39 +1,37 @@
-An **AI-agent** er en autonom arbejder, begrænset til din FastComments‑lejer, som overvåger begivenheder i dit fællesskab og handler på dine vegne.
+En **AI-agent** er en autonom arbejder, afgrænset til din FastComments-tenant, som holder øje med hændelser i dit community og handler på dine vegne.
 
-Hver agent har tre ting, du kan kontrollere:
+Hver agent har tre ting, du styrer:
 
-1. **En personlighed.** En fri‑tekst startprompt, der definerer tone, rolle og beslutningsstil ("Du er en varm fællesskabs‑velkomstperson", "Du håndhæver fællesskabsreglerne, men foretrækker advarsel frem for udelukkelse", osv.).
-2. **En eller flere udløsere.** En liste over begivenheder, der vækker agenten – en ny kommentar, en kommentar der krydser en stemme‑ eller flag‑tærskel, en moderatorhandling, en brugers første kommentar på siden, og andre. Den fulde liste findes i [Trigger Events Overview](#triggers-overview).
-3. **En tilladelsesliste over værktøjer.** Hvad agenten har lov til at gøre – poste en kommentar, stemme, fastgøre, låse, markere som spam, udelukke en bruger, advare via DM, tildele et mærke, sende e‑mail, gemme og søge i delt hukommelse. Den fulde liste findes i [Allowed Tool Calls Overview](#tools-overview).
+1. **En personlighed.** En fritekst-basisprompt, der definerer tone, rolle og beslutningsstil ("Du er en varm community-hilsner", "Du håndhæver community-reglerne, men tenderer mod advarsler frem for udelukkelse" og så videre).
+2. **En eller flere triggere.** En liste over hændelser, der vækker agenten - en ny kommentar, en kommentar der krydser en stemme- eller flaggrænse, en moderatorhandling, en brugers første kommentar på sitet og andre. Den fulde liste findes i [Trigger Events Overview](#triggers-overview).
+3. **En allowlist af værktøjer.** Hvad agenten må gøre - sende en kommentar, stemme, fastgøre, låse, markere spam, udelukke en bruger, advare via DM, tildele et badge, sende e-mail, gemme og søge i en delt hukommelse. Den fulde liste findes i [Allowed Tool Calls Overview](#tools-overview).
 
-Når en udløser aktiveres, modtager agenten en kontekstmeddelelse, der beskriver hvad der skete (kommentaren, siden, valgfri tråd/brugerkontekst/sidens kontekst) og får sin startprompt samt dine fællesskabsretningslinjer. Den kalder derefter værktøjer for at handle, og registrerer en begrundelse og en tillidsgrad ved hvert kald.
+Når en trigger udløses, modtager agenten en kontekstbesked, der beskriver, hvad der skete (kommentaren, siden, valgfri tråd-/bruger-/sidekontekst), og den promptes med sin basisprompt og dine community-retningslinjer. Den kalder derefter værktøjer for at handle og registrerer en begrundelse og en konfidensscore ved hvert kald.
 
-### Agents run asynchronously
+### Agents kører asynkront
 
-Agenter **blokerer aldrig den brugerhandling, der udløste dem**. En læser posterer en kommentar, kommentaren gemmes og vises i tråden, svaret returneres, og først *derefter* kører agenten på den – enten med det samme eller efter en konfigureret forsinkelse (se [Deferred Triggers](#trigger-deferred-delay)). Intet, hvad agenten gør, tilføjer latenstid til brugeroplevelsen.
+Agents **blokerer aldrig den brugerhandling, der udløste dem**. En læser sender en kommentar, kommentaren gemmes og vises i tråden, svaret returneres, og først *derefter* kører agenten på den - enten med det samme eller efter en konfigureret forsinkelse (se [Deferred Triggers](#trigger-deferred-delay)). Intet, agenten gør, tilføjer latens til brugeroplevelsen.
 
-### Why use them
+### Hvorfor bruge dem
 
-- **Moderer i stor skala.** Marker åbenlys spam og udeluk gentagne overtrædere uden at skulle holde øje med køen døgnet rundt.
-- **Velkomst til nye kommentatorer.** Svar på førstegangs‑kommentatorer i din stemme.
-- **Fremhæv det bedste indhold.** Fastgør væsentlige top‑niveau kommentarer, når de krydser en stemmetærskel.
-- **Håndhæv dine retningslinjer konsekvent.** Anvend den samme politiktekst på hver grænse‑kommentar.
-- **Opsummér lange tråde.** Post neutrale opsummeringer af debat på tværs af flere sider.
+- **Moderér i skala.** Markér åbenlys spam og udeluk gentagende lovovertrædere uden at overvåge køen døgnet rundt.
+- **Byd nye kommentatorer velkommen.** Svar til førstegangs-kommentatorer i din stemme.
+- **Fremhæv det bedste indhold.** Fastgør substantielle topniveau-kommentarer, når de krydser en stemmegrænse.
+- **Håndhæv dine retningslinjer konsekvent.** Anvend den samme politiktekst på hver grænsetilfælde-kommentar.
+- **Opsummér lange tråde.** Send neutrale opsummeringer af flersidede debatter.
 
-### What keeps you in control
+### Hvad holder dig i kontrol
 
-- **Dry‑run‑tilstand.** Hver ny agent leveres i **Dry Run**: den behandler udløsere, kører modellen og registrerer hvad den *ville* gøre, men udfører ingen reelle handlinger. Se [Dry-Run Mode](#dry-run-mode).
-- **Godkendelser.** Enhver delmængde af handlinger kan låses bag menneskelig godkendelse. Se [Approval Workflow](#approval-workflow).
-- **Per‑agent‑ og per‑konto‑budgetter.** Strenge daglige og månedlige grænser. Se [Budgets Overview](#budgets-overview).
-- **Værktøjstilladelsesliste.** Ikke‑tilladte værktøjer fjernes fra modellens palette – agenten kan bogstaveligt talt ikke anmode om dem. Se [Allowed Tool Calls Overview](#tools-overview).
-- **Audit‑felter på hver handling.** Modellen skal indeholde en begrundelse og en tillidsgrad. Begge vises i kørselstidslinjen og på hver godkendelse. Se [Run Detail View](#run-detail-view).
-- **EU DSA artikel 17.** I EU‑regionen blokeres fuldautomatiske udelukkelser. Se [EU DSA Article 17 Compliance](#eu-dsa-compliance).
+- **Dry-run-tilstand.** Enhver ny agent starter i **Dry Run**: den behandler triggere, kører modellen og registrerer, hvad den *ville* gøre, men udfører ingen rigtige handlinger. Se [Dry-Run Mode](#dry-run-mode).
+- **Godkendelser.** Enhver delmængde af handlinger kan kræve menneskelig godkendelse. Se [Approval Workflow](#approval-workflow).
+- **Budgetter pr. agent og pr. konto.** Hårde daglige og månedlige grænser. Se [Budgets Overview](#budgets-overview).
+- **Værktøjs-allowlist.** Ikke-tilladte værktøjer fjernes fra modellens palet - agenten kan bogstaveligt talt ikke anmode om dem. Se [Allowed Tool Calls Overview](#tools-overview).
+- **Revisionsfelter på hver handling.** Modellen skal inkludere en begrundelse og en konfidensscore. Begge vises i kørselstidslinjen og ved hver godkendelse. Se [Run Detail View](#run-detail-view).
+- **EU DSA Artikel 17.** I EU-regionen er fuldautomatiske udelukkelser blokeret. Se [EU DSA Article 17 Compliance](#eu-dsa-compliance).
 - **Ingen træning på dine data.** FastComments bruger udbydere, der ikke træner på dine prompts eller kommentarer.
 
-### Where they fit alongside human moderation
+### Hvor de passer ind ved siden af menneskelig moderering
 
-Agenter og menneskelige moderatorer deler den samme kommentarpplatform: agenter udfører handlinger gennem de samme kanaler (godkend, spam, udeluk, mærke, fastgør, lås, skriv), og disse handlinger vises i de samme [Comment Logs](/guide-moderation.html#comment-logs), den samme [Moderation Page](/guide-moderation.html#moderate-comments-page) og de samme notifikationsstrømme. Agenter og mennesker ser hinandens arbejde og kan hver især reagere på den anden – moderatorhandlinger er i sig selv gyldige agent‑udløsere (se [Trigger: Moderator Reviewed Comment](#trigger-moderator-reviewed) og lignende).
+Agents og menneskelige moderatorer deler samme kommentarplatform: agents udfører handlinger gennem de samme kanaler (godkend, spam, udeluk, badge, fastgør, lås, skriv), og disse handlinger vises i de samme [Comment Logs](/guide-moderation.html#comment-logs), den samme [Moderation Page](/guide-moderation.html#moderate-comments-page) og de samme notifikationsstrømme. Agents og mennesker ser hinandens arbejde og kan hver reagere på den anden - moderatorhandlinger er selv gyldige agent-triggere (se [Trigger: Moderator Reviewed Comment](#trigger-moderator-reviewed) og venner).
 
-Hvis du også har brug for mennesker i køen, tilbyder FastComments [Human Moderation Services](/guide-moderation.html#human-moderation-services): vores moderatorer arbejder sammen med dine agenter i dit dashboard under dine retningslinjer.
-
----
+Hvis du også har brug for mennesker i køen, tilbyder FastComments [Human Moderation Services](/guide-moderation.html#human-moderation-services): vores moderatorer arbejder side om side med dine agents, i dit dashboard, under dine retningslinjer.

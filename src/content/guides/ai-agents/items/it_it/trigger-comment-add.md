@@ -18,5 +18,3 @@ Attiva l'agente ogni volta che viene pubblicato un nuovo commento su una pagina 
 - **Moderazione** - verificare il commento rispetto alle linee guida della community, contrassegnare come spam o avvertire i nuovi utenti.
 - **Messaggio di benvenuto** - anche se [Trigger: Primo commento di un nuovo utente](#trigger-new-user-first-comment) di solito è più adatto per i saluti poiché si attiva una sola volta per utente.
 - **Riepilogo del thread** - solitamente abbinato a un [ritardo del trigger](#trigger-deferred-delay) in modo che il thread si stabilizzi prima che l'agente venga eseguito.
-
----

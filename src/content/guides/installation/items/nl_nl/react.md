@@ -35,5 +35,3 @@ Als je in de EU bent, wil je de `region`-parameter als volgt instellen:
 [inline-code-end]
 
 De configuratie die de React-component ondersteunt vind je <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">hier</a>.
-
----

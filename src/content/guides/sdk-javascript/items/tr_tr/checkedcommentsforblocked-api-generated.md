@@ -23,5 +23,3 @@ Returns: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastco
     const responseWithoutSso: CheckBlockedCommentsResponse = await checkedCommentsForBlocked(tenantId, commentIds);
 })();
 [inline-code-end]
-
----

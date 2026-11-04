@@ -1,30 +1,29 @@
-複数のユーザーがどのように相互作用するかを定義し、それをテストするのは複雑です。アクセス制御のために私たちが従う以下の仕様は、
-実装をテストするために使用できます:
+複数のユーザーがどのようにやり取りするかを定義し、それをテストすることは複雑です。以下は、当社がアクセス制御のために従っている仕様です。実装をテストする際にご利用いただけます:
 
-    Page with null group ids, user with null group ids - should have access.
-    Page with null group ids, user with group ids - should have access.
-    Page with group ids, user with null group ids - should have access.
-    Page with group ids, user with empty list - should NOT have access.
-    Page with group ids, user with group ids - intersection exists - should have access.
-    Page with group ids, user with group ids - intersection does not exist - should NOT have access.
-    Page with empty list of group ids (nobody has access), user with null - should NOT have access.
+    グループ ID が null のページ、グループ ID が null のユーザー - アクセス可能であるべき。
+    グループ ID が null のページ、グループ ID を持つユーザー - アクセス可能であるべき。
+    グループ ID を持つページ、グループ ID が null のユーザー - アクセス可能であるべき。
+    グループ ID を持つページ、空のリストを持つユーザー - アクセス不可であるべき。
+    グループ ID を持つページ、グループ ID を持つユーザー - 共通部分が存在する場合 - アクセス可能であるべき。
+    グループ ID を持つページ、グループ ID を持つユーザー - 共通部分が存在しない場合 - アクセス不可であるべき。
+    グループ ID の空のリストを持つページ(誰もアクセスできない)、ユーザーが null - アクセス不可であるべき。
     
-    SSO User A = group idsが定義されていない (null = フルアクセス).
-    SSO User B = group idsが定義されていない (null = フルアクセス).
-    Aは@Bできる.
+    SSO ユーザー A = グループ ID 未定義(null = フルアクセス)。
+    SSO ユーザー B = グループ ID 未定義(null = フルアクセス)。
+    A は B を @ できる。
     
-    SSO User A = group idsが定義されていない (null = フルアクセス).
-    SSO User B = Group ids defined.
-    Aは@Bできる.
+    SSO ユーザー A = グループ ID 未定義(null = フルアクセス)。
+    SSO ユーザー B = グループ ID 定義済み。
+    A は B を @ できる。
     
-    SSO User A = Group ids defined.
-    SSO User B = group idsが定義されていない (null = フルアクセス).
-    Aは@Bできる.
+    SSO ユーザー A = グループ ID 定義済み。
+    SSO ユーザー B = グループ ID 未定義(null = フルアクセス)。
+    A は B を @ できる。
     
-    SSO User A = Group ids = [a].
-    SSO User B = Group ids = [b].
-    Aは@Bできない.
+    SSO ユーザー A = グループ ID = [a]。
+    SSO ユーザー B = グループ ID = [b]。
+    A は B を @ できない。
     
-    SSO User A = Group ids = [a].
-    SSO User B = Group ids = [a, b].
-    Aは@Bできる.
+    SSO ユーザー A = グループ ID = [a]。
+    SSO ユーザー B = グループ ID = [a, b]。
+    A は B を @ できる。

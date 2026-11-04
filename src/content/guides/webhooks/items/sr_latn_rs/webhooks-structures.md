@@ -1,21 +1,22 @@
-The only structure sent via webhooks is the WebhookComment object, outlined in TypeScript below.
+Jedina struktura koja se šalje putem webhukova je objekat WebhookComment, prikazan u TypeScript-u ispod.
 
-#### The WebhookComment Object Structure
+#### Struktura objekta WebhookComment
 
-##### The "Create" Event Structure  
-The "create" event request body is a WebhookComment object.
+##### Struktura "create" događaja
+Telo zahteva "create" događaja je objekat WebhookComment.
 
-##### The "Update" Event Structure  
-The "update" event request body is a WebhookComment object.
+##### Struktura "update" događaja
+Telo zahteva "update" događaja je objekat WebhookComment.
 
-##### The "Delete" Event Structure  
-The "delete" event request body is a WebhookComment object.
+##### Struktura "delete" događaja
+Telo zahteva "delete" događaja je objekat WebhookComment.
 
-    Change as of Nov 14th 2023
-    Previously the "delete" event request body only contained the comment id. It now contains the full comment at the time of deletion.
+    Promena od 14. novembra 2023.
+    Ranije je telo zahteva "delete" događaja sadržalo samo id komentara. Sada sadrži ceo komentar u trenutku brisanja.
 
-Every key is always present in the body. When the comment has no value for a field the body carries `null`
-(or `false` for booleans and `[]` for lists), so the shape of a delivery never varies from one comment to the next.
+
+Svaki ključ je uvek prisutan u telu. Kada komentar nema vrednost za neko polje, telo nosi `null`
+(ili `false` za boolean vrednosti i `[]` za liste), tako da oblik isporuke nikada ne varira od komentara do komentara.
 
 [inline-code-attrs-start title = 'Objekat WebhookComment'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
@@ -81,8 +82,8 @@ interface WebhookComment {
 }
 [inline-code-end]
 
-When users are tagged in a comment, the information is stored in a list called `mentions`. Each object in that list
-has the following structure.
+Kada su korisnici označeni u komentaru, informacija se čuva u listi pod nazivom `mentions`. Svaki objekat u toj listi
+ima sledeću strukturu.
 
 [inline-code-attrs-start title = 'Objekat Webhook Mentions'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
@@ -100,7 +101,7 @@ interface CommentUserMention {
 }
 [inline-code-end]
 
-Each entry in the `badges` list has the following structure. See the [Badges guide](/guide-badges.html) for the badge types.
+Svaki unos u listi `badges` ima sledeću strukturu. Pogledajte [vodič za Badges](/guide-badges.html) za tipove bedževa.
 
 [inline-code-attrs-start title = 'Objekat Webhook Badge'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
@@ -123,25 +124,25 @@ interface CommentUserBadgeInfo {
 }
 [inline-code-end]
 
-#### HTTP Methods
+#### HTTP metode
 
-You can configure the HTTP method for each webhook event type in the admin panel:
+Možete konfigurisati HTTP metodu za svaki tip webhook događaja u admin panelu:
 
-- **Create Event**: POST or PUT (default: PUT)
-- **Update Event**: POST or PUT (default: PUT)
-- **Delete Event**: DELETE, POST, or PUT (default: DELETE)
+- **Create Event**: POST ili PUT (podrazumevano: PUT)
+- **Update Event**: POST ili PUT (podrazumevano: PUT)
+- **Delete Event**: DELETE, POST ili PUT (podrazumevano: DELETE)
 
-Since all requests contain an ID, Create and Update operations are idempotent by default (PUT). Repeating the same Create or Update request should not create duplicate objects on your side.
+Pošto svi zahtevi sadrže ID, Create i Update operacije su idempotentne po podrazumevanoj postavci (PUT). Ponavljanje istog Create ili Update zahteva ne bi trebalo da kreira duplirane objekte na vašoj strani.
 
-#### Request Headers
+#### Zaglavlja zahteva
 
-Each webhook request includes the following headers:
+Svaki webhook zahtev uključuje sledeća zaglavlja:
 
 | Header | Description |
 |--------|-------------|
 | `Content-Type` | `application/json` |
-| `token` | Vaša API tajna |
-| `X-FastComments-Timestamp` | Unix vremenski žig (sekunde) kada je zahtev potpisan |
-| `X-FastComments-Signature` | HMAC‑SHA256 potpis (`sha256=<hex>`) |
+| `token` | Your API Secret |
+| `X-FastComments-Timestamp` | Unix timestamp (seconds) when the request was signed |
+| `X-FastComments-Signature` | HMAC-SHA256 signature (`sha256=<hex>`) |
 
-See [Security & API Tokens](/guide-webhooks.html#webhooks-api-tokens) for information on verifying the HMAC signature.
+Pogledajte [Bezbednost i API tokeni](/guide-webhooks.html#webhooks-api-tokens) za informacije o verifikaciji HMAC potpisa.

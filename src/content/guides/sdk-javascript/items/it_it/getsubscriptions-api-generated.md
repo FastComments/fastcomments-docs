@@ -21,5 +21,3 @@ Restituisce: [`GetSubscriptionsAPIResponse`](https://github.com/FastComments/fas
     const responseWithoutUser: GetSubscriptionsAPIResponse = await getSubscriptions(tenantId);
 })();
 [inline-code-end]
-
----

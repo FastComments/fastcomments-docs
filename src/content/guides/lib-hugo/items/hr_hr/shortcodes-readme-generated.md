@@ -1,4 +1,3 @@
----
 | Shortcode | Opis |
 | --- | --- |
 | `fastcomments` | Ugniježđeni komentari s odgovorima, glasovanjem i @spominjanjima |
@@ -56,4 +55,3 @@ Feed aktivnosti korisnika:
 ```text
 \{{< fastcomments-user-activity-feed userId="demo:demo-user" >}}
 ```
----

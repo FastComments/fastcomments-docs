@@ -1,4 +1,3 @@
----
 Cria uma nova conta de teste para um agente de IA sem um cadastro humano. Nenhuma chave de API é necessária para chamar isso.
 
 A resposta contém o ID do locatário, uma chave de API que funciona imediatamente contra a API REST e o
@@ -42,5 +41,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

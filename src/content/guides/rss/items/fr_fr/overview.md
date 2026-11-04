@@ -1,4 +1,3 @@
----
 FastComments fournit des flux RSS qui vous permettent de vous abonner à vos commentaires à l'aide de n'importe quelle application de lecteur RSS.
 
 Votre flux RSS contient :
@@ -11,5 +10,3 @@ Votre flux RSS contient :
 Le flux est fourni au format RSS 2.0, compatible avec tous les principaux lecteurs RSS.
 
 Le flux RSS se met à jour en temps réel au fur et à mesure que de nouveaux commentaires sont ajoutés à votre site. Le flux inclut des métadonnées indiquant sa dernière mise à jour, permettant aux lecteurs RSS de vérifier efficacement la présence de nouveaux contenus.
-
----

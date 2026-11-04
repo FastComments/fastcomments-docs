@@ -49,5 +49,3 @@ interface VotesResponse {
 이 API를 통해 생성된 익명 투표는 `appliedAuthorizedVotes` 목록에 나타납니다. API 키로 API를 통해 생성되었기 때문에 권한이 부여된 것으로 간주됩니다.
 
 `appliedAnonymousVotes` 구조는 이메일, API 키 등이 없이 생성된 투표에 대한 것입니다.
-
----

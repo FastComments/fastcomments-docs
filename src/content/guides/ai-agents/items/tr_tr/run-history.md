@@ -40,5 +40,3 @@ Yeniden oynatma tarafından üretilen çalıştırmalar varsayılan olarak canl�
 ### Ajanlar arası filtreleme
 
 Çalıştırmalar tablosu ajana özeldir. Ajanlar arası bir çalıştırma görünümü yoktur - çapraz ajan özeti için [Analizler sayfası](#analytics-page) kullanılır. Birden fazla ajan üzerindeki çalıştırmaları incelemeniz gerekiyorsa, [Webhooks](#webhooks-overview) `trigger.succeeded` ve `trigger.failed` olaylarını kendi sisteminize iletirsiniz.
-
----

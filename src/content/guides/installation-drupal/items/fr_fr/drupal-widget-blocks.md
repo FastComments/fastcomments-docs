@@ -1,4 +1,3 @@
----
 Le module propose plusieurs blocs que vous pouvez placer depuis `Structure > Block layout` (`/admin/structure/block`).
 
 - **FastComments Widget** - Le widget de commentaires principal. Il détecte automatiquement l'entité actuelle. Il ignore les entités qui ont déjà le champ FastComments attaché, de sorte que vous ne verrez pas de widgets en double sur la même page.
@@ -9,5 +8,3 @@ Le module propose plusieurs blocs que vous pouvez placer depuis `Structure > Blo
 - **FastComments Top Pages** - Affiche les pages de votre site ayant le plus de commentaires.
 
 Les blocs centrés sur le contenu (Live Chat, Collab Chat, Image Chat) détectent automatiquement l'entité courante et utilisent un identifiant basé sur le chemin pour les pages qui ne correspondent pas à une entité. Cela signifie qu'ils fonctionnent sur les pages de taxonomie, les vues et les routes personnalisées sans configuration supplémentaire.
-
----

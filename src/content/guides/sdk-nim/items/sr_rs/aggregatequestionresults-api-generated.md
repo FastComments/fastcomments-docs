@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Име | Тип | Обавезно | Опис |
@@ -19,5 +18,3 @@ let (aggResultOpt, httpResp) = client.aggregateQuestionResults(tenantId = "my-te
 if aggResultOpt.isSome:
   let aggResult = aggResultOpt.get()
 [inline-code-end]
-
----

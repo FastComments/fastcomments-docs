@@ -1,8 +1,8 @@
-Interacting with the `Extension` is simple, as we simply define references to functions we want invoked.
+Interaktion med `Extension` er enkel, da vi blot definerer referencer til de funktioner, vi ønsker kaldt.
 
-To build off the example earlier, let's say we want to add HTML to the top of each comment:
+For at bygge videre på det tidligere eksempel, lad os sige, at vi vil tilføje HTML til toppen af hver kommentar:
 
-[inline-code-attrs-start title = 'En simpel udvidelse - Fortsat'; type = 'javascript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'En simpel Extension - fortsat'; type = 'javascript'; inline-code-attrs-end]
 [inline-code-start]
 (function () {
     const extension = FastCommentsUI.extensions.find((extension) => {
@@ -15,13 +15,13 @@ To build off the example earlier, let's say we want to add HTML to the top of ea
 })();
 [inline-code-end]
 
-Whenever you return HTML like this, it will get merged into the UI via a dom-diffing algorithm.
+Når du returnerer HTML som denne, vil den blive flettet ind i UI'en via en dom-diffing-algoritme.
 
-#### Manually triggering the re-render of a comment
+#### Manuelt udløse re-rendering af en kommentar
 
-We can wait for the initial page load and manually re-render a comment by invoking `reRenderComment`:
+Vi kan vente på den indledende sideindlæsning og manuelt re-rendere en kommentar ved at kalde `reRenderComment`:
 
-[inline-code-attrs-start title = 'Genrendér en kommentar'; type = 'javascript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Re-rendering af en kommentar'; type = 'javascript'; inline-code-attrs-end]
 [inline-code-start]
 (function () {
     const extension = FastCommentsUI.extensions.find((extension) => {
@@ -40,9 +40,7 @@ We can wait for the initial page load and manually re-render a comment by invoki
             extension.reRenderComment(extension.commentsById[Object.keys(extension.commentsById)[0]], function renderDone() {
                 console.log('Comment re-render done.');
             });
-        }, 2000); // timeout ikke nødvendig, bare et eksempel.
+        }, 2000); // timeout er ikke påkrævet, kun et eksempel.
     }
 })();
 [inline-code-end]
-
----

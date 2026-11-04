@@ -28,5 +28,3 @@ Można to również skonfigurować bez kodu. Na stronie dostosowywania widżetu 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.users-list-settings'; alt='Lokalizacja listy użytkowników ustawiona na Prawo, z polem wyboru „Uwzględnij wcześniejszych komentujących” wyświetlonym pod nią'; title='Ustawienia listy użytkowników'; actions=[{type: 'set-value', selector: '#users-list-location-input', value: '3'}] app-screenshot-end]
 
 Do 500 aktywnych użytkowników, lista może być opóźniona o do 30 sekund.
-
----

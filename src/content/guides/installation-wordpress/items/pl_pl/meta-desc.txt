@@ -1,3 +1,1 @@
----
 Zainstaluj wtyczkę WordPress do komentarzy na żywo, moderacji z poziomu panelu, wątków tylko dla członków za pomocą SSO oraz synchronizacji liczby komentarzy z powrotem do wpisów.
----

@@ -1,4 +1,3 @@
----
 ## Параметры
 
 | Имя | Тип | Расположение | Обязательный | Описание |
@@ -32,5 +31,3 @@ DefaultAPI.bulkAggregateQuestionResults(tenantId: tenantId, bulkAggregateQuestio
     }
 }
 [inline-code-end]
-
----

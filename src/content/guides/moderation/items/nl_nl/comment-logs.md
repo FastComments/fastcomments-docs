@@ -1,148 +1,153 @@
-FastComments volgt automatisch gedetailleerde gebeurtenissen voor elke opmerking om transparantie te bieden in moderatiebeslissingen en systeemacties. Deze logboeken helpen je te begrijpen waarom een opmerking is goedgekeurd, gemarkeerd als spam, of waarvan de status is gewijzigd.
+FastComments registreert automatisch gedetailleerde gebeurtenissen voor elke opmerking om transparantie te bieden in moderatiebeslissingen en systeemacties. Deze logboeken helpen je te begrijpen waarom een opmerking is goedgekeurd, als spam gemarkeerd, of waarvan de status is gewijzigd.
 
-## Accessing Comment Logs
+## Toegang tot Opmerkinglogboeken
 
-Om de logboeken voor een specifieke opmerking te bekijken:
+Om de logboeken van een specifieke opmerking te bekijken:
 
-1. Navigeer naar de **Moderate Comments** pagina in je FastComments-dashboard
+1. Ga naar de pagina **Moderate Comments** in je FastComments-dashboard
 2. Zoek de opmerking die je wilt inspecteren
-3. Klik op de **View Logs** knop (klok‑icoon) in de actiebalk van de opmerking
-4. Er verschijnt een dialoogvenster dat de volledige geschiedenis van gebeurtenissen voor die opmerking toont
+3. Klik op de knop **View Logs** (klok-icoon) in de actiebalk van de opmerking
+4. Er verschijnt een dialoogvenster met de volledige geschiedenis van gebeurtenissen voor die opmerking
 
-Elke logboekvermelding toont:
-- **When** - De tijdstempel van de gebeurtenis
-- **Who** - De gebruiker of het systeem dat de gebeurtenis heeft geactiveerd (indien van toepassing)
-- **What** - Het type actie of gebeurtenis
-- **Details** - Extra context zoals voor/na waarden, engine‑namen, of gerelateerde gegevens
+Elk logboekitem toont:
+- **Wanneer** - Het tijdstip van de gebeurtenis
+- **Wie** - De gebruiker of het systeem dat de gebeurtenis heeft veroorzaakt (indien van toepassing)
+- **Wat** - Het type actie of gebeurtenis
+- **Details** - Aanvullende context zoals voor/na-waarden, engine-namen of gerelateerde gegevens
 
-## Comment Log Events
+## Opmerkinglogboek-gebeurtenissen
 
-Elke opmerking houdt een logboek bij van gebeurtenissen die zich tijdens de levenscyclus voordoen. Hieronder staan de soorten gebeurtenissen die worden bijgehouden:
+Elke opmerking bijhoudt een logboek van gebeurtenissen die plaatsvinden tijdens de levenscyclus. Hieronder staan de typen gebeurtenissen die worden bijgehouden:
 
-### Anonymization Events
-- **Anonymized** - Inhoud van de opmerking is gewist en gebruiker gemarkeerd als verwijderd
-- **RestoredFromAnonymized** - Opmerking is hersteld vanuit geanonimiseerde status
+### Anonimiseringsgebeurtenissen
+- **Anonymized** - De inhoud van de opmerking is gewist en de gebruiker is gemarkeerd als verwijderd
+- **RestoredFromAnonymized** - De opmerking is hersteld vanuit een geanonimiseerde staat
 
-### Approval Events
-- **ApprovedDueToPastComment** - Opmerking goedgekeurd omdat de gebruiker eerder opmerkingen heeft goedgekeurd (bevat verwijzing naar de eerdere opmerking)
-- **ApprovedIsAdmin** - Opmerking goedgekeurd omdat de gebruiker een beheerder is
+### Goedkeuringsgebeurtenissen
+- **ApprovedDueToPastComment** - Opmerking goedgekeurd omdat de gebruiker eerder goedgekeurde opmerkingen heeft (bevat verwijzing naar de eerdere opmerking)
+- **ApprovedIsAdmin** - Opmerking goedgekeurd omdat de gebruiker een admin is
 - **NotApprovedRequiresApproval** - Opmerking vereist handmatige goedkeuring
-- **NotApprovedLowTrustFactor** - Opmerking niet goedgekeurd vanwege een lage vertrouwensfactor van de gebruiker (bevat de vertrouwensfactorwaarde)
+- **NotApprovedLowTrustFactor** - Opmerking niet goedgekeurd vanwege een lage trustfactor van de gebruiker (bevat de trustfactor-waarde)
 
-### Profile Comment Approval Events
+### Goedkeuringsgebeurtenissen voor profielopmerkingen
 
-These events apply specifically to comments on user profiles:
-- **ApprovedProfileAutoApproveAll** - Profielopmerking automatisch goedgekeurd omdat de profiel eigenaar auto‑goedkeuring voor alle opmerkingen heeft ingeschakeld
-- **ApprovedProfileTrusted** - Profielopmerking goedgekeurd omdat de reageerder vertrouwd is (bevat verwijzing naar de opmerking die vertrouwen heeft vastgesteld)
-- **NotApprovedProfileManualApproveAll** - Profielopmerking vereist handmatige goedkeuring omdat de profiel eigenaar handmatige goedkeuring heeft ingeschakeld
-- **NotApprovedProfileNotTrusted** - Profielopmerking niet goedgekeurd omdat de reageerder niet vertrouwd is
+Deze gebeurtenissen gelden specifiek voor opmerkingen op gebruikersprofielen:
+
+- **ApprovedProfileAutoApproveAll** - Profielopmerking automatisch goedgekeurd omdat de profieleigenaar auto-goedkeuring voor alle opmerkingen heeft ingeschakeld
+- **ApprovedProfileTrusted** - Profielopmerking goedgekeurd omdat de reageerder vertrouwd wordt (bevat verwijzing naar de opmerking die het vertrouwen vestigde)
+- **NotApprovedProfileManualApproveAll** - Profielopmerking vereist handmatige goedkeuring omdat de profieleigenaar handmatige goedkeuring heeft ingeschakeld
+- **NotApprovedProfileNotTrusted** - Profielopmerking niet goedgekeurd omdat de reageerder niet vertrouwd wordt
 - **NotApprovedProfileNewUser** - Profielopmerking niet goedgekeurd omdat de reageerder een nieuwe gebruiker is
 
-### Spam Detection Events
-- **IsSpam** - Opmerking gemarkeerd als spam door detectie‑engine (bevat welke engine de beslissing heeft genomen)
-- **IsSpamDueToBadWords** - Opmerking gemarkeerd als spam vanwege een scheldwoordfilter
-- **IsSpamFromLLM** - Opmerking gemarkeerd als spam door AI/LLM‑engine (bevat engine‑naam, respons en token‑aantal)
-- **IsSpamRepeatComment** - Opmerking gemarkeerd als spam omdat deze repetitief is (bevat welke engine het heeft gedetecteerd)
+### Spamdetectie-gebeurtenissen
+- **IsSpam** - Opmerking gemarkeerd als spam door de detectie-engine (bevat welke engine de beslissing nam)
+- **IsSpamDueToBadWords** - Opmerking gemarkeerd als spam vanwege het grof taalgebruik-filter
+- **IsSpamFromLLM** - Opmerking gemarkeerd als spam door de AI/LLM-engine (bevat engine-naam, respons en tokenaantal)
+- **IsSpamRepeatComment** - Opmerking gemarkeerd als spam omdat deze repetitief is (bevat welke engine dit detecteerde)
 - **NotSpamIsOnlyImage** - Opmerking niet gemarkeerd als spam omdat deze alleen afbeeldingen bevat
 - **NotSpamIsOnlyReacts** - Opmerking niet gemarkeerd als spam omdat deze alleen reacties bevat
-- **NotSpamNoLinkOrMention** - Opmerking niet gemarkeerd als spam omdat er geen verdachte links of vermeldingen zijn
-- **NotSpamPerfectTrustFactor** - Opmerking niet gemarkeerd als spam vanwege een hoge gebruikers‑vertrouwensfactor
+- **NotSpamNoLinkOrMention** - Opmerking niet gemarkeerd als spam vanwege het ontbreken van verdachte links of vermeldingen
+- **NotSpamPerfectTrustFactor** - Opmerking niet gemarkeerd als spam vanwege hoge gebruikersvertrouwen
 - **NotSpamTooShort** - Opmerking niet gemarkeerd als spam omdat deze te kort is om te analyseren
-- **NotSpamSkipped** - Spamcontrole werd overgeslagen
-- **NotSpamFromEngine** - Opmerking bepaald als geen spam door detectie‑engine (bevat engine‑naam en vertrouwensfactor)
+- **NotSpamSkipped** - De spamcontrole is overgeslagen
+- **NotSpamFromEngine** - Opmerking door de detectie-engine als geen spam bepaald (bevat engine-naam en trustfactor)
 
-### Bad Words/Profanity Events
-- **BadWordsCheckFailed** - Profanity‑filtercontrole liep op een fout
-- **BadWordsFoundBadPhrase** - Profanity‑filter detecteerde ongepaste zin (bevat de zin)
-- **BadWordsFoundBadWord** - Profanity‑filter detecteerde ongepast woord (bevat het woord)
-- **BadWordsNoDefinitionForLocale** - Geen profanity‑definities beschikbaar voor de taal van de opmerking (bevat de locale)
+### Gebeurtenissen voor grof taalgebruik
+- **BadWordsCheckFailed** - De controle van het grof taalgebruik-filter liep tegen een fout aan
+- **BadWordsFoundBadPhrase** - Het grof taalgebruik-filter detecteerde een ongepaste zin (bevat de zin)
+- **BadWordsFoundBadWord** - Het grof taalgebruik-filter detecteerde een ongepast woord (bevat het woord)
+- **BadWordsNoDefinitionForLocale** - Geen definities voor grof taalgebruik beschikbaar voor de taal van de opmerking (bevat de locale)
 
-### User Verification Events
-- **CommentMustBeVerifiedToApproveNotInVerifiedSession** - Opmerking vereist verificatie maar gebruiker zit niet in een geverifieerde sessie
-- **CommentMustBeVerifiedToApproveNotVerifiedYet** - Opmerking vereist verificatie maar gebruiker is nog niet geverifieerd
-- **InVerifiedSession** - Gebruiker die de opmerking plaatst zit in een geverifieerde sessie
-- **SentVerificationEmailNoSession** - Verificatie‑e‑mail verzonden naar niet‑geverifieerde gebruiker
-- **SentWelcomeEmail** - Welkomst‑e‑mail verzonden naar nieuwe gebruiker
+### Gebeurtenissen voor gebruikersverificatie
+- **CommentMustBeVerifiedToApproveNotInVerifiedSession** - Opmerking vereist verificatie maar de gebruiker is niet in een geverifieerde sessie
+- **CommentMustBeVerifiedToApproveNotVerifiedYet** - Opmerking vereist verificatie maar de gebruiker is nog niet geverifieerd
+- **InVerifiedSession** - De gebruiker die de opmerking plaatst, is in een geverifieerde sessie
+- **SentVerificationEmailNoSession** - Verificatie-e-mail verzonden naar een niet-geverifieerde gebruiker
+- **SentWelcomeEmail** - Welkomste-mail verzonden naar een nieuwe gebruiker
 
-### Trust and Security Events
-- **TrustFactorChanged** - Vertrouwensfactor van de gebruiker is gewijzigd (bevat voor‑ en na‑waarden)
-- **SpamFilterDisabledBecauseAdmin** - Spamfilter omzeild voor beheerder
-- **TenantSpamFilterDisabled** - Spamfilter uitgeschakeld voor de gehele tenant
-- **RepeatCommentCheckIgnored** - Controle op herhaalde opmerkingen omzeild (bevat de reden)
-- **UserIsAdmin** - Gebruiker geïdentificeerd als beheerder
-- **UserIsAdminParentTenant** - Gebruiker geïdentificeerd als beheerder van de bovenliggende tenant
-- **UserIsAdminViaSSO** - Gebruiker geïdentificeerd als beheerder via SSO
+### Vertrouwens- en beveiligingsgebeurtenissen
+- **TrustFactorChanged** - De trustfactor van de gebruiker is gewijzigd (bevat voor- en nawaarden)
+- **SpamFilterDisabledBecauseAdmin** - Spamfiltering omzeild voor een admin-gebruiker
+- **TenantSpamFilterDisabled** - Spamfiltering uitgeschakeld voor de hele tenant
+- **RepeatCommentCheckIgnored** - De controle op herhaalde opmerkingen is omzeild (bevat de reden)
+- **UserIsAdmin** - Gebruiker geïdentificeerd als admin
+- **UserIsAdminParentTenant** - Gebruiker geïdentificeerd als admin van de parent tenant
+- **UserIsAdminViaSSO** - Gebruiker geïdentificeerd als admin via SSO
 - **UserIsMod** - Gebruiker geïdentificeerd als moderator
 
-### Comment Status Changes
+### Statuswijzigingen van opmerkingen
 
-Status change events include before and after values, plus the user who made the change:
-- **ExpireStatusChanged** - Verloopstatus van de opmerking is gewijzigd
-- **ReviewStatusChanged** - Review‑status van de opmerking is gewijzigd
-- **SpamStatusChanged** - Spam‑status van de opmerking is bijgewerkt
-- **ApproveStatusChanged** - Goedkeuringsstatus van de opmerking is gewijzigd
-- **TextChanged** - Tekstinhoud van de opmerking is bewerkt (bevat voor‑ en na‑tekst)
-- **VotesChanged** - Stemmen van de opmerking zijn bijgewerkt (bevat gedetailleerde stemverdeling)
-- **Flagged** - Opmerking is gemarkeerd door gebruikers
-- **UnFlagged** - Markeringen van de opmerking zijn verwijderd
+Gebeurtenissen voor statuswijzigingen bevatten voor- en nawaarden, plus de gebruiker die de wijziging heeft doorgevoerd:
 
-### Moderation Actions
-- **Pinned** - Opmerking is vastgezet door moderator (bevat wie het heeft vastgezet)
-- **UnPinned** - Opmerking is losgemaakt door moderator (bevat wie het heeft losgemaakt)
+- **ExpireStatusChanged** - De vervaldatumstatus van de opmerking is gewijzigd
+- **ReviewStatusChanged** - De beoordelingsstatus van de opmerking is gewijzigd
+- **SpamStatusChanged** - De spamstatus van de opmerking is bijgewerkt
+- **ApproveStatusChanged** - De goedkeuringsstatus van de opmerking is gewijzigd
+- **TextChanged** - De tekstinhoud van de opmerking is bewerkt (bevat voor- en natekst)
+- **VotesChanged** - De stemtellingen van de opmerking zijn bijgewerkt (bevat gedetailleerde stemuitsplitsing)
+- **Flagged** - De opmerking is door gebruikers gemarkeerd
+- **UnFlagged** - De markeringen van de opmerking zijn verwijderd
 
-### Notification Events
-- **CreatedNotifications** - Meldingen zijn aangemaakt voor de opmerking (bevat aantal meldingen)
-- **NotificationCreateFailure** - Mislukt om meldingen aan te maken
-- **BadgeAwarded** - Gebruikersbadge is toegekend voor de opmerking (bevat badge‑naam)
+### Moderatieacties
+- **Pinned** - De opmerking is door een moderator vastgepind (bevat wie heeft vastgepind)
+- **UnPinned** - De opmerking is door een moderator losgepind (bevat wie heeft losgepind)
 
-### Mention and Reply Notification Events
+### Meldingsgebeurtenissen
+- **CreatedNotifications** - Er zijn meldingen aangemaakt voor de opmerking (bevat het aantal meldingen)
+- **NotificationCreateFailure** - Het aanmaken van meldingen is mislukt
+- **BadgeAwarded** - Er is een gebruikersbadge toegekend voor de opmerking (bevat de badge-naam)
 
-These events name the person who would receive the email or notification. When nothing was sent, the Details column says why.
-- **MentionEmailSent** - Een gebruiker die in de opmerking werd genoemd, kreeg een e‑mail
-- **MentionEmailSkipped** - Een genoemde gebruiker kreeg geen e‑mail (bevat de reden)
-- **MentionHeldForApproval** - De vermelding‑e‑mail wacht tot de opmerking is goedgekeurd
-- **MentionNotificationCreated** - Een genoemde gebruiker kreeg een in‑app‑melding
-- **MentionNotificationSkipped** - Een genoemde gebruiker kreeg geen in‑app‑melding (bevat de reden)
-- **ReplyEmailSent** - De auteur van de beantwoordde opmerking kreeg een e‑mail over dit antwoord
-- **ReplyEmailSkipped** - De auteur van de beantwoordde opmerking kreeg geen e‑mail (bevat de reden)
-- **ReplyNotificationSkipped** - De auteur van de beantwoordde opmerking kreeg geen in‑app‑melding (bevat de reden)
+### Gebeurtenissen voor vermeldings- en antwoordmeldingen
 
-Reasons shown when an email or notification was not sent:
-- De gebruiker bestaat niet meer, of heeft geen e‑mailadres
-- De gebruiker heeft e‑mailmeldingen uitgeschakeld, of meldingen voor die thread uitgeschakeld
-- Een van de twee gebruikers heeft de ander geblokkeerd
-- De gebruikers zitten niet in dezelfde SSO‑groepen
-- Het e‑mailadres van de gebruiker staat op de onderdrukkingslijst na een bounce of spamklacht (zie [Email Suppression Management](/guide-notifications.html#email-suppression-management))
-- Het e‑mailadres van de gebruiker is bij example.com, wat geen e‑mail kan ontvangen
-- De opmerking is gemarkeerd als spam, verwijderd, of niet goedgekeurd binnen 7 dagen
-- De beantwoordde opmerking is anoniem geplaatst
-- De gebruiker heeft op zijn eigen opmerking geantwoord
-- De gebruiker werd genoemd in het antwoord, dus kreeg hij de vermelding‑e‑mail in plaats van een antwoord‑e‑mail
-- De gebruiker had al een antwoord‑melding voor de opmerking
-- Verzenden is 5 keer mislukt
+Deze gebeurtenissen noemen de persoon die de e-mail of melding zou ontvangen. Wanneer er niets is verzonden, staat in de kolom Details waarom.
 
-Als de levering faalt of een verzendlimiet bereikt, wordt de e‑mail in de wachtrij geplaatst om opnieuw te proberen en vermeldt het logboekitem dat.
+- **MentionEmailSent** - Er is een e-mail verzonden naar een gebruiker die in de opmerking is genoemd
+- **MentionEmailSkipped** - Er is geen e-mail verzonden naar een genoemde gebruiker (bevat de reden)
+- **MentionHeldForApproval** - De vermeldings-e-mail wacht tot de opmerking is goedgekeurd
+- **MentionNotificationCreated** - Een genoemde gebruiker heeft een in-app-melding ontvangen
+- **MentionNotificationSkipped** - Een genoemde gebruiker heeft geen in-app-melding ontvangen (bevat de reden)
+- **ReplyEmailSent** - De auteur van de opmerking waarop wordt gereageerd, is per e-mail geïnformeerd over dit antwoord
+- **ReplyEmailSkipped** - De auteur van de opmerking waarop wordt gereageerd, is niet per e-mail geïnformeerd (bevat de reden)
+- **ReplyNotificationSkipped** - De auteur van de opmerking waarop wordt gereageerd, heeft geen in-app-melding ontvangen (bevat de reden)
 
-### Publishing Events
-- **PublishedLive** - Opmerking is gepubliceerd naar live abonnees (bevat aantal abonnees)
+Redenen die worden getoond wanneer een e-mail of melding niet is verzonden:
 
-### Integration Events
-- **WebhookSynced** - Opmerking is gesynchroniseerd via webhook
+- De gebruiker bestaat niet meer, of heeft geen e-mailadres
+- De gebruiker heeft e-mailmeldingen uitgezet, of meldingen voor die thread uitgezet
+- Een van de twee gebruikers heeft de andere geblokkeerd
+- De gebruikers zitten niet in dezelfde SSO-groepen
+- Het e-mailadres van de gebruiker staat op de suppressielijst na een bounce of spamklacht (zie [Email Suppression Management](/guide-notifications.html#email-suppression-management))
+- Het e-mailadres van de gebruiker is example.com, dat geen e-mail kan ontvangen
+- De opmerking is binnen 7 dagen gemarkeerd als spam, verwijderd of niet goedgekeurd
+- De opmerking waarop wordt gereageerd, is anoniem geplaatst
+- De gebruiker heeft op zijn eigen opmerking gereageerd
+- De gebruiker is genoemd in het antwoord, dus hij heeft de vermeldings-e-mail ontvangen in plaats van een antwoord-e-mail
+- De gebruiker had al een antwoordmelding voor de opmerking
+- Het verzenden is 5 keer mislukt
 
-### Spam Rule Events
-- **SpamRuleMatch** - Opmerking kwam overeen met een aangepaste spam‑regel (bevat regel‑details)
+Als de bezorging mislukt of een verzendlimiet wordt bereikt, wordt de e-mail in de wachtrij geplaatst voor opnieuw proberen en zegt het logboekitem dat ook.
 
-### Localization Events
-- **LocaleDetectedFromText** - Taal‑locale werd automatisch gedetecteerd uit de opmerkingtekst (bevat gedetecteerde taal en locale)
+### Publicatiegebeurtenissen
+- **PublishedLive** - De opmerking is gepubliceerd naar live abonnees (bevat het aantal abonnees)
 
-## Use Cases for Comment Logs
+### Integratiegebeurtenissen
+- **WebhookSynced** - De opmerking is gesynchroniseerd via webhook
 
-Comment logs are automatically generated and stored with each comment. They provide valuable insights for:
-- **Understanding moderation decisions** - Zie precies waarom een opmerking is goedgekeurd, in afwachting van beoordeling, of gemarkeerd als spam
-- **Debugging approval/spam issues** - Volg de besluitvormingslogica wanneer opmerkingen zich niet gedragen zoals verwacht
-- **Tracking user behavior patterns** - Houd veranderingen in vertrouwensfactor en verificatiestatus bij
-- **Auditing moderator actions** - Bekijk welke acties moderators hebben ondernomen op specifieke opmerkingen
-- **Investigating spam filter effectiveness** - Zie welke detectie‑engines spam oppikken en welke niet
-- **Troubleshooting integrations** - Verifieer webhook‑synchronisaties en levering van meldingen
+### Spamregel-gebeurtenissen
+- **SpamRuleMatch** - De opmerking kwam overeen met een aangepaste spamregel (bevat regeldetails)
 
-Deze logboeken helpen transparantie te behouden in het moderatieproces en ondersteunen bij het verfijnen van het gedrag van je commentaarsysteem.
+### Lokalisatiegebeurtenissen
+- **LocaleDetectedFromText** - De taal-locale is automatisch gedetecteerd uit de tekst van de opmerking (bevat de gedetecteerde taal en locale)
+
+## Gebruiksscenario's voor Opmerkinglogboeken
+
+Opmerkinglogboeken worden automatisch gegenereerd en bij elke opmerking opgeslagen. Ze bieden waardevolle inzichten voor:
+
+- **Begrijpen van moderatiebeslissingen** - Zie precies waarom een opmerking is goedgekeurd, in beoordeling gehouden of als spam gemarkeerd
+- **Debuggen van goedkeurings-/spamproblemen** - Volg de beslissingslogica wanneer opmerkingen zich niet gedragen zoals verwacht
+- **Volgen van gebruikersgedragspatronen** - Monitor wijzigingen in trustfactor en verificatiestatus
+- **Auditen van moderatoracties** - Bekijk welke acties moderators op specifieke opmerkingen hebben uitgevoerd
+- **Onderzoeken van de effectiviteit van spamfilters** - Zie welke detectie-engines spam opvangen en welke niet
+- **Problemen oplossen met integraties** - Verifieer webhook-syncs en meldingsbezorging
+
+Deze logboeken helpen transparantie in het moderatieproces te waarborgen en helpen bij het fijnafstellen van het gedrag van je opmerkingensysteem.

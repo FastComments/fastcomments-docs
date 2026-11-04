@@ -23,5 +23,3 @@ let (maybeResponse, httpResponse) = client.getCommentText(
 if maybeResponse.isSome:
   let response = maybeResponse.get()
 [inline-code-end]
-
----

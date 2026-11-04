@@ -1,37 +1,37 @@
-The **FastComments** block podržava single sign-on tako da vaši Shopify kupci mogu komentarisati kao oni sami bez kreiranja zasebnog FastComments naloga.
+**FastComments** blok podržava jedinstveno prijavljivanje (single sign-on) tako da vaši Shopify kupci mogu komentarisati kao sami sebe, bez kreiranja posebnog FastComments naloga.
 
-### How it works
+### Kako funkcioniše
 
-When a visitor who is logged into your store opens a page with the **FastComments** block:
+Kada posetilac koji je prijavljen u vašu prodavnicu otvori stranicu sa **FastComments** blokom:
 
-1. The block detects the Shopify `customer` object.
-2. It sends the customer's name and email to FastComments through a signed app proxy request.
-3. FastComments creates or matches a user keyed by `shopify-{customerId}`, so the same customer always maps to the same FastComments user across sessions and re-installs.
-4. The visitor's name shows up on their comments. They are not prompted to log in again.
+1. Blok detektuje Shopify `customer` objekat.
+2. Šalje ime i email kupca FastComments-u putem potpisanog app proxy zahteva.
+3. FastComments kreira ili uparuje korisnika sa ključem `shopify-{customerId}`, tako da se isti kupac uvek mapira na istog FastComments korisnika kroz sesije i ponovne instalacije.
+4. Ime posetioca se prikazuje na njegovim komentarima. Njemu se ne traži ponovna prijava.
 
-If the visitor is not logged into the store, the block falls back to anonymous commenting (or the FastComments sign-in flow, depending on your widget configuration).
+Ako posetilac nije prijavljen u prodavnicu, blok se vraća na anonimno komentarisanje (ili na FastComments tok prijave, zavisno od konfiguracije vašeg vidžeta).
 
-### Turning SSO off
+### Isključivanje SSO-a
 
-SSO is on by default for every **FastComments** block. To turn it off on a specific block:
+SSO je podrazumevano uključen za svaki **FastComments** blok. Da ga isključite na određenom bloku:
 
-1. Open the Shopify theme editor.
-2. Open the template that contains the block and click the block to select it.
-3. Uncheck **SSO**.
-4. Click **Save**.
+1. Otvorite Shopify editor teme.
+2. Otvorite šablon koji sadrži blok i kliknite na blok da ga izaberete.
+3. Uklonite kvačicu sa **SSO**.
+4. Kliknite **Save**.
 
-Turn SSO off if you want commenters to choose a separate identity for the conversation. For example, an internal community page where staff comment under a different display name.
+Isključite SSO ako želite da komentatori izaberu poseban identitet za razgovor. Na primer, interna stranica zajednice gde osoblje komentariše pod drugim imenom za prikaz.
 
-### What FastComments receives
+### Šta FastComments prima
 
-The SSO payload sent for each customer contains:
+SSO payload koji se šalje za svakog kupca sadrži:
 
-- A user ID derived from the Shopify customer ID (`shopify-{customerId}`).
-- The customer's email (used to identify the user; not displayed publicly).
-- The customer's display name (used as their comment author name).
+- Korisnički ID izveden iz Shopify ID-a kupca (`shopify-{customerId}`).
+- Email kupca (koristi se za identifikaciju korisnika; ne prikazuje se javno).
+- Ime kupca za prikaz (koristi se kao ime autora komentara).
 
-No order history, payment, or address data is sent. The payload is signed server-side; the customer's browser never sees a credential.
+Ne šalju se podaci o istoriji porudžbina, plaćanjima ili adresama. Payload je potpisan na serverskoj strani; pregledač kupca nikada ne vidi kredencijal.
 
-### Login and logout links
+### Linkovi za prijavu i odjavu
 
-When SSO is on, the comment widget's sign-in and sign-out links point at `/account/login` and `/account/logout`, the standard Shopify customer account routes. There is nothing to configure. The links work for any store with customer accounts enabled.
+Kada je SSO uključen, linkovi za prijavu i odjavu u vidžetu za komentare upućuju na `/account/login` i `/account/logout`, standardne Shopify rute za kupce. Nema ništa za konfigurisanje. Linkovi rade za svaku prodavnicu sa omogućenim nalozima kupaca.

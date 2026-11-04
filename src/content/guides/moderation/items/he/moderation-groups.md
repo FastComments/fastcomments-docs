@@ -1,16 +1,16 @@
-Moderators can be placed into groups to moderate different pages or categories of content.
+ניתן לשייך מנחים (Moderators) לקבוצות כדי לנהל דיונים בדפים או בקטגוריות תוכן שונות.
 
-When a Moderator belongs to one or more groups, they will only see comments from those groups in the Moderate Comments page.
+כאשר מנחה שייך לקבוצה אחת או יותר, הוא יראה תגובות רק מהקבוצות הללו בעמוד ניהול התגובות.
 
-For example, let's say we run a site that displays videos by category. We may want to have different moderators for Cat, Dog, and Parrot videos, so [בואו נוסיף את הקבוצות האלה](https://fastcomments.com/auth/my-account/moderate-comments/moderation-groups).
+לדוגמה, נניח שאנו מפעילים אתר שמציג סרטונים לפי קטגוריה. ייתכן שנרצה מנחים שונים עבור סרטוני חתולים, כלבים ותוכים, ולכן [נוסיף את הקבוצות הללו](https://fastcomments.com/auth/my-account/moderate-comments/moderation-groups).
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/moderation-groups?demo=true'; linkUrl='/auth/my-account/moderate-comments/moderation-groups'; selector = '.content'; alt='רשימת קבוצות פיקוח עם קבוצות החתול, הכלב והתוכי שנוצרו עבור כל קטגוריית וידאו'; title='דף קבוצות הפיקוח' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/moderation-groups?demo=true'; linkUrl='/auth/my-account/moderate-comments/moderation-groups'; selector = '.content'; alt='רשימת קבוצות ניהול עם הקבוצות חתולים, כלבים ותוכים שנוצרו עבור כל קטגוריית סרטונים'; title='עמוד קבוצות הניהול' app-screenshot-end]
 
-When we add a moderator, we now have the option to select one or more groups the moderator will belong to:
+כאשר אנו מוסיפים מנחה, יש לנו כעת אפשרות לבחור קבוצה אחת או יותר שהמנחה ישתייך אליהן:
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/moderator/new?demo=true'; linkUrl='/auth/my-account/moderate-comments/moderator/new'; selector = '.account-block'; alt='טופס הוספת מנחה עם בורר הקבוצות המשמש להקצאת המנחה לקבוצה אחת או יותר'; title='הוספת מנחה ובחירת קבוצה' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/moderator/new?demo=true'; linkUrl='/auth/my-account/moderate-comments/moderator/new'; selector = '.account-block'; alt='טופס הוספת מנחה עם בורר הקבוצות המשמש לשיוך המנחה לקבוצה אחת או יותר'; title='הוספת מנחה ובחירת קבוצה' app-screenshot-end]
 
-Finally, comments need to be tied to one or more groups so that the correct moderators see them.
+לבסוף, יש לקשר תגובות לקבוצה אחת או יותר כדי שהמנחים המתאימים יראו אותן.
 
-This can be setup by [הוספת כמה קבוצות](https://fastcomments.com/auth/my-account/moderate-comments/moderation-groups) and then specifying the corresponding `Moderation Group` ids in the comment widget,
+ניתן להגדיר זאת על ידי [הוספת קבוצות](https://fastcomments.com/auth/my-account/moderate-comments/moderation-groups) ולאחר מכן ציון מזהי ה-`Moderation Group` המתאימים בווידג'ט התגובות,
 [כפי שמוסבר כאן](/guide-customizations-and-configuration.html#moderation-group-ids).

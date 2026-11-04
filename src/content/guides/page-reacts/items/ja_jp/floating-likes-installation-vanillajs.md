@@ -85,5 +85,3 @@ Secure SSO または Simple SSO のペイロードも渡せます：
     });
 </script>
 [inline-code-end]
-
----

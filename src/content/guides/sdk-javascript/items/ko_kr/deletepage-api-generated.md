@@ -21,5 +21,3 @@ async function example() {
 }
 example();
 [inline-code-end]
-
----

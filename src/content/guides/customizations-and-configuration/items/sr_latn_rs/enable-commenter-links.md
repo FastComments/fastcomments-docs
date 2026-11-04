@@ -13,5 +13,3 @@ Kada se navedeni URL unese, nalog korisnika će biti ažuriran i sve njihove kor
 Ovo se može prilagoditi bez koda, na stranici za prilagođavanje widgeta:
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.click-to-show-comments', '.commenter-links']; selector = '.commenter-links'; alt='Stranica za prilagođavanje widgeta sa čekiranim poljem za linkove komentatora kako bi se dodalo polje za URL veb sajta u formu za komentar'; title='Omogućavanje linkova komentatora' app-screenshot-end]
-
----

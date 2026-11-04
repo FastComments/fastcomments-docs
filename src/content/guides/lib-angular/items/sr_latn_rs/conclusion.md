@@ -8,5 +8,3 @@ Ako naiđete na bilo kakve probleme ili imate pitanja u vezi Angular Library, mo
 ## Doprinosi
 
 Doprinosi su dobrodošli! Posetite [GitHub repozitorijum](https://github.com/FastComments/fastcomments-angular) za smernice za doprinos.
-
----

@@ -45,5 +45,3 @@ interface SSOUserPostResponse {
 APIによって渡されたデータは、別のSSOユーザHMACペイロードを渡すだけで簡単に上書きできます。例えば、APIでusernameを設定した場合でも、ページ読み込み時のSSOフローで別のusernameを渡すと、自動的にそのusernameが更新されます。
 
 このフローでは、明示的に指定するか null（not undefined）に設定した場合を除き、ユーザーのパラメータは更新しません。
-
----

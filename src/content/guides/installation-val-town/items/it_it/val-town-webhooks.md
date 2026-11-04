@@ -56,5 +56,3 @@ app.delete("/", receive);
 Rispondi rapidamente. FastComments riprova in caso di risposta non 2xx, e un endpoint che continua a fallire viene disabilitato automaticamente, quindi esegui il lavoro reale dopo aver risposto anziché inline.
 
 Rendi quel lavoro idempotente sull'ID del commento. Un retry viene firmato nuovamente con un timestamp nuovo, e lo stesso ID del commento arriva di nuovo in caso di modifica o eliminazione, quindi non c'è nulla di stabile su cui deduplicare.
-
----

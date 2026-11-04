@@ -8,5 +8,3 @@ Als je problemen ondervindt of vragen hebt over de Android-bibliotheek, doe dan 
 ## Bijdragen
 
 Bijdragen zijn welkom! Bezoek de [GitHub-repository](https://github.com/FastComments/fastcomments-android) voor richtlijnen voor bijdragen.
-
----

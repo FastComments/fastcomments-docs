@@ -1,3 +1,1 @@
----
 Fügen Sie Live‑Kommentare zu einem Weebly‑Blog hinzu, indem Sie das FastComments‑Snippet in Ihre Blog‑Einstellungen einfügen und anschließend die Website veröffentlichen.
----

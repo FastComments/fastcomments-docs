@@ -49,5 +49,3 @@ interface VotesResponse {
 Let op dat anonieme stemmen die via deze API zijn aangemaakt, verschijnen in de lijst `appliedAuthorizedVotes`. Ze worden als geautoriseerd beschouwd omdat ze via de API met een API key zijn aangemaakt.
 
 De structuur `appliedAnonymousVotes` is voor stemmen die zijn aangemaakt zonder e-mail, API key, enz.
-
----

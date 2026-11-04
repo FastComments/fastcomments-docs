@@ -1,3 +1,1 @@
----
 Dodaj komentarze na żywo do Webflow za pomocą bloku embed, na statycznej stronie lub w całej kolekcji, a następnie opublikuj, aby były aktywne.
----

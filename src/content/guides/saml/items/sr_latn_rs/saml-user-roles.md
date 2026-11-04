@@ -1,4 +1,3 @@
----
 FastComments mapira SAML korisničke uloge na interne dozvole, omogućavajući kontrolu pristupa zasnovanu na ulogama za vašu organizaciju.
 
 ### FastComments sistem uloga
@@ -210,5 +209,3 @@ FastComments validira dolazne uloge:
 - Pregledajte definicije uloga i potrebne dozvole
 - Proverite da li postoji konflikt u dodelama uloga
 - Verifikujte da se korisnik prijavio nakon promena uloga
-
----

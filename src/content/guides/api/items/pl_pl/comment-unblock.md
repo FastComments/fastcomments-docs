@@ -48,5 +48,3 @@ interface CommentUnBlockResponse {
     commentStatuses?: Record<string, boolean>;
 }
 [inline-code-end]
-
----

@@ -6,5 +6,3 @@ FastComments има специален плъгин за Moodle, който до
 </div>
 
 Плъгинът поддържа нишкови коментари, съвместен чат в реално време и няколко режима на SSO. Вземете го от <a href="https://github.com/FastComments/fastcomments-moodle/" target="_blank">хранилището в GitHub</a>.
-
----

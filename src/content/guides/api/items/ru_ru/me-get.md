@@ -1,4 +1,3 @@
----
 [api-resource-header-start name = 'Me'; route = 'GET /api/v1/me'; creditsCost = 1; api-resource-header-end]
 
 Описывает учетные данные, выполняющие запрос: арендатора, к которому они принадлежат, и, для OAuth‑токенов доступа, пользователя, который авторизовал приложение. Интеграции используют его для тестирования соединения и маркировки его.
@@ -31,5 +30,3 @@ interface MeResponse {
     email?: string
 }
 [inline-code-end]
-
----

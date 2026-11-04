@@ -85,5 +85,3 @@ También podemos pasar cargas útiles de SSO seguro o SSO simple:
     });
 </script>
 [inline-code-end]
-
----

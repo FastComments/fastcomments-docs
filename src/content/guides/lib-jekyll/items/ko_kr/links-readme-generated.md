@@ -1,5 +1,3 @@
----
 - [FastComments 문서](https://docs.fastcomments.com)
 - [맞춤 설정 및 구성](https://docs.fastcomments.com/guide-customizations-and-configuration.html)
 - [Jekyll 문서](https://jekyllrb.com/docs/)
----

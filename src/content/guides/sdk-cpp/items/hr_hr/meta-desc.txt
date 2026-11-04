@@ -1,3 +1,1 @@
----
 Pozovite FastComments API iz C++. Izgradite klijent iz izvornog koda pomoću CMake-a, a zatim kreirajte, dohvatite i moderirajte komentare sinkrono ili asinkrono.
----

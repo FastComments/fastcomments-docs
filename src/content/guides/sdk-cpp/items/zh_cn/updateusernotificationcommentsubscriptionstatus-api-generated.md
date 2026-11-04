@@ -1,4 +1,3 @@
----
 为特定评论启用或禁用通知。
 
 ## 参数
@@ -29,5 +28,3 @@ auto updateTask = api->updateUserNotificationCommentSubscriptionStatus(
     (void)resp;
 });
 [inline-code-end]
-
----

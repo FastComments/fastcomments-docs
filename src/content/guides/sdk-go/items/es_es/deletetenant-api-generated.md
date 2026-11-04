@@ -1,4 +1,3 @@
----
 ## Parámetros
 
 | Name | Type | Location | Required | Description |
@@ -40,5 +39,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.DeleteTenant`: %v\n", resp)
 }
 [inline-code-end]
-
----

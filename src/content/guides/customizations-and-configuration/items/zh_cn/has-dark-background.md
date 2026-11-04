@@ -12,5 +12,3 @@
 *hasDarkBackground* 标志设置为 true，如下所示：
 
 [code-example-start config = {hasDarkBackground: true}; linesToHighlight = [6]; title = 'Force Dark Background Mode'; additionalDemoCode = '<style>body { background: black; }</style>'; code-example-end]
-
----

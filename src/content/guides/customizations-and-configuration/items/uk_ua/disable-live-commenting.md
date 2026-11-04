@@ -14,5 +14,3 @@
 Це також можна зробити без коду. На сторінці налаштування віджету перегляньте розділ "Вимкнути живе коментування".
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-live-commenting']; selector = '.disable-live-commenting'; alt='Розділ \"Вимкнути живе коментування\" на сторінці налаштування віджету, вимикає оновлення потоку в реальному часі'; title='Вимкнути живе коментування' app-screenshot-end]
-
----

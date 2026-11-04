@@ -1,3 +1,1 @@
----
 Tilføj live-kommentarer til et Hostinger Website Builder-websted med kode-widget'en, og indsæt den flydende likes-knap, mens du er der.
----

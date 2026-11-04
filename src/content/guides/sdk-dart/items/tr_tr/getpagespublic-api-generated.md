@@ -1,21 +1,21 @@
-List pages for a tenant. Used by the FChat desktop client to populate its room list.  
-Requires `enableFChat` to be true on the resolved custom config for each page.  
-Pages that require SSO are filtered against the requesting user's group access.
+Bir kiracı (tenant) için sayfaları listeler. FChat masaüstü istemcisi tarafından oda listesini doldurmak için kullanılır.
+Her sayfa için çözümlenen özel yapılandırmada `enableFChat` değerinin true olması gerekir.
+SSO gerektiren sayfalar, isteği yapan kullanıcının grup erişimine göre filtrelenir.
 
-## Parameters
+## Parametreler
 
-| Ad | Tür | Konum | Gerekli | Açıklama |
+| Ad | Tür | Konum | Zorunlu | Açıklama |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Evet |  |
-| cursor | string | query | Hayır | Opak sayfalama imleci `nextCursor` olarak önceki bir istekte döndürüldü. Aynı `sortBy` ile ilişkilidir. |
+| cursor | string | query | Hayır | Önceki bir istekten `nextCursor` olarak döndürülen opak sayfalama imleci. Aynı `sortBy` değerine bağlıdır. |
 | limit | integer | query | Hayır | 1..200, varsayılan 50 |
-| q | string | query | Hayır | İsteğe bağlı büyük/küçük harf duyarsız başlık önek filtresi. |
-| sortBy | string | query | Hayır | Sıralama düzeni. `updatedAt` (varsayılan, en yeni önce), `commentCount` (en çok yorum önce), veya `title` (alfabetik). |
-| hasComments | boolean | query | Hayır | Eğer true ise, yalnızca en az bir yorumu olan sayfaları döndür. |
+| q | string | query | Hayır | İsteğe bağlı, büyük/küçük harfe duyarsız başlık öneki filtresi. |
+| sortBy | string | query | Hayır | Sıralama düzeni. `updatedAt` (varsayılan, en yeni önce), `commentCount` (en çok yorumlu önce) veya `title` (alfabetik). |
+| hasComments | boolean | query | Hayır | true ise, yalnızca en az bir yorumu olan sayfaları döndürür. |
 
-## Response
+## Yanıt
 
-Returns: `GetPublicPagesResponse`
+Döndürür: `GetPublicPagesResponse`
 
 ## Örnek
 
@@ -25,11 +25,11 @@ import 'package:fastcomments_dart/api.dart';
 
 final api_instance = PublicApi();
 final tenantId = tenantId_example; // String | 
-final cursor = cursor_example; // String | Opak sayfalama imleci `nextCursor` olarak önceki bir istekte döndürüldü. Aynı `sortBy` ile ilişkilidir.
+final cursor = cursor_example; // String | Önceki bir istekten `nextCursor` olarak döndürülen opak sayfalama imleci. Aynı `sortBy` değerine bağlıdır.
 final limit = 56; // int | 1..200, varsayılan 50
-final q = q_example; // String | İsteğe bağlı büyük/küçük harf duyarsız başlık önek filtresi.
-final sortBy = ; // PagesSortBy | Sıralama düzeni. `updatedAt` (varsayılan, en yeni önce), `commentCount` (en çok yorum önce), veya `title` (alfabetik).
-final hasComments = true; // bool | Eğer true ise, yalnızca en az bir yorumu olan sayfaları döndür.
+final q = q_example; // String | İsteğe bağlı, büyük/küçük harfe duyarsız başlık öneki filtresi.
+final sortBy = ; // PagesSortBy | Sıralama düzeni. `updatedAt` (varsayılan, en yeni önce), `commentCount` (en çok yorumlu önce) veya `title` (alfabetik).
+final hasComments = true; // bool | true ise, yalnızca en az bir yorumu olan sayfaları döndürür.
 
 try {
     final result = api_instance.getPagesPublic(tenantId, GetPagesPublicOptions(cursor: cursor, limit: limit, q: q, sortBy: sortBy, hasComments: hasComments));

@@ -30,5 +30,3 @@ async fn update_comment(config: &configuration::Configuration) -> Result<(), Err
     Ok(())
 }
 [inline-code-end]
-
----

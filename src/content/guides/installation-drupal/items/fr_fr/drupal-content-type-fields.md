@@ -6,5 +6,3 @@ Chaque entité qui possède ce champ reçoit :
 - Un **identifiant personnalisé** optionnel afin que vous puissiez utiliser un ID stable qui n'est pas lié au chemin de l'entité Drupal.
 
 Le bloc principal `FastComments Widget` connaît ce champ et ignorera les entités qui l'ont déjà attaché. De cette façon, vous pouvez mélanger des commentaires par entité avec le bloc sans voir le widget deux fois sur la même page.
-
----

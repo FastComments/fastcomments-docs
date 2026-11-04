@@ -1,4 +1,3 @@
----
 Lorsque vous visitez votre site vous devriez maintenant voir la boîte de commentaires FastComments visible sur les articles de blog:
 
 <div class="screenshot white-bg">
@@ -7,5 +6,3 @@ Lorsque vous visitez votre site vous devriez maintenant voir la boîte de commen
 </div>
 
 Félicitations pour l'installation de FastComments avec Godaddy! Si vous avez rencontré une Domain Error, ou si vous souhaitez apprendre à personnaliser la zone de commentaires, poursuivez votre lecture!
-
----

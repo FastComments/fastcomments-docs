@@ -1,4 +1,3 @@
----
 Фрагменты кода фронтенда и библиотеки для On-Prem такие же, как и для SaaS-продукта. Однако вы должны указать `apiHost` и корректный путь к скрипту:
 
 [inline-code-attrs-start title = 'Код комментариев для On-Prem'; type = 'html'; isFunctional = false; inline-code-attrs-end]
@@ -16,5 +15,3 @@
 [inline-code-end]
 
 Выше показан очень простой пример. Также мы можем использовать официальные библиотеки для React, Angular, Vue, Svelte и т.д.
-
----

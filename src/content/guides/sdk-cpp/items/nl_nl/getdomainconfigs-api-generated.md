@@ -22,5 +22,3 @@ api->getDomainConfigs(optionalTenant.value())
         }
     });
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 [api-resource-header-start name = 'QuestionResultsAggregate'; route = 'GET /api/v1/question-results-aggregate'; creditsCost = 2; api-resource-header-end]
 
 Hier vindt de aggregatie van resultaten plaats.
@@ -101,5 +100,3 @@ interface QuestionResultsAggregationResponse {
 - Wanneer `forceRecalculate` is opgegeven, zijn de kosten altijd `10`, in plaats van de normale `2`.
 - Als de cache verloopt en de gegevens opnieuw worden berekend, blijven de kosten een constante `2` als `forceRecalculate` niet is opgegeven. De cache verloopt afhankelijk van de grootte van de geaggregeerde dataset (kan variëren tussen 30 seconden en 5 minuten).
 - Dit is om het gebruik van de cache te stimuleren.
-
----

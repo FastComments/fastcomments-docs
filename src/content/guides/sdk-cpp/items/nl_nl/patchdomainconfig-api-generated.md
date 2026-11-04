@@ -29,5 +29,3 @@ api->patchDomainConfig(tenantId, domainToUpdate, patchDomainConfigParams)
         try { t.get(); } catch (const std::exception& e) { /* foutafhandeling */ }
     });
 [inline-code-end]
-
----

@@ -29,5 +29,3 @@ api->updateSubscription(
     (void)ok;
 });
 [inline-code-end]
-
----

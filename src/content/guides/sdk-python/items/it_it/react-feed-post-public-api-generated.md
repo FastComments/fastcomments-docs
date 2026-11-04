@@ -48,5 +48,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Eccezione durante la chiamata a PublicApi->react_feed_post_public: %s\n" % e)
 [inline-code-end]
-
----

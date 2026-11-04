@@ -1,24 +1,24 @@
-Record a vote on a poll, or move an existing one to a different option. A voter has at most one vote per
-poll, so calling this again for the same voter moves their vote rather than adding one.
+Registra un voto su un sondaggio, oppure sposta un voto esistente verso un'opzione diversa. Un votante ha al massimo un voto per
+sondaggio, quindi chiamare questa funzione nuovamente per lo stesso votante sposta il suo voto invece di aggiungerne uno.
 
-This obeys the site's poll settings: if voting is set to logged-in users only, a vote with just an
-anonUserId is rejected, and anonymous votes are rate limited per IP per poll.
+Rispetta le impostazioni dei sondaggi del sito: se il voto è riservato solo agli utenti registrati, un voto con soltanto un
+anonUserId viene rifiutato, e i voti anonimi sono limitati per IP per sondaggio.
 
-## Parameters
+## Parametri
 
-| Name | Type | Location | Required | Description |
+| Nome | Tipo | Posizione | Obbligatorio | Descrizione |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
+| tenantId | string | query | Sì |  |
 
-## Response
+## Risposta
 
-Returns: [`CreatePollVoteResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreatePollVoteResponse.swift)
+Restituisce: [`CreatePollVoteResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreatePollVoteResponse.swift)
 
-## Example
+## Esempio
 
-[inline-code-attrs-start title = 'Esempio createPollVote'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio di createPollVote'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// I seguenti esempi di codice sono ancora in beta. Per qualsiasi problema, segnalalo via http://github.com/OpenAPITools/openapi-generator/issues/new
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 

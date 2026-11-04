@@ -1,3 +1,1 @@
----
 Ustvarite podpisane FastComments SSO žetone v PHP, da vaši prijavljeni uporabniki komentirajo kot sami, brez dodatnega računa in dodatnega koraka za prijavo.
----

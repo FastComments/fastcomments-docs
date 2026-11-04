@@ -9,5 +9,3 @@ Door eerst in te loggen zorg je ervoor dat de gegenereerde codefragmenten al aan
 Deze tutorial is verdeeld in twee categorieën: Lidmaatschapsites en reguliere GoHighLevel-sites.
 
 We beginnen met de instructies voor Lidmaatschapsites.
-
----

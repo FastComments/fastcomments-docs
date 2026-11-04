@@ -1,4 +1,3 @@
----
 Bij het migreren van een andere provider zijn er een paar zaken om rekening mee te houden:
 
 1. Bestaande reactiegegevens, inclusief antwoorden.
@@ -7,5 +6,3 @@ Bij het migreren van een andere provider zijn er een paar zaken om rekening mee 
 
 De selfservice-gegevensimport die in de volgende secties wordt besproken, dekt de eerste twee. Voor aanpassingen, zie onze
 [gids voor aanpassingen en configuratie](/guide-customizations-and-configuration.html).
-
----

@@ -1,4 +1,3 @@
----
 Espectadores actualmente en línea de una página: personas cuya sesión websocket está suscrita a la página en este momento.
 Devuelve anonCount + totalCount (suscriptores en toda la sala, incluidos los espectadores anónimos que no enumeramos).
 
@@ -45,5 +44,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.GetOnlineUsers`: %v\n", resp)
 }
 [inline-code-end]
-
----

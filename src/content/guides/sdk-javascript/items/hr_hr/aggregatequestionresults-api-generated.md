@@ -37,5 +37,3 @@ async function runAggregation() {
   );
 }
 [inline-code-end]
-
----

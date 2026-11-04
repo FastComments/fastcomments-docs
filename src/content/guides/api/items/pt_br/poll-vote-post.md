@@ -80,5 +80,3 @@ sessão. Envie o `ip` do usuário final para que o limite se aplique a ele em ve
 - Um `userId` deve ser um usuário que exista no seu site. Votos para um usuário pertencente a outro site são rejeitados.
 - Votar em uma enquete fechada falha com `poll-closed`.
 - Esta API atualiza as contagens na enquete e as envia para os widgets conectados em tempo real.
-
----

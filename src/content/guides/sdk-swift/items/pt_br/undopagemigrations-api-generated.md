@@ -1,4 +1,3 @@
----
 Enfileira um trabalho em lote que reverte todas as migrações de um trabalho migrate-pages, da mais recente para a mais antiga. Disponível por 90 dias.  
 Registros alterados desde a migração são deixados como estão, de modo que uma edição posterior nunca seja sobrescrita.  
 Faça polling GET /api/v1/batch-jobs/{batchJobId} para obter as contagens de restaurados/ignorados.
@@ -35,5 +34,3 @@ DefaultAPI.undoPageMigrations(tenantId: tenantId, undoId: undoId) { (response, e
     }
 }
 [inline-code-end]
-
----

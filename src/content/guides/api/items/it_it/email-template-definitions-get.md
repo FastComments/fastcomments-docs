@@ -1,4 +1,3 @@
----
 [api-resource-header-start name = 'EmailTemplateDefinition'; route = 'GET /api/v1/email-templates/definitions'; creditsCost = 1; api-resource-header-end]
 
 Questa API consente di recuperare tutti gli oggetti `EmailTemplateDefinition`.
@@ -39,5 +38,3 @@ interface GetEmailTemplateDefinitionsResponse {
     definitions?: EmailTemplateDefinition[]
 }
 [inline-code-end]
-
----

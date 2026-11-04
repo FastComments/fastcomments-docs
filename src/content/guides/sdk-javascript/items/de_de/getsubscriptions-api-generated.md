@@ -21,5 +21,3 @@ Rückgabe: [`GetSubscriptionsAPIResponse`](https://github.com/FastComments/fastc
     const responseWithoutUser: GetSubscriptionsAPIResponse = await getSubscriptions(tenantId);
 })();
 [inline-code-end]
-
----

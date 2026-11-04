@@ -1,3 +1,1 @@
----
 Dodajte komentare na Jekyll stranicu pomoću službenog gema. Instalirajte ga, dodajte Liquid oznaku u izgled vašeg posta i konfigurirajte widget iz _config.yml.
----

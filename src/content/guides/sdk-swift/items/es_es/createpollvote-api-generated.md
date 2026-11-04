@@ -1,24 +1,24 @@
-Record a vote on a poll, or move an existing one to a different option. A voter has at most one vote per
-poll, so calling this again for the same voter moves their vote rather than adding one.
+Registra un voto en una encuesta, o mueve uno existente a una opción diferente. Un votante tiene como máximo un voto por
+encuesta, por lo que llamar a esto de nuevo para el mismo votante mueve su voto en lugar de añadir uno.
 
-This obeys the site's poll settings: if voting is set to logged-in users only, a vote with just an
-anonUserId is rejected, and anonymous votes are rate limited per IP per poll.
+Esto respeta la configuración de encuestas del sitio: si la votación está configurada solo para usuarios conectados, un voto con solo un
+anonUserId es rechazado, y los votos anónimos tienen límite de frecuencia por IP por encuesta.
 
-## Parameters
+## Parámetros
 
-| Name | Type | Location | Required | Description |
+| Nombre | Tipo | Ubicación | Requerido | Descripción |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
+| tenantId | string | query | Sí |  |
 
-## Response
+## Respuesta
 
-Returns: [`CreatePollVoteResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreatePollVoteResponse.swift)
+Devuelve: [`CreatePollVoteResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreatePollVoteResponse.swift)
 
-## Example
+## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo createPollVote'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo de createPollVote'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Los siguientes ejemplos de código están todavía en beta. Para cualquier problema, por favor repórtelo vía http://github.com/OpenAPITools/openapi-generator/issues/new
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -35,5 +35,3 @@ DefaultAPI.createPollVote(tenantId: tenantId, createPollVoteBody: createPollVote
     }
 }
 [inline-code-end]
-
----

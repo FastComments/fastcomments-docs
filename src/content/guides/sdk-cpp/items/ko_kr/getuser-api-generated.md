@@ -30,5 +30,3 @@ api->getUser(tenantId, userId)
         }
     });
 [inline-code-end]
-
----

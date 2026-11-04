@@ -32,5 +32,3 @@ async function removeCommentExample() {
 
 removeCommentExample();
 [inline-code-end]
-
----

@@ -28,5 +28,3 @@ api->postBulkPreBanSummary(tenantId, bulkPreBanParams, options)
         (void)result;
     });
 [inline-code-end]
-
----

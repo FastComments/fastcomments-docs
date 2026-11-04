@@ -1,49 +1,49 @@
-### API Overview
+### Vue d'ensemble de l'API
 
-Image Chat fournit trois points de terminaison REST API pour gérer les conversations d'image de manière programmatique. Ces points de terminaison vous permettent de récupérer, créer et supprimer des marqueurs sans utiliser le widget du navigateur.
+Image Chat fournit trois points d'API REST pour gérer les conversations d'images de manière programmatique. Ces points d'accès vous permettent de récupérer, créer et supprimer des marqueurs sans utiliser le widget du navigateur.
 
-Tous les points de terminaison API requièrent une authentification et suivent les modèles standard de l'API FastComments. Ce sont des points de terminaison publics qui s'authentifient via des cookies de navigateur, et non via des clés API.
+Tous les points d'API nécessitent une authentification et suivent les modèles d'API FastComments standard. Ce sont des points d'accès publics qui s'authentifient via les cookies du navigateur, et non via des clés d'API.
 
-### Base URL
+### URL de base
 
-Tous les points de terminaison de l'API Image Chat se trouvent sous :
+Tous les points d'API Image Chat se trouvent sous :
 
 ```
 https://fastcomments.com/comment-image-chats
 ```
 
-### Authentication
+### Authentification
 
-Ces points de terminaison authentifient les utilisateurs via des cookies de navigateur. Ils n'utilisent pas de clés API. Les utilisateurs doivent être connectés à FastComments dans leur navigateur pour accéder à ces points de terminaison.
+Ces points d'accès authentifient les utilisateurs via les cookies du navigateur. Ils n'utilisent pas de clés d'API. Les utilisateurs doivent être connectés à FastComments dans leur navigateur pour accéder à ces points d'accès.
 
-### Get All Conversations
+### Récupérer toutes les conversations
 
-Récupère toutes les conversations d'image pour une image donnée.
+Récupère toutes les conversations d'images pour une image spécifique.
 
-#### Endpoint
+#### Point d'accès
 
 ```
 GET /comment-image-chats/:tenantId?urlId=<urlId>
 ```
 
-#### Parameters
+#### Paramètres
 
-`tenantId` (path parameter, required) est votre FastComments Tenant ID.
+`tenantId` (paramètre de chemin, requis) est votre ID de tenant FastComments.
 
-`urlId` (query parameter, required) est l'identifiant de l'image pour lequel vous souhaitez récupérer les conversations.
+`urlId` (paramètre de requête, requis) est l'identifiant de l'image pour laquelle vous souhaitez récupérer les conversations.
 
-#### Response
+#### Réponse
 
-La réponse inclut le statut de l'API, les informations de session de l'utilisateur courant si authentifié, un tableau de conversations avec leurs IDs, URLs et coordonnées X/Y, un identifiant d'URL nettoyé, un indicateur précisant si l'utilisateur courant est administrateur ou modérateur du site, et les détails de connexion WebSocket pour la synchronisation en direct incluant `tenantIdWS`, `urlIdWS` et `userIdWS`.
+La réponse inclut le statut de l'API, les informations de session de l'utilisateur actuel si authentifié, un tableau de conversations avec leurs IDs, URLs et coordonnées X/Y, un identifiant d'URL nettoyé, un indicateur indiquant si l'utilisateur actuel est un administrateur ou un modérateur du site, et les détails de connexion WebSocket pour la synchronisation en direct, y compris `tenantIdWS`, `urlIdWS` et `userIdWS`.
 
-#### Example Request
+#### Exemple de requête
 
 ```bash
 curl "https://fastcomments.com/comment-image-chats/demo?urlId=my-product-image" \
   --cookie "your-session-cookie"
 ```
 
-#### Example Response
+#### Exemple de réponse
 
 ```json
 {
@@ -74,43 +74,43 @@ curl "https://fastcomments.com/comment-image-chats/demo?urlId=my-product-image" 
 }
 ```
 
-### Create Conversation
+### Créer une conversation
 
-Créer une nouvelle conversation d'image pour un emplacement spécifique sur une image.
+Crée une nouvelle conversation d'image pour un emplacement spécifique sur une image.
 
-#### Endpoint
+#### Point d'accès
 
 ```
 POST /comment-image-chats/:tenantId
 ```
 
-#### Parameters
+#### Paramètres
 
-`tenantId` (path parameter, required) est votre FastComments Tenant ID.
+`tenantId` (paramètre de chemin, requis) est votre ID de tenant FastComments.
 
-Le corps de la requête doit être en JSON et inclure les champs requis suivants.
+Le corps de la requête doit être en JSON et inclure ces champs requis.
 
-`urlId` (string, required) est l'identifiant de la page de base.
+`urlId` (chaîne, requis) est l'identifiant de la page de base.
 
-`windowUrlId` (string, required) est l'URL combinée avec la source de l'image et les coordonnées, par exemple `my-page:/images/photo.jpg:25.5:30.2`.
+`windowUrlId` (chaîne, requis) est l'URL combinée avec la source de l'image et les coordonnées, par exemple `my-page:/images/photo.jpg:25.5:30.2`.
 
-`pageTitle` (string, required) est le titre de la page.
+`pageTitle` (chaîne, requis) est le titre de la page.
 
-`src` (string, required) est l'URL source de l'image.
+`src` (chaîne, requis) est l'URL source de l'image.
 
-`x` (number, required) est la coordonnée X en pourcentage (0-100).
+`x` (nombre, requis) est la coordonnée X en pourcentage (0-100).
 
-`y` (number, required) est la coordonnée Y en pourcentage (0-100).
+`y` (nombre, requis) est la coordonnée Y en pourcentage (0-100).
 
-`createdFromCommentId` (string, required) est l'ID du commentaire qui a initié ce chat.
+`createdFromCommentId` (chaîne, requis) est l'ID du commentaire qui a initié cette conversation.
 
-`broadcastId` (string, required) est un UUID pour la synchronisation en direct afin d'éviter les effets d'écho.
+`broadcastId` (chaîne, requis) est un UUID pour la synchronisation en direct afin d'éviter les effets d'écho.
 
-#### Response
+#### Réponse
 
 La réponse inclut le statut de l'API et l'ID de la conversation nouvellement créée.
 
-#### Example Request
+#### Exemple de requête
 
 ```bash
 curl -X POST "https://fastcomments.com/comment-image-chats/demo" \
@@ -128,7 +128,7 @@ curl -X POST "https://fastcomments.com/comment-image-chats/demo" \
   }'
 ```
 
-#### Example Response
+#### Exemple de réponse
 
 ```json
 {
@@ -137,25 +137,25 @@ curl -X POST "https://fastcomments.com/comment-image-chats/demo" \
 }
 ```
 
-### Delete Conversation
+### Supprimer une conversation
 
-Supprime une conversation d'image existante. Ce point de terminaison nécessite des permissions d'administrateur ou de modérateur, ou la conversation doit avoir été créée par l'utilisateur authentifié.
+Supprime une conversation d'image existante. Ce point d'accès nécessite des permissions d'administrateur ou de modérateur, ou la conversation doit avoir été créée par l'utilisateur authentifié.
 
-#### Endpoint
+#### Point d'accès
 
 ```
 DELETE /comment-image-chats/:tenantId/:chatId
 ```
 
-#### Parameters
+#### Paramètres
 
-`tenantId` (path parameter, required) est votre FastComments Tenant ID.
+`tenantId` (paramètre de chemin, requis) est votre ID de tenant FastComments.
 
-`chatId` (path parameter, required) est l'ID de la conversation à supprimer.
+`chatId` (paramètre de chemin, requis) est l'ID de la conversation à supprimer.
 
-`broadcastId` (request body, required) est un UUID pour la synchronisation en direct.
+`broadcastId` (corps de la requête, requis) est un UUID pour la synchronisation en direct.
 
-#### Example Request
+#### Exemple de requête
 
 ```bash
 curl -X DELETE "https://fastcomments.com/comment-image-chats/demo/conv789" \
@@ -166,7 +166,7 @@ curl -X DELETE "https://fastcomments.com/comment-image-chats/demo/conv789" \
   }'
 ```
 
-#### Example Response
+#### Exemple de réponse
 
 ```json
 {
@@ -174,19 +174,19 @@ curl -X DELETE "https://fastcomments.com/comment-image-chats/demo/conv789" \
 }
 ```
 
-### Coordinate System
+### Système de coordonnées
 
-Les coordonnées X et Y sont stockées en tant que pourcentages des dimensions de l'image. X représente la position horizontale depuis le bord gauche (0 = bord gauche, 100 = bord droit). Y représente la position verticale depuis le bord supérieur (0 = bord supérieur, 100 = bord inférieur).
+Les coordonnées X et Y sont stockées sous forme de pourcentages des dimensions de l'image. X représente la position horizontale à partir du bord gauche (0 = bord gauche, 100 = bord droit). Y représente la position verticale à partir du bord supérieur (0 = bord supérieur, 100 = bord inférieur).
 
-Ces valeurs en pourcentage peuvent inclure des décimales pour plus de précision. Par exemple, x: 25.5 signifie 25.5% depuis le bord gauche de l'image.
+Ces valeurs en pourcentage peuvent inclure des décimales pour plus de précision. Par exemple, x : 25.5 signifie 25,5 % à partir du bord gauche de l'image.
 
-### Rate Limiting
+### Limitation de débit
 
-Ces points de terminaison sont soumis à la limitation de débit standard de l'API FastComments. Le middleware de limitation de débit s'applique par tenant pour prévenir les abus tout en permettant des schémas d'utilisation normaux.
+Ces points d'accès sont soumis à la limitation de débit standard de l'API FastComments. Le middleware de limitation de débit s'applique par tenant pour prévenir les abus tout en permettant des modèles d'utilisation normaux.
 
-### Error Responses
+### Réponses d'erreur
 
-Tous les points de terminaison renvoient des codes de statut HTTP standards. Une réponse 400 indique des paramètres de requête invalides. Une réponse 401 signifie que l'authentification a échoué. Une réponse 403 indique des permissions insuffisantes. Une réponse 404 signifie que la conversation n'a pas été trouvée. Une réponse 429 indique que la limite de débit a été dépassée.
+Tous les points d'accès renvoient des codes de statut HTTP standard. Une réponse 400 indique des paramètres de requête invalides. Une réponse 401 signifie que l'authentification a échoué. Une réponse 403 indique des permissions insuffisantes. Une réponse 404 signifie que la conversation n'a pas été trouvée. Une réponse 429 indique que la limite de débit a été dépassée.
 
 Les réponses d'erreur incluent un corps JSON avec des détails :
 
@@ -197,6 +197,6 @@ Les réponses d'erreur incluent un corps JSON avec des détails :
 }
 ```
 
-### Usage Tracking
+### Suivi de l'utilisation
 
-La création de conversations incrémente votre métrique d'utilisation `conversationCreateCount`. Toute activité de synchronisation WebSocket incrémente `pubSubMessageCount` et `pubSubBandwidth`. Vous pouvez surveiller ces métriques dans votre tableau de bord FastComments sous usage analytics.
+La création de conversations incrémente votre métrique d'utilisation `conversationCreateCount`. Toute activité de synchronisation WebSocket incrémente `pubSubMessageCount` et `pubSubBandwidth`. Vous pouvez surveiller ces métriques dans votre tableau de bord FastComments sous les analyses d'utilisation.

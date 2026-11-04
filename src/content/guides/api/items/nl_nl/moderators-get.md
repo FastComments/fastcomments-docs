@@ -31,5 +31,3 @@ interface ModeratorsResponse {
     moderators?: Moderator[]
 }
 [inline-code-end]
-
----

@@ -1,25 +1,25 @@
-List pages for a tenant. Used by the FChat desktop client to populate its room list.  
-Requires `enableFChat` to be true on the resolved custom config for each page.  
-Pages that require SSO are filtered against the requesting user's group access.
+Списъци със страници за наемател. Използва се от FChat десктоп клиента за попълване на списъка му със стаи.
+Изисква `enableFChat` да е true в резолвнатата персонализирана конфигурация за всяка страница.
+Страниците, изискващи SSO, се филтрират спрямо груповия достъп на заявяващия потребител.
 
-## Parameters
+## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Местоположение | Задължителен | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| cursor | string | query | No | Непрозрачен курсор за пагинация, връщан като `nextCursor` от предишна заявка. Свързан със същия `sortBy`. |
-| limit | integer | query | No | 1..200, default 50 |
-| q | string | query | No | Опционален филтър за заглавие, нечувствителен към регистъра. |
-| sortBy | string | query | No | Ред на сортиране. `updatedAt` (по подразбиране, най-новите първо), `commentCount` (най-много коментари първо), или `title` (по азбучен ред). |
-| hasComments | boolean | query | No | Ако е true, връща само страници с поне един коментар. |
+| tenantId | string | path | Да |  |
+| cursor | string | query | Не | Непрозрачен курсор за пагинация, върнат като `nextCursor` от предишна заявка. Обвързан със същия `sortBy`. |
+| limit | integer | query | Не | 1..200, по подразбиране 50 |
+| q | string | query | Не | Незадължителен филтър по префикс на заглавие, без разлика в регистъра. |
+| sortBy | string | query | Не | Ред на сортиране. `updatedAt` (по подразбиране, най-новите първо), `commentCount` (най-много коментари първо) или `title` (по азбучен ред). |
+| hasComments | boolean | query | Не | Ако е true, връща само страници с поне един коментар. |
 
-## Response
+## Отговор
 
-Returns: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetPublicPagesResponse.php)
+Връща: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetPublicPagesResponse.php)
 
-## Example
+## Пример
 
-[inline-code-attrs-start title = 'getPagesPublic пример'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример за getPagesPublic'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -27,18 +27,18 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
+    // Ако искате да използвате персонализиран http клиент, подайте своя клиент, който имплементира `GuzzleHttp\ClientInterface`.
+    // Това е незадължително, `GuzzleHttp\Client` ще се използва по подразбиране.
     new GuzzleHttp\Client()
 );
 
 $tenant_id = 'tenant_id_example'; // string
 $options = [
-    'cursor' => 'cursor_example', // string | Opaque pagination cursor returned as `nextCursor` from a prior request. Tied to the same `sortBy`.
-    'limit' => 56, // int | 1..200, default 50
-    'q' => 'q_example', // string | Optional case-insensitive title prefix filter.
-    'sort_by' => new \FastComments\Client\Model\\FastComments\Client\Model\PagesSortBy(), // \FastComments\Client\Model\PagesSortBy | Sort order. `updatedAt` (default, newest first), `commentCount` (most comments first), or `title` (alphabetical).
-    'has_comments' => True, // bool | If true, only return pages with at least one comment.
+    'cursor' => 'cursor_example', // string | Непрозрачен курсор за пагинация, върнат като `nextCursor` от предишна заявка. Обвързан със същия `sortBy`.
+    'limit' => 56, // int | 1..200, по подразбиране 50
+    'q' => 'q_example', // string | Незадължителен филтър по префикс на заглавие, без разлика в регистъра.
+    'sort_by' => new \FastComments\Client\Model\\FastComments\Client\Model\PagesSortBy(), // \FastComments\Client\Model\PagesSortBy | Ред на сортиране. `updatedAt` (по подразбиране, най-новите първо), `commentCount` (най-много коментари първо) или `title` (по азбучен ред).
+    'has_comments' => True, // bool | Ако е true, връща само страници с поне един коментар.
 ];
 
 

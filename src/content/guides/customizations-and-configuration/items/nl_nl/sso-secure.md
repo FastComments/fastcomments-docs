@@ -1,8 +1,8 @@
 [related-parameter-start name = 'sso'; type = 'FastCommentsSSO'; typeLink = 'https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts#L1' related-parameter-end]
 
-FastComments Secure SSO gebruikt HMAC-SHA256-encryptie als mechanisme om SSO te implementeren. Eerst behandelen we de algemene architectuur, geven voorbeelden en gedetailleerde stappen.
+FastComments Secure SSO gebruikt HMAC-SHA256-versleuteling als mechanisme om SSO te implementeren. Eerst bespreken we de algemene architectuur, geven we voorbeelden en gedetailleerde stappen.
 
-Er is ook documentatie over het migreren vanaf andere leveranciers met vergelijkbare SSO-mechanismen, en de verschillen.
+Er is ook documentatie beschikbaar over het migreren van andere providers met vergelijkbare SSO-mechanismen, en de verschillen.
 
 De flow ziet er als volgt uit:
 
@@ -11,110 +11,108 @@ De flow ziet er als volgt uit:
     <img class="screenshot-image" src="/images/secure-sso-diagram.svg" alt="Secure SSO Diagram" />
 </div>
 
-Aangezien Secure SSO full-stack ontwikkeling omvat, staan volledig werkende codevoorbeelden in Java/Spring, NodeJS/Express en vanilla PHP momenteel <a href="https://github.com/FastComments/fastcomments-code-examples/tree/master/sso" target="_blank">op GitHub</a>.
+Omdat Secure SSO full-stack ontwikkeling omvat, zijn volledig werkende codevoorbeelden in Java/Spring, NodeJS/Express en vanilla PHP momenteel <a href="https://github.com/FastComments/fastcomments-code-examples/tree/master/sso" target="_blank">op GitHub</a> te vinden.
 
-Hoewel we ExpressJS in het NodeJS-voorbeeld en Spring in het Java-voorbeeld gebruiken, zijn er geen frameworks/bibliotheken vereist in deze runtimes om FastComments SSO te implementeren — de native crypto-pakketten volstaan.
+Hoewel we ExpressJS gebruiken in het NodeJS-voorbeeld en Spring in het Java-voorbeeld, zijn er geen frameworks/bibliotheken vereist in deze runtimes om FastComments SSO te implementeren - de native crypto-pakketten werken.
 
-U hoeft geen nieuwe API-eindpunten te schrijven voor FastComments SSO. Versleutel eenvoudig de gebruikersgegevens met uw geheime sleutel en geef de payload door aan de comment-widget.
+Je hoeft geen nieuwe API-endpoints te schrijven met FastComments SSO. Versleutel simpelweg de gebruikersinformatie met je geheime sleutel en geef de payload door aan de comment widget.
 
-#### Get Your API Secret Key
+#### Verkrijg Je API Secret Key
 
-Uw API Secret kan worden opgehaald vanaf <a href="https://fastcomments.com/auth/my-account/api-secret" target="_blank">deze pagina</a>. U kunt deze pagina ook vinden door naar Mijn account te gaan, op de API/SSO-tegel te klikken en vervolgens op "Get API Secret Key" te klikken.
+Je API Secret kan worden opgehaald via <a href="https://fastcomments.com/auth/my-account/api-secret" target="_blank">deze pagina</a>. Je kunt deze pagina ook vinden door naar My Account te gaan, op de API/SSO-tegel te klikken en vervolgens op "Get API Secret Key" te klikken.
 
 #### Comment Widget Parameters
 
-High-level API-documentatie voor de comment widget is te vinden <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts#L1" target="_blank">hier</a>.
+API-documentatie op hoog niveau voor de comment widget is <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts#L1" target="_blank">hier</a> te vinden.
 
-Laten we dieper ingaan op wat deze parameters betekenen.
+Laten we in meer detail ingaan op wat deze parameters betekenen.
 
-De comment widget accepteert een configuratieobject — u geeft dit al door als u FastComments gebruikt om uw klant-id (genoemd tenantId) door te geven.
+De comment widget neemt een configuratieobject aan - je geeft dit al door als je FastComments gebruikt om je klant-id door te geven (genaamd tenantId).
 
-Om SSO in te schakelen, geef een nieuw "sso"-object door, dat de volgende parameters moet bevatten. De waarden moeten server-side gegenereerd worden.
+Om SSO in te schakelen, geef je een nieuw "sso"-object door, dat de volgende parameters moet bevatten. De waarden moeten server-side worden gegenereerd.
 
-- userDataJSONBase64: De gebruikersgegevens in JSON-formaat, die vervolgens Base64-gecodeerd zijn.
+- userDataJSONBase64: De gegevens van de gebruiker in JSON-formaat, die vervolgens Base64-gecodeerd zijn.
 - verificationHash: De HMAC-SHA256-hash gemaakt van UNIX_TIME_MILLIS + userDataJSONBase64.
 - timestamp: Epoch-timestamp, in **milliseconden**. Mag niet in de toekomst liggen, of meer dan twee dagen in het verleden.
 - loginURL: Een URL die de comment widget kan tonen om de gebruiker in te loggen.
 - logoutURL: Een URL die de comment widget kan tonen om de gebruiker uit te loggen.
-- loginCallback: Wanneer opgegeven in plaats van de login-URL, een functie die de comment widget zal aanroepen bij het klikken op de loginknop.
-- logoutCallback: Wanneer opgegeven in plaats van de logout-URL, een functie die de comment widget zal aanroepen bij het klikken op de logoutknop.
+- loginCallback: Wanneer dit in plaats van de login-URL wordt meegegeven, een functie die de comment widget aanroept wanneer op de inlogknop wordt geklikt.
+- logoutCallback: Wanneer dit in plaats van de logout-URL wordt meegegeven, een functie die de comment widget aanroept wanneer op de uitlogknop wordt geklikt.
 
 [code-example-start config = {sso: { userDataJSONBase64: '...', verificationHash: '...', timestamp: Date.now(), loginURL: 'https://example.com/login', logoutURL: 'https://example.com/logout', loginCallback: function() { console.log('Log the user in here...'); }, logoutCallback: function() { console.log('Log the user out here...') } }}; linesToHighlight = [6, 7, 8, 9, 10, 11, 12]; title = 'Secure SSO Client Code'; isFunctional = false; code-example-end]
 
-#### Het gebruikersobject
+#### Het Gebruikersobject
 
-Het User-object bevat het volgende schema:
-[inline-code-attrs-start title = 'Het gebruikersobject'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+Het Gebruikersobject bevat het volgende schema:
+[inline-code-attrs-start title = 'Het Gebruikersobject'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface SSOUser {
-    /** Verplicht. Maximaal 1k tekens. **/
+    /** Required. 1k Characters Max. **/
     id: string;
-    /** Verplicht. Maximaal 1k tekens. Opmerking: moet uniek zijn. **/
+    /** Required. 1k Characters Max. Note: Must be unique. **/
     email: string;
-    /** Verplicht. Maximaal 1k tekens. Opmerking: de gebruikersnaam mag geen e-mailadres zijn. Hoeft niet uniek te zijn. **/
+    /** Required. 1k Characters Max. Note: The username cannot be an email. Does not have to be unique. **/
     username: string;
-    /** Optioneel. Maximaal 3k tekens voor URL's. Standaard afkomstig van gravatar op basis van e-mail. Ondersteunt 64-gecodeerde afbeeldingen, in dat geval is de limiet 50k tekens. **/ 
+    /** Optional. 3k Characters Max for URLs. Default is from gravatar based on email. Supports 64 encoded images, in which case the limit is 50k characters. **/ 
     avatar?: string;
-    /** Optioneel. Standaard false. **/
+    /** Optional. Default false. **/
     optedInNotifications?: boolean;
-    /** Optioneel. Standaard false. **/
+    /** Optional. Default false. **/
     optedInSubscriptionNotifications?: boolean;
-    /** Optioneel. Maximaal 100 tekens. Dit label wordt naast hun naam getoond. Standaard is Administrator/Moderator waar van toepassing. **/
+    /** Optional. 100 Characters Max. This label will be shown next to their name. Default is Administrator/Moderator when applicable. **/
     displayLabel?: string;
-    /** Optioneel. Maximaal 500 tekens. Dit wordt in plaats van de gebruikersnaam getoond. **/
+    /** Optional. 500 Characters Max. This will be shown instead of the username. **/
     displayName?: string;
-    /** Optioneel. Maximaal 2k tekens. De naam van de gebruiker linkt naar dit adres. **/
+    /** Optional. 2k Characters Max. The user's name will link to this. **/
     websiteUrl?: string;
-    /** Optioneel. Tot 100 groepen per gebruiker. Een groeps-id mag niet langer zijn dan 50 tekens. **/
+    /** Optional. Up to 100 groups per user. A group id may not be longer than 50 characters. **/
     groupIds?: string[];
-    /** Optioneel. Geeft de gebruiker aan als beheerder. **/
+    /** Optional. Denotes the user as an administrator. **/
     isAdmin?: boolean;
-    /** Optioneel. Geeft de gebruiker aan als moderator. **/
+    /** Optional. Denotes the user as a moderator. **/
     isModerator?: boolean;
-    /** Optioneel, standaard true. Zet op false om het tabblad "activity" in het gebruikersprofiel in te schakelen. **/
+    /** Optional, default true. Set to false to enable the "activity" tab in the user's profile. **/
     isProfileActivityPrivate?: boolean;
-    /** Optioneel, standaard false. Zet op true om profielreacties uit te schakelen. **/
+    /** Optional, default false. Set to true to disable profile comments. **/
     isProfileCommentsPrivate?: boolean;
-    /** Optioneel, standaard false. Zet op true om direct messaging naar deze gebruiker uit te schakelen. **/
+    /** Optional, default false. Set to true to disable direct messaging this user. **/
     isProfileDMDisabled?: boolean;
-    /** Optionele configuratie voor gebruikersbadges. **/
+    /** Optional configuration for user badges. **/
     badgeConfig?: {
-        /** Array van globale badge-IDs om toe te wijzen. Beperkt tot 30 badges. Volgorde wordt gerespecteerd. **/
+        /** Array of global badge IDs to assign. Limited to 30 badges. Order is respected. **/
         badgeIds: string[];
-        /** Array van badge-IDs gescopeerd naar de huidige pagina (urlId). Alleen weergegeven op de toegewezen pagina. **/
+        /** Array of badge IDs scoped to the current page (urlId). Only displayed on the assigned page. **/
         pageBadgeIds?: string[];
-        /** Als true, vervangt bestaande weergegeven badges. Globale en pagina-gescopeerde worden onafhankelijk overschreven. **/
+        /** If true, replaces existing displayed badges. Global and page-scoped are overridden independently. **/
         override?: boolean;
-        /** Als true, werkt badge-weergave-eigenschappen bij vanuit de tenantconfiguratie. **/
+        /** If true, updates badge display properties from tenant configuration. **/
         update?: boolean;
     };
 }
 [inline-code-end]
 
-#### Moderators and Administrators
+#### Moderators en Beheerders
 
-Voor admins en moderators, geef de respectieve `isAdmin` of `isModerator`-vlaggen door in het `SSOUser`-object.
+Geef voor admins en moderators de respectievelijke vlaggen `isAdmin` of `isModerator` door in het `SSOUser`-object.
 
-#### Notifications
+#### Meldingen
 
-Om meldingen in of uit te schakelen, zet de waarde van `optedInNotifications` respectievelijk op `true` of `false`. De eerste keer dat de gebruiker de pagina laadt met deze waarde in de SSO-payload, worden hun meldingsinstellingen bijgewerkt.
+Om meldingen in of uit te schakelen, stel je de waarde van `optedInNotifications` respectievelijk in op `true` of `false`. De eerste keer dat de gebruiker de pagina laadt met deze waarde in de SSO-payload, worden hun meldingsinstellingen bijgewerkt.
 
-Daarnaast, als u wilt dat gebruikers e-mailmeldingen ontvangen voor activiteit op pagina's waarop ze zich hebben geabonneerd (in tegenstelling tot alleen in-app meldingen), zet dan `optedInSubscriptionNotifications` op `true`.
+Als je bovendien wilt dat gebruikers meldingse-mails ontvangen voor activiteit op pagina's waarop ze zijn geabonneerd (in plaats van alleen in-app meldingen), stel je `optedInSubscriptionNotifications` in op `true`.
 
-#### VIP Users & Special Labels
+#### VIP-gebruikers & Speciale Labels
 
-U kunt een speciaal label naast de naam van de gebruiker tonen door het optionele veld "displayLabel" te gebruiken.
+Je kunt een speciaal label naast de naam van de gebruiker tonen door het optionele veld "displayLabel" te gebruiken.
 
-#### Unauthenticated users
+#### Niet-geauthenticeerde gebruikers
 
-Om een niet-geauthenticeerde gebruiker te representeren, vul eenvoudigweg geen userDataJSONBase64, verificationHash of timestamp in. Geef een loginURL op.
+Om een niet-geauthenticeerde gebruiker weer te geven, vul je simpelweg userDataJSONBase64, verificationHash of timestamp niet in. Geef een loginURL op.
 
 Deze gebruikers kunnen niet reageren en krijgen in plaats daarvan een inlogbericht te zien (bericht, link of knop, afhankelijk van de configuratie).
 
-#### Direct Examples for Serializing and Hashing User Data
+#### Directe Voorbeelden voor Serialiseren en Hashen van Gebruikersgegevens
 
-Meer details en voorbeelden zijn <a href="https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/node-express/routes/index.js#L23" target="_blank">hier</a> (js), <a href="https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/java-springboot/src/main/java/com/winricklabs/ssodemo/DemoController.java#L68" target="_blank">hier</a> (java) en <a href="https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/php/server.php#L27" target="_blank">hier</a> (php).
+Meer details als voorbeeld zijn <a href="https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/node-express/routes/index.js#L23" target="_blank">hier</a> (js), <a href="https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/java-springboot/src/main/java/com/winricklabs/ssodemo/DemoController.java#L68" target="_blank">hier</a> (java) en <a href="https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/php/server.php#L27" target="_blank">hier</a> (php) te vinden.
 
-We begrijpen dat elke integratie een gecompliceerd en pijnlijk proces kan zijn. Aarzel niet om contact op te nemen met uw vertegenwoordiger of gebruik te maken van de <a href="https://fastcomments.com/auth/my-account/help" target="_blank">ondersteuningspagina</a>.
-
----
+We begrijpen dat elke integratie een gecompliceerd en pijnlijk proces kan zijn. Aarzel niet om contact op te nemen met je vertegenwoordiger of gebruik de <a href="https://fastcomments.com/auth/my-account/help" target="_blank">ondersteuningspagina</a>.

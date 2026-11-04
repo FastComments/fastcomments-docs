@@ -1,4 +1,3 @@
----
 Bu, FastComments için resmi Hugo kitaplığıdır.
 
 Hugo sitenize canlı yorum, sohbet ve inceleme bileşenleri (widget'lar) yerleştirin.
@@ -6,5 +5,3 @@ Hugo sitenize canlı yorum, sohbet ve inceleme bileşenleri (widget'lar) yerleş
 ## Depo
 
 [GitHub'da görüntüle](https://github.com/FastComments/fastcomments-hugo)
-
----

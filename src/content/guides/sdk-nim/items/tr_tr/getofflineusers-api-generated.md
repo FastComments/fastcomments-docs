@@ -1,15 +1,11 @@
-Past commenters on the page who are NOT currently online. Sorted by displayName.  
-Sayfada daha önce yorum yapan, şu anda ONLINE olmayan yorumcular. displayName’ye göre sıralanır.  
-
-Use this after exhausting /users/online to render a "Members" section.  
-/users/online kaynağını tükettikten sonra bir "Members" bölümü oluşturmak için bunu kullanın.  
-
-Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName} index from afterName forward via $gt, no $skip cost.  
-commenterName üzerinde cursor sayfalama: sunucu, {tenantId, urlId, commenterName} kısmından afterName sonrası $gt ile ilerleyerek, $skip maliyeti olmadan indeksi yürütür.  
+Sayfada şu anda çevrimiçi OLMAYAN önceki yorumcular. displayName'e göre sıralanmıştır.
+Bir "Üyeler" bölümü oluşturmak için /users/online tükendikten sonra bunu kullanın.
+commenterName üzerinde cursor sayfalama: sunucu, {tenantId, urlId, commenterName} kısmi indeksini
+afterName'den $gt ile ileriye doğru tarar, $skip maliyeti yoktur.
 
 ## Parametreler
 
-| Ad | Tür | Gerekli | Açıklama |
+| Ad | Tür | Zorunlu | Açıklama |
 |------|------|----------|-------------|
 | tenantId | string | Evet |  |
 | urlId | string | Evet |  |

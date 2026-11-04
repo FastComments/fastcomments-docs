@@ -1,4 +1,3 @@
----
 ## 매개변수
 
 | 이름 | 유형 | 필수 | 설명 |
@@ -29,5 +28,3 @@ async function runUpdate() {
   console.log(response);
 }
 [inline-code-end]
-
----

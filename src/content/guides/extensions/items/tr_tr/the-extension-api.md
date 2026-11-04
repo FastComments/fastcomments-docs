@@ -44,5 +44,3 @@ Böyle HTML döndürdüğünüzde, dom-diffing algoritması aracılığıyla UI'
     }
 })();
 [inline-code-end]
-
----

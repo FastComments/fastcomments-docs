@@ -1,4 +1,3 @@
----
 FastComments funciona con sitios exclusivos para miembros utilizando lo que se llama SSO, o inicio de sesión único. Tus miembros inician sesión en tu sitio de WordPress, pero
 no tienen que preocuparse por crear una cuenta en FastComments, ni iniciar sesión con redes sociales, para comentar. Si tus miembros (incluidos los administradores) han iniciado sesión en
 tu sitio de WordPress, podrán comentar. Tus administradores y moderadores también podrán moderar comentarios directamente desde las entradas de tu blog de WordPress.
@@ -17,4 +16,3 @@ No es necesario ejecutar ninguna sincronización inicial o continua para copiar 
 ## Nombres y avatares
 
 El plugin actualizará automáticamente el nombre para mostrar del usuario y el avatar en todos sus comentarios dentro de FastComments cuando vean cualquier hilo de comentarios. Los avatares son compatibles mediante Gravatar o cualquier plugin de gestión de avatares dentro de WordPress, ya que el plugin llamará a `get_avatar_url`.
----

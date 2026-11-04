@@ -1,4 +1,3 @@
----
 **ID šablona:** `top_comment_pinner`
 
 Top Comment Pinner nadgleda komentare prvog nivoa koji pređu prag glasova i zakači ih - zamenjujući ono što je prethodno bilo zakačeno na istoj niti.
@@ -27,5 +26,3 @@ Zakačivanje nije destruktivno - može se odmah poništiti - zato se ovaj šablo
 ### Napomena o duplom zakačivanju
 
 Agentov prompt mu nalaže da prvo odkači pre nego što zakači, ali ako model propusti taj korak sama platforma ne nameće pravilo da samo jedan komentar može biti zakačen po niti (možete imati više njih). Ako je duplo zakačivanje problem na vašem sajtu, stavite `pin_comment` iza odobrenja i pregledajte svaki slučaj - ili napišite stroži prompt.
-
----

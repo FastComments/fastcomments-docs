@@ -27,5 +27,3 @@
     <div class="title">编辑 Edit Code</div>
     <img class="screenshot-image" src="/images/installation-guides/systeme-edit-block-button.png" alt="Edit Code" />
 </div>
-
----

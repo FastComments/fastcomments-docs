@@ -42,5 +42,3 @@ try {
     echo 'Exception when calling DefaultApi->updateUserBadge: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

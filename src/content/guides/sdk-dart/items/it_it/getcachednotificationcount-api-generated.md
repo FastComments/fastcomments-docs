@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Nome | Tipo | Posizione | Obbligatorio | Descrizione |
@@ -31,5 +30,3 @@ try {
     print('Exception when calling DefaultApi->getCachedNotificationCount: $e\n');
 }
 [inline-code-end]
-
----

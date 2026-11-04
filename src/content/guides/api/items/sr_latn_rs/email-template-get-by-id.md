@@ -27,5 +27,3 @@ interface EmailTemplateResponse {
     emailTemplate?: EmailTemplate | null
 }
 [inline-code-end]
-
----

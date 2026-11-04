@@ -38,5 +38,3 @@ try {
     print('Exception when calling DefaultApi->getNotificationCount: $e\n');
 }
 [inline-code-end]
-
----

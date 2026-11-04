@@ -1,27 +1,27 @@
 [related-parameter-start name = 'locale'; type = 'string'; related-parameter-end]
 
-Domyślnie FastComments wyświetli widżet komentarzy w ustawieniach regionalnych określonych przez system i przeglądarkę użytkownika.
+Domyślnie FastComments wyświetli widżet komentarzy w ustawieniach regionalnych (locale) określonych przez system i przeglądarkę użytkownika.
 
-Gdy użytkownik komentuje lub loguje się, aktualizujemy jego ostatnio używane ustawienia regionalne i używamy ich również do wysyłania e‑maili.
+Gdy użytkownik komentuje lub się loguje, aktualizujemy jego ostatnio używane locale i używamy go również do wysyłania e-maili.
 
-Ma to wpływ na to, jak widżet komentarzy jest tłumaczony dla użytkownika. Ustawienia regionalne składają się z języka i regionu użytkownika, więc ich konfiguracja zazwyczaj zmieni język wyświetlanego tekstu.
+Wpływa to na to, jak widżet komentarzy jest tłumaczony dla użytkownika. Locale składa się z języka i regionu użytkownika, więc skonfigurowanie locale zazwyczaj zmieni język używany do wyświetlania tekstu użytkownikowi.
 
-#### Via The UI
+#### Za pomocą interfejsu użytkownika
 
-Można to określić za pomocą interfejsu dostosowywania widżetu. Zobacz opcję „Ustawienia regionalne / Język”:
+Można to zdefiniować za pomocą interfejsu dostosowywania widżetu. Zobacz opcję "Locale / Language":
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.locale-override'; alt='Lista rozwijana Locale / Language na stronie dostosowywania widżetu używana do nadpisania wykrytego ustawienia regionalnego odwiedzającego'; title='Zmiana ustawień regionalnych / języka' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.locale-override'; alt='Lista rozwijana Locale / Language na stronie dostosowywania widżetu służąca do nadpisania wykrytego locale odwiedzającego'; title='Zmiana Locale / Języka' app-screenshot-end]
 
-#### Via Code
+#### Za pomocą kodu
 
-Można to nadpisać wybranymi ustawieniami regionalnymi.
+Można to nadpisać żądanym locale.
 
-[code-example-start config = {locale: 'ru_ru'}; linesToHighlight = [6]; title = 'Ręczne definiowanie ustawień regionalnych użytkownika'; code-example-end]
+[code-example-start config = {locale: 'ru_ru'}; linesToHighlight = [6]; title = 'Ręczne definiowanie locale użytkownika'; code-example-end]
 
-### Supported Languages and Locale Codes
+### Obsługiwane języki i kody locale
 
-[Pełną listę obsługiwanych języków i odpowiadających im kodów regionalnych znajdziesz tutaj.](/guide-supported-languages.html#supported-languages)
+[Pełną listę obsługiwanych języków oraz odpowiadających im kodów locale znajdziesz tutaj.](/guide-supported-languages.html#supported-languages)
 
-### SSO Note
+### Uwaga dotycząca SSO
 
-Jeśli używasz SSO, możesz chcieć przekazać ustawienia regionalne użytkownika w obiekcie użytkownika, aby e‑maile i inne elementy były prawidłowo lokalizowane dla niego.
+Jeśli korzystasz z SSO, możesz chcieć przekazać locale użytkownika w obiekcie użytkownika, aby e-maile i inne rzeczy były dla niego poprawnie zlokalizowane.

@@ -28,5 +28,3 @@ interface PendingWebhookEventDeleteResponse {
     reason?: string
 }
 [inline-code-end]
-
----

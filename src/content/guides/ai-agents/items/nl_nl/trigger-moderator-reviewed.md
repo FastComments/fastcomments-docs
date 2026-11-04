@@ -19,5 +19,3 @@ Een handeling door een menselijke moderator op de moderatiepagina, de commentaar
 
 - 'Beoordeeld' is een van de moderatiewachtrijstatussen die apart wordt bijgehouden van 'goedgekeurd' en 'spam'. Een opmerking kan zowel goedgekeurd-en-beoordeeld zijn, goedgekeurd-maar-niet-beoordeeld, enz. Zie [Hoe goedkeuringen werken](/guide-moderation.html#moderation-approvals) in de moderatiehandleiding.
 - Deze trigger komt vaak voor bij tenants met veel moderators. Schrijf je selectief in en houd hier rekening mee in je budgettering.
-
----

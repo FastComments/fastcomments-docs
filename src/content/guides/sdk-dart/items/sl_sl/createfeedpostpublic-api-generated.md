@@ -29,5 +29,3 @@ try {
     print('Exception when calling PublicApi->createFeedPostPublic: $e\n');
 }
 [inline-code-end]
-
----

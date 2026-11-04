@@ -31,5 +31,3 @@ Nun können wir den folgenden Codeausschnitt kopieren (verwenden Sie die Kopier-
     <div class="title">Einfügen und Speichern</div>
     <img class="screenshot-image" src="/images/installation-guides/squarespace-step-2-1-add-code-and-save.png" alt="Einfügen und Speichern" />
 </div>
-
----

@@ -1,29 +1,28 @@
-There are multiple aspects to security when letting people add content to a website
-and then rendering that content on many different types of devices.
+Omogočanje uporabnikom dodajanja vsebine na spletno stran in nato prikaz te vsebine na številnih različnih vrstah naprav prinaša več vidikov varnosti.
 
 ### Preprečevanje zlorabe oblikovanja
 
-Ljudje lahko napišejo vsebino, ki je namerno vizualno moteča in zmanjšuje vrednost razprav z zlorabo oblikovanja besedila.
+Ljudje lahko pišejo vsebino, ki je namenoma vizualno moteča in odvreda vrednost razprav, z zlorabo oblikovanja besedila.
 
-FastComments izvaja več ukrepov za preprečevanje zlorab pri oblikovanju:
+FastComments naredi več stvari za preprečevanje zlorabe v zvezi z oblikovanjem:
 
-- Velike ponavljajoče se zaporedne prelome vrstic strnemo.
-- Naslovov ne upodabljamo (postanejo običajno besedilo).
-- Ne dovoljujemo CSS-a ali prilagojenih barv.
+- Velike ponavljajoče se zaporedne prelome vrstic se strnejo.
+- Naslovov ne prikazujemo (postanejo običajno besedilo).
+- CSS ali barv po meri ne dovoljujemo.
 
-### Preprečevanje izkoriščanj
+### Preprečevanje izkoriščanja ranljivosti
 
-V sistemih, ki upodabljajo HTML, se lahko pojavijo izkoriščanja. FastComments naredi več stvari, da to prepreči:
+Izkoriščanja ranljivosti lahko nastanejo v sistemih, ki prikazujejo HTML. FastComments naredi več stvari za preprečevanje tega:
 
-- Dovolimo le izrecno določeno množico HTML oznak.
-- Dovolimo le izrecno določen nabor atributov HTML oznak.
-- Vse vnose prečistimo in sanitiziramo.
-  - To se izvaja z uporabo knjižnic [DOMPurify](https://www.npmjs.com/package/dompurify) in [sanitizeHtml](https://www.npmjs.com/package/sanitize-html).
-  - Te knjižnice smo izbrali, ker so dobro preizkušene (s več kot 4 oziroma 1 milijonom prenosov na teden).
+- Dovoljujemo samo izrecno določen nabor oznak HTML.
+- Dovoljujemo samo izrecno določen nabor atributov oznak HTML.
+- Vse vnose očistimo in sanitiziramo.
+  - To naredimo s knjižnicama [DOMPurify](https://www.npmjs.com/package/dompurify) in [sanitizeHtml](https://www.npmjs.com/package/sanitize-html).
+  - Izbrali smo ti knjižnici, ker sta dobro preizkušeni (vsaka ima več kot 4 oziroma 1 milijon prenosov na teden).
 
-To pomeni, da uporabniki ne morejo narediti stvari, kot so pisanje `<script>` ali `<style>` oznak, ali poskusi dodajanja skript, kot je `onload=alert()`, slikam ali drugi vsebini.
+To pomeni, da uporabniki ne morejo početi stvari, kot je pisanje oznak `<script>` ali `<style>`, ali poskus dodajanja skript vrste `onload=alert()` slikam ali drugi vsebini.
 
-The HTML tags we allow are as follows:
+Oznake HTML, ki jih dovoljujemo, so naslednje:
 
 - `<b>`
 - `<em>`
@@ -41,4 +40,4 @@ The HTML tags we allow are as follows:
 - `<li>`
 - `<br>`
 
-Oznaka `<iframe>` privzeto ni dovoljena. Če vklopite Dovoli vdelave medijev, so iframes tudi dovoljeni, vendar le, kadar je njihov vir eden izmed vgrajenih seznamov zaupanja vrednih ponudnikov (kot so YouTube, Vimeo, SoundCloud in Spotify) ali gostiteljsko ime, ki ste ga izrecno dodali. Iframe iz katerega koli drugega vira se odstranijo.
+Oznaka `<iframe>` privzeto ni dovoljena. Če vklopite možnost Allow Media Embeds, so iframi prav tako dovoljeni, vendar le, kadar je njihov vir en od vgrajenega seznama zaupanja vrednih ponudnikov (kot so YouTube, Vimeo, SoundCloud in Spotify) ali gostiteljsko ime, ki ste ga izrecno dodali. Iframi iz katerega koli drugega vira so odstranjeni.

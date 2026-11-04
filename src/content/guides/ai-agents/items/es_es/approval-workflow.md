@@ -1,4 +1,3 @@
----
 Una **aprobación** es una llamada a una herramienta en cola que requiere que un humano la apruebe o rechace antes de que la plataforma la ejecute.
 
 ### Configuración de aprobaciones
@@ -68,5 +67,3 @@ Las aprobaciones no permiten encolar ningún nombre de herramienta que no sea un
 
 - No retrasan las otras llamadas a herramientas del agente. La ejecución del agente puede invocar varias herramientas, y solo las restringidas se encolan; el resto se ejecuta con normalidad.
 - No revierten la ejecución del agente si el humano rechaza. La parte no restringida de la ejecución ya se ha completado.
-
----

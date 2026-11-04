@@ -1,19 +1,19 @@
-The individual votes behind one poll's tallies, oldest first.
+Индивидуалните гласове зад общите резултати на една анкета, подредени от най-старите.
 
-A poll belongs to a comment, so votes are always read one poll at a time - commentId is required. That
-keeps every query on the indexes the collection already has.
+Анкетата принадлежи към коментар, така че гласовете винаги се четат по една анкета наведнъж - commentId е задължителен. Това
+поддържа всяка заявка върху индексите, които колекцията вече има.
 
-Obeys the poll's privacy: an anonymous poll's votes cannot be read (poll-anonymous), here or by id.
+Спазва поверителността на анкетата: гласовете на анонимна анкета не могат да бъдат прочетени (poll-anonymous), нито тук, нито по id.
 
 ## Параметри
 
-| Name | Type | Location | Required | Description |
+| Име | Тип | Местоположение | Задължителен | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| commentId | string | query | Yes |  |
-| voterId | string | query | No |  |
-| optionId | string | query | No |  |
-| skip | integer | query | No |  |
+| tenantId | string | query | Да |  |
+| commentId | string | query | Да |  |
+| voterId | string | query | Не |  |
+| optionId | string | query | Не |  |
+| skip | integer | query | Не |  |
 
 ## Отговор
 
@@ -21,9 +21,9 @@ Obeys the poll's privacy: an anonymous poll's votes cannot be read (poll-anonymo
 
 ## Пример
 
-[inline-code-attrs-start title = 'getPollVotes Пример'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример за getPollVotes'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Import classes:
+// Импортиране на класове:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -36,10 +36,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configure API key authorization: api_key
+    // Конфигуриране на API ключ авторизация: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    // Разкоментирайте следния ред, за да зададете префикс за API ключа, напр. "Token" (по подразбиране е null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);

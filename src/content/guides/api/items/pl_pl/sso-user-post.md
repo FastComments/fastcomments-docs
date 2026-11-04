@@ -45,5 +45,3 @@ interface SSOUserPostResponse {
 Dane przesłane przez API można nadpisać, po prostu przekazując inny ładunek HMAC użytkownika SSO. Na przykład, jeśli ustawisz nazwę użytkownika przez API, ale następnie przekażesz inną w przepływie SSO podczas ładowania strony, automatycznie zaktualizujemy jego nazwę użytkownika.
 
 Nie będziemy aktualizować parametrów użytkownika w tym przepływie, chyba że wyraźnie je określisz lub ustawisz na null (nie undefined).
-
----

@@ -33,5 +33,3 @@ interface BatchJobsResponse {
     batchJobs?: BatchJob[]
 }
 [inline-code-end]
-
----

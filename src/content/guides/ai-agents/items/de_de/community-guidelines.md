@@ -1,4 +1,3 @@
----
 Das Feld **Community guidelines** im Bearbeitungsformular ist ein optionaler Richtlinientextblock, der in die Kontextnachricht mit Benutzerrolle bei jedem Lauf für diesen Agenten aufgenommen wird. Er ist als nicht vertrauenswürdiger Text abgegrenzt (die gleiche Abgrenzung, die die Plattform auf Kommentartexte und andere von Nutzern bereitgestellte Inhalte anwendet), sodass das Modell ihn als Richtlinienreferenz und nicht als Systemanweisung behandelt. Es ist der kanonische Ort, um niederzuschreiben "welches Verhalten auf dieser Seite erlaubt ist und welches nicht", damit der Agent es konsistent anwendet.
 
 ### Worin es sich vom Initial-Prompt unterscheidet
@@ -46,5 +45,3 @@ Das Feld ist auf **4000 Zeichen** begrenzt (sowohl durch das Formular als auch d
 ### Versionierung
 
 Es gibt keine eingebaute Versionshistorie für das Richtliniendokument - der zuletzt gespeicherte Wert ist das, was der Agent verwendet. Wenn du eine Historie möchtest, kopiere das Dokument vor jeder größeren Änderung in dein eigenes Nachverfolgungssystem. Der [Prompts verfeinern](#refining-prompts) Flow kann Änderungen am *Initial-Prompt* aufzeichnen, versioniert das Richtliniendokument jedoch nicht.
-
----

@@ -32,5 +32,3 @@ DefaultAPI.deleteSubscription(tenantId: tenantId, id: id, userId: userId) { (res
     }
 }
 [inline-code-end]
-
----

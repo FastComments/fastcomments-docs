@@ -19,5 +19,3 @@ Vraća: [`GetCachedNotificationCountResponse`](https://github.com/FastComments/f
   const response: GetCachedNotificationCountResponse = await getCachedNotificationCount(tenantId, id);
 })();
 [inline-code-end]
-
----

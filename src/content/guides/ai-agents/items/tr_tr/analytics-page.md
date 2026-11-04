@@ -1,75 +1,75 @@
-Analytics, ajanlar arası paneldir. AI Agents sayfasından **Analytics** sekmesi (kiracı düzeyinde) aracılığıyla veya her bir ajanın satırındaki **Analytics** düğmesiyle ajana özel erişilebilir.
+Analitik, çapraz-ajan panosudur. AI Agents sayfasından **Analytics** sekmesiyle (kiracı genelinde) veya her ajanın satırındaki **Analytics** düğmesiyle ajan başına erişilebilir.
 
-### Filter
+### Filtre
 
-Üstte bir açılır liste - **All agents** veya belirli bir ajan. Sayfanın geri kalanı buna göre yeniden kapsamlanır.
+Üstte bir açılır menü - **Tüm ajanlar** veya belirli bir ajan. Sayfanın geri kalanı buna göre yeniden kapsamlanır.
 
-### Budget usage
+### Bütçe kullanımı
 
-Cari dönemdeki harcamayı tavanla karşılaştıran dört ilerleme çubuğu:
+Geçerli dönem harcamasını limite karşı gösteren dört ilerleme çubuğu:
 
-- **Agent today** (when filtered to a specific agent) - günlük ajan limiti.
-- **Agent this month** - aylık ajan limiti.
-- **Account today** - kiracı günlük limiti.
-- **Account this month** - kiracı aylık limiti.
+- **Bugün ajan** (belirli bir ajana filtrelenmişse) - günlük ajan limiti.
+- **Bu ay ajan** - aylık ajan limiti.
+- **Bugün hesap** - kiracı günlük limiti.
+- **Bu ay hesap** - kiracı aylık limiti.
 
-Bir tavan ayarlı değilse, çubuk "(limit ayarlanmadı)" yazar ve ham harcamayı gösterir.
+Bir limit ayarlanmamışsa, çubuk "(limit ayarlanmadı)" yazar ve ham harcamayı gösterir.
 
-### Daily cost (last 30 days)
+### Günlük maliyet (son 30 gün)
 
-Seçilen kapsam için kiracınızın para biriminde günlük maliyet tablosu. Şu durumları tespit etmek için kullanışlı:
+Seçilen kapsam için kiracınızın para biriminde gün başına maliyet tablosu. Şunları tespit etmek için faydalıdır:
 
-- **Sudden cost spikes** - genellikle kontrolden çıkan bir döngüden veya tetikleyicileri yaygınlaştıran viral bir yorumdan kaynaklanır.
-- **Cost drift** - topluluğunuz büyüdükçe günlük maliyetin kademeli olarak artması.
+- **Ani maliyet artışları** - genellikle kontrolden çıkan bir döngüden veya viral bir yorumun tetikleyicileri çoğaltmasından kaynaklanır.
+- **Maliyet kayması** - topluluğunuz büyüdükçe günlük maliyetin kademeli olarak artması.
 
-### Actions taken
+### Alınan eylemler
 
-Cari ay içerisindeki eylem türlerinin dökümü - "Yorum yazdı: 47", "Bir yorumu spam olarak işaretledi: 12" vb. Ajanın beklediğiniz şekilde davrandığını kontrol etmek için kullanışlıdır.
+Geçerli ay boyunca eylem türlerinin dökümü - "Bir yorum yazdı: 47", "Bir yorumu spam olarak işaretledi: 12" vb. Ajanın beklediğiniz şeyi yapıp yapmadığını kontrol etmek için faydalıdır.
 
-### Triggers skipped (this month)
+### Atlanan tetikleyiciler (bu ay)
 
-Sayım, [drop reason](#drop-reasons) bazında gruplanır:
+[Atılma nedenine](#drop-reasons) göre gruplandırılmış sayımlar:
 
-- Ajan günlük / ajan aylık / hesap günlük / hesap aylık limitlerinin aşılması.
-- Hız sınırlamasına takıldı.
+- Ajan günlük / ajan aylık / hesap günlük / hesap aylık limiti aşımı.
+- Hız sınırına takılma.
 - Eşzamanlılık doygunluğu.
 
-Burada düşüşler görürseniz, ajanın bir bütçe veya hız sınırına takıldığını ve çalıştıracağı tetikleyicileri kaçırdığını gösterir. Bkz. [Drop Reasons](#drop-reasons).
+Burada atılmalar görüyorsanız, ajanınız bir bütçe veya hız sınırına takılıyor ve normalde çalıştıracağı tetikleyicileri kaçırıyor. Bkz. [Atılma Nedenleri](#drop-reasons).
 
-### Dry-run vs live (this month)
+### Deneme modu vs canlı (bu ay)
 
-- **Enabled runs** - bu ay gerçek eylemler gerçekleştiren çalıştırma sayısı.
-- **Dry runs** - bu ay dry-run modunda olan çalıştırma sayısı.
+- **Etkin çalıştırmalar** - bu ay gerçek eylemler alan çalıştırmaların sayısı.
+- **Deneme çalıştırmaları** - bu ay deneme modunda yapılan çalıştırmaların sayısı.
 
-Faydalı bir ayar sinyali: Henüz Enabled durumuna yükseltilmemiş yepyeni bir ajan yalnızca dry run'lar gösterecektir. Enabled durumda olup bu bölümde tüm sayıları sıfır olan bir ajan boşta duruyor demektir - ya tetiklenmiyor, ya kapsam dışı bırakılıyor, ya da tetikleyicileri doğru yapılandırılmamış.
+Faydalı bir ayar sinyali: henüz Etkin durumuna yükseltilmemiş yeni bir ajan yalnızca deneme çalıştırmaları gösterecektir. Etkin durumda olup bu bölümde tüm sayaçları sıfır olan bir ajan boşta bekliyor demektir - ya tetiklenmiyordur, ya kapsam dışı bırakılıyordur, ya da tetikleyicileri doğru yapılandırılmamıştır.
 
-### Top agents by monthly cost
+### Aylık maliyete göre en üst ajanlar
 
-Filtre **All agents** iken, sayfa ajaları aya-gününe kadar olan maliyete göre sıralar. En pahalı ajanınızı tespit etmek maliyet optimizasyonunun ilk adımıdır - genellikle çözüm "[bağlam seçeneklerini daraltmak](#context-options)" veya "[bütçe sınırını düşürmek](#budgets-overview)" olur.
+Filtre **Tüm ajanlar** olduğunda, sayfa ajanları aydan bugüne maliyete göre sıralar. En pahalı ajanınızı tespit etmek maliyet optimizasyonunun ilk adımıdır - cevap genellikle "[bağlam seçeneklerini](#context-options) sıkılaştır" veya "[bütçe limitini](#budgets-overview) düşür" olur.
 
-### Agents at or near their cap
+### Limitinde veya limitine yakın ajanlar
 
-Cari dönemde harcaması ajan başı limitlerine ulaşmış veya yakın olan ajanların ajana göre dökümü:
+Geçerli dönemde harcaması ajan başına limitinde veya limitine yakın olan ajanların ajan başına dökümü:
 
-- **near cap** - tavanın yapılandırılabilir bir yüzdesinin üzerinde.
-- **over cap** - aslında sınırlandırıldı, bu dönemde `{count} dropped` tetiklenmesi atlandı.
+- **limitine yakın** - limitin yapılandırılabilir bir yüzdesinin üzerinde.
+- **limiti aşmış** - gerçekten sınırlandırılmış, o dönemde `{count} dropped` tetikleyici.
 
-Bu tablodan ajana tıklayarak limiti yükseltebilir, kapsamı daraltabilir veya ajanı duraklatabilirsiniz.
+Limiti yükseltmek, kapsamı daraltmak veya duraklatmak için bu tablodan ajana tıklayın.
 
-### Account summary
+### Hesap özeti
 
-Filtre **All agents** iken:
+Filtre **Tüm ajanlar** olduğunda:
 
-- **Triggers today** - sayı.
-- **Triggers this month** - sayı.
-- Her biri için: kaç tanesinin atlandığını gösteren `dropped` eki.
+- **Bugünkü tetikleyiciler** - sayı.
+- **Bu ayki tetikleyiciler** - sayı.
+- Her biri için: kaç tanesinin atlandığını gösteren bir `dropped` eki.
 
-### Currency
+### Para birimi
 
 Tüm parasal değerler kiracınızın para biriminde gösterilir.
 
-### What this page does not do
+### Bu sayfanın yapmadıkları
 
-- Her eylem için **per-action cost breakdowns** göstermez - bunlar [Run Detail View](#run-detail-view) sayfasındadır.
+- **Eylem başına maliyet dökümlerini** göstermez - bunlar [Çalıştırma Detay Görünümü](#run-detail-view) üzerindedir.
 - **Transkriptleri** veya **LLM yanıtlarını** göstermez.
-- Ajanlar üzerinde işlem yapmanıza izin vermez - düzenleme, duraklatma, silme işlemleri tümü ajan listesi / düzenleme sayfasından yapılır.
+- Ajanlar üzerinde eylem almanıza izin vermez - düzenleme, duraklatma, silme işlemlerinin tümü ajan listesi / düzenleme sayfasından yapılır.

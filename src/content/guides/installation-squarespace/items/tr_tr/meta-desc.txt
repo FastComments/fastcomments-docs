@@ -1,3 +1,1 @@
----
 Squarespace'e canlı yorumlar ekleyin üç şekilde: yalnızca blog gönderileri, kod enjeksiyonu aracılığıyla site genelinde her sayfada, veya bir kod bloğu ile belirli bir sayfada.
----

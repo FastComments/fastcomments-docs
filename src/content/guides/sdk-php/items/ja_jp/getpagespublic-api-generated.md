@@ -1,27 +1,23 @@
-List pages for a tenant. Used by the FChat desktop client to populate its room list.  
-Requires `enableFChat` to be true on the resolved custom config for each page.  
-Pages that require SSO are filtered against the requesting user's group access.  
+テナントのページ一覧を取得します。FChatデスクトップクライアントがルームリストを表示するために使用します。
+各ページで、解決されたカスタム設定の `enableFChat` が true である必要があります。
+SSOが必要なページは、リクエストしたユーザーのグループアクセス権に基づいてフィルタリングされます。
 
-テナントのページを一覧取得します。FChat デスクトップクライアントが部屋リストを埋めるために使用します。  
-各ページの解決されたカスタム設定で `enableFChat` が true である必要があります。  
-SSO が必要なページは、リクエストユーザーのグループアクセスに基づいてフィルタリングされます。  
-
-## Parameters
+## パラメータ
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| cursor | string | query | No | 前回のリクエストで `nextCursor` として返された不透明なページネーションカーソル。同じ `sortBy` に関連付けられます。 |
-| limit | integer | query | No | 1..200、デフォルトは 50 |
-| q | string | query | No | オプションの大文字小文字を区別しないタイトルプレフィックスフィルタ。 |
-| sortBy | string | query | No | ソート順。`updatedAt`（デフォルト、最新が最初）、`commentCount`（コメント数が多い順）、または `title`（アルファベット順）。 |
-| hasComments | boolean | query | No | true の場合、少なくとも1つのコメントがあるページのみを返します。 |
+| tenantId | string | path | はい |  |
+| cursor | string | query | いいえ | 以前のリクエストで `nextCursor` として返された不透明なページネーションカーソル。同じ `sortBy` に紐づきます。 |
+| limit | integer | query | いいえ | 1..200、デフォルトは50 |
+| q | string | query | いいえ | 任意の、大文字小文字を区別しないタイトルの前方一致フィルター。 |
+| sortBy | string | query | いいえ | ソート順。`updatedAt`（デフォルト、新しい順）、`commentCount`（コメント数の多い順）、または `title`（アルファベット順）。 |
+| hasComments | boolean | query | いいえ | trueの場合、少なくとも1件のコメントがあるページのみ返します。 |
 
-## Response
+## レスポンス
 
-Returns: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetPublicPagesResponse.php)
+戻り値: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetPublicPagesResponse.php)
 
-## Example
+## 例
 
 [inline-code-attrs-start title = 'getPagesPublic の例'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -31,18 +27,18 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // カスタム HTTP クライアントを使用したい場合は、`GuzzleHttp\ClientInterface` を実装したクライアントを渡してください。
-    // これはオプションで、デフォルトでは `GuzzleHttp\Client` が使用されます。
+    // カスタムHTTPクライアントを使用したい場合は、`GuzzleHttp\ClientInterface` を実装したクライアントを渡してください。
+    // これは任意です。指定しない場合は `GuzzleHttp\Client` がデフォルトで使用されます。
     new GuzzleHttp\Client()
 );
 
 $tenant_id = 'tenant_id_example'; // string
 $options = [
-    'cursor' => 'cursor_example', // string | 前回のリクエストで `nextCursor` として返された不透明なページネーションカーソル。同じ `sortBy` に関連付けられます。
-    'limit' => 56, // int | 1..200、デフォルトは 50
-    'q' => 'q_example', // string | オプションの大文字小文字を区別しないタイトルプレフィックスフィルタ。
-    'sort_by' => new \FastComments\Client\Model\\FastComments\Client\Model\PagesSortBy(), // \FastComments\Client\Model\PagesSortBy | ソート順。`updatedAt`（デフォルト、最新が最初）、`commentCount`（コメント数が多い順）、または `title`（アルファベット順）。
-    'has_comments' => True, // bool | true の場合、少なくとも1つのコメントがあるページのみを返します。
+    'cursor' => 'cursor_example', // string | 以前のリクエストで `nextCursor` として返された不透明なページネーションカーソル。同じ `sortBy` に紐づきます。
+    'limit' => 56, // int | 1..200、デフォルトは50
+    'q' => 'q_example', // string | 任意の、大文字小文字を区別しないタイトルの前方一致フィルター。
+    'sort_by' => new \FastComments\Client\Model\\FastComments\Client\Model\PagesSortBy(), // \FastComments\Client\Model\PagesSortBy | ソート順。`updatedAt`（デフォルト、新しい順）、`commentCount`（コメント数の多い順）、または `title`（アルファベット順）。
+    'has_comments' => True, // bool | trueの場合、少なくとも1件のコメントがあるページのみ返します。
 ];
 
 

@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Назва | Тип | Обов'язковий | Опис |
@@ -26,5 +25,3 @@ async function fetchComment() {
 
 fetchComment();
 [inline-code-end]
-
----

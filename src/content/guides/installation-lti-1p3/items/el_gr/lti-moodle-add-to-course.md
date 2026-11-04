@@ -1,89 +1,89 @@
-This guide covers adding FastComments to a Moodle 4.x course after a site administrator has registered the tool and set it to show in the activity chooser. If FastComments is not yet registered, see the Moodle registration guide first.
+Αυτός ο οδηγός καλύπτει την προσθήκη του FastComments σε μάθημα Moodle 4.x αφού ο διαχειριστής του ιστότοπου έχει καταχωρήσει το εργαλείο και το έχει ορίσει να εμφανίζεται στον επιλογέα δραστηριοτήτων. Αν το FastComments δεν έχει ακόμη καταχωρηθεί, δείτε πρώτα τον οδηγό εγγραφής Moodle.
 
-#### Open the Course in Edit Mode
+#### Ανοίξτε το Μάθημα σε Λειτουργία Επεξεργασίας
 
-1. Sign in to Moodle as an Editing Teacher (or higher) for the course.
-2. Open the course.
-3. Toggle **Edit mode** on using the switch in the top-right corner of the course header.
+1. Συνδεθείτε στο Moodle ως Editing Teacher (ή υψηλότερος ρόλος) για το μάθημα.
+2. Ανοίξτε το μάθημα.
+3. Ενεργοποιήστε το **Edit mode** χρησιμοποιώντας τον διακόπτη στην πάνω δεξιά γωνία της κεφαλίδας του μαθήματος.
 
-Moodle 4.x replaced the legacy "Add an activity or resource" dropdown that 3.x used with a full-screen activity chooser dialog. Moodle 4.5 keeps the same chooser but adds a starred/favorites row at the top, so pinning FastComments once makes it faster to reach in later sections.
+Το Moodle 4.x αντικατέστησε το παλιό αναπτυσσόμενο μενού «Add an activity or resource» που χρησιμοποιούσε το 3.x με ένα dialog επιλογέα δραστηριοτήτων πλήρους οθόνης. Το Moodle 4.5 διατηρεί τον ίδιο επιλογέα αλλά προσθέτει μια σειρά με αγαπημένα (αστέρια) στην κορυφή, οπότε το καρφίτσωμα του FastComments μία φορά το καθιστά ταχύτερα προσβάσιμο σε επόμενες ενότητες.
 
-#### Add the FastComments Activity
+#### Προσθέστε τη Δραστηριότητα FastComments
 
-1. Scroll to the course section (topic or week) where the discussion belongs.
-2. Click **Add an activity or resource** at the bottom of that section.
-3. In the chooser dialog, select **FastComments**. If you don't see it, jump to the gotchas section below.
+1. Μετακινηθείτε στην ενότητα του μαθήματος (θέμα ή εβδομάδα) όπου ανήκει η συζήτηση.
+2. Κάντε κλικ στο **Add an activity or resource** στο κάτω μέρος της ενότητας.
+3. Στο dialog του επιλογέα, επιλέξτε **FastComments**. Αν δεν το βλέπετε, μεταβείτε στην ενότητα με τις παγίδες παρακάτω.
 
-The activity settings form opens. The fields that matter:
+Ανοίγει η φόρμα ρυθμίσεων της δραστηριότητας. Τα πεδία που έχουν σημασία:
 
-- **Activity name** (required). Shown on the course page and in the gradebook. Example: `Week 3 Discussion`.
-- **Activity description**. Optional intro text rendered above the comment thread.
-- **Show description on course page**. Tick this if you want the description visible without clicking into the activity.
-- **Preconfigured tool**. Set to `FastComments` (auto-selected when launched from the chooser). Do not change.
-- **Launch container**. Set to **New window**. See the gotchas section for why "Same window" breaks in some Moodle deployments.
-- **Tool URL**, **Public key**, **Shared secret**, **Custom parameters**. Leave blank. Dynamic Registration handled these at the site level.
+- **Activity name** (υποχρεωτικό). Εμφανίζεται στη σελίδα του μαθήματος και στο gradebook. Παράδειγμα: `Week 3 Discussion`.
+- **Activity description**. Προαιρετικό εισαγωγικό κείμενο που εμφανίζεται πάνω από το νήμα σχολίων.
+- **Show description on course page**. Τικαρίστε το αν θέλετε η περιγραφή ορατή χωρίς κλικ στη δραστηριότητα.
+- **Preconfigured tool**. Οριστεί σε `FastComments` (αυτόματη επιλογή όταν εκκινείται από τον επιλογέα). Μην το αλλάξετε.
+- **Launch container**. Οριστεί σε **New window**. Δείτε την ενότητα με τις παγίδες για το γιατί το «Same window» χαλάει σε ορισμένες εγκαταστάσεις Moodle.
+- **Tool URL**, **Public key**, **Shared secret**, **Custom parameters**. Αφήστε τα κενά. Το Dynamic Registration τα διαχειρίστηκε σε επίπεδο ιστότοπου.
 
-Scroll to the bottom and click **Save and return to course** (or **Save and display** to open the activity right away).
+Μετακινηθείτε στο τέλος και κάντε κλικ στο **Save and return to course** (ή **Save and display** για να ανοίξετε τη δραστηριότητα αμέσως).
 
-The activity appears as a row in the section with the FastComments icon. Students click the row to open the comment thread.
+Η δραστηριότητα εμφανίζεται ως γραμμή στην ενότητα με το εικονίδιο FastComments. Οι μαθητές κάνουν κλικ στη γραμμή για να ανοίξουν το νήμα σχολίων.
 
-#### Embed FastComments Inline with the Editor
+#### Ενσωμάτωση του FastComments Εντός του Επεξεργαστή
 
-For a thread inside a Page, Book chapter, Lesson, or any other resource that uses the Atto or TinyMCE editor:
+Για ένα νήμα μέσα σε Page, κεφάλαιο Book, Lesson ή οποιονδήποτε άλλο πόρο που χρησιμοποιεί τον επεξεργαστή Atto ή TinyMCE:
 
-1. Open the resource in edit mode.
-2. Place the cursor where the thread should appear.
-3. In the editor toolbar, click the **LTI** / **External tool** button. In Atto it's labeled "Insert LTI Advantage content". In TinyMCE (default in Moodle 4.3+) it's under the **More** menu as **External tools**.
-4. Pick **FastComments** from the tool list.
-5. FastComments opens a deep-linking picker. Confirm the thread title and click **Embed**.
-6. The editor inserts an LTI placeholder block. Save the resource.
+1. Ανοίξτε τον πόρο σε λειτουργία επεξεργασίας.
+2. Τοποθετήστε τον κέρσορα εκεί όπου πρέπει να εμφανιστεί το νήμα.
+3. Στη γραμμή εργαλείων του επεξεργαστή, κάντε κλικ στο κουμπί **LTI** / **External tool**. Στο Atto επιγράφεται «Insert LTI Advantage content». Στο TinyMCE (προεπιλογή στο Moodle 4.3+) βρίσκεται κάτω από το μενού **More** ως **External tools**.
+4. Επιλέξτε **FastComments** από τη λίστα εργαλείων.
+5. Το FastComments ανοίγει έναν επιλογέα deep-linking. Επιβεβαιώστε τον τίτλο του νήματος και κάντε κλικ στο **Embed**.
+6. Ο επεξεργαστής εισάγει ένα μπλοκ placeholder LTI. Αποθηκεύστε τον πόρο.
 
-Each embedded instance is a distinct thread keyed on the deep-link content item ID, so a Page with three FastComments embeds gets three independent threads.
+Κάθε ενσωματωμένη παρουσία είναι ένα ξεχωριστό νήμα με κλειδί το deep-link content item ID, οπότε μια Page με τρεις ενσωματώσεις FastComments αποκτά τρία ανεξάρτητα νήματα.
 
-#### Restrict Access and Group Settings
+#### Περιορισμός Πρόσβασης και Ρυθμίσεις Ομάδων
 
-The standard Moodle activity settings apply to FastComments activities:
+Οι τυπικές ρυθμίσεις δραστηριοτήτων του Moodle ισχύουν για τις δραστηριότητες FastComments:
 
-- **Common module settings** > **Group mode**. Setting this to **Separate groups** or **Visible groups** does not split FastComments into per-group threads on its own. Moodle's group mode only filters the gradebook and member list. To run a separate thread per group, add one FastComments activity per group and use **Restrict access** to scope each one.
-- **Restrict access** > **Add restriction**. Supports the standard Moodle conditions: **Date**, **Grade**, **Group**, **Grouping**, **User profile**, and nested restriction sets. Use **Group** to lock a FastComments activity to a single group.
-- **Activity completion**. Set to **Students must view this activity to complete it** if you want completion tracking. FastComments does not currently report a completion event back to Moodle beyond the launch.
+- **Common module settings** > **Group mode**. Ο ορισμός αυτού σε **Separate groups** ή **Visible groups** δεν διαχωρίζει από μόνος του το FastComments σε νήματα ανά ομάδα. Το group mode του Moodle φιλτράρει μόνο το gradebook και τη λίστα μελών. Για ξεχωριστό νήμα ανά ομάδα, προσθέστε μία δραστηριότητα FastComments ανά ομάδα και χρησιμοποιήστε το **Restrict access** για να οριοθετήσετε την καθεμία.
+- **Restrict access** > **Add restriction**. Υποστηρίζει τις τυπικές συνθήκες του Moodle: **Date**, **Grade**, **Group**, **Grouping**, **User profile** και εμφωλευμένα σύνολα περιορισμών. Χρησιμοποιήστε το **Group** για να κλειδώσετε μια δραστηριότητα FastComments σε μία μόνο ομάδα.
+- **Activity completion**. Οριστεί σε **Students must view this activity to complete it** αν θέλετε παρακολούθηση ολοκλήρωσης. Το FastComments προς το παρόν δεν αναφέρει συμβάν ολοκλήρωσης πίσω στο Moodle πέρα από την εκκίνηση.
 
-#### Role Mapping
+#### Αντιστοίχιση Ρόλων
 
-FastComments reads the LTI `roles` claim that Moodle sends on every launch and maps it as follows:
+Το FastComments διαβάζει το LTI claim `roles` που στέλνει το Moodle σε κάθε εκκίνηση και το αντιστοιχίζει ως εξής:
 
-- Moodle **Manager** or **Site administrator** -> FastComments **admin**
-- Moodle **Editing teacher** or **Non-editing teacher** -> FastComments **moderator**
+- Moodle **Manager** ή **Site administrator** -> FastComments **admin**
+- Moodle **Editing teacher** ή **Non-editing teacher** -> FastComments **moderator**
 - Moodle **Student** -> FastComments **commenter**
-- Moodle **Guest** -> read-only
+- Moodle **Guest** -> μόνο ανάγνωση
 
-Admins can delete any comment, ban users, and edit thread settings. Moderators can delete and approve comments inside the thread they launched into. Custom Moodle roles inherit the mapping of the archetype they were cloned from.
+Οι διαχειριστές μπορούν να διαγράψουν οποιοδήποτε σχόλιο, να αποκλείσουν χρήστες και να επεξεργαστούν ρυθμίσεις νήματος. Οι moderators μπορούν να διαγράψουν και να εγκρίνουν σχόλια μέσα στο νήμα στο οποίο εκκίνησαν. Οι προσαρμοσμένοι ρόλοι Moodle κληρονομούν την αντιστοίχιση του archetype από το οποίο κλωνοποιήθηκαν.
 
-#### What Students See
+#### Τι Βλέπουν οι Μαθητές
 
-Students click the FastComments activity (or scroll to the embedded block inside a Page or Book). Moodle sends their identity to FastComments via the LTI launch:
+Οι μαθητές κάνουν κλικ στη δραστηριότητα FastComments (ή μετακινούνται στο ενσωματωμένο μπλοκ μέσα σε Page ή Book). Το Moodle στέλνει την ταυτότητά τους στο FastComments μέσω της εκκίνησης LTI:
 
-- No login screen. FastComments signs them in using the Moodle account.
-- Their display name, email, and avatar come from Moodle.
-- The thread is scoped to `(Moodle site, course, resource link ID)`, so the same activity duplicated into another course gets a fresh thread.
-- Threaded replies, voting, and notifications work the same as a standalone FastComments thread.
+- Χωρίς οθόνη σύνδεσης. Το FastComments τους συνδέει χρησιμοποιώντας τον λογαριασμό Moodle.
+- Το εμφανιζόμενο όνομα, το email και το avatar τους προέρχονται από το Moodle.
+- Το νήμα οριοθετείται στο `(Moodle site, course, resource link ID)`, οπότε η ίδια δραστηριότητα που αντιγράφεται σε άλλο μάθημα αποκτά φρέσκο νήμα.
+- Οι απαντήσεις σε νήματα, η ψηφοφορία και οι ειδοποιήσεις λειτουργούν όπως σε ένα αυτόνομο νήμα FastComments.
 
-#### Lock Down Public Access (Recommended)
+#### Κλείδωμα Δημόσιας Πρόσβασης (Συνιστάται)
 
-By default, FastComments comment data is publicly readable. Anyone who can guess a thread's URL or API endpoint can view its comments, even outside Moodle. For course discussions you almost certainly want to restrict viewing to enrolled students only.
+Από προεπιλογή, τα δεδομένα σχολίων του FastComments είναι δημόσια αναγνώσιμα. Όποιος μπορεί να μαντέψει το URL ενός νήματος ή ένα API endpoint μπορεί να δει τα σχόλιά του, ακόμη και εκτός Moodle. Για συζητήσεις μαθημάτων σχεδόν σίγουρα θέλετε να περιορίσετε την προβολή μόνο σε εγγεγραμμένους μαθητές.
 
-Open your <a href="https://fastcomments.com/auth/my-account/customize-widget" target="_blank">σελίδα προσαρμογής widget</a> and create a rule with **Require SSO To View Comments** enabled, then set the security level to **Secure SSO** so threads can only be loaded through the signed LTI launch.
+Ανοίξτε τη <a href="https://fastcomments.com/auth/my-account/customize-widget" target="_blank">σελίδα προσαρμογής widget</a> σας και δημιουργήστε έναν κανόνα με ενεργοποιημένο το **Require SSO To View Comments**, και μετά ορίστε το επίπεδο ασφαλείας σε **Secure SSO** ώστε τα νήματα να φορτώνονται μόνο μέσω της υπογεγραμμένης εκκίνησης LTI.
 
-See [Protecting Comment Threads With Single-Sign-On](/guide-customizations-and-configuration.html#sso-require-to-view-comments) for the full walkthrough, including how to scope the rule to a single domain or page.
+Δείτε το [Protecting Comment Threads With Single-Sign-On](/guide-customizations-and-configuration.html#sso-require-to-view-comments) για την πλήρη διαδικασία, συμπεριλαμβανομένου του πώς να οριοθετήσετε τον κανόνα σε ένα μόνο domain ή σελίδα.
 
-#### Moodle Gotchas
+#### Παγίδες του Moodle
 
-**FastComments missing from the activity chooser.** The site administrator registered the tool but didn't set **Tool configuration usage** to **Show in activity chooser and as a preconfigured tool**. Fix this under **Site administration** > **Plugins** > **Activity modules** > **External tool** > **Manage tools** > gear icon on the FastComments tile.
+**Το FastComments λείπει από τον επιλογέα δραστηριοτήτων.** Ο διαχειριστής του ιστότοπου κατέχωρησε το εργαλείο αλλά δεν όρισε το **Tool configuration usage** σε **Show in activity chooser and as a preconfigured tool**. Διορθώστε το στο **Site administration** > **Plugins** > **Activity modules** > **External tool** > **Manage tools** > εικονίδιο γραναζιού στο tile του FastComments.
 
-**Launch fails or shows a blank frame when set to "Same window".** Moodle's session cookies use `SameSite=Lax` by default, and some browsers strip them on the cross-site POST that LTI 1.3 uses to return from FastComments. Set **Launch container** to **New window** on the activity. This is a hard requirement for embedded FastComments inside a Page or Book, since the editor-embedded launch path always pops a new window.
+**Η εκκίνηση αποτυγχάνει ή εμφανίζει κενό πλαίσιο όταν οριστεί σε «Same window».** Τα session cookies του Moodle χρησιμοποιούν `SameSite=Lax` από προεπιλογή, και ορισμένοι browsers τα αφαιρούν στο cross-site POST που το LTI 1.3 χρησιμοποιεί για την επιστροφή από το FastComments. Ορίστε το **Launch container** σε **New window** στη δραστηριότητα. Αυτή είναι αυστηρή απαίτηση για ενσωματωμένο FastComments μέσα σε Page ή Book, αφού η διαδρομή εκκίνησης μέσω επεξεργαστή ανοίγει πάντα νέο παράθυρο.
 
-**The `iss` claim is the Moodle site URL, not a tenant ID.** FastComments uses the Moodle site URL (the `wwwroot` config value) as the LTI issuer. If your Moodle instance moves to a new domain or you change `wwwroot`, existing FastComments threads stay tied to the old issuer and won't match new launches. Re-register the tool against the new URL and migrate threads through the FastComments admin if needed.
+**Το claim `iss` είναι το URL του ιστότοπου Moodle, όχι tenant ID.** Το FastComments χρησιμοποιεί το URL του ιστότοπου Moodle (την τιμή config `wwwroot`) ως LTI issuer. Αν η εγκατάσταση Moodle σας μετακινηθεί σε νέο domain ή αλλάξετε το `wwwroot`, τα υπάρχοντα νήματα FastComments παραμένουν συνδεδεμένα με τον παλιό issuer και δεν θα ταιριάζουν με νέες εκκινήσεις. Επανακαταχωρήστε το εργαλείο στο νέο URL και μεταφέρετε τα νήματα μέσω του διαχειριστικού FastComments αν χρειάζεται.
 
-**Activity backup and restore.** Backing up a course and restoring it into a new course creates new resource link IDs, so the restored FastComments activities start with empty threads. The original course retains the original threads. This is intended behavior, not a bug.
+**Backup και restore δραστηριότητας.** Η δημιουργία αντιγράφου ασφαλείας ενός μαθήματος και η επαναφορά του σε νέο μάθημα δημιουργεί νέα resource link IDs, οπότε οι επαναφερόμενες δραστηριότητες FastComments ξεκινούν με κενά νήματα. Το αρχικό μάθημα διατηρεί τα αρχικά νήματα. Αυτή είναι σκόπιμη συμπεριφορά, όχι σφάλμα.
 
-**Moodle 4.5 TinyMCE default.** Moodle 4.5 ships with TinyMCE as the default editor for new installs. The External tool button location is under the **More** (`...`) menu rather than the main toolbar. Older sites that upgraded from 4.1 keep Atto unless an admin switched the default.
+**Moodle 4.5 TinyMCE προεπιλογή.** Το Moodle 4.5 έρχεται με το TinyMCE ως προεπιλεγμένο επεξεργαστή για νέες εγκαταστάσεις. Το κουμπί External tool βρίσκεται κάτω από το μενού **More** (`...`) αντί για την κύρια γραμμή εργαλείων. Παλαιότεροι ιστότοποι που αναβαθμίστηκαν από το 4.1 διατηρούν το Atto εκτός αν κάποιος διαχειριστής άλλαξε την προεπιλογή.

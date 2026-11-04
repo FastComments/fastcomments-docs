@@ -1,25 +1,25 @@
-עכשיו אנחנו הולכים ליצור את קוד FastComments המותאם עבורך. השתמש בעוזר למטה כדי להגדיר כיצד תרצה ש-FastComments יעבוד באתר GoHighLevel שלך:
+כעת נייצר את קוד FastComments המותאם אישית שלך. השתמש באשף למטה כדי להגדיר כיצד אתה רוצה ש-FastComments יפעל באתר ה-GoHighLevel שלך:
 
 [snippet id="gohighlevel-wizard"]
 
-### סוגי תיבות תגובה
+### סוגי תיבות תגובות שונים
 
-You can configure the `TYPE = 'commenting'` line to switch the product used (for example you can change it to `live` for streaming chat or `collab` for collab chat).
+ניתן להגדיר את השורה `TYPE = 'commenting'` כדי להחליף את המוצר בשימוש (למשל ניתן לשנות אותה ל-`live` עבור צ'אט שידור או `collab` עבור צ'אט שיתופי).
 
-### הצבת תיבת התגובות במקום הרצוי
+### הצבת תיבת התגובות במקום שתרצה
 
-נניח שברצונך לשים תיבות תגובה בחלקים ספציפיים של הדף ולא במיקומים ברירת המחדל.
-שנה שורה זו:
+נניח שאתה רוצה להציב תיבות תגובות בחלקים ספציפיים של הדף ולא במיקומי ברירת המחדל.
+שנה את השורה הזו:
 
-    const TARGET_ELEMENT_ID = ''; // קבע כדי להשתמש במצב div של היעד
+    const TARGET_ELEMENT_ID = ''; // set to use target div mode
 
-אל:
+ל:
 
-    const TARGET_ELEMENT_ID = 'fc_box'; // קבע כדי להשתמש במצב div של היעד
+    const TARGET_ELEMENT_ID = 'fc_box'; // set to use target div mode
 
-לאחר מכן בעורך GHL, לחץ על כפתור "קוד" והוסף את המקום שבו אתה רוצה שהתגובות יופיעו:
+ואז בעורך GHL, לחץ על כפתור "code" והוסף את הקוד במקום שבו תרצה שהתגובות יופיעו:
 
-[inline-code-attrs-start title = 'תיבת FastComments של GoHighLevel'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Div של GoHighLevel FastComments'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <div
   id="fc_box"
@@ -28,26 +28,27 @@ You can configure the `TYPE = 'commenting'` line to switch the product used (for
 ></div>
 [inline-code-end]
 
-### סוג תיבת תגובות שונה לפי דף
+### סוג תיבת תגובות שונה לכל דף
 
-נניח שברצונך שמשתמשים יסמנו וידונו בקטעי טקסט, או שישתמשו בממשק צ'אט שידור במקום זאת.
+נניח שאתה רוצה שמשתמשים יסמנו וידונו בחלקי טקסט, או שישתמשו בממשק צ'אט השידור במקום.
 
-ראשית בצע את השלבים המופיעים לעיל ב'הצבת תיבת התגובות במקום הרצוי'.
+ראשית בצע את השלבים למעלה ב"הצבת תיבת התגובות במקום שתרצה".
 
-שימו לב שבקטע הקוד הקטן יש `type="commenting"`.
+שים לב שבקטע הקוד הקטן הזה יש `type="commenting"`.
 
-לדוגמה, אם ברצונך להפעיל צ'אט collab, שנה את type ל- `type="collab"`.
+אם אתה רוצה להפעיל למשל צ'אט שיתופי, שנה את ה-type ל-`type="collab"`.
 
-### הצגה רק בעמודים ספציפיים
+### הצגה רק בדפים ספציפיים
 
-אם אינך מגדיר את `TARGET_ELEMENT_ID`, תוכל במקום זאת להגדיר את המשתנה `VALID_PATTERNS` כדי לקבוע באילו מסלולי URL תופענה התגובות. כברירת מחדל, הן יופיעו
-בעמודים שמכילים `/post` ב-URL.
+אם לא תגדיר את `TARGET_ELEMENT_ID`, תוכל במקום זאת להגדיר את המשתנה `VALID_PATTERNS`, כדי לקבוע באילו נתיבי URL התגובות יוצגו. כברירת מחדל, הן יוצגו
+בדפים שמכילים `/post` ב-URL.
 
-### הגדרת צ'אט Collab
+### הגדרת צ'אט שיתופי
 
-אתה יכול להגדיר שצ'אט Collab יוסיף פונקציונליות שיתופית רק סביב HTML בתוך אזור מסוים. לדוגמה, נניח שהוספת את קוד ה-footer שלמעלה ואז הוספת את ה-div הזה בתוכן הפוסט/העמוד כדי לאפשר את צ'אט Collab:
+אתה יכול להורות לצ'אט השיתופי להוסיף פונקציונליות שיתופית רק סביב HTML בתוך אזור ספציפי. לדוגמה, נניח שאתה
+מוסיף את קוד ה-footer למעלה ואז מוסיף את ה-div הזה בתוכן הפוסט/דף כדי להפעיל צ'אט שיתופי:
 
-[inline-code-attrs-start title = 'צאט Collab עם תוכן מוגדר'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'צ\'אט שיתופי עם תוכן מוגדר'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <div
   id="fc_box"
@@ -56,5 +57,5 @@ You can configure the `TYPE = 'commenting'` line to switch the product used (for
 ><p>This content will have collab chat!</p></div>
 [inline-code-end]
 
-אז אלמנט הפסקה שבתוך ה-`<div>` יקבל צ'אט Collab מופעל, ושום דבר אחר בדף לא יושפע. אם לא
-תכניס שום תוכן ל-`<div>` אז זה יפעיל את צ'אט Collab על כל גוף הפוסט.
+ואז רכיב הפסקה בתוך ה-`<div>` יכלול צ'אט שיתופי, ושום דבר אחר בדף לא יכלול זאת. אם לא
+תציב תוכן כלשהו ב-`<div>`, הצ'אט השיתופי יופעל על כל גוף הפוסט.

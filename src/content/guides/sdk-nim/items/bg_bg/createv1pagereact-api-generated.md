@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Име | Тип | Задължително | Описание |
@@ -26,5 +25,3 @@ if pageOpt.isSome:
   discard page
   discard httpResp
 [inline-code-end]
-
----

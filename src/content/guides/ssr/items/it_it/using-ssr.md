@@ -80,5 +80,3 @@ Di conseguenza, tutti gli stili personalizzati che funzionano per il widget di c
 Con SSR non c'è JavaScript per controllare l'altezza del contenitore renderizzato. Nei browser, potrebbe apparire una barra di scorrimento verticale per discussioni lunghe.
 
 Pertanto, è necessario regolare questo secondo le tue esigenze.
-
----

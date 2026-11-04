@@ -110,5 +110,3 @@ function verifyWebhookSignature($headers, $body, $apiSecret) {
 ## Eski Kimlik Doğrulama
 
 `token` başlığı, API Gizli Anahtarınızı içeren, geriye dönük uyumluluk için hâlâ gönderilmektedir. Ancak, tekrar oynatma saldırılarına karşı koruma sağladığı için geliştirilmiş güvenlik için HMAC doğrulamasına geçmenizi öneririz.
-
----

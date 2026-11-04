@@ -7,5 +7,3 @@ Dieses Feature eignet sich hervorragend für redaktionelles Feedback, kollaborat
 Beachten Sie, dass diese Dokumentation speziell auf die Funktionalität **Collab Chat** abzielt. Sie können Kommentare für Inhalte mit vielen Seiten, wie Büchern, mit einem Thread-pro-Seite hinzufügen, **ohne Collab Chat zu verwenden**. FastComments berechnet außerdem nicht pro Seite oder pro Thread. Collab Chat ist speziell dafür gedacht, wenn Sie Benutzern erlauben möchten, Text auszuwählen und den markierten Textabschnitt zu kommentieren.
 
 Sie können [ein Beispiel hier](https://fastcomments.com/product/collab-chat) sehen.
-
----

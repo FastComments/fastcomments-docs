@@ -8,5 +8,3 @@ Si vous rencontrez des problèmes ou avez des questions concernant la bibliothè
 ## Contributions
 
 Les contributions sont les bienvenues ! Veuillez consulter le [dépôt GitHub](https://github.com/FastComments/fastcomments-gatsbyjs-example) pour les directives de contribution.
-
----

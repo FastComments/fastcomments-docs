@@ -1,4 +1,3 @@
----
 Ao migrar de outro provedor, há algumas coisas a considerar:
 
 1. Dados de comentários existentes, incluindo respostas.
@@ -7,5 +6,3 @@ Ao migrar de outro provedor, há algumas coisas a considerar:
 
 A importação de dados self-service discutida nas próximas seções abrange os dois primeiros. Para personalização, veja nosso
 [guia de personalização](/guide-customizations-and-configuration.html).
-
----

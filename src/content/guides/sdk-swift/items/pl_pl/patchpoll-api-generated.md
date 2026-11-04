@@ -1,4 +1,3 @@
----
 Edytuj ankietę w miejscu, zachowując jej wyniki: zmień pytanie, zmień etykietę opcji, zamknij lub otwórz ją ponownie,
 lub zmień, kto może zobaczyć wyborców. Opcje są identyfikowane po id – aby dodać, usunąć lub zmienić ich kolejność, użyj PUT z pełną listą.
 
@@ -35,5 +34,3 @@ DefaultAPI.patchPoll(tenantId: tenantId, commentId: commentId, commentPollPatch:
     }
 }
 [inline-code-end]
-
----

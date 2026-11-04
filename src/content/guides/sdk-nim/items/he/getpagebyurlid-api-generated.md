@@ -18,5 +18,3 @@ if pageOpt.isSome:
   let page = pageOpt.get()
   echo page
 [inline-code-end]
-
----

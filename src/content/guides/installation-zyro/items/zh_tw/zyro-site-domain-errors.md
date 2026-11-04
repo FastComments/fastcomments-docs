@@ -12,5 +12,3 @@
 [前往此處將您的網站新增至帳戶。](https://fastcomments.com/auth/my-account/configure-domains)
 
 現在您應該已經在網站上新增了快速、即時的留言功能！
-
----

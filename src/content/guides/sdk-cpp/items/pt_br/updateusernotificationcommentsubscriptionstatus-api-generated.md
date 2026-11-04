@@ -1,4 +1,3 @@
----
 Ativar ou desativar notificações para um comentário específico.
 
 ## Parâmetros
@@ -29,5 +28,3 @@ auto updateTask = api->updateUserNotificationCommentSubscriptionStatus(
     (void)resp;
 });
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 Bir **onay** (approval), platformun yürütmeden önce bir insanın onaylamasını veya reddetmesini gerektiren sıraya alınmış bir araç çağrısıdır.
 
 ### Onayların yapılandırılması
@@ -68,5 +67,3 @@ Onaylar, tanınmış bir ajan aracı olmayan herhangi bir araç adının sıraya
 
 - Ajanın diğer araç çağrılarını geciktirmezler. Ajanın çalışması birkaç araç çağırabilir ve yalnızca kısıtlanmış olanlar sıraya alınır - geri kalan normal şekilde yürütülür.
 - İnsan reddederse ajanın çalışmasını geri almazlar. Çalışmanın kısıtlanmamış kısmı zaten tamamlanmıştır.
-
----

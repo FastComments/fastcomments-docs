@@ -1,50 +1,50 @@
-Next, let's set things up so that the comment thread changes based on the current page, allowing users to discuss the currently displayed content.
+Şimdi, yorum dizisinin geçerli sayfaya göre değişmesi için ayarları yapalım; böylece kullanıcılar o anda görüntülenen içeriği tartışabilir.
 
-Without the following steps, you will only have one global comment thread for your entire site - which is not very useful.
+Aşağıdaki adımları uygulamazsanız, tüm siteniz için yalnızca tek bir global yorum dizisine sahip olursunuz - ki bu pek kullanışlı değildir.
 
-#### Geliştirici Modu
+#### Dev Mode
 
-To add this functionality, we'll have to go into what Wix calls `Dev Mode`.
+Bu işlevselliği eklemek için Wix'in `Dev Mode` olarak adlandırdığı moda girmemiz gerekiyor.
 
-Click the `Dev Mode` option at the top of the screen.
+Ekranın üst kısmındaki `Dev Mode` seçeneğine tıklayın.
 
 <div class="screenshot white-bg">
-    <div class="title">Dev Modunu Etkinleştir</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-5-dev-mode.png" alt="Dev Modunu Etkinleştir" />
+    <div class="title">Dev Mode'u Etkinleştir</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-5-dev-mode.png" alt="Dev Mode'u Etkinleştir" />
 </div>
 
-#### Eleman ID'sini Ayarlayın
+#### Element ID'sini Ayarlayın
 
-We're going to add custom code to accomplish this, but first we need to give the new embed element an ID to refer to it by.
+Bunu başarmak için özel kod ekleyeceğiz, ancak önce yeni gömme (embed) elementine, ona atıfta bulunmak için bir ID vermemiz gerekiyor.
 
-Let's call it `fastcomments`.
+Buna `fastcomments` diyelim.
 
-Click the new embed element we added, and in dev mode in the bottom right you should see an ID field with a value like `html1`:
+Eklediğimiz yeni gömme elementine tıklayın; dev modunda sağ altta `html1` gibi bir değere sahip bir ID alanı görmelisiniz:
 
 <div class="screenshot white-bg">
     <div class="title">ID Alanı</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-5-id-0.png" alt="ID Alanı" />
 </div>
 
-Change this to `fastcomments` and hit enter:
+Bunu `fastcomments` olarak değiştirin ve enter tuşuna basın:
 
 <div class="screenshot white-bg">
     <div class="title">ID'yi Ayarla</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-5-id-1.png" alt="ID'yi Ayarla" />
 </div>
 
-Now we can add our custom code that tells the comment area what page we are viewing.
+Artık hangi sayfayı görüntülediğimizi yorum alanına söyleyen özel kodumuzu ekleyebiliriz.
 
-At the bottom of the screen you should see a code editor like this:
+Ekranın alt kısmında şuna benzer bir kod düzenleyicisi görmelisiniz:
 
 <div class="screenshot white-bg">
-    <div class="title">Editörü Aç</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-7-open-editor.png" alt="Editörü Aç" />
+    <div class="title">Düzenleyiciyi Aç</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-7-open-editor.png" alt="ID'yi Ayarla" />
 </div>
 
-Copy the following code and paste it in there:
+Aşağıdaki kodu kopyalayın ve oraya yapıştırın:
 
-[inline-code-attrs-start title = 'Wix Yorumları Gezinme Parçacığı'; type = 'javascript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Wix Yorum Gezinme Parçacığı'; type = 'javascript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import wixLocation from 'wix-location';
 
@@ -69,5 +69,3 @@ $w.onReady(function () {
     <div class="title">Gezinme Kodunu Ekle</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-7-paste-code.png" alt="Gezinme Kodunu Ekle" />
 </div>
-
----

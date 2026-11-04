@@ -23,5 +23,3 @@ Retourneert: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-s
   const resultWithoutSso: APIEmptyResponse = await putCloseThread(tenantId, urlId);
 })();
 [inline-code-end]
-
----

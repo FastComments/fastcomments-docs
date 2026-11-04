@@ -8,5 +8,3 @@ Jeśli napotkasz jakiekolwiek problemy lub masz pytania dotyczące biblioteki So
 ## Współtworzenie
 
 Wkłady są mile widziane! Prosimy odwiedzić [repozytorium na GitHubie](https://github.com/FastComments/fastcomments-solidjs) po wytyczne dotyczące współtworzenia.
-
----

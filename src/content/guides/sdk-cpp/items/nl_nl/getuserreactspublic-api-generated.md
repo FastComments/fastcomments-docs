@@ -1,4 +1,3 @@
----
 ## Parameters
 
 | Naam | Type | Vereist | Beschrijving |
@@ -21,5 +20,3 @@ api->getUserReactsPublic(U("my-tenant-123"), options).then([](pplx::task<std::sh
     auto response = t.get();
 });
 [inline-code-end]
-
----

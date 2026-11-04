@@ -28,5 +28,3 @@ try {
     print('Exception when calling ModerationApi->getCommentBanStatus: $e\n');
 }
 [inline-code-end]
-
----

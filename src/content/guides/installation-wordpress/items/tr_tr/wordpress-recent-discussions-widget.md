@@ -1,33 +1,33 @@
-The Recent Discussions widget, sitenizde en son yorum etkinliği olan sayfaları görüntüler. Hala yorum eklenmeye devam edilen başlıkları vurgulamak için kullanışlıdır; böylece ziyaretçiler sessiz sayfalara gelmek yerine aktif konuşmalara geri dönebilirler.
+Son Tartışmalar widget'ı, sitenizdeki en son yorum etkinliğine sahip sayfaları görüntüler. Hâlâ yeni yorumların eklendiği konuları öne çıkarmak için kullanışlıdır; böylece ziyaretçiler sakin sayfalara düşmek yerine aktif sohbetlere geri dönebilir.
 
-## Options
+## Seçenekler
 
-- **Title** (optional): Listenin üzerinde gösterilen başlık. Varsayılan "Son Tartışmalar".
-- **Count** (optional): Kaç tartışma gösterileceği. Aralık 1 ile 50 arasındadır. Varsayılan 20.
+- **Başlık** (isteğe bağlı): Listenin üzerinde gösterilen başlık. Varsayılan olarak "Son Tartışmalar" şeklindedir.
+- **Adet** (isteğe bağlı): Kaç tartışma gösterileceği. 1 ile 50 arası. Varsayılan 20.
 
-## How to Add It
+## Nasıl Eklenir
 
-### Inside a Post or Page
+### Bir Yazı veya Sayfa İçinde
 
-Blok düzenleyicide, bir **Shortcode** bloğu ekleyin ve aşağıyı yapıştırın:
+Blok editöründe bir **Shortcode** bloğu ekleyin ve şunu yapıştırın:
 
 [inline-code-attrs-start title = 'Son Tartışmalar kısa kodu'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 [fastcomments_recent_discussions count="20"]
 [inline-code-end]
 
-`count` özniteliği 1 ile 50 arasındaki herhangi bir değeri kabul eder.
+`count` özniteliği 1 ile 50 arasında herhangi bir değeri kabul eder.
 
-### In a Sidebar or Footer (Classic Themes)
+### Kenar Çubuğunda veya Alt Bilgide (Klasik Temalar)
 
-WordPress yönetiminde **Görünüm > Bileşenler** bölümüne gidin. Blok ekleyicisinden "FastComments" araması yapın ve **FastComments: Son Tartışmalar** öğesini seçin. Bunu bir kenar çubuğuna, üstbilgiye veya altbilgi alanına sürükleyin, ardından widget panelinden başlığı ve sayıyı yapılandırın.
+WordPress yönetim panelinde **Görünüm > Bileşenler** bölümüne gidin. Blok ekleyiciden "FastComments" araması yapın ve **FastComments: Son Tartışmalar** seçeneğini seçin. Bunu bir kenar çubuğuna, başlığa veya alt bilgi alanına sürükleyin, ardından bileşen panelinden başlığı ve adedi yapılandırın.
 
-### In a Block Theme (Full Site Editing)
+### Blok Temasında (Tam Site Düzenleme)
 
-**Görünüm > Düzenleyici** altında **Site Editor**'ü açın. Widget'ın görünmesi gereken şablon parçasına gidin, bir **Legacy Widget** bloğu ekleyin ve açılır menüden **FastComments: Son Tartışmalar** öğesini seçin.
+**Görünüm > Düzenleyici** altındaki **Site Düzenleyici**'yi açın. Widget'ın görünmesi gereken şablon bölümüne gidin, bir **Legacy Widget** bloğu ekleyin ve açılır menüden **FastComments: Son Tartışmalar** seçeneğini seçin.
 
-## Troubleshooting
+## Sorun Giderme
 
-Widget, FastComments kurulumu tamamlandıktan ve bir tenant ID saklandıktan sonra görüntülenir. Eğer widget alanı boşsa, WordPress yönetimindeki **FastComments** altında kurulumu tamamlayın ve sayfayı yeniden yükleyin.
+Widget yalnızca FastComments kurulumu tamamlandıktan ve bir tenant ID saklandıktan sonra görüntülenir. Widget alanı boşsa, WordPress yönetim panelinde **FastComments** altındaki kurulumu tamamlayın ve sayfayı yeniden yükleyin.
 
-Tartışma sıralaması eski görünüyorsa, altta yatan sayfaların FastComments kontrol panelinde senkronizasyonunun tamamlandığını kontrol edin. Widget canlı verileri okur, bu yüzden yeni içe aktarılan yorumların görünmesi biraz zaman alabilir.
+Tartışma sıralaması eski görünüyorsa, ilgili sayfaların FastComments panosunda senkronizasyonunun tamamlandığını kontrol edin. Widget canlı verileri okur, bu nedenle yeni içe aktarılan yorumların görünmesi biraz zaman alabilir.

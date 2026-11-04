@@ -29,5 +29,3 @@ Yorum gönderemez, oy veremez, sabitleyemez, kilitleyemez, rozet veremez veya e-
 ### Önerilen deneme süresi
 
 Bu şablonu [deneme modu](#dry-run-mode) olarak, Etkinleştir'e geçmeden önce gerçek trafiğinizde en az bir hafta çalıştırın. Ayrıca son 30 güne karşı önizleme yapmak için [Test Çalıştırmaları (Replays)](#test-runs-replays) kullanın.
-
----

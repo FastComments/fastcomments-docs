@@ -1,4 +1,3 @@
----
 Chez FastComments, nous savons que vous recevez déjà suffisamment de notifications. C’est pourquoi nous prenons certaines mesures pour limiter les notifications que les utilisateurs reçoivent tout en les maintenant en contact avec leurs communautés. Nous voulons également tenir les administrateurs et les modérateurs informés et leur faire savoir quand une action doit être entreprise.
 
 #### Nous enverrons des notifications pour les événements suivants pour les administrateurs et les modérateurs :
@@ -34,5 +33,3 @@ Chez FastComments, nous savons que vous recevez déjà suffisamment de notificat
 Certaines notifications sont regroupées afin d’éviter l’envoi massif de notifications aux utilisateurs. En savoir plus dans la section suivante `Notification Types`.
 
 Les e‑mails de réponse et de mention ne sont envoyés que pour les commentaires approuvés. Pour savoir si un e‑mail de réponse ou de mention a été envoyé pour un commentaire spécifique, ou pourquoi il ne l’a pas été, ouvrez les [Comment Logs](/guide-moderation.html#comment-logs) de ce commentaire depuis la page Modérer les commentaires.
-
----

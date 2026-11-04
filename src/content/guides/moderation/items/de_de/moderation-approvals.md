@@ -1,4 +1,3 @@
----
 Bei FastComments ist ein genehmigter Kommentar ein **sichtbarer** Kommentar. Um einen Kommentar zu verbergen, würden Sie die Genehmigung zurückziehen.
 
 Kommentare können automatisch genehmigt werden, oder Moderatoren können jeden Kommentar manuell genehmigen. Es gibt auch die Option, nur die Genehmigung des ersten Kommentars eines Benutzers zu verlangen – in diesem Fall werden nachfolgende Kommentare automatisch genehmigt und benötigen keine Moderation.
@@ -10,5 +9,3 @@ Der Begriff Verifiziert kann bei Bedarf über Anpassungsregeln vollständig ausg
 Die manuelle Genehmigung nicht verifizierter Kommentare kann gegen Spam helfen, da Bots ihre Kommentare selten per E-Mail verifizieren. In diesem Fall sollten Sie die automatische Kommentar-Genehmigung aktivieren, aber die Option `Only Auto Approve Verified Comments` einschalten.
 
 Das alles kann von Administratoren unter [Moderationseinstellungen](https://fastcomments.com/auth/my-account/moderate-comments/settings) konfiguriert werden.
-
----

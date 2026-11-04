@@ -1,10 +1,10 @@
-If your val already knows who the visitor is, Secure SSO hands that identity to the widget so they never see a second login. There are no endpoints to build and nothing to call at runtime: you compute three values server‑side and pass them in the widget config.
+Ако ваш val већ зна ко је посетилац, Secure SSO предаје тај идентитет виџету тако да посетилац никада не види другу пријаву. Нема крајњих тачака за изградњу и нема ничега за позивати у току рада: израчунавате три вредности на серверу и прослеђујете их у конфигурацију виџета.
 
-Val Town ships zero‑config login with `std/oauth`, so the visitor can sign in with the Val Town account they already have. Swap that for whatever your app uses; the FastComments half does not change.
+Val Town нуди пријаву без конфигурације преко `std/oauth`, тако да посетилац може да се пријави Val Town налогом који већ има. Замените то оним што ваша апликација користи; FastComments део се не мења.
 
-## Изградња полезног терета на серверу
+## Изградите payload на серверу
 
-The API secret signs the payload and must never reach browser code. Install the SDK from npm, which works on Val Town's Deno runtime as‑is:
+API тајна потписује payload и никада не сме да доспе до кода у прегледачу. Инсталирајте SDK са npm-а, који ради на Val Town Deno runtime-у какав јесте:
 
 [inline-code-attrs-start title = 'sso.ts'; type='javascript' inline-code-attrs-end]
 [inline-code-start]
@@ -26,9 +26,9 @@ export function buildSSOPayload(user) {
 }
 [inline-code-end]
 
-`getPayload()` returns `{ userDataJSONBase64, verificationHash, timestamp }`. Those three values are all that reach the browser. The secret signs them and is then dropped, so nothing in the page lets a reader forge a different user.
+`getPayload()` враћа `{ userDataJSONBase64, verificationHash, timestamp }`. Те три вредности су све што доспева до прегледача. Тајна их потписује и затим се одбацује, тако да ништа на страни не омогућава читаоцу да фалсификује другог корисника.
 
-## Прослеђивање у виџет
+## Проследите га виџету
 
 [inline-code-attrs-start title = 'Конфигурација виџета са SSO'; type='javascript' inline-code-attrs-end]
 [inline-code-start]
@@ -52,14 +52,14 @@ app.get("/", async (c) => {
 export default oauthMiddleware(app.fetch);
 [inline-code-end]
 
-`oauthMiddleware` adds `GET /auth/login`, `GET /auth/callback` and `POST /auth/logout` for you. Note that logout is a **POST**, while the widget navigates to `logoutURL` with a GET, so point `logoutURL` at a small route of your own that submits the POST.
+`oauthMiddleware` додаје `GET /auth/login`, `GET /auth/callback` и `POST /auth/logout` уместо вас. Имајте у виду да је одјава **POST**, док виџет одлази на `logoutURL` са GET, па усмерите `logoutURL` на малу руту коју сами правите и која шаље тај POST.
 
-When the visitor is logged out, pass `sso` with only a `loginURL`. The widget then shows a login prompt instead of an anonymous comment box.
+Када је посетилац одјављен, проследите `sso` са само `loginURL`. Виџет тада приказује позив за пријаву уместо анонимног поља за коментаре.
 
-## Ствари које могу да крене
+## Ствари које крену наопако
 
-`timestamp` is epoch **milliseconds**, must not be in the future, and must not be more than two days old. Generate it on the server in the same request that computes the hash. Generating it in the browser is the classic failure: the value differs from the one that was hashed and every comment is rejected.
+`timestamp` је у епохи **милисекундама**, не сме бити у будућности и не сме бити старији од два дана. Генеришите га на серверу у истом захтеву у коме се рачуна хеш. Генерисање у прегледачу је класична грешка: вредност се разликује од оне која је хеширана и сваки коментар бива одбијен.
 
-Never set `isAdmin` or `isModerator` from the identity provider. Signing in with a Val Town account says nothing about who should moderate your site.
+Никада не постављајте `isAdmin` или `isModerator` од добављача идентитета. Пријава Val Town налогом не говори ништа о томе ко би требало да модерира ваш сајт.
 
-See the [SSO guide](/guide-customizations-and-configuration.html#sso-secure) for the full field list, group‑gated threads, and badges.
+Погледајте [SSO водич](/guide-customizations-and-configuration.html#sso-secure) за потпуну листу поља, теме ограничене групама и значке.

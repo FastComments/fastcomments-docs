@@ -1,4 +1,3 @@
----
 ## Parametreler
 
 | Ad | Tip | Konum | Zorunlu | Açıklama |
@@ -31,5 +30,3 @@ DefaultAPI.getModerator(tenantId: tenantId, id: id) { (response, error) in
     }
 }
 [inline-code-end]
-
----

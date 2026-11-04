@@ -1,21 +1,20 @@
-Follow the same steps for `localhost` as you would production. Ensure you have production domains and API Secrets setup.
+Пратите исте кораке за `localhost` као и за продукцију. Уверите се да имате подешене продукционе домене и API тајне (API Secrets).
 
-First, navigate to the [Webhooks admin](https://fastcomments.com/auth/my-account/manage-data/webhooks). This is accessible via Manage Data -> Webhooks.
+Прво, идите на [Webhooks админ страницу](https://fastcomments.com/auth/my-account/manage-data/webhooks). Доступна је преко Manage Data -> Webhooks.
 
-The page lists every webhook on your account:
+Страница приказује све вебхук на вашем налогу:
 
-[app-screenshot-start url='/auth/my-account/manage-data/webhooks'; selector = '.content'; alt='Страна за администрирање вебхукова која приказује сваки вебхук са својим URL-ом, догађајем, доменом, методом, статусом и бројем заказаних догађаја'; title='Листа вебхукова'; cacheBuster = 'v4' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/webhooks'; selector = '.content'; alt='Админ страница вебхукова са списком сваког вебхука и његовим URL-ом, догађајем, доменом, методом, статусом и бројом догађаја у реду чекања'; title='Списак вебхукова'; cacheBuster = 'v4' app-screenshot-end]
 
-Click **New Webhook** to add one. Each webhook has a URL, one comment event (created, updated or deleted), a domain, and an HTTP method:
+Кликните **New Webhook** да додате нови. Сваки вебхук има URL, један догађај коментара (креирање, ажурирање или брисање), домен и HTTP метод:
 
-[app-screenshot-start url='/auth/my-account/manage-data/webhooks/new'; selector = '.content'; alt='Форма за нови вебхук са пољима за URL, догађај, домен и HTTP метод, плус дугмето „Пошаљи тестни податак“'; title='Нови вебхук'; cacheBuster = 'v4' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/webhooks/new'; selector = '.content'; alt='Форма за нови вебхук са пољима URL, догађај, домен и HTTP метод, уз опцију Send Test Payload'; title='Нови вебхук'; cacheBuster = 'v4' app-screenshot-end]
 
-Every webhook is delivered independently. You can send the same event to several endpoints, and a webhook scoped
-to **All Domains** receives comments from every domain even when a domain-specific webhook exists for the same event.
-The same URL, event and domain cannot be added twice.
+Сваки вебхук се испоручује независно. Можете послати исти догађај на више крајњих тачака, а вебхук обухваћен опцијом **All Domains** прима коментаре са свих домена, чак и када постоји вебхук специфичан за домен за исти догађај.
+Исти URL, догађај и домен не могу бити додати два пута.
 
-Before saving, click **Send Test Payload** to check the endpoint accepts a signed request. See the next section, "Testing", for details.
+Пре чувања, кликните **Send Test Payload** да проверите да крајња тачка прихвата потписани захтев. Погледајте следећи одељак, „Тестирање", за детаље.
 
-From the list you can edit, disable, re-enable or delete a webhook. Disabling keeps queued events until the webhook is re-enabled; deleting discards them.
+Из списка можете да уредите, онемогућите, поново омогућите или обришете вебхук. Онемогућавање задржава догађаје у реду чекања док се вебхук поново не омогући; брисање их одбацује.
 
-Webhooks can also be created through the API, for example by Zapier. Those appear in the same list with the source **API**. See Управљање вебхукевима преко API‑ја.
+Вебхукови се такође могу креирати путем API-ја, на пример преко Zapier-а. Они се појављују у истом списку са извором **API**. Погледајте Управљање вебхуковима путем API-ја.

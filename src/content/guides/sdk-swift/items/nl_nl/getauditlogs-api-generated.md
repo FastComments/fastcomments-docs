@@ -52,5 +52,3 @@ DefaultAPI.getAuditLogs(tenantId: tenantId, options: DefaultAPI.GetAuditLogsOpti
     }
 }
 [inline-code-end]
-
----

@@ -22,5 +22,3 @@ const result1: ModerationPageSearchResponse = await getSearchPages(tenantId);
 const result2: ModerationPageSearchResponse = await getSearchPages(tenantId, searchValue);
 const result3: ModerationPageSearchResponse = await getSearchPages(tenantId, searchValue, ssoToken);
 [inline-code-end]
-
----

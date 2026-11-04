@@ -13,5 +13,3 @@ Begrijpen van de standaard-CSS stelt je in staat om:
 Het overschrijven van stijlen verschilt per widget. Voor de comment-widget moet je de `customCSS` config-parameter gebruiken om
 de CSS in het iframe te plaatsen, of de CSS opgeven op de Customization-pagina in het beheerdersdashboard die de CSS
 van ons CDN zal serveren.
-
----

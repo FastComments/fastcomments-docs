@@ -1,4 +1,3 @@
----
 启用或禁用页面的通知。当用户订阅某个页面时，会为新的根评论创建通知，此外还
 
 ## 参数
@@ -50,5 +49,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->update_user_notification_page_subscription_status: %s\n" % e)
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 למרות שהשם שלו הוא כלי המיגרציה של תחום, ניתן גם להשתמש בו כדי להעביר תגובות בין דפים בודדים.
 
 פשוט הזן את ערכי ה-[urlId](/guide-customizations-and-configuration.html#url-id) הישנים והחדשים בשדות הקלט `from` ו-`to`.
@@ -10,5 +9,3 @@
 כאשר `type` מוגדר ל-`urlId`, רק הדף שה-`urlId` שלו הוא בדיוק `from` מועבר, ולכן `post-1` אינו תואם ל-`post-10`. כלי הלוח מחוונים אינו כולל אפשרות זו.
 
 כל מיגרציית API ניתן לבטל במשך 90 יום באמצעות [`POST /api/v1/pages/migrations/:undoId/undo`](/guide-api.html#pages-migrations-undo-post).
-
----

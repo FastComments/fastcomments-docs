@@ -1,29 +1,29 @@
-Svaki agent webhook potpisan je pomoću HMAC-SHA256 koristeći API secret vašeg tenant-a. Isti način potpisivanja koristi se i za FastCommentsove comment webhooks - ako ste već integrirali te, agent webhookovi koriste isti signature header i tok verifikacije.
+Svaki agent webhook potpisan je s HMAC-SHA256 koristeći API tajnu vašeg tenanta. Isti shema potpisivanja koristi se za FastComments webhookove komentara - ako ste ih već integrirali, agent webhookovi ponovno koriste isti signature header i postupak verifikacije.
 
 ### Zašto potpisivanje
 
-Bez potpisa, napadač koji zna vaš webhook URL mogao bi POST-ati falsificirane događaje koji izgledaju kao da dolaze iz FastCommentsa. Potpisivanje znači da vaš endpoint može provjeriti je li svaka isporuka autentična prije nego što poduzme radnju.
+Bez potpisa, napadač koji zna URL vašeg webhooka mogao bi POST-ati krivotvorene događaje koji izgledaju kao da dolaze od FastComments. Potpisivanje znači da vaš endpoint može provjeriti autentičnost svake dostave prije nego što na nju reagira.
 
-### Kako potpisi funkcioniraju
+### Kako rade potpisi
 
-Za svaku isporuku:
+Za svaku dostavu:
 
-1. Platforma dohvaća API secret za tenant + podudarajući se domen (vidi [Pregled Webhookova](#webhooks-overview)).
+1. Platforma dohvaća API tajnu za tenant + podudarnu domenu (vidi [Pregled webhookova](#webhooks-overview)).
 2. Emitira trenutni Unix timestamp (u milisekundama) u headeru `X-FastComments-Timestamp`.
-3. Izračunava `HMAC-SHA256(api_secret, "${timestamp}.${raw_request_body}")` (kao u Stripeu) i rezultat postavlja kao `sha256=<hex>` u header `X-FastComments-Signature`.
-4. Vaš endpoint čita timestamp header, ponovno izračunava HMAC preko `${timestamp}.${body}` koji je primio, uspoređuje s vrijednošću `sha256=<hex>` u signature headeru i odbacuje nesukladnosti.
+3. Izračunava `HMAC-SHA256(api_secret, "${timestamp}.${raw_request_body}")` (Stripe-stil) i emitira rezultat kao `sha256=<hex>` u headeru `X-FastComments-Signature`.
+4. Vaš endpoint čita timestamp header, ponovno izračunava HMAC nad `${timestamp}.${body}` koji je primio, uspoređuje s vrijednošću `sha256=<hex>` u signature headeru i odbija neusklađenosti.
 
-Tijelo koje se potpisuje su **točni bajtovi** koje je platforma poslala, prefiksirani s `${timestamp}.` - vaš verifier mora koristiti raw request body, a ne ponovno serijalizirani JSON string (redoslijed ključeva i razmaci bi inače bili različiti).
+Tijelo koje se potpisuje su **točni bajtovi** koje je platforma poslala, s prefiksom `${timestamp}.` - vaš verifikator mora koristiti sirovo tijelo zahtjeva, a ne ponovno serializirani JSON string (redoslijed ključeva i razmaci inače bi se razlikovali).
 
-### API secret
+### API tajna
 
-Isti API Secret koji koristi [comment webhooks](/guide-webhooks.html). On je po (tenant, domain) i upravlja se u postavkama API-ja vašeg tenant-a. Ako promijenite secret, trebate ponovno rasporediti svoj verifier da očita novu vrijednost prije sljedeće isporuke.
+Ista API tajna koju koriste [webhookovi komentara](/guide-webhooks.html). Odnosi se na par (tenant, domena) i upravlja se u API postavkama vašeg tenanta. Ako rotirate tajnu, trebali biste ponovno implementirati svoj verifikator da čita novu vrijednost prije sljedeće dostave.
 
-Kada platforma ne pronađe **niti jedan API secret** za podudarajuću domenu, isporuka se ne obavlja. Webhook log bilježi neuspjeh s razlogom "no API secret".
+Kada platforma ne pronađe **API tajnu** za podudarnu domenu, dostava se ne događa. Webhook log bilježi grešku s razlogom "no API secret".
 
-### Verification example (Node.js)
+### Primjer verifikacije (Node.js)
 
-[inline-code-attrs-start title = 'Primjer provjere potpisa webhooka'; type='javascript' inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer verifikacije potpisa webhooka'; type='javascript' inline-code-attrs-end]
 [inline-code-start]
 import crypto from 'crypto';
 
@@ -39,28 +39,28 @@ function verifyAgentWebhook(rawBody, signatureHeader, timestampHeader, secret) {
 }
 [inline-code-end]
 
-Koristite `timingSafeEqual` umjesto `===` kako biste izbjegli curenje informacije putem timing-kanala o potpisu.
+Koristite `timingSafeEqual` umjesto `===` kako biste izbjegli curenje potpisa kroz timing-kanal.
 
-### Što se nalazi u potpisanom tijelu
+### Što je u potpisanom tijelu
 
-Cijeli omot (envelope) plus event-specifični `data` blok. Vidi [Webhook Payloads](#webhook-payloads).
+Cijela omotnica plus blok `data` specifičan za događaj. Vidi [Webhook Payloads](#webhook-payloads).
 
 ### Preporuke
 
-- **Provjeravajte pri svakoj isporuci.** Ako vaš endpoint prihvaća nepotpisane zahtjeve, nemate jamstvo integriteta.
-- **Odbacujte pri neslaganju potpisa.** Vratite 401 ili 403; nemojte vraćati 200 OK na loš potpis, jer ćete time prikriti napade u vašim delivery logovima.
-- **Koristite HTTPS.** Potpisi štite integritet; TLS štiti povjerljivost (i vašeg secreta i teksta komentara u payloadu).
-- **Rotirajte tajne** kada članovi tima s pristupom odu, ili po rasporedu.
+- **Provjeravajte svaku dostavu.** Ako vaš endpoint prihvaća nepotpisane zahtjeve, nemate jamstvo integriteta.
+- **Odbijte kod neusklađenog potpisa.** Vratite 401 ili 403; ne vraćajte 200 OK na loš potpis, ili ćete prikrivati napade u svojim logovima dostave.
+- **Koristite HTTPS.** Potpisi štite integritet; TLS štiti povjerljivost (i vašu tajnu i tekst komentara u payloadu).
+- **Rotirajte tajne** kada odu članovi tima s pristupom, ili prema rasporedu.
 
-### Zaštita od ponovnog slanja
+### Zaštita od replay napada
 
-Samo potpisivanje ne sprječava replay napade - napadač koji je presreo stvarnu potpisanu isporuku može je ponovno poslati. Zaštita od replay napada ovisi o vašem endpointu:
+Samo potpisivanje ne sprječava replay napade - napadač koji je uhvatio stvarnu potpisanu dostavu može je ponovno poslati. Zaštita od replay napada je na vašem endpointu:
 
-- Koristite polje `occurredAt` u envelopeu i odbacite isporuke starije od, recimo, 5 minuta.
-- Koristite `triggerId` ili `approvalId` kao ključ za deduplikaciju - ako ste ga već obradili, ignorirajte duplikat.
+- Koristite polje `occurredAt` iz omotnice i odbijte dostave starije od, recimo, 5 minuta.
+- Koristite `triggerId` ili `approvalId` kao ključ za deduplikaciju - ako ste ga već obradili, zanemarite duplikat.
 
 ### Vidi također
 
-- [Pregled Webhookova](#webhooks-overview).
+- [Pregled webhookova](#webhooks-overview).
 - [Webhook Payloads](#webhook-payloads).
-- Glavni [Vodič za Webhookove](/guide-webhooks.html) za širu infrastrukturu potpisivanja.
+- Glavni [vodič za webhookove](/guide-webhooks.html) za širu infrastrukturu potpisivanja.

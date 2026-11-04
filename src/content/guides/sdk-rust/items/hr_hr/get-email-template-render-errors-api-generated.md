@@ -24,5 +24,3 @@ async fn fetch_template_errors(config: &configuration::Configuration) -> Result<
     Ok(())
 }
 [inline-code-end]
-
----

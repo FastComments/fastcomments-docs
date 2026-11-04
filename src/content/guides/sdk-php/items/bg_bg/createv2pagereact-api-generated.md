@@ -39,5 +39,3 @@ try {
     echo 'Изключение при извикване на PublicApi->createV2PageReact: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

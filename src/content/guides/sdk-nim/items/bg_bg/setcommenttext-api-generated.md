@@ -27,5 +27,3 @@ let (response, httpResponse) = client.setCommentText(
 if response.isSome:
   let result = response.get()
 [inline-code-end]
-
----

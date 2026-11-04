@@ -76,5 +76,3 @@ Anonim oylar ayrıca anket başına IP başına oran sınırlamasına tabidir, b
 - `userId` sitenizde mevcut bir kullanıcı olmalıdır. Başka bir siteye ait bir kullanıcı için oylar reddedilir.
 - Kapalı bir ankette oylama `poll-closed` hatasıyla başarısız olur.
 - Bu API, anketteki sayımları günceller ve bağlı widget'lara canlı olarak gönderir.
-
----

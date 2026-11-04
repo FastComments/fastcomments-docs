@@ -159,5 +159,3 @@ interface CommentHashTag {
     retain?: boolean
 }
 [inline-code-end]
-
----

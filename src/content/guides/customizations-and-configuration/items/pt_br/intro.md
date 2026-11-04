@@ -11,5 +11,3 @@ Exemplos de código serão fornecidos, com as linhas relevantes destacadas. Capt
 Os exemplos de código utilizarão nossa biblioteca vanilla JavaScript; no entanto, as opções de configuração usam exatamente os mesmos nomes para todas as versões do widget de comentários (React, Vue, etc.).
 
 A maioria das configurações e recursos descritos neste guia não exige escrever código.
-
----

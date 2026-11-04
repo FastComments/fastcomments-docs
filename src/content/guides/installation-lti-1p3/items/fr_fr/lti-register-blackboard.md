@@ -1,26 +1,26 @@
-Blackboard Learn SaaS and Ultra support LTI 1.3 Dynamic Registration.
+Blackboard Learn SaaS et Ultra prennent en charge l'enregistrement dynamique LTI 1.3.
 
-#### Open the Tool Provider Screen
+#### Ouvrir l'écran des fournisseurs d'outils
 
 1. Connectez-vous à Blackboard en tant qu'administrateur système.
-2. Navigate to **Administrator Panel** > **Integrations** > **LTI Tool Providers**.
-3. Click **Register LTI 1.3 / LTI Advantage Tool**.
+2. Accédez à **Administrator Panel** > **Integrations** > **LTI Tool Providers**.
+3. Cliquez sur **Register LTI 1.3 / LTI Advantage Tool**.
 
-If you only see "Register LTI 1.1 Provider", your Blackboard version doesn't support LTI 1.3 yet - upgrade or contact Blackboard support.
+Si vous ne voyez que « Register LTI 1.1 Provider », votre version de Blackboard ne prend pas encore en charge LTI 1.3 - effectuez une mise à niveau ou contactez le support Blackboard.
 
-#### Paste the URL
+#### Coller l'URL
 
-Paste the FastComments registration URL (<a href="https://fastcomments.com/auth/my-account/lti-config" target="_blank">obtenez-la ici</a>) into the **Client ID** / **Registration URL** field (Blackboard's labeling varies by version). Submit.
+Collez l'URL d'enregistrement de FastComments (<a href="https://fastcomments.com/auth/my-account/lti-config" target="_blank">obtenez-la ici</a>) dans le champ **Client ID** / **Registration URL** (le libellé de Blackboard varie selon la version). Validez.
 
-Blackboard performs the registration handshake with FastComments and shows you a confirmation screen.
+Blackboard effectue la poignée de main d'enregistrement avec FastComments et affiche un écran de confirmation.
 
-#### Approve and Enable
+#### Approuver et activer
 
-Blackboard marks newly-registered tools as **Approved but excluded** by default:
+Blackboard marque par défaut les outils nouvellement enregistrés comme **Approved but excluded** :
 
-1. Find the FastComments entry in the tool provider list.
-2. Open the menu and choose **Edit**.
-3. Set **Tool Status** to **Approved**.
-4. Under **Institution Policies**, review what user data is sent (name, email, role). Save.
+1. Trouvez l'entrée FastComments dans la liste des fournisseurs d'outils.
+2. Ouvrez le menu et choisissez **Edit**.
+3. Définissez **Tool Status** sur **Approved**.
+4. Sous **Institution Policies**, vérifiez les données utilisateur envoyées (nom, e-mail, rôle). Enregistrez.
 
-The tool is now available to instructors when they add content to courses.
+L'outil est désormais disponible pour les enseignants lorsqu'ils ajoutent du contenu aux cours.

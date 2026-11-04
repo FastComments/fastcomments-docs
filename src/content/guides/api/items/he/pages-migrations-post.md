@@ -1,21 +1,21 @@
 [api-resource-header-start name = 'Page Migrations'; route = 'POST /api/v1/pages/migrations'; creditsCost = 1; api-resource-header-end]
 
-This route moves comments and pages from one `urlId` or domain to another, the same as the [Domain Migration tool](/guide-migrations.html#migrating-domains) in the dashboard. Up to 100 migrations can be sent per request. They run in the order given, so `a` to `b` followed by `b` to `c` works.
+הנתיב הזה מעביר תגובות ודפים מ-`urlId` או דומיין אחד לאחר, בדיוק כמו [כלי העברת הדומיינים](/guide-migrations.html#migrating-domains) בלוח הבקרה. ניתן לשלוח עד 100 העברות בכל בקשה. הן רצות לפי הסדר שניתן, כך שהעברה מ-`a` ל-`b` ואחריה מ-`b` ל-`c` עובדת.
 
-Each migration has a `type`:
+לכל העברה יש `type`:
 
-- `urlId` moves the page whose `urlId` is exactly `from`. `post-1` does not match `post-10`.
-- `domain` find/replaces `from` inside every `urlId` and `url`, and updates the `domain` of each comment. Both values must be a domain, like `old.example.com`.
+- `urlId` מעביר את הדף שה-`urlId` שלו זהה בדיוק ל-`from`. `post-1` אינו תואם ל-`post-10`.
+- `domain` מבצע חיפוש והחלפה של `from` בתוך כל `urlId` ו-`url`, ומעדכן את ה-`domain` של כל תגובה. שני הערכים חייבים להיות דומיין, כמו `old.example.com`.
 
-Comments, the page, page reacts, votes, notifications and subscriptions all move. If a page already exists at `to`, the two pages are merged.
+תגובות, הדף, תגובות ריאקציה לדף, הצבעות, התראות ומינויים – הכול עובר. אם כבר קיים דף ב-`to`, שני הדפים ממוזגים.
 
-The migration runs as a batch job. The response contains a `batchJobId`. Poll [`GET /api/v1/batch-jobs/:id`](#batch-job-get-by-id) to follow its progress. Once the job is done it has a result per migration, and an `undoId` you can pass to [`POST /api/v1/pages/migrations/:undoId/undo`](#pages-migrations-undo-post) within 90 days.
+ההעברה רצה כעבודת אצווה. התשובה מכילה `batchJobId`. בצעו polling ל-[`GET /api/v1/batch-jobs/:id`](#batch-job-get-by-id) כדי לעקוב אחר ההתקדמות. לאחר שהעבודה מסתיימת, יש לה תוצאה עבור כל העברה, וכן `undoId` שניתן להעביר ל-[`POST /api/v1/pages/migrations/:undoId/undo`](#pages-migrations-undo-post) בתוך 90 יום.
 
-The request is validated before anything is queued. If any migration is invalid, the whole request fails with a `422` and nothing runs.
+הבקשה מאומתת לפני שמשהו נכנס לתור. אם העברה כלשהי אינה תקפה, כל הבקשה נכשלת עם `422` ושום דבר לא רץ.
 
-Queueing a migration costs nothing. When the job finishes it costs `1` credit per `1000` comments migrated, with a minimum of `1`.
+הכנסת העברה לתור לא עולה דבר. כשהעבודה מסתיימת, העלות היא `1` קרדיט לכל `1000` תגובות שהועברו, עם מינימום של `1`.
 
-[inline-code-attrs-start title = 'דוגמת cURL למיגרציות דפים'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת cURL להעברת דפים'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request POST \
   --url 'https://fastcomments.com/api/v1/pages/migrations?tenantId=demo&API_KEY=DEMO_API_SECRET' \
@@ -28,7 +28,7 @@ curl --request POST \
 }'
 [inline-code-end]
 
-[inline-code-attrs-start title = 'מבנה בקשת מיגרציות דפים'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'מבנה בקשה להעברת דפים'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface PageMigrationsQueryParams {
     tenantId: string
@@ -50,7 +50,7 @@ interface PageMigration {
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'מבנה תגובת מיגרציות דפים'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'מבנה תשובה להעברת דפים'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface PageMigrationsResponse {
     status: 'success' | 'failed'
@@ -65,5 +65,5 @@ interface PageMigrationsResponse {
 
 #### הערות
 
-- Jobs for one tenant run one at a time, oldest first. A second migration waits for the first to finish.
-- `PATCH /api/v1/pages/:id` with a new `urlId` only changes the page, not its comments. Use this route to move a page's comments.
+- עבודות של טננט אחד רצות אחת בכל פעם, מהישנה לחדשה. העברה שנייה ממתינה לסיום הראשונה.
+- `PATCH /api/v1/pages/:id` עם `urlId` חדש משנה רק את הדף, לא את התגובות שלו. השתמשו בנתיב הזה כדי להעביר את התגובות של דף.

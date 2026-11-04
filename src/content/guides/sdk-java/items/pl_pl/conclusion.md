@@ -8,5 +8,3 @@ Jeśli napotkasz jakiekolwiek problemy lub będziesz mieć pytania dotyczące Ja
 ## Współtworzenie
 
 Wkład jest mile widziany! Prosimy odwiedzić [repozytorium GitHub](https://github.com/FastComments/fastcomments-java) po wytyczne dotyczące kontrybucji.
-
----

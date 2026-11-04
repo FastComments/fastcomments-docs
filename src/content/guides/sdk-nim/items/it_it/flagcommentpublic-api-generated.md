@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Name | Type | Required | Description |
@@ -27,5 +26,3 @@ if optResp.isSome:
   let empty = optResp.get()
   discard empty
 [inline-code-end]
-
----

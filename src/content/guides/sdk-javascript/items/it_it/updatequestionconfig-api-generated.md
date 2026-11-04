@@ -27,5 +27,3 @@ Restituisce: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-s
   console.log(response);
 })();
 [inline-code-end]
-
----

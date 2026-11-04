@@ -13,5 +13,3 @@ Ahora podemos ver nuestro sitio. Si vas a una entrada del blog, deberías ver un
     <div class="title">Cambios publicados</div>
     <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-4-live.png" alt="Cambios publicados" />
 </div>
-
----

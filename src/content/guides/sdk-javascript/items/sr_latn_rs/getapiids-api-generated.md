@@ -43,5 +43,3 @@ async function run(): Promise<void> {
   const minimalResult: ModerationAPIGetCommentIdsResponse = await getApiIds(tenantId);
 }
 [inline-code-end]
-
----

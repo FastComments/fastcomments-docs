@@ -1,4 +1,3 @@
----
 ## パラメータ
 
 | 名前 | 型 | 必須 | 説明 |
@@ -22,5 +21,3 @@ async function fetchSSOUser() {
   const user: APISSOUser | undefined = result?.user;
 }
 [inline-code-end]
-
----

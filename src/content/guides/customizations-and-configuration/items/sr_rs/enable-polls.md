@@ -1,10 +1,10 @@
-Polls let commenters attach a question with 2 to 10 options to a comment. Everyone on the page votes in place and sees the results update live.
+Анкете омогућавају коментаторима да уз коментар додају питање са 2 до 10 опција. Сви на страни гласају на месту и виде резултате како се ажурирају уживо.
 
-Polls are off by default. Check **Enable Polls** in the widget customization settings to add a poll button to the comment toolbar. Two more settings then appear:
+Анкете су подразумевано искључене. Штиклирајте **Enable Polls** у подешавањима прилагођавања виџета да бисте додали дугме за анкету на траку са алаткама коментара. Тада се појављују још два подешавања:
 
-- **Ко може да прави анкете**: Admins/Moderators Only (the default), or Everyone.
-- **Дозволи анонимне гласове у анкетама**: when unchecked (the default), only logged in users can vote.
+- **Who Can Create Polls**: Само админи/модератори (подразумевано), или Сви.
+- **Allow Anonymous Poll Votes**: када није штиклирано (подразумевано), само пријављени корисници могу гласати.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-polls']; selector = '.enable-polls'; alt='Страница прилагођавања виџета са опцијом Омогући анкете означеном'; title='Омогући анкете' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-polls']; selector = '.enable-polls'; alt='Страница прилагођавања виџета са штиклираном опцијом Enable Polls'; title='Enable Polls' app-screenshot-end]
 
-See the [Водич за анкете](/guide-polls.html) for how creating, voting, privacy, and poll notifications work.
+Погледајте [водич за анкете](/guide-polls.html) да бисте сазнали како функционишу креирање, гласање, приватност и обавештења о анкетама.

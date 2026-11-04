@@ -1,4 +1,3 @@
----
 Nu kan vi kopiere følgende kodeudsnit (brug kopier-knappen øverst til højre i udsnittet):
 
 [inline-code-attrs-start title = 'Squarespace Blogkommentarer-kode'; type = 'html'; isFunctional = false; inline-code-attrs-end]
@@ -32,5 +31,3 @@ Nu kan vi kopiere følgende kodeudsnit (brug kopier-knappen øverst til højre i
     <div class="title">Indsæt og gem</div>
     <img class="screenshot-image" src="/images/installation-guides/squarespace-step-2-1-add-code-and-save.png" alt="Indsæt og gem" />
 </div>
-
----

@@ -23,5 +23,3 @@ if optResp.isSome:
   let resp = optResp.get()
   discard resp
 [inline-code-end]
-
----

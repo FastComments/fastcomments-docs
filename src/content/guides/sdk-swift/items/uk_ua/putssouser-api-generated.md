@@ -33,5 +33,3 @@ DefaultAPI.putSSOUser(tenantId: tenantId, id: id, updateAPISSOUserData: updateAP
     }
 }
 [inline-code-end]
-
----

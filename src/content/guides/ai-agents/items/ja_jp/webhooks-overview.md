@@ -1,65 +1,65 @@
-Agent webhooks are HTTP callbacks fired by the platform when an agent run completes or an approval changes state. Use them to forward agent activity into your own systems - moderation dashboards, audit logs, Slack channels, escalation tools.
+エージェントWebhookは、エージェントの実行が完了したときや承認の状態が変化したときにプラットフォームが発行するHTTPコールバックです。これらを使用して、エージェントのアクティビティをモデレーションダッシュボード、監査ログ、Slackチャンネル、エスカレーションツールなど、独自のシステムに転送できます。
 
-Configured under the **Webhooks** tab on the [AI エージェントページ](https://fastcomments.com/auth/my-account/ai-agents).
+[AI Agentsページ](https://fastcomments.com/auth/my-account/ai-agents)の**Webhooks**タブで設定します。
 
-### 配信されるもの
+### 配信される内容
 
-Four event types:
+4種類のイベントタイプがあります:
 
-- **`trigger.succeeded`** - an agent run completed successfully.
-- **`trigger.failed`** - an agent run errored.
-- **`approval.requested`** - an action was queued for human approval.
-- **`approval.decided`** - an approval was approved, rejected, or execution-failed.
+- **`trigger.succeeded`** - エージェントの実行が正常に完了した。
+- **`trigger.failed`** - エージェントの実行でエラーが発生した。
+- **`approval.requested`** - アクションが人間による承認のためにキューに入った。
+- **`approval.decided`** - 承認が承認、却下、または実行失敗された。
 
-See [Webhook イベント](#webhook-events) for which events fire when, and [Webhook ペイロード](#webhook-payloads) for the schema of each.
+どのイベントがいつ発火するかについては[Webhook Events](#webhook-events)を、それぞれのスキーマについては[Webhook Payloads](#webhook-payloads)を参照してください。
 
-### 配信されないもの
+### 配信されない内容
 
-- **Per-tool-action webhooks.** A run that calls `pin_comment` does not fire a separate webhook for the pin - the action is included in the run's `trigger.succeeded` payload. If you want per-action delivery, parse the `actions` array on the trigger payload.
-- **Dropped triggers.** A trigger that does not dispatch (over budget, wrong scope) does not fire a webhook. Drops are visible only in the [Analytics ページ](#analytics-page).
-- **Replay-produced triggers.** Test runs do not fire webhooks. See [テスト実行（リプレイ）](#test-runs-replays).
+- **ツールアクションごとのWebhook。** `pin_comment`を呼び出す実行は、ピン操作に対して個別のWebhookを発火しません。そのアクションは実行の`trigger.succeeded`ペイロードに含まれます。アクションごとの配信が必要な場合は、トリガーペイロードの`actions`配列をパースしてください。
+- **ドロップされたトリガー。** ディスパッチされないトリガー(予算超過、スコープ不一致)はWebhookを発火しません。ドロップは[Analyticsページ](#analytics-page)でのみ確認できます。
+- **リプレイによって生成されたトリガー。** テスト実行はWebhookを発火しません。[Test Runs (Replays)](#test-runs-replays)を参照してください。
 
 ### 設定
 
-For each webhook you set:
+各Webhookで以下を設定します:
 
-- **URL** - the HTTPS endpoint to POST to.
-- **Domain** - the comment domain this webhook applies to (your tenant may host multiple domains). `*` matches all domains; `*.example.com` is a glob; an exact domain matches only that one.
-- **Events** - which of the four event types to subscribe to.
-- **Agents** - empty for "all agents", or a list of specific agent IDs to filter.
-- **Method** - POST or PUT (default POST).
-- **No-retry status codes** - HTTP response codes that should be treated as terminal failures, not retried (e.g., 410 Gone, 422 Unprocessable). See [Webhook Retries](#webhook-retries).
+- **URL** - POST先のHTTPSエンドポイント。
+- **Domain** - このWebhookが適用されるコメントのドメイン(テナントは複数のドメインをホストしている場合があります)。`*`はすべてのドメインに一致し、`*.example.com`はglobパターン、完全一致のドメインはそのドメインのみに一致します。
+- **Events** - 購読する4種類のイベントタイプ。
+- **Agents** - 「すべてのエージェント」の場合は空、またはフィルターする特定のエージェントIDのリスト。
+- **Method** - POSTまたはPUT(デフォルトはPOST)。
+- **No-retry status codes** - 最終的な失敗として扱われ、リトライされないHTTPレスポンスコード(例: 410 Gone、422 Unprocessable)。[Webhook Retries](#webhook-retries)を参照してください。
 
-Multiple webhooks can subscribe to the same event - each one queues independently and is delivered to its own URL.
+複数のWebhookが同じイベントを購読できます。それぞれが独立してキューに入り、各自のURLに配信されます。
 
 ### ドメインごとのマッチング
 
-A given event is delivered to **every webhook whose `domain` field matches the comment's domain**. The matching uses a simple glob:
+特定のイベントは、**コメントのドメインに`domain`フィールドが一致するすべてのWebhook**に配信されます。マッチングにはシンプルなglobを使用します:
 
-- Exact: `example.com` matches only `example.com`.
-- Wildcard star: `*` matches every domain.
-- Subdomain glob: `*.example.com` matches `blog.example.com`, `forum.example.com`, but not `example.com` itself.
+- 完全一致: `example.com`は`example.com`のみに一致します。
+- ワイルドカードスター: `*`はすべてのドメインに一致します。
+- サブドメインglob: `*.example.com`は`blog.example.com`や`forum.example.com`に一致しますが、`example.com`自体には一致しません。
 
-The domain on a payload is the first non-null result from: the comment's `domain`, the URL parsed against your tenant's domain configuration, or the `Page` lookup by `urlId`.
+ペイロード上のドメインは、コメントの`domain`、テナントのドメイン設定に対してパースされたURL、または`urlId`による`Page`ルックアップのうち、最初の非nullの結果です。
 
 ### エージェントごとのフィルタリング
 
-The **Agents** field lets a webhook subscribe to only certain agents. Empty means "all agents". When non-empty, the webhook only fires for agents in the list.
+**Agents**フィールドにより、Webhookは特定のエージェントのみを購読できます。空の場合は「すべてのエージェント」を意味します。空でない場合、Webhookはリスト内のエージェントに対してのみ発火します。
 
-This is useful when you have one webhook for moderation events and another for engagement events, both routing to different downstream systems.
+これは、モデレーションイベント用のWebhookとエンゲージメントイベント用のWebhookを別々に持ち、それぞれ異なる下流システムにルーティングする場合に便利です。
 
 ### テスト送信
 
-The webhook config UI has a **Test send** button that posts a fake payload to the URL so you can verify connectivity, signing, and your endpoint's response code without waiting for a real event.
+Webhook設定UIには**Test send**ボタンがあり、実際のイベントを待たずに、接続性、署名、エンドポイントのレスポンスコードを確認できるよう、偽のペイロードをURLにPOSTします。
 
 ### 配信ログ
 
-Every delivery (and every retry) lands in the [Webhook 配信ログ](#webhook-logs) page so you can see what happened on the wire.
+すべての配信(およびすべてのリトライ)は[Webhook Delivery Logs](#webhook-logs)ページに記録されるため、ネットワーク上で何が起こったかを確認できます。
 
 ### 署名
 
-Every webhook is signed with HMAC-SHA256 using your tenant's API secret. See [Webhook 署名](#webhook-signing).
+すべてのWebhookは、テナントのAPIシークレットを使用したHMAC-SHA256で署名されます。[Webhook Signing](#webhook-signing)を参照してください。
 
-### 適格性
+### 利用条件
 
-Agent webhooks require valid billing on the tenant. They use the same signing/secret infrastructure as your existing comment webhooks - if you have already integrated comment webhooks (see the [Webhooks ガイド](/guide-webhooks.html)), the agent webhook integration is the same shape with new event types.
+エージェントWebhookには、テナントの有効な課金情報が必要です。既存のコメントWebhookと同じ署名/シークレットインフラストラクチャを使用します。コメントWebhookをすでに統合している場合([Webhooksガイド](/guide-webhooks.html)を参照)、エージェントWebhookの統合は新しいイベントタイプが追加された同じ構造です。

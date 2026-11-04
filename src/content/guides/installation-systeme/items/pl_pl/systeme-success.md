@@ -6,5 +6,3 @@ Teraz, jeśli wyświetlimy wpis na blogu, powinniśmy zobaczyć FastComments!
 </div>
 
 Gratulacje za skonfigurowanie FastComments z Systeme.io! Jeśli napotkałeś błąd domeny (Domain Error) lub chcesz dowiedzieć się, jak dostosować obszar komentarzy, czytaj dalej!
-
----

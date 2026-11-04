@@ -1,4 +1,3 @@
----
 Uspešno! Zdaj bi morali videti FastComments pripomoček za komentarje.
 
 <div class="screenshot white-bg">
@@ -7,4 +6,3 @@ Uspešno! Zdaj bi morali videti FastComments pripomoček za komentarje.
 </div>
 
 Čestitamo pri nastavitvi FastComments s ThriveCart! Če ste naleteli na Domain Error, ali bi radi izvedeli, kako prilagoditi območje komentarjev, berite naprej!
----

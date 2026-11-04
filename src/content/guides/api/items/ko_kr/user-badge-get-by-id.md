@@ -1,4 +1,3 @@
----
 이 엔드포인트는 고유 ID로 특정 사용자 배지를 가져올 수 있게 합니다.
 
 Example Request:
@@ -52,4 +51,3 @@ Possible Error Responses:
   "reason": "The user badge badge123 was not found."
 }
 [inline-code-end]
----

@@ -1,26 +1,26 @@
-List pages for a tenant. Used by the FChat desktop client to populate its room list.  
-Requires `enableFChat` to be true on the resolved custom config for each page.  
-Pages that require SSO are filtered against the requesting user's group access.
+Lista páginas para um tenant. Usada pelo cliente desktop FChat para popular sua lista de salas.
+Requer que `enableFChat` seja true na configuração customizada resolvida de cada página.
+Páginas que exigem SSO são filtradas de acordo com o acesso a grupos do usuário solicitante.
 
-## Parameters
+## Parâmetros
 
-| Nome | Tipo | Localização | Obrigatório | Descrição |
-|------|------|-------------|-------------|-----------|
+| Nome | Tipo | Local | Obrigatório | Descrição |
+|------|------|----------|----------|-------------|
 | tenantId | string | path | Sim |  |
-| cursor | string | query | Não | Cursor de paginação opaco retornado como `nextCursor` de uma solicitação anterior. Vinculado ao mesmo `sortBy`. |
+| cursor | string | query | Não | Cursor opaco de paginação retornado como `nextCursor` de uma requisição anterior. Vinculado ao mesmo `sortBy`. |
 | limit | integer | query | Não | 1..200, padrão 50 |
-| q | string | query | Não | Filtro opcional de prefixo de título sem distinção entre maiúsculas e minúsculas. |
-| sortBy | string | query | Não | Ordem de classificação. `updatedAt` (padrão, mais recentes primeiro), `commentCount` (páginas com mais comentários primeiro) ou `title` (alfabética). |
+| q | string | query | Não | Filtro opcional de prefixo de título, sem diferenciar maiúsculas de minúsculas. |
+| sortBy | string | query | Não | Ordem de classificação. `updatedAt` (padrão, mais recentes primeiro), `commentCount` (mais comentados primeiro) ou `title` (alfabética). |
 | hasComments | boolean | query | Não | Se true, retorna apenas páginas com pelo menos um comentário. |
 
-## Response
+## Resposta
 
-Returns: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_public_pages_response.py)
+Retorna: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_public_pages_response.py)
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo get_pages_public'; type = 'python'; isFunctional = false; inline-code-attrs-end]  
-[inline-code-start]  
+[inline-code-attrs-start title = 'Exemplo de get_pages_public'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
 import client
 from client.api.public_api import GetPagesPublicOptions
 from client.models.get_public_pages_response import GetPublicPagesResponse
@@ -28,23 +28,23 @@ from client.models.pages_sort_by import PagesSortBy
 from client.rest import ApiException
 from pprint import pprint
 
-# Definir o host é opcional e o padrão é https://fastcomments.com
-# Consulte configuration.py para obter uma lista de todos os parâmetros de configuração suportados.
+# Defining the host is optional and defaults to https://fastcomments.com
+# See configuration.py for a list of all supported configuration parameters.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Entre em um contexto com uma instância do cliente API
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # Crie uma instância da classe API
+    # Create an instance of the API class
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    cursor = 'cursor_example' # str | Cursor de paginação opaco retornado como `nextCursor` de uma solicitação anterior. Vinculado ao mesmo `sortBy`. (opcional)
-    limit = 56 # int | 1..200, padrão 50 (opcional)
-    q = 'q_example' # str | Filtro opcional de prefixo de título sem distinção entre maiúsculas e minúsculas. (opcional)
-    sort_by = client.PagesSortBy() # PagesSortBy | Ordem de classificação. `updatedAt` (padrão, mais recentes primeiro), `commentCount` (páginas com mais comentários primeiro) ou `title` (alfabética). (opcional)
-    has_comments = True # bool | Se true, retorna apenas páginas com pelo menos um comentário. (opcional)
+    cursor = 'cursor_example' # str | Cursor opaco de paginação retornado como `nextCursor` de uma requisição anterior. Vinculado ao mesmo `sortBy`. (optional)
+    limit = 56 # int | 1..200, padrão 50 (optional)
+    q = 'q_example' # str | Filtro opcional de prefixo de título, sem diferenciar maiúsculas de minúsculas. (optional)
+    sort_by = client.PagesSortBy() # PagesSortBy | Ordem de classificação. `updatedAt` (padrão, mais recentes primeiro), `commentCount` (mais comentados primeiro) ou `title` (alfabética). (optional)
+    has_comments = True # bool | Se true, retorna apenas páginas com pelo menos um comentário. (optional)
 
     try:
         api_response = api_instance.get_pages_public(tenant_id, GetPagesPublicOptions(cursor=cursor, limit=limit, q=q, sort_by=sort_by, has_comments=has_comments))

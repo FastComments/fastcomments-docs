@@ -25,5 +25,3 @@ if pageOpt.isSome:
   discard page
   discard httpResp
 [inline-code-end]
-
----

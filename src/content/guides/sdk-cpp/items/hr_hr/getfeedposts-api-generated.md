@@ -24,5 +24,3 @@ api->getFeedPosts(U("my-tenant-123"), *opts).then([](std::shared_ptr<GetFeedPost
     auto count = resp->posts.size();
 });
 [inline-code-end]
-
----

@@ -1,3 +1,1 @@
----
 Pozovite FastComments API iz Nima. Instalirajte pomoću nimble, zatim kreirajte, dohvatite i moderirajte komentare, uz SSO pomoćnike i dokumentirane sve krajnje točke.
----

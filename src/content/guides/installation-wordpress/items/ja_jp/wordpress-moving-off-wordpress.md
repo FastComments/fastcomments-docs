@@ -1,43 +1,43 @@
-If you are moving your site off of WordPress and want FastComments on the new site, you do not need the WordPress plugin. Export your comments from WordPress, then upload the file on the [Import page](https://fastcomments.com/auth/my-account/manage-data/import) in the FastComments dashboard.
+WordPressからサイトを移行し、新しいサイトでFastCommentsを利用したい場合、WordPressプラグインは必要ありません。WordPressからコメントをエクスポートし、FastCommentsダッシュボードの[インポートページ](https://fastcomments.com/auth/my-account/manage-data/import)でファイルをアップロードしてください。
 
-We support two WordPress export formats.
+WordPressのエクスポート形式を2つサポートしています。
 
-### WordPress XML（推奨）
+### WordPress XML(推奨)
 
-This is the file from WordPress's built-in exporter, so no extra plugin is needed.
+これはWordPressの組み込みエクスポーターが出力するファイルなので、追加のプラグインは不要です。
 
-1. In your WordPress admin, go to `Tools -> Export`.
-2. Select `All content` and click `Download Export File`.
-3. On the FastComments [Import page](https://fastcomments.com/auth/my-account/manage-data/import), select `WordPress (.xml)` and upload the file.
+1. WordPressの管理画面で `Tools -> Export` に移動します。
+2. `All content` を選択し、`Download Export File` をクリックします。
+3. FastCommentsの[インポートページ](https://fastcomments.com/auth/my-account/manage-data/import)で `WordPress (.xml)` を選択し、ファイルをアップロードします。
 
-Each comment is tied to the URL of the post it was left on, which is already in the file.
+各コメントは、コメントが投稿されたページのURLに紐付けられており、このURLはすでにファイル内に含まれています。
 
-The import keeps the author name, email, and website, the date, the content, reply threading, and whether the comment was approved. Commenter avatars are brought over from Gravatar. Votes are not part of this format.
+インポートでは、投稿者名、メールアドレス、ウェブサイト、日付、内容、返信のスレッド構造、コメントの承認状態が保持されます。コメント投稿者のアバターはGravatarから取り込まれます。投票はこの形式には含まれません。
 
 ### WordPress CSV
 
-This is the file from [WebToffee's WordPress Comments Import & Export plugin](https://wordpress.org/plugins/comments-import-export-woocommerce/).
+これは[WebToffeeのWordPress Comments Import & Exportプラグイン](https://wordpress.org/plugins/comments-import-export-woocommerce/)が出力するファイルです。
 
-1. Install the plugin in your WordPress admin and export your comments as CSV.
-2. Replace each `comment_post_ID` value with the post's URL.
-3. On the FastComments [Import page](https://fastcomments.com/auth/my-account/manage-data/import), select `WordPress (.csv)` and upload the file.
+1. WordPressの管理画面にプラグインをインストールし、コメントをCSVとしてエクスポートします。
+2. 各 `comment_post_ID` の値を投稿のURLに置き換えます。
+3. FastCommentsの[インポートページ](https://fastcomments.com/auth/my-account/manage-data/import)で `WordPress (.csv)` を選択し、ファイルをアップロードします。
 
-Each comment is tied to the `comment_post_ID` column. WordPress fills this column with the post ID, and your new site does not have WordPress post IDs, so step 2 replaces it with the URL.
+各コメントは `comment_post_ID` 列に紐付けられています。WordPressはこの列に投稿IDを設定しますが、新しいサイトにはWordPressの投稿IDが存在しないため、手順2でURLに置き換えます。
 
-The import keeps the author name, email, and website, the date, the content, reply threading, and whether the comment was approved. Commenter avatars are brought over from Gravatar. It also keeps WordPress's spam flag, and wpDiscuz likes and dislikes when the file includes them.
+インポートでは、投稿者名、メールアドレス、ウェブサイト、日付、内容、返信のスレッド構造、コメントの承認状態が保持されます。コメント投稿者のアバターはGravatarから取り込まれます。また、ファイルに含まれている場合は、WordPressのスパムフラグやwpDiscuzのいいね・よくないねも保持されます。
 
-### 新しいページへのコメントのマッチング
+### 新しいページへのコメントの紐付け
 
-If your new site keeps the same URLs as your WordPress site, the comments show up on the matching pages with no extra setup.
+新しいサイトがWordPressサイトと同じURLを維持している場合、追加の設定なしでコメントが対応するページに表示されます。
 
-If the domain changes, run the [Domain Migration tool](/guide-migrations.html#migrating-domains) after the import. If individual page URLs change, you can [migrate each page](/guide-migrations.html#migrating-pages) from its old URL to the new one.
+ドメインが変更される場合は、インポート後に[ドメイン移行ツール](/guide-migrations.html#migrating-domains)を実行してください。個別のページURLが変更される場合は、古いURLから新しいURLへ[各ページを移行](/guide-migrations.html#migrating-pages)できます。
 
-For bulk page migrations, such as removing the domain from the value you pass to the comment widget's [urlId](/guide-customizations-and-configuration.html#url-id) field, [open a support ticket](https://fastcomments.com/auth/my-account/help) and we will handle it for you.
+コメントウィジェットの[urlId](/guide-customizations-and-configuration.html#url-id)フィールドに渡す値からドメインを削除するなど、ページの一括移行が必要な場合は、[サポートチケットを開いて](https://fastcomments.com/auth/my-account/help)ください。弊社にて対応いたします。
 
-### 切り替える前に
+### 切り替え前の注意点
 
-You can run the import as many times as you like. Re-importing the same file [does not create duplicates](/guide-migrations.html#importing-data), so you can import once to test the new site, then import again with your latest comments right before switching over.
+インポートは何度でも実行できます。同じファイルを再インポートしても[重複は作成されない](/guide-migrations.html#importing-data)ため、まず一度インポートして新しいサイトをテストし、切り替え直前に最新のコメントで再度インポートすることができます。
 
-For export files larger than 1GB, [サポートにお問い合わせ](https://fastcomments.com/auth/my-account/help).
+1GBを超えるエクスポートファイルについては、[サポートまでご連絡ください](https://fastcomments.com/auth/my-account/help)。
 
-To add FastComments to your new site, see the [インストールガイド](/guide-installation.html).
+新しいサイトにFastCommentsを追加する方法については、[インストールガイド](/guide-installation.html)をご覧ください。

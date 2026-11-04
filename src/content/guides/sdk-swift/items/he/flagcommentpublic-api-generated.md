@@ -1,4 +1,3 @@
----
 ## פרמטרים
 
 | שם | סוג | מיקום | חובה | תיאור |
@@ -35,5 +34,3 @@ PublicAPI.flagCommentPublic(tenantId: tenantId, commentId: commentId, isFlagged:
     }
 }
 [inline-code-end]
-
----

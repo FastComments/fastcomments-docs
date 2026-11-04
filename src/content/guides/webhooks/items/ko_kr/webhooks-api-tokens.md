@@ -1,4 +1,3 @@
----
 FastComments 웹훅 요청에는 보안을 위해 여러 인증 메커니즘이 포함되어 있습니다.
 
 ## 전송되는 헤더
@@ -111,5 +110,3 @@ function verifyWebhookSignature($headers, $body, $apiSecret) {
 ## 레거시 인증
 
 하위 호환성을 위해 귀하의 API Secret이 포함된 `token` 헤더는 여전히 전송됩니다. 그러나 HMAC 검증은 재생 공격으로부터 보호하므로 보안 향상을 위해 HMAC 검증으로 마이그레이션할 것을 권장합니다.
-
----

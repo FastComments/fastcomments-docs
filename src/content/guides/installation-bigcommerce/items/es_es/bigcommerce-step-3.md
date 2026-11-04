@@ -1,4 +1,3 @@
----
 A continuación, copie el código que usaremos para instalar FastComments:
 
 [code-example-start config = {}; title = 'BigCommerce Comments Code'; isFunctional = false; code-example-end]
@@ -30,5 +29,3 @@ Ahora podemos guardar el archivo:
     <div class="title">Editar el editor</div>
     <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-3-exit.png" alt="Editar el editor" />
 </div>
-
----

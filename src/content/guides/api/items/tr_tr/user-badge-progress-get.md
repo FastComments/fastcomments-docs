@@ -1,19 +1,19 @@
-Bu uç nokta, çeşitli kriterlere göre kullanıcı rozet ilerleme kayıtlarını getirmenizi sağlar.
+Bu uç nokta, kullanıcı rozet ilerleme kayıtlarını çeşitli kriterlere göre getirmenizi sağlar.
 
-Example Request:
+Örnek İstek:
 
-[inline-code-attrs-start title = 'Rozet İlerlemelerini Listeleme - GET Örneği'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Rozet İlerlemesini Listele - GET Örneği'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 curl -X GET "https://fastcomments.com/api/v1/user-badge-progress?tenantId=demo&API_KEY=DEMO_API_SECRET"
 [inline-code-end]
 
-You can add various query parameters to filter the results:
+Sonuçları filtrelemek için çeşitli sorgu parametreleri ekleyebilirsiniz:
 
-- `userId` - Belirli bir kullanıcı için ilerlemeyi getirir
-- `limit` - Döndürülecek maksimum kayıt sayısı (varsayılan 30, maks 200)
+- `userId` - Belirli bir kullanıcının ilerlemesini getir
+- `limit` - Döndürülecek maksimum kayıt sayısı (varsayılan 30, maksimum 200)
 - `skip` - Atlanacak kayıt sayısı (sayfalama için)
 
-Example Response:
+Örnek Yanıt:
 
 [inline-code-attrs-start title = 'Yanıt'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -55,14 +55,14 @@ Example Response:
 }
 [inline-code-end]
 
-Possible Error Responses:
+Olası Hata Yanıtları:
 
-[inline-code-attrs-start title = 'Hata: Kiracı Kimliği Eksik'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Hata: Eksik Tenant ID'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",
   "code": "missing-tenant-id",
-  "reason": "Tenant ID (query param: tenantId) is missing."
+  "reason": "Tenant ID (sorgu parametresi: tenantId) eksik."
 }
 [inline-code-end]
 
@@ -71,6 +71,6 @@ Possible Error Responses:
 {
   "status": "failed",
   "code": "invalid-limit",
-  "reason": "The limit (query param: limit) is too large (> 200)."
+  "reason": "Limit (sorgu parametresi: limit) çok büyük (> 200)."
 }
 [inline-code-end]

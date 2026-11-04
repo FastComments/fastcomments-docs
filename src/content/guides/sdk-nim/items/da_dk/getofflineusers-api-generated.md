@@ -1,16 +1,17 @@
-Past commenters on the page who are NOT currently online. Sorted by displayName.  
-Brug dette efter at have udtømt /users/online for at gengive en "Members" sektion.  
-Cursor-paginering på commenterName: serveren går igennem den delvise {tenantId, urlId, commenterName} indeks fra afterName fremad via $gt, ingen $skip-omkostning.
+Tidligere kommentatorer på siden, som IKKE er online i øjeblikket. Sorteret efter displayName.
+Brug denne efter at have brugt /users/online op til at rendere et "Members"-afsnit.
+Cursor-paginering på commenterName: serveren gennemløber det partielle {tenantId, urlId, commenterName}
+indeks fra afterName fremad via $gt, uden $skip-omkostninger.
 
 ## Parametre
 
 | Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| urlId | string | Yes |  |
-| options | GetOfflineUsersOptions | No |  |
+| tenantId | string | Ja |  |
+| urlId | string | Ja |  |
+| options | GetOfflineUsersOptions | Nej |  |
 
-## Respons
+## Svar
 
 Returnerer: [`Option[PageUsersOfflineResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_page_users_offline_response.nim)
 

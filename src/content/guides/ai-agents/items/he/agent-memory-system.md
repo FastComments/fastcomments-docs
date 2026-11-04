@@ -1,76 +1,74 @@
-זיכרון סוכן הוא מאגר מפתח-ערך משותף בטווח הטננט שכל סוכן בטננט שלך יכול לקרוא ולכתוב אליו. הוא קיים כדי שסוכנים יוכלו לשמר הקשר בין ריצות.
+זיכרון הסוכן הוא מאגר key-value בהיקף טננט (tenant-scoped) ו**משותף** שכל סוכן בטננט שלך יכול לקרוא ממנו ולכתוב אליו. הוא קיים כדי שסוכנים יוכלו לשאת הקשר בין ריצות.
 
-### Why memory exists
+### למה קיים זיכרון
 
-ההקשר של ה-LLM הוא לכל ריצה. בלי זיכרון, סוכן שמנפיק אזהרה למשתמש לא יוכל לדעת על אותה אזהרה בפעם הבאה שהוא יפגוש את אותו משתמש. מדיניות ההדרגה של הפלטפורמה - "להזהיר לפני חסימה" - תלויה בכך שהסוכן יוכל למצוא את האזהרה הקודמת. הזיכרון הוא מה שמאפשר זאת.
+הקשר של LLM הוא לכל ריצה בנפרד. ללא זיכרון, לסוכן שמזהיר משתמש אין דרך לדעת על האזהרה הזו בפעם הבאה שהוא פוגש את אותו משתמש. מדיניות ההסלמה של הפלטפורמה - "להזהיר לפני חסימה" - תלויה ביכולת של הסוכן למצוא את האזהרה הקודמת. הזיכרון הוא מה שהופך את זה לאפשרי.
 
-### Two kinds of memory
+### שני סוגי זיכרון
 
-- **WARNING** - נכתב באופן אוטומטי כחלק מזרימת [`warn_user`](#tool-warn-user). הסוכן אינו כותב `WARNING` רשומות באופן ידני; הן תופעת לוואי של מתן אזהרה למשתמש.
+- **WARNING** - נכתב אוטומטית כחלק מתהליך [`warn_user`](#tool-warn-user). הסוכן לא כותב רשומות `WARNING` באופן ידני; הן תוצאה לוואי של הזהרת משתמש.
 - **NOTE** - נכתב על ידי [`save_memory`](#tools-overview). הקשר כללי שהסוכן רוצה שסוכנים עתידיים ידעו.
 
-The escalation policy looks specifically for `WARNING` records when deciding whether a ban is justified.
+מדיניות ההסלמה מחפשת במיוחד רשומות `WARNING` כשהיא מחליטה האם חסימה מוצדקת.
 
-### Tenant-scoped, agent-shared
+### בהיקף טננט, משותף לסוכנים
 
-All agents in your tenant share **one memory pool**. A note saved by Agent A is visible to Agent B's `search_memory` calls. This is intentional - you want a triage agent's notes to inform a moderator agent's decisions.
+כל הסוכנים בטננט שלך משתפים **מאגר זיכרון אחד**. הערה שנשמרה על ידי סוכן A גלויה לקריאות `search_memory` של סוכן B. זה מכוון - אתה רוצה שהערות של סוכן מיון יעדכנו את ההחלטות של סוכן פיקוח.
 
-`tenantId` is set by the executor from the agent's own tenant - never from LLM args - so cross-tenant memory leaks are impossible by construction.
+`tenantId` נקבע על ידי ה-executor מהטננט של הסוכן עצמו - לעולם לא מה-args של ה-LLM - כך שדליפות זיכרון בין טננטים בלתי אפשריות מבחינה מבנית.
 
-### What's in a memory record
+### מה נמצא ברשומת זיכרון
 
-Each memory entry contains:
+כל רשומת זיכרון מכילה:
 
-- **Which agent wrote it**, and when.
-- **Who it's about** - the user this memory describes. The agent cannot fabricate this; the platform fills it in automatically from whatever triggered the agent.
-- **A hidden alt-account signal** - the platform also records (privately) the IP fingerprint of the originating comment, so future memory searches can surface notes about other accounts posting from the same IP. The fingerprint is never shown to the agent or the LLM.
-- **The note itself** - up to 2000 characters of free text.
-- **Tags** for retrieval - up to 10 short tags.
-- **A kind** - either a warning or a general note.
-- **An optional comment link** - if the memory is tied to a specific comment.
+- **איזה סוכן כתב אותה**, ומתי.
+- **על מי היא** - המשתמש שהזיכרון הזה מתאר. הסוכן לא יכול להמציא את זה; הפלטפורמה ממלאת אותו אוטומטית ממה שהפעיל את הסוכן.
+- **אות חשבונות-חלופיים נסתר** - הפלטפורמה גם מתעדת (באופן פרטי) את טביעת ה-IP של התגובה המקורית, כך שחיפושי זיכרון עתידיים יכולים להעלות הערות על חשבונות אחרים שפורסמו מאותו IP. הטביעה לעולם לא מוצגת לסוכן או ל-LLM.
+- **ההערה עצמה** - עד 2000 תווים של טקסט חופשי.
+- **תגיות** לאחזור - עד 10 תגיות קצרות.
+- **סוג** - או אזהרה או הערה כללית.
+- **קישור לתגובה אופציונלי** - אם הזיכרון קשור לתגובה ספציפית.
 
-### Search behavior
+### התנהגות חיפוש
 
-[`search_memory`](#tools-overview) returns up to 25 records, sorted newest-first, scoped automatically to (the trigger's user) OR (other accounts on the trigger's IP). The results are also char-capped at 8000 total characters across all returned content - older entries are dropped if the cap is hit.
+[`search_memory`](#tools-overview) מחזיר עד 25 רשומות, ממוינות מהחדש לישן, מוגבלות אוטומטית ל-(המשתמש של הטריגר) או (חשבונות אחרים ב-IP של הטריגר). התוצאות גם מוגבלות בתווים ל-8000 תווים בסך הכל על פני כל התוכן המוחזר - רשומות ישנות יותר נשמטות אם המגבלה מושגת.
 
-The agent does not pass `userId` or `targetIpHash`. Both are set by the executor.
+הסוכן לא מעביר `userId` או `targetIpHash`. שניהם נקבעים על ידי ה-executor.
 
-### Persistence
+### שמירה לאורך זמן
 
-Memory has **no TTL**. Records persist until explicitly removed. WARNING records about a user are intentionally never auto-deleted - the escalation history must be findable indefinitely or the platform's "search before banning" check is meaningless.
+לזיכרון **אין TTL**. רשומות נשמרות עד שמוסרות באופן מפורש. רשומות WARNING על משתמש לעולם לא נמחקות אוטומטית בכוונה - היסטוריית ההסלמה חייבת להיות ניתנת למציאה ללא הגבלת זמן, אחרת בדיקת "חיפוש לפני חסימה" של הפלטפורמה חסרת משמעות.
 
-The three ways memory is removed:
+שלוש הדרכים שבהן זיכרון מוסר:
 
-- A moderator deletes the underlying comment - any memory tied to that comment is cascaded.
-- A user is deleted - all memory entries about that user are removed in the same transaction.
-- Your tenant is deleted.
+- מנחה (moderator) מוחק את התגובה המקורית - כל זיכרון הקשור לאותה תגובה מוסר בשרשרת.
+- משתמש נמחק - כל רשומות הזיכרון על אותו משתמש מוסרות באותה טרנזקציה.
+- הטננט שלך נמחק.
 
-There is no admin UI for deleting individual memory records today.
+אין כיום ממשק ניהול למחיקת רשומות זיכרון בודדות.
 
-### Memory in dry-run
+### זיכרון ב-dry-run
 
-Dry-run agents do **not** write memory. This is by design: a dry-run agent's hypothetical decisions should not pollute the shared memory pool. Read-back via `search_memory` works in dry-run normally - the agent can see real memories from live agents - it just cannot add to them.
+סוכני dry-run **לא** כותבים זיכרון. זה בכוונה: ההחלטות ההיפותטיות של סוכן dry-run לא אמורות לזהם את מאגר הזיכרון המשותף. קריאה חוזרת באמצעות `search_memory` עובדת ב-dry-run כרגיל - הסוכן יכול לראות זיכרונות אמיתיים מסוכנים חיים - הוא פשוט לא יכול להוסיף להם.
 
-### Memory in replays
+### זיכרון ב-replays
 
-Same as dry-run: replay agents do not write memory. Replays are preview-only. See [Test Runs (Replays)](#test-runs-replays).
+כמו ב-dry-run: סוכני replay לא כותבים זיכרון. Replays הם לתצוגה מקדימה בלבד. ראה [Test Runs (Replays)](#test-runs-replays).
 
-### Constraints summary
+### סיכום מגבלות
 
-| Limit | Value |
+| מגבלה | ערך |
 |---|---|
-| אורך מקסימלי של תוכן זיכרון | 2000 תווים |
-| אורך מקסימלי של תג זיכרון | 64 תווים |
-| מקסימום מספר תגי זיכרון | 10 |
-| אורך מקסימלי של שאילתת זיכרון | 200 תווים |
+| אורך מקסימלי לתוכן זיכרון | 2000 תווים |
+| אורך מקסימלי לתגית זיכרון | 64 תווים |
+| מספר תגיות מקסימלי | 10 |
+| אורך מקסימלי לשאילתת זיכרון | 200 תווים |
 | מגבלת תוצאות חיפוש זיכרון | 25 רשומות |
-| מגבלת תוכן כוללת לתוצאות חיפוש זיכרון | 8000 תווים |
+| מגבלת תוכן כוללת לחיפוש זיכרון | 8000 תווים |
 
-### See also
+### ראה גם
 
-- [Tool: save_memory](#tools-overview) for writing.
-- [Tool: search_memory](#tools-overview) for reading.
-- [Tool: warn_user](#tool-warn-user) - the only tool that writes WARNING-kind memory.
-- [Tool: ban_user](#tool-ban-user) - the system prompt requires `search_memory` to be called before this.
-
----
+- [Tool: save_memory](#tools-overview) לכתיבה.
+- [Tool: search_memory](#tools-overview) לקריאה.
+- [Tool: warn_user](#tool-warn-user) - הכלי היחיד שכותב זיכרון מסוג WARNING.
+- [Tool: ban_user](#tool-ban-user) - ה-system prompt דורש קריאה ל-`search_memory` לפני כלי זה.

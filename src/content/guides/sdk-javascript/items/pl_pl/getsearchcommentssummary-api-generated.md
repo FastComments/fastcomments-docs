@@ -36,5 +36,3 @@ async function runSearch() {
 
 runSearch();
 [inline-code-end]
-
----

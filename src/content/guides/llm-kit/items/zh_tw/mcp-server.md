@@ -86,5 +86,3 @@ https://fastcomments.com/mcp?tenantId=YOUR_TENANT_ID&API_KEY=YOUR_API_KEY
 ### 安全性
 
 包含 API 金鑰的端點 URL 為機密資訊：請勿貼到公開聊天、截圖或提交中。若金鑰外洩，請在儀表板的 API 金鑰頁面重新產生。OAuth 令牌則不會有此風險，因為它們綁定於單一應用，且可於 Connected Apps 中撤銷。
-
----

@@ -26,5 +26,3 @@ api->getManualBadges(tenantId, sso)
         }
     });
 [inline-code-end]
-
----

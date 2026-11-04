@@ -5,5 +5,3 @@ Ugradite widgete za komentiranje uživo, chat i recenzije u vašu Vue 2 aplikaci
 ## Repozitorij
 
 [Pogledajte na GitHubu](https://github.com/FastComments/fastcomments-vue)
-
----

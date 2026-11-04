@@ -1,4 +1,3 @@
----
 Por defecto, FastComments incluye detección de spam entrenable.
 
 A medida que moderas los comentarios y los marcas como **Spam**, o marcas comentarios que se han encontrado automáticamente como **Spam** como **Not Spam**, el sistema de detección de spam aprenderá de estas acciones para determinar con mayor precisión qué quieres que sea spam.
@@ -38,5 +37,3 @@ Los usuarios SSO con estos permisos no tendrán sus comentarios verificados por 
 ### Mensajes repetidos
 
 FastComments detectará y evitará mensajes repetidos. También detectará mensajes repetidos que sean muy similares para ayudar a prevenir el spam. Esto no puede desactivarse ya que evita que nuestra plataforma sea utilizada para abuso. Si tiene un factor de confianza alto, esto se tiene en cuenta al aplicar la prevención de mensajes repetidos.
-
----

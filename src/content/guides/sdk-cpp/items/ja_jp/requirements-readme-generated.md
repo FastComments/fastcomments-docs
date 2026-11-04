@@ -1,8 +1,6 @@
----
 - C++17 以降
 - CMake 3.14 以降
 - OpenSSL
 - C++ REST SDK (cpprestsdk)
 - Boost
 - Google Test (テストのために自動的にダウンロードされます)
----

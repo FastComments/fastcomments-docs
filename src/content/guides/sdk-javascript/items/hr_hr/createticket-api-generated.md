@@ -32,5 +32,3 @@ async function submitTicket() {
 
 submitTicket();
 [inline-code-end]
-
----

@@ -1,8 +1,8 @@
-На цьому кроці вам потрібно скопіювати наведений нижче готовий код віджета.
+На наступному кроці вам потрібно скопіювати наведений нижче готовий код віджета.
 
-Поки ви увійшли в FastComments.com, наведений нижче фрагмент коду вже міститиме інформацію про ваш обліковий запис. Скопіюємо його:
+Оскільки ви увійшли на FastComments.com, наведений нижче фрагмент коду вже міститиме інформацію про ваш обліковий запис. Давайте скопіюємо його:
 
-[inline-code-attrs-start title = 'Код Super.so FastComments Collab Chat'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Код FastComments Collab Chat для Super.so'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-collab-chat.min.js"></script>
 <script>
@@ -23,12 +23,12 @@
                 return setTimeout(load, 100);
             }
 
-            // Очистити існуючий екземпляр
+            // Очистити наявний екземпляр
             if (target.fastCommentsInstance) {
                 target.fastCommentsInstance.destroy();
             }
 
-            // Видалити наявну верхню панель, якщо вона існує
+            // Очистити наявну верхню панель, якщо вона існує
             if (currentTopBar && currentTopBar.parentNode) {
                 currentTopBar.parentNode.removeChild(currentTopBar);
             }
@@ -54,7 +54,7 @@
         // Початкове завантаження
         load();
 
-        // Перевіряти на зміни кожні 500 мс
+        // Перевіряти зміни кожні 500 мс
         setInterval(() => {
             // Перезавантажити, якщо pathname змінився
             if (window.location.pathname !== currentPathname) {
@@ -81,15 +81,15 @@
 </script>
 [inline-code-end]
 
-Now paste in the `Body` area:
+Тепер вставте код у область `Body`:
 
 <div class="screenshot white-bg">
     <div class="title">Вставлений код</div>
     <img class="screenshot-image" src="/images/installation-guides/super-so-step-3-pasted-code.png" alt="Вставлений код" />
 </div>
 
-If you see a "this is a demo message" after pasting the code:
+Якщо після вставки коду ви бачите повідомлення "this is a demo message":
 
-- Переконайтеся, що ви увійшли у свій обліковий запис на fastcomments.com.
-- Переконайтеся, що у вас увімкнено сторонні куки.
-- Потім оновіть цю сторінку та скопіюйте фрагмент коду ще раз. Він має містити `tenantId`, заповнений ідентифікатором вашого тенанта.
+- Переконайтеся, що ви увійшли у свій обліковий запис fastcomments.com.
+- Переконайтеся, що у вас увімкнені сторонні файли cookie.
+- Потім оновіть цю сторінку та скопіюйте фрагмент коду ще раз. У ньому має бути заповнений `tenantId` ідентифікатором вашого тенанта.

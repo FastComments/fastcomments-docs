@@ -40,6 +40,3 @@ Sada odaberite naš novi element i kliknite `Open Code Editor` s lijeve strane:
     <div class="title">Otvorite uređivač koda</div>
     <img class="screenshot-image" src="/images/installation-guides/gohighlevel-site-step-6-open-code-editor.png" alt="Otvorite uređivač koda" />
 </div>
-
-
----

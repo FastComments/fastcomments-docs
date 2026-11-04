@@ -25,5 +25,3 @@ api->postCommentsByIds(tenantId, params, sso).then([](pplx::task<std::shared_ptr
     }catch(const std::exception&){ }
 });
 [inline-code-end]
-
----

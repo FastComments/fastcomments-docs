@@ -1,29 +1,22 @@
-The individual votes behind one poll's tallies, oldest first.
+1つの投票の集計の背後にある個別の投票を、古い順に表示します。
 
-1つの投票の集計の背後にある個々の投票、古い順に表示します。
+投票はコメントに属するため、投票は常に1つの投票(ポール)ずつ読み取ります - commentId が必須です。これにより、すべてのクエリがコレクションが既に持っているインデックスを使用します。
 
-A poll belongs to a comment, so votes are always read one poll at a time - commentId is required. That
-keeps every query on the indexes the collection already has.
+投票のプライバシー設定に従います: 匿名投票の投票内容は読み取ることができません(poll-anonymous)。ここでも、id による取得でも同様です。
 
-投票はコメントに属しているため、投票は常に1つの投票ごとに読み取られます - commentId が必須です。これにより、クエリはコレクションがすでに持っているインデックス上で実行されます。
-
-Obeys the poll's privacy: an anonymous poll's votes cannot be read (poll-anonymous), here or by id.
-
-投票のプライバシーを遵守します：匿名投票の投票は読み取れません（poll-anonymous）、ここでも ID でも同様です。
-
-## Parameters
+## パラメータ
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| commentId | string | query | Yes |  |
-| voterId | string | query | No |  |
-| optionId | string | query | No |  |
-| skip | integer | query | No |  |
+| tenantId | string | query | はい |  |
+| commentId | string | query | はい |  |
+| voterId | string | query | いいえ |  |
+| optionId | string | query | いいえ |  |
+| skip | integer | query | いいえ |  |
 
 ## レスポンス
 
-返却: [`GetPollVotesResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetPollVotesResponse.java)
+戻り値: [`GetPollVotesResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetPollVotesResponse.java)
 
 ## 例
 
@@ -62,7 +55,6 @@ public class Example {
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      // Exception when calling DefaultApi#getPollVotes
       System.err.println("Exception when calling DefaultApi#getPollVotes");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());

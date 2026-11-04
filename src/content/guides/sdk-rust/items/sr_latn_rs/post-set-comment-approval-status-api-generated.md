@@ -28,5 +28,3 @@ async fn approve_comment(configuration: &configuration::Configuration) -> Result
     Ok(())
 }
 [inline-code-end]
-
----

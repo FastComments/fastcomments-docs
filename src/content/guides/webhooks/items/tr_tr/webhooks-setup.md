@@ -1,4 +1,3 @@
----
 `localhost` için üretim gibi aynı adımları izleyin. Üretim domain'leri ve API Secrets ayarlandığından emin olun.
 
 İlk olarak, [Webhooks admin](https://fastcomments.com/auth/my-account/manage-data/webhooks) adresine gidin. Bu, Manage Data -> Webhooks üzerinden erişilebilir.
@@ -18,4 +17,3 @@ Kaydetmeden önce, uç noktanın imzalı bir isteği kabul edip etmediğini kont
 Listeden bir webhook'u düzenleyebilir, devre dışı bırakabilir, yeniden etkinleştirebilir veya silebilirsiniz. Devre dışı bırakma, webhook yeniden etkinleştirilene kadar kuyruğa alınan olayları tutar; silme ise bunları yok eder.
 
 Webhook'lar ayrıca API üzerinden, örneğin Zapier ile oluşturulabilir. Bunlar aynı listede **API** kaynağıyla görünür. API üzerinden Webhook Yönetimine bakın.
----

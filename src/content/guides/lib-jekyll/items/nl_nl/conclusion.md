@@ -1,4 +1,3 @@
----
 ## Hulp nodig?
 
 Als u problemen ondervindt of vragen heeft over de Jekyll-bibliotheek, neem dan:
@@ -9,5 +8,3 @@ Als u problemen ondervindt of vragen heeft over de Jekyll-bibliotheek, neem dan:
 ## Bijdragen
 
 Bijdragen zijn welkom! Bezoek de [GitHub-repository](https://github.com/FastComments/fastcomments-jekyll) voor richtlijnen voor bijdragen.
-
----

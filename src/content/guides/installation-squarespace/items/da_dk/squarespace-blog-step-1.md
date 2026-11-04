@@ -25,5 +25,3 @@ Du bør se et tomt kodeområde som følgende:
     <div class="title">Tomt kodeområde</div>
     <img class="screenshot-image" src="/images/installation-guides/squarespace-step-1-4-code-area.png" alt="Empty Code Area" />
 </div>
-
----

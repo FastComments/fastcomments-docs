@@ -1,8 +1,8 @@
 ### Бърз старт
 
-Започването с Collab Chat е просто. Необходим ви е скриптът FastComments Collab Chat, HTML елемент, съдържащ текста, който искате да анотирате, и конфигурационен обект с вашия Tenant ID.
+Започването с Collab Chat е просто. Трябват ви скриптът FastComments Collab Chat, HTML елемент, съдържащ текста, който искате да анотирате, и конфигурационен обект с вашия Tenant ID.
 
-### Инсталиране
+### Инсталация
 
 Добавете скрипта Collab Chat към вашата страница:
 
@@ -23,17 +23,17 @@
     <title>My Article with Collab Chat</title>
 </head>
 <body>
-    <!-- Контейнер за вашето съдържание -->
+    <!-- Your content container -->
     <div id="article-content" style="min-height: 500px;">
         <h1>My Article Title</h1>
         <p>This is a paragraph that users can annotate. Simply highlight any text to start a discussion!</p>
         <p>You can have multiple paragraphs, and users can highlight text across any of them.</p>
     </div>
 
-    <!-- Заредете скрипта Collab Chat -->
+    <!-- Load the Collab Chat script -->
     <script src="https://cdn.fastcomments.com/js/embed-collab-chat.min.js"></script>
 
-    <!-- Инициализирайте Collab Chat -->
+    <!-- Initialize Collab Chat -->
     <script>
         FastCommentsCollabChat(document.getElementById('article-content'), {
             tenantId: 'demo'
@@ -43,20 +43,20 @@
 </html>
 [inline-code-end]
 
-Replace `'demo'` with your actual FastComments Tenant ID if it's not already, which you can find in your [FastComments dashboard](https://fastcomments.com/auth/my-account/api-secret).
+Заменете `'demo'` с вашия действителен FastComments Tenant ID, ако вече не сте го направили. Можете да го намерите в [FastComments таблото за управление](https://fastcomments.com/auth/my-account/api-secret).
 
 ### Как работи
 
-След като е инициализиран, потребителите могат да изберат произволен текст в целевия елемент. След кратко забавяне (3.5 секунди на десктоп), се появява подсказка, позволяваща им да започнат дискусия. Когато се създаде дискусия, върху текста се появява визуално открояване. Други потребители могат да задържат курсора върху или да кликнат върху открояването, за да видят и участват в дискусията. Всички дискусии се синхронизират в реално време за всички посетители.
+След инициализация потребителите могат да маркират всеки текст в целевия елемент. След кратко забавяне (3,5 секунди на десктоп) се появява подканващ прозорец, който им позволява да започнат дискусия. Когато се създаде дискусия, върху текста се появява визуално маркиране. Други потребители могат да посочат с мишката или да щракнат върху маркирането, за да видят и се включат в дискусията. Всички дискусии се синхронизират в реално време при всички посетители.
 
-### Демо на живо
+### Демонстрация на живо
 
-Можете да видите Collab Chat в действие на нашата [страница с демо на живо](https://fastcomments.com/product/collab-chat).
+Можете да видите Collab Chat в действие на нашата [страница с демонстрация на живо](https://fastcomments.com/product/collab-chat).
 
 ### Следващи стъпки
 
-Сега когато основите работят, можете да персонализирате външния вид и поведението в ръководството за опции на конфигурацията. Вижте ръководството за поведението при избор на текст, за да разберете как работи селекцията на текст. Научете за стилизиране и поддръжка на тъмен режим в ръководството за персонализиране. За напреднали интеграции разгледайте API справката.
+Сега, когато основите работят, можете да персонализирате външния вид и поведението в ръководството Configuration Options. Прегледайте ръководството Text Selection Behavior, за да разберете как работи избирането на текст. Научете повече за стилизирането и поддръжката на тъмен режим в ръководството Customization. За разширени интеграции разгледайте API Reference.
 
-### Фронтенд библиотеки
+### Frontend библиотеки
 
-Всички фронтенд библиотеки на FastComments (react, vue, angular, etc) поддържат Collab Chat.
+Всички FastComments frontend библиотеки (react, vue, angular и др.) имат Collab Chat.

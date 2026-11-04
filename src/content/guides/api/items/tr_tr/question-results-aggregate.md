@@ -1,32 +1,32 @@
 [api-resource-header-start name = 'QuestionResultsAggregate'; route = 'GET /api/v1/question-results-aggregate'; creditsCost = 2; api-resource-header-end]
 
-Burası sonuçların toplandığı yerdir.
+Sonuçların toplandığı (agregasyon) yer burasıdır.
 
 Agregasyon yanıt yapısı aşağıdaki gibidir:
 
 [inline-code-attrs-start title = 'QuestionResultsAggregationResult Yapısı'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface QuestionResultDataPoint {
-    /** Geçerli veri noktası (tarih kovası veya sayfa) için değerden kaç tane olduğunu gösteren değer->adet haritası. **/
+    /** A map of value to count of occurrences of that value for the current data point (date bucket or page). **/
     v: Map<ValueAsString, number>
     total: number
 }
 
 interface QuestionResultsAggregationResult {
-    /** Not - timeBucket belirtilmediğinde null olur. **/
+    /** Note - is null when timeBucket not specified. **/
     dataByDateBucket?: Map<DateString, QuestionResultDataPoint>
     dataByUrlId?: Map<URLIdString, QuestionResultDataPoint>
     countsByValue?: Map<ValueAsString, number>
-    /** Toplanan toplam sonuç sayısı. **/
+    /** The total number of results aggregated. **/
     total: number
-    /** Ortaya çıkan ağırlıklı ortalama. Ondalık sayıdır, genellikle iki ondalık veya daha az. **/
+    /** The resulting weighted average. It is a float, usually two decimals or fewer. **/
     average: number
-    /** Bu verinin hesaplandığı zamanı gösteren tarih dizgisi; çünkü veriler önbellekten gelebilir. **/
+    /** A date string representing when this data was calculated, since it might come from cache. **/
     createdAt: string
 }
 [inline-code-end]
 
-Here are the query parameters available for aggregation:
+Agregasyon için kullanılabilen sorgu parametreleri şunlardır:
 
 [inline-code-attrs-start title = 'QuestionResultsAggregation İstek Yapısı'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -46,7 +46,7 @@ interface QuestionResultsAggregateRequestQueryParams {
 }
 [inline-code-end]
 
-Here's an example request:
+Örnek bir istek:
 
 [inline-code-attrs-start title = 'QuestionResultsAggregation Örneği'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -54,7 +54,7 @@ curl --request GET \
   --url 'https://fastcomments.com/api/v1/question-results-aggregation?tenantId=demo&API_KEY=DEMO_API_SECRET&questionId=some-question-id'
 [inline-code-end]
 
-Example response:
+Örnek yanıt:
 
 [inline-code-attrs-start title = 'QuestionResultsAggregation Yanıt Örneği'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -92,13 +92,11 @@ interface QuestionResultsAggregationResponse {
 
 ### Performans Notları
 
-- Önbellek bulunamadığında, agregasyonlar genellikle her milyon sonuç için beş saniye sürer.
-- Aksi takdirde, istekler sabit zamanlıdır.
+- Önbellek isabeti olmadığında agregasyonlar genellikle milyon sonuç başına beş saniye sürer.
+- Aksi takdirde, istekler sabit zamanda tamamlanır.
 
 ### Önbellekleme ve Maliyet Notları
 
-- `forceRecalculate` belirtildiğinde maliyet her zaman `10` olur, normal `2` yerine.
-- Önbellek süresi dolup veriler yeniden hesaplanırsa, `forceRecalculate` belirtilmemişse maliyet yine sabit `2`'dir. Önbellek, toplanan veri kümesinin boyutuna göre sona erer (30 saniye ile 5 dakika arasında değişebilir).
+- `forceRecalculate` belirtildiğinde maliyet normal `2` yerine her zaman `10` olur.
+- Önbellek süresi dolarsa ve veriler yeniden hesaplanırsa, `forceRecalculate` belirtilmediği takdirde maliyet yine sabit `2` olur. Önbellek, agregasyon yapılan veri kümesinin boyutuna göre sona erer (30 saniye ile 5 dakika arasında değişebilir).
 - Bu, önbelleğin kullanılmasını teşvik etmek içindir.
-
----

@@ -1,12 +1,11 @@
----
 ### Вимоги
 
-PHP 7.4 and later.
-Should also work with PHP 8.0.
+PHP 7.4 і пізніші версії.
+Також має працювати з PHP 8.0.
 
 ### Composer
 
-Щоб встановити bindings за допомогою [Composer](https://getcomposer.org/), додайте наступне до `composer.json`:
+Щоб встановити бібліотеку через [Composer](https://getcomposer.org/), додайте наступне до `composer.json`:
 
 ```json
 {
@@ -22,14 +21,13 @@ Should also work with PHP 8.0.
 }
 ```
 
-Then run `composer install`
+Потім виконайте `composer install`
 
-### Manual Installation
+### Ручне встановлення
 
-Download the files and include `autoload.php`:
+Завантажте файли та підключіть `autoload.php`:
 
 ```php
 <?php
 require_once('/path/to/fastcomments/client/vendor/autoload.php');
 ```
----

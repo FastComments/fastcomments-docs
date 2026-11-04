@@ -1,3 +1,1 @@
----
 Ricevi una callback HTTP nel momento in cui un commento viene aggiunto, modificato o eliminato. Quali eventi vengono attivati, come verificare la richiesta e come si comportano i tentativi di nuovo.
----

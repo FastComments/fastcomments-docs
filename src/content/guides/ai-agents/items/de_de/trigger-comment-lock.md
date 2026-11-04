@@ -17,5 +17,3 @@ Wird ausgelöst, wenn ein Kommentar gesperrt wird.
 ### Gegenstück
 
 Siehe [Trigger: Kommentar entsperrt](#trigger-comment-unlock) für das Gegenstück.
-
----

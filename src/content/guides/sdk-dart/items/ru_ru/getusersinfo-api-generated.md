@@ -1,19 +1,19 @@
-Bulk user info for a tenant. Given userIds, return display info from User / SSOUser.  
-Used by the comment widget to enrich users that just appeared via a presence event.  
-No page context: privacy is enforced uniformly (private profiles are masked).
+Массовая информация о пользователях для тенанта. По заданным userIds возвращает отображаемую информацию из User / SSOUser.
+Используется виджетом комментариев для обогащения пользователей, появившихся через событие присутствия.
+Без контекста страницы: приватность соблюдается единообразно (приватные профили маскируются).
 
-## Parameters
+## Параметры
 
-| Имя | Тип | Расположение | Обязательно | Описание |
+| Имя | Тип | Расположение | Обязательный | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| ids | string | query | Yes | Идентификаторы пользователей, разделённые запятыми. |
+| tenantId | string | path | Да |  |
+| ids | string | query | Да | userIds, разделённые запятыми. |
 
-## Response
+## Ответ
 
 Возвращает: `PageUsersInfoResponse`
 
-## Example
+## Пример
 
 [inline-code-attrs-start title = 'Пример getUsersInfo'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -21,7 +21,7 @@ import 'package:fastcomments_dart/api.dart';
 
 final api_instance = PublicApi();
 final tenantId = tenantId_example; // String | 
-final ids = ids_example; // String | Идентификаторы пользователей, разделённые запятыми.
+final ids = ids_example; // String | userIds, разделённые запятыми.
 
 try {
     final result = api_instance.getUsersInfo(tenantId, ids);

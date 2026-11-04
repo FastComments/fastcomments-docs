@@ -18,5 +18,3 @@ Der **FastComments - Top Pages** Block listet die Seiten in Ihrem Shop mit der i
 
 - **Top Pages** sortiert nach gesamtem Engagement, daher bleiben dieselben Beiträge eine Weile oft ganz oben. Gut für eine "popular posts"-Seitenleiste.
 - **Recent Discussions** sortiert nach der jüngsten Aktivität, sodass die Liste schnell wechselt. Gut für ein Panel "what's hot right now".
-
----

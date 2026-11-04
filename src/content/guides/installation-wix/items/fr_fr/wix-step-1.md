@@ -10,5 +10,3 @@ Nous voulons nous assurer d'afficher un fil de commentaires unique pour chaque a
     <div class="title">Étape 1 : Modifier la page dynamique de l'article</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-1-open-page.png" alt="Edit The Dynamic Post Page" />
 </div>
-
----

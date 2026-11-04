@@ -18,5 +18,3 @@ Podaci o korisniku (ime, e-mail, avatar) šalju se na strani klijenta bez kripto
 #### Nema integracije
 
 Bez SSO integracije. Korisnici komentiraju anonimno ili se moraju osobno prijaviti u FastComments. Koristite ovo ako ne želite da Moodle korisnički računi budu povezani s komentarima.
-
----

@@ -12,5 +12,3 @@
 *hasDarkBackground* 플래그를 다음과 같이 true로 설정하십시오:
 
 [code-example-start config = {hasDarkBackground: true}; linesToHighlight = [6]; title = 'Force Dark Background Mode'; additionalDemoCode = '<style>body { background: black; }</style>'; code-example-end]
-
----

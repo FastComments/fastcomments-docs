@@ -28,5 +28,3 @@ Fra 2023 accepterer `URL ID`-feltet i widget‑tilpasning nu også mønstre! For
 
 1. Hvis din side har hash‑parametre (som example.com#page-1) - vil dette som standard blive en del af URL ID.
 2. Under migrationer, for eksempel fra WordPress til Gatsby, kan du blive nødt til at migrere URL ID‑kommentarværdierne efter den første migration. I så fald kan du kontakte os.
-
----

@@ -25,5 +25,3 @@ Za WordPress, ovu funkciju možete omogućiti instaliranjem dodatka kao što je 
     })();
 </script>
 [inline-code-end]
-
----

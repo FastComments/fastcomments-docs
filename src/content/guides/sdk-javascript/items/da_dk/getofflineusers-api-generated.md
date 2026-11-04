@@ -1,22 +1,22 @@
-Past commenters on the page who are NOT currently online. Sorted by displayName.
-Use this after exhausting /users/online to render a "Members" section.
-Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName}
-index from afterName forward via $gt, no $skip cost.
+Tidligere kommentatorer på siden, som IKKE er online i øjeblikket. Sorteret efter displayName.
+Brug denne efter at have brugt /users/online op til at rendere et "Medlemmer"-sektion.
+Cursor-paginering på commenterName: serveren gennemgår det partielle {tenantId, urlId, commenterName}
+indeks fra afterName fremad via $gt, uden $skip-omkostninger.
 
-## Parameters
+## Parametre
 
-| Name | Type | Required | Description |
+| Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| urlId | string | Yes |  |
-| afterName | string | No |  |
-| afterUserId | string | No |  |
+| tenantId | string | Ja |  |
+| urlId | string | Ja |  |
+| afterName | string | Nej |  |
+| afterUserId | string | Nej |  |
 
-## Response
+## Svar
 
-Returns: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersOfflineResponse.ts)
+Returnerer: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersOfflineResponse.ts)
 
-## Example
+## Eksempel
 
 [inline-code-attrs-start title = 'getOfflineUsers Eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -36,5 +36,3 @@ async function fetchOfflineUsers(): Promise<void> {
   console.log(offlineResponse);
 }
 [inline-code-end]
-
----

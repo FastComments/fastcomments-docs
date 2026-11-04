@@ -1,4 +1,3 @@
----
 [api-resource-header-start name = 'FeedPost'; route = 'PATCH /api/v1/feed-posts/:id'; creditsCost = 1; api-resource-header-end]
 
 此路由會更新單一 `FeedPost`。僅傳送您想變更的欄位。
@@ -35,5 +34,3 @@ interface FeedPostPatchResponse {
     reason?: string
 }
 [inline-code-end]
-
----

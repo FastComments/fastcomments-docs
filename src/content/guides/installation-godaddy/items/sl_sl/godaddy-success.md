@@ -6,5 +6,3 @@ Ko obiščete svojo spletno stran, bi morali zdaj na objavah na blogu videti pol
 </div>
 
 Čestitke za nastavitev FastComments z Godaddy! Če ste naleteli na Domain Error, ali bi se radi naučili, kako prilagoditi območje komentarjev, nadaljujte z branjem!
-
----

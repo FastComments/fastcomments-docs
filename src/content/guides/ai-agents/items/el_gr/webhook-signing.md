@@ -1,29 +1,29 @@
-Every agent webhook is signed with HMAC-SHA256 using your tenant's API secret. The same signing scheme is used for FastComments' comment webhooks - if you have already integrated those, the agent webhooks reuse the same signature header and verification flow.
+Κάθε webhook agent υπογράφεται με HMAC-SHA256 χρησιμοποιώντας το API secret του tenant σας. Το ίδιο σχήμα υπογραφής χρησιμοποιείται και για τα comment webhooks του FastComments - αν τα έχετε ήδη ενσωματώσει, τα agent webhooks επαναχρησιμοποιούν το ίδιο header υπογραφής και τη ίδια ροή επαλήθευσης.
 
-### Why signing
+### Γιατί υπογραφή
 
-Without a signature, an attacker who knows your webhook URL could POST forged events that look like they came from FastComments. Signing means your endpoint can verify each delivery is authentic before acting on it.
+Χωρίς υπογραφή, ένας επιτιθέμενος που γνωρίζει το URL του webhook σας θα μπορούσε να στείλει με POST πλαστά γεγονότα που φαίνονται σαν να προέρχονται από το FastComments. Η υπογραφή σημαίνει ότι το endpoint σας μπορεί να επαληθεύσει ότι κάθε παράδοση είναι γνήσια πριν δράσει.
 
-### How signatures work
+### Πώς λειτουργούν οι υπογραφές
 
-For each delivery:
+Για κάθε παράδοση:
 
-1. The platform looks up the API secret for the tenant + matched domain (see [Webhooks Overview](#webhooks-overview)).
-2. It emits the current Unix timestamp (in milliseconds) in the `X-FastComments-Timestamp` header.
-3. It computes `HMAC-SHA256(api_secret, "${timestamp}.${raw_request_body}")` (Stripe-style) and emits the result as `sha256=<hex>` in the `X-FastComments-Signature` header.
-4. Your endpoint reads the timestamp header, recomputes the HMAC over `${timestamp}.${body}` it received, compares to the `sha256=<hex>` value in the signature header, and rejects mismatches.
+1. Η πλατφόρμα αναζητά το API secret για το tenant + τον αντιστοιχισμένο domain (βλ. [Επισκόπηση Webhooks](#webhooks-overview)).
+2. Εκπέμπει το τρέχον Unix timestamp (σε milliseconds) στο header `X-FastComments-Timestamp`.
+3. Υπολογίζει `HMAC-SHA256(api_secret, "${timestamp}.${raw_request_body}")` (σε στυλ Stripe) και εκπέμπει το αποτέλεσμα ως `sha256=<hex>` στο header `X-FastComments-Signature`.
+4. Το endpoint σας διαβάζει το header του timestamp, επανυπολογίζει το HMAC πάνω στο `${timestamp}.${body}` που έλαβε, το συγκρίνει με την τιμή `sha256=<hex>` στο header υπογραφής και απορρίπτει τις ασυμφωνίες.
 
-The body that is signed is the **exact bytes** the platform sent, prefixed with `${timestamp}.` - your verifier must use the raw request body, not a re-serialized JSON string (key ordering and whitespace would otherwise differ).
+Το σώμα που υπογράφεται είναι τα **ακριβή bytes** που έστειλε η πλατφόρμα, με πρόθεμα `${timestamp}.` - ο επαληθευτής σας πρέπει να χρησιμοποιήσει το raw request body, όχι μια επανασειριοποιημένη συμβολοσειρά JSON (διαφορετικά η σειρά των κλειδιών και τα κενά θα διέφεραν).
 
 ### API secret
 
-The same API Secret used by [comment webhooks](/guide-webhooks.html). It is per (tenant, domain) and managed in your tenant's API settings. If you rotate the secret, you should re-deploy your verifier to read the new value before the next delivery.
+Το ίδιο API Secret που χρησιμοποιείται από τα [comment webhooks](/guide-webhooks.html). Είναι ανά (tenant, domain) και διαχειρίζεται στις ρυθμίσεις API του tenant σας. Αν αλλάξετε το secret, θα πρέπει να επανεκδώσετε τον επαληθευτή σας ώστε να διαβάζει τη νέα τιμή πριν την επόμενη παράδοση.
 
-When the platform finds **no API secret** for the matched domain, the delivery does not happen. The webhook log records the failure with reason "no API secret".
+Όταν η πλατφόρμα δεν βρίσκει **API secret** για τον αντιστοιχισμένο domain, η παράδοση δεν πραγματοποιείται. Το log του webhook καταγράφει την αποτυχία με αιτία "no API secret".
 
-### Verification example (Node.js)
+### Παράδειγμα επαλήθευσης (Node.js)
 
-[inline-code-attrs-start title = 'Παράδειγμα επαλήθευσης υπογραφής Webhook'; type='javascript' inline-code-attrs-end]
+[inline-code-attrs-start title = 'Παράδειγμα Επαλήθευσης Υπογραφής Webhook'; type='javascript' inline-code-attrs-end]
 [inline-code-start]
 import crypto from 'crypto';
 
@@ -39,28 +39,28 @@ function verifyAgentWebhook(rawBody, signatureHeader, timestampHeader, secret) {
 }
 [inline-code-end]
 
-Use `timingSafeEqual` rather than `===` to avoid timing-channel leaks of the signature.
+Χρησιμοποιήστε `timingSafeEqual` αντί για `===` για να αποφύγετε διαρροές της υπογραφής μέσω χρονισμού (timing-channel).
 
-### What's in the signed body
+### Τι περιέχει το υπογεγραμμένο σώμα
 
-The full envelope plus the event-specific `data` block. See [Webhook Payloads](#webhook-payloads).
+Ο πλήρης φάκελος (envelope) μαζί με το μπλοκ `data` του συγκεκριμένου γεγονότος. Βλ. [Φορτία Webhook](#webhook-payloads).
 
-### Recommendations
+### Συστάσεις
 
-- **Verify on every delivery.** If your endpoint accepts unsigned requests, you have no integrity guarantee.
-- **Reject on signature mismatch.** Return 401 or 403; do not 200 OK on a bad signature, or you will mask attacks in your delivery logs.
-- **Use HTTPS.** Signatures protect integrity; TLS protects confidentiality (both your secret and the comment text in the payload).
-- **Rotate secrets** when team members with access leave, or on a schedule.
+- **Επαληθεύστε σε κάθε παράδοση.** Αν το endpoint σας δέχεται μη υπογεγραμμένα αιτήματα, δεν έχετε καμία εγγύηση ακεραιότητας.
+- **Απορρίπτετε σε ασυμφωνία υπογραφής.** Επιστρέψτε 401 ή 403· μην επιστρέφετε 200 OK σε κακή υπογραφή, αλλιώς θα καλύπτετε επιθέσεις στα logs παραδόσεων σας.
+- **Χρησιμοποιήστε HTTPS.** Οι υπογραφές προστατεύουν την ακεραιότητα· το TLS προστατεύει την εμπιστευτικότητα (και το secret σας και το κείμενο των σχολίων στο payload).
+- **Αλλάζετε τα secrets** όταν φεύγουν μέλη της ομάδας με πρόσβαση ή σύμφωνα με πρόγραμμα.
 
-### Replay protection
+### Προστασία από replay
 
-Signing alone does not prevent replay attacks - an attacker who captured a real signed delivery can re-send it. Replay protection is up to your endpoint:
+Η υπογραφή από μόνη της δεν αποτρέπει επιθέσεις replay - ένας επιτιθέμενος που κατέγραψε μια πραγματική υπογεγραμμένη παράδοση μπορεί να την ξαναστείλει. Η προστασία από replay είναι ευθύνη του endpoint σας:
 
-- Use the `occurredAt` envelope field and reject deliveries older than, say, 5 minutes.
-- Use the `triggerId` or `approvalId` as a dedup key - if you have already processed it, ignore the duplicate.
+- Χρησιμοποιήστε το πεδίο `occurredAt` του envelope και απορρίπτετε παραδόσεις παλαιότερες από, ας πούμε, 5 λεπτά.
+- Χρησιμοποιήστε το `triggerId` ή το `approvalId` ως κλειδί αποδιομοπαλληκής (dedup) - αν το έχετε ήδη επεξεργαστεί, αγνοήστε το διπλότυπο.
 
-### See also
+### Δείτε επίσης
 
 - [Επισκόπηση Webhooks](#webhooks-overview).
-- [Webhook Payloads](#webhook-payloads).
-- The main [Οδηγός Webhooks](/guide-webhooks.html) for the broader signing infrastructure.
+- [Φορτία Webhook](#webhook-payloads).
+- Ο κύριος [οδηγός Webhooks](/guide-webhooks.html) για τη ευρύτερη υποδομή υπογραφής.

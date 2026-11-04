@@ -1,3 +1,1 @@
----
 Fügen Sie Ihrem Kommentar-Widget eigene Markup, Ereignis‑Listener und Logik mit Erweiterungen hinzu. Der Lebenszyklus, das Erweiterungsobjekt und die API, die Sie aufrufen können.
----

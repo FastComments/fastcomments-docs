@@ -1,4 +1,3 @@
----
 Всички URI са относителни към *https://fastcomments.com*
 
 Клас | Метод | HTTP заявка | Описание
@@ -152,4 +151,3 @@
 *PublicApi* | [**updateUserNotificationStatus**](https://github.com/FastComments/fastcomments-php/blob/main/docs/Api/PublicApi.md#updateusernotificationstatus) | **POST** /user-notifications/{notificationId}/mark/{newStatus} | 
 *PublicApi* | [**uploadImage**](https://github.com/FastComments/fastcomments-php/blob/main/docs/Api/PublicApi.md#uploadimage) | **POST** /upload-image/{tenantId} | 
 *PublicApi* | [**voteComment**](https://github.com/FastComments/fastcomments-php/blob/main/docs/Api/PublicApi.md#votecomment) | **POST** /comments/{tenantId}/{commentId}/vote |
----

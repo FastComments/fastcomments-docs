@@ -7,4 +7,3 @@ import { FastComments } from 'fastcomments-astro';
 ```
 
 Zastąp `"demo"` swoim identyfikatorem najemcy FastComments.
----

@@ -1,3 +1,1 @@
----
 Aggiungi commenti a un'app Svelte con il pacchetto ufficiale. Installalo, inserisci il componente widget nella tua pagina e passa il tuo tenant e l'ID della pagina.
----

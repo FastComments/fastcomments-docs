@@ -1,4 +1,3 @@
----
 FastComments supporta una modalità di manutenzione automatica. Se il database va offline, può continuare a servire i thread di commenti più popolari.
 
 Inoltre, in modalità di manutenzione, tutti i commenti vengono salvati in `BACKUP_DIR`. Verranno elaborati (controllati per spam, ecc.) e salvati una volta che il sistema sarà nuovamente online.
@@ -12,5 +11,3 @@ può essere perso in qualsiasi momento senza causare malfunzionamenti dell'appli
 Nota che in modalità di manutenzione non è possibile eseguire correttamente l'autenticazione dei thread di commenti, quindi vengono eseguiti backup periodici solo dei thread che possono essere considerati pubblici in modo sicuro.
 
 In modalità di manutenzione molte funzionalità non sono disponibili.
-
----

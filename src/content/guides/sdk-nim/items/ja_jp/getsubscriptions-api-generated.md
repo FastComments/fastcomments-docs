@@ -1,4 +1,3 @@
----
 ## パラメータ
 
 | Name | Type | Required | Description |
@@ -19,5 +18,3 @@ if subscriptionsOpt.isSome:
   let subscriptions = subscriptionsOpt.get()
   echo subscriptions
 [inline-code-end]
-
----

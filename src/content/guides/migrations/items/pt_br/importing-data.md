@@ -1,4 +1,3 @@
----
 Embora o suporte do FastComments possa ajudar nas migrações, a maioria pode ser realizada e monitorada facilmente sem qualquer intervenção da equipe de suporte.
 
 Nós suportamos nativamente a importação de exportações dos seguintes provedores:
@@ -36,5 +35,3 @@ Reimportar o mesmo conteúdo **não criará duplicatas**.
 ### Segurança de Dados e Expiração
 
 Os arquivos de importação não são acessíveis por solicitações externas de nenhuma forma, e os arquivos de importação são excluídos do nosso sistema assim que a importação é concluída.
-
----

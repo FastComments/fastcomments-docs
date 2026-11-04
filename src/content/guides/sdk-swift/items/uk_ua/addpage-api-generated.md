@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Назва | Тип | Розташування | Обов'язково | Опис |
@@ -30,5 +29,3 @@ DefaultAPI.addPage(tenantId: tenantId, createAPIPageData: createAPIPageData) { (
     }
 }
 [inline-code-end]
-
----

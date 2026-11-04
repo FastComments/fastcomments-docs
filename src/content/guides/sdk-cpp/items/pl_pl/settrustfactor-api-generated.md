@@ -25,5 +25,3 @@ api->setTrustFactor(utility::conversions::to_string_t("my-tenant-123"), opts)
         }
     });
 [inline-code-end]
-
----

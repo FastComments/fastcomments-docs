@@ -21,5 +21,3 @@ if userBadgesOpt.isSome:
   let badges = userBadgesOpt.get()
   echo badges
 [inline-code-end]
-
----

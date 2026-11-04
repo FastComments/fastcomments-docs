@@ -1,4 +1,4 @@
-This endpoint allows you to fetch user badges based on various criteria.
+Cet endpoint permet de récupérer des badges utilisateur selon divers critères.
 
 Exemple de requête :
 
@@ -7,13 +7,13 @@ Exemple de requête :
 curl -X GET "https://fastcomments.com/api/v1/user-badges?tenantId=demo&API_KEY=DEMO_API_SECRET"
 [inline-code-end]
 
-You can add various query parameters to filter the results:
+Vous pouvez ajouter divers paramètres de requête pour filtrer les résultats :
 
-- `userId` - Récupérer les badges d'un utilisateur spécifique
-- `badgeId` - Récupérer les instances d'un badge spécifique
-- `type` - Filtrer par type de badge (0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, etc. See UserBadge structure for full list)
+- `userId` - Obtenir les badges d'un utilisateur spécifique
+- `badgeId` - Obtenir les instances d'un badge spécifique
+- `type` - Filtrer par type de badge (0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, etc. Voir la structure UserBadge pour la liste complète)
 - `displayedOnComments` - Filtrer selon que le badge est affiché sur les commentaires (true/false)
-- `limit` - Nombre maximum de badges à renvoyer (par défaut 30, max 200)
+- `limit` - Nombre maximum de badges à renvoyer (30 par défaut, 200 maximum)
 - `skip` - Nombre de badges à ignorer (pour la pagination)
 
 Exemple de réponse :
@@ -62,7 +62,7 @@ Exemple de réponse :
 
 Réponses d'erreur possibles :
 
-[inline-code-attrs-start title = 'Erreur : Identifiant du locataire manquant'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Erreur : ID de tenant manquant'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",

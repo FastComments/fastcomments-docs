@@ -36,5 +36,3 @@ PublicAPI.getGifsSearch(tenantId: tenantId, search: search, options: PublicAPI.G
     }
 }
 [inline-code-end]
-
----

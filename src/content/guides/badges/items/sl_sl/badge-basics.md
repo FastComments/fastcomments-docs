@@ -1,41 +1,33 @@
-FastComments uporabniške značke konfigurirajo skrbniki s dovoljenjem `Customize Data`.
+FastComments uporabniške značke nastavijo skrbniki z dovoljenjem `Customize Data`.
 
-This is done via [Customize -> Badges](https://fastcomments.com/auth/my-account/configure-badges) in your admin dashboard.
+To se naredi prek [Customize -> Badges](https://fastcomments.com/auth/my-account/configure-badges) v vaši skrbniški nadzorni plošči.
 
-Ko uporabniku dodelimo značko, se ta prikaže na njegovem profilu in ob njegovih komentarjih.
+Ko uporabnik prejme značko, se ta prikaže na njegovem profilu in pri njegovih komentarjih.
 
-When adding a badge we can setup a `Display Label`, which is the name the user sees associated with the badge. For example, if we add a `Comment Count` badge
-we probably don't want to show that technical name because it's very lame. We might call it `Super Member` or similar. Badges can also stack and replace each other, as we'll cover
-later in this document.
+Pri dodajanju značke lahko nastavimo `Display Label`, kar je ime, ki ga uporabnik vidi ob znački. Na primer, če dodamo značko `Comment Count`, tehničnega imena verjetno nočemo prikazati, ker je zelo dolgočasno. Lahko jo poimenujemo `Super Member` ali podobno. Značke se lahko tudi zlagajo in nadomeščajo med sabo, kar bo opisano kasneje v tem dokumentu.
 
 Značke imajo tudi nastavljive pragove.
 
-Badges can be created, and then later disabled by unchecking `Enabled`. Disabling a badge means it will no longer be automatically awarded, and won't show in the Award Manual Badge menu, but
-users will keep the badge.
+Značke je mogoče ustvariti, kasneje pa onemogočiti z odstranitvijo kljukice pri `Enabled`. Onemogočanje značke pomeni, da se ne bo več samodejno podeljevala in ne bo prikazana v meniju Award Manual Badge, vendar jo uporabniki obdržijo.
 
-### Badge Display Types
+### Vrste prikaza značk
 
-Značke so lahko slikovne ali besedilne, ki podpirajo osnovno oblikovanje (barva besedila, barva ozadja in barva obrobe). Značke lahko tudi stilizirate preko CSS-a.
+Značke so lahko slike ali besedilne značke, ki podpirajo osnovno oblikovanje (barva besedila, barva ozadja in barva obrobe). Značke lahko oblikujete tudi prek CSS.
 
-Image badges can be GIF images to show animated badges.
+Slikovne značke so lahko GIF slike za prikaz animiranih značk.
 
-### Tip - Do Not Remove Badges!
+### Nasvet - Ne odstranjujte značk!
 
-Uporabniki obožujejo značke. Res jim veliko pomenijo, tudi če gre za napako, ki ste jo dodali po pomoti, in želite spremeniti ikono značke.
+Uporabniki imajo značke radi. Običajno jim je zelo mar zanje, tudi če je bila značka dodana po pomoti in jo želite spremeniti.
 
-If we've learned anything, it's extremely difficult to take something away from users. Removing a badge because you as an owner of the site no
-longer like it, or want to make changes, may result in a very angry crowd of users that suddenly leave your site out of frustration. For this reason
-`Delete` was not even an option for the first few months we released this feature - however we ended up having to add it. But please, use delete with caution. We have
-seen many long time, multi-year, users get very frustrated and leave their communities because administrators decided to delete a badge.
+Če smo se kaj naučili, je izredno težko uporabnikom kaj odvzeti. Odstranitev značke, ker se vam kot lastniku spletnega mesta ne zdi več všeč, ali ker želite narediti spremembe, lahko povzroči zelo jezen množico uporabnikov, ki zaradi frustracije nenadoma zapustijo vaše spletno mesto. Iz tega razloga `Delete` prvih nekaj mesecev po izdaji te funkcije sploh ni bila na voljo - na koncu pa smo jo morali vseeno dodati. Toda prosimo, uporabljajte brisanje previdno. Videli smo mnoge dolgoletne uporabnike, ki so bili zelo frustrirani in so zapustili svoje skupnosti, ker so se skrbniki odločili izbrisati značko.
 
-Če morate prenehati uporabljati značko, predlagamo, da jo preprosto onemogočite, da uporabniki obdržijo svojo značko.
+Če morate prenehati uporabljati značko, priporočamo, da jo preprosto onemogočite, tako da jo uporabniki obdržijo.
 
-### Badge Reprocessing
+### Ponovna obdelava značk
 
-When a badge is added or changed, the system will retroactively check anyone that interacted with your site to see if they should get the badge. This will be
-visible in the Badges page in the admin dashboard, as a spinner will be shown instead of the number of users that have the badge. This is because the number of users
-is being determined.
+Ko je značka dodana ali spremenjena, bo sistem retroaktivno preveril vse, ki so komunicirali z vašim spletnim mestom, da ugotovi, ali bi značko morali prejeti. To bo vidno na strani Badges v skrbniški nadzorni plošči, kjer bo namesto števila uporabnikov z značko prikazan vrteči se indikator. To je zato, ker se število uporabnikov še ugotavlja.
 
-### Seeing Who Has a Badge
+### Kdo ima značko
 
-In the Badges list each link has a `View Users` option to show the list of users which has earned or was manually awarded a badge.
+V seznamu Badges ima vsaka povezava možnost `View Users`, ki prikaže seznam uporabnikov, ki so značko pridobili ali jim je bila ročno podeljena.

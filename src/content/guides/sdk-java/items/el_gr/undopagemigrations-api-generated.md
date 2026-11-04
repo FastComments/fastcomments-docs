@@ -1,23 +1,23 @@
-Queues a batch job that reverses every migration from one migrate‑pages job, newest first. Available for 90 days.  
-Records changed since the migration are left alone, so a later edit is never overwritten.  
-Poll GET /api/v1/batch-jobs/{batchJobId} for the restored/skipped counts.
+Σειρά μια εργασία δέσμης που αντιστρέφει κάθε μετανάστευση από μία εργασία migrate-pages, ξεκινώντας από τη νεότερη. Διαθέσιμη για 90 ημέρες.
+Οι εγγραφές που άλλαξαν μετά τη μετανάστευση δεν επηρεάζονται, ώστε μια μεταγενέστερη επεξεργασία να μην αντικαθίσταται ποτέ.
+Ελέγχετε το GET /api/v1/batch-jobs/{batchJobId} για τα πλήθη επαναφοράς/παράλειψης.
 
 ## Παράμετροι
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
-|------|------|----------|------------|-----------|
+|------|------|----------|----------|-------------|
 | tenantId | string | query | Ναι |  |
 | undoId | string | path | Ναι |  |
 
-## Απόκριση
+## Απάντηση
 
 Επιστρέφει: [`QueuePageMigrationJobAPIResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/QueuePageMigrationJobAPIResponse.java)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'undoPageMigrations Παράδειγμα'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Παράδειγμα undoPageMigrations'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Εισαγωγή κλάσεων:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -30,10 +30,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Διαμόρφωση εξουσιοδότησης κλειδιού API: api_key
+    // Configure API key authorization: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Αποσχολιάστε την παρακάτω γραμμή για να ορίσετε πρόθεμα για το κλειδί API, π.χ. "Token" (προεπιλογή είναι null)
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);

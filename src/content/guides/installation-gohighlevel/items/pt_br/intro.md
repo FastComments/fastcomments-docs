@@ -9,5 +9,3 @@ Fazer login primeiro garantirá que os trechos de código gerados já estejam vi
 Este tutorial está dividido em duas categorias: Sites de Membros e Sites regulares do GoHighLevel.
 
 Começamos com as instruções para Sites de Membros.
-
----

@@ -34,5 +34,3 @@ PublicAPI.getV1PageLikes(tenantId: tenantId, urlId: urlId, options: PublicAPI.Ge
     }
 }
 [inline-code-end]
-
----

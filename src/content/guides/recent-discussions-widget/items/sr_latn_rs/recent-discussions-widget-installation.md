@@ -1,8 +1,8 @@
-The Recent Discussions Widget prikazuje stranice na vašem sajtu koje imaju najnoviju aktivnost komentara. Svaki unos prikazuje naslov stranice, datum poslednje aktivnosti i ukupan broj komentara. Automatski detektuje tamne pozadine i prilagođava svoj stil u skladu s tim.
+Widget za nedavne diskusije prikazuje stranice na vašem sajtu koje imaju najnoviju aktivnost komentara. Svaki unos prikazuje naslov stranice, datum poslednje aktivnosti i ukupan broj komentara. Automatski detektuje tamne pozadine i prilagođava svoj stil u skladu s tim.
 
 ## Osnovna instalacija
 
-[inline-code-attrs-start title = 'Instalacija vidžeta Nedavne diskusije'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Instalacija widgeta za nedavne diskusije'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/widget-recent-discussions-v2.min.js"></script>
 <div id="fastcomments-widget-recent-discussions"></div>
@@ -15,11 +15,11 @@ The Recent Discussions Widget prikazuje stranice na vašem sajtu koje imaju najn
 
 ## Opcije konfiguracije
 
-The `FastCommentsRecentDiscussionsV2` function accepts the following configuration options:
+Funkcija `FastCommentsRecentDiscussionsV2` prihvata sledeće opcije konfiguracije:
 
-- **tenantId** (required): ID vašeg FastComments naloga
-- **count** (optional): Number of pages to show. Default is `20`, max `100`
-- **hasDarkBackground** (optional): Prisili tamni režim stilizacije. Ako nije postavljeno, automatski se detektuje iz pozadine stranice
+- **tenantId** (obavezno): Vaš FastComments tenant ID
+- **count** (opciono): Broj stranica za prikaz. Podrazumevano je `20`, maksimalno `100`
+- **hasDarkBackground** (opciono): Forsira stil tamnog režima. Automatski se detektuje iz pozadine stranice ako nije postavljeno
 
 ## Napredni primeri
 
@@ -37,9 +37,9 @@ The `FastCommentsRecentDiscussionsV2` function accepts the following configurati
 </script>
 [inline-code-end]
 
-### Prisili tamni režim
+### Forsiraj tamni režim
 
-[inline-code-attrs-start title = 'Nedavne diskusije u tamnom režimu'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Nedavne diskusije sa tamnim režimom'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/widget-recent-discussions-v2.min.js"></script>
 <div id="fastcomments-widget-recent-discussions"></div>
@@ -50,5 +50,3 @@ The `FastCommentsRecentDiscussionsV2` function accepts the following configurati
     });
 </script>
 [inline-code-end]
-
----

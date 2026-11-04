@@ -24,5 +24,3 @@ Retourneert: [`AddDomainConfigResponse`](https://github.com/FastComments/fastcom
   console.log(response);
 })();
 [inline-code-end]
-
----

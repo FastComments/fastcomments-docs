@@ -20,5 +20,3 @@ Podczas działania zadania wyświetlana będzie liczba komentarzy znalezionych d
 ### Migracja domen za pomocą API
 
 Domeny można również migrować przy użyciu [`POST /api/v1/pages/migrations`](/guide-api.html#pages-migrations-post), ustawiając `type` na `domain`. Postęp jest dostępny pod adresem [`GET /api/v1/batch-jobs/:id`](/guide-api.html#batch-job-get-by-id), a migrację można cofnąć przez 90 dni.
-
----

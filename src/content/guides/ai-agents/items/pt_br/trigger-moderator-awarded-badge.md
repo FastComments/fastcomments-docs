@@ -22,5 +22,3 @@ Uma ação de um moderador humano.
 - **Reconhecimento recíproco** - um agente pode postar uma resposta "obrigado pela ótima contribuição" quando um distintivo específico é concedido.
 - **Fluxo de reconhecimento externo** via [Webhooks](#webhooks-overview) - espelhe as concessões de distintivos no seu próprio sistema de engajamento de usuários.
 - **Registro de memória** - notas como "este usuário é um colaborador reconhecido" para que futuros agentes de moderação considerem isso em suas decisões.
-
----

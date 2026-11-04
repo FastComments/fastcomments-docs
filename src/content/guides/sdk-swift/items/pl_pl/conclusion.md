@@ -1,4 +1,3 @@
----
 ## Potrzebujesz pomocy?
 
 Jeśli napotkasz jakiekolwiek problemy lub masz pytania dotyczące Swift SDK, prosimy:
@@ -9,5 +8,3 @@ Jeśli napotkasz jakiekolwiek problemy lub masz pytania dotyczące Swift SDK, pr
 ## Współtworzenie
 
 Wkłady są mile widziane! Odwiedź [repozytorium GitHub](https://github.com/FastComments/fastcomments-swift), aby zapoznać się z wytycznymi dotyczącymi kontrybucji.
-
----

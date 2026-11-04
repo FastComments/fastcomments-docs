@@ -60,5 +60,3 @@ Skoro masz już podstawy działające, możesz dostosować wygląd i zachowanie 
 ### Biblioteki frontendowe
 
 Wszystkie biblioteki frontendowe FastComments (react, vue, angular, itp.) zawierają Collab Chat.
-
----

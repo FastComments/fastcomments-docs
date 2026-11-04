@@ -1,10 +1,9 @@
-Unsubscribes (REST hook unsubscribe). Only subscriptions created through this API can be
-deleted here; dashboard-managed webhooks are edited in the dashboard.
+Afmeldingen (REST hook unsubscribe). Alleen abonnementen die via deze API zijn aangemaakt kunnen hier worden verwijderd; webhooks die in het dashboard worden beheerd, worden in het dashboard bewerkt.
 
 ## Parameters
 
-| Naam | Type | Locatie | Vereist | Beschrijving |
-|------|------|----------|----------|---------------|
+| Naam | Type | Locatie | Verplicht | Beschrijving |
+|------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | id | string | path | Ja |  |
 
@@ -16,7 +15,7 @@ Retourneert: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-j
 
 [inline-code-attrs-start title = 'deleteWebhook Voorbeeld'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Klassen importeren:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -29,15 +28,15 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // API-sleutel autorisatie configureren: api_key
+    // Configure API key authorization: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Decommentarieer de volgende regel om een prefix voor de API-sleutel in te stellen, bijv. "Token" (standaard null)
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
-    String tenantId = "tenantId_example"; // String |
-    String id = "id_example"; // String |
+    String tenantId = "tenantId_example"; // String | 
+    String id = "id_example"; // String | 
     try {
       APIEmptyResponse result = apiInstance.deleteWebhook(tenantId, id)
             .execute();

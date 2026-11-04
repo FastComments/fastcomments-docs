@@ -1,4 +1,3 @@
----
 Con FastComments, un comentario Aprobado es un comentario **visible**. Para ocultar un comentario, lo desaprobarías.
 
 Los comentarios pueden ser aprobados automáticamente, o los moderadores pueden aprobar manualmente cada comentario. También existe la opción de
@@ -13,5 +12,3 @@ Requerir la aprobación manual de comentarios no verificados puede ayudar con el
 debería habilitar la aprobación automática de comentarios pero activar `Only Auto Approve Verified Comments`.
 
 Esto puede configurarse todo por los administradores desde [Configuración de moderación](https://fastcomments.com/auth/my-account/moderate-comments/settings).
-
----

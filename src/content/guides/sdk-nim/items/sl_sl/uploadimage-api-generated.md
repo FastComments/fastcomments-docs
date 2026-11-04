@@ -1,4 +1,3 @@
----
 Naloži in spremeni velikost slike
 
 ## Parametri
@@ -27,5 +26,3 @@ if uploadResult.isSome:
   let result = uploadResult.get()
   # uporabi rezultat po potrebi
 [inline-code-end]
-
----

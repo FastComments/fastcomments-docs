@@ -18,5 +18,3 @@ if tenantResponse.isSome:
   let tenant = tenantResponse.get()
   echo tenant
 [inline-code-end]
-
----

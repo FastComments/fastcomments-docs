@@ -90,5 +90,3 @@ Za najbolje rezultate, osigurajte da su vaši prilagođeni fontovi učitani pre 
 Kvadratni markeri imaju suptilan vizuelni dizajn koji ih čini uočljivim bez preopterećenja slike. Možete prilagoditi njihov izgled pomoću CSS-a ako želite drugačiji vizuelni tretman.
 
 Markeri uključuju hover stanja koja daju povratnu informaciju kada korisnici pomere miš preko njih. Na uređajima osetljivim na dodir, tap interakcija daje momentalnu povratnu informaciju otvaranjem prozora chata.
-
----

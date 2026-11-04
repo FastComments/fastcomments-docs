@@ -1,4 +1,3 @@
----
 Poprzedni komentujący na stronie, którzy NIE są obecnie online. Posortowane według displayName.
 Użyj tego po wyczerpaniu /users/online, aby wyświetlić sekcję "Członkowie".
 Paginacja kursorowa po commenterName: serwer przegląda częściowy indeks {tenantId, urlId, commenterName} zaczynając od afterName i idąc w przód za pomocą $gt, bez kosztu $skip.
@@ -46,5 +45,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.GetOfflineUsers`: %v\n", resp)
 }
 [inline-code-end]
-
----

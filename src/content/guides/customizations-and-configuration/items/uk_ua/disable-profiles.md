@@ -9,5 +9,3 @@
 Це також можна зробити без коду. На сторінці налаштування віджета, перегляньте розділ "Вимкнути профілі".
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-profiles']; selector = '.disable-profiles'; alt='Сторінка налаштування віджета з позначеним прапорцем \"Вимкнути профілі\", так що аватари більше не відкривають профілі'; title='Вимкнути профілі' app-screenshot-end]
-
----

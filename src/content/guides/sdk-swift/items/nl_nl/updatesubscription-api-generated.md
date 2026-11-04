@@ -1,4 +1,3 @@
----
 ## Parameters
 
 | Name | Type | Location | Required | Description |
@@ -34,5 +33,3 @@ DefaultAPI.updateSubscription(tenantId: tenantId, id: id, updateAPIUserSubscript
     }
 }
 [inline-code-end]
-
----

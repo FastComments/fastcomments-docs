@@ -1,8 +1,8 @@
 Yorumlar, oylar ve diğer etkinlikler için gerçek zamanlı güncellemeler almak üzere canlı etkinliklere abone olun.
 
-### Sayfa Düzeyi Etkinlikleri
+### Sayfa Düzeyinde Etkinlikler
 
-Belirli bir sayfadaki canlı etkinlikleri dinleyin (yorumlar, oylar, vb.):
+Belirli bir sayfada canlı etkinlikleri dinleyin (yorumlar, oylar vb.):
 
 ```typescript
 import { subscribeToChanges, LiveEvent, LiveEventType } from 'fastcomments-sdk/browser';
@@ -12,7 +12,7 @@ const config = {
   urlId: 'page-url-id',
 };
 
-// Belirli bir sayfa için canlı etkinliklere abone olun
+// Bir sayfa için canlı etkinliklere abone ol
 const subscription = subscribeToChanges(
   config,
   'your-tenant-id', // tenantIdWS
@@ -24,7 +24,7 @@ const subscription = subscribeToChanges(
     switch (event.type) {
       case LiveEventType.new_comment:
         console.log('New comment:', event.comment);
-        // Yeni yorum ile UI'inizi güncelleyin
+        // Yeni yorumu arayüzünüzde güncelleyin
         break;
       case LiveEventType.new_vote:
         console.log('New vote:', event.vote);
@@ -37,29 +37,29 @@ const subscription = subscribeToChanges(
         console.log('Other event type:', event.type);
     }
     
-    return true; // Return true if event was handled
+    return true; // Etkinlik işlendiyse true döndürün
   },
   (isConnected: boolean) => {
     console.log('Connection status:', isConnected ? 'Connected' : 'Disconnected');
   }
 );
 
-// Close the subscription when done
+// İşiniz bittiğinde aboneliği kapatın
 subscription.close();
 ```
 
 ### Kullanıcı Etkinliklerine Abone Olma
 
-Kullanıcıya özel etkinlikleri dinleyin (bildirimler, bahsetmeler, vb.):
+Kullanıcıya özel etkinlikleri dinleyin (bildirimler, bahsetmeler vb.):
 
 ```typescript
 import { subscribeToUserFeed, LiveEvent, LiveEventType } from 'fastcomments-sdk/browser';
 
 const userConfig = {
-  userIdWS: 'user-session-id', // Bu değeri getComments yanıtından alın
+  userIdWS: 'user-session-id', // Bunu getComments yanıtından alın
 };
 
-// Kullanıcının kişisel akışına abone olun
+// Kullanıcının kişisel akışına abone ol
 const userSubscription = subscribeToUserFeed(
   userConfig,
   (event: LiveEvent) => {
@@ -88,9 +88,9 @@ const userSubscription = subscribeToUserFeed(
 userSubscription.close();
 ```
 
-### userIdWS'i Alma
+### userIdWS Alma
 
-The `userIdWS` parameter is required for live events and can be obtained from API responses:
+`userIdWS` parametresi canlı etkinlikler için gereklidir ve API yanıtlarından elde edilebilir:
 
 ```typescript
 const response = await sdk.publicApi.getCommentsPublic({
@@ -98,7 +98,7 @@ const response = await sdk.publicApi.getCommentsPublic({
   urlId: 'page-id'
 });
 
-// Yanıttan userIdWS'yi çıkarın
+// userIdWS'yi yanıttan çıkarın
 const userIdWS = response.data?.userSessionInfo?.userIdWS;
 
 if (userIdWS) {

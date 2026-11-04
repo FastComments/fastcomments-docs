@@ -1,4 +1,3 @@
----
 Quando hai finito di usare un'istanza dell'SDK (ad es., la vista viene chiusa), chiama `cleanup()` per chiudere la connessione WebSocket e annullare le attività in background:
 
 ```swift

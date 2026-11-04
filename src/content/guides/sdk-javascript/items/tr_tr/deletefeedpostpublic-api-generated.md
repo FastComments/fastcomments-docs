@@ -1,4 +1,3 @@
----
 ## Parametreler
 
 | Ad | Tür | Gerekli | Açıklama |
@@ -35,5 +34,3 @@ Döndürür: [`DeleteFeedPostPublicResponse`](https://github.com/FastComments/fa
   );
 })();
 [inline-code-end]
-
----

@@ -1,12 +1,12 @@
-Like count for a page, optionally with the users who liked it.
+Broj lajkova za stranicu, opcionalno s korisnicima koji su lajkali.
 
 ## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
-| tenantId | string | query | Yes |  |
-| urlId | string | query | Yes |  |
-| includeUserInfo | string | query | No | "public" izostavlja korisnike s privatnim profilima, "include-private" ih uključuje. |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Da |  |
+| urlId | string | query | Da |  |
+| includeUserInfo | string | query | Ne | "public" izostavlja korisnike s privatnim profilima, "include-private" ih uključuje. |
 
 ## Odgovor
 
@@ -14,9 +14,9 @@ Vraća: [`GetPageLikesAPIResponse`](https://github.com/FastComments/fastcomments
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer getPageLikes'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer za getPageLikes'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Uvezi klase:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -29,10 +29,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Konfiguriraj autorizaciju API ključa: api_key
+    // Configure API key authorization: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Odkomentiraj sljedeći redak da postaviš prefiks za API ključ, npr. "Token" (zadano null)
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);

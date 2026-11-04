@@ -30,5 +30,3 @@ DefaultAPI.getModerators(tenantId: tenantId, skip: skip) { (response, error) in
     }
 }
 [inline-code-end]
-
----

@@ -28,5 +28,3 @@ Depuis 2023, le champ `URL ID` dans la personnalisation du widget accepte égale
 
 1. Si votre page possède des paramètres de hachage (comme example.com#page-1) – cela fera partie du URL ID, par défaut.  
 2. Lors des migrations, par exemple de WordPress vers Gatsby, vous devrez peut‑être migrer les valeurs de commentaires URL ID après la migration initiale. Pour cela, contactez‑nous.
-
----

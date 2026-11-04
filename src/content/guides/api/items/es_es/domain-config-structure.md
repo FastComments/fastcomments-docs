@@ -61,5 +61,3 @@ El enlace de baja en el pie del correo electrónico, y la función de baja con u
 ### Para DKIM
 
 Después de definir tus registros DNS DKIM, simplemente actualiza el DomainConfig con tu configuración DKIM usando la estructura definida. 
-
----

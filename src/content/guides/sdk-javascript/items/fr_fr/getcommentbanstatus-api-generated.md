@@ -23,5 +23,3 @@ Renvoie : [`GetCommentBanStatusResponse`](https://github.com/FastComments/fastco
   const statusWithoutSso: GetCommentBanStatusResponse = await getCommentBanStatus(tenantId, commentId);
 })();
 [inline-code-end]
-
----

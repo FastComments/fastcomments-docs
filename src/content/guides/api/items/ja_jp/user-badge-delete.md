@@ -1,4 +1,3 @@
----
 このエンドポイントでは、ユーザーバッジの割り当てを削除できます。
 
 リクエストの例:
@@ -45,4 +44,3 @@ curl -X DELETE "https://fastcomments.com/api/v1/user-badges/badge123?tenantId=de
   "reason": "The user badge badge123 was not found."
 }
 [inline-code-end]
----

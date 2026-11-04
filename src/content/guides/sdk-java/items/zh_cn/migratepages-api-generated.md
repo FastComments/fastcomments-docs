@@ -1,12 +1,12 @@
-Queues a batch job that moves comments, pages and related records from one urlId or domain to another.  
-"urlId" migrations only match the exact urlId. "domain" migrations find/replace the value inside every urlId and url.  
-Poll GET /api/v1/batch-jobs/{batchJobId}: once it is done it carries per-migration results and an undoId.
+将批量任务加入队列，把评论、页面及相关记录从一个 urlId 或域名迁移到另一个。
+"urlId" 迁移仅匹配完全相同的 urlId。"domain" 迁移会在每个 urlId 和 url 中查找并替换该值。
+轮询 GET /api/v1/batch-jobs/{batchJobId}：任务完成后会携带每次迁移的结果和一个 undoId。
 
 ## 参数
 
-| 名称 | 类型 | 位置 | 必需 | 描述 |
+| 名称 | 类型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
+| tenantId | string | query | 是 |  |
 
 ## 响应
 
@@ -16,7 +16,7 @@ Poll GET /api/v1/batch-jobs/{batchJobId}: once it is done it carries per-migrati
 
 [inline-code-attrs-start title = 'migratePages 示例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 导入类:
+// 导入类：
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -29,10 +29,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // 配置 API 密钥授权: api_key
+    // 配置 API 密钥授权：api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // 取消注释以下行以为 API 密钥设置前缀，例如 "Token"（默认值为 null）
+    // 取消以下行的注释以设置 API 密钥前缀，例如 "Token"（默认为 null）
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -43,10 +43,10 @@ public class Example {
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling DefaultApi#migratePages");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
+      System.err.println("调用 DefaultApi#migratePages 时发生异常");
+      System.err.println("状态码: " + e.getCode());
+      System.err.println("原因: " + e.getResponseBody());
+      System.err.println("响应头: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }

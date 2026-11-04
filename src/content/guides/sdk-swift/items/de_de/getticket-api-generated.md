@@ -1,4 +1,3 @@
----
 ## Parameter
 
 | Name | Type | Location | Required | Description |
@@ -33,5 +32,3 @@ DefaultAPI.getTicket(tenantId: tenantId, id: id, userId: userId) { (response, er
     }
 }
 [inline-code-end]
-
----

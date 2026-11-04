@@ -1,3 +1,1 @@
----
 Tilføj en kommentarsektion til ThriveCart Learn+ kurser med indstillingen for brugerdefineret kode, så elever kan stille spørgsmål i hver lektion.
----

@@ -23,5 +23,3 @@ let (optResp, httpResp) = client.updateTenantPackage(
 if optResp.isSome:
   let empty = optResp.get()
 [inline-code-end]
-
----

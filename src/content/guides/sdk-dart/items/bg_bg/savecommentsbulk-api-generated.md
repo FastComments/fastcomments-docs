@@ -37,5 +37,3 @@ try {
     print('Exception when calling DefaultApi->saveCommentsBulk: $e\n');
 }
 [inline-code-end]
-
----

@@ -10,5 +10,3 @@
    2. `TenantUser` הוא מנהל עם סט של הרשאות ב-`Tenant`.
    3. `TenantPackage` היא חבילה עם סט של מגבלות ותמחור הזמין ל-`Tenant`.
 3. התממשקו עם ה-[API](/guide-api.html) שלנו או השתמשו ב-[סקריפטים](https://github.com/FastComments/fastcomments-code-examples/tree/master/white-labeling) כדי לבצע הרשמה והגדרה של tenants.
-
----

@@ -27,5 +27,3 @@ interface QuestionConfigByIdResponse {
     questionConfig?: QuestionConfig
 }
 [inline-code-end]
-
----

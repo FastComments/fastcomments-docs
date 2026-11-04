@@ -1,4 +1,3 @@
----
 [related-parameter-start name = 'enableThirdPartyCookieBypass'; type = 'boolean'; related-parameter-end]
 
 За аутентификацију, FastComments зависи од омогућених колачића трећих страна у вашем прегледачу. Без њих, корисници ће увек морати
@@ -15,5 +14,3 @@
 Ово такође можемо подесити преко корисничког интерфејса за прилагођавање виџета, под `Enable Third-Party Cookie Popup`:
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.enable-third-party-cookie-bypass'; clickSelectors = ['.enable-third-party-cookie-bypass']; alt='Страница за прилагођавање виџета са означеним пољем за омогућавање искачућег прозора за колачиће трећих страна'; title='Омогућавање заобилажења колачића трећих страна' app-screenshot-end]
-
----

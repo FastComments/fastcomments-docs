@@ -1,4 +1,3 @@
----
 Това е "твърде дълго; не прочетох" версия на инструкциите за Drupal.
 
 1. Инсталирайте модула с `composer require drupal/fcom`, или го поставете в `modules/custom/fastcomments/`.
@@ -8,5 +7,3 @@
 5. Добавете полето `FastComments` към всеки тип съдържание чрез `Structure > Content types > [type] > Manage fields`.
 
 Модулът е публикуван на [drupal.org/project/fcom](https://www.drupal.org/project/fcom).
-
----

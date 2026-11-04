@@ -30,5 +30,3 @@ let params = AggregateQuestionResultsParams {
 
 let response = aggregate_question_results(&configuration, params).await?;
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 - [APIAuditLog](https://github.com/FastComments/fastcomments-php/blob/main/docs/Model/APIAuditLog.md)
 - [APIBanUserChangeLog](https://github.com/FastComments/fastcomments-php/blob/main/docs/Model/APIBanUserChangeLog.md)
 - [APIBanUserChangedValues](https://github.com/FastComments/fastcomments-php/blob/main/docs/Model/APIBanUserChangedValues.md)
@@ -360,4 +359,3 @@
 - VoteResponseStatus
 - [VoteResponseUser](https://github.com/FastComments/fastcomments-php/blob/main/docs/Model/VoteResponseUser.md)
 - [VoteStyle](https://github.com/FastComments/fastcomments-php/blob/main/docs/Model/VoteStyle.md)
----

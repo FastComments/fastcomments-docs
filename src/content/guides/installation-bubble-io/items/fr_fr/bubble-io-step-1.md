@@ -6,5 +6,3 @@ Tout d'abord, rendez-vous sur la page/mise en page où vous souhaitez ajouter Fa
 </div>
 
 L'élément HTML nous permettra d'intégrer le widget FastComments directement dans votre application Bubble.
-
----

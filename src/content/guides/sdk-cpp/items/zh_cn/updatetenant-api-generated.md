@@ -1,4 +1,3 @@
----
 ## 参数
 
 | 名称 | 类型 | 必填 | 描述 |
@@ -26,5 +25,3 @@ api->updateTenant(tenantId, recordId, body).then([](std::shared_ptr<APIEmptyResp
     (void)log;
 });
 [inline-code-end]
-
----

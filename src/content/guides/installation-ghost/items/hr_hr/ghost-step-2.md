@@ -23,5 +23,3 @@ Uspješan ispis izgledat će ovako (možete ignorirati upozorenja):
 </div>
 
 Ovo će postaviti ovisnosti teme za kasnije naredbe koje ćemo pokrenuti. Također, izvoz ovisi o tome da su ovisnosti teme instalirane; u protivnom ponovni uvoz neće pravilno funkcionirati.
-
----

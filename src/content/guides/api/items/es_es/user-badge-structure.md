@@ -56,4 +56,3 @@ export interface UserBadge {
     urlId?: string | null
 }
 [inline-code-end]
----

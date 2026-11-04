@@ -1,12 +1,12 @@
-By default, users can delete their own comments. Also, deleting their comment automatically  
-deletes all child and transient comments in the thread. This behavior is also live.
+Standaard kunnen gebruikers hun eigen reacties verwijderen. Ook wordt bij het verwijderen van hun reactie automatisch
+alle onderliggende en tijdelijke reacties in de thread verwijderd. Dit gedrag is ook actief.
 
-You can restrict this in the following ways:
+Je kunt dit op de volgende manieren beperken:
 
-- Instead, anonymize the deleted comment (set name and text to `[deleted]` or a custom value).
-- Don't allow deleting comments when there are replies. A customizable error message is shown.
-- Restrict deleting when a comment has replies to only administrators and moderators.
+- Verwijderde reacties in plaats daarvan anonimiseren (naam en tekst instellen op `[deleted]` of een aangepaste waarde).
+- Het verwijderen van reacties niet toestaan wanneer er antwoorden zijn. Er wordt een aanpasbare foutmelding getoond.
+- Het verwijderen wanneer een reactie antwoorden heeft, beperken tot alleen beheerders en moderatoren.
 
-This can be configured via the `Comment Thread Deletion` section in the Widget Customization UI.
+Dit kan worden geconfigureerd via de sectie `Comment Thread Deletion` in de Widget Customization UI.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.comment-thread-deletion-mode']; selector = '.comment-thread-deletion-mode'; alt='Opties voor het verwijderen van commentaarthreads in de widget-aanpassings-UI voor het anonimiseren of beperken van verwijderingen met antwoorden'; title='Pas het verwijdergedrag aan voor antwoorden' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.comment-thread-deletion-mode']; selector = '.comment-thread-deletion-mode'; alt='Opties voor Comment Thread Deletion in de widget customization UI voor anonimiseren of beperken van verwijderen met antwoorden'; title='Verwijdergedrag voor antwoorden aanpassen' app-screenshot-end]

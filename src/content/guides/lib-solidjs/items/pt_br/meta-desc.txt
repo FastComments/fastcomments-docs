@@ -1,3 +1,1 @@
----
 Adicione comentários a um aplicativo SolidJS com o pacote oficial, incluindo um manipulador imperativo para alterar a configuração do widget sem remontar.
----

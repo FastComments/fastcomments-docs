@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Назва | Тип | Обов'язково | Опис |
@@ -18,5 +17,3 @@ let (reactOpt, httpResp) = client.deleteV1PageReact(tenantId = "my-tenant-123", 
 if reactOpt.isSome:
   let react = reactOpt.get()
 [inline-code-end]
-
----

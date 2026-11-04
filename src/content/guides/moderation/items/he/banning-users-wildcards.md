@@ -1,29 +1,27 @@
-It is possible to ban users using certain email providers using wildcards.
+ניתן לחסום משתמשים המשתמשים בספקי דוא"ל מסוימים באמצעות wildcards.
 
-For example, if you find that all comments from **@bademail.com** are spam, you can simply ban
-that whole email provider by entering "*@bademail.com" in the email input field when adding a banned user.
+לדוגמה, אם גיליתם שכל התגובות מ-**@bademail.com** הן ספאם, תוכלו פשוט לחסום
+את כל ספק הדוא"ל הזה על ידי הזנת "*@bademail.com" בשדה הקלט של האימייל בעת הוספת משתמש חסום.
 
-Note the "*" before the @ in the email.
+שימו לב ל-"*" לפני ה-@ בכתובת האימייל.
 
-### תתי‑דומיינים
+### תתי-דומיינים
 
-A domain ban also covers every subdomain of that domain. Banning `*@bademail.com` also bans
-`someone@mail.bademail.com` and `someone@eu.mail.bademail.com`, so there is no need to add a separate ban for each subdomain.
+חסימת דומיין מכסה גם את כל תתי-הדומיינים של אותו דומיין. חסימה של `*@bademail.com` חוסמת גם
+את `someone@mail.bademail.com` ואת `someone@eu.mail.bademail.com`, ולכן אין צורך להוסיף חסימה נפרדת לכל תת-דומיין.
 
-If you only want to ban a specific subdomain, enter that subdomain instead, for example `*@mail.bademail.com`. That ban
-does not affect `someone@bademail.com`.
+אם ברצונכם לחסום רק תת-דומיין ספציפי, הזינו את אותו תת-דומיין, לדוגמה `*@mail.bademail.com`. חסימה זו
+אינה משפיעה על `someone@bademail.com`.
 
 ### חסימת דומיין מתוך תגובה
 
-You do not have to type the pattern yourself. When you ban a user from a comment on the Moderate Comments page, the ban dialog
-has a "Ban All @domain Users" checkbox that creates the same `*@domain` ban for the commenter's email domain.
+אינכם צריכים להקליד את התבנית בעצמכם. כאשר אתם חוסמים משתמש מתוך תגובה בעמוד Moderate Comments, דיאלוג החסימה
+כולל תיבת סימון "Ban All @domain Users" שיוצרת את אותה חסימה של `*@domain` עבור הדומיין של כתובת האימייל של המגיב.
 
 ### תבניות נתמכות
 
-The only supported wildcard form is a single `*` in place of the whole name part, followed by `@` and a domain. Other forms
-are rejected when you try to save them:
+הצורה היחידה של wildcard נתמכת היא `*` בודד במקום כל חלק השם, ואחריו `@` ודומיין. צורות אחרות
+נדחות כאשר מנסים לשמור אותן:
 
-- `*@*.bademail.com` is not needed, because `*@bademail.com` already covers subdomains.
-- `name*@bademail.com` and `*bademail.com` are not supported.
-
----
+- `*@*.bademail.com` אינו נחוץ, מכיוון ש-`*@bademail.com` כבר מכסה תתי-דומיינים.
+- `name*@bademail.com` ו-`*bademail.com` אינם נתמכים.

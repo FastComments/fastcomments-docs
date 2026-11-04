@@ -38,5 +38,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->put_award_badge: #{e}"
 end
 [inline-code-end]
-
----

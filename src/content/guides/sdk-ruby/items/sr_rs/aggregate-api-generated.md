@@ -1,4 +1,3 @@
----
 Агрегира документе груписањем (ако је groupBy наведен) и применом више операција.
 Подржане су различите операције (нпр. sum, countDistinct, avg итд.).
 
@@ -44,5 +43,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->aggregate: #{e}"
 end
 [inline-code-end]
-
----

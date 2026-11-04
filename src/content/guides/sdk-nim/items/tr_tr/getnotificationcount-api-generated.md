@@ -1,4 +1,3 @@
----
 ## Parametreler
 
 | Ad | Tür | Gerekli | Açıklama |
@@ -19,5 +18,3 @@ if notifOpt.isSome:
   let notif = notifOpt.get()
   echo notif
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 您可能会遇到类似以下的授权错误：
 
 <div class="screenshot white-bg">
@@ -11,5 +10,3 @@
 在这种情况下，解决方法很简单。您只需将您的站点添加到您的 FastComments.com 帐户。
 
 [前往此处将您的站点添加到您的帐户。](https://fastcomments.com/auth/my-account/configure-domains)
-
----

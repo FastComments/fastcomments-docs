@@ -27,5 +27,3 @@ interface UserByIdResponse {
     user?: User
 }
 [inline-code-end]
-
----

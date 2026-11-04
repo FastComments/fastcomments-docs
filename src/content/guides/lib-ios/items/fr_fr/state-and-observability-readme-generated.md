@@ -1,43 +1,43 @@
-Les deux `FastCommentsSDK` et `FastCommentsFeedSDK` sont des classes `ObservableObject` disposant de propriétés `@Published`. Vous pouvez les observer dans vos vues SwiftUI pour mettre à jour l'interface utilisateur de manière réactive.
+`FastCommentsSDK` et `FastCommentsFeedSDK` sont des classes `ObservableObject` avec des propriétés `@Published`. Vous pouvez les observer dans vos vues SwiftUI pour des mises à jour réactives de l'interface.
 
-### FastCommentsSDK Published Properties
+### Propriétés Published de FastCommentsSDK
 
-| Property | Type | Description |
+| Propriété | Type | Description |
 |----------|------|-------------|
 | `commentCountOnServer` | `Int` | Nombre total de commentaires sur le serveur |
-| `newRootCommentCount` | `Int` | Commentaires nouveaux en attente (lorsque `showLiveRightAway` est false) |
-| `currentUser` | `UserSessionInfo?` | Utilisateur actuellement authentifié |
-| `isSiteAdmin` | `Bool` | Indique si l'utilisateur courant est administrateur du site |
+| `newRootCommentCount` | `Int` | Nouveaux commentaires mis en mémoire tampon (lorsque `showLiveRightAway` est false) |
+| `currentUser` | `UserSessionInfo?` | Utilisateur authentifié actuel |
+| `isSiteAdmin` | `Bool` | Indique si l'utilisateur actuel est un administrateur du site |
 | `isClosed` | `Bool` | Indique si le fil de commentaires est fermé |
 | `hasBillingIssue` | `Bool` | Indique s'il y a un problème de facturation |
 | `isLoading` | `Bool` | Indique si une requête réseau est en cours |
 | `hasMore` | `Bool` | Indique s'il existe d'autres pages de commentaires |
-| `blockingErrorMessage` | `String?` | Erreur empêchant le fonctionnement de l'interface utilisateur |
+| `blockingErrorMessage` | `String?` | Erreur empêchant le fonctionnement de l'interface |
 | `warningMessage` | `String?` | Message d'avertissement non bloquant |
 | `isDemo` | `Bool` | Indique si l'application fonctionne en mode démo |
-| `commentsVisible` | `Bool` | Contrôle la visibilité des commentaires |
-| `toolbarEnabled` | `Bool` | Indique si la barre d'outils de formatage est affichée |
+| `commentsVisible` | `Bool` | Bascule pour la visibilité des commentaires |
+| `toolbarEnabled` | `Bool` | Indique si la barre de formatage est affichée |
 
-### FastCommentsFeedSDK Published Properties
+### Propriétés Published de FastCommentsFeedSDK
 
-| Property | Type | Description |
+| Propriété | Type | Description |
 |----------|------|-------------|
 | `feedPosts` | `[FeedPost]` | Publications du fil actuellement chargées |
 | `hasMore` | `Bool` | Indique s'il existe d'autres pages |
-| `currentUser` | `UserSessionInfo?` | Utilisateur actuellement authentifié |
+| `currentUser` | `UserSessionInfo?` | Utilisateur authentifié actuel |
 | `blockingErrorMessage` | `String?` | Message d'erreur bloquant |
 | `isLoading` | `Bool` | Indique si une requête réseau est en cours |
-| `newPostsCount` | `Int` | Nombre de nouveaux posts depuis le dernier chargement |
+| `newPostsCount` | `Int` | Nombre de nouvelles publications depuis le dernier chargement |
 
-### Comment Tree
+### Arbre des commentaires
 
-L'arbre des commentaires est accessible via `sdk.commentsTree`:
+L'arbre des commentaires est accessible via `sdk.commentsTree` :
 
 ```swift
-// Liste plate des nœuds visibles pour le rendu
+// Flat list of visible nodes for rendering
 sdk.commentsTree.visibleNodes
 
-// Rechercher un commentaire par ID
+// Lookup a comment by ID
 sdk.commentsTree.commentsById["comment-id"]
 ```
 

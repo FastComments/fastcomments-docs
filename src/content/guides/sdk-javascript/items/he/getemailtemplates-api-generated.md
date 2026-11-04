@@ -1,4 +1,3 @@
----
 ## פרמטרים
 
 | Name | Type | Required | Description |
@@ -21,5 +20,3 @@ async function fetchEmailTemplates() {
   const templatesWithoutSkip: GetEmailTemplatesResponse = await getEmailTemplates(tenantId);
 }
 [inline-code-end]
-
----

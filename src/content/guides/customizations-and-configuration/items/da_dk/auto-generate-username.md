@@ -1,18 +1,18 @@
-When users comment or vote, and they are not logged in, they will be asked to provide their email and username.
+Når brugere kommenterer eller stemmer, og de ikke er logget ind, bliver de bedt om at angive deres e-mail og brugernavn.
 
-For some sites, asking a visitor to invent a unique username is a hurdle, particularly on mobile. FastComments can
-generate a neutral username for each new visitor and prefill it in the username field, like `BraveOtter4172`.
+For nogle websteder kan det være en barriere at bede en besøgende om at finde på et unikt brugernavn, især på mobil. FastComments kan
+generere et neutralt brugernavn til hver ny besøgende og forududfylde det i brugernavnsfeltet, f.eks. `BraveOtter4172`.
 
-The visitor can leave it as-is, or replace it with a name of their choosing.
+Den besøgende kan lade det stå som det er, eller erstatte det med et navn efter eget valg.
 
-This can be enabled from the Customization UI, under the setting called `Generate Usernames Automatically`:
+Dette kan aktiveres fra Customization UI under indstillingen `Generate Usernames Automatically`:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.auto-generate-username'; alt='Muligheden \'Generate Usernames Automatically\' i widget-tilpasnings-UI\'en'; title='Generer brugernavne automatisk' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.auto-generate-username'; alt='Indstillingen Generate Usernames Automatically i widget-tilpasningsgrænsefladen'; title='Generér brugernavne automatisk' app-screenshot-end]
 
-#### Sådan fungerer den
+#### Sådan fungerer det
 
-- Each generated name is unique. It is checked against existing accounts and reserved for that visitor's browser session, so two visitors are not offered the same name.
-- The name is only generated for visitors who do not have one yet. Logged in users, SSO users, and visitors who have already commented keep their existing name.
-- It works with or without [anonymous commenting](/guide-customizations-and-configuration.html#allow-anon). With anonymous commenting off, the visitor still enters their email, but no longer has to think of a username.
-- A returning visitor who enters an email they have used before is matched to their existing account, and keeps the name on that account.
-- If a [Default Username](/guide-customizations-and-configuration.html#default-username) is also set, the generated name takes precedence.
+- Hvert genererede navn er unikt. Det kontrolleres mod eksisterende konti og reserveres til den besøgendes browsersession, så to besøgende ikke tilbydes det samme navn.
+- Navnet genereres kun for besøgende, der ikke har et endnu. Loggede brugere, SSO-brugere og besøgende, der allerede har kommenteret, beholder deres eksisterende navn.
+- Det fungerer med eller uden [anonym kommentering](/guide-customizations-and-configuration.html#allow-anon). Med anonym kommentering slået fra skal den besøgende stadig indtaste sin e-mail, men behøver ikke længere at finde på et brugernavn.
+- En tilbagevendende besøgende, der indtaster en e-mail, de har brugt før, matches til deres eksisterende konto og beholder navnet på den konto.
+- Hvis en [Default Username](/guide-customizations-and-configuration.html#default-username) også er angivet, har det genererede navn forrang.

@@ -61,5 +61,3 @@ interface PageMigrationUndoResult {
 #### 重试
 
 如果运行页面迁移作业的服务器重启，作业会重新放回队列，并在上一次完成的迁移之后继续。作业最多会尝试 3 次，之后其 `status` 为 `failed`。
-
----

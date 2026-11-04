@@ -1,13 +1,13 @@
-Bulk user info for a tenant. Given userIds, return display info from User / SSOUser.  
-Used by the comment widget to enrich users that just appeared via a presence event.  
-No page context: privacy is enforced uniformly (private profiles are masked).
+מידע משתמשים בכמות עבור טננט. בהינתן userIds, מחזיר מידע תצוגה מ-User / SSOUser.
+משמש את ווידג'ט התגובות להעשרת משתמשים שהופיעו זה עתה באמצעות אירוע נוכחות.
+ללא הקשר עמוד: הפרטיות נאכפת באופן אחיד (פרופילים פרטיים מוסתרים).
 
 ## פרמטרים
 
-| שם | סוג | נדרש | תיאור |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | כן |  |
-| ids | string | לא |  |
+| tenantId | string | Yes |  |
+| ids | string | No |  |
 
 ## תגובה
 
@@ -15,7 +15,7 @@ No page context: privacy is enforced uniformly (private profiles are masked).
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמת getUsersInfo'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל-getUsersInfo'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (usersInfoOpt, httpResp) = client.getUsersInfo(tenantId = "my-tenant-123", ids = "user42")
 if usersInfoOpt.isSome:

@@ -1,4 +1,3 @@
----
 ## 參數
 
 | Name | Type | Location | Required | Description |
@@ -30,5 +29,3 @@ DefaultAPI.createTenantUser(tenantId: tenantId, createTenantUserBody: createTena
     }
 }
 [inline-code-end]
-
----

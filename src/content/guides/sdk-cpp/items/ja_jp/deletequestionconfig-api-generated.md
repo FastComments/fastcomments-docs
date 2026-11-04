@@ -28,5 +28,3 @@ api->deleteQuestionConfig(tenantId, configId)
         }
     });
 [inline-code-end]
-
----

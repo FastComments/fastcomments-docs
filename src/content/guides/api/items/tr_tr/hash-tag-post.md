@@ -32,5 +32,3 @@ interface HashTagPostResponse {
     hashTag?: HashTag; // Başarı durumunda oluşturulan hashtag'in tamamını döneriz.
 }
 [inline-code-end]
-
----

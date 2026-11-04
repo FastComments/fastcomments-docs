@@ -1,4 +1,3 @@
----
 ## Parametreler
 
 | Ad | Tür | Gerekli | Açıklama |
@@ -27,5 +26,3 @@ if optResp.isSome:
   let empty = optResp.get()
   discard empty
 [inline-code-end]
-
----

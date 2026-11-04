@@ -1,4 +1,3 @@
----
 FastCommentsでは、承認済み（Approved）のコメントは**表示される**コメントです。コメントを非表示にするには、そのコメントの承認を取り消します。
 
 コメントは自動的に承認することも、モデレーターが各コメントを手動で承認することもできます。 また、ユーザーの最初のコメントのみ承認を必要とし、
@@ -13,5 +12,3 @@ FastCommentsにはVerified（認証済み）とUnverified（未認証）の概�
 自動コメント承認を有効にしつつ、`Only Auto Approve Verified Comments` を有効にすることを検討してください。
 
 これらはすべて管理者が[モデレーション設定](https://fastcomments.com/auth/my-account/moderate-comments/settings)から設定できます。
-
----

@@ -29,5 +29,3 @@ api->getPreBanSummary(tenantId, commentId, options)
         }
     });
 [inline-code-end]
-
----

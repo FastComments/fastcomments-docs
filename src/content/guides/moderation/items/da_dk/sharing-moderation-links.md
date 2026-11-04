@@ -8,5 +8,3 @@ For eksempel følgende brugsscenarie:
 - Moderator A finder noget interessant på den anden side af de søgte kommentarer.
 - Moderator A kan **dele linket** til denne side direkte med Moderator B.
 - Moderator B kan se, hvad Moderator A gjorde.
-
----

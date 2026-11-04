@@ -28,5 +28,3 @@ api->postApiExport(tenantId, options)
     })
     .wait();
 [inline-code-end]
-
----

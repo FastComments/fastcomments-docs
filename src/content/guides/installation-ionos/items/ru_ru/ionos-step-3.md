@@ -1,4 +1,3 @@
----
 Теперь нам осталось только опубликовать сайт — и всё готово.
 
 Вернитесь в редактор содержимого, нажав `Content` в верхнем левом углу:
@@ -21,5 +20,3 @@
     <div class="title">Готово!</div>
     <img class="screenshot-image" src="/images/installation-guides/ionos-step-3-done.png" alt="Готово!" />
 </div>
-
----

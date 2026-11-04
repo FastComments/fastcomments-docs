@@ -1,4 +1,3 @@
----
 Es kann ein Autorisierungsfehler wie der folgende auftreten:
 
 <div class="screenshot white-bg">
@@ -11,4 +10,3 @@ Das liegt daran, dass FastComments nicht weiß, dass Ihr Konto auf dieser Domain
 In diesem Fall ist die Lösung einfach. Sie müssen Ihre Website lediglich zu Ihrem FastComments.com-Konto hinzufügen.
 
 [Klicken Sie hier, um Ihre Website zu Ihrem Konto hinzuzufügen.](https://fastcomments.com/auth/my-account/configure-domains)
----

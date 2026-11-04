@@ -1,14 +1,14 @@
-| Component | Description |
+| רכיב | תיאור |
 | --- | --- |
-| `FastComments` | ווידג'ט תגובות עם תגובות משנה, הצבעות ועוד |
-| `FastCommentsCommentCount` | מציג ספירת תגובות לעמוד |
-| `FastCommentsImageChat` | הערות על תמונות |
+| `FastComments` | ווידג'ט תגובות עם מענות, הצבעות ועוד |
+| `FastCommentsCommentCount` | מציג את מספר התגובות עבור דף |
+| `FastCommentsImageChat` | תגובות הערות על תמונות |
 | `FastCommentsLiveChat` | ווידג'ט צ'אט חי |
-| `FastCommentsCollabChat` | הערות שיתופיות בתוך הטקסט |
-| `FastCommentsReviewsSummary` | סיכום ביקורות בדירוג כוכבים |
+| `FastCommentsCollabChat` | תגובות משולבות שיתופיות |
+| `FastCommentsReviewsSummary` | סיכום ביקורות עם דירוג כוכבים |
 | `FastCommentsUserActivityFeed` | פיד פעילות משתמש |
 
-All components are exported from the package root:
+כל הרכיבים מיוצאים משורש החבילה:
 
 ```astro
 ---

@@ -55,5 +55,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Wyjątek podczas wywoływania DefaultApi->block_user_from_comment: %s\n" % e)
 [inline-code-end]
-
----

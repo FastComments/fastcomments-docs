@@ -1,4 +1,3 @@
----
 撤回投票。投票所屬的選項會恢復其計數。
 
 ## 參數
@@ -25,5 +24,3 @@ async function runDeletePollVoteExample(): Promise<void> {
   console.log(result);
 }
 [inline-code-end]
-
----

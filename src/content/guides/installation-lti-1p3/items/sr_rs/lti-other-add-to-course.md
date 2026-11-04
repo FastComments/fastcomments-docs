@@ -1,126 +1,126 @@
-Када се FastComments региструје на платформи, инструктори га додају у садржај курса користећи стандардне токове за спољне алате платформе. Ова страница покрива Sakai 23.x и Schoology Enterprise.
+Када се FastComments региструје на платформи, предавачи га додају у садржај курса користећи стандардне токове платформе за спољашње алате. Ова страница покрива Sakai 23.x и Schoology Enterprise.
 
-#### Lock Down Public Access (Recommended)
+#### Ограничите јавни приступ (препоручено)
 
-Пo подразумеваној вредности, FastComments подаци коментара су јавно читљиви на обе платформе. Сваки ко може да погоди URL нити или њен API ендпоинт може да види коментаре, чак и изван Sakai или Schoology. За дискусије у курсу готово сигурно желите да ограничите преглед само на уписане студенте.
+Подразумевано, подаци о коментарима у FastComments су јавно читљиви на обе платформе. Свако ко може да погоди URL нити или API крајњу тачку може да види коментаре, чак и ван Sakai или Schoology. За дискусије у курсевима готово сигурно желите да ограничите преглед само на уписане студенте.
 
-Отворите вашу <a href="https://fastcomments.com/auth/my-account/customize-widget" target="_blank">widget customization page</a> и креирајте правило са омогућеним **Require SSO To View Comments**, затим подесите ниво безбедности на **Secure SSO** тако да се нитови могу учитавати само кроз потписано LTI покретање.
+Отворите своју <a href="https://fastcomments.com/auth/my-account/customize-widget" target="_blank">страницу за прилагођавање виџета</a> и креирајте правило са омогућеном опцијом **Require SSO To View Comments**, а затим поставите ниво безбедности на **Secure SSO** како би нити могле да се учитају само кроз потписано LTI покретање.
 
-Погледајте [Protecting Comment Threads With Single-Sign-On](/guide-customizations-and-configuration.html#sso-require-to-view-comments) за потпун водич, укључујући како да ограничите правило на један домен или страницу.
+Погледајте [Заштита нити коментара помоћу јединствене пријаве (SSO)](/guide-customizations-and-configuration.html#sso-require-to-view-comments) за комплетан водич, укључујући и то како да ограничите правило на један домен или страницу.
 
 #### Sakai
 
-**1. Add FastComments to a site**
+**1. Додавање FastComments на сајт**
 
-The site maintainer enables the tool on a per-site basis:
+Одржавалац сајта омогућава алат на нивоу појединачног сајта:
 
-1. Open the site and click **Site Info** in the left navigation.
-2. Click **Manage Tools**.
-3. Scroll to the **External Tools** list and toggle **FastComments** on.
-4. Click **Continue**, review the tool list, then click **Finish**.
+1. Отворите сајт и кликните **Site Info** у левој навигацији.
+2. Кликните **Manage Tools**.
+3. Скролујте до листе **External Tools** и укључите **FastComments**.
+4. Кликните **Continue**, прегледајте листу алата, а затим кликните **Finish**.
 
-FastComments now appears as a left-nav item in the site.
+FastComments се сада појављује као ставка у левој навигацији сајта.
 
-**2. Reorder the left-nav entry**
+**2. Преуређивање ставке у левој навигацији**
 
-Go to **Site Info** > **Tool Order**. Drag **FastComments** to the desired position and click **Save**. You can also rename the nav label and hide it from students from this screen.
+Идите на **Site Info** > **Tool Order**. Превуците **FastComments** на жељену позицију и кликните **Save**. Са овог екрана такође можете преименовати ознаку у навигацији и сакрити је од студената.
 
-**3. Embed inline in a Lessons page**
+**3. Уграђивање унутар странице у Lessons**
 
-To place FastComments directly inside a Lessons page rather than as a standalone left-nav tool:
+Да бисте поставили FastComments директно унутар странице у Lessons, уместо као самостални алат у левој навигацији:
 
-1. Open the **Lessons** tool in the site.
-2. Click **Add Content** > **Add External Tool**.
-3. Select **FastComments** from the list.
-4. If FastComments advertised Deep Linking during registration, Sakai opens the tool's content selector so you can pick or label the thread. If Deep Linking wasn't advertised, Sakai inserts a default launch link.
-5. Save the Lessons item.
+1. Отворите алат **Lessons** на сајту.
+2. Кликните **Add Content** > **Add External Tool**.
+3. Изаберите **FastComments** са листе.
+4. Ако је FastComments пријавио Deep Linking током регистрације, Sakai отвара селектор садржаја алата како бисте могли да изаберете или означите нит. Ако Deep Linking није био пријављен, Sakai убацује подразумевани линк за покретање.
+5. Сачувајте ставку у Lessons.
 
-Each embedded instance gets its own thread, scoped to that resource link.
+Свака уграђена инстанца добија сопствену нит, ограничену на тај линк ресурса.
 
-**4. Permission tweaks for student access**
+**4. Подешавање дозвола за приступ студената**
 
-Sakai gates external tool launches through Realms. To confirm students can launch FastComments:
+Sakai контролише покретање спољашњих алата преко Realms. Да бисте потврдили да студенти могу да покрену FastComments:
 
-1. Sign in as a Sakai admin and open **Administration Workspace** > **Realms**.
-2. Open the relevant realm (for example, `!site.template.course` or the specific site realm).
-3. Confirm the `access` role has `lti.launch` enabled and that the role permissions in the **external.tools** group are granted.
-4. Save the realm.
+1. Пријавите се као Sakai администратор и отворите **Administration Workspace** > **Realms**.
+2. Отворите релевантни realm (на пример, `!site.template.course` или realm конкретног сајта).
+3. Потврдите да улога `access` има омогућено `lti.launch` и да су додељене дозволе улога у групи **external.tools**.
+4. Сачувајте realm.
 
-For site-level overrides, the maintainer can adjust per-role tool visibility from **Site Info** > **Tool Order** by hiding or showing FastComments per role.
+За измене на нивоу сајта, одржавалац може да подеси видљивост алата по улоги из **Site Info** > **Tool Order** тако што сакрива или приказује FastComments по улози.
 
-**5. What students see**
+**5. Шта студенти виде**
 
-Students click the FastComments left-nav item (or scroll to the embedded Lessons block) and land directly in the threaded comment view. SSO is automatic: Sakai sends the user's identity in the LTI launch and FastComments signs them in under their Sakai account.
+Студенти кликну на ставку FastComments у левој навигацији (или скролују до уграђеног блока у Lessons) и директно стижу у приказ коментара у нитима. SSO је аутоматски: Sakai шаље идентитет корисника у LTI покретању и FastComments их пријављује под њиховим Sakai налогом.
 
-Role mapping:
+Мапирање улога:
 
-- Sakai `Instructor` -> FastComments moderator
-- Sakai `Admin` (admin in Administration Workspace) -> FastComments admin
-- Sakai `Student` / `access` -> FastComments commenter
+- Sakai `Instructor` -> FastComments модератор
+- Sakai `Admin` (администратор у Administration Workspace) -> FastComments администратор
+- Sakai `Student` / `access` -> FastComments коментатор
 
-**6. Sakai gotchas**
+**6. Sakai замке**
 
-- **Tool not visible in Manage Tools.** If FastComments doesn't appear in the External Tools list, the Sakai admin needs to open the tool registry (**Administration Workspace** > **External Tools** > **FastComments**) and set **Stealthed** to `false`. Stealthed tools are hidden from the per-site Manage Tools picker.
-- **Launches breaking in shared-session browsers.** Sakai's portal CSRF token is bound to the browser session. If a student is signed in to two Sakai sites in different tabs or has a stale session, the launch returns a 403. Fix: close other Sakai tabs, sign out, sign back in, and relaunch. Admins can also raise `sakai.csrf.token.cache.ttl` if this happens cluster-wide.
-- **Frame embedding.** Confirm `lti.frameheight` in `sakai.properties` is large enough (600 or higher) so the comment thread isn't clipped inside a Lessons page.
+- **Алат није видљив у Manage Tools.** Ако се FastComments не појављује у листи External Tools, Sakai администратор треба да отвори регистар алата (**Administration Workspace** > **External Tools** > **FastComments**) и постави **Stealthed** на `false`. Stealthed алати су скривени из избора Manage Tools на нивоу сајта.
+- **Покретања која не раде у прегледачима са дељеном сесијом.** Sakai CSRF токен портала је везан за сесију прегледача. Ако је студент пријављен на два Sakai сајта у различитим картицама или има застарелу сесију, покретање враћа 403. Решење: затворите друге Sakai картице, одјавите се, поново се пријавите и покрените поново. Администратори такође могу да повећају `sakai.csrf.token.cache.ttl` ако се ово дешава на нивоу целог кластера.
+- **Уграђивање у оквир.** Потврдите да је `lti.frameheight` у `sakai.properties` довољно велика (600 или више) како нит коментара не би била одсечена унутар странице у Lessons.
 
 #### Schoology
 
-Schoology Enterprise has two installation scenarios. Confirm which one applies before adding the tool to a course.
+Schoology Enterprise има два сценарија инсталације. Потврдите који се односи на вас пре додавања алата у курс.
 
-**1. Two installation scenarios**
+**1. Два сценарија инсталације**
 
-- **(a) Enterprise-level install.** The Schoology System Administrator installed FastComments at the organization level and assigned it to all courses or to specific course templates. Instructors skip installation and go straight to "Add Materials".
-- **(b) Instructor self-install.** The instructor installs the tool into a single course from **Course Options** > **External Tools** > **Install LTI Apps**. Self-install requires the System Administrator to have approved the FastComments app at the org level first.
+- **(a) Инсталација на нивоу Enterprise.** Schoology систем администратор је инсталирао FastComments на нивоу организације и доделио га свим курсевима или одређеним шаблонима курсева. Предавачи прескачу инсталацију и одмах прелазе на „Add Materials".
+- **(b) Самостална инсталација од стране предавача.** Предавач инсталира алат у један курс из **Course Options** > **External Tools** > **Install LTI Apps**. Самостална инсталација захтева да систем администратор прво одобри FastComments апликацију на нивоу организације.
 
-**2. Add FastComments as a course material**
+**2. Додавање FastComments као материјала курса**
 
-Inside the course:
+Унутар курса:
 
-1. Open the course and go to **Materials**.
-2. Click **Add Materials** > **Add File/Link/External Tool**.
-3. Choose **External Tool**.
-4. Select **FastComments** from the registered tools list.
-5. Set a **Name** (this is what students see in the materials list) and an optional **Description**.
-6. Leave **Enable Grading** (grade passback) **OFF**. FastComments does not report grades back to Schoology, so enabling grade passback creates an empty gradebook column.
-7. Click **Submit**.
+1. Отворите курс и идите на **Materials**.
+2. Кликните **Add Materials** > **Add File/Link/External Tool**.
+3. Изаберите **External Tool**.
+4. Изаберите **FastComments** са листе регистрованих алата.
+5. Поставите **Name** (то је оно што студенти виде у листи материјала) и опциони **Description**.
+6. Оставите **Enable Grading** (прослеђивање оцена) **ИСКЉУЧЕНО**. FastComments не шаље оцене назад у Schoology, тако да омогућавање прослеђивања оцена креира празну колону у књизи оцена.
+7. Кликните **Submit**.
 
-The material now appears in the course materials list and opens the FastComments thread when clicked.
+Материјал се сада појављује у листи материјала курса и отвара FastComments нит када се кликне.
 
-**3. Inline embedding via the Rich Text editor**
+**3. Уграђивање преко Rich Text уредника**
 
-If the System Administrator enabled Deep Linking placement for FastComments during registration, instructors can embed the comment thread inside any Rich Text field (assignment instructions, page bodies, discussion prompts):
+Ако је систем администратор омогућио Deep Linking постављање за FastComments током регистрације, предавачи могу да уграде нит коментара унутар било ког Rich Text поља (упутства за задатке, тела страница, теме дискусија):
 
-1. Open the Rich Text editor on the target page.
-2. Click the **External Tool** (puzzle piece) icon in the toolbar.
-3. Choose **FastComments**.
-4. Configure the embed in the deep-linking dialog and click **Insert**.
-5. Save the page.
+1. Отворите Rich Text уредник на циљаној страници.
+2. Кликните икону **External Tool** (слагалица) на траци са алаткама.
+3. Изаберите **FastComments**.
+4. Конфигуришите уградњу у дијалогу за deep-linking и кликните **Insert**.
+5. Сачувајте страницу.
 
-If the External Tool button doesn't appear in the Rich Text editor, Deep Linking is disabled for this tool on this tenant. See the gotchas below.
+Ако се дугме External Tool не појављује у Rich Text уреднику, Deep Linking је онемогућен за овај алат на овом тенанту. Погледајте замке испод.
 
-**4. Visibility and section assignments**
+**4. Видљивост и доделе по секцијама**
 
-Schoology scopes tool availability per section through Course Options:
+Schoology ограничава доступност алата по секцијама преко Course Options:
 
-1. From the course, click **Course Options** > **External Tools**.
-2. For each installed LTI app, you control whether it's available to all sections in the course or to specific sections.
-3. To restrict FastComments to certain sections, uncheck the sections that should not see the tool.
-4. Section-level access also gates which sections see the **Add Materials** > **External Tool** entry for FastComments.
+1. Из курса, кликните **Course Options** > **External Tools**.
+2. За сваки инсталирани LTI алат, контролишете да ли је доступан свим секцијама у курсу или само одређеним секцијама.
+3. Да бисте ограничили FastComments на одређене секције, одзначите секције које не би требало да виде алат.
+4. Приступ на нивоу секције такође контролише које секције виде ставку **Add Materials** > **External Tool** за FastComments.
 
-**5. What students see**
+**5. Шта студенти виде**
 
-Students click the FastComments material (or scroll to the inline embed) and land in the threaded discussion. SSO is automatic via the Schoology LTI launch under their Schoology account.
+Студенти кликну на FastComments материјал (или скролују до уграђеног садржаја) и стижу у дискусију у нитима. SSO је аутоматски преко Schoology LTI покретања под њиховим Schoology налогом.
 
-Role mapping:
+Мапирање улога:
 
-- Schoology `Administrator` -> FastComments admin
-- Schoology `Instructor` -> FastComments moderator
-- Schoology `Student` -> FastComments commenter
+- Schoology `Administrator` -> FastComments администратор
+- Schoology `Instructor` -> FastComments модератор
+- Schoology `Student` -> FastComments коментатор
 
-**6. Schoology gotchas**
+**6. Schoology замке**
 
-- **Enterprise-only.** Personal and free Schoology accounts cannot install LTI 1.3 tools. If your tenant is on the free tier, the **External Tools** option is absent from Course Options. Upgrade to Schoology Enterprise to use FastComments.
-- **Deep Linking disabled by tenant default.** Some Schoology tenants restrict Deep Linking placement at the org level. When this is the case, instructors see only the **Add Materials** > **External Tool** flow and not the External Tool button in the Rich Text editor. To enable inline embedding, the System Administrator goes to **System Settings** > **Integration** > **LTI 1.3** > **FastComments** and enables the **Content Item / Deep Linking** placement, then saves.
-- **Per-section assignment override.** If FastComments is assigned at the enterprise level but the instructor cannot see it in **Add Materials**, the course's section is excluded in the org-level assignment. Ask the System Administrator to add the section to the FastComments app assignment.
-- **Material name vs. thread identity.** Renaming the material in Schoology does not move the comment thread. Threads are keyed on the LTI resource link ID, so a rename keeps the same thread; deleting and recreating the material creates a new, empty thread.
+- **Само Enterprise.** Лични и бесплатни Schoology налози не могу да инсталирају LTI 1.3 алате. Ако је ваш тенант на бесплатном нивоу, опција **External Tools** не постоји у Course Options. Надоградите на Schoology Enterprise да бисте користили FastComments.
+- **Deep Linking онемогућен подразумевано на нивоу тенанта.** Неки Schoology тенанти ограничавају Deep Linking постављање на нивоу организације. Када је то случај, предавачи виде само ток **Add Materials** > **External Tool**, а не дугме External Tool у Rich Text уреднику. Да би омогућио уграђивање, систем администратор иде на **System Settings** > **Integration** > **LTI 1.3** > **FastComments** и омогућава постављање **Content Item / Deep Linking**, а затим чува.
+- **Измена доделе по секцијама.** Ако је FastComments додељен на нивоу enterprise-а, али предавач не може да га види у **Add Materials**, секција курса је искључена из доделе на нивоу организације. Замолите систем администратора да дода секцију у доделу FastComments апликације.
+- **Назив материјала у односу на идентитет нити.** Преименовање материјала у Schoology не премешта нит коментара. Нити су кључене по LTI resource link ID, тако да преименовање задржава исту нит; брисање и поновно креирање материјала креира нову, празну нит.

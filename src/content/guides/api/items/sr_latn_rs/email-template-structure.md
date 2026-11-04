@@ -1,4 +1,3 @@
----
 Objekat `EmailTemplate` predstavlja konfiguraciju za prilagođeni email šablon, za tenant.
 
 Sistem će izabrati email šablon za upotrebu na osnovu:
@@ -37,5 +36,3 @@ interface EmailTemplate {
 - Možete dobiti validne `emailTemplateId` vrednosti sa `/definitions` endpoint-a.
 - `/definitions` endpoint takođe uključuje podrazumevane prevode i test podatke.
 - Šabloni neće moći da se sačuvaju ako struktura ili test podaci nisu validni.
-
----

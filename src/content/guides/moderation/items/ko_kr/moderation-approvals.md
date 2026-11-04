@@ -1,4 +1,3 @@
----
 FastComments에서는 승인된 댓글은 **표시되는** 댓글입니다. 댓글을 숨기려면 승인을 취소하면 됩니다.
 
 댓글은 자동으로 승인되거나, 중재자가 각 댓글을 수동으로 승인할 수 있습니다. 또한
@@ -13,4 +12,3 @@ FastComments에는 검증됨(Verified)과 미검증(Unverified)의 개념이 있
 자동 댓글 승인을 활성화하되 `Only Auto Approve Verified Comments`를 활성화하는 것이 좋습니다.
 
 이 모든 설정은 관리자가 [중재 설정](https://fastcomments.com/auth/my-account/moderate-comments/settings)에서 구성할 수 있습니다.
----

@@ -27,5 +27,3 @@ else:
   # obradite nedostajući odgovor
   discard
 [inline-code-end]
-
----

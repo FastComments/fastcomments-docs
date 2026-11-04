@@ -29,5 +29,3 @@ interface EmailTemplatesResponse {
     emailTemplates: EmailTemplate[]
 }
 [inline-code-end]
-
----

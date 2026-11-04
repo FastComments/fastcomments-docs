@@ -110,5 +110,3 @@ function verifyWebhookSignature($headers, $body, $apiSecret) {
 ## Zastarelo overjanje
 
 Glava `token`, ki vsebuje vaš API skrivni ključ, se še vedno pošilja zaradi združljivosti z starejšimi različicami. Vendar priporočamo prehod na preverjanje preko HMAC zaradi boljše varnosti, saj ščiti pred ponovitvenimi napadi.
-
----

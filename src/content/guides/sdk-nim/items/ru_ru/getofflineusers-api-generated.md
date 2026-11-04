@@ -1,25 +1,21 @@
-Past commenters on the page who are NOT currently online. Sorted by displayName.  
-**Russian:** Прошлые комментаторы на странице, которые НЕ находятся в сети в данный момент. Отсортированы по displayName.  
+Прошлые комментаторы страницы, которые сейчас НЕ в сети. Отсортированы по displayName.
+Используйте это после исчерпания /users/online для отображения раздела «Участники».
+Курсорная пагинация по commenterName: сервер проходит по частичному индексу {tenantId, urlId, commenterName}
+от afterName вперёд через $gt, без затрат на $skip.
 
-Use this after exhausting /users/online to render a "Members" section.  
-**Russian:** Используйте это после исчерпания /users/online для отображения раздела "Members".  
+## Параметры
 
-Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName} index from afterName forward via $gt, no $skip cost.  
-**Russian:** Курсорная пагинация по commenterName: сервер проходит частичный {tenantId, urlId, commenterName} индекс от afterName вперёд через $gt, без затрат на $skip.  
-
-## Parameters
-
-| Name | Type | Required | Description |
+| Имя | Тип | Обязательный | Описание |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| urlId | string | Yes |  |
-| options | GetOfflineUsersOptions | No |  |
+| tenantId | string | Да |  |
+| urlId | string | Да |  |
+| options | GetOfflineUsersOptions | Нет |  |
 
-## Response
+## Ответ
 
 Возвращает: [`Option[PageUsersOfflineResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_page_users_offline_response.nim)
 
-## Example
+## Пример
 
 [inline-code-attrs-start title = 'Пример getOfflineUsers'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

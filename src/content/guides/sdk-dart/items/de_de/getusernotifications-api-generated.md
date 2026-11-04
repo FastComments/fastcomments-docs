@@ -46,5 +46,3 @@ try {
     print('Exception when calling PublicApi->getUserNotifications: $e\n');
 }
 [inline-code-end]
-
----

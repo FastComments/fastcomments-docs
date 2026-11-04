@@ -1,4 +1,3 @@
----
 이미지를 업로드하고 리사이즈하기
 
 ## Parameters
@@ -27,5 +26,3 @@ if uploadResult.isSome:
   let result = uploadResult.get()
   # 결과를 필요에 따라 사용
 [inline-code-end]
-
----

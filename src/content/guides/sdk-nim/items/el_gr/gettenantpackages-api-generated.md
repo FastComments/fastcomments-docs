@@ -1,4 +1,3 @@
----
 ## Παράμετροι
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
@@ -20,5 +19,3 @@ if maybeResp.isSome:
   echo packages
   echo httpResp.statusCode
 [inline-code-end]
-
----

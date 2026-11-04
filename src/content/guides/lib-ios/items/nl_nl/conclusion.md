@@ -8,5 +8,3 @@ Als u problemen ondervindt of vragen heeft over de iOS-bibliotheek, kunt u:
 ## Bijdragen
 
 Bijdragen zijn welkom! Bezoek de [GitHub-repository](https://github.com/FastComments/fastcomments-ios) voor richtlijnen voor bijdragen.
-
----

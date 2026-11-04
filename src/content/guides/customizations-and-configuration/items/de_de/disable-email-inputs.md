@@ -1,17 +1,17 @@
-When users comment, and they are not logged in, they will be asked to provide their email.
+Wenn Benutzer kommentieren und nicht eingeloggt sind, werden sie gebeten, ihre E-Mail-Adresse anzugeben.
 
-This will create an "unverified session" for that user, and we will ask them to verify that session via email.
+Dies erstellt eine „unverifizierte Sitzung" für diesen Benutzer, und wir bitten ihn, diese Sitzung per E-Mail zu verifizieren.
 
-For some sites, or applications, it's desirable not to ask the user for their email when commenting or voting.
+Für einige Websites oder Anwendungen ist es wünschenswert, den Benutzer beim Kommentieren oder Abstimmen nicht nach seiner E-Mail-Adresse zu fragen.
 
-Enabling anonymous commenting makes the email input field optional. However, we can disable it completely. First, enable
-anonymous commenting, and then the option to disable the email input fields will appear.
+Die Aktivierung des anonymen Kommentierens macht das E-Mail-Eingabefeld optional. Wir können es jedoch auch vollständig deaktivieren. Aktivieren Sie zunächst
+das anonyme Kommentieren, und dann erscheint die Option, die E-Mail-Eingabefelder zu deaktivieren.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allow-anonymous-comments', '.disable-email-inputs']; selector = '.disable-email-inputs'; alt='Option, die E‑Mail‑Felder vollständig zu verbergen, angezeigt nachdem anonyme Kommentare in der Anpassungsoberfläche aktiviert wurden'; title='E‑Mail‑Eingaben deaktivieren' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allow-anonymous-comments', '.disable-email-inputs']; selector = '.disable-email-inputs'; alt='Option, die E-Mail-Felder vollständig auszublenden, angezeigt nach dem Aktivieren des anonymen Kommentierens in der Anpassungs-UI'; title='E-Mail-Eingabefelder deaktivieren' app-screenshot-end]
 
-With this on, the email fields will not show at all in all of our commenting products.
+Wenn diese Option aktiviert ist, werden die E-Mail-Felder in allen unseren Kommentierungsprodukten überhaupt nicht angezeigt.
 
-Note that, with this configuration, all comments will be unverified unless the user creates an account and logs into
-https://fastcomments.com.
+Beachten Sie, dass bei dieser Konfiguration alle Kommentare unverifiziert sind, es sei denn, der Benutzer erstellt ein Konto und loggt sich unter
+https://fastcomments.com ein.
 
-You may want to consider [Deaktivieren des nicht verifizierten Labels](/guide-customizations-and-configuration.html#disable-unverified-label).
+Sie sollten in Betracht ziehen, [das Unverifiziert-Label zu deaktivieren](/guide-customizations-and-configuration.html#disable-unverified-label).

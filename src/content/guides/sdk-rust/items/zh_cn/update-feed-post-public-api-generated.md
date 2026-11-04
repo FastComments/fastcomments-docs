@@ -30,5 +30,3 @@ let params = UpdateFeedPostPublicParams {
 
 let response: CreateFeedPostResponse = update_feed_post_public(&configuration, params).await?;
 [inline-code-end]
-
----

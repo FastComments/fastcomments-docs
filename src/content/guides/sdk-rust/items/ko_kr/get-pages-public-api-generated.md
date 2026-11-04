@@ -1,24 +1,21 @@
-List pages for a tenant. Used by the FChat desktop client to populate its room list.  
-테넌트의 페이지 목록을 반환합니다. FChat 데스크톱 클라이언트가 방 목록을 채우는 데 사용됩니다.  
-Requires `enableFChat` to be true on the resolved custom config for each page.  
-`enableFChat`이 각 페이지에 대해 해결된 맞춤 설정에서 true이어야 합니다.  
-Pages that require SSO are filtered against the requesting user's group access.  
-SSO가 필요한 페이지는 요청한 사용자의 그룹 접근 권한에 따라 필터링됩니다.
+테넌트의 페이지 목록을 조회합니다. FChat 데스크톱 클라이언트에서 방 목록을 채우는 데 사용됩니다.
+각 페이지의 확인된 커스텀 설정에서 `enableFChat`이 true여야 합니다.
+SSO가 필요한 페이지는 요청 사용자의 그룹 접근 권한을 기준으로 필터링됩니다.
 
 ## 매개변수
 
-| 이름 | 유형 | 필수 | 설명 |
+| 이름 | 타입 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenant_id | String | Yes |  |
-| cursor | String | No |  |
-| limit | i32 | No |  |
-| q | String | No |  |
-| sort_by | models::PagesSortBy | No |  |
-| has_comments | bool | No |  |
+| tenant_id | String | 예 |  |
+| cursor | String | 아니요 |  |
+| limit | i32 | 아니요 |  |
+| q | String | 아니요 |  |
+| sort_by | models::PagesSortBy | 아니요 |  |
+| has_comments | bool | 아니요 |  |
 
 ## 응답
 
-Returns: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_public_pages_response.rs)
+반환값: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_public_pages_response.rs)
 
 ## 예제
 

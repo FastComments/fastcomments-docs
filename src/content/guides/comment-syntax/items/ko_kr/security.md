@@ -1,29 +1,28 @@
-There are multiple aspects to security when letting people add content to a website
-and then rendering that content on many different types of devices.
+웹사이트에 사용자가 콘텐츠를 추가하고, 그 콘텐츠를 다양한 종류의 기기에서 렌더링할 때 보안에는 여러 가지 측면이 있습니다.
 
-### Preventing Formatting Abuse
+### 서식 남용 방지
 
-사람들이 콘텐츠를 작성할 때 의도적으로 시각적으로 산만하게 만들거나 텍스트 서식을 악용하여 토론의 가치를 떨어뜨리는 경우가 있습니다.
+사용자는 텍스트 서식을 악용하여 의도적으로 시각적으로 방해가 되는 콘텐츠를 작성하고 토론의 가치를 떨어뜨릴 수 있습니다.
 
-FastComments는 서식과 관련된 악용을 방지하기 위해 여러 조치를 취합니다:
+FastComments는 서식과 관련된 남용을 방지하기 위해 여러 가지 조치를 취합니다:
 
-- Large repeated consecutive newlines are collapsed.
-- We don't render headings (they become normal text).
-- We don't allow CSS or custom colors.
+- 반복되는 연속된 빈 줄은 축소됩니다.
+- 제목(heading)은 렌더링하지 않습니다(일반 텍스트로 변환됩니다).
+- CSS나 사용자 지정 색상은 허용하지 않습니다.
 
-### Preventing Exploits
+### 익스플로잇 방지
 
-HTML을 렌더링하는 시스템에서는 악용(익스플로잇)이 발생할 수 있습니다. FastComments는 이를 방지하기 위해 여러 조치를 취합니다:
+익스플로잇은 HTML을 렌더링하는 시스템에서 만들어질 수 있습니다. FastComments는 이를 방지하기 위해 여러 가지 조치를 취합니다:
 
-- We only allow an explicitly defined set of HTML tags.
-- We only allow an explicitly defined set of HTML tag attributes.
-- We purify and sanitize all inputs.
-  - This is done via the [DOMPurify](https://www.npmjs.com/package/dompurify) and [sanitizeHtml](https://www.npmjs.com/package/sanitize-html) libraries.
-  - We chose these libraries as being well tested (having over 4 and 1 million downloads per week, respectively).
+- 명시적으로 정의된 HTML 태그 집합만 허용합니다.
+- 명시적으로 정의된 HTML 태그 속성 집합만 허용합니다.
+- 모든 입력을 정제(purify)하고 살균(sanitize)합니다.
+  - 이는 [DOMPurify](https://www.npmjs.com/package/dompurify) 및 [sanitizeHtml](https://www.npmjs.com/package/sanitize-html) 라이브러리를 통해 수행됩니다.
+  - 이 라이브러리들은 충분히 검증되었기 때문에 선택했습니다(각각 주당 400만 건 이상과 100만 건 이상의 다운로드 수를 기록하고 있습니다).
 
-This means that users can't do things like write `<script>` or `<style>` tags, or try to add `onload=alert()` type scripts to images or other content.
+이는 사용자가 `<script>` 또는 `<style>` 태그를 작성하거나, 이미지나 다른 콘텐츠에 `onload=alert()` 유형의 스크립트를 추가하는 등의 작업을 할 수 없음을 의미합니다.
 
-The HTML tags we allow are as follows:
+허용되는 HTML 태그는 다음과 같습니다:
 
 - `<b>`
 - `<em>`
@@ -41,4 +40,4 @@ The HTML tags we allow are as follows:
 - `<li>`
 - `<br>`
 
-The `<iframe>` tag is not allowed by default. If you turn on Allow Media Embeds, iframes are also permitted, but only when their source is one of a built-in list of trusted providers (such as YouTube, Vimeo, SoundCloud, and Spotify) or a hostname you have explicitly added. Iframes from any other source are removed.
+`<iframe>` 태그는 기본적으로 허용되지 않습니다. 미디어 삽입 허용(Allow Media Embeds)을 켜면 iframe도 허용되지만, 소스가 내장된 신뢰할 수 있는 제공업체 목록(YouTube, Vimeo, SoundCloud, Spotify 등)에 포함되어 있거나 사용자가 명시적으로 추가한 호스트 이름인 경우에만 허용됩니다. 다른 소스의 iframe은 제거됩니다.

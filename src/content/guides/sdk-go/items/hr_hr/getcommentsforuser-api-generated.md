@@ -47,5 +47,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.GetCommentsForUser`: %v\n", resp)
 }
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 Domyślnie FastComments pozwala użytkownikom edytować ich komentarze.
 
 Jednak można to uniemożliwić.
@@ -9,5 +8,3 @@ Na stronie dostosowywania widgetu zobacz opcję „Wyłącz edycję”.
 
 - To dotyczy tylko zwykłych komentatorów, a nie moderatorów ani administratorów, którzy nadal będą mogli edytować.
 - Będzie to również wpływać na integracje API, gdy przekazywany jest `contextUserId`. 
-
----

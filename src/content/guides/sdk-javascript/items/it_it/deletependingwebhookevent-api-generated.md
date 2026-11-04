@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Name | Type | Required | Description |
@@ -21,5 +20,3 @@ async function runDeletion() {
   console.log(result);
 }
 [inline-code-end]
-
----

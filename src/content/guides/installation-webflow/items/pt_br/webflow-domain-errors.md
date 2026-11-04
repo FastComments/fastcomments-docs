@@ -1,4 +1,3 @@
----
 Você pode receber um erro de autorização, como o seguinte:
 
 <div class="screenshot white-bg">
@@ -20,5 +19,3 @@ Adicione o domínio, como no exemplo a seguir:
 </div>
 
 Agora você deve ter comentários ao vivo e rápidos adicionados ao seu site Webflow!
-
----

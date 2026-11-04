@@ -1,4 +1,3 @@
----
 Den minimale opsætning for at vise en kommentar-widget:
 
 ```swift

@@ -16,21 +16,21 @@ Quindi aggiungi le dipendenze di cui hai bisogno:
 
 ```xml
 <dependencies>
-    <!-- Client API -->
+    <!-- API Client -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>client</artifactId>
         <version>3.1.1</version>
     </dependency>
     
-    <!-- Libreria Core (include SSO) -->
+    <!-- Core Library (include SSO) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>core</artifactId>
         <version>3.1.1</version>
     </dependency>
     
-    <!-- Libreria PubSub (per eventi live) -->
+    <!-- PubSub Library (per eventi live) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>pubsub</artifactId>
@@ -41,7 +41,7 @@ Quindi aggiungi le dipendenze di cui hai bisogno:
 
 ### Gradle
 
-Aggiungi il repository Repsy al file **build.gradle**:
+Aggiungi il repository Repsy al tuo file build.gradle:
 
 ```groovy
 repositories {
@@ -52,27 +52,29 @@ repositories {
 }
 
 dependencies {
-    // Client API
+    // API Client
     implementation "com.fastcomments:client:3.1.1"
     
-    // Libreria Core (include SSO)
+    // Core Library (include SSO)
     implementation "com.fastcomments:core:3.1.1"
     
-    // Libreria PubSub (per eventi live)
+    // PubSub Library (per eventi live)
     implementation "com.fastcomments:pubsub:3.1.1"
 }
 ```
 
-### Library Contents
+### Contenuto della Libreria
 
-Questa libreria contiene tre moduli. Il client API generato, la libreria Java core che contiene utility scritte a mano per semplificare l'uso dell'API, e il modulo `pubsub` che è una libreria per iscriversi ai feed di cambiamento.
+Questa libreria contiene tre moduli: il client API generato, la libreria Java core che contiene utilità scritte a mano
+per semplificare l'interazione con l'API, e il modulo `pubsub` che è una libreria per sottoscriversi ai feed di modifiche.
 
-- [Documentazione della Libreria Client API](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
-- [Documentazione della Libreria Core, Inclusi Esempi SSO](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
-- [Documentazione della Libreria PubSub](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
+- [Documentazione della API Client Library](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
+- [Documentazione della Core Library, Inclusi Esempi SSO](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
+- [Documentazione della PubSub Library](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
-### Public vs Secured APIs
+### API Pubbliche vs API Protette
 
-Per il client API, ci sono tre classi, `DefaultApi`, `PublicApi` e `ModerationApi`. Il `DefaultApi` contiene metodi che richiedono la tua chiave API, e il `PublicApi` contiene metodi che possono essere chiamati direttamente da un browser/dispositivo mobile/etc senza autenticazione.
+Per il client API, esistono tre classi: `DefaultApi`, `PublicApi` e `ModerationApi`. La `DefaultApi` contiene metodi che richiedono la tua API key, mentre la `PublicApi` contiene metodi
+che possono essere invocati direttamente da un browser/dispositivo mobile/ecc senza autenticazione.
 
-Il `ModerationApi` fornisce una suite completa di API di moderazione live e rapide. Ogni metodo del `ModerationApi` accetta un parametro `sso` e può autenticarsi tramite SSO o un cookie di sessione FastComments.com.
+La `ModerationApi` fornisce un'ampia suite di API di moderazione live e veloci. Ogni metodo di `ModerationApi` accetta un parametro `sso` e può autenticarsi tramite SSO o un cookie di sessione di FastComments.com.

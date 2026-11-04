@@ -1,22 +1,22 @@
-Record a vote on a poll, or move an existing one to a different option. A voter has at most one vote per
-poll, so calling this again for the same voter moves their vote rather than adding one.
+Записывает голос в опросе или перемещает существующий голос на другой вариант. У избирателя может быть не более одного голоса на
+опрос, поэтому повторный вызов для того же избирателя перемещает его голос, а не добавляет новый.
 
-This obeys the site's poll settings: if voting is set to logged-in users only, a vote with just an
-anonUserId is rejected, and anonymous votes are rate limited per IP per poll.
+Учитываются настройки опросов сайта: если голосование разрешено только авторизованным пользователям, голос с одним только
+anonUserId отклоняется, а анонимные голоса ограничиваются по частоте на IP на опрос.
 
-## Parameters
+## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Расположение | Обязательный | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
+| tenantId | string | query | Да |  |
 
-## Response
+## Ответ
 
 Возвращает: [`CreatePollVoteResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreatePollVoteResponse.java)
 
 ## Пример
 
-[inline-code-attrs-start title = 'createPollVote Пример'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример createPollVote'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Import classes:
 import com.fastcomments.invoker.ApiClient;

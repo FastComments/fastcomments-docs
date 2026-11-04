@@ -26,5 +26,3 @@ try {
     print('Exception when calling PublicApi->getUserNotificationCount: $e\n');
 }
 [inline-code-end]
-
----

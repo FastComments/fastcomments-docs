@@ -13,5 +13,3 @@ Understanding the default CSS allows you to:
 La modalità di sovrascrittura degli stili varia a seconda del widget. Per il widget dei commenti, è necessario utilizzare il parametro di configurazione `customCSS` per
 passare il CSS all'interno dell'iframe, oppure specificare il CSS nella pagina Personalizzazione nella dashboard di amministrazione che servirà il CSS
 dalla nostra CDN.
-
----

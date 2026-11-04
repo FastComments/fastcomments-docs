@@ -1,15 +1,11 @@
-Past commenters on the page who are NOT currently online. Sorted by displayName.  
-Попередні коментатори на сторінці, які НЕ перебувають онлайн. Відсортовано за displayName.
-
-Use this after exhausting /users/online to render a "Members" section.  
-Використовуйте це після завершення запитів /users/online, щоб відобразити розділ "Members".
-
-Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName} index from afterName forward via $gt, no $skip cost.  
-Курсорна пагінація за commenterName: сервер проходить частковий індекс {tenantId, urlId, commenterName} від afterName вперед за допомогою $gt, без витрат на $skip.
+Коментатори, які раніше залишали коментарі на сторінці, але наразі НЕ в мережі. Відсортовані за displayName.
+Використовуйте це після вичерпання /users/online для відображення розділу «Учасники».
+Курсорна пагінація за commenterName: сервер проходить частковий індекс {tenantId, urlId, commenterName}
+від afterName вперед через $gt, без витрат на $skip.
 
 ## Параметри
 
-| Назва | Тип | Обов'язково | Опис |
+| Назва | Тип | Обов'язковий | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Так |  |
 | urlId | string | Так |  |

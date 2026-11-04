@@ -16,5 +16,3 @@ Tüm kullanıcı bilgileri, bir kullanıcı bir yorum dizisini görüntülediği
 ## İsimler ve Avatarlar
 
 Eklenti, kullanıcı herhangi bir yorum dizisini görüntülediğinde kullanıcının görüntüleme adını ve avatarını FastComments içindeki tüm yorumlarında otomatik olarak güncelleyecektir. Avatarlar Gravatar veya eklentinin `get_avatar_url` çağracağı WordPress içindeki herhangi bir avatar yönetimi eklentisi aracılığıyla desteklenir.
-
----

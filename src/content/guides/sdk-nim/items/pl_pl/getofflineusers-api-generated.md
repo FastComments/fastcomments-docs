@@ -1,4 +1,3 @@
----
 Poprzedni komentatorzy na stronie, którzy NIE są aktualnie online. Posortowani według displayName.  
 Użyj tego po wyczerpaniu /users/online, aby wyrenderować sekcję "Members".  
 Paginacja kursora na commenterName: serwer przegląda częściowy {tenantId, urlId, commenterName} indeks od afterName naprzód przy użyciu $gt, bez kosztu $skip.
@@ -28,5 +27,3 @@ if offlineResp.isSome:
   let offline = offlineResp.get()
   echo offline)
 [inline-code-end]
-
----

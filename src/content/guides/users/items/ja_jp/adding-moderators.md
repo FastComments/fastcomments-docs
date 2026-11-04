@@ -1,16 +1,12 @@
-モデレーターの追加に関するドキュメントは[こちら](/guide-moderation.html#moderators-adding)をご覧ください。
+モデレーターを追加する方法については、[こちら](/guide-moderation.html#moderators-adding)のドキュメントをご覧ください。
 
-Note that unlike `Administrators`, `Moderator` permissions are fixed - they cannot be changed. Moderators only have access
-to the Moderate Comments page. They cannot change settings.
+`Administrators` とは異なり、`Moderator` の権限は固定されていることに注意してください。変更することはできません。モデレーターはコメントの管理(Moderate Comments)ページにのみアクセスでき、設定を変更することはできません。
 
-While it is possible to simply add an `Administrator` with the `Moderate Comments` permission, there are some benefits
-to utilizing the moderator-specific users:
+`Moderate Comments` 権限を持つ `Administrator` を単純に追加することも可能ですが、モデレーター専用のユーザーを利用することにはいくつかの利点があります:
 
-1. 現在、コメントのモデレーション統計（承認されたコメント、削除、編集、利用者のバンなど）は`Moderators`に関するもののみ提供しています。
-2. それらはすべて、別個の1箇所で管理できます。
+1. 現在、コメント管理の統計情報(承認されたコメント、削除、編集、BANされたユーザーなど)は `Moderators` についてのみ提供されています。
+2. すべて一つの場所で一括して管理できます。
 
-`Administrators` can manage and view stats around `Moderators` [here](https://fastcomments.com/auth/my-account/moderate-comments/moderators).
+`Administrators` は、[こちら](https://fastcomments.com/auth/my-account/moderate-comments/moderators)から `Moderators` の管理や統計情報の閲覧ができます。
 
-If you would like to add a user whom primarily does comment moderation, but is able to do other
-things with the account, consider creating an `Administrator` and customizing their permissions. However, you will
-not have access to statistics regarding their moderation performance.
+主にコメント管理を行うユーザーを追加したいが、アカウントで他の作業もできるようにしたい場合は、`Administrator` を作成して権限をカスタマイズすることを検討してください。ただし、その場合、そのユーザーの管理実績に関する統計情報にはアクセスできなくなります。

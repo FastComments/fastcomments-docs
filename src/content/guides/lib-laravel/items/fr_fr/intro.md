@@ -5,5 +5,3 @@ Ajoutez des commentaires en direct, un chat et bien plus encore à votre applica
 ## Dépôt
 
 [Voir sur GitHub](https://github.com/FastComments/fastcomments-laravel)
-
----

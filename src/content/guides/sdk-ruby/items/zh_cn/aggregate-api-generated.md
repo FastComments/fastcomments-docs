@@ -1,4 +1,3 @@
----
 通过对文档进行分组（如果提供了 groupBy）并应用多个操作来聚合文档。
 支持不同的操作（例如 sum、countDistinct、avg 等）。
 
@@ -44,5 +43,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->aggregate: #{e}"
 end
 [inline-code-end]
-
----

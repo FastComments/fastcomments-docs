@@ -1,4 +1,3 @@
----
 Standardmäßig übersetzt FastComments die eigene Benutzeroberfläche des Widgets (Schaltflächen, Beschriftungen, Fehlermeldungen) in die Sprache des Betrachters, aber Kommentare werden genau so angezeigt, wie sie geschrieben wurden.
 
 Die Kommentarübersetzung fügt die Übersetzung der Kommentare selbst hinzu, sodass eine Community, die in mehr als einer Sprache schreibt, jeden Kommentar in ihrer eigenen Sprache lesen kann.
@@ -19,4 +18,3 @@ Dies wird pro <a href="https://fastcomments.com/auth/my-account/customize-widget
 Jeder Kommentar wird höchstens einmal pro Zielsprache übersetzt und das Ergebnis zusammen mit dem Kommentar gespeichert, sodass ein Kommentar, der von tausend spanischsprachigen Lesern gelesen wird, nur einmal übersetzt wird. Wenn der Autor oder ein Moderator den Kommentar bearbeitet, wird die gespeicherte Übersetzung verworfen und der Kommentar beim nächsten Aufruf erneut übersetzt. Übersetzter Text durchläuft dieselbe Bereinigung und dieselben Linkregeln wie der Originalkommentar. Kommentare, die zu lang sind oder deren Sprache nicht erkannt werden kann, werden unverändert angezeigt.
 
 Die Nutzung wird als LLM‑Token zum gleichen Tarif wie [AI Agents](/guide-ai-agents.html#plans-and-eligibility) abgerechnet und erscheint an derselben Stelle in Ihren Abrechnungsdetails.
----

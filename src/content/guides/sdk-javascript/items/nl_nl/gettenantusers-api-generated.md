@@ -19,5 +19,3 @@ const skip: number = 20;
 const firstPage: GetTenantUsersResponse = await getTenantUsers(tenantId);
 const secondPage: GetTenantUsersResponse = await getTenantUsers(tenantId, skip);
 [inline-code-end]
-
----

@@ -1,37 +1,23 @@
-## Example Zaps
+## Przykładowe Zapy
 
-A few workflows that take minutes to set up.
+Kilka workflow, których skonfigurowanie zajmuje kilka minut.
 
-**Otrzymuj powiadomienia o nowych komentarzach.** New Comment, then Slack "Send Channel Message" or Discord "Send
-Channel Message". Map the commenter name, the comment text, and the page URL into the message. Add the
-domain filter to notify a different channel per site.
+**Otrzymuj powiadomienia o nowych komentarzach.** New Comment, a następnie Slack "Send Channel Message" lub Discord "Send Channel Message". Zmapuj nazwę komentującego, treść komentarza i adres URL strony do wiadomości. Dodaj filtr domeny, aby powiadamiać inny kanał dla każdej witryny.
 
-**Prowadź dziennik każdego komentarza.** New Comment, then Google Sheets "Create Spreadsheet Row". Add Deleted
-Comment as a second Zap that appends a row with the comment id, so the sheet doubles as an audit trail.
+**Prowadź dziennik każdego komentarza.** New Comment, a następnie Google Sheets "Create Spreadsheet Row". Dodaj Deleted Comment jako drugiego Zapa, który dopisuje wiersz z identyfikatorem komentarza, dzięki czemu arkusz pełni jednocześnie rolę dziennika audytu.
 
-**Wyślij e‑mail do autora, gdy komentarz zostanie zatwierdzony.** Updated Comment with a Zapier filter on Approved is true,
-then Gmail "Send Email". Because Updated Comment fires on every change, the filter is what makes this Zap
-react only to approvals.
+**Wysyłaj e-mail do autora po zatwierdzeniu komentarza.** Updated Comment z filtrem Zapier na Approved is true, a następnie Gmail "Send Email". Ponieważ Updated Comment uruchamia się przy każdej zmianie, to filtr sprawia, że Zap reaguje tylko na zatwierdzenia.
 
-**Dodaj komentujących do swojego CRM lub listy mailingowej.** New Comment, then HubSpot "Create or Update Contact" or
-Mailchimp "Add or Update Subscriber" using the commenter email. Respect your privacy policy and local law
-before adding anyone to a marketing list.
+**Dodawaj komentujących do swojego CRM lub listy mailingowej.** New Comment, a następnie HubSpot "Create or Update Contact" lub Mailchimp "Add or Update Subscriber" z użyciem adresu e-mail komentującego. Przed dodaniem kogokolwiek do listy marketingowej przestrzegaj swojej polityki prywatności i lokalnego prawa.
 
-**Utwórz komentarz z formularza.** Typeform or Google Forms "New Response", then FastComments Create Comment
-with the page URL ID your site uses for testimonials. Leave Approved unchecked to review each one before it
-appears.
+**Twórz komentarze z formularza.** Typeform lub Google Forms "New Response", a następnie FastComments Create Comment z identyfikatorem URL strony, którego Twoja witryna używa dla opinii. Pozostaw Approved niezaznaczone, aby przejrzeć każdy komentarz przed jego pojawieniem się.
 
-**Publikuj ogłoszenia w kanale.** RSS by Zapier "New Item in Feed", then Create Feed Post with the item's
-title, content, and link.
+**Publikuj ogłoszenia w kanale.** RSS by Zapier "New Item in Feed", a następnie Create Feed Post z tytułem, treścią i linkiem elementu.
 
-**Provisionuj członków jako użytkowników SSO.** Memberstack, Memberful, or your own webhook, then Find SSO User followed
-by Create SSO User in "find or create" mode.
+**Zapewnij członkom konta SSO.** Memberstack, Memberful lub własny webhook, a następnie Find SSO User, po którym następuje Create SSO User w trybie "find or create".
 
-**Zgłaszaj eskalowane komentarze.** Updated Comment, filtered on a flag count above zero, then Trello "Create
-Card" or Linear "Create Issue" with the comment id and a link to the moderation page.
+**Eskaluj zgłoszone komentarze.** Updated Comment, filtrowany po liczbie flag większej od zera, a następnie Trello "Create Card" lub Linear "Create Issue" z identyfikatorem komentarza i linkiem do strony moderacji.
 
-**Publikuj strony w momencie ich uruchomienia.** WordPress or Ghost "New Post", then Create Page with the post URL, so the
-page is listed and restricted before the first comment.
+**Publikuj strony, gdy tylko stają się aktywne.** WordPress lub Ghost "New Post", a następnie Create Page z adresem URL wpisu, dzięki czemu strona jest widoczna na liście i ograniczona przed pierwszym komentarzem.
 
-**Archiwizuj usunięte komentarze.** Deleted Comment, then Airtable "Create Record" with the full comment for
-compliance retention.
+**Archiwizuj usunięte komentarze.** Deleted Comment, a następnie Airtable "Create Record" z pełną treścią komentarza dla celów zgodności i retencji.

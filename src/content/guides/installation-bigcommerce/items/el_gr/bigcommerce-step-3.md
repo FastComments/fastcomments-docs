@@ -29,5 +29,3 @@
     <div class="title">Επεξεργασία του Επεξεργαστή</div>
     <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-3-exit.png" alt="Επεξεργασία του Επεξεργαστή" />
 </div>
-
----

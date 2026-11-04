@@ -20,5 +20,3 @@ Sljedeće, da bismo učitali naše proširenje, moramo o tome obavijestiti widge
 [code-example-start config = {extensions: [{id: "my-extension", path: "https://example.com/my-extension.min.js"}]}; linesToHighlight = [6,7,8,9,10,11]; title = 'Using a Custom Extension'; code-example-end]
 
 Za funkcionalne primjere, pogledajte sljedeći odjeljak.
-
----

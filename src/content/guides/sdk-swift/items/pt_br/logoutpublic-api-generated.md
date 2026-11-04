@@ -21,5 +21,3 @@ PublicAPI.logoutPublic() { (response, error) in
     }
 }
 [inline-code-end]
-
----

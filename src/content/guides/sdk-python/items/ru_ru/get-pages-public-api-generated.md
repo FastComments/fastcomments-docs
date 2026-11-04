@@ -1,19 +1,19 @@
-List pages for a tenant. Used by the FChat desktop client to populate its room list.  
-Requires `enableFChat` to be true on the resolved custom config for each page.  
-Pages that require SSO are filtered against the requesting user's group access.
+Возвращает список страниц для тенанта. Используется десктоп-клиентом FChat для заполнения списка комнат.
+Требует, чтобы `enableFChat` был равен true в разрешённом кастомном конфиге каждой страницы.
+Страницы, требующие SSO, фильтруются по групповому доступу запрашивающего пользователя.
 
-## Parameters
+## Параметры
 
-| Имя | Тип | Расположение | Обязательно | Описание |
+| Имя | Тип | Расположение | Обязательный | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| cursor | string | query | No | Непрозрачный курсор пагинации, возвращённый как `nextCursor` из предыдущего запроса. Связан с тем же `sortBy`. |
-| limit | integer | query | No | 1..200, default 50 |
-| q | string | query | No | Необязательный нечувствительный к регистру префиксный фильтр заголовков. |
-| sortBy | string | query | No | Порядок сортировки. `updatedAt` (по умолчанию, новые сначала), `commentCount` (сначала страницы с наибольшим количеством комментариев) или `title` (по алфавиту). |
-| hasComments | boolean | query | No | Если true, возвращать только страницы, содержащие хотя бы один комментарий. |
+| tenantId | string | path | Да |  |
+| cursor | string | query | Нет | Непрозрачный курсор пагинации, возвращённый как `nextCursor` из предыдущего запроса. Привязан к тому же `sortBy`. |
+| limit | integer | query | Нет | 1..200, по умолчанию 50 |
+| q | string | query | Нет | Необязательный фильтр по префиксу заголовка без учёта регистра. |
+| sortBy | string | query | Нет | Порядок сортировки. `updatedAt` (по умолчанию, сначала новые), `commentCount` (сначала с наибольшим числом комментариев) или `title` (по алфавиту). |
+| hasComments | boolean | query | Нет | Если true, возвращать только страницы, у которых есть хотя бы один комментарий. |
 
-## Response
+## Ответ
 
 Возвращает: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_public_pages_response.py)
 
@@ -28,23 +28,23 @@ from client.models.pages_sort_by import PagesSortBy
 from client.rest import ApiException
 from pprint import pprint
 
-# Определение хоста является необязательным и по умолчанию равно https://fastcomments.com
-# См. configuration.py для списка всех поддерживаемых параметров конфигурации.
+# Defining the host is optional and defaults to https://fastcomments.com
+# See configuration.py for a list of all supported configuration parameters.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Войдите в контекст с экземпляром клиента API
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # Создайте экземпляр класса API
+    # Create an instance of the API class
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    cursor = 'cursor_example' # str | Непрозрачный курсор пагинации, возвращённый как `nextCursor` из предыдущего запроса. Связан с тем же `sortBy`. (optional)
-    limit = 56 # int | 1..200, default 50 (optional)
-    q = 'q_example' # str | Необязательный нечувствительный к регистру префиксный фильтр заголовков. (optional)
-    sort_by = client.PagesSortBy() # PagesSortBy | Порядок сортировки. `updatedAt` (по умолчанию, новые сначала), `commentCount` (сначала страницы с наибольшим количеством комментариев) или `title` (по алфавиту). (optional)
-    has_comments = True # bool | Если true, возвращать только страницы, содержащие хотя бы один комментарий. (optional)
+    cursor = 'cursor_example' # str | Непрозрачный курсор пагинации, возвращённый как `nextCursor` из предыдущего запроса. Привязан к тому же `sortBy`. (optional)
+    limit = 56 # int | 1..200, по умолчанию 50 (optional)
+    q = 'q_example' # str | Необязательный фильтр по префиксу заголовка без учёта регистра. (optional)
+    sort_by = client.PagesSortBy() # PagesSortBy | Порядок сортировки. `updatedAt` (по умолчанию, сначала новые), `commentCount` (сначала с наибольшим числом комментариев) или `title` (по алфавиту). (optional)
+    has_comments = True # bool | Если true, возвращать только страницы, у которых есть хотя бы один комментарий. (optional)
 
     try:
         api_response = api_instance.get_pages_public(tenant_id, GetPagesPublicOptions(cursor=cursor, limit=limit, q=q, sort_by=sort_by, has_comments=has_comments))

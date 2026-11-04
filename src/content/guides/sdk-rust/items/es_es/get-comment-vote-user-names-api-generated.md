@@ -1,4 +1,3 @@
----
 ## Parámetros
 
 | Nombre | Tipo | Requerido | Descripción |
@@ -28,5 +27,3 @@ async fn demo(config: &configuration::Configuration) -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
-
----

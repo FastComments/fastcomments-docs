@@ -1,12 +1,11 @@
-Attach a poll to a comment, or set the full state of the poll it already has.
+Прикріпіть опитування до коментаря або встановіть повний стан опитування, яке вже існує.
 
-Options are matched by id: an option sent with the id of an existing option keeps its votes (and takes the
-new label and position), an option sent without an id is added, and existing options left out of the list
-are removed along with the votes cast on them.
+Варіанти зіставляються за id: варіант, надісланий з id наявного варіанта, зберігає свої голоси (і отримує нову
+мітку та позицію), варіант без id додається, а наявні варіанти, відсутні у списку, видаляються разом із поданими за них голосами.
 
-Keeping no existing option ids on a poll that has votes deletes all of them, so that needs replaceVotes=true.
+Якщо не залишити жодного наявного id варіанта в опитуванні, що має голоси, усі вони будуть видалені, тому потрібно replaceVotes=true.
 
-## Parameters
+## Параметри
 
 | Назва | Тип | Розташування | Обов'язково | Опис |
 |------|------|----------|----------|-------------|
@@ -14,15 +13,15 @@ Keeping no existing option ids on a poll that has votes deletes all of them, so 
 | commentId | string | path | Так |  |
 | replaceVotes | boolean | query | Ні |  |
 
-## Response
+## Відповідь
 
-Returns: [`SavePollResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/SavePollResponse.swift)
+Повертає: [`SavePollResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/SavePollResponse.swift)
 
-## Example
+## Приклад
 
-[inline-code-attrs-start title = 'putPoll Приклад'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад putPoll'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Наступні приклади коду все ще у бета-версії. У разі будь-яких проблем, будь ласка, повідомте за адресою http://github.com/OpenAPITools/openapi-generator/issues/new
+// Наступні приклади коду все ще в бета-версії. Про будь-яку проблему повідомляйте на http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -41,5 +40,3 @@ DefaultAPI.putPoll(tenantId: tenantId, commentId: commentId, commentPollPutInput
     }
 }
 [inline-code-end]
-
----

@@ -14,5 +14,3 @@ Imajte na umu da će, uz ovu konfiguraciju, svi komentari biti nepotvrđeni, osi
 https://fastcomments.com.
 
 Možda ćete željeti razmotriti [onemogućavanje oznake nepotvrđenog](/guide-customizations-and-configuration.html#disable-unverified-label).
-
----

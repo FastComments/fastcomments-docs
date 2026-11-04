@@ -41,5 +41,3 @@
     <div class="title">編輯主題檔案</div>
     <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-1-edit-theme-files.png" alt="編輯主題檔案" />
 </div>
-
----

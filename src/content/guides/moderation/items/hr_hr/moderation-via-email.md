@@ -22,5 +22,3 @@ Imajte na umu da ovi magični linkovi isteknu nakon nekog vremena.
 #### Vrste obavijesti
 
 FastComments šalje više vrsta e‑mailova moderatorima i administratorima. Po želji, moguće je odjaviti se od obavijesti o `Odgovoru na komentar`, dok i dalje primate obavijesti o `Novom komentaru` odabirom odgovarajućih opcija na stranici `Uredi obavijesti` prikazanoj iznad.
-
----

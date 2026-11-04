@@ -35,5 +35,3 @@ try {
     print('Exception when calling DefaultApi->unBlockUserFromComment: $e\n');
 }
 [inline-code-end]
-
----

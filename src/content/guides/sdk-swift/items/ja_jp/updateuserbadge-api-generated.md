@@ -1,4 +1,3 @@
----
 ## パラメータ
 
 | Name | Type | Location | Required | Description |
@@ -32,5 +31,3 @@ DefaultAPI.updateUserBadge(tenantId: tenantId, id: id, updateUserBadgeParams: up
     }
 }
 [inline-code-end]
-
----

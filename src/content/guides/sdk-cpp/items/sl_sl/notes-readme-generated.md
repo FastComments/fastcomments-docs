@@ -1,8 +1,8 @@
 ### Broadcast Ids
 
-Videli boste, da morate v nekaterih klicih API posredovati `broadcastId`. Ko prejmete dogodke, boste dobili ta ID nazaj, tako da veste, da lahko dogodek ignorirate, če nameravate optimistično uporabiti spremembe na odjemalcu
-(kar boste verjetno želeli storiti, saj zagotavlja najboljšo izkušnjo). Posredujte UUID tukaj. ID naj bo dovolj edinstven, da se ne pojavi dvakrat v brskalniški seji.
+Videli boste, da je pri nekaterih API klicih treba posredovati `broadcastId`. Ko prejmete dogodke, boste ta ID prejeli nazaj, tako da lahko dogodek prezrete, če nameravate spremembe optimistično uporabiti na odjemalcu
+(kar verjetno želite, saj ponuja najboljšo izkušnjo). Tukaj posredujte UUID. ID mora biti dovolj edinstven, da se v eni seji brskalnika ne pojavi dvakrat.
 
-### SSO (Enotna prijava)
+### SSO (Single Sign-On)
 
 Za primere SSO glejte spodaj.

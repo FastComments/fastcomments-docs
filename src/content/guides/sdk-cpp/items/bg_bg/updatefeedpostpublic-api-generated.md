@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Име | Тип | Задължително | Описание |
@@ -28,5 +27,3 @@ api->updateFeedPostPublic(tenantId, postId, params, options)
         auto result = resp;
     });
 [inline-code-end]
-
----

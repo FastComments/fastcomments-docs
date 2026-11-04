@@ -28,5 +28,3 @@ async fn fetch_daily_usage(configuration: &configuration::Configuration) -> Resu
     Ok(())
 }
 [inline-code-end]
-
----

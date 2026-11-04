@@ -181,5 +181,3 @@ Für anonyme Kommentare sollten Sie wahrscheinlich `anonUserId` beim Abrufen von
 #### Kommentare werden nicht zurückgegeben
 
 Stellen Sie sicher, dass Ihre Kommentare genehmigt sind und nicht als Spam gelten.
-
----

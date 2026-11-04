@@ -28,5 +28,3 @@ try {
     print('Exception when calling PublicApi->checkedCommentsForBlocked: $e\n');
 }
 [inline-code-end]
-
----

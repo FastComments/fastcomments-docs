@@ -1,22 +1,22 @@
-Edit a poll in place, keeping its tallies: change the question, relabel an option, close or reopen it,
-or change who may see the voters. Options are addressed by id - to add, remove or reorder them, PUT the full list.
+Bearbeiten Sie eine Umfrage direkt, ohne die Stimmen zu verlieren: Ändern Sie die Frage, benennen Sie eine Option um, schließen oder öffnen Sie sie erneut,
+oder ändern Sie, wer die Wähler sehen darf. Optionen werden über die id adressiert – um sie hinzuzufügen, zu entfernen oder neu zu ordnen, senden Sie die vollständige Liste per PUT.
 
-## Parameters
+## Parameter
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | commentId | string | path | Ja |  |
 
-## Response
+## Antwort
 
-Rückgabe: [`SavePollResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/SavePollResponse.swift)
+Gibt zurück: [`SavePollResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/SavePollResponse.swift)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'patchPoll Beispiel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Der folgende Code ist noch in der Beta-Phase. Bei Problemen bitte melden über http://github.com/OpenAPITools/openapi-generator/issues/new
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -34,5 +34,3 @@ DefaultAPI.patchPoll(tenantId: tenantId, commentId: commentId, commentPollPatch:
     }
 }
 [inline-code-end]
-
----

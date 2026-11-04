@@ -29,5 +29,3 @@ api->postFlagComment(U("my-tenant-123"), U("comment-456"), options)
         }
     });
 [inline-code-end]
-
----

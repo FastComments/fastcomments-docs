@@ -1,17 +1,16 @@
----
-Past commenters on the page who are NOT currently online. Sorted by displayName.
-Use this after exhausting /users/online to render a "Участники" section.
-Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName}
-index from afterName forward via $gt, no $skip cost.
+Прошлые комментаторы страницы, которые НЕ находятся сейчас в сети. Отсортированы по displayName.
+Используйте этот метод после исчерпания /users/online для отображения раздела «Участники».
+Курсорная пагинация по commenterName: сервер проходит по частичному индексу {tenantId, urlId, commenterName}
+от afterName вперёд через $gt, без затрат на $skip.
 
 ## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Расположение | Обязательный | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| urlId | string | query | Yes | Идентификатор URL страницы (очищается на стороне сервера). |
-| afterName | string | query | No | Курсор: передайте nextAfterName из предыдущего ответа. |
-| afterUserId | string | query | No | Дознак для курсора: передайте nextAfterUserId из предыдущего ответа. Требуется, когда afterName установлен, чтобы записи с одинаковыми именами не пропускались. |
+| tenantId | string | path | Да |  |
+| urlId | string | query | Да | Идентификатор URL страницы (очищается на сервере). |
+| afterName | string | query | Нет | Курсор: передайте nextAfterName из предыдущего ответа. |
+| afterUserId | string | query | Нет | Дополнительный ключ курсора: передайте nextAfterUserId из предыдущего ответа. Обязателен, когда задан afterName, чтобы записи с одинаковыми именами не терялись. |
 
 ## Ответ
 
@@ -26,10 +25,10 @@ require 'fastcomments-client'
 
 api_instance = FastCommentsClient::PublicApi.new
 tenant_id = 'tenant_id_example' # String | 
-url_id = 'url_id_example' # String | Идентификатор URL страницы (очищается на стороне сервера).
+url_id = 'url_id_example' # String | Идентификатор URL страницы (очищается на сервере).
 opts = {
   after_name: 'after_name_example', # String | Курсор: передайте nextAfterName из предыдущего ответа.
-  after_user_id: 'after_user_id_example' # String | Дознак для курсора: передайте nextAfterUserId из предыдущего ответа. Требуется, когда afterName установлен, чтобы записи с одинаковыми именами не пропускались.
+  after_user_id: 'after_user_id_example' # String | Дополнительный ключ курсора: передайте nextAfterUserId из предыдущего ответа. Обязателен, когда задан afterName, чтобы записи с одинаковыми именами не терялись.
 }
 
 begin
@@ -40,5 +39,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_offline_users: #{e}"
 end
 [inline-code-end]
-
----

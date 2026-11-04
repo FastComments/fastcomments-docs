@@ -69,5 +69,3 @@ interface Notification {
     optedOut?: boolean
 }
 [inline-code-end]
-
----

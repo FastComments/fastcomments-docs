@@ -90,5 +90,3 @@ Dans l'exemple ci‑dessus, nous définissons un transport e-mail `SMTP` par dé
 ### DocumentDB
 
 Lors de la connexion à `DocumentDB`, vous devrez spécifier `MONGO_ENABLE_SSL=true MONGO_SSL_CA=/some/path.pem` pour être compatible avec les paramètres par défaut.
-
----

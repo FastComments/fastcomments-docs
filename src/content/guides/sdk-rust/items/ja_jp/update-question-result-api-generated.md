@@ -1,4 +1,3 @@
----
 ## パラメータ
 
 | 名前 | タイプ | 必須 | 説明 |
@@ -29,5 +28,3 @@ async fn example() -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
-
----

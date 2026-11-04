@@ -1,29 +1,29 @@
-### Υποστήριξη Σκοτεινής Λειτουργίας
+### Υποστήριξη Σκούρου Θέματος (Dark Mode)
 
-### Δυναμική Σκοτεινή Λειτουργία
+### Δυναμικό Σκούρο Θέμα
 
-If your site's dark mode is controlled by adding a `.dark` class to the body element, the Collab Chat UI will automatically respect this without requiring reinitialization. The widget's styles are designed to respond to the presence of this class.
+Αν το σκούρο θέμα του ιστότοπού σας ελέγχεται με την προσθήκη μιας κλάσης `.dark` στο στοιχείο body, το περιβάλλον Collab Chat θα το σεβαστεί αυτόματα χωρίς να απαιτείται επανεκκίνηση. Τα στυλ του widget έχουν σχεδιαστεί ώστε να ανταποκρίνονται στην παρουσία αυτής της κλάσης.
 
-[inline-code-attrs-start title = 'Παράδειγμα CSS σκοτεινής λειτουργίας'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Παράδειγμα CSS για Σκούρο Θέμα'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-/* Το CSS σκοτεινής λειτουργίας σας */
+/* Το CSS του σκούρου θέματός σας */
 body.dark {
     background: #1a1a1a;
     color: #ffffff;
 }
 [inline-code-end]
 
-### Προσαρμοσμένο στυλ με CSS
+### Προσαρμοσμένο Στυλ με CSS
 
-You can customize the appearance of highlights, chat windows, and other elements using CSS. The widget adds specific classes that you can target in your stylesheet.
+Μπορείτε να προσαρμόσετε την εμφάνιση των επισήμανσης κειμένου, των παραθύρων συνομιλίας και άλλων στοιχείων χρησιμοποιώντας CSS. Το widget προσθέτει συγκεκριμένες κλάσεις που μπορείτε να στοχεύσετε στο stylesheet σας.
 
-Text highlights use the FastComments comment bubble styling system, so any customizations you've applied to the standard commenting widget will also affect Collab Chat.
+Οι επισημάνσεις κειμένου χρησιμοποιούν το σύστημα στυλ του σχολικού φυσαλίδας της FastComments, οπότε κάθε προσαρμογή που έχετε εφαρμόσει στο τυπικό widget σχολίων θα επηρεάσει και το Collab Chat.
 
-### Προσαρμογή επάνω μπάρας
+### Προσαρμογή της Πάνω Μπάρας
 
-The top bar shows the number of users online and the number of discussions. You can customize its position by providing a custom element as the `topBarTarget`:
+Η πάνω μπάρα εμφανίζει τον αριθμό των συνδεδεμένων χρηστών και τον αριθμό των συζητήσεων. Μπορείτε να προσαρμόσετε τη θέση της παρέχοντας ένα προσαρμοσμένο στοιχείο ως `topBarTarget`:
 
-[inline-code-attrs-start title = 'Προσαρμοσμένη θέση επάνω μπάρας'; type = 'javascript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Προσαρμοσμένη Θέση Πάνω Μπάρας'; type = 'javascript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
@@ -31,9 +31,9 @@ FastCommentsCollabChat(element, {
 });
 [inline-code-end]
 
-Or disable it entirely by setting it to `null`:
+Ή απενεργοποιήστε την εντελώς ορίζοντάς την σε `null`:
 
-[inline-code-attrs-start title = 'Απενεργοποίηση επάνω μπάρας'; type = 'javascript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Απενεργοποίηση Πάνω Μπάρας'; type = 'javascript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
@@ -41,23 +41,23 @@ FastCommentsCollabChat(element, {
 });
 [inline-code-end]
 
-### Συμπεριφορά σε κινητές συσκευές
+### Συμπεριφορά σε Κινητά
 
-On screens under 768px wide, Collab Chat automatically switches to a mobile-optimized layout. Chat windows appear fullscreen instead of floating next to the text, and the selection delay is removed for more immediate interaction.
+Σε οθόνες πλάτους κάτω από 768px, το Collab Chat μεταβαίνει αυτόματα σε μια βελτιστοποιημένη διάταξη για κινητά. Τα παράθυρα συνομιλίας εμφανίζονται σε πλήρη οθόνη αντί να επιπλέουν δίπλα στο κείμενο, και η καθυστέρηση επιλογής αφαιρείται για πιο άμεση αλληλεπίδραση.
 
-This behavior is built-in and doesn't require any configuration. The widget detects screen size automatically and adjusts accordingly.
+Αυτή η συμπεριφορά είναι ενσωματωμένη και δεν απαιτεί καμία ρύθμιση. Το widget ανιχνεύει αυτόματα το μέγεθος της οθόνης και προσαρμόζεται αναλόγως.
 
-### Εμφάνιση παραθύρου συνομιλίας
+### Εμφάνιση Παραθύρου Συνομιλίας
 
-Chat windows are 410px wide on desktop with a 16px arrow pointing to the highlighted text. The windows position themselves automatically based on available viewport space, using positioning classes like `to-right`, `to-left`, `to-top`, and `to-bottom`.
+Τα παράθυρα συνομιλίας έχουν πλάτος 410px σε επιτραπέζιους υπολογιστές με ένα βέλος 16px που δείχνει το επισημασμένο κείμενο. Τα παράθυρα τοποθετούνται αυτόματα με βάση τον διαθέσιμο χώρο του viewport, χρησιμοποιώντας κλάσεις τοποθέτησης όπως `to-right`, `to-left`, `to-top` και `to-bottom`.
 
-You can add custom CSS to adjust colors, fonts, spacing, or other visual properties of these windows. The chat windows use the same component structure as the standard FastComments widget, so they inherit any global customizations you've applied.
+Μπορείτε να προσθέσετε προσαρμοσμένο CSS για να προσαρμόσετε χρώματα, γραμματοσειρές, αποστάσεις ή άλλες οπτικές ιδιότητες αυτών των παραθύρων. Τα παράθυρα συνομιλίας χρησιμοποιούν την ίδια δομή στοιχείων με το τυπικό widget της FastComments, οπότε κληρονομούν κάθε καθολική προσαρμογή που έχετε εφαρμόσει.
 
-### Τοπικοποίηση
+### Μετάφραση (Localization)
 
-Collab Chat supports all the same localization options as the standard FastComments widget. Set the `locale` option to display UI text in different languages:
+Το Collab Chat υποστηρίζει όλες τις ίδιες επιλογές μετάφρασης με το τυπικό widget της FastComments. Ορίστε την επιλογή `locale` για να εμφανίζεται το κείμενο του περιβάλλοντος σε διαφορετικές γλώσσες:
 
-[inline-code-attrs-start title = 'Ορισμός locale'; type = 'javascript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ορισμός Locale'; type = 'javascript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
@@ -65,15 +65,14 @@ FastCommentsCollabChat(element, {
 });
 [inline-code-end]
 
-FastComments supports dozens of languages. The locale setting affects all UI text including prompts, buttons, and placeholder text.
+Η FastComments υποστηρίζει δεκάδες γλώσσες. Η ρύθμιση locale επηρεάζει όλο το κείμενο του περιβάλλοντος, συμπεριλαμβανομένων των προτροπών, των κουμπιών και του κειμένου placeholder.
 
-### Κληρονομημένες επιλογές προσαρμογής
+### Κληρονομούμενες Επιλογές Προσαρμογής
 
-Since Collab Chat extends the standard commenting widget, it inherits all customization options from the base widget. This includes custom CSS classes, custom translations, avatar customization, date formatting, and much more.
+Εφόσον το Collab Chat επεκτείνει το τυπικό widget σχολίων, κληρονομεί όλες τις επιλογές προσαρμογής από το βασικό widget. Αυτό περιλαμβάνει προσαρμοσμένες κλάσεις CSS, προσαρμοσμένες μεταφράσεις, προσαρμογή avatar, μορφοποίηση ημερομηνιών και πολλά άλλα.
 
-See the main FastComments customization documentation for the complete list of customization options available.
+Δείτε την κύρια τεκμηρίωση προσαρμογής της FastComments για την πλήρη λίστα των διαθέσιμων επιλογών προσαρμογής.
 
-### Χρήση προσαρμοσμένων γραμματοσειρών
+### Εργασία με Προσαρμοσμένες Γραμματοσειρές
 
-If your site uses custom fonts, the Collab Chat UI will inherit those fonts from your page's CSS. You may have to create a widget customization rule and `@import` any fonts in the custom CSS in that rule if you
-want the floating chat window to use the same fonts.
+Αν ο ιστότοπός σας χρησιμοποιεί προσαρμοσμένες γραμματοσειρές, το περιβάλλον Collab Chat θα κληρονομήσει αυτές τις γραμματοσειρές από το CSS της σελίδας σας. Μπορεί να χρειαστεί να δημιουργήσετε έναν κανόνα προσαρμογής widget και να κάνετε `@import` τις γραμματοσειρές στο προσαρμοσμένο CSS αυτού του κανόνα, αν θέλετε το αιωρούμενο παράθυρο συνομιλίας να χρησιμοποιεί τις ίδιες γραμματοσειρές.

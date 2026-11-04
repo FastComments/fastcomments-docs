@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Име | Тип | Обавезно | Опис |
@@ -27,5 +26,3 @@ api->postUnFlagComment(tenantId, commentId, opts)
         try { t.get(); } catch (const std::exception&) {}
     });
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 如果您的 val 已經知道訪客是誰，Secure SSO 會將該身份交給小工具，讓他們永遠不會看到第二次登入。無需建立任何端點，也不需要在執行時呼叫任何東西：您在伺服器端計算三個值，並將它們傳入小工具設定中。
 
 Val Town 內建零設定登入功能，使用 `std/oauth`，因此訪客可以使用他們已有的 Val Town 帳號登入。您可以將其替換為您應用程式使用的任何方式；FastComments 部分則保持不變。
@@ -64,5 +63,3 @@ export default oauthMiddleware(app.fetch);
 千萬不要從身分提供者設定 `isAdmin` 或 `isModerator`。使用 Val Town 帳號登入並不代表該使用者應該擔任站點的管理員或版主。
 
 請參閱 [SSO guide](/guide-customizations-and-configuration.html#sso-secure) 以取得完整欄位清單、群組限制的討論串以及徽章資訊。
-
----

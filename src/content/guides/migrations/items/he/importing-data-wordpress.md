@@ -1,24 +1,23 @@
-Our [WordPress Plugin](https://wordpress.org/plugins/fastcomments/) has a powerful UI-based importing mechanism. Upon installing the plugin,
-it will guide you through linking your WordPress installation with FastComments and copying your existing comment data over.
+התוסף שלנו ל-[WordPress](https://wordpress.org/plugins/fastcomments/) כולל מנגנון ייבוא רב-עוצמה המבוסס ממשק משתמש. עם התקנת התוסף,
+הוא ידריך אתכם בתהליך קישור התקנת ה-WordPress שלכם עם FastComments והעתקת נתוני התגובות הקיימים שלכם.
 
-**זה נעשה ללא העתקה או הורדה של משהו ידנית.**
+**כל זה נעשה ללא העתקה או הורדה ידנית של דבר.**
 
-The migration process will be indicated to you via the UI during the migration. Most migrations only take a couple of minutes.
+תהליך ההגירה יוצג בפניכם באמצעות ממשק המשתמש במהלך ההגירה. רוב ההגירות אורכות רק דקות ספורות.
 
-The mechanism is designed to not put excessive load on your WordPress installation during the migration.
+המנגנון תוכנן כך שלא יציב עומס מוגזם על התקנת ה-WordPress שלכם במהלך ההגירה.
 
-If you are moving your site off of WordPress, you can import a WordPress XML or CSV export instead of using the plugin. See
-[Moving Your Comments to a New Site](/guide-installation-wordpress.html#wordpress-moving-off-wordpress).
+אם אתם מעבירים את האתר שלכם מחוץ ל-WordPress, תוכלו לייבא במקום זאת קובץ ייצוא XML או CSV של WordPress במקום להשתמש בתוסף. ראו
+[העברת התגובות שלכם לאתר חדש](/guide-installation-wordpress.html#wordpress-moving-off-wordpress).
 
-### CloudFlare & FireWalls
+### CloudFlare וחומות אש
 
-In order for the automated WordPress setup to work, we have to make calls to your WordPress installation.
-Firewalls like Cloudflare may block us and cause the integration to fail. In such cases, [we can provide
-you](https://fastcomments.com/auth/my-account/help) with a set of IPs to whitelist for the integration.
+כדי שההתקנה האוטומטית של WordPress תעבוד, עלינו לבצע קריאות להתקנת ה-WordPress שלכם.
+חומות אש כמו Cloudflare עשויות לחסום אותנו ולגרום לכשל באינטגרציה. במקרים כאלה, [אנו יכולים לספק לכם](https://fastcomments.com/auth/my-account/help) רשימת כתובות IP להוספה לרשימה הלבנה עבור האינטגרציה.
 
-### Data Ownership
+### בעלות על נתונים
 
-In the case of our WordPress migration, any new or updated comment data is automatically synced back to your WordPress installation
-behind the scenes. This means that, while the comments are served by FastComments itself to take load off of your WordPress deployment,
-we **also** save them in your database as a backup. This also means if you desire to switch away from FastComments, your data is
-already migrated and up to date.
+במקרה של הגירת WordPress שלנו, כל נתוני תגובות חדשים או מעודכנים מסונכרנים אוטומטית בחזרה להתקנת ה-WordPress שלכם
+מאחורי הקלעים. המשמעות היא שבזמן שהתגובות מוגשות על ידי FastComments עצמו כדי להפחית עומס מהפריסת ה-WordPress שלכם,
+אנו **גם** שומרים אותן במסד הנתונים שלכם כגיבוי. המשמעות היא גם שאם תרצו לעבור מ-FastComments, הנתונים שלכם
+כבר הועברו ומעודכנים.

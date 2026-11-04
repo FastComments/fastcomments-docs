@@ -5,5 +5,3 @@
 当指定后，输入 `@` 字符后，自动完成中只会提供属于其他群组的用户。
 
 [code-example-start config = {mentionGroupIds: ['yxZAhjzda', 'QT19nXbqB']}; linesToHighlight = [6, 7, 8, 9]; title = 'Limit Groups for Mentions'; code-example-end]
-
----

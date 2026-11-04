@@ -24,5 +24,3 @@ api->deleteV2PageReact(tenantId, urlId, reactId)
         auto result = t.get();
     });
 [inline-code-end]
-
----

@@ -1,27 +1,24 @@
 [related-parameter-start name = 'urlId'; type = 'string'; related-parameter-end]
 
-We've covered how `urlId` is the page or article id the comments are tied to.
+`urlId` はコメントが紐付けられるページまたは記事の ID であることについては既に説明しました。
 
-Also, to recap, if not defined the `urlId` will default to the current page URL.
+また、おさらいとして、`urlId` が定義されていない場合は現在のページの URL がデフォルトとして使用されます。
 
-What about SPAs, or Single-Page-Applications, where the page or content the comments are tied to changes
-dynamically without a fresh page reload?
+では、ページの再読み込みなしにコメントが紐付けられるページやコンテンツが動的に変化する SPA(シングルページアプリケーション)の場合はどうでしょうか?
 
 #### Angular、React、Vue など
 
-With our libraries such as Angular and React, simply updating the `urlId` property passed to the widget
-will cause the comment widget to refresh. You can see this in action for the React app, for example, <a href="https://github.com/FastComments/fastcomments-react/blob/master/examples/example-paginated/src/PaginatedApp.tsx#L39" target="_blank">こちら</a>.
+Angular や React などの当社のライブラリでは、ウィジェットに渡される `urlId` プロパティを更新するだけで、コメントウィジェットが更新されます。例えば React アプリでの動作は、<a href="https://github.com/FastComments/fastcomments-react/blob/master/examples/example-paginated/src/PaginatedApp.tsx#L39" target="_blank">こちら</a>で確認できます。
 
 #### VanillaJS
 
-If you're using the VanillaJS library it is slightly more complicated as there isn't a framework like Angular or React
-to handle the data binding or state propagation.
+VanillaJS ライブラリを使用している場合、Angular や React のようなデータバインディングや状態伝播を処理するフレームワークがないため、少し複雑になります。
 
-When you instantiate the VanillaJS widget, it returns some functions which can be called to update it.
+VanillaJS ウィジェットをインスタンス化すると、ウィジェットを更新するために呼び出せる関数がいくつか返されます。
 
-Here's a functional example where we change the page hash and update the comment widget:
+以下は、ページハッシュを変更してコメントウィジェットを更新する実際に動作する例です:
 
-[inline-code-attrs-start title = 'ページハッシュの切り替え例'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'ページハッシュ切り替えの例'; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
 <button id="change-page"></button>
@@ -49,7 +46,7 @@ Here's a functional example where we change the page hash and update the comment
             window.location.hash = page;
             let locationString = window.location.toString();
 
-            config.url = locationString; // 通知が正しいページにリンクできるように、url も更新します
+            config.url = locationString; // 通知が正しいページにリンクできるよう、url も更新します
             config.urlId = locationString;
 
             instance.update(config);
@@ -59,5 +56,3 @@ Here's a functional example where we change the page hash and update the comment
     })();
 </script>
 [inline-code-end]
-
----

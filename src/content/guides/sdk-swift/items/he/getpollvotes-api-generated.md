@@ -1,19 +1,19 @@
-The individual votes behind one poll's tallies, oldest first.
+הקולות הבודדים מאחורי ספירות הסקר, מהישן לחדש.
 
-A poll belongs to a comment, so votes are always read one poll at a time - commentId is required. That
-keeps every query on the indexes the collection already has.
+סקר שייך לתגובה, ולכן קולות נקראים תמיד סקר אחד בכל פעם - commentId נדרש. זה
+מבטיח שכל שאילתה משתמשת באינדקסים שכבר קיימים באוסף.
 
-Obeys the poll's privacy: an anonymous poll's votes cannot be read (poll-anonymous), here or by id.
+מכבד את פרטיות הסקר: לא ניתן לקרוא את הקולות של סקר אנונימי (poll-anonymous), כאן או לפי מזהה.
 
 ## פרמטרים
 
 | שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| commentId | string | query | Yes |  |
-| voterId | string | query | No |  |
-| optionId | string | query | No |  |
-| skip | integer | query | No |  |
+| tenantId | string | query | כן |  |
+| commentId | string | query | כן |  |
+| voterId | string | query | לא |  |
+| optionId | string | query | לא |  |
+| skip | integer | query | לא |  |
 
 ## תגובה
 
@@ -21,9 +21,9 @@ Obeys the poll's privacy: an anonymous poll's votes cannot be read (poll-anonymo
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמת getPollVotes'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל-getPollVotes'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// דוגמאות הקוד הבאות עדיין בגרסת בטא. לכל בעיה, אנא דווחו דרך http://github.com/OpenAPITools/openapi-generator/issues/new
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 

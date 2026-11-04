@@ -1,27 +1,27 @@
 ### Oversigt
 
-FastComments Collab Chat udvider den standard FastComments-kommenteringswidget, så den arver alle konfigurationsmuligheder fra basis-widgeten, samtidig med at den tilføjer nogle få specifikke muligheder til tekstannoteringer.
+FastComments Collab Chat udvider standard FastComments-kommentarwidgeten, så den arver alle konfigurationsmulighederne fra basiswidgeten og samtidig tilføjer et par specifikke for tekstannotationer.
 
 ### Påkrævet konfiguration
 
 #### tenantId
 
-Dit FastComments Tenant ID er påkrævet. Du kan finde dette i dit [FastComments dashboard](https://fastcomments.com/auth/my-account/api-secret).
+Dit FastComments Tenant ID er påkrævet. Du kan finde det i dit [FastComments dashboard](https://fastcomments.com/auth/my-account/api-secret).
 
-[inline-code-attrs-start title = "Eksempel på konfiguration"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = "Konfigurationseksempel"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(element, {
     tenantId: 'demo'
 });
 [inline-code-end]
 
-### Specifikke muligheder for Collab Chat
+### Collab Chat-specifikke indstillinger
 
 #### urlId
 
-Som standard genererer Collab Chat en unik identifikator for hver samtale baseret på side-URL'en, DOM-stien til elementet og det valgte tekstområde. Du kan tilsidesætte dette med en brugerdefineret `urlId`.
+Som standard genererer Collab Chat et unikt id for hver samtale baseret på sidens URL, DOM-stien til elementet og det valgte tekstinterval. Du kan overskrive dette med en brugerdefineret `urlId`.
 
-[inline-code-attrs-start title = "Eksempel på konfiguration"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = "Konfigurationseksempel"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
@@ -29,21 +29,21 @@ FastCommentsCollabChat(element, {
 });
 [inline-code-end]
 
-Dette er nyttigt, når din URL-struktur kan ændre sig, men du ønsker at bevare de samme samtaler, eller når du ønsker at dele annoteringer på tværs af flere sider.
+Dette er nyttigt, når din URL-struktur kan ændre sig, men du vil beholde de samme samtaler, eller når du vil dele annotationer på tværs af flere sider.
 
 #### topBarTarget
 
-Styrer visningen af topbaren, som viser antal brugere og antal diskussioner. Sæt til `null` for helt at deaktivere topbaren, eller angiv et DOM-element for at rendere den i en specifik placering.
+Styrer visningen af topbjælken, som viser antal brugere og antal diskussioner. Sæt den til `null` for at deaktivere topbjælken helt, eller angiv et DOM-element for at gengive den på en bestemt placering.
 
-[inline-code-attrs-start title = "Eksempel på konfiguration"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = "Konfigurationseksempel"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Deaktiver topbaren
+// Disable top bar
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
     topBarTarget: null
 });
 
-// Vis topbaren i en brugerdefineret placering
+// Render top bar in custom location
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
     topBarTarget: document.getElementById('custom-header')
@@ -52,9 +52,9 @@ FastCommentsCollabChat(element, {
 
 #### hasDarkBackground
 
-Aktivér mørktilstand-styling, når din side har en mørk baggrund. Denne detektion er automatisk, men det kan være ønskeligt at tilsidesætte den.
+Aktivér mørk tilstand, når din side har en mørk baggrund. Denne detektering er automatisk, men det kan være ønskeligt at overskrive den.
 
-[inline-code-attrs-start title = "Eksempel på konfiguration"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = "Konfigurationseksempel"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
@@ -64,9 +64,9 @@ FastCommentsCollabChat(element, {
 
 #### commentCountUpdated
 
-En callback-funktion, der kaldes, hver gang kommentartællingen ændres. Dette er nyttigt til at opdatere UI-elementer som badges eller sidetitler.
+En callback-funktion, der udløses, hver gang antallet af kommentarer ændres. Dette er nyttigt til at opdatere UI-elementer som badges eller sidetitler.
 
-[inline-code-attrs-start title = "Eksempel på konfiguration"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = "Konfigurationseksempel"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
@@ -79,25 +79,25 @@ FastCommentsCollabChat(element, {
 
 ### Arvede konfigurationsmuligheder
 
-Da Collab Chat udvider den standard kommenteringswidget, kan du bruge enhver konfigurationsmulighed fra basis FastComments-widgeten. Her er nogle ofte anvendte muligheder:
+Da Collab Chat udvider standardkommentarwidgeten, kan du bruge enhver konfigurationsmulighed fra basis-FastComments-widgeten. Her er nogle almindeligt anvendte indstillinger:
 
 #### locale
 
-Indstil sproget for widgetens brugerflade. FastComments understøtter dusinvis af sprog.
+Indstil sproget for widgetens UI. FastComments understøtter dusinvis af sprog.
 
-[inline-code-attrs-start title = "Eksempel på konfiguration"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = "Konfigurationseksempel"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
-    locale: 'es'  // Spansk
+    locale: 'es'  // Spanish
 });
 [inline-code-end]
 
 #### readonly
 
-Gør alle samtaler skrivebeskyttede. Brugere kan se eksisterende annoteringer, men kan ikke oprette nye eller svare.
+Gør alle samtaler skrivebeskyttede. Brugere kan se eksisterende annotationer, men kan ikke oprette nye eller svare.
 
-[inline-code-attrs-start title = "Eksempel på konfiguration"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = "Konfigurationseksempel"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
@@ -107,43 +107,43 @@ FastCommentsCollabChat(element, {
 
 #### sso and simpleSSO
 
-Integrer med dit autentificeringssystem ved hjælp af Single Sign-On.
+Integrér med dit autentificeringssystem ved hjælp af Single Sign-On.
 
-[inline-code-attrs-start title = "Eksempel på konfiguration"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = "Konfigurationseksempel"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
     sso: {
-        // SSO-konfiguration
+        // SSO configuration
     }
 });
 [inline-code-end]
 
-Se SSO-dokumentationen for fulde detaljer om godkendelsesmuligheder.
+Se SSO-dokumentationen for fulde detaljer om autentificeringsmuligheder.
 
 #### maxReplyDepth
 
-Styr, hvor mange niveauer svar kan gå i dybden. Som standard sætter Collab Chat dette til 0, hvilket betyder, at alle kommentarer er flade (ingen indlejrede svar). Du kan ændre dette, hvis du ønsker trådede samtaler.
+Styr, hvor mange niveauer dybe svar kan gå. Som standard sætter Collab Chat denne til 0, hvilket betyder, at alle kommentarer er flade (ingen indlejrede svar). Du kan ændre dette, hvis du vil have trådede samtaler.
 
-[inline-code-attrs-start title = "Eksempel på konfiguration"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = "Konfigurationseksempel"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
-    maxReplyDepth: 3  // Tillad 3 niveauer af indlejring
+    maxReplyDepth: 3  // Allow 3 levels of nesting
 });
 [inline-code-end]
 
 ### Intern konfiguration
 
-Disse muligheder sættes automatisk af Collab Chat og bør ikke tilsidesættes:
+Disse indstillinger sættes automatisk af Collab Chat og bør ikke overskrives:
 
-The `productId` is automatically set to `3` for Collab Chat. The `floating-chat` extension is automatically loaded to provide the chat window functionality. The widget automatically detects mobile devices (screens under 768px wide) and adjusts the UI accordingly.
+`productId` sættes automatisk til `3` for Collab Chat. Udvidelsen `floating-chat` indlæses automatisk for at levere chatvinduets funktionalitet. Widgeten detekterer automatisk mobile enheder (skærme under 768px brede) og tilpasser UI'en i overensstemmelse hermed.
 
 ### Komplet eksempel
 
-Her er et eksempel, der viser flere konfigurationsmuligheder samlet:
+Her er et eksempel, der viser flere konfigurationsmuligheder sammen:
 
-[inline-code-attrs-start title = "Eksempel på konfiguration"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = "Konfigurationseksempel"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(document.getElementById('article'), {
     tenantId: 'demo',
@@ -155,10 +155,10 @@ FastCommentsCollabChat(document.getElementById('article'), {
         document.title = count > 0 ? `(${count}) My Article` : 'My Article';
     },
     sso: {
-        // Din SSO-konfiguration
+        // Your SSO config
     },
     maxReplyDepth: 1
 });
 [inline-code-end]
 
-For en komplet liste over alle tilgængelige konfigurationsmuligheder arvet fra basis-widgeten, se hoveddokumentationen for FastComments-konfiguration.
+For en komplet liste over alle tilgængelige konfigurationsmuligheder, der er arvet fra basiswidgeten, se hoveddokumentationen for FastComments-konfiguration.

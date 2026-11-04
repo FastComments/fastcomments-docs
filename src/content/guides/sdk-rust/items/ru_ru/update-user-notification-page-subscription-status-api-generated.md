@@ -1,18 +1,18 @@
-Enable or disable notifications for a page. When users are subscribed to a page, notifications are created
-for new root comments, and also
+Включение или отключение уведомлений для страницы. Когда пользователи подписаны на страницу, уведомления создаются
+для новых корневых комментариев, а также
 
-## Parameters
+## Параметры
 
-| Имя | Тип | Обязательно | Описание |
+| Имя | Тип | Обязательный | Описание |
 |------|------|----------|-------------|
-| tenant_id | String | Yes |  |
-| url_id | String | Yes |  |
-| url | String | Yes |  |
-| page_title | String | Yes |  |
-| subscribed_or_unsubscribed | String | Yes |  |
-| sso | String | No |  |
+| tenant_id | String | Да |  |
+| url_id | String | Да |  |
+| url | String | Да |  |
+| page_title | String | Да |  |
+| subscribed_or_unsubscribed | String | Да |  |
+| sso | String | Нет |  |
 
-## Response
+## Ответ
 
 Возвращает: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/update_user_notification_page_subscription_status_response.rs)
 

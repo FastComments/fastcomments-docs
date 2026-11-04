@@ -1,4 +1,3 @@
----
 В данный момент онлайн-зрители страницы: люди, чьи websocket-сессии в настоящее время подписаны на страницу.
 Возвращает anonCount + totalCount (подписчики всей комнаты, включая анонимных зрителей, которых мы не перечисляем).
 
@@ -45,5 +44,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.GetOnlineUsers`: %v\n", resp)
 }
 [inline-code-end]
-
----

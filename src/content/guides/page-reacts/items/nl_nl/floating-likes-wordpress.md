@@ -1,4 +1,3 @@
----
 Voor WordPress kan deze functie worden ingeschakeld door een plugin zoals WPCode te installeren en het volgende HTML-fragment aan de voettekst van de blog toe te voegen:
 
 [inline-code-attrs-start title = 'Floating Likes-code voor WordPress'; type = 'bash'; useDemoTenant = true; isFunctional = false; type = 'html';  inline-code-attrs-end]
@@ -26,5 +25,3 @@ Voor WordPress kan deze functie worden ingeschakeld door een plugin zoals WPCode
     })();
 </script>
 [inline-code-end]
-
----

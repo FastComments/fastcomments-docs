@@ -8,5 +8,3 @@
 ## Принос
 
 Приносите са добре дошли! Моля посетете [репозитория в GitHub](https://github.com/FastComments/fastcomments-vue-next) за указания относно приноса.
-
----

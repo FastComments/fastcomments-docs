@@ -1,4 +1,3 @@
----
 ## Parametre
 
 | Name | Type | Location | Påkrævet | Beskrivelse |
@@ -35,5 +34,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->create_tenant_package: #{e}"
 end
 [inline-code-end]
-
----

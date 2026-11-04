@@ -1,4 +1,3 @@
----
 C'est tout ! Vous devriez désormais avoir les commentaires en temps réel ajoutés à votre site GoHighLevel.
 
 <div class="screenshot white-bg">
@@ -7,5 +6,3 @@ C'est tout ! Vous devriez désormais avoir les commentaires en temps réel ajout
 </div>
 
 Si vous avez rencontré une erreur "permission denied", ou si vous souhaitez personnaliser FastComments, lisez la suite.
-
----

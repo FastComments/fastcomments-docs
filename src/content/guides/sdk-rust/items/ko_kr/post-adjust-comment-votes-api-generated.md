@@ -1,4 +1,3 @@
----
 ## 매개변수
 
 | 이름 | 형식 | 필수 | 설명 |
@@ -29,5 +28,3 @@ async fn adjust_votes_example(configuration: &configuration::Configuration) -> R
     Ok(())
 }
 [inline-code-end]
-
----

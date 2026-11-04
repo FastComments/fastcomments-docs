@@ -1,23 +1,23 @@
-Record a vote on a poll, or move an existing one to a different option. A voter has at most one vote per
-poll, so calling this again for the same voter moves their vote rather than adding one.
+Проголосуйте в опитуванні або перемістіть наявний голос до іншого варіанта. Учасник має максимум один голос на
+опитування, тому повторний виклик для того самого учасника переміщує його голос, а не додає новий.
 
-This obeys the site's poll settings: if voting is set to logged-in users only, a vote with just an
-anonUserId is rejected, and anonymous votes are rate limited per IP per poll.
+Це дотримується налаштувань опитувань сайту: якщо голосування дозволено лише авторизованим користувачам, голос із лише
+anonUserId буде відхилено, а анонімні голоси обмежуються за частотою на IP на опитування.
 
-## Parameters
+## Параметри
 
 | Назва | Тип | Обов'язково | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| createPollVoteBody | CreatePollVoteBody | Yes |  |
+| tenantId | string | Так |  |
+| createPollVoteBody | CreatePollVoteBody | Так |  |
 
-## Response
+## Відповідь
 
 Повертає: [`CreatePollVoteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreatePollVoteResponse.ts)
 
-## Example
+## Приклад
 
-[inline-code-attrs-start title = 'createPollVote Приклад'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад createPollVote'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 (async () => {
   const tenantId: string = "acme-corp-tenant";
@@ -25,12 +25,10 @@ anonUserId is rejected, and anonymous votes are rate limited per IP per poll.
   const vote: CreatePollVoteBody = {
     pollId: "poll-2024-09",
     optionId: "option-A"
-    // userId is optional and omitted here
+    // userId є необов'язковим і тут пропущений
   };
 
   const result: CreatePollVoteResponse = await createPollVote(tenantId, vote);
   console.log(result);
 })();
 [inline-code-end]
-
----

@@ -1,3 +1,1 @@
----
 Dodaj komentarze do witryny Eleventy za pomocą oficjalnej wtyczki. Umieść shortcode w swoim szablonie lub podłącz widget ręcznie i pomiń wtyczkę.
----

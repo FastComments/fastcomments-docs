@@ -1,4 +1,3 @@
----
 [api-resource-header-start name = 'HashTag'; route = 'POST /api/v1/hash-tags/bulk'; creditsCost = 1; api-resource-header-end]
 
 此路由允許一次新增最多 100 個 `HashTag` 物件。
@@ -37,5 +36,3 @@ interface HashTagBulkPostResponse {
     results?: HashTagPostResponse[]; // 我們會為每個提供的標籤回傳一個 HashTagPostResponse 物件的清單。
 }
 [inline-code-end]
-
----

@@ -1,20 +1,20 @@
-Like count for a page, optionally with the users who liked it.
+מספר הלייקים עבור דף, אופציונלי עם המשתמשים שאהבו אותו.
 
-## Parameters
+## פרמטרים
 
-| שם | סוג | מיקום | חובה | תיאור |
+| שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | כן |  |
 | urlId | string | query | כן |  |
 | includeUserInfo | string | query | לא | "public" משמיט משתמשים עם פרופילים פרטיים, "include-private" כולל אותם. |
 
-## Response
+## תשובה
 
 מחזיר: [`GetPageLikesAPIResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetPageLikesAPIResponse.java)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמת getPageLikes'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל-getPageLikes'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Import classes:
 import com.fastcomments.invoker.ApiClient;
@@ -38,7 +38,7 @@ public class Example {
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
-    PageReactIncludeUserInfo includeUserInfo = PageReactIncludeUserInfo.fromValue("public"); // PageReactIncludeUserInfo | \"public\" omits users with private profiles, \"include-private\" includes them.
+    PageReactIncludeUserInfo includeUserInfo = PageReactIncludeUserInfo.fromValue("public"); // PageReactIncludeUserInfo | \"public\" משמיט משתמשים עם פרופילים פרטיים, \"include-private\" כולל אותם.
     try {
       GetPageLikesAPIResponse result = apiInstance.getPageLikes(tenantId, urlId)
             .includeUserInfo(includeUserInfo)
@@ -54,5 +54,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

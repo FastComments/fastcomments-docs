@@ -45,5 +45,3 @@ Ne morate da sabirate ovo da biste dobili rezultate - anketa nosi svoje sopstven
 ### Svaka anketa na stranici
 
 Ne postoji listanje glasova za celu stranicu. Da biste izveštavali o celoj stranici, preuzmite njene komentare sa `GET /api/v1/comments`, što vraća anketu svakog komentara i njegove brojeve, a zatim pročitajte glasove za ankete koje vas zanimaju.
-
----

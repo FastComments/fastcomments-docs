@@ -15,5 +15,3 @@ Priporočamo, da najprej preberete dokumentacijo strani, da zmanjšate zmedo pri
 ### Webhooki
 
 Naročnine na webhooke imajo svoj vodnik. `POST`, `GET` in `DELETE /api/v1/webhooks`, ter `GET /api/v1/webhooks/sample-payloads`, so dokumentirani pod [Managing Subscriptions via API](/guide-webhooks.html#webhooks-api-subscriptions), medtem ko so dogodkovni payloadi pod [Webhook Structures](/guide-webhooks.html#webhooks-structures).
-
----

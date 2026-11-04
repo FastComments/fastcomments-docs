@@ -1,27 +1,24 @@
----
-Lorsque des e-mails envoyés par FastComments rebondissent ou sont signalés comme spam par le destinataire, le fournisseur d'e-mail ajoute cette adresse à une liste de suppression. FastComments synchronise quotidiennement ces listes de suppression afin que d'autres e-mails ne soient pas envoyés à des adresses qui ne peuvent pas les recevoir.
+Lorsque les e-mails envoyés par FastComments rebondissent ou sont marqués comme spam par le destinataire, le fournisseur d'e-mails ajoute cette adresse à une liste de suppression. FastComments synchronise ces listes de suppression quotidiennement afin qu'aucun e-mail supplémentaire ne soit envoyé aux adresses qui ne peuvent pas les recevoir.
 
-Les utilisateurs et les modérateurs dont l'adresse e-mail est supprimée ne recevront aucune notification par e-mail, y compris les notifications de réponse, les notifications de mention, les alertes administratives et les e-mails récapitulatifs. Un badge rouge "E-mail supprimé" apparaîtra à côté des utilisateurs et des modérateurs concernés dans l'interface d'administration.
+Les utilisateurs et modérateurs dont les adresses e-mail sont supprimées ne recevront aucune notification par e-mail, y compris les notifications de réponse, les notifications de mention, les alertes administrateur et les e-mails de synthèse. Un badge rouge « Email Suppressed » apparaîtra à côté des utilisateurs et modérateurs concernés dans l'interface d'administration.
 
-#### Viewing Suppressed Emails
+#### Consulter les e-mails supprimés
 
-Les administrateurs du locataire disposant de l'autorisation Gérer les données peuvent consulter les e-mails supprimés sur la page [E-mails supprimés](https://fastcomments.com/auth/my-account/suppressed-emails), sous Gérer les données.
+Les administrateurs de tenant disposant de la permission Manage Data peuvent consulter les e-mails supprimés sur la page [Suppressed Emails](https://fastcomments.com/auth/my-account/suppressed-emails), sous Manage Data.
 
-La page affiche un tableau de toutes les adresses e-mail supprimées associées aux utilisateurs, aux modérateurs et aux commentateurs de votre locataire. Vous pouvez filtrer par adresse e-mail à l'aide du champ de recherche.
+La page affiche un tableau de toutes les adresses e-mail supprimées associées aux utilisateurs, modérateurs et commentateurs de votre tenant. Vous pouvez filtrer par adresse e-mail à l'aide du champ de recherche.
 
-#### Retirer une suppression
+#### Supprimer une exclusion
 
-Pour retirer une suppression, cliquez sur le bouton **Supprimer** à côté de l'entrée dans le tableau. Vous serez redirigé vers une page de confirmation affichant les détails de la suppression. Cliquez sur **Confirmer la suppression** pour continuer.
+Pour supprimer une exclusion, cliquez sur le bouton **Remove** à côté de l'entrée dans le tableau. Vous serez redirigé vers une page de confirmation affichant les détails de l'exclusion. Cliquez sur **Confirm Removal** pour continuer.
 
-Lorsqu'une suppression est retirée, FastComments contacte le fournisseur d'e-mail pour débloquer l'adresse et supprime le drapeau de suppression de tous les enregistrements d'utilisateurs et de modérateurs associés.
+Lorsqu'une exclusion est supprimée, FastComments contacte le fournisseur d'e-mails pour débloquer l'adresse et efface le drapeau d'exclusion de tous les enregistrements d'utilisateurs et modérateurs associés.
 
 #### Limites de débit
 
-Pour prévenir les abus, les retraits sont soumis à des limites de débit :
+Pour prévenir les abus, les suppressions sont limitées en fréquence :
 
-- Chaque adresse e-mail ne peut être retirée de la liste de suppression qu'une fois tous les 30 jours.
-- Chaque locataire peut effectuer jusqu'à 5 retraits par mois civil.
+- Chaque adresse e-mail ne peut être réactivée qu'une fois tous les 30 jours.
+- Chaque tenant peut effectuer jusqu'à 5 suppressions par mois calendaire.
 
-Si une suppression réapparaît après son retrait, cela signifie que l'adresse e-mail a de nouveau rebondi ou a été signalée comme spam. Dans ce cas, le problème de délivrabilité sous-jacent doit être résolu avant de tenter un nouveau retrait.
-
----
+Si une exclusion réapparaît après sa suppression, cela signifie que l'adresse e-mail a de nouveau rebondi ou a été signalée comme spam. Dans ce cas, le problème de délivrabilité sous-jacent doit être résolu avant de tenter une nouvelle suppression.

@@ -1,4 +1,3 @@
----
 ## Parametre
 
 | Navn | Type | Location | Påkrævet | Beskrivelse |
@@ -34,5 +33,3 @@ DefaultAPI.updateTenantUser(tenantId: tenantId, id: id, updateTenantUserBody: up
     }
 }
 [inline-code-end]
-
----

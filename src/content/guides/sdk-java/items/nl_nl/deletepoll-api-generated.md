@@ -1,15 +1,15 @@
-Remove a poll from its comment, along with every vote cast on it. The comment itself is left alone.
+Verwijder een poll van de bijbehorende reactie, samen met alle uitgebrachte stemmen. De reactie zelf blijft onaangetast.
 
 ## Parameters
 
-| Naam | Type | Locatie | Vereist | Beschrijving |
+| Naam | Type | Locatie | Verplicht | Beschrijving |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | commentId | string | path | Ja |  |
 
-## Respons
+## Response
 
-Retourneert: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
+Geeft terug: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
 ## Voorbeeld
 

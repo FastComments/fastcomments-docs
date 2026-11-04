@@ -34,6 +34,3 @@ interface QuestionConfig {
     reportingOrder: number
 }
 [inline-code-end]
-
-
----

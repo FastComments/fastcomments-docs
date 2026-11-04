@@ -1,5 +1,3 @@
----
 - [FastComments ドキュメント](https://docs.fastcomments.com)
 - [カスタマイズと設定](https://docs.fastcomments.com/guide-customizations-and-configuration.html)
 - [Jekyll ドキュメント](https://jekyllrb.com/docs/)
----

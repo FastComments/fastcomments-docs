@@ -1,4 +1,3 @@
----
 За WordPress тази функция може да бъде активирана чрез инсталиране на плъгин като WPCode и добавяне на следния HTML фрагмент към футъра на блога:
 
 [inline-code-attrs-start title = 'Код за плаващи харесвания за WordPress'; type = 'bash'; useDemoTenant = true; isFunctional = false; type = 'html';  inline-code-attrs-end]
@@ -26,5 +25,3 @@
     })();
 </script>
 [inline-code-end]
-
----

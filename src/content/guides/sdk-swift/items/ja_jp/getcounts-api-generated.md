@@ -30,5 +30,3 @@ ModerationAPI.getCounts(tenantId: tenantId, sso: sso) { (response, error) in
     }
 }
 [inline-code-end]
-
----

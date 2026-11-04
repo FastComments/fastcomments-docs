@@ -23,5 +23,3 @@ async function fetchUsersInfo(): Promise<void> {
 }
 fetchUsersInfo();
 [inline-code-end]
-
----

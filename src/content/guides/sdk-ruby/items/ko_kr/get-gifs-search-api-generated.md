@@ -1,4 +1,3 @@
----
 ## 매개변수
 
 | 이름 | 형식 | 위치 | 필수 | 설명 |
@@ -37,5 +36,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_gifs_search: #{e}"
 end
 [inline-code-end]
-
----

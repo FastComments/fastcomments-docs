@@ -1,4 +1,3 @@
----
 Upload og ændr størrelse på et billede
 
 ## Parametre
@@ -29,5 +28,3 @@ async fn example() -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
-
----

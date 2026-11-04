@@ -25,5 +25,3 @@ let params = AddDomainConfigParams {
 
 let response = add_domain_config(&configuration, params).await?;
 [inline-code-end]
-
----

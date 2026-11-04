@@ -24,5 +24,3 @@ interface Subscription {
     createdAt: string // string datuma
 }
 [inline-code-end]
-
----

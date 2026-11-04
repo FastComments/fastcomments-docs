@@ -13,5 +13,3 @@ Comprender el CSS predeterminado te permite:
 Anular los estilos varía según el widget. Para el widget de comentarios, tienes que usar el parámetro de configuración `customCSS` para
 pasar el CSS al iframe, o especificar el CSS en la página de Personalización en el panel de administración que servirá el CSS
 desde nuestro CDN.
-
----

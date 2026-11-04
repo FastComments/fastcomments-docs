@@ -1,36 +1,35 @@
-At FastComments, we know you get enough notifications already. Because of this, we take some measures to limit the notifications users receive while still  
-keeping them in touch with their communities. We also want to keep administrators and moderators up to date and let them know when action needs to be taken.
+У FastComments знамо да већ добијате довољно обавештења. Због тога предузимамо одређене мере да ограничимо обавештења која корисници примају, а да их и даље држимо у контакту са својим заједницама. Такође желимо да администраторе и модераторе држимо у току и да их обавестимо када је потребно предузети акцију.
 
-#### We'll send notifications for the following events for administrators and moderators:
+#### Послаћемо обавештења за следеће догађаје за администраторе и модераторе:
 
-- Community Digest Summary (frequency configurable).  
-- Community help requests and reminders.  
-- New Comments.
+- Резиме дигеста заједнице (учесталост се може подесити).
+- Захтеви за помоћ у заједници и подсетници.
+- Нови коментари.
 
-#### For Commenters:
+#### За коментаторе:
 
-- When someone replies to your comment (via email).  
-- When you are mentioned (in-app and email notification).  
-- When someone replies in the same thread (in-app and email notification).  
-- When someone replies to a child comment in the same thread (in-app and email notification).  
-- When someone replies to a page you have subscribed to (in-app and email notification, frequency configurable per subscription: every minute, hourly, or daily).  
-- When someone responds to a poll you created (in-app notification, plus a daily email). See [Обавештења о анкетама](/guide-polls.html#poll-notifications).  
-- When a user comments for the first time (But not with SSO).  
-- When a user leaves a comment in a session that is not verified (But not with SSO).  
-  - We do not send multiple verification emails in this case. Only the first one, which will verify all activity in the same session.
+- Када неко одговори на ваш коментар (путем имејла).
+- Када сте поменути (обавештење у апликацији и имејлом).
+- Када неко одговори у истој нити (обавештење у апликацији и имејлом).
+- Када неко одговори на подређени коментар у истој нити (обавештење у апликацији и имејлом).
+- Када неко одговори на страницу којој сте се претплатили (обавештење у апликацији и имејлом, учесталост се може подесити по претплати: сваког минута, сваки сат или сваки дан).
+- Када неко одговори на анкету коју сте креирали (обавештење у апликацији, плус дневни имејл). Погледајте [Обавештења о анкетама](/guide-polls.html#poll-notifications).
+- Када корисник коментарише први пут (али не са SSO).
+- Када корисник остави коментар у сесији која није верификована (али не са SSO).
+  - У овом случају не шаљемо више верификационих имејлова. Само први, који ће верификовати сву активност у истој сесији.
 
-#### For All Users:
+#### За све кориснике:
 
-- When a login from a new IP address is detected, a security alert email is sent with the approximate location and IP address. This does not apply to the user's very first login.
+- Када се детектује пријава са нове IP адресе, шаље се безбедносни упозоравајући имејл са приближном локацијом и IP адресом. Ово не важи за прву пријаву корисника.
 
-#### ...and finally for administrators only:
+#### ...и на крају, само за администраторе:
 
-- When integrations are complete.  
-- When migrations are complete.  
-- When imports or exports finish.  
-- When there are billing issues.  
-- Trial-end reminders.
+- Када су интеграције завршене.
+- Када су миграције завршене.
+- Када се увози или извози заврше.
+- Када постоје проблеми са наплатом.
+- Подсетници на крај пробног периода.
 
-Some notifications are batched up to prevent mass-sending of notifications to users. Learn about this in the next section `Notification Types`.
+Нека обавештења се груписују како би се спречило масовно слање обавештења корисницима. Сазнајте више о томе у следећем одељку `Notification Types`.
 
-Reply and mention emails are only sent for comments that are approved. To see whether a reply or mention email went out for a specific comment, or why it did not, open that comment's [Записници коментара](/guide-moderation.html#comment-logs) from the Moderate Comments page.
+Имејлови за одговоре и помињања се шаљу само за одобрене коментаре. Да бисте видели да ли је имејл за одговор или помињање послат за одређени коментар, или зашто није, отворите [Евиденцију коментара](/guide-moderation.html#comment-logs) тог коментара са странице Moderate Comments.

@@ -25,5 +25,3 @@ Bu, istenen bir yerel ayar ile geçersiz kılınabilir.
 ### SSO Notu
 
 SSO kullanıyorsanız, kullanıcının yerel ayarını kullanıcı nesnesine geçirmek isteyebilirsiniz, böylece e-postalar ve diğer öğeler onlar için doğru şekilde yerelleştirilir.
-
----

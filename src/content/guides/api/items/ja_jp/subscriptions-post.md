@@ -1,4 +1,3 @@
----
 [api-resource-header-start name = 'Subscription'; route = 'POST /api/v1/subscriptions'; creditsCost = 1; api-resource-header-end]
 
 このAPIエンドポイントは `Subscription` を作成する機能を提供します。ユーザーはページごとに1つのサブスクリプションのみ持つことができ、複数は冗長であるため、同じユーザーが同じページに対して複数のサブスクリプションを作成しようとするとエラーになります。
@@ -37,5 +36,3 @@ interface SubscriptionPostResponse {
     reason?: string
 }
 [inline-code-end]
-
----

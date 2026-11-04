@@ -4,5 +4,3 @@
 na podkomentarje. Na primer, to lahko pogojno nastavite ob nalaganju strani, da boste dovolili le nekaterim uporabnikom pustiti komentarje na najvišji ravni.
 
 [code-example-start config = {noNewRootComments: true}; linesToHighlight = [6]; title = 'Prevent New Root Comments'; code-example-end]
-
----

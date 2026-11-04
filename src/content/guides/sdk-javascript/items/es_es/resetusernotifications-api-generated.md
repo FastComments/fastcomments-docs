@@ -36,5 +36,3 @@ Devuelve: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fas
   console.log(response);
 })();
 [inline-code-end]
-
----

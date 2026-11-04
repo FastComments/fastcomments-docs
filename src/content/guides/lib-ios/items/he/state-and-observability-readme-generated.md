@@ -1,4 +1,3 @@
----
 שני `FastCommentsSDK` ו־`FastCommentsFeedSDK` הם מחלקות מסוג `ObservableObject` עם תכונות `@Published`. ניתן לצפות בהן בתוך תצוגות SwiftUI שלך לקבלת עדכוני ממשק משתמש ריאקטיביים.
 
 ### תכונות Published של FastCommentsSDK

@@ -1,57 +1,58 @@
-A **wyzwalacz** to zdarzenie, które wybudza agenta. Każdy agent może mieć zdefiniowany jeden lub więcej wyzwalaczy.
+**Wyzwalacz (trigger)** to zdarzenie, które budzi agenta. Każdy agent może mieć zdefiniowany jeden lub więcej wyzwalaczy.
 
-### The full list
+### Pełna lista
 
 | Wyzwalacz | Kiedy się uruchamia |
 |---|---|
-| [Dodano komentarz](#trigger-comment-add) | Dodano nowy komentarz. |
-| [Edytowano komentarz](#trigger-comment-edit) | Komentarz został edytowany. Poprzedni tekst jest dołączony do kontekstu agenta. |
-| [Usunięto komentarz](#trigger-comment-delete) | Komentarz został usunięty. |
-| [Przypięto komentarz](#trigger-comment-pin) | Komentarz został przypięty (przez kogokolwiek, w tym moderatora lub innego agenta). |
-| [Odpięto komentarz](#trigger-comment-unpin) | Komentarz został odpięty. |
-| [Zablokowano komentarz](#trigger-comment-lock) | Komentarz został zablokowany (brak możliwości dalszych odpowiedzi). |
-| [Odblokowano komentarz](#trigger-comment-unlock) | Komentarz został odblokowany. |
-| [Komentarz przekracza próg głosów](#trigger-comment-vote-threshold) | Łączny wynik głosów komentarza osiąga skonfigurowany próg. |
-| [Komentarz przekracza próg zgłoszeń](#trigger-comment-flag-threshold) | Liczba zgłoszeń komentarza osiąga dokładnie skonfigurowany próg. |
-| [Użytkownik publikuje pierwszy komentarz](#trigger-new-user-first-comment) | Użytkownik publikuje swój pierwszy komentarz na tej witrynie. |
-| [Komentarz oznaczony automatycznie jako spam](#trigger-comment-auto-spammed) | Komentarz jest automatycznie oznaczany jako spam przez silnik antyspamowy. |
-| [Moderator oznacza komentarz jako sprawdzony](#trigger-moderator-reviewed) | Moderator oznacza komentarz jako sprawdzony. |
-| [Moderator zatwierdza komentarz](#trigger-moderator-approved) | Moderator zatwierdza komentarz. |
-| [Moderator oznacza komentarz jako spam](#trigger-moderator-spammed) | Moderator oznacza komentarz jako spam. |
-| [Moderator przyznaje odznakę](#trigger-moderator-awarded-badge) | Moderator przyznaje użytkownikowi odznakę. |
+| [Comment Added](#trigger-comment-add) | Opublikowano nowy komentarz. |
+| [Comment Edited](#trigger-comment-edit) | Komentarz został edytowany. Poprzednia treść jest dołączona do kontekstu agenta. |
+| [Comment Deleted](#trigger-comment-delete) | Komentarz został usunięty. |
+| [Comment Pinned](#trigger-comment-pin) | Komentarz został przypięty (przez kogokolwiek, w tym moderatora lub innego agenta). |
+| [Comment Unpinned](#trigger-comment-unpin) | Komentarz został odpięty. |
+| [Comment Locked](#trigger-comment-lock) | Komentarz został zablokowany (nie można dodawać kolejnych odpowiedzi). |
+| [Comment Unlocked](#trigger-comment-unlock) | Komentarz został odblokowany. |
+| [Comment Crosses Vote Threshold](#trigger-comment-vote-threshold) | Netto głosów komentarza osiąga skonfigurowany próg. |
+| [Comment Crosses Flag Threshold](#trigger-comment-flag-threshold) | Liczba zgłoszeń (flag) komentarza osiąga dokładnie skonfigurowany próg. |
+| [User Posts First Comment](#trigger-new-user-first-comment) | Użytkownik publikuje swój pierwszy komentarz na tej stronie. |
+| [Comment Auto-Spammed](#trigger-comment-auto-spammed) | Komentarz został automatycznie oznaczony jako spam przez silnik antyspamowy. |
+| [Moderator Reviews Comment](#trigger-moderator-reviewed) | Moderator oznacza komentarz jako sprawdzony. |
+| [Moderator Approves Comment](#trigger-moderator-approved) | Moderator zatwierdza komentarz. |
+| [Moderator Marks Spam](#trigger-moderator-spammed) | Moderator oznacza komentarz jako spam. |
+| [Moderator Awards Badge](#trigger-moderator-awarded-badge) | Moderator przyznaje użytkownikowi odznakę. |
 
-### Multiple triggers per agent
+### Wiele wyzwalaczy na agenta
 
-Agent może subskrybować dowolne kombinacje wyzwalaczy - [Szablon moderatora](#template-moderator) subskrybuje na przykład zarówno `COMMENT_ADD`, jak i `COMMENT_FLAG_THRESHOLD`. Każde zdarzenie uruchamia agenta raz z kontekstem tego zdarzenia.
+Agent może subskrybować dowolną kombinację wyzwalaczy - na przykład [szablon Moderator](#template-moderator) subskrybuje zarówno `COMMENT_ADD`, jak i `COMMENT_FLAG_THRESHOLD`. Każde zdarzenie uruchamia agenta raz, z kontekstem tego zdarzenia.
 
-### What stops an agent firing
+### Co uniemożliwia uruchomienie agenta
 
-Subskrybowane zdarzenie wyzwalacza **nie** uruchamia agenta, jeśli zachodzi któreś z poniższych:
+Zasubskrybowane zdarzenie wyzwalacza **nie** uruchamia agenta, jeśli spełniony jest którykolwiek z poniższych warunków:
 
-- Status agenta ([status](#status-states)) jest **Disabled**.
-- Zakres [URL lub lokalizacji](#scope-url-locale) agenta nie pasuje do wyzwalającego komentarza.
-- [Budżet dzienny, miesięczny lub limitu](#budgets-overview) agenta jest wyczerpany - wyzwalacz jest rejestrowany jako **dropped** z powodem. Zobacz [Przyczyny odrzuceń](#drop-reasons).
-- Został osiągnięty limit współbieżności dla tego agenta (ograniczany dla każdego agenta).
-- Tenant agenta ma nieprawidłowe rozliczenia.
-- Działanie wyzwalające zostało wykonane przez bota lub innego agenta (zapobieganie pętli).
-- Wyzwalacz dotyczył komentarza, który już został przetworzony przez tego agenta w oknie deduplikacji.
+- [Status](#status-states) agenta to **Disabled**.
+- [Zakres URL lub locale](#scope-url-locale) agenta nie pasuje do komentarza wywołującego.
+- [Dzienny, miesięczny lub limit-rate budżet](#budgets-overview) agenta jest wyczerpany - wyzwalacz jest rejestrowany jako **dropped** z powodem. Zobacz [Drop Reasons](#drop-reasons).
+- Współbieżność dla tego agenta jest wyczerpana (limit na agenta).
+- Najemca (tenant) agenta ma nieprawidłowe rozliczenia.
+- Wywołująca akcja została sama wykonana przez bota lub innego agenta (zapobieganie pętlom).
+- Wyzwalacz dotyczył komentarza, który został już przetworzony przez tego agenta w oknie deduplikacji.
 
-Kiedy subskrybowany wyzwalacz uruchamia się pomyślnie, [Historia uruchomień](#run-history) agenta pokazuje wiersz ze statusem **Started**, który przechodzi do **Success** lub **Error**, gdy uruchomienie się zakończy.
+Gdy zasubskrybowany wyzwalacz uruchomi się pomyślnie, [Run History](#run-history) agenta pokazuje wiersz ze statusem **Started**, który przechodzi w **Success** lub **Error** po zakończeniu uruchomienia.
 
 ### Progi głosów i zgłoszeń
 
-Dwa wyzwalacze - **Komentarz przekracza próg głosów** i **Komentarz przekracza próg zgłoszeń** - wymagają wartości progowej jako liczby na formularzu edycji. Wyzwalacz uruchamia się w momencie, gdy liczba przekracza skonfigurowaną wartość (konkretnie wyzwalacz progu zgłoszeń uruchamia się, gdy `flagCount === flagThreshold`, więc wybranie 1 oznacza "uruchom przy pierwszym zgłoszeniu", a wybranie 5 oznacza "uruchom, gdy nadejdzie piąte zgłoszenie").
+Dwa wyzwalacze - **Comment Crosses Vote Threshold** i **Comment Crosses Flag Threshold** - wymagają liczbowego progu w formularzu edycji. Wyzwalacz uruchamia się w momencie przekroczenia skonfigurowanej wartości (konkretnie, wyzwalacz progu zgłoszeń uruchamia się, gdy `flagCount === flagThreshold`, więc wybranie 1 oznacza "uruchom przy pierwszym zgłoszeniu", a wybranie 5 oznacza "uruchom, gdy przyjdzie piąte zgłoszenie").
 
-### Odroczone wyzwalacze
+### Wyzwalacze odroczone
 
-Każdy wyzwalacz można odroczyć, aby agent uruchomił się później, na przykład po tym, jak głosy/zgłoszenia/odpowiedzi miały czas się ustabilizować. Zobacz [Odroczone wyzwalacze](#trigger-deferred-delay).
+Każdy wyzwalacz może być odroczony, tak aby agent uruchomił się później, na przykład gdy głosy/zgłoszenia/odpowiedzi zdążą się ustabilizować. Zobacz [Deferred Triggers](#trigger-deferred-delay).
 
 ### Zapobieganie pętlom
 
-Aby zapobiec nieskończonym pętlom, komentarze **utworzone przez agenta** zawierają `botId`. Wyzwalacze nowych komentarzy ignorują komentarze z `botId`.
+Aby zapobiec nieskończonym pętlom, komentarze **napisane przez agenta** zawierają `botId`. Wyzwalacze nowych komentarzy ignorują komentarze z `botId`.
 
-Efekt końcowy: agenci mogą działać w odpowiedzi na *ludzkie* działania w Twoim tenantcie, ale działania pochodzące od agenta nigdy nie uruchamiają żadnych wyzwalaczy agenta. Dotyczy to wszystkich typów wyzwalaczy.
+Efekt netto: agenty mogą reagować na działania *ludzi* w Twoim tenancie, ale działania pochodzące od agentów nigdy nie uruchamiają wyzwalaczy żadnego agenta. Dotyczy to
+wszystkich typów wyzwalaczy.
 
-### REPLAY: the internal trigger
+### REPLAY: wewnętrzny wyzwalacz
 
-Istnieje także wewnętrzny typ wyzwalacza `REPLAY` używany przez funkcję [Uruchomienia testowe (Powtórki)](#test-runs-replays). Nie możesz go wybrać na formularzu edycji - istnieje po to, aby uruchomienia powtórkowe były wyraźnie oznaczane w historii uruchomień i wykluczane z widoków uruchomień na żywo.
+Istnieje również wewnętrzny typ wyzwalacza `REPLAY`, używany przez funkcję [Test Runs (Replays)](#test-runs-replays). Nie można go wybrać w formularzu edycji - istnieje po to, aby uruchomienia replay były wyraźnie oznaczone w historii uruchomień i wykluczone z widoków uruchomień na żywo.

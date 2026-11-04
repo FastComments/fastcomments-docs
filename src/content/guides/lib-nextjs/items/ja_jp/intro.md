@@ -5,5 +5,3 @@ Next.js アプリにライブコメント、チャット、およびレビュー
 ## リポジトリ
 
 [GitHub で見る](https://github.com/FastComments/fastcomments-nextjs)
-
----

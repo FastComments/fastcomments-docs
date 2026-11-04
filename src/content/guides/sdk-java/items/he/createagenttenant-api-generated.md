@@ -1,19 +1,16 @@
-Creates a new trial account for an AI agent without a human signup. No API key is needed to call this.
+יוצר חשבון ניסיון חדש עבור סוכן AI ללא הרשמה של בן אדם. אין צורך במפתח API כדי לקרוא לזה.
 
-The response contains the tenant id, an API key that works immediately against the REST API and the
-MCP server, and a claim URL. Give the claim URL to the human you are working for: opening it while
-logged in to FastComments attaches the account to them. Unclaimed accounts, and their keys, are
-deleted 72 hours after creation. Until claimed, the account has the standard trial limits.
+התשובה מכילה את מזהה הטננט, מפתח API שעובד מיד מול ה-REST API ושרת ה-MCP, וכתובת URL לתביעה. מסרו את כתובת ה-URL לתביעה לבן האדם שאתם עובדים עבורו: פתיחתה בזמן שמחוברים ל-FastComments מקשרת את החשבון אליו. חשבונות שלא נתבעו, והמפתחות שלהם, נמחקים 72 שעות לאחר היצירה. עד לתביעה, לחשבון יש את מגבלות הניסיון הרגילות.
 
-## תגובה
+## תשובה
 
-Returns: [`CreateAgentTenantResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateAgentTenantResponse.java)
+מחזיר: [`CreateAgentTenantResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateAgentTenantResponse.java)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'createAgentTenant דוגמה'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמת createAgentTenant'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// ייבא מחלקות:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;

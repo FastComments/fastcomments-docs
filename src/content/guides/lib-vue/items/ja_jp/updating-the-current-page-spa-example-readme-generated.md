@@ -1,9 +1,10 @@
-FastCommentsでは、記事IDまたはコメントが紐づくページをURL IDと呼びます。これはURLまたはIDになり得ます。
-以下の方法でURL IDを定義してください。コンポーネントはconfigオブジェクトの変更を監視してリロードするため、"url"と"urlId"の設定を更新するだけで構いません。
+FastCommentsでは、記事ID、つまりコメントが紐付けられるページのことを、URLにもIDにもなり得ることから「URL ID」と呼んでいます。
 
-完全な動作例は[こちら](https://github.com/FastComments/fastcomments-vue/blob/master/dev/serve-pagination.ts)を参照してください。
+URL IDは以下のように定義します。コンポーネントはconfigオブジェクトの変更を監視しており、変更があれば再読み込みするため、"url" と "urlId" の設定を更新するだけでOKです。
 
-次のコマンドでページネーションの例を実行します:
+完全に動作する例は[こちら](https://github.com/FastComments/fastcomments-vue/blob/master/dev/serve-pagination.ts)でご覧いただけます。
+
+ページネーションの例は以下のコマンドで実行できます:
 
 ```
 npm run serve-pagination
@@ -13,12 +14,12 @@ npm run serve-pagination
 <fast-comments-vue v-bind:config="{tenantId: 'demo', url: 'https://example.com', urlId: 'some-page-id'}" />
 ```
 
-### Account Region (ATTENTION: EU Customers)
+### アカウントのリージョン(注意: EUのお客様へ)
 
-アカウントがEUにある場合は、ウィジェット設定で`region = 'eu'`を設定してください。例えば:
+アカウントがEUにある場合は、ウィジェットの設定で `region = 'eu'` を指定してください。例:
 
 ```vue
 <fast-comments-vue v-bind:config="{tenantId: 'demo', url: 'https://example.com', urlId: 'some-page-id', region: 'eu'}" />
 ```
 
-それ以外の場合は`region`を定義する必要はありません。
+それ以外の場合は、`region` を定義する必要はありません。

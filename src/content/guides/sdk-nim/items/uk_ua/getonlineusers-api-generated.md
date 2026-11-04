@@ -1,4 +1,3 @@
----
 Поточні онлайн переглядачі сторінки: люди, чия сесія вебсокета підписана на сторінку в даний момент.  
 Повертає anonCount + totalCount (підписники всього простору, включаючи анонімних глядачів, яких ми не перераховуємо).
 
@@ -24,5 +23,3 @@ if onlineUsersOpt.isSome:
   let onlineUsers = onlineUsersOpt.get()
   echo onlineUsers
 [inline-code-end]
-
----

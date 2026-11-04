@@ -1,19 +1,16 @@
----
-FastComments supports the following features with SSR:
+FastComments podržava sljedeće značajke s SSR:
 
-- Prilagodljiv widget za komentiranje.
+- Prilagodljiv widget za komentare.
 - Anonimno komentiranje.
-- Kommentiranje dok ste prijavljeni.
+- Komentiranje dok ste prijavljeni.
 - SSO.
-- Glavni i ugniježđeni odgovori.
+- Root i ugniježđeni odgovori.
 - Pregled i paginacija niti komentara.
 - Glasanje, uključujući anonimno glasanje.
-- Promjena zadane smjera sortiranja.
+- Promjena zadanog smjera sortiranja.
 
 ### Primjer
 
 Primjer FastComments SSR dostupan je [ovdje](https://fastcomments.com/ssr/comments?tenantId=L177BUDVvSe&urlId=ssr-test&url=https%3A%2F%2Ffastcomments.com%2Fssr%2Fcomments%2F%3FtenantId%3DL177BUDVvSe%26urlId%3Dssr-test).
 
-[app-screenshot-start url='https://fastcomments.com/ssr/comments?tenantId=L177BUDVvSe&urlId=ssr-test&url=https%3A%2F%2Ffastcomments.com%2Fssr%2Fcomments%2F%3FtenantId%3DL177BUDVvSe%26urlId%3Dssr-test'; selector = 'body'; alt='Nit komentara renderirana na poslužitelju s ugniježđenim odgovorima, gumbima za glasanje i poljem za unos komentara na SSR primjer stranici'; title='FastComments SSR' app-screenshot-end]
-
----
+[app-screenshot-start url='https://fastcomments.com/ssr/comments?tenantId=L177BUDVvSe&urlId=ssr-test&url=https%3A%2F%2Ffastcomments.com%2Fssr%2Fcomments%2F%3FtenantId%3DL177BUDVvSe%26urlId%3Dssr-test'; selector = 'body'; alt='Nit komentara renderirana na serveru s ugniježđenim odgovorima, gumbima za glasovanje i okvirom za komentare na SSR primjeru stranice'; title='FastComments SSR' app-screenshot-end]

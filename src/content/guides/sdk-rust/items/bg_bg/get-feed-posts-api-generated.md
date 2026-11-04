@@ -30,5 +30,3 @@ async fn fetch_feed(config: &configuration::Configuration) -> Result<(), Error> 
     Ok(())
 }
 [inline-code-end]
-
----

@@ -25,5 +25,3 @@ async function runSearches(): Promise<void> {
 
 runSearches();
 [inline-code-end]
-
----

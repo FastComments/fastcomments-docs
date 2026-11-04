@@ -1,4 +1,3 @@
----
 De vuelta en el panel de Ghost, vamos a subir nuestro tema:
 
 <div class="screenshot white-bg">
@@ -14,5 +13,3 @@ En mi caso, tengo el archivo zip en la siguiente ubicación. Fíjate en la carpe
 </div>
 
 Recuerda activar el tema que acabas de subir (Ghost debería pedírtelo).
-
----

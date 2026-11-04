@@ -1,4 +1,3 @@
----
 **ID du modèle :** `gaslight_detector`
 
 Le Gaslight Detector surveille les modifications de commentaires qui réécrivent l'historique au milieu d'une conversation — le type où un auteur change le sens d'un commentaire antérieur après que des réponses ont été écrites, laissant les réponses en aval hors contexte ou incorrectes. Quand l'agent estime qu'une modification franchit cette limite, il restaure le texte original et envoie un message direct (DM) à l'auteur pour expliquer.
@@ -30,5 +29,3 @@ Il ne peut pas bannir, marquer comme spam, voter, ou publier de nouveaux comment
 ### Fenêtre d'exécution à sec recommandée
 
 Faites fonctionner pendant au moins deux semaines de trafic réel en [mode dry-run](#dry-run-mode) avant de passer en Activé, et passez en revue chaque modification signalée pendant cette période. Utilisez [Test Runs (Replays)](#test-runs-replays) pour rejouer les 30 derniers jours de modifications contre l'agent avant la mise en production.
-
----

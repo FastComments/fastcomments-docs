@@ -1,4 +1,3 @@
----
 Når du besøger dit site bør du nu se FastComments-kommentarboksen synlig på blogindlæg:
 
 <div class="screenshot white-bg">
@@ -7,5 +6,3 @@ Når du besøger dit site bør du nu se FastComments-kommentarboksen synlig på 
 </div>
 
 Tillykke med at have sat FastComments op med Godaddy! Hvis du er stødt på en Domain Error, eller gerne vil lære, hvordan du tilpasser kommentarfeltet, så læs videre!
-
----

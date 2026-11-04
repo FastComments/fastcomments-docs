@@ -1,4 +1,3 @@
----
 ## Antwort
 
 Gibt zurück: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIEmptyResponse.swift)
@@ -22,5 +21,3 @@ PublicAPI.logoutPublic() { (response, error) in
     }
 }
 [inline-code-end]
-
----

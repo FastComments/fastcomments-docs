@@ -17,5 +17,3 @@
     <div class="title">Примітка: коментарі не з'являться до публікації</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-webflow-step-3.png" alt="Коментарі не з'являться до публікації" />
 </div>
-
----

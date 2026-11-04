@@ -9,5 +9,3 @@ un fil par page, **sans utiliser collab chat**. FastComments ne facture pas non 
 souhaitez permettre aux utilisateurs de sélectionner du texte et de commenter la section de texte surlignée.
 
 Vous pouvez voir [un exemple ici](https://fastcomments.com/product/collab-chat).
-
----

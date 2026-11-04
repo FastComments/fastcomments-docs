@@ -27,5 +27,3 @@ Isso também pode ser feito sem código. Na página de personalização do widge
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.default-sort-direction'; alt='Seletor de Direção de Classificação Padrão oferecendo Mais Relevante, Mais Recentes Primeiro e Mais Antigos Primeiro'; title='Alterando a Direção de Classificação Padrão' app-screenshot-end]
 
 Observe que os comentários em cada página para cada direção de classificação são pré-calculados, portanto todas as direções de classificação têm o mesmo desempenho.
-
----

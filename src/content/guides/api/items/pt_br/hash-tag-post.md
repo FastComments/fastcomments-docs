@@ -32,5 +32,3 @@ interface HashTagPostResponse {
     hashTag?: HashTag; // Retornamos a hashtag completa criada em caso de sucesso.
 }
 [inline-code-end]
-
----

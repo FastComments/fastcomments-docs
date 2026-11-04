@@ -1,10 +1,10 @@
-### API Overview
+### Pregled API-ja
 
-Image Chat zagotavlja tri REST API končne točke za upravljanje pogovorov o slikah programatično. Te končne točke vam omogočajo pridobivanje, ustvarjanje in brisanje oznak brez uporabe vtičnika v brskalniku.
+Image Chat ponuja tri REST API končne točke za programsko upravljanje slikovnih pogovorov. Te končne točke omogočajo pridobivanje, ustvarjanje in brisanje markerjev brez uporabe brskalniškega gradnika.
 
-Vse API končne točke zahtevajo overjanje in sledijo standardnim vzorcem FastComments API. To so javne končne točke, ki se overjajo preko piškotkov brskalnika, ne preko API ključev.
+Vse API končne točke zahtevajo avtentikacijo in sledijo standardnim vzorcem FastComments API. To so javne končne točke, ki se avtentikirajo prek brskalniških piškotkov, ne prek API ključev.
 
-### Base URL
+### Osnovni URL
 
 Vse Image Chat API končne točke so pod:
 
@@ -12,38 +12,38 @@ Vse Image Chat API končne točke so pod:
 https://fastcomments.com/comment-image-chats
 ```
 
-### Authentication
+### Avtentikacija
 
-Te končne točke overjajo uporabnike preko piškotkov v brskalniku. Ne uporabljajo API ključev. Uporabniki morajo biti v svojem brskalniku prijavljeni v FastComments, da lahko dostopajo do teh končnih točk.
+Te končne točke avtentikirajo uporabnike prek brskalniških piškotkov. Ne uporabljajo API ključev. Uporabniki morajo biti v svojem brskalniku prijavljeni v FastComments, da dostopajo do teh končnih točk.
 
-### Get All Conversations
+### Pridobivanje vseh pogovorov
 
-Pridobite vse pogovore o sliki za določeno sliko.
+Pridobite vse slikovne pogovore za določeno sliko.
 
-#### Endpoint
+#### Končna točka
 
 ```
 GET /comment-image-chats/:tenantId?urlId=<urlId>
 ```
 
-#### Parameters
+#### Parametri
 
-`tenantId` (path parameter, required) je vaš FastComments Tenant ID.
+`tenantId` (parameter poti, obvezen) je vaš FastComments Tenant ID.
 
-`urlId` (query parameter, required) je identifikator slike, za katero želite pridobiti pogovore.
+`urlId` (parameter poizvedbe, obvezen) je identifikator slike, za katero želite pridobiti pogovore.
 
-#### Response
+#### Odziv
 
-Odgovor vključuje stanje API, informacije o trenutni uporabniški seji, če je overjena, polje z nizi pogovorov z njihovimi ID-ji, URL-ji in X/Y koordinatami, očiščen identifikator URL, zastavico, ki označuje ali je trenutni uporabnik skrbnik spletnega mesta ali moderator, in podrobnosti povezave WebSocket za sinhronizacijo v živo vključno z `tenantIdWS`, `urlIdWS` in `userIdWS`.
+Odziv vključuje status API, informacije o trenutni uporabniški seji, če je uporabnik avtentikiran, polje pogovorov z njihovimi ID-ji, URL-ji in koordinatami X/Y, očiščen URL identifikator, zastavico, ki označuje, ali je trenutni uporabnik skrbnik ali moderator spletnega mesta, ter podrobnosti o WebSocket povezavi za sinhronizacijo v živo, vključno s `tenantIdWS`, `urlIdWS` in `userIdWS`.
 
-#### Example Request
+#### Primer zahteve
 
 ```bash
 curl "https://fastcomments.com/comment-image-chats/demo?urlId=my-product-image" \
   --cookie "your-session-cookie"
 ```
 
-#### Example Response
+#### Primer odziva
 
 ```json
 {
@@ -74,43 +74,43 @@ curl "https://fastcomments.com/comment-image-chats/demo?urlId=my-product-image" 
 }
 ```
 
-### Create Conversation
+### Ustvarjanje pogovora
 
-Ustvarite nov pogovor o sliki za določeno lokacijo na sliki.
+Ustvarite nov slikovni pogovor za določeno lokacijo na sliki.
 
-#### Endpoint
+#### Končna točka
 
 ```
 POST /comment-image-chats/:tenantId
 ```
 
-#### Parameters
+#### Parametri
 
-`tenantId` (path parameter, required) je vaš FastComments Tenant ID.
+`tenantId` (parameter poti, obvezen) je vaš FastComments Tenant ID.
 
-Telo zahteve mora biti v formatu JSON in mora vsebovati ta obvezna polja.
+Telo zahteve mora biti v formatu JSON in vključevati naslednja obvezna polja.
 
-`urlId` (string, required) je osnovni identifikator strani.
+`urlId` (niz, obvezen) je osnovni identifikator strani.
 
-`windowUrlId` (string, required) je URL združen z izvorom slike in koordinatami, na primer `my-page:/images/photo.jpg:25.5:30.2`.
+`windowUrlId` (niz, obvezen) je URL, združen z virom slike in koordinatami, na primer `my-page:/images/photo.jpg:25.5:30.2`.
 
-`pageTitle` (string, required) je naslov strani.
+`pageTitle` (niz, obvezen) je naslov strani.
 
-`src` (string, required) je URL vira slike.
+`src` (niz, obvezen) je URL vira slike.
 
-`x` (number, required) je X koordinata kot odstotek (0-100).
+`x` (številka, obvezna) je koordinata X kot odstotek (0-100).
 
-`y` (number, required) je Y koordinata kot odstotek (0-100).
+`y` (številka, obvezna) je koordinata Y kot odstotek (0-100).
 
-`createdFromCommentId` (string, required) je ID komentarja, ki je sprožil ta klepet.
+`createdFromCommentId` (niz, obvezen) je ID komentarja, ki je sprožil ta pogovor.
 
-`broadcastId` (string, required) je UUID za sinhronizacijo v živo, da prepreči efekt odmeva.
+`broadcastId` (niz, obvezen) je UUID za sinhronizacijo v živo, da se preprečijo odmevni učinki.
 
-#### Response
+#### Odziv
 
-Odgovor vključuje stanje API in ID novo ustvarjenega pogovora.
+Odziv vključuje status API in ID novo ustvarjenega pogovora.
 
-#### Example Request
+#### Primer zahteve
 
 ```bash
 curl -X POST "https://fastcomments.com/comment-image-chats/demo" \
@@ -128,7 +128,7 @@ curl -X POST "https://fastcomments.com/comment-image-chats/demo" \
   }'
 ```
 
-#### Example Response
+#### Primer odziva
 
 ```json
 {
@@ -137,25 +137,25 @@ curl -X POST "https://fastcomments.com/comment-image-chats/demo" \
 }
 ```
 
-### Delete Conversation
+### Brisanje pogovora
 
-Izbrišite obstoječ pogovor o sliki. Ta končna točka zahteva skrbniške ali moderatorske pravice ali pa mora biti pogovor ustvaril overjeni uporabnik.
+Izbrišite obstoječi slikovni pogovor. Ta končna točka zahteva skrbniška ali moderatorska dovoljenja, ali pa mora biti pogovor ustvarjen s strani avtentikiranega uporabnika.
 
-#### Endpoint
+#### Končna točka
 
 ```
 DELETE /comment-image-chats/:tenantId/:chatId
 ```
 
-#### Parameters
+#### Parametri
 
-`tenantId` (path parameter, required) je vaš FastComments Tenant ID.
+`tenantId` (parameter poti, obvezen) je vaš FastComments Tenant ID.
 
-`chatId` (path parameter, required) je ID pogovora, ki ga želite izbrisati.
+`chatId` (parameter poti, obvezen) je ID pogovora za brisanje.
 
-`broadcastId` (request body, required) je UUID za sinhronizacijo v živo.
+`broadcastId` (telo zahteve, obvezno) je UUID za sinhronizacijo v živo.
 
-#### Example Request
+#### Primer zahteve
 
 ```bash
 curl -X DELETE "https://fastcomments.com/comment-image-chats/demo/conv789" \
@@ -166,7 +166,7 @@ curl -X DELETE "https://fastcomments.com/comment-image-chats/demo/conv789" \
   }'
 ```
 
-#### Example Response
+#### Primer odziva
 
 ```json
 {
@@ -174,21 +174,21 @@ curl -X DELETE "https://fastcomments.com/comment-image-chats/demo/conv789" \
 }
 ```
 
-### Coordinate System
+### Sistem koordinat
 
-Koordinate X in Y so shranjene kot odstotki dimenzij slike. X predstavlja horizontalni položaj od levega roba (0 = levi rob, 100 = desni rob). Y predstavlja vertikalni položaj od zgornjega roba (0 = zgornji rob, 100 = spodnji rob).
+Koordinati X in Y sta shranjeni kot odstotki dimenzij slike. X predstavlja vodoravni položaj od levega roba (0 = levi rob, 100 = desni rob). Y predstavlja navpični položaj od zgornjega roba (0 = zgornji rob, 100 = spodnji rob).
 
-Ti odstotni vrednosti lahko vključujejo decimalke za natančnost. Na primer, x: 25.5 pomeni 25.5% od levega roba slike.
+Te odstotne vrednosti lahko vključujejo decimalke za natančnost. Na primer, x: 25.5 pomeni 25,5 % od levega roba slike.
 
-### Rate Limiting
+### Omejevanje hitrosti
 
-Te končne točke so predmet standardnega omejevanja zahtev FastComments API. Middleware za omejevanje hitrosti se uporablja na nivoju najemnika (tenant), da prepreči zlorabe, hkrati pa omogoči normalne vzorce uporabe.
+Te končne točke so predmet standardnega omejevanja hitrosti FastComments API. Vmesna programska oprema za omejevanje hitrosti deluje na nivoju najemnika, da prepreči zlorabe, hkrati pa omogoča normalne vzorce uporabe.
 
-### Error Responses
+### Odzivi napak
 
-Vse končne točke vračajo standardne HTTP statusne kode. Odgovor 400 pomeni neveljavne parametre zahteve. Odgovor 401 pomeni, da overjanje ni uspelo. Odgovor 403 pomeni nezadostne pravice. Odgovor 404 pomeni, da pogovor ni bil najden. Odgovor 429 pomeni preseženo omejitev zahtev.
+Vse končne točke vračajo standardne HTTP statusne kode. Odziv 400 označuje neveljavne parametre zahteve. Odziv 401 pomeni, da je avtentikacija spodletela. Odziv 403 označuje nezadostna dovoljenja. Odziv 404 pomeni, da pogovora ni bilo mogoče najti. Odziv 429 označuje prekoračitev omejitve hitrosti.
 
-Odgovori z napako vključujejo JSON telo s podrobnostmi:
+Odzivi napak vključujejo telo JSON s podrobnostmi:
 
 ```json
 {
@@ -197,6 +197,6 @@ Odgovori z napako vključujejo JSON telo s podrobnostmi:
 }
 ```
 
-### Usage Tracking
+### Sledenje uporabi
 
-Ustvarjanje pogovorov poveča vašo metriko uporabe `conversationCreateCount`. Vsa WebSocket sinhronizacija poveča `pubSubMessageCount` in `pubSubBandwidth`. Te metrike lahko spremljate v nadzorni plošči FastComments pod analitiko uporabe.
+Ustvarjanje pogovorov poveča vašo metriko uporabe `conversationCreateCount`. Vska dejavnost WebSocket sinhronizacije poveča `pubSubMessageCount` in `pubSubBandwidth`. Te metrike lahko spremljate v nadzorni plošči FastComments pod analitiko uporabe.

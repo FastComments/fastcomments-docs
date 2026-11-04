@@ -200,5 +200,3 @@ Odzivi z napako vključujejo JSON telo s podrobnostmi:
 ### Sledenje uporabe
 
 Ustvarjanje pogovorov poveča vašo metriko uporabe `conversationCreateCount`. Vsa dejavnost sinhronizacije prek WebSocket poveča `pubSubMessageCount` in `pubSubBandwidth`. Te metrike lahko spremljate v nadzorni plošči FastComments pod analitiko uporabe.
-
----

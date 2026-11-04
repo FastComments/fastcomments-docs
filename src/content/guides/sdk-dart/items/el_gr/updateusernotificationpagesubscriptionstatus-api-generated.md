@@ -1,16 +1,16 @@
-Enable or disable notifications for a page. When users are subscribed to a page, notifications are created
-for new root comments, and also
+Ενεργοποίηση ή απενεργοποίηση ειδοποιήσεων για μια σελίδα. Όταν οι χρήστες είναι εγγεγραμμένοι σε μια σελίδα, δημιουργούνται ειδοποιήσεις
+για νέα σχόλια ρίζας, καθώς και
 
-## Parameters
+## Παράμετροι
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
-|------|------|----------|-----------|------------|
-| tenantId | string | query | Yes |  |
-| urlId | string | query | Yes |  |
-| url | string | query | Yes |  |
-| pageTitle | string | query | Yes |  |
-| subscribedOrUnsubscribed | string | path | Yes |  |
-| sso | string | query | No |  |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Ναι |  |
+| urlId | string | query | Ναι |  |
+| url | string | query | Ναι |  |
+| pageTitle | string | query | Ναι |  |
+| subscribedOrUnsubscribed | string | path | Ναι |  |
+| sso | string | query | Όχι |  |
 
 ## Απάντηση
 

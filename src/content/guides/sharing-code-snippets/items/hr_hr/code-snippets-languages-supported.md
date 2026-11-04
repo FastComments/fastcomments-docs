@@ -1,4 +1,3 @@
----
 Kada dijelite isječke koda, FastComments čini sve da automatski odredi u kojem
 programskom jeziku se isječak koda nalazi kako bi ga automatski formatirao i primijenio isticanje sintakse.
 
@@ -49,5 +48,3 @@ Trenutno FastComments isticanje sintakse podržava 39 uobičajenih jezika:
 
 Kada dijelite isječak koda u jeziku koji ne podržavamo, on će i dalje biti prikazan kao kod -
 ali neće biti primijenjeno isticanje sintakse niti preformatiranje.
-
----

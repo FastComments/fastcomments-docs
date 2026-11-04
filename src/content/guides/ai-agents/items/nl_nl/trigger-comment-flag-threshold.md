@@ -27,5 +27,3 @@ Als de drempel 3 is en drie gebruikers de reactie flaggen, vuurt de agent eenmaa
 ### Aanbevelingen voor combinatie
 
 Abonneer je op **beide** `COMMENT_ADD` en `COMMENT_FLAG_THRESHOLD` als je een moderatie-agent wilt die voor de hand liggende gevallen direct opvangt en randgevallen opnieuw beoordeelt zodra er meer flags zijn. De twee events vuren onafhankelijk van elkaar - de agent wordt twee keer uitgevoerd als beide zijn geabonneerd en beide afgaan, maar de tweede run ziet de inmiddels geflagde toestand.
-
----

@@ -1,3 +1,1 @@
----
 Laat commentatoren uitvoerbare, syntaxis-gekleurde code plaatsen in je discussies. Welke talen worden ondersteund en hoe je snippet-delen inschakelt.
----

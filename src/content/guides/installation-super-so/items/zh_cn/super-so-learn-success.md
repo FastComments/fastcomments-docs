@@ -8,5 +8,3 @@
 </div>
 
 恭喜您已使用 Super 成功设置 FastComments！如果您遇到 Domain Error，或者想了解如何自定义评论区域，请继续阅读！
-
----

@@ -1,4 +1,3 @@
----
 ## 参数
 
 | 名称 | 类型 | 必需 | 描述 |
@@ -21,5 +20,3 @@ let (summaryOpt, httpResp) = client.postBulkPreBanSummary(tenantId = "my-tenant-
 if summaryOpt.isSome:
   let _ = summaryOpt.get()
 [inline-code-end]
-
----

@@ -5,5 +5,3 @@ Eine Liste von ids, die für die Autovervollständigung von **@mentions** verwen
 Wenn angegeben, werden in der Autovervollständigung nach Eingabe des Zeichens `@` nur Benutzer aus anderen Gruppen angezeigt.
 
 [code-example-start config = {mentionGroupIds: ['yxZAhjzda', 'QT19nXbqB']}; linesToHighlight = [6, 7, 8, 9]; title = 'Limit Groups for Mentions'; code-example-end]
-
----

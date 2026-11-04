@@ -1,4 +1,3 @@
----
 ## Parametreler
 
 | Ad | Tür | Gerekli | Açıklama |
@@ -22,5 +21,3 @@ api->resetUserNotifications(tenantId, options)
         // Yanıtı işle
     });
 [inline-code-end]
-
----

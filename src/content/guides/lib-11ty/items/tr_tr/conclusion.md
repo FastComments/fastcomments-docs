@@ -8,5 +8,3 @@ Eleventy (11ty) Kütüphanesi ile ilgili herhangi bir sorunla karşılaşırsan�
 ## Katkıda Bulunma
 
 Katkılar memnuniyetle karşılanır! Lütfen katkı yönergeleri için [GitHub deposunu](https://github.com/FastComments/fastcomments-11ty) ziyaret edin.
-
----

@@ -1,4 +1,3 @@
----
 ## Parameters
 
 | Naam | Type | Verplicht | Beschrijving |
@@ -25,5 +24,3 @@ boost::optional<utility::string_t> updateComments = utility::string_t(U("Promote
 api->replaceTenantUser(tenantId, userId, replaceBody, updateComments)
     .then([](std::shared_ptr<APIEmptyResponse> resp){ });
 [inline-code-end]
-
----

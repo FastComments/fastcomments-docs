@@ -29,5 +29,3 @@ DefaultAPI.createQuestionResult(tenantId: tenantId, createQuestionResultBody: cr
     }
 }
 [inline-code-end]
-
----

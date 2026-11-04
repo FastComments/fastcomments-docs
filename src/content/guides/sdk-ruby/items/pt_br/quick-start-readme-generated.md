@@ -1,23 +1,23 @@
-### Using Authenticated APIs (DefaultApi)
+### Usando APIs Autenticadas (DefaultApi)
 
-**Importante:** Você deve definir sua chave de API no ApiClient antes de fazer solicitações autenticadas. Caso contrário, as solicitações falharão com um erro 401.
+**Importante:** Você deve definir sua chave de API no ApiClient antes de fazer requisições autenticadas. Se não fizer isso, as requisições falharão com um erro 401.
 
 ```ruby
 require 'fastcomments'
 
-# Crie e configure o cliente da API
+# Create and configure the API client
 config = FastCommentsClient::Configuration.new
 api_client = FastCommentsClient::ApiClient.new(config)
 
-# OBRIGATÓRIO: Defina sua chave de API (obtenha isso no seu painel FastComments)
+# REQUIRED: Set your API key (get this from your FastComments dashboard)
 config.api_key['x-api-key'] = 'YOUR_API_KEY_HERE'
 
-# Crie a instância da API com o cliente configurado
+# Create the API instance with the configured client
 api = FastCommentsClient::DefaultApi.new(api_client)
 
-# Agora você pode fazer chamadas de API autenticadas
+# Now you can make authenticated API calls
 begin
-  # Exemplo: Adicionar um usuário SSO
+  # Example: Add an SSO user
   user_data = {
     id: 'user-123',
     email: 'user@example.com',
@@ -29,15 +29,15 @@ begin
 
 rescue FastCommentsClient::ApiError => e
   puts "Error: #{e.response_body}"
-  # Erros comuns:
-  # - 401: Chave de API está faltando ou é inválida
-  # - 400: Validação da solicitação falhou
+  # Common errors:
+  # - 401: API key is missing or invalid
+  # - 400: Request validation failed
 end
 ```
 
-### Using Public APIs (PublicApi)
+### Usando APIs Públicas (PublicApi)
 
-Os endpoints públicos não exigem autenticação:
+Endpoints públicos não requerem autenticação:
 
 ```ruby
 require 'fastcomments'
@@ -55,9 +55,9 @@ rescue FastCommentsClient::ApiError => e
 end
 ```
 
-### Using Moderation APIs (ModerationApi)
+### Usando APIs de Moderação (ModerationApi)
 
-Os métodos de moderação alimentam o painel do moderador. Passe um token `sso` para que a solicitação seja feita em nome de um moderador autenticado via SSO:
+Os métodos de moderação alimentam o painel do moderador. Passe um token `sso` para que a requisição seja feita em nome de um moderador autenticado via SSO:
 
 ```ruby
 require 'fastcomments'
@@ -65,7 +65,7 @@ require 'fastcomments'
 moderation_api = FastCommentsClient::ModerationApi.new
 
 begin
-  # Exemplo: Listar comentários na fila de moderação
+  # Example: List comments in the moderation queue
   response = moderation_api.get_api_comments(
     sso: 'YOUR_MODERATOR_SSO_TOKEN'
   )
@@ -75,8 +75,8 @@ rescue FastCommentsClient::ApiError => e
 end
 ```
 
-### Common Issues
+### Problemas Comuns
 
-1. **401 "missing-api-key" error**: Certifique-se de definir `config.api_key['x-api-key'] = 'YOUR_KEY'` antes de criar a instância DefaultApi.
-2. **Wrong API class**: Use `DefaultApi` para solicitações autenticadas no lado do servidor, `PublicApi` para solicitações públicas/no lado do cliente, e `ModerationApi` para solicitações do painel de moderador.
-3. **Null API key**: O SDK ignorará silenciosamente a autenticação se a chave de API for nula, resultando em erros 401.
+1. **Erro 401 "missing-api-key"**: Certifique-se de definir `config.api_key['x-api-key'] = 'YOUR_KEY'` antes de criar a instância do DefaultApi.
+2. **Classe de API errada**: Use `DefaultApi` para requisições autenticadas do lado do servidor, `PublicApi` para requisições públicas/do lado do cliente, e `ModerationApi` para requisições do painel do moderador.
+3. **Chave de API nula**: O SDK pulará silenciosamente a autenticação se a chave de API for nula, resultando em erros 401.

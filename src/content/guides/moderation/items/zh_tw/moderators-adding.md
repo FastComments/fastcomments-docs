@@ -1,4 +1,3 @@
----
 對於管理員而言，在「評論審核」頁面的頂部有一個「新增審核者」按鈕。
 
 [app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=3&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = '.moderation-settings-options'; alt='評論審核頁面頂部的一排按鈕，包含「新增審核者」按鈕'; title='評論審核設定按鈕' app-screenshot-end]
@@ -18,5 +17,3 @@
 系統會將邀請連結發送給審核者，該連結可自動登入。未來若他們想要登入，只需前往<a href="https://fastcomments.com/auth/login" target="_blank">登入頁面</a>，並輸入您先前提供的姓名/電子郵件，即可收到登入連結。
 
 只要他們未登出，將會保持登入狀態長達三十天。
-
----

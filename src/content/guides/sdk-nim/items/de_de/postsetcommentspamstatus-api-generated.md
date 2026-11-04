@@ -1,4 +1,3 @@
----
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
@@ -20,5 +19,3 @@ let (maybeResp, httpResp) = client.postSetCommentSpamStatus(tenantId = "my-tenan
 if maybeResp.isSome:
   let resp = maybeResp.get()
 [inline-code-end]
-
----

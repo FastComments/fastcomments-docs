@@ -1,4 +1,3 @@
----
 [related-parameter-start name = 'showBadgesInTopBar'; type = 'boolean'; related-parameter-end]
 
 預設情況下，FastComments 只會在評論串中的使用者評論上顯示使用者徽章。
@@ -12,4 +11,3 @@
 請注意，此功能必須在小工具自訂 UI 中啟用才能生效。您也可以在程式碼設定中選擇性地將 **showBadgesInTopBar** 標誌設為 false，即使在伺服器層面已開啟，也能將其停用：
 
 [code-example-start config = {showBadgesInTopBar: false}; linesToHighlight = [6]; title = 'Disable Show Badges in Top Bar'; code-example-end]
----

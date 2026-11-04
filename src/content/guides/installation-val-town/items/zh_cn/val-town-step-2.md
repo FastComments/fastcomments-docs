@@ -27,5 +27,3 @@ export const CDN = REGION === "eu"
 ## EU 账户
 
 一个账户、其数据以及密钥都位于同一地区。如果您的账户是在 `eu.fastcomments.com` 创建的，则每个小部件配置也需要 `region: "eu"`，并且脚本会从 `cdn-eu.fastcomments.com` 加载。否则保持默认即可。
-
----

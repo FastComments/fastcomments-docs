@@ -1,4 +1,3 @@
----
 ## Parametreler
 
 | Ad | Tür | Gerekli | Açıklama |
@@ -20,5 +19,3 @@ auto resetTask = api->resetUserNotificationCount(
 ).then([](std::shared_ptr<ResetUserNotificationsResponse> resp){
 });
 [inline-code-end]
-
----

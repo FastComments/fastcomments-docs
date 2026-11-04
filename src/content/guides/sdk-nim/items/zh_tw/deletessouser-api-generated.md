@@ -1,4 +1,3 @@
----
 ## 參數
 
 | 名稱 | 型別 | 必填 | 說明 |
@@ -24,5 +23,3 @@ let (apiRespOpt, httpResp) = client.deleteSSOUser(
 if apiRespOpt.isSome:
   let apiResp = apiRespOpt.get()
 [inline-code-end]
-
----

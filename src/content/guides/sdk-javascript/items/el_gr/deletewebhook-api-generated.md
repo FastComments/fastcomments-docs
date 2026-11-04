@@ -1,4 +1,3 @@
----
 Αποεγγραφές (REST hook unsubscribe). Μόνο οι συνδρομές που δημιουργήθηκαν μέσω αυτού του API μπορούν να
 διαγραφούν εδώ· οι webhook που διαχειρίζονται από τον πίνακα ελέγχου επεξεργάζονται στον πίνακα ελέγχου.
 
@@ -22,5 +21,3 @@ const webhookId: string = "wh_98765";
 
 const result: APIEmptyResponse = await deleteWebhook(tenantId, webhookId);
 [inline-code-end]
-
----

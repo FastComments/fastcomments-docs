@@ -127,5 +127,3 @@ FastComments pošlje postMessage `org.imsglobal.lti.frameResize` ob vsakem rende
 **Imena in vloge manjkajo znotraj FastComments.** Brightspace pošilja LTI zagone z zahtevki Names and Role Provisioning Services (NRPS). Če je bil tečaj nadgrajen iz starejše LTI 1.1 povezave, zagoni nimajo zahtevkov `name` in `email`. Ponovno dodajte FastComments temo preko **Dodaj obstoječe** (ne migrirajte stare povezave), da zagoni uporabljajo LTI 1.3.
 
 **Vgradnja prikaže zaslon za prijavo namesto samodejne SSO.** HTML tema je bila vstavljena kot običajen `<iframe>`, ki kaže na FastComments, namesto preko **Vstavi vsebino** > **LTI Advantage**. Običajni iframe-i preskočijo LTI zagon in uporabnike usmerijo na javno stran FastComments. Izbrišite iframe in ga ponovno vstavite preko toka Vstavi vsebino.
-
----

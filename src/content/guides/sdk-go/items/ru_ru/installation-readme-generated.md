@@ -2,11 +2,11 @@
 go get github.com/fastcomments/fastcomments-go
 ```
 
-### Использование API‑клиента
+### Использование API-клиента
 
-#### Public API (No Authentication)
+#### Публичный API (без аутентификации)
 
-PublicAPI позволяет выполнять неаутентифицированный доступ к публичным конечным точкам:
+PublicAPI позволяет неаутентифицированный доступ к публичным эндпоинтам:
 
 ```go
 package main
@@ -21,7 +21,7 @@ func main() {
     config := client.NewConfiguration()
     apiClient := client.NewAPIClient(config)
 
-    // Получить комментарии с помощью PublicAPI
+    // Получение комментариев с помощью PublicAPI
     response, httpResp, err := apiClient.PublicAPI.GetCommentsPublic(
         context.Background(),
         "your-tenant-id",
@@ -36,9 +36,9 @@ func main() {
 }
 ```
 
-#### Default API (Requires API Key)
+#### API по умолчанию (требуется API-ключ)
 
-DefaultAPI требует аутентификацию с использованием вашего API‑ключа:
+DefaultAPI требует аутентификации с использованием вашего API-ключа:
 
 ```go
 package main
@@ -53,7 +53,7 @@ func main() {
     config := client.NewConfiguration()
     apiClient := client.NewAPIClient(config)
 
-    // Создать аутентифицированный контекст с API‑ключом
+    // Создание аутентифицированного контекста с API-ключом
     auth := context.WithValue(
         context.Background(),
         client.ContextAPIKeys,
@@ -62,7 +62,7 @@ func main() {
         },
     )
 
-    // Get comments using authenticated DefaultAPI
+    // Получение комментариев с помощью аутентифицированного DefaultAPI
     response, httpResp, err := apiClient.DefaultAPI.GetComments(auth).
         TenantId("your-tenant-id").
         UrlId("your-page-url-id").
@@ -77,9 +77,9 @@ func main() {
 }
 ```
 
-#### Moderation API (Moderator Dashboard)
+#### API модерации (панель модератора)
 
-ModerationAPI предоставляет обширный набор живых и быстрых API модерации. Все методы модерации принимают параметр `sso` и могут аутентифицироваться через SSO или cookie сессии FastComments.com:
+ModerationAPI предоставляет обширный набор быстрых API для модерации в реальном времени. Все методы модерации принимают параметр `sso` и могут проходить аутентификацию через SSO или сессионный cookie FastComments.com:
 
 ```go
 package main
@@ -94,7 +94,7 @@ func main() {
     config := client.NewConfiguration()
     apiClient := client.NewAPIClient(config)
 
-    // Получить список комментариев для модерации с помощью ModerationAPI
+    // Получение списка комментариев для модерации с помощью ModerationAPI
     response, httpResp, err := apiClient.ModerationAPI.GetApiComments(
         context.Background(),
     ).Sso("your-sso-token").Execute()

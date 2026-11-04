@@ -63,5 +63,3 @@ webhook 配置 UI 有一个 **Test send** 按钮，会向该 URL 发布一个假
 ### 可用性
 
 Agent webhooks 需要租户具备有效计费。它们使用与现有评论 webhook 相同的签名/密钥基础设施——如果您已集成评论 webhook（参见 [Webhooks guide](/guide-webhooks.html)），则代理 webhook 的集成方式相同，只是包含了新的事件类型。
-
----

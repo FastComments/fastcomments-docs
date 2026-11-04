@@ -1,3 +1,1 @@
----
 Dodajte svoje oznake, poslušalce dogodkov in logiko v pripomoček za komentarje z razširitvami. Življenjski cikel, objekt razširitve in API, ki ga lahko kličete.
----

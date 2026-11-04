@@ -45,5 +45,3 @@ Ziehen Sie nun das Widget auf die gewünschte Größe, Sie werden sehen, wie es 
 </div>
 
 ...und jetzt Vorschau anzeigen und speichern!
-
----

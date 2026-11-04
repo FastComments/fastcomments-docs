@@ -1,4 +1,4 @@
-The Recent Discussions Widget displays a list of pages sorted by the most recent comment activity. It includes a heading, last activity dates, comment counts with icons, and automatic dark mode detection.
+「最近討論」小工具會顯示一個依最新留言活動排序的頁面清單。它包含標題、最後活動日期、帶圖示的留言數量,以及自動深色模式偵測。
 
 ## 基本安裝
 
@@ -15,13 +15,13 @@ The Recent Discussions Widget displays a list of pages sorted by the most recent
 
 ## 設定選項
 
-- **tenantId**（required）: Your FastComments tenant ID
-- **count**（optional）: Number of pages to show. Default is `20`, max `100`
-- **hasDarkBackground**（optional）: Force dark mode styling. Auto-detected from the page background if not set
+- **tenantId**(必填):您的 FastComments 租戶 ID
+- **count**(選填):要顯示的頁面數量。預設為 `20`,最大為 `100`
+- **hasDarkBackground**(選填):強制使用深色模式樣式。若未設定,將自動從頁面背景偵測
 
 ## 小工具結構
 
-The widget renders with the following HTML structure:
+小工具會以下列 HTML 結構呈現:
 
 [inline-code-attrs-start title = '最近討論小工具 HTML 結構'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -41,7 +41,7 @@ The widget renders with the following HTML structure:
 
 ## 預設 CSS 參考
 
-[inline-code-attrs-start title = '最近討論小工具 預設 CSS'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = '最近討論小工具預設 CSS'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rd2 {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -61,7 +61,7 @@ The widget renders with the following HTML structure:
 .fc-rd2-count { font-size: 12px; font-weight: 600; color: #666; }
 [inline-code-end]
 
-## 客製化範例
+## 自訂範例
 
 ### 移除容器邊框
 
@@ -81,5 +81,3 @@ a.fc-rd2-title:hover {
     color: #e63946 !important;
 }
 [inline-code-end]
-
----

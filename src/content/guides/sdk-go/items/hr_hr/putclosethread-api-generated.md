@@ -39,5 +39,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Odgovor iz `ModerationAPI.PutCloseThread`: %v\n", resp)
 }
 [inline-code-end]
-
----

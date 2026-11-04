@@ -45,5 +45,3 @@ try:
 except Exception as e:
     print("Exception when calling ModerationApi->get_search_comments_summary: %s\n" % e)
 [inline-code-end]
-
----

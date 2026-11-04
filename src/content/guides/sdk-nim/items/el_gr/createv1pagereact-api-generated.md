@@ -1,4 +1,3 @@
----
 ## Parameters
 
 | Όνομα | Τύπος | Απαραίτητο | Περιγραφή |
@@ -26,4 +25,3 @@ if pageOpt.isSome:
   discard page
   discard httpResp
 [inline-code-end]
----

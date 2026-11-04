@@ -19,5 +19,3 @@ Melden Sie sich als Website-Administrator an und navigieren Sie zu **Site Admini
 #### Plugin konfigurieren
 
 Nach der Installation gehen Sie zu **Site Administration > Plugins > Local plugins > FastComments**, um Ihre Einstellungen vorzunehmen. Siehe den [Konfiguration](#moodle-configuration)-Abschnitt für Details zu jeder Option.
-
----

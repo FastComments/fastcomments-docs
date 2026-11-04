@@ -31,5 +31,3 @@ For Page Reacts에서는 두 가지를 결정해야 합니다:
 [inline-code-end]
 
 React, Angular 등 프런트엔드 라이브러리의 구성은 동일합니다.
-
----

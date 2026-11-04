@@ -1,4 +1,3 @@
----
 ## Parametreler
 
 | Ad | Tür | Gerekli | Açıklama |
@@ -19,5 +18,3 @@ if manualBadgesOpt.isSome:
   let manualBadges = manualBadgesOpt.get()
   echo manualBadges
 [inline-code-end]
-
----

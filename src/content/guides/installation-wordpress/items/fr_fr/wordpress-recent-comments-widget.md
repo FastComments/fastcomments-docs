@@ -29,5 +29,3 @@ Ouvrez l'**Éditeur du site** sous **Apparence > Éditeur**. Rendez-vous dans la
 ## Dépannage
 
 Le widget ne s'affiche que lorsque la configuration de FastComments est terminée et qu'un tenant ID est enregistré. Si la zone du widget est vide, terminez la configuration dans **FastComments** dans l'administration WordPress et rechargez la page.
-
----

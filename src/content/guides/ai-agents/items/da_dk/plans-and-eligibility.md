@@ -19,5 +19,3 @@ Dette er en hård forudsætning: tokenforbrug faktureres på din konto, så plat
 ### Hvem kan administrere agenter
 
 Agent‑admin‑siderne er låst bag **Customization Admin**‑dashboard‑rollen. **Comment Moderator Admins** kan gennemgå og beslutte godkendelser (se [Approval Workflow](#approval-workflow)), men kan ikke oprette eller redigere agenter. **Billing Admins** modtager [budget alert emails](#budget-alerts) uanset om de har adgang til agenter.
-
----

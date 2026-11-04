@@ -1,4 +1,3 @@
----
 1. **Esempio semplice**
 
     http://localhost:8000/commenting
@@ -20,4 +19,3 @@
     Codice: [src/pages/page-transition-test-start.tsx](https://github.com/FastComments/fastcomments-gatsbyjs-example/blob/master/src/pages/page-transition-test-start.tsx).
 
 Per vedere altro vai su http://localhost:8000
----

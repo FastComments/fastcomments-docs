@@ -1,4 +1,3 @@
----
 ### 1. 레이아웃에 FastCommentsView 추가
 
 ```xml
@@ -37,4 +36,3 @@ commentsView.setSDK(sdk)
 // 댓글 로드
 commentsView.load()
 ```
----

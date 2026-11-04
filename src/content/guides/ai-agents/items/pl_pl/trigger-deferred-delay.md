@@ -1,28 +1,26 @@
----
-Domyślnie agent uruchamia się **natychmiastowo** po wyzwoleniu wyzwalacza. Pole **Opóźnienie przed uruchomieniem** w formularzu edycji zmienia to: platforma umieszcza wyzwalacz w kolejce i uruchamia agenta w zaplanowanym czasie.
+Domyślnie agent uruchamia się **natychmiast** po zadziałaniu jego wyzwalacza. Pole **Opóźnienie przed uruchomieniem** w formularzu edycji zmienia to zachowanie: platforma kolejkuję wyzwalacz i uruchamia agenta w zaplanowanym czasie.
 
-### Kiedy użyć opóźnienia
+### Kiedy używać opóźnienia
 
-- **Wyzwalacze oparte na progu zgłoszeń (flag-threshold triggers)** - zgłoszenia często napływają partiami. Opóźnienie 10–30 minut pozwala sytuacji się ustabilizować, dzięki czemu agent działa na podstawie końcowego zliczenia zgłoszeń, a nie momentu ich nadejścia.
-- **Wyzwalacze oparte na progu głosów (vote-threshold triggers)** - ta sama logika, szczególnie przy masowym obniżaniu ocen (downvote brigading).
-- **Podsumowywanie wątku** - szablon [Thread Summarizer](#template-thread-summarizer) domyślnie ma opóźnienie 30 minut, więc podsumowuje rozmowę, która miała czas się rozwinąć, a nie wątek z dwoma odpowiedziami.
-- **Okres ochłodzenia / ponowna ocena** - "24 godziny po zablokowaniu komentarza, rozważ, czy go odblokować."
+- **Wyzwalacze progowe flag** - flagi często przychodzą w seriach. Opóźnienie 10-30 minut pozwala sytuacji się ustabilizować, dzięki czemu agent działa na podstawie końcowej liczby flag, a nie stanu z chwili przybycia.
+- **Wyzwalacze progowe głosów** - ta sama logika, szczególnie w przypadku brigadingu downvote'ów.
+- **Podsumowywanie wątków** - [szablon Thread Summarizer](#template-thread-summarizer) domyślnie używa 30-minutowego opóźnienia, aby podsumować rozmowę, która miała czas się rozwinąć, a nie wątek z dwiema odpowiedziami.
+- **Okres wyciszenia / ponowna ocena** - "24 godziny po zablokowaniu komentarza, rozważ, czy go odblokować."
 
-### Configuration
+### Konfiguracja
 
-- **Field**: Delay before running.
-- **Range**: 0 to 2,592,000 seconds (30 days).
-- **Units**: Seconds, minutes, hours, or days.
+- **Pole**: Opóźnienie przed uruchomieniem.
+- **Zakres**: od 0 do 2 592 000 sekund (30 dni).
+- **Jednostki**: sekundy, minuty, godziny lub dni.
 
-### Idempotence
+### Idempotencja
 
-Kolejka opóźnionych wyzwalaczy nie usuwa duplikatów. Dwa zgłoszenia napływające z 1-sekundowym odstępem do agenta z 30-minutowym opóźnieniem oba zaplanują uruchomienie za 30 minut, a agent uruchomi się **dwukrotnie**, za każdym razem operując na (w dużej mierze) tym samym kontekście. Jeśli chcesz semantyki maksymalnie jednego uruchomienia na okno czasowe, agent musi to wymusić — zwykle przez zapisanie [memory note](#tools-overview) podczas pierwszego uruchomienia i sprawdzenie jej przy kolejnych.
+Kolejka odroczona nie deduplikuje wyzwalaczy. Dwie flagi przychodzące w odstępie 1 sekundy przy agencie z 30-minutowym opóźnieniem zaplanują oba uruchomienia 30 minut później, a agent uruchomi się **dwa razy**, oba razy na (w większości) tym samym kontekście. Jeśli chcesz semantyki co najwyżej jednego uruchomienia na okno czasowe, agent musi to wymusić - zazwyczaj zapisując [notatkę w pamięci](#tools-overview) przy pierwszym uruchomieniu i sprawdzając ją przy kolejnych.
 
-### Cost note
+### Uwaga o kosztach
 
-Opóźnione wyzwalacze są rejestrowane **zanim** zostaną uruchomione. Nagły napływ wyzwalaczy do agenta z dużym opóźnieniem może się gromadzić w kolejce bez zużywania tokenów; koszt ponoszony jest dopiero w momencie, gdy cron je wywoła. Użyj [Run History](#run-history) i [Drop Reasons](#drop-reasons), aby zobaczyć, jak często opóźnione wyzwalacze faktycznie się wykonują, a jak często są odrzucane podczas uruchomienia z powodów budżetowych.
+Odroczone wyzwalacze są rejestrowane **przed** ich uruchomieniem. Seria wyzwalaczy na agencie z dużym opóźnieniem może nagromadzić się w kolejce bez zużycia tokenów; koszt jest ponoszony dopiero, gdy cron je wysyła. Użyj [Historii uruchomień](#run-history) i [Powodów odrzucenia](#drop-reasons), aby zobaczyć, jak często odroczone wyzwalacze faktycznie się wykonują, a jak często są odrzucane w czasie uruchomienia z powodu limitu budżetu.
 
-### Replay does not honor delay
+### Replay nie uwzględnia opóźnienia
 
-Funkcja [Test Runs (Replays)](#test-runs-replays) uruchamia agenta natychmiast na historycznych komentarzach — nie czeka na skonfigurowane opóźnienie. Traktuj to jako funkcję: replaye służą do podglądu tego, co agent **zrobiłby** w danym kontekście, a nie do odtwarzania rzeczywistego harmonogramu.
----
+Funkcja [Test Runs (Replays)](#test-runs-replays) uruchamia agenta natychmiast na historycznych komentarzach - nie czeka na skonfigurowane opóźnienie. Traktuj to jako zaletę: replaye służą do podglądu, co agent **zrobiłby** w danym kontekście, a nie do odtwarzania harmonogramu w czasie rzeczywistym.

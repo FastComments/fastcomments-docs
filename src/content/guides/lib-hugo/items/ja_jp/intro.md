@@ -1,4 +1,3 @@
----
 これはFastCommentsの公式Hugoライブラリです。
 
 Hugoサイトにライブコメント、チャット、レビューウィジェットを埋め込めます。
@@ -6,5 +5,3 @@ Hugoサイトにライブコメント、チャット、レビューウィジェ�
 ## リポジトリ
 
 [GitHubで表示](https://github.com/FastComments/fastcomments-hugo)
-
----

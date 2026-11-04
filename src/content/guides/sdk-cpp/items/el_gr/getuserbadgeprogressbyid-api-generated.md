@@ -1,4 +1,3 @@
----
 ## Parameters
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
@@ -25,5 +24,3 @@ api->getUserBadgeProgressById(tenantId, userId)
         }catch(const std::exception&){}
     });
 [inline-code-end]
-
----

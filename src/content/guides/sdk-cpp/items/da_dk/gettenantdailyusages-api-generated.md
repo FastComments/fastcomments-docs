@@ -1,4 +1,3 @@
----
 ## Parametre
 
 | Navn | Type | Påkrævet | Beskrivelse |
@@ -22,5 +21,3 @@ api->getTenantDailyUsages(tenantId, opts).then([](std::shared_ptr<GetTenantDaily
     auto result = std::make_shared<GetTenantDailyUsagesResponse>(*resp);
 }).wait();
 [inline-code-end]
-
----

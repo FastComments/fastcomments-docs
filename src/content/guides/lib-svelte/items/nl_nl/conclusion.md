@@ -1,4 +1,3 @@
----
 ## Hulp nodig?
 
 Als je problemen tegenkomt of vragen hebt over de Svelte-bibliotheek, neem dan:
@@ -9,5 +8,3 @@ Als je problemen tegenkomt of vragen hebt over de Svelte-bibliotheek, neem dan:
 ## Bijdragen
 
 Bijdragen zijn welkom! Bezoek de [GitHub-repository](https://github.com/FastComments/fastcomments-svelte) voor richtlijnen voor bijdragen.
-
----

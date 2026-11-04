@@ -1,4 +1,3 @@
----
 Avec FastComments, il est possible pour les modérateurs de partager des liens vers le tableau de bord des modérateurs qui mènent directement à une certaine page avec des filtres.
 
 Par exemple, le cas d'utilisation suivant :
@@ -9,5 +8,3 @@ Par exemple, le cas d'utilisation suivant :
 - Le modérateur A trouve quelque chose d'intéressant sur la deuxième page des commentaires recherchés.
 - Le modérateur A peut **partager le lien** de cette page directement avec le modérateur B.
 - Le modérateur B peut voir ce que le modérateur A a fait.
-
----

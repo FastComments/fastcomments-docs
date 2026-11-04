@@ -1,4 +1,3 @@
----
 Elenca le pagine per un tenant. Utilizzato dal client desktop FChat per popolare l'elenco delle stanze.  
 Richiede che `enableFChat` sia true nella configurazione personalizzata risolta per ogni pagina.  
 Le pagine che richiedono SSO sono filtrate in base all'accesso ai gruppi dell'utente richiedente.

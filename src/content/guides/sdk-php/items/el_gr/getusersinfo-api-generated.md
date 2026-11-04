@@ -1,13 +1,13 @@
-Bulk user info for a tenant. Given userIds, return display info from User / SSOUser.  
-Used by the comment widget to enrich users that just appeared via a presence event.  
-No page context: privacy is enforced uniformly (private profiles are masked).
+Μαζικές πληροφορίες χρηστών για έναν tenant. Δεδομένων των userIds, επιστρέφει πληροφορίες εμφάνισης από το User / SSOUser.
+Χρησιμοποιείται από το widget σχολίων για τον εμπλουτισμό χρηστών που μόλις εμφανίστηκαν μέσω ενός presence event.
+Χωρίς πλαίσιο σελίδας: η ιδιωτικότητα επιβάλλεται ομοιόμορφα (τα ιδιωτικά προφίλ καλύπτονται).
 
-## Parameters
+## Παράμετροι
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
-|------|------|----------|------------|-----------|
-| tenantId | string | path | Yes |  |
-| ids | string | query | Yes | userIds διαχωρισμένα με κόμμα. |
+|------|------|----------|----------|-------------|
+| tenantId | string | path | Ναι |  |
+| ids | string | query | Ναι | userIds διαχωρισμένα με κόμμα. |
 
 ## Απάντηση
 
@@ -23,8 +23,8 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Αν θέλετε να χρησιμοποιήσετε προσαρμοσμένο http client, περάστε το client σας που υλοποιεί `GuzzleHttp\ClientInterface`.
-    // Αυτό είναι προαιρετικό, `GuzzleHttp\Client` θα χρησιμοποιηθεί ως προεπιλογή.
+    // Αν θέλετε να χρησιμοποιήσετε προσαρμοσμένο http client, περάστε τον δικό σας client που υλοποιεί το `GuzzleHttp\ClientInterface`.
+    // Αυτό είναι προαιρετικό, το `GuzzleHttp\Client` θα χρησιμοποιηθεί ως προεπιλογή.
     new GuzzleHttp\Client()
 );
 

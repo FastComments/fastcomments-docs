@@ -24,5 +24,3 @@ api->deleteSSOUser(tenantId, userId, options).then([](std::shared_ptr<DeleteSSOU
     }
 });
 [inline-code-end]
-
----

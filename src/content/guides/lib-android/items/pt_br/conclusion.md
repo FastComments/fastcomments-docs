@@ -8,5 +8,3 @@ Se você encontrar qualquer problema ou tiver dúvidas sobre a biblioteca Androi
 ## Contribuindo
 
 Contribuições são bem-vindas! Por favor, visite o [repositório do GitHub](https://github.com/FastComments/fastcomments-android) para as diretrizes de contribuição.
-
----

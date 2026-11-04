@@ -32,5 +32,3 @@ async () => {
   console.log(basicResponse, fullResponse);
 }();
 [inline-code-end]
-
----

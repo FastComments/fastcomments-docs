@@ -36,5 +36,3 @@ async function fetchComments() {
   );
 }
 [inline-code-end]
-
----

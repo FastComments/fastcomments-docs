@@ -25,5 +25,3 @@ Prikazivanje istih komentara na više sajtova je nešto što FastComments podrž
 ### Promena trenutne stranice
 
 FastComments podržava SPA‑ove i složene aplikacije. Promena trenutne stranice je jednostavna i opisana [ovde](/guide-customizations-and-configuration.html#switching-comment-threads).
-
----

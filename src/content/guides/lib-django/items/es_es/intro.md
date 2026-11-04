@@ -5,5 +5,3 @@ Componentes de comentarios en vivo y chat con SSO seguro mediante etiquetas de p
 ## Repository
 
 [Ver en GitHub](https://github.com/FastComments/fastcomments-django)
-
----

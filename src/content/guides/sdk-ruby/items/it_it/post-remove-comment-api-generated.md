@@ -34,5 +34,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Errore durante la chiamata a ModerationApi->post_remove_comment: #{e}"
 end
 [inline-code-end]
-
----

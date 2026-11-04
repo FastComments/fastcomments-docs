@@ -1,4 +1,3 @@
----
 Pokreće se kada moderator označi komentar kao pregledan.
 
 ### Kontekst koji agent prima
@@ -20,5 +19,3 @@ Radnja ljudskog moderatora na stranici za moderaciju, widgetu za komentare ili p
 
 - "Pregledano" je jedno od stanja u redu za moderaciju koje se prati odvojeno od "odobreno" i "spam". Komentar može biti odobren-i-pregledan, odobren-ali-ne-pregledan, itd. Pogledajte [Kako funkcionira odobravanje](/guide-moderation.html#moderation-approvals) u vodiču za moderaciju.
 - Ovaj okidač se često aktivira na tenantima s mnogo moderatora. Pretplatite se selektivno i planirajte budžet u skladu s tim.
-
----

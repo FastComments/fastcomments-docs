@@ -18,5 +18,3 @@ Når brugerhistorik-konteksten er slået til, vil brugerens liste over nylige ko
 - **Velkomsthilsen** - [Welcome Greeter-skabelonen](#template-welcome-greeter) er bygget omkring denne trigger.
 - **Onboarding** - send en [DM-advarsel](#tool-warn-user) (bruges her som en venlig orientering snarere end en advarsel), der henviser brugeren til fællesskabets retningslinjer.
 - **Underretning til anmelder** - hvis du vil have et menneske til at se på hver ny kommentators første opslag, kan [`mark_comment_reviewed`](#tools-overview) markere dem til gennemgang.
-
----

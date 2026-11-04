@@ -1,3 +1,1 @@
----
 Povežite FastComments sa Zapier-om: pokrenite Zaps iz novih, ažuriranih ili izbrisanih komentara i kreirajte komentare, stranice i korisnike iz bilo koje aplikacije. Nije potreban kod.
----

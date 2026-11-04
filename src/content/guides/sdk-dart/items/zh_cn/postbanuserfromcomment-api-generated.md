@@ -44,5 +44,3 @@ try {
     print('Exception when calling ModerationApi->postBanUserFromComment: $e\n');
 }
 [inline-code-end]
-
----

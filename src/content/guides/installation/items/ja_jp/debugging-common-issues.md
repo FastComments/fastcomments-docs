@@ -1,44 +1,40 @@
-ここではよく見られるいくつかの症状と一般的な解決策を示します。 
+よく見られる症状と、その一般的な解決方法を以下に示します。
 
-### "This is a demo" Message
+### 「This is a demo」メッセージ
 
-これは、ホームページからウィジェットコードをコピーした場合に表示されます。ホームページではデモ用の
-テナントが使用されています。ご自身のテナントを使用するには、[こちら](https://fastcomments.com/auth/my-account/get-acct-code)からウィジェットコードをコピーしてください。
+これは、デモテナントを使用しているホームページからウィジェットコードをコピーした場合に表示されます。自分のテナントを使用するには、[こちら](https://fastcomments.com/auth/my-account/get-acct-code)からウィジェットコードをコピーしてください。
 
-### "FastComments cannot load on this domain" Error
+### 「FastComments cannot load on this domain」エラー
 
-FastComments は、アカウントに関連するリクエストを認証するために、どのドメインがあなたの所有であるかを知る必要があります。
-このエラーを解決する方法については[ドキュメントを確認してください](/guide-multiple-sites.html#add-domains-to-account)（アカウントに正確なサブドメイン＋ドメインを追加するだけです）。
+FastComments がアカウントに関連するリクエストを認証するためには、どのドメインがあなた所有かを把握する必要があります。このエラーを解決する方法については、[ドキュメントを参照してください](/guide-multiple-sites.html#add-domains-to-account)（正確なサブドメイン + ドメインをアカウントに追加するだけです）。
 
-このエラーは試用期間が終了した後にのみ発生する点に注意してください。試用期間中は、新しいドメインからのリクエストは
-自動的にあなたのアカウントに追加されます。
+なお、これはトライアル期間終了後にのみ発生するはずです。トライアル期間中は、新しいドメインからのリクエストは自動的にアカウントに追加されます。
 
-### Migrated Comments Not Showing for Custom Installations
+### カスタムインストールで移行済みコメントが表示されない
 
-通常、インポートされたコメントが `Page ID` に紐付けられており、ウィジェットに URL を渡している（または値を渡していない場合はページの URL がデフォルトで使用されます）ときにこの問題が発生します。
+通常、これはインポートされたコメントが `Page ID` に紐付いており、URL を渡している場合（または値を渡していない場合、その場合はページ URL がデフォルトになります）に発生します。
 
-これをデバッグするには、[コメントをエクスポートする](https://fastcomments.com/auth/my-account/manage-data/export) と `URL ID` 列（現在は列 `B`）を確認してください。
+[コメントをエクスポート](https://fastcomments.com/auth/my-account/manage-data/export)し、`URL ID` 列（現在は `B` 列）を確認することでデバッグできます。
 
-`URL ID` 列で表示される値が、ウィジェット設定で `urlId` パラメータとして渡している値と同じであることを確認してください。
+`URL ID` 列に表示される値が、ウィジェット設定の `urlId` パラメータとして渡している値と同じであることを確認してください。
 
-詳細については、[コメントがページや記事にどのように紐付けられるかのドキュメント](/guide-customizations-and-configuration.html#url-id) をお読みください。
+さらに詳しい説明については、[コメントがページや記事に紐付く仕組みのドキュメント](/guide-customizations-and-configuration.html#url-id)をお読みください。
 
 それでも解決しない場合は、[お問い合わせください](https://fastcomments.com/auth/my-account/help)。
 
-### Comment Widget Not Showing
+### コメントウィジェットが表示されない
 
-コメントウィジェットが表示されない場合は、Chrome の開発者コンソールでエラーを確認してください。
+コメントウィジェットが表示されない場合は、Chrome デベロッパーコンソールでエラーを確認してください。
 
-ほとんどの設定ミスでは、ウィジェットが読み込める場合はページ上に少なくともエラーを表示します。何も表示されない場合は通常スクリプトエラーの兆候です。
+ほとんどの設定ミスの場合、コメントウィジェットは読み込みが可能であれば、少なくともページ上にエラーを表示します。何も表示されない場合は、通常スクリプトエラーの兆候です。
 
-### Desired Configuration Not Working as Expected
+### 期待どおりに設定が機能しない
 
-ウィジェットに渡されている設定を確認するには、[Chrome 拡張機能](https://chromewebstore.google.com/detail/fastcomments-debugger/cadggdemhfkjjghkdbfhonoccnplffjj) をお試しください。すべて失敗した場合は、拡張機能の表示をスクリーンショットに撮って [お問い合わせください](https://fastcomments.com/auth/my-account/help)。
+[Chrome 拡張機能](https://chromewebstore.google.com/detail/fastcomments-debugger/cadggdemhfkjjghkdbfhonoccnplffjj)を使用して、コメントウィジェットにどの設定が渡されているかを確認してください。それでも解決しない場合は、Chrome 拡張機能の表示内容のスクリーンショットを撮り、[お問い合わせください](https://fastcomments.com/auth/my-account/help)。
 
-### Comments Missing on Same URL With Different Hash Bang
+### 同じ URL でもハッシュバングが異なるとコメントが表示されない
 
-デフォルトでは、FastComments はコメントが保存される「バケット」としてページの URL を使用します。URL に `#hashbangs` が含まれており、これらの `#hashbangs`
-がコメントスレッドを識別する識別子の一部であってはならない場合、ハッシュバングの値を単純に無視することができます。例えば:
+デフォルトでは、FastComments はコメントが保存される「バケット」としてページ URL を使用します。URL に `#hashbangs` が含まれており、その `#hashbangs` がコメントスレッドを識別する識別子の一部であるべきでない場合は、ハッシュバングの値を単に無視することができます。例：
 
 [inline-code-attrs-start title = 'ハッシュバングを無視する例'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -54,13 +50,13 @@ window.fcConfigs = [{
 </script>
 [inline-code-end]
 
-この変更を行った後、既存のコメントに対してはマイグレーションを実行する必要がある点に注意してください。[その件についてはお問い合わせください。](https://fastcomments.com/auth/my-account/help)
+この変更を行った後、既存のコメントに対して移行を実行する必要があることに注意してください。[その場合は、お問い合わせください。](https://fastcomments.com/auth/my-account/help)
 
-### URL Query Parameters Affecting Widget
+### URL クエリパラメータがウィジェットに影響する
 
-デフォルトでは、FastComments はコメントが保存される「バケット」としてページの URL を使用します。URL にスレッドを識別する識別子の一部に含めたくないクエリパラメータが含まれている場合、それらを単純に無視することができます。例えば:
+デフォルトでは、FastComments はコメントが保存される「バケット」としてページ URL を使用します。URL に、コメントスレッドを識別する識別子の一部であるべきでないクエリパラメータが含まれている場合は、それらを単に無視することができます。例：
 
-[inline-code-attrs-start title = 'クエリパラメータを無視する例'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'クエリパラメータを無視する'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
@@ -74,10 +70,10 @@ window.fcConfigs = [{
 </script>
 [inline-code-end]
 
-この変更を行った後、既存のコメントに対してはマイグレーションを実行する必要がある点に注意してください。[その件についてはお問い合わせください。](https://fastcomments.com/auth/my-account/help)
+この変更を行った後、既存のコメントに対して移行を実行する必要があることに注意してください。[その場合は、お問い合わせください。](https://fastcomments.com/auth/my-account/help)
 
-### Not Receiving Emails
+### メールが受信できない
 
-FastComments では、メール配信の信頼性をできるだけ高めるために多くの努力を払っています。しかし、一部のメールプロバイダは信頼性の高い配信が難しいことで知られています。fastcomments.com からのメッセージが迷惑メールフォルダに入っていないか確認してください。
+FastComments では、メール配信を可能な限り確実にするために多大な努力を払っています。しかし、一部のメールプロバイダーは確実に配信するのが難しいことで知られています。fastcomments.com からのメッセージがスパムフォルダにないか確認してください。
 
-もし [お問い合わせいただければ](https://fastcomments.com/auth/my-account/help)、なぜメールが届かないかについてさらに詳しい情報を提供できることが多いです。
+[お問い合わせいただければ](https://fastcomments.com/auth/my-account/help)、メールが表示されない理由についてより詳しい情報を提供できる通常は可能です。

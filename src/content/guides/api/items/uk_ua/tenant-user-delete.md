@@ -61,5 +61,3 @@ interface TenantUserDeleteResponse {
     reason?: string
 }
 [inline-code-end]
-
----

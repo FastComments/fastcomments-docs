@@ -1,4 +1,3 @@
----
 [api-resource-header-start name = 'Vote'; route = 'GET /api/v1/votes/for-user'; creditsCost = 1; api-resource-header-end]
 
 Permette di recuperare i voti lasciati da un utente su un determinato `urlId`. Richiede un `userId` che può essere un utente FastComments.com o un `SSO User`.
@@ -46,5 +45,3 @@ interface VotesForUserResponse {
     pendingVotes: Vote[]
 }
 [inline-code-end]
-
----

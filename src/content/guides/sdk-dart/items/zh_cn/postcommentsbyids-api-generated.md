@@ -27,5 +27,3 @@ try {
     print('Exception when calling ModerationApi->postCommentsByIds: $e\n');
 }
 [inline-code-end]
-
----

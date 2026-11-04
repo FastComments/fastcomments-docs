@@ -1,11 +1,11 @@
-An `EmailTemplate` object represents configuration for a custom email template, for a tenant.
+`EmailTemplate` オブジェクトは、テナント向けのカスタムメールテンプレートの設定を表します。
 
-The system will select the email template to use via:
+システムは以下の方法で使用するメールテンプレートを選択します:
 
-- Its type identifier, we call this `emailTemplateId`. These are constants.
-- The `domain`. We will first try to find a template for the domain that the related object (like a `Comment`) is tied to, and if a match is not found then we will try to find a template where domain is null or `*`.
+- そのタイプ識別子。これを `emailTemplateId` と呼びます。これらは定数です。
+- `domain`。まず、関連するオブジェクト(例えば `Comment`)が紐づいているドメインのテンプレートを探し、一致が見つからない場合は、domain が null または `*` のテンプレートを探します。
 
-The structure for the `EmailTemplate` object is as follows:
+`EmailTemplate` オブジェクトの構造は以下の通りです:
 
 [inline-code-attrs-start title = 'メールテンプレートの構造'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -14,25 +14,25 @@ interface EmailTemplate {
     tenantId: string
     emailTemplateId: string
     displayName: string
-    /** 読み取り専用 **/
+    /** READONLY **/
     createdAt: string
-    /** 読み取り専用 **/
+    /** READONLY **/
     updatedAt: string
-    /** 読み取り専用 **/
+    /** READONLY **/
     updatedByUserId: string
-    /** テンプレートが関連付けられるドメイン。 **/
+    /** The domain the template should be associated with. **/
     domain?: string | '*' | null
-    /** EJS 構文で記述されたメールテンプレートの内容。 **/
+    /** The email template content in EJS syntax. **/
     ejs: string
-    /** サポートされている各ロケールごとの、上書きされた翻訳キーから値へのマップ。 **/
+    /** A map of overridden translation keys to values, for each supported locale. **/
     translationOverridesByLocale: Record<string, Record<string, string>>
-    /** テンプレートのレンダリングコンテキストを表すオブジェクト。 **/
+    /** An object that represents the render context of the template. **/
     testData: object
 }
 [inline-code-end]
 
-### 注意
+### 注意事項
 
-- You can get the valid `emailTemplateId` values from the `/definitions` endpoint.
-- The `/definitions` endpoint also includes the default translations and test data.
-- Templates will fail to save with invalid structure or test data.
+- 有効な `emailTemplateId` の値は `/definitions` エンドポイントから取得できます。
+- `/definitions` エンドポイントには、デフォルトの翻訳とテストデータも含まれています。
+- 構造やテストデータが無効な場合、テンプレートは保存に失敗します。

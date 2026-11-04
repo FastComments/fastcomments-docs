@@ -1,4 +1,4 @@
-Like count for a page, optionally with the users who liked it.
+页面的点赞数，可选包含点赞的用户。
 
 ## 参数
 
@@ -6,7 +6,7 @@ Like count for a page, optionally with the users who liked it.
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 是 |  |
 | urlId | string | query | 是 |  |
-| includeUserInfo | string | query | 否 | "public" 省略具有私人资料的用户，"include-private" 包含它们。 |
+| includeUserInfo | string | query | 否 | "public" 省略拥有私密资料的用户，"include-private" 则包含他们。 |
 
 ## 响应
 
@@ -21,7 +21,7 @@ import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let urlId = "urlId_example" // String | 
-let includeUserInfo = PageReactIncludeUserInfo() // PageReactIncludeUserInfo | \"public\" 省略具有私人资料的用户，\"include-private\" 包含它们。（optional）
+let includeUserInfo = PageReactIncludeUserInfo() // PageReactIncludeUserInfo | \"public\" 省略拥有私密资料的用户，\"include-private\" 则包含他们。(optional)
 
 DefaultAPI.getPageLikes(tenantId: tenantId, urlId: urlId, includeUserInfo: includeUserInfo) { (response, error) in
     guard error == nil else {

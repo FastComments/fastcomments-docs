@@ -1,4 +1,3 @@
----
 ## תגובה
 
 מחזיר: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
@@ -34,5 +33,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

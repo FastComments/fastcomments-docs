@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Ime | Tip | Lokacija | Obavezno | Opis |
@@ -32,4 +31,3 @@ try {
     print('Exception when calling DefaultApi->patchDomainConfig: $e\n');
 }
 [inline-code-end]
----

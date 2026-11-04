@@ -8,5 +8,3 @@
 ## Принос
 
 Приносите са добре дошли! Моля, посетете [GitHub repository](https://github.com/FastComments/fastcomments-django) за насоки за принос.
-
----

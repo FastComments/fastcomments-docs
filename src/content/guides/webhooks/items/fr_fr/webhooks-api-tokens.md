@@ -110,5 +110,3 @@ function verifyWebhookSignature($headers, $body, $apiSecret) {
 ## Authentification héritée
 
 L'en-tête `token` contenant votre Secret d'API est toujours envoyé pour assurer la compatibilité ascendante. Cependant, nous recommandons de migrer vers la vérification HMAC pour une sécurité renforcée, car elle protège contre les attaques par rejeu.
-
----

@@ -1,4 +1,3 @@
----
 [related-parameter-start name = 'headerHTML'; type = 'string'; related-parameter-end]
 
 Неки текст, као што је заглавље или порука, може бити приказан испод броја коментара, али изнад текста статуса пријављивања.
@@ -10,5 +9,3 @@
 Ово се може прилагодити без кода, на страници за прилагођавање виџета, у одељку Напредне опције:
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.show-advanced-option'; selector = '.absolute-dates'; alt='Област Напредних опција на страници за прилагођавање виџета где се уноси прилагођени HTML заглавља'; title='Навођење HTML заглавља' app-screenshot-end]
-
----

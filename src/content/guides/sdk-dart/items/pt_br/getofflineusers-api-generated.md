@@ -1,4 +1,3 @@
----
 Comentadores anteriores na página que NÃO estão atualmente online. Ordenados por displayName.  
 Use isso após esgotar /users/online para renderizar uma seção “Members”.  
 Paginação por cursor em commenterName: o servidor percorre o parcial {tenantId, urlId, commenterName}  
@@ -36,5 +35,3 @@ try {
     print('Exception when calling PublicApi->getOfflineUsers: $e\n');
 }
 [inline-code-end]
-
----

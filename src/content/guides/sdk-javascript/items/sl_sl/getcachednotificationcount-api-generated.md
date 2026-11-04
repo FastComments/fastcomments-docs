@@ -19,5 +19,3 @@ Vrne: [`GetCachedNotificationCountResponse`](https://github.com/FastComments/fas
   const response: GetCachedNotificationCountResponse = await getCachedNotificationCount(tenantId, id);
 })();
 [inline-code-end]
-
----

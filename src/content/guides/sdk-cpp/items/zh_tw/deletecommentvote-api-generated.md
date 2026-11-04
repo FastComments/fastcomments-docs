@@ -34,5 +34,3 @@ api->deleteCommentVote(
     }
 });
 [inline-code-end]
-
----

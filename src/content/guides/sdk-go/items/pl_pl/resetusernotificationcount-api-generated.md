@@ -1,4 +1,3 @@
----
 ## Parametry
 
 | Name | Type | Location | Wymagane | Opis |
@@ -38,5 +37,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.ResetUserNotificationCount`: %v\n", resp)
 }
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 ## Parameters
 
 | Naam | Type | Verplicht | Beschrijving |
@@ -26,5 +25,3 @@ async function fetchComment() {
 
 fetchComment();
 [inline-code-end]
-
----

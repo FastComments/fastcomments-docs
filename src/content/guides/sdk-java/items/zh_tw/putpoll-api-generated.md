@@ -1,11 +1,8 @@
----
-Attach a poll to a comment, or set the full state of the poll it already has.
+將投票附加到留言上，或設定該留言已有投票的完整狀態。
 
-Options are matched by id: an option sent with the id of an existing option keeps its votes (and takes the
-new label and position), an option sent without an id is added, and existing options left out of the list
-are removed along with the votes cast on them.
+選項以 id 進行比對：帶有現有選項 id 的選項會保留其票數（並採用新的標籤與位置），沒有 id 的選項會被新增，而未包含在清單中的現有選項則會連同投給它們的票數一併移除。
 
-Keeping no existing option ids on a poll that has votes deletes all of them, so that needs replaceVotes=true.
+在已有票數的投票上不保留任何現有選項 id 會刪除所有票數，因此需要 replaceVotes=true。
 
 ## 參數
 
@@ -17,13 +14,13 @@ Keeping no existing option ids on a poll that has votes deletes all of them, so 
 
 ## 回應
 
-返回：[`SavePollResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/SavePollResponse.java)
+回傳：[`SavePollResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/SavePollResponse.java)
 
 ## 範例
 
 [inline-code-attrs-start title = 'putPoll 範例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 匯入類別:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -36,10 +33,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // 設定 API 金鑰授權：api_key
+    // Configure API key authorization: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // 取消註解以下行以設定 API 金鑰的前綴，例如 "Token" (defaults to null)
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -62,5 +59,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

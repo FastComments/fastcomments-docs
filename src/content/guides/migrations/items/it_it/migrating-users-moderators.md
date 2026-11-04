@@ -10,5 +10,3 @@ Per aggiungere moderatori, consulta [la documentazione corrispondente](/guide-mo
 ### Una nota sull'autenticazione
 
 I tuoi utenti potrebbero cercare un luogo dove inserire la loro password. FastComments utilizza i "magic links" per l'accesso - quindi non sono necessarie password.
-
----

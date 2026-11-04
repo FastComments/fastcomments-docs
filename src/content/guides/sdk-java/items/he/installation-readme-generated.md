@@ -1,6 +1,6 @@
 ### Maven
 
-הוסף את מאגר Repsy ל‑POM של הפרויקט שלך:
+הוסיפו את מאגר Repsy לקובץ ה-POM של הפרויקט שלכם:
 
 ```xml
 <repositories>
@@ -12,7 +12,7 @@
 </repositories>
 ```
 
-לאחר מכן הוסף את התלויות שאתה צריך:
+לאחר מכן הוסיפו את יחסי התלות הדרושים:
 
 ```xml
 <dependencies>
@@ -23,14 +23,14 @@
         <version>3.1.1</version>
     </dependency>
     
-    <!-- ספריית ליבה (כוללת SSO) -->
+    <!-- ספריית הליבה (כולל SSO) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>core</artifactId>
         <version>3.1.1</version>
     </dependency>
     
-    <!-- ספריית PubSub (לאירועים בזמן אמת) -->
+    <!-- ספריית PubSub (עבור אירועים חיים) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>pubsub</artifactId>
@@ -41,7 +41,7 @@
 
 ### Gradle
 
-הוסף את מאגר Repsy לקובץ build.gradle שלך:
+הוסיפו את מאגר Repsy לקובץ ה-build.gradle שלכם:
 
 ```groovy
 repositories {
@@ -55,24 +55,26 @@ dependencies {
     // לקוח API
     implementation "com.fastcomments:client:3.1.1"
     
-    // ספריית ליבה (כוללת SSO)
+    // ספריית הליבה (כולל SSO)
     implementation "com.fastcomments:core:3.1.1"
     
-    // ספריית PubSub (לאירועים בזמן אמת)
+    // ספריית PubSub (עבור אירועים חיים)
     implementation "com.fastcomments:pubsub:3.1.1"
 }
 ```
 
-### Library Contents
+### תוכן הספרייה
 
-ספרייה זו מכילה שלושה מודולים. לקוח ה‑API שנוצר, ספריית הליבה של Java שמכילה כלי עזר שנכתבו ידנית כדי להקל על העבודה עם ה‑API, ומודול `pubsub` שהוא ספרייה למנוי על פיד של שינויים.
+ספרייה זו מכילה שלושה מודולים: לקוח ה-API שנוצר אוטומטית, ספריית הליבה של Java המכילה כלים שנכתבו באופן ידני
+כדי להקל על העבודה עם ה-API, ומודול ה-`pubsub` שהוא ספרייה להרשמה לעדכוני שינויים (change feeds).
 
-- [תיעוד ספריית לקוח API](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
+- [תיעוד ספריית לקוח ה-API](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
 - [תיעוד ספריית הליבה, כולל דוגמאות SSO](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
 - [תיעוד ספריית PubSub](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
-### Public vs Secured APIs
+### APIs ציבוריים מול APIs מאובטחים
 
-עבור לקוח ה‑API, קיימות שלוש מחלקות, `DefaultApi`, `PublicApi`, ו‑`ModerationApi`. ה‑`DefaultApi` מכילה שיטות הדורשות את מפתח ה‑API שלך, ו‑`PublicApi` מכילה שיטות שניתן לקרוא להן ישירות מדפדפן/מכשיר נייד/וכו' ללא אימות.
+בלקוח ה-API קיימות שלוש מחלקות: `DefaultApi`, `PublicApi`, ו-`ModerationApi`. ה-`DefaultApi` מכיל שיטות הדורשות את מפתח ה-API שלכם, וה-`PublicApi` מכיל שיטות
+שניתן לקרוא להן ישירות מדפדפן/מכשיר נייד/כדומה ללא אימות.
 
-`ModerationApi` מספקת חבילה נרחבת של API למודרציה בזמן אמת ומהירה. כל שיטה ב‑`ModerationApi` מקבלת פרמטר `sso` ויכולה לאמת באמצעות SSO או באמצעות קוביית סשן של FastComments.com.
+ה-`ModerationApi` מספק חבילה נרחבת של APIs לניהול (moderation) חי ומהיר. כל שיטה של `ModerationApi` מקבלת פרמטר `sso` ויכולה לבצע אימות באמצעות SSO או באמצעות עוגיית סשן של FastComments.com.

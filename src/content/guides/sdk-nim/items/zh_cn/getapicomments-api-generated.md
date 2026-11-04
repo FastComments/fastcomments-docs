@@ -1,4 +1,3 @@
----
 ## 参数
 
 | 名称 | 类型 | 必填 | 描述 |
@@ -19,5 +18,3 @@ if maybeResp.isSome:
   let resp = maybeResp.get()
   # 可以使用 `resp` 进行进一步处理
 [inline-code-end]
-
----

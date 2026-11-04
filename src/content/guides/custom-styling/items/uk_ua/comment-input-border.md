@@ -1,17 +1,17 @@
-The border around the comment box is made of the text area's own border plus a few thin lines the widget draws around it. To change its color or corner roundness, set these CSS variables instead of styling the `textarea` directly. The variables restyle every part of the border at once, so the corners and colors always line up.
+Рамка навколо поля коментаря складається з власної межі текстової області та кількох тонких ліній, які віджет малює навколо неї. Щоб змінити її колір або заокругленість кутів, задайте ці CSS-змінні замість стилізації `textarea` безпосередньо. Змінні одночасно змінюють стиль усіх частин рамки, тому кути та кольори завжди збігаються.
 
-| Variable | What it changes | Default |
+| Змінна | Що змінює | Значення за замовчуванням |
 |---|---|---|
 | `--fc-input-border-color` | Колір рамки | `#bfbfbf` |
-| `--fc-input-border-color-focus` | Колір рамки під час вводу користувачем | `#555` |
-| `--fc-input-border-radius` | Закругленість закруглених кутів | `11px` |
-| `--fc-input-border-start-start-radius` | Закругленість квадратного верхнього лівого кута (верхнього правого у мовах з напрямком справа наліво) | `0` |
+| `--fc-input-border-color-focus` | Колір рамки під час введення тексту | `#555` |
+| `--fc-input-border-radius` | Заокругленість заокруглених кутів | `11px` |
+| `--fc-input-border-start-start-radius` | Заокругленість квадратного верхнього лівого кута (верхнього правого в мовах з написанням справа наліво) | `0` |
 
-Add the CSS to the **Custom CSS** box on the [Widget Customization page](https://fastcomments.com/auth/my-account/customize-widget), or pass it with the `customCSS` option. You only need to set the variables you want to change.
+Додайте CSS у поле **Custom CSS** на [сторінці налаштування віджета](https://fastcomments.com/auth/my-account/customize-widget) або передайте його через опцію `customCSS`. Потрібно задати лише ті змінні, які ви хочете змінити.
 
-You can also use the **Comment box border** helper right under the Custom CSS box, which writes this CSS for you.
+Ви також можете скористатися помічником **Comment box border** одразу під полем Custom CSS, який напише цей CSS за вас.
 
-## Змінити колір рамки
+## Зміна кольору рамки
 
 [inline-code-attrs-start title = 'Колір рамки'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -20,20 +20,20 @@ You can also use the **Comment box border** helper right under the Custom CSS bo
 }
 [inline-code-end]
 
-## Змінити колір рамки під час вводу
+## Зміна кольору рамки під час введення тексту
 
-[inline-code-attrs-start title = 'Колір рамки під час вводу'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Колір рамки під час введення тексту'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 :root {
     --fc-input-border-color-focus: #2563eb;
 }
 [inline-code-end]
 
-## Закруглити всі чотири кути
+## Заокруглення всіх чотирьох кутів
 
-By default the top-left corner is square. Set both radius variables to round all four corners the same:
+За замовчуванням верхній лівий кут є квадратним. Задайте обидві змінні радіуса, щоб заокруглити всі чотири кути однаково:
 
-[inline-code-attrs-start title = 'Закруглити всі чотири кути'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Заокруглення всіх чотирьох кутів'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 :root {
     --fc-input-border-radius: 12px;
@@ -50,9 +50,9 @@ By default the top-left corner is square. Set both radius variables to round all
 }
 [inline-code-end]
 
-## Підлаштувати під ваш бренд
+## Відповідність вашому бренду
 
-[inline-code-attrs-start title = 'Кольори бренду та кути'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Кольори та кути бренду'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 :root {
     --fc-input-border-color: #c7d2fe;
@@ -64,7 +64,7 @@ By default the top-left corner is square. Set both radius variables to round all
 
 ## Різні кольори в темному режимі
 
-When the widget is in dark mode it has the `dark` class, so you can set different values for dark mode:
+Коли віджет перебуває в темному режимі, він має клас `dark`, тому ви можете задати інші значення для темного режиму:
 
 [inline-code-attrs-start title = 'Кольори рамки в темному режимі'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -77,8 +77,6 @@ When the widget is in dark mode it has the `dark` class, so you can set differen
 }
 [inline-code-end]
 
-## Чому не стилізувати текстову область безпосередньо?
+## Чому не варто стилізувати текстову область безпосередньо?
 
-The widget draws part of the comment box border itself, around the text area. If you set `border-color` or `border-radius` only on the `textarea`, those lines keep the default style and the border looks mismatched, for example a square line running through a rounded corner. The variables above change both at once.
-
----
+Віджет сам малює частину рамки поля коментаря, навколо текстової області. Якщо ви задасте `border-color` або `border-radius` лише для `textarea`, ці лінії збережуть стандартний стиль, і рамка виглядатиме неузгоджено — наприклад, квадратна лінія проходитиме через заокруглений кут. Наведені вище змінні змінюють обидва аспекти одночасно.

@@ -8,5 +8,3 @@ Nim SDK 사용 중 문제가 발생하거나 질문이 있으시면, 다음을 �
 ## 기여
 
 기여는 환영합니다! 기여 지침은 [GitHub 저장소](https://github.com/FastComments/fastcomments-nim)에서 확인해 주세요.
-
----

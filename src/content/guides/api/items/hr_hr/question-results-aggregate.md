@@ -100,5 +100,3 @@ interface QuestionResultsAggregationResponse {
 - Kada je `forceRecalculate` naveden, trošak je uvijek `10`, umjesto uobičajenih `2`.
 - Ako cache istekne i podaci se ponovno izračunaju, trošak je i dalje konstantan `2` ako `forceRecalculate` nije naveden. Cache istječe ovisno o veličini prikupljenog skupa podataka (može varirati između 30 sekundi i 5 minuta).
 - Ovo služi kao poticaj za korištenje cachea.
-
----

@@ -1,23 +1,23 @@
-Queues a batch job that reverses every migration from one migrate-pages job, newest first. Available for 90 days.  
-Enregistrements modifiés depuis la migration sont laissés tels quels, de sorte qu'une modification ultérieure n'est jamais écrasée.  
-Interrogez GET /api/v1/batch-jobs/{batchJobId} pour obtenir les comptes restaurés/ignorés.
+Met en file d'attente un traitement par lots qui annule toutes les migrations d'un job migrate-pages, de la plus récente à la plus ancienne. Disponible pendant 90 jours.
+Les enregistrements modifiés depuis la migration ne sont pas touchés, une modification ultérieure n'est donc jamais écrasée.
+Interrogez GET /api/v1/batch-jobs/{batchJobId} pour obtenir les compteurs restaurés/ignorés.
 
 ## Paramètres
 
-| Nom | Type | Emplacement | Obligatoire | Description |
+| Nom | Type | Emplacement | Requis | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| undoId | string | path | Yes |  |
+| tenantId | string | query | Oui |  |
+| undoId | string | path | Oui |  |
 
 ## Réponse
 
-Renvoie : [`QueuePageMigrationJobAPIResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/QueuePageMigrationJobAPIResponse.java)
+Retourne : [`QueuePageMigrationJobAPIResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/QueuePageMigrationJobAPIResponse.java)
 
 ## Exemple
 
 [inline-code-attrs-start title = 'Exemple undoPageMigrations'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importer les classes:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -30,10 +30,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configurer l'autorisation de la clé API : api_key
+    // Configure API key authorization: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Décommentez la ligne suivante pour définir un préfixe pour la clé API, par ex. "Token" (valeur par défaut null)
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -53,5 +53,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

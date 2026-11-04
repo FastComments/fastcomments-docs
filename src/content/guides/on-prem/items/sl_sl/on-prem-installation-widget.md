@@ -1,4 +1,3 @@
----
 Koda vmesnika (front-end) in knjižnice za On-Prem so enake kot pri izdelku SaaS. Vendar pa morate navesti `apiHost` in pravilno pot do skripte:
 
 [inline-code-attrs-start title = 'Koda komentarjev za On-Prem'; type = 'html'; isFunctional = false; inline-code-attrs-end]
@@ -16,5 +15,3 @@ Koda vmesnika (front-end) in knjižnice za On-Prem so enake kot pri izdelku SaaS
 [inline-code-end]
 
 Zgornji primer je zelo preprost. Uporabili bi lahko tudi uradne knjižnice za React, Angular, Vue, Svelte itd.
-
----

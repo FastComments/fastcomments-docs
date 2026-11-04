@@ -1,4 +1,3 @@
----
 ## 参数
 
 | 名称 | Type | Location | 必填 | 描述 |
@@ -35,5 +34,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->create_v2_page_react: #{e}"
 end
 [inline-code-end]
-
----

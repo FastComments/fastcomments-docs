@@ -1,4 +1,3 @@
----
 ## Parametreler
 
 | Name | Type | Location | Required | Description |
@@ -40,4 +39,3 @@ try {
     echo 'Exception when calling PublicApi->getCommentVoteUserNames: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
----

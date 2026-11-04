@@ -1,23 +1,23 @@
-O FastComments SDK fornece dois tipos de endpoints de API:
+O SDK do FastComments fornece dois tipos de endpoints de API:
 
-### PublicAPI - Client-Safe Endpoints
+### PublicAPI - Endpoints Seguros para o Cliente
 
-O `PublicAPI` contém endpoints que são seguros para serem chamados a partir de código do lado do cliente (aplicativos iOS/macOS). Esses endpoints:
-- Não requerem uma chave de API
+A `PublicAPI` contém endpoints que são seguros para serem chamados a partir de código do lado do cliente (aplicativos iOS/macOS). Esses endpoints:
+- Não exigem uma chave de API
 - Podem usar tokens SSO para autenticação
-- Têm limites de taxa por usuário/dispositivo
-- São adequados para aplicações voltadas ao usuário final
+- São limitados por taxa por usuário/dispositivo
+- São adequados para aplicativos voltados ao usuário final
 
-**Exemplo de caso de uso**: Buscar e criar comentários no seu aplicativo iOS
+**Exemplo de caso de uso**: Buscar e criar comentários em seu aplicativo iOS
 
-### DefaultAPI - Server-Side Endpoints
+### DefaultAPI - Endpoints do Lado do Servidor
 
-O `DefaultAPI` contém endpoints autenticados que requerem uma chave de API. Esses endpoints:
-- Requerem sua chave de API do FastComments
-- Devem SER chamados APENAS a partir de código do lado do servidor
+A `DefaultAPI` contém endpoints autenticados que exigem uma chave de API. Esses endpoints:
+- Exigem sua chave de API do FastComments
+- Devem ser chamados APENAS a partir de código do lado do servidor
 - Fornecem acesso completo aos seus dados do FastComments
-- Têm limites de taxa por tenant
+- São limitados por taxa por tenant
 
-**Exemplo de caso de uso**: Operações administrativas, exportação em massa de dados, ferramentas de moderação
+**Exemplo de caso de uso**: Operações administrativas, exportação de dados em massa, ferramentas de moderação
 
-**IMPORTANTE**: Nunca exponha sua chave de API em código do lado do cliente. Chaves de API devem ser usadas apenas no servidor.
+**IMPORTANTE**: Nunca exponha sua chave de API em código do lado do cliente. As chaves de API devem ser usadas apenas no lado do servidor.

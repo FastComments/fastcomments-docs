@@ -24,5 +24,3 @@ const updateBody: UpdateModeratorBody = {
 
 const result: APIEmptyResponse = await updateModerator(tenantId, moderatorId, updateBody);
 [inline-code-end]
-
----

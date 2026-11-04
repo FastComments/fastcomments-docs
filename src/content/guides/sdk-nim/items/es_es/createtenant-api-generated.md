@@ -1,4 +1,3 @@
----
 ## Parámetros
 
 | Nombre | Tipo | Obligatorio | Descripción |
@@ -20,5 +19,3 @@ if maybeResp.isSome:
   discard resp
 discard httpResp
 [inline-code-end]
-
----

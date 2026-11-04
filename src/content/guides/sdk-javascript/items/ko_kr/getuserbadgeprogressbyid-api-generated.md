@@ -1,4 +1,3 @@
----
 ## 매개변수
 
 | 이름 | 유형 | 필수 | 설명 |
@@ -22,5 +21,3 @@ const result: APIGetUserBadgeProgressResponse = await getUserBadgeProgressById(t
 const progress: UserBadgeProgress | undefined = result?.progress;
 const status: APIStatus | undefined = result?.status;
 [inline-code-end]
-
----

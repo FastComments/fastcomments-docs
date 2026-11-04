@@ -1,4 +1,3 @@
----
 | 구성 요소 | 설명 |
 | --- | --- |
 | `FastComments` | 답글과 투표 등 기능을 갖춘 댓글 위젯 |
@@ -16,4 +15,3 @@
 import { FastComments, FastCommentsLiveChat } from 'fastcomments-astro';
 ---
 ```
----

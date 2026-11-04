@@ -30,5 +30,3 @@ const result: AdjustVotesResponse = await postAdjustCommentVotes(
   sso
 );
 [inline-code-end]
-
----

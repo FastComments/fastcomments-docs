@@ -5,5 +5,3 @@
 ## Репозитория
 
 [Вижте на GitHub](https://github.com/FastComments/fastcomments-react-native)
-
----

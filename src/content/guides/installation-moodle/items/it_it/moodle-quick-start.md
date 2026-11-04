@@ -5,5 +5,3 @@
 5. Inserisci il tuo **Tenant ID** e **API Secret** dalla <a href="https://fastcomments.com/auth/my-account/api-secret" target="_blank">dashboard di FastComments</a>.
 
 Fatto! I commenti appariranno nelle pagine dei tuoi corsi e delle attività.
-
----

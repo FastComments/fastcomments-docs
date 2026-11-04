@@ -1,4 +1,3 @@
----
 הוסף את ה‑SDK של FastComments לקובץ `build.gradle.kts` של האפליקציה שלך:
 
 ```kotlin
@@ -19,4 +18,3 @@ dependencyResolutionManagement {
     }
 }
 ```
----

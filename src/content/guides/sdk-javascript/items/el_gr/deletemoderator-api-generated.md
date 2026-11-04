@@ -23,5 +23,3 @@
   const resultWithoutEmail: APIEmptyResponse = await deleteModerator(tenantId, moderatorId);
 })();
 [inline-code-end]
-
----

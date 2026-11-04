@@ -5,5 +5,3 @@ Verwalten Sie Kommentare, Benutzer, SSO und Moderation von Node.js oder dem Brow
 ## Repository
 
 [Auf GitHub ansehen](https://github.com/FastComments/fastcomments-sdk-js)
-
----

@@ -10,5 +10,3 @@ To orodno vrstico je mogoče onemogočiti v kodi ali prek uporabniškega vmesnik
 To je mogoče storiti tudi brez kode. Na strani za prilagajanje gradnika si oglejte možnost "Onemogoči orodno vrstico za odgovor".
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-toolbar']; selector = '.disable-toolbar'; alt='Stran za prilagajanje gradnika z označeno potrditveno polje Onemogoči orodno vrstico za odgovor, da se odstranijo bližnjice za oblikovanje'; title='Onemogočanje orodne vrstice' app-screenshot-end]
-
----

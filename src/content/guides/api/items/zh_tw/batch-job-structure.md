@@ -61,5 +61,3 @@ interface PageMigrationUndoResult {
 #### 重試
 
 如果執行頁面遷移工作的伺服器重新啟動，該工作會重新放回佇列，並在最後一次完成的遷移之後繼續執行。工作最多會嘗試 3 次，之後其 `status` 會變為 `failed`。
-
----

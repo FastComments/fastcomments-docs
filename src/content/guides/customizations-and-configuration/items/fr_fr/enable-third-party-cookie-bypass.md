@@ -15,5 +15,3 @@ Nous pouvons faire cela dans le code en définissant le drapeau **enableThirdPar
 Nous pouvons également configurer cela via l'interface de personnalisation du widget, sous `Enable Third-Party Cookie Popup` :
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.enable-third-party-cookie-bypass'; clickSelectors = ['.enable-third-party-cookie-bypass']; alt='Page de personnalisation du widget avec la case à cocher Activer la fenêtre contextuelle des cookies tiers cochée'; title='Activation du contournement des cookies tiers' app-screenshot-end]
-
----

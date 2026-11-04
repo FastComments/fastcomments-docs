@@ -27,5 +27,3 @@ const ssoToken: string = "sso_abcdef123456";
 
 const resultWithSSO: APIEmptyResponse = await postBanUserUndo(tenantId, undoParams, ssoToken);
 [inline-code-end]
-
----

@@ -9,7 +9,7 @@ curl --request DELETE \
   --header 'Content-Type: application/json'
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Vote 删除 请求结构'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Vote 删除请求结构'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface VoteDeleteQueryParams {
     tenantId: string
@@ -17,7 +17,7 @@ interface VoteDeleteQueryParams {
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Vote 删除 响应结构'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Vote 删除响应结构'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface VoteDeleteResponse {
     status: 'success' | 'failed'
@@ -28,8 +28,8 @@ interface VoteDeleteResponse {
 }
 [inline-code-end]
 
-Notes:
+注意事项：
 
-- This API obeys tenant-level settings. For example, if you disable voting for a given page, and you attempt to create a vote via the API, it will fail with error code `voting-disabled`.
-- This API is live by default.
-- This API will update the `votes` of the corresponding `Comment`.
+- 此 API 遵循租户级别的设置。例如，如果您为某个页面禁用了投票功能，然后尝试通过 API 创建投票，则会失败并返回错误代码 `voting-disabled`。
+- 此 API 默认是实时的。
+- 此 API 会更新相应 `Comment` 的 `votes`。

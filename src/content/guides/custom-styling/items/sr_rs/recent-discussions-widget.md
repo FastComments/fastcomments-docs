@@ -1,8 +1,8 @@
-The Recent Discussions Widget displays a list of pages sorted by the most recent comment activity. It includes a heading, last activity dates, comment counts with icons, and automatic dark mode detection.
+Виџет „Скорашње дискусије" приказује листу страница сортираних по најскоријој активности коментара. Укључује наслов, датуме последње активности, бројеве коментара са иконама и аутоматску детекцију тамног режима.
 
 ## Основна инсталација
 
-[inline-code-attrs-start title = 'Подешавање стила за виџет Недавних дискусија'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Подешавање стилова виџета Скорашње дискусије'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/widget-recent-discussions-v2.min.js"></script>
 <div id="fastcomments-widget-recent-discussions"></div>
@@ -15,15 +15,15 @@ The Recent Discussions Widget displays a list of pages sorted by the most recent
 
 ## Опције конфигурације
 
-- **tenantId** (обавезно): Your FastComments tenant ID
-- **count** (опционално): Number of pages to show. Default is `20`, max `100`
-- **hasDarkBackground** (опционално): Force dark mode styling. Auto-detected from the page background if not set
+- **tenantId** (обавезно): Ваш FastComments ID закупца
+- **count** (опционо): Број страница за приказ. Подразумевано је `20`, максимум `100`
+- **hasDarkBackground** (опционо): Наметни стилове тамног режима. Аутоматски се детектује из позадине странице ако није постављено
 
 ## Структура виџета
 
-The widget renders with the following HTML structure:
+Виџет се приказује са следећом HTML структуром:
 
-[inline-code-attrs-start title = 'HTML структура виџета Недавних дискусија'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'HTML структура виџета Скорашње дискусије'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <div class="fc-rd2">
     <div class="fc-rd2-heading">Recent Discussions</div>
@@ -39,9 +39,9 @@ The widget renders with the following HTML structure:
 </div>
 [inline-code-end]
 
-## Подразумевана CSS референца
+## Референца подразумеваног CSS-а
 
-[inline-code-attrs-start title = 'Подразумевани CSS за виџет Недавних дискусија'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Подразумевани CSS виџета Скорашње дискусије'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rd2 {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -63,9 +63,9 @@ The widget renders with the following HTML structure:
 
 ## Примери прилагођавања
 
-### Уклони ивицу контејнера
+### Уклањање ивице контејнера
 
-[inline-code-attrs-start title = 'Уклони ивицу контејнера'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Уклањање ивице контејнера'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rd2 {
     border: none !important;
@@ -81,5 +81,3 @@ a.fc-rd2-title:hover {
     color: #e63946 !important;
 }
 [inline-code-end]
-
----

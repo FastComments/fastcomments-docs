@@ -1,4 +1,3 @@
----
 Agrège les documents en les groupant (si groupBy est fourni) et en appliquant plusieurs opérations. Différentes opérations (par ex. sum, countDistinct, avg, etc.) sont prises en charge.
 
 ## Paramètres
@@ -36,5 +35,3 @@ DefaultAPI.aggregate(tenantId: tenantId, aggregationRequest: aggregationRequest,
     }
 }
 [inline-code-end]
-
----

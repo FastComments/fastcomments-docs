@@ -1,12 +1,10 @@
-Polls let commenters attach a question with 2 to 10 options to a comment. Everyone on the page votes in place and sees the results update live.
+I sondaggi consentono ai commentatori di allegare a un commento una domanda con 2 fino a 10 opzioni. Tutti gli utenti sulla pagina votano sul posto e vedono i risultati aggiornarsi in tempo reale.
 
-I sondaggi consentono ai commentatori di allegare una domanda con da 2 a 10 opzioni a un commento. Tutti sulla pagina votano direttamente e vedono i risultati aggiornarsi in tempo reale.
+I sondaggi sono disattivati per impostazione predefinita. Seleziona **Enable Polls** nelle impostazioni di personalizzazione del widget per aggiungere un pulsante per i sondaggi alla barra degli strumenti dei commenti. A quel punto compaiono altre due impostazioni:
 
-Polls are off by default. Check **Abilita sondaggi** in the widget customization settings to add a poll button to the comment toolbar. Two more settings then appear:
+- **Who Can Create Polls**: Solo Amministratori/Moderatori (predefinito), oppure Tutti.
+- **Allow Anonymous Poll Votes**: quando deselezionata (predefinito), solo gli utenti registrati possono votare.
 
-- **Chi può creare sondaggi**: Admins/Moderators Only (the default), or Everyone.
-- **Consenti voti anonimi ai sondaggi**: when unchecked (the default), only logged in users can vote.
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-polls']; selector = '.enable-polls'; alt='Pagina di personalizzazione del widget con l\'opzione Enable Polls selezionata'; title='Enable Polls' app-screenshot-end]
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-polls']; selector = '.enable-polls'; alt='Pagina di personalizzazione del widget con l\'opzione Abilita sondaggi selezionata'; title='Abilita sondaggi' app-screenshot-end]
-
-See the [Guida ai sondaggi](/guide-polls.html) for how creating, voting, privacy, and poll notifications work.
+Consulta la [guida ai sondaggi](/guide-polls.html) per scoprire come funzionano la creazione, la votazione, la privacy e le notifiche dei sondaggi.

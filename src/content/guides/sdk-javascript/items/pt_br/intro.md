@@ -5,5 +5,3 @@ Gerencie comentários, usuários, SSO e moderação a partir do Node.js ou do na
 ## Repositório
 
 [Ver no GitHub](https://github.com/FastComments/fastcomments-sdk-js)
-
----

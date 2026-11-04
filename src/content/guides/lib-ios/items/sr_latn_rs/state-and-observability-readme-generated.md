@@ -1,45 +1,44 @@
-Oba `FastCommentsSDK` i `FastCommentsFeedSDK` su klase `ObservableObject` sa `@Published` svojstvima. Možete ih posmatrati u svojim SwiftUI prikazima radi reaktivnih ažuriranja korisničkog interfejsa (UI).
+I `FastCommentsSDK` i `FastCommentsFeedSDK` su `ObservableObject` klase sa `@Published` svojstvima. Možete ih posmatrati u vašim SwiftUI prikazima za reaktivna ažuriranja UI-ja.
 
 ### FastCommentsSDK Published Properties
 
 | Property | Type | Description |
 |----------|------|-------------|
 | `commentCountOnServer` | `Int` | Ukupan broj komentara na serveru |
-| `newRootCommentCount` | `Int` | Privremeno sačuvani novi komentari (kada je `showLiveRightAway` false) |
-| `currentUser` | `UserSessionInfo?` | Trenutno autentifikovani korisnik |
+| `newRootCommentCount` | `Int` | Baferovani novi komentari (kada je `showLiveRightAway` false) |
+| `currentUser` | `UserSessionInfo?` | Trenutni autentifikovani korisnik |
 | `isSiteAdmin` | `Bool` | Da li je trenutni korisnik administrator sajta |
 | `isClosed` | `Bool` | Da li je nit komentara zatvorena |
 | `hasBillingIssue` | `Bool` | Da li postoji problem sa naplatom |
 | `isLoading` | `Bool` | Da li je mrežni zahtev u toku |
-| `hasMore` | `Bool` | Da li postoje dodatne stranice komentara |
-| `blockingErrorMessage` | `String?` | Greška koja sprečava funkcionisanje korisničkog interfejsa |
-| `warningMessage` | `String?` | Upozorenje koje ne blokira |
-| `isDemo` | `Bool` | Da li se radi u demo režimu |
+| `hasMore` | `Bool` | Da li postoje još stranice komentara |
+| `blockingErrorMessage` | `String?` | Greška koja sprečava funkcionisanje UI-ja |
+| `warningMessage` | `String?` | Neprijavljena upozoravajuća poruka koja ne blokira |
+| `isDemo` | `Bool` | Da li radi u demo režimu |
 | `commentsVisible` | `Bool` | Prekidač za vidljivost komentara |
-| `toolbarEnabled` | `Bool` | Da li je prikazana alatna traka za formatiranje |
+| `toolbarEnabled` | `Bool` | Da li je prikazana traka sa alatima za formatiranje |
 
 ### FastCommentsFeedSDK Published Properties
 
 | Property | Type | Description |
 |----------|------|-------------|
-| `feedPosts` | `[FeedPost]` | Trenutno učitani postovi feeda |
-| `hasMore` | `Bool` | Da li postoje dodatne stranice |
-| `currentUser` | `UserSessionInfo?` | Trenutno autentifikovani korisnik |
-| `blockingErrorMessage` | `String?` | Blokirajuća poruka o grešci |
+| `feedPosts` | `[FeedPost]` | Trenutno učitani objave u feedu |
+| `hasMore` | `Bool` | Da li postoje još stranice |
+| `currentUser` | `UserSessionInfo?` | Trenutni autentifikovani korisnik |
+| `blockingErrorMessage` | `String?` | Poruka greške koja blokira |
 | `isLoading` | `Bool` | Da li je mrežni zahtev u toku |
-| `newPostsCount` | `Int` | Broj novih postova od poslednjeg učitavanja |
+| `newPostsCount` | `Int` | Broj novih objava od poslednjeg učitavanja |
 
-### Comment Tree
+### Stablo komentara
 
-Stablo komentara je dostupno preko `sdk.commentsTree`:
+Stablu komentara se može pristupiti preko `sdk.commentsTree`:
 
 ```swift
-// Ravan spisak vidljivih čvorova za prikaz
+// Flat list of visible nodes for rendering
 sdk.commentsTree.visibleNodes
 
-// Pronađi komentar po ID-u
+// Lookup a comment by ID
 sdk.commentsTree.commentsById["comment-id"]
 ```
 
----
 ---

@@ -1,4 +1,3 @@
----
 現在ページにオンラインの閲覧者: 現在そのページに WebSocket セッションでサブスクライブしている人々。
 anonCount + totalCount を返します（匿名閲覧者を列挙しない場合でも含めた、ルーム全体の購読者数）。
 
@@ -38,5 +37,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_online_users: #{e}"
 end
 [inline-code-end]
-
----

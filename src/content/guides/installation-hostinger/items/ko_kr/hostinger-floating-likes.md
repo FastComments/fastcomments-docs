@@ -1,4 +1,3 @@
----
 FastComments는 Hostinger용 Page Reacts(일명 플로팅 좋아요 버튼) 위젯도 지원합니다.
 
 이 페이지의 오른쪽 하단에서 작동 모습을 확인할 수 있습니다!
@@ -35,5 +34,3 @@ FastComments는 Hostinger용 Page Reacts(일명 플로팅 좋아요 버튼) 위�
 4. Integrations(통합)를 선택합니다.
 5. 새 코드를 `Custom code` 필드의 *끝*에 추가하고 사이트를 게시합니다.
 6. 미리보기 모드에서는 위젯이 보이지 않지만, 사이트의 게시된 버전에서는 나타납니다.
-
----

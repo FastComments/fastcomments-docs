@@ -1,14 +1,14 @@
-Next, determine where you want to add comments. Mouse over the bottom of the previous content area
-and click to add a section:
+Затим одредите где желите да додате коментаре. Пређите мишем преко дна претходне области садржаја
+и кликните да додате секцију:
 
 <div class="screenshot white-bg">
-    <div class="title">Корак два: Додај одељак</div>
-    <img class="screenshot-image" src="/images/installation-guides/webnode-step-2.png" alt="Додај одељак" />
+    <div class="title">Корак два: Додај секцију</div>
+    <img class="screenshot-image" src="/images/installation-guides/webnode-step-2.png" alt="Додај секцију" />
 </div>
 
-Now let's put an HTML block in that section, where the code snippet will go. Select `HTML`:
+Сада да ставимо HTML блок у ту секцију, где ће ићи део кода. Изаберите `HTML`:
 
-> **Note:** As of June 26, 2023, Webnode's HTML block is a paid feature. It is not available on the free plan, and for projects created after that date it requires a premium package. If you don't see the `HTML` option, upgrade your Webnode plan to enable it.
+> **Напомена:** Од 26. јуна 2023. године, Webnode-ов HTML блок је платена функција. Није доступан на бесплатној верзији, а за пројекте креиране након тог датума захтева премиум пакет. Ако не видите опцију `HTML`, надградите свој Webnode план да бисте је омогућили.
 
 <div class="screenshot white-bg">
     <div class="title">Корак три: Додај блок кода</div>

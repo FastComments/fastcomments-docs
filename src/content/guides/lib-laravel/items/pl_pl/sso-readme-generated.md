@@ -1,4 +1,3 @@
----
 Włącz SSO w swoim pliku `.env`:
 
 ```env
@@ -55,4 +54,3 @@ Gdy interfejs jest zaimplementowany, ma on pierwszeństwo przed mapowaniem opart
 ### SSO w Blade
 
 Gdy SSO jest włączone, komponent `<x-fastcomments />` automatycznie wstrzykuje dane SSO dla uwierzytelnionego użytkownika.
----

@@ -1,20 +1,19 @@
-Enable or disable notifications for a page. When users are subscribed to a page, notifications are created
-for new root comments, and also
+페이지에 대한 알림을 활성화하거나 비활성화합니다. 사용자가 페이지를 구독하면 새로운 루트 댓글에 대해 알림이 생성되며, 또한
 
 ## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 타입 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| urlId | string | Yes |  |
-| url | string | No |  |
-| pageTitle | string | No |  |
-| subscribedOrUnsubscribed | string | No |  |
-| sso | string = "" | No |  |
+| tenantId | string | 예 |  |
+| urlId | string | 예 |  |
+| url | string | 아니요 |  |
+| pageTitle | string | 아니요 |  |
+| subscribedOrUnsubscribed | string | 아니요 |  |
+| sso | string = "" | 아니요 |  |
 
 ## 응답
 
-반환: [`Option[UpdateUserNotificationPageSubscriptionStatusResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_user_notification_page_subscription_status_response.nim)
+반환값: [`Option[UpdateUserNotificationPageSubscriptionStatusResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_user_notification_page_subscription_status_response.nim)
 
 ## 예제
 
@@ -31,5 +30,5 @@ let (optResp, httpResp) = client.updateUserNotificationPageSubscriptionStatus(
 
 if optResp.isSome:
   let resp = optResp.get()
-  # resp와 추가 처리
+  # resp로 추가 처리
 [inline-code-end]

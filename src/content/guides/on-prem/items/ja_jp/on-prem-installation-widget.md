@@ -15,5 +15,3 @@
 [inline-code-end]
 
 上は非常に簡単な例です。公式の React、Angular、Vue、Svelte などのライブラリも使用できます。
-
----

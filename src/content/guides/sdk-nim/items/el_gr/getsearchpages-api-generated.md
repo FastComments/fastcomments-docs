@@ -25,5 +25,3 @@ let (searchResp, httpResp) = client.getSearchPages(
 if searchResp.isSome:
   let resp = searchResp.get()
 [inline-code-end]
-
----

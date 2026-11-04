@@ -5,5 +5,3 @@ Una lista de ids para usar en el autocompletado de **@mentions**. Útil cuando q
 Cuando se especifica, solo se incluirán en el autocompletado los usuarios de otros grupos después de escribir el carácter `@`.
 
 [code-example-start config = {mentionGroupIds: ['yxZAhjzda', 'QT19nXbqB']}; linesToHighlight = [6, 7, 8, 9]; title = 'Limit Groups for Mentions'; code-example-end]
-
----

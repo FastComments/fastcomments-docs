@@ -1,4 +1,3 @@
----
 Repozitorij sadrži kompletnu aplikaciju primjera u `ExampleApp/` s demonstracijama:
 
 - Komentari u nitima s SSO i prilagođenim temama
@@ -6,4 +5,3 @@ Repozitorij sadrži kompletnu aplikaciju primjera u `ExampleApp/` s demonstracij
 - Razgovor uživo
 - Jednostavni i sigurni SSO tokovi
 - Prilagođeni gumbi alatne trake (komentari i feed)
----

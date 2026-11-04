@@ -27,5 +27,3 @@ At falde tilbage til `"demo"` holder val’en i funktion for enhver, der remixer
 ## EU‑konti
 
 En konto, dens data og dens nøgler lever i én region. Hvis din blev oprettet på `eu.fastcomments.com`, skal hver widget‑konfiguration også have `region: "eu"`, og scriptet indlæses fra `cdn-eu.fastcomments.com`. Ellers lad begge være uændrede.
-
----

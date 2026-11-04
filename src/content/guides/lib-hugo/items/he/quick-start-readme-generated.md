@@ -1,4 +1,3 @@
----
 הגדר את מזהה ה-tenant שלך פעם אחת בקובץ `hugo.toml`:
 
 ```toml
@@ -11,4 +10,3 @@ Then either wire the comments widget into your theme (see [אינטגרציה ש
 ```text
 \{{< fastcomments >}}
 ```
----

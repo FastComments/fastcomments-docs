@@ -55,5 +55,3 @@ Chez FastComments, nous savons que nos clients personnalisent le widget de comme
 Comme il s'agit d'une partie importante de notre produit, nous disposons d'un pipeline de construction qui nous permet de revoir les modifications du widget de commentaires, par client, à chaque version.
 
 Si nous trouvons des problèmes mineurs, nous mettrons à jour votre compte afin d'assurer le bon déroulement de notre version. Si nous constatons des changements majeurs qui cassent le produit, cela nous permet d'interrompre la version.
-
----

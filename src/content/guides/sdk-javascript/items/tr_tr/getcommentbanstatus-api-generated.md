@@ -23,5 +23,3 @@ Döndürür: [`GetCommentBanStatusResponse`](https://github.com/FastComments/fas
   const statusWithoutSso: GetCommentBanStatusResponse = await getCommentBanStatus(tenantId, commentId);
 })();
 [inline-code-end]
-
----

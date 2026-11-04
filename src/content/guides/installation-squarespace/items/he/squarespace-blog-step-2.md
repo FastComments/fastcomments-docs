@@ -31,5 +31,3 @@
     <div class="title">הדבק ושמור</div>
     <img class="screenshot-image" src="/images/installation-guides/squarespace-step-2-1-add-code-and-save.png" alt="הדבק ושמור" />
 </div>
-
----

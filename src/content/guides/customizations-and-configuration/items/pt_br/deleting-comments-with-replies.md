@@ -1,4 +1,3 @@
----
 Por padrão, os usuários podem excluir seus próprios comentários. Além disso, excluir seu comentário exclui automaticamente todos os comentários filhos e transitórios na thread. Esse comportamento também está ativo.
 
 Você pode restringir isso das seguintes maneiras:
@@ -10,5 +9,3 @@ Você pode restringir isso das seguintes maneiras:
 Isso pode ser configurado na seção `Comment Thread Deletion` na UI de Personalização do Widget.
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.comment-thread-deletion-mode']; selector = '.comment-thread-deletion-mode'; alt='Opções de exclusão de thread de comentários na UI de personalização do widget para anonimizar ou restringir exclusões com respostas'; title='Personalizar comportamento de exclusão para respostas' app-screenshot-end]
-
----

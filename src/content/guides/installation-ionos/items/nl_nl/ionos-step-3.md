@@ -1,4 +1,3 @@
----
 Nu hoeven we alleen nog maar onze site te publiceren en zijn we klaar.
 
 Ga terug naar de contenteditor door linksboven op `Content` te klikken:
@@ -21,5 +20,3 @@ Dat is alles! FastComments zou nu actief op je site moeten zijn. Je zou iets soo
     <div class="title">Klaar!</div>
     <img class="screenshot-image" src="/images/installation-guides/ionos-step-3-done.png" alt="Klaar!" />
 </div>
-
----

@@ -1,17 +1,14 @@
----
-You may get an authorization error, like the following:
+Вы можете получить ошибку авторизации, подобную следующей:
 
 <div class="screenshot white-bg">
-    <div class="title">Отсутствует конфигурация домена</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-webflow-step-5.png" alt="Отсутствует конфигурация домена" />
+    <div class="title">Конфигурация домена отсутствует</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-webflow-step-5.png" alt="Конфигурация домена отсутствует" />
 </div>
 
-This is because FastComments doesn't know it's supposed to allow your account to be used on this domain.
+Это происходит потому, что FastComments не знает, что вашему аккаунту разрешено использоваться на этом домене.
 
-In this case, the fix is simple. You just have to add your site to your FastComments.com account.
+В этом случае решение простое. Вам просто нужно добавить свой сайт в свой аккаунт FastComments.com.
 
-[Перейдите сюда, чтобы добавить сайт в ваш аккаунт.](https://fastcomments.com/auth/my-account/configure-domains)
+[Перейдите сюда, чтобы добавить свой сайт в свой аккаунт.](https://fastcomments.com/auth/my-account/configure-domains)
 
-Now you should have fast, live, commenting added to your site!
-
----
+Теперь на вашем сайте должны появиться быстрые живые комментарии!

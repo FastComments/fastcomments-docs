@@ -29,5 +29,3 @@
     <div class="title">Редактиране на редактора</div>
     <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-3-exit.png" alt="Редактиране на редактора" />
 </div>
-
----

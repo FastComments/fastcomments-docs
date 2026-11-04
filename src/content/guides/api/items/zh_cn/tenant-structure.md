@@ -1,9 +1,8 @@
-The `Tenant` 定义了一个 FastComments.com 客户。具有白标访问权限的租户可以通过 API 创建它们。白标租户
-不能创建其他白标租户（只允许一层嵌套）。
+`Tenant` 定义了一个 FastComments.com 客户。具有白标（white labeling）权限的租户可以通过 API 创建租户。白标租户不能创建其他白标租户（仅允许一级嵌套）。
 
-The structure for the `Tenant` object is as follows:
+`Tenant` 对象的结构如下：
 
-[inline-code-attrs-start title = '租户结构'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Tenant 结构'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 export enum SiteType {
     Unknown = 0,
@@ -17,7 +16,7 @@ export interface TenantDomainConfig {
     emailFromEmail?: string
     createdAt?: string,
     siteType?: FastCommentsSiteType, // 你可能想要 Unknown
-    logoSrc?: string, // 原始图像路径
+    logoSrc?: string, // 原始图片路径
     logoSrc100px?: string, // 为缩略图调整大小
     footerUnsubscribeURL?: string,
     emailHeaders?: Record<string, string>,
@@ -47,7 +46,7 @@ export interface Tenant {
     id: string
     name: string
     email?: string
-    signUpDate: number; // 由于“遗留”原因为 number
+    signUpDate: number; // 由于“历史遗留”原因，类型为 number
     packageId?: string | null
     paymentFrequency?: TenantPaymentFrequency
     billingInfoValid?: boolean
@@ -67,13 +66,13 @@ export interface Tenant {
     commentsRequireApproval?: boolean
     autoApproveCommentOnVerification?: boolean
     sendProfaneToSpam?: boolean
-    /** @readonly - 基于 packageId 计算。 **/
+    /** @readonly - 根据 packageId 计算。 **/
     hasFlexPricing?: boolean
     /** @readonly **/
     flexLastBilledAmount?: number
-    /** @readonly - 基于 packageId 计算。 **/
+    /** @readonly - 根据 packageId 计算。 **/
     hasAuditing?: boolean
-    /** 你可以在租户上存储一个键值对并用于查询。键不能包含 "." 或 "$"，或超过 100 个字符。值不能超过 2k 个字符。 **/
+    /** 你可以在租户中存储一个键值对，用于查询。键不能包含 "." 或 "$"，且长度不能超过 100 个字符。值的长度不能超过 2k 个字符。 **/
     meta?: Record<string, string | null>
 }
 [inline-code-end]

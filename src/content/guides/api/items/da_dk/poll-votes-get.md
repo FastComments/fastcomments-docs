@@ -1,12 +1,14 @@
 [api-resource-header-start name = 'PollVote'; route = 'GET /api/v1/poll-votes'; creditsCost = 1; api-resource-header-end]
 
-Lister de individuelle stemmer bag en afstemnings optælling, ældste først. Én kredit per 100 stemmer returneret.
+Lister de enkelte stemmer bag én afstemnings tællinger, ældste først. Én kredit pr. 100 returnerede stemmer.
 
-En afstemning tilhører en kommentar, så stemmer læses én afstemning ad gangen, og `commentId` er påkrævet. Indsnævr yderligere med `voterId` for at kontrollere, hvordan én person stemte, eller med `optionId` for at liste alle, der valgte en given mulighed.
+En afstemning hører til en kommentar, så stemmer læses én afstemning ad gangen, og `commentId` er påkrævet. Indsnævr yderligere
+med `voterId` for at se, hvordan én person stemte, eller med `optionId` for at liste alle, der valgte en given mulighed.
 
-Højst 1000 stemmer returneres pr. kald. Brug `skip` for at paginere videre.
+Højst 1000 stemmer returneres pr. kald. Brug `skip` til at bladre gennem flere.
 
-Afstemningens `privacy`-indstilling respekteres: stemmerne på en anonym afstemning kan ikke læses, og anmodningen fejler med `poll-anonymous`. Se `PollVote`-strukturen for detaljer.
+Afstemningens `privacy`-indstilling respekteres: stemmerne på en anonym afstemning kan ikke læses, og anmodningen fejler
+med `poll-anonymous`. Se `PollVote`-strukturen for detaljer.
 
 [inline-code-attrs-start title = 'PollVotes Get cURL Eksempel'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -14,7 +16,7 @@ curl --request GET \
   --url 'https://fastcomments.com/api/v1/poll-votes?tenantId=demo&API_KEY=DEMO_API_SECRET&commentId=comment-id'
 [inline-code-end]
 
-[inline-code-attrs-start title = 'PollVotes Get Anmodningsstruktur'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'PollVotes Get Forespørgselsstruktur'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface PollVotesGetQueryParams {
     tenantId: string
@@ -26,7 +28,7 @@ interface PollVotesGetQueryParams {
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'PollVotes Get Responsstruktur'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'PollVotes Get Svarstruktur'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface PollVotesGetResponse {
     status: 'success' | 'failed'
@@ -38,12 +40,13 @@ interface PollVotesGetResponse {
 }
 [inline-code-end]
 
-### Counting Votes Per Option
+### Tælling af stemmer pr. mulighed
 
-Du behøver ikke at lægge dem sammen for at få resultaterne – afstemningen indeholder sine egne optællinger. Læs afstemningen med `GET /api/v1/polls/:commentId` i stedet, og brug dette API når du har brug for at vide, hvem der har stemt.
+Du behøver ikke lægge disse sammen for at få resultaterne - afstemningen indeholder sine egne tællinger. Læs afstemningen med
+`GET /api/v1/polls/:commentId` i stedet, og brug denne API, når du har brug for at vide, hvem der stemte.
 
-### Every Poll On A Page
+### Alle afstemninger på en side
 
-Der findes ingen sideomfattende stemmeliste. For at rapportere om en hel side, hent dens kommentarer med `GET /api/v1/comments`, som returnerer hver kommentars afstemning og dens optællinger, og læs derefter stemmerne for de afstemninger, du er interesseret i.
-
----
+Der findes ingen sideomfattende stemmeliste. For at rapportere om en hel side, hent dens kommentarer med
+`GET /api/v1/comments`, som returnerer hver kommentars afstemning og dens tællinger, og læs derefter stemmerne for de
+afstemninger, du er interesseret i.

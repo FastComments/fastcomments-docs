@@ -1,13 +1,17 @@
-When users comment or vote, and they are not logged in, they will be asked to provide their email and username.
+Kada korisnici komentiraju ili glasaju, a nisu prijavljeni, bit će traženi da unesu svoju e-mail adresu i korisničko ime.
 
-In the case of anonymous commenting, sometimes it is desirable to define a default username to reduce the friction when commenting. This can be done from the Customization UI. Anonymous Commenting must be enabled first.
+U slučaju anonimnog komentiranja, ponekad je poželjno definirati zadano korisničko ime kako bi se smanjile prepreke
+prilikom komentiranja. To se može učiniti iz sučelja za prilagodbu. Prvo mora biti omogućeno anonimno komentiranje.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allow-anonymous-comments']; selector = '.default-username-label'; alt='Polje zadane korisničko ime koje se pojavljuje u sučelju za prilagodbu kada je anonimno komentiranje omogućeno'; title='Postavljanje zadane korisničko ime' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allow-anonymous-comments']; selector = '.default-username-label'; alt='Polje zadanog korisničkog imena koje se pojavljuje u sučelju za prilagodbu nakon što je omogućeno anonimno komentiranje'; title='Postavljanje zadanog korisničkog imena' app-screenshot-end]
 
-#### Dijeljenje zadane korisničko ime
+#### Dijeljenje zadanog korisničkog imena
 
-The default username is a shared display name, not an identity. A visitor who keeps the default and enters their email gets their own account, with the default shown as their public name. Any number of visitors can keep the same default, so "Anonymous" is never reported as already taken.
+Zadano korisničko ime je zajedničko ime za prikaz, a ne identitet. Posjetitelj koji zadrži zadano ime i unese svoju e-mail adresu
+dobiva vlastiti račun, s zadanim imenom prikazanim kao njegovo javno ime. Bilo koji broj posjetitelja može zadržati isto zadano ime,
+pa se "Anonymous" nikada ne prijavljuje kao zauzeto.
 
-Usernames that a visitor types themselves still have to be unique.
+Korisnička imena koja posjetitelj sam upiše i dalje moraju biti jedinstvena.
 
-If you would rather each visitor get a distinct name without having to think of one, see [Automatsko generiranje korisničkih imena](/guide-customizations-and-configuration.html#auto-generate-username).
+Ako biste radije željeli da svaki posjetitelj dobije jedinstveno ime bez potrebe da ga smišlja, pogledajte
+[Automatsko generiranje korisničkih imena](/guide-customizations-and-configuration.html#auto-generate-username).

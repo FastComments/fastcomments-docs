@@ -36,5 +36,3 @@
     <div class="title">Скачать тему</div>
     <img class="screenshot-image" src="/images/installation-guides/ghost-step-1-5-download.png" alt="Скачать тему" />
 </div>
-
----

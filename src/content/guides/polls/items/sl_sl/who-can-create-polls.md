@@ -1,4 +1,3 @@
----
 Ko so ankete omogočene, nastavitve **Kdo lahko ustvarja ankete** nadzorujejo, kdo vidi gumb ankete v orodni vrstici komentarjev:
 
 - **Samo skrbniki/moderatorji** (privzeto): samo skrbniki in moderatorji vašega spletnega mesta lahko priložijo anketo komentarju.

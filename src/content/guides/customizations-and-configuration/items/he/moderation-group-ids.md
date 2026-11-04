@@ -8,5 +8,3 @@
 יראו רק תגובות בדף `Moderate Comments` המשויכות לקבוצה(ות) שלהם.
 
 [code-example-start config = {moderationGroupIds: ['mxZAhjzdb', 'FT19nXbqA']}; linesToHighlight = [6, 7, 8, 9]; title = 'Specify Moderation Groups'; code-example-end]
-
----

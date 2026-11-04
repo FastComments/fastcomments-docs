@@ -3,7 +3,7 @@
 ```php
 use FastComments\Laravel\Facades\FastComments;
 
-// Admin-API (vereist API-sleutel)
+// Admin API (vereist API-sleutel)
 $comments = FastComments::admin()->getComments('tenant-id');
 
 // Publieke API
@@ -14,7 +14,7 @@ $ssoPayload = FastComments::sso()->forWidget();
 $token = FastComments::sso()->tokenFor($user);
 ```
 
-### Via Dependency-injectie
+### Via Dependency Injection
 
 ```php
 use FastComments\Laravel\FastCommentsManager;

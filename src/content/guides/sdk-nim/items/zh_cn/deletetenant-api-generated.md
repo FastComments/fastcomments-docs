@@ -1,4 +1,3 @@
----
 ## 参数
 
 | 名称 | 类型 | 必填 | 描述 |
@@ -19,5 +18,3 @@ let (respOpt, httpResp) = client.deleteTenant(tenantId = "my-tenant-123", id = "
 if respOpt.isSome:
   let emptyResp = respOpt.get()
 [inline-code-end]
-
----

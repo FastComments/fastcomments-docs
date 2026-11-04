@@ -1,4 +1,3 @@
----
 FastComments je lokalizirana platforma. Vsi naši widgeti, e-pošte in obvestila so lokalizirani.
 
 Lokalizirano pomeni, da prikažemo drugačen jezik in oblikovanje glede na lokacijo uporabnika
@@ -17,5 +16,3 @@ dostopa do pripomočka za komentarje z drugo lokalizacijo. To pomeni, da se njih
 samodejno posodobi in bodo prihodnja e-poštna sporočila poslana v tej lokalizaciji.
 
 To je mogoče nastaviti tudi ročno z vključitvijo `locale` v SSO payload.
-
----

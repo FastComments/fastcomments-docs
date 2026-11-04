@@ -37,5 +37,3 @@ try {
     print('Exception when calling DefaultApi->updateComment: $e\n');
 }
 [inline-code-end]
-
----

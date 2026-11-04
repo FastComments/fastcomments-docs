@@ -32,5 +32,3 @@ try {
     print('Exception when calling DefaultApi->deleteVote: $e\n');
 }
 [inline-code-end]
-
----

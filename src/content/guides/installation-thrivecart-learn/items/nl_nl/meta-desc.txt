@@ -1,3 +1,1 @@
----
 Voeg een commentaarsectie toe aan ThriveCart Learn+ cursussen met de aangepaste code‑instelling, zodat studenten vragen kunnen stellen binnen elke les.
----

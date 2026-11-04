@@ -36,5 +36,3 @@ Selvom vi teknisk set ikke ændrer temaet, klik på `Change Theme` nederst til v
     <div class="title">Download tema</div>
     <img class="screenshot-image" src="/images/installation-guides/ghost-step-1-5-download.png" alt="Download tema" />
 </div>
-
----

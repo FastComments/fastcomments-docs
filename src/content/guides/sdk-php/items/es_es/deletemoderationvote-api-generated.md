@@ -44,5 +44,3 @@ try {
     echo 'Exception when calling ModerationApi->deleteModerationVote: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

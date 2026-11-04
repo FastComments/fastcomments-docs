@@ -1,4 +1,3 @@
----
 U slučaju da je potrebno premestiti podatke, FastComments pruža alat za samostalno premeštanje komentara između stranica i članaka.
 
 Evo kako izgleda forma za kopiranje komentara:
@@ -22,5 +21,3 @@ Da bismo odlučili gde da premestimo komentare, potrebno je da znamo ciljni `URL
 #### WordPress
 
 Ako koristite WordPress, na primer biste uneli ID‑ove članaka u polja To/From `URL ID` u alatu za migraciju, umesto URL‑a.
-
----

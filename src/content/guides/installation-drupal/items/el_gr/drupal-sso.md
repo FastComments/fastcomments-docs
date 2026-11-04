@@ -19,5 +19,3 @@ FastComments ενσωματώνεται στο σύστημα χρηστών τ�
 <sup>(Προαιρετικό)</sup> Προσθέστε τους διαχειριστές σας στους [Χρήστες & Διαχειριστές](https://fastcomments.com/auth/my-account/users) και τους συντονιστές στους [Συντονιστές Σχολίων](https://fastcomments.com/auth/my-account/moderate-comments/moderators) για να βελτιώσετε την εμπειρία τους και να ενεργοποιήσετε την καταγραφή στατιστικών για τους συντονιστές.
 
 Για μια πιο αναλυτική περιγραφή του πώς λειτουργεί το SSO, δείτε την [ενότητα SSO](/guide-customizations-and-configuration.html#sso) της τεκμηρίωσης προσαρμογών.
-
----

@@ -1,12 +1,12 @@
-Like count for a page, optionally with the users who liked it.
+Број лајкова за страницу, опционо са корисницима који су лајковали.
 
 ## Параметри
 
-| Име | Тип | Локација | Обавезно | Опис |
+| Назив | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| urlId | string | query | Yes |  |
-| includeUserInfo | string | query | No | "public" изоставља кориснике са приватним профилима, "include-private" их укључује. |
+| tenantId | string | query | Да |  |
+| urlId | string | query | Да |  |
+| includeUserInfo | string | query | Не | „public" изоставља кориснике са приватним профилима, „include-private" их укључује. |
 
 ## Одговор
 
@@ -14,7 +14,7 @@ Like count for a page, optionally with the users who liked it.
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример getPageLikes'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример за getPageLikes'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Import classes:
 import com.fastcomments.invoker.ApiClient;
@@ -38,7 +38,7 @@ public class Example {
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
-    PageReactIncludeUserInfo includeUserInfo = PageReactIncludeUserInfo.fromValue("public"); // PageReactIncludeUserInfo | \"public\" изоставља кориснике са приватним профилима, \"include-private\" их укључује.
+    PageReactIncludeUserInfo includeUserInfo = PageReactIncludeUserInfo.fromValue("public"); // PageReactIncludeUserInfo | „public" изоставља кориснике са приватним профилима, „include-private" их укључује.
     try {
       GetPageLikesAPIResponse result = apiInstance.getPageLikes(tenantId, urlId)
             .includeUserInfo(includeUserInfo)

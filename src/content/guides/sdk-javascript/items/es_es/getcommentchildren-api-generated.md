@@ -25,5 +25,3 @@ async function fetchChildren() {
 
 fetchChildren();
 [inline-code-end]
-
----

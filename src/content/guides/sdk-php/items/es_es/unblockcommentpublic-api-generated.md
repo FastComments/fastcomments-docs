@@ -38,5 +38,3 @@ try {
     echo 'Excepción al llamar a PublicApi->unBlockCommentPublic: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

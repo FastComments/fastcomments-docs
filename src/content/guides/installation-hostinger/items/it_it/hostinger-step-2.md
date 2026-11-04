@@ -48,5 +48,3 @@ Ora trascina il widget per impostare la dimensione desiderata; vedrai che appare
 </div>
 
 ...e ora visualizza l'anteprima e salva!
-
----

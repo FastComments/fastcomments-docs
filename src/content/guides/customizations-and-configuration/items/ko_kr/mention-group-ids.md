@@ -5,5 +5,3 @@
 지정하면 `@` 문자를 입력한 후 자동 완성에는 다른 그룹에 속한 사용자만 제공됩니다.
 
 [code-example-start config = {mentionGroupIds: ['yxZAhjzda', 'QT19nXbqB']}; linesToHighlight = [6, 7, 8, 9]; title = 'Limit Groups for Mentions'; code-example-end]
-
----

@@ -6,5 +6,3 @@ FastComments se integriše sa Canvas LMS preko LTI 1.3 standarda. Ovo dodaje kom
 </div>
 
 Komentari se pojavljuju automatski ispod zadataka, a instruktori mogu ugraditi FastComments u Pages, Quizzes, and Announcements putem Rich Content Editora. SSO se automatski rešava kroz LTI launch - studenti komentarišu koristeći svoje Canvas naloge bez zasebnog prijavljivanja. Integracija podržava nitovane komentare, chat u realnom vremenu sa isticanjem teksta, i automatsko mapiranje uloga.
-
----

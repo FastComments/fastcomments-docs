@@ -21,5 +21,3 @@ const ssoToken: string = "sso_token_987";
 const fullResponse: UserReactsResponse = await getUserReactsPublic(tenantId, postIds, ssoToken);
 const minimalResponse: UserReactsResponse = await getUserReactsPublic(tenantId);
 [inline-code-end]
-
----

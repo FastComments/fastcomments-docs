@@ -1,4 +1,3 @@
----
 Identifica la credencial en uso: el inquilino al que pertenece y, para tokens OAuth, el usuario que la autorizó.  
 Las integraciones usan esto para probar una conexión y etiquetarla.
 
@@ -24,5 +23,3 @@ Devuelve: [`GetMeResponse`](https://github.com/FastComments/fastcomments-sdk-js/
   const status: APIStatus = me.status;
 })();
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 ## Parametry
 
 | Nazwa | Typ | Wymagane | Opis |
@@ -30,4 +29,3 @@ let (voteRespOpt, httpResp) = client.voteComment(
 if voteRespOpt.isSome:
   let voteResp = voteRespOpt.get()
 [inline-code-end]
----

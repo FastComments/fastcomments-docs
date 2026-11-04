@@ -82,5 +82,3 @@ Copia il seguente codice e incollalo nella sezione `Body` delle impostazioni del
 - Ogni pagina avrà il proprio thread di commenti univoco basato sul percorso URL
 - Assicurati di sostituire `"demo"` con il tuo tenant ID reale del tuo account FastComments
 - Il widget gestisce automaticamente il caricamento dinamico delle pagine di Super.so
-
----

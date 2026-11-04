@@ -6,5 +6,3 @@ Ensuite, nous devons ouvrir les paramètres `Advanced` :
 </div>
 
 Nous allons ajouter notre code dans la section `Tracking Code`. Allez dans cette section et cliquez sur `Footer Code`.
-
----

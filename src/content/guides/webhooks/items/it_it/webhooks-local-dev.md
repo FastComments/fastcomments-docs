@@ -33,5 +33,3 @@ Una volta validato, premi `Save`.
 ### Passo 4: Aggiungi un commento
 
 Ora puoi aggiungere, modificare o eliminare commenti e dovresti vedere che chiamiamo la tua macchina di sviluppo locale con gli eventi, usando la tua chiave API di test. Potrebbe esserci un ritardo fino a 30 secondi perché gli eventi raggiungano la tua macchina.
-
----

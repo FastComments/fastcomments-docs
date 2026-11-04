@@ -1,26 +1,21 @@
-Past commenters on the page who are NOT currently online. Sorted by displayName.  
-頁面上過去的評論者（目前未在線），依 displayName 排序。
+頁面上目前不在線上的過去留言者。按 displayName 排序。
+在用完 /users/online 之後使用此項目來渲染「成員」區塊。
+基於 commenterName 的游標分頁：伺服器透過 $gt 從 afterName 開始沿著部分索引 {tenantId, urlId, commenterName} 向前走，沒有 $skip 的成本。
 
-Use this after exhausting /users/online to render a "Members" section.  
-在耗盡 /users/online 後，用於呈現「Members」區段。
+## 參數
 
-Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName} index from afterName forward via $gt, no $skip cost.  
-在 commenterName 上的游標分頁：伺服器從 afterName 之後的 {tenantId, urlId, commenterName} 索引走訪，使用 $gt，無 $skip 成本。
-
-## Parameters
-
-| 名稱 | 類型 | 必填 | 描述 |
-|------|------|------|------|
+| 名稱 | 類型 | 必填 | 說明 |
+|------|------|----------|-------------|
 | tenant_id | String | 是 |  |
 | url_id | String | 是 |  |
 | after_name | String | 否 |  |
 | after_user_id | String | 否 |  |
 
-## Response
+## 回應
 
-返回：[`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/page_users_offline_response.rs)
+回傳：[`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/page_users_offline_response.rs)
 
-## Example
+## 範例
 
 [inline-code-attrs-start title = 'get_offline_users 範例'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

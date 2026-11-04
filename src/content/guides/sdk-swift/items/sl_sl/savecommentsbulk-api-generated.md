@@ -37,5 +37,3 @@ DefaultAPI.saveCommentsBulk(tenantId: tenantId, createCommentParams: createComme
     }
 }
 [inline-code-end]
-
----

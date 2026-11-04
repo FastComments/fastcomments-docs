@@ -14,4 +14,3 @@ SDK, `CommentWidgetConfig` sınıfı aracılığıyla birçok yapılandırma se�
 | `readonly` | Yorum yapmayı devre dışı bırakır ancak yorumları gösterir |
 | `disableVoting` | Oy verme işlevini devre dışı bırakır |
 | `disableLiveCommenting` | Gerçek zamanlı güncellemeleri devre dışı bırakır |
----

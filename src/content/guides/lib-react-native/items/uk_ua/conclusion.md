@@ -8,5 +8,3 @@
 ## Участь
 
 Внески вітаються! Будь ласка, відвідайте [репозиторій на GitHub](https://github.com/FastComments/fastcomments-react-native) для отримання інструкцій щодо внесків.
-
----

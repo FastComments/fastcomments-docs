@@ -1,17 +1,17 @@
-Bulk user info for a tenant. Given userIds, return display info from User / SSOUser.  
-Used by the comment widget to enrich users that just appeared via a presence event.  
-No page context: privacy is enforced uniformly (private profiles are masked).
+租戶的使用者批次資訊。給定 userIds,從 User / SSOUser 回傳顯示資訊。
+由留言小工具使用,以豐富透過 presence 事件剛出現的使用者。
+無頁面上下文:隱私一律強制執行(私人個人檔案會被遮蔽)。
 
-## Parameters
+## 參數
 
-| Name | Type | Location | Required | Description |
+| 名稱 | 類型 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| ids | string | query | Yes | 以逗號分隔的 userIds。 |
+| tenantId | string | path | 是 |  |
+| ids | string | query | 是 | 以逗號分隔的 userIds。 |
 
-## Response
+## 回應
 
-返回：[`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PageUsersInfoResponse.php)
+回傳:[`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PageUsersInfoResponse.php)
 
 ## 範例
 
@@ -23,8 +23,8 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // 如果您想使用自訂的 HTTP 客戶端，傳入實作 `GuzzleHttp\ClientInterface` 的客戶端。
-    // 這是可選的，預設會使用 `GuzzleHttp\Client`。
+    // 如果您想使用自訂的 http client,請傳入實作 `GuzzleHttp\ClientInterface` 的 client。
+    // 這是選填,預設會使用 `GuzzleHttp\Client`。
     new GuzzleHttp\Client()
 );
 

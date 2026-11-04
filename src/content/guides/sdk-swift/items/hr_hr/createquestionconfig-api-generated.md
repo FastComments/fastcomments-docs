@@ -29,5 +29,3 @@ DefaultAPI.createQuestionConfig(tenantId: tenantId, createQuestionConfigBody: cr
     }
 }
 [inline-code-end]
-
----

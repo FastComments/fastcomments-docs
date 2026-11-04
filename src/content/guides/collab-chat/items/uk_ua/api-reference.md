@@ -200,5 +200,3 @@ curl -X DELETE "https://fastcomments.com/comment-collab-chats/demo/conv789" \
 ### Відстеження використання
 
 Створення розмов збільшує ваш рахунок використання `conversationCreateCount`. Уся активність синхронізації через WebSocket збільшує `pubSubMessageCount` та `pubSubBandwidth`. Ви можете відстежувати ці метрики на панелі керування FastComments у розділі аналітики використання.
-
----

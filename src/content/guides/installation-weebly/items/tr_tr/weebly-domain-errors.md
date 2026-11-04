@@ -1,4 +1,3 @@
----
 Aşağıdaki gibi bir yetkilendirme hatası alabilirsiniz:
 
 <div class="screenshot white-bg">
@@ -11,5 +10,3 @@ Bu durumun nedeni FastComments'ın hesabınızın bu etki alanında kullanılmas
 Bu durumda çözüm basittir. Sitenizi FastComments.com hesabınıza eklemeniz yeterlidir.
 
 [Sitenizi hesabınıza eklemek için buraya gidin.](https://fastcomments.com/auth/my-account/configure-domains)
-
----

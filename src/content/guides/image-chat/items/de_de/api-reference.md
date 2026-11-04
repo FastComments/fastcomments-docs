@@ -1,9 +1,8 @@
----
 ### API-Übersicht
 
-Image Chat stellt drei REST-API-Endpunkte bereit, um Bild-Konversationen programmgesteuert zu verwalten. Über diese Endpunkte können Sie Marker abrufen, erstellen und löschen, ohne das Browser-Widget zu verwenden.
+Image Chat bietet drei REST-API-Endpunkte zur programmgesteuerten Verwaltung von Bild-Konversationen. Diese Endpunkte ermöglichen es Ihnen, Marker abzurufen, zu erstellen und zu löschen, ohne das Browser-Widget zu verwenden.
 
-Alle API-Endpunkte erfordern eine Authentifizierung und folgen den Standardmustern der FastComments-API. Dies sind öffentliche Endpunkte, die sich über Browser-Cookies authentifizieren und nicht über API-Schlüssel.
+Alle API-Endpunkte erfordern eine Authentifizierung und folgen den standardmäßigen FastComments-API-Mustern. Dies sind öffentliche Endpunkte, die sich über Browser-Cookies authentifizieren, nicht über API-Schlüssel.
 
 ### Basis-URL
 
@@ -19,32 +18,32 @@ Diese Endpunkte authentifizieren Benutzer über Browser-Cookies. Sie verwenden k
 
 ### Alle Konversationen abrufen
 
-Alle Bild-Konversationen für ein bestimmtes Bild abrufen.
+Ruft alle Bild-Konversationen für ein bestimmtes Bild ab.
 
-#### Endpoint
+#### Endpunkt
 
 ```
 GET /comment-image-chats/:tenantId?urlId=<urlId>
 ```
 
-#### Parameters
+#### Parameter
 
-`tenantId` (Pfadparameter, erforderlich) ist Ihre FastComments Tenant-ID.
+`tenantId` (Pfadparameter, erforderlich) ist Ihre FastComments-Tenant-ID.
 
-`urlId` (Query-Parameter, erforderlich) ist die Bildkennung, für die Sie Konversationen abrufen möchten.
+`urlId` (Abfrageparameter, erforderlich) ist der Bildbezeichner, für den Sie Konversationen abrufen möchten.
 
-#### Response
+#### Antwort
 
-Die Antwort enthält den API-Status, Informationen zur aktuellen Benutzersitzung (falls authentifiziert), ein Array von Konversationen mit ihren IDs, URLs und X/Y-Koordinaten, einen bereinigten URL-Identifier, ein Flag, das angibt, ob der aktuelle Benutzer Site-Admin oder Moderator ist, sowie WebSocket-Verbindungsdetails für die Live-Synchronisation einschließlich `tenantIdWS`, `urlIdWS` und `userIdWS`.
+Die Antwort enthält den API-Status, Informationen zur aktuellen Benutzersitzung (falls authentifiziert), ein Array von Konversationen mit ihren IDs, URLs und X/Y-Koordinaten, einen bereinigten URL-Bezeichner, ein Flag, das angibt, ob der aktuelle Benutzer ein Site-Administrator oder Moderator ist, sowie WebSocket-Verbindungsdetails für die Live-Synchronisierung, einschließlich `tenantIdWS`, `urlIdWS` und `userIdWS`.
 
-#### Example Request
+#### Beispielanfrage
 
 ```bash
 curl "https://fastcomments.com/comment-image-chats/demo?urlId=my-product-image" \
   --cookie "your-session-cookie"
 ```
 
-#### Example Response
+#### Beispielantwort
 
 ```json
 {
@@ -77,41 +76,41 @@ curl "https://fastcomments.com/comment-image-chats/demo?urlId=my-product-image" 
 
 ### Konversation erstellen
 
-Erstellen Sie eine neue Bild-Konversation für eine bestimmte Position auf einem Bild.
+Erstellt eine neue Bild-Konversation für eine bestimmte Position auf einem Bild.
 
-#### Endpoint
+#### Endpunkt
 
 ```
 POST /comment-image-chats/:tenantId
 ```
 
-#### Parameters
+#### Parameter
 
-`tenantId` (Pfadparameter, erforderlich) ist Ihre FastComments Tenant-ID.
+`tenantId` (Pfadparameter, erforderlich) ist Ihre FastComments-Tenant-ID.
 
-Der Request-Body muss JSON sein und die folgenden erforderlichen Felder enthalten.
+Der Anfragekörper muss JSON sein und diese erforderlichen Felder enthalten.
 
-`urlId` (string, erforderlich) ist die Basisseitenkennung.
+`urlId` (string, erforderlich) ist der Basis-Seitenbezeichner.
 
-`windowUrlId` (string, erforderlich) ist die URL kombiniert mit der Bildquelle und den Koordinaten, zum Beispiel `my-page:/images/photo.jpg:25.5:30.2`.
+`windowUrlId` (string, erforderlich) ist die URL, kombiniert mit der Bildquelle und den Koordinaten, zum Beispiel `my-page:/images/photo.jpg:25.5:30.2`.
 
 `pageTitle` (string, erforderlich) ist der Titel der Seite.
 
-`src` (string, erforderlich) ist die Bildquelle (URL).
+`src` (string, erforderlich) ist die Bildquellen-URL.
 
-`x` (number, erforderlich) ist die X-Koordinate als Prozentsatz (0–100).
+`x` (number, erforderlich) ist die X-Koordinate als Prozentsatz (0-100).
 
-`y` (number, erforderlich) ist die Y-Koordinate als Prozentsatz (0–100).
+`y` (number, erforderlich) ist die Y-Koordinate als Prozentsatz (0-100).
 
 `createdFromCommentId` (string, erforderlich) ist die ID des Kommentars, der diesen Chat initiiert hat.
 
-`broadcastId` (string, erforderlich) ist eine UUID für die Live-Synchronisation, um Echo-Effekte zu verhindern.
+`broadcastId` (string, erforderlich) ist eine UUID für die Live-Synchronisierung, um Echo-Effekte zu verhindern.
 
-#### Response
+#### Antwort
 
 Die Antwort enthält den API-Status und die ID der neu erstellten Konversation.
 
-#### Example Request
+#### Beispielanfrage
 
 ```bash
 curl -X POST "https://fastcomments.com/comment-image-chats/demo" \
@@ -129,7 +128,7 @@ curl -X POST "https://fastcomments.com/comment-image-chats/demo" \
   }'
 ```
 
-#### Example Response
+#### Beispielantwort
 
 ```json
 {
@@ -140,23 +139,23 @@ curl -X POST "https://fastcomments.com/comment-image-chats/demo" \
 
 ### Konversation löschen
 
-Löscht eine vorhandene Bild-Konversation. Dieser Endpunkt erfordert Admin- oder Moderatorrechte, oder die Konversation muss vom authentifizierten Benutzer erstellt worden sein.
+Löscht eine bestehende Bild-Konversation. Dieser Endpunkt erfordert Administrator- oder Moderator-Berechtigungen, oder die Konversation muss vom authentifizierten Benutzer erstellt worden sein.
 
-#### Endpoint
+#### Endpunkt
 
 ```
 DELETE /comment-image-chats/:tenantId/:chatId
 ```
 
-#### Parameters
+#### Parameter
 
-`tenantId` (Pfadparameter, erforderlich) ist Ihre FastComments Tenant-ID.
+`tenantId` (Pfadparameter, erforderlich) ist Ihre FastComments-Tenant-ID.
 
 `chatId` (Pfadparameter, erforderlich) ist die ID der zu löschenden Konversation.
 
-`broadcastId` (Request-Body, erforderlich) ist eine UUID für die Live-Synchronisation.
+`broadcastId` (Anfragekörper, erforderlich) ist eine UUID für die Live-Synchronisierung.
 
-#### Example Request
+#### Beispielanfrage
 
 ```bash
 curl -X DELETE "https://fastcomments.com/comment-image-chats/demo/conv789" \
@@ -167,7 +166,7 @@ curl -X DELETE "https://fastcomments.com/comment-image-chats/demo/conv789" \
   }'
 ```
 
-#### Example Response
+#### Beispielantwort
 
 ```json
 {
@@ -177,19 +176,19 @@ curl -X DELETE "https://fastcomments.com/comment-image-chats/demo/conv789" \
 
 ### Koordinatensystem
 
-Die X- und Y-Koordinaten werden als Prozentsätze der Bilddimensionen gespeichert. X repräsentiert die horizontale Position vom linken Rand (0 = linker Rand, 100 = rechter Rand). Y repräsentiert die vertikale Position vom oberen Rand (0 = oberer Rand, 100 = unterer Rand).
+Die X- und Y-Koordinaten werden als Prozentsätze der Bildabmessungen gespeichert. X repräsentiert die horizontale Position vom linken Rand (0 = linker Rand, 100 = rechter Rand). Y repräsentiert die vertikale Position vom oberen Rand (0 = oberer Rand, 100 = unterer Rand).
 
-Diese Prozentwerte können Dezimalstellen für Genauigkeit enthalten. Zum Beispiel bedeutet x: 25.5, dass es 25,5 % vom linken Rand des Bildes entfernt ist.
+Diese Prozentwerte können Dezimalstellen für Präzision enthalten. Zum Beispiel bedeutet x: 25.5 25,5 % vom linken Rand des Bildes.
 
 ### Ratenbegrenzung
 
-Diese Endpunkte unterliegen der standardmäßigen FastComments-API-Ratenbegrenzung. Die Rate-Limit-Middleware wird pro Tenant angewendet, um Missbrauch zu verhindern und gleichzeitig normale Nutzungsmuster zuzulassen.
+Diese Endpunkte unterliegen der standardmäßigen FastComments-API-Ratenbegrenzung. Die Ratenbegrenzungs-Middleware gilt pro Tenant, um Missbrauch zu verhindern und gleichzeitig normale Nutzungsmuster zu ermöglichen.
 
 ### Fehlerantworten
 
-Alle Endpunkte geben standardmäßige HTTP-Statuscodes zurück. Eine 400-Antwort weist auf ungültige Anfrageparameter hin. Eine 401-Antwort bedeutet, dass die Authentifizierung fehlgeschlagen ist. Eine 403-Antwort zeigt unzureichende Berechtigungen an. Eine 404-Antwort bedeutet, dass die Konversation nicht gefunden wurde. Eine 429-Antwort zeigt an, dass das Rate-Limit überschritten wurde.
+Alle Endpunkte geben standardmäßige HTTP-Statuscodes zurück. Eine 400-Antwort zeigt ungültige Anfrageparameter an. Eine 401-Antwort bedeutet, dass die Authentifizierung fehlgeschlagen ist. Eine 403-Antwort zeigt unzureichende Berechtigungen an. Eine 404-Antwort bedeutet, dass die Konversation nicht gefunden wurde. Eine 429-Antwort zeigt an, dass die Ratenbegrenzung überschritten wurde.
 
-Fehlerantworten enthalten einen JSON-Body mit Details:
+Fehlerantworten enthalten einen JSON-Körper mit Details:
 
 ```json
 {
@@ -200,6 +199,4 @@ Fehlerantworten enthalten einen JSON-Body mit Details:
 
 ### Nutzungsverfolgung
 
-Das Erstellen von Konversationen erhöht Ihre Nutzungsmetrik `conversationCreateCount`. Alle WebSocket-Synchronisationsaktivitäten erhöhen `pubSubMessageCount` und `pubSubBandwidth`. Sie können diese Metriken in Ihrem FastComments-Dashboard unter den Nutzungs-Analytics überwachen.
-
----
+Das Erstellen von Konversationen erhöht Ihre Nutzungsmetrik `conversationCreateCount`. Die gesamte WebSocket-Synchronisierungsaktivität erhöht `pubSubMessageCount` und `pubSubBandwidth`. Sie können diese Metriken in Ihrem FastComments-Dashboard unter Nutzungsanalysen überwachen.

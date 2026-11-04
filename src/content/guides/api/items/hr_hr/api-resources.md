@@ -15,5 +15,3 @@ Preporučujemo da najprije pročitate dokumentaciju za Pages, kako biste smanjil
 ### Webhookovi
 
 Pretplate na webhookove imaju svoj vodič. `POST`, `GET` i `DELETE /api/v1/webhooks`, te `GET /api/v1/webhooks/sample-payloads`, dokumentirani su pod [Managing Subscriptions via API](/guide-webhooks.html#webhooks-api-subscriptions), a strukture događaja pod [Webhook Structures](/guide-webhooks.html#webhooks-structures).
-
----

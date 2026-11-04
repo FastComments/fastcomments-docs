@@ -93,5 +93,3 @@ Zdaj prilepimo našo kodo v nogi:
 </div>
 
 To je vse!
-
----

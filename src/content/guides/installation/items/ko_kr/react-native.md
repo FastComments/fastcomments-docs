@@ -47,5 +47,3 @@ EU에 있는 경우, `region` 파라미터를 설정해야 합니다:
 [inline-code-end]
 
 React Native 컴포넌트가 지원하는 구성은 <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">여기</a>에서 확인할 수 있습니다.
-
----

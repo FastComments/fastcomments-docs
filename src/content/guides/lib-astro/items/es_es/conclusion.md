@@ -1,4 +1,3 @@
----
 ## ¿Necesitas ayuda?
 
 Si encuentras algún problema o tienes preguntas sobre la biblioteca Astro, por favor:
@@ -9,5 +8,3 @@ Si encuentras algún problema o tienes preguntas sobre la biblioteca Astro, por 
 ## Contribuciones
 
 ¡Las contribuciones son bienvenidas! Por favor visita el [repositorio de GitHub](https://github.com/FastComments/fastcomments-astro) para las directrices de contribución.
-
----

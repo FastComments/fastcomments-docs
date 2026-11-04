@@ -1,5 +1,3 @@
----
-
 ## Parametri
 
 | Ime | Tip | Obvezno | Opis |
@@ -29,5 +27,3 @@ api->updateUserBadge(tenantId, userId, params)
         std::cerr << "Error updating badge: " << e.what() << "\n";
     });
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 ## Parametreler
 
 | Ad | Tür | Konum | Gerekli | Açıklama |
@@ -31,5 +30,3 @@ DefaultAPI.getCachedNotificationCount(tenantId: tenantId, id: id) { (response, e
     }
 }
 [inline-code-end]
-
----

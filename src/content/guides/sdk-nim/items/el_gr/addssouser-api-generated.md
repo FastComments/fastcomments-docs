@@ -1,4 +1,3 @@
----
 ## Παράμετροι
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
@@ -18,5 +17,3 @@ let (optResp, httpResp) = client.addSSOUser(tenantId = "my-tenant-123", createAP
 if optResp.isSome:
   let userResp = optResp.get()
 [inline-code-end]
-
----

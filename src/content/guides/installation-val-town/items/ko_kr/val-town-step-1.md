@@ -1,4 +1,4 @@
-The widget is a script tag and a container element, so it drops into whatever your val already renders. This example uses Hono JSX, which is what Val Town's HTTP templates use.
+위젯은 script 태그와 컨테이너 요소로 구성되어 있으므로, val이 이미 렌더링하는 무엇이든 손쉽게 삽입할 수 있습니다. 이 예제는 Val Town의 HTTP 템플릿에서 사용하는 Hono JSX를 사용합니다.
 
 [inline-code-attrs-start title = 'HTTP val의 댓글 위젯'; type='javascript' inline-code-attrs-end]
 [inline-code-start]
@@ -37,17 +37,17 @@ app.get("/:slug", (c) => {
 export default app.fetch;
 [inline-code-end]
 
-## 배포 전에 urlId 선택하기
+## 배포 전에 urlId를 정하세요
 
-`urlId`는 댓글이 어느 스레드에 달릴지를 결정합니다. 이를 설정하지 않으면 현재 페이지 URL을 정리한 버전이 기본값으로 사용되는데, 이는 Val Town에서 변하는 바로 그 요소입니다: 서브도메인을 획득하기 전까지 val은 긴 `*.web.val.run` 호스트명을 가지고, 브랜치는 각각 고유한 URL을 가지며, 페이지 이름을 바꾸면 경로가 바뀝니다. 각 변형은 조용히 별도의 빈 스레드가 되며, 그 결과는 “내 댓글이 사라졌다”는 현상으로 나타납니다.
+`urlId`는 댓글이 어느 스레드에 속하는지 결정합니다. 설정하지 않으면 현재 페이지 URL을 정리한 버전이 기본값으로 사용되는데, 이것이 바로 Val Town에서 변경되는 부분입니다: 서브도메인을 등록하기 전까지 val은 긴 `*.web.val.run` 호스트명을 가지며, 브랜치마다 별도의 URL이 생기고, 페이지 이름을 바꾸면 경로가 달라집니다. 이러한 변화마다 조용히 별개의 빈 스레드가 만들어지고, 그 결과 "내 댓글이 사라졌다"는 증상으로 나타납니다.
 
-위와 같이 게시물 슬러그나 데이터베이스 ID와 같이 여러분이 제어할 수 있는 안정적인 값으로 설정하세요. 또한 `url`을 전달하면 알림 이메일 및 관리 도구가 실제 페이지로 연결될 수 있습니다.
+위 예제처럼 게시글 슬러그나 데이터베이스 id처럼 여러분이 관리하는 안정적인 값으로 설정하세요. `url`도 함께 전달하면 알림 이메일과 관리 도구가 실제 페이지로 연결될 수 있습니다.
 
 ## JavaScript 없이 댓글 유지하기
 
-FastComments는 전체 스레드를 서버 측에서 렌더링하므로, val은 이를 `<noscript>` 블록에 삽입할 수 있습니다:
+FastComments는 전체 스레드를 서버 측에서 렌더링하므로, val에서 `<noscript>` 블록에 넣을 수 있습니다:
 
-[inline-code-attrs-start title = 'JavaScript 없는 대체 방법'; type='html' inline-code-attrs-end]
+[inline-code-attrs-start title = 'JavaScript 없는 대체 방식'; type='html' inline-code-attrs-end]
 [inline-code-start]
 <noscript>
   <iframe src="https://fastcomments.com/ssr/comments?tenantId=demo&urlId=POST_SLUG&url=PAGE_URL"
@@ -56,4 +56,4 @@ FastComments는 전체 스레드를 서버 측에서 렌더링하므로, val은 
 </noscript>
 [inline-code-end]
 
-매개변수를 URL 인코딩하세요. 서버 측 버전은 익명 및 로그인 댓글, SSO, 그리고 중첩 답글을 지원합니다.
+파라미터는 URL 인코딩하세요. 서버 측 버전은 익명 및 로그인 댓글 작성, SSO, 중첩 답글을 지원합니다.

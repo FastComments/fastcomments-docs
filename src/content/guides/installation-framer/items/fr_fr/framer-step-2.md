@@ -38,5 +38,3 @@ Changeons maintenant le type de widget `Embed` en `HTML`:
 </div>
 
 Vous êtes maintenant prêt pour l'extrait de code FastComments Framer à l'étape suivante.
-
----

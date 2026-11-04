@@ -6,5 +6,3 @@ FastComments dodaje wątkowe komentarze do Twoich kursów w Canvas. Na stronie p
 </div>
 
 Komentarze są przypisane do każdej strony kursu lub linku do zasobu, dzięki czemu dyskusje pozostają uporządkowane według strony, zadania lub modułu.
-
----

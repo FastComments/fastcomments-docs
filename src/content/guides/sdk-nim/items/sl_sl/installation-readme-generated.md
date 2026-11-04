@@ -1,23 +1,24 @@
-### Using Nimble
+### Uporaba Nimble
 
 ```bash
 nimble install fastcomments
 ```
 
-### Building from Source
+### Gradnja iz izvorne kode
 
 ```bash
 nimble build
 ```
 
-### Library Contents
+### Vsebina knjižnice
 
-Ta knjižnica vsebuje ustvarjen API odjemalec in SSO pripomočke, ki olajšajo delo z API-jem.
+Ta knjižnica vsebuje generiranega odjemalca API in pripomočke SSO, ki olajšajo delo z API-jem.
 
-- [API Client Library Docs](https://github.com/FastComments/fastcomments-nim/blob/master/client/README.md)
+- [Dokumentacija knjižnice odjemalca API](https://github.com/FastComments/fastcomments-nim/blob/master/client/README.md)
 
-### Public vs Secured APIs
+### Javni v primerjavi z zaščitenimi API-ji
 
-Za API odjemalca obstajajo trije API moduli, `api_default`, `api_public` in `api_moderation`. `api_default` vsebuje metode, ki zahtevajo vaš API ključ, `api_public` vsebuje klice API, ki jih je mogoče izvesti neposredno iz brskalnika/mobilne naprave/ipd. brez avtentikacije. Modul `api_moderation` vsebuje metode za nadzorno ploščo moderatorjev.
+Za odjemalca API obstajajo trije moduli API: `api_default`, `api_public` in `api_moderation`. Modul `api_default` vsebuje metode, ki zahtevajo vaš API ključ, modul `api_public` pa vsebuje klice API,
+ki jih je mogoče izvesti neposredno iz brskalnika/mobilne naprave/idr. brez overjanja. Modul `api_moderation` vsebuje metode za nadzorno ploščo moderatorja.
 
-Modul `api_moderation` ponuja obsežen nabor API-jev za živo in hitro moderiranje. Vsaka metoda `api_moderation` sprejme parameter `sso` in lahko overi prek SSO ali piškotka seje FastComments.com.
+Modul `api_moderation` ponuja obsežen nabor živih in hitrih API-jev za moderiranje. Vsaka metoda `api_moderation` sprejme parameter `sso` in se lahko overi prek SSO ali piškotka seje FastComments.com.

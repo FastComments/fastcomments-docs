@@ -178,5 +178,3 @@ Vous pouvez initialiser Collab Chat sur plusieurs sections distinctes de votre p
     });
 </script>
 [inline-code-end]
-
----

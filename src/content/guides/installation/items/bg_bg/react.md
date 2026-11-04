@@ -35,5 +35,3 @@ class Example extends Component {
 [inline-code-end]
 
 Можете да намерите конфигурацията, която компонентът за React поддържа <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">тук</a>.
-
----

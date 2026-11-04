@@ -1,4 +1,3 @@
----
 ### Το Widget Σχολίων
 
 Το συστατικό FastCommentsVueNext περιέχει το ζωντανό widget σχολίων FastComments.
@@ -21,4 +20,3 @@ export default {
 }
 </script>
 ```
----

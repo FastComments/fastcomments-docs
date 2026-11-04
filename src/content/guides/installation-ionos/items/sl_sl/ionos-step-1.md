@@ -1,4 +1,3 @@
----
 Najprej bomo dodali kontaktni obrazec, ki ga bo nadomestil FastComments.
 
 Za to odprite urejevalnik strani, in kliknite `Add Section` na željeni strani.
@@ -27,5 +26,3 @@ Ko končate, bi moralo izgledati takole:
 </div>
 
 To je konec prvega koraka!
-
----

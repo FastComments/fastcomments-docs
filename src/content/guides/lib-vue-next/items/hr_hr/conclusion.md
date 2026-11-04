@@ -8,5 +8,3 @@ Ako naiđete na bilo kakve probleme ili imate pitanja u vezi s Vue 3 bibliotekom
 ## Doprinosi
 
 Doprinosi su dobrodošli! Molimo posjetite [GitHub spremište](https://github.com/FastComments/fastcomments-vue-next) za smjernice o doprinosu.
-
----

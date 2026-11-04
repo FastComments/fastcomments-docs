@@ -13,5 +13,3 @@ Los roles de Canvas se asignan automáticamente a los roles de FastComments dura
 Cuando un usuario inicia FastComments desde Canvas, el protocolo LTI 1.3 incluye su rol en Canvas. FastComments lee este rol y asigna automáticamente los permisos correspondientes.
 
 Si un usuario tiene varios roles (p. ej., un Instructor que también es Admin), se utiliza el rol con mayores privilegios.
-
----

@@ -37,5 +37,3 @@ PublicAPI.translateComments(tenantId: tenantId, urlId: urlId, commentTranslation
     }
 }
 [inline-code-end]
-
----

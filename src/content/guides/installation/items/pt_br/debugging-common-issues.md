@@ -1,43 +1,42 @@
-Aqui estão alguns sintomas que encontramos com frequência e soluções comuns. 
+Aqui estão alguns sintomas que encontramos com frequência, e soluções comuns.
 
-### "This is a demo" Message
+### Mensagem "This is a demo"
 
-Isto é exibido quando você copiou o código do widget da nossa página inicial, que usa nosso tenant de demonstração. Para usar seu tenant, copie o código do widget a partir [daqui](https://fastcomments.com/auth/my-account/get-acct-code).
+Isso é exibido quando você copiou o código do widget da nossa página inicial, que usa nosso tenant de demonstração. Para usar o seu tenant, copie o código do widget [daqui](https://fastcomments.com/auth/my-account/get-acct-code).
 
-### "FastComments cannot load on this domain" Error
+### Erro "FastComments cannot load on this domain"
 
-O FastComments precisa saber quais domínios são de sua propriedade para autenticar requisições associadas à sua conta. [Consulte nossa documentação](/guide-multiple-sites.html#add-domains-to-account) para ver como resolver este erro (simplesmente adicione o subdomínio + domínio exatos à sua conta).
+O FastComments precisa saber quais domínios são de sua propriedade para autenticar requisições associadas à sua conta. [Confira nossa documentação](/guide-multiple-sites.html#add-domains-to-account) para ver como resolver esse erro (basta adicionar o subdomínio + domínio exatos à sua conta).
 
-Observe que isso só deve ocorrer após o término do período de avaliação. Durante o período de avaliação, quaisquer requisições de novos domínios serão adicionadas automaticamente à sua conta.
+Observe que isso só deve ocorrer após o fim do período de teste. Durante o período de teste, quaisquer requisições de novos domínios serão adicionadas automaticamente à sua conta.
 
-### Migrated Comments Not Showing for Custom Installations
+### Comentários Migrados Não Aparecendo em Instalações Personalizadas
 
-Normalmente isso acontece quando os comentários importados estão vinculados a um `Page ID`, e você está passando uma URL (ou nenhum valor, caso em que ela padrão para a URL da página).
+Normalmente isso acontece quando os comentários importados estão vinculados a um `Page ID`, e você está passando uma URL (ou nenhum valor, caso em que o padrão é a URL da página).
 
-Você pode depurar isso [exportando seus comentários](https://fastcomments.com/auth/my-account/manage-data/export) e visualizando a coluna `URL ID` (atualmente Coluna `B`).
+Você pode depurar isso [exportando seus comentários](https://fastcomments.com/auth/my-account/manage-data/export) e visualizando a coluna `URL ID` (atualmente a coluna `B`).
 
-Certifique-se de que os valores que você vê na coluna `URL ID` sejam os mesmos valores que você está passando para a configuração do widget como o parâmetro `urlId`.
+Certifique-se de que os valores que você vê na coluna `URL ID` são os mesmos valores que você está passando para a configuração do widget como o parâmetro `urlId`.
 
-Para mais explicações, tente ler nossa documentação [How Comments are Tied to Pages and Articles](/guide-customizations-and-configuration.html#url-id).
+Para uma explicação mais detalhada, tente ler nossa documentação [How Comments are Tied to Pages and Articles](/guide-customizations-and-configuration.html#url-id).
 
-Se tudo mais falhar, [entre em contato conosco](https://fastcomments.com/auth/my-account/help).
+Se nada disso funcionar, [entre em contato conosco](https://fastcomments.com/auth/my-account/help).
 
-### Comment Widget Not Showing
+### Widget de Comentários Não Aparecendo
 
 Se o widget de comentários não estiver aparecendo, verifique o console de desenvolvedor do Chrome em busca de erros.
 
-Para a maioria das configurações incorretas, o widget de comentários ao menos exibirá um erro na página se conseguir carregar. Não ver nada geralmente indica um erro de script.
+Para a maioria das configurações incorretas, o widget de comentários mostrará pelo menos um erro na página se conseguir carregar. Não ver nada geralmente indica um erro de script.
 
-### Desired Configuration Not Working as Expected
+### Configuração Desejada Não Funcionando Como Esperado
 
-Tente nossa [extensão do Chrome](https://chromewebstore.google.com/detail/fastcomments-debugger/cadggdemhfkjjghkdbfhonoccnplffjj) para ver qual configuração está sendo passada ao widget de comentários. Se tudo falhar, tire uma captura de tela do que a extensão do Chrome mostra e [entre em contato conosco](https://fastcomments.com/auth/my-account/help).
+Experimente nossa [extensão do Chrome](https://chromewebstore.google.com/detail/fastcomments-debugger/cadggdemhfkjjghkdbfhonoccnplffjj) para ver qual configuração está sendo passada ao widget de comentários. Se nada funcionar, tire um screenshot do que a extensão do Chrome mostra e [entre em contato conosco](https://fastcomments.com/auth/my-account/help).
 
-### Comments Missing on Same URL With Different Hash Bang
+### Comentários Ausentes na Mesma URL com Hash Bang Diferente
 
-Por padrão, o FastComments usará a URL da página para o "bucket" onde os comentários são armazenados. Se suas URLs incluem `#hashbangs`, e esses `#hashbangs`
-não devem fazer parte do identificador que identifica um tópico de comentários, podemos simplesmente ignorar o valor do hash bang, por exemplo:
+Por padrão, o FastComments usará a URL da página como o "bucket" onde os comentários são armazenados. Se suas URLs incluem `#hashbangs`, e esses `#hashbangs` não devem fazer parte do identificador que identifica uma thread de comentários, podemos simplesmente ignorar o valor do hash bang, por exemplo:
 
-[inline-code-attrs-start title = 'Exemplo: Ignorar Hash Bangs'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo de Ignorar Hash Bangs'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
@@ -51,14 +50,13 @@ window.fcConfigs = [{
 </script>
 [inline-code-end]
 
-Observe que depois de fazer essa alteração, uma migração terá que ser realizada para os comentários existentes. [Para isso, entre em contato conosco.](https://fastcomments.com/auth/my-account/help)
+Observe que, após fazer essa alteração, uma migração terá que ser realizada para os comentários existentes. [Para isso, entre em contato conosco.](https://fastcomments.com/auth/my-account/help)
 
-### URL Query Parameters Affecting Widget
+### Parâmetros de Query da URL Afetando o Widget
 
-Por padrão, o FastComments usará a URL da página para o "bucket" onde os comentários são armazenados. Se suas URLs incluem parâmetros de consulta
-que não devem fazer parte do identificador que identifica um tópico de comentários, podemos simplesmente ignorá-los, por exemplo:
+Por padrão, o FastComments usará a URL da página como o "bucket" onde os comentários são armazenados. Se suas URLs incluem parâmetros de query que não devem fazer parte do identificador que identifica uma thread de comentários, podemos simplesmente ignorá-los, por exemplo:
 
-[inline-code-attrs-start title = 'Ignorar Parâmetros de Consulta'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ignorar Parâmetros de Query'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
@@ -72,12 +70,10 @@ window.fcConfigs = [{
 </script>
 [inline-code-end]
 
-Observe que depois de fazer essa alteração, uma migração terá que ser realizada para os comentários existentes. [Para isso, entre em contato conosco.](https://fastcomments.com/auth/my-account/help)
+Observe que, após fazer essa alteração, uma migração terá que ser realizada para os comentários existentes. [Para isso, entre em contato conosco.](https://fastcomments.com/auth/my-account/help)
 
-### Not Receiving Emails
+### Não Estou Recebendo E-mails
 
-No FastComments, nós nos esforçamos bastante para garantir que a entrega dos nossos e-mails seja o mais confiável possível. Contudo, alguns provedores de e-mail são notoriamente difíceis de entregar de forma confiável. Verifique sua pasta de spam por mensagens de fastcomments.com.
+Na FastComments, dedicamos muito esforço para garantir que a entrega dos nossos e-mails seja a mais confiável possível. No entanto, alguns provedores de e-mail são notoriamente difíceis para entregas confiáveis. Verifique sua pasta de spam em busca de mensagens de fastcomments.com.
 
-Se você [entrar em contato conosco](https://fastcomments.com/auth/my-account/help) geralmente podemos fornecer mais informações sobre por que você pode não estar recebendo e-mails nossos.
-
----
+Se você [entrar em contato conosco](https://fastcomments.com/auth/my-account/help), geralmente podemos fornecer mais informações sobre por que você pode não estar vendo e-mails nossos.

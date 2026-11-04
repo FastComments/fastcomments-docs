@@ -1,4 +1,3 @@
----
 在页面上过去发表评论但当前不在线的用户。按 displayName 排序。
 在用尽 /users/online 之后使用此方法以呈现 "Members" 部分。
 对 commenterName 使用游标分页：服务器从 afterName 向前通过 $gt 遍历部分索引 {tenantId, urlId, commenterName}，无需 $skip 成本。
@@ -39,5 +38,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_offline_users: #{e}"
 end
 [inline-code-end]
-
----

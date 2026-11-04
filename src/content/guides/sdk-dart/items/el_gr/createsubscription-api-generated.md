@@ -1,4 +1,3 @@
----
 ## Παράμετροι
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
@@ -30,5 +29,3 @@ try {
     print('Exception when calling DefaultApi->createSubscription: $e\n');
 }
 [inline-code-end]
-
----

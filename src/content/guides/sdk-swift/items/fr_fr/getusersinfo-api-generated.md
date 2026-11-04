@@ -1,4 +1,3 @@
----
 Informations groupées des utilisateurs pour un tenant. Étant donné des userIds, renvoie les informations d'affichage de User / SSOUser.
 Utilisé par le widget de commentaire pour enrichir les utilisateurs qui viennent d'apparaître via un événement de présence.
 Pas de contexte de page : la confidentialité est appliquée de manière uniforme (les profils privés sont masqués).
@@ -35,5 +34,3 @@ PublicAPI.getUsersInfo(tenantId: tenantId, ids: ids) { (response, error) in
     }
 }
 [inline-code-end]
-
----

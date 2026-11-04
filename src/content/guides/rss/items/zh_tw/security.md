@@ -1,4 +1,3 @@
----
 FastComments 的 RSS feeds 使用唯一且不可猜測的 UUIDs 進行保護。然而，當您啟用您的 RSS feed 時，任何擁有該 URL 的人都可以存取您的留言。
 
 該 feed 並未使用密碼保護，因此該 URL 應視為機密資訊，只與受信任的 RSS 閱讀器或服務共享。
@@ -13,5 +12,3 @@ Best practices:
 該 RSS feed 包含留言文字與 HTML 內容、留言者姓名、留言日期、留言所屬頁面的連結，以及投票計數。
 
 該 feed **不**包含留言者的電子郵件地址、IP addresses，或其他敏感的使用者資訊。
-
----

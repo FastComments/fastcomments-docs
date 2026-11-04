@@ -1,4 +1,3 @@
----
 Pole **Community guidelines** w formularzu edycji to opcjonalny blok tekstu polityki dołączany do wiadomości kontekstowej roli użytkownika przy każdym uruchomieniu tego agenta. Jest on ogrodzony jako tekst nierozpoznawany jako zaufany (to samo ogrodzenie, które platforma stosuje do treści komentarzy i innych danych dostarczonych przez użytkowników), więc model traktuje go jako odniesienie do polityki, a nie jako instrukcje systemowe. To kanoniczne miejsce do zapisania „jakie zachowania są dozwolone, a jakie zabronione na tej stronie”, aby agent stosował je konsekwentnie.
 
 ### Jak różni się od początkowego promptu
@@ -46,5 +45,3 @@ Pole jest ograniczone do **4000 znaków** (egzekwowane zarówno przez formularz,
 ### Wersjonowanie
 
 Nie ma wbudowanej historii wersji dla dokumentu wytycznych — agent używa najnowszej zapisanej wartości. Jeśli chcesz historię, skopiuj dokument do własnego systemu śledzenia przed każdą większą edycją. Przebieg [Refine Prompts](#refining-prompts) może zapisywać zmiany *initial prompt*, ale nie wersjonuje dokumentu wytycznych.
-
----

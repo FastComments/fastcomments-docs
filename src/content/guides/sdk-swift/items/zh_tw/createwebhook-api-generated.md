@@ -1,22 +1,20 @@
-Subscribes a URL to a comment event (REST hook subscribe). Subscribing the same URL to the same
-event and domain again returns the existing subscription. Deliveries are HMAC signed, see the
-webhooks guide; the legacy `token` header is never sent to API subscriptions.
+將 URL 訂閱至評論事件(REST hook 訂閱)。若將相同的 URL 再次訂閱至相同的事件與網域,將回傳現有的訂閱。傳送內容以 HMAC 簽署,請參閱 webhooks 指南;舊版的 `token` 標頭永遠不會傳送至 API 訂閱。
 
 ## 參數
 
 | 名稱 | 類型 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
+| tenantId | string | query | 是 |  |
 
 ## 回應
 
-返回：[`CreateWebhookResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateWebhookResponse.swift)
+回傳:[`CreateWebhookResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateWebhookResponse.swift)
 
 ## 範例
 
 [inline-code-attrs-start title = 'createWebhook 範例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 以下程式碼範例仍屬測試版。如有任何問題，請透過 http://github.com/OpenAPITools/openapi-generator/issues/new 回報
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -33,5 +31,3 @@ DefaultAPI.createWebhook(tenantId: tenantId, createWebhookParams: createWebhookP
     }
 }
 [inline-code-end]
-
----

@@ -31,5 +31,3 @@ Si vous cherchez l'extrait de code pour les commentaires en direct ClickFunnels,
     })();
 </script>
 [inline-code-end]
-
----

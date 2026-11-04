@@ -1,30 +1,32 @@
 #### Como os Comentários Aparecem em Seus Cursos
 
-Depois que a integração LTI estiver habilitada e o App Externo instalado, o FastComments funciona automaticamente com base nos placements que você configurou:
+Assim que a integração LTI estiver habilitada e o Aplicativo Externo instalado, o FastComments funciona automaticamente com base nas posições (placements) que você configurou:
 
-#### Assignment View
+#### Visualização de Atividade (Assignment View)
 
-If the **Assignment View** placement is enabled, comments appear automatically below every assignment in the course. Students and instructors see a threaded comment section when they view an assignment — no extra setup is needed per assignment.
+Se a posição **Assignment View** estiver habilitada, os comentários aparecem automaticamente abaixo de cada atividade do curso. Alunos e instrutores veem uma seção de comentários encadeados ao visualizar uma atividade — nenhuma configuração extra é necessária por atividade.
 
-Each assignment gets its own separate comment thread.
+Cada atividade recebe sua própria thread de comentários separada.
 
-#### Rich Content Editor Button
+#### Botão do Editor de Conteúdo Rico
 
-1. Edit a **Page**, **Quiz**, or **Announcement**.
-2. In the Rich Content Editor toolbar, click the **FastComments** button.
-3. FastComments is automatically embedded into the content.
-4. Save the page.
+Se a posição **Editor Button** estiver habilitada, os instrutores podem incorporar o FastComments em qualquer conteúdo que use o Rich Content Editor:
 
-When students view the page, the embedded FastComments widget loads with a comment thread unique to that page.
+1. Edite uma **Página**, um **Quiz** ou um **Anúncio**.
+2. Na barra de ferramentas do Rich Content Editor, clique no botão **FastComments**.
+3. O FastComments é incorporado automaticamente ao conteúdo.
+4. Salve a página.
+
+Quando os alunos visualizarem a página, o widget do FastComments incorporado será carregado com uma thread de comentários exclusiva daquela página.
 
 #### SSO Automático
 
-In both placements, students are signed in via their Canvas account automatically. Names, emails, and avatars are synced through the LTI launch, no separate login is needed.
+Em ambas as posições, os alunos entram automaticamente via sua conta do Canvas. Nomes, e-mails e avatares são sincronizados por meio do lançamento LTI, sem necessidade de login separado.
 
-#### Restringir o Acesso Público (Recomendado)
+#### Restrinja o Acesso Público (Recomendado)
 
-By default, FastComments comment data is publicly readable. Anyone who can guess a thread's URL or API endpoint can view its comments, even outside Canvas. For course discussions you almost certainly want to restrict viewing to enrolled students only.
+Por padrão, os dados de comentários do FastComments são legíveis publicamente. Qualquer pessoa que adivinhe a URL de uma thread ou um endpoint da API pode visualizar seus comentários, mesmo fora do Canvas. Para discussões de cursos, você quase certamente desejará restringir a visualização apenas aos alunos matriculados.
 
-Open your <a href="https://fastcomments.com/auth/my-account/customize-widget" target="_blank">página de personalização do widget</a> and create a rule with **Require SSO To View Comments** enabled, then set the security level to **Secure SSO** so threads can only be loaded through the signed LTI launch.
+Abra sua <a href="https://fastcomments.com/auth/my-account/customize-widget" target="_blank">página de personalização do widget</a> e crie uma regra com **Require SSO To View Comments** habilitado e, em seguida, defina o nível de segurança como **Secure SSO** para que as threads só possam ser carregadas por meio do lançamento LTI assinado.
 
-See [Protecting Comment Threads With Single-Sign-On](/guide-customizations-and-configuration.html#sso-require-to-view-comments) for the full walkthrough, including how to scope the rule to a single domain or page.
+Consulte [Protegendo Threads de Comentários com Single-Sign-On](/guide-customizations-and-configuration.html#sso-require-to-view-comments) para o passo a passo completo, incluindo como limitar a regra a um único domínio ou página.

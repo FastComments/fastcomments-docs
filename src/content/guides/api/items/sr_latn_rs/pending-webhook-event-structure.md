@@ -1,4 +1,3 @@
----
 Objekat `PendingWebhookEvent` predstavlja webhook događaj koji stoji u redu i čeka obradu.
 
 `PendingWebhookEvent` objekti se kreiraju automatski i ne mogu se ručno kreirati putem API-ja. Takođe ističu nakon jedne godine.
@@ -48,5 +47,3 @@ interface PendingWebhookEvent {
     lastError: object | null
 }
 [inline-code-end]
-
----

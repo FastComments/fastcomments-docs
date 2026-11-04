@@ -31,5 +31,3 @@ Opcjonalnie:
 [inline-code-end]
 
 Konfiguracja dla bibliotek frontendowych takich jak React, Angular itp. jest taka sama.
-
----

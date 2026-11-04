@@ -1,4 +1,3 @@
----
 ## Hai bisogno di aiuto?
 
 Se riscontri problemi o hai domande sulla libreria Hugo, per favore:
@@ -9,5 +8,3 @@ Se riscontri problemi o hai domande sulla libreria Hugo, per favore:
 ## Contribuire
 
 I contributi sono benvenuti! Visita il [repository GitHub](https://github.com/FastComments/fastcomments-hugo) per le linee guida per i contributi.
-
----

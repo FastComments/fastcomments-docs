@@ -31,5 +31,3 @@ async function fetchComment(): Promise<void> {
 
 fetchComment();
 [inline-code-end]
-
----

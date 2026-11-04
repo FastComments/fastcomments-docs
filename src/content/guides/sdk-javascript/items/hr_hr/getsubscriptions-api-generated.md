@@ -21,5 +21,3 @@ Vraća: [`GetSubscriptionsAPIResponse`](https://github.com/FastComments/fastcomm
     const responseWithoutUser: GetSubscriptionsAPIResponse = await getSubscriptions(tenantId);
 })();
 [inline-code-end]
-
----

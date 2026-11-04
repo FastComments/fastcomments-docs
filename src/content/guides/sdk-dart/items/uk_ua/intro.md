@@ -1,7 +1,7 @@
-This is the official Dart SDK for FastComments.
+Це офіційний Dart SDK для FastComments.
 
-Manage comments, users, SSO, and moderation from your Dart and Flutter applications.
+Керуйте коментарями, користувачами, SSO та модерацією з ваших Dart і Flutter застосунків.
 
-## Repository
+## Репозиторій
 
 [Переглянути на GitHub](https://github.com/FastComments/fastcomments-dart)

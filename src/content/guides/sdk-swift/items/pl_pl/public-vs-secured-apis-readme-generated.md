@@ -1,25 +1,23 @@
----
-FastComments SDK zapewnia dwa rodzaje punktów końcowych API:
+FastComments SDK udostępnia dwa typy punktów końcowych API:
 
 ### PublicAPI - Punkty końcowe bezpieczne dla klienta
 
-The `PublicAPI` contains endpoints that are safe to call from client-side code (aplikacje iOS/macOS). Te punkty końcowe:
-- Nie wymagają API key
-- Mogą używać SSO tokens do uwierzytelniania
-- Podlegają ograniczeniom na użytkownika/urządzenie
-- Nadają się do aplikacji skierowanych do użytkowników końcowych
+`PublicAPI` zawiera punkty końcowe, które można bezpiecznie wywoływać z kodu po stronie klienta (aplikacje iOS/macOS). Te punkty końcowe:
+- Nie wymagają klucza API
+- Mogą używać tokenów SSO do uwierzytelniania
+- Są ograniczone limitem żądań na użytkownika/urządzenie
+- Nadają się do aplikacji przeznaczonych dla użytkowników końcowych
 
-**Przykładowy przypadek użycia**: Pobieranie i tworzenie komentarzy w twojej aplikacji iOS
+**Przykładowy przypadek użycia**: Pobieranie i tworzenie komentarzy w aplikacji iOS
 
 ### DefaultAPI - Punkty końcowe po stronie serwera
 
-The `DefaultAPI` contains authenticated endpoints that require an API key. Te punkty końcowe:
-- Wymagają twojego FastComments API key
-- Należy WYŁĄCZNIE wywoływać je z kodu po stronie serwera
-- Zapewniają pełny dostęp do twoich danych FastComments
-- Podlegają ograniczeniom na tenant
+`DefaultAPI` zawiera punkty końcowe wymagające uwierzytelnienia kluczem API. Te punkty końcowe:
+- Wymagają klucza API FastComments
+- Powinny być wywoływane WYŁĄCZNIE z kodu po stronie serwera
+- Zapewniają pełny dostęp do danych FastComments
+- Są ograniczone limitem żądań na najemcę (tenant)
 
-**Przykładowy przypadek użycia**: operacje administracyjne, eksport masowych danych, narzędzia do moderacji
+**Przykładowy przypadek użycia**: Operacje administracyjne, masowy eksport danych, narzędzia moderacji
 
-**WAŻNE**: Nigdy nie ujawniaj swojego API key w kodzie po stronie klienta. API keys powinny być używane wyłącznie po stronie serwera.
----
+**WAŻNE**: Nigdy nie ujawniaj klucza API w kodzie po stronie klienta. Klucze API powinny być używane wyłącznie po stronie serwera.

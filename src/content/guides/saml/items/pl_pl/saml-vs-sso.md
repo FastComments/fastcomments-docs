@@ -1,43 +1,43 @@
 FastComments oferuje zarówno uwierzytelnianie SSO, jak i SAML. Zrozumienie różnic pomoże Ci wybrać odpowiednie podejście dla Twojej organizacji.
 
-### Simple/Secure SSO w środowisku produkcyjnym
+### Prosty/Bezpieczny SSO w produkcji
 
-FastComments oferuje dwa różne przepływy SSO do uwierzytelniania w widgetcie komentarzy za pośrednictwem Twojej strony.
-To różni się od SAML i nie wymaga SAML. Zamiast tego Simple SSO wymaga po prostu przekazania obiektu do
-widgetu komentarzy, podczas gdy Secure SSO robi to samo plus hashuje ładunek przy użyciu API key.
+FastComments oferuje dwa różne przepływy SSO do uwierzytelniania w widżecie komentarzy za pośrednictwem Twojej witryny.
+To różni się od SAML i nie wymaga SAML. Zamiast tego Prosty SSO wymaga jedynie przekazania obiektu do
+widżetu komentarzy, natomiast Bezpieczny SSO robi to plus hashowanie ładunku kluczem API.
 
-SAML, z drugiej strony, uwierzytelnia użytkownika do całego produktu (na podstawie ich uprawnień) *as well as* widgetu komentarzy
-(jeśli mają włączone pliki cookie stron trzecich dla naszej domeny).
+SAML z kolei uwierzytelnia użytkownika w całym produkcie (na podstawie jego uprawnień) *a także* w widżecie komentarzy
+(jeśli ma włączone pliki cookie stron trzecich dla naszej domeny).
 
-### SAML Authentication
+### Uwierzytelnianie SAML
 
-SAML to korporacyjny protokół uwierzytelniania, który zapewnia bardziej solidne możliwości bezpieczeństwa i integracji:
+SAML to korporacyjny protokół uwierzytelniania, który zapewnia bardziej solidne bezpieczeństwo i możliwości integracji:
 
-- **Implementation**: Wymaga konfiguracji Identity Provider (IdP) i wymiany certyfikatów
-- **Security**: Używa podpisanych asercji XML i obsługuje szyfrowanie
-- **Use Case**: Idealne dla przedsiębiorstw z istniejącą infrastrukturą SAML (Active Directory, Okta, itp.)
-- **Setup Complexity**: Bardziej złożone - wymaga konfiguracji IdP i zarządzania certyfikatami
-- **Enterprise Features**: Zaawansowane mapowanie ról, scentralizowane zarządzanie użytkownikami, ścieżki audytu
+- **Implementacja**: Wymaga konfiguracji dostawcy tożsamości (IdP) i wymiany certyfikatów
+- **Bezpieczeństwo**: Używa podpisanych asercji XML i obsługuje szyfrowanie
+- **Przypadek użycia**: Idealny dla przedsiębiorstw z istniejącą infrastrukturą SAML (Active Directory, Okta itp.)
+- **Złożoność konfiguracji**: Bardziej wymagający - wymaga konfiguracji IdP i zarządzania certyfikatami
+- **Funkcje korporacyjne**: Zaawansowane mapowanie ról, scentralizowane zarządzanie użytkownikami, ślady audytu
 
-### When to Choose SAML
+### Kiedy wybrać SAML
 
 Rozważ uwierzytelnianie SAML, jeśli Twoja organizacja:
 
-- Już korzysta z kompatybilnego z SAML dostawcy tożsamości (Okta, Azure AD, ADFS, itp.)
+- Już korzysta z dostawcy tożsamości zgodnego z SAML (Okta, Azure AD, ADFS itp.)
 - Wymaga korporacyjnego poziomu bezpieczeństwa i zgodności
 - Potrzebuje scentralizowanego zarządzania użytkownikami i kontroli dostępu
-- Ma wiele aplikacji korzystających z SAML do uwierzytelniania
-- Wymaga szczegółowych ścieżek audytu i raportowania bezpieczeństwa
+- Ma wiele aplikacji używających SAML do uwierzytelniania
+- Wymaga szczegółowych śladów audytu i raportowania bezpieczeństwa
 
-### When to Choose Simple or Secure SSO
+### Kiedy wybrać Prosty lub Bezpieczny SSO
 
-Nasze rozwiązania SSO ukierunkowane na widget mogą być wystarczające, jeśli:
+Nasze rozwiązania SSO skupione na widżecie mogą być wystarczające, jeśli:
 
 - Masz własny system uwierzytelniania
 - Potrzebujesz szybkiej implementacji przy minimalnej konfiguracji
 - Nie wymagasz integracji z korporacyjnym dostawcą tożsamości
-- Chcesz kontrolować dane użytkownika bezpośrednio z aplikacji
+- Chcesz kontrolować dane użytkowników bezpośrednio ze swojej aplikacji
 - Masz prostsze wymagania dotyczące bezpieczeństwa
 
-Simple i Secure SSO są powszechnie używane dla portali internetowych, blogów, itp., gdzie użytkownik już posiada konto *through your site or app*
+Prosty i Bezpieczny SSO są powszechnie używane w portalach internetowych, blogach itp., gdzie użytkownik ma już konto *za pośrednictwem Twojej witryny lub aplikacji*
 ale niekoniecznie korzysta z SAML.

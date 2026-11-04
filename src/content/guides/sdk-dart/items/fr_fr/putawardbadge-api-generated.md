@@ -34,5 +34,3 @@ try {
     print('Exception when calling ModerationApi->putAwardBadge: $e\n');
 }
 [inline-code-end]
-
----

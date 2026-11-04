@@ -1,4 +1,3 @@
----
 Sljedeće trebamo utvrditi gdje dodati kod widgeta FastComments.com.
 
 Ako koristite zadanu temu `casper`, vidjet ćete odjeljak poput ovog na liniji `82`:
@@ -66,5 +65,3 @@ Kada ste spremni, kopirajte kod widgeta FastComments.com:
 </div>
 
 Kodiranje gotovo. Sada samo trebamo ponovno uvesti našu temu!
-
----

@@ -25,5 +25,3 @@ let (blockOpt, httpResp) = client.blockFromCommentPublic(
 if blockOpt.isSome:
   let block = blockOpt.get()
 [inline-code-end]
-
----

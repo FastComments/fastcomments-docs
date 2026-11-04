@@ -49,5 +49,3 @@ EU にいる場合は、`region` を `EU` に設定してください：
 `fastcomments-vue` と `fastcomments-vue-next` ライブラリは、VanillaJS コメントウィジェットと同じ設定をサポートします。
 
 Vue コンポーネントがサポートする設定は <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">こちら</a> で確認できます。
-
----

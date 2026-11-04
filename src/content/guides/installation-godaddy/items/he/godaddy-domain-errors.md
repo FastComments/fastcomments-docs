@@ -10,5 +10,3 @@
 במקרה זה, התיקון פשוט. עליך רק להוסיף את האתר שלך לחשבון ה-FastComments.com שלך.
 
 [לחץ כאן כדי להוסיף את האתר שלך לחשבונך.](https://fastcomments.com/auth/my-account/configure-domains)
-
----

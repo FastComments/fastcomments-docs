@@ -1,16 +1,16 @@
-Next, determine where you want to add comments. Mouse over the bottom of the previous content area
-and click to add a section:
+לאחר מכן, קבעו היכן ברצונכם להוסיף תגובות. העבירו את העכבר מעל החלק התחתון של אזור התוכן הקודם
+ולחצו כדי להוסיף מקטע:
 
 <div class="screenshot white-bg">
-    <div class="title">Step Two: Add Section</div>
-    <img class="screenshot-image" src="/images/installation-guides/webnode-step-2.png" alt="Add Section" />
+    <div class="title">שלב שני: הוספת מקטע</div>
+    <img class="screenshot-image" src="/images/installation-guides/webnode-step-2.png" alt="הוספת מקטע" />
 </div>
 
-Now let's put an HTML block in that section, where the code snippet will go. Select `HTML`:
+כעת נציב בלוק HTML באותו מקטע, שם ייכנס קטע הקוד. בחרו `HTML`:
 
-> **הערה:** החל מ‑26 ביוני 2023, ה‑HTML block של Webnode הוא תכונה בתשלום. הוא לא זמין בתוכנית החינמית, ובעבור פרויקטים שנוצרו אחרי תאריך זה נדרשת חבילה פרימיום. אם אינכם רואים את אפשרות ה‑`HTML`, שדרגו את תוכנית Webnode שלכם כדי להפעיל אותה.
+> **הערה:** החל מה-26 ביוני 2023, בלוק ה-HTML של Webnode הוא תכונה בתשלום. היא אינה זמינה בתוכנית החינמית, ועבור פרויקטים שנוצרו לאחר תאריך זה היא דורשת חבילת פרימיום. אם אינכם רואים את האפשרות `HTML`, שדרגו את תוכנית ה-Webnode שלכם כדי להפעיל אותה.
 
 <div class="screenshot white-bg">
-    <div class="title">Step Three: Add Code Block</div>
-    <img class="screenshot-image" src="/images/installation-guides/webnode-step-3.png" alt="Add HTML Block" />
+    <div class="title">שלב שלישי: הוספת בלוק קוד</div>
+    <img class="screenshot-image" src="/images/installation-guides/webnode-step-3.png" alt="הוספת בלוק HTML" />
 </div>

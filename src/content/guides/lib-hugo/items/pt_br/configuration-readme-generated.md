@@ -1,4 +1,4 @@
-Todas as opções do widget FastComments são definidas em `[params.fastcomments]` em `hugo.toml`, e podem ser substituídas por página no front matter em `[fastcomments]`. Precedência, do menor para o maior: parâmetros do site, front matter da página, parâmetros do shortcode.
+Todas as opções do widget FastComments são definidas em `[params.fastcomments]` no `hugo.toml`, e podem ser sobrescritas por página no front matter em `[fastcomments]`. Precedência, da menor para a maior: parâmetros do site, front matter da página, parâmetros do shortcode.
 
 ```toml
 # hugo.toml
@@ -10,7 +10,7 @@ Todas as opções do widget FastComments são definidas em `[params.fastcomments
 ```
 
 ```toml
-# a page's front matter
+# front matter de uma página
 +++
 title = "Article"
 [fastcomments]
@@ -19,11 +19,11 @@ title = "Article"
 +++
 ```
 
-When neither `url` nor `urlId` is provided, `url` defaults to the page's permalink so comment threads stay tied to a stable URL.
+Quando nem `url` nem `urlId` são fornecidos, `url` assume como padrão o permalink da página, para que os tópicos de comentários permaneçam vinculados a uma URL estável.
 
-### Residência de dados da UE
+### Residência de dados na UE
 
-Clientes da UE definem `region = "eu"` para direcionar o widget para `cdn-eu.fastcomments.com`:
+Clientes da UE definem `region = "eu"` para rotear o widget para `cdn-eu.fastcomments.com`:
 
 ```toml
 [params.fastcomments]
@@ -31,6 +31,6 @@ Clientes da UE definem `region = "eu"` para direcionar o widget para `cdn-eu.fas
   region = "eu"
 ```
 
-### Observação sobre o padrão de maiúsculas/minúsculas das chaves
+### Observação sobre o formato das chaves
 
-Hugo converte todas as chaves para letras minúsculas em `hugo.toml` e no front matter, mas os widgets do FastComments exigem chaves em camelCase (`tenantId`, `hasDarkBackground`). Este componente restaura automaticamente a capitalização correta para toda opção de nível superior conhecida, portanto escreva as opções em seu formato camelCase normal. Chaves aninhadas dentro de um valor de objeto (por exemplo, as chaves de um mapa `translations`, ou campos de `pageReactConfig`) não são restauradas. Configure essas através da interface de personalização (dashboard) do FastComments em vez disso.
+O Hugo converte para minúsculas todas as chaves no `hugo.toml` e no front matter, mas os widgets do FastComments exigem chaves em camelCase (`tenantId`, `hasDarkBackground`). Este componente restaura automaticamente o formato correto para todas as opções de nível superior conhecidas, então escreva as opções em sua forma camelCase normal. Chaves aninhadas dentro de um valor de objeto (por exemplo, as chaves de um mapa `translations`, ou campos de `pageReactConfig`) não são restauradas. Configure essas opções pela UI de personalização do painel do FastComments.

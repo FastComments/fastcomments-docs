@@ -1,4 +1,3 @@
----
 [api-resource-header-start name = 'HashTag'; route = 'DELETE /api/v1/hash-tags/:tag'; creditsCost = 1; api-resource-header-end]
 
 此路由提供透過所提供的標籤刪除一個 `HashTag` 使用者。
@@ -29,5 +28,3 @@ interface HashTagDeleteResponse {
     reason?: string
 }
 [inline-code-end]
-
----

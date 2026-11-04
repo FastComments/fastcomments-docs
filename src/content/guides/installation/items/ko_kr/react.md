@@ -35,5 +35,3 @@ EU에 있는 경우, 다음과 같이 `region` 매개변수를 설정하세요:
 [inline-code-end]
 
 React 컴포넌트가 지원하는 구성은 <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">여기</a>에서 확인할 수 있습니다.
-
----

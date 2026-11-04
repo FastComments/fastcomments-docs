@@ -23,5 +23,3 @@ let (response, httpResponse) = client.postFlagComment(
 if response.isSome:
   let result = response.get()
 [inline-code-end]
-
----

@@ -90,5 +90,3 @@ V zgornjem primeru smo definirali privzeti SMTP transport z imenom `mailgun`. Pr
 ### DocumentDB
 
 Ko se povezujete na `DocumentDB`, nastavite `MONGO_ENABLE_SSL=true MONGO_SSL_CA=/some/path.pem`, da boste združljivi z privzetimi nastavitvami.
-
----

@@ -1,3 +1,1 @@
----
 Roep de FastComments API aan vanuit C++. Bouw de client vanuit de broncode met CMake, en maak vervolgens, haal op en modereer opmerkingen synchroon of asynchroon.
----

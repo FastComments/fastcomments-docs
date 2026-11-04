@@ -1,4 +1,3 @@
----
 ## Parameters
 
 | Name | Type | Location | Required | Description |
@@ -41,5 +40,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->update_subscription: #{e}"
 end
 [inline-code-end]
-
----

@@ -6,14 +6,14 @@ Simple SSO is eenvoudig te gebruiken, maar biedt minder beveiliging dan Secure S
 use FastComments\SSO\FastCommentsSSO;
 use FastComments\SSO\SimpleSSOUserData;
 
-// Maak gebruikersgegevens aan
+// Gebruikersgegevens aanmaken
 $userData = SimpleSSOUserData::create(
     'username123',
     'user@example.com',
     'https://example.com/avatar.png'
 );
 
-// Met URL-gebaseerde aanmelding/afmelding
+// Met URL-gebaseerde login/logout
 $sso = FastCommentsSSO::createWithUrls(
     null,
     $userData,
@@ -24,11 +24,11 @@ $sso = FastCommentsSSO::createWithUrls(
 // Of met callbacks
 $sso = FastCommentsSSO::createWithCallbacks(
     $userData,
-    function($url) { /* Verwerk login */ },
-    function($url) { /* Verwerk logout */ }
+    function($url) { /* Login afhandelen */ },
+    function($url) { /* Logout afhandelen */ }
 );
 
-// Haal het token op om aan FastComments door te geven
+// Haal de token op om door te geven aan FastComments
 $token = $sso->prepareToSend();
 ```
 
@@ -40,7 +40,7 @@ Secure SSO biedt verbeterde beveiliging met HMAC-verificatie:
 use FastComments\SSO\FastCommentsSSO;
 use FastComments\SSO\SecureSSOUserData;
 
-// Maak gebruikersgegevens aan
+// Gebruikersgegevens aanmaken
 $userData = SecureSSOUserData::create(
     'user-123',
     'user@example.com',
@@ -48,13 +48,13 @@ $userData = SecureSSOUserData::create(
     'https://example.com/avatar.png'
 );
 
-// Voeg optionele gegevens toe indien nodig
+// Optionele gegevens toevoegen indien nodig
 $userData->isAdmin = true;
 $userData->groupIds = ['group-1', 'group-2'];
 
-// Maak het SSO-object met uw API-sleutel
+// Maak het SSO-object aan met je API-sleutel
 $sso = FastCommentsSSO::createSecure('your-api-key', $userData);
 
-// Haal het token op om aan FastComments door te geven
+// Haal de token op om door te geven aan FastComments
 $token = $sso->prepareToSend();
 ```

@@ -38,5 +38,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Yanıt `DefaultAPI.PatchHashTag`: %v\n", resp)
 }
 [inline-code-end]
-
----

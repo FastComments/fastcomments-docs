@@ -40,5 +40,3 @@ DefaultAPI.getQuestionResults(tenantId: tenantId, options: DefaultAPI.GetQuestio
     }
 }
 [inline-code-end]
-
----

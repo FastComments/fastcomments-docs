@@ -20,5 +20,3 @@ To je zasnovano za nadomestitev nastavitve `hideCommentsUnderCountTextFormat`.
 To je mogoče omogočiti brez kode tako, da ustvarite pravilo prilagoditve in omogočite "Click to Show Comments":
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.click-to-show-comments']; selector = '.click-to-show-comments'; alt='Potrditveno polje za prikaz komentarjev je označeno v pravilu prilagoditve na strani za prilagajanje pripomočka'; title='Omogoči prikaz komentarjev' app-screenshot-end]
-
----

@@ -37,5 +37,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Odziv iz `ModerationAPI.GetCounts`: %v\n", resp)
 }
 [inline-code-end]
-
----

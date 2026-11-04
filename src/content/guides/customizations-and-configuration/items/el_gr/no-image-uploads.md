@@ -7,5 +7,3 @@
 Αυτό μπορεί να προσαρμοστεί χωρίς κώδικα, στη σελίδα προσαρμογής widget:
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.disable-image-uploads'; selector = '.disable-image-uploads'; alt='Κουτί ελέγχου απενεργοποίησης μεταφόρτωσης εικόνων ενεργοποιημένο στις ρυθμίσεις της σελίδας προσαρμογής widget'; title='Απενεργοποίηση μεταφόρτωσης εικόνων' app-screenshot-end]
-
----

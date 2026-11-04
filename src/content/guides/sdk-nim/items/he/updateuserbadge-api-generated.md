@@ -19,5 +19,3 @@ let (maybeResp, httpResp) = client.updateUserBadge(tenantId = "my-tenant-123", i
 if maybeResp.isSome:
   let success = maybeResp.get()
 [inline-code-end]
-
----

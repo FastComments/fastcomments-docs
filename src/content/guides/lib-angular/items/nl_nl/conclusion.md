@@ -8,5 +8,3 @@ Als u problemen ondervindt of vragen heeft over de Angular-bibliotheek, gelieve:
 ## Bijdragen
 
 Bijdragen zijn welkom! Bezoek de [GitHub-repository](https://github.com/FastComments/fastcomments-angular) voor richtlijnen voor bijdragen.
-
----

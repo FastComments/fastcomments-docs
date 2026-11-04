@@ -1,33 +1,33 @@
-Pripomoček Recent Discussions prikazuje strani na vašem spletnem mestu z najnovejšo aktivnostjo komentarjev. Uporaben je za izpostavitev tem, v katere se še dodaja, tako da lahko obiskovalci skočijo nazaj v aktivne pogovore namesto, da pristanejo na mirnih straneh.
+Pripomoček Recent Discussions prikazuje strani na vašem spletnem mestu z najnovejšo aktivnostjo komentarjev. Uporaben je za izpostavljanje niti, v katere se še vedno dodaja vsebina, tako da lahko obiskovalci skočijo nazaj v aktivne pogovore namesto da pristanejo na mirujočih straneh.
 
-## Options
+## Možnosti
 
-- **Title** (optional): The heading shown above the list. Defaults to "Nedavne razprave".
-- **Count** (optional): How many discussions to show. Range 1 to 50. Defaults to 20.
+- **Naslov** (neobvezno): Naslov, prikazan nad seznamom. Privzeto "Recent Discussions".
+- **Število** (neobvezno): Koliko razprav prikazati. Obseg od 1 do 50. Privzeto 20.
 
-## How to Add It
+## Kako ga dodati
 
-### Inside a Post or Page
+### Znotraj objave ali strani
 
-In the block editor, add a **Shortcode** block and paste:
+V urejevalniku blokov dodajte blok **Shortcode** in prilepite:
 
-[inline-code-attrs-start title = 'Shortcode nedavnih razprav'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Shortcode za Recent Discussions'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 [fastcomments_recent_discussions count="20"]
 [inline-code-end]
 
-The `count` attribute accepts any value between 1 and 50.
+Atribut `count` sprejme katero koli vrednost med 1 in 50.
 
-### In a Sidebar or Footer (Classic Themes)
+### V stranski vrstici ali nogi (klasične teme)
 
-Go to **Videz > Pripomočki** in your WordPress admin. From the block inserter, search for "FastComments" and choose **FastComments: Nedavne razprave**. Drag it into a sidebar, header, or footer area, then configure the title and count from the widget panel.
+Pojdite na **Appearance > Widgets** v skrbniškem vmesniku WordPress. Iz vstavljalnika blokov poiščite "FastComments" in izberite **FastComments: Recent Discussions**. Povlecite ga v stransko vrstico, glavo ali nogo, nato pa nastavite naslov in število v plošči pripomočka.
 
-### In a Block Theme (Full Site Editing)
+### V blokovni temi (polno urejanje spletnega mesta)
 
-Open the **Urejevalnik mesta** under **Videz > Urejevalnik**. Navigate to the template part where the widget should appear, insert a **Legacy Widget** block, and select **FastComments: Nedavne razprave** from the dropdown.
+Odprite **Site Editor** pod **Appearance > Editor**. Pomaknite se do dela predloge, kjer naj se pripomoček prikaže, vstavite blok **Legacy Widget** in iz spustnega seznama izberite **FastComments: Recent Discussions**.
 
-## Troubleshooting
+## Odpravljanje težav
 
-The widget only renders after FastComments setup is complete and a tenant ID is stored. If the widget area is blank, complete setup under **FastComments** in the WordPress admin and reload the page.
+Pripomoček se prikaže šele, ko je nastavitev FastComments dokončana in je shranjen ID najemnika. Če je območje pripomočka prazno, dokončajte nastavitev pod **FastComments** v skrbniškem vmesniku WordPress in ponovno naložite stran.
 
-If discussion ordering looks stale, check that the underlying pages have finished syncing in the FastComments dashboard. The widget reads live data, so freshly imported comments may take a moment to surface.
+Če je razvrščanje razprav videti zastarelo, preverite, ali so osnovne strani dokončale sinhronizacijo v nadzorni plošči FastComments. Pripomoček bere podatke v živo, zato lahko sveže uvoženi komentarji potrebujejo trenutek, da se pojavijo.

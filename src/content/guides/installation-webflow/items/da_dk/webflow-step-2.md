@@ -1,4 +1,3 @@
----
 Lad os nu kopiere vores FastComments.com-widgetkode:
 
 [code-example-start config = {}; title = 'Installation Code'; isFunctional = false; code-example-end]
@@ -18,5 +17,3 @@ Efter at have tilføjet koden vil Webflow informere dig om, at widgeten ikke vis
     <div class="title">Bemærk: Kommentarer vises ikke før publicering</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-webflow-step-3.png" alt="Kommentarer vises ikke før publicering" />
 </div>
-
----

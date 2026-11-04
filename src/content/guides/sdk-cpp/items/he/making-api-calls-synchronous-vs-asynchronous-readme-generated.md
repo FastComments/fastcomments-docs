@@ -1,8 +1,8 @@
-כל שיטות ה‑API ב‑SDK הזה מחזירות `pplx::task<std::shared_ptr<ResponseType>>` מ‑C++ REST SDK. זה נותן לך גמישות באופן שבו אתה מתמודד עם תגובות API.
+כל שיטות ה-API ב-SDK הזה מחזירות `pplx::task<std::shared_ptr<ResponseType>>` מה-C++ REST SDK. זה נותן לך גמישות באופן הטיפול בתגובות ה-API.
 
-### Synchronous Calls with `.get()`
+### קריאות סינכרוניות עם `.get()`
 
-Use `.get()` to block the calling thread until the request completes and retrieve the result synchronously:
+השתמש ב-`.get()` כדי לחסום את ה-thread הקורא עד להשלמת הבקשה ולקבל את התוצאה באופן סינכרוני:
 
 ```cpp
 auto config = std::make_shared<org::openapitools::client::api::ApiConfiguration>();
@@ -13,24 +13,24 @@ config->setApiKey(utility::conversions::to_string_t("api_key"),
 auto apiClient = std::make_shared<org::openapitools::client::api::ApiClient>(config);
 org::openapitools::client::api::DefaultApi api(apiClient);
 
-// Required parameters are positional; optional ones go in the options struct
+// פרמטרים נדרשים מועברים לפי מיקום; אופציונליים נכנסים למבנה ה-options
 org::openapitools::client::api::GetCommentsOptions options;
 options.urlId = utility::conversions::to_string_t("your-url-id");
 
-// Call .get() to block and get the result synchronously
+// קריאה ל-.get() כדי לחסום ולקבל את התוצאה באופן סינכרוני
 auto response = api.getComments(
     utility::conversions::to_string_t("your-tenant-id"),
     options
-).get();  // Blocks until the HTTP request completes
+).get();  // חוסם עד להשלמת בקשת ה-HTTP
 
 if (response && response->comments) {
     std::cout << "Found " << response->comments->size() << " comments" << std::endl;
 }
 ```
 
-### Asynchronous Calls with `.then()`
+### קריאות אסינכרוניות עם `.then()`
 
-Use `.then()` for non-blocking asynchronous execution with callbacks:
+השתמש ב-`.then()` לביצוע אסינכרוני לא חוסם עם callbacks:
 
 ```cpp
 auto config = std::make_shared<org::openapitools::client::api::ApiConfiguration>();
@@ -41,40 +41,40 @@ config->setApiKey(utility::conversions::to_string_t("api_key"),
 auto apiClient = std::make_shared<org::openapitools::client::api::ApiClient>(config);
 org::openapitools::client::api::DefaultApi api(apiClient);
 
-// Required parameters are positional; optional ones go in the options struct
+// פרמטרים נדרשים מועברים לפי מיקום; אופציונליים נכנסים למבנה ה-options
 org::openapitools::client::api::GetCommentsOptions options;
 options.urlId = utility::conversions::to_string_t("your-url-id");
 
-// Use .then() for asynchronous callback-based execution
+// שימוש ב-.then() לביצוע אסינכרוני מבוסס callback
 api.getComments(
     utility::conversions::to_string_t("your-tenant-id"),
     options
 ).then([](std::shared_ptr<GetComments_200_response> response) {
-    // This runs asynchronously when the request completes
+    // זה רץ באופן אסינכרוני כאשר הבקשה מושלמת
     if (response && response->comments) {
         std::cout << "Found " << response->comments->size() << " comments" << std::endl;
     }
 });
 
-// Execution continues immediately without blocking
+// הביצוע ממשיך מיד ללא חסימה
 std::cout << "Request sent, continuing..." << std::endl;
 ```
 
-### Choosing Between Synchronous and Asynchronous
+### בחירה בין סינכרוני לאסינכרוני
 
-The choice depends on your runtime environment and application architecture:
+הבחירה תלויה בסביבת הריצה שלך ובארכיטקטורת היישום:
 
-**`.get()` (Synchronous blocking)**
-- Blocks the calling thread until the HTTP request completes
-- Simpler code flow, easier to reason about
-- Suitable for dedicated worker threads, batch processing, or command-line tools
-- **Not suitable** for event loops, GUI threads, or single-threaded servers
+**`.get()` (חסימה סינכרונית)**
+- חוסם את ה-thread הקורא עד להשלמת בקשת ה-HTTP
+- זרימת קוד פשוטה יותר, קלה יותר להבנה
+- מתאים ל-worker threads ייעודיים, עיבוד אצווה, או כלי שורת פקודה
+- **לא מתאים** ל-event loops, threads של GUI, או שרתים חד-תהלוכתיים
 
-**`.then()` (Asynchronous non-blocking)**
-- Returns immediately, callback executes when request completes
-- Does not block the calling thread
-- Required for event-driven architectures, GUI applications, or single-threaded event loops
-- Allows chaining multiple operations
-- More complex control flow
+**`.then()` (אסינכרוני לא חוסם)**
+- מחזיר מיד, ה-callback מבוצע כאשר הבקשה מושלמת
+- אינו חוסם את ה-thread הקורא
+- נדרש לארכיטקטורות מבוססות אירועים, יישומי GUI, או event loops חד-תהלוכתיים
+- מאפשר שרשור של מספר פעולות
+- זרימת בקרה מורכבת יותר
 
-The SDK's test suite uses `.get()` exclusively, but this is appropriate for the test environment where blocking is acceptable.
+סוויטת הבדיקות של ה-SDK משתמשת ב-`.get()` באופן בלעדי, אך זה מתאים לסביבת הבדיקה שבה חסימה מקובלת.

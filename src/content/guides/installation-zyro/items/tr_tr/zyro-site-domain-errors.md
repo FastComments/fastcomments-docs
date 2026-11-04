@@ -1,4 +1,3 @@
----
 Aşağıdakine benzer bir yetkilendirme hatası alabilirsiniz:
 
 <div class="screenshot white-bg">
@@ -13,5 +12,3 @@ Bu durumda, çözüm basittir. Sitenizi FastComments.com hesabınıza eklemeniz 
 [Sitenizi hesabınıza eklemek için buraya gidin.](https://fastcomments.com/auth/my-account/configure-domains)
 
 Artık sitenizde hızlı, canlı yorumlar etkin olmalıdır!
-
----

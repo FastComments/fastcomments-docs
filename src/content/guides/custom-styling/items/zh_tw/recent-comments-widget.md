@@ -1,8 +1,8 @@
-The Recent Comments Widget displays a list of the most recent comments across your site or for a specific page. It includes a heading, rounded avatars, comment previews, clickable dates that deep-link to the comment, and automatic dark mode detection.
+「最新留言小工具」會顯示您整個網站或特定頁面上最新留言的清單。它包含標題、圓形頭像、留言預覽、可深層連結至該留言的可點擊日期，以及自動深色模式偵測。
 
 ## 基本安裝
 
-[inline-code-attrs-start title = '最近評論小工具安裝'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = '最新留言小工具安裝'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/widget-recent-comments-v2.min.js"></script>
 <div id="fastcomments-widget-recent-comments"></div>
@@ -15,16 +15,16 @@ The Recent Comments Widget displays a list of the most recent comments across yo
 
 ## 設定選項
 
-- **tenantId** (required): 您的 FastComments 租戶 ID
-- **urlId** (optional): 篩選到單一頁面。若要包含所有頁面請設為 null
-- **count** (optional): 要顯示的評論數量。預設為 `10`
-- **hasDarkBackground** (optional): 強制深色模式樣式。若未設定則從頁面背景自動偵測
+- **tenantId**（必填）：您的 FastComments 租戶 ID
+- **urlId**（選填）：篩選單一頁面。留空 null 則顯示所有頁面
+- **count**（選填）：顯示的留言數量。預設為 `10`
+- **hasDarkBackground**（選填）：強制使用深色模式樣式。若未設定，將自動從頁面背景偵測
 
 ## 小工具結構
 
-The widget renders with the following HTML structure:
+小工具會以下列 HTML 結構呈現：
 
-[inline-code-attrs-start title = '最近評論小工具 HTML 結構'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = '最新留言小工具 HTML 結構'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <div class="fc-rc2">
     <div class="fc-rc2-heading">Recent Comments</div>
@@ -46,7 +46,7 @@ The widget renders with the following HTML structure:
 
 ## 預設 CSS 參考
 
-[inline-code-attrs-start title = '最近評論小工具預設 CSS'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = '最新留言小工具預設 CSS'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rc2 {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -72,7 +72,7 @@ The widget renders with the following HTML structure:
 
 ## 自訂範例
 
-### 更改頭像大小
+### 變更頭像大小
 
 [inline-code-attrs-start title = '自訂頭像大小'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -82,9 +82,9 @@ The widget renders with the following HTML structure:
 }
 [inline-code-end]
 
-### 顯示更多行的評論文字
+### 顯示更多留言文字行數
 
-[inline-code-attrs-start title = '顯示更多評論行數'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = '顯示更多留言行數'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rc2-body {
     -webkit-line-clamp: 5 !important;
@@ -100,5 +100,3 @@ The widget renders with the following HTML structure:
     box-shadow: none !important;
 }
 [inline-code-end]
-
----

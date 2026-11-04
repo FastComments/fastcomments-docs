@@ -1,4 +1,3 @@
----
 Succes! Du skulle nu kunne se FastComments Comment Widget.
 
 <div class="screenshot white-bg">
@@ -7,5 +6,3 @@ Succes! Du skulle nu kunne se FastComments Comment Widget.
 </div>
 
 Tillykke med at have sat FastComments op med ThriveCart! Hvis du er stødt på en Domain Error, eller gerne vil lære, hvordan du tilpasser kommentarfeltet, så læs videre!
-
----

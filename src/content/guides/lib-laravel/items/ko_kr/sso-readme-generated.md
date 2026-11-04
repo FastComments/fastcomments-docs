@@ -1,4 +1,3 @@
----
 당신의 `.env`에서 SSO를 활성화하세요:
 
 ```env
@@ -55,4 +54,3 @@ class User extends Authenticatable implements MapsToFastCommentsUser
 ### Blade에서의 SSO
 
 SSO가 활성화되면 `<x-fastcomments />` 컴포넌트가 인증된 사용자에 대한 SSO 데이터를 자동으로 주입합니다.
----

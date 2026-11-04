@@ -1,41 +1,33 @@
-FastComments User Badges са конфигурирани от администратори с разрешението `Customize Data`.
+Значките на FastComments се конфигурират от администратори с разрешението `Customize Data`.
 
-This is done via [Персонализиране -> Значки](https://fastcomments.com/auth/my-account/configure-badges) in your admin dashboard.
+Това се прави чрез [Customize -> Badges](https://fastcomments.com/auth/my-account/configure-badges) в административния ви панел.
 
-When a user is awarded a badge it becomes displayed on their profile and on their comments.
+Когато потребител получи значка, тя се показва в профила му и на коментарите му.
 
-When adding a badge we can setup a `Display Label`, which is the name the user sees associated with the badge. For example, if we add a `Comment Count`
-we probably don't want to show that technical name because it's very lame. We might call it `Super Member` or similar. Badges can also stack and replace each other, as we'll cover
-later in this document.
+При добавяне на значка можем да настроим `Display Label`, което е името, което потребителят вижда, свързано със значката. Например, ако добавим значка `Comment Count`, вероятно не искаме да показваме това техническо име, защото е много скучно. Можем да я наречем `Super Member` или нещо подобно. Значките могат също да се наслагват и да се заменят взаимно, както ще разгледаме по-късно в този документ.
 
-Badges also have configurable thresholds.
+Значките имат и конфигурируеми прагове.
 
-Badges can be created, and then later disabled by unchecking `Enabled`. Disabling a badge means it will no longer be automatically awarded, and won't show in the менюто за ръчно присъждане на значки, but
-users will keep the badge.
+Значките могат да бъдат създадени, а по-късно деактивирани чрез премахване на отметката от `Enabled`. Деактивирането на значка означава, че тя вече няма да се присъжда автоматично и няма да се показва в менюто за ръчно присъждане на значки, но потребителите ще запазят значката си.
 
 ### Типове показване на значки
 
-Badges can be images or text badges, which support some basic styling (text color, background color, and border color). You can also style badges via CSS.
+Значките могат да бъдат изображения или текстови значки, които поддържат основно стилизиране (цвят на текста, цвят на фона и цвят на рамката). Можете също да стилизирате значките чрез CSS.
 
-Image badges can be GIF images to show animated badges.
+Значките-изображения могат да бъдат GIF изображения, за да показват анимирани значки.
 
-### Съвет — Не премахвайте значки!
+### Съвет - Не премахвайте значки!
 
-Потребителите обичат значките. Те обикновено им държат голямо значение, дори ако значката е добавена по погрешка и вие искате да промените иконата ѝ.
+Потребителите обичат значките. Обикновено имат сериозна емоционална връзка с тях, дори ако това е значка, добавена по погрешка, и искате да промените нейната икона.
 
-If we've learned anything, it's extremely difficult to take something away from users. Removing a badge because you as an owner of the site no
-longer like it, or want to make changes, may result in a very angry crowd of users that suddenly leave your site out of frustration. For this reason
-`Delete` was not even an option for the first few months we released this feature - however we ended up having to add it. But please, use опцията за изтриване с повишено внимание. We have
-seen many long time, multi-year, users get very frustrated and leave their communities because administrators decided to delete a badge.
+Ако сме научили нещо, то е, че е изключително трудно да отнемеш нещо на потребителите. Премахването на значка, защото вие като собственик на сайта вече не я харесвате или искате да направите промени, може да доведе до много ядосана тълпа потребители, които внезапно напускат сайта ви от разочарование. По тази причина `Delete` дори не беше опция през първите няколко месеца след пускането на тази функция - но в крайна сметка се наложи да я добавим. Но моля, използвайте изтриването с внимание. Видяхме много дългогодишни потребители, с многогодишен стаж, да се разочароват сериозно и да напуснат своите общности, защото администраторите са решили да изтрият значка.
 
-If you must stop using a badge suggest you simply disable it so that users keep their badge.
+Ако трябва да спрете да използвате значка, препоръчваме просто да я деактивирате, така че потребителите да запазят значката си.
 
-### Преработване на значки
+### Повторна обработка на значки
 
-When a badge is added or changed, the system will retroactively check anyone that interacted with your site to see if they should get the badge. This will be
-visible in the Badges page in the admin dashboard, as a spinner will be shown instead of the number of users that have the badge. This is because the number of users
-is being determined.
+Когато значка бъде добавена или променена, системата ще провери ретроактивно всички, които са взаимодействали с вашия сайт, за да види дали трябва да получат значката. Това ще се вижда на страницата Badges в административния панел, като вместо броя на потребителите със значката ще се показва въртящ се индикатор. Това е така, защото броят на потребителите все още се определя.
 
-### Преглед кои потребители имат значка
+### Кой има значка
 
-In the Badges list each link has a `View Users` option to show the list of users which has earned or was manually awarded a badge.
+В списъка със значки всяка връзка има опция `View Users`, която показва списъка на потребителите, спечелили или ръчно удостоени със значката.

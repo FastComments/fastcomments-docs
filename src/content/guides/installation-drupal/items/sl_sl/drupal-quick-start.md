@@ -1,4 +1,3 @@
----
 To je skrajšana različica (TL;DR) navodil za Drupal.
 
 1. Namestite modul z `composer require drupal/fcom`, ali ga postavite v `modules/custom/fastcomments/`.
@@ -8,5 +7,3 @@ To je skrajšana različica (TL;DR) navodil za Drupal.
 5. Dodajte polje `FastComments` kateremu koli tipu vsebine preko `Structure > Content types > [type] > Manage fields`.
 
 Modul je objavljen na [drupal.org/project/fcom](https://www.drupal.org/project/fcom).
-
----

@@ -1,4 +1,3 @@
----
 Zakazuje batch posao koji poništava svaku migraciju iz jednog migrate-pages posla, najnovije prvo. Dostupno 90 dana.  
 Zapisi izmenjeni nakon migracije ostaju nepromenjeni, tako da kasnija izmena nikada ne bude prepisana.  
 Periodično pozivajte GET /api/v1/batch-jobs/{batchJobId} za broj ponovo uspostavljenih/preskočenih.
@@ -54,5 +53,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

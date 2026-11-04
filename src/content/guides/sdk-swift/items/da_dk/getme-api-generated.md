@@ -31,5 +31,3 @@ DefaultAPI.getMe(tenantId: tenantId) { (response, error) in
     }
 }
 [inline-code-end]
-
----

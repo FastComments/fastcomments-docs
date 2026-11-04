@@ -1,4 +1,3 @@
----
 ## Παράμετροι
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
@@ -41,5 +40,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->update_notification: #{e}"
 end
 [inline-code-end]
-
----

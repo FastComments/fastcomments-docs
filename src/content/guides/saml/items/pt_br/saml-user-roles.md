@@ -209,5 +209,3 @@ O FastComments valida as funções recebidas:
 - Revise as definições de função e as permissões necessárias
 - Verifique se há atribuições de função conflitantes
 - Verifique se o usuário fez login após as mudanças de função
-
----

@@ -1,4 +1,3 @@
----
 Il costo dell'agente è **basato sui token**. Ogni chiamata LLM restituisce un conteggio di token, la piattaforma lo converte in centesimi USD usando la tariffa per token del modello, e i centesimi vengono addebitati ai budget dell'agente e del tenant.
 
 ### Cosa viene fatturato
@@ -46,5 +45,3 @@ Ogni esecuzione registra il suo conteggio grezzo di token e il costo per esecuzi
 - [Scelta del modello](#choosing-a-model) - la leva maggiore sul costo.
 - [Opzioni di contesto](#context-options) - da dove proviene il costo aggiuntivo.
 - [Panoramica dei budget](#budgets-overview) - limiti rigidi che prevengono costi fuori controllo.
-
----

@@ -1,17 +1,18 @@
-Past commenters on the page who are NOT currently online. Sorted by displayName.  
-Use this after exhausting /users/online to render a "Members" section.  
-Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName} index from afterName forward via $gt, no $skip cost.
+Прошлые комментаторы на странице, которые сейчас НЕ в сети. Отсортированы по displayName.
+Используйте это после исчерпания /users/online для отображения раздела «Участники».
+Курсорная пагинация по commenterName: сервер проходит по частичному индексу {tenantId, urlId, commenterName}
+от afterName вперёд через $gt, без затрат на $skip.
 
-## Parameters
+## Параметры
 
-| Name | Type | Required | Description |
+| Имя | Тип | Обязательный | Описание |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | urlId | string | Да |  |
 | afterName | string | Нет |  |
 | afterUserId | string | Нет |  |
 
-## Response
+## Ответ
 
 Возвращает: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersOfflineResponse.ts)
 
@@ -35,5 +36,3 @@ async function fetchOfflineUsers(): Promise<void> {
   console.log(offlineResponse);
 }
 [inline-code-end]
-
----

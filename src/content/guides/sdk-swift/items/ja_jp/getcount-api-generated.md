@@ -40,5 +40,3 @@ ModerationAPI.getCount(tenantId: tenantId, options: ModerationAPI.GetCountOption
     }
 }
 [inline-code-end]
-
----

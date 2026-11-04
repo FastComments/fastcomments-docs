@@ -1,9 +1,9 @@
-После того как вы определите вопросы, панель администратора покажет элемент навигации для [Feedback Analytics](https://fastcomments.com/auth/my-account/feedback-analytics).
+После определения вопросов на панели администратора появится пункт навигации [Feedback Analytics](https://fastcomments.com/auth/my-account/feedback-analytics).
 
-The following roles allow accessing the feedback analytics:
+Доступ к аналитике обратной связи разрешён следующим ролям:
 
 - Super Admin
 - Account Owner
 - Comment Moderator Admin
 
-Each question will show an Over Time trend, an Overall Breakdown, and the entire report can be sliced by Day, Month, or Year. За просмотр результатов плата не взимается.
+Для каждого вопроса отображается тренд «Over Time», общая разбивка «Overall Breakdown», а весь отчёт можно фильтровать по дню, месяцу или году. За просмотр результатов плата не взимается.

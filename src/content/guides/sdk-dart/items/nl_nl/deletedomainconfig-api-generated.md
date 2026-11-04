@@ -1,4 +1,3 @@
----
 ## Parameters
 
 | Naam | Type | Locatie | Verplicht | Beschrijving |
@@ -31,4 +30,3 @@ try {
     print('Exception when calling DefaultApi->deleteDomainConfig: $e\n');
 }
 [inline-code-end]
----

@@ -1,3 +1,1 @@
----
 Daj członkom Ghost sekcję komentarzy, która już ich zna. Importuj nazwy i awatary członków, włącz powiadomienia o odpowiedziach i edytuj szablon swojego posta.
----

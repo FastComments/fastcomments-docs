@@ -1,8 +1,8 @@
-Цей endpoint дозволяє створити нове призначення бейджа для користувача.
+Цей ендпоінт дозволяє створити нове призначення значка користувача.
 
-Example Request:
+Приклад запиту:
 
-[inline-code-attrs-start title = 'Приклад запиту POST'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад POST-запиту'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 curl -X POST "https://fastcomments.com/api/v1/user-badges?tenantId=demo&API_KEY=DEMO_API_SECRET" \
 -H "Content-Type: application/json" \
@@ -13,17 +13,17 @@ curl -X POST "https://fastcomments.com/api/v1/user-badges?tenantId=demo&API_KEY=
 }'
 [inline-code-end]
 
-The request body must contain the following parameters:
+Тіло запиту має містити такі параметри:
 
-- `userId` (required) - Ідентифікатор користувача, якому призначається бейдж
-- `badgeId` (required) - Ідентифікатор бейджа, який призначається
-- `displayedOnComments` (optional) - Чи має бейдж відображатися у коментарях користувача (за замовчуванням true)
+- `userId` (обов'язково) - Ідентифікатор користувача, якому призначається значок
+- `badgeId` (обов'язково) - Ідентифікатор значка, який призначається
+- `displayedOnComments` (необов'язково) - Чи має значок відображатися в коментарях користувача (за замовчуванням true)
 
-Important Notes:
-1. The badge must exist and be enabled in your tenant's badge catalog
-2. You can only assign badges to users who belong to your tenant or have commented on your site
+Важливі примітки:
+1. Значок має існувати та бути активним у каталозі значків вашого тенанта
+2. Ви можете призначати значки лише користувачам, які належать до вашого тенанта або залишали коментарі на вашому сайті
 
-Example Response:
+Приклад відповіді:
 
 [inline-code-attrs-start title = 'Відповідь'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -48,9 +48,9 @@ Example Response:
 }
 [inline-code-end]
 
-Possible Error Responses:
+Можливі відповіді з помилками:
 
-[inline-code-attrs-start title = 'Помилка: відсутній Tenant ID'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Помилка: відсутній ідентифікатор тенанта'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",
@@ -59,7 +59,7 @@ Possible Error Responses:
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Помилка: відсутній User ID'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Помилка: відсутній ідентифікатор користувача'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",
@@ -68,7 +68,7 @@ Possible Error Responses:
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Помилка: відсутній Badge ID'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Помилка: відсутній ідентифікатор значка'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",
@@ -77,7 +77,7 @@ Possible Error Responses:
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Помилка: бейдж не знайдено'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Помилка: значок не знайдено'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",

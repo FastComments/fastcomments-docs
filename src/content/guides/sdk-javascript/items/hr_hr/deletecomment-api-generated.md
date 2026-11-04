@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
@@ -25,5 +24,3 @@ async function removeComment(): Promise<void> {
 }
 removeComment();
 [inline-code-end]
-
----

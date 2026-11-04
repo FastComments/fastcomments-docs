@@ -1,4 +1,3 @@
----
 [api-resource-header-start name = 'Page Likes'; route = 'DELETE /page-reacts/v1/likes/:tenantId'; creditsCost = 0; api-resource-header-end]
 
 Remove o curtir do usuário atual de uma página. Se o usuário não curtiu a página, a requisição tem sucesso com o código `not-liked` e não altera a contagem.
@@ -28,5 +27,3 @@ interface PageUnlikeResponse {
     reason?: string
 }
 [inline-code-end]
-
----

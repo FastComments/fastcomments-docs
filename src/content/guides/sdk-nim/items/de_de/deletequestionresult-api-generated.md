@@ -1,4 +1,3 @@
----
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
@@ -18,5 +17,3 @@ let (maybeResult, httpResp) = client.deleteQuestionResult(tenantId = "my-tenant-
 if maybeResult.isSome:
   let result = maybeResult.get()
 [inline-code-end]
-
----

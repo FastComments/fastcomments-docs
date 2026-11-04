@@ -1,22 +1,22 @@
-Queues a batch job that moves comments, pages and related records from one urlId or domain to another.  
-"urlId" migrations only match the exact urlId. "domain" migrations find/replace the value inside every urlId and url.  
-Poll GET /api/v1/batch-jobs/{batchJobId}: once it is done it carries per-migration results and an undoId.
+Bir urlId veya domain'den diğerine yorumları, sayfaları ve ilgili kayıtları taşıyan bir toplu iş (batch job) kuyruğa alır.
+"urlId" geçişleri yalnızca tam olarak eşleşen urlId ile çalışır. "domain" geçişleri her urlId ve url içindeki değeri bul/değiştir yapar.
+GET /api/v1/batch-jobs/{batchJobId} uç noktasını sorgulayın: işlem tamamlandığında geçiş başına sonuçları ve bir undoId içerir.
 
-## Parameters
+## Parametreler
 
-| Name | Type | Location | Required | Description |
+| Ad | Tür | Konum | Zorunlu | Açıklama |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
+| tenantId | string | query | Evet |  |
 
-## Response
+## Yanıt
 
 Döndürür: [`QueuePageMigrationJobAPIResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/QueuePageMigrationJobAPIResponse.swift)
 
-## Example
+## Örnek
 
-[inline-code-attrs-start title = 'migratePages Örnek'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'migratePages Örneği'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Aşağıdaki kod örnekleri hâlâ beta sürümündedir. Herhangi bir sorun için lütfen http://github.com/OpenAPITools/openapi-generator/issues/new adresinden bildirin
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -33,5 +33,3 @@ DefaultAPI.migratePages(tenantId: tenantId, migrateAPIPagesData: migrateAPIPages
     }
 }
 [inline-code-end]
-
----

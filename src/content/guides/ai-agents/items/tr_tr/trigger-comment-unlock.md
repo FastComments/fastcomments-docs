@@ -1,4 +1,3 @@
----
 Bir yorumun kilidi açıldığında tetiklenir.
 
 ### Ajanın aldığı bağlam
@@ -18,5 +17,3 @@ Bir yorumun kilidi açıldığında tetiklenir.
 ### Eş
 
 Bkz. [Tetikleyici: Yorum Kilitlendi](#trigger-comment-lock).
-
----

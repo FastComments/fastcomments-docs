@@ -1,13 +1,13 @@
-The individual votes behind one poll's tallies, oldest first.
+Окремі голоси за підсумками одного опитування, від найстаріших.
 
-A poll belongs to a comment, so votes are always read one poll at a time - commentId is required. That
-keeps every query on the indexes the collection already has.
+Опитування належить до коментаря, тому голоси завжди читаються по одному опитуванню за раз - commentId є обов'язковим. Це
+зберігає кожен запит на індексах, які колекція вже має.
 
-Obeys the poll's privacy: an anonymous poll's votes cannot be read (poll-anonymous), here or by id.
+Дотримується приватності опитування: голоси анонімного опитування не можна прочитати (poll-anonymous), ні тут, ні за id.
 
-## Parameters
+## Параметри
 
-| Назва | Тип | Розташування | Обов'язково | Опис |
+| Назва | Тип | Розташування | Обов'язковий | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Так |  |
 | commentId | string | query | Так |  |
@@ -15,7 +15,7 @@ Obeys the poll's privacy: an anonymous poll's votes cannot be read (poll-anonymo
 | optionId | string | query | Ні |  |
 | skip | integer | query | Ні |  |
 
-## Response
+## Відповідь
 
 Повертає: [`GetPollVotesResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetPollVotesResponse.swift)
 
@@ -23,14 +23,14 @@ Obeys the poll's privacy: an anonymous poll's votes cannot be read (poll-anonymo
 
 [inline-code-attrs-start title = 'Приклад getPollVotes'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Наступні приклади коду все ще у бета-версії. У разі проблем, будь ласка, повідомте за адресою http://github.com/OpenAPITools/openapi-generator/issues/new
+// Наступні приклади коду все ще є бета-версією. Про будь-яку проблему, будь ласка, повідомте через http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let commentId = "commentId_example" // String | 
-let voterId = "voterId_example" // String |  (необов'язково)
-let optionId = "optionId_example" // String |  (необов'язково)
-let skip = 987 // Int |  (необов'язково)
+let voterId = "voterId_example" // String |  (optional)
+let optionId = "optionId_example" // String |  (optional)
+let skip = 987 // Int |  (optional)
 
 DefaultAPI.getPollVotes(tenantId: tenantId, commentId: commentId, options: DefaultAPI.GetPollVotesOptions(voterId: voterId, optionId: optionId, skip: skip)) { (response, error) in
     guard error == nil else {
@@ -43,5 +43,3 @@ DefaultAPI.getPollVotes(tenantId: tenantId, commentId: commentId, options: Defau
     }
 }
 [inline-code-end]
-
----

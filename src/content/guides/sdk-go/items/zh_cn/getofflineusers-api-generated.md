@@ -1,4 +1,3 @@
----
 此页面的过去评论者（当前不在线）。按 displayName 排序。
 在用尽 /users/online 后，使用此接口来呈现 “成员” 部分。
 基于 commenterName 的游标分页：服务器沿部分索引 {tenantId, urlId, commenterName} 从 afterName 向前通过 $gt 遍历，无 $skip 成本。
@@ -46,5 +45,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.GetOfflineUsers`: %v\n", resp)
 }
 [inline-code-end]
-
----

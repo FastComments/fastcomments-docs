@@ -1,8 +1,8 @@
-The Recent Comments Widget displays a list of the most recent comments across your site or for a specific page. It includes a heading, rounded avatars, comment previews, clickable dates that deep-link to the comment, and automatic dark mode detection.
+Виџет за недавне коментаре приказује листу најновијих коментара на целом сајту или на одређеној страници. Укључује наслов, заобљене аватаре, прегледе коментара, кликабилне датуме који воде директно до коментара и аутоматску детекцију тамног режима.
 
-## Basic Installation
+## Основна инсталација
 
-[inline-code-attrs-start title = 'Инсталација Recent Comments Видгета'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Инсталација виџета за недавне коментаре'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/widget-recent-comments-v2.min.js"></script>
 <div id="fastcomments-widget-recent-comments"></div>
@@ -13,18 +13,18 @@ The Recent Comments Widget displays a list of the most recent comments across yo
 </script>
 [inline-code-end]
 
-## Configuration Options
+## Опције конфигурације
 
-- **tenantId** (required): Your FastComments tenant ID
-- **urlId** (optional): Filter to a single page. Leave null for all pages
-- **count** (optional): Number of comments to show. Default is `10`
-- **hasDarkBackground** (optional): Force dark mode styling. Auto-detected from the page background if not set
+- **tenantId** (обавезно): Ваш FastComments tenant ID
+- **urlId** (опционо): Филтрирање на једну страницу. Оставите null за све странице
+- **count** (опционо): Број приказаних коментара. Подразумевано је `10`
+- **hasDarkBackground** (опционо): Форсира стилизовање тамног режима. Аутоматски се детектује из позадине странице ако није постављено
 
-## Widget Structure
+## Структура виџета
 
-The widget renders with the following HTML structure:
+Виџет се приказује са следећом HTML структуром:
 
-[inline-code-attrs-start title = 'Recent Comments Widget HTML Structure'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'HTML структура виџета за недавне коментаре'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <div class="fc-rc2">
     <div class="fc-rc2-heading">Recent Comments</div>
@@ -44,9 +44,9 @@ The widget renders with the following HTML structure:
 </div>
 [inline-code-end]
 
-## Default CSS Reference
+## Референца подразумеваног CSS-а
 
-[inline-code-attrs-start title = 'Подразумевани CSS за Recent Comments Видгет'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Подразумевани CSS виџета за недавне коментаре'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rc2 {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -70,7 +70,7 @@ The widget renders with the following HTML structure:
 .fc-rc2-page-link:hover { color: #0066cc; text-decoration: underline; }
 [inline-code-end]
 
-## Customization Examples
+## Примери прилагођавања
 
 ### Промена величине аватара
 
@@ -82,23 +82,21 @@ The widget renders with the following HTML structure:
 }
 [inline-code-end]
 
-### Прикажи више линија текста коментара
+### Приказивање више линија текста коментара
 
-[inline-code-attrs-start title = 'Прикажи више линија коментара'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приказ више линија коментара'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rc2-body {
     -webkit-line-clamp: 5 !important;
 }
 [inline-code-end]
 
-### Уклони ивицу контејнера
+### Уклањање ивице контејнера
 
-[inline-code-attrs-start title = 'Уклони ивицу контејнера'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Уклањање ивице контејнера'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rc2 {
     border: none !important;
     box-shadow: none !important;
 }
 [inline-code-end]
-
----

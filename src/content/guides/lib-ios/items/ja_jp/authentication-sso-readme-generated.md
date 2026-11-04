@@ -1,13 +1,12 @@
----
-FastComments は 3 つの認証モードをサポートしています:
+FastCommentsは3つの認証モードをサポートしています:
 
-1. **Anonymous** -- SSO トークンなし; ユーザーはセッションベースの識別を取得します
-2. **Simple SSO** -- デモやテスト用のクライアント側トークン（安全ではありません）
-3. **Secure SSO** -- 本番向けのサーバー署名トークン
+1. **匿名** -- SSOトークンなし。ユーザーにはセッションベースの識別情報が付与されます
+2. **シンプルSSO** -- デモやテスト用のクライアントサイドトークン(安全ではありません)
+3. **セキュアSSO** -- 本番環境向けのサーバー署名トークン
 
-### Simple SSO
+### シンプルSSO
 
-デモやローカルテストに便利です。Simple SSO では誰でも任意のユーザーをなりすますことができるため、本番環境では使用しないでください。
+デモやローカルテストに便利です。シンプルSSOでは誰でも任意のユーザーになりすますことができるため、本番環境では使用しないでください。
 
 ```swift
 import FastCommentsSwift
@@ -28,20 +27,20 @@ let config = FastCommentsWidgetConfig(
 let sdk = FastCommentsSDK(config: config)
 ```
 
-`SimpleSSOUserData` は次のオプションフィールドもサポートします:
+`SimpleSSOUserData` はオプションのフィールドもサポートしています:
 
-- `id` -- ユーザー ID（未設定の場合は email がデフォルト）
-- `displayName` -- 個別の表示名
-- `displayLabel` -- 名前の横に表示されるカスタムラベル（例: "VIP"）
+- `id` -- ユーザーID(未設定の場合はメールアドレスがデフォルトになります)
+- `displayName` -- 別途表示名を指定
+- `displayLabel` -- 名前の横に表示されるカスタムラベル(例: "VIP")
 - `websiteUrl` -- ユーザー名に付くリンク
 - `locale` -- ロケールコード
-- `isProfileActivityPrivate` -- プロファイルアクティビティを非表示にする（デフォルトは true）
+- `isProfileActivityPrivate` -- プロフィールアクティビティを非表示にする(デフォルトはtrue)
 
-### Secure SSO
+### セキュアSSO
 
-本番環境では、バックエンドが API シークレットを使って署名付き SSO トークンを生成します。iOS アプリはサーバーからこのトークンを取得し、config に渡します。
+本番環境では、バックエンドがAPIシークレットを使用して署名済みのSSOトークンを生成します。iOSアプリはこのトークンをサーバーから取得し、設定に渡します。
 
-**バックエンド側**（FastComments Swift SDK または任意の言語を使用）:
+**バックエンド側**(FastComments Swift SDKまたは任意の言語を使用):
 
 ```swift
 let userData = SecureSSOUserData(
@@ -52,10 +51,10 @@ let userData = SecureSSOUserData(
 )
 let sso = try FastCommentsSSO.createSecure(apiKey: "YOUR_API_KEY", secureSSOUserData: userData)
 let token = try sso.prepareToSend()
-// このトークンを API 経由で iOS アプリに返します
+// このトークンをAPI経由でiOSアプリに返します
 ```
 
-**iOS アプリ内で:**
+**iOSアプリ側:**
 
 ```swift
 struct MyView: View {
@@ -76,9 +75,9 @@ struct MyView: View {
             }
         }
         .task {
-            // バックエンドからトークンを取得
+            // バックエンドからトークンを取得します
             let token = try? await fetchSSOTokenFromYourBackend()
-            // トークンで新しい config を作成するか、ロード前に設定する
+            // トークンを含む新しい設定を作成するか、ロード前に設定します
             isLoadingToken = false
             try? await sdk.load()
         }
@@ -86,16 +85,16 @@ struct MyView: View {
 }
 ```
 
-`SecureSSOUserData` は追加のフィールドをサポートします:
+`SecureSSOUserData` は追加のフィールドをサポートしています:
 
 - `optedInNotifications` -- メール通知のオプトイン
 - `displayLabel` -- カスタムラベル
 - `displayName` -- 表示名
-- `websiteUrl` -- ウェブサイトの URL
-- `groupIds` -- グループ所属
+- `websiteUrl` -- ウェブサイトURL
+- `groupIds` -- グループメンバーシップ
 - `isAdmin` -- 管理者権限
 - `isModerator` -- モデレーター権限
-- `isProfileActivityPrivate` -- プロフィールの非公開設定
+- `isProfileActivityPrivate` -- プロフィールのプライバシー
 
 ---
 ---

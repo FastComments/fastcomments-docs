@@ -8,5 +8,3 @@
 ## Принос
 
 Вашите приноси са добре дошли! Моля, посетете [хранилището в GitHub](https://github.com/FastComments/fastcomments-laravel) за указания как да допринесете.
-
----

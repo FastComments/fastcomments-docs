@@ -46,5 +46,3 @@ interface PageCustomReactUser {
     avatarSrc?: string
 }
 [inline-code-end]
-
----

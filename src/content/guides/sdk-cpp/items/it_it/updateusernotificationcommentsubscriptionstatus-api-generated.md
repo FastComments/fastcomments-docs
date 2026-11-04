@@ -28,5 +28,3 @@ auto updateTask = api->updateUserNotificationCommentSubscriptionStatus(
     (void)resp;
 });
 [inline-code-end]
-
----

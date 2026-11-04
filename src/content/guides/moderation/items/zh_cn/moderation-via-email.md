@@ -24,5 +24,3 @@ FastComments 支持每日、每周或每月的电子邮件摘要，供版主和�
 
 FastComments 向版主和管理员发送多种类型的电子邮件。如果需要，您可以选择退出 `Comment Reply` 通知，
 同时通过在上面显示的 `Edit Notifications` 页面中选择相应选项，仍然接收 `New Comment` 通知。
-
----

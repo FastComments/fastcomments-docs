@@ -1,4 +1,3 @@
----
 租戶的批次工作（匯入、匯出、頁面遷移...），依最新排序。
 
 ## 參數
@@ -37,5 +36,3 @@ DefaultAPI.getBatchJobs(tenantId: tenantId, options: DefaultAPI.GetBatchJobsOpti
     }
 }
 [inline-code-end]
-
----

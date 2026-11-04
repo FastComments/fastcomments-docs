@@ -1,14 +1,14 @@
-Custom react counts for a page, optionally with the users who reacted.
+Prilagojeni števci odzivov (reacts) za stran, neobvezno z uporabniki, ki so se odzvali.
 
-## Parameters
+## Parametri
 
-| Ime | Tip | Lokacija | Obvezno | Opis |
+| Ime | Vrsta | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| urlId | string | query | Yes |  |
-| includeUserInfo | string | query | No | "public" izpusti uporabnike s privatnimi profili, "include-private" jih vključi. |
+| tenantId | string | query | Da |  |
+| urlId | string | query | Da |  |
+| includeUserInfo | string | query | Ne | "public" izključi uporabnike z zasebnimi profili, "include-private" jih vključi. |
 
-## Response
+## Odgovor
 
 Vrne: [`GetPageReactsAPIResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetPageReactsAPIResponse.java)
 
@@ -38,7 +38,7 @@ public class Example {
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
-    PageReactIncludeUserInfo includeUserInfo = PageReactIncludeUserInfo.fromValue("public"); // PageReactIncludeUserInfo | \"public\" izpusti uporabnike s privatnimi profili, \"include-private\" jih vključi.
+    PageReactIncludeUserInfo includeUserInfo = PageReactIncludeUserInfo.fromValue("public"); // PageReactIncludeUserInfo | \"public\" izključi uporabnike z zasebnimi profili, \"include-private\" jih vključi.
     try {
       GetPageReactsAPIResponse result = apiInstance.getPageReacts(tenantId, urlId)
             .includeUserInfo(includeUserInfo)

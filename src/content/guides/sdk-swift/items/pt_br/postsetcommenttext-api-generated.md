@@ -35,5 +35,3 @@ ModerationAPI.postSetCommentText(tenantId: tenantId, commentId: commentId, setCo
     }
 }
 [inline-code-end]
-
----

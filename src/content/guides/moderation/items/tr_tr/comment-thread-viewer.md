@@ -1,17 +1,15 @@
-When moderating and viewing comment threads it is desirable to be able to jump directly to a thread to get context during moderating.
+Moderasyon yaparken ve yorum dizilerini görüntülerken, moderasyon sırasında bağlam elde etmek için doğrudan bir diziye atlayabilmek istenir.
 
-This means that the user's flow starts in the Comment Moderation page, and would then have to go from an individual comment to
-the page containing that comment, wait for that page to load, wait for the comments to load, and then scroll to that comment.
+Bu, kullanıcının akışının Yorum Moderasyonu sayfasında başladığı ve ardından tek bir yorumdan, o yorumu içeren sayfaya geçmesi, o sayfanın yüklenmesini beklemesi, yorumların yüklenmesini beklemesi ve sonra o yoruma kaydırması gerektiği anlamına gelir.
 
-However, FastComments provides a faster way. In the Moderate Comments page, next to each comment, there is a "View Comment" button in the bottom right.
+Ancak, FastComments daha hızlı bir yol sunar. Yorumları Moderasyon Et sayfasında, her yorumun yanında, sağ alt köşede bir "View Comment" düğmesi bulunur.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=1&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = '.comments .comment-component'; alt='Denetleme listesindeki tek bir yorum, sağ alt köşesinde Yorumu Görüntüle düğmesi ile'; title='Bir Yorum' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=1&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = '.comments .comment-component'; alt='Moderasyon listesindeki tek bir yorum, sağ alt köşesinde View Comment düğmesi ile'; title='Bir Yorum' app-screenshot-end]
 
-If this comment has replies, the button text will instead say the number of replies, but clicking it takes the same action.
+Bu yorumun yanıtları varsa, düğme metni bunun yerine yanıt sayısını gösterir, ancak tıklamak aynı eylemi gerçekleştirir.
 
-This button will take you to the **Comment Thread Viewer**.
+Bu düğme sizi **Yorum Dizi Görüntüleyici**'ye götürür.
 
-The Comment Thread Viewer is a small, fast loading application hosted by FastComments that renders the comment thread for the page that
-the comment is on, and scrolls to that comment.
+Yorum Dizi Görüntüleyici, FastComments tarafından barındırılan, yorumun bulunduğu sayfanın yorum dizisini görüntüleyen ve o yoruma kayan küçük, hızlı yüklenen bir uygulamadır.
 
-This allows moderators to gather the context they need to, quickly, without having to wait for another page to load.
+Bu, moderatörlerin ihtiyaç duydukları bağlamı hızlıca toplamasını sağlar, başka bir sayfanın yüklenmesini beklemek zorunda kalmadan.

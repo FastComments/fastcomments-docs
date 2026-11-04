@@ -33,5 +33,3 @@ try {
     print('Exception when calling PublicApi->createCommentPublic: $e\n');
 }
 [inline-code-end]
-
----

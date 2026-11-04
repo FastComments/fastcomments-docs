@@ -27,5 +27,3 @@ To je mogoče storiti tudi brez kode. Na strani za prilagajanje pripomočka si o
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.default-sort-direction'; alt='Izbirnik privzete smeri razvrščanja, ki ponuja Najbolj relevantno, Najnovejše najprej in Najstarejše najprej'; title='Sprememba privzete smeri razvrščanja' app-screenshot-end]
 
 Upoštevajte, da so komentarji na vsaki strani za vsako smer razvrščanja vnaprej izračunani, zato imajo vse smeri razvrščanja enako zmogljivost.
-
----

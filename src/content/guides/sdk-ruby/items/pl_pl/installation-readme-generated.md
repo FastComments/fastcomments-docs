@@ -1,4 +1,3 @@
----
 Dodaj tę linię do pliku Gemfile Twojej aplikacji:
 
 ```ruby

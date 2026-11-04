@@ -33,5 +33,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_pages: #{e}"
 end
 [inline-code-end]
-
----

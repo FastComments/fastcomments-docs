@@ -1,4 +1,3 @@
----
 从其评论中删除投票（poll），以及所有已投的票。评论本身保持不变。
 
 ## 参数
@@ -23,5 +22,3 @@ async function runDeletePoll(): Promise<void> {
   console.log(result);
 }
 [inline-code-end]
-
----

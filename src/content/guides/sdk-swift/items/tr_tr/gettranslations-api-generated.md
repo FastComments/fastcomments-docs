@@ -34,5 +34,3 @@ PublicAPI.getTranslations(namespace: namespace, component: component, options: P
     }
 }
 [inline-code-end]
-
----

@@ -2,45 +2,47 @@
 
 | 名稱 | 類型 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| userId | string | query | No |  |
-| urlId | string | query | No |  |
-| fromCommentId | string | query | No |  |
-| viewed | boolean | query | No |  |
-| type | string | query | No |  |
+| tenantId | string | query | 是 |  |
+| userId | string | query | 否 |  |
+| urlId | string | query | 否 |  |
+| fromCommentId | string | query | 否 |  |
+| viewed | boolean | query | 否 |  |
+| type | string | query | 否 |  |
 
 ## 回應
 
-Returns: [`GetNotificationCountResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_notification_count_response.py)
+回傳:[`GetNotificationCountResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_notification_count_response.py)
 
 ## 範例
 
 [inline-code-attrs-start title = 'get_notification_count 範例'; type = 'python'; isFunctional = false; inline-code-attrs-end]
-```python
+[inline-code-start]
 import client
 from client.api.default_api import GetNotificationCountOptions
 from client.models.get_notification_count_response import GetNotificationCountResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# 定義 host 是可選的，預設為 https://fastcomments.com
-# 請參閱 configuration.py 以獲取所有支援的設定參數清單。
+# Defining the host is optional and defaults to https://fastcomments.com
+# See configuration.py for a list of all supported configuration parameters.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
-# 客戶端必須依照 API 伺服器的安全政策設定認證與授權參數。
-# 下面提供了每種認證方法的範例，請使用符合您認證需求的範例。
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
 
-# 設定 API 金鑰授權：api_key
+# Configure API key authorization: api_key
 configuration.api_key['api_key'] = os.environ["API_KEY"]
 
-# 如有需要，取消註解以下行以設定 API 金鑰的前綴（例如 Bearer）
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api_key'] = 'Bearer'
 
-# 以 API 客戶端實例進入上下文
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # 建立 API 類別的實例
+    # Create an instance of the API class
     api_instance = client.DefaultApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
     user_id = 'user_id_example' # str |  (optional)
@@ -55,5 +57,4 @@ with client.ApiClient(configuration) as api_client:
         pprint(api_response)
     except Exception as e:
         print("Exception when calling DefaultApi->get_notification_count: %s\n" % e)
-```
----
+[inline-code-end]

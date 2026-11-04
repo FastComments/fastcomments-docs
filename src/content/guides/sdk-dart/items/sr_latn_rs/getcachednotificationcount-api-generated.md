@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
@@ -31,5 +30,3 @@ try {
     print('Exception when calling DefaultApi->getCachedNotificationCount: $e\n');
 }
 [inline-code-end]
-
----

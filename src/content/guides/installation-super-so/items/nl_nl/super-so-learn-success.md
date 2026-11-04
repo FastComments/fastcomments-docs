@@ -8,5 +8,3 @@ Dit is hoe het eruit zou moeten zien - je zou wat tekst moeten kunnen selecteren
 </div>
 
 Gefeliciteerd met het instellen van FastComments met Super! Als je een Domain Error bent tegengekomen, of als je wilt leren hoe je het reactiegebied kunt aanpassen, lees dan verder!
-
----

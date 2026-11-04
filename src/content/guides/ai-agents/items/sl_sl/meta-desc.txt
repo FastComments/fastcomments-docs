@@ -1,3 +1,1 @@
----
 Ustvarite AI agente, ki spremljajo vašo skupnost in delujejo samostojno: samodejno moderiranje, pozdravljanje novih uporabnikov, povzemanje tem in pripenjanje najboljših komentarjev.
----

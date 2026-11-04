@@ -5,5 +5,3 @@ Betten Sie Live-Kommentare, Chat- und Bewertungs-Widgets in Ihre React Native-Ap
 ## Repository
 
 [Auf GitHub ansehen](https://github.com/FastComments/fastcomments-react-native)
-
----

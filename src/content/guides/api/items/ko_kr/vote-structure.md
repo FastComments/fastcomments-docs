@@ -1,4 +1,3 @@
----
 `Vote` 객체는 사용자가 남긴 투표를 나타냅니다.
 
 댓글과 투표 간의 관계는 `commentId`로 정의됩니다.
@@ -16,5 +15,3 @@ interface Vote {
     createdAt: string
 }
 [inline-code-end]
-
----

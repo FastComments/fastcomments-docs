@@ -1,21 +1,18 @@
----
-When users comment or vote, and they are not logged in, they will be asked to provide their email and username.
+Коли користувачі коментують або голосують, не будучи авторизованими, їм буде запропоновано вказати свою електронну пошту та ім'я користувача.
 
-For some sites, asking a visitor to invent a unique username is a hurdle, particularly on mobile. FastComments can
-generate a neutral username for each new visitor and prefill it in the username field, like `BraveOtter4172`.
+Для деяких сайтів прохання до відвідувача придумати унікальне ім'я користувача є перешкодою, особливо на мобільних пристроях. FastComments може
+генерувати нейтральне ім'я користувача для кожного нового відвідувача та попередньо заповнювати ним поле імені користувача, наприклад `BraveOtter4172`.
 
-The visitor can leave it as-is, or replace it with a name of their choosing.
+Відвідувач може залишити його як є або замінити на ім'я на свій розсуд.
 
-This can be enabled from the Customization UI, under the setting called `Generate Usernames Automatically`:
+Це можна увімкнути в інтерфейсі налаштування Customization, у параметрі під назвою `Generate Usernames Automatically`:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.auto-generate-username'; alt='Опція «Генерувати імена користувачів автоматично» у інтерфейсі налаштування віджету'; title='Генерувати імена користувачів автоматично' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.auto-generate-username'; alt='Опція Generate Usernames Automatically в інтерфейсі налаштування віджета'; title='Автоматична генерація імен користувачів' app-screenshot-end]
 
 #### Як це працює
 
-- Each generated name is unique. It is checked against existing accounts and reserved for that visitor's browser session, so two visitors are not offered the same name.
-- The name is only generated for visitors who do not have one yet. Logged in users, SSO users, and visitors who have already commented keep their existing name.
-- It works with or without [анонімними коментарями](/guide-customizations-and-configuration.html#allow-anon). With anonymous commenting off, the visitor still enters their email, but no longer has to think of a username.
-- A returning visitor who enters an email they have used before is matched to their existing account, and keeps the name on that account.
-- If a [ім'я користувача за замовчуванням](/guide-customizations-and-configuration.html#default-username) is also set, the generated name takes precedence.
-
----
+- Кожне згенероване ім'я є унікальним. Воно перевіряється на відповідність наявним обліковим записам і резервується за сеансом браузера цього відвідувача, тому двом відвідувачам не пропонується однакове ім'я.
+- Ім'я генерується лише для відвідувачів, у яких його ще немає. Авторизовані користувачі, користувачі SSO та відвідувачі, які вже коментували, зберігають своє наявне ім'я.
+- Це працює як з [анонімним коментуванням](/guide-customizations-and-configuration.html#allow-anon), так і без нього. Якщо анонімне коментування вимкнено, відвідувач все одно вводить свою електронну пошту, але більше не має вигадувати ім'я користувача.
+- Повторний відвідувач, який вводить електронну пошту, яку він використовував раніше, зіставляється зі своїм наявним обліковим записом і зберігає ім'я цього облікового запису.
+- Якщо також встановлено [Default Username](/guide-customizations-and-configuration.html#default-username), згенероване ім'я має пріоритет.

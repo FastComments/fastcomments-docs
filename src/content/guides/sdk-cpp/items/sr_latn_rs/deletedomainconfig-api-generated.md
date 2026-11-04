@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
@@ -25,5 +24,3 @@ api->deleteDomainConfig(optTenant.value(), optDomain.value())
         }
     });
 [inline-code-end]
-
----

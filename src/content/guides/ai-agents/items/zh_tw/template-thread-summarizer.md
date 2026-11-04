@@ -1,35 +1,35 @@
-**Template ID:** `thread_summarizer`
+**範本 ID:** `thread_summarizer`
 
-Thread Summarizer 會在長篇討論串結尾發布中性、單段落的摘要。它使用 30 分鐘的延遲，以便討論串穩定後再由代理檢視。
+「討論串摘要器」會在長討論串的結尾發布一段中立的單段摘要。它使用 30 分鐘的延遲機制，讓討論串在代理檢視之前先穩定下來。
 
-內建提示指示代理不要加入編輯性意見——這一點很重要。若沒有它，模型會傾向使用「在我看來」之類的表述，這在以您的帳戶顯示名稱發布時讀起來效果很差。
+內建提示詞指示代理不要加入個人評論——這一點至關重要。若缺少這一點，模型容易傾向使用「在我看來」之類的措辭，而這在以您帳戶的顯示名稱發布時觀感不佳。
 
-### Triggers
+### 觸發條件
 
-- **New comment posted** (`COMMENT_ADD`)。
-- **Trigger delay**: 30 minutes (1800 seconds)。參閱 [Deferred Triggers](#trigger-deferred-delay)。
+- **新留言發布** (`COMMENT_ADD`)。
+- **觸發延遲**：30 分鐘（1800 秒）。請參閱[延遲觸發](#trigger-deferred-delay)。
 
-30 分鐘的延遲表示代理在評論發佈後半小時執行一次，根據當時討論串的狀態進行摘要。這並非「對每則回覆都摘要」——延遲觸發佇列會將同一討論串上的多個新評論事件合併，但不會跨不同時間窗去重複它們。您可能會想在提示中**加入自訂規則**，例如「如果代理在過去 24 小時內已經為此討論串撰寫過摘要，則不要發佈新的摘要」，並依靠上下文以及代理的 [memory tools](#tools-overview) 來執行該規則。
+30 分鐘的延遲意味著代理只會執行一次，即在留言發布半小時後，針對當下討論串的狀態進行處理。它並不是「每次回覆都摘要」——延遲觸發佇列會合併同一討論串上的多個新留言事件，但不會跨不同時間窗進行去重。您可能需要在**提示詞中新增自訂規則**，例如「如果代理在過去 24 小時內已經摘要過此討論串，則不要發布新摘要」，並依靠上下文以及代理的[記憶工具](#tools-overview)來強制執行。
 
-### Allowed tools
+### 允許的工具
 
-- [`write_comment`](#tools-overview) - 發佈摘要本身。
-- [`pin_comment`](#tools-overview) - 將摘要釘選，讓讀者在討論串頂端看到它。
-- [`unpin_comment`](#tools-overview) - 在釘選新摘要之前，取消釘選該代理先前的摘要。
+- [`write_comment`](#tools-overview) - 發布摘要本身。
+- [`pin_comment`](#tools-overview) - 釘選摘要，讓讀者在討論串頂端看到它。
+- [`unpin_comment`](#tools-overview) - 在釘選新摘要之前，先取消釘選同一代理先前的摘要。
 
 摘要器無法進行審核或與使用者互動。
 
-### Pinning the summary
+### 釘選摘要
 
-代理使用 `write_comment` 發佈新評論，然後以回傳的評論 ID 呼叫 `pin_comment`。在對同一討論串的後續執行中，提示指示代理先對其先前的摘要呼叫 `unpin_comment`——平台本身並不強制每個討論串只能有一則釘選評論，因此如果保留先前摘要的釘選，會導致兩則針對同一討論串的釘選摘要並列出現。於 [Context Options](#context-options) 中勾選「Include parent comment and prior replies in the same thread」，以便代理能看到先前已釘選的摘要。
+代理會使用 `write_comment` 發布新留言，然後使用傳回的留言 ID 呼叫 `pin_comment`。在後續針對同一討論串的執行中，提示詞會指示它先對先前的摘要呼叫 `unpin_comment`——平台本身**不會**強制執行每個討論串只能釘選一則留言的規則，因此若保留先前的摘要為釘選狀態，將會導致兩則釘選的摘要並排出現。請在[上下文選項](#context-options)中勾選「在同一討論串中包含父留言與先前的回覆」，讓代理能夠看到先前釘選的摘要。
 
-### Recommended additions before going live
+### 上線前的建議新增設定
 
-- **在 [Context Options](#context-options) 勾選「Include parent comment and prior replies in the same thread」**。沒有討論串上下文的摘要器毫無用處。
-- **調整最低討論串大小規則。** 提示預設為「Fewer than 5 comments」，但在活躍社群中 10–20 則較為合適。直接編輯提示。
-- **限制特定 URL 模式**，如果您只想在長文頁面上產生摘要，而非在公告或產品頁面上。參閱 [Scope: URL and Locale Filters](#scope-url-locale)。
-- **注意成本。** 摘要模板是最耗費 token 的，因為每次執行都會讀取整個討論串。在切換為啟用之前，先設定一個嚴格的 [daily budget](#budgets-overview)。
+- **在[上下文選項](#context-options)中勾選「在同一討論串中包含父留言與先前的回覆」。** 沒有討論串上下文的摘要器毫無用處。
+- **調整最小討論串規模規則。**「少於 5 則留言」是提示詞的預設值，但在活躍的社群中，10-20 則更為合適。請直接編輯提示詞。
+- **限制特定的 URL 模式**，如果您只想在長篇頁面上顯示摘要，而不是公告或產品頁面。請參閱[範圍：URL 與語系篩選器](#scope-url-locale)。
+- **注意成本。** 摘要化是最消耗 token 的範本，因為它在每次執行時都會讀取整個討論串。在切換為啟用之前，請先設定嚴格的[每日預算](#budgets-overview)。
 
-### Avoiding repeat summaries
+### 避免重複摘要
 
-代理可以使用 [`save_memory`](#tools-overview) 和 [`search_memory`](#tools-overview)——您可以擴充提示，指示代理記錄「summarized {thread urlId}」的備註，並在再次發佈前檢查這些備註。記憶在您租戶中的所有代理之間共享。
+代理可以存取 [`save_memory`](#tools-overview) 和 [`search_memory`](#tools-overview)——您可以擴充提示詞，指示它記錄「已摘要 {thread urlId}」的筆記，並在再次發布前先檢查。記憶在您租戶中的所有代理之間共用。

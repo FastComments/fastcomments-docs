@@ -1,4 +1,3 @@
----
 req
 tenantId
 afterId
@@ -32,5 +31,3 @@ api->getFeedPostsPublic(U("my-tenant-123"), options).then([](pplx::task<std::sha
     }
 });
 [inline-code-end]
-
----

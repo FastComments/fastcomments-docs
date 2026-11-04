@@ -1,4 +1,3 @@
----
 Obiekt `Vote` reprezentuje głos oddany przez użytkownika.
 
 Relacja między komentarzami a głosami jest określona za pomocą `commentId`.
@@ -16,5 +15,3 @@ interface Vote {
     createdAt: string
 }
 [inline-code-end]
-
----

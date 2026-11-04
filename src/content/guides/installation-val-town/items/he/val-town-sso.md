@@ -1,10 +1,10 @@
-אם ה‑val שלך כבר יודע מי המבקר, Secure SSO מעביר את הזהות לווידג'ט כך שהם לעולם לא יראו התחברות שנייה. אין צורך לבנות נקודות קצה ואין מה לקרוא בזמן ריצה: אתה מחשב שלושה ערכים בצד השרת ומעביר אותם בתצורת הווידג'ט.
+אם ה-val שלך כבר יודע מי המבקר, Secure SSO מעביר את הזהות הזו לווידג'ט כך שהמבקר לעולם לא יראה התחברות שנייה. אין נקודות קצה לבנות ואין דבר לקרוא בזמן ריצה: אתה מחשב שלושה ערכים בצד השרת ומעביר אותם בהגדרות הווידג'ט.
 
-Val Town מספק כניסה ללא צורך בתצורה עם `std/oauth`, כך שהמבקר יכול להתחבר עם חשבון Val Town שכבר יש לו. החלף זאת בכל מה שהאפליקציה שלך משתמשת בו; החלק של FastComments אינו משתנה.
+Val Town מספקת התחברות ללא הגדרות באמצעות `std/oauth`, כך שהמבקר יכול להתחבר עם חשבון ה-Val Town שכבר יש לו. החלף את זה בכל מה שהאפליקציה שלך משתמשת בו; החלק של FastComments אינו משתנה.
 
-## Build the payload on the server
+## בניית ה-payload בשרת
 
-הסוד של ה‑API חותם על המטען ולא צריך להגיע לקוד בדפדפן. התקן את ה‑SDK מ‑npm, אשר פועל על סביבת הריצה Deno של Val Town כפי שהיא:
+סוד ה-API חותם את ה-payload ואסור שיגיע לקוד בדפדפן. התקן את ה-SDK מ-npm, שעובד בסביבת ה-Deno של Val Town כמו שהוא:
 
 [inline-code-attrs-start title = 'sso.ts'; type='javascript' inline-code-attrs-end]
 [inline-code-start]
@@ -26,11 +26,11 @@ export function buildSSOPayload(user) {
 }
 [inline-code-end]
 
-`getPayload()` מחזיר `{ userDataJSONBase64, verificationHash, timestamp }`. שלושת הערכים האלה הם כל מה שמגיע לדפדפן. הסוד חותם עליהם ולאחר מכן נזרק, ולכן שום דבר בעמוד אינו מאפשר לקורא לזייף משתמש שונה.
+`getPayload()` מחזיר `{ userDataJSONBase64, verificationHash, timestamp }`. שלושת הערכים האלה הם כל מה שמגיע לדפדפן. הסוד חותם עליהם ואז נזרק, כך ששום דבר בדף לא מאפשר לקורא לזייף משתמש אחר.
 
-## Pass it to the widget
+## העברת זה לווידג'ט
 
-[inline-code-attrs-start title = 'תצורת וידג\'ט עם SSO'; type='javascript' inline-code-attrs-end]
+[inline-code-attrs-start title = 'הגדרות ווידג\'ט עם SSO'; type='javascript' inline-code-attrs-end]
 [inline-code-start]
 import { getOAuthUserData, oauthMiddleware } from "https://esm.town/v/std/oauth/middleware.ts";
 
@@ -52,14 +52,14 @@ app.get("/", async (c) => {
 export default oauthMiddleware(app.fetch);
 [inline-code-end]
 
-`oauthMiddleware` מוסיף עבורך `GET /auth/login`, `GET /auth/callback` ו‑`POST /auth/logout`. שים לב שהיציאה (logout) היא **POST**, בעוד שהווידג'ט מנווט ל‑`logoutURL` עם GET, ולכן הפנה את `logoutURL` לנתיב קטן משלך שמבצע את ה‑POST.
+`oauthMiddleware` מוסיף עבורך את `GET /auth/login`, `GET /auth/callback` ו-`POST /auth/logout`. שים לב שההתנתקות היא **POST**, בעוד שהווידג'ט מנווט אל `logoutURL` עם GET, ולכן כוון את `logoutURL` לנתיב קטן משלך ששולח את ה-POST.
 
-כאשר המבקר מנותק, העבר `sso` עם רק `loginURL`. הווידג'ט יציג אז תזכורת התחברות במקום תיבת תגובה אנונימית.
+כאשר המבקר מנותק, העבר `sso` עם `loginURL` בלבד. הווידג'ט יציג אז בקשת התחברות במקום תיבת תגובות אנונימית.
 
-## Things that go wrong
+## דברים שמשתבשים
 
-`timestamp` הוא זמן אפוק (epoch) במילישניות, אסור שיהיה בעתיד, וחייב להיות לא יותר משני ימים ישנים. צור אותו בצד השרת באותו בקשה שמחשבת את החתימה. יצירתו בדפדפן היא הכשל הקלאסי: הערך שונה מהערך שחולץ ולכן כל תגובה נדחית.
+`timestamp` הוא ביחידות של **מילישניות** מתחילת העידן, אסור שיהיה בעתיד, ואסור שיהיה ישן מיומיים. צור אותו בשרת באותה בקשה שבה מחשבים את ה-hash. יצירתו בדפדפן היא הכשל הקלאסי: הערך שונה מזה שעליו חושב ה-hash וכל תגובה נדחית.
 
-לעולם אל תגדיר `isAdmin` או `isModerator` מספק הזהות. התחברות עם חשבון Val Town לא אומרת דבר על מי צריך למודרציה של האתר שלך.
+לעולם אל תגדיר `isAdmin` או `isModerator` מספק הזהויות. התחברות עם חשבון Val Town אינה אומרת דבר על מי צריך לנהל את האתר שלך.
 
-ראה את [מדריך SSO](/guide-customizations-and-configuration.html#sso-secure) לקבלת רשימת השדות המלאה, נושאים עם גישה קבוצתית, ותגים.
+ראה את [מדריך ה-SSO](/guide-customizations-and-configuration.html#sso-secure) לרשימת השדות המלאה, שרשורים מוגבלי קבוצות ותגים.

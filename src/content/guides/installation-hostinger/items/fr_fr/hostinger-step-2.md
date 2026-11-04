@@ -45,5 +45,3 @@ Faites maintenant glisser le widget pour lui donner la taille souhaitée, il app
 </div>
 
 ...puis prévisualisez et enregistrez !
-
----

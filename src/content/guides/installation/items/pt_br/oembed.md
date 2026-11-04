@@ -26,5 +26,3 @@ Adicionar comentários em tempo real a uma Nimbus Note também é suportado, e o
 2. Ao editar sua nota, adicione um bloco de incorporação.
 3. Use a URL do Passo 1 como a URL a ser incorporada.
 4. Pronto!
-
----

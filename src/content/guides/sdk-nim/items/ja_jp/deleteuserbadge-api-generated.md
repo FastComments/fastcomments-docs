@@ -17,5 +17,3 @@ let (apiResponse, httpResponse) = client.deleteUserBadge(tenantId = "my-tenant-1
 if apiResponse.isSome:
   let success = apiResponse.get()
 [inline-code-end]
-
----

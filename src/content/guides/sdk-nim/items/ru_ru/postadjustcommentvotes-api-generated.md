@@ -1,4 +1,3 @@
----
 ## Параметры
 
 | Имя | Тип | Обязательно | Описание |
@@ -26,5 +25,3 @@ let (adjustRespOpt, httpResp) = client.postAdjustCommentVotes(
 if adjustRespOpt.isSome:
   let adjustResp = adjustRespOpt.get()
 [inline-code-end]
-
----

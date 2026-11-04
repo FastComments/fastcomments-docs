@@ -1,15 +1,15 @@
-Queues a batch job that reverses every migration from one migrate-pages job, newest first. Available for 90 days.  
-Records changed since the migration are left alone, so a later edit is never overwritten.  
-Poll GET /api/v1/batch-jobs/{batchJobId} for the restored/skipped counts.
+Tek bir migrate-pages işinin tüm geçişlerini, en yeniden başlayarak tersine çeviren bir toplu iş kuyruğa alır. 90 gün boyunca kullanılabilir.
+Geçişten sonra değişen kayıtlara dokunulmaz, böylece sonraki bir düzenleme asla üzerine yazılmaz.
+Geri yüklenen/atlanan sayıları için GET /api/v1/batch-jobs/{batchJobId} uç noktasını yoklayın.
 
-## Parameters
+## Parametreler
 
-| Ad | Tür | Konum | Gerekli | Açıklama |
+| Ad | Tür | Konum | Zorunlu | Açıklama |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| undoId | string | path | Yes |  |
+| tenantId | string | query | Evet |  |
+| undoId | string | path | Evet |  |
 
-## Response
+## Yanıt
 
 Döndürür: [`QueuePageMigrationJobAPIResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/QueuePageMigrationJobAPIResponse.java)
 
@@ -17,7 +17,7 @@ Döndürür: [`QueuePageMigrationJobAPIResponse`](https://github.com/FastComment
 
 [inline-code-attrs-start title = 'undoPageMigrations Örneği'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sınıfları içe aktar:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -30,10 +30,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // API anahtarı yetkilendirmesini yapılandır: api_key
+    // Configure API key authorization: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // API anahtarı için bir önek ayarlamak üzere aşağıdaki satırın yorumunu kaldırın, ör. "Token" (varsayılan null)
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -53,5 +53,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

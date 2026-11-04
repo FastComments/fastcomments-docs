@@ -40,5 +40,3 @@ const summary: BulkPreBanSummary = await postBulkPreBanSummary(
   sso
 );
 [inline-code-end]
-
----

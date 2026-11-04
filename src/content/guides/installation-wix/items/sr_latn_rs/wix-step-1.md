@@ -10,5 +10,3 @@ Zatim, moramo da se uverimo da uređujemo pravu stranicu.
     <div class="title">Korak jedan: Uredi dinamičku stranicu posta</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-1-open-page.png" alt="Uredi dinamičku stranicu posta" />
 </div>
-
----

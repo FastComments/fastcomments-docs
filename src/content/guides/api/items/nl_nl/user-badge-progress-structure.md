@@ -1,4 +1,3 @@
----
 `UserBadgeProgress` is een object dat de voortgang van een gebruiker bijhoudt naar het verdienen van verschillende badges in het FastComments-systeem.
 
 Deze bijhouding helpt bepalen wanneer gebruikers automatisch badges moeten ontvangen op basis van hun activiteit en deelname in uw community.
@@ -55,4 +54,3 @@ export interface UserBadgeProgress {
     }
 }
 [inline-code-end]
----

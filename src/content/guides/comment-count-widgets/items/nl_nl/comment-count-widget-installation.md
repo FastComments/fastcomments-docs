@@ -1,8 +1,8 @@
-De Comment Count Widget is ontworpen om het aantal reacties van een enkele pagina weer te geven. Het is lichtgewicht en biedt realtime updates indien geconfigureerd.
+De Comment Count Widget is ontworpen voor het weergeven van het aantal reacties van een enkele pagina. Deze is lichtgewicht en biedt realtime updates indien geconfigureerd.
 
-## Basis Installatie
+## Basisinstallatie
 
-[inline-code-attrs-start title = 'Comment Count Widget Installation'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Installatie Comment Count Widget'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/widget-comment-count.min.js"></script>
 <div id="comment-count"></div>
@@ -13,20 +13,20 @@ De Comment Count Widget is ontworpen om het aantal reacties van een enkele pagin
 </script>
 [inline-code-end]
 
-## Configuratie Opties
+## Configuratieopties
 
-De `FastCommentsCommentCount` functie accepteert de volgende configuratieopties:
+De functie `FastCommentsCommentCount` accepteert de volgende configuratieopties:
 
-- **tenantId** (vereist): Uw FastComments tenant ID
-- **urlId** (optioneel): De pagina-identifier. Standaard is `window.location.href` indien niet gespecificeerd
-- **numberOnly** (optioneel): Indien `true`, wordt alleen het nummer zonder tekst weergegeven. Standaard is `false`
-- **isLive** (optioneel): Indien `true`, wordt de telling automatisch bijgewerkt. Standaard is `false`
+- **tenantId** (vereist): Je FastComments tenant ID
+- **urlId** (optioneel): De pagina-identificatie. Standaard wordt `window.location.href` gebruikt indien niet opgegeven
+- **numberOnly** (optioneel): Indien `true`, wordt alleen het nummer weergegeven zonder tekst. Standaard is `false`
+- **isLive** (optioneel): Indien `true`, wordt het aantal automatisch bijgewerkt. Standaard is `false`
 
-## Geavanceerde Voorbeelden
+## Geavanceerde voorbeelden
 
 ### Aangepaste URL ID
 
-[inline-code-attrs-start title = 'Comment Count with Custom URL ID'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Comment Count met aangepaste URL ID'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/widget-comment-count.min.js"></script>
 <div id="comment-count-custom"></div>
@@ -38,9 +38,9 @@ De `FastCommentsCommentCount` functie accepteert de volgende configuratieopties:
 </script>
 [inline-code-end]
 
-### Alleen Nummer Weergave
+### Alleen nummerweergave
 
-[inline-code-attrs-start title = 'Comment Count Number Only'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Comment Count alleen nummer'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/widget-comment-count.min.js"></script>
 <div id="comment-count-number"></div>
@@ -52,9 +52,9 @@ De `FastCommentsCommentCount` functie accepteert de volgende configuratieopties:
 </script>
 [inline-code-end]
 
-### Live Updates
+### Live updates
 
-[inline-code-attrs-start title = 'Live Comment Count Updates'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Live updates Comment Count'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/widget-comment-count.min.js"></script>
 <div id="comment-count-live"></div>
@@ -66,16 +66,16 @@ De `FastCommentsCommentCount` functie accepteert de volgende configuratieopties:
 </script>
 [inline-code-end]
 
-## Widget Methodes
+## Widget-methoden
 
-De widget retourneert een object met de volgende methodes:
+De widget retourneert een object met de volgende methoden:
 
 - **destroy()**: Verwijdert de widget en ruimt alle timers op
 - **update(config)**: Werkt de widget bij met een nieuwe configuratie
 
-### Voorbeeld Gebruik
+### Voorbeeld van gebruik
 
-[inline-code-attrs-start title = 'Widget Methods Example'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Voorbeeld widget-methoden'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/widget-comment-count.min.js"></script>
 <div id="comment-count-methods"></div>
@@ -83,16 +83,16 @@ De widget retourneert een object met de volgende methodes:
     const widget = window.FastCommentsCommentCount(document.getElementById('comment-count-methods'), {
         tenantId: 'demo'
     });
-
-    // Update the widget to show a different page's count
+    
+    // Werk de widget bij om het aantal van een andere pagina te tonen
     setTimeout(() => {
         widget.update({
             tenantId: 'demo',
             urlId: 'different-page-id'
         });
     }, 5000);
-
-    // Destroy the widget after 10 seconds
+    
+    // Vernietig de widget na 10 seconden
     setTimeout(() => {
         widget.destroy();
     }, 10000);
@@ -101,9 +101,9 @@ De widget retourneert een object met de volgende methodes:
 
 ## Styling
 
-De widget rendert gewone HTML met het aantal reacties en komt met minimale styling. U kunt het uiterlijk aanpassen met CSS:
+De widget rendert platte HTML met het aantal reacties en wordt geleverd met minimale styling. Je kunt het uiterlijk aanpassen met CSS:
 
-[inline-code-attrs-start title = 'Custom Styling'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Aangepaste styling'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <style>
     .comment-count-styled {

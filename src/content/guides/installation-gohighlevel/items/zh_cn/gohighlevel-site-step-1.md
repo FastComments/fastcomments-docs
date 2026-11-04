@@ -40,6 +40,3 @@
     <div class="title">打开代码编辑器</div>
     <img class="screenshot-image" src="/images/installation-guides/gohighlevel-site-step-6-open-code-editor.png" alt="打开代码编辑器" />
 </div>
-
-
----

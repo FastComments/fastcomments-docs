@@ -1,4 +1,3 @@
----
 Un objet `Comment` représente un commentaire laissé par un utilisateur.
 
 La relation entre les commentaires parent et enfant est définie via `parentId`.
@@ -162,5 +161,3 @@ interface CommentHashTag {
     retain?: boolean
 }
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 Installer fra et release-tag (dette projekt distribueres via git-tags, ikke PyPI):
 
 ```bash
@@ -20,4 +19,3 @@ INSTALLED_APPS = [
     "fastcomments_django",
 ]
 ```
----

@@ -5,5 +5,3 @@ Intégrez des widgets de commentaires en direct, de chat et d'avis dans votre ap
 ## Dépôt
 
 [Voir sur GitHub](https://github.com/FastComments/fastcomments-react-native)
-
----

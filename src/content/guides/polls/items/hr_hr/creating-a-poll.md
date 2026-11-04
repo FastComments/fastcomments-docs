@@ -1,4 +1,3 @@
----  
 Za stvaranje ankete, kliknite gumb ankete u alatnoj traci uređivača komentara. Uređivač ankete otvara se ispod polja za unos teksta, gdje možete postaviti:
 
 - **Pitanje**, do 200 znakova.  
@@ -10,4 +9,3 @@ Za stvaranje ankete, kliknite gumb ankete u alatnoj traci uređivača komentara.
 Napišite svoj komentar kao i obično i objavite ga. Anketa se objavljuje zajedno s komentarom. Ankete se mogu dodati novim komentarima i odgovorima.
 
 Za odbacivanje ankete prije objave, kliknite **Ukloni anketu**.  
----

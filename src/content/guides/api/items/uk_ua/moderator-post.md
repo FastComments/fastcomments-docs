@@ -1,4 +1,3 @@
----
 [api-resource-header-start name = 'Moderator'; route = 'POST /api/v1/moderators'; creditsCost = 1; api-resource-header-end]
 
 Цей маршрут надає можливість додати одного `Moderator`.
@@ -66,5 +65,3 @@ interface ModeratorPostResponse {
     moderator?: Moderator; // Ми повертаємо повністю створеного модератора при успіху.
 }
 [inline-code-end]
-
----

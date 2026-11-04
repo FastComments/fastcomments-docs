@@ -22,5 +22,3 @@ Eğer amaç yalnızca kullanıcıların birbirlerini `@mention` yapmasını sın
 SSO kullanıcı gruplarını tanımlamak ve güncellemek API kullanmayı gerektirmez; bunun yerine yorum bileşenine geçirilen SSO yükünde
 grup kimliklerini tanımlayarak otomatik olarak güncellenebilir. Ancak, grup listeleri büyükse bu önerilmez çünkü kullanıcı
 her sayfa yüklemesi için bu yükü göndermek zorunda kalır.
-
----

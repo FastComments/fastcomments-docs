@@ -1,14 +1,13 @@
-Translates the given comments into the widget locale. Only available when the matching widget
-customization rule has Comment Translation set to Automatic or Manual.
+Oversætter de givne kommentarer til widgettens locale. Kun tilgængelig, når den tilsvarende widget-tilpasningsregel har Comment Translation sat til Automatic eller Manual.
 
 ## Parametre
 
 | Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| urlId | string | query | Yes |  |
-| sso | string | query | No |  |
-| locale | string | query | No |  |
+| tenantId | string | path | Ja |  |
+| urlId | string | query | Ja |  |
+| sso | string | query | Nej |  |
+| locale | string | query | Nej |  |
 
 ## Svar
 
@@ -16,9 +15,9 @@ Returnerer: [`CommentTranslationsResponse`](https://github.com/FastComments/fast
 
 ## Eksempel
 
-[inline-code-attrs-start title = 'translateComments Eksempel'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'translateComments eksempel'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importer klasser:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;

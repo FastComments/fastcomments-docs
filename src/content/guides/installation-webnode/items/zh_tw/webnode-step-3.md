@@ -1,19 +1,19 @@
-Now, copy this code snippet:
+現在，複製此程式碼片段：
 
 [code-example-start config = {}; title = '安裝程式碼'; isFunctional = false; code-example-end]
 
-Then paste it in the block:
+然後將它貼到區塊中：
 
 <div class="screenshot white-bg">
-    <div class="title">Step Three: Paste Code</div>
-    <img class="screenshot-image" src="/images/installation-guides/webnode-step-4.png" alt="Paste Code" />
+    <div class="title">步驟三：貼上程式碼</div>
+    <img class="screenshot-image" src="/images/installation-guides/webnode-step-4.png" alt="貼上程式碼" />
 </div>
 
-It should look like this in the editor:
+在編輯器中應該會像這樣：
 
 <div class="screenshot white-bg">
-    <div class="title">Step Three: Review</div>
-    <img class="screenshot-image" src="/images/installation-guides/webnode-step-5.png" alt="Review" />
+    <div class="title">步驟三：檢查</div>
+    <img class="screenshot-image" src="/images/installation-guides/webnode-step-5.png" alt="檢查" />
 </div>
 
-Webnode 在編輯器中不會渲染 HTML 區塊，因此您會看到一個佔位符，顯示內容因安全原因無法顯示。這是預期的行為。評論小工具僅在您發佈後才會顯示，我們接下來會這樣做。
+Webnode 不會在編輯器中呈現 HTML 區塊，因此您會看到一個佔位符，指出基於安全原因無法顯示內容。這是正常現象。留言組件只會在您發佈後才會出現，我們接下來就會進行發佈。

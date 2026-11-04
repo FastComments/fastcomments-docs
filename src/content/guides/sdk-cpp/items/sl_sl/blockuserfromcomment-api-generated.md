@@ -27,5 +27,3 @@ api->blockUserFromComment(tenantId, commentId, params, options)
     .then([](std::shared_ptr<BlockSuccess> result){ })
     .then([](pplx::task<void> t){ try { t.get(); } catch (const std::exception&) { } });
 [inline-code-end]
-
----

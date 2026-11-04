@@ -1,4 +1,3 @@
----
 ## Parametre
 
 | Navn | Type | Location | Påkrævet | Beskrivelse |
@@ -37,5 +36,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.AddDomainConfig`: %v\n", resp)
 }
 [inline-code-end]
-
----

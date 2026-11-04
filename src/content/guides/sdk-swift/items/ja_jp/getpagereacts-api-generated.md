@@ -1,4 +1,3 @@
----
 ページのカスタムリアクション数を取得します。必要に応じてリアクションしたユーザー情報も含められます。
 
 ## Parameters
@@ -35,5 +34,3 @@ DefaultAPI.getPageReacts(tenantId: tenantId, urlId: urlId, includeUserInfo: incl
     }
 }
 [inline-code-end]
-
----

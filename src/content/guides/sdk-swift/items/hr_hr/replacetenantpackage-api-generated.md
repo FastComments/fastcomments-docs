@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
@@ -32,5 +31,3 @@ DefaultAPI.replaceTenantPackage(tenantId: tenantId, id: id, replaceTenantPackage
     }
 }
 [inline-code-end]
-
----

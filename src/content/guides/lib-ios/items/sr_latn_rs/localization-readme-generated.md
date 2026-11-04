@@ -1,4 +1,3 @@
----
 Prosledite kod lokala u konfiguraciji da biste lokalizovali stringove koje obezbeđuje server:
 
 ```swift

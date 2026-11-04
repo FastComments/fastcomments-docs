@@ -17,4 +17,3 @@ import {
     FastCommentsReviewsSummary,
 } from 'fastcomments-nextjs';
 ```
----

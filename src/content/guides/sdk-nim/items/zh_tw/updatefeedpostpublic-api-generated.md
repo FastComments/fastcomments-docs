@@ -25,5 +25,3 @@ let (response, httpResponse) = client.updateFeedPostPublic(
 if response.isSome:
   let post = response.get()
 [inline-code-end]
-
----

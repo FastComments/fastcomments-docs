@@ -1,3 +1,1 @@
----
 Dajte članovima Ghosta odjeljak za komentare koji ih već poznaje. Uvezite imena i avatare članova, omogućite obavijesti o odgovorima i uredite predložak svoje objave.
----

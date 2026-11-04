@@ -1,4 +1,3 @@
----
 ## Parameters
 
 | Naam | Type | Verplicht | Beschrijving |
@@ -39,5 +38,3 @@ async function runExample() {
   console.log(response);
 }
 [inline-code-end]
-
----

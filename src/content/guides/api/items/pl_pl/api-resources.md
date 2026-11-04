@@ -1,4 +1,3 @@
----
 ### Użycie zasobów
 
 Należy zauważyć, że pobieranie danych z API jest liczone jako użycie na Twoim koncie.
@@ -16,5 +15,3 @@ Zalecamy najpierw przeczytać dokumentację Pages, aby ograniczyć zamieszanie p
 ### Webhooki
 
 Subskrypcje webhooków mają własny przewodnik. `POST`, `GET` i `DELETE /api/v1/webhooks`, oraz `GET /api/v1/webhooks/sample-payloads`, są udokumentowane w sekcji [Managing Subscriptions via API](/guide-webhooks.html#webhooks-api-subscriptions), a ładunki zdarzeń w [Webhook Structures](/guide-webhooks.html#webhooks-structures).
-
----

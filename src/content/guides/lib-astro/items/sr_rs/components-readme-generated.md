@@ -1,4 +1,3 @@
----
 | Компонента | Опис |
 | --- | --- |
 | `FastComments` | Видгет за коментаре са одговорима, гласањем и још више |
@@ -16,4 +15,3 @@
 import { FastComments, FastCommentsLiveChat } from 'fastcomments-astro';
 ---
 ```
----

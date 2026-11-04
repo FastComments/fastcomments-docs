@@ -1,25 +1,25 @@
-Next we're going to add the FastComments widget code to your site. This code will search for all forms with the title `FastComments Goes Here` and
-replace it with FastComments.
+Затим ћемо додати FastComments виџет код на ваш сајт. Овај код ће претражити све форме са насловом `FastComments Goes Here` и
+заменити их са FastComments.
 
-So let's go to `Settings` in the bottom left of the site editor:
-
-<div class="screenshot white-bg">
-    <div class="title">Отворите подешавања</div>
-    <img class="screenshot-image" src="/images/installation-guides/ionos-step-2-open-settings.png" alt="Отворите подешавања" />
-</div>
-
-Open the `Custom Head Code` section:
+Хајде да отворимо `Settings` у доњем левом углу уредника сајта:
 
 <div class="screenshot white-bg">
-    <div class="title">Отворите прилагођени код у head-у</div>
-    <img class="screenshot-image" src="/images/installation-guides/ionos-step-2-open-custom-head-code.png" alt="Отворите прилагођени код у head-у" />
+    <div class="title">Отварање подешавања</div>
+    <img class="screenshot-image" src="/images/installation-guides/ionos-step-2-open-settings.png" alt="Отварање подешавања" />
 </div>
 
-For Ionos we need a **special version** of the FastComments widget code. Code snippets from **other tutorials will not work.**
+Отворите секцију `Custom Head Code`:
 
-Now copy the following code:
+<div class="screenshot white-bg">
+    <div class="title">Отварање Custom Head Code</div>
+    <img class="screenshot-image" src="/images/installation-guides/ionos-step-2-open-custom-head-code.png" alt="Отварање Custom Head Code" />
+</div>
 
-[inline-code-attrs-start title = 'Ionos FastComments исечак кода'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+За Ionos нам је потребна **посебна верзија** FastComments виџет кода. Исечци кода из **других туторијала неће радити.**
+
+Сада копирајте следећи код:
+
+[inline-code-attrs-start title = 'Ionos FastComments исечак'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
 <script>
@@ -52,11 +52,9 @@ Now copy the following code:
 </script>
 [inline-code-end]
 
-...and paste it in as shown:
+...и налепите га као што је приказано:
 
 <div class="screenshot white-bg">
-    <div class="title">Залепите и сачувајте</div>
-    <img class="screenshot-image" src="/images/installation-guides/ionos-step-2-paste-and-save.png" alt="Залепите и сачувајте" />
+    <div class="title">Налепите и сачувајте</div>
+    <img class="screenshot-image" src="/images/installation-guides/ionos-step-2-paste-and-save.png" alt="Налепите и сачувајте" />
 </div>
-
----

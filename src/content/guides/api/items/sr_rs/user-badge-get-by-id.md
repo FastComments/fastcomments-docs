@@ -1,4 +1,3 @@
----
 Ова крајња тачка вам омогућава да преузмете одређену корисничку значку по њеном јединственом ID-у.
 
 Example Request:
@@ -52,4 +51,3 @@ Possible Error Responses:
   "reason": "The user badge badge123 was not found."
 }
 [inline-code-end]
----

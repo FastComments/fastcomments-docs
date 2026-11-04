@@ -6,5 +6,3 @@ To je to! Sada biste trebalo da imate omogućeno komentarisanje uživo na ваш
 </div>
 
 Ako ste naišli na grešku 'permission denied', ili želite da prilagodite FastComments, nastavite sa čitanjem.
-
----

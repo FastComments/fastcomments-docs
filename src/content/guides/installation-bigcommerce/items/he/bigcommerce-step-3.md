@@ -1,4 +1,3 @@
----
 לאחר מכן, העתק את הקוד שבו נשתמש כדי להתקין את FastComments:
 
 [code-example-start config = {}; title = 'BigCommerce Comments Code'; isFunctional = false; code-example-end]
@@ -30,5 +29,3 @@
     <div class="title">ערוך את העורך</div>
     <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-3-exit.png" alt="ערוך את העורך" />
 </div>
-
----

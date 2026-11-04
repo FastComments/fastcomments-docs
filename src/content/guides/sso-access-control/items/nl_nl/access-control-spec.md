@@ -1,4 +1,3 @@
----
 Het definiëren van hoe meerdere gebruikers met elkaar omgaan, en het testen daarvan, is gecompliceerd. Hier is de volgende specificatie die wij hanteren voor toegangscontrole,
 die je kunt gebruiken om je implementatie te testen:
 
@@ -29,4 +28,3 @@ die je kunt gebruiken om je implementatie te testen:
     SSO User A = Group ids = [a].
     SSO User B = Group ids = [a, b].
     A kan @B.
----

@@ -15,5 +15,3 @@ Döngü önleme: Ajan kaynaklı sabitleme olayları hiçbir ajan tetikleyicisini
 ### Çift ile ilgili not
 
 Sabitleme ve sabitleme kaldırma olayları ayrı tetikleyicilerdir. Simetrik bir davranış istiyorsanız her ikisine de abone olun. Bakınız [Tetikleyici: Yorum Sabitleme Kaldırıldı](#trigger-comment-unpin).
-
----

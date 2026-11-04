@@ -9,5 +9,3 @@ Sayfa yüklendiğinde, bileşen yorum bileşeninin arkasındaki sayfa arka plan�
 Bununla birlikte, "luminance" belirlemeye dayanan algılama mekanizması istediğiniz zaman koyu modu etkinleştirmeyebilir. Zorla etkinleştirmek için *hasDarkBackground* bayrağını aşağıdaki gibi true olarak ayarlayın:
 
 [code-example-start config = {hasDarkBackground: true}; linesToHighlight = [6]; title = 'Force Dark Background Mode'; additionalDemoCode = '<style>body { background: black; }</style>'; code-example-end]
-
----

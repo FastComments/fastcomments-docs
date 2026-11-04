@@ -1,27 +1,27 @@
-Όλα τα agent webhook payloads μοιράζονται ένα κοινό φάκελο και προσθέτουν ένα ειδικό για το συμβάν μπλοκ `data`. Αυτή η σελίδα απαριθμεί το πλήρες σχήμα για το καθένα.
+Όλα τα payloads των agent webhooks μοιράζονται ένα κοινό envelope και προσθέτουν ένα μπλοκ `data` ειδικό για το συμβάν. Αυτή η σελίδα παραθέτει το πλήρες schema για καθένα.
 
-### Envelope (every event)
+### Envelope (κάθε συμβάν)
 
-Κάθε payload, ανεξάρτητα από τον τύπο συμβάντος, έχει αυτά τα κορυφαία πεδία:
+Κάθε payload, ανεξάρτητα από τον τύπο συμβάντος, έχει αυτά τα πεδία κορυφαίου επιπέδου:
 
-[inline-code-attrs-start title = 'Σχήμα Φακέλου Webhook'; type='json' inline-code-attrs-end]
+[inline-code-attrs-start title = 'Σχήμα Envelope Webhook'; type='json' inline-code-attrs-end]
 [inline-code-start]
 {
   "event": "trigger.succeeded | trigger.failed | approval.requested | approval.decided",
   "eventType": 0 | 1 | 2 | 3,
   "tenantId": "string",
-  "domain": "string - το αντιστοιχισμένο domain για αυτήν την παράδοση",
+  "domain": "string - the matched domain for this delivery",
   "agentId": "string",
   "agentInternalName": "string",
   "agentDisplayName": "string",
-  "occurredAt": "string - χρονική σήμανση ISO 8601",
-  "data": { /* συγκεκριμένο για το συμβάν, δείτε παρακάτω */ }
+  "occurredAt": "string - ISO 8601 timestamp",
+  "data": { /* event-specific, see below */ }
 }
 [inline-code-end]
 
 ### `trigger.succeeded` / `trigger.failed`
 
-`data` schema:
+Σχήμα `data`:
 
 [inline-code-attrs-start title = 'Σχήμα Δεδομένων Συμβάντος Trigger'; type='json' inline-code-attrs-end]
 [inline-code-start]
@@ -34,32 +34,32 @@
   "actions": [
     {
       "type": 0,
-      "commentId": "string - προαιρετικό",
-      "userId": "string - προαιρετικό",
-      "badgeId": "string - προαιρετικό",
+      "commentId": "string - optional",
+      "userId": "string - optional",
+      "badgeId": "string - optional",
       "pending": false,
       "justification": "string",
       "confidence": 0.92
     }
   ],
-  "errorMessage": "string - παρόν στο trigger.failed",
-  "url": "string - προαιρετικό",
-  "urlId": "string - προαιρετικό",
-  "commentId": "string - προαιρετικό"
+  "errorMessage": "string - present on trigger.failed",
+  "url": "string - optional",
+  "urlId": "string - optional",
+  "commentId": "string - optional"
 }
 [inline-code-end]
 
-`triggerType` is a numeric enum from the [trigger event list](#triggers-overview).
+Το `triggerType` είναι ένας αριθμητικός enum από τη [λίστα συμβάντων trigger](#triggers-overview).
 
-`actions[].type` is a numeric enum from the [tool list](#tools-overview).
+Το `actions[].type` είναι ένας αριθμητικός enum από τη [λίστα εργαλείων](#tools-overview).
 
-`actions[].pending` is `true` when the action was queued for [approval](#approval-workflow) instead of executed.
+Το `actions[].pending` είναι `true` όταν η ενέργεια μπήκε στην ουρά για [έγκριση](#approval-workflow) αντί να εκτελεστεί.
 
 ### `approval.requested`
 
-`data` schema:
+Σχήμα `data`:
 
-[inline-code-attrs-start title = 'Σχήμα Δεδομένων Αιτήματος Έγκρισης'; type='json' inline-code-attrs-end]
+[inline-code-attrs-start title = 'Σχήμα Δεδομένων Approval Requested'; type='json' inline-code-attrs-end]
 [inline-code-start]
 {
   "approvalId": "string",
@@ -67,30 +67,30 @@
   "toolName": "ban_user | mark_comment_spam | ...",
   "actionType": 10,
   "status": "PENDING",
-  "args": { /* ανά εργαλείο, δείτε παρακάτω */ },
+  "args": { /* per-tool, see below */ },
   "createdAt": "string - ISO 8601",
-  "justification": "string - προαιρετικό, αιτιολόγηση του agent",
+  "justification": "string - optional, agent reasoning",
   "confidence": 0.85,
-  "contextSnapshot": { /* το πλαίσιο σχολίου/σελίδας στο οποίο αφορά η έγκριση */ }
+  "contextSnapshot": { /* the comment/page context the approval is about */ }
 }
 [inline-code-end]
 
-The **`args`** object is whatever the LLM tool call carried. Its shape depends on the tool:
+Το αντικείμενο **`args`** είναι ό,τι μετέφερε η κλήση εργαλείου του LLM. Το σχήμα του εξαρτάται από το εργαλείο:
 
-- For `ban_user`: `{ userId, commentId, duration, shadowBan, deleteAllUsersComments?, banIP? }`.
-- For `mark_comment_spam`: `{ commentId, isSpam }`.
-- For `write_comment`: `{ comment, urlId, parentId? }`.
-- ...and so on.
+- Για `ban_user`: `{ userId, commentId, duration, shadowBan, deleteAllUsersComments?, banIP? }`.
+- Για `mark_comment_spam`: `{ commentId, isSpam }`.
+- Για `write_comment`: `{ comment, urlId, parentId? }`.
+- ...και ούτω καθεξής.
 
-The set of tool argument shapes is **not a stable public contract**. Tools can be added in future and the platform passes args through verbatim. Consumers should treat args as an opaque blob unless they explicitly understand the tool involved.
+Το σύνολο των σχημάτων ορισμάτων των εργαλείων **δεν είναι σταθερό δημόσιο συμβόλαιο**. Εργαλεία μπορούν να προστεθούν στο μέλλον και η πλατφόρμα περνά τα args αυτούσια. Οι καταναλωτές πρέπει να αντιμετωπίζουν τα args ως αδιαφανές blob, εκτός αν κατανοούν ρητά το εμπλεκόμενο εργαλείο.
 
-The **`contextSnapshot`** captures the comment, page, and user context the approval was queued from. Its shape mirrors the trigger's context message.
+Το **`contextSnapshot`** καταγράφει το πλαίσιο σχολίου, σελίδας και χρήστη από το οποίο μπήκε στην ουρά η έγκριση. Το σχήμα του αντικατοπτρίζει το μήνυμα πλαισίου του trigger.
 
 ### `approval.decided`
 
-`data` schema:
+Σχήμα `data`:
 
-[inline-code-attrs-start title = 'Σχήμα Δεδομένων Απόφασης Έγκρισης'; type='json' inline-code-attrs-end]
+[inline-code-attrs-start title = 'Σχήμα Δεδομένων Approval Decided'; type='json' inline-code-attrs-end]
 [inline-code-start]
 {
   "approvalId": "string",
@@ -98,32 +98,32 @@ The **`contextSnapshot`** captures the comment, page, and user context the appro
   "toolName": "ban_user | mark_comment_spam | ...",
   "actionType": 10,
   "status": "APPROVED | REJECTED | EXECUTION_FAILED",
-  "decidedBy": "string - το userId του moderator που αποφάσισε",
-  "decidedAt": "string - ISO 8601 - προαιρετικό, παρόν μόνο αφού ληφθεί απόφαση",
-  "executedAt": "string - ISO 8601 - παρόν όταν είναι APPROVED και η εκτέλεση ολοκληρώθηκε",
-  "executionResult": "string - μήνυμα αποτελέσματος εκτελεστή - παρόν μετά την εκτέλεση",
-  "contextSnapshot": { /* ίδιο με approval.requested */ }
+  "decidedBy": "string - the userId of the moderator who decided",
+  "decidedAt": "string - ISO 8601 - optional, only present once decided",
+  "executedAt": "string - ISO 8601 - present when APPROVED and execution finished",
+  "executionResult": "string - executor result message - present after execute",
+  "contextSnapshot": { /* same as approval.requested */ }
 }
 [inline-code-end]
 
-### TenantAgentAction shape
+### Σχήμα TenantAgentAction
 
-Inside `actions[]` on the trigger payloads, each action has:
+Μέσα στο `actions[]` των payloads των trigger, κάθε ενέργεια έχει:
 
 [inline-code-attrs-start title = 'Σχήμα TenantAgentAction'; type='json' inline-code-attrs-end]
 [inline-code-start]
 {
   "type": 0,
-  "commentId": "string - προαιρετικό",
-  "userId": "string - προαιρετικό",
-  "badgeId": "string - προαιρετικό",
+  "commentId": "string - optional",
+  "userId": "string - optional",
+  "badgeId": "string - optional",
   "pending": false,
   "justification": "string",
   "confidence": 0.92
 }
 [inline-code-end]
 
-`type` enum values match `AgentActionType`:
+Οι τιμές του enum `type` αντιστοιχούν στο `AgentActionType`:
 
 - 0: `WRITE_COMMENT`
 - 1: `VOTE_COMMENT`
@@ -140,9 +140,9 @@ Inside `actions[]` on the trigger payloads, each action has:
 - 12: `WARNED_USER`
 - 13: `SAVED_MEMORY`
 
-`SEARCH_MEMORY` does not appear in `actions[]` because it is read-only and unaudited.
+Το `SEARCH_MEMORY` δεν εμφανίζεται στο `actions[]` επειδή είναι μόνο για ανάγνωση και δεν καταγράφεται.
 
-### `triggerType` enum values
+### Τιμές enum `triggerType`
 
 `AgentTriggerReasonType`:
 
@@ -161,15 +161,15 @@ Inside `actions[]` on the trigger payloads, each action has:
 - 12: `COMMENT_FLAG_THRESHOLD`
 - 13: `NEW_USER_FIRST_COMMENT`
 - 14: `COMMENT_AUTO_SPAMMED`
-- 15: `REPLAY` (internal; not delivered to webhooks)
+- 15: `REPLAY` (εσωτερικό· δεν παραδίδεται στα webhooks)
 
 ### Headers
 
-Every delivery includes:
+Κάθε παράδοση περιλαμβάνει:
 
 - `X-FastComments-Agent-Event` - το κανονικό όνομα του συμβάντος (`trigger.succeeded`, κ.λπ.).
-- `X-FastComments-Signature` - HMAC-SHA256 του raw body χρησιμοποιώντας το API secret σας. Δείτε [Webhook Signing](#webhook-signing).
+- `X-FastComments-Signature` - HMAC-SHA256 του ακατέργαστου body χρησιμοποιώντας το API secret σας. Δείτε [Υπογραφή Webhook](#webhook-signing).
 
-### Stability
+### Σταθερότητα
 
-Τα πεδία του φακέλου και τα τεκμηριωμένα πεδία `data` ανά συμβάν είναι μέρος του δημόσιου συμβολαίου. Η προσθήκη νέων προαιρετικών πεδίων σε υπάρχοντα payloads επιτρέπεται και δεν θεωρείται breaking change - ο καταναλωτής σας θα πρέπει να αγνοεί άγνωστα πεδία. Το σχήμα των `args` και `contextSnapshot` **δεν** αποτελεί μέρος του συμβολαίου.
+Τα πεδία του envelope και τα τεκμηριωμένα πεδία `data` ανά συμβάν αποτελούν μέρος του δημόσιου συμβολαίου. Η προσθήκη νέων προαιρετικών πεδίων σε υπάρχοντα payloads επιτρέπεται και δεν θεωρείται αλλαγή που χαλάει τη συμβατότητα - ο καταναλωτής σας πρέπει να αγνοεί άγνωστα πεδία. Το σχήμα των `args` και `contextSnapshot` **δεν** αποτελεί μέρος του συμβολαίου.

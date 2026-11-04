@@ -8,5 +8,3 @@ Se você encontrar algum problema ou tiver dúvidas sobre a Biblioteca Next.js, 
 ## Contribuindo
 
 Contribuições são bem-vindas! Visite o [repositório no GitHub](https://github.com/FastComments/fastcomments-nextjs) para as diretrizes de contribuição.
-
----

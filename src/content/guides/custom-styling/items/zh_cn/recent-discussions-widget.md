@@ -1,8 +1,8 @@
-The Recent Discussions Widget displays a list of pages sorted by the most recent comment activity. It includes a heading, last activity dates, comment counts with icons, and automatic dark mode detection.
+最近讨论小组件按最近的评论活动排序显示页面列表。它包含标题、最后活动日期、带图标的评论数，以及自动深色模式检测。
 
-## Basic Installation
+## 基本安装
 
-[inline-code-attrs-start title = '最近讨论小部件样式设置'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = '最近讨论小组件样式设置'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/widget-recent-discussions-v2.min.js"></script>
 <div id="fastcomments-widget-recent-discussions"></div>
@@ -13,17 +13,17 @@ The Recent Discussions Widget displays a list of pages sorted by the most recent
 </script>
 [inline-code-end]
 
-## Configuration Options
+## 配置选项
 
-- **tenantId** (required): 您的 FastComments 租户 ID
-- **count** (optional): 要显示的页面数量。默认值为 `20`，最大 `100`
-- **hasDarkBackground** (optional): 强制暗模式样式。如果未设置，将自动从页面背景检测
+- **tenantId**（必填）：您的 FastComments 租户 ID
+- **count**（可选）：显示的页面数量。默认为 `20`，最大 `100`
+- **hasDarkBackground**（可选）：强制使用深色模式样式。未设置时会根据页面背景自动检测
 
-## Widget Structure
+## 小件结构
 
-The widget renders with the following HTML structure:
+该小组件按以下 HTML 结构渲染：
 
-[inline-code-attrs-start title = '最近讨论小部件HTML结构'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = '最近讨论小组件 HTML 结构'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <div class="fc-rd2">
     <div class="fc-rd2-heading">Recent Discussions</div>
@@ -39,9 +39,9 @@ The widget renders with the following HTML structure:
 </div>
 [inline-code-end]
 
-## Default CSS Reference
+## 默认 CSS 参考
 
-[inline-code-attrs-start title = '最近讨论小部件默认CSS'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = '最近讨论小组件默认 CSS'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rd2 {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -61,9 +61,9 @@ The widget renders with the following HTML structure:
 .fc-rd2-count { font-size: 12px; font-weight: 600; color: #666; }
 [inline-code-end]
 
-## Customization Examples
+## 自定义示例
 
-### Remove the Container Border
+### 移除容器边框
 
 [inline-code-attrs-start title = '移除容器边框'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -73,7 +73,7 @@ The widget renders with the following HTML structure:
 }
 [inline-code-end]
 
-### Custom Link Color
+### 自定义链接颜色
 
 [inline-code-attrs-start title = '自定义链接颜色'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -81,5 +81,3 @@ a.fc-rd2-title:hover {
     color: #e63946 !important;
 }
 [inline-code-end]
-
----

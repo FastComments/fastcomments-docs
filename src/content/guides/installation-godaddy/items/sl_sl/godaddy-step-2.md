@@ -1,10 +1,10 @@
-Zdaj, ko ste dodali lasten HTML blok, lahko dodamo kodo gradnika FastComments.
+Zdaj, ko ste dodali blok po meri HTML, lahko dodamo kodo pripomočka FastComments.
 
-**Uporabite naslednjo kodo za Godaddy, ne kode iz drugih vadnic. Ta koda je specifična za Godaddy.**
+**Uporabite naslednjo kodo za Godaddy, ne kode iz drugih vodičev. Ta koda je specifična za Godaddy.**
 
-Copy the following code:
+Kopirajte naslednjo kodo:
 
-[inline-code-attrs-start title = 'Delček kode za komentarje Godaddy'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Odlomek kode za komentarje Godaddy'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
 <div id="fastcomments-widget"></div>
@@ -22,20 +22,20 @@ Copy the following code:
 </script>
 [inline-code-end]
 
-This specific code snippet is designed to be compatible with Godaddy, and will also only show on your blog posts - not the homepage.
+Ta specifični odlomek kode je zasnovan za združljivost z Godaddy in se bo prikazal le na vaših objavah bloga – ne na domači strani.
 
-Now paste the code into the `Custom Code` area mentioned in `Step One`.
+Zdaj prilepite kodo v območje `Custom Code`, omenjeno v `Prvem koraku`.
 
 <div class="screenshot white-bg">
     <div class="title">Kopirajte in prilepite kodo</div>
-    <img class="screenshot-image" src="/images/installation-guides/godaddy-step-2-code-added.png" alt="Copy and Paste The Code" />
+    <img class="screenshot-image" src="/images/installation-guides/godaddy-step-2-code-added.png" alt="Kopirajte in prilepite kodo" />
 </div>
 
-Hit Done in the top right:
+Kliknite Done v zgornjem desnem kotu:
 
 <div class="screenshot white-bg">
     <div class="title">Kliknite Done</div>
-    <img class="screenshot-image" src="/images/installation-guides/godaddy-step-2-done.png" alt="Click Done" />
+    <img class="screenshot-image" src="/images/installation-guides/godaddy-step-2-done.png" alt="Kliknite Done" />
 </div>
 
-That's it for step two!
+To je vse za drugi korak!

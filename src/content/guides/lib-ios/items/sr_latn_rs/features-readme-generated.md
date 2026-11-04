@@ -1,4 +1,3 @@
----
 - Ugnježdena stabla komentara sa ugnježdenim odgovorima i paginacijom
 - Društveni feed sa kreiranjem objava, reakcijama i prilozima medija
 - Režim četa uživo sa automatskim skrolovanjem i separatorima datuma
@@ -14,4 +13,3 @@
 - Prisutnost korisnika (indikatori online/offline)
 - Filtriranje feeda po tagovima
 - Podrška za lokalizaciju
----

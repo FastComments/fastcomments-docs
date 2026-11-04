@@ -1,4 +1,3 @@
----
 ## Parámetros
 
 | Nombre | Tipo | Ubicación | Requerido | Descripción |
@@ -33,5 +32,3 @@ DefaultAPI.sendLoginLink(tenantId: tenantId, id: id, redirectURL: redirectURL) {
     }
 }
 [inline-code-end]
-
----

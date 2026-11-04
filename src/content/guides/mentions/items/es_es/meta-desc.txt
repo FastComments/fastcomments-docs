@@ -1,4 +1,1 @@
----
 Permita que los comentaristas se etiqueten entre sí con @menciones, active una notificación y pre‑rellene menciones desde su propio código. Incluye cómo el autocompletado resuelve los nombres.
-
----

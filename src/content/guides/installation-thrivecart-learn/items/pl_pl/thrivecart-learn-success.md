@@ -1,4 +1,3 @@
----
 Sukces! Powinieneś teraz widzieć FastComments Comment Widget.
 
 <div class="screenshot white-bg">
@@ -7,5 +6,3 @@ Sukces! Powinieneś teraz widzieć FastComments Comment Widget.
 </div>
 
 Gratulacje za skonfigurowanie FastComments z ThriveCart! Jeśli napotkałeś Domain Error lub chcesz dowiedzieć się, jak dostosować obszar komentarzy, czytaj dalej!
-
----

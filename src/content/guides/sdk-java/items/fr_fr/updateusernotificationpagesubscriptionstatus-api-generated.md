@@ -1,4 +1,3 @@
----
 Activer ou désactiver les notifications pour une page. Lorsque les utilisateurs sont abonnés à une page, des notifications sont créées
 pour les nouveaux commentaires racines, et aussi
 
@@ -55,5 +54,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

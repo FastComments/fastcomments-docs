@@ -61,5 +61,3 @@ async fn fetch_comments() -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
-
----

@@ -36,5 +36,3 @@ Sağ üstten `Advanced`'ı seçin:
     <div class="title">Temayı İndirin</div>
     <img class="screenshot-image" src="/images/installation-guides/ghost-step-1-5-download.png" alt="Temayı İndirin" />
 </div>
-
----

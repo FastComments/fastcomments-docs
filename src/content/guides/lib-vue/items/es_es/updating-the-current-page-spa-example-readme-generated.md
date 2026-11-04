@@ -1,9 +1,9 @@
-En FastComments llamamos al id del artículo, o a la página a la que se vinculan los comentarios, el URL ID ya que puede ser una url o un ID.
-Define el URL ID de la siguiente manera. El componente vigila los cambios en el objeto config, y se recargará, así que puedes simplemente actualizar los ajustes "url" y "urlId".
+En FastComments llamamos al id del artículo, o a la página a la que se vinculan los comentarios, el URL ID, ya que puede ser una url o un ID.
+Define el URL ID de la siguiente manera. El componente observa los cambios en el objeto config y se recargará, por lo que puedes simplemente actualizar las opciones "url" y "urlId".
 
-See a full working example [here](https://github.com/FastComments/fastcomments-vue/blob/master/dev/serve-pagination.ts).
+Consulta un ejemplo completo y funcional [aquí](https://github.com/FastComments/fastcomments-vue/blob/master/dev/serve-pagination.ts).
 
-Run the pagination example via:
+Ejecuta el ejemplo de paginación mediante:
 
 ```
 npm run serve-pagination
@@ -13,12 +13,12 @@ npm run serve-pagination
 <fast-comments-vue v-bind:config="{tenantId: 'demo', url: 'https://example.com', urlId: 'some-page-id'}" />
 ```
 
-### Región de la cuenta (ATENCIÓN: clientes de la UE)
+### Región de la cuenta (ATENCIÓN: Clientes de la UE)
 
-If your account is located in the EU, set `region = 'eu'` in the widget configuration, for example:
+Si tu cuenta está ubicada en la UE, establece `region = 'eu'` en la configuración del widget, por ejemplo:
 
 ```vue
 <fast-comments-vue v-bind:config="{tenantId: 'demo', url: 'https://example.com', urlId: 'some-page-id', region: 'eu'}" />
 ```
 
-Otherwise, you do not have to define `region`.
+De lo contrario, no tienes que definir `region`.

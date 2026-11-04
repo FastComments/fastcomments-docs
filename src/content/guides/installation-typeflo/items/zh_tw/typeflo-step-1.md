@@ -1,4 +1,3 @@
----
 要將 FastComments 新增到您的 Typeflo.io 部落格，請先前往部落格的儀表板，然後在左側邊欄點選 **設定**。
 
 <div class="screenshot white-bg">
@@ -14,4 +13,3 @@
 </div>
 
 您會看到三個可新增自訂程式碼的區塊：Header、Body 與 Footer。我們將使用 Footer 區塊來加入 FastComments。
----

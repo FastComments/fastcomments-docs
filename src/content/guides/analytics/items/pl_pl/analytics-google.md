@@ -35,5 +35,3 @@ To doda dwa zdarzenia:
 
 - Etykieta: `Comment Posted`, Kategoria: `Engagement`, ID: `post_comment`
 - Etykieta: `User Voted on a Comment`, Kategoria: `Engagement`, ID: `vote_comment`
-
----

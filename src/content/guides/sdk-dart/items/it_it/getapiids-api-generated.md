@@ -38,5 +38,3 @@ try {
     print('Eccezione durante la chiamata a ModerationApi->getApiIds: $e\n');
 }
 [inline-code-end]
-
----

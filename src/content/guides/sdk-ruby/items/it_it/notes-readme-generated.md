@@ -1,7 +1,8 @@
 ### ID di Broadcast
 
-Vedrai che dovrai passare un `broadcastId` in alcune chiamate API. Quando ricevi eventi, otterrai questo ID indietro, così saprai di ignorare l'evento se prevedi di applicare in modo ottimistico le modifiche lato client (cosa che probabilmente vorrai fare poiché offre la migliore esperienza). Inserisci qui un `UUID`. L'ID dovrebbe essere sufficientemente unico da non presentarsi due volte in una sessione del browser.
+Vedrai che in alcune chiamate API devi passare un `broadcastId`. Quando ricevi gli eventi, ti verrà restituito questo ID, così saprai di ignorare l'evento se prevedi di applicare le modifiche in modo ottimistico sul client
+(il che probabilmente vorrai fare, poiché offre la migliore esperienza). Passa qui un UUID. L'ID dovrebbe essere abbastanza univoco da non verificarsi due volte in una sessione del browser.
 
 ### SSO (Single Sign-On)
 
-Per esempi di SSO, vedi sotto.
+Per gli esempi di SSO, vedi sotto.

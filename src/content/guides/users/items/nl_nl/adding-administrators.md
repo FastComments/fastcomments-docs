@@ -1,4 +1,3 @@
----
 Gebruikers met de `Super Admin`-machtiging kunnen andere moderators toevoegen en verwijderen.
 
 Een gebruiker kan worden toegevoegd door naar de [Gebruikerspagina](https://fastcomments.com/auth/my-account/users) te navigeren en
@@ -11,5 +10,3 @@ Bij het toevoegen van een gebruiker kunnen we hun avatar, gebruikersnaam, e‑ma
 [app-screenshot-start url='/auth/my-account/users/new/edit'; selector = '.content'; alt='Gebruikersbewerkingsformulier met de avatar, gebruikersnaam, e‑mail, locale en permissievelden ingevuld'; title='Een Gebruiker Toevoegen' app-screenshot-end]
 
 Bij het toevoegen van een beheerder wordt er een welkomstmail en inloglink naar hen verzonden.
-
----

@@ -22,5 +22,3 @@ api->getSSOUsers(tenantId, skip).then([](pplx::task<std::shared_ptr<GetSSOUsersR
     }
 });
 [inline-code-end]
-
----

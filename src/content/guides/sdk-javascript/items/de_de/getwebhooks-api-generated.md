@@ -1,4 +1,3 @@
----
 Listet die für den Mandanten konfigurierten Webhooks auf, sowohl dashboard‑verwaltete Zeilen als auch API‑Abonnements.
 
 ## Parameter
@@ -30,5 +29,3 @@ Rückgabe: [`GetWebhooksResponse`](https://github.com/FastComments/fastcomments-
   const minimalResponse: GetWebhooksResponse = await getWebhooks(tenantId);
 })();
 [inline-code-end]
-
----

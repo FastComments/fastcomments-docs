@@ -56,5 +56,3 @@ app.delete("/", receive);
 Odpowiadaj szybko. FastComments ponawia próbę przy kodzie innym niż 2xx, a endpoint, który ciągle zawodzi, zostaje ostatecznie automatycznie wyłączony, więc wykonuj rzeczywistą pracę po odpowiedzi, a nie w linii.
 
 Uczyń to działanie idempotentnym względem identyfikatora komentarza. Ponowna próba jest podpisywana ponownie z nowym znacznikiem czasu, a ten sam identyfikator komentarza pojawia się ponownie przy edycji i usunięciu, więc nie ma nic stabilnego, na czym można by deduplikować.
-
----

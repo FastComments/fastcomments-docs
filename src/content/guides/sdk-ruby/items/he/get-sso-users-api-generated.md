@@ -1,4 +1,3 @@
----
 ## פרמטרים
 
 | Name | Type | Location | Required | Description |
@@ -38,5 +37,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_sso_users: #{e}"
 end
 [inline-code-end]
-
----

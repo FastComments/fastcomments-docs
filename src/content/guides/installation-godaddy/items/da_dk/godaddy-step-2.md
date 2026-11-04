@@ -39,5 +39,3 @@ Klik på 'Done' øverst til højre:
 </div>
 
 Det var det for trin to!
-
----

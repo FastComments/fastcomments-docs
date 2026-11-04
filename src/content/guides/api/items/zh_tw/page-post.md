@@ -2,17 +2,16 @@
 
 此 API 端點提供建立頁面的功能。
 
-一個常見的使用情境是存取控制。
+常見的使用案例是存取控制。
 
-Notes:
+注意事項：
 
-- If you've commented on a comment thread, or called the API to create a `Comment`, you've already created a `Page` object! You can try fetching it via
-  the `/by-url-id` `Page` route, passing in the same `urlId` passed to the comment widget.
-- The `Page` structure contains some **計算得出** values.
-  Currently, these are `commentCount` and `rootCommentCount`.
-  They are populated automatically and cannot be set by the API. Attempting to do so will cause the API to return an error.
+- 如果您曾在留言串中留言，或呼叫 API 建立 `Comment`，那麼您已經建立了一個 `Page` 物件！您可以嘗試透過 `/by-url-id` `Page` 路由取得它，並傳入與留言小工具相同的 `urlId`。
+- `Page` 結構包含一些**計算得出的**值。
+  目前這些值為 `commentCount` 和 `rootCommentCount`。
+  它們會自動填入，無法透過 API 設定。嘗試這樣做會導致 API 回傳錯誤。
 
-[inline-code-attrs-start title = '頁面 POST cURL 範例'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Page POST cURL 範例'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request POST \
   --url 'https://fastcomments.com/api/v1/pages?tenantId=demo&API_KEY=DEMO_API_SECRET' \
@@ -25,7 +24,7 @@ curl --request POST \
 }'
 [inline-code-end]
 
-[inline-code-attrs-start title = '頁面 POST 請求結構'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Page POST 請求結構'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface PagePostQueryParams {
     tenantId: string
@@ -33,18 +32,16 @@ interface PagePostQueryParams {
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = '頁面 POST 回應結構'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Page POST 回應結構'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 
 interface PagePostResponse {
     status: 'success' | 'failed'
-    /** 僅在失敗時包含。 **/
+    /** 失敗時包含此欄位。 **/
     code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-url-id' | 'empty-request' | 'internal' | 'invalid-input' | 'invalid-title' | 'extra-params' | 'accessible-by-group-ids-not-array' | 'too-many-group-ids' | 'group-id-too-large';  
-    /** 僅在失敗時包含。 **/
+    /** 失敗時包含此欄位。 **/
     reason?: string
     /** 已建立的頁面。 **/
     page?: Page
 }
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 ## פרמטרים
 
 | Name | Type | Location | Required | Description |
@@ -35,5 +34,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_comment_text: #{e}"
 end
 [inline-code-end]
-
----

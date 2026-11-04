@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Name | Type | Location | Required | Description |
@@ -29,5 +28,3 @@ try {
     print('Exception when calling ModerationApi->putReopenThread: $e\n');
 }
 [inline-code-end]
-
----

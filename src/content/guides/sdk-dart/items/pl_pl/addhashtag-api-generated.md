@@ -1,4 +1,3 @@
----
 ## Parametry
 
 | Nazwa | Typ | Lokalizacja | Wymagane | Opis |
@@ -30,5 +29,3 @@ try {
     print('Exception when calling DefaultApi->addHashTag: $e\n');
 }
 [inline-code-end]
-
----

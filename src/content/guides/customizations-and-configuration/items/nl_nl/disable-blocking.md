@@ -9,5 +9,3 @@ Het kan wenselijk zijn om deze functionaliteit uit te schakelen. Dit kan als vol
 Dit kan ook zonder code worden gedaan, wat ook een juiste server‑side validatie mogelijk maakt, via de Widget‑aanpassings‑UI:
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-blocking']; selector = '.disable-blocking'; alt='Optie om blokkering uit te schakelen in de widget‑aanpassings‑UI, die voorkomt dat gebruikers elkaar blokkeren'; title='Blokkering uitschakelen' app-screenshot-end]
-
----

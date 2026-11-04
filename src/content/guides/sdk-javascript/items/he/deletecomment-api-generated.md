@@ -1,4 +1,3 @@
----
 ## פרמטרים
 
 | שם | סוג | נדרש | תיאור |
@@ -25,5 +24,3 @@ async function removeComment(): Promise<void> {
 }
 removeComment();
 [inline-code-end]
-
----

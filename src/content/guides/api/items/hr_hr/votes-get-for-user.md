@@ -45,5 +45,3 @@ interface VotesForUserResponse {
     pendingVotes: Vote[]
 }
 [inline-code-end]
-
----

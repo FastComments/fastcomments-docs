@@ -35,5 +35,3 @@ met [WPCode](https://wordpress.org/plugins/insert-headers-and-footers/), dat is 
 4. Selecteer Integraties.
 5. Voeg de nieuwe code toe aan het *einde* van het veld `Custom code`, en publiceer je site.
 6. Je ziet de widget niet in de voorbeeldmodus, maar deze verschijnt in de gepubliceerde versie van de site.
-
----

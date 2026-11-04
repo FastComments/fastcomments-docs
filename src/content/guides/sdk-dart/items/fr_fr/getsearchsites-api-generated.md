@@ -1,4 +1,3 @@
----
 ## Paramètres
 
 | Nom | Type | Emplacement | Requis | Description |
@@ -29,5 +28,3 @@ try {
     print('Exception lors de l\'appel de ModerationApi->getSearchSites: $e\n');
 }
 [inline-code-end]
-
----

@@ -1,24 +1,24 @@
-Past commenters on the page who are NOT currently online. Sorted by displayName.  
-Use this after exhausting /users/online to render a "Members" section.  
-Cursor pagination on commenterName: server walks the partial `{tenantId, urlId, commenterName}`  
-index from afterName forward via $gt, no $skip cost.
+מגיבים בעבר בדף שאינם מחוברים כרגע. ממוינים לפי displayName.
+השתמשו בזה לאחר אזילת /users/online כדי להציג מקטע "Members".
+עימוד באמצעות סמן על commenterName: השרת מתקדם לאורך האינדקס החלקי {tenantId, urlId, commenterName}
+מ-afterName קדימה באמצעות $gt, ללא עלות $skip.
 
-## Parameters
+## פרמטרים
 
-| שם | סוג | מיקום | נדרש | תיאור |
+| שם | סוג | מיקום | חובה | תיאור |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| urlId | string | query | Yes | מזהה URL של הדף (נוקב בצד השרת). |
-| afterName | string | query | No | מצביע: העבר nextAfterName מהתגובה הקודמת. |
-| afterUserId | string | query | No | מפריד תחרות למצב מצביע: העבר nextAfterUserId מהתגובה הקודמת. נדרש כאשר afterName מוגדר כדי שמקשרים באותו שם לא יוחזרו. |
+| tenantId | string | path | כן |  |
+| urlId | string | query | כן | מזהה כתובת ה-URL של הדף (מנוקה בצד השרת). |
+| afterName | string | query | לא | סמן: העבירו את nextAfterName מהתשובה הקודמת. |
+| afterUserId | string | query | לא | שובר שוויון לסמן: העבירו את nextAfterUserId מהתשובה הקודמת. נדרש כאשר afterName מוגדר כדי ששמות זהים לא יגרמו להשמטת רשומות. |
 
-## Response
+## תשובה
 
-Returns: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PageUsersOfflineResponse.php)
+מחזיר: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PageUsersOfflineResponse.php)
 
-## Example
+## דוגמה
 
-[inline-code-attrs-start title = 'getOfflineUsers דוגמה'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל-getOfflineUsers'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -26,16 +26,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // אם אתה רוצה להשתמש בלקוח HTTP מותאם, העבר את הלקוח שלך שמיישם `GuzzleHttp\ClientInterface`.
-    // זה אופציונלי, `GuzzleHttp\Client` ישמש ברירת מחדל.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 
 $tenant_id = 'tenant_id_example'; // string
-$url_id = 'url_id_example'; // string | מזהה URL של הדף (נוקב בצד השרת).
+$url_id = 'url_id_example'; // string | מזהה כתובת ה-URL של הדף (מנוקה בצד השרת).
 $options = [
-    'after_name' => 'after_name_example', // string | מצביע: העבר nextAfterName מהתגובה הקודמת.
-    'after_user_id' => 'after_user_id_example', // string | מפריד תחרות למצב מצביע: העבר nextAfterUserId מהתגובה הקודמת. נדרש כאשר afterName מוגדר כדי שמקשרים באותו שם לא יוחזרו.
+    'after_name' => 'after_name_example', // string | סמן: העבירו את nextAfterName מהתשובה הקודמת.
+    'after_user_id' => 'after_user_id_example', // string | שובר שוויון לסמן: העבירו את nextAfterUserId מהתשובה הקודמת. נדרש כאשר afterName מוגדר כדי ששמות זהים לא יגרמו להשמטת רשומות.
 ];
 
 

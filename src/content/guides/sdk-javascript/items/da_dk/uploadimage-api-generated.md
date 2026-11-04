@@ -1,4 +1,3 @@
----
 Upload og ændre størrelse på et billede
 
 ## Parametre

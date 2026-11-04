@@ -8,5 +8,3 @@ Seznam ID-jev, ustvarjenih na strani [Skupine za moderiranje](https://fastcommen
 na strani `Moderate Comments` videl le komentarje, povezane z njegovo skupino ali skupinami.
 
 [code-example-start config = {moderationGroupIds: ['mxZAhjzdb', 'FT19nXbqA']}; linesToHighlight = [6, 7, 8, 9]; title = 'Specify Moderation Groups'; code-example-end]
-
----

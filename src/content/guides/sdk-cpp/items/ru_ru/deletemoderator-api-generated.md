@@ -22,5 +22,3 @@ api->deleteModerator(tenantId, moderatorId, sendEmail)
         // обработать успех
     });
 [inline-code-end]
-
----

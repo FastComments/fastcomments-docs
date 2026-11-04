@@ -1,16 +1,16 @@
-Enable or disable notifications for a page. When users are subscribed to a page, notifications are created
-for new root comments, and also
+Включение или отключение уведомлений для страницы. Когда пользователи подписаны на страницу, уведомления создаются
+для новых корневых комментариев, а также
 
 ## Параметры
 
-| Имя | Тип | Обязательно | Описание |
+| Имя | Тип | Обязательный | Описание |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| urlId | string | Yes |  |
-| url | string | Yes |  |
-| pageTitle | string | Yes |  |
-| subscribedOrUnsubscribed | string | Yes |  |
-| sso | string | No |  |
+| tenantId | string | Да |  |
+| urlId | string | Да |  |
+| url | string | Да |  |
+| pageTitle | string | Да |  |
+| subscribedOrUnsubscribed | string | Да |  |
+| sso | string | Нет |  |
 
 ## Ответ
 

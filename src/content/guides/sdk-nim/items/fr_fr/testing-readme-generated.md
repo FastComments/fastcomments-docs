@@ -1,4 +1,3 @@
----
 Définissez les variables d'environnement requises:
 
 ```bash
@@ -18,4 +17,3 @@ Ou exécutez des tests spécifiques:
 nim c -r tests/test_sso.nim
 nim c -r tests/test_sso_integration.nim
 ```
----

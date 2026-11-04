@@ -31,5 +31,3 @@ interface PagesResponse {
 #### 役立つヒント
 
 `Comment` API では `urlId` が必要です。まず `Pages` API を呼び出して、利用可能な `urlId` の値がどのようなものかを確認できます。
-
----

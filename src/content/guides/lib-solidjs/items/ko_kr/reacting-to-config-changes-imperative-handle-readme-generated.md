@@ -1,7 +1,4 @@
-Solid은 임의 객체의 깊은 변경을 자동으로 추적하지 않으므로
-첫 렌더 이후의 config 변경은 명시적으로 푸시해야 합니다. 모든 위젯은
-핸들을 반환하는 `apiRef`를 허용합니다; 반응성을 구동하려면 `createEffect`에서
-`handle.update(partial)`를 호출하세요:
+Solid는 임의 객체에 대한 깊은 변경을 자동으로 추적하지 않으므로, 첫 렌더링 이후의 설정 변경은 명시적으로 푸시해야 합니다. 모든 위젯은 핸들을 반환하는 `apiRef`를 받습니다; `createEffect` 내에서 `handle.update(partial)`을 호출하여 반응성을 구동하세요:
 
 ```tsx
 import { createEffect, createSignal } from 'solid-js';
@@ -26,21 +23,21 @@ export default function Paginated() {
 ```
 
 `update()`는 언제든지 호출해도 안전합니다:
-- Before the script has loaded: the partial is stashed and applied at init.
-- During an async init (reviews-summary, user-activity-feed): the partial is queued and applied when the callback resolves.
-- After init: it forwards straight to the live widget's `.update()` method.
+- 스크립트가 로드되기 전: partial이 임시 저장되었다가 초기화 시 적용됩니다.
+- 비동기 초기화 중(reviews-summary, user-activity-feed): partial이 큐에 저장되었다가 콜백이 완료될 때 적용됩니다.
+- 초기화 후: 라이브 위젯의 `.update()` 메서드로 바로 전달됩니다.
 
 ### 명령형 핸들 API
 
 ```ts
 interface WidgetHandle<Config> {
-  getInstance: () => WidgetInstance | null;   // 최신 라이브 인스턴스(또는 마운트 전에는 null)
+  getInstance: () => WidgetInstance | null;   // 최신 라이브 인스턴스 (마운트 전에는 null)
   onInstance: (cb: (instance: WidgetInstance) => void) => void; // 인스턴스가 준비되면 한 번 호출됨
-  update: (partial: Partial<Config>) => void; // 구성 병합 및 푸시
+  update: (partial: Partial<Config>) => void; // 설정 병합 후 푸시
 }
 ```
 
-`.update()`로 다루어지지 않는 명령형 동작에는 `getInstance()`를 사용하세요. 예: `openProfile`:
+`.update()`로 커버되지 않는 명령형 작업(예: `openProfile`)에는 `getInstance()`를 사용하세요:
 
 ```tsx
 const openProfile = () =>

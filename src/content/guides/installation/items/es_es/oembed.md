@@ -26,5 +26,3 @@ También se admite añadir comentarios en vivo a una nota de Nimbus Note, y el p
 2. Al editar tu nota, añade un bloque de incrustación.
 3. Usa la URL del Paso 1 como la URL a incrustar.
 4. ¡Listo!
-
----

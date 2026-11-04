@@ -62,5 +62,3 @@ Sada kada imate osnovno rešenje, možete prilagoditi izgled i ponašanje u vodi
 ### Frontend biblioteke
 
 Sve FastComments frontend biblioteke (react, vue, angular, itd.) uključuju Image Chat.
-
----

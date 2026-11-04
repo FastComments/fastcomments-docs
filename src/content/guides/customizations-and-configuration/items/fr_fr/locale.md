@@ -25,5 +25,3 @@ Cela peut être remplacé par une locale souhaitée.
 ### Note SSO
 
 Si vous utilisez le SSO, vous voudrez peut-être transmettre la locale de l'utilisateur dans l'objet utilisateur, afin que les e‑mails et autres éléments soient correctement localisés pour eux.
-
----

@@ -10,5 +10,3 @@ Ceci est dû au fait que FastComments ne sait pas qu'il doit autoriser l'utilisa
 Dans ce cas, la solution est simple. Il vous suffit d'ajouter votre site à votre compte FastComments.com.
 
 [Cliquez ici pour ajouter votre site à votre compte.](https://fastcomments.com/auth/my-account/configure-domains)
-
----

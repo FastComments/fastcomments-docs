@@ -1,4 +1,3 @@
----
 ## Параметры
 
 | Имя | Тип | Местоположение | Обязательный | Описание |
@@ -35,5 +34,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->add_page: #{e}"
 end
 [inline-code-end]
-
----

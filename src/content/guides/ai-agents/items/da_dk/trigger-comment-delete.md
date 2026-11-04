@@ -19,5 +19,3 @@ Udløses, når en kommentar slettes.
 ### Bemærkning om driftsomkostninger
 
 Hvis du har et websted med høj sletningsvolumen (omfattende menneskelig moderation), kan denne trigger udløses ofte.
-
----

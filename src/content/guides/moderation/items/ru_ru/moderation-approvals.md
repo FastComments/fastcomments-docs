@@ -12,5 +12,3 @@ FastComments имеет концепцию Verified и Unverified. Провер�
 вы захотите включить автоматическое одобрение комментариев, но включить `Only Auto Approve Verified Comments`.
 
 Это всё может быть настроено администраторами в [Настройках модерации](https://fastcomments.com/auth/my-account/moderate-comments/settings).
-
----

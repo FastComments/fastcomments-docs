@@ -1,27 +1,27 @@
-### Dark Mode Support
+### Podrška za tamni režim
 
-### Dynamic Dark Mode
+### Dinamički tamni režim
 
-If your site's dark mode is controlled by adding a `.dark` class to the body element, the Collab Chat korisnički interfejs će to automatski poštovati bez potrebe za reinicijalizacijom. Stilovi widgeta su dizajnirani da reaguju na prisustvo ove klase.
+Ako se tamni režim vašeg sajta kontroliše dodavanjem `.dark` klase na body element, Collab Chat UI će to automatski poštovati bez potrebe za ponovnom inicijalizacijom. Stilovi vidžeta dizajnirani su da reaguju na prisustvo ove klase.
 
 [inline-code-attrs-start title = 'Primer CSS-a za tamni režim'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-/* Vaš CSS za tamni režim */
+/* Your dark mode CSS */
 body.dark {
     background: #1a1a1a;
     color: #ffffff;
 }
 [inline-code-end]
 
-### Custom Styling with CSS
+### Prilagođeni stilovi pomoću CSS-a
 
-Možete prilagoditi izgled isticanja teksta, prozora četa i drugih elemenata koristeći CSS. Widget dodaje specifične klase koje možete ciljati u vašem stylesheet-u.
+Možete prilagoditi izgled isticanja teksta, prozora za ćaskanje i drugih elemenata pomoću CSS-a. Vidžet dodaje specifične klase koje možete ciljati u svom stilskom listu.
 
-Isticanje teksta koristi sistem stilova mehurića komentara FastComments, tako da bilo kakve prilagodbe koje ste primenili na standardni widget za komentare takođe će uticati na Collab Chat.
+Isticanje teksta koristi sistem stilizovanja komentara FastComments, tako da će sve prilagodbe koje ste primenili na standardni vidžet za komentare uticati i na Collab Chat.
 
-### Top Bar Customization
+### Prilagođavanje gornje trake
 
-Gornja traka prikazuje broj korisnika online i broj diskusija. Možete prilagoditi njenu poziciju pružanjem prilagođenog elementa kao `topBarTarget`:
+Gornja traka prikazuje broj korisnika na mreži i broj diskusija. Možete prilagoditi njenu poziciju tako što ćete obezbediti prilagođeni element kao `topBarTarget`:
 
 [inline-code-attrs-start title = 'Prilagođena lokacija gornje trake'; type = 'javascript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -31,9 +31,9 @@ FastCommentsCollabChat(element, {
 });
 [inline-code-end]
 
-Or disable it entirely by setting it to `null`:
+Ili je potpuno onemogućite postavljanjem na `null`:
 
-[inline-code-attrs-start title = 'Onemogući gornju traku'; type = 'javascript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Onemogućavanje gornje trake'; type = 'javascript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
@@ -41,38 +41,38 @@ FastCommentsCollabChat(element, {
 });
 [inline-code-end]
 
-### Mobile Behavior
+### Ponašanje na mobilnim uređajima
 
-On screens under 768px wide, Collab Chat automatically switches to a mobile-optimized layout. Chat windows appear fullscreen instead of floating next to the text, and the selection delay is removed for more immediate interaction.
+Na ekranima širine manje od 768px, Collab Chat automatski prelazi na mobilni optimizovani raspored. Prozori za ćaskanje se pojavljuju preko celog ekrana umesto da lebde pored teksta, a kašnjenje pri selekciji se uklanja radi brže interakcije.
 
-Ovo ponašanje je ugrađeno i ne zahteva nikakvu konfiguraciju. Widget automatski detektuje veličinu ekrana i prilagođava se u skladu sa tim.
+Ovo ponašanje je ugrađeno i ne zahteva nikakvu konfiguraciju. Vidžet automatski detektuje veličinu ekrana i prilagođava se u skladu s tim.
 
-### Chat Window Appearance
+### Izgled prozora za ćaskanje
 
-Chat windows are 410px wide on desktop with a 16px arrow pointing to the highlighted text. The windows position themselves automatically based on available viewport space, using positioning classes like `to-right`, `to-left`, `to-top`, and `to-bottom`.
+Prozori za ćaskanje su široki 410px na desktopu sa strelicom od 16px koja pokazuje na istaknuti tekst. Prozori se automatski pozicioniraju na osnovu dostupnog prostora u vidnom polju, koristeći klase pozicioniranja poput `to-right`, `to-left`, `to-top` i `to-bottom`.
 
-Možete dodati prilagođeni CSS da podesite boje, fontove, razmake ili druge vizuelne osobine ovih prozora. Prozori četa koriste istu strukturu komponenti kao standardni FastComments widget, tako da nasleđuju sve globalne prilagodbe koje ste primenili.
+Možete dodati prilagođeni CSS da biste prilagodili boje, fontove, razmake ili druge vizuelne osobine ovih prozora. Prozori za ćaskanje koriste istu strukturu komponenti kao standardni FastComments vidžet, tako da nasleđuju sve globalne prilagodbe koje ste primenili.
 
-### Localization
+### Lokalizacija
 
-Collab Chat podržava sve iste opcije lokalizacije kao standardni FastComments widget. Podesite opciju `locale` da prikažete tekst korisničkog interfejsa na različitim jezicima:
+Collab Chat podržava sve iste opcije lokalizacije kao standardni FastComments vidžet. Postavite opciju `locale` da biste prikazali tekst UI na različitim jezicima:
 
-[inline-code-attrs-start title = 'Podesite lokal'; type = 'javascript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Podešavanje lokalizacije'; type = 'javascript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
-    locale: 'es'  // Španski
+    locale: 'es'  // Spanish
 });
 [inline-code-end]
 
-FastComments podržava desetine jezika. Podešavanje locale utiče na sav tekst korisničkog interfejsa uključujući upite, dugmad i tekst u poljima za unos.
+FastComments podržava desetine jezika. Podešavanje lokalizacije utiče na sav tekst UI, uključujući upite, dugmad i tekst rezervisanog mesta.
 
-### Inherited Customization Options
+### Nasleđene opcije prilagođavanja
 
-Pošto Collab Chat proširuje standardni widget za komentare, nasleđuje sve opcije prilagođavanja iz osnovnog widgeta. Ovo uključuje prilagođene CSS klase, prilagođene prevode, prilagođavanje avatara, formatiranje datuma i mnogo više.
+Pošto Collab Chat proširuje standardni vidžet za komentare, nasleđuje sve opcije prilagođavanja osnovnog vidžeta. To uključuje prilagođene CSS klase, prilagođene prevode, prilagođavanje avatara, formatiranje datuma i mnogo više.
 
-Pogledajte glavnu FastComments dokumentaciju o prilagođavanju za kompletan spisak dostupnih opcija prilagođavanja.
+Pogledajte glavnu FastComments dokumentaciju za prilagođavanje za kompletnu listu dostupnih opcija prilagođavanja.
 
-### Working with Custom Fonts
+### Rad sa prilagođenim fontovima
 
-Ako vaš sajt koristi prilagođene fontove, Collab Chat korisnički interfejs će naslediti te fontove iz CSS-a vaše stranice. Možda ćete morati da kreirate pravilo za prilagođavanje widgeta i `@import` bilo koje fontove u prilagođenom CSS-u unutar tog pravila ako želite da plutajući prozor četa koristi iste fontove.
+Ako vaš sajt koristi prilagođene fontove, Collab Chat UI će naslediti te fontove iz CSS-a vaše stranice. Možda ćete morati da kreirate pravilo prilagođavanja vidžeta i da `@import`-ujete fontove u prilagođeni CSS u tom pravilu ako želite da lebdeći prozor za ćaskanje koristi iste fontove.

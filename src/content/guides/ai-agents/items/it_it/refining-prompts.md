@@ -1,55 +1,55 @@
-**Raffina il prompt** è il flusso di lavoro per modificare il [prompt iniziale](#personality-prompt) di un agente in risposta a decisioni specifiche con cui non sei d'accordo. Viene avviato dalla [casella delle approvazioni](#approval-workflow).
+**Refine Prompt** è il flusso di lavoro per modificare il [prompt iniziale](#personality-prompt) di un agente in risposta a decisioni specifiche con cui non sei d'accordo. Si avvia dalla [casella di approvazioni](#approval-workflow).
 
-### When to use it
+### Quando usarlo
 
-Quando ti trovi a rifiutare lo stesso tipo di approvazione più e più volte - "l'agente continua a voler bannare persone per l'uso di linguaggio forte senza un bersaglio" - il prompt dell'agente è la leva per risolvere ciò. Raffina il prompt è un modo guidato per:
+Quando ti ritrovi a rifiutare lo stesso tipo di approvazione più e più volte - "l'agente continua a voler bannare persone per aver usato linguaggio forte senza un bersaglio" - il prompt dell'agente è la leva per correggere questo comportamento. Refine Prompt è un modo guidato per:
 
-1. Selezionare una specifica approvazione che rappresenta la decisione sbagliata.
+1. Scegliere un'approvazione specifica che rappresenta la decisione errata.
 2. Modificare il prompt con il contesto completo di ciò che l'agente ha fatto e perché.
-3. Salvare il nuovo prompt sull'agente.
+3. Salvare il nuovo prompt nell'agente.
 
-Il risultato è un agente che, in futuro, sarà improbabile che prenda la stessa decisione.
+Il risultato è un agente che, d'ora in poi, sarebbe improbabile che prenda la stessa decisione.
 
-### Launching the flow
+### Avvio del flusso
 
-Dalla casella delle approvazioni su `/auth/my-account/ai-agent-approvals`:
+Dalla casella di approvazioni su `/auth/my-account/ai-agent-approvals`:
 
-1. Apri una approvazione **rejected**. La route rigetta categoricamente tutto tranne REJECTED - le approvazioni pending e execution-failed non sono idonee.
-2. Clicca **Raffina il prompt**.
+1. Apri un'approvazione **rifiutata**. La route rifiuta rigorosamente tutto ciò che non è REJECTED - le approvazioni in sospeso o con esecuzione fallita non sono idonee.
+2. Clicca su **Refine prompt**.
 
-Arriverai all'interfaccia di refine del prompt su `/auth/my-account/ai-agent-approvals/:approvalId/refine-prompt`.
+Atterri sull'interfaccia di raffinamento del prompt su `/auth/my-account/ai-agent-approvals/:approvalId/refine-prompt`.
 
-### What the page shows
+### Cosa mostra la pagina
 
-- **The approval** - il `toolName` dell'agente e la sua `justification` per la decisione rifiutata (la trascrizione completa del LLM non è mostrata qui).
-- **The current prompt** - il [prompt iniziale](#personality-prompt) salvato dall'agente.
-- **A feedback input** - inserisci un **feedback** che descriva cosa dovrebbe cambiare (fino a 2000 caratteri). L'LLM genera quindi il nuovo prompt proposto a partire dal tuo feedback.
-- **Unified inline diff** - un unico diff inline tra il prompt corrente e quello proposto (rosso per rimosso, verde per aggiunto).
+- **L'approvazione** - il `toolName` e la `justification` dell'agente per la decisione rifiutata (la trascrizione completa dell'LLM non viene mostrata qui).
+- **Il prompt attuale** - il [prompt iniziale](#personality-prompt) salvato dell'agente.
+- **Un campo di feedback** - digiti un **feedback** che descrive cosa dovrebbe cambiare (fino a 2000 caratteri). L'LLM genera quindi il nuovo prompt proposto a partire dal tuo feedback.
+- **Diff inline unificato** - un singolo diff inline tra il prompt attuale e quello proposto (rosso per le rimozioni, verde per le aggiunte).
 
-Il contesto dell'approvazione resta fissato in alto così puoi continuare a fare riferimento al "caso che sto correggendo" mentre modifichi.
+Il contesto dell'approvazione rimane fissato in alto, così puoi continuare a fare riferimento a "il caso che sto correggendo" durante la modifica.
 
-### Save
+### Salvataggio
 
-Il salvataggio aggiorna il campo `initialPrompt` dell'agente. Esecuzioni passate (e approvazioni passate) non vengono rieseguite retroattivamente - il nuovo prompt influenza solo i trigger futuri. Se vuoi verificare che il nuovo prompt risolva il problema, esegui un [test run / replay](#test-runs-replays) sugli ultimi 7 giorni e verifica se il nuovo prompt produrrebbe ancora l'approvazione rifiutata.
+Il salvataggio aggiorna il campo `initialPrompt` dell'agente. Le esecuzioni passate (e le approvazioni passate) non vengono rieseguite retroattivamente - il nuovo prompt influisce solo sui trigger futuri. Se vuoi verificare che il nuovo prompt risolva il problema, esegui un [test run / replay](#test-runs-replays) sugli ultimi 7 giorni e controlla se il nuovo prompt produrrebbe comunque l'approvazione rifiutata.
 
-### What the flow does not do
+### Cosa non fa questo flusso
 
 - Non modifica le **community guidelines** - quel campo ha un proprio editor nel modulo principale di modifica dell'agente.
-- Non modifica **triggers**, **allowed tools**, o **approval gating** - questi rimangono nel modulo principale di modifica.
-- Non versiona il prompt con rollback. Il prompt precedente non è memorizzato in una raccolta di cronologia separata. Se devi tornare indietro, copia il prompt corrente nel tuo sistema di tracciamento prima di modificarlo.
+- Non modifica i **trigger**, gli **strumenti consentiti** o il **gating delle approvazioni** - questi rimangono nel modulo principale di modifica.
+- Non versiona il prompt con rollback. Il prompt precedente non viene archiviato in una raccolta di cronologia separata. Se hai bisogno di fare rollback, copia il prompt attuale nel tuo sistema di tracciamento prima di modificarlo.
 
-### Why pair refine with replay
+### Perché abbinare il raffinamento al replay
 
-Modificare un prompt senza testarne il risultato è una pratica basata sulla fede. Il ciclo raccomandato:
+Modificare un prompt senza testare il risultato è un atto di fede. Il ciclo consigliato:
 
 1. Rifiuta un'approvazione.
 2. Raffina il prompt.
 3. Esegui un [test run](#test-runs-replays) sugli ultimi 7 giorni.
-4. Guarda la scheda **Deltas**. Il nuovo prompt ha spostato la decisione sbagliata da "would do" a "would not do"? Ha spostato inavvertitamente anche decisioni corrette?
+4. Guarda la scheda **Deltas**. Il nuovo prompt ha spostato la decisione errata da "farebbe" a "non farebbe"? Ha spostato per errore anche decisioni corrette?
 5. Itera.
 
 Tre o quattro cicli di raffinamento + replay sono di solito sufficienti per ottenere un prompt stabile per un agente di moderazione.
 
-### Direct edit alternative
+### Alternativa: modifica diretta
 
-Non sei obbligato a usare Raffina il prompt - puoi anche semplicemente modificare l'agente dal modulo principale di modifica. L'unico vantaggio di Raffina il prompt è che fissa un caso specifico che fallisce così non perdi di vista ciò che stai cercando di correggere.
+Non sei obbligato a usare Refine Prompt - puoi anche semplicemente modificare l'agente dal modulo principale di modifica. L'unico vantaggio di Refine Prompt è che fissa un caso specifico di fallimento, così non perdi di vista ciò che stai correggendo.

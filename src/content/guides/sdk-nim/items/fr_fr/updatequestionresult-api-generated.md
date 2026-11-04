@@ -1,4 +1,3 @@
----
 ## Paramètres
 
 | Nom | Type | Obligatoire | Description |
@@ -24,5 +23,3 @@ let (optResp, httpResp) = client.updateQuestionResult(
 if optResp.isSome:
   let resp = optResp.get()
 [inline-code-end]
-
----

@@ -1,8 +1,8 @@
-The Recent Comments Widget displays a list of the most recent comments across your site or for a specific page. It includes a heading, rounded avatars, comment previews, clickable dates that deep-link to the comment, and automatic dark mode detection.
+Son Yorumlar Widget'ı, siteniz genelinde veya belirli bir sayfa için en son yorumların bir listesini görüntüler. Bir başlık, yuvarlatılmış avatarlar, yorum önizlemeleri, yoruma derin bağlantı veren tıklanabilir tarihler ve otomatik koyu mod algılama içerir.
 
 ## Temel Kurulum
 
-[inline-code-attrs-start title = 'Son Yorumlar Bileşeni Kurulumu'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Son Yorumlar Widget Kurulumu'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/widget-recent-comments-v2.min.js"></script>
 <div id="fastcomments-widget-recent-comments"></div>
@@ -15,16 +15,16 @@ The Recent Comments Widget displays a list of the most recent comments across yo
 
 ## Yapılandırma Seçenekleri
 
-- **tenantId** (gerekli): FastComments tenant ID'niz
-- **urlId** (isteğe bağlı): Tek bir sayfaya filtre uygular. Tüm sayfalar için null bırakın
+- **tenantId** (zorunlu): FastComments kiracı (tenant) kimliğiniz
+- **urlId** (isteğe bağlı): Tek bir sayfaya filtreleme. Tüm sayfalar için null bırakın
 - **count** (isteğe bağlı): Gösterilecek yorum sayısı. Varsayılan `10`
-- **hasDarkBackground** (isteğe bağlı): Koyu mod stilini zorlar. Ayarlanmazsa sayfa arka planından otomatik algılanır
+- **hasDarkBackground** (isteğe bağlı): Koyu mod stilini zorla. Ayarlanmazsa sayfa arka planından otomatik algılanır
 
-## Bileşen Yapısı
+## Widget Yapısı
 
-Bileşen aşağıdaki HTML yapısıyla render edilir:
+Widget aşağıdaki HTML yapısıyla oluşturulur:
 
-[inline-code-attrs-start title = 'Son Yorumlar Bileşeni HTML Yapısı'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Son Yorumlar Widget HTML Yapısı'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <div class="fc-rc2">
     <div class="fc-rc2-heading">Recent Comments</div>
@@ -46,7 +46,7 @@ Bileşen aşağıdaki HTML yapısıyla render edilir:
 
 ## Varsayılan CSS Referansı
 
-[inline-code-attrs-start title = 'Son Yorumlar Bileşeni Varsayılan CSS'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Son Yorumlar Widget Varsayılan CSS'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rc2 {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -72,7 +72,7 @@ Bileşen aşağıdaki HTML yapısıyla render edilir:
 
 ## Özelleştirme Örnekleri
 
-### Avatar Boyutunu Değiştir
+### Avatar Boyutunu Değiştirme
 
 [inline-code-attrs-start title = 'Özel Avatar Boyutu'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -82,7 +82,7 @@ Bileşen aşağıdaki HTML yapısıyla render edilir:
 }
 [inline-code-end]
 
-### Yorum Metninin Daha Fazla Satırını Göster
+### Daha Fazla Yorum Metni Satırı Gösterme
 
 [inline-code-attrs-start title = 'Daha Fazla Yorum Satırı Göster'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -91,7 +91,7 @@ Bileşen aşağıdaki HTML yapısıyla render edilir:
 }
 [inline-code-end]
 
-### Kapsayıcı Kenarlığını Kaldır
+### Kapsayıcı Kenarlığını Kaldırma
 
 [inline-code-attrs-start title = 'Kapsayıcı Kenarlığını Kaldır'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -100,5 +100,3 @@ Bileşen aşağıdaki HTML yapısıyla render edilir:
     box-shadow: none !important;
 }
 [inline-code-end]
-
----

@@ -26,5 +26,3 @@ api->createQuestionResult(tenantId, body)
         }
     });
 [inline-code-end]
-
----

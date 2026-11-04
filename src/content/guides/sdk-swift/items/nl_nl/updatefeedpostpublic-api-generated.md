@@ -1,4 +1,3 @@
----
 ## Parameters
 
 | Naam | Type | Locatie | Verplicht | Beschrijving |
@@ -36,5 +35,3 @@ PublicAPI.updateFeedPostPublic(tenantId: tenantId, postId: postId, updateFeedPos
     }
 }
 [inline-code-end]
-
----

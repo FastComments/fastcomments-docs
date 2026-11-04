@@ -1,17 +1,15 @@
-When moderating and viewing comment threads it is desirable to be able to jump directly to a thread to get context during moderating.
+Κατά τον συντονισμό και την προβολή των νημάτων σχολίων, είναι επιθυμητό να είναι δυνατή η μετάβαση απευθείας σε ένα νήμα για να έχουμε το πλαίσιο κατά τον συντονισμό.
 
-This means that the user's flow starts in the Comment Moderation page, and would then have to go from an individual comment to
-the page containing that comment, wait for that page to load, wait for the comments to load, and then scroll to that comment.
+Αυτό σημαίνει ότι η ροή του χρήστη ξεκινά από τη σελίδα Comment Moderation, και θα έπρεπε στη συνέχεια να πάει από ένα μεμονωμένο σχόλιο στη σελίδα που περιέχει αυτό το σχόλιο, να περιμένει να φορτώσει η σελίδα, να περιμένει να φορτώσουν τα σχόλια, και μετά να μετακινηθεί σε αυτό το σχόλιο.
 
-However, FastComments provides a faster way. In the Moderate Comments page, next to each comment, there is a "View Comment" button in the bottom right.
+Ωστόσο, το FastComments παρέχει έναν ταχύτερο τρόπο. Στη σελίδα Moderate Comments, δίπλα σε κάθε σχόλιο, υπάρχει ένα κουμπί "View Comment" στο κάτω δεξί μέρος.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=1&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = '.comments .comment-component'; alt='Ένα μόνο σχόλιο στη λίστα ελέγχου, με το κουμπί "Προβολή Σχόλιου" στην κάτω δεξιά γωνία του'; title='Ένα σχόλιο' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=1&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = '.comments .comment-component'; alt='Ένα μεμονωμένο σχόλιο στη λίστα συντονισμού, με το κουμπί View Comment στο κάτω δεξί του μέρος'; title='Ένα Σχόλιο' app-screenshot-end]
 
-If this comment has replies, the button text will instead say the number of replies, but clicking it takes the same action.
+Αν αυτό το σχόλιο έχει απαντήσεις, το κείμενο του κουμπιού θα δείχνει αντ' αυτού τον αριθμό των απαντήσεων, αλλά κάνοντας κλικ σε αυτό εκτελείται η ίδια ενέργεια.
 
-This button will take you to the **Προβολέας Αλληλουχίας Σχολίων**.
+Αυτό το κουμπί θα σας οδηγήσει στο **Comment Thread Viewer**.
 
-The Comment Thread Viewer is a small, fast loading application hosted by FastComments that renders the comment thread for the page that
-the comment is on, and scrolls to that comment.
+Το Comment Thread Viewer είναι μια μικρή, γρήγορη εφαρμογή που φιλοξενείται από το FastComments και εμφανίζει το νήμα σχολίων για τη σελίδα στην οποία βρίσκεται το σχόλιο, και μετακινείται σε αυτό το σχόλιο.
 
-This allows moderators to gather the context they need to, quickly, without having to wait for another page to load.
+Αυτό επιτρέπει στους συντονιστές να συγκεντρώνουν γρήγορα το πλαίσιο που χρειάζονται, χωρίς να χρειάζεται να περιμένουν να φορτώσει άλλη σελίδα.

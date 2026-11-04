@@ -1,4 +1,3 @@
----
 設定必要的環境變數：
 
 ```bash
@@ -18,4 +17,3 @@ nimble test
 nim c -r tests/test_sso.nim
 nim c -r tests/test_sso_integration.nim
 ```
----

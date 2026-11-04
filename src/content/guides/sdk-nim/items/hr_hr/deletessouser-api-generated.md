@@ -23,5 +23,3 @@ let (apiRespOpt, httpResp) = client.deleteSSOUser(
 if apiRespOpt.isSome:
   let apiResp = apiRespOpt.get()
 [inline-code-end]
-
----

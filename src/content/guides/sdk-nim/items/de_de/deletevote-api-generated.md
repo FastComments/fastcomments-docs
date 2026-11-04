@@ -1,4 +1,3 @@
----
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
@@ -21,5 +20,3 @@ if voteRespOpt.isSome:
   discard voteResp
   discard httpResp
 [inline-code-end]
-
----

@@ -200,5 +200,3 @@ Prilepite to v urejevalno okno, ki smo ga odprli:
 Zdaj lahko kliknemo `Yes, Save` v spodnjem desnem kotu tega okna.
 
 Na vrhu strani zdaj kliknite `Save`, nato `Preview`.
-
----

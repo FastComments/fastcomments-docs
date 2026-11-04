@@ -1,19 +1,21 @@
-FastComments is een OAuth 2.1 autorisatieserver. Een applicatie kan een token verkrijgen dat is gekoppeld aan één FastComments‑account en dit gebruiken op elk eindpunt in deze gids in plaats van een API‑sleutel. Zo verbinden de Zapier‑app, de MCP‑server en andere integraties van derden.
+FastComments is een OAuth 2.1 autorisatieserver. Een applicatie kan een token verkrijgen dat gekoppeld is aan één FastComments
+account en dit op elk endpoint in deze handleiding gebruiken in plaats van een API-key. Zo verbinden de Zapier-app, de MCP-server
+en andere integraties van derden zich.
 
-Tokens worden uitgegeven via de autorisatiecode‑flow met PKCE. Er is geen client‑credentials‑ of impliciete grant.
+Tokens worden verstrekt via de authorization code flow met PKCE. Er is geen client credentials of implicit grant.
 
 ### Discovery
 
-Endpointlocaties, ondersteunde grants en authenticatiemethoden worden gepubliceerd op de standaard metadata‑URL:
+Endpoint-locaties, ondersteunde grants en auth-methodes worden gepubliceerd op de standaard metadata-URL:
 
-[inline-code-attrs-start title = 'Metadata van autorisatieserver'; type = 'text'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Autorisatieserver Metadata'; type = 'text'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 https://fastcomments.com/.well-known/oauth-authorization-server
 [inline-code-end]
 
-De eindpunten die het beschrijft:
+De endpoints die het beschrijft:
 
-[inline-code-attrs-start title = 'OAuth-eindpunten'; type = 'text'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'OAuth Endpoints'; type = 'text'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 GET  https://fastcomments.com/oauth/authorize
 POST https://fastcomments.com/oauth/token
@@ -21,16 +23,16 @@ POST https://fastcomments.com/oauth/revoke
 POST https://fastcomments.com/oauth/register
 [inline-code-end]
 
-Accounts in de EU‑regio gebruiken `https://eu.fastcomments.com` als issuer, met dezelfde paden.
+Accounts in de EU-regio gebruiken `https://eu.fastcomments.com` als issuer, met dezelfde paden.
 
-### Registering a client
+### Een client registreren
 
-Een client heeft een `client_id` en een geregistreerde `redirect_uri` nodig voordat hij de flow kan starten. Er zijn twee manieren om er één te krijgen:
+Een client heeft een `client_id` en een geregistreerde `redirect_uri` nodig voordat de flow kan starten. Er zijn twee manieren om die te verkrijgen:
 
-- **Dynamische clientregistratie.** `POST /oauth/register` met een JSON‑body volgens RFC 7591 (`redirect_uris`, `client_name`, `client_uri`, `logo_uri`, `token_endpoint_auth_method`). Het antwoord bevat de `client_id` en, voor vertrouwelijke clients, de `client_secret`. Registratie is niet‑geauthenticeerd en per IP rate‑gelimiteerd.
-- **Client‑ID‑metadata‑document.** De client gebruikt een `https`‑URL die hij beheert als zijn `client_id`. FastComments haalt die URL op en leest dezelfde metadata‑velden ervan. Een registratie‑aanroep is niet nodig.
+- **Dynamic Client Registration.** `POST /oauth/register` met een JSON-body volgens RFC 7591 (`redirect_uris`, `client_name`, `client_uri`, `logo_uri`, `token_endpoint_auth_method`). Het antwoord bevat de `client_id` en, voor confidential clients, de `client_secret`. Registratie vindt zonder authenticatie plaats en is rate limited per IP.
+- **Client ID Metadata Document.** De client gebruikt een `https`-URL die het zelf beheert als `client_id`. FastComments haalt die URL op en leest dezelfde metadata-velden eruit. Er is geen registratie-aanroep nodig.
 
-Partnerapplicaties die in het FastComments‑dashboard staan, zoals Zapier, worden rechtstreeks door FastComments geregistreerd. Neem contact op met de support als je een marktplaatsvermelding bouwt en een first‑party client nodig hebt.
+Partnerapplicaties die in het FastComments-dashboard staan vermeld, zoals Zapier, worden door FastComments zelf geregistreerd. Neem contact op met support als je een marketplace-vermelding bouwt en een first-party client nodig hebt.
 
 ### Scopes
 
@@ -40,13 +42,13 @@ read   GET and HEAD requests
 write  every other method
 [inline-code-end]
 
-Een verzoek dat geen scope vraagt, krijgt beide toegekend. De gebruiker ziet de gevraagde scopes op de toestemmingspagina. Een verzoek voor een andere scope dan deze twee mislukt met `invalid_scope`.
+Een verzoek zonder scope krijgt beide. De gebruiker ziet de aangevraagde scopes op de toestemmingspagina. Een verzoek om een andere scope dan deze twee mislukt met `invalid_scope`.
 
-### Stap 1 – Autorisatie‑verzoek
+### Stap 1 - Autorisatieverzoek
 
-Stuur de browser van de gebruiker naar het autorisatie‑eindpunt. PKCE met de `S256`‑methode is vereist voor elke client.
+Stuur de browser van de gebruiker naar het authorize-endpoint. PKCE met de `S256`-methode is verplicht voor elke client.
 
-[inline-code-attrs-start title = 'Autorisatie‑verzoek'; type = 'text'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Autorisatieverzoek'; type = 'text'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 GET https://fastcomments.com/oauth/authorize
     ?response_type=code
@@ -58,34 +60,34 @@ GET https://fastcomments.com/oauth/authorize
     &code_challenge_method=S256
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Parameters van autorisatie‑verzoek'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Parameters van het Autorisatieverzoek'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface OAuthAuthorizeQueryParams {
     response_type: 'code'
     client_id: string
-    /** Moet exact overeenkomen met een van de geregistreerde redirect‑URI's van de client. **/
+    /** Must exactly match one of the client's registered redirect URIs. **/
     redirect_uri: string
-    /** Spatie‑gescheiden. Laat weg om beide scopes aan te vragen. **/
+    /** Space separated. Omit to request both scopes. **/
     scope?: 'read' | 'write' | 'read write'
-    /** Wordt ongewijzigd teruggegeven bij de redirect. Gebruik het om de callback te binden aan de sessie die de flow startte. **/
+    /** Returned unchanged on the redirect. Use it to bind the callback to the session that started the flow. **/
     state?: string
     /** base64url(sha256(code_verifier)). **/
     code_challenge: string
     code_challenge_method: 'S256'
-    /** Optionele RFC 8707 resource‑indicator. Indien verzonden, moet dezelfde waarde naar het token‑eindpunt worden gestuurd. **/
+    /** Optional RFC 8707 resource indicator. If sent, the same value must be sent to the token endpoint. **/
     resource?: string
 }
 [inline-code-end]
 
-De gebruiker logt in op FastComments indien nodig en ziet een toestemmingspagina met de naam van je applicatie, het account waarmee deze wordt verbonden, en de gevraagde scopes. De gebruiker moet de **API Admin**‑permissie op dat account hebben; anderen zien een permissiefout in plaats van het toestemmingsformulier. Goedkeuren leidt tot een redirect van de browser naar je `redirect_uri` met `code` en `state`. Afwijzen leidt tot een redirect met `error=access_denied`.
+De gebruiker logt zo nodig in bij FastComments en ziet een toestemmingspagina met de naam van je applicatie, het account waarmee deze wordt verbonden en de aangevraagde scopes. De gebruiker moet de **API Admin**-rechten hebben op dat account; iedereen anders ziet een rechtenfout in plaats van het toestemmingsformulier. Goedkeuren stuurt de browser door naar je `redirect_uri` met `code` en `state`. Weigeren stuurt door met `error=access_denied`.
 
-De autorisatiecode is 10 minuten geldig en kan één keer worden ingewisseld. Een tweede uitwisseling van dezelfde code intrekt elk token dat de eerste uitwisseling heeft opgeleverd.
+De autorisatiecode is 10 minuten geldig en kan één keer worden ingewisseld. Een tweede inwisseling van dezelfde code trekt alle tokens in die de eerste inwisseling heeft opgeleverd.
 
-### Stap 2 – Token‑verzoek
+### Stap 2 - Tokenverzoek
 
-Wissel de code in voor tokens. De body is form‑gecodeerd. Vertrouwelijke clients authenticeren met `client_secret_basic` (HTTP Basic) of `client_secret_post` (geheim in de body). Publieke clients sturen alleen `client_id`.
+Wissel de code in voor tokens. De body is form-encoded. Confidential clients authenticeren met `client_secret_basic` (HTTP Basic) of `client_secret_post` (secret in de body). Public clients sturen alleen `client_id`.
 
-[inline-code-attrs-start title = 'Voorbeeld cURL‑verzoek token'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Tokenverzoek cURL-voorbeeld'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request POST \
   --url 'https://fastcomments.com/oauth/token' \
@@ -98,54 +100,54 @@ curl --request POST \
   --data 'redirect_uri=https://example.com/oauth/callback'
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Token‑verzoek body (authorization_code)'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Body van het Tokenverzoek (authorization_code)'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface OAuthTokenRequestAuthorizationCode {
     grant_type: 'authorization_code'
     client_id: string
-    /** Alleen voor vertrouwelijke clients. Kan in plaats daarvan als HTTP Basic‑authenticatie worden verzonden. **/
+    /** Confidential clients only. May be sent as HTTP Basic auth instead. **/
     client_secret?: string
     code: string
     code_verifier: string
-    /** Moet overeenkomen met het autorisatie‑verzoek wanneer verzonden. **/
+    /** Must match the authorization request when sent. **/
     redirect_uri?: string
     resource?: string
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Structuur token‑respons'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Structuur van het Tokenantwoord'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface OAuthTokenResponse {
-    /** Voorafgegaan door fcat_. Geldig voor één uur. **/
+    /** Prefixed fcat_. Valid for one hour. **/
     access_token: string
     token_type: 'bearer'
-    /** Seconden tot het access‑token verloopt. 3600. **/
+    /** Seconds until the access token expires. 3600. **/
     expires_in: number
-    /** Voorafgegaan door fcrt_. Geldig voor 30 dagen vanaf uitgifte. **/
+    /** Prefixed fcrt_. Valid for 30 days from issue. **/
     refresh_token: string
-    /** Spatie‑gescheiden toegekende scopes. **/
+    /** Space separated scopes granted. **/
     scope: string
 }
 [inline-code-end]
 
-Fouten volgen RFC 6749: een JSON‑body met `error` en `error_description`, HTTP 400 voor `invalid_request`, `invalid_grant`, `invalid_scope`, `invalid_target` en `unsupported_grant_type`, HTTP 401 voor `invalid_client`, HTTP 429 bij rate‑limiting.
+Fouten volgen RFC 6749: een JSON-body met `error` en `error_description`, HTTP 400 voor `invalid_request`, `invalid_grant`, `invalid_scope`, `invalid_target` en `unsupported_grant_type`, HTTP 401 voor `invalid_client`, HTTP 429 bij rate limiting.
 
-### Stap 3 – API‑aanroep
+### Stap 3 - De API aanroepen
 
-Stuur het access‑token als een bearer‑token. De tenant wordt afgeleid van het token, dus `tenantId` is optioneel. Indien opgegeven moet het overeenkomen met het token, anders faalt het verzoek.
+Stuur het access token mee als bearer token. De tenant volgt impliciet uit het token, dus `tenantId` is optioneel. Als deze wordt meegegeven, moet deze overeenkomen met het token, anders mislukt het verzoek.
 
-[inline-code-attrs-start title = 'Voorbeeld cURL‑verzoek bearer‑token'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Bearer Token cURL-voorbeeld'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/me' \
   --header 'Authorization: Bearer fcat_...'
 [inline-code-end]
 
-`GET /api/v1/me` retourneert de tenant, de autoriserende gebruiker en de toegekende scopes, waardoor het de juiste oproep is voor een verbindingstest. Een verzoek met een verlopen of ingetrokken token krijgt HTTP 401. Een verzoek waarvan de methode een scope vereist die het token niet bezit, krijgt HTTP 403.
+`GET /api/v1/me` geeft de tenant, de autoriserende gebruiker en de verleende scopes terug, waardoor dit de juiste aanroep is voor een verbindingstest. Een verzoek met een verlopen of ingetrokken token krijgt HTTP 401. Een verzoek waarvan de methode een scope nodig heeft die het token niet heeft, krijgt HTTP 403.
 
-### Stap 4 – Vernieuwing
+### Stap 4 - Vernieuwen
 
-[inline-code-attrs-start title = 'Voorbeeld cURL‑verzoek vernieuwing'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Vernieuwingsverzoek cURL-voorbeeld'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request POST \
   --url 'https://fastcomments.com/oauth/token' \
@@ -156,26 +158,26 @@ curl --request POST \
   --data 'refresh_token=fcrt_...'
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Token‑verzoek body (refresh_token)'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Body van het Tokenverzoek (refresh_token)'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface OAuthTokenRequestRefreshToken {
     grant_type: 'refresh_token'
     client_id: string
     client_secret?: string
     refresh_token: string
-    /** Optioneel. Beperkt tot een subset van de oorspronkelijk toegekende scopes. **/
+    /** Optional. Narrows to a subset of the scopes originally granted. **/
     scope?: string
     resource?: string
 }
 [inline-code-end]
 
-Het antwoord heeft dezelfde structuur als de code‑uitwisseling. Refresh‑tokens roteren: elke vernieuwing geeft een nieuw `refresh_token` terug en intrekt het oude na een wachttijd van 30 seconden voor gelijktijdige verzoeken. Het presenteren van een refresh‑token dat meer dan 30 seconden geleden is geroteerd, wordt behandeld als replay en intrekt de volledige grant. Partnerapplicaties die door FastComments zijn geregistreerd, zijn vrijgesteld van rotatie en krijgen hetzelfde refresh‑token terug met een verlengde vervaldatum van nog eens 30 dagen.
+Het antwoord heeft dezelfde vorm als de code-inwisseling. Refresh tokens roteren: elke vernieuwing geeft een nieuwe `refresh_token` terug en trekt de oude in na een respijtvenster van 30 seconden voor gelijktijdige verzoeken. Het aanbieden van een refresh token dat meer dan 30 seconden geleden is geroteerd, wordt behandeld als replay en trekt de hele grant in. Partnerapplicaties die door FastComments zijn geregistreerd, zijn uitgezonderd van rotatie en krijgen dezelfde refresh token terug met een verlengde geldigheid van nog eens 30 dagen.
 
-Een vernieuwing controleert ook opnieuw of de autoriserende gebruiker nog steeds API Admin op het account heeft. Zo niet, dan wordt de grant ingetrokken en is het antwoord `invalid_grant`.
+Bij een vernieuwing wordt ook opnieuw gecontroleerd of de autoriserende gebruiker nog steeds API Admin heeft op het account. Zo niet, dan wordt de grant ingetrokken en is het antwoord `invalid_grant`.
 
-### Intrekking
+### Intrekken
 
-[inline-code-attrs-start title = 'Voorbeeld cURL‑verzoek intrekking'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Intrekkingsverzoek cURL-voorbeeld'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request POST \
   --url 'https://fastcomments.com/oauth/revoke' \
@@ -186,6 +188,6 @@ curl --request POST \
   --data 'token_type_hint=refresh_token'
 [inline-code-end]
 
-Het intrekken van een refresh‑token intrekt elk access‑token dat uit dezelfde grant is uitgegeven. Het intrekken van een access‑token intrekt alleen dat token. Het eindpunt retourneert HTTP 200 met een leeg JSON‑object, ongeacht of het token werd gevonden, volgens RFC 7009.
+Het intrekken van een refresh token trekt alle access tokens in die vanuit dezelfde grant zijn verstrekt. Het intrekken van een access token trekt alleen dat token in. Het endpoint geeft HTTP 200 terug met een leeg JSON-object, ongeacht of het token is gevonden, conform RFC 7009.
 
-Gebruikers kunnen ook een verbinding intrekken via **Connected Apps** in het FastComments‑dashboard. Elk token voor die applicatie stopt onmiddellijk met werken.
+Gebruikers kunnen een verbinding ook intrekken via **Connected Apps** in het FastComments-dashboard. Elke token voor die applicatie stopt onmiddellijk met werken.

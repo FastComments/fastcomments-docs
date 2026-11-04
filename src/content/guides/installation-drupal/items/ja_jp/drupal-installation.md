@@ -1,18 +1,18 @@
-The FastComments Drupal モジュールは、Drupal の組み込みコメントを高速でリアルタイムなコメントシステムに置き換えます。モジュールは [drupal.org に公開されています](https://www.drupal.org/project/fcom) と Drupal 10 および 11 に対応しています。
+FastComments Drupalモジュールは、Drupalの組み込みコメントを高速なリアルタイムコメントシステムに置き換えます。このモジュールは[drupal.orgで公開されており](https://www.drupal.org/project/fcom)、Drupal 10および11で動作します。
 
-There are two ways to install it.
+インストール方法は2つあります。
 
-## Install with Composer
+## Composerでインストール
 
 ```
 composer require drupal/fcom
 drush en fastcomments
 ```
 
-## Install manually
+## 手動でインストール
 
-Download the module from [drupal.org/project/fcom](https://www.drupal.org/project/fcom) and place it in your site's `modules/custom/fastcomments/` directory. Then enable it with `drush en fastcomments`, or from the admin UI at `Extend` (`/admin/modules`).
+[drupal.org/project/fcom](https://www.drupal.org/project/fcom)からモジュールをダウンロードし、サイトの`modules/custom/fastcomments/`ディレクトリに配置します。その後、`drush en fastcomments`で有効化するか、管理UIの`Extend`(`/admin/modules`)から有効化してください。
 
-<sup>注：</sup> このモジュールは Drupal コア（`user` および `field`）のみを依存関係としています。他の Drupal モジュールやライブラリは必要ありません。
+<sup>注意！</sup> このモジュールはDrupalコア(`user`と`field`)にのみ依存しています。他のDrupalモジュールやライブラリは必要ありません。
 
-Once the module is enabled, head to the `Configuration` section to set up your Tenant ID and API Secret.
+モジュールを有効化したら、`Configuration`セクションに移動してTenant IDとAPI Secretを設定してください。

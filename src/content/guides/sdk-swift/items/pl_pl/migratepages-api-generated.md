@@ -1,22 +1,22 @@
-Queues a batch job that moves comments, pages and related records from one urlId or domain to another.  
-"urlId" migrations only match the exact urlId. "domain" migrations find/replace the value inside every urlId and url.  
-Poll GET /api/v1/batch-jobs/{batchJobId}: once it is done it carries per-migration results and an undoId.
+Kolejkuje zadanie wsadowe, które przenosi komentarze, strony i powiązane rekordy z jednego urlId lub domeny do innego.
+Migracje "urlId" dopasowują tylko dokładny urlId. Migracje "domain" wyszukują/zamieniają wartość w każdym urlId i url.
+Odpytuj GET /api/v1/batch-jobs/{batchJobId}: po zakończeniu zawiera wyniki poszczególnych migracji oraz undoId.
 
-## Parameters
+## Parametry
 
-| Name | Type | Location | Required | Description |
+| Nazwa | Typ | Lokalizacja | Wymagany | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
+| tenantId | string | query | Tak |  |
 
-## Response
+## Odpowiedź
 
-Returns: [`QueuePageMigrationJobAPIResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/QueuePageMigrationJobAPIResponse.swift)
+Zwraca: [`QueuePageMigrationJobAPIResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/QueuePageMigrationJobAPIResponse.swift)
 
-## Example
+## Przykład
 
 [inline-code-attrs-start title = 'Przykład migratePages'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Poniższe przykłady kodu są wciąż w wersji beta. W razie problemów proszę zgłosić je pod adresem http://github.com/OpenAPITools/openapi-generator/issues/new
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 

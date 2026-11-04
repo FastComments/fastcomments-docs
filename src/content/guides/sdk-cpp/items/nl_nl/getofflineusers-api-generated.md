@@ -1,19 +1,19 @@
-Past commenters on the page who are NOT currently online. Sorted by displayName.  
-Use this after exhausting /users/online to render a "Members" section.  
-Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName}  
-index from afterName forward via $gt, no $skip cost.
+Eerdere commenters op de pagina die NIET momenteel online zijn. Gesorteerd op displayName.
+Gebruik dit nadat je /users/online hebt uitgeput om een "Leden"-sectie weer te geven.
+Cursorpaginering op commenterName: de server loopt de partiële {tenantId, urlId, commenterName}
+index vanaf afterName vooruit via $gt, zonder $skip-kosten.
 
 ## Parameters
 
-| Naam | Type | Vereist | Beschrijving |
+| Naam | Type | Verplicht | Beschrijving |
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | urlId | string | Ja |  |
 | options | const GetOfflineUsersOptions& | Ja |  |
 
-## Respons
+## Response
 
-Retourneert: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PageUsersOfflineResponse.h)
+Geeft terug: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PageUsersOfflineResponse.h)
 
 ## Voorbeeld
 

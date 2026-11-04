@@ -9,5 +9,3 @@ Bu öğreticinin bir FastComments hesabı gerektirdiğini unutmayın. Önce kayd
 Bu öğretici iki kategoriye ayrılmıştır: Üyelik Siteleri ve standart GoHighLevel Siteleri.
 
 Öncelikle Üyelik Siteleri için talimatlarla başlıyoruz.
-
----

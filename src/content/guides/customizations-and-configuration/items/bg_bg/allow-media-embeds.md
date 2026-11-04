@@ -1,21 +1,13 @@
-By default FastComments does not allow iframes in comments. When you enable media embeds, commenters can paste the embed code (the `<iframe>` snippet) from trusted providers like YouTube, Vimeo, SoundCloud, and Spotify, and it will render inline in the comment.
+По подразбиране FastComments не позволява iframes в коментарите. Когато активирате вграждането на медия, коментиращите могат да поставят кода за вграждане (фрагмента `<iframe>`) от доверени доставчици като YouTube, Vimeo, SoundCloud и Spotify, и той ще се визуализира вградено в коментара.
 
-По подразбиране FastComments не позволява iframe елементи в коментарите. Когато активирате медийни вграждания, коментаторите могат да поставят кода за вграждане (фрагмента `<iframe>`) от доверени доставчици като YouTube, Vimeo, SoundCloud и Spotify, и той ще се визуализира в реда на коментара.
+От съображения за сигурност това не е флаг в конфигурацията на уиджета от страна на клиента. Това е настройка от страна на сървъра, валидирана при запазването на всеки коментар, така че не може да бъде включена от страницата. Позволени са само iframes, сочещи към вграден списък с доверени доставчици. Всеки друг iframe се премахва.
 
-For security, this is not a client-side widget config flag. It is a server-side setting, validated when each comment is saved, so it cannot be turned on from the page. Only iframes pointing at a built-in list of trusted providers are allowed. Any other iframe is removed.
+Това се прави без код, на страницата за персонализиране на уиджета:
 
-За сигурност това не е флаг за конфигурация на уиджета от клиентската страна. Това е настройка от сървърната страна, проверявана при запазване на всеки коментар, така че не може да бъде включена от страницата. Само iframe‑ове, които сочат към вградения списък с доверени доставчици, са разрешени. Всички други iframe‑ове се премахват.
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.allow-embeds'; selector = '.allow-embeds'; alt='Настройката за вграждане на медия е активирана на страницата за персонализиране на уиджета, позволявайки на коментиращите да поставят доверени iframe вграждания'; title='Разрешаване на вграждане на медия' app-screenshot-end]
 
-This is done without code, on the widget customization page:
+### Добавяне на собствени доставчици
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.allow-embeds'; selector = '.allow-embeds'; alt='Настройка за медийни вграждания включена в страницата за персонализиране на уиджета, позволяваща на коментаторите да поставят доверени iframe вграждания'; title='Разрешаване на медийни вграждания' app-screenshot-end]
+Ако искате да разрешите вграждания от доставчик, който не е в вградения списък с доверени, добавете неговото име на хост в полето "Additional Embed Domains" на същата страница. Тези имена на хостове са позволени в допълнение към вградените доставчици. Съвпадението е точно, така че включете пълното име на хост (например player.example.com). Всичко, което не сте посочили, остава блокирано.
 
-### Adding Your Own Providers
-
-If you want to allow embeds from a provider that is not on the built-in trusted list, add its hostname in the "Additional Embed Domains" field on the same page. These hostnames are allowed in addition to the built-in providers. Matching is exact, so include the full hostname (for example, player.example.com). Anything you do not list stays blocked.
-
-Ако искате да разрешите вграждания от доставчик, който не е в вградения списък с доверени доставчици, добавете неговото име на хост в полето „Additional Embed Domains“ (Допълнителни домейни за вграждане) на същата страница. Тези имена на хостове се разрешават в допълнение към вградените доставчици. Съответствието е точно, затова включете пълното име на хост (например, player.example.com). Всичко, което не е изброено, остава блокирано.
-
-Both the plain comment box and the WYSIWYG editor support pasting an embed. In the WYSIWYG editor the embed is inserted as a removable block.
-
-Как обикновеното поле за коментари, така и WYSIWYG редакторът поддържат поставяне на вграждане. В WYSIWYG редактора вграждането се вмъква като блок, който може да се премахне.
+И обикновеното поле за коментар, и WYSIWYG редакторът поддържат поставяне на вграждане. В WYSIWYG редактора вграждането се вмъква като блок, който може да бъде премахнат.

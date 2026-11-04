@@ -34,5 +34,3 @@ DefaultAPI.getWebhookSamplePayloads(tenantId: tenantId, options: DefaultAPI.GetW
     }
 }
 [inline-code-end]
-
----

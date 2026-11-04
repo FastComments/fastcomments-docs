@@ -25,5 +25,3 @@ Dit kan worden overschreven met een gewenste locale.
 ### SSO-opmerking
 
 Als u SSO gebruikt, wilt u mogelijk de locale van de gebruiker doorgeven in het gebruikersobject, zodat e‑mails en andere zaken correct voor hen worden gelokaliseerd.
-
----

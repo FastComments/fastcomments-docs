@@ -38,5 +38,3 @@ Anketler, Özelleştir Widget altında değiştirebileceğiniz site yapılandır
 
 - Bir anket oluşturulmadan önce anketlerin etkinleştirilmiş olması gerekir, aksi takdirde API `polls-disabled` yanıtını verir.
 - Oy verme, oturum açmış kullanıcılarla sınırlı olabilir; bu durumda yalnızca bir `anonUserId` ile gönderilen oy, `poll-login-required` hatasıyla reddedilir.
-
----

@@ -29,5 +29,3 @@ let (apiRes, httpRes) = client.updateFeedPost(
 if apiRes.isSome:
   let res = apiRes.get()
 [inline-code-end]
-
----

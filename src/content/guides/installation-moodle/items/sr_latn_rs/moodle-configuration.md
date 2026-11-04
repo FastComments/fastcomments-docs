@@ -1,20 +1,20 @@
-The plugin settings page is at **Site Administration > Plugins > Local plugins > FastComments**. Dostupne opcije su:
+Stranica sa podešavanjima dodatka nalazi se na **Site Administration > Plugins > Local plugins > FastComments**. Dostupne opcije su:
 
 #### Tenant ID
 
-Vaš FastComments Tenant ID. Pronađite ovo u <a href="https://fastcomments.com/auth/my-account" target="_blank">FastComments dashboard</a> u podešavanjima naloga.
+Vaš FastComments Tenant ID. Pronađite ga u <a href="https://fastcomments.com/auth/my-account" target="_blank">FastComments kontrolnom panelu</a> u podešavanjima vašeg naloga.
 
 #### API Secret
 
-Vaš API Secret ključ, potreban za Secure SSO režim. Pronađite ovo na <a href="https://fastcomments.com/auth/my-account/api-secret" target="_blank">My Account > API Secret</a>.
+Vaš API Secret ključ, potreban za Secure SSO režim. Pronađite ga na <a href="https://fastcomments.com/auth/my-account/api-secret" target="_blank">My Account > API Secret</a>.
 
 #### SSO Mode
 
-Izaberite kako se korisnici autentifikuju. Pogledajte odeljak [SSO Modes](#moodle-sso-modes) za detalje o svakoj opciji.
+Izaberite način na koji se korisnici autentifikuju. Pogledajte odeljak [SSO Modes](#moodle-sso-modes) za detalje o svakoj opciji.
 
-- **Secure** (recommended) - autentifikacija potpisana na serverskoj strani pomoću HMAC-SHA256
-- **Simple** - podaci o korisniku na klijentskoj strani bez potpisa
-- **None** - anonimno komentarisanje, bez integracije Moodle prijave
+- **Secure** (preporučeno) - autentifikacija potpisana HMAC-SHA256 na strani servera
+- **Simple** - podaci o korisniku na strani klijenta bez potpisa
+- **None** - anonimno komentarišanje, bez integracije sa Moodle prijavom
 
 #### Page Contexts
 
@@ -26,12 +26,12 @@ Kontroliše gde se komentari pojavljuju:
 
 #### Commenting Style
 
-Izaberite iskustvo komentarisanja. Pogledajte [Commenting Styles](#moodle-commenting-styles) za snimke ekrana svakog režima.
+Izaberite iskustvo komentarišanja. Pogledajte [Commenting Styles](#moodle-commenting-styles) za snimke ekrana svakog režima.
 
-- **Comments** - standardni ugnježdeni widget za komentare ispod sadržaja stranice
-- **Collab Chat** - inline diskusije selekcijom teksta sa indikatorima prisutnosti
-- **Both** - komentari i collab chat aktivni zajedno
+- **Comments** - standardni vidžet za komentare u nizu ispod sadržaja stranice
+- **Collab Chat** - diskusije o izabranom tekstu sa indikatorima prisustva
+- **Both** - komentari i collab chat aktivni istovremeno
 
 #### CDN URL
 
-URL FastComments CDN-a. Podrazumevano je `https://cdn.fastcomments.com`. Promenite ovo na EU CDN URL ako su vaši podaci hostovani u EU regionu.
+FastComments CDN URL. Podrazumevano je `https://cdn.fastcomments.com`. Promenite ovo na EU CDN URL ako su vaši podaci hostovani u EU regionu.

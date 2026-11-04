@@ -27,5 +27,3 @@ async function runExample(): Promise<void> {
 
 runExample();
 [inline-code-end]
-
----

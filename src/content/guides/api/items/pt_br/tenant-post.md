@@ -1,4 +1,3 @@
----
 [api-resource-header-start name = 'Tenant'; route = 'POST /api/v1/tenants'; creditsCost = 1; api-resource-header-end]
 
 Esta rota fornece a capacidade de adicionar um único `Tenant`.
@@ -53,5 +52,3 @@ interface TenantPostResponse {
     tenant?: Tenant; // Retornamos o tenant completo criado em caso de sucesso.
 }
 [inline-code-end]
-
----

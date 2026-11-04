@@ -1,4 +1,3 @@
----
 A `Moderator` object represents configuration for a moderator.
 
 有三種類型的版主：
@@ -37,4 +36,3 @@ interface Moderator {
     moderationGroupIds?: string[]|null
 }
 [inline-code-end]
----

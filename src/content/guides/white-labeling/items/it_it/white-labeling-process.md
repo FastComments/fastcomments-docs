@@ -1,4 +1,3 @@
----
 Il processo per impostare il White Labeling è il seguente:
 
 1. Scegli come verrà gestita la fatturazione.
@@ -11,5 +10,3 @@ Il processo per impostare il White Labeling è il seguente:
    2. `TenantUser` è un amministratore con un insieme di privilegi nel `Tenant`.
    3. `TenantPackage` è un pacchetto con un insieme di limiti e prezzi disponibili per un `Tenant`.
 3. Integra con la nostra [API](/guide-api.html) o usa [scripts](https://github.com/FastComments/fastcomments-code-examples/tree/master/white-labeling) per l'onboarding dei tenant.
-
----

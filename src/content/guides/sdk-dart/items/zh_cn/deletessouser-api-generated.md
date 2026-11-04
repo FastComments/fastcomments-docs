@@ -34,5 +34,3 @@ try {
     print('Exception when calling DefaultApi->deleteSSOUser: $e\n');
 }
 [inline-code-end]
-
----

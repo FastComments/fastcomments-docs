@@ -1,45 +1,47 @@
-Config comes from three places. Later sources win:
+הקונפיגורציה מגיעה משלושה מקורות. מקורות מאוחרים גוברים:
 
-1. **Global defaults** in `_config.yml` under the `fastcomments:` key.
-2. **Page context**, derived automatically for page-scoped widgets (see below).
-3. **Tag attributes** written on the tag itself.
+1. **ברירות מחדל גלובליות** ב-`_config.yml` תחת המפתח `fastcomments:`.
+2. **הקשר העמוד**, שנגזר באופן אוטומטי עבור ווידג׳טים בהיקף עמוד (ראו להלן).
+3. **מאפייני תגית** שנכתבים על התגית עצמה.
 
-So a `url_id` on the tag overrides the page-derived value, which overrides any global default.
+כלומר, `url_id` על התגית דורס את הערך הנגזר מהעמוד, שדורס כל ברירת מחדל גלובלית.
 
-### תחביר התכונות
+### תחביר מאפיינים
 
-Attributes are `key=value` pairs in `snake_case`:
+מאפיינים הם זוגות `key=value` בפורמט `snake_case`:
 
 ```liquid
 {% raw %}{% fastcomments url_id="my-stable-id" readonly=true count=20 %}{% endraw %}
 ```
 
-- **Quoted** values (`"..."` or `'...'`) are literal strings.
-- **Unquoted** `true`/`false` become booleans, and numbers become numbers.
-- **Unquoted** anything else is resolved as a Liquid variable from the page context, e.g. `url_id=page.slug`. (Liquid does not expand `{% raw %}\{{ ... }}{% endraw %}` inside a tag's attributes, so use the bare `page.slug` form rather than `"{% raw %}\{{ page.slug }}{% endraw %}"`.)
+- ערכים **מצוטטים** (`"..."` או `'...'`) הם מחרוזות ליטרליות.
+- `true`/`false` **ללא מירכאות** הופכים לערכים בוליאניים, ומספרים הופכים למספרים.
+- כל דבר אחר **ללא מירכאות** מפוענח כמשתנה Liquid מהקשר העמוד, למשל
+  `url_id=page.slug`. (Liquid אינו מרחיב `{% raw %}\{{ ... }}{% endraw %}` בתוך
+  מאפייני תגית, ולכן יש להשתמש בצורה החשופה `page.slug` ולא ב-`"{% raw %}\{{ page.slug }}{% endraw %}"`.)
 
-Snake_case attribute and config keys are mapped automatically to the camelCase keys FastComments
-expects (`tenant_id` → `tenantId`, `url_id` → `urlId`, `page_title` → `pageTitle`,
-`has_dark_background` → `hasDarkBackground`, and so on). Any other option from the
-[widget configuration](https://docs.fastcomments.com/guide-customizations-and-configuration.html)
-passes straight through the same way.
+מפתחות מאפיינים וקונפיגורציה בפורמט snake_case ממופים באופן אוטומטי למפתחות camelCase ש-FastComments
+מצפה להם (`tenant_id` → `tenantId`, `url_id` → `urlId`, `page_title` → `pageTitle`,
+`has_dark_background` → `hasDarkBackground` וכן הלאה). כל אפשרות אחרת מתוך
+[הגדרות הווידג׳ט](https://docs.fastcomments.com/guide-customizations-and-configuration.html)
+מועברת ישירות באותו אופן.
 
-### ערכים נגזרים מהדף
+### ערכים הנגזרים מהעמוד
 
-For the page-scoped widgets (`fastcomments`, `fastcomments_comment_count`, `fastcomments_live_chat`,
-`fastcomments_collab_chat`, `fastcomments_image_chat`) these are filled in automatically from the
-current page unless you set them yourself:
+עבור הווידג׳טים בהיקף עמוד (`fastcomments`, `fastcomments_comment_count`, `fastcomments_live_chat`,
+`fastcomments_collab_chat`, `fastcomments_image_chat`) הערכים הללו ממולאים באופן אוטומטי מהעמוד הנוכחי,
+אלא אם הגדרתם אותם בעצמכם:
 
-- `url_id` ← `page.url` (a stable identifier independent of the visiting domain)
-- `url` ← `site.url` + `page.url` (only when `url` is set in `_config.yml`)
+- `url_id` ← `page.url` (מזהה יציב שאינו תלוי בדומיין המבקר)
+- `url` ← `site.url` + `page.url` (רק כאשר `url` מוגדר ב-`_config.yml`)
 - `page_title` ← `page.title`
 
-Site-wide widgets (recent comments/discussions, top pages, reviews summary, user activity feed,
-bulk count) are not tied to a page and do not derive these.
+ווידג׳טים ברמת האתר (תגובות/דיונים אחרונים, עמודים מובילים, סיכום ביקורות, פיד פעילות משתמשים,
+ספירה מרובה) אינם קשורים לעמוד ואינם גוזרים את הערכים הללו.
 
-### שהות נתונים באיחוד האירופי
+### אחסון נתונים באיחוד האירופי
 
-EU customers add `region: eu`, either globally:
+לקוחות באיחוד האירופי מוסיפים `region: eu`, באופן גלובלי:
 
 ```yaml
 fastcomments:
@@ -47,4 +49,4 @@ fastcomments:
   region: eu
 ```
 
-or per tag: `{% raw %}{% fastcomments region="eu" %}{% endraw %}`. Widgets then load from the EU CDN.
+או לכל תגית: `{% raw %}{% fastcomments region="eu" %}{% endraw %}`. הווידג׳טים נטענים אז מה-CDN של האיחוד האירופי.

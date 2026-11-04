@@ -22,5 +22,3 @@ Bitte beachten Sie, dass diese Magic-Links nach einiger Zeit ablaufen.
 #### Benachrichtigungstypen
 
 FastComments sendet mehrere Arten von E-Mails an Moderatoren und Administratoren. Wenn gewünscht, kann man `Comment Reply`-Benachrichtigungen abbestellen, während man weiterhin `New Comment`-Benachrichtigungen erhält, indem man die entsprechenden Optionen auf der oben gezeigten `Edit Notifications`-Seite wählt.
-
----

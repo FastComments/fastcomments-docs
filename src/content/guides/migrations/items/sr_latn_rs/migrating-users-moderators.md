@@ -10,5 +10,3 @@ Za dodavanje moderatora, pogledajte [odgovarajuću dokumentaciju](/guide-moderat
 ### Napomena o autentifikaciji
 
 Vaši korisnici možda traže mesto za unos svoje lozinke. FastComments koristi "magic links" za prijavu – tako da lozinke nisu potrebne.
-
----

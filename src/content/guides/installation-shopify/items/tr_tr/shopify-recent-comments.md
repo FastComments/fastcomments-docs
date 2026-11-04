@@ -1,24 +1,21 @@
----
-The **FastComments - Recent Comments** block shows the most recent comments across your whole store. Use it to show fresh activity in a sidebar, footer, or homepage section.
+**FastComments - Recent Comments** bloğu, mağazanızın tamamındaki en yeni yorumları gösterir. Kenar çubuğunda, alt bilgide (footer) veya ana sayfa bölümünde güncel etkinliği göstermek için kullanın.
 
-### Add the block
+### Bloğu ekleme
 
-1. Open the Shopify theme editor.
-2. Open the template where you want the feed. A sidebar section, the home page, or the blog index all work well.
-3. Click **Add block** in the section that should hold it.
-4. Under **Apps**, select **FastComments - Recent Comments**.
-5. Click **Save**.
+1. Shopify tema düzenleyicisini açın.
+2. Akışı istediğiniz şablonu açın. Kenar çubuğu bölümü, ana sayfa veya blog dizini tümü iyi çalışır.
+3. Bloğu barındırması gereken bölümde **Add block** (Bloğu ekle) seçeneğine tıklayın.
+4. **Apps** (Uygulamalar) altında **FastComments - Recent Comments** seçeneğini seçin.
+5. **Save** (Kaydet) seçeneğine tıklayın.
 
-### Settings
+### Ayarlar
 
 | Ayar | Ne yapar | Varsayılan |
 |---|---|---|
-| Tenant ID (optional) | Beslemenin okuduğu FastComments tenant'ını geçersiz kılar. Mağazanın otomatik yapılandırılmış tenant'ını kullanmak için boş bırakın. | (boş) |
-| Number of comments | Kaç tane en son yorum gösterileceğini belirler. Değer 1 ile 50 arasında olabilir. | 5 |
+| Tenant ID (isteğe bağlı) | Akışın hangi FastComments tenant'ından okuyacağını geçersiz kılar. Mağazanın otomatik olarak yapılandırılmış tenant'ını kullanmak için boş bırakın. | (boş) |
+| Number of comments | Gösterilecek en yeni yorum sayısı. 1 ile 50 arası. | 5 |
 
 ### İpuçları
 
-- Her yorum gönderildiği sayfaya bağlantı verir, bu yüzden blok aynı zamanda "insanların şu anda ne hakkında konuştuğu" hakkında bir gezinme ipucu olarak da çalışır.
-- Besleme mağaza geneldir. Tek bir sayfa için en son yorumları göstermek istiyorsanız, bunun yerine o sayfada **FastComments** bloğunu kullanın.
-
----
+- Her yorum, gönderildiği sayfaya bağlantı verir, böylece blok aynı zamanda "insanların şu anda ne hakkında konuştuğu" için bir gezinme ipucu olarak da işlev görür.
+- Akış mağaza geneline aittir. Tek bir sayfa için en yeni yorumları göstermek için bunun yerine o sayfadaki **FastComments** bloğunu kullanın.

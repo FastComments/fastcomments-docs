@@ -1,4 +1,3 @@
----
 ## 参数
 
 | Name | Type | Required | Description |
@@ -28,5 +27,3 @@ api->lockComment(tenantId, commentId, broadcastId, sso).then([](pplx::task<std::
     }
 });
 [inline-code-end]
-
----

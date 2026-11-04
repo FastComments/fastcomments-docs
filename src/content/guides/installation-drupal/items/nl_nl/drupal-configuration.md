@@ -1,41 +1,41 @@
-All settings live under `Administration > Configuration > Content > FastComments` (`/admin/config/content/fastcomments`).
+Alle instellingen bevinden zich onder `Administration > Configuration > Content > FastComments` (`/admin/config/content/fastcomments`).
 
-## Required
+## Vereist
 
-- **Tenant ID** – Your FastComments Tenant ID. Find this under [Settings > API/SSO](https://fastcomments.com/auth/my-account/api) ([EU](https://eu.fastcomments.com/auth/my-account/api)).
-- **API Secret** – Required for Secure SSO, webhook verification, and page sync. Found under [Settings > API/SSO](https://fastcomments.com/auth/my-account/api) ([EU](https://eu.fastcomments.com/auth/my-account/api)).
+- **Tenant ID** - Je FastComments Tenant ID. Je vindt deze onder [Settings > API/SSO](https://fastcomments.com/auth/my-account/api) ([EU](https://eu.fastcomments.com/auth/my-account/api)).
+- **API Secret** - Vereist voor Secure SSO, webhook-verificatie en paginasynchronisatie. Te vinden onder [Settings > API/SSO](https://fastcomments.com/auth/my-account/api) ([EU](https://eu.fastcomments.com/auth/my-account/api)).
 
-## Storing the API Secret
+## Het API Secret opslaan
 
-The module reads the API Secret from the first of these sources that has a value:
+De module leest het API Secret uit de eerste van deze bronnen die een waarde bevat:
 
-1. **Key module** – Install [Key](https://www.drupal.org/project/key), create an *Authentication* key, and pick it under **API Secret key** on the settings form. The key can be backed by an environment variable or a file outside the web root.
-2. **settings.php** – Add `$config['fastcomments.settings']['api_secret'] = 'your-secret';` to `settings.php` or `settings.local.php`. The secret never enters exported configuration.
-3. **The settings form** – Enter it in the **API Secret** field. This stores the value in `fastcomments.settings`, so it ends up in configuration exports. The Drupal status report warns when this is the active source.
+1. **Key module** - Installeer [Key](https://www.drupal.org/project/key), maak een *Authentication*-sleutel aan en selecteer deze onder **API Secret key** op het instellingenformulier. De sleutel kan worden ondersteund door een omgevingsvariabele of een bestand buiten de web root.
+2. **settings.php** - Voeg `$config['fastcomments.settings']['api_secret'] = 'your-secret';` toe aan `settings.php` of `settings.local.php`. Het secret komt nooit in geëxporteerde configuratie terecht.
+3. **Het instellingenformulier** - Vul het in het veld **API Secret** in. Dit slaat de waarde op in `fastcomments.settings`, waardoor deze in configuratie-exporten terechtkomt. Het Drupal-statusrapport geeft een waarschuwing wanneer dit de actieve bron is.
 
-The form shows which source is active. Leaving the field blank keeps the stored secret. Tick **Remove the API Secret stored in configuration** to delete it after moving the secret to the Key module or `settings.php`.
+Het formulier toont welke bron actief is. Als je het veld leeg laat, blijft het opgeslagen secret behouden. Vink **Remove the API Secret stored in configuration** aan om het te verwijderen nadat je het secret naar de Key module of `settings.php` hebt verplaatst.
 
-## Commenting Style
+## Commentaarstijl
 
-Pick the widget that matches how you want people to talk on your site.
+Kies de widget die past bij hoe je wilt dat mensen op je site met elkaar praten.
 
-- **Live Comments** – Real-time threaded comments.
-- **Streaming Chat** – Live chat interface, good for events and livestreams.
-- **Collab Chat** – Text-selection annotation on the main content area. Visitors highlight text and start a discussion in context.
-- **Collab Chat + Comments** – Both collab chat and standard comments on the same page.
+- **Live Comments** - Reacties in real-time met discussielijnen.
+- **Streaming Chat** - Live chat-interface, geschikt voor evenementen en livestreams.
+- **Collab Chat** - Annotatie op tekstselectie in het hoofdcontentgebied. Bezoekers markeren tekst en starten een discussie in context.
+- **Collab Chat + Comments** - Zowel collab chat als standaardreacties op dezelfde pagina.
 
-## SSO Mode
+## SSO-modus
 
-- **None** – No SSO. Users comment as guests or create a FastComments account.
-- **Simple** – Passes Drupal user info (name, email, avatar) to FastComments without server-side verification.
-- **Secure** – Uses HMAC-SHA256 to verify Drupal users with FastComments. Recommended when you have an API Secret configured.
+- **None** - Geen SSO. Gebruikers reageren als gasten of maken een FastComments-account aan.
+- **Simple** - Geeft Drupal-gebruikersgegevens (naam, e-mail, avatar) door aan FastComments zonder server-side verificatie.
+- **Secure** - Gebruikt HMAC-SHA256 om Drupal-gebruikers te verifiëren bij FastComments. Aanbevolen wanneer je een API Secret hebt geconfigureerd.
 
-See the `Single Sign-On (SSO)` section for details.
+Zie de sectie `Single Sign-On (SSO)` voor meer details.
 
-## Other Settings
+## Overige instellingen
 
-- **CDN URL** – Defaults to `https://cdn.fastcomments.com`.
-- **Site URL** – Defaults to `https://fastcomments.com`.
-- **Email notifications** – Send an email to a content author when a new comment is posted on their content.
+- **CDN URL** - Standaard `https://cdn.fastcomments.com`.
+- **Site URL** - Standaard `https://fastcomments.com`.
+- **E-mailnotificaties** - Stuur een e-mail naar een contentauteur wanneer er een nieuwe reactie op hun content wordt geplaatst.
 
-For EU data residency, see the `EU Data Residency` section.
+Zie voor EU-dataresidentie de sectie `EU Data Residency`.

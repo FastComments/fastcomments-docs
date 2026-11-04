@@ -1,4 +1,3 @@
----
 ## Hulp nodig?
 
 Als u problemen ondervindt of vragen heeft over de Hugo Library, kunt u:
@@ -9,5 +8,3 @@ Als u problemen ondervindt of vragen heeft over de Hugo Library, kunt u:
 ## Bijdragen
 
 Bijdragen zijn welkom! Bezoek de [GitHub-repository](https://github.com/FastComments/fastcomments-hugo) voor richtlijnen voor bijdragen.
-
----

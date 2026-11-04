@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Ime | Vrsta | Obvezno | Opis |
@@ -28,5 +27,3 @@ async function demoPinComment() {
 
 demoPinComment();
 [inline-code-end]
-
----

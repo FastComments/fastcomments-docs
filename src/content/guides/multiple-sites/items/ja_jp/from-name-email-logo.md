@@ -1,49 +1,45 @@
-Sometimes FastComments has to email your users, especially if you are not using Secure SSO.
+FastCommentsでは、特にSecure SSOを使用していない場合、ユーザーにメールを送信する必要があることがあります。
 
-Examples of this includes verifying their account or activity when commenting for the first time. FastComments will also send them notifications for replies to their comments.
+その例として、初めてコメントする際のアカウントやアクティビティの確認が挙げられます。また、FastCommentsはコメントへの返信の通知も送信します。
 
-When FastComments emails your users, we will use a default From Name and Email of `FastComments Robot` and `noreply@fastcomments.com`.
+FastCommentsがユーザーにメールを送信する際、デフォルトのFrom NameとEmailとして `FastComments Robot` と `noreply@fastcomments.com` を使用します。
 
-We'll also use our own logo in the footer of these emails.
+また、これらのメールのフッターには当社のロゴを使用します。
 
-If you have FastComments Flex or Pro, this all can be customized on a per-domain basis via the "My Domains page":
+FastComments FlexまたはProをお持ちの場合、これらはすべて「My Domainsページ」からドメインごとにカスタマイズできます:
 
-[app-screenshot-start url='/auth/my-account/configure-domains'; selector = '.content form'; alt='送信者名、送信者メール、ロゴアップロードフィールドを含むドメインごとのメール設定フォーム'; title='送信者名、メール、ロゴのカスタマイズ' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/configure-domains'; selector = '.content form'; alt='From Name、From Email、ロゴアップロードフィールドを含むドメインごとのメール設定フォーム'; title='From Name、Email、ロゴのカスタマイズ' app-screenshot-end]
 
-When customizing the logo shown in emails, ensure that the size you are uploading is the same size that you want to show in the footer of the email.
+メールに表示されるロゴをカスタマイズする際は、アップロードするサイズがメールのフッターに表示したいサイズと同じであることを確認してください。
 
 ### `From Domain` をカスタマイズする場合
 
-If you customize the `From Domain`, Email providers and clients need to know that FastComments is authorized to send emails on your behalf. Otherwise,
-defining the `From Domain` and not following the below steps likely will result in emails going to spam.
+`From Domain` をカスタマイズする場合、メールプロバイダーやクライアントは、FastCommentsがあなたに代わってメールを送信する権限を持っていることを認識する必要があります。そうでない場合、`From Domain` を設定しても以下の手順に従わないと、メールがスパムに分類される可能性が高くなります。
 
-#### 1. SPF の設定
+#### 1. SPFの設定
 
-To allow FastComments to securely send email as your domain, ensure you add an SPF record that allows us to do so.
+FastCommentsがあなたのドメインとして安全にメールを送信できるようにするには、それを許可するSPFレコードを追加してください。
 
-Ensure there are SPF records to allow `mail.fastcomments.com` and `sib.fastcomments.com` to send mail as your domain.
+`mail.fastcomments.com` と `sib.fastcomments.com` があなたのドメインとしてメールを送信できるようにするSPFレコードが存在することを確認してください。
 
-Some more information on how to do this is here: https://mailtrap.io/blog/multiple-spf-records/
+これを行う方法の詳細については、こちらをご覧ください: https://mailtrap.io/blog/multiple-spf-records/
 
-#### 2. DKIM の設定
+#### 2. DKIMの設定
 
-In addition to SPF, you should set up DKIM. Once your DNS configuration is ready, you can click "Show Advanced" in the domain configurations page
-to show the DKIM settings per-domain.
+SPFに加えて、DKIMも設定することをお勧めします。DNS設定が完了したら、ドメイン設定ページで「Show Advanced」をクリックすると、ドメインごとのDKIM設定が表示されます。
 
-You can also [API を呼び出す](/guide-api.html#domain-config-structure) to set DKIM configuration.
+また、[APIを呼び出して](/guide-api.html#domain-config-structure)DKIM設定を行うこともできます。
 
-### 退会リンク
+### 配信停止リンク
 
-When using SSO, the unsubscribe features used in emails and notifications can be customized [DomainConfigs API を使用して](/guide-api.html#domain-config-structure).
+SSOを使用している場合、メールや通知で使用される配信停止機能は、[DomainConfigs API経由で](/guide-api.html#domain-config-structure)カスタマイズできます。
 
 ### メールリンクの難読化
 
-If your site's domain reputation is causing notification emails to land in spam, you can route the "view comment" buttons through `fastcomments.com` instead of linking directly to your page. Mailbox providers score every link in the email body against the destination's reputation, so when your domain is being flagged the bare links contribute to the spam score regardless of how clean your sending setup is.
+サイトのドメイン評価により通知メールがスパムに分類されている場合、「コメントを表示」ボタンのリンクを直接ページに張る代わりに、`fastcomments.com` を経由するようにルーティングできます。メールボックスプロバイダーは、メール本文内のすべてのリンクをリンク先の評価に対してスコアリングするため、送信設定がどれほどクリーンであっても、ドメインがフラグされている場合、そのままのリンクはスパムスコアに寄与してしまいます。
 
-Enable this under "Show Advanced" on the My Domains page, in the "Email Link Obfuscation" section. The setting is per-domain.
+これは、My Domainsページの「Show Advanced」にある「Email Link Obfuscation」セクションで有効にできます。この設定はドメインごとです。
 
-When enabled, links in mention, reply, new-comment, subscribed-page, profile-comment, and digest emails are rewritten to short tokens that redirect to the original page on click. The destination is bound to your tenant: the redirect only forwards to URLs whose host matches one of your configured domains, and tokens auto-expire after 30 days.
+有効にすると、メンション、返信、新規コメント、購読ページ、プロフィールコメント、ダイジェストの各メール内のリンクは、クリック時に元のページへリダイレクトする短いトークンに書き換えられます。リンク先はテナントに紐付けられます。リダイレクトは、設定済みのドメインのいずれかとホストが一致するURLにのみ転送され、トークンは30日後に自動的に失効します。
 
-The clicked-through experience is unchanged. Readers still land on your page with the comment scrolled into view.
-
----
+クリックスルー後の体験は変わりません。読者は引き続き、コメントが表示された状態であなたのページに到着します。

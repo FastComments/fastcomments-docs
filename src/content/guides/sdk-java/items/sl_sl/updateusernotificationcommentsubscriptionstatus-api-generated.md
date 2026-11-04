@@ -1,4 +1,3 @@
----
 Omogoči ali onemogoči obvestila za določen komentar.
 
 ## Parametri
@@ -52,5 +51,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

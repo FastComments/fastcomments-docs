@@ -1,9 +1,9 @@
-Edit a poll in place, keeping its tallies: change the question, relabel an option, close or reopen it,
-or change who may see the voters. Options are addressed by id - to add, remove or reorder them, PUT the full list.
+Anketin sayımlarını koruyarak yerinde düzenleyin: soruyu değiştirin, bir seçeneği yeniden etiketleyin, kapatın veya yeniden açın,
+ya da seçmenleri kimlerin görebileceğini değiştirin. Seçenekler id ile adreslenir - eklemek, kaldırmak veya yeniden sıralamak için tam listeyi PUT ile gönderin.
 
 ## Parametreler
 
-| Ad | Tip | Konum | Gerekli | Açıklama |
+| Ad | Tür | Konum | Zorunlu | Açıklama |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Evet |  |
 | commentId | string | path | Evet |  |
@@ -16,7 +16,7 @@ Döndürür: [`SavePollResponse`](https://github.com/FastComments/fastcomments-s
 
 [inline-code-attrs-start title = 'patchPoll Örneği'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Aşağıdaki kod örnekleri hâlâ beta aşamasındadır. Herhangi bir sorun için lütfen http://github.com/OpenAPITools/openapi-generator/issues/new adresine bildirin
+// Aşağıdaki kod örnekleri hâlâ beta aşamasındadır. Herhangi bir sorun için lütfen http://github.com/OpenAPITools/openapi-generator/issues/new üzerinden bildirin
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 

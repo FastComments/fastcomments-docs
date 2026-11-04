@@ -1,11 +1,11 @@
-Een `TenantDailyUsage` object represents the usage for a tenant on a given day. If there was no activity for a given tenant on a given
-day, that day will not have a `TenantDailyUsage` object.
+Een `TenantDailyUsage` object vertegenwoordigt het gebruik voor een tenant op een bepaalde dag. Als er geen activiteit was voor een bepaalde tenant op een bepaalde
+dag, zal die dag geen `TenantDailyUsage` object hebben.
 
-The `TenantDailyUsage` object is **not** real time and may be minutes behind actual usage.
+Het `TenantDailyUsage` object is **niet** real-time en kan enkele minuten achterlopen op het werkelijke gebruik.
 
-The structure for the `TenantDailyUsage` object is as follows:
+De structuur van het `TenantDailyUsage` object is als volgt:
 
-[inline-code-attrs-start title = 'Structuur van TenantDailyUsage'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'TenantDailyUsage Structuur'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 export interface TenantDailyUsage {
     yearNumber: number
@@ -27,5 +27,3 @@ export interface TenantDailyUsage {
     ignored: boolean
 }
 [inline-code-end]
-
----

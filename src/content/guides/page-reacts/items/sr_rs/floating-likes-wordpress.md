@@ -25,5 +25,3 @@
     })();
 </script>
 [inline-code-end]
-
----

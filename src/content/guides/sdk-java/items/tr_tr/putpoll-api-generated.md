@@ -1,20 +1,18 @@
-Attach a poll to a comment, or set the full state of the poll it already has.
+Bir ankete yorum ekleyin veya yorumun zaten sahip olduğu anketin tam durumunu ayarlayın.
 
-Options are matched by id: an option sent with the id of an existing option keeps its votes (and takes the
-new label and position), an option sent without an id is added, and existing options left out of the list
-are removed along with the votes cast on them.
+Seçenekler id ile eşleştirilir: mevcut bir seçeneğin id'si ile gönderilen seçenek oylarını korur (yeni etiketi ve konumu alır), id olmadan gönderilen seçenek eklenir ve listede yer almayan mevcut seçenekler üzerindeki oylarla birlikte kaldırılır.
 
-Keeping no existing option ids on a poll that has votes deletes all of them, so that needs replaceVotes=true.
+Oyu olan bir ankette mevcut hiçbir seçenek id'sinin tutulmaması tüm oyları siler, bu nedenle replaceVotes=true olması gerekir.
 
-## Parameters
+## Parametreler
 
-| Ad | Tür | Konum | Gerekli | Açıklama |
+| Name | Type | Location | Required | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Yes |  |
 | commentId | string | path | Yes |  |
 | replaceVotes | boolean | query | No |  |
 
-## Response
+## Yanıt
 
 Döndürür: [`SavePollResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/SavePollResponse.java)
 
@@ -22,7 +20,7 @@ Döndürür: [`SavePollResponse`](https://github.com/FastComments/fastcomments-j
 
 [inline-code-attrs-start title = 'putPoll Örneği'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sınıfları içe aktar:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -35,10 +33,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // API anahtarı yetkilendirmesini yapılandır: api_key
+    // Configure API key authorization: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // API anahtarı için bir önek ayarlamak üzere aşağıdaki satırın yorumunu kaldırın, ör. "Token" (varsayılan: null)
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);

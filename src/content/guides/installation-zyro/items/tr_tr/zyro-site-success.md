@@ -1,4 +1,3 @@
----
 Hepsi bu kadar! Artık Zyro sitenize canlı yorum eklenmiş olmalı.
 
 <div class="screenshot white-bg">
@@ -7,5 +6,3 @@ Hepsi bu kadar! Artık Zyro sitenize canlı yorum eklenmiş olmalı.
 </div>
 
 Eğer izin reddedildi hatasıyla karşılaştıysanız veya FastComments'ı özelleştirmek istiyorsanız, okumaya devam edin.
-
----

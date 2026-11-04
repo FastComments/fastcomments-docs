@@ -84,5 +84,3 @@ Se un worker muore a metà replay, la piattaforma rimette automaticamente il rep
 
 - [Affinare i prompt](#refining-prompts) - il flusso di lavoro di modifica iterativa che si abbina bene ai replay.
 - [Modalità Dry-Run](#dry-run-mode) - la stessa idea, applicata al traffico in tempo reale.
-
----

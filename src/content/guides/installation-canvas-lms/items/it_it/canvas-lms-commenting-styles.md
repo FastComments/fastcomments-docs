@@ -6,5 +6,3 @@ FastComments aggiunge commenti annidati ai tuoi corsi Canvas. Il widget standard
 </div>
 
 I commenti sono associati a ogni pagina del corso o link di risorsa, quindi le discussioni rimangono organizzate per pagina, compito o modulo.
-
----

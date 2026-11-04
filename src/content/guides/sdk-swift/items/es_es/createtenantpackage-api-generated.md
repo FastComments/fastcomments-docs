@@ -1,4 +1,3 @@
----
 ## Parameters
 
 | Nombre | Tipo | Ubicación | Obligatorio | Descripción |
@@ -30,5 +29,3 @@ DefaultAPI.createTenantPackage(tenantId: tenantId, createTenantPackageBody: crea
     }
 }
 [inline-code-end]
-
----

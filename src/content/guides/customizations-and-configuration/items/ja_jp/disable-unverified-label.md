@@ -7,5 +7,3 @@
 さらに、この機能はコードを書かずにカスタマイズ UI で使用できます。
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-unverified-comment-label']; selector = '.disable-unverified-comment-label'; alt='「Disable Unverified Comment Label」チェックボックスがオンになっているウィジェットカスタマイズページ'; title='未確認ラベルを無効にする' app-screenshot-end]
-
----

@@ -1,4 +1,3 @@
----
 1.  **查看演示。**
 
     进入你新站点的目录并启动它。
@@ -16,4 +15,3 @@
     ```
     return <FastCommentsCommentWidget tenantId="demo" />;
     ```
----

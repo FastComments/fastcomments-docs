@@ -25,5 +25,3 @@ Für WordPress kann dieses Feature aktiviert werden, indem Sie ein Plugin wie WP
     })();
 </script>
 [inline-code-end]
-
----

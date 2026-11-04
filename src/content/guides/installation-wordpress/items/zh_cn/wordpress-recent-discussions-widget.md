@@ -1,33 +1,33 @@
-The Recent Discussions widget displays the pages on your site with the most recent comment activity. It's useful for highlighting threads that are still being added to, so visitors can jump back into active conversations rather than landing on quiet pages.
+“最近讨论”小部件显示您网站上具有最新评论活动的页面。它适合突出仍在持续更新的讨论串，让访客可以重新加入活跃的对话，而不是停留在冷清的页面上。
 
-## Options
+## 选项
 
-- **标题**（可选）： 列表上方显示的标题。默认值为 "最近讨论"。
-- **数量**（可选）： 要显示多少个讨论。范围 1 到 50。默认值为 20。
+- **标题**（可选）：显示在列表上方的标题。默认为“最近讨论”。
+- **数量**（可选）：显示多少条讨论。范围为 1 到 50。默认为 20。
 
-## How to Add It
+## 如何添加
 
-### Inside a Post or Page
+### 在文章或页面内
 
-In the block editor, add a **Shortcode** block and paste:
+在区块编辑器中，添加一个**短代码**区块并粘贴：
 
-[inline-code-attrs-start title = '近期讨论 短代码'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = '最近讨论短代码'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 [fastcomments_recent_discussions count="20"]
 [inline-code-end]
 
-The `count` attribute accepts any value between 1 and 50.
+`count` 属性接受 1 到 50 之间的任意值。
 
-### In a Sidebar or Footer (Classic Themes)
+### 在侧边栏或页脚中（经典主题）
 
-Go to **外观 > 小工具** in your WordPress admin. From the block inserter, search for "FastComments" and choose **FastComments: Recent Discussions**. Drag it into a sidebar, header, or footer area, then configure the title and count from the widget panel.
+在 WordPress 管理后台中前往**外观 > 小部件**。在区块插入器中搜索“FastComments”，并选择 **FastComments: Recent Discussions**。将其拖入侧边栏、页眉或页脚区域，然后在小部件面板中配置标题和数量。
 
-### In a Block Theme (Full Site Editing)
+### 在区块主题中（全站编辑）
 
-Open the **站点编辑器** under **外观 > 编辑器**. Navigate to the template part where the widget should appear, insert a **传统小工具** block, and select **FastComments: Recent Discussions** from the dropdown.
+打开**外观 > 编辑器**下的**站点编辑器**。导航到小部件应出现的模板部分，插入一个**旧版小部件**区块，并从下拉菜单中选择 **FastComments: Recent Discussions**。
 
-## Troubleshooting
+## 故障排除
 
-The widget only renders after FastComments setup is complete and a tenant ID is stored. If the widget area is blank, complete setup under **FastComments** in the WordPress admin and reload the page.
+只有在 FastComments 设置完成并存储了租户 ID 后，小部件才会渲染。如果小部件区域为空白，请在 WordPress 管理后台的 **FastComments** 下完成设置，然后重新加载页面。
 
-If discussion ordering looks stale, check that the underlying pages have finished syncing in the FastComments 仪表板. The widget reads live data, so freshly imported comments may take a moment to surface.
+如果讨论排序看起来未更新，请检查底层页面是否已在 FastComments 控制面板中完成同步。小部件读取的是实时数据，因此新导入的评论可能需要一点时间才会显示。

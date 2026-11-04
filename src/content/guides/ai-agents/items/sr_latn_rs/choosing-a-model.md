@@ -27,5 +27,3 @@ Korišćenje tokena u odgovoru modela beleži se na svakom okidaču kao **tokens
 Model možete promeniti u formi za izmenu u bilo kom trenutku. Postojeća istorija pokretanja i analitika zadržavaju svoje originalne vrednosti tokena i troškova - one se beleže u vreme izvršenja. Novi model se primenjuje samo na pokretanja koja započnu nakon što sačuvate.
 
 Ne postoji opcija "koristi bilo koji model koji je jeftiniji". Izbor je eksplicitan po agentu.
-
----

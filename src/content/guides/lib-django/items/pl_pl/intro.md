@@ -1,4 +1,3 @@
----
 To jest oficjalny pakiet Django dla FastComments.
 
 Komponenty komentarzy na żywo i czatu z bezpiecznym SSO za pomocą tagów szablonu.
@@ -6,5 +5,3 @@ Komponenty komentarzy na żywo i czatu z bezpiecznym SSO za pomocą tagów szabl
 ## Repository
 
 [Zobacz na GitHubie](https://github.com/FastComments/fastcomments-django)
-
----

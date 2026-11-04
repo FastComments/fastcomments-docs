@@ -40,5 +40,3 @@ DefaultAPI.aggregateQuestionResults(tenantId: tenantId, options: DefaultAPI.Aggr
     }
 }
 [inline-code-end]
-
----

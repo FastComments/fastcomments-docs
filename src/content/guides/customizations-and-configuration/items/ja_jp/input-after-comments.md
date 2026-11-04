@@ -8,5 +8,3 @@
 コードを使用せずに、ウィジェットカスタマイズページでカスタマイズできます：
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.input-after-comments'; alt='コメントスレッドの前ではなく後にコメント入力エリアを配置するウィジェットカスタマイズページのオプション'; title='返信ボックスを下部に移動' app-screenshot-end]
-
----

@@ -1,4 +1,3 @@
----
 Премахнете анкета от нейния коментар, заедно с всички гласове, дадени за нея. Самият коментар остава непроменен.
 
 ## Параметри
@@ -33,5 +32,3 @@ DefaultAPI.deletePoll(tenantId: tenantId, commentId: commentId) { (response, err
     }
 }
 [inline-code-end]
-
----

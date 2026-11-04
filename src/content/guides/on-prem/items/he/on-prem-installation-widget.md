@@ -1,4 +1,3 @@
----
 קטעי קוד וספריות בצד הלקוח עבור On-Prem זהים לאלו של מוצר ה-SaaS. עם זאת, עליך לציין את `apiHost` ואת נתיב הסקריפט הנכון:
 
 [inline-code-attrs-start title = 'קוד תגובות עבור On-Prem'; type = 'html'; isFunctional = false; inline-code-attrs-end]
@@ -16,5 +15,3 @@
 [inline-code-end]
 
 זו דוגמה פשוטה מאוד. ניתן גם להשתמש בספריות רשמיות (React, Angular, Vue, Svelte וכו').
-
----

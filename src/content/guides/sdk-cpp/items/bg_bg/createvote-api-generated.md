@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Име | Тип | Задължително | Описание |
@@ -25,5 +24,3 @@ optionsPtr->ipAddress = boost::optional<utility::string_t>(utility::conversions:
 api->createVote(tenantId, commentId, direction, *optionsPtr)
     .then([](std::shared_ptr<VoteResponse> resp){});
 [inline-code-end]
-
----

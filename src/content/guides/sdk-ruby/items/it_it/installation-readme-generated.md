@@ -1,30 +1,30 @@
-Add this line to your application's Gemfile:
+Aggiungi questa riga al Gemfile della tua applicazione:
 
 ```ruby
 gem 'fastcomments'
 ```
 
-And then execute:
+Quindi esegui:
 
 ```bash
 bundle install
 ```
 
-Or install it yourself as:
+Oppure installala tu stesso con:
 
 ```bash
 gem install fastcomments
 ```
 
-### Contenuti della libreria
+### Contenuto della Libreria
 
-This library contains the generated API client and the SSO utilities to make working with the API easier.
+Questa libreria contiene il client API generato e le utilità SSO per facilitare l'uso dell'API.
 
-- [API Client Library Docs](https://github.com/FastComments/fastcomments-ruby/blob/master/client/README.md)
+- [Documentazione della Libreria Client API](https://github.com/FastComments/fastcomments-ruby/blob/master/client/README.md)
 
-### API pubbliche vs API sicure
+### API Pubbliche vs API Protette
 
-For the API client, there are three classes, `DefaultApi`, `PublicApi`, and `ModerationApi`. The `DefaultApi` contains methods that require your API key, and `PublicApi` contains api calls
-that can be made directly from a browser/mobile device/etc without authentication. The `ModerationApi` contains the methods that power the moderator dashboard.
+Per il client API, esistono tre classi: `DefaultApi`, `PublicApi` e `ModerationApi`. La `DefaultApi` contiene i metodi che richiedono la tua API key, mentre la `PublicApi` contiene le chiamate API
+che possono essere effettuate direttamente da un browser/dispositivo mobile/ecc senza autenticazione. La `ModerationApi` contiene i metodi che alimentano la dashboard del moderatore.
 
-The `ModerationApi` provides an extensive suite of live and fast moderation APIs. Every `ModerationApi` method accepts an `sso` parameter and can authenticate via SSO or a FastComments.com session cookie.
+La `ModerationApi` fornisce un'ampia suite di API di moderazione live e veloci. Ogni metodo della `ModerationApi` accetta un parametro `sso` e può autenticarsi tramite SSO o un cookie di sessione di FastComments.com.

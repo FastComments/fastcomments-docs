@@ -1,4 +1,3 @@
----
 이제 사이트를 게시하기만 하면 끝입니다.
 
 왼쪽 상단에서 `Content`를 클릭하여 콘텐츠 편집기로 돌아갑니다:
@@ -21,5 +20,3 @@
     <div class="title">완료!</div>
     <img class="screenshot-image" src="/images/installation-guides/ionos-step-3-done.png" alt="완료!" />
 </div>
-
----

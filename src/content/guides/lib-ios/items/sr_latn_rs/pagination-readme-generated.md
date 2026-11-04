@@ -1,4 +1,4 @@
-### Page Size
+### Veličina stranice
 
 ```swift
 // Komentari: podrazumevano 30
@@ -8,26 +8,25 @@ sdk.pageSize = 50
 feedSDK.pageSize = 20
 ```
 
-### Loading More Comments
+### Učitavanje više komentara
 
-UI automatski prikazuje kontrole paginacije. Takođe možete programatski pokrenuti paginaciju:
+UI automatski prikazuje kontrole za paginaciju. Takođe možete pokrenuti paginaciju programski:
 
 ```swift
 // Učitaj sledeću stranicu
 try await sdk.loadMore()
 
-// Učitaj sve preostale (onemogućeno ako ima >2000 komentara zbog performansi)
+// Učitaj sve preostalo (onemogućeno ako ima >2000 komentara, radi performansi)
 try await sdk.loadAll()
 
 // Proveri stanje
-sdk.hasMore            // Da li postoje još stranica
+sdk.hasMore            // Da li postoje dodatne stranice
 sdk.shouldShowLoadAll()
 sdk.getCountRemainingToShow()
 ```
 
-### Child Comment Pagination
+### Paginacija podređenih komentara
 
-Ugnježdeni odgovori se učitavaju na zahtev. Kada korisnik proširi nit, učitava se prvih 5 podkomentara. Pojavi se kontrola "učitaj još odgovora" ako ima više. Ovo se automatski obavlja u UI-ju.
+Ugnježdeni odgovori se učitavaju lenjo. Kada korisnik proširi nit, učitava se prvih 5 podređenih komentara. Ako ih ima više, pojavljuje se kontrola "učitaj još odgovora". Ovo UI automatski rešava.
 
----
 ---

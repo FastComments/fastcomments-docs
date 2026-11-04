@@ -17,5 +17,3 @@ let (searchResult, httpResp) = client.getSearchSites(tenantId = "my-tenant-123",
 if searchResult.isSome:
   let siteResp = searchResult.get()
 [inline-code-end]
-
----

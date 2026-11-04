@@ -1,4 +1,3 @@
----
 As enquetes estão desativadas por padrão. Para ativá‑las, vá para as configurações de personalização do widget e marque **Enable Polls**.
 
 Isso adiciona um botão de enquete à barra de ferramentas do editor de comentários. As enquetes são exibidas dentro do comentário e os visualizadores votam no local.

@@ -27,5 +27,3 @@ async function demoPinComment() {
 
 demoPinComment();
 [inline-code-end]
-
----

@@ -1,13 +1,13 @@
-接下来我们需要确定在何处添加 FastComments.com 小部件代码。
+接下来我们需要确定在哪里添加 FastComments.com 小部件代码。
 
-如果您使用默认的 `casper` 主题，您将在第 `82` 行看到如下部分：
+如果您使用的是默认的 `casper` 主题，您会在第 `82` 行看到类似这样的部分：
 
 <div class="screenshot white-bg">
-    <div class="title">已禁用的评论部分</div>
-    <img class="screenshot-image" src="/images/installation-guides/ghost-step-5-1-identify-section.png" alt="已禁用的评论部分" />
+    <div class="title">已禁用的评论区</div>
+    <img class="screenshot-image" src="/images/installation-guides/ghost-step-5-1-identify-section.png" alt="已禁用的评论区" />
 </div>
 
-如果您使用其他主题，您将看不到此内容，需要在最后一个 `</section>` 之后添加此代码：
+如果您使用的是其他主题，则不会看到这个，需要在最后一个 `</section>` 之后添加以下代码：
 
 [inline-code-attrs-start title = 'Section 示例'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -15,14 +15,14 @@
 </section>
 [inline-code-end]
 
-您应该会看到类似如下的准备状态：
+您应该准备好类似这样的内容：
 
 <div class="screenshot white-bg">
-    <div class="title">模板已准备好用于评论代码</div>
-    <img class="screenshot-image" src="/images/installation-guides/ghost-step-5-2-cleanup.png" alt="模板已准备好用于评论代码" />
+    <div class="title">准备好添加评论代码的模板</div>
+    <img class="screenshot-image" src="/images/installation-guides/ghost-step-5-2-cleanup.png" alt="准备好添加评论代码的模板" />
 </div>
 
-准备好后，复制 FastComments.com 小部件代码：
+准备就绪后，复制 FastComments.com 小部件代码：
 
 [inline-code-attrs-start title = 'Ghost FastComments.com 评论代码片段'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -57,13 +57,11 @@
 </script>
 [inline-code-end]
 
-...and it should look like this:
+……它应该看起来像这样：
 
 <div class="screenshot white-bg">
     <div class="title">添加 FastComments.com 评论代码</div>
     <img class="screenshot-image" src="/images/installation-guides/ghost-step-5-3-paste-code.png" alt="添加 FastComments.com 评论代码" />
 </div>
 
-编码完成。现在我们只需重新导入主题！
-
----
+代码部分完成了。现在我们只需重新导入主题即可！

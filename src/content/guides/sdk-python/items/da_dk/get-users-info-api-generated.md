@@ -1,4 +1,3 @@
----
 Bulk-brugerinformation for en tenant. Givet userIds, returner visningsinformation fra User / SSOUser.
 Brugt af kommentarboksen til at berige brugere, der netop dukkede op via en presence-begivenhed.
 Ingen sidekontekst: privatliv håndhæves ensartet (private profiler maskeres).
@@ -44,5 +43,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->get_users_info: %s\n" % e)
 [inline-code-end]
-
----

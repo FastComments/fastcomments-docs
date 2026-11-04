@@ -14,5 +14,3 @@
 זה גם ניתן לבצע ללא קוד. בעמוד התאמת הווידג'ט, ראו את המקטע "Disable Live Commenting".
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-live-commenting']; selector = '.disable-live-commenting'; alt='מקטע השבתת תגובות בזמן אמת בעמוד התאמת הווידג\'ט, מכבה עדכונים בזמן אמת של השרשרת'; title='השבתת תגובות בזמן אמת' app-screenshot-end]
-
----

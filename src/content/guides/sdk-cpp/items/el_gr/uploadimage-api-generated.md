@@ -1,4 +1,3 @@
----
 Ανέβασμα και αλλαγή μεγέθους εικόνας
 
 ## Παράμετροι
@@ -27,5 +26,3 @@ api->uploadImage(U("my-tenant-123"), file, options).then([](pplx::task<std::shar
     auto resp = t.get();
 });
 [inline-code-end]
-
----

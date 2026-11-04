@@ -6,5 +6,3 @@ FastComments에는 강좌 및 활동에 실시간 댓글 기능을 추가하는 
 </div>
 
 이 플러그인은 스레드형 댓글, 실시간 협업 채팅, 그리고 다양한 SSO 모드를 지원합니다. <a href="https://github.com/FastComments/fastcomments-moodle/" target="_blank">GitHub 리포지토리</a>에서 확인하세요.
-
----

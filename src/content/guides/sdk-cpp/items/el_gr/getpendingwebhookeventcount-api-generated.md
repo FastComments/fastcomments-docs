@@ -21,5 +21,3 @@ api->getPendingWebhookEventCount(tenantId, opts)
         auto count = resp->getCount();
     });
 [inline-code-end]
-
----

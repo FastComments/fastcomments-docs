@@ -6,5 +6,3 @@ There are two types of comment count widgets available:
 2. **Bulk Comment Count Widget** - Pour afficher efficacement les totaux de commentaires pour plusieurs pages sur une même page
 
 This article covers the VanillaJS widgets. Nos bibliothèques React/Angular/etc. disposent également de leurs propres widgets.
-
----

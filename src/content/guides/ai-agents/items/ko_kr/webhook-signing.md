@@ -1,4 +1,3 @@
----
 모든 에이전트 웹훅은 테넌트의 API 비밀을 사용하여 HMAC-SHA256으로 서명됩니다. 동일한 서명 방식은 FastComments의 댓글 웹훅에도 사용됩니다 - 이미 댓글 웹훅을 통합했다면 에이전트 웹훅은 동일한 서명 헤더와 검증 흐름을 재사용합니다.
 
 ### 서명하는 이유
@@ -65,4 +64,3 @@ function verifyAgentWebhook(rawBody, signatureHeader, timestampHeader, secret) {
 - [웹훅 개요](#webhooks-overview).
 - [웹훅 페이로드](#webhook-payloads).
 - 광범위한 서명 인프라에 대한 주요 [웹훅 가이드](/guide-webhooks.html).
----

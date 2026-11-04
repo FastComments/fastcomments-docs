@@ -1,4 +1,3 @@
----
 Los comentarios en sí no están vinculados a un dominio en particular.
 
 Están vinculados a su cuenta, y al <a href="/guide-customizations-and-configuration.html#url-id" target="_blank">urlId</a> proporcionado.
@@ -10,4 +9,3 @@ En este escenario, los comentarios publicados en la página A aparecerían inmed
 también funcionan como se espera.
 
 [Puede encontrar un ejemplo en esta entrada de blog](https://blog.fastcomments.com/(2-12-2020)-using-fastcomments-in-multiple-places-on-the-same-page.html).
----

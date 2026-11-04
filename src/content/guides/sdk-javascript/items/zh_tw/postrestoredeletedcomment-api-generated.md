@@ -1,4 +1,3 @@
----
 ## 參數
 
 | Name | Type | Required | Description |
@@ -31,5 +30,3 @@ const resultAll: APIEmptyResponse = await postRestoreDeletedComment(
   sso
 );
 [inline-code-end]
-
----

@@ -19,5 +19,3 @@ Pokreće se kada je komentar izbrisan.
 ### Napomena o trošku rada
 
 Ako imate stranicu s velikim brojem brisanja (intenzivna ljudska moderacija), ovaj okidač može se često pokretati.
-
----

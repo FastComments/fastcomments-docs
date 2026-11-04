@@ -48,5 +48,3 @@ interface CommentFlagResponse {
     wasUnapproved?: boolean;
 }
 [inline-code-end]
-
----

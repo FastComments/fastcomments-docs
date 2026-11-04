@@ -1,12 +1,12 @@
 ### Преглед
 
-FastComments Collab Chat проширује стандардни FastComments коментарски видгет, тако да наслеђује све опције конфигурације из основног видгета док додаје неколико специфичних за текстуалне анотације.
+FastComments Collab Chat проширује стандардни FastComments виџет за коментаре, тако да наслеђује све опције конфигурације основног виџета, уз додатак неколико опција специфичних за текстуалне анотације.
 
 ### Обавезна конфигурација
 
 #### tenantId
 
-Ваш FastComments Tenant ID је обавезан. Можете га пронаћи у вашој [FastComments контролна табла](https://fastcomments.com/auth/my-account/api-secret).
+Потребан је ваш FastComments Tenant ID. Можете га пронаћи у свом [FastComments контролном панелу](https://fastcomments.com/auth/my-account/api-secret).
 
 [inline-code-attrs-start title = "Пример конфигурације"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -19,7 +19,7 @@ FastCommentsCollabChat(element, {
 
 #### urlId
 
-По подразумеваној вредности, Collab Chat генерише јединствени идентификатор за сваки разговор на основу URL странице, DOM пута до елемента и изабраног опсега текста. Можете то преопределити коришћењем прилагођеног `urlId`.
+Подразумевано, Collab Chat генерише јединствени идентификатор за сваки разговор на основу URL адресе странице, DOM путање до елемента и изабраног опсега текста. Можете то заменити прилагођеним `urlId`.
 
 [inline-code-attrs-start title = "Пример конфигурације"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -29,21 +29,21 @@ FastCommentsCollabChat(element, {
 });
 [inline-code-end]
 
-Ово је корисно када ваша структура URL-ова може да се промени али желите да задржите исте разговоре, или када желите да делите анотације преко више страница.
+Ово је корисно када се структура ваше URL адресе може променити, али желите да задржите исте разговоре, или када желите да делите анотације на више страница.
 
 #### topBarTarget
 
-Контролише приказ горње траке која показује број корисника и број дискусија. Поставите на `null` да у потпуности онемогућите горњу траку, или обезбедите DOM елемент да бисте је приказали на одређеној локацији.
+Контролише приказ горње траке која приказује број корисника и број дискусија. Поставите на `null` да бисте потпуно онемогућили горњу траку, или наведите DOM елемент да бисте је приказали на одређеној локацији.
 
 [inline-code-attrs-start title = "Пример конфигурације"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Онемогући горњу траку
+// Disable top bar
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
     topBarTarget: null
 });
 
-// Прикажи горњу траку на прилагођеној локацији
+// Render top bar in custom location
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
     topBarTarget: document.getElementById('custom-header')
@@ -52,7 +52,7 @@ FastCommentsCollabChat(element, {
 
 #### hasDarkBackground
 
-Омогућите стиловање у тамном режиму када ваша страница има тамну позадину. Ова детекција је аутоматска, али може бити пожељно да је преопределите.
+Омогућите стилизовање тамног режима када ваша страница има тамну позадину. Ова детекција је аутоматска, али може бити пожељно да је замените.
 
 [inline-code-attrs-start title = "Пример конфигурације"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -64,7 +64,7 @@ FastCommentsCollabChat(element, {
 
 #### commentCountUpdated
 
-Функција повратног позива која се позива кад год се број коментара промени. Ово је корисно за ажурирање UI елемената као што су значке или наслови страница.
+Функција повратног позива која се активира сваки пут када се број коментара промени. Ово је корисно за ажурирање UI елемената као што су беџеви или наслови страница.
 
 [inline-code-attrs-start title = "Пример конфигурације"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -79,23 +79,23 @@ FastCommentsCollabChat(element, {
 
 ### Наслеђене опције конфигурације
 
-Пошто Collab Chat проширује стандардни коментарски видгет, можете користити било коју опцију конфигурације из основног FastComments видгета. Ево неких често коришћених опција:
+Пошто Collab Chat проширује стандардни виџет за коментаре, можете користити било коју опцију конфигурације основног FastComments виџета. Ево неких често коришћених опција:
 
 #### locale
 
-Поставите језик за UI видгета. FastComments подржава десетине језика.
+Поставите језик за UI виџета. FastComments подржава десетине језика.
 
 [inline-code-attrs-start title = "Пример конфигурације"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
-    locale: 'es'  // Шпански
+    locale: 'es'  // Spanish
 });
 [inline-code-end]
 
 #### readonly
 
-Учини све разговоре само за читање. Корисници могу да прегледају постојеће анотације али не могу да креирају нове или да одговарају.
+Учините све разговоре само за читање. Корисници могу да виде постојеће анотације, али не могу да креирају нове нити да одговарају.
 
 [inline-code-attrs-start title = "Пример конфигурације"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -105,43 +105,43 @@ FastCommentsCollabChat(element, {
 });
 [inline-code-end]
 
-#### sso and simpleSSO
+#### sso и simpleSSO
 
-Интегришите се са вашим системом аутентификације користећи Single Sign-On.
+Интегришите се са својим системом аутентификације коришћењем Single Sign-On-а.
 
 [inline-code-attrs-start title = "Пример конфигурације"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
     sso: {
-        // SSO конфигурација
+        // SSO configuration
     }
 });
 [inline-code-end]
 
-Погледајте SSO документацију за пуне детаље о опцијама аутентификације.
+Погледајте SSO документацију за све детаље о опцијама аутентификације.
 
 #### maxReplyDepth
 
-Контролишите колико нивоа дубоко одговора је дозвољено. По подразумеваној вредности, Collab Chat поставља ово на 0, што значи да су сви коментари равни (без уметнутих одговора). Можете то изменити ако желите нитоване разговоре.
+Контролишите на колико нивоа дубоко могу ићи одговори. Подразумевано, Collab Chat поставља ово на 0, што значи да су сви коментари равни (без угнежђених одговора). Можете ово променити ако желите разговоре са гранањем.
 
 [inline-code-attrs-start title = "Пример конфигурације"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
-    maxReplyDepth: 3  // Дозволи 3 нивоа угнежђивања
+    maxReplyDepth: 3  // Allow 3 levels of nesting
 });
 [inline-code-end]
 
-### Интерна конфигурација
+### Унутрашња конфигурација
 
-Ове опције аутоматски поставља Collab Chat и не би требало да их преопределите:
+Ове опције аутоматски поставља Collab Chat и не би требало да буду замењене:
 
-The `productId` is automatically set to `3` for Collab Chat. The `floating-chat` extension is automatically loaded to provide the chat window functionality. The widget automatically detects mobile devices (screens under 768px wide) and adjusts the UI accordingly.
+`productId` је аутоматски постављен на `3` за Collab Chat. `floating-chat` проширење се аутоматски учитава да би обезбедило функционалност прозора за ћаскање. Виџет аутоматски детектује мобилне уређаје (екране ширине мање од 768px) и сходно томе прилагођава UI.
 
 ### Комплетан пример
 
-Ево примера који приказује више конфигурационих опција заједно:
+Ево примера који приказује више опција конфигурације заједно:
 
 [inline-code-attrs-start title = "Пример конфигурације"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -155,10 +155,10 @@ FastCommentsCollabChat(document.getElementById('article'), {
         document.title = count > 0 ? `(${count}) My Article` : 'My Article';
     },
     sso: {
-        // Ваша SSO конфигурација
+        // Your SSO config
     },
     maxReplyDepth: 1
 });
 [inline-code-end]
 
-For a complete list of all available configuration options inherited from the base widget, see the main FastComments configuration documentation.
+За комплетну листу свих доступних опција конфигурације наслеђених из основног виџета, погледајте главну документацију за конфигурацију FastComments-а.

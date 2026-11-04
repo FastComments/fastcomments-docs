@@ -1,4 +1,3 @@
----
 הוסף ממשק צ'אט בזמן אמת לאפליקציה שלך:
 
 ```kotlin
@@ -44,4 +43,3 @@ override fun onDestroy() {
     sdk.cleanup()
 }
 ```
----

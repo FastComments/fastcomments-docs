@@ -5,5 +5,3 @@ Intégrez des widgets de commentaires en direct, de chat et de revue dans votre 
 ## Dépôt
 
 [Voir sur GitHub](https://github.com/FastComments/fastcomments-vue-next)
-
----

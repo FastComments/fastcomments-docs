@@ -33,5 +33,3 @@ DefaultAPI.replaceTenantUser(tenantId: tenantId, id: id, replaceTenantUserBody: 
     }
 }
 [inline-code-end]
-
----

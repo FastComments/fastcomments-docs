@@ -1,4 +1,3 @@
----
 **AI Agent** は、FastComments テナントに限定された自律的なワーカーで、コミュニティ内のイベントを監視し、あなたに代わってアクションを実行します。
 
 各エージェントには、次の 3 つの制御項目があります。
@@ -36,5 +35,3 @@
 エージェントと人間のモデレーターは同じコメントプラットフォームを共有します。エージェントは同じチャネル（承認、スパム、禁止、バッジ、ピン留め、ロック、書き込み）でアクションを実行し、これらのアクションは同じ [Comment Logs](/guide-moderation.html#comment-logs)、同じ [Moderation Page](/guide-moderation.html#moderate-comments-page)、同じ通知ストリームに表示されます。エージェントと人間は互いの作業を確認でき、相互にリアクションできます。モデレーターのアクション自体が有効なエージェントトリガーとなります（[Trigger: Moderator Reviewed Comment](#trigger-moderator-reviewed) などを参照）。
 
 キューに **人手** が必要な場合は、FastComments が提供する [Human Moderation Services](/guide-moderation.html#human-moderation-services) をご利用ください。モデレーターはエージェントと同じダッシュボードで、あなたのガイドラインに従って作業します。
-
----

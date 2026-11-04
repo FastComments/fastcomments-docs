@@ -31,5 +31,3 @@
 [inline-code-end]
 
 对于 React、Angular 等前端库，配置是相同的。
-
----

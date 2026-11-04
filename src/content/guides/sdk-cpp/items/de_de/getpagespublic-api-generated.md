@@ -1,19 +1,19 @@
-List pages for a tenant. Used by the FChat desktop client to populate its room list.  
-Requires `enableFChat` to be true on the resolved custom config for each page.  
-Pages that require SSO are filtered against the requesting user's group access.
+Listet die Seiten für einen Tenant auf. Wird vom FChat-Desktop-Client verwendet, um seine Raumliste zu füllen.
+Erfordert, dass `enableFChat` in der aufgelösten benutzerdefinierten Konfiguration für jede Seite auf true gesetzt ist.
+Seiten, die SSO erfordern, werden gegen den Gruppenzugriff des anfragenden Benutzers gefiltert.
 
-## Parameters
+## Parameter
 
-| Name | Type | Required | Description |
+| Name | Typ | Erforderlich | Beschreibung |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| options | const GetPagesPublicOptions& | Yes |  |
+| tenantId | string | Ja |  |
+| options | const GetPagesPublicOptions& | Ja |  |
 
-## Response
+## Antwort
 
-Returns: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetPublicPagesResponse.h)
+Gibt zurück: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetPublicPagesResponse.h)
 
-## Example
+## Beispiel
 
 [inline-code-attrs-start title = 'getPagesPublic Beispiel'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -24,9 +24,9 @@ options.cursor = boost::optional<utility::string_t>(U("cursor-token"));
 api->getPagesPublic(tenantId, options).then([](pplx::task<std::shared_ptr<GetPublicPagesResponse>> task){
     try{
         auto response = task.get();
-        // Antwort verarbeiten bei Bedarf
+        // Antwort bei Bedarf verarbeiten
     }catch(const std::exception&){
-        // Fehler behandeln bei Bedarf
+        // Fehler bei Bedarf behandeln
     }
 });
 [inline-code-end]

@@ -25,5 +25,3 @@ api->getUserBadgeProgressByUserId(
         }
     });
 [inline-code-end]
-
----

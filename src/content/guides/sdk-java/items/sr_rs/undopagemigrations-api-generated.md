@@ -1,21 +1,21 @@
-Queues a batch job that reverses every migration from one migrate-pages job, newest first. Available for 90 days.  
-Records changed since the migration are left alone, so a later edit is never overwritten.  
-Poll GET /api/v1/batch-jobs/{batchJobId} for the restored/skipped counts.
+Стави у ред пакетни посао који поништава сваку миграцију из једног migrate-pages посла, од најновије. Доступно 90 дана.
+Записи промењени од миграције се не дирају, тако да каснија измена никада неће бити преписана.
+Питајте GET /api/v1/batch-jobs/{batchJobId} за бројеве враћених/прескочених ставки.
 
 ## Параметри
 
-| Име | Тип | Локација | Обавезно | Опис |
-|------|------|----------|----------|------|
+| Назив | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | undoId | string | path | Да |  |
 
 ## Одговор
 
-Returns: [`QueuePageMigrationJobAPIResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/QueuePageMigrationJobAPIResponse.java)
+Враћа: [`QueuePageMigrationJobAPIResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/QueuePageMigrationJobAPIResponse.java)
 
 ## Пример
 
-[inline-code-attrs-start title = 'undoPageMigrations Пример'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'undoPageMigrations пример'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Import classes:
 import com.fastcomments.invoker.ApiClient;

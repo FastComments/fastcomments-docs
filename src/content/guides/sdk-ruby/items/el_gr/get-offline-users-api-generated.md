@@ -1,4 +1,3 @@
----
 Προηγούμενοι σχολιαστές στη σελίδα που ΔΕΝ είναι αυτήν τη στιγμή online. Ταξινομημένα κατά displayName.
 Χρησιμοποιήστε αυτό αφού εξαντλήσετε το /users/online για να αποδώσετε μια ενότητα "Μέλη".
 Σελιδοποίηση cursor στο commenterName: ο διακομιστής διασχίζει τον μερικό δείκτη {tenantId, urlId, commenterName}
@@ -40,5 +39,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_offline_users: #{e}"
 end
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 Una vez que las encuestas están habilitadas, la configuración **Who Can Create Polls** controla quién ve el botón de encuesta en la barra de herramientas de comentarios:
 
 - **Admins/Moderators Only** (el predeterminado): solo los administradores y moderadores de su sitio pueden adjuntar una encuesta a un comentario.

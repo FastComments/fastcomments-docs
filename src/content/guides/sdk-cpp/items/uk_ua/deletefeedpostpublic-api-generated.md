@@ -23,5 +23,3 @@ api->deleteFeedPostPublic(U("my-tenant-123"), U("post-789"), *opts)
         }
     });
 [inline-code-end]
-
----

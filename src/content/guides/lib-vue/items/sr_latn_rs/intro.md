@@ -5,5 +5,3 @@ Ugradite vidžete za komentare u realnom vremenu, chat i recenzije u vašu Vue 2
 ## Repozitorijum
 
 [Pogledajte na GitHub-u](https://github.com/FastComments/fastcomments-vue)
-
----

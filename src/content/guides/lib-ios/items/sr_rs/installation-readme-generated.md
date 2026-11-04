@@ -1,4 +1,3 @@
----
 Додајте FastCommentsUI у ваш пројекат користећи Swift Package Manager.
 
 У Xcode-у: **File > Add Package Dependencies**, затим унесите URL репозиторијума.
@@ -28,4 +27,3 @@ dependencies: [
 import FastCommentsUI
 import FastCommentsSwift
 ```
----

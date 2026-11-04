@@ -1,54 +1,54 @@
-When the agent queues an approval, the platform notifies reviewers via email. Two settings on the edit form control this: **who** is notified and **how often**.
+Ajan bir onay kuyruğa aldığında, platform gözden geçirenleri e-posta ile bilgilendirir. Düzenleme formundaki iki ayar bunu kontrol eder: **kimin** bilgilendirileceği ve **ne sıklıkta**.
 
 ### Kim: bildirim modu
 
 İki mod:
 
-- **Tüm yöneticiler ve moderatörler** (varsayılan) - tenant üzerindeki her hesap sahibi, süper yönetici ve yorum moderatörü yöneticisi aday inceleyicidir.
-- **Belirli kullanıcılar** - düzenleme formundaki çift listeli seçiciden bir listeyi elle seçin.
+- **Tüm yöneticiler ve moderatörler** (varsayılan) - tenant üzerindeki her hesap sahibi, süper yönetici ve yorum moderatörü yöneticisi aday gözden geçiren olur.
+- **Belirli kullanıcılar** - düzenleme formundaki çift liste seçicisinden elle bir liste seçin.
 
-Her iki durumda da, aday bir inceleyicinin bildirim alabilmesi için tenant üzerinde bir hesabı ve geçerli bir e-posta adresi olmalıdır.
+Her iki durumda da, aday bir gözden geçirenin tenant üzerinde bir hesabı ve bildirim almak için geçerli bir e-posta adresi olmalıdır.
 
-### Ne sıklıkla: kullanıcı başına bildirim sıklığı
+### Ne sıklıkta: kullanıcı başına sıklık
 
-Her aday inceleyicinin **kendi profili**, agent onayları için kişisel bildirim sıklığını belirler:
+Her aday gözden geçirenin **kendi profili**, ajan onayları için kişisel bildirim sıklığını belirler:
 
-- **Anında** (varsayılan) - bekleyen her onay için bir e-posta; onay oluşturulur oluşturulmaz gönderilir.
-- **Saatlik** - o saatte sıraya alınan tüm onayları özetleyen saatlik bir özet e-postası.
-- **Günlük** - her 24 saatte bir özet e-postası.
-- **Devre Dışı** - e-posta gönderilmez. Kullanıcı yine de onayları gelen kutusu arayüzünden inceleyebilir; sadece bildirim gönderilmez.
+- **Anında** (varsayılan) - bekleyen her onay için bir e-posta, onay oluşturulur oluşturulmaz gönderilir.
+- **Saatlik** - o saat içinde kuyruğa alınan tüm onayları özetleyen saatte bir özet e-posta.
+- **Günlük** - 24 saatte bir özet e-posta.
+- **Devre dışı** - e-posta yok. Kullanıcı yine de gelen kutusu arayüzü üzerinden onayları inceleyebilir; sadece bilgilendirilmez.
 
-Kullanıcı bu ayarı kendi profili üzerinde değiştirir, agent düzenleme formu üzerinde değil. Bu kasıtlıdır — bir tenant'ın on agent'ı olabilir ve bir moderatörün tercih ettiği sıklığı her agent için ayrı ayrı ayarlaması gerekmez.
+Kullanıcı bu ayarı ajan düzenleme formunda değil, kendi profilinde değiştirir. Bu kasıtlıdır - bir tenant'ta on ajan olabilir ve bir moderatör, tercih ettiği sıklığı her ajan için ayrı ayrı ayarlamak zorunda olmamalıdır.
 
-### Özetleri yöneten cron işleri
+### Özet e-postaları yöneten cron işleri
 
-- **`hourly-agent-approval-digest`** - her saat çalışır, her kullanıcının son özetinden bu yana sıraya alınan onayları gruplayıp her kullanıcıya bir e-posta gönderir.
-- **`daily-agent-approval-digest`** - aynı şekilde, günlük.
-- **`agent-approval-reaper`** - durumuna bakılmaksızın 90 günden eski onayları temizler.
+- **`hourly-agent-approval-digest`** - her saat çalışır, her kullanıcının son özetinden bu yana kuyruğa alınan onayları gruplandırır, kullanıcı başına bir e-posta gönderir.
+- **`daily-agent-approval-digest`** - aynısı, günlük.
+- **`agent-approval-reaper`** - durumundan bağımsız olarak 90 günden eski onayları temizler.
 
-Saatlik ve günlük özet cron'ları alıcı başına sınırlandırılmıştır: saatlik sıklığa sahip bir kullanıcı saatlik cron tarafından işlenir ve günlük cron tarafından atlanır (ve tersi). Anında sıklığındaki kullanıcılar cronlar tarafından değil, approval-create kod yolu tarafından bilgilendirilir.
+Saatlik ve günlük özet cron'ları alıcı başına kapsamlıdır: saatlik sıklığa sahip bir kullanıcı saatlik cron tarafından işlenir ve günlük olan tarafından atlanır (ve tersi). Anında sıklığa sahip kullanıcılar, cron'lar tarafından değil, onay oluşturma kod yolu tarafından bilgilendirilir.
 
 ### Tekilleştirme durumu
 
-Platform, her onay hakkında hangi kullanıcılara zaten e-posta gönderildiğini takip eder. Bir kullanıcı bilgilendirildiğinde (anında veya özet içinde), aynı onay için tekrar e-posta gönderilmeyecektir — hatta döngü ortasında sıklığını anından günlük'e değiştirse bile.
+Platform, her onay için hangi kullanıcılara zaten e-posta gönderildiğini takip eder. Bir kullanıcı bilgilendirildikten sonra (anında veya bir özet içinde), aynı onay için tekrar e-posta almaz - döngü ortasında sıklığını anında'dan günlük'e değiştirse bile.
 
-### E-posta üzerinden onaylama
+### E-postadan onaylama
 
-Her bildirim e-postası, inceleyiciyi zaten kimlik doğrulanmış halde onay detay sayfasına götüren tek tıklamalık imzalı bir giriş bağlantısı içerir. Oradan onaylayabilir, reddedebilir veya [İstemleri İyileştir](#refining-prompts) akışını açabilirler.
+Her bildirim e-postası, gözden geçireni doğrudan onay detay sayfasına, zaten kimliği doğrulanmış şekilde götüren tek tıklamalı imzalı bir giriş bağlantısı içerir. Oradan onaylayabilir, reddedebilir veya [İstemleri İyileştir](#refining-prompts) akışını açabilir.
 
 ### Yönetici yoksa ne olur
 
-Eğer `notifyMode` `All admins and moderators` ise fakat tenant'ta geçerli e-posta adresine sahip süper yöneticiler, yorum moderatörü yöneticileri veya hesap sahipleri yoksa, platform bir uyarı kaydeder ve onay yine de sıraya alınır — sadece kimse bunun hakkında bilgilendirilmez. Onay, birisi bakana kadar gelen kutusunda bekler.
+`notifyMode` `All admins and moderators` ise ancak tenant'ta geçerli e-posta adresine sahip süper yönetici, yorum moderatörü yöneticisi veya hesap sahibi yoksa, platform bir uyarı kaydeder ve onay yine de kuyruğa alınır - sadece kimse bilgilendirilmez. Gelen kutusunda biri rastgele bakana kadar bekler.
 
-Eğer `notifyMode` `Specific users` ise ama hiç kullanıcı seçmediyseniz, sonuç aynıdır.
+`notifyMode` `Specific users` ise ancak hiçbir kullanıcı seçmediyseniz, sonuç aynıdır.
 
-### Faturalama bildirimleri devre dışıysa ne olur
+### Faturalandırma bildirimleri devre dışıysa ne olur
 
-[Bütçe Uyarıları](#budget-alerts) - bütçeyle ilgili e-postalar - faturalama yöneticilerine **kullanıcıya özel bildirim tercihinden bağımsız olarak** gider. Bu kasıtlıdır: bütçe aşımı maliyeti etkiler ve faturalama sahibinin haberdar olması gerekir.
+[Bütçe Uyarıları](#budget-alerts) - bütçe ile ilgili e-postalar - **kullanıcı başına bildirim tercihine bakılmaksızın** faturalandırma yöneticilerine gider. Bu kasıtlıdır: bütçe aşımı maliyeti etkiler ve faturalandırma sahibinin bunu bilmesi gerekir.
 
-Onay bildirimleri yalnızca kullanıcıya özel agent-onay sıklığı ayarına uyar. Bunlar geniş kapsamlı yönetici-bildirimlerinden vazgeçme ayarını kontrol etmez — yönetici bildirimlerinden vazgeçmiş bir kullanıcı, eğer inceleyici listesinde yer alıyorsa ve agent-onay sıklığı **Devre Dışı** değilse hâlâ onay e-postaları alır.
+Onay bildirimleri yalnızca kullanıcı başına ajan onayı sıklığı ayarına uyar. Daha geniş yönetici-bildirimleri devre dışı bırakma seçeneğini kontrol etmezler - yönetici bildirimlerinden çıkmış bir kullanıcı, gözden geçiren listesindeyse yine de onay e-postaları alır, ajan onayı sıklığı **Devre dışı** olarak ayarlanmadığı sürece.
 
 ### Ayrıca bakınız
 
-- [Onay İş Akışı](#approval-workflow) bir onayın tam yaşam döngüsü için.
-- [İstemleri İyileştir](#refining-prompts) "Aynı tür hatayı sürekli onaylıyorum" iş akışı için.
+- Bir onayın tam yaşam döngüsü için [Onay İş Akışı](#approval-workflow).
+- "Aynı türdeki hatayı sürekli onaylıyorum" iş akışı için [İstemleri İyileştirme](#refining-prompts).

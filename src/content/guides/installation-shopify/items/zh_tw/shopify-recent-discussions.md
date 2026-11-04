@@ -1,25 +1,25 @@
-The **FastComments - Recent Discussions** block 列出商店中最近有評論活動的頁面，每頁一個條目。當你想要讓訪客發現活躍的討論串而不是單一評論時，請使用它。
+**FastComments - Recent Discussions** 區塊會列出您的商店中最近有留言活動的頁面，每個頁面一筆項目。當您希望訪客探索活躍的討論串而非個別留言時，可以使用此區塊。
 
-### Add the block
+### 新增區塊
 
-1. 開啟 Shopify 主題編輯器。
-2. 開啟你希望顯示此餵送的範本，例如側邊欄、頁腳、部落格索引或首頁區段。
-3. 在應該放置此區塊的區段中點選 **Add block**。
-4. 在 **Apps** 下選擇 **FastComments - Recent Discussions**。
-5. 點選 **Save**。
+1. 開啟 Shopify 佈景主題編輯器。
+2. 開啟您想要放置動態的範本，例如側邊欄、頁尾、部落格索引或首頁區塊。
+3. 在應放置該區塊的區段中，點擊 **Add block**。
+4. 在 **Apps** 下，選擇 **FastComments - Recent Discussions**。
+5. 點擊 **Save**。
 
-### Settings
+### 設定
 
-| Setting | What it does | Default |
+| 設定 | 功能說明 | 預設值 |
 |---|---|---|
-| Tenant ID (optional) | 覆寫此餵送要讀取的 FastComments 租戶。留空以使用商店自動設定的租戶。 | (blank) |
-| Number of comments | 要顯示的近期討論數量。範圍為 1 到 50。 | 20 |
+| Tenant ID (選填) | 覆寫動態讀取的 FastComments 租戶。留空則使用商店自動設定的租戶。 | (空白) |
+| Number of comments | 顯示多少則最近的討論。範圍為 1 到 50。 | 20 |
 
-### Recent Discussions vs Recent Comments
+### Recent Discussions 與 Recent Comments 的差異
 
-兩個區塊都從相同資料來源取得內容，但顯示方式不同：
+兩個區塊都從相同的資料來源取得資料，但呈現不同的檢視方式：
 
-- **Recent Comments**: 最新單則評論的平面列表。最適合呈現「剛剛說了什麼」。
-- **Recent Discussions**: 每頁一個條目，依最近活躍排序。最適合呈現「哪些討論串現在正在活躍」。
+- **Recent Comments**：以平面列表顯示最新的個別留言。最適合「剛剛說了什麼」。
+- **Recent Discussions**：每個頁面一筆項目，按最近活動排序。最適合「目前哪些討論串還在活躍」。
 
-你可以在同一個商店同時使用兩者。例如在部落格側邊欄使用 Recent Comments，而在首頁使用 Recent Discussions。
+您可以在同一個商店中同時使用兩者。例如，在部落格側邊欄使用 Recent Comments，在首頁使用 Recent Discussions。

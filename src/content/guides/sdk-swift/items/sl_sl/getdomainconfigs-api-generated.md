@@ -28,5 +28,3 @@ DefaultAPI.getDomainConfigs(tenantId: tenantId) { (response, error) in
     }
 }
 [inline-code-end]
-
----

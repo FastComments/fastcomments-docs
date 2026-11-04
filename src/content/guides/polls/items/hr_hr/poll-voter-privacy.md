@@ -1,7 +1,7 @@
-Every poll has a privacy setting, chosen by its author when creating it. The poll shows its setting under the options, so voters know who can see their vote before they cast it.
+Svaka anketa ima postavku privatnosti koju njezin autor bira prilikom stvaranja. Anketa prikazuje svoju postavku ispod opcija, tako da glasači znaju tko može vidjeti njihov glas prije nego što ga daju.
 
 - **Anonimno** (zadano): prikazuju se samo ukupni rezultati. Nitko, uključujući administratore, ne može vidjeti tko je za što glasao.
-- **Administratori mogu vidjeti tko je glasao**: samo administratori i moderatori mogu otvoriti **See who voted**, što prikazuje svakog glasača i njegov izbor.
-- **Javno**: bilo koji posjetitelj može kliknuti **See who voted** i vidjeti tko je za što glasao.
+- **Administratori mogu vidjeti tko je glasao**: samo administratori i moderatori mogu otvoriti **See who voted**, koji prikazuje svakog glasača i njegov izbor.
+- **Javno**: svaki posjetitelj može kliknuti **See who voted** i vidjeti tko je za što glasao.
 
-Glasovi posjetitelja koji nisu prijavljeni se računaju, ali nemaju pridruženo ime, pa se ne pojavljuju na popisu glasača.
+Glasovi posjetitelja koji nisu prijavljeni se broje, ali nemaju pridruženo ime, pa se ne pojavljuju na popisu glasača.

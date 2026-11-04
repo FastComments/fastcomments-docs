@@ -32,5 +32,3 @@ async fn demo() -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
-
----

@@ -1,26 +1,26 @@
-Attach a poll to a comment, or set the full state of the poll it already has.
+Priložite anketu komentaru ili postavite cijelo stanje ankete koju već ima.
 
-Options are matched by id: an option sent with the id of an existing option keeps its votes (and takes the new label and position), an option sent without an id is added, and existing options left out of the list are removed along with the votes cast on them.
+Opcije se podudaraju po id: opcija poslana s id-em postojeće opcije zadržava svoje glasove (i preuzima novu oznaku i poziciju), opcija poslana bez id-a se dodaje, a postojeće opcije izostavljene iz liste se uklanjaju zajedno s glasovima danima na njima.
 
-Keeping no existing option ids on a poll that has votes deletes all of them, so that needs replaceVotes=true.
+Ako na anketi koja ima glasove ne zadržite nijedan id postojeće opcije, svi glasovi se brišu, pa tada treba replaceVotes=true.
 
-## Parameters
+## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
+|------|------|----------|----------|-------------|
 | tenantId | string | query | Da |  |
 | commentId | string | path | Da |  |
 | replaceVotes | boolean | query | Ne |  |
 
-## Response
+## Odgovor
 
-Returns: [`SavePollResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/SavePollResponse.java)
+Vraća: [`SavePollResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/SavePollResponse.java)
 
-## Example
+## Primjer
 
-[inline-code-attrs-start title = 'putPoll Primjer'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'putPoll primjer'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Uvezi klase:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -33,10 +33,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Konfiguriraj autorizaciju API ključa: api_key
+    // Configure API key authorization: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Odkomentiraj sljedeći redak da postaviš prefiks za API ključ, npr. "Token" (zadano je null)
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -50,7 +50,6 @@ public class Example {
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      // Izuzetak prilikom poziva DefaultApi#putPoll
       System.err.println("Exception when calling DefaultApi#putPoll");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
@@ -60,5 +59,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

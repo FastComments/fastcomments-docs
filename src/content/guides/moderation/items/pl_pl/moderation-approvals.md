@@ -9,5 +9,3 @@ Pojęcie Zweryfikowany można całkowicie ukryć, jeśli tego chcesz, za pomocą
 Wymaganie ręcznego zatwierdzania komentarzy niezweryfikowanych może pomóc w walce ze spamem, ponieważ boty rzadko weryfikują swoje komentarze przez e-mail. W takim przypadku warto włączyć automatyczne zatwierdzanie komentarzy, jednocześnie włączając `Only Auto Approve Verified Comments`.
 
 To wszystko może być skonfigurowane przez administratorów w [Ustawieniach moderacji](https://fastcomments.com/auth/my-account/moderate-comments/settings).
-
----

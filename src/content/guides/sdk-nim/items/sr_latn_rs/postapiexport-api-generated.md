@@ -18,5 +18,3 @@ if optExport.isSome:
   let export = optExport.get()
   echo export
 [inline-code-end]
-
----

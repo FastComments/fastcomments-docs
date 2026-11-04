@@ -27,5 +27,3 @@ async fn fetch_feed_stats() -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
-
----

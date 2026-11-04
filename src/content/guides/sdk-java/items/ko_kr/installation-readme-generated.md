@@ -1,6 +1,6 @@
 ### Maven
 
-Add the Repsy repository to your project's POM:
+프로젝트의 POM에 Repsy 저장소를 추가합니다:
 
 ```xml
 <repositories>
@@ -12,25 +12,25 @@ Add the Repsy repository to your project's POM:
 </repositories>
 ```
 
-Then add the dependencies you need:
+그 다음 필요한 의존성을 추가합니다:
 
 ```xml
 <dependencies>
-    <!-- API Client -->
+    <!-- API 클라이언트 -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>client</artifactId>
         <version>3.1.1</version>
     </dependency>
     
-    <!-- Core Library (includes SSO) -->
+    <!-- 코어 라이브러리 (SSO 포함) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>core</artifactId>
         <version>3.1.1</version>
     </dependency>
     
-    <!-- PubSub Library (for live events) -->
+    <!-- PubSub 라이브러리 (실시간 이벤트용) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>pubsub</artifactId>
@@ -41,7 +41,7 @@ Then add the dependencies you need:
 
 ### Gradle
 
-Add the Repsy repository to your build.gradle file:
+build.gradle 파일에 Repsy 저장소를 추가합니다:
 
 ```groovy
 repositories {
@@ -52,27 +52,27 @@ repositories {
 }
 
 dependencies {
-    // API Client
+    // API 클라이언트
     implementation "com.fastcomments:client:3.1.1"
     
-    // Core Library (includes SSO)
+    // 코어 라이브러리 (SSO 포함)
     implementation "com.fastcomments:core:3.1.1"
     
-    // PubSub Library (for live events)
+    // PubSub 라이브러리 (실시간 이벤트용)
     implementation "com.fastcomments:pubsub:3.1.1"
 }
 ```
 
-### Library Contents
+### 라이브러리 구성
 
-This library contains three modules. The generated API client, the core Java library which contains hand-written utilities to make working with the API easier, and the `pubsub` module which is a library for subscribing to change feeds.
+이 라이브러리는 세 개의 모듈로 구성되어 있습니다. 생성된 API 클라이언트, API 사용을 더 쉽게 만들어주는 직접 작성된 유틸리티를 포함하는 코어 Java 라이브러리, 그리고 변경 피드를 구독하기 위한 라이브러리인 `pubsub` 모듈입니다.
 
 - [API 클라이언트 라이브러리 문서](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
-- [핵심 라이브러리 문서 (SSO 예제 포함)](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
+- [SSO 예제를 포함한 코어 라이브러리 문서](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
 - [PubSub 라이브러리 문서](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
-### Public vs Secured APIs
+### 공개 API vs 보안 API
 
-For the API client, there are three classes, `DefaultApi`, `PublicApi`, and `ModerationApi`. The `DefaultApi` contains methods that require your API key, and `PublicApi` contains methods that can be made directly from a browser/mobile device/etc without authentication.
+API 클라이언트에는 `DefaultApi`, `PublicApi`, `ModerationApi` 세 가지 클래스가 있습니다. `DefaultApi`는 API 키가 필요한 메서드를 포함하며, `PublicApi`는 인증 없이 브라우저/모바일 기기 등에서 직접 호출할 수 있는 메서드를 포함합니다.
 
-The `ModerationApi` provides an extensive suite of live and fast moderation APIs. Every `ModerationApi` method accepts an `sso` parameter and can authenticate via SSO or a FastComments.com session cookie.
+`ModerationApi`는 광범위한 실시간 고속 검토(모더레이션) API 모음을 제공합니다. 모든 `ModerationApi` 메서드는 `sso` 파라미터를 받으며, SSO 또는 FastComments.com 세션 쿠키를 통해 인증할 수 있습니다.

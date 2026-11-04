@@ -21,5 +21,3 @@ else:
   echo "No SSO users found"
 echo httpResponse.statusCode
 [inline-code-end]
-
----

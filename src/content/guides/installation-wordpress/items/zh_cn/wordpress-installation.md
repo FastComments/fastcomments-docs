@@ -1,4 +1,3 @@
----
 FastComments WordPress 插件的安装旨在简便，并将您站点评论可用性的停机时间降至最低。在同步完成之前，系统不会从 WordPress 插件切换。
 
 首先，您需要按照下方 `Moderation` 部分中的详细说明，与您的版主设定预期。让他们知道很快他们将通过 FastComments 进行审核，而不是在 WordPress 仪表板中。
@@ -14,5 +13,3 @@ FastComments WordPress 插件的安装旨在简便，并将您站点评论可用
 评论将分批上传，并使用您 WordPress 数据库中现有的索引进行排序，以限制对您站点的负载。
 
 一旦同步完成，默认的 WordPress 评论系统将被 FastComments 替换。我们希望您会喜欢我们的平台，如果不满意，请[联系我们](https://fastcomments.com/auth/my-account/help)。  
-
----

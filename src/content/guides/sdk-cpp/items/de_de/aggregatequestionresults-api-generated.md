@@ -23,5 +23,3 @@ api->aggregateQuestionResults(tenantId, opts)
         static_cast<void>(resp);
     });
 [inline-code-end]
-
----

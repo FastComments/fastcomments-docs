@@ -1,4 +1,3 @@
----
 | Chave | Variável de Ambiente | Padrão | Descrição |
 |-----|-------------|---------|-------------|
 | `tenant_id` | `FASTCOMMENTS_TENANT_ID` | `''` | Seu ID de tenant do FastComments |
@@ -9,4 +8,3 @@
 | `sso.login_url` | `FASTCOMMENTS_SSO_LOGIN_URL` | `null` | URL de login (usa a rota do Laravel como fallback) |
 | `sso.logout_url` | `FASTCOMMENTS_SSO_LOGOUT_URL` | `null` | URL de logout (usa a rota do Laravel como fallback) |
 | `widget_defaults` | — | `[]` | Opções de configuração padrão do widget |
----

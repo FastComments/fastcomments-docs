@@ -1,18 +1,17 @@
-Enable or disable notifications for a page. When users are subscribed to a page, notifications are created
-for new root comments, and also
+Bir sayfa için bildirimleri etkinleştirin veya devre dışı bırakın. Kullanıcılar bir sayfaya abone olduğunda, yeni kök yorumlar için bildirimler oluşturulur ve ayrıca
 
-## Parameters
+## Parametreler
 
-| Ad | Tür | Gerekli | Açıklama |
+| Ad | Tür | Zorunlu | Açıklama |
 |------|------|----------|-------------|
-| tenant_id | String | Yes |  |
-| url_id | String | Yes |  |
-| url | String | Yes |  |
-| page_title | String | Yes |  |
-| subscribed_or_unsubscribed | String | Yes |  |
-| sso | String | No |  |
+| tenant_id | String | Evet |  |
+| url_id | String | Evet |  |
+| url | String | Evet |  |
+| page_title | String | Evet |  |
+| subscribed_or_unsubscribed | String | Evet |  |
+| sso | String | Hayır |  |
 
-## Response
+## Yanıt
 
 Döndürür: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/update_user_notification_page_subscription_status_response.rs)
 

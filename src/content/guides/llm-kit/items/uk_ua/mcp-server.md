@@ -1,31 +1,31 @@
-FastComments запускає розміщений сервер Model Context Protocol (MCP), щоб AI‑асистенти та агентні клієнти могли безпосередньо викликати API FastComments. Кожен інструмент, який надає сервер MCP, автоматично генерується з публічної специфікації OpenAPI, тому все, що може робити REST API, може робити і клієнт MCP.
+FastComments запускає хостинговий сервер Model Context Protocol (MCP), щоб AI-асистенти та агентні клієнти могли викликати FastComments API безпосередньо. Кожен інструмент, який надає MCP-сервер, автоматично генерується з публічної специфікації OpenAPI, тож усе, що може робити REST API, може робити й MCP-клієнт.
 
-Кінцева точка є безстановою та базується на streamable‑HTTP. Не існує сесії, яку треба підтримувати, і немає серверного стану для кожного клієнта.
+Ендпоінт є stateless та базується на streamable-HTTP. Немає сесії, яку потрібно підтримувати, і жодного серверного стану на клієнта.
 
-### Endpoint
+### Ендпоінт
 
-[inline-code-attrs-start title = 'Кінцева точка MCP'; type = 'text'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'MCP Ендпоінт'; type = 'text'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 https://fastcomments.com/mcp
 [inline-code-end]
 
-### Connect with OAuth
+### Підключення через OAuth
 
-Будь-який клієнт MCP, який підтримує віддалені сервери з OAuth (Claude, ChatGPT, Claude Code, Cursor та інші), може підключитися до вищезазначеної кінцевої точки без налаштувань зі сторони FastComments. Клієнт реєструє себе через Dynamic Client Registration або ідентифікує себе за допомогою документа Client ID Metadata, відкриває браузер, щоб ви могли ввійти в FastComments і схвалити доступ, і отримує токен, прив’язаний до облікового запису, у який ви ввійшли.
+Будь-який MCP-клієнт, який підтримує віддалені сервери з OAuth (Claude, ChatGPT, Claude Code, Cursor та інші), може підключитися до наведеного вище ендпоінта без жодних налаштувань з боку FastComments. Клієнт реєструється через Dynamic Client Registration або ідентифікує себе за допомогою Client ID Metadata Document, відкриває браузер, щоб ви могли увійти до FastComments та схвалити доступ, і отримує токен, прив'язаний до облікового запису, у який ви увійшли.
 
-Документи відкриття розташовані у стандартних місцях:
+Документи виявлення знаходяться за стандартними адресами:
 
-[inline-code-attrs-start title = 'Відкриття'; type = 'text'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Виявлення'; type = 'text'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 https://fastcomments.com/.well-known/oauth-protected-resource/mcp
 https://fastcomments.com/.well-known/oauth-authorization-server
 [inline-code-end]
 
-Ваш користувач потребує дозволу API Admin у обліковому записі, щоб схвалити підключення. Якщо ви керуєте кількома обліковими записами, перед схваленням перемкніться на потрібний у панелі керування.
+Ваш користувач повинен мати дозвіл API Admin на обліковому записі, щоб схвалити підключення. Якщо ви керуєте кількома обліковими записами, переключіться на потрібний у панелі керування перед схваленням.
 
-Клієнт може запитати область `read`, область `write` або обидві. Клієнт, який нічого не запитує, отримує обидві. Інструменти, які змінюють дані, не пропонуються токену лише для читання.
+Клієнт може запросити область `read`, область `write` або обидві. Клієнт, який нічого не запитує, отримує обидві. Інструменти, що змінюють дані, не надаються токену з доступом лише для читання.
 
-Панель керування має помічник налаштування з готовими до вставки фрагментами. Відкрийте **Integrate -> MCP Server** або перейдіть безпосередньо:
+Панель керування має помічник налаштування з готовими фрагментами для вставки. Відкрийте **Integrate -> MCP Server** або відвідайте її безпосередньо:
 
 [inline-code-attrs-start title = 'Сторінка налаштування'; type = 'text'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -34,18 +34,18 @@ https://fastcomments.com/auth/my-account/mcp-setup
 
 ### Claude Code
 
-Зареєструйте сервер FastComments за допомогою однієї команди, а потім запустіть `/mcp` у сеансі, щоб ввійти та отримати список доступних інструментів:
+Зареєструйте сервер FastComments однією командою, а потім виконайте `/mcp` у межах сесії, щоб увійти та переглянути доступні інструменти:
 
 [inline-code-attrs-start title = 'Налаштування Claude Code'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 claude mcp add --transport http fastcomments https://fastcomments.com/mcp
 [inline-code-end]
 
-### Cursor and other config-file clients
+### Cursor та інші клієнти з файлами конфігурації
 
-Додайте цей блок до конфігурації MCP серверів вашого клієнта (`mcp.json` для Cursor). Клієнт відкриває браузер для входу при першому використанні.
+Додайте цей блок до конфігурації MCP-серверів вашого клієнта (`mcp.json` для Cursor). Клієнт відкриє браузер для входу при першому використанні.
 
-[inline-code-attrs-start title = 'Конфігурація клієнта MCP'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Конфігурація MCP-клієнта'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "mcpServers": {
@@ -57,32 +57,32 @@ claude mcp add --transport http fastcomments https://fastcomments.com/mcp
 }
 [inline-code-end]
 
-### Revoking access
+### Відкликання доступу
 
-Кожне схвалене підключення відображається у розділі **Integrate -> Connected Apps** в панелі керування. Відкликання одного підключення анулює всі токени, які має ця програма. Програми реєструються самостійно під час підключення, і FastComments їх не перевіряє, тому відкликайте все, що ви не розпізнаєте.
+Кожне схвалене підключення перелічено в розділі **Integrate -> Connected Apps** у панелі керування. Відкликання одного з них анулює всі токени, які має цей застосунок. Застосунки реєструють себе під час підключення, і FastComments їх не перевіряє, тому відкликайте все, що вам не знайоме.
 
-### Using the token with the REST API
+### Використання токена з REST API
 
-Токен доступу, який отримує клієнт MCP, є звичайним обліковим записом API FastComments. Він працює на кожній кінцевій точці `/api/v1` як токен типу bearer, тому програма, підключена через MCP, може також безпосередньо викликати REST API:
+Токен доступу, який отримує MCP-клієнт, є звичайним обліковим записом FastComments API. Він працює на кожному ендпоінті `/api/v1` як bearer-токен, тож застосунок, який підключився через MCP, також може викликати REST API безпосередньо:
 
-[inline-code-attrs-start title = 'Токен Bearer'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Bearer-токен'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl -H "Authorization: Bearer fcat_..." https://fastcomments.com/api/v1/comments
 [inline-code-end]
 
-Орендар (tenant) визначається токеном. `tenantId` все ще можна передати, але він має збігатися. Запити `GET` потребують області `read`, а всі інші — області `write`.
+Орендар визначається токеном. `tenantId` все ще можна передати, але він має збігатися. Запити `GET` потребують області `read`, а все інше — області `write`.
 
-### Connect with an API key
+### Підключення за допомогою API-ключа
 
-Клієнти, які не можуть виконати вхід у браузері, наприклад безголові сервери, можуть автентифікуватися за допомогою API ключа. Передайте `tenantId` та `API_KEY` як параметри запиту або як HTTP‑заголовки `x-tenant-id` та `x-api-key`, якщо ваш клієнт підтримує користувацькі заголовки:
+Клієнти, які не можуть завершити вхід через браузер, наприклад headless-сервери, можуть автентифікуватися за допомогою API-ключа. Передайте `tenantId` та `API_KEY` як параметри запиту або як HTTP-заголовки `x-tenant-id` та `x-api-key`, якщо ваш клієнт підтримує користувацькі заголовки:
 
-[inline-code-attrs-start title = 'Кінцева точка API ключа'; type = 'text'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ендпоінт з API-ключем'; type = 'text'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 https://fastcomments.com/mcp?tenantId=YOUR_TENANT_ID&API_KEY=YOUR_API_KEY
 [inline-code-end]
 
-Сторінка налаштування генерує це URL для кожного вашого API ключа.
+Сторінка налаштування генерує цю URL-адресу для кожного з ваших API-ключів.
 
-### Security
+### Безпека
 
-URL кінцевої точки, що містить API ключ, є секретом: не вставляйте його у публічні чати, скріншоти чи коміти. Якщо ключ був розкритий, оновіть його на сторінці API Keys у вашій панелі керування. OAuth токени не несуть такого ризику, оскільки вони прив’язані до однієї програми і їх можна відкликати у розділі Connected Apps.
+URL-адреса ендпоінта, що містить API-ключ, є секретом: не вставляйте її в публічні чати, скріншоти чи коміти. Якщо ключ було розкрито, змініть його на сторінці API Keys у вашій панелі керування. OAuth-токени не несуть такого ризику, оскільки вони прив'язані до одного застосунку і можуть бути відкликані через Connected Apps.

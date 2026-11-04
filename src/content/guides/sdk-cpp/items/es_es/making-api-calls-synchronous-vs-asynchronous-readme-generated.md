@@ -1,8 +1,8 @@
-All API methods in this SDK return `pplx::task<std::shared_ptr<ResponseType>>` from the C++ REST SDK. This gives you flexibility in how you handle API responses.
+Todos los métodos de la API en este SDK devuelven `pplx::task<std::shared_ptr<ResponseType>>` del C++ REST SDK. Esto te da flexibilidad en cómo manejas las respuestas de la API.
 
-### Llamadas sincrónicas con `.get()`
+### Llamadas síncronas con `.get()`
 
-Use `.get()` to block the calling thread until the request completes and retrieve the result synchronously:
+Usa `.get()` para bloquear el hilo que llama hasta que la solicitud se complete y obtener el resultado de forma síncrona:
 
 ```cpp
 auto config = std::make_shared<org::openapitools::client::api::ApiConfiguration>();
@@ -13,11 +13,11 @@ config->setApiKey(utility::conversions::to_string_t("api_key"),
 auto apiClient = std::make_shared<org::openapitools::client::api::ApiClient>(config);
 org::openapitools::client::api::DefaultApi api(apiClient);
 
-// Los parámetros requeridos son posicionales; los opcionales se colocan en la estructura de opciones
+// Los parámetros obligatorios son posicionales; los opcionales van en la estructura de opciones
 org::openapitools::client::api::GetCommentsOptions options;
 options.urlId = utility::conversions::to_string_t("your-url-id");
 
-// Call .get() to block and get the result synchronously
+// Llama a .get() para bloquear y obtener el resultado de forma síncrona
 auto response = api.getComments(
     utility::conversions::to_string_t("your-tenant-id"),
     options
@@ -30,7 +30,7 @@ if (response && response->comments) {
 
 ### Llamadas asíncronas con `.then()`
 
-Use `.then()` for non-blocking asynchronous execution with callbacks:
+Usa `.then()` para una ejecución asíncrona sin bloqueo con callbacks:
 
 ```cpp
 auto config = std::make_shared<org::openapitools::client::api::ApiConfiguration>();
@@ -41,11 +41,11 @@ config->setApiKey(utility::conversions::to_string_t("api_key"),
 auto apiClient = std::make_shared<org::openapitools::client::api::ApiClient>(config);
 org::openapitools::client::api::DefaultApi api(apiClient);
 
-// Los parámetros requeridos son posicionales; los opcionales se colocan en la estructura de opciones
+// Los parámetros obligatorios son posicionales; los opcionales van en la estructura de opciones
 org::openapitools::client::api::GetCommentsOptions options;
 options.urlId = utility::conversions::to_string_t("your-url-id");
 
-// Use .then() for asynchronous callback-based execution
+// Usa .then() para una ejecución asíncrona basada en callbacks
 api.getComments(
     utility::conversions::to_string_t("your-tenant-id"),
     options
@@ -56,25 +56,25 @@ api.getComments(
     }
 });
 
-// Execution continues immediately without blocking
-std::cout << "Request sent, continuing..." << std::endl; // La ejecución continúa inmediatamente sin bloqueo
+// La ejecución continúa inmediatamente sin bloquear
+std::cout << "Request sent, continuing..." << std::endl;
 ```
 
 ### Elegir entre síncrono y asíncrono
 
-The choice depends on your runtime environment and application architecture:
+La elección depende de tu entorno de ejecución y de la arquitectura de tu aplicación:
 
 **`.get()` (Bloqueo síncrono)**
-- Bloquea el hilo que realiza la llamada hasta que la solicitud HTTP se complete
+- Bloquea el hilo que llama hasta que la solicitud HTTP se completa
 - Flujo de código más simple, más fácil de razonar
 - Adecuado para hilos de trabajo dedicados, procesamiento por lotes o herramientas de línea de comandos
-- **No adecuado** para bucles de eventos, hilos GUI o servidores monohilo
+- **No es adecuado** para bucles de eventos, hilos de GUI o servidores de un solo hilo
 
 **`.then()` (Asíncrono sin bloqueo)**
 - Devuelve inmediatamente, el callback se ejecuta cuando la solicitud se completa
-- No bloquea el hilo que realiza la llamada
-- Requerido para arquitecturas dirigidas por eventos, aplicaciones GUI o bucles de eventos monohilo
+- No bloquea el hilo que llama
+- Requerido para arquitecturas basadas en eventos, aplicaciones de GUI o bucles de eventos de un solo hilo
 - Permite encadenar múltiples operaciones
 - Flujo de control más complejo
 
-The SDK's test suite uses `.get()` exclusively, but this is appropriate for the test environment where blocking is acceptable.
+La suite de pruebas del SDK usa `.get()` exclusivamente, pero esto es apropiado en el entorno de pruebas donde el bloqueo es aceptable.

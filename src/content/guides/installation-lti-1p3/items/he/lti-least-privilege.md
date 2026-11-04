@@ -1,75 +1,75 @@
-The FastComments LTI 1.3 integration follows the principle of least privilege: it uses only the launch claims required to identify the user, attach comments to the correct course and resource, and apply role-based permissions.
+אינטגרציית ה-LTI 1.3 של FastComments פועלת על פי עקרון ההרשאה המינימלית: היא משתמשת רק בטענות (claims) של ההשקה הדרושות לזיהוי המשתמש, לקישור התגובות לקורס ולמשאב הנכונים, ולהחלת הרשאות מבוססות תפקידים.
 
-The rest of this page maps every claim the integration consumes, every LTI Advantage service it does not request, and every category of data it does not collect. Security and procurement reviewers can lift answers directly from the tables below.
+שאר הדף מפרט כל טענה שהאינטגרציה צורכת, כל שירות LTI Advantage שהיא אינה מבקשת, וכל קטגוריית נתונים שהיא אינה אוספת. סוקרי אבטחה ורכש יכולים להסתמך ישירות על הטבלאות למטה.
 
-## Data Elements Received From the LMS
+## רכיבי נתונים המתקבלים מה-LMS
 
-Every LTI 1.3 launch carries a signed JWT from the LMS. FastComments extracts the following claims from that JWT and uses nothing else:
+כל השקת LTI 1.3 כוללת JWT חתום מה-LMS. FastComments מחלץ את הטענות הבאות מה-JWT ואינו משתמש בדבר נוסף:
 
-| Field | LTI claim | Purpose | Required | Stored |
+| שדה | טענת LTI | מטרה | נדרש | נשמר |
 |-------|-----------|---------|----------|--------|
-| User identifier | `sub` | Identifies the user consistently across launches so the same person resolves to the same FastComments SSO user | כן | כן, כחלק ממזהה SSO פנימי יציב |
-| Display name | `name` | Attribution shown next to the user's comments | כן (נכשל חזרה ל-"LMS User" אם חסר) | כן |
-| Email | `email` | Account matching, notifications, moderation, support correspondence | אופציונלי (האינטגרציה עובדת בלעדיו) | כן כאשר נמסר |
-| Avatar URL | `picture` | Displayed on the user's comments | אופציונלי | רק כתובת URL; FastComments לא מורידה או מארחת מחדש את התמונה |
-| Roles | `https://purl.imsglobal.org/spec/lti/claim/roles` | Determines whether the user is administrator, instructor (moderator), or learner | כן | דגלי `isAdmin` / `isModerator` נגזרים על מושב ה-SSO |
-| Course context | `https://purl.imsglobal.org/spec/lti/claim/context` (`id`, `title`) | Associates the comment thread with the correct LMS course | כן | כן, כחלק מזהה העמוד שנפתר |
-| Resource link | `https://purl.imsglobal.org/spec/lti/claim/resource_link` (`id`) | Associates comments with the correct activity or tool placement inside the course | כן כאשר קיים | כן, כחלק מזהה העמוד שנפתר |
-| Deployment ID | `https://purl.imsglobal.org/spec/lti/claim/deployment_id` | Routes the launch to the correct FastComments tenant configuration | כן | כן, ברשומת תצורת LTI של FastComments |
+| מזהה משתמש | `sub` | מזהה את המשתמש באופן עקבי בין השקות כך שאותו אדם ממופה לאותו משתמש SSO של FastComments | כן | כן, כחלק ממזהה SSO פנימי יציב |
+| שם לתצוגה | `name` | ייחוס המוצג לצד התגובות של המשתמש | כן (עם ברירת מחדל "LMS User" אם חסר) | כן |
+| דוא"ל | `email` | התאמת חשבונות, התראות, ניהול תגובות, התכתבות תמיכה | אופציונלי (האינטגרציה עובדת גם בלעדיו) | כן כאשר מסופק |
+| כתובת URL של אווטאר | `picture` | מוצג לצד התגובות של המשתמש | אופציונלי | כתובת URL בלבד; FastComments אינו מוריד או מאחסן מחדש את התמונה |
+| תפקידים | `https://purl.imsglobal.org/spec/lti/claim/roles` | קובע אם המשתמש הוא מנהל מערכת, מרצה (מנחה/מנהל תגובות) או לומד | כן | דגלי `isAdmin` / `isModerator` נגזרים בסשן ה-SSO |
+| הקשר קורס | `https://purl.imsglobal.org/spec/lti/claim/context` (`id`, `title`) | מקשר את שרשור התגובות לקורס הנכון ב-LMS | כן | כן, כחלק ממזהה העמוד המפוענח |
+| קישור משאב | `https://purl.imsglobal.org/spec/lti/claim/resource_link` (`id`) | מקשר תגובות לפעילות או למיקום הכלי הנכון בתוך הקורס | כן כאשר קיים | כן, כחלק ממזהה העמוד המפוענח |
+| מזהה פריסה | `https://purl.imsglobal.org/spec/lti/claim/deployment_id` | מנתב את ההשקה לתצורת הטננט הנכונה של FastComments | כן | כן, ברשומת התצורה של FastComments LTI |
 
-## Claims and Scopes Declared at Registration
+## טענות והיקפים המוצהרים בעת הרישום
 
-During LTI 1.3 Dynamic Registration, FastComments registers itself with `scope: ""` (no additional OAuth scopes) and declares only these OpenID Connect claims:
+במהלך רישום דינמי של LTI 1.3, FastComments רושם את עצמו עם `scope: ""` (ללא היקפי OAuth נוספים) ומצהיר רק על טענות OpenID Connect אלה:
 
 `iss`, `sub`, `name`, `email`, `picture`
 
-It registers two message types:
+הוא רושם שני סוגי הודעות:
 
-- `LtiResourceLinkRequest` - the standard course launch into FastComments.
-- `LtiDeepLinkingRequest` - allows instructors to place the FastComments tool inside a course.
+- `LtiResourceLinkRequest` - ההשקה הסטנדרטית לקורס אל FastComments.
+- `LtiDeepLinkingRequest` - מאפשר למרצים למקם את הכלי של FastComments בתוך קורס.
 
-No additional access tokens are requested from the LMS.
+לא מתבקשים אסימוני גישה נוספים מה-LMS.
 
-## LTI Advantage Services Not Requested
+## שירותי LTI Advantage שאינם מבוקשים
 
-| Service / scope | Requested? | Reason |
+| שירות / היקף | מבוקש? | סיבה |
 |------------------|------------|--------|
-| Names and Role Provisioning Services (NRPS) | לא | האינטגרציה אינה זקוקה לרשימת תלמידים; זהות המשתמש מגיעה עם כל השקה |
-| Assignment and Grade Services (AGS) - lineitem, score, result scopes | לא | האינטגרציה אינה מודעת ליומן ציונים |
-| Deep Linking beyond the standard placement return | לא נדרשים נתונים נוספים | Deep linking משמשת רק למיקום הכלי על ידי המדריך; אין מיפוי של תוכן קורס |
+| Names and Role Provisioning Services (NRPS) | לא | האינטגרציה אינה זקוקה לרשימת משתתפי הקורס; זהות המשתמש מגיעה עם כל השקה |
+| Assignment and Grade Services (AGS) - היקפי lineitem, score, result | לא | האינטגרציה אינה מודעת למחווני הערכה |
+| Deep Linking מעבר להחזרה הסטנדרטית של המיקום | ללא נתונים נוספים | Deep Linking משמש רק למיקום הכלי על ידי מרצים; אין מנייה של תוכן קורס |
 
-## Data Not Collected
+## נתונים שאינם נאספים
 
-Beyond LTI itself, FastComments does not request or receive the following from the LMS or user:
+מעבר ל-LTI עצמו, FastComments אינו מבקש או מקבל מה-LMS או מהמשתמש את הפריטים הבאים:
 
-| Category | Collected? |
+| קטגוריה | נאסף? |
 |----------|------------|
-| Student grades | לא |
-| Assignment submissions | לא |
-| Attendance records | לא |
-| Full course rosters | לא |
-| Government identifiers | לא |
-| Date of birth | לא |
-| Postal address or phone number | לא |
-| Financial information | לא |
-| LMS administrator credentials | לא |
+| ציוני סטודנטים | לא |
+| הגשות מטלות | לא |
+| רישומי נוכחות | לא |
+| רשימות מלאות של משתתפי קורס | לא |
+| מזהים ממשלתיים | לא |
+| תאריך לידה | לא |
+| כתובת דואר או מספר טלפון | לא |
+| מידע פיננסי | לא |
+| אישורי מנהלי ה-LMS | לא |
 
-## Access Boundaries
+## גבולות גישה
 
-- FastComments only receives data inside an authorized LTI 1.3 launch signed by the LMS's registered keys. The integration does not call back into the LMS for additional information.
-- Launch tokens are single-use and short-lived. Replayed or expired tokens are rejected.
-- LMS administrators control where the tool is deployed inside their platform. D2L Brightspace, for example, supports per-deployment org-unit scoping and per-deployment security settings, which allows administrators to restrict the tool to specific courses or org units rather than making it available globally. Moodle, Blackboard, Sakai, and Schoology offer equivalent per-deployment controls in their LTI 1.3 implementations.
+- FastComments מקבל נתונים רק בתוך השקת LTI 1.3 מורשית החתומה במפתחות הרשומים של ה-LMS. האינטגרציה אינה קוראת בחזרה ל-LMS לקבלת מידע נוסף.
+- אסימוני השקה הם לשימוש חד-פעמי וקצרי מועד. אסימונים ששוחזרו או שפג תוקפם נדחים.
+- מנהלי ה-LMS שולטים במקומות שבהם הכלי נפרס בתוך הפלטפורמה שלהם. לדוגמה, D2L Brightspace תומך בהגדרת היקף לפי יחידה ארגונית (org-unit) לכל פריסה ובהגדרות אבטחה לכל פריסה, מה שמאפשר למנהלים להגביל את הכלי לקורסים או ליחידות ארגוניות ספציפיות במקום להפוך אותו לזמין באופן גלובלי. Moodle, Blackboard, Sakai ו-Schoology מציעים בקרות דומות לכל פריסה ביישומי ה-LTI 1.3 שלהם.
 
-## Storage and Retention
+## אחסון ושמירה
 
-FastComments retains LTI-derived data for the duration of the active commenting service and according to customer-configured retention settings. Comment data is stored in encrypted-at-rest production storage. On account termination or written deletion request, FastComments deletes or anonymizes customer data per the applicable agreement.
+FastComments שומר נתונים שנגזרו מ-LTI למשך תקופת הפעלת שירות התגובות ובהתאם להגדרות השמירה שהוגדרו על ידי הלקוח. נתוני התגובות נשמרים באחסון ייצור מוצפן במנוחה. בעת סגירת חשבון או בקשת מחיקה בכתב, FastComments מוחק או מאלחש נתוני לקוח בהתאם להסכם החל.
 
-For full storage and data-handling details, see the <a href="https://fastcomments.com/privacy-policy" target="_blank">מדיניות הפרטיות של FastComments</a>.
+לפרטים מלאים על אחסון וטיפול בנתונים, ראו את <a href="https://fastcomments.com/privacy-policy" target="_blank">מדיניות הפרטיות של FastComments</a>.
 
-## Review Cadence
+## קצב סקירה
 
-Any new LTI feature that would require additional claims, scopes, or LTI Advantage services is reviewed before release to confirm the requested access is necessary and proportionate to the feature being shipped.
+כל תכונת LTI חדשה שתדרוש טענות, היקפים או שירותי LTI Advantage נוספים נבחנת לפני השחרור כדי לוודא שהגישה המבוקשת הכרחית ומידתית לתכונה המשוחררת.
 
-## Short Statement for Security Questionnaires
+## הצהרה קצרה לשאלוני אבטחה
 
-> FastComments applies least privilege and data minimization to its LTI 1.3 integration. The integration uses only the LTI launch claims required to authenticate the user (`sub`, `name`, `email`, `picture`), determine their role, and identify the course and resource that comments belong to. FastComments does not request Names and Role Provisioning Services, Assignment and Grade Services, gradebook data, attendance, full rosters, or LMS administrative access. LMS administrators retain control over which org units, courses, and deployments the tool is available in.
+> FastComments מיישם הרשאה מינימלית ומזעור נתונים באינטגרציית ה-LTI 1.3 שלו. האינטגרציה משתמשת רק בטענות ההשקה של LTI הדרושות לאימות המשתמש (`sub`, `name`, `email`, `picture`), לקביעת התפקיד שלו, ולזיהוי הקורס והמשאב שהתגובות שייכות אליהם. FastComments אינו מבקש Names and Role Provisioning Services, Assignment and Grade Services, נתוני מחווני הערכה, נוכחות, רשימות משתתפים מלאות או גישת ניהול ל-LMS. מנהלי ה-LMS שומרים על שליטה ביחידות הארגוניות, בקורסים ובפריסות שבהן הכלי זמין.

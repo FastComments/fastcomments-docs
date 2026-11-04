@@ -29,5 +29,3 @@ Ora possiamo salvare il file:
     <div class="title">Modifica l'editor</div>
     <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-3-exit.png" alt="Modifica l'editor" />
 </div>
-
----

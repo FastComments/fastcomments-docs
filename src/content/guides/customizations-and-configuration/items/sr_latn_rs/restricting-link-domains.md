@@ -1,10 +1,10 @@
-By default, FastComments allows linking to any external site.
+Podrazumevano, FastComments dozvoljava povezivanje na bilo koji eksterni sajt.
 
-This can be restricted to instead a desired list of sites, or domains. Attempting to post a link to a site, or domain,
-not in the defined list will cause an error to be shown to the user.
+Ovo može biti ograničeno na željenu listu sajtova ili domena. Pokušaj objavljivanja linka na sajt ili domen
+koji nije na definisanoj listi izazvaće prikaz greške korisniku.
 
-This validation is only for the Comment Widget and API. Imports are not affected.
+Ova validacija važi samo za Comment Widget i API. Importi nisu pogođeni.
 
-This is done without code, on the widget customization page:
+Ovo se podešava bez koda, na stranici za prilagođavanje vidžeta:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.restricted-link-domains-list'; selector = '.external-link-settings'; alt='Podešavanja eksternog linka sa listom ograničenih domena linkova gde se unose dozvoljeni sajtovi'; title='Ograniči domena eksternih linkova' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.restricted-link-domains-list'; selector = '.external-link-settings'; alt='Podešavanja eksternih linkova sa listom ograničenih domena gde se unose dozvoljeni sajtovi'; title='Ograniči domene eksternih linkova' app-screenshot-end]

@@ -32,5 +32,3 @@ async function runVoteExamples(): Promise<void> {
   console.log(simpleVote, detailedVote);
 }
 [inline-code-end]
-
----

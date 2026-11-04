@@ -8,5 +8,3 @@
 ## Принос
 
 Приносите са добре дошли! Моля, посетете [репозитория в GitHub](https://github.com/FastComments/fastcomments-python) за указания относно приноса.
-
----

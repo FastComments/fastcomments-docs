@@ -1,24 +1,19 @@
-Bulk user info for a tenant. Given userIds, return display info from User / SSOUser.  
-テナントのユーザー情報を一括取得します。userIds が指定されると、User / SSOUser から表示情報を返します。
+テナントのユーザー情報を一括取得します。userId を指定すると、User / SSOUser から表示情報を返します。
+プレゼンスイベント経由で新たに現れたユーザーをコメントウィジェットで補完するために使用されます。
+ページコンテキストはありません: プライバシーは一律に適用されます(非公開プロフィールはマスクされます)。
 
-Used by the comment widget to enrich users that just appeared via a presence event.  
-コメントウィジェットが、プレゼンスイベントで新たに現れたユーザーを補強するために使用されます。
+## パラメータ
 
-No page context: privacy is enforced uniformly (private profiles are masked).  
-ページコンテキストなし: プライバシーは一様に適用され、プライベートプロファイルはマスクされます。
-
-## Parameters
-
-| Name | Type | Required | Description |
+| 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| ids | string | Yes |  |
+| tenantId | string | はい |  |
+| ids | string | はい |  |
 
-## Response
+## レスポンス
 
-Returns: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PageUsersInfoResponse.h)
+戻り値: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PageUsersInfoResponse.h)
 
-## Example
+## 例
 
 [inline-code-attrs-start title = 'getUsersInfo の例'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

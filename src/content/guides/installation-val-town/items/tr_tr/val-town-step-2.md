@@ -27,5 +27,3 @@ Bu, Val Town'da ikinci bir neden dolayı genellikle olduğundan daha önemlidir:
 ## AB hesapları
 
 Bir hesap, verileri ve anahtarları tek bir bölgede bulunur. Eğer hesabınız `eu.fastcomments.com` üzerinde oluşturulduysa, her widget yapılandırması da `region: "eu"` gerektirir ve betikler `cdn-eu.fastcomments.com` adresinden yüklenir. Aksi takdirde ikisini de olduğu gibi bırakın.
-
----

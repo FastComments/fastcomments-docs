@@ -27,5 +27,3 @@ Aan de linkerkant hebben we nu de optie om op `Edit Code` te klikken - klik daar
     <div class="title">Code bewerken</div>
     <img class="screenshot-image" src="/images/installation-guides/systeme-edit-block-button.png" alt="Code bewerken" />
 </div>
-
----

@@ -1,4 +1,3 @@
----
 Un oggetto `Page` rappresenta la pagina a cui possono appartenere molti commenti. Questa relazione è definita da
 `urlId`.
 
@@ -22,5 +21,3 @@ interface Page {
     isClosed?: boolean
 }
 [inline-code-end]
-
----

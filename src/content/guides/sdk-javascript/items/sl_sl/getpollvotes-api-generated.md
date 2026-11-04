@@ -1,19 +1,19 @@
-The individual votes behind one poll's tallies, oldest first.
+Posamezni glasovi za rezultate ene ankete, od najstarejšega naprej.
 
-A poll belongs to a comment, so votes are always read one poll at a time - commentId is required. That
-keeps every query on the indexes the collection already has.
+Anketa pripada komentarju, zato se glasovi vedno berejo eno anketo naenkrat - commentId je obvezen. To
+ohrani vsako poizvedbo na indeksih, ki jih zbirka že ima.
 
-Obeys the poll's privacy: an anonymous poll's votes cannot be read (poll-anonymous), here or by id.
+Upošteva zasebnost ankete: glasov anonimne ankete ni mogoče brati (poll-anonymous), niti tukaj niti po id.
 
 ## Parametri
 
-| Ime | Tip | Obvezno | Opis |
+| Ime | Vrsta | Obvezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| commentId | string | Yes |  |
-| voterId | string | No |  |
-| optionId | string | No |  |
-| skip | number | No |  |
+| tenantId | string | Da |  |
+| commentId | string | Da |  |
+| voterId | string | Ne |  |
+| optionId | string | Ne |  |
+| skip | number | Ne |  |
 
 ## Odgovor
 
@@ -39,5 +39,3 @@ const pollResult: GetPollVotesResponse = await getPollVotes(
 
 console.log(pollResult);
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 אפשר להגדיר את FastComments כדי להודיע ל־גוגל אנליטיקס 4 כאשר מישהו מתקשר עם הווידג'ט של התגובות.
 
 אפשר לעקוב מתי משתמשים:
@@ -36,5 +35,3 @@
 
 - תווית: `Comment Posted`, קטגוריה: `Engagement`, מזהה: `post_comment`
 - תווית: `User Voted on a Comment`, קטגוריה: `Engagement`, מזהה: `vote_comment`
-
----

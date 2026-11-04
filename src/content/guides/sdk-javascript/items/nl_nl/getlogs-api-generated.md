@@ -23,5 +23,3 @@ Retourneert: [`ModerationAPIGetLogsResponse`](https://github.com/FastComments/fa
   const logsWithoutSso: ModerationAPIGetLogsResponse = await getLogs(tenantId, commentId);
 })();
 [inline-code-end]
-
----

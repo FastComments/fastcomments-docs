@@ -1,4 +1,3 @@
----
 [related-parameter-start name = 'disableLiveCommenting'; type = 'boolean'; related-parameter-end]
 
 Por padrão, o FastComments terá comentários ao vivo habilitados.
@@ -15,5 +14,3 @@ No entanto, podemos desativar isso:
 Isso também pode ser feito sem código. Na página de personalização do widget, veja a seção "Desativar Comentários ao Vivo".
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-live-commenting']; selector = '.disable-live-commenting'; alt='Seção "Desativar Comentários ao Vivo" da página de personalização do widget, desativando atualizações em tempo real da sequência de comentários'; title='Desativar Comentários ao Vivo' app-screenshot-end]
-
----

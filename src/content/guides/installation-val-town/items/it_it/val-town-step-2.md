@@ -27,5 +27,3 @@ Tornare a `"demo"` mantiene il val funzionante per chiunque lo remix prima di im
 ## Account EU
 
 Un account, i suoi dati e le sue chiavi vivono in una sola regione. Se il tuo è stato creato su `eu.fastcomments.com`, ogni configurazione del widget necessita anche di `region: "eu"`, e gli script si caricano da `cdn-eu.fastcomments.com`. Altrimenti lascia entrambi così.
-
----

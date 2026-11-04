@@ -1,4 +1,3 @@
----
 Derzeit online Viewer einer Seite: Personen, deren Websocket‑Session gerade auf die Seite abonniert ist.  
 Gibt anonCount + totalCount zurück (raumweite Abonnenten, einschließlich anonymer Viewer, die wir nicht aufzählen).
 
@@ -24,5 +23,3 @@ if onlineUsersOpt.isSome:
   let onlineUsers = onlineUsersOpt.get()
   echo onlineUsers
 [inline-code-end]
-
----

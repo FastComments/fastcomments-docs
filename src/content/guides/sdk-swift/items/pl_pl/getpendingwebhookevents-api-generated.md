@@ -42,5 +42,3 @@ DefaultAPI.getPendingWebhookEvents(tenantId: tenantId, options: DefaultAPI.GetPe
     }
 }
 [inline-code-end]
-
----

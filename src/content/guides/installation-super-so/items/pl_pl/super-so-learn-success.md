@@ -8,5 +8,3 @@ Tak to powinno wyglądać - powinieneś móc zaznaczyć fragment tekstu, aby roz
 </div>
 
 Gratulacje za skonfigurowanie FastComments z Super! Jeśli napotkałeś błąd Domain Error, lub chcesz dowiedzieć się, jak dostosować obszar komentarzy, czytaj dalej!
-
----

@@ -30,5 +30,3 @@ ModerationAPI.getManualBadges(tenantId: tenantId, sso: sso) { (response, error) 
     }
 }
 [inline-code-end]
-
----

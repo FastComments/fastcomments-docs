@@ -8,5 +8,3 @@ Si encuentra algún problema o tiene preguntas sobre el SDK de PHP, por favor:
 ## Contribuciones
 
 ¡Las contribuciones son bienvenidas! Por favor visite el [repositorio de GitHub](https://github.com/FastComments/fastcomments-php) para las pautas de contribución.
-
----

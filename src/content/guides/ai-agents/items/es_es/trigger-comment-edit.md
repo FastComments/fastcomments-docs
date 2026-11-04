@@ -1,4 +1,3 @@
----
 Activa el agente cuando se edita un comentario.
 
 ### Contexto que recibe el agente
@@ -21,5 +20,3 @@ Activa el agente cuando se edita un comentario.
 ### Nota sobre costos
 
 Los disparadores de edición ven dos copias del texto del comentario (la versión nueva en el bloque estándar COMMENT, la versión anterior en el bloque PREVIOUS_TEXT). Para comentarios largos esto aproximadamente duplica el costo en tokens de la ejecución en comparación con un disparador `COMMENT_ADD` - tenlo en cuenta al presupuestar.
-
----

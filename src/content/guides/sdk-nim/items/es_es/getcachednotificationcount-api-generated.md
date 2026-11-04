@@ -1,4 +1,3 @@
----
 ## Parámetros
 
 | Nombre | Tipo | Obligatorio | Descripción |
@@ -19,5 +18,3 @@ if cachedCountOpt.isSome:
   let cachedCount = cachedCountOpt.get()
   echo cachedCount
 [inline-code-end]
-
----

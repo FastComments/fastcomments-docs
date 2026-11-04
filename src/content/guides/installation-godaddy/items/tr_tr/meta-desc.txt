@@ -1,3 +1,1 @@
----
 Canlı yorumları bir GoDaddy sitesine kod alanı ile ekleyin, yayınlayın ve widget kayıtsız bir alanda çalıştığında ortaya çıkan alan adı hatasını düzeltin.
----

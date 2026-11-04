@@ -1,4 +1,3 @@
----
 ## Paramètres
 
 | Nom | Type | Emplacement | Obligatoire | Description |
@@ -32,5 +31,3 @@ try {
     print('Exception when calling DefaultApi->replaceTenantPackage: $e\n');
 }
 [inline-code-end]
-
----

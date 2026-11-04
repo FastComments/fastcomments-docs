@@ -1,4 +1,1 @@
----
 Groepsdiscussie met hashtags waarop lezers kunnen klikken en filteren. Autocomplete, aangepaste symbolen in plaats van #, en het vooraf invullen van tags vanuit je eigen code.
-
----

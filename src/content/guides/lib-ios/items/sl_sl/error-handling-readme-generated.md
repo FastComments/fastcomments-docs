@@ -1,4 +1,4 @@
-Metode SDK vržejo `FastCommentsError`, ki je skladna z `LocalizedError`:
+SDK metode vržejo `FastCommentsError`, ki sledi `LocalizedError`:
 
 ```swift
 do {
@@ -10,13 +10,12 @@ do {
 }
 ```
 
-`FastCommentsError` lastnosti:
+Lastnosti `FastCommentsError`:
 
 - `code` -- koda napake iz API-ja
-- `reason` -- angleški opis napake
-- `translatedError` -- strežniško posredovano lokalizirano sporočilo o napaki
+- `reason` -- opis napake v angleščini
+- `translatedError` -- lokalizirano sporočilo o napaki, ki ga zagotovi strežnik
 
-Blocking errors are also surfaced automatically via `sdk.blockingErrorMessage`, which the built-in views display to the user.
+Napake pri blokiranju se prikažejo tudi samodejno prek `sdk.blockingErrorMessage`, ki jih vgrajeni pogledi prikažejo uporabniku.
 
----
 ---

@@ -1,4 +1,3 @@
----
 Alle FastComments-widgetopties worden ingesteld onder `[params.fastcomments]` in `hugo.toml` en kunnen per pagina worden overschreven in de front matter onder `[fastcomments]`. Voorrang, van laagste naar hoogste: site-parameters, pagina-front-matter, shortcode-parameters.
 
 ```toml
@@ -35,4 +34,3 @@ EU-klanten stellen `region = "eu"` in om de widget naar `cdn-eu.fastcomments.com
 ### Opmerking over hoofdlettergebruik van keys
 
 Hugo zet elke sleutel in `hugo.toml` en de front matter om naar kleine letters, maar de FastComments-widgets vereisen camelCase-sleutels (`tenantId`, `hasDarkBackground`). Deze component herstelt automatisch het correcte hoofdlettergebruik voor elke bekende top-leveloptie, dus schrijf opties in hun normale camelCase-vorm. Sleutels genest binnen een objectwaarde (bijvoorbeeld de sleutels van een `translations`-map, of velden van `pageReactConfig`) worden niet hersteld. Configureer deze in plaats daarvan via de aanpassings-UI van het FastComments-dashboard.
----

@@ -13,5 +13,3 @@ SSO 可透過前往外掛面板並點選「SSO Settings」來啟用。
 ## 名稱與頭像
 
 當使用者檢視任何留言串時，外掛會自動更新該使用者在 FastComments 上所有留言的顯示名稱與頭像。頭像支援透過 Gravatar 或任何 WordPress 中的頭像管理外掛，因為外掛會呼叫 `get_avatar_url`。
-
----

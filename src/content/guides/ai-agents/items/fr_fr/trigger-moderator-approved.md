@@ -21,5 +21,3 @@ Une action d'un modérateur humain.
 - **Accueil / engagement** - un agent peut répondre aux commentateurs pour la première fois au moment où un modérateur les approuve, plutôt qu'au moment de la publication.
 - **Coordination entre agents** - si un agent distinct avait marqué le commentaire pour examen, l'approbation est le signal que l'examen humain est terminé.
 - **Piste d'audit** via [Webhooks](#webhooks-overview).
-
----

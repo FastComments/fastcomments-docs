@@ -1,3 +1,1 @@
----
 Kør flere domæner eller subdomæner fra én FastComments‑konto, med afsendernavne og logoer pr. domæne, en lejer pr. miljø og delte tråde.
----

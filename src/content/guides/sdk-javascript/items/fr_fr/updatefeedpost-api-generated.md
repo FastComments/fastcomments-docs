@@ -1,4 +1,3 @@
----
 ## Paramètres
 
 | Nom | Type | Obligatoire | Description |
@@ -51,5 +50,3 @@ async function runUpdate() {
 
 runUpdate();
 [inline-code-end]
-
----

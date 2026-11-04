@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Name | Type | Location | Обавезно | Опис |
@@ -38,5 +37,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.DeleteUserBadge`: %v\n", resp)
 }
 [inline-code-end]
-
----

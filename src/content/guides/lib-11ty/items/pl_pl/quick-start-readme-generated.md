@@ -1,4 +1,3 @@
----
 Zarejestruj wtyczkę w konfiguracji Eleventy (`.eleventy.js` lub `eleventy.config.js`):
 
 ```js
@@ -9,7 +8,7 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-Or with ESM:
+Lub z ESM:
 
 ```js
 import { fastcommentsPlugin } from 'fastcomments-11ty';
@@ -19,17 +18,16 @@ export default function(eleventyConfig) {
 }
 ```
 
-Then use the shortcodes in your templates. In Nunjucks (`.njk`):
+Następnie użyj shortcodes w swoich szablonach. W Nunjucks (`.njk`):
 
 ```njk
 {% fastcomments { tenantId: "demo" } %}
 ```
 
-In Liquid (`.liquid`):
+W Liquid (`.liquid`):
 
 ```liquid
 {% fastcomments tenantId: "demo" %}
 ```
 
-Replace `"demo"` with your FastComments tenant ID.
----
+Zamień `"demo"` na swój identyfikator tenant FastComments.

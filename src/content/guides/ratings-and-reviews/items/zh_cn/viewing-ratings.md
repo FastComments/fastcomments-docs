@@ -1,12 +1,9 @@
----
-一旦你定义了问题，管理仪表板将显示一个用于 [反馈分析](https://fastcomments.com/auth/my-account/feedback-analytics) 的导航项。
+定义问题后，管理后台将在 [Feedback Analytics](https://fastcomments.com/auth/my-account/feedback-analytics) 显示一个导航项。
 
-The following roles allow accessing the feedback analytics:
+以下角色可以访问反馈分析：
 
-- 超级管理员
-- 账户所有者
-- 评论审核管理员
+- 超级管理员（Super Admin）
+- 账户所有者（Account Owner）
+- 评论审核管理员（Comment Moderator Admin）
 
-每个问题将显示随时间变化的趋势、总体细分，并且整个报告可以按日、月或年切分。查看结果不产生费用。
-
----
+每个问题都会显示一个随时间变化的趋势（Over Time）、一个总体细分（Overall Breakdown），并且整个报告可以按天、月或年进行切片查看。查看结果不会产生任何费用。

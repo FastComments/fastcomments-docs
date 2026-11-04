@@ -1,4 +1,3 @@
----
 Agreguje dokumenty poprzez grupowanie ich (jeśli podano groupBy) i stosowanie wielu operacji.
 Obsługiwane są różne operacje (np. sum, countDistinct, avg, itp.).
 
@@ -24,5 +23,3 @@ if aggResp.isSome:
   echo response
 echo httpResp
 [inline-code-end]
-
----

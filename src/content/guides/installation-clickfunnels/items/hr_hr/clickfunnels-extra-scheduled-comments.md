@@ -1,4 +1,3 @@
----
 FastComments podržava nešto što se zove Auto Play. To vam omogućuje uvoz CSV-a komentara i zakazivanje njihovog prikazivanja
 na određenim pomacima na temelju sati, minuta i sekundi od vremena učitavanja stranice.
 
@@ -11,5 +10,3 @@ Ovo je trenutno uključeno u sve FastComments planove.
 ### Napomena!
 
 Zapamtite da stupac `URL ID` u CSV datoteci mora odgovarati `URL` tečaja/videa. 
-
----

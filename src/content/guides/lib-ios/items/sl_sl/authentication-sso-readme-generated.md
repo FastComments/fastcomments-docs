@@ -1,12 +1,12 @@
-FastComments podpira tri načine preverjanja pristnosti:
+FastComments podpira tri načine overjanja:
 
-1. **Anonimno** -- brez SSO žetona; uporabniki dobijo identitete, vezane na sejo
-2. **Preprosti SSO** -- odjemalski žeton za predstavitve in testiranje (ni varen)
+1. **Anonimno** -- brez SSO žetona; uporabniki dobijo identitete na podlagi seje
+2. **Preprost SSO** -- odjemalski žeton za predstavitve in testiranje (ni varen)
 3. **Varen SSO** -- strežniško podpisan žeton za produkcijo
 
-### Preprosti SSO
+### Preprost SSO
 
-Uporabno za predstavitve in lokalno testiranje. Z Preprostim SSO lahko kdorkoli prevzame identiteto kateregakoli uporabnika, zato ga ne uporabljajte v produkciji.
+Uporaben za predstavitve in lokalno testiranje. S preprostim SSO si lahko kdorkoli izda za katerega koli uporabnika, zato ga ne uporabljajte v produkciji.
 
 ```swift
 import FastCommentsSwift
@@ -27,20 +27,20 @@ let config = FastCommentsWidgetConfig(
 let sdk = FastCommentsSDK(config: config)
 ```
 
-`SimpleSSOUserData` also supports optional fields:
+`SimpleSSOUserData` podpira tudi neobvezna polja:
 
-- `id` -- user ID (defaults to email if not set)
-- `displayName` -- separate display name
-- `displayLabel` -- custom label shown next to the name (e.g. "VIP")
-- `websiteUrl` -- link on the user's name
-- `locale` -- locale code
-- `isProfileActivityPrivate` -- hide profile activity (defaults to true)
+- `id` -- ID uporabnika (privzeto e-pošta, če ni nastavljen)
+- `displayName` -- ločeno prikazano ime
+- `displayLabel` -- oznaka po meri, prikazana poleg imena (npr. "VIP")
+- `websiteUrl` -- povezava na imenu uporabnika
+- `locale` -- koda jezikovne okolice
+- `isProfileActivityPrivate` -- skrij aktivnost profila (privzeto true)
 
 ### Varen SSO
 
-V v produkciji vaš backend ustvari podpisan SSO žeton z uporabo vašega API tajnega ključa. iOS aplikacija pridobi ta žeton z vašega strežnika in ga posreduje konfiguraciji.
+V produkciji vaš zaledni sistem ustvari podpisan SSO žeton z vašo API skrivnostjo. iOS aplikacija pridobi ta žeton z vašega strežnika in ga posreduje v konfiguracijo.
 
-**On your backend** (using the FastComments Swift SDK or any language):
+**Na vašem zalednem sistemu** (z uporabo FastComments Swift SDK ali katerega koli jezika):
 
 ```swift
 let userData = SecureSSOUserData(
@@ -51,10 +51,10 @@ let userData = SecureSSOUserData(
 )
 let sso = try FastCommentsSSO.createSecure(apiKey: "YOUR_API_KEY", secureSSOUserData: userData)
 let token = try sso.prepareToSend()
-// Return this token to your iOS app via your API
+// Vrnite ta žeton svoji iOS aplikaciji prek vašega API-ja
 ```
 
-**In your iOS app:**
+**V vaši iOS aplikaciji:**
 
 ```swift
 struct MyView: View {
@@ -75,9 +75,9 @@ struct MyView: View {
             }
         }
         .task {
-            // Fetch the token from your backend
+            // Pridobite žeton z vašega zalednega sistema
             let token = try? await fetchSSOTokenFromYourBackend()
-            // Create a new config with the token, or set it before load
+            // Ustvarite novo konfiguracijo z žetonom ali ga nastavite pred nalaganjem
             isLoadingToken = false
             try? await sdk.load()
         }
@@ -85,16 +85,16 @@ struct MyView: View {
 }
 ```
 
-`SecureSSOUserData` supports additional fields:
+`SecureSSOUserData` podpira dodatna polja:
 
-- `optedInNotifications` -- email notification opt-in
-- `displayLabel` -- custom label
-- `displayName` -- display name
-- `websiteUrl` -- website URL
-- `groupIds` -- group memberships
-- `isAdmin` -- admin privileges
-- `isModerator` -- moderator privileges
-- `isProfileActivityPrivate` -- profile privacy
+- `optedInNotifications` -- prijava na e-poštna obvestila
+- `displayLabel` -- oznaka po meri
+- `displayName` -- prikazano ime
+- `websiteUrl` -- URL spletnega mesta
+- `groupIds` -- članstva v skupinah
+- `isAdmin` -- skrbniške pravice
+- `isModerator` -- moderatorske pravice
+- `isProfileActivityPrivate` -- zasebnost profila
 
 ---
 ---

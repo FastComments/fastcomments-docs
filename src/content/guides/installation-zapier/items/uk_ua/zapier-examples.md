@@ -1,26 +1,23 @@
----
 ## Приклади Zap'ів
 
-Кілька робочих процесів, які займають кілька хвилин для налаштування.
+Кілька робочих процесів, налаштування яких займає кілька хвилин.
 
-**Отримуйте сповіщення про нові коментарі.** New Comment, then Slack "Send Channel Message" or Discord "Send Channel Message". Відобразіть ім'я коментатора, текст коментаря та URL сторінки у повідомленні. Додайте фільтр домену, щоб сповіщати різний канал для кожного сайту.
+**Отримуйте сповіщення про нові коментарі.** New Comment, потім Slack "Send Channel Message" або Discord "Send Channel Message". Зіставте ім'я коментатора, текст коментаря та URL сторінки з повідомленням. Додайте фільтр домену, щоб надсилати сповіщення на різні канали для різних сайтів.
 
-**Ведіть журнал кожного коментаря.** New Comment, then Google Sheets "Create Spreadsheet Row". Додайте Deleted Comment як другий Zap, який додає рядок з ідентифікатором коментаря, тож лист слугує аудиторським журналом.
+**Ведіть журнал усіх коментарів.** New Comment, потім Google Sheets "Create Spreadsheet Row". Додайте Deleted Comment як другий Zap, який додає рядок з ідентифікатором коментаря, щоб таблиця також слугувала журналом аудиту.
 
-**Надсилайте електронний лист автору, коли коментар схвалено.** Updated Comment with a Zapier filter on Approved is true, then Gmail "Send Email". Оскільки Updated Comment спрацьовує при кожній зміні, фільтр забезпечує, що цей Zap реагує лише на схвалення.
+**Надсилайте листа автору, коли коментар схвалено.** Updated Comment з фільтром Zapier на Approved is true, потім Gmail "Send Email". Оскільки Updated Comment спрацьовує при кожній зміні, саме фільтр забезпечує реакцію цього Zap'а лише на схвалення.
 
-**Додавайте коментаторів у вашу CRM або список розсилки.** New Comment, then HubSpot "Create or Update Contact" or Mailchimp "Add or Update Subscriber" using the commenter email. Дотримуйтесь вашої політики конфіденційності та місцевого законодавства перед додаванням когось до маркетингового списку.
+**Додавайте коментаторів до CRM або списку розсилки.** New Comment, потім HubSpot "Create or Update Contact" або Mailchimp "Add or Update Subscriber" з використанням email коментатора. Дотримуйтеся політики конфіденційності та місцевого законодавства, перш ніж додавати когось до маркетингового списку.
 
-**Створюйте коментар з форми.** Typeform or Google Forms "New Response", then FastComments Create Comment with the page URL ID your site uses for testimonials. Залиште Approved незакресленим, щоб переглянути кожен коментар перед його появою.
+**Створюйте коментар із форми.** Typeform або Google Forms "New Response", потім FastComments Create Comment з ідентифікатором URL сторінки, який ваш сайт використовує для відгуків. Залиште Approved непозначеним, щоб переглядати кожен коментар перед його публікацією.
 
-**Публікуйте оголошення у стрічці.** RSS by Zapier "New Item in Feed", then Create Feed Post with the item's title, content, and link.
+**Публікуйте оголошення у стрічці.** RSS by Zapier "New Item in Feed", потім Create Feed Post із заголовком, вмістом та посиланням елемента.
 
-**Надавайте членам доступ як користувачам SSO.** Memberstack, Memberful, or your own webhook, then Find SSO User followed by Create SSO User in "find or create" mode.
+**Надавайте учасникам статус користувачів SSO.** Memberstack, Memberful або ваш власний webhook, потім Find SSO User, а за ним Create SSO User у режимі "find or create".
 
-**Ескалюйте повідомлені коментарі.** Updated Comment, filtered on a flag count above zero, then Trello "Create Card" or Linear "Create Issue" with the comment id and a link to the moderation page.
+**Ескалуйте повідомлені коментарі.** Updated Comment з фільтром за кількістю прапорців більше нуля, потім Trello "Create Card" або Linear "Create Issue" з ідентифікатором коментаря та посиланням на сторінку модерації.
 
-**Публікуйте сторінки, коли вони стають активними.** WordPress or Ghost "New Post", then Create Page with the post URL, so the page is listed and restricted before the first comment.
+**Публікуйте сторінки в міру їх запуску.** WordPress або Ghost "New Post", потім Create Page з URL публікації, щоб сторінка була в списку та обмежена до першого коментаря.
 
-**Архівуйте видалені коментарі.** Deleted Comment, then Airtable "Create Record" with the full comment for compliance retention.
-
----
+**Архівуйте видалені коментарі.** Deleted Comment, потім Airtable "Create Record" з повним коментарем для зберігання відповідно до вимог.

@@ -1,4 +1,3 @@
----
 ## 参数
 
 | 名称 | 类型 | 必填 | 描述 |
@@ -19,5 +18,3 @@ let packageId: string = "pkg_98765";
 
 const result: APIEmptyResponse = await deleteTenantPackage(tenantId, packageId);
 [inline-code-end]
-
----

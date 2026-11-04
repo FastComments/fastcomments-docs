@@ -25,5 +25,3 @@ api->getApiComments(U("my-tenant-123"), options).then([](pplx::task<std::shared_
     }
 });
 [inline-code-end]
-
----

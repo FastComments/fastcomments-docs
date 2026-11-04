@@ -61,5 +61,3 @@ interface PageMigrationUndoResult {
 #### Tentativi
 
 Se il server che esegue un lavoro di migrazione di pagina si riavvia, il lavoro viene reinserito nella coda e riprende dopo l'ultima migrazione completata. Un lavoro viene provato fino a 3 volte, dopodiché il suo `status` è `failed`.
-
----

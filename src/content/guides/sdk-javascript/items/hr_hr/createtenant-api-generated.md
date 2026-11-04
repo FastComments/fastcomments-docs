@@ -26,5 +26,3 @@ async function run() {
 }
 run();
 [inline-code-end]
-
----

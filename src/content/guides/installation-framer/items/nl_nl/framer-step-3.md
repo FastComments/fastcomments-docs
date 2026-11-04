@@ -1,4 +1,3 @@
----
 Het FastComments-fragment voor Framer Live Comments staat hieronder.
 
 [inline-code-attrs-start title = 'FastComments Framer-specifiek Reactiesfragment'; type = 'html'; isFunctional = false; inline-code-attrs-end]
@@ -82,5 +81,3 @@ FastComments ondersteunt de Framer-editor, dus je zou iets dergelijks moeten zie
 Wanneer je nu je site bekijkt, zou je het reactiegebied moeten zien! In de zijbalk van Framer kun je het widget ook op volledige breedte instellen, indien gewenst.
 
 Houd er rekening mee dat Framer de hoogte van widgets beperkt en geen automatische grootte-aanpassing ondersteunt, daarom hebben we hier gekozen voor de Live Chat-widget omdat deze een vaste hoogte heeft.
-
----

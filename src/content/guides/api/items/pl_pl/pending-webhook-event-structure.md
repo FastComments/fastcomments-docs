@@ -47,5 +47,3 @@ interface PendingWebhookEvent {
     lastError: object | null
 }
 [inline-code-end]
-
----

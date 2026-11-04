@@ -28,5 +28,3 @@ if optResp.isSome:
   let resp = optResp.get()
   echo resp.userId
 [inline-code-end]
-
----

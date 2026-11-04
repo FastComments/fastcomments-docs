@@ -20,5 +20,3 @@ Kursy składają się z różnych szablonów. Chcemy wyświetlać komentarze prz
 </div>
 
 To wszystko! Teraz jesteś gotowy do drugiego kroku.
-
----

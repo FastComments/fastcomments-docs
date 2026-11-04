@@ -18,5 +18,3 @@ if response.isSome:
   let userInfo = response.get()
   discard userInfo
 [inline-code-end]
-
----

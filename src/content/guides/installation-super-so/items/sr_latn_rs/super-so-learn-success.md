@@ -8,5 +8,3 @@ Ovako bi trebalo da izgleda - trebalo bi da možete da označite neki tekst da b
 </div>
 
 Čestitamo na podešavanju FastComments sa Super! Ako ste naišli na Domain Error, ili želite da saznate kako da prilagodite oblast komentara, nastavite sa čitanjem!
-
----

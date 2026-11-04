@@ -1,4 +1,3 @@
----
 Τα σχόλια καθαυτά δεν συνδέονται με έναν συγκεκριμένο domain.
 
 Συνδέονται με τον λογαριασμό σας, και το <a href="/guide-customizations-and-configuration.html#url-id" target="_blank">urlId</a> που παρέχεται.
@@ -10,5 +9,3 @@
 λειτουργεί επίσης όπως αναμένεται.
 
 [Μπορείτε να βρείτε ένα παράδειγμα σε αυτή την ανάρτηση ιστολογίου](https://blog.fastcomments.com/(2-12-2020)-using-fastcomments-in-multiple-places-on-the-same-page.html).
-
----

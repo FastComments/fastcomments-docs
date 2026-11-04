@@ -25,5 +25,3 @@
     <div class="title">Пустая область для кода</div>
     <img class="screenshot-image" src="/images/installation-guides/squarespace-step-1-4-code-area.png" alt="Empty Code Area" />
 </div>
-
----

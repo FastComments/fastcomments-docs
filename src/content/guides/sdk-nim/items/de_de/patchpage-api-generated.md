@@ -1,4 +1,3 @@
----
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
@@ -24,5 +23,3 @@ let (response, httpResponse) = client.patchPage(
 if response.isSome:
   let resp = response.get()
 [inline-code-end]
-
----

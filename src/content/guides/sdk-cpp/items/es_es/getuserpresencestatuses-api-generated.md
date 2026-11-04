@@ -26,5 +26,3 @@ api->getUserPresenceStatuses(tenantId, urlIdWS, userIds)
         }
     });
 [inline-code-end]
-
----

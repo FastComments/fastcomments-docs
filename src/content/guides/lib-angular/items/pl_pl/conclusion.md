@@ -1,4 +1,3 @@
----
 ## Potrzebujesz pomocy?
 
 Jeśli napotkasz jakiekolwiek problemy lub masz pytania dotyczące biblioteki Angular, prosimy:
@@ -9,5 +8,3 @@ Jeśli napotkasz jakiekolwiek problemy lub masz pytania dotyczące biblioteki An
 ## Współtworzenie
 
 Wkład jest mile widziany! Odwiedź [repozytorium na GitHubie](https://github.com/FastComments/fastcomments-angular), aby zapoznać się z wytycznymi dotyczącymi wkładu.
-
----

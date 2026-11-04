@@ -1,4 +1,3 @@
----
 FastComments pruža RSS feedove koji vam omogućuju da se pretplatite na svoje komentare pomoću bilo koje aplikacije za čitanje RSS-a.
 
 Vaš RSS feed sadrži:
@@ -11,5 +10,3 @@ Vaš RSS feed sadrži:
 Feed je dostupan u RSS 2.0 formatu, koji je kompatibilan sa svim glavnim RSS čitačima.
 
 RSS feed se ažurira u stvarnom vremenu kako se novi komentari dodaju na vašu stranicu. Feed uključuje metapodatke koji pokazuju kada je zadnji put ažuriran, što omogućuje RSS čitačima da učinkovito provjere ima li novog sadržaja.
-
----

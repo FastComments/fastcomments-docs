@@ -9,5 +9,3 @@ For at tilføje moderatorer, se [den tilsvarende dokumentation](/guide-moderatio
 ### En bemærkning om godkendelse
 
 Dine brugere leder måske efter et sted at indtaste deres adgangskode. FastComments bruger "magic links" til login - så der kræves ingen adgangskoder.
-
----

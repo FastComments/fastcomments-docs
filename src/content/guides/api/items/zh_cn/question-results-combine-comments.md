@@ -113,5 +113,3 @@ interface QuestionResultsCombineCommentsResponse {
 - 当指定 `forceRecalculate` 时，费用始终为 `10`，而不是通常的 `2`。
 - 如果缓存过期并重新计算数据，且未指定 `forceRecalculate`，费用仍然是固定的 `2`。
 - 这是为了鼓励使用缓存。
-
----

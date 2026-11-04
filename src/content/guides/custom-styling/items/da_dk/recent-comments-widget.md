@@ -100,5 +100,3 @@ Widget'en gengives med følgende HTML-struktur:
     box-shadow: none !important;
 }
 [inline-code-end]
-
----

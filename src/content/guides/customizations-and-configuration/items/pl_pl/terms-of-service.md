@@ -19,5 +19,3 @@ Przejdź do strony dostosowywania widżetu i włącz pole wyboru „Wymagaj akce
 - Gdy użytkownik akceptuje TOS, data jest zapisywana w jego profilu użytkownika (per-tenant)
 - Jeśli ustawisz datę „Ostatniej aktualizacji”, która jest późniejsza niż data akceptacji użytkownika, będzie on musiał ponownie zaakceptować
 - Dla anonimowych użytkowników, których nie można śledzić, pole wyboru pojawia się przy każdym wysyłaniu komentarza
-
----

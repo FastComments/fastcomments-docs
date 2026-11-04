@@ -21,5 +21,3 @@ Które z nich jest odpowiednie dla Ciebie?
 
 - Twoje grupy zawierają konkretne strony.
 - Na przykład, użytkownicy w grupie "Strony publiczne" nigdy nie powinni widzieć artykułów z grupy "Ściśle tajne".
-
----

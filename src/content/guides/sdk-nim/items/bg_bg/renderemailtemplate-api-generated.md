@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Име | Тип | Задължително | Описание |
@@ -22,5 +21,3 @@ if responseOpt.isSome:
   discard response
 discard httpResponse
 [inline-code-end]
-
----

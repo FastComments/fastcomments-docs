@@ -1,4 +1,3 @@
----
 次に、以下のコードスニペットをコピーできます（スニペット右上のコピー ボタンを使用してください）:
 
 [inline-code-attrs-start title = 'Squarespace ブログのコメントコード'; type = 'html'; isFunctional = false; inline-code-attrs-end]
@@ -32,5 +31,3 @@
     <div class="title">貼り付けて保存</div>
     <img class="screenshot-image" src="/images/installation-guides/squarespace-step-2-1-add-code-and-save.png" alt="貼り付けて保存" />
 </div>
-
----

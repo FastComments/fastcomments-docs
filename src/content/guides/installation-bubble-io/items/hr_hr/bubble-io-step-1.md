@@ -6,5 +6,3 @@ Prvo, navigirajte do stranice/rasporeda na koji želite dodati FastComments. U B
 </div>
 
 HTML element omogućuje nam izravno ugrađivanje FastComments widgeta u vašu Bubble aplikaciju.
-
----

@@ -23,5 +23,3 @@ if banStatusOpt.isSome:
   let banStatus = banStatusOpt.get()
   echo banStatus
 [inline-code-end]
-
----

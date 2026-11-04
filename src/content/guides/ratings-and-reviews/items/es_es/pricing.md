@@ -1,4 +1,3 @@
----
 Los precios se basan en la tarificación de comentarios; es decir, se le factura por valoraciones y reseñas de la misma manera que por comentarios, según su paquete.
 
 Se le factura (en Flex) o se le limita (en planes fijos) según lo siguiente:
@@ -10,5 +9,3 @@ Se le factura (en Flex) o se le limita (en planes fijos) según lo siguiente:
 - Uso de la API (el uso de créditos para cada llamada a la API está incluido en la documentación correspondiente).
 
 Cuando los resultados se agregan, ya sea a través de la API o mediante los widgets de resumen, también se le factura.
-
----

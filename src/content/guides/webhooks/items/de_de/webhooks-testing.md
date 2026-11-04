@@ -1,24 +1,24 @@
-Die neuen und bearbeitenden Webhook‑Seiten haben einen `Send Test Payload`‑Button, der eine Anfrage an die aktuell im Formular angegebene URL sendet, unabhängig davon, ob sie gespeichert wurde. Die **Create**‑ und **Update**‑Events senden ein Dummy‑WebhookComment‑Objekt, während beim Testen von **Delete** ein Dummy‑Request‑Body mit nur einer ID gesendet wird.
+Die neuen Webhook-Seiten zum Erstellen und Bearbeiten haben eine `Send Test Payload`-Schaltfläche, die eine Anfrage an die aktuell im Formular befindliche URL sendet, unabhängig davon, ob sie gespeichert wurde oder nicht. Die Create- und Update-Events senden ein Dummy-WebhookComment-Objekt, während beim Testen von Delete ein Dummy-Request-Body mit nur einer ID gesendet wird.
 
-## Verifying Payloads
+## Verifizierung von Payloads
 
-Beim Testen Ihrer Webhook‑Integration sollten Sie überprüfen, dass die eingehenden Anfragen die folgenden Header enthalten:
+Beim Testen Ihrer Webhook-Integration sollten Sie überprüfen, ob die eingehenden Anfragen die folgenden Header enthalten:
 
-1. **`X-FastComments-Timestamp`** – Unix‑Zeitstempel (Sekunden)  
-2. **`X-FastComments-Signature`** – HMAC‑SHA256‑Signatur  
+1. **`X-FastComments-Timestamp`** - Unix-Zeitstempel (Sekunden)
+2. **`X-FastComments-Signature`** - HMAC-SHA256-Signatur
 
-Webhooks, die vor der Einführung des Signaturschemas erstellt wurden, erhalten außerdem einen **`token`**‑Header, der Ihr API‑Secret enthält. Neue Webhooks erhalten diesen nicht.
+Webhooks, die vor Einführung des Signaturschemas erstellt wurden, erhalten außerdem einen **`token`**-Header, der Ihr API-Secret enthält. Neue Webhooks nicht.
 
-Verwenden Sie die HMAC‑Signatur‑Verifizierung, um sicherzustellen, dass Payloads authentisch sind.
+Verwenden Sie die HMAC-Signaturverifizierung, um sicherzustellen, dass die Payloads authentisch sind.
 
-## Testing Tools
+## Test-Tools
 
-Sie können Werkzeuge wie [webhook.site](https://webhook.site) oder [ngrok](https://ngrok.com) verwenden, um eingehende Webhook‑Payloads während der Entwicklung zu inspizieren.
+Sie können Tools wie [webhook.site](https://webhook.site) oder [ngrok](https://ngrok.com) verwenden, um eingehende Webhook-Payloads während der Entwicklung zu inspizieren.
 
-## Event Types
+## Event-Typen
 
-- **Create Event**: Ausgelöst, wenn ein neuer Kommentar erstellt wird.  
-- **Update Event**: Ausgelöst, wenn ein Kommentar bearbeitet wird.  
-- **Delete Event**: Ausgelöst, wenn ein Kommentar gelöscht wird.  
+- **Create-Event**: Wird ausgelöst, wenn ein neuer Kommentar erstellt wird.
+- **Update-Event**: Wird ausgelöst, wenn ein Kommentar bearbeitet wird.
+- **Delete-Event**: Wird ausgelöst, wenn ein Kommentar gelöscht wird.
 
-Jeder Webhook ist an ein Ereignis und eine HTTP‑Methode (POST, PUT oder DELETE) gebunden. Jedes Ereignis enthält die vollständigen Kommentardaten im Request‑Body (siehe [Data Structures](/guide-webhooks.html#webhooks-structures) für das Payload‑Format).
+Jeder Webhook ist an ein Event und eine HTTP-Methode (POST, PUT oder DELETE) gebunden. Jedes Event enthält die vollständigen Kommentardaten im Request-Body (siehe [Datenstrukturen](/guide-webhooks.html#webhooks-structures) für das Payload-Format).

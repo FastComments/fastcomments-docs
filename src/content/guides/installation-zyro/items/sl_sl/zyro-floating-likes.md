@@ -1,4 +1,3 @@
----
 FastComments podpira tudi pripomoček Page Reacts (znan tudi kot lebdeči gumb »Všeč mi je«) za Zyro.
 
 Lahko ga vidite v spodnjem desnem kotu te strani!
@@ -31,5 +30,3 @@ Lahko ga vidite v spodnjem desnem kotu te strani!
 4. Izberite Integracije.
 5. Dodajte novo kodo na *konec* polja `Custom code` in objavite svoje spletno mesto.
 6. Widgeta ne boste videli v načinu predogleda, se bo pa prikazal na objavljeni različici spletnega mesta.
-
----

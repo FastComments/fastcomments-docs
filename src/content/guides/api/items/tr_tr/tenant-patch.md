@@ -1,21 +1,21 @@
 [api-resource-header-start name = 'Tenant'; route = 'PATCH /api/v1/tenants/:id'; creditsCost = 1; api-resource-header-end]
 
-This API endpoint provides the ability to update a `Tenant` by `id`.
+Bu API endpoint'i, bir `Tenant` kaydını `id` üzerinden güncelleme yeteneği sağlar.
 
-Updating a `Tenant` has the following restrictions:
+Bir `Tenant` güncellemenin aşağıdaki kısıtlamaları vardır:
 
-- The following values may not be updated:
+- Aşağıdaki değerler güncellenemez:
   - `hasFlexPricing` 
   - `lastBillingIssueReminderDate` 
   - `flexLastBilledAmount`
   - `managedByTenantId`
-- The `signUpDate` may not be in the future.
-- The `name` may not be longer than `200 characters`.
-- The `email` may not be longer than `300 characters`.
-- The `email` must be unique across all of FastComments.com tenants.
-- When setting `billingInfoValid` to `true`, `billingInfo` must be provided in the same request.
-- You may not update the `packageId` associated with your own tenant.
-- You may not update the `paymentFrequency` associated with your own tenant.
+- `signUpDate` gelecekte bir tarih olamaz.
+- `name` değeri `200 karakterden` uzun olamaz.
+- `email` değeri `300 karakterden` uzun olamaz.
+- `email`, FastComments.com üzerindeki tüm tenant'lar arasında benzersiz olmalıdır.
+- `billingInfoValid` değerini `true` olarak ayarlarken, aynı istekte `billingInfo` sağlanmalıdır.
+- Kendi tenant'ınızla ilişkili `packageId` değerini güncelleyemezsiniz.
+- Kendi tenant'ınızla ilişkili `paymentFrequency` değerini güncelleyemezsiniz.
 
 [inline-code-attrs-start title = 'Tenant PATCH cURL Örneği'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -46,5 +46,3 @@ interface TenantPatchResponse {
     reason?: string
 }
 [inline-code-end]
-
----

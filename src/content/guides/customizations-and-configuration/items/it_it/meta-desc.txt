@@ -1,3 +1,1 @@
----
 Configura il widget dei commenti end to end: a quale pagina appartiene un thread, CSS e font personalizzati, modalità scura, sovrascritture di testo, impostazioni predefinite di moderazione e SSO.
----

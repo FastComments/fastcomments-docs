@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Име | Тип | Обавезно | Опис |
@@ -28,5 +27,3 @@ async function runExample() {
 
 runExample();
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 Con FastComments, los usuarios pueden marcar (flag) comentarios, lo que incrementa un contador interno asociado a ese comentario.
 
 Los moderadores pueden ver los comentarios marcados y el recuento de banderas correspondiente de cada comentario a través de la página Moderar comentarios usando el filtro "Marcados".
@@ -18,5 +17,3 @@ Desde la página Moderar comentarios, los moderadores pueden desmarcar comentari
 Si el comentario fue ocultado debido al número de veces que fue marcado, al desmarcarlo el comentario volverá a aparecer.
 
 Volver a aprobar un comentario que fue desaprobado (oculto) por haber sido marcado también restablecerá el recuento de banderas asociado a ese comentario.
-
----

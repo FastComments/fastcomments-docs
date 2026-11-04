@@ -1,4 +1,3 @@
----
 管理者向けに、コメントモデレーションページの上部に「Add Moderators」ボタンがあります。
 
 [app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=3&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = '.moderation-settings-options'; alt='コメントモデレーションページの上部にあるボタンの列（Add Moderators ボタンを含む）'; title='Comment Moderation Setting Buttons' app-screenshot-end]
@@ -18,4 +17,3 @@
 招待リンクがモデレーターに送信され、クリックすると自動的にログインできます。将来的にログインしたい場合は、<a href="https://fastcomments.com/auth/login" target="_blank">ログインページ</a>にアクセスし、以前に提供した名前／メールアドレスを入力すれば、ログイン用のリンクが送信されます。
 
 ログアウトしない限り、30 日間ログイン状態が維持されます。
----

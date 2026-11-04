@@ -1,4 +1,3 @@
----
 Se dispara cuando se elimina un comentario.
 
 ### Contexto que recibe el agente
@@ -20,5 +19,3 @@ Se dispara cuando se elimina un comentario.
 ### Nota sobre el coste de operación
 
 Si tienes un sitio con un alto volumen de eliminaciones (moderación humana intensiva), este disparador puede activarse con frecuencia.
-
----

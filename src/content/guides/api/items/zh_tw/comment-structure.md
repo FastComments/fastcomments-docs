@@ -1,4 +1,3 @@
----
 一個 `Comment` 物件代表使用者留下的一則評論。
 
 父評論與子評論之間的關聯是透過 `parentId` 定義的。
@@ -160,5 +159,3 @@ interface CommentHashTag {
     retain?: boolean
 }
 [inline-code-end]
-
----

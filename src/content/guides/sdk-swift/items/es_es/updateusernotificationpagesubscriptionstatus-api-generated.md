@@ -1,4 +1,3 @@
----
 Habilitar o deshabilitar las notificaciones para una página. Cuando los usuarios están suscritos a una página, se crean notificaciones para los nuevos comentarios raíz, y también
 
 ## Parámetros
@@ -41,5 +40,3 @@ PublicAPI.updateUserNotificationPageSubscriptionStatus(tenantId: tenantId, urlId
     }
 }
 [inline-code-end]
-
----

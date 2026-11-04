@@ -31,5 +31,3 @@ DefaultAPI.updateModerator(tenantId: tenantId, id: id, updateModeratorBody: upda
     }
 }
 [inline-code-end]
-
----

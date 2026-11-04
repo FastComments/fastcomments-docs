@@ -8,5 +8,3 @@ Jeśli napotkasz jakiekolwiek problemy lub będziesz mieć pytania dotyczące bi
 ## Współtworzenie
 
 Zachęcamy do współtworzenia! Prosimy odwiedzić [repozytorium na GitHub](https://github.com/FastComments/fastcomments-11ty) po wytyczne dotyczące wkładu.
-
----

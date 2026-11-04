@@ -6,5 +6,3 @@
     <div class="title">Отворите уређивач</div>
     <img class="screenshot-image" src="/images/installation-guides/framer-step-1-open-editor.png" alt="Отворите уређивач" />
 </div>
-
----

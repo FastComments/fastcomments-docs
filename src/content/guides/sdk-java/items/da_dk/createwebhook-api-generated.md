@@ -1,6 +1,4 @@
-Subscribes a URL to a comment event (REST hook subscribe). Subscribing the same URL to the same
-event and domain again returns the existing subscription. Deliveries are HMAC signed, see the
-webhooks guide; the legacy `token` header is never sent to API subscriptions.
+Tilmelder en URL til en kommentarbegivenhed (REST hook-tilmelding). Tilmelding af samme URL til samme begivenhed og domæne igen returnerer den eksisterende tilmelding. Leveringer er HMAC-signeret, se webhooks-guiden; den ældre `token`-header sendes aldrig til API-tilmeldinger.
 
 ## Parametre
 

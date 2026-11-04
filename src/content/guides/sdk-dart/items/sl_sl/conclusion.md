@@ -8,5 +8,3 @@
 ## Prispevanje
 
 Prispevki so dobrodošli! Obiščite [GitHub repozitorij](https://github.com/FastComments/fastcomments-dart) za smernice za prispevanje.
-
----

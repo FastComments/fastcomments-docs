@@ -28,5 +28,3 @@ Ab 2023 akzeptiert das Feld `URL ID` in der Widget‑Anpassung nun auch Muster! 
 
 1. Wenn Ihre Seite Hash‑Parameter hat (wie example.com#page-1) – wird dies standardmäßig Teil der URL ID.
 2. Während Migrationen, zum Beispiel von WordPress zu Gatsby, müssen Sie möglicherweise die URL‑ID‑Kommentarwerte nach der ersten Migration migrieren. Dafür kontaktieren Sie uns bitte.
-
----

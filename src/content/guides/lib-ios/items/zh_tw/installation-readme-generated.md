@@ -1,12 +1,6 @@
-Add FastCommentsUI to your project using Swift Package Manager.
-
-使用 Swift Package Manager 將 FastCommentsUI 添加到您的專案中。
-
-In Xcode: **File > Add Package Dependencies**, then enter the repository URL.
+使用 Swift Package Manager 將 FastCommentsUI 加入您的專案。
 
 在 Xcode 中：**File > Add Package Dependencies**，然後輸入儲存庫 URL。
-
-Or add it to your `Package.swift`:
 
 或將其加入您的 `Package.swift`：
 
@@ -16,9 +10,7 @@ dependencies: [
 ]
 ```
 
-Then add the product to your target:
-
-接著將產品加入您的目標：
+然後將該產品加入您的 target：
 
 ```swift
 .target(
@@ -28,8 +20,6 @@ Then add the product to your target:
     ]
 )
 ```
-
-Import both modules where needed:
 
 在需要的地方匯入兩個模組：
 

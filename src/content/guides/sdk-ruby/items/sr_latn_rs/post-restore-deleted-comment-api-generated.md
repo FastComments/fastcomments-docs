@@ -34,5 +34,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Greška pri pozivanju ModerationApi->post_restore_deleted_comment: #{e}"
 end
 [inline-code-end]
-
----

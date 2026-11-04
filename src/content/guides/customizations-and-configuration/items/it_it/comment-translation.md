@@ -1,4 +1,3 @@
----
 Per impostazione predefinita, FastComments traduce l'interfaccia del widget (pulsanti, etichette, messaggi di errore) nella lingua del visualizzatore, ma i commenti vengono mostrati esattamente come sono stati scritti.
 
 La Traduzione dei Commenti aggiunge la traduzione dei commenti stessi, così una comunità che scrive in più di una lingua può leggere ogni commento nella propria lingua.
@@ -19,5 +18,3 @@ La traduzione è un'impostazione lato server. Passare `commentTranslation` nella
 Ogni commento viene tradotto al massimo una volta per lingua di destinazione e il risultato viene memorizzato con il commento, così un commento letto da mille parlanti spagnolo viene tradotto una sola volta. Se l'autore o un moderatore modifica il commento, la traduzione memorizzata viene scartata e il commento viene tradotto nuovamente alla visualizzazione successiva. Il testo tradotto passa attraverso le stesse regole di sanitizzazione e di collegamento del commento originale. I commenti troppo lunghi, o la cui lingua non può essere rilevata, vengono mostrati non tradotti.
 
 L'utilizzo viene fatturato come token LLM allo stesso tasso di [AI Agents](/guide-ai-agents.html#plans-and-eligibility) e appare nello stesso punto nei dettagli di fatturazione.
-
----

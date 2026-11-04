@@ -32,5 +32,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Σφάλμα κατά την κλήση του ModerationApi->get_moderation_comment_text: #{e}"
 end
 [inline-code-end]
-
----

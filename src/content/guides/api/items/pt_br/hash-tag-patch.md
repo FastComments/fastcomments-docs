@@ -31,5 +31,3 @@ interface HashTagPatchResponse {
     hashTag?: HashTag; // Retornamos a hashtag completa atualizada em caso de sucesso.
 }
 [inline-code-end]
-
----

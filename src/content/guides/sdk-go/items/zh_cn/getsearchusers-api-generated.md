@@ -1,4 +1,3 @@
----
 ## 参数
 
 | 名称   | 类型   | 位置   | 必填 | 描述 |
@@ -40,5 +39,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetSearchUsers`: %v\n", resp)
 }
 [inline-code-end]
-
----

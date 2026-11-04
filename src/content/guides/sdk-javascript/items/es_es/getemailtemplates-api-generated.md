@@ -20,5 +20,3 @@ async function fetchEmailTemplates() {
   const templatesWithoutSkip: GetEmailTemplatesResponse = await getEmailTemplates(tenantId);
 }
 [inline-code-end]
-
----

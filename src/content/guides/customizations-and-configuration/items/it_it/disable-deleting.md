@@ -1,4 +1,3 @@
----
 Per impostazione predefinita, FastComments consentirà agli utenti di eliminare i propri commenti.
 
 Tuttavia, è possibile impedirlo.
@@ -9,5 +8,3 @@ Nella pagina di personalizzazione del widget, vedere l'opzione "Disabilita elimi
 
 - Questo influisce solo sui commentatori regolari e non sui moderatori o amministratori, che potranno ancora eliminare.
 - Questo influenzerà anche le integrazioni API quando viene passato `contextUserId`. 
-
----

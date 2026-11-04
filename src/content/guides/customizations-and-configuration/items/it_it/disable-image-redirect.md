@@ -5,5 +5,3 @@ Per impostazione predefinita, FastComments consente agli utenti di caricare imma
 [code-example-start config = {disableImageRedirect: true}; linesToHighlight = [6]; title = 'Disable Image Redirect'; code-example-end]
 
 Se non prevedi di intercettare tu stesso il clic sull'immagine (vedi [onImageClicked](#callbacks)), consigliamo di combinare questa impostazione con qualche regola di stile per rimuovere l'aspetto che l'immagine sia cliccabile.
-
----

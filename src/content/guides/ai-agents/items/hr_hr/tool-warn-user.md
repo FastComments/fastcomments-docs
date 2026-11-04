@@ -1,30 +1,30 @@
-The Warn tool šalje privatnu DM opomenu korisniku u vezi određenog komentara, a istovremeno bilježi opomenu u zajedničkoj [agent memory](#agent-memory-system). Ta dva zapisa su atomska - korisnik nikada ne vidi opomenu koja nije također zabilježena.
+Alat Warn šalje privatnu DM upozorenje korisniku u vezi s određenim komentarom, a istovremeno bilježi upozorenje u zajedničkoj [memoriji agenta](#agent-memory-system). Ta dva zapisa su atomična - korisnik nikada ne vidi upozorenje koje nije i zabilježeno.
 
 ### Zašto postoji
 
-Politika eskalacije platforme je **prvo opomeni, zabrani samo ako korisnik ponovo prekrši pravila**. The Warn tool je ono što tu politiku čini provedivom: daje korisniku priliku da se ispravi, a zapis o opomeni je ono što budući agent pronađe kada pretražuje memoriju prije nego što razmotri zabranu.
+Politika eskalacije platforme je **prvo upozorenje, ban samo ako korisnik ponavlja prekršaj**. Alat Warn je ono što tu politiku čini izvedivom: daje korisniku priliku da ispravi ponašanje, a zapis upozorenja je ono što budući agent pronalazi kada pretražuje memoriju prije razmatranja bana.
 
-### Što ide u opomenu
+Alat također uklanja duplikate: ako je agent već izdao upozorenje istom korisniku za isti komentar, drugo upozorenje nema učinka. Tako LLM koji petlja ili ponovno aktivira na istom komentar ne može zasipati korisnika višestrukim upozorenjima.
 
-Kratka poruka (ograničena na 1000 znakova) koja se korisniku prikazuje kao DM. Snažne opomene su:
+### Što ide u upozorenje
 
-- **Specific** - "Personal attacks on named users are not allowed in this community" bolje je od "your comment was flagged."
-- **Short** - najviše nekoliko rečenica.
-- **Actionable** - recite korisniku što treba promijeniti. "Please edit your comment to remove the named user, or it will be removed."
+Kratka poruka (ograničena na 1000 znakova) koja se korisniku prikazuje kao DM. Snažna upozorenja su:
 
-Poruku sami ne pišete; agent to radi, na temelju [initial prompt](#personality-prompt) i [community guidelines](#community-guidelines). Vaš zadatak je napisati prompt koji proizvodi dobre opomene.
+- **Specifična** - "Osobni napadi na imenovane korisnike nisu dopušteni u ovoj zajednici" bolje je od "vaš komentar je označen."
+- **Kratka** - najviše nekoliko rečenica.
+- **Izvediva** - recite korisniku što treba promijeniti. "Molimo uredite svoj komentar da uklonite imenovanog korisnika, ili će biti uklonjen."
 
-### Kada ga dozvoliti
+Poruku ne pišete sami; piše je agent, na temelju [početnog prompta](#personality-prompt) i [smjernica zajednice](#community-guidelines). Vaš je zadatak napisati prompt koji proizvodi dobra upozorenja.
 
-Za bilo kojeg agenta u stilu moderiranja. Predložak Moderator omogućuje ga prema zadanim postavkama.
+### Kada ga omogućiti
+
+Za svaki agent moderacijskog tipa. Moderator predložak ga omogućuje prema zadanim postavkama.
 
 ### Odobrenja
 
-Rjeđe se stavlja iza odobrenja nego [Ban user](#tool-ban-user). Vrijedi postaviti odobrenje tijekom prvih tjedana rada agenta kako biste mogli uočiti loše opomene prije nego što se pošalju, ali većina operatera ukloni odobrenje kad agent počne davati pouzdane rezultate.
+Rjeđe ograničavano od [Ban user](#tool-ban-user). Vrijedi ga ograničiti tijekom prvih tjedana života agenta kako biste mogli uočiti loša upozorenja prije nego što izađu, ali većina operatora uklanja ograničenje kada agent proizvodi pouzdane rezultate.
 
 ### Vidi također
 
 - [Ban user](#tool-ban-user) - sljedeći korak u eskalaciji.
-- [Agent Memory System](#agent-memory-system) - gdje se pohranjuju zapisi o opomenama.
-
----
+- [Agent Memory System](#agent-memory-system) - gdje žive zapisi upozorenja.

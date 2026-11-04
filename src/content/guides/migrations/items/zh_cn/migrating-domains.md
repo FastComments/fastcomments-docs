@@ -19,5 +19,3 @@ FastComments 为您提供了一种自动化方式，将评论跨域迁移。
 ### 通过 API 迁移域
 
 也可以使用 [`POST /api/v1/pages/migrations`](/guide-api.html#pages-migrations-post) 将域迁移，`type` 设置为 `domain`。进度可通过 [`GET /api/v1/batch-jobs/:id`](/guide-api.html#batch-job-get-by-id) 获取，迁移可在 90 天内撤销。
-
----

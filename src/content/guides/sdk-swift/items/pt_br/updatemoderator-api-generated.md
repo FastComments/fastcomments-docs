@@ -1,4 +1,3 @@
----
 ## Parâmetros
 
 | Name | Type | Location | Required | Description |
@@ -32,5 +31,3 @@ DefaultAPI.updateModerator(tenantId: tenantId, id: id, updateModeratorBody: upda
     }
 }
 [inline-code-end]
-
----

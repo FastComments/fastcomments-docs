@@ -1,4 +1,3 @@
----
 [api-resource-header-start name = 'EmailTemplate'; route = 'GET /api/v1/email-templates'; creditsCost = 1; api-resource-header-end]
 
 Questa API utilizza la paginazione, fornita dal parametro di query `page`. Gli EmailTemplates vengono restituiti in pagine da `100`, ordinati per `createdAt` e poi per `id`.
@@ -30,5 +29,3 @@ interface EmailTemplatesResponse {
     emailTemplates: EmailTemplate[]
 }
 [inline-code-end]
-
----

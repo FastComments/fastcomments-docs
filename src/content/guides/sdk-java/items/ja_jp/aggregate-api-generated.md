@@ -1,4 +1,3 @@
----
 ドキュメントをグループ化して（groupBy が指定されている場合）複数の操作を適用して集計します。
 異なる操作（例: sum、countDistinct、avg など）がサポートされています。
 
@@ -58,5 +57,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

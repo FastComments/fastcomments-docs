@@ -1,27 +1,27 @@
-Bulk user info for a tenant. Given userIds, return display info from User / SSOUser.  
-Used by the comment widget to enrich users that just appeared via a presence event.  
-No page context: privacy is enforced uniformly (private profiles are masked).
+Informações em lote de usuários para um tenant. Dados os userIds, retorna informações de exibição de User / SSOUser.
+Usado pelo widget de comentários para enriquecer usuários que acabaram de aparecer via um evento de presença.
+Sem contexto de página: a privacidade é aplicada de forma uniforme (perfis privados são mascarados).
 
-## Parameters
+## Parâmetros
 
-| Nome | Tipo | Localização | Obrigatório | Descrição |
-|------|------|-------------|-------------|-----------|
-| tenantId | string | path | Yes |  |
-| ids | string | query | Yes | IDs de usuário delimitados por vírgula. |
+| Nome | Tipo | Local | Obrigatório | Descrição |
+|------|------|-------|-------------|-----------|
+| tenantId | string | path | Sim |  |
+| ids | string | query | Sim | userIds delimitados por vírgula. |
 
-## Response
+## Resposta
 
 Retorna: `PageUsersInfoResponse`
 
-## Example
+## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo getUsersInfo'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo de getUsersInfo'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
 
 final api_instance = PublicApi();
 final tenantId = tenantId_example; // String | 
-final ids = ids_example; // String | Comma-delimited userIds.
+final ids = ids_example; // String | userIds delimitados por vírgula.
 
 try {
     final result = api_instance.getUsersInfo(tenantId, ids);

@@ -1,4 +1,3 @@
----
 ## 參數
 
 | 名稱 | Type | Location | 必要 | 說明 |
@@ -31,5 +30,3 @@ DefaultAPI.getTenant(tenantId: tenantId, id: id) { (response, error) in
     }
 }
 [inline-code-end]
-
----

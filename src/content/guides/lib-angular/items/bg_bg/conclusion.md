@@ -8,5 +8,3 @@
 ## Принос
 
 Приносите са добре дошли! Моля, посетете [хранилището в GitHub](https://github.com/FastComments/fastcomments-angular) за указания относно приноса.
-
----

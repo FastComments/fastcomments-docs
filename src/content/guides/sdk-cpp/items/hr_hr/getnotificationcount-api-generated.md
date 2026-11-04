@@ -25,5 +25,3 @@ api->getNotificationCount(tenantId, options)
         }
     });
 [inline-code-end]
-
----

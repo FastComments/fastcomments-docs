@@ -53,5 +53,3 @@ Tri ili četiri ciklusa dorade + replaya obično su dovoljna da se dobije stabil
 ### Izravna alternativa za uređivanje
 
 Ne morate koristiti Doradi Upit - možete također jednostavno urediti agenta na glavnom obrascu za uređivanje. Jedina prednost Doradi Upit je što prikvači određeni neuspjeli slučaj pa ne izgubite iz vida što popravljate.
-
----

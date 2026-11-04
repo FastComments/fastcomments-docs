@@ -1,10 +1,10 @@
-For Step 2 we have to copy our code snippet. Check that line 50 does not say "demo" - you'll want to ensure this has your tenant id. It should be populated for you.
+עבור שלב 2 עלינו להעתיק את קטע הקוד שלנו. ודאו ששורה 50 אינה אומרת "demo" - תרצו לוודא ששם מופיע מזהה הדייר (tenant id) שלכם. הוא אמור להיות מאוכלס עבורכם אוטומטית.
 
-עכשיו נעתיק את קטע הקוד של FastComments הספציפי ל-ThriveCart-Learn.
+כעת נעתיק את קטע הקוד של FastComments הייחודי ל-ThriveCart-Learn.
 
-הוא די גדול, כי האינטגרציה עם ThriveCart כוללת הרבה תכונות, אז פשוט לחצו על כפתור ה-Copy בפינה הימנית העליונה של קטע הקוד:
+הוא די גדול, מכיוון שהאינטגרציה עם ThriveCart כוללת הרבה תכונות, ולכן פשוט לחצו על כפתור ההעתקה בפינה השמאלית העליונה של קטע הקוד:
 
-[inline-code-attrs-start title = 'קוד תגובות ThriveCart Learn+'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'קוד תגובות עבור ThriveCart Learn+'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
 <div id="fastcomments-widget"></div>
@@ -17,32 +17,29 @@ For Step 2 we have to copy our code snippet. Check that line 50 does not say "de
             let isAuthenticated = false;
             let profileLink = document.querySelector('.thrivecart-courses-header-profile-link');
             if (!profileLink) {
-                profileLink = document.querySelector('.thrivecart-courses-header-profile'); // המחלקה שונה במצב תצוגה מקדימה.
+                profileLink = document.querySelector('.thrivecart-courses-header-profile'); // המחלקה שונה בתצוגה מקדימה.
             }
-            // broad email input field selector incase ThriveCart changes id.
-            // בוחר שדה אימייל רחב במקרה ש-ThriveCart ישנה את ה-id.
+            // סלקטור רחב לשדה קלט האימייל למקרה ש-ThriveCart משנה את ה-id.
             const emailInputField = document.querySelector('input[type=email]');
             if (emailInputField && emailInputField.value) {
                 isAuthenticated = true;
                 simpleSSO.email = emailInputField.value;
-            } else if (profileLink && !profileLink.innerText.includes('John Smith')) { // allow preview to work - no email available.
+            } else if (profileLink && !profileLink.innerText.includes('John Smith')) { // מאפשר לתצוגה המקדימה לעבוד - אין אימייל זמין.
                 attemptsRemaining--;
                 if (!attemptsRemaining) {
                     return console.error('Could not load FastComments - could not determine user information (email). Please reach out to FastComments support.');
                 }
                 console.warn('FastComments: No user email found - waiting and trying again.');
-                return setTimeout(tryLoad, attemptsRemaining < 5 ? 3000 : 100); // increase wait time after 5 attempts incase slow internet.
+                return setTimeout(tryLoad, attemptsRemaining < 5 ? 3000 : 100); // מגדילים זמן המתנה אחרי 5 ניסיונות למקרה של אינטרנט איטי.
             }
             if (profileLink) {
-                // use raw "img" query incase ThriveCart changes image class selector.
-                // השתמש בשאילתת 'img' ישירה במקרה ש-ThriveCart תשנה את הסלקטור של מחלקת התמונה.
+                // משתמשים בשאילתת "img" גולמית למקרה ש-ThriveCart משנה את סלקטור המחלקה של התמונה.
                 const avatarImg = profileLink.querySelector('img');
                 if (avatarImg && avatarImg.src) {
                     isAuthenticated = true;
                     simpleSSO.avatar = avatarImg.src;
                 }
-                // use innerText incase ThriveCart changes how profile name is displayed.
-                // השתמש ב-innerText במקרה ש-ThriveCart תשנה את אופן הצגת שם הפרופיל.
+                // משתמשים ב-innerText למקרה ש-ThriveCart משנה את אופן הצגת שם הפרופיל.
                 if (profileLink.innerText) {
                     isAuthenticated = true;
                     simpleSSO.username = profileLink.innerText;
@@ -59,19 +56,17 @@ For Step 2 we have to copy our code snippet. Check that line 50 does not say "de
                 }
                 console.warn('FastComments: No user profile info found - waiting and trying again.');
                 attemptsRemaining--;
-                return setTimeout(tryLoad, attemptsRemaining < 5 ? 3000 : 100); // increase wait time after 5 attempts incase slow internet.
+                return setTimeout(tryLoad, attemptsRemaining < 5 ? 3000 : 100); // מגדילים זמן המתנה אחרי 5 ניסיונות למקרה של אינטרנט איטי.
             }
 
             let url;
             const selectedNavLink = document.querySelector('.tcc-browse-lesson.active a');
 
             if (selectedNavLink) {
-                // sometimes TC uses multiple links the same page, so let's de-dupe them.
-                // לפעמים TC משתמשת בכמה קישורים לאותה עמוד, אז נוסיף הסרה של כפילויות.
+                // לפעמים TC משתמש במספר קישורים לאותו דף, ולכן נסיר כפילויות.
                 url = getPathnameFromUrl(selectedNavLink.href);
             } else {
-                // trim marketing parameters and domain name
-                // חתוך פרמטרים שיווקיים ושם דומיין
+                // מסירים פרמטרים שיווקיים ואת שם הדומיין
                 url = window.location.pathname;
             }
 
@@ -92,12 +87,11 @@ For Step 2 we have to copy our code snippet. Check that line 50 does not say "de
         function getPathnameFromUrl(url) {
             try {
                 const parsedUrl = new URL(url);
-                // trim marketing parameters and domain name
-                // חתוך פרמטרים שיווקיים ושם דומיין
+                // מסירים פרמטרים שיווקיים ואת שם הדומיין
                 return parsedUrl.pathname;
             } catch (error) {
                 console.error("Invalid URL", url, error);
-                return window.location.pathname; // default to current, so at least it works sometimes
+                return window.location.pathname; // ברירת מחדל לנוכחי, כך שלפחות זה עובד לפעמים
             }
         }
 
@@ -105,23 +99,22 @@ For Step 2 we have to copy our code snippet. Check that line 50 does not say "de
 </script>
 [inline-code-end]
 
-Now paste it into the code block on the left in the ThriveCart editor. It should look like this:
+כעת הדביקו אותו לבלוק הקוד משמאל בעורך של ThriveCart. זה אמור להיראות כך:
 
 <div class="screenshot white-bg">
-    <div class="title">קוד נוסף</div>
-    <img class="screenshot-image" src="/images/installation-guides/thrivecart-learn-step-2-1-paste-code.png" alt="קוד נוסף" />
+    <div class="title">הקוד נוסף</div>
+    <img class="screenshot-image" src="/images/installation-guides/thrivecart-learn-step-2-1-paste-code.png" alt="הקוד נוסף" />
 </div>
 
-That's it! Now we just have to publish:
+זהו זה! כעת רק עלינו לפרסם:
 
 <div class="screenshot white-bg">
     <div class="title">פרסום</div>
     <img class="screenshot-image" src="/images/installation-guides/thrivecart-learn-step-2-2-publish.png" alt="פרסום" />
 </div>
 
-זהו! עכשיו אמור להופיע תיבת התגובות בקורס שלך כאשר תציג תצוגה מקדימה, ומשתמשים אמיתיים יוכלו להשאיר תגובות **בלי להתחבר או להזין מחדש את שם המשתמש/האימייל שלהם**.
+זהו זה! כעת אמורה להופיע תיבת התגובות בקורס שלכם בתצוגה המקדימה, ומשתמשים אמיתיים יוכלו להשאיר תגובות **מבלי להתחבר או להזין שוב את שם המשתמש/האימייל שלהם**.
 
-### הערת בדיקה!
+### הערה לבדיקה!
 
-If you have anonymous commenting disabled, which it is by default, you won't be able to leave comments in `Preview` mode as the `John Smith` user. You will get an authentication
-error as the default `John Smith` user has no email. If you want to test, we suggest you use a coupon code and go through your site like an actual user.
+אם הערות אנונימיות מושבתות אצלכם - מה שהוא ברירת המחדל - לא תוכלו להשאיר תגובות במצב `Preview` כמשתמש `John Smith`. תקבלו שגיאת אימות, מכיוון שלמשתמש ברירת המחדל `John Smith` אין אימייל. אם ברצונכם לבדוק, אנו ממליצים להשתמש בקוד קופון ולעבור על האתר שלכם כמו משתמש אמיתי.

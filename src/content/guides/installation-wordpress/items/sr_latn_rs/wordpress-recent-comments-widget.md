@@ -1,31 +1,31 @@
-Vidžet Recent Comments prikazuje najnovije komentare postavljene na celom vašem sajtu. Koristan je u bočnim trakama, podnožjima ili bilo gde želite da istaknete svežu aktivnost kako biste podstakli dalje čitanje.
+Widget Recent Comments prikazuje najnovije komentare objavljene na celom vašem sajtu. Koristan je u bočnim trakama, podnožjima ili bilo gde gde želite da istaknete svežu aktivnost kako biste podstakli dalje čitanje.
 
-## Options
+## Opcije
 
-- **Title** (optional): Naslov koji se prikazuje iznad liste. Podrazumevano je "Recent Comments".
-- **Count** (optional): Koliko komentara će biti prikazano. Opseg 1 do 50. Podrazumevano 5.
+- **Title** (opciono): Naslov koji se prikazuje iznad liste. Podrazumevano je "Recent Comments".
+- **Count** (opciono): Koliko komentara prikazati. Opseg od 1 do 50. Podrazumevano je 5.
 
-## How to Add It
+## Kako da ga dodate
 
-### Inside a Post or Page
+### Unutar posta ili stranice
 
-U uređivaču blokova dodajte blok **Shortcode** i nalepite:
+U blok editoru dodajte blok **Shortcode** i nalepite:
 
 [inline-code-attrs-start title = 'Shortcode za Recent Comments'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 [fastcomments_recent_comments count="5"]
 [inline-code-end]
 
-The `count` attribute accepts any value between 1 and 50.
+Atribut `count` prihvata bilo koju vrednost između 1 i 50.
 
-### In a Sidebar or Footer (Classic Themes)
+### U bočnoj traci ili podnožju (klasične teme)
 
-Idite na **Appearance > Widgets** u WordPress administraciji. Iz insertera blokova potražite "FastComments" i izaberite **FastComments: Recent Comments**. Prevucite ga u bočnu traku, zaglavlje ili oblast podnožja, zatim konfigurišite **Title** i **Count** iz panela vidžeta.
+Idite na **Appearance > Widgets** u WordPress administraciji. Iz blok ubacivača pretražite "FastComments" i izaberite **FastComments: Recent Comments**. Prevucite ga u bočnu traku, zaglavlje ili oblast podnožja, a zatim podesite naslov i broj iz panela widgeta.
 
-### In a Block Theme (Full Site Editing)
+### U blok temi (Full Site Editing)
 
-Otvorite **Site Editor** pod **Appearance > Editor**. Idite do dela šablona gde vidžet treba da se pojavi, umetnite blok **Legacy Widget** i iz padajućeg menija izaberite **FastComments: Recent Comments**.
+Otvorite **Site Editor** pod **Appearance > Editor**. Idite na deo šablona gde widget treba da se pojavi, ubacite blok **Legacy Widget** i izaberite **FastComments: Recent Comments** iz padajuće liste.
 
-## Troubleshooting
+## Rešavanje problema
 
-Vidžet se prikazuje tek nakon što je podešavanje FastComments kompletirano i tenant ID je sačuvan. Ako je područje za vidžet prazno, završite podešavanje pod **FastComments** u WordPress administraciji i ponovo učitajte stranicu.
+Widget se renderuje tek nakon što je podešavanje FastComments završeno i kada je sačuvan tenant ID. Ako je oblast widgeta prazna, završite podešavanje pod **FastComments** u WordPress administraciji i ponovo učitajte stranicu.

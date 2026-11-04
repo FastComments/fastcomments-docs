@@ -31,5 +31,3 @@ La configuración `privacy` de la encuesta se aplica a esta API de la misma mane
 - **Todos**: los votos pueden leerse.
 
 La privacidad de la encuesta puede estrecharse pero no ampliarse una vez que tiene votos.
-
----

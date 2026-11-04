@@ -1,20 +1,20 @@
 [api-resource-header-start name = 'PollVote'; route = 'GET /api/v1/poll-votes'; creditsCost = 1; api-resource-header-end]
 
-1つの投票の集計の背後にある個々の投票を、古い順に一覧表示します。返される100票につき1クレジットです。
+1つの投票（poll）の集計数の背後にある個々の投票（vote）を、古いものから順に一覧表示します。返される100票ごとに1クレジットが消費されます。
 
-投票はコメントに属するため、投票は1つの投票ごとに読み取られ、`commentId` が必須です。`voterId` を使用して特定のユーザーの投票を確認したり、`optionId` を使用して特定の選択肢を選んだ全員を一覧表示したりして絞り込むことができます。
+投票（poll）はコメントに紐づいているため、投票（vote）は1つの投票（poll）ずつ読み取ることになり、`commentId` が必須です。`voterId` を指定すると特定の人がどう投票したかを確認でき、`optionId` を指定すると特定の選択肢を選んだ全員を一覧表示できます。
 
-1回の呼び出しで返される投票は最大1000件です。さらに取得するには `skip` を使用してページングしてください。
+1回の呼び出しで最大1000票まで返されます。それ以上は `skip` を使ってページ送りしてください。
 
-投票の `privacy` 設定が尊重されます。匿名投票の投票は読み取れず、リクエストは `poll-anonymous` エラーで失敗します。詳細は `PollVote` 構造体をご参照ください。
+投票（poll）の `privacy` 設定は尊重されます：匿名投票（poll）の投票内容は読み取ることができず、リクエストは `poll-anonymous` エラーで失敗します。詳細は `PollVote` 構造体を参照してください。
 
-[inline-code-attrs-start title = 'PollVotes 取得 cURL 例'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'PollVotes Get cURL 例'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/poll-votes?tenantId=demo&API_KEY=DEMO_API_SECRET&commentId=comment-id'
 [inline-code-end]
 
-[inline-code-attrs-start title = 'PollVotes 取得 リクエスト構造'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'PollVotes Get リクエスト構造'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface PollVotesGetQueryParams {
     tenantId: string
@@ -26,7 +26,7 @@ interface PollVotesGetQueryParams {
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'PollVotes 取得 レスポンス構造'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'PollVotes Get レスポンス構造'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface PollVotesGetResponse {
     status: 'success' | 'failed'
@@ -38,12 +38,10 @@ interface PollVotesGetResponse {
 }
 [inline-code-end]
 
-### Counting Votes Per Option
+### 選択肢ごとの票数の集計
 
-結果を得るためにこれらを合計する必要はありません—投票は自分自身の集計を保持しています。代わりに `GET /api/v1/polls/:commentId` で投票を取得し、投票者を知りたいときにこの API を使用してください。
+結果を得るためにこれらを合計する必要はありません - 投票（poll）自体が集計数を持っています。代わりに `GET /api/v1/polls/:commentId` で投票（poll）を読み取り、誰が投票したかを知る必要がある場合にこのAPIを使用してください。
 
-### Every Poll On A Page
+### ページ上のすべての投票
 
-ページ全体の投票一覧はありません。ページ全体をレポートするには、`GET /api/v1/comments` でコメントを取得します。これにより各コメントの投票とその集計が返され、必要な投票の投票を取得できます。
-
----
+ページ全体の投票一覧を取得する機能はありません。ページ全体についてレポートするには、`GET /api/v1/comments` でそのページのコメントを取得します（各コメントの投票（poll）とその集計数が返されます）。その後、必要な投票（poll）の投票（vote）を読み取ってください。

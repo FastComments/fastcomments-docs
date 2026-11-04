@@ -5,5 +5,3 @@ El módulo añade tres permisos de Drupal que puede asignar por rol en `People >
 - **Toggle FastComments** - Permite a los usuarios habilitar o deshabilitar los comentarios por entidad mediante el widget de campo.
 
 Por defecto, solo los usuarios con el permiso `administer site configuration` pueden cambiar la configuración de FastComments. Conceda `View FastComments` a usuarios anónimos y autenticados si desea que los visitantes vean el widget.
-
----

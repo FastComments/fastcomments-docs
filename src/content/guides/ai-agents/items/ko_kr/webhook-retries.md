@@ -1,68 +1,68 @@
-Agent webhooks retry on failure. Delivery is **에이전트 관점에서의 '발사 후 잊기(fire-and-forget)'** - a failed delivery does not block agent execution or roll back any actions - and a queue + cron drives retries asynchronously.
+에이전트 웹훅은 실패 시 재시도합니다. 전달은 **에이전트 관점에서 fire-and-forget 방식**입니다 - 전달 실패가 에이전트 실행을 차단하거나 어떤 작업도 롤백하지 않으며, 큐 + cron이 비동기적으로 재시도를 처리합니다.
 
-### Queue model
+### 큐 모델
 
-Each event is queued **once per matching webhook**. So if you have three webhooks subscribed to `trigger.succeeded` for a given agent + domain, the platform queues three deliveries; each is delivered and retried independently. A failure on one webhook never affects the others.
+각 이벤트는 **일치하는 웹훅당 한 번씩** 큐에 추가됩니다. 따라서 특정 에이전트 + 도메인에 대해 `trigger.succeeded`를 구독하는 웹훅이 세 개 있다면, 플랫폼은 세 개의 전달을 큐에 추가하며, 각각 독립적으로 전달 및 재시도됩니다. 한 웹훅의 실패가 다른 웹훅에 영향을 주지 않습니다.
 
-### What's retried
+### 재시도 대상
 
-A delivery is retried when:
+다음 경우 전달이 재시도됩니다:
 
-- The HTTP request **does not complete** (DNS failure, connection refused, timeout).
-- The HTTP response code is any non-2xx status that is not in the configured **No-retry status codes** list.
+- HTTP 요청이 **완료되지 않는** 경우 (DNS 실패, 연결 거부, 타임아웃).
+- HTTP 응답 코드가 설정된 **No-retry status codes** 목록에 없는 2xx가 아닌 상태인 경우.
 
-A delivery is **not retried** when:
+다음 경우 전달은 **재시도되지 않습니다**:
 
-- The response code is `2xx` (success).
-- The response code is in the configured **No-retry status codes** list. By default this list is empty - any non-2xx is retried.
+- 응답 코드가 `2xx` (성공)인 경우.
+- 응답 코드가 설정된 **No-retry status codes** 목록에 있는 경우. 기본적으로 이 목록은 비어 있습니다 - 2xx가 아닌 모든 코드는 재시도됩니다.
 
-### Configuring no-retry codes
+### 재시도 제외 코드 설정
 
-The webhook config form has a **No-retry status codes** field (multi-value). Common entries:
+웹훅 설정 폼에는 **No-retry status codes** 필드(다중 값)가 있습니다. 일반적인 항목:
 
-- `410` - Gone. Your endpoint is permanently moved or the resource is gone. Retrying just wastes both sides' bandwidth.
-- `422` - Unprocessable Entity. Your endpoint understood the payload but considered it invalid. Retrying with the same payload will get the same answer.
-- `400` - Bad Request, in the same spirit.
+- `410` - Gone. 엔드포인트가 영구적으로 이동했거나 리소스가 사라진 경우입니다. 재시도는 양쪽의 대역폭만 낭비합니다.
+- `422` - Unprocessable Entity. 엔드포인트가 페이로드를 이해했지만 유효하지 않다고 판단한 경우입니다. 동일한 페이로드로 재시도하면 같은 결과를 얻게 됩니다.
+- `400` - Bad Request, 같은 취지입니다.
 
-Adding a code here means: when the endpoint returns it, mark the delivery as failed-terminal and stop retrying.
+여기에 코드를 추가하면: 엔드포인트가 해당 코드를 반환할 때 전달을 최종 실패로 표시하고 재시도를 중단합니다.
 
-### Retry schedule
+### 재시도 일정
 
-A background worker runs every few seconds and processes any deliveries whose next attempt time has passed.
+백그라운드 워커가 몇 초마다 실행되며 다음 시도 시간이 지난 전달들을 처리합니다.
 
-After each failure, the next-attempt time is pushed forward with **linear backoff**: the wait grows as `60 seconds * attempt count` (so attempt 1 waits 1 minute, attempt 2 waits 2 minutes, and so on).
+각 실패 후 다음 시도 시간은 **선형 백오프**로 연기됩니다: 대기 시간은 `60 seconds * attempt count`로 증가합니다 (즉, 1번째 시도는 1분 대기, 2번째 시도는 2분 대기, 등등).
 
-After 99 failed attempts (or 3 in local development), the delivery is given up and dropped from the queue. The delivery log entries do persist and remain visible in the [웹훅 전달 로그](#webhook-logs) page until they expire.
+99번의 실패한 시도 후(로컬 개발 환경에서는 3번), 전달은 포기되고 큐에서 제거됩니다. 전달 로그 항목은 유지되며 만료될 때까지 [Webhook Delivery Logs](#webhook-logs) 페이지에서 계속 볼 수 있습니다.
 
-### Idempotence on your side
+### 여러분 측의 멱등성
 
-Because we retry, your endpoint **must be idempotent**. The same `triggerId` (or `approvalId`) can arrive more than once. Your endpoint should:
+재시도가 이루어지므로, 엔드포인트는 **반드시 멱등(idempotent)해야 합니다**. 동일한 `triggerId` (또는 `approvalId`)가 두 번 이상 도착할 수 있습니다. 엔드포인트는 다음을 수행해야 합니다:
 
-- Use a unique key (`triggerId` for trigger events, `approvalId` for approval events) as a dedup token.
-- Accept duplicate deliveries gracefully (return 200 the second time).
+- 고유 키(트리거 이벤트는 `triggerId`, 승인 이벤트는 `approvalId`)를 중복 제거 토큰으로 사용합니다.
+- 중복 전달을 우아하게 수락합니다 (두 번째에는 200을 반환).
 
-A non-idempotent endpoint will eventually double-process some deliveries, especially during transient outages where one timeout retries 30 seconds later but the original request actually succeeded.
+멱등하지 않은 엔드포인트는 결국 일부 전달을 이중 처리하게 되며, 특히 한 타임아웃이 30초 후 재시도하는데 원래 요청이 실제로 성공했던 일시적 장애 상황에서 그렇습니다.
 
-### Ordering
+### 순서
 
-Deliveries are **not strictly ordered**. A `trigger.succeeded` and a downstream `approval.requested` (from the same run) can arrive in either order if one retries and the other does not. Your endpoint should not assume causal ordering.
+전달은 **엄격하게 순서화되지 않습니다**. `trigger.succeeded`와 다운스트림 `approval.requested` (동일한 실행에서 발생)는 하나가 재시도되고 다른 하나는 재시도되지 않는 경우 어느 순서로든 도착할 수 있습니다. 엔드포인트는 인과적 순서를 가정해서는 안 됩니다.
 
-If you need ordering, use the timestamps - `occurredAt` on the envelope, plus the trigger/approval `createdAt` in the data block - to reconstruct order on your side.
+순서가 필요하다면 타임스탬프를 사용하세요 - 엔벨로프의 `occurredAt`, 그리고 데이터 블록의 트리거/승인 `createdAt` - 을 통해 여러분 측에서 순서를 재구성할 수 있습니다.
 
-### Cleanup
+### 정리
 
-Deliveries are removed from the queue as soon as they either succeed or hit the attempt cap. The platform does not retain terminally-failed deliveries in the queue itself; the durable record of each attempt lives in the [웹훅 전달 로그](#webhook-logs) page.
+전달은 성공하거나 시도 한도에 도달하는 즉시 큐에서 제거됩니다. 플랫폼은 최종 실패한 전달을 큐 자체에 보관하지 않습니다; 각 시도의 영구 기록은 [Webhook Delivery Logs](#webhook-logs) 페이지에 남아 있습니다.
 
-### Where to look when retries fail
+### 재시도가 실패할 때 확인할 곳
 
-The [웹훅 전달 로그](#webhook-logs) page is the place to see why a webhook is failing. Common causes:
+[Webhook Delivery Logs](#webhook-logs) 페이지는 웹훅이 실패하는 이유를 확인할 수 있는 곳입니다. 일반적인 원인:
 
-- **DNS resolution failure** - the URL is wrong or the domain is gone.
-- **TLS errors** - your endpoint's certificate is invalid or expired.
-- **Connection refused / timeout** - your endpoint is down.
-- **5xx responses** - your endpoint is up but errored. The response body (truncated) is recorded.
-- **4xx responses** - your endpoint rejected the payload. If this is intentional, add the code to **No-retry status codes**.
+- **DNS 확인 실패** - URL이 잘못되었거나 도메인이 사라진 경우.
+- **TLS 오류** - 엔드포인트의 인증서가 유효하지 않거나 만료된 경우.
+- **연결 거부 / 타임아웃** - 엔드포인트가 다운된 경우.
+- **5xx 응답** - 엔드포인트는 살아 있지만 오류가 발생한 경우. 응답 본문(잘림)이 기록됩니다.
+- **4xx 응답** - 엔드포인트가 페이로드를 거부한 경우. 의도적인 것이라면 해당 코드를 **No-retry status codes**에 추가하세요.
 
-### Pause an unhealthy webhook
+### 비정상적인 웹훅 일시 중지
 
-If a webhook is consistently failing, the cleanest fix is to delete it (or temporarily clear its event subscription list). The platform does not auto-disable failing webhooks - they keep retrying until the delivery is given up.
+웹훅이 지속적으로 실패하는 경우, 가장 깔끔한 해결책은 삭제하는 것입니다(또는 일시적으로 이벤트 구독 목록을 비우는 것). 플랫폼은 실패하는 웹훅을 자동으로 비활성화하지 않습니다 - 전달이 포기될 때까지 계속 재시도합니다.

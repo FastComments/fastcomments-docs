@@ -13,5 +13,3 @@
     <div class="title">Изменения опубликованы</div>
     <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-4-live.png" alt="Изменения опубликованы" />
 </div>
-
----

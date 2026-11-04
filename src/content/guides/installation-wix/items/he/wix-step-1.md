@@ -10,5 +10,3 @@
     <div class="title">שלב ראשון: עריכת דף הפוסט הדינמי</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-1-open-page.png" alt="Edit The Dynamic Post Page" />
 </div>
-
----

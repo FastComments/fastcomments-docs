@@ -37,5 +37,3 @@ Retorna: [`PublicAPISetCommentTextResponse`](https://github.com/FastComments/fas
   );
 })();
 [inline-code-end]
-
----

@@ -1,22 +1,20 @@
-The **FastComments - Najpopularniejsze strony** block lists the pages on your store with the most comment activity overall. Use it to surface your most-discussed posts or products.
+Blok **FastComments - Top Pages** wyświetla listę stron w Twoim sklepie z największą ogólną aktywnością komentarzy. Użyj go, aby wyróżnić najczęściej komentowane posty lub produkty.
 
-### Add the block
+### Dodanie bloku
 
-1. Open the Shopify theme editor.
-2. Open the template where you want the list, such as a sidebar, footer, or blog index section.
-3. Click **Add block** in the section that should hold it.
-4. Under **Apps**, select **FastComments - Najpopularniejsze strony**.
-5. Click **Save**.
+1. Otwórz edytor motywu Shopify.
+2. Otwórz szablon, w którym chcesz umieścić listę, np. w sekcji paska bocznego, stopki lub indeksu bloga.
+3. Kliknij **Dodaj blok** w sekcji, która ma go zawierać.
+4. W obszarze **Aplikacje** wybierz **FastComments - Top Pages**.
+5. Kliknij **Zapisz**.
 
-### Settings
+### Ustawienia
 
-| Setting | What it does | Default |
+| Ustawienie | Co robi | Domyślnie |
 |---|---|---|
-| Tenant ID (optional) | Override which FastComments tenant the list reads from. Leave blank to use the store's automatically-configured tenant. | (puste) |
+| Tenant ID (opcjonalnie) | Zastępuje tenant FastComments, z którego lista pobiera dane. Pozostaw puste, aby użyć automatycznie skonfigurowanego tenanta sklepu. | (puste) |
 
 ### Top Pages vs Recent Discussions
 
-- **Top Pages** ranks by total engagement, so the same posts tend to stay near the top for a while. Good for a "popular posts" sidebar.
-- **Recent Discussions** ranks by most recent activity, so the list churns. Good for a "what's hot right now" panel.
-
----
+- **Top Pages** klasyfikuje według łącznego zaangażowania, więc te same posty mają tendencję do pozostawania blisko góry przez dłuższy czas. Dobre dla paska bocznego „popularne posty".
+- **Recent Discussions** klasyfikuje według najnowszej aktywności, więc lista często się zmienia. Dobre dla panelu „co jest teraz na topie".

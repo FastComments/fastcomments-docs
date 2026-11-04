@@ -1,4 +1,3 @@
----
 ## Yardıma mı ihtiyacınız var?
 
 React Native Kütüphanesi ile ilgili herhangi bir sorunla karşılaşırsanız veya sorularınız varsa, lütfen:
@@ -9,5 +8,3 @@ React Native Kütüphanesi ile ilgili herhangi bir sorunla karşılaşırsanız 
 ## Katkıda Bulunma
 
 Katkılar memnuniyetle kabul edilir! Lütfen katkı yönergeleri için [GitHub deposunu](https://github.com/FastComments/fastcomments-react-native) ziyaret edin.
-
----

@@ -50,5 +50,3 @@ Funkcija `FastCommentsRecentDiscussionsV2` prihvaća sljedeće opcije konfigurac
     });
 </script>
 [inline-code-end]
-
----

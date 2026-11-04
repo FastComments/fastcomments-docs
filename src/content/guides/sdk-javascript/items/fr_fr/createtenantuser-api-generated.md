@@ -1,4 +1,3 @@
----
 ## Paramètres
 
 | Name | Type | Required | Description |
@@ -30,5 +29,3 @@ async function addTenantUser() {
 }
 addTenantUser();
 [inline-code-end]
-
----

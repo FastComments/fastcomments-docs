@@ -13,5 +13,3 @@ As funções do Canvas são mapeadas automaticamente para as funções do FastCo
 Quando um usuário inicia o FastComments a partir do Canvas, o protocolo LTI 1.3 inclui sua função no Canvas. O FastComments lê essa função e atribui automaticamente as permissões apropriadas.
 
 Se um usuário possuir múltiplas funções (por exemplo, um Instructor que também é Admin), a função com maior privilégio será usada.
-
----

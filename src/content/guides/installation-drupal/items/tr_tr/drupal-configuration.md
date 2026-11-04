@@ -39,5 +39,3 @@ Ayrıntılar için `Single Sign-On (SSO)` bölümüne bakın.
 - **Email notifications** - Yeni bir yorum içeriklerine gönderildiğinde içerik yazarına e-posta gönderilir.
 
 AB veri konumlandırması için `EU Data Residency` bölümüne bakın.
-
----

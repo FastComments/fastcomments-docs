@@ -31,5 +31,3 @@
 [inline-code-end]
 
 React、Angular 等前端函式庫的設定相同。
-
----

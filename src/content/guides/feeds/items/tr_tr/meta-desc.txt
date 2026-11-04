@@ -1,3 +1,1 @@
----
 Web, Android ve iOS'ta sosyal tarzda bir içerik akışı oluşturun. Her okuyucunun gördüklerini kişiselleştirin ve bölgeye göre farklı içerikler sunun.
----

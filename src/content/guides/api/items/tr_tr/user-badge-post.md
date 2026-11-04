@@ -1,4 +1,3 @@
----
 Bu uç nokta, yeni bir kullanıcı rozet ataması oluşturmanıza olanak tanır.
 
 Örnek İstek:
@@ -95,4 +94,3 @@ Olası Hata Yanıtları:
   "reason": "You can only add badges to users who belong to your tenant or have commented on your site."
 }
 [inline-code-end]
----

@@ -8,5 +8,3 @@ Jeśli napotkasz jakiekolwiek problemy lub masz pytania dotyczące biblioteki Sv
 ## Współtworzenie
 
 Wkład jest mile widziany! Prosimy odwiedzić [repozytorium GitHub](https://github.com/FastComments/fastcomments-svelte) w celu zapoznania się z wytycznymi dotyczącymi wkładu.
-
----

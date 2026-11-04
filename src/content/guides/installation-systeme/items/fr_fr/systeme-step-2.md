@@ -1,5 +1,5 @@
-Now we're going to copy our code. If the code snippet says `tenantId: "demo"` on line 6 then you should log into your FastComments account
-and then refresh this page so the copied code snippet has your account id.
+Nous allons maintenant copier notre code. Si l'extrait de code indique `tenantId: "demo"` à la ligne 6, vous devez vous connecter à votre compte FastComments
+puis actualiser cette page afin que l'extrait de code copié contienne l'identifiant de votre compte.
 
 [inline-code-attrs-start title = 'Extrait Systeme.io'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -13,11 +13,11 @@ and then refresh this page so the copied code snippet has your account id.
 </script>
 [inline-code-end]
 
-Now paste it into the editor and click save:
+Collez-le maintenant dans l'éditeur et cliquez sur enregistrer :
 
 <div class="screenshot white-bg">
-    <div class="title">Ajoutez le code FastComments</div>
-    <img class="screenshot-image" src="/images/installation-guides/systeme-add-code.png" alt="Ajoutez le code FastComments" />
+    <div class="title">Ajouter le code FastComments</div>
+    <img class="screenshot-image" src="/images/installation-guides/systeme-add-code.png" alt="Ajouter le code FastComments" />
 </div>
 
-... then save your site. C'est tout !
+... puis enregistrez votre site. C'est tout !

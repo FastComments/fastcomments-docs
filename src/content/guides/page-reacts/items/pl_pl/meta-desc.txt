@@ -1,3 +1,1 @@
----
 Pozwól czytelnikom reagować na stronę bez pisania komentarza, używając konfigurowalnych reakcji emoji nad wątkiem lub pływającego przycisku polubień.
----

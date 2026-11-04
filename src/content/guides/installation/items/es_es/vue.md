@@ -1,13 +1,12 @@
----
-Para añadir comentarios a tu sitio web creado con Vue, puedes encontrar nuestra biblioteca Vue en NPM <a href="https://www.npmjs.com/package/fastcomments-vue" target="_blank">aquí</a>.
+Para añadir comentarios a tu sitio web construido con Vue, puedes encontrar nuestra librería de Vue en NPM <a href="https://www.npmjs.com/package/fastcomments-vue" target="_blank">aquí</a>.
 
-Además, una biblioteca vue-next está en NPM <a href="https://www.npmjs.com/package/fastcomments-vue-next" target="_blank">aquí</a>
+Además, hay una librería vue-next en NPM <a href="https://www.npmjs.com/package/fastcomments-vue-next" target="_blank">aquí</a>
 
-El código fuente puede encontrarse en <a href="https://github.com/FastComments" target="_blank">GitHub</a>.
+El código fuente se puede encontrar en <a href="https://github.com/FastComments" target="_blank">GitHub</a>.
 
-El widget de comentarios FastComments para Vue soporta todas las mismas características que el de VanillaJS - live commenting, sso, y demás.
+El widget de comentarios de FastComments para Vue soporta todas las mismas características que el de VanillaJS - comentarios en vivo, sso, y más.
 
-Las siguientes instrucciones son para Vue 3 ya que lleva tiempo disponible, sin embargo FastComments también soporta Vue 2 vía la biblioteca `fastcomments-vue`.
+Las instrucciones de abajo son para Vue 3 ya que ha estado disponible desde hace tiempo, sin embargo FastComments también soporta Vue 2 a través de la librería `fastcomments-vue`.
 
 [inline-code-attrs-start title = 'FastComments Vue vía NPM'; type = 'shell'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -40,15 +39,13 @@ export default {
 </script>
 [inline-code-end]
 
-Si estás en la UE, querrás establecer la `region` a `EU`:
+Si estás en la UE, querrás establecer `region` como `EU`:
 
 [inline-code-attrs-start title = 'FastComments Vue - UE'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <fast-comments v-bind:config="{tenantId: 'demo', region: 'eu'}"/>
 [inline-code-end]
 
-The `fastcomments-vue` and `fastcomments-vue-next` libraries support the same configuration as the VanillaJS commenting widget.
+Las librerías `fastcomments-vue` y `fastcomments-vue-next` soportan la misma configuración que el widget de comentarios de VanillaJS.
 
-Puedes encontrar la configuración que soporta el componente Vue <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">aquí</a>.
-
----
+Puedes encontrar la configuración que soporta el componente de Vue <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">aquí</a>.

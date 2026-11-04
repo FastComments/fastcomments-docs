@@ -1,4 +1,3 @@
----
 Naštej strani za najemnika. Uporablja ga namizni odjemalec FChat za napolnitev seznama sob.  
 Zahteva, da je `enableFChat` nastavljen na true v razrešenih prilagojenih nastavitvah za vsako stran.  
 Strani, ki zahtevajo SSO, so filtrirane glede na skupinski dostop zahtevanega uporabnika.
@@ -31,5 +30,3 @@ api->getPagesPublic(tenantId, options).then([](pplx::task<std::shared_ptr<GetPub
     }
 });
 [inline-code-end]
-
----

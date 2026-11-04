@@ -1,4 +1,3 @@
----
 ## Trebate pomoć?
 
 Ako naiđete na bilo kakve probleme ili imate pitanja o iOS biblioteci, molimo:
@@ -9,5 +8,3 @@ Ako naiđete na bilo kakve probleme ili imate pitanja o iOS biblioteci, molimo:
 ## Doprinosi
 
 Doprinosi su dobrodošli! Posjetite [GitHub repozitorij](https://github.com/FastComments/fastcomments-ios) za smjernice za doprinos.
-
----

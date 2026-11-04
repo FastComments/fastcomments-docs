@@ -30,5 +30,3 @@ try {
     print('Exception when calling DefaultApi->getUser: $e\n');
 }
 [inline-code-end]
-
----

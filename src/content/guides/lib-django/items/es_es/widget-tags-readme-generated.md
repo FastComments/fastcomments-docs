@@ -53,4 +53,3 @@ Comments: {% fastcomments_comment_count url_id="my-page" number_only=True %}
 {% endfor %}
 {% fastcomments_comment_count_bulk %}
 ```
----

@@ -1,10 +1,10 @@
-For Step 2 we have to copy our code snippet. Check that line 50 does not say "demo" - you'll want to ensure this has your tenant id. It should be populated for you.
+ステップ2では、コードスニペットをコピーします。50行目に「demo」と表示されていないことを確認してください。ここにはテナントIDが入っている必要があります。通常は自動的に入力されています。
 
-Now let's copy our ThriveCart-Learn-Specific FastComments code snippet.
+次に、ThriveCart Learn 専用の FastComments コードスニペットをコピーしましょう。
 
-It's quite large, because the integration with ThriveCart has a lot of features, so just click the Copy button in the top right of the code snippet:
+ThriveCart との連携には多くの機能があるため、スニペットはかなり大きくなっています。コードスニペットの右上にある「コピー」ボタンをクリックするだけです:
 
-[inline-code-attrs-start title = 'ThriveCart Learn+ コメントコード'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'ThriveCart Learn+ Comments Code'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
 <div id="fastcomments-widget"></div>
@@ -17,29 +17,29 @@ It's quite large, because the integration with ThriveCart has a lot of features,
             let isAuthenticated = false;
             let profileLink = document.querySelector('.thrivecart-courses-header-profile-link');
             if (!profileLink) {
-                profileLink = document.querySelector('.thrivecart-courses-header-profile'); // class is different for preview.
+                profileLink = document.querySelector('.thrivecart-courses-header-profile'); // プレビューではクラスが異なります。
             }
-            // broad email input field selector incase ThriveCart changes id.
+            // ThriveCart が id を変更した場合に備えた、幅広いメール入力フィールドのセレクター。
             const emailInputField = document.querySelector('input[type=email]');
             if (emailInputField && emailInputField.value) {
                 isAuthenticated = true;
                 simpleSSO.email = emailInputField.value;
-            } else if (profileLink && !profileLink.innerText.includes('John Smith')) { // allow preview to work - no email available.
+            } else if (profileLink && !profileLink.innerText.includes('John Smith')) { // メールが利用できないため、プレビューが機能するようにします。
                 attemptsRemaining--;
                 if (!attemptsRemaining) {
                     return console.error('Could not load FastComments - could not determine user information (email). Please reach out to FastComments support.');
                 }
                 console.warn('FastComments: No user email found - waiting and trying again.');
-                return setTimeout(tryLoad, attemptsRemaining < 5 ? 3000 : 100); // increase wait time after 5 attempts incase slow internet.
+                return setTimeout(tryLoad, attemptsRemaining < 5 ? 3000 : 100); // インターネットが遅い場合に備えて、5回試行後は待機時間を長くします。
             }
             if (profileLink) {
-                // use raw "img" query incase ThriveCart changes image class selector.
+                // ThriveCart が画像クラスのセレクターを変更した場合に備えて、生の "img" クエリを使用します。
                 const avatarImg = profileLink.querySelector('img');
                 if (avatarImg && avatarImg.src) {
                     isAuthenticated = true;
                     simpleSSO.avatar = avatarImg.src;
                 }
-                // use innerText incase ThriveCart changes how profile name is displayed.
+                // ThriveCart がプロフィール名の表示方法を変更した場合に備えて、innerText を使用します。
                 if (profileLink.innerText) {
                     isAuthenticated = true;
                     simpleSSO.username = profileLink.innerText;
@@ -56,17 +56,17 @@ It's quite large, because the integration with ThriveCart has a lot of features,
                 }
                 console.warn('FastComments: No user profile info found - waiting and trying again.');
                 attemptsRemaining--;
-                return setTimeout(tryLoad, attemptsRemaining < 5 ? 3000 : 100); // increase wait time after 5 attempts incase slow internet.
+                return setTimeout(tryLoad, attemptsRemaining < 5 ? 3000 : 100); // インターネットが遅い場合に備えて、5回試行後は待機時間を長くします。
             }
 
             let url;
             const selectedNavLink = document.querySelector('.tcc-browse-lesson.active a');
 
             if (selectedNavLink) {
-                // sometimes TC uses multiple links the same page, so let's de-dupe them.
+                // TC は同じページへの複数のリンクを使用することがあるため、重複を排除します。
                 url = getPathnameFromUrl(selectedNavLink.href);
             } else {
-                // trim marketing parameters and domain name
+                // マーケティングパラメータとドメイン名を取り除きます
                 url = window.location.pathname;
             }
 
@@ -87,11 +87,11 @@ It's quite large, because the integration with ThriveCart has a lot of features,
         function getPathnameFromUrl(url) {
             try {
                 const parsedUrl = new URL(url);
-                // trim marketing parameters and domain name
+                // マーケティングパラメータとドメイン名を取り除きます
                 return parsedUrl.pathname;
             } catch (error) {
                 console.error("Invalid URL", url, error);
-                return window.location.pathname; // default to current, so at least it works sometimes
+                return window.location.pathname; // 現在の値をデフォルトにして、少なくとも動作するようにします
             }
         }
 
@@ -99,23 +99,22 @@ It's quite large, because the integration with ThriveCart has a lot of features,
 </script>
 [inline-code-end]
 
-Now paste it into the code block on the left in the ThriveCart editor. It should look like this:
+次に、ThriveCart エディターの左側にあるコードブロックに貼り付けてください。以下のようになります:
 
 <div class="screenshot white-bg">
-    <div class="title">コードが追加されました</div>
-    <img class="screenshot-image" src="/images/installation-guides/thrivecart-learn-step-2-1-paste-code.png" alt="コードが追加されました" />
+    <div class="title">コード追加済み</div>
+    <img class="screenshot-image" src="/images/installation-guides/thrivecart-learn-step-2-1-paste-code.png" alt="Code Added" />
 </div>
 
-That's it! Now we just have to publish:
+これで完了です!あとは公開するだけです:
 
 <div class="screenshot white-bg">
     <div class="title">公開</div>
-    <img class="screenshot-image" src="/images/installation-guides/thrivecart-learn-step-2-2-publish.png" alt="公開" />
+    <img class="screenshot-image" src="/images/installation-guides/thrivecart-learn-step-2-2-publish.png" alt="Publish" />
 </div>
 
-That's it! You should now see the comment box on your course when you preview, and real users will be able to leave comments **without signing in or leaving their username/email a second time**.
+これで完了です!プレビュー時にコースにコメントボックスが表示され、実際のユーザーは**サインインやユーザー名/メールの再入力をすることなく**コメントを残せるようになります。
 
-### テストに関する注意！
+### テストに関する注意!
 
-If you have anonymous commenting disabled, which it is by default, you won't be able to leave comments in `Preview` mode as the `John Smith` user. You will get an authentication
-error as the default `John Smith` user has no email. If you want to test, we suggest you use a coupon code and go through your site like an actual user.
+匿名コメントが無効になっている場合(デフォルトで無効です)、`Preview` モードで `John Smith` ユーザーとしてコメントを残すことはできません。デフォルトの `John Smith` ユーザーにはメールアドレスがないため、認証エラーが発生します。テストしたい場合は、クーポンコードを使用して、実際のユーザーのようにサイトを通過することをお勧めします。

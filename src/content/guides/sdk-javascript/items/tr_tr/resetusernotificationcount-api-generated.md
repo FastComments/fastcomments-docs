@@ -23,5 +23,3 @@ async function demoReset() {
 
 demoReset();
 [inline-code-end]
-
----

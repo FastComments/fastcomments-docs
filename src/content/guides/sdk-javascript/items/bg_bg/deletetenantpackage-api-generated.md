@@ -18,5 +18,3 @@ let packageId: string = "pkg_98765";
 
 const result: APIEmptyResponse = await deleteTenantPackage(tenantId, packageId);
 [inline-code-end]
-
----

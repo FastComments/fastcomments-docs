@@ -31,5 +31,3 @@ DefaultAPI.updateEmailTemplate(tenantId: tenantId, id: id, updateEmailTemplateBo
     }
 }
 [inline-code-end]
-
----

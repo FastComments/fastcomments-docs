@@ -1,4 +1,3 @@
----
 Настройте вашего арендатора в `settings.py`:
 
 ```python
@@ -16,4 +15,3 @@ FASTCOMMENTS = {
 
 {% fastcomments url_id="my-page" %}
 ```
----

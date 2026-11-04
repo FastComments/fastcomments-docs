@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Nome | Tipo | Posizione | Obbligatorio | Descrizione |
@@ -31,5 +30,3 @@ PublicAPI.resetUserNotificationCount(tenantId: tenantId, sso: sso) { (response, 
     }
 }
 [inline-code-end]
-
----

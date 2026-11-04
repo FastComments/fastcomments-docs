@@ -17,5 +17,3 @@ interface NotificationCount {
     expireAt: string // datum kao string
 }
 [inline-code-end]
-
----

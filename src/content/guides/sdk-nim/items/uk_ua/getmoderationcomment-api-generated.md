@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Назва | Тип | Обов'язковий | Опис |
@@ -25,5 +24,3 @@ if maybeComment.isSome:
   let comment = maybeComment.get()
   echo comment
 [inline-code-end]
-
----

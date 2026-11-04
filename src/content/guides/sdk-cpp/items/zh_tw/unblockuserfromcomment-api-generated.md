@@ -1,4 +1,3 @@
----
 ## 參數
 
 | 名稱 | 類型 | 必填 | 說明 |
@@ -28,5 +27,3 @@ api->unBlockUserFromComment(U("my-tenant-123"), U("user-456"), *params, opts)
         }catch(...){}
     });
 [inline-code-end]
-
----

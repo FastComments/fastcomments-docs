@@ -1,17 +1,17 @@
-Bulk user info for a tenant. Given userIds, return display info from User / SSOUser.  
-Used by the comment widget to enrich users that just appeared via a presence event.  
-No page context: privacy is enforced uniformly (private profiles are masked).
+取得租戶的批次使用者資訊。給定 userIds，從 User / SSOUser 回傳顯示資訊。
+由留言小工具使用，以豐富剛透過 presence 事件出現的使用者。
+無頁面上下文：隱私一律強制執行（私人個人資料會被遮蔽）。
 
-## Parameters
+## 參數
 
-| 名稱 | 類型 | 必要 | 說明 |
-|------|------|------|------|
-| tenantId | string | Yes |  |
-| ids | string | Yes |  |
+| 名稱 | 類型 | 必填 | 說明 |
+|------|------|----------|-------------|
+| tenantId | string | 是 |  |
+| ids | string | 是 |  |
 
-## Response
+## 回應
 
-Returns: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PageUsersInfoResponse.h)
+回傳：[`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PageUsersInfoResponse.h)
 
 ## 範例
 
@@ -24,9 +24,9 @@ boost::optional<utility::string_t> locale = boost::make_optional(U("en-US"));
 api->getUsersInfo(tenantId, ids).then([](pplx::task<std::shared_ptr<PageUsersInfoResponse>> t){
     try{
         auto response = t.get();
-        // process response
+        // 處理回應
     }catch(const std::exception&){
-        // handle error
+        // 處理錯誤
     }
 });
 [inline-code-end]

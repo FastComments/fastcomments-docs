@@ -1,4 +1,3 @@
----
 Bir yorum silindiğinde tetiklenir.
 
 ### Ajanın aldığı bağlam
@@ -20,5 +19,3 @@ Bir yorum silindiğinde tetiklenir.
 ### İşletme maliyeti notu
 
 Eğer yüksek silme hacmine sahip bir siteniz varsa (yoğun insan moderasyonu), bu tetikleyici sık sık çalışabilir.
-
----

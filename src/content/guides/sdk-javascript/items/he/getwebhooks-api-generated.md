@@ -29,5 +29,3 @@
   const minimalResponse: GetWebhooksResponse = await getWebhooks(tenantId);
 })();
 [inline-code-end]
-
----

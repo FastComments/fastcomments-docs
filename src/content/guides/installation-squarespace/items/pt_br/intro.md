@@ -6,5 +6,3 @@ As instruções abaixo estão divididas em três seções, dependendo do que voc
 3. [Adicionar comentários a uma página específica](#squarespace-pages-specific-page-step-0)
 
 Observe que este tutorial requer uma conta do FastComments. Recomenda-se que você crie uma conta primeiro e depois volte aqui. [Você pode criar uma conta aqui.](https://fastcomments.com/auth/tenant-signup?packageId=flex)
-
----

@@ -1,18 +1,17 @@
 We kunnen de positionering van de widget verbeteren door twee dingen te doen.
 
-First, on the left pane, set the widget's height to `fill` and `1fr`:
+Ten eerste: stel in het linkerpaneel de hoogte van de widget in op `fill` en `1fr`:
 
 <div class="screenshot white-bg">
-    <div class="title">Hoogte van de Comment-widget</div>
-    <img class="screenshot-image" src="/images/installation-guides/framer-step-4-widget-height.png" alt="Hoogte van de Comment-widget" />
+    <div class="title">Hoogte Comment Widget</div>
+    <img class="screenshot-image" src="/images/installation-guides/framer-step-4-widget-height.png" alt="Hoogte Comment Widget" />
 </div>
 
-Next we need to fix the default Framer page config. By default it sets the page height to a fixed size, which can cut off
-comment threads. So let's set this to `fill`, too.
+Vervolgens moeten we de standaard Framer paginaconfiguratie aanpassen. Standaard wordt de paginahoogte op een vaste grootte ingesteld, waardoor commentaarthreads kunnen worden afgesneden. Dus laten we dit ook instellen op `fill`.
 
 <div class="screenshot white-bg">
-    <div class="title">Paginahoogte instellen</div>
-    <img class="screenshot-image" src="/images/installation-guides/framer-step-4-page-height.png" alt="Paginahoogte instellen" />
+    <div class="title">Paginahoogte Instellen</div>
+    <img class="screenshot-image" src="/images/installation-guides/framer-step-4-page-height.png" alt="Paginahoogte Instellen" />
 </div>
 
-Het kan nodig zijn om te experimenteren met de paginahoogte om het naar wens te krijgen.
+Mogelijk moet je experimenteren met de paginahoogte om het naar wens te krijgen.

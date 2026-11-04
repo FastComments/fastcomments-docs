@@ -1,4 +1,3 @@
----
 ## Parametry
 
 | Nazwa | Typ | Wymagane | Opis |
@@ -25,5 +24,3 @@ async fn main() -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
-
----

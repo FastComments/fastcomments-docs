@@ -1,4 +1,3 @@
----
 [related-parameter-start name = 'readonly'; type = 'boolean'; related-parameter-end]
 
 readonly フラグを true に設定することで、コメント機能をロックし、新しいコメントや投票を受け付けなくすることができます。
@@ -18,5 +17,3 @@ readonly フラグを true に設定することで、コメント機能をロ�
 これにより新しいコメントは防止されますが、投票は引き続き可能で、必要に応じてユーザーは自分のコメントを削除できるようになります。一方、`readonly` ではこれらの操作は許可されません。
 
 `Page` API の `isClosed` フィールドに対応しています。
-
----

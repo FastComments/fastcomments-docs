@@ -40,5 +40,3 @@ DefaultAPI.getUserBadges(tenantId: tenantId, options: DefaultAPI.GetUserBadgesOp
     }
 }
 [inline-code-end]
-
----

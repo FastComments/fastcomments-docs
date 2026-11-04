@@ -1,17 +1,17 @@
-The border around the comment box is made of the text area's own border plus a few thin lines the widget draws around it. To change its color or corner roundness, set these CSS variables instead of styling the `textarea` directly. The variables restyle every part of the border at once, so the corners and colors always line up.
+Kanten omkring kommentarboksen består af tekstområdets egen kant plus et par tynde linjer, som widgeten tegner omkring den. For at ændre dens farve eller hjørnerundhed skal du angive disse CSS-variabler i stedet for at style `textarea` direkte. Variablerne restyler alle dele af kanten på én gang, så hjørner og farver altid passer sammen.
 
-| Variable | Hvad den ændrer | Standard |
+| Variabel | Hvad den ændrer | Standard |
 |---|---|---|
 | `--fc-input-border-color` | Kantfarve | `#bfbfbf` |
 | `--fc-input-border-color-focus` | Kantfarve mens brugeren skriver | `#555` |
 | `--fc-input-border-radius` | Rundhed af de afrundede hjørner | `11px` |
-| `--fc-input-border-start-start-radius` | Rundhed af det firkantede øverste venstre hjørne (øverste højre i højre-til-venstre sprog) | `0` |
+| `--fc-input-border-start-start-radius` | Rundhed af det firkantede hjørne øverst til venstre (øverst til højre i højre-til-venstre-sprog) | `0` |
 
-Add the CSS to the **Custom CSS** box on the [Widget Customization page](https://fastcomments.com/auth/my-account/customize-widget), or pass it with the `customCSS` option. You only need to set the variables you want to change.
+Tilføj CSS'en i boksen **Custom CSS** på [Widget Customization-siden](https://fastcomments.com/auth/my-account/customize-widget), eller send den med `customCSS`-indstillingen. Du behøver kun at angive de variabler, du vil ændre.
 
-You can also use the **Comment box border** helper right under the Custom CSS box, which writes this CSS for you.
+Du kan også bruge hjælpefunktionen **Comment box border** lige under Custom CSS-boksen, som skriver denne CSS for dig.
 
-## Skift kantfarven
+## Ændr kantfarven
 
 [inline-code-attrs-start title = 'Kantfarve'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -20,20 +20,20 @@ You can also use the **Comment box border** helper right under the Custom CSS bo
 }
 [inline-code-end]
 
-## Skift kantfarve under indtastning
+## Ændr kantfarven mens der skrives
 
-[inline-code-attrs-start title = 'Kantfarve under indtastning'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Kantfarve mens der skrives'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 :root {
     --fc-input-border-color-focus: #2563eb;
 }
 [inline-code-end]
 
-## Rund alle fire hjørner
+## Afrund alle fire hjørner
 
-By default the top-left corner is square. Set both radius variables to round all four corners the same:
+Som standard er hjørnet øverst til venstre firkantet. Angiv begge radius-variabler for at afrunde alle fire hjørner ens:
 
-[inline-code-attrs-start title = 'Rund alle fire hjørner'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Afrund alle fire hjørner'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 :root {
     --fc-input-border-radius: 12px;
@@ -50,7 +50,7 @@ By default the top-left corner is square. Set both radius variables to round all
 }
 [inline-code-end]
 
-## Tilpas til dit brand
+## Match dit brand
 
 [inline-code-attrs-start title = 'Brandfarver og hjørner'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -64,9 +64,9 @@ By default the top-left corner is square. Set both radius variables to round all
 
 ## Forskellige farver i mørk tilstand
 
-When the widget is in dark mode it has the `dark` class, so you can set different values for dark mode:
+Når widgeten er i mørk tilstand, har den `dark`-klassen, så du kan angive forskellige værdier for mørk tilstand:
 
-[inline-code-attrs-start title = 'Mørk tilstand kantfarver'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Kantfarver i mørk tilstand'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 :root {
     --fc-input-border-color: #d1d5db;
@@ -79,4 +79,4 @@ When the widget is in dark mode it has the `dark` class, so you can set differen
 
 ## Hvorfor ikke style tekstområdet direkte?
 
-The widget draws part of the comment box border itself, around the text area. If you set `border-color` or `border-radius` only on the `textarea`, those lines keep the default style and the border looks mismatched, for example a square line running through a rounded corner. The variables above change both at once.
+Widgeten tegner selv en del af kommentarboksens kant, omkring tekstområdet. Hvis du kun angiver `border-color` eller `border-radius` på `textarea`, beholder disse linjer standardstilen, og kanten ser upassende ud, for eksempel en firkantet linje, der løber gennem et afrundet hjørne. Variablerne ovenfor ændrer begge på én gang.

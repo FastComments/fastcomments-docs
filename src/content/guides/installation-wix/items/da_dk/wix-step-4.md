@@ -7,5 +7,3 @@ Nu hvor vi har tilføjet kommentar-widgeten, lad os få den placeret på vores s
 
 Med denne vejledning vil vi kunne ændre den aktuelle tråd baseret på den aktive side. Dog vil vi ikke kunne ændre størrelsen på kommentar-widgeten dynamisk
 før Wix åbner for denne funktionalitet. Indtil da skal du beslutte, hvor stort kommentarfeltet på din side skal være, og tilpasse størrelsen derefter.
-
----

@@ -1,4 +1,3 @@
----
 ## Parametre
 
 | Navn | Type | Påkrævet | Beskrivelse |
@@ -25,5 +24,3 @@ api->getUserBanPreference(tenantId, sso)
         }
     });
 [inline-code-end]
-
----

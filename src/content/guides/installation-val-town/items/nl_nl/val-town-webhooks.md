@@ -56,5 +56,3 @@ app.delete("/", receive);
 Antwoord snel. FastComments probeert opnieuw bij een non-2xx, en een endpoint die blijft falen wordt uiteindelijk automatisch uitgeschakeld, dus voer het echte werk uit na het beantwoorden in plaats van inline.
 
 Maak dat werk idempotent op basis van de commentaar‑id. Een retry wordt opnieuw ondertekend met een verse timestamp, en dezelfde commentaar‑id komt opnieuw terug bij bewerken en verwijderen, dus er is niets stabiels om te dedupliceren op.
-
----

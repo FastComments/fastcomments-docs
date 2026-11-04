@@ -139,5 +139,3 @@ Image Chat'i birden çok görüntüde başlatabilirsiniz. Her görüntünün ken
     });
 </script>
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 ### 資源使用
 
 請注意，從 API 取得資料會計入您帳戶的使用量。
@@ -16,5 +15,3 @@
 ### Webhooks
 
 Webhook 訂閱有其專屬指南。`POST`、`GET` 與 `DELETE /api/v1/webhooks`，以及 `GET /api/v1/webhooks/sample-payloads`，皆在 [Managing Subscriptions via API](/guide-webhooks.html#webhooks-api-subscriptions) 中說明，事件負載則在 [Webhook Structures](/guide-webhooks.html#webhooks-structures) 中說明。
-
----

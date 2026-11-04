@@ -9,5 +9,3 @@
 Αυτό μπορεί να προσαρμοστεί χωρίς κώδικα, στη σελίδα προσαρμογής του widget, κάτω από τις Προηγμένες Επιλογές:
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.show-advanced-option', '.absolute-dates']; selector = '.absolute-dates'; alt='Προηγμένες Επιλογές στη σελίδα προσαρμογής του widget με το διακόπτη απόλυτων ημερομηνιών ενεργοποιημένο'; title='Χρήση Απόλυτων Ημερομηνιών' app-screenshot-end]
-
----

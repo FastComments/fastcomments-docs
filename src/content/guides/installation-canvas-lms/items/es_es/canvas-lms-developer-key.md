@@ -1,4 +1,3 @@
----
 #### Abrir Claves de Desarrollador en Canvas
 
 Inicie sesión en Canvas como administrador. Vaya a **Admin** (en la barra lateral izquierda) > seleccione su cuenta > **Developer Keys**.
@@ -23,5 +22,3 @@ Tras guardar, la nueva clave aparecerá en la tabla Developer Keys con su **Stat
 #### Copiar el Client ID
 
 La tabla Developer Keys muestra un **Client ID** numérico en la columna Details (p. ej. `17000000000042`). Copie este número - lo necesitará en el siguiente paso.
-
----

@@ -63,5 +63,3 @@ Le mode sombre utilise le modificateur de classe `.dark` sur `.user-profile`.
     border-radius: 12px 0 0 12px;
 }
 ```
-
----

@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Име | Тип | Задължително | Описание |
@@ -24,5 +23,3 @@ let (apiResp, httpResp) = client.postBanUserUndo(
 if apiResp.isSome:
   let _ = apiResp.get()
 [inline-code-end]
-
----

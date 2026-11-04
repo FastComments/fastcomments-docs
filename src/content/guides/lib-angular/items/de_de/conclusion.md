@@ -8,5 +8,3 @@ Wenn Sie auf Probleme stoßen oder Fragen zur Angular-Bibliothek haben, wenden S
 ## Mitwirken
 
 Beiträge sind willkommen! Bitte besuchen Sie das [GitHub-Repository](https://github.com/FastComments/fastcomments-angular) für die Richtlinien zur Mitwirkung.
-
----

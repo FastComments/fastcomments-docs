@@ -44,5 +44,3 @@ interface TenantUserPostResponse {
     tenantUser?: TenantUser; // Başarı durumunda oluşturulan tenant kullanıcıyı eksiksiz döneriz.
 }
 [inline-code-end]
-
----

@@ -1,12 +1,12 @@
-Може се појавити грешка ауторизације, као у следећем примеру:
+Можете добити грешку ауторизације, попут следеће:
 
 <div class="screenshot white-bg">
-    <div class="title">Конфигурација домена недостаје</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-webflow-step-5.png" alt="Domain Configuration Missing" />
+    <div class="title">Недостаје конфигурација домена</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-webflow-step-5.png" alt="Недостаје конфигурација домена" />
 </div>
 
 То је зато што FastComments не зна да треба да дозволи коришћење вашег налога на овом домену.
 
-У овом случају решење је једноставно. Треба само да додате ваш сајт на ваш FastComments.com налог.
+У том случају, решење је једноставно. Само треба да додате свој сајт на свој FastComments.com налог.
 
-[Go here to add your site to your account.](https://fastcomments.com/auth/my-account/configure-domains)
+[Идите овде да бисте додали свој сајт на свој налог.](https://fastcomments.com/auth/my-account/configure-domains)

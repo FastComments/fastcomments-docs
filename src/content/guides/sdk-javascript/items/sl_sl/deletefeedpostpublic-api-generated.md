@@ -34,5 +34,3 @@ Vrne: [`DeleteFeedPostPublicResponse`](https://github.com/FastComments/fastcomme
   );
 })();
 [inline-code-end]
-
----

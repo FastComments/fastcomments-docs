@@ -26,5 +26,3 @@ Yedek e-posta ayarlamak için [Hesap Ayrıntıları](https://fastcomments.com/au
 
 Giriş bağlantıları MFA'dan daha az güvenlidir. FastComments artık yönetici hesapları için gelişmiş güvenlik sağlamak amacıyla iki faktörlü kimlik doğrulamayı (2FA) desteklemektedir.
 2FA etkinleştirildiğinde, giriş bağlantıları kullanılıyor olsa bile 2FA zorunlu olur.
-
----

@@ -30,5 +30,3 @@ try {
     print('Exception when calling DefaultApi->getTenantUser: $e\n');
 }
 [inline-code-end]
-
----

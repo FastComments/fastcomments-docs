@@ -1,28 +1,26 @@
-Attach a poll to a comment, or set the full state of the poll it already has.
+Vedhæft en afstemning til en kommentar, eller angiv den fulde tilstand for den afstemning, den allerede har.
 
-Options are matched by id: an option sent with the id of an existing option keeps its votes (and takes the
-new label and position), an option sent without an id is added, and existing options left out of the list
-are removed along with the votes cast on them.
+Svarmuligheder matches ud fra id: en mulighed, der sendes med id'et for en eksisterende mulighed, bevarer sine stemmer (og får den nye label og position), en mulighed, der sendes uden id, tilføjes, og eksisterende muligheder, der udelades fra listen, fjernes sammen med de stemmer, der er afgivet på dem.
 
-Keeping no existing option ids on a poll that has votes deletes all of them, so that needs replaceVotes=true.
+Hvis man beholder ingen eksisterende muligheds-id'er på en afstemning, der har stemmer, slettes alle af dem, så det kræver replaceVotes=true.
 
-## Parameters
+## Parametre
 
-| Name | Type | Location | Required | Description |
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| commentId | string | path | Yes |  |
-| replaceVotes | boolean | query | No |  |
+| tenantId | string | query | Ja |  |
+| commentId | string | path | Ja |  |
+| replaceVotes | boolean | query | Nej |  |
 
-## Response
+## Svar
 
-Returns: [`SavePollResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/SavePollResponse.java)
+Returnerer: [`SavePollResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/SavePollResponse.java)
 
-## Example
+## Eksempel
 
 [inline-code-attrs-start title = 'putPoll Eksempel'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importer klasser:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -35,10 +33,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Konfigurer API-nøgle autorisation: api_key
+    // Configure API key authorization: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Fjern kommentaren på følgende linje for at sætte et præfiks for API-nøglen, f.eks. "Token" (standard er null)
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);

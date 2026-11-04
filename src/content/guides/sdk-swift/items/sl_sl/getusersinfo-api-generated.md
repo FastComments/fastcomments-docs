@@ -1,4 +1,3 @@
----
 Skupinska informacija o uporabnikih za najemnika. Glede na userIds vrne prikazne informacije iz User / SSOUser.
 Uporablja se v pripomočku za komentarje za obogatitev uporabnikov, ki so se pravkar pojavili prek dogodka prisotnosti.
 Brez konteksta strani: zasebnost se dosledno uveljavlja (zasebni profili so zamaskirani).
@@ -35,5 +34,3 @@ PublicAPI.getUsersInfo(tenantId: tenantId, ids: ids) { (response, error) in
     }
 }
 [inline-code-end]
-
----

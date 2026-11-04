@@ -6,5 +6,3 @@ FastComments имеет специальный плагин для Moodle, ко�
 </div>
 
 Плагин поддерживает древовидные комментарии, совместный чат в реальном времени и несколько режимов SSO. Получить его можно из <a href="https://github.com/FastComments/fastcomments-moodle/" target="_blank">репозитория на GitHub</a>.
-
----

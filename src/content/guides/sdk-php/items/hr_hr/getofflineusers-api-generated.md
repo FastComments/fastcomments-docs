@@ -1,4 +1,3 @@
----
 Prethodni komentatori na stranici koji NISU trenutno online. Sortirani po displayName.  
 Koristite ovo nakon što iscrpite /users/online za prikaz odjeljka "Članovi".  
 Paginacija pokazivača po commenterName: poslužitelj prolazi kroz djelomični {tenantId, urlId, commenterName} indeks od afterName naprijed putem $gt, bez troška $skip.
@@ -46,5 +45,3 @@ try {
     echo 'Exception when calling PublicApi->getOfflineUsers: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

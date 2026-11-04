@@ -33,5 +33,3 @@ if ( optTenant )
         } );
 }
 [inline-code-end]
-
----

@@ -1,12 +1,12 @@
-Next, let's set things up so that the comment thread changes based on the current page, allowing users to discuss the currently displayed content.
+Nato nastavimo stvari tako, da se nit komentarjev spreminja glede na trenutno stran, kar uporabnikom omogoča razpravo o trenutno prikazani vsebini.
 
-Without the following steps, you will only have one global comment thread for your entire site - which is not very useful.
+Brez naslednjih korakov boste imeli samo eno globalno nit komentarjev za celotno spletno stran - kar ni zelo uporabno.
 
-#### Razvojni način
+#### Dev Mode
 
-To add this functionality, we'll have to go into what Wix calls `Dev Mode`.
+Za dodajanje te funkcionalnosti bomo morali vstopiti v tisto, čemur Wix pravi `Dev Mode`.
 
-Click the `Dev Mode` option at the top of the screen.
+Kliknite možnost `Dev Mode` na vrhu zaslona.
 
 <div class="screenshot white-bg">
     <div class="title">Omogoči Dev Mode</div>
@@ -15,36 +15,36 @@ Click the `Dev Mode` option at the top of the screen.
 
 #### Nastavite ID elementa
 
-We're going to add custom code to accomplish this, but first we need to give the new embed element an ID to refer to it by.
+Za dosego tega bomo dodali kodo po meri, vendar moramo najprej novemu vgrajenemu elementu dati ID, na katerega se bomo sklicevali.
 
-Let's call it `fastcomments`.
+Poimenujmo ga `fastcomments`.
 
-Click the new embed element we added, and in dev mode in the bottom right you should see an ID field with a value like `html1`:
+Kliknite nov vgrajeni element, ki smo ga dodali, in v dev načinu spodaj desno bi morali videti polje ID z vrednostjo kot `html1`:
 
 <div class="screenshot white-bg">
     <div class="title">Polje ID</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-5-id-0.png" alt="Polje ID" />
 </div>
 
-Change this to `fastcomments` and hit enter:
+Spremenite to v `fastcomments` in pritisnite enter:
 
 <div class="screenshot white-bg">
-    <div class="title">Nastavite ID</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-5-id-1.png" alt="Nastavite ID" />
+    <div class="title">Nastavitev ID</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-5-id-1.png" alt="Nastavitev ID" />
 </div>
 
-Now we can add our custom code that tells the comment area what page we are viewing.
+Zdaj lahko dodamo našo kodo po meri, ki povem območju komentarjev, katero stran si ogledujemo.
 
-At the bottom of the screen you should see a code editor like this:
+Na dnu zaslona bi morali videti urejevalnik kode, kot je ta:
 
 <div class="screenshot white-bg">
-    <div class="title">Odprite urejevalnik</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-7-open-editor.png" alt="Nastavite ID" />
+    <div class="title">Odpiranje urejevalnika</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-7-open-editor.png" alt="Nastavitev ID" />
 </div>
 
-Copy the following code and paste it in there:
+Kopirajte naslednjo kodo in jo prilepite tja:
 
-[inline-code-attrs-start title = 'Vstavek za navigacijo komentarjev Wix'; type = 'javascript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Wix odsek za navigacijo komentarjev'; type = 'javascript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import wixLocation from 'wix-location';
 
@@ -66,8 +66,6 @@ $w.onReady(function () {
 [inline-code-end]
 
 <div class="screenshot white-bg">
-    <div class="title">Dodajte navigacijsko kodo</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-7-paste-code.png" alt="Dodajte navigacijsko kodo" />
+    <div class="title">Dodajanje kode za navigacijo</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-7-paste-code.png" alt="Dodajanje kode za navigacijo" />
 </div>
-
----

@@ -1,20 +1,20 @@
-The **FastComments - Reviews Summary** block shows an aggregated star rating and review breakdown for a page. Pair it with the **FastComments** block on product templates for the standard reviews layout: summary up top, review form and reviews below.
+Блок **FastComments - Reviews Summary** показує агрегований зірковий рейтинг і розподіл відгуків для сторінки. Поєднуйте його з блоком **FastComments** на шаблонах товарів для стандартного макета відгуків: зведення зверху, форма відгуку та відгуки знизу.
 
 ### Передумова: налаштуйте Ratings & Reviews
 
-Блок Reviews Summary відображає питання рейтингу, які ви налаштували для вашого магазину. Налаштуйте їх спочатку:
+Блок Reviews Summary відображає питання оцінювання, які ви налаштували для свого магазину. Спочатку налаштуйте їх:
 
-1. Відкрийте додаток FastComments у вашій адмінці Shopify.
-2. Клацніть плитку **Ratings & Reviews Helper** (або відкрийте [Ratings & Reviews Helper](https://fastcomments.com/auth/my-account/ratings-reviews-helper?source=shopify) безпосередньо).
-3. Додайте питання, на які має відповісти кожен рецензент (загальний рейтинг зірками, «як підійшло», тощо).
+1. Відкрийте застосунок FastComments в адмінці Shopify.
+2. Натисніть плитку **Ratings & Reviews Helper** (або відкрийте [Ratings & Reviews Helper](https://fastcomments.com/auth/my-account/ratings-reviews-helper?source=shopify) безпосередньо).
+3. Додайте питання, на які має відповідати кожен рецензент (загальний зірковий рейтинг, «як сидиться» тощо).
 
-Без налаштованих питань блоку підсумку нічого агрегувати.
+Без налаштованих питань блоку зведення немає чого агрегувати.
 
-### Додати блок
+### Додайте блок
 
 1. Відкрийте редактор теми Shopify.
-2. Відкрийте шаблон **Product** (або шаблон сторінки, де ви хочете розмістити підсумок).
-3. Натисніть **Add block** близько до верхньої частини секції сторінки, над місцем, де буде блок **FastComments**.
+2. Відкрийте шаблон **Product** (або шаблон сторінки, де ви хочете розмістити зведення).
+3. Натисніть **Add block** угорі розділу сторінки, вище місця, де буде блок **FastComments**.
 4. У розділі **Apps** виберіть **FastComments - Reviews Summary**.
 5. Додайте блок **FastComments** нижче на тій самій сторінці, якщо ви ще цього не зробили, щоб відвідувачі могли залишати відгуки.
 6. Натисніть **Save**.
@@ -23,20 +23,20 @@ The **FastComments - Reviews Summary** block shows an aggregated star rating and
 
 | Налаштування | Що робить | За замовчуванням |
 |---|---|---|
-| Tenant ID (optional) | Override which FastComments tenant the summary reads from. Leave blank to use the store's automatically-configured tenant. | (blank) |
-| Custom URL ID | Override the page identifier the summary aggregates against. Use this when the summary lives on a different page from the FastComments block it reflects. | (auto-detected) |
+| Tenant ID (необов'язково) | Перевизначає, з якого тенанта FastComments зведення читає дані. Залиште порожнім, щоб використовувати автоматично налаштований тенант магазину. | (порожньо) |
+| Custom URL ID | Перевизначає ідентифікатор сторінки, щодо якої агрегується зведення. Використовуйте це, коли зведення розташоване на іншій сторінці, ніж блок FastComments, який воно відображає. | (визначається автоматично) |
 
-### Як підсумок зіставляється з відгуками
+### Як зведення зіставляється з відгуками
 
-Блок Reviews Summary використовує ту ж логіку автоматичного визначення, що й блок **FastComments**:
+Блок Reviews Summary використовує ту саму логіку автовизначення, що й блок **FastComments**:
 
-- Product template: `shopify-product-{product.id}`
-- Blog post template: `shopify-article-{article.id}`
-- Other templates: the request path
+- Шаблон товару: `shopify-product-{product.id}`
+- Шаблон публікації блогу: `shopify-article-{article.id}`
+- Інші шаблони: шлях запиту
 
-Для звичайної сторінки продукту підсумок і тред коментарів автоматично мають спільний URL ID, без необхідності додаткової конфігурації.
+Для звичайної сторінки товару зведення та гілка коментарів автоматично мають спільний URL ID без жодного налаштування.
 
 ### Поради
 
-- Підсумок лише для читання. Щоб збирати відгуки, потрібен блок **FastComments** на тій самій сторінці.
-- Якщо ви зміните питання оцінювання в Ratings & Reviews Helper після збору відгуків, підсумок буде перераховано відповідно до нового набору питань.
+- Зведення доступне лише для читання. Щоб збирати відгуки, потрібен блок **FastComments** на тій самій сторінці.
+- Якщо ви зміните питання оцінювання в Ratings & Reviews Helper після збору відгуків, зведення буде перераховано за новим набором питань.

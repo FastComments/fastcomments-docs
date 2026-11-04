@@ -1,9 +1,9 @@
-By default, only logged in users can vote on polls. Visitors who are not logged in see a **Log in to vote** prompt instead of the vote buttons.
+Domyślnie tylko zalogowani użytkownicy mogą głosować w ankietach. Goście, którzy nie są zalogowani, widzą zachętę **Zaloguj się, aby głosować** zamiast przycisków głosowania.
 
-Check **Allow Anonymous Poll Votes** to let anyone vote without an account.
+Zaznacz **Allow Anonymous Poll Votes**, aby umożliwić każdemu głosowanie bez konta.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-polls']; selector = '.allow-anonymous-poll-votes'; alt='Opcja Zezwól na anonimowe głosy w ankietach w sekcji Włącz ankiety'; title='Zezwól na anonimowe głosy w ankietach' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-polls']; selector = '.allow-anonymous-poll-votes'; alt='Opcja Allow Anonymous Poll Votes w sekcji Enable Polls'; title='Allow Anonymous Poll Votes' app-screenshot-end]
 
-To keep results fair, anonymous votes on a poll are limited to three per IP address per hour.
+Aby zachować uczciwość wyników, anonimowe głosy w ankiecie są ograniczone do trzech na adres IP na godzinę.
 
-This is separate from [Allow Anonymous Voting](/guide-customizations-and-configuration.html#allow-anon-votes), which controls up and down votes on comments.
+Jest to niezależne od [Allow Anonymous Voting](/guide-customizations-and-configuration.html#allow-anon-votes), które kontroluje głosy za i przeciw na komentarze.

@@ -27,5 +27,3 @@ export const CDN = REGION === "eu"
 ## EU アカウント
 
 アカウント、そのデータ、キーはすべて同一リージョンに存在します。もし `eu.fastcomments.com` で作成した場合、すべてのウィジェット設定にも `region: "eu"` が必要で、スクリプトは `cdn-eu.fastcomments.com` からロードされます。そうでなければ、両方ともそのままにしてください。
-
----

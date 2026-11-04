@@ -1,6 +1,6 @@
-While FastComments Desteği, geçişlerde yardımcı olabilir, ancak çoğu, destek personelinin müdahalesi olmadan kolayca gerçekleştirilebilir ve izlenebilir.
+FastComments Destek ekibi geçişlerde yardımcı olsa da, çoğu geçiş destek personelinin herhangi bir müdahalesi olmadan kolayca gerçekleştirilebilir ve izlenebilir.
 
-We natively support importing exports from the following providers:
+Aşağıdaki sağlayıcılardan yapılan dışa aktarımların içe aktarılmasını yerel olarak destekliyoruz:
 
 - Commento
 - Disqus
@@ -9,31 +9,29 @@ We natively support importing exports from the following providers:
 - IntenseDebate
 - Just-Comments
 - Cusdis
-- WordPress (via the plugin, or an XML or CSV export)
-- AnyComment (Via WordPress Import/Export)
+- WordPress (eklenti aracılığıyla veya XML ya da CSV dışa aktarımı ile)
+- AnyComment (WordPress İçe/Dışa Aktarım aracılığıyla)
 
-Bu adrese [buradan](https://fastcomments.com/auth/my-account/manage-data/import) giderek, taşınacak verileri içeren dosyayı yükleyebiliriz.
+[Buraya](https://fastcomments.com/auth/my-account/manage-data/import) giderek, taşınacak verileri içeren dosyayı yükleyebiliriz.
 
-[app-screenshot-start url='/auth/my-account/manage-data/import'; selector = '.account-block'; alt='FastComments içe aktarma sayfası, sağlayıcı seçimi ve dışa aktarma dosyası için dosya yükleme alanlarıyla'; title='İçe Aktarma Sayfası Formu' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/import'; selector = '.account-block'; alt='Sağlayıcı seçimi ve dışa aktarım dosyası yükleme alanlarını gösteren FastComments içe aktarma sayfası'; title='İçe Aktarma Sayfası Formu' app-screenshot-end]
 
 ### İçe Aktarmaları İzleme
 
-FastComments, içe ve dışa aktarmaları işlemek için bir iş işleme sistemi kullanır. Sistem işinizi aldığında, işin durumunu içe veya dışa aktarma arayüzünde periyodik olarak raporlayacaktır.
+FastComments, içe ve dışa aktarmaları işlemek için bir iş işleme sistemi kullanır. Sistem işinizi aldıktan sonra, işin durumunu içe veya dışa aktarma arayüzünde düzenli olarak raporlayacaktır.
 
-[app-screenshot-start url='/auth/my-account/manage-data/import?demo=true'; selector = '.content'; alt='İçe aktarma sayfası, çalışan bir içe aktarma işini ve iş işleme sistemi tarafından raporlanan durumu gösteriyor'; title='İçe Aktarma İş Durumu' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/import?demo=true'; selector = '.content'; alt='Çalışan bir içe aktarma işini ve iş işleme sistemi tarafından raporlanan durumu gösteren içe aktarma sayfası'; title='İçe Aktarma İş Durumu' app-screenshot-end]
 
-İçe aktarma ve dışa aktarma durumunun, hesabınızdaki tüm yöneticiler tarafından görüntülenebileceğini unutmayın.
+İçe ve Dışa Aktarma durumlarının hesaptaki tüm yöneticiler tarafından görüntülenebileceğini unutmayın.
 
-İşiniz başarısız olursa, otomatik olarak yeniden başlatılmaz. İçe aktarma tekrar denenmelidir. Herhangi bir içe veya dışa aktarma başarısız olursa, sistem yöneticilerimiz otomatik olarak bilgilendirilir. Bir sorun tespit edersek, size yardımcı olup olamayacağımızı görmek için sizinle iletişime geçeceğiz.
+İşiniz başarısız olursa, otomatik olarak yeniden başlatılmaz. İçe aktarmanın tekrar denenmesi gerekir. Herhangi bir içe veya dışa aktarma başarısız olursa, sistem yöneticilerimiz otomatik olarak bilgilendirilir. Bir sorun tespit edersek, yardımcı olup olamayacağımızı görmek için sizinle iletişime geçeriz.
 
-### İçe Aktarmayı Yeniden Çalıştırma
+### İçe Aktarmanın Tekrar Çalıştırılması
 
-Bazı geçişlerde, içe aktarmayı birden fazla kez çalıştırmak gerekir. Örneğin, test için ilk bir geçiş yapmak yaygındır ve ardından geçişi tamamlamadan önce en son verilerle içe aktarmayı tekrar çalıştırmak yaygındır.
+Bazı geçişler sırasında, içe aktarmanın birden fazla kez çalıştırılması gerekir. Örneğin, test için ilk geçiş yapılması ve ardından anahtarı çevirmeden önce en güncel verilerle içe aktarmanın tekrar çalıştırılması yaygındır.
 
-Aynı içeriği yeniden içe aktarmak **çift kayıt oluşturmaz**.
+Aynı içeriği yeniden içe aktarmak **yinelenenler oluşturmaz**.
 
-### Veri Güvenliği ve Süre Sonu
+### Veri Güvenliği ve Sona Erme
 
-İçe aktarma dosyaları, dış istekler aracılığıyla hiçbir şekilde erişilebilir değildir ve içe aktarma tamamlandığında dosyalar sistemimizden silinir.
-
----
+İçe aktarma dosyalarına dış istekler aracılığıyla hiçbir şekilde erişilemez ve içe aktarma dosyaları, içe aktarma tamamlandığı anda sistemimizden silinir.

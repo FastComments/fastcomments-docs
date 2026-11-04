@@ -24,5 +24,3 @@ api->deleteTenant(tenantId, userId, sure)
            auto result = std::make_shared<APIEmptyResponse>(*resp);
        }catch(const std::exception&){})
 [inline-code-end]
-
----

@@ -25,5 +25,3 @@ let (response, httpResponse) = client.unBlockUserFromComment(
 if response.isSome:
   let unblockSuccess = response.get()
 [inline-code-end]
-
----

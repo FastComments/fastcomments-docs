@@ -1,45 +1,45 @@
-The **Indledende prompt**-feltet i redigeringsformularen er systemprompten, der definerer agentens personlighed, tone og beslutningsregler. Det er almindelig tekst - ingen templatesyntaks, ingen Mustache, ingen JSON.
+Feltet **Initial prompt** på redigeringsformularen er systemprompten, der definerer agentens personlighed, tone og beslutningsregler. Det er almindelig tekst - ingen skabelonsyntaks, ingen Mustache, ingen JSON.
 
 ### Hvad agenten ser
 
 Ved hver kørsel modtager agenten:
 
-1. **Din indledende prompt.** Dette står først i systemprompten.
+1. **Din initial prompt.** Denne kommer først i systemprompten.
 
-2. Platformens egen systemprompt-suffiks. Dette er fast og gælder for alle agenter ved hver kørsel, og bliver føjet efter din indledende prompt. Den fortæller modellen, at den er en automatiseret agent, at hvert værktøjskald skal inkludere en begrundelse og en tillidsværdi, at den bør `search_memory` før en bortvisning, at den bør foretrække `warn_user` frem for `ban_user` ved første forseelser, og at indhegnet tekst i kontekstbeskeden er upålideligt brugerinput. Du skriver eller overskriver ikke denne del - den håndhæves af platformen af sikkerhedshensyn.
+2. **Platformens eget systemprompt-suffiks.** Dette er fast og gælder for hver agent ved hver kørsel, og tilføjes efter din initial prompt. Det fortæller modellen, at den er en automatiseret agent, at hvert tool-kald skal indeholde en begrundelse og en confidence score, at den skal kalde `search_memory` før banning, at den skal foretrække `warn_user` frem for `ban_user` ved første forseelse, og at indrammet tekst i kontekstbeskeden er utroværdigt brugerinput. Du skriver eller tilsidesætter ikke denne del - den håndhæves af platformen af hensyn til sikkerheden.
 
 
-3. Kontextbeskeden, der beskriver triggeren - kommentaren, eventuel tråd-/bruger-/sidekontekst, dine fællesskabsretningslinjer osv. Se [Kontextmuligheder](#context-options).
+3. **Kontekstbeskeden**, der beskriver udløseren - kommentaren, valgfri tråd-/bruger-/sidekontekst, dine community-retningslinjer og så videre. Se [Context Options](#context-options).
 
-4. Værktøjspaletten - filtreret til de værktøjer, du tillod.
+4. **Tool-paletten** - filtreret til de tools, du tillod.
 
-Modellens opgave er at se på alle fire og vælge nul eller flere værktøjskald.
+Modellens opgave er at se på alle fire og vælge nul eller flere tool-kald.
 
-### Engelsk-only med vilje
+### Kun engelsk med vilje
 
-LLM'er følger engelske systemprompter mere pålideligt end maskinoversatte, og stille oversættelsesfejl i en prompt ændrer agentens adfærd uden nogen synlig testfejl. Så:
+LLM'er følger engelske systemprompter mere pålideligt end maskinoversatte, og stille oversættelsesfejl i en prompt ændrer agentens adfærd uden nogen synlig testfejl. Derfor:
 
-- Skriv den **indledende prompt på engelsk**, uanset hvilke sprog din side understøtter.
-- Brug [Sprogbegrænsninger](#scope-url-locale) til at afgrænse hvilke kommentarer agenten kører på.
-- Oversæt output ved at skrive prompten til at instruere agenten på engelsk ("If the comment language is German, reply in German").
+- Skriv **initial prompt på engelsk**, uanset hvilke sprog dit site understøtter.
+- Brug [Locale restrictions](#scope-url-locale) til at afgrænse, hvilke kommentarer agenten kører på.
+- Oversæt output ved at skrive prompten, så den instruerer agenten på engelsk ("If the comment language is German, reply in German").
 
-Visningsnavnet og eventuelle brugerrettede UI-etiketter omkring agenten **lokaliseres** gennem den sædvanlige FastComments-oversættelsespipeline. Kun selve prompten er engelsk.
+Visningsnavnet og alle brugerrettede UI-labels omkring agenten **bliver** lokaliseret via FastComments' standardoversættelsespipeline. Kun selve prompten er på engelsk.
 
-### Hvad der skal stå i prompten
+### Hvad du skal putte i prompten
 
-Stærke prompts plejer at:
+Stærke prompter har tendens til at:
 
-- **Angive rollen først.** "Du er X. Dit job er Y."
-- **Liste konkrete beslutningsregler.** "Marker som spam hvis kommentaren indeholder en bar URL uden anden tekst. Advar ved grænsetilfælde af fornærmelser. Bannet kun efter en tidligere advarsel for samme adfærd."
-- **Angive format og længde på enhver tekst agenten skriver.** "Svar er 1-2 sætninger."
-- **Specificere hvad agenten skal ignorere eller holde sig ude af.** "Hold dig ude af subjektive debatter."
-- **Sige hvad den skal gøre i tvivlstilfælde.** "Når du er i tvivl, undlad at handle - det er sikrere at springe over end at handle forkert."
+- **Angive rollen først.** "You are X. Your job is Y."
+- **Liste konkrete beslutningsregler.** "Mark as spam if the comment contains a bare URL with no other text. Warn for borderline insults. Ban only after a prior warning for the same behavior."
+- **Angive format og længde på al tekst, agenten skriver.** "Replies are 1-2 sentences."
+- **Angive, hvad agenten skal ignorere eller holde sig ude af.** "Stay out of subjective debates."
+- **Sige, hvad der skal gøres ved tvivl.** "When uncertain, take no action - it is safer to skip than to act wrongly."
 
-Svage prompts er ofte vage ("vær hjælpsom"), giver eksempler på forkert sprog, eller modsiger platformens egen eskalationspolitik.
+Svage prompter har tendens til at være vage ("be helpful"), give eksempler på det forkerte sprog eller modsige platformens egen eskaleringspolitik.
 
 ### Ting du ikke behøver at skrive
 
-Platformen prompt allerede agenten med:
+Platformen prompter allerede agenten med:
 
 - "Banning and spam marking are serious actions. Only act when you have clear reason."
 - "Every tool call must include a justification (1-2 sentences) and a confidence score between 0.0 and 1.0."
@@ -50,9 +50,9 @@ Du kan gentage disse, hvis du vil, men det er ikke nødvendigt.
 
 ### Iteration
 
-Prompter er sjældent rigtige ved første gemning. Den forventede arbejdsgang er:
+Prompter er sjældent rigtige ved første gem. Den forventede arbejdsgang er:
 
-1. Gem prompten og kør agenten i [Tør kørsel](#dry-run-mode).
-2. Se på [Kørselens detaljer](#run-detail-view) for handlinger, du er uenig i.
-3. Brug [Forfin prompt](#refining-prompts)-flowet fra en afvist godkendelse, eller rediger blot prompten direkte.
-4. Gentag indtil output fra tørkørslen ser rigtigt ud.
+1. Gem prompten og kør agenten i [Dry Run](#dry-run-mode).
+2. Se på [Run Detail View](#run-detail-view) for handlinger, du er uenig i.
+3. Brug [Refine Prompt](#refining-prompts)-flowet fra en afvist godkendelse, eller rediger blot prompten direkte.
+4. Gentag, indtil dry-run-outputtet ser rigtigt ud.

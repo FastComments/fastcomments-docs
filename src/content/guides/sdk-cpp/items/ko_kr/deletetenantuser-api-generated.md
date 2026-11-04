@@ -1,4 +1,3 @@
----
 ## 매개변수
 
 | 이름 | 타입 | 필수 | 설명 |
@@ -23,5 +22,3 @@ api->deleteTenantUser(U("my-tenant-123"), U("user@example.com"), options)
         (void)resp;
     });
 [inline-code-end]
-
----

@@ -181,5 +181,3 @@ Para comentários anônimos, provavelmente você quer passar `anonUserId` ao bus
 #### Comentários não sendo retornados
 
 Verifique se seus comentários estão aprovados e não são spam.
-
----

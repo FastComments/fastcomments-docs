@@ -8,5 +8,3 @@
 ## Вклад
 
 Вклады приветствуются! Пожалуйста, посетите [репозиторий на GitHub](https://github.com/FastComments/fastcomments-react-native-sdk) для получения руководства по внесению вклада.
-
----

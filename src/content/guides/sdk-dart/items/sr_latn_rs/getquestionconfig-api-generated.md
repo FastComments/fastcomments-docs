@@ -30,5 +30,3 @@ try {
     print('Exception when calling DefaultApi->getQuestionConfig: $e\n');
 }
 [inline-code-end]
-
----

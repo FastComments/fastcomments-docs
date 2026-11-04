@@ -8,5 +8,3 @@ Se você encontrar qualquer problema ou tiver dúvidas sobre o SDK Rust, por fav
 ## Contribuindo
 
 Contribuições são bem-vindas! Por favor, visite o [repositório do GitHub](https://github.com/FastComments/fastcomments-rust) para obter as diretrizes de contribuição.
-
----

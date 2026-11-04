@@ -23,5 +23,3 @@ api->getTenant(tenantId, id)
         }
     });
 [inline-code-end]
-
----

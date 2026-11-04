@@ -1,4 +1,3 @@
----
 중재자는 다양한 페이지 또는 콘텐츠 카테고리를 관리하기 위해 그룹에 배정될 수 있습니다.
 
 중재자가 하나 이상의 그룹에 속하면, 해당 그룹의 댓글만 **댓글 관리** 페이지에서 볼 수 있습니다.
@@ -15,4 +14,3 @@
 
 이는 [몇몇 그룹을 추가](https://fastcomments.com/auth/my-account/moderate-comments/moderation-groups)하고, 댓글 위젯에 해당 `Moderation Group` ID를 지정함으로써 설정할 수 있습니다,
 [여기에 안내된 대로](/guide-customizations-and-configuration.html#moderation-group-ids).
----

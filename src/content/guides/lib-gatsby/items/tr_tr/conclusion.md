@@ -1,4 +1,3 @@
----
 ## Yardıma mı İhtiyacınız Var?
 
 GatsbyJS Kütüphanesi ile ilgili herhangi bir sorunla karşılaşırsanız veya sorularınız olursa, lütfen:
@@ -9,5 +8,3 @@ GatsbyJS Kütüphanesi ile ilgili herhangi bir sorunla karşılaşırsanız veya
 ## Katkıda Bulunma
 
 Katkılar memnuniyetle karşılanır! Katkı yönergeleri için lütfen [GitHub deposunu](https://github.com/FastComments/fastcomments-gatsbyjs-example) ziyaret edin.
-
----

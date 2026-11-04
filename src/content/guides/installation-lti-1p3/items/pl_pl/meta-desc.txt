@@ -1,3 +1,1 @@
----
 Połącz FastComments z D2L Brightspace, Moodle, Blackboard, Sakai lub Schoology. Jeden dynamiczny adres rejestracji konfiguruje całą integrację LTI 1.3.
----

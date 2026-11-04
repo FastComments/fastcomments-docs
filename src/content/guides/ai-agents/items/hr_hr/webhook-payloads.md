@@ -1,27 +1,27 @@
-Svi webhook payloadovi agenta dijele zajednički omot i dodaju event-specifičan `data` blok. Ova stranica navodi potpunu shemu za svaki.
+Svi webhook payloadi agenata dijele zajedničku omotnicu i dodaju blok `data` specifičan za događaj. Ova stranica navodi potpunu shemu za svaki.
 
-### Omot (svaki događaj)
+### Omotnica (svaki događaj)
 
-Svaka poruka, bez obzira na tip događaja, ima ova vršna polja:
+Svaki payload, bez obzira na vrstu događaja, ima ova polja na najvišoj razini:
 
-[inline-code-attrs-start title = 'Shema omota webhooka'; type='json' inline-code-attrs-end]
+[inline-code-attrs-start title = 'Shema omotnice webhooka'; type='json' inline-code-attrs-end]
 [inline-code-start]
 {
   "event": "trigger.succeeded | trigger.failed | approval.requested | approval.decided",
   "eventType": 0 | 1 | 2 | 3,
   "tenantId": "string",
-  "domain": "string - podudarna domena za ovu isporuku",
+  "domain": "string - the matched domain for this delivery",
   "agentId": "string",
   "agentInternalName": "string",
   "agentDisplayName": "string",
-  "occurredAt": "string - ISO 8601 vremenska oznaka",
-  "data": { /* specifično za događaj, vidi dolje */ }
+  "occurredAt": "string - ISO 8601 timestamp",
+  "data": { /* event-specific, see below */ }
 }
 [inline-code-end]
 
 ### `trigger.succeeded` / `trigger.failed`
 
-`data` shema:
+Shema `data`:
 
 [inline-code-attrs-start title = 'Shema podataka događaja okidača'; type='json' inline-code-attrs-end]
 [inline-code-start]
@@ -34,18 +34,18 @@ Svaka poruka, bez obzira na tip događaja, ima ova vršna polja:
   "actions": [
     {
       "type": 0,
-      "commentId": "string - neobavezno",
-      "userId": "string - neobavezno",
-      "badgeId": "string - neobavezno",
+      "commentId": "string - optional",
+      "userId": "string - optional",
+      "badgeId": "string - optional",
       "pending": false,
       "justification": "string",
       "confidence": 0.92
     }
   ],
-  "errorMessage": "string - prisutno u trigger.failed",
-  "url": "string - neobavezno",
-  "urlId": "string - neobavezno",
-  "commentId": "string - neobavezno"
+  "errorMessage": "string - present on trigger.failed",
+  "url": "string - optional",
+  "urlId": "string - optional",
+  "commentId": "string - optional"
 }
 [inline-code-end]
 
@@ -53,13 +53,13 @@ Svaka poruka, bez obzira na tip događaja, ima ova vršna polja:
 
 `actions[].type` je numerički enum iz [popisa alata](#tools-overview).
 
-`actions[].pending` je `true` kada je akcija stavljena u čekanje za [odobrenje](#approval-workflow) umjesto da je izvršena.
+`actions[].pending` je `true` kada je radnja bila stavljena u red za [odobrenje](#approval-workflow) umjesto izvršena.
 
 ### `approval.requested`
 
-`data` shema:
+Shema `data`:
 
-[inline-code-attrs-start title = 'Shema podataka zahtjeva za odobrenjem'; type='json' inline-code-attrs-end]
+[inline-code-attrs-start title = 'Shema podataka zahtjeva za odobrenje'; type='json' inline-code-attrs-end]
 [inline-code-start]
 {
   "approvalId": "string",
@@ -67,28 +67,28 @@ Svaka poruka, bez obzira na tip događaja, ima ova vršna polja:
   "toolName": "ban_user | mark_comment_spam | ...",
   "actionType": 10,
   "status": "PENDING",
-  "args": { /* ovisno o alatu, vidi dolje */ },
+  "args": { /* per-tool, see below */ },
   "createdAt": "string - ISO 8601",
-  "justification": "string - neobavezno, obrazloženje agenta",
+  "justification": "string - optional, agent reasoning",
   "confidence": 0.85,
-  "contextSnapshot": { /* kontekst komentara/stranice na koji se odnosi odobrenje */ }
+  "contextSnapshot": { /* the comment/page context the approval is about */ }
 }
 [inline-code-end]
 
-Objekt **`args`** je što god je LLM poziv alata prenio. Njegov oblik ovisi o alatu:
+Objekt **`args`** je ono što je poziv LLM alata nosio. Njegov oblik ovisi o alatu:
 
 - Za `ban_user`: `{ userId, commentId, duration, shadowBan, deleteAllUsersComments?, banIP? }`.
 - Za `mark_comment_spam`: `{ commentId, isSpam }`.
 - Za `write_comment`: `{ comment, urlId, parentId? }`.
 - ...i tako dalje.
 
-Skup oblika argumenata alata nije stabilan javni ugovor. Alati se mogu dodavati u budućnosti, a platforma prosljeđuje args bez promjena. Potrošači bi trebali tretirati args kao nečitljiv blob osim ako izričito ne razumiju uključeni alat.
+Skup oblika argumenata alata **nije stabilan javni ugovor**. Alati se mogu dodavati u budućnosti i platforma prosljeđuje argumente nepromijenjene. Potrošači trebaju tretirati args kao neprozirnu masu osim ako izričito ne razumiju uključeni alat.
 
-**`contextSnapshot`** bilježi kontekst komentara, stranice i korisnika iz kojeg je odobrenje stavljeno u čekanje. Njegov oblik odražava kontekst poruke okidača.
+**`contextSnapshot`** bilježi kontekst komentara, stranice i korisnika iz kojeg je odobrenje stavljeno u red. Njegov oblik zrcali poruku konteksta okidača.
 
 ### `approval.decided`
 
-`data` shema:
+Shema `data`:
 
 [inline-code-attrs-start title = 'Shema podataka odluke o odobrenju'; type='json' inline-code-attrs-end]
 [inline-code-start]
@@ -106,24 +106,24 @@ Skup oblika argumenata alata nije stabilan javni ugovor. Alati se mogu dodavati 
 }
 [inline-code-end]
 
-### TenantAgentAction shape
+### Oblik TenantAgentAction
 
-Unutar `actions[]` u trigger payloadovima, svaka akcija ima:
+Unutar `actions[]` u payloadima okidača, svaka radnja ima:
 
 [inline-code-attrs-start title = 'Shema TenantAgentAction'; type='json' inline-code-attrs-end]
 [inline-code-start]
 {
   "type": 0,
-  "commentId": "string - neobavezno",
-  "userId": "string - neobavezno",
-  "badgeId": "string - neobavezno",
+  "commentId": "string - optional",
+  "userId": "string - optional",
+  "badgeId": "string - optional",
   "pending": false,
   "justification": "string",
   "confidence": 0.92
 }
 [inline-code-end]
 
-`type` vrijednosti enuma odgovaraju `AgentActionType`:
+Vrijednosti enuma `type` odgovaraju `AgentActionType`:
 
 - 0: `WRITE_COMMENT`
 - 1: `VOTE_COMMENT`
@@ -140,7 +140,7 @@ Unutar `actions[]` u trigger payloadovima, svaka akcija ima:
 - 12: `WARNED_USER`
 - 13: `SAVED_MEMORY`
 
-`SEARCH_MEMORY` se ne pojavljuje u `actions[]` zato što je samo za čitanje i nije revidiran.
+`SEARCH_MEMORY` se ne pojavljuje u `actions[]` jer je samo za čitanje i ne provjerava se.
 
 ### Vrijednosti enuma `triggerType`
 
@@ -167,11 +167,9 @@ Unutar `actions[]` u trigger payloadovima, svaka akcija ima:
 
 Svaka isporuka uključuje:
 
-- `X-FastComments-Agent-Event` - kanoničko ime događaja (`trigger.succeeded`, itd.).
-- `X-FastComments-Signature` - HMAC-SHA256 sirovog tijela koristeći vaš API tajni ključ. Vidi [Potpisivanje webhooka](#webhook-signing).
+- `X-FastComments-Agent-Event` - kanonski naziv događaja (`trigger.succeeded` itd.).
+- `X-FastComments-Signature` - HMAC-SHA256 sirovog tijela koristeći vašu API tajnu. Pogledajte [Potpisivanje webhooka](#webhook-signing).
 
 ### Stabilnost
 
-Polja omota i dokumentirana `data` polja po događaju dio su javnog ugovora. Dodavanje novih opcionalnih polja postojećim payloadovima je dopušteno i ne smatra se breaking promjenom - vaš potrošač bi trebao ignorirati nepoznata polja. Oblik `args` i `contextSnapshot` **nije** dio ugovora.
-
----
+Polja omotnice i dokumentirana polja `data` po događaju dio su javnog ugovora. Dodavanje novih neobaveznih polja postojećim payloadima dopušteno je i ne smatra se promjenom koja lomi kompatibilnost - vaš potrošač treba ignorirati nepoznata polja. Oblik `args` i `contextSnapshot` **nije** dio ugovora.

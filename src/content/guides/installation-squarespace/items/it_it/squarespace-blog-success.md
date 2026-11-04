@@ -1,4 +1,3 @@
----
 Successo! Ora dovresti vedere il FastComments Comment Widget in tutti i tuoi post del blog.
 
 <div class="screenshot white-bg">
@@ -7,5 +6,3 @@ Successo! Ora dovresti vedere il FastComments Comment Widget in tutti i tuoi pos
 </div>
 
 Congratulazioni per aver configurato FastComments con Squarespace! Se hai riscontrato un Domain Error, o desideri scoprire come personalizzare l'area dei commenti, continua a leggere!
-
----

@@ -5,5 +5,3 @@ Dodajte komentiranje u stvarnom vremenu, chat i još mnogo toga svojoj Laravel a
 ## Repozitorij
 
 [Pogledajte na GitHubu](https://github.com/FastComments/fastcomments-laravel)
-
----

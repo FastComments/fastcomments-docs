@@ -1,4 +1,3 @@
----
 Skupni podaci o korisniku za najmodavca. Dajući userIds, vraća prikazne informacije iz User / SSOUser.  
 Koristi se od strane widgeta za komentare kako bi obogatio korisnike koji su se upravo pojavili putem događaja prisutnosti.  
 Nema konteksta stranice: privatnost se provodi jednolično (privatni profili su maskirani).
@@ -26,5 +25,3 @@ async function fetchUsersInfo(): Promise<void> {
 }
 fetchUsersInfo();
 [inline-code-end]
-
----

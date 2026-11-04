@@ -1,4 +1,3 @@
----
 [related-parameter-start name = 'enableSpoilers'; type = 'boolean'; related-parameter-end]
 
 Możemy włączyć obsługę spoilerów, ustawiając flagę **enableSpoilers** na true:
@@ -12,5 +11,3 @@ Można to zrobić również bez kodu. Na stronie dostosowywania widgetu, zobacz 
 Gdy tekst jest zaznaczony, a widoczny przycisk `SPOILER` zostanie kliknięty, tekst zostanie zamaskowany, dopóki użytkownik nie najedzie na niego myszką. W trybie ciemnym robimy to samo, używając innych kolorów lepiej pasujących do trybu ciemnego.
 
 Jest to również kompatybilne z edytorem WYSIWYG.
-
----

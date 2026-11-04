@@ -1,4 +1,3 @@
----
 Tidligere kommentatorer på siden, som IKKE er online lige nu. Sorteret efter displayName.
 Brug dette efter at have udtømt /users/online for at gengive en "Medlemmer"-sektion.
 Cursor-paginering på commenterName: serveren gennemgår den delvise {tenantId, urlId, commenterName}
@@ -40,5 +39,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_offline_users: #{e}"
 end
 [inline-code-end]
-
----

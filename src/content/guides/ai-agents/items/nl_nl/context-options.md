@@ -1,65 +1,65 @@
-De **Context**-sectie op het bewerkingsformulier bepaalt hoeveel informatie de agent bij elke uitvoering ontvangt. Meer context leidt tot betere beslissingen maar verhoogt de tokenkosten per uitvoering, dus u wilt alleen wat de agent daadwerkelijk nodig heeft.
+Het gedeelte **Context** op het bewerkingsformulier bepaalt hoeveel informatie de agent bij elke run ontvangt. Meer context leidt tot betere beslissingen, maar verhoogt de tokenkosten per run, dus je wilt alleen wat de agent daadwerkelijk nodig heeft.
 
-### Wat altijd wordt opgenomen
+### Wat altijd is inbegrepen
 
-Zelfs als elk selectievakje is uitgevinkt, bevat het contextbericht van de agent:
+Zelfs als alle selectievakjes uitgeschakeld zijn, bevat het contextbericht van de agent:
 
-- Het **trigger event type** (bijv. `COMMENT_ADD`, `COMMENT_FLAG_THRESHOLD`).
-- De **pagina-URL en URL-ID** (indien bekend).
-- De **reactie** die de uitvoering heeft geactiveerd, als die er is - ID, auteur gebruikers-ID, auteur weergavenaam, reactietekst, stemtellingen, flag-aantal, spam/goedgekeurd/beoordeeld-vlaggen, parent ID. Het e‑mailadres van de auteur wordt **nooit** naar de LLM-provider gestuurd (PII-minimalisatie).
-- De **vorige reactietekst** voor `COMMENT_EDIT` triggers (zodat de agent vóór/na kan vergelijken).
-- De **stemrichting** voor `COMMENT_VOTE_THRESHOLD` triggers.
-- De **gebruiker-ID** en **badge-ID** die de trigger veroorzaakten (voor moderator-badge triggers).
-- De **badgecatalogus** van uw tenant (naam, weergavelabel, beschrijving) wanneer de agent badges mag toekennen, zodat de agent een geschikte kan kiezen zonder dat u de badges in de prompt hoeft te beschrijven.
+- Het **type triggerevent** (bijv. `COMMENT_ADD`, `COMMENT_FLAG_THRESHOLD`).
+- De **pagina-URL en URL ID** (indien bekend).
+- De **commentaar** die de run heeft geactiveerd, indien aanwezig - ID, gebruikers-ID van de auteur, weergavenaam van de auteur, commentaartekst, aantal stemmen, aantal vlaggen, spam/goedgekeurd/beoordeeld-vlaggen, ouder-ID. Het e-mailadres van de auteur wordt **nooit** naar de LLM-provider gestuurd (PII-minimalisatie).
+- De **vorige commentaartekst** bij `COMMENT_EDIT`-triggers (zodat de agent voor/na kan vergelijken).
+- De **stemrichting** bij `COMMENT_VOTE_THRESHOLD`-triggers.
+- De **gebruikers-ID van de triggerende gebruiker** en **badge-ID** (voor moderator-badge-triggers).
+- De **badgecatalogus** van je tenant (naam, weergavelabel, beschrijving) wanneer de agent badges mag toekennen, zodat de agent een passende kan kiezen zonder dat je de badges in de prompt hoeft uit te schrijven.
 
-Alle niet-vertrouwde tekst - reactieteksten, auteursnamen, paginatitels, het richtlijndocument zelf - wordt in het contextbericht **afgeschermd** met markeringen zoals `<<<COMMENT_TEXT>>> ... <<<END>>>`. De systeemprompt van het platform instrueert het model om nooit instructies binnen die afschermingen op te volgen. Dit is de prompt-injectie-afweer van het platform; u hoeft dit niet in uw prompt te herhalen.
+Alle niet-vertrouwde tekst - commentaarinhoud, auteursnamen, paginatitels, het richtlijnendocument zelf - wordt in het contextbericht **omheind** met markeringen zoals `<<<COMMENT_TEXT>>> ... <<<END>>>`. De systeemprompt van het platform instrueert het model om nooit instructies binnen die omheiningen op te volgen. Dit is de prompt-injectieverdediging van het platform; je hoeft deze niet te herhalen in je prompt.
 
 ### De drie selectievakjes
 
-#### Include parent comment and prior replies in the same thread
+#### Oudercommentaar en eerdere reacties in dezelfde thread opnemen
 
 Voegt toe:
-- De **parent comment** - ID, auteur, tekst.
-- **Sibling replies** - de eerdere reacties op dezelfde parent in dezelfde thread.
+- Het **oudercommentaar** - ID, auteur, tekst.
+- **Reacties van siblings** - de eerdere reacties op hetzelfde oudercommentaar in dezelfde thread.
 
-Handig voor: elke agent die op een reactie in context reageert (welkomsgroeters, thread-samenvatters, moderators die reacties in gesprekken lezen).
+Nuttig voor: elke agent die op een commentaar reageert met context (welkomstgroeters, thread-samenvatters, moderators die reacties in gesprekken lezen).
 
-Kosten: klein tot middelgroot. Begrensd door hoeveel siblings er in een thread bestaan.
+Kosten: klein tot middelgroot. Begrensd door het aantal siblings dat op een bepaalde thread bestaat.
 
-#### Include commenter's trust factor, account age, ban history, and recent comments
+#### Trustfactor, accountleeftijd, banhistorie en recente commentaren van de commentergever opnemen
 
 Voegt het **AUTHOR_HISTORY**-blok toe:
 
-- **Account age in days** sinds aanmelding.
-- **Trust factor (0-100)** - de FastComments-score die samenvat hoe betrouwbaar de gebruiker op deze site is. Zie de [Spam Detection](/guide-moderation.html#spam-detection) pagina in de moderatiehandleiding.
-- **Prior ban count.**
-- **Total comments on this site.**
-- **Duplicate-content count** - als de gebruiker recent identieke tekst heeft gepost (anti-spam signaal).
-- **Same-IP cross-account signal** - aantal reacties vanaf hetzelfde IP onder andere accounts (alt-account signaal). De IP-hash zelf wordt nooit naar de LLM gestuurd.
-- **Recent comments** - tot 5 van de meest recente reacties van de gebruiker, elk afgekapt op 300 tekens, afgeschermd als niet-vertrouwde tekst.
+- **Accountleeftijd in dagen** sinds registratie.
+- **Trustfactor (0-100)** - de FastComments-score die samenvat hoe vertrouwd de gebruiker op deze site is. Zie de pagina [Spam Detection](/guide-moderation.html#spam-detection) in de moderatiegids.
+- **Aantal eerdere bans.**
+- **Totaal aantal commentaren op deze site.**
+- **Aantal duplicaat-inhoud** - als de gebruiker recentelijk identieke tekst heeft geplaatst (anti-spamsignaal).
+- **Signaal voor cross-account op hetzelfde IP** - aantal commentaren vanaf hetzelfde IP onder andere accounts (alt-account-signaal). De IP-hash zelf wordt nooit naar de LLM gestuurd.
+- **Recente commentaren** - tot 5 meest recente commentaren van de gebruiker, elk afgekapt tot 300 tekens, omheind als niet-vertrouwde tekst.
 
-Handig voor: elke moderatieagent. Zonder dit verbant het model nieuwe accounts en lang bestaande goede gebruikers met dezelfde houding.
+Nuttig voor: elke moderatie-agent. Zonder dit bans het model nieuwe accounts en langdurige gebruikers met goede bedoelingen op dezelfde manier.
 
-Kosten: middelgroot. Recente reacties voegen de meeste tokens toe.
+Kosten: middelgroot. Recente commentaren voegen de meeste tokens toe.
 
-#### Include page title, subtitle, description, and meta tags
+#### Paginatitel, subtitel, beschrijving en meta-tags opnemen
 
-Voegt het **PAGE_CONTEXT**-blok toe - titel, subtitel, beschrijving en eventuele meta-tags die FastComments voor de pagina heeft vastgelegd.
+Voegt het **PAGE_CONTEXT**-blok toe - titel, subtitel, beschrijving en alle meta-tags die FastComments voor de pagina heeft vastgelegd.
 
-Handig voor: welkomsgroeters en thread-samenvatters, waarbij het weten waar de pagina over gaat de outputkwaliteit aanzienlijk verbetert.
+Nuttig voor: welkomstgroeters en thread-samenvatters, waar het weten waar de pagina over gaat de uitvoerkwaliteit aanzienlijk verbetert.
 
 Kosten: klein.
 
-### Community guidelines
+### Communityrichtlijnen
 
-Het vierde veld, **Community guidelines**, is een vrije-tekst beleidsblok dat bij elke uitvoering in het contextbericht met de rol van gebruiker wordt opgenomen, afgeschermd als niet-vertrouwde tekst op dezelfde manier als reactieteksten en andere door gebruikers aangeleverde inhoud. De agent leest het als beleidsdocument, maar het platform behandelt het niet als een systeeminstructie. Zie [Community Guidelines](#community-guidelines) voor wat u erin moet zetten.
+Het vierde veld, **Communityrichtlijnen**, is een vrij tekstbeleidblok dat bij elke run wordt opgenomen in het contextbericht voor de gebruikersrol, op dezelfde manier omheind als niet-vertrouwde tekst zoals commentaarinhoud en andere door gebruikers geleverde inhoud. De agent leest het als beleidstekst, maar het platform behandelt het niet als systeeminstructie. Zie [Communityrichtlijnen](#community-guidelines) voor wat je erin moet zetten.
 
 ### Context selectief toevoegen
 
 Deze selectievakjes gelden per agent, niet globaal. Een veelvoorkomend patroon:
 
-- Welkomsgroeter: page context **on**, thread context **off**, user history **off**.
-- Moderator: thread context **off**, user history **on**, page context **off**.
-- Thread-samenvatter: thread context **on**, page context **on**, user history **off**.
+- Welkomstgroeter: paginacontext **aan**, threadcontext **uit**, gebruikershistorie **uit**.
+- Moderator: threadcontext **uit**, gebruikershistorie **aan**, paginacontext **uit**.
+- Thread-samenvatter: threadcontext **aan**, paginacontext **aan**, gebruikershistorie **uit**.
 
-Kies de minimale context die een agent nodig heeft om correct te zijn voor de calls die hij daadwerkelijk uitvoert - extra context kost tokens bij elke uitvoering, zelfs wanneer de agent het niet gebruikt.
+Gebruik de minimale context die een agent nodig heeft om correct te zijn bij de aanroepen die het daadwerkelijk doet - extra context kost tokens bij elke run, zelfs wanneer de agent deze niet gebruikt.

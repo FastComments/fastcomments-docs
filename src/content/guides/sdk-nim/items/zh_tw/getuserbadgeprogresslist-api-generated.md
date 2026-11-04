@@ -1,4 +1,3 @@
----
 ## 參數
 
 | 名稱 | 類型 | 必填 | 說明 |
@@ -18,5 +17,3 @@ let (response, httpResponse) = client.getUserBadgeProgressList(tenantId = "my-te
 if response.isSome:
   let badgeProgress = response.get()
 [inline-code-end]
-
----

@@ -1,3 +1,1 @@
----
 Installez FastComments depuis le Shopify App Store et faites glisser les blocs de commentaire, d’avis et de compteur sur les articles et les produits. Les clients Shopify sont connectés pour vous.
----

@@ -4,5 +4,3 @@
 子評論。舉例來說，您可以在頁面載入時有條件地設定此項，以僅允許部分使用者發表頂層評論。
 
 [code-example-start config = {noNewRootComments: true}; linesToHighlight = [6]; title = 'Prevent New Root Comments'; code-example-end]
-
----

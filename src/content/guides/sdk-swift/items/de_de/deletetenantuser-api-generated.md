@@ -34,5 +34,3 @@ DefaultAPI.deleteTenantUser(tenantId: tenantId, id: id, options: DefaultAPI.Dele
     }
 }
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 ## Parameter
 
 | Name | Type | Location | Required | Description |
@@ -31,5 +30,3 @@ DefaultAPI.deleteDomainConfig(tenantId: tenantId, domain: domain) { (response, e
     }
 }
 [inline-code-end]
-
----

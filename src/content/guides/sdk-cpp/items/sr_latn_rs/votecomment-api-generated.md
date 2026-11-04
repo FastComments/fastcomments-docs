@@ -38,5 +38,3 @@ api->voteComment(tenantId, commentId, urlId, broadcastId, voteParams, options)
        }
    });
 [inline-code-end]
-
----

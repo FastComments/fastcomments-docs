@@ -1,4 +1,3 @@
----
 ## Параметры
 
 | Имя | Тип | Обязательно | Описание |
@@ -18,5 +17,3 @@ let (notifOpt, httpResp) = client.getNotifications(tenantId = "my-tenant-123", o
 if notifOpt.isSome:
   let notifications = notifOpt.get()
 [inline-code-end]
-
----

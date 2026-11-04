@@ -11,5 +11,3 @@ Dodatkowo możesz użyć klawiszy strzałek w górę i w dół, aby poruszać si
 Wiemy, że możesz chcieć użyć symbolu `@` bez oznaczania użytkownika. FastComments wykryje to i nie będzie przeszkadzać w Twoim pisaniu.
 
 Zauważ, że autouzupełnianie najpierw preferuje dopasowania uwzględniające wielkość liter, a następnie spróbuje wyszukać także wyniki ignorujące wielkość liter.
-
----

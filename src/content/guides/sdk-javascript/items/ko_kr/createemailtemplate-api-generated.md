@@ -27,5 +27,3 @@ const response: CreateEmailTemplateResponse = await createEmailTemplate(tenantId
 
 console.log(response.template.id);
 [inline-code-end]
-
----

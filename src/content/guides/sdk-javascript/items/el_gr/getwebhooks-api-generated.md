@@ -29,5 +29,3 @@ Returns: [`GetWebhooksResponse`](https://github.com/FastComments/fastcomments-sd
   const minimalResponse: GetWebhooksResponse = await getWebhooks(tenantId);
 })();
 [inline-code-end]
-
----

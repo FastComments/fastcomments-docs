@@ -1,19 +1,16 @@
-Creates a new trial account for an AI agent without a human signup. No API key is needed to call this.
+Crea una nueva cuenta de prueba para un agente de IA sin un registro humano. No se necesita clave de API para llamar a esto.
 
-The response contains the tenant id, an API key that works immediately against the REST API and the
-MCP server, and a claim URL. Give the claim URL to the human you are working for: opening it while
-logged in to FastComments attaches the account to them. Unclaimed accounts, and their keys, are
-deleted 72 hours after creation. Until claimed, the account has the standard trial limits.
+La respuesta contiene el id del tenant, una clave de API que funciona de inmediato contra la API REST y el servidor MCP, y una URL de reclamación. Entrega la URL de reclamación a la persona para la que trabajas: al abrirla con la sesión iniciada en FastComments, la cuenta queda vinculada a esa persona. Las cuentas no reclamadas, junto con sus claves, se eliminan 72 horas después de su creación. Hasta que se reclame, la cuenta tiene los límites estándar de prueba.
 
-## Response
+## Respuesta
 
-Returns: [`CreateAgentTenantResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateAgentTenantResponse.swift)
+Devuelve: [`CreateAgentTenantResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateAgentTenantResponse.swift)
 
-## Example
+## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo createAgentTenant'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo de createAgentTenant'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Los siguientes ejemplos de código siguen en beta. Para cualquier problema, por favor repórtelo vía http://github.com/OpenAPITools/openapi-generator/issues/new
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let createAgentTenantBody = CreateAgentTenantBody(name: "name_example", domains: ["domains_example"], agent: "agent_example") // CreateAgentTenantBody | 
@@ -29,5 +26,3 @@ DefaultAPI.createAgentTenant(createAgentTenantBody: createAgentTenantBody) { (re
     }
 }
 [inline-code-end]
-
----

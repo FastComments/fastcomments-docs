@@ -58,5 +58,3 @@ yukarıdaki footer kodunu eklediniz ve ardından collab sohbetini etkinleştirme
 
 Daha sonra `<div>` içindeki paragraf öğesinde collab sohbeti etkinleştirilecek, ve sayfadaki diğer hiçbir şey etkilenmeyecek. Eğer
 `<div>` içine hiç içerik koymazsanız o zaman collab sohbeti tüm gönderi gövdesinde etkinleştirilir.
-
----

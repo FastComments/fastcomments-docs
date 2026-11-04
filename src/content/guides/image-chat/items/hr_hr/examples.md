@@ -139,5 +139,3 @@ Možete inicijalizirati Image Chat na više slika. Svaka slika će imati svoje n
     });
 </script>
 [inline-code-end]
-
----

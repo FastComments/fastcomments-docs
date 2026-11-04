@@ -1,6 +1,6 @@
-Below is the Vanilla JS code for installing the Summary Widget. The React library also has this widget.
+Hieronder staat de Vanilla JS-code voor het installeren van de Summary Widget. De React-bibliotheek heeft deze widget ook.
 
-[inline-code-attrs-start title = 'Samenvatting Widget Installatie'; type = 'html'; isFunctional = true; type = 'html'; inline-codeattrs-end]
+[inline-code-attrs-start title = 'Summary Widget Installatie'; type = 'html'; isFunctional = true; type = 'html';  inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-reviews-summary.min.js"></script>
 <div id="summary-widget"></div>
@@ -11,12 +11,14 @@ Below is the Vanilla JS code for installing the Summary Widget. The React librar
 </script>
 [inline-code-end]
 
-The widget will automatically find the questions to show in the summary based on the corresponding widget configuration for that page/site.
+De widget vindt automatisch de vragen die in de samenvatting moeten worden getoond op basis van de bijbehorende widgetconfiguratie voor die pagina/site.
 
-### Filtering Comments by Rating
+### Reacties filteren op beoordeling
 
-When the comment widget for the same page is also on the page, and it is configured to show each commenter's answer on their comment, the rows of the breakdown become clickable. Clicking a row, for example "5", filters the comment widget to the comments that gave that answer. Clicking the row again, or the X on the "Showing only" chip in the comment widget, shows all the comments again. This needs no configuration: the Summary Widget finds the comment widget with the same `tenantId` and `urlId`.
+Wanneer de comment-widget voor dezelfde pagina ook op de pagina staat, en deze is geconfigureerd om het antwoord van elke reactiegever op diens reactie te tonen, worden de rijen van de uitsplitsing
+klikbaar. Door op een rij te klikken, bijvoorbeeld "5", wordt de comment-widget gefilterd op de reacties die dat antwoord hebben gegeven. Door opnieuw op de rij te klikken, of op de X op de "Showing only"-chip
+in de comment-widget, worden alle reacties weer getoond. Hiervoor is geen configuratie nodig: de Summary Widget vindt de comment-widget met dezelfde `tenantId` en `urlId`.
 
-This works for star, thumbs, emoji, scale and single choice questions. The breakdown the comment widget shows above the comment box can be clicked the same way.
+Dit werkt voor sterren, duimen, emoji, schaal- en meerkeuzevragen. De uitsplitsing die de comment-widget boven het reactievak toont, kan op dezelfde manier worden aangeklikt.
 
-If you require the widget in one of our other libraries that does not have it, file a support ticket so that we know to add it.
+Als u de widget nodig heeft in een van onze andere bibliotheken die deze niet bevat, dien dan een supportticket in zodat wij weten dat we deze moeten toevoegen.

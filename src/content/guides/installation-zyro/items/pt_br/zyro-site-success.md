@@ -6,5 +6,3 @@ Pronto! Agora você deve ter comentários em tempo real adicionados ao seu site 
 </div>
 
 Se você encontrou um erro de permissão negada, ou gostaria de personalizar o FastComments, continue lendo.
-
----

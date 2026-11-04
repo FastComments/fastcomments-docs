@@ -82,5 +82,3 @@ Das Widget wird mit der folgenden HTML-Struktur gerendert:
     box-shadow: none !important;
 }
 [inline-code-end]
-
----

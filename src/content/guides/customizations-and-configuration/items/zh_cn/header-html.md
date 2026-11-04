@@ -9,5 +9,3 @@
 这可以在无需代码的情况下进行自定义，位于小部件自定义页面的高级选项下：
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.show-advanced-option'; selector = '.absolute-dates'; alt='小部件自定义页面的高级选项区域，可在此输入自定义标题 HTML'; title='指定标题 HTML' app-screenshot-end]
-
----

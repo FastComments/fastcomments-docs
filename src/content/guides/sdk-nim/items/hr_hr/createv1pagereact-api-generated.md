@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
@@ -26,5 +25,3 @@ if pageOpt.isSome:
   discard page
   discard httpResp
 [inline-code-end]
-
----

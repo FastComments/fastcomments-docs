@@ -1,4 +1,3 @@
----
 ### 댓글 위젯
 
 FastCommentsVueNext 컴포넌트는 라이브 FastComments 댓글 위젯을 포함합니다.
@@ -21,4 +20,3 @@ export default {
 }
 </script>
 ```
----

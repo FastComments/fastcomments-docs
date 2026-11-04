@@ -1,4 +1,3 @@
----
 當版主將留言標記為已審查時觸發。
 
 ### 代理接收的上下文
@@ -20,5 +19,3 @@
 
 - "Reviewed" 是 moderation queue states 中與 "approved" 和 "spam" 分別追蹤的狀態之一。留言可以是 approved-and-reviewed、approved-but-not-reviewed 等等。請參見審核指南中的 [審核如何運作](/guide-moderation.html#moderation-approvals)。
 - 在擁有大量版主的租戶上，此觸發器的頻率會很高。請有選擇地訂閱並相應規劃預算。
-
----

@@ -60,5 +60,3 @@ async function loadComments(): Promise<void> {
   console.log(commentsResponse);
 }
 [inline-code-end]
-
----

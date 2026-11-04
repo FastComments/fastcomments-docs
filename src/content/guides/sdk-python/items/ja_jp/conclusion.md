@@ -8,5 +8,3 @@ Python SDK に関して問題が発生したり質問がある場合は、次を
 ## 貢献
 
 貢献は歓迎します！貢献ガイドラインについては[GitHubリポジトリ](https://github.com/FastComments/fastcomments-python)をご覧ください。
-
----

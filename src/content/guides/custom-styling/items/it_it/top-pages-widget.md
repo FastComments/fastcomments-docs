@@ -1,8 +1,8 @@
-Il widget Most Discussed Pages visualizza un elenco classificato delle pagine con più commenti. Include un'intestazione, posizioni numerate, conteggi dei commenti con icone, date dell'ultima attività e rilevamento automatico della modalità scura.
+Il widget Pagine Più Discusse mostra un elenco ordinato delle tue pagine più commentate. Include un titolo, posizioni numerate, conteggi dei commenti con icone, date dell'ultima attività e rilevamento automatico della modalità scura.
 
-## Basic Installation
+## Installazione Base
 
-[inline-code-attrs-start title = 'Installazione del widget Most Discussed Pages'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Installazione del Widget Pagine Più Discusse'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/widget-top-pages-v2.min.js"></script>
 <div id="fastcomments-widget-top-pages"></div>
@@ -13,16 +13,16 @@ Il widget Most Discussed Pages visualizza un elenco classificato delle pagine co
 </script>
 [inline-code-end]
 
-## Configuration Options
+## Opzioni di Configurazione
 
 - **tenantId** (obbligatorio): Il tuo ID tenant FastComments
-- **hasDarkBackground** (opzionale): Forza lo stile della modalità scura. Se non impostato, viene rilevato automaticamente dallo sfondo della pagina
+- **hasDarkBackground** (opzionale): Forza lo stile della modalità scura. Rilevato automaticamente dallo sfondo della pagina se non impostato
 
-## Widget Structure
+## Struttura del Widget
 
 Il widget viene renderizzato con la seguente struttura HTML:
 
-[inline-code-attrs-start title = 'Struttura HTML del widget Most Discussed Pages'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Struttura HTML del Widget Pagine Più Discusse'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <div class="fc-tp2">
     <div class="fc-tp2-heading">Most Discussed Pages</div>
@@ -39,9 +39,9 @@ Il widget viene renderizzato con la seguente struttura HTML:
 </div>
 [inline-code-end]
 
-## Default CSS Reference
+## Riferimento CSS Predefinito
 
-[inline-code-attrs-start title = 'CSS predefinito del widget Most Discussed Pages'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'CSS Predefinito del Widget Pagine Più Discusse'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-tp2 {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -62,25 +62,23 @@ Il widget viene renderizzato con la seguente struttura HTML:
 .fc-tp2-count { font-size: 12px; font-weight: 600; color: #666; }
 [inline-code-end]
 
-## Customization Examples
+## Esempi di Personalizzazione
 
-### Remove the Rank Badges
+### Rimuovere i Badge di Posizione
 
-[inline-code-attrs-start title = 'Rimuovere i badge delle posizioni'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Rimuovere i Badge di Posizione'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-tp2-rank {
     display: none !important;
 }
 [inline-code-end]
 
-### Remove the Container Border
+### Rimuovere il Bordo del Contenitore
 
-[inline-code-attrs-start title = 'Rimuovere il bordo del contenitore'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Rimuovere il Bordo del Contenitore'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-tp2 {
     border: none !important;
     box-shadow: none !important;
 }
 [inline-code-end]
-
----

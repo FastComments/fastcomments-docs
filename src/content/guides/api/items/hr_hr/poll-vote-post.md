@@ -76,5 +76,3 @@ Anonimni glasovi također su ograničeni po IP-u po anketi, kako bi se spriječi
 - `userId` mora biti korisnik koji postoji na vašoj stranici. Glasovi za korisnika koji pripada drugoj stranici se odbacuju.
 - Glasanje u zatvorenoj anketi ne uspijeva s `poll-closed`.
 - Ovaj API ažurira brojeve na anketi i u stvarnom vremenu ih šalje povezanih widgeta live.
-
----

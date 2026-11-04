@@ -19,5 +19,3 @@ if childRespOpt.isSome:
   let childResp = childRespOpt.get()
   echo childResp
 [inline-code-end]
-
----

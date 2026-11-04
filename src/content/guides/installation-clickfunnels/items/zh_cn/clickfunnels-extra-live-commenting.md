@@ -1,4 +1,3 @@
----
 如果您正在寻找 ClickFunnels 实时评论代码片段，请尝试以下内容：
 
 [inline-code-attrs-start title = 'ClickFunnels 实时评论代码片段'; type = 'html'; isFunctional = false; inline-code-attrs-end]
@@ -32,5 +31,3 @@
     })();
 </script>
 [inline-code-end]
-
----

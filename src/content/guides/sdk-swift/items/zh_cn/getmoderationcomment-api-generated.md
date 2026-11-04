@@ -36,5 +36,3 @@ ModerationAPI.getModerationComment(tenantId: tenantId, commentId: commentId, opt
     }
 }
 [inline-code-end]
-
----

@@ -67,5 +67,3 @@ interface PageMigrationsResponse {
 
 - Bir kiracı için işler bir seferde bir çalışır, en eski önce. İkinci bir göç, birincisinin bitmesini bekler.
 - Yeni bir `urlId` ile `PATCH /api/v1/pages/:id` sadece sayfayı değiştirir, yorumlarını değil. Bir sayfanın yorumlarını taşımak için bu rotayı kullanın.
-
----

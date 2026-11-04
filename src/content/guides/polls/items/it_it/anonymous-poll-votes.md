@@ -1,4 +1,3 @@
----
 Per impostazione predefinita, solo gli utenti connessi possono votare nei sondaggi. I visitatori che non hanno effettuato l'accesso vedono un prompt **Accedi per votare** al posto dei pulsanti di voto.
 
 Seleziona **Allow Anonymous Poll Votes** per consentire a chiunque di votare senza un account.
@@ -8,5 +7,3 @@ Seleziona **Allow Anonymous Poll Votes** per consentire a chiunque di votare sen
 Per mantenere i risultati equi, i voti anonimi su un sondaggio sono limitati a tre per indirizzo IP all'ora.
 
 Questo è separato da [Allow Anonymous Voting](/guide-customizations-and-configuration.html#allow-anon-votes), che controlla i voti positivi e negativi sui commenti.
-
----

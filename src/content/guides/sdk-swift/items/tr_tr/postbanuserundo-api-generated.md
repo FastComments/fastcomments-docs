@@ -1,4 +1,3 @@
----
 ## Parametreler
 
 | Ad | Tür | Konum | Gerekli | Açıklama |
@@ -32,5 +31,3 @@ ModerationAPI.postBanUserUndo(tenantId: tenantId, banUserUndoParams: banUserUndo
     }
 }
 [inline-code-end]
-
----

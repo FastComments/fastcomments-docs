@@ -1,19 +1,17 @@
-Subscribes a URL to a comment event (REST hook subscribe). Subscribing the same URL to the same  
-event and domain again returns the existing subscription. Deliveries are HMAC signed, see the  
-webhooks guide; the legacy `token` header is never sent to API subscriptions.
+Bir URL'yi bir yorum olayına abone eder (REST hook subscribe). Aynı URL'yi aynı olay ve alan adına (domain) tekrar abone etmek, mevcut aboneliği döndürür. Teslimatlar HMAC ile imzalanır, webhooks rehberine bakın; eski `token` başlığı API aboneliklerine asla gönderilmez.
 
-## Parameters
+## Parametreler
 
-| İsim | Tür | Gerekli | Açıklama |
+| Ad | Tür | Zorunlu | Açıklama |
 |------|------|----------|-------------|
 | tenantId | string | Evet |  |
 | createWebhookParams | CreateWebhookParams | Evet |  |
 
-## Response
+## Yanıt
 
 Döndürür: [`CreateWebhookResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateWebhookResponse.ts)
 
-## Example
+## Örnek
 
 [inline-code-attrs-start title = 'createWebhook Örneği'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -32,5 +30,3 @@ const result: CreateWebhookResponse = await createWebhook(tenantId, webhookParam
 
 const webhookId: string = result.webhook.id;
 [inline-code-end]
-
----

@@ -1,3 +1,1 @@
----
 Vis en live kommentarantal ved siden af ethvert indlæg eller produkt med en selvstændig widget, en side ad gangen eller i bulk på tværs af en hel liste.
----

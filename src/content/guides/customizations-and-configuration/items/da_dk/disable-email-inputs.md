@@ -1,4 +1,3 @@
----
 Når brugere kommenterer, og de ikke er logget ind, vil de blive bedt om at angive deres e‑mail.
 
 Dette vil oprette en "uverificeret session" for den bruger, og vi vil bede dem om at bekræfte den session via e‑mail.
@@ -15,5 +14,3 @@ Bemærk, at med denne konfiguration vil alle kommentarer være uverificerede, me
 https://fastcomments.com.
 
 Du kan overveje at [deaktivere den uverificerede etiket](/guide-customizations-and-configuration.html#disable-unverified-label).
-
----

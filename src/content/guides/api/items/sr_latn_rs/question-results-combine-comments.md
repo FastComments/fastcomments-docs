@@ -1,12 +1,12 @@
 [api-resource-header-start name = 'QuestionResultsCombinedWithComments'; route = 'GET /api/v1/question-results-aggregate/combine/comments'; creditsCost = 2; api-resource-header-end]
 
-Ovde se vrši kombinovanje rezultata sa komentarima. Korisno za kreiranje, na primer, grafikona "recent positive and negative comments" za proizvod.
+Ovde se vrši kombinovanje rezultata sa komentarima. Korisno je, na primer, za kreiranje grafikona "nedavni pozitivni i negativni komentari" za proizvod.
 
-Možete pretraživati po opsegu vrednosti (uključivo), po jednom ili više pitanja, i po datumu početka (uključivo).
+Možete pretraživati po opsegu vrednosti (uključivo), po jednom ili više pitanja, i po početnom datumu (uključivo).
 
-The response structure is as follows:
+Struktura odgovora je sledeća:
 
-[inline-code-attrs-start title = 'Struktura QuestionResultsCombinedWithCommentsResponse'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Struktura odgovora QuestionResultsCombinedWithComments'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface SimpleComment {
     id: string
@@ -27,13 +27,13 @@ interface CommentAndResult {
 }
 
 interface QuestionResultsCombinedWithCommentsResponse {
-    /** Niz datuma koji predstavlja kada su ovi podaci izračunati, pošto mogu doći iz keša. **/
+    /** A date string representing when this data was calculated, since it might come from cache. **/
     createdAt: string
     results: CommentAndResult[]
 }
 [inline-code-end]
 
-Here are the query parameters available for aggregation:
+Evo parametara upita dostupnih za agregaciju:
 
 [inline-code-attrs-start title = 'Struktura zahteva QuestionResultsCombineComments'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -51,17 +51,17 @@ interface QuestionResultsAggregateRequestQueryParams {
 }
 [inline-code-end]
 
-Here's an example request:
+Evo primera zahteva:
 
-[inline-code-attrs-start title = 'Primer za QuestionResultsCombineComments'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer QuestionResultsCombineComments'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/question-results-aggregation/combine/comments?tenantId=demo&API_KEY=DEMO_API_SECRET&questionId=some-question-id&minValue=5&maxValue=10'
 [inline-code-end]
 
-Example response:
+Primer odgovora:
 
-[inline-code-attrs-start title = 'Primer odgovora za QuestionResultsCombineComments'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer odgovora QuestionResultsCombineComments'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
     "createdAt": "2023-08-30T00:00:00.000Z",
@@ -108,10 +108,8 @@ interface QuestionResultsCombineCommentsResponse {
 }
 [inline-code-end]
 
-### Napomene o keširanju i troškovima
+### Napomene o keširanju i ceni
 
-- When `forceRecalculate` is specified the cost is always `10`, instead of the normal `2`.
-- If the cache expires and data is recalculated, the cost is still a constant `2` if `forceRecalculate` is not specified.
-- This is to incentivize using the cache.
-
----
+- Kada je naveden `forceRecalculate`, cena je uvek `10`, umesto uobičajenih `2`.
+- Ako keš istekne i podaci se ponovo izračunaju, cena je i dalje konstantnih `2` ako `forceRecalculate` nije naveden.
+- Ovo je kako bi se podstaklo korišćenje keša.

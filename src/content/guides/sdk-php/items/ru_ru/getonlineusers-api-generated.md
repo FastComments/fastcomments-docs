@@ -1,4 +1,3 @@
----
 Текущие онлайн‑просмотры страницы: люди, чья websocket‑сессия подписана на страницу в данный момент.  
 Возвращает anonCount + totalCount (подписчики по всей комнате, включая анонимных зрителей, которых мы не перечисляем).
 
@@ -45,5 +44,3 @@ try {
     echo 'Exception when calling PublicApi->getOnlineUsers: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

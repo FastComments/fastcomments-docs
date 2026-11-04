@@ -81,5 +81,3 @@ FastComments podržava Framer editor, tako da biste trebali videti nešto ovako 
 Sada kad pregledate svoj sajt trebalo bi da vidite deo za komentare! U bočnoj traci Framera možete, ako želite, postaviti widget da bude pune širine.
 
 Imajte na umu da Framer ograničava visinu widgeta i ne podržava automatsko prilagođavanje veličine, zato smo ovde izabrali Live Chat widget jer ima fiksnu visinu.
-
----

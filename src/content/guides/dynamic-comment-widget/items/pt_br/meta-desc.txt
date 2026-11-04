@@ -1,3 +1,1 @@
----
 Troque um thread de comentários sem recarregar a página. Execute vários widgets lado a lado, aponte‑os para um único thread para mantê‑los sincronizados, ou para threads diferentes.
----

@@ -28,5 +28,3 @@ Od leta 2023 polje `URL ID` v prilagajanju gradnika zdaj sprejema tudi vzorce! N
 
 1. Če vaša stran vsebuje hash parametre (npr. example.com#page-1) – ti bodo privzeto postali del URL ID.
 2. Med migracijami, na primer iz WordPressa v Gatsby, boste morda morali po začetni migraciji prenesti vrednosti komentarjev URL ID. Za to nas kontaktirajte.
-
----

@@ -1,27 +1,27 @@
-Custom react counts for a page, optionally with the users who reacted.
+ספירות תגובות מותאמות אישית של react עבור דף, אופציונלית עם המשתמשים שהגיבו.
 
 ## פרמטרים
 
-| שם | סוג | מיקום | נדרש | תיאור |
+| שם | סוג | מיקום | חובה | תיאור |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| urlId | string | query | Yes |  |
-| includeUserInfo | string | query | No | "\"public\" משמיט משתמשים עם פרופילים פרטיים, \"include-private\" כולל אותם." |
+| tenantId | string | query | כן |  |
+| urlId | string | query | כן |  |
+| includeUserInfo | string | query | לא | "public" מדלג על משתמשים עם פרופילים פרטיים, "include-private" כולל אותם. |
 
 ## תגובה
 
-Returns: [`GetPageReactsAPIResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetPageReactsAPIResponse.swift)
+מחזיר: [`GetPageReactsAPIResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetPageReactsAPIResponse.swift)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'getPageReacts דוגמה'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל-getPageReacts'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// דגימות הקוד הבאות עדיין בגרסת בטא. לכל בעיה, אנא דווחו דרך http://github.com/OpenAPITools/openapi-generator/issues/new
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let urlId = "urlId_example" // String | 
-let includeUserInfo = PageReactIncludeUserInfo() // PageReactIncludeUserInfo | \"public\" משמיט משתמשים עם פרופילים פרטיים, \"include-private\" כולל אותם. (אופציונלי)
+let includeUserInfo = PageReactIncludeUserInfo() // PageReactIncludeUserInfo | \"public\" מדלג על משתמשים עם פרופילים פרטיים, \"include-private\" כולל אותם. (optional)
 
 DefaultAPI.getPageReacts(tenantId: tenantId, urlId: urlId, includeUserInfo: includeUserInfo) { (response, error) in
     guard error == nil else {

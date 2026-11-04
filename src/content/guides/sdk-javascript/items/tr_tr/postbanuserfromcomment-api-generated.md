@@ -40,5 +40,3 @@ async function banUserExample(): Promise<void> {
   console.log(result);
 }
 [inline-code-end]
-
----

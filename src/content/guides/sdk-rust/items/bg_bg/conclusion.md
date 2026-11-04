@@ -8,5 +8,3 @@
 ## Принос
 
 Приносите са добре дошли! Моля, посетете [репозитория на GitHub](https://github.com/FastComments/fastcomments-rust) за насоки за приноса.
-
----

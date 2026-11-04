@@ -1,4 +1,3 @@
----
 | רכיב | תיאור |
 | --- | --- |
 | `FastComments` | ווידג'ט תגובות עם תגובות משנה, הצבעות ועוד |
@@ -18,4 +17,3 @@ import {
     FastCommentsReviewsSummary,
 } from 'fastcomments-nextjs';
 ```
----

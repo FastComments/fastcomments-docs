@@ -1,4 +1,3 @@
----
 Adicione uma interface de chat em tempo real ao seu aplicativo:
 
 ```kotlin
@@ -44,4 +43,3 @@ override fun onDestroy() {
     sdk.cleanup()
 }
 ```
----

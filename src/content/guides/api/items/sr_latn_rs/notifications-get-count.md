@@ -1,4 +1,3 @@
----
 [api-resource-header-start name = 'Notification'; route = 'GET /api/v1/notifications/count'; creditsCost = 2; api-resource-header-end]
 
 Ovaj endpoint vraća objekat koji sadrži broj notifikacija u parametru `count`.
@@ -48,5 +47,3 @@ interface NotificationCountGetResponse {
     count?: number
 }
 [inline-code-end]
-
----

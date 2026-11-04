@@ -1,39 +1,40 @@
-The extension object consists of the following definition:
+Het extension-object bestaat uit de volgende definitie:
 
-<!-- als je dit wilt bijwerken, vergeet dan niet comment-ui-core bij te werken -->
-[inline-code-attrs-start title = 'Extensieobject JSDoc'; type = 'javascript'; inline-code-attrs-end]
+<!-- if you want to update this, remember to update comment-ui-core -->
+[inline-code-attrs-start title = 'Extension Object JSDoc'; type = 'javascript'; inline-code-attrs-end]
 [inline-code-start]
 /**
- * Het FastCommentsUI extensie‑object. Gebruikt voor lazy‑loading van bepaalde componenten. Bijvoorbeeld, het beoordelingssysteem wordt niet door alle klanten gebruikt, dus we laden die extensie alleen wanneer we deze nodig hebben.
+ * Het FastCommentsUI extension-object. Wordt gebruikt voor het lazy-loaden van bepaalde componenten. Zo wordt het
+ * reviewsysteem bijvoorbeeld niet door alle klanten gebruikt, dus laden we die extensie alleen wanneer we die nodig hebben.
  *
  * @typedef {Object} FastCommentsUIExtension
  * @property {string} id
  * @property {Element} scriptNode
- * @property {Element} root - De widget root DOM‑knooppunt.
+ * @property {Element} root - Het root DOM-node van de widget.
  * @property {string} [css]
- * @property {Object} config - Het FastComments‑configuratie‑object.
- * @property {Object} commentsById - Een verwijzing naar een object met alle reacties per id, dat up‑to‑date wordt gehouden.
+ * @property {Object} config - Het FastComments config-object.
+ * @property {Object} commentsById - Een verwijzing naar een object met alle reacties op id, dat actueel wordt gehouden.
  * @property {Object} translations - Een verwijzing naar alle vertalingen.
  * @property {Function} reRenderComment - Een verwijzing naar een functie die kan worden aangeroepen om een reactie opnieuw te renderen.
- * @property {Function} removeCommentAndReRender - Een verwijzing naar een functie die kan worden aangeroepen om een reactie uit het geheugen te verwijderen en het juiste deel van de DOM opnieuw te renderen.
- * @property {Function} newBroadcastId - Een verwijzing naar een functie die kan worden aangeroepen om een nieuw broadcast‑id te maken en toe te voegen aan de lokale lijst van te negeren broadcast‑ids.
+ * @property {Function} removeCommentAndReRender - Een verwijzing naar een functie die kan worden aangeroepen om een reactie uit het geheugen te verwijderen en het betreffende deel van de DOM opnieuw te renderen.
+ * @property {Function} newBroadcastId - Een verwijzing naar een functie die kan worden aangeroepen om een nieuw broadcast id aan te maken en toe te voegen aan de lokale lijst met te negeren broadcast ids.
  * @property {FastCommentsUIExtensionSetupEventHandlers} [setupEventHandlers]
- * @property {FastCommentsUIExtensionPrepareCommentForSavingCallback} [prepareCommentForSaving] - Wordt aangeroepen met de reactie die geplaatst moet worden. Retourneer false om de inzending te annuleren (bijvoorbeeld wanneer een bijgevoegde poll onvolledig is).
+ * @property {FastCommentsUIExtensionPrepareCommentForSavingCallback} [prepareCommentForSaving] - Wordt aangeroepen met de reactie die geplaatst gaat worden. Geef false terug om het verzenden te annuleren (bijvoorbeeld wanneer een bijgevoegde poll onvolledig is).
  * @property {FastCommentsUIExtensionNewCommentCallback} [newComment]
- * @property {FastCommentsUIExtensionReplyAreaFilter} [replyAreaFilter] - Filter HTML voor het reactie‑gebied.
- * @property {FastCommentsUIExtensionWidgetFilter} [widgetFilter] - Filter HTML voor de volledige widget bij het renderen.
- * @property {FastCommentsUIExtensionCommentTopFilter} [commentFilter] - Filter HTML voor elke reactie vóór het renderen.
- * @property {FastCommentsUIExtensionReplyAreaFilter} [commentMenuFilter] - Filter HTML voor elk reactie‑menu vóór het renderen.
- * @property {FastCommentsUIExtensionMenuFilter} [menuFilter] - Filter HTML voor de volledige widget bij het renderen.
- * @property {FastCommentsUIExtensionReplyAreaTop} [replyAreaTop] - (VEROUDERD) Retourneer HTML om toe te voegen aan de bovenkant van het reactie‑gebied.
- * @property {FastCommentsUIExtensionWidgetTopCallback} [widgetTop] - (VEROUDERD) Retourneer HTML om toe te voegen aan de bovenkant van de widget.
- * @property {FastCommentsUIExtensionCommentTopCallback} [commentTop] - (VEROUDERD) Retourneer HTML om toe te voegen aan de bovenkant van het reactie‑element.
- * @property {FastCommentsUIExtensionCommentBottomCallback} [commentBottom] - (VEROUDERD) Retourneer HTML om toe te voegen aan de onderkant van het reactie‑element.
- * @property {FastCommentsUIExtensionCommentBottomCallback} [commentContentBottom] - Retourneer HTML om toe te voegen na de reactietekst, binnen het reactie‑inhoudselement (gebruikt door polls).
- * @property {Function} [replyAreaInputBottom] - Retourneer HTML om toe te voegen binnen het invoer‑frame van de reactie, onder de tekstinvoer (gebruikt door polls voor de inline poll‑editor). Ontvangt de bovenliggende reactie‑id, of null voor het hoofd‑reactie‑vak.
- * @property {Function} [onPollUpdate] - Wordt aangeroepen met het live‑event wanneer de stemmingsaantallen van een poll op de pagina veranderen.
- * @property {Function} isSiteAdmin - Retourneert of de kijker een beheerder of moderator van de tenant is. Bekend na de eerste fetch.
- * @property {FastCommentsUIExtensionMenuBottomCallback} [menuBottom] - (VEROUDERD) Retourneer HTML om toe te voegen aan de onderkant van het menu‑element voor elke reactie.
+ * @property {FastCommentsUIExtensionReplyAreaFilter} [replyAreaFilter] - Filtert HTML voor het reactiegebied.
+ * @property {FastCommentsUIExtensionWidgetFilter} [widgetFilter] - Filtert HTML voor de hele widget bij het renderen.
+ * @property {FastCommentsUIExtensionCommentTopFilter} [commentFilter] - Filtert HTML voor elke reactie vóór het renderen.
+ * @property {FastCommentsUIExtensionReplyAreaFilter} [commentMenuFilter] - Filtert HTML voor het menu van elke reactie vóór het renderen.
+ * @property {FastCommentsUIExtensionMenuFilter} [menuFilter] - Filtert HTML voor de hele widget bij het renderen.
+ * @property {FastCommentsUIExtensionReplyAreaTop} [replyAreaTop] - (LEGACY) Geef HTML terug om bovenaan het reactiegebied toe te voegen.
+ * @property {FastCommentsUIExtensionWidgetTopCallback} [widgetTop] - (LEGACY) Geef HTML terug om bovenaan de widget toe te voegen.
+ * @property {FastCommentsUIExtensionCommentTopCallback} [commentTop] - (LEGACY) Geef HTML terug om bovenaan het reactie-element toe te voegen.
+ * @property {FastCommentsUIExtensionCommentBottomCallback} [commentBottom] - (LEGACY) Geef HTML terug om onderaan het reactie-element toe te voegen.
+ * @property {FastCommentsUIExtensionCommentBottomCallback} [commentContentBottom] - Geef HTML terug om na de reactietekst toe te voegen, binnen het content-element van de reactie (gebruikt door polls).
+ * @property {Function} [replyAreaInputBottom] - Geef HTML terug om binnen het invoerkader van de reactie toe te voegen, onder de tekstinvoer (gebruikt door polls voor de in-place poll-editor). Ontvangt de id van de bovenliggende reactie, of null voor het hoofdreactievak.
+ * @property {Function} [onPollUpdate] - Wordt aangeroepen met het live event wanneer de stemtellingen van een poll op de pagina veranderen.
+ * @property {Function} isSiteAdmin - Geeft terug of de kijker een admin of moderator van de tenant is. Bekend na de eerste fetch.
+ * @property {FastCommentsUIExtensionMenuBottomCallback} [menuBottom] - (LEGACY) Geef HTML terug om onderaan het menu-element van elke reactie toe te voegen.
  * @property {FastCommentsUIExtensionRenderCallback} [onRender]
  * @property {FastCommentsUIExtensionConnectionStatusCallback} [onLiveConnectionStatusUpdate]
  * @property {FastCommentsUIExtensionInitialRenderCallback} [onInitialRenderComplete]
@@ -42,8 +43,8 @@ The extension object consists of the following definition:
    
 /**
  * @callback FastCommentsUIExtensionSetupEventHandlers
- * @param {Element} element - Het root‑element.
- * @param {Object.<string, Function>} clickListeners - De event‑handlers voor klikken, per klassenaam, die via referentie kunnen worden aangepast.
+ * @param {Element} element - Het root-element.
+ * @param {Object.<string, Function>} clickListeners - De event handlers voor klikken, op klassenaam, die by reference gewijzigd kunnen worden.
  * @returns void
  */
 

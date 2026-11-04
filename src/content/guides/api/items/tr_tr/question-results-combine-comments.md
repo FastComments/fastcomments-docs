@@ -113,5 +113,3 @@ interface QuestionResultsCombineCommentsResponse {
 - `forceRecalculate` belirtildiğinde maliyet normal `2` yerine her zaman `10` olur.
 - Önbellek süresi dolup veriler yeniden hesaplanırsa, `forceRecalculate` belirtilmemişse maliyet yine sabit `2` olur.
 - Bu, önbelleğin kullanılmasını teşvik etmek içindir.
-
----

@@ -32,5 +32,3 @@ DefaultAPI.getTenants(tenantId: tenantId, options: DefaultAPI.GetTenantsOptions(
     }
 }
 [inline-code-end]
-
----

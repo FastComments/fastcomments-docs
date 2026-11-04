@@ -1,4 +1,3 @@
----
 Con el extra `[api]` instalado, llama a la API REST de FastComments a través del SDK,
 preconfigurado con tu clave API y región:
 
@@ -11,4 +10,3 @@ public_api().get_comments_public(...)            # público (PublicApi)
 # Genera un token SSO para llamadas API o entrega al cliente:
 token = get_manager().sso().token_for(request.user)
 ```
----

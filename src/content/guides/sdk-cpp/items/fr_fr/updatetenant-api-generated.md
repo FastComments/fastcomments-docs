@@ -25,5 +25,3 @@ api->updateTenant(tenantId, recordId, body).then([](std::shared_ptr<APIEmptyResp
     (void)log;
 });
 [inline-code-end]
-
----

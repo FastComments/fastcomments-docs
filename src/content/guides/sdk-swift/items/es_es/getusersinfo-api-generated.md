@@ -1,4 +1,3 @@
----
 Información en bloque de usuarios para un tenant. Dado userIds, devuelve información para mostrar desde User / SSOUser.
 Usado por el widget de comentarios para enriquecer usuarios que acaban de aparecer vía un evento de presencia.
 Sin contexto de página: la privacidad se aplica de forma uniforme (los perfiles privados están enmascarados).
@@ -35,5 +34,3 @@ PublicAPI.getUsersInfo(tenantId: tenantId, ids: ids) { (response, error) in
     }
 }
 [inline-code-end]
-
----

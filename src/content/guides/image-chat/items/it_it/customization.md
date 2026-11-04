@@ -90,5 +90,3 @@ Per risultati ottimali, assicurati che i tuoi font personalizzati siano caricati
 I marker quadrati hanno un design visivo sottile che li rende visibili senza sovrastare l'immagine. Puoi personalizzare il loro aspetto con il CSS se desideri un trattamento visivo diverso.
 
 I marker includono stati al passaggio del mouse che forniscono un feedback quando gli utenti ci passano sopra con il mouse. Su dispositivi touch, l'interazione tap fornisce un feedback immediato aprendo la finestra della chat.
-
----

@@ -1,4 +1,3 @@
----
 購読解除 (REST フックの購読解除)。この API を通じて作成されたサブスクリプションのみがここで削除できます。ダッシュボードで管理されている Webhook はダッシュボードで編集します。
 
 ## パラメータ
@@ -33,5 +32,3 @@ DefaultAPI.deleteWebhook(tenantId: tenantId, id: id) { (response, error) in
     }
 }
 [inline-code-end]
-
----

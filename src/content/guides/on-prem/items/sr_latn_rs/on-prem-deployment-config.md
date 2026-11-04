@@ -90,5 +90,3 @@ U gornjem primeru definišemo podrazumevani `SMTP` email transport nazvan `mailg
 ### DocumentDB
 
 Kada se povezujete na `DocumentDB` treba da navedete `MONGO_ENABLE_SSL=true MONGO_SSL_CA=/some/path.pem` da biste bili kompatibilni sa podrazumevanim podešavanjima.
-
----

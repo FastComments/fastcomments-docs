@@ -1,4 +1,3 @@
----
 ## 參數
 
 | 名稱 | 類型 | 必填 | 描述 |
@@ -25,5 +24,3 @@ let (response, httpResponse) = client.replaceTenantUser(
 if response.isSome:
   let empty = response.get()
 [inline-code-end]
-
----

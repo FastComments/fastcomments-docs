@@ -1,4 +1,3 @@
----
 We kunnen nu het volgende codefragment kopiëren (gebruik de kopieerknop rechtsboven in het fragment):
 
 [inline-code-attrs-start title = 'Squarespace Blogreacties-code'; type = 'html'; isFunctional = false; inline-code-attrs-end]
@@ -32,5 +31,3 @@ We kunnen nu het volgende codefragment kopiëren (gebruik de kopieerknop rechtsb
     <div class="title">Plakken en opslaan</div>
     <img class="screenshot-image" src="/images/installation-guides/squarespace-step-2-1-add-code-and-save.png" alt="Plakken en opslaan" />
 </div>
-
----

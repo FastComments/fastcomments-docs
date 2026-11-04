@@ -1,4 +1,3 @@
----
 ## Parametreler
 
 | Ad | Tür | Gerekli | Açıklama |
@@ -29,5 +28,3 @@ api->postRemoveComment(tenantId, commentId, options)
         }
     });
 [inline-code-end]
-
----

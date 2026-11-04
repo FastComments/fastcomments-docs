@@ -1,4 +1,3 @@
----
 上傳並調整圖片大小
 
 ## 參數
@@ -36,5 +35,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->upload_image: #{e}"
 end
 [inline-code-end]
-
----

@@ -1,23 +1,23 @@
-## דוגמאות ל‑Zaps
+## דוגמאות Zaps
 
-כמה זרימות עבודה שלוקחות דקות להקמה.
+מספר תהליכי עבודה שהקמתם לוקחת דקות ספורות.
 
-**קבלו התראה על תגובות חדשות.** New Comment, then Slack "Send Channel Message" or Discord "Send Channel Message". Map the commenter name, the comment text, and the page URL into the message. Add the domain filter to notify a different channel per site.
+**קבלת התראה על תגובות חדשות.** New Comment, ואז Slack "Send Channel Message" או Discord "Send Channel Message". מפו את שם המגיב, טקסט התגובה וכתובת ה-URL של העמוד לתוך ההודעה. הוסיפו את מסנן הדומיין כדי לקבל התראה בערוץ אחר לכל אתר.
 
-**שמרו יומן של כל תגובה.** New Comment, then Google Sheets "Create Spreadsheet Row". Add Deleted Comment as a second Zap that appends a row with the comment id, so the sheet doubles as an audit trail.
+**שמירת יומן של כל תגובה.** New Comment, ואז Google Sheets "Create Spreadsheet Row". הוסיפו Deleted Comment כ-Zap שני שמוסיף שורה עם מזהה התגובה, כך שהגיליון משמש גם כראיה ביקורתית.
 
-**שלחו אימייל למחבר כאשר תגובה מאושרת.** Updated Comment with a Zapier filter on Approved is true, then Gmail "Send Email". Because Updated Comment fires on every change, the filter is what makes this Zap react only to approvals.
+**שליחת אימייל למחבר כאשר תגובה מאושרת.** Updated Comment עם מסנן Zapier על Approved שווה ל-true, ואז Gmail "Send Email". מכיוון ש-Updated Comment מופעל בכל שינוי, המסנן הוא מה שמבטיח שה-Zap יגיב רק לאישורים.
 
-**הוסיפו מגיבים למערכת ה‑CRM או לרשימת התפוצה שלכם.** New Comment, then HubSpot "Create or Update Contact" or Mailchimp "Add or Update Subscriber" using the commenter email. Respect your privacy policy and local law before adding anyone to a marketing list.
+**הוספת מגיבים ל-CRM או לרשימת הדיוור שלכם.** New Comment, ואז HubSpot "Create or Update Contact" או Mailchimp "Add or Update Subscriber" באמצעות האימייל של המגיב. כבדו את מדיניות הפרטיות שלכם ואת החוק המקומי לפני הוספת כל אדם לרשימת שיווק.
 
-**צרו תגובה מטופס.** Typeform or Google Forms "New Response", then FastComments Create Comment with the page URL ID your site uses for testimonials. Leave Approved unchecked to review each one before it appears.
+**יצירת תגובה מטופס.** Typeform או Google Forms "New Response", ואז FastComments Create Comment עם מזהה ה-URL של העמוד בו האתר שלכם משתמש עבור המלצות. השאירו את Approved לא מסומן כדי לסקור כל תגובה לפני שהיא מופיעה.
 
-**פרסמו הודעות לפיד.** RSS by Zapier "New Item in Feed", then Create Feed Post with the item's title, content, and link.
+**פרסום הכרזות בפיד.** RSS by Zapier "New Item in Feed", ואז Create Feed Post עם הכותרת, התוכן והקישור של הפריט.
 
-**הקצו חברים כמשתמשי SSO.** Memberstack, Memberful, or your own webhook, then Find SSO User followed by Create SSO User in "find or create" mode.
+**הקצאת חברים כמשתמשי SSO.** Memberstack, Memberful, או webhook משלכם, ואז Find SSO User ולאחריו Create SSO User במצב "find or create".
 
-**העלו תגובות מדווחות.** Updated Comment, filtered on a flag count above zero, then Trello "Create Card" or Linear "Create Issue" with the comment id and a link to the moderation page.
+**העלאת תגובות מדווחות לטיפול.** Updated Comment, מסונן על ספירת דגלים גבוהה מאפס, ואז Trello "Create Card" או Linear "Create Issue" עם מזהה התגובה וקישור לעמוד הפיקוח.
 
-**פרסמו דפים כאשר הם מתפרסמים.** WordPress or Ghost "New Post", then Create Page with the post URL, so the page is listed and restricted before the first comment.
+**פרסום עמודים כשהם עולים לאוויר.** WordPress או Ghost "New Post", ואז Create Page עם ה-URL של הפוסט, כך שהעמוד יופיע ברשימה ויוגבל לפני התגובה הראשונה.
 
-**ארכיבו תגובות שנמחקו.** Deleted Comment, then Airtable "Create Record" with the full comment for compliance retention.
+**ארכוב תגובות שנמחקו.** Deleted Comment, ואז Airtable "Create Record" עם התגובה המלאה לצורך שמירה לתאימות רגולטורית.

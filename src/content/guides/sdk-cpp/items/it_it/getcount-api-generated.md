@@ -27,5 +27,3 @@ api->getCount(tenantId, options).then([](pplx::task<std::shared_ptr<ModerationAP
     }
 });
 [inline-code-end]
-
----

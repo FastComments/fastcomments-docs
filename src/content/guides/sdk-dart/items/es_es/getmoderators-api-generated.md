@@ -30,5 +30,3 @@ try {
     print('Exception when calling DefaultApi->getModerators: $e\n');
 }
 [inline-code-end]
-
----

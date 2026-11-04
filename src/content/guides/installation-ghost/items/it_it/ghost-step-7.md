@@ -13,5 +13,3 @@ Per me, ho il file zip nella seguente posizione. Nota la cartella `dist`:
 </div>
 
 Ricorda di attivare il tema appena caricato (Ghost dovrebbe chiedertelo).
-
----

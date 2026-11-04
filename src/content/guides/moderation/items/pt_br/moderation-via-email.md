@@ -22,5 +22,3 @@ Observe que esses links mágicos expiram após algum tempo.
 #### Tipos de Notificação
 
 FastComments envia vários tipos de e‑mails para Moderadores e Administradores. Se desejar, é possível desativar as notificações de `Comment Reply`, enquanto ainda recebe notificações de `New Comment` escolhendo as opções apropriadas na página `Edit Notifications` mostrada acima.
-
----

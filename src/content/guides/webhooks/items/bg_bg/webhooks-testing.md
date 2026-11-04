@@ -1,24 +1,24 @@
-The new and edit webhook pages have a `Send Test Payload` button that sends a request to the URL currently in the form, whether or not it has been saved. The Create and Update events send a dummy WebhookComment object, while testing Delete will send a dummy request body with just an ID.
+Новите страници за създаване и редактиране на уебхук имат бутон `Send Test Payload`, който изпраща заявка към URL адреса, който в момента е във формата, независимо дали е запазен или не. Събитията Create и Update изпращат фиктивен WebhookComment обект, докато при тестване на Delete се изпраща фиктивно тяло на заявка само с ID.
 
-## Проверка на полезните данни
+## Проверка на полезния товар (Payload)
 
-When testing your webhook integration, verify the incoming requests include the following headers:
+Когато тествате интеграцията на уебхук, проверете дали входящите заявки включват следните заглавки:
 
-1. **`X-FastComments-Timestamp`** - Unix времева отметка (секунди)
+1. **`X-FastComments-Timestamp`** - Unix времеви печат (секунди)
 2. **`X-FastComments-Signature`** - HMAC-SHA256 подпис
 
-Webhooks created before the signature scheme was introduced also receive a **`token`** header containing your API Secret. New webhooks do not.
+Уебхуковете, създадени преди въвеждането на схемата за подпис, също получават заглавка **`token`**, съдържаща вашия API Secret. Новите уебхукове не получават такава.
 
-Use the HMAC signature verification to ensure payloads are authentic.
+Използвайте проверката на HMAC подписа, за да сте сигурни, че полезните товари са автентични.
 
 ## Инструменти за тестване
 
-You can use tools like [webhook.site](https://webhook.site) or [ngrok](https://ngrok.com) to inspect incoming webhook payloads during development.
+Можете да използвате инструменти като [webhook.site](https://webhook.site) или [ngrok](https://ngrok.com), за да преглеждате входящите полезни товари на уебхук по време на разработка.
 
-## Видове събития
+## Типове събития
 
-- **Create Event**: Задейства се, когато се създаде нов коментар.
-- **Update Event**: Задейства се, когато коментарът се редактира.
-- **Delete Event**: Задейства се, когато коментарът се изтрие.
+- **Create Event**: Задейства се, когато е създаден нов коментар.
+- **Update Event**: Задейства се, когато коментар е редактиран.
+- **Delete Event**: Задейства се, когато коментар е изтрит.
 
-Each webhook is tied to one event and one HTTP method (POST, PUT or DELETE). Each event includes the full comment data in the request body (see [Data Structures](/guide-webhooks.html#webhooks-structures) for the payload format).
+Всеки уебхук е обвързан с едно събитие и един HTTP метод (POST, PUT или DELETE). Всяко събитие включва пълните данни за коментара в тялото на заявката (вижте [Структури на данните](/guide-webhooks.html#webhooks-structures) за формата на полезния товар).

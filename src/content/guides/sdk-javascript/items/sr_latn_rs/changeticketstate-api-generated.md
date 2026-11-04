@@ -35,5 +35,3 @@ Vraća: [`ChangeTicketStateResponse`](https://github.com/FastComments/fastcommen
   console.log(response);
 })();
 [inline-code-end]
-
----

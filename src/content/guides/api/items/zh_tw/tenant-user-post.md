@@ -44,5 +44,3 @@ interface TenantUserPostResponse {
     tenantUser?: TenantUser; // 成功時回傳完整建立的租戶使用者。
 }
 [inline-code-end]
-
----

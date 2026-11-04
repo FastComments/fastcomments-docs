@@ -1,31 +1,31 @@
-Lists the webhooks configured for the tenant, both dashboard-managed rows and API subscriptions.
+Изброява уебкуцките, конфигурирани за наемателя, както редовете, управлявани от таблото, така и абонаментите чрез API.
 
-## Parameters
+## Параметри
 
-| Име | Тип | Местоположение | Задължително | Описание |
+| Име | Тип | Местоположение | Задължителен | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| event | string | query | No |  |
-| domain | string | query | No |  |
-| source | string | query | No |  |
-| skip | number | query | No |  |
+| tenantId | string | query | Да |  |
+| event | string | query | Не |  |
+| domain | string | query | Не |  |
+| source | string | query | Не |  |
+| skip | number | query | Не |  |
 
-## Response
+## Отговор
 
 Връща: [`GetWebhooksResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetWebhooksResponse.swift)
 
-## Example
+## Пример
 
 [inline-code-attrs-start title = 'Пример за getWebhooks'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следващите примерни кодове все още са бета. При какъвто и да е проблем, моля докладвайте чрез http://github.com/OpenAPITools/openapi-generator/issues/new
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let event = WebhookEventName() // WebhookEventName |  (по избор)
-let domain = "domain_example" // String |  (по избор)
-let source = WebhookSource() // WebhookSource |  (по избор)
-let skip = 987 // Double |  (по избор)
+let event = WebhookEventName() // WebhookEventName |  (optional)
+let domain = "domain_example" // String |  (optional)
+let source = WebhookSource() // WebhookSource |  (optional)
+let skip = 987 // Double |  (optional)
 
 DefaultAPI.getWebhooks(tenantId: tenantId, options: DefaultAPI.GetWebhooksOptions(event: event, domain: domain, source: source, skip: skip)) { (response, error) in
     guard error == nil else {

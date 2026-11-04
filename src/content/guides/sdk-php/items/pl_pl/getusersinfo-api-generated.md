@@ -1,21 +1,21 @@
-Bulk user info for a tenant. Given userIds, return display info from User / SSOUser.  
-Used by the comment widget to enrich users that just appeared via a presence event.  
-No page context: privacy is enforced uniformly (private profiles are masked).
+Informacje zbiorcze o użytkownikach dla tenanta. Na podstawie userIds zwraca informacje wyświetlane z User / SSOUser.
+Używane przez widżet komentarzy do wzbogacenia użytkowników, którzy właśnie pojawili się przez zdarzenie obecności.
+Brak kontekstu strony: prywatność jest egzekwowana jednolicie (prywatne profile są maskowane).
 
-## Parameters
+## Parametry
 
-| Name | Type | Location | Required | Description |
+| Nazwa | Typ | Lokalizacja | Wymagany | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| ids | string | query | Yes | userIds oddzielone przecinkami. |
+| tenantId | string | path | Tak |  |
+| ids | string | query | Tak | Identyfikatory userIds rozdzielone przecinkami. |
 
-## Response
+## Odpowiedź
 
 Zwraca: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PageUsersInfoResponse.php)
 
 ## Przykład
 
-[inline-code-attrs-start title = 'getUsersInfo Przykład'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Przykład getUsersInfo'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -23,13 +23,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Jeśli chcesz użyć własnego klienta http, przekaż swój klient implementujący `GuzzleHttp\ClientInterface`.
-    // To jest opcjonalne, `GuzzleHttp\Client` będzie użyty jako domyślny.
+    // Jeśli chcesz użyć niestandardowego klienta http, przekaż swój klient implementujący `GuzzleHttp\ClientInterface`.
+    // To opcjonalne, domyślnie zostanie użyty `GuzzleHttp\Client`.
     new GuzzleHttp\Client()
 );
 
 $tenant_id = 'tenant_id_example'; // string
-$ids = 'ids_example'; // string | userIds oddzielone przecinkami.
+$ids = 'ids_example'; // string | Identyfikatory userIds rozdzielone przecinkami.
 
 
 try {

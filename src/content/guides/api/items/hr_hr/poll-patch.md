@@ -1,12 +1,15 @@
 [api-resource-header-start name = 'Poll'; route = 'PATCH /api/v1/polls/:commentId'; creditsCost = 1; api-resource-header-end]
 
-Uređuje anketu bez ometanja njenih glasova. Koristite ovo za ispravljanje tipfelera u pitanju ili opciji, za zatvaranje ili ponovno otvaranje ankete, ili za promjenu tko može vidjeti tko je glasao.
+Uređuje anketu bez ometanja njenih glasova. Koristite ovo za ispravku greške u pitanju ili opciji, za zatvaranje ili
+ponovno otvaranje ankete, ili za promenu toga ko može videti ko je glasao.
 
-Opcije se adresiraju prema njihovom `id`, a `PATCH` preimenuje one koje navedete. Za dodavanje, uklanjanje ili promjenu redoslijeda opcija, pošaljite cijeli popis opcija na `PUT /api/v1/polls/:commentId`: opcije koje pošaljete s njihovim id-ovima zadržavaju i svoje glasove.
+Opcije se adresiraju preko njihovog `id`, a `PATCH` preimenuje one koje navedete. Da biste dodali, uklonili ili
+prerasporedili opcije, pošaljite kompletnu listu opcija na `PUT /api/v1/polls/:commentId`: opcije koje pošaljete sa
+njihovim id-jevima zadržavaju svoje glasove i tamo.
 
-Sva polja su opcionalna, ali mora biti navedeno barem jedno.
+Svako polje je opciono, ali barem jedno mora biti dato.
 
-[inline-code-attrs-start title = 'Primjer cURL zahtjeva za ažuriranje ankete'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer cURL zahtjeva za Poll Patch'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request PATCH \
   --url 'https://fastcomments.com/api/v1/polls/comment-id?tenantId=demo&API_KEY=DEMO_API_SECRET' \
@@ -27,7 +30,7 @@ curl --request PATCH \
 }'
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Struktura zahtjeva za ažuriranje ankete'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Struktura Poll Patch zahtjeva'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface PollPatchQueryParams {
     tenantId: string
@@ -46,7 +49,7 @@ interface PollPatchBody {
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Struktura odgovora na ažuriranje ankete'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Struktura Poll Patch odgovora'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface PollPatchResponse {
     status: 'success' | 'failed'
@@ -58,10 +61,10 @@ interface PollPatchResponse {
 }
 [inline-code-end]
 
-### Other Notes
+### Ostale napomene
 
-- Navođenje id-a opcije koji nije u anketi rezultira greškom `poll-invalid` umjesto tihe neaktivnosti.
-- Oznake moraju ostati jedinstvene unutar ankete, uzimajući u obzir opcije koje ne mijenjate.
-- Za razliku od stvaranja ankete, `closesAt` ovdje može biti u prošlosti – to je način kako odmah zatvoriti anketu.
+- Navođenje id-ja opcije koja nije na anketi ne uspijeva s `poll-invalid` umjesto da tiho ne učini ništa.
+- Oznake moraju ostati jedinstvene unutar ankete, računajući i opcije koje ne mijenjate.
+- Za razliku od stvaranja ankete, `closesAt` ovdje može biti u prošlosti - tako se anketa zatvara odmah.
 - Privatnost ankete može se suziti, ali ne i proširiti nakon što ima glasova.
-- Zaključani komentar ne može imati promijenjenu anketu i rezultira greškom `locked`.
+- Zaključani komentar ne može imati promijenjenu anketu i ne uspijeva s `locked`.

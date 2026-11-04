@@ -6,5 +6,3 @@ FastComments fügt Threaded-Kommentare zu Ihren Canvas-Kursen hinzu. Das Standar
 </div>
 
 Kommentare sind an jede Kursseite oder jeden Ressourcen-Link angehängt, sodass Diskussionen pro Seite, Aufgabe oder Modul organisiert bleiben.
-
----

@@ -38,5 +38,3 @@ DefaultAPI.getNotificationCount(tenantId: tenantId, options: DefaultAPI.GetNotif
     }
 }
 [inline-code-end]
-
----

@@ -17,5 +17,3 @@ Na het toevoegen van de code zal Webflow melden dat de widget niet wordt weergeg
     <div class="title">Opmerking: reacties verschijnen pas na publicatie</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-webflow-step-3.png" alt="Reacties verschijnen pas na publicatie" />
 </div>
-
----

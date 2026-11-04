@@ -1,4 +1,3 @@
----
 `UserBadge` is een object dat een badge voorstelt die aan een gebruiker is toegewezen in het FastComments-systeem.
 
 Badges kunnen automatisch aan gebruikers worden toegekend op basis van hun activiteit (zoals aantal reacties, reactietijd, Veteran-status) of handmatig door sitebeheerders.
@@ -57,4 +56,3 @@ export interface UserBadge {
     urlId?: string | null
 }
 [inline-code-end]
----

@@ -1,3 +1,1 @@
----
 Beløn kommentatorer automatisk med badges for antal kommentarer, up‑votes, svar, veteranstatus og natugle‑aktivitet, eller tildel badges manuelt.
----

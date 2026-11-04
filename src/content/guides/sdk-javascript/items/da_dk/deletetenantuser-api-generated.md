@@ -25,5 +25,3 @@ Returnerer: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sd
   console.log(result1, result2);
 })();
 [inline-code-end]
-
----

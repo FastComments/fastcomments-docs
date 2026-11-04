@@ -1,49 +1,49 @@
-Questo SDK fornisce punti di ingresso separati per gli ambienti browser e server per garantire compatibilità e sicurezza ottimali:
+Questo SDK fornisce punti di ingresso separati per ambienti browser e server per garantire compatibilità e sicurezza ottimali:
 
-### Browser Usage (Client-Side)
+### Utilizzo nel Browser (Client-Side)
 
-Per applicazioni browser/frontend, utilizzare l'export sicuro per il browser che esclude le dipendenze di Node.js:
+Per applicazioni browser/frontend, utilizzare l'export sicuro per il browser che esclude le dipendenze Node.js:
 
 ```typescript
 // Import sicuro per il browser (nessuna dipendenza Node.js)
 import { createFastCommentsBrowserSDK } from 'fastcomments-sdk/browser';
 
-// Crea un'istanza dello SDK per il browser
+// Creare un'istanza dell'SDK per il browser
 const sdk = createFastCommentsBrowserSDK({
   basePath: 'https://fastcomments.com' // opzionale, predefinito https://fastcomments.com
 });
 
-// Usa API pubbliche (nessuna API key necessaria - sicuro per i browser)
+// Utilizzare le API pubbliche (nessuna API key necessaria - sicuro per i browser)
 const comments = await sdk.publicApi.getCommentsPublic({ 
   tenantId: 'your-tenant-id',
   urlId: 'page-url-id'
 });
 ```
 
-### Server Usage (Node.js)
+### Utilizzo sul Server (Node.js)
 
-Per applicazioni server/backend, utilizzare lo SDK completo con funzionalità SSO e di autenticazione:
+Per applicazioni server/backend, utilizzare l'SDK completo con funzionalità SSO e di autenticazione:
 
 ```typescript
 // Import lato server (include SSO e progettato per funzionare con NodeJS)
 import { createFastCommentsSDK } from 'fastcomments-sdk/server';
 
-// Crea un'istanza dello SDK per il server
+// Creare un'istanza dell'SDK per il server
 const sdk = createFastCommentsSDK({
-  apiKey: 'your-api-key', // Mantieni questo segreto sul server!
+  apiKey: 'your-api-key', // Mantenere segreta questa chiave sul server!
   basePath: 'https://fastcomments.com' // opzionale, predefinito https://fastcomments.com
 });
 
-// Usa API protette con la tua API key
+// Utilizzare le API protette con la propria API key
 const comments = await sdk.defaultApi.getComments({ 
   tenantId: 'your-tenant-id',
   urlId: 'page-url-id'
 });
 ```
 
-### Import Solo Tipi
+### Import Solo dei Tipi
 
-Se hai bisogno solo dei tipi TypeScript (nessun codice a runtime), utilizza l'importazione di default:
+Se si necessita solo dei tipi TypeScript (nessun codice runtime), utilizzare l'import predefinito:
 
 ```typescript
 // Solo tipi (nessuna dipendenza runtime - sicuro ovunque)
@@ -54,9 +54,9 @@ import type {
 } from 'fastcomments-sdk';
 ```
 
-### Using Individual API Classes
+### Utilizzo delle Classi API Individuali
 
-#### Browser Environment
+#### Ambiente Browser
 
 ```typescript
 import { PublicApi, Configuration } from 'fastcomments-sdk/browser';
@@ -68,7 +68,7 @@ const config = new Configuration({
 const publicApi = new PublicApi(config);
 ```
 
-#### Server Environment  
+#### Ambiente Server  
 
 ```typescript
 import { DefaultApi, PublicApi, Configuration } from 'fastcomments-sdk/server';

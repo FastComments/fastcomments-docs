@@ -18,5 +18,3 @@ El bloque **FastComments - Top Pages** muestra las páginas de tu tienda con má
 
 - **Top Pages** ordena por el engagement total, por lo que las mismas publicaciones tienden a permanecer en la parte superior durante un tiempo. Bueno para una barra lateral de "publicaciones populares".
 - **Recent Discussions** ordena por la actividad más reciente, por lo que la lista cambia con frecuencia. Bueno para un panel de "lo que está de moda ahora".
-
----

@@ -1,4 +1,3 @@
----
 Subir y redimensionar una imagen
 
 ## Parámetros
@@ -27,5 +26,3 @@ if uploadResult.isSome:
   let result = uploadResult.get()
   # usar el resultado según sea necesario
 [inline-code-end]
-
----

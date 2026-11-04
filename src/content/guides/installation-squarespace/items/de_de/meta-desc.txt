@@ -1,3 +1,1 @@
----
 Fügen Sie Live‑Kommentare zu Squarespace auf drei Arten hinzu: nur für Blog‑Beiträge, seitenweit auf jeder Seite über Code‑Injection oder für eine bestimmte Seite mit einem Code‑Block.
----

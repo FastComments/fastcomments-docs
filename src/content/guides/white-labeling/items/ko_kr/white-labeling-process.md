@@ -1,4 +1,3 @@
----
 화이트 레이블링을 설정하는 절차는 다음과 같습니다:
 
 1. 청구 처리를 어떻게 할지 선택합니다.
@@ -11,5 +10,3 @@
    2. `TenantUser`는 `Tenant` 내에서 특정 권한을 가진 관리자입니다.
    3. `TenantPackage`는 `Tenant`에 제공되는 한도와 가격이 설정된 패키지입니다.
 3. 당사의 [API](/guide-api.html)와 통합하거나 테넌트를 온보딩하기 위해 [스크립트](https://github.com/FastComments/fastcomments-code-examples/tree/master/white-labeling)를 사용하세요.
-
----

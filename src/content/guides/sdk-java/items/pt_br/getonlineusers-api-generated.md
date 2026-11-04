@@ -1,4 +1,3 @@
----
 Visualizadores atualmente online de uma página: pessoas cuja sessão websocket está inscrita na página agora.
 Retorna anonCount + totalCount (assinantes da sala, incluindo visualizadores anônimos que não enumeramos).
 
@@ -52,5 +51,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

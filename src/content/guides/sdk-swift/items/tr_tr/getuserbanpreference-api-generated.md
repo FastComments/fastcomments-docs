@@ -30,5 +30,3 @@ ModerationAPI.getUserBanPreference(tenantId: tenantId, sso: sso) { (response, er
     }
 }
 [inline-code-end]
-
----

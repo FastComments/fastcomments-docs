@@ -1,4 +1,3 @@
----
 1. **Прост пример**
 
     http://localhost:8000/commenting
@@ -20,4 +19,3 @@
     Код: [src/pages/page-transition-test-start.tsx](https://github.com/FastComments/fastcomments-gatsbyjs-example/blob/master/src/pages/page-transition-test-start.tsx).
 
 Вижте повече като посетите http://localhost:8000
----

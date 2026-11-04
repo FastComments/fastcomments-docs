@@ -8,5 +8,3 @@ Wenn Sie auf Probleme stoßen oder Fragen zum Swift SDK haben, wenden Sie sich b
 ## Mitwirken
 
 Beiträge sind willkommen! Bitte besuchen Sie das [GitHub-Repository](https://github.com/FastComments/fastcomments-swift) für Richtlinien zur Mitwirkung.
-
----

@@ -1,3 +1,1 @@
----
 Beschränken Sie Ihren Kommentarbereich auf angemeldete Memberstack‑Mitglieder mit einem einzigen Snippet, sodass nur zahlende Mitglieder posten können.
----

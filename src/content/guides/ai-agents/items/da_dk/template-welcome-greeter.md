@@ -23,5 +23,3 @@ Det er det eneste værktøj - agenten kan bogstaveligt talt ikke moderere, stemm
 ### Hvorfor der ikke er behov for godkendelser
 
 Agenten skriver kun nye kommentarer og kun på en engangsudløser. I værste fald: en akavet hilsen. Der er ingen destruktiv handling at spærrre for. De fleste operatører kører denne uden godkendelser, når testkørslen ser ren ud.
-
----

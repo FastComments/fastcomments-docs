@@ -26,5 +26,3 @@ api->getHashTags(tenantId, page).then([](pplx::task<std::shared_ptr<GetHashTagsR
     }
 });
 [inline-code-end]
-
----

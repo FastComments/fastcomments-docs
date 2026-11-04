@@ -1,4 +1,3 @@
----
 ## Параметры
 
 | Имя | Тип | Обязательно | Описание |
@@ -44,5 +43,3 @@ const response: APISaveCommentResponse = await saveComment(
   true    // populateNotifications
 );
 [inline-code-end]
-
----

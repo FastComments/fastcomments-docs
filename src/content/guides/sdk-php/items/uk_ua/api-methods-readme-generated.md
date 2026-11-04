@@ -1,4 +1,3 @@
----
 Усі URI відносні до *https://fastcomments.com*
 
 Class | Method | HTTP request | Description
@@ -212,4 +211,3 @@ Class | Method | HTTP request | Description
 *PublicApi* | **updateUserNotificationStatus** | **POST** /user-notifications/{notificationId}/mark/{newStatus} | 
 *PublicApi* | **uploadImage** | **POST** /upload-image/{tenantId} | 
 *PublicApi* | **voteComment** | **POST** /comments/{tenantId}/{commentId}/vote |
----

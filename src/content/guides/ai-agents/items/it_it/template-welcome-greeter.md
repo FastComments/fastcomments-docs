@@ -1,4 +1,3 @@
----
 **ID del template:** `welcome_greeter`
 
 Il Welcome Greeter risponde calorosamente agli utenti che commentano per la prima volta. È il template a rischio più basso (nessuno strumento distruttivo) ed è un buon primo agente da mettere in produzione.
@@ -24,5 +23,3 @@ Questo è l'unico strumento: l'agente letteralmente non può moderare, votare, b
 ### Perché non sono necessarie approvazioni
 
 L'agente scrive solo nuovi commenti e solo su un trigger one-shot. Nel peggiore dei casi: un saluto imbarazzante. Non ci sono azioni distruttive da limitare. La maggior parte degli operatori esegue questo agente senza alcuna approvazione una volta che la prova a secco (dry-run) risulta pulita.
-
----

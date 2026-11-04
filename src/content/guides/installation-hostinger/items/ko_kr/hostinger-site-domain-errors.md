@@ -1,4 +1,3 @@
----
 다음과 같은 권한 오류가 발생할 수 있습니다:
 
 <div class="screenshot white-bg">
@@ -13,4 +12,3 @@
 [계정에 사이트를 추가하려면 여기를 클릭하세요.](https://fastcomments.com/auth/my-account/configure-domains)
 
 이제 귀하의 사이트에 빠르고 실시간 댓글 기능이 추가되었을 것입니다!
----

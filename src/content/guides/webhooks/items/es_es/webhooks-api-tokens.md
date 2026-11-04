@@ -1,4 +1,3 @@
----
 Las solicitudes webhook de FastComments incluyen múltiples mecanismos de autenticación por motivos de seguridad.
 
 ## Encabezados enviados
@@ -111,5 +110,3 @@ function verifyWebhookSignature($headers, $body, $apiSecret) {
 ## Autenticación heredada
 
 El encabezado `token` que contiene tu API Secret todavía se envía por compatibilidad con versiones anteriores. Sin embargo, recomendamos migrar a la verificación HMAC para mejorar la seguridad, ya que protege contra ataques de repetición.
-
----

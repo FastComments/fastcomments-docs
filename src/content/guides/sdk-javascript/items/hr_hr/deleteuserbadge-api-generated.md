@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Name | Type | Required | Description |
@@ -21,5 +20,3 @@ Returns: [`APIEmptySuccessResponse`](https://github.com/FastComments/fastcomment
   console.log(result);
 })();
 [inline-code-end]
-
----

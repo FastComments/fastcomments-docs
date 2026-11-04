@@ -30,5 +30,3 @@ try {
     print('Exception when calling DefaultApi->getSubscriptions: $e\n');
 }
 [inline-code-end]
-
----

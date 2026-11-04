@@ -1,27 +1,27 @@
-Всі корисні навантаження (payloads) агентських вебхуків мають спільну обгортку та додають блок `data`, специфічний для події. На цій сторінці наведено повну схему для кожної події.
+Усі payload-и вебхуків агента мають спільну обгортку та додають специфічний для події блок `data`. На цій сторінці наведено повну схему для кожної з них.
 
 ### Обгортка (кожна подія)
 
-Кожне корисне навантаження, незалежно від типу події, має ці поля верхнього рівня:
+Кожен payload, незалежно від типу події, має такі поля верхнього рівня:
 
-[inline-code-attrs-start title = 'Схема пакету вебхука'; type='json' inline-code-attrs-end]
+[inline-code-attrs-start title = 'Схема обгортки вебхуку'; type='json' inline-code-attrs-end]
 [inline-code-start]
 {
   "event": "trigger.succeeded | trigger.failed | approval.requested | approval.decided",
   "eventType": 0 | 1 | 2 | 3,
   "tenantId": "string",
-  "domain": "string - відповідний домен для цієї доставки",
+  "domain": "string - the matched domain for this delivery",
   "agentId": "string",
   "agentInternalName": "string",
   "agentDisplayName": "string",
-  "occurredAt": "string - мітка часу у форматі ISO 8601",
-  "data": { /* специфічні для події, див. нижче */ }
+  "occurredAt": "string - ISO 8601 timestamp",
+  "data": { /* event-specific, see below */ }
 }
 [inline-code-end]
 
 ### `trigger.succeeded` / `trigger.failed`
 
-`data` схема:
+Схема `data`:
 
 [inline-code-attrs-start title = 'Схема даних події тригера'; type='json' inline-code-attrs-end]
 [inline-code-start]
@@ -34,32 +34,32 @@
   "actions": [
     {
       "type": 0,
-      "commentId": "string - необов'язково",
-      "userId": "string - необов'язково",
-      "badgeId": "string - необов'язково",
+      "commentId": "string - optional",
+      "userId": "string - optional",
+      "badgeId": "string - optional",
       "pending": false,
       "justification": "string",
       "confidence": 0.92
     }
   ],
-  "errorMessage": "string - присутній у trigger.failed",
-  "url": "string - необов'язково",
-  "urlId": "string - необов'язково",
-  "commentId": "string - необов'язково"
+  "errorMessage": "string - present on trigger.failed",
+  "url": "string - optional",
+  "urlId": "string - optional",
+  "commentId": "string - optional"
 }
 [inline-code-end]
 
-`triggerType` — це числовий enum із [переліку подій тригера](#triggers-overview).
+`triggerType` — це числове перерахування зі [списку подій тригерів](#triggers-overview).
 
-`actions[].type` — це числовий enum із [переліку інструментів](#tools-overview).
+`actions[].type` — це числове перерахування зі [списку інструментів](#tools-overview).
 
-`actions[].pending` дорівнює `true`, коли дія була поставлена в чергу для [затвердження](#approval-workflow) замість виконання.
+`actions[].pending` має значення `true`, коли дію було поставлено в чергу на [схвалення](#approval-workflow) замість виконання.
 
 ### `approval.requested`
 
-`data` схема:
+Схема `data`:
 
-[inline-code-attrs-start title = 'Схема даних запиту на затвердження'; type='json' inline-code-attrs-end]
+[inline-code-attrs-start title = 'Схема даних запиту на схвалення'; type='json' inline-code-attrs-end]
 [inline-code-start]
 {
   "approvalId": "string",
@@ -67,30 +67,30 @@
   "toolName": "ban_user | mark_comment_spam | ...",
   "actionType": 10,
   "status": "PENDING",
-  "args": { /* залежно від інструмента, див. нижче */ },
-  "createdAt": "string - мітка часу у форматі ISO 8601",
-  "justification": "string - необов'язково, обґрунтування агента",
+  "args": { /* per-tool, see below */ },
+  "createdAt": "string - ISO 8601",
+  "justification": "string - optional, agent reasoning",
   "confidence": 0.85,
-  "contextSnapshot": { /* контекст коментаря/сторінки, до якого стосується затвердження */ }
+  "contextSnapshot": { /* the comment/page context the approval is about */ }
 }
 [inline-code-end]
 
-Об'єкт **`args`** — це те, що передавав виклик інструмента LLM. Його форма залежить від інструмента:
+Обʼєкт **`args`** містить те, що передав виклик інструменту LLM. Його форма залежить від інструменту:
 
 - Для `ban_user`: `{ userId, commentId, duration, shadowBan, deleteAllUsersComments?, banIP? }`.
 - Для `mark_comment_spam`: `{ commentId, isSpam }`.
 - Для `write_comment`: `{ comment, urlId, parentId? }`.
 - ...і так далі.
 
-Набір форм аргументів інструментів **не є стабільним публічним контрактом**. Інструменти можуть додаватися в майбутньому, а платформа передає args дослівно. Споживачі повинні трактувати args як непрозорий блок, якщо вони явно не розуміють залучений інструмент.
+Набір форм аргументів інструментів **не є стабільним публічним контрактом**. Інструменти можуть додаватися в майбутньому, а платформа передає args без змін. Споживачі повинні розглядати args як непрозорий блок даних, якщо вони явно не розуміють відповідний інструмент.
 
-**`contextSnapshot`** фіксує контекст коментаря, сторінки та користувача, із якого було поставлено запит на затвердження. Його форма відображає контекстне повідомлення тригера.
+**`contextSnapshot`** фіксує контекст коментаря, сторінки та користувача, з якого було поставлено запит на схвалення в чергу. Його форма віддзеркалює контекстне повідомлення тригера.
 
 ### `approval.decided`
 
-`data` схема:
+Схема `data`:
 
-[inline-code-attrs-start title = 'Схема даних рішення по затвердженню'; type='json' inline-code-attrs-end]
+[inline-code-attrs-start title = 'Схема даних рішення щодо схвалення'; type='json' inline-code-attrs-end]
 [inline-code-start]
 {
   "approvalId": "string",
@@ -98,32 +98,32 @@
   "toolName": "ban_user | mark_comment_spam | ...",
   "actionType": 10,
   "status": "APPROVED | REJECTED | EXECUTION_FAILED",
-  "decidedBy": "string - userId модератора, який ухвалив рішення",
-  "decidedAt": "string - мітка часу у форматі ISO 8601 - необов'язково, присутній тільки після ухвалення рішення",
-  "executedAt": "string - мітка часу у форматі ISO 8601 - присутній коли APPROVED і виконання завершено",
-  "executionResult": "string - повідомлення про результат виконання - присутнє після виконання",
+  "decidedBy": "string - the userId of the moderator who decided",
+  "decidedAt": "string - ISO 8601 - optional, only present once decided",
+  "executedAt": "string - ISO 8601 - present when APPROVED and execution finished",
+  "executionResult": "string - executor result message - present after execute",
   "contextSnapshot": { /* same as approval.requested */ }
 }
 [inline-code-end]
 
-### TenantAgentAction shape
+### Форма TenantAgentAction
 
-Усередині `actions[]` у payload-ах тригера кожна дія має:
+Усередині `actions[]` у payload-ах тригерів кожна дія має:
 
 [inline-code-attrs-start title = 'Схема TenantAgentAction'; type='json' inline-code-attrs-end]
 [inline-code-start]
 {
   "type": 0,
-  "commentId": "string - необов'язково",
-  "userId": "string - необов'язково",
-  "badgeId": "string - необов'язково",
+  "commentId": "string - optional",
+  "userId": "string - optional",
+  "badgeId": "string - optional",
   "pending": false,
   "justification": "string",
   "confidence": 0.92
 }
 [inline-code-end]
 
-Значення enum для `type` відповідають `AgentActionType`:
+Значення перерахування `type` відповідають `AgentActionType`:
 
 - 0: `WRITE_COMMENT`
 - 1: `VOTE_COMMENT`
@@ -140,9 +140,9 @@
 - 12: `WARNED_USER`
 - 13: `SAVED_MEMORY`
 
-`SEARCH_MEMORY` не з'являється в `actions[]`, бо він тільки для читання і неаудитується.
+`SEARCH_MEMORY` не зʼявляється в `actions[]`, оскільки він доступний лише для читання та не аудитується.
 
-### Значення enum для `triggerType`
+### Значення перерахування `triggerType`
 
 `AgentTriggerReasonType`:
 
@@ -161,15 +161,15 @@
 - 12: `COMMENT_FLAG_THRESHOLD`
 - 13: `NEW_USER_FIRST_COMMENT`
 - 14: `COMMENT_AUTO_SPAMMED`
-- 15: `REPLAY` (внутрішній; не доставляється у вебхуки)
+- 15: `REPLAY` (внутрішнє; не доставляється у вебхуки)
 
 ### Заголовки
 
 Кожна доставка включає:
 
-- `X-FastComments-Agent-Event` - канонічна назва події (`trigger.succeeded`, тощо).
-- `X-FastComments-Signature` - HMAC-SHA256 від сирого тіла за допомогою вашого секрету API. Див. [Webhook Signing](#webhook-signing).
+- `X-FastComments-Agent-Event` - канонічна назва події (`trigger.succeeded` тощо).
+- `X-FastComments-Signature` - HMAC-SHA256 сирого тіла з використанням вашого API-секрету. Дивіться [Підписання вебхуків](#webhook-signing).
 
 ### Стабільність
 
-Поля обгортки та задокументовані поля `data` для кожної події є частиною публічного контракту. Додавання нових необов'язкових полів до існуючих payload-ів дозволено і не вважається зламом сумісності — ваш споживач повинен ігнорувати невідомі поля. Форма `args` та `contextSnapshot` **не** є частиною контракту.
+Поля обгортки та задокументовані поля `data` для кожної події є частиною публічного контракту. Додавання нових необовʼязкових полів до наявних payload-ів дозволено і не вважається критичною зміною — ваш споживач повинен ігнорувати невідомі поля. Форма `args` та `contextSnapshot` **не** є частиною контракту.

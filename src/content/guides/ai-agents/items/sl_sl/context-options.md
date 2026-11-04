@@ -1,65 +1,65 @@
-Sekcija **Context** na obrazcu za urejanje nadzoruje, koliko informacij agent prejme pri vsakem zagonu. Več konteksta prinese boljše odločitve, vendar poveča strošek žetonov na zagon, zato želite imeti samo tisto, kar agent dejansko potrebuje.
+Razdelek **Kontekst** na obrazcu za urejanje nadzoruje, koliko informacij agent prejme ob vsakem zagonu. Več konteksta prinese boljše odločitve, a poveča stroške žetonov na zagon, zato želite le tisto, kar agent dejansko potrebuje.
 
-### What's always included
+### Kaj je vedno vključeno
 
-Tudi z vsemi potrditvenimi polji počrnjenimi, sporočilo konteksta agenta vključuje:
+Tudi če so vsa potrditvena polja odkljukana, sporočilo konteksta agenta vključuje:
 
-- The **trigger event type** (e.g. `COMMENT_ADD`, `COMMENT_FLAG_THRESHOLD`).
-- The **page URL and URL ID** (when known).
-- The **comment** that triggered the run, if there is one - ID, author user ID, author display name, comment text, vote counts, flag count, spam/approved/reviewed flags, parent ID. The author's email is **never** sent to the LLM provider (PII minimization).
-- The **previous comment text** for `COMMENT_EDIT` triggers (so the agent can compare before/after).
-- The **vote direction** for `COMMENT_VOTE_THRESHOLD` triggers.
-- The **triggering user ID** and **badge ID** (for moderator badge triggers).
-- Your tenant's **badge catalog** (name, display label, description) when the agent is allowed to award badges, so the agent can choose an appropriate one without you having to spell the badges out in the prompt.
+- **Vrsto sprožilnega dogodka** (npr. `COMMENT_ADD`, `COMMENT_FLAG_THRESHOLD`).
+- **URL strani in URL ID** (če sta znana).
+- **Komentar**, ki je sprožil zagon, če obstaja - ID, ID uporabnika avtorja, prikazano ime avtorja, besedilo komentarja, število glasov, število prijav, oznake spam/odobreno/pregledano, ID starša. E-poštni naslov avtorja **nikoli** ni poslan ponudniku LLM (minimizacija PII).
+- **Prejšnje besedilo komentarja** za sprožilce `COMMENT_EDIT` (da agent lahko primerja stanje pred/po).
+- **Smer glasovanja** za sprožilce `COMMENT_VOTE_THRESHOLD`.
+- **ID sprožilnega uporabnika** in **ID značke** (za sprožilce moderatorskih značk).
+- **Katalog značk** vašega najemnika (ime, prikazana oznaka, opis), kadar agent sme podeljevati značke, tako da agent lahko izbere ustrezno, ne da bi jih vam bilo treba našteti v pozivu.
 
-Vse nezaupljivo besedilo - telesa komentarjev, imena avtorjev, naslovi strani, sam dokument smernic - je **ograjeno** v sporočilu konteksta z označevalci kot `<<<COMMENT_TEXT>>> ... <<<END>>>`. Sistemov poziv platforme navodilo modelu, naj nikoli ne upošteva navodil znotraj teh ograj. To je platformina zaščita pred vnosom v poziv (prompt-injection); tega vam ni treba ponavljati v vašem pozivu.
+Vse nezaupljivo besedilo - telesa komentarjev, imena avtorjev, naslovi strani, sam dokument smernic - je v sporočilu konteksta **ograjeno** z označevalci, kot je `<<<COMMENT_TEXT>>> ... <<<END>>>`. Sistemski poziv platforme modelu naroča, da nikoli ne sledi navodilom znotraj teh ograj. To je obramba platforme pred vbrizgavanjem pozivov; v svojem pozivu je ni treba ponavljati.
 
-### The three checkboxes
+### Trije potrditveni gumbi
 
-#### Include parent comment and prior replies in the same thread
+#### Vključi starševski komentar in prejšnje odgovore v isti niti
 
-Adds:
-- The **parent comment** - ID, author, text.
-- **Sibling replies** - the prior replies to the same parent in the same thread.
+Doda:
+- **Starševski komentar** - ID, avtor, besedilo.
+- **Sorojenčne odgovore** - prejšnje odgovore na istega starša v isti niti.
 
-Useful for: any agent that responds to a comment in context (welcome greeters, thread summarizers, moderators reading replies in conversations).
+Uporabno za: vsakega agenta, ki odgovarja na komentar v kontekstu (pozdravljalci, povzemalci niti, moderatorji, ki berejo odgovore v pogovorih).
 
-Cost: small to medium. Bounded by how many siblings exist on a given thread.
+Strošek: majhen do srednji. Omejen s številom sorojencev na dani niti.
 
-#### Include commenter's trust factor, account age, ban history, and recent comments
+#### Vključi faktor zaupanja komentatorja, starost računa, zgodovino prepovedi in nedavne komentarje
 
-Adds the **AUTHOR_HISTORY** block:
+Doda blok **AUTHOR_HISTORY**:
 
-- **Account age in days** since signup.
-- **Trust factor (0-100)** - the FastComments score that summarizes how trusted the user is on this site. See the [Zaznavanje neželene pošte](/guide-moderation.html#spam-detection) page in the moderation guide.
-- **Prior ban count.**
-- **Total comments on this site.**
-- **Duplicate-content count** - if the user has posted identical text recently (anti-spam signal).
-- **Same-IP cross-account signal** - count of comments from the same IP under other accounts (alt-account signal). The IP hash itself is never sent to the LLM.
-- **Recent comments** - up to 5 of the user's most recent comments, each truncated to 300 characters, fenced as untrusted text.
+- **Starost računa v dnevih** od registracije.
+- **Faktor zaupanja (0-100)** - FastComments ocena, ki povzema, kako zaupanja vreden je uporabnik na tem spletnem mestu. Glejte stran [Zaznavanje neželene pošte](/guide-moderation.html#spam-detection) v priročniku za moderiranje.
+- **Število prejšnjih prepovedi.**
+- **Skupno število komentarjev na tem spletnem mestu.**
+- **Število podvojenih vsebin** - če je uporabnik nedavno objavil identično besedilo (signal proti neželeni pošti).
+- **Signal istega IP-ja med računi** - število komentarjev z istega IP-ja pod drugimi računi (signal alternativnega računa). Samo zgoščena vrednost IP-ja nikoli ni poslana LLM.
+- **Nedavni komentarji** - do 5 najnovejših komentarjev uporabnika, vsak skrajšan na 300 znakov, ograjen kot nezaupljivo besedilo.
 
-Useful for: any moderation agent. Without this, the model bans new accounts and long-time good-faith users with the same posture.
+Uporabno za: vsakega moderatorskega agenta. Brez tega model prepoveduje nove račune in dolgoletne uporabnike z dobrimi namenami z enako strogostjo.
 
-Cost: medium. Recent comments add the most tokens.
+Strošek: srednji. Nedavni komentarji dodajo največ žetonov.
 
-#### Include page title, subtitle, description, and meta tags
+#### Vključi naslov strani, podnaslov, opis in meta oznake
 
-Adds the **PAGE_CONTEXT** block - title, subtitle, description, and any meta tags FastComments has captured for the page.
+Doda blok **PAGE_CONTEXT** - naslov, podnaslov, opis in vse meta oznake, ki jih je FastComments zajel za stran.
 
-Useful for: welcome greeters and thread summarizers, where knowing what the page is about substantially improves output quality.
+Uporabno za: pozdravljalce in povzemalce niti, kjer poznavanje teme strani znatno izboljša kakovost izhoda.
 
-Cost: small.
+Strošek: majhen.
 
-### Community guidelines
+### Smernice skupnosti
 
-The fourth field, **Community guidelines**, is a free-text policy block included in the user-role context message on every run, fenced as untrusted text the same way comment bodies and other user-supplied content are fenced. The agent reads it as policy text but the platform does not treat it as a system instruction. See [Smernice skupnosti](#community-guidelines) for what to put in it.
+Četrto polje, **Smernice skupnosti**, je poljubno besedilni blok pravil, ki je vključen v sporočilo konteksta uporabniške vloge ob vsakem zagonu, ograjen kot nezaupljivo besedilo na enak način kot telesa komentarjev in druga uporabniška vsebina. Agent ga bere kot besedilo pravil, platforma pa ga ne obravnava kot sistemsko navodilo. Glejte [Smernice skupnosti](#community-guidelines) za vsebino, ki jo vanj vnesti.
 
-### Adding context selectively
+### Izbirno dodajanje konteksta
 
-These checkboxes apply per agent, not globally. A common pattern:
+Ta potrditvena polja veljajo za posameznega agenta, ne globalno. Pogost vzorec:
 
-- Welcome greeter: page context **on**, thread context **off**, user history **off**.
-- Moderator: thread context **off**, user history **on**, page context **off**.
-- Thread summarizer: thread context **on**, page context **on**, user history **off**.
+- Pozdravljalec: kontekst strani **vklopljen**, kontekst niti **izklopljen**, zgodovina uporabnika **izklopljena**.
+- Moderator: kontekst niti **izklopljen**, zgodovina uporabnika **vklopljena**, kontekst strani **izklopljen**.
+- Povzemalec niti: kontekst niti **vklopljen**, kontekst strani **vklopljen**, zgodovina uporabnika **izklopljena**.
 
-Reach for the minimum context an agent needs to be correct on the calls it actually makes - extra context costs tokens on every run, even when the agent does not use it.
+Uporabite najmanj konteksta, ki ga agent potrebuje, da je pravilen pri klicih, ki jih dejansko opravlja - odvečni kontekst stane žetone ob vsakem zagonu, tudi kadar ga agent ne uporabi.

@@ -1,15 +1,15 @@
-The border around the comment box is made of the text area's own border plus a few thin lines the widget draws around it. To change its color or corner roundness, set these CSS variables instead of styling the `textarea` directly. The variables restyle every part of the border at once, so the corners and colors always line up.
+Obramowanie wokół pola komentarza składa się z własnej ramki elementu `textarea` oraz kilku cienkich linii rysowanych przez widżet wokół niego. Aby zmienić jego kolor lub zaokrąglenie narożników, ustaw te zmienne CSS zamiast stylować `textarea` bezpośrednio. Zmienne restylizują całe obramowanie naraz, dzięki czemu narożniki i kolory zawsze się zgadzają.
 
 | Zmienna | Co zmienia | Domyślnie |
 |---|---|---|
 | `--fc-input-border-color` | Kolor obramowania | `#bfbfbf` |
-| `--fc-input-border-color-focus` | Kolor obramowania podczas pisania przez użytkownika | `#555` |
-| `--fc-input-border-radius` | Zaokrąglenie narożników | `11px` |
-| `--fc-input-border-start-start-radius` | Zaokrąglenie kwadratowego lewego górnego narożnika (prawego górnego w językach od prawej do lewej) | `0` |
+| `--fc-input-border-color-focus` | Kolor obramowania podczas pisania | `#555` |
+| `--fc-input-border-radius` | Zaokrąglenie zaokrąglonych narożników | `11px` |
+| `--fc-input-border-start-start-radius` | Zaokrąglenie kwadratowego lewego górnego narożnika (prawego górnego w językach pisanych od prawej do lewej) | `0` |
 
-Add the CSS to the **Custom CSS** box on the [Widget Customization page](https://fastcomments.com/auth/my-account/customize-widget), or pass it with the `customCSS` option. You only need to set the variables you want to change.
+Dodaj CSS do pola **Custom CSS** na [stronie dostosowywania widżetu](https://fastcomments.com/auth/my-account/customize-widget) lub przekaż go za pomocą opcji `customCSS`. Musisz ustawić tylko te zmienne, które chcesz zmienić.
 
-You can also use the **Comment box border** helper right under the Custom CSS box, which writes this CSS for you.
+Możesz również użyć pomocnika **Comment box border** znajdującego się tuż pod polem Custom CSS, który wygeneruje ten CSS za Ciebie.
 
 ## Zmiana koloru obramowania
 
@@ -31,7 +31,7 @@ You can also use the **Comment box border** helper right under the Custom CSS bo
 
 ## Zaokrąglenie wszystkich czterech narożników
 
-By default the top-left corner is square. Set both radius variables to round all four corners the same:
+Domyślnie lewy górny narożnik jest kwadratowy. Ustaw obie zmienne promienia, aby zaokrąglić wszystkie cztery narożniki tak samo:
 
 [inline-code-attrs-start title = 'Zaokrąglenie wszystkich czterech narożników'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -50,9 +50,9 @@ By default the top-left corner is square. Set both radius variables to round all
 }
 [inline-code-end]
 
-## Dopasuj do swojej marki
+## Dopasowanie do marki
 
-[inline-code-attrs-start title = 'Kolory i narożniki marki'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Kolory marki i narożniki'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 :root {
     --fc-input-border-color: #c7d2fe;
@@ -64,7 +64,7 @@ By default the top-left corner is square. Set both radius variables to round all
 
 ## Różne kolory w trybie ciemnym
 
-When the widget is in dark mode it has the `dark` class, so you can set different values for dark mode:
+Gdy widżet jest w trybie ciemnym, ma klasę `dark`, więc możesz ustawić różne wartości dla trybu ciemnego:
 
 [inline-code-attrs-start title = 'Kolory obramowania w trybie ciemnym'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -77,8 +77,6 @@ When the widget is in dark mode it has the `dark` class, so you can set differen
 }
 [inline-code-end]
 
-## Dlaczego nie stylizować pola tekstowego bezpośrednio?
+## Dlaczego nie stylować pola tekstowego bezpośrednio?
 
-The widget draws part of the comment box border itself, around the text area. If you set `border-color` or `border-radius` only on the `textarea`, those lines keep the default style and the border looks mismatched, for example a square line running through a rounded corner. The variables above change both at once.
-
----
+Widżet rysuje część obramowania pola komentarza samodzielnie, wokół pola tekstowego. Jeśli ustawisz `border-color` lub `border-radius` tylko na `textarea`, te linie zachowają styl domyślny i obramowanie będzie wyglądać niespójnie, na przykład kwadratowa linia przechodząca przez zaokrąglony narożnik. Powyższe zmienne zmieniają oba elementy naraz.

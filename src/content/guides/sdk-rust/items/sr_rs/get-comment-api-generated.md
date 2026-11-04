@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Име | Тип | Обавезно | Опис |
@@ -25,5 +24,3 @@ async fn fetch_comment() -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
-
----

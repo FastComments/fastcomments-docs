@@ -1,4 +1,3 @@
----
 ## Aggiungi commenti live inline a documenti, libri, ecc
 
 FastComments Collab Chat consente agli utenti di evidenziare e annotare qualsiasi contenuto testuale sul tuo sito web, creando discussioni thread collegate a selezioni di testo specifiche. Gli utenti possono selezionare parole, frasi o interi paragrafi per avviare conversazioni collaborative direttamente all'interno del tuo contenuto.
@@ -9,5 +8,3 @@ Nota che questa documentazione è specifica per la funzionalità **Collab Chat**
 thread-per-page, **without using collab chat**. FastComments non addebita inoltre per pagina o per thread. Collab Chat è specificamente pensato quando vuoi permettere agli utenti di selezionare il testo e commentare la sezione evidenziata.
 
 Puoi vedere [un esempio qui](https://fastcomments.com/product/collab-chat).
-
----

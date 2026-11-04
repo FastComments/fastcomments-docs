@@ -1,4 +1,3 @@
----
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
@@ -21,4 +20,3 @@ api->deleteSubscription(utility::string_t(U("my-tenant-123")), utility::string_t
         }
     });
 [inline-code-end]
----

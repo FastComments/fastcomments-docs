@@ -1,31 +1,28 @@
----
-התוסף תומך בשלושה סגנונות תגובה. ניתן להגדיר זאת בהגדרות התוסף.
+התוסף תומך בשלושה סגנונות תגובות. ניתן להגדיר זאת בהגדרות התוסף.
 
 #### תגובות
 
-ווידג'ט FastComments הסטנדרטי מופיע מתחת לתוכן הדף. משתמשים יכולים לפרסם תגובות מקוננות, להגיב, להצביע ולהשתמש בכל התכונות הסטנדרטיות.
+הווידג'ט הסטנדרטי של FastComments מופיע מתחת לתוכן העמוד. משתמשים יכולים לפרסם תגובות משורשרות, להגיב, להצביע ולהשתמש בכל התכונות הסטנדרטיות.
 
 <div class="screenshot white-bg">
-    <div class="title">ווידג'ט תגובות בעמוד קורס</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-course-comments.png" alt="FastComments Comments on Moodle Course" />
+    <div class="title">וידג'ט תגובות בעמוד קורס</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-course-comments.png" alt="תגובות FastComments בקורס Moodle" />
 </div>
 
-#### Collab Chat
+#### צ'אט שיתופי (Collab Chat)
 
-עם Collab Chat, משתמשים מסמנים טקסט בדף כדי להתחיל דיונים מקומיים בתוך הטקסט. סרגל עליון מציג את המשתמשים המחוברים ומספר הדיונים הפעילים.
+עם צ'אט שיתופי, משתמשים בוחרים טקסט בעמוד כדי לפתוח דיונים משולבים. סרגל עליון מציג משתמשים מחוברים ואת מספר הדיונים הפעילים.
 
 <div class="screenshot white-bg">
-    <div class="title">Collab Chat</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-collab-chat.png" alt="FastComments Collab Chat on Moodle" />
+    <div class="title">צ'אט שיתופי (Collab Chat)</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-collab-chat.png" alt="FastComments Collab Chat ב-Moodle" />
 </div>
 
-#### Collab Chat + Comments
+#### צ'אט שיתופי + תגובות
 
-שני המצבים פעילים יחד. ווידג'ט התגובות מופיע מתחת לתוכן הדף, והמשתמשים יכולים גם לסמן טקסט כדי לפתוח דיונים מקומיים בתוך הטקסט.
+שני המצבים פעילים יחד. הווידג'ט של התגובות מופיע מתחת לתוכן העמוד, ומשתמשים יכולים גם לבחור טקסט כדי לפתוח דיונים משולבים.
 
 <div class="screenshot white-bg">
-    <div class="title">Collab Chat + תגובות יחד</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-page-comments.png" alt="FastComments Collab Chat and Comments on Moodle" />
+    <div class="title">צ'אט שיתופי + תגובות יחד</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-page-comments.png" alt="FastComments Collab Chat ותגובות ב-Moodle" />
 </div>
-
----

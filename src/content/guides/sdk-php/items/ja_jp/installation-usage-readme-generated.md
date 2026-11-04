@@ -1,4 +1,3 @@
----
 ### 要件
 
 PHP 7.4 以降。
@@ -32,4 +31,3 @@ PHP 8.0 でも動作するはずです。
 <?php
 require_once('/path/to/fastcomments/client/vendor/autoload.php');
 ```
----

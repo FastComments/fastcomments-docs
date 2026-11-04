@@ -1,4 +1,3 @@
----
 FastComments LTI 1.3 integracija sledi načelu najmanjše privilegiranosti: uporablja le zagonske trditve, potrebne za identifikacijo uporabnika, pripenjanje komentarjev k pravilnemu predmetu in viru ter uporabo dovoljenj na podlagi vlog.
 
 Preostanek te strani prikaže vsako trditev, ki jo integracija uporablja, vsako LTI Advantage storitev, ki je ne zahteva, in vsako kategorijo podatkov, ki jih ne zbira. Preverjevalci varnosti in nabave lahko odgovore neposredno prekopirajo iz spodnjih tabel.
@@ -74,4 +73,3 @@ Vsaka nova LTI funkcija, ki bi zahtevala dodatne trditve, obsege ali LTI Advanta
 ## Kratek zapis za vprašalnike o varnosti
 
 > FastComments uporablja načelo najmanjšega privilegija in minimizacijo podatkov pri svoji LTI 1.3 integraciji. Integracija uporablja le LTI zagonske trditve, potrebne za overjanje uporabnika (`sub`, `name`, `email`, `picture`), določitev njihove vloge in identifikacijo predmeta ter vira, kateremu pripadajo komentarji. FastComments ne zahteva Names and Role Provisioning Services, Assignment and Grade Services, podatkov iz dnevnika ocen, prisotnosti, popolnih seznamov udeležencev ali administrativnega dostopa do LMS. LMS skrbniki obdržijo nadzor nad tem, v katerih org-enotah, predmetih in namestitvah je orodje na voljo.
----

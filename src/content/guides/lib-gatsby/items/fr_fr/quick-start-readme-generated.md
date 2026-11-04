@@ -1,4 +1,3 @@
----
 1.  **Voir en action.**
 
     Placez-vous dans le répertoire de votre nouveau site et lancez-le.
@@ -16,4 +15,3 @@
     ```
     return <FastCommentsCommentWidget tenantId="demo" />;
     ```
----

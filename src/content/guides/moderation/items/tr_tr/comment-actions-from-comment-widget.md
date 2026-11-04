@@ -1,4 +1,3 @@
----
 Moderasyon işlemlerinin bir alt kümesi, Yorum Moderasyonu sayfasına gitmeden doğrudan yorum dizisinin kendisinden yapılabilir.
 
 Giriş yaptığınızda, bir yorumun sağ üstündeki düzenle düğmesine tıklayın. Bir moderatör olarak aşağıdaki seçeneklere sahip olmalısınız:
@@ -41,5 +40,3 @@ Tüm bu işlemler, diğer kullanıcıların yorum dizilerini sayfayı yeniden y�
 2. `User A (commenter)` için o yorum hemen gizlenir.
 3. `User C (Moderator 2)` için o yorum hemen gizlenir.
 4. Değişikliği yapan kullanıcı olan `User B (Moderator 1)` için yorum ekranında kalır, ancak kaldırılmış olarak vurgulanır. Yaptıkları işlemi geri alma seçeneğine sahiptir; geri alındığında diğer kullanıcılar güncellemeyi tekrar canlı olarak göreceklerdir.
-
----

@@ -1,4 +1,3 @@
----
 כשמשתפים קטעי קוד, FastComments עושה את מיטב יכולתו לזהות באופן אוטומטי באיזו שפת תכנות נמצא קטע הקוד, כדי לעצב אותו אוטומטית ולהחיל הדגשת תחביר.
 
 FastComments syntax highlighting currently supports 39 common languages:
@@ -47,5 +46,3 @@ FastComments syntax highlighting currently supports 39 common languages:
 - YAML
 
 When sharing a code snippet in a language we don't support, it will still be rendered like code - but no syntax highlighting or reformatting will be applied.
-
----

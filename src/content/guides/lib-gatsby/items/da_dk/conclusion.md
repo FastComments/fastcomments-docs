@@ -1,4 +1,3 @@
----
 ## Brug for hjælp?
 
 Hvis du støder på problemer eller har spørgsmål om GatsbyJS-biblioteket, så:
@@ -9,5 +8,3 @@ Hvis du støder på problemer eller har spørgsmål om GatsbyJS-biblioteket, så
 ## Bidrag
 
 Bidrag er velkomne! Besøg venligst [GitHub-repositoriet](https://github.com/FastComments/fastcomments-gatsbyjs-example) for retningslinjer for bidrag.
-
----

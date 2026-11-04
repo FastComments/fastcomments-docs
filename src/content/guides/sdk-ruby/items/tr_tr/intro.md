@@ -5,5 +5,3 @@ FastComments API'sı için resmi Ruby SDK'sı
 ## Depo
 
 [GitHub'da görüntüle](https://github.com/FastComments/fastcomments-ruby)
-
----

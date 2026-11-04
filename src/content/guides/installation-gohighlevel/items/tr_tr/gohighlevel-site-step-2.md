@@ -1,4 +1,4 @@
-It's time to copy our code. Copy the following code:
+Kodumuzu kopyalama zamanı. Aşağıdaki kodu kopyalayın:
 
 [inline-code-attrs-start title = 'GoHighLevel Site Yorumları Kodu'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -39,7 +39,7 @@ It's time to copy our code. Copy the following code:
             return document.getElementById(WIDGET_ID);
         }
     
-        // Scriptin yüklendiğinden emin olmak için fonksiyon
+        // Betiğin yüklendiğinden emin olmak için fonksiyon
         function ensureScriptLoaded() {
             return new Promise((resolve) => {
                 // Script etiketinin zaten var olup olmadığını kontrol et
@@ -59,7 +59,7 @@ It's time to copy our code. Copy the following code:
     
                     scriptTag.onerror = () => {
                         console.error('FastComments: Failed to load script');
-                        resolve(); // Resolve anyway to prevent hanging
+                        resolve(); // Takılmayı önlemek için yine de resolve et
                     };
     
                     document.head.appendChild(scriptTag);
@@ -74,7 +74,7 @@ It's time to copy our code. Copy the following code:
                         resolve();
                     });
     
-                    // Script zaten yükleniyorsa yedek plan
+                    // Betik zaten yükleniyorsa ihtiyaç halinde yedek çözüm
                     const checkInterval = setInterval(() => {
                         if (window.FastCommentsUI) {
                             clearInterval(checkInterval);
@@ -96,7 +96,7 @@ It's time to copy our code. Copy the following code:
         async function render() {
             rendered = false;
     
-            // İlerlemeden önce scriptin yüklendiğinden emin ol
+            // Devam etmeden önce betiğin yüklendiğinden emin ol
             await ensureScriptLoaded();
     
             function tryNext() {
@@ -107,7 +107,7 @@ It's time to copy our code. Copy the following code:
                 const container = getContainer();
     
                 if (container) {
-                    // FastCommentsUI'nin mevcut olup olmadığını çift kontrol et
+                    // FastCommentsUI'in kullanılabilir olup olmadığını tekrar kontrol et
                     if (!window.FastCommentsUI) {
                         console.log('FastComments: not ready, waiting...');
                         setTimeout(tryNext, 300);
@@ -116,21 +116,21 @@ It's time to copy our code. Copy the following code:
     
                     console.log('FastComments: Target element found, initializing...');
     
-                    // Geçerli URL'yi urlId olarak al
+                    // Mevcut URL'i urlId olarak al
                     const newUrlId = window.location.pathname;
     
-                    // Yeniden render gerekip gerekmediğini kontrol et (urlId değişti veya ilk render)
+                    // Yeniden render etmemiz gerekip gerekmediğini kontrol et (urlId değişti veya ilk render)
                     if (currentUrlId !== newUrlId || !lastInstance) {
                         currentUrlId = newUrlId;
     
-                        // Önceki örneği varsa yok et
+                        // Varsa önceki örneği yok et
                         if (lastInstance) {
                             lastInstance.destroy();
                             // Konteyner içeriğini temizle
                             container.innerHTML = '';
                         }
     
-                        // Konfigürasyonu hazırla
+                        // Yapılandırmayı hazırla
                         const config = {
                             tenantId: tenantId,
                             urlId: newUrlId
@@ -146,7 +146,7 @@ It's time to copy our code. Copy the following code:
                         rendered = true;
                     }
     
-                    // Konteynerin kaldırılıp kaldırılmadığını veya URL'nin değişip değişmediğini izle
+                    // Konteynerin kaldırılıp kaldırılmadığını veya URL'in değişip değişmediğini izle
                     const interval = setInterval(function () {
                         const currentContainer = getContainer();
                         if (!currentContainer) {
@@ -181,7 +181,7 @@ It's time to copy our code. Copy the following code:
             render();
         }
     
-        // Konum değiştiğinde (SPA'lar için) yeniden render
+        // Konum değişikliğinde yeniden render et (SPA'lar için)
         window.addEventListener('locationchange', function () {
             console.log('FastComments: Location changed, updating...');
             render();
@@ -190,15 +190,13 @@ It's time to copy our code. Copy the following code:
 </script>
 [inline-code-end]
 
-Paste that in the editor window we opened:
+Bunu, açtığımız editör penceresine yapıştırın:
 
 <div class="screenshot white-bg">
     <div class="title">Kodu Yapıştır</div>
     <img class="screenshot-image" src="/images/installation-guides/gohighlevel-site-step-7-paste-code.png" alt="Kodu Yapıştır" />
 </div>
 
-We can now click `Yes, Save` on the bottom right of that window.
+Artık o pencerenin sağ alt kısmındaki `Yes, Save` düğmesine tıklayabiliriz.
 
-At the top of the page now click `Save` and then `Preview`.
-
----
+Sayfanın en üstünde şimdi `Save` ve ardından `Preview` düğmelerine tıklayın.

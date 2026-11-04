@@ -1,4 +1,3 @@
----
 Pour utiliser l'API afin de créer un tenant en marque blanche, nous devons effectuer les opérations suivantes :
 
 1. Appeler la [Tenants API](/guide-api.html#tenant-structure) pour créer le tenant.
@@ -9,5 +8,3 @@ Pour utiliser l'API afin de créer un tenant en marque blanche, nous devons effe
 6. Optionnellement, [Configurer le SSO](/guide-customizations-and-configuration.html#sso).
 
 Tout cela peut être réalisé pendant la période d'essai.
-
----

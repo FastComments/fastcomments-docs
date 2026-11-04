@@ -1,4 +1,3 @@
----
 ## Paramètres
 
 | Name | Type | Required | Description |
@@ -29,5 +28,3 @@ async function runUpdateTenant() {
   console.log(response);
 }
 [inline-code-end]
-
----

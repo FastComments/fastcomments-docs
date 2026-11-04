@@ -178,5 +178,3 @@ Du kan initialisere Collab Chat på flere separate sektioner af din side. Hver s
     });
 </script>
 [inline-code-end]
-
----

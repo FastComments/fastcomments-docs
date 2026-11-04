@@ -1,4 +1,3 @@
----
 Pour connaître la limite du nombre de domaines dans votre compte, rendez-vous sur la [Page de facturation](https://fastcomments.com/auth/my-account/billing-info).
 
 ### Tarification
@@ -19,5 +18,3 @@ Dans l'exemple où vous êtes sur un palier offrant cinq millions de chargements
 En résumé, les limitations de trafic s'appliquent par compte, et non par domaine.
 
 Notez que nous proposons des forfaits personnalisés pour des sites de tailles différentes ; contactez simplement le support.
-
----

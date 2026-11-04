@@ -1,20 +1,20 @@
-## Parameters
+## 매개변수
 
 | 이름 | 타입 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | 예 |  |
 | commentId | string | path | 예 |  |
-| broadcastId | string | query | 아니오 |  |
-| sso | string | query | 아니오 |  |
+| broadcastId | string | query | 아니요 |  |
+| sso | string | query | 아니요 |  |
 
-## Response
+## 응답
 
-반환: [`AdjustVotesResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/AdjustVotesResponse.php)
+반환값: [`AdjustVotesResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/AdjustVotesResponse.php)
 
-## 예시
+## 예제
 
-[inline-code-attrs-start title = 'postAdjustCommentVotes 예시'; type = 'php'; isFunctional = false; inline-code-attrs-end]
-```php
+[inline-code-attrs-start title = 'postAdjustCommentVotes 예제'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
@@ -26,12 +26,12 @@ $apiInstance = new FastComments\Client\Api\ModerationApi(
     new GuzzleHttp\Client()
 );
 
-$tenant_id = 'tenant_id_example'; // 문자열
-$comment_id = 'comment_id_example'; // 문자열
+$tenant_id = 'tenant_id_example'; // string
+$comment_id = 'comment_id_example'; // string
 $adjust_comment_votes_params = new \FastComments\Client\Model\AdjustCommentVotesParams(); // \FastComments\Client\Model\AdjustCommentVotesParams
 $options = [
-    'broadcast_id' => 'broadcast_id_example', // 문자열
-    'sso' => 'sso_example', // 문자열
+    'broadcast_id' => 'broadcast_id_example', // string
+    'sso' => 'sso_example', // string
 ];
 
 
@@ -41,5 +41,4 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling ModerationApi->postAdjustCommentVotes: ', $e->getMessage(), PHP_EOL;
 }
-```
 [inline-code-end]

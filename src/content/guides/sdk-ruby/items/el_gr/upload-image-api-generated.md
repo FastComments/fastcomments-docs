@@ -35,5 +35,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->upload_image: #{e}"
 end
 [inline-code-end]
-
----

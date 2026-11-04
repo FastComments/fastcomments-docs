@@ -1,19 +1,19 @@
-Bulk user info for a tenant. Given userIds, return display info from User / SSOUser.  
-Used by the comment widget to enrich users that just appeared via a presence event.  
-No page context: privacy is enforced uniformly (private profiles are masked).
+Zbiorcze informacje o użytkownikach dla tenanta. Na podstawie userIds zwraca informacje wyświetlane z User / SSOUser.
+Używane przez widżet komentarzy do wzbogacenia użytkowników, którzy właśnie pojawili się przez zdarzenie presence.
+Brak kontekstu strony: prywatność jest egzekwowana jednolicie (prywatne profile są maskowane).
 
-## Parameters
+## Parametry
 
 | Nazwa | Typ | Wymagane | Opis |
-|------|------|----------|------|
+|------|------|----------|-------------|
 | tenantId | string | Tak |  |
 | ids | string | Tak |  |
 
-## Response
+## Odpowiedź
 
 Zwraca: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersInfoResponse.ts)
 
-## Example
+## Przykład
 
 [inline-code-attrs-start title = 'Przykład getUsersInfo'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -25,5 +25,3 @@ async function fetchUsersInfo(): Promise<void> {
 }
 fetchUsersInfo();
 [inline-code-end]
-
----

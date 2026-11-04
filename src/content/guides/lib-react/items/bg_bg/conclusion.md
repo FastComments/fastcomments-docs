@@ -8,5 +8,3 @@
 ## Принос
 
 Приноси са добре дошли! Моля посетете [репозитория в GitHub](https://github.com/FastComments/fastcomments-react) за указания как да допринесете.
-
----

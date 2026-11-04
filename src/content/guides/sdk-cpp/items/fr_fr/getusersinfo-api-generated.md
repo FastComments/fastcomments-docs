@@ -1,21 +1,21 @@
-Bulk user info for a tenant. Given userIds, return display info from User / SSOUser.  
-Used by the comment widget to enrich users that just appeared via a presence event.  
-No page context: privacy is enforced uniformly (private profiles are masked).
+Informations utilisateur en masse pour un tenant. Étant donné des userIds, renvoie les informations d'affichage de User / SSOUser.
+Utilisé par le widget de commentaires pour enrichir les utilisateurs qui viennent d'apparaître via un événement de présence.
+Pas de contexte de page : la confidentialité est appliquée de manière uniforme (les profils privés sont masqués).
 
-## Parameters
+## Paramètres
 
-| Nom | Type | Obligatoire | Description |
-|------|------|-------------|-------------|
+| Nom | Type | Requis | Description |
+|------|------|----------|-------------|
 | tenantId | string | Oui |  |
 | ids | string | Oui |  |
 
-## Response
+## Réponse
 
-Returns: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PageUsersInfoResponse.h)
+Renvoie : [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PageUsersInfoResponse.h)
 
-## Example
+## Exemple
 
-[inline-code-attrs-start title = 'Exemple getUsersInfo'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple de getUsersInfo'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
 utility::string_t ids = U("alice@example.com,bob@example.com");

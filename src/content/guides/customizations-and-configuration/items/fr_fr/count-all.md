@@ -13,5 +13,3 @@ Si nous voulions que le décompte reflète uniquement les commentaires de premie
 [code-example-start config = {countAll: false}; linesToHighlight = [6]; title = 'Counting Top Level Comments'; code-example-end]
 
 Cela ne peut actuellement pas être personnalisé sans modifications du code.
-
----

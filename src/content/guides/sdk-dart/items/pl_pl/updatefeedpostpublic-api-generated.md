@@ -31,5 +31,3 @@ try {
     print('Exception when calling PublicApi->updateFeedPostPublic: $e\n');
 }
 [inline-code-end]
-
----

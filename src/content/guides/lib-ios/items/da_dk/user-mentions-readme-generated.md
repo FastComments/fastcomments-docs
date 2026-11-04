@@ -1,4 +1,3 @@
----
 Søg efter brugere for at understøtte @mention-autofuldførelse:
 
 ```swift

@@ -1,18 +1,15 @@
----
-Navigate to your account dashboard and go to the [RSS Feed-siden](https://fastcomments.com/auth/my-account/rss).
+Naviger til din konto-dashboard og gå til [RSS Feed-siden](https://fastcomments.com/auth/my-account/rss).
 
-[app-screenshot-start url='/auth/my-account/rss'; selector = '.content'; alt='Konto RSS Feed-side med afkrydsningsfeltet "Enable RSS Feed Access", feed-URL\'en og knapperne "Copy" og "View Feed"'; title='RSS Feed-konfiguration' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/rss'; selector = '.content'; alt='Kontoens RSS Feed-side med afkrydsningsfeltet Enable RSS Feed Access, feed-URL\'en og knapperne Copy og View Feed'; title='RSS Feed-konfiguration' app-screenshot-end]
 
-On the RSS Feed page, check the "Enable RSS Feed Access" checkbox to generate your unique RSS feed URL.
+På RSS Feed-siden skal du markere afkrydsningsfeltet "Enable RSS Feed Access" for at generere din unikke RSS feed-URL.
 
-When you enable the feed, a security notice will appear explaining that anyone with the link can access your comments.
+Når du aktiverer feedet, vises en sikkerhedsmeddelelse, der forklarer, at alle med linket kan få adgang til dine kommentarer.
 
-Once enabled, your unique RSS feed URL will appear. Click the "Copy" button to copy the URL to your clipboard.
+Når feedet er aktiveret, vises din unikke RSS feed-URL. Klik på knappen "Copy" for at kopiere URL'en til din udklipsholder.
 
-Open your RSS reader application and add the copied URL as a new feed subscription. The exact steps vary by RSS reader, but typically you'll look for an "Add Feed" or "Subscribe" button, paste your RSS feed URL, and give the feed a name.
+Åbn din RSS-læser og tilføj den kopierede URL som et nyt feed-abonnement. De nøjagtige trin varierer afhængigt af RSS-læseren, men typisk skal du lede efter en "Add Feed"- eller "Subscribe"-knap, indsætte din RSS feed-URL og give feedet et navn.
 
-You can also click the "View Feed" button on the RSS Feed page to see your feed directly in your browser.
+Du kan også klikke på knappen "View Feed" på RSS Feed-siden for at se dit feed direkte i din browser.
 
-To disable access to your RSS feed, simply uncheck the "Enable RSS Feed Access" checkbox. This will prevent the feed from being accessed, though the URL will remain the same if you re-enable it later.
-
----
+For at deaktivere adgangen til dit RSS-feed skal du blot fjerne markeringen i afkrydsningsfeltet "Enable RSS Feed Access". Dette forhindrer feedet i at blive tilgået, selvom URL'en forbliver den samme, hvis du genaktiverer det senere.

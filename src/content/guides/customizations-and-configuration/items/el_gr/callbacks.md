@@ -70,6 +70,3 @@
     }];
 </script>
 [inline-code-end]
-
-
----

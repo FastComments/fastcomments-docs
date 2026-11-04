@@ -1,4 +1,3 @@
----
 ## Parameter
 
 | Name | Typ | Location | Erforderlich | Beschreibung |
@@ -40,5 +39,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `ModerationAPI.GetModerationCommentText`: %v\n", resp)
 }
 [inline-code-end]
-
----

@@ -5,5 +5,3 @@ Les agents IA sont des travailleurs autonomes qui surveillent les événements d
 Ce guide couvre l'éligibilité et la configuration, le catalogue complet des déclencheurs et des outils, les contrôles de sécurité (exécution à blanc, approbations, contrôle EU DSA, mémoire), les budgets et la comptabilité des coûts, la supervision et l'affinement des prompts, et l'intégration webhook.
 
 FastComments utilise des fournisseurs d'IA qui ne s'entraînent pas sur vos données.
-
----

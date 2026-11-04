@@ -1,4 +1,3 @@
----
 Za pomocą FastComments możemy łatwo dodać komentarze na żywo do dowolnej strony Squarespace.
 
 Poniższe instrukcje podzielone są na trzy sekcje, w zależności od tego, co chcesz zrobić:
@@ -7,4 +6,3 @@ Poniższe instrukcje podzielone są na trzy sekcje, w zależności od tego, co c
 3. [Dodaj komentarze do konkretnej strony](#squarespace-pages-specific-page-step-0)
 
 Uwaga: ten samouczek wymaga konta FastComments. Zaleca się najpierw zarejestrować konto, a następnie wrócić tutaj. [Możesz utworzyć konto tutaj.](https://fastcomments.com/auth/tenant-signup?packageId=flex)
----

@@ -1,3 +1,1 @@
----
 Ghost üyelerine zaten onları tanıyan bir yorum bölümü verin. Üye adlarını ve avatarlarını içe aktarın, yanıt bildirimlerini etkinleştirin ve gönderi şablonunuzu düzenleyin.
----

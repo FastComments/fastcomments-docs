@@ -126,5 +126,3 @@ Los comentarios de perfil son ideales para:
 - Los comentarios de perfil siguen las mismas normas comunitarias que los comentarios de artículos
 - Reporta los comentarios de perfil inapropiados si los encuentras
 - Los moderadores pueden tomar medidas sobre los comentarios de perfil que violen las normas
-
----

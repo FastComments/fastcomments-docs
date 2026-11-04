@@ -17,5 +17,3 @@ Se activa cuando un comentario es bloqueado.
 ### Par
 
 Ver [Disparador: Comentario desbloqueado](#trigger-comment-unlock) para el disparador espejo.
-
----

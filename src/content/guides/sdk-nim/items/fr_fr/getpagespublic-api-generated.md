@@ -1,21 +1,21 @@
-List pages for a tenant. Used by the FChat desktop client to populate its room list.  
-Requires `enableFChat` to be true on the resolved custom config for each page.  
-Pages that require SSO are filtered against the requesting user's group access.
+Liste les pages d'un tenant. Utilisé par le client de bureau FChat pour remplir sa liste de salons.
+Nécessite que `enableFChat` soit à true dans la configuration personnalisée résolue pour chaque page.
+Les pages nécessitant une authentification SSO sont filtrées en fonction des accès de groupe de l'utilisateur à l'origine de la requête.
 
-## Parameters
+## Paramètres
 
-| Nom | Type | Obligatoire | Description |
-|------|------|-------------|-------------|
+| Nom | Type | Requis | Description |
+|------|------|----------|-------------|
 | tenantId | string | Oui |  |
 | options | GetPagesPublicOptions | Non |  |
 
-## Response
+## Réponse
 
 Retourne : [`Option[GetPublicPagesResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_public_pages_response.nim)
 
-## Example
+## Exemple
 
-[inline-code-attrs-start title = 'getPagesPublic Exemple'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple de getPagesPublic'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (response, httpResponse) = client.getPagesPublic(tenantId = "my-tenant-123", options = GetPagesPublicOptions())
 if response.isSome:

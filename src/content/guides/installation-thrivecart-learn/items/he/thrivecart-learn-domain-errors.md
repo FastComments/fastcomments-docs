@@ -1,4 +1,3 @@
----
 ייתכן שתקבל שגיאת הרשאה, כמו הבאה:
 
 <div class="screenshot white-bg">
@@ -13,5 +12,3 @@
 במקרה זה, הפתרון פשוט. עליך להוסיף את האתר שלך לחשבון FastComments.com שלך.
 
 [לחץ כאן כדי להוסיף את האתר שלך לחשבונך.](https://fastcomments.com/auth/my-account/configure-domains)
-
----

@@ -1,4 +1,3 @@
----
 한 번만 `hugo.toml`에 tenant ID를 설정하세요:
 
 ```toml
@@ -11,4 +10,3 @@
 ```text
 \{{< fastcomments >}}
 ```
----

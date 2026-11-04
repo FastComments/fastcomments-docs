@@ -1,4 +1,3 @@
----
 FastComments 也支持 Hostinger 的 Page Reacts（即浮动点赞按钮）小部件。
 
 你可以在本页的右下角看到它的运行效果！
@@ -35,5 +34,3 @@ FastComments 也支持 Hostinger 的 Page Reacts（即浮动点赞按钮）小�
 4. 选择 Integrations。
 5. 将新代码添加到 `Custom code` 字段的 *末尾*，并发布你的网站。
 6. 在预览模式下你看不到该小部件，但在发布后的站点上它会出现。
-
----

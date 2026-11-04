@@ -1,4 +1,3 @@
----
 現在オンラインではない、そのページの過去のコメント投稿者。displayNameでソート。
 /users/online を使い尽くした後に「メンバー」セクションをレンダリングするためにこれを使用してください。
 commenterNameに対するカーソルページネーション: サーバーは部分的な {tenantId, urlId, commenterName} インデックスを辿ります。
@@ -47,5 +46,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.GetOfflineUsers`: %v\n", resp)
 }
 [inline-code-end]
-
----

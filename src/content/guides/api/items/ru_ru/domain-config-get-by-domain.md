@@ -1,4 +1,3 @@
----
 [api-resource-header-start name = 'DomainConfig'; route = 'GET /api/v1/domain-configs/:domain'; creditsCost = 1; api-resource-header-end]
 
 Отдельные DomainConfig можно получить по соответствующему `domain`. 
@@ -28,5 +27,3 @@ interface DomainConfigResponse {
     configuration?: DomainConfig | null
 }
 [inline-code-end]
-
----

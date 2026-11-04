@@ -93,5 +93,3 @@ try {
     echo 'Exception when calling PublicApi->getCommentsPublic: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

@@ -21,5 +21,3 @@ const result: APIGetUserBadgeProgressResponse = await getUserBadgeProgressById(t
 const progress: UserBadgeProgress | undefined = result?.progress;
 const status: APIStatus | undefined = result?.status;
 [inline-code-end]
-
----

@@ -22,5 +22,3 @@ if summaryOpt.isSome:
   let summary = summaryOpt.get()
   echo summary
 [inline-code-end]
-
----

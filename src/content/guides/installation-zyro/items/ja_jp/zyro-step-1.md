@@ -1,28 +1,28 @@
 まず、Website Builderでサイトを開きます。
 
-Now if you don't already have a section where you want the comments to go, add a blank section:
+次に、コメントを表示したいセクションがまだない場合は、空白のセクションを追加します:
 
 <div class="screenshot white-bg">
-    <div class="title">セクションを追加する</div>
-    <img class="screenshot-image" src="/images/installation-guides/hostinger-step-1-add-section.png" alt="セクションを追加する" />
+    <div class="title">セクションの追加</div>
+    <img class="screenshot-image" src="/images/installation-guides/hostinger-step-1-add-section.png" alt="セクションの追加" />
 </div>
 <div class="screenshot white-bg">
-    <div class="title">セクションを追加する</div>
-    <img class="screenshot-image" src="/images/installation-guides/hostinger-step-1-add-section-2.png" alt="セクションを追加する" />
+    <div class="title">セクションの追加</div>
+    <img class="screenshot-image" src="/images/installation-guides/hostinger-step-1-add-section-2.png" alt="セクションの追加" />
 </div>
 
-Now add the Zyro Embed widget by clicking our new section and clicking `Add element` in the top and then `Embed code`:
+次に、新しいセクションをクリックし、上部の `Add element` をクリックしてから `Embed code` をクリックして、Zyro Embedウィジェットを追加します:
 
 <div class="screenshot white-bg">
-    <div class="title">埋め込みコード</div>
-    <img class="screenshot-image" src="/images/installation-guides/hostinger-step-1-add-section-3.png" alt="埋め込みコード" />
+    <div class="title">Embed code</div>
+    <img class="screenshot-image" src="/images/installation-guides/hostinger-step-1-add-section-3.png" alt="Embed code" />
 </div>
 
-You'll get something like this:
+以下のような画面が表示されます:
 
 <div class="screenshot white-bg">
-    <div class="title">コードセクションが追加されました</div>
-    <img class="screenshot-image" src="/images/installation-guides/hostinger-step-1-add-section-4.png" alt="コードセクションが追加されました" />
+    <div class="title">コードセクションの追加完了</div>
+    <img class="screenshot-image" src="/images/installation-guides/hostinger-step-1-add-section-4.png" alt="コードセクションの追加完了" />
 </div>
 
-Now we're ready for `Step 2`.
+これで `Step 2` に進む準備ができました。

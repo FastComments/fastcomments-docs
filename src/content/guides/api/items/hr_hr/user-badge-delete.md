@@ -1,4 +1,3 @@
----
 Ovaj endpoint omogućuje brisanje dodjele korisničke značke.
 
 Primjer zahtjeva:
@@ -45,4 +44,3 @@ Mogući odgovori s pogreškama:
   "reason": "The user badge badge123 was not found."
 }
 [inline-code-end]
----

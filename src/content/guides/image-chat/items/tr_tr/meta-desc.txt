@@ -1,3 +1,1 @@
----
 Okuyucuların bir görüntüde bir noktaya tıklamasına ve bunun hakkında bir konuşma başlatmasına izin verin. Görsel işaretçiler, her konuyu tam noktasına sabitler ve izleyiciler arasında canlı olarak senkronize eder.
----

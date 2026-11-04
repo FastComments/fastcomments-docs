@@ -42,5 +42,3 @@ try {
     echo 'Izuzetak pri pozivanju PublicApi->uploadImage: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

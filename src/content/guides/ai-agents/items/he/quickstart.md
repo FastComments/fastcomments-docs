@@ -1,54 +1,54 @@
-This is the five-minute path from "we have AI Agents" to "an agent is responding to live traffic, gated by approvals." If you want the long form, every step links to the page that covers it in depth.
+זהו המסלול של חמש הדקות מ"יש לנו סוכני AI" ל"סוכן מגיב לתעבורה חיה, תחת אישורים". אם אתם מעוניינים בגרסה המלאה, כל שלב מקושר לעמוד שמכסה אותו לעומק.
 
-### 1. פתח את דף AI Agents
+### 1. פתחו את עמוד סוכני ה-AI
 
-Go to [AI Agents](https://fastcomments.com/auth/my-account/ai-agents) in your account. The first time you land here you will see either:
+עברו אל [AI Agents](https://fastcomments.com/auth/my-account/ai-agents) בחשבון שלכם. בפעם הראשונה שתגיעו לכאן תראו אחת מהאפשרויות:
 
-- A blank-state with a **Browse templates** and **Start from scratch** button (you have agents available to create), or
-- An upsell page if your plan does not include agents - see [Plans and Eligibility](#plans-and-eligibility).
+- מצב ריק עם כפתורי **Browse templates** ו-**Start from scratch** (יש לכם סוכנים זמינים ליצירה), או
+- עמוד מכירה ממוקד אם התוכנית שלכם אינה כוללת סוכנים - ראו [Plans and Eligibility](#plans-and-eligibility).
 
-### 2. בחר תבנית התחלתית
+### 2. בחרו תבנית התחלתית
 
-Click **Browse templates**. Pick one of:
+לחצו על **Browse templates**. בחרו אחת מהבאות:
 
-- [Moderator](#template-moderator) - reviews flagged or new comments, warns first-timers, escalates to ban only after a warning.
-- [Welcome Greeter](#template-welcome-greeter) - replies to first-time commenters.
-- [Top Comment Pinner](#template-top-comment-pinner) - pins substantive comments once they cross a vote threshold.
-- [Thread Summarizer](#template-thread-summarizer) - posts a neutral summary on long threads.
+- [Moderator](#template-moderator) - סוקר תגובות מדוגלות או חדשות, מזהיר משתמשים חדשים, ומדרג לחסימה רק לאחר אזהרה.
+- [Welcome Greeter](#template-welcome-greeter) - משיב למגיבים בפעם הראשונה.
+- [Top Comment Pinner](#template-top-comment-pinner) - נועץ תגובות מהותיות ברגע שהן חוצות סף הצבעות מסוים.
+- [Thread Summarizer](#template-thread-summarizer) - מפרסם סיכום ניטרלי בשרשורים ארוכים.
 
-Each template lands on a pre-filled edit form with **Status: Dry Run** already selected.
+כל תבנית מגיעה לטופס עריכה ממולא מראש עם **Status: Dry Run** שנבחר כבר.
 
-### 3. סקור ושמור
+### 3. סקרו ושמרו
 
-On the edit form, do at minimum:
+בטופס העריכה, בצעו לפחות:
 
-- **Internal name.** A short identifier used in admin dashboards.
-- **Display name.** What appears publicly when the agent posts a comment.
-- **Initial prompt.** Edit the template's prompt to match your voice and your specific rules.
-- **Approvals.** Tick the actions that should require human review before they take effect. We recommend at least `ban_user` for any moderation-style agent. See [Approval Workflow](#approval-workflow).
+- **Internal name.** מזהה קצר המשמש בלוחות הניהול.
+- **Display name.** מה שמופיע בפומבי כאשר הסוכן מפרסם תגובה.
+- **Initial prompt.** ערכו את הפרומפט של התבנית כך שיתאים לסגנון שלכם ולכללים הספציפיים שלכם.
+- **Approvals.** סמנו את הפעולות שידרשו סקירה אנושית לפני שייכנסו לפועל. אנו ממליצים על לפחות `ban_user` לכל סוכן בסגנון פיקוח. ראו [Approval Workflow](#approval-workflow).
 
-Click **Save agent**.
+לחצו על **Save agent**.
 
-### 4. צפה בו במצב dry-run
+### 4. צפו בו במצב dry-run
 
-The agent is now live in **Dry Run**. It will receive its triggers, call the model, and record actions on the [Run History](#run-history) page - with the **Dry Run** badge on each row - but it does not take real actions. Visit a few of the run details (see [Run Detail View](#run-detail-view)) and look at:
+הסוכן כעת פעיל במצב **Dry Run**. הוא יקבל את הטריגרים שלו, יקרא למודל, ויתעד פעולות בעמוד [Run History](#run-history) - עם תג **Dry Run** בכל שורה - אך הוא אינו מבצע פעולות אמיתיות. בקרו בכמה פרטי ריצות (ראו [Run Detail View](#run-detail-view)) והסתכלו על:
 
-- The actions the agent picked.
-- The justification and confidence on each action.
-- The full LLM transcript.
+- הפעולות שהסוכן בחר.
+- הנימוק ורמת הביטחון בכל פעולה.
+- תמליל ה-LLM המלא.
 
-If the agent is making decisions you disagree with, edit the initial prompt or tick more approvals.
+אם הסוכן מקבל החלטות שאינכם מסכימים איתן, ערכו את הפרומפט ההתחלתי או סמנו אישורים נוספים.
 
-### 5. הרץ בדיקה נגד תגובות קודמות
+### 5. הריצו בדיקה מול תגובות העבר
 
-From the agents list page, click **Test run** on the agent's row. The form has a single **Days** numeric input (1 to 90). Sample size and the hard cap on comments evaluated are shown informationally - they are computed server-side, not user-set. The replay runs against historical comments without taking real actions and reports what the agent **would** have done versus what actually happened (was the comment later approved, marked spam, deleted, and so on). See [Test Runs (Replays)](#test-runs-replays).
+מעמוד רשימת הסוכנים, לחצו על **Test run** בשורת הסוכן. לטופס יש שדה מספרי יחיד **Days** (מ-1 עד 90). גודל הדגימה והתקרה הקשיחה על מספר התגובות שייבדקו מוצגים לידיעה בלבד - הם מחושבים בצד השרת, ולא נקבעים על ידי המשתמש. ההשמעה רצה מול תגובות היסטוריות ללא ביצוע פעולות אמיתיות ומדווחת מה הסוכן **היה** עושה לעומת מה שקרה בפועל (האם התגובה אושרה מאוחר יותר, סומנה כספאם, נמחקה וכן הלאה). ראו [Test Runs (Replays)](#test-runs-replays).
 
-### 6. הפוך ל-Enabled
+### 6. עברו למצב Enabled
 
-When you are happy with the dry-run and replay output, edit the agent and change **Status** to **Enabled**. From here on, real actions land. The Run History page now shows live runs without the dry-run badge, and any action you marked for approval appears in the [approvals inbox](#approval-workflow).
+כאשר אתם מרוצים מתוצאות ה-dry-run וההשמעה, ערכו את הסוכן ושנו את **Status** ל-**Enabled**. מנקודה זו והלאה, פעולות אמיתיות מתבצעות. עמוד Run History מציג כעת ריצות חיות ללא תג ה-dry-run, וכל פעולה שסימנתם לאישור תופיע ב-[תיבת האישורים](#approval-workflow).
 
 ### מה הלאה
 
-- Set [Budgets](#budgets-overview) and [Budget Alerts](#budget-alerts).
-- Configure [Webhooks](#webhooks-overview) if you want external systems to react to agent events.
-- Add [Community Guidelines](#community-guidelines) to keep agent decisions aligned with your written policy.
+- הגדירו [Budgets](#budgets-overview) ו-[Budget Alerts](#budget-alerts).
+- הגדירו [Webhooks](#webhooks-overview) אם ברצונכם שמערכות חיצוניות יגיבו לאירועי סוכנים.
+- הוסיפו [Community Guidelines](#community-guidelines) כדי לשמור על התאמת החלטות הסוכן למדיניות הכתובה שלכם.

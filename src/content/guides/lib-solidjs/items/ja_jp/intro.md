@@ -5,5 +5,3 @@
 ## リポジトリ
 
 [GitHubで表示](https://github.com/FastComments/fastcomments-solidjs)
-
----

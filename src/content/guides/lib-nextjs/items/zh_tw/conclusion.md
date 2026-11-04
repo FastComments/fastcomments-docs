@@ -8,5 +8,3 @@
 ## 貢獻
 
 歡迎貢獻！請造訪 [GitHub 儲存庫](https://github.com/FastComments/fastcomments-nextjs) 以取得貢獻指南。
-
----

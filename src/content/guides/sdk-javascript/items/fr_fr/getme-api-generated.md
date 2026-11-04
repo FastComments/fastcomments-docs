@@ -23,5 +23,3 @@ Retourne : [`GetMeResponse`](https://github.com/FastComments/fastcomments-sdk-js
   const status: APIStatus = me.status;
 })();
 [inline-code-end]
-
----

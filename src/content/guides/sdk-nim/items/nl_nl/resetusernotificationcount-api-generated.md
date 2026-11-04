@@ -1,4 +1,3 @@
----
 ## Parameters
 
 | Naam | Type | Vereist | Beschrijving |
@@ -21,5 +20,3 @@ if resetRespOpt.isSome:
 else:
   echo "Reset notification count response not available"
 [inline-code-end]
-
----

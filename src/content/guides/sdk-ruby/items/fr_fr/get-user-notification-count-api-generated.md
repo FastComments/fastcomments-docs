@@ -30,5 +30,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Erreur lors de l'appel de PublicApi->get_user_notification_count : #{e}"
 end
 [inline-code-end]
-
----

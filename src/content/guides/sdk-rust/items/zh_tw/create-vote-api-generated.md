@@ -1,4 +1,3 @@
----
 ## 參數
 
 | 名稱 | 類型 | 必填 | 說明 |
@@ -29,5 +28,3 @@ async fn submit_vote() -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
-
----

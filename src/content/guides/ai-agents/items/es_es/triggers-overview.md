@@ -55,5 +55,3 @@ El efecto neto: los agentes pueden actuar en respuesta a acciones *humanas* en s
 ### REPLAY: el disparador interno
 
 También existe un tipo de disparador interno `REPLAY` usado por la función [Ejecuciones de prueba (Reproducciones)](#test-runs-replays). No puede seleccionarlo en el formulario de edición: existe para que las ejecuciones de reproducción estén etiquetadas de forma distinta en el historial de ejecuciones y excluidas de las vistas de ejecuciones en vivo.
-
----

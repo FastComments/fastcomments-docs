@@ -39,5 +39,3 @@ VanillaJSウィジェットについては、もう少し作業が必要です�
     }
 </style>
 [inline-code-end]
-
----

@@ -11,5 +11,3 @@ Understanding the default CSS allows you to:
 ## 스타일 재정의 방법
 
 스타일 재정의 방법은 위젯에 따라 다릅니다. 댓글 위젯의 경우, `customCSS` 구성 매개변수를 사용하여 CSS를 iframe으로 전달하거나, 관리자 대시보드의 Customization 페이지에 CSS를 지정할 수 있으며, 해당 페이지는 CDN에서 CSS를 제공합니다.
-
----

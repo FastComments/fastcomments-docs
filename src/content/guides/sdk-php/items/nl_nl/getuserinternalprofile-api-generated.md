@@ -1,4 +1,3 @@
----
 ## Parameters
 
 | Naam | Type | Locatie | Verplicht | Beschrijving |
@@ -40,5 +39,3 @@ try {
     echo 'Exception when calling ModerationApi->getUserInternalProfile: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

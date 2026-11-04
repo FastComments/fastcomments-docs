@@ -1,12 +1,12 @@
 [api-resource-header-start name = 'Poll'; route = 'PATCH /api/v1/polls/:commentId'; creditsCost = 1; api-resource-header-end]
 
-Uredi anketo, ne da bi motil glasove. Uporabite to za popravitev tipkarske napake v vprašanju ali možnosti, za zapiranje ali ponovno odpiranje ankete, ali za spremembo, kdo lahko vidi, kdo je glasoval.
+Uredi anketo, ne da bi motila njene glasove. Uporabite to za popravek tipkarske napake v vprašanju ali možnosti, za zaprtje ali ponovno odprtje ankete ali za spremembo tega, kdo lahko vidi, kdo je glasoval.
 
-Možnosti so naslovljene po njihovem `id`, in `PATCH` preimenuje tiste, ki jih navedete. Za dodajanje, odstranjevanje ali preurejanje možnosti pošljite celoten seznam možnosti na `PUT /api/v1/polls/:commentId`: možnosti, ki jih pošljete s svojimi id-ji, ohranijo tudi svoje glasove.
+Možnosti so naslovljene prek njihovega `id`, `PATCH` pa preimenuje tiste, ki jih navedete. Za dodajanje, odstranjevanje ali preurejanje možnosti pošljite celoten seznam možnosti na `PUT /api/v1/polls/:commentId`: možnosti, ki jih pošljete z njihovimi id-ji, obdržijo svoje glasove tudi tam.
 
-Vsako polje je neobvezno, vendar mora biti podano vsaj eno.
+Vsako polje je neobvezno, vendar je treba podati vsaj eno.
 
-[inline-code-attrs-start title = 'Primer cURL zahteve za popravilo ankete'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer cURL zahtevka za urejanje ankete'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request PATCH \
   --url 'https://fastcomments.com/api/v1/polls/comment-id?tenantId=demo&API_KEY=DEMO_API_SECRET' \
@@ -17,7 +17,7 @@ curl --request PATCH \
 }'
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Primer cURL zahteve za takojšnje zapiranje ankete'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer cURL za takojšnje zaprtje ankete'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request PATCH \
   --url 'https://fastcomments.com/api/v1/polls/comment-id?tenantId=demo&API_KEY=DEMO_API_SECRET' \
@@ -27,7 +27,7 @@ curl --request PATCH \
 }'
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Struktura zahteve za popravilo ankete'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Struktura zahtevka za urejanje ankete'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface PollPatchQueryParams {
     tenantId: string
@@ -36,7 +36,7 @@ interface PollPatchQueryParams {
 
 interface PollPatchBody {
     question?: string | null
-    /** Preimenuje obstoječe možnosti. Vsak podani id mora že biti v anketi. **/
+    /** Preimenuje obstoječe možnosti. Vsak podani id mora že obstajati na anketi. **/
     options?: { id: string, label: string }[] | null
     /** Datum v preteklosti takoj zapre anketo. null ponovno odpre zaprto anketo. **/
     closesAt?: string | null
@@ -46,7 +46,7 @@ interface PollPatchBody {
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Struktura odgovora za popravilo ankete'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Struktura odgovora za urejanje ankete'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface PollPatchResponse {
     status: 'success' | 'failed'
@@ -58,10 +58,10 @@ interface PollPatchResponse {
 }
 [inline-code-end]
 
-### Other Notes
+### Dodatne opombe
 
-- Poimenovanje id-ja možnosti, ki ni v anketi, povzroči napako `poll-invalid`, namesto tihega neukrepanja.
-- Oznake morajo ostati edinstvene znotraj ankete, pri čemer se upoštevajo tudi možnosti, ki jih ne spreminjate.
-- Za razliko od ustvarjanja ankete, je tukaj `closesAt` lahko v preteklosti – tako takoj zaprete anketo.
-- Zasebnost ankete je mogoče zožiti, vendar ne razširiti, ko ima glasove.
-- Zaklenjen komentar ne more imeti spremenjene ankete in povzroči napako `locked`.
+- Navedba id-ja možnosti, ki ni na anketi, povzroči napako `poll-invalid` namesto tega, da se tiho ne zgodi nič.
+- Oznake morajo ostati edinstvene znotraj ankete, pri čemer se štejejo tudi možnosti, ki jih ne spreminjate.
+- Za razliko od ustvarjanja ankete je `closesAt` tu lahko v preteklosti - tako takoj zaprete anketo.
+- Zasebnost ankete je mogoče zožiti, ne pa razširiti, ko že ima glasove.
+- Zaklenjenega komentarja ni mogoče spremeniti njegove ankete, kar povzroči napako `locked`.

@@ -34,5 +34,3 @@ interface FeedPostPatchResponse {
     reason?: string
 }
 [inline-code-end]
-
----

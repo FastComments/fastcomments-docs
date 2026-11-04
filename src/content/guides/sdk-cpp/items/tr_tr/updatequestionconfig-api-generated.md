@@ -1,4 +1,3 @@
----
 ## Parametreler
 
 | Ad | Tür | Gerekli | Açıklama |
@@ -27,5 +26,3 @@ api->updateQuestionConfig(U("my-tenant-123"), U("config-789"), updateBody)
         try { t.get(); } catch (const std::exception&) {}
     });
 [inline-code-end]
-
----

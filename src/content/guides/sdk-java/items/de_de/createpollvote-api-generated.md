@@ -1,24 +1,22 @@
-Record a vote on a poll, or move an existing one to a different option. A voter has at most one vote per
-poll, so calling this again for the same voter moves their vote rather than adding one.
+Eine Stimme bei einer Umfrage abgeben oder eine bestehende Stimme zu einer anderen Option verschieben. Ein Wähler hat höchstens eine Stimme pro Umfrage, daher verschiebt ein erneuter Aufruf für denselben Wähler dessen Stimme, anstatt eine weitere hinzuzufügen.
 
-This obeys the site's poll settings: if voting is set to logged-in users only, a vote with just an
-anonUserId is rejected, and anonymous votes are rate limited per IP per poll.
+Dies folgt den Umfrageeinstellungen der Website: Wenn die Abstimmung nur angemeldeten Benutzern erlaubt ist, wird eine Stimme mit nur einer anonUserId abgelehnt, und anonyme Stimmen werden pro IP pro Umfrage ratenbegrenzt.
 
 ## Parameter
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
+| tenantId | string | query | Ja |  |
 
 ## Antwort
 
-Rückgabe: [`CreatePollVoteResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreatePollVoteResponse.java)
+Gibt zurück: [`CreatePollVoteResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreatePollVoteResponse.java)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'createPollVote Beispiel'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Klassen importieren:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -31,10 +29,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // API‑Schlüssel‑Autorisation konfigurieren: api_key
+    // Configure API key authorization: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Entfernen Sie das Kommentarzeichen der folgenden Zeile, um ein Präfix für den API‑Schlüssel festzulegen, z. B. "Token" (Standardwert ist null)
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);

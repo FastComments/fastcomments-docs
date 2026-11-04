@@ -1,4 +1,1 @@
----
 ## Deljenje isječaka koda
-
----

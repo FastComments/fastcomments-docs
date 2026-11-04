@@ -19,5 +19,3 @@ De **FastComments - Recent Comments**-blok toont de meest recente reacties in je
 
 - Elke reactie linkt naar de pagina waarop deze is geplaatst, dus het blok dient ook als een "waar mensen het nu over hebben" navigatiehint.
 - De feed geldt winkelbreed. Om recente reacties voor één pagina te tonen, gebruik in plaats daarvan het **FastComments**-blok op die pagina.
-
----

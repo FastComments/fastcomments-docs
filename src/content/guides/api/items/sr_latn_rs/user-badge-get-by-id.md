@@ -1,4 +1,3 @@
----
 Ovaj endpoint vam omogućava da preuzmete određeni korisnički bedž po njegovom jedinstvenom ID-u.
 
 Primer zahteva:
@@ -52,4 +51,3 @@ Mogući odgovori sa greškom:
   "reason": "The user badge badge123 was not found."
 }
 [inline-code-end]
----

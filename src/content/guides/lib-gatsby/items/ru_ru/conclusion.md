@@ -8,5 +8,3 @@
 ## Вклад
 
 Вклады приветствуются! Пожалуйста, посетите [репозиторий на GitHub](https://github.com/FastComments/fastcomments-gatsbyjs-example) для получения инструкций по внесению вклада.
-
----

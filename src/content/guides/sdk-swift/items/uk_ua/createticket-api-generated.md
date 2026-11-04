@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Назва | Type | Location | Обов'язково | Опис |
@@ -32,5 +31,3 @@ DefaultAPI.createTicket(tenantId: tenantId, userId: userId, createTicketBody: cr
     }
 }
 [inline-code-end]
-
----

@@ -1,49 +1,49 @@
-### API Overview
+### סקירת ה-API
 
-Image Chat מספק שלוש נקודות קצה של REST API לניהול שיחות תמונה באופן תכנותי. נקודות קצה אלו מאפשרות לך לשלוף, ליצור ולמחוק סימונים ללא שימוש בווידג'ט בדפדפן.
+Image Chat מספק שלושה נקודות קצה (endpoints) של REST API לניהול שיחות תמונה באופן תוכנתי. נקודות קצה אלו מאפשרות לך לאחזר, ליצור ולמחוק שיחות מבלי להשתמש בווידג'ט הדפדפן.
 
-כל נקודות הקצה של ה-API דורשות אימות ועוקבות אחר דפוסי ה-API הסטנדרטיים של FastComments. אלה נקודות קצה ציבוריות שמאמתות באמצעות קוקיות בדפדפן, ולא באמצעות מפתחות API.
+כל נקודות הקצה של ה-API דורשות אימות ופועלות לפי התבניות הסטנדרטיות של FastComments API. אלו נקודות קצה ציבוריות שמאומתות באמצעות עוגיות דפדפן, ולא באמצעות מפתחות API.
 
-### Base URL
+### כתובת בסיס (Base URL)
 
-כל נקודות הקצה של Image Chat נמצאות תחת:
+כל נקודות הקצה של Image Chat API נמצאות תחת:
 
 ```
 https://fastcomments.com/comment-image-chats
 ```
 
-### Authentication
+### אימות
 
-נקודות קצה אלה מאמתות משתמשים באמצעות קוקיות בדפדפן. אינן משתמשות במפתחות API. על המשתמשים להיות מחוברים ל-FastComments בדפדפן שלהם כדי לגשת לנקודות קצה אלו.
+נקודות קצה אלו מאמתות משתמשים באמצעות עוגיות דפדפן. הן אינן משתמשות במפתחות API. על המשתמשים להיות מחוברים ל-FastComments בדפדפן שלהם כדי לגשת לנקודות קצה אלו.
 
-### Get All Conversations
+### קבלת כל השיחות
 
-שלוף את כל שיחות התמונה עבור תמונה ספציפית.
+אחזר את כל שיחות התמונה עבור תמונה ספציפית.
 
-#### Endpoint
+#### נקודת קצה
 
 ```
 GET /comment-image-chats/:tenantId?urlId=<urlId>
 ```
 
-#### Parameters
+#### פרמטרים
 
-`tenantId` (path parameter, required) הוא מזהה ה-Tenant של FastComments שלך.
+`tenantId` (פרמטר נתיב, נדרש) הוא מזהה ה-Tenant שלך ב-FastComments.
 
-`urlId` (query parameter, required) הוא מזהה התמונה עבורה ברצונך לשלוף שיחות.
+`urlId` (פרמטר שאילתה, נדרש) הוא מזהה התמונה שעבורה ברצונך לאחזר שיחות.
 
-#### Response
+#### תגובה
 
-התשובה כוללת את סטטוס ה-API, מידע על סשן המשתמש הנוכחי אם מאומת, מערך שיחות עם מזהים, כתובות URL וקואורדינטות X/Y, מזהה URL מנוקה, דגל המציין אם המשתמש הנוכחי הוא מנהל אתר או מודרטור, ופירוט חיבור WebSocket לסינכרון חי כולל `tenantIdWS`, `urlIdWS` ו-`userIdWS`.
+התגובה כוללת את סטטוס ה-API, מידע על סשן המשתמש הנוכחי אם האימות בוצע, מערך של שיחות עם המזהים, ה-URLs וקואורדינטות ה-X/Y שלהן, מזהה URL מנוקה, דגל המציין אם המשתמש הנוכחי הוא מנהל אתר או מנחה, ופרטי חיבור WebSocket לסנכרון חי כולל `tenantIdWS`, `urlIdWS` ו-`userIdWS`.
 
-#### Example Request
+#### דוגמת בקשה
 
 ```bash
 curl "https://fastcomments.com/comment-image-chats/demo?urlId=my-product-image" \
   --cookie "your-session-cookie"
 ```
 
-#### Example Response
+#### דוגמת תגובה
 
 ```json
 {
@@ -74,43 +74,43 @@ curl "https://fastcomments.com/comment-image-chats/demo?urlId=my-product-image" 
 }
 ```
 
-### Create Conversation
+### יצירת שיחה
 
-צור שיחת תמונה חדשה לנקודה מסוימת בתמונה.
+צור שיחת תמונה חדשה עבור מיקום ספציפי בתמונה.
 
-#### Endpoint
+#### נקודת קצה
 
 ```
 POST /comment-image-chats/:tenantId
 ```
 
-#### Parameters
+#### פרמטרים
 
-`tenantId` (path parameter, required) הוא מזהה ה-Tenant של FastComments שלך.
+`tenantId` (פרמטר נתיב, נדרש) הוא מזהה ה-Tenant שלך ב-FastComments.
 
 גוף הבקשה חייב להיות JSON ולכלול את השדות הנדרשים הבאים.
 
-`urlId` (string, required) הוא מזהה הדף הבסיסי.
+`urlId` (מחרוזת, נדרש) הוא מזהה העמוד הבסיסי.
 
-`windowUrlId` (string, required) הוא ה-URL המשולב עם מקור התמונה והקואורדינטות, לדוגמה `my-page:/images/photo.jpg:25.5:30.2`.
+`windowUrlId` (מחרוזת, נדרש) הוא ה-URL המשולב עם מקור התמונה והקואורדינטות, לדוגמה `my-page:/images/photo.jpg:25.5:30.2`.
 
-`pageTitle` (string, required) הוא הכותרת של הדף.
+`pageTitle` (מחרוזת, נדרש) הוא כותרת העמוד.
 
-`src` (string, required) הוא כתובת המקור של התמונה.
+`src` (מחרוזת, נדרש) הוא כתובת ה-URL של מקור התמונה.
 
-`x` (number, required) הוא קואורדינטת X כאחוז (0-100).
+`x` (מספר, נדרש) הוא קואורדינטת ה-X כאחוז (0-100).
 
-`y` (number, required) הוא קואורדינטת Y כאחוז (0-100).
+`y` (מספר, נדרש) הוא קואורדינטת ה-Y כאחוז (0-100).
 
-`createdFromCommentId` (string, required) הוא המזהה של ההערה שהחלה את השיחה הזו.
+`createdFromCommentId` (מחרוזת, נדרש) הוא המזהה של התגובה שיזמה את השיחה הזו.
 
-`broadcastId` (string, required) הוא UUID לשם סינכרון חי למניעת אפקטי הדהוד.
+`broadcastId` (מחרוזת, נדרש) הוא UUID לסנכרון חי למניעת אפקטי הדהוד.
 
-#### Response
+#### תגובה
 
-התשובה כוללת את סטטוס ה-API ואת מזהה השיחה שנוצרה.
+התגובה כוללת את סטטוס ה-API ואת המזהה של השיחה החדשה שנוצרה.
 
-#### Example Request
+#### דוגמת בקשה
 
 ```bash
 curl -X POST "https://fastcomments.com/comment-image-chats/demo" \
@@ -128,7 +128,7 @@ curl -X POST "https://fastcomments.com/comment-image-chats/demo" \
   }'
 ```
 
-#### Example Response
+#### דוגמת תגובה
 
 ```json
 {
@@ -137,25 +137,25 @@ curl -X POST "https://fastcomments.com/comment-image-chats/demo" \
 }
 ```
 
-### Delete Conversation
+### מחיקת שיחה
 
-מחק שיחת תמונה קיימת. נקודה זו דורשת הרשאות מנהל או מודרטור, או שהשיחה חייבת להיות נוצרה על ידי המשתמש המחובר.
+מחק שיחת תמונה קיימת. נקודת קצה זו דורשת הרשאות מנהל או מנחה, או שהשיחה חייבת להיות נוצרה על ידי המשתמש המאומת.
 
-#### Endpoint
+#### נקודת קצה
 
 ```
 DELETE /comment-image-chats/:tenantId/:chatId
 ```
 
-#### Parameters
+#### פרמטרים
 
-`tenantId` (path parameter, required) הוא מזהה ה-Tenant של FastComments שלך.
+`tenantId` (פרמטר נתיב, נדרש) הוא מזהה ה-Tenant שלך ב-FastComments.
 
-`chatId` (path parameter, required) הוא המזהה של השיחה שברצונך למחוק.
+`chatId` (פרמטר נתיב, נדרש) הוא המזהה של השיחה שיש למחוק.
 
-`broadcastId` (request body, required) הוא UUID לשם סינכרון חי.
+`broadcastId` (גוף הבקשה, נדרש) הוא UUID לסנכרון חי.
 
-#### Example Request
+#### דוגמת בקשה
 
 ```bash
 curl -X DELETE "https://fastcomments.com/comment-image-chats/demo/conv789" \
@@ -166,7 +166,7 @@ curl -X DELETE "https://fastcomments.com/comment-image-chats/demo/conv789" \
   }'
 ```
 
-#### Example Response
+#### דוגמת תגובה
 
 ```json
 {
@@ -174,19 +174,19 @@ curl -X DELETE "https://fastcomments.com/comment-image-chats/demo/conv789" \
 }
 ```
 
-### Coordinate System
+### מערכת הקואורדינטות
 
-קואורדינטות X ו-Y מאוחסנות כאחוזים מממדי התמונה. X מייצג את המיקום האופקי מהקצה השמאלי (0 = קצה שמאלי, 100 = קצה ימני). Y מייצג את המיקום האנכי מהקצה העליון (0 = קצה עליון, 100 = קצה תחתון).
+קואורדינטות ה-X וה-Y נשמרות כאחוזים מממדי התמונה. X מייצג את המיקום האופקי מהקצה השמאלי (0 = הקצה השמאלי, 100 = הקצה הימני). Y מייצג את המיקום האנכי מהקצה העליון (0 = הקצה העליון, 100 = הקצה התחתון).
 
-ערכי האחוזים הללו יכולים לכלול נקודות עשרוניות עבור דיוק. לדוגמה, x: 25.5 פירושו 25.5% מהקצה השמאלי של התמונה.
+ערכי האחוזים יכולים לכלול מספרים עשרוניים לדיוק. לדוגמה, x: 25.5 פירושו 25.5% מהקצה השמאלי של התמונה.
 
-### Rate Limiting
+### הגבלת קצב (Rate Limiting)
 
-נקודות קצה אלו כפופות להגבלת תדרים (rate limiting) הסטנדרטית של FastComments. ה-middleware של הגבלת התדרים פועל per-tenant כדי למנוע שימוש לרעה תוך כדי מתן אפשרות לתבניות שימוש רגילות.
+נקודות קצה אלו כפופות להגבלת הקצב הסטנדרטית של FastComments API. תוכנת הביניים (middleware) להגבלת קצב חלה פר-Tenant כדי למנוע שימוש לרעה תוך מתן אפשרות לדפוסי שימוש רגילים.
 
-### Error Responses
+### תגובות שגיאה
 
-כל נקודות הקצה מחזירות קודי סטטוס HTTP סטנדרטיים. תגובת 400 מציינת פרמטרי בקשה לא תקינים. תגובת 401 משמעותה שהאימות נכשל. תגובת 403 מציינת הרשאות לא מספקות. תגובת 404 משמעותה שהשיחה לא נמצאה. תגובת 429 מציינת חריגה ממגבלת התדר.
+כל נקודות הקצה מחזירות קודי סטטוס HTTP סטנדרטיים. תגובה 400 מציינת פרמטרי בקשה לא תקינים. תגובה 401 פירושה שהאימות נכשל. תגובה 403 מציינת הרשאות לא מספיקות. תגובה 404 פירושה שהשיחה לא נמצאה. תגובה 429 מציינת שמגבלת הקצב חורגה.
 
 תגובות שגיאה כוללות גוף JSON עם פרטים:
 
@@ -197,6 +197,6 @@ curl -X DELETE "https://fastcomments.com/comment-image-chats/demo/conv789" \
 }
 ```
 
-### Usage Tracking
+### מעקב שימוש
 
-יצירת שיחות מגדילה את מדד השימוש שלך `conversationCreateCount`. כל פעילות סינכרון WebSocket מגדילה את `pubSubMessageCount` ו-`pubSubBandwidth`. תוכל לנטר מדדים אלו בלוח המחוונים של FastComments תחת ניתוחי שימוש.
+יצירת שיחות מגדילה את מדד השימוש `conversationCreateCount` שלך. כל פעילות סנכרון WebSocket מגדילה את `pubSubMessageCount` ו-`pubSubBandwidth`. באפשרותך לעקוב אחר מדדים אלו בלוח הבקרה של FastComments שלך תחת ניתוחי שימוש.

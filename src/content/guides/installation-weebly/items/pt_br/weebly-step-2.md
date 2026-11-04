@@ -93,5 +93,3 @@ Agora vamos colar nosso código do rodapé:
 </div>
 
 Pronto!
-
----

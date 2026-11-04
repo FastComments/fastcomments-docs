@@ -1,4 +1,3 @@
----
 Mientras FastComments admite la detección de blasfemia y spam, se puede personalizar. La detección de blasfemia o spam puede
 desactivarse individualmente a través de la página de Configuración de Moderación de Comentarios.
 

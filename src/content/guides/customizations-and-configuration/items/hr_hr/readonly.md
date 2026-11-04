@@ -17,5 +17,3 @@ Od studenog 2022., niti se mogu zaključati ili otključati **uživo** od strane
 Ovo će spriječiti nove komentare, dok će i dalje omogućiti glasanje i omogućiti korisnicima da izbrišu svoje komentare po želji, dok `readonly` ne dopušta te stvari. 
 
 Ovo odgovara polju `isClosed` u `Page` API-ju.
-
----

@@ -1,4 +1,3 @@
----
 ## 需要幫助嗎？
 
 如果您在使用 Go SDK 時遇到任何問題或有任何疑問，請：
@@ -9,5 +8,3 @@
 ## 貢獻
 
 歡迎任何貢獻！請造訪 [GitHub 儲存庫](https://github.com/FastComments/fastcomments-go) 以查看貢獻指南。
-
----

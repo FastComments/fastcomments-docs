@@ -52,5 +52,3 @@
 - 設定 [預算](#budgets-overview) 與 [預算警示](#budget-alerts)。
 - 如果你希望外部系統對代理事件作出反應，設定 [Webhooks](#webhooks-overview)。
 - 新增 [社群準則](#community-guidelines)，以使代理的決策與你的書面政策一致。
-
----

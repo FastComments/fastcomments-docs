@@ -1,4 +1,3 @@
----
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
@@ -22,5 +21,3 @@ async function main() {
 }
 main();
 [inline-code-end]
-
----

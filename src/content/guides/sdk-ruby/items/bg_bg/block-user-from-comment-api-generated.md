@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Name | Type | Location | Required | Description |
@@ -43,5 +42,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->block_user_from_comment: #{e}"
 end
 [inline-code-end]
-
----

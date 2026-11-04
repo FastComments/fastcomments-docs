@@ -1,4 +1,3 @@
----
 테넌트의 대량 사용자 정보입니다. 주어진 userIds에 대해 User / SSOUser의 표시 정보를 반환합니다.
 댓글 위젯에서 프레즌스 이벤트로 방금 나타난 사용자 정보를 보강하는 데 사용됩니다.
 페이지 컨텍스트 없음: 개인정보 보호가 일관되게 적용됩니다(비공개 프로필은 마스킹됨).
@@ -44,5 +43,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->get_users_info: %s\n" % e)
 [inline-code-end]
-
----

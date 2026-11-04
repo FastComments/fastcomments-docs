@@ -1,4 +1,3 @@
----
 ## Odgovor
 
 Vrne: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/APIEmptyResponse.h)
@@ -19,5 +18,3 @@ api->logoutPublic()
         }
     });
 [inline-code-end]
-
----

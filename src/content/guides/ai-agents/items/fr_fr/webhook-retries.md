@@ -1,4 +1,3 @@
----
 Les webhooks d'agent sont réessayés en cas d'échec. La livraison est **en mode « fire-and-forget » du point de vue de l'agent** - une livraison échouée n'empêche pas l'exécution de l'agent ni n'annule des actions - et une file d'attente + cron gèrent les réessais de manière asynchrone.
 
 ### Modèle de file d'attente
@@ -67,5 +66,3 @@ La page [Journaux de livraison des webhooks](#webhook-logs) est l'endroit pour v
 ### Mettre en pause un webhook défaillant
 
 Si un webhook échoue de manière persistante, la solution la plus propre est de le supprimer (ou de vider temporairement sa liste d'abonnement aux événements). La plateforme ne désactive pas automatiquement les webhooks en échec - ils continuent de réessayer jusqu'à l'abandon de la livraison.
-
----

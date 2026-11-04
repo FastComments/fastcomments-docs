@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Name | Type | Required | Description |
@@ -26,5 +25,3 @@ api->getEmailTemplateDefinitions(tenantId).then([](pplx::task<std::shared_ptr<Ge
     }
 });
 [inline-code-end]
-
----

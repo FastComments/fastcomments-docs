@@ -8,5 +8,3 @@
 ## Допринеси
 
 Допринеси су добродошли! Посетите [репозиторијум на GitHub-у](https://github.com/FastComments/fastcomments-laravel) за смернице о доприносу.
-
----

@@ -27,5 +27,3 @@ interface QuestionResultByIdResponse {
     questionResult?: QuestionResult
 }
 [inline-code-end]
-
----

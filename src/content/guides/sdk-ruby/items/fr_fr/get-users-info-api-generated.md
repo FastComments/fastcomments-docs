@@ -1,4 +1,3 @@
----
 Informations utilisateur en masse pour un locataire. Étant donné des userIds, renvoie les informations d'affichage depuis User / SSOUser.
 Utilisé par le widget de commentaires pour enrichir les utilisateurs qui viennent d'apparaître via un événement de présence.
 Aucun contexte de page : la confidentialité est appliquée de manière uniforme (les profils privés sont masqués).
@@ -33,5 +32,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_users_info: #{e}"
 end
 [inline-code-end]
-
----

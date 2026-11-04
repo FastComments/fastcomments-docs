@@ -1,4 +1,3 @@
----
 Informations utilisateur en masse pour un locataire. Given userIds, return display info from User / SSOUser.
 Utilisé par le widget de commentaires pour enrichir les utilisateurs qui viennent d'apparaître via un événement de présence.
 Pas de contexte de page : la confidentialité est appliquée uniformément (les profils privés sont masqués).
@@ -42,5 +41,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.GetUsersInfo`: %v\n", resp)
 }
 [inline-code-end]
-
----

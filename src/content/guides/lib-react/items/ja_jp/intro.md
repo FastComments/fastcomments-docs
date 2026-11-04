@@ -5,5 +5,3 @@
 ## リポジトリ
 
 [GitHub 上で表示](https://github.com/FastComments/fastcomments-react)
-
----

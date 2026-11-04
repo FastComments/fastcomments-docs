@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Ime | Vrsta | Lokacija | Obvezno | Opis |
@@ -32,5 +31,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->post_ban_user_undo: #{e}"
 end
 [inline-code-end]
-
----

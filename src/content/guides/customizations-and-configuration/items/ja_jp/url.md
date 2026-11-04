@@ -1,14 +1,13 @@
 [related-parameter-start name = 'url'; type = 'string'; related-parameter-end]
 
-通知メールを送信したり、モデレーションページのようなユーザーインターフェースでコメントを表示したりする際に、コメントから
-それが掲載されているページへリンクできると便利です。
+通知メールの送信時や、モデレーションページなどのユーザーインターフェースにコメントを表示する際に、コメントからそのコメントが存在するページへのリンクを張れると便利です。
 
-If URL ID isn't always an ID, then we have to store the URL some place else. That's what the "url" property is for, defined as follows.
+URL ID が常に ID であるとは限らない場合、URL を別の場所に保存する必要があります。それが "url" プロパティの役割で、以下のように定義されています。
 
-[code-example-start config = {url: 'https://example.com/article-5'}; linesToHighlight = [6]; title = 'Defining a Custom URL'; code-example-end]
+[code-example-start config = {url: 'https://example.com/article-5'}; linesToHighlight = [6]; title = 'カスタム URL の定義'; code-example-end]
 
-一般的なユースケースは、コメントスレッドを記事のような識別子に紐付け、その後特定のページにリンクすることです。例えば：
+よくあるユースケースは、コメントスレッドを記事などの識別子に紐付け、その上で特定のページにリンクを張ることです。例えば:
 
-[code-example-start config = {url: 'https://example.com/article-5', urlId: 'article-5'}; linesToHighlight = [6, 7]; title = 'Defining Custom URL and URL IDs together'; code-example-end]
+[code-example-start config = {url: 'https://example.com/article-5', urlId: 'article-5'}; linesToHighlight = [6, 7]; title = 'カスタム URL と URL ID の同時定義'; code-example-end]
 
-The URL does not get cleaned of common marketing parameters. By default, whatever the current page URL is, is the URL stored with the comment.
+URL から一般的なマーケティングパラメータは除去されません。デフォルトでは、現在のページの URL がそのままコメントと共に保存されます。

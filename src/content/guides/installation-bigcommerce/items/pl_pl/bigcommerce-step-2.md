@@ -10,5 +10,3 @@ W nawigacji po lewej przejdź do `templates->pages->blog-post.html`.
     <div class="title">Otwórz szablon</div>
     <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-2-open-blog-post-template.png" alt="Otwórz szablon" />
 </div>
-
----

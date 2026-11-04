@@ -17,5 +17,3 @@ interface NotificationCount {
     expireAt: string // низ који представља датум
 }
 [inline-code-end]
-
----

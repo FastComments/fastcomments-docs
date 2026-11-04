@@ -1,4 +1,3 @@
----
 Przekaż kod lokalizacji w konfiguracji, aby zlokalizować ciągi dostarczane przez serwer:
 
 ```swift

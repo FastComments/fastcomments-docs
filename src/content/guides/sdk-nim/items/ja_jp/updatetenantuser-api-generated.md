@@ -1,4 +1,3 @@
----
 ## パラメータ
 
 | 名前 | 型 | 必須 | 説明 |
@@ -26,5 +25,3 @@ let (optResp, httpResp) = client.updateTenantUser(
 if optResp.isSome:
   let _ = optResp.get()
 [inline-code-end]
-
----

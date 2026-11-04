@@ -19,5 +19,3 @@ Accedi come amministratore del sito e vai su **Amministrazione del sito > Notifi
 #### Configura il plugin
 
 Dopo l'installazione, vai su **Amministrazione del sito > Plugin > Plugin locali > FastComments** per inserire le impostazioni. Consulta la sezione [Configurazione](#moodle-configuration) per i dettagli su ogni opzione.
-
----

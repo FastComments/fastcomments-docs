@@ -1,4 +1,3 @@
----
 ## Parâmetros
 
 | Nome | Tipo | Obrigatório | Descrição |
@@ -26,5 +25,3 @@ api->getPendingWebhookEvents(tenantId, opts)
         } catch (const std::exception&) {}
     });
 [inline-code-end]
-
----

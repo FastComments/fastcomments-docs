@@ -25,5 +25,3 @@ Vrne: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/b
   console.log(result1, result2);
 })();
 [inline-code-end]
-
----

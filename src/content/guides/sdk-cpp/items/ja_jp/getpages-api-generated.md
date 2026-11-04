@@ -22,5 +22,3 @@ api->getPages(tenantId)
         }
     });
 [inline-code-end]
-
----

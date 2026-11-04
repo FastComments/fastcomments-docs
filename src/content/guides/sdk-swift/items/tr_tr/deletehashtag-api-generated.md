@@ -31,5 +31,3 @@ DefaultAPI.deleteHashTag(tenantId: tenantId, tag: tag, deleteHashTagRequestBody:
     }
 }
 [inline-code-end]
-
----

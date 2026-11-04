@@ -18,5 +18,3 @@ Il blocco **FastComments - Top Pages** elenca le pagine del tuo negozio con la m
 
 - **Top Pages** ordina per engagement totale, quindi gli stessi post tendono a rimanere in cima per un po'. Ideale per una barra laterale "popular posts".
 - **Recent Discussions** ordina per attività più recente, quindi la lista cambia frequentemente. Ideale per un pannello "what's hot right now".
-
----

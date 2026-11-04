@@ -1,8 +1,8 @@
-The Recent Discussions Widget displays a list of pages sorted by the most recent comment activity. It includes a heading, last activity dates, comment counts with icons, and automatic dark mode detection.
+Уиджетът Recent Discussions показва списък от страници, подредени по най-скорошната коментарна активност. Той включва заглавие, дати на последната активност, брояч на коментарите с икони и автоматично разпознаване на тъмен режим.
 
-## Basic Installation
+## Основна инсталация
 
-[inline-code-attrs-start title = 'Настройка на стилизирането на уиджета за последни дискусии'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Настройка на стиловете на уиджета Recent Discussions'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/widget-recent-discussions-v2.min.js"></script>
 <div id="fastcomments-widget-recent-discussions"></div>
@@ -13,17 +13,17 @@ The Recent Discussions Widget displays a list of pages sorted by the most recent
 </script>
 [inline-code-end]
 
-## Configuration Options
+## Опции за конфигурация
 
-- **tenantId** (required): Вашият FastComments tenant ID
-- **count** (optional): Брой страници за показване. По подразбиране е `20`, максимум `100`
-- **hasDarkBackground** (optional): Принудително прилагане на стилизация за тъмен режим. Автоматично се открива от фона на страницата, ако не е зададено
+- **tenantId** (задължително): Вашият FastComments tenant ID
+- **count** (по избор): Брой страници за показване. По подразбиране е `20`, максимум `100`
+- **hasDarkBackground** (по избор): Принудително стилизиране в тъмен режим. Автоматично се разпознава от фона на страницата, ако не е зададено
 
-## Widget Structure
+## Структура на уиджета
 
-The widget renders with the following HTML structure:
+Уиджетът се изобразява със следната HTML структура:
 
-[inline-code-attrs-start title = 'HTML структура на уиджета за последни дискусии'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'HTML структура на уиджета Recent Discussions'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <div class="fc-rd2">
     <div class="fc-rd2-heading">Recent Discussions</div>
@@ -39,9 +39,9 @@ The widget renders with the following HTML structure:
 </div>
 [inline-code-end]
 
-## Default CSS Reference
+## Референция на CSS по подразбиране
 
-[inline-code-attrs-start title = 'CSS по подразбиране за уиджета за последни дискусии'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'CSS по подразбиране на уиджета Recent Discussions'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rd2 {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -61,11 +61,11 @@ The widget renders with the following HTML structure:
 .fc-rd2-count { font-size: 12px; font-weight: 600; color: #666; }
 [inline-code-end]
 
-## Customization Examples
+## Примери за персонализиране
 
-### Remove the Container Border
+### Премахване на рамката на контейнера
 
-[inline-code-attrs-start title = 'Премахване на границата на контейнера'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Премахване на рамката на контейнера'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rd2 {
     border: none !important;
@@ -73,13 +73,11 @@ The widget renders with the following HTML structure:
 }
 [inline-code-end]
 
-### Custom Link Color
+### Персонализиран цвят на връзките
 
-[inline-code-attrs-start title = 'Персонализиран цвят на връзката'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Персонализиран цвят на връзките'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 a.fc-rd2-title:hover {
     color: #e63946 !important;
 }
 [inline-code-end]
-
----

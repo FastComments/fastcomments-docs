@@ -1,15 +1,15 @@
-FastComments такође подржава Page Reacts (такође познат као плутајуће дугме за лајк) виџет за Hostinger.
+FastComments такође подржава Page Reacts (познат и као Floating Like дугме) виџет за Hostinger.
 
-You can see it in action in the bottom right of this page!
+Можете га видети у акцији у доњем десном углу ове странице!
 
 ### Напомена!
 
-These instructions are for the Hostinger Site Builder. If you're using Hostinger *WordPress*, then just grab the below code, and add it to your WordPress site
-using [WPCode](https://wordpress.org/plugins/insert-headers-and-footers/), which is a free and easy plugin for adding small code snippets to your site.
+Ова упутства су за Hostinger Site Builder. Ако користите Hostinger *WordPress*, само преузмите код испод и додајте га на своју WordPress страницу
+помоћу [WPCode](https://wordpress.org/plugins/insert-headers-and-footers/), који је бесплатан и једноставан додатак за додавање малих исечака кода на вашу страницу.
 
-1. First, grab the code:
+1. Прво, преузмите код:
 
-[inline-code-attrs-start title = 'Hostinger код за плутајуће лајкове'; type = 'bash'; useDemoTenant = false; isFunctional = false; type = 'html';  inline-code-attrs-end]
+[inline-code-attrs-start title = 'Hostinger Floating Likes код'; type = 'bash'; useDemoTenant = false; isFunctional = false; type = 'html';  inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-page-likes-floating.min.js?v=2" async></script>
 <div id="fastcomments-page-likes-floating"></div>
@@ -30,10 +30,8 @@ using [WPCode](https://wordpress.org/plugins/insert-headers-and-footers/), which
 </script>
 [inline-code-end]
 
-2. Then, in Hostinger, open the site builder.
-3. Go to Website Settings in the bottom Left.
-4. Select Integrations.
-5. Add the new code to the *end* of the `Custom code` field, and publish your site.
-6. You will not see the widget in preview mode, but it will appear on the published version of the site.
-
----
+2. Затим, у Hostinger-у, отворите site builder.
+3. Идите на Website Settings у доњем левом углу.
+4. Изаберите Integrations.
+5. Додајте нови код на *крај* поља `Custom code` и објавите своју страницу.
+6. Виџет нећете видети у режиму прегледа, али ће се појавити на објављеној верзији странице.

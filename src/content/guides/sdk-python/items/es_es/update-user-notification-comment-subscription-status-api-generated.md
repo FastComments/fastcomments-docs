@@ -1,4 +1,3 @@
----
 Habilitar o deshabilitar las notificaciones para un comentario específico.
 
 ## Parámetros
@@ -48,5 +47,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->update_user_notification_comment_subscription_status: %s\n" % e)
 [inline-code-end]
-
----

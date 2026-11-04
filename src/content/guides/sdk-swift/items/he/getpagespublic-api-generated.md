@@ -1,4 +1,3 @@
----
 רשימת דפים עבור דייר. משמש את לקוח השולחן העבודה של FChat למלא את רשימת החדרים שלו.  
 דורש ש-`enableFChat` יהיה `true` בתצורה המותאמת המוגדרת לכל דף.  
 דפים הדורשים SSO מסוננים על פי הגישה לקבוצת המשתמש שמבצע את הבקשה.
@@ -43,5 +42,3 @@ PublicAPI.getPagesPublic(tenantId: tenantId, options: PublicAPI.GetPagesPublicOp
     }
 }
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 1. **간단한 예제**
 
     http://localhost:8000/commenting
@@ -20,4 +19,3 @@
     코드: [src/pages/page-transition-test-start.tsx](https://github.com/FastComments/fastcomments-gatsbyjs-example/blob/master/src/pages/page-transition-test-start.tsx).
 
 더 보려면 http://localhost:8000 로 이동하세요
----

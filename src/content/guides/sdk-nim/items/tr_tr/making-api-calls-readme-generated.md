@@ -1,6 +1,6 @@
-All API methods in this SDK return tuples of `(Option[ResponseType], Response)`. The first element contains the parsed response if successful, and the second element is the raw HTTP response.
+Bu SDK'daki tüm API metotları `(Option[ResponseType], Response)` şeklinde demetler (tuple) döndürür. İlk öğe başarılı olması durumunda ayrıştırılmış yanıtı, ikinci öğe ise ham HTTP yanıtını içerir.
 
-Required parameters and the request body are passed positionally. The remaining optional parameters are collected into a single `Api<Operation>Options` object, which is the last argument. Operations with no optional parameters take no options object.
+Zorunlu parametreler ve istek gövdesi konumsal olarak iletilir. Kalan isteğe bağlı parametreler, son argüman olan tek bir `Api<Operation>Options` nesnesinde toplanır. İsteğe bağlı parametresi olmayan işlemler options nesnesi almaz.
 
 ### Örnek: Yorumları Getirme
 
@@ -28,4 +28,3 @@ if httpResponse.code == Http200:
     if resp.comments.isSome:
       echo "Found ", resp.comments.get().len, " comments"
 ```
----

@@ -5,5 +5,3 @@
 ## リポジトリ
 
 [GitHub で表示](https://github.com/FastComments/fastcomments-vue-next)
-
----

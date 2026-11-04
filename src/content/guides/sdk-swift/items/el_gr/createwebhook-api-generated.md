@@ -1,22 +1,22 @@
-Subscribes a URL to a comment event (REST hook subscribe). Subscribing the same URL to the same  
-event and domain again returns the existing subscription. Deliveries are HMAC signed, see the  
-webhooks guide; the legacy `token` header is never sent to API subscriptions.
+Συνδέει ένα URL σε ένα συμβάν σχολίου (REST hook subscribe). Η επανασύνδεση του ίδιου URL στο ίδιο
+συμβάν και domain επιστρέφει την υπάρχουσα συνδρομή. Οι παραδόσεις υπογράφονται με HMAC, δείτε τον οδηγό
+webhooks· η παλαιά κεφαλίδα `token` δεν αποστέλλεται ποτέ σε συνδρομές μέσω API.
 
-## Parameters
+## Παράμετροι
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
-|------|------|----------|------------|-----------|
-| tenantId | string | query | Yes |  |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Ναι |  |
 
-## Response
+## Απάντηση
 
-Returns: [`CreateWebhookResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateWebhookResponse.swift)
+Επιστρέφει: [`CreateWebhookResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateWebhookResponse.swift)
 
-## Example
+## Παράδειγμα
 
-[inline-code-attrs-start title = 'createWebhook Παράδειγμα'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Παράδειγμα createWebhook'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Τα παρακάτω παραδείγματα κώδικα είναι ακόμη σε beta. Για οποιοδήποτε πρόβλημα, παρακαλούμε αναφέρετε το μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 

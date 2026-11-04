@@ -1,3 +1,1 @@
----
 Dozvolite komentatorima da objavljuju izvršivi, sintaksom istaknut kod u svojim temama. Koji jezici su podržani i kako uključiti deljenje isječaka.
----

@@ -1,25 +1,23 @@
----
-FastComments SDK'en leverer to typer API-endepunkter:
+FastComments SDK'en giver to typer API-endpoints:
 
-### PublicAPI - Endepunkter sikre for klienter
+### PublicAPI - Klientsikre Endpoints
 
-The `PublicAPI` contains endpoints that are safe to call from client-side code (iOS/macOS apps). These endpoints:
+`PublicAPI` indeholder endpoints, der er sikre at kalde fra klient-side kode (iOS/macOS-apps). Disse endpoints:
 - Kræver ikke en API-nøgle
 - Kan bruge SSO-tokens til autentificering
-- Er ratebegrænsede pr. bruger/enhed
+- Er rate-begrænsede pr. bruger/enhed
 - Er velegnede til applikationer rettet mod slutbrugere
 
-**Eksempel på anvendelse**: Hentning og oprettelse af kommentarer i din iOS-app
+**Eksempel på brugsscenarie**: Hentning og oprettelse af kommentarer i din iOS-app
 
-### DefaultAPI - Endepunkter på serversiden
+### DefaultAPI - Server-side Endpoints
 
-The `DefaultAPI` contains authenticated endpoints that require an API key. These endpoints:
+`DefaultAPI` indeholder autentificerede endpoints, der kræver en API-nøgle. Disse endpoints:
 - Kræver din FastComments API-nøgle
-- Bør KUN kaldes fra server-side kode
+- Skun KUN kaldes fra server-side kode
 - Giver fuld adgang til dine FastComments-data
-- Er ratebegrænsede pr. tenant
+- Er rate-begrænsede pr. tenant
 
-**Eksempel på anvendelse**: Administrative operationer, eksport af store datamængder, moderationsværktøjer
+**Eksempel på brugsscenarie**: Administrative operationer, bulk-eksport af data, moderationsværktøjer
 
-**VIGTIGT**: Udsæt aldrig din API-nøgle i klient-side kode. API-nøgler bør kun bruges på serversiden.
----
+**VIGTIGT**: Udsend aldrig din API-nøgle i klient-side kode. API-nøgler må kun bruges server-side.

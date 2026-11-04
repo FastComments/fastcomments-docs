@@ -58,5 +58,3 @@ Kopieer de volgende code:
     <div class="title">Plak en opslaan</div>
     <img class="screenshot-image" src="/images/installation-guides/ionos-step-2-paste-and-save.png" alt="Plak en opslaan" />
 </div>
-
----

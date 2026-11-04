@@ -30,5 +30,3 @@ Afstemningens `privacy`-indstilling gælder for dette API på samme måde som de
 - **Everyone**: stemmerne kan læses.
 
 Afstemningens privatliv kan indsnævres, men ikke udvides, når den har stemmer.
-
----

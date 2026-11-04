@@ -1,4 +1,3 @@
----
 ## Parameters
 
 | Naam | Type | Vereist | Beschrijving |
@@ -24,5 +23,3 @@ api->getTenant(tenantId, id)
         }
     });
 [inline-code-end]
-
----

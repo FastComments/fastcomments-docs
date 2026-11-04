@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
@@ -18,5 +17,3 @@ let (maybeResponse, httpResponse) = client.getUserNotifications(tenantId = "my-t
 if maybeResponse.isSome:
   let notifications = maybeResponse.get()
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 לאחר מכן, נעבור אל `Add -> Embed Code -> Embed HTML`.
 
 <div class="screenshot white-bg">
@@ -6,11 +5,9 @@
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-1.png" alt="הוספת בלוק Embed HTML" />
 </div>
 
-This will give us a sad looking box to start with:
+זה ייתן לנו תיבה עצובה להתחיל איתה:
 
 <div class="screenshot white-bg">
-    <div class="title">הבלוק ההתחלתי</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-1-sad.png" alt="הבלוק ההתחלתי" />
+    <div class="title">בלוק ההתחלתי</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-1-sad.png" alt="בלוק ההתחלתי" />
 </div>
-
----

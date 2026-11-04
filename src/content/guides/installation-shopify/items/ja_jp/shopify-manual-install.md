@@ -1,28 +1,28 @@
-If you can't install the [Shopify App Store アプリ](https://apps.shopify.com/fastcomments), you can still add FastComments by editing your theme. This path is useful when you want to wire up a FastComments tenant you already own, or when you're embedding on a Shopify storefront where the app isn't an option.
+[Shopify App Storeアプリ](https://apps.shopify.com/fastcomments)をインストールできない場合でも、テーマを編集してFastCommentsを追加できます。この方法は、すでに所有しているFastCommentsテナントを接続したい場合や、アプリを利用できないShopifyストアフロントに埋め込む場合に便利です。
 
-The app-based install is the supported path for most stores. Reach for this only if the app doesn't fit.
+アプリベースのインストールは、ほとんどのストアで推奨される方法です。アプリが適合しない場合にのみ、この方法を使用してください。
 
-### Step 1: Disable Shopify's native comments
+### ステップ1: Shopifyのネイティブコメントを無効にする
 
-In your Shopify admin, go to **Blog posts > Manage blogs**, open each blog, and set **Comments are disabled** in the right-hand panel. Save.
+Shopify管理画面で、**ブログ記事 > ブログを管理**に移動し、各ブログを開いて、右側のパネルで**コメントを無効にする**を設定します。保存します。
 
-This stops Shopify's built-in commenting from showing alongside FastComments.
+これにより、Shopifyの組み込みコメント機能がFastCommentsと一緒に表示されなくなります。
 
-### Step 2: Open the blog theme template
+### ステップ2: ブログテーマテンプレートを開く
 
-In your Shopify admin:
+Shopify管理画面で:
 
-1. Go to **Online Store > Themes**.
-2. Under your current theme, click **Actions > Edit code**.
-3. In the file browser on the left, open **Sections** and click `main-article.liquid`.
+1. **オンラインストア > テーマ**に移動します。
+2. 現在のテーマの下で、**アクション > コードを編集**をクリックします。
+3. 左側のファイルブラウザで**Sections**を開き、`main-article.liquid`をクリックします。
 
-This is the template Shopify renders for a single blog article.
+これは、Shopifyが単一のブログ記事をレンダリングするために使用するテンプレートです。
 
-### Step 3: Paste the FastComments snippet
+### ステップ3: FastCommentsスニペットを貼り付ける
 
-Scroll to roughly line 100 of `main-article.liquid`, just after the closing `</div>` of the article body. Paste the following snippet:
+`main-article.liquid`の約100行目までスクロールし、記事本文の閉じタグ`</div>`の直後に移動します。以下のスニペットを貼り付けてください:
 
-[inline-code-attrs-start title = 'Shopify FastComments スニペット'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Shopify FastCommentsスニペット'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget" class="page-width page-width--narrow"></div>
@@ -35,12 +35,12 @@ Scroll to roughly line 100 of `main-article.liquid`, just after the closing `</d
 </script>
 [inline-code-end]
 
-Replace `"demo"` with your own Tenant ID from [fastcomments.com/auth/my-account/api-secret](https://fastcomments.com/auth/my-account/api-secret). Click **Save**.
+`"demo"`を、[fastcomments.com/auth/my-account/api-secret](https://fastcomments.com/auth/my-account/api-secret)から取得した自分のテナントIDに置き換えてください。**保存**をクリックします。
 
-### Step 4: Authorize your shop domain
+### ステップ4: ショップドメインを承認する
 
-Open a blog post on your live store. If you see an authorization error instead of the comment widget, FastComments needs to know your store is allowed to use this tenant. See [ドメインエラー](/guide-installation-shopify.html#shopify-domain-errors).
+ライブストア上のブログ投稿を開きます。コメントウィジェットの代わりに認証エラーが表示される場合は、FastCommentsにそのストアがこのテナントの使用を許可されていることを伝える必要があります。[ドメインエラー](/guide-installation-shopify.html#shopify-domain-errors)を参照してください。
 
-### Adding FastComments to other pages
+### 他のページへのFastCommentsの追加
 
-The same snippet works on any Liquid template, including product pages, custom pages, and the home page. Paste it where you want comments to appear and adjust `urlId` if you want a stable identifier per page (for example, `urlId: "{{ product.id }}"` on a product template).
+同じスニペットは、商品ページ、カスタムページ、ホームページなど、任意のLiquidテンプレートで機能します。コメントを表示したい場所に貼り付け、ページごとに固定の識別子を使用したい場合は`urlId`を調整してください(例: 商品テンプレートでは`urlId: "{{ product.id }}"`)。

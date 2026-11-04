@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Ime | Tip | Obavezno | Opis |
@@ -24,5 +23,3 @@ async fn example() -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
-
----

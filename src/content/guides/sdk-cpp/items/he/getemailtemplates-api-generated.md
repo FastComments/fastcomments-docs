@@ -1,4 +1,3 @@
----
 ## פרמטרים
 
 | שם | סוג | נדרש | תיאור |
@@ -21,5 +20,3 @@ api->getEmailTemplates(tenantId, skip)
         (void)resp;
     });
 [inline-code-end]
-
----

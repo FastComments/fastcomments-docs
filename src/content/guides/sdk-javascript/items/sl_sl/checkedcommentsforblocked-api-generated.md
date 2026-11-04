@@ -23,5 +23,3 @@ Vrne: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fastcomme
     const responseWithoutSso: CheckBlockedCommentsResponse = await checkedCommentsForBlocked(tenantId, commentIds);
 })();
 [inline-code-end]
-
----

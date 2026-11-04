@@ -21,5 +21,3 @@ api->resetUserNotifications(tenantId, options)
         // Process response
     });
 [inline-code-end]
-
----

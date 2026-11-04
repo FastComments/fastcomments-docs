@@ -1,4 +1,3 @@
----
 Privzeto FastComments dovoljuje uporabnikom urejanje njihovih komentarjev.
 
 Vendar je to mogoče preprečiti.
@@ -9,5 +8,3 @@ Na strani za prilagajanje gradnika si oglejte možnost "Onemogoči urejanje".
 
 - To vpliva le na običajne komentatorje in ne na moderatorje ali skrbnike, ki bodo še vedno lahko urejali.
 - To bo vplivalo tudi na API integracije, ko je poslan `contextUserId`. 
-
----

@@ -82,5 +82,3 @@ Vous pouvez attribuer des badges aux utilisateurs SSO en utilisant la propriét�
 - `pageBadgeIds` - Un tableau optionnel d'IDs de badges limité à la page courante (`urlId`). Ces badges ne sont affichés que sur la page où ils ont été attribués. Différentes pages peuvent avoir des badges page-scopés différents pour le même utilisateur.
 - `override` - Si true, tous les badges affichés existants seront remplacés par ceux fournis. Les badges globaux et page-scopés sont écrasés indépendamment — écraser les badges globaux n'affecte pas les badges page-scopés, et vice versa. Si false ou omis, les badges fournis seront ajoutés aux badges existants.
 - `update` - Si true, les propriétés d'affichage des badges seront mises à jour depuis la configuration du tenant chaque fois que l'utilisateur se connecte.
-
----

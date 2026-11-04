@@ -5,5 +5,3 @@ Osadź widżety do komentowania na żywo, czatu i recenzji w swojej aplikacji iO
 ## Repozytorium
 
 [Zobacz na GitHub](https://github.com/FastComments/fastcomments-ios)
-
----

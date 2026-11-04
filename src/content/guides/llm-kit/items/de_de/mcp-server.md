@@ -86,5 +86,3 @@ Die Einrichtungsseite erzeugt diese URL für jeden Ihrer API‑Schlüssel.
 ### Sicherheit
 
 Eine Endpunkt‑URL, die einen API‑Schlüssel enthält, ist ein Geheimnis: Fügen Sie sie nicht in öffentlichen Chats, Screenshots oder Commits ein. Wenn ein Schlüssel offengelegt wird, rotieren Sie ihn auf der Seite API‑Keys in Ihrem Dashboard. OAuth‑Tokens bergen dieses Risiko nicht, da sie an eine Anwendung gebunden sind und über Connected Apps widerrufen werden können.
-
----

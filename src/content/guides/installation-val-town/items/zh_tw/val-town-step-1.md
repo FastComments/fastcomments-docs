@@ -1,6 +1,6 @@
-The widget is a script tag and a container element, so it drops into whatever your val already renders. This example uses Hono JSX, which is what Val Town's HTTP templates use.
+小工具是一個 script 標籤和一個容器元素，因此可以直接放入你的 val 已經渲染的內容中。此範例使用 Hono JSX，這正是 Val Town 的 HTTP 範本所使用的技術。
 
-[inline-code-attrs-start title = '在 HTTP val 中的評論小工具'; type='javascript' inline-code-attrs-end]
+[inline-code-attrs-start title = 'HTTP val 中的留言小工具'; type='javascript' inline-code-attrs-end]
 [inline-code-start]
 /** @jsxImportSource npm:hono@4/jsx */
 import { Hono } from "npm:hono@4";
@@ -37,17 +37,17 @@ app.get("/:slug", (c) => {
 export default app.fetch;
 [inline-code-end]
 
-## 在上線前選擇 urlId
+## 在上線前先決定 urlId
 
-`urlId` decides which thread a comment lands in. Leave it unset and it defaults to a cleaned version of the current page URL, which is exactly the thing that changes on Val Town: a val has a long `*.web.val.run` hostname until you claim a subdomain, branches get their own URLs, and renaming a page changes the path. Each variation silently becomes a separate, empty thread, and the symptom reads as "my comments disappeared".
+`urlId` 決定留言會落在哪個討論串中。若不設定，它會預設為目前頁面 URL 經過清理後的版本，而這正是 Val Town 上會變動的部分：在你認領子網域之前，val 會有一個很長的 `*.web.val.run` 主機名稱、分支會有各自的 URL，而重新命名頁面則會改變路徑。每一種變化都會默默變成一個獨立且空白的討論串，症狀看起來就像「我的留言消失了」。
 
-Set it to something stable that you control, like the post slug or a database id, as above. Pass `url` too, so notification emails and the moderation tools can link back to the real page.
+請將它設定為你可控的穩定值，例如文章的 slug 或資料庫 id，如上例所示。同時也傳入 `url`，這樣通知郵件與審核工具才能連回實際頁面。
 
-## 在沒有 JavaScript 時保留評論
+## 在沒有 JavaScript 的情況下保留留言
 
-FastComments renders a full thread server-side, which a val can drop into a `<noscript>` block:
+FastComments 會在伺服器端渲染完整的討論串，val 可以將其放入 `<noscript>` 區塊中：
 
-[inline-code-attrs-start title = '無 JavaScript 後備方案'; type='html' inline-code-attrs-end]
+[inline-code-attrs-start title = '無 JavaScript 的備援方案'; type='html' inline-code-attrs-end]
 [inline-code-start]
 <noscript>
   <iframe src="https://fastcomments.com/ssr/comments?tenantId=demo&urlId=POST_SLUG&url=PAGE_URL"
@@ -56,6 +56,4 @@ FastComments renders a full thread server-side, which a val can drop into a `<no
 </noscript>
 [inline-code-end]
 
-URL-encode the parameters. The server-side version supports anonymous and logged-in commenting, SSO, and nested replies.
-
----
+請對參數進行 URL 編碼。伺服器端版本支援匿名與登入留言、SSO 以及巢狀回覆。

@@ -39,5 +39,3 @@ PublicAPI.createCommentPublic(tenantId: tenantId, urlId: urlId, broadcastId: bro
     }
 }
 [inline-code-end]
-
----

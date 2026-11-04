@@ -1,7 +1,7 @@
-A runnable showcase lives in [`example/`](https://github.com/FastComments/fastcomments-django/tree/main/example): a left-rail + main-stage
-app with a page per widget and a **страница за пријаву која приказује унапред унете демо кориснике**.
-Sign in as any of them and the comment and live-chat widgets authenticate that
-identity via **Secure SSO**. From that directory:
+Покретљив приказ се налази у [`example/`](https://github.com/FastComments/fastcomments-django/tree/main/example): апликација са левом траком и главном позорницом
+са страницом за сваки виџет и **страном за пријаву која наводи унапред припремљене демо кориснике**.
+Пријавите се као било који од њих и виџети за коментаре и живи ћаскању аутентификују тај
+идентитет преко **Secure SSO**. Из тог директоријума:
 
 ```bash
 python manage.py migrate
@@ -9,7 +9,7 @@ python manage.py migrate
 FASTCOMMENTS_TENANT_ID=... FASTCOMMENTS_API_KEY=... python manage.py runserver
 ```
 
-Without an API secret it falls back to the public `demo` tenant (anonymous).
-[`example/browser_smoke.py`](https://github.com/FastComments/fastcomments-django/blob/main/example/browser_smoke.py) is a Playwright e2e
-that loads the page in a real browser and posts a comment as the Secure-SSO
-user.
+Без API секрета враћа се на јавни `demo` tenant (анонимно).
+[`example/browser_smoke.py`](https://github.com/FastComments/fastcomments-django/blob/main/example/browser_smoke.py) је Playwright e2e
+који учитава страницу у правом прегледачу и објављује коментар као Secure-SSO
+корисник.

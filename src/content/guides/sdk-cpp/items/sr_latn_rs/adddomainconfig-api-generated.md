@@ -25,5 +25,3 @@ api->addDomainConfig(tenantId, params).then([](pplx::task<std::shared_ptr<AddDom
     }
 });
 [inline-code-end]
-
----

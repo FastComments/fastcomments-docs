@@ -45,5 +45,3 @@ El campo está limitado a **4000 caracteres** (impuesto tanto por el formulario 
 ### Versionado
 
 No hay historial de versiones integrado para el documento de directrices: el último valor guardado es el que usa el agente. Si quieres historial, copia el documento en tu propio sistema de seguimiento antes de cada edición importante. El flujo [Refinar indicaciones](#refining-prompts) puede registrar cambios al *prompt inicial* pero no versiona el documento de directrices.
-
----

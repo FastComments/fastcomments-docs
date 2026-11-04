@@ -1,39 +1,30 @@
 [related-parameter-start name = 'urlId'; type = 'string'; related-parameter-end]
 
-When rendering a comment thread, or leaving a comment, FastComments needs to know what page, or article, or product
-those comments belong to.
+Bir yorum dizisini görüntülerken veya yorum bırakırken, FastComments'in bu yorumların hangi sayfaya, makaleye veya ürüne ait olduğunu bilmesi gerekir.
 
-To do this, we use something we call the "URL ID". It's either an identifier, like a string or a number, or a URL.
+Bunu yapmak için, "URL ID" adını verdiğimiz bir şey kullanırız. Bu, bir dize veya sayı gibi bir tanımlayıcı ya da bir URL olabilir.
 
-By default, if you do not specify the urlId, it will become the page URL. We will take the current page URL, and clean it to remove
-any common marketing parameters or tracking identifiers.
+Varsayılan olarak, urlId belirtmezseniz, sayfa URL'si haline gelir. Mevcut sayfa URL'sini alır ve yaygın pazarlama parametrelerini veya takip tanımlayıcılarını temizleriz.
 
-In the case of third party integrations, like WordPress, our plugin will usually use the identifier that represents the current information being viewed as
-the URL ID, for example the article/page id.
+WordPress gibi üçüncü taraf entegrasyonları söz konusu olduğunda, eklentimiz genellikle görüntülenmekte olan mevcut bilgiyi temsil eden tanımlayıcıyı URL ID olarak kullanır, örneğin makale/sayfa kimliği.
 
-[code-example-start config = {urlId: 'https://example.com/page'}; linesToHighlight = [6]; title = 'Defining a Custom URL ID'; code-example-end]
+[code-example-start config = {urlId: 'https://example.com/page'}; linesToHighlight = [6]; title = 'Özel Bir URL ID Tanımlama'; code-example-end]
 
-One thing that we'll often reference in this document is the <a href="https://fastcomments.com/auth/my-account/customize-widget/new">Widget Özelleştirme UI'si</a>.
+Bu dokümanda sıkça referans vereceğimiz şeylerden biri <a href="https://fastcomments.com/auth/my-account/customize-widget/new">Widget Özelleştirme Arayüzü</a>'dür.
 
-This UI can be used to make many changes to the comment widget without using code.
+Bu arayüz, kod kullanmadan yorum widget'ında birçok değişiklik yapmak için kullanılabilir.
 
-When creating a customization rule, we'll often want it to apply to all pages to our site. However, in some cases we want to customize the comment widget
-on a particular page, either to apply custom styling, or maybe make comments for that particular page anonymous. You could also, for example, have live comments
-appear right away on some pages, while hiding them under notification buttons on others.
+Bir özelleştirme kuralı oluştururken, genellikle bunun sitemizdeki tüm sayfalara uygulanmasını isteriz. Ancak bazı durumlarda, yorum widget'ını belirli bir sayfada özelleştirmek isteriz; ya özel stil uygulamak ya da belki o belirli sayfa için yorumları anonim yapmak için. Örneğin, bazı sayfalarda canlı yorumların hemen görünmesini, diğerlerinde ise bildirim düğmelerinin altında gizlenmesini de sağlayabilirsiniz.
 
-This is all possible via the URL ID input field on this page, which looks like as follows:
+Tüm bunlar, bu sayfadaki URL ID giriş alanı aracılığıyla mümkündür ve şu şekilde görünür:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.url-id'; alt='Bir özelleştirme kuralını tek bir sayfaya veya */blog/* gibi bir desene uygulamak için kullanılan URL ID alanı'; title='Widget Özelleştirme Sayfasındaki URL ID Girişi' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.url-id'; alt='Bir özelleştirme kuralını tek bir sayfaya veya */blog/* gibi bir desene kapsamak için kullanılan URL ID alanı'; title='Widget Özelleştirme Sayfasında URL ID Girişi' app-screenshot-end]
 
-The value in this field should match the *urlId* parameter passed into the comment widget. If you want your customization rule to be *urlId* agnostic, leave this field empty or enter *.
+Bu alandaki değer, yorum widget'ına geçirilen *urlId* parametresiyle eşleşmelidir. Özelleştirme kuralınızın *urlId*'den bağımsız olmasını istiyorsanız, bu alanı boş bırakın veya * girin.
 
-As of 2023 the `URL ID` field in widget customization now also takes patterns! For example you may
-have `*/blog/*` to add styling specific to your blog and `*/store/*` to have styling specific to your store,
-all while using the same domain.
+2023 itibarıyla, widget özelleştirmedeki `URL ID` alanı artık desenleri de kabul ediyor! Örneğin, blogunuza özgü stil eklemek için `*/blog/*` ve mağazanıza özgü stil için `*/store/*` kullanabilirsiniz, tüm bunları aynı alan adıyla yaparken.
 
 ### Dikkat Edilmesi Gerekenler
 
-1. If your page has hash parameters (like example.com#page-1) - this will become part of the URL ID, by default.
-2. During migrations, for example from WordPress to Gatsby, you may have to migrate the URL ID comment values after the initial migration. For that, reach out to us.
-
----
+1. Sayfanızda hash parametreleri varsa (örneğin example.com#page-1) - bu, varsayılan olarak URL ID'nin bir parçası haline gelir.
+2. Geçişler sırasında, örneğin WordPress'ten Gatsby'ye, ilk geçişten sonra URL ID yorum değerlerini taşımanız gerekebilir. Bunun için bize ulaşın.

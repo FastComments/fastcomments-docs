@@ -19,5 +19,3 @@ Torej, Odobreno pomeni, da si lahko komentar ogledajo drugi uporabniki na vaši 
 Pregledano je preprosto orodje za skrbnike in moderatorje ter nima vpliva na vidnost komentarja.
 
 Oznaka Pregledano olajša iskanje komentarjev, ki ste jih pregledali.
-
----

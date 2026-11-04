@@ -15,5 +15,3 @@ Agora vamos selecionar a aba `Body`. **Isto é importante!**. Instalar o snippet
 </div>
 
 Agora você está pronto para o passo 2.
-
----

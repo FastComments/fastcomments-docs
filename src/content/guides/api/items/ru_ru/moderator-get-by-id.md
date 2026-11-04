@@ -27,5 +27,3 @@ interface ModeratorByIdResponse {
     moderator?: Moderator
 }
 [inline-code-end]
-
----

@@ -36,5 +36,3 @@ try {
     print('Exception when calling DefaultApi->getTenantDailyUsages: $e\n');
 }
 [inline-code-end]
-
----

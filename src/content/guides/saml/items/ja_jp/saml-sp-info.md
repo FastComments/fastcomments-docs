@@ -1,111 +1,111 @@
-When SAML が FastComments で有効になっている場合、システムは ID プロバイダに設定するために必要な Service Provider (SP) 情報を自動的に生成します。
+FastCommentsでSAMLを有効にすると、アイデンティティプロバイダー(IdP)側で設定する必要があるサービスプロバイダー(SP)情報が自動的に生成されます。
 
-### Accessing Service Provider Information
+### サービスプロバイダー情報へのアクセス
 
-SP 情報は SAML 認証を有効にした後、SAML 設定ページに表示されます。この情報には、SAML トラスト関係を確立するために ID プロバイダが必要とするすべての詳細が含まれます。
+SP情報は、SAML認証を有効にした後、SAML設定ページに表示されます。この情報には、SAML信頼関係を確立するためにアイデンティティプロバイダーが必要とするすべての詳細が含まれています。
 
-### Service Provider Endpoints
+### サービスプロバイダーエンドポイント
 
 #### SP Entity ID / Audience
-**Purpose**: FastComments インスタンスをサービスプロバイダとして一意に識別します  
-**Format**: `https://fastcomments.com/saml/{your-tenant-id}`  
-**Usage**: これを IdP の Entity ID または Audience として設定してください
+**目的**: FastCommentsインスタンスをサービスプロバイダーとして一意に識別します
+**形式**: `https://fastcomments.com/saml/{your-tenant-id}`
+**使用方法**: IdPのEntity IDまたはAudienceとして設定します
 
-この識別子は、SAML レスポンスが特定の FastComments テナント宛てであることを保証し、他のインスタンスによる SAML レスポンスの受け入れを防ぎます。
+この識別子により、SAMLレスポンスがお客様の特定のFastCommentsテナント向けであることが保証され、他のインスタンスがSAMLレスポンスを受け入れることを防ぎます。
 
 #### Assertion Consumer Service (ACS) URL
-**Purpose**: ユーザ認証後に IdP が SAML レスポンスを送信するエンドポイント  
-**Format**: `https://fastcomments.com/saml/callback/{your-tenant-id}`  
-**Usage**: これを IdP の ACS URL または Reply URL として設定してください
+**目的**: ユーザー認証後にIdPがSAMLレスポンスを送信するエンドポイントです
+**形式**: `https://fastcomments.com/saml/callback/{your-tenant-id}`
+**使用方法**: IdPのACS URLまたはReply URLとして設定します
 
-これは、ユーザが ID プロバイダでの認証に成功した後にリダイレクトされる場所であり、ユーザ情報を含む SAML アサーションが送信されます。
+これは、アイデンティティプロバイダーでの認証が成功した後にユーザーがリダイレクトされる場所であり、ユーザー情報を含むSAMLアサーションとともに送られます。
 
 #### SP Metadata URL
-**Purpose**: 標準の XML 形式で完全な SAML 設定を提供します  
-**Format**: `https://fastcomments.com/saml/metadata/{your-tenant-id}`  
-**Usage**: 一部の IdP はこの URL を使って構成を自動インポートできます
+**目的**: 標準XML形式で完全なSAML設定を提供します
+**形式**: `https://fastcomments.com/saml/metadata/{your-tenant-id}`
+**使用方法**: 一部のIdPはこのURLを使用して設定を自動的にインポートできます
 
-メタデータ URL には XML 形式で必要な SP 情報がすべて含まれており、互換性のある ID プロバイダを自動的に設定するのが簡単になります。
+メタデータURLには、XML形式で必要なすべてのSP情報が含まれており、互換性のあるアイデンティティプロバイダーを簡単に自動設定できます。
 
-#### SAML Login URL
-**Purpose**: テナントの SAML 認証を開始するための直接リンク  
-**Format**: `https://fastcomments.com/saml/login/{your-tenant-id}`  
-**Usage**: ユーザを直接 SAML 認証に誘導するか、フローのテストに使用します
+#### SAMLログインURL
+**目的**: テナントのSAML認証を開始するための直接リンクです
+**形式**: `https://fastcomments.com/saml/login/{your-tenant-id}`
+**使用方法**: ユーザーをSAML認証に直接リンクしたり、フローをテストしたりするために使用します
 
-この URL は SAML 認証をテストするため、またはユーザに SAML 経由でサインインする直接リンクを提供するために使用できます。
+このURLを使用して、SAML認証をテストしたり、ユーザーにSAML経由でサインインするための直接リンクを提供したりできます。
 
-### SAML Binding Support
+### SAMLバインディングのサポート
 
-FastComments は次の SAML バインディングをサポートしています:
+FastCommentsは以下のSAMLバインディングをサポートしています:
 
-#### HTTP-POST Binding
-- **Primary Method**: SAML レスポンスで最も一般的なバインディングです  
-- **Security**: SAML レスポンスは HTTP POST を介して ACS URL に送信されます  
-- **Usage**: 本番環境での展開には推奨されます
+#### HTTP-POSTバインディング
+- **主要な方法**: SAMLレスポンスで最も一般的なバインディングです
+- **セキュリティ**: SAMLレスポンスはHTTP POST経由でACS URLに送信されます
+- **使用方法**: 本番環境でのデプロイに推奨されます
 
-#### HTTP-Redirect Binding
-- **Alternative Method**: SAML レスポンスが HTTP リダイレクトを介して送信されます  
-- **Limitations**: URL 長の制限によりペイロードサイズが制限されます  
-- **Usage**: サポートされていますが HTTP-POST が推奨されます
+#### HTTP-Redirectバインディング
+- **代替方法**: SAMLレスポンスがHTTPリダイレクト経由で送信されます
+- **制限事項**: URLの長さ制限によりペイロードサイズが制限されます
+- **使用方法**: サポートされていますが、HTTP-POSTが推奨されます
 
-### Name ID Policy
+### Name IDポリシー
 
-FastComments は SAML リクエストで次の Name ID ポリシーを設定します:
+FastCommentsは、SAMLリクエストで以下のName IDポリシーを設定します:
 
-- **Default Format**: `urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress`  
-- **Alternative Formats**: Persistent、Transient、Unspecified（設定可能）  
-- **Requirement**: メールアドレスが主要なユーザ識別子として使用されます
+- **デフォルト形式**: `urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress`
+- **代替形式**: Persistent、Transient、Unspecified(設定可能)
+- **要件**: メールアドレスが主要なユーザー識別子として使用されます
 
-### SAML Request Attributes
+### SAMLリクエスト属性
 
-SAML 認証を開始する際、FastComments は次の特徴をもつリクエストを送信します:
+SAML認証を開始する際、FastCommentsは以下の特性を持つリクエストを送信します:
 
-#### Request Signing
-- **Status**: 任意（設定可能）  
-- **Algorithm**: 設定された署名アルゴリズムに合わせます  
-- **Certificate**: リクエスト署名が有効な場合はテナント固有の証明書を使用します
+#### リクエスト署名
+- **ステータス**: オプション(設定可能)
+- **アルゴリズム**: 設定された署名アルゴリズムと一致します
+- **証明書**: リクエスト署名が有効な場合、テナント固有の証明書を使用します
 
-#### Requested Attributes
-FastComments は SAML AuthnRequests で次の属性を要求します:
+#### 要求される属性
+FastCommentsは、SAML AuthnRequestsで以下の属性を要求します:
 
-- **Email**: ユーザ識別のために必須  
-- **First Name**: 表示目的で任意  
-- **Last Name**: 表示目的で任意  
-- **Roles/Groups**: アクセス制御や権限のために任意
+- **Email**: ユーザー識別に必要です
+- **First Name**: 表示目的で任意です
+- **Last Name**: 表示目的で任意です
+- **Roles/Groups**: アクセス制御と権限のために任意です
 
-### Copying SP Information
+### SP情報のコピー
 
-SAML 設定ページには、SP 情報をクリップボードに自動コピーするクリック可能なフィールドが用意されています:
+SAML設定ページには、SP情報を自動的にクリップボードにコピーできるクリック可能なフィールドがあります:
 
-1. 任意の SP 情報フィールド（Entity ID、ACS URL など）をクリックします  
-2. 値が自動的にクリップボードにコピーされます  
-3. 値を ID プロバイダの設定に貼り付けます  
-4. コピーが成功すると短時間ハイライト表示されます
+1. 任意のSP情報フィールド(Entity ID、ACS URLなど)をクリックします
+2. 値が自動的にクリップボードにコピーされます
+3. その値をアイデンティティプロバイダーの設定に貼り付けます
+4. コピーが成功すると短いハイライトが表示されます
 
-これにより、SP 情報を手入力によるミスなしに正確に IdP に転送できます。
+これにより、入力ミスなくSP情報をIdPに正確に転送できます。
 
-### SP Certificate Information
+### SP証明書情報
 
-#### Certificate Usage
-- **Purpose**: 通信を暗号化し、SP の身元を検証するため  
-- **Rotation**: 証明書は FastComments によって自動的に管理されます  
-- **Access**: 公開証明書はメタデータ URL から入手できます
+#### 証明書の使用目的
+- **目的**: 通信を暗号化し、SPの識別情報を検証します
+- **ローテーション**: 証明書はFastCommentsによって自動的に管理されます
+- **アクセス**: 公開証明書はメタデータURLから入手できます
 
-#### Certificate Details
-- **Algorithm**: RSA-2048 またはそれ以上  
-- **Validity**: 証明書は期限切れ前に自動的に更新されます  
-- **Distribution**: 標準の SAML メタデータを通じて入手可能です
+#### 証明書の詳細
+- **アルゴリズム**: RSA-2048以上
+- **有効性**: 証明書は有効期限が切れる前に自動的に更新されます
+- **配布**: 標準のSAMLメタデータを通じて入手可能です
 
-### Troubleshooting SP Configuration
+### SP設定のトラブルシューティング
 
-ID プロバイダが SP 情報に関して問題を報告する場合:
+アイデンティティプロバイダーがSP情報に関する問題を報告した場合:
 
-1. **Verify URLs**: すべての URL が HTTPS を使用し、正しいテナント ID を含んでいることを確認してください  
-2. **Check Metadata**: メタデータ URL を使用して構成を検証してください  
-3. **Test Connectivity**: IdP が FastComments のエンドポイントに到達できることを確認してください  
-4. **Validate Format**: IdP が SP 情報の形式をサポートしていることを確認してください
+1. **URLの確認**: すべてのURLがHTTPSを使用し、正しいテナントIDが含まれていることを確認します
+2. **メタデータの確認**: メタデータURLを使用して設定を検証します
+3. **接続性のテスト**: IdPがFastCommentsのエンドポイントに到達できることを確認します
+4. **形式の検証**: IdPがSP情報の形式をサポートしていることを確認します
 
-一般的な問題には次のようなものがあります:
-- URL に誤ったテナント ID が含まれている  
-- IdP と FastComments 間のネットワーク接続の問題  
-- IdP が異なる URL 形式や追加の構成オプションを期待している
+一般的な問題には以下が含まれます:
+- URL内の誤ったテナントID
+- IdPとFastComments間のネットワーク接続の問題
+- IdPが異なるURL形式や追加の設定オプションを期待している場合

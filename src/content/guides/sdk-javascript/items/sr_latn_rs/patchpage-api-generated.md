@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
@@ -27,5 +26,3 @@ Vraća: [`PatchPageAPIResponse`](https://github.com/FastComments/fastcomments-sd
   const response: PatchPageAPIResponse = await patchPage(tenantId, pageId, updateData);
 })();
 [inline-code-end]
-
----

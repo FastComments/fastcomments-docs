@@ -36,5 +36,3 @@ interface HashTagBulkPostResponse {
     results?: HashTagPostResponse[]; // Vraćamo listu objekata HashTagPostResponse za svaki prosleđeni tag.
 }
 [inline-code-end]
-
----

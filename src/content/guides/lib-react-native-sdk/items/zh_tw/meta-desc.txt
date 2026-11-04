@@ -1,4 +1,1 @@
----
 直接從 React Native 應用程式呼叫 FastComments API，以建立、取得和審核評論，而無需使用小工具。
-
----

@@ -34,5 +34,3 @@ DefaultAPI.patchPoll(tenantId: tenantId, commentId: commentId, commentPollPatch:
     }
 }
 [inline-code-end]
-
----

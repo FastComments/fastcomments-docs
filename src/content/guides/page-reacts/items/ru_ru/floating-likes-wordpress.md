@@ -1,4 +1,3 @@
----
 Для WordPress эту функцию можно включить, установив плагин, например WPCode, и добавив следующий HTML-фрагмент в нижний колонтитул блога:
 
 [inline-code-attrs-start title = 'Код плавающих лайков для WordPress'; type = 'bash'; useDemoTenant = true; isFunctional = false; type = 'html';  inline-code-attrs-end]
@@ -26,5 +25,3 @@
     })();
 </script>
 [inline-code-end]
-
----

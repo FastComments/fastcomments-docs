@@ -1,10 +1,10 @@
-If your val already knows who the visitor is, Secure SSO hands that identity to the widget so they never see a second login. There are no endpoints to build and nothing to call at runtime: you compute three values server-side and pass them in the widget config.
+Ako vaš val već zna ko je posetilac, Secure SSO tu identitetu predaje vidžetu tako da nikad ne vidi drugi login. Nema endpointa koje treba napraviti ni čega što se poziva u runtime-u: tri vrednosti izračunate na serverskoj strani i prosleđujete ih u konfiguraciji vidžeta.
 
-Val Town ships zero-config login with `std/oauth`, so the visitor can sign in with the Val Town account they already have. Swap that for whatever your app uses; the FastComments half does not change.
+Val Town nudi login bez konfiguracije putem `std/oauth`, tako da se posetilac može prijaviti Val Town nalogom koji već ima. Zamenite to bilo čime što vaša aplikacija koristi; FastComments deo se ne menja.
 
-## Build the payload on the server
+## Izgradite payload na serveru
 
-The API secret signs the payload and must never reach browser code. Install the SDK from npm, which works on Val Town's Deno runtime as-is:
+API tajna potpisuje payload i nikada ne sme dospeti do koda u pregledaču. Instalirajte SDK sa npm-a, koji radi na Val Town Deno runtime-u bez izmena:
 
 [inline-code-attrs-start title = 'sso.ts'; type='javascript' inline-code-attrs-end]
 [inline-code-start]
@@ -26,11 +26,11 @@ export function buildSSOPayload(user) {
 }
 [inline-code-end]
 
-`getPayload()` returns `{ userDataJSONBase64, verificationHash, timestamp }`. Those three values are all that reach the browser. The secret signs them and is then dropped, so nothing in the page lets a reader forge a different user.
+`getPayload()` vraća `{ userDataJSONBase64, verificationHash, timestamp }`. Te tri vrednosti su sve što dospeva do pregledača. Tajna ih potpisuje i zatim se odbacuje, tako da ništa na stranici ne omogućava čitaocu da lažno predstavi drugog korisnika.
 
-## Pass it to the widget
+## Prosledite ga vidžetu
 
-[inline-code-attrs-start title = 'Konfiguracija widgeta sa SSO'; type='javascript' inline-code-attrs-end]
+[inline-code-attrs-start title = 'Widget config with SSO'; type='javascript' inline-code-attrs-end]
 [inline-code-start]
 import { getOAuthUserData, oauthMiddleware } from "https://esm.town/v/std/oauth/middleware.ts";
 
@@ -52,14 +52,14 @@ app.get("/", async (c) => {
 export default oauthMiddleware(app.fetch);
 [inline-code-end]
 
-`oauthMiddleware` adds `GET /auth/login`, `GET /auth/callback` and `POST /auth/logout` for you. Note that logout is a **POST**, while the widget navigates to `logoutURL` with a GET, so point `logoutURL` at a small route of your own that submits the POST.
+`oauthMiddleware` dodaje `GET /auth/login`, `GET /auth/callback` i `POST /auth/logout` umesto vas. Imajte na umu da je logout **POST**, dok vidžet navigira na `logoutURL` GET zahtevom, pa usmerite `logoutURL` na malu sopstvenu rutu koja šalje POST.
 
-When the visitor is logged out, pass `sso` with only a `loginURL`. The widget then shows a login prompt instead of an anonymous comment box.
+Kada je posetilac odjavljen, prosledite `sso` samo sa `loginURL`. Vidžet tada prikazuje upit za prijavu umesto anonimnog polja za komentare.
 
-## Things that go wrong
+## Stvari koje mogu poći naopako
 
-`timestamp` is epoch **milliseconds**, must not be in the future, and must not be more than two days old. Generate it on the server in the same request that computes the hash. Generating it in the browser is the classic failure: the value differs from the one that was hashed and every comment is rejected.
+`timestamp` je epoch **milisekunde**, ne sme biti u budućnosti i ne sme biti stariji od dva dana. Generišite ga na serveru u istom zahtevu u kojem se računa hash. Generisanje u pregledaču je klasična greška: vrednost se razlikuje od one koja je heširana i svaki komentar se odbija.
 
-Never set `isAdmin` or `isModerator` from the identity provider. Signing in with a Val Town account says nothing about who should moderate your site.
+Nikada ne postavljajte `isAdmin` ili `isModerator` na osnovu identity provajdera. Prijava Val Town nalogom ne govori ništa o tome ko treba da moderira vaš sajt.
 
-See the [SSO guide](/guide-customizations-and-configuration.html#sso-secure) for the full field list, group-gated threads, and badges.
+Pogledajte [SSO vodič](/guide-customizations-and-configuration.html#sso-secure) za kompletnu listu polja, teme ograničene grupama i bedževe.

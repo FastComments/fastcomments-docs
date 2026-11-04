@@ -1,4 +1,3 @@
----
 Ако търсите фрагмент от код за живо коментиране на ClickFunnels, опитайте това:
 
 [inline-code-attrs-start title = 'Фрагмент за живо коментиране на ClickFunnels'; type = 'html'; isFunctional = false; inline-code-attrs-end]
@@ -32,5 +31,3 @@
     })();
 </script>
 [inline-code-end]
-
----

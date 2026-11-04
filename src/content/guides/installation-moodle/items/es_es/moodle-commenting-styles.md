@@ -1,4 +1,3 @@
----
 El plugin admite tres estilos de comentarios. Puedes configurar esto en los ajustes del plugin.
 
 #### Comentarios
@@ -6,8 +5,8 @@ El plugin admite tres estilos de comentarios. Puedes configurar esto en los ajus
 El widget estándar de FastComments aparece debajo del contenido de la página. Los usuarios pueden publicar comentarios en hilo, responder, votar y usar todas las funciones estándar.
 
 <div class="screenshot white-bg">
-    <div class="title">Widget de comentarios en una página del curso</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-course-comments.png" alt="FastComments Comentarios en un curso de Moodle" />
+    <div class="title">Widget de comentarios en una página de curso</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-course-comments.png" alt="Comentarios de FastComments en un curso de Moodle" />
 </div>
 
 #### Collab Chat
@@ -16,16 +15,14 @@ Con Collab Chat, los usuarios seleccionan texto en la página para iniciar discu
 
 <div class="screenshot white-bg">
     <div class="title">Collab Chat</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-collab-chat.png" alt="FastComments Collab Chat en Moodle" />
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-collab-chat.png" alt="Collab Chat de FastComments en Moodle" />
 </div>
 
-#### Collab Chat + Comments
+#### Collab Chat + Comentarios
 
-Ambos modos activos simultáneamente. El widget de comentarios aparece debajo del contenido de la página y los usuarios también pueden seleccionar texto para iniciar discusiones en línea.
+Ambos modos activos juntos. El widget de comentarios aparece debajo del contenido de la página, y los usuarios también pueden seleccionar texto para iniciar discusiones en línea.
 
 <div class="screenshot white-bg">
     <div class="title">Collab Chat + Comentarios juntos</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-page-comments.png" alt="FastComments Collab Chat y Comentarios en Moodle" />
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-page-comments.png" alt="Collab Chat y comentarios de FastComments en Moodle" />
 </div>
-
----

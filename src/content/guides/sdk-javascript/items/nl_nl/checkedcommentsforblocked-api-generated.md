@@ -1,4 +1,3 @@
----
 ## Parameters
 
 | Naam | Type | Verplicht | Beschrijving |
@@ -24,5 +23,3 @@ Retourneert: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fa
     const responseWithoutSso: CheckBlockedCommentsResponse = await checkedCommentsForBlocked(tenantId, commentIds);
 })();
 [inline-code-end]
-
----

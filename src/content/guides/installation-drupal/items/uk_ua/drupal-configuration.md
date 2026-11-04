@@ -39,5 +39,3 @@ All settings live under `Administration > Configuration > Content > FastComments
 - **Email notifications** – Надіслати електронний лист автору контенту, коли новий коментар розміщено під його матеріалом.
 
 Для резидентності даних в ЄС дивіться розділ `EU Data Residency` section.
-
----

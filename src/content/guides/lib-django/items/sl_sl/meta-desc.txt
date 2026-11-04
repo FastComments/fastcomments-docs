@@ -1,3 +1,1 @@
----
 Dodajte komentarje v Django aplikacijo z oznakami predlog, vključno z avtomatskim varnim SSO iz prijavljenega uporabnika, strežniškim dostopom do API‑ja in podporo za EU regijo.
----

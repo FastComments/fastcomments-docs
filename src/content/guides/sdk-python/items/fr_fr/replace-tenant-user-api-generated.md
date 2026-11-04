@@ -1,4 +1,3 @@
----
 ## Paramètres
 
 | Name | Type | Location | Required | Description |
@@ -45,5 +44,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->replace_tenant_user: %s\n" % e)
 [inline-code-end]
-
----

@@ -31,5 +31,3 @@ interface PollGetResponse {
 [inline-code-end]
 
 Un comentario que no tiene encuesta, un comentario que ha sido eliminado y un ID de comentario que no existe responden de la misma manera, con `poll-not-found`.
-
----

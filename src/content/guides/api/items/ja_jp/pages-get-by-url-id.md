@@ -32,5 +32,3 @@ interface PagesResponse {
 #### 役立つヒント
 
 `urlId` のような値はURIエンコードすることを忘れないでください。
-
----

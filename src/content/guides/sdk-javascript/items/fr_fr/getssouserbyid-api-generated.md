@@ -20,5 +20,3 @@ async function fetchUser() {
   const ssoUser: APISSOUser = result.user;
 }
 [inline-code-end]
-
----

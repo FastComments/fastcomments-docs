@@ -1,32 +1,32 @@
 #### Kako se komentari pojavljuju u vašim kursevima
 
-Kada je LTI integracija omogućena i External App instalirana, FastComments radi automatski na osnovu postavki za prikaz (placements) koje ste konfigurisali:
+Kada se LTI integracija omogući i eksterna aplikacija instalira, FastComments radi automatski na osnovu plasmana koje ste konfigurisali:
 
-#### Assignment View
+#### Pregled zadatka
 
-Ako je postavka **Assignment View** omogućena, komentari se automatski pojavljuju ispod svakog zadatka u kursu. Studenti i instruktori vide ugnježdeni odeljak za komentare kada pregledaju zadatak — nije potrebna dodatna konfiguracija po zadatku.
+Ako je omogućen plasman **Assignment View**, komentari se automatski pojavljuju ispod svakog zadatka u kursu. Studenti i instruktori vide sekciju sa nitima komentara kada pregledaju zadatak — nije potrebna dodatna podešavanja za svaki zadatak.
 
-Svaki zadatak ima svoju posebnu nit komentara.
+Svaki zadatak dobija svoju odvojenu nit komentara.
 
-#### Rich Content Editor Button
+#### Dugme u Rich Content Editor
 
-Ako je postavka **Editor Button** omogućena, instruktori mogu da ugrađuju FastComments u bilo koji sadržaj koji koristi Rich Content Editor:
+Ako je omogućen plasman **Editor Button**, instruktori mogu da ugrade FastComments u bilo koji sadržaj koji koristi Rich Content Editor:
 
-1. Izmenite **Page**, **Quiz**, ili **Announcement**.
-2. U traci sa alatkama Rich Content Editora kliknite na dugme **FastComments**.
+1. Izmenite **Stranicu**, **Kviz** ili **Objavu**.
+2. U traci alata Rich Content Editor kliknite na dugme **FastComments**.
 3. FastComments se automatski ugrađuje u sadržaj.
 4. Sačuvajte stranicu.
 
-Kada studenti pregledaju stranicu, ugrađeni FastComments vidžet se učitava sa nitom komentara koja je jedinstvena za tu stranicu.
+Kada studenti pregledaju stranicu, ugrađeni FastComments vidžet se učitava sa niti komentara jedinstvenom za tu stranicu.
 
-#### Automatic SSO
+#### Automatski SSO
 
-U obe lokacije za prikaz, studenti se automatski prijavljuju putem svog Canvas naloga. Imena, adrese e-pošte i avatari se sinhronizuju preko LTI launch, nije potrebna zasebna prijava.
+U oba plasmana, studenti se automatski prijavljuju preko svog Canvas naloga. Imena, imejlovi i avatari se sinhronizuju kroz LTI pokretanje, nije potreban odvojeni login.
 
-#### Lock Down Public Access (Recommended)
+#### Ograničite javni pristup (preporučeno)
 
-Po defaultu, podaci komentara FastComments-a su javno čitljivi. Bilo ko ko može pogoditi URL niti ili API endpoint može videti njene komentare, čak i van Canvas-a. Za diskusije u okviru kursa gotovo sigurno želite ograničiti pregled samo na upisane studente.
+Podrazumevano, podaci o komentarima u FastComments su javno čitljivi. Svako ko pogodi URL niti ili API endpoint može da vidi komentare, čak i van Canvas-a. Za diskusije u kursu gotovo sigurno želite da ograničite pregledanje samo na upisane studente.
 
-Otvorite svoju <a href="https://fastcomments.com/auth/my-account/customize-widget" target="_blank">stranicu za prilagođavanje vidžeta</a> i kreirajte pravilo sa omogućenim **Require SSO To View Comments**, zatim postavite nivo bezbednosti na **Secure SSO** tako da se niti mogu učitati samo kroz potpisano LTI pokretanje.
+Otvorite svoju <a href="https://fastcomments.com/auth/my-account/customize-widget" target="_blank">stranicu za prilagođavanje vidžeta</a> i kreirajte pravilo sa omogućenom opcijom **Require SSO To View Comments**, a zatim postavite bezbednosni nivo na **Secure SSO** tako da niti mogu da se učitaju samo kroz potpisano LTI pokretanje.
 
-Pogledajte [Protecting Comment Threads With Single-Sign-On](/guide-customizations-and-configuration.html#sso-require-to-view-comments) za kompletan vodič, uključujući kako da ograničite pravilo na jedinstveni domen ili stranicu.
+Pogledajte [Zaštita niti komentara pomoću Single-Sign-On](/guide-customizations-and-configuration.html#sso-require-to-view-comments) za kompletan vodič, uključujući kako da ograničite pravilo na jedan domen ili stranicu.

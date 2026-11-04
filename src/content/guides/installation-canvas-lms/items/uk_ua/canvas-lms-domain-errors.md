@@ -1,4 +1,3 @@
----
 Ви можете отримати помилку авторизації, схожу на наведену нижче:
 
 <div class="screenshot white-bg">
@@ -13,5 +12,3 @@
 <a href="https://fastcomments.com/auth/my-account/configure-domains" target="_blank">Перейдіть сюди, щоб додати сайт до свого облікового запису.</a>
 
 Додайте домен вашого Canvas (наприклад, `yourschool.instructure.com`) і коментарі повинні завантажуватися правильно.
-
----

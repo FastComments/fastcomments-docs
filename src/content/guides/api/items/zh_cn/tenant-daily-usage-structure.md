@@ -1,9 +1,8 @@
-一个 `TenantDailyUsage` 对象表示租户在某一天的使用情况。如果在某租户的某个给定
-天没有活动，则该天将不会有 `TenantDailyUsage` 对象。
+`TenantDailyUsage` 对象表示某个租户在特定日期的使用情况。如果某个租户在某一天没有任何活动，则该天将不会有 `TenantDailyUsage` 对象。
 
-The `TenantDailyUsage` object is **不是** real time and may be minutes behind actual usage.
+`TenantDailyUsage` 对象**不是**实时的，可能比实际使用情况滞后几分钟。
 
-The structure for the `TenantDailyUsage` object is as follows:
+`TenantDailyUsage` 对象的结构如下：
 
 [inline-code-attrs-start title = 'TenantDailyUsage 结构'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -23,9 +22,7 @@ export interface TenantDailyUsage {
     apiCreditsUsed?: number
     createdAt: string
     billed: boolean
-    /** 忽略计费。 **/
+    /** 计费时忽略。 **/
     ignored: boolean
 }
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 Quando i Profili utente vengono aperti nel contesto del tuo sito (tramite il widget dei commenti), eventuali stili CSS personalizzati che hai applicato al tuo widget FastComments vengono iniettati automaticamente nella finestra modale del profilo.
 
 ### Come Funziona
@@ -64,5 +63,3 @@ La modalità scura utilizza il modificatore di classe `.dark` su `.user-profile`
     border-radius: 12px 0 0 12px;
 }
 ```
-
----

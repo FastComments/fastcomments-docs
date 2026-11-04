@@ -1,4 +1,3 @@
----
 Статус, прогресс и, после завершения, результат одной пакетной задачи.
 
 ## Параметры
@@ -33,5 +32,3 @@ DefaultAPI.getBatchJob(tenantId: tenantId, id: id) { (response, error) in
     }
 }
 [inline-code-end]
-
----

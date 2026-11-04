@@ -22,5 +22,3 @@ async fn fetch_subscriptions(config: &configuration::Configuration) -> Result<()
     Ok(())
 }
 [inline-code-end]
-
----

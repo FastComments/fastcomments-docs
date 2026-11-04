@@ -20,5 +20,3 @@ Restituisce: [`GetHashTagsResponse`](https://github.com/FastComments/fastcomment
     console.log(result);
 })();
 [inline-code-end]
-
----

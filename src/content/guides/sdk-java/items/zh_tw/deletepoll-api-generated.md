@@ -1,4 +1,4 @@
-Remove a poll from its comment, along with every vote cast on it. The comment itself is left alone.
+從留言中移除投票，並刪除其上所有投下的票。留言本身則保持不變。
 
 ## 參數
 
@@ -9,7 +9,7 @@ Remove a poll from its comment, along with every vote cast on it. The comment it
 
 ## 回應
 
-返回：[`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
+回傳：[`APIEmptyResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/APIEmptyResponse.java)
 
 ## 範例
 
@@ -42,13 +42,9 @@ public class Example {
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      // Exception when calling DefaultApi#deletePoll
       System.err.println("Exception when calling DefaultApi#deletePoll");
-      // Status code: 
       System.err.println("Status code: " + e.getCode());
-      // Reason: 
       System.err.println("Reason: " + e.getResponseBody());
-      // Response headers: 
       System.err.println("Response headers: " + e.getResponseHeaders());
       e.printStackTrace();
     }

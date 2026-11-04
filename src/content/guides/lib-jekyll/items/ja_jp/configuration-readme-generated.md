@@ -1,4 +1,3 @@
----
 設定は3か所から来ます。後に指定されたソースが優先されます:
 
 1. **グローバルのデフォルト** は `_config.yml` の `fastcomments:` キーの下にあります。
@@ -42,4 +41,3 @@ fastcomments:
 ```
 
 またはタグごとに: `{% raw %}{% fastcomments region="eu" %}{% endraw %}`。ウィジェットはその場合 EU の CDN から読み込まれます。
----

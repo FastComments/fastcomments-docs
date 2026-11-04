@@ -18,5 +18,3 @@ if searchRes.isSome:
   let data = searchRes.get()
   echo data
 [inline-code-end]
-
----

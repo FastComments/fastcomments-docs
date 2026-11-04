@@ -27,5 +27,3 @@ async function demoLockComment() {
 
 demoLockComment();
 [inline-code-end]
-
----

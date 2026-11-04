@@ -1,4 +1,3 @@
----
 管理员可以被放入组中，以对不同页面或内容类别进行审核。
 
 当管理员属于一个或多个组时，他们在“审核评论”页面只会看到这些组的评论。
@@ -15,5 +14,3 @@
 
 这可以通过[添加一些组](https://fastcomments.com/auth/my-account/moderate-comments/moderation-groups)并在评论小部件中指定相应的 `Moderation Group` ID 来设置，
 [如此处所述](/guide-customizations-and-configuration.html#moderation-group-ids)。
-
----

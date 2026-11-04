@@ -1,4 +1,3 @@
----
 ## Parametreler
 
 | Ad | Tür | Gerekli | Açıklama |
@@ -25,5 +24,3 @@ if maybeResp.isSome:
   let apiResult = maybeResp.get()
   # apiResult'ı gerektiği gibi kullan
 [inline-code-end]
-
----

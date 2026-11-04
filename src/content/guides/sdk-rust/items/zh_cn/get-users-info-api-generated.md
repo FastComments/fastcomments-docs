@@ -1,4 +1,3 @@
----
 租户的批量用户信息。根据 userIds，返回 User / SSOUser 的显示信息。评论部件使用此接口为通过存在事件刚出现的用户提供丰富信息。没有页面上下文：隐私统一强制执行（私人资料会被遮蔽）。
 
 ## 参数
@@ -22,5 +21,3 @@ let params = GetUsersInfoParams {
 };
 let page: PageUsersInfoResponse = get_users_info(&configuration, params).await?;
 [inline-code-end]
-
----

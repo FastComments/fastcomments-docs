@@ -1,4 +1,3 @@
----
 Agregira dokumente grupiranjem (ako je groupBy naveden) i primjenom više operacija. Podržane su različite operacije (npr. sum, countDistinct, avg itd.).
 
 ## Parametri
@@ -43,5 +42,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.Aggregate`: %v\n", resp)
 }
 [inline-code-end]
-
----

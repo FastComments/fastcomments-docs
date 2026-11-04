@@ -1,4 +1,3 @@
----
 ## 參數
 
 | Name | Type | Location | Required | Description |
@@ -29,5 +28,3 @@ DefaultAPI.getDomainConfigs(tenantId: tenantId) { (response, error) in
     }
 }
 [inline-code-end]
-
----

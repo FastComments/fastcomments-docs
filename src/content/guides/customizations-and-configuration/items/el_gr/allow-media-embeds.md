@@ -1,13 +1,13 @@
-By default FastComments does not allow iframes in comments. When you enable media embeds, commenters can paste the embed code (the `<iframe>` snippet) from trusted providers like YouTube, Vimeo, SoundCloud, and Spotify, and it will render inline in the comment.
+Από προεπιλογή, το FastComments δεν επιτρέπει iframes στα σχόλια. Όταν ενεργοποιείτε την ενσωμάτωση πολυμέσων, όσοι σχολιάζουν μπορούν να επικολλήσουν τον κώδικα ενσωμάτωσης (το απόσπασμα `<iframe>`) από αξιόπιστους παρόχους όπως YouTube, Vimeo, SoundCloud και Spotify, και θα εμφανιστεί ενσωματωμένος στο σχόλιο.
 
-For security, this is not a client-side widget config flag. It is a server-side setting, validated when each comment is saved, so it cannot be turned on from the page. Only iframes pointing at a built-in list of trusted providers are allowed. Any other iframe is removed.
+Για λόγους ασφαλείας, αυτή δεν είναι μια ρύθμιση παραμέτρων widget στο client-side. Είναι μια ρύθμιση στο server-side, η οποία επικυρώνεται κατά την αποθήκευση κάθε σχολίου, ώστε να μην μπορεί να ενεργοποιηθεί από τη σελίδα. Επιτρέπονται μόνο iframes που δείχνουν σε μια ενσωματωμένη λίστα αξιόπιστων παρόχων. Κάθε άλλο iframe αφαιρείται.
 
-This is done without code, on the widget customization page:
+Αυτό γίνεται χωρίς κώδικα, στη σελίδα προσαρμογής του widget:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.allow-embeds'; selector = '.allow-embeds'; alt='Ρύθμιση ενσωμάτωσης μέσων ενεργοποιημένη στη σελίδα προσαρμογής widget, επιτρέποντας στους σχολιαστές να επικολλούν έμπιστες ενσωματώσεις iframe'; title='Επιτρέψτε τα ενσωματωμένα μέσα' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.allow-embeds'; selector = '.allow-embeds'; alt='Η ρύθμιση ενσωμάτωσης πολυμέσων ενεργοποιημένη στη σελίδα προσαρμογής του widget, επιτρέποντας στους σχολιαστές να επικολλήσουν αξιόπιστες ενσωματώσεις iframe'; title='Να επιτρέπονται ενσωματώσεις πολυμέσων' app-screenshot-end]
 
-### Adding Your Own Providers
+### Προσθήκη Δικών σας Παρόχων
 
-If you want to allow embeds from a provider that is not on the built-in trusted list, add its hostname in the "Πρόσθετοι Τομείς Ενσωμάτωσης" field on the same page. These hostnames are allowed in addition to the built-in providers. Matching is exact, so include the full hostname (for example, player.example.com). Anything you do not list stays blocked.
+Αν θέλετε να επιτρέψετε ενσωματώσεις από έναν πάροχο που δεν βρίσκεται στην ενσωματωμένη λίστα αξιόπιστων, προσθέστε το hostname του στο πεδίο "Additional Embed Domains" στην ίδια σελίδα. Αυτά τα hostnames επιτρέπονται επιπλέον των ενσωματωμένων παρόχων. Η αντιστοίχιση είναι ακριβής, οπότε συμπεριλάβετε το πλήρες hostname (για παράδειγμα, player.example.com). Ό,τι δεν αναφέρετε παραμένει αποκλεισμένο.
 
-Both the plain comment box and the WYSIWYG editor support pasting an embed. In the WYSIWYG editor the embed is inserted as a removable block.
+Τόσο το απλό πλαίσιο σχολίων όσο και ο επεξεργαστής WYSIWYG υποστηρίζουν την επικόλληση ενσωμάτωσης. Στον επεξεργαστή WYSIWYG η ενσωμάτωση εισάγεται ως ένα αφαιρέσιμο μπλοκ.

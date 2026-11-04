@@ -1,4 +1,3 @@
----
 Configure su inquilino en `settings.py`:
 
 ```python
@@ -16,4 +15,3 @@ Coloque el widget en cualquier plantilla:
 
 {% fastcomments url_id="my-page" %}
 ```
----

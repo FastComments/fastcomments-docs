@@ -34,5 +34,3 @@ ModerationAPI.postRemoveComment(tenantId: tenantId, commentId: commentId, option
     }
 }
 [inline-code-end]
-
----

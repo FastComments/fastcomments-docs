@@ -1,4 +1,3 @@
----
 ## 매개변수
 
 | 이름 | 타입 | 위치 | 필수 | 설명 |
@@ -36,5 +35,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetPages`: %v\n", resp)
 }
 [inline-code-end]
-
----

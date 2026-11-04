@@ -1,4 +1,3 @@
----
 ### Hoe tekstselectie werkt
 
 Wanneer gebruikers tekst selecteren binnen de Collab Chat-container, legt de widget die selectie vast en stelt hen in staat een discussie te starten. De selectie kan zo klein zijn als één woord of zo groot als meerdere alinea's die verschillende elementen overspannen.
@@ -42,5 +41,3 @@ Het tekstselectiesysteem gebruikt de standaard `window.getSelection()` API die w
 Zodra er een conversatie is aangemaakt voor een tekstselectie, blijft die annotatie bestaan zelfs als de pagina wordt vernieuwd. Het geserialiseerde range en het DOM-pad stellen de widget in staat markeringen op precies dezelfde plaats te herstellen wanneer gebruikers terugkeren naar de pagina.
 
 Dit werkt betrouwbaar zolang uw paginacontent stabiel blijft. Als u de tekstinhoud wijzigt of uw HTML herstructureert, kunnen bestaande annotaties mogelijk niet meer correct uitlijnen met de tekst. Om deze reden is het het beste om grote inhoudswijzigingen op pagina's met actieve annotaties te vermijden, of te overwegen annotaties te migreren wanneer inhoudswijzigingen noodzakelijk zijn.
-
----

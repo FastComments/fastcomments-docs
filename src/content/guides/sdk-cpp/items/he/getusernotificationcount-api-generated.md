@@ -24,5 +24,3 @@ api->getUserNotificationCount(tenantId, sso).then([](pplx::task<std::shared_ptr<
     }
 });
 [inline-code-end]
-
----

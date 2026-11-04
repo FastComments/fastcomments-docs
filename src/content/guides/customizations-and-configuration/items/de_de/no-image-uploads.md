@@ -7,5 +7,3 @@ Standardmäßig erlaubt FastComments das Hochladen von Bildern. Dies kann deakti
 Dies kann ohne Code auf der Widget-Anpassungsseite angepasst werden:
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.disable-image-uploads'; selector = '.disable-image-uploads'; alt='Deaktivieren von Bild-Uploads Checkbox aktiviert in den Einstellungen der Widget-Anpassungsseite'; title='Deaktivieren von Bild-Uploads' app-screenshot-end]
-
----

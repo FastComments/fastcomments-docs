@@ -36,5 +36,3 @@ interface SubscriptionPostResponse {
     reason?: string
 }
 [inline-code-end]
-
----

@@ -19,5 +19,3 @@ FastComments נבנה כדי לאפשר התאמה אישית, והגופן שב
     font-family: 'Roboto', sans-serif;
 }
 [inline-code-end]
-
----

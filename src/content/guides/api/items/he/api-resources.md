@@ -1,4 +1,3 @@
----
 ### שימוש במשאבים
 
 יש לציין כי שליפת נתונים מה-API נספרת כשימוש בחשבון שלך.
@@ -16,5 +15,3 @@
 ### ווב-הוקים
 
 למנויים של ווב-הוקים יש מדריך משלהם. `POST`, `GET` ו-`DELETE /api/v1/webhooks`, וכן `GET /api/v1/webhooks/sample-payloads`, מתועדים תחת [Managing Subscriptions via API](/guide-webhooks.html#webhooks-api-subscriptions), והמטענים של האירועים תחת [Webhook Structures](/guide-webhooks.html#webhooks-structures).
-
----

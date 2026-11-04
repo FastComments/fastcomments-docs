@@ -8,5 +8,3 @@ This is how it should look - you should be able to select some text to discuss i
 </div>
 
 Συγχαρητήρια για τη ρύθμιση του FastComments με το Super! Αν έχετε αντιμετωπίσει ένα "Domain Error", ή θέλετε να μάθετε πώς να προσαρμόσετε την περιοχή σχολίων, διαβάστε παρακάτω!
-
----

@@ -1,4 +1,3 @@
----
 רשימת דפים עבור שוכר. משמש את לקוח השולחן העבודה FChat למלא את רשימת החדרים שלו.
 דורש `enableFChat` להיות true בתצורה המותאמת המותאמת לכל דף.
 דפים הדורשים SSO מסוננים בהתאם לגישת קבוצת המשתמש המבקש.
@@ -41,5 +40,3 @@ async function fetchPublicPages() {
   console.log(response);
 }
 [inline-code-end]
-
----

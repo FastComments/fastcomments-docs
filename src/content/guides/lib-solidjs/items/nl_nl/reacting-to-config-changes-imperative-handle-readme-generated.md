@@ -1,6 +1,6 @@
-Solid volgt niet automatisch diepe mutaties op willekeurige objecten, dus
-configwijzigingen na de eerste render moeten expliciet worden doorgegeven. Elke widget
-accepteert een `apiRef` die een handle retourneert; roep `handle.update(partial)` aan vanuit
+Solid houdt diepe mutaties op willekeurige objecten niet automatisch bij, dus
+configuratiewijzigingen na de eerste render moeten expliciet worden doorgegeven. Elke widget
+accepteert een `apiRef` die een handle teruggeeft; roep `handle.update(partial)` aan vanuit
 een `createEffect` om reactiviteit aan te sturen:
 
 ```tsx
@@ -25,22 +25,22 @@ export default function Paginated() {
 }
 ```
 
-`update()` is veilig om op elk moment aan te roepen:
-- Before the script has loaded: the partial is stashed and applied at init.
-- During an async init (reviews-summary, user-activity-feed): the partial is queued and applied when the callback resolves.
-- After init: it forwards straight to the live widget's `.update()` method.
+`update()` kan op elk moment veilig worden aangeroepen:
+- Voordat het script is geladen: het gedeeltelijke object wordt tijdelijk opgeslagen en toegepast bij de initialisatie.
+- Tijdens een asynchrone initialisatie (reviews-summary, user-activity-feed): het gedeeltelijke object wordt in de wachtrij geplaatst en toegepast zodra de callback is afgerond.
+- Na de initialisatie: het wordt rechtstreeks doorgestuurd naar de `.update()`-methode van de live widget.
 
-### Imperatieve handle API
+### Imperatieve handle-API
 
 ```ts
 interface WidgetHandle<Config> {
-  getInstance: () => WidgetInstance | null;   // latest live instance (or null before mount)
-  onInstance: (cb: (instance: WidgetInstance) => void) => void; // fires once instance is ready
-  update: (partial: Partial<Config>) => void; // merge-and-push config
+  getInstance: () => WidgetInstance | null;   // laatste live instantie (of null vóór het mounten)
+  onInstance: (cb: (instance: WidgetInstance) => void) => void; // wordt eenmaal aangeroepen zodra de instantie gereed is
+  update: (partial: Partial<Config>) => void; // configuratie samenvoegen en doorgeven
 }
 ```
 
-Gebruik `getInstance()` voor imperatieve acties die niet door `.update()` worden afgedekt, bijv. `openProfile`:
+Gebruik `getInstance()` voor imperatieve acties die niet door `.update()` worden gedekt, bijv. `openProfile`:
 
 ```tsx
 const openProfile = () =>

@@ -26,5 +26,3 @@ interface SubscriptionDeleteResponse {
     reason?: string
 }
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 FastComments također podržava widget Page Reacts (poznat i kao plutajuće dugme 'Sviđa mi se') za Zyro.
 
 Možete ga vidjeti u akciji u donjem desnom kutu ove stranice!
@@ -31,5 +30,3 @@ Možete ga vidjeti u akciji u donjem desnom kutu ove stranice!
 4. Odaberite Integracije.
 5. Dodajte novi kod na *kraj* polja `Custom code`, i objavite vašu stranicu.
 6. Widget se neće pojaviti u načinu pregleda, ali će se pojaviti na objavljenoj verziji stranice.
-
----

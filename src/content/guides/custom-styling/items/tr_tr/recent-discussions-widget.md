@@ -1,8 +1,8 @@
-The Recent Discussions Widget, en son yorum etkinliğine göre sıralanmış sayfaların bir listesini gösterir. Bir başlık, son etkinlik tarihleri, simgelerle birlikte yorum sayıları ve otomatik karanlık mod algılaması içerir.
+Son Tartışmalar Widget'ı, sayfaları en son yorum etkinliğine göre sıralanmış bir liste halinde görüntüler. Bir başlık, son etkinlik tarihleri, simgeli yorum sayıları ve otomatik koyu mod algılama içerir.
 
-## Basic Installation
+## Temel Kurulum
 
-[inline-code-attrs-start title = 'Recent Discussions Widget Stil Kurulumu'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Son Tartışmalar Widget\'ı Stil Ayarı'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/widget-recent-discussions-v2.min.js"></script>
 <div id="fastcomments-widget-recent-discussions"></div>
@@ -13,17 +13,17 @@ The Recent Discussions Widget, en son yorum etkinliğine göre sıralanmış say
 </script>
 [inline-code-end]
 
-## Configuration Options
+## Yapılandırma Seçenekleri
 
-- **tenantId** (required): FastComments kiracı kimliğiniz
-- **count** (optional): Gösterilecek sayfa sayısı. Varsayılan `20`, maksimum `100`
-- **hasDarkBackground** (optional): Karanlık mod stilini zorla. Ayarlanmamışsa sayfa arka planından otomatik algılanır
+- **tenantId** (zorunlu): FastComments tenant ID'niz
+- **count** (isteğe bağlı): Gösterilecek sayfa sayısı. Varsayılan `20`, maksimum `100`
+- **hasDarkBackground** (isteğe bağlı): Koyu mod stilini zorla. Ayarlanmazsa sayfa arka planından otomatik algılanır
 
-## Widget Structure
+## Widget Yapısı
 
-Widget aşağıdaki HTML yapısıyla render edilir:
+Widget aşağıdaki HTML yapısıyla oluşturulur:
 
-[inline-code-attrs-start title = 'Recent Discussions Widget HTML Yapısı'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Son Tartışmalar Widget\'ı HTML Yapısı'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <div class="fc-rd2">
     <div class="fc-rd2-heading">Recent Discussions</div>
@@ -39,9 +39,9 @@ Widget aşağıdaki HTML yapısıyla render edilir:
 </div>
 [inline-code-end]
 
-## Default CSS Reference
+## Varsayılan CSS Referansı
 
-[inline-code-attrs-start title = 'Recent Discussions Widget Varsayılan CSS'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Son Tartışmalar Widget\'ı Varsayılan CSS'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rd2 {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -61,9 +61,9 @@ Widget aşağıdaki HTML yapısıyla render edilir:
 .fc-rd2-count { font-size: 12px; font-weight: 600; color: #666; }
 [inline-code-end]
 
-## Customization Examples
+## Özelleştirme Örnekleri
 
-### Kapsayıcı Kenarlığını Kaldır
+### Kapsayıcı Kenarlığını Kaldırma
 
 [inline-code-attrs-start title = 'Kapsayıcı Kenarlığını Kaldır'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -81,5 +81,3 @@ a.fc-rd2-title:hover {
     color: #e63946 !important;
 }
 [inline-code-end]
-
----

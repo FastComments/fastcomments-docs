@@ -1,4 +1,3 @@
----
 画像のアップロードとリサイズ
 
 ## パラメータ
@@ -27,5 +26,3 @@ if uploadResult.isSome:
   let result = uploadResult.get()
   # 必要に応じて結果を使用
 [inline-code-end]
-
----

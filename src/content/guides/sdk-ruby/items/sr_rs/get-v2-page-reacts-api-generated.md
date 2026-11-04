@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Име | Тип | Локација | Обавезно | Опис |
@@ -29,5 +28,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_v2_page_reacts: #{e}"
 end
 [inline-code-end]
-
----

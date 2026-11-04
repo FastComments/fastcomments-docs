@@ -1,4 +1,3 @@
----
 [api-resource-header-start name = 'SSOUser'; route = 'GET /api/v1/sso-users'; creditsCost = 10; api-resource-header-end]
 
 Этот маршрут возвращает SSO пользователей страницами по `100`. Пагинация осуществляется с помощью параметра `skip`. Пользователи сортируются по их `signUpDate` и `id`.
@@ -29,5 +28,3 @@ interface SSOUsersResponse {
     users: SSOUser[]
 }
 [inline-code-end]
-
----

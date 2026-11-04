@@ -1,37 +1,37 @@
-Eklenti ayarları sayfası şu konumdadır **Site Yönetimi > Eklentiler > Yerel eklentiler > FastComments**. Mevcut seçenekler:
+Eklenti ayarları sayfası **Site Yönetimi > Eklentiler > Yerel eklentiler > FastComments** konumundadır. Kullanılabilir seçenekler şunlardır:
 
 #### Tenant ID
 
-FastComments Tenant ID'niz. Bunu <a href="https://fastcomments.com/auth/my-account" target="_blank">FastComments kontrol paneli</a> içinde hesap ayarlarınızda bulabilirsiniz.
+FastComments Tenant ID'niz. Bunu <a href="https://fastcomments.com/auth/my-account" target="_blank">FastComments kontrol panelinde</a> hesap ayarlarınız altında bulabilirsiniz.
 
 #### API Secret
 
-Güvenli SSO modu için gereken API Secret anahtarınız. Bunu <a href="https://fastcomments.com/auth/my-account/api-secret" target="_blank">Hesabım > API Secret</a> altında bulun.
+Güvenli SSO modu için gerekli olan API Secret anahtarınız. Bunu <a href="https://fastcomments.com/auth/my-account/api-secret" target="_blank">Hesabım > API Secret</a> konumunda bulabilirsiniz.
 
-#### SSO Mode
+#### SSO Modu
 
-Kullanıcıların nasıl kimlik doğrulanacağını seçin. Her seçenek hakkında ayrıntılar için [SSO Modları](#moodle-sso-modes) bölümüne bakın.
+Kullanıcıların nasıl kimlik doğrulayacağını seçin. Her seçenekle ilgili ayrıntılar için [SSO Modları](#moodle-sso-modes) bölümüne bakın.
 
-- **Secure** (önerilir) - sunucu tarafı HMAC-SHA256 ile imzalanmış kimlik doğrulama
-- **Simple** - imzasız istemci tarafı kullanıcı verisi
-- **None** - anonim yorum, Moodle oturum açma entegrasyonu yok
+- **Secure** (önerilen) - sunucu tarafında HMAC-SHA256 ile imzalanmış kimlik doğrulama
+- **Simple** - imzasız, istemci tarafı kullanıcı verisi
+- **None** - anonim yorum yapma, Moodle oturum açma entegrasyonu yok
 
-#### Page Contexts
+#### Sayfa Bağlamları
 
 Yorumların nerede görüneceğini kontrol eder:
 
-- **Course pages** - kurs ana sayfalarında yorumlar
-- **Module/activity pages** - bireysel etkinlik ve kaynak sayfalarında yorumlar
-- **Both** - tüm sayfa türlerinde yorumlar
+- **Ders sayfaları** - ders ana sayfalarındaki yorumlar
+- **Modül/etkinlik sayfaları** - bireysel etkinlik ve kaynaklardaki yorumlar
+- **Her ikisi** - tüm sayfa türlerindeki yorumlar
 
-#### Commenting Style
+#### Yorum Yapma Stili
 
-Yorum deneyimini seçin. Her modun ekran görüntüleri için [Yorum Stilleri](#moodle-commenting-styles) bölümüne bakın.
+Yorum yapma deneyimini seçin. Her modun ekran görüntüleri için [Yorum Yapma Stilleri](#moodle-commenting-styles) bölümüne bakın.
 
-- **Comments** - sayfa içeriğinin altında standart dallanmış yorum bileşeni
-- **Collab Chat** - varlık göstergeli satır içi metin seçimi tartışmaları
-- **Both** - yorumlar ve collab chat birlikte aktif
+- **Comments** - sayfa içeriğinin altında standart, dallanmış yorum bileşeni
+- **Collab Chat** - varlık göstergeleriyle satır içi metin seçimi tartışmaları
+- **Her ikisi** - yorumlar ve işbirliği sohbeti birlikte etkin
 
 #### CDN URL
 
-FastComments CDN URL'si. Varsayılan olarak `https://cdn.fastcomments.com` kullanılır. Verileriniz AB bölgesinde barındırılıyorsa bunu AB CDN URL'si ile değiştirin.
+FastComments CDN URL'si. Varsayılan olarak `https://cdn.fastcomments.com` değeridir. Verileriniz AB bölgesinde barındırılıyorsa bunu AB CDN URL'si ile değiştirin.

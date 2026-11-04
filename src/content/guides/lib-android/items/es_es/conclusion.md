@@ -1,4 +1,3 @@
----
 ## ¿Necesita ayuda?
 
 Si encuentra algún problema o tiene preguntas sobre la biblioteca de Android, por favor:
@@ -9,5 +8,3 @@ Si encuentra algún problema o tiene preguntas sobre la biblioteca de Android, p
 ## Contribuciones
 
 ¡Las contribuciones son bienvenidas! Por favor visite el [repositorio de GitHub](https://github.com/FastComments/fastcomments-android) para las directrices de contribución.
-
----

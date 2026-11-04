@@ -1,4 +1,3 @@
----
 Supprimez un sondage de son commentaire, ainsi que tous les votes qui y ont été castés. Le commentaire lui‑même reste inchangé.
 
 ## Paramètres
@@ -23,5 +22,3 @@ async function runDeletePoll(): Promise<void> {
   console.log(result);
 }
 [inline-code-end]
-
----

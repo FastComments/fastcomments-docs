@@ -1,11 +1,11 @@
-FastComments поддерживает SSO для интеграции с вашей существующей системой аутентификации пользователей. **Функциональность SSO доступна только в серверном экспорте**, так как требует возможностей crypto в Node.js.
+FastComments поддерживает SSO для интеграции с вашей существующей системой аутентификации пользователей. **Функциональность SSO доступна только в серверном экспорте**, так как она требует функций Node.js crypto.
 
-### Simple SSO (Server-Side Only)
+### Простой SSO (только на стороне сервера)
 
-Простой SSO должен генерироваться на стороне сервера и отправляться клиенту:
+Простой SSO должен генерироваться на стороне сервера и передаваться клиенту:
 
 ```typescript
-// Серверный код (Node.js/backend)
+// Server-side code (Node.js/backend)
 import { FastCommentsSSO, PublicApi } from 'fastcomments-sdk/server';
 
 // Create simple SSO using the built-in helper  
@@ -23,16 +23,16 @@ const sso = FastCommentsSSO.createSimple(userData, {
 
 const ssoToken = sso.createToken();
 
-// Отправьте ssoToken на клиент
-// Код на стороне клиента затем может использовать этот токен с браузерным SDK
+// Send ssoToken to your client-side code
+// Client-side code can then use this token with the browser SDK
 ```
 
-### Secure SSO (Server-Side, Recommended)
+### Безопасный SSO (на стороне сервера, рекомендуется)
 
-Защищённый SSO должен реализовываться на стороне сервера и обеспечивает лучшую безопасность:
+Безопасный SSO должен быть реализован на стороне сервера и обеспечивает более высокий уровень безопасности:
 
 ```typescript
-// Серверный код (Node.js/backend)
+// Server-side code (Node.js/backend)
 import { FastCommentsSSO, PublicApi } from 'fastcomments-sdk/server';
 
 // Create secure SSO using the built-in helper
@@ -53,7 +53,7 @@ const sso = FastCommentsSSO.createSecure('your-api-key', userData, {
 
 const ssoConfig = sso.prepareToSend();
 
-// Используйте при вызовах API на сервере
+// Use with API calls on the server
 const publicApi = new PublicApi();
 const response = await publicApi.getCommentsPublic({
   tenantId: 'your-tenant-id',
@@ -61,16 +61,16 @@ const response = await publicApi.getCommentsPublic({
   sso: JSON.stringify(ssoConfig)
 });
 
-// Или отправьте ssoConfig клиенту для использования в браузере
+// Or send ssoConfig to client for browser usage
 ```
 
-### Using SSO from Browser (with Server-Generated Token)
+### Использование SSO из браузера (с токеном, сгенерированным на сервере)
 
 ```typescript
-// Клиентский код (браузер)
+// Client-side code (browser)
 import { PublicApi } from 'fastcomments-sdk/browser';
 
-// Получите SSO токен с вашего серверного эндпоинта
+// Get SSO token from your server endpoint
 const ssoToken = await fetch('/api/sso-token').then(r => r.json());
 
 const publicApi = new PublicApi();
@@ -81,10 +81,10 @@ const response = await publicApi.getCommentsPublic({
 });
 ```
 
-### SSO with Comment Creation
+### SSO при создании комментария
 
 ```typescript
-// На стороне сервера: создать SSO и комментарий
+// Server-side: Create SSO and comment
 import { FastCommentsSSO, PublicApi } from 'fastcomments-sdk/server';
 
 const sso = FastCommentsSSO.createSecure('your-api-key', userData);

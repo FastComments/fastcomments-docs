@@ -24,5 +24,3 @@ if maybeReact.isSome:
   let react = maybeReact.get()
   echo react
 [inline-code-end]
-
----

@@ -1,33 +1,33 @@
-### Actions Available to All Users
+### Azioni Disponibili per Tutti gli Utenti
 
-- **Flag/Unflag** -- segnalare un commento per la revisione
+- **Segnala/Rimuovi segnalazione** -- segnala un commento per la revisione
 
 ```swift
 try await sdk.flagComment(commentId: commentId)
 try await sdk.unflagComment(commentId: commentId)
 ```
 
-- **Block/Unblock** -- nascondere tutti i commenti di un utente (per visualizzatore)
+- **Blocca/Sblocca** -- nascondi tutti i commenti di un utente (per singolo visualizzatore)
 
 ```swift
 try await sdk.blockUser(commentId: commentId)
 try await sdk.unblockUser(commentId: commentId)
 ```
 
-### Admin-Only Actions
+### Azioni Solo per Amministratori
 
-- **Pin/Unpin** -- fissare un commento in cima al thread
+- **Fissa/Rimuovi fissaggio** -- fissa un commento in cima alla discussione
 
 ```swift
 try await sdk.pinComment(commentId: commentId)
 try await sdk.unpinComment(commentId: commentId)
 ```
 
-- **Lock/Unlock** -- impedire nuove risposte a un commento e bloccare modifiche ed eliminazioni finché non viene sbloccato (si applica a tutti, inclusi i moderatori)
+- **Blocca/Sblocca** -- impedisce nuove risposte a un commento e blocca modifiche ed eliminazioni finché non viene sbloccato (si applica a tutti, inclusi i moderatori)
 
 ```swift
 try await sdk.lockComment(commentId: commentId)
 try await sdk.unlockComment(commentId: commentId)
 ```
 
-Tutte le azioni di moderazione sono disponibili anche tramite il menu contestuale del commento nell'interfaccia utente. Le azioni da amministratore compaiono solo quando l'utente corrente è un amministratore del sito (impostato tramite il flag SSO `isAdmin` o la configurazione del cruscotto).
+Tutte le azioni di moderazione sono disponibili anche tramite il menu contestuale del commento nell'interfaccia utente. Le azioni da amministratore appaiono solo quando l'utente corrente è un amministratore del sito (impostato tramite il flag `isAdmin` di SSO o la configurazione della dashboard).

@@ -17,5 +17,3 @@ Fra november 2022 kan tråde låses eller låses op **live** af administratorer 
 Dette vil forhindre nye kommentarer, mens stemmer stadig er tilladt, og brugere kan slette deres kommentarer, hvis de ønsker det, mens `readonly` ikke tillader disse ting. 
 
 Dette svarer til `isClosed`-feltet i `Page`-API'en.
-
----

@@ -1,3 +1,1 @@
----
 Dodajte razdelek za komentarje na katerokoli spletno stran v približno petih minutah. Pripravljeni izrezki za WordPress, React, Vue, Angular, React Native in običajen HTML.
----

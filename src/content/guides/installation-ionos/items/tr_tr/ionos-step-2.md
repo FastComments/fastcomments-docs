@@ -1,25 +1,25 @@
-Next we're going to add the FastComments widget code to your site. This code will search for all forms with the title `FastComments Goes Here` and
-replace it with FastComments.
+Şimdi FastComments widget kodunu sitenize ekleyeceğiz. Bu kod, başlığı `FastComments Goes Here` olan tüm formları arayacak ve
+onları FastComments ile değiştirecektir.
 
-So let's go to `Settings` in the bottom left of the site editor:
+Site düzenleyicisinin sol altındaki `Settings` bölümüne gidelim:
 
 <div class="screenshot white-bg">
     <div class="title">Ayarları Aç</div>
     <img class="screenshot-image" src="/images/installation-guides/ionos-step-2-open-settings.png" alt="Ayarları Aç" />
 </div>
 
-Open the `Custom Head Code` section:
+`Custom Head Code` bölümünü açın:
 
 <div class="screenshot white-bg">
-    <div class="title">Özel Head Kodunu Aç</div>
-    <img class="screenshot-image" src="/images/installation-guides/ionos-step-2-open-custom-head-code.png" alt="Özel Head Kodunu Aç" />
+    <div class="title">Custom Head Code'u Aç</div>
+    <img class="screenshot-image" src="/images/installation-guides/ionos-step-2-open-custom-head-code.png" alt="Custom Head Code'u Aç" />
 </div>
 
-For Ionos we need a **special version** of the FastComments widget code. Code snippets from **other tutorials will not work.**
+Ionos için FastComments widget kodunun **özel bir sürümüne** ihtiyacımız var. **Diğer eğitimlerden alınan kod parçacıkları çalışmayacaktır.**
 
-Now copy the following code:
+Şimdi aşağıdaki kodu kopyalayın:
 
-[inline-code-attrs-start title = 'Ionos FastComments Kod Parçası'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ionos FastComments Snippet'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
 <script>
@@ -32,7 +32,7 @@ Now copy the following code:
 
             nodes.forEach(function (node) {
                 if (node.innerText && node.innerText.trim() === 'FastComments Goes Here') {
-                    // tam genişlikli olmayan öğeyi alıyoruz
+                    // we get the element that is not full width
                     const target = node.parentNode.parentNode.parentNode.parentNode.parentNode;
                     target.innerHTML = '';
                     FastCommentsUI(target, {
@@ -52,7 +52,7 @@ Now copy the following code:
 </script>
 [inline-code-end]
 
-...and paste it in as shown:
+...ve gösterildiği gibi yapıştırın:
 
 <div class="screenshot white-bg">
     <div class="title">Yapıştır ve Kaydet</div>

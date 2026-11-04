@@ -1,19 +1,16 @@
-Creates a new trial account for an AI agent without a human signup. No API key is needed to call this.
+Tworzy nowe konto próbne dla agenta AI bez rejestracji przez człowieka. Do wywołania tego endpointu nie jest potrzebny klucz API.
 
-The response contains the tenant id, an API key that works immediately against the REST API and the
-MCP server, and a claim URL. Give the claim URL to the human you are working for: opening it while
-logged in to FastComments attaches the account to them. Unclaimed accounts, and their keys, are
-deleted 72 hours after creation. Until claimed, the account has the standard trial limits.
+Odpowiedź zawiera identyfikator tenanta, klucz API działający natychmiast z REST API i serwerem MCP oraz URL do przejęcia konta (claim URL). Przekaż claim URL człowiekowi, dla którego pracujesz: otwarcie go będąc zalogowanym do FastComments przypisuje konto do tej osoby. Nieprzejęte konta oraz ich klucze są usuwane 72 godziny po utworzeniu. Do momentu przejęcia konto ma standardowe limity wersji próbnej.
 
-## Response
+## Odpowiedź
 
-Returns: [`CreateAgentTenantResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateAgentTenantResponse.swift)
+Zwraca: [`CreateAgentTenantResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateAgentTenantResponse.swift)
 
-## Example
+## Przykład
 
 [inline-code-attrs-start title = 'Przykład createAgentTenant'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Poniższe przykłady kodu są nadal w wersji beta. W przypadku jakichkolwiek problemów, proszę zgłosić je poprzez http://github.com/OpenAPITools/openapi-generator/issues/new
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let createAgentTenantBody = CreateAgentTenantBody(name: "name_example", domains: ["domains_example"], agent: "agent_example") // CreateAgentTenantBody | 

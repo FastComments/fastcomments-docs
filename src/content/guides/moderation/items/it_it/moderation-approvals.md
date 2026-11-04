@@ -1,4 +1,3 @@
----
 Con FastComments, un commento Approvato è un commento **visibile**. Per nascondere un commento, dovresti revocarne l'approvazione.
 
 I commenti possono essere approvati automaticamente, oppure i moderatori possono approvare manualmente ogni commento. C'è anche l'opzione di
@@ -13,5 +12,3 @@ Richiedere l'approvazione manuale dei commenti non verificati può aiutare contr
 vorrai abilitare l'approvazione automatica dei commenti ma attivare `Only Auto Approve Verified Comments`.
 
 Tutto questo può essere configurato dagli amministratori da [Impostazioni di moderazione](https://fastcomments.com/auth/my-account/moderate-comments/settings).
-
----

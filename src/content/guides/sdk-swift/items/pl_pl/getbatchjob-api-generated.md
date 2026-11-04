@@ -1,4 +1,3 @@
----
 Status, postęp i, po zakończeniu, wynik jednego zadania wsadowego.
 
 ## Parameters
@@ -33,5 +32,3 @@ DefaultAPI.getBatchJob(tenantId: tenantId, id: id) { (response, error) in
     }
 }
 [inline-code-end]
-
----

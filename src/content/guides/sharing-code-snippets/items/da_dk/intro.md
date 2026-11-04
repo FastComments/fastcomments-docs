@@ -1,4 +1,1 @@
----
 ## Deling af kodeudsnit
-
----

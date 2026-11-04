@@ -32,5 +32,3 @@ ModerationAPI.getSearchSuggest(tenantId: tenantId, options: ModerationAPI.GetSea
     }
 }
 [inline-code-end]
-
----

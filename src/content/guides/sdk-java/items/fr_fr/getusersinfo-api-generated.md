@@ -1,4 +1,3 @@
----
 Informations utilisateur en masse pour un tenant. Étant donné des userIds, renvoie les informations d'affichage depuis User / SSOUser.
 Utilisé par le widget de commentaires pour enrichir les utilisateurs qui viennent d'apparaître via un événement de présence.
 Pas de contexte de page : la confidentialité est appliquée de manière uniforme (les profils privés sont masqués).
@@ -47,5 +46,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

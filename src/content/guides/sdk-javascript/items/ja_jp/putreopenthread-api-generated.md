@@ -25,5 +25,3 @@ async function reopenThreadExample() {
 
 reopenThreadExample();
 [inline-code-end]
-
----

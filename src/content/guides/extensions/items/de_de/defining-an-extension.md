@@ -9,14 +9,14 @@ Die kleinstmögliche Erweiterung wäre:
 })();
 [inline-code-end]
 
-For the sake of this example, save this as `my-extension.js`, and make it available at `https://example.com/my-extension.min.js`.
+Für dieses Beispiel speichern Sie dies als `my-extension.js` und machen es unter `https://example.com/my-extension.min.js` verfügbar.
 
-This extension does not do anything, except on load it fetches the extension object created by the core comment library.
+Diese Erweiterung macht nichts, außer dass sie beim Laden das von der Core-Kommentarbibliothek erstellte Erweiterungsobjekt abruft.
 
-This `Extension` object is a singleton and is not shared with any other extensions.
+Dieses `Extension`-Objekt ist ein Singleton und wird mit keiner anderen Erweiterung geteilt.
 
-Next, to load our extension, we have to tell the comment widget about it. For example:
+Als Nächstes müssen wir, um unsere Erweiterung zu laden, das Kommentar-Widget darüber informieren. Zum Beispiel:
 
-[code-example-start config = {extensions: [{id: "my-extension", path: "https://example.com/my-extension.min.js"}]}; linesToHighlight = [6,7,8,9,10,11]; title = 'Using a Custom Extension'; code-example-end]
+[code-example-start config = {extensions: [{id: "my-extension", path: "https://example.com/my-extension.min.js"}]}; linesToHighlight = [6,7,8,9,10,11]; title = 'Verwendung einer benutzerdefinierten Erweiterung'; code-example-end]
 
-For functional examples, see the next section.
+Funktionale Beispiele finden Sie im nächsten Abschnitt.

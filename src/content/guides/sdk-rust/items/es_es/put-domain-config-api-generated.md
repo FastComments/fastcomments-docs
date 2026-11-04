@@ -30,5 +30,3 @@ async fn update_domain(configuration: &configuration::Configuration) -> Result<(
     Ok(())
 }
 [inline-code-end]
-
----

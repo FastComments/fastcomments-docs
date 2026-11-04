@@ -23,5 +23,3 @@ api->getUserBadge(tenantId, userId).then([](pplx::task<std::shared_ptr<APIGetUse
     }
 });
 [inline-code-end]
-
----

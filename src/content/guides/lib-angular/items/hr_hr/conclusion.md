@@ -1,4 +1,3 @@
----
 ## Trebate pomoć?
 
 Ako naiđete na bilo kakve probleme ili imate pitanja o Angular biblioteci, molimo:
@@ -9,5 +8,3 @@ Ako naiđete na bilo kakve probleme ili imate pitanja o Angular biblioteci, moli
 ## Doprinosi
 
 Doprinosi su dobrodošli! Molimo posjetite [GitHub repozitorij](https://github.com/FastComments/fastcomments-angular) za smjernice za doprinos.
-
----

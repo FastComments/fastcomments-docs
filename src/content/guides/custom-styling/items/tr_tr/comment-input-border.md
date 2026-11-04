@@ -1,17 +1,17 @@
-The border around the comment box is made of the text area's own border plus a few thin lines the widget draws around it. To change its color or corner roundness, set these CSS variables instead of styling the `textarea` directly. The variables restyle every part of the border at once, so the corners and colors always line up.
+Yorum kutusunun etrafındaki kenarlık, metin alanının kendi kenarlığından ve widget'ın etrafına çizdiği birkaç ince çizgiden oluşur. Rengini veya köşe yuvarlaklığını değiştirmek için `textarea` öğesini doğrudan stillendirmek yerine bu CSS değişkenlerini ayarlayın. Değişkenler kenarlığın her bölümünü aynı anda yeniden stillendirir, böylece köşeler ve renkler her zaman uyumlu olur.
 
-| Değişken | Ne değiştirir | Varsayılan |
+| Değişken | Neyi değiştirir | Varsayılan |
 |---|---|---|
 | `--fc-input-border-color` | Kenarlık rengi | `#bfbfbf` |
 | `--fc-input-border-color-focus` | Kullanıcı yazarken kenarlık rengi | `#555` |
 | `--fc-input-border-radius` | Yuvarlatılmış köşelerin yuvarlaklığı | `11px` |
-| `--fc-input-border-start-start-radius` | Kare üst sol köşenin yuvarlaklığı (sağdan sola dillerde üst sağ) | `0` |
+| `--fc-input-border-start-start-radius` | Kare sol üst köşenin yuvarlaklığı (sağdan sola dillerde sağ üst) | `0` |
 
-Add the CSS to the **Custom CSS** box on the [Widget Customization page](https://fastcomments.com/auth/my-account/customize-widget), or pass it with the `customCSS` option. You only need to set the variables you want to change.
+CSS'i [Widget Özelleştirme sayfasındaki](https://fastcomments.com/auth/my-account/customize-widget) **Custom CSS** kutusuna ekleyin veya `customCSS` seçeneğiyle iletin. Yalnızca değiştirmek istediğiniz değişkenleri ayarlamanız yeterlidir.
 
-You can also use the **Comment box border** helper right under the Custom CSS box, which writes this CSS for you.
+Ayrıca Custom CSS kutusunun hemen altındaki **Comment box border** yardımcısını da kullanabilirsiniz; bu yardımcı bu CSS'i sizin için yazar.
 
-## Kenarlık Rengini Değiştir
+## Kenarlık Rengini Değiştirme
 
 [inline-code-attrs-start title = 'Kenarlık Rengi'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -20,7 +20,7 @@ You can also use the **Comment box border** helper right under the Custom CSS bo
 }
 [inline-code-end]
 
-## Yazarken Kenarlık Rengini Değiştir
+## Yazarken Kenarlık Rengini Değiştirme
 
 [inline-code-attrs-start title = 'Yazarken Kenarlık Rengi'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -29,11 +29,11 @@ You can also use the **Comment box border** helper right under the Custom CSS bo
 }
 [inline-code-end]
 
-## Tüm Dört Köşeyi Yuvarlat
+## Dört Köşeyi de Yuvarlatma
 
-Varsayılan olarak üst sol köşe karedir. Tüm dört köşeyi aynı şekilde yuvarlamak için her iki yarıçap değişkenini de ayarlayın:
+Varsayılan olarak sol üst köşe karedir. Dört köşeyi de aynı şekilde yuvarlatmak için her iki yarıçap değişkenini ayarlayın:
 
-[inline-code-attrs-start title = 'Tüm Dört Köşeyi Yuvarlat'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Dört Köşeyi de Yuvarlatma'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 :root {
     --fc-input-border-radius: 12px;
@@ -50,7 +50,7 @@ Varsayılan olarak üst sol köşe karedir. Tüm dört köşeyi aynı şekilde y
 }
 [inline-code-end]
 
-## Markanıza Uygun Hale Getirin
+## Markanıza Uygun Hale Getirme
 
 [inline-code-attrs-start title = 'Marka Renkleri ve Köşeler'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -64,7 +64,7 @@ Varsayılan olarak üst sol köşe karedir. Tüm dört köşeyi aynı şekilde y
 
 ## Karanlık Modda Farklı Renkler
 
-Widget karanlık modda olduğunda `dark` sınıfına sahiptir, bu yüzden karanlık mod için farklı değerler ayarlayabilirsiniz:
+Widget karanlık moddayken `dark` sınıfına sahiptir, bu nedenle karanlık mod için farklı değerler ayarlayabilirsiniz:
 
 [inline-code-attrs-start title = 'Karanlık Mod Kenarlık Renkleri'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -77,6 +77,6 @@ Widget karanlık modda olduğunda `dark` sınıfına sahiptir, bu yüzden karanl
 }
 [inline-code-end]
 
-## Neden Metin Alanını Doğrudan Stilize Etmiyoruz?
+## Metin Alanı Neden Doğrudan Stillendirilmez?
 
-The widget draws part of the comment box border itself, around the text area. If you set `border-color` or `border-radius` only on the `textarea`, those lines keep the default style and the border looks mismatched, for example a square line running through a rounded corner. The variables above change both at once.
+Widget, yorum kutusu kenarlığının bir kısmını metin alanının etrafında kendisi çizer. `border-color` veya `border-radius` özelliklerini yalnızca `textarea` üzerinde ayarlarsanız, bu çizgiler varsayılan stilde kalır ve kenarlık uyumsuz görünür; örneğin yuvarlatılmış bir köşeden geçen kare bir çizgi gibi. Yukarıdaki değişkenler her ikisini de aynı anda değiştirir.

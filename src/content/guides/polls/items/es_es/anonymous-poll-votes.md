@@ -1,4 +1,3 @@
----
 Por defecto, solo los usuarios conectados pueden votar en encuestas. Los visitantes que no están conectados ven un mensaje **Inicia sesión para votar** en lugar de los botones de voto.
 
 Marca **Permitir votos anónimos en encuestas** para permitir que cualquiera vote sin una cuenta.
@@ -8,5 +7,3 @@ Marca **Permitir votos anónimos en encuestas** para permitir que cualquiera vot
 Para mantener los resultados justos, los votos anónimos en una encuesta están limitados a tres por dirección IP por hora.
 
 Esto es independiente de [Permitir votación anónima](/guide-customizations-and-configuration.html#allow-anon-votes), que controla los votos positivos y negativos en los comentarios.
-
----

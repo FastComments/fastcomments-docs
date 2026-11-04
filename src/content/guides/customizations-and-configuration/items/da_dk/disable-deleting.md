@@ -1,4 +1,3 @@
----
 Som standard tillader FastComments brugere at slette deres kommentarer.
 
 Det er dog muligt at forhindre dette.
@@ -9,5 +8,3 @@ På widget-tilpasningssiden kan du se indstillingen "Disable Deleting".
 
 - Dette påvirker kun almindelige kommentatorer og ikke moderatorer eller administratorer, som stadig vil kunne slette.
 - Dette vil også påvirke API-integrationer, når `contextUserId` sendes. 
-
----

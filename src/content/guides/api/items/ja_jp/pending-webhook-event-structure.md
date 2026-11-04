@@ -1,13 +1,13 @@
-A `PendingWebhookEvent` object represents a queued webhook event that is pending.
+`PendingWebhookEvent` オブジェクトは、保留中のキューに入ったウェブフックイベントを表します。
 
-`PendingWebhookEvent` オブジェクトは自動的に作成され、API 経由で手動作成することはできません。これらはまた 1 年後に期限切れになります。
-それらは削除可能で、削除するとキューからタスクが取り除かれます。
+`PendingWebhookEvent` オブジェクトは自動的に作成され、API経由で手動で作成することはできません。また、1年後に期限切れになります。
+削除することで、キューからタスクを取り除くことができます。
 
-異なるイベントタイプがあります — `eventType`（`OutboundSyncEventType`）と `type`（`OutboundSyncType`）を確認してください。
+イベントの種類は複数あります - `eventType` (`OutboundSyncEventType`) と `type` (`OutboundSyncType`) を確認してください。
 
-この API の一般的なユースケースはカスタム監視を実装することです。指定したフィルターに対する未処理数をポーリングするために、`/count` エンドポイントを定期的に呼び出すことがあるでしょう。
+このAPIの一般的なユースケースは、カスタムモニタリングの実装です。指定したフィルターに対する未処理の件数を定期的にポーリングするために、`/count` エンドポイントを呼び出すとよいでしょう。
 
-The structure for the `PendingWebhookEvent` object is as follows:
+`PendingWebhookEvent` オブジェクトの構造は以下の通りです:
 
 [inline-code-attrs-start title = 'PendingWebhookEvent の構造'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -18,31 +18,31 @@ enum OutboundSyncEventType {
 }
 
 enum OutboundSyncType {
-    /** WordPress-specific sync task. **/
+    /** WordPress固有の同期タスク。 **/
     WP: 0,
     Webhook: 1
 }
 
 interface PendingWebhookEvent {
     id: string
-    /** The comment id associated with the event. **/
+    /** イベントに関連付けられたコメントid。 **/
     commentId: string
-    /** The comment object for the event at the time of the event. We started adding these in Nov 2023. **/
+    /** イベント発生時点のコメントオブジェクト。2023年11月から追加を開始しました。 **/
     comment: Comment
-    /** An external id that may be associated with the comment. **/
+    /** コメントに関連付けられている可能性のある外部id。 **/
     externalId: string | null
     createdAt: Date
     tenantId: string
     attemptCount: number
-    /** Set before first attempt, and after every failure. **/
+    /** 初回試行の前、および失敗のたびに設定されます。 **/
     nextAttemptAt: Date
-    /** Whether this is a creation, deletion, or update event... **/
+    /** これが作成、削除、更新のいずれのイベントかを示します... **/
     eventType: OutboundSyncEventType
-    /** The type of sync to perform (WordPress, call API, etc). **/
+    /** 実行する同期の種類(WordPress、API呼び出しなど)。 **/
     type: OutboundSyncType
-    /** The domain that matched the comment. We use this domain to pick the API key. **/
+    /** コメントに一致したドメイン。このドメインを使用してAPIキーを選択します。 **/
     domain: string
-    /** The last error that occurred. This type is untyped and is a "dump" of whatever happened. Usually it contains an object with statusCode, body, and a headers map. **/
+    /** 発生した最後のエラー。この型は型付けされておらず、何が起きたかの「ダンプ」です。通常は statusCode、body、headers マップを含むオブジェクトが入ります。 **/
     lastError: object | null
 }
 [inline-code-end]

@@ -1,4 +1,3 @@
----
 Som standard kan hver bruger indsende op til `5 kommentarer` inden for samme minut.
 
 Dette spores via bruger-id, anonym bruger-id og IP-adresse (hashet).
@@ -9,4 +8,3 @@ Dette kan tilpasses uden kode på widget-tilpasningssiden:
 
 Bemærk, at hvis du bruger kommentarskabelses-API'en, vil du måske sende brugerens originale `ip`-adresse i anmodningen til vores backend, så hastighedsbegrænsning anvendes
 pr. bruger og ikke globalt for din konto.
----

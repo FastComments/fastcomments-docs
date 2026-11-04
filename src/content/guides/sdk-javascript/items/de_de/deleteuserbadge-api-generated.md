@@ -20,5 +20,3 @@ Rückgabe: [`APIEmptySuccessResponse`](https://github.com/FastComments/fastcomme
   console.log(result);
 })();
 [inline-code-end]
-
----

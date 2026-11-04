@@ -1,15 +1,15 @@
-Navigate to your account dashboard and go to the [stranicu RSS feeda](https://fastcomments.com/auth/my-account/rss).
+Idite na svoju nadzornu ploču računa i otvorite [RSS Feed stranicu](https://fastcomments.com/auth/my-account/rss).
 
-[app-screenshot-start url='/auth/my-account/rss'; selector = '.content'; alt='Stranica RSS feeda računa s potvrdnim okvirom "Omogući pristup RSS feedu", URL-om feeda i gumbima "Kopiraj" i "Pogledaj feed"'; title='Konfiguracija RSS feeda' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/rss'; selector = '.content'; alt='Stranica RSS feeda računa s potvrdnim okvirom Enable RSS Feed Access, URL-om feeda te gumbima Copy i View Feed'; title='Konfiguracija RSS feeda' app-screenshot-end]
 
-On the RSS Feed page, check the "Enable RSS Feed Access" checkbox to generate your unique RSS feed URL.
+Na stranici RSS Feed označite potvrdni okvir "Enable RSS Feed Access" kako biste generirali svoj jedinstveni URL RSS feeda.
 
-When you enable the feed, a security notice will appear explaining that anyone with the link can access your comments.
+Kada omogućite feed, pojavit će se sigurnosna obavijest koja objašnjava da svatko tko ima poveznicu može pristupiti vašim komentarima.
 
-Once enabled, your unique RSS feed URL will appear. Click the "Copy" button to copy the URL to your clipboard.
+Nakon što je omogućeno, prikazat će se vaš jedinstveni URL RSS feeda. Kliknite gumb "Copy" kako biste kopirali URL u međuspremnik.
 
-Open your RSS reader application and add the copied URL as a new feed subscription. The exact steps vary by RSS reader, but typically you'll look for an "Add Feed" or "Subscribe" button, paste your RSS feed URL, and give the feed a name.
+Otvorite svoju aplikaciju za čitanje RSS feedova i dodajte kopirani URL kao novu pretplatu na feed. Točni koraci variraju ovisno o RSS čitaču, ali obično ćete potražiti gumb "Add Feed" ili "Subscribe", zalijepiti URL svog RSS feeda i dati feedu naziv.
 
-You can also click the "View Feed" button on the RSS Feed page to see your feed directly in your browser.
+Također možete kliknuti gumb "View Feed" na stranici RSS Feed kako biste vidjeli svoj feed izravno u pregledniku.
 
-To disable access to your RSS feed, simply uncheck the "Enable RSS Feed Access" checkbox. This will prevent the feed from being accessed, though the URL will remain the same if you re-enable it later.
+Da biste onemogućili pristup svom RSS feedu, jednostavno poništite potvrdni okvir "Enable RSS Feed Access". To će spriječiti pristup feedu, iako će URL ostati isti ako ga kasnije ponovno omogućite.

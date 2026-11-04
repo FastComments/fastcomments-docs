@@ -1,55 +1,55 @@
-Hver agent-webhook har sin egen leveringslog. Tilgængelig fra [webhook list page](https://fastcomments.com/auth/my-account/ai-agents/webhooks) via knappen **Logfiler** på hver webhook-række.
+Hver agent-webhook har sin egen leveringslog. Den kan tilgås fra [webhook-listesiden](https://fastcomments.com/auth/my-account/ai-agents/webhooks) via knappen **Logs** på hver webhook-række.
 
-### What's on the page
+### Hvad er på siden
 
-A paginated table with one row per delivery attempt:
+En pagineret tabel med én række pr. leveringsforsøg:
 
-| Column | Meaning |
+| Kolonne | Betydning |
 |---|---|
-| When | When the attempt happened. |
-| Event | The event type (`trigger.succeeded`, `approval.requested`, etc.). |
-| Status | The delivery status. |
-| StatusCode | HTTP status code returned by your endpoint, when available. |
-| Description | A short description of the outcome. For failed deliveries where no HTTP response was received, the underlying error message is stored as `{error: <message>}`. |
+| When | Hvornår forsøget fandt sted. |
+| Event | Hændelsestypen (`trigger.succeeded`, `approval.requested` osv.). |
+| Status | Leveringsstatus. |
+| StatusCode | HTTP-statuskoden returneret af dit endpoint, når tilgængelig. |
+| Description | En kort beskrivelse af udfaldet. For mislykkede leveringer, hvor der ikke blev modtaget noget HTTP-svar, gemmes den underliggende fejlbesked som `{error: <message>}`. |
 
-The page supports pagination only - there are no status, event-type, or date-range filters.
+Siden understøtter kun paginering - der er ingen status-, hændelsestype- eller datointerval-filtre.
 
-### What you can do from logs
+### Hvad du kan gøre fra loggene
 
-- **Decide whether a status code should be in No-retry.** If you see your endpoint returning the same `4xx` over and over, that is a strong signal you want to add it to **No-retry status codes** so the platform stops retrying.
+- **Beslut, om en statuskode skal være i No-retry.** Hvis du ser dit endpoint returnere den samme `4xx` igen og igen, er det et stærkt signal om, at du vil tilføje den til **No-retry status codes**, så platformen holder op med at prøve igen.
 
-### Failure information
+### Fejlinformation
 
-When a delivery fails without an HTTP response (DNS failure, connection refused, timeout, TLS error, etc.), the raw error message is recorded as `{error: <message>}`. The platform does not categorize these into named buckets like `TIMEOUT` or `DNS_ERROR` - read the error message directly to see what happened.
+Når en levering fejler uden et HTTP-svar (DNS-fejl, forbindelse nægtet, timeout, TLS-fejl osv.), gemmes den rå fejlbesked som `{error: <message>}`. Platformen kategoriserer ikke disse i navngivne kategorier som `TIMEOUT` eller `DNS_ERROR` - læs fejlbeskeden direkte for at se, hvad der skete.
 
-For HTTP responses, the StatusCode column shows the code returned by your endpoint. Common cases:
+For HTTP-svar viser StatusCode-kolonnen koden returneret af dit endpoint. Almindelige tilfælde:
 
-- **All attempts: `401` or `403`** - your endpoint is rejecting the signature. Check that you are computing the HMAC over `${timestamp}.${body}` and using the right secret. See [Webhook Signing](#webhook-signing).
-- **All attempts: `422`** - your endpoint thinks the payload is invalid. Either fix your endpoint, or add `422` to **No-retry status codes** if the rejection is expected for some events.
+- **Alle forsøg: `401` eller `403`** - dit endpoint afviser signaturen. Tjek, at du beregner HMAC over `${timestamp}.${body}` og bruger den rigtige hemmelighed. Se [Webhook Signing](#webhook-signing).
+- **Alle forsøg: `422`** - dit endpoint anser payloaden for ugyldig. Enten ret dit endpoint, eller tilføj `422` til **No-retry status codes**, hvis afvisningen er forventet for visse hændelser.
 
-### Per-delivery context
+### Pr. levering-kontekst
 
-Each log entry carries:
+Hver logpost indeholder:
 
-- `webhookId` - which webhook config produced this delivery.
-- `agentId` - which agent the delivery is about.
-- `triggerId` or `approvalId` - the underlying record.
-- `domain` - the matched domain.
+- `webhookId` - hvilken webhook-konfiguration, der producerede denne levering.
+- `agentId` - hvilken agent leveringen handler om.
+- `triggerId` eller `approvalId` - den underliggende post.
+- `domain` - det matchede domæne.
 
-You can use these to correlate a failed delivery with the run it relates to in [Run History](#run-history).
+Du kan bruge disse til at koble en mislykket levering til den kørsel, den relaterer sig til i [Run History](#run-history).
 
-### Retention
+### Opbevaring
 
-`AgentSyncLog` entries have a flat 1-year TTL on `createdAt` regardless of outcome - successful and failed deliveries are retained for the same length of time. Beyond retention, the log entry is gone.
+`AgentSyncLog`-poster har en flad 1-års TTL på `createdAt` uanset udfald - vellykkede og mislykkede leveringer opbevares i samme tidsrum. Efter opbevaringsperioden er logposten væk.
 
-If you need long-term audit, the sustainable pattern is: have the **endpoint itself** persist the deliveries it receives. That decouples your audit log from the platform's retention policy.
+Hvis du har brug for langsigtet revisionssporing, er det bæredygtige mønster: lad **endpointet selv** gemme de leveringer, det modtager. Det kobler dit revisionslog fra platformens opbevaringspolitik.
 
-### Test send
+### Test-send
 
-The webhook config form's **Test send** button writes a fake delivery into the same log table so you can verify connectivity end-to-end before relying on real events. Test deliveries are clearly labeled in the log so they do not pollute production failure stats.
+Webhook-konfigurationsformularens **Test send**-knap skriver en falsk levering ind i samme logtabel, så du kan verificere forbindelsen ende-til-ende, før du stoler på rigtige hændelser. Testleveringer er tydeligt mærket i loggen, så de ikke forurener produktionsfejlstatistikker.
 
-### See also
+### Se også
 
 - [Webhooks Overview](#webhooks-overview).
-- [Webhook Retries](#webhook-retries) for the retry semantics that drive these logs.
-- [Webhook Signing](#webhook-signing) for how to verify on your endpoint.
+- [Webhook Retries](#webhook-retries) for retry-semantikken, der driver disse logge.
+- [Webhook Signing](#webhook-signing) for, hvordan du verificerer på dit endpoint.

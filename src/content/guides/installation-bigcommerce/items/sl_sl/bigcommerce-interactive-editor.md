@@ -1,4 +1,3 @@
----
 Ne priporoča se dodajanje FastComments prek Page Builderja BigCommerce, saj je treba nato kodo ročno dodati na vsako želeno stran.
 
 Če pa je to zaželeno, je treba uporabiti naslednji del kode. Delčki kode iz drugih vadnic ne bodo delovali zaradi narave BigCommerce:
@@ -14,5 +13,3 @@ Ne priporoča se dodajanje FastComments prek Page Builderja BigCommerce, saj je 
     }];
 </script>
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 ## 响应
 
 返回: [`Option[APIEmptyResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_api_empty_response.nim)
@@ -11,5 +10,3 @@ let (responseOpt, httpResponse) = client.logoutPublic(tenantId = "my-tenant-123"
 if responseOpt.isSome:
   let emptyResponse = responseOpt.get()
 [inline-code-end]
-
----

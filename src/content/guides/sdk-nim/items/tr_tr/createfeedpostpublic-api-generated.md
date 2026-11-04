@@ -36,5 +36,3 @@ if response.isSome:
   let post = response.get()
   echo post
 [inline-code-end]
-
----

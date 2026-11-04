@@ -1,64 +1,64 @@
-The Comment Moderation page supports keyboard shortcuts for navigating between comments, performing actions, and paginating - all without using the mouse.
+Yorum Moderasyon sayfası, yorumlar arasında gezinmek, işlemler gerçekleştirmek ve sayfalama yapmak için klavye kısayollarını destekler - tamamen fare kullanmadan.
 
-Press **?** at any time on the moderation page to open a help dialog listing all available shortcuts.
+Moderasyon sayfasında herhangi bir zamanda **?** tuşuna basarak mevcut tüm kısayolları listeleyen bir yardım iletişim kutusu açabilirsiniz.
 
-## Navigation
+## Gezinme
 
-| Tuş | Eylem |
+| Tuş | İşlem |
 |-----|--------|
-| `j` | Sonraki yorumu odakla |
-| `k` | Önceki yorumu odakla |
-| `x` or `Enter` | Odaklanmış yorumda seçimi değiştir |
-| `Shift+j` | Odaklanmış yorumu seç ve sonraki yoruma geç |
-| `Shift+k` | Odaklanmış yorumu seç ve önceki yoruma geç |
+| `j` | Sonraki yoruma odaklan |
+| `k` | Önceki yoruma odaklan |
+| `x` veya `Enter` | Odaklanmış yorumun seçimini aç/kapat |
+| `Shift+j` | Odaklanmış yorumu seç & sonrakine geç |
+| `Shift+k` | Odaklanmış yorumu seç & öncekine geç |
 
-Odaklanmış yorum mavi bir kenarlıkla vurgulanır. Bu, "seçili" (işaretli) yorumlardan ayrı bir durumdur.
+Odaklanmış yorum mavi bir çerçeve ile vurgulanır. Bu, "seçili" (işaretli) yorumlardan ayrıdır.
 
-## Actions on Focused Comment
+## Odaklanmış Yorum Üzerinde İşlemler
 
-| Tuş | Eylem |
+| Tuş | İşlem |
 |-----|--------|
-| `a` | Onayla / onayı kaldır |
-| `s` | Spam / spam değil olarak değiştir |
+| `a` | Onayla / onayı kaldır arasında geçiş yap |
+| `s` | Spam / spam değil arasında geçiş yap |
 | `d` | Sil |
-| `u` | Silme işlemini geri al |
-| `r` | İncelendi / incelenmedi olarak değiştir |
+| `u` | Silmeyi geri al |
+| `r` | İncelendi / incelenmedi arasında geçiş yap |
 | `e` | Düzenle |
-| `b` | Yasakla / yasak yönet |
-| `p` | Sabitle / sabitlemeyi kaldır |
+| `b` | Yasakla / yasağı yönet |
+| `p` | Sabitle / sabitlemeyi kaldır arasında geçiş yap |
 | `f` | İşareti kaldır |
 | `i` | IP'den gelen tüm yorumları görüntüle |
 | `t` | Güven faktörünü ayarla |
 | `m` | Rozetleri yönet |
-| `l` | Kayıtları görüntüle |
-| `c` | Bağlamı değiştir |
+| `l` | Günlükleri görüntüle |
+| `c` | Bağlamı aç/kapat |
 
-Bu kısayollar yalnızca bir yorum odaklandığında geçerlidir. Eğer hiçbir yorum odaklanmamışsa, önce `j` veya `k` tuşuna basın.
+Bu kısayollar yalnızca bir yorum odaklandığında geçerlidir. Hiçbir yorum odaklanmamışsa, önce `j` veya `k` tuşuna basın.
 
-## Global Shortcuts
+## Genel Kısayollar
 
-| Tuş | Eylem |
+| Tuş | İşlem |
 |-----|--------|
 | `Ctrl+a` | Tüm yorumları seç |
-| `Ctrl+z` | Son eylemi geri al |
+| `Ctrl+z` | Son işlemi geri al |
 | `?` | Klavye kısayolları yardımını göster |
-| `g` | Kısayol rehberleri katmanını değiştir |
-| `/` | Arama girişine odaklan |
+| `g` | Kısayol rehberleri katmanını aç/kapat |
+| `/` | Arama kutusuna odaklan |
 
-## Pagination
+## Sayfalama
 
-| Tuş | Eylem |
+| Tuş | İşlem |
 |-----|--------|
 | `[` | Önceki sayfa |
 | `]` | Sonraki sayfa |
 
-## Shortcut Guiders
+## Kısayol Rehberleri
 
-`g` tuşuna basarak rehber modunu değiştirin. Aktif olduğunda, odaklanmış yorumun eylem düğmelerinde her bir düğmenin klavye kısayolunu gösteren küçük rozetler görünür. Kısayolları öğrenirken bu faydalıdır. `g` tuşuna tekrar basarak rozetleri gizleyin.
+Rehberler modunu açmak/kapatmak için `g` tuşuna basın. Aktif olduğunda, odaklanmış yorumun işlem düğmelerinde her düğmenin klavye kısayolunu gösteren küçük rozetler görünür. Bu, kısayolları öğrenirken faydalıdır. Gizlemek için tekrar `g` tuşuna basın.
 
-## Input Suppression
+## Giriş Bastırma
 
-Kısayollar aşağıdaki durumlarda otomatik olarak devre dışı bırakılır:
+Kısayollar şu durumlarda otomatik olarak bastırılır:
 
-- İmleç arama kutusunda, bir metin girişinde veya içerik düzenlenebilir bir alanda olduğunda. Alanı bulanıklaştırmak ve kısayollara geri dönmek için `Escape` tuşuna basın.
-- Bir iletişim kutusu açık olduğunda. Önce iletişim kutusunu kapatın.
+- İmleç arama kutusunda, bir metin girişinde veya düzenlenebilir bir içerik alanındayken. Alanın odaklanmasını kaldırmak ve kısayollara dönmek için `Escape` tuşuna basın.
+- Bir iletişim kutusu açıkken. Önce iletişim kutusunu kapatın.

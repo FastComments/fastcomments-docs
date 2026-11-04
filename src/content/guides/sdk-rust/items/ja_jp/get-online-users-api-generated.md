@@ -1,4 +1,3 @@
----
 現在オンラインのページ閲覧者: 現在そのページにサブスクライブされている WebSocket セッションを持つユーザーです。
 返却は anonCount と totalCount の合計です（部屋全体の購読者で、列挙しない匿名閲覧者も含みます）。
 
@@ -30,5 +29,3 @@ async fn example() -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
-
----

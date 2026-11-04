@@ -85,5 +85,3 @@ Takođe možemo proslediti Secure SSO ili Simple SSO podatke:
     });
 </script>
 [inline-code-end]
-
----

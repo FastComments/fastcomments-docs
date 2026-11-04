@@ -1,4 +1,3 @@
----
 [api-resource-header-start name = 'Vote'; route = 'GET /api/v1/votes/for-user'; creditsCost = 1; api-resource-header-end]
 
 Дозволяє отримати голоси, залишені користувачем для певного `urlId`. Потребує `userId`, який може бути будь-яким користувачем FastComments.com або `SSO User`.
@@ -46,5 +45,3 @@ interface VotesForUserResponse {
     pendingVotes: Vote[]
 }
 [inline-code-end]
-
----

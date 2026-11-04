@@ -6,5 +6,3 @@ FastComments doda vgnezdene komentarje v vaše tečaje Canvas. Na strani se prik
 </div>
 
 Komentarji so priloženi vsaki strani tečaja ali povezavi do vira, zato ostanejo razprave urejene po strani, nalogi ali modulu.
-
----

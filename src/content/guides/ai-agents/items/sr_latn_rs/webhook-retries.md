@@ -1,68 +1,68 @@
-Agent webhooks retry on failure. Delivery is **fire-and-forget from the agent's perspective** - a failed delivery does not block agent execution or roll back any actions - and a queue + cron drives retries asynchronously.
+Agent vebhukovi ponavljaju pokušaje u slučaju greške. Isporuka je **fire-and-forget iz perspektive agenta** - neuspešna isporuka ne blokira izvršavanje agenta niti poništava bilo koje akcije - a red + cron asinhrono upravlja ponovnim pokušajima.
 
-### Queue model
+### Model reda
 
-Each event is queued **once per matching webhook**. So if you have three webhooks subscribed to `trigger.succeeded` for a given agent + domain, the platform queues three deliveries; each is delivered and retried independently. A failure on one webhook never affects the others.
+Svaki događaj se stavlja u red **jednom po odgovarajućem vebhuku**. Dakle, ako imate tri vebhuka pretplaćena na `trigger.succeeded` za dati agent + domen, platforma stavlja tri isporuke u red; svaka se isporučuje i ponavlja nezavisno. Greška na jednom vebhuku nikada ne utiče na ostale.
 
-### What's retried
+### Šta se ponavlja
 
-A delivery is retried when:
+Isporuka se ponavlja kada:
 
-- The HTTP request **does not complete** (DNS failure, connection refused, timeout).
-- The HTTP response code is any non-2xx status that is not in the configured **No-retry status codes** list.
+- HTTP zahtev **ne bude dovršen** (DNS greška, odbijena veza, istek vremena).
+- HTTP kod odgovora je bilo koji ne-2xx status koji nije na konfigurisanoj listi **No-retry status codes**.
 
-A delivery is **not retried** when:
+Isporuka se **ne ponavlja** kada:
 
-- The response code is `2xx` (success).
-- The response code is in the configured **No-retry status codes** list. By default this list is empty - any non-2xx is retried.
+- Kod odgovora je `2xx` (uspeh).
+- Kod odgovora je na konfigurisanoj listi **No-retry status codes**. Podrazumevano je ova lista prazna - svaki ne-2xx se ponavlja.
 
-### Configuring no-retry codes
+### Konfigurisanje kodova bez ponavljanja
 
-The webhook config form has a **No-retry status codes** field (multi-value). Common entries:
+Forma za konfiguraciju vebhuka ima polje **No-retry status codes** (viševrednosno). Uobičajeni unosi:
 
-- `410` - Gone. Your endpoint is permanently moved or the resource is gone. Retrying just wastes both sides' bandwidth.
-- `422` - Unprocessable Entity. Your endpoint understood the payload but considered it invalid. Retrying with the same payload will get the same answer.
-- `400` - Bad Request, in the same spirit.
+- `410` - Gone. Vaš endpoint je trajno premešten ili resurs više ne postoji. Ponavljanje samo rasipava propusnost obe strane.
+- `422` - Unprocessable Entity. Vaš endpoint je razumeo sadržaj ali ga je smatrao nevažećim. Ponavljanje sa istim sadržajem će dati isti odgovor.
+- `400` - Bad Request, u istom duhu.
 
-Adding a code here means: when the endpoint returns it, mark the delivery as failed-terminal and stop retrying.
+Dodavanje koda ovde znači: kada endpoint vrati taj kod, isporuka se označava kao trajno neuspešna i prestaje se sa ponavljanjem.
 
-### Retry schedule
+### Raspored ponavljanja
 
-A background worker runs every few seconds and processes any deliveries whose next attempt time has passed.
+Pozadinski radnik radi svakih nekoliko sekundi i obrađuje sve isporuke čije je vreme sledećeg pokušaja prošlo.
 
-After each failure, the next-attempt time is pushed forward with **linear backoff**: the wait grows as `60 seconds * attempt count` (so attempt 1 waits 1 minute, attempt 2 waits 2 minutes, and so on).
+Posle svake greške, vreme sledećeg pokušaja se pomera unapred sa **linearnim backoff**: čekanje raste kao `60 seconds * attempt count` (tako pokušaj 1 čeka 1 minut, pokušaj 2 čeka 2 minuta, i tako dalje).
 
-After 99 failed attempts (or 3 in local development), the delivery is given up and dropped from the queue. The delivery log entries do persist and remain visible in the [Zapisnici isporuka webhook-a](#webhook-logs) page until they expire.
+Posle 99 neuspešnih pokušaja (ili 3 u lokalnom razvoju), isporuka se odustaje i uklanja iz reda. Unosi u dnevniku isporuke ostaju sačuvani i vidljivi na stranici [Webhook Delivery Logs](#webhook-logs) dok ne isteknu.
 
-### Idempotence on your side
+### Idempotencija na vašoj strani
 
-Because we retry, your endpoint **must be idempotent**. The same `triggerId` (or `approvalId`) can arrive more than once. Your endpoint should:
+Pošto ponavljamo pokušaje, vaš endpoint **mora biti idempotentan**. Isti `triggerId` (ili `approvalId`) može stići više puta. Vaš endpoint treba da:
 
-- Use a unique key (`triggerId` for trigger events, `approvalId` for approval events) as a dedup token.
-- Accept duplicate deliveries gracefully (return 200 the second time).
+- Koristi jedinstveni ključ (`triggerId` za događaje okidača, `approvalId` za događaje odobrenja) kao token za deduplikaciju.
+- Graciozno prihvata duplikate isporuka (vrati 200 drugi put).
 
-A non-idempotent endpoint will eventually double-process some deliveries, especially during transient outages where one timeout retries 30 seconds later but the original request actually succeeded.
+Neidempotentan endpoint će na kraju dvostruko obraditi neke isporuke, posebno tokom prolaznih prekida gde jedan istek vremena ponavlja 30 sekundi kasnije, ali je prvobitni zahtev zapravo uspeo.
 
-### Ordering
+### Redosled
 
-Deliveries are **not strictly ordered**. A `trigger.succeeded` and a downstream `approval.requested` (from the same run) can arrive in either order if one retries and the other does not. Your endpoint should not assume causal ordering.
+Isporuke **nisu strogo uređene**. `trigger.succeeded` i nizvodni `approval.requested` (iz istog pokretanja) mogu stići u bilo kom redosledu ako se jedan ponavlja a drugi ne. Vaš endpoint ne treba da pretpostavlja uzročni redosled.
 
-If you need ordering, use the timestamps - `occurredAt` on the envelope, plus the trigger/approval `createdAt` in the data block - to reconstruct order on your side.
+Ako vam treba redosled, koristite vremenske oznake - `occurredAt` na omotu, plus `createdAt` okidača/odobrenja u bloku podataka - da rekonstruišete redosled na svojoj strani.
 
-### Cleanup
+### Čišćenje
 
-Deliveries are removed from the queue as soon as they either succeed or hit the attempt cap. The platform does not retain terminally-failed deliveries in the queue itself; the durable record of each attempt lives in the [Zapisnici isporuka webhook-a](#webhook-logs) page.
+Isporuke se uklanjaju iz reda čim ili uspeju ili dostignu ograničenje pokušaja. Platforma ne zadržava trajno neuspešne isporuke u samom redu; trajni zapis svakog pokušaja živi na stranici [Webhook Delivery Logs](#webhook-logs).
 
-### Where to look when retries fail
+### Gde gledati kada ponavljanja ne uspevaju
 
-The [Zapisnici isporuka webhook-a](#webhook-logs) page is the place to see why a webhook is failing. Common causes:
+Stranica [Webhook Delivery Logs](#webhook-logs) je mesto za videti zašto vebhuk ne uspeva. Uobičajeni uzroci:
 
-- **DNS resolution failure** - the URL is wrong or the domain is gone.
-- **TLS errors** - your endpoint's certificate is invalid or expired.
-- **Connection refused / timeout** - your endpoint is down.
-- **5xx responses** - your endpoint is up but errored. The response body (truncated) is recorded.
-- **4xx responses** - your endpoint rejected the payload. If this is intentional, add the code to **No-retry status codes**.
+- **Neuspeh DNS rezolucije** - URL je pogrešan ili domen više ne postoji.
+- **TLS greške** - sertifikat vašeg endpointa je nevažeći ili istekao.
+- **Odbijena veza / istek vremena** - vaš endpoint je nedostupan.
+- **5xx odgovori** - vaš endpoint radi ali je došlo do greške. Telo odgovora (skraćeno) se beleži.
+- **4xx odgovori** - vaš endpoint je odbio sadržaj. Ako je ovo namerno, dodajte kod u **No-retry status codes**.
 
-### Pause an unhealthy webhook
+### Pauziranje neispravnog vebhuka
 
-If a webhook is consistently failing, the cleanest fix is to delete it (or temporarily clear its event subscription list). The platform does not auto-disable failing webhooks - they keep retrying until the delivery is given up.
+Ako vebhuk dosledno ne uspeva, najčistije rešenje je da ga obrišete (ili privremeno ispraznite njegovu listu pretplata na događaje). Platforma ne automatski onemogućava neuspešne vebhuke - oni nastavljaju da ponavljaju pokušaje dok se ne odustane od isporuke.

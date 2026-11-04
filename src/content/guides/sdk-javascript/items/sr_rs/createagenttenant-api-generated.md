@@ -1,14 +1,11 @@
-Creates a new trial account for an AI agent without a human signup. No API key is needed to call this.
+Креира нови пробни налог за AI агента без људске регистрације. За позив овог API-ја није потребан API кључ.
 
-The response contains the tenant id, an API key that works immediately against the REST API and the
-MCP server, and a claim URL. Give the claim URL to the human you are working for: opening it while
-logged in to FastComments attaches the account to them. Unclaimed accounts, and their keys, are
-deleted 72 hours after creation. Until claimed, the account has the standard trial limits.
+Одговор садржи ID станара (tenant id), API кључ који одмах ради са REST API-јем и MCP сервером, као и URL за преузимање налога (claim URL). Дајте тај URL људском кориснику за ког радите: отварање URL-а док је пријављен на FastComments везује налог за њега. Непреузети налози, заједно са својим кључевима, бришу се 72 сата након креирања. Док налог није преузет, на њега се односе стандардна ограничења пробног периода.
 
 ## Параметри
 
-| Име | Тип | Обавезно | Опис |
-|------|------|----------|------|
+| Назив | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
 | createAgentTenantBody | CreateAgentTenantBody | Да |  |
 
 ## Одговор
@@ -17,7 +14,7 @@ deleted 72 hours after creation. Until claimed, the account has the standard tri
 
 ## Пример
 
-[inline-code-attrs-start title = 'createAgentTenant Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createAgentTenant пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 const tenantBody: CreateAgentTenantBody = {
   name: "Acme Corp",
@@ -28,5 +25,3 @@ const tenantBody: CreateAgentTenantBody = {
 
 const result: CreateAgentTenantResponse = await createAgentTenant(tenantBody);
 [inline-code-end]
-
----

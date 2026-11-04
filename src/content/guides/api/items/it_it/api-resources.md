@@ -1,4 +1,3 @@
----
 ### Utilizzo delle risorse
 
 Va notato che il recupero dei dati dall'API viene conteggiato come utilizzo sul tuo account.
@@ -16,5 +15,3 @@ Consigliamo di leggere prima la documentazione delle Pagine, per aiutare a limit
 ### Webhook
 
 Le sottoscrizioni ai webhook hanno la propria guida. `POST`, `GET` e `DELETE /api/v1/webhooks`, e `GET /api/v1/webhooks/sample-payloads`, sono documentati in [Managing Subscriptions via API](/guide-webhooks.html#webhooks-api-subscriptions), e i payload degli eventi in [Webhook Structures](/guide-webhooks.html#webhooks-structures).
-
----

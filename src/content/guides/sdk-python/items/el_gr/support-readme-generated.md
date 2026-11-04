@@ -1,5 +1,3 @@
----
 - [Τεκμηρίωση](https://docs.fastcomments.com)
 - [Θέματα στο GitHub](https://github.com/fastcomments/fastcomments-python/issues)
 - [Υποστήριξη FastComments](https://fastcomments.com/auth/my-account/help)
----

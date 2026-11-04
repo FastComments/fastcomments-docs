@@ -1,4 +1,3 @@
----
 ## Parámetros
 
 | Name | Type | Location | Required | Description |
@@ -33,5 +32,3 @@ PublicAPI.checkedCommentsForBlocked(tenantId: tenantId, commentIds: commentIds, 
     }
 }
 [inline-code-end]
-
----

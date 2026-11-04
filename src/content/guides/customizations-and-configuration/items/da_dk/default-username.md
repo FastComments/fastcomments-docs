@@ -1,4 +1,3 @@
----
 Når brugere kommenterer eller stemmer, og de ikke er logget ind, bliver de bedt om at angive deres e‑mail og brugernavn.
 
 I tilfælde af anonyme kommentarer er det nogle gange ønskeligt at definere et standardbrugernavn for at reducere friktionen ved kommentering. Dette kan gøres fra tilpasnings‑UI’en. Anonym kommentering skal først aktiveres.
@@ -12,5 +11,3 @@ Standardbrugernavnet er et delt visningsnavn, ikke en identitet. En besøgende, 
 Brugernavne, som en besøgende indtaster selv, skal stadig være unikke.
 
 Hvis du foretrækker, at hver besøgende får et særskilt navn uden at skulle tænke på et, se [Generer brugernavne automatisk](/guide-customizations-and-configuration.html#auto-generate-username).
-
----

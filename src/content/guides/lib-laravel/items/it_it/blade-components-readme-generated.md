@@ -1,4 +1,3 @@
----
 ### Widget dei commenti
 
 ```blade
@@ -26,4 +25,3 @@
 <x-fastcomments-comment-count url-id="my-page-id" />
 <x-fastcomments-comment-count url-id="my-page-id" :number-only="true" />
 ```
----

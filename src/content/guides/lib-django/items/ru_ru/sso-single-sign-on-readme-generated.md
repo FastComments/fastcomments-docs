@@ -1,15 +1,15 @@
-Enable SSO and choose a mode in `settings.py`. Secure SSO signs the user
-server-side with HMAC-SHA256 using your API secret and is recommended.
+Включите SSO и выберите режим в `settings.py`. Secure SSO подписывает пользователя
+на стороне сервера с помощью HMAC-SHA256, используя ваш API secret, и является рекомендуемым вариантом.
 
 ```python
 FASTCOMMENTS = {
     "TENANT_ID": os.environ["FASTCOMMENTS_TENANT_ID"],
-    "API_KEY": os.environ["FASTCOMMENTS_API_KEY"],   # your API secret; signs Secure SSO
+    "API_KEY": os.environ["FASTCOMMENTS_API_KEY"],   # ваш API secret; подписывает Secure SSO
     "SSO": {
         "ENABLED": True,
         "MODE": "secure",                            # "secure" | "simple"
-        # Map FastComments fields to your user model. Values may be an attribute
-        # name, a dotted path ("profile.avatar_url"), a callable(user), or None.
+        # Сопоставьте поля FastComments с вашей моделью пользователя. Значением может быть
+        # имя атрибута, путь через точку ("profile.avatar_url"), callable(user) или None.
         "USER_MAP": {
             "id": "id",
             "email": "email",
@@ -18,27 +18,33 @@ FASTCOMMENTS = {
             "display_name": None,
             "website_url": None,
         },
-        "IS_ADMIN": lambda user: user.is_staff,      # callable(user) -> bool, or dotted path
+        "IS_ADMIN": lambda user: user.is_staff,      # callable(user) -> bool, или путь через точку
         "IS_MODERATOR": None,
-        "GROUP_IDS": None,                           # callable(user) -> list, or dotted path
+        "GROUP_IDS": None,                           # callable(user) -> list, или путь через точку
     },
 }
 ```
 
-> **Выбирайте SSO `id` осознанно.** FastComments `id` — это постоянный
-> идентификатор истории комментариев пользователя. По умолчанию `USER_MAP` сопоставляет его с вашей
-> первичным ключом Django для удобства без настройки, но последовательные целочисленные PK легко перечислить и сложно изменить позже (изменение `id` пользователя разбивает их
-> историю на новую учётную запись). Для любого использования, выходящего за рамки демонстрации, сопоставляйте `id` со стабильным,
-> непрозрачным значением, выбранным заранее (UUID или отдельный публичный id), и никогда не помещайте в него
-> закрытые данные. Пример приложения использует идентификатор на основе имени пользователя по этой причине.
+> **Осознанно выбирайте SSO `id`.** `id` в FastComments — это постоянный
+> идентификатор истории комментариев пользователя. По умолчанию `USER_MAP` сопоставляет его
+> с первичным ключом Django для удобства настройки «из коробки», но последовательные
+> целочисленные PK перебираемы, и их сложно изменить позже (смена `id` пользователя
+> разделяет его историю на новый аккаунт). Для чего-либо помимо демо сопоставьте `id`
+> со стабильным, непрозрачным значением, выбранным заранее (UUID или отдельный публичный id),
+> и никогда не помещайте в него приватные данные. Пример приложения использует id на основе
+> имени пользователя именно по этой причине.
 
-SSO is injected automatically into `{% fastcomments %}`, `{% fastcomments_live_chat %}`, `{% fastcomments_collab_chat %}`, `{% fastcomments_image_chat %}` and `{% fastcomments_user_activity %}` for the current user.
+SSO автоматически внедряется в `{% fastcomments %}`, `{% fastcomments_live_chat %}`,
+`{% fastcomments_collab_chat %}`, `{% fastcomments_image_chat %}` и
+`{% fastcomments_user_activity %}` для текущего пользователя.
 
-Login/logout URLs shown to signed-out visitors default to `reverse("login")` / `reverse("logout")`; override them with `SSO["LOGIN_URL"]` / `SSO["LOGOUT_URL"]`.
+URL-адреса входа/выхода, отображаемые неавторизованным посетителям, по умолчанию
+указывают на `reverse("login")` / `reverse("logout")`; переопределите их с помощью
+`SSO["LOGIN_URL"]` / `SSO["LOGOUT_URL"]`.
 
 ### Пользовательское сопоставление
 
-Two higher-precedence options beat `USER_MAP`:
+Два варианта с более высоким приоритетом имеют преимущество над `USER_MAP`:
 
 - **Метод в вашей модели пользователя** (питонический аналог интерфейса):
 
@@ -48,10 +54,10 @@ Two higher-precedence options beat `USER_MAP`:
           return {"id": self.pk, "email": self.email, "username": self.get_username()}
   ```
 
-- **Глобальный маппер**, точечный путь к `callable(user) -> dict`:
+- **Глобальный маппер** — путь через точку к `callable(user) -> dict`:
 
   ```python
   FASTCOMMENTS = {"SSO": {"USER_MAPPER": "myapp.sso.map_user"}}
   ```
 
-Precedence is `USER_MAPPER` > `to_fastcomments_user_data()` > `USER_MAP`.
+Приоритет: `USER_MAPPER` > `to_fastcomments_user_data()` > `USER_MAP`.

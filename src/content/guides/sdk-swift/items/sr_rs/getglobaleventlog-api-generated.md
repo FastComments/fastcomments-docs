@@ -41,5 +41,3 @@ PublicAPI.getGlobalEventLog(tenantId: tenantId, urlId: urlId, userIdWS: userIdWS
     }
 }
 [inline-code-end]
-
----

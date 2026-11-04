@@ -1,4 +1,3 @@
----
 Istnieje kilka typów powiadomień i kanałów, w których FastComments wysyła powiadomienia:
 
 - Natychmiastowe przez e‑mail.
@@ -10,4 +9,3 @@ Istnieje kilka typów powiadomień i kanałów, w których FastComments wysyła 
   - Powiadomienia o odpowiedziach w ankiecie są wysyłane do autora ankiety jako codzienny e‑mail.
 - Czasowe przez e‑mail.
   - Przykłady obejmują Podsumowanie Społeczności, które może być wysyłane codziennie, tygodniowo lub miesięcznie (lub wyłączone).
----

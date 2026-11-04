@@ -1,4 +1,3 @@
----
 Maakt een nieuw proefaccount aan voor een AI‑agent zonder menselijke registratie. Er is geen API‑sleutel nodig om dit aan te roepen.
 
 De respons bevat de tenant‑id, een API‑sleutel die onmiddellijk werkt tegen de REST‑API en de MCP‑server, en een claim‑URL. Geef de claim‑URL aan de persoon waarvoor je werkt: deze openen terwijl je bent aangemeld bij FastComments koppelt het account aan hen. Niet‑geclaimde accounts, en hun sleutels, worden 72 uur na creatie verwijderd. Totdat ze geclaimd zijn, heeft het account de standaard proeflimieten.
@@ -27,5 +26,3 @@ DefaultAPI.createAgentTenant(createAgentTenantBody: createAgentTenantBody) { (re
     }
 }
 [inline-code-end]
-
----

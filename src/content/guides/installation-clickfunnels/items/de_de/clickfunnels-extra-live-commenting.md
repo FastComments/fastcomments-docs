@@ -31,5 +31,3 @@ Wenn Sie nach dem Code-Snippet für ClickFunnels Live-Kommentare suchen, probier
     })();
 </script>
 [inline-code-end]
-
----

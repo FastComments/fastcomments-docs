@@ -63,5 +63,3 @@ Disse afkrydsningsfelter gælder pr. agent, ikke globalt. Et almindeligt mønste
 - Thread summarizer: thread context **on**, page context **on**, user history **off**.
 
 Stræb efter den minimale mængde kontekst, en agent behøver for at være korrekt i de kald, den faktisk foretager - ekstra kontekst koster tokens ved hver kørsel, selv når agenten ikke bruger den.
-
----

@@ -1,4 +1,3 @@
----
 FastComments E-posta Şablonları, [EJS şablon dili](https://ejs.co/#docs) kullanır.
 
 Değişkenleri yazdırmak için örnek sözdizimi `<%= object.someValue %>` şeklindedir ve koşullu ifadeler şu şekilde yapılabilir:
@@ -12,5 +11,3 @@ Değişkenleri yazdırmak için örnek sözdizimi `<%= object.someValue %>` şek
 Yorum içeriği gibi ham HTML yazdırmak şu şekilde yapılır: `<%- comment.commentHTML %>`. Dikkat edin, `-` `=` yerine kullanılır.
 
 Sözdizimi ile ilgili daha fazla belge için yukarıdaki bağlantıya bakın.
-
----

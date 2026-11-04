@@ -36,5 +36,3 @@ try {
     print('Exception when calling PublicApi->getCommentsForUser: $e\n');
 }
 [inline-code-end]
-
----

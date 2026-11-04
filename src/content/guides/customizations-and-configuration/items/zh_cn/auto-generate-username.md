@@ -1,4 +1,3 @@
----
 当用户发表评论或投票且未登录时，系统会要求他们提供电子邮件和用户名。
 
 对于某些站点来说，要求访客自行想出唯一的用户名是一道障碍，尤其在移动端。FastComments 可以为每位新访客生成一个中性用户名，并预填到用户名字段中，例如 `BraveOtter4172`。
@@ -16,5 +15,3 @@
 - 它在开启或关闭[匿名评论](/guide-customizations-and-configuration.html#allow-anon)时均可工作。关闭匿名评论后，访客仍需输入电子邮件，但不再需要想出用户名。
 - 再次访问的访客如果输入之前使用过的电子邮件，系统会将其匹配到已有账户，并保留该账户的用户名。
 - 如果同时设置了[默认用户名](/guide-customizations-and-configuration.html#default-username)，生成的名称将优先使用。
-
----

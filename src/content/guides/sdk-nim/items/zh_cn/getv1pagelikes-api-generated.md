@@ -1,4 +1,3 @@
----
 ## 参数
 
 | 名称 | 类型 | 必填 | 描述 |
@@ -19,5 +18,3 @@ if response.isSome:
   let pageLikes = response.get()
   # 根据需要使用 pageLikes
 [inline-code-end]
-
----

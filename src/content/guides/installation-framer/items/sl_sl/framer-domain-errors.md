@@ -1,12 +1,12 @@
-Morda boste prejeli napako pri pooblastilu, podobno spodnji:
+Morda boste prejeli napako avtorizacije, kot je naslednja:
 
 <div class="screenshot white-bg">
     <div class="title">Manjka konfiguracija domene</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-webflow-step-5.png" alt="Domain Configuration Missing" />
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-webflow-step-5.png" alt="Manjka konfiguracija domene" />
 </div>
 
-Do tega pride, ker FastComments ne ve, da naj dovoli uporabo vašega računa na tej domeni.
+To je zato, ker FastComments ne ve, da naj bi bil vaš račun uporabljen na tej domeni.
 
-V tem primeru je rešitev preprosta. Preprosto morate dodati svojo spletno stran v svoj račun FastComments.com.
+V tem primeru je rešitev preprosta. Dodati morate le svojo stran v svoj račun FastComments.com.
 
-[Go here to add your site to your account.](https://fastcomments.com/auth/my-account/configure-domains)
+[Pojdite sem, da dodate svojo stran v svoj račun.](https://fastcomments.com/auth/my-account/configure-domains)

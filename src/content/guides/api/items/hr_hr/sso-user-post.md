@@ -45,5 +45,3 @@ interface SSOUserPostResponse {
 Podaci poslani putem API-ja mogu se prebrisati jednostavnim slanjem drugačijeg SSO User HMAC payloada. Na primjer, ako postavite korisničko ime putem API-ja, ali zatim proslijedite drugačije korisničko ime kroz SSO tok prilikom učitavanja stranice, automatski ćemo ažurirati njihovo korisničko ime.
 
 Nećemo ažurirati parametre korisnika u ovom toku osim ako ih eksplicitno ne navedete ili ne postavite na null (ne undefined).
-
----

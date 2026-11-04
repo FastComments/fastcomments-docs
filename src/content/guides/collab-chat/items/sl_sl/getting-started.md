@@ -1,6 +1,6 @@
-### Hiter začetek
+### Hitri začetek
 
-Začetek s Collab Chat je preprost. Potrebujete skripto FastComments Collab Chat, HTML element, ki vsebuje besedilo, ki ga želite označiti, in konfiguracijski objekt z vašim Tenant ID.
+Začetek uporabe Collab Chat je preprost. Potrebujete skripto FastComments Collab Chat, element HTML, ki vsebuje besedilo, ki ga želite označiti, in konfiguracijski objekt z vašim Tenant ID.
 
 ### Namestitev
 
@@ -23,17 +23,17 @@ Tukaj je minimalen primer:
     <title>My Article with Collab Chat</title>
 </head>
 <body>
-    <!-- Kotejner z vašo vsebino -->
+    <!-- Your content container -->
     <div id="article-content" style="min-height: 500px;">
         <h1>My Article Title</h1>
         <p>This is a paragraph that users can annotate. Simply highlight any text to start a discussion!</p>
         <p>You can have multiple paragraphs, and users can highlight text across any of them.</p>
     </div>
 
-    <!-- Naložite skripto Collab Chat -->
+    <!-- Load the Collab Chat script -->
     <script src="https://cdn.fastcomments.com/js/embed-collab-chat.min.js"></script>
 
-    <!-- Inicializirajte Collab Chat -->
+    <!-- Initialize Collab Chat -->
     <script>
         FastCommentsCollabChat(document.getElementById('article-content'), {
             tenantId: 'demo'
@@ -43,20 +43,20 @@ Tukaj je minimalen primer:
 </html>
 [inline-code-end]
 
-Replace `'demo'` with your actual FastComments Tenant ID if it's not already, which you can find in your [nadzorni plošči FastComments](https://fastcomments.com/auth/my-account/api-secret).
+Zamenjajte `'demo'` z vašim dejanskim FastComments Tenant ID, če tega še niste storili, ki ga najdete v svoji [nadzorni plošči FastComments](https://fastcomments.com/auth/my-account/api-secret).
 
 ### Kako deluje
 
-Ko je inicializirano, lahko uporabniki izberejo katerokoli besedilo znotraj ciljnega elementa. Po kratki zamudi (3,5 sekunde na namizju) se prikaže poziv, ki jim omogoči začetek razprave. Ko je razprava ustvarjena, se na besedilu prikaže vizualna označba. Drugi uporabniki se lahko z miško premaknejo nad ali kliknejo označbo, da si ogledajo in sodelujejo v razpravi. Vse razprave se sinhronizirajo v realnem času med vsemi obiskovalci.
+Ko je enkrat inicializiran, lahko uporabniki izberejo katero koli besedilo znotraj ciljnega elementa. Po kratkem zamiku (3,5 sekunde na namizju) se prikaže poziv, ki jim omogoča začetek razprave. Ko je razprava ustvarjena, se na besedilu prikaže vizualna oznaka. Drugi uporabniki lahko z miško zapeljejo čez oznako ali kliknejo nanjo, da si ogledajo razpravo in se ji pridružijo. Vse razprave se v realnem času sinhronizirajo med vsemi obiskovalci.
 
-### Predstavitev v živo
+### Živi demo
 
-Collab Chat si lahko ogledate v akciji na naši [predstavitveni strani v živo](https://fastcomments.com/product/collab-chat).
+Collab Chat v akciji si lahko ogledate na naši [strani z živim demom](https://fastcomments.com/product/collab-chat).
 
 ### Naslednji koraki
 
-Sedaj, ko imate osnovno delujoče, lahko prilagodite videz in vedenje v vodiču o možnostih konfiguracije. Oglejte si vodič o vedenju izbire besedila, da razumete, kako deluje izbira besedila. Več o stiliranju in podpori temnega načina preberite v vodiču za prilagajanje. Za napredne integracije raziščite referenco API-ja.
+Zdaj, ko imate osnove v delovanju, lahko prilagodite videz in vedenje v vodiču Configuration Options. Oglejte si vodič Text Selection Behavior, da razumete, kako deluje izbira besedila. Naučite se o oblikovanju in podpori za temni način v vodiču Customization. Za naprednejše integracije raziščite API Reference.
 
-### Front-end knjižnice
+### Frontend knjižnice
 
-Vse FastComments front-end knjižnice (react, vue, angular itd.) vključujejo Collab Chat.
+Vse FastComments frontend knjižnice (react, vue, angular itd.) imajo Collab Chat.

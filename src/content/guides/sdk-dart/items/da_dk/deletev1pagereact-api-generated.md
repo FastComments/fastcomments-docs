@@ -26,5 +26,3 @@ try {
     print('Exception when calling PublicApi->deleteV1PageReact: $e\n');
 }
 [inline-code-end]
-
----

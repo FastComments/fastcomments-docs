@@ -1,4 +1,3 @@
----
 ## פרמטרים
 
 | שם | סוג | מיקום | נדרש | תיאור |
@@ -29,5 +28,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_gif_large: #{e}"
 end
 [inline-code-end]
-
----

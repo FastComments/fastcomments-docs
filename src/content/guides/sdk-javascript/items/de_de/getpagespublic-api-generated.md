@@ -1,11 +1,11 @@
-List pages for a tenant. Used by the FChat desktop client to populate its room list.
-Requires `enableFChat` to be true on the resolved custom config for each page.
-Pages that require SSO are filtered against the requesting user's group access.
+Listet Seiten für einen Tenant auf. Wird vom FChat-Desktop-Client verwendet, um seine Raumliste zu füllen.
+Erfordert, dass `enableFChat` in der aufgelösten benutzerdefinierten Konfiguration für jede Seite auf true gesetzt ist.
+Seiten, die SSO erfordern, werden anhand des Gruppenzugriffs des anfragenden Benutzers gefiltert.
 
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
-|------|------|--------------|--------------|
+|------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | cursor | string | Nein |  |
 | limit | number | Nein |  |
@@ -15,7 +15,7 @@ Pages that require SSO are filtered against the requesting user's group access.
 
 ## Antwort
 
-Rückgabe: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPublicPagesResponse.ts)
+Gibt zurück: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPublicPagesResponse.ts)
 
 ## Beispiel
 
@@ -40,5 +40,3 @@ async function fetchPublicPages() {
   console.log(response);
 }
 [inline-code-end]
-
----

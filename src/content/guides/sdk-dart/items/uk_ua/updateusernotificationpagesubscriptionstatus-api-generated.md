@@ -1,22 +1,22 @@
-Enable or disable notifications for a page. When users are subscribed to a page, notifications are created
-for new root comments, and also
+Увімкніть або вимкніть сповіщення для сторінки. Коли користувачі підписані на сторінку, сповіщення створюються
+для нових кореневих коментарів, а також
 
-## Parameters
+## Параметри
 
-| Name | Type | Location | Required | Description |
+| Назва | Тип | Розташування | Обов'язково | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| urlId | string | query | Yes |  |
-| url | string | query | Yes |  |
-| pageTitle | string | query | Yes |  |
-| subscribedOrUnsubscribed | string | path | Yes |  |
-| sso | string | query | No |  |
+| tenantId | string | query | Так |  |
+| urlId | string | query | Так |  |
+| url | string | query | Так |  |
+| pageTitle | string | query | Так |  |
+| subscribedOrUnsubscribed | string | path | Так |  |
+| sso | string | query | Ні |  |
 
-## Response
+## Відповідь
 
 Повертає: `UpdateUserNotificationPageSubscriptionStatusResponse`
 
-## Example
+## Приклад
 
 [inline-code-attrs-start title = 'Приклад updateUserNotificationPageSubscriptionStatus'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

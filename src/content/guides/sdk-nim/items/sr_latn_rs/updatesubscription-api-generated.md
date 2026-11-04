@@ -31,5 +31,3 @@ let (responseOpt, httpResponse) = client.updateSubscription(
 if responseOpt.isSome:
   let subscriptionResult = responseOpt.get()
 [inline-code-end]
-
----

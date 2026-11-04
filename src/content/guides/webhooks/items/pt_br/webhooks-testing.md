@@ -1,24 +1,24 @@
-The new and edit webhook pages have a `Send Test Payload` button that sends a request to the URL currently in the form, whether or not it has been saved. The Create and Update events send a dummy WebhookComment object, while testing Delete will send a dummy request body with just an ID.
+As páginas de novo webhook e de edição de webhook têm um botão `Send Test Payload` que envia uma requisição para a URL atualmente no formulário, tenha ela sido salva ou não. Os eventos Create e Update enviam um objeto WebhookComment fictício, enquanto o teste de Delete enviará um corpo de requisição fictício contendo apenas um ID.
 
 ## Verificando Payloads
 
-When testing your webhook integration, verify the incoming requests include the following headers:
+Ao testar sua integração de webhook, verifique se as requisições recebidas incluem os seguintes cabeçalhos:
 
-1. **`X-FastComments-Timestamp`** - Unix timestamp (seconds)
-2. **`X-FastComments-Signature`** - HMAC-SHA256 signature
+1. **`X-FastComments-Timestamp`** - Timestamp Unix (segundos)
+2. **`X-FastComments-Signature`** - Assinatura HMAC-SHA256
 
-Webhooks created before the signature scheme was introduced also receive a **`token`** header containing your API Secret. New webhooks do not.
+Webhooks criados antes da introdução do esquema de assinatura também recebem um cabeçalho **`token`** contendo seu API Secret. Webhooks novos não recebem.
 
-Use the HMAC signature verification to ensure payloads are authentic.
+Use a verificação de assinatura HMAC para garantir que os payloads são autênticos.
 
 ## Ferramentas de Teste
 
-You can use tools like [webhook.site](https://webhook.site) or [ngrok](https://ngrok.com) to inspect incoming webhook payloads during development.
+Você pode usar ferramentas como [webhook.site](https://webhook.site) ou [ngrok](https://ngrok.com) para inspecionar os payloads de webhook recebidos durante o desenvolvimento.
 
 ## Tipos de Evento
 
-- **Create Event**: Triggered when a new comment is created.
-- **Update Event**: Triggered when a comment is edited.
-- **Delete Event**: Triggered when a comment is deleted.
+- **Evento Create**: Disparado quando um novo comentário é criado.
+- **Evento Update**: Disparado quando um comentário é editado.
+- **Evento Delete**: Disparado quando um comentário é excluído.
 
-Each webhook is tied to one event and one HTTP method (POST, PUT or DELETE). Each event includes the full comment data in the request body (see [Data Structures](/guide-webhooks.html#webhooks-structures) for the payload format).
+Cada webhook está vinculado a um evento e a um método HTTP (POST, PUT ou DELETE). Cada evento inclui os dados completos do comentário no corpo da requisição (veja [Estruturas de Dados](/guide-webhooks.html#webhooks-structures) para o formato do payload).

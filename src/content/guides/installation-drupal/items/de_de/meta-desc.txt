@@ -1,3 +1,1 @@
----
 Installieren Sie das Drupal‑Modul für Live‑Kommentare als Widget‑Blöcke oder Inhalts‑Typ‑Felder, mit SSO, rollenbasierten Berechtigungen und EU‑Datenresidenz.
----

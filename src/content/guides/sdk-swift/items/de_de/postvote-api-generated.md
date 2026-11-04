@@ -1,4 +1,3 @@
----
 ## Parameter
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
@@ -37,5 +36,3 @@ ModerationAPI.postVote(tenantId: tenantId, commentId: commentId, options: Modera
     }
 }
 [inline-code-end]
-
----

@@ -46,5 +46,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Izuzetak prilikom poziva PublicApi->upload_image: %s\n" % e)
 [inline-code-end]
-
----

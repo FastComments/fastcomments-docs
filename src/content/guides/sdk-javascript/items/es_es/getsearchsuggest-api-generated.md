@@ -22,5 +22,3 @@ Devuelve: [`ModerationSuggestResponse`](https://github.com/FastComments/fastcomm
   const minimalResponse: ModerationSuggestResponse = await getSearchSuggest(tenantId);
 })();
 [inline-code-end]
-
----

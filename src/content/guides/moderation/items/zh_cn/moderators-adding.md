@@ -1,4 +1,3 @@
----
 对于管理员，在评论审核页面的顶部有一个“添加版主”按钮。
 
 [app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=3&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = '.moderation-settings-options'; alt='评论审核页面顶部的一排按钮，包括“添加版主”按钮'; title='评论审核设置按钮' app-screenshot-end]
@@ -18,4 +17,3 @@
 邀请链接将发送给版主，链接可自动登录。将来如果他们想登录，只需访问<a href="https://fastcomments.com/auth/login" target="_blank">登录页面</a>并输入您之前提供的姓名/电子邮件，即可收到登录链接。
 
 除非他们登出，否则将在登录后保持三十天。
----

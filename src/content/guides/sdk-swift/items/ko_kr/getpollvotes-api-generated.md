@@ -1,42 +1,35 @@
-The individual votes behind one poll's tallies, oldest first.
+하나의 투표 집계 뒤에 있는 개별 투표 기록으로, 오래된 순서부터 정렬됩니다.
 
-하나의 설문 조사 집계 뒤에 있는 개별 투표들, 오래된 순서대로.
+투표는 댓글에 속하므로, 투표 기록은 항상 한 번에 하나의 투표만 조회합니다 - commentId가 필수입니다. 이를 통해 모든 쿼리가 컬렉션이 이미 보유한 인덱스를 사용하게 됩니다.
 
-A poll belongs to a comment, so votes are always read one poll at a time - commentId is required. That
-keeps every query on the indexes the collection already has.
+투표의 프라이버시 설정을 따릅니다: 익명 투표의 기록은 여기서나 id로 조회할 수 없습니다 (poll-anonymous).
 
-설문 조사는 댓글에 속하므로 투표는 항상 한 번에 하나의 설문 조사씩 읽습니다 - commentId가 필요합니다. 이렇게 하면 컬렉션이 이미 가지고 있는 인덱스에서 모든 쿼리를 수행할 수 있습니다.
+## 매개변수
 
-Obeys the poll's privacy: an anonymous poll's votes cannot be read (poll-anonymous), here or by id.
-
-설문 조사 프라이버시를 준수합니다: 익명 설문 조사(poll-anonymous)의 투표는 여기서든 ID를 통해서든 읽을 수 없습니다.
-
-## Parameters
-
-| Name | Type | Location | Required | Description |
+| 이름 | 타입 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| commentId | string | query | Yes |  |
-| voterId | string | query | No |  |
-| optionId | string | query | No |  |
-| skip | integer | query | No |  |
+| tenantId | string | query | 예 |  |
+| commentId | string | query | 예 |  |
+| voterId | string | query | 아니요 |  |
+| optionId | string | query | 아니요 |  |
+| skip | integer | query | 아니요 |  |
 
-## Response
+## 응답
 
-Returns: [`GetPollVotesResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetPollVotesResponse.swift)
+반환값: [`GetPollVotesResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetPollVotesResponse.swift)
 
-## Example
+## 예제
 
-[inline-code-attrs-start title = 'getPollVotes 예시'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getPollVotes 예제'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 다음 코드 샘플은 아직 베타 버전입니다. 문제가 있으면 http://github.com/OpenAPITools/openapi-generator/issues/new 에 보고해 주세요
+// 다음 코드 샘플은 아직 베타입니다. 문제가 있으면 http://github.com/OpenAPITools/openapi-generator/issues/new 를 통해 보고해 주세요
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let commentId = "commentId_example" // String | 
-let voterId = "voterId_example" // String |  (옵션)
-let optionId = "optionId_example" // String |  (옵션)
-let skip = 987 // Int |  (옵션)
+let voterId = "voterId_example" // String |  (optional)
+let optionId = "optionId_example" // String |  (optional)
+let skip = 987 // Int |  (optional)
 
 DefaultAPI.getPollVotes(tenantId: tenantId, commentId: commentId, options: DefaultAPI.GetPollVotesOptions(voterId: voterId, optionId: optionId, skip: skip)) { (response, error) in
     guard error == nil else {

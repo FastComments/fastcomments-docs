@@ -1,17 +1,17 @@
-List pages for a tenant. Used by the FChat desktop client to populate its room list.  
-Requires `enableFChat` to be true on the resolved custom config for each page.  
-Pages that require SSO are filtered against the requesting user's group access.
+Выводит список страниц для тенанта. Используется десктоп-клиентом FChat для заполнения списка комнат.
+Требует `enableFChat` = true в резолвнутом пользовательском конфиге для каждой страницы.
+Страницы, требующие SSO, фильтруются по групповому доступу запрашивающего пользователя.
 
 ## Параметры
 
-| Имя | Тип | Местоположение | Обязательно | Описание |
-|------|------|----------------|--------------|----------|
-| tenantId | string | path | Yes |  |
-| cursor | string | query | No | Неявный курсор пагинации, возвращаемый как `nextCursor` из предыдущего запроса. Связан с тем же `sortBy`. |
-| limit | integer | query | No | 1..200, по умолчанию 50 |
-| q | string | query | No | Необязательный нечувствительный к регистру фильтр префикса названия. |
-| sortBy | string | query | No | Порядок сортировки. `updatedAt` (по умолчанию, от новых к старым), `commentCount` (сначала страницы с наибольшим количеством комментариев), или `title` (в алфавитном порядке). |
-| hasComments | boolean | query | No | Если true, возвращать только страницы, содержащие хотя бы один комментарий. |
+| Имя | Тип | Расположение | Обязательный | Описание |
+|------|------|----------|----------|-------------|
+| tenantId | string | path | Да |  |
+| cursor | string | query | Нет | Непрозрачный курсор пагинации, возвращённый как `nextCursor` из предыдущего запроса. Привязан к тому же `sortBy`. |
+| limit | integer | query | Нет | 1..200, по умолчанию 50 |
+| q | string | query | Нет | Необязательный фильтр по префиксу заголовка без учёта регистра. |
+| sortBy | string | query | Нет | Порядок сортировки. `updatedAt` (по умолчанию, сначала новые), `commentCount` (сначала с наибольшим числом комментариев) или `title` (по алфавиту). |
+| hasComments | boolean | query | Нет | Если true, возвращать только страницы, у которых есть хотя бы один комментарий. |
 
 ## Ответ
 
@@ -25,11 +25,11 @@ import 'package:fastcomments_dart/api.dart';
 
 final api_instance = PublicApi();
 final tenantId = tenantId_example; // String | 
-final cursor = cursor_example; // String | Неявный курсор пагинации, возвращаемый как `nextCursor` из предыдущего запроса. Связан с тем же `sortBy`.
+final cursor = cursor_example; // String | Непрозрачный курсор пагинации, возвращённый как `nextCursor` из предыдущего запроса. Привязан к тому же `sortBy`.
 final limit = 56; // int | 1..200, по умолчанию 50
-final q = q_example; // String | Необязательный нечувствительный к регистру фильтр префикса названия.
-final sortBy = ; // PagesSortBy | Порядок сортировки. `updatedAt` (по умолчанию, от новых к старым), `commentCount` (сначала страницы с наибольшим количеством комментариев), или `title` (в алфавитном порядке).
-final hasComments = true; // bool | Если true, возвращать только страницы, содержащие хотя бы один комментарий.
+final q = q_example; // String | Необязательный фильтр по префиксу заголовка без учёта регистра.
+final sortBy = ; // PagesSortBy | Порядок сортировки. `updatedAt` (по умолчанию, сначала новые), `commentCount` (сначала с наибольшим числом комментариев) или `title` (по алфавиту).
+final hasComments = true; // bool | Если true, возвращать только страницы, у которых есть хотя бы один комментарий.
 
 try {
     final result = api_instance.getPagesPublic(tenantId, GetPagesPublicOptions(cursor: cursor, limit: limit, q: q, sortBy: sortBy, hasComments: hasComments));

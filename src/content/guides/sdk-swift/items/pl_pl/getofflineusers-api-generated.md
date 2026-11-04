@@ -1,32 +1,32 @@
-Past commenters on the page who are NOT currently online. Sorted by displayName.  
-Użyj tego po wyczerpaniu /users/online, aby wyświetlić sekcję „Members”.  
-Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName} index from afterName forward via $gt, no $skip cost.  
+Osoby komentujące wcześniej na stronie, które NIE są obecnie online. Sortowane według displayName.
+Użyj tego po wyczerpaniu /users/online, aby wyrenderować sekcję "Members".
+Paginacja kursorowa po commenterName: serwer przechodzi po częściowym indeksie {tenantId, urlId, commenterName}
+od afterName w przód za pomocą $gt, bez kosztu $skip.
 
-## Parameters
+## Parametry
 
-| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
-|------|------|----------|----------|------|
-| tenantId | string | path | Yes |  |
-| urlId | string | query | Yes | Identyfikator URL strony (wyczyszczony po stronie serwera). |
-| afterName | string | query | No | Kursor: przekaż nextAfterName z poprzedniej odpowiedzi. |
-| afterUserId | string | query | No | Rozdzielacz tie w kursorze: przekaż nextAfterUserId z poprzedniej odpowiedzi. Wymagane, gdy ustawiono afterName, aby powiązania nazw nie pomijały wpisów. |
+| Nazwa | Typ | Lokalizacja | Wymagany | Opis |
+|------|------|----------|----------|-------------|
+| tenantId | string | path | Tak |  |
+| urlId | string | query | Tak | Identyfikator adresu URL strony (oczyszczany po stronie serwera). |
+| afterName | string | query | Nie | Kursor: przekaż nextAfterName z poprzedniej odpowiedzi. |
+| afterUserId | string | query | Nie | Kursor rozstrzygający remisy: przekaż nextAfterUserId z poprzedniej odpowiedzi. Wymagany, gdy afterName jest ustawiony, aby remisy nazw nie gubiły wpisów. |
 
-## Response
+## Odpowiedź
 
-Returns: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PageUsersOfflineResponse.swift)
+Zwraca: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PageUsersOfflineResponse.swift)
 
-## Example
+## Przykład
 
 [inline-code-attrs-start title = 'Przykład getOfflineUsers'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-// Ten kod jest nadal w wersji beta. W razie problemów prosimy zgłaszać je pod adresem http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let urlId = "urlId_example" // String | Identyfikator URL strony (wyczyszczony po stronie serwera).
-let afterName = "afterName_example" // String | Kursor: przekaż nextAfterName z poprzedniej odpowiedzi. (opcjonalnie)
-let afterUserId = "afterUserId_example" // String | Rozdzielacz tie w kursorze: przekaż nextAfterUserId z poprzedniej odpowiedzi. Wymagane, gdy ustawiono afterName, aby powiązania nazw nie pomijały wpisów. (opcjonalnie)
+let urlId = "urlId_example" // String | Identyfikator adresu URL strony (oczyszczany po stronie serwera).
+let afterName = "afterName_example" // String | Kursor: przekaż nextAfterName z poprzedniej odpowiedzi. (optional)
+let afterUserId = "afterUserId_example" // String | Kursor rozstrzygający remisy: przekaż nextAfterUserId z poprzedniej odpowiedzi. Wymagany, gdy afterName jest ustawiony, aby remisy nazw nie gubiły wpisów. (optional)
 
 PublicAPI.getOfflineUsers(tenantId: tenantId, urlId: urlId, options: PublicAPI.GetOfflineUsersOptions(afterName: afterName, afterUserId: afterUserId)) { (response, error) in
     guard error == nil else {

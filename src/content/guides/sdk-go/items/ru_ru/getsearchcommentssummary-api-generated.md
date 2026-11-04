@@ -43,5 +43,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Ответ от `ModerationAPI.GetSearchCommentsSummary`: %v\n", resp)
 }
 [inline-code-end]
-
----

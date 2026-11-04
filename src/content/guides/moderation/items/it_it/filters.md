@@ -19,5 +19,3 @@ Quindi, Approvato significa che il commento può essere visualizzato da altri ut
 Revisionato è semplicemente uno strumento per amministratori e moderatori e non ha alcun impatto sulla visibilità di un commento.
 
 La flag Revisionato rende più facile trovare i commenti che hai revisionato.
-
----

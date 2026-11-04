@@ -1,3 +1,1 @@
----
 Kald FastComments API fra Node.js eller browseren. Installér med npm, og opret derefter kommentarer, moderér dem, abonner på live‑begivenheder og opsæt SSO.
----

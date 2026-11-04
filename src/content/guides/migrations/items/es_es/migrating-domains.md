@@ -19,5 +19,3 @@ A medida que el trabajo se ejecuta, mostrará la cantidad de comentarios encontr
 ### Migración de dominios vía API
 
 Los dominios también pueden migrarse con [`POST /api/v1/pages/migrations`](/guide-api.html#pages-migrations-post), usando `type` configurado a `domain`. El progreso está disponible desde [`GET /api/v1/batch-jobs/:id`](/guide-api.html#batch-job-get-by-id), y la migración puede deshacerse durante 90 días.
-
----

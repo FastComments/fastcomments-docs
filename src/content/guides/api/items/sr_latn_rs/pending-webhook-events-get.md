@@ -36,5 +36,3 @@ interface PendingWebhookEventsGetResponse {
     pendingWebhookEvents?: PendingWebhookEvent[]
 }
 [inline-code-end]
-
----

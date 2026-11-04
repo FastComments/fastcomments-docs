@@ -48,5 +48,3 @@ Ahora arrastra el widget hasta el tamaño deseado; verás que aparece:
 </div>
 
 ...¡y ahora previsualiza y guarda!
-
----

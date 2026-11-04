@@ -1,4 +1,3 @@
----
 Pour que le widget de commentaires s'affiche correctement, nous devons ajuster la largeur de l'élément HTML. Recherchez l'onglet Mise en page dans l'éditeur de propriétés de l'élément.
 
 <div class="screenshot white-bg">
@@ -7,5 +6,3 @@ Pour que le widget de commentaires s'affiche correctement, nous devons ajuster l
 </div>
 
 L'onglet Mise en page contient des options importantes de dimensionnement qui aideront notre widget de commentaires à s'afficher correctement sur différentes tailles d'écran.
-
----

@@ -1,28 +1,28 @@
-Record a vote on a poll, or move an existing one to a different option. A voter has at most one vote per
-poll, so calling this again for the same voter moves their vote rather than adding one.
+Stimme zu einer Umfrage ab oder verschiebe eine bestehende Stimme zu einer anderen Option. Ein Wähler hat maximal eine Stimme pro
+Umfrage, daher verschiebt ein erneuter Aufruf für denselben Wähler seine Stimme, anstatt eine weitere hinzuzufügen.
 
-This obeys the site's poll settings: if voting is set to logged-in users only, a vote with just an
-anonUserId is rejected, and anonymous votes are rate limited per IP per poll.
+Dies folgt den Umfrageeinstellungen der Website: Wenn die Abstimmung nur für angemeldete Benutzer erlaubt ist, wird eine Stimme nur mit
+anonUserId abgelehnt, und anonyme Stimmen werden pro IP pro Umfrage ratenbegrenzt.
 
-## Parameters
+## Parameter
 
-| Name | Type | Location | Required | Description |
+| Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 
-## Response
+## Antwort
 
-Returns: [`CreatePollVoteResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreatePollVoteResponse.swift)
+Gibt zurück: [`CreatePollVoteResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreatePollVoteResponse.swift)
 
-## Example
+## Beispiel
 
 [inline-code-attrs-start title = 'createPollVote Beispiel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Die folgenden Codebeispiele befinden sich noch in der Beta. Bei Problemen bitte melden über http://github.com/OpenAPITools/openapi-generator/issues/new
+// Die folgenden Codebeispiele sind noch im Beta-Stadium. Bei Problemen bitte unter http://github.com/OpenAPITools/openapi-generator/issues/new melden
 import FastCommentsSwift
 
-let tenantId = "tenantId_example" // String | 
-let createPollVoteBody = CreatePollVoteBody(commentId: "commentId_example", optionId: "optionId_example", userId: "userId_example", anonUserId: "anonUserId_example", ip: "ip_example") // CreatePollVoteBody | 
+let tenantId = "tenantId_example" // String |
+let createPollVoteBody = CreatePollVoteBody(commentId: "commentId_example", optionId: "optionId_example", userId: "userId_example", anonUserId: "anonUserId_example", ip: "ip_example") // CreatePollVoteBody |
 
 DefaultAPI.createPollVote(tenantId: tenantId, createPollVoteBody: createPollVoteBody) { (response, error) in
     guard error == nil else {

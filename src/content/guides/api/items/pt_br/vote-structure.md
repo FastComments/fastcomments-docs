@@ -1,4 +1,3 @@
----
 Um objeto `Vote` representa um voto deixado por um usuário.
 
 A relação entre comentários e Vote é definida via `commentId`.
@@ -16,5 +15,3 @@ interface Vote {
     createdAt: string
 }
 [inline-code-end]
-
----

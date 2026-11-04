@@ -1,4 +1,3 @@
----
 Informacje zbiorcze o użytkownikach dla tenant'a. Dla podanych userIds zwraca informacje wyświetlane z User / SSOUser.
 Używane przez widżet komentarzy do wzbogacania użytkowników, którzy właśnie pojawili się na skutek zdarzenia obecności.
 Brak kontekstu strony: prywatność jest egzekwowana jednolicie (prywatne profile są maskowane).
@@ -44,5 +43,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->get_users_info: %s\n" % e)
 [inline-code-end]
-
----

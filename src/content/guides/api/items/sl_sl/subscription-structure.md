@@ -23,5 +23,3 @@ interface Subscription {
     createdAt: string // niz datuma
 }
 [inline-code-end]
-
----

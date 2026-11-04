@@ -75,5 +75,3 @@ interface PollPutResponse {
 - 此 API 遵循站点设置。如果站点或页面未启用投票，则会返回 `polls-disabled` 错误。
 - 被锁定的评论无法更改其投票，会返回 `locked` 错误。
 - 已连接的小部件会实时更新，观众无需刷新即可看到新的投票。
-
----

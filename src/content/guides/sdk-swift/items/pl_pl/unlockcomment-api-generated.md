@@ -1,4 +1,3 @@
----
 ## Parametry
 
 | Name | Type | Location | Required | Description |
@@ -35,5 +34,3 @@ PublicAPI.unLockComment(tenantId: tenantId, commentId: commentId, broadcastId: b
     }
 }
 [inline-code-end]
-
----

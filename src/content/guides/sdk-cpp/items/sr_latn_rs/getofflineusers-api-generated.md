@@ -1,22 +1,23 @@
-Past commenters on the page who are NOT currently online. Sorted by displayName.  
-Use this after exhausting /users/online to render a "Members" section.  
-Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName} index from afterName forward via $gt, no $skip cost.
+Prošli komentatori na stranici koji trenutno NISU online. Sortirano po displayName.
+Koristite ovo nakon što iscrpite /users/online za prikaz sekcije "Members".
+Cursor paginacija po commenterName: server prolazi kroz parcijalni {tenantId, urlId, commenterName}
+indeks od afterName naprijed pomoću $gt, bez troška $skip.
 
-## Parameters
+## Parametri
 
-| Name | Type | Required | Description |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| urlId | string | Yes |  |
-| options | const GetOfflineUsersOptions& | Yes |  |
+| tenantId | string | Da |  |
+| urlId | string | Da |  |
+| options | const GetOfflineUsersOptions& | Da |  |
 
-## Response
+## Odgovor
 
 Vraća: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PageUsersOfflineResponse.h)
 
-## Example
+## Primjer
 
-[inline-code-attrs-start title = 'Primer getOfflineUsers'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer za getOfflineUsers'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
 utility::string_t urlId = U("page-456");

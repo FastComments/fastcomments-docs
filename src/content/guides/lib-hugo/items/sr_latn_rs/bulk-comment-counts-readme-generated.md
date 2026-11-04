@@ -1,4 +1,4 @@
-Da biste prikazali broj komentara pored više stranica odjednom (index bloga, lista sekcije), koristite bulk count widget. On preuzima sve brojače komentara na stranici u jednom zahtevu. Postoje dve komponente: marker pored svake stavke, i jedan init poziv nakon liste.
+Da biste prikazali broj komentara pored više stranica odjednom (indeks bloga, lista sekcije), koristite widget za masovno brojanje. On dohvata sve brojeve na stranici jednim zahtevom. Sastoji se od dva dela: markera pored svake stavke i jednog init poziva nakon liste.
 
 U šablonu liste (`layouts/_default/list.html`):
 
@@ -14,9 +14,9 @@ U šablonu liste (`layouts/_default/list.html`):
 \{{ partial "fastcomments/bulk-count.html" (dict "page" .) }}
 ```
 
-`count-marker.html` renders `<span class="fast-comments-count" data-fast-comments-url-id="..."></span>`, using the same identifier the comments widget uses for that page (its `urlId`, or its permalink when no `urlId` is set), so the counts line up with the real threads. `bulk-count.html` emits the single request that fills them in.
+`count-marker.html` renderuje `<span class="fast-comments-count" data-fast-comments-url-id="..."></span>`, koristeći isti identifikator koji widget za komentare koristi za tu stranicu (njen `urlId`, ili njen permalink kada `urlId` nije postavljen), tako da se brojevi poklapaju sa stvarnim nitima. `bulk-count.html` emituje jedan zahtev koji ih popunjava.
 
-Ako sami napišete markere (na primer u Markdownu stranice), koristite shortcode da umesto toga emitujete init poziv:
+Ako sami pišete markere (na primer u Markdown-u stranice), koristite shortcode da emitujete init poziv:
 
 ```text
 <span class="fast-comments-count" data-fast-comments-url-id="article-1"></span>

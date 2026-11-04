@@ -1,10 +1,10 @@
-Identifies the credential in use: the tenant it belongs to and, for OAuth tokens, the user who authorized it.  
-Integrations use this to test a connection and label it.
+Identyfikuje używane poświadczenie: dzierżawcę, do którego należy, a w przypadku tokenów OAuth — użytkownika, który je autoryzował.
+Integracje używają tego do przetestowania połączenia i nadania mu etykiety.
 
 ## Parametry
 
-| Nazwa | Typ | Wymagane | Opis |
-|------|------|----------|------|
+| Nazwa | Typ | Wymagany | Opis |
+|------|------|----------|-------------|
 | tenantId | string | Tak |  |
 
 ## Odpowiedź

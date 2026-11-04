@@ -48,5 +48,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Изузетак при позиву PublicApi->search_users: %s\n" % e)
 [inline-code-end]
-
----

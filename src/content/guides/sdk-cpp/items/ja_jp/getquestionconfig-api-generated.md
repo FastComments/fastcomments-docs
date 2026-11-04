@@ -26,5 +26,3 @@ api->getQuestionConfig(tenantId, questionId)
         }
     });
 [inline-code-end]
-
----

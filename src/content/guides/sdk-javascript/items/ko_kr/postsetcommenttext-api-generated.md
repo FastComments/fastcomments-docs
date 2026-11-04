@@ -33,5 +33,3 @@ const response: SetCommentTextResponse = await postSetCommentText(
 
 console.log(response);
 [inline-code-end]
-
----

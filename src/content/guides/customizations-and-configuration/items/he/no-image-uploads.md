@@ -7,5 +7,3 @@
 ניתן להתאים זאת ללא קוד, בעמוד התאמת הווידג'ט:
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.disable-image-uploads'; selector = '.disable-image-uploads'; alt='תיבת הסימון להשבתת העלאת תמונות מופעלת בעמוד הגדרות התאמת הווידג\'ט'; title='השבתת העלאת תמונות' app-screenshot-end]
-
----

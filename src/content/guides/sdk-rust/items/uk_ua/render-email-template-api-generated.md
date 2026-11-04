@@ -31,5 +31,3 @@ let params = RenderEmailTemplateParams {
 
 let response = render_email_template(&configuration, params).await?;
 [inline-code-end]
-
----

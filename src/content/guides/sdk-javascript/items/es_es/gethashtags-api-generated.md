@@ -20,5 +20,3 @@ Devuelve: [`GetHashTagsResponse`](https://github.com/FastComments/fastcomments-s
     console.log(result);
 })();
 [inline-code-end]
-
----

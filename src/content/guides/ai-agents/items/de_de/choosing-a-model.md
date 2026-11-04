@@ -1,4 +1,3 @@
----
 Jeder Agent läuft gegen eines von zwei LLM-Modellen, die im Abschnitt **Modell** des Bearbeitungsformulars ausgewählt werden.
 
 ### Die beiden Optionen
@@ -28,4 +27,3 @@ Die vom Modell verwendeten Antwort-Token werden bei jedem Trigger als **tokensUs
 Sie können Modelle im Bearbeitungsformular jederzeit wechseln. Bestehende Ausführungsverläufe und Analysen behalten ihre ursprünglichen Token- und Kostenwerte – sie werden zur Laufzeit aufgezeichnet. Das neue Modell gilt nur für Ausführungen, die nach dem Speichern beginnen.
 
 There is no "use whichever model is cheaper" option. The choice is explicit per agent.
----

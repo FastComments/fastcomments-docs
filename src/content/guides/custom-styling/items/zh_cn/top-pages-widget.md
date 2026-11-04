@@ -1,8 +1,8 @@
-最受讨论页面小部件显示您被评论次数最多页面的排名列表。它包括标题、编号排名、带图标的评论计数、最后活动日期，以及自动暗色模式检测。
+“最多讨论页面”小部件显示一个按评论数排名的页面列表。它包含标题、排名序号、带图标的评论数、最近活动日期，以及自动深色模式检测。
 
 ## 基本安装
 
-[inline-code-attrs-start title = '最受讨论页面小部件安装'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = '最多讨论页面小部件安装'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/widget-top-pages-v2.min.js"></script>
 <div id="fastcomments-widget-top-pages"></div>
@@ -15,14 +15,14 @@
 
 ## 配置选项
 
-- **tenantId** (required): Your FastComments tenant ID
-- **hasDarkBackground** (optional): Force dark mode styling. Auto-detected from the page background if not set
+- **tenantId**（必填）：您的 FastComments 租户 ID
+- **hasDarkBackground**（可选）：强制使用深色模式样式。如未设置，将根据页面背景自动检测
 
 ## 小部件结构
 
-该小部件使用以下 HTML 结构进行渲染：
+该小部件渲染为以下 HTML 结构：
 
-[inline-code-attrs-start title = '最受讨论页面小部件 HTML 结构'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = '最多讨论页面小部件 HTML 结构'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <div class="fc-tp2">
     <div class="fc-tp2-heading">Most Discussed Pages</div>
@@ -41,7 +41,7 @@
 
 ## 默认 CSS 参考
 
-[inline-code-attrs-start title = '最受讨论页面小部件默认 CSS'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = '最多讨论页面小部件默认 CSS'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-tp2 {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -82,5 +82,3 @@
     box-shadow: none !important;
 }
 [inline-code-end]
-
----

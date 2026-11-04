@@ -31,5 +31,3 @@ interface TenantPackagesResponse {
     tenantPackages?: TenantPackage[]
 }
 [inline-code-end]
-
----

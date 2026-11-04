@@ -21,5 +21,3 @@ Una acción realizada por un moderador humano.
 - **Bienvenida / participación** - un agente puede responder a los comentaristas primerizos en el momento en que un moderador los aprueba, en lugar de en el momento de la publicación.
 - **Coordinación entre agentes** - si un agente distinto había marcado el comentario para revisión, la aprobación es la señal de que la revisión humana ha finalizado.
 - **Registro de auditoría** vía [Webhooks](#webhooks-overview).
-
----

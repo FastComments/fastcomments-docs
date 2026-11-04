@@ -1,4 +1,3 @@
----
 ## 매개변수
 
 | Name | Type | Location | Required | Description |
@@ -48,5 +47,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetPendingWebhookEventCount`: %v\n", resp)
 }
 [inline-code-end]
-
----

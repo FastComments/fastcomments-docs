@@ -40,5 +40,3 @@ PublicAPI.getCommentsForUser(options: PublicAPI.GetCommentsForUserOptions(userId
     }
 }
 [inline-code-end]
-
----

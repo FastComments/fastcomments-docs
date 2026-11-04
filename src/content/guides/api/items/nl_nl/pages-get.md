@@ -31,5 +31,3 @@ interface PagesResponse {
 #### Handige tip
 
 De `Comment` API vereist een `urlId`. Je kunt eerst de `Pages` API aanroepen om te zien hoe de voor jou beschikbare `urlId`-waarden eruitzien.
-
----

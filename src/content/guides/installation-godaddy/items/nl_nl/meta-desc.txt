@@ -1,3 +1,1 @@
----
 Voeg live reacties toe aan een GoDaddy-site met een codegebied, publiceer en los de domeinfout op die verschijnt wanneer de widget wordt uitgevoerd op een niet‑geregistreerd domein.
----

@@ -1,4 +1,3 @@
----
 Dit wordt allemaal gedaan door de [urlId](/guide-customizations-and-configuration.html#url-id) en gerelateerde parameters te configureren en `update()` aan te roepen op de widget-instanties om ze te vervangen door een andere commentdraad.
 
 Hieronder staat een interactieve voorbeeld (klik op run linksboven) die je in staat stelt commentthreads naar wens toe te voegen en te wisselen.
@@ -121,5 +120,3 @@ Met React en gerelateerde libraries kunnen we eenvoudig de configuratie bijwerke
 het vernieuwen van de widget voor ons afhandelen. Met VanillaJS moeten we het zelf beheren zoals hierboven getoond.
 
 Stel gerust vragen hieronder en we doen ons best om te helpen!
-
----

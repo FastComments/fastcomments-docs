@@ -1,4 +1,3 @@
----
 插件支持三种评论样式。您可以在插件设置中进行配置。
 
 #### 评论
@@ -27,5 +26,3 @@
     <div class="title">协作聊天与评论同时启用</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-page-comments.png" alt="FastComments Collab Chat and Comments on Moodle" />
 </div>
-
----

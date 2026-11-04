@@ -1,4 +1,3 @@
----
 [related-parameter-start name = 'disableLiveCommenting'; type = 'boolean'; related-parameter-end]
 
 Som standard vil FastComments have live-kommentering aktiveret.
@@ -15,5 +14,3 @@ Vi kan dog deaktivere dette:
 Dette kan også gøres uden kode. På widget-tilpasningssiden, se sektionen "Disable Live Commenting".
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-live-commenting']; selector = '.disable-live-commenting'; alt='Deaktiver Live Kommentar sektion på widget-tilpasningssiden, der slår realtidsopdateringer af tråden fra'; title='Deaktiver Live Kommentar' app-screenshot-end]
-
----

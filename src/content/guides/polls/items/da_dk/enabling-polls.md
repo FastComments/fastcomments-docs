@@ -1,9 +1,9 @@
-Polls are off by default. To turn them on, go to the widget customization settings and check **Enable Polls**.
+Afstemninger (polls) er slået fra som standard. For at aktivere dem skal du gå til widget-tilpasningsindstillingerne og markere **Enable Polls**.
 
-This adds a poll button to the comment editor toolbar. Polls render inside the comment and viewers vote in place.
+Dette tilføjer en afstemningsknap til kommentareditorens værktøjslinje. Afstemninger vises inde i kommentaren, og læsere stemmer direkte.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-polls']; selector = '.enable-polls'; alt='Widget-tilpasningsside med indstillingen Enable Polls markeret'; title='Aktiver afstemninger' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-polls']; selector = '.enable-polls'; alt='Widget-tilpasningsside med Enable Polls-indstillingen markeret'; title='Enable Polls' app-screenshot-end]
 
-Like other widget settings, this can be applied to your whole site or only to specific pages or domains.
+Som andre widget-indstillinger kan dette anvendes på hele dit websted eller kun på specifikke sider eller domæner.
 
-If you turn polls off later, the poll button goes away and existing polls stop rendering in the widget. The polls and their votes are kept, and show again if you turn polls back on.
+Hvis du senere slår afstemninger fra, forsvinder afstemningsknappen, og eksisterende afstemninger holder op med at blive vist i widgetten. Afstemningerne og deres stemmer gemmes, og vises igen, hvis du slår afstemninger til igen.

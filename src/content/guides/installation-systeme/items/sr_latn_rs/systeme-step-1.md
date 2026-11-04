@@ -27,5 +27,3 @@ Na levoj strani sada ćemo imati opciju da kliknemo `Edit Code` - kliknite na to
     <div class="title">Uredi kod</div>
     <img class="screenshot-image" src="/images/installation-guides/systeme-edit-block-button.png" alt="Uredi kod" />
 </div>
-
----

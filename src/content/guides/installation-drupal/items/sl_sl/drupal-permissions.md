@@ -1,7 +1,7 @@
-Modul doda tri Drupal dovoljenja, ki jih lahko dodelite na vlogo pod `People > Permissions`.
+Modul doda trije Drupal dovoljenja, ki jih lahko dodelite po vlogah pod `People > Permissions`.
 
-- **Administer FastComments** - Dostop do obrazca za nastavitve FastComments na `/admin/config/content/fastcomments`.
-- **View FastComments** - Zahtevano za ogled pripomočka za komentarje. Brez tega dovoljenja se pripomoček ne prikaže.
-- **Toggle FastComments** - Omogoča uporabnikom, da vključijo ali izključijo komentarje na ravni posamezne entitete z uporabo pripomočka polja.
+- **Administer FastComments** - Dostop do obrazca nastavitev FastComments na `/admin/config/content/fastcomments`.
+- **View FastComments** - Obvezno za prikaz widgeta za komentarje. Brez tega dovoljenja se widget ne izriše.
+- **Toggle FastComments** - Uporabnikom omogoča, da na ravni posamezne entitete vklopijo ali izklopijo komentarje z uporabo polja widgeta.
 
-By default, only users with the `administer site configuration` permission can change FastComments settings. Grant `View FastComments` to anonymous and authenticated users if you want visitors to see the widget.
+Privzeto lahko nastavitve FastComments spremenijo samo uporabniki z dovoljenjem `administer site configuration`. Dodelite `View FastComments` anonimnim in avtenticiranim uporabnikom, če želite, da obiskovalci vidijo widget.

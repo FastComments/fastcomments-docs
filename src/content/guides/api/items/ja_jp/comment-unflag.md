@@ -1,4 +1,3 @@
----
 [api-resource-header-start name = 'Comment'; route = 'POST /api/v1/comments/:id/un-flag'; creditsCost = 1; api-resource-header-end]
 
 この API エンドポイントは、特定のユーザーのコメントのフラグ解除を行う機能を提供します。
@@ -46,5 +45,3 @@ interface CommentUnFlagResponse {
     reason?: string
 }
 [inline-code-end]
-
----

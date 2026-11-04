@@ -1,4 +1,3 @@
----
 Grupne informacije o korisnicima za tenant. Datim userIds, vraća prikazne informacije iz User / SSOUser.
 Koristi se u komentarskom vidžetu da obogati korisnike koji su se upravo pojavili putem događaja prisustva.
 Nema konteksta stranice: privatnost se primenjuje jednako (privatni profili su maskirani).
@@ -33,5 +32,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_users_info: #{e}"
 end
 [inline-code-end]
-
----

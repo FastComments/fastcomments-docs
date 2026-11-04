@@ -1,16 +1,16 @@
 [api-resource-header-start name = 'PendingWebhookEvent'; route = 'GET /api/v1/pending-webhook-events/count'; creditsCost = 2; api-resource-header-end]
 
-This route returns an object containing the number of pending webhook events under a `count` parameter.
+Ta trasa zwraca obiekt zawierający liczbę oczekujących zdarzeń webhook w parametrze `count`.
 
-You can filter by the same parameters as the `/pending-webhook-events` endpoint
+Możesz filtrować według tych samych parametrów co endpoint `/pending-webhook-events`
 
-[inline-code-attrs-start title = 'Przykład cURL: liczba PendingWebhookEvent'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Przykład cURL dla PendingWebhookEvent Count'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/pending-webhook-events/count?tenantId=demo&API_KEY=DEMO_API_SECRET'
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Struktura żądania — liczba PendingWebhookEvent'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Struktura żądania PendingWebhookEvent Count'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface PendingWebhookEventsCountQueryParams {
     tenantId: string
@@ -20,18 +20,18 @@ interface PendingWebhookEventsCountQueryParams {
     eventType?: OutboundSyncEventType
     type?: OutboundSyncType
     domain?: string
-    /** Zapytanie o zdarzenia z liczbą prób większą niż podana wartość. **/
+    /** Zapytanie o zdarzenia z liczbą prób większą niż podana liczba. **/
     attemptCountGT?: number
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Struktura odpowiedzi — liczba PendingWebhookEvent'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Struktura odpowiedzi PendingWebhookEvent Count'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface PendingWebhookEventsCountResponse {
     status: 'success' | 'failed'
-    /** Included on failure. **/
+    /** Dołączane w przypadku błędu. **/
     code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-id' | 'unauthorized' | 'unexpected-param' | 'not-found'
-    /** Dołączone w przypadku niepowodzenia. **/
+    /** Dołączane w przypadku błędu. **/
     reason?: string
     count?: number
 }

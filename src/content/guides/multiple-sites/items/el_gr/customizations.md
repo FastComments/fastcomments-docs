@@ -1,11 +1,11 @@
-The comment widget can be <a href="/guide-customizations-and-configuration.html#custom-css" target="_blank">προσαρμοσθεί</a> differently for each site.
+Το widget σχολίων μπορεί να <a href="/guide-customizations-and-configuration.html#custom-css" target="_blank">προσαρμοστεί</a> διαφορετικά για κάθε ιστότοπο.
 
-On the widget customization page, you'll find a dropdown labeled "domain". Selecting `All` in this field will apply the rule to all
-sites on your account, you can enter a specific domain which will restrict the settings or custom CSS you wish to apply to only that domain.
+Στη σελίδα προσαρμογής του widget, θα βρείτε ένα dropdown με την ένδειξη "domain". Επιλέγοντας `All` σε αυτό το πεδίο, ο κανόνας θα εφαρμοστεί σε όλους
+τους ιστότοπους του λογαριασμού σας· μπορείτε επίσης να εισάγετε ένα συγκεκριμένο domain, ώστε οι ρυθμίσεις ή το custom CSS που θέλετε να εφαρμόσετε να περιοριστούν μόνο σε αυτό το domain.
 
-This allows you to have FastComments look or function completely different for each site.
+Αυτό σας επιτρέπει να έχει το FastComments εντελώς διαφορετική εμφάνιση ή λειτουργία για κάθε ιστότοπο.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = 'label.domain'; alt='Το αναπτυσσόμενο μενού domain στη σελίδα προσαρμογής του widget, ορισμένο σε All ή σε έναν συγκεκριμένο ιστότοπο'; title='Πεδίο Κανόνα Προσαρμογής' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = 'label.domain'; alt='Το dropdown domain στη σελίδα προσαρμογής του widget, ορισμένο σε All ή σε έναν συγκεκριμένο ιστότοπο'; title='Domain κανόνα προσαρμογής' app-screenshot-end]
 
-For one site might use bold text and allow anonymous commenting, and another site might
-have different styling and require the user to leave their email when they comment.
+Για παράδειγμα, ένας ιστότοπος μπορεί να χρησιμοποιεί έντονη γραφή και να επιτρέπει ανώνυμα σχόλια, ενώ ένας άλλος μπορεί
+να έχει διαφορετικό στυλ και να απαιτεί από τον χρήστη να αφήσει το email του όταν σχολιάζει.

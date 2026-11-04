@@ -23,5 +23,3 @@ api->getQuestionResults(tenantId, options)
         // διαχείριση απόκρισης
     });
 [inline-code-end]
-
----

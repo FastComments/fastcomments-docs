@@ -1,4 +1,3 @@
----
 За администраторе, на врху странице за модерацију коментара налази се дугме „Додај модераторе“.
 
 [app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=3&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = '.moderation-settings-options'; alt='Ред дугмади на врху странице за модерацију коментара, укључујући дугме „Додај модераторе“'; title='Дугмад за подешавање модерације коментара' app-screenshot-end]
@@ -20,5 +19,3 @@
 линк за пријаву.
 
 Осим ако се одјаве, биће пријављени тридесет дана.
-
----

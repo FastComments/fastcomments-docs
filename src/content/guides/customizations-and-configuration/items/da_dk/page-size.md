@@ -1,4 +1,3 @@
----
 Som standard er FastComments sidestørrelse `30`. Dette inkluderer svar i tråde.
 
 Sidestørrelsen kan tilpasses i [Widget Configuration UI](https://fastcomments.com/auth/my-account/customize-widget) i varierende størrelser fra `10` til `200`.
@@ -14,4 +13,3 @@ Eksempelkonfiguration vises nedenfor:
 Sidestørrelser kan tilpasses globalt, eller pr. domæne, eller pr. side, ved at oprette forskellige tilpasningsregler.
 
 Dette vil påvirke alle klienter, integrationer og frameworks, som du måtte bruge til at vise kommentarer via vores platform.
----

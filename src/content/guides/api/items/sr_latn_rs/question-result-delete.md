@@ -26,5 +26,3 @@ interface QuestionResultResponse {
     reason?: string
 }
 [inline-code-end]
-
----

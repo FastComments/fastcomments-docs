@@ -1,5 +1,4 @@
----
-You may get an authorization error, like the following:
+Možete dobiti grešku autorizacije, kao što je sledeća:
 
 <div class="screenshot white-bg">
     <div class="title">Konfiguracija domena nedostaje</div>
@@ -8,8 +7,6 @@ You may get an authorization error, like the following:
 
 To je zato što FastComments ne zna da treba da dozvoli korišćenje vašeg naloga na ovom domenu.
 
-U tom slučaju, rešenje je jednostavno. Potrebno je samo da dodate svoj sajt na svoj FastComments.com nalog.
+U tom slučaju, rešenje je jednostavno. Samo treba da dodate svoj sajt na svoj FastComments.com nalog.
 
-[Otiđite ovde da dodate svoj sajt na svoj nalog.](https://fastcomments.com/auth/my-account/configure-domains)
-
----
+[Idite ovde da dodate svoj sajt na svoj nalog.](https://fastcomments.com/auth/my-account/configure-domains)

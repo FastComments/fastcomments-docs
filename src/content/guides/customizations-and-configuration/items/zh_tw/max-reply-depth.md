@@ -1,17 +1,17 @@
 [related-parameter-start name = 'maxReplyDepth'; type = 'number'; related-parameter-end]
 
-預設情況下，FastComments 允許無限制的回覆層級，會建立一個討論串結構，使用者可以無限地對回覆再進行回覆。
+預設情況下，FastComments 允許無限層級的回覆嵌套，建立一個使用者可以無限回覆回覆的討論串結構。
 
-The maxReplyDepth option allows you to limit how deep reply threads can go. When the maximum depth is reached, users will no longer see a reply button on comments at that level.
+maxReplyDepth 選項允許您限制回覆討論串的深度。當達到最大深度時，使用者在該層級的留言上將不再看到回覆按鈕。
 
-[code-example-start config = {maxReplyDepth: 2}; linesToHighlight = [6]; title = 'Limiting Reply Depth to 2 Levels'; code-example-end]
+[code-example-start config = {maxReplyDepth: 2}; linesToHighlight = [6]; title = '將回覆深度限制為 2 層'; code-example-end]
 
-當 maxReplyDepth 設為 2：
-- 使用者可以在頂層發表評論（深度 0）
-- 使用者可以回覆頂層評論（深度 1）
+當 maxReplyDepth 設定為 2 時：
+- 使用者可以在頂層留言（深度 0）
+- 使用者可以回覆頂層留言（深度 1）
 - 使用者可以回覆那些回覆（深度 2）
-- 深度超過 2 不允許再有進一步回覆
+- 超過深度 2 後不允許再回覆
 
-Setting to 1 would only allow replies to top-level comments, creating a flatter discussion structure.
+設定為 1 則僅允許回覆頂層留言，建立更扁平的討論結構。
 
-Setting maxReplyDepth to 0 would disable all replies, allowing only top-level comments. If not specified, replies can be nested without limit.
+將 maxReplyDepth 設定為 0 將停用所有回覆，僅允許頂層留言。若未指定，回覆可以無限嵌套。

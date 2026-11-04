@@ -38,5 +38,3 @@ PublicAPI.getOfflineUsers(tenantId: tenantId, urlId: urlId, options: PublicAPI.G
     }
 }
 [inline-code-end]
-
----

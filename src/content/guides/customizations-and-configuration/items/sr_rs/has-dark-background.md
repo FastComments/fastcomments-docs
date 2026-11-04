@@ -9,5 +9,3 @@
 Међутим, механизам детекције, који се ослања на одређивање "осветљености", можда неће омогућити тамни режим када то желите. Да бисте га принудно укључили, поставите флаг *hasDarkBackground* на true на следећи начин:
 
 [code-example-start config = {hasDarkBackground: true}; linesToHighlight = [6]; title = 'Force Dark Background Mode'; additionalDemoCode = '<style>body { background: black; }</style>'; code-example-end]
-
----

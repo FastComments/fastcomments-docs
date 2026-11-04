@@ -1,4 +1,3 @@
----
 Varsayılan olarak, FastComments kullanıcıların yorumlarını düzenlemelerine izin verir.
 
 Ancak, bunu önlemek mümkündür.
@@ -9,5 +8,3 @@ Widget özelleştirme sayfasında, "Disable Editing" seçeneğine bakın.
 
 - Bu sadece normal Yorumcuları etkiler ve moderatörleri ya da yöneticileri etkilemez; onlar hâlâ düzenleyebilir.
 - Bu ayrıca `contextUserId` geçirildiğinde API entegrasyonlarını da etkiler. 
-
----

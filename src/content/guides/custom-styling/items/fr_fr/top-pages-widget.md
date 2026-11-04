@@ -1,8 +1,8 @@
-Le widget Pages les plus commentées affiche une liste classée de vos pages les plus commentées. Il comprend un en-tête, des rangs numérotés, des comptes de commentaires avec icônes, des dates de dernière activité et une détection automatique du mode sombre.
+Le widget Pages les plus discutées affiche une liste classée de vos pages les plus commentées. Il comprend un titre, des rangs numérotés, des nombres de commentaires avec icônes, les dates de dernière activité et une détection automatique du mode sombre.
 
-## Basic Installation
+## Installation de base
 
-[inline-code-attrs-start title = 'Installation du widget Pages les plus commentées'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Installation du widget Pages les plus discutées'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/widget-top-pages-v2.min.js"></script>
 <div id="fastcomments-widget-top-pages"></div>
@@ -13,16 +13,16 @@ Le widget Pages les plus commentées affiche une liste classée de vos pages les
 </script>
 [inline-code-end]
 
-## Configuration Options
+## Options de configuration
 
-- **tenantId** (required): Votre ID de locataire FastComments
-- **hasDarkBackground** (optional): Force le style en mode sombre. Détecté automatiquement à partir de l'arrière-plan de la page si non défini
+- **tenantId** (requis) : Votre ID de tenant FastComments
+- **hasDarkBackground** (facultatif) : Force le style du mode sombre. Détecté automatiquement à partir de l'arrière-plan de la page si non défini
 
-## Widget Structure
+## Structure du widget
 
 Le widget est rendu avec la structure HTML suivante :
 
-[inline-code-attrs-start title = 'Structure HTML du widget Pages les plus commentées'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Structure HTML du widget Pages les plus discutées'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <div class="fc-tp2">
     <div class="fc-tp2-heading">Most Discussed Pages</div>
@@ -39,9 +39,9 @@ Le widget est rendu avec la structure HTML suivante :
 </div>
 [inline-code-end]
 
-## Default CSS Reference
+## Référence CSS par défaut
 
-[inline-code-attrs-start title = 'CSS par défaut du widget Pages les plus commentées'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'CSS par défaut du widget Pages les plus discutées'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-tp2 {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -62,9 +62,9 @@ Le widget est rendu avec la structure HTML suivante :
 .fc-tp2-count { font-size: 12px; font-weight: 600; color: #666; }
 [inline-code-end]
 
-## Customization Examples
+## Exemples de personnalisation
 
-### Remove the Rank Badges
+### Supprimer les badges de rang
 
 [inline-code-attrs-start title = 'Supprimer les badges de rang'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -73,7 +73,7 @@ Le widget est rendu avec la structure HTML suivante :
 }
 [inline-code-end]
 
-### Remove the Container Border
+### Supprimer la bordure du conteneur
 
 [inline-code-attrs-start title = 'Supprimer la bordure du conteneur'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -82,5 +82,3 @@ Le widget est rendu avec la structure HTML suivante :
     box-shadow: none !important;
 }
 [inline-code-end]
-
----

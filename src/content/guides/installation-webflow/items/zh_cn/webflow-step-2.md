@@ -1,4 +1,3 @@
----
 接下来，让我们复制我们的 FastComments.com 小部件代码：
 
 [code-example-start config = {}; title = 'Installation Code'; isFunctional = false; code-example-end]
@@ -18,5 +17,3 @@
     <div class="title">注意：评论在发布之前不会显示</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-webflow-step-3.png" alt="评论在发布之前不会显示" />
 </div>
-
----

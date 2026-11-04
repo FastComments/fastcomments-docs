@@ -1,4 +1,1 @@
----
 ## Compartilhando trechos de código
-
----

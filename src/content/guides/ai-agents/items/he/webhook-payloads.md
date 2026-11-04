@@ -1,8 +1,8 @@
-כל הודעות ה-webhook של הסוכן חולקות מעטפת משותפת ומוסיפות בלוק `data` ספציפי לאירוע. בדף זה מופיעות הסכמות המלאות לכל אחד.
+כל מטעני ה-webhook של הסוכנים חולקים מעטפת משותפת ומוסיפים בלוק `data` ייחודי לאירוע. עמוד זה מפרט את הסכמה המלאה עבור כל אחד מהם.
 
-### Envelope (every event)
+### המעטפת (כל אירוע)
 
-Every payload, regardless of event type, has these top-level fields:
+כל מטען, ללא קשר לסוג האירוע, מכיל את השדות ברמה העליונה הבאים:
 
 [inline-code-attrs-start title = 'סכמת מעטפת ה-Webhook'; type='json' inline-code-attrs-end]
 [inline-code-start]
@@ -10,20 +10,20 @@ Every payload, regardless of event type, has these top-level fields:
   "event": "trigger.succeeded | trigger.failed | approval.requested | approval.decided",
   "eventType": 0 | 1 | 2 | 3,
   "tenantId": "string",
-  "domain": "string - הדומיין שהתאים למשלוח זה",
+  "domain": "string - the matched domain for this delivery",
   "agentId": "string",
   "agentInternalName": "string",
   "agentDisplayName": "string",
-  "occurredAt": "string - חותמת זמן ISO 8601",
-  "data": { /* ספציפי לאירוע, ראה להלן */ }
+  "occurredAt": "string - ISO 8601 timestamp",
+  "data": { /* event-specific, see below */ }
 }
 [inline-code-end]
 
 ### `trigger.succeeded` / `trigger.failed`
 
-`data` schema:
+סכמת `data`:
 
-[inline-code-attrs-start title = 'סכמת נתוני אירוע ה-Trigger'; type='json' inline-code-attrs-end]
+[inline-code-attrs-start title = 'סכמת נתוני אירוע טריגר'; type='json' inline-code-attrs-end]
 [inline-code-start]
 {
   "triggerId": "string",
@@ -34,30 +34,30 @@ Every payload, regardless of event type, has these top-level fields:
   "actions": [
     {
       "type": 0,
-      "commentId": "string - אופציונלי",
-      "userId": "string - אופציונלי",
-      "badgeId": "string - אופציונלי",
+      "commentId": "string - optional",
+      "userId": "string - optional",
+      "badgeId": "string - optional",
       "pending": false,
       "justification": "string",
       "confidence": 0.92
     }
   ],
-  "errorMessage": "string - נוכח ב-trigger.failed",
-  "url": "string - אופציונלי",
-  "urlId": "string - אופציונלי",
-  "commentId": "string - אופציונלי"
+  "errorMessage": "string - present on trigger.failed",
+  "url": "string - optional",
+  "urlId": "string - optional",
+  "commentId": "string - optional"
 }
 [inline-code-end]
 
-`triggerType` is a numeric enum from the [trigger event list](#triggers-overview).
+`triggerType` הוא enum מספרי מתוך [רשימת אירועי הטריגר](#triggers-overview).
 
-`actions[].type` is a numeric enum from the [tool list](#tools-overview).
+`actions[].type` הוא enum מספרי מתוך [רשימת הכלים](#tools-overview).
 
-`actions[].pending` is `true` when the action was queued for [approval](#approval-workflow) instead of executed.
+`actions[].pending` הוא `true` כאשר הפעולה הועמדה בתור ל[אישור](#approval-workflow) במקום לבוצע.
 
 ### `approval.requested`
 
-`data` schema:
+סכמת `data`:
 
 [inline-code-attrs-start title = 'סכמת נתוני בקשת אישור'; type='json' inline-code-attrs-end]
 [inline-code-start]
@@ -67,28 +67,28 @@ Every payload, regardless of event type, has these top-level fields:
   "toolName": "ban_user | mark_comment_spam | ...",
   "actionType": 10,
   "status": "PENDING",
-  "args": { /* תלוי בכלי, ראה להלן */ },
+  "args": { /* per-tool, see below */ },
   "createdAt": "string - ISO 8601",
-  "justification": "string - אופציונלי, נימוק הסוכן",
+  "justification": "string - optional, agent reasoning",
   "confidence": 0.85,
-  "contextSnapshot": { /* ההקשר של ההערה/הדף שעליהם מבוקש האישור */ }
+  "contextSnapshot": { /* the comment/page context the approval is about */ }
 }
 [inline-code-end]
 
-The **`args`** object is whatever the LLM tool call carried. Its shape depends on the tool:
+האובייקט **`args`** הוא כל מה שקריאת הכלי של ה-LLM העבירה. צורתו תלויה בכלי:
 
-- For `ban_user`: `{ userId, commentId, duration, shadowBan, deleteAllUsersComments?, banIP? }`.
-- For `mark_comment_spam`: `{ commentId, isSpam }`.
-- For `write_comment`: `{ comment, urlId, parentId? }`.
-- ...and so on.
+- עבור `ban_user`: `{ userId, commentId, duration, shadowBan, deleteAllUsersComments?, banIP? }`.
+- עבור `mark_comment_spam`: `{ commentId, isSpam }`.
+- עבור `write_comment`: `{ comment, urlId, parentId? }`.
+- ...וכן הלאה.
 
-The set of tool argument shapes is **not a stable public contract**. Tools can be added in future and the platform passes args through verbatim. Consumers should treat args as an opaque blob unless they explicitly understand the tool involved.
+קבוצת צורות הארגומנטים של הכלים **אינה חוזה ציבורי יציב**. כלים יכולים להתווסף בעתיד והפלטפורמה מעבירה את הארגומנטים כפי שהם. צרכנים צריכים להתייחס ל-args כאל בלוק אטום, אלא אם כן הם מבינים במפורש את הכלי המעורב.
 
-The **`contextSnapshot`** captures the comment, page, and user context the approval was queued from. Its shape mirrors the trigger's context message.
+ה-**`contextSnapshot`** לוכד את הקשר התגובה, העמוד והמשתמש שממנו האישור הועמד בתור. צורתו משקפת את הודעת ההקשר של הטריגר.
 
 ### `approval.decided`
 
-`data` schema:
+סכמת `data`:
 
 [inline-code-attrs-start title = 'סכמת נתוני החלטת אישור'; type='json' inline-code-attrs-end]
 [inline-code-start]
@@ -99,31 +99,31 @@ The **`contextSnapshot`** captures the comment, page, and user context the appro
   "actionType": 10,
   "status": "APPROVED | REJECTED | EXECUTION_FAILED",
   "decidedBy": "string - the userId of the moderator who decided",
-  "decidedAt": "string - ISO 8601 - אופציונלי, נוכח רק לאחר שההחלטה התקבלה",
-  "executedAt": "string - ISO 8601 - נוכח כאשר APPROVED והביצוע הסתיים",
-  "executionResult": "string - executor result message - נוכח לאחר ביצוע",
-  "contextSnapshot": { /* זהה ל-approval.requested */ }
+  "decidedAt": "string - ISO 8601 - optional, only present once decided",
+  "executedAt": "string - ISO 8601 - present when APPROVED and execution finished",
+  "executionResult": "string - executor result message - present after execute",
+  "contextSnapshot": { /* same as approval.requested */ }
 }
 [inline-code-end]
 
-### TenantAgentAction shape
+### צורת TenantAgentAction
 
-Inside `actions[]` on the trigger payloads, each action has:
+בתוך `actions[]` במטעני הטריגר, לכל פעולה יש:
 
 [inline-code-attrs-start title = 'סכמת TenantAgentAction'; type='json' inline-code-attrs-end]
 [inline-code-start]
 {
   "type": 0,
-  "commentId": "string - אופציונלי",
-  "userId": "string - אופציונלי",
-  "badgeId": "string - אופציונלי",
+  "commentId": "string - optional",
+  "userId": "string - optional",
+  "badgeId": "string - optional",
   "pending": false,
   "justification": "string",
   "confidence": 0.92
 }
 [inline-code-end]
 
-`type` enum values match `AgentActionType`:
+ערכי ה-enum של `type` תואמים ל-`AgentActionType`:
 
 - 0: `WRITE_COMMENT`
 - 1: `VOTE_COMMENT`
@@ -140,9 +140,9 @@ Inside `actions[]` on the trigger payloads, each action has:
 - 12: `WARNED_USER`
 - 13: `SAVED_MEMORY`
 
-`SEARCH_MEMORY` does not appear in `actions[]` because it is read-only and unaudited.
+`SEARCH_MEMORY` אינו מופיע ב-`actions[]` מכיוון שהוא לקריאה בלבד ואינו מבוקר.
 
-### `triggerType` enum values
+### ערכי enum של `triggerType`
 
 `AgentTriggerReasonType`:
 
@@ -161,17 +161,15 @@ Inside `actions[]` on the trigger payloads, each action has:
 - 12: `COMMENT_FLAG_THRESHOLD`
 - 13: `NEW_USER_FIRST_COMMENT`
 - 14: `COMMENT_AUTO_SPAMMED`
-- 15: `REPLAY` (internal; not delivered to webhooks)
+- 15: `REPLAY` (פנימי; אינו נשלח ל-webhooks)
 
-### Headers
+### כותרות (Headers)
 
-Every delivery includes:
+כל משלוח כולל:
 
-- `X-FastComments-Agent-Event` - the canonical event name (`trigger.succeeded`, etc.).
-- `X-FastComments-Signature` - HMAC-SHA256 of the raw body using your API secret. See [Webhook Signing](#webhook-signing).
+- `X-FastComments-Agent-Event` - שם האירוע הקנוני (`trigger.succeeded` וכו').
+- `X-FastComments-Signature` - HMAC-SHA256 של גוף הבקשה הגולמי באמצעות סוד ה-API שלך. ראה [חתימת Webhook](#webhook-signing).
 
-### Stability
+### יציבות
 
-The envelope fields and the documented `data` fields per event are part of the public contract. Adding new optional fields to existing payloads is allowed and not considered a breaking change - your consumer should ignore unknown fields. The shape of `args` and `contextSnapshot` is **not** part of the contract.
-
----
+שדות המעטפת ושדות ה-`data` המתועדים עבור כל אירוע הם חלק מהחוזה הציבורי. הוספת שדות אופציונליים חדשים למטענים קיימים מותרת ואינה נחשבת שינוי שובר תאימות - הצרכן שלך צריך להתעלם משדות לא מוכרים. צורת ה-`args` וה-`contextSnapshot` **אינה** חלק מהחוזה.

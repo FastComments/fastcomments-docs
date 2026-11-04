@@ -1,14 +1,12 @@
-FastComments biedt RSS-feeds waarmee u zich kunt abonneren op uw reacties met elke RSS-lezer.
+FastComments biedt RSS-feeds waarmee je je kunt abonneren op je reacties met elke RSS-reader-applicatie.
 
-Uw RSS-feed bevat:
+Je RSS-feed bevat:
 
-- Up to 10,000 comments from the last 30 days
+- Maximaal 10.000 reacties van de afgelopen 30 dagen
 - Reacties gesorteerd op stemmen en datum (meest populair eerst)
-- Volledige inhoud van de reactie inclusief naam van de reageerder en tekst van de reactie
+- Volledige reactie-inhoud inclusief naam van de reageerder en reactietekst
 - Links terug naar de oorspronkelijke locatie van de reactie
 
-De feed wordt geleverd in RSS 2.0-formaat, dat compatibel is met alle gangbare RSS-lezers.
+De feed wordt aangeboden in RSS 2.0-formaat, dat compatibel is met alle bekende RSS-readers.
 
-De RSS-feed wordt in realtime bijgewerkt zodra er nieuwe reacties aan uw site worden toegevoegd. De feed bevat metadata die aangeeft wanneer deze voor het laatst is bijgewerkt, zodat RSS-lezers efficiënt kunnen controleren op nieuwe inhoud.
-
----
+De RSS-feed wordt in realtime bijgewerkt zodra er nieuwe reacties aan je site worden toegevoegd. De feed bevat metadata die aangeeft wanneer deze voor het laatst is bijgewerkt, zodat RSS-readers efficiënt kunnen controleren op nieuwe content.

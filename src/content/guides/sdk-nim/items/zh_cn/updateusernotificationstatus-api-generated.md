@@ -1,4 +1,3 @@
----
 ## 参数
 
 | 名称 | 类型 | 必需 | 描述 |
@@ -25,5 +24,3 @@ let (respOpt, httpResponse) = client.updateUserNotificationStatus(
 if respOpt.isSome:
   let status = respOpt.get()
 [inline-code-end]
-
----

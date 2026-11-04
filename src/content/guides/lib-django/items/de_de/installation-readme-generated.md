@@ -1,4 +1,3 @@
----
 Von einem Release‑Tag installieren (dieses Projekt wird über Git‑Tags verteilt, nicht über PyPI):
 
 ```bash

@@ -65,5 +65,3 @@ interface ModeratorPostResponse {
     moderator?: Moderator; // 성공 시 생성된 전체 모더레이터를 반환합니다.
 }
 [inline-code-end]
-
----

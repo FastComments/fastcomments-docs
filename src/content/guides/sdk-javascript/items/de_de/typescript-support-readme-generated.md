@@ -1,4 +1,3 @@
----
 Das SDK ist in TypeScript geschrieben und stellt vollständige Typdefinitionen für alle API-Methoden und Antwortmodelle bereit:
 
 ```typescript
@@ -20,4 +19,3 @@ const response: GetCommentsPublic200Response = await sdk.publicApi.getCommentsPu
 
 const comments: PublicComment[] = response.comments || [];
 ```
----

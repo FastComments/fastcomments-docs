@@ -43,5 +43,3 @@ const response: APISaveCommentResponse = await saveComment(
   true    // populateNotifications
 );
 [inline-code-end]
-
----

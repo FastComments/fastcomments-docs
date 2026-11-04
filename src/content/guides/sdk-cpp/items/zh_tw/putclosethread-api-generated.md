@@ -1,4 +1,3 @@
----
 ## 參數
 
 | 名稱 | 類型 | 必填 | 說明 |
@@ -26,5 +25,3 @@ api->putCloseThread(tenantId, urlId, sso).then([](pplx::task<std::shared_ptr<API
     }
 });
 [inline-code-end]
-
----

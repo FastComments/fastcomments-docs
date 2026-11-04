@@ -1,11 +1,11 @@
-By default, FastComments does not limit languages used to comment. 
+Standaard beperkt FastComments de talen die gebruikt worden om te reageren niet.
 
-It may be desirable to limit the languages a community uses.
+Het kan wenselijk zijn om de talen die een community gebruikt te beperken.
 
-This can be configured without code, on the widget customization page:
+Dit kan geconfigureerd worden zonder code, op de widget-aanpassingspagina:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allowed-languages']; selector = '.allowed-languages'; alt='Selector voor toegestane talen op de widget-aanpassingspagina om te beperken welke talen reacties mogen gebruiken'; title='Toegestane talen' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allowed-languages']; selector = '.allowed-languages'; alt='Toegestane talen selector op de widget-aanpassingspagina voor het beperken van de talen die reacties mogen gebruiken'; title='Toegestane Talen' app-screenshot-end]
 
-The system will parse their comment and determine its language, and then match it with the allowed list.
+Het systeem zal de reactie analyseren en de taal bepalen, en deze vervolgens matchen met de lijst van toegestane talen.
 
-If the comment is written in a language that is not allowed, then a localized error message is shown.
+Als de reactie in een niet-toegestane taal is geschreven, wordt een gelokaliseerde foutmelding getoond.

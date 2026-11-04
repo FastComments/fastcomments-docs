@@ -1,15 +1,15 @@
-List pages for a tenant. Used by the FChat desktop client to populate its room list.  
-Requires `enableFChat` to be true on the resolved custom config for each page.  
-Pages that require SSO are filtered against the requesting user's group access.
+テナントのページ一覧を取得します。FChat デスクトップクライアントがルーム一覧を表示するために使用します。
+各ページの解決されたカスタム設定で `enableFChat` が true である必要があります。
+SSO が必要なページは、リクエストしたユーザーのグループアクセス権に基づいてフィルタリングされます。
 
 ## パラメータ
 
 | 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| options | const GetPagesPublicOptions& | Yes |  |
+| tenantId | string | はい |  |
+| options | const GetPagesPublicOptions& | はい |  |
 
-## 応答
+## レスポンス
 
 戻り値: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetPublicPagesResponse.h)
 
@@ -24,9 +24,9 @@ options.cursor = boost::optional<utility::string_t>(U("cursor-token"));
 api->getPagesPublic(tenantId, options).then([](pplx::task<std::shared_ptr<GetPublicPagesResponse>> task){
     try{
         auto response = task.get();
-        // process response if needed
+        // 必要に応じてレスポンスを処理
     }catch(const std::exception&){
-        // handle error if needed
+        // 必要に応じてエラーを処理
     }
 });
 [inline-code-end]

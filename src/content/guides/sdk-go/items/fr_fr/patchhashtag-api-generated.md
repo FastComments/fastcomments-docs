@@ -38,5 +38,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Réponse de `DefaultAPI.PatchHashTag` : %v\n", resp)
 }
 [inline-code-end]
-
----

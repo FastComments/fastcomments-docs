@@ -44,5 +44,3 @@ try {
     echo 'Ausnahme beim Aufruf von DefaultApi->updateSubscription: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

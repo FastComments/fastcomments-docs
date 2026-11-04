@@ -1,4 +1,3 @@
----
 Slå notifikationer til eller fra for en bestemt kommentar.
 
 ## Parametre
@@ -52,5 +51,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

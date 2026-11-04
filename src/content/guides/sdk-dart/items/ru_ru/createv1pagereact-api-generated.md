@@ -28,5 +28,3 @@ try {
     print('Исключение при вызове PublicApi->createV1PageReact: $e\n');
 }
 [inline-code-end]
-
----

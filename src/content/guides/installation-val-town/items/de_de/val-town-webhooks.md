@@ -56,5 +56,3 @@ app.delete("/", receive);
 Antworte schnell. FastComments versucht es bei einem Nicht‑2xx‑Status erneut, und ein Endpunkt, der ständig fehlschlägt, wird schließlich automatisch deaktiviert. Führe daher die eigentliche Arbeit erst nach der Antwort aus, nicht inline.
 
 Stelle sicher, dass die Verarbeitung anhand der Kommentar‑ID idempotent ist. Ein Retry wird mit einem neuen Zeitstempel erneut signiert, und dieselbe Kommentar‑ID kommt bei Bearbeitung und Löschung erneut, sodass es nichts Stabiles zum Deduplizieren gibt.
-
----

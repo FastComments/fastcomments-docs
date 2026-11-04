@@ -7,5 +7,3 @@ Toplu eylemler uygulanırken ilerlemeyi göreceksiniz ve herhangi bir toplu eyle
 ### Görünür Yorumların Ötesini Seçme
 
 Eğer "Tümünü Seç" onay kutusunu seçerseniz, varsayılan olarak yalnızca sayfadaki görünür yorumları seçecektir, ancak filtrelerinize uyan sunucudaki tüm yorumları seçme seçeneğini size sunacaktır. Yani onaylamanız, silmeniz vb. gereken milyonlarca yorum olsa bile, bunu birkaç tıklamayla yapabilirsiniz.
-
----

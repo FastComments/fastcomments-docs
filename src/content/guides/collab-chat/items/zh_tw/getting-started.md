@@ -1,6 +1,6 @@
-### 快速開始
+### 快速入門
 
-開始使用 Collab Chat 很簡單。您需要 FastComments Collab Chat 腳本、一個包含您想註解的文字的 HTML 元素，以及一個包含您的 Tenant ID 的設定物件。
+開始使用 Collab Chat 非常簡單。您需要 FastComments Collab Chat 腳本、一個包含您想要標註文字的 HTML 元素，以及一個包含您的 Tenant ID 的設定物件。
 
 ### 安裝
 
@@ -13,7 +13,7 @@
 
 ### 基本實作
 
-以下是一個最小範例：
+以下是一個最簡範例：
 
 [inline-code-attrs-start title = '基本 Collab Chat 實作'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
@@ -43,22 +43,20 @@
 </html>
 [inline-code-end]
 
-Replace `'demo'` with your actual FastComments Tenant ID if it's not already, which you can find in your [FastComments 儀表板](https://fastcomments.com/auth/my-account/api-secret).
+如果尚未設定，請將 `'demo'` 替換為您實際的 FastComments Tenant ID，您可以在 [FastComments 儀表板](https://fastcomments.com/auth/my-account/api-secret) 中找到它。
 
-### 運作方式
+### 運作原理
 
-初始化後，使用者可以在目標元素內選取任意文字。經過短暫延遲（桌面版為 3.5 秒）後，會出現提示，讓他們開始討論。建立討論後，該文字會出現視覺上的高亮。其他使用者可以將滑鼠移到高亮上或點擊它以查看並參與討論。所有討論會在所有訪客之間即時同步。
+初始化後，使用者可以選取目標元素內的任何文字。經過短暫延遲（桌面上為 3.5 秒）後，會出現一個提示，讓他們開始討論。當討論建立後，文字上會出現視覺化醒目提示。其他使用者可以將滑鼠懸停在醒目提示上或點擊它，以檢視並參與討論。所有討論會在所有訪客之間即時同步。
 
 ### 線上示範
 
-您可以在我們的 [線上示範頁面](https://fastcomments.com/product/collab-chat) 查看 Collab Chat 的實際示範。
+您可以在我們的[線上示範頁面](https://fastcomments.com/product/collab-chat)上看到 Collab Chat 的實際運作。
 
-### 下一步
+### 後續步驟
 
-既然您已完成基礎設置，您可以在「設定選項」指南中自訂外觀與行為。查看「文字選取行為」指南以了解文字選取的運作方式。在「自訂」指南中了解樣式和深色模式支援。若需進階整合，請參閱「API 參考」。
+現在您已經掌握了基本用法，可以在 Configuration Options 指南中自訂外觀與行為。請查看 Text Selection Behavior 指南以了解文字選取的運作方式。在 Customization 指南中了解樣式與深色模式支援。如需進階整合，請探索 API Reference。
 
-### 前端程式庫
+### 前端函式庫
 
-所有 FastComments 的前端程式庫（react、vue、angular 等）都支援 Collab Chat。
-
----
+所有 FastComments 前端函式庫（react、vue、angular 等）都支援 Collab Chat。

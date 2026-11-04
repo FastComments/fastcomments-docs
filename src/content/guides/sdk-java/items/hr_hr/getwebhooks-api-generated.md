@@ -1,24 +1,24 @@
-Lists the webhooks configured for the tenant, both dashboard-managed rows and API subscriptions.
+Navodi webhooks konfigurirane za tenant, uključujući retke upravljane putem dashboarda i API pretplate.
 
-## Parameters
+## Parametri
 
-| Name | Type | Location | Required | Description |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| event | string | query | No |  |
-| domain | string | query | No |  |
-| source | string | query | No |  |
-| skip | number | query | No |  |
+| tenantId | string | query | Da |  |
+| event | string | query | Ne |  |
+| domain | string | query | Ne |  |
+| source | string | query | Ne |  |
+| skip | number | query | Ne |  |
 
-## Response
+## Odgovor
 
-Returns: [`GetWebhooksResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetWebhooksResponse.java)
+Vraća: [`GetWebhooksResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetWebhooksResponse.java)
 
-## Example
+## Primjer
 
-[inline-code-attrs-start title = 'Primjer getWebhooks'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer za getWebhooks'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Uvezi klase:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -31,10 +31,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Konfiguriraj autorizaciju API ključa: api_key
+    // Configure API key authorization: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Odkomentiraj sljedeći redak da postaviš prefiks za API ključ, npr. "Token" (defaults to null)
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);

@@ -1,24 +1,24 @@
-Our [WordPress Plugin](https://wordpress.org/plugins/fastcomments/) has a powerful UI-based importing mechanism. Upon installing the plugin,
-it will guide you through linking your WordPress installation with FastComments and copying your existing comment data over.
+Vores [WordPress Plugin](https://wordpress.org/plugins/fastcomments/) har en kraftfuld UI-baseret importmekanisme. Ved installation af pluginet
+guide vi dig gennem at koble din WordPress-installation til FastComments og kopiere dine eksisterende kommentardata over.
 
 **Dette gøres uden at kopiere eller downloade noget manuelt.**
 
-The migration process will be indicated to you via the UI during the migration. Most migrations only take a couple of minutes.
+Migrationsprocessen vil blive vist dig via UI'et under migrationen. De fleste migrationer tager kun et par minutter.
 
-The mechanism is designed to not put excessive load on your WordPress installation during the migration.
+Mekanismen er designet til ikke at lægge for stor belastning på din WordPress-installation under migrationen.
 
-If you are moving your site off of WordPress, you can import a WordPress XML or CSV export instead of using the plugin. See
-[Flytning af dine kommentarer til et nyt site](/guide-installation-wordpress.html#wordpress-moving-off-wordpress).
+Hvis du flytter dit websted væk fra WordPress, kan du importere en WordPress XML- eller CSV-eksport i stedet for at bruge pluginet. Se
+[Moving Your Comments to a New Site](/guide-installation-wordpress.html#wordpress-moving-off-wordpress).
 
-### CloudFlare & FireWalls
+### CloudFlare & Firewalls
 
-In order for the automated WordPress setup to work, we have to make calls to your WordPress installation.
-Firewalls like Cloudflare may block us and cause the integration to fail. In such cases, [we can provide
-you](https://fastcomments.com/auth/my-account/help) with a set of IPs to whitelist for the integration.
+For at den automatiserede WordPress-opsætning kan fungere, er vi nødt til at lave kald til din WordPress-installation.
+Firewalls som Cloudflare kan blokere os og få integrationen til at fejle. I sådanne tilfælde kan [vi give
+dig](https://fastcomments.com/auth/my-account/help) et sæt IP-adresser, som du kan whiteliste for integrationen.
 
-### Data Ownership
+### Dataejerskab
 
-In the case of our WordPress migration, any new or updated comment data is automatically synced back to your WordPress installation
-behind the scenes. This means that, while the comments are served by FastComments itself to take load off of your WordPress deployment,
-we **også** save them in your database as a backup. This also means if you desire to switch away from FastComments, your data is
-already migrated and up to date.
+I forbindelse med vores WordPress-migration synkroniseres alle nye eller opdaterede kommentardata automatisk tilbage til din WordPress-installation
+i baggrunden. Det betyder, at selvom kommentarerne serveres af FastComments selv for at aflaste din WordPress-implementering,
+gemmer vi dem **også** i din database som backup. Det betyder også, at hvis du ønsker at skifte væk fra FastComments, er dine data
+allerede migreret og opdaterede.

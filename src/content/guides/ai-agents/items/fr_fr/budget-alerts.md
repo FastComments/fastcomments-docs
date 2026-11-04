@@ -1,4 +1,3 @@
----
 Les e-mails d'alerte de budget sont envoyés lorsqu'une dépense d'agent dépasse un pourcentage configurable de son plafond. Ils sont adressés aux personnes qui paient la facture.
 
 ### Comment fonctionnent les alertes
@@ -67,5 +66,3 @@ Décochez le seuil que vous ne souhaitez pas. Si vous ne voulez aucune alerte po
 - [Aperçu des budgets](#budgets-overview).
 - [Raisons de rejet](#drop-reasons) - ce qui se passe lorsque le plafond est atteint.
 - [Modèle de coût](#cost-model) - ce qui est mesuré.
-
----

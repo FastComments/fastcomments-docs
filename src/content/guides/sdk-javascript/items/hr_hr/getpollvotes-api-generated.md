@@ -1,27 +1,27 @@
-The individual votes behind one poll's tallies, oldest first.
+Pojedinačni glasovi iza zbroja jedne ankete, od najstarijih prema najnovijima.
 
-A poll belongs to a comment, so votes are always read one poll at a time - commentId is required. That
-keeps every query on the indexes the collection already has.
+Anketa pripada komentaru, pa se glasovi uvijek dohvaćaju za jednu anketu istovremeno - commentId je obavezan. To
+osigurava da svaki upit koristi indekse koje kolekcija već ima.
 
-Obeys the poll's privacy: an anonymous poll's votes cannot be read (poll-anonymous), here or by id.
+Poštuje privatnost ankete: glasovi anonimne ankete ne mogu se čitati (poll-anonymous), ni ovdje ni po id-u.
 
-## Parameters
+## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
+|------|------|----------|-------------|
 | tenantId | string | Da |  |
 | commentId | string | Da |  |
 | voterId | string | Ne |  |
 | optionId | string | Ne |  |
 | skip | number | Ne |  |
 
-## Response
+## Odgovor
 
-Returns: [`GetPollVotesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPollVotesResponse.ts)
+Vraća: [`GetPollVotesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPollVotesResponse.ts)
 
-## Example
+## Primjer
 
-[inline-code-attrs-start title = 'Primjer getPollVotes'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getPollVotes primjer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 const tenantId: string = "tenant_12345";
 const commentId: string = "cmt_98765";
@@ -39,5 +39,3 @@ const pollResult: GetPollVotesResponse = await getPollVotes(
 
 console.log(pollResult);
 [inline-code-end]
-
----

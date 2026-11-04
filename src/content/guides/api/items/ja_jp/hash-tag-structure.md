@@ -1,20 +1,20 @@
-A `HashTag` オブジェクトはユーザーが残すことのできるタグを表します。ハッシュタグは外部のコンテンツへのリンクに使用したり、関連するコメントを結びつけるために使用できます。
+`HashTag` オブジェクトは、ユーザーが残せるタグを表します。HashTagsは、外部コンテンツへのリンクや、関連するコメントを結びつけるために使用できます。
 
-The structure for the `HashTag` object is as follows:
+`HashTag` オブジェクトの構造は以下の通りです:
 
 [inline-code-attrs-start title = 'HashTag 構造'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface HashTag {
-    /** "#" または任意の指定文字で始める必要があります。 **/
+    /** Should start with the "#" or desired character. **/
     tag: string
-    /** ハッシュタグが指すオプションのURL。ハッシュタグでコメントをフィルタリングする代わりに、UIはクリック時にこのURLへリダイレクトします。 **/
+    /** An optional URL that the hashtag can point to. Instead of filtering comments by hashtag, the UI will redirect to this upon click. **/
     url?: string
-    /** 読み取り専用 **/
+    /** READONLY **/
     createdAt: string
 }
 [inline-code-end]
 
-Notes:
+注意:
 
-- In some API endpoints you will see that the hashtag is used in the URL. Remember to URI-Encoded values. For example, `#` should instead be represented as `%23`.
-- Some of these fields are marked `READONLY` - these are returned by the API but cannot be set.
+- 一部のAPIエンドポイントでは、ハッシュタグがURL内で使用されます。値はURIエンコードすることを忘れないでください。例えば、`#` は `%23` として表現する必要があります。
+- 一部のフィールドは `READONLY` とマークされています - これらはAPIから返されますが、設定することはできません。

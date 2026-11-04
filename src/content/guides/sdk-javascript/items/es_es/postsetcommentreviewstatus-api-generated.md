@@ -30,5 +30,3 @@ const result: APIEmptyResponse = await postSetCommentReviewStatus(
   sso
 );
 [inline-code-end]
-
----

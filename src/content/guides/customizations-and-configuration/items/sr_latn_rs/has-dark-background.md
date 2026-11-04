@@ -12,5 +12,3 @@ Međutim, mehanizam detekcije, koji se oslanja na određivanje "luminancije", mo
 *zastavicu* *hasDarkBackground* na true na sledeći način:
 
 [code-example-start config = {hasDarkBackground: true}; linesToHighlight = [6]; title = 'Force Dark Background Mode'; additionalDemoCode = '<style>body { background: black; }</style>'; code-example-end]
-
----

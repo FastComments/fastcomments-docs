@@ -15,5 +15,3 @@ Możemy to zrobić w kodzie, ustawiając flagę **enableThirdPartyCookieBypass**
 Możemy również ustawić to za pomocą UI Dostosowywania Widżetu, w sekcji `Enable Third-Party Cookie Popup`:
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.enable-third-party-cookie-bypass'; clickSelectors = ['.enable-third-party-cookie-bypass']; alt='Strona dostosowywania widżetu z zaznaczonym polem wyboru Enable Third-Party Cookie Popup'; title='Włączanie obejścia ciasteczek stron trzecich' app-screenshot-end]
-
----

@@ -1,71 +1,71 @@
-Istnieją cztery typy zdarzeń webhook agenta. Każde zdarzenie ma numeryczną wartość enum (używaną w payloadach) oraz kanoniczną nazwę łańcuchową (używaną w polu koperty `event` oraz w nagłówku HTTP `X-FastComments-Agent-Event`).
+Istnieją cztery typy zdarzeń webhooków agenta. Każde zdarzenie ma numeryczną wartość enum (używaną w payloadach) oraz kanoniczną nazwę tekstową (używaną w polu `event` koperty oraz w nagłówku HTTP `X-FastComments-Agent-Event`).
 
-| Event name | Enum | Fires when |
+| Nazwa zdarzenia | Enum | Występuje gdy |
 |---|---|---|
 | `trigger.succeeded` | 0 | Uruchomienie agenta kończy się statusem `SUCCESS`. |
 | `trigger.failed` | 1 | Uruchomienie agenta kończy się statusem `ERROR`. |
-| `approval.requested` | 2 | Zatwierdzenie jest umieszczone w stanie `PENDING`. |
+| `approval.requested` | 2 | Zatwierdzenie jest kolejkowane w stanie `PENDING`. |
 | `approval.decided` | 3 | Zatwierdzenie przechodzi do `APPROVED`, `REJECTED` lub `EXECUTION_FAILED`. |
 
 ### `trigger.succeeded`
 
-Wysyłane po pomyślnym zakończeniu uruchomienia agenta bez błędów. Pole `data` w payloadzie zawiera:
+Występuje po zakończeniu uruchomienia agenta bez błędu. Pole `data` payloadu zawiera:
 
 - `triggerId` - unikalny identyfikator uruchomienia.
-- `triggerType` - [trigger reason enum](#triggers-overview), który uruchomił wykonanie.
-- `status` - `SUCCESS` (string).
-- `tokensUsed` - tokeny zużyte podczas tego uruchomienia.
-- `wasDryRun` - true jeśli agent był w [dry-run mode](#dry-run-mode).
-- `actions` - tablica rekordów `TenantAgentAction` (zob. [Webhook Payloads](#webhook-payloads)).
-- `commentId`, `url`, `urlId` - jeśli trigger je posiadał.
+- `triggerType` - [enum powodu wyzwolenia](#triggers-overview), który rozpoczął uruchomienie.
+- `status` - `SUCCESS` (ciąg znaków).
+- `tokensUsed` - tokeny zużyte w tym uruchomieniu.
+- `wasDryRun` - true, jeśli agent był w [trybie dry-run](#dry-run-mode).
+- `actions` - tablica rekordów `TenantAgentAction` (zobacz [Payloady Webhooków](#webhook-payloads)).
+- `commentId`, `url`, `urlId` - jeśli wyzwalacz je miał.
 
-Jeśli uruchomienie nie wykonało żadnych akcji, tablica `actions` jest pusta - to pomyślne uruchomienie typu „agent zdecydował nic nie robić”, co jest przydatne do odnotowania.
+Jeśli uruchomienie nie wykonało żadnych akcji, tablica `actions` jest pusta - to udane uruchomienie typu "agent zdecydował, że nic nie zrobi", co jest przydatną informacją.
 
 ### `trigger.failed`
 
-Wysyłane, gdy uruchomienie zakończy się błędem. Ten sam kształt payloadu co w `trigger.succeeded`, z `status: 'ERROR'` i dodatkowym polem `errorMessage` opisującym, co poszło nie tak. Możliwe błędy obejmują awarie wywołań LLM, niepowodzenia dyspozycji narzędzi oraz wyczerpanie budżetu w trakcie uruchomienia.
+Występuje, gdy uruchomienie zwraca błąd. Ten sam kształt payloadu co `trigger.succeeded`, z `status: 'ERROR'` oraz dodatkowym polem `errorMessage` opisującym, co poszło nie tak. Możliwe błędy obejmują niepowodzenia wywołań LLM, niepowodzenia wywołań narzędzi oraz wyczerpanie budżetu w trakcie uruchomienia.
 
-`actions` mogą nadal zawierać wpisy dotyczące wywołań narzędzi, które zakończyły się przed wystąpieniem błędu.
+`actions` może nadal zawierać wpisy dla wywołań narzędzi zakończonych przed błędem.
 
 ### `approval.requested`
 
-Wysyłane w momencie umieszczenia zatwierdzenia w stanie `PENDING`. Payload zawiera:
+Występuje w momencie, gdy zatwierdzenie jest kolejkowane w stanie `PENDING`. Payload zawiera:
 
 - `approvalId`, `triggerId`.
 - `toolName`, `actionType`.
 - `status: 'PENDING'`.
-- `args` - argumenty narzędzia **przekazywane wprost** z wywołania LLM. Kształt jest specyficzny dla narzędzia i nie stanowi stabilnego publicznego kontraktu - schemat może się zmieniać w miarę dodawania nowych narzędzi.
+- `args` - argumenty narzędzia **przekazane dosłownie** z wywołania LLM. Kształt jest specyficzny dla narzędzia i nie stanowi stabilnego publicznego kontraktu - schemat może się zmieniać wraz z dodawaniem nowych narzędzi.
 - `createdAt`.
 - `justification`, `confidence` - jeśli agent je dostarczył.
 - `contextSnapshot` - kontekst komentarza / strony, którego dotyczy zatwierdzenie.
 
-Przydatne do przesyłania oczekujących zatwierdzeń do kanału ChatOps: bot Slack subskrybujący `approval.requested` może opublikować akcję i uzasadnienie w kanale moderacji do szybkiego przeglądu.
+Przydatne do przekazywania oczekujących zatwierdzeń na kanał chat ops: bot Slack subskrybujący `approval.requested` może publikować akcję i uzasadnienie na kanale moderacyjnym w celu szybkiego przeglądu.
 
 ### `approval.decided`
 
-Wysyłane, gdy zatwierdzenie wychodzi ze stanu `PENDING`. Payload zawiera:
+Występuje, gdy zatwierdzenie opuszcza stan `PENDING`. Payload zawiera:
 
 - `approvalId`, `triggerId`.
 - `toolName`, `actionType`.
-- `status` - `APPROVED`, `REJECTED`, lub `EXECUTION_FAILED`.
+- `status` - `APPROVED`, `REJECTED` lub `EXECUTION_FAILED`.
 - `decidedBy` - identyfikator użytkownika moderatora, który podjął decyzję.
-- `decidedAt` - kiedy podjęto decyzję.
+- `decidedAt` - kiedy podjął decyzję.
 - `executedAt` - jeśli APPROVED, kiedy platforma wykonała zatwierdzoną akcję.
-- `executionResult` - jeśli APPROVED, łańcuch opisujący wynik wykonawcy.
+- `executionResult` - jeśli APPROVED, ciąg znaków opisujący wynik wykonania.
 - `contextSnapshot` - kontekst komentarza / strony.
 
-To zdarzenie obejmuje wszystkie wyniki decyzji:
+To zdarzenie obejmuje wszystkie możliwe wyniki decyzji:
 
-- **Approved + executed cleanly** -> `status: APPROVED`, `executedAt` ustawione, `executionResult` to komunikat o sukcesie.
-- **Approved + executor failed** -> `status: EXECUTION_FAILED`, `executedAt` ustawione, `executionResult` opisuje niepowodzenie.
-- **Rejected** -> `status: REJECTED`, `executedAt` jest null, `executionResult` jest null.
+- **Zatwierdzone + wykonane poprawnie** -> `status: APPROVED`, ustawione `executedAt`, `executionResult` to komunikat o sukcesie.
+- **Zatwierdzone + wykonanie nie powiodło się** -> `status: EXECUTION_FAILED`, ustawione `executedAt`, `executionResult` opisuje niepowodzenie.
+- **Odrzucone** -> `status: REJECTED`, `executedAt` jest null, `executionResult` jest null.
 
-### Header
+### Nagłówek
 
-Każda dostawa zawiera nagłówek HTTP `X-FastComments-Agent-Event` z kanoniczną nazwą łańcuchową zdarzenia (`trigger.succeeded`, itd.). Przydatne, jeśli Twój endpoint to pojedynczy URL obsługujący wiele typów zdarzeń.
+Każde dostarczenie zawiera nagłówek HTTP `X-FastComments-Agent-Event` z kanoniczną nazwą tekstową zdarzenia (`trigger.succeeded` itd.). Przydatne, jeśli Twój punkt końcowy to pojedynczy URL obsługujący wiele typów zdarzeń.
 
-### See also
+### Zobacz również
 
-- [Webhook Payloads](#webhook-payloads) dla pełnych schematów payloadów dla poszczególnych zdarzeń.
-- [Webhook Signing](#webhook-signing) dla schematu HMAC.
-- [Webhook Retries](#webhook-retries) dla semantyki dostarczania.
+- [Payloady Webhooków](#webhook-payloads) dla pełnych schematów payloadów dla każdego zdarzenia.
+- [Podpisywanie Webhooków](#webhook-signing) dla schematu HMAC.
+- [Ponowne próby Webhooków](#webhook-retries) dla semantyki dostarczania.

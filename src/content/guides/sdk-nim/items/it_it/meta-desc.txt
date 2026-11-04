@@ -1,3 +1,1 @@
----
 Chiama l'API FastComments da Nim. Installa con nimble, quindi crea, recupera e modera i commenti, con helper SSO e tutti gli endpoint documentati.
----

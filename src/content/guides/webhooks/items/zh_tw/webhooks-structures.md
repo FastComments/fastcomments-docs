@@ -1,145 +1,148 @@
-The only structure sent via webhooks is the WebhookComment object, outlined in TypeScript below.
+透過 webhook 傳送的唯一結構是 WebhookComment 物件，以下以 TypeScript 說明。
 
 #### WebhookComment 物件結構
 
-##### 「建立」事件結構
+##### 「Create」事件結構
 「create」事件的請求主體是一個 WebhookComment 物件。
 
-##### 「更新」事件結構
+##### 「Update」事件結構
 「update」事件的請求主體是一個 WebhookComment 物件。
 
-##### 「刪除」事件結構
+##### 「Delete」事件結構
 「delete」事件的請求主體是一個 WebhookComment 物件。
 
-    變更於 2023 年 11 月 14 日
-    之前「delete」事件的請求主體僅包含評論 ID。現在會在刪除時包含完整的評論內容。
+    2023 年 11 月 14 日的變更
+    先前「delete」事件的請求主體僅包含留言 id。現在則包含刪除當下的完整留言內容。
 
-每個鍵在主體中皆會出現。當評論的某個欄位沒有值時，主體會攜帶 `null`（布林值則為 `false`，列表則為 `[]`），因此每次傳遞的資料形狀不會因評論而異。
+
+每個鍵值一律都會出現在請求主體中。當留言的某個欄位沒有值時，主體會帶有 `null`
+(布林值為 `false`,列表為 `[]`),因此每次傳送的資料形狀不會因留言不同而改變。
 
 [inline-code-attrs-start title = 'WebhookComment 物件'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface WebhookComment {
-    /** The id of the comment. **/
+    /** 留言的 id。 **/
     id: string
-    /** The id or URL that identifies the comment thread. Normalized. **/
+    /** 標識留言串的 id 或 URL。已標準化。 **/
     urlId: string
-    /** The URL that points to where the comment was left. **/
+    /** 指向留言所在位置的 URL。 **/
     url: string | null
-    /** The user id that left the comment. If SSO, prefixed with tenant id. **/
+    /** 留言者的使用者 id。若為 SSO,則以租戶 id 為前綴。 **/
     userId: string | null
-    /** The email of the user left the comment. **/
+    /** 留言者的電子郵件。 **/
     commenterEmail: string | null
-    /** The name of the user that shows in the comment widget. With SSO, can be displayName. **/
+    /** 在留言小工具中顯示的使用者名稱。使用 SSO 時,可以是 displayName。 **/
     commenterName: string
-    /** Raw comment text. **/
+    /** 原始留言文字。 **/
     comment: string
-    /** Comment text after parsing. **/
+    /** 解析後的留言文字。 **/
     commentHTML: string
-    /** Comment external id. **/
+    /** 留言的外部 id。 **/
     externalId: string | null
-    /** The id of the parent comment. **/
+    /** 父留言的 id。 **/
     parentId: string | null
-    /** The UTC date when the comment was left. **/
+    /** 留言發表的 UTC 日期。 **/
     date: UTC_ISO_DateString
-    /** Combined karma (up - down) of votes. **/
+    /** 投票的合計業力(讚 - 倒讚)。 **/
     votes: number
     votesUp: number
     votesDown: number
-    /** True if the user was logged in when they commented, or their verified the comment, or if they verified their session when the comment was left. **/
+    /** 若使用者在留言時已登入、或已驗證留言、或在留言時已驗證其工作階段,則為 true。 **/
     verified: boolean
-    /** The UTC date when the comment was verified. **/
+    /** 留言被驗證的 UTC 日期。 **/
     verifiedDate: UTC_ISO_DateString | null
-    /** If a moderator marked the comment reviewed. **/
+    /** 若版主已將留言標記為已審閱。 **/
     reviewed: boolean
-    /** The location, or base64 encoding, of the avatar. Will only be base64 if that was the value passed with SSO. **/
+    /** 頭像的位置或 base64 編碼。僅在 SSO 傳入的值為 base64 時才會是 base64。 **/
     avatarSrc: string | null
-    /** Was the comment manually or automatically marked as spam? **/
+    /** 留言是被手動還是自動標記為垃圾訊息? **/
     isSpam: boolean
-    /** Was the comment automatically marked as spam? **/
+    /** 留言是否被自動標記為垃圾訊息? **/
     aiDeterminedSpam: boolean
-    /** Are there images in the comment? **/
+    /** 留言中是否有圖片? **/
     hasImages: boolean
-    /** The page number the comment is on for the "Most Relevant" sort direction. **/
+    /** 留言在「最相關」排序方向下所在的頁碼。 **/
     pageNumber: number | null
-    /** The page number the comment is on for the "Oldest First" sort direction. **/
+    /** 留言在「最舊優先」排序方向下所在的頁碼。 **/
     pageNumberOF: number | null
-    /** The page number the comment is on for the "Newest First" sort direction. **/
+    /** 留言在「最新優先」排序方向下所在的頁碼。 **/
     pageNumberNF: number | null
-    /** Was the comment approved automatically or manually? **/
+    /** 留言是被自動還是手動核准? **/
     approved: boolean
-    /** The locale code (format: en_us) of the user when the comment was written. **/
+    /** 撰寫留言時使用者的語系代碼(格式:en_us)。 **/
     locale: string | null
-    /** The @mentions written in the comment that were successfully parsed. Empty when there are none. **/
+    /** 留言中成功解析出的 @mentions。若無則為空。 **/
     mentions: CommentUserMention[]
-    /** The domain the comment is from. **/
+    /** 留言所屬的網域。 **/
     domain: string | null
-    /** The moderation group ids associated with this comment. Empty when there are none. **/
+    /** 與此留言相關聯的審核群組 id。若無則為空。 **/
     moderationGroupIds: string[]
-    /** The badges shown next to the commenter's name on this comment, as of when the event was created. Empty when there are none. **/
+    /** 此留言中留言者名稱旁顯示的徽章,以事件建立當下為準。若無則為空。 **/
     badges: CommentUserBadgeInfo[]
 }
 [inline-code-end]
 
-當使用者在評論中被標記時，資訊會儲存在名為 `mentions` 的列表中。該列表中的每個物件具有以下結構。
+當使用者在留言中被標記時,相關資訊會儲存在名為 `mentions` 的列表中。該列表中的每個物件
+具有以下結構。
 
-[inline-code-attrs-start title = 'Webhook 提及 物件'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Webhook Mentions 物件'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentUserMention {
-    /** The user id. For SSO users, this will have your tenant id prefixed. **/
+    /** 使用者 id。對於 SSO 使用者,此值會以您的租戶 id 為前綴。 **/
     id: string
-    /** The final @mention tag text, including the @ symbol. **/
+    /** 最終的 @mention 標籤文字,包含 @ 符號。 **/
     tag: string
-    /** The original @mention tag text, including the @ symbol. **/
+    /** 原始的 @mention 標籤文字,包含 @ 符號。 **/
     rawTag: string
-    /** What type of user was tagged. user = FastComments.com account. sso = SSOUser. **/
+    /** 被標記的使用者類型。user = FastComments.com 帳號。sso = SSOUser。 **/
     type: 'user'|'sso'
-    /** If the user opts out of notifications, this will still be set to true. **/
+    /** 若使用者選擇退出通知,此值仍會設為 true。 **/
     sent: boolean
 }
 [inline-code-end]
 
-`badges` 列表中的每個條目具有以下結構。請參閱 [徽章指南](/guide-badges.html) 了解徽章類型。
+`badges` 列表中的每個項目具有以下結構。徽章類型請參閱[徽章指南](/guide-badges.html)。
 
-[inline-code-attrs-start title = 'Webhook 徽章 物件'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Webhook Badge 物件'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentUserBadgeInfo {
-    /** The id of the badge awarded to this user. **/
+    /** 授予此使用者的徽章 id。 **/
     id: string
-    /** The badge type. **/
+    /** 徽章類型。 **/
     type: number
-    /** The badge description, shown when hovering over the badge. **/
+    /** 徽章描述,滑鼠懸停在徽章上時顯示。 **/
     description: string
-    /** The text shown on the badge. **/
+    /** 徽章上顯示的文字。 **/
     displayLabel?: string | null
-    /** The image shown for the badge, if it uses one. **/
+    /** 徽章顯示的圖片(若使用的話)。 **/
     displaySrc?: string | null
     backgroundColor?: string | null
     borderColor?: string | null
     textColor?: string | null
-    /** An extra CSS class applied to the badge. **/
+    /** 套用於徽章的額外 CSS 類別。 **/
     cssClass?: string | null
 }
 [inline-code-end]
 
 #### HTTP 方法
 
-您可以在管理面板中為每種 webhook 事件類型設定 HTTP 方法：
+您可以在管理面板中為每種 webhook 事件類型設定 HTTP 方法:
 
-- **建立事件**：POST 或 PUT（預設：PUT）
-- **更新事件**：POST 或 PUT（預設：PUT）
-- **刪除事件**：DELETE、POST 或 PUT（預設：DELETE）
+- **Create 事件**:POST 或 PUT(預設:PUT)
+- **Update 事件**:POST 或 PUT(預設:PUT)
+- **Delete 事件**:DELETE、POST 或 PUT(預設:DELETE)
 
-由於所有請求皆包含 ID，建立與更新操作預設為冪等（PUT）。重複相同的建立或更新請求不應在您的端產生重複的物件。
+由於所有請求都包含一個 ID,Create 與 Update 操作預設即為冪等(PUT)。重複相同的 Create 或 Update 請求不應在您那邊建立重複的物件。
 
 #### 請求標頭
 
-每個 webhook 請求都會包含以下標頭：
+每個 webhook 請求都包含以下標頭:
 
 | 標頭 | 說明 |
 |--------|-------------|
 | `Content-Type` | `application/json` |
-| `token` | 您的 API 密鑰 |
-| `X-FastComments-Timestamp` | 請求簽署時的 Unix 時間戳（秒） |
-| `X-FastComments-Signature` | HMAC-SHA256 簽名（`sha256=<hex>`） |
+| `token` | 您的 API Secret |
+| `X-FastComments-Timestamp` | 請求簽署時的 Unix 時間戳(秒) |
+| `X-FastComments-Signature` | HMAC-SHA256 簽名(`sha256=<hex>`) |
 
-請參閱 [安全性與 API 令牌](/guide-webhooks.html#webhooks-api-tokens) 以取得驗證 HMAC 簽名的相關資訊。
+有關驗證 HMAC 簽名的資訊,請參閱[安全性與 API 權杖](/guide-webhooks.html#webhooks-api-tokens)。

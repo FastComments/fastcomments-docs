@@ -1,43 +1,43 @@
-If you are moving your site off of WordPress and want FastComments on the new site, you do not need the WordPress plugin. Export your comments from WordPress, then upload the file on the [Strona importu](https://fastcomments.com/auth/my-account/manage-data/import) in the FastComments dashboard.
+Jeśli przenosisz swoją witrynę z WordPress i chcesz używać FastComments na nowej stronie, nie potrzebujesz wtyczki WordPress. Wyeksportuj swoje komentarze z WordPress, a następnie prześlij plik na [stronie importu](https://fastcomments.com/auth/my-account/manage-data/import) w panelu FastComments.
 
-We support two WordPress export formats.
+Obsługujemy dwa formaty eksportu z WordPress.
 
-### WordPress XML (Zalecane)
+### WordPress XML (zalecane)
 
-This is the file from WordPress's built-in exporter, so no extra plugin is needed.
+To plik z wbudowanego eksportera WordPress, więc nie jest potrzebna dodatkowa wtyczka.
 
-1. In your WordPress admin, go to `Tools -> Export`.
-2. Select `All content` and click `Download Export File`.
-3. On the FastComments [Strona importu](https://fastcomments.com/auth/my-account/manage-data/import), select `WordPress (.xml)` and upload the file.
+1. W panelu administracyjnym WordPress przejdź do `Tools -> Export`.
+2. Wybierz `All content` i kliknij `Download Export File`.
+3. Na [stronie importu](https://fastcomments.com/auth/my-account/manage-data/import) FastComments wybierz `WordPress (.xml)` i prześlij plik.
 
-Each comment is tied to the URL of the post it was left on, which is already in the file.
+Każdy komentarz jest powiązany z adresem URL wpisu, na którym został dodany, który jest już zawarty w pliku.
 
-The import keeps the author name, email, and website, the date, the content, reply threading, and whether the comment was approved. Commenter avatars are brought over from Gravatar. Votes are not part of this format.
+Import zachowuje nazwę autora, adres e-mail i stronę internetową, datę, treść, wątki odpowiedzi oraz informację, czy komentarz został zatwierdzony. Awatary komentujących są przenoszone z Gravatara. Głosy nie są częścią tego formatu.
 
 ### WordPress CSV
 
-This is the file from [WebToffee's WordPress Comments Import & Export plugin](https://wordpress.org/plugins/comments-import-export-woocommerce/).
+To plik z [wtyczki WebToffee WordPress Comments Import & Export](https://wordpress.org/plugins/comments-import-export-woocommerce/).
 
-1. Install the plugin in your WordPress admin and export your comments as CSV.
-2. Replace each `comment_post_ID` value with the post's URL.
-3. On the FastComments [Strona importu](https://fastcomments.com/auth/my-account/manage-data/import), select `WordPress (.csv)` and upload the file.
+1. Zainstaluj wtyczkę w panelu administracyjnym WordPress i wyeksportuj swoje komentarze jako CSV.
+2. Zastąp każdą wartość `comment_post_ID` adresem URL wpisu.
+3. Na [stronie importu](https://fastcomments.com/auth/my-account/manage-data/import) FastComments wybierz `WordPress (.csv)` i prześlij plik.
 
-Each comment is tied to the `comment_post_ID` column. WordPress fills this column with the post ID, and your new site does not have WordPress post IDs, so step 2 replaces it with the URL.
+Każdy komentarz jest powiązany z kolumną `comment_post_ID`. WordPress wypełnia tę kolumnę identyfikatorem wpisu, a Twoja nowa witryna nie ma identyfikatorów wpisów WordPress, dlatego w kroku 2 zastępujemy go adresem URL.
 
-The import keeps the author name, email, and website, the date, the content, reply threading, and whether the comment was approved. Commenter avatars are brought over from Gravatar. It also keeps WordPress's spam flag, and wpDiscuz likes and dislikes when the file includes them.
+Import zachowuje nazwę autora, adres e-mail i stronę internetową, datę, treść, wątki odpowiedzi oraz informację, czy komentarz został zatwierdzony. Awatary komentujących są przenoszone z Gravatara. Zachowuje również flagę spamu WordPress oraz polubienia i polubienia w stylu "nie lubię" z wpDiscuz, gdy plik je zawiera.
 
-### Matching Comments to Your New Pages
+### Dopasowywanie komentarzy do nowych stron
 
-If your new site keeps the same URLs as your WordPress site, the comments show up on the matching pages with no extra setup.
+Jeśli Twoja nowa witryna zachowuje te same adresy URL co witryna WordPress, komentarze pojawią się na odpowiednich stronach bez dodatkowej konfiguracji.
 
-If the domain changes, run the [narzędzie migracji domen](/guide-migrations.html#migrating-domains) after the import. If individual page URLs change, you can [migrate each page](/guide-migrations.html#migrating-pages) from its old URL to the new one.
+Jeśli domena się zmienia, uruchom po imporcie [narzędzie migracji domen](/guide-migrations.html#migrating-domains). Jeśli zmieniają się adresy URL poszczególnych stron, możesz [zmigrować każdą stronę](/guide-migrations.html#migrating-pages) ze starego adresu URL na nowy.
 
-For bulk page migrations, such as removing the domain from the value you pass to the comment widget's [urlId](/guide-customizations-and-configuration.html#url-id) field, [otwórz zgłoszenie wsparcia](https://fastcomments.com/auth/my-account/help) and we will handle it for you.
+W przypadku masowych migracji stron, na przykład usunięcia domeny z wartości przekazywanej do pola [urlId](/guide-customizations-and-configuration.html#url-id) widżetu komentarzy, [otwórz zgłoszenie do wsparcia](https://fastcomments.com/auth/my-account/help), a my zajmiemy się tym za Ciebie.
 
-### Before You Switch
+### Przed przełączeniem
 
-You can run the import as many times as you like. Re-importing the same file [does not create duplicates](/guide-migrations.html#importing-data), so you can import once to test the new site, then import again with your latest comments right before switching over.
+Import możesz uruchamiać dowolną liczbę razy. Ponowny import tego samego pliku [nie tworzy duplikatów](/guide-migrations.html#importing-data), więc możesz zaimportować dane raz, aby przetestować nową witrynę, a następnie zaimportować je ponownie z najnowszymi komentarzami tuż przed przełączeniem.
 
-For export files larger than 1GB, [reach out to support](https://fastcomments.com/auth/my-account/help).
+W przypadku plików eksportu większych niż 1GB [skontaktuj się z pomocą techniczną](https://fastcomments.com/auth/my-account/help).
 
-To add FastComments to your new site, see the [poradnik instalacji](/guide-installation.html).
+Aby dodać FastComments do swojej nowej witryny, zobacz [przewodnik instalacji](/guide-installation.html).

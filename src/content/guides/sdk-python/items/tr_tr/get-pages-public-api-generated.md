@@ -1,25 +1,25 @@
-List pages for a tenant. Used by the FChat desktop client to populate its room list.  
-Requires `enableFChat` to be true on the resolved custom config for each page.  
-Pages that require SSO are filtered against the requesting user's group access.
+Bir kiracı (tenant) için sayfaları listeler. FChat masaüstü istemcisi tarafından oda listesini doldurmak için kullanılır.
+Her sayfa için çözümlenen özel yapılandırmada `enableFChat` değerinin true olması gerekir.
+SSO gerektiren sayfalar, isteği yapan kullanıcının grup erişimine göre filtrelenir.
 
-## Parameters
+## Parametreler
 
-| Name | Type | Location | Required | Description |
+| Ad | Tür | Konum | Zorunlu | Açıklama |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| cursor | string | query | No | Önceki bir istekte `nextCursor` olarak döndürülen opak sayfalama işaretçisi. Aynı `sortBy` ile ilişkilidir. |
-| limit | integer | query | No | 1..200, varsayılan 50 |
-| q | string | query | No | İsteğe bağlı büyük/küçük harfe duyarsız başlık önek filtresi. |
-| sortBy | string | query | No | Sıralama düzeni. `updatedAt` (varsayılan, en yeni önce), `commentCount` (en çok yorum önce), veya `title` (alfabetik). |
-| hasComments | boolean | query | No | True ise, yalnızca en az bir yorumu olan sayfaları döndür. |
+| tenantId | string | path | Evet |  |
+| cursor | string | query | Hayır | Önceki bir istekten `nextCursor` olarak döndürülen opak sayfalama imleci. Aynı `sortBy` değerine bağlıdır. |
+| limit | integer | query | Hayır | 1..200, varsayılan 50 |
+| q | string | query | Hayır | İsteğe bağlı, büyük/küçük harfe duyarsız başlık öneki filtresi. |
+| sortBy | string | query | Hayır | Sıralama düzeni. `updatedAt` (varsayılan, en yeni önce), `commentCount` (en çok yorumlu önce) veya `title` (alfabetik). |
+| hasComments | boolean | query | Hayır | True ise, yalnızca en az bir yorumu olan sayfaları döndürür. |
 
-## Response
+## Yanıt
 
 Döndürür: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/get_public_pages_response.py)
 
-## Example
+## Örnek
 
-[inline-code-attrs-start title = 'get_pages_public Örnek'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'get_pages_public Örneği'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
 from client.api.public_api import GetPagesPublicOptions
@@ -28,8 +28,8 @@ from client.models.pages_sort_by import PagesSortBy
 from client.rest import ApiException
 from pprint import pprint
 
-# Host tanımlaması isteğe bağlıdır ve varsayılan olarak https://fastcomments.com adresine sahiptir
-# Desteklenen tüm yapılandırma parametrelerinin listesini görmek için configuration.py dosyasına bakın.
+# Defining the host is optional and defaults to https://fastcomments.com
+# See configuration.py for a list of all supported configuration parameters.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
@@ -37,14 +37,14 @@ configuration = client.Configuration(
 
 # Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # API sınıfının bir örneğini oluştur
+    # Create an instance of the API class
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    cursor = 'cursor_example' # str | Önceki bir istekte `nextCursor` olarak döndürülen opak sayfalama işaretçisi. Aynı `sortBy` ile ilişkilidir. (opsiyonel)
-    limit = 56 # int | 1..200, varsayılan 50 (opsiyonel)
-    q = 'q_example' # str | İsteğe bağlı büyük/küçük harfe duyarsız başlık önek filtresi. (opsiyonel)
-    sort_by = client.PagesSortBy() # PagesSortBy | Sıralama düzeni. `updatedAt` (varsayılan, en yeni önce), `commentCount` (en çok yorum önce), veya `title` (alfabetik). (opsiyonel)
-    has_comments = True # bool | True ise, yalnızca en az bir yorumu olan sayfaları döndür. (opsiyonel)
+    cursor = 'cursor_example' # str | Önceki bir istekten `nextCursor` olarak döndürülen opak sayfalama imleci. Aynı `sortBy` değerine bağlıdır. (optional)
+    limit = 56 # int | 1..200, varsayılan 50 (optional)
+    q = 'q_example' # str | İsteğe bağlı, büyük/küçük harfe duyarsız başlık öneki filtresi. (optional)
+    sort_by = client.PagesSortBy() # PagesSortBy | Sıralama düzeni. `updatedAt` (varsayılan, en yeni önce), `commentCount` (en çok yorumlu önce) veya `title` (alfabetik). (optional)
+    has_comments = True # bool | True ise, yalnızca en az bir yorumu olan sayfaları döndürür. (optional)
 
     try:
         api_response = api_instance.get_pages_public(tenant_id, GetPagesPublicOptions(cursor=cursor, limit=limit, q=q, sort_by=sort_by, has_comments=has_comments))

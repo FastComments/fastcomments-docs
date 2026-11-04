@@ -1,8 +1,8 @@
-The Recent Comments Widget displays a list of the most recent comments across your site or for a specific page. It includes a heading, rounded avatars, comment previews, clickable dates that deep-link to the comment, and automatic dark mode detection.
+Widżet Ostatnich Komentarzy wyświetla listę najnowszych komentarzy z całej witryny lub z konkretnej strony. Zawiera nagłówek, zaokrąglone awatary, podglądy komentarzy, klikalne daty prowadzące bezpośrednio do komentarza oraz automatyczne wykrywanie trybu ciemnego.
 
-## Basic Installation
+## Podstawowa instalacja
 
-[inline-code-attrs-start title = 'Instalacja widżetu Ostatnie komentarze'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Instalacja widżetu Ostatnich Komentarzy'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/widget-recent-comments-v2.min.js"></script>
 <div id="fastcomments-widget-recent-comments"></div>
@@ -13,18 +13,18 @@ The Recent Comments Widget displays a list of the most recent comments across yo
 </script>
 [inline-code-end]
 
-## Configuration Options
+## Opcje konfiguracji
 
-- **tenantId** (required): Your FastComments tenant ID
-- **urlId** (optional): Filter to a single page. Leave null for all pages
-- **count** (optional): Number of comments to show. Default is `10`
-- **hasDarkBackground** (optional): Force dark mode styling. Auto-detected from the page background if not set
+- **tenantId** (wymagane): Identyfikator tenant FastComments
+- **urlId** (opcjonalne): Filtr ograniczający do jednej strony. Pozostaw null dla wszystkich stron
+- **count** (opcjonalne): Liczba wyświetlanych komentarzy. Domyślnie `10`
+- **hasDarkBackground** (opcjonalne): Wymusza stylizację trybu ciemnego. Automatycznie wykrywane na podstawie tła strony, jeśli nie ustawiono
 
-## Widget Structure
+## Struktura widżetu
 
-The widget renders with the following HTML structure:
+Widżet renderuje się z następującą strukturą HTML:
 
-[inline-code-attrs-start title = 'Struktura HTML widżetu Ostatnie komentarze'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Struktura HTML widżetu Ostatnich Komentarzy'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <div class="fc-rc2">
     <div class="fc-rc2-heading">Recent Comments</div>
@@ -44,9 +44,9 @@ The widget renders with the following HTML structure:
 </div>
 [inline-code-end]
 
-## Default CSS Reference
+## Referencja domyślnego CSS
 
-[inline-code-attrs-start title = 'Domyślny CSS widżetu Ostatnie komentarze'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Domyślny CSS widżetu Ostatnich Komentarzy'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rc2 {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -70,9 +70,9 @@ The widget renders with the following HTML structure:
 .fc-rc2-page-link:hover { color: #0066cc; text-decoration: underline; }
 [inline-code-end]
 
-## Customization Examples
+## Przykłady dostosowania
 
-### Change Avatar Size
+### Zmiana rozmiaru awatara
 
 [inline-code-attrs-start title = 'Niestandardowy rozmiar awatara'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -82,23 +82,21 @@ The widget renders with the following HTML structure:
 }
 [inline-code-end]
 
-### Show More Lines of Comment Text
+### Wyświetlanie większej liczby linii tekstu komentarza
 
-[inline-code-attrs-start title = 'Pokaż więcej linii komentarza'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Wyświetlanie większej liczby linii komentarza'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rc2-body {
     -webkit-line-clamp: 5 !important;
 }
 [inline-code-end]
 
-### Remove the Container Border
+### Usunięcie obramowania kontenera
 
-[inline-code-attrs-start title = 'Usuń obramowanie kontenera'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Usunięcie obramowania kontenera'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rc2 {
     border: none !important;
     box-shadow: none !important;
 }
 [inline-code-end]
-
----

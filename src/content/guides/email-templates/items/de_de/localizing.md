@@ -1,4 +1,3 @@
----
 FastComments ist eine lokalisierte Plattform. Alle unsere Widgets, E-Mails und Benachrichtigungen sind lokalisiert.
 
 Lokalisiert bedeutet, dass wir je nach Standort und bevorzugter Sprache des Benutzers eine andere Sprache und Formatierung anzeigen. Wir ermitteln dies anhand der Informationen, die der Browser des Benutzers uns zur Verfügung stellt.
@@ -12,5 +11,3 @@ Lokalisierten Text greift man über das `TEXT`-Objekt ab, zum Beispiel: `<%= TEX
 Bei SSO-Integrationen: Wenn `locale` nicht angegeben ist, wird es jedes Mal aktualisiert, wenn der Benutzer mit einer anderen Locale auf das Kommentar-Widget zugreift. Das bedeutet, dass die Sprachpräferenz des Benutzers automatisch aktualisiert wird und zukünftige E-Mails in dieser Locale gesendet werden.
 
 Dies kann auch manuell gesetzt werden, indem `locale` im SSO-Payload übergeben wird.
-
----

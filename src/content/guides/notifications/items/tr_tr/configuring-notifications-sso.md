@@ -17,5 +17,3 @@ SSO için bildirimler söz konusu olduğunda göz önünde bulundurulması gerek
   - Bu, `DomainConfig` nesnesindeki `footerUnsubscribeURL` özelliği ile yapılır.
   - Bu API aracılığıyla ayarlanabilir.
   - Ayrıca aynı nesnedeki `emailHeaders` aracılığıyla ilgili abonelikten çıkış başlıklarını ayarlamayı da düşünebilirsiniz.
-
----

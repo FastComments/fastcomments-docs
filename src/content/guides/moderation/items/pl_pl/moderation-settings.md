@@ -1,4 +1,3 @@
----
 Chociaż FastComments obsługuje wykrywanie wulgaryzmów i spamu, można je dostosować. Wulgaryzmy lub wykrywanie spamu można wyłączyć indywidualnie na stronie Ustawień moderacji komentarzy.
 
 To także strona, na której znajdziesz konfigurację automatycznego zatwierdzania komentarzy oraz ustawienia wygaśnięcia niezweryfikowanych komentarzy.

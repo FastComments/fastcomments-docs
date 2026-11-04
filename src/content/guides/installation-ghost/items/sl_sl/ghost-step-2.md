@@ -23,5 +23,3 @@ Uspešen izhod bo izgledal tako (opozorila lahko prezrete):
 </div>
 
 To bo nastavilo odvisnosti teme za kasnejše ukaze, ki jih bomo izvedli. Prav tako izvoz temelji na tem, da so odvisnosti teme nameščene, sicer ponovni uvoz ne bo pravilno deloval.
-
----

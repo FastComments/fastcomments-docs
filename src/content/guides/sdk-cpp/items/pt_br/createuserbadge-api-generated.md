@@ -24,5 +24,3 @@ api->createUserBadge(tenantId, badgeParams).then([](std::shared_ptr<APICreateUse
     }
 });
 [inline-code-end]
-
----

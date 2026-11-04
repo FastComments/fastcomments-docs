@@ -1,19 +1,19 @@
-Bulk user info for a tenant. Given userIds, return display info from User / SSOUser.  
-Used by the comment widget to enrich users that just appeared via a presence event.  
-No page context: privacy is enforced uniformly (private profiles are masked).
+Informations utilisateur en masse pour un tenant. Étant donné des userIds, renvoie les informations d'affichage de User / SSOUser.
+Utilisé par le widget de commentaires pour enrichir les utilisateurs qui viennent d'apparaître via un événement de présence.
+Pas de contexte de page : la confidentialité est appliquée de manière uniforme (les profils privés sont masqués).
 
-## Parameters
+## Paramètres
 
-| Name | Type | Location | Required | Description |
+| Nom | Type | Emplacement | Requis | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| ids | string | query | Yes | Identifiants d'utilisateur séparés par des virgules. |
+| tenantId | string | path | Oui |  |
+| ids | string | query | Oui | userIds délimités par des virgules. |
 
-## Response
+## Réponse
 
-Returns: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PageUsersInfoResponse.php)
+Renvoie : [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PageUsersInfoResponse.php)
 
-## Example
+## Exemple
 
 [inline-code-attrs-start title = 'Exemple getUsersInfo'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -23,13 +23,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Si vous souhaitez utiliser un client HTTP personnalisé, transmettez votre client qui implémente `GuzzleHttp\ClientInterface`.
+    // Si vous souhaitez utiliser un client http personnalisé, passez votre client qui implémente `GuzzleHttp\ClientInterface`.
     // Ceci est optionnel, `GuzzleHttp\Client` sera utilisé par défaut.
     new GuzzleHttp\Client()
 );
 
-$tenant_id = 'tenant_id_example'; // chaîne
-$ids = 'ids_example'; // chaîne | Identifiants d'utilisateur séparés par des virgules.
+$tenant_id = 'tenant_id_example'; // string
+$ids = 'ids_example'; // string | userIds délimités par des virgules.
 
 
 try {

@@ -19,5 +19,3 @@ SSO なし。ユーザーはゲストとしてコメントするか、FastCommen
 <sup>(任意)</sup> 管理者を [Users & Administrators](https://fastcomments.com/auth/my-account/users) に、モデレーターを [Comment Moderators](https://fastcomments.com/auth/my-account/moderate-comments/moderators) に追加すると、操作性が向上しモデレーターの統計トラッキングが有効になります。
 
 SSO の仕組みを詳しく知りたい場合は、カスタマイズドキュメントの [SSO セクション](/guide-customizations-and-configuration.html#sso) を参照してください。
-
----

@@ -1,4 +1,3 @@
----
 Nastavite svoj ID najemnika enkrat v `hugo.toml`:
 
 ```toml
@@ -11,4 +10,3 @@ Nato bodisi vključite pripomoček za komentarje v svojo temo (glejte [Integraci
 ```text
 \{{< fastcomments >}}
 ```
----

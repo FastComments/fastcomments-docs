@@ -1,4 +1,3 @@
----
 Per prima cosa, dobbiamo aprire l'editor dei template di ClickFunnels. Per i corsi, si accede aprendo il corso e cliccando `Customize` in alto a destra:
 
 <div class="screenshot white-bg">
@@ -21,5 +20,3 @@ I corsi sono composti da diversi template. Vogliamo visualizzare i commenti nell
 </div>
 
 Ecco fatto! Ora sei pronto per il passo due.
-
----

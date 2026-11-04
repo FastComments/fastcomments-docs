@@ -1,10 +1,10 @@
 [api-resource-header-start name = 'Tenant'; route = 'GET /api/v1/tenants'; creditsCost = 1; api-resource-header-end]
 
-Цей API повертає tenants, якими керує ваш tenant.
+Цей API повертає орендарів (tenants), якими керує ваш орендар.
 
-Пагінація здійснюється за допомогою параметра запиту `skip`. Tenants повертаються сторінками по `100`, впорядковані за `signUpDate` та `id`.
+Пагінація здійснюється за допомогою параметра запиту `skip`. Орендарі повертаються сторінками по `100`, відсортовані за `signUpDate` та `id`.
 
-Вартість залежить від кількості повернутих tenants і становить `1 credit per 10` tenants.
+Вартість залежить від кількості повернених орендарів — `1 кредит за 10` повернених орендарів.
 
 [inline-code-attrs-start title = 'Приклад cURL для Tenant'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -12,10 +12,10 @@ curl --request GET \
   --url 'https://fastcomments.com/api/v1/tenants?tenantId=demo&skip=0&API_KEY=DEMO_API_SECRET'
 [inline-code-end]
 
-Ви можете визначати параметри `meta` в об'єктах `Tenant` і виконувати запит для пошуку відповідних tenants. Наприклад, для ключа `someKey` та значення meta `some-value`, ми можемо
-construct a JSON object with this key/value pair and then URI encode it as a query param to filter:
+Ви можете визначити параметри `meta` в об\'єктах `Tenant` і виконувати запити для пошуку відповідних орендарів. Наприклад, для ключа `someKey` та значення meta `some-value` ми можемо
+створити JSON-об\'єкт із цією парою ключ/значення, а потім URI-кодувати його як параметр запиту для фільтрації:
 
-[inline-code-attrs-start title = 'Приклад cURL запиту Tenant за Meta'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад cURL запиту Tenant за meta'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/tenants?tenantId=demo&skip=0&API_KEY=DEMO_API_SECRET&meta=%7B%22someKey%22%3A%22some-value%22%7D'
@@ -26,7 +26,7 @@ curl --request GET \
 interface TenantsRequestQueryParams {
     tenantId: string
     API_KEY: string
-    /** Кількість tenants, які слід пропустити для пагінації. **/
+    /** Кількість орендарів, які слід пропустити для пагінації. **/
     skip?: number
     /** Фільтрувати за параметрами meta. **/
     meta?: string
@@ -37,12 +37,10 @@ interface TenantsRequestQueryParams {
 [inline-code-start]
 interface TenantsResponse {
     status: 'success' | 'failed'
-    /** Додається у разі помилки. **/
+    /** Включається у разі помилки. **/
     code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key'
-    /** Додається у разі помилки. **/
+    /** Включається у разі помилки. **/
     reason?: string
     tenants?: Tenant[]
 }
 [inline-code-end]
-
----

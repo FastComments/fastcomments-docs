@@ -9,5 +9,3 @@ In this tutorial we'll be targeting a blog built with Ghost, but with a little k
 This tutorial starts from the perspective of a user who is very new to Ghost. Users experienced in editing their themes can skip to `Step 4`.
 
 If you're having trouble, feel free to send your exported theme template to your support representative (still requires steps 1 - 5).
-
----

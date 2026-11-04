@@ -1,26 +1,21 @@
-Past commenters on the page who are NOT currently online. Sorted by displayName.  
-ページ上で過去にコメントしたが、現在オンラインではないユーザー。displayNameでソートされます。
+現在オンラインではない、そのページの過去のコメント投稿者。displayName でソートされます。
+/users/online を使い切った後にこの API を使用して「メンバー」セクションをレンダリングします。
+commenterName に対するカーソルページネーション: サーバーは部分インデックス {tenantId, urlId, commenterName} を afterName から $gt で前方に走査し、$skip のコストは発生しません。
 
-Use this after exhausting /users/online to render a "Members" section.  
-`/users/online` をすべて使い切った後に、"Members" セクションを表示するために使用します。
+## パラメータ
 
-Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName} index from afterName forward via $gt, no $skip cost.  
-commenterName に対するカーソルページング: サーバーは部分的な `{tenantId, urlId, commenterName}` インデックスを `afterName` 以降へ `$gt` で進めます。`$skip` のコストはかかりません。
-
-## Parameters
-
-| Name | Type | Location | Required | Description |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| urlId | string | query | Yes | ページ URL 識別子（サーバー側でクリーンアップされたもの）。 |
-| afterName | string | query | No | カーソル: 前回のレスポンスから `nextAfterName` を渡します。 |
-| afterUserId | string | query | No | カーソルのタイブレーカー: 前回のレスポンスから `nextAfterUserId` を渡します。`afterName` が設定されている場合に必要で、名前が同じ場合にエントリが落ちないようにします。 |
+| tenantId | string | path | はい |  |
+| urlId | string | query | はい | ページ URL 識別子(サーバー側でクリーンアップされます)。 |
+| afterName | string | query | いいえ | カーソル: 前のレスポンスの nextAfterName を渡します。 |
+| afterUserId | string | query | いいえ | カーソルのタイブレーカー: 前のレスポンスの nextAfterUserId を渡します。afterName が設定されている場合は必須です。同一名のエントリが欠落しないようにするためです。 |
 
-## Response
+## レスポンス
 
-Returns: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PageUsersOfflineResponse.php)
+戻り値: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PageUsersOfflineResponse.php)
 
-## Example
+## 例
 
 [inline-code-attrs-start title = 'getOfflineUsers の例'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -31,15 +26,15 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
     // カスタム HTTP クライアントを使用したい場合は、`GuzzleHttp\ClientInterface` を実装したクライアントを渡してください。
-    // これはオプションです。デフォルトで `GuzzleHttp\Client` が使用されます。
+    // これは省略可能で、デフォルトでは `GuzzleHttp\Client` が使用されます。
     new GuzzleHttp\Client()
 );
 
 $tenant_id = 'tenant_id_example'; // string
-$url_id = 'url_id_example'; // string | ページ URL 識別子（サーバー側でクリーンアップされたもの）。
+$url_id = 'url_id_example'; // string | ページ URL 識別子(サーバー側でクリーンアップされます)。
 $options = [
-    'after_name' => 'after_name_example', // string | カーソル: 前回のレスポンスから `nextAfterName` を渡します。
-    'after_user_id' => 'after_user_id_example', // string | カーソルのタイブレーカー: 前回のレスポンスから `nextAfterUserId` を渡します。`afterName` が設定されている場合に必要で、名前が同じ場合にエントリが落ちないようにします。
+    'after_name' => 'after_name_example', // string | カーソル: 前のレスポンスの nextAfterName を渡します。
+    'after_user_id' => 'after_user_id_example', // string | カーソルのタイブレーカー: 前のレスポンスの nextAfterUserId を渡します。afterName が設定されている場合は必須です。同一名のエントリが欠落しないようにするためです。
 ];
 
 

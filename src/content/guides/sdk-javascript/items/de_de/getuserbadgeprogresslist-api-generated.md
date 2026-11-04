@@ -26,5 +26,3 @@ Rückgabe: [`APIGetUserBadgeProgressListResponse`](https://github.com/FastCommen
   const badges: UserBadgeProgress[] = response.badges;
 })();
 [inline-code-end]
-
----

@@ -1,15 +1,12 @@
-Creates a new trial account for an AI agent without a human signup. No API key is needed to call this.
+Opretter en ny prøvekonto til en AI-agent uden menneskelig tilmelding. Der kræves ingen API-nøgle for at kalde dette.
 
-The response contains the tenant id, an API key that works immediately against the REST API and the
-MCP server, and a claim URL. Give the claim URL to the human you are working for: opening it while
-logged in to FastComments attaches the account to them. Unclaimed accounts, and their keys, are
-deleted 72 hours after creation. Until claimed, the account has the standard trial limits.
+Svaret indeholder tenant-id'et, en API-nøgle, der fungerer med det samme mod REST API'en og MCP-serveren, samt en claim-URL. Giv claim-URL'en til den person, du arbejder for: når den åbnes, mens man er logget ind på FastComments, tilknyttes kontoen til denne person. Ikke-claimede konti og deres nøgler slettes 72 timer efter oprettelsen. Indtil kontoen claimes, gælder de standard begrænsninger for prøvekonti.
 
 ## Response
 
-Returns: [`CreateAgentTenantResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateAgentTenantResponse.java)
+Returnerer: [`CreateAgentTenantResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateAgentTenantResponse.java)
 
-## Example
+## Eksempel
 
 [inline-code-attrs-start title = 'createAgentTenant Eksempel'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -41,5 +38,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

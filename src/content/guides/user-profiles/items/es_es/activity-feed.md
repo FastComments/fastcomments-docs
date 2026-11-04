@@ -1,4 +1,3 @@
----
 El Feed de Actividad en los Perfiles de Usuario muestra el historial de comentarios de un usuario, las notificaciones y la participación en comunidades en todos los sitios impulsados por FastComments.
 
 ### ¿Qué es el Feed de Actividad?
@@ -163,5 +162,3 @@ Una de las características más potentes de los Perfiles de Usuario de FastComm
 - Borra la caché del navegador y actualiza
 - Cierra sesión y vuelve a iniciarla
 - Informa cualquier problema persistente al soporte
-
----

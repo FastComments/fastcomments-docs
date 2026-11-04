@@ -1,9 +1,9 @@
-Past commenters on the page who are NOT currently online. Sorted by displayName.  
-Use this after exhausting /users/online to render a "Members" section.  
-Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName}  
-index from afterName forward via $gt, no $skip cost.
+Προηγούμενοι σχολιαστές της σελίδας που ΔΕΝ είναι επί του παρόντος συνδεδεμένοι. Ταξινομημένοι κατά displayName.
+Χρησιμοποιήστε το μετά την εξάντληση του /users/online για να αποδώσετε μια ενότητα "Members".
+Σελιδοποίηση με cursor στο commenterName: ο διακομιστής διασχίζει το μερικό ευρετήριο {tenantId, urlId, commenterName}
+από το afterName προς τα εμπρός μέσω $gt, χωρίς κόστος $skip.
 
-## Parameters
+## Παράμετροι
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
@@ -11,20 +11,20 @@ index from afterName forward via $gt, no $skip cost.
 | urlId | string | Ναι |  |
 | options | GetOfflineUsersOptions | Όχι |  |
 
-## Response
+## Απάντηση
 
 Επιστρέφει: [`Option[PageUsersOfflineResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_page_users_offline_response.nim)
 
-## Example
+## Παράδειγμα
 
-[inline-code-attrs-start title = 'Παράδειγμα getOfflineUsers'; type = 'nim'; isFunctional = false; inline-code-attrs-end]  
-[inline-code-start]  
-let (offlineResp, httpResponse) = client.getOfflineUsers(  
-  tenantId = "my-tenant-123",  
-  urlId = "news/article-title",  
-  options = GetOfflineUsersOptions()  
-)  
-if offlineResp.isSome:  
-  let offline = offlineResp.get()  
-  echo offline)  
+[inline-code-attrs-start title = 'Παράδειγμα getOfflineUsers'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+let (offlineResp, httpResponse) = client.getOfflineUsers(
+  tenantId = "my-tenant-123",
+  urlId = "news/article-title",
+  options = GetOfflineUsersOptions()
+)
+if offlineResp.isSome:
+  let offline = offlineResp.get()
+  echo offline)
 [inline-code-end]

@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Ime | Tip | Obvezno | Opis |
@@ -26,5 +25,3 @@ api->getNotificationCount(tenantId, options)
         }
     });
 [inline-code-end]
-
----

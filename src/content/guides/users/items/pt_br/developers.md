@@ -1,4 +1,3 @@
----
 Para desenvolvedores que você talvez não queira que sejam `Administrators`, considere criar um usuário `Administrator` com as seguintes permissões:
 
 1. Analytics Admin
@@ -16,4 +15,3 @@ A justificativa para essas permissões é a seguinte:
 3. **Data Management Admin**: Isso será necessário para gerenciar importações e exportações, e configurar webhooks.
 4. **Comment Moderation Admin**: Isso será necessário para visualizar os dados dos comentários, ao menos durante a configuração.
 5. **API/SSO Admin**: Isso permitirá que eles obtenham as API keys diretamente da nossa plataforma. Consideramos isso mais seguro do que um `Administrator` copiá-las para eles e enviar o API Secret por e-mail, o que pode não ser muito seguro.
----

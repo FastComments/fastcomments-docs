@@ -1,27 +1,27 @@
-Like count for a page, optionally with the users who liked it.
+Nombre de likes pour une page, avec éventuellement les utilisateurs qui ont aimé.
 
-## Parameters
+## Paramètres
 
-| Name | Type | Location | Required | Description |
+| Nom | Type | Emplacement | Requis | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| urlId | string | query | Yes |  |
-| includeUserInfo | string | query | No | "\"public\" omet les utilisateurs avec des profils privés, \"include-private\" les inclut." |
+| tenantId | string | query | Oui |  |
+| urlId | string | query | Oui |  |
+| includeUserInfo | string | query | Non | "public" omet les utilisateurs avec des profils privés, "include-private" les inclut. |
 
-## Response
+## Réponse
 
-Renvoie: [`GetPageLikesAPIResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetPageLikesAPIResponse.swift)
+Renvoie : [`GetPageLikesAPIResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetPageLikesAPIResponse.swift)
 
 ## Exemple
 
 [inline-code-attrs-start title = 'Exemple getPageLikes'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Les exemples de code suivants sont encore en version bêta. Pour tout problème, veuillez le signaler via http://github.com/OpenAPITools/openapi-generator/issues/new
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let tenantId = "tenantId_example" // Chaîne | 
-let urlId = "urlId_example" // Chaîne | 
-let includeUserInfo = PageReactIncludeUserInfo() // PageReactIncludeUserInfo | \"public\" omet les utilisateurs avec des profils privés, \"include-private\" les inclut. (optionnel)
+let tenantId = "tenantId_example" // String | 
+let urlId = "urlId_example" // String | 
+let includeUserInfo = PageReactIncludeUserInfo() // PageReactIncludeUserInfo | \"public\" omet les utilisateurs avec des profils privés, \"include-private\" les inclut. (optional)
 
 DefaultAPI.getPageLikes(tenantId: tenantId, urlId: urlId, includeUserInfo: includeUserInfo) { (response, error) in
     guard error == nil else {

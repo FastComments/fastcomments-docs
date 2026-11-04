@@ -1,4 +1,3 @@
----
 ## 參數
 
 | Name | Type | Location | Required | Description |
@@ -34,5 +33,3 @@ DefaultAPI.patchSSOUser(tenantId: tenantId, id: id, updateAPISSOUserData: update
     }
 }
 [inline-code-end]
-
----

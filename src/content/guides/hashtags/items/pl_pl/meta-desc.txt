@@ -1,3 +1,1 @@
----
 Dyskusja grupowa z hashtagami, które czytelnicy mogą klikać i filtrować. Autouzupełnianie, własne symbole zamiast # oraz wstępne wypełnianie tagów z własnego kodu.
----

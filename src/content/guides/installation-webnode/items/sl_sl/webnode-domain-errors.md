@@ -1,4 +1,3 @@
----
 Morda boste prejeli napako pooblaščenja, podobno naslednji:
 
 <div class="screenshot white-bg">
@@ -20,5 +19,3 @@ Dodajte domeno, kot sledi:
 </div>
 
 Zdaj bi morali imeti na svoji spletni strani Webnode hiter in v realnem času delujoč sistem komentarjev!
-
----

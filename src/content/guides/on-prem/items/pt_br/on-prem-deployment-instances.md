@@ -1,4 +1,3 @@
----
 ### Componentes Obrigatórios
 
 Para On-Prem, o FastComments consiste apenas em um servidor de aplicação e um banco de dados. Simplificamos a implantação de forma que
@@ -48,5 +47,3 @@ O que segue é um guia geral sobre tamanhos de instância de banco de dados. **O
 | 1M                    | 5M                      | 32                 | 32gb                  |
 
 As tabelas acima são estimativas conservadoras. Você pode achar que os requisitos reais diferem com base na sua configuração específica (tamanhos de página, volume de comentários, etc).
-
----

@@ -13,5 +13,3 @@ Das funktioniert mit allen Filtern — wenn Sie nur Spam-Kommentare ansehen, wer
 Kommentaren suchen, die eine bestimmte Phrase enthalten, lösen nur passende Kommentare die Benachrichtigung aus.
 
 Wenn Ihre Verbindung vorübergehend unterbrochen wird, holt das System beim Wiederverbinden automatisch alle Kommentare nach, die Sie verpasst haben.
-
----

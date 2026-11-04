@@ -1,4 +1,3 @@
----
 | Компонент | Опис |
 | --- | --- |
 | `FastComments` | Віджет коментарів з можливістю відповідей, голосуванням та іншими функціями |
@@ -18,4 +17,3 @@ import {
     FastCommentsReviewsSummary,
 } from 'fastcomments-nextjs';
 ```
----

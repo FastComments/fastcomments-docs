@@ -35,5 +35,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->send_invite: #{e}"
 end
 [inline-code-end]
-
----

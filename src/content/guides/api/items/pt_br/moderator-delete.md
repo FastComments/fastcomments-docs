@@ -1,4 +1,3 @@
----
 [api-resource-header-start name = 'Moderator'; route = 'DELETE /api/v1/moderators/:id'; creditsCost = 5; api-resource-header-end]
 
 Esta rota fornece a remoção de um `Moderator` por id.
@@ -27,5 +26,3 @@ interface ModeratorDeleteResponse {
     reason?: string
 }
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 Użytkownicy z uprawnieniem `Super Admin` mogą dodawać i usuwać innych moderatorów.
 
 Użytkownika można dodać, przechodząc [do strony Użytkownicy](https://fastcomments.com/auth/my-account/users) i klikając `Add User` na dole.

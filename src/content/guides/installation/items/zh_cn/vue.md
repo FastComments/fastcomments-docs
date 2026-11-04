@@ -49,5 +49,3 @@ export default {
 `fastcomments-vue` 和 `fastcomments-vue-next` 库支持与 VanillaJS 评论组件相同的配置。
 
 您可以在 <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">此处</a> 找到 Vue 组件支持的配置。
-
----

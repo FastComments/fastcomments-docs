@@ -52,5 +52,3 @@ interface CommentPatchResponse {
     reason?: string
 }
 [inline-code-end]
-
----

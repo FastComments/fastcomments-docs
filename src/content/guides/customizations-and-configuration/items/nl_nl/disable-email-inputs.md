@@ -1,4 +1,3 @@
----
 Wanneer gebruikers een reactie plaatsen en ze niet zijn ingelogd, wordt hen gevraagd hun e‑mail op te geven.
 
 Dit zal een "ongeverifieerde sessie" voor die gebruiker creëren, en we zullen hen vragen die sessie via e‑mail te verifiëren.
@@ -15,5 +14,3 @@ Let op dat, met deze configuratie, alle reacties ongeverifieerd zullen zijn tenz
 https://fastcomments.com.
 
 U kunt overwegen om [het ongeverifieerde label uit te schakelen](/guide-customizations-and-configuration.html#disable-unverified-label).
-
----

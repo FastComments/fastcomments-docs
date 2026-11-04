@@ -22,4 +22,3 @@ Ako je vaš nalog smešten u EU, postavite `region = 'eu'` u konfiguraciji widge
 ```
 
 U suprotnom, ne morate definisati `region`.
----

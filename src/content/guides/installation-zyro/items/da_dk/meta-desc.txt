@@ -1,3 +1,1 @@
----
 Tilføj live-kommentarer til et Zyro-websted med kode-widgetten, og tilføj den flydende likes-knap, så læsere kan reagere uden at skrive en kommentar.
----

@@ -1,4 +1,3 @@
----
 ## 매개변수
 
 | 이름 | 타입 | 필수 | 설명 |
@@ -23,5 +22,3 @@ api->getTenantPackage(tenantId, packageId).then([](pplx::task<std::shared_ptr<Ge
     }catch(...){}
 });
 [inline-code-end]
-
----

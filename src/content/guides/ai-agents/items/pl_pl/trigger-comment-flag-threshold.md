@@ -27,5 +27,3 @@ Jeśli próg wynosi 3 i trzech użytkowników zgłosi komentarz, agent uruchamia
 ### Zalecenia dotyczące łączenia
 
 Zasubskrybuj **oba** `COMMENT_ADD` i `COMMENT_FLAG_THRESHOLD`, jeśli chcesz mieć agenta moderującego, który wychwytuje oczywiste przypadki od razu i ponownie ocenia wątpliwe po zgromadzeniu zgłoszeń. Oba zdarzenia wywoływane są niezależnie - agent uruchomi się dwukrotnie, jeśli oba zostaną zasubskrybowane i oba się wywołają, ale drugie uruchomienie zobaczy już stan z zgłoszeniami.
-
----

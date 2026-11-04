@@ -26,5 +26,3 @@ api->getV1PageLikes(tenantId, urlId).then([=](pplx::task<std::shared_ptr<GetV1Pa
     }
 });
 [inline-code-end]
-
----

@@ -44,5 +44,3 @@ const pollResult: GetPollVotesResponse = await getPollVotes(
 
 console.log(pollResult);
 [inline-code-end]
-
----

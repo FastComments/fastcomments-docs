@@ -1,4 +1,3 @@
----
 FastComments는 SSR과 함께 다음 기능을 지원합니다:
 
 - 맞춤형 댓글 위젯.
@@ -15,4 +14,3 @@ FastComments는 SSR과 함께 다음 기능을 지원합니다:
 FastComments SSR의 예시는 [여기](https://fastcomments.com/ssr/comments?tenantId=L177BUDVvSe&urlId=ssr-test&url=https%3A%2F%2Ffastcomments.com%2Fssr%2Fcomments%2F%3FtenantId%3DL177BUDVvSe%26urlId%3Dssr-test)에서 확인할 수 있습니다.
 
 [app-screenshot-start url='https://fastcomments.com/ssr/comments?tenantId=L177BUDVvSe&urlId=ssr-test&url=https%3A%2F%2Ffastcomments.com%2Fssr%2Fcomments%2F%3FtenantId%3DL177BUDVvSe%26urlId%3Dssr-test'; selector = 'body'; alt='SSR 예시 페이지에서 중첩된 답글, 투표 버튼 및 댓글 입력 상자가 포함된 서버 렌더링된 댓글 스레드'; title='FastComments SSR' app-screenshot-end]
----

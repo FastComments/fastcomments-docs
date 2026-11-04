@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Naziv | Type | Location | Obavezno | Opis |
@@ -35,5 +34,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->add_domain_config: #{e}"
 end
 [inline-code-end]
-
----

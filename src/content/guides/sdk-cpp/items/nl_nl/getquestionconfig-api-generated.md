@@ -1,4 +1,3 @@
----
 ## Parameters
 
 | Name | Type | Required | Description |
@@ -27,5 +26,3 @@ api->getQuestionConfig(tenantId, questionId)
         }
     });
 [inline-code-end]
-
----

@@ -1,3 +1,1 @@
----
 Okuyucuların GIF'lerle yanıt vermesine izin verin. Hangi animasyonlu formatların sorunsuz yüklendiği, kullanıcı yüklemelerinin nasıl işlendiği ve yerleşik GIF seçicinin nasıl etkinleştirileceği.
----

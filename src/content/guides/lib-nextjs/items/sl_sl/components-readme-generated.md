@@ -1,4 +1,3 @@
----
 | Component | Description |
 | --- | --- |
 | `FastComments` | Komentatorski vtičnik z odgovori, glasovanjem in več |
@@ -18,4 +17,3 @@ import {
     FastCommentsReviewsSummary,
 } from 'fastcomments-nextjs';
 ```
----

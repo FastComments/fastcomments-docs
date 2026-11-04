@@ -8,5 +8,3 @@
 Це можна налаштувати без коду на сторінці налаштування віджета:
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.input-after-comments'; alt='Опція сторінки налаштування віджета, яка розміщує область вводу коментаря після потоку коментарів замість перед ним'; title='Переміщення поля відповіді в кінець' app-screenshot-end]
-
----

@@ -1,6 +1,6 @@
 ### Hızlı Başlangıç
 
-Collab Chat ile başlamak basittir. Sayfanıza FastComments Collab Chat betiğini, açıklama yapmak istediğiniz metni içeren bir HTML öğesini ve Tenant ID'niz ile bir yapılandırma nesnesini eklemeniz yeterlidir.
+Collab Chat ile başlamak çok basittir. FastComments Collab Chat betiğine, açıklama eklemek istediğiniz metni içeren bir HTML öğesine ve Tenant ID'nizi içeren bir yapılandırma nesnesine ihtiyacınız var.
 
 ### Kurulum
 
@@ -13,7 +13,7 @@ Collab Chat betiğini sayfanıza ekleyin:
 
 ### Temel Uygulama
 
-Here's a minimal example:
+İşte minimal bir örnek:
 
 [inline-code-attrs-start title = 'Temel Collab Chat Uygulaması'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
@@ -23,7 +23,7 @@ Here's a minimal example:
     <title>My Article with Collab Chat</title>
 </head>
 <body>
-    <!-- İçerik kapsayıcınız -->
+    <!-- İçerik konteyneriniz -->
     <div id="article-content" style="min-height: 500px;">
         <h1>My Article Title</h1>
         <p>This is a paragraph that users can annotate. Simply highlight any text to start a discussion!</p>
@@ -43,20 +43,20 @@ Here's a minimal example:
 </html>
 [inline-code-end]
 
-Replace `'demo'` with your actual FastComments Tenant ID if it's not already, which you can find in your [FastComments dashboard](https://fastcomments.com/auth/my-account/api-secret).
+`'demo'` değerini, henüz yapmadıysanız gerçek FastComments Tenant ID'nizle değiştirin; bunu [FastComments kontrol panelinizde](https://fastcomments.com/auth/my-account/api-secret) bulabilirsiniz.
 
 ### Nasıl Çalışır
 
-Başlatıldıktan sonra kullanıcılar hedef öğe içindeki herhangi bir metni seçebilir. Kısa bir gecikmeden sonra (masaüstünde 3.5 saniye), bir istem görünür ve tartışma başlatmalarına izin verir. Bir tartışma oluşturulduğunda, metin üzerinde görsel bir vurgu görünür. Diğer kullanıcılar vurgunun üzerine gelerek veya tıklayarak tartışmayı görüntüleyebilir ve katılabilir. Tüm tartışmalar tüm ziyaretçiler arasında gerçek zamanlı olarak senkronize edilir.
+Başlatıldıktan sonra, kullanıcılar hedef öğe içindeki herhangi bir metni seçebilir. Kısa bir gecikmenin ardından (masaüstünde 3,5 saniye), bir tartışma başlatmalarına olanak tanıyan bir istem görünür. Bir tartışma oluşturulduğunda, metin üzerinde görsel bir vurgu belirir. Diğer kullanıcılar, tartışmayı görüntülemek ve katılmak için vurgunun üzerine gelebilir veya tıklayabilir. Tüm tartışmalar tüm ziyaretçiler arasında gerçek zamanlı olarak senkronize edilir.
 
 ### Canlı Demo
 
-Collab Chat'i aksiyonda [canlı demo sayfamızda](https://fastcomments.com/product/collab-chat) görebilirsiniz.
+Collab Chat'i çalışırken [canlı demo sayfamızda](https://fastcomments.com/product/collab-chat) görebilirsiniz.
 
 ### Sonraki Adımlar
 
-Artık temel kurulum çalıştığına göre, görünüm ve davranışı Yapılandırma Seçenekleri kılavuzunda özelleştirebilirsiniz. Metin Seçimi Davranışı kılavuzuna bakarak metin seçiminin nasıl çalıştığını anlayın. Stil ve koyu mod desteği hakkında bilgi için Özelleştirme kılavuzuna göz atın. Gelişmiş entegrasyonlar için API Referansını inceleyin.
+Artık temelleri çalışır hale getirdiğinize göre, görünümü ve davranışı Yapılandırma Seçenekleri kılavuzunda özelleştirebilirsiniz. Metin seçiminin nasıl çalıştığını anlamak için Metin Seçim Davranışı kılavuzuna göz atın. Stil ve karanlık mod desteği hakkında bilgi edinmek için Özelleştirme kılavuzuna bakın. Gelişmiş entegrasyonlar için API Referansını inceleyin.
 
-### Önyüz Kütüphaneleri
+### Frontend Kütüphaneleri
 
-Tüm FastComments önyüz kütüphanelerinde (react, vue, angular, vb.) Collab Chat bulunur.
+Tüm FastComments frontend kütüphanelerinde (react, vue, angular vb.) Collab Chat bulunur.

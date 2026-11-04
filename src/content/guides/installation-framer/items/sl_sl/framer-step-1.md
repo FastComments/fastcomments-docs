@@ -6,5 +6,3 @@ V našem primeru bomo FastComments dodali na strani našega bloga, vendar bi mor
     <div class="title">Odprite urejevalnik</div>
     <img class="screenshot-image" src="/images/installation-guides/framer-step-1-open-editor.png" alt="Odprite urejevalnik" />
 </div>
-
----

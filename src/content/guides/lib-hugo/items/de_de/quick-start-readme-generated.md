@@ -1,4 +1,3 @@
----
 Legen Sie Ihre Tenant-ID einmal in `hugo.toml` fest:
 
 ```toml
@@ -11,4 +10,3 @@ Dann binden Sie entweder das Kommentar-Widget in Ihr Theme ein (siehe [Theme Int
 ```text
 \{{< fastcomments >}}
 ```
----

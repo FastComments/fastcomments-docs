@@ -20,5 +20,3 @@ if respOpt.isSome:
 else:
   echo "Failed to delete email template"
 [inline-code-end]
-
----

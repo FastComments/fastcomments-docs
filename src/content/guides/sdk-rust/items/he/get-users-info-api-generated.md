@@ -1,21 +1,21 @@
-Bulk user info for a tenant. Given userIds, return display info from User / SSOUser.  
-Used by the comment widget to enrich users that just appeared via a presence event.  
-No page context: privacy is enforced uniformly (private profiles are masked).
+מידע משתמשים בכמות גדולה עבור טננט. בהינתן userIds, מחזיר מידע תצוגה מ-User / SSOUser.
+משמש את ווידג'ט התגובות להעשרת משתמשים שהופיעו זה עתה באמצעות אירוע נוכחות.
+ללא הקשר עמוד: הפרטיות נאכפת באופן אחיד (פרופילים פרטיים מוסתרים).
 
-## Parameters
+## פרמטרים
 
-| שם | סוג | דרוש | תיאור |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
 | tenant_id | String | Yes |  |
 | ids | String | Yes |  |
 
-## Response
+## תשובה
 
 מחזיר: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/page_users_info_response.rs)
 
-## Example
+## דוגמה
 
-[inline-code-attrs-start title = 'דוגמת get_users_info'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל-get_users_info'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let params = GetUsersInfoParams {
     tenant_id: "acme-corp-tenant".to_string(),

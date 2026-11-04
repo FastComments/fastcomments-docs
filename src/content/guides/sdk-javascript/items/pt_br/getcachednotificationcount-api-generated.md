@@ -19,5 +19,3 @@ Retorna: [`GetCachedNotificationCountResponse`](https://github.com/FastComments/
   const response: GetCachedNotificationCountResponse = await getCachedNotificationCount(tenantId, id);
 })();
 [inline-code-end]
-
----

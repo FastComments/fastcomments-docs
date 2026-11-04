@@ -32,5 +32,3 @@ interface PagesResponse {
 #### 有用提示
 
 請記得將像 `urlId` 這類值進行 URI 編碼。
-
----

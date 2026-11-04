@@ -1,4 +1,3 @@
----
 Testare la tua configurazione SAML assicura che l'autenticazione funzioni correttamente prima di distribuirla agli utenti in produzione.
 
 ### Lista di controllo pre-test
@@ -206,4 +205,3 @@ Dopo i test riusciti:
 2. **Monitoraggio**: Monitorare i tassi di successo delle autenticazioni e i log di errore
 3. **Preparazione del supporto**: Preparare il team di supporto per domande relative a SAML
 4. **Documentazione**: Fornire documentazione utente per il processo di login SAML
----

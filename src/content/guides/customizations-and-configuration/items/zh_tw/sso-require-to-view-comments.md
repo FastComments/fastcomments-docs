@@ -1,44 +1,41 @@
----
-FastComments SSO（<a href="#sso">此處詳情</a>）為您的使用者提供一種無需登入其他平台即可發表評論的方式。
+FastComments SSO(<a href="#sso">詳情請見此處</a>)讓您的使用者無需登入其他平台即可留言。
 
-然而，僅此並不能保護您的評論串，因為預設情況下，評論資料是公開資訊——任何能檢視頁面的人都能看到評論。
+然而,僅憑這一點並無法保護您的留言串安全,因為預設情況下留言資料是公開資訊——任何能檢視該頁面的人都能看到留言。
 
-透過更改設定，我們可以限制只有管理員或有效的 SSO 使用者才能取得評論。
+透過更改一項設定,我們可以限制留言的讀取權限,僅允許管理員或有效的 SSO 使用者存取。
 
-#### No-Code Setup
+#### 無程式碼設定
 
-當設定了 SSO 時，我們可以透過建立<a href="https://fastcomments.com/auth/my-account/customize-widget" target="_blank">自訂規則</a>來防止檢視與互動我們的評論串。
+當 SSO 已設定時,我們可以透過建立一條<a href="https://fastcomments.com/auth/my-account/customize-widget" target="_blank">自訂規則</a>來防止檢視及互動留言串。
 
-執行此操作時，搜尋 SSO，即可找到此選項：
+操作時,搜尋 SSO,您會找到這個選項:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.require-sso'; selector = '.require-sso'; alt='在自訂規則中啟用「需要 SSO 以檢視評論」選項，並可選擇安全等級'; title='需要 SSO 以檢視評論' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.require-sso'; selector = '.require-sso'; alt='在自訂規則中啟用「需要 SSO 才能檢視留言」選項,並顯示安全層級選擇'; title='需要 SSO 才能檢視留言' app-screenshot-end]
 
 啟用它並儲存自訂規則。
 
-#### Only Protect a Certain Domain or Page
+#### 僅保護特定網域或頁面
 
-若只想保護特定的網域或頁面，我們只需在自訂規則中進行相應設定。
+若要僅保護特定網域或頁面,我們只需在自訂規則中進行相應設定。
 
-在自訂介面的頂部，我們會看到兩個輸入欄位：Domain（網域）和 URL ID。
+在自訂 UI 的頂部,我們會看到兩個輸入欄位:Domain 和 URL ID。
 
-若只想保護特定網域，請在「domain」欄位中輸入該網域。
+若要保護特定網域,請在「domain」欄位中輸入該網域。
 
-若要保護特定頁面，請在「URL ID」欄位中輸入頁面的 URL。若您與 FastComments 有自訂整合，也可以在此輸入某種 ID 代替 URL。
+若要保護特定頁面,請在「URL ID」欄位中輸入頁面網址。如果您與 FastComments 有自訂整合,也可以在此輸入某種類型的 ID 而非網址。
 
-#### Security Levels
+#### 安全層級
 
-在要求 SSO 時，您需要決定是使用 Simple SSO（簡易 SSO）還是 Secure SSO（安全 SSO）。若選擇 Simple SSO，則兩者皆可接受；但若選擇 Secure SSO，則必須使用以您的 API 金鑰雜湊的 Secure SSO 載荷來取得內容，才能檢視。
+當要求 SSO 時,您需要決定是要求 Simple SSO 還是 Secure SSO。如果您要求 Simple SSO,則兩者皆可使用;但如果您要求 Secure SSO,則必須使用以您的 API 金鑰雜湊的 Secure SSO 負載來讀取內容,才能檢視。
 
-當您選取「Require SSO To View Comments」時，安全等級選項會顯示，且僅在此選項開啟時生效。
+當您選取「需要 SSO 才能檢視留言」時,安全層級選項就會出現,且僅在該選項開啟時生效。
 
-<a href="#sso-simple">透過 Simple SSO 自動驗證評論與允許 Simple SSO 管理員</a>設定是獨立的，無論此選項是否開啟，都會套用。
+<a href="#sso-simple">透過 Simple SSO 自動驗證留言並允許 Simple SSO 管理員</a>等設定是獨立的,無論此選項是否開啟皆會套用。
 
-#### Protection Beyond Reading
+#### 閱讀以外的保護
 
-啟用此選項後，除非使用者透過 SSO 登入，否則將無法在該頁面或網域上發表評論。
+啟用此選項後,除非使用者已透過 SSO 登入,否則該頁面或網域將無法被留言。
 
-#### Gotchas
+#### 注意事項
 
-在您整合 SSO 之前已發表評論的使用者，除非透過您的 SSO 整合登入，否則將無法看到其評論。
-
----
+在您整合 SSO 之前建立留言的使用者,將無法看到自己的留言,除非他們透過您的 SSO 整合登入。

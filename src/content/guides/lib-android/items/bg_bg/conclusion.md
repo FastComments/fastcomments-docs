@@ -8,5 +8,3 @@
 ## Принос
 
 Приносите са добре дошли! Моля посетете [GitHub хранилището](https://github.com/FastComments/fastcomments-android) за указания за принос.
-
----

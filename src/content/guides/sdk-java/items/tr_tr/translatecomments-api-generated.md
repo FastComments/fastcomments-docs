@@ -1,9 +1,8 @@
-Translates the given comments into the widget locale. Only available when the matching widget
-customization rule has Comment Translation set to Automatic or Manual.
+Verilen yorumları widget yerel diline çevirir. Yalnızca eşleşen widget özelleştirme kuralında Comment Translation (Yorum Çevirisi) Automatic (Otomatik) veya Manual (Manuel) olarak ayarlandığında kullanılabilir.
 
 ## Parametreler
 
-| Ad | Tip | Konum | Gerekli | Açıklama |
+| Ad | Tür | Konum | Zorunlu | Açıklama |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Evet |  |
 | urlId | string | query | Evet |  |
@@ -18,7 +17,7 @@ Döndürür: [`CommentTranslationsResponse`](https://github.com/FastComments/fas
 
 [inline-code-attrs-start title = 'translateComments Örneği'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sınıfları içe aktar:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;

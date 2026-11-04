@@ -1,4 +1,3 @@
----
 Konfigurirajte svoj najemnik v `settings.py`:
 
 ```python

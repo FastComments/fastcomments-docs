@@ -1,4 +1,3 @@
----
 To wszystko! Na Twojej stronie Zyro powinny być teraz dostępne komentarze na żywo.
 
 <div class="screenshot white-bg">
@@ -7,5 +6,3 @@ To wszystko! Na Twojej stronie Zyro powinny być teraz dostępne komentarze na �
 </div>
 
 Jeśli napotkałeś błąd odmowy dostępu lub chcesz dostosować FastComments, czytaj dalej.
-
----

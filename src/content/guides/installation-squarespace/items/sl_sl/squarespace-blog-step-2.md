@@ -31,5 +31,3 @@ Zdaj lahko kopiramo naslednji izsek kode (uporabite gumb za kopiranje v zgornjem
     <div class="title">Prilepi in shrani</div>
     <img class="screenshot-image" src="/images/installation-guides/squarespace-step-2-1-add-code-and-save.png" alt="Prilepi in shrani" />
 </div>
-
----

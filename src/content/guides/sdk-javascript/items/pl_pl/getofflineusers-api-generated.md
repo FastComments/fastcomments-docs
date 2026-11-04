@@ -1,11 +1,12 @@
-Past commenters on the page who are NOT currently online. Sorted by displayName.  
-Użyj tego po wyczerpaniu /users/online, aby wyświetlić sekcję „Members”.  
-Paginacja kursora na commenterName: serwer przegląda częściowy {tenantId, urlId, commenterName} indeks od afterName do przodu za pomocą $gt, bez kosztu $skip.
+Osoby komentujące wcześniej na stronie, które NIE są obecnie online. Sortowane według displayName.
+Użyj tego po wyczerpaniu /users/online, aby wyrenderować sekcję "Members".
+Paginacja kursorowa po commenterName: serwer przechodzi po częściowym indeksie {tenantId, urlId, commenterName}
+od afterName w przód za pomocą $gt, bez kosztu $skip.
 
 ## Parametry
 
-| Nazwa | Typ | Wymagane | Opis |
-|------|------|----------|------|
+| Nazwa | Typ | Wymagany | Opis |
+|------|------|----------|-------------|
 | tenantId | string | Tak |  |
 | urlId | string | Tak |  |
 | afterName | string | Nie |  |

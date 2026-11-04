@@ -1,4 +1,3 @@
----
 테넌트에 대한 대량 사용자 정보. 주어진 userIds로부터 User / SSOUser의 표시 정보를 반환합니다.
 댓글 위젯에서 presence 이벤트로 방금 나타난 사용자를 보강하는 데 사용됩니다.
 페이지 컨텍스트 없음: 프라이버시는 일관되게 적용됩니다(비공개 프로필은 마스킹됩니다).
@@ -35,5 +34,3 @@ PublicAPI.getUsersInfo(tenantId: tenantId, ids: ids) { (response, error) in
     }
 }
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 透過分組（若提供 groupBy）並套用多個運算來彙總文件。支援不同的運算（例如 sum、countDistinct、avg 等）。
 
 ## 參數
@@ -43,5 +42,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->aggregate: #{e}"
 end
 [inline-code-end]
-
----

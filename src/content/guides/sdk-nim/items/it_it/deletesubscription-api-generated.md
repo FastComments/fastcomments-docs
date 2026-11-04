@@ -24,5 +24,3 @@ if maybeResp.isSome:
   let apiResult = maybeResp.get()
   # usa apiResult secondo necessità
 [inline-code-end]
-
----

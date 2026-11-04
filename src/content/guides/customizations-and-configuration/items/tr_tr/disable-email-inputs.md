@@ -1,17 +1,15 @@
-When users comment, and they are not logged in, they will be asked to provide their email.
+Kullanıcılar yorum yaptığında ve oturum açmamışlarsa, e-posta adreslerini girmeleri istenir.
 
-This will create an "unverified session" for that user, and we will ask them to verify that session via email.
+Bu, o kullanıcı için bir "doğrulanmamış oturum" oluşturur ve bu oturumu e-posta yoluyla doğrulamalarını isteriz.
 
-For some sites, or applications, it's desirable not to ask the user for their email when commenting or voting.
+Bazı siteler veya uygulamalar için, yorum yaparken veya oy verirken kullanıcıdan e-posta adresini istememek istenebilir.
 
-Enabling anonymous commenting makes the email input field optional. However, we can disable it completely. First, enable
-anonymous commenting, and then the option to disable the email input fields will appear.
+Anonim yorum yapmayı etkinleştirmek, e-posta giriş alanını isteğe bağlı hale getirir. Ancak, bunu tamamen devre dışı bırakabiliriz. Önce anonim yorum yapmayı etkinleştirin, ardından e-posta giriş alanlarını devre dışı bırakma seçeneği görünecektir.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allow-anonymous-comments', '.disable-email-inputs']; selector = '.disable-email-inputs'; alt='E-posta alanlarını tamamen gizleme seçeneği, özelleştirme UI\'sinde anonim yorumlama etkinleştirildikten sonra gösterilir'; title='E-posta Girişlerini Devre Dışı Bırak' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allow-anonymous-comments', '.disable-email-inputs']; selector = '.disable-email-inputs'; alt='Anonim yorum yapma özelleştirme arayüzünde etkinleştirildikten sonra görünen, e-posta alanlarını tamamen gizleme seçeneği'; title='E-posta Giriş Alanlarını Devre Dışı Bırak' app-screenshot-end]
 
-With this on, the email fields will not show at all in all of our commenting products.
+Bu açıkken, e-posta alanları tüm yorum ürünlerimizde hiç görünmeyecektir.
 
-Note that, with this configuration, all comments will be unverified unless the user creates an account and logs into
-https://fastcomments.com.
+Bu yapılandırmayla, kullanıcı bir hesap oluşturup https://fastcomments.com adresinde oturum açmadığı sürece tüm yorumların doğrulanmamış olacağını unutmayın.
 
-You may want to consider [Doğrulanmamış etiketini devre dışı bırakmayı](/guide-customizations-and-configuration.html#disable-unverified-label).
+[Doğrulanmamış etiketini devre dışı bırakmayı](/guide-customizations-and-configuration.html#disable-unverified-label) düşünebilirsiniz.

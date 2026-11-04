@@ -34,5 +34,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_manual_badges_for_user: #{e}"
 end
 [inline-code-end]
-
----

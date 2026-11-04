@@ -37,5 +37,3 @@ try {
     print('Izuzetak prilikom pozivanja DefaultApi->createFeedPost: $e\n');
 }
 [inline-code-end]
-
----

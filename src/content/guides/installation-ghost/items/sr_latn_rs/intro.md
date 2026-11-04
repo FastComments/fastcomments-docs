@@ -1,4 +1,3 @@
----
 Sa FastComments lako možemo dodati uživo komentare dostupne samo članovima na bilo koji sajt napravljen pomoću Ghost.
 
 Bićemo u mogućnosti da **automatski uvezemo korisnička imena i avatare vaših članova, i podesimo obaveštenja za odgovore na komentare**. 
@@ -10,4 +9,3 @@ U ovom tutorijalu ciljamo blog napravljen pomoću Ghost-a, ali uz malo znanja is
 Ovaj tutorijal počinje iz perspektive korisnika koji je veoma nov u Ghost-u. Korisnici koji imaju iskustva u uređivanju svojih tema mogu preskočiti na `Step 4`.
 
 Ako imate problema, slobodno pošaljite svoj izvezeni šablon teme svom predstavniku podrške (i dalje zahteva korake 1 - 5).
----

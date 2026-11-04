@@ -1,25 +1,21 @@
-Identifies the credential in use: the tenant it belongs to and, for OAuth tokens, the user who authorized it.  
-Integrations use this to test a connection and label it.
-
-**Polish translation:**  
-Identyfikuje używane poświadczenie: najemcę, do którego należy, oraz, w przypadku tokenów OAuth, użytkownika, który je autoryzował.  
+Identyfikuje używane poświadczenie: dzierżawę, do której należy, a w przypadku tokenów OAuth — użytkownika, który je autoryzował.
 Integracje używają tego do przetestowania połączenia i nadania mu etykiety.
 
-## Parameters
+## Parametry
 
-| Nazwa | Typ | Lokalizacja | Wymagane | Opis |
-|------|------|----------|----------|------|
+| Nazwa | Typ | Lokalizacja | Wymagany | Opis |
+|------|------|----------|----------|-------------|
 | tenantId | string | query | Tak |  |
 
-## Response
+## Odpowiedź
 
 Zwraca: [`GetMeResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetMeResponse.swift)
 
-## Example
+## Przykład
 
 [inline-code-attrs-start title = 'Przykład getMe'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Poniższe przykłady kodu są nadal w wersji beta. W przypadku jakichkolwiek problemów, proszę zgłosić je pod adresem http://github.com/OpenAPITools/openapi-generator/issues/new
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 

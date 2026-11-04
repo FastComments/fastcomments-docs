@@ -10,5 +10,3 @@ Razlog je što FastComments ne zna da treba dopustiti korištenje vašeg računa
 U tom slučaju rješenje je jednostavno. Trebate samo dodati svoju stranicu u svoj FastComments.com račun.
 
 [Kliknite ovdje da biste dodali svoju stranicu u svoj račun.](https://fastcomments.com/auth/my-account/configure-domains)
-
----

@@ -178,5 +178,3 @@ Puoi inizializzare Collab Chat su più sezioni separate della tua pagina. Ogni s
     });
 </script>
 [inline-code-end]
-
----

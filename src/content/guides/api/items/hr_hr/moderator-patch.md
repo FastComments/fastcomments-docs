@@ -1,10 +1,10 @@
 [api-resource-header-start name = 'Moderator'; route = 'PATCH /api/v1/moderators/:id'; creditsCost = 1; api-resource-header-end]
 
-This API endpoint provides the ability to update a `Moderator` by `id`.
+Ovaj API endpoint omogućuje ažuriranje `Moderator` objekta putem `id`.
 
-Updating a `Moderator` has the following restrictions:
+Ažuriranje `Moderator` objekta ima sljedeća ograničenja:
 
-- The following values may not be provided when updating a `Moderator`:
+- Sljedeće vrijednosti se ne smiju navesti prilikom ažuriranja `Moderator` objekta:
     - `acceptedInvite`
     - `markReviewedCount`
     - `deletedCount`
@@ -14,12 +14,12 @@ Updating a `Moderator` has the following restrictions:
     - `bannedCount`
     - `verificationId`
     - `createdAt`
-- When a `userId` is specified, that user must exist.
-- When a `userId` is specified, they must belong to the same `tenantId` specified in query params.
-- Two moderators in the same tenant cannot be added with the same `email`.
-- You may not change the `tenantId` associated with a `Moderator`.
+- Kada je naveden `userId`, taj korisnik mora postojati.
+- Kada je naveden `userId`, korisnik mora pripadati istom `tenantId` navedenom u query parametrima.
+- Dva moderatora u istom tenantu ne mogu imati isti `email`.
+- Ne možete promijeniti `tenantId` povezan s `Moderator` objektom.
 
-[inline-code-attrs-start title = 'Moderator PATCH cURL Primjer'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer Moderator PATCH cURL zahtjeva'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request PATCH \
   --url 'https://fastcomments.com/api/v1/moderators/xyz?tenantId=demo&API_KEY=DEMO_API_SECRET' \
@@ -29,7 +29,7 @@ curl --request PATCH \
 }'
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Moderator PATCH Struktura zahtjeva'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Struktura Moderator PATCH zahtjeva'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface ModeratorPatchQueryParams {
     tenantId: string
@@ -37,7 +37,7 @@ interface ModeratorPatchQueryParams {
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Moderator PATCH Struktura odgovora'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Struktura Moderator PATCH odgovora'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 
 interface ModeratorPatchResponse {

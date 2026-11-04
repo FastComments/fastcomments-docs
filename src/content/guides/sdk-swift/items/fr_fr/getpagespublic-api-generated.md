@@ -1,17 +1,17 @@
-List pages for a tenant. Used by the FChat desktop client to populate its room list.  
-Requires `enableFChat` to be true on the resolved custom config for each page.  
-Pages that require SSO are filtered against the requesting user's group access.
+Liste les pages d'un tenant. Utilisé par le client de bureau FChat pour remplir sa liste de salons.
+Nécessite que `enableFChat` soit à true dans la configuration personnalisée résolue pour chaque page.
+Les pages nécessitant un SSO sont filtrées selon les accès de groupe de l'utilisateur à l'origine de la requête.
 
 ## Paramètres
 
-| Nom | Type | Emplacement | Obligatoire | Description |
+| Nom | Type | Emplacement | Requis | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| cursor | string | query | No | Curseur de pagination opaque renvoyé comme `nextCursor` depuis une requête précédente. Lié au même `sortBy`. |
-| limit | integer | query | No | 1..200, valeur par défaut 50 |
-| q | string | query | No | Filtre de préfixe de titre insensible à la casse, optionnel. |
-| sortBy | string | query | No | Ordre de tri. `updatedAt` (par défaut, du plus récent au plus ancien), `commentCount` (le plus de commentaires d'abord), ou `title` (alphabétique). |
-| hasComments | boolean | query | No | Si vrai, ne renvoie que les pages contenant au moins un commentaire. |
+| tenantId | string | path | Oui |  |
+| cursor | string | query | Non | Curseur de pagination opaque renvoyé sous forme de `nextCursor` par une requête précédente. Lié au même `sortBy`. |
+| limit | integer | query | Non | 1..200, 50 par défaut |
+| q | string | query | Non | Filtre facultatif insensible à la casse sur le préfixe du titre. |
+| sortBy | string | query | Non | Ordre de tri. `updatedAt` (par défaut, du plus récent au plus ancien), `commentCount` (le plus grand nombre de commentaires d'abord) ou `title` (alphabétique). |
+| hasComments | boolean | query | Non | Si true, ne renvoie que les pages ayant au moins un commentaire. |
 
 ## Réponse
 
@@ -21,15 +21,15 @@ Renvoie : [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomment
 
 [inline-code-attrs-start title = 'Exemple getPagesPublic'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Les exemples de code suivants sont encore en version bêta. Pour tout problème, veuillez le signaler via http://github.com/OpenAPITools/openapi-generator/issues/new
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
-let tenantId = "tenantId_example" // String |
-let cursor = "cursor_example" // String | Curseur de pagination opaque renvoyé comme `nextCursor` depuis une requête précédente. Lié au même `sortBy`. (optionnel)
-let limit = 987 // Int | 1..200, valeur par défaut 50 (optionnel)
-let q = "q_example" // String | Filtre de préfixe de titre insensible à la casse, optionnel. (optionnel)
-let sortBy = PagesSortBy() // PagesSortBy | Ordre de tri. `updatedAt` (par défaut, du plus récent au plus ancien), `commentCount` (le plus de commentaires d'abord), ou `title` (alphabétique). (optionnel)
-let hasComments = true // Bool | Si vrai, ne renvoie que les pages contenant au moins un commentaire. (optionnel)
+let tenantId = "tenantId_example" // String | 
+let cursor = "cursor_example" // String | Curseur de pagination opaque renvoyé sous forme de `nextCursor` par une requête précédente. Lié au même `sortBy`. (optional)
+let limit = 987 // Int | 1..200, 50 par défaut (optional)
+let q = "q_example" // String | Filtre facultatif insensible à la casse sur le préfixe du titre. (optional)
+let sortBy = PagesSortBy() // PagesSortBy | Ordre de tri. `updatedAt` (par défaut, du plus récent au plus ancien), `commentCount` (le plus grand nombre de commentaires d'abord) ou `title` (alphabétique). (optional)
+let hasComments = true // Bool | Si true, ne renvoie que les pages ayant au moins un commentaire. (optional)
 
 PublicAPI.getPagesPublic(tenantId: tenantId, options: PublicAPI.GetPagesPublicOptions(cursor: cursor, limit: limit, q: q, sortBy: sortBy, hasComments: hasComments)) { (response, error) in
     guard error == nil else {

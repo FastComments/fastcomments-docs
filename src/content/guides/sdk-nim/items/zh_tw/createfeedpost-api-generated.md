@@ -1,4 +1,3 @@
----
 ## 參數
 
 | 名稱 | 類型 | 必填 | 描述 |
@@ -24,5 +23,3 @@ let (respOpt, httpResp) = client.createFeedPost(
 if respOpt.isSome:
   let feedPost = respOpt.get()
 [inline-code-end]
-
----

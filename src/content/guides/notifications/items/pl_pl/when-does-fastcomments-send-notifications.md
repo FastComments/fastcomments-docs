@@ -1,35 +1,35 @@
-At FastComments, we know you get enough notifications already. Because of this, we take some measures to limit the notifications users receive while still keeping them in touch with their communities. We also want to keep administrators and moderators up to date and let them know when action needs to be taken.
+W FastComments wiemy, że i tak otrzymujesz już wystarczająco dużo powiadomień. Dlatego stosujemy pewne środki, aby ograniczyć liczbę powiadomień otrzymywanych przez użytkowników, jednocześnie pozwalając im pozostać w kontakcie ze swoimi społecznościami. Chcemy również, aby administratorzy i moderatorzy byli na bieżąco i wiedzieli, kiedy należy podjąć działania.
 
-#### We'll send notifications for the following events for administrators and moderators:
+#### Wysyłamy powiadomienia dla administratorów i moderatorów o następujących zdarzeniach:
 
-- Community Digest Summary (frequency configurable).
-- Community help requests and reminders.
-- New Comments.
+- Podsumowanie aktywności społeczności (częstotliwość konfigurowalna).
+- Prośby o pomoc w społeczności i przypomnienia.
+- Nowe komentarze.
 
-#### For Commenters:
+#### Dla komentujących:
 
-- When someone replies to your comment (via email).
-- When you are mentioned (in-app and email notification).
-- When someone replies in the same thread (in-app and email notification).
-- When someone replies to a child comment in the same thread (in-app and email notification).
-- When someone replies to a page you have subscribed to (in-app and email notification, frequency configurable per subscription: every minute, hourly, or daily).
-- When someone responds to a poll you created (in-app notification, plus a daily email). See [Powiadomienia o ankietach](/guide-polls.html#poll-notifications).
-- When a user comments for the first time (But not with SSO).
-- When a user leaves a comment in a session that is not verified (But not with SSO).
-  - We do not send multiple verification emails in this case. Only the first one, which will verify all activity in the same session.
+- Gdy ktoś odpowie na Twój komentarz (e-mailem).
+- Gdy zostaniesz wspomniany (powiadomienie w aplikacji i e-mail).
+- Gdy ktoś odpowie w tym samym wątku (powiadomienie w aplikacji i e-mail).
+- Gdy ktoś odpowie na komentarz podrzędny w tym samym wątku (powiadomienie w aplikacji i e-mail).
+- Gdy ktoś odpowie na stronę, którą subskrybujesz (powiadomienie w aplikacji i e-mail, częstotliwość konfigurowalna dla każdej subskrypcji: co minutę, co godzinę lub codziennie).
+- Gdy ktoś odpowie w ankiecie, którą utworzyłeś (powiadomienie w aplikacji, plus dzienny e-mail). Zobacz [Powiadomienia o ankietach](/guide-polls.html#poll-notifications).
+- Gdy użytkownik komentuje po raz pierwszy (ale nie z SSO).
+- Gdy użytkownik zostawia komentarz w sesji, która nie została zweryfikowana (ale nie z SSO).
+  - W tym przypadku nie wysyłamy wielu e-maili weryfikacyjnych. Tylko pierwszy, który zweryfikuje całą aktywność w tej samej sesji.
 
-#### For All Users:
+#### Dla wszystkich użytkowników:
 
-- When a login from a new IP address is detected, a security alert email is sent with the approximate location and IP address. This does not apply to the user's very first login.
+- Gdy wykryte zostanie logowanie z nowego adresu IP, wysyłany jest e-mail z alertem bezpieczeństwa zawierający przybliżoną lokalizację i adres IP. Nie dotyczy to pierwszego logowania użytkownika.
 
-#### ...and finally for administrators only:
+#### ...i na koniec tylko dla administratorów:
 
-- When integrations are complete.
-- When migrations are complete.
-- When imports or exports finish.
-- When there are billing issues.
-- Trial-end reminders.
+- Gdy integracje zostaną zakończone.
+- Gdy migracje zostaną zakończone.
+- Gdy importy lub eksporty się zakończą.
+- Gdy wystąpią problemy z rozliczeniami.
+- Przypomnienia o końcu okresu próbnego.
 
-Some notifications are batched up to prevent mass-sending of notifications to users. Learn about this in the next section `Notification Types`.
+Niektóre powiadomienia są grupowane, aby zapobiec masowemu wysyłaniu powiadomień do użytkowników. Dowiedz się więcej o tym w następnej sekcji `Notification Types`.
 
-Reply and mention emails are only sent for comments that are approved. To see whether a reply or mention email went out for a specific comment, or why it did not, open that comment's [Logi komentarzy](/guide-moderation.html#comment-logs) from the Moderate Comments page.
+E-maile z odpowiedziami i wzmiankami są wysyłane tylko dla komentarzy, które zostały zatwierdzone. Aby sprawdzić, czy e-mail z odpowiedzią lub wzmianką został wysłany dla konkretnego komentarza, lub dlaczego nie został, otwórz [Logi komentarzy](/guide-moderation.html#comment-logs) tego komentarza na stronie Moderate Comments.

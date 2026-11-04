@@ -1,4 +1,3 @@
----
 ## 매개변수
 
 | 이름 | 유형 | 필수 | 설명 |
@@ -19,5 +18,3 @@ let (aggResultOpt, httpResp) = client.aggregateQuestionResults(tenantId = "my-te
 if aggResultOpt.isSome:
   let aggResult = aggResultOpt.get()
 [inline-code-end]
-
----

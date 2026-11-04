@@ -1,4 +1,3 @@
----
 Επιλέξτε έναν από τους δύο τυπικούς τρόπους για να προσθέσετε ένα συστατικό θέματος Hugo.
 
 ### Επιλογή A: Hugo Module (προτεινόμενο)
@@ -29,4 +28,3 @@ git submodule add https://github.com/FastComments/fastcomments-hugo.git themes/f
 ```toml
 theme = ["your-theme", "fastcomments-hugo"]
 ```
----

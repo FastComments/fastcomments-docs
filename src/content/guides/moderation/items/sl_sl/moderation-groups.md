@@ -1,4 +1,3 @@
----
 Moderatorje je mogoče razporediti v skupine, da moderirajo različne strani ali kategorije vsebine.
 
 Ko moderator pripada eni ali več skupinam, bo na strani Moderiraj komentarje videl le komentarje iz teh skupin.

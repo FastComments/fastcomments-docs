@@ -45,5 +45,3 @@ Her çalıştırma ham token sayısını ve çalıştırma başına maliyeti kay
 - [Choosing a Model](#choosing-a-model) - maliyet üzerinde daha büyük etki yapan ayar.
 - [Context Options](#context-options) - ek maliyetin geldiği yer.
 - [Budgets Overview](#budgets-overview) - kontrolsüz maliyeti önleyen katı sınırlar.
-
----

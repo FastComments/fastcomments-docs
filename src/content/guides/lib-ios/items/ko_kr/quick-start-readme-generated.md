@@ -23,7 +23,7 @@ struct ContentView: View {
 }
 ```
 
-Replace `"demo"` with your FastComments tenant ID. The `urlId` identifies the page or thread where comments are stored.
+`"demo"`를 여러분의 FastComments 테넌트 ID로 교체하세요. `urlId`는 댓글이 저장되는 페이지 또는 스레드를 식별합니다.
 
 ---
 ---

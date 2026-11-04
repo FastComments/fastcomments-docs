@@ -24,5 +24,3 @@ if delResult.isSome:
   let result = delResult.get()
   echo result
 [inline-code-end]
-
----

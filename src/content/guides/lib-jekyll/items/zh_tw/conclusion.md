@@ -8,5 +8,3 @@
 ## 貢獻
 
 歡迎貢獻！請造訪 [GitHub 倉庫](https://github.com/FastComments/fastcomments-jekyll) 以取得貢獻指南。
-
----

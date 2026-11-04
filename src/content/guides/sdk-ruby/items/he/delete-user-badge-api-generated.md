@@ -1,4 +1,3 @@
----
 ## פרמטרים
 
 | Name | Type | Location | Required | Description |
@@ -36,5 +35,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->delete_user_badge: #{e}"
 end
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 SDK pruža mnogo opcija konfiguracije kroz klasu `CommentWidgetConfig`:
 
 | Opcija | Opis |
@@ -15,4 +14,3 @@ SDK pruža mnogo opcija konfiguracije kroz klasu `CommentWidgetConfig`:
 | `readonly` | Onemogući komentiranje, ali prikaži komentare |
 | `disableVoting` | Onemogući glasovanje |
 | `disableLiveCommenting` | Onemogući ažuriranja u stvarnom vremenu |
----

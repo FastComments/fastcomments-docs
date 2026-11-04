@@ -66,5 +66,3 @@ Super admins су обично оператери којима треба да �
 - [Budgets Overview](#budgets-overview).
 - [Drop Reasons](#drop-reasons) - шта се дешава када се лимит у потпуности достигне.
 - [Cost Model](#cost-model) - шта се мери.
-
----

@@ -1,3 +1,1 @@
----
 Pliki cookie stron trzecich nie są już wymagane do komentowania. Do czego FastComments nadal ich używa i jak je włączyć, aby uzyskać płynniejszy proces logowania.
----

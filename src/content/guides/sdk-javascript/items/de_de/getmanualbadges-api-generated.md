@@ -21,5 +21,3 @@ async function fetchBadges() {
   const badgesWithoutSso: GetTenantManualBadgesResponse = await getManualBadges(tenantId);
 }
 [inline-code-end]
-
----

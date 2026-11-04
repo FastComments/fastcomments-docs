@@ -1,4 +1,3 @@
----
 Bulk gebruikersinformatie voor een tenant. Gegeven userIds, retourneert weergave-informatie van User / SSOUser.
 Wordt gebruikt door de commentaar-widget om gebruikers te verrijken die net zijn verschenen via een presence event.
 Geen pagina-context: privacy wordt uniform gehandhaafd (privéprofielen worden gemaskeerd).
@@ -35,5 +34,3 @@ PublicAPI.getUsersInfo(tenantId: tenantId, ids: ids) { (response, error) in
     }
 }
 [inline-code-end]
-
----

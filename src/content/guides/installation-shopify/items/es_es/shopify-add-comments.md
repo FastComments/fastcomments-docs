@@ -1,4 +1,3 @@
----
 El **FastComments** block es el widget principal de comentarios. Agrégalo a las plantillas de entradas del blog, plantillas de producto o cualquier otra página donde quieras un hilo de discusión o un chat en vivo.
 
 ### Agregar el bloque
@@ -44,5 +43,3 @@ El bloque se puede añadir más de una vez a la misma plantilla. Por ejemplo, un
 
 - El bloque se oculta en la vista previa del editor de temas con un aviso amarillo si no encuentra un tenant. Si eso aparece en tu tienda en vivo, reinstala la aplicación FastComments.
 - Para una página de producto, el bloque FastComments funciona también como tu widget de reseñas de producto. Combínalo con **FastComments - Reviews Summary** para un resumen de calificaciones con estrellas en la parte superior de la página.
-
----

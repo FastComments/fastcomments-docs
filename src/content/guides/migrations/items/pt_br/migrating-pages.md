@@ -1,4 +1,3 @@
----
 Embora seu nome seja a ferramenta de Migração de Domínio, ela também pode ser usada para migrar comentários entre páginas individuais.
 
 Basta inserir os valores antigos e novos de [urlId](/guide-customizations-and-configuration.html#url-id) nos campos de entrada `from` e `to`.
@@ -10,5 +9,3 @@ Para migrar muitas páginas de uma vez, use [`POST /api/v1/pages/migrations`](/g
 Com `type` definido como `urlId`, somente a página cujo `urlId` é exatamente `from` é movida, portanto `post-1` não corresponde a `post-10`. A ferramenta do painel não possui essa opção.
 
 Cada migração de API pode ser desfeita por 90 dias com [`POST /api/v1/pages/migrations/:undoId/undo`](/guide-api.html#pages-migrations-undo-post).
-
----

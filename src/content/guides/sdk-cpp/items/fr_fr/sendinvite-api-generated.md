@@ -23,5 +23,3 @@ api->sendInvite(
     // gérer l'invitation réussie
 });
 [inline-code-end]
-
----

@@ -1,8 +1,8 @@
-All API methods in this SDK return `pplx::task<std::shared_ptr<ResponseType>>` from the C++ REST SDK. This gives you flexibility in how you handle API responses.
+このSDKのすべてのAPIメソッドは、C++ REST SDKの `pplx::task<std::shared_ptr<ResponseType>>` を返します。これにより、APIレスポンスの処理方法に柔軟性が生まれます。
 
-### `.get()` を使用した同期呼び出し
+### `.get()` を使った同期呼び出し
 
-Use `.get()` to block the calling thread until the request completes and retrieve the result synchronously:
+`.get()` を使用すると、リクエストが完了するまで呼び出しスレッドをブロックし、結果を同期的に取得できます:
 
 ```cpp
 auto config = std::make_shared<org::openapitools::client::api::ApiConfiguration>();
@@ -13,24 +13,24 @@ config->setApiKey(utility::conversions::to_string_t("api_key"),
 auto apiClient = std::make_shared<org::openapitools::client::api::ApiClient>(config);
 org::openapitools::client::api::DefaultApi api(apiClient);
 
-// Required parameters are positional; optional ones go in the options struct
+// 必須パラメータは位置引数で、オプションのパラメータはoptions構造体に入れます
 org::openapitools::client::api::GetCommentsOptions options;
 options.urlId = utility::conversions::to_string_t("your-url-id");
 
-// Call .get() to block and get the result synchronously
+// .get() を呼び出してブロックし、結果を同期的に取得します
 auto response = api.getComments(
     utility::conversions::to_string_t("your-tenant-id"),
     options
-).get();  // HTTP リクエストが完了するまでブロックします
+).get();  // HTTPリクエストが完了するまでブロックします
 
 if (response && response->comments) {
     std::cout << "Found " << response->comments->size() << " comments" << std::endl;
 }
 ```
 
-### `.then()` を使用した非同期呼び出し
+### `.then()` を使った非同期呼び出し
 
-Use `.then()` for non-blocking asynchronous execution with callbacks:
+`.then()` を使用すると、コールバックによるノンブロッキングの非同期実行が可能になります:
 
 ```cpp
 auto config = std::make_shared<org::openapitools::client::api::ApiConfiguration>();
@@ -41,40 +41,40 @@ config->setApiKey(utility::conversions::to_string_t("api_key"),
 auto apiClient = std::make_shared<org::openapitools::client::api::ApiClient>(config);
 org::openapitools::client::api::DefaultApi api(apiClient);
 
-// Required parameters are positional; optional ones go in the options struct
+// 必須パラメータは位置引数で、オプションのパラメータはoptions構造体に入れます
 org::openapitools::client::api::GetCommentsOptions options;
 options.urlId = utility::conversions::to_string_t("your-url-id");
 
-// Use .then() for asynchronous callback-based execution
+// 非同期のコールバックベースの実行には .then() を使用します
 api.getComments(
     utility::conversions::to_string_t("your-tenant-id"),
     options
 ).then([](std::shared_ptr<GetComments_200_response> response) {
-    // リクエストが完了したときに非同期で実行されます
+    // リクエスト完了時に非同期で実行されます
     if (response && response->comments) {
         std::cout << "Found " << response->comments->size() << " comments" << std::endl;
     }
 });
 
-// ブロックせずにすぐに実行が続行されます
+// ブロックせずに即座に実行が続行されます
 std::cout << "Request sent, continuing..." << std::endl;
 ```
 
 ### 同期と非同期の選択
 
-The choice depends on your runtime environment and application architecture:
+選択は、実行環境とアプリケーションのアーキテクチャによって異なります:
 
-**`.get()`（同期ブロッキング）**
-- 呼び出しスレッドを HTTP リクエストが完了するまでブロックします
-- コードフローがシンプルで、理解しやすい
+**`.get()`(同期ブロッキング)**
+- HTTPリクエストが完了するまで呼び出しスレッドをブロックします
+- コードの流れがシンプルで、理解しやすいです
 - 専用のワーカースレッド、バッチ処理、コマンドラインツールに適しています
-- **イベントループ、GUI スレッド、シングルスレッドサーバーには適さない**
+- イベントループ、GUIスレッド、シングルスレッドのサーバーには**適していません**
 
-**`.then()`（非同期ノンブロッキング）**
-- 即座に戻り、リクエスト完了時にコールバックが実行されます
+**`.then()`(非同期ノンブロッキング)**
+- 即座に返り、リクエスト完了時にコールバックが実行されます
 - 呼び出しスレッドをブロックしません
-- イベント駆動型アーキテクチャ、GUI アプリケーション、シングルスレッドのイベントループに必要です
+- イベント駆動アーキテクチャ、GUIアプリケーション、シングルスレッドのイベントループに必須です
 - 複数の操作をチェーンできます
 - 制御フローがより複雑になります
 
-The SDK's test suite uses `.get()` exclusively, but this is appropriate for the test environment where blocking is acceptable.
+SDKのテストスイートでは `.get()` のみを使用していますが、これはブロッキングが許容されるテスト環境では適切です。

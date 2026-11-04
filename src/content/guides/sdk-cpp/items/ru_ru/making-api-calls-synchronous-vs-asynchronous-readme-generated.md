@@ -1,8 +1,8 @@
-All API methods in this SDK return `pplx::task<std::shared_ptr<ResponseType>>` from the C++ REST SDK. This gives you flexibility in how you handle API responses.
+Все методы API в этом SDK возвращают `pplx::task<std::shared_ptr<ResponseType>>` из C++ REST SDK. Это даёт вам гибкость в обработке ответов API.
 
 ### Синхронные вызовы с `.get()`
 
-Use `.get()` to block the calling thread until the request completes and retrieve the result synchronously:
+Используйте `.get()`, чтобы заблокировать вызывающий поток до завершения запроса и получить результат синхронно:
 
 ```cpp
 auto config = std::make_shared<org::openapitools::client::api::ApiConfiguration>();
@@ -13,15 +13,15 @@ config->setApiKey(utility::conversions::to_string_t("api_key"),
 auto apiClient = std::make_shared<org::openapitools::client::api::ApiClient>(config);
 org::openapitools::client::api::DefaultApi api(apiClient);
 
-// Обязательные параметры позиционные; необязательные идут в структуре options
+// Обязательные параметры передаются позиционно; необязательные — в структуре options
 org::openapitools::client::api::GetCommentsOptions options;
 options.urlId = utility::conversions::to_string_t("your-url-id");
 
-// Вызов .get() для блокировки и получения результата синхронно
+// Вызываем .get(), чтобы заблокировать выполнение и получить результат синхронно
 auto response = api.getComments(
     utility::conversions::to_string_t("your-tenant-id"),
     options
-).get();  // Блокирует, пока HTTP‑запрос не завершится
+).get();  // Блокирует до завершения HTTP-запроса
 
 if (response && response->comments) {
     std::cout << "Found " << response->comments->size() << " comments" << std::endl;
@@ -30,7 +30,7 @@ if (response && response->comments) {
 
 ### Асинхронные вызовы с `.then()`
 
-Use `.then()` for non-blocking asynchronous execution with callbacks:
+Используйте `.then()` для неблокирующего асинхронного выполнения с колбэками:
 
 ```cpp
 auto config = std::make_shared<org::openapitools::client::api::ApiConfiguration>();
@@ -41,11 +41,11 @@ config->setApiKey(utility::conversions::to_string_t("api_key"),
 auto apiClient = std::make_shared<org::openapitools::client::api::ApiClient>(config);
 org::openapitools::client::api::DefaultApi api(apiClient);
 
-// Обязательные параметры позиционные; необязательные идут в структуре options
+// Обязательные параметры передаются позиционно; необязательные — в структуре options
 org::openapitools::client::api::GetCommentsOptions options;
 options.urlId = utility::conversions::to_string_t("your-url-id");
 
-// Используйте .then() для асинхронного выполнения с обратными вызовами
+// Используем .then() для асинхронного выполнения на основе колбэков
 api.getComments(
     utility::conversions::to_string_t("your-tenant-id"),
     options
@@ -56,25 +56,25 @@ api.getComments(
     }
 });
 
-// Выполнение продолжается сразу же без блокировки
+// Выполнение продолжается сразу, без блокировки
 std::cout << "Request sent, continuing..." << std::endl;
 ```
 
-### Выбор между синхронным и асинхронным
+### Выбор между синхронным и асинхронным вариантами
 
-The choice depends on your runtime environment and application architecture:
+Выбор зависит от вашей среды выполнения и архитектуры приложения:
 
-**`.get()` (Синхронная блокировка)**
-- Блокирует вызывающий поток до завершения HTTP‑запроса
-- Более простой поток кода, легче понимать
-- Подходит для выделенных рабочих потоков, пакетной обработки или консольных утилит
-- **Не подходит** для event‑loop’ов, GUI‑потоков или однопоточных серверов
+**`.get()` (синхронная блокировка)**
+- Блокирует вызывающий поток до завершения HTTP-запроса
+- Более простой поток кода, легче для понимания
+- Подходит для выделенных рабочих потоков, пакетной обработки или утилит командной строки
+- **Не подходит** для циклов событий, GUI-потоков или однопоточных серверов
 
-**`.then()` (Асинхронный без блокировки)**
-- Возвращает сразу, обратный вызов выполняется после завершения запроса
+**`.then()` (асинхронное неблокирующее выполнение)**
+- Возвращается немедленно, колбэк выполняется после завершения запроса
 - Не блокирует вызывающий поток
-- Требуется для событийно‑ориентированных архитектур, GUI‑приложений или однопоточных event‑loop’ов
-- Позволяет цепочечное выполнение нескольких операций
-- Более сложный контрольный поток
+- Необходимо для событийно-ориентированных архитектур, GUI-приложений или однопоточных циклов событий
+- Позволяет объединять несколько операций в цепочку
+- Более сложный поток управления
 
-The SDK's test suite uses `.get()` exclusively, but this is appropriate for the test environment where blocking is acceptable.
+Набор тестов SDK использует исключительно `.get()`, но это уместно в тестовой среде, где блокировка допустима.

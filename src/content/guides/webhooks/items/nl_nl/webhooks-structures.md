@@ -1,145 +1,148 @@
-The only structure sent via webhooks is the WebhookComment object, outlined in TypeScript below.
+De enige structuur die via webhooks wordt verstuurd is het WebhookComment object, hieronder uitgelijnd in TypeScript.
 
-#### De structuur van het WebhookComment-object
+#### De WebhookComment Objectstructuur
 
-##### De structuur van het "Create"-event
-De request‑body van het "create"-event is een WebhookComment‑object.
+##### De "Create" Eventstructuur
+De request body van het "create" event is een WebhookComment object.
 
-##### De structuur van het "Update"-event
-De request‑body van het "update"-event is een WebhookComment‑object.
+##### De "Update" Eventstructuur
+De request body van het "update" event is een WebhookComment object.
 
-##### De structuur van het "Delete"-event
-De request‑body van het "delete"-event is een WebhookComment‑object.
+##### De "Delete" Eventstructuur
+De request body van het "delete" event is een WebhookComment object.
 
-    Wijziging vanaf 14 november 2023
-    Voorheen bevatte de request‑body van het "delete"-event alleen de commentaar‑id. Nu bevat het de volledige commentaar op het moment van verwijdering.
+    Wijziging per 14 november 2023
+    Voorheen bevatte de request body van het "delete" event alleen de comment id. Deze bevat nu de volledige comment op het moment van verwijdering.
 
-Elke sleutel is altijd aanwezig in de body. Wanneer een commentaar geen waarde heeft voor een veld, draagt de body `null` (of `false` voor booleans en `[]` voor lijsten), zodat de vorm van een levering nooit varieert van het ene commentaar naar het andere.
 
-[inline-code-attrs-start title = 'Het WebhookComment-object'; type = 'typescript'; inline-code-attrs-end]
+Elke key is altijd aanwezig in de body. Wanneer de comment geen waarde heeft voor een veld bevat de body `null`
+(of `false` voor booleans en `[]` voor lijsten), zodat de vorm van een levering nooit verschilt van de ene comment naar de andere.
+
+[inline-code-attrs-start title = 'Het WebhookComment Object'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface WebhookComment {
-    /** De id van het commentaar. **/
+    /** The id of the comment. **/
     id: string
-    /** De id of URL die de commentaarthread identificeert. Genormaliseerd. **/
+    /** The id or URL that identifies the comment thread. Normalized. **/
     urlId: string
-    /** De URL die aangeeft waar het commentaar is geplaatst. **/
+    /** The URL that points to where the comment was left. **/
     url: string | null
-    /** De gebruikers‑id die het commentaar heeft geplaatst. Bij SSO, voorafgegaan door tenant‑id. **/
+    /** The user id that left the comment. If SSO, prefixed with tenant id. **/
     userId: string | null
-    /** Het e‑mailadres van de gebruiker die het commentaar heeft geplaatst. **/
+    /** The email of the user left the comment. **/
     commenterEmail: string | null
-    /** De naam van de gebruiker die wordt weergegeven in de commentaarwidget. Bij SSO kan dit displayName zijn. **/
+    /** The name of the user that shows in the comment widget. With SSO, can be displayName. **/
     commenterName: string
-    /** Ruwe commentaartekst. **/
+    /** Raw comment text. **/
     comment: string
-    /** Commentaartekst na parsing. **/
+    /** Comment text after parsing. **/
     commentHTML: string
-    /** Externe id van het commentaar. **/
+    /** Comment external id. **/
     externalId: string | null
-    /** De id van het bovenliggende commentaar. **/
+    /** The id of the parent comment. **/
     parentId: string | null
-    /** De UTC‑datum waarop het commentaar is geplaatst. **/
+    /** The UTC date when the comment was left. **/
     date: UTC_ISO_DateString
-    /** Gecombineerde karma (up - down) van stemmen. **/
+    /** Combined karma (up - down) of votes. **/
     votes: number
     votesUp: number
     votesDown: number
-    /** Waar als de gebruiker ingelogd was toen hij commentaar gaf, of het commentaar heeft geverifieerd, of zijn sessie heeft geverifieerd toen het commentaar werd geplaatst. **/
+    /** True if the user was logged in when they commented, or their verified the comment, or if they verified their session when the comment was left. **/
     verified: boolean
-    /** De UTC‑datum waarop het commentaar is geverifieerd. **/
+    /** The UTC date when the comment was verified. **/
     verifiedDate: UTC_ISO_DateString | null
-    /** Als een moderator het commentaar heeft gemarkeerd als beoordeeld. **/
+    /** If a moderator marked the comment reviewed. **/
     reviewed: boolean
-    /** De locatie, of base64‑codering, van de avatar. Wordt alleen base64 als dat de waarde was die met SSO werd doorgegeven. **/
+    /** The location, or base64 encoding, of the avatar. Will only be base64 if that was the value passed with SSO. **/
     avatarSrc: string | null
-    /** Was het commentaar handmatig of automatisch gemarkeerd als spam? **/
+    /** Was the comment manually or automatically marked as spam? **/
     isSpam: boolean
-    /** Was het commentaar automatisch gemarkeerd als spam? **/
+    /** Was the comment automatically marked as spam? **/
     aiDeterminedSpam: boolean
-    /** Bevat het commentaar afbeeldingen? **/
+    /** Are there images in the comment? **/
     hasImages: boolean
-    /** Het paginanummer waarop het commentaar staat voor de sorteeroptie "Meest relevant". **/
+    /** The page number the comment is on for the "Most Relevant" sort direction. **/
     pageNumber: number | null
-    /** Het paginanummer waarop het commentaar staat voor de sorteeroptie "Oudste eerst". **/
+    /** The page number the comment is on for the "Oldest First" sort direction. **/
     pageNumberOF: number | null
-    /** Het paginanummer waarop het commentaar staat voor de sorteeroptie "Nieuwste eerst". **/
+    /** The page number the comment is on for the "Newest First" sort direction. **/
     pageNumberNF: number | null
-    /** Was het commentaar automatisch of handmatig goedgekeurd? **/
+    /** Was the comment approved automatically or manually? **/
     approved: boolean
-    /** De locale‑code (formaat: en_us) van de gebruiker toen het commentaar werd geschreven. **/
+    /** The locale code (format: en_us) of the user when the comment was written. **/
     locale: string | null
-    /** De @mentions die in het commentaar zijn geschreven en succesvol zijn geparseerd. Leeg wanneer er geen zijn. **/
+    /** The @mentions written in the comment that were successfully parsed. Empty when there are none. **/
     mentions: CommentUserMention[]
-    /** Het domein waar het commentaar vandaan komt. **/
+    /** The domain the comment is from. **/
     domain: string | null
-    /** De moderatie‑groeps‑ids die aan dit commentaar zijn gekoppeld. Leeg wanneer er geen zijn. **/
+    /** The moderation group ids associated with this comment. Empty when there are none. **/
     moderationGroupIds: string[]
-    /** De badges die naast de naam van de commentator worden getoond bij dit commentaar, op het moment dat het event werd aangemaakt. Leeg wanneer er geen zijn. **/
+    /** The badges shown next to the commenter's name on this comment, as of when the event was created. Empty when there are none. **/
     badges: CommentUserBadgeInfo[]
 }
 [inline-code-end]
 
-Wanneer gebruikers in een commentaar worden getagd, wordt de informatie opgeslagen in een lijst genaamd `mentions`. Elk object in die lijst heeft de volgende structuur.
+Wanneer gebruikers getagd worden in een comment, wordt de informatie opgeslagen in een lijst genaamd `mentions`. Elk object in die lijst
+heeft de volgende structuur.
 
-[inline-code-attrs-start title = 'Het Webhook Mentions-object'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Het Webhook Mentions Object'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentUserMention {
-    /** De gebruikers‑id. Voor SSO‑gebruikers wordt uw tenant‑id ervoor geplaatst. **/
+    /** The user id. For SSO users, this will have your tenant id prefixed. **/
     id: string
-    /** De uiteindelijke @mention‑tagtekst, inclusief het @‑symbool. **/
+    /** The final @mention tag text, including the @ symbol. **/
     tag: string
-    /** De oorspronkelijke @mention‑tagtekst, inclusief het @‑symbool. **/
+    /** The original @mention tag text, including the @ symbol. **/
     rawTag: string
-    /** Welk type gebruiker werd getagd. user = FastComments.com‑account. sso = SSOUser. **/
+    /** What type of user was tagged. user = FastComments.com account. sso = SSOUser. **/
     type: 'user'|'sso'
-    /** Als de gebruiker zich afmeldt voor meldingen, blijft dit toch op true staan. **/
+    /** If the user opts out of notifications, this will still be set to true. **/
     sent: boolean
 }
 [inline-code-end]
 
-Elk item in de `badges`‑lijst heeft de volgende structuur. Zie de [Badges guide](/guide-badges.html) voor de badge‑typen.
+Elke entry in de `badges` lijst heeft de volgende structuur. Zie de [Badges gids](/guide-badges.html) voor de badge types.
 
-[inline-code-attrs-start title = 'Het Webhook Badge-object'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Het Webhook Badge Object'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentUserBadgeInfo {
-    /** De id van de badge die aan deze gebruiker is toegekend. **/
+    /** The id of the badge awarded to this user. **/
     id: string
-    /** Het badge‑type. **/
+    /** The badge type. **/
     type: number
-    /** De badge‑beschrijving, getoond bij hover over de badge. **/
+    /** The badge description, shown when hovering over the badge. **/
     description: string
-    /** De tekst die op de badge wordt getoond. **/
+    /** The text shown on the badge. **/
     displayLabel?: string | null
-    /** De afbeelding die voor de badge wordt getoond, indien er een wordt gebruikt. **/
+    /** The image shown for the badge, if it uses one. **/
     displaySrc?: string | null
     backgroundColor?: string | null
     borderColor?: string | null
     textColor?: string | null
-    /** Een extra CSS‑klasse toegepast op de badge. **/
+    /** An extra CSS class applied to the badge. **/
     cssClass?: string | null
 }
 [inline-code-end]
 
-#### HTTP‑methoden
+#### HTTP Methoden
 
-U kunt de HTTP‑methode voor elk webhook‑eventtype configureren in het admin‑paneel:
+Je kunt de HTTP-methode voor elk webhook event type configureren in het admin paneel:
 
-- **Create‑event**: POST of PUT (standaard: PUT)
-- **Update‑event**: POST of PUT (standaard: PUT)
-- **Delete‑event**: DELETE, POST of PUT (standaard: DELETE)
+- **Create Event**: POST of PUT (standaard: PUT)
+- **Update Event**: POST of PUT (standaard: PUT)
+- **Delete Event**: DELETE, POST of PUT (standaard: DELETE)
 
-Aangezien alle verzoeken een ID bevatten, zijn Create‑ en Update‑operaties standaard idempotent (PUT). Het herhalen van hetzelfde Create‑ of Update‑verzoek mag geen dubbele objecten aan uw kant creëren.
+Aangezien alle requests een ID bevatten, zijn Create- en Update-operaties standaard idempotent (PUT). Het herhalen van dezelfde Create- of Update-request zou aan jouw kant geen dubbele objecten mogen creëren.
 
-#### Request‑headers
+#### Request Headers
 
-Elk webhook‑verzoek bevat de volgende headers:
+Elke webhook request bevat de volgende headers:
 
-| Header | Description |
+| Header | Beschrijving |
 |--------|-------------|
 | `Content-Type` | `application/json` |
-| `token` | Uw API‑secret |
-| `X-FastComments-Timestamp` | Unix‑timestamp (seconden) wanneer het verzoek werd ondertekend |
-| `X-FastComments-Signature` | HMAC‑SHA256‑handtekening (`sha256=<hex>`) |
+| `token` | Je API Secret |
+| `X-FastComments-Timestamp` | Unix timestamp (seconden) waarop de request is ondertekend |
+| `X-FastComments-Signature` | HMAC-SHA256 handtekening (`sha256=<hex>`) |
 
-Zie [Security & API Tokens](/guide-webhooks.html#webhooks-api-tokens) voor informatie over het verifiëren van de HMAC‑handtekening.
+Zie [Beveiliging & API Tokens](/guide-webhooks.html#webhooks-api-tokens) voor informatie over het verifiëren van de HMAC handtekening.

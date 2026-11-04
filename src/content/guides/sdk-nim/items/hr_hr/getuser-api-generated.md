@@ -20,5 +20,3 @@ if userOpt.isSome:
 else:
   echo "User not found"
 [inline-code-end]
-
----

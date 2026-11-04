@@ -1,4 +1,3 @@
----
 ## パラメーター
 
 | 名前 | 型 | 必須 | 説明 |
@@ -26,5 +25,3 @@ api->getEmailTemplateDefinitions(tenantId).then([](pplx::task<std::shared_ptr<Ge
     }
 });
 [inline-code-end]
-
----

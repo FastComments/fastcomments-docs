@@ -22,5 +22,3 @@ Vous pouvez utiliser des outils comme [webhook.site](https://webhook.site) ou [n
 - **Delete Event** : déclenché lorsqu’un commentaire est supprimé.  
 
 Chaque webhook est associé à un seul événement et à une méthode HTTP (POST, PUT ou DELETE). Chaque événement inclut les données complètes du commentaire dans le corps de la requête (voir [Data Structures](/guide-webhooks.html#webhooks-structures) pour le format de la charge utile).
-
----

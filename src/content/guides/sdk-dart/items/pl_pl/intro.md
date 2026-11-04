@@ -5,5 +5,3 @@ Zarządzaj komentarzami, użytkownikami, SSO i moderacją z aplikacji Dart i Flu
 ## Repozytorium
 
 [Zobacz na GitHubie](https://github.com/FastComments/fastcomments-dart)
-
----

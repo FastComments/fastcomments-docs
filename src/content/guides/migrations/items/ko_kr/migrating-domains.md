@@ -19,5 +19,3 @@ FastComments는 도메인 간에 댓글을 마이그레이션할 수 있는 자�
 ### API를 통한 도메인 마이그레이션
 
 도메인은 `type`을 `domain`으로 설정하여 [`POST /api/v1/pages/migrations`](/guide-api.html#pages-migrations-post) 로도 마이그레이션할 수 있습니다. 진행 상황은 [`GET /api/v1/batch-jobs/:id`](/guide-api.html#batch-job-get-by-id) 에서 확인할 수 있으며, 마이그레이션은 90일 동안 취소할 수 있습니다.
-
----

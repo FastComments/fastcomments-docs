@@ -20,5 +20,3 @@ api->deleteNotificationCount(tenantId, notificationId)
     .then([](std::shared_ptr<APIEmptyResponse> resp) {})
     .then([](pplx::task<void> t) { try { t.get(); } catch (const std::exception&) {} });
 [inline-code-end]
-
----

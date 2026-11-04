@@ -1,66 +1,64 @@
-La page de modération des commentaires prend en charge des raccourcis clavier pour naviguer entre les commentaires, effectuer des actions et paginer - le tout sans utiliser la souris.
+La page de modération des commentaires prend en charge les raccourcis clavier pour naviguer entre les commentaires, effectuer des actions et paginer - le tout sans utiliser la souris.
 
-Appuyez sur **?** à tout moment sur la page de modération pour ouvrir une fenêtre d'aide listant tous les raccourcis disponibles.
+Appuyez sur **?** à tout moment sur la page de modération pour ouvrir une boîte de dialogue d'aide listant tous les raccourcis disponibles.
 
 ## Navigation
 
-| Key | Action |
+| Touche | Action |
 |-----|--------|
-| `j` | Placer le focus sur le commentaire suivant |
-| `k` | Placer le focus sur le commentaire précédent |
-| `x` or `Enter` | Basculer la sélection du commentaire focalisé |
-| `Shift+j` | Sélectionner le commentaire focalisé et passer au suivant |
-| `Shift+k` | Sélectionner le commentaire focalisé et passer au précédent |
+| `j` | Focus sur le commentaire suivant |
+| `k` | Focus sur le commentaire précédent |
+| `x` ou `Enter` | Basculer la sélection du commentaire ayant le focus |
+| `Shift+j` | Sélectionner le commentaire ayant le focus et passer au suivant |
+| `Shift+k` | Sélectionner le commentaire ayant le focus et passer au précédent |
 
-Le commentaire focalisé est mis en évidence par un contour bleu. Cela est distinct des commentaires « sélectionnés » (cochés).
+Le commentaire ayant le focus est mis en évidence avec un contour bleu. Ceci est distinct des commentaires « sélectionnés » (cochés).
 
-## Actions on Focused Comment
+## Actions sur le commentaire ayant le focus
 
-| Key | Action |
+| Touche | Action |
 |-----|--------|
-| `a` | Approuver / désapprouver |
-| `s` | Basculer spam / non-spam |
+| `a` | Basculer approuvé / non approuvé |
+| `s` | Basculer spam / non spam |
 | `d` | Supprimer |
 | `u` | Restaurer |
-| `r` | Basculer révisé / non révisé |
+| `r` | Basculer relu / non relu |
 | `e` | Modifier |
 | `b` | Bannir / gérer le bannissement |
-| `p` | Épingler / désépingler |
+| `p` | Basculer épinglé / non épinglé |
 | `f` | Retirer le signalement |
-| `i` | Afficher tous les commentaires provenant de cette IP |
+| `i` | Voir tous les commentaires de l'IP |
 | `t` | Définir le facteur de confiance |
 | `m` | Gérer les badges |
-| `l` | Afficher les journaux |
-| `c` | Afficher/masquer le contexte |
+| `l` | Voir les journaux |
+| `c` | Basculer le contexte |
 
-Ces raccourcis ne s'appliquent que lorsqu'un commentaire est focalisé. Si aucun commentaire n'est focalisé, appuyez d'abord sur `j` ou `k`.
+Ces raccourcis ne s'appliquent que lorsqu'un commentaire a le focus. Si aucun commentaire n'a le focus, appuyez d'abord sur `j` ou `k`.
 
-## Global Shortcuts
+## Raccourcis globaux
 
-| Key | Action |
+| Touche | Action |
 |-----|--------|
 | `Ctrl+a` | Sélectionner tous les commentaires |
 | `Ctrl+z` | Annuler la dernière action |
 | `?` | Afficher l'aide des raccourcis clavier |
-| `g` | Afficher/masquer la superposition des guides de raccourcis |
-| `/` | Placer le focus sur le champ de recherche |
+| `g` | Basculer la superposition des guides de raccourcis |
+| `/` | Focus sur le champ de recherche |
 
 ## Pagination
 
-| Key | Action |
+| Touche | Action |
 |-----|--------|
 | `[` | Page précédente |
 | `]` | Page suivante |
 
-## Shortcut Guiders
+## Guides de raccourcis
 
-Appuyez sur `g` pour basculer le mode des guides. Lorsqu'il est actif, de petits badges apparaissent sur les boutons d'action du commentaire focalisé, affichant le raccourci clavier pour chaque bouton. Cela est utile pour apprendre les raccourcis. Appuyez de nouveau sur `g` pour les masquer.
+Appuyez sur `g` pour activer ou désactiver le mode guides. Lorsqu'il est actif, de petits badges apparaissent sur les boutons d'action du commentaire ayant le focus, indiquant le raccourci clavier de chaque bouton. Cela est utile pendant l'apprentissage des raccourcis. Appuyez à nouveau sur `g` pour les masquer.
 
-## Input Suppression
+## Suppression des raccourcis dans les champs de saisie
 
 Les raccourcis sont automatiquement désactivés lorsque :
 
-- Le curseur se trouve dans la barre de recherche, un champ texte, ou un champ contenteditable. Appuyez sur `Escape` pour enlever le focus du champ et revenir aux raccourcis.
-- Une boîte de dialogue est ouverte. Fermez-la d'abord.
-
----
+- Le curseur se trouve dans le champ de recherche, un champ de texte ou un champ éditable de contenu. Appuyez sur `Escape` pour quitter le champ et revenir aux raccourcis.
+- Une boîte de dialogue est ouverte. Fermez d'abord la boîte de dialogue.

@@ -1,11 +1,11 @@
-Aqui vamos explicar como chamar a API do FastComments para configurar o controle de acesso.
+Aqui vamos percorrer a chamada da API do FastComments para configurar o controle de acesso.
 
-Antes de começarmos, observe que não precisamos criar explicitamente uma estrutura `Group`. Groups são simplesmente identificadores
-adicionados a `Users` e `Pages`. Adicionar um group a um user ou page automaticamente "cria" o group.
+Antes de começar, note que não precisamos criar explicitamente uma estrutura de `Group`. Os grupos são simplesmente identificadores
+adicionados a `Users` e `Pages`. Adicionar um grupo a um usuário ou página "cria" o grupo automaticamente.
 
-First, let's create two users, `User A` and `User B`, we'll start them out in `Group X`:
+Primeiro, vamos criar dois usuários, `User A` e `User B`, começando ambos em `Group X`:
 
-[inline-code-attrs-start title = 'Exemplo cURL de criação do Usuário A'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo de cURL para criar o Usuário A'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request POST \
   --url 'https://fastcomments.com/api/v1/sso-users?tenantId=demo&API_KEY=DEMO_API_SECRET' \
@@ -18,7 +18,7 @@ curl --request POST \
 }'
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Exemplo cURL de criação do Usuário B'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo de cURL para criar o Usuário B'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request POST \
   --url 'https://fastcomments.com/api/v1/sso-users?tenantId=demo&API_KEY=DEMO_API_SECRET' \
@@ -31,10 +31,10 @@ curl --request POST \
 }'
 [inline-code-end]
 
-Now let's create a `Page`. We'll call it our `Confidential Page`, and so far none of these users will have access to it as it will
-be in the group `CONFIDENTIAL`:
+Agora vamos criar uma `Page`. Vamos chamá-la de nossa `Confidential Page`, e até agora nenhum desses usuários terá acesso a ela, pois ela estará
+no grupo `CONFIDENTIAL`:
 
-[inline-code-attrs-start title = 'Exemplo cURL POST de Página'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo de cURL para POST de Page'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request POST \
   --url 'https://fastcomments.com/api/v1/pages?tenantId=demo&API_KEY=DEMO_API_SECRET' \
@@ -47,11 +47,11 @@ curl --request POST \
 }'
 [inline-code-end]
 
-Users A and B currently **DO NOT** have access to the new page. However, since they are in the same group, `GROUP-X`, they can `@mention` each other.
+Os usuários A e B atualmente **NÃO** têm acesso à nova página. No entanto, como estão no mesmo grupo, `GROUP-X`, eles podem se `@mencionar` mutuamente.
 
-Let's update `User B` so they can now access the page:
+Vamos atualizar o `User B` para que ele agora possa acessar a página:
 
-[inline-code-attrs-start title = 'Exemplo cURL de atualização do Usuário B'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo de cURL para atualizar o Usuário B'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request POST \
   --url 'https://fastcomments.com/api/v1/sso-users?tenantId=demo&API_KEY=DEMO_API_SECRET' \
@@ -61,11 +61,11 @@ curl --request POST \
 }'
 [inline-code-end]
 
-`User B` now belongs to both groups. Our users can still `@mention` each other, but only `User B` can view our confidential page.
+O `User B` agora pertence a ambos os grupos. Nossos usuários ainda podem se `@mencionar` mutuamente, mas apenas o `User B` pode visualizar nossa página confidencial.
 
-Let's make it so `User B` can only view the confidential page:
+Vamos fazer com que o `User B` possa apenas visualizar a página confidencial:
 
-[inline-code-attrs-start title = 'Exemplo cURL de atualização do Usuário B'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo de cURL para atualizar o Usuário B'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request POST \
   --url 'https://fastcomments.com/api/v1/sso-users?tenantId=demo&API_KEY=DEMO_API_SECRET' \
@@ -75,12 +75,12 @@ curl --request POST \
 }'
 [inline-code-end]
 
-Now they can view the confidential page, but neither of our users can `@mention` each other, as they are in different groups.
+Agora ele pode visualizar a página confidencial, mas nenhum dos nossos usuários pode se `@mencionar` mutuamente, pois estão em grupos diferentes.
 
-However, any user that is not part of access control **will be able to access our page**. To prevent this, ensure no SSO Users have
-their `groupIds` set to null. For example, let's create `User C`, which has access to everything:
+No entanto, qualquer usuário que não faça parte do controle de acesso **poderá acessar nossa página**. Para evitar isso, garanta que nenhum SSO User tenha
+seu `groupIds` definido como null. Por exemplo, vamos criar o `User C`, que tem acesso a tudo:
 
-[inline-code-attrs-start title = 'Exemplo cURL de criação do Usuário C'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo de cURL para criar o Usuário C'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request POST \
   --url 'https://fastcomments.com/api/v1/sso-users?tenantId=demo&API_KEY=DEMO_API_SECRET' \
@@ -93,11 +93,11 @@ curl --request POST \
 }'
 [inline-code-end]
 
-By setting `groupIds` to null, we say they are not limited by access control.
+Ao definir `groupIds` como null, dizemos que ele não é limitado pelo controle de acesso.
 
-Now, let's create a page that everyone has access to:
+Agora, vamos criar uma página que todos têm acesso:
 
-[inline-code-attrs-start title = 'Exemplo cURL POST de Página'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo de cURL para POST de Page'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request POST \
   --url 'https://fastcomments.com/api/v1/pages?tenantId=demo&API_KEY=DEMO_API_SECRET' \
@@ -110,6 +110,6 @@ curl --request POST \
 }'
 [inline-code-end]
 
-By setting `accessibleByGroupIds` to null, we say this `Page` is not controlled via access control, and both users can access it.
+Ao definir `accessibleByGroupIds` como null, dizemos que esta `Page` não é controlada pelo controle de acesso, e ambos os usuários podem acessá-la.
 
-This completes our API walk-through for Access Control.
+Isso conclui nosso passo a passo da API para o Controle de Acesso.

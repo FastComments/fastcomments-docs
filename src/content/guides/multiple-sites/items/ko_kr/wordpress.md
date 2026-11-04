@@ -1,9 +1,9 @@
-Each WordPress site needs its own FastComments account or tenant. WordPress numbers posts separately on each site, so post 5 on one site and post 5 on another would share a single comment thread if both were connected to the same account. For that reason, the plugin's setup refuses to connect a site when the account already has a different one connected.
+각 WordPress 사이트에는 자체 FastComments 계정 또는 테넌트가 필요합니다. WordPress는 사이트마다 게시물을 개별적으로 번호 매기므로, 한 사이트의 게시물 5와 다른 사이트의 게시물 5가 동일한 계정에 연결되어 있으면 하나의 댓글 스레드를 공유하게 됩니다. 그렇기 때문에 계정에 이미 다른 사이트가 연결되어 있는 경우 플러그인 설정은 해당 사이트의 연결을 거부합니다.
 
-[활성화된 통합을 여기에서 확인할 수 있습니다.](https://fastcomments.com/auth/my-account/manage-data/integrations)
+[활성 통합은 여기에서 확인할 수 있습니다.](https://fastcomments.com/auth/my-account/manage-data/integrations)
 
-To run several WordPress sites, create a [tenant](https://fastcomments.com/auth/my-account/tenants) for each one, switch to it, and then connect the site from the plugin's setup page. Tenants are included in plans with white labeling. You can also create a separate FastComments account for each site, using a different email address for each.
+여러 WordPress 사이트를 운영하려면 각 사이트마다 [테넌트](https://fastcomments.com/auth/my-account/tenants)를 생성하고, 해당 테넌트로 전환한 다음, 플러그인 설정 페이지에서 사이트를 연결하세요. 테넌트는 화이트 라벨링이 포함된 플랜에 포함되어 있습니다. 또한 각 사이트마다 서로 다른 이메일 주소를 사용하여 별도의 FastComments 계정을 만들 수도 있습니다.
 
-If a site has moved, for example from staging to production, deactivate the plugin on the old site and remove the old site from your active integrations. Then connect the new one. Comments already synced from the old site stay on the account, and they show on any post with the same ID on the new site.
+사이트가 스테이징에서 프로덕션으로 이동하는 등의 경우에는, 기존 사이트에서 플러그인을 비활성화하고 활성 통합에서 기존 사이트를 제거하세요. 그런 다음 새 사이트를 연결하세요. 기존 사이트에서 이미 동기화된 댓글은 계정에 그대로 유지되며, 새 사이트에서 동일한 ID를 가진 게시물에 표시됩니다.
 
-You can use the same FastComments account with a single WordPress installation that spans multiple domains and has the same content on those domains.
+여러 도메인에 걸쳐 있고 해당 도메인에서 동일한 콘텐츠를 제공하는 단일 WordPress 설치에는 동일한 FastComments 계정을 사용할 수 있습니다.

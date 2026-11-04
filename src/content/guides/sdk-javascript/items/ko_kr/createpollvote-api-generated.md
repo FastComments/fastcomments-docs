@@ -30,5 +30,3 @@ Poll에 투표를 기록하거나 기존 투표를 다른 옵션으로 이동합
   console.log(result);
 })();
 [inline-code-end]
-
----

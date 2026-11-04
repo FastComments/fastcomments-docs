@@ -1,13 +1,13 @@
-Queues a batch job that reverses every migration from one migrate-pages job, newest first. Available for 90 days.  
-Records changed since the migration are left alone, so a later edit is never overwritten.  
-Poll GET /api/v1/batch-jobs/{batchJobId} for the restored/skipped counts.
+將批次工作排入佇列，以最新到最舊的順序反轉某個 migrate-pages 工作的每一次遷移。有效期為 90 天。
+遷移後有變更的記錄將保持不變，因此之後的編輯永遠不會被覆寫。
+請輪詢 GET /api/v1/batch-jobs/{batchJobId} 以取得已還原/已略過的計數。
 
 ## 參數
 
 | 名稱 | 類型 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| undoId | string | path | Yes |  |
+| tenantId | string | query | 是 |  |
+| undoId | string | path | 是 |  |
 
 ## 回應
 
@@ -53,5 +53,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

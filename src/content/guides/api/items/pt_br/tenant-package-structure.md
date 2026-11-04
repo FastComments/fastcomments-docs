@@ -1,25 +1,24 @@
----
-The `TenantPackage` defines package information available to a `Tenant`. A tenant may have many packages available, but only
-one in use at a given time.
+O `TenantPackage` define as informações de pacote disponíveis para um `Tenant`. Um tenant pode ter vários pacotes disponíveis, mas apenas
+um em uso em um determinado momento.
 
-A `Tenant` cannot be used for any products until its `packageId` points to a valid `TenantPackage`.
+Um `Tenant` não pode ser usado para nenhum produto até que seu `packageId` aponte para um `TenantPackage` válido.
 
-There are two types of `TenantPackage` objects:
+Existem dois tipos de objetos `TenantPackage`:
 
-1. Fixed-pricing packages - where `hasFlexPricing` is false.
-2. Flexible pricing - where `hasFlexPricing` is true.
+1. Pacotes de preço fixo - onde `hasFlexPricing` é false.
+2. Preço flexível - onde `hasFlexPricing` é true.
 
-In both case limits are defined on the account using the package, however with Flex the tenant is charged a base price plus
-what they used, defined by the `flex*` parameters.
+Em ambos os casos, os limites são definidos na conta que usa o pacote, porém com Flex o tenant é cobrado por um preço base mais
+o que utilizou, definido pelos parâmetros `flex*`.
 
-A tenant may have multiple tenant packages and have the ability to change the package themselves from the [Página de Informações de Cobrança.](https://fastcomments.com/auth/my-account/billing-info)
+Um tenant pode ter vários pacotes de tenant e ter a capacidade de alterar o pacote por conta própria na [Página de Informações de Cobrança.](https://fastcomments.com/auth/my-account/billing-info)
 
-If you will be handling billing for tenants yourselves, you will still need to define a package for each tenant to define their limits. Simply set `billingHandledExternally` to `true` on the `Tenant` and they
-will not be able to change their billing information, or active package, themselves.
+Se você for lidar com a cobrança dos tenants por conta própria, ainda será necessário definir um pacote para cada tenant para definir seus limites. Basta definir `billingHandledExternally` como `true` no `Tenant` e eles
+não poderão alterar suas informações de cobrança, ou o pacote ativo, por conta própria.
 
-You may not create packages with higher limits than the parent tenant.
+Você não pode criar pacotes com limites superiores aos do tenant pai.
 
-The structure for the `TenantPackage` object is as follows:
+A estrutura do objeto `TenantPackage` é a seguinte:
 
 [inline-code-attrs-start title = 'Estrutura do TenantPackage'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -61,12 +60,10 @@ export interface TenantPackage {
     flexAdminUnit?: null
     flexDomainCostCents?: null
     flexDomainUnit?: null
-    flexSSOAdminCostCents?: null // Custo por usuário SSO com permissões de administrador (flags isAccountOwner ou isAdminAdmin)
+    flexSSOAdminCostCents?: null // Custo por usuário SSO com permissões de admin (flags isAccountOwner ou isAdminAdmin)
     flexSSOAdminUnit?: null
     flexSSOModeratorCostCents?: null // Custo por usuário SSO com permissões de moderador (flag isCommentModeratorAdmin)
     flexSSOModeratorUnit?: null
     flexMinimumCostCents?: null
 }
 [inline-code-end]
-
----

@@ -41,5 +41,3 @@ try {
     echo 'DefaultApi->getQuestionResult 호출 중 예외 발생: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

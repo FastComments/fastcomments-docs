@@ -47,5 +47,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->get_online_users: %s\n" % e)
 [inline-code-end]
-
----

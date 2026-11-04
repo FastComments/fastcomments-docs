@@ -1,53 +1,52 @@
----
-Her er nogle symptomer, vi ofte ser, og almindelige løsninger. 
+Her er nogle symptomer, vi ofte ser, samt almindelige løsninger.
 
-### "This is a demo" Message
+### "This is a demo"-besked
 
-Dette vises, når du har kopieret widget-koden fra vores startside, som bruger vores demo
-tenant. For at bruge din tenant skal du kopiere widget-koden fra [her](https://fastcomments.com/auth/my-account/get-acct-code).
+Dette vises, når du har kopieret widget-koden fra vores forside, som bruger vores demo-
+tenant. For at bruge din egen tenant skal du kopiere widget-koden fra [her](https://fastcomments.com/auth/my-account/get-acct-code).
 
-### "FastComments cannot load on this domain" Error
+### "FastComments cannot load on this domain"-fejl
 
-FastComments skal vide, hvilke domæner der ejes af dig for at godkende forespørgsler tilknyttet
-din konto. [Se vores dokumentation](/guide-multiple-sites.html#add-domains-to-account) for at se, hvordan
-du løser denne fejl (tilføj blot det præcise subdomæne + domæne til din konto).
+FastComments skal vide, hvilke domæner du ejer, for at autentificere forespørgsler knyttet til
+din konto. [Se vores dokumentation](/guide-multiple-sites.html#add-domains-to-account) for at se, hvordan du
+løser denne fejl (tilføj blot det nøjagtige subdomæne + domæne til din konto).
 
-Bemærk, at dette kun burde forekomme efter prøveperioden er slut. I prøveperioden vil forespørgsler fra nye domæner
-automatisk blive tilføjet til din konto.
+Bemærk, at dette normalt kun opstår, efter prøveperioden er slut. I prøveperioden tilføjes forespørgsler fra nye domæner
+automatisk til din konto.
 
-### Migrated Comments Not Showing for Custom Installations
+### Migrerede kommentarer vises ikke for brugerdefinerede installationer
 
 Normalt sker dette, når de importerede kommentarer er knyttet til en `Page ID`, og du sender en URL
-(eller ingen værdi, i hvilket tilfælde den som standard bruger sidens URL).
+(eller ingen værdi, i hvilket tilfælde den som standard er sidens URL).
 
-Du kan fejlsøge dette ved at [eksportere dine kommentarer](https://fastcomments.com/auth/my-account/manage-data/export) og se på `URL ID` kolonnen (i øjeblikket Kolonne `B`).
+Du kan fejlfinde dette ved at [eksportere dine kommentarer](https://fastcomments.com/auth/my-account/manage-data/export) og se kolonnen `URL ID` (i øjeblikket kolonne `B`).
 
-Sørg for, at de værdier, du ser i `URL ID` kolonnen, er de samme værdier, du sender til widget-
-konfigurationen som `urlId` parameteren.
+Sørg for, at værdierne i kolonnen `URL ID` er de samme værdier, som du sender til widget-
+konfigurationen som `urlId`-parameteren.
 
-For yderligere forklaring kan du læse vores [How Comments are Tied to Pages and Articles documentation](/guide-customizations-and-configuration.html#url-id).
+For yderligere forklaring kan du læse vores [dokumentation om, hvordan kommentarer knyttes til sider og artikler](/guide-customizations-and-configuration.html#url-id).
 
-Hvis intet hjælper, [kontakt os](https://fastcomments.com/auth/my-account/help).
+Hvis alt andet fejler, kan du [kontakte os](https://fastcomments.com/auth/my-account/help).
 
-### Comment Widget Not Showing
+### Kommentar-widget vises ikke
 
-Hvis kommentar-widgetten ikke vises, tjek Chrome udviklerkonsollen for fejl.
+Hvis kommentar-widget'en ikke vises, så tjek Chrome-udviklerkonsollen for fejl.
 
-Ved de fleste fejlkonfigurationer vil kommentar-widgetten i det mindste vise en fejl på siden, hvis den
-kan indlæses. At intet vises er normalt et tegn på en script-fejl.
+Ved de fleste fejlkonfigurationer vil kommentar-widget'en i det mindste vise en fejl på siden, hvis den
+kan indlæses. Hvis der ikke vises noget, er det normalt tegn på en scripting-fejl.
 
-### Desired Configuration Not Working as Expected
+### Ønsket konfiguration virker ikke som forventet
 
 Prøv vores [Chrome-udvidelse](https://chromewebstore.google.com/detail/fastcomments-debugger/cadggdemhfkjjghkdbfhonoccnplffjj) for at se, hvilken
-konfiguration kommentar-widgetten får. Hvis intet hjælper, tag et skærmbillede af, hvad Chrome-udvidelsen siger
+konfiguration kommentar-widget'en modtager. Hvis alt fejler, så tag et skærmbillede af, hvad Chrome-udvidelsen viser,
 og [kontakt os](https://fastcomments.com/auth/my-account/help).
 
-### Comments Missing on Same URL With Different Hash Bang
+### Kommentarer mangler på samme URL med forskellig hash bang
 
-Som standard bruger FastComments sidens URL for den "bucket", hvor kommentarer gemmes. Hvis dine URL'er indeholder `#hashbangs`, og disse `#hashbangs`
-ikke bør være en del af identifikatoren, der identificerer en kommentartråd, kan vi simpelt ignorere hashbang-værdien, for eksempel:
+Som standard bruger FastComments side-URL'en som "bucket", hvor kommentarer gemmes. Hvis dine URL'er indeholder `#hashbangs`, og disse `#hashbangs`
+ikke skal være en del af identifikatoren, der identificerer en kommentartråd, kan vi blot ignorere hash bang-værdien, for eksempel:
 
-[inline-code-attrs-start title = 'Ignorer hashbangs-eksempel'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Eksempel på ignorering af hash bangs'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
@@ -61,14 +60,14 @@ window.fcConfigs = [{
 </script>
 [inline-code-end]
 
-Bemærk, at efter at have foretaget denne ændring, skal der udføres en migration for eksisterende kommentarer. [Til det, kontakt os.](https://fastcomments.com/auth/my-account/help)
+Bemærk, at der efter denne ændring skal udføres en migration af eksisterende kommentarer. [For det, kontakt os.](https://fastcomments.com/auth/my-account/help)
 
-### URL Query Parameters Affecting Widget
+### URL-queryparametre påvirker widget'en
 
-Som standard bruger FastComments sidens URL for den "bucket", hvor kommentarer gemmes. Hvis dine URL'er indeholder forespørgselsparametre,
-der ikke bør være en del af identifikatoren, som identificerer en kommentartråd, kan vi simpelt ignorere dem, for eksempel:
+Som standard bruger FastComments side-URL'en som "bucket", hvor kommentarer gemmes. Hvis dine URL'er indeholder queryparametre,
+der ikke skal være en del af identifikatoren, der identificerer en kommentartråd, kan vi blot ignorere dem, for eksempel:
 
-[inline-code-attrs-start title = 'Ignorer forespørgselsparametre'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ignorer queryparametre'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget"></div>
@@ -82,15 +81,13 @@ window.fcConfigs = [{
 </script>
 [inline-code-end]
 
-Bemærk, at efter at have foretaget denne ændring, skal der udføres en migration for eksisterende kommentarer. [Til det, kontakt os.](https://fastcomments.com/auth/my-account/help)
+Bemærk, at der efter denne ændring skal udføres en migration af eksisterende kommentarer. [For det, kontakt os.](https://fastcomments.com/auth/my-account/help)
 
-### Not Receiving Emails
+### Modtager ikke e-mails
 
-Hos FastComments gør vi en stor indsats for at sikre, at vores e-mails leveres så pålideligt som
-muligt. Dog er nogle e-mailudbydere notorisk svære at levere til pålideligt vis. Tjek din spam-
+Hos FastComments lægger vi meget arbejde i at sikre, at vores e-mail-levering er så pålidelig som
+mulig. Dog er nogle e-mail-udbydere notorisk svære at levere pålideligt til. Tjek din spam-
 mappe for beskeder fra fastcomments.com.
 
-Hvis du [kontakter os](https://fastcomments.com/auth/my-account/help) kan vi som regel give
-mere indsigt i, hvorfor du måske ikke modtager e-mails fra os.
-
----
+Hvis du [kontakter os](https://fastcomments.com/auth/my-account/help), kan vi normalt give
+mere indsigt i, hvorfor du muligvis ikke ser e-mails fra os.

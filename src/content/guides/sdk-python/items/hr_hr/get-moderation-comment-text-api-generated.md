@@ -41,5 +41,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling ModerationApi->get_moderation_comment_text: %s\n" % e)
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 ## Parametreler
 
 | Ad | Tür | Gerekli | Açıklama |
@@ -30,5 +29,3 @@ const request: BulkAggregateQuestionResultsRequest = {
 
 const response: BulkAggregateQuestionResultsResponse = await bulkAggregateQuestionResults(tenantId, request, true);
 [inline-code-end]
-
----

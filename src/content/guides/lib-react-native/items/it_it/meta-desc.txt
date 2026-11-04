@@ -1,3 +1,1 @@
----
 Incorpora i widget di commenti live e chat in un'app React Native con SSO, oltre a quando è opportuno utilizzare l'SDK nativo invece del widget webview.
----

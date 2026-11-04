@@ -1,4 +1,3 @@
----
 Este endpoint permite que você atualize uma atribuição de distintivo de usuário.
 
 Atualmente, a única propriedade que pode ser atualizada é `displayedOnComments`, que controla se o distintivo é exibido nos comentários do usuário.
@@ -51,4 +50,3 @@ Possíveis respostas de erro:
   "reason": "The user badge badge123 was not found."
 }
 [inline-code-end]
----

@@ -1,4 +1,3 @@
----
 Za uporabo API-ja za ustvarjanje white-label najemnika moramo narediti naslednje:
 
 1. Pokličite [Tenants API](/guide-api.html#tenant-structure) za ustvarjanje najemnika.
@@ -9,5 +8,3 @@ Za uporabo API-ja za ustvarjanje white-label najemnika moramo narediti naslednje
 6. Po želji, [Setup SSO](/guide-customizations-and-configuration.html#sso).
 
 Vse to je mogoče narediti v poskusnem obdobju.
-
----

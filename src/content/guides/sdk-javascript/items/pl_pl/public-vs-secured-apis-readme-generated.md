@@ -1,4 +1,3 @@
----
 SDK udostępnia te klasy API:
 
 - **`DefaultApi`** - Zabezpieczone punkty końcowe, które wymagają klucza API do uwierzytelniania. Używaj ich do operacji po stronie serwera.
@@ -54,4 +53,3 @@ await sdk.moderationApi.postSetCommentSpamStatus({
   spam: true
 });
 ```
----

@@ -9,5 +9,3 @@ Međutim, možemo onemogućiti ovu karticu:
 Ovo se također može učiniti bez koda. Na stranici za prilagodbu widgeta, pogledajte odjeljak „Onemogući komentare profila“.
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-profile-comments']; selector = '.disable-profile-comments'; alt='Stranica prilagodbe widgeta s označenim potvrdnim okvirom Onemogući komentare profila za skrivanje kartice komentara profila'; title='Onemogući komentare profila' app-screenshot-end]
-
----

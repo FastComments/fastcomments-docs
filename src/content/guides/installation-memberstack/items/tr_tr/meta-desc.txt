@@ -1,3 +1,1 @@
----
 Yorum bölümünüzü, tek bir snippet ile oturum açmış Memberstack üyeleriyle sınırlayın, böylece yalnızca ödeme yapan üyeler gönderi yapabilir.
----

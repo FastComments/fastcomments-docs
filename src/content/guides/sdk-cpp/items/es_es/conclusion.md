@@ -1,4 +1,3 @@
----
 ## ¿Necesita ayuda?
 
 Si encuentra algún problema o tiene preguntas sobre el SDK de C++, por favor:
@@ -9,5 +8,3 @@ Si encuentra algún problema o tiene preguntas sobre el SDK de C++, por favor:
 ## Contribuir
 
 ¡Se aceptan contribuciones! Por favor visite el [repositorio de GitHub](https://github.com/FastComments/fastcomments-cpp) para las directrices de contribución.
-
----

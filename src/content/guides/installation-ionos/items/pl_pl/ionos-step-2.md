@@ -58,5 +58,3 @@ Teraz skopiuj następujący kod:
     <div class="title">Wklej i zapisz</div>
     <img class="screenshot-image" src="/images/installation-guides/ionos-step-2-paste-and-save.png" alt="Wklej i zapisz" />
 </div>
-
----

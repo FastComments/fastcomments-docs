@@ -1,4 +1,3 @@
----
 SDK şu API sınıflarını sağlar:
 
 - **`DefaultApi`** - Kimlik doğrulama için API anahtarınızı gerektiren güvenli uç noktalar. Sunucu tarafı işlemler için bunları kullanın.
@@ -54,4 +53,3 @@ await sdk.moderationApi.postSetCommentSpamStatus({
   spam: true
 });
 ```
----

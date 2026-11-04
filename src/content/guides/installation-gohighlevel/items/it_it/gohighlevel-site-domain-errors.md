@@ -1,4 +1,3 @@
----
 Potresti ricevere un errore di autorizzazione, simile al seguente:
 
 <div class="screenshot white-bg">
@@ -13,4 +12,3 @@ In questo caso, la soluzione è semplice. Devi solo aggiungere il tuo sito al tu
 [Vai qui per aggiungere il tuo sito al tuo account.](https://fastcomments.com/auth/my-account/configure-domains)
 
 Ora il tuo sito dovrebbe avere commenti veloci e in tempo reale!
----

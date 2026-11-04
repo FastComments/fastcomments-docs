@@ -1,4 +1,3 @@
----
 Cene se zasnivaju na cenama za komentare, to znači da vam se ocene i recenzije naplaćuju isto kao komentari — u zavisnosti od vašeg paketa.
 
 Naplaćuje vam se (na Flex) ili ste ograničeni (u fiksnim planovima) na osnovu sledećeg:
@@ -10,5 +9,3 @@ Naplaćuje vam se (na Flex) ili ste ograničeni (u fiksnim planovima) na osnovu 
 - Korišćenje API-ja (potrošnja kredita za svaki API poziv uključena je u odgovarajuću dokumentaciju).
 
 Kada se rezultati agregiraju bilo preko API-ja ili preko summary widget-a, takođe vam se naplaćuje.
-
----

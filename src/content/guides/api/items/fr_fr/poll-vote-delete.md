@@ -33,5 +33,3 @@ interface PollVoteDeleteResponse {
 
 - Supprimer le même vote deux fois renvoie `not-found` la deuxième fois, et les comptes restent inchangés.
 - Si le sondage a été remplacé depuis que le vote a été exprimé, le vote est supprimé mais aucun compteur ne change, car le remplacement a commencé à zéro.
-
----

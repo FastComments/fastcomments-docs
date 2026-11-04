@@ -15,5 +15,3 @@
 [code-example-start config = {countAll: false}; linesToHighlight = [6]; title = 'Counting Top Level Comments'; code-example-end]
 
 目前無法在不更改程式碼的情況下自訂此行為。
-
----

@@ -17,5 +17,3 @@ let (response, httpResponse) = client.getEmailTemplate(tenantId = "my-tenant-123
 if response.isSome:
   let tmpl = response.get()
 [inline-code-end]
-
----

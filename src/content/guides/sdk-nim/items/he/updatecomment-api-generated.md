@@ -28,5 +28,3 @@ let (respOpt, httpResp) = client.updateComment(
 if respOpt.isSome:
   let resp = respOpt.get()
 [inline-code-end]
-
----

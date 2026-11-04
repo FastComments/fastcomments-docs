@@ -39,5 +39,3 @@ Wir können einfach die Funktion update aufrufen, jedes Mal wenn wir die Konfigu
     }
 </style>
 [inline-code-end]
-
----

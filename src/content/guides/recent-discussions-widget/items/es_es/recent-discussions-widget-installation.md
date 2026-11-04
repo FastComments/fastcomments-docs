@@ -50,5 +50,3 @@ La función `FastCommentsRecentDiscussionsV2` acepta las siguientes opciones de 
     });
 </script>
 [inline-code-end]
-
----

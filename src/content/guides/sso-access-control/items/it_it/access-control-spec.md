@@ -27,5 +27,3 @@ Definire come più utenti interagiscono e testarlo è complicato. Ecco la seguen
     SSO User A = Group ids = [a].
     SSO User B = Group ids = [a, b].
     A può @B.
-
----

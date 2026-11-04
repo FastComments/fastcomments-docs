@@ -18,5 +18,3 @@ U primjeru u kojem ste na razini s pet milijuna mjesečnih učitavanja stranica 
 Ukratko, ograničenja prometa su po računu, a ne po domeni.
 
 Imajte na umu da nudimo i prilagođene pakete za stranice različitih veličina; jednostavno se obratite podršci.
-
----

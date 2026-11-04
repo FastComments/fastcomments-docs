@@ -1,4 +1,3 @@
----
 To wszystko! Na Twojej stronie Hostinger powinny być już aktywne komentarze na żywo.
 
 <div class="screenshot white-bg">
@@ -7,5 +6,3 @@ To wszystko! Na Twojej stronie Hostinger powinny być już aktywne komentarze na
 </div>
 
 Jeśli napotkałeś błąd permission denied lub chciałbyś dostosować FastComments, czytaj dalej.
-
----

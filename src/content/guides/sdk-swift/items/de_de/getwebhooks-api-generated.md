@@ -1,24 +1,24 @@
-Lists the webhooks configured for the tenant, both dashboard-managed rows and API subscriptions.
+Listet die für den Tenant konfigurierten Webhooks auf, sowohl dashboard-verwaltete Einträge als auch API-Abonnements.
 
-## Parameters
+## Parameter
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
-|------|------|-----|---------------|--------------|
+|------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | event | string | query | Nein |  |
 | domain | string | query | Nein |  |
 | source | string | query | Nein |  |
 | skip | number | query | Nein |  |
 
-## Response
+## Antwort
 
-Returns: [`GetWebhooksResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetWebhooksResponse.swift)
+Gibt zurück: [`GetWebhooksResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetWebhooksResponse.swift)
 
-## Example
+## Beispiel
 
 [inline-code-attrs-start title = 'getWebhooks Beispiel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Die folgenden Codebeispiele sind noch in der Beta-Phase. Bei Problemen bitte melden über http://github.com/OpenAPITools/openapi-generator/issues/new
+// Die folgenden Codebeispiele sind noch in der Beta-Phase. Bei Problemen bitte unter http://github.com/OpenAPITools/openapi-generator/issues/new melden
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -38,5 +38,3 @@ DefaultAPI.getWebhooks(tenantId: tenantId, options: DefaultAPI.GetWebhooksOption
     }
 }
 [inline-code-end]
-
----

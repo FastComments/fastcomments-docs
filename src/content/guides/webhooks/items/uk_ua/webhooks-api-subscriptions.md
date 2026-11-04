@@ -1,16 +1,12 @@
-Webhooks can also be managed through the REST API. This is how integrations such as Zapier subscribe
-to comment events without touching the dashboard, and it follows the REST Hooks pattern: subscribe,
-receive events, unsubscribe.
+Вебхуки також можна керувати через REST API. Саме так інтеграції, як-от Zapier, підписуються на події коментарів, не торкаючись панелі керування, і це відповідає шаблону REST Hooks: підписка, отримання подій, відписка.
 
-API subscriptions live alongside the webhooks configured in the dashboard. A comment event is delivered
-to every webhook that matches its domain, each as its own delivery, whichever way the webhook was created.
+Підписки через API живуть поруч з вебхуками, налаштованими в панелі керування. Подія коментаря доставляється кожному вебхуку, що відповідає її домену, кожен як окрема доставка, незалежно від того, як було створено вебхук.
 
-## Authentication
+## Автентифікація
 
-Every request needs your API Key in the `x-api-key` header (or the `API_KEY` query parameter) and
-your tenant ID in the `tenantId` query parameter. Both are shown on the API Secret page in the dashboard.
+Кожен запит потребує ваш API Key у заголовку `x-api-key` (або параметрі запиту `API_KEY`) та ваш tenant ID у параметрі запиту `tenantId`. Обидва показані на сторінці API Secret у панелі керування.
 
-## Subscribe
+## Підписка
 
 ```
 POST https://fastcomments.com/api/v1/webhooks?tenantId=YOUR_TENANT_ID
@@ -23,14 +19,14 @@ Content-Type: application/json
 }
 ```
 
-| Поле | Обов’язково | Опис |
+| Поле | Обов'язкове | Опис |
 |-------|----------|-------------|
-| `url` | Так | Абсолютний URL http або https. |
+| `url` | Так | Абсолютна URL-адреса http або https. |
 | `event` | Так | `comment-created`, `comment-updated` або `comment-deleted`. |
-| `domain` | Ні | Домен з налаштувань вашого облікового запису. За замовчуванням `*`, який отримує події для всіх доменів. |
+| `domain` | Ні | Домен з конфігурації вашого облікового запису. За замовчуванням `*`, що отримує події для кожного домену. |
 | `method` | Ні | `POST` (за замовчуванням), `PUT` або `DELETE`. |
 
-The response contains the subscription:
+Відповідь містить підписку:
 
 ```json
 {
@@ -48,43 +44,35 @@ The response contains the subscription:
 }
 ```
 
-Subscribing the same URL to the same event and domain again returns the existing subscription rather
-than creating a duplicate, so a client can safely retry. Each tenant can have up to 50 API subscriptions.
+Повторна підписка того самого URL на ту саму подію та домен повертає наявну підписку, а не створює дублікат, тому клієнт може безпечно повторювати запит. Кожен tenant може мати до 50 підписок через API.
 
-## List
+## Список
 
 ```
 GET https://fastcomments.com/api/v1/webhooks?tenantId=YOUR_TENANT_ID
 ```
 
-Returns every webhook for the tenant, including those managed in the dashboard (`"source": "dashboard"`).
-Filter with `event`, `domain` or `source`.
+Повертає всі вебхуки для tenant, включно з тими, що керуються в панелі керування (`"source": "dashboard"`). Фільтруйте за `event`, `domain` або `source`.
 
-## Unsubscribe
+## Відписка
 
 ```
 DELETE https://fastcomments.com/api/v1/webhooks/SUBSCRIPTION_ID?tenantId=YOUR_TENANT_ID
 ```
 
-Deleting a subscription also discards any events still queued for it. Only subscriptions created
-through the API can be deleted this way; a dashboard webhook, or an id that does not exist on your
-account, answers `404` with code `not-found`. Dashboard webhooks are edited on the Webhooks page.
+Видалення підписки також відкидає будь-які події, які ще очікують у черзі для неї. Лише підписки, створені через API, можна видалити таким чином; вебхук з панелі керування або id, якого не існує у вашому обліковому записі, відповідає `404` з кодом `not-found`. Вебхуки панелі керування редагуються на сторінці Webhooks.
 
-## Payloads and signing
+## Корисні навантаження та підпис
 
-Deliveries use the same payload as dashboard webhooks (see Data Structures) and are signed with the same
-HMAC scheme (see Security & API Tokens). API subscriptions never receive the legacy `token` header, so
-verify the `X-FastComments-Signature` header instead.
+Доставки використовують те саме корисне навантаження, що й вебхуки панелі керування (див. Data Structures) і підписуються тією самою схемою HMAC (див. Security & API Tokens). Підписки через API ніколи не отримують застарілий заголовок `token`, тому перевіряйте натомість заголовок `X-FastComments-Signature`.
 
-## Sample payloads
+## Приклади корисних навантажень
 
 ```
 GET https://fastcomments.com/api/v1/webhooks/sample-payloads?tenantId=YOUR_TENANT_ID&event=comment-created&limit=3
 ```
 
-Returns the account's most recent comments in exactly the shape a delivery carries, so an integration can
-show real sample data before the first event arrives. `event` is optional and only validated, since every
-event delivers the same comment object. `limit` defaults to 3 and accepts 1 to 10. Costs 2 API credits.
+Повертає найновіші коментарі облікового запису точно в тому вигляді, в якому їх несе доставка, щоб інтеграція могла показати реальні приклади даних до прибуття першої події. `event` є необов'язковим і лише перевіряється, оскільки кожна подія доставляє той самий об'єкт коментаря. `limit` за замовчуванням дорівнює 3 і приймає від 1 до 10. Коштує 2 API кредити.
 
 ```json
 {
@@ -102,15 +90,10 @@ event delivers the same comment object. `limit` defaults to 3 and accepts 1 to 1
 }
 ```
 
-## Responding with 410 Gone
+## Відповідь з 410 Gone
 
-If an API subscription's endpoint responds with HTTP `410 Gone`, FastComments treats that as an
-unsubscribe: the subscription is deleted along with its queued events, and no further deliveries are
-attempted. Webhooks configured in the dashboard are never deleted automatically; for them a 410 is an
-ordinary failure. Any other failure status is retried and eventually disables the webhook, as described
-in How it Works & Handling Retries.
+Якщо кінцева точка підписки через API відповідає HTTP `410 Gone`, FastComments трактує це як відписку: підписка видаляється разом з подіями в черзі, і подальші доставки не здійснюються. Вебхуки, налаштовані в панелі керування, ніколи не видаляються автоматично; для них 410 є звичайним збоєм. Будь-який інший статус збою повторюється і зрештою вимикає вебхук, як описано в How it Works & Handling Retries.
 
-## Dashboard
+## Панель керування
 
-API subscriptions appear in the Webhooks list with the source **API**, where an administrator can edit,
-disable, re-enable or delete them.
+Підписки через API з'являються у списку Webhooks із джерелом **API**, де адміністратор може редагувати, вимикати, знову вмикати або видаляти їх.

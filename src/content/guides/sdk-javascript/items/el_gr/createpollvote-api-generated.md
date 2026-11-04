@@ -1,23 +1,21 @@
-Record a vote on a poll, or move an existing one to a different option. A voter has at most one vote per
-poll, so calling this again for the same voter moves their vote rather than adding one.
+Καταγράψτε μια ψήφο σε μια δημοσκόπηση, ή μετακινήστε μια υπάρχουσα σε διαφορετική επιλογή. Κάθε ψηφοφόρος έχει το πολύ μία ψήφο ανά δημοσκόπηση, οπότε η εκ νέου κλήση για τον ίδιο ψηφοφόρο μετακινεί την ψήφο του αντί να προσθέσει νέα.
 
-This obeys the site's poll settings: if voting is set to logged-in users only, a vote with just an
-anonUserId is rejected, and anonymous votes are rate limited per IP per poll.
+Αυτό τηρεί τις ρυθμίσεις δημοσκοπήσεων του ιστότοπου: αν η ψηφοφορία έχει οριστεί μόνο για συνδεδεμένους χρήστες, μια ψήφος μόνο με anonUserId απορρίπτεται, και οι ανώνυμες ψήφοι υπόκεινται σε όριο ρυθμού ανά IP ανά δημοσκόπηση.
 
-## Parameters
+## Παράμετροι
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| createPollVoteBody | CreatePollVoteBody | Yes |  |
+| tenantId | string | Ναι |  |
+| createPollVoteBody | CreatePollVoteBody | Ναι |  |
 
-## Response
+## Απάντηση
 
 Επιστρέφει: [`CreatePollVoteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreatePollVoteResponse.ts)
 
-## Example
+## Παράδειγμα
 
-[inline-code-attrs-start title = 'createPollVote Παράδειγμα'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Παράδειγμα createPollVote'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 (async () => {
   const tenantId: string = "acme-corp-tenant";
@@ -25,7 +23,7 @@ anonUserId is rejected, and anonymous votes are rate limited per IP per poll.
   const vote: CreatePollVoteBody = {
     pollId: "poll-2024-09",
     optionId: "option-A"
-    // userId is optional and omitted here
+    // το userId είναι προαιρετικό και παραλείπεται εδώ
   };
 
   const result: CreatePollVoteResponse = await createPollVote(tenantId, vote);

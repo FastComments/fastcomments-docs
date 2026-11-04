@@ -29,5 +29,3 @@ api->deleteCommentPublic(tenantId, commentId, broadcastId, options)
         }
     });
 [inline-code-end]
-
----

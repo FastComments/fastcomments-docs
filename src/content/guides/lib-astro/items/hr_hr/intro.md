@@ -1,4 +1,3 @@
----
 Ovo je službena Astro knjižnica za FastComments.
 
 Ugradite widgete za komentiranje uživo, chat i recenzije na svoju Astro stranicu.
@@ -6,5 +5,3 @@ Ugradite widgete za komentiranje uživo, chat i recenzije na svoju Astro stranic
 ## Repozitorij
 
 [Pogledaj na GitHubu](https://github.com/FastComments/fastcomments-astro)
-
----

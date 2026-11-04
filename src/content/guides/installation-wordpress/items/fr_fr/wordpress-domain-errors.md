@@ -1,4 +1,3 @@
----
 Vous pouvez rencontrer une erreur d'autorisation, comme la suivante :
 
 <div class="screenshot white-bg">
@@ -13,5 +12,3 @@ Dans ce cas, la solution est simple. Vous devez simplement ajouter votre site à
 [Cliquez ici pour ajouter votre site à votre compte.](https://fastcomments.com/auth/my-account/configure-domains)
 
 Les domaines sont ajoutés automatiquement à votre compte pendant la période d'essai, mais cela peut se produire lorsque vous ajoutez de nouveaux sites à votre compte FastComments.
-
----

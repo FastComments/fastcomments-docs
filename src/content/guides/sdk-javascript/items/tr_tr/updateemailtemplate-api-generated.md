@@ -28,5 +28,3 @@ async function runUpdate() {
   console.log(response);
 }
 [inline-code-end]
-
----

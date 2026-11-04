@@ -1,4 +1,4 @@
-First, we're going to open the editor for the page of our site we want to add comments to.
+首先，我們要開啟網站中想要新增留言的頁面編輯器。
 
 <div class="screenshot white-bg">
     <div class="title">開啟編輯器</div>
@@ -6,35 +6,35 @@ First, we're going to open the editor for the page of our site we want to add co
 </div>
 
 
-Now find the place on the page where you want to add comments. Move your mouse toward the end of that area. A `+` icon will appear:
+現在找到頁面上您想要新增留言的位置。將滑鼠移到該區域的末端，會出現一個 `+` 圖示：
 
 <div class="screenshot white-bg">
-    <div class="title">新增區段</div>
-    <img class="screenshot-image" src="/images/installation-guides/gohighlevel-site-step-2-add-section.png" alt="新增區段" />
+    <div class="title">新增區塊</div>
+    <img class="screenshot-image" src="/images/installation-guides/gohighlevel-site-step-2-add-section.png" alt="新增區塊" />
 </div>
 
-If we click that it asks us how many columns should the new section be. We'll select `1 COLUMN`:
+點擊後，系統會詢問新區塊應有幾欄。我們選擇 `1 COLUMN`：
 
 <div class="screenshot white-bg">
-    <div class="title">新增一欄</div>
-    <img class="screenshot-image" src="/images/installation-guides/gohighlevel-site-step-3-one-column.png" alt="新增一欄" />
+    <div class="title">新增欄位</div>
+    <img class="screenshot-image" src="/images/installation-guides/gohighlevel-site-step-3-one-column.png" alt="新增欄位" />
 </div>
 
-Now if you move your mouse over the new 1-column-row you'll have the option to add an element. Click that:
+現在將滑鼠移到新的單欄區塊上，您會看到新增元素的選項。點擊它：
 
 <div class="screenshot white-bg">
     <div class="title">新增元素</div>
     <img class="screenshot-image" src="/images/installation-guides/gohighlevel-site-step-4-add-element.png" alt="新增元素" />
 </div>
 
-Scroll down and pick `CUSTOM JS/HTML`:
+向下捲動並選擇 `CUSTOM JS/HTML`：
 
 <div class="screenshot white-bg">
     <div class="title">選擇 CUSTOM JS/HTML</div>
     <img class="screenshot-image" src="/images/installation-guides/gohighlevel-site-step-5-select-custom-js-html.png" alt="選擇 CUSTOM JS/HTML" />
 </div>
 
-Now select our new element and click `Open Code Editor` on the left:
+現在選取我們的新元素，並點擊左側的 `Open Code Editor`：
 
 <div class="screenshot white-bg">
     <div class="title">開啟程式碼編輯器</div>

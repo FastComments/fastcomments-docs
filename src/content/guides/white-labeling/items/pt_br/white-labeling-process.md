@@ -1,4 +1,3 @@
----
 O processo para configurar a marca branca é o seguinte:
 
 1. Escolha como a cobrança será feita.
@@ -11,5 +10,3 @@ O processo para configurar a marca branca é o seguinte:
    2. `TenantUser` é um administrador com um conjunto de privilégios no `Tenant`.
    3. `TenantPackage` é um pacote com um conjunto de limites e preços disponível para um `Tenant`.
 3. Integre com nossa [API](/guide-api.html) ou use [scripts](https://github.com/FastComments/fastcomments-code-examples/tree/master/white-labeling) para cadastrar tenants.
-
----

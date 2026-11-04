@@ -39,5 +39,3 @@ VanillaJS 위젯의 경우에는 좀 더 작업이 필요합니다. 먼저, Fast
     }
 </style>
 [inline-code-end]
-
----

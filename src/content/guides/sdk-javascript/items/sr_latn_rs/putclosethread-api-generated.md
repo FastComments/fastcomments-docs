@@ -23,5 +23,3 @@ Vraća: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js
   const resultWithoutSso: APIEmptyResponse = await putCloseThread(tenantId, urlId);
 })();
 [inline-code-end]
-
----

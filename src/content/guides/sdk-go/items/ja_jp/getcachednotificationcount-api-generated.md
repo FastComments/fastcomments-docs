@@ -1,4 +1,3 @@
----
 ## パラメータ
 
 | Name | 型 | Location | 必須 | 説明 |
@@ -38,5 +37,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetCachedNotificationCount`: %v\n", resp)
 }
 [inline-code-end]
-
----

@@ -1,13 +1,13 @@
-Ispod se nalazi FastComments isječak za Framer Live Comments.
+FastComments Framer Live Comments isječak nalazi se u nastavku.
 
-[inline-code-attrs-start title = 'FastComments Framer-specifični isječak komentara'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'FastComments Framer-Specifični Isječak Komentara'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
 <div id="fastcomments-widget" style="width: 100%;height: 100%;"></div>
 <script>
     (function fcLoad() {
         function tryLoad() {
-            // neki pružatelji mijenjaju isječak koda tako da je asinhron
+            // some providers change the code snippet to be async
             const container = document.getElementById('fastcomments-widget');
             if (!container) {
                 return waitRetry();
@@ -34,9 +34,9 @@ Ispod se nalazi FastComments isječak za Framer Live Comments.
 </script>
 [inline-code-end]
 
-Or, alternatively, you can use the Streaming Chat widget. The Framer Streaming Chat FastComments snippet is:
+Ili, alternativno, možete koristiti Streaming Chat widget. FastComments Framer Streaming Chat isječak je:
 
-[inline-code-attrs-start title = 'FastComments Framer-specifični isječak za razgovor uživo'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'FastComments Framer-Specifični Streaming Chat Isječak'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-live-chat.min.js"></script>
 <div id="fastcomments-live-chat-widget" style="width: 100%;height: 100%;"></div>
@@ -44,7 +44,7 @@ Or, alternatively, you can use the Streaming Chat widget. The Framer Streaming C
     (function fcLoad() {
 
         function tryLoad() {
-            // neki pružatelji mijenjaju isječak koda tako da je asinhron
+            // some providers change the code snippet to be async
             const container = document.getElementById('fastcomments-live-chat-widget');
             if (!container) {
                 return waitRetry();
@@ -71,15 +71,14 @@ Or, alternatively, you can use the Streaming Chat widget. The Framer Streaming C
 </script>
 [inline-code-end]
 
-FastComments podržava Framer editor, pa biste trebali vidjeti nešto slično nakon što zalijepite kod (možda ćete morati kliknuti `Publish`):
+FastComments podržava Framer editor, tako da biste trebali vidjeti nešto poput ovoga nakon što zalijepite kod (možda ćete morati kliknuti `Publish`):
 
 <div class="screenshot white-bg">
-    <div class="title">Pregled widgeta komentara</div>
-    <img class="screenshot-image" src="/images/installation-guides/framer-step-3-paste.png" alt="Pregled widgeta komentara" />
+    <div class="title">Pregled Widgeta za Komentare</div>
+    <img class="screenshot-image" src="/images/installation-guides/framer-step-3-paste.png" alt="Pregled Widgeta za Komentare" />
 </div>
 
-Sada, kada pregledate svoju stranicu, trebali biste vidjeti područje za komentare! U bočnoj traci Framera također možete postaviti widget da bude pune širine, ako želite.
+Sada kada pogledate svoju web stranicu, trebali biste vidjeti područje za komentare! U bočnoj traci Framer-a možete, ako želite, postaviti widget i na punu širinu.
 
-Imajte na umu da Framer ograničava visinu widgeta i ne podržava automatsko mijenjanje veličine, pa smo ovdje odabrali Live Chat widget jer ima fiksnu visinu.
-
----
+Imajte na umu da Framer ograničava visinu widgeta i ne podržava automatsku promjenu veličine, pa smo ovdje odabrali Live Chat
+widget jer ima fiksnu visinu.

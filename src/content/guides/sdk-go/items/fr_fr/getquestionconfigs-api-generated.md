@@ -1,4 +1,3 @@
----
 ## Paramètres
 
 | Nom | Type | Location | Requis | Description |
@@ -38,5 +37,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetQuestionConfigs`: %v\n", resp)
 }
 [inline-code-end]
-
----

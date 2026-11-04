@@ -1,15 +1,15 @@
-Enable or disable notifications for a page. When users are subscribed to a page, notifications are created
-for new root comments, and also
+Habilita o deshabilita las notificaciones para una página. Cuando los usuarios están suscritos a una página, se crean notificaciones
+para nuevos comentarios raíz, y también
 
 ## Parámetros
 
 | Nombre | Tipo | Requerido | Descripción |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| urlId | string | Yes |  |
-| url | string | Yes |  |
-| pageTitle | string | Yes |  |
-| subscribedOrUnsubscribed | string | Yes |  |
+| tenantId | string | Sí |  |
+| urlId | string | Sí |  |
+| url | string | Sí |  |
+| pageTitle | string | Sí |  |
+| subscribedOrUnsubscribed | string | Sí |  |
 | sso | string | No |  |
 
 ## Respuesta
@@ -18,7 +18,7 @@ Devuelve: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://githu
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'updateUserNotificationPageSubscriptionStatus Ejemplo'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo de updateUserNotificationPageSubscriptionStatus'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
 utility::string_t urlId = U("page-456");

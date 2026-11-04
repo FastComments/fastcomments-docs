@@ -29,5 +29,3 @@ async fn run_patch_page() -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
-
----

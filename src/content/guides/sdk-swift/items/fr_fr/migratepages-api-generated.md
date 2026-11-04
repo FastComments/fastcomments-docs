@@ -1,4 +1,3 @@
----
 Met en file d'attente un travail par lots qui déplace les commentaires, les pages et les enregistrements associés d'un urlId ou d'un domaine à un autre.  
 "urlId" migrations ne correspondent qu'à l'urlId exact. "domain" migrations recherchent/remplacent la valeur à l'intérieur de chaque urlId et url.  
 Interrogez GET /api/v1/batch-jobs/{batchJobId} : une fois terminé, il renvoie les résultats par migration et un undoId.
@@ -34,5 +33,3 @@ DefaultAPI.migratePages(tenantId: tenantId, migrateAPIPagesData: migrateAPIPages
     }
 }
 [inline-code-end]
-
----

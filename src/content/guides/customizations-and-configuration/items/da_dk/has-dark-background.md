@@ -12,5 +12,3 @@ Dog kan detektionsmekanismen, som er afhængig af at bestemme "luminans", muligv
 *hasDarkBackground*-flaget til true som følger:
 
 [code-example-start config = {hasDarkBackground: true}; linesToHighlight = [6]; title = 'Force Dark Background Mode'; additionalDemoCode = '<style>body { background: black; }</style>'; code-example-end]
-
----

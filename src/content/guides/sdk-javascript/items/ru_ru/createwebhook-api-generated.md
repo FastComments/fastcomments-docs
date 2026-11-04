@@ -32,5 +32,3 @@ const result: CreateWebhookResponse = await createWebhook(tenantId, webhookParam
 
 const webhookId: string = result.webhook.id;
 [inline-code-end]
-
----

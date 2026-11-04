@@ -1,26 +1,26 @@
 `UserBadge` je objekt koji predstavlja značku dodijeljenu korisniku u FastComments sustavu.
 
-Značke se mogu automatski dodijeliti korisnicima na temelju njihove aktivnosti (npr. broja komentara, vremena odgovora, statusa veterana) ili ručno od strane administratora stranice.
+Značke se korisnicima mogu dodjeljivati automatski na temelju njihove aktivnosti (kao što su broj komentara, vrijeme odgovora, status veterana) ili ručno od strane administratora stranice.
 
-The structure for the `UserBadge` object is as follows:
+Struktura objekta `UserBadge` je sljedeća:
 
 [inline-code-attrs-start title = 'Struktura UserBadge'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 export interface UserBadge {
-    /** Jedinstveni identifikator za ovu dodjelu značke korisniku */
+    /** Jedinstveni identifikator ove dodjele značke korisniku */
     id: string
-    /** ID korisnika kojem je ova značka dodijeljena */
+    /** ID korisnika kojem je značka dodijeljena */
     userId: string
-    /** ID definicije značke iz kataloga znački tenanta */
+    /** ID definicije značke iz kataloga znački tenant-a */
     badgeId: string
-    /** ID tenanta koji je kreirao/dodijelio ovu značku */
+    /** ID tenant-a koji je stvorio/dodijelio ovu značku */
     fromTenantId: string
-    /** Kada je ova značka kreirana (milisekunde od epohe) */
+    /** Kada je ova značka stvorena (milisekunde od epohe) */
     createdAt?: number
-    /** Kada je ova značka primljena od strane korisnika (milisekunde od epohe) */
+    /** Kada je korisnik primio ovu značku (milisekunde od epohe) */
     receivedAt?: number
     /** 
-     * Vrsta značke: 
+     * Tip značke: 
      * 0=CommentCount, 1=CommentUpVotes, 2=CommentReplies, 3=CommentsPinned, 
      * 4=Veteran, 5=NightOwl, 6=FastReplyTime, 7=ModeratorCommentsDeleted,
      * 8=ModeratorCommentsApproved, 9=ModeratorCommentsUnapproved, 10=ModeratorCommentsReviewed,
@@ -28,31 +28,31 @@ export interface UserBadge {
      * 14=Manual
      */
     type: number
-    /** Za značke temeljene na pragu, vrijednost praga */
+    /** Za značke temeljene na pragovima, vrijednost praga */
     threshold?: number
-    /** Naziv/etiketa značke */
+    /** Naziv/oznaka značke */
     name?: string
     /** Detaljan opis značke */
     description?: string
     /** Tekst prikazan na znački */
     displayLabel?: string
-    /** URL slike koja se prikazuje na znački */
+    /** URL slike prikazane na znački */
     displaySrc?: string
-    /** Boja pozadine za značku (heksadecimalni kod) */
+    /** Boja pozadine značke (hex kod) */
     backgroundColor?: string
-    /** Boja obruba za značku (heksadecimalni kod) */
+    /** Boja ruba značke (hex kod) */
     borderColor?: string
-    /** Boja teksta za značku (heksadecimalni kod) */
+    /** Boja teksta značke (hex kod) */
     textColor?: string
     /** Dodatna CSS klasa za stiliziranje */
     cssClass?: string
-    /** Za veteranske značke, vremenski prag u milisekundama */
+    /** Za značke veterana, prag vremena u milisekundama */
     veteranUserThresholdMillis?: number
-    /** Prikazuje li se ova značka na komentarima korisnika */
+    /** Je li ova značka prikazana na komentarima korisnika */
     displayedOnComments: boolean
     /** Redoslijed prikaza značke */
     order?: number
-    /** If set, this badge is only displayed on the page with the matching urlId. Null for global badges. */
+    /** Ako je postavljeno, ova se značka prikazuje samo na stranici s odgovarajućim urlId. Null za globalne značke. */
     urlId?: string | null
 }
 [inline-code-end]

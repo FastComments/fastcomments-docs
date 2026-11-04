@@ -11,5 +11,3 @@ Przykłady kodu zostaną przedstawione z wyróżnionymi istotnymi liniami. Tam, 
 Przykłady kodu będą używać naszej biblioteki w czystym JavaScript, jednak opcje konfiguracji używają dokładnie tych samych nazw dla wszystkich wersji widżetu komentarzy (React, Vue itp.).
 
 Większość konfiguracji i funkcji opisanych w tym przewodniku nie wymaga pisania żadnego kodu.
-
----

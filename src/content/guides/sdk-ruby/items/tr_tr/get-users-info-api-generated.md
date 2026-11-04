@@ -1,4 +1,3 @@
----
 Bir tenant için toplu kullanıcı bilgisi. Verilen userId'lere göre User / SSOUser'tan görüntüleme bilgilerini döndürür.
 Yorum bileşeni tarafından, presence olayıyla yeni görünen kullanıcıları zenginleştirmek için kullanılır.
 Sayfa bağlamı yok: gizlilik tutarlı şekilde uygulanır (özel profiller maskelenir).
@@ -33,5 +32,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_users_info: #{e}"
 end
 [inline-code-end]
-
----

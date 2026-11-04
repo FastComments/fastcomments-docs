@@ -1,3 +1,1 @@
----
 Dodajte komentare u React aplikaciju koristeći zvanični paket. Instalirajte ga, renderujte komponentu i prosledite svoj tenant i ID stranice da započnete nit.
----

@@ -1,4 +1,3 @@
----
 对 `localhost` 按照生产环境的相同步骤进行操作。确保已设置生产域名和 API 密钥。
 
 首先，前往 [Webhooks 管理页面](https://fastcomments.com/auth/my-account/manage-data/webhooks)。该页面可通过 “管理数据 -> Webhooks” 访问。
@@ -18,5 +17,3 @@
 在列表中，您可以编辑、禁用、重新启用或删除 webhook。禁用后会保留排队的事件，直至重新启用；删除则会丢弃这些事件。
 
 也可以通过 API 创建 webhook，例如使用 Zapier。这些 webhook 会在同一列表中显示，来源标记为 **API**。请参阅通过 API 管理 webhook。
-
----

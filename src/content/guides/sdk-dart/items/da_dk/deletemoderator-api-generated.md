@@ -32,5 +32,3 @@ try {
     print('Exception when calling DefaultApi->deleteModerator: $e\n');
 }
 [inline-code-end]
-
----

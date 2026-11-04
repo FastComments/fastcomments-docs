@@ -1,55 +1,55 @@
-每個 agent webhook 都有自己的傳送記錄。可從 [webhook list page](https://fastcomments.com/auth/my-account/ai-agents/webhooks) 上每個 webhook 列的 **Logs** 按鈕進入。
+每個 agent webhook 都有自己的傳遞日誌。可從 [webhook 清單頁面](https://fastcomments.com/auth/my-account/ai-agents/webhooks) 中每個 webhook 列的 **Logs** 按鈕進入。
 
-### What's on the page
+### 頁面內容
 
-帶分頁的表格，每次傳送嘗試一列：
+一個分頁表格，每次傳遞嘗試佔一行：
 
-| Column | Meaning |
+| 欄位 | 意義 |
 |---|---|
 | When | 嘗試發生的時間。 |
-| Event | 事件類型 (`trigger.succeeded`, `approval.requested`, etc.). |
-| Status | 傳送狀態。 |
-| StatusCode | 您的端點回傳的 HTTP 狀態碼（若可得）。 |
-| Description | 結果的簡短描述。對於未收到 HTTP 回應而失敗的傳送，底層錯誤訊息會被儲存為 {error: <message>}。 |
+| Event | 事件類型(`trigger.succeeded`、`approval.requested` 等)。 |
+| Status | 傳遞狀態。 |
+| StatusCode | 您的端點回傳的 HTTP 狀態碼(若有的話)。 |
+| Description | 結果的簡短描述。對於未收到 HTTP 回應的失敗傳遞，底層錯誤訊息會以 `{error: <message>}` 的形式儲存。 |
 
-該頁面只支援分頁 — 沒有狀態、事件類型或日期範圍篩選功能。
+此頁面僅支援分頁 - 沒有狀態、事件類型或日期範圍的篩選器。
 
-### What you can do from logs
+### 您可以從日誌中做什麼
 
-- **決定某個狀態碼是否應列入 不重試的狀態碼（No-retry status codes）。** 如果您看到您的端點不斷回傳相同的 `4xx`，那就是一個強烈的跡象，表示您會想把它加入 **不重試的狀態碼**，以便平台停止重試。
+- **判斷某個狀態碼是否應加入 No-retry。** 如果您看到您的端點不斷回傳相同的 `4xx`,這是一個強烈訊號,表示您應將其加入 **No-retry status codes**,讓平台停止重試。
 
-### Failure information
+### 失敗資訊
 
-當傳送失敗而未收到 HTTP 回應（DNS 失敗、連線被拒、逾時、TLS 錯誤等）時，原始錯誤訊息會記錄為 {error: <message>}。平台不會把這些分類為像 `TIMEOUT` 或 `DNS_ERROR` 這類命名的桶；請直接閱讀錯誤訊息以了解發生了什麼。
+當傳遞失敗且沒有 HTTP 回應時(DNS 失敗、連線被拒、逾時、TLS 錯誤等),原始錯誤訊息會以 `{error: <message>}` 的形式記錄。平台不會將這些歸類為 `TIMEOUT` 或 `DNS_ERROR` 等具名類別 - 請直接閱讀錯誤訊息以了解發生了什麼。
 
-對於 HTTP 回應，StatusCode 欄位顯示您的端點回傳的代碼。常見情況：
+對於 HTTP 回應,StatusCode 欄位會顯示您的端點回傳的狀態碼。常見情況:
 
-- **所有嘗試：`401` 或 `403`** - 您的端點正在拒絕簽章。檢查您是否對 `${timestamp}.${body}` 計算 HMAC，並使用正確的密鑰。請參閱 [Webhook Signing](#webhook-signing)。
-- **所有嘗試：`422`** - 您的端點認為負載無效。要么修正您的端點，要么如果某些事件預期會被拒絕，將 `422` 加入 **不重試的狀態碼**。
+- **所有嘗試:`401` 或 `403`** - 您的端點拒絕了簽名。請檢查您是否正確對 `${timestamp}.${body}` 計算 HMAC,並使用正確的密鑰。請參閱 [Webhook Signing](#webhook-signing)。
+- **所有嘗試:`422`** - 您的端點認為負載無效。請修正您的端點,或者如果某些事件的拒絕是預期行為,則將 `422` 加入 **No-retry status codes**。
 
-### Per-delivery context
+### 每次傳遞的上下文
 
-每個日誌條目都包含：
+每條日誌記錄都包含:
 
-- `webhookId` - 哪個 webhook 設定產生此傳送。
-- `agentId` - 此傳送所屬的 agent。
-- `triggerId` or `approvalId` - 底層紀錄。
-- `domain` - 匹配到的網域。
+- `webhookId` - 產生此次傳遞的 webhook 設定。
+- `agentId` - 傳遞所屬的 agent。
+- `triggerId` 或 `approvalId` - 底層記錄。
+- `domain` - 符合的網域。
 
-您可以使用這些來將失敗的傳送與 [Run History](#run-history) 中該次運行關聯起來。
+您可以使用這些資訊將失敗的傳遞與 [Run History](#run-history) 中相關的執行關聯起來。
 
-### Retention
+### 保留期限
 
-`AgentSyncLog` 條目在 `createdAt` 上有固定 1 年的 TTL，與結果無關 — 成功與失敗的傳送都會保留相同的時間。超過保留期後，該日誌條目會被移除。
+`AgentSyncLog` 記錄在 `createdAt` 上有固定的 1 年 TTL,無論結果如何 - 成功與失敗的傳遞保留時間相同。超過保留期限後,日誌記錄即被刪除。
 
-如果您需要長期稽核，較可持續的做法是：讓 **端點本身** 保存它收到的傳送。這會將您的稽核日誌與平台的保留政策解耦。
+如果您需要長期稽核,可持續的做法是:讓**端點本身**保存其收到的傳遞。這樣可將您的稽核日誌與平台的保留政策解耦。
 
-### Test send
+### 測試傳送
 
-webhook 設定表單的 **Test send** 按鈕會在相同的日誌表中寫入一個假的傳送，以便您在依賴真實事件前驗證端到端的連通性。測試傳送在日誌中有明確標示，因此不會污染生產的失敗統計。
+webhook 設定表單的 **Test send** 按鈕會將一次模擬傳遞寫入同一個日誌表格,讓您在依賴真實事件之前驗證端對端連線。測試傳遞在日誌中會有明確標記,因此不會污染生產環境的失敗統計數據。
 
-### See also
+### 另請參閱
 
-- [Webhooks Overview](#webhooks-overview).
-- [Webhook Retries](#webhook-retries) 了解驅動這些日誌的重試語意。
-- [Webhook Signing](#webhook-signing) 了解如何在您的端點驗證。
+- [Webhooks Overview](#webhooks-overview)。
+- [Webhook Retries](#webhook-retries) - 驅動這些日誌的重試語義。
+- [Webhook Signing](#webhook-signing) - 如何在您的端點進行驗證。

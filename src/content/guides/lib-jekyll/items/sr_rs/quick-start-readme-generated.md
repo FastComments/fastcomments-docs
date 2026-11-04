@@ -1,4 +1,3 @@
----
 Подесите свој tenant id једном у `_config.yml`:
 
 ```yaml
@@ -14,4 +13,3 @@ fastcomments:
 
 То је све. Замените `demo` вашим FastComments tenant id-ом (пронађите га под
 [Settings > API/SSO](https://fastcomments.com/auth/my-account/api)).
----

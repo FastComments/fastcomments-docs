@@ -1,4 +1,3 @@
----
 Een `DomainConfig`-object vertegenwoordigt de configuratie voor een domein voor een tenant.
 
 De structuur voor het `DomainConfig`-object is als volgt:
@@ -62,5 +61,3 @@ De afmeldlink in de e-mailvoettekst en de 'one-click unsubscribe'-functie die do
 ### Voor DKIM
 
 Nadat u uw DKIM-DNS-records heeft gedefinieerd, werkt u eenvoudig de DomainConfig bij met uw DKIM-configuratie met behulp van de gedefinieerde structuur. 
-
----

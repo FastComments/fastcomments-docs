@@ -1,4 +1,3 @@
----
 Som standard vil FastComments vise brugerens navn, som de indtastede det, eller hvordan det blev sendt til os via SSO.
 
 Det kan dog være ønskeligt at maskere eller vise brugerens navn på en anden måde. For eksempel, hvis brugerens navn er Allen Rex, vil du måske kun vise "Allen R.".
@@ -17,4 +16,3 @@ De tilgængelige formater er:
 Effekten af at ændre dette er øjeblikkelig. Brugere vil stadig se deres fulde brugernavn øverst i kommentarfeltet for sig selv, men deres kommentarer vil vise det modificerede brugernavn.
 
 Brugernavne maskeres på serveren for at beskytte brugerne.
----

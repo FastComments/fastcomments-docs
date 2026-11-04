@@ -1,37 +1,37 @@
-Страницата с настройки на плъгина се намира в **Site Administration > Plugins > Local plugins > FastComments**. Наличните опции са:
+Страницата с настройки на плъгина се намира на **Site Administration > Plugins > Local plugins > FastComments**. Наличните опции са:
 
 #### Tenant ID
 
-Вашият FastComments Tenant ID. Намерете го в <a href="https://fastcomments.com/auth/my-account" target="_blank">FastComments dashboard</a> в настройките на вашия акаунт.
+Вашият FastComments Tenant ID. Намерете го в <a href="https://fastcomments.com/auth/my-account" target="_blank">FastComments таблото</a> под настройките на акаунта си.
 
 #### API Secret
 
-Вашият API Secret ключ, необходим за Secure SSO режим. Намерете го в <a href="https://fastcomments.com/auth/my-account/api-secret" target="_blank">My Account > API Secret</a>.
+Вашият API Secret ключ, необходим за режим Secure SSO. Намерете го на <a href="https://fastcomments.com/auth/my-account/api-secret" target="_blank">My Account > API Secret</a>.
 
 #### SSO Mode
 
-Изберете как се удостоверяват потребителите. Вижте раздела [SSO Modes](#moodle-sso-modes) за подробности относно всяка опция.
+Изберете как потребителите се удостоверяват. Вижте раздела [SSO Modes](#moodle-sso-modes) за подробности за всяка опция.
 
-- **Secure** (препоръчително) - сървърно удостоверяване, подписано с HMAC-SHA256
-- **Simple** - клиентски данни за потребителя без подпис
-- **None** - анонимно коментиране, без интеграция с вход в Moodle
+- **Secure** (препоръчително) - удостоверяване от страна на сървъра с HMAC-SHA256 подпис
+- **Simple** - потребителски данни от страна на клиента без подпис
+- **None** - коментиране като анонимен потребител, без интеграция с Moodle вход
 
 #### Page Contexts
 
 Контролира къде се показват коментарите:
 
-- **Course pages** - коментари на основните страници на курса
+- **Course pages** - коментари на основните страници на курсовете
 - **Module/activity pages** - коментари на отделни дейности и ресурси
 - **Both** - коментари на всички типове страници
 
 #### Commenting Style
 
-Изберете начина на коментиране. Вижте [Commenting Styles](#moodle-commenting-styles) за екранни снимки на всеки режим.
+Изберете изживяването при коментиране. Вижте [Commenting Styles](#moodle-commenting-styles) за екранни снимки на всеки режим.
 
-- **Comments** - стандартен нишков коментарен модул под съдържанието на страницата
-- **Collab Chat** - инлайн дискусии чрез селекция на текст с индикатори за присъствие
+- **Comments** - стандартен нишкови коментари уиджет под съдържанието на страницата
+- **Collab Chat** - дискусии чрез маркиране на текст с индикатори за присъствие
 - **Both** - коментари и collab chat активни едновременно
 
 #### CDN URL
 
-URL на FastComments CDN. По подразбиране `https://cdn.fastcomments.com`. Променете това към EU CDN URL, ако вашите данни се хостват в региона на ЕС.
+FastComments CDN URL. По подразбиране е `https://cdn.fastcomments.com`. Променете го на EU CDN URL, ако данните ви са хоствани в EU региона.

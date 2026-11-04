@@ -44,5 +44,3 @@ Možemo sačekati inicijalno učitavanje stranice i ručno ponovo renderovati ko
     }
 })();
 [inline-code-end]
-
----

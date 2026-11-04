@@ -8,5 +8,3 @@ Si encuentra algún problema o tiene preguntas sobre la biblioteca de React Nati
 ## Contribuciones
 
 ¡Las contribuciones son bienvenidas! Por favor visite el [repositorio de GitHub](https://github.com/FastComments/fastcomments-react-native) para conocer las directrices de contribución.
-
----

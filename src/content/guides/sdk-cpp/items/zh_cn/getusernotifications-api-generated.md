@@ -23,5 +23,3 @@ api->getUserNotifications(tenantId, options)
         auto notifications = std::make_shared<GetMyNotificationsResponse>(*resp);
     });
 [inline-code-end]
-
----

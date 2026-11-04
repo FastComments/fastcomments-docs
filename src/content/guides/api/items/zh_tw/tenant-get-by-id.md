@@ -27,5 +27,3 @@ interface TenantByIdResponse {
     tenant?: Tenant
 }
 [inline-code-end]
-
----

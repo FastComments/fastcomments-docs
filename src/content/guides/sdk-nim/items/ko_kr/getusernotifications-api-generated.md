@@ -1,4 +1,3 @@
----
 ## 매개변수
 
 | 이름 | 타입 | 필수 | 설명 |
@@ -18,5 +17,3 @@ let (maybeResponse, httpResponse) = client.getUserNotifications(tenantId = "my-t
 if maybeResponse.isSome:
   let notifications = maybeResponse.get()
 [inline-code-end]
-
----

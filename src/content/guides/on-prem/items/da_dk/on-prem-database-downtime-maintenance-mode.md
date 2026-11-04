@@ -1,4 +1,3 @@
----
 FastComments understøtter en automatisk vedligeholdelsestilstand. Hvis databasen går ned, kan den fortsat levere populære kommentartråde.
 
 Derudover gemmes i vedligeholdelsestilstand alle kommentarer i `BACKUP_DIR`. De vil blive behandlet (tjekket for spam osv.) og gemt, når systemet er online igen.
@@ -12,4 +11,3 @@ kan gå tabt når som helst uden at få applikationen til at opføre sig forkert
 Bemærk, at korrekt autentificering af kommentartråde ikke kan foretages i vedligeholdelsestilstand, så kun tråde, der med sikkerhed anses for offentlige, bliver periodisk sikkerhedskopieret.
 
 I vedligeholdelsestilstand er mange funktioner ikke tilgængelige.
----

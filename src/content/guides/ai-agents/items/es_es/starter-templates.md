@@ -29,5 +29,3 @@ Las plantillas son puntos de partida, no contratos. Se espera que:
 - Establezcas **Presupuestos** por agente apropiados según la cantidad de disparadores que esperes.
 
 La plantilla es solo un vehículo que rellena valores predeterminados sensatos; una vez guardada, el agente es tuyo.
-
----

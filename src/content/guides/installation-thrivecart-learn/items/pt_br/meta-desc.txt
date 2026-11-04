@@ -1,3 +1,1 @@
----
 Adicione uma seção de comentários aos cursos ThriveCart Learn+ com a configuração de código personalizado, para que os alunos possam fazer perguntas dentro de cada aula.
----

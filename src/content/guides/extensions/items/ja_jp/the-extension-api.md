@@ -1,8 +1,8 @@
-Interacting with the `Extension` is simple, as we simply define references to functions we want invoked.
+`Extension` との連携はシンプルです。実行したい関数への参照を定義するだけだからです。
 
-To build off the example earlier, let's say we want to add HTML to the top of each comment:
+先ほどの例を踏まえて、各コメントの先頭にHTMLを追加したい場合を考えてみましょう:
 
-[inline-code-attrs-start title = 'シンプルな拡張機能 - 続き'; type = 'javascript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'シンプルな Extension - 続き'; type = 'javascript'; inline-code-attrs-end]
 [inline-code-start]
 (function () {
     const extension = FastCommentsUI.extensions.find((extension) => {
@@ -15,11 +15,11 @@ To build off the example earlier, let's say we want to add HTML to the top of ea
 })();
 [inline-code-end]
 
-Whenever you return HTML like this, it will get merged into the UI via a dom-diffing algorithm.
+このようにHTMLを返すと、dom-diffingアルゴリズムを通じてUIにマージされます。
 
 #### コメントの再レンダリングを手動でトリガーする
 
-We can wait for the initial page load and manually re-render a comment by invoking `reRenderComment`:
+初回のページ読み込みを待った後、`reRenderComment` を呼び出すことでコメントを手動で再レンダリングできます:
 
 [inline-code-attrs-start title = 'コメントの再レンダリング'; type = 'javascript'; inline-code-attrs-end]
 [inline-code-start]
@@ -40,9 +40,7 @@ We can wait for the initial page load and manually re-render a comment by invoki
             extension.reRenderComment(extension.commentsById[Object.keys(extension.commentsById)[0]], function renderDone() {
                 console.log('Comment re-render done.');
             });
-        }, 2000); // タイムアウトは必須ではありません。例として示しています。
+        }, 2000); // timeout not required, just an example.
     }
 })();
 [inline-code-end]
-
----

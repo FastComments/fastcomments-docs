@@ -1,4 +1,3 @@
----
 FastComments SSO (<a href="#sso">details hier</a>) biedt uw gebruikers een manier om te reageren zonder zich bij een ander platform te hoeven aanmelden.
 
 Echter, dit alleen maakt uw discussies niet veilig, aangezien standaard commentaargegevens publiekelijk beschikbare informatie zijn – iedereen die de pagina kan bekijken, kan de reacties zien.
@@ -40,5 +39,3 @@ Het inschakelen van deze optie beschermt de pagina of het domein tegen reacties,
 #### Valkuilen
 
 Gebruikers die vóór uw SSO‑integratie reacties hebben gemaakt, kunnen deze niet meer zien, tenzij ze zich aanmelden via uw SSO‑integratie.
-
----

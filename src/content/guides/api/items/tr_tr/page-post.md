@@ -1,18 +1,17 @@
 [api-resource-header-start name = 'Page'; route = 'POST /api/v1/pages'; creditsCost = 1; api-resource-header-end]
 
-This API endpoint provides the ability to create pages.
+Bu API uç noktası, sayfa oluşturma yeteneği sağlar.
 
-A common use cases is access control.
+Yaygın kullanım senaryolarından biri erişim kontrolüdür.
 
-Notes:
+Notlar:
 
-- If you've commented on a comment thread, or called the API to create a `Comment`, you've already created a `Page` object! You can try fetching it via
-  the `/by-url-id` `Page` route, passing in the same `urlId` passed to the comment widget.
-- The `Page` structure contains some **calculated** values.
-  Currently, these are `commentCount` and `rootCommentCount`.
-  They are populated automatically and cannot be set by the API. Attempting to do so will cause the API to return an error.
+- Bir yorum dizisine yorum yaptıysanız veya bir `Comment` oluşturmak için API'yi çağırdıysanız, zaten bir `Page` nesnesi oluşturmuşsunuzdur! Bunu, yorum widget'ına iletilen aynı `urlId` değerini geçirerek `/by-url-id` `Page` rotası üzerinden getirmeyi deneyebilirsiniz.
+- `Page` yapısı bazı **hesaplanmış** değerler içerir.
+  Şu anda bunlar `commentCount` ve `rootCommentCount` değerleridir.
+  Bunlar otomatik olarak doldurulur ve API aracılığıyla ayarlanamaz. Bunu denemek, API'nin bir hata döndürmesine neden olur.
 
-[inline-code-attrs-start title = 'Sayfa POST cURL Örneği'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Page POST cURL Örneği'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request POST \
   --url 'https://fastcomments.com/api/v1/pages?tenantId=demo&API_KEY=DEMO_API_SECRET' \
@@ -25,7 +24,7 @@ curl --request POST \
 }'
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Sayfa POST İstek Yapısı'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Page POST İstek Yapısı'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface PagePostQueryParams {
     tenantId: string
@@ -33,7 +32,7 @@ interface PagePostQueryParams {
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Sayfa POST Yanıt Yapısı'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Page POST Yanıt Yapısı'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 
 interface PagePostResponse {

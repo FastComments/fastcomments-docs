@@ -82,5 +82,3 @@ Aşağıdaki kodu kopyalayın ve Super.so site ayarlarınızın `Body` bölümü
 - Her sayfa, URL yoluna göre kendi benzersiz yorum dizisine sahip olur
 - FastComments hesabınızdaki gerçek tenant ID'niz ile `demo`'yu değiştirdiğinizden emin olun
 - Widget, Super.so'nun dinamik sayfa yüklemelerini otomatik olarak yönetir
-
----

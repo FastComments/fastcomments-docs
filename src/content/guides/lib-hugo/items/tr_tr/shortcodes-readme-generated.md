@@ -1,4 +1,3 @@
----
 | Shortcode | Açıklama |
 | --- | --- |
 | `fastcomments` | Yanıtlar, oy verme ve @bahsetmeler ile dallanmış yorumlar |
@@ -56,4 +55,3 @@ Kullanıcı etkinlik akışı:
 ```text
 \{{< fastcomments-user-activity-feed userId="demo:demo-user" >}}
 ```
----

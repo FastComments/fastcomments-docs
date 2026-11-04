@@ -7,5 +7,3 @@ Par défaut, FastComments autorise le téléchargement d'images. Cela peut être
 Cela peut être personnalisé sans code, sur la page de personnalisation du widget :
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.disable-image-uploads'; selector = '.disable-image-uploads'; alt='Case à cocher de désactivation des téléchargements d\'images activée dans les paramètres de la page de personnalisation du widget'; title='Désactivation des téléchargements d\'images' app-screenshot-end]
-
----

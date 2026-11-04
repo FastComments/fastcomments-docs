@@ -29,5 +29,3 @@ DefaultAPI.addSSOUser(tenantId: tenantId, createAPISSOUserData: createAPISSOUser
     }
 }
 [inline-code-end]
-
----

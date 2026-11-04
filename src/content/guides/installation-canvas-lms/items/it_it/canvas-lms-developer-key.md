@@ -1,8 +1,8 @@
-#### Open Developer Keys in Canvas
+#### Apri le Developer Keys in Canvas
 
 Accedi a Canvas come amministratore. Vai su **Admin** (nella barra laterale sinistra) > seleziona il tuo account > **Developer Keys**.
 
-#### Create an LTI Developer Key
+#### Crea una LTI Developer Key
 
 Fai clic su **+ Developer Key** e seleziona **LTI Key**.
 
@@ -12,13 +12,13 @@ Nel modulo di configurazione:
 2. A destra, imposta **Method** su **Enter URL**.
 3. Incolla il **Configuration URL** copiato da FastComments nel campo **JSON URL**.
 4. Canvas caricherà automaticamente la configurazione LTI.
-5. Assegna alla chiave un nome (es. "FastComments").
+5. Assegna un nome alla chiave (ad es. "FastComments").
 6. Fai clic su **Save**.
 
-#### Enable the Developer Key
+#### Abilita la Developer Key
 
-Dopo il salvataggio, la nuova chiave apparirà nella tabella Developer Keys con il suo **State** impostato su **OFF**. Fai clic sull'interruttore per impostarlo su **ON**. Canvas potrebbe chiederti di confermare — fai clic su **Allow** per abilitare la chiave.
+Dopo il salvataggio, la nuova chiave apparirà nella tabella Developer Keys con **State** impostato su **OFF**. Fai clic sull'interruttore per impostarlo su **ON**. Canvas potrebbe chiederti di confermare — fai clic su **Allow** per abilitare la chiave.
 
-#### Copy the Client ID
+#### Copia il Client ID
 
-La tabella Developer Keys mostra un **Client ID** numerico nella colonna Details (e.g. `17000000000042`). Copia questo numero - ti servirà nel passaggio successivo.
+La tabella Developer Keys mostra un **Client ID** numerico nella colonna Details (ad es. `17000000000042`). Copia questo numero - ti servirà nel passaggio successivo.

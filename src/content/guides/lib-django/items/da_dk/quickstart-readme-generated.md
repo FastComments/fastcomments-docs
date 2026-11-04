@@ -1,4 +1,3 @@
----
 Konfigurer din tenant i `settings.py`:
 
 ```python
@@ -16,4 +15,3 @@ Indsæt widget'en i enhver skabelon:
 
 {% fastcomments url_id="my-page" %}
 ```
----

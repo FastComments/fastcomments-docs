@@ -1,44 +1,44 @@
-Setting up SAML authentication in FastComments requires both configuration in your admin dashboard and setup in your identity provider.
+FastComments'te SAML kimlik doğrulamasını kurmak hem yönetici panelinizde yapılandırma hem de kimlik sağlayıcınızda kurulum gerektirir.
 
-### Önkoşullar
+### Ön Koşullar
 
-SAML yapılandırmasına başlamadan önce şunlara sahip olduğunuzdan emin olun:
+SAML'yi yapılandırmadan önce şunlara sahip olduğunuzdan emin olun:
 
-- Bir FastComments Flex veya Pro planı (SAML Creators planında mevcut değildir)
-- FastComments hesabınızda yönetici erişimi
-- Kimlik sağlayıcınızda yönetici erişimi
+- Bir FastComments Flex veya Pro planı (SAML, Creators planında mevcut değildir)
+- FastComments hesabınıza yönetici erişimi
+- Kimlik sağlayıcınıza yönetici erişimi
 - IdP'nizin SAML meta verileri veya sertifika bilgileri
 
 ### SAML Yapılandırmasına Erişim
 
 1. [FastComments yönetici panelinize](https://fastcomments.com/auth/my-account) giriş yapın
-2. Sol kenar çubuğunda **API/SSO Ayarları** bölümüne gidin
-3. **SAML Yapılandırması** düğmesine tıklayın
+2. Sol kenar çubuğunda **API/SSO Settings** bölümüne gidin
+3. **SAML Config** düğmesine tıklayın
 
-SAML Yapılandırması düğmesini görmüyorsanız, şunları doğrulayın:
-- Hesabınızın gereken pakete (Flex veya Pro) sahip olduğundan
-- Yönetici izinlerine sahip olduğunuzdan
-- Kullanıcınızın API Admin veya Admin Admin rollerine sahip olduğundan
+SAML Config düğmesini görmüyorsanız, şunları doğrulayın:
+- Hesabınızın gerekli pakete (Flex veya Pro) sahip olduğu
+- Yönetici izinlerine sahip olduğunuz
+- Kullanıcınızın API Admin veya Admin Admin rollerine sahip olduğu
 
 ### Temel SAML Yapılandırması
 
-#### SAML Kimlik Doğrulamayı Etkinleştirme
+#### SAML Kimlik Doğrulamasını Etkinleştirme
 
-1. **SAML Kimlik Doğrulamayı Etkinleştir** onay kutusunu işaretleyin
-2. Bu, kiracınız için SAML'i etkinleştirir ve yapılandırma alanlarını kullanılabilir hale getirir
+1. **Enable SAML Authentication** onay kutusunu işaretleyin
+2. Bu, kiracınız (tenant) için SAML'yi etkinleştirir ve yapılandırma alanlarını kullanılabilir hale getirir
 
-#### Gerekli Alanlar
+#### Zorunlu Alanlar
 
-**IdP Tek Oturum Açma URL'si** *(Gerekli)*
-- Kullanıcıların kimlik doğrulama için yönlendirileceği URL
-- Genellikle kimlik sağlayıcınız tarafından verilir
+**IdP Single Sign-On URL** *(Zorunlu)*
+- Kullanıcıların kimlik doğrulaması için yönlendirileceği URL
+- Genellikle kimlik sağlayıcınız tarafından sağlanır
 - Örnek: `https://your-company.okta.com/app/fastcomments/sso/saml`
 
-**IdP X.509 Sertifikası** *(Gerekli)*
-- Kimlik sağlayıcınızdan alınan herkese açık sertifika
-- SAML yanıtlarının doğruluğunu teyit etmek için kullanılır
-- BEGIN/END işaretçilerini içeren tam sertifikayı içermelidir
-- Örnek format:
+**IdP X.509 Certificate** *(Zorunlu)*
+- Kimlik sağlayıcınızdan gelen genel sertifika
+- SAML yanıtlarının gerçekliğini doğrulamak için kullanılır
+- BEGIN/END işaretleriyle birlikte tam sertifikayı içermelidir
+- Örnek biçim:
 ```
 -----BEGIN CERTIFICATE-----
 MIICXjCCAcegAwIBAgIBADANBgkqhkiG9w0BAQsFADA...
@@ -47,41 +47,41 @@ MIICXjCCAcegAwIBAgIBADANBgkqhkiG9w0BAQsFADA...
 
 #### İsteğe Bağlı Alanlar
 
-**IdP Varlık Kimliği / Issuer**
+**IdP Entity ID / Issuer**
 - Kimlik sağlayıcınızı tanımlar
-- Boş bırakılırsa, varsayılan olarak FastComments URL'nize ayarlanır
-- IdP'nizde yapılandırılan issuer ile eşleşmelidir
+- Boş bırakılırsa, varsayılan olarak FastComments URL'niz kullanılır
+- IdP'nizde yapılandırılmış issuer ile eşleşmelidir
 
 ### Gelişmiş Yapılandırma
 
 #### Güvenlik Ayarları
 
-**İmza Algoritması**
-- Varsayılan olarak SHA-256 (önerilen)
+**Signature Algorithm**
+- Varsayılan olarak SHA-256 (önerilir)
 - Seçenekler: SHA-1, SHA-256, SHA-512
 - IdP'nizin yapılandırmasıyla eşleşmelidir
 
-**Özet (Digest) Algoritması**
-- Varsayılan olarak SHA-256 (önerilen)
-- SAML yanıtlarında özet hesaplama için kullanılır
+**Digest Algorithm**
+- Varsayılan olarak SHA-256 (önerilir)
+- SAML yanıtlarında özet (digest) hesaplaması için kullanılır
 - IdP'nizin yapılandırmasıyla eşleşmelidir
 
-**Name ID Formatı**
-- Varsayılan olarak E-posta Adresi formatı
+**Name ID Format**
+- Varsayılan olarak E-posta Adresi biçimindedir
 - Kullanıcı tanımlayıcılarının nasıl biçimlendirileceğini belirler
-- Yaygın seçenekler: E-posta Adresi, Kalıcı (Persistent), Geçici (Transient)
+- Yaygın seçenekler: E-posta Adresi, Persistent, Transient
 
 #### Şifreleme (İsteğe Bağlı)
 
-**Şifre Çözme için Özel Anahtar**
-- Sadece IdP'niz SAML doğrulamalarını şifreliyorsa gereklidir
+**Private Key for Decryption**
+- Yalnızca IdP'niz SAML assertion'larını şifreliyorsa gereklidir
 - Şifre çözme için kullanılan özel anahtarınızı yapıştırın
-- Çoğu dağıtımda assertion şifrelemesine gerek yoktur
+- Çoğu dağıtım assertion şifrelemesi gerektirmez
 
 ### Yapılandırmayı Kaydetme
 
 1. Tüm ayarları doğruluk açısından gözden geçirin
-2. **SAML Yapılandırmasını Kaydet** düğmesine tıklayın
+2. **Save SAML Configuration** düğmesine tıklayın
 3. Sistem yapılandırmanızı doğrulayacaktır
 4. Başarılı olursa, bir onay mesajı göreceksiniz
 
@@ -91,6 +91,6 @@ FastComments SAML yapılandırmanızı kaydettikten sonra:
 
 1. Service Provider bilgilerini kullanarak kimlik sağlayıcınızı yapılandırın
 2. Kimlik doğrulama akışını test edin
-3. Gerekirse kullanıcı rolleri ve izinlerini ayarlayın
+3. Gerektiği şekilde kullanıcı rollerini ve izinlerini ayarlayın
 
-IdP yapılandırmanız için gerekli Service Provider bilgileri SAML etkinleştirildiğinde gösterilecektir.
+IdP yapılandırmanız için gereken Service Provider bilgileri, SAML etkinleştirildikten sonra görüntülenecektir.

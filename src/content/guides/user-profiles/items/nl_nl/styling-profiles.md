@@ -1,4 +1,3 @@
----
 Wanneer gebruikersprofielen worden geopend in de context van uw site (via de commentaarwidget), worden eventuele aangepaste CSS-stijlen die u op uw FastComments-widget hebt toegepast automatisch geïnjecteerd in de profielmodal.
 
 ### Hoe Het Werkt
@@ -64,5 +63,3 @@ Donkere modus gebruikt de klassemodifier `.dark` op `.user-profile`.
     border-radius: 12px 0 0 12px;
 }
 ```
-
----

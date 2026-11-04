@@ -1,4 +1,3 @@
----
 Време је да копирамо наш код. Копирајте следећи код:
 
 [inline-code-attrs-start title = 'GoHighLevel код коментара сајта'; type = 'html'; isFunctional = false; inline-code-attrs-end]
@@ -201,5 +200,3 @@
 Сада можемо кликнути на `Yes, Save` у доњем десном углу тог прозора.
 
 На врху странице сада кликните `Save` а затим `Preview`.
-
----

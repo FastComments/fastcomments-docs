@@ -200,5 +200,3 @@ X 和 Y 坐标以图片尺寸的百分比存储。X 表示从左边缘起的水�
 ### 使用跟踪
 
 创建会话会增加您的 `conversationCreateCount` 使用指标。所有 WebSocket 同步活动会增加 `pubSubMessageCount` 和 `pubSubBandwidth`。您可以在 FastComments 仪表板的使用分析中监控这些指标。
-
----

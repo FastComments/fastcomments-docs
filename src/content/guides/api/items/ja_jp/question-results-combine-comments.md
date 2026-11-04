@@ -113,5 +113,3 @@ interface QuestionResultsCombineCommentsResponse {
 - `forceRecalculate` が指定されている場合、通常の `2` ではなくコストは常に `10` になります。
 - キャッシュが期限切れになりデータが再計算される場合でも、`forceRecalculate` が指定されていなければコストは依然として一定の `2` です。
 - これはキャッシュの利用を奨励するためです。
-
----

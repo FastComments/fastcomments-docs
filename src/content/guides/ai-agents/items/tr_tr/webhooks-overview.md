@@ -1,65 +1,65 @@
-Ajan webhook'ları, bir ajan çalışması tamamlandığında veya bir onay durumu değiştiğinde platform tarafından tetiklenen HTTP geri çağrılarıdır. Bunları ajan etkinliğini kendi sistemlerinize — moderasyon panoları, denetim günlükleri, Slack kanalları, yükseltme araçları — iletmek için kullanın.
+Agent webhooks, bir agent çalıştırması tamamlandığında veya bir onay durum değiştirdiğinde platformun tetiklediği HTTP callback'lerdir. Bunları, agent etkinliğini kendi sistemlerinize - moderasyon panoları, denetim kayıtları, Slack kanalları, yükseltme araçları - iletmek için kullanın.
 
-Yapılandırma **Webhooks** sekmesi altında, [AI Agents page](https://fastcomments.com/auth/my-account/ai-agents) sayfasında yapılır.
+[AI Agents sayfasındaki](https://fastcomments.com/auth/my-account/ai-agents) **Webhooks** sekmesi altında yapılandırılır.
 
-### What gets delivered
+### Neler teslim edilir
 
-Four event types:
+Dört olay türü:
 
-- **`trigger.succeeded`** - an agent run completed successfully.
-- **`trigger.failed`** - an agent run errored.
-- **`approval.requested`** - an action was queued for human approval.
-- **`approval.decided`** - an approval was approved, rejected, or execution-failed.
+- **`trigger.succeeded`** - bir agent çalıştırması başarıyla tamamlandı.
+- **`trigger.failed`** - bir agent çalıştırması hata verdi.
+- **`approval.requested`** - bir eylem insan onayı için kuyruğa alındı.
+- **`approval.decided`** - bir onay onaylandı, reddedildi veya yürütme başarısız oldu.
 
-See [Webhook Events](#webhook-events) for which events fire when, and [Webhook Payloads](#webhook-payloads) for the schema of each.
+Hangi olayların ne zaman tetiklendiği için [Webhook Events](#webhook-events) bölümüne, her birinin şeması için [Webhook Payloads](#webhook-payloads) bölümüne bakın.
 
-### What's not delivered
+### Neler teslim edilmez
 
-- **Per-tool-action webhooks.** A run that calls `pin_comment` does not fire a separate webhook for the pin - the action is included in the run's `trigger.succeeded` payload. If you want per-action delivery, parse the `actions` array on the trigger payload.
-- **Dropped triggers.** A trigger that does not dispatch (over budget, wrong scope) does not fire a webhook. Drops are visible only in the [Analytics page](#analytics-page).
-- **Replay-produced triggers.** Test runs do not fire webhooks. See [Test Runs (Replays)](#test-runs-replays).
+- **Araç başına eylem webhooks.** `pin_comment` çağıran bir çalıştırma, pin için ayrı bir webhook tetiklemez - eylem, çalıştırmanın `trigger.succeeded` payload'ına dahil edilir. Eylem başına teslimat istiyorsanız, trigger payload'ındaki `actions` dizisini ayrıştırın.
+- **Düşürülen trigger'lar.** Gönderilmeyen bir trigger (bütçe aşımı, yanlış kapsam) webhook tetiklemez. Düşürmeler yalnızca [Analytics sayfasında](#analytics-page) görünür.
+- **Replay ile üretilen trigger'lar.** Test çalıştırmaları webhook tetiklemez. Bkz. [Test Runs (Replays)](#test-runs-replays).
 
-### Configuration
+### Yapılandırma
 
-For each webhook you set:
+Her webhook için şunları ayarlarsınız:
 
-- **URL** - the HTTPS endpoint to POST to.
-- **Domain** - the comment domain this webhook applies to (your tenant may host multiple domains). `*` matches all domains; `*.example.com` is a glob; an exact domain matches only that one.
-- **Events** - which of the four event types to subscribe to.
-- **Agents** - empty for "all agents", or a list of specific agent IDs to filter.
-- **Method** - POST or PUT (default POST).
-- **No-retry status codes** - HTTP response codes that should be treated as terminal failures, not retried (e.g., 410 Gone, 422 Unprocessable). See [Webhook Retries](#webhook-retries).
+- **URL** - POST yapılacak HTTPS endpoint'i.
+- **Domain** - bu webhook'un geçerli olduğu yorum alan adı (tenant'ınız birden fazla alan adı barındırabilir). `*` tüm alan adlarıyla eşleşir; `*.example.com` bir glob'dur; tam bir alan adı yalnızca kendisiyle eşleşir.
+- **Events** - abone olunacak dört olay türünden hangileri.
+- **Agents** - "tüm agent'lar" için boş veya filtrelemek için belirli agent ID'lerinin listesi.
+- **Method** - POST veya PUT (varsayılan POST).
+- **No-retry status codes** - nihai başarısızlık olarak değerlendirilmesi gereken, yeniden denenmeyen HTTP yanıt kodları (örn. 410 Gone, 422 Unprocessable). Bkz. [Webhook Retries](#webhook-retries).
 
-Multiple webhooks can subscribe to the same event - each one queues independently and is delivered to its own URL.
+Birden fazla webhook aynı olaya abone olabilir - her biri bağımsız olarak kuyruğa alınır ve kendi URL'sine teslim edilir.
 
-### Per-domain matching
+### Alan adına göre eşleştirme
 
-A given event is delivered to **every webhook whose `domain` field matches the comment's domain**. The matching uses a simple glob:
+Belirli bir olay, **`domain` alanı yorumun alan adıyla eşleşen her webhook'a** teslim edilir. Eşleştirme basit bir glob kullanır:
 
-- Exact: `example.com` matches only `example.com`.
-- Wildcard star: `*` matches every domain.
-- Subdomain glob: `*.example.com` matches `blog.example.com`, `forum.example.com`, but not `example.com` itself.
+- Tam: `example.com` yalnızca `example.com` ile eşleşir.
+- Yıldız jokeri: `*` her alan adıyla eşleşir.
+- Alt alan adı glob'u: `*.example.com`, `blog.example.com` ve `forum.example.com` ile eşleşir, ancak `example.com` ile eşleşmez.
 
-The domain on a payload is the first non-null result from: the comment's `domain`, the URL parsed against your tenant's domain configuration, or the `Page` lookup by `urlId`.
+Payload'daki alan adı, şu kaynaklardan ilk boş olmayan sonuçtur: yorumun `domain` alanı, tenant'ınızın alan adı yapılandırmasına göre ayrıştırılan URL veya `urlId` ile yapılan `Page` araması.
 
-### Per-agent filtering
+### Agent'a göre filtreleme
 
-The **Agents** field lets a webhook subscribe to only certain agents. Empty means "all agents". When non-empty, the webhook only fires for agents in the list.
+**Agents** alanı, bir webhook'un yalnızca belirli agent'lara abone olmasını sağlar. Boş olması "tüm agent'lar" anlamına gelir. Boş olmadığında, webhook yalnızca listedeki agent'lar için tetiklenir.
 
-This is useful when you have one webhook for moderation events and another for engagement events, both routing to different downstream systems.
+Bu, moderasyon olayları için bir webhook ve etkileşim olayları için başka bir webhook'a sahip olduğunuzda ve her ikisinin farklı alt sistemlere yönlendirildiği durumlarda kullanışlıdır.
 
-### Test send
+### Test gönderimi
 
-The webhook config UI has a **Test send** button that posts a fake payload to the URL so you can verify connectivity, signing, and your endpoint's response code without waiting for a real event.
+Webhook yapılandırma arayüzünde, gerçek bir olayı beklemeden bağlantıyı, imzalamayı ve endpoint'inizin yanıt kodunu doğrulamanız için URL'ye sahte bir payload gönderen bir **Test send** düğmesi bulunur.
 
-### Delivery logs
+### Teslimat kayıtları
 
-Every delivery (and every retry) lands in the [Webhook Delivery Logs](#webhook-logs) page so you can see what happened on the wire.
+Her teslimat (ve her yeniden deneme), hatta ne olduğunu görebilmeniz için [Webhook Delivery Logs](#webhook-logs) sayfasına kaydedilir.
 
-### Signing
+### İmzalama
 
-Every webhook is signed with HMAC-SHA256 using your tenant's API secret. See [Webhook Signing](#webhook-signing).
+Her webhook, tenant'ınızın API secret'ı kullanılarak HMAC-SHA256 ile imzalanır. Bkz. [Webhook Signing](#webhook-signing).
 
-### Eligibility
+### Uygunluk
 
-Agent webhooks require valid billing on the tenant. They use the same signing/secret infrastructure as your existing comment webhooks - if you have already integrated comment webhooks (see the [Webhooks guide](/guide-webhooks.html)), the agent webhook integration is the same shape with new event types.
+Agent webhooks, tenant üzerinde geçerli faturalandırma gerektirir. Mevcut yorum webhook'larınızla aynı imzalama/secret altyapısını kullanır - yorum webhook'larını zaten entegre ettiyseniz (bkz. [Webhooks rehberi](/guide-webhooks.html)), agent webhook entegrasyonu yeni olay türleriyle aynı yapıdadır.

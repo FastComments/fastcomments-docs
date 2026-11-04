@@ -15,5 +15,3 @@ Ce paramètre n'affectera pas le nombre de commentaires de niveau supérieur cha
 - Voir « Show Replies » (29) sous ce commentaire.
 
 Si vous souhaitez afficher tous les commentaires de niveau supérieur en combinaison avec cette option, définissez [page de démarrage à -1](#starting-page).
-
----

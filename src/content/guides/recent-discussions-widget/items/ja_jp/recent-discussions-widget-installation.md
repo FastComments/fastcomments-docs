@@ -50,5 +50,3 @@ Recent Discussions ウィジェットは、サイト上で最新のコメント�
     });
 </script>
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 Vous pouvez rencontrer une erreur d'autorisation, comme celle-ci :
 
 <div class="screenshot white-bg">
@@ -13,4 +12,3 @@ Dans ce cas, la correction est simple. Vous devez simplement ajouter le domaine 
 [Allez ici pour ajouter votre site à votre compte.](https://fastcomments.com/auth/my-account/configure-domains)
 
 Remarque : assurez-vous d'ajouter à la fois votre domaine personnalisé (si vous en avez un) et votre sous-domaine Typeflo.io afin que FastComments fonctionne dans tous les scénarios.
----

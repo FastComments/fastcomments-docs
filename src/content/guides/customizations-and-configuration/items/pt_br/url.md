@@ -1,4 +1,3 @@
----
 [related-parameter-start name = 'url'; type = 'string'; related-parameter-end]
 
 Ao enviar e-mails de notificação, ou ao renderizar comentários em interfaces de usuário como a página de moderação, é útil poder vincular
@@ -13,5 +12,3 @@ Um caso de uso comum é vincular a thread de comentários a um identificador, co
 [code-example-start config = {url: 'https://example.com/article-5', urlId: 'article-5'}; linesToHighlight = [6, 7]; title = 'Defining Custom URL and URL IDs together'; code-example-end]
 
 A URL não é limpa dos parâmetros de marketing comuns. Por padrão, qualquer que seja a URL da página atual, é essa URL que é armazenada com o comentário.
-
----

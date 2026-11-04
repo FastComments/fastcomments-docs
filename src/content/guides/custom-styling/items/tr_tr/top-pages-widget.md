@@ -82,5 +82,3 @@ Widget aşağıdaki HTML yapısı ile render edilir:
     box-shadow: none !important;
 }
 [inline-code-end]
-
----

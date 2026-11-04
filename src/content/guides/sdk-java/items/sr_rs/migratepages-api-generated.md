@@ -1,19 +1,20 @@
-Queues a batch job that moves comments, pages and related records from one urlId or domain to another.  
-"urlId" migrations only match the exact urlId. "domain" migrations find/replace the value inside every urlId and url. Poll GET /api/v1/batch-jobs/{batchJobId}: once it is done it carries per-migration results and an undoId.
+Стави у ред групни посао који премешта коментаре, странице и повезане записе са једног urlId или домена на други.
+„urlId“ миграције поклапају само тачан urlId. „domain“ миграције траже/замењују вредност унутар сваког urlId и url.
+Питај GET /api/v1/batch-jobs/{batchJobId}: када је готов, носи резултате по миграцији и undoId.
 
 ## Параметри
 
-| Име | Тип | Локација | Обавезно | Опис |
-|------|------|----------|----------|------|
-| tenantId | string | query | Yes |  |
+| Назив | Тип | Локација | Обавезно | Опис |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Да |  |
 
 ## Одговор
 
-Returns: [`QueuePageMigrationJobAPIResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/QueuePageMigrationJobAPIResponse.java)
+Враћа: [`QueuePageMigrationJobAPIResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/QueuePageMigrationJobAPIResponse.java)
 
 ## Пример
 
-[inline-code-attrs-start title = 'Пример migratePages'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'migratePages Пример'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Import classes:
 import com.fastcomments.invoker.ApiClient;

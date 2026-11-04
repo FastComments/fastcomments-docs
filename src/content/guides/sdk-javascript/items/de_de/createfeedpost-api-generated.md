@@ -53,5 +53,3 @@ Rückgabe: [`CreateFeedPostsResponse`](https://github.com/FastComments/fastcomme
   console.log(response);
 })();
 [inline-code-end]
-
----

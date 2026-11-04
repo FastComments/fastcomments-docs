@@ -1,33 +1,33 @@
-The Recent Discussions widget displays the pages on your site with the most recent comment activity. It's useful for highlighting threads that are still being added to, so visitors can jump back into active conversations rather than landing on quiet pages.
+Το widget Recent Discussions εμφανίζει τις σελίδες του ιστότοπού σας με την πιο πρόσφατη δραστηριότητα σχολίων. Είναι χρήσιμο για την ανάδειξη συζητήσεων που συνεχίζουν να ενημερώνονται, ώστε οι επισκέπτες να μπορούν να επιστρέψουν σε ενεργές συνομιλίες αντί να καταλήγουν σε ήσυχες σελίδες.
 
-## Options
+## Επιλογές
 
-- **Title** (optional): Ο τίτλος που εμφανίζεται πάνω από τη λίστα. Προεπιλογή είναι "Πρόσφατες Συζητήσεις".
-- **Count** (optional): Πόσες συζητήσεις να εμφανιστούν. Εύρος 1 έως 50. Προεπιλογή είναι 20.
+- **Title** (προαιρετικό): Η επικεφαλίδα που εμφανίζεται πάνω από τη λίστα. Προεπιλογή: "Recent Discussions".
+- **Count** (προαιρετικό): Πόσες συζητήσεις θα εμφανίζονται. Εύρος από 1 έως 50. Προεπιλογή: 20.
 
-## How to Add It
+## Πώς να το Προσθέσετε
 
-### Inside a Post or Page
+### Μέσα σε Άρθρο ή Σελίδα
 
 Στον επεξεργαστή μπλοκ, προσθέστε ένα μπλοκ **Shortcode** και επικολλήστε:
 
-[inline-code-attrs-start title = 'Σύντομος κώδικας πρόσφατων συζητήσεων'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Shortcode Recent Discussions'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 [fastcomments_recent_discussions count="20"]
 [inline-code-end]
 
-Το χαρακτηριστικό `count` δέχεται οποιαδήποτε τιμή μεταξύ 1 και 50.
+Το attribute `count` δέχεται οποιαδήποτε τιμή μεταξύ 1 και 50.
 
-### In a Sidebar or Footer (Classic Themes)
+### Σε Sidebar ή Footer (Κλασικά Θέματα)
 
-Μεταβείτε στο **Appearance > Widgets** στη διαχείριση του WordPress. Από τον εισαγωγέα μπλοκ, αναζητήστε το "FastComments" και επιλέξτε **FastComments: Recent Discussions**. Σύρετε το σε μια πλευρική στήλη, κεφαλίδα ή περιοχή υποσέλιδου, στη συνέχεια ρυθμίστε τον τίτλο και την καταμέτρηση από τον πίνακα του widget.
+Μεταβείτε στο **Εμφάνιση > Widgets** στη διαχείριση του WordPress. Από τον εισαγωγέα μπλοκ, αναζητήστε "FastComments" και επιλέξτε **FastComments: Recent Discussions**. Σύρετέ το σε μια περιοχή sidebar, header ή footer και, στη συνέχεια, ρυθμίστε τον τίτλο και το count από τον πίνακα του widget.
 
-### In a Block Theme (Full Site Editing)
+### Σε Block Theme (Full Site Editing)
 
-Ανοίξτε τον **Site Editor** μέσω του **Appearance > Editor**. Περιηγηθείτε στο τμήμα προτύπου όπου πρέπει να εμφανιστεί το widget, εισάγετε ένα μπλοκ **Legacy Widget** και επιλέξτε **FastComments: Recent Discussions** από το αναπτυσσόμενο μενού.
+Ανοίξτε τον **Επεξεργαστή Ιστότοπου** μέσω **Εμφάνιση > Επεξεργαστής**. Μεταβείτε στο τμήμα προτύπου όπου πρέπει να εμφανίζεται το widget, εισαγάγετε ένα μπλοκ **Legacy Widget** και επιλέξτε **FastComments: Recent Discussions** από την αναπτυσσόμενη λίστα.
 
-## Troubleshooting
+## Αντιμετώπιση Προβλημάτων
 
-Το widget εμφανίζεται μόνο μετά την ολοκλήρωση της ρύθμισης του FastComments και την αποθήκευση ενός tenant ID. Εάν η περιοχή του widget είναι κενή, ολοκληρώστε τη ρύθμιση μέσω του **FastComments** στη διαχείριση του WordPress και φορτώστε ξανά τη σελίδα.
+Το widget εμφανίζεται μόνο αφού ολοκληρωθεί η ρύθμιση του FastComments και αποθηκευτεί ένα tenant ID. Αν η περιοχή του widget είναι κενή, ολοκληρώστε τη ρύθμιση μέσω του **FastComments** στη διαχείριση του WordPress και επαναφορτώστε τη σελίδα.
 
-Εάν η σειρά των συζητήσεων φαίνεται παλιά, ελέγξτε ότι οι υποκείμενες σελίδες έχουν ολοκληρώσει το συγχρονισμό στον πίνακα ελέγχου του FastComments. Το widget διαβάζει ζωντανά δεδομένα, έτσι τα πρόσφατα εισαχθέντα σχόλια μπορεί να χρειαστούν λίγο χρόνο για να εμφανιστούν.
+Αν η σειρά των συζητήσεων φαίνεται παρωχημένη, ελέγξτε ότι οι υποκείμενες σελίδες έχουν ολοκληρώσει τον συγχρονισμό στον πίνακα ελέγχου του FastComments. Το widget διαβάζει δεδομένα σε πραγματικό χρόνο, οπότε οι πρόσφατα εισαγόμενα σχόλια μπορεί να χρειαστούν λίγο χρόνο για να εμφανιστούν.

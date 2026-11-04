@@ -32,5 +32,3 @@ api->getOfflineUsers(tenantId, urlId, options)
         }
     });
 [inline-code-end]
-
----

@@ -40,5 +40,3 @@ PublicAPI.resetUserNotifications(tenantId: tenantId, options: PublicAPI.ResetUse
     }
 }
 [inline-code-end]
-
----

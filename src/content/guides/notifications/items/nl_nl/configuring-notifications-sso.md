@@ -1,4 +1,3 @@
----
 Voor SSO is de volgende configuratie relevant voor meldingen:
 
 - Of de gebruiker zich heeft aangemeld voor meldingen.
@@ -18,5 +17,3 @@ Voor SSO is de volgende configuratie relevant voor meldingen:
   - Dit gebeurt via de eigenschap `footerUnsubscribeURL` op het `DomainConfig` object.
   - Dit kan via de API worden ingesteld.
   - U kunt ook overwegen om de relevante afmeldheaders in te stellen via `emailHeaders` in hetzelfde object.
-
----

@@ -82,5 +82,3 @@ Widget se prikazuje s sljedećom HTML strukturom:
     box-shadow: none !important;
 }
 [inline-code-end]
-
----

@@ -50,5 +50,3 @@ interface PageReactUser {
 #### Nützlicher Hinweis
 
 Denken Sie daran, Werte wie die `urlId` URI‑zu kodieren.
-
----

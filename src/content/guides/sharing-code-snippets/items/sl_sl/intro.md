@@ -1,4 +1,1 @@
----
 ## Deljenje odrezkov kode
-
----

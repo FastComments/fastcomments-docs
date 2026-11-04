@@ -1,4 +1,3 @@
----
 필수 환경 변수를 설정하세요:
 
 ```bash
@@ -11,4 +10,3 @@ export FASTCOMMENTS_TENANT_ID="your-tenant-id"
 ```bash
 go test ./tests
 ```
----

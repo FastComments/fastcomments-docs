@@ -1,25 +1,25 @@
-Nu gaan we uw aangepaste FastComments-code genereren. Gebruik de wizard hieronder om te configureren hoe u FastComments wilt laten werken op uw GoHighLevel-site:
+Nu gaan we je aangepaste FastComments-code genereren. Gebruik de wizard hieronder om te configureren hoe je wilt dat FastComments werkt op je GoHighLevel-site:
 
 [snippet id="gohighlevel-wizard"]
 
-### Verschillende typen commentboxen
+### Verschillende soorten commentaarvakken
 
-U kunt de regel `TYPE = 'commenting'` configureren om het gebruikte product te wijzigen (bijvoorbeeld kunt u het veranderen naar `live` voor streaming chat of `collab` voor collab chat).
+Je kunt de regel `TYPE = 'commenting'` aanpassen om het gebruikte product te wijzigen (je kunt deze bijvoorbeeld veranderen in `live` voor streaming chat of `collab` voor collab chat).
 
-### De commentbox waar u hem wilt plaatsen
+### Het commentaarvak plaatsen waar jij het wilt
 
-Stel dat u commentboxen op specifieke delen van de pagina wilt plaatsen en niet op de standaardlocaties.
-Change this line:
+Stel dat je commentaarvakken op specifieke delen van de pagina wilt plaatsen en niet op de standaardlocaties.
+Wijzig deze regel:
 
-    const TARGET_ELEMENT_ID = ''; // instellen om target-divmodus te gebruiken
+    const TARGET_ELEMENT_ID = ''; // set to use target div mode
 
-To:
+Naar:
 
-    const TARGET_ELEMENT_ID = 'fc_box'; // instellen om target-divmodus te gebruiken
+    const TARGET_ELEMENT_ID = 'fc_box'; // set to use target div mode
 
-Then in the GHL editor, click the "code" button and add where you want the comments to go:
+Klik vervolgens in de GHL-editor op de knop "code" en voeg toe waar je de reacties wilt hebben:
 
-[inline-code-attrs-start title = 'GoHighLevel FastComments-div'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'GoHighLevel FastComments Div'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <div
   id="fc_box"
@@ -28,31 +28,34 @@ Then in the GHL editor, click the "code" button and add where you want the comme
 ></div>
 [inline-code-end]
 
-### Verschillend commentbox-type per pagina
+### Verschillend type commentaarvak per pagina
 
-Stel dat u wilt dat gebruikers stukken tekst markeren en bespreken, of in plaats daarvan de streaming chat UI gebruiken.
+Stel dat je wilt dat gebruikers stukken tekst kunnen markeren en bespreken, of dat je de streaming chat-UI wilt gebruiken.
 
-First follow the steps above in "De commentbox waar u hem wilt plaatsen".
+Volg eerst de stappen hierboven in "Het commentaarvak plaatsen waar jij het wilt".
 
-Let op dat in dat kleine fragment `type="commenting"` staat.
+Let op: in dat kleine snippet staat `type="commenting"`.
 
-Als u bijvoorbeeld collab chat wilt inschakelen, verander dan type naar `type="collab"`.
+Als je bijvoorbeeld collab chat wilt inschakelen, wijzig dan het type in `type="collab"`.
 
-### Alleen tonen op specifieke pagina's
+### Alleen weergeven op specifieke pagina's
 
-Als u `TARGET_ELEMENT_ID` niet instelt, kunt u in plaats daarvan de variabele `VALID_PATTERNS` configureren om in te stellen op welke URL-routes de opmerkingen moeten worden weergegeven. Standaard wordt het weergegeven op pagina's die `/post` in de URL bevatten.
+Als je `TARGET_ELEMENT_ID` niet instelt, kun je in plaats daarvan de variabele `VALID_PATTERNS` configureren om in te stellen op welke URL-routes de reacties moeten worden weergegeven. Standaard worden ze
+weergegeven op pagina's die `/post` in de URL bevatten.
 
-### Collab Chat configureren
+### Collab chat configureren
 
-U kunt collab chat zo instellen dat het alleen samenwerkingsfunctionaliteit toevoegt rond HTML binnen een specifiek gebied. Stel bijvoorbeeld dat u de footer-code hierboven toevoegt en vervolgens deze div in de inhoud van de post/pagina plaatst om collab chat in te schakelen:
+Je kunt collab chat opdracht geven om alleen collaboratieve functionaliteit toe te voegen rond HTML binnen een specifiek gebied. Stel bijvoorbeeld dat je
+de footercode hierboven toevoegt en vervolgens deze div toevoegt in de inhoud van de post/pagina om collab chat in te schakelen:
 
-[inline-code-attrs-start title = 'Collab-chat met opgegeven inhoud'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Collab Chat Met Gespecificeerde Inhoud'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <div
   id="fc_box"
   type="collab"
   urlid="custom-chat-id"
-><p>This content will have collab chat!</p></div>
+><p>Deze inhoud krijgt collab chat!</p></div>
 [inline-code-end]
 
-Dan zal het paragraafelement binnen de `<div>` collab chat ingeschakeld hebben, en niets anders op de pagina. Als u geen inhoud in de `<div>` plaatst, wordt collab chat ingeschakeld voor de gehele inhoud van de post.
+Dan heeft het alinea-element binnen de `<div>` collab chat ingeschakeld, en niets anders op de pagina. Als je
+geen inhoud in de `<div>` plaatst, wordt collab chat ingeschakeld op de gehele posttekst.

@@ -1,31 +1,32 @@
-Past commenters on the page who are NOT currently online. Sorted by displayName.  
-Use this after exhausting /users/online to render a "Members" section.  
-Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName} index from afterName forward via $gt, no $skip cost.
+Commentatori passati sulla pagina attualmente NON online. Ordinati per displayName.
+Usare dopo aver esaurito /users/online per renderizzare una sezione "Members".
+Paginazione con cursore su commenterName: il server percorre l'indice parziale {tenantId, urlId, commenterName}
+da afterName in avanti tramite $gt, senza costo $skip.
 
-## Parameters
+## Parametri
 
 | Nome | Tipo | Posizione | Obbligatorio | Descrizione |
-|------|------|-----------|--------------|-------------|
-| tenantId | string | path | Yes |  |
-| urlId | string | query | Yes | Identificatore URL della pagina (pulito dal server). |
-| afterName | string | query | No | Cursore: passa nextAfterName dalla risposta precedente. |
-| afterUserId | string | query | No | Risoluzione dei pareggi del cursore: passa nextAfterUserId dalla risposta precedente. Obbligatorio quando afterName è impostato affinché i pareggi di nome non eliminino voci. |
+|------|------|----------|----------|-------------|
+| tenantId | string | path | Sì |  |
+| urlId | string | query | Sì | Identificatore URL della pagina (pulito lato server). |
+| afterName | string | query | No | Cursore: passare nextAfterName dalla risposta precedente. |
+| afterUserId | string | query | No | Tiebreaker del cursore: passare nextAfterUserId dalla risposta precedente. Obbligatorio quando afterName è impostato, così che le voci con lo stesso nome non vengano perse. |
 
-## Response
+## Risposta
 
-Returns: `PageUsersOfflineResponse`
+Restituisce: `PageUsersOfflineResponse`
 
-## Example
+## Esempio
 
-[inline-code-attrs-start title = 'Esempio getOfflineUsers'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio di getOfflineUsers'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
 
 final api_instance = PublicApi();
 final tenantId = tenantId_example; // String | 
-final urlId = urlId_example; // String | Identificatore URL della pagina (pulito dal server).
-final afterName = afterName_example; // String | Cursore: passa nextAfterName dalla risposta precedente.
-final afterUserId = afterUserId_example; // String | Risoluzione dei pareggi del cursore: passa nextAfterUserId dalla risposta precedente. Obbligatorio quando afterName è impostato affinché i pareggi di nome non eliminino voci.
+final urlId = urlId_example; // String | Identificatore URL della pagina (pulito lato server).
+final afterName = afterName_example; // String | Cursore: passare nextAfterName dalla risposta precedente.
+final afterUserId = afterUserId_example; // String | Tiebreaker del cursore: passare nextAfterUserId dalla risposta precedente. Obbligatorio quando afterName è impostato, così che le voci con lo stesso nome non vengano perse.
 
 try {
     final result = api_instance.getOfflineUsers(tenantId, urlId, GetOfflineUsersOptions(afterName: afterName, afterUserId: afterUserId));

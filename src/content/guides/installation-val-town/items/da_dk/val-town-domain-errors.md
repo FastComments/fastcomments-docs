@@ -1,12 +1,12 @@
-Når du slår `demo`-lejeren fra, kan widget'en nægte at indlæses med en autorisationsfejl. Dette skyldes, at FastComments ikke ved, at den skal tillade, at din konto bruges på det domæne.
+Når du slår `demo`-tenanten fra, kan widgetten nægte at indlæse med en autorisationsfejl. Det skyldes, at FastComments ikke ved, at din konto skal have lov til at blive brugt på det domæne.
 
-[Go here to add your site to your account.](https://fastcomments.com/auth/my-account/configure-domains)
+[Gå hertil for at tilføje dit site til din konto.](https://fastcomments.com/auth/my-account/configure-domains)
 
-Val Town er værd at kigge på igen her, fordi en val kan være tilgængelig på mere end ét værtsnavn:
+Val Town er et andet blik værd her, fordi en val kan være tilgængelig på mere end ét hostname:
 
-- Hver HTTP-val har en lang standardendpoint, `<org>--<id>.web.val.run`.
+- Hver HTTP-val har et langt standardendpoint, `<org>--<id>.web.val.run`.
 - At gøre krav på et brugerdefineret subdomæne tilføjer `<name>.val.run`.
-- Et [custom domain](https://docs.val.town/vals/http/custom-domains/) tilføjer et tredje.
-- Grenene får deres egne URL'er.
+- Et [brugerdefineret domæne](https://docs.val.town/vals/http/custom-domains/) tilføjer et tredje.
+- Branches får deres egne URL'er.
 
-Tilføj de værtsnavne, du faktisk leverer widget'en fra. Hvis du gør krav på et subdomæne efter opsætningen, skal du også tilføje det, ellers fungerer widget'en på den gamle URL og fejler på den nye.
+Tilføj de hostnames, du faktisk serverer widgetten fra. Hvis du gør krav på et subdomæne, efter du har sat tingene op, så tilføj det også, ellers virker widgetten på den gamle URL og fejler på den nye.

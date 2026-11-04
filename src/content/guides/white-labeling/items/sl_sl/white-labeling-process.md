@@ -1,4 +1,3 @@
----
 Postopek nastavitve White Labelinga je naslednji:
 
 1. Izberite, kako bo urejeno obračunavanje.
@@ -11,5 +10,3 @@ Postopek nastavitve White Labelinga je naslednji:
    2. `TenantUser` je skrbnik z naborom pooblastil v `Tenant`.
    3. `TenantPackage` je paket z določenimi omejitvami in cenami, ki je na voljo `Tenant`.
 3. Integrirajte se z našim [API](/guide-api.html) ali uporabite [skripte](https://github.com/FastComments/fastcomments-code-examples/tree/master/white-labeling) za vključevanje strank.
-
----

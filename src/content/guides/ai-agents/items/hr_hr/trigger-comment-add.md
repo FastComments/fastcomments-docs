@@ -1,4 +1,3 @@
----
 Pokreće agenta svaki put kada se na stranici obuhvaćenoj agentovim [opsegom](#scope-url-locale) objavi novi komentar.
 
 ### Kontekst koji agent prima
@@ -19,5 +18,3 @@ Pokreće agenta svaki put kada se na stranici obuhvaćenoj agentovim [opsegom](#
 - **Moderacija** - provjerite komentar u odnosu na smjernice zajednice, označite kao spam ili upozorite nove korisnike.
 - **Pozdrav dobrodošlice** - iako je [Okidač: Prvi komentar novog korisnika](#trigger-new-user-first-comment) obično prikladniji za pozdrave jer se aktivira jednom po korisniku.
 - **Sažimanje niti** - obično u paru s [odgodom okidača](#trigger-deferred-delay) kako bi se nit smirila prije nego agent radi.
-
----

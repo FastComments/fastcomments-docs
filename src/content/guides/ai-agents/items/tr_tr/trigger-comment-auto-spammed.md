@@ -1,4 +1,3 @@
----
 Bir yorum FastComments'in dahili spam motoru tarafından otomatik olarak spam olarak işaretlendiğinde tetiklenir — bir moderatör tarafından **değil** ve başka bir ajan tarafından da değil.
 
 ### Ajanın aldığı bağlam
@@ -20,5 +19,3 @@ Platformun spam hattı. Daha fazla ayrıntı için moderasyon rehberindeki [Spam
 - Bu tetikleyici moderatör tarafından işaretlenen spam için **tetiklenmez** (bkz: [Tetikleyici: Moderatör Tarafından Spam İşaretlendi](#trigger-moderator-spammed)) ve başka bir ajan tarafından işaretlenen spam için de tetiklenmez.
 - Otomatik olarak spam işaretlenen ve daha sonra bir moderatör tarafından Spam Değil olarak işaretlenen bir yorum tetikleyiciyi yeniden tetiklemez.
 - Bu tetikleyiciye abone olmak, motorun otomatik spam modunun Moderasyon Ayarları altında etkinleştirildiği tenant'larda en faydalıdır. Aksi takdirde tetikleyici tetiklenmez.
-
----

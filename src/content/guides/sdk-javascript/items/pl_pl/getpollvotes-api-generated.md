@@ -1,25 +1,25 @@
-The individual votes behind one poll's tallies, oldest first.
+Poszczególne głosy składowe na sumę głosów jednej ankiety, od najstarszych.
 
-A poll belongs to a comment, so votes are always read one poll at a time - commentId is required. That
-keeps every query on the indexes the collection already has.
+Ankieta należy do komentarza, więc głosy są zawsze odczytywane dla jednej ankiety naraz - commentId jest wymagane. Dzięki
+temu każde zapytanie korzysta z indeksów, które kolekcja już posiada.
 
-Obeys the poll's privacy: an anonymous poll's votes cannot be read (poll-anonymous), here or by id.
+Respektuje prywatność ankiety: głosów w anonimowej ankiecie nie można odczytać (poll-anonymous), ani tutaj, ani po id.
 
-## Parameters
+## Parametry
 
-| Nazwa | Typ | Wymagane | Opis |
-|------|------|----------|------|
+| Nazwa | Typ | Wymagany | Opis |
+|------|------|----------|-------------|
 | tenantId | string | Tak |  |
 | commentId | string | Tak |  |
 | voterId | string | Nie |  |
 | optionId | string | Nie |  |
 | skip | number | Nie |  |
 
-## Response
+## Odpowiedź
 
-Returns: [`GetPollVotesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPollVotesResponse.ts)
+Zwraca: [`GetPollVotesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPollVotesResponse.ts)
 
-## Example
+## Przykład
 
 [inline-code-attrs-start title = 'Przykład getPollVotes'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -39,5 +39,3 @@ const pollResult: GetPollVotesResponse = await getPollVotes(
 
 console.log(pollResult);
 [inline-code-end]
-
----

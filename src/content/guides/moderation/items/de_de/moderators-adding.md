@@ -1,21 +1,21 @@
-For administrators, at the top of the Comment Moderation page is an Add Moderators button.
+Für Administratoren befindet sich oben auf der Seite zur Kommentar-Moderation eine Schaltfläche „Moderatoren hinzufügen".
 
-[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=3&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = '.moderation-settings-options'; alt='Zeile von Schaltflächen oben auf der Seite zur Kommentarmoderation, einschließlich der Schaltfläche „Moderatoren hinzufügen“.'; title='Schaltflächen für Kommentarmoderationseinstellungen' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=3&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = '.moderation-settings-options'; alt='Reihe von Schaltflächen oben auf der Seite zur Kommentar-Moderation, einschließlich der Schaltfläche „Moderatoren hinzufügen“'; title='Einstellungsschaltflächen der Kommentar-Moderation' app-screenshot-end]
 
-If you already have moderators, this button will say "Edit Moderators".
+Wenn Sie bereits Moderatoren haben, wird auf dieser Schaltfläche „Moderatoren bearbeiten" stehen.
 
-Let's take a look at the "Add a Moderator" page.
+Werfen wir einen Blick auf die Seite „Moderator hinzufügen".
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/moderator/new'; selector = '.account-block'; alt='Seite „Moderator hinzufügen“, die nur nach dem Namen und der E‑Mail des neuen Moderators fragt, bevor die Einladung gesendet wird.'; title='Die Seite zum Hinzufügen eines Moderators' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/moderator/new'; selector = '.account-block'; alt='Seite „Moderator hinzufügen“, die nur nach dem Namen und der E-Mail-Adresse des neuen Moderators fragt, bevor die Einladung gesendet wird'; title='Die Seite „Moderator hinzufügen“' app-screenshot-end]
 
-To add a moderator all that is needed is a name and an email.
+Um einen Moderator hinzuzufügen, werden nur ein Name und eine E-Mail-Adresse benötigt.
 
-If the email is associated with an existing FastComments account, they will be invited via email to join your account as a moderator.
+Wenn die E-Mail-Adresse mit einem bestehenden FastComments-Konto verknüpft ist, wird die Person per E-Mail eingeladen, Ihrem Konto als Moderator beizutreten.
 
-If the given email is not associated with an existing FastComments account, a new one will be created for them.
+Wenn die angegebene E-Mail-Adresse nicht mit einem bestehenden FastComments-Konto verknüpft ist, wird ein neues Konto für diese Person erstellt.
 
-An invite link will be sent to the moderator, which can automatically log them in. In the future if they wish to login, they can simply visit the
-<a href="https://fastcomments.com/auth/login" target="_blank">login page</a> and enter the name/email that you provided earlier. This will send them
-a link to login.
+An den Moderator wird ein Einladungslink gesendet, der ihn automatisch anmelden kann. Wenn er sich in Zukunft anmelden möchte, kann er einfach die
+<a href="https://fastcomments.com/auth/login" target="_blank">Anmeldeseite</a> besuchen und den Namen/die E-Mail-Adresse eingeben, die Sie zuvor angegeben haben. Dadurch erhält er
+einen Link zur Anmeldung.
 
-Unless they log out, they will be logged in for thirty days.
+Sofern er sich nicht abmeldet, bleibt er für dreißig Tage angemeldet.

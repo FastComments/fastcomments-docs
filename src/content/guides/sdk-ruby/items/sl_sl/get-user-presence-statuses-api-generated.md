@@ -30,5 +30,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Napaka pri klicu PublicApi->get_user_presence_statuses: #{e}"
 end
 [inline-code-end]
-
----

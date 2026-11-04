@@ -1,16 +1,16 @@
-Past commenters on the page who are NOT currently online. Sorted by displayName.  
-Use this after exhausting /users/online to render a "Members" section.  
-Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName}  
-index from afterName forward via $gt, no $skip cost.
+Коментатори, які раніше залишали коментарі на сторінці, але зараз НЕ в мережі. Відсортовані за displayName.
+Використовуйте це після вичерпання /users/online для відображення розділу «Учасники».
+Курсорна пагінація за commenterName: сервер проходить частковим індексом {tenantId, urlId, commenterName}
+від afterName вперед за допомогою $gt, без витрат на $skip.
 
 ## Параметри
 
-| Назва | Тип | Обов’язкове | Опис |
+| Назва | Тип | Обов'язковий | Опис |
 |------|------|----------|-------------|
-| tenant_id | String | Yes |  |
-| url_id | String | Yes |  |
-| after_name | String | No |  |
-| after_user_id | String | No |  |
+| tenant_id | String | Так |  |
+| url_id | String | Так |  |
+| after_name | String | Ні |  |
+| after_user_id | String | Ні |  |
 
 ## Відповідь
 
@@ -18,7 +18,7 @@ index from afterName forward via $gt, no $skip cost.
 
 ## Приклад
 
-[inline-code-attrs-start title = 'get_offline_users Приклад'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад get_offline_users'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn fetch_offline(config: &configuration::Configuration) -> Result<(), Error> {
     let params = GetOfflineUsersParams {

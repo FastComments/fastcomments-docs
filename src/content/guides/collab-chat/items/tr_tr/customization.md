@@ -77,5 +77,3 @@ Mevcut tüm özelleştirme seçeneklerinin tam listesi için ana FastComments ö
 
 Eğer siteniz özel yazı tipleri kullanıyorsa, Collab Chat kullanıcı arayüzü sayfanızın CSS'inden bu yazı tiplerini devralır. Bir widget özelleştirme kuralı oluşturmanız ve o kural içindeki özel CSS'e gerekli yazı tiplerini `@import` etmeniz gerekebilir eğer
 yüzen sohbet penceresinin aynı yazı tiplerini kullanmasını istiyorsanız.
-
----

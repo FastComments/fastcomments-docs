@@ -1,15 +1,15 @@
-Attach a poll to a comment, or set the full state of the poll it already has.
+Voeg een poll toe aan een comment, of stel de volledige status in van de poll die deze al heeft.
 
-Options are matched by id: an option sent with the id of an existing option keeps its votes (and takes the
-new label and position), an option sent without an id is added, and existing options left out of the list
-are removed along with the votes cast on them.
+Opties worden gematcht op id: een optie die wordt verzonden met de id van een bestaande optie behoudt zijn stemmen (en krijgt het
+nieuwe label en de nieuwe positie), een optie zonder id wordt toegevoegd, en bestaande opties die niet in de lijst staan
+worden verwijderd, samen met de op hen uitgebrachte stemmen.
 
-Keeping no existing option ids on a poll that has votes deletes all of them, so that needs replaceVotes=true.
+Als je geen bestaande optie-ids behoudt op een poll waarop stemmen zijn uitgebracht, worden alle stemmen verwijderd, dus daarvoor is replaceVotes=true nodig.
 
 ## Parameters
 
-| Naam | Type | Verplicht | Beschrijving |
-|------|------|-----------|--------------|
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
 | tenantId | string | Yes |  |
 | commentId | string | Yes |  |
 | commentPollPutInput | CommentPollPutInput | Yes |  |
@@ -17,11 +17,11 @@ Keeping no existing option ids on a poll that has votes deletes all of them, so 
 
 ## Response
 
-Retourneert: [`SavePollResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/SavePollResponse.ts)
+Geeft terug: [`SavePollResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/SavePollResponse.ts)
 
-## Voorbeeld
+## Example
 
-[inline-code-attrs-start title = 'putPoll voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'putPoll Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 const tenantId: string = "c1a2b3d4-5678-90ab-cdef-1234567890ab";
 const commentId: string = "9876543210";

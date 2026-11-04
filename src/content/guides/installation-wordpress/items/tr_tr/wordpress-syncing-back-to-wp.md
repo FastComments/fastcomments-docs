@@ -1,17 +1,15 @@
-Varsayılan olarak, FastComments günlük olarak WordPress sitenizle eşitleme yapar. Bu, verinin bir kopyasına sahip olmaya devam etmeniz, ve bazı eklentiler
-onlara bağımlı olabileceği için tamamen yedekleme amaçlıdır.
+Varsayılan olarak, FastComments WordPress sitenize günlük olarak geri senkronizasyon yapar. Bu tamamen yedekleme amaçlıdır, böylece verilerin bir kopyasının sahibi olmaya devam edersiniz ve buna bağlı olabilecek eklentiler için de gereklidir.
 
-Bu, bazı sitelerin yoğun okuma trafiğini kaldırabilme doğası nedeniyle kaydedilen her yorumla hemen gerçekleşmez; veritabanı dağıtımları her zaman yoğun yazma trafiğini kaldıramayabilir (bu nedenle bu işi FastComments'e devrediyoruz).
+Bu, kaydedilen her yorumla anında gerçekleşmez; çünkü bazı siteler yoğun okuma trafiğini kaldırabilirken, veritabanı dağıtımları her zaman yoğun yazma trafiğini kaldıramaz (bu nedenle bu iş FastComments'e devredilir).
 
-WordPress'e geri eşitleme zamanlaması bir eklenti yükleyerek özelleştirilebilir. Biz [WP Crontrol](https://wordpress.org/plugins/wp-crontrol/#description) öneriyoruz.
+WordPress'e geri senkronizasyon zamanlaması bir eklenti kurarak özelleştirilebilir. [WP Crontrol](https://wordpress.org/plugins/wp-crontrol/#description) eklentisini öneriyoruz.
 
-Steps:
+Adımlar:
 
-1. Install WP Crontrol
-2. Go to `Settings -> Cron Schedules`.
-3. Go to the `Cron Events` tab.
-4. Search for `fastcomments_cron_hook`.
-5. Edit the event. You can configure the hook to run hourly, twice a day, daily (default), or once a week.
+1. WP Crontrol eklentisini kurun
+2. `Settings -> Cron Schedules` bölümüne gidin.
+3. `Cron Events` sekmesine gidin.
+4. `fastcomments_cron_hook` araması yapın.
+5. Olayı düzenleyin. Hook'u saatlik, günde iki kez, günlük (varsayılan) veya haftada bir çalışacak şekilde yapılandırabilirsiniz.
 
-The sync back to WordPress can also be performed any time manually by going to the FastComments plugin dashboard and selecting `Manually Sync`. You will have
-the option to sync back to your WP install, or to re-upload your WP comments to FastComments servers.
+WordPress'e geri senkronizasyon, FastComments eklenti panosuna gidip `Manually Sync` seçeneğini belirleyerek herhangi bir zamanda manuel olarak da gerçekleştirilebilir. WP kurulumunuza geri senkronizasyon yapma veya WP yorumlarınızı FastComments sunucularına yeniden yükleme seçeneğine sahip olacaksınız.

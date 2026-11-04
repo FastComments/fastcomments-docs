@@ -1,4 +1,3 @@
----
 Regroupe les documents en les groupant (si **groupBy** est fourni) et en appliquant plusieurs opérations.  
 Différentes opérations (p. ex. sum, countDistinct, avg, etc.) sont prises en charge.
 

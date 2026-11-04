@@ -20,5 +20,3 @@ A continuación, para cargar nuestra extensión, tenemos que informar al widget 
 [code-example-start config = {extensions: [{id: "my-extension", path: "https://example.com/my-extension.min.js"}]}; linesToHighlight = [6,7,8,9,10,11]; title = 'Using a Custom Extension'; code-example-end]
 
 Para ejemplos funcionales, vea la siguiente sección.
-
----

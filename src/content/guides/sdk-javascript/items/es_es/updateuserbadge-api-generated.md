@@ -1,4 +1,3 @@
----
 ## Parámetros
 
 | Nombre | Tipo | Requerido | Descripción |
@@ -26,5 +25,3 @@ const updateParams: UpdateUserBadgeParams = {
 
 const result: APIEmptySuccessResponse = await updateUserBadge(tenantId, id, updateParams);
 [inline-code-end]
-
----

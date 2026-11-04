@@ -23,5 +23,3 @@ api->getCounts(
     }
 });
 [inline-code-end]
-
----

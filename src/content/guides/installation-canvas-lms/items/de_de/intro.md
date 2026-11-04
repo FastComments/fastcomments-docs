@@ -6,5 +6,3 @@ FastComments integriert sich in Canvas LMS über den LTI 1.3-Standard. Dadurch w
 </div>
 
 Kommentare erscheinen automatisch unter Aufgaben, und Dozierende können FastComments über den Rich Content Editor in Seiten, Quizze und Ankündigungen einbetten. SSO wird automatisch über den LTI-Startvorgang abgewickelt – Studierende kommentieren mit ihren Canvas-Konten ohne separaten Login. Die Integration unterstützt verschachtelte Kommentare, Echtzeit-kollaborativen Chat mit Texthervorhebung und automatische Rollen-Zuordnung.
-
----

@@ -1,4 +1,3 @@
----
 Définissez les variables d'environnement requises:
 
 ```bash
@@ -11,4 +10,3 @@ Exécutez les tests:
 ```bash
 bundle exec rspec
 ```
----

@@ -13,5 +13,3 @@
 Такође можете пронаћи ваш Tenant ID и управљати вашим API кључевима [на страници API акредитива](https://fastcomments.com/auth/my-account/api-secret).
 
 Од ове тачке, ако сте пријављени у FastComments, примери кода ће користити ваш стварни Tenant ID (ако сте пријављени на https://fastcomments.com).
-
----

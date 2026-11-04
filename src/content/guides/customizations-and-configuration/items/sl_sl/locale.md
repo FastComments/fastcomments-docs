@@ -25,5 +25,3 @@ To je mogoče preglasiti z želeno lokalizacijo.
 ### Opomba o SSO
 
 Če uporabljate SSO, boste morda želeli v uporabniškem objektu posredovati uporabnikovo lokalizacijo, da bodo e-poštna sporočila in druge stvari pravilno lokalizirane zanj.
-
----

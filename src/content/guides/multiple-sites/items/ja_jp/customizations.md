@@ -1,11 +1,9 @@
-The comment widget can be <a href="/guide-customizations-and-configuration.html#custom-css" target="_blank">カスタマイズ</a> differently for each site.
+コメントウィジェットは、サイトごとに異なる<a href="/guide-customizations-and-configuration.html#custom-css" target="_blank">カスタマイズ</a>が可能です。
 
-On the widget customization page, you'll find a dropdown labeled "domain". Selecting `All` in this field will apply the rule to all
-sites on your account, you can enter a specific domain which will restrict the settings or custom CSS you wish to apply to only that domain.
+ウィジェットのカスタマイズページには、「domain」というラベルのドロップダウンがあります。このフィールドで `All` を選択すると、アカウント上のすべてのサイトにルールが適用されます。特定のドメインを入力すると、適用する設定やカスタムCSSをそのドメインのみに限定できます。
 
-This allows you to have FastComments look or function completely different for each site.
+これにより、サイトごとにFastCommentsの見た目や動作を完全に変えることができます。
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = 'label.domain'; alt='ウィジェットカスタマイズページのドメインドロップダウン。All または特定のサイトに設定'; title='カスタマイズルールのドメイン' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = 'label.domain'; alt='ウィジェットカスタマイズページのドメインドロップダウン。Allまたは特定のサイトが選択された状態'; title='カスタマイズルールのドメイン' app-screenshot-end]
 
-For one site might use bold text and allow anonymous commenting, and another site might
-have different styling and require the user to leave their email when they comment.
+例えば、あるサイトでは太字のテキストを使用し匿名コメントを許可し、別のサイトでは異なるスタイルにして、コメント時にユーザーにメールアドレスの入力を必須にすることもできます。

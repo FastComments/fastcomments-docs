@@ -1,3 +1,1 @@
----
 Voeg live reacties toe aan een Framer-site met een embed-blok en de Framer‑specifieke snippet, plus de hoogte‑instellingen die voorkomen dat de widget wordt afgekapt.
----

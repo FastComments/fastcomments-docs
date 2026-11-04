@@ -1,4 +1,3 @@
----
 ## 參數
 
 | 名稱 | 類型 | 必填 | 說明 |
@@ -25,5 +24,3 @@ if maybeReact.isSome:
   let react = maybeReact.get()
   echo react
 [inline-code-end]
-
----

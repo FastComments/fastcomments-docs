@@ -8,5 +8,3 @@ Als u problemen tegenkomt of vragen heeft over de Eleventy (11ty) bibliotheek, d
 ## Bijdragen
 
 Bijdragen zijn welkom! Bezoek de [GitHub-repository](https://github.com/FastComments/fastcomments-11ty) voor richtlijnen voor bijdragen.
-
----

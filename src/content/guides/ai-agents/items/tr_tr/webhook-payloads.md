@@ -173,5 +173,3 @@ Her teslimat şunları içerir:
 ### Kararlılık
 
 Zarf alanları ve olay başına belgelenmiş `data` alanları genel sözleşmenin bir parçasıdır. Mevcut payload'lara yeni isteğe bağlı alanlar eklemek izinlidir ve kırıcı bir değişiklik olarak kabul edilmez - tüketiciniz bilinmeyen alanları yoksaymalıdır. `args` ve `contextSnapshot` şekli sözleşmenin bir parçası **değildir**.
-
----

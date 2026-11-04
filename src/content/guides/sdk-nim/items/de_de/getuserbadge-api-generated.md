@@ -1,4 +1,3 @@
----
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
@@ -22,5 +21,3 @@ else:
   echo "No badge found"
 echo httpResp.statusCode
 [inline-code-end]
-
----

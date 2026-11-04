@@ -1,4 +1,3 @@
----
 #### Sakai
 
 Sakai 在支持 LTI Advantage 的发布版本中支持 LTI 1.3 动态注册。从 **管理工作区** 开始：
@@ -28,5 +27,3 @@ Schoology Enterprise 实例支持 LTI 1.3，但动态注册的可用性因部署
 任何遵循 IMS LTI 1.3 Advantage 规范的 LMS 都应能使用相同的注册 URL (<a href="https://fastcomments.com/auth/my-account/lti-config" target="_blank">在此获取</a>)。请查找标有 "Dynamic Registration", "Tool Registration URL", "Tool initiation registration endpoint", 或类似名称的设置。
 
 如果您的平台仅支持手动 LTI 1.3 设置，请使用上文 Schoology 部分列出的四个端点并联系支持以完成配置。
-
----

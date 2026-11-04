@@ -39,5 +39,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Odgovor iz `ModerationAPI.GetCommentBanStatus`: %v\n", resp)
 }
 [inline-code-end]
-
----

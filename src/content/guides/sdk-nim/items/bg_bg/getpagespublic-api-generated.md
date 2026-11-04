@@ -1,15 +1,15 @@
-List pages for a tenant. Used by the FChat desktop client to populate its room list.
-Requires `enableFChat` to be true on the resolved custom config for each page.
-Pages that require SSO are filtered against the requesting user's group access.
+Списъци с страници за наемател. Използва се от FChat десктоп клиента за попълване на списъка му със стаи.
+Изисква `enableFChat` да е true в резолвнатата персонализирана конфигурация за всяка страница.
+Страниците, изискващи SSO, се филтрират спрямо груповия достъп на заявяващия потребител.
 
-## Parameters
+## Параметри
 
-| Име | Тип | Задължително | Описание |
+| Име | Тип | Задължителен | Описание |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | options | GetPagesPublicOptions | Не |  |
 
-## Response
+## Отговор
 
 Връща: [`Option[GetPublicPagesResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_public_pages_response.nim)
 

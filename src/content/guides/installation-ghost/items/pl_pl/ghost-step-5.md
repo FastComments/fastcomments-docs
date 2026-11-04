@@ -65,5 +65,3 @@ Gdy będziesz gotowy, skopiuj kod widżetu FastComments.com:
 </div>
 
 Kodowanie zakończone. Teraz musimy tylko ponownie zaimportować nasz motyw!
-
----

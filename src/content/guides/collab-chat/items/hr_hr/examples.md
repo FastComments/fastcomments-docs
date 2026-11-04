@@ -178,5 +178,3 @@ Možete inicijalizirati Collab Chat na više zasebnih odjeljaka vaše stranice. 
     });
 </script>
 [inline-code-end]
-
----

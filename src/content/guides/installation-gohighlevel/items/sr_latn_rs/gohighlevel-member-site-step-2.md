@@ -1,4 +1,3 @@
----
 Zatim treba da otvorimo `Advanced` podešavanja:
 
 <div class="screenshot white-bg">
@@ -7,5 +6,3 @@ Zatim treba da otvorimo `Advanced` podešavanja:
 </div>
 
 Dodaćemo naš kod u sekciju `Tracking Code`. Idite u tu sekciju i kliknite `Footer Code`.
-
----

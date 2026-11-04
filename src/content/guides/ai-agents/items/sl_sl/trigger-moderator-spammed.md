@@ -15,5 +15,3 @@ Sproži se, ko moderator označi komentar kot spam.
 - **Zabeležitev spomina** - naj agent shrani opombo v spomin o spamanem uporabniku (npr. "prej označen kot spam za X s strani moderatorja"), da bodo prihodnji moderatorski agenti imeli kontekst.
 - **Uveljavljanje na ravni uporabnika** - moderator, ki označi komentar kot spam, je lahko signal agentu, da izda opozorilo ali kratkotrajno prepoved, pod pogojem odobritve.
 - **Zrcaljenje v zunanji sistem** preko [Webhooks](#webhooks-overview).
-
----

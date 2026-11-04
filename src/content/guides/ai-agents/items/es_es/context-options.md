@@ -1,65 +1,65 @@
-La sección **Context** en el formulario de edición controla cuánta información recibe el agente en cada ejecución. Más contexto produce mejores decisiones pero aumenta el coste en tokens por ejecución, así que solo quieres lo que el agente realmente necesita.
+La sección **Context** del formulario de edición controla cuánta información recibe el agente en cada ejecución. Más contexto produce mejores decisiones pero aumenta el coste de tokens por ejecución, por lo que solo quieres lo que el agente realmente necesita.
 
-### What's always included
+### Qué se incluye siempre
 
 Incluso con todas las casillas desmarcadas, el mensaje de contexto del agente incluye:
 
 - El **tipo de evento desencadenante** (por ejemplo, `COMMENT_ADD`, `COMMENT_FLAG_THRESHOLD`).
-- La **URL de la página y el ID de la URL** (cuando se conoce).
-- El **comentario** que desencadenó la ejecución, si lo hay - ID, author user ID, author display name, comment text, vote counts, flag count, spam/approved/reviewed flags, parent ID. El correo electrónico del autor **nunca** se envía al proveedor de LLM (minimización de PII).
-- El **texto del comentario previo** para los desencadenantes `COMMENT_EDIT` (para que el agente pueda comparar antes/después).
+- La **URL de la página y el URL ID** (cuando se conocen).
+- El **comentario** que desencadenó la ejecución, si existe - ID, ID de usuario del autor, nombre visible del autor, texto del comentario, recuentos de votos, recuento de marcas, marcas de spam/aprobado/revisado, ID del padre. El correo electrónico del autor **nunca** se envía al proveedor de LLM (minimización de PII).
+- El **texto del comentario anterior** para los desencadenantes `COMMENT_EDIT` (para que el agente pueda comparar antes/después).
 - La **dirección del voto** para los desencadenantes `COMMENT_VOTE_THRESHOLD`.
-- El **ID del usuario que desencadenó** y el **ID de la insignia** (para desencadenantes de insignias de moderador).
-- El **catálogo de insignias** de tu tenant (name, display label, description) cuando al agente se le permite otorgar insignias, para que pueda elegir una apropiada sin que tengas que listar las insignias en el prompt.
+- El **ID del usuario desencadenante** y el **badge ID** (para desencadenantes de badges de moderador).
+- El **catálogo de badges** de tu tenant (nombre, etiqueta visible, descripción) cuando se permite al agente otorgar badges, para que el agente pueda elegir uno apropiado sin que tengas que detallar los badges en el prompt.
 
-Todo texto no confiable - cuerpos de comentarios, nombres de autores, títulos de páginas, el propio documento de directrices - está **encerrado** en el mensaje de contexto con marcadores como `<<<COMMENT_TEXT>>> ... <<<END>>>`. El prompt del sistema de la plataforma instruye al modelo a no seguir jamás instrucciones dentro de esos cercos. Esta es la defensa contra inyección de prompt de la plataforma; no necesitas repetirla en tu prompt.
+Todo el texto no confiable - cuerpos de comentarios, nombres de autores, títulos de páginas, el propio documento de directrices - está **delimitado** en el mensaje de contexto con marcadores como `<<<COMMENT_TEXT>>> ... <<<END>>>`. El system prompt de la plataforma instruye al modelo para que nunca siga instrucciones dentro de esos delimitadores. Esta es la defensa contra la inyección de prompts de la plataforma; no necesitas repetirla en tu prompt.
 
-### The three checkboxes
+### Las tres casillas
 
-#### Include parent comment and prior replies in the same thread
+#### Incluir el comentario padre y las respuestas previas del mismo hilo
 
-Agrega:
-- El **comentario padre** - ID, author, text.
-- **Respuestas hermanas** - las respuestas anteriores al mismo padre en el mismo hilo.
+Añade:
+- El **comentario padre** - ID, autor, texto.
+- **Respuestas hermanas** - las respuestas previas al mismo padre en el mismo hilo.
 
-Útil para: cualquier agente que responda a un comentario en contexto (saludadores de bienvenida, resumidores de hilos, moderadores que leen respuestas en conversaciones).
+Útil para: cualquier agente que responda a un comentario en contexto (saludos de bienvenida, resumidores de hilos, moderadores que leen respuestas en conversaciones).
 
-Coste: pequeño a medio. Limitado por cuántos hermanos existan en un hilo dado.
+Coste: pequeño a medio. Limitado por cuántas respuestas hermanas existan en un hilo determinado.
 
-#### Include commenter's trust factor, account age, ban history, and recent comments
+#### Incluir el factor de confianza del comentarista, la antigüedad de la cuenta, el historial de baneos y los comentarios recientes
 
-Agrega el bloque **AUTHOR_HISTORY**:
+Añade el bloque **AUTHOR_HISTORY**:
 
 - **Antigüedad de la cuenta en días** desde el registro.
-- **Trust factor (0-100)** - la puntuación de FastComments que resume cuánto se confía en el usuario en este sitio. Véase la página [Detección de spam](/guide-moderation.html#spam-detection) en la guía de moderación.
-- **Recuento previo de baneos.**
+- **Factor de confianza (0-100)** - la puntuación de FastComments que resume cuán confiable es el usuario en este sitio. Consulta la página [Spam Detection](/guide-moderation.html#spam-detection) en la guía de moderación.
+- **Recuento de baneos previos.**
 - **Total de comentarios en este sitio.**
 - **Recuento de contenido duplicado** - si el usuario ha publicado texto idéntico recientemente (señal anti-spam).
-- **Señal de cuentas cruzadas por la misma IP** - recuento de comentarios desde la misma IP bajo otras cuentas (señal de cuentas alternativas). El hash de la IP nunca se envía al LLM.
-- **Comentarios recientes** - hasta 5 de los comentarios más recientes del usuario, cada uno truncado a 300 caracteres, encuadrados como texto no confiable.
+- **Señal de cuentas cruzadas por misma IP** - recuento de comentarios desde la misma IP bajo otras cuentas (señal de cuentas alternativas). El hash de la IP en sí nunca se envía al LLM.
+- **Comentarios recientes** - hasta 5 de los comentarios más recientes del usuario, cada uno truncado a 300 caracteres, delimitados como texto no confiable.
 
-Útil para: cualquier agente de moderación. Sin esto, el modelo banea cuentas nuevas y usuarios de buena fe de largo tiempo con la misma postura.
+Útil para: cualquier agente de moderación. Sin esto, el modelo banea cuentas nuevas y usuarios antiguos de buena fe con la misma postura.
 
 Coste: medio. Los comentarios recientes añaden la mayor cantidad de tokens.
 
-#### Include page title, subtitle, description, and meta tags
+#### Incluir el título de la página, subtítulo, descripción y meta tags
 
-Agrega el bloque **PAGE_CONTEXT** - title, subtitle, description, y cualquier meta tag que FastComments haya capturado para la página.
+Añade el bloque **PAGE_CONTEXT** - título, subtítulo, descripción y cualquier meta tag que FastComments haya capturado para la página.
 
-Útil para: saludadores de bienvenida y resumidores de hilos, donde saber de qué trata la página mejora sustancialmente la calidad de la salida.
+Útil para: saludos de bienvenida y resumidores de hilos, donde saber de qué trata la página mejora sustancialmente la calidad de la salida.
 
 Coste: pequeño.
 
-### Community guidelines
+### Directrices de la comunidad
 
-El cuarto campo, **Community guidelines**, es un bloque de políticas de texto libre incluido en el mensaje de contexto con rol de usuario en cada ejecución, encerrado como texto no confiable de la misma manera que los cuerpos de comentarios y otros contenidos proporcionados por el usuario. El agente lo lee como texto de política pero la plataforma no lo trata como una instrucción del sistema. Véase [Community Guidelines](#community-guidelines) para qué poner en él.
+El cuarto campo, **Community guidelines**, es un bloque de política de texto libre incluido en el mensaje de contexto de rol de usuario en cada ejecución, delimitado como texto no confiable de la misma manera que se delimitan los cuerpos de comentarios y otros contenidos proporcionados por el usuario. El agente lo lee como texto de política, pero la plataforma no lo trata como una instrucción de sistema. Consulta [Community Guidelines](#community-guidelines) para saber qué incluir en él.
 
-### Adding context selectively
+### Añadir contexto de forma selectiva
 
 Estas casillas se aplican por agente, no globalmente. Un patrón común:
 
-- Saludador de bienvenida: page context **on**, thread context **off**, user history **off**.
-- Moderador: thread context **off**, user history **on**, page context **off**.
-- Resumidor de hilos: thread context **on**, page context **on**, user history **off**.
+- Saludo de bienvenida: contexto de página **activado**, contexto de hilo **desactivado**, historial de usuario **desactivado**.
+- Moderador: contexto de hilo **desactivado**, historial de usuario **activado**, contexto de página **desactivado**.
+- Resumidor de hilos: contexto de hilo **activado**, contexto de página **activado**, historial de usuario **desactivado**.
 
-Busca el contexto mínimo que un agente necesita para ser correcto en las llamadas que realmente hace: el contexto extra cuesta tokens en cada ejecución, incluso cuando el agente no lo usa.
+Recurre al contexto mínimo que un agente necesita para ser correcto en las llamadas que realmente realiza - el contexto extra cuesta tokens en cada ejecución, incluso cuando el agente no lo usa.

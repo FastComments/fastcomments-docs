@@ -1,6 +1,6 @@
 [related-parameter-start name = 'sso'; type = 'FastCommentsSSO'; typeLink = 'https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts#L1' related-parameter-end]
 
-FastComments Secure SSO utilizza la cifratura HMAC-SHA256 come meccanismo per implementare SSO. Prima descriveremo l'architettura generale, forniremo esempi e passi dettagliati.
+FastComments Secure SSO utilizza la crittografia HMAC-SHA256 come meccanismo per implementare l'SSO. Prima illustreremo l'architettura complessiva, forniremo esempi e passaggi dettagliati.
 
 Esiste anche della documentazione riguardante la migrazione da altri provider con meccanismi SSO simili, e le differenze.
 
@@ -11,81 +11,81 @@ Il flusso è il seguente:
     <img class="screenshot-image" src="/images/secure-sso-diagram.svg" alt="Diagramma Secure SSO" />
 </div>
 
-Poiché Secure SSO coinvolge sviluppo full-stack, esempi di codice funzionanti completi in Java/Spring, NodeJS/Express e PHP vanilla sono attualmente <a href="https://github.com/FastComments/fastcomments-code-examples/tree/master/sso" target="_blank">su GitHub</a>.
+Poiché Secure SSO coinvolge lo sviluppo full-stack, esempi di codice completi e funzionanti in Java/Spring, NodeJS/Express e PHP vanilla sono attualmente disponibili <a href="https://github.com/FastComments/fastcomments-code-examples/tree/master/sso" target="_blank">su GitHub</a>.
 
-Sebbene utilizziamo ExpressJS nell'esempio NodeJS e Spring nell'esempio Java, non sono necessari framework/librerie in questi runtime per implementare FastComments SSO - funzionano i pacchetti crypto nativi.
+Sebbene utilizziamo ExpressJS nell'esempio NodeJS e Spring nell'esempio Java, non sono richiesti framework/librerie in questi runtime per implementare FastComments SSO - i pacchetti crypto nativi funzionano.
 
-Non è necessario scrivere nuovi endpoint API con FastComments SSO. Basta crittografare le informazioni dell'utente usando la tua chiave segreta e passare il payload al widget dei commenti.
+Non devi scrivere nuovi endpoint API con FastComments SSO. Crittografa semplicemente le informazioni dell'utente utilizzando la tua chiave segreta e passa il payload al widget dei commenti.
 
-#### Ottieni la tua chiave segreta API
+#### Ottieni la Tua Chiave Segreta API
 
-La tua API Secret può essere recuperata da <a href="https://fastcomments.com/auth/my-account/api-secret" target="_blank">questa pagina</a>. Puoi trovare questa pagina anche andando su My Account, cliccando il riquadro API/SSO, e poi cliccando "Get API Secret Key".
+La tua chiave segreta API può essere recuperata da <a href="https://fastcomments.com/auth/my-account/api-secret" target="_blank">questa pagina</a>. Puoi trovare questa pagina anche andando su Il Mio Account, cliccando sul riquadro API/SSO e poi cliccando su "Get API Secret Key".
 
-#### Parametri del widget dei commenti
+#### Parametri del Widget dei Commenti
 
-La documentazione API di alto livello per il widget dei commenti può essere trovata <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts#L1" target="_blank">qui</a>.
+La documentazione API di alto livello per il widget dei commenti si trova <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts#L1" target="_blank">qui</a>.
 
-Entriamo più in dettaglio su cosa significano questi parametri.
+Entriamo più nel dettaglio sul significato di questi parametri.
 
-Il widget dei commenti prende un oggetto di configurazione - lo passi già se stai usando FastComments per fornire il tuo customer id (chiamato tenantId).
+Il widget dei commenti accetta un oggetto di configurazione - lo stai già passando se stai utilizzando FastComments per passare il tuo id cliente (chiamato tenantId).
 
-Per abilitare SSO, passa un nuovo oggetto "sso", che deve avere i seguenti parametri. I valori dovrebbero essere generati lato server.
+Per abilitare l'SSO, passa un nuovo oggetto "sso", che deve avere i seguenti parametri. I valori devono essere generati lato server.
 
-- userDataJSONBase64: I dati dell'utente in formato JSON, poi codificati in Base64.
+- userDataJSONBase64: I dati dell'utente in formato JSON, codificati poi in Base64.
 - verificationHash: L'hash HMAC-SHA256 creato da UNIX_TIME_MILLIS + userDataJSONBase64.
-- timestamp: Timestamp epoch, in **millisecondi**. Non deve essere nel futuro, né più di due giorni nel passato.
-- loginURL: Un URL che il widget dei commenti può mostrare per effettuare il login dell'utente.
-- logoutURL: Un URL che il widget dei commenti può mostrare per effettuare il logout dell'utente.
-- loginCallback: Quando fornito al posto del login URL, una funzione che il widget dei commenti invocherà quando si clicca il pulsante di login.
-- logoutCallback: Quando fornito al posto del logout URL, una funzione che il widget dei commenti invocherà quando si clicca il pulsante di logout.
+- timestamp: Timestamp epoch, in **millisecondi**. Non deve essere nel futuro, né più vecchio di due giorni.
+- loginURL: Un URL che il widget dei commenti può mostrare per far accedere l'utente.
+- logoutURL: Un URL che il widget dei commenti può mostrare per far disconnettere l'utente.
+- loginCallback: Quando fornito al posto dell'URL di login, una funzione che il widget dei commenti invocherà al clic sul pulsante di login.
+- logoutCallback: Quando fornito al posto dell'URL di logout, una funzione che il widget dei commenti invocherà al clic sul pulsante di logout.
 
-[code-example-start config = {sso: { userDataJSONBase64: '...', verificationHash: '...', timestamp: Date.now(), loginURL: 'https://example.com/login', logoutURL: 'https://example.com/logout', loginCallback: function() { console.log('Log the user in here...'); }, logoutCallback: function() { console.log('Log the user out here...') } }}; linesToHighlight = [6, 7, 8, 9, 10, 11, 12]; title = 'Secure SSO Client Code'; isFunctional = false; code-example-end]
+[code-example-start config = {sso: { userDataJSONBase64: '...', verificationHash: '...', timestamp: Date.now(), loginURL: 'https://example.com/login', logoutURL: 'https://example.com/logout', loginCallback: function() { console.log('Log the user in here...'); }, logoutCallback: function() { console.log('Log the user out here...') } }}; linesToHighlight = [6, 7, 8, 9, 10, 11, 12]; title = 'Codice Client Secure SSO'; isFunctional = false; code-example-end]
 
-#### The User Object
+#### L'Oggetto Utente
 
-The User object contains the following schema:
-[inline-code-attrs-start title = 'Oggetto utente'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+L'oggetto Utente contiene il seguente schema:
+[inline-code-attrs-start title = 'L\'Oggetto Utente'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface SSOUser {
-    /** Obbligatorio. Massimo 1k caratteri. **/
+    /** Required. 1k Characters Max. **/
     id: string;
-    /** Obbligatorio. Massimo 1k caratteri. Nota: Deve essere univoco. **/
+    /** Required. 1k Characters Max. Note: Must be unique. **/
     email: string;
-    /** Obbligatorio. Massimo 1k caratteri. Nota: Lo username non può essere una email. Non deve essere unico. **/
+    /** Required. 1k Characters Max. Note: The username cannot be an email. Does not have to be unique. **/
     username: string;
-    /** Facoltativo. Massimo 3k caratteri per URL. Predefinito: da gravatar basato sull'email. Supporta immagini codificate in base64, nel qual caso il limite è 50k caratteri. **/ 
+    /** Optional. 3k Characters Max for URLs. Default is from gravatar based on email. Supports 64 encoded images, in which case the limit is 50k characters. **/ 
     avatar?: string;
-    /** Facoltativo. Predefinito false. **/
+    /** Optional. Default false. **/
     optedInNotifications?: boolean;
-    /** Facoltativo. Predefinito false. **/
+    /** Optional. Default false. **/
     optedInSubscriptionNotifications?: boolean;
-    /** Facoltativo. Massimo 100 caratteri. Questa etichetta sarà mostrata accanto al loro nome. Predefinito: Amministratore/Moderatore quando applicabile. **/
+    /** Optional. 100 Characters Max. This label will be shown next to their name. Default is Administrator/Moderator when applicable. **/
     displayLabel?: string;
-    /** Facoltativo. Massimo 500 caratteri. Questo sarà mostrato al posto dello username. **/
+    /** Optional. 500 Characters Max. This will be shown instead of the username. **/
     displayName?: string;
-    /** Facoltativo. Massimo 2k caratteri. Il nome dell'utente punterà a questo URL. **/
+    /** Optional. 2k Characters Max. The user's name will link to this. **/
     websiteUrl?: string;
-    /** Facoltativo. Fino a 100 gruppi per utente. Un id del gruppo non può essere più lungo di 50 caratteri. **/
+    /** Optional. Up to 100 groups per user. A group id may not be longer than 50 characters. **/
     groupIds?: string[];
-    /** Facoltativo. Indica che l'utente è amministratore. **/
+    /** Optional. Denotes the user as an administrator. **/
     isAdmin?: boolean;
-    /** Facoltativo. Indica che l'utente è moderatore. **/
+    /** Optional. Denotes the user as a moderator. **/
     isModerator?: boolean;
-    /** Facoltativo, predefinito true. Impostare a false per abilitare la scheda "activity" nel profilo dell'utente. **/
+    /** Optional, default true. Set to false to enable the "activity" tab in the user's profile. **/
     isProfileActivityPrivate?: boolean;
-    /** Facoltativo, predefinito false. Impostare a true per disabilitare i commenti del profilo. **/
+    /** Optional, default false. Set to true to disable profile comments. **/
     isProfileCommentsPrivate?: boolean;
-    /** Facoltativo, predefinito false. Impostare a true per disabilitare i messaggi diretti a questo utente. **/
+    /** Optional, default false. Set to true to disable direct messaging this user. **/
     isProfileDMDisabled?: boolean;
-    /** Configurazione facoltativa per i badge utente. **/
+    /** Optional configuration for user badges. **/
     badgeConfig?: {
-        /** Array di ID badge globali da assegnare. Limitato a 30 badge. L'ordine è rispettato. **/
+        /** Array of global badge IDs to assign. Limited to 30 badges. Order is respected. **/
         badgeIds: string[];
-        /** Array di ID badge con scope alla pagina corrente (urlId). Visualizzati solo nella pagina assegnata. **/
+        /** Array of badge IDs scoped to the current page (urlId). Only displayed on the assigned page. **/
         pageBadgeIds?: string[];
-        /** Se true, sostituisce i badge già visualizzati. I badge globali e quelli a livello di pagina vengono sovrascritti indipendentemente. **/
+        /** If true, replaces existing displayed badges. Global and page-scoped are overridden independently. **/
         override?: boolean;
-        /** Se true, aggiorna le proprietà di visualizzazione dei badge dalla configurazione del tenant. **/
+        /** If true, updates badge display properties from tenant configuration. **/
         update?: boolean;
     };
 }
@@ -97,22 +97,22 @@ Per amministratori e moderatori, passa i rispettivi flag `isAdmin` o `isModerato
 
 #### Notifiche
 
-Per abilitare o disabilitare le notifiche, imposta il valore di `optedInNotifications` su `true` o `false` rispettivamente. La prima volta che l'utente carica la pagina con questo valore nel payload SSO, le sue impostazioni di notifica saranno aggiornate.
+Per abilitare o disabilitare le notifiche, imposta il valore di `optedInNotifications` rispettivamente su `true` o `false`. La prima volta che l'utente carica la pagina con questo valore nel payload SSO, le sue impostazioni di notifica verranno aggiornate.
 
-Inoltre, se vuoi che gli utenti ricevano email di notifica per attività sulle pagine a cui si sono iscritti (anziché solo notifiche in-app), imposta `optedInSubscriptionNotifications` su `true`.
+Inoltre, se vuoi che gli utenti ricevano email di notifica per l'attività sulle pagine a cui si sono iscritti (in contrapposizione alle sole notifiche in-app), imposta `optedInSubscriptionNotifications` su `true`.
 
-#### Utenti VIP e etichette speciali
+#### Utenti VIP ed Etichette Speciali
 
-Puoi mostrare un'etichetta speciale accanto al nome dell'utente usando il campo opzionale "displayLabel".
+Puoi visualizzare un'etichetta speciale accanto al nome dell'utente utilizzando il campo opzionale "displayLabel".
 
 #### Utenti non autenticati
 
 Per rappresentare un utente non autenticato, semplicemente non popolare userDataJSONBase64, verificationHash o timestamp. Fornisci un loginURL.
 
-Questi utenti non potranno commentare e invece verranno presentati con un messaggio di login (messaggio, link o pulsante, a seconda della configurazione).
+Questi utenti non potranno commentare, e invece verrà mostrato loro un messaggio di login (messaggio, link o pulsante, a seconda della configurazione).
 
-#### Esempi diretti per serializzare e calcolare l'hash dei dati utente
+#### Esempi Diretti per la Serializzazione e l'Hashing dei Dati Utente
 
-Ulteriori dettagli ed esempi sono disponibili <a href="https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/node-express/routes/index.js#L23" target="_blank">qui</a> (js), <a href="https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/java-springboot/src/main/java/com/winricklabs/ssodemo/DemoController.java#L68" target="_blank">qui</a> (java) e <a href="https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/php/server.php#L27" target="_blank">qui</a> (php).
+Maggiori dettagli come esempio <a href="https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/node-express/routes/index.js#L23" target="_blank">qui</a> (js), <a href="https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/java-springboot/src/main/java/com/winricklabs/ssodemo/DemoController.java#L68" target="_blank">qui</a> (java) e <a href="https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/php/server.php#L27" target="_blank">qui</a> (php).
 
 Comprendiamo che qualsiasi integrazione può essere un processo complicato e doloroso. Non esitare a contattare il tuo referente o a utilizzare la <a href="https://fastcomments.com/auth/my-account/help" target="_blank">pagina di supporto</a>.

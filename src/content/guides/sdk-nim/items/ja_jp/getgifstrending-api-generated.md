@@ -1,4 +1,3 @@
----
 ## パラメータ
 
 | 名前 | 型 | 必須 | 説明 |
@@ -23,5 +22,3 @@ if maybeResponse.isSome:
   let gifs = maybeResponse.get()
   echo gifs
 [inline-code-end]
-
----

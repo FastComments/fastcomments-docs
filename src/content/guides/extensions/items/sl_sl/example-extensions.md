@@ -1,4 +1,3 @@
----
 Pri FastComments pišemo naše razširitve, ki uporabljajo isti API. Kodo brez minifikacije za te razširitve si lahko ogledate na naslednjih končnih točkah:
 
 #### Temni način
@@ -20,5 +19,3 @@ https://fastcomments.com/js/comment-ui/extensions/comment-ui.moderation.extensio
 Razširitev Klepet v živo (v kombinaciji z drugo konfiguracijo in stiliranjem) spremeni vtičnik za komentarje v komponento za klepet v živo.
 
 https://fastcomments.com/js/comment-ui/extensions/live-chat.extension.js
-
----

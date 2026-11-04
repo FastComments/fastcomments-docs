@@ -1,4 +1,3 @@
----
 [api-resource-header-start name = 'HashTag'; route = 'GET /api/v1/hash-tags'; creditsCost = 1; api-resource-header-end]
 
 To API uporablja straničenje, ki ga zagotavlja poizvedni parameter `page`. Hashtagi se vrnejo v straneh po `100`, urejeni po `tag`.
@@ -31,5 +30,3 @@ interface HashTagsResponse {
     hashTags: HashTag[]
 }
 [inline-code-end]
-
----

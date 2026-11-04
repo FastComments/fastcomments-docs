@@ -47,5 +47,3 @@ você definir um username via API, mas então enviar um diferente através do fl
 automaticamente o username deles.
 
 Não atualizaremos parâmetros do usuário nesse fluxo a menos que você os especifique explicitamente ou os defina como null (não undefined).
-
----

@@ -1,21 +1,21 @@
-A **FastComments - Recent Comments** block mostra os comentários mais recentes de toda a sua loja. Use-o para mostrar atividade recente em uma barra lateral, rodapé ou seção da página inicial.
+O bloco **FastComments - Recent Comments** exibe os comentários mais recentes de toda a sua loja. Use-o para mostrar atividade recente em uma barra lateral, rodapé ou seção da página inicial.
 
-### Add the block
+### Adicionar o bloco
 
-1. Abra o editor de temas do Shopify.
-2. Abra o template onde você quer o feed. Uma seção da barra lateral, a página inicial ou o índice do blog funcionam bem.
+1. Abra o editor de temas da Shopify.
+2. Abra o template onde deseja exibir o feed. Uma seção de barra lateral, a página inicial ou o índice do blog funcionam bem.
 3. Clique em **Add block** na seção que deve contê-lo.
 4. Em **Apps**, selecione **FastComments - Recent Comments**.
 5. Clique em **Save**.
 
-### Settings
+### Configurações
 
-| Setting | What it does | Default |
+| Configuração | O que faz | Padrão |
 |---|---|---|
-| Tenant ID (optional) | Substitui de qual tenant do FastComments o feed lê. Deixe em branco para usar o tenant configurado automaticamente pela loja. | (em branco) |
-| Number of comments | Quantos comentários recentes mostrar. Intervalo de 1 a 50. | 5 |
+| Tenant ID (opcional) | Substitui de qual tenant do FastComments o feed lê. Deixe em branco para usar o tenant configurado automaticamente da loja. | (em branco) |
+| Number of comments | Quantos comentários recentes exibir. Faixa de 1 a 50. | 5 |
 
-### Tips
+### Dicas
 
-- Cada comentário faz link para a página onde foi publicado, então o bloco funciona também como uma dica de navegação de “sobre o que as pessoas estão falando agora”.
-- O feed abrange toda a loja. Para mostrar comentários recentes de uma única página, use o bloco **FastComments** nessa página em vez disso.
+- Cada comentário contém um link para a página onde foi postado, então o bloco também funciona como uma dica de navegação do tipo "sobre o que as pessoas estão falando agora".
+- O feed abrange toda a loja. Para exibir comentários recentes de uma única página, use o bloco **FastComments** nessa página.

@@ -200,5 +200,3 @@ Fehlerantworten enthalten einen JSON-Body mit Details:
 ### Nutzungsverfolgung
 
 Das Erstellen von Konversationen erhöht Ihre Nutzungsmetrik `conversationCreateCount`. Alle WebSocket-Synchronisationsaktivitäten erhöhen `pubSubMessageCount` und `pubSubBandwidth`. Sie können diese Metriken in Ihrem FastComments-Dashboard unter Nutzungsanalyse überwachen.
-
----

@@ -24,5 +24,3 @@ if respOpt.isSome:
   let empty = respOpt.get()
   echo "Comment restored"
 [inline-code-end]
-
----

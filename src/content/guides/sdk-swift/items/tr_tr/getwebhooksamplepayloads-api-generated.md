@@ -1,4 +1,3 @@
----
 Webhook teslimlerinin tam olarak kullandığı biçimdeki son yorumlar, entegrasyonlar (örneğin Zapier örnek verileri) oluşturmak için. Her olay aynı yorum nesnesini gönderir, bu yüzden `event` yalnızca geçerli olmalıdır.
 
 ## Parametreler
@@ -35,5 +34,3 @@ DefaultAPI.getWebhookSamplePayloads(tenantId: tenantId, options: DefaultAPI.GetW
     }
 }
 [inline-code-end]
-
----

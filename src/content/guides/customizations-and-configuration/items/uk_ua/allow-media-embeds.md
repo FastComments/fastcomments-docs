@@ -1,13 +1,13 @@
-By default FastComments does not allow iframes in comments. When you enable media embeds, commenters can paste the embed code (the `<iframe>` snippet) from trusted providers like YouTube, Vimeo, SoundCloud, and Spotify, and it will render inline in the comment.
+За замовчуванням FastComments не дозволяє iframes у коментарях. Коли ви увімкнете вбудовування медіа, коментатори можуть вставляти код вбудовування (фрагмент `<iframe>`) від надійних постачальників, таких як YouTube, Vimeo, SoundCloud та Spotify, і він буде відображатися безпосередньо в коментарі.
 
-For security, this is not a client-side widget config flag. It is a server-side setting, validated when each comment is saved, so it cannot be turned on from the page. Only iframes pointing at a built-in list of trusted providers are allowed. Any other iframe is removed.
+З міркувань безпеки це не прапорець конфігурації віджета на стороні клієнта. Це налаштування на стороні сервера, яке перевіряється під час збереження кожного коментаря, тому його неможливо увімкнути зі сторінки. Дозволяються лише iframes, що вказують на вбудований список надійних постачальників. Будь-який інший iframe видаляється.
 
-This is done without code, on the widget customization page:
+Це робиться без коду, на сторінці налаштування віджета:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.allow-embeds'; selector = '.allow-embeds'; alt='Налаштування вбудовування медіа увімкнено на сторінці налаштування віджету, дозволяючи коментаторам вставляти довірені iframe вбудовування'; title='Дозволити медіа вбудовування' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.allow-embeds'; selector = '.allow-embeds'; alt='Налаштування вбудовування медіа увімкнено на сторінці налаштування віджета, що дозволяє коментаторам вставляти надійні iframe-вбудовування'; title='Дозволити вбудовування медіа' app-screenshot-end]
 
-### Додавання власних провайдерів
+### Додавання власних постачальників
 
-If you want to allow embeds from a provider that is not on the built-in trusted list, add its hostname in the "Додаткові домени вбудовування" field on the same page. These hostnames are allowed in addition to the built-in providers. Matching is exact, so include the full hostname (for example, player.example.com). Anything you do not list stays blocked.
+Якщо ви хочете дозволити вбудовування від постачальника, якого немає у вбудованому списку надійних, додайте його ім'я хоста у поле "Additional Embed Domains" на тій самій сторінці. Ці імена хостів дозволяються на додаток до вбудованих постачальників. Збіг є точним, тому вказуйте повне ім'я хоста (наприклад, player.example.com). Все, що ви не вкажете, залишається заблокованим.
 
-Both the plain comment box and the WYSIWYG editor support pasting an embed. In the WYSIWYG editor the embed is inserted as a removable block.
+Як звичайне поле коментаря, так і WYSIWYG-редактор підтримують вставку вбудовування. У WYSIWYG-редакторі вбудовування вставляється як блок, який можна видалити.

@@ -6,5 +6,3 @@ To wszystko! Na Twojej stronie GoHighLevel powinno być teraz dostępne komentow
 </div>
 
 Jeśli napotkałeś błąd 'permission denied', lub chcesz dostosować FastComments, czytaj dalej.
-
----

@@ -1,25 +1,25 @@
-The **FastComments - Recent Discussions** block lists the pages on your store with the most recent comment activity, one entry per page. Use it when you want visitors to discover active threads rather than individual comments.
+Блок **FastComments - Recent Discussions** показує сторінки вашого магазину з найновішою активністю коментарів, по одному запису на сторінку. Використовуйте його, коли хочете, щоб відвідувачі знаходили активні обговорення, а не окремі коментарі.
 
-### Додати блок
+### Додавання блоку
 
 1. Відкрийте редактор теми Shopify.
-2. Відкрийте шаблон, куди хочете додати стрічку, наприклад бічну панель, футер, індекс блогу або секцію на головній сторінці.
-3. Клацніть **Add block** в секції, яка має його містити.
-4. У розділі **Apps** оберіть **FastComments - Recent Discussions**.
-5. Клацніть **Save**.
+2. Відкрийте шаблон, куди хочете додати стрічку, наприклад бічну панель, футер, індекс блогу або секцію головної сторінки.
+3. Натисніть **Add block** у секції, яка має містити блок.
+4. У розділі **Apps** виберіть **FastComments - Recent Discussions**.
+5. Натисніть **Save**.
 
 ### Налаштування
 
 | Налаштування | Що робить | За замовчуванням |
 |---|---|---|
-| Tenant ID (optional) | Перевизначає, з якого FastComments tenant читається стрічка. Залиште порожнім, щоб використовувати tenant, автоматично налаштований для магазину. | (blank) |
-| Number of comments | Скільки нещодавніх обговорень показати. Діапазон від 1 до 50. | 20 |
+| Tenant ID (необов'язково) | Перевизначає, з якого орендаря FastComments стрічка читає дані. Залиште порожнім, щоб використовувати автоматично налаштованого орендаря магазину. | (порожньо) |
+| Number of comments | Скільки останніх обговорень показувати. Діапазон від 1 до 50. | 20 |
 
 ### Recent Discussions vs Recent Comments
 
-Both blocks pull from the same data, but they show different views:
+Обидва блоки беруть дані з одного джерела, але показують різні подання:
 
-- **Recent Comments**: a flat list of the latest individual comments. Best for "what was just said".
-- **Recent Discussions**: one entry per page, ordered by most recent activity. Best for "which threads are alive right now".
+- **Recent Comments**: плоский список останніх окремих коментарів. Найкраще підходить для «що щойно сказали».
+- **Recent Discussions**: один запис на сторінку, упорядкований за останньою активністю. Найкраще підходить для «які обговорення зараз активні».
 
-You can use both on the same store. For example, Recent Comments in the blog sidebar and Recent Discussions on the home page.
+Ви можете використовувати обидва блоки в одному магазині. Наприклад, Recent Comments у бічній панелі блогу, а Recent Discussions на головній сторінці.

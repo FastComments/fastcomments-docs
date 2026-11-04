@@ -21,5 +21,3 @@ const fromName: string = "Alice Johnson";
 const result: APIEmptyResponse = await sendInvite(tenantId, id, fromName);
 console.log(result);
 [inline-code-end]
-
----

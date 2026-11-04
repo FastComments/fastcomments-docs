@@ -1,4 +1,3 @@
----
 Налаштуйте ваш тенант у `settings.py`:
 
 ```python
@@ -16,4 +15,3 @@ FASTCOMMENTS = {
 
 {% fastcomments url_id="my-page" %}
 ```
----

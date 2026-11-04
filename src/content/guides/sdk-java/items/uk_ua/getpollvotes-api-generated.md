@@ -1,25 +1,25 @@
-The individual votes behind one poll's tallies, oldest first.
+Окремі голоси за підсумками одного опитування, від найстаріших.
 
-A poll belongs to a comment, so votes are always read one poll at a time - commentId is required. That
-keeps every query on the indexes the collection already has.
+Опитування належить до коментаря, тому голоси завжди читаються по одному опитуванню за раз — commentId є обов'язковим. Це
+зберігає кожен запит на індексах, які колекція вже має.
 
-Obeys the poll's privacy: an anonymous poll's votes cannot be read (poll-anonymous), here or by id.
+Дотримується конфіденційності опитування: голоси анонімного опитування не можна прочитати (poll-anonymous), ні тут, ні за id.
 
-## Parameters
+## Параметри
 
-| Ім'я | Тип | Розташування | Обов'язково | Опис |
-|------|------|--------------|-------------|------|
-| tenantId | string | query | Yes |  |
-| commentId | string | query | Yes |  |
-| voterId | string | query | No |  |
-| optionId | string | query | No |  |
-| skip | integer | query | No |  |
+| Назва | Тип | Розташування | Обов'язковий | Опис |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Так |  |
+| commentId | string | query | Так |  |
+| voterId | string | query | Ні |  |
+| optionId | string | query | Ні |  |
+| skip | integer | query | Ні |  |
 
-## Response
+## Відповідь
 
-Returns: [`GetPollVotesResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetPollVotesResponse.java)
+Повертає: [`GetPollVotesResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetPollVotesResponse.java)
 
-## Example
+## Приклад
 
 [inline-code-attrs-start title = 'Приклад getPollVotes'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

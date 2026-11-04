@@ -29,5 +29,3 @@ interface NotificationCountDeleteResponse {
     reason?: string
 }
 [inline-code-end]
-
----

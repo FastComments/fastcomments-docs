@@ -82,5 +82,3 @@ Kopirajte sljedeći kod i zalijepite ga u odjeljak `Body` postavki vaše Super.s
 - Svaka stranica dobiva vlastitu jedinstvenu nit komentara zasnovanu na putanji URL-a
 - Pobrinite se zamijeniti `"demo"` svojim stvarnim tenant ID-jem iz FastComments računa
 - Vidžet automatski podržava dinamičko učitavanje stranica Super.so-a
-
----

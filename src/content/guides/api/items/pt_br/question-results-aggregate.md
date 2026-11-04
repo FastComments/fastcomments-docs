@@ -100,5 +100,3 @@ interface QuestionResultsAggregationResponse {
 - Quando `forceRecalculate` é especificado, o custo é sempre `10`, em vez do normal `2`.
 - Se o cache expirar e os dados forem recalculados, o custo ainda será um constante `2` se `forceRecalculate` não estiver especificado. O cache expira com base no tamanho do conjunto de dados agregado (pode variar entre 30 segundos e 5 minutos).
 - Isto é para incentivar o uso do cache.
-
----

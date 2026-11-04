@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Name | Type | Required | Description |
@@ -19,5 +18,3 @@ if tenantResponse.isSome:
   let tenant = tenantResponse.get()
   echo tenant
 [inline-code-end]
-
----

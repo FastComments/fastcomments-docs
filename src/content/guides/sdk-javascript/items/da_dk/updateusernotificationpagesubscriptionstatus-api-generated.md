@@ -1,7 +1,7 @@
-Enable or disable notifications for a page. When users are subscribed to a page, notifications are created
-for new root comments, and also
+Aktivér eller deaktiver notifikationer for en side. Når brugere abonnerer på en side, oprettes notifikationer
+for nye rodkommentarer, og også
 
-## Parameters
+## Parametre
 
 | Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
@@ -12,7 +12,7 @@ for new root comments, and also
 | subscribedOrUnsubscribed | UpdateUserNotificationPageSubscriptionStatusSubscribedOrUnsubscribedEnum | Ja |  |
 | sso | string | Nej |  |
 
-## Response
+## Svar
 
 Returnerer: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/UpdateUserNotificationPageSubscriptionStatusResponse.ts)
 

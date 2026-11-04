@@ -35,5 +35,3 @@ try {
     echo 'Exception when calling ModerationApi->getManualBadges: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

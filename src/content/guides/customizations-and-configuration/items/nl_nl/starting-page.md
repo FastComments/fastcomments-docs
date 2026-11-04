@@ -7,5 +7,3 @@ Indien gewenst kan de exacte pagina die weergegeven moet worden aan de reactie-w
 [code-example-start config = {startingPage: 1}; linesToHighlight = [6]; title = 'Specifying The Page to Render'; code-example-end]
 
 Houd er rekening mee dat paginanummers vanaf nul beginnen, dus het bovenstaande voorbeeld geeft de tweede pagina weer.
-
----

@@ -18,5 +18,3 @@ if ticketsOpt.isSome:
   let tickets = ticketsOpt.get()
   # χρησιμοποιήστε τα εισιτήρια όπως χρειάζεται
 [inline-code-end]
-
----

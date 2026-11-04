@@ -51,5 +51,3 @@ FastComments εφαρμόζει το Άρθρο 17 του EU Digital Services Ac
 
 - [Tool: ban_user](#tool-ban-user) για το τι κάνει το `ban_user` και τις καταστροφικές επιλογές πίσω από επιπλέον opt-ins.
 - [Approval Workflow](#approval-workflow) για ολόκληρο τον κύκλο ζωής της έγκρισης.
-
----

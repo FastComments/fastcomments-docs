@@ -1,4 +1,3 @@
----
 ## Parâmetros
 
 | Nome | Tipo | Obrigatório | Descrição |
@@ -19,5 +18,3 @@ if pkgOpt.isSome:
   let pkg = pkgOpt.get()
   echo pkg
 [inline-code-end]
-
----

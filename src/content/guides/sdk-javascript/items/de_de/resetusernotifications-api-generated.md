@@ -1,4 +1,3 @@
----
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
@@ -37,5 +36,3 @@ Rückgabe: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fa
   console.log(response);
 })();
 [inline-code-end]
-
----

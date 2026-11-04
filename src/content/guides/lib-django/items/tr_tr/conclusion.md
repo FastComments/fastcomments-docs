@@ -8,5 +8,3 @@ Django Paketi ile ilgili herhangi bir sorunla karşılaşırsanız veya sorular�
 ## Katkıda Bulunma
 
 Katkılar memnuniyetle karşılanır! Katkı yönergeleri için lütfen [GitHub deposunu](https://github.com/FastComments/fastcomments-django) ziyaret edin.
-
----

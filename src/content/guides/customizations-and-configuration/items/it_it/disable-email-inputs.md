@@ -1,4 +1,3 @@
----
 Quando gli utenti commentano e non sono autenticati, verrà chiesto loro di fornire l'email.
 
 Questo creerà una "sessione non verificata" per quell'utente e gli chiederemo di verificare la sessione via email.
@@ -15,5 +14,3 @@ Nota che, con questa configurazione, tutti i commenti saranno non verificati a m
 https://fastcomments.com.
 
 Potresti considerare di [disabilitare l'etichetta non verificata](/guide-customizations-and-configuration.html#disable-unverified-label).
-
----

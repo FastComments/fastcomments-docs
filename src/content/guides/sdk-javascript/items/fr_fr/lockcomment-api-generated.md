@@ -1,4 +1,3 @@
----
 ## Paramètres
 
 | Nom | Type | Obligatoire | Description |
@@ -28,5 +27,3 @@ async function demoLockComment() {
 
 demoLockComment();
 [inline-code-end]
-
----

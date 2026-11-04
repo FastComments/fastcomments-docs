@@ -1,4 +1,3 @@
----
 Готово! Тепер ви повинні бачити FastComments Comment Widget на всіх ваших дописах блогу.
 
 <div class="screenshot white-bg">
@@ -7,5 +6,3 @@
 </div>
 
 Вітаємо з налаштуванням FastComments у Squarespace! Якщо ви зіткнулися з Domain Error, або хочете дізнатися, як налаштувати область коментарів, читайте далі!
-
----

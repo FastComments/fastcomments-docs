@@ -1,42 +1,42 @@
-The **FastComments - Sažetak recenzija** blok prikazuje agregirani prikaz ocjene zvjezdicama i raspodjelu recenzija za stranicu. Uparite ga s blokom **FastComments** na predlošcima proizvoda za standardni izgled recenzija: sažetak pri vrhu, obrazac za recenzije i recenzije ispod.
+Blok **FastComments - Reviews Summary** prikazuje agregiranu ocjenu zvjezdicama i pregled recenzija za stranicu. Upotrijebite ga zajedno s blokom **FastComments** na predlošcima proizvoda za standardni raspored recenzija: sažetak gore, obrazac za recenzije i recenzije dolje.
 
-### Preduvjet: postavite Ratings & Reviews
+### Preduvjet: postavite Ocjene i recenzije
 
-Blok Sažetak recenzija prikazuje pitanja o ocjenjivanju koja ste konfigurirali za svoju trgovinu. Prvo ih postavite:
+Blok Reviews Summary prikazuje pitanja za ocjene koja ste konfigurirali za svoju trgovinu. Prvo ih postavite:
 
-1. Otvorite aplikaciju FastComments u svom Shopify administratorskom sučelju.
-2. Kliknite pločicu **Pomoćnik za ocjene i recenzije** (ili otvorite [Pomoćnik za ocjene i recenzije](https://fastcomments.com/auth/my-account/ratings-reviews-helper?source=shopify) izravno).
-3. Dodajte pitanja koja želite da svaki recenzent odgovori (ukupna ocjena zvjezdicama, "kako je pristajalo", itd.).
+1. Otvorite FastComments aplikaciju u svom Shopify adminu.
+2. Kliknite pločicu **Ratings & Reviews Helper** (ili izravno otvorite [Ratings & Reviews Helper](https://fastcomments.com/auth/my-account/ratings-reviews-helper?source=shopify)).
+3. Dodajte pitanja na koja želite da svaki recenzent odgovori (ukupna ocjena zvjezdicama, "kako je stajala odjeća" itd.).
 
-Bez konfiguriranih pitanja, sažetak nema što agregirati.
+Bez konfiguriranih pitanja, blok sažetka nema što agregirati.
 
 ### Dodavanje bloka
 
-1. Otvorite uređivač teme u Shopifyju.
+1. Otvorite Shopify uređivač teme.
 2. Otvorite predložak **Product** (ili predložak stranice na kojem želite sažetak).
 3. Kliknite **Add block** pri vrhu odjeljka stranice, iznad mjesta gdje će biti blok **FastComments**.
 4. Pod **Apps**, odaberite **FastComments - Reviews Summary**.
-5. Dodajte blok **FastComments** niže na istoj stranici ako ga još nemate, kako bi posjetitelji mogli ostaviti recenzije.
+5. Dodajte blok **FastComments** niže na istoj stranici ako ga već nemate, kako bi posjetitelji mogli ostaviti recenzije.
 6. Kliknite **Save**.
 
 ### Postavke
 
-| Setting | What it does | Default |
+| Postavka | Što radi | Zadano |
 |---|---|---|
-| Tenant ID (optional) | Override which FastComments tenant the summary reads from. Leave blank to use the store's automatically-configured tenant. | (prazno) |
-| Custom URL ID | Override the page identifier the summary aggregates against. Use this when the summary lives on a different page from the FastComments block it reflects. | (automatski otkriveno) |
+| Tenant ID (neobavezno) | Nadjačajte iz kojeg FastComments tenanta sažetak čita podatke. Ostavite prazno za korištenje automatski konfiguriranog tenanta trgovine. | (prazno) |
+| Custom URL ID | Nadjačajte identifikator stranice prema kojem se sažetak agregira. Koristite ovo kada se sažetak nalazi na drugoj stranici od bloka FastComments koji odražava. | (automatski otkriveno) |
 
-### Kako se sažetak podudara s recenzijama
+### Kako sažetak odgovara recenzijama
 
-Blok Sažetak recenzija koristi istu logiku automatskog otkrivanja kao i blok **FastComments**:
+Blok Reviews Summary koristi istu logiku automatskog otkrivanja kao blok **FastComments**:
 
-- Product template: `shopify-product-{product.id}`
-- Blog post template: `shopify-article-{article.id}`
-- Other templates: the request path
+- Predložak proizvoda: `shopify-product-{product.id}`
+- Predložak objave na blogu: `shopify-article-{article.id}`
+- Ostali predlošci: putanja zahtjeva
 
-Za uobičajenu stranicu proizvoda, sažetak i niti komentara automatski dijele URL ID, bez potrebe za dodatnom konfiguracijom.
+Za normalnu stranicu proizvoda, sažetak i niz komentara automatski dijele URL ID, bez ikakve konfiguracije.
 
 ### Savjeti
 
-- Sažetak je samo za čitanje. Da biste prikupljali recenzije, trebate imati blok **FastComments** na istoj stranici.
-- Ako promijenite pitanja za ocjenjivanje u Pomoćniku za ocjene i recenzije nakon prikupljanja recenzija, sažetak će se ponovno izračunati prema novom skupu pitanja.
+- Sažetak je samo za čitanje. Za prikupljanje recenzija potreban vam je blok **FastComments** na istoj stranici.
+- Ako promijenite pitanja za ocjene u Ratings & Reviews Helper nakon prikupljanja recenzija, sažetak se ponovno izračunava prema novom skupu pitanja.

@@ -1,17 +1,17 @@
-When moderating and viewing comment threads it is desirable to be able to jump directly to a thread to get context during moderating.
+בעת ניהול וצפייה בשרשורי תגובות, רצוי להיות מסוגלים לקפוץ ישירות לשרשור כדי לקבל הקשר במהלך הניהול.
 
-This means that the user's flow starts in the Comment Moderation page, and would then have to go from an individual comment to
-the page containing that comment, wait for that page to load, wait for the comments to load, and then scroll to that comment.
+המשמעות היא שזרימת המשתמש מתחילה בעמוד ניהול התגובות, ואז עליו לעבור מתגובה בודדת אל
+העמוד המכיל את אותה תגובה, להמתין לטעינת העמוד, להמתין לטעינת התגובות, ואז לגלול אל התגובה.
 
-However, FastComments provides a faster way. In the Moderate Comments page, next to each comment, there is a "הצג תגובה" button in the bottom right.
+עם זאת, FastComments מספק דרך מהירה יותר. בעמוד Moderate Comments, ליד כל תגובה, יש כפתור "View Comment" בפינה השמאלית התחתונה.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=1&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = '.comments .comment-component'; alt='הודעה בודדת ברשימת המודרציה, עם כפתור \'הצג תגובה\' בפינה הימנית התחתונה'; title='הודעה' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=1&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = '.comments .comment-component'; alt='תגובה בודדת ברשימת הניהול, עם כפתור View Comment בפינה השמאלית התחתונה'; title='תגובה' app-screenshot-end]
 
-If this comment has replies, the button text will instead say the number of replies, but clicking it takes the same action.
+אם לתגובה זו יש תשובות, טקסט הכפתור יציג במקום זאת את מספר התשובות, אך לחיצה עליו מבצעת את אותה פעולה.
 
-This button will take you to the **Comment Thread Viewer**.
+כפתור זה יקח אתכם אל **Comment Thread Viewer**.
 
-The Comment Thread Viewer is a small, fast loading application hosted by FastComments that renders the comment thread for the page that
-the comment is on, and scrolls to that comment.
+ה-Comment Thread Viewer הוא יישום קטן ומהיר בטעינה המתארח על ידי FastComments שמציג את שרשור התגובות עבור העמוד שבו
+נמצאת התגובה, וגולל אל התגובה.
 
-This allows moderators to gather the context they need to, quickly, without having to wait for another page to load.
+זה מאפשר למנהלים לאסוף את ההקשר הדרוש להם במהירות, מבלי להמתין לטעינת עמוד נוסף.

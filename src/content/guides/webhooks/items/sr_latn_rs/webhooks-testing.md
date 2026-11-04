@@ -1,24 +1,24 @@
-The new and edit webhook pages have a `Send Test Payload` button that sends a request to the URL currently in the form, whether or not it has been saved. The Create and Update events send a dummy WebhookComment object, while testing Delete will send a dummy request body with just an ID.
+Stranice za kreiranje i izmenu webhook-a imaju dugme `Send Test Payload` koje šalje zahtev na URL koji je trenutno u formi, bez obzira na to da li je sačuvan ili ne. Create i Update događaji šalju lažni WebhookComment objekat, dok testiranje Delete-a šalje lažni request body sa samo ID-jem.
 
-## Verifikacija payload‑ova
+## Verifikacija Payload-a
 
-Kada testirate vašu webhook integraciju, proverite da dolazni zahtevi sadrže sledeća zaglavlja:
+Kada testirate svoju webhook integraciju, proverite da dolazni zahtevi uključuju sledeće zaglavlja:
 
-1. **`X-FastComments-Timestamp`** – Unix vremenski pečat (sekunde)  
-2. **`X-FastComments-Signature`** – HMAC‑SHA256 potpis  
+1. **`X-FastComments-Timestamp`** - Unix vremenski pečat (sekunde)
+2. **`X-FastComments-Signature`** - HMAC-SHA256 potpis
 
-Webhook‑ovi kreirani pre uvođenja šeme potpisa takođe primaju **`token`** zaglavlje koje sadrži vaš API Secret. Novi webhook‑ovi to ne rade.
+Webhook-ovi kreirani pre uvođenja šeme potpisa takođe primaju **`token`** zaglavlje koje sadrži vaš API Secret. Novi webhook-ovi to ne primaju.
 
-Koristite verifikaciju HMAC potpisa da biste osigurali da su payload‑ovi autentični.
+Koristite HMAC verifikaciju potpisa da biste osigurali da su payload-i autentični.
 
 ## Alati za testiranje
 
-Možete koristiti alate poput [webhook.site](https://webhook.site) ili [ngrok](https://ngrok.com) da pregledate dolazne webhook payload‑ove tokom razvoja.
+Možete koristiti alate kao što su [webhook.site](https://webhook.site) ili [ngrok](https://ngrok.com) da biste pregledali dolazne webhook payload-e tokom razvoja.
 
 ## Tipovi događaja
 
-- **Create Event**: Pokreće se kada se kreira novi komentar.  
-- **Update Event**: Pokreće se kada se komentar izmeni.  
-- **Delete Event**: Pokreće se kada se komentar obriše.  
+- **Create Event**: Aktivira se kada se kreira novi komentar.
+- **Update Event**: Aktivira se kada se komentar izmeni.
+- **Delete Event**: Aktivira se kada se komentar obriše.
 
-Svaki webhook je vezan za jedan događaj i jednu HTTP metodu (POST, PUT ili DELETE). Svaki događaj uključuje kompletne podatke o komentaru u telu zahteva (pogledajte [Data Structures](/guide-webhooks.html#webhooks-structures) za format payload‑a).
+Svaki webhook je vezan za jedan događaj i jednu HTTP metodu (POST, PUT ili DELETE). Svaki događaj uključuje kompletne podatke o komentaru u request body-ju (vidite [Data Structures](/guide-webhooks.html#webhooks-structures) za format payload-a).

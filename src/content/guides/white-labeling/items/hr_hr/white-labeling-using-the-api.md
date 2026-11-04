@@ -1,4 +1,3 @@
----
 Za korištenje API-ja za stvaranje white-labeled tenanta, moramo učiniti sljedeće:
 
 1. Pozovite [Tenants API](/guide-api.html#tenant-structure) kako biste stvorili tenanta.
@@ -9,4 +8,3 @@ Za korištenje API-ja za stvaranje white-labeled tenanta, moramo učiniti sljede
 6. Opcionalno, [Setup SSO](/guide-customizations-and-configuration.html#sso).
 
 Sve se to može obaviti tijekom probnog razdoblja.
----

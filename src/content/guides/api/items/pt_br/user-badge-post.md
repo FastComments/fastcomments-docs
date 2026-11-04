@@ -1,8 +1,8 @@
-Este endpoint permite criar uma nova atribuição de distintivo (badge) para um usuário.
+Este endpoint permite criar uma nova atribuição de selo de usuário.
 
-Exemplo de requisição:
+Exemplo de Requisição:
 
-[inline-code-attrs-start title = 'Exemplo de requisição POST'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo de Requisição POST'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 curl -X POST "https://fastcomments.com/api/v1/user-badges?tenantId=demo&API_KEY=DEMO_API_SECRET" \
 -H "Content-Type: application/json" \
@@ -15,15 +15,15 @@ curl -X POST "https://fastcomments.com/api/v1/user-badges?tenantId=demo&API_KEY=
 
 O corpo da requisição deve conter os seguintes parâmetros:
 
-- `userId` (required) - The ID of the user to assign the badge to
-- `badgeId` (required) - The ID of the badge to assign
-- `displayedOnComments` (optional) - Whether the badge should be displayed on the user's comments (defaults to true)
+- `userId` (obrigatório) - O ID do usuário ao qual o selo será atribuído
+- `badgeId` (obrigatório) - O ID do selo a ser atribuído
+- `displayedOnComments` (opcional) - Se o selo deve ser exibido nos comentários do usuário (o padrão é true)
 
-Notas importantes:
-1. O distintivo (badge) deve existir e estar habilitado no catálogo de badges do seu tenant
-2. Você só pode atribuir badges a usuários que pertencem ao seu tenant ou que tenham comentado em seu site
+Notas Importantes:
+1. O selo deve existir e estar habilitado no catálogo de selos do seu tenant
+2. Você só pode atribuir selos a usuários que pertencem ao seu tenant ou que comentaram no seu site
 
-Exemplo de resposta:
+Exemplo de Resposta:
 
 [inline-code-attrs-start title = 'Resposta'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -48,9 +48,9 @@ Exemplo de resposta:
 }
 [inline-code-end]
 
-Possíveis respostas de erro:
+Possíveis Respostas de Erro:
 
-[inline-code-attrs-start title = 'Erro: Tenant ID ausente'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Erro: ID do Tenant Ausente'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",
@@ -59,7 +59,7 @@ Possíveis respostas de erro:
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Erro: ID do usuário ausente'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Erro: ID do Usuário Ausente'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",
@@ -68,7 +68,7 @@ Possíveis respostas de erro:
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Erro: ID do badge ausente'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Erro: ID do Selo Ausente'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",
@@ -77,7 +77,7 @@ Possíveis respostas de erro:
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Erro: Badge não encontrado'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Erro: Selo Não Encontrado'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",
@@ -86,7 +86,7 @@ Possíveis respostas de erro:
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Erro: Usuário não autorizado'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Erro: Usuário Não Autorizado'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",

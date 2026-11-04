@@ -1,4 +1,3 @@
----
 Hvis du allerede har kommentarer på dine Shopify-blogindlæg og ønsker at beholde dem, importer dem til FastComments, før du deaktiverer Shopifys indbyggede kommentarer.
 
 Importen skal køre, mens Shopifys indbyggede kommentarer stadig er aktive og synlige. Når du først deaktiverer dem, kan FastComments ikke længere læse dem.
@@ -14,5 +13,3 @@ Importen kører på mindre end en dag.
 Når dine eksisterende kommentarer er i FastComments, tilføj **FastComments**-blokken til din skabelon for blogindlæg og fjern eller deaktiver Shopifys indbyggede kommentarer. Se [Tilføj kommentarer til blogindlæg og produkter](/guide-installation-shopify.html#shopify-add-comments).
 
 Hvis du ikke har brug for at bevare eksisterende kommentarer, kan du springe denne side over.
-
----

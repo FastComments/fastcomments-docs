@@ -27,5 +27,3 @@
     <div class="title">コードを編集</div>
     <img class="screenshot-image" src="/images/installation-guides/systeme-edit-block-button.png" alt="コードを編集" />
 </div>
-
----

@@ -1,4 +1,3 @@
----
 Per aggiungere commenti a ogni post, come fa il supporto Disqus integrato di Hugo, aggiungi una riga al template single del tuo tema (`layouts/_default/single.html`):
 
 ```go-html-template
@@ -13,4 +12,3 @@ title = "A page with no comments"
 comments = false
 +++
 ```
----

@@ -1,4 +1,3 @@
----
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
@@ -19,5 +18,3 @@ if optResp.isSome:
   let resp = optResp.get()
   echo resp
 [inline-code-end]
-
----

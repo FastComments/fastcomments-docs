@@ -1,4 +1,3 @@
----
 ## 参数
 
 | Name | Type | Location | Required | Description |
@@ -30,5 +29,3 @@ DefaultAPI.addPage(tenantId: tenantId, createAPIPageData: createAPIPageData) { (
     }
 }
 [inline-code-end]
-
----

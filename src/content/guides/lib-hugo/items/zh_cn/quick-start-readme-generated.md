@@ -1,4 +1,3 @@
----
 在 `hugo.toml` 中设置一次您的租户 ID:
 
 ```toml
@@ -11,4 +10,3 @@
 ```text
 \{{< fastcomments >}}
 ```
----

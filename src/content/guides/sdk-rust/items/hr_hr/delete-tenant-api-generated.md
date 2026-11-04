@@ -24,5 +24,3 @@ async fn delete_example(config: &configuration::Configuration) -> Result<(), Err
     Ok(())
 }
 [inline-code-end]
-
----

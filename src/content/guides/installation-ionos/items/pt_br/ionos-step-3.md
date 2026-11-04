@@ -1,4 +1,3 @@
----
 Agora só precisamos publicar nosso site e estamos prontos.
 
 Volte ao editor de conteúdo clicando em `Content` no canto superior esquerdo:
@@ -21,5 +20,3 @@ Então podemos publicar!
     <div class="title">Pronto!</div>
     <img class="screenshot-image" src="/images/installation-guides/ionos-step-3-done.png" alt="Done!" />
 </div>
-
----

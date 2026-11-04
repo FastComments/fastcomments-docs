@@ -42,5 +42,3 @@ try {
     echo 'Exception when calling DefaultApi->updateFeedPost: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

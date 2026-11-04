@@ -8,5 +8,3 @@ Eleventy (11ty) ライブラリに関して問題が発生したり質問があ�
 ## 貢献
 
 貢献は歓迎します！貢献ガイドラインについては[GitHubリポジトリ](https://github.com/FastComments/fastcomments-11ty)をご覧ください。
-
----

@@ -1,11 +1,11 @@
-Identifies the credential in use: the tenant it belongs to and, for OAuth tokens, the user who authorized it.  
-Integrations use this to test a connection and label it.
+Kullanılan kimlik bilgisini tanımlar: ait olduğu kiracıyı (tenant) ve OAuth token'ları için onu yetkilendiren kullanıcıyı belirtir.
+Entegrasyonlar bunu bir bağlantıyı test etmek ve etiketlemek için kullanır.
 
 ## Parametreler
 
-| Ad | Tür | Konum | Gerekli | Açıklama |
+| Ad | Tür | Konum | Zorunlu | Açıklama |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
+| tenantId | string | query | Evet |  |
 
 ## Yanıt
 
@@ -15,7 +15,7 @@ Döndürür: [`GetMeResponse`](https://github.com/FastComments/fastcomments-java
 
 [inline-code-attrs-start title = 'getMe Örneği'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sınıfları içe aktar:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -28,10 +28,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // API anahtarı yetkilendirmesini yapılandır: api_key
+    // Configure API key authorization: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // API anahtarı için bir önek ayarlamak için aşağıdaki satırın yorumunu kaldırın, ör. "Token" (defaults to null)
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);

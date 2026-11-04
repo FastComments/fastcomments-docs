@@ -1,3 +1,1 @@
----
 Sayfayı yeniden yüklemeden bir yorum dizisini değiştirin. Birkaç widget'ı yan yana çalıştırın, bunları aynı diziye yönlendirerek senkronize tutun veya farklı dizilere yönlendirin.
----

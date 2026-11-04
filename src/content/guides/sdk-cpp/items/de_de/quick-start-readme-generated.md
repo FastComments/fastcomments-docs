@@ -1,8 +1,8 @@
-### Using Authenticated APIs (DefaultAPI)
+### Verwendung authentifizierter APIs (DefaultAPI)
 
 **Wichtig:**
-1. Sie müssen die Basis-URL festlegen (der cpp-restsdk-Generator liest sie nicht aus der OpenAPI-Spezifikation)
-2. Sie müssen Ihren API‑Schlüssel im ApiClient setzen, bevor Sie authentifizierte Anfragen senden. Wenn Sie das nicht tun, schlagen die Anfragen mit einem 401‑Fehler fehl.
+1. Sie müssen die Basis-URL setzen (der cpp-restsdk-Generator liest sie nicht aus der OpenAPI-Spec)
+2. Sie müssen Ihren API-Schlüssel am ApiClient setzen, bevor Sie authentifizierte Anfragen stellen. Andernfalls schlagen die Anfragen mit einem 401-Fehler fehl.
 
 ```cpp
 #include <iostream>
@@ -13,7 +13,7 @@
 int main() {
     auto config = std::make_shared<org::openapitools::client::api::ApiConfiguration>();
 
-    // ERFORDERLICH: Basis-URL festlegen (Region auswählen)
+    // ERFORDERLICH: Basis-URL setzen (Region wählen)
     config->setBaseUrl(utility::conversions::to_string_t("https://fastcomments.com"));  // US
     // ODER: config->setBaseUrl(utility::conversions::to_string_t("https://eu.fastcomments.com"));  // EU
 
@@ -28,9 +28,9 @@ int main() {
 }
 ```
 
-### Using Public APIs (PublicAPI)
+### Verwendung öffentlicher APIs (PublicAPI)
 
-Öffentliche Endpunkte benötigen keine Authentifizierung:
+Öffentliche Endpunkte erfordern keine Authentifizierung:
 
 ```cpp
 #include <iostream>
@@ -41,7 +41,7 @@ int main() {
 int main() {
     auto config = std::make_shared<org::openapitools::client::api::ApiConfiguration>();
 
-    // ERFORDERLICH: Basis-URL festlegen
+    // ERFORDERLICH: Basis-URL setzen
     config->setBaseUrl(utility::conversions::to_string_t("https://fastcomments.com"));
 
     auto apiClient = std::make_shared<org::openapitools::client::api::ApiClient>(config);
@@ -52,9 +52,10 @@ int main() {
 }
 ```
 
-### Using Moderation APIs (ModerationApi)
+### Verwendung der Moderations-APIs (ModerationApi)
 
-Die `ModerationApi` treibt das Moderator‑Dashboard an. Jede Methode akzeptiert einen `sso`‑Parameter, sodass der Aufruf im Namen eines SSO‑authentifizierten Moderators ausgeführt wird (siehe den SSO‑Abschnitt unten, um zu erfahren, wie man ein Token erstellt):
+Die `ModerationApi` betreibt das Moderator-Dashboard. Jede Methode akzeptiert einen `sso`-Parameter, sodass der Aufruf im Namen eines SSO-authentifizierten Moderators ausgeführt wird (siehe den SSO-Abschnitt unten
+zum Erstellen eines Tokens):
 
 ```cpp
 #include <iostream>
@@ -65,13 +66,13 @@ Die `ModerationApi` treibt das Moderator‑Dashboard an. Jede Methode akzeptiert
 int main() {
     auto config = std::make_shared<org::openapitools::client::api::ApiConfiguration>();
 
-    // ERFORDERLICH: Basis-URL festlegen
+    // ERFORDERLICH: Basis-URL setzen
     config->setBaseUrl(utility::conversions::to_string_t("https://fastcomments.com"));
 
     auto apiClient = std::make_shared<org::openapitools::client::api::ApiClient>(config);
     org::openapitools::client::api::ModerationApi moderationApi(apiClient);
 
-    // Übergeben Sie das SSO-Token des Moderators, um den Aufruf zu authentifizieren
+    // SSO-Token des Moderators übergeben, um den Aufruf zu authentifizieren
     auto ssoToken = utility::conversions::to_string_t("YOUR_MODERATOR_SSO_TOKEN");
 
     org::openapitools::client::api::GetCountOptions options;
@@ -83,8 +84,8 @@ int main() {
 }
 ```
 
-### Common Issues
+### Häufige Probleme
 
-1. **"URI must contain a hostname"-Fehler**: Stellen Sie sicher, dass Sie `config->setBaseUrl(utility::conversions::to_string_t("https://fastcomments.com"))` aufrufen, bevor Sie den ApiClient erstellen. Der cpp-restsdk-Generator liest die Server‑URL nicht automatisch aus der OpenAPI‑Spezifikation.
-2. **401 "missing-api-key"-Fehler**: Stellen Sie sicher, dass Sie `config->setApiKey(utility::conversions::to_string_t("api_key"), utility::conversions::to_string_t("YOUR_KEY"))` aufrufen, bevor Sie die DefaultAPI‑Instanz erstellen.
-3. **Falsche API-Klasse**: Verwenden Sie `DefaultApi` für serverseitige authentifizierte Anfragen, `PublicApi` für clientseitige/öffentliche Anfragen und `ModerationApi` für Anfragen des Moderator‑Dashboards (authentifiziert mit einem Moderator‑SSO‑Token).
+1. **Fehler „URI must contain a hostname"**: Stellen Sie sicher, dass Sie `config->setBaseUrl(utility::conversions::to_string_t("https://fastcomments.com"))` aufrufen, bevor Sie den ApiClient erstellen. Der cpp-restsdk-Generator liest die Server-URL nicht automatisch aus der OpenAPI-Spec.
+2. **401-Fehler „missing-api-key"**: Stellen Sie sicher, dass Sie `config->setApiKey(utility::conversions::to_string_t("api_key"), utility::conversions::to_string_t("YOUR_KEY"))` aufrufen, bevor Sie die DefaultAPI-Instanz erstellen.
+3. **Falsche API-Klasse**: Verwenden Sie `DefaultApi` für serverseitige authentifizierte Anfragen, `PublicApi` für clientseitige/öffentliche Anfragen und `ModerationApi` für Moderator-Dashboard-Anfragen (authentifiziert mit einem Moderator-SSO-Token).

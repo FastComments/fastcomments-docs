@@ -1,13 +1,13 @@
-This example uses custom code to be compatible with Wix. **다른 튜토리얼의 FastComments 코드 스니펫을 사용할 수 없습니다.**
+이 예제는 Wix와 호환되도록 커스텀 코드를 사용합니다. **다른 튜토리얼의 FastComments 코드 스니펫은 사용할 수 없습니다.**
 
-Open the form to add our custom HTML dialog by clicking `Enter Code` and selecting `HTML`:
+`Enter Code`를 클릭하고 `HTML`을 선택하여 커스텀 HTML 대화상자를 추가하는 양식을 엽니다:
 
 <div class="screenshot white-bg">
-    <div class="title">3단계: HTML 대화 상자 열기</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-3-open-form.png" alt="3단계: HTML 대화 상자 열기" />
+    <div class="title">3단계: HTML 대화상자 열기</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-3-open-form.png" alt="3단계: HTML 대화상자 열기" />
 </div>
 
-Copy the following HTML snippet and paste it into the dialog, and click Update:
+다음 HTML 스니펫을 복사하여 대화상자에 붙여넣고, Update를 클릭합니다:
 
 [inline-code-attrs-start title = 'Wix 댓글 코드 스니펫'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -38,11 +38,11 @@ Copy the following HTML snippet and paste it into the dialog, and click Update:
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-3-paste-and-save.png" alt="3단계: 붙여넣기 및 저장" />
 </div>
 
-You should now see a very tiny version of the comment widget:
+이제 매우 작은 크기의 댓글 위젯이 표시됩니다:
 
 <div class="screenshot white-bg">
     <div class="title">3단계: 결과</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-3-result.png" alt="3단계: 결과" />
 </div>
 
-다음으로 이 요소의 위치와 크기를 페이지에 맞게 조정하겠습니다.
+다음으로 이것을 페이지에 맞게 위치와 크기를 조정하겠습니다.

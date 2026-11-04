@@ -1,29 +1,29 @@
-Each agent runs against one of two LLM models, picked on the **Model** section of the edit form.
+各エージェントは2つのLLMモデルのいずれかで動作し、編集フォームの **Model** セクションで選択します。
 
-### The two options
+### 2つの選択肢
 
-- **GLM 5.1 (DeepInfra) - Smarter, bit slower** - デフォルト。推論品質が高く、呼び出しごとにやや遅い。誤った呼び出しのコストが高いモデレーション系エージェント（`Moderator` template、`ban_user` や `mark_comment_spam` を呼ぶようなもの）に推奨されます。
+- **GLM 5.1 (DeepInfra) - より賢く、やや遅い** - デフォルト。推論の品質が高く、呼び出しごとにやや遅くなります。誤った判断のコストが高いモデレーション系エージェント(`Moderator` テンプレート、`ban_user` や `mark_comment_spam` を呼び出すもの)に推奨されます。
 
-- **GPT-OSS 120B Turbo (DeepInfra) - Faster** - 呼び出しごとに高速でレイテンシが低い。数秒以内の応答が必要で、誤動作の影響が小さい大量処理向けのエージェント（ウェルカム挨拶、スレッドピンなど）に推奨されます。
+- **GPT-OSS 120B Turbo (DeepInfra) - より高速** - 呼び出しが速く、レイテンシが低くなります。数秒以内の応答が求められ、判断を誤っても影響が軽微な高頻度・低リスクのエージェント(ウェルカム挨拶、スレッド固定など)に推奨されます。
 
-Both models support function calling, both run via the same OpenAI-compatible API, and both share the same per-tool schemas - so you can switch a saved agent between them at any time without other config changes.
+どちらのモデルも関数呼び出しをサポートし、同じOpenAI互換API経由で動作し、同じツールごとのスキーマを共有しているため、他の設定を変更することなく、保存済みエージェントのモデルをいつでも切り替えられます。
 
-### Cost differences
+### コストの違い
 
-The two models have different per-token costs. The agent's [予算上限](#budgets-overview) are denominated in your account currency, not in tokens, so a switch from one model to the other changes how many runs fit inside your daily and monthly caps. The [実行履歴](#run-history) page shows the per-run cost in your currency once a run completes - watching a few runs after a switch is the easiest way to gauge the new burn rate.
+2つのモデルではトークンあたりのコストが異なります。エージェントの[予算上限](#budgets-overview)はトークンではなくアカウントの通貨で設定されているため、モデルを切り替えると1日および月間の上限内で実行できる回数が変わります。[Run History](#run-history) ページには、実行完了後の1回あたりのコストが通貨単位で表示されます。切り替え後に数回の実行を観察するのが、新しい消費レートを把握する最も簡単な方法です。
 
-### Tokens per run
+### 実行あたりのトークン数
 
-The model's response token usage is logged on every trigger as **tokensUsed**. It is included on the `trigger.succeeded` and `trigger.failed` webhook payloads (see [Webhook ペイロード](#webhook-payloads)) and shown in [実行詳細ビュー](#run-detail-view). The amount depends on:
+モデルの応答トークン使用量は、トリガーごとに **tokensUsed** として記録されます。これは `trigger.succeeded` および `trigger.failed` のWebhookペイロードに含まれ([Webhook Payloads](#webhook-payloads) を参照)、[Run Detail View](#run-detail-view) にも表示されます。使用量は以下に依存します:
 
-- How much [コンテキスト](#context-options) you include - thread context, user history, and page metadata all add tokens.
-- How long your [初期プロンプト](#personality-prompt) and [コミュニティガイドライン](#community-guidelines) are.
-- How many tools the agent calls in a single run (each tool call and its result round-trips through the model).
+- 含める [Context](#context-options) の量 - スレッドコンテキスト、ユーザー履歴、ページメタデータはすべてトークンを追加します。
+- [Initial prompt](#personality-prompt) と [Community guidelines](#community-guidelines) の長さ。
+- 1回の実行でエージェントが呼び出すツールの数(各ツール呼び出しとその結果はモデルを往復します)。
 
-**Max Tokens Per Trigger** (default 20,000) is the upper bound per run, set per-agent.
+**Max Tokens Per Trigger**(デフォルト 20,000)は実行ごとの上限で、エージェントごとに設定します。
 
-### Switching models
+### モデルの切り替え
 
-You can switch models on the edit form at any time. Existing run history and analytics keep their original token and cost numbers - they are recorded at run time. The new model only applies to runs that start after you save.
+編集フォームでいつでもモデルを切り替えられます。既存の実行履歴と分析データは、元のトークン数とコストを保持します - これらは実行時に記録されます。新しいモデルは、保存後の実行にのみ適用されます。
 
-There is no "use whichever model is cheaper" option. The choice is explicit per agent.
+「より安いモデルを自動選択」するオプションはありません。選択はエージェントごとに明示的に行います。

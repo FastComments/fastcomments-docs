@@ -1,4 +1,3 @@
----
 ## 매개변수
 
 | 이름 | 유형 | 필수 | 설명 |
@@ -24,5 +23,3 @@
   const logsWithoutSso: ModerationAPIGetLogsResponse = await getLogs(tenantId, commentId);
 })();
 [inline-code-end]
-
----

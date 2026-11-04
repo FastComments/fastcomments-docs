@@ -1,29 +1,30 @@
-הוסף שורה זו לקובץ Gemfile של היישום שלך:
+הוסיפו את השורה הבאה ל-Gemfile של האפליקציה שלכם:
 
 ```ruby
 gem 'fastcomments'
 ```
 
-ואז הפעל:
+ולאחר מכן הריצו:
 
 ```bash
 bundle install
 ```
 
-או התקן זאת בעצמך כ:
+או התקינו בעצמכם באמצעות:
 
 ```bash
 gem install fastcomments
 ```
 
-### Library Contents
+### תוכן הספרייה
 
-ספרייה זו מכילה את לקוח ה‑API שנוצר ואת כלי ה‑SSO שמקלים על העבודה עם ה‑API.
+ספרייה זו מכילה את לקוח ה-API שנוצר באופן אוטומטי ואת כלי ה-SSO שמקלים על העבודה עם ה-API.
 
-- [API Client Library Docs](https://github.com/FastComments/fastcomments-ruby/blob/master/client/README.md)
+- [תיעוד ספריית לקוח ה-API](https://github.com/FastComments/fastcomments-ruby/blob/master/client/README.md)
 
-### Public vs Secured APIs
+### APIs ציבוריים מול מאובטחים
 
-ללקוח ה‑API יש שלוש מחלקות: `DefaultApi`, `PublicApi` ו‑`ModerationApi`. ה‑`DefaultApi` מכילה שיטות הדורשות מפתח API שלך, וה‑`PublicApi` מכילה קריאות API שניתן לבצע ישירות מדפדפן/מכשיר נייד/וכו׳ ללא אימות. ה‑`ModerationApi` מכילה את השיטות שמפעילות את לוח המחוונים של המודרטור.
+עבור לקוח ה-API קיימות שלוש מחלקות: `DefaultApi`, `PublicApi`, ו-`ModerationApi`. ה-`DefaultApi` מכילה מתודות הדורשות את מפתח ה-API שלכם, וה-`PublicApi` מכילה קריאות API
+שניתן לבצע ישירות מדפדפן/מכשיר נייד/וכו' ללא אימות. ה-`ModerationApi` מכילה את המתודות שמניעות את לוח הבקרה של המנחה.
 
-ה‑`ModerationApi` מספקת חבילה נרחבת של API מודרציה בזמן אמת ומהירה. כל שיטה ב‑`ModerationApi` מקבלת פרמטר `sso` ויכולה לאמת באמצעות SSO או קוביית סשן של FastComments.com.
+ה-`ModerationApi` מספקת חבילה נרחבת של APIs לניהול מודרציה מהיר ובזמן אמת. כל מתודה של `ModerationApi` מקבלת פרמטר `sso` ויכולה לבצע אימות באמצעות SSO או עוגיית סשן של FastComments.com.

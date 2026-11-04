@@ -1,71 +1,71 @@
-Postoje četiri tipa webhook događaja agenta. Svaki događaj ima numeričku enum vrednost (koja se koristi u payload-ima) i kanonično tekstualno ime (koje se koristi u polju `event` u envelope-u i u HTTP header-u `X-FastComments-Agent-Event`).
+Postoje četiri tipa agent webhook događaja. Svaki događaj ima numeričku enum vrednost (koristi se u payload-ovima) i kanonski string naziv (koristi se u `event` envelope polju i u `X-FastComments-Agent-Event` HTTP headeru).
 
-| Event name | Enum | Fires when |
+| Naziv događaja | Enum | Aktivira se kada |
 |---|---|---|
-| `trigger.succeeded` | 0 | An agent run completes with status `SUCCESS`. |
-| `trigger.failed` | 1 | An agent run completes with status `ERROR`. |
-| `approval.requested` | 2 | An approval is queued in `PENDING` state. |
-| `approval.decided` | 3 | An approval transitions to `APPROVED`, `REJECTED`, or `EXECUTION_FAILED`. |
+| `trigger.succeeded` | 0 | Agent run se završava sa statusom `SUCCESS`. |
+| `trigger.failed` | 1 | Agent run se završava sa statusom `ERROR`. |
+| `approval.requested` | 2 | Odobrenje se stavlja u red u `PENDING` stanju. |
+| `approval.decided` | 3 | Odobrenje prelazi u `APPROVED`, `REJECTED` ili `EXECUTION_FAILED`. |
 
 ### `trigger.succeeded`
 
-Okida nakon što se izvršavanje agenta završi bez greške. Polje `data` u payload-u sadrži:
+Aktivira se nakon što se agentov run završi bez greške. `data` polje payload-a uključuje:
 
-- `triggerId` - jedinstveni ID izvršavanja.
-- `triggerType` - [trigger reason enum](#triggers-overview) koji je pokrenuo izvršavanje.
+- `triggerId` - jedinstveni ID run-a.
+- `triggerType` - [enum razloga okidanja](#triggers-overview) koji je pokrenuo run.
 - `status` - `SUCCESS` (string).
-- `tokensUsed` - tokeni potrošeni u ovom izvršavanju.
-- `wasDryRun` - true ako je agent bio u [dry-run mode](#dry-run-mode).
-- `actions` - niz zapisa `TenantAgentAction` (pogledajte [Webhook Payloads](#webhook-payloads)).
+- `tokensUsed` - tokeni potrošeni u ovom run-u.
+- `wasDryRun` - true ako je agent bio u [dry-run režimu](#dry-run-mode).
+- `actions` - niz `TenantAgentAction` zapisa (vidi [Webhook Payloads](#webhook-payloads)).
 - `commentId`, `url`, `urlId` - ako ih je okidač imao.
 
-Ako izvršavanje nije preduzelo nijednu akciju, niz `actions` je prazan - ovo je uspešno izvršavanje u kojem je agent odlučio da ne uradi ništa, što je korisno znati.
+Ako run nije preduzeo nijednu akciju, `actions` niz je prazan - ovo je uspešan run "agent je odlučio da ne radi ništa", što je korisno znati.
 
 ### `trigger.failed`
 
-Okida kada izvršavanje prijavi grešku. Isti oblik payload-a kao kod `trigger.succeeded`, sa `status: 'ERROR'` i dodatnim poljem `errorMessage` koje opisuje šta je pošlo po zlu. Moguće greške uključuju neuspehe poziva LLM-a, neuspehe pri pozivanju alata i iscrpljivanje budžeta tokom izvršavanja.
+Aktivira se kada run dođe do greške. Isti oblik payload-a kao `trigger.succeeded`, sa `status: 'ERROR'` i dodatnim `errorMessage` poljem koje opisuje šta je pošlo naopako. Moguće greške uključuju neuspehe LLM poziva, neuspehe dispatch-a alata i iscrpljivanje budžeta usred run-a.
 
-Niz `actions` i dalje može sadržati unose za pozive alata koji su se završili pre greške.
+`actions` i dalje može sadržati unose za pozive alata koji su završeni pre greške.
 
 ### `approval.requested`
 
-Okida u trenutku kada se odobrenje stavi u stanje `PENDING`. Payload sadrži:
+Aktivira se u trenutku kada se odobrenje stavi u red u `PENDING` stanju. Payload uključuje:
 
 - `approvalId`, `triggerId`.
 - `toolName`, `actionType`.
 - `status: 'PENDING'`.
-- `args` - argumenti alata **propušteni doslovno** iz LLM poziva. Struktura zavisi od alata i nije stabilan javni ugovor - šema se može promeniti kako se budu dodavali novi alati.
+- `args` - argumenti alata **prosleđeni doslovno** iz LLM poziva. Oblik je specifičan po alatu i nije stabilan javni ugovor - šema se može menjati kako se dodaju novi alati.
 - `createdAt`.
-- `justification`, `confidence` - ako ih je agent obezbedio.
-- `contextSnapshot` - kontekst komentara/stranice na koji se odobrenje odnosi.
+- `justification`, `confidence` - ako ih je agent dostavio.
+- `contextSnapshot` - kontekst komentara / stranice na koji se odobrenje odnosi.
 
-Korisno za prosleđivanje čekajućih odobrenja u chat ops kanal: Slack bot pretplaćen na `approval.requested` može objaviti akciju i obrazloženje u kanal za moderaciju radi brzog pregleda.
+Korisno za prosleđivanje odobrenja koja čekaju u chat ops kanal: Slack bot pretplaćen na `approval.requested` može objaviti akciju i obrazloženje u moderacioni kanal za pregled na prvi pogled.
 
 ### `approval.decided`
 
-Okida kada odobrenje izađe iz stanja `PENDING`. Payload sadrži:
+Aktivira se kada odobrenje izađe iz `PENDING` stanja. Payload uključuje:
 
 - `approvalId`, `triggerId`.
 - `toolName`, `actionType`.
-- `status` - `APPROVED`, `REJECTED`, ili `EXECUTION_FAILED`.
-- `decidedBy` - ID korisnika moderatora koji je doneo odluku.
-- `decidedAt` - kada je odluka doneta.
+- `status` - `APPROVED`, `REJECTED` ili `EXECUTION_FAILED`.
+- `decidedBy` - korisnički ID moderatora koji je odlučio.
+- `decidedAt` - kada je odlučio.
 - `executedAt` - ako je APPROVED, kada je platforma izvršila odobrenu akciju.
 - `executionResult` - ako je APPROVED, string koji opisuje rezultat izvršitelja.
-- `contextSnapshot` - kontekst komentara/stranice.
+- `contextSnapshot` - kontekst komentara / stranice.
 
 Ovaj događaj pokriva sve ishode odluke:
 
-- **Approved + executed cleanly** -> `status: APPROVED`, `executedAt` je postavljen, `executionResult` je poruka o uspehu.
-- **Approved + executor failed** -> `status: EXECUTION_FAILED`, `executedAt` je postavljen, `executionResult` opisuje neuspeh.
-- **Rejected** -> `status: REJECTED`, `executedAt` je null, `executionResult` je null.
+- **Odobreno + uspešno izvršeno** -> `status: APPROVED`, `executedAt` postavljeno, `executionResult` je poruka o uspehu.
+- **Odobreno + izvršitelj nije uspeo** -> `status: EXECUTION_FAILED`, `executedAt` postavljeno, `executionResult` opisuje neuspeh.
+- **Odbijeno** -> `status: REJECTED`, `executedAt` je null, `executionResult` je null.
 
 ### Header
 
-Svaka isporuka uključuje HTTP header `X-FastComments-Agent-Event` sa kanoničnim tekstualnim imenom događaja (`trigger.succeeded`, itd.). Korisno ako je vaša krajnja tačka jedna URL koja obrađuje više tipova događaja.
+Svaka isporuka uključuje `X-FastComments-Agent-Event` HTTP header sa kanonskim string nazivom događaja (`trigger.succeeded`, itd.). Korisno ako je vaš endpoint jedan URL koji obrađuje više tipova događaja.
 
-### See also
+### Vidi takođe
 
-- [Webhook Payloads](#webhook-payloads) for full per-event payload schemas.
-- [Webhook Signing](#webhook-signing) for the HMAC scheme.
-- [Webhook Retries](#webhook-retries) for delivery semantics.
+- [Webhook Payloads](#webhook-payloads) za kompletne šeme payload-a po događaju.
+- [Webhook Signing](#webhook-signing) za HMAC šemu.
+- [Webhook Retries](#webhook-retries) za semantiku isporuke.

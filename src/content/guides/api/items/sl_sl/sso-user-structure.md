@@ -1,10 +1,12 @@
-FastComments zagotavlja enostavno SSO rešitev. Posodabljanje informacij o uporabniku z HMAC-integracijo je tako preprosto, kot da uporabnik naloži stran s posodobljenimi podatki.
+FastComments ponuja preprosto rešitev SSO za uporabo. Posodobitev informacij o uporabniku s HMAC-based integracijo je
+tako preprosta, da uporabnik naloži stran s posodobljenim payloadom.
 
-Vendar je morda zaželeno upravljati uporabnika zunaj tega poteka, da izboljšate doslednost vaše aplikacije.
+Vendar je lahko zaželeno upravljati uporabnika zunaj tega toka, da izboljšate doslednost vaše aplikacije.
 
-SSO User API omogoča način za CRUD (ustvarjanje, branje, posodabljanje, brisanje) objektov, ki jih imenujemo SSOUsers. Ti objekti so drugačni od običajnih Users in so ločeni zaradi varnosti tipov.
+SSO User API omogoča CRUD operacije nad objekti, ki jih imenujemo SSOUsers. Ti objekti so drugačni od običajnih Users in
+so ločeni zaradi varnosti tipov.
 
-The structure for the SSOUser object is as follows:
+Struktura objekta SSOUser je naslednja:
 
 [inline-code-attrs-start title = 'Struktura SSOUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -21,66 +23,65 @@ interface SSOUser {
     optedInSubscriptionNotifications?: boolean
     displayLabel?: string
     displayName?: string
-    isAccountOwner?: boolean // Dovoljenje skrbnika - SSO uporabniki s to zastavico so zaračunani kot SSO skrbniki (ločeno od običajnih SSO uporabnikov)
-    isAdminAdmin?: boolean // Dovoljenje skrbnika - SSO uporabniki s to zastavico so zaračunani kot SSO skrbniki (ločeno od običajnih SSO uporabnikov)
-    isCommentModeratorAdmin?: boolean // Dovoljenje moderatorja - SSO uporabniki s to zastavico so zaračunani kot SSO moderatorji (ločeno od običajnih SSO uporabnikov)
-    /** Če je null, kontrola dostopa ne bo uporabljena za uporabnika. Če je prazna lista, ta uporabnik ne bo mogel videti nobenih strani ali @omeniti drugih uporabnikov. **/
+    isAccountOwner?: boolean // Admin permission - SSO users with this flag are billed as SSO Admins (separate from regular SSO users)
+    isAdminAdmin?: boolean // Admin permission - SSO users with this flag are billed as SSO Admins (separate from regular SSO users)
+    isCommentModeratorAdmin?: boolean // Moderator permission - SSO users with this flag are billed as SSO Moderators (separate from regular SSO users)
+    /** If null, Access Control will not be applied to the user. If an empty list, this user will not be able to see any pages or @mention other users. **/
     groupIds?: string[] | null
     createdFromSimpleSSO?: boolean
-    /** Ne dovolite drugim uporabnikom videti dejavnosti tega uporabnika, vključno s komentarji, na njegovem profilu. Privzeta vrednost je true, da privzeto zagotavlja varne profile. **/
+    /** Don't let other users see this user's activity, including comments, on their profile. Default is true to provide secure profiles by default. **/
     isProfileActivityPrivate?: boolean
-    /** Ne dovolite drugim uporabnikom puščati komentarjev na uporabnikovem profilu ali videti obstoječih komentarjev na profilu. Privzeto false. **/
+    /** Don't let other users leave comments on the user's profile, or see existing profile comments. Default false. **/
     isProfileCommentsPrivate?: boolean
-    /** Ne dovolite drugim uporabnikom pošiljati direktnih sporočil temu uporabniku. Privzeto false. **/
+    /** Don't let other users send direct messages to this user. Default false. **/
     isProfileDMDisabled?: boolean
     karma?: number
-    /** Neobvezna konfiguracija za značke uporabnika. **/
+    /** Optional configuration for user badges. **/
     badgeConfig?: {
-        /** Polje ID-jev značk, ki se dodelijo uporabniku. Omejeno na 30 značk. Redosled se spoštuje. To so globalne značke vidne na vseh straneh. **/
+        /** Array of badge IDs to assign to the user. Limited to 30 badges. Order is respected. These are global badges visible on all pages. **/
         badgeIds: string[]
-        /** Polje ID-jev značk, omejenih na trenutno stran (urlId). Te značke se prikazujejo samo na strani, kjer so bile dodeljene. **/
+        /** Array of badge IDs scoped to the current page (urlId). These badges are only displayed on the page where they were assigned. **/
         pageBadgeIds?: string[]
-        /** Če je true, zamenja vse obstoječe prikazane značke s predloženimi. Globalne in stran-specifične značke se preglasijo neodvisno. Če je false, doda k obstoječim značkam. **/
+        /** If true, replaces all existing displayed badges with the provided ones. Global and page-scoped badges are overridden independently. If false, adds to existing badges. **/
         override?: boolean
-        /** Če je true, posodobi lastnosti prikaza značk iz konfiguracije najemnika. **/
+        /** If true, updates badge display properties from tenant configuration. **/
         update?: boolean
     }
 }
 [inline-code-end]
 
-### Zaračunavanje SSO uporabnikov
+### Obračavanje SSO uporabnikov
 
-SSO uporabniki se zaračunavajo različno glede na njihove zastavice dovoljenj:
+SSO uporabniki se obračunavajo različno glede na njihove zastavice dovoljenj:
 
-- **Običajni SSO uporabniki**: uporabniki brez skrbniških ali moderatorskih dovoljenj so zaračunani kot običajni SSO uporabniki
-- **SSO skrbniki**: uporabniki z zastavicami `isAccountOwner` ali `isAdminAdmin` so zaračunani ločeno kot SSO skrbniki (enaka tarifa kot običajni skrbniki najemnika)
-- **SSO moderatorji**: uporabniki z zastavico `isCommentModeratorAdmin` so zaračunani ločeno kot SSO moderatorji (enaka tarifa kot običajni moderatorji)
+- **Običajni SSO uporabniki**: Uporabniki brez admin ali moderator dovoljenj se obračunajo kot običajni SSO uporabniki
+- **SSO Admini**: Uporabniki z zastavicama `isAccountOwner` ali `isAdminAdmin` se obračunajo ločeno kot SSO Admini (ista cena kot običajni admini najemnika)
+- **SSO Moderatorji**: Uporabniki z zastavico `isCommentModeratorAdmin` se obračunajo ločeno kot SSO Moderatorji (ista cena kot običajni moderatorji)
 
-**Pomembno**: Za preprečitev dvojnega zaračunavanja sistem samodejno odstrani podvojene SSO uporabnike glede na e-poštni naslov v primerjavi z običajnimi uporabniki najemnika in moderatorji. Če ima SSO uporabnik enak e-poštni naslov kot običajen uporabnik najemnika ali moderator, mu ne bo zaračunano dvakrat.
+**Pomembno**: Za preprečevanje dvojnega obračunavanja sistem samodejno odstrani dvojnike SSO uporabnikov glede na običajne uporabnike in moderatorje najemnika po e-poštnem naslovu. Če ima SSO uporabnik isti e-poštni naslov kot običajni uporabnik ali moderator najemnika, ne bo obračunan dvakrat.
 
-### Kontrola dostopa
+### Nadzor dostopa
 
-Uporabnike je mogoče razvrstiti v skupine. Za to je polje `groupIds`, in je neobvezno.
+Uporabnike je mogoče razdeliti v skupine. Za to je namenjeno polje `groupIds`, ki je neobvezno.
 
-### @omenitve
+### @Omembe
 
-Privzeto bo `@mentions` uporabil `username` za iskanje drugih SSO uporabnikov ob vnosu znaka `@`. Če se uporablja `displayName`, bodo rezultati, ki se ujemajo z `username`, prezrti, kadar obstaja ujemanje za `displayName`, in iskalni rezultati za `@mention` bodo uporabili `displayName`.
+Privzeto `@mentions` uporabijo `username` za iskanje drugih sso uporabnikov, ko je vnesen znak `@`. Če je uporabljen `displayName`, bodo rezultati, ki se ujemajo z `username`, prezrti, ko obstaja ujemanje za `displayName`, rezultati iskanja `@mention` pa bodo uporabili `displayName`.
 
 ### Naročnine
 
-Z FastComments lahko se uporabniki naročijo na stran s klikom na ikono zvonca v komentar widgetu in klikom na Naroči.
+S FastComments se uporabniki lahko naročijo na stran s klikom na ikono zvončka v pripomočku za komentarje in klikom na Naroči se.
 
-Pri običajnem uporabniku jim pošiljamo obvestila po e-pošti glede na njihove nastavitve obvestil.
+Pri običajnem uporabniku jim pošiljamo obvestilne e-pošte na podlagi njihovih nastavitev obvestil.
 
-Pri SSO uporabnikih smo to razdelili zaradi združljivosti z zgodnejšimi različicami. Uporabniki bodo prejeli te dodatne e-pošte o naročninah le, če nastavite `optedInSubscriptionNotifications` na `true`.
+Pri SSO uporabnikih smo to razdelili zaradi združljivosti za nazaj. Uporabniki bodo prejeli te dodatne obvestilne e-pošte o naročnini
+samo, če nastavite `optedInSubscriptionNotifications` na `true`.
 
 ### Značke
 
-Z uporabo lastnosti `badgeConfig` lahko dodelite značke SSO uporabnikom. Značke so vizualni indikatorji, ki se pojavijo poleg uporabnikovega imena v komentarjih.
+SSO uporabnikom lahko dodelite značke z lastnostjo `badgeConfig`. Značke so vizualni kazalniki, ki se prikažejo poleg imena uporabnika v komentarjih.
 
-- `badgeIds` - Polje ID-jev značk, ki se dodelijo uporabniku. To so globalne značke, vidne na vseh straneh. Mora biti veljavni ID-ji značk, ustvarjeni v vašem FastComments računu. Omejeno na 30 značk.
-- `pageBadgeIds` - Neobvezno polje ID-jev značk, omejenih na trenutno stran (`urlId`). Te značke se prikazujejo samo na strani, kjer so bile dodeljene. Različne strani lahko imajo različne stran-specifične značke za istega uporabnika.
-- `override` - Če je true, bodo vse obstoječe prikazane značke zamenjane s predloženimi. Globalne in stran-specifične značke se preglasijo neodvisno — preglasitev globalnih značk ne vpliva na stran-specifične značke, in obratno. Če je false ali izpuščeno, bodo predložene značke dodane k obstoječim.
+- `badgeIds` - Polje ID-jev značk za dodelitev uporabniku. To so globalne značke, vidne na vseh straneh. Morajo biti veljavni ID-ji značk, ustvarjenih v vašem FastComments računu. Omejeno na 30 značk.
+- `pageBadgeIds` - Neobvezno polje ID-jev značk, obseženih na trenutno stran (`urlId`). Te značke so prikazane samo na strani, kjer so bile dodeljene. Različne strani lahko imajo različne značke obsežene na stran za istega uporabnika.
+- `override` - Če je true, bodo vse obstoječe prikazane značke zamenjane s podanimi. Globalne in na stran obsežene značke so preglasene neodvisno — preglaševanje globalnih značk ne vpliva na značke obsežene na stran in obratno. Če je false ali izpuščeno, bodo podane značke dodane obstoječim značkam.
 - `update` - Če je true, bodo lastnosti prikaza značk posodobljene iz konfiguracije najemnika vsakič, ko se uporabnik prijavi.
-
----

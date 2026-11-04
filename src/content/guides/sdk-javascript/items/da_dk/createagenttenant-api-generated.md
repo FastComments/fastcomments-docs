@@ -1,21 +1,18 @@
-Creates a new trial account for an AI agent without a human signup. No API key is needed to call this.
+Opretter en ny prøvekonto til en AI-agent uden menneskelig tilmelding. Der kræves ingen API-nøgle for at kalde dette.
 
-The response contains the tenant id, an API key that works immediately against the REST API and the
-MCP server, and a claim URL. Give the claim URL to the human you are working for: opening it while
-logged in to FastComments attaches the account to them. Unclaimed accounts, and their keys, are
-deleted 72 hours after creation. Until claimed, the account has the standard trial limits.
+Svaret indeholder tenant-id'et, en API-nøgle, der fungerer med det samme mod REST API'et og MCP-serveren, samt en claim-URL. Giv claim-URL'en til det menneske, du arbejder for: når den åbnes, mens man er logget ind på FastComments, tilknyttes kontoen til denne person. Ikke-claimede konti, og deres nøgler, slettes 72 timer efter oprettelsen. Indtil den er claimet, har kontoen de standard begrænsninger for prøveversioner.
 
-## Parameters
+## Parametre
 
-| Name | Type | Required | Description |
+| Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
-| createAgentTenantBody | CreateAgentTenantBody | Yes |  |
+| createAgentTenantBody | CreateAgentTenantBody | Ja |  |
 
-## Response
+## Svar
 
-Returns: [`CreateAgentTenantResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateAgentTenantResponse.ts)
+Returnerer: [`CreateAgentTenantResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateAgentTenantResponse.ts)
 
-## Example
+## Eksempel
 
 [inline-code-attrs-start title = 'createAgentTenant Eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -28,5 +25,3 @@ const tenantBody: CreateAgentTenantBody = {
 
 const result: CreateAgentTenantResponse = await createAgentTenant(tenantBody);
 [inline-code-end]
-
----

@@ -18,5 +18,3 @@ if response.isSome:
   let comment = response.get()
   discard comment
 [inline-code-end]
-
----

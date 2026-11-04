@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Назва | Тип | Обов’язково | Опис |
@@ -25,5 +24,3 @@ api->getSearchSuggest(tenantId, opts).then([](pplx::task<std::shared_ptr<Moderat
     }catch(const std::exception&){ }
 }).wait();
 [inline-code-end]
-
----

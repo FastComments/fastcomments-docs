@@ -1,4 +1,3 @@
----
 Crea un nuovo account di prova per un agente AI senza la registrazione umana. Non è necessaria alcuna chiave API per chiamare questo.
 
 La risposta contiene l'ID del tenant, una chiave API che funziona immediatamente contro la REST API e il server MCP, e un URL di claim. Fornisci l'URL di claim all'umano per cui stai lavorando: aprirlo mentre sei connesso a FastComments associa l'account a loro. Gli account non reclamati, e le loro chiavi, vengono eliminati 72 ore dopo la creazione. Fino a quando non vengono reclamati, l'account ha i limiti standard di prova.
@@ -27,5 +26,3 @@ DefaultAPI.createAgentTenant(createAgentTenantBody: createAgentTenantBody) { (re
     }
 }
 [inline-code-end]
-
----

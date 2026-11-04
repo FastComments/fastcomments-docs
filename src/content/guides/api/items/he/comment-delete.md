@@ -1,4 +1,3 @@
----
 [api-resource-header-start name = 'Comment'; route = 'DELETE /api/v1/comments/:id'; creditsCost = 1; api-resource-header-end]
 
 נקודת קצה זו של ה-API מאפשרת למחוק תגובה.
@@ -40,5 +39,3 @@ interface CommentDeleteResponse {
     reason?: string
 }
 [inline-code-end]
-
----

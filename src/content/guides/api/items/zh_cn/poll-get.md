@@ -1,4 +1,3 @@
----
 [api-resource-header-start name = 'Poll'; route = 'GET /api/v1/polls/:commentId'; creditsCost = 1; api-resource-header-end]
 
 读取附加在评论上的投票及其当前投票计数。
@@ -32,5 +31,3 @@ interface PollGetResponse {
 [inline-code-end]
 
 没有投票的评论、已被删除的评论以及不存在的评论 ID，都会以相同的方式响应，返回 `poll-not-found`。
-
----

@@ -5,5 +5,3 @@
 ## Αποθετήριο
 
 [Προβολή στο GitHub](https://github.com/FastComments/fastcomments-ios)
-
----

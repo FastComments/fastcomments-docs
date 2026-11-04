@@ -29,5 +29,3 @@ interface PollVoteGetResponse {
     pollVote: PollVote
 }
 [inline-code-end]
-
----

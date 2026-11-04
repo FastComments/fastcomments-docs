@@ -1,25 +1,25 @@
-List pages for a tenant. Used by the FChat desktop client to populate its room list.  
-Requires `enableFChat` to be true on the resolved custom config for each page.  
-Pages that require SSO are filtered against the requesting user's group access.
+Λίστα σελίδων για έναν tenant. Χρησιμοποιείται από το FChat desktop client για να συμπληρώσει τη λίστα των rooms του.
+Απαιτεί το `enableFChat` να είναι true στο resolved custom config για κάθε σελίδα.
+Οι σελίδες που απαιτούν SSO φιλτράρονται με βάση την πρόσβαση ομάδας του χρήστη που κάνει το αίτημα.
 
 ## Παράμετροι
 
-| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
+| Όνομα | Τύπος | Απαραίτητο | Περιγραφή |
 |------|------|----------|-------------|
-| tenant_id | String | Yes |  |
-| cursor | String | No |  |
-| limit | i32 | No |  |
-| q | String | No |  |
-| sort_by | models::PagesSortBy | No |  |
-| has_comments | bool | No |  |
+| tenant_id | String | Ναι |  |
+| cursor | String | Όχι |  |
+| limit | i32 | Όχι |  |
+| q | String | Όχι |  |
+| sort_by | models::PagesSortBy | Όχι |  |
+| has_comments | bool | Όχι |  |
 
-## Απόκριση
+## Απάντηση
 
 Επιστρέφει: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_public_pages_response.rs)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'get_pages_public Παράδειγμα'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Παράδειγμα get_pages_public'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn example(configuration: &configuration::Configuration) -> Result<(), Error> {
     let params = GetPagesPublicParams {
@@ -34,5 +34,3 @@ async fn example(configuration: &configuration::Configuration) -> Result<(), Err
     Ok(())
 }
 [inline-code-end]
-
----

@@ -1,14 +1,12 @@
-Attach a poll to a comment, or set the full state of the poll it already has.
+コメントに投票(アンケート)を添付するか、既に添付されている投票の状態全体を設定します。
 
-Options are matched by id: an option sent with the id of an existing option keeps its votes (and takes the
-new label and position), an option sent without an id is added, and existing options left out of the list
-are removed along with the votes cast on them.
+選択肢はidによって照合されます。既存の選択肢と同じidを持つ選択肢を送信すると、その投票数は保持され(新しいラベルと位置が適用され)、idなしで送信された選択肢は追加され、リストに含まれていない既存の選択肢は、それに投じられた投票とともに削除されます。
 
-Keeping no existing option ids on a poll that has votes deletes all of them, so that needs replaceVotes=true.
+投票が存在する投票で既存の選択肢のidをすべて除外すると、それらはすべて削除されるため、その場合は replaceVotes=true が必要です。
 
-## Parameters
+## パラメーター
 
-| 名前 | タイプ | 場所 | 必須 | 説明 |
+| 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | はい |  |
 | commentId | string | path | はい |  |
@@ -16,13 +14,13 @@ Keeping no existing option ids on a poll that has votes deletes all of them, so 
 
 ## レスポンス
 
-返却: [`SavePollResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/SavePollResponse.swift)
+戻り値: [`SavePollResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/SavePollResponse.swift)
 
 ## 例
 
 [inline-code-attrs-start title = 'putPoll の例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 以下のコードサンプルはまだベータ版です。問題がある場合は、http://github.com/OpenAPITools/openapi-generator/issues/new へ報告してください
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 

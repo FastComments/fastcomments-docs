@@ -34,5 +34,3 @@ PublicAPI.getGifsTrending(tenantId: tenantId, options: PublicAPI.GetGifsTrending
     }
 }
 [inline-code-end]
-
----

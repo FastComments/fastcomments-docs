@@ -1,4 +1,3 @@
----
 ## 參數
 
 | 名稱 | 型別 | 位置 | 必填 | 說明 |
@@ -37,5 +36,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.CreateEmailTemplate`: %v\n", resp)
 }
 [inline-code-end]
-
----

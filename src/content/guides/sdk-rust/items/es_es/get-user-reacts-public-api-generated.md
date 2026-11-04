@@ -27,5 +27,3 @@ async fn fetch_user_reacts() -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
-
----

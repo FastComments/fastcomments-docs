@@ -1,25 +1,23 @@
-In the event that data needs to be moved around, FastComments provides a self-service tool for moving comments between pages and articles.
+Verilerin taşınması gerektiği durumlarda, FastComments, yorumları sayfalar ve makaleler arasında taşımayı sağlayan self servis bir araç sunar.
 
-Here's what the comment copy page form looks like:
+İşte yorum kopyalama sayfası formunun görünümü:
 
-[app-screenshot-start url='/auth/my-account/manage-data/copy-comments'; selector = '.account-block'; alt='Kaynak URL ID alanı ve Hedef URL ID ve URL alanlarını içeren yorum kopyalama formu'; title='Yorum Kopyalama Formu' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/copy-comments'; selector = '.account-block'; alt='From URL ID alanı ile To URL ID ve URL alanlarını içeren yorum kopyalama formu'; title='Yorum Kopyalama Formu' app-screenshot-end]
 
-### Filling out the "From" Fields
+### "From" Alanlarının Doldurulması
 
-To decide where to move comments from, we simply need to know the source `URL ID`.
+Yorumların nereden taşınacağına karar vermek için, yalnızca kaynak `URL ID` bilgisine ihtiyacımız var.
 
-If you aren't passing a value for `urlId` in the comment widget configuration, then this will be a "clean" version of the page URL.
+Yorum widget yapılandırmasında `urlId` için bir değer iletmiyorsanız, bu, sayfa URL'sinin "temiz" bir sürümü olacaktır.
 
-You can see what values your comments have for `URL ID` by exporting them.
+Yorumlarınızın `URL ID` değerlerinin ne olduğunu, bunları dışa aktararak görebilirsiniz.
 
-### Filling out the "To" Fields
+### "To" Alanlarının Doldurulması
 
-To decide where to move comments to, we need to know the target `URL ID` and `URL`.
+Yorumların nereye taşınacağına karar vermek için, hedef `URL ID` ve `URL` bilgisine ihtiyacımız var.
 
-The `URL ID` will be the bucket that the comment goes in. The `URL` field is used so that you can navigate directly
-to the comment from emails and moderation tools.
+`URL ID`, yorumun gideceği kova (bucket) olacaktır. `URL` alanı, yorumlara e-postalardan ve moderasyon araçlarından doğrudan gidebilmeniz için kullanılır.
 
 #### WordPress
 
-If you are using WordPress, you would for example enter the Article IDs in the To/From `URL ID` fields in the migration tool,
-rather than a URL.
+WordPress kullanıyorsanız, örneğin taşıma aracındaki To/From `URL ID` alanlarına bir URL yerine Makale ID'lerini girmeniz gerekir.

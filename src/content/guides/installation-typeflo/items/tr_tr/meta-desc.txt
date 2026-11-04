@@ -1,3 +1,1 @@
----
 FastComments snippet'ini kod girişine yapıştırarak bir Typeflo.io bloguna canlı yorumlar ekleyin, ardından widget'ı temanızla eşleşecek şekilde yeniden stil verin.
----

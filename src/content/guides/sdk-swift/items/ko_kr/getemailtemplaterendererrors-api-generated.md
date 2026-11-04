@@ -1,4 +1,3 @@
----
 ## 매개변수
 
 | 이름 | 형식 | 위치 | 필수 | 설명 |
@@ -33,5 +32,3 @@ DefaultAPI.getEmailTemplateRenderErrors(tenantId: tenantId, id: id, skip: skip) 
     }
 }
 [inline-code-end]
-
----

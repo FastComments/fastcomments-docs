@@ -1,25 +1,25 @@
-The **FastComments - Recent Discussions** block lists the pages on your store with the most recent comment activity, one entry per page. Use it when you want visitors to discover active threads rather than individual comments.
+Bloka **FastComments - Recent Discussions** prikazuje strani v vaši trgovini z najnovejšo aktivnostjo komentarjev, en vnos na stran. Uporabite ga, kadar želite, da obiskovalci odkrijejo aktivne niti namesto posameznih komentarjev.
 
-### Dodajte blok
+### Dodajanje bloka
 
-1. Odprite urejevalnik teme Shopify.
-2. Odprite predlogo, kamor želite vir, na primer stranska vrstica, noga, index bloga ali odsek domače strani.
-3. Kliknite **Dodaj blok** v odseku, ki naj ga vsebuje.
-4. Pod **Aplikacije** izberite **FastComments - Recent Discussions**.
-5. Kliknite **Shrani**.
+1. Odprite urejevalnik tem Shopify.
+2. Odprite predlogo, kjer želite vir, na primer stransko vrstico, nogo, kazalo bloga ali razdelek na domači strani.
+3. Kliknite **Add block** v razdelku, ki naj ga vsebuje.
+4. Pod **Apps** izberite **FastComments - Recent Discussions**.
+5. Kliknite **Save**.
 
 ### Nastavitve
 
-| Nastavitev | Kaj počne | Privzeto |
+| Nastavitev | Kaj naredi | Privzeto |
 |---|---|---|
-| Tenant ID (neobvezno) | Prepiše, iz katerega FastComments najemnika vir bere. Pustite prazno, da se uporabi samodejno konfiguriran najemnik trgovine. | (prazno) |
-| Number of comments | Koliko nedavnih razprav prikazati. Razpon 1 do 50. | 20 |
+| Tenant ID (neobvezno) | Preglasi, s katerega najemnika FastComments vir bere. Pustite prazno za uporabo samodejno nastavljenega najemnika trgovine. | (prazno) |
+| Number of comments | Koliko nedavnih razprav naj bo prikazanih. Območje od 1 do 50. | 20 |
 
-### Recent Discussions vs Recent Comments
+### Recent Discussions v primerjavi z Recent Comments
 
-Both blocks pull from the same data, but they show different views:
+Oba bloka črpata iz istih podatkov, prikazujeta pa različna pogleda:
 
-- **Recent Comments**: a flat list of the latest individual comments. Best for "what was just said".
-- **Recent Discussions**: one entry per page, ordered by most recent activity. Best for "which threads are alive right now".
+- **Recent Comments**: raven seznam najnovejših posameznih komentarjev. Najboljše za »kaj je bilo pravkar povedano«.
+- **Recent Discussions**: en vnos na stran, razvrščen po najnovejši aktivnosti. Najboljše za »katere nite so trenutno žive«.
 
-You can use both on the same store. For example, Recent Comments in the blog sidebar and Recent Discussions on the home page.
+Na isti trgovini lahko uporabite oba. Na primer, Recent Comments v stranski vrstici bloga in Recent Discussions na domači strani.

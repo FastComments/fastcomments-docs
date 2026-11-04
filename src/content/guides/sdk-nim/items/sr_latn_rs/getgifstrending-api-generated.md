@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
@@ -23,5 +22,3 @@ if maybeResponse.isSome:
   let gifs = maybeResponse.get()
   echo gifs
 [inline-code-end]
-
----

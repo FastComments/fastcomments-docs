@@ -1,165 +1,163 @@
-A `Comment` object represents a comment left by a user.
+Обектът `Comment` представлява коментар, оставен от потребител.
 
-The relationship between parent and child comments is defined via `parentId`.
+Връзката между родителски и дъщерни коментари се дефинира чрез `parentId`.
 
-The structure for the Comment object is as follows:
+Структурата на обекта Comment е следната:
 
-[inline-code-attrs-start title = 'Структура на обекта Comment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Структура на Comment'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface Comment {
-    /** READONLY: Задава се на true ако механизмът за разпознаване на спам определи, че коментарът е спам. **/
+    /** READONLY: Зададено на true, ако спам машината е определила коментара като спам. **/
     aiDeterminedSpam?: boolean
-    /** Дали коментарът е одобрен за показване. Задава се на true при записване на коментара, иначе ще бъде скрит. **/
+    /** Дали коментарът е одобрен за показване. Задава се на true при запазване на коментара, в противен случай ще бъде скрит. **/
     approved?: boolean
     /** Аватарът на потребителя. **/
     avatarSrc?: string
-    /** Детски коментари. Не е попълнено във всички сценарии. Използва се когато asTree е зададено на true чрез API-то. **/
+    /** Дъщерни коментари. Не се попълват във всички сценарии. Използва се, когато asTree е зададено на true чрез API-то. **/
     children: Comment[]
-    /** Оригиналният коментар на потребителя. **/
+    /** Суровият коментар на автора. **/
     comment: string
-    /** READONLY: Коментарът на потребителя, преобразуван в HTML. **/
+    /** READONLY: Коментарът на автора, анализиран в HTML. **/
     commentHTML?: string
-    /** Имейлът на коментатора. Задължителен ако анонимното коментиране е изключено. **/
+    /** Имейлът на автора. Задължителен, ако анонимното коментиране е изключено. **/
     commenterEmail?: string
-    /** Линкът на коментатора (например техният блог). **/
+    /** Линкът на автора (например неговият блог). **/
     commenterLink?: string
-    /** Името на коментатора. Винаги е задължително. Ако не е налично, задайте нещо като "Anonymous". **/
+    /** Името на автора. Винаги задължително. Ако не е налично, задайте нещо като "Anonymous". **/
     commenterName: string
-    /** Дата/време на оставяне на коментара, в UTC epoch. **/
+    /** Датата, на която е оставен коментарът, в UTC epoch. **/
     date: number
-    /** The "display label" for the comment - for example "Admin", "Moderator", or something like "VIP User". **/
+    /** "Етикетът за показване" на коментара - например "Admin", "Moderator" или нещо като "VIP User". **/
     displayLabel?: string
     /** Домейнът, на който е публикуван коментарът. **/
     domain?: string
-    /** READONLY: Броят пъти, в които коментарът е бил маркиран. **/
+    /** READONLY: Броят пъти, в които коментарът е бил докладван. **/
     flagCount?: number
-    /** The #hashtags written in the comment that were successfully parsed. You can also manually add hashtags, for querying, but they won't display in the comment text automatically. **/
+    /** #хештаговете, написани в коментара, които са били успешно анализирани. Можете също да добавяте хештагове ръчно, за заявки, но те няма да се показват автоматично в текста на коментара. **/
     hashTags?: CommentHashTag[]
-    /** READONLY: Does the comment contain images? **/
+    /** READONLY: Съдържа ли коментарът изображения? **/
     hasImages?: boolean
-    /** READONLY: Does the comment contain links? **/
+    /** READONLY: Съдържа ли коментарът линкове? **/
     hasLinks?: boolean
-    /** READONLY: The unique comment id. **/
+    /** READONLY: Уникалният идентификатор на коментара. **/
     id: string
-    /** Only on create! This is hashed for storage. **/
+    /** Само при създаване! Това се хешира за съхранение. **/
     ip?: string
-    /** READONLY: Did the current user block the user that wrote this comment? **/
+    /** READONLY: Дали текущият потребител е блокирал потребителя, написал този коментар? **/
     isBlocked?: boolean
-    /** READONLY: Is the comment by an admin? Automatically set based on userId. **/
+    /** READONLY: Дали коментарът е от администратор? Задава се автоматично според userId. **/
     isByAdmin?: boolean
-    /** READONLY: Is the comment by a moderator? Automatically set based on userId. **/
+    /** READONLY: Дали коментарът е от модератор? Задава се автоматично според userId. **/
     isByModerator?: boolean
-    /** Set to true if the comment was soft deleted (placeholder had to be left due to some other configuration). **/
+    /** Зададено на true, ако коментарът е бил меко изтрит (трябвало е да остане плейсхолдър поради друга конфигурация). **/
     isDeleted?: boolean
-    /** Set to true if the user's account was deleted and the comment had to be retained. **/
+    /** Зададено на true, ако акаунтът на потребителя е бил изтрит и коментарът е трябвало да бъде запазен. **/
     isDeletedUser?: boolean
-    /** READONLY: Is the flagged by the currently logged-in user (contextUserId)? **/
+    /** READONLY: Дали е докладван от текущо влезлия потребител (contextUserId)? **/
     isFlagged?: boolean
-    /** Is the comment pinned? **/
+    /** Дали коментарът е закачен? **/
     isPinned?: boolean
-    /** Is the comment locked? When true, no one (including moderators) can reply, edit, or delete it until it is unlocked. **/
+    /** Дали коментарът е заключен? Когато е true, никой (включително модератори) не може да отговаря, редактира или изтрива, докато не бъде отключен. **/
     isLocked?: boolean
-    /** Is the comment spam? **/
+    /** Дали коментарът е спам? **/
     isSpam?: boolean
-    /** READONLY: Is the comment voted down for the current user (contextUserId)? **/
+    /** READONLY: Дали коментарът е гласуван надолу от текущия потребител (contextUserId)? **/
     isVotedDown?: boolean
-    /** READONLY: Is the comment voted up for the current user (contextUserId)? **/
+    /** READONLY: Дали коментарът е гласуван нагоре от текущия потребител (contextUserId)? **/
     isVotedUp?: boolean
-    /** The locale the comment is in. If not provided, will be derived from the language accept HTTP header. **/
+    /** Локалът на коментара. Ако не е предоставен, ще бъде извлечен от HTTP хедъра accept language. **/
     locale?: 'de_de' | 'en_us' | 'es_es' | 'fr_fr' | 'it_it' | 'ja_jp' | 'ko_kr' | 'pl_pl' | 'pt_br' | 'ru_ru' | 'tr_tr' | 'zh_cn' | 'zh_tw'
-    /** READONLY: The @mentions written in the comment that were successfully parsed. **/
+    /** READONLY: @споменаванията, написани в коментара, които са били успешно анализирани. **/
     mentions?: CommentUserMention[]
-    /** Optional metadata associated with the comment. **/
+    /** Опционални метаданни, свързани с коментара. **/
     meta?: Record<string, string | number | boolean>
-    /** The optional list of moderation group ids associated with this comment. **/
+    /** Опционалният списък с идентификатори на модерационни групи, свързани с този коментар. **/
     moderationGroupIds?: string[]|null
-    /** READONLY: The id of the vote object that corresponds to the vote from the current user (contextUserId) on this comment. **/
+    /** READONLY: Идентификаторът на обекта глас, съответстващ на гласа от текущия потребител (contextUserId) за този коментар. **/
     myVoteId?: string
-    /** Whether notifications were sent for this comment for commenters. To prevent notifications being sent on imports, set this to true. **/
+    /** Дали са били изпратени известия за този коментар на коментиращите. За да предотвратите изпращане на известия при импортиране, задайте това на true. **/
     notificationSentForParent?: boolean
-    /** Whether notifications were sent for this comment for tenant users. To prevent notifications being sent on imports, set this to true. **/
+    /** Дали са били изпратени известия за този коментар на потребителите на наемателя. За да предотвратите изпращане на известия при импортиране, задайте това на true. **/
     notificationSentForParentTenant?: boolean
-    /** The title of the page this comment was on. **/
+    /** Заглавието на страницата, на която е бил този коментар. **/
     pageTitle?: string
-    /** If we're replying to a comment, this is the ID that we are replying to. **/
+    /** Ако отговаряме на коментар, това е идентификаторът, на който отговаряме. **/
     parentId?: string|null
-    /** Whether the comment is marked reviewed. **/
+    /** Дали коментарът е маркиран като прегледан. **/
     reviewed: boolean
-    /** The tenant id where the comment belongs. **/
+    /** Идентификаторът на наемателя, към който принадлежи коментарът. **/
     tenantId: string
-    /** The user that wrote the comment. Created automatically when saving a comment with a name/email. **/
+    /** Потребителят, написал коментара. Създава се автоматично при запазване на коментар с име/имейл. **/
     userId?: string|null
-    /** The URL to the location that this comment is visible, like a blog post. **/
+    /** URL адресът на местоположението, където този коментар е видим, като например блог публикация. **/
     url: string
-    /** A "cleaned" version of the urlId you passed us. When saving, you specify this field, but when you fetch the comment back this will be "cleaned" and your original value moved to "urlIdRaw". **/
+    /** "Почистена" версия на urlId, който сте ни подали. При запазване вие задавате това поле, но когато извлечете коментара обратно, то ще бъде "почистено" и първоначалната ви стойност ще бъде преместена в "urlIdRaw". **/
     urlId: string
-    /** READONLY: The original urlId you passed us. **/
+    /** READONLY: Първоначалният urlId, който сте ни подали. **/
     urlIdRaw?: string
-    /** Is the user and this comment verified? **/
+    /** Дали потребителят и този коментар са потвърдени? **/
     verified: boolean
-    /** Number of votes up. **/
+    /** Брой гласове нагоре. **/
     votesUp?: number
-    /** Number of votes down. **/
+    /** Брой гласове надолу. **/
     votesDown?: number
-    /** The "karma" of the comment (= votes up - votes down). **/
+    /** "Карма" на коментара (= гласове нагоре - гласове надолу). **/
     votes?: number
 }
 [inline-code-end]
 
-Some of these fields are marked `READONLY` - these are returned by the API but cannot be set.
+Някои от тези полета са маркирани като `READONLY` - те се връщат от API-то, но не могат да бъдат задавани.
 
 ### Структура на текста на коментара
 
-Comments are written in a FastComments flavor of markdown, which is just markdown plus traditional `bbcode` style tags for images, like `[img]path[/img]`.
+Коментарите се пишат във вариант на markdown, характерен за FastComments, който е просто markdown плюс традиционни тагове в стил `bbcode` за изображения, като `[img]path[/img]`.
 
-Text is stored in two fields. The text the user entered is stored unmodified in the `comment` field. This is rendered and stored in the `commentHTML` field.
+Текстът се съхранява в две полета. Текстът, въведен от потребителя, се съхранява немодифициран в полето `comment`. Той се рендира и съхранява в полето `commentHTML`.
 
-The allowed HTML tags are `b, u, i, strike, pre, span, code, img, a, strong, ul, ol, li, and br`.
+Позволените HTML тагове са `b, u, i, strike, pre, span, code, img, a, strong, ul, ol, li, and br`.
 
-It's recommended to render the HTML, since it is a very small subset of HTML, building a renderer is pretty straightforward. There are multiple libraries for React Native and Flutter, for instance, to help with this
+Препоръчително е да рендирате HTML-а, тъй като това е много малко подмножество от HTML и изграждането на рендер е доста лесно. Например съществуват множество библиотеки за React Native и Flutter, които могат да помогнат с това.
 
-You may choose to render the un-normalized value of the `comment` field. [An example parser is here.](https://github.com/FastComments/fastcomments-code-examples/blob/master/custom-client/client/parse-comment.js).
+Можете да изберете да рендирате ненормализираната стойност на полето `comment`. [Примерен парсер е тук.](https://github.com/FastComments/fastcomments-code-examples/blob/master/custom-client/client/parse-comment.js).
 
-The example parser could also be adjusted to work with HTML, and transform the HTML tags into expected elements to render for your platform. 
+Примерният парсер може също да бъде адаптиран да работи с HTML и да преобразува HTML таговете в очаквани елементи за рендиране на вашата платформа.
 
-### Тагване
+### Споменавания (Tagging)
 
-When users are tagged in a comment, the information is stored in a list called `mentions`. Each object in that list
-has the following structure.
+Когато потребители бъдат споменати в коментар, информацията се съхранява в списък, наречен `mentions`. Всеки обект в този списък
+има следната структура.
 
-[inline-code-attrs-start title = 'Обект за упоменаване в коментар'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Обектът Comment Mentions'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentUserMention {
-    /** The user id. For SSO users, this will have your tenant id prefixed. **/
+    /** Идентификаторът на потребителя. За SSO потребители той ще има префикс с идентификатора на вашия наемател. **/
     id: string
-    /** The final @mention tag text, including the @ symbol. **/
+    /** Крайният текст на @mention тага, включително символа @. **/
     tag: string
-    /** The original @mention tag text, including the @ symbol. **/
+    /** Първоначалният текст на @mention тага, включително символа @. **/
     rawTag: string
-    /** What type of user was tagged. user = FastComments.com account. sso = SSOUser. **/
+    /** Какъв тип потребител е бил споменат. user = FastComments.com акаунт. sso = SSOUser. **/
     type: 'user'|'sso'
-    /** If the user opts out of notifications, this will still be set to true. **/
+    /** Ако потребителят е отказал известия, това все пак ще бъде зададено на true. **/
     sent: boolean
 }
 [inline-code-end]
 
-### Хештагове
+### HashTags
 
-When hashtags are used and successfully parsed, the information is stored in a list called `hashTags`. Each object in that list
-has the following structure. Hashtags can also be manually added to the comment `hashTags` array for querying, if `retain` is set.
+Когато хештагове са използвани и успешно анализирани, информацията се съхранява в списък, наречен `hashTags`. Всеки обект в този списък
+има следната структура. Хештагове могат също да бъдат добавяни ръчно към масива `hashTags` на коментара за заявки, ако `retain` е зададено.
 
-[inline-code-attrs-start title = 'Обектът на хаштаг в коментара'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Обектът Comment HashTag'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentHashTag {
-    /** The hashtag id. **/
+    /** Идентификаторът на хештага. **/
     id: string
-    /** The final #hashtag tag text, including the # symbol. **/
+    /** Крайният текст на #hashtag тага, включително символа #. **/
     tag: string
-    /** If the hashtag is associated with a custom URL, this will be defined. **/
+    /** Ако хештагът е свързан с персонализиран URL, това ще бъде дефинирано. **/
     url?: string
-    /** If we should retain the hashtag, even if it does not exist in the comment text, when the comment is updated. Useful for tagging comments without changing comment text. **/
+    /** Ако хештагът трябва да бъде запазен, дори да не съществува в текста на коментара, при обновяване на коментара. Полезно за тагване на коментари без промяна на текста на коментара. **/
     retain?: boolean
 }
 [inline-code-end]
-
----

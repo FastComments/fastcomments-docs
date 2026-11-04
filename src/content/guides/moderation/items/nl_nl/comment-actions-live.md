@@ -12,5 +12,3 @@ reactielijst die laat zien hoeveel nieuwe reacties er wachten. Door op de banner
 Dit werkt met alle filters — als je alleen spamreacties bekijkt, word je alleen geïnformeerd over nieuwe spam. Als je zoekt naar reacties die een specifieke zin bevatten, veroorzaken alleen overeenkomende reacties de melding.
 
 Als je verbinding tijdelijk wordt onderbroken, werkt het systeem automatisch alle reacties bij die je hebt gemist wanneer het opnieuw verbinding maakt.
-
----

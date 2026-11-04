@@ -1,4 +1,3 @@
----
 To jest pięciominutowa ścieżka od "mamy Agentów AI" do "agent odpowiada na ruch na żywo, zablokowany przez zatwierdzenia". Jeśli chcesz wersję szczegółową, każdy krok zawiera link do strony, która omawia go dogłębnie.
 
 ### 1. Otwórz stronę Agenci AI
@@ -53,5 +52,3 @@ Kiedy będziesz zadowolony z wyników w trybie testowym i odtworzeń, edytuj age
 - Ustaw [Budżety](#budgets-overview) i [Alerty budżetowe](#budget-alerts).
 - Skonfiguruj [Webhooki](#webhooks-overview), jeśli chcesz, aby systemy zewnętrzne reagowały na zdarzenia agenta.
 - Dodaj [Zasady społeczności](#community-guidelines), aby decyzje agenta były zgodne z Twoją pisemną polityką.
-
----

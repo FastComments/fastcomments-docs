@@ -76,5 +76,3 @@ I voti anonimi sono anche limitati per frequenza per IP per sondaggio, per imped
 - Un `userId` deve corrispondere a un utente che esiste sul tuo sito. I voti per un utente appartenente a un altro sito vengono rifiutati.
 - Votare su un sondaggio chiuso fallisce con `poll-closed`.
 - Questa API aggiorna i conteggi del sondaggio e li invia in tempo reale ai widget collegati.
-
----

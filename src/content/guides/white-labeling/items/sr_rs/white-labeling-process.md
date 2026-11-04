@@ -1,4 +1,3 @@
----
 Процес подешавања White Labeling-а је следећи:
 
 1. Изаберите како ће се одвијати наплата.
@@ -11,5 +10,3 @@
    2. `TenantUser` је администратор са скупом привилегија у `Tenant`.
    3. `TenantPackage` је пакет са скупом ограничења и цена доступан `Tenant`-у.
 3. Интегришите се са нашим [API](/guide-api.html) или користите [скрипте](https://github.com/FastComments/fastcomments-code-examples/tree/master/white-labeling) да региструјете тенанте.
-
----

@@ -1,116 +1,116 @@
-SSO, eller single-sign-on, er et sæt konventioner, der bruges til at lade dig eller dine brugere bruge FastComments uden at skulle oprette en separat konto.
+SSO, eller single-sign-on, er et sæt konventioner, der giver dig eller dine brugere mulighed for at bruge FastComments uden at skulle oprette endnu en konto.
 
-Antager vi, at du ikke tillader anonyme kommentarer, kræves der en konto for at kommentere med FastComments. Vi gør denne tilmeldingsproces meget nem - brugeren efterlader bare deres e-mail, når de kommenterer.
-Vi forstår dog, at selv det kan være ekstra friktion, som nogle sider ønsker at undgå.
+Hvis du ikke tillader anonym kommentering, kræves der en konto for at kommentere med FastComments. Vi gør denne tilmeldingsproces meget nem - brugeren skal blot angive deres e-mail, når de kommenterer.
+Vi forstår dog, at selv det er ekstra friktion, som nogle sider ønsker at undgå.
 
-Vi kan reducere den friktion ved kun at have én login-flow for hele dit site.
+Vi kan reducere den friktion ved kun at have ét login-flow for hele din side.
 
-### How do I get it?
-Alle kontotyper får i øjeblikket adgang til SSO. Antallet af SSO-brugere vil dog variere afhængigt af din pakke. Som med andre funktioner tilbyder Pro-planerne og højere direkte udviklingssupport.
+### Hvordan får jeg det?
+Alle kontotyper har i øjeblikket adgang til SSO. Det maksimale antal SSO-brugere varierer dog afhængigt af din pakke. Som med andre funktioner giver Pro-planer og derover direkte udviklersupport.
 
-Lad os sammenligne mulighederne, og så gå i detaljer om hver.
+Lad os sammenligne mulighederne og derefter gå i detaljer med hver af dem.
 
-### User and Comment Migrations
+### Bruger- og kommentarmigrering
 
-Når du migrerer fra en platform med SSO som Disqus, vil du allerede have brugere og deres kommentarer.
+Når du migrerer fra en platform med SSO som Disqus, har du allerede brugere og deres kommentarer.
 
-Kommentarer importeres som en del af din migration, enten via API'et, vores Import UI eller kundesupport. Import UI foretrækkes, hvis det understøtter den platform, du
-migrerer fra, da det indeholder fejlhåndtering, avatar- og medie-ekstraktion og uploads samt et batch-job-overvågningssystem.
+Kommentarer importeres som en del af din migrering, enten via API'en, vores Import UI eller kundesupport. Import UI foretrækkes, hvis den understøtter den platform, du
+migrerer fra, da den indeholder fejlhåndtering, udtrækning og upload af avatarer og medier samt et batchjob-overvågningssystem.
 
-Brugerne tilføjes automatisk, når kommentartråde ses for første gang. Alternativt kan de forudtilføjes via API'et, men dette arbejde har ikke
+Brugerne selv tilføjes automatisk, første gang de ser en kommentartråd. Alternativt kan de forudtilføjes via API'en, men dette arbejde har ikke
 mange fordele.
 
-Hvis kommentarer er importeret, og SSO-brugere ikke tilføjes manuelt via API'et, vil kommentarerne automatisk blive migreret til brugerens konto første
-gang den oprettes, når de ser en hvilken som helst kommentartråd. De vil derefter kunne administrere, redigere og slette de kommentarer, de oprindeligt skrev.
+Hvis kommentarer importeres, og SSO-brugere ikke tilføjes manuelt via API'en, vil kommentarerne automatisk blive migreret til brugerens konto, første gang
+den oprettes, når de ser en kommentartråd. De vil derefter kunne administrere, redigere og slette de kommentarer, de oprindeligt skrev.
 
-Den automatiske migrering sker via e-mail eller brugernavn. Nogle platforme leverer ikke e-mails ved eksport, som Disqus, så vi falder tilbage til brugernavn i dette tilfælde.
-- Så længe du sender et matchende brugernavn og en e-mail i SSO-payloaden, vil vi tilføje e-mailen til de enkelte kommentarobjekter, så notifikationer og mentions fungerer.
+Den automatiske migrering sker via e-mail eller brugernavn. Nogle platforme giver ikke e-mails ved eksport, som Disqus, så vi falder tilbage på brugernavn i dette tilfælde.
+- Så længe du angiver et matchende brugernavn og en e-mail i SSO-payload'en, tilføjer vi e-mailen til de enkelte kommentarobjekter, så notifikationer og omtaler fungerer.
 
-Hvis det ønskes at importere dine kommentarer og brugere på én gang, så arbejd med support for at migrere kommentarerne over til brugernes respektive konti efter brugerne er importeret
-via API'et.
+Hvis du ønsker at importere dine kommentarer og brugere på én gang, så samarbejd med support om at migrere kommentarerne over til brugernes respektive konti, efter brugerne er importeret
+via API'en.
 
-Sammenfattende er den nemmeste fremgangsmåde til migreringen:
+For at opsummere den nemmeste vej for migreringen:
 
-1. Importer kommentarer.
-   1. Avatarer og andet medieindhold migreres automatisk, hvis du bruger Import UI under `Manage Data -> Imports`.
+1. Importér kommentarer.
+   1. Avatarer og andre medier migreres automatisk, hvis du bruger Import UI under `Manage Data -> Imports`.
 2. Opsæt Secure eller Simple SSO.
-3. Lad migreringen ske per bruger automatisk, når de logger ind første gang.
-   1. Dette tilføjer normalt mindre end et sekund til indlæsningstiden, hvis brugeren har mindre end 50k kommentarer.
+3. Lad migreringen ske pr. bruger automatisk, når de logger ind for første gang.
+   1. Dette tilføjer normalt mindre end et sekund til sidens indlæsningstid, hvis brugeren har færre end 50k kommentarer.
 
-### WordPress Users
-Hvis du bruger vores <a href="https://wordpress.org/plugins/fastcomments/" target="_blank">WordPress-plugin</a> er der ingen kode at skrive! Gå blot til pluginets Admin-side, klik på SSO Settings, og tryk derefter Enable.
+### WordPress-brugere
+Hvis du bruger vores <a href="https://wordpress.org/plugins/fastcomments/" target="_blank">WordPress-plugin</a>, er der ingen kode at skrive! Gå blot til pluginets Admin-side, klik på SSO Settings og derefter Enable.
 
-Dette fører dig til en enkelt-knap-vejledning, som vil oprette din API-nøgle, sende den til din WordPress-installation og slå SSO til. Vi har konsolideret dette til et enkelt knap-klik for dig.
+Dette fører dig til en guide med én enkelt knap, som opretter din API-nøgle, sender den til din WordPress-installation og slår SSO til. Vi har konsolideret dette til ét enkelt knapklik for dig.
 
-Bemærk, at hvis du installerer pluginet for første gang, skal du følge opsætningsprocessen, før du ser admin-siden med SSO Settings-knappen.
+Bemærk, at hvis du installerer pluginet for første gang, skal du gennemføre opsætningsprocessen, før du ser admin-siden med SSO Settings-knappen.
 
-#### WordPress SSO - Moderators
+#### WordPress SSO - Moderatorer
 
-Bemærk, at for at "Moderator"-badge aktuelt skal vises ved siden af dine moderatorer, når de kommenterer med FastComments WordPress-pluginet,
-skal de også være tilføjet som Moderator i FastComments-dashboardet og have deres e-mail bekræftet.
+Bemærk, at i øjeblikket, for at "Moderator"-mærket skal vises ved siden af dine moderatorer, når de kommenterer med FastComments WordPress-pluginet,
+skal de også tilføjes som Moderator i FastComments-dashboardet og have deres e-mail verificeret.
 
-### Custom Integrations
+### Brugerdefinerede integrationer
 
-For tilpassede integrationer er der to muligheder.
+For brugerdefinerede integrationer er der to muligheder.
 
-### Option One - Secure SSO
+### Mulighed ét - Secure SSO
 
-Med Secure SSO ved FastComments, at brugeren, der kommenterer, stemmer og læser kommentarer, er en reel bruger på dit site.
+Med Secure SSO ved FastComments, at brugeren, der kommenterer, stemmer og læser kommentarer, er en rigtig bruger på din side.
 
-Så længe du opretter en gyldig payload, vil brugeren altid få en sømløs kommenteringsoplevelse.
+Så længe du opretter en gyldig payload, vil brugeren altid have en problemfri kommentaroplevelse.
 
-Med Secure SSO oprettes SSO-payloaden **på serversiden** ved hjælp af HMAC-autentificering og sendes derefter til widget'en på **klienten**.
+Med Secure SSO oprettes SSO-payload'en **server-side** ved hjælp af HMAC-godkendelse og sendes derefter til widgetten på **klientsiden**.
 
-Med Secure SSO er brugerens konto **helt adskilt** fra resten af FastComments brugerbase. Det betyder, at hvis vi har to partnere
-Company A og Company B, kan hver have en SSO-bruger med brugernavnet "Bob".
+Med Secure SSO er brugerens konto **helt adskilt** fra resten af FastComments' brugerbase. Det betyder, at hvis vi har to partnere,
+Company A og Company B, kan hver især have en SSO-bruger med brugernavnet "Bob".
 
-#### Requirements
-- Nogen grundlæggende viden om backend-udvikling.
-- Nogen grundlæggende viden om håndtering af hemmelige API-nøgler.
-- Nogen grundlæggende viden om API-udvikling eller server-side rendering.
+#### Krav
+- Grundlæggende viden om backend-udvikling.
+- Grundlæggende viden om håndtering af hemmelige API-nøgler.
+- Grundlæggende viden om API-udvikling eller server-side rendering.
 
-#### Pros
+#### Fordele
 - Sikkert.
-- Sømløs kommenteringsoplevelse.
+- Problemfri kommentaroplevelse.
 
-#### Cons
+#### Ulemper
 - Kræver backend-udvikling.
 
-#### Updating User Data
+#### Opdatering af brugerdata
 
-Med Secure SSO vil vi hver gang du sender sso-bruger-payloaden, opdatere deres bruger med de seneste oplysninger. For eksempel, hvis
-brugeren har brugernavnet `X`, og du sender `Y` i SSO-payloaden, vil deres brugernavn blive `Y`.
+Med Secure SSO opdaterer vi brugerens konto med de nyeste oplysninger, hver gang du sender SSO-bruger-payload'en. For eksempel, hvis
+brugeren har brugernavnet `X`, og du sender `Y` i SSO-payload'en, bliver deres brugernavn `Y`.
 
-Hvis du vil fjerne værdier ved hjælp af denne tilgang, så sæt dem til `null` (ikke `undefined`).
+Hvis du vil fjerne værdier med denne tilgang, så sæt dem til `null` (ikke `undefined`).
 
 #### Secure SSO API
 
-Vi tilbyder også et API til at interagere med SSO-brugerne. Se [dokumentationen](/guide-api.html#sso-user-structure).
+Vi tilbyder også en API til at interagere med SSO-brugerne. Se [dokumentationen](/guide-api.html#sso-user-structure).
 
-Bemærk, at når du bruger Secure SSO, oprettes brugere automatisk bag kulisserne ved sideindlæsning. Du behøver ikke at importere dine brugere i bulk.
+Bemærk, at når du bruger Secure SSO, oprettes brugerne automatisk i baggrunden ved sideindlæsning. Du behøver ikke bulk-importere dine brugere.
 
-### Option Two - Simple SSO
+### Mulighed to - Simple SSO
 
-Alternativet til Secure SSO er simpelthen at sende brugeroplysningerne til kommenteringswidget'en.
+Alternativet til Secure SSO er blot at sende brugeroplysningerne til kommentar-widgetten.
 
-Det er ikke nødvendigt at angive en e-mail med Simple SSO; uden denne vil deres kommentarer dog blive vist som "Uverificeret".
+Det er ikke påkrævet at angive en e-mail med Simple SSO, men uden denne vises deres kommentarer som "Unverified".
 
-<sup>Bemærk!</sup> Pr. begyndelsen af 2022 behøver brugernavne med Simple SSO ikke at være unikke på tværs af hele FastComments.com.
+<sup>Bemærk!</sup> Fra begyndelsen af 2022 behøver brugernavne med Simple SSO ikke længere at være unikke på tværs af hele FastComments.com.
 
-Ideelt set bør Simple SSO kun vælges, når der udvikles på en platform, der ikke giver adgang til backend.
+Ideelt set bør Simple SSO kun vælges, når man udvikler på en platform, der ikke giver backend-adgang.
 
-#### Requirements
-- Nogen grundlæggende viden om klient-side udvikling.
-- Skal kende mindst brugerens e-mail.
+#### Krav
+- Grundlæggende viden om klientudvikling.
+- Man skal kende mindst brugerens e-mail.
 
-#### Pros
+#### Fordele
 - Simpelt.
-- Al aktivitet bliver stadig verificeret.
+- Al aktivitet verificeres stadig.
 - Brugeren indtaster aldrig deres brugernavn eller e-mail.
 
-#### Cons
-- Mindre sikkert end Secure SSO, da client-side payloaden kunne blive manipuleret til at blive en anden bruger.
+#### Ulemper
+- Mindre sikkert end Secure SSO, da klient-side-payload'en kunne manipuleres til at blive enhver bruger.
 
 #### Simple SSO API
 
-Brugere, der automatisk oprettes via Simple SSO-flowet, gemmes som `SSOUser` objekter. De kan tilgås og administreres via `SSOUser` API'et. Se [dokumentationen](/guide-api.html#sso-user-structure).
+Brugere, der automatisk oprettes via Simple SSO-flowet, gemmes som `SSOUser`-objekter. De kan tilgås og administreres via `SSOUser`-API'en. Se [dokumentationen](/guide-api.html#sso-user-structure).

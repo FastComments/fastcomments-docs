@@ -1,65 +1,65 @@
-Agent webhooks 是平台在 agent 執行完成或審核狀態改變時觸發的 HTTP 回調。使用它們可以將 agent 的活動轉送到您自己的系統——審核儀表板、稽核日誌、Slack 頻道、升級工具。
+Agent webhooks 是平台在 agent 執行完成或審核狀態變更時觸發的 HTTP 回呼。您可以使用它們將 agent 活動轉發到您自己的系統——審核儀表板、稽核日誌、Slack 頻道、升級處理工具。
 
-Configured under the **Webhooks** tab on the [AI Agents page](https://fastcomments.com/auth/my-account/ai-agents).
+可在 [AI Agents 頁面](https://fastcomments.com/auth/my-account/ai-agents) 的 **Webhooks** 分頁下進行設定。
 
-### What gets delivered
+### 會傳送哪些內容
 
-Four event types:
+四種事件類型：
 
-- **`trigger.succeeded`** - 一次 agent 執行成功完成。
-- **`trigger.failed`** - 一次 agent 執行發生錯誤。
-- **`approval.requested`** - 一個操作被佇列，等待人工審核。
-- **`approval.decided`** - 一次審核被核准、拒絕，或執行時失敗。
+- **`trigger.succeeded`** - agent 執行成功完成。
+- **`trigger.failed`** - agent 執行發生錯誤。
+- **`approval.requested`** - 某個動作已排入人工審核佇列。
+- **`approval.decided`** - 審核已核准、拒絕，或執行失敗。
 
-See [Webhook Events](#webhook-events) for which events fire when, and [Webhook Payloads](#webhook-payloads) for the schema of each.
+請參閱 [Webhook 事件](#webhook-events) 了解各事件何時觸發，以及 [Webhook 負載](#webhook-payloads) 了解各自的結構。
 
-### What's not delivered
+### 不會傳送哪些內容
 
-- **Per-tool-action webhooks.** 一次執行中呼叫 `pin_comment` 並不會為 pin 單獨觸發一個 webhook —— 該動作會包含在執行的 `trigger.succeeded` payload 中。若您想要逐動作傳送，請解析 trigger payload 中的 `actions` 陣列。
-- **Dropped triggers.** 未被派發的觸發（超出預算、範圍錯誤）不會觸發 webhook。被丟棄的觸發僅能在 [Analytics page](#analytics-page) 查看。
-- **Replay-produced triggers.** 測試執行不會觸發 webhook。請參閱 [Test Runs (Replays)](#test-runs-replays)。
+- **個別工具動作的 webhooks。** 呼叫 `pin_comment` 的執行不會為該釘選動作另外觸發 webhook——該動作會包含在執行的 `trigger.succeeded` 負載中。如果您需要個別動作的傳送，請解析觸發負載中的 `actions` 陣列。
+- **被捨棄的觸發。** 未派送的觸發（超出預算、範圍錯誤）不會觸發 webhook。捨棄記錄僅在 [Analytics 頁面](#analytics-page) 中可見。
+- **重播產生的觸發。** 測試執行不會觸發 webhook。請參閱 [測試執行（重播）](#test-runs-replays)。
 
-### Configuration
+### 設定
 
-For each webhook you set:
+每個 webhook 您需設定：
 
 - **URL** - 要 POST 的 HTTPS 端點。
-- **Domain** - 此 webhook 適用的留言網域（您的租戶可能承載多個網域）。`*` 匹配所有網域；`*.example.com` 是一個 glob；精確網域則只匹配該網域。
-- **Events** - 要訂閱的四種事件類型中的哪些。
-- **Agents** - 留空表示「所有 agents」，或填入特定 agent ID 的清單作為篩選。
+- **Domain** - 此 webhook 適用的留言網域（您的租戶可能託管多個網域）。`*` 符合所有網域；`*.example.com` 是 glob 模式；精確網域僅符合該網域。
+- **Events** - 要訂閱四種事件類型中的哪些。
+- **Agents** - 留空表示「所有 agents」，或填入特定 agent ID 清單進行篩選。
 - **Method** - POST 或 PUT（預設為 POST）。
-- **No-retry status codes** - 應視為終止失敗、不再重試的 HTTP 回應碼（例如 410 Gone、422 Unprocessable）。參見 [Webhook Retries](#webhook-retries)。
+- **No-retry status codes** - 應視為最終失敗、不再重試的 HTTP 回應代碼（例如 410 Gone、422 Unprocessable）。請參閱 [Webhook 重試](#webhook-retries)。
 
-多個 webhook 可以訂閱相同事件 —— 每個 webhook 各自佇列並傳送到其設定的 URL。
+多個 webhooks 可以訂閱同一事件——每個 webhook 獨立排入佇列，並傳送到各自的 URL。
 
-### Per-domain matching
+### 依網域比對
 
-A given event is delivered to **every webhook whose `domain` field matches the comment's domain**. The matching uses a simple glob:
+給定的事件會傳送到**每個 `domain` 欄位符合該留言網域的 webhook**。比對使用簡單的 glob：
 
-- Exact: `example.com` matches only `example.com`.
-- Wildcard star: `*` matches every domain.
-- Subdomain glob: `*.example.com` matches `blog.example.com`, `forum.example.com`, but not `example.com` itself.
+- 精確：`example.com` 僅符合 `example.com`。
+- 星號萬用字元：`*` 符合所有網域。
+- 子網域 glob：`*.example.com` 符合 `blog.example.com`、`forum.example.com`，但不符合 `example.com` 本身。
 
-The domain on a payload is the first non-null result from: the comment's `domain`, the URL parsed against your tenant's domain configuration, or the `Page` lookup by `urlId`.
+負載上的網域取自以下第一個非空值：留言的 `domain`、根據您租戶網域設定解析的 URL，或透過 `urlId` 查詢的 `Page`。
 
-### Per-agent filtering
+### 依 agent 篩選
 
-The **Agents** field lets a webhook subscribe to only certain agents. Empty means "all agents". When non-empty, the webhook only fires for agents in the list.
+**Agents** 欄位讓 webhook 僅訂閱特定的 agents。留空表示「所有 agents」。非空時，webhook 僅會為清單中的 agents 觸發。
 
-This is useful when you have one webhook for moderation events and another for engagement events, both routing to different downstream systems.
+當您有一個 webhook 用於審核事件、另一個用於互動事件，且兩者路由到不同的下游系統時，這會很有用。
 
-### Test send
+### 測試傳送
 
-The webhook config UI has a **Test send** button that posts a fake payload to the URL so you can verify connectivity, signing, and your endpoint's response code without waiting for a real event.
+webhook 設定介面有一個 **Test send** 按鈕，會向 URL 傳送一個假的負載，讓您無需等待真實事件即可驗證連線、簽章以及您端點的回應代碼。
 
-### Delivery logs
+### 傳送日誌
 
-Every delivery (and every retry) lands in the [Webhook Delivery Logs](#webhook-logs) page so you can see what happened on the wire.
+每次傳送（以及每次重試）都會記錄在 [Webhook 傳送日誌](#webhook-logs) 頁面，讓您查看線路上實際發生的情況。
 
-### Signing
+### 簽章
 
-Every webhook is signed with HMAC-SHA256 using your tenant's API secret. See [Webhook Signing](#webhook-signing).
+每個 webhook 都使用您租戶的 API secret 以 HMAC-SHA256 簽署。請參閱 [Webhook 簽章](#webhook-signing)。
 
-### Eligibility
+### 資格條件
 
-Agent webhooks require valid billing on the tenant. They use the same signing/secret infrastructure as your existing comment webhooks - if you have already integrated comment webhooks (see the [Webhooks guide](/guide-webhooks.html)), the agent webhook integration is the same shape with new event types.
+Agent webhooks 需要租戶具備有效的帳務。它們使用與您現有留言 webhooks 相同的簽章/secret 基礎架構——如果您已經整合過留言 webhooks（請參閱 [Webhooks 指南](/guide-webhooks.html)），agent webhook 的整合方式相同，只是新增了事件類型。

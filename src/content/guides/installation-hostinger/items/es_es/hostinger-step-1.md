@@ -1,4 +1,3 @@
----
 Primero, abre tu sitio en el Website Builder.
 
 Ahora, si aún no tienes una sección donde quieras que vayan los comentarios, añade una sección en blanco:
@@ -27,5 +26,3 @@ Obtendrás algo como esto:
 </div>
 
 Ahora estamos listos para `Step 2`.
-
----

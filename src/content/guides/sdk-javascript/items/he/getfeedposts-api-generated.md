@@ -29,5 +29,3 @@ async function loadFeed() {
 }
 loadFeed();
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 הפעל או בטל התראות עבור תגובה ספציפית.
 
 ## Parameters
@@ -30,5 +29,3 @@ let (optResp, httpResp) = client.updateUserNotificationCommentSubscriptionStatus
 if optResp.isSome:
   let resp = optResp.get()
 [inline-code-end]
-
----

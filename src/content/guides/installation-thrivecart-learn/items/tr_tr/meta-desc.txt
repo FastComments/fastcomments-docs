@@ -1,3 +1,1 @@
----
 Öğrencilerin her ders içinde soru sorabilmesi için, ThriveCart Learn+ kurslarına özel kod ayarıyla bir yorum bölümü ekleyin.
----

@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
@@ -24,5 +23,3 @@ api->deleteEmailTemplate(optTenantId.value(), optTemplateId.value())
         catch (const std::exception&) {}
     });
 [inline-code-end]
-
----

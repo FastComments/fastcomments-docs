@@ -1,4 +1,3 @@
----
 ## 參數
 
 | Name | Type | Location | Required | Description |
@@ -30,5 +29,3 @@ try {
     print('Exception when calling DefaultApi->addHashTagsBulk: $e\n');
 }
 [inline-code-end]
-
----

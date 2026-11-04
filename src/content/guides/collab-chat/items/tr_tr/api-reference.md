@@ -200,5 +200,3 @@ Hata yanıtları ayrıntıları içeren bir JSON gövdesi içerir:
 ### Kullanım Takibi
 
 Konuşma oluşturmak `conversationCreateCount` kullanım metriğinizi artırır. Tüm WebSocket senkronizasyon etkinliği `pubSubMessageCount` ve `pubSubBandwidth` değerlerini artırır. Bu metrikleri FastComments kontrol panelinizde kullanım analizleri altında izleyebilirsiniz.
-
----

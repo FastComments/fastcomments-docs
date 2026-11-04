@@ -77,5 +77,3 @@ Siehe die Haupt-FastComments-Anpassungsdokumentation für die vollständige List
 
 Wenn Ihre Seite benutzerdefinierte Schriftarten verwendet, übernimmt die Collab Chat UI diese Schriftarten aus dem CSS Ihrer Seite. Möglicherweise müssen Sie eine Widget-Anpassungsregel erstellen und in dieser Regel `@import` alle Schriftarten in das benutzerdefinierte CSS aufnehmen, wenn Sie
 wollen, dass das schwebende Chatfenster dieselben Schriftarten verwendet.
-
----

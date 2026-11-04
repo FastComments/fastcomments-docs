@@ -1,4 +1,3 @@
----
 ## Parametreler
 
 | Ad | Tür | Gerekli | Açıklama |
@@ -27,5 +26,3 @@ if (badgeProgress.progress?.length) {
   const firstProgress: UserBadgeProgress = badgeProgress.progress[0];
 }
 [inline-code-end]
-
----

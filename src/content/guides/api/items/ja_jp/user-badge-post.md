@@ -1,8 +1,8 @@
-このエンドポイントは新しいユーザーバッジの割り当てを作成するためのものです。
+このエンドポイントを使用すると、新しいユーザーバッジの割り当てを作成できます。
 
-Example Request:
+リクエスト例:
 
-[inline-code-attrs-start title = 'POST リクエスト例'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'POSTリクエストの例'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 curl -X POST "https://fastcomments.com/api/v1/user-badges?tenantId=demo&API_KEY=DEMO_API_SECRET" \
 -H "Content-Type: application/json" \
@@ -13,17 +13,17 @@ curl -X POST "https://fastcomments.com/api/v1/user-badges?tenantId=demo&API_KEY=
 }'
 [inline-code-end]
 
-The request body must contain the following parameters:
+リクエストボディには以下のパラメータを含める必要があります:
 
-- `userId` (required) - バッジを割り当てる対象のユーザーのID
-- `badgeId` (required) - 割り当てるバッジのID
-- `displayedOnComments` (optional) - バッジをユーザーのコメントに表示するかどうか（デフォルトは true）
+- `userId` (必須) - バッジを割り当てるユーザーのID
+- `badgeId` (必須) - 割り当てるバッジのID
+- `displayedOnComments` (任意) - ユーザーのコメントにバッジを表示するかどうか(デフォルトはtrue)
 
-Important Notes:
-1. バッジはテナントのバッジカタログに存在し、有効になっている必要があります
-2. バッジは、あなたのテナントに所属しているユーザー、またはあなたのサイトにコメントしたことのあるユーザーにのみ割り当てることができます
+重要な注意点:
+1. バッジはテナントのバッジカタログに存在し、有効化されている必要があります
+2. バッジを割り当てられるのは、自テナントに所属するユーザー、または自サイトにコメントしたユーザーのみです
 
-Example Response:
+レスポンス例:
 
 [inline-code-attrs-start title = 'レスポンス'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -48,9 +48,9 @@ Example Response:
 }
 [inline-code-end]
 
-Possible Error Responses:
+発生しうるエラーレスポンス:
 
-[inline-code-attrs-start title = 'エラー: テナントIDがありません'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'エラー: テナントIDが不足'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",
@@ -59,7 +59,7 @@ Possible Error Responses:
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'エラー: ユーザーIDがありません'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'エラー: ユーザーIDが不足'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",
@@ -68,7 +68,7 @@ Possible Error Responses:
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'エラー: バッジIDがありません'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'エラー: バッジIDが不足'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",
@@ -86,7 +86,7 @@ Possible Error Responses:
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'エラー: 権限のないユーザー'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'エラー: ユーザーが未許可'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",

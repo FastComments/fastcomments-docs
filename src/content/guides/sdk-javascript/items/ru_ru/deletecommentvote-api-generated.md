@@ -47,5 +47,3 @@ const deleteResultWithSSO: VoteDeleteResponse = await deleteCommentVote(
   ssoToken
 );
 [inline-code-end]
-
----

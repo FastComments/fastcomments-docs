@@ -8,5 +8,3 @@ Ako naiđete na bilo kakve probleme ili imate pitanja o Django paketu, molimo:
 ## Doprinos
 
 Doprinosi su dobrodošli! Molimo posjetite [GitHub repozitorij](https://github.com/FastComments/fastcomments-django) za smjernice o doprinosu.
-
----

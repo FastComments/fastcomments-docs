@@ -44,5 +44,3 @@ Lorsque ce paramètre est désactivé, Simple SSO n'accorde pas ces permissions.
 Les charges Simple SSO ne sont pas signées, donc lorsque ce paramètre est activé, toute personne connaissant l'e‑mail ou l'ID d'un administrateur peut se faire passer pour lui. Si cela pose problème pour votre site, laissez ce paramètre désactivé et utilisez Secure SSO pour vos administrateurs.
 
 Les utilisateurs créés par Secure SSO ou l'API ne peuvent pas être atteints par Simple SSO, que ce paramètre soit activé ou non.
-
----

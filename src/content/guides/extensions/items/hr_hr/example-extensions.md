@@ -1,4 +1,3 @@
----
 U FastCommentsu pišemo vlastite ekstenzije, koristeći isti API. Možete pogledati neminificirani kod ovih ekstenzija na sljedećim endpointima:
 
 #### Tamni način
@@ -20,5 +19,3 @@ https://fastcomments.com/js/comment-ui/extensions/comment-ui.moderation.extensio
 Ekstenzija Razgovor uživo (u kombinaciji s drugom konfiguracijom i stilizacijom) pretvara widget za komentare u komponentu chata uživo.
 
 https://fastcomments.com/js/comment-ui/extensions/live-chat.extension.js
-
----

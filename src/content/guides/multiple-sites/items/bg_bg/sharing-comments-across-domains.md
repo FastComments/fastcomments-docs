@@ -1,4 +1,3 @@
----
 Самите коментари не са обвързани с конкретен домейн.
 
 Те са свързани с вашия акаунт и предоставения <a href="/guide-customizations-and-configuration.html#url-id" target="_blank">urlId</a>.
@@ -10,5 +9,3 @@
 също работи както се очаква.
 
 [Можете да намерите пример в тази публикация в блога](https://blog.fastcomments.com/(2-12-2020)-using-fastcomments-in-multiple-places-on-the-same-page.html).
-
----

@@ -1,4 +1,3 @@
----
 Po defaultu, FastComments prikazuje ime korisnika onako kako je uneto, ili kako je prosleđeno putem SSO.
 
 Međutim, može biti poželjno maskirati ili prikazati ime korisnika na drugačiji način. Na primer, ako je ime korisnika Allen Rex, možda
@@ -19,5 +18,3 @@ Efekat promene je trenutni. Korisnici će i dalje videti svoje puno korisničko 
 izmenjeno korisničko ime.
 
 Korisnička imena se maskiraju na serveru radi zaštite korisnika.
-
----

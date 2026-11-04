@@ -1,4 +1,3 @@
----
 ## Parametreler
 
 | Ad | Tür | Gerekli | Açıklama |
@@ -22,5 +21,3 @@ async function fetchPollVote(): Promise<void> {
   const vote: PublicPollVote | undefined = result.vote;
 }
 [inline-code-end]
-
----

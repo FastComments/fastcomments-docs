@@ -67,5 +67,3 @@ Les approbations refusent de mettre en file d'attente tout nom d'outil qui n'est
 
 - Elles ne retardent pas les autres appels d'outil de l'agent. L'exécution de l'agent peut appeler plusieurs outils, et seuls ceux soumis à approbation sont mis en file d'attente - les autres s'exécutent normalement.
 - Elles ne font pas revenir en arrière l'exécution de l'agent si l'humain rejette. La portion non soumise à approbation de l'exécution est déjà terminée.
-
----

@@ -1,4 +1,3 @@
----
 עבור WordPress, תכונה זו ניתנת להפעיל על‑ידי התקנת תוסף כגון WPCode והוספת קטע ה‑HTML הבא לתחתית הבלוג:
 
 [inline-code-attrs-start title = 'קוד לייקים צפים ל־WordPress'; type = 'bash'; useDemoTenant = true; isFunctional = false; type = 'html';  inline-code-attrs-end]
@@ -26,5 +25,3 @@
     })();
 </script>
 [inline-code-end]
-
----

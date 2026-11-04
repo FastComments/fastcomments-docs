@@ -39,5 +39,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Respuesta de `ModerationAPI.GetLogs`: %v\n", resp)
 }
 [inline-code-end]
-
----

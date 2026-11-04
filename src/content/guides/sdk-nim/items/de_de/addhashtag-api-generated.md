@@ -1,4 +1,3 @@
----
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
@@ -22,5 +21,3 @@ let (hashTagOpt, httpResp) = client.addHashTag(
 if hashTagOpt.isSome:
   let tag = hashTagOpt.get()
 [inline-code-end]
-
----

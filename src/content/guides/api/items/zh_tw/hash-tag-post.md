@@ -32,5 +32,3 @@ interface HashTagPostResponse {
     hashTag?: HashTag; // 成功時回傳完整建立的 hashtag。
 }
 [inline-code-end]
-
----

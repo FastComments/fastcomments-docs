@@ -1,26 +1,21 @@
-Past commenters on the page who are NOT currently online. Sorted by displayName.  
-過去在此頁面上發表過評論，但目前未在線的評論者。依 displayName 排序。  
+頁面上目前不在線上的過往留言者。按 displayName 排序。
+在用完 /users/online 之後,使用此端點來渲染「成員」區塊。
+以 commenterName 進行游標分頁:伺服器透過 $gt 從 afterName 開始沿著部分索引 {tenantId, urlId, commenterName} 向後遍歷,沒有 $skip 的成本。
 
-Use this after exhausting /users/online to render a "Members" section.  
-在耗盡 /users/online 之後使用，以呈現「Members」區段。  
+## 參數
 
-Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName} index from afterName forward via $gt, no $skip cost.  
-在 commenterName 上使用游標分頁：伺服器從 afterName 起透過 $gt 逐步走訪部分 {tenantId, urlId, commenterName} 索引，無需 $skip 成本。  
-
-## Parameters
-
-| Name | Type | Location | Required | Description |
+| 名稱 | 類型 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| urlId | string | query | Yes | 頁面 URL 識別碼（在伺服器端清理後）。 |
-| afterName | string | query | No | 游標：傳遞前一次回應中的 nextAfterName。 |
-| afterUserId | string | query | No | 游標平手打破者：傳遞前一次回應中的 nextAfterUserId。當 afterName 被設定時必填，以防名稱相同導致條目被遺漏。 |
+| tenantId | string | path | 是 |  |
+| urlId | string | query | 是 | 頁面 URL 識別碼(會在伺服器端清理)。 |
+| afterName | string | query | 否 | 游標:傳入上一個回應中的 nextAfterName。 |
+| afterUserId | string | query | 否 | 游標決勝欄位:傳入上一個回應中的 nextAfterUserId。當設定 afterName 時為必填,以避免同名項目被遺漏。 |
 
-## Response
+## 回應
 
-Returns: `PageUsersOfflineResponse`
+回傳:`PageUsersOfflineResponse`
 
-## Example
+## 範例
 
 [inline-code-attrs-start title = 'getOfflineUsers 範例'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -28,9 +23,9 @@ import 'package:fastcomments_dart/api.dart';
 
 final api_instance = PublicApi();
 final tenantId = tenantId_example; // String | 
-final urlId = urlId_example; // String | 頁面 URL 識別碼（在伺服器端清理後）。
-final afterName = afterName_example; // String | 游標：傳遞前一次回應中的 nextAfterName。
-final afterUserId = afterUserId_example; // String | 游標平手打破者：傳遞前一次回應中的 nextAfterUserId。當 afterName 被設定時必填，以防名稱相同導致條目被遺漏。
+final urlId = urlId_example; // String | 頁面 URL 識別碼(會在伺服器端清理)。
+final afterName = afterName_example; // String | 游標:傳入上一個回應中的 nextAfterName。
+final afterUserId = afterUserId_example; // String | 游標決勝欄位:傳入上一個回應中的 nextAfterUserId。當設定 afterName 時為必填,以避免同名項目被遺漏。
 
 try {
     final result = api_instance.getOfflineUsers(tenantId, urlId, GetOfflineUsersOptions(afterName: afterName, afterUserId: afterUserId));
@@ -39,5 +34,3 @@ try {
     print('Exception when calling PublicApi->getOfflineUsers: $e\n');
 }
 [inline-code-end]
-
----

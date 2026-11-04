@@ -18,5 +18,3 @@ let (apiResp, httpResp) = client.deleteHashTag(tenantId = "my-tenant-123", tag =
 if apiResp.isSome:
   let emptyResp = apiResp.get()
 [inline-code-end]
-
----

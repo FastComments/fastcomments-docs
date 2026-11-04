@@ -1,12 +1,12 @@
 ### Início Rápido
 
-Começar com o Collab Chat é simples. Você precisa do script FastComments Collab Chat, de um elemento HTML contendo o texto que você deseja anotar, e de um objeto de configuração com seu Tenant ID.
+Começar a usar o Collab Chat é simples. Você precisa do script do FastComments Collab Chat, um elemento HTML contendo o texto que deseja anotar e um objeto de configuração com seu Tenant ID.
 
 ### Instalação
 
 Adicione o script do Collab Chat à sua página:
 
-[inline-code-attrs-start title = 'Carregando o script do Collab Chat'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Carregando o Script do Collab Chat'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-collab-chat.min.js"></script>
 [inline-code-end]
@@ -30,10 +30,10 @@ Aqui está um exemplo mínimo:
         <p>You can have multiple paragraphs, and users can highlight text across any of them.</p>
     </div>
 
-    <!-- Load the Collab Chat script -->
+    <!-- Carregar o script do Collab Chat -->
     <script src="https://cdn.fastcomments.com/js/embed-collab-chat.min.js"></script>
 
-    <!-- Inicialize o Collab Chat -->
+    <!-- Inicializar o Collab Chat -->
     <script>
         FastCommentsCollabChat(document.getElementById('article-content'), {
             tenantId: 'demo'
@@ -43,22 +43,20 @@ Aqui está um exemplo mínimo:
 </html>
 [inline-code-end]
 
-Replace `'demo'` with your actual FastComments Tenant ID if it's not already, which you can find in your [FastComments dashboard](https://fastcomments.com/auth/my-account/api-secret).
+Substitua `'demo'` pelo seu Tenant ID real do FastComments, caso ainda não o tenha feito, que você pode encontrar em seu [painel do FastComments](https://fastcomments.com/auth/my-account/api-secret).
 
 ### Como Funciona
 
-Uma vez inicializado, os usuários podem selecionar qualquer texto dentro do elemento alvo. Após um breve atraso (3,5 segundos no desktop), um prompt aparece permitindo que iniciem uma discussão. Quando uma discussão é criada, um destaque visual aparece no texto. Outros usuários podem passar o cursor sobre o destaque ou clicar nele para visualizar e participar da discussão. Todas as discussões sincronizam em tempo real entre todos os visitantes.
+Uma vez inicializado, os usuários podem selecionar qualquer texto dentro do elemento alvo. Após um breve atraso (3,5 segundos no desktop), um prompt aparece permitindo que iniciem uma discussão. Quando uma discussão é criada, um destaque visual aparece no texto. Outros usuários podem passar o mouse sobre o destaque ou clicar nele para visualizar e participar da discussão. Todas as discussões são sincronizadas em tempo real entre todos os visitantes.
 
-### Demo ao Vivo
+### Demonstração ao Vivo
 
 Você pode ver o Collab Chat em ação em nossa [página de demonstração ao vivo](https://fastcomments.com/product/collab-chat).
 
 ### Próximos Passos
 
-Agora que você tem o básico funcionando, você pode personalizar a aparência e o comportamento no guia de Opções de Configuração. Consulte o guia de Comportamento de Seleção de Texto para entender como a seleção de texto funciona. Saiba sobre estilização e suporte ao modo escuro no guia de Personalização. Para integrações avançadas, explore a Referência da API.
+Agora que você tem o básico funcionando, pode personalizar a aparência e o comportamento no guia de Opções de Configuração. Confira o guia de Comportamento de Seleção de Texto para entender como a seleção de texto funciona. Aprenda sobre estilização e suporte ao modo escuro no guia de Personalização. Para integrações avançadas, explore a Referência da API.
 
-### Bibliotecas Frontend
+### Bibliotecas de Frontend
 
-Todas as bibliotecas frontend do FastComments (react, vue, angular, etc) incluem o Collab Chat.
-
----
+Todas as bibliotecas de frontend do FastComments (react, vue, angular, etc) possuem Collab Chat.

@@ -6,5 +6,3 @@ Najpierw przejdź do strony/układu, na którym chcesz dodać FastComments. W ed
 </div>
 
 Element HTML pozwoli nam osadzić widżet FastComments bezpośrednio w twojej aplikacji Bubble.
-
----

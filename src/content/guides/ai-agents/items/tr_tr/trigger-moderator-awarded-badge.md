@@ -1,26 +1,24 @@
 Bir moderatör bir kullanıcıya rozet verdiğinde tetiklenir.
 
-### Context the agent receives
+### Ajanın aldığı bağlam
 
-- The **badge ID** of the badge awarded.
-- The **triggering user ID** - the moderator who awarded the badge.
-- Optional thread / user history / page context as configured.
+- Verilen rozetin **rozet kimliği (badge ID)**.
+- **Tetikleyen kullanıcı kimliği** - rozeti veren moderatör.
+- Yapılandırıldığı şekilde isteğe bağlı thread / kullanıcı geçmişi / sayfa bağlamı.
 
-The fire-site does **not** include a `commentId` in the trigger payload, even if the badge was awarded with respect to a specific comment.
+Tetikleme yükünde, rozet belirli bir yoruma atıfta bulunularak verilmiş olsa bile fire-site bir `commentId` içermesine **neden olmaz**.
 
-### Who fires this
+### Bunu kim tetikler
 
-Bir insan moderatör işlemi.
+İnsan bir moderatör eylemi.
 
-### Notable
+### Dikkat Çeken Noktalar
 
-- The **badge ID** alone is included; the agent does not receive the badge metadata (name, image). If the agent needs to reason about *which* badge was awarded, embed that context in the [başlangıç istemi](#personality-prompt) or [topluluk yönergeleri](#community-guidelines).
-- The trigger fires once per badge award, not per user. Awarding the same badge to a user twice fires it twice (each award is a distinct event).
+- Yalnızca rozet kimliği dahil edilir; ajan rozet meta verilerini (ad, görsel) almaz. Ajanın *hangi* rozetin verildiği hakkında akıl yürütmesi gerekiyorsa, bu bağlamı [başlangıç istemi](#personality-prompt) veya [topluluk kuralları](#community-guidelines) içine gömün.
+- Tetikleme kullanıcı başına değil, rozet verme işlemi başına bir kez çalışır. Aynı rozetin bir kullanıcıya iki kez verilmesi, tetiklemeyi iki kez çalıştırır (her verme ayrı bir olaydır).
 
-### Common uses
+### Yaygın Kullanımlar
 
-- **Reciprocal recognition** - an agent can post a "harika katkı için teşekkürler" reply when a specific badge is awarded.
-- **External recognition workflow** via [Webhook'lar](#webhooks-overview) - mirror badge awards into your own user-engagement system.
-- **Memory recording** - "bu kullanıcı tanınmış bir katkıcıdır" notes that future moderation agents should weight in their decisions.
-
----
+- **Karşılıklı takdir** - belirli bir rozet verildiğinde bir ajan "harika katkınız için teşekkürler" yanıtı gönderebilir.
+- [Webhook'lar](#webhooks-overview) aracılığıyla **harici takdir iş akışı** - rozet vermelerini kendi kullanıcı etkileşim sisteminize yansıtın.
+- **Hafıza kaydı** - gelecekteki moderasyon ajanlarının kararlarında dikkate alması gereken "bu kullanıcı tanınmış bir katkıda bulunan" notları.

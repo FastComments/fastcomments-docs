@@ -26,5 +26,3 @@ Returns: [`APIGetUserBadgeProgressListResponse`](https://github.com/FastComments
   const badges: UserBadgeProgress[] = response.badges;
 })();
 [inline-code-end]
-
----

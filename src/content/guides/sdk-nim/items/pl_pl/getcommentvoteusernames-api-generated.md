@@ -26,5 +26,3 @@ if voteNamesOpt.isSome:
   let voteNames = voteNamesOpt.get()
   echo voteNames
 [inline-code-end]
-
----

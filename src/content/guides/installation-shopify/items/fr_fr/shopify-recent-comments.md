@@ -19,5 +19,3 @@ Le **FastComments - Recent Comments** block affiche les commentaires les plus r�
 
 - Chaque commentaire contient un lien vers la page sur laquelle il a été posté, donc le bloc sert aussi d’indication de navigation "ce dont les gens parlent en ce moment".
 - Le flux couvre toute la boutique. Pour afficher les commentaires récents d’une seule page, utilisez plutôt le bloc **FastComments** sur cette page.
-
----

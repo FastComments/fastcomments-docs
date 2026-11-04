@@ -26,5 +26,3 @@ Beide Modi sind gleichzeitig aktiv. Das Kommentar-Widget erscheint unter dem Sei
     <div class="title">Collab Chat + Kommentare zusammen</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-page-comments.png" alt="FastComments Collab Chat und Kommentare auf Moodle" />
 </div>
-
----

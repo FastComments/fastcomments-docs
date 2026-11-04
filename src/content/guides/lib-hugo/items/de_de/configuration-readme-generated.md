@@ -1,4 +1,4 @@
-Alle FastComments-Widget-Optionen werden unter `[params.fastcomments]` in `hugo.toml` gesetzt und können pro Seite im Front Matter unter `[fastcomments]` überschrieben werden. Reihenfolge der Priorität, von niedrig bis hoch: Site-Parameter, Seiten-Front Matter, Shortcode-Parameter.
+Alle FastComments-Widget-Optionen werden unter `[params.fastcomments]` in `hugo.toml` gesetzt und können pro Seite im Front Matter unter `[fastcomments]` überschrieben werden. Rangfolge, von niedrig nach hoch: Site-Parameter, Front Matter der Seite, Shortcode-Parameter.
 
 ```toml
 # hugo.toml
@@ -10,7 +10,7 @@ Alle FastComments-Widget-Optionen werden unter `[params.fastcomments]` in `hugo.
 ```
 
 ```toml
-# a page's front matter
+# Front Matter einer Seite
 +++
 title = "Article"
 [fastcomments]
@@ -19,11 +19,11 @@ title = "Article"
 +++
 ```
 
-Wenn weder `url` noch `urlId` angegeben sind, wird `url` standardmäßig auf den Permalink der Seite gesetzt, damit Kommentarthreads an eine stabile URL gebunden bleiben.
+Wenn weder `url` noch `urlId` angegeben ist, wird `url` standardmäßig auf den Permalink der Seite gesetzt, damit Kommentar-Threads an eine stabile URL gebunden bleiben.
 
-### EU data residency
+### EU-Datenresidenz
 
-EU-Kunden setzen `region = "eu"`, um das Widget zu `cdn-eu.fastcomments.com` zu routen:
+EU-Kunden setzen `region = "eu"`, um das Widget an `cdn-eu.fastcomments.com` zu leiten:
 
 ```toml
 [params.fastcomments]
@@ -31,6 +31,6 @@ EU-Kunden setzen `region = "eu"`, um das Widget zu `cdn-eu.fastcomments.com` zu 
   region = "eu"
 ```
 
-### Hinweis zur Groß-/Kleinschreibung von Schlüsseln
+### Hinweis zur Schreibweise der Schlüssel
 
-Hugo wandelt jeden Schlüssel in `hugo.toml` und im Front Matter in Kleinbuchstaben um, aber die FastComments-Widgets erfordern camelCase-Schlüssel (`tenantId`, `hasDarkBackground`). Diese Komponente stellt die korrekte Groß-/Kleinschreibung für jede bekannte oberste Option automatisch wieder her, schreiben Sie die Optionen also in ihrer normalen camelCase-Form. Schlüssel, die innerhalb eines Objektwerts verschachtelt sind (zum Beispiel die Schlüssel einer `translations`-Map oder Felder von `pageReactConfig`), werden nicht wiederhergestellt. Konfigurieren Sie diese stattdessen über die Anpassungsoberfläche des FastComments-Dashboards.
+Hugo wandelt jeden Schlüssel in `hugo.toml` und im Front Matter in Kleinschreibung um, aber die FastComments-Widgets benötigen camelCase-Schlüssel (`tenantId`, `hasDarkBackground`). Diese Komponente stellt die korrekte Schreibweise für jede bekannte Option auf oberster Ebene automatisch wieder her, sodass Optionen in ihrer normalen camelCase-Form geschrieben werden können. Schlüssel, die innerhalb eines Objektwerts verschachtelt sind (z. B. die Schlüssel einer `translations`-Map oder Felder von `pageReactConfig`), werden nicht wiederhergestellt. Konfigurieren Sie diese stattdessen über die Anpassungs-UI des FastComments-Dashboards.

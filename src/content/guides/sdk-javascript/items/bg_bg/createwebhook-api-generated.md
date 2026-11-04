@@ -1,19 +1,19 @@
-Subscribes a URL to a comment event (REST hook subscribe). Subscribing the same URL to the same
-event and domain again returns the existing subscription. Deliveries are HMAC signed, see the
-webhooks guide; the legacy `token` header is never sent to API subscriptions.
+Абонира URL за събитие при коментар (REST hook subscribe). Повторно абониране на същия URL за същото
+събитие и домейн връща съществуващия абонамент. Доставките са подписани с HMAC, вижте ръководството за
+webhooks; legacy хедъра `token` никога не се изпраща към API абонаменти.
 
-## Parameters
+## Параметри
 
-| Име | Тип | Задължително | Описание |
+| Име | Тип | Задължителен | Описание |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| createWebhookParams | CreateWebhookParams | Yes |  |
+| tenantId | string | Да |  |
+| createWebhookParams | CreateWebhookParams | Да |  |
 
-## Response
+## Отговор
 
 Връща: [`CreateWebhookResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateWebhookResponse.ts)
 
-## Example
+## Пример
 
 [inline-code-attrs-start title = 'Пример за createWebhook'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -24,7 +24,7 @@ const webhookParams: CreateWebhookParams = {
   method: "POST" as WebhookHTTPMethod,
   url: "https://myapp.example.com/webhook",
   source: "comment" as WebhookSource,
-  // опционален секрет за проверка на полезния товар
+  // незадължителна тайна за проверка на payload
   secret: "s3cr3tK3y123",
 };
 

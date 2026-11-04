@@ -32,5 +32,3 @@ ModerationAPI.getCommentChildren(tenantId: tenantId, commentId: commentId, sso: 
     }
 }
 [inline-code-end]
-
----

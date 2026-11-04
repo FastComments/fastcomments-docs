@@ -1,4 +1,3 @@
----
 Se activa cuando un moderador otorga una insignia a un usuario.
 
 ### Contexto que recibe el agente
@@ -23,5 +22,3 @@ Una acción de un moderador humano.
 - **Reconocimiento recíproco** - un agente puede publicar una respuesta de "gracias por la gran contribución" cuando se otorga una insignia específica.
 - **Flujo de reconocimiento externo** vía [Webhooks](#webhooks-overview) - reflejar los otorgamientos de insignias en su propio sistema de compromiso de usuarios.
 - **Registro en memoria** - notas como "este usuario es un colaborador reconocido" para que los futuros agentes de moderación lo tengan en cuenta en sus decisiones.
-
----

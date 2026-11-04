@@ -1,27 +1,27 @@
-A `DomainConfig` object represents configuration for a domain for a tenant.
+Bir `DomainConfig` nesnesi, bir kiracı (tenant) için bir alan adının yapılandırmasını temsil eder.
 
-The structure for the `DomainConfig` object is as follows:
+`DomainConfig` nesnesinin yapısı aşağıdaki gibidir:
 
-[inline-code-attrs-start title = 'Domain Yapılandırma Yapısı'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Alan Adı Yapılandırma Yapısı'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface DomainConfig {
-    /** Bir alan adı, URL değil, örneğin "fastcomments.com" veya "www.example.com". Alt alan adı, alt alan adına sınırlama istenirse dahil edilebilir. Maksimum 1000 karakter. **/
+    /** "fastcomments.com" veya "www.example.com" gibi bir URL değil, bir alan adı. Yalnızca bir alt alan adıyla sınırlamak isteniyorsa alt alan adı eklenebilir. En fazla 1000 karakter. **/
     domain: string
-    /** E-posta gönderilirken kullanılan Gönderen Adı. **/
+    /** E-posta gönderilirken kullanılan Gönderen Adı (From-Name). **/
     emailFromName?: string
-    /** E-postalar gönderilirken kullanılan Gönderen E-posta. Bu öznitelikte kullanılan alan adına mail.fastcomments.com'ın e-posta göndermesine izin vermek için SPF'in yapılandırıldığından emin olun. **/
+    /** E-posta gönderilirken kullanılan Gönderen E-postası (From-Email). Bu öznitelikte kullanılan alan adı adına e-posta gönderebilmesi için mail.fastcomments.com'a izin verecek şekilde SPF'nin ayarlandığından emin olun. **/
     emailFromEmail?: string
-    /** SADECE OKUNUR. Nesnenin ne zaman oluşturulduğu. **/
+    /** SALT OKUNUR. Nesnenin oluşturulduğu zaman. **/
     createdAt: string
-    /** Bu alan adıyla ilişkili logo. E-postalarda kullanılır. HTTPS kullanın. **/
+    /** Bu alan adıyla ilgili logo. E-postalarda kullanılır. HTTPS kullanın. **/
     logoSrc?: string
-    /** Bu alan adıyla ilişkili daha küçük bir logo. HTTPS kullanın. **/
+    /** Bu alan adıyla ilgili daha küçük bir logo. HTTPS kullanın. **/
     logoSrc100px?: string
-    /** SADECE SSO. Gönderilen her e-postanın altbilgisinde kullanılan URL. "[userId]" değişkenini destekler. **/
+    /** YALNIZCA SSO. Gönderilen her e-postanın alt bilgisinde kullanılan URL. "[userId]" değişkenini destekler. **/
     footerUnsubscribeURL?: string
-    /** SADECE SSO. Gönderilen her e-postada kullanılan başlıklar. Örneğin teslimatı iyileştirmek için abonelikten çıkma ile ilgili başlıkları ayarlamak için yararlıdır. Bu Kaydaki List-Unsubscribe girişi, mevcutsa, "[userId]" değişkenini destekler. **/
+    /** YALNIZCA SSO. Gönderilen her e-postada kullanılan başlıklar. Örneğin teslimatı iyileştirmek için abonelikten çıkma ile ilgili başlıkları ayarlamak için kullanışlıdır. Bu Record içindeki List-Unsubscribe girdisi, varsa, "[userId]" değişkenini destekler. **/
     emailHeaders?: Record<string, string>
-    /** Tüm abonelikten çıkma bağlantılarını devre dışı bırakır. Önerilmez, teslimat oranlarına zarar verebilir. **/
+    /** Tüm abonelikten çıkma bağlantılarını devre dışı bırakır. Önerilmez, teslimat oranlarını olumsuz etkileyebilir. **/
     disableUnsubscribeLinks?: boolean
     /** DKIM Yapılandırması. **/
     dkim?: DomainConfigDKIM
@@ -35,31 +35,27 @@ interface DomainConfigDKIM {
     domainName: string
     /** Kullanılacak DKIM anahtar seçicisi. **/
     keySelector: string
-    /** PEM formatında açık anahtar. GET yanıtlarında döndürülür. **/
+    /** PEM formatında genel anahtar. GET yanıtlarında döndürülür. **/
     publicKey: string
-    /** @deprecated Artık API yanıtlarında döndürülmez. Geriye dönük uyumluluk için yazmada kabul edilir. **/
+    /** @deprecated Artık API yanıtlarında döndürülmüyor. Geriye dönük uyumluluk için yazma işlemlerinde kabul edilir. **/
     privateKey?: string
 }
 [inline-code-end]
 
-### Kimlik Doğrulama
+### Kimlik Doğrulama İçin
 
-Domain Configuration is used to determine which sites can host the FastComments widget for your account. This is a basic form
-of authentication, meaning adding or removing any Domain Configurations can impact the availability of your FastComments installation
-in production.
+Alan Adı Yapılandırması, hangi sitelerin hesabınız için FastComments widget'ını barındırabileceğini belirlemek için kullanılır. Bu, temel bir kimlik doğrulama biçimidir; yani herhangi bir Alan Adı Yapılandırmasının eklenmesi veya kaldırılması, FastComments kurulumunuzun üretim ortamındaki kullanılabilirliğini etkileyebilir.
 
-Don't remove or update the `domain` property of a `Domain Config` for a domain that is currently in use unless disabling that domain is intended.
+Şu anda kullanımda olan bir alan adı için `Domain Config` öğesinin `domain` özelliğini, o alan adını devre dışı bırakma amacı yoksa, kaldırmayın veya güncellemeyin.
 
-This has the same behavior as removing a domain from [/auth/my-account/configure-domains](https://fastcomments.com/auth/my-account/configure-domains).
+Bu, [/auth/my-account/configure-domains](https://fastcomments.com/auth/my-account/configure-domains) adresinden bir alan adını kaldırmayla aynı davranışa sahiptir.
 
-Also note that removing a domain from the `My Domains` UI will remove any corresponding configuration for that domain that may have been added via this UI.
+Ayrıca, `My Domains` arayüzünden bir alan adının kaldırılmasının, bu arayüz aracılığıyla eklenmiş olabilecek o alan adına ait tüm ilgili yapılandırmayı da kaldıracağını unutmayın.
 
-### E-posta Özelleştirmesi İçin
+### E-posta Özelleştirme İçin
 
-The unsubscribe link in the email footer, and the one-click-unsubscribe feature offered by many email clients, can be configured via this API by defining `footerUnsubscribeURL` and `emailHeaders`, respectively.
+E-posta alt bilgisindeki abonelikten çıkma bağlantısı ve birçok e-posta istemcisinin sunduğu tek tıkla abonelikten çıkma özelliği, sırasıyla `footerUnsubscribeURL` ve `emailHeaders` tanımlanarak bu API aracılığıyla yapılandırılabilir.
 
 ### DKIM İçin
 
-After defining your DKIM DNS records, simply update the DomainConfig with your DKIM configuration using the defined structure. 
-
----
+DKIM DNS kayıtlarınızı tanımladıktan sonra, tanımlanan yapıyı kullanarak DomainConfig'i DKIM yapılandırmanızla güncellemeniz yeterlidir.

@@ -62,5 +62,3 @@ Sneltoetsen worden automatisch onderdrukt wanneer:
 
 - De cursor staat in het zoekvak, een tekstveld of een content-editable veld. Druk op `Escape` om de focus uit het veld te halen en terug te keren naar de sneltoetsen.
 - Er is een dialoog geopend. Sluit eerst de dialoog.
-
----

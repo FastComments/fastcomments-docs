@@ -1,4 +1,3 @@
----
 ## Parâmetros
 
 | Nome | Tipo | Obrigatório | Descrição |
@@ -27,5 +26,3 @@ api->getCachedNotificationCount(tenantId.value(), userId.value())
         }
     });
 [inline-code-end]
-
----

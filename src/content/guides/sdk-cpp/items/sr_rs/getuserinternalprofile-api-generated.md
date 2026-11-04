@@ -26,5 +26,3 @@ api->getUserInternalProfile(tenantId, options)
         }
     });
 [inline-code-end]
-
----

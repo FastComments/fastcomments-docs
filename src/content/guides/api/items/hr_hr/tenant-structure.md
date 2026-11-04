@@ -1,16 +1,16 @@
-The `Tenant` definira korisnika FastComments.com. Mogu ih stvarati putem API-ja tenanti s pristupom za white labeling. Tenanti s bijelim označavanjem
-ne mogu stvarati druge tenante s bijelim označavanjem (dopuštena je samo jedna razina ugnježđivanja).
+`Tenant` definira FastComments.com korisnika. Mogu se stvoriti putem API-ja od strane tenanata s pristupom white labelingu. White labelirani tenanti
+ne mogu stvarati druge white labelirane tenante (dopuštena je samo jedna razina ugniježđivanja).
 
-The structure for the `Tenant` object is as follows:
+Struktura objekta `Tenant` je sljedeća:
 
-[inline-code-attrs-start title = 'Struktura Tenanta'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Struktura Tenant-a'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 export enum SiteType {
     Unknown = 0,
     WordPress = 1
 }
 
-/** Ovo se također može obraditi putem DomainConfig API-ja. **/
+/** Ovo se također može riješiti putem DomainConfig API-ja. **/
 export interface TenantDomainConfig {
     domain: string
     emailFromName?: string
@@ -47,7 +47,7 @@ export interface Tenant {
     id: string
     name: string
     email?: string
-    signUpDate: number; // broj zbog razloga vezanih uz 'legacy'
+    signUpDate: number; // broj zbog "legacy" razloga
     packageId?: string | null
     paymentFrequency?: TenantPaymentFrequency
     billingInfoValid?: boolean
@@ -67,15 +67,13 @@ export interface Tenant {
     commentsRequireApproval?: boolean
     autoApproveCommentOnVerification?: boolean
     sendProfaneToSpam?: boolean
-    /** @readonly - Izračunava se na temelju packageId. **/
+    /** @readonly - Računa se na temelju packageId. **/
     hasFlexPricing?: boolean
     /** @readonly **/
     flexLastBilledAmount?: number
-    /** @readonly - Izračunava se na temelju packageId. **/
+    /** @readonly - Računa se na temelju packageId. **/
     hasAuditing?: boolean
-    /** Možete pohraniti par ključ-vrijednost s tenantom koji možete koristiti za upite. Ključevi ne smiju sadržavati "." ili "$", ili biti dulji od 100 znakova. Vrijednosti ne smiju biti dulje od 2k znakova. **/
+    /** Možete pohraniti par ključ-vrijednost s tenantom koji možete koristiti za upite. Ključevi ne smiju sadržavati "." ili "$", niti biti dulji od 100 znakova. Vrijednosti ne smiju biti dulje od 2k znakova. **/
     meta?: Record<string, string | null>
 }
 [inline-code-end]
-
----

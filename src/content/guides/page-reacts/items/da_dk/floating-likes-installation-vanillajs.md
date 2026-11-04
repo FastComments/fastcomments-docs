@@ -85,5 +85,3 @@ Vi kan også sende Secure SSO- eller Simple SSO-payloads:
     });
 </script>
 [inline-code-end]
-
----

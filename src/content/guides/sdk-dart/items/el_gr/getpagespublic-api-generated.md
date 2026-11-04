@@ -1,39 +1,35 @@
-List pages for a tenant. Used by the FChat desktop client to populate its room list.  
-Requires `enableFChat` to be true on the resolved custom config for each page.  
-Pages that require SSO are filtered against the requesting user's group access.
+Λίστα σελίδων για έναν tenant. Χρησιμοποιείται από το FChat desktop client για τη συμπλήρωση της λίστας δωματίων του.
+Απαιτεί το `enableFChat` να είναι true στο resolved custom config για κάθε σελίδα.
+Οι σελίδες που απαιτούν SSO φιλτράρονται με βάση την πρόσβαση ομάδας του χρήστη που κάνει το αίτημα.
 
-Λίστα σελίδων για έναν ενοικιαστή. Χρησιμοποιείται από τον πελάτη επιφάνειας εργασίας FChat για την πληρότητα της λίστας δωματίων του.  
-Απαιτείται η ρύθμιση `enableFChat` να είναι true στην επιλυμένη προσαρμοσμένη διαμόρφωση για κάθε σελίδα.  
-Οι σελίδες που απαιτούν SSO φιλτράρονται βάσει της πρόσβασης ομάδας του χρήστη που κάνει το αίτημα.
+## Παράμετροι
 
-## Parameters
+| Όνομα | Τύπος | Τοποθεσία | Απαραίτητο | Περιγραφή |
+|------|------|----------|----------|-------------|
+| tenantId | string | path | Ναι |  |
+| cursor | string | query | Όχι | Αδιαφανές pagination cursor που επιστρέφεται ως `nextCursor` από προηγούμενο αίτημα. Συνδέεται με το ίδιο `sortBy`. |
+| limit | integer | query | Όχι | 1..200, προεπιλογή 50 |
+| q | string | query | Όχι | Προαιρετικό φίλτρο προθέματος τίτλου χωρίς διάκριση πεζών-κεφαλαίων. |
+| sortBy | string | query | Όχι | Σειρά ταξινόμησης. `updatedAt` (προεπιλογή, νεότερα πρώτα), `commentCount` (περισσότερα σχόλια πρώτα) ή `title` (αλφαβητικά). |
+| hasComments | boolean | query | Όχι | Αν true, επιστρέφονται μόνο σελίδες με τουλάχιστον ένα σχόλιο. |
 
-| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
-|------|------|----------|------------|-----------|
-| tenantId | string | path | Yes |  |
-| cursor | string | query | No | Αδιαφανής δρομέας σελίδων που επιστρέφεται ως `nextCursor` από προηγούμενο αίτημα. Συνδεδεμένο με το ίδιο `sortBy`. |
-| limit | integer | query | No | 1..200, default 50 |
-| q | string | query | No | Προαιρετικό φίλτρο προθέματος τίτλου χωρίς διάκριση πεζών-κεφαλαίων. |
-| sortBy | string | query | No | Σειρά ταξινόμησης. `updatedAt` (προεπιλογή, νεότερα πρώτα), `commentCount` (πρώτα τα περισσότερα σχόλια), ή `title` (αλφαβητικά). |
-| hasComments | boolean | query | No | Εάν είναι true, επιστρέφει μόνο σελίδες με τουλάχιστον ένα σχόλιο. |
-
-## Response
+## Απάντηση
 
 Επιστρέφει: `GetPublicPagesResponse`
 
-## Example
+## Παράδειγμα
 
 [inline-code-attrs-start title = 'Παράδειγμα getPagesPublic'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
 
 final api_instance = PublicApi();
-final tenantId = tenantId_example; // String |
-final cursor = cursor_example; // String | Αδιαφανής δρομέας σελίδων που επιστρέφεται ως `nextCursor` από προηγούμενο αίτημα. Συνδεδεμένο με το ίδιο `sortBy`.
-final limit = 56; // int | 1..200, default 50
+final tenantId = tenantId_example; // String | 
+final cursor = cursor_example; // String | Αδιαφανές pagination cursor που επιστρέφεται ως `nextCursor` από προηγούμενο αίτημα. Συνδέεται με το ίδιο `sortBy`.
+final limit = 56; // int | 1..200, προεπιλογή 50
 final q = q_example; // String | Προαιρετικό φίλτρο προθέματος τίτλου χωρίς διάκριση πεζών-κεφαλαίων.
-final sortBy = ; // PagesSortBy | Σειρά ταξινόμησης. `updatedAt` (προεπιλογή, νεότερα πρώτα), `commentCount` (πρώτα τα περισσότερα σχόλια), ή `title` (αλφαβητικά).
-final hasComments = true; // bool | Εάν είναι true, επιστρέφει μόνο σελίδες με τουλάχιστον ένα σχόλιο.
+final sortBy = ; // PagesSortBy | Σειρά ταξινόμησης. `updatedAt` (προεπιλογή, νεότερα πρώτα), `commentCount` (περισσότερα σχόλια πρώτα) ή `title` (αλφαβητικά).
+final hasComments = true; // bool | Αν true, επιστρέφονται μόνο σελίδες με τουλάχιστον ένα σχόλιο.
 
 try {
     final result = api_instance.getPagesPublic(tenantId, GetPagesPublicOptions(cursor: cursor, limit: limit, q: q, sortBy: sortBy, hasComments: hasComments));

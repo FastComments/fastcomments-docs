@@ -1,4 +1,3 @@
----
 Le dépôt inclut une application d'exemple complète dans `ExampleApp/` avec des démonstrations de :
 
 - Commentaires en arborescence avec SSO et thèmes personnalisés
@@ -6,4 +5,3 @@ Le dépôt inclut une application d'exemple complète dans `ExampleApp/` avec de
 - Chat en direct
 - Flux SSO simples et sécurisés
 - Boutons de barre d'outils personnalisés (commentaires et fil)
----

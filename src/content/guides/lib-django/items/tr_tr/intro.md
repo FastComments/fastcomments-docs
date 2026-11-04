@@ -1,4 +1,3 @@
----
 Bu, FastComments için resmi Django Paketi.
 
 Şablon etiketleri aracılığıyla Güvenli SSO ile canlı yorumlama ve sohbet bileşenleri.
@@ -6,5 +5,3 @@ Bu, FastComments için resmi Django Paketi.
 ## Depo
 
 [GitHub'da Görüntüle](https://github.com/FastComments/fastcomments-django)
-
----

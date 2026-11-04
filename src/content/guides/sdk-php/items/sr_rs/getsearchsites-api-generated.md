@@ -39,5 +39,3 @@ try {
     echo 'Exception when calling ModerationApi->getSearchSites: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

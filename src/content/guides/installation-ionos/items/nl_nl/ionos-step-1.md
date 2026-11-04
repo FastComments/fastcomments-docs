@@ -27,5 +27,3 @@ Als het klaar is, zou het er als volgt uit moeten zien:
 </div>
 
 Dat is het einde van stap één!
-
----

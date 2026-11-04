@@ -1,65 +1,65 @@
-Agent webhooks su HTTP povratni pozivi koje platforma šalje kada se izvršavanje agenta završi ili kada se stanje odobrenja promeni. Koristite ih za prosleđivanje aktivnosti agenta u vaše sisteme — upravljačke table za moderaciju, evidencije revizije, Slack kanale, alate za eskalaciju.
+Agent veb-hukovi su HTTP povratni pozivi koje platforma pokreće kada se agent run završi ili kada se stanje odobrenja promeni. Koristite ih da prosledite aktivnost agenata u svoje sisteme - moderation dashboards, audit logove, Slack kanale, alate za eskalaciju.
 
-Konfiguriše se pod karticom **Webhooks** na [AI Agents page](https://fastcomments.com/auth/my-account/ai-agents).
+Konfigurišu se pod tabom **Webhooks** na [AI Agents stranici](https://fastcomments.com/auth/my-account/ai-agents).
 
-### Šta se isporučuje
+### Šta se dostavlja
 
-Four event types:
+Četiri tipa događaja:
 
-- **`trigger.succeeded`** - an agent run completed successfully.
-- **`trigger.failed`** - an agent run errored.
-- **`approval.requested`** - an action was queued for human approval.
-- **`approval.decided`** - an approval was approved, rejected, or execution-failed.
+- **`trigger.succeeded`** - agent run je uspešno završen.
+- **`trigger.failed`** - agent run je doživeo grešku.
+- **`approval.requested`** - akcija je stavljena u red za ljudsko odobrenje.
+- **`approval.decided`** - odobrenje je odobreno, odbijeno ili je izvršavanje propalo.
 
-See [Webhook Events](#webhook-events) for which events fire when, and [Webhook Payloads](#webhook-payloads) for the schema of each.
+Pogledajte [Webhook Events](#webhook-events) za to koji se događaji kada okidaju, i [Webhook Payloads](#webhook-payloads) za šemu svakog od njih.
 
-### Šta se ne isporučuje
+### Šta se ne dostavlja
 
-- **Per-tool-action webhooks.** A run that calls `pin_comment` does not fire a separate webhook for the pin - the action is included in the run's `trigger.succeeded` payload. If you want per-action delivery, parse the `actions` array on the trigger payload.
-- **Dropped triggers.** A trigger that does not dispatch (over budget, wrong scope) does not fire a webhook. Drops are visible only in the [Analytics page](#analytics-page).
-- **Replay-produced triggers.** Test runs do not fire webhooks. See [Test Runs (Replays)](#test-runs-replays).
+- **Veb-hukovi po pojedinačnoj tool akciji.** Run koji poziva `pin_comment` ne okida poseban veb-huk za to pinovanje - akcija je uključena u payload run-a `trigger.succeeded`. Ako želite dostavu po akciji, parsirajte `actions` niz u trigger payload-u.
+- **Odbačeni triggeri.** Trigger koji se ne otprema (preko budžeta, pogrešan scope) ne okida veb-huk. Odbacivanja su vidljiva samo na [Analytics stranici](#analytics-page).
+- **Triggeri proizvedeni replay-em.** Test runovi ne okidaju veb-hukove. Pogledajte [Test Runs (Replays)](#test-runs-replays).
 
 ### Konfiguracija
 
-For each webhook you set:
+Za svaki veb-huk postavljate:
 
-- **URL** - the HTTPS endpoint to POST to.
-- **Domain** - the comment domain this webhook applies to (your tenant may host multiple domains). `*` matches all domains; `*.example.com` is a glob; an exact domain matches only that one.
-- **Events** - which of the four event types to subscribe to.
-- **Agents** - empty for "all agents", or a list of specific agent IDs to filter.
-- **Method** - POST or PUT (default POST).
-- **No-retry status codes** - HTTP response codes that should be treated as terminal failures, not retried (e.g., 410 Gone, 422 Unprocessable). See [Webhook Retries](#webhook-retries).
+- **URL** - HTTPS endpoint na koji se radi POST.
+- **Domain** - domen komentara na koji se ovaj veb-huk odnosi (vaš tenant može hostovati više domena). `*` odgovara svim domenima; `*.example.com` je glob; tačan domen odgovara samo tom jednom.
+- **Events** - na koje od četiri tipa događaja se pretplatite.
+- **Agents** - prazno za "sve agente", ili lista konkretnih agent ID-jeva za filtriranje.
+- **Method** - POST ili PUT (podrazumevano POST).
+- **No-retry status codes** - HTTP statusni kodovi koji se tretiraju kao konačne greške, bez ponovnih pokušaja (npr. 410 Gone, 422 Unprocessable). Pogledajte [Webhook Retries](#webhook-retries).
 
-Multiple webhooks can subscribe to the same event - each one queues independently and is delivered to its own URL.
+Više veb-hukova može biti pretplaćeno na isti događaj - svaki se nezavisno stavlja u red i dostavlja na svoj URL.
 
-### Per-domain matching
+### Podudaranje po domenu
 
-A given event is delivered to **every webhook whose `domain` field matches the comment's domain**. The matching uses a simple glob:
+Dati događaj se dostavlja **svakom veb-huku čije `domain` polje odgovara domenu komentara**. Podudaranje koristi jednostavan glob:
 
-- Exact: `example.com` matches only `example.com`.
-- Wildcard star: `*` matches every domain.
-- Subdomain glob: `*.example.com` matches `blog.example.com`, `forum.example.com`, but not `example.com` itself.
+- Tačno: `example.com` odgovara samo `example.com`.
+- Džoker zvezdica: `*` odgovara svakom domenu.
+- Subdomain glob: `*.example.com` odgovara `blog.example.com`, `forum.example.com`, ali ne i samom `example.com`.
 
-The domain on a payload is the first non-null result from: the comment's `domain`, the URL parsed against your tenant's domain configuration, or the `Page` lookup by `urlId`.
+Domen u payload-u je prvi ne-null rezultat od: `domain` polja komentara, URL-a parsiranog prema konfiguraciji domena vašeg tenanta, ili `Page` pretrage po `urlId`.
 
-### Per-agent filtering
+### Filtriranje po agentu
 
-The **Agents** field lets a webhook subscribe to only certain agents. Empty means "all agents". When non-empty, the webhook only fires for agents in the list.
+Polje **Agents** omogućava da se veb-huk pretplati samo na određene agente. Prazno znači "svi agenti". Kada nije prazno, veb-huk se okida samo za agente sa liste.
 
-This is useful when you have one webhook for moderation events and another for engagement events, both routing to different downstream systems.
+Ovo je korisno kada imate jedan veb-huk za moderation događaje i drugi za engagement događaje, pri čemu oba usmeravaju ka različitim downstream sistemima.
 
 ### Test send
 
-The webhook config UI has a **Test send** button that posts a fake payload to the URL so you can verify connectivity, signing, and your endpoint's response code without waiting for a real event.
+UI za konfiguraciju veb-huka ima dugme **Test send** koje šalje lažni payload na URL, tako da možete proveriti konektivnost, potpisivanje i statusni kod odgovora vašeg endpointa bez čekanja pravog događaja.
 
-### Delivery logs
+### Delivery logovi
 
-Every delivery (and every retry) lands in the [Webhook Delivery Logs](#webhook-logs) page so you can see what happened on the wire.
+Svaka dostava (i svaki ponovni pokušaj) završava na stranici [Webhook Delivery Logs](#webhook-logs), tako da možete videti šta se desilo na žici.
 
-### Signing
+### Potpisivanje
 
-Every webhook is signed with HMAC-SHA256 using your tenant's API secret. See [Webhook Signing](#webhook-signing).
+Svaki veb-huk je potpisan sa HMAC-SHA256 koristeći API secret vašeg tenanta. Pogledajte [Webhook Signing](#webhook-signing).
 
-### Eligibility
+### Uslovi korišćenja
 
-Agent webhooks require valid billing on the tenant. They use the same signing/secret infrastructure as your existing comment webhooks - if you have already integrated comment webhooks (see the [Webhooks guide](/guide-webhooks.html)), the agent webhook integration is the same shape with new event types.
+Agent veb-hukovi zahtevaju važeće naplatne podatke na tenantu. Koriste istu infrastrukturu potpisivanja/secret-a kao vaši postojeći veb-hukovi za komentare - ako ste već integrisali comment veb-hukove (pogledajte [Webhooks vodič](/guide-webhooks.html)), integracija agent veb-hukova je istog oblika, samo sa novim tipovima događaja.

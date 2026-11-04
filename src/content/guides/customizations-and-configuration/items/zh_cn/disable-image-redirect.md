@@ -6,5 +6,3 @@
 [code-example-start config = {disableImageRedirect: true}; linesToHighlight = [6]; title = 'Disable Image Redirect'; code-example-end]
 
 如果您不打算自己捕获图片点击事件（参见 [onImageClicked](#callbacks)），我们建议同时使用一些样式来去除图片看起来可点击的效果。
-
----

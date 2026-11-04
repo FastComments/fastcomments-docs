@@ -36,5 +36,3 @@ interface PendingWebhookEventsCountResponse {
     count?: number
 }
 [inline-code-end]
-
----

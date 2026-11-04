@@ -10,5 +10,3 @@
     <div class="title">Крок перший: Редагування динамічної сторінки допису</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-1-open-page.png" alt="Редагування динамічної сторінки допису" />
 </div>
-
----

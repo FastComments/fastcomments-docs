@@ -1,4 +1,3 @@
----
 ## Parametry
 
 | Nazwa | Typ | Wymagane | Opis |
@@ -22,5 +21,3 @@ async function demoGetUserBanPreference() {
   const responseWithoutSso: APIModerateGetUserBanPreferencesResponse = await getUserBanPreference(tenantId);
 }
 [inline-code-end]
-
----

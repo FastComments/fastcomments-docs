@@ -18,5 +18,3 @@ if badgeProgressOpt.isSome:
   let badgeProgress = badgeProgressOpt.get()
   echo badgeProgress
 [inline-code-end]
-
----

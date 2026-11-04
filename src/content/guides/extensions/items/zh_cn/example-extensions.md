@@ -1,4 +1,3 @@
----
 在 FastComments，我们使用相同的 API 编写自己的扩展。您可以在以下端点查看这些扩展的未压缩代码：
 
 #### 深色模式
@@ -20,5 +19,3 @@ https://fastcomments.com/js/comment-ui/extensions/comment-ui.moderation.extensio
 实时聊天扩展（结合其他配置和样式）可以将评论小部件变为实时聊天组件。
 
 https://fastcomments.com/js/comment-ui/extensions/live-chat.extension.js
-
----

@@ -1,24 +1,23 @@
-## Example Zaps
+## 예제 Zap
 
-몇 분만에 설정할 수 있는 몇 가지 워크플로우.
+몇 분 만에 설정할 수 있는 워크플로우 몇 가지입니다.
 
-**새 댓글에 대한 알림 받기.** New Comment, then Slack "Send Channel Message" or Discord "Send  
-Channel Message". 댓글 작성자 이름, 댓글 텍스트, 페이지 URL을 메시지에 매핑합니다. 도메인 필터를 추가하여 사이트별로 다른 채널에 알림을 보냅니다.
+**새 댓글에 대한 알림 받기.** New Comment 트리거를 사용한 뒤, Slack의 "Send Channel Message" 또는 Discord의 "Send Channel Message"를 연결하세요. 댓글 작성자 이름, 댓글 내용, 페이지 URL을 메시지에 매핑합니다. 도메인 필터를 추가하면 사이트별로 다른 채널에 알림을 보낼 수 있습니다.
 
-**모든 댓글을 기록하기.** New Comment, then Google Sheets "Create Spreadsheet Row". 삭제된 댓글을 두 번째 Zap으로 추가하여 댓글 ID가 포함된 행을 추가하면, 시트가 감사 로그 역할도 합니다.
+**모든 댓글 기록 유지.** New Comment 트리거를 사용한 뒤, Google Sheets의 "Create Spreadsheet Row"를 연결하세요. Deleted Comment 트리거를 두 번째 Zap으로 추가하여 댓글 id와 함께 행을 추가하면, 스프레드시트가 감사 기록 역할도 겸하게 됩니다.
 
-**댓글이 승인될 때 작성자에게 이메일 보내기.** Updated Comment with a Zapier filter on Approved is true, then Gmail "Send Email". Updated Comment는 모든 변경에 대해 발생하므로, 필터가 이 Zap이 승인에만 반응하도록 합니다.
+**댓글이 승인되면 작성자에게 이메일 보내기.** Approved가 true일 때만 통과하도록 Zapier 필터가 설정된 Updated Comment 트리거를 사용한 뒤, Gmail의 "Send Email"을 연결하세요. Updated Comment는 모든 변경 시에 발생하므로, 이 필터가 승인에만 반응하도록 만드는 핵심입니다.
 
-**댓글 작성자를 CRM 또는 메일링 리스트에 추가하기.** New Comment, then HubSpot "Create or Update Contact" or Mailchimp "Add or Update Subscriber" using the commenter email. 마케팅 리스트에 추가하기 전에 개인정보 보호정책 및 현지 법규를 준수하세요.
+**댓글 작성자를 CRM 또는 메일링 리스트에 추가.** New Comment 트리거를 사용한 뒤, 댓글 작성자의 이메일을 사용하여 HubSpot의 "Create or Update Contact" 또는 Mailchimp의 "Add or Update Subscriber"를 연결하세요. 마케팅 리스트에 누군가를 추가하기 전에 개인정보 처리방침과 현지 법률을 준수해야 합니다.
 
-**폼에서 댓글 만들기.** Typeform or Google Forms "New Response", then FastComments Create Comment with the page URL ID your site uses for testimonials. Approved를 체크하지 않으면 댓글이 표시되기 전에 검토할 수 있습니다.
+**폼에서 댓글 생성.** Typeform 또는 Google Forms의 "New Response"를 트리거로 사용한 뒤, 사이트에서 추천사(testimonial)용으로 사용하는 페이지 URL ID로 FastComments의 Create Comment를 연결하세요. Approved를 체크하지 않은 상태로 두면 각 댓글이 표시되기 전에 검토할 수 있습니다.
 
-**공지사항을 피드에 게시하기.** RSS by Zapier "New Item in Feed", then Create Feed Post with the item's title, content, and link.
+**피드에 공지 게시.** RSS by Zapier의 "New Item in Feed"를 트리거로 사용한 뒤, 항목의 제목, 내용, 링크와 함께 Create Feed Post를 연결하세요.
 
-**회원들을 SSO 사용자로 프로비저닝하기.** Memberstack, Memberful, or your own webhook, then Find SSO User followed by Create SSO User in "find or create" mode.
+**멤버를 SSO 사용자로 프로비저닝.** Memberstack, Memberful 또는 직접 만든 웹훅을 트리거로 사용한 뒤, Find SSO User를 실행하고 이어서 "find or create" 모드로 Create SSO User를 연결하세요.
 
-**신고된 댓글을 에스컬레이션하기.** Updated Comment, filtered on a flag count above zero, then Trello "Create Card" or Linear "Create Issue" with the comment id and a link to the moderation page.
+**신고된 댓글 에스컬레이션.** 플래그 수가 0보다 큰 경우에만 통과하도록 필터링된 Updated Comment 트리거를 사용한 뒤, 댓글 id와 검토 페이지 링크와 함께 Trello의 "Create Card" 또는 Linear의 "Create Issue"를 연결하세요.
 
-**페이지가 실시간으로 공개될 때 게시하기.** WordPress or Ghost "New Post", then Create Page with the post URL, so the page is listed and restricted before the first comment.
+**페이지가 라이브되는 대로 게시.** WordPress 또는 Ghost의 "New Post"를 트리거로 사용한 뒤, 게시물 URL과 함께 Create Page를 연결하세요. 그러면 첫 댓글이 달리기 전에 페이지가 목록에 등록되고 접근이 제한됩니다.
 
-**삭제된 댓글을 보관하기.** Deleted Comment, then Airtable "Create Record" with the full comment for compliance retention.
+**삭제된 댓글 보관.** Deleted Comment 트리거를 사용한 뒤, 컴플라이언스 보존을 위해 전체 댓글 내용과 함께 Airtable의 "Create Record"를 연결하세요.

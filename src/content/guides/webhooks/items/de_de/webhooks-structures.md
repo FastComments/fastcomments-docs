@@ -1,146 +1,148 @@
-Die einzige Struktur, die über Webhooks gesendet wird, ist das WebhookComment‑Objekt, das unten in TypeScript dargestellt ist.
+Die einzige Struktur, die über Webhooks gesendet wird, ist das WebhookComment-Objekt, das unten in TypeScript dargestellt ist.
 
-#### Die Struktur des WebhookComment‑Objekts
+#### Die Struktur des WebhookComment-Objekts
 
-##### Die „Create“-Ereignisstruktur
-Der Anfragetext des „create“-Ereignisses ist ein WebhookComment‑Objekt.
+##### Die Struktur des „Create“-Ereignisses
+Der Request-Body des „create“-Ereignisses ist ein WebhookComment-Objekt.
 
-##### Die „Update“-Ereignisstruktur
-Der Anfragetext des „update“-Ereignisses ist ein WebhookComment‑Objekt.
+##### Die Struktur des „Update“-Ereignisses
+Der Request-Body des „update“-Ereignisses ist ein WebhookComment-Objekt.
 
-##### Die „Delete“-Ereignisstruktur
-Der Anfragetext des „delete“-Ereignisses ist ein WebhookComment‑Objekt.
+##### Die Struktur des „Delete“-Ereignisses
+Der Request-Body des „delete“-Ereignisses ist ein WebhookComment-Objekt.
 
-    Change as of Nov 14th 2023
-    Previously the "delete" event request body only contained the comment id. It now contains the full comment at the time of deletion.
+    Änderung vom 14. November 2023
+    Zuvor enthielt der Request-Body des „delete“-Ereignisses nur die Kommentar-ID. Er enthält jetzt den vollständigen Kommentar zum Zeitpunkt der Löschung.
 
-Jeder Schlüssel ist immer im Body vorhanden. Wenn ein Kommentar keinen Wert für ein Feld hat, enthält der Body `null`
-(oder `false` für Booleans und `[]` für Listen), sodass die Form einer Lieferung niemals von einem Kommentar zum nächsten variiert.
+
+Jeder Schlüssel ist im Body immer vorhanden. Wenn der Kommentar für ein Feld keinen Wert hat, trägt der Body `null`
+(oder `false` für Booleans und `[]` für Listen), sodass die Form einer Zustellung von Kommentar zu Kommentar nie variiert.
 
 [inline-code-attrs-start title = 'Das WebhookComment-Objekt'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface WebhookComment {
-    /** The id of the comment. **/
+    /** Die ID des Kommentars. **/
     id: string
-    /** The id or URL that identifies the comment thread. Normalized. **/
+    /** Die ID oder URL, die den Kommentar-Thread identifiziert. Normalisiert. **/
     urlId: string
-    /** The URL that points to where the comment was left. **/
+    /** Die URL, die auf den Ort verweist, an dem der Kommentar hinterlassen wurde. **/
     url: string | null
-    /** The user id that left the comment. If SSO, prefixed with tenant id. **/
+    /** Die Benutzer-ID, die den Kommentar hinterlassen hat. Bei SSO mit der Tenant-ID vorangestellt. **/
     userId: string | null
-    /** The email of the user left the comment. **/
+    /** Die E-Mail des Benutzers, der den Kommentar hinterlassen hat. **/
     commenterEmail: string | null
-    /** The name of the user that shows in the comment widget. With SSO, can be displayName. **/
+    /** Der Name des Benutzers, der im Kommentar-Widget angezeigt wird. Bei SSO kann dies displayName sein. **/
     commenterName: string
-    /** Raw comment text. **/
+    /** Roher Kommentartext. **/
     comment: string
-    /** Comment text after parsing. **/
+    /** Kommentartext nach dem Parsen. **/
     commentHTML: string
-    /** Comment external id. **/
+    /** Externe ID des Kommentars. **/
     externalId: string | null
-    /** The id of the parent comment. **/
+    /** Die ID des übergeordneten Kommentars. **/
     parentId: string | null
-    /** The UTC date when the comment was left. **/
+    /** Das UTC-Datum, an dem der Kommentar hinterlassen wurde. **/
     date: UTC_ISO_DateString
-    /** Combined karma (up - down) of votes. **/
+    /** Kombiniertes Karma (up - down) der Stimmen. **/
     votes: number
     votesUp: number
     votesDown: number
-    /** True if the user was logged in when they commented, or their verified the comment, or if they verified their session when the comment was left. **/
+    /** True, wenn der Benutzer beim Kommentieren eingeloggt war, oder den Kommentar verifiziert hat, oder seine Sitzung verifiziert hat, als der Kommentar hinterlassen wurde. **/
     verified: boolean
-    /** The UTC date when the comment was verified. **/
+    /** Das UTC-Datum, an dem der Kommentar verifiziert wurde. **/
     verifiedDate: UTC_ISO_DateString | null
-    /** If a moderator marked the comment reviewed. **/
+    /** Ob ein Moderator den Kommentar als geprüft markiert hat. **/
     reviewed: boolean
-    /** The location, or base64 encoding, of the avatar. Will only be base64 if that was the value passed with SSO. **/
+    /** Der Speicherort oder die Base64-Kodierung des Avatars. Nur dann Base64, wenn dies der mit SSO übergebene Wert war. **/
     avatarSrc: string | null
-    /** Was the comment manually or automatically marked as spam? **/
+    /** Wurde der Kommentar manuell oder automatisch als Spam markiert? **/
     isSpam: boolean
-    /** Was the comment automatically marked as spam? **/
+    /** Wurde der Kommentar automatisch als Spam markiert? **/
     aiDeterminedSpam: boolean
-    /** Are there images in the comment? **/
+    /** Enthält der Kommentar Bilder? **/
     hasImages: boolean
-    /** The page number the comment is on for the "Most Relevant" sort direction. **/
+    /** Die Seitenzahl, auf der sich der Kommentar für die Sortierrichtung „Most Relevant“ befindet. **/
     pageNumber: number | null
-    /** The page number the comment is on for the "Oldest First" sort direction. **/
+    /** Die Seitenzahl, auf der sich der Kommentar für die Sortierrichtung „Oldest First“ befindet. **/
     pageNumberOF: number | null
-    /** The page number the comment is on for the "Newest First" sort direction. **/
+    /** Die Seitenzahl, auf der sich der Kommentar für die Sortierrichtung „Newest First“ befindet. **/
     pageNumberNF: number | null
-    /** Was the comment approved automatically or manually? **/
+    /** Wurde der Kommentar automatisch oder manuell genehmigt? **/
     approved: boolean
-    /** The locale code (format: en_us) of the user when the comment was written. **/
+    /** Der Locale-Code (Format: en_us) des Benutzers, als der Kommentar geschrieben wurde. **/
     locale: string | null
-    /** The @mentions written in the comment that were successfully parsed. Empty when there are none. **/
+    /** Die im Kommentar geschriebenen @mentions, die erfolgreich geparst wurden. Leer, wenn keine vorhanden sind. **/
     mentions: CommentUserMention[]
-    /** The domain the comment is from. **/
+    /** Die Domain, von der der Kommentar stammt. **/
     domain: string | null
-    /** The moderation group ids associated with this comment. Empty when there are none. **/
+    /** Die mit diesem Kommentar verknüpften Moderationsgruppen-IDs. Leer, wenn keine vorhanden sind. **/
     moderationGroupIds: string[]
-    /** The badges shown next to the commenter's name on this comment, as of when the event was created. Empty when there are none. **/
+    /** Die Badges, die neben dem Namen des Kommentierenden bei diesem Kommentar angezeigt werden, zum Zeitpunkt der Erstellung des Ereignisses. Leer, wenn keine vorhanden sind. **/
     badges: CommentUserBadgeInfo[]
 }
 [inline-code-end]
 
-Wenn Benutzer in einem Kommentar markiert werden, werden die Informationen in einer Liste namens `mentions` gespeichert. Jedes Objekt in dieser Liste hat die folgende Struktur.
+Wenn Benutzer in einem Kommentar markiert werden, werden die Informationen in einer Liste namens `mentions` gespeichert. Jedes Objekt in dieser Liste
+hat die folgende Struktur.
 
 [inline-code-attrs-start title = 'Das Webhook-Mentions-Objekt'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentUserMention {
-    /** The user id. For SSO users, this will have your tenant id prefixed. **/
+    /** Die Benutzer-ID. Bei SSO-Benutzern wird Ihre Tenant-ID vorangestellt. **/
     id: string
-    /** The final @mention tag text, including the @ symbol. **/
+    /** Der endgültige @mention-Tag-Text, einschließlich des @-Symbols. **/
     tag: string
-    /** The original @mention tag text, including the @ symbol. **/
+    /** Der ursprüngliche @mention-Tag-Text, einschließlich des @-Symbols. **/
     rawTag: string
-    /** What type of user was tagged. user = FastComments.com account. sso = SSOUser. **/
+    /** Welche Art von Benutzer markiert wurde. user = FastComments.com-Konto. sso = SSOUser. **/
     type: 'user'|'sso'
-    /** If the user opts out of notifications, this will still be set to true. **/
+    /** Wenn der Benutzer Benachrichtigungen abbestellt hat, wird dies dennoch auf true gesetzt. **/
     sent: boolean
 }
 [inline-code-end]
 
-Jeder Eintrag in der `badges`‑Liste hat die folgende Struktur. Siehe den [Badges guide](/guide-badges.html) für die Badge‑Typen.
+Jeder Eintrag in der `badges`-Liste hat die folgende Struktur. Siehe den [Badges-Leitfaden](/guide-badges.html) für die Badge-Typen.
 
 [inline-code-attrs-start title = 'Das Webhook-Badge-Objekt'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentUserBadgeInfo {
-    /** The id of the badge awarded to this user. **/
+    /** Die ID des diesem Benutzer verliehenen Badges. **/
     id: string
-    /** The badge type. **/
+    /** Der Badge-Typ. **/
     type: number
-    /** The badge description, shown when hovering over the badge. **/
+    /** Die Badge-Beschreibung, die beim Daraufzeigen mit der Maus angezeigt wird. **/
     description: string
-    /** The text shown on the badge. **/
+    /** Der auf dem Badge angezeigte Text. **/
     displayLabel?: string | null
-    /** The image shown for the badge, if it uses one. **/
+    /** Das für den Badge angezeigte Bild, falls er eines verwendet. **/
     displaySrc?: string | null
     backgroundColor?: string | null
     borderColor?: string | null
     textColor?: string | null
-    /** An extra CSS class applied to the badge. **/
+    /** Eine zusätzliche CSS-Klasse, die auf den Badge angewendet wird. **/
     cssClass?: string | null
 }
 [inline-code-end]
 
-#### HTTP‑Methoden
+#### HTTP-Methoden
 
-Sie können die HTTP‑Methode für jeden Webhook‑Ereignistyp im Admin‑Panel konfigurieren:
+Sie können die HTTP-Methode für jeden Webhook-Ereignistyp im Admin-Panel konfigurieren:
 
-- **Create‑Ereignis**: POST oder PUT (Standard: PUT)
-- **Update‑Ereignis**: POST oder PUT (Standard: PUT)
-- **Delete‑Ereignis**: DELETE, POST oder PUT (Standard: DELETE)
+- **Create-Ereignis**: POST oder PUT (Standard: PUT)
+- **Update-Ereignis**: POST oder PUT (Standard: PUT)
+- **Delete-Ereignis**: DELETE, POST oder PUT (Standard: DELETE)
 
-Da alle Anfragen eine ID enthalten, sind Create‑ und Update‑Operationen standardmäßig idempotent (PUT). Das Wiederholen derselben Create‑ oder Update‑Anfrage sollte auf Ihrer Seite keine doppelten Objekte erzeugen.
+Da alle Anfragen eine ID enthalten, sind Create- und Update-Operationen standardmäßig idempotent (PUT). Das Wiederholen derselben Create- oder Update-Anfrage sollte auf Ihrer Seite keine doppelten Objekte erzeugen.
 
-#### Anforderungs‑Header
+#### Request-Header
 
-Jede Webhook‑Anfrage enthält die folgenden Header:
+Jede Webhook-Anfrage enthält die folgenden Header:
 
 | Header | Beschreibung |
-|--------|---------------|
+|--------|-------------|
 | `Content-Type` | `application/json` |
-| `token` | Ihr API‑Geheimnis |
-| `X-FastComments-Timestamp` | Unix‑Zeitstempel (Sekunden) zum Zeitpunkt der Signatur |
-| `X-FastComments-Signature` | HMAC‑SHA256‑Signatur (`sha256=<hex>`) |
+| `token` | Ihr API-Secret |
+| `X-FastComments-Timestamp` | Unix-Zeitstempel (Sekunden), wann die Anfrage signiert wurde |
+| `X-FastComments-Signature` | HMAC-SHA256-Signatur (`sha256=<hex>`) |
 
-Siehe [Security & API Tokens](/guide-webhooks.html#webhooks-api-tokens) für Informationen zur Überprüfung der HMAC‑Signatur.
+Siehe [Sicherheit & API-Tokens](/guide-webhooks.html#webhooks-api-tokens) für Informationen zur Verifizierung der HMAC-Signatur.

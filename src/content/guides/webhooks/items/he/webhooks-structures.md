@@ -1,23 +1,23 @@
-The only structure sent via webhooks is the WebhookComment object, outlined in TypeScript below.
+המבנה היחיד שנשלח באמצעות webhooks הוא אובייקט WebhookComment, המתואר ב-TypeScript להלן.
 
-#### מבנה אובייקט WebhookComment
+#### מבנה אובייקט ה-WebhookComment
 
-##### מבנה אירוע "Create"
-The "create" event request body is a WebhookComment object.
+##### מבנה אירוע ה-"Create"
+גוף הבקשה של אירוע ה-"create" הוא אובייקט WebhookComment.
 
-##### מבנה אירוע "Update"
-The "update" event request body is a WebhookComment object.
+##### מבנה אירוע ה-"Update"
+גוף הבקשה של אירוע ה-"update" הוא אובייקט WebhookComment.
 
-##### מבנה אירוע "Delete"
-The "delete" event request body is a WebhookComment object.
+##### מבנה אירוע ה-"Delete"
+גוף הבקשה של אירוע ה-"delete" הוא אובייקט WebhookComment.
 
-שינוי החל מ-14 בנובמבר 2023  
-Previously the "delete" event request body only contained the comment id. It now contains the full comment at the time of deletion.
+    שינוי מתאריך 14 בנובמבר 2023
+    בעבר גוף הבקשה של אירוע ה-"delete" הכיל רק את ה-id של התגובה. כעת הוא מכיל את התגובה המלאה במועד המחיקה.
 
-Every key is always present in the body. When the comment has no value for a field the body carries `null`
-(or `false` for booleans and `[]` for lists), so the shape of a delivery never varies from one comment to the next.
+כל מפתח תמיד קיים בגוף הבקשה. כאשר לתגובה אין ערך עבור שדה מסוים, הגוף מכיל `null`
+(או `false` עבור בוליאנים ו-`[]` עבור רשימות), כך שהצורה של כל מסירה אינה משתנה מתגובה לתגובה.
 
-[inline-code-attrs-start title = 'אובייקט WebhookComment'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'אובייקט ה-WebhookComment'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface WebhookComment {
     /** The id of the comment. **/
@@ -81,9 +81,10 @@ interface WebhookComment {
 }
 [inline-code-end]
 
-כאשר משתמשים מתוייגים בהערה, המידע נשמר ברשימה בשם `mentions`. לכל אובייקט ברשימה יש את המבנה הבא.
+כאשר משתמשים מתויגים בתגובה, המידע נשמר ברשימה בשם `mentions`. לכל אובייקט ברשימה זו
+יש את המבנה הבא.
 
-[inline-code-attrs-start title = 'אובייקט Webhook Mentions'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'אובייקט ה-Mentions של ה-Webhook'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentUserMention {
     /** The user id. For SSO users, this will have your tenant id prefixed. **/
@@ -99,9 +100,9 @@ interface CommentUserMention {
 }
 [inline-code-end]
 
-לכל ערך ברשימת `badges` יש את המבנה הבא. ראו את [מדריך התגים](/guide-badges.html) עבור סוגי התגים.
+לכל רשומה ברשימת ה-`badges` יש את המבנה הבא. ראו את [מדריך ה-Badges](/guide-badges.html) לסוגי התגים.
 
-[inline-code-attrs-start title = 'אובייקט Webhook Badge'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'אובייקט ה-Badge של ה-Webhook'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentUserBadgeInfo {
     /** The id of the badge awarded to this user. **/
@@ -126,11 +127,11 @@ interface CommentUserBadgeInfo {
 
 ניתן להגדיר את שיטת ה-HTTP עבור כל סוג אירוע webhook בלוח הניהול:
 
-- **אירוע יצירה**: POST או PUT (ברירת מחדל: PUT)
-- **אירוע עדכון**: POST או PUT (ברירת מחדל: PUT)
-- **אירוע מחיקה**: DELETE, POST, או PUT (ברירת מחדל: DELETE)
+- **אירוע Create**: POST או PUT (ברירת מחדל: PUT)
+- **אירוע Update**: POST או PUT (ברירת מחדל: PUT)
+- **אירוע Delete**: DELETE, POST, או PUT (ברירת מחדל: DELETE)
 
-מאחר וכל הבקשות מכילות מזהה, פעולות יצירה ועדכון הן אידמפוטנטיות כברירת מחדל (PUT). חזרה על אותה בקשת יצירה או עדכון לא תיצור אובייקטים משוכפלים בצד שלכם.
+מכיוון שכל הבקשות מכילות מזהה, פעולות ה-Create וה-Update הן אידמפוטנטיות כברירת מחדל (PUT). חזרה על אותה בקשת Create או Update לא אמורה ליצור אובייקטים כפולים בצד שלכם.
 
 #### כותרות בקשה
 
@@ -139,10 +140,8 @@ interface CommentUserBadgeInfo {
 | Header | Description |
 |--------|-------------|
 | `Content-Type` | `application/json` |
-| `token` | סוד ה-API שלך |
-| `X-FastComments-Timestamp` | חותמת זמן Unix (שניות) כאשר הבקשה נחתמה |
-| `X-FastComments-Signature` | חתימת HMAC-SHA256 (`sha256=<hex>`) |
+| `token` | Your API Secret |
+| `X-FastComments-Timestamp` | Unix timestamp (seconds) when the request was signed |
+| `X-FastComments-Signature` | HMAC-SHA256 signature (`sha256=<hex>`) |
 
-ראו את [אבטחה & אסימוני API](/guide-webhooks.html#webhooks-api-tokens) למידע על אימות חתימת HMAC.
-
----
+ראו [אבטחה וטוקני API](/guide-webhooks.html#webhooks-api-tokens) למידע על אימות חתימת ה-HMAC.

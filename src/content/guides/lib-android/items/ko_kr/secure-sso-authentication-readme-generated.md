@@ -1,4 +1,3 @@
----
 사용자에 대한 보안 인증을 구현하세요:
 
 ```kotlin
@@ -17,4 +16,3 @@ val token = sso.prepareToSend()
 // 구성에 추가
 config.sso = token
 ```
----

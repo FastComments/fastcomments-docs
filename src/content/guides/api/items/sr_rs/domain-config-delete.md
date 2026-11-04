@@ -29,5 +29,3 @@ interface DomainConfigDeleteResponse {
     reason?: string
 }
 [inline-code-end]
-
----

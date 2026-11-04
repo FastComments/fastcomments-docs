@@ -1,4 +1,3 @@
----
 [related-parameter-start name = 'disableSuccessMessage'; type = 'boolean'; related-parameter-end]
 
 Domyślnie FastComments wyświetla komunikat o sukcesie po dodaniu komentarza. Można go wyłączyć w następujący sposób:
@@ -8,5 +7,3 @@ Domyślnie FastComments wyświetla komunikat o sukcesie po dodaniu komentarza. M
 Można to zrobić również bez kodu. Na stronie dostosowywania widgetu:
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-success-message']; selector = '.disable-success-message'; alt='Strona dostosowywania widgetu z zaznaczonym polem wyboru Wyłącz komunikat o sukcesie, aby ukryć potwierdzenie po dodaniu komentarza'; title='Wyłącz komunikat o sukcesie' app-screenshot-end]
-
----

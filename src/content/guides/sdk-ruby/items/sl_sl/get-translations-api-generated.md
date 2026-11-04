@@ -34,5 +34,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_translations: #{e}"
 end
 [inline-code-end]
-
----

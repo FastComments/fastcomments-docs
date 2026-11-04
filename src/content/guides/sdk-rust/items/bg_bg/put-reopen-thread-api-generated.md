@@ -24,5 +24,3 @@ async fn reopen_thread_example(configuration: &configuration::Configuration) -> 
     Ok(())
 }
 [inline-code-end]
-
----

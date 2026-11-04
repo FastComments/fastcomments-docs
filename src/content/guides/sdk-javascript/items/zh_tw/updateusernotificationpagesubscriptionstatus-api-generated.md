@@ -1,4 +1,3 @@
----
 啟用或停用頁面的通知。當使用者訂閱頁面時，會為新的根評論建立通知，且同時
 
 ## Parameters
@@ -43,5 +42,3 @@ async function runExample() {
 
 runExample();
 [inline-code-end]
-
----

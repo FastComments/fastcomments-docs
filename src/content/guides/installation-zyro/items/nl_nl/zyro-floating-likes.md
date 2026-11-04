@@ -1,4 +1,3 @@
----
 FastComments ondersteunt ook de Page Reacts (ook wel Floating Like-knop genoemd) widget voor Zyro.
 
 Je kunt het in actie zien rechtsonder op deze pagina!
@@ -31,5 +30,3 @@ Je kunt het in actie zien rechtsonder op deze pagina!
 4. Selecteer Integraties.
 5. Voeg de nieuwe code toe aan het *einde* van het `Custom code` veld, en publiceer je site.
 6. Je zult de widget niet zien in de voorbeeldweergave, maar deze zal verschijnen in de gepubliceerde versie van de site.
-
----

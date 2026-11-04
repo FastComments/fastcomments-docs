@@ -31,5 +31,3 @@ DefaultAPI.replaceTenantPackage(tenantId: tenantId, id: id, replaceTenantPackage
     }
 }
 [inline-code-end]
-
----

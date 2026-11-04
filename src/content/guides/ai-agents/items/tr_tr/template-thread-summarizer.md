@@ -33,5 +33,3 @@ Ajan, `write_comment` ile yeni bir yorum gönderir, ardından dönen yorum kimli
 ### Tekrarlayan özetlerden kaçınma
 
 Ajan, [`save_memory`](#tools-overview) ve [`search_memory`](#tools-overview) araçlarına erişebilir - istemi, "özetlendi {thread urlId}" notlarını kaydetmesi ve yeniden gönderim yapmadan önce bunları kontrol etmesi için genişletebilirsiniz. Bellek, kiracınızdaki tüm ajanlarla paylaşılır.
-
----

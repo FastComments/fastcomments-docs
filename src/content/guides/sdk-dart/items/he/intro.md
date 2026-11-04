@@ -5,5 +5,3 @@
 ## מאגר
 
 [הצג ב‑GitHub](https://github.com/FastComments/fastcomments-dart)
-
----

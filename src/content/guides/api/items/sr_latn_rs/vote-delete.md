@@ -1,4 +1,3 @@
----
 [api-resource-header-start name = 'Vote'; route = 'DELETE /api/v1/votes/:id'; creditsCost = 1; api-resource-header-end]
 
 Ova ruta omogućava brisanje pojedinačnog `Vote`.
@@ -34,5 +33,3 @@ Napomene:
 - Ovaj API poštuje postavke na nivou tenanta. Na primer, ako onemogućite glasanje za određenu stranicu, i pokušate da kreirate glas preko API-ja, to će završiti greškom sa kodom `voting-disabled`.
 - Ovaj API je podrazumevano aktivan.
 - Ovaj API će ažurirati `votes` odgovarajućeg `Comment`.
-
----

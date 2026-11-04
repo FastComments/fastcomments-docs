@@ -38,5 +38,3 @@ interface QuestionResultsResponse {
     questionResults: QuestionResults[]
 }
 [inline-code-end]
-
----

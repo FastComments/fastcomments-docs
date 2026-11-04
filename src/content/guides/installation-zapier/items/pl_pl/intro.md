@@ -1,4 +1,3 @@
----
 Aplikacja FastComments dla Zapier łączy twoje komentarze z tysiącami innych aplikacji bez pisania kodu.
 
 Użyj jej, aby wysłać wiadomość Slack, gdy ktoś skomentuje, zapisać każdy komentarz w arkuszu kalkulacyjnym, utworzyć komentarz z formularza lub dodać komentujących do swojego CRM. Wyzwalacze uruchamiają się w momencie, gdy coś się wydarzy, ponieważ są oparte na webhookach, a nie na polling, a akcje wywołują API FastComments w twoim imieniu.

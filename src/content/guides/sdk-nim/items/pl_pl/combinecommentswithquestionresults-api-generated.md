@@ -21,5 +21,3 @@ let (combineOpt, httpResponse) = client.combineCommentsWithQuestionResults(
 if combineOpt.isSome:
   let combineResult = combineOpt.get()
 [inline-code-end]
-
----

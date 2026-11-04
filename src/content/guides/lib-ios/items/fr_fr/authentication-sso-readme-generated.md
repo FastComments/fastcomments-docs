@@ -1,12 +1,12 @@
 FastComments prend en charge trois modes d'authentification :
 
-1. **Anonymous** -- pas de jeton SSO ; les utilisateurs obtiennent des identités basées sur la session
-2. **Simple SSO** -- jeton côté client pour démos et tests (non sécurisé)
-3. **Secure SSO** -- jeton signé côté serveur pour la production
+1. **Anonyme** -- pas de jeton SSO ; les utilisateurs obtiennent des identités basées sur la session
+2. **SSO simple** -- jeton côté client pour les démos et les tests (non sécurisé)
+3. **SSO sécurisé** -- jeton signé côté serveur pour la production
 
-### Simple SSO
+### SSO simple
 
-Utile pour des démonstrations et des tests locaux. N'importe qui peut usurper l'identité de n'importe quel utilisateur avec Simple SSO, ne l'utilisez donc pas en production.
+Utile pour les démos et les tests locaux. N'importe qui peut usurper l'identité de n'importe quel utilisateur avec le SSO simple, ne l'utilisez donc pas en production.
 
 ```swift
 import FastCommentsSwift
@@ -27,20 +27,20 @@ let config = FastCommentsWidgetConfig(
 let sdk = FastCommentsSDK(config: config)
 ```
 
-`SimpleSSOUserData` prend également en charge les champs optionnels :
+`SimpleSSOUserData` prend également en charge des champs optionnels :
 
-- `id` -- ID utilisateur (par défaut l'email si non défini)
+- `id` -- ID de l'utilisateur (par défaut, l'email si non défini)
 - `displayName` -- nom d'affichage distinct
-- `displayLabel` -- étiquette personnalisée affichée à côté du nom (par ex. "VIP")
+- `displayLabel` -- étiquette personnalisée affichée à côté du nom (ex. « VIP »)
 - `websiteUrl` -- lien sur le nom de l'utilisateur
 - `locale` -- code de locale
-- `isProfileActivityPrivate` -- masquer l'activité du profil (true par défaut)
+- `isProfileActivityPrivate` -- masquer l'activité du profil (par défaut à true)
 
-### Secure SSO
+### SSO sécurisé
 
-En production, votre backend génère un jeton SSO signé en utilisant votre secret API. L'application iOS récupère ce jeton depuis votre serveur et le transmet à la configuration.
+En production, votre backend génère un jeton SSO signé à l'aide de votre secret d'API. L'application iOS récupère ce jeton depuis votre serveur et le transmet à la configuration.
 
-**On your backend** (using the FastComments Swift SDK or any language):
+**Sur votre backend** (en utilisant le SDK Swift FastComments ou tout autre langage) :
 
 ```swift
 let userData = SecureSSOUserData(
@@ -51,10 +51,10 @@ let userData = SecureSSOUserData(
 )
 let sso = try FastCommentsSSO.createSecure(apiKey: "YOUR_API_KEY", secureSSOUserData: userData)
 let token = try sso.prepareToSend()
-// Return this token to your iOS app via your API
+// Renvoyez ce jeton à votre application iOS via votre API
 ```
 
-**In your iOS app:**
+**Dans votre application iOS :**
 
 ```swift
 struct MyView: View {
@@ -87,14 +87,13 @@ struct MyView: View {
 
 `SecureSSOUserData` prend en charge des champs supplémentaires :
 
-- `optedInNotifications` -- inscription aux notifications par e-mail
+- `optedInNotifications` -- consentement aux notifications par email
 - `displayLabel` -- étiquette personnalisée
 - `displayName` -- nom d'affichage
 - `websiteUrl` -- URL du site web
-- `groupIds` -- appartenances à des groupes
+- `groupIds` -- appartenances aux groupes
 - `isAdmin` -- privilèges d'administrateur
 - `isModerator` -- privilèges de modérateur
 - `isProfileActivityPrivate` -- confidentialité du profil
 
----
 ---

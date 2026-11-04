@@ -1,4 +1,3 @@
----
 I componenti Ratings & Reviews, parte del modulo Feedback di FastComments, presentano le seguenti funzionalità da evidenziare:
 
 - Due diverse disposizioni per le domande - una verticale e una affiancata (quest'ultima mostrata in fondo a questa pagina).
@@ -8,4 +7,3 @@ I componenti Ratings & Reviews, parte del modulo Feedback di FastComments, prese
 - Aggregazioni complessive e nel tempo nella dashboard di reporting.
 - Un'API con cui integrarsi per salvare, recuperare e aggregare i feedback.
 - La possibilità di personalizzare domande e sotto-domande per dominio o per pagina senza modificare il codice.
----

@@ -1,4 +1,3 @@
----
 Editar una encuesta en el lugar, manteniendo sus recuentos: cambiar la pregunta, volver a etiquetar una opción, cerrar o reabrirla, o cambiar quién puede ver a los votantes. Las opciones se abordan por id - para añadir, eliminar o reordenarlas, haga PUT de la lista completa.
 
 ## Parameters
@@ -34,5 +33,3 @@ DefaultAPI.patchPoll(tenantId: tenantId, commentId: commentId, commentPollPatch:
     }
 }
 [inline-code-end]
-
----

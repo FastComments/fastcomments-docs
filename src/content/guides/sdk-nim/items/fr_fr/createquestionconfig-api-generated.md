@@ -22,5 +22,3 @@ if maybeResp.isSome:
   let resp = maybeResp.get()
   # utilisez la réponse selon vos besoins
 [inline-code-end]
-
----

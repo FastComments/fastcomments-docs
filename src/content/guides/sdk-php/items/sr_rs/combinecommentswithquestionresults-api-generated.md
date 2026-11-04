@@ -57,5 +57,3 @@ try {
     echo 'Exception when calling DefaultApi->combineCommentsWithQuestionResults: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

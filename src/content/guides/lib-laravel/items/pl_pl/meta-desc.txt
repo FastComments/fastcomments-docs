@@ -1,3 +1,1 @@
----
 Dodaj komentarze do aplikacji Laravel przy użyciu komponentów Blade. Obejmuje SDK PHP, zapewniając pełny dostęp do API i automatycznie łączy SSO z Twoim uwierzytelnionym użytkownikiem.
----

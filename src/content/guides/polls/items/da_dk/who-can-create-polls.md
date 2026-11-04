@@ -1,8 +1,8 @@
-Once polls are enabled, the **Who Can Create Polls** setting controls who sees the poll button in the comment toolbar:
+Når afstemninger er aktiveret, styrer indstillingen **Who Can Create Polls**, hvem der ser afstemningsknappen i kommentarværktøjslinjen:
 
-- **Admins/Moderators Only** (the default): only your site's admins and moderators can attach a poll to a comment.
-- **Everyone**: any commenter can attach a poll to their comment.
+- **Admins/Moderators Only** (standard): kun dit websteds administratorer og moderatorer kan vedhæfte en afstemning til en kommentar.
+- **Everyone**: enhver kommentator kan vedhæfte en afstemning til deres kommentar.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-polls']; selector = '.poll-creation'; alt='Dropdown-menuen \'Who Can Create Polls\' indstillet til \'Admins/Moderators Only\''; title='Hvem kan oprette afstemninger' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-polls']; selector = '.poll-creation'; alt='Dropdownen Who Can Create Polls sat til Admins/Moderators Only'; title='Who Can Create Polls' app-screenshot-end]
 
-This setting only controls who can create polls. Who can vote is set separately, see the next section.
+Denne indstilling styrer kun, hvem der kan oprette afstemninger. Hvem der kan stemme indstilles separat, se næste afsnit.

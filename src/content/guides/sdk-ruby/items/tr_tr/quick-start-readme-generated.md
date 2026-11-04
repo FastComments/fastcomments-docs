@@ -1,23 +1,23 @@
-### Using Authenticated APIs (DefaultApi)
+### Kimlik Doğrulamalı API'leri Kullanma (DefaultApi)
 
-**Önemli:** Kimliği doğrulanmış istekler yapmadan önce API anahtarını ApiClient üzerine ayarlamalısınız. Bunu yapmazsanız istekler 401 hatasıyla başarısız olur.
+**Önemli:** Kimlik doğrulamalı istekler yapmadan önce ApiClient üzerinde API anahtarınızı ayarlamanız gerekir. Ayarlamazsanız, istekler 401 hatasıyla başarısız olur.
 
 ```ruby
 require 'fastcomments'
 
-# API istemcisini oluştur ve yapılandır
+# API istemcisini oluşturun ve yapılandırın
 config = FastCommentsClient::Configuration.new
 api_client = FastCommentsClient::ApiClient.new(config)
 
-# GEREKLİ: API anahtarınızı ayarlayın (FastComments kontrol panelinizden alın)
+# GEREKLİ: API anahtarınızı ayarlayın (bunu FastComments panonuzdan alın)
 config.api_key['x-api-key'] = 'YOUR_API_KEY_HERE'
 
-# Yapılandırılmış istemciyle API örneğini oluştur
+# Yapılandırılmış istemciyle API örneğini oluşturun
 api = FastCommentsClient::DefaultApi.new(api_client)
 
-# Artık kimliği doğrulanmış API çağrıları yapabilirsiniz
+# Artık kimlik doğrulamalı API çağrıları yapabilirsiniz
 begin
-  # Örnek: Bir SSO kullanıcısı ekle
+  # Örnek: Bir SSO kullanıcısı ekleyin
   user_data = {
     id: 'user-123',
     email: 'user@example.com',
@@ -35,9 +35,9 @@ rescue FastCommentsClient::ApiError => e
 end
 ```
 
-### Using Public APIs (PublicApi)
+### Genel API'leri Kullanma (PublicApi)
 
-Public uç noktalar kimlik doğrulama gerektirmez:
+Herkese açık uç noktalar kimlik doğrulaması gerektirmez:
 
 ```ruby
 require 'fastcomments'
@@ -55,9 +55,9 @@ rescue FastCommentsClient::ApiError => e
 end
 ```
 
-### Using Moderation APIs (ModerationApi)
+### Moderasyon API'lerini Kullanma (ModerationApi)
 
-Moderasyon yöntemleri moderatör kontrol panelini güçlendirir. İsteğin bir SSO‑kimliği doğrulanmış moderatör adına yapılması için bir `sso` belirteci gönderin:
+Moderasyon metotları moderatör panelini çalıştırır. İsteğin SSO ile kimlik doğrulamış bir moderatör adına yapılması için bir `sso` token'ı geçirin:
 
 ```ruby
 require 'fastcomments'
@@ -65,7 +65,7 @@ require 'fastcomments'
 moderation_api = FastCommentsClient::ModerationApi.new
 
 begin
-  # Örnek: Moderasyon kuyruğundaki yorumları listele
+  # Örnek: Moderasyon kuyruğundaki yorumları listeleyin
   response = moderation_api.get_api_comments(
     sso: 'YOUR_MODERATOR_SSO_TOKEN'
   )
@@ -75,8 +75,8 @@ rescue FastCommentsClient::ApiError => e
 end
 ```
 
-### Common Issues
+### Yaygın Sorunlar
 
-1. **401 "missing-api-key" hatası**: `DefaultApi` örneğini oluşturmadan önce `config.api_key['x-api-key'] = 'YOUR_KEY'` ayarladığınızdan emin olun.
-2. **Yanlış API sınıfı**: Sunucu tarafı kimliği doğrulanmış istekler için `DefaultApi`, istemci/halka açık istekler için `PublicApi` ve moderatör kontrol paneli istekleri için `ModerationApi` kullanın.
-3. **Null API anahtarı**: SDK, API anahtarı null olduğunda kimlik doğrulamayı sessizce atlar ve bu da 401 hatalarına yol açar.
+1. **401 "missing-api-key" hatası**: DefaultApi örneğini oluşturmadan önce `config.api_key['x-api-key'] = 'YOUR_KEY'` ayarladığınızdan emin olun.
+2. **Yanlış API sınıfı**: Sunucu tarafı kimlik doğrulamalı istekler için `DefaultApi`, istemci tarafı/herkese açık istekler için `PublicApi` ve moderatör paneli istekleri için `ModerationApi` kullanın.
+3. **Null API anahtarı**: API anahtarı null ise SDK kimlik doğrulamasını sessizce atlar ve bu da 401 hatalarına yol açar.

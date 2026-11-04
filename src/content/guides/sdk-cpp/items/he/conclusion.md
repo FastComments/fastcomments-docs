@@ -8,5 +8,3 @@
 ## תרומה
 
 תרומות מתקבלות בברכה! אנא בקרו ב-[מאגר GitHub](https://github.com/FastComments/fastcomments-cpp) לקבלת הנחיות לתרומה.
-
----

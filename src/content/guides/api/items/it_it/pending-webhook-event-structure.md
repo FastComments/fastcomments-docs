@@ -1,12 +1,12 @@
-Un oggetto `PendingWebhookEvent` rappresenta un evento webhook accodato in attesa.
+Un oggetto `PendingWebhookEvent` rappresenta un evento webhook in coda che è in attesa di elaborazione.
 
-`PendingWebhookEvent` objects are created automatically and cannot be manually created via the API. They also expire after one year.
-Possono essere eliminati, il che rimuove il task dalla coda.
+Gli oggetti `PendingWebhookEvent` vengono creati automaticamente e non possono essere creati manualmente tramite l'API. Inoltre scadono dopo un anno.
+Possono essere eliminati, il che rimuove l'attività dalla coda.
 
-Esistono diversi tipi di eventi - controlla `eventType` (`OutboundSyncEventType`) e `type` (`OutboundSyncType`).
+Esistono diversi tipi di evento - controllare `eventType` (`OutboundSyncEventType`) e `type` (`OutboundSyncType`).
 
-Un uso comune di questa API è implementare un monitoraggio personalizzato. Potresti voler chiamare periodicamente l'endpoint `/count`
-per interrogare il conteggio in sospeso per filtri specifici.
+Un caso d'uso comune per questa API è l'implementazione di un monitoraggio personalizzato. Potrebbe essere necessario chiamare periodicamente l'endpoint `/count`
+per interrogare il numero di eventi in sospeso in base ai filtri specificati.
 
 La struttura dell'oggetto `PendingWebhookEvent` è la seguente:
 
@@ -28,7 +28,7 @@ interface PendingWebhookEvent {
     id: string
     /** L'id del commento associato all'evento. **/
     commentId: string
-    /** L'oggetto del commento relativo all'evento al momento dell'evento. Abbiamo iniziato ad aggiungerli a partire da Nov 2023. **/
+    /** L'oggetto commento per l'evento al momento dell'evento. Abbiamo iniziato ad aggiungerli a novembre 2023. **/
     comment: Comment
     /** Un id esterno che può essere associato al commento. **/
     externalId: string | null
@@ -37,13 +37,13 @@ interface PendingWebhookEvent {
     attemptCount: number
     /** Impostato prima del primo tentativo e dopo ogni fallimento. **/
     nextAttemptAt: Date
-    /** Se si tratta di un evento di creazione, cancellazione o aggiornamento... **/
+    /** Indica se si tratta di un evento di creazione, eliminazione o aggiornamento... **/
     eventType: OutboundSyncEventType
-    /** Il tipo di sincronizzazione da eseguire (WordPress, chiamare l'API, ecc.). **/
+    /** Il tipo di sincronizzazione da eseguire (WordPress, chiamata API, ecc). **/
     type: OutboundSyncType
-    /** Il dominio che ha corrisposto al commento. Usiamo questo dominio per scegliere la chiave API. **/
+    /** Il dominio corrispondente al commento. Usiamo questo dominio per selezionare la chiave API. **/
     domain: string
-    /** L'ultimo errore verificatosi. Questo tipo non è tipizzato ed è un "dump" di quanto accaduto. Di solito contiene un oggetto con statusCode, body, e una mappa di headers. **/
+    /** L'ultimo errore verificatosi. Questo tipo è non tipizzato ed è un "dump" di quanto accaduto. Di solito contiene un oggetto con statusCode, body e una mappa headers. **/
     lastError: object | null
 }
 [inline-code-end]

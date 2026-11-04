@@ -5,5 +5,3 @@
 [code-example-start config = {disableImageRedirect: true}; linesToHighlight = [6]; title = 'Disable Image Redirect'; code-example-end]
 
 Αν δεν σκοπεύετε να χειριστείτε εσείς το κλικ στην εικόνα (βλέπε [onImageClicked](#callbacks)), συνιστούμε να το συνδυάσετε με κάποια στυλ ώστε να αφαιρέσετε την εντύπωση ότι η εικόνα μπορεί να γίνει κλικ.
-
----

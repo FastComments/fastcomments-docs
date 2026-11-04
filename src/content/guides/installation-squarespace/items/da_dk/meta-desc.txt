@@ -1,3 +1,1 @@
----
 Tilføj live‑kommentarer til Squarespace på tre måder: kun blogindlæg, på hver side på tværs af hele webstedet via kodeinjektion, eller på en specifik side med en kodeblok.
----

@@ -8,5 +8,3 @@ Se riscontri problemi o hai domande sul SDK Ruby, per favore:
 ## Contribuire
 
 I contributi sono benvenuti! Visita il [repository GitHub](https://github.com/FastComments/fastcomments-ruby) per le linee guida per i contributi.
-
----

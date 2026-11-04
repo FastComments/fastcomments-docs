@@ -1,4 +1,3 @@
----
 ```astro
 ---
 import { FastComments } from 'fastcomments-astro';
@@ -8,4 +7,3 @@ import { FastComments } from 'fastcomments-astro';
 ```
 
 Замените "demo" са вашим FastComments tenant ID-ом.
----

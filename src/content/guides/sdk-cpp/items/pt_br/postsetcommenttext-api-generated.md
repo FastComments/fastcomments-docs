@@ -29,5 +29,3 @@ api->postSetCommentText(tenantId, commentId, params, options)
         try { t.get(); } catch (const std::exception&) {}
     });
 [inline-code-end]
-
----

@@ -31,5 +31,3 @@ interface HashTagPatchResponse {
     hashTag?: HashTag; // Zwracamy kompletny, zaktualizowany obiekt `HashTag` w przypadku powodzenia.
 }
 [inline-code-end]
-
----

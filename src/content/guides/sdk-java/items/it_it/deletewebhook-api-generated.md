@@ -1,12 +1,11 @@
-Unsubscribes (REST hook unsubscribe). Only subscriptions created through this API can be
-deleted here; dashboard-managed webhooks are edited in the dashboard.
+Annullamento iscrizioni (REST hook unsubscribe). Solo le sottoscrizioni create tramite questa API possono essere eliminate qui; i webhook gestiti dal dashboard vengono modificati nel dashboard.
 
 ## Parametri
 
 | Nome | Tipo | Posizione | Obbligatorio | Descrizione |
-|------|------|-----------|--------------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Sì |  |
+| id | string | path | Sì |  |
 
 ## Risposta
 
@@ -14,9 +13,9 @@ Restituisce: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-j
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio deleteWebhook'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio di deleteWebhook'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importa classi:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -29,10 +28,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configura l'autorizzazione della chiave API: api_key
+    // Configure API key authorization: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Decommenta la riga seguente per impostare un prefisso per la chiave API, ad es. "Token" (predefinito a null)
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);

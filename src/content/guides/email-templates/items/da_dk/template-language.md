@@ -1,4 +1,3 @@
----
 FastComments Email Templates bruger [EJS skabelonsprog](https://ejs.co/#docs).
 
 Eksempel på syntaks er `<%= object.someValue %>` for at udskrive variabler, og betingede udsagn kan laves således:
@@ -12,4 +11,3 @@ Eksempel på syntaks er `<%= object.someValue %>` for at udskrive variabler, og 
 Udskrivning af rå HTML, som for kommentarindholdet, gøres således: `<%- comment.commentHTML %>`. Bemærk `-` i stedet for `=`.
 
 Se linket ovenfor for yderligere dokumentation om syntaks.
----

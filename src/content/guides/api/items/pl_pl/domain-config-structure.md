@@ -61,5 +61,3 @@ Link do rezygnacji z subskrypcji w stopce e-maila oraz funkcja jednego kliknięc
 ### Dla DKIM
 
 Po zdefiniowaniu rekordów DKIM w DNS po prostu zaktualizuj obiekt DomainConfig o konfigurację DKIM, używając podanej struktury.
-
----

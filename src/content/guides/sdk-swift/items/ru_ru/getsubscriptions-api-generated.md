@@ -30,5 +30,3 @@ DefaultAPI.getSubscriptions(tenantId: tenantId, userId: userId) { (response, err
     }
 }
 [inline-code-end]
-
----

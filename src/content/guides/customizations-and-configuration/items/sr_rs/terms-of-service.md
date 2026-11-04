@@ -1,21 +1,21 @@
 FastComments вам омогућава да захтевате од коментатора који коментаришу први пут да прихвате ваше Услове коришћења пре слања коментара.
 
 Када је омогућено:
-- **Anonymous users** will see a TOS checkbox every time they comment
-- **Authenticated users** will see the checkbox only on their first comment, or when you update your TOS
+- **Анонимни корисници** ће видети поље за потврду Услуга коришћења сваки пут када коментаришу
+- **Пријављени корисници** ће видети поље за потврду само на свом првом коментару, или када ажурирате своје Услове коришћења
 
-### Configuration
+### Конфигурација
 
-Navigate to the widget customization page and enable the "Require Terms of Service acceptance" checkbox. Once enabled, you'll see the following options:
+Идите на страницу за прилагођавање виџета и омогућите поље за потврду „Require Terms of Service acceptance". Када је омогућено, видећете следеће опције:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.tos-enabled'; selector = '#tos-options'; alt='Панел услова коришћења који приказује изборник режима текста ТУС-а и поље за датум последњег ажурирања'; title='Опције услова коришћења' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.tos-enabled'; selector = '#tos-options'; alt='Панел Услуга коришћења са изборником режима текста TOS и пољем за датум последњег ажурирања'; title='Опције Услуга коришћења' app-screenshot-end]
 
-- **TOS Text Mode**: By default, the checkbox displays "I agree to the Terms of Service and Privacy Policy" with links to both documents. Select "Customize text per locale" to provide your own text for each language.
-- **TOS Last Updated Date**: When you update your Terms of Service, set this date. Users who accepted before this date will be required to accept again.
+- **TOS Text Mode**: Подразумевано, поље за потврду приказује „I agree to the Terms of Service and Privacy Policy" са везама ка оба документа. Изаберите „Customize text per locale" да бисте навели сопствени текст за сваки језик.
+- **TOS Last Updated Date**: Када ажурирате своје Услове коришћења, поставите овај датум. Корисници који су прихватили пре овог датума биће у обавези да поново прихвате.
 
-### How It Works
+### Како функционише
 
-- The TOS acceptance timestamp is stored per-user and per-comment
-- When a user accepts the TOS, the date is recorded on their user profile (per-tenant)
-- If you set a "Last Updated" date that is after the user's acceptance date, they will need to re-accept
-- For anonymous users who cannot be tracked, the checkbox appears on every comment submission
+- Временска ознака прихватања TOS се чува по кориснику и по коментару
+- Када корисник прихвати TOS, датум се бележи на његовом корисничком профилу (по станодавцу)
+- Ако поставите датум „Last Updated" који је након датума прихватања корисника, мораће поново да прихвате
+- За анонимне кориснике који се не могу пратити, поље за потврду се појављује при сваком слању коментара

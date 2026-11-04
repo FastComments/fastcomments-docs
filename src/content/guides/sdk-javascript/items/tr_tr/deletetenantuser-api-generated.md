@@ -1,4 +1,3 @@
----
 ## Parametreler
 
 | Ad | Tür | Gerekli | Açıklama |
@@ -26,5 +25,3 @@ Döndürür: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-s
   console.log(result1, result2);
 })();
 [inline-code-end]
-
----

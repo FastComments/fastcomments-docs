@@ -1,4 +1,3 @@
----
 req
 tenantId
 urlId
@@ -30,5 +29,3 @@ api->getEventLog(U("my-tenant-123"), U("article-456"), U("user@example.com"), st
         (void)copy;
     });
 [inline-code-end]
-
----

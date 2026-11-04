@@ -1,4 +1,3 @@
----
 Il `TenantUser` definisce un `User` che è gestito da un tenant specifico. Il loro account è sotto il completo controllo del tenant
 a cui sono associati, e il loro account può essere aggiornato o eliminato tramite l'[UI](https://fastcomments.com/auth/my-account/users) o l'API.
 
@@ -51,5 +50,3 @@ export interface TenantUser {
     karma?: number
 }
 [inline-code-end]
-
----

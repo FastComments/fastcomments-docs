@@ -1,4 +1,3 @@
----
 投票を取り消します。投票されたオプションの集計が元に戻ります。
 
 ## パラメータ
@@ -25,5 +24,3 @@ async function runDeletePollVoteExample(): Promise<void> {
   console.log(result);
 }
 [inline-code-end]
-
----

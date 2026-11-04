@@ -39,5 +39,3 @@ Siehe den Abschnitt `Single Sign-On (SSO)` für Details.
 - **Email notifications** – Sendet eine E‑Mail an den Inhaltsautor, wenn ein neuer Kommentar zu seinem Inhalt gepostet wird.
 
 Für EU‑Datenresidenz siehe den Abschnitt `EU Data Residency`.
-
----

@@ -1,249 +1,249 @@
-SAML implementaciona sigurnost je kritična za zaštitu autentifikacione infrastrukture vaše organizacije i podataka korisnika.
+SAML implementacija bezbednosti je kritična za zaštitu autentifikacione infrastrukture vaše organizacije i korisničkih podataka.
 
-### SAML Security Fundamentals
+### Osnove SAML bezbednosti
 
-#### Digital Signatures
+#### Digitalni potpisi
 
-**SAML Response Signing**:
-- Sve SAML response moraju biti digitalno potpisane od strane IdP
-- FastComments verifikuje potpise koristeći javni sertifikat IdP
-- Sprečava manipulaciju autentifikacionim tvrdnjama
-- Osigurava da odgovori potiču od poverljivog IdP
+**Potpisivanje SAML odgovora**:
+- Svi SAML odgovori moraju biti digitalno potpisani od strane IdP
+- FastComments validira potpise koristeći javni sertifikat IdP
+- Sprečava neovlašćene izmene autentifikacionih tvrdnji
+- Osigurava da odgovori potiču od poverenog IdP
 
-**Certificate Validation**:
+**Validacija sertifikata**:
 - Sertifikati se validiraju u odnosu na konfigurisani IdP sertifikat
 - Validacija lanca sertifikata osigurava hijerarhiju poverenja
 - Istekli ili nevažeći sertifikati se odbacuju
-- Rotacija sertifikata treba biti planirana i koordinisana
+- Rotacija sertifikata treba da se planira i koordiniše
 
-#### Assertion Security
+#### Bezbednost tvrdnji
 
-**Audience Restriction**:
-- SAML assertions uključuju ograničenje publike (SP Entity ID)
-- Sprečava ponovnu upotrebu tvrdnji protiv drugih provajdera usluga
-- FastComments verifikuje da publika odgovara konfiguraciji tenancy-a
+**Ograničenje publike**:
+- SAML tvrdnje uključuju ograničenje publike (SP Entity ID)
+- Sprečava replay napade na tvrdnje protiv drugih provajdera usluga
+- FastComments validira da publika odgovara konfiguraciji tenanta
 - Odbacuje tvrdnje namenjene drugim aplikacijama
 
-**Time-Based Validation**:
-- Assertions uključuju vremenski validne prozore
-- `NotBefore` i `NotOnOrAfter` uslovi se primenjuju
+**Validacija zasnovana na vremenu**:
+- Tvrdnje uključuju vremenske prozore validnosti
+- Uslovi `NotBefore` i `NotOnOrAfter` se sprovode
 - Sprečava ponovno korišćenje starih tvrdnji
-- Tolerancija za razliku u satovima je konfigurisana
+- Tolerancija na pomak sata je konfigurabilna
 
-### Communication Security
+### Bezbednost komunikacije
 
-#### Transport Layer Security
+#### Bezbednost transportnog sloja
 
-**HTTPS Requirements**:
-- Sva SAML komunikacija se odvija preko HTTPS
-- TLS 1.2 ili viši je obavezan
+**HTTPS zahtevi**:
+- Sva SAML komunikacija odvija se preko HTTPS-a
+- TLS 1.2 ili noviji je obavezan
 - Validacija sertifikata sprečava man-in-the-middle napade
-- Sigurna komunikacija štiti osetljive autentifikacione podatke
+- Bezbedna komunikacija štiti osetljive autentifikacione podatke
 
-**Endpoint Security**:
-- SAML endpoint-i koriste sigurne, autentifikovane konekcije
-- IdP i SP endpoint-i moraju podržavati moderne TLS protokole
-- Slabi cipher suite-ovi se odbacuju
-- Može se implementirati pinovanje sertifikata za dodatnu bezbednost
+**Bezbednost krajnjih tačaka**:
+- SAML krajnje tačke koriste bezbedne, autentifikovane veze
+- IdP i SP krajnje tačke moraju podržavati moderni TLS
+- Slabe cipher suite opcije se odbacuju
+- Certificate pinning može biti implementiran za dodatnu bezbednost
 
-#### Data Protection
+#### Zaštita podataka
 
-**Sensitive Data Handling**:
-- SAML assertions mogu sadržati osetljive informacije o korisnicima
-- Podaci se enkriptuju u tranzitu i obrađuju sigurno
-- Privremeno skladištenje je minimalizovano i zaštićeno
-- Zadržavanje podataka o korisnicima prati zahteve privatnosti
+**Rukovanje osetljivim podacima**:
+- SAML tvrdnje mogu sadržati osetljive korisničke informacije
+- Podaci se šifruju u tranzitu i bezbedno obrađuju
+- Privremeno skladištenje je minimizirano i obezbeđeno
+- Zadržavanje korisničkih podataka prati zahteve privatnosti
 
-**Assertion Encryption** *(Optional)*:
-- SAML assertions mogu biti enkriptovane radi dodatne bezbednosti
-- Korisno kada tvrdnje prolaze kroz nepoverljive mreže
+**Šifrovanje tvrdnji** *(Opciono)*:
+- SAML tvrdnje mogu biti šifrovane za dodatnu bezbednost
+- Korisno kada tvrdnje prolaze kroz nepouzdane mreže
 - Zahteva konfiguraciju privatnog ključa u FastComments
-- Većina implementacija se oslanja na TLS enkripciju umesto toga
+- Većina implementacija se oslanja na TLS šifrovanje umesto toga
 
-### Authentication Security
+### Bezbednost autentifikacije
 
-#### Single Sign-On Benefits
+#### Prednosti jedinstvenog prijavljivanja
 
-**Centralized Authentication**:
-- Smanjuje rizike vezane za lozinke
-- Omogućava konzistentne sigurnosne politike
-- Pruža jedinstvenu tačku za kontrolu pristupa
-- Olakšava usklađenost sa sigurnosnim standardima
+**Centralizovana autentifikacija**:
+- Smanjuje bezbednosne rizike vezane za lozinke
+- Omogućava dosledne bezbednosne politike
+- Pruža jednu tačku za kontrolu pristupa
+- Olakšava usklađenost sa bezbednosnim standardima
 
-**Session Management**:
-- SAML omogućava sigurno uspostavljanje sesija
-- Vremena isteka sesije mogu se centralno upravljati
-- Single logout mogućnosti (ako ih IdP podržava)
-- Smanjuje izloženost akreditiva između aplikacija
+**Upravljanje sesijama**:
+- SAML omogućava bezbedno uspostavljanje sesija
+- Istek sesija može se centralizovano upravljati
+- Mogućnosti jedinstvenog odjavljivanja (ako ih IdP podržava)
+- Smanjuje izloženost akreditiva kroz aplikacije
 
-#### Multi-Factor Authentication
+#### Višefaktorska autentifikacija
 
-**IdP MFA Integration**:
-- Zahtevi za MFA se sprovode od strane identity providera
-- FastComments nasleđuje sigurnosne politike IdP-a
-- Podržava različite MFA metode (SMS, authenticator aplikacije, hardverski tokeni)
+**Integracija IdP MFA**:
+- MFA zahteve sprovode provajderi identiteta
+- FastComments nasleđuje bezbednosne politike IdP
+- Podržava različite MFA metode (SMS, aplikacije za autentifikaciju, hardverski tokeni)
 - Centralizovano upravljanje MFA politikama
 
-### Access Control Security
+### Bezbednost kontrole pristupa
 
-#### Role-Based Access Control
+#### Kontrola pristupa zasnovana na ulogama
 
-**Principle of Least Privilege**:
-- Dodeljivati korisnicima minimalne neophodne dozvole
-- Koristiti specifične uloge umesto preširokih dozvola
-- Redovno pregledati dodele uloga
-- Ukloniti pristup kada više nije potreban
+**Princip minimalnih privilegija**:
+- Dodeljujte korisnicima minimalne neophodne dozvole
+- Koristite specifične uloge umesto preširokih dozvola
+- Redovni pregled dodela uloga
+- Uklonite pristup kada više nije potreban
 
-**Role Validation**:
-- SAML role atributi se verifikuju i sanitizuju
-- Nepoznate uloge se ignorišu (ne odbacuju se)
-- Promene u rolama se primenjuju odmah pri prijavi
-- Voditi audit trag za izmene u rolama
+**Validacija uloga**:
+- SAML atributi uloga se validiraju i sanitizuju
+- Nepoznate uloge se ignorišu (ne odbacuju)
+- Promene uloga se primenjuju odmah pri prijavljivanju
+- Održava se revizioni trag za promene uloga
 
-#### Administrative Access
+#### Administrativni pristup
 
-**Admin Role Protection**:
+**Zaštita admin uloga**:
 - Administrativne uloge zahtevaju eksplicitnu dodelu
-- Pratiti administrativni pristup i aktivnosti
-- Implementirati workflow odobravanja za osetljive dodele uloga
-- Redovan audit administrativnih naloga
+- Pratite administrativni pristup i aktivnosti
+- Implementirajte procese odobravanja za osetljive dodele uloga
+- Redovna revizija administrativnih naloga
 
-### Identity Provider Security
+### Bezbednost provajdera identiteta
 
-#### IdP Configuration Security
+#### Bezbednost IdP konfiguracije
 
-**Certificate Management**:
-- Koristiti jake sertifikate (RSA-2048 ili jače)
-- Implementirati odgovarajuće procedure rotacije sertifikata
-- Sigurno čuvanje privatnog ključa na IdP
-- Pratiti datume isteka sertifikata
+**Upravljanje sertifikatima**:
+- Koristite jake sertifikate (RSA-2048 ili jači)
+- Implementirajte odgovarajuće procedure rotacije sertifikata
+- Bezbedno skladištenje privatnog ključa kod IdP
+- Pratite datume isteka sertifikata
 
-**Access Control**:
-- Ograničiti ko može menjati SAML konfiguraciju aplikacije
-- Implementirati procese odobravanja za izmene konfiguracije
-- Pratiti izmene konfiguracije i pristup
+**Kontrola pristupa**:
+- Ograničite ko može menjati konfiguraciju SAML aplikacije
+- Implementirajte procese odobravanja za promene konfiguracije
+- Pratite promene konfiguracije i pristup
 - Redovni bezbednosni pregledi IdP konfiguracije
 
-#### Attribute Security
+#### Bezbednost atributa
 
-**Sensitive Attribute Protection**:
-- Minimizirati osetljive podatke u SAML atributima
-- Koristiti identifikatore uloga umesto osetljivih imena grupa
-- Enkriptovati tvrdnje koje sadrže osetljive informacije
-- Primenjivati principe minimizacije podataka
+**Zaštita osetljivih atributa**:
+- Minimizirajte osetljive podatke u SAML atributima
+- Koristite identifikatore uloga umesto osetljivih imena grupa
+- Šifrujte tvrdnje koje sadrže osetljive informacije
+- Pratite principe minimizacije podataka
 
-**Attribute Validation**:
-- Validirati sve dolazne SAML atribute
-- Sanitizovati vrednosti atributa da se spreče injekcije
-- Implementirati ograničenja vrednosti atributa gde je prikladno
-- Logovati sumnjive ili malformirane atribute
+**Validacija atributa**:
+- Validirajte sve dolazne SAML atribute
+- Sanitizujte vrednosti atributa da biste sprečili injection napade
+- Implementirajte ograničenja vrednosti atributa gde je prikladno
+- Zapisujte sumnjive ili neispravne atribute
 
-### Monitoring and Auditing
+### Praćenje i revizija
 
-#### Authentication Monitoring
+#### Praćenje autentifikacije
 
-**Failed Authentication Tracking**:
-- Pratiti neuspešne SAML autentifikacione pokušaje
-- Alarmirati na neuobičajene obrasce autentifikacije
-- Pratiti neuspehe validacije sertifikata
-- Logovati greške vezane za konfiguraciju
+**Praćenje neuspešnih autentifikacija**:
+- Pratite neuspešne pokušaje SAML autentifikacije
+- Upozoravajte na neobične obrasce autentifikacije
+- Pratite neuspehe validacije sertifikata
+- Zapisujte greške vezane za konfiguraciju
 
-**Success Monitoring**:
-- Pratiti stope uspešne autentifikacije
-- Pratiti dodele i promene korisničkih uloga
-- Verifikovati vreme normalnog toka autentifikacije
-- Pratiti neočekivano kreiranje korisnika
+**Praćenje uspeha**:
+- Pratite stope uspešne autentifikacije
+- Pratite dodele i promene korisničkih uloga
+- Proverite normalno vreme toka autentifikacije
+- Pratite neočekivano kreiranje korisnika
 
-#### Security Event Logging
+#### Zapisivanje bezbednosnih događaja
 
-**Audit Trail Maintenance**:
-- Logovati sve SAML autentifikacione događaje
-- Održavati zapise o promenama konfiguracije
-- Pratiti administrativne akcije i pristup
-- Čuvati logove sigurno uz zaštitu od manipulacije
+**Održavanje revizionog traga**:
+- Zapisujte sve SAML autentifikacione događaje
+- Održavajte evidenciju promena konfiguracije
+- Pratite administrativne radnje i pristup
+- Bezbedno čuvajte zapise sa zaštitom od neovlašćenih izmena
 
-**Alert Configuration**:
-- Podesiti alarme za sigurnosno-relevantne događaje
-- Pratiti isteke sertifikata
-- Alarmirati na ponovljene neuspehe autentifikacije
-- Obaveštavati o neuobičajenim administrativnim aktivnostima
+**Konfiguracija upozorenja**:
+- Postavite upozorenja za događaje relevantne za bezbednost
+- Pratite istek sertifikata
+- Upozoravajte na ponovljene neuspehe autentifikacije
+- Obaveštavajte o neobičnim administrativnim aktivnostima
 
-### Compliance Considerations
+### Razmatranja usklađenosti
 
-#### Data Privacy
+#### Privatnost podataka
 
-**User Data Protection**:
-- Pridržavati se GDPR, CCPA i relevantnih propisa o privatnosti
-- Minimizovati prikupljanje i obradu ličnih podataka
-- Omogućiti korisnicima kontrolu nad ličnim informacijama
-- Implementirati politike zadržavanja i brisanja podataka
+**Zaštita korisničkih podataka**:
+- Pratite GDPR, CCPA i relevantne propise o privatnosti
+- Minimizirajte prikupljanje i obradu ličnih podataka
+- Omogućite korisnicima kontrolu nad ličnim informacijama
+- Implementirajte politike zadržavanja i brisanja podataka
 
-**Cross-Border Data Transfer**:
-- Uzimati u obzir zahteve za rezidenciju podataka
-- Implementirati odgovarajuće mere zaštite za međunarodne prenose
-- Dokumentovati tokove podataka između IdP i FastComments
-- Osigurati usklađenost sa lokalnim zakonima o privatnosti
+**Prekoslovični prenos podataka**:
+- Razmotrite zahteve o rezidenciji podataka
+- Implementirajte odgovarajuće zaštite za međunarodne prenose
+- Dokumentujte tokove podataka između IdP i FastComments
+- Osigurajte usklađenost sa lokalnim zakonima o privatnosti
 
-#### Security Standards
+#### Bezbednosni standardi
 
-**Industry Standards Compliance**:
-- Pratiti najbolje prakse bezbednosti SAML 2.0
-- Implementirati NIST smernice za autentifikaciju
-- Razmotriti zahteve SOC 2 i ISO 27001
-- Redovne procene bezbednosti i penetration testiranja
+**Usklađenost sa industrijskim standardima**:
+- Pratite najbolje prakse bezbednosti SAML 2.0
+- Implementirajte NIST smernice za autentifikaciju
+- Razmotrite zahteve SOC 2 i ISO 27001
+- Redovne bezbednosne procene i testiranje penetracije
 
-### Incident Response
+### Reagovanje na incidente
 
-#### Security Incident Procedures
+#### Procedure za bezbednosne incidente
 
-**Breach Response**:
-- Odmah sadržati sigurnosne incidente
-- Obavestiti pogođene strane
-- Istraživanje i analiza korenskog uzroka
-- Implementirati korektivne mere
+**Reagovanje na povredu podataka**:
+- Neposredno obuzdavanje bezbednosnih incidenata
+- Obaveštavanje pogođenih strana
+- Istraživanje i analiza osnovnog uzroka
+- Implementacija korektivnih mera
 
-**Certificate Compromise**:
-- Odmah opozvati kompromitovane sertifikate
-- Procedure hitne rotacije sertifikata
+**Kompromitacija sertifikata**:
+- Neposredno opozivanje kompromitovanih sertifikata
+- Hitne procedure rotacije sertifikata
 - Obaveštavanje korisnika i zahtevi za ponovnu autentifikaciju
-- Bezbednosna revizija i pojačavanje mera
+- Bezbednosni pregled i mere jačanja
 
-#### Business Continuity
+#### Kontinuitet poslovanja
 
-**Backup Authentication Methods**:
-- Održavati alternativne metode autentifikacije
-- Dokumentovati procedure hitnog pristupa
-- Redovno testirati rezervne metode autentifikacije
+**Rezervne metode autentifikacije**:
+- Održavajte alternativne metode autentifikacije
+- Dokumentujte procedure za hitni pristup
+- Redovno testiranje rezervne autentifikacije
 - Jasna komunikacija tokom prekida rada
 
-**Disaster Recovery**:
-- Dokumentovati SAML konfiguraciju za disaster recovery
-- Održavati kopije sertifikata i konfiguracije
-- Redovno testirati procedure oporavka
-- Koordinisati se sa IdP planovima za oporavak od katastrofa
+**Oporavak od katastrofa**:
+- Dokumentujte SAML konfiguraciju za oporavak od katastrofa
+- Održavajte kopije sertifikata i konfiguracije
+- Redovno testirajte procedure oporavka
+- Koordinišite se sa planovima oporavka IdP od katastrofa
 
-### Security Best Practices Summary
+### Rezime najboljih bezbednosnih praksi
 
-#### Implementation Security
+#### Bezbednost implementacije
 
-1. **Use Strong Certificates**: RSA-2048 ili viši sa odgovarajućom validacijom
-2. **Enforce HTTPS**: Sva komunikacija preko sigurnih, enkriptovanih kanala
-3. **Validate All Input**: Sanitizovati i verifikovati sve SAML atribute
-4. **Monitor Continuously**: Implementirati sveobuhvatno praćenje i alarme
-5. **Regular Reviews**: Sprovoditi periodične bezbednosne preglede i ažuriranja
+1. **Koristite jake sertifikate**: RSA-2048 ili jači sa odgovarajućom validacijom
+2. **Sprovodite HTTPS**: Sva komunikacija preko bezbednih, šifrovanih kanala
+3. **Validirajte sav unos**: Sanitizujte i validirajte sve SAML atribute
+4. **Neprekidno pratite**: Implementirajte sveobuhvatno praćenje i upozorenja
+5. **Redovni pregledi**: Sprovodite periodične bezbednosne preglede i ažuriranja
 
-#### Operational Security
+#### Operativna bezbednost
 
-1. **Principle of Least Privilege**: Dodeljivati minimalne neophodne dozvole
-2. **Regular Auditing**: Redovno pregledati pristupe, uloge i konfiguracije
-3. **Documentation**: Održavati aktuelnu bezbednosnu dokumentaciju
-4. **Training**: Osigurati da osoblje razume zahteve za SAML bezbednost
-5. **Incident Preparedness**: Imati spremne procedure za odgovor na incidente
+1. **Princip minimalnih privilegija**: Dodelite minimalne neophodne dozvole
+2. **Redovna revizija**: Redovno pregledajte pristup, uloge i konfiguracije
+3. **Dokumentacija**: Održavajte aktuelnu bezbednosnu dokumentaciju
+4. **Obuka**: Osigurajte da osoblje razume SAML bezbednosne zahteve
+5. **Spremnost za incidente**: Imajte spremne procedure za reagovanje na incidente
 
-#### Organizational Security
+#### Organizaciona bezbednost
 
-1. **Change Management**: Implementirati kontrolisane procese promena
-2. **Separation of Duties**: Podeliti administrativne odgovornosti
-3. **Regular Updates**: Održavati sve sisteme i sertifikate ažurnim
-4. **Vendor Management**: Pratiti bezbednost IdP i povezanih servisa
-5. **Compliance Monitoring**: Osigurati kontinuiranu usklađenost sa propisima
+1. **Upravljanje promenama**: Implementirajte kontrolisane procese promena
+2. **Razdvajanje dužnosti**: Podelite administrativne odgovornosti
+3. **Redovna ažuriranja**: Održavajte sve sisteme i sertifikate aktuelnim
+4. **Upravljanje dobavljačima**: Pratite bezbednost IdP i srodnih usluga
+5. **Praćenje usklađenosti**: Osigurajte kontinuiranu usklađenost sa propisima

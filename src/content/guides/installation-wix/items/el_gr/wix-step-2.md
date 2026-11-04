@@ -11,5 +11,3 @@
     <div class="title">Το Αρχικό Μπλοκ</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-1-sad.png" alt="Το Αρχικό Μπλοκ" />
 </div>
-
----

@@ -1,10 +1,10 @@
-Bulk user info for a tenant. Given userIds, return display info from User / SSOUser.  
-Used by the comment widget to enrich users that just appeared via a presence event.  
-No page context: privacy is enforced uniformly (private profiles are masked).
+Масова інформація про користувачів для орендаря. За заданими userIds повертає інформацію для відображення з User / SSOUser.
+Використовується віджетом коментарів для збагачення користувачів, які щойно з'явилися через подію присутності.
+Без контексту сторінки: конфіденційність застосовується однаково (приватні профілі маскуються).
 
 ## Параметри
 
-| Назва | Тип | Обов’язково | Опис |
+| Назва | Тип | Обов'язковий | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Так |  |
 | ids | string | Так |  |
@@ -25,5 +25,3 @@ async function fetchUsersInfo(): Promise<void> {
 }
 fetchUsersInfo();
 [inline-code-end]
-
----

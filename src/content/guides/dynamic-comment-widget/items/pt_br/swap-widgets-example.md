@@ -1,34 +1,34 @@
-This is all done by configuring the [urlId](/guide-customizations-and-configuration.html#url-id) and related parameters and
-calling `update()` on the widget instances to swap them out with a different thread.
+Isso é feito configurando o [urlId](/guide-customizations-and-configuration.html#url-id) e os parâmetros relacionados e
+chamando `update()` nas instâncias do widget para trocá-los por um thread diferente.
 
-The below is an interactive example (hit run in the top left) which allows you to add and swap comment threads on demand.
-We could remove them as well by calling `instance.destroy` instead of `update`.
+Abaixo está um exemplo interativo (clique em run no canto superior esquerdo) que permite adicionar e trocar threads de comentários sob demanda.
+Também poderíamos removê-los chamando `instance.destroy` em vez de update.
 
-[inline-code-attrs-start title = 'Adicionar e Trocar Tópicos de Comentários'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Adicionar e Trocar Threads de Comentários'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
     <script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
 
     <div id="fastcomments-widgets"></div>
     <div class="demo-form">
         <section>
-            <h3>Add or Swap a Product/Comment Thread</h3>
+            <h3>Adicionar ou Trocar um Produto/Thread de Comentários</h3>
             <label>
-                Product Name
+                Nome do Produto
                 <input type="text" name="name" />
             </label>
             <label>
-                Product ID
+                ID do Produto
                 <input type="text" name="id" />
             </label>
             <label>
-                Product URL
+                URL do Produto
                 <input type="url" name="url" />
             </label>
             <label>
-                Replaces Product (id)
+                Substitui o Produto (id)
                 <input type="text" name="replaces_id" />
             </label>
-            <button type="button">Add/Swap</button>
+            <button type="button">Adicionar/Trocar</button>
         </section>
     </div>
     <script>
@@ -74,10 +74,10 @@ We could remove them as well by calling `instance.destroy` instead of `update`.
                         }
                     }
                 }
-                alert(`Product ${oldId} not found to replace!`);
+                alert(`Produto ${oldId} não encontrado para substituir!`);
             }
     
-            // add some widgets
+            // adicionar alguns widgets
             addWidget({name: "Product A", productID: 'product-id-a', productURL: 'https://example.com/a'});
             addWidget({name: "Product B", productID: 'product-id-b', productURL: 'https://example.com/b'});
     
@@ -115,9 +115,9 @@ We could remove them as well by calling `instance.destroy` instead of `update`.
     </style>
 [inline-code-end]
 
-This is similar to how pagination works.
+Isso é semelhante a como funciona a paginação.
 
-With the React and related libraries we can simply update the configuration and the library (React, Angular, Vue)
-will handle refreshing the widget for us. With VanillaJS we have to manage it ourselves as shown.
+Com o React e bibliotecas relacionadas, podemos simplesmente atualizar a configuração e a biblioteca (React, Angular, Vue)
+cuidará de atualizar o widget para nós. Com VanillaJS temos que gerenciar isso nós mesmos, como mostrado.
 
-Feel free to ask any questions below and we'll do our best to help!
+Sinta-se à vontade para fazer qualquer pergunta abaixo e faremos o nosso melhor para ajudar!

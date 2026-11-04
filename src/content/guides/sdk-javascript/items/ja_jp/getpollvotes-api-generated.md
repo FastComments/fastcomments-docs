@@ -1,17 +1,10 @@
-The individual votes behind one poll's tallies, oldest first.
+1つの投票の集計の背後にある個々の投票を、古い順に返します。
 
-1つの投票の集計の背後にある個々の投票を、古いものから順に取得します。
+投票はコメントに属するため、投票は常に1つの投票(ポール)ずつ読み取ります - commentId が必須です。これにより、すべてのクエリがコレクションが既に持つインデックスを使用します。
 
-A poll belongs to a comment, so votes are always read one poll at a time - commentId is required. That
-keeps every query on the indexes the collection already has.
+投票のプライバシー設定に従います: 匿名投票の投票内容は読み取れません(poll-anonymous)。ここでも、id による取得でも同様です。
 
-投票はコメントに属しているため、投票は常に1つの投票ごとに読み取られます - commentId が必須です。これにより、クエリはコレクションが既に持っているインデックス上で実行されます。
-
-Obeys the poll's privacy: an anonymous poll's votes cannot be read (poll-anonymous), here or by id.
-
-投票のプライバシーを遵守します：匿名投票の投票は（poll-anonymous）ここでも ID でも読み取れません。
-
-## Parameters
+## パラメータ
 
 | 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
@@ -21,9 +14,9 @@ Obeys the poll's privacy: an anonymous poll's votes cannot be read (poll-anonymo
 | optionId | string | いいえ |  |
 | skip | number | いいえ |  |
 
-## Response
+## レスポンス
 
-返却: [`GetPollVotesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPollVotesResponse.ts)
+戻り値: [`GetPollVotesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPollVotesResponse.ts)
 
 ## 例
 
@@ -45,5 +38,3 @@ const pollResult: GetPollVotesResponse = await getPollVotes(
 
 console.log(pollResult);
 [inline-code-end]
-
----

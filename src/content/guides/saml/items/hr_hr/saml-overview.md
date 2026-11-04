@@ -1,27 +1,29 @@
-SAML (Security Assertion Markup Language) je otvoreni standard temeljen na XML-u za razmjenu podataka o autentifikaciji i autorizaciji između strana, posebno između davatelja identiteta (IdP) i davatelja usluge (SP).
+SAML (Security Assertion Markup Language) je XML-bazirani otvoreni standard za razmjenu podataka o autentifikaciji i autorizaciji između strana, 
+posebno između davatelja identiteta (IdP) i davatelja usluga (SP).
 
-### How SAML Works
+### Kako SAML funkcionira
 
-SAML omogućuje jedinstvenu prijavu (SSO) tako da korisnicima omogućuje da se jednom autentificiraju kod svog davatelja identiteta i potom pristupe više aplikacija bez ponovnog unosa vjerodajnica. Kada korisnik pokuša pristupiti FastComments:
+SAML omogućuje jedinstvenu prijavu (SSO) tako da korisnici mogu jednom autentificirati kod svog davatelja identiteta, a zatim pristupiti više aplikacija 
+bez ponovnog unosa vjerodajnica. Kada korisnik pokuša pristupiti FastComments:
 
-1. **Authentication Request**: FastComments preusmjerava korisnika na vašeg davatelja identiteta  
-2. **User Authentication**: Korisnik se autentificira kod vašeg IdP-a (npr., Active Directory, Okta, Azure AD)  
-3. **SAML Response**: IdP šalje potpisanu SAML tvrdnju natrag na FastComments  
-4. **User Access**: FastComments provjerava tvrdnju i odobrava pristup autentificiranom korisniku
+1. **Zahtjev za autentifikacijom**: FastComments preusmjerava korisnika na vašeg davatelja identiteta
+2. **Autentifikacija korisnika**: Korisnik se autentificira kod vašeg IdP-a (npr. Active Directory, Okta, Azure AD)
+3. **SAML odgovor**: IdP šalje potpisani SAML assertion natrag u FastComments
+4. **Pristup korisnika**: FastComments provjerava assertion i odobrava pristup autentificiranom korisniku
 
-### Benefits of SAML
+### Prednosti SAML-a
 
-- **Enhanced Security**: Centralizirana autentifikacija smanjuje sigurnosne rizike povezane s lozinkama  
-- **Improved User Experience**: Korisnici se jednom prijave i neometano pristupaju više aplikacija  
-- **Compliance**: Pomaže u ispunjavanju regulatornih zahtjeva za kontrolu pristupa i revizijske tragove  
-- **Administrative Control**: IT administratori održavaju centralizirano upravljanje korisnicima
+- **Poboljšana sigurnost**: Centralizirana autentifikacija smanjuje sigurnosne rizike povezane s lozinkama
+- **Poboljšano korisničko iskustvo**: Korisnici se prijave jednom i neprimjetno pristupaju više aplikacija
+- **Usklađenost**: Pomaže u ispunjavanju regulatornih zahtjeva za kontrolu pristupa i revizijske tragove
+- **Administrativna kontrola**: IT administratori održavaju centralizirano upravljanje korisnicima
 
-### SAML 2.0 Support
+### Podrška za SAML 2.0
 
 FastComments implementira SAML 2.0, najšire prihvaćenu verziju SAML standarda. Naša implementacija podržava:
 
-- HTTP-POST i HTTP-Redirect veze  
-- Potpisani SAML odgovori i tvrdnje  
-- Šifrirane tvrdnje (neobavezno)  
-- Više algoritama za potpisivanje i sažimanje  
-- Različiti formati identifikatora imena
+- HTTP-POST i HTTP-Redirect binding
+- Potpisane SAML odgovore i assertion-e
+- Šifrirane assertion-e (opcionalno)
+- Više algoritama za potpis i digest
+- Različite formate name identifier

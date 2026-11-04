@@ -22,5 +22,3 @@ async fn fetch_badges(configuration: &configuration::Configuration) -> Result<()
     Ok(())
 }
 [inline-code-end]
-
----

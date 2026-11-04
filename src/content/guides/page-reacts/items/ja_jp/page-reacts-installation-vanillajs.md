@@ -31,5 +31,3 @@ Optionally:
 [inline-code-end]
 
 React、Angularなどのフロントエンドライブラリ向けの設定は同じです。
-
----

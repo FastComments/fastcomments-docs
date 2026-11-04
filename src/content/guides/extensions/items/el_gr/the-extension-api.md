@@ -44,5 +44,3 @@
     }
 })();
 [inline-code-end]
-
----

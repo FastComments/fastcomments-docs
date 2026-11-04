@@ -28,5 +28,3 @@ A partire dal 2023 il campo `URL ID` nella personalizzazione del widget accetta 
 
 1. Se la tua pagina ha parametri hash (come example.com#page-1) - questo diventerà parte dell'URL ID, per impostazione predefinita.  
 2. Durante le migrazioni, ad esempio da WordPress a Gatsby, potresti dover migrare i valori dei commenti URL ID dopo la migrazione iniziale. Per questo, contattaci.
-
----

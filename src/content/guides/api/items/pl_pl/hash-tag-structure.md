@@ -1,4 +1,3 @@
----
 Obiekt `HashTag` reprezentuje tag, który może zostawić użytkownik. Hashtagi mogą być używane do łączenia z zewnętrzną treścią lub do
 łączenia ze sobą powiązanych komentarzy.
 
@@ -20,5 +19,3 @@ Notes:
 
 - W niektórych punktach końcowych API zobaczysz, że hashtag jest używany w URL. Pamiętaj o kodowaniu wartości URI. Na przykład, `#` powinien być zamiast tego reprezentowany jako `%23`.
 - Niektóre z tych pól są oznaczone `READONLY` - są one zwracane przez API, ale nie można ich ustawić.
- 
----

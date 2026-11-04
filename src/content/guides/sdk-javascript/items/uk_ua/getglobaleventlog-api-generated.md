@@ -32,5 +32,3 @@ async function fetchEventLogs() {
   const logWithoutEnd: GetEventLogResponse = await getGlobalEventLog(tenantId, urlId, userIdWS, startTime);  
 }  
 [inline-code-end]  
-
----

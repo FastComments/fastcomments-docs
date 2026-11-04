@@ -33,5 +33,3 @@ const notificationCount: GetNotificationCountResponse = await getNotificationCou
   type
 );
 [inline-code-end]
-
----

@@ -1,24 +1,28 @@
-Objekt `Moderator` predstavlja konfiguracijo za moderatorja.
+Objekt `Moderator` predstavlja konfiguracijo moderatorja.
 
 Obstajajo trije tipi moderatorjev:
 
-1. Administrator users that have the `isCommentModeratorAdmin` flag.
-2. SSO Users with the `isCommentModeratorAdmin` flag.
-3. Regular commenters, or FastComments.com users, that are invited as Moderators.
+1. Skrbniški uporabniki, ki imajo zastavico `isCommentModeratorAdmin`.
+2. SSO uporabniki z zastavico `isCommentModeratorAdmin`.
+3. Redni komentatorji ali uporabniki FastComments.com, ki so povabljeni kot moderatorji.
 
-Struktura `Moderator` se uporablja za predstavitev stanja moderacije pri primeru uporabe `3`.
+Struktura `Moderator` se uporablja za predstavitev stanja moderacije primera uporabe `3`.
 
-Če želite preko API-ja povabiti uporabnika, da postane moderator, uporabite `Moderator` API tako, da ustvarite `Moderator` in jih `inviting`.
+Če želite povabiti uporabnika, da postane moderator, prek API-ja, uporabite API `Moderator` tako, da ustvarite `Moderator` in jih `inviting`.
 
-Če uporabnik nima računa FastComments.com, mu bo povabilo po e-pošti pomagalo pri nastavitvi. Če že ima račun, mu bo dodeljen dostop za moderiranje do vašega tenant-a in lastnost `userId` objekta `Moderator` bo posodobljena, da kaže na njihovega uporabnika. Nimali boste API dostopa do njihovega uporabnika, saj v tem primeru pripada njim in ga upravlja FastComments.com.
+Če uporabnik nima računa na FastComments.com, mu povabilo po e-pošti pomaga pri nastavitvi. Če račun že ima, bo
+dobil moderatorski dostop do vašega najemnika (tenant) in `userId` objekta `Moderator` bo posodobljen, da kaže na njegovega uporabnika. Do njegovega uporabnika ne boste imeli API
+dostopa, saj v tem primeru pripada samemu sebi in ga upravlja FastComments.com.
 
-Če potrebujete popolno upravljanje računa uporabnika, priporočamo uporabo SSO ali pa ga dodajte kot [Tenant User](https://fastcomments.com/auth/my-account/users) in nato dodajte objekt `Moderator` za sledenje njihovim statistikam.
+Če želite popolnoma upravljati uporabnikov račun, priporočamo, da uporabite SSO ali da ga dodate kot [Uporabnika najemnika](https://fastcomments.com/auth/my-account/users) in
+nato dodate objekt `Moderator` za sledenje njegovim statistikam.
 
-Strukturo `Moderator` je mogoče uporabiti kot mehanizem za sledenje statistik v primerih uporabe `1` in `2`. Po ustvarjanju uporabnika dodajte objekt `Moderator` z določenim `userId` in njihove statistike se bodo spremljale na [Comment Moderators Page](https://fastcomments.com/auth/my-account/moderate-comments/moderators).
+Struktura `Moderator` se lahko uporablja kot mehanizem za sledenje statistikam za primera uporabe `1` in `2`. Po ustvarjanju uporabnika dodajte objekt `Moderator`
+z definiranim `userId` in njegove statistike bodo sledene na [Strani moderatorjev komentarjev](https://fastcomments.com/auth/my-account/moderate-comments/moderators).
 
 Struktura objekta `Moderator` je naslednja:
 
-[inline-code-attrs-start title = 'Struktura Moderatorja'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Struktura Moderator'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface Moderator {
     name: string
@@ -36,5 +40,3 @@ interface Moderator {
     moderationGroupIds?: string[]|null
 }
 [inline-code-end]
-
----

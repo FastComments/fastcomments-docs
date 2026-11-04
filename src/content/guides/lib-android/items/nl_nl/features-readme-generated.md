@@ -1,4 +1,3 @@
----
 - 🔄 Live reageren met realtime updates
 - 📱 Native Android UI-componenten
 - 🧵 Geneste discussies met reacties
@@ -9,4 +8,3 @@
 - 📱 Integratie met sociale feeds
 - ♾️ Oneindige scroll-paginering
 - 🎨 Uitgebreide themamogelijkheden
----

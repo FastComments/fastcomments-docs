@@ -1,4 +1,3 @@
----
 この例では、FastCommentsのライブコメント機能をブログ投稿ページに追加します。
 
 これを行うために、Wixエディタでサイトを開きます。
@@ -11,5 +10,3 @@
     <div class="title">ステップ1：動的投稿ページを編集する</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-1-open-page.png" alt="動的投稿ページを編集する" />
 </div>
-
----

@@ -26,5 +26,3 @@ Collab Chat을 사용하면 사용자가 페이지의 텍스트를 선택해 인
     <div class="title">Collab Chat + 댓글 함께</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-page-comments.png" alt="Moodle에서의 FastComments Collab Chat 및 댓글" />
 </div>
-
----

@@ -1,4 +1,3 @@
----
 ## Παράμετροι
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
@@ -25,5 +24,3 @@ if maybeResponse.isSome:
   let resp = maybeResponse.get()
   echo resp
 [inline-code-end]
-
----

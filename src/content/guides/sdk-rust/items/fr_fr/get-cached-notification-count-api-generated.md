@@ -23,5 +23,3 @@ async fn fetch_notification_count() -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
-
----

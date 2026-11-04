@@ -1,20 +1,20 @@
-By default, FastComments מתרגמת את ממשק הווידג'ט עצמו (כפתורים, תוויות, הודעות שגיאה) לשפת הצופה, אך ההערות מוצגות בדיוק כפי שנכתבו.
+כברירת מחדל, FastComments מתרגם את ממשק הווידג'ט עצמו (כפתורים, תוויות, הודעות שגיאה) לשפת הצופה, אך התגובות מוצגות בדיוק כפי שנכתבו.
 
-Comment Translation מוסיפה תרגום של ההערות עצמן, כך שהקהילה שכותבת ביותר משפה אחת יכולה לקרוא כל הערה בשפה שלה.
+תרגום תגובות (Comment Translation) מוסיף תרגום של התגובות עצמן, כך שקהילה שכותבת ביותר משפה אחת יכולה לקרוא כל תגובה בשפה שלה.
 
-There are two modes:
+קיימים שני מצבים:
 
-- **Automatic**: comments written in a language other than the widget's language are shown translated. A "Translated from Spanish" line appears under the comment with a **Show original** link that switches between the translation and the untranslated text.
-- **Manual**: every comment gets a **Translate** link. Clicking it translates that one comment into the viewer's language, with the same **Show original** toggle afterwards. Comments that are already in the viewer's language say so instead.
+- **אוטומטי**: תגובות שנכתבו בשפה שאינה שפת הווידג'ט מוצגות מתורגמות. מתחת לתגובה מופיעה שורת "תורגם מספרדית" עם קישור **הצג מקור** שמחליף בין התרגום לטקסט המקורי שלא תורגם.
+- **ידני**: לכל תגובה נוסף קישור **תרגם**. לחיצה עליו מתרגמת את אותה תגובה בודדת לשפת הצופה, עם אותו מתג **הצג מקור** לאחר מכן. תגובות שכבר נמצאות בשפת הצופה מציינות זאת במקום.
 
-The target language is the widget's language: the [Locale / Language](#locale) setting on the same customization rule if it is set, otherwise the visitor's browser language. Nothing is required from the visitor, no account, extension or extra software, and it works the same in the embedded widget and on standalone comment pages.
+שפת היעד היא שפת הווידג'ט: הגדרת [Locale / Language](#locale) באותו כלל התאמה אישית אם היא מוגדרת, ואחרת שפת הדפדפן של המבקר. לא נדרש דבר מהמבקר — לא חשבון, תוסף או תוכנה נוספת — והפעולה זהה הן בווידג'ט המוטמע והן בעמודי תגובות עצמאיים.
 
-This is turned on per <a href="https://fastcomments.com/auth/my-account/customize-widget" target="_blank">customization rule</a>, so it can apply to your whole site, one domain, or a single page. It is off by default.
+התכונה מופעלת עבור כל <a href="https://fastcomments.com/auth/my-account/customize-widget" target="_blank">כלל התאמה אישית</a> בנפרד, כך שניתן להחיל אותה על כל האתר, על דומיין אחד או על עמוד בודד. היא כבויה כברירת מחדל.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.comment-translation']; selector = '.comment-translation'; alt='תפריט נפתח של תרגום הערות בדף התאמת הווידג\'\'ט עם אפשרויות כבוי, אוטומטי וידני'; title='תרגום הערות' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.comment-translation']; selector = '.comment-translation'; alt='תפריט נפתח של תרגום תגובות בעמוד התאמה אישית של הווידג\'ט עם האפשרויות כבוי, אוטומטי וידני'; title='תרגום תגובות' app-screenshot-end]
 
-Translation is a server-side setting. Passing `commentTranslation` in the widget's JavaScript configuration does not enable it; the rule does.
+התרגום הוא הגדרה בצד השרת. העברת `commentTranslation` בתצורת ה-JavaScript של הווידג'ט אינה מפעילה אותו; רק הכלל מפעיל.
 
-Each comment is translated at most once per target language and the result is stored with the comment, so a comment read by a thousand Spanish speakers is translated once. If the author or a moderator edits the comment, the stored translation is discarded and the comment is translated again on the next view. Translated text goes through the same sanitization and link rules as the original comment. Comments that are too long, or whose language cannot be detected, are shown untranslated.
+כל תגובה מתורגמת לכל היותר פעם אחת לכל שפת יעד, והתוצאה נשמרת יחד עם התגובה, כך שתגובה שנקראת על ידי אלף דוברי ספרדית מתורגמת פעם אחת. אם המחבר או מנחה עורכים את התגובה, התרגום השמור נמחק והתגובה מתורגמת שוב בצפייה הבאה. הטקסט המתורגם עובר על אותם כללי סניטציה וקישורים כמו התגובה המקורית. תגובות ארוכות מדי, או שפתן אינה ניתנת לזיהוי, מוצגות ללא תרגום.
 
-Usage is billed as LLM tokens at the same rate as [AI Agents](/guide-ai-agents.html#plans-and-eligibility) and appears in the same place in your billing details.
+השימוש מחויב כאסימוני LLM באותו תעריף כמו [סוכני AI](/guide-ai-agents.html#plans-and-eligibility) ומופיע באותו מקום בפרטי החיוב שלך.

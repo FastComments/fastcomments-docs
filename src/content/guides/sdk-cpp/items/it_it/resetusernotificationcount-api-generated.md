@@ -19,5 +19,3 @@ auto resetTask = api->resetUserNotificationCount(
 ).then([](std::shared_ptr<ResetUserNotificationsResponse> resp){
 });
 [inline-code-end]
-
----

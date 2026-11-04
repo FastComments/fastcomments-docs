@@ -1,4 +1,3 @@
----
 これは Drupal の説明の「要点のみ（TL;DR）」版です。
 
 1. モジュールを `composer require drupal/fcom` でインストールするか、`modules/custom/fastcomments/` に配置します。
@@ -8,5 +7,3 @@
 5. `Structure > Content types > [type] > Manage fields` 経由で任意のコンテンツタイプに `FastComments` フィールドを追加します。
 
 モジュールは [drupal.org/project/fcom](https://www.drupal.org/project/fcom) に公開されています。
-
----

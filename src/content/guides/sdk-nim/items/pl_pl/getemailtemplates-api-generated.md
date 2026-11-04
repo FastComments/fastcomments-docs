@@ -18,5 +18,3 @@ if emailTemplatesOpt.isSome:
   let templates = emailTemplatesOpt.get()
   echo templates
 [inline-code-end]
-
----

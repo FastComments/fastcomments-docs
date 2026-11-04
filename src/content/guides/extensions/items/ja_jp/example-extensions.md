@@ -1,27 +1,21 @@
----
-At FastComments, we write our own extensions, using the same API. You can view the unminified code
-for these extensions at the following endpoints:
+FastCommentsでは、同じAPIを使用して独自の拡張機能を自社で開発しています。これらの拡張機能のミニファイされていないコードは、以下のエンドポイントで閲覧できます:
 
 #### ダークモード
 
-The Dark Mode extension is conditionally loaded when a "dark" page is detected. This extension simply adds
-some CSS to the comment widget. This way we do not have to load the dark mode CSS when it is not needed.
+ダークモード拡張機能は、「ダーク」ページが検出された場合に条件付きで読み込まれます。この拡張機能は、コメントウィジェットにいくつかのCSSを追加するだけです。これにより、必要のない場合にダークモードのCSSを読み込む必要がなくなります。
 
 https://fastcomments.com/js/comment-ui/extensions/comment-ui.dark.extension.js
 
 #### モデレーション
 
-When the current user is a moderator, we use the moderation extension.
+現在のユーザーがモデレーターである場合、モデレーション拡張機能を使用します。
 
-This is a good example for adding click-based event listeners, making API requests, adding to the comment menu and comment areas.
+これは、クリックベースのイベントリスナーの追加、APIリクエストの実行、コメントメニューやコメントエリアへの追加を行う良い例です。
 
 https://fastcomments.com/js/comment-ui/extensions/comment-ui.moderation.extension.js
 
 #### ライブチャット
 
-The Live Chat extension (in combination with other configuration and styling) turns the comment widget into a live chat
-component.
+ライブチャット拡張機能は(他の設定やスタイリングと組み合わせることで)、コメントウィジェットをライブチャットコンポーネントに変えます。
 
 https://fastcomments.com/js/comment-ui/extensions/live-chat.extension.js
-
----

@@ -15,5 +15,3 @@ Dokumentaciju o konfiguriranju widgeta možete pronaći <a href="/guide-customiz
 
 Sve verzije FastComments widgeta su omotači oko osnovne VanillaJS biblioteke. To nam omogućuje dodavanje značajki
 i ispravljanje problema na jednom mjestu - i promjene se automatski prosljeđuju na druge varijante widgeta za komentare.
-
----

@@ -1,10 +1,10 @@
-Now that you've added a custom HTML block, we can add the FastComments widget code.
+Jetzt, da du einen benutzerdefinierten HTML-Block hinzugefügt hast, können wir den FastComments-Widget-Code hinzufügen.
 
-**Verwenden Sie den folgenden Code für Godaddy, nicht den Code aus anderen Anleitungen. Dieser Code ist Godaddy-spezifisch.**
+**Verwende den folgenden Code für Godaddy, nicht Code aus anderen Tutorials. Dieser Code ist Godaddy-spezifisch.**
 
-Copy the following code:
+Kopiere den folgenden Code:
 
-[inline-code-attrs-start title = 'Godaddy Kommentar-Codeausschnitt'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Godaddy Kommentare Code-Snippet'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
 <div id="fastcomments-widget"></div>
@@ -22,20 +22,20 @@ Copy the following code:
 </script>
 [inline-code-end]
 
-This specific code snippet is designed to be compatible with Godaddy, and will also only show on your blog posts - not the homepage.
+Dieses spezielle Code-Snippet wurde für die Kompatibilität mit Godaddy entwickelt und wird außerdem nur auf deinen Blogbeiträgen angezeigt – nicht auf der Startseite.
 
-Now paste the code into the `Custom Code` area mentioned in `Step One`.
+Füge nun den Code in den Bereich `Custom Code` ein, der in `Schritt Eins` erwähnt wurde.
 
 <div class="screenshot white-bg">
     <div class="title">Code kopieren und einfügen</div>
     <img class="screenshot-image" src="/images/installation-guides/godaddy-step-2-code-added.png" alt="Code kopieren und einfügen" />
 </div>
 
-Klicken Sie oben rechts auf Fertig:
+Klicke oben rechts auf Fertig:
 
 <div class="screenshot white-bg">
-    <div class="title">Klicken Sie auf Fertig</div>
-    <img class="screenshot-image" src="/images/installation-guides/godaddy-step-2-done.png" alt="Klicken Sie auf Fertig" />
+    <div class="title">Auf Fertig klicken</div>
+    <img class="screenshot-image" src="/images/installation-guides/godaddy-step-2-done.png" alt="Auf Fertig klicken" />
 </div>
 
-Das war's für Schritt zwei!
+Das war Schritt zwei!

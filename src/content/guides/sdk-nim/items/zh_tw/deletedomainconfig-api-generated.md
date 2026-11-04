@@ -1,4 +1,3 @@
----
 ## 參數
 
 | 名稱 | 類型 | 必填 | 描述 |
@@ -19,5 +18,3 @@ if optResp.isSome:
   let resp = optResp.get()
   echo resp
 [inline-code-end]
-
----

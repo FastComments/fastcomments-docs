@@ -19,5 +19,3 @@ Une action d'un modérateur humain sur la page de modération, le widget de comm
 
 - "Examiné" est l'un des états de la file de modération suivis séparément de "approuvé" et "spam". Un commentaire peut être approuvé-et-examiné, approuvé-mais-pas-examiné, etc. Voir [Comment fonctionnent les approbations](/guide-moderation.html#moderation-approvals) dans le guide de modération.
 - Ce déclencheur est très fréquent chez les locataires ayant de nombreux modérateurs. Abonnez-vous de façon sélective et prévoyez le budget en conséquence.
-
----

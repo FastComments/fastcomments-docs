@@ -1,6 +1,6 @@
-Lists the webhooks configured for the tenant, both dashboard-managed rows and API subscriptions.
+Elenca i webhook configurati per il tenant, sia le righe gestite dalla dashboard sia le sottoscrizioni API.
 
-## Parameters
+## Parametri
 
 | Nome | Tipo | Posizione | Obbligatorio | Descrizione |
 |------|------|----------|----------|-------------|
@@ -10,13 +10,13 @@ Lists the webhooks configured for the tenant, both dashboard-managed rows and AP
 | source | string | query | No |  |
 | skip | number | query | No |  |
 
-## Response
+## Risposta
 
 Restituisce: [`GetWebhooksResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetWebhooksResponse.java)
 
-## Example
+## Esempio
 
-[inline-code-attrs-start title = 'Esempio getWebhooks'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio di getWebhooks'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Import classes:
 import com.fastcomments.invoker.ApiClient;
@@ -38,9 +38,9 @@ public class Example {
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
-    String tenantId = "tenantId_example"; // Stringa | 
+    String tenantId = "tenantId_example"; // String | 
     WebhookEventName event = WebhookEventName.fromValue("comment-created"); // WebhookEventName | 
-    String domain = "domain_example"; // Stringa | 
+    String domain = "domain_example"; // String | 
     WebhookSource source = WebhookSource.fromValue("dashboard"); // WebhookSource | 
     Double skip = 3.4D; // Double | 
     try {
@@ -61,5 +61,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

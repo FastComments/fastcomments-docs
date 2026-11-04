@@ -1,4 +1,3 @@
----
 Μεταβείτε στον πίνακα ελέγχου του λογαριασμού σας και πηγαίνετε στη [σελίδα RSS Feed](https://fastcomments.com/auth/my-account/rss).
 
 [app-screenshot-start url='/auth/my-account/rss'; selector = '.content'; alt='Σελίδα RSS Feed λογαριασμού με το πλαίσιο ελέγχου Enable RSS Feed Access, τη διεύθυνση URL του feed και τα κουμπιά Copy και View Feed'; title='Διαμόρφωση RSS Feed' app-screenshot-end]
@@ -14,5 +13,3 @@
 Μπορείτε επίσης να κάνετε κλικ στο κουμπί "View Feed" στη σελίδα RSS Feed για να δείτε το feed σας απευθείας στον περιηγητή σας.
 
 Για να απενεργοποιήσετε την πρόσβαση στο RSS feed σας, απλώς αποεπιλέξτε το πλαίσιο ελέγχου "Enable RSS Feed Access". Αυτό θα αποτρέψει την πρόσβαση στο feed, αν και η διεύθυνση URL θα παραμείνει η ίδια εάν το ενεργοποιήσετε ξανά αργότερα.
-
----

@@ -1,4 +1,3 @@
----
 Obiekt `Page` reprezentuje stronę, do której może należeć wiele komentarzy. Ten związek jest określony przez `urlId`.
 
 Obiekt `Page` przechowuje informacje takie jak tytuł strony, liczba komentarzy oraz `urlId`.
@@ -21,5 +20,3 @@ interface Page {
     isClosed?: boolean
 }
 [inline-code-end]
-
----

@@ -1,32 +1,32 @@
-#### Hoe reacties in uw cursussen verschijnen
+#### Hoe reacties verschijnen in je cursussen
 
-Zodra de LTI-integratie is ingeschakeld en de External App is geïnstalleerd, werkt FastComments automatisch op basis van de placements die u hebt geconfigureerd:
+Zodra de LTI-integratie is ingeschakeld en de External App is geïnstalleerd, werkt FastComments automatisch op basis van de placements die je hebt geconfigureerd:
 
 #### Assignment View
 
-If the **Assignment View** placement is enabled, comments appear automatically below every assignment in the course. Students and instructors see a threaded comment section when they view an assignment — no extra setup is needed per assignment.
+Als de **Assignment View** placement is ingeschakeld, verschijnen reacties automatisch onder elke opdracht in de cursus. Studenten en docenten zien een geneste reactiesectie wanneer ze een opdracht bekijken — er is geen extra instelling per opdracht nodig.
 
-Elke opdracht krijgt een eigen reactiedraad.
+Elke opdracht krijgt zijn eigen aparte reactiethread.
 
 #### Rich Content Editor Button
 
-If the **Editor Button** placement is enabled, instructors can embed FastComments into any content that uses the Rich Content Editor:
+Als de **Editor Button** placement is ingeschakeld, kunnen docenten FastComments insluiten in elke content die de Rich Content Editor gebruikt:
 
-1. Bewerk een **Page**, **Quiz**, of **Announcement**.
-2. In de werkbalk van de Rich Content Editor, klik op de **FastComments**-knop.
-3. FastComments wordt automatisch in de inhoud ingesloten.
+1. Bewerk een **Page**, **Quiz** of **Announcement**.
+2. Klik in de werkbalk van de Rich Content Editor op de knop **FastComments**.
+3. FastComments wordt automatisch in de content ingesloten.
 4. Sla de pagina op.
 
-Wanneer studenten de pagina bekijken, wordt de ingesloten FastComments-widget geladen met een reactiedraad die uniek is voor die pagina.
+Wanneer studenten de pagina bekijken, wordt de ingesloten FastComments-widget geladen met een reactiethread die uniek is voor die pagina.
 
-#### Automatic SSO
+#### Automatische SSO
 
-In beide placements worden studenten automatisch ingelogd via hun Canvas-account. Namen, e-mails en avatars worden gesynchroniseerd via de LTI-launch; een aparte aanmelding is niet nodig.
+Bij beide placements worden studenten automatisch aangemeld via hun Canvas-account. Namen, e-mailadressen en avatars worden gesynchroniseerd via de LTI-launch; er is geen aparte login nodig.
 
-#### Lock Down Public Access (Recommended)
+#### Openbare toegang blokkeren (aanbevolen)
 
-Standaard zijn FastComments-reactiegegevens publiekelijk leesbaar. Iedereen die de URL of het API-endpoint van een draad kan raden, kan de reacties bekijken, zelfs buiten Canvas. Voor cursusdiscussies wilt u vrijwel zeker het bekijken beperken tot alleen ingeschreven studenten.
+Standaard zijn FastComments-reactiegegevens openbaar leesbaar. Iedereen die de URL van een thread of het API-endpoint kan raden, kan de reacties bekijken, zelfs buiten Canvas. Voor cursusdiscussies wil je het bekijken vrijwel zeker beperken tot alleen ingeschreven studenten.
 
-Open uw <a href="https://fastcomments.com/auth/my-account/customize-widget" target="_blank">pagina voor widgetaanpassing</a> en maak een regel aan met **Require SSO To View Comments** ingeschakeld, en stel vervolgens het beveiligingsniveau in op **Secure SSO** zodat reactiedraden alleen kunnen worden geladen via de ondertekende LTI-launch.
+Open je <a href="https://fastcomments.com/auth/my-account/customize-widget" target="_blank">widget-aanpassingspagina</a> en maak een regel aan met **Require SSO To View Comments** ingeschakeld, en stel vervolgens het beveiligingsniveau in op **Secure SSO**, zodat threads alleen via de ondertekende LTI-launch kunnen worden geladen.
 
-Zie [Bescherming van reactiedraden met Single-Sign-On](/guide-customizations-and-configuration.html#sso-require-to-view-comments) voor de volledige handleiding, inclusief hoe de regel te beperken tot één domein of pagina.
+Zie [Reactiethreads beveiligen met Single-Sign-On](/guide-customizations-and-configuration.html#sso-require-to-view-comments) voor de volledige uitleg, inclusief hoe je de regel kunt beperken tot één domein of pagina.

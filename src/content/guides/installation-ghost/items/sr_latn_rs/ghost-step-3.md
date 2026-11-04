@@ -1,4 +1,3 @@
----
 Sada kada imamo temu otvorenu u našem editoru, otvorite `package.json` i promenite polje `name` u nešto drugo. U našem slučaju samo dodajemo `-fastcomments` na kraj:
 
 <div class="screenshot white-bg">
@@ -7,5 +6,3 @@ Sada kada imamo temu otvorenu u našem editoru, otvorite `package.json` i promen
 </div>
 
 Ako koristite IDE, on će automatski sačuvati nakon što napravite ovu promenu.
-
----

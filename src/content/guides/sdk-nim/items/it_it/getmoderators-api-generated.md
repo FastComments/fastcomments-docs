@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Nome | Tipo | Obbligatorio | Descrizione |
@@ -19,5 +18,3 @@ if moderatorsOpt.isSome:
   let moderators = moderatorsOpt.get()
   echo moderators
 [inline-code-end]
-
----

@@ -5,5 +5,3 @@ FastComments propose plusieurs solutions de déploiement. La plus courante est l
 Cependant, nous comprenons que certains clients ne peuvent pas stocker leurs informations dans le cloud et exigent que toutes leurs données soient hébergées sur site.
 
 Cette documentation couvre ce cas d'utilisation.
-
----

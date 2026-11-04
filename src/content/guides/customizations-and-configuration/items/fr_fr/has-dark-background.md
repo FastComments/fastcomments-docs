@@ -1,4 +1,3 @@
----
 [related-parameter-start name = 'hasDarkBackground'; type = 'boolean'; related-parameter-end]
 
 Par défaut, le widget de commentaires FastComments détectera automatiquement le mode sombre sur la plupart des sites.
@@ -10,5 +9,3 @@ Au chargement de la page, le widget essaiera de déterminer la luminosité du fo
 Cependant, le mécanisme de détection, qui repose sur la détermination de la « luminance », peut ne pas activer le mode sombre lorsque vous le souhaitez. Pour l'activer de force, définissez le drapeau *hasDarkBackground* sur true comme suit :
 
 [code-example-start config = {hasDarkBackground: true}; linesToHighlight = [6]; title = 'Forcer le mode sombre'; additionalDemoCode = '<style>body { background: black; }</style>'; code-example-end]
-
----

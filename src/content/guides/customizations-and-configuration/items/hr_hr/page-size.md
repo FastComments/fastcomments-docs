@@ -1,4 +1,3 @@
----
 Prema zadanim postavkama, veličina stranice FastCommentsa je `30`. To uključuje odgovore u nitima.
 
 Veličinu stranice možete prilagoditi u [Widget Configuration UI](https://fastcomments.com/auth/my-account/customize-widget) u različitim veličinama od `10` do `200`.
@@ -14,4 +13,3 @@ Primjer konfiguracije prikazan je u nastavku:
 Veličine stranica mogu se prilagoditi globalno, po domeni ili po stranici, stvaranjem različitih pravila prilagodbe.
 
 Ovo će utjecati na sve klijente, integracije i okvire koje možda koristite za prikazivanje komentara putem naše platforme.
----

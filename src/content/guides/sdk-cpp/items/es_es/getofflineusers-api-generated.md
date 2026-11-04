@@ -1,12 +1,12 @@
-Past commenters on the page who are NOT currently online. Sorted by displayName.  
-Use this after exhausting /users/online to render a "Members" section.  
-Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName}  
-index from afterName forward via $gt, no $skip cost.
+Comentaristas anteriores en la página que NO están actualmente en línea. Ordenados por displayName.
+Úselo después de agotar /users/online para mostrar una sección "Members".
+Paginación por cursor en commenterName: el servidor recorre el índice parcial {tenantId, urlId, commenterName}
+desde afterName hacia adelante mediante $gt, sin coste de $skip.
 
 ## Parámetros
 
 | Nombre | Tipo | Requerido | Descripción |
-|--------|------|-----------|-------------|
+|------|------|----------|-------------|
 | tenantId | string | Sí |  |
 | urlId | string | Sí |  |
 | options | const GetOfflineUsersOptions& | Sí |  |
@@ -17,7 +17,7 @@ Devuelve: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomme
 
 ## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo getOfflineUsers'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo de getOfflineUsers'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
 utility::string_t urlId = U("page-456");

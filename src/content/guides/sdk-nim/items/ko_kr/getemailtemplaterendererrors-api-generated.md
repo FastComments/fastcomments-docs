@@ -1,4 +1,3 @@
----
 ## 매개변수
 
 | Name | Type | Required | Description |
@@ -28,5 +27,3 @@ else:
   # 누락된 응답 처리
   discard
 [inline-code-end]
-
----

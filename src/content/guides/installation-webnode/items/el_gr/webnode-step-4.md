@@ -4,5 +4,3 @@
     <div class="title">Βήμα Τέσσερα: Δημοσίευση</div>
     <img class="screenshot-image" src="/images/installation-guides/webnode-step-5.png" alt="Δημοσίευση" />
 </div>
-
----

@@ -1,31 +1,31 @@
-Il widget Recent Comments mostra i commenti più recenti pubblicati su tutto il tuo sito. È utile nelle barre laterali, nei footer o in qualsiasi punto in cui desideri mettere in evidenza l'attività recente per incoraggiare ulteriori letture.
+Il widget Commenti Recenti mostra i commenti più recenti pubblicati su tutto il tuo sito. È utile nelle sidebar, nei footer o in qualsiasi punto in cui desideri mettere in evidenza l'attività recente per incoraggiare ulteriori letture.
 
-## Options
+## Opzioni
 
-- **Title** (optional): The heading shown above the list. Defaults to "Recent Comments".
-- **Count** (optional): How many comments to show. Range 1 to 50. Defaults to 5.
+- **Titolo** (opzionale): L'intestazione mostrata sopra l'elenco. Predefinito: "Commenti Recenti".
+- **Conteggio** (opzionale): Quanti commenti mostrare. Intervallo da 1 a 50. Predefinito: 5.
 
-## How to Add It
+## Come Aggiungerlo
 
-### Inside a Post or Page
+### Dentro un Articolo o una Pagina
 
-In the block editor, add a **Shortcode** block and paste:
+Nell'editor a blocchi, aggiungi un blocco **Shortcode** e incolla:
 
 [inline-code-attrs-start title = 'Shortcode Commenti Recenti'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 [fastcomments_recent_comments count="5"]
 [inline-code-end]
 
-The `count` attribute accepts any value between 1 and 50.
+L'attributo `count` accetta qualsiasi valore tra 1 e 50.
 
-### In a Sidebar or Footer (Classic Themes)
+### In una Sidebar o Footer (Temi Classici)
 
-Go to **Appearance > Widgets** in your WordPress admin. From the block inserter, search for "FastComments" and choose **FastComments: Recent Comments**. Drag it into a sidebar, header, or footer area, then configure the title and count from the widget panel.
+Vai su **Aspetto > Widget** nell'amministrazione di WordPress. Dall'inseritore di blocchi, cerca "FastComments" e scegli **FastComments: Commenti Recenti**. Trascinalo in una sidebar, nell'header o nell'area del footer, quindi configura il titolo e il conteggio dal pannello del widget.
 
-### In a Block Theme (Full Site Editing)
+### In un Tema a Blocchi (Full Site Editing)
 
-Open the **Site Editor** under **Appearance > Editor**. Navigate to the template part where the widget should appear, insert a **Legacy Widget** block, and select **FastComments: Recent Comments** from the dropdown.
+Apri l'**Editor del Sito** sotto **Aspetto > Editor**. Naviga fino alla parte del template in cui il widget dovrebbe apparire, inserisci un blocco **Legacy Widget** e seleziona **FastComments: Commenti Recenti** dal menu a tendina.
 
-## Troubleshooting
+## Risoluzione dei Problemi
 
-The widget only renders after FastComments setup is complete and a tenant ID is stored. If the widget area is blank, complete setup under **FastComments** in the WordPress admin and reload the page.
+Il widget viene visualizzato solo dopo che la configurazione di FastComments è stata completata e un tenant ID è stato memorizzato. Se l'area del widget è vuota, completa la configurazione sotto **FastComments** nell'amministrazione di WordPress e ricarica la pagina.

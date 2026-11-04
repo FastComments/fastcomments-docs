@@ -1,49 +1,49 @@
-### Percentage-Based Positioning
+### Pozycjonowanie oparte na procentach
 
-Image Chat używa współrzędnych opartych na procentach zamiast współrzędnych w pikselach do pozycjonowania znaczników czatu na obrazach. Gdy użytkownik kliknie obraz, widget konwertuje współrzędne pikselowe kliknięcia na procenty szerokości i wysokości obrazu. Takie podejście zapewnia, że znaczniki pozostają na właściwym miejscu niezależnie od sposobu wyświetlania obrazu.
+Image Chat używa współrzędnych procentowych zamiast współrzędnych pikselowych do pozycjonowania znaczników czatu na obrazach. Gdy użytkownik kliknie obraz, widżet konwertuje współrzędne pikselowe kliknięcia na procenty szerokości i wysokości obrazu. To podejście zapewnia, że znaczniki pozostają we właściwym miejscu niezależnie od tego, jak obraz jest wyświetlany.
 
-Na przykład, jeśli użytkownik kliknie 250 pikseli od lewej krawędzi obrazu o szerokości 1000px, widget zapisuje to jako 25% od lewej. Gdy inny użytkownik zobaczy ten sam obraz o szerokości 500px na urządzeniu mobilnym, znacznik pojawi się 125 pikseli od lewej, co wciąż stanowi 25% szerokości.
+Na przykład, jeśli użytkownik kliknie 250 pikseli od lewej krawędzi obrazu o szerokości 1000px, widżet zapisuje to jako 25% od lewej. Gdy inny użytkownik wyświetli ten sam obraz o szerokości 500px na urządzeniu mobilnym, znacznik pojawi się 125 pikseli od lewej, co nadal stanowi 25% szerokości.
 
-### Benefits for Responsive Layouts
+### Korzyści dla responsywnych układów
 
-Ten system oparty na procentach sprawia, że Image Chat działa bezproblemowo na wszystkich rozmiarach urządzeń i orientacjach. Twoje obrazy mogą być wyświetlane w różnych rozmiarach w zależności od szerokości ekranu, reguł CSS lub ograniczeń kontenera, ale znaczniki zawsze wyrównują się prawidłowo z zamierzonymi miejscami.
+Ten system procentowy sprawia, że Image Chat działa płynnie na wszystkich rozmiarach i orientacjach urządzeń. Twoje obrazy mogą być wyświetlane w różnych rozmiarach w zależności od szerokości ekranu, reguł CSS lub ograniczeń kontenera, ale znaczniki zawsze będą poprawnie wyrównane z zamierzonymi lokalizacjami.
 
-Użytkownicy na komputerach stacjonarnych z dużymi monitorami widzą znaczniki w tych samych względnych pozycjach co użytkownicy na smartfonach z małymi ekranami. Znaczniki skalują się proporcjonalnie wraz z obrazem.
+Użytkownicy na komputerach stacjonarnych z dużymi monitorami widzą znaczniki w tych samych pozycjach względnych co użytkownicy smartfonów z małymi ekranami. Znaczniki skalują się proporcjonalnie do samego obrazu.
 
-### Image Scaling and Aspect Ratio
+### Skalowanie obrazu i proporcje
 
-O ile obraz zachowuje swój współczynnik proporcji podczas skalowania (co jest domyślnym zachowaniem przeglądarki), znaczniki oparte na procentach pozostaną idealnie wyrównane. Widget zakłada, że obrazy skalują się proporcjonalnie i oblicza pozycje na tej podstawie.
+Dopóki Twój obraz zachowuje swoje proporcje podczas skalowania (co jest domyślnym zachowaniem przeglądarki), znaczniki procentowe pozostaną idealnie wyrównane. Widżet zakłada, że obrazy skalują się proporcjonalnie i oblicza pozycje na podstawie tego założenia.
 
-Jeśli zastosujesz CSS, które zniekształca proporcje obrazu (na przykład używając `object-fit: cover` z określonymi wymiarami), pozycje znaczników mogą nie być wyrównane prawidłowo. Dla najlepszych rezultatów pozwól obrazom skalować się naturalnie lub użyj `object-fit: contain`, aby zachować współczynnik proporcji.
+Jeśli zastosujesz CSS, który zniekształca proporcje obrazu (np. używając `object-fit: cover` z określonymi wymiarami), pozycje znaczników mogą nie być poprawnie wyrównane. Dla najlepszych rezultatów pozwól obrazom skalować się naturalnie lub użyj `object-fit: contain`, aby zachować proporcje.
 
-### Chat Square Sizing
+### Rozmiar kwadratów czatu
 
-Wizualny rozmiar znaczników czatu jest również oparty na procentach. Opcja konfiguracji `chatSquarePercentage` ma domyślną wartość 5%, co oznacza, że każdy kwadrat ma 5% szerokości obrazu. Zapewnia to spójny wygląd wizualny niezależnie od rozmiaru obrazu.
+Wizualny rozmiar znaczników czatu również jest oparty na procentach. Opcja konfiguracji `chatSquarePercentage` ma domyślnie wartość 5%, co oznacza, że każdy kwadrat stanowi 5% szerokości obrazu. Zapewnia to spójną wagę wizualną w różnych rozmiarach obrazów.
 
-Na obrazie o szerokości 1000px przy domyślnym ustawieniu 5% znaczniki mają 50px kwadrat. Na obrazie o szerokości 500px te same znaczniki mają 25px kwadrat. Pozostają proporcjonalne do rozmiaru obrazu.
+Na obrazie o szerokości 1000px z domyślnym ustawieniem 5% znaczniki mają 50px kwadratu. Na obrazie o szerokości 500px te same znaczniki mają 25px kwadratu. Pozostają proporcjonalne do rozmiaru obrazu.
 
-### Mobile Behavior
+### Zachowanie na urządzeniach mobilnych
 
-Na ekranach o szerokości poniżej 768px Image Chat przełącza się na układ zoptymalizowany pod kątem urządzeń mobilnych. Okna czatu otwierają się na pełnym ekranie zamiast unosić się obok znacznika. Zapewnia to lepszą użyteczność na małych ekranach, gdzie unoszące się okna zasłaniałyby zbyt dużą część obrazu.
+Na ekranach o szerokości poniżej 768px Image Chat przełącza się na układ zoptymalizowany pod urządzenia mobilne. Okna czatu otwierają się na pełnym ekranie zamiast unosić się obok znacznika. Zapewnia to lepszą użyteczność na małych ekranach, gdzie pływające okna zasłaniałyby zbyt dużą część obrazu.
 
-Same znaczniki pozostają widoczne i klikalne w swoich pozycjach opartych na procentach. Użytkownicy nadal mogą zobaczyć, gdzie znajdują się wszystkie dyskusje i stuknąć znaczniki, aby otworzyć interfejs czatu na pełnym ekranie.
+Same znaczniki pozostają widoczne i klikalne na swoich pozycjach procentowych. Użytkownicy nadal mogą zobaczyć, gdzie znajdują się wszystkie dyskusje, i dotknąć znaczników, aby otworzyć pełnoekranowy interfejs czatu.
 
-### Dynamic Image Loading
+### Dynamiczne ładowanie obrazów
 
-System oparty na procentach działa poprawnie nawet wtedy, gdy obrazy ładują się asynchronicznie lub zmieniają rozmiar po załadowaniu strony. Widget monitoruje element obrazu i ponownie oblicza pozycje znaczników za każdym razem, gdy zmieniają się wymiary obrazu.
+System procentowy działa poprawnie nawet wtedy, gdy obrazy ładują się asynchronicznie lub zmieniają rozmiar po załadowaniu strony. Widżet monitoruje element obrazu i przelicza pozycje znaczników za każdym razem, gdy wymiary obrazu się zmienią.
 
-Jeśli stosujesz lazy-loading obrazów lub implementujesz obrazy responsywne o różnych rozmiarach na różnych punktach przerwania, znaczniki automatycznie dostosowują się, gdy zmienia się rozmiar obrazu.
+Jeśli stosujesz leniwe ładowanie obrazów lub implementujesz responsywne obrazy o różnych rozmiarach w różnych breakpointach, znaczniki automatycznie dostosują się po zmianie rozmiaru obrazu.
 
-### Cross-Device Consistency
+### Spójność między urządzeniami
 
-Ponieważ współrzędne są przechowywane w bazie danych jako procenty, dyskusja utworzona na komputerze stacjonarnym pojawia się w dokładnie tym samym względnym miejscu po wyświetleniu na tablecie lub telefonie. Użytkownicy mogą współpracować na różnych urządzeniach bez problemów z pozycjonowaniem.
+Ponieważ współrzędne są przechowywane jako procenty w bazie danych, dyskusja utworzona na komputerze stacjonarnym pojawia się w dokładnie tej samej pozycji względnej podczas wyświetlania na tablecie lub telefonie. Użytkownicy mogą współpracować między urządzeniami bez żadnych niespójności w pozycjonowaniu.
 
-Działa to w obie strony. Dyskusja utworzona przez stuknięcie konkretnego miejsca na urządzeniu mobilnym pojawia się w tej samej względnej pozycji po wyświetleniu na dużym monitorze stacjonarnym.
+Działa to dwukierunkowo. Dyskusja utworzona przez dotknięcie konkretnego miejsca na urządzeniu mobilnym pojawia się w tej samej pozycji względnej podczas wyświetlania na dużym monitorze komputera stacjonarnego.
 
-### Viewport Considerations
+### Uwagi dotyczące viewportu
 
-Widget oblicza procenty względem samego elementu obrazu, a nie widoku (viewport). Oznacza to, że przewijanie strony lub zmiana rozmiaru okna przeglądarki nie wpływa na pozycje znaczników. Znaczniki pozostają zakotwiczone w swoich pozycjach na obrazie niezależnie od zmian widoku.
+Widżet oblicza procenty względem samego elementu obrazu, a nie viewportu. Oznacza to, że przewijanie strony lub zmiana rozmiaru okna przeglądarki nie wpływa na pozycje znaczników. Znaczniki pozostają zakotwiczone w swoich lokalizacjach na obrazie niezależnie od zmian viewportu.
 
-### Future-Proofing Content
+### Przyszłościowa zawartość
 
-Podejście oparte na procentach sprawia, że Twoje dyskusje na obrazach są odporne na zmiany układu, projektu czy ekosystemu urządzeń. W miarę pojawiania się nowych rozmiarów ekranu i urządzeń istniejące dyskusje będą nadal wyświetlane poprawnie bez potrzeby aktualizacji lub migracji.
+Podejście oparte na procentach sprawia, że Twoje dyskusje na obrazach są odporne na zmiany układu, designu lub ekosystemu urządzeń. Gdy pojawią się nowe rozmiary ekranów i urządzenia, istniejące dyskusje będą nadal wyświetlać się poprawnie bez konieczności jakichkolwiek aktualizacji lub migracji.

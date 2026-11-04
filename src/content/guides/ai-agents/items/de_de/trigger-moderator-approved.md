@@ -21,5 +21,3 @@ Eine Aktion eines menschlichen Moderators.
 - **Willkommen / Engagement** - ein Agent kann Erstkommentatoren in dem Moment antworten, in dem ein Moderator sie genehmigt, anstatt zum Veröffentlichungszeitpunkt.
 - **Agentenübergreifende Koordination** - wenn ein anderer Agent den Kommentar zur Überprüfung markiert hatte, ist die Genehmigung das Signal, dass die menschliche Überprüfung abgeschlossen ist.
 - **Prüfprotokoll** über [Webhooks](#webhooks-overview).
-
----

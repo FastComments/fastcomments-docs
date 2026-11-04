@@ -1,4 +1,3 @@
----
 ## 매개변수
 
 | 이름 | 유형 | 필수 | 설명 |
@@ -29,5 +28,3 @@ const pageData: CreateAPIPageData = {
 
 const response: AddPageAPIResponse = await addPage(tenantId, pageData);
 [inline-code-end]
-
----

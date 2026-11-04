@@ -1,13 +1,11 @@
-Sistemdeki Comment nesnesindeki tüm değişiklikler, bir kuyruğa düşen bir olay tetikler.
+Sistemdeki Comment nesnesine yapılan tüm değişiklikler, bir kuyruğa düşen bir olay tetikler.
 
-İlk webhook olayı genellikle olay kaynağının gerçekleşmesinden itibaren altı saniye içinde gönderilir.
+İlk webhook olayı genellikle olay kaynağı gerçekleştikten sonraki altı saniye içinde gönderilir.
 
-API'niz çalışmayı durdurursa bu kuyruğu Webhooks yönetiminde izleyebilirsiniz.
+API'niz devre dışı kalması durumunda, bu kuyruğu Webhooks yönetim panelinden izleyebilirsiniz.
 
-API'nize yapılan bir istek başarısız olursa, onu belirli bir takvime göre yeniden kuyruğa alacağız.
+API'nize yapılan bir istek başarısız olursa, bunu bir zamanlamaya göre yeniden kuyruğa alırız.
 
-That schedule is `1 Minute * the retry count`. If the call fails once, it'll try again in
-bir dakika içinde. Eğer iki kez başarısız olursa, o zaman iki dakika bekleyecek ve böyle devam eder. Bu, böylece biz
-API'nizi yükle ilgili nedenlerle kapanırken aşırı yüklememek içindir.
+Bu zamanlama `1 Dakika * yeniden deneme sayısı` şeklindedir. Çağrı bir kez başarısız olursa, bir dakika sonra tekrar dener. İki kez başarısız olursa, iki dakika bekler ve bu böyle devam eder. Bu, yük kaynaklı nedenlerle düşüyorsanız API'nizi aşırı yüklememek içindir.
 
-Webhooks, [kayıtlar sayfası](https://fastcomments.com/auth/my-account/manage-data/webhooks/logs) üzerinden iptal edilebilir.
+Webhook'lar [logs sayfasından](https://fastcomments.com/auth/my-account/manage-data/webhooks/logs) iptal edilebilir.

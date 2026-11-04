@@ -12,5 +12,3 @@ No entanto, o mecanismo de detecção, que depende de determinar a "luminância"
 flag *hasDarkBackground* como true da seguinte forma:
 
 [code-example-start config = {hasDarkBackground: true}; linesToHighlight = [6]; title = 'Force Dark Background Mode'; additionalDemoCode = '<style>body { background: black; }</style>'; code-example-end]
-
----

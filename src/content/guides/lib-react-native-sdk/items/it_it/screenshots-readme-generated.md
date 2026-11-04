@@ -1,34 +1,34 @@
-Live threaded commenting with avatars, nested replies, votes, and the built-in rich-text composer, plus a dark theme and a live-chat preset (shown here rendered via `react-native-web`):
+Commentazione live in thread con avatar, risposte annidate, voti e il composer rich-text integrato, più un tema scuro e un preset di live chat (mostrato qui renderizzato tramite `react-native-web`):
 
 <table>
   <tr>
-    <td align="center"><b>Commenti Live</b><br/><img src="images/sdk-images/lib-react-native-sdk--demo-screenshots-light.png" width="260" alt="Commenti live, tema chiaro"/></td>
-    <td align="center"><b>Tema Scuro</b><br/><img src="images/sdk-images/lib-react-native-sdk--demo-screenshots-dark.png" width="260" alt="Commenti live, tema scuro"/></td>
-    <td align="center"><b>Chat Live</b><br/><img src="images/sdk-images/lib-react-native-sdk--demo-screenshots-chat.png" width="260" alt="Preset di chat live"/></td>
+    <td align="center"><b>Commentazione Live</b><br/><img src="images/sdk-images/lib-react-native-sdk--demo-screenshots-light.png" width="260" alt="Commentazione live, tema chiaro"/></td>
+    <td align="center"><b>Tema Scuro</b><br/><img src="images/sdk-images/lib-react-native-sdk--demo-screenshots-dark.png" width="260" alt="Commentazione live, tema scuro"/></td>
+    <td align="center"><b>Live Chat</b><br/><img src="images/sdk-images/lib-react-native-sdk--demo-screenshots-chat.png" width="260" alt="Preset live chat"/></td>
   </tr>
 </table>
 
-### Editor di Testo Arricchito
+### Editor Rich Text
 
-Questa libreria utilizza [`react-native-enriched`](https://github.com/software-mansion/react-native-enriched-html) per l'editing di testo arricchito, che offre un'esperienza di editing WYSIWYG potente. Lo stesso editor alimenta iOS, Android e il web (tramite `react-native-web`), quindi il compositore si comporta in modo coerente su tutte le piattaforme con un'unica implementazione.
+Questa libreria utilizza [`react-native-enriched`](https://github.com/software-mansion/react-native-enriched-html) per la modifica di testo formattato, che offre una potente esperienza di editing WYSIWYG. Lo stesso editor alimenta iOS, Android e il web (tramite `react-native-web`), quindi il composer si comporta in modo coerente su ogni piattaforma con un'unica implementazione.
 
-`react-native-enriched` richiede la New Architecture di React Native (Fabric) su native (impostazione predefinita da RN 0.76, opzionale su RN 0.72-0.75) e un bundler che risolve le condizioni `exports` del pacchetto. Questo SDK è sviluppato e testato con RN 0.81 / React 19. Lo stesso editor funziona anche sul web tramite `react-native-web`; la build web dell'editor enriched è ancora contrassegnata come sperimentale a monte.
+`react-native-enriched` richiede la React Native New Architecture (Fabric) su nativo (predefinita da RN 0.76, opzionale su RN 0.72-0.75) e un bundler che risolva le condizioni `exports` dei pacchetti. Questo SDK è sviluppato e testato con RN 0.81 / React 19. Lo stesso editor funziona anche sul web tramite `react-native-web`; la build web dell'editor enriched è ancora contrassegnata come sperimentale a monte.
 
 ### Widget
 
-L'SDK fornisce tre widget, rispecchiando l'SDK Android di FastComments:
+L'SDK include tre widget, in linea con l'SDK Android di FastComments:
 
-- `FastCommentsLiveCommenting` - commenti in thread con voti, risposte, paginazione, menzioni, notifiche e aggiornamenti live.
-- `FastCommentsLiveChat` - un preset di chat basato sullo stesso motore: messaggi cronologici con i nuovi in fondo, il compositore sotto l'elenco, una barra intestazione live (punto di connessione + conteggio utenti), cronologia infinita caricata scorrendo verso l'alto, auto-scroll ai nuovi messaggi, senza voti o thread di risposta. Ogni preset può essere sovrascritto tramite `config`.
-- `FastCommentsFeed` - un feed sociale con compositore di post, media, reazioni, follow e banner live per nuovi post.
+- `FastCommentsLiveCommenting` - commentazione in thread con voti, risposte, paginazione, menzioni, notifiche e aggiornamenti live.
+- `FastCommentsLiveChat` - un preset di chat sullo stesso motore: messaggi cronologici con i nuovi in basso, il composer sotto l'elenco, una barra header live (punto di connessione + conteggio utenti), cronologia infinita caricata scorrendo verso l'alto, auto-scroll verso i nuovi messaggi, senza voti né thread di risposte. Ogni preset può essere sovrascritto tramite `config`.
+- `FastCommentsFeed` - un feed social con composer per i post, media, reazioni, follow e banner live per i nuovi post.
 
 ```tsx
     <FastCommentsLiveChat config=\{{ tenantId: 'demo', urlId: 'my-room' }}/>
 ```
 
-### Tematizzazione
+### Theming
 
-L'aspetto predefinito è generato da un insieme di token di design semantici (`FastCommentsTheme`): colori, spaziatura, raggio, dimensioni dei font, pesi dei font e dimensioni degli avatar. Passa sovrascritture parziali dei token (tipizzati `FastCommentsThemeOverrides`) tramite la prop `theme` su qualsiasi widget e l'intero albero di stile verrà ri-stilizzato in modo coerente:
+L'aspetto predefinito è generato da un insieme di design token semantici (`FastCommentsTheme`): colori, spaziature, raggi, dimensioni dei font, pesi dei font e dimensioni degli avatar. Passa override parziali dei token (tipizzati `FastCommentsThemeOverrides`) tramite la prop `theme` su qualsiasi widget e l'intero albero di stili viene ridisegnato in modo coerente:
 
 ```tsx
     <FastCommentsLiveCommenting config={config} theme=\{{ colors: { primary: '#FF5500' } }}/>
@@ -42,7 +42,7 @@ La modalità scura è a un set di token di distanza:
     <FastCommentsLiveCommenting config={config} theme={getDarkTheme()}/>
 ```
 
-La prop `styles` accetta ancora un albero grezzo `IFastCommentsStyles` per un controllo chirurgico. Quando `theme` e `styles` sono entrambi forniti, gli stili espliciti prevalgono sull'albero tematico; quando è fornito solo `styles`, sostituisce completamente i valori predefiniti (il comportamento originale, quindi le integrazioni e i temi esistenti non sono influenzati). `setupDarkModeSkin` è deprecato a favore della prop `theme`.
+La prop `styles` accetta ancora un albero `IFastCommentsStyles` grezzo per un controllo chirurgico. Quando `theme` e `styles` sono forniti entrambi, gli stili espliciti prevalgono sull'albero a tema; quando viene fornito solo `styles`, sostituisce interamente i valori predefiniti (il comportamento originale, quindi le integrazioni e le skin esistenti non sono influenzate). `setupDarkModeSkin` è deprecato in favore della prop `theme`.
 
 ### Opzioni di Configurazione
 
@@ -50,51 +50,51 @@ Questa libreria mira a supportare tutte le opzioni di configurazione definite in
 
 Oltre a queste, React Native aggiunge alcune opzioni specifiche dell'SDK tramite `FastCommentsRNConfig`:
 
-- `hideTopBar` - nasconde la barra superiore con l'utente loggato / campanella di notifica mostrata sopra il compositore.
-- `usePressToEdit` - premi e tieni premuto un commento per aprire il suo menu.
+- `hideTopBar` - nasconde la barra utente connesso / campanella notifiche mostrata sopra il composer.
+- `usePressToEdit` - tieni premuto un commento per aprire il suo menu.
 - `disableDownVoting` - nasconde i pulsanti di voto negativo.
-- `renderCommentInline` - rende le informazioni del commentatore all'interno dello stesso blocco HTML del contenuto del commento.
-- `renderLikesToRight` - sposta l'area voto/like a destra del commento invece che sotto.
-- `renderDateBelowComment` - rende la data sotto il commento.
-- `showLiveStatus` - mostra la barra intestazione in stile chat "Live" + conteggio utenti sopra i commenti.
-- `useInlineSubmitButton` - rende il pulsante di invio come icona all'interno del compositore.
-- `countAboveToggle` - con `useShowCommentsToggle`, quanti commenti vengono renderizzati sopra il toggle "Mostra Commenti".
-- `preserveFeedScrollPosition` - `FastCommentsFeed` ricorda il suo offset di scorrimento tra smontaggio/rimontaggio (predefinito true).
+- `renderCommentInline` - renderizza le informazioni del commentatore nello stesso blocco HTML del contenuto del commento.
+- `renderLikesToRight` - sposta l'area voto/mi piace a destra del commento invece che sotto.
+- `renderDateBelowComment` - renderizza la data sotto il commento.
+- `showLiveStatus` - mostra la barra header in stile chat "Live" + conteggio utenti sopra i commenti.
+- `useInlineSubmitButton` - renderizza il pulsante di invio come icona all'interno del composer.
+- `countAboveToggle` - con `useShowCommentsToggle`, quanti commenti renderizzare sopra l'interruttore "Show Comments".
+- `preserveFeedScrollPosition` - `FastCommentsFeed` ricorda la propria posizione di scroll tra unmount/remount (predefinito true).
 
 ### Concetti di FastComments
 
-I concetti principali da conoscere per iniziare sono `tenantId` e `urlId`. `tenantId` è l'identificatore del tuo account FastComments.com. `urlId` è a cosa saranno associati i thread di commenti. Può essere l'URL di una pagina, un ID prodotto, un ID articolo, ecc.
+I concetti principali da conoscere per iniziare sono `tenantId` e `urlId`. `tenantId` è l'identificatore del tuo account FastComments.com. `urlId` è a cosa saranno legati i thread di commenti. Può essere l'URL di una pagina, o un id di prodotto, un id di articolo, ecc.
 
 ### Localizzazione
 
-Tutto il testo rivolto all'utente in questi widget (etichette dei pulsanti, segnaposti, stati vuoti, date relative come "5 minuti fa", messaggi di errore, ecc.) è **guidato dal server**. I componenti non codificano in modo fisso le stringhe inglesi; renderizzano le traduzioni che FastComments fornisce per la lingua richiesta.
+Tutti i testi rivolti all'utente in questi widget (etichette dei pulsanti, placeholder, stati vuoti, date relative come "5 minuti fa", messaggi di errore, ecc.) sono **gestiti dal server**. I componenti non codificano stringhe in inglese; renderizzano le traduzioni che FastComments fornisce per la locale richiesta.
 
-Per richiedere una lingua, imposta `locale` nella tua configurazione:
+Per richiedere una locale, imposta `locale` nella tua config:
 
 ```ts
 const config = {
     tenantId: 'your-tenant-id',
     urlId: 'some-page',
-    locale: 'de_de', // de_de, fr_fr, ja_jp, es_es, etc.
+    locale: 'de_de', // de_de, fr_fr, ja_jp, es_es, ecc.
 };
 ```
 
-Quando `locale` non è impostato, FastComments fornisce la lingua predefinita del tenant.
+Quando non è impostata alcuna `locale`, FastComments fornisce la lingua predefinita del tenant.
 
-**Modifica del testo:** le traduzioni sono gestite nella tua dashboard FastComments, non in questo SDK. Per cambiare la formulazione, sovrascrivi il testo predefinito o aggiungi una lingua, modifica le traduzioni per il tuo account nella dashboard – la modifica viene rilevata automaticamente dai widget senza necessità di rilasciare l'app. L'SDK non fornisce fallback in inglese, quindi qualsiasi chiave che svuoti nella dashboard verrà renderizzata vuota; mantieni le chiavi popolate per ogni lingua supportata.
+**Modifica del testo:** le traduzioni sono gestite nella tua dashboard FastComments, non in questo SDK. Per cambiare la formulazione, sovrascrivere il testo predefinito o aggiungere una lingua, modifica le traduzioni del tuo account nella dashboard - la modifica viene recepita dai widget automaticamente senza richiedere il rilascio dell'app. L'SDK non include fallback in inglese, quindi qualsiasi chiave che svuoti nella dashboard verrà renderizzata vuota; mantieni le chiavi compilate per ogni locale che supporti.
 
 ### Notifiche Utente
 
-FastComments supporta le notifiche per [molti scenari](https://docs.fastcomments.com/guide-notifications.html). Le notifiche sono configurabili, possono essere disattivate globalmente o a livello di notifica/commento, e supportano le sottoscrizioni a livello di pagina così gli utenti possono iscriversi ai thread di una pagina o articolo specifico.
+FastComments supporta le notifiche per [molti scenari](https://docs.fastcomments.com/guide-notifications.html). Le notifiche sono configurabili, possono essere disattivate globalmente o a livello di notifica/commento, e supportano sottoscrizioni a livello di pagina in modo che gli utenti possano iscriversi ai thread di una pagina o articolo specifico.
 
-Ad esempio, è possibile utilizzare Secure SSO per autenticare l'utente e poi effettuare polling periodico per le notifiche non lette e inviarle all'utente.
+Ad esempio, è possibile usare Secure SSO per autenticare l'utente e poi interrogare periodicamente le notifiche non lette e inviarle all'utente.
 
-Vedi [l'esempio AppNotificationSecureSSO](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src/AppNotificationsSecureSSO.tsx) per capire come ottenere e tradurre le notifiche non lette dell'utente.
+Vedi [l'esempio AppNotificationSecureSSO](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src/AppNotificationsSecureSSO.tsx) per come ottenere e tradurre le notifiche utente non lette.
 
 ### Browser Gif
 
-Per impostazione predefinita, nessuna selezione di immagini o gif è abilitata. Vedi [example/src/AppCommentingImageSelection.tsx](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src/AppCommentingImageSelection.tsx) per sapere come supportare il caricamento di immagini e gif. C'è un Browser Gif che anonimizza le ricerche e le immagini fornite in questa libreria, devi semplicemente usarlo.
+Per impostazione predefinita, nessuna selezione di immagini o gif è abilitata. Vedi [example/src/AppCommentingImageSelection.tsx](https://github.com/FastComments/fastcomments-react-native-sdk/blob/main/example/src/AppCommentingImageSelection.tsx) per come supportare il caricamento di immagini e gif. C'è un Gif Browser che anonimizza le ricerche e le immagini fornito in questa libreria, ti basta usarlo.
 
 ### Prestazioni
 
-Apri un ticket con un esempio da riprodurre, includendo il dispositivo usato, se identifichi problemi di prestazioni. Le prestazioni sono una priorità assoluta in tutte le librerie FastComments.
+Apri un ticket con un esempio per riprodurre il problema, includendo il dispositivo utilizzato, se identifichi problemi di prestazioni. Le prestazioni sono un cittadino di prima classe in tutte le librerie FastComments.

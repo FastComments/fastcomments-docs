@@ -1,4 +1,3 @@
----
 Conteggi di reazioni personalizzate per una pagina, opzionalmente con gli utenti che hanno reagito.
 
 ## Parametri
@@ -35,5 +34,3 @@ DefaultAPI.getPageReacts(tenantId: tenantId, urlId: urlId, includeUserInfo: incl
     }
 }
 [inline-code-end]
-
----

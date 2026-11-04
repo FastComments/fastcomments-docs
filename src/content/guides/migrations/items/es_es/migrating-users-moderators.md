@@ -1,4 +1,3 @@
----
 Con FastComments, se pueden agregar muchos usuarios a su inquilino, y sus permisos pueden configurarse según los roles en su
 organización.
 
@@ -11,5 +10,3 @@ Para agregar moderadores, consulte [la documentación correspondiente](/guide-mo
 ### Una nota sobre la autenticación
 
 Sus usuarios pueden estar buscando un lugar para ingresar su contraseña. FastComments usa "enlaces mágicos" para iniciar sesión, por lo que no se requieren contraseñas.
-
----

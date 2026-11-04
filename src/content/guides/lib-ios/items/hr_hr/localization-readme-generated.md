@@ -1,4 +1,3 @@
----
 Proslijedite kod lokalizacije u konfiguraciji kako biste lokalizirali tekstove koje pruža poslužitelj:
 
 ```swift

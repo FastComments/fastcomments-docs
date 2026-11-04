@@ -4,5 +4,3 @@
 子评论。你可以例如在页面加载时有条件地设置此项，只允许某些用户留下顶级评论。
 
 [code-example-start config = {noNewRootComments: true}; linesToHighlight = [6]; title = 'Prevent New Root Comments'; code-example-end]
-
----

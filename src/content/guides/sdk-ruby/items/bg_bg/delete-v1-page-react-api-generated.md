@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Name | Type | Location | Required | Description |
@@ -29,5 +28,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->delete_v1_page_react: #{e}"
 end
 [inline-code-end]
-
----

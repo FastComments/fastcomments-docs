@@ -1,4 +1,3 @@
----
 Les sondages sont désactivés par défaut. Pour les activer, accédez aux paramètres de personnalisation du widget et cochez **Activer les sondages**.
 
 Cela ajoute un bouton de sondage à la barre d’outils de l’éditeur de commentaires. Les sondages s’affichent à l’intérieur du commentaire et les visiteurs votent directement.
@@ -8,4 +7,3 @@ Cela ajoute un bouton de sondage à la barre d’outils de l’éditeur de comme
 Comme les autres paramètres du widget, cela peut être appliqué à l’ensemble de votre site ou uniquement à des pages ou domaines spécifiques.
 
 Si vous désactivez les sondages ultérieurement, le bouton de sondage disparaît et les sondages existants cessent de s’afficher dans le widget. Les sondages et leurs votes sont conservés, et réapparaissent si vous réactivez les sondages.
----

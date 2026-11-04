@@ -34,5 +34,3 @@ async function fetchResults() {
   console.log(response);
 }
 [inline-code-end]
-
----

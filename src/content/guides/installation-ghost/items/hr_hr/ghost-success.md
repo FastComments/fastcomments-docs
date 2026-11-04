@@ -1,4 +1,3 @@
----
 Sada bismo trebali imati FastComments Live Commenting omogućen za naše članove!
 
 <div class="screenshot white-bg">
@@ -7,5 +6,3 @@ Sada bismo trebali imati FastComments Live Commenting omogućen za naše članov
 </div>
 
 Čestitamo na postavljanju FastComments s Ghostom! Ako ste naišli na Domain Error, ili želite saznati kako prilagoditi područje komentara, nastavite čitati!
-
----

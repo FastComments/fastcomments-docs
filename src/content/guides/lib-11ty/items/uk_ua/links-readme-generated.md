@@ -1,5 +1,3 @@
----
 - [Документація FastComments](https://docs.fastcomments.com)
 - [Налаштування та конфігурація](https://docs.fastcomments.com/guide-customizations-and-configuration.html)
 - [Документація Eleventy](https://www.11ty.dev/docs/)
----

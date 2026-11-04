@@ -1,17 +1,15 @@
----
-Встановлення плагіна FastComments для WordPress спроєктовано так, щоб бути простим і мінімізувати будь-які простої в доступності коментування на вашому сайті. Плагін не переключиться з плагіна WordPress, поки синхронізація не завершиться.
+Встановлення плагіна FastComments для WordPress розроблено так, щоб воно було простим і мінімізувало будь-який час недоступності коментування на вашому сайті. Плагін не перемкне коментування з плагіна WordPress, доки синхронізація не буде завершена.
 
-First, you'll want to set the expectation with your moderators according to the details in the below section `Moderation`. Повідомте їх, що незабаром вони будуть модерувати через FastComments, а не через панель керування WordPress.
+Спочатку вам варто налаштувати очікування своїх модераторів відповідно до деталей у розділі нижче `Moderation`. Повідомте їм, що незабаром вони модеруватимуть через FastComments, а не через панель керування WordPress.
 
-Next, install the plugin. You can do this by going to the WordPress plugins dashboard, clicking `Add Plugin`, and search for `FastComments`. The plugin is also available for download [here](https://wordpress.org/plugins/fastcomments/#installation).
+Далі встановіть плагін. Це можна зробити, перейшовши до панелі керування плагінами WordPress, натиснувши `Add Plugin` і знайшовши `FastComments`. Плагін також доступний для завантаження [тут](https://wordpress.org/plugins/fastcomments/#installation).
 
-The plugin setup will ask you if you are in the EU. If this is the case, your account will reside in the EU on `eu.fastcomments.com`, otherwise it will be on `fastcomments.com`.
+Під час налаштування плагін запитає, чи перебуваєте ви в ЄС. Якщо так, ваш обліковий запис буде розміщено в ЄС на `eu.fastcomments.com`, інакше — на `fastcomments.com`.
 
-Next, you have the option of selecting whether you already have a FastComments account. Follow the steps thereafter and your comments can optionally be uploaded during the installation process.
+Далі ви можете вибрати, чи вже маєте обліковий запис FastComments. Виконайте наступні кроки, і ваші коментарі за бажанням можуть бути завантажені під час процесу встановлення.
 
-<sup>Примітка!</sup> Не закривайте сторінку плагіна WordPress, поки налаштування та синхронізація тривають.
+<sup>Зверніть увагу!</sup> Не закривайте сторінку плагіна WordPress, поки триває налаштування та синхронізація.
 
-Comments are uploaded in batches, and sorted using existing indexes in your WordPress database to limit load on your site.
+Коментарі завантажуються пакетами та сортуються з використанням наявних індексів у вашій базі даних WordPress, щоб обмежити навантаження на ваш сайт.
 
-Once the sync is complete, the default WordPress commenting system will be replaced by FastComments. We hope you love our platform, but if you don't [reach out to us](https://fastcomments.com/auth/my-account/help).  
----
+Після завершення синхронізації стандартна система коментування WordPress буде замінена на FastComments. Ми сподіваємося, що вам сподобається наша платформа, але якщо ні — [зв'яжіться з нами](https://fastcomments.com/auth/my-account/help).

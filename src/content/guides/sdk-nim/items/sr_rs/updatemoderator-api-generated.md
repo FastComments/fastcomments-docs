@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Име | Тип | Обавезно | Опис |
@@ -20,5 +19,3 @@ let (apiResult, httpResp) = client.updateModerator(tenantId = "my-tenant-123", i
 if apiResult.isSome:
   let result = apiResult.get()
 [inline-code-end]
-
----

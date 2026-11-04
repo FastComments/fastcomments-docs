@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Име | Тип | Обавезно | Опис |
@@ -32,5 +31,3 @@ api->getSearchSites(tenantId, options)
        }
    });
 [inline-code-end]
-
----

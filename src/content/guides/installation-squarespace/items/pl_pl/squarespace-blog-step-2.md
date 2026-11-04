@@ -1,4 +1,3 @@
----
 Teraz możemy skopiować następujący fragment kodu (użyj przycisku kopiowania w prawym górnym rogu fragmentu):
 
 [inline-code-attrs-start title = 'Kod komentarzy dla bloga Squarespace'; type = 'html'; isFunctional = false; inline-code-attrs-end]
@@ -32,5 +31,3 @@ Teraz możemy skopiować następujący fragment kodu (użyj przycisku kopiowania
     <div class="title">Wklej i zapisz</div>
     <img class="screenshot-image" src="/images/installation-guides/squarespace-step-2-1-add-code-and-save.png" alt="Wklej i zapisz" />
 </div>
-
----

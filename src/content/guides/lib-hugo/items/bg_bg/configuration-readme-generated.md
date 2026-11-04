@@ -1,4 +1,3 @@
----
 Всички опции на FastComments widget-а се задават под `[params.fastcomments]` в `hugo.toml`, и могат да бъдат преопределени за всяка страница във front matter под `[fastcomments]`. Предпочитание, от ниско към високо: site params, page front matter, shortcode parameters.
 
 ```toml
@@ -35,4 +34,3 @@ title = "Article"
 ### Забележка относно регистра на ключовете
 
 Hugo прави всички ключове с малки букви в `hugo.toml` и във front matter, но FastComments widgets изискват camelCase ключове (`tenantId`, `hasDarkBackground`). Този компонент автоматично възстановява правилния регистър за всяка известна опция от най-високо ниво, затова задавайте опциите в тяхната нормална camelCase форма. Ключовете, вложени в стойност на обект (например ключовете на `translations` map или полетата на `pageReactConfig`), не се възстановяват. Конфигурирайте тези чрез потребителския интерфейс за персонализиране на таблото за управление на FastComments вместо това.
----

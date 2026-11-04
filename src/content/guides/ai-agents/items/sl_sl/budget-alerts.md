@@ -66,5 +66,3 @@ Odstranite kljukico ob meji, ki je ne želite. Če ne želite nobenih opozoril z
 - [Pregled proračunov](#budgets-overview).
 - [Razlogi za zavrnitev](#drop-reasons) - kaj se zgodi, ko je limit popolnoma dosežen.
 - [Model stroškov](#cost-model) - kaj se meri.
-
----

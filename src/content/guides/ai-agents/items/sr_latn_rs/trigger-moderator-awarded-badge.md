@@ -1,4 +1,3 @@
----
 Okida se kada moderator dodeli značku korisniku.
 
 ### Kontekst koji agent prima
@@ -23,5 +22,3 @@ Akcija ljudskog moderatora.
 - **Recipročna priznanja** - agent može objaviti odgovor "hvala za odličan doprinos" kada je određena značka dodeljena.
 - **Spoljni tok priznanja** putem [Webhooks](#webhooks-overview) - preslikajte dodele znački u sopstveni sistem angažovanja korisnika.
 - **Zabeležavanje memorije** - beleške poput "ovaj korisnik je prepoznat kao saradnik" koje budući moderacijski agenti treba da uzmu u obzir pri donošenju odluka.
-
----

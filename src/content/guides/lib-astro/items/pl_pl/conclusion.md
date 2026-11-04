@@ -8,5 +8,3 @@ Jeśli napotkasz jakiekolwiek problemy lub masz pytania dotyczące biblioteki As
 ## Współtworzenie
 
 Wkład jest mile widziany! Prosimy odwiedzić [repozytorium na GitHub](https://github.com/FastComments/fastcomments-astro) w celu zapoznania się z wytycznymi dotyczącymi kontrybucji.
-
----

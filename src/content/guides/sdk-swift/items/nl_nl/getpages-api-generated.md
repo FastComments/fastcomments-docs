@@ -1,4 +1,3 @@
----
 ## Parameters
 
 | Naam | Type | Locatie | Vereist | Beschrijving |
@@ -29,5 +28,3 @@ DefaultAPI.getPages(tenantId: tenantId) { (response, error) in
     }
 }
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 הפעל SSO בקובץ `.env`:
 
 ```env
@@ -55,4 +54,3 @@ class User extends Authenticatable implements MapsToFastCommentsUser
 ### SSO ב-Blade
 
 כש-SSO מופעל, הרכיב `<x-fastcomments />` מזריק אוטומטית נתוני SSO עבור המשתמש שאומת.
----

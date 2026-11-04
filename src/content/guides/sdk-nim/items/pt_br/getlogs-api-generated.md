@@ -19,5 +19,3 @@ if logsOpt.isSome:
   let logs = logsOpt.get()
   echo logs
 [inline-code-end]
-
----

@@ -1,284 +1,284 @@
 Esta guía cubre problemas comunes de autenticación SAML y sus soluciones.
 
-### Certificate and Security Issues
+### Problemas de Certificados y Seguridad
 
-#### Invalid Certificate Error
+#### Error de Certificado Inválido
 
-**Symptoms**:
-- "Certificate validation failed" error
-- Users cannot complete SAML authentication
-- SAML responses are rejected
+**Síntomas**:
+- Error "Certificate validation failed" (falló la validación del certificado)
+- Los usuarios no pueden completar la autenticación SAML
+- Las respuestas SAML son rechazadas
 
-**Common Causes**:
-- Certificate format is incorrect
-- Certificate has expired
-- Wrong certificate was provided
-- Extra characters or whitespace in certificate
+**Causas Comunes**:
+- El formato del certificado es incorrecto
+- El certificado ha expirado
+- Se proporcionó un certificado incorrecto
+- Caracteres adicionales o espacios en blanco en el certificado
 
-**Solutions**:
-1. **Verify Certificate Format**:
-   - Ensure certificate includes `-----BEGIN CERTIFICATE-----` and `-----END CERTIFICATE-----` markers
-   - Remove any extra whitespace or line breaks
-   - Copy certificate directly from IdP metadata or configuration
+**Soluciones**:
+1. **Verificar el Formato del Certificado**:
+   - Asegúrese de que el certificado incluya los marcadores `-----BEGIN CERTIFICATE-----` y `-----END CERTIFICATE-----`
+   - Elimine cualquier espacio en blanco o salto de línea adicional
+   - Copie el certificado directamente desde los metadatos o la configuración del IdP
 
-2. **Check Certificate Validity**:
-   - Verify certificate hasn't expired
-   - Confirm certificate is for the correct IdP
-   - Use online certificate validators to check format
+2. **Comprobar la Validez del Certificado**:
+   - Verifique que el certificado no haya expirado
+   - Confirme que el certificado sea para el IdP correcto
+   - Use validadores de certificados en línea para comprobar el formato
 
-3. **Re-download Certificate**:
-   - Download fresh certificate from IdP
-   - Use IdP metadata URL if available
-   - Confirm certificate matches current IdP configuration
+3. **Volver a Descargar el Certificado**:
+   - Descargue un certificado nuevo desde el IdP
+   - Use la URL de metadatos del IdP si está disponible
+   - Confirme que el certificado coincida con la configuración actual del IdP
 
-#### Signature Verification Failed
+#### Fallo en la Verificación de Firma
 
-**Symptoms**:
-- SAML assertion signature validation errors
-- Authentication fails after IdP login
-- "Invalid signature" error messages
+**Síntomas**:
+- Errores de validación de la firma de la aserción SAML
+- La autenticación falla después del inicio de sesión en el IdP
+- Mensajes de error "Invalid signature" (firma inválida)
 
-**Solutions**:
-1. **Algorithm Mismatch**:
-   - Check signature algorithm in FastComments matches IdP
-   - Try different signature algorithms (SHA-256, SHA-1, SHA-512)
-   - Verify digest algorithm matches IdP configuration
+**Soluciones**:
+1. **Discrepancia de Algoritmo**:
+   - Compruebe que el algoritmo de firma en FastComments coincida con el del IdP
+   - Pruebe diferentes algoritmos de firma (SHA-256, SHA-1, SHA-512)
+   - Verifique que el algoritmo de digest coincida con la configuración del IdP
 
-2. **Certificate Issues**:
-   - Ensure correct signing certificate is configured
-   - Verify certificate corresponds to private key used by IdP
-   - Check for certificate rotation in IdP
+2. **Problemas de Certificado**:
+   - Asegúrese de que el certificado de firma correcto esté configurado
+   - Verifique que el certificado corresponda a la clave privada utilizada por el IdP
+   - Compruebe si hay rotación de certificados en el IdP
 
-### Configuration Issues
+### Problemas de Configuración
 
-#### Wrong Entity ID or ACS URL
+#### Entity ID o ACS URL Incorrectos
 
-**Symptoms**:
-- IdP reports "Unknown Service Provider"
-- SAML responses go to wrong endpoint
-- Authentication doesn't complete
+**Síntomas**:
+- El IdP informa "Unknown Service Provider" (proveedor de servicios desconocido)
+- Las respuestas SAML van a un endpoint incorrecto
+- La autenticación no se completa
 
-**Solutions**:
-1. **Verify SP Information**:
-   - Copy exact Entity ID from FastComments configuration
-   - Ensure ACS URL matches format: `https://fastcomments.com/saml/callback/{tenant-id}`
-   - Check for typos in tenant ID
+**Soluciones**:
+1. **Verificar la Información del SP**:
+   - Copie el Entity ID exacto de la configuración de FastComments
+   - Asegúrese de que la ACS URL coincida con el formato: `https://fastcomments.com/saml/callback/{tenant-id}`
+   - Compruebe si hay errores tipográficos en el ID del tenant
 
-2. **IdP Configuration**:
-   - Update IdP with correct SP Entity ID
-   - Configure proper ACS/Reply URL
-   - Verify IdP binding settings (HTTP-POST preferred)
+2. **Configuración del IdP**:
+   - Actualice el IdP con el SP Entity ID correcto
+   - Configure la ACS/Reply URL adecuada
+   - Verifique la configuración de binding del IdP (se prefiere HTTP-POST)
 
-#### Missing or Incorrect Attributes
+#### Atributos Faltantes o Incorrectos
 
-**Symptoms**:
-- Users created without proper roles
-- Missing user profile information
-- "Email required" errors
+**Síntomas**:
+- Usuarios creados sin los roles adecuados
+- Falta información del perfil de usuario
+- Errores "Email required" (correo electrónico requerido)
 
-**Solutions**:
-1. **Email Attribute**:
-   - Ensure IdP sends email attribute
-   - Check attribute name mapping (email, emailAddress, etc.)
-   - Verify email value is valid email address
+**Soluciones**:
+1. **Atributo de Correo Electrónico**:
+   - Asegúrese de que el IdP envíe el atributo de correo electrónico
+   - Compruebe el mapeo de nombres de atributos (email, emailAddress, etc.)
+   - Verifique que el valor del correo electrónico sea una dirección de correo válida
 
-2. **Role Attributes**:
-   - Confirm IdP sends role/group information
-   - Check role attribute names match FastComments expectations
-   - Verify role values match FastComments role names exactly
+2. **Atributos de Roles**:
+   - Confirme que el IdP envíe información de roles/grupos
+   - Compruebe que los nombres de los atributos de rol coincidan con lo que espera FastComments
+   - Verifique que los valores de los roles coincidan exactamente con los nombres de roles de FastComments
 
-3. **Attribute Format**:
-   - Test both array and comma-separated role formats
-   - Ensure attribute values don't have extra whitespace
-   - Check for case sensitivity in role names
+3. **Formato de los Atributos**:
+   - Pruebe tanto el formato de array como el separado por comas para los roles
+   - Asegúrese de que los valores de los atributos no tengan espacios en blanco adicionales
+   - Compruebe la sensibilidad a mayúsculas y minúsculas en los nombres de los roles
 
-### Authentication Flow Issues
+### Problemas en el Flujo de Autenticación
 
-#### Redirect Loop
+#### Bucle de Redirección
 
-**Symptoms**:
-- Browser redirects endlessly between FastComments and IdP
-- Authentication never completes
-- Multiple redirects shown in browser developer tools
+**Síntomas**:
+- El navegador se redirige sin fin entre FastComments y el IdP
+- La autenticación nunca se completa
+- Se muestran múltiples redirecciones en las herramientas de desarrollo del navegador
 
-**Solutions**:
-1. **Check SP Configuration**:
-   - Verify Entity ID matches IdP configuration exactly
-   - Ensure ACS URL is correctly configured in IdP
-   - Check for trailing slashes in URLs
+**Soluciones**:
+1. **Comprobar la Configuración del SP**:
+   - Verifique que el Entity ID coincida exactamente con la configuración del IdP
+   - Asegúrese de que la ACS URL esté correctamente configurada en el IdP
+   - Compruebe si hay barras diagonales finales en las URLs
 
-2. **Session Issues**:
-   - Clear browser cookies and try again
-   - Test in incognito/private browser window
-   - Check for session timeout settings
+2. **Problemas de Sesión**:
+   - Borre las cookies del navegador e inténtelo de nuevo
+   - Pruebe en una ventana de navegación de incógnito/privada
+   - Compruebe la configuración de tiempo de espera de la sesión
 
-#### Access Denied After Authentication
+#### Acceso Denegado Después de la Autenticación
 
-**Symptoms**:
-- SAML authentication succeeds
-- User is redirected to FastComments
-- "Access denied" or permissions error displayed
+**Síntomas**:
+- La autenticación SAML tiene éxito
+- El usuario es redirigido a FastComments
+- Se muestra un error de "Access denied" (acceso denegado) o de permisos
 
-**Solutions**:
-1. **Role Assignment**:
-   - Verify user has appropriate roles in IdP
-   - Check role attribute is being sent in SAML response
-   - Confirm role names match FastComments requirements exactly
+**Soluciones**:
+1. **Asignación de Roles**:
+   - Verifique que el usuario tenga los roles adecuados en el IdP
+   - Compruebe que el atributo de rol se esté enviando en la respuesta SAML
+   - Confirme que los nombres de los roles coincidan exactamente con los requisitos de FastComments
 
-2. **Package Limitations**:
-   - Verify account has Flex or Pro plan
-   - Check SAML feature is enabled for the package
-   - Contact support if package includes SAML but feature unavailable
+2. **Limitaciones del Plan**:
+   - Verifique que la cuenta tenga el plan Flex o Pro
+   - Compruebe que la función SAML esté habilitada para el plan
+   - Contacte con soporte si el plan incluye SAML pero la función no está disponible
 
-### Identity Provider Specific Issues
+### Problemas Específicos de Proveedores de Identidad
 
 #### Microsoft Azure AD
 
-**Common Issues**:
-- App role assignments not reflecting in tokens
-- Claims not being sent properly
-- User assignment requirements
+**Problemas Comunes**:
+- Las asignaciones de roles de la aplicación no se reflejan en los tokens
+- Los claims no se envían correctamente
+- Requisitos de asignación de usuarios
 
-**Solutions**:
-- Check user assignment to FastComments application
-- Verify app roles are properly configured
-- Ensure claims mapping includes required attributes
+**Soluciones**:
+- Compruebe la asignación del usuario a la aplicación de FastComments
+- Verifique que los roles de la aplicación estén correctamente configurados
+- Asegúrese de que el mapeo de claims incluya los atributos requeridos
 
 #### Okta
 
-**Common Issues**:
-- Group filters not working correctly
-- Attribute statements misconfigured
-- Application assignment problems
+**Problemas Comunes**:
+- Los filtros de grupos no funcionan correctamente
+- Declaraciones de atributos mal configuradas
+- Problemas de asignación de la aplicación
 
-**Solutions**:
-- Review attribute statement configuration
-- Check group assignment and filtering rules
-- Verify application is assigned to appropriate users/groups
+**Soluciones**:
+- Revise la configuración de las declaraciones de atributos
+- Compruebe las reglas de asignación y filtrado de grupos
+- Verifique que la aplicación esté asignada a los usuarios/grupos adecuados
 
 #### Google Workspace
 
-**Common Issues**:
-- Custom attributes not mapping correctly
-- Group membership not being sent
-- SAML application configuration errors
+**Problemas Comunes**:
+- Los atributos personalizados no se mapean correctamente
+- No se envía la pertenencia a grupos
+- Errores de configuración de la aplicación SAML
 
-**Solutions**:
-- Configure custom schema for role attributes
-- Check group membership propagation
-- Verify SAML application attribute mapping
+**Soluciones**:
+- Configure un esquema personalizado para los atributos de rol
+- Compruebe la propagación de la pertenencia a grupos
+- Verifique el mapeo de atributos de la aplicación SAML
 
-### Network and Connectivity Issues
+### Problemas de Red y Conectividad
 
-#### Timeout Errors
+#### Errores de Tiempo de Espera
 
-**Symptoms**:
-- Authentication process times out
-- "Request timeout" or similar errors
-- Slow authentication flow
+**Síntomas**:
+- El proceso de autenticación agota el tiempo de espera
+- Errores "Request timeout" (tiempo de espera de la solicitud) o similares
+- Flujo de autenticación lento
 
-**Solutions**:
-1. **Network Connectivity**:
-   - Check firewall rules allow FastComments communication
-   - Verify DNS resolution for fastcomments.com
-   - Test network connectivity from IdP to FastComments
+**Soluciones**:
+1. **Conectividad de Red**:
+   - Compruebe que las reglas del firewall permitan la comunicación con FastComments
+   - Verifique la resolución DNS de fastcomments.com
+   - Pruebe la conectividad de red desde el IdP hasta FastComments
 
-2. **Performance Issues**:
-   - Check IdP response times
-   - Verify certificate chain validation isn't slow
-   - Consider network latency between IdP and users
+2. **Problemas de Rendimiento**:
+   - Compruebe los tiempos de respuesta del IdP
+   - Verifique que la validación de la cadena de certificados no sea lenta
+   - Considere la latencia de red entre el IdP y los usuarios
 
-#### SSL/TLS Issues
+#### Problemas de SSL/TLS
 
-**Symptoms**:
-- Certificate warnings during authentication
-- SSL handshake failures
-- "Secure connection failed" errors
+**Síntomas**:
+- Advertencias de certificado durante la autenticación
+- Fallos en el handshake SSL
+- Errores "Secure connection failed" (falló la conexión segura)
 
-**Solutions**:
-- Ensure all SAML endpoints use HTTPS
-- Check certificate validity for all involved domains
-- Verify TLS version compatibility
+**Soluciones**:
+- Asegúrese de que todos los endpoints SAML usen HTTPS
+- Compruebe la validez de los certificados de todos los dominios involucrados
+- Verifique la compatibilidad de la versión de TLS
 
-### Debugging and Logging
+### Depuración y Registro
 
-#### Enabling Debug Information
+#### Habilitar Información de Depuración
 
-1. **Browser Developer Tools**:
-   - Monitor Network tab during SAML flow
-   - Check Console for JavaScript errors
-   - Examine SAML POST requests (if visible)
+1. **Herramientas de Desarrollo del Navegador**:
+   - Supervise la pestaña Network durante el flujo SAML
+   - Compruebe la Console en busca de errores de JavaScript
+   - Examine las solicitudes POST de SAML (si son visibles)
 
-2. **IdP Logging**:
-   - Enable SAML debugging in your IdP
-   - Review IdP logs for SAML request/response details
-   - Check for attribute mapping issues
+2. **Registros del IdP**:
+   - Habilite la depuración SAML en su IdP
+   - Revise los registros del IdP para ver los detalles de las solicitudes/respuestas SAML
+   - Compruebe si hay problemas de mapeo de atributos
 
-#### Common Log Messages
+#### Mensajes de Registro Comunes
 
-**FastComments Logs**:
-- "SAML config not found" - SAML not enabled or misconfigured
-- "Invalid certificate" - Certificate validation failed
-- "Missing email attribute" - Required email not provided in SAML response
+**Registros de FastComments**:
+- "SAML config not found" - SAML no está habilitado o está mal configurado
+- "Invalid certificate" - Falló la validación del certificado
+- "Missing email attribute" - No se proporcionó el correo electrónico requerido en la respuesta SAML
 
-**IdP Logs**:
-- "Unknown service provider" - Entity ID mismatch
-- "Invalid ACS URL" - Assertion Consumer Service URL incorrect
-- "User not assigned" - User lacks access to SAML application
+**Registros del IdP**:
+- "Unknown service provider" - Discrepancia en el Entity ID
+- "Invalid ACS URL" - La URL del Assertion Consumer Service es incorrecta
+- "User not assigned" - El usuario no tiene acceso a la aplicación SAML
 
-### Getting Help
+### Cómo Obtener Ayuda
 
-#### Information to Gather
+#### Información a Recopilar
 
-When contacting support, provide:
-- Exact error messages and timestamps
-- SAML configuration details (without sensitive data)
-- IdP type and version
-- Steps to reproduce the issue
-- Browser and network information
+Al contactar con soporte, proporcione:
+- Mensajes de error exactos y marcas de tiempo
+- Detalles de la configuración SAML (sin datos sensibles)
+- Tipo y versión del IdP
+- Pasos para reproducir el problema
+- Información del navegador y de la red
 
-#### FastComments Support
+#### Soporte de FastComments
 
-For SAML-related issues:
-1. Use the [portal de soporte](https://fastcomments.com/auth/my-account/help)
-2. Include tenant ID and affected user emails
-3. Provide error messages and configuration details
-4. Specify IdP type and configuration approach
+Para problemas relacionados con SAML:
+1. Use el [portal de soporte](https://fastcomments.com/auth/my-account/help)
+2. Incluya el ID del tenant y los correos electrónicos de los usuarios afectados
+3. Proporcione los mensajes de error y los detalles de configuración
+4. Especifique el tipo de IdP y el enfoque de configuración
 
-#### IdP Support
+#### Soporte del IdP
 
-For IdP-specific issues:
-- Consult IdP documentation for SAML troubleshooting
-- Use IdP support channels for configuration problems
-- Leverage IdP community forums for common issues
+Para problemas específicos del IdP:
+- Consulte la documentación del IdP para la resolución de problemas de SAML
+- Use los canales de soporte del IdP para problemas de configuración
+- Aproveche los foros de la comunidad del IdP para problemas comunes
 
-### Prevention Tips
+### Consejos de Prevención
 
-#### Best Practices
+#### Mejores Prácticas
 
-1. **Test Thoroughly**:
-   - Test configuration changes in non-production environment
-   - Verify with multiple test users
-   - Document working configurations
+1. **Probar a Fondo**:
+   - Pruebe los cambios de configuración en un entorno que no sea de producción
+   - Verifique con varios usuarios de prueba
+   - Documente las configuraciones que funcionan
 
-2. **Monitor Regularly**:
-   - Set up monitoring for SAML authentication failures
-   - Review certificate expiration dates
-   - Monitor for IdP configuration changes
+2. **Supervisar Regularmente**:
+   - Configure la supervisión de fallos de autenticación SAML
+   - Revise las fechas de expiración de los certificados
+   - Supervise los cambios de configuración del IdP
 
-3. **Documentation**:
-   - Maintain documentation of SAML configuration
-   - Document any custom configurations or workarounds
-   - Keep contact information for IdP administrators
+3. **Documentación**:
+   - Mantenga documentación de la configuración SAML
+   - Documente cualquier configuración personalizada o solución alternativa
+   - Guarde la información de contacto de los administradores del IdP
 
-#### Proactive Maintenance
+#### Mantenimiento Proactivo
 
-1. **Certificate Management**:
-   - Monitor certificate expiration dates
-   - Plan certificate rotation procedures
-   - Test certificate updates before expiration
+1. **Gestión de Certificados**:
+   - Supervise las fechas de expiración de los certificados
+   - Planifique los procedimientos de rotación de certificados
+   - Pruebe las actualizaciones de certificados antes de la expiración
 
-2. **Configuration Reviews**:
-   - Regularly review SAML configuration
-   - Verify IdP configuration remains current
-   - Update documentation as changes are made
+2. **Revisiones de Configuración**:
+   - Revise regularmente la configuración SAML
+   - Verifique que la configuración del IdP siga actualizada
+   - Actualice la documentación a medida que se realicen cambios

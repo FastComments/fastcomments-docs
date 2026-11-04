@@ -1,15 +1,15 @@
-Navigate to your account dashboard and go to the [RSS Besleme sayfası](https://fastcomments.com/auth/my-account/rss).
+Hesap panonuza gidin ve [RSS Feed sayfasına](https://fastcomments.com/auth/my-account/rss) geçin.
 
-[app-screenshot-start url='/auth/my-account/rss'; selector = '.content'; alt='Hesap RSS Besleme sayfası, RSS Besleme Erişimini Etkinleştir onay kutusu, besleme URL\'si ve Kopyala ve Beslemeyi Görüntüle düğmeleri'; title='RSS Besleme Yapılandırması' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/rss'; selector = '.content'; alt='RSS Feed Erişimini Etkinleştir onay kutusunu, akış URL\'sini ve Kopyala ve Akışı Görüntüle düğmelerini içeren hesap RSS Feed sayfası'; title='RSS Feed Yapılandırması' app-screenshot-end]
 
-On the RSS Feed page, check the "Enable RSS Feed Access" checkbox to generate your unique RSS feed URL.
+RSS Feed sayfasında, benzersiz RSS akış URL'nizi oluşturmak için "Enable RSS Feed Access" onay kutusunu işaretleyin.
 
-When you enable the feed, a security notice will appear explaining that anyone with the link can access your comments.
+Akışı etkinleştirdiğinizde, bağlantıya sahip olan herkesin yorumlarınıza erişebileceğini açıklayan bir güvenlik uyarısı görünecektir.
 
-Once enabled, your unique RSS feed URL will appear. Click the "Copy" button to copy the URL to your clipboard.
+Etkinleştirildikten sonra, benzersiz RSS akış URL'niz görünecektir. URL'yi panonuza kopyalamak için "Copy" düğmesine tıklayın.
 
-Open your RSS reader application and add the copied URL as a new feed subscription. The exact steps vary by RSS reader, but typically you'll look for an "Add Feed" or "Subscribe" button, paste your RSS feed URL, and give the feed a name.
+RSS okuyucu uygulamanızı açın ve kopyalanan URL'yi yeni bir akış aboneliği olarak ekleyin. Kesin adımlar RSS okuyucuya göre değişir, ancak genellikle bir "Add Feed" veya "Subscribe" düğmesi arar, RSS akış URL'nizi yapıştırır ve akışa bir ad verirsiniz.
 
-You can also click the "View Feed" button on the RSS Feed page to see your feed directly in your browser.
+Ayrıca RSS Feed sayfasındaki "View Feed" düğmesine tıklayarak akışınızı doğrudan tarayıcınızda görebilirsiniz.
 
-To disable access to your RSS feed, simply uncheck the "Enable RSS Feed Access" checkbox. This will prevent the feed from being accessed, though the URL will remain the same if you re-enable it later.
+RSS akışınıza erişimi devre dışı bırakmak için, "Enable RSS Feed Access" onay kutusunun işaretini kaldırmanız yeterlidir. Bu, akışa erişilmesini engeller; ancak daha sonra yeniden etkinleştirirseniz URL aynı kalacaktır.

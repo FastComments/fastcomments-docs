@@ -1,6 +1,6 @@
-A `FeedPost` object represents a post in a FastComments feed. A feed is a stream of posts with their own comment threads, rendered by the Feed widget. Every post has an author, optional rich content, media, and links, and can be tagged so that a feed can be filtered.
+Obiekt `FeedPost` reprezentuje wpis w feedzie FastComments. Feed to strumień wpisów z własnymi wątkami komentarzy, renderowany przez widżet Feed. Każdy wpis ma autora, opcjonalną treść sformatowaną, media i linki, a może być też otagowany, aby feed mógł być filtrowany.
 
-The structure for the `FeedPost` object is as follows:
+Struktura obiektu `FeedPost` wygląda następująco:
 
 [inline-code-attrs-start title = 'Struktura FeedPost'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -10,19 +10,19 @@ interface FeedPost {
     /** READONLY **/
     tenantId: string
     title?: string
-    /** Id użytkownika FastComments lub SSO, który jest autorem posta. **/
+    /** The id of the FastComments or SSO user that authored the post. **/
     fromUserId?: string
-    /** Wypełniane z danych użytkownika, gdy nie jest ustawione. **/
+    /** Filled from the user when not set. **/
     fromUserDisplayName?: string | null
-    /** READONLY. Wypełniane z danych użytkownika. **/
+    /** READONLY. Filled from the user. **/
     fromUserAvatar?: string | null
-    /** Używane do filtrowania kanału. **/
+    /** Used to filter a feed. **/
     tags?: string[]
-    /** Waga sortowania w kanale. Wyższe wartości sortują jako pierwsze. **/
+    /** Sort weight within a feed. Higher values sort first. **/
     weight?: number
-    /** Dowolne pary klucz/wartość do własnego użytku. **/
+    /** Free-form key/value pairs for your own use. **/
     meta?: Record<string, string>
-    /** Zsanityzowany HTML. **/
+    /** Sanitized HTML. **/
     contentHTML?: string
     media?: FeedPostMediaItem[]
     links?: FeedPostLink[]
@@ -36,9 +36,9 @@ interface FeedPost {
 
 interface FeedPostMediaItem {
     title?: string
-    /** Gdzie odnośnik elementu multimedialnego prowadzi po kliknięciu. **/
+    /** Where the media item links to when clicked. **/
     linkUrl?: string
-    /** Jedna pozycja na każdą wersję. Widget wybiera najlepsze dopasowanie. **/
+    /** One entry per rendition. The widget picks the best fit. **/
     sizes: FeedPostMediaItemAsset[]
 }
 
@@ -49,17 +49,17 @@ interface FeedPostMediaItemAsset {
 }
 
 interface FeedPostLink {
-    /** Tekst linku, np. “Zarejestruj się teraz”. **/
+    /** The link text, like "Sign up now". **/
     text?: string
-    /** Nagłówek wyświetlany razem z linkiem. **/
+    /** A heading shown with the link. **/
     title?: string
-    /** Opis wyświetlany razem z linkiem. **/
+    /** A description shown with the link. **/
     description?: string
     url?: string
 }
 [inline-code-end]
 
-Notes:
+Uwagi:
 
-- Some of these fields are marked `READONLY` - these are returned by the API but cannot be set.
-- The comments on a post are regular comments whose `urlId` is `post:` followed by the post `_id`. Use that value with the Comment API to read or create comments on a post.
+- Niektóre z tych pól są oznaczone jako `READONLY` - są zwracane przez API, ale nie można ich ustawiać.
+- Komentarze pod wpisem to zwykłe komentarze, których `urlId` to `post:` po którym następuje `_id` wpisu. Użyj tej wartości z Comment API, aby odczytać lub utworzyć komentarze pod wpisem.

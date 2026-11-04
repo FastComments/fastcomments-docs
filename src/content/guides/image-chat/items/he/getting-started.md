@@ -1,25 +1,25 @@
-### מקרי שימוש
+### תרחישי שימוש
 
-Image Chat מתאים מאוד לקבלת משוב על עיצוב כאשר צוותים צריכים לדון ברכיבים ספציפיים במוקאפים או בצילומי מסך. אתרי סקירות מוצרים יכולים לאפשר ללקוחות לדון בתכונות ספציפיות הנראות בתמונות המוצר. פלטפורמות חינוכיות יכולות להשתמש בו לדיון בתרשימים, מפות או תמונות מדעיות. גלריות תמונות יכולות להפוך לאינטראקטיביות עם הערות ממוקמות. אתרי נדל"ן יכולים לאפשר לצופים לדון בתכונות ספציפיות הנראות בתמונות הנכסים.
+Image Chat מתאים מצוין למשוב עיצובי, כאשר צוותים צריכים לדון באלמנטים ספציפיים במוקאפים או בצילומי מסך. אתרי סקירת מוצרים יכולים לאפשר ללקוחות לדון בתכונות ספציפיות הנראות בתמונות המוצר. פלטפורמות חינוכיות יכולות להשתמש בו לדיון בדיאגרמות, מפות או תמונות מדעיות. גלריות תמונות יכולות להפוך לאינטראקטיביות עם תגובות הקשורות למיקום. אתרי נדל"ן יכולים לאפשר למבקרים לדון בתכונות ספציפיות הנראות בתמונות הנכס.
 
 ### התחלה מהירה
 
-התחלה עם Image Chat פשוטה. אתה צריך את סקריפט FastComments Image Chat, אלמנט תמונה או מיכל עם תמונה, ואובייקט קונפיגורציה עם ה-Tenant ID שלך.
+התחלת העבודה עם Image Chat היא פשוטה. אתם צריכים את סקריפט FastComments Image Chat, אלמנט תמונה או מיכל עם תמונה, ואובייקט תצורה עם מזהה ה-Tenant שלכם.
 
 ### התקנה
 
-הוסף את סקריפט Image Chat לדף שלך:
+הוסיפו את סקריפט Image Chat לדף שלכם:
 
 [inline-code-attrs-start title = 'טעינת סקריפט Image Chat'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-image-chat.min.js"></script>
 [inline-code-end]
 
-### יישום בסיסי
+### מימוש בסיסי
 
-להלן דוגמה מינימלית:
+הנה דוגמה מינימלית:
 
-[inline-code-attrs-start title = 'יישום בסיסי של Image Chat'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'מימוש בסיסי של Image Chat'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <!DOCTYPE html>
 <html>
@@ -27,13 +27,13 @@ Image Chat מתאים מאוד לקבלת משוב על עיצוב כאשר צו
     <title>My Image Gallery with Image Chat</title>
 </head>
 <body>
-    <!-- התמונה שלך -->
+    <!-- Your image -->
     <img id="my-image" src="https://fastcomments.com/images/image-chat-demo-1.jpg" alt="Pretty Trail" />
 
-    <!-- טען את סקריפט Image Chat -->
+    <!-- Load the Image Chat script -->
     <script src="https://cdn.fastcomments.com/js/embed-image-chat.min.js"></script>
 
-    <!-- אתחל את Image Chat -->
+    <!-- Initialize Image Chat -->
     <script>
         FastCommentsImageChat(document.getElementById('my-image'), {
             tenantId: 'demo'
@@ -43,24 +43,22 @@ Image Chat מתאים מאוד לקבלת משוב על עיצוב כאשר צו
 </html>
 [inline-code-end]
 
-Replace `'demo'` with your actual FastComments Tenant ID if it's not already, which you can find in your [FastComments dashboard](https://fastcomments.com/auth/my-account).
+החליפו את `'demo'` במזהה ה-Tenant האמיתי שלכם ב-FastComments אם זה עדיין לא המזהה שלכם, אותו תוכלו למצוא ב[לוח הבקרה של FastComments](https://fastcomments.com/auth/my-account).
 
 ### איך זה עובד
 
-ברגע שמאתחלים, משתמשים יכולים ללחוץ בכל מקום על התמונה. כשמתבצע קליק, מופיע סימן ריבועי חזותי באותו מיקום ונפתח חלון צ'אט. משתמשים אחרים יכולים לראות את כל הסימנים וללחוץ עליהם כדי לצפות או להשתתף בשיחות הללו. כל הדיונים מסונכרנים בזמן אמת בין כל המבקרים.
+לאחר האתחול, משתמשים יכולים ללחוץ בכל מקום על התמונה. כאשר מתרחשת לחיצה, סמן ריבועי ויזואלי מופיע באותו מיקום וחלון צ'אט נפתח. משתמשים אחרים יכולים לראות את כל הסמנים וללחוץ עליהם כדי לצפות או להשתתף באותם דיונים. כל הדיונים מסתנכרנים בזמן אמת בקרב כל המבקרים.
 
-הווידג'ט משתמש במיקום מבוסס-אחוזים, כך שהסימנים נשארים במיקום הנכון גם כשהתמונה משתנה גודל או נצפית על גדלים שונים של מסכים.
+הווידג'ט משתמש במיקום מבוסס אחוזים, כך שהסמנים נשארים במיקום הנכון גם כאשר התמונה משתנה בגודלה או נצפית בגדלי מסך שונים.
 
 ### הדגמה חיה
 
-אתה יכול לראות את Image Chat בפעולה בדף ההדגמה החיה שלנו: [live demo page](https://fastcomments.com/product/image-chat).
+תוכלו לראות את Image Chat בפעולה ב[דף ההדגמה החיה](https://fastcomments.com/product/image-chat) שלנו.
 
 ### הצעדים הבאים
 
-עכשיו כשיש לך את הבסיס עובד, תוכל להתאים את המראה וההתנהגות במדריך אפשרויות התצורה. עיין במדריך העיצוב הרספונסיבי כדי להבין איך מיקום מבוסס-אחוזים פועל. למד על עיצוב ותמיכה במצב כהה במדריך ההתאמה האישית. לאינטגרציות מתקדמות, חקור את מדריך ה-API.
+עכשיו כשיש לכם את היסודות עובדים, תוכלו להתאים אישית את המראה וההתנהגות במדריך אפשרויות תצורה. עיינו במדריך עיצוב רספונסיבי כדי להבין כיצד פועל מיקום מבוסס אחוזים. למדו על עיצוב ותמיכה במצב כהה במדריך ההתאמה האישית. לאינטגרציות מתקדמות, חקרו את ה-API Reference.
 
-### ספריות צד לקוח
+### ספריות Frontend
 
-כל ספריות הפרונטאנד של FastComments (react, vue, angular, וכו') כוללות את Image Chat.
-
----
+כל ספריות ה-FastComments ל-frontend (react, vue, angular וכו') כוללות את Image Chat.

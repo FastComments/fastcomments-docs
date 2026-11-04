@@ -1,21 +1,21 @@
-Identifies the credential in use: the tenant it belongs to and, for OAuth tokens, the user who authorized it.  
-אינטגרציות משתמשות בזה כדי לבדוק חיבור ולתייג אותו.
+מזהה את פרטי ההתחברות בשימוש: הטננט שאליו הם שייכים ו, עבור אסימוני OAuth, המשתמש שאישר אותם.
+אינטגרציות משתמשות בכך כדי לבדוק חיבור ולתת לו תווית.
 
-## Parameters
+## פרמטרים
 
 | שם | סוג | מיקום | נדרש | תיאור |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
+| tenantId | string | query | כן |  |
 
-## Response
+## תגובה
 
 מחזיר: [`GetMeResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetMeResponse.swift)
 
-## Example
+## דוגמה
 
-[inline-code-attrs-start title = 'דוגמת getMe'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל-getMe'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// הקוד הבא עדיין בגרסת בטא. לכל בעיה, אנא דווח דרך http://github.com/OpenAPITools/openapi-generator/issues/new
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -31,5 +31,3 @@ DefaultAPI.getMe(tenantId: tenantId) { (response, error) in
     }
 }
 [inline-code-end]
-
----

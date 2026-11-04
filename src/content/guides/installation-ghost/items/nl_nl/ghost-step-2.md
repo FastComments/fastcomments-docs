@@ -23,5 +23,3 @@ Een succesvolle uitvoer ziet er als volgt uit (je kunt waarschuwingen negeren):
 </div>
 
 Dit stelt de afhankelijkheden van het thema in voor de latere opdrachten die we zullen uitvoeren. Bovendien is de export afhankelijk van het feit dat de afhankelijkheden van het thema zijn geïnstalleerd; anders zal de herimport niet correct werken.
-
----

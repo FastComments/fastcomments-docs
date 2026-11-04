@@ -38,5 +38,3 @@ DefaultAPI.getFeedPosts(tenantId: tenantId, options: DefaultAPI.GetFeedPostsOpti
     }
 }
 [inline-code-end]
-
----

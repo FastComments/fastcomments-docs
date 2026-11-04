@@ -1,8 +1,8 @@
-This endpoint allows you to create a new user badge assignment.
+Ta vam omogoča ustvarjanje nove dodelitve značke uporabniku.
 
-Example Request:
+Primer zahteve:
 
-[inline-code-attrs-start title = 'Primer POST zahtevka'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer POST zahteve'; type = 'bash'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 curl -X POST "https://fastcomments.com/api/v1/user-badges?tenantId=demo&API_KEY=DEMO_API_SECRET" \
 -H "Content-Type: application/json" \
@@ -13,17 +13,17 @@ curl -X POST "https://fastcomments.com/api/v1/user-badges?tenantId=demo&API_KEY=
 }'
 [inline-code-end]
 
-The request body must contain the following parameters:
+Telo zahteve mora vsebovati naslednje parametre:
 
-- `userId` (required) - The ID of the user to assign the badge to
-- `badgeId` (required) - The ID of the badge to assign
-- `displayedOnComments` (optional) - Whether the badge should be displayed on the user's comments (defaults to true)
+- `userId` (obvezno) - ID uporabnika, ki mu dodelimo značko
+- `badgeId` (obvezno) - ID značke, ki jo dodelimo
+- `displayedOnComments` (neobvezno) - Ali naj se značka prikazuje na komentarjih uporabnika (privzeto true)
 
-Important Notes:
-1. The badge must exist and be enabled in your tenant's badge catalog
-2. You can only assign badges to users who belong to your tenant or have commented on your site
+Pomembne opombe:
+1. Značka mora obstajati in biti omogočena v katalogu značk vašega najemnika
+2. Značke lahko dodelite samo uporabnikom, ki pripadajo vašemu najemniku ali so komentirali na vašem spletnem mestu
 
-Example Response:
+Primer odgovora:
 
 [inline-code-attrs-start title = 'Odgovor'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -48,9 +48,9 @@ Example Response:
 }
 [inline-code-end]
 
-Possible Error Responses:
+Možni odgovori o napakah:
 
-[inline-code-attrs-start title = 'Napaka: Manjkajoči ID najemnika'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Napaka: Manjka ID najemnika'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",
@@ -59,7 +59,7 @@ Possible Error Responses:
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Napaka: Manjkajoči ID uporabnika'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Napaka: Manjka ID uporabnika'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",
@@ -68,7 +68,7 @@ Possible Error Responses:
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Napaka: Manjkajoči ID značke'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Napaka: Manjka ID značke'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",

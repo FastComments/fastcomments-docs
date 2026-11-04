@@ -13,5 +13,3 @@ Nu kan vi tjekke vores websted! Hvis du går til et blogindlæg, bør du se en k
     <div class="title">Ændringerne er live</div>
     <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-4-live.png" alt="Ændringerne er live" />
 </div>
-
----

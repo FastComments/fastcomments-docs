@@ -40,5 +40,3 @@ try {
     echo 'Exception when calling DefaultApi->deleteUserBadge: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

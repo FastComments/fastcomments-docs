@@ -1,21 +1,22 @@
-Past commenters on the page who are NOT currently online. Sorted by displayName.  
-Use this after exhausting /users/online to render a “Members” section.  
-Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName} index from afterName forward via $gt, no $skip cost.
+Прошлые комментаторы на странице, которые НЕ находятся сейчас в сети. Отсортированы по displayName.
+Используйте этот метод после исчерпания /users/online для отображения раздела «Участники».
+Курсорная пагинация по commenterName: сервер проходит по частичному индексу {tenantId, urlId, commenterName}
+от afterName вперёд через $gt, без затрат на $skip.
 
-## Parameters
+## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Расположение | Обязательный | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| urlId | string | query | Yes | Идентификатор URL страницы (очищенный на сервере). |
-| afterName | string | query | No | Курсор: передайте nextAfterName из предыдущего ответа. |
-| afterUserId | string | query | No | Разрешающий фактор курсора: передайте nextAfterUserId из предыдущего ответа. Требуется, когда afterName установлен, чтобы при совпадении имён записи не терялись. |
+| tenantId | string | path | Да |  |
+| urlId | string | query | Да | Идентификатор URL страницы (очищается на сервере). |
+| afterName | string | query | Нет | Курсор: передайте nextAfterName из предыдущего ответа. |
+| afterUserId | string | query | Нет | Тай-брейкер курсора: передайте nextAfterUserId из предыдущего ответа. Обязателен, когда задан afterName, чтобы совпадающие имена не приводили к потере записей. |
 
-## Response
+## Ответ
 
-Returns: `PageUsersOfflineResponse`
+Возвращает: `PageUsersOfflineResponse`
 
-## Example
+## Пример
 
 [inline-code-attrs-start title = 'Пример getOfflineUsers'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -23,9 +24,9 @@ import 'package:fastcomments_dart/api.dart';
 
 final api_instance = PublicApi();
 final tenantId = tenantId_example; // String | 
-final urlId = urlId_example; // String | Идентификатор URL страницы (очищенный на сервере).
+final urlId = urlId_example; // String | Идентификатор URL страницы (очищается на сервере).
 final afterName = afterName_example; // String | Курсор: передайте nextAfterName из предыдущего ответа.
-final afterUserId = afterUserId_example; // String | Разрешающий фактор курсора: передайте nextAfterUserId из предыдущего ответа. Требуется, когда afterName установлен, чтобы при совпадении имён записи не терялись.
+final afterUserId = afterUserId_example; // String | Тай-брейкер курсора: передайте nextAfterUserId из предыдущего ответа. Обязателен, когда задан afterName, чтобы совпадающие имена не приводили к потере записей.
 
 try {
     final result = api_instance.getOfflineUsers(tenantId, urlId, GetOfflineUsersOptions(afterName: afterName, afterUserId: afterUserId));

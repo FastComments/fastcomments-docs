@@ -1,21 +1,21 @@
-Past commenters on the page who are NOT currently online. Sorted by displayName.  
-Use this after exhausting /users/online to render a "Members" section.  
-Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName}  
-index from afterName forward via $gt, no $skip cost.
+Минали коментатори на страницата, които в момента НЕ са онлайн. Подредени по displayName.
+Използвайте това след изчерпване на /users/online, за да визуализирате секция "Members".
+Пагинация с курсор по commenterName: сървърът обхожда частичния {tenantId, urlId, commenterName}
+индекс от afterName напред чрез $gt, без разход за $skip.
 
-## Parameters
+## Параметри
 
-| Име | Тип | Задължително | Описание |
-|------|------|--------------|----------|
-| tenantId | string | Yes |  |
-| urlId | string | Yes |  |
-| options | GetOfflineUsersOptions | No |  |
+| Име | Тип | Задължителен | Описание |
+|------|------|----------|-------------|
+| tenantId | string | Да |  |
+| urlId | string | Да |  |
+| options | GetOfflineUsersOptions | Не |  |
 
-## Response
+## Отговор
 
-Returns: [`Option[PageUsersOfflineResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_page_users_offline_response.nim)
+Връща: [`Option[PageUsersOfflineResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_page_users_offline_response.nim)
 
-## Example
+## Пример
 
 [inline-code-attrs-start title = 'Пример за getOfflineUsers'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

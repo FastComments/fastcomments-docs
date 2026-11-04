@@ -1,3 +1,1 @@
----
 Giv dit fællesskab ægte profiler: avatarer, biografier, sociale links, optjente badges, direkte beskeder og en aktivitetsfeed, med privatlivskontroller gennemgående.
----

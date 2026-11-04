@@ -1,3 +1,1 @@
----
 Canlı yorumları bir Framer sitesine gömme bloğu ve Framer'a özgü snippet ile ekleyin, ayrıca widget'ın kesilmesini önleyen yükseklik ayarları.
----

@@ -1,4 +1,3 @@
----
 ## Parâmetros
 
 | Name | Type | Location | Required | Description |
@@ -31,5 +30,3 @@ DefaultAPI.getSSOUsers(tenantId: tenantId, skip: skip) { (response, error) in
     }
 }
 [inline-code-end]
-
----

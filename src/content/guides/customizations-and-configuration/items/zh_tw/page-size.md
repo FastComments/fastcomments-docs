@@ -1,4 +1,3 @@
----
 預設情況下，FastComments 的頁面大小為 `30`。此數值包括線程中的回覆。
 
 可以在 [Widget Configuration UI](https://fastcomments.com/auth/my-account/customize-widget) 中自訂頁面大小，範圍從 `10` 到 `200` 不等。
@@ -14,4 +13,3 @@
 頁面大小可以透過建立不同的自訂規則，以全域、每個網域或每個頁面的方式進行自訂。
 
 這將影響您使用我們平台顯示評論的所有客戶端、整合與框架。
----

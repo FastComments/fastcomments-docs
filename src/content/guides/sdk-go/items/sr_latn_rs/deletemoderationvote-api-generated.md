@@ -43,5 +43,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Odgovor iz `ModerationAPI.DeleteModerationVote`: %v\n", resp)
 }
 [inline-code-end]
-
----

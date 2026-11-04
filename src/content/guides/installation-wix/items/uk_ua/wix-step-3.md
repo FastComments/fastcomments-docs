@@ -1,15 +1,15 @@
-Цей приклад використовує власний код для сумісності з Wix. **Ви не зможете використовувати фрагменти коду FastComments з інших підручників.**
+У цьому прикладі використовується власний код для сумісності з Wix. **Ви не зможете використовувати фрагменти коду FastComments з інших посібників.**
 
-Open the form to add our custom HTML dialog by clicking `Enter Code` and selecting `HTML`:
+Відкрийте форму, щоб додати наш власний HTML-діалог, натиснувши `Enter Code` і вибравши `HTML`:
 
 <div class="screenshot white-bg">
-    <div class="title">Крок 3: Відкрийте HTML-діалог</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-3-open-form.png" alt="Крок 3: Відкрийте HTML-діалог" />
+    <div class="title">Крок 3: Відкриття HTML-діалогу</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-3-open-form.png" alt="Крок 3: Відкриття HTML-діалогу" />
 </div>
 
-Скопіюйте наведений HTML-фрагмент і вставте його в діалог, і натисніть Update:
+Скопіюйте наступний HTML-фрагмент і вставте його в діалог, а потім натисніть Update:
 
-[inline-code-attrs-start title = 'Фрагмент коду для коментарів Wix'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Фрагмент коду коментарів для Wix'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
 <div id="fastcomments-widget"></div>
@@ -34,15 +34,15 @@ Open the form to add our custom HTML dialog by clicking `Enter Code` and selecti
 [inline-code-end]
 
 <div class="screenshot white-bg">
-    <div class="title">Крок 3: Вставте та збережіть</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-3-paste-and-save.png" alt="Крок 3: Вставте та збережіть" />
+    <div class="title">Крок 3: Вставка та збереження</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-3-paste-and-save.png" alt="Крок 3: Вставка та збереження" />
 </div>
 
-Тепер ви повинні бачити дуже маленьку версію віджету коментарів:
+Тепер ви маєте побачити дуже маленьку версію віджета коментарів:
 
 <div class="screenshot white-bg">
     <div class="title">Крок 3: Результат</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-3-result.png" alt="Крок 3: Результат" />
 </div>
 
-Далі ми розташуємо та змінемо розмір цього елемента, щоб він відповідав нашій сторінці.
+Далі ми налаштуємо розташування та розмір, щоб він відповідав нашій сторінці.

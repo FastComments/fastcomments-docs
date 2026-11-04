@@ -5,5 +5,3 @@
 ## Репозиторијум
 
 [Погледајте на GitHub](https://github.com/FastComments/fastcomments-hugo)
-
----

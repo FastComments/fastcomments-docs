@@ -1,6 +1,6 @@
-Bulk user info for a tenant. Given userIds, return display info from User / SSOUser.  
-Used by the comment widget to enrich users that just appeared via a presence event.  
-No page context: privacy is enforced uniformly (private profiles are masked).
+テナントのユーザー情報の一括取得。userIds を受け取り、User / SSOUser から表示情報を返します。
+コメントウィジェットがプレゼンスイベント経由で新たに現れたユーザーを補完するために使用します。
+ページコンテキストはありません: プライバシーは一律に適用されます(非公開プロフィールはマスクされます)。
 
 ## パラメータ
 
@@ -9,9 +9,9 @@ No page context: privacy is enforced uniformly (private profiles are masked).
 | tenantId | string | はい |  |
 | ids | string | はい |  |
 
-## 応答
+## レスポンス
 
-返却: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersInfoResponse.ts)
+戻り値: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersInfoResponse.ts)
 
 ## 例
 
@@ -25,5 +25,3 @@ async function fetchUsersInfo(): Promise<void> {
 }
 fetchUsersInfo();
 [inline-code-end]
-
----

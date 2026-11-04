@@ -1,4 +1,3 @@
----
 Sproži agenta vsakič, ko je na strani, ki jo pokriva agentov [obseg](#scope-url-locale), objavljen nov komentar.
 
 ### Kontekst, ki ga agent prejme
@@ -19,4 +18,3 @@ Sproži agenta vsakič, ko je na strani, ki jo pokriva agentov [obseg](#scope-ur
 - **Moderacija** - preverite komentar glede na smernice skupnosti, označite kot neželeno pošto ali opozorite tiste, ki komentirajo prvič.
 - **Pozdrav ob prihodu** - čeprav je [Sprožilec: Prvi komentar novega uporabnika](#trigger-new-user-first-comment) običajno bolj primeren za pozdrave, saj se sproži enkrat na uporabnika.
 - **Povzemanje niti** - običajno v povezavi z [zamikom sprožilca](#trigger-deferred-delay), da se nit umiri, preden agent zažene.
----

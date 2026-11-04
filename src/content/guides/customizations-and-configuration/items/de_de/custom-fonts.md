@@ -19,5 +19,3 @@ Um die Schriftart zu überschreiben, empfehlen wir, Ihr CSS mit den Selektoren `
     font-family: 'Roboto', sans-serif;
 }
 [inline-code-end]
-
----

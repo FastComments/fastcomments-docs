@@ -1,4 +1,3 @@
----
 ### SSO Simples
 
 ```nim
@@ -33,4 +32,3 @@ let token = sso.createToken()
 
 echo "Secure SSO Token: ", token
 ```
----

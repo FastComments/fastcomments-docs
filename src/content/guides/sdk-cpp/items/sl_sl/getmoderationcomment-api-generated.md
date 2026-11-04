@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Ime | Tip | Obvezno | Opis |
@@ -30,5 +29,3 @@ api->getModerationComment(tenantId, commentId, options)
         }
     });
 [inline-code-end]
-
----

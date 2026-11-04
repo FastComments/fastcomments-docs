@@ -1,3 +1,1 @@
----
 Dodaj sekcję komentarzy do kursów ThriveCart Learn+ za pomocą ustawienia niestandardowego kodu, aby uczniowie mogli zadawać pytania w każdej lekcji.
----

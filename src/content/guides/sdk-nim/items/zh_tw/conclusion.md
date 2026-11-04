@@ -1,4 +1,3 @@
----
 ## 需要協助？
 
 如果您在使用 Nim SDK 時遇到任何問題或有任何疑問，請：
@@ -9,5 +8,3 @@
 ## 貢獻
 
 歡迎任何貢獻！請造訪 [GitHub 儲存庫](https://github.com/FastComments/fastcomments-nim) 以取得貢獻指南。
-
----

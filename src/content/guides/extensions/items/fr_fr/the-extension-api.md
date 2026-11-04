@@ -44,5 +44,3 @@ Nous pouvons attendre le chargement initial de la page et re-rendre manuellement
     }
 })();
 [inline-code-end]
-
----

@@ -1,8 +1,8 @@
-All API methods in this SDK return `pplx::task<std::shared_ptr<ResponseType>>` from the C++ REST SDK. This gives you flexibility in how you handle API responses.
+Bu SDK'daki tüm API metotları, C++ REST SDK'dan `pplx::task<std::shared_ptr<ResponseType>>` döndürür. Bu, API yanıtlarını işleme konusunda size esneklik sağlar.
 
-### `.get()` ile Eşzamanlı Çağrılar
+### `.get()` ile Senkron Çağrılar
 
-Use `.get()` to block the calling thread until the request completes and retrieve the result synchronously:
+Çağıran iş parçacığını (thread) istek tamamlanana kadar bloke etmek ve sonucu senkron olarak almak için `.get()` kullanın:
 
 ```cpp
 auto config = std::make_shared<org::openapitools::client::api::ApiConfiguration>();
@@ -13,15 +13,15 @@ config->setApiKey(utility::conversions::to_string_t("api_key"),
 auto apiClient = std::make_shared<org::openapitools::client::api::ApiClient>(config);
 org::openapitools::client::api::DefaultApi api(apiClient);
 
-// Required parameters are positional; optional ones go in the options struct
+// Zorunlu parametreler sıralıdır; isteğe bağlı olanlar options yapısına girer
 org::openapitools::client::api::GetCommentsOptions options;
 options.urlId = utility::conversions::to_string_t("your-url-id");
 
-// Call .get() to block and get the result synchronously
+// Bloke etmek ve sonucu senkron olarak almak için .get() çağırın
 auto response = api.getComments(
     utility::conversions::to_string_t("your-tenant-id"),
     options
-).get();  // Blocks until the HTTP request completes
+).get();  // HTTP isteği tamamlanana kadar bloke eder
 
 if (response && response->comments) {
     std::cout << "Found " << response->comments->size() << " comments" << std::endl;
@@ -30,7 +30,7 @@ if (response && response->comments) {
 
 ### `.then()` ile Asenkron Çağrılar
 
-Use `.then()` for non-blocking asynchronous execution with callbacks:
+Geri çağırmalarla (callback) bloke etmeyen asenkron yürütme için `.then()` kullanın:
 
 ```cpp
 auto config = std::make_shared<org::openapitools::client::api::ApiConfiguration>();
@@ -41,40 +41,40 @@ config->setApiKey(utility::conversions::to_string_t("api_key"),
 auto apiClient = std::make_shared<org::openapitools::client::api::ApiClient>(config);
 org::openapitools::client::api::DefaultApi api(apiClient);
 
-// Required parameters are positional; optional ones go in the options struct
+// Zorunlu parametreler sıralıdır; isteğe bağlı olanlar options yapısına girer
 org::openapitools::client::api::GetCommentsOptions options;
 options.urlId = utility::conversions::to_string_t("your-url-id");
 
-// Use .then() for asynchronous callback-based execution
+// Geri çağırma tabanlı asenkron yürütme için .then() kullanın
 api.getComments(
     utility::conversions::to_string_t("your-tenant-id"),
     options
 ).then([](std::shared_ptr<GetComments_200_response> response) {
-    // This runs asynchronously when the request completes
+    // Bu, istek tamamlandığında asenkron olarak çalışır
     if (response && response->comments) {
         std::cout << "Found " << response->comments->size() << " comments" << std::endl;
     }
 });
 
-// Execution continues immediately without blocking
+// Yürütme, bloke etmeden hemen devam eder
 std::cout << "Request sent, continuing..." << std::endl;
 ```
 
-### Eşzamanlı ve Asenkron Arasında Seçim Yapmak
+### Senkron ve Asenkron Arasında Seçim Yapma
 
-The choice depends on your runtime environment and application architecture:
+Seçim, çalışma zamanı ortamınıza ve uygulama mimarinize bağlıdır:
 
-**`.get()` (Synchronous blocking)**
-- Çağıran iş parçacığını HTTP isteği tamamlanana kadar engeller
-- Daha basit kod akışı, anlaşılması daha kolay
-- Ayrı çalışan iş parçacıkları, toplu işlem veya komut satırı araçları için uygundur
-- **Uygun değildir** olay döngüleri, GUI iş parçacıkları veya tek iş parçacıklı sunucular için
+**`.get()` (Senkron bloke etme)**
+- HTTP isteği tamamlanana kadar çağıran iş parçacığını bloke eder
+- Daha basit kod akışı, akıl yürütmesi daha kolay
+- Ayrılmış işçi (worker) iş parçacıkları, toplu işleme veya komut satırı araçları için uygundur
+- Olay döngüleri, GUI iş parçacıkları veya tek iş parçacıklı sunucular için **uygun değildir**
 
-**`.then()` (Asynchronous non-blocking)**
-- Hemen döner, geri çağrı istek tamamlandığında çalışır
-- Çağıran iş parçacığını engellemez
-- Olay odaklı mimariler, GUI uygulamaları veya tek iş parçacıklı olay döngüleri için gereklidir
-- Birden fazla işlemi zincirleme imkanı sağlar
+**`.then()` (Asenkron, bloke etmeyen)**
+- Hemen döner, geri çağırma istek tamamlandığında çalışır
+- Çağıran iş parçacığını bloke etmez
+- Olay güdümlü mimariler, GUI uygulamaları veya tek iş parçacıklı olay döngüleri için gereklidir
+- Birden fazla işlemin zincirlenmesine olanak tanır
 - Daha karmaşık kontrol akışı
 
-The SDK's test suite uses `.get()` exclusively, but this is appropriate for the test environment where blocking is acceptable.
+SDK'nın test paketi yalnızca `.get()` kullanır, ancak bu, bloke etmenin kabul edilebilir olduğu test ortamı için uygundur.

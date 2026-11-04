@@ -1,4 +1,3 @@
----
 Instalacija FastComments WordPress dodatka dizajnirana je da bude jednostavna i da ograniči bilo kakvo prekidanje dostupnosti komentiranja na vašoj stranici. Dodatak se neće prebaciti s WordPress dodatka dok sinkronizacija ne bude dovršena.
 
 Prvo, trebate postaviti očekivanja sa svojim moderatorima prema detaljima u donjem odjeljku `Moderation`. Obavijestite ih da će uskoro moderirati putem FastComments, a ne putem WordPress nadzorne ploče.
@@ -14,5 +13,3 @@ Zatim imate mogućnost odabrati imate li već FastComments račun. Slijedite nad
 Komentari se učitavaju u serijama te se sortiraju koristeći postojeće indekse u vašoj WordPress bazi podataka kako bi se ograničilo opterećenje na vašoj stranici.
 
 Kada je sinkronizacija dovršena, zadani sustav komentiranja WordPressa bit će zamijenjen s FastComments. Nadamo se da ćete voljeti našu platformu, ali ako ne, [kontaktirajte nas](https://fastcomments.com/auth/my-account/help).  
-
----

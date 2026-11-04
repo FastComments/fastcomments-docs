@@ -1,14 +1,14 @@
-To use FastComments SSR, the client may fetch HTML from the `https://fastcomments.com/ssr/comments` endpoint.
+FastComments SSR'yi kullanmak için istemci, `https://fastcomments.com/ssr/comments` uç noktasından HTML alabilir.
 
-This can be done a number of ways.
+Bu birkaç farklı şekilde yapılabilir.
 
-### With WordPress
+### WordPress ile
 
-SSR is enabled by default for users without JS enabled as a fallback in the WordPress plugin since version `3.10.2`.
+WordPress eklentisinde `3.10.2` sürümünden itibaren, JS'siz kullanıcılar için SSR varsayılan olarak yedek mekanizma (fallback) olarak etkindir.
 
-### In a Webpage
+### Bir Web Sayfasında
 
-With an already existing application, SSR can be added with the [following example](https://github.com/FastComments/fastcomments-code-examples/tree/master/sso/php/ssr), assuming the language used is PHP:
+Mevcut bir uygulama ile SSR, kullanılan dilin PHP olduğu varsayımıyla [aşağıdaki örnekle](https://github.com/FastComments/fastcomments-code-examples/tree/master/sso/php/ssr) eklenebilir:
 
 [inline-code-attrs-start title = 'PHP Tabanlı SSR Örneği'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -31,9 +31,9 @@ $fastcomments_url = "https://fastcomments.com/ssr/comments?tenantId=$tenantId&ur
 ></iframe>
 [inline-code-end]
 
-We can also only show the SSR UI when the user has JS disabled:
+Ayrıca SSR arayüzünü yalnızca kullanıcının JS'i devre dışı olduğunda gösterebiliriz:
 
-[inline-code-attrs-start title = 'PHP Tabanlı SSR Geri Dönüş Örneği'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'PHP Tabanlı SSR Yedek Örneği'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 $tenantId = rawurlencode("my-tenant-id");
@@ -56,29 +56,27 @@ $fastcomments_url = "https://fastcomments.com/ssr/comments?tenantId=$tenantId&ur
 </noscript>
 [inline-code-end]
 
-For an example using SSO, [see here](https://github.com/FastComments/fastcomments-code-examples/tree/master/sso/php/ssr).
+SSO kullanan bir örnek için [buraya bakın](https://github.com/FastComments/fastcomments-code-examples/tree/master/sso/php/ssr).
 
-### With Pre-Rendered Content
+### Ön İşlenmiş (Pre-Rendered) İçerikle
 
-Our blog is generated at build time, and provides a [good example of SSR with Handlebars](https://github.com/FastComments/fastcomments-blog/blob/master/src/templates/post.html#L51).
+Blogumuz derleme zamanında oluşturulur ve [Handlebars ile SSR'nin iyi bir örneğini](https://github.com/FastComments/fastcomments-blog/blob/master/src/templates/post.html#L51) sunar.
 
-### The Basic Parameters
+### Temel Parametreler
 
-The basic parameters that you need to pass are:
-- `tenantId` - This identifies you as a customer.
-- `urlId` - This identifies the page or article to load comments for, and defines where they are saved.
-- `url` - This is used for notifications and related features to link back to the comment thread.
+Geçmeniz gereken temel parametreler şunlardır:
+- `tenantId` - Sizi müşteri olarak tanımlar.
+- `urlId` - Yorumların yükleneceği sayfayı veya makaleyi tanımlar ve nereye kaydedileceklerini belirler.
+- `url` - Bildirimler ve ilgili özellikler tarafından yorum dizisine geri bağlantı vermek için kullanılır.
 
-### Custom Styling
+### Özel Stil
 
-The SSR version of the comment widget uses the same structure and rendering engine as the JavaScript one.
+Yorum bileşeninin SSR sürümü, JavaScript sürümüyle aynı yapıyı ve işleme motorunu kullanır.
 
-As such, all custom styling that works for the JavaScript commenting widget works for SSR. 
+Bu nedenle, JavaScript yorumlama bileşeni için çalışan tüm özel stiller SSR için de çalışır.
 
-### Notes
+### Notlar
 
-With SSR, there is no JavaScript to control the height of the rendered container. In browsers, a vertical scrollbar may show for long discussions.
+SSR ile birlikte, işlenen konteynerin yüksekliğini kontrol edecek bir JavaScript bulunmaz. Tarayıcılarda, uzun tartışmalar için dikey bir kaydırma çubuğu görünebilir.
 
-As such, you must tune this as desired.
-
----
+Bu nedenle, bunu istediğiniz gibi ayarlamanız gerekir.

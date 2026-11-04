@@ -1,4 +1,3 @@
----
 Далее мы добавим код виджета FastComments на ваш сайт. Этот код будет искать все формы с заголовком `FastComments Goes Here` и
 заменять их на FastComments.
 
@@ -59,5 +58,3 @@
     <div class="title">Вставьте и сохраните</div>
     <img class="screenshot-image" src="/images/installation-guides/ionos-step-2-paste-and-save.png" alt="Вставьте и сохраните" />
 </div>
-
----

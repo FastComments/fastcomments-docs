@@ -39,5 +39,3 @@
     }
 </style>
 [inline-code-end]
-
----

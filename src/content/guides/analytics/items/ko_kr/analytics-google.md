@@ -1,4 +1,3 @@
----
 FastComments를 구성하여 누군가 댓글 위젯과 상호작용할 때 Google 애널리틱스 4에 알림을 보낼 수 있습니다.
 
 사용자가 다음과 같은 작업을 했을 때를 추적할 수 있습니다:
@@ -36,5 +35,3 @@ FastComments를 구성하여 누군가 댓글 위젯과 상호작용할 때 Goog
 
 - 레이블: `Comment Posted`, 카테고리: `Engagement`, ID: `post_comment`
 - 레이블: `User Voted on a Comment`, 카테고리: `Engagement`, ID: `vote_comment`
-
----

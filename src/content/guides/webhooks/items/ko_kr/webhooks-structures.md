@@ -1,145 +1,146 @@
-The only structure sent via webhooks is the WebhookComment object, outlined in TypeScript below.
+웹훅을 통해 전송되는 유일한 구조는 WebhookComment 객체이며, 아래 TypeScript로 정리되어 있습니다.
 
 #### WebhookComment 객체 구조
 
-##### The "Create" Event Structure  
-"The create" event request body is a WebhookComment object.
+##### "Create" 이벤트 구조
+"create" 이벤트의 요청 본문은 WebhookComment 객체입니다.
 
-##### The "Update" Event Structure  
-"The update" event request body is a WebhookComment object.
+##### "Update" 이벤트 구조
+"update" 이벤트의 요청 본문은 WebhookComment 객체입니다.
 
-##### The "Delete" Event Structure  
-"The delete" event request body is a WebhookComment object.
+##### "Delete" 이벤트 구조
+"delete" 이벤트의 요청 본문은 WebhookComment 객체입니다.
 
-2023년 11월 14일 변경  
-Previously the "delete" event request body only contained the comment id. It now contains the full comment at the time of deletion.
+    2023년 11월 14일 변경 사항
+    이전에는 "delete" 이벤트의 요청 본문에 댓글 id만 포함되었습니다. 이제 삭제 시점의 전체 댓글이 포함됩니다.
 
-Every key is always present in the body. When the comment has no value for a field the body carries `null` (or `false` for booleans and `[]` for lists), so the shape of a delivery never varies from one comment to the next.
+
+모든 키는 본문에 항상 존재합니다. 댓글에 특정 필드의 값이 없으면 본문에는 `null`(불리언의 경우 `false`, 리스트의 경우 `[]`)이 담기므로, 전달되는 데이터의 형태는 댓글마다 달라지지 않습니다.
 
 [inline-code-attrs-start title = 'WebhookComment 객체'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface WebhookComment {
-    /** 댓글의 ID. **/
+    /** The id of the comment. **/
     id: string
-    /** 댓글 스레드를 식별하는 ID 또는 URL. 정규화됨. **/
+    /** The id or URL that identifies the comment thread. Normalized. **/
     urlId: string
-    /** 댓글이 남겨진 위치를 가리키는 URL. **/
+    /** The URL that points to where the comment was left. **/
     url: string | null
-    /** 댓글을 남긴 사용자의 ID. SSO인 경우 테넌트 ID가 앞에 붙음. **/
+    /** The user id that left the comment. If SSO, prefixed with tenant id. **/
     userId: string | null
-    /** 댓글을 남긴 사용자의 이메일. **/
+    /** The email of the user left the comment. **/
     commenterEmail: string | null
-    /** 댓글 위젯에 표시되는 사용자의 이름. SSO인 경우 displayName일 수 있음. **/
+    /** The name of the user that shows in the comment widget. With SSO, can be displayName. **/
     commenterName: string
-    /** 원시 댓글 텍스트. **/
+    /** Raw comment text. **/
     comment: string
-    /** 파싱된 후의 댓글 텍스트. **/
+    /** Comment text after parsing. **/
     commentHTML: string
-    /** 댓글 외부 ID. **/
+    /** Comment external id. **/
     externalId: string | null
-    /** 상위 댓글의 ID. **/
+    /** The id of the parent comment. **/
     parentId: string | null
-    /** 댓글이 작성된 UTC 날짜. **/
+    /** The UTC date when the comment was left. **/
     date: UTC_ISO_DateString
-    /** 투표의 총 카르마(업 - 다운). **/
+    /** Combined karma (up - down) of votes. **/
     votes: number
     votesUp: number
     votesDown: number
-    /** 사용자가 댓글을 달았을 때 로그인했거나, 댓글이 인증되었거나, 댓글이 남겨질 때 세션이 인증된 경우 true. **/
+    /** True if the user was logged in when they commented, or their verified the comment, or if they verified their session when the comment was left. **/
     verified: boolean
-    /** 댓글이 인증된 UTC 날짜. **/
+    /** The UTC date when the comment was verified. **/
     verifiedDate: UTC_ISO_DateString | null
-    /** 중재자가 댓글을 검토된 것으로 표시했는지 여부. **/
+    /** If a moderator marked the comment reviewed. **/
     reviewed: boolean
-    /** 아바타의 위치 또는 base64 인코딩. SSO와 함께 전달된 값이 base64인 경우에만 base64가 됩니다. **/
+    /** The location, or base64 encoding, of the avatar. Will only be base64 if that was the value passed with SSO. **/
     avatarSrc: string | null
-    /** 댓글이 수동 또는 자동으로 스팸으로 표시되었는지 여부. **/
+    /** Was the comment manually or automatically marked as spam? **/
     isSpam: boolean
-    /** 댓글이 자동으로 스팸으로 표시되었는지 여부. **/
+    /** Was the comment automatically marked as spam? **/
     aiDeterminedSpam: boolean
-    /** 댓글에 이미지가 있는지 여부. **/
+    /** Are there images in the comment? **/
     hasImages: boolean
-    /** "가장 관련성 높은" 정렬 방향에서 댓글이 위치한 페이지 번호. **/
+    /** The page number the comment is on for the "Most Relevant" sort direction. **/
     pageNumber: number | null
-    /** "오래된 순" 정렬 방향에서 댓글이 위치한 페이지 번호. **/
+    /** The page number the comment is on for the "Oldest First" sort direction. **/
     pageNumberOF: number | null
-    /** "최신 순" 정렬 방향에서 댓글이 위치한 페이지 번호. **/
+    /** The page number the comment is on for the "Newest First" sort direction. **/
     pageNumberNF: number | null
-    /** 댓글이 자동 또는 수동으로 승인되었는지 여부. **/
+    /** Was the comment approved automatically or manually? **/
     approved: boolean
-    /** 댓글이 작성될 때 사용자의 로케일 코드(형식: en_us). **/
+    /** The locale code (format: en_us) of the user when the comment was written. **/
     locale: string | null
-    /** 성공적으로 파싱된 댓글 내 @멘션. 없을 경우 비어 있음. **/
+    /** The @mentions written in the comment that were successfully parsed. Empty when there are none. **/
     mentions: CommentUserMention[]
-    /** 댓글이 속한 도메인. **/
+    /** The domain the comment is from. **/
     domain: string | null
-    /** 이 댓글과 연관된 중재 그룹 ID. 없을 경우 비어 있음. **/
+    /** The moderation group ids associated with this comment. Empty when there are none. **/
     moderationGroupIds: string[]
-    /** 이벤트가 생성될 당시 이 댓글 작성자 이름 옆에 표시된 배지. 없을 경우 비어 있음. **/
+    /** The badges shown next to the commenter's name on this comment, as of when the event was created. Empty when there are none. **/
     badges: CommentUserBadgeInfo[]
 }
 [inline-code-end]
 
-When users are tagged in a comment, the information is stored in a list called `mentions`. Each object in that list has the following structure.
+댓글에서 사용자가 태그되면 해당 정보는 `mentions`라는 리스트에 저장됩니다. 이 리스트의 각 객체는 다음과 같은 구조를 가집니다.
 
-[inline-code-attrs-start title = 'Webhook 멘션 객체'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = '웹훅 Mentions 객체'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentUserMention {
-    /** 사용자 ID. SSO 사용자의 경우 테넌트 ID가 앞에 붙음. **/
+    /** The user id. For SSO users, this will have your tenant id prefixed. **/
     id: string
-    /** 최종 @멘션 태그 텍스트, @ 기호 포함. **/
+    /** The final @mention tag text, including the @ symbol. **/
     tag: string
-    /** 원본 @멘션 태그 텍스트, @ 기호 포함. **/
+    /** The original @mention tag text, including the @ symbol. **/
     rawTag: string
-    /** 태그된 사용자의 유형. user = FastComments.com 계정. sso = SSOUser. **/
+    /** What type of user was tagged. user = FastComments.com account. sso = SSOUser. **/
     type: 'user'|'sso'
-    /** 사용자가 알림을 거부하더라도 이 값은 true로 설정됩니다. **/
+    /** If the user opts out of notifications, this will still be set to true. **/
     sent: boolean
 }
 [inline-code-end]
 
-Each entry in the `badges` list has the following structure. See the [Badges guide](/guide-badges.html) for the badge types.
+`badges` 리스트의 각 항목은 다음과 같은 구조를 가집니다. 배지 유형에 대해서는 [배지 가이드](/guide-badges.html)를 참조하세요.
 
-[inline-code-attrs-start title = 'Webhook 배지 객체'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = '웹훅 배지 객체'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentUserBadgeInfo {
-    /** 이 사용자에게 부여된 배지 ID. **/
+    /** The id of the badge awarded to this user. **/
     id: string
-    /** 배지 유형. **/
+    /** The badge type. **/
     type: number
-    /** 배지를 마우스오버할 때 표시되는 배지 설명. **/
+    /** The badge description, shown when hovering over the badge. **/
     description: string
-    /** 배지에 표시되는 텍스트. **/
+    /** The text shown on the badge. **/
     displayLabel?: string | null
-    /** 배지가 이미지를 사용하는 경우 표시되는 이미지. **/
+    /** The image shown for the badge, if it uses one. **/
     displaySrc?: string | null
     backgroundColor?: string | null
     borderColor?: string | null
     textColor?: string | null
-    /** 배지에 적용되는 추가 CSS 클래스. **/
+    /** An extra CSS class applied to the badge. **/
     cssClass?: string | null
 }
 [inline-code-end]
 
 #### HTTP 메서드
 
-You can configure the HTTP method for each webhook event type in the admin panel:
+관리자 패널에서 각 웹훅 이벤트 유형에 대한 HTTP 메서드를 설정할 수 있습니다:
 
-- **Create Event**: POST 또는 PUT (기본값: PUT)
-- **Update Event**: POST 또는 PUT (기본값: PUT)
-- **Delete Event**: DELETE, POST, 또는 PUT (기본값: DELETE)
+- **Create 이벤트**: POST 또는 PUT (기본값: PUT)
+- **Update 이벤트**: POST 또는 PUT (기본값: PUT)
+- **Delete 이벤트**: DELETE, POST 또는 PUT (기본값: DELETE)
 
-모든 요청에 ID가 포함되므로, Create와 Update 작업은 기본적으로 (PUT) 멱등합니다. 동일한 Create 또는 Update 요청을 반복해도 귀하의 시스템에 중복 객체가 생성되지 않아야 합니다.
+모든 요청에 ID가 포함되므로, Create 및 Update 작업은 기본적으로(PUT) 멱등성을 가집니다. 동일한 Create 또는 Update 요청을 반복해도 사용자 측에 중복 객체가 생성되지 않아야 합니다.
 
 #### 요청 헤더
 
-Each webhook request includes the following headers:
+각 웹훅 요청에는 다음 헤더가 포함됩니다:
 
 | 헤더 | 설명 |
 |--------|-------------|
 | `Content-Type` | `application/json` |
-| `token` | 귀하의 API 비밀키 |
+| `token` | 귀하의 API Secret |
 | `X-FastComments-Timestamp` | 요청이 서명된 Unix 타임스탬프(초) |
 | `X-FastComments-Signature` | HMAC-SHA256 서명 (`sha256=<hex>`) |
 
-See [Security & API Tokens](/guide-webhooks.html#webhooks-api-tokens) for information on verifying the HMAC signature.
+HMAC 서명 검증에 대한 정보는 [보안 및 API 토큰](/guide-webhooks.html#webhooks-api-tokens)을 참조하세요.

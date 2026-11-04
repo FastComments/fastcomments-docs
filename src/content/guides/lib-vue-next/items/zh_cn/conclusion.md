@@ -8,5 +8,3 @@
 ## 贡献
 
 欢迎贡献！请访问 [GitHub 仓库](https://github.com/FastComments/fastcomments-vue-next) 查看贡献指南。
-
----

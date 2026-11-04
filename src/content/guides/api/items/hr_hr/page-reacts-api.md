@@ -1,40 +1,40 @@
-Page Reacts omogućuje vašim korisnicima da lajkuju stranicu ili reagiraju na nju s vašim vlastitim skupom slika reakcija. The [Page Reacts widget](/guide-page-reacts.html) and the Floating Likes widget are built on these endpoints, and you can call them yourself to build your own like button.
+Page Reacts omogućuju vašim korisnicima da lajkaju stranicu ili na nju reagiraju vlastitim skupom slika reakcija. [Page Reacts widget](/guide-page-reacts.html) i Floating Likes widget izgrađeni su na ovim endpointima, a možete ih i sami pozivati kako biste izgradili vlastitu lajk tipku.
 
-Unlike the rest of this guide, the Page Reacts endpoints are public. They are called from your users' browsers, take no API key, and cost no API credits. Every react belongs to the user making the request, so a user can only add or remove their own.
+Za razliku od ostatka ovog vodiča, Page Reacts endpointi su javni. Pozivaju se iz preglednika vaših korisnika, ne zahtijevaju API ključ i ne koštaju API kredita. Svaka reakcija pripada korisniku koji upućuje zahtjev, pa korisnik može dodati ili ukloniti samo svoju.
 
-There are two sets of endpoints:
+Postoje dva skupa endpointa:
 
-- `/page-reacts/v1/likes/:tenantId` – jedan „like“ po korisniku po stranici. Use these for a like button.
-- `/page-reacts/v2/:tenantId` – multiple reactions per page, each identified by a short `id` you choose (for example `heart` or `laugh`).
+- `/page-reacts/v1/likes/:tenantId` - jedan "lajk" po korisniku po stranici. Koristite ovo za lajk tipku.
+- `/page-reacts/v2/:tenantId` - više reakcija po stranici, svaka identificirana kratkim `id`-om koji sami odaberete (na primjer `heart` ili `laugh`).
 
-Both are also available in our SDKs as part of the `PublicApi`, for example `getV1PageLikes`, `createV1PageReact`, and `deleteV1PageReact` in the [JavaScript SDK](/guide-sdk-javascript.html).
+Oboje su dostupni i u našim SDK-ovima kao dio `PublicApi`, na primjer `getV1PageLikes`, `createV1PageReact` i `deleteV1PageReact` u [JavaScript SDK-u](/guide-sdk-javascript.html).
 
-### Showing Who Reacted
+### Prikaz tko je reagirao
 
-Pass `includeUserInfo=public` to the `GET` endpoints to also get the users who liked or reacted, with their usernames and avatars, most recent first. Users who have made their profile activity private are left out, as are anonymous users. Up to 100 reacts are returned.
+Proslijedite `includeUserInfo=public` na `GET` endpointe kako biste dobili i korisnike koji su lajkali ili reagirali, s njihovim korisničkim imenima i avatarima, najnoviji prvi. Korisnici koji su svoju aktivnost profila učinili privatnom su isključeni, kao i anonimni korisnici. Vraća se do 100 reakcija.
 
-SSO users are created with private profile activity unless your SSO payload sets `isProfileActivityPrivate` to `false`, so set it for the users you want to appear in these lists.
+SSO korisnici se stvaraju s privatnom aktivnošću profila osim ako vaš SSO payload ne postavi `isProfileActivityPrivate` na `false`, pa to postavite za korisnike koje želite vidjeti u ovim listama.
 
-On pages that require SSO, only SSO users who can view the page can list who reacted. Others get a `403` with the code `sso-required` or `page-forbidden`.
+Na stranicama koje zahtijevaju SSO, samo SSO korisnici koji mogu vidjeti stranicu mogu prikazati tko je reagirao. Ostali dobivaju `403` s kodom `sso-required` ili `page-forbidden`.
 
-From your server, [`GET /api/v1/pages/likes`](/guide-api.html#pages-likes-get) and [`GET /api/v1/pages/reacts`](/guide-api.html#pages-reacts-get) return the same lists with an API key, and also accept `includeUserInfo=include-private` to include users with private profiles.
+Sa svog poslužitelja, [`GET /api/v1/pages/likes`](/guide-api.html#pages-likes-get) i [`GET /api/v1/pages/reacts`](/guide-api.html#pages-reacts-get) vraćaju iste liste s API ključem, a također prihvaćaju `includeUserInfo=include-private` kako bi uključili korisnike s privatnim profilima.
 
-### Identifying the User
+### Identifikacija korisnika
 
-Reacts are tied to the user making the request:
+Reakcije su vezane uz korisnika koji upućuje zahtjev:
 
-- **SSO users:** pass the `sso` query parameter, set to the URI encoded JSON of the same SSO object you give the comment widget. See [SSO](/guide-customizations-and-configuration.html#sso).
-- **Anonymous users:** when there is no `sso` parameter and no FastComments login, the server assigns the browser an anonymous id stored in the FastComments session cookie. Send requests with `credentials: 'include'` so the cookie is kept between requests. Browsers that block third-party cookies will not keep the anonymous id, so use SSO when each user must be recognized reliably.
+- **SSO korisnici:** proslijedite `sso` query parametar, postavljen na URI kodirani JSON istog SSO objekta koji dajete comment widgetu. Pogledajte [SSO](/guide-customizations-and-configuration.html#sso).
+- **Anonimni korisnici:** kada nema `sso` parametra ni FastComments prijave, poslužitelj pregledniku dodjeljuje anonimni id pohranjen u FastComments session cookieju. Šaljite zahtjeve s `credentials: 'include'` kako bi cookie ostao između zahtjeva. Preglednici koji blokiraju third-party cookieje neće zadržati anonimni id, pa koristite SSO kada svaki korisnik mora pouzdano biti prepoznat.
 
-### The urlId
+### urlId
 
-`urlId` identifies the page, the same as it does for comments. Use the same `urlId` you give the comment widget so likes and comments are counted on the same page. Remember to URI encode it.
+`urlId` identificira stranicu, isto kao i za komentare. Koristite isti `urlId` koji dajete comment widgetu kako bi se lajkovi i komentari brojali na istoj stranici. Ne zaboravite ga URI kodirati.
 
-[inline-code-attrs-start title = 'Primjer gumba za lajk'; type = 'javascript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer lajk tipke'; type = 'javascript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 const tenantId = 'demo';
 const urlId = 'https://example.com/my-article';
-// Optional, for SSO users. The same object you give the comment widget's "sso" option.
+// Opcionalno, za SSO korisnike. Isti objekt koji dajete "sso" opciji comment widgeta.
 const sso = null;
 
 function likesUrl() {
@@ -58,5 +58,3 @@ async function unlike() {
     await fetch(likesUrl(), {method: 'DELETE', credentials: 'include'});
 }
 [inline-code-end]
-
----

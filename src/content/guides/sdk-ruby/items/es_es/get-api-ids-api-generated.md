@@ -42,5 +42,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling ModerationApi->get_api_ids: #{e}"
 end
 [inline-code-end]
-
----

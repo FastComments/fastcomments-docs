@@ -25,5 +25,3 @@ let (respOpt, httpResp) = client.deleteModerationVote(
 if respOpt.isSome:
   let resp = respOpt.get()
 [inline-code-end]
-
----

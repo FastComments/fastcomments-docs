@@ -1,17 +1,14 @@
----
-You may get an authorization error, like the following:
+Μπορεί να λάβετε ένα σφάλμα εξουσιοδότησης, όπως το παρακάτω:
 
 <div class="screenshot white-bg">
-    <div class="title">Λείπει Διαμόρφωση Τομέα</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-webflow-step-5.png" alt="Domain Configuration Missing" />
+    <div class="title">Λείπει η Διαμόρφωση Τομέα</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-webflow-step-5.png" alt="Λείπει η Διαμόρφωση Τομέα" />
 </div>
 
-This is because FastComments doesn't know it's supposed to allow your account to be used on this domain.
+Αυτό συμβαίνει επειδή το FastComments δεν γνωρίζει ότι πρέπει να επιτρέπει τη χρήση του λογαριασμού σας σε αυτόν τον τομέα.
 
-In this case, the fix is simple. You just have to add your Canvas instance domain to your FastComments account.
+Σε αυτή την περίπτωση, η λύση είναι απλή. Απλώς πρέπει να προσθέσετε τον τομέα της παρουσίας Canvas στον λογαριασμό σας στο FastComments.
 
-<a href="https://fastcomments.com/auth/my-account/configure-domains" target="_blank">Μεταβείτε εδώ για να προσθέσετε τον ιστότοπό σας στο λογαριασμό σας.</a>
+<a href="https://fastcomments.com/auth/my-account/configure-domains" target="_blank">Πηγαίνετε εδώ για να προσθέσετε τον ιστότοπό σας στον λογαριασμό σας.</a>
 
-Add your Canvas domain (e.g. `yourschool.instructure.com`) and comments should load correctly.
-
----
+Προσθέστε τον τομέα Canvas σας (π.χ. `yourschool.instructure.com`) και τα σχόλια θα πρέπει να φορτώσουν σωστά.

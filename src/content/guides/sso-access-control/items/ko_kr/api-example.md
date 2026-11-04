@@ -110,5 +110,3 @@ curl --request POST \
 `accessibleByGroupIds`를 null로 설정하면 이 `Page`는 액세스 제어로 관리되지 않으며, 두 사용자 모두 접근할 수 있습니다.
 
 이로써 액세스 제어에 대한 API 워크스루를 완료했습니다.
-
----

@@ -1,4 +1,3 @@
----
 זהו! כעת נוספו תגובות חיות לאתר GoHighLevel שלך.
 
 <div class="screenshot white-bg">
@@ -7,5 +6,3 @@
 </div>
 
 אם נתקלת בשגיאת 'permission denied', או ברצונך להתאים אישית את FastComments, המשך לקרוא.
-
----

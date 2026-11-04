@@ -1,54 +1,54 @@
-Dies ist der Fünf-Minuten-Weg von „wir haben AI Agents“ zu „ein Agent reagiert auf Live-Traffic, gesteuert durch Genehmigungen“. Wenn Sie die ausführliche Variante möchten, verlinkt jeder Schritt auf die Seite, die ihn im Detail behandelt.
+Dies ist der Fünf-Minuten-Weg von „wir haben AI Agents" zu „ein Agent reagiert auf echten Traffic, abgesichert durch Freigaben". Wenn Sie die ausführliche Variante möchten, verlinkt jeder Schritt auf die Seite, die ihn im Detail behandelt.
 
-### 1. Open the AI Agents page
+### 1. Öffnen Sie die AI Agents-Seite
 
-Gehen Sie in Ihrem Konto zu [AI Agents](https://fastcomments.com/auth/my-account/ai-agents). Beim ersten Besuch sehen Sie entweder:
+Gehen Sie in Ihrem Konto zu [AI Agents](https://fastcomments.com/auth/my-account/ai-agents). Wenn Sie diese Seite zum ersten Mal aufrufen, sehen Sie entweder:
 
-- Einen Leerzustand mit einem **Browse templates**- und einem **Start from scratch**-Button (Sie haben Agents, die Sie erstellen können), oder
-- Eine Upsell-Seite, falls Ihr Plan keine Agents enthält – siehe [Plans and Eligibility](#plans-and-eligibility).
+- Einen leeren Zustand mit den Schaltflächen **Browse templates** und **Start from scratch** (es stehen Agents zum Erstellen zur Verfügung), oder
+- Eine Upsell-Seite, wenn Ihr Plan keine Agents enthält - siehe [Plans and Eligibility](#plans-and-eligibility).
 
-### 2. Pick a starter template
+### 2. Wählen Sie eine Starter-Vorlage
 
-Klicken Sie auf **Browse templates**. Wählen Sie eines der folgenden:
+Klicken Sie auf **Browse templates**. Wählen Sie eine der folgenden:
 
-- [Moderator](#template-moderator) - überprüft markierte oder neue Kommentare, warnt Ersttäter und eskaliert zu einem Bann erst nach einer Warnung.
-- [Welcome Greeter](#template-welcome-greeter) - antwortet auf Kommentatoren, die zum ersten Mal kommentieren.
-- [Top Comment Pinner](#template-top-comment-pinner) - pinnt gehaltvolle Kommentare, sobald sie eine Abstimmungsschwelle überschreiten.
+- [Moderator](#template-moderator) - prüft gemeldete oder neue Kommentare, warnt Erstkommentierer und sperrt erst nach einer Warnung.
+- [Welcome Greeter](#template-welcome-greeter) - antwortet Erstkommentierern.
+- [Top Comment Pinner](#template-top-comment-pinner) - pinnt inhaltlich wertvolle Kommentare, sobald sie eine Stimmschwelle überschreiten.
 - [Thread Summarizer](#template-thread-summarizer) - veröffentlicht eine neutrale Zusammenfassung bei langen Threads.
 
-Jede Vorlage öffnet ein vorausgefülltes Bearbeitungsformular mit bereits ausgewähltem **Status: Trockenlauf**.
+Jede Vorlage landet auf einem vorausgefüllten Bearbeitungsformular, bei dem **Status: Dry Run** bereits ausgewählt ist.
 
-### 3. Review and save
+### 3. Prüfen und speichern
 
-Im Bearbeitungsformular sollten Sie mindestens folgende Felder ausfüllen:
+Nehmen Sie im Bearbeitungsformular mindestens Folgendes vor:
 
-- **Internal name.** Ein kurzer Bezeichner, der in Administrations-Dashboards verwendet wird.
+- **Internal name.** Ein kurzer Bezeichner, der in Admin-Dashboards verwendet wird.
 - **Display name.** Was öffentlich erscheint, wenn der Agent einen Kommentar postet.
-- **Initial prompt.** Bearbeiten Sie das Prompt der Vorlage, damit es zu Ihrer Stimme und Ihren spezifischen Regeln passt.
-- **Approvals.** Markieren Sie die Aktionen, die eine menschliche Überprüfung erfordern sollen, bevor sie ausgeführt werden. Wir empfehlen mindestens `ban_user` für jeden moderationsähnlichen Agenten. Siehe [Approval Workflow](#approval-workflow).
+- **Initial prompt.** Passen Sie den Prompt der Vorlage an Ihre Tonalität und Ihre konkreten Regeln an.
+- **Approvals.** Setzen Sie Häkchen bei den Aktionen, die vor ihrer Ausführung eine menschliche Prüfung erfordern sollen. Wir empfehlen mindestens `ban_user` für jeden moderationsähnlichen Agent. Siehe [Approval Workflow](#approval-workflow).
 
 Klicken Sie auf **Save agent**.
 
-### 4. Watch it in dry-run
+### 4. Beobachten Sie den Agent im Dry-Run
 
-Der Agent ist jetzt live im **Trockenlauf**. Er erhält seine Auslöser, ruft das Modell auf und protokolliert Aktionen auf der Seite [Run History](#run-history) – mit dem **Dry Run**-Abzeichen in jeder Zeile – trifft jedoch keine echten Maßnahmen. Rufen Sie einige der Ausführungsdetails auf (siehe [Run Detail View](#run-detail-view)) und sehen Sie sich an:
+Der Agent ist jetzt im **Dry Run** aktiv. Er empfängt seine Trigger, ruft das Modell auf und zeichnet Aktionen auf der [Run History](#run-history)-Seite auf - jeweils mit dem **Dry Run**-Badge - führt aber keine echten Aktionen aus. Sehen Sie sich einige der Ausführungsdetails an (siehe [Run Detail View](#run-detail-view)) und beachten Sie:
 
 - Die Aktionen, die der Agent ausgewählt hat.
-- Die Begründung und das Vertrauen zu jeder Aktion.
-- Die vollständige LLM-Transkription.
+- Die Begründung und Konfidenz jeder Aktion.
+- Das vollständige LLM-Transkript.
 
-Wenn der Agent Entscheidungen trifft, denen Sie nicht zustimmen, bearbeiten Sie das Initial Prompt oder markieren Sie mehr Approvals.
+Wenn der Agent Entscheidungen trifft, mit denen Sie nicht einverstanden sind, passen Sie den Initial-Prompt an oder setzen Sie Häkchen bei weiteren Approvals.
 
-### 5. Run a test against past comments
+### 5. Führen Sie einen Test gegen frühere Kommentare durch
 
-Klicken Sie auf der Agents-Übersichtsseite in der Zeile des Agents auf **Test run**. Das Formular hat ein einzelnes numerisches Eingabefeld **Days** (1 bis 90). Stichprobengröße und das harte Limit für ausgewertete Kommentare werden informativ angezeigt – sie werden serverseitig berechnet und nicht vom Benutzer festgelegt. Die Wiedergabe läuft gegen historische Kommentare, ohne echte Aktionen vorzunehmen, und berichtet, was der Agent **getan hätte** im Vergleich zu dem, was tatsächlich passiert ist (wurde der Kommentar später genehmigt, als Spam markiert, gelöscht usw.). Siehe [Test Runs (Replays)](#test-runs-replays).
+Klicken Sie auf der Agents-Listenseite in der Zeile des Agents auf **Test run**. Das Formular enthält ein einzelnes numerisches Feld **Days** (1 bis 90). Die Stichprobengröße und das harte Limit der ausgewerteten Kommentare werden nur informativ angezeigt - sie werden serverseitig berechnet, nicht vom Nutzer festgelegt. Die Wiederholung läuft gegen historische Kommentare, ohne echte Aktionen auszuführen, und berichtet, was der Agent **getan hätte** im Vergleich zu dem, was tatsächlich geschah (wurde der Kommentar später freigegeben, als Spam markiert, gelöscht usw.). Siehe [Test Runs (Replays)](#test-runs-replays).
 
-### 6. Flip to Enabled
+### 6. Auf Enabled umschalten
 
-Wenn Sie mit dem Trockenlauf und den Wiedergabe-Ergebnissen zufrieden sind, bearbeiten Sie den Agenten und ändern Sie den **Status** auf **Enabled**. Ab hier erfolgen echte Aktionen. Die Run History-Seite zeigt nun Live-Ausführungen ohne das Trockenlauf-Abzeichen, und jede Aktion, die Sie zur Genehmigung markiert haben, erscheint im [approvals inbox](#approval-workflow).
+Wenn Sie mit dem Dry-Run- und Replay-Ergebnis zufrieden sind, bearbeiten Sie den Agent und ändern Sie den **Status** auf **Enabled**. Ab jetzt greifen echte Aktionen. Die Run-History-Seite zeigt nun Live-Läufe ohne das Dry-Run-Badge, und jede Aktion, die Sie zur Freigabe markiert haben, erscheint im [Approvals-Posteingang](#approval-workflow).
 
-### What's next
+### Wie geht es weiter
 
-- Legen Sie [Budgets](#budgets-overview) und [Budget Alerts](#budget-alerts) fest.
-- Konfigurieren Sie [Webhooks](#webhooks-overview), wenn externe Systeme auf Agenten-Ereignisse reagieren sollen.
-- Fügen Sie [Community Guidelines](#community-guidelines) hinzu, um die Entscheidungen des Agents mit Ihrer schriftlichen Richtlinie in Einklang zu bringen.
+- Richten Sie [Budgets](#budgets-overview) und [Budget Alerts](#budget-alerts) ein.
+- Konfigurieren Sie [Webhooks](#webhooks-overview), wenn externe Systeme auf Agent-Ereignisse reagieren sollen.
+- Fügen Sie [Community Guidelines](#community-guidelines) hinzu, damit die Entscheidungen des Agents mit Ihrer schriftlichen Richtlinie übereinstimmen.

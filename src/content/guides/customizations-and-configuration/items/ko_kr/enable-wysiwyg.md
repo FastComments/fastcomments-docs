@@ -1,4 +1,3 @@
----
 [related-parameter-start name = 'enableWYSIWYG'; type = 'boolean'; related-parameter-end]
 
 기본적으로 FastComments의 서식 기능은 텍스트 주변에 `<b></b>`와 같은 보이는 앵커 태그를 추가하여 수행됩니다. 툴바를 클릭
@@ -11,5 +10,3 @@ WYSIWYG(what you see is what you get) 편집기라고 합니다. 이 편집기�
 코드 없이도 이 작업을 수행할 수 있습니다. 위젯 커스터마이징 페이지에서 "Enable Advanced Formatting" 옵션을 확인하십시오.
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-wysiwyg']; selector = '.enable-search-label'; alt='WYSIWYG 편집기를 켜기 위해 Enable Advanced Formatting 체크박스가 선택된 위젯 커스터마이징 페이지'; title='WYSIWYG 활성화' app-screenshot-end]
-
----

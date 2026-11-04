@@ -1,4 +1,3 @@
----
 ## פרמטרים
 
 | Name | Type | Location | Required | Description |
@@ -45,5 +44,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.CreateFeedPost`: %v\n", resp)
 }
 [inline-code-end]
-
----

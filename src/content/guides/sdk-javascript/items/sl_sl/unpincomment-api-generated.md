@@ -25,5 +25,3 @@ Vrne: [`ChangeCommentPinStatusResponse`](https://github.com/FastComments/fastcom
   const resultWithoutSso: ChangeCommentPinStatusResponse = await unPinComment(tenantId, commentId, broadcastId);
 })();
 [inline-code-end]
-
----

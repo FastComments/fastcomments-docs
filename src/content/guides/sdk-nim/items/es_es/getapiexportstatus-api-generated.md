@@ -1,4 +1,3 @@
----
 ## Parámetros
 
 | Nombre | Tipo | Obligatorio | Descripción |
@@ -22,5 +21,3 @@ if exportStatusOpt.isSome:
   let exportStatus = exportStatusOpt.get()
   # usar exportStatus según sea necesario
 [inline-code-end]
-
----

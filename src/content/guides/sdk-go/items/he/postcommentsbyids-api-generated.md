@@ -38,5 +38,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "תגובה מ-`ModerationAPI.PostCommentsByIds`: %v\n", resp)
 }
 [inline-code-end]
-
----

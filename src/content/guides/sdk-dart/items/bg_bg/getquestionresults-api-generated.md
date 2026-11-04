@@ -40,5 +40,3 @@ try {
     print('Exception when calling DefaultApi->getQuestionResults: $e\n');
 }
 [inline-code-end]
-
----

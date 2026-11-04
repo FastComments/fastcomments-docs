@@ -1,4 +1,3 @@
----
 | Component | Description |
 | --- | --- |
 | `FastComments` | Виджет комментариев с ответами, голосованием и другими возможностями |
@@ -16,4 +15,3 @@
 import { FastComments, FastCommentsLiveChat } from 'fastcomments-astro';
 ---
 ```
----

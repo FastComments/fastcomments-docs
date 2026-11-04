@@ -61,4 +61,3 @@ response = public_api.get_comments_public(
 
 puts "Status: #{response}"
 ```
----

@@ -32,5 +32,3 @@ ModerationAPI.putReopenThread(tenantId: tenantId, urlId: urlId, sso: sso) { (res
     }
 }
 [inline-code-end]
-
----

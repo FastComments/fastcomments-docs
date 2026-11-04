@@ -50,5 +50,3 @@ PublicAPI.getUserNotifications(tenantId: tenantId, options: PublicAPI.GetUserNot
     }
 }
 [inline-code-end]
-
----

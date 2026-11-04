@@ -1,4 +1,3 @@
----
 Попередні коментатори на сторінці, які **НЕ** перебувають онлайн. Відсортовано за `displayName`.  
 Використовуйте це після використання `/users/online`, щоб відобразити розділ «Members».  
 Пагінація курсором за `commenterName`: сервер проходить частковий `{tenantId, urlId, commenterName}` індекс після `afterName` вперед за допомогою `$gt`, без витрат `$skip`.
@@ -28,5 +27,3 @@ if offlineResp.isSome:
   let offline = offlineResp.get()
   echo offline)
 [inline-code-end]
-
----

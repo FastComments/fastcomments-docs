@@ -1,4 +1,3 @@
----
 啟用投票功能後，**Who Can Create Polls** 設定會控制誰能在評論工具列中看到投票按鈕：
 
 - **Admins/Moderators Only**（預設）：只有您網站的管理員和版主可以在評論中附加投票。

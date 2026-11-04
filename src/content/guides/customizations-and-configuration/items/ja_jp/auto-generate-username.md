@@ -1,18 +1,17 @@
-When users comment or vote, and they are not logged in, they will be asked to provide their email and username.
+ユーザーがログインせずにコメントや投票を行う場合、メールアドレスとユーザー名の入力を求められます。
 
-For some sites, asking a visitor to invent a unique username is a hurdle, particularly on mobile. FastComments can
-generate a neutral username for each new visitor and prefill it in the username field, like `BraveOtter4172`.
+サイトによっては、訪問者に独自のユーザー名を考案してもらうことが、特にモバイルではハードルになることがあります。FastCommentsは、新しい訪問者ごとに中立的なユーザー名を生成し、`BraveOtter4172` のようにユーザー名フィールドに事前入力することができます。
 
-The visitor can leave it as‑is, or replace it with a name of their choosing.
+訪問者はそのまま使用することも、任意の名前に変更することもできます。
 
-This can be enabled from the Customization UI, under the setting called `Generate Usernames Automatically`:
+この機能は、カスタマイズUIの `Generate Usernames Automatically` という設定から有効にできます:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.auto-generate-username'; alt='ウィジェットカスタマイズ UI の「ユーザー名を自動生成」オプション'; title='ユーザー名を自動生成' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.auto-generate-username'; alt='ウィジェットカスタマイズUIの Generate Usernames Automatically オプション'; title='Generate Usernames Automatically' app-screenshot-end]
 
-#### 動作の概要
+#### 動作の仕組み
 
-- Each generated name is unique. It is checked against existing accounts and reserved for that visitor's browser session, so two visitors are not offered the same name.
-- The name is only generated for visitors who do not have one yet. Logged in users, SSO users, and visitors who have already commented keep their existing name.
-- It works with or without [anonymous commenting](/guide-customizations-and-configuration.html#allow-anon). With anonymous commenting off, the visitor still enters their email, but no longer has to think of a username.
-- A returning visitor who enters an email they have used before is matched to their existing account, and keeps the name on that account.
-- If a [Default Username](/guide-customizations-and-configuration.html#default-username) is also set, the generated name takes precedence.
+- 生成される各名前は一意です。既存のアカウントと照合され、その訪問者のブラウザセッション用に予約されるため、2人の訪問者に同じ名前が提案されることはありません。
+- 名前は、まだ名前を持っていない訪問者にのみ生成されます。ログインユーザー、SSOユーザー、およびすでにコメントしたことのある訪問者は、既存の名前を保持します。
+- [匿名コメント](/guide-customizations-and-configuration.html#allow-anon)の有無にかかわらず機能します。匿名コメントがオフの場合でも、訪問者はメールアドレスを入力しますが、ユーザー名を考える必要はなくなります。
+- 以前使用したことのあるメールアドレスを入力した再訪問者は、既存のアカウントと照合され、そのアカウントの名前を保持します。
+- [デフォルトユーザー名](/guide-customizations-and-configuration.html#default-username)も設定されている場合、生成された名前が優先されます。

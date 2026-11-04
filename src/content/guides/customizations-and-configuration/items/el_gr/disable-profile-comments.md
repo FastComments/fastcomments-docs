@@ -9,5 +9,3 @@
 Αυτό μπορεί επίσης να γίνει χωρίς κώδικα. Στη σελίδα προσαρμογής widget, δείτε την ενότητα "Disable Profile Comments".
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-profile-comments']; selector = '.disable-profile-comments'; alt='Σελίδα προσαρμογής widget με το πλαίσιο ελέγχου Disable Profile Comments επιλεγμένο για απόκρυψη της καρτέλας σχολίων προφίλ'; title='Απενεργοποίηση Σχολίων Προφίλ' app-screenshot-end]
-
----

@@ -41,5 +41,3 @@ Teraz możemy edytować nasz nowy motyw, aby dodać FastComments.
     <div class="title">Edytuj pliki motywu</div>
     <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-1-edit-theme-files.png" alt="Edit Theme Files" />
 </div>
-
----

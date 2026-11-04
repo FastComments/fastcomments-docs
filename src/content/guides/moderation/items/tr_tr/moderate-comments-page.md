@@ -1,13 +1,11 @@
-The place where most moderation takes place is the Comment Moderation page. For example, here's a screenshot of our current demo account:
+Moderasyonun çoğunun gerçekleştiği yer Yorum Moderasyon sayfasıdır. Örneğin, mevcut demo hesabımızın bir ekran görüntüsü:
 
-[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=3&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = 'body'; alt='Demo hesabı için tam Yorum Moderasyonu sayfası, filtreleri, aramayı ve sayfa başına üç yorum gösteriyor'; title='Yorum Moderasyonu Sayfası' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=3&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = 'body'; alt='Demo hesabı için tam Yorum Moderasyon sayfası, filtreleri, aramayı ve sayfa başına üç yorumu gösteriyor'; title='Yorum Moderasyon Sayfası' app-screenshot-end]
 
-We've set the count per page to three to make this screenshot a reasonable size. In practice, you would be working with 50 comments per page by default.
+Bu ekran görüntüsünü makul bir boyutta tutmak için sayfa başına sayıyı üç olarak ayarladık. Uygulamada, varsayılan olarak sayfa başına 50 yorum ile çalışırsınız.
 
-The moderation page also supports [Keyboard Shortcuts](#keyboard-shortcuts) for navigating between comments and performing actions without using the mouse. Press **?** on the moderation page to see all available shortcuts.
+Moderasyon sayfası ayrıca, yorumlar arasında gezinmek ve fareyi kullanmadan işlemleri gerçekleştirmek için [Klavye Kısayollarını](#keyboard-shortcuts) destekler. Mevcut tüm kısayolları görmek için moderasyon sayfasında **?** tuşuna basın.
 
-The page is also **live** — when new comments arrive that match your current filters, a banner appears at the top alerting you. See [Live Moderating](#comment-actions-live) for details.
+Sayfa ayrıca **canlıdır** — mevcut filtrelerinizle eşleşen yeni yorumlar geldiğinde, sizi uyaran üst kısımda bir banner görünür. Ayrıntılar için [Canlı Moderasyon](#comment-actions-live) bölümüne bakın.
 
-Let's go into the features shown here.
-
----
+Burada gösterilen özelliklere yakından bakalım.

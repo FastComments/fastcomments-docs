@@ -30,5 +30,3 @@ api->getDomainConfig(tenantId, domain)
     })
     .wait();
 [inline-code-end]
-
----

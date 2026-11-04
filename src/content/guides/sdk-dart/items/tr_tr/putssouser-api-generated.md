@@ -33,5 +33,3 @@ try {
     print('Exception when calling DefaultApi->putSSOUser: $e\n');
 }
 [inline-code-end]
-
----

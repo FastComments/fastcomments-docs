@@ -20,5 +20,3 @@ Os cursos consistem em diferentes modelos. Queremos exibir comentários nas aula
 </div>
 
 Pronto! Agora você está pronto para o segundo passo.
-
----

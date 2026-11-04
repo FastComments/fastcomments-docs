@@ -1,68 +1,68 @@
-Budget alert emails fire when an agent's spend crosses a configurable percentage of its cap. They go to the people who own the bill.
+Emailovi sa upozorenjima o budžetu se šalju kada potrošnja agenta pređe konfigurabilan procenat njegovog limita. Šalju se osobama koje plaćaju račun.
 
-### Kako funkcionišu upozorenja
+### Kako rade upozorenja
 
-Each agent has an **Alert thresholds** field on the edit form. By default it is `80%` and `100%`. You can tick or untick individual thresholds, and you can add other percentages.
+Svaki agent ima polje **Alert thresholds** na formi za izmenu. Podrazumevano je to `80%` i `100%`. Možete čekirati ili odčekirati pojedinačne pragove, i možete dodati druge procente.
 
-When the agent's spend in a given scope (daily or monthly) crosses a threshold for the first time in that period, the platform sends one email per recipient. Crossing the threshold again later in the same period (e.g., spend dipped below 80% and came back over) does **not** re-send.
+Kada potrošnja agenta u datom opsegu (dnevnom ili mesečnom) prvi put u tom periodu pređe prag, platforma šalje jedan email po primaocu. Ponovno prelaska praga kasnije u istom periodu (npr. potrošnja je pala ispod 80% pa se vratila iznad) **ne** pokreće ponovno slanje.
 
-This is per-period: a new daily reset starts the threshold-crossing logic over for that day.
+Ovo važi po periodu: novi dnevni reset ponovo pokreće logiku prelaska pragova za taj dan.
 
-### Upozorenja na nivou tenant-a
+### Upozorenja na nivou tenanta
 
-The tenant (account) has its own daily and monthly caps. Tenant-scope alerts fire at fixed thresholds (`80%` and `100%`). These are not configurable per-agent because they apply to the whole tenant.
+Tenant (nalog) ima svoje dnevne i mesečne limite. Upozorenja na nivou tenanta aktiviraju se na fiksnim pragovima (`80%` i `100%`). Ona nisu konfigurabilna po agentu jer se odnose na ceo tenant.
 
 ### Primaoci
 
-Budget alerts are sent to:
+Upozorenja o budžetu se šalju:
 
-- Every user marked **Super admin** on the tenant.
-- Every user marked **Billing Admin** on the tenant.
+- Svakom korisniku označenom kao **Super admin** na tenantu.
+- Svakom korisniku označenom kao **Billing Admin** na tenantu.
 
-That includes the union of the two roles - a user with both roles gets one email.
+To uključuje uniju dve uloge - korisnik sa obe uloge dobija jedan email.
 
 ### Zašto obe uloge
 
-Super admins are typically the operators who need to know an agent is hitting its cap. Billing admins own the invoice and need to know about cost spikes regardless of whether they manage agents day to day. To actually edit the agent (raise the cap, pause it), the recipient also needs the **Customization Admin** role - which gates the agent edit page.
+Super admini su obično operateri kojima treba da znaju da agent dostiže svoj limit. Billing admini su vlasnici fakture i treba da znaju za skokove troškova bez obzira na to da li svakodnevno upravljaju agentima. Da bi zaista izmenili agenta (podigli limit, pauzirali ga), primalac takođe treba da ima ulogu **Customization Admin** - koja štiti stranicu za izmenu agenta.
 
-### Opcija odjave po korisniku
+### Odjava po korisniku
 
-Recipients who have opted out of admin notifications on their profile are skipped. This is the same opt-out switch that controls other admin notifications.
+Primaoci koji su se odjavili sa admin notifikacija na svom profilu se preskaču. To je isti prekidač za odjavu koji kontroliše i druge admin notifikacije.
 
-If **all** recipients are opted-out, the alert is logged (warning level) and no email is sent.
+Ako su **svi** primaoci odjavljeni, upozorenje se zapisuje u log (nivo upozorenja) i email se ne šalje.
 
-### Sadržaj e‑maila
+### Sadržaj emaila
 
-The email contains:
+Email sadrži:
 
-- The **agent display name** and internal name.
-- The **scope** that crossed (e.g., "agent daily budget", "agent monthly budget", "account daily budget", "account monthly budget").
-- The **threshold percentage** crossed.
-- **Usage** in the tenant's currency.
-- **Cap** in the tenant's currency.
-- A **one-click signed login link** that takes the recipient straight to:
-  - The agent edit page, for agent-scope alerts.
-  - The AI Agents list page, for tenant-scope alerts.
+- **Prikazano ime agenta** i interno ime.
+- **Opseg** koji je pređen (npr. "agent daily budget", "agent monthly budget", "account daily budget", "account monthly budget").
+- **Procenat praga** koji je pređen.
+- **Potrošnju** u valuti tenanta.
+- **Limit** u valuti tenanta.
+- **Jednoklikni potpisani link za prijavu** koji primaoca vodi direktno na:
+  - Stranicu za izmenu agenta, za upozorenja na nivou agenta.
+  - Stranicu sa listom AI agenata, za upozorenja na nivou tenanta.
 
-The link is pre-authenticated, so the recipient is one click away from raising the cap or disabling the agent.
+Link je unapred autentifikovan, tako da je primalac jedan klik udaljen od podizanja limita ili onemogućavanja agenta.
 
-### Kako se aktiviraju pragovi
+### Kako se pragovi aktiviraju
 
-The platform tracks which thresholds have already fired this period, separately for the agent and the tenant. So:
+Platforma prati koji su pragovi već aktivirani u ovom periodu, odvojeno za agenta i za tenant. Dakle:
 
-- Crossing 80% then 100% in the same period fires both, in order.
-- Going straight from 0% to 100% in one big jump fires the **highest** crossed threshold (100%), not 80%, so the most-severe alert is the one delivered.
+- Prelazak 80% pa zatim 100% u istom periodu aktivira oba, redom.
+- Prelazak direktno sa 0% na 100% u jednom velikom skoku aktivira **najviši** pređeni prag (100%), a ne 80%, tako da se dostavlja najozbiljnije upozorenje.
 
-### Kada prestanete da dobijate upozorenja
+### Kada prestajete da dobijate upozorenja
 
-If the agent's spend never reaches the next threshold this period, you do not get further emails this period. The next daily reset (or monthly reset) clears the tracking.
+Ako potrošnja agenta nikada ne dostigne sledeći prag u ovom periodu, ne dobijate dalje emailove u ovom periodu. Sledeći dnevni reset (ili mesečni reset) briše praćenje.
 
 ### Onemogućavanje upozorenja
 
-Untick the threshold you do not want. If you do not want any alerts on a specific agent, untick all percentages. Tenant-scope alerts cannot be disabled per-agent (they are tenant-wide).
+Odčekirajte prag koji ne želite. Ako ne želite nijedno upozorenje za konkretnog agenta, odčekirajte sve procente. Upozorenja na nivou tenanta ne mogu se onemogućiti po agentu (važe za ceo tenant).
 
-### Pogledajte i
+### Vidi takođe
 
-- [Pregled budžeta](#budgets-overview).
-- [Razlozi za prekid](#drop-reasons) - what happens when the cap is fully reached.
-- [Model troškova](#cost-model) - what's being measured.
+- [Budgets Overview](#budgets-overview).
+- [Drop Reasons](#drop-reasons) - šta se dešava kada se limit u potpunosti dostigne.
+- [Cost Model](#cost-model) - šta se meri.

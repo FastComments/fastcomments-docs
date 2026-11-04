@@ -1,4 +1,3 @@
----
 ## Parametry
 
 | Nazwa | Typ | Wymagane | Opis |
@@ -27,5 +26,3 @@ api->getFeedPostsStats(tenantId, postIds, sso)
         (void)response;
     });
 [inline-code-end]
-
----

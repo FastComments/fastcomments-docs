@@ -10,5 +10,3 @@ In the left-hand navigation, go to `templates->pages->blog-post.html`.
     <div class="title">פתח את התבנית</div>
     <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-2-open-blog-post-template.png" alt="פתח את התבנית" />
 </div>
-
----

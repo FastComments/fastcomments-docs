@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
@@ -31,5 +30,3 @@ DefaultAPI.deleteTenantPackage(tenantId: tenantId, id: id) { (response, error) i
     }
 }
 [inline-code-end]
-
----

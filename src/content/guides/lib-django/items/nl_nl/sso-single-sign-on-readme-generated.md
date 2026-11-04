@@ -1,14 +1,15 @@
-Enable SSO en kies een modus in `settings.py`. Secure SSO ondertekent de gebruiker server‑side met HMAC‑SHA256 met behulp van je API‑secret en wordt aanbevolen.
+Schakel SSO in en kies een modus in `settings.py`. Secure SSO ondertekent de gebruiker
+server-side met HMAC-SHA256 met behulp van je API secret en wordt aanbevolen.
 
 ```python
 FASTCOMMENTS = {
     "TENANT_ID": os.environ["FASTCOMMENTS_TENANT_ID"],
-    "API_KEY": os.environ["FASTCOMMENTS_API_KEY"],   # jouw API‑secret; ondertekent Secure SSO
+    "API_KEY": os.environ["FASTCOMMENTS_API_KEY"],   # je API secret; ondertekent Secure SSO
     "SSO": {
         "ENABLED": True,
         "MODE": "secure",                            # "secure" | "simple"
-        # Koppel FastComments‑velden aan je gebruikersmodel. Waarden kunnen een attribuut
-        # naam, een dotted path ("profile.avatar_url"), een callable(user), of None.
+        # Koppel FastComments-velden aan je user model. Waarden kunnen een attribuut-
+        # naam zijn, een dotted path ("profile.avatar_url"), een callable(user), of None.
         "USER_MAP": {
             "id": "id",
             "email": "email",
@@ -17,32 +18,35 @@ FASTCOMMENTS = {
             "display_name": None,
             "website_url": None,
         },
-        "IS_ADMIN": lambda user: user.is_staff,      # callable(user) -> bool, of een dotted path
+        "IS_ADMIN": lambda user: user.is_staff,      # callable(user) -> bool, of dotted path
         "IS_MODERATOR": None,
-        "GROUP_IDS": None,                           # callable(user) -> list, of een dotted path
+        "GROUP_IDS": None,                           # callable(user) -> list, of dotted path
     },
 }
 ```
 
-> **Kies de SSO `id` zorgvuldig.** Het FastComments `id` is de permanente
-> identifier voor de reactiegeschiedenis van een gebruiker. De standaard `USER_MAP` koppelt deze aan je
-> Django‑primaire‑sleutel voor nul‑configuratiegemak, maar opeenvolgende gehele PK's zijn
-> telbaar en moeilijk later te wijzigen (het wijzigen van een gebruikers `id` splitst hun
-> geschiedenis over een nieuw account). Voor alles buiten een demo, koppel `id` aan een stabiele,
-> ondoorzichtige waarde die vooraf wordt gekozen (een UUID of een toegewijde publieke id), en plaats daar nooit privé‑data in. De voorbeeld‑app gebruikt een op gebruikersnaam gebaseerd id om deze reden.
+> **Kies de SSO `id` bewust.** De FastComments `id` is de permanente
+> verwijzing naar de commentaarhistorie van een gebruiker. De standaard `USER_MAP` koppelt
+> deze aan je Django primary key voor zero-config gemak, maar sequentiële integer PK's zijn
+> raadpleegbaar en moeilijk later te wijzigen (het wijzigen van de `id` van een gebruiker
+> splitst hun historie in een nieuw account). Voor alles meer dan een demo, koppel `id` aan
+> een stabiele, ondoorzichtige waarde die vooraf gekozen is (een UUID of een speciaal
+> publiek id), en plaats nooit privégegevens erin. De voorbeeldapp gebruikt daarom een
+> op gebruikersnaam gebaseerd id.
 
 SSO wordt automatisch geïnjecteerd in `{% fastcomments %}`, `{% fastcomments_live_chat %}`,
-`{% fastcomments_collab_chat %}`, `{% fastcomments_image_chat %}` en
+`{% fastcomments_collab_chat %}`, `{% fastcomments_image_chat %}`, en
 `{% fastcomments_user_activity %}` voor de huidige gebruiker.
 
-Login-/logout‑URL's die aan uitgelogde bezoekers worden getoond, wijzen standaard naar `reverse("login")` /
-`reverse("logout")`; overschrijf ze met `SSO["LOGIN_URL"]` / `SSO["LOGOUT_URL"]`.
+Login/logout-URL's die worden getoond aan uitgelogde bezoekers verwijzen standaard naar
+`reverse("login")` / `reverse("logout")`; overschrijf deze met
+`SSO["LOGIN_URL"]` / `SSO["LOGOUT_URL"]`.
 
-### Custom mapping
+### Aangepaste mapping
 
-Two higher-precedence options beat `USER_MAP`:
+Twee opties met hogere prioriteit gaan vóór `USER_MAP`:
 
-- **Een methode op je gebruikersmodel** (de Python‑achtige analog van een interface):
+- **Een methode op je user model** (het Pythonische equivalent van een interface):
 
   ```python
   class User(AbstractUser):
@@ -56,4 +60,4 @@ Two higher-precedence options beat `USER_MAP`:
   FASTCOMMENTS = {"SSO": {"USER_MAPPER": "myapp.sso.map_user"}}
   ```
 
-Prioriteit is `USER_MAPPER` > `to_fastcomments_user_data()` > `USER_MAP`.
+De prioriteit is `USER_MAPPER` > `to_fastcomments_user_data()` > `USER_MAP`.

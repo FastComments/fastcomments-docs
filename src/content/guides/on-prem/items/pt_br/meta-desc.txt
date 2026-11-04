@@ -1,3 +1,1 @@
----
 Execute o FastComments totalmente em sua própria infraestrutura. Instâncias, configuração, modo de manutenção, bloqueios, múltiplos domínios e o modelo de segurança.
----

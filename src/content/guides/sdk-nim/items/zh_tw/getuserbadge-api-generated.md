@@ -1,4 +1,3 @@
----
 ## 參數
 
 | Name | Type | Required | Description |
@@ -22,5 +21,3 @@ else:
   echo "No badge found"
 echo httpResp.statusCode
 [inline-code-end]
-
----

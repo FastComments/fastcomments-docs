@@ -44,5 +44,3 @@ Ko je to izklopljeno, enostavni SSO ne dodeli teh pravic. Paket enostavnega SSO,
 Paketi enostavnega SSO niso podpisani, zato ko je to vklopljeno, lahko kdorkoli, ki pozna e‑naslov ali ID skrbnika, deluje v njegovem imenu. Če je to pomembno za vaše spletno mesto, pustite to izklopljeno in uporabite varni SSO za svoje skrbnike.
 
 Uporabnikov, ustvarjenih z varnim SSO ali API-jem, enostavni SSO ne more doseči, ne glede na to, ali je to vklopljeno.
-
----

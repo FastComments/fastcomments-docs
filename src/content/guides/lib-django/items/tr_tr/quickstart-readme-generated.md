@@ -1,4 +1,3 @@
----
 Kiracınızı `settings.py` içinde yapılandırın:
 
 ```python
@@ -16,4 +15,3 @@ Widget'ı herhangi bir şablona ekleyin:
 
 {% fastcomments url_id="my-page" %}
 ```
----

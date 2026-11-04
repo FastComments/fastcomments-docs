@@ -1,4 +1,3 @@
----
 Kiracı için yapılandırılmış webhook'ları listeler, hem kontrol paneli yönetimli satırları hem de API aboneliklerini.
 
 ## Parametreler
@@ -39,5 +38,3 @@ DefaultAPI.getWebhooks(tenantId: tenantId, options: DefaultAPI.GetWebhooksOption
     }
 }
 [inline-code-end]
-
----

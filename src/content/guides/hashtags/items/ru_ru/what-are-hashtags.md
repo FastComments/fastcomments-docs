@@ -1,9 +1,6 @@
----
-FastComments #hashtags предоставляют способ пометить комментарий пользователя как относящийся к определённой теме или группе. Кроме того, хэштеги
-могут использоваться для ссылки на другие страницы или документы.
+Хэштеги FastComments #hashtags позволяют пользователю пометить свой комментарий как относящийся к определённой теме или группе. Кроме того, хэштеги
+можно использовать для ссылок на другие страницы или документы.
 
-For example, if desired, a customer hosting an online video review site could pre-populate a hashtag for each video, and define each hashtag
-as linking to the appropriate review page for that video. In this way, when someone clicks on `#awesomevideo` in a comment, they go to `https://example.com/awesome-video/reviews`
-instead of viewing all comments with the `#awesomevideo` tag.
-
----
+Например, при желании заказчик, владеющий сайтом с онлайн-обзорами видео, может заранее создать хэштег для каждого видео и определить каждый хэштег
+как ссылку на соответствующую страницу обзоров этого видео. Таким образом, когда кто-то нажимает на `#awesomevideo` в комментарии, он переходит на `https://example.com/awesome-video/reviews`
+вместо просмотра всех комментариев с тегом `#awesomevideo`.

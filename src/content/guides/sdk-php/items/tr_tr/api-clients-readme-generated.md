@@ -1,16 +1,16 @@
-SDK üç API istemci sınıfı sunar:
+SDK, üç API istemci sınıfı sunar:
 
-- **`DefaultApi`** – Sunucu tarafı kullanım için API‑anahtarıyla kimlik doğrulamalı yöntemler. API anahtarını, [Getting Started](#getting-started-readme-generated) bölümünde gösterildiği gibi yapılandırın.
-- **`PublicApi`** – API anahtarı gerektirmeyen, tarayıcılardan ve mobil uygulamalardan güvenle çağrılabilen genel yöntemler.
-- **`ModerationApi`** – Canlı ve hızlı denetim API'lerinin kapsamlı bir paketi. Her `ModerationApi` yöntemi bir `$sso` parametresi alır ve SSO ya da FastComments.com oturum çerezi aracılığıyla kimlik doğrulayabilir.
+- **`DefaultApi`** - Sunucu tarafı kullanım için API anahtarı ile kimlik doğrulaması yapan metotlar. Bir API anahtarını [Getting Started](#getting-started-readme-generated) bölümünde gösterildiği gibi yapılandırın.
+- **`PublicApi`** - API anahtarı gerektirmeyen, tarayıcılardan ve mobil uygulamalardan çağrılması güvenli genel metotlar.
+- **`ModerationApi`** - Canlı ve hızlı moderasyon API'lerinden oluşan kapsamlı bir paket. Her `ModerationApi` metodu bir `$sso` parametresi kabul eder ve SSO veya bir FastComments.com oturum çerezi aracılığıyla kimlik doğrulaması yapabilir.
 
-### Using PublicApi
+### PublicApi Kullanımı
 
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Genel yöntemler bir API anahtarı gerektirmez.
+// Public metotları bir API anahtarı gerektirmez.
 $apiInstance = new FastComments\Client\Api\PublicApi(
     new GuzzleHttp\Client()
 );
@@ -25,7 +25,7 @@ try {
 }
 ```
 
-### Using ModerationApi
+### ModerationApi Kullanımı
 
 ```php
 <?php
@@ -34,7 +34,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $apiInstance = new FastComments\Client\Api\ModerationApi(
     new GuzzleHttp\Client()
 );
-$sso = 'sso_example'; // string - Moderatörü kimlik doğrulayan SSO yükü
+$sso = 'sso_example'; // string - moderatörün kimliğini doğrulayan SSO yükü
 
 try {
     $result = $apiInstance->getCount([

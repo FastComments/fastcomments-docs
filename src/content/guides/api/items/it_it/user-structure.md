@@ -1,19 +1,19 @@
-`User` è un oggetto che rappresenta il denominatore più comune di tutti gli utenti.
+`User` è un oggetto che rappresenta il denominatore comune di tutti gli utenti.
 
-Tieni presente che in FastComments abbiamo una serie di casi d'uso diversi per gli utenti:
+Tieni presente che in FastComments abbiamo diversi casi d'uso per gli utenti:
 
 - Secure SSO
 - Simple SSO
-- Tenant Users (Ad esempio: Administrators)
-- Commenters
+- Utenti Tenant (Ad esempio: Amministratori)
+- Commentatori
 
-This API is for **Commenters** and users created via **Simple SSO**. Basically, any user created
-through your site can be accessed via this API. Tenant Users can also be fetched this way, but you'll get more information by interacting with the `/tenant-users/` API.
+Questa API è per i **Commentatori** e per gli utenti creati tramite **Simple SSO**. In pratica, qualsiasi utente creato
+tramite il tuo sito può essere accessibile tramite questa API. Anche gli Utenti Tenant possono essere recuperati in questo modo, ma otterrai più informazioni interagendo con l'API `/tenant-users/`.
 
-For `Secure SSO` please use the `/sso-users/` API.
+Per `Secure SSO` utilizza l'API `/sso-users/`.
 
-You cannot update these types of users. They created their account through your site, so we provide some basic read-only access, but
-you cannot make changes. If you want to have this type of flow - you need to setup `Secure SSO`.
+Non puoi aggiornare questi tipi di utenti. Hanno creato il loro account tramite il tuo sito, quindi forniamo un accesso di base in sola lettura, ma
+non puoi apportare modifiche. Se desideri avere questo tipo di flusso - devi configurare `Secure SSO`.
 
 La struttura dell'oggetto `User` è la seguente:
 
@@ -23,7 +23,7 @@ export interface User {
     /** Questo è anche l'id usato come userId sugli oggetti commento. **/
     id: string
     username: string
-    /** Un link, ad esempio al blog del commentatore. **/
+    /** Un link al blog del commentatore, per esempio. **/
     websiteUrl?: string
     email: string
     signUpDate: number
@@ -35,5 +35,3 @@ export interface User {
     karma?: number
 }
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 ## Parametry
 
 | Name | Type | Required | Description |
@@ -19,5 +18,3 @@ if optVotes.isSome:
   let votes = optVotes.get()
   discard votes
 [inline-code-end]
-
----

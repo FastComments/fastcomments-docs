@@ -1,3 +1,1 @@
----
 Dodaj komentarze na żywo do bloga Weebly, wklejając fragment FastComments w ustawieniach bloga, a następnie publikując witrynę.
----

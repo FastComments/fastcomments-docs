@@ -33,5 +33,3 @@ const responseBasic: GetWebhookSamplePayloadsResponse = await getWebhookSamplePa
   tenantId
 );
 [inline-code-end]
-
----

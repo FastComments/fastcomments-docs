@@ -1,4 +1,3 @@
----
 要使用 API 來建立白標租戶，我們必須執行下列步驟：
 
 1. 呼叫 [Tenants API](/guide-api.html#tenant-structure) 來建立租戶。
@@ -9,5 +8,3 @@
 6. 可選地，[Setup SSO](/guide-customizations-and-configuration.html#sso)。
 
 所有這些都可以在試用期間完成。
-
----

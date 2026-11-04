@@ -1,4 +1,3 @@
----
 Los comentarios se pueden buscar con la siguiente sintaxis de ejemplo:
 
 - Búsqueda difusa por palabras: `cats love`
@@ -15,5 +14,3 @@ Los comentarios se pueden buscar con la siguiente sintaxis de ejemplo:
 
 Puedes compartir los resultados de búsqueda con otros moderadores o administradores compartiendo la URL de la página desde la página de moderación. El valor del campo de búsqueda
 se incluirá en la URL en tu navegador después de hacer clic en "Ir".
-
----

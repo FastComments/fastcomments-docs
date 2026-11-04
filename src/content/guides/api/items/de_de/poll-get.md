@@ -33,5 +33,3 @@ interface PollGetResponse {
 
 Ein Kommentar, der keine Umfrage hat, ein gelöschter Kommentar und eine Kommentar-ID, die nicht existiert, antworten alle
 auf dieselbe Weise, mit `poll-not-found`.
-
----

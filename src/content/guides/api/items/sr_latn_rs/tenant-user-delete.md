@@ -1,18 +1,18 @@
 [api-resource-header-start name = 'TenantUser'; route = 'DELETE /api/v1/tenant-users/:id'; creditsCost = 5; api-resource-header-end]
 
-Ovaj endpoint omogućava uklanjanje `TenantUser` po id-u.
+Ova ruta omogućava uklanjanje `TenantUser` objekta po id-u.
 
-Brisanje korisnikovih komentara je moguće putem query parametra `deleteComments`. Imajte na umu da ako je ovo tačno:
+Brisanje korisničkih komentara je moguće putem `deleteComments` query parametra. Napomena: ako je ovo true:
 
-1. Svi korisnikovi komentari biće obrisani uživo.
-2. Svi __child__ (sada siroti) komentari biće obrisani ili anonimnišu na osnovu konfiguracije svake stranice kojoj komentar pripada. Na primer, ako je režim brisanja niti "anonymize", odgovori će ostati, a korisnikovi komentari će biti anonimizovani. Ovo se primenjuje samo kada je `commentDeleteMode` postavljen na `Remove` (podrazumevana vrednost).
+1. Svi komentari korisnika biće obrisani uživo.
+2. Svi __child__ (sada orphan) komentari biće obrisani ili anonimizirani u zavisnosti od konfiguracije stranice povezane sa svakim komentarom. Na primer, ako je režim brisanja nita "anonymize", odgovori će ostati, a korisnički komentari će biti anonimizirani. Ovo važi samo kada je `commentDeleteMode` `Remove` (podrazumevana vrednost).
 3. `creditsCost` postaje `2`.
 
-### Anonymized Comments
+### Anonimizirani komentari
 
-Možete zadržati korisnikove komentare, ali ih jednostavno anonimizovati tako što ćete postaviti `commentDeleteMode=1`.
+Možete zadržati komentare korisnika, ali ih jednostavno anonimizirati postavljanjem `commentDeleteMode=1`.
 
-Ako su korisnikovi komentari anonimni, sledeće vrednosti se postavljaju na null:
+Ako su komentari korisnika anonimizirani, sledeće vrednosti se postavljaju na null:
 
     - commenterName
     - commenterEmail
@@ -24,9 +24,9 @@ Ako su korisnikovi komentari anonimni, sledeće vrednosti se postavljaju na null
 
 `isDeleted` i `isDeletedUser` se postavljaju na `true`.
 
-Pri prikazu, widget za komentare će koristiti `DELETED_USER_PLACEHOLDER` (podrazumevano: "[deleted]") za korisnikovo ime i `DELETED_CONTENT_PLACEHOLDER` za komentar. Ovo se može prilagoditi putem korisničkog interfejsa za prilagođavanje widgeta.
+Prilikom renderovanja, widget za komentare će koristiti `DELETED_USER_PLACEHOLDER` (podrazumevano: "[deleted]") za ime korisnika i `DELETED_CONTENT_PLACEHOLDER` za komentar. Ovo se može prilagoditi putem Widget Customization UI-ja.
 
-### Examples
+### Primeri
 
 [inline-code-attrs-start title = 'Primer cURL zahteva za uklanjanje TenantUser-a'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -44,9 +44,9 @@ enum TenantUserCommentDeleteMode {
 interface TenantUserDeleteQueryParams {
     tenantId: string
     API_KEY: string
-    /** Možete postaviti ovo na true da biste takođe obrisali korisnikove komentare. Ovo će udvostručiti cenu u kreditima. **/
+    /** Možete postaviti ovo na true da biste takođe obrisali komentare korisnika. Ovo duplira cenu u kreditima. **/
     deleteComments?: 'true' | 'false'
-    /** Možete ovo podesiti kako biste odredili kako postupati sa korisnikovim komentarima. **/
+    /** Možete postaviti ovo po želji da biste odredili kako se postupati sa komentarima korisnika. **/
     commentDeleteMode?: TenantUserCommentDeleteMode
 }
 [inline-code-end]

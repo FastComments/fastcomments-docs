@@ -1,54 +1,54 @@
-Brugerprofiler i FastComments giver et dedikeret rum for hver bruger til at fremvise deres identitet, aktivitet og bidrag i dit fællesskab.
+Brugerprofiler i FastComments giver en dedikeret plads til hver bruger til at fremvise deres identitet, aktivitet og bidrag på tværs af dit community.
 
 ### Hvad er en brugerprofil?
 
-En brugerprofil er en personlig side for hver FastComments-bruger, som viser:
+En brugerprofil er en personaliseret side for hver FastComments-bruger, som viser:
 
-- **Profile Header** - Et tilpasseligt baggrundsbillede, som personaliserer profilen
+- **Profilheader** - Et tilpasseligt baggrundsbillede, der personaliserer profilen
 - **Avatar** - Brugerens profilbillede med indikator for online/offline-status
-- **Display Information** - Brugernavn, visningsnavn og valgfrit landeflag
+- **Visningsinformation** - Brugernavn, visningsnavn og valgfrit nationalitetsflag
 - **Bio** - En personlig beskrivelse eller introduktion
-- **Social Links** - Links til brugerens sociale medieprofiler og hjemmeside
-- **Badges** - Opnåede bedrifter og anerkendelse
-- **Statistics** - Brugerkarma og samlet antal kommentarer
-- **Communities** - Hvilke sites/domæner brugeren er aktiv på
+- **Sociale links** - Forbindelser til brugerens sociale medieprofiler og hjemmeside
+- **Badges** - Optjente præstationer og anerkendelser
+- **Statistik** - Brugerens karma og samlede antal kommentarer
+- **Communities** - Hvilke sider/domæner brugeren er aktiv på
 
-### Accessing User Profiles
+### Adgang til brugerprofiler
 
-Der er flere måder at få adgang til en brugers profil på:
+Der er flere måder at tilgå en brugers profil på:
 
-1. **Click on an avatar** - I kommentar-widgeten, klik på en brugers avatar for at se deres profil
-2. **Click on a username** - Brugernavne i kommentarer er klikbare links til profiler
-3. **Direct URL** - Besøg `https://fastcomments.com/auth/user-profile/[userId]`
+1. **Klik på en avatar** - I kommentar-widgetten kan du klikke på enhver brugers avatar for at se deres profil
+2. **Klik på et brugernavn** - Brugernavne i kommentarer er klikbare links til profiler
+3. **Direkte URL** - Besøg `https://fastcomments.com/auth/user-profile/[userId]`
 
-### Profile Views
+### Profilvisninger
 
-Når du ser en profil, vil du se forskellige faner afhængigt af om du ser din egen profil eller en andens:
+Når du ser en profil, vil du se forskellige faner afhængigt af, om du ser din egen profil eller en andens:
 
 #### Din egen profil
-- **Notifications** - Dine notifikationer og omtaler
-- **Recent Activity** - Din kommentarhistorik på tværs af alle fællesskaber
-- **Profile Comments** - Kommentarer som andre har skrevet på din profilside
-- **Direct Messages** - Private samtaler med andre brugere
+- **Notifikationer** - Dine notifikationer og omtaler
+- **Seneste aktivitet** - Din kommentarhistorik på tværs af alle communities
+- **Profilkommentarer** - Kommentarer, som andre har efterladt på din profilside
+- **Direkte beskeder** - Private samtaler med andre brugere
 
 #### Andre brugeres profiler
-- **Recent Activity** - Deres offentlige kommentarhistorik (hvis ikke sat til privat)
-- **Profile Comments** - Kommentarer på deres profil (hvis ikke sat til privat)
-- **Direct Messages** - Start eller fortsæt en privat samtale (hvis de tillader direkte beskeder)
+- **Seneste aktivitet** - Deres offentlige kommentarhistorik (hvis ikke sat til privat)
+- **Profilkommentarer** - Kommentarer på deres profil (hvis ikke sat til privat)
+- **Direkte beskeder** - Start eller fortsæt en privat samtale (hvis de tillader DM'er)
 
-### Online Status
+### Online-status
 
 Brugerprofiler viser online-status i realtid:
 - **Grøn indikator** - Brugeren er i øjeblikket online
-- **No indicator** - Brugeren er offline
+- **Ingen indikator** - Brugeren er offline
 
 Dette hjælper dig med at vide, hvornår en person aktivt bruger platformen, hvilket er særligt nyttigt ved direkte beskeder.
 
-### User Types
+### Brugertyper
 
 FastComments understøtter to typer brugere med profiler:
 
-1. **Regular Users** - Brugere som tilmeldte sig direkte hos FastComments
-2. **SSO Users** - Brugere som autentificerer via dit sites Single Sign-On-integration
+1. **Almindelige brugere** - Brugere, som har tilmeldt sig direkte hos FastComments
+2. **SSO-brugere** - Brugere, som autentificerer via dit websites Single Sign-On-integration
 
-Begge brugertyper har adgang til det fulde profilsystem, men SSO-brugere kan have nogle begrænsninger i redigering af visse felter (som avatarer) afhængigt af din SSO-konfiguration.
+Begge brugertyper har adgang til det fulde profilsystem, selvom SSO-brugere kan have visse begrænsninger for redigering af bestemte felter (som avatarer) afhængigt af din SSO-konfiguration.

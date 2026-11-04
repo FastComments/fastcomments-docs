@@ -1,46 +1,46 @@
-By default, a πράκτορας runs across your whole tenant - every page, every locale. The **Scope** and **Locales** sections on the edit form let you narrow that.
+Από προεπιλογή, ένας agent εκτελείται σε ολόκληρο το tenant σας - κάθε σελίδα, κάθε locale. Οι ενότητες **Scope** και **Locales** στη φόρμα επεξεργασίας σας επιτρέπουν να το περιορίσετε.
 
-### Restrict to specific pages
+### Περιορισμός σε συγκεκριμένες σελίδες
 
-The **Restrict to specific pages** field accepts one URL pattern per line, in url-pattern glob syntax. The πράκτορας only runs on comments whose page URL matches at least one of the patterns. Examples:
+Το πεδίο **Restrict to specific pages** δέχεται ένα μοτίβο URL ανά γραμμή, σε σύνταξη url-pattern glob. Ο agent εκτελείται μόνο σε σχόλια των οποίων το URL της σελίδας ταιριάζει με τουλάχιστον ένα από τα μοτίβα. Παραδείγματα:
 
-- `/news/*` - any page under `/news`.
-- `/forums/*` - any page under `/forums`.
-- `/blog/2026/*` - any page under `/blog/2026`.
-- (multiple lines together) - the πράκτορας runs if **any** pattern matches.
+- `/news/*` - οποιαδήποτε σελίδα κάτω από `/news`.
+- `/forums/*` - οποιαδήποτε σελίδα κάτω από `/forums`.
+- `/blog/2026/*` - οποιαδήποτε σελίδα κάτω από `/blog/2026`.
+- (πολλαπλές γραμμές μαζί) - ο agent εκτελείται αν ταιριάζει **οποιοδήποτε** μοτίβο.
 
-Maximum: 50 patterns per πράκτορα. Patterns must be valid url-pattern globs - the form rejects malformed ones with a specific error.
+Μέγιστο: 50 μοτίβα ανά agent. Τα μοτίβα πρέπει να είναι έγκυρα url-pattern globs - η φόρμα απορρίπτει τα κακοσχηματισμένα με ένα συγκεκριμένο σφάλμα.
 
-When the field is **blank**, the πράκτορας runs on every page in the tenant.
+Όταν το πεδίο είναι **κενό**, ο agent εκτελείται σε κάθε σελίδα του tenant.
 
-When the field is **non-blank**, the πράκτορας fails closed: any trigger whose comment has no `urlId` (e.g. tenant-level events with no page context) is skipped. This is by design - "scoped to /news/*" should not silently fall through to "everything".
+Όταν το πεδίο είναι **μη κενό**, ο agent αποτυγχάνει με ασφάλεια (fails closed): οποιοδήποτε trigger του οποίου το σχόλιο δεν έχει `urlId` (π.χ. συμβάντα επιπέδου tenant χωρίς πλαίσιο σελίδας) παραλείπεται. Αυτό είναι από σχεδιασμό - το "scoped to /news/*" δεν πρέπει να πέφτει σιωπηλά στο "όλα".
 
-### Restrict to specific locales
+### Περιορισμός σε συγκεκριμένα locales
 
-The **Restrict to specific locales** dual-list picker accepts FastComments locale IDs (`en_us`, `zh_cn`, `de_de`, etc.). The πράκτορας only runs on comments whose detected locale is in the selected list.
+Ο dual-list picker **Restrict to specific locales** δέχεται FastComments locale IDs (`en_us`, `zh_cn`, `de_de`, κ.λπ.). Ο agent εκτελείται μόνο σε σχόλια των οποίων το ανιχνευμένο locale βρίσκεται στην επιλεγμένη λίστα.
 
-Detected locale comes from the comment's `locale` field, which is set by the comment widget at post time based on the page locale.
+Το ανιχνευμένο locale προέρχεται από το πεδίο `locale` του σχολίου, το οποίο ορίζεται από το widget σχολίων κατά τη δημοσίευση με βάση το locale της σελίδας.
 
-When **no locales** are selected, the πράκτορας runs on every locale.
+Όταν **δεν έχουν επιλεγεί locales**, ο agent εκτελείται σε κάθε locale.
 
-When **one or more locales** are selected, the πράκτορας fails closed: triggers without a comment, or triggers on comments with no `locale` field, are skipped.
+Όταν έχουν επιλεγεί **ένα ή περισσότερα locales**, ο agent αποτυγχάνει με ασφάλεια: triggers χωρίς σχόλιο, ή triggers σε σχόλια χωρίς πεδίο `locale`, παραλείπονται.
 
-### Combined scoping
+### Συνδυασμένο scoping
 
-URL and locale filters AND together. A trigger only fires the πράκτορας if **both** filters allow it.
+Τα φίλτρα URL και locale συνδυάζονται με AND. Ένα trigger ενεργοποιεί τον agent μόνο αν **και τα δύο** φίλτρα το επιτρέπουν.
 
-Useful patterns:
-- `/news/*` URL pattern + `en_us` locale - English news section only.
-- No URL filter + multiple locales - tenant-wide, but only for the languages this πράκτορας's prompt was written for.
+Χρήσιμα μοτίβα:
+- Μοτίβο URL `/news/*` + locale `en_us` - μόνο η αγγλική ενότητα ειδήσεων.
+- Χωρίς φίλτρο URL + πολλαπλά locales - σε όλο το tenant, αλλά μόνο για τις γλώσσες για τις οποίες γράφτηκε το prompt αυτού του agent.
 
-### Why scope an πράκτορας
+### Γιατί να ορίσετε scope σε έναν agent
 
-- **Cost.** Scoping cuts the volume of triggers the πράκτορας has to process, and so cuts token spend.
-- **Correctness.** A summarizer prompt tuned for technical articles may produce poor output on product pages. Scoping is a sharper tool than asking the prompt to "skip non-technical pages" in English.
-- **Locale-specific behavior.** A welcome greeter that only writes in German should only run on German-locale comments. Combine `de_de` locale scope with a German-language tone in the [initial prompt](#personality-prompt).
+- **Κόστος.** Το scoping μειώνει τον όγκο των triggers που πρέπει να επεξεργαστεί ο agent, και άρα μειώνει τη δαπάνη tokens.
+- **Ορθότητα.** Ένα prompt συνοψιστή προσαρμοσμένο για τεχνικά άρθρα μπορεί να παράγει κακή έξοδο σε σελίδες προϊόντων. Το scoping είναι πιο ακριβές εργαλείο από το να ζητάτε από το prompt να "παραλείπει μη τεχνικές σελίδες" στα αγγλικά.
+- **Συμπεριφορά ανά locale.** Ένας greeter καλωσορίσματος που γράφει μόνο στα γερμανικά θα πρέπει να εκτελείται μόνο σε σχόλια γερμανικού locale. Συνδυάστε scope locale `de_de` με γερμανικό ύφος στο [initial prompt](#personality-prompt).
 
-### What scoping does *not* do
+### Τι *δεν* κάνει το scoping
 
-- It does not change the **agent slot count** (see [Plans and Eligibility](#plans-and-eligibility)) - a scoped πράκτορας still occupies one slot.
-- It does not change [Budget caps](#budgets-overview) - the per-agent daily and monthly caps apply across all matching triggers.
-- It does not retroactively scope past runs - run history shows everything the πράκτορας did, even if you scope it tighter afterwards.
+- Δεν αλλάζει τον **αριθμό slots agent** (βλ. [Plans and Eligibility](#plans-and-eligibility)) - ένας agent με scope εξακολουθεί να καταλαμβάνει ένα slot.
+- Δεν αλλάζει τα [Budget caps](#budgets-overview) - τα ημερήσια και μηνιαία όρια ανά agent ισχύουν για όλα τα ταιριάζοντα triggers.
+- Δεν ορίζει αναδρομικά scope σε προηγούμενες εκτελέσεις - το ιστορικό εκτελέσεων δείχνει όλα όσα έκανε ο agent, ακόμα κι αν τον περιορίσετε αργότερα.

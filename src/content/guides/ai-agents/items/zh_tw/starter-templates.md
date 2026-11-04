@@ -1,31 +1,31 @@
-FastComments 提供五個啟動範本，讓你不必從零開始撰寫可運作的代理。你可以從 [AI Agents 頁面](https://fastcomments.com/auth/my-account/ai-agents) 點選 **Browse templates** 即可取得這些範本。
+FastComments 提供五個入門範本，讓您不必從零開始撰寫可運作的代理。您可以從 [AI Agents 頁面](https://fastcomments.com/auth/my-account/ai-agents) 點擊 **Browse templates** 來存取這些範本。
 
-當你選擇一個範本時：
+當您選擇一個範本時：
 
-1. 代理會以 **狀態：試運行 (Dry Run)** 建立，並以範本為基礎命名內部名稱（`tos_enforcer`, `welcome_greeter`, `top_comment_pinner`, `thread_summarizer`, `gaslight_detector`）。如果該名稱在你的租戶中已被使用，系統會加上數字後綴。
-2. 你會直接進入編輯表單，所有項目都會預先填好 — 提示詞、觸發條件、允許的操作，以及任何閾值。頂端會有一個橫幅顯示「Created from the {templateName} template. Review the settings below, then change status to Enabled when you're ready.」。
-3. 目前尚未啟用。代理在你儲存並且要麼保持試運行（觀察用）、要麼切換為已啟用之前都不會執行任何動作。
+1. 代理會以 **Status: Dry Run** 建立並使用基於範本的內部名稱（`tos_enforcer`、`welcome_greeter`、`top_comment_pinner`、`thread_summarizer`、`gaslight_detector`）。如果該名稱在您的租戶上已被使用，則會加上數字後綴。
+2. 您會直接進入已預填所有內容的編輯表單 - 提示詞、觸發器、允許的操作以及任何閾值。頂部的橫幅會顯示「Created from the {templateName} template. Review the settings below, then change status to Enabled when you're ready.」
+3. 此時尚未啟用任何功能。在您儲存並保持乾跑模式（以便觀察）或切換為 Enabled 之前，代理不會執行任何操作。
 
-### 這五個範本
+### 五個範本
 
-- **[版主](#template-moderator)** - 審查新評論與被檢舉的評論，對初犯者發出警告，僅在警告後才升級為封禁。會在新評論以及達到檢舉閾值時觸發（預設 flag threshold: 3）。允許的工具：`mark_comment_approved`, `mark_comment_spam`, `warn_user`, `ban_user`。
+- **[Moderator](#template-moderator)** - 審核新留言與被標記的留言，警告初犯者，僅在警告後才升級為封禁。在新留言以及標記閾值跨越時觸發（預設標記閾值：3）。允許的工具：`mark_comment_approved`、`mark_comment_spam`、`warn_user`、`ban_user`。
 
-- **[歡迎迎賓](#template-welcome-greeter)** - 向首次留言的使用者以簡短且有溫度的個人化歡迎回覆。觸發條件為 new-user-first-comment。允許的工具：`write_comment`。
+- **[Welcome Greeter](#template-welcome-greeter)** - 以簡短、個人化的歡迎訊息熱情回覆首次留言者。在新使用者的首次留言時觸發。允許的工具：`write_comment`。
 
-- **[熱門評論釘選器](#template-top-comment-pinner)** - 在實質性頂層評論達到票數閾值後將其釘選（預設：10），並先取消先前被釘選的評論。觸發條件為 vote-threshold crossings。允許的工具：`pin_comment`, `unpin_comment`。
+- **[Top Comment Pinner](#template-top-comment-pinner)** - 當實質性的頂層留言跨越投票閾值（預設：10）時將其置頂，並先取消先前置頂的留言。在投票閾值跨越時觸發。允許的工具：`pin_comment`、`unpin_comment`。
 
-- **[討論串摘要器](#template-thread-summarizer)** - 在長討論串延遲一段時間後發表中性、一段落的摘要，然後將其釘選。觸發條件為新評論，並延遲 30 分鐘以便討論串穩定後再摘要。允許的工具：`write_comment`, `pin_comment`, `unpin_comment`。
+- **[Thread Summarizer](#template-thread-summarizer)** - 在延遲一段時間後，於長討論串上發布中立的單段摘要，然後將其置頂。在新留言時觸發，並有 30 分鐘的延遲，讓討論串在摘要前先沉澱。允許的工具：`write_comment`、`pin_comment`、`unpin_comment`。
 
-- **[Gaslight 偵測器](#template-gaslight-detector)** - 監視評論編輯以發現會扭曲回覆的討論串中途改寫，回復原始文字並私訊作者。觸發條件為評論編輯。允許的工具：`edit_comment`, `warn_user`, `send_dm`。
+- **[Gaslight Detector](#template-gaslight-detector)** - 監控留言編輯，偵測扭曲回覆的討論串中途改寫，還原原始文字，並傳送私訊給作者。在留言編輯時觸發。允許的工具：`edit_comment`、`warn_user`、`send_dm`。
 
 ### 自訂範本
 
-範本只是起點，而非合約。你應該：
+範本是起點，而非契約。您應該：
 
-- 微調 **Initial prompt** 以符合你的社群語氣。
-- 新增或移除 **Triggers**，以配合你希望代理運作的頻率。
-- 為任何敏感操作加入 **Approvals** — 我們強烈建議對於類似版主的範本將 `ban_user` 設為需經審核。
-- 新增 **Community guidelines**，讓代理能一致地套用你書面的政策。參見 [社群準則](#community-guidelines)。
-- 根據你預期的觸發次數，為每個代理設定適當的 **預算 (Budgets)**。
+- 調整 **Initial prompt** 以符合您社群的語氣。
+- 新增或移除 **Triggers** 以符合代理應執行的頻率。
+- 為任何敏感操作新增 **Approvals** - 我們強烈建議在主持人風格的範本中，將 `ban_user` 置於審批機制之後。
+- 新增 **Community guidelines**，讓代理一致地套用您的書面政策。請參閱 [Community Guidelines](#community-guidelines)。
+- 根據您預期的觸發次數，設定每個代理適當的 **Budgets**。
 
-範本只是預填合理預設值的工具；一旦儲存，該代理就屬於你。
+範本只是預填合理預設值的載體；一旦儲存，代理就屬於您了。

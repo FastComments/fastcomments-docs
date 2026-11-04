@@ -25,5 +25,3 @@ api->putCloseThread(tenantId, urlId, sso).then([](pplx::task<std::shared_ptr<API
     }
 });
 [inline-code-end]
-
----

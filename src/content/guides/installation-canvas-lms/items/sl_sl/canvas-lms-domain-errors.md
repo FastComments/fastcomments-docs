@@ -1,4 +1,3 @@
----
 Morda boste prejeli napako pooblaščanja, kot je prikazano spodaj:
 
 <div class="screenshot white-bg">
@@ -13,5 +12,3 @@ V tem primeru je rešitev preprosta. Samo domeno vaše instance Canvas morate do
 <a href="https://fastcomments.com/auth/my-account/configure-domains" target="_blank">Pojdite sem, da svojo spletno stran dodate v svoj račun.</a>
 
 Dodajte domeno vaše instance Canvas (npr. `yourschool.instructure.com`) in komentarji bi se morali pravilno naložiti.
-
----

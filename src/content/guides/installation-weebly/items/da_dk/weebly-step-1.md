@@ -26,5 +26,3 @@ Sæt nu `Commenting system` til `Default` og `Comment Default` til `Closed`:
 </div>
 
 Dernæst skal vi blot tilføje FastComments.com-widgetkoden!
-
----

@@ -29,5 +29,3 @@ api->createFeedPost(tenantId, postParams, options).then([](std::shared_ptr<Creat
     auto postId = resp->postId;
 });
 [inline-code-end]
-
----

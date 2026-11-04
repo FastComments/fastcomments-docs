@@ -22,5 +22,3 @@ if feedResponseOpt.isSome:
   let feedResponse = feedResponseOpt.get()
   echo feedResponse
 [inline-code-end]
-
----

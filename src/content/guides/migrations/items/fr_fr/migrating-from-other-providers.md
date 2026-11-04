@@ -1,4 +1,3 @@
----
 Lors de la migration depuis un autre fournisseur, il y a quelques points à prendre en compte :
 
 1. Les données de commentaires existantes, y compris les réponses.
@@ -7,5 +6,3 @@ Lors de la migration depuis un autre fournisseur, il y a quelques points à pren
 
 L'importation de données en libre-service présentée dans les sections suivantes couvre les deux premiers points. Pour la personnalisation, consultez notre
 [guide de personnalisation](/guide-customizations-and-configuration.html).
-
----

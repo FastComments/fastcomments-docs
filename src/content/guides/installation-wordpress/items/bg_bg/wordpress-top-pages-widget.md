@@ -1,30 +1,30 @@
-The Top Pages widget displays the most-commented pages on your site. It's useful for surfacing your most-engaging content to new visitors and increasing time on site.
+Уиджетът Top Pages показва страниците с най-много коментари на вашия сайт. Полезен е за представяне на най-ангажиращото ви съдържание на нови посетители и за увеличаване на времето, прекарано на сайта.
 
 ## Опции
 
-- **Заглавие** (по избор): The heading shown above the list. Defaults to "Top Pages".
+- **Заглавие** (по избор): Заглавието, показвано над списъка. По подразбиране е "Top Pages".
 
-The Top Pages widget chooses its own layout based on available data and does not accept a count attribute.
+Уиджетът Top Pages сам избира своята подредба въз основа на наличните данни и не приема атрибут count.
 
 ## Как да го добавите
 
 ### В публикация или страница
 
-In the block editor, add a **Shortcode** block and paste:
+В блоковия редактор добавете блок **Shortcode** и поставете:
 
-[inline-code-attrs-start title = 'Кратък код за Top Pages'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Shortcode за Top Pages'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 [fastcomments_top_pages]
 [inline-code-end]
 
-### В странична лента или футър (Класически теми)
+### В странична лента или долен колонтитул (класически теми)
 
-Go to **Appearance > Widgets** in your WordPress admin. From the block inserter, search for "FastComments" and choose **FastComments: Top Pages**. Drag it into a sidebar, header, or footer area, then set the title from the widget panel.
+Отидете на **Външен вид > Уиджети** в администраторската част на WordPress. От блочния вставител потърсете "FastComments" и изберете **FastComments: Top Pages**. Плъзнете го в странична лента, хедър или долен колонтитул, след което задайте заглавието от панела на уиджета.
 
-### В блокова тема (Пълно редактиране на сайта)
+### В блокова тема (пълно редактиране на сайта)
 
-Open the **Site Editor** under **Appearance > Editor**. Navigate to the template part where the widget should appear, insert a **Legacy Widget** block, and select **FastComments: Top Pages** from the dropdown.
+Отворете **Редактор на сайта** под **Външен вид > Редактор**. Придвижете се до частта от шаблона, където уиджетът трябва да се появи, вмъкнете блок **Legacy Widget** и изберете **FastComments: Top Pages** от падащото меню.
 
 ## Отстраняване на проблеми
 
-The widget only renders after FastComments setup is complete and a tenant ID is stored. If the widget area is blank, complete setup under **FastComments** in the WordPress admin and reload the page.
+Уиджетът се показва само след като настройката на FastComments е завършена и е запазен tenant ID. Ако областта на уиджета е празна, завършете настройката под **FastComments** в администраторската част на WordPress и презаредете страницата.

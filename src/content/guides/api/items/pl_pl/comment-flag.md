@@ -1,25 +1,24 @@
 [api-resource-header-start name = 'Comment'; route = 'POST /api/v1/comments/:id/flag'; creditsCost = 1; api-resource-header-end]
 
-This API endpoint provides the ability to flag a comment for a specific user.
+Ten punkt końcowy API umożliwia zgłoszenie (oflagowanie) komentarza dla konkretnego użytkownika.
 
-Notes:
+Uwagi:
 
-- This call must always be made in the context of a user. The user can be a FastComments.com User, SSO User, or Tenant User.
-- If a flag-to-hide threshold is set, the comment will be automatically hidden live after it has been flagged the defined number of times.
-- After it is automatically un-approved (hidden) - the comment can only be re-approved by an administrator or moderator. Un-flagging will not re-approve the comment.
+- To wywołanie zawsze musi być wykonane w kontekście użytkownika. Użytkownikiem może być użytkownik FastComments.com, użytkownik SSO lub użytkownik dzierżawy (Tenant User).
+- Jeśli ustawiony jest próg flag-do-ukrycia, komentarz zostanie automatycznie ukryty na żywo po zgłoszeniu go zdefiniowaną liczbę razy.
+- Po automatycznym cofnięciu zatwierdzenia (ukryciu) - komentarz może zostać ponownie zatwierdzony tylko przez administratora lub moderatora. Usunięcie flagi nie spowoduje ponownego zatwierdzenia komentarza.
 
-[inline-code-attrs-start title = 'Przykład cURL: zgłoszenie komentarza'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Przykład cURL zgłoszenia komentarza'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request POST \
   --url 'https://fastcomments.com/api/v1/comments/some-comment-id/flag?tenantId=demo&API_KEY=DEMO_API_SECRET&userId=some-user-id' \
   --header 'Content-Type: application/json'
 [inline-code-end]
 
-For anonymous flagging, we must specify an `anonUserId`. This can be an ID that represents the anonymous session, or a random UUID.
-This allows us to support flagging and un-flagging comments even if a user is not logged in. This way, the comment can be marked as
-flagged when comments are fetched with the same `anonUserId`.
+W przypadku zgłoszeń anonimowych musimy podać `anonUserId`. Może to być identyfikator reprezentujący sesję anonimową lub losowy UUID.
+Pozwala to na obsługę zgłaszania i cofania zgłoszeń komentarzy nawet wtedy, gdy użytkownik nie jest zalogowany. Dzięki temu komentarz może zostać oznaczony jako zgłoszony, gdy komentarze są pobierane z tym samym `anonUserId`.
 
-[inline-code-attrs-start title = 'Przykład cURL: anonimowe zgłoszenie komentarza'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Przykład cURL anonimowego zgłoszenia komentarza'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request POST \
   --url 'https://fastcomments.com/api/v1/comments/some-comment-id/flag?tenantId=demo&API_KEY=DEMO_API_SECRET&anonUserId=some-anon-user-id' \
@@ -42,11 +41,11 @@ interface CommentFlagQueryParams {
 
 interface CommentFlagResponse {
     status: 'success' | 'failed'
-    /** Dołączone w przypadku niepowodzenia. **/
+    /** Included on failure. **/
     code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-id' | 'not-found' | 'missing-user-id' | 'missing-anon-user-id'
-    /** Dołączone w przypadku niepowodzenia. **/
+    /** Included on failure. **/
     reason?: string
-    /** Czy komentarz został cofnięty/odrzucony (ukryty) z powodu zbyt wielu zgłoszeń? **/
+    /** Was the comment un-approved (hidden) due to being flagged too many times? **/
     wasUnapproved?: boolean;
 }
 [inline-code-end]

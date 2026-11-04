@@ -1,22 +1,21 @@
-Κάθε widget από `fastcomments-react` είναι διαθέσιμο με το ίδιο όνομα:
+Κάθε widget από το `fastcomments-react` είναι διαθέσιμο με το ίδιο όνομα:
 
-| Component | Handle type | Embed loaded |
+| Component | Τύπος handle | Ενσωματωμένο widget |
 | --- | --- | --- |
-| `FastCommentsCommentWidget` | `FastCommentsCommentWidgetHandle` | Κύριο widget σχολιασμών σε πραγματικό χρόνο |
-| `FastCommentsCommentCountWidget` | `FastCommentsCommentCountWidgetHandle` | Ενσωματωμένο badge καταμέτρησης σχολίων |
-| `FastCommentsLiveChatWidget` | `FastCommentsLiveChatWidgetHandle` | Widget ζωντανής συνομιλίας streaming |
-| `FastCommentsCollabChatWidget` | `FastCommentsCollabChatWidgetHandle` | Συνεργατική συνομιλία αγκυρωμένη σε κείμενο |
-| `FastCommentsImageChatWidget` | `FastCommentsImageChatWidgetHandle` | Σχόλια εικόνας βασισμένα σε περιοχές |
+| `FastCommentsCommentWidget` | `FastCommentsCommentWidgetHandle` | Κύριο widget ζωντανών σχολίων |
+| `FastCommentsCommentCountWidget` | `FastCommentsCommentCountWidgetHandle` | Ενσωματωμένο badge μετρητή σχολίων |
+| `FastCommentsLiveChatWidget` | `FastCommentsLiveChatWidgetHandle` | Widget live chat με ροή |
+| `FastCommentsCollabChatWidget` | `FastCommentsCollabChatWidgetHandle` | Συνεργατικό chat με αγκύρωση σε κείμενο |
+| `FastCommentsImageChatWidget` | `FastCommentsImageChatWidgetHandle` | Σχόλια εικόνας βάσει περιοχής |
 | `FastCommentsRecentCommentsWidget` | `FastCommentsRecentCommentsWidgetHandle` | Ροή πρόσφατων σχολίων |
 | `FastCommentsRecentDiscussionsWidget` | `FastCommentsRecentDiscussionsWidgetHandle` | Ροή πρόσφατων συζητήσεων |
-| `FastCommentsReviewsSummaryWidget` | `FastCommentsReviewsSummaryWidgetHandle` | Σύνοψη αξιολόγησης με αστέρια |
+| `FastCommentsReviewsSummaryWidget` | `FastCommentsReviewsSummaryWidgetHandle` | Σύνοψη βαθμολογιών με αστέρια |
 | `FastCommentsTopPagesWidget` | `FastCommentsTopPagesWidgetHandle` | Κατάταξη σελίδων με τα περισσότερα σχόλια |
-| `FastCommentsUserActivityFeedWidget` | `FastCommentsUserActivityFeedWidgetHandle` | Χρονική γραμμή δραστηριότητας ανά χρήστη |
+| `FastCommentsUserActivityFeedWidget` | `FastCommentsUserActivityFeedWidgetHandle` | Χρονολόγιο δραστηριότητας ανά χρήστη |
 
-### Widgets that attach to an existing element
+### Widgets που συνδέονται με υπάρχον στοιχείο
 
-`FastCommentsCollabChatWidget` and `FastCommentsImageChatWidget` mount into a caller-supplied
-element. Pass a `targetRef` accessor that returns the element once mounted:
+Τα `FastCommentsCollabChatWidget` και `FastCommentsImageChatWidget` τοποθετούνται σε στοιχείο που παρέχει ο καλών. Περάστε μια συνάρτηση `targetRef` που επιστρέφει το στοιχείο μόλις φορτώσει:
 
 ```tsx
 import { FastCommentsImageChatWidget } from 'fastcomments-solidjs';
@@ -36,6 +35,6 @@ export default function ImageChat() {
 }
 ```
 
-### Regions
+### Περιοχές
 
-Pass `region="eu"` to route widget traffic through the EU cluster.
+Περάστε `region="eu"` για να δρομολογείται η κίνηση του widget μέσω του ευρωπαϊκού (EU) cluster.

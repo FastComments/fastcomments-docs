@@ -1,26 +1,24 @@
-The new and edit webhook pages have a `Send Test Payload` button that sends a request to the URL currently in the form, whether or not it has been saved. The Create and Update events send a dummy WebhookComment object, while testing Delete will send a dummy request body with just an ID.
+新規および編集用のWebhookページには、`Send Test Payload` ボタンがあり、保存済みかどうかに関わらず、フォームに入力されているURLにリクエストを送信します。CreateイベントとUpdateイベントはダミーのWebhookCommentオブジェクトを送信し、DeleteのテストではIDのみを含むダミーのリクエストボディを送信します。
 
 ## ペイロードの検証
 
-When testing your webhook integration, verify the incoming requests include the following headers:
+Webhook統合をテストする際、受信リクエストに以下のヘッダーが含まれていることを確認してください:
 
-1. **`X-FastComments-Timestamp`** - Unix タイムスタンプ（秒）
-2. **`X-FastComments-Signature`** - HMAC-SHA256 署名
+1. **`X-FastComments-Timestamp`** - Unixタイムスタンプ(秒)
+2. **`X-FastComments-Signature`** - HMAC-SHA256署名
 
-Webhooks created before the signature scheme was introduced also receive a **`token`** header containing your API Secret. New webhooks do not.
+署名スキームが導入される前に作成されたWebhookも、APIシークレットを含む **`token`** ヘッダーを受け取ります。新しいWebhookでは受け取りません。
 
-Use the HMAC signature verification to ensure payloads are authentic.
+ペイロードが本物であることを確認するために、HMAC署名検証を使用してください。
 
 ## テストツール
 
-You can use tools like [webhook.site](https://webhook.site) or [ngrok](https://ngrok.com) to inspect incoming webhook payloads during development.
+開発中に受信したWebhookペイロードを検査するには、[webhook.site](https://webhook.site) や [ngrok](https://ngrok.com) などのツールを使用できます。
 
 ## イベントタイプ
 
-- **Create Event**: 新しいコメントが作成されたときにトリガーされます。
-- **Update Event**: コメントが編集されたときにトリガーされます。
-- **Delete Event**: コメントが削除されたときにトリガーされます。
+- **Createイベント**: 新しいコメントが作成されたときにトリガーされます。
+- **Updateイベント**: コメントが編集されたときにトリガーされます。
+- **Deleteイベント**: コメントが削除されたときにトリガーされます。
 
-Each webhook is tied to one event and one HTTP method (POST, PUT or DELETE). Each event includes the full comment data in the request body (see [Data Structures](/guide-webhooks.html#webhooks-structures) for the payload format).
-
----
+各Webhookは1つのイベントと1つのHTTPメソッド(POST、PUT、またはDELETE)に紐付けられています。各イベントには、リクエストボディにコメントの完全なデータが含まれます(ペイロード形式については [データ構造](/guide-webhooks.html#webhooks-structures) を参照してください)。

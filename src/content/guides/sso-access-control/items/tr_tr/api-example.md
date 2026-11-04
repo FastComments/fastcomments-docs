@@ -1,10 +1,10 @@
-Burada erişim kontrolünü ayarlamak için FastComments API'sini nasıl çağıracağımızı adım adım göstereceğiz.
+Burada FastComments API'sini erişim kontrolü kurmak için çağırma sürecini adım adım ele alacağız.
 
-Başlamadan önce, `Group` yapısını açıkça oluşturmamız gerekmediğini unutmayın. Gruplar sadece `Users` ve `Pages`'e eklenen tanımlayıcılardır. Bir kullanıcıya veya sayfaya grup eklemek, grubu otomatik olarak "oluşturur".
+Başlamadan önce, açıkça bir `Group` yapısı oluşturmamıza gerek olmadığını belirtelim. Gruplar, `Users` ve `Pages` öğelerine eklenen basit tanımlayıcılardır. Bir kullanıcıya veya sayfaya grup eklemek, grubu otomatik olarak "oluşturur".
 
-First, let's create two users, `User A` and `User B`, we'll start them out in `Group X`:
+Öncelikle, `User A` ve `User B` olmak üzere iki kullanıcı oluşturalım; ikisini de `Group X` içinde başlatacağız:
 
-[inline-code-attrs-start title = 'Kullanıcı A Oluşturma cURL Örneği'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'User A Oluşturma cURL Örneği'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request POST \
   --url 'https://fastcomments.com/api/v1/sso-users?tenantId=demo&API_KEY=DEMO_API_SECRET' \
@@ -17,7 +17,7 @@ curl --request POST \
 }'
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Kullanıcı B Oluşturma cURL Örneği'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'User B Oluşturma cURL Örneği'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request POST \
   --url 'https://fastcomments.com/api/v1/sso-users?tenantId=demo&API_KEY=DEMO_API_SECRET' \
@@ -30,10 +30,9 @@ curl --request POST \
 }'
 [inline-code-end]
 
-Now let's create a `Page`. We'll call it our `Confidential Page`, and so far none of these users will have access to it as it will
-be in the group `CONFIDENTIAL`:
+Şimdi bir `Page` oluşturalım. Buna `Confidential Page` (Gizli Sayfa) diyelim; şu ana kadar bu kullanıcıların hiçbiri ona erişemeyecek çünkü sayfa `CONFIDENTIAL` grubunda olacak:
 
-[inline-code-attrs-start title = 'Sayfa POST cURL Örneği'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Page POST cURL Örneği'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request POST \
   --url 'https://fastcomments.com/api/v1/pages?tenantId=demo&API_KEY=DEMO_API_SECRET' \
@@ -46,11 +45,11 @@ curl --request POST \
 }'
 [inline-code-end]
 
-Kullanıcı A ve B şu anda yeni sayfaya **ERİŞEMİYORLAR**. Ancak aynı grup `GROUP-X` içinde oldukları için birbirlerini `@mention` edebilirler.
+A ve B kullanıcıları şu anda yeni sayfaya **ERİŞEMEZ**. Ancak, aynı grupta oldukları için, `GROUP-X`, birbirlerini `@mention` (bahsedebilirler).
 
-Let's update `User B` so they can now access the page:
+`User B` kullanıcısını, artık sayfaya erişebilecek şekilde güncelleyelim:
 
-[inline-code-attrs-start title = 'Kullanıcı B Güncelleme cURL Örneği'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'User B Güncelleme cURL Örneği'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request POST \
   --url 'https://fastcomments.com/api/v1/sso-users?tenantId=demo&API_KEY=DEMO_API_SECRET' \
@@ -60,11 +59,11 @@ curl --request POST \
 }'
 [inline-code-end]
 
-`User B` artık her iki gruba ait. Kullanıcılarımız hâlâ birbirlerini `@mention` edebilir, ancak yalnızca `User B` gizli sayfamızı görüntüleyebilir.
+`User B` artık her iki gruba da ait. Kullanıcılarımız hâlâ birbirlerini `@mention` yapabilir, ancak yalnızca `User B` gizli sayfamızı görüntüleyebilir.
 
-Let's make it so `User B` can only view the confidential page:
+`User B`'nin yalnızca gizli sayfayı görüntüleyebilmesini sağlayalım:
 
-[inline-code-attrs-start title = 'Kullanıcı B Güncelleme cURL Örneği'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'User B Güncelleme cURL Örneği'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request POST \
   --url 'https://fastcomments.com/api/v1/sso-users?tenantId=demo&API_KEY=DEMO_API_SECRET' \
@@ -74,12 +73,11 @@ curl --request POST \
 }'
 [inline-code-end]
 
-Şimdi gizli sayfayı görüntüleyebiliyorlar, ancak kullanıcılarımızın hiçbiri birbirini `@mention` edemez; çünkü farklı gruplardalar.
+Artık gizli sayfayı görüntüleyebilir, ancak kullanıcılarımızın hiçbiri birbirini `@mention` yapamaz, çünkü farklı gruplardadırlar.
 
-However, any user that is not part of access control **will be able to access our page**. To prevent this, ensure no SSO Users have
-their `groupIds` set to null. For example, let's create `User C`, which has access to everything:
+Ancak, erişim kontrolünün bir parçası olmayan herhangi bir kullanıcı **sayfamıza erişebilecektir**. Bunu önlemek için, hiçbir SSO kullanıcısının `groupIds` değerinin null olarak ayarlanmadığından emin olun. Örneğin, her şeye erişimi olan `User C` kullanıcısını oluşturalım:
 
-[inline-code-attrs-start title = 'Kullanıcı C Oluşturma cURL Örneği'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'User C Oluşturma cURL Örneği'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request POST \
   --url 'https://fastcomments.com/api/v1/sso-users?tenantId=demo&API_KEY=DEMO_API_SECRET' \
@@ -92,11 +90,11 @@ curl --request POST \
 }'
 [inline-code-end]
 
-`groupIds`'i null olarak ayarlayarak, erişim kontrolü tarafından kısıtlanmadıklarını belirtiriz.
+`groupIds` değerini null olarak ayarlayarak, erişim kontrolüyle sınırlı olmadıklarını belirtmiş oluruz.
 
-Now, let's create a page that everyone has access to:
+Şimdi, herkesin erişebildiği bir sayfa oluşturalım:
 
-[inline-code-attrs-start title = 'Sayfa POST cURL Örneği'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Page POST cURL Örneği'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request POST \
   --url 'https://fastcomments.com/api/v1/pages?tenantId=demo&API_KEY=DEMO_API_SECRET' \
@@ -109,8 +107,6 @@ curl --request POST \
 }'
 [inline-code-end]
 
-`accessibleByGroupIds`'i null olarak ayarlayarak, bu `Page`'in erişim kontrolü ile yönetilmediğini ve her iki kullanıcının da ona erişebildiğini belirtiriz.
+`accessibleByGroupIds` değerini null olarak ayarlayarak, bu `Page`'in erişim kontrolü aracılığıyla yönetilmediğini ve her iki kullanıcının da ona erişebildiğini belirtmiş oluruz.
 
-This completes our API walk-through for Access Control.
-
----
+Bu, Erişim Kontrolü için API turumuzu tamamlıyor.

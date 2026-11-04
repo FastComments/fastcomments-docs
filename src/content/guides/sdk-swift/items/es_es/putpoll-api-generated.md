@@ -41,5 +41,3 @@ DefaultAPI.putPoll(tenantId: tenantId, commentId: commentId, commentPollPutInput
     }
 }
 [inline-code-end]
-
----

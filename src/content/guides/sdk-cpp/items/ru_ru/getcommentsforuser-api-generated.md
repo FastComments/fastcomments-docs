@@ -25,5 +25,3 @@ api->getCommentsForUser(options).then([](pplx::task<std::shared_ptr<GetCommentsF
     }catch(const std::exception&){}
 });
 [inline-code-end]
-
----

@@ -28,5 +28,3 @@ async fn fetch_tickets(configuration: &configuration::Configuration) -> Result<(
     Ok(())
 }
 [inline-code-end]
-
----

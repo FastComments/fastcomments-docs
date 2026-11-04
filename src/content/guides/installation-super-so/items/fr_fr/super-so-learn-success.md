@@ -8,5 +8,3 @@ Voici à quoi cela devrait ressembler - vous devriez pouvoir sélectionner du te
 </div>
 
 Félicitations pour la configuration de FastComments avec Super ! Si vous avez rencontré une Domain Error, ou si vous souhaitez apprendre à personnaliser la zone de commentaires, lisez la suite !
-
----

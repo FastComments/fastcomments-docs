@@ -1,4 +1,3 @@
----
 Sonra, FastComments.com widget kodumuzu kopyalayalım:
 
 [code-example-start config = {}; title = 'Installation Code'; isFunctional = false; code-example-end]
@@ -18,5 +17,3 @@ Kodu ekledikten sonra, Webflow size widget'ın Edit veya Preview modunda görün
     <div class="title">Not: Yorumlar Yayınlanana Kadar Görünmeyecektir</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-webflow-step-3.png" alt="Yorumlar Yayınlanana Kadar Görünmeyecektir" />
 </div>
-
----

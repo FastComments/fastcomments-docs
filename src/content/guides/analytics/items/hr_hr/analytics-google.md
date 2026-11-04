@@ -35,5 +35,3 @@ Ovo će dodati dva događaja:
 
 - Oznaka: `Comment Posted`, Kategorija: `Engagement`, ID: `post_comment`
 - Oznaka: `User Voted on a Comment`, Kategorija: `Engagement`, ID: `vote_comment`
-
----

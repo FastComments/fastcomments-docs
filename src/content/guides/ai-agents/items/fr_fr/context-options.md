@@ -63,5 +63,3 @@ Ces cases s'appliquent par agent, pas globalement. Un schéma commun :
 - Résumeur de fil : contexte du fil **activé**, contexte de la page **activé**, historique utilisateur **désactivé**.
 
 Visez le contexte minimum dont un agent a besoin pour être correct sur les appels qu'il effectue réellement - le contexte supplémentaire coûte des tokens à chaque exécution, même lorsque l'agent ne l'utilise pas.
-
----

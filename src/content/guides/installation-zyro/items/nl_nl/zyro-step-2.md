@@ -45,5 +45,3 @@ Sleep de widget nu naar de gewenste grootte; je zult zien dat deze verschijnt:
 </div>
 
 ...en bekijk nu een voorbeeld en sla op!
-
----

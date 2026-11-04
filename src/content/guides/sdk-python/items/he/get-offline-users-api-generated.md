@@ -1,4 +1,3 @@
----
 המתגיבים הקודמים בעמוד שאינם מחוברים כרגע. ממוינים לפי displayName.  
 השתמשו בזה לאחר שניצל /users/online כדי להציג מדור "Members".  
 דפדוף באמצעות מצביע על commenterName: השרת הולך בחלק החלקי {tenantId, urlId, commenterName}  

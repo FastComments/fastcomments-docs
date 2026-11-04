@@ -9,5 +9,3 @@
 זה גם ניתן לבצע ללא קוד. בדף התאמת הווידג'ט, ראה את הסעיף "השבתת פרופילים".
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-profiles']; selector = '.disable-profiles'; alt='דף התאמת הווידג\'ט עם תיבת הסימון של השבתת פרופילים מסומנת כך שהאוואטרים לא פותחים יותר פרופילים'; title='השבתת פרופילים' app-screenshot-end]
-
----

@@ -1,4 +1,3 @@
----
 Ako ste instalirali FastComments iz Shopify App Storea, domena vaše trgovine automatski se dodaje među tenant-ove ovlaštene domene i ne biste trebali vidjeti pogrešku domene. Ova stranica primjenjuje se ako ste prošli ručni put instalacije, ili ako je vaš prodajni prostor poslužen na prilagođenoj domeni koja nije bila registrirana kod Shopifyja u trenutku instalacije aplikacije.
 
 Možete dobiti pogrešku autorizacije koja izgleda ovako:
@@ -11,5 +10,3 @@ Možete dobiti pogrešku autorizacije koja izgleda ovako:
 To znači da FastComments ne prepoznaje domenu na kojoj se widget učitava kao ovlaštenu za vaš tenant.
 
 Da biste to popravili, dodajte domenu u svoj FastComments račun: [Konfigurirajte domene](https://fastcomments.com/auth/my-account/configure-domains).
-
----

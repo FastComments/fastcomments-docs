@@ -1,4 +1,3 @@
----
 ### Erros 401 — Não autorizado
 
 Se você está recebendo erros 401 ao usar a API autenticada:
@@ -40,4 +39,3 @@ async fn main() {
     // Seu código assíncrono aqui
 }
 ```
----

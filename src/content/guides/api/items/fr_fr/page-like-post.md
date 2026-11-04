@@ -1,4 +1,3 @@
----
 [api-resource-header-start name = 'Page Likes'; route = 'POST /page-reacts/v1/likes/:tenantId'; creditsCost = 0; api-resource-header-end]
 
 Aime une page en tant qu'utilisateur actuel. Chaque utilisateur ne peut aimer une page qu'une fois : aimer à nouveau réussit avec le code `already-liked` et ne modifie pas le compteur.
@@ -32,5 +31,3 @@ interface PageLikeResponse {
     reason?: string
 }
 [inline-code-end]
-
----

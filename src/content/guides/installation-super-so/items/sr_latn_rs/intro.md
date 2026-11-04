@@ -2,5 +2,3 @@ FastComments Collab Chat podiže Super.so sajtove na viši nivo dodavanjem živi
 delove teksta kolaborativno, zajedno - uživo!
 
 Ovde ćemo pokriti korake instalacije koji bi trebalo da traju samo nekoliko minuta.
-
----

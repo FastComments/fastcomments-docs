@@ -1,6 +1,6 @@
-### Dark Mode Support
+### Obsługa trybu ciemnego
 
-Image Chat includes built-in dark mode support. When you set `hasDarkBackground: true` in your configuration, the chat windows and UI elements automatically adjust to work well on dark backgrounds.
+Image Chat zawiera wbudowaną obsługę trybu ciemnego. Gdy ustawisz `hasDarkBackground: true` w swojej konfiguracji, okna czatu i elementy interfejsu automatycznie dostosują się do ciemnych tł.
 
 ```javascript
 FastCommentsImageChat(imageElement, {
@@ -9,11 +9,11 @@ FastCommentsImageChat(imageElement, {
 });
 ```
 
-The dark mode styling applies to chat windows, marker squares, and all interactive elements. If your site has a dark mode toggle, you can reinitialize the widget when the mode changes, or use the body class approach described below.
+Stylizacja trybu ciemnego dotyczy okien czatu, kwadratowych znaczników i wszystkich elementów interaktywnych. Jeśli Twoja witryna ma przełącznik trybu ciemnego, możesz ponownie zainicjować widżet po zmianie trybu lub użyć podejścia z klasą body opisanego poniżej.
 
-### Dynamic Dark Mode
+### Dynamiczny tryb ciemny
 
-If your site's dark mode is controlled by adding a `.dark` class to the body element, the Image Chat UI will automatically respect this without requiring reinitialization. The widget's styles are designed to respond to the presence of this class.
+Jeśli tryb ciemny Twojej witryny jest kontrolowany przez dodanie klasy `.dark` do elementu body, interfejs Image Chat automatycznie to uwzględni bez konieczności ponownej inicjalizacji. Style widżetu zostały zaprojektowane tak, aby reagować na obecność tej klasy.
 
 ```css
 /* Twoje CSS trybu ciemnego */
@@ -23,15 +23,15 @@ body.dark {
 }
 ```
 
-### Custom Styling with CSS
+### Niestandardowa stylizacja za pomocą CSS
 
-You can customize the appearance of markers, chat windows, and other elements using CSS. The widget adds specific classes that you can target in your stylesheet.
+Możesz dostosować wygląd znaczników, okien czatu i innych elementów za pomocą CSS. Widżet dodaje określone klasy, które możesz wykorzystać w swoim arkuszu stylów.
 
-The chat squares and windows use the FastComments comment bubble styling system, so any customizations you've applied to the standard commenting widget will also affect Image Chat.
+Kwadraty i okna czatu korzystają z systemu stylizacji dymków komentarzy FastComments, więc wszelkie dostosowania zastosowane do standardowego widżetu komentarzy będą miały również wpływ na Image Chat.
 
-### Chat Square Sizing
+### Rozmiar kwadratów czatu
 
-The `chatSquarePercentage` option controls the size of the clickable markers. The default is 5% of the image width:
+Opcja `chatSquarePercentage` kontroluje rozmiar klikalnych znaczników. Wartość domyślna to 5% szerokości obrazu:
 
 ```javascript
 FastCommentsImageChat(imageElement, {
@@ -40,29 +40,29 @@ FastCommentsImageChat(imageElement, {
 });
 ```
 
-Smaller values create more subtle markers that blend into the image. Larger values make markers more prominent and easier to click, especially on mobile devices or for accessibility purposes.
+Mniejsze wartości tworzą bardziej subtelne znaczniki, które wtapiają się w obraz. Większe wartości sprawiają, że znaczniki są bardziej widoczne i łatwiejsze do kliknięcia, szczególnie na urządzeniach mobilnych lub ze względów dostępności.
 
-### Mobile Behavior
+### Zachowanie na urządzeniach mobilnych
 
-On screens under 768px wide, Image Chat automatically switches to a mobile-optimized layout. Chat windows appear fullscreen instead of floating next to the markers, providing better usability on small screens.
+Na ekranach o szerokości poniżej 768px Image Chat automatycznie przełącza się na układ zoptymalizowany pod kątem urządzeń mobilnych. Okna czatu pojawiają się na pełnym ekranie zamiast unosić się obok znaczników, co zapewnia lepszą użyteczność na małych ekranach.
 
-The markers remain visible at their responsive positions on the image. Users can tap any marker to open the fullscreen chat interface. This behavior is built-in and doesn't require any configuration.
+Znaczniki pozostają widoczne w swoich responsywnych pozycjach na obrazie. Użytkownicy mogą dotknąć dowolnego znacznika, aby otworzyć pełnoekranowy interfejs czatu. To zachowanie jest wbudowane i nie wymaga żadnej konfiguracji.
 
-### Chat Window Appearance
+### Wygląd okna czatu
 
-Chat windows are 300px wide on desktop with a 16px arrow pointing to the marker. The windows position themselves automatically based on available viewport space, using positioning classes like `to-right`, `to-left`, `to-top`, and `to-bottom`.
+Okna czatu mają 300px szerokości na komputerach stacjonarnych ze strzałką 16px wskazującą znacznik. Okna pozycjonują się automatycznie w zależności od dostępnej przestrzeni w oknie widoku, używając klas pozycjonowania takich jak `to-right`, `to-left`, `to-top` i `to-bottom`.
 
-You can add custom CSS to adjust colors, fonts, spacing, or other visual properties of these windows. The chat windows use the same component structure as the standard FastComments widget, so they inherit any global customizations you've applied.
+Możesz dodać niestandardowy CSS, aby dostosować kolory, czcionki, odstępy lub inne właściwości wizualne tych okien. Okna czatu używają tej samej struktury komponentów co standardowy widżet FastComments, więc dziedziczą wszelkie globalne dostosowania, które zastosowałeś.
 
-### Lazy Initialization
+### Leniwa inicjalizacja
 
-Chat windows initialize on hover for desktop users or immediately when created. This reduces the initial load overhead by only rendering the chat interface when users actually interact with a marker.
+Okna czatu inicjalizują się po najechaniu kursorem dla użytkowników komputerów stacjonarnych lub natychmiast po utworzeniu. Zmniejsza to początkowe obciążenie ładowania, renderując interfejs czatu tylko wtedy, gdy użytkownicy faktycznie wchodzą w interakcję ze znacznikiem.
 
-The lazy initialization happens transparently. Users don't notice any delay, but the browser doesn't need to render dozens of hidden chat windows if you have many markers on an image.
+Leniwa inicjalizacja odbywa się w sposób niewidoczny. Użytkownicy nie zauważają żadnego opóźnienia, ale przeglądarka nie musi renderować dziesiątek ukrytych okien czatu, jeśli na obrazie znajduje się wiele znaczników.
 
-### Localization
+### Lokalizacja
 
-Image Chat supports all the same localization options as the standard FastComments widget. Set the `locale` option to display UI text in different languages:
+Image Chat obsługuje te same opcje lokalizacji co standardowy widżet FastComments. Ustaw opcję `locale`, aby wyświetlać tekst interfejsu w różnych językach:
 
 ```javascript
 FastCommentsImageChat(imageElement, {
@@ -71,22 +71,22 @@ FastCommentsImageChat(imageElement, {
 });
 ```
 
-FastComments supports dozens of languages. The locale setting affects all UI text including prompts, buttons, and placeholder text.
+FastComments obsługuje dziesiątki języków. Ustawienie locale wpływa na cały tekst interfejsu, w tym podpowiedzi, przyciski i tekst zastępczy.
 
-### Inherited Customization Options
+### Odziedziczone opcje dostosowywania
 
-Since Image Chat extends the standard commenting widget, it inherits all customization options from the base widget. This includes custom CSS classes, custom translations, avatar customization, date formatting, and much more.
+Ponieważ Image Chat rozszerza standardowy widżet komentarzy, dziedziczy wszystkie opcje dostosowywania z bazowego widżetu. Obejmuje to niestandardowe klasy CSS, niestandardowe tłumaczenia, dostosowywanie awatarów, formatowanie dat i wiele więcej.
 
-See the main FastComments customization documentation for the complete list of customization options available.
+Zobacz główną dokumentację dostosowywania FastComments, aby zapoznać się z pełną listą dostępnych opcji dostosowywania.
 
-### Working with Custom Fonts
+### Praca z niestandardowymi czcionkami
 
-If your site uses custom fonts, the Image Chat UI will inherit those fonts from your page's CSS. The chat windows render inside your page's DOM and respect your existing typography settings.
+Jeśli Twoja witryna używa niestandardowych czcionek, interfejs Image Chat odziedziczy te czcionki z CSS Twojej strony. Okna czatu są renderowane wewnątrz DOM Twojej strony i respektują istniejące ustawienia typografii.
 
-For best results, ensure your custom fonts are loaded before initializing Image Chat, or accept that there may be a brief flash of unstyled text while fonts load.
+Aby uzyskać najlepsze rezultaty, upewnij się, że niestandardowe czcionki są załadowane przed zainicjowaniem Image Chat, albo zaakceptuj, że może wystąpić krótki błysk tekstu bez stylizacji podczas ładowania czcionek.
 
-### Marker Visual Design
+### Projekt wizualny znaczników
 
-The square markers have a subtle visual design that makes them noticeable without overwhelming the image. You can customize their appearance with CSS if you want a different visual treatment.
+Kwadratowe znaczniki mają subtelny projekt wizualny, który sprawia, że są zauważalne, nie przytłaczając obrazu. Możesz dostosować ich wygląd za pomocą CSS, jeśli chcesz uzyskać inny efekt wizualny.
 
-The markers include hover states that provide feedback when users move their mouse over them. On touch devices, the tap interaction provides immediate feedback by opening the chat window.
+Znaczniki zawierają stany hover, które zapewniają informację zwrotną, gdy użytkownicy przesuwają nad nimi kursor. Na urządzeniach dotykowych interakcja dotknięcia zapewnia natychmiastową informację zwrotną poprzez otwarcie okna czatu.

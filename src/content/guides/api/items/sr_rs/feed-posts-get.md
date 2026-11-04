@@ -35,5 +35,3 @@ interface FeedPostsResponse {
     feedPosts: FeedPost[]
 }
 [inline-code-end]
-
----

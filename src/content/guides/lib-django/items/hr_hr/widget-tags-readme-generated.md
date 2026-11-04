@@ -1,37 +1,37 @@
-Every widget has its own tag. All of them accept `**extra` keyword arguments,
-which are merged into the widget config as-is (use camelCase keys) for anything
-not covered by the named arguments below.
+Svaki widget ima svoju oznaku. Sve one prihvaćaju `**extra` ključne argumente,
+koji se spajaju u konfiguraciju widgeta onakvima kakvi jesu (koristite camelCase ključeve) za sve
+što nije pokriveno imenovanim argumentima u nastavku.
 
 | Oznaka | Widget |
 |---|---|
-| `{% fastcomments %}` | Comments |
+| `{% fastcomments %}` | Komentari |
 | `{% fastcomments_live_chat %}` | Live chat |
-| `{% fastcomments_comment_count %}` | Comment count badge |
-| `{% fastcomments_comment_count_bulk %}` + `{% fastcomments_count_marker %}` | Bulk comment counts |
-| `{% fastcomments_collab_chat target="#el" %}` | Collaborative (inline) chat |
-| `{% fastcomments_image_chat target="#el" %}` | Image annotation chat |
-| `{% fastcomments_recent_comments %}` | Recent comments |
-| `{% fastcomments_recent_discussions %}` | Recent discussions |
-| `{% fastcomments_reviews_summary %}` | Reviews summary |
-| `{% fastcomments_top_pages %}` | Most-discussed pages |
-| `{% fastcomments_user_activity user_id="..." %}` | A user's activity feed |
+| `{% fastcomments_comment_count %}` | Bedž broja komentara |
+| `{% fastcomments_comment_count_bulk %}` + `{% fastcomments_count_marker %}` | Brojači komentara u grupi |
+| `{% fastcomments_collab_chat target="#el" %}` | Suradnički (inline) chat |
+| `{% fastcomments_image_chat target="#el" %}` | Chat s bilješkama na slikama |
+| `{% fastcomments_recent_comments %}` | Nedavni komentari |
+| `{% fastcomments_recent_discussions %}` | Nedavne rasprave |
+| `{% fastcomments_reviews_summary %}` | Sažetak recenzija |
+| `{% fastcomments_top_pages %}` | Najraspravljanije stranice |
+| `{% fastcomments_user_activity user_id="..." %}` | Feed aktivnosti korisnika |
 
-Named arguments map to the widget's camelCase config keys:
+Imenovani argumenti mapiraju se na camelCase ključeve konfiguracije widgeta:
 
 | Argument | Ključ konfiguracije | Oznake |
 |---|---|---|
-| `url_id` | `urlId` | comments, live chat, comment count, collab/image chat, recent comments, reviews summary |
-| `url` | `url` | comments, live chat, collab/image chat |
-| `readonly` | `readonly` | comments, live chat, collab/image chat |
-| `locale` | `locale` | comments, live chat, collab/image chat, user activity |
-| `has_dark_background` | `hasDarkBackground` | all |
-| `default_sort_direction` | `defaultSortDirection` | comments, live chat, collab/image chat |
-| `number_only` | `numberOnly` | comment count |
-| `is_live` | `isLive` | comment count |
-| `count` | `count` | recent comments, recent discussions |
-| `target` | (querySelector, not sent) | collab chat, image chat |
+| `url_id` | `urlId` | komentari, live chat, brojač komentara, collab/image chat, nedavni komentari, sažetak recenzija |
+| `url` | `url` | komentari, live chat, collab/image chat |
+| `readonly` | `readonly` | komentari, live chat, collab/image chat |
+| `locale` | `locale` | komentari, live chat, collab/image chat, aktivnost korisnika |
+| `has_dark_background` | `hasDarkBackground` | sve |
+| `default_sort_direction` | `defaultSortDirection` | komentari, live chat, collab/image chat |
+| `number_only` | `numberOnly` | brojač komentara |
+| `is_live` | `isLive` | brojač komentara |
+| `count` | `count` | nedavni komentari, nedavne rasprave |
+| `target` | (querySelector, ne šalje se) | collab chat, image chat |
 | `chat_square_percentage` | `chatSquarePercentage` | image chat |
-| `user_id` | `userId` | user activity |
+| `user_id` | `userId` | aktivnost korisnika |
 
 Primjeri:
 

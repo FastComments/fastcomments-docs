@@ -1,4 +1,3 @@
----
 In FastComments scriviamo le nostre estensioni usando la stessa API. Puoi visualizzare il codice non minimizzato di queste estensioni ai seguenti endpoint:
 
 #### Modalità Scura
@@ -20,5 +19,3 @@ https://fastcomments.com/js/comment-ui/extensions/comment-ui.moderation.extensio
 L'estensione Chat dal vivo (in combinazione con altre configurazioni e stili) trasforma il widget dei commenti in un componente di chat dal vivo.
 
 https://fastcomments.com/js/comment-ui/extensions/live-chat.extension.js
-
----

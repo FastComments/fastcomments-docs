@@ -15,5 +15,3 @@ Esto se puede habilitar desde la interfaz de personalización, bajo la configura
 - Funciona con o sin [comentario anónimo](/guide-customizations-and-configuration.html#allow-anon). Con el comentario anónimo desactivado, el visitante sigue ingresando su correo electrónico, pero ya no tiene que pensar en un nombre de usuario.
 - Un visitante que regresa y escribe un correo electrónico que ya ha usado se asocia a su cuenta existente y conserva el nombre en esa cuenta.
 - Si también se ha configurado un [Nombre de usuario predeterminado](/guide-customizations-and-configuration.html#default-username), el nombre generado tiene prioridad.
-
----

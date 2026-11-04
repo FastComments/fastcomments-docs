@@ -1,4 +1,4 @@
-The widget is a script tag and a container element, so it drops into whatever your val already renders. This example uses Hono JSX, which is what Val Town's HTTP templates use.
+Виджет — это тег script и элемент-контейнер, поэтому он встраивается в то, что ваш val уже рендерит. В этом примере используется Hono JSX — именно его применяют HTTP-шаблоны Val Town.
 
 [inline-code-attrs-start title = 'Виджет комментариев в HTTP val'; type='javascript' inline-code-attrs-end]
 [inline-code-start]
@@ -39,15 +39,15 @@ export default app.fetch;
 
 ## Выберите urlId перед публикацией
 
-`urlId` decides which thread a comment lands in. Leave it unset and it defaults to a cleaned version of the current page URL, which is exactly the thing that changes on Val Town: a val has a long `*.web.val.run` hostname until you claim a subdomain, branches get their own URLs, and renaming a page changes the path. Each variation silently becomes a separate, empty thread, and the symptom reads as "my comments disappeared".
+`urlId` определяет, в какую ветку попадёт комментарий. Если оставить его неустановленным, по умолчанию используется очищенная версия URL текущей страницы — а именно это меняется на Val Town: val имеет длинный hostname `*.web.val.run`, пока вы не закрепите поддомен, ветки получают собственные URL, а переименование страницы меняет путь. Каждая вариация молча становится отдельной пустой веткой, и симптом выглядит как «мои комментарии исчезли».
 
-Set it to something stable that you control, like the post slug or a database id, as above. Pass `url` too, so notification emails and the moderation tools can link back to the real page.
+Задайте стабильное значение, которое вы контролируете, например slug поста или id из базы данных, как показано выше. Также передайте `url`, чтобы письма с уведомлениями и инструменты модерации могли ссылаться на реальную страницу.
 
 ## Сохранение комментариев без JavaScript
 
-FastComments renders a full thread server-side, which a val can drop into a `<noscript>` block:
+FastComments рендерит полную ветку на стороне сервера, и val может вставить её в блок `<noscript>`:
 
-[inline-code-attrs-start title = 'Запасной вариант без JavaScript'; type='html' inline-code-attrs-end]
+[inline-code-attrs-start title = 'Резервный вариант без JavaScript'; type='html' inline-code-attrs-end]
 [inline-code-start]
 <noscript>
   <iframe src="https://fastcomments.com/ssr/comments?tenantId=demo&urlId=POST_SLUG&url=PAGE_URL"
@@ -56,4 +56,4 @@ FastComments renders a full thread server-side, which a val can drop into a `<no
 </noscript>
 [inline-code-end]
 
-URL-encode the parameters. The server-side version supports anonymous and logged-in commenting, SSO, and nested replies.
+Кодируйте параметры в URL-формате. Серверная версия поддерживает анонимное комментирование и комментирование под залогиненным пользователем, SSO и вложенные ответы.

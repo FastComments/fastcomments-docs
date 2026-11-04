@@ -1,4 +1,3 @@
----
 [api-resource-header-start name = 'Page Reacts'; route = 'POST /page-reacts/v2/:tenantId'; creditsCost = 0; api-resource-header-end]
 
 Tilføjer en reaktion til en side som den aktuelle bruger. En bruger kan tilføje hver reaktions-id én gang: at tilføje den igen lykkes med koden `already-reacted` og ændrer ikke tælleren. En bruger kan tilføje flere forskellige reaktioner til den samme side.
@@ -34,5 +33,3 @@ interface PageReactResponse {
     reason?: string
 }
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 Todos los cambios en el objeto Comment en el sistema disparan un evento que termina en una cola.
 
 El evento webhook inicial suele enviarse dentro de seis segundos desde que ocurre la fuente del evento.
@@ -12,5 +11,3 @@ un minuto. Si falla dos veces, esperará entonces dos minutos, y así sucesivame
 sobrecarguemos tu API si estáis cayendo por razones relacionadas con la carga.
 
 Los webhooks pueden cancelarse desde la [página de registros](https://fastcomments.com/auth/my-account/manage-data/webhooks/logs).
-
----

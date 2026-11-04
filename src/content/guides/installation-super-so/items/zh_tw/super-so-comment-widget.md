@@ -82,5 +82,3 @@
 - 每個頁面會根據 URL 路徑擁有自己的唯一留言串
 - 請務必將 `"demo"` 替換為您 FastComments 帳戶中的實際 tenant ID
 - 小工具會自動處理 Super.so 的動態頁面載入
-
----

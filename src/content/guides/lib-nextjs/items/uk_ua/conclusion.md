@@ -8,5 +8,3 @@
 ## Внески
 
 Внески вітаються! Будь ласка, відвідайте [репозиторій на GitHub](https://github.com/FastComments/fastcomments-nextjs) для інструкцій щодо внесків.
-
----

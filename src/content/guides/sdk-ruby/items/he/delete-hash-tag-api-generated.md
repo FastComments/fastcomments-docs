@@ -36,5 +36,3 @@ rescue FastCommentsClient::ApiError => e
   puts "שגיאה בעת קריאת DefaultApi->delete_hash_tag: #{e}"
 end
 [inline-code-end]
-
----

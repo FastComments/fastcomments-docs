@@ -1,4 +1,3 @@
----
 ## Parâmetros
 
 | Nome | Tipo | Local | Obrigatório | Descrição |
@@ -29,5 +28,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_v1_page_likes: #{e}"
 end
 [inline-code-end]
-
----

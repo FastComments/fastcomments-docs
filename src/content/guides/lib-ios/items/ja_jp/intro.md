@@ -5,5 +5,3 @@ iOS アプリにライブコメント、チャット、レビューのウィジ�
 ## リポジトリ
 
 [GitHubで見る](https://github.com/FastComments/fastcomments-ios)
-
----

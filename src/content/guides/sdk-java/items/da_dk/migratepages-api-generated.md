@@ -1,11 +1,11 @@
-Queues a batch job that moves comments, pages and related records from one urlId or domain to another.  
-"urlId"-migrationer matcher kun den præcise urlId. "domain"-migrationer finder/erstatter værdien i hver urlId og url.  
-Poll GET /api/v1/batch-jobs/{batchJobId}: når den er færdig, indeholder den resultater pr. migration og et undoId.
+Sætter et batch-job i kø, der flytter kommentarer, sider og relaterede poster fra én urlId eller domæne til et andet.
+"urlId"-migreringer matcher kun den præcise urlId. "domain"-migreringer finder/erstatter værdien i hver urlId og url.
+Poll GET /api/v1/batch-jobs/{batchJobId}: når jobbet er færdigt, indeholder det resultater for hver migrering samt et undoId.
 
 ## Parametre
 
 | Navn | Type | Placering | Påkrævet | Beskrivelse |
-|------|------|-----------|----------|-------------|
+|------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 
 ## Svar
@@ -16,7 +16,7 @@ Returnerer: [`QueuePageMigrationJobAPIResponse`](https://github.com/FastComments
 
 [inline-code-attrs-start title = 'migratePages Eksempel'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importer klasser:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -29,10 +29,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Konfigurer API-nøgleautorisation: api_key
+    // Configure API key authorization: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Fjern kommentaren fra følgende linje for at sætte et præfiks for API-nøglen, f.eks. "Token" (standard er null)
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -43,7 +43,6 @@ public class Example {
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      // Undtagelse ved kald af DefaultApi#migratePages
       System.err.println("Exception when calling DefaultApi#migratePages");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
@@ -53,5 +52,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

@@ -1,17 +1,17 @@
-The border around the comment box is made of the text area's own border plus a few thin lines the widget draws around it. To change its color or corner roundness, set these CSS variables instead of styling the `textarea` directly. The variables restyle every part of the border at once, so the corners and colors always line up.
+コメントボックスの周囲の枠線は、テキストエリア自体の枠線と、ウィジェットがその周囲に描画する数本の細い線で構成されています。色や角の丸みを変更するには、`textarea` を直接スタイルするのではなく、以下の CSS 変数を設定してください。これらの変数は枠線のすべての部分を一度に再スタイルするため、角と色は常に一致します。
 
-| 変数 | 変更内容 | デフォルト |
+| 変数 | 変更される内容 | デフォルト |
 |---|---|---|
 | `--fc-input-border-color` | 枠線の色 | `#bfbfbf` |
 | `--fc-input-border-color-focus` | ユーザーが入力中の枠線の色 | `#555` |
 | `--fc-input-border-radius` | 角の丸み | `11px` |
-| `--fc-input-border-start-start-radius` | 正方形の左上隅の丸み（右から左の言語では右上） | `0` |
+| `--fc-input-border-start-start-radius` | 左上の角(右から左に読む言語では右上)の角ばった部分の丸み | `0` |
 
-Add the CSS to the **Custom CSS** box on the [Widget Customization page](https://fastcomments.com/auth/my-account/customize-widget), or pass it with the `customCSS` option. You only need to set the variables you want to change.
+CSS を [Widget Customization ページ](https://fastcomments.com/auth/my-account/customize-widget) の **Custom CSS** ボックスに追加するか、`customCSS` オプションで渡してください。変更したい変数だけを設定すれば十分です。
 
-You can also use the **Comment box border** helper right under the Custom CSS box, which writes this CSS for you.
+また、Custom CSS ボックスのすぐ下にある **Comment box border** ヘルパーを使用することもできます。これはこの CSS を自動的に記述してくれます。
 
-## Change the Border Color
+## 枠線の色を変更する
 
 [inline-code-attrs-start title = '枠線の色'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -20,7 +20,7 @@ You can also use the **Comment box border** helper right under the Custom CSS bo
 }
 [inline-code-end]
 
-## Change the Border Color While Typing
+## 入力中の枠線の色を変更する
 
 [inline-code-attrs-start title = '入力中の枠線の色'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -29,11 +29,11 @@ You can also use the **Comment box border** helper right under the Custom CSS bo
 }
 [inline-code-end]
 
-## Round All Four Corners
+## 4つの角すべてを丸くする
 
-By default the top-left corner is square. Set both radius variables to round all four corners the same:
+デフォルトでは左上の角は角ばっています。4つの角すべてを同じように丸くするには、両方の radius 変数を設定してください:
 
-[inline-code-attrs-start title = 'すべての角を丸くする'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = '4つの角すべてを丸くする'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 :root {
     --fc-input-border-radius: 12px;
@@ -41,16 +41,16 @@ By default the top-left corner is square. Set both radius variables to round all
 }
 [inline-code-end]
 
-## Square Corners
+## 角を角ばったままにする
 
-[inline-code-attrs-start title = '角を四角くする'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = '角ばった角'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 :root {
     --fc-input-border-radius: 0;
 }
 [inline-code-end]
 
-## Match Your Brand
+## ブランドに合わせる
 
 [inline-code-attrs-start title = 'ブランドの色と角'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -62,9 +62,9 @@ By default the top-left corner is square. Set both radius variables to round all
 }
 [inline-code-end]
 
-## Different Colors in Dark Mode
+## ダークモードで異なる色を使う
 
-When the widget is in dark mode it has the `dark` class, so you can set different values for dark mode:
+ウィジェットがダークモードのときは `dark` クラスが付くため、ダークモード用に異なる値を設定できます:
 
 [inline-code-attrs-start title = 'ダークモードの枠線の色'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -77,8 +77,6 @@ When the widget is in dark mode it has the `dark` class, so you can set differen
 }
 [inline-code-end]
 
-## Why Not Style the Text Area Directly?
+## テキストエリアを直接スタイルしないのはなぜ?
 
-The widget draws part of the comment box border itself, around the text area. If you set `border-color` or `border-radius` only on the `textarea`, those lines keep the default style and the border looks mismatched, for example a square line running through a rounded corner. The variables above change both at once.
-
----
+ウィジェットは、テキストエリアの周囲のコメントボックスの枠線の一部を自ら描画しています。`textarea` にのみ `border-color` や `border-radius` を設定すると、それらの線はデフォルトのスタイルのままになり、枠線が不揃いに見えます。例えば、丸い角の中に角ばった線が走るような状態です。上記の変数は両方を一度に変更します。

@@ -1,4 +1,3 @@
----
 Στη συνέχεια, ας αντιγράψουμε τον κώδικα του widget από το FastComments.com:
 
 [code-example-start config = {}; title = 'Installation Code'; isFunctional = false; code-example-end]
@@ -18,5 +17,3 @@
     <div class="title">Σημείωση: Τα σχόλια δεν θα εμφανιστούν μέχρι τη δημοσίευση</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-webflow-step-3.png" alt="Τα σχόλια δεν θα εμφανιστούν μέχρι τη δημοσίευση" />
 </div>
-
----

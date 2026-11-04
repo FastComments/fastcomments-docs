@@ -12,5 +12,3 @@ listy komentarzy pojawia się baner pokazujący, ile nowych komentarzy czeka. Kl
 To działa ze wszystkimi filtrami — jeśli przeglądasz tylko komentarze oznaczone jako spam, będziesz otrzymywać powiadomienia tylko o nowym spamie. Jeśli wyszukujesz komentarze zawierające konkretną frazę, powiadomienia wywołają tylko pasujące komentarze.
 
 Jeśli twoje połączenie zostanie tymczasowo przerwane, system automatycznie pobierze wszystkie komentarze, które pojawiły się podczas przerwy, gdy połączenie zostanie przywrócone.
-
----

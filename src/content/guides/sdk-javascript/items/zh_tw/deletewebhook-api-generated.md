@@ -1,4 +1,3 @@
----
 取消訂閱（REST hook 取消訂閱）。僅能刪除透過此 API 建立的訂閱；在儀表板管理的 webhook 必須在儀表板中編輯。
 
 ## 參數
@@ -21,5 +20,3 @@ const webhookId: string = "wh_98765";
 
 const result: APIEmptyResponse = await deleteWebhook(tenantId, webhookId);
 [inline-code-end]
-
----

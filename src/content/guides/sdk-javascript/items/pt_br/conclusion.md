@@ -8,5 +8,3 @@ Se você encontrar algum problema ou tiver dúvidas sobre o JavaScript/TypeScrip
 ## Contribuindo
 
 Contribuições são bem-vindas! Por favor, visite o [repositório no GitHub](https://github.com/FastComments/fastcomments-sdk-js) para diretrizes de contribuição.
-
----

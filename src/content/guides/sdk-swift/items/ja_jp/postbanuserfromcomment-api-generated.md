@@ -48,5 +48,3 @@ ModerationAPI.postBanUserFromComment(tenantId: tenantId, commentId: commentId, o
     }
 }
 [inline-code-end]
-
----

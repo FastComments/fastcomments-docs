@@ -1,34 +1,32 @@
-Attach a poll to a comment, or set the full state of the poll it already has.
+Vedhæft en afstemning til en kommentar, eller angiv den fulde tilstand for den afstemning, den allerede har.
 
-Options are matched by id: an option sent with the id of an existing option keeps its votes (and takes the
-new label and position), an option sent without an id is added, and existing options left out of the list
-are removed along with the votes cast on them.
+Indstillinger matches efter id: en indstilling sendt med id'et for en eksisterende indstilling bevarer sine stemmer (og får den nye etiket og position), en indstilling sendt uden id tilføjes, og eksisterende indstillinger, der udelades fra listen, fjernes sammen med de afgivne stemmer på dem.
 
-Keeping no existing option ids on a poll that has votes deletes all of them, so that needs replaceVotes=true.
+Hvis man ikke beholder nogen eksisterende indstillings-id'er på en afstemning, der har stemmer, slettes alle af dem, så det kræver replaceVotes=true.
 
-## Parameters
+## Parametre
 
-| Navn | Type | Location | Påkrævet | Beskrivelse |
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | commentId | string | path | Ja |  |
 | replaceVotes | boolean | query | Nej |  |
 
-## Response
+## Svar
 
-Returns: [`SavePollResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/SavePollResponse.swift)
+Returnerer: [`SavePollResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/SavePollResponse.swift)
 
-## Example
+## Eksempel
 
 [inline-code-attrs-start title = 'putPoll Eksempel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// De følgende kodeeksempler er stadig i beta. For eventuelle problemer, rapporter venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let commentId = "commentId_example" // String | 
 let commentPollPutInput = CommentPollPutInput(question: "question_example", options: [CommentPollOptionInput(id: "id_example", label: "label_example")], closesAt: "closesAt_example", privacy: 123, requireVoteToSeeResults: false) // CommentPollPutInput | 
-let replaceVotes = true // Bool |  (valgfri)
+let replaceVotes = true // Bool |  (optional)
 
 DefaultAPI.putPoll(tenantId: tenantId, commentId: commentId, commentPollPutInput: commentPollPutInput, replaceVotes: replaceVotes) { (response, error) in
     guard error == nil else {

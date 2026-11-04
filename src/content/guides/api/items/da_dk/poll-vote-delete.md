@@ -34,5 +34,3 @@ interface PollVoteDeleteResponse {
 - Sletning af den samme stemme to gange svarer med `not-found` den anden gang, og optællingerne forbliver uændrede.
 - Hvis afstemningen er blevet erstattet siden stemmen blev afgivet, fjernes stemmen, men ingen optælling ændres, da
   erstatningen startede fra nul.
-
----

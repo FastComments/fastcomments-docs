@@ -7,5 +7,3 @@
 这可以在小部件自定义页面上无需代码进行自定义：
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.input-after-comments'; alt='小部件自定义页面选项，将评论输入区域放在评论线程之后而不是之前'; title='将回复框移动到底部' app-screenshot-end]
-
----

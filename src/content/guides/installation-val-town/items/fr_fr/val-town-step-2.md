@@ -27,5 +27,3 @@ Revenir à `"demo"` permet au val de fonctionner pour quiconque le remixe avant 
 ## Comptes EU
 
 Un compte, ses données et ses clés résident dans une seule région. Si le vôtre a été créé sur `eu.fastcomments.com`, chaque configuration de widget doit également contenir `region: "eu"`, et les scripts se chargent depuis `cdn-eu.fastcomments.com`. Sinon, laissez les deux tels quels.
-
----

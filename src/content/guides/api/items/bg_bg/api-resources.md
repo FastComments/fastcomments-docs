@@ -1,4 +1,3 @@
----
 ### Използване на ресурси
 
 Трябва да се отбележи, че извличането на данни от API се брои като използване във вашия акаунт.
@@ -16,5 +15,3 @@
 ### Уебкуки
 
 Абонаментите за уебкуки имат собствено ръководство. `POST`, `GET` и `DELETE /api/v1/webhooks`, както и `GET /api/v1/webhooks/sample-payloads`, са документирани в [Managing Subscriptions via API](/guide-webhooks.html#webhooks-api-subscriptions), а натоварванията на събитията – в [Webhook Structures](/guide-webhooks.html#webhooks-structures).
-
----

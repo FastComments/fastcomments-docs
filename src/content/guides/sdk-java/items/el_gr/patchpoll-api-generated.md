@@ -1,10 +1,10 @@
-Edit a poll in place, keeping its tallies: change the question, relabel an option, close or reopen it,
-or change who may see the voters. Options are addressed by id - to add, remove or reorder them, PUT the full list.
+Επεξεργασία δημοσκόπησης επιτόπου, διατηρώντας τους υπολογισμούς της: αλλάξτε την ερώτηση, μετονομάστε μια επιλογή, κλείστε ή ανοίξτε ξανά τη δημοσκόπηση,
+ή αλλάξτε ποιοι μπορούν να δουν τους ψηφοφόρους. Οι επιλογές προσδιορίζονται με id - για να προσθέσετε, να αφαιρέσετε ή να αναδιατάξετε επιλογές, στείλτε PUT με την πλήρη λίστα.
 
-## Parameters
+## Παράμετροι
 
-| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
-|------|------|----------|------------|------------|
+| Όνομα | Τύπος | Τοποθεσία | Απαραίτητο | Περιγραφή |
+|------|------|----------|----------|-------------|
 | tenantId | string | query | Ναι |  |
 | commentId | string | path | Ναι |  |
 
@@ -14,9 +14,9 @@ or change who may see the voters. Options are addressed by id - to add, remove o
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'patchPoll Παράδειγμα'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Παράδειγμα patchPoll'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Εισαγωγή κλάσεων:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -29,10 +29,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Διαμόρφωση εξουσιοδότησης κλειδιού API: api_key
+    // Configure API key authorization: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Απενεργοποιήστε το σχόλιο στην παρακάτω γραμμή για να ορίσετε ένα πρόθεμα για το κλειδί API, π.χ. "Token" (προεπιλογή είναι null)
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -53,5 +53,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

@@ -1,8 +1,8 @@
-Remove a poll from its comment, along with every vote cast on it. The comment itself is left alone.
+Видаляє опитування з коментаря разом з усіма поданими за нього голосами. Сам коментар залишається без змін.
 
 ## Параметри
 
-| Назва | Тип | Розташування | Обов’язковий | Опис |
+| Назва | Тип | Розташування | Обов'язково | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Так |  |
 | commentId | string | path | Так |  |
@@ -13,9 +13,9 @@ Remove a poll from its comment, along with every vote cast on it. The comment it
 
 ## Приклад
 
-[inline-code-attrs-start title = 'deletePoll Приклад'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад deletePoll'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Наступні зразки коду все ще у бета-версії. У разі будь-якої проблеми, будь ласка, повідомте за адресою http://github.com/OpenAPITools/openapi-generator/issues/new
+// Наведені нижче приклади коду все ще є бета-версією. Про будь-яку проблему повідомляйте на http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -32,5 +32,3 @@ DefaultAPI.deletePoll(tenantId: tenantId, commentId: commentId) { (response, err
     }
 }
 [inline-code-end]
-
----

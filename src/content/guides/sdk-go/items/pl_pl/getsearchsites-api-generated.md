@@ -39,5 +39,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Odpowiedź z `ModerationAPI.GetSearchSites`: %v\n", resp)
 }
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 Esta biblioteca contiene actualmente los siguientes widgets:
 
 - [Chat Colaborativo](https://github.com/FastComments/fastcomments-svelte/blob/main/src/lib/CollabChatWidget.svelte)
@@ -16,4 +15,3 @@ También incluye ejemplos para:
 - [Paginación de productos o entradas de blog](https://github.com/FastComments/fastcomments-svelte/blob/main/src/routes/paginated-example/+page.svelte)
 - [SSO seguro](https://github.com/FastComments/fastcomments-svelte/blob/main/src/routes/secure-sso-example/+page.svelte)
 - [SSO simple](https://github.com/FastComments/fastcomments-svelte/blob/main/src/routes/simple-sso-example/+page.svelte)
----

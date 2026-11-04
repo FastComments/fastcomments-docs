@@ -21,5 +21,3 @@ Rückgabe: [`GetPageByURLIdAPIResponse`](https://github.com/FastComments/fastcom
   const page: APIPage | undefined = response.page;
 })();
 [inline-code-end]
-
----

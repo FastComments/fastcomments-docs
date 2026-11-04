@@ -26,5 +26,3 @@ if uploadResult.isSome:
   let result = uploadResult.get()
   # brug resultatet efter behov
 [inline-code-end]
-
----

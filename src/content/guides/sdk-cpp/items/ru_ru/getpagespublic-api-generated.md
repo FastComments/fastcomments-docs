@@ -1,15 +1,15 @@
-List pages for a tenant. Used by the FChat desktop client to populate its room list.
-Requires `enableFChat` to be true on the resolved custom config for each page.
-Pages that require SSO are filtered against the requesting user's group access.
+Выводит список страниц для тенанта. Используется десктоп-клиентом FChat для заполнения списка комнат.
+Требует, чтобы `enableFChat` было равно true в резолвленном кастомном конфиге для каждой страницы.
+Страницы, требующие SSO, фильтруются по групповому доступу запрашивающего пользователя.
 
-## Parameters
+## Параметры
 
-| Имя | Тип | Обязательно | Описание |
+| Имя | Тип | Обязательный | Описание |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| options | const GetPagesPublicOptions& | Yes |  |
+| tenantId | string | Да |  |
+| options | const GetPagesPublicOptions& | Да |  |
 
-## Response
+## Ответ
 
 Возвращает: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetPublicPagesResponse.h)
 

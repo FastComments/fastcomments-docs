@@ -124,5 +124,3 @@ Role mapping:
 - **Deep Linking onemogućen po defaultu za tenant.** Neki Schoology tenant-i ograničavaju Deep Linking placement na nivou organizacije. Kada je to slučaj, instruktori vide samo tok **Add Materials** > **External Tool**, a ne dugme External Tool u Rich Text editoru. Da biste omogućili inline ugradnju, System Administrator ide na **System Settings** > **Integration** > **LTI 1.3** > **FastComments** i uključuje **Content Item / Deep Linking** placement, zatim sačuva.
 - **Preklapanje dodele po sekcijama.** Ako je FastComments dodeljen na nivou preduzeća, ali instruktor ne može da ga vidi u **Add Materials**, sekcija kursa je isključena u dodeli na nivou organizacije. Zamolite System Administrator-a da doda sekciju u dodelu FastComments aplikacije.
 - **Naziv materijala naspram identiteta niti.** Preimenovanje materijala u Schoology ne pomera nit komentara. Niti su vezane za LTI resource link ID, tako da preimenovanje zadržava istu nit; brisanje i ponovno kreiranje materijala stvara novu, praznu nit.
-
----

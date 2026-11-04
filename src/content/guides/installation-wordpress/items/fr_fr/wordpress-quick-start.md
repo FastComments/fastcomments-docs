@@ -1,4 +1,3 @@
----
 Voici la version « trop longue ; pas lue » des instructions WordPress.
 
 1. Allez sur la page Plugins du tableau de bord WordPress. Cliquez sur `Add Plugin`.
@@ -7,5 +6,3 @@ Voici la version « trop longue ; pas lue » des instructions WordPress.
 4. Cliquez sur `FastComments` dans la navigation de gauche.
 5. Suivez les instructions. Cela prend généralement quelques minutes, pas plus.
    1. Si vous avez des dizaines de milliers, voire des millions de commentaires, la synchronisation peut prendre un certain temps.
-
----

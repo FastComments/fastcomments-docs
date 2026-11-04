@@ -1,4 +1,3 @@
----
 Для администраторов в верхней части страницы модерации комментариев находится кнопка «Добавить модераторов».
 
 [app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=3&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = '.moderation-settings-options'; alt='Ряд кнопок в верхней части страницы модерации комментариев, включая кнопку «Добавить модераторов»'; title='Кнопки настроек модерации комментариев' app-screenshot-end]
@@ -20,5 +19,3 @@
 ссылку для входа.
 
 Если они не выйдут из системы, они останутся в системе в течение тридцати дней.
-
----

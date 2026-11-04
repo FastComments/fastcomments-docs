@@ -23,5 +23,3 @@ if response.isSome:
   let empty = response.get()
   echo "User successfully deleted"
 [inline-code-end]
-
----

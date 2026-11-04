@@ -24,5 +24,3 @@ if apiRespOpt.isSome:
   let emptyResp = apiRespOpt.get()
   discard
 [inline-code-end]
-
----

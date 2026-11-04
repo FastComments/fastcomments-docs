@@ -1,15 +1,15 @@
 [related-parameter-start name = 'newCommentsToBottom'; type = 'boolean'; related-parameter-end]
 
-За замовчуванням нові live-коментарі з'являються у верхній частині списку коментарів у міру їхньої публікації в реальному часі.
+За замовчуванням нові коментарі в реальному часі з'являються вгорі списку коментарів у міру їх публікації.
 
-Коли ця опція увімкнена, нові live-коментарі замість цього додаватимуться внизу списку. Це впливає на те, як коментарі з'являються під час їхньої публікації в реальному часі, коли користувачі переглядають тему коментарів.
+Коли ця опція увімкнена, нові коментарі в реальному часі додаватимуться внизу списку. Це впливає на те, як коментарі з'являються під час публікації в реальному часі, коли користувачі переглядають гілку коментарів.
 
-[code-example-start config = {newCommentsToBottom: true}; linesToHighlight = [6]; title = 'New Live Comments to Bottom'; code-example-end]
+[code-example-start config = {newCommentsToBottom: true}; linesToHighlight = [6]; title = 'Нові коментарі в реальному часі внизу'; code-example-end]
 
-With this setting enabled:
-- New live comments posted by other users will appear at the bottom of the comment list
-- Users will see new comments appear below existing comments in real-time
-- This only affects live comment updates - not the initial page load
-- This can help maintain reading flow when users are following a discussion
+З увімкненим цим налаштуванням:
+- Нові коментарі, опубліковані іншими користувачами, з'являтимуться внизу списку коментарів
+- Користувачі бачитимуть, як нові коментарі з'являються під існуючими в реальному часі
+- Це впливає лише на оновлення коментарів у реальному часі — не на початкове завантаження сторінки
+- Це може допомогти зберегти потік читання, коли користувачі стежать за обговоренням
 
-Note that this setting only affects where new live comments are placed as they arrive in real-time. It does not affect the initial sort order when the page loads.
+Зверніть увагу, що це налаштування впливає лише на те, де розміщуються нові коментарі в реальному часі в міру їх надходження. Воно не впливає на початковий порядок сортування під час завантаження сторінки.

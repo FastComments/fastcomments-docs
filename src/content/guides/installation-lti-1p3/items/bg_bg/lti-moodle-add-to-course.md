@@ -1,89 +1,89 @@
-This guide covers adding FastComments to a Moodle 4.x course after a site administrator has registered the tool and set it to show in the activity chooser. If FastComments is not yet registered, see the Moodle registration guide first.
+Това ръководство описва добавянето на FastComments към курс в Moodle 4.x, след като администраторът на сайта е регистрирал инструмента и го е настроил да се показва в изборът на дейности. Ако FastComments все още не е регистриран, първо вижте ръководството за регистрация в Moodle.
 
-#### Open the Course in Edit Mode
+#### Отворете курса в режим на редактиране
 
-1. Sign in to Moodle as an Editing Teacher (or higher) for the course.
-2. Open the course.
-3. Toggle **Edit mode** on using the switch in the top-right corner of the course header.
+1. Влезте в Moodle като Редактиращ учител (или по-висока роля) за курса.
+2. Отворете курса.
+3. Включете **Режим на редактиране** с превключвателя в горния десен ъгъл на заглавката на курса.
 
-Moodle 4.x replaced the legacy "Add an activity or resource" dropdown that 3.x used with a full-screen activity chooser dialog. Moodle 4.5 keeps the same chooser but adds a starred/favorites row at the top, so pinning FastComments once makes it faster to reach in later sections.
+Moodle 4.x замени старото падащо меню „Добавяне на дейност или ресурс", използвано във 3.x, с диалогов прозорец за избор на дейности на цял екран. Moodle 4.5 запазва същия избор, но добавя ред със звезди/любими в горната част, така че закачването на FastComments веднъж го прави по-лесно достъпен в следващите раздели.
 
-#### Add the FastComments Activity
+#### Добавяне на дейността FastComments
 
-1. Scroll to the course section (topic or week) where the discussion belongs.
-2. Click **Add an activity or resource** at the bottom of that section.
-3. In the chooser dialog, select **FastComments**. If you don't see it, jump to the gotchas section below.
+1. Превъртете до раздела на курса (тема или седмица), където трябва да е дискусията.
+2. Кликнете **Добавяне на дейност или ресурс** в долната част на този раздел.
+3. В диалоговия прозорец за избор изберете **FastComments**. Ако не го виждате, преминете към раздела за проблеми по-долу.
 
-The activity settings form opens. The fields that matter:
+Отваря се формата с настройки на дейността. Важните полета:
 
-- **Activity name** (required). Shown on the course page and in the gradebook. Example: `Week 3 Discussion`.
-- **Activity description**. Optional intro text rendered above the comment thread.
-- **Show description on course page**. Tick this if you want the description visible without clicking into the activity.
-- **Preconfigured tool**. Set to `FastComments` (auto-selected when launched from the chooser). Do not change.
-- **Launch container**. Set to **New window**. See the gotchas section for why "Same window" breaks in some Moodle deployments.
-- **Tool URL**, **Public key**, **Shared secret**, **Custom parameters**. Leave blank. Dynamic Registration handled these at the site level.
+- **Име на дейността** (задължително). Показва се на страницата на курса и в оценника. Пример: `Week 3 Discussion`.
+- **Описание на дейността**. Незадължителен уводен текст, изобразен над нишката с коментари.
+- **Показване на описанието на страницата на курса**. Отметнете това, ако искате описанието да е видимо без кликване върху дейността.
+- **Предварително конфигуриран инструмент**. Настроен на `FastComments` (избира се автоматично при стартиране от избора). Не променяйте.
+- **Контейнер за стартиране**. Настройте на **Нов прозорец**. Вижте раздела за проблеми защо „Същият прозорец" се проваля в някои инсталации на Moodle.
+- **URL на инструмента**, **Публичен ключ**, **Споделена тайна**, **Персонализирани параметри**. Оставете празни. Динамичната регистрация се погрижи за тях на ниво сайт.
 
-Scroll to the bottom and click **Save and return to course** (or **Save and display** to open the activity right away).
+Превъртете до долната част и кликнете **Запази и върни към курса** (или **Запази и покажи**, за да отворите дейността веднага).
 
-The activity appears as a row in the section with the FastComments icon. Students click the row to open the comment thread.
+Дейността се появява като ред в раздела с иконата на FastComments. Учениците кликват върху реда, за да отворят нишката с коментари.
 
-#### Embed FastComments Inline with the Editor
+#### Вграждане на FastComments в текста с редактора
 
-For a thread inside a Page, Book chapter, Lesson, or any other resource that uses the Atto or TinyMCE editor:
+За нишка в страница, глава от книга, урок или друг ресурс, който използва редактора Atto или TinyMCE:
 
-1. Open the resource in edit mode.
-2. Place the cursor where the thread should appear.
-3. In the editor toolbar, click the **LTI** / **External tool** button. In Atto it's labeled "Insert LTI Advantage content". In TinyMCE (default in Moodle 4.3+) it's under the **More** menu as **External tools**.
-4. Pick **FastComments** from the tool list.
-5. FastComments opens a deep-linking picker. Confirm the thread title and click **Embed**.
-6. The editor inserts an LTI placeholder block. Save the resource.
+1. Отворете ресурса в режим на редактиране.
+2. Поставете курсора там, където трябва да се появи нишката.
+3. В лентата с инструменти на редактора кликнете бутона **LTI** / **Външен инструмент**. В Atto е означен като „Вмъкване на LTI Advantage съдържание". В TinyMCE (по подразбиране в Moodle 4.3+) е под менюто **Още** като **Външни инструменти**.
+4. Изберете **FastComments** от списъка с инструменти.
+5. FastComments отваря избор за дълбоки връзки (deep-linking). Потвърдете заглавието на нишката и кликнете **Вграждане**.
+6. Редакторът вмъква блок-заместител на LTI. Запазете ресурса.
 
-Each embedded instance is a distinct thread keyed on the deep-link content item ID, so a Page with three FastComments embeds gets three independent threads.
+Всяко вградено копие е отделна нишка, свързана с ID на елемента от дълбоката връзка, така че страница с три вградени FastComments получава три независими нишки.
 
-#### Restrict Access and Group Settings
+#### Ограничаване на достъпа и настройки на групи
 
-The standard Moodle activity settings apply to FastComments activities:
+Стандартните настройки за дейности в Moodle се прилагат към дейностите FastComments:
 
-- **Common module settings** > **Group mode**. Setting this to **Separate groups** or **Visible groups** does not split FastComments into per-group threads on its own. Moodle's group mode only filters the gradebook and member list. To run a separate thread per group, add one FastComments activity per group and use **Restrict access** to scope each one.
-- **Restrict access** > **Add restriction**. Supports the standard Moodle conditions: **Date**, **Grade**, **Group**, **Grouping**, **User profile**, and nested restriction sets. Use **Group** to lock a FastComments activity to a single group.
-- **Activity completion**. Set to **Students must view this activity to complete it** if you want completion tracking. FastComments does not currently report a completion event back to Moodle beyond the launch.
+- **Общи настройки на модула** > **Режим на групите**. Настройването на **Отделни групи** или **Видими групи** само по себе си не разделя FastComments на нишки за всяка група. Режимът на групите в Moodle филтрира само оценника и списъка с членове. За отделна нишка за всяка група добавете по една дейност FastComments за всяка група и използвайте **Ограничаване на достъпа**, за да обхватите всяка от тях.
+- **Ограничаване на достъпа** > **Добавяне на ограничение**. Поддържа стандартните условия на Moodle: **Дата**, **Оценка**, **Група**, **Групиране**, **Потребителски профил** и вложени набори от ограничения. Използвайте **Група**, за да заключите дейност FastComments към една група.
+- **Завършване на дейността**. Настройте на **Учениците трябва да прегледат тази дейност, за да я завършат**, ако искате проследяване на завършването. FastComments в момента не докладва събитие за завършване обратно към Moodle след стартирането.
 
-#### Role Mapping
+#### Съпоставяне на роли
 
-FastComments reads the LTI `roles` claim that Moodle sends on every launch and maps it as follows:
+FastComments чете LTI claim-а `roles`, който Moodle изпраща при всяко стартиране, и го съпоставя по следния начин:
 
-- Moodle **Manager** or **Site administrator** -> FastComments **admin**
-- Moodle **Editing teacher** or **Non-editing teacher** -> FastComments **moderator**
-- Moodle **Student** -> FastComments **commenter**
-- Moodle **Guest** -> само за четене
+- Moodle **Мениджър** или **Сайтов администратор** -> FastComments **admin**
+- Moodle **Редактиращ учител** или **Нередактиращ учител** -> FastComments **moderator**
+- Moodle **Ученик** -> FastComments **commenter**
+- Moodle **Гост** -> само за четене
 
-Admins can delete any comment, ban users, and edit thread settings. Moderators can delete and approve comments inside the thread they launched into. Custom Moodle roles inherit the mapping of the archetype they were cloned from.
+Администраторите могат да изтриват всеки коментар, да блокират потребители и да редактират настройките на нишката. Модераторите могат да изтриват и одобряват коментари в нишката, в която са стартирали. Персонализираните роли в Moodle наследяват съпоставянето на архетипа, от който са клонирани.
 
-#### What Students See
+#### Какво виждат учениците
 
-Students click the FastComments activity (or scroll to the embedded block inside a Page or Book). Moodle sends their identity to FastComments via the LTI launch:
+Учениците кликват върху дейността FastComments (или превъртат до вградения блок в страница или книга). Moodle изпраща тяхната идентичност към FastComments чрез LTI стартирането:
 
-- No login screen. FastComments signs them in using the Moodle account.
-- Their display name, email, and avatar come from Moodle.
-- The thread is scoped to `(Moodle site, course, resource link ID)`, so the same activity duplicated into another course gets a fresh thread.
-- Threaded replies, voting, and notifications work the same as a standalone FastComments thread.
+- Няма екран за вход. FastComments ги вписва с помощта на Moodle акаунта.
+- Тяхното показвано име, имейл и аватар идват от Moodle.
+- Нишката е обвързана с `(Moodle сайт, курс, ID на ресурсна връзка)`, така че същата дейност, дублирана в друг курс, получава нова нишка.
+- Отговорите в нишка, гласуването и известията работят по същия начин като в самостоятелна нишка на FastComments.
 
-#### Lock Down Public Access (Recommended)
+#### Заключване на публичния достъп (препоръчително)
 
-By default, FastComments comment data is publicly readable. Anyone who can guess a thread's URL or API endpoint can view its comments, even outside Moodle. For course discussions you almost certainly want to restrict viewing to enrolled students only.
+По подразбиране данните за коментари на FastComments са публично четими. Всеки, който може да познае URL на нишка или API крайна точка, може да види нейните коментари, дори извън Moodle. За дискусии в курс почти сигурно искате прегледът да е ограничен само до записани ученици.
 
-Open your <a href="https://fastcomments.com/auth/my-account/customize-widget" target="_blank">страницата за персонализиране на уиджета</a> and create a rule with **Require SSO To View Comments** enabled, then set the security level to **Secure SSO** so threads can only be loaded through the signed LTI launch.
+Отворете вашата <a href="https://fastcomments.com/auth/my-account/customize-widget" target="_blank">страница за персонализиране на уиджета</a> и създайте правило с активирано **Require SSO To View Comments**, след което задайте нивото на сигурност на **Secure SSO**, така че нишките да могат да се зареждат само чрез подписаното LTI стартиране.
 
-See [Protecting Comment Threads With Single-Sign-On](/guide-customizations-and-configuration.html#sso-require-to-view-comments) for the full walkthrough, including how to scope the rule to a single domain or page.
+Вижте [Защита на нишките с коментари чрез Single-Sign-On](/guide-customizations-and-configuration.html#sso-require-to-view-comments) за пълното ръководство, включително как да обхватите правилото до един домейн или страница.
 
-#### Moodle Gotchas
+#### Проблеми в Moodle
 
-**FastComments missing from the activity chooser.** The site administrator registered the tool but didn't set **Tool configuration usage** to **Show in activity chooser and as a preconfigured tool**. Fix this under **Site administration** > **Plugins** > **Activity modules** > **External tool** > **Manage tools** > gear icon on the FastComments tile.
+**FastComments липсва в избора на дейности.** Администраторът на сайта е регистрирал инструмента, но не е настроил **Използване на конфигурацията на инструмента** на **Показване в избора на дейности и като предварително конфигуриран инструмент**. Коригирайте това под **Администриране на сайта** > **Плъгини** > **Модули с дейности** > **Външен инструмент** > **Управление на инструменти** > иконата със зъбно колело на плочката FastComments.
 
-**Launch fails or shows a blank frame when set to "Same window".** Moodle's session cookies use `SameSite=Lax` by default, and some browsers strip them on the cross-site POST that LTI 1.3 uses to return from FastComments. Set **Launch container** to **New window** on the activity. This is a hard requirement for embedded FastComments inside a Page or Book, since the editor-embedded launch path always pops a new window.
+**Стартирането се проваля или показва празен кадър при настройка „Същият прозорец".** Бисквитките за сесия на Moodle използват `SameSite=Lax` по подразбиране, а някои браузъри ги отстраняват при междусайтовия POST, който LTI 1.3 използва за връщане от FastComments. Настройте **Контейнер за стартиране** на **Нов прозорец** за дейността. Това е задължително изискване за вграден FastComments в страница или книга, тъй като пътят на стартиране, вграден в редактора, винаги отваря нов прозорец.
 
-**The `iss` claim is the Moodle site URL, not a tenant ID.** FastComments uses the Moodle site URL (the `wwwroot` config value) as the LTI issuer. If your Moodle instance moves to a new domain or you change `wwwroot`, existing FastComments threads stay tied to the old issuer and won't match new launches. Re-register the tool against the new URL and migrate threads through the FastComments admin if needed.
+**Claim-ът `iss` е URL на Moodle сайта, а не tenant ID.** FastComments използва URL на Moodle сайта (стойността на конфигурацията `wwwroot`) като LTI издател. Ако вашият Moodle екземпляр се премести на нов домейн или промените `wwwroot`, съществуващите нишки на FastComments остават обвързани със стария издател и няма да съвпадат с нови стартирания. Регистрирайте инструмента отново с новия URL и при нужда мигрирайте нишките чрез администрацията на FastComments.
 
-**Activity backup and restore.** Backing up a course and restoring it into a new course creates new resource link IDs, so the restored FastComments activities start with empty threads. The original course retains the original threads. This is intended behavior, not a bug.
+**Резервно копиране и възстановяване на дейности.** Резервирането на курс и възстановяването му в нов курс създава нови ID на ресурсни връзки, така че възстановените дейности FastComments започват с празни нишки. Оригиналният курс запазва оригиналните нишки. Това е предвидено поведение, а не бъг.
 
-**Moodle 4.5 TinyMCE default.** Moodle 4.5 ships with TinyMCE as the default editor for new installs. The External tool button location is under the **More** (`...`) menu rather than the main toolbar. Older sites that upgraded from 4.1 keep Atto unless an admin switched the default.
+**TinyMCE по подразбиране в Moodle 4.5.** Moodle 4.5 идва с TinyMCE като редактор по подразбиране за нови инсталации. Бутонът за външен инструмент е под менюто **Още** (`...`), а не в главната лента с инструменти. По-стари сайтове, надградени от 4.1, запазват Atto, освен ако администратор не е сменил подразбирането.

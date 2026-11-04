@@ -1,4 +1,3 @@
----
 ### Presety motywów
 
 Dostępne są cztery wbudowane presety:

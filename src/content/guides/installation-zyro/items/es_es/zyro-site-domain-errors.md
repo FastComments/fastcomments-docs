@@ -1,17 +1,14 @@
----
-You may get an authorization error, like the following:
+Puede que recibas un error de autorización, como el siguiente:
 
 <div class="screenshot white-bg">
-    <div class="title">Falta la configuración del dominio</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-webflow-step-5.png" alt="Falta la configuración del dominio" />
+    <div class="title">Configuración de dominio faltante</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-webflow-step-5.png" alt="Configuración de dominio faltante" />
 </div>
 
-This is because FastComments doesn't know it's supposed to allow your account to be used on this domain.
+Esto se debe a que FastComments no sabe que se supone que debe permitir que tu cuenta se use en este dominio.
 
-In this case, the fix is simple. You just have to add your site to your FastComments.com account.
+En este caso, la solución es sencilla. Solo tienes que añadir tu sitio a tu cuenta de FastComments.com.
 
-[Go here to add your site to your account.](https://fastcomments.com/auth/my-account/configure-domains)
+[Ve aquí para añadir tu sitio a tu cuenta.](https://fastcomments.com/auth/my-account/configure-domains)
 
-Now you should have fast, live, commenting added to your site!
-
----
+¡Ahora deberías tener comentarios rápidos y en vivo añadidos a tu sitio!

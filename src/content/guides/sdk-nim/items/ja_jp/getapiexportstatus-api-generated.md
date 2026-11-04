@@ -21,5 +21,3 @@ if exportStatusOpt.isSome:
   let exportStatus = exportStatusOpt.get()
   # 必要に応じて exportStatus を使用
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 Questo endpoint consente di recuperare il record di avanzamento del badge di un utente tramite il suo ID utente.
 
 Esempio di richiesta:
@@ -63,4 +62,3 @@ Possibili risposte di errore:
   "reason": "No badge progress found for user user456 in tenant tenant001."
 }
 [inline-code-end]
----

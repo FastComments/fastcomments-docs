@@ -1,4 +1,3 @@
----
 FastComments understøtter en funktion kaldet Auto Play. Dette giver dig mulighed for at importere en CSV med kommentarer og planlægge, at de skal afspilles
 på bestemte tidsforskydninger baseret på timer, minutter og sekunder fra siden indlæses.
 
@@ -12,5 +11,3 @@ Dette er i øjeblikket inkluderet i alle FastComments-planer.
 ### Bemærk!
 
 Husk, at kolonnen `URL ID` i CSV-filen skal matche `URL` for kurset/videoet. 
-
----

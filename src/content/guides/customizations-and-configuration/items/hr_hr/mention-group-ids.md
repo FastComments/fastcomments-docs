@@ -5,5 +5,3 @@ Popis id-ova za korištenje u automatskom dovršavanju **@mentions**. Korisno ka
 Kada je navedeno, u automatskom dovršavanju će biti ponuđeni samo korisnici iz drugih grupa nakon upisivanja znaka `@`.
 
 [code-example-start config = {mentionGroupIds: ['yxZAhjzda', 'QT19nXbqB']}; linesToHighlight = [6, 7, 8, 9]; title = 'Limit Groups for Mentions'; code-example-end]
-
----

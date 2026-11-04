@@ -1,27 +1,27 @@
-SAML (Security Assertion Markup Language) 是一種基於 XML 的開放標準，用於在各方之間交換身份驗證和授權資料，特別是在身份提供者 (IdP) 與服務提供者 (SP) 之間。
+SAML(安全性宣告標記語言)是一種以 XML 為基礎的開放標準,用於在各方之間交換身分驗證與授權資料,特別是在身分提供者(IdP)與服務提供者(SP)之間。
 
-### How SAML Works
+### SAML 的運作方式
 
-SAML 透過允許使用者在其身份提供者上只進行一次驗證，然後存取多個應用程式而無需重複輸入憑證，來實現單一登入 (SSO)。當使用者嘗試存取 FastComments 時：
+SAML 透過讓使用者只需向其身分提供者驗證一次,即可存取多個應用程式而無需重新輸入憑證,來實現單一登入(SSO)。當使用者嘗試存取 FastComments 時:
 
-1. **Authentication Request**: FastComments 將使用者重新導向到您的身份提供者  
-2. **User Authentication**: 使用者在您的 IdP（例如 Active Directory、Okta、Azure AD）進行驗證  
-3. **SAML Response**: IdP 向 FastComments 發送已簽署的 SAML 聲明  
-4. **User Access**: FastComments 驗證該聲明並授予已驗證使用者存取權限
+1. **驗證請求**:FastComments 將使用者重新導向至您的身分提供者
+2. **使用者驗證**:使用者向您的 IdP 進行驗證(例如 Active Directory、Okta、Azure AD)
+3. **SAML 回應**:IdP 將已簽署的 SAML 宣告傳回給 FastComments
+4. **使用者存取**:FastComments 驗證該宣告並授予已驗證使用者存取權限
 
-### Benefits of SAML
+### SAML 的優點
 
-- **Enhanced Security**: 集中式驗證可降低與密碼相關的安全風險  
-- **Improved User Experience**: 使用者只需登入一次即可無縫存取多個應用程式  
-- **Compliance**: 有助於滿足存取控制與稽核軌跡的法規要求  
-- **Administrative Control**: IT 管理員可維持集中式的使用者管理
+- **強化安全性**:集中式驗證可降低與密碼相關的安全風險
+- **改善使用者體驗**:使用者只需登入一次即可順暢存取多個應用程式
+- **合規性**:有助於滿足存取控制與稽核軌跡的法規要求
+- **管理控制**:IT 管理員可維持集中式的使用者管理
 
-### SAML 2.0 Support
+### SAML 2.0 支援
 
-FastComments 實作了 SAML 2.0，此為 SAML 標準中被廣泛採用的版本。我們的實作支援：
+FastComments 實作了 SAML 2.0,這是 SAML 標準中被最廣泛採用的版本。我們的實作支援:
 
-- HTTP-POST 與 HTTP-Redirect 綁定  
-- 已簽署的 SAML 回應與聲明  
-- 加密聲明（可選）  
-- 多種簽章與摘要演算法  
-- 各種名稱識別符格式
+- HTTP-POST 與 HTTP-Redirect 綁定
+- 已簽署的 SAML 回應與宣告
+- 加密宣告(選用)
+- 多種簽章與摘要演算法
+- 各種名稱識別碼格式

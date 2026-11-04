@@ -18,5 +18,3 @@ if ticketsOpt.isSome:
   let tickets = ticketsOpt.get()
   # использовать билеты по необходимости
 [inline-code-end]
-
----

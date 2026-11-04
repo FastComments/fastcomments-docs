@@ -1,4 +1,3 @@
----
 FastComments tilbyder RSS-feeds, der giver dig mulighed for at abonnere på dine kommentarer ved hjælp af enhver RSS-læser.
 
 Dit RSS-feed indeholder:
@@ -11,4 +10,3 @@ Dit RSS-feed indeholder:
 Feedet leveres i RSS 2.0-format, som er kompatibelt med alle større RSS-læsere.
 
 RSS-feedet opdateres i realtid, efterhånden som nye kommentarer tilføjes til dit site. Feedet inkluderer metadata, der angiver, hvornår det sidst blev opdateret, så RSS-læsere effektivt kan kontrollere for nyt indhold.
----

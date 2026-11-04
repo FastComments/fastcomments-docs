@@ -1,4 +1,3 @@
----
 Disparado quando um comentário tem sua fixação removida.
 
 ### Contexto que o agente recebe
@@ -13,5 +12,3 @@ Disparado quando um comentário tem sua fixação removida.
 ### Par
 
 Veja [Trigger: Comment Pinned](#trigger-comment-pin) para o gatilho espelho.
-
----

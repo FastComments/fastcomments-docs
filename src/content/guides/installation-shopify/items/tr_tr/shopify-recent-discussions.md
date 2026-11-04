@@ -1,25 +1,25 @@
-The **FastComments - Recent Discussions** bloğu mağazanızdaki en son yorum etkinliğine sahip sayfaları listeler; sayfa başına bir giriş. Ziyaretçilerin bireysel yorumlar yerine aktif konuları keşfetmelerini istediğinizde kullanın.
+**FastComments - Recent Discussions** bloğu, mağazanızda en son yorum etkinliğine sahip sayfaları, sayfa başına bir giriş olacak şekilde listeler. Ziyaretçilerin tek tek yorumlar yerine aktif tartışmaları keşfetmesini istediğinizde kullanın.
 
-### Add the block
+### Bloğu ekleme
 
 1. Shopify tema düzenleyicisini açın.
-2. Beslemeyi yerleştirmek istediğiniz şablonu açın; örneğin bir yan çubuk, footer, blog indeksi veya ana sayfa bölümü.
-3. Bölümün içinde tutması gereken yere tıklayın ve **Add block** seçeneğine tıklayın.
-4. **Apps** altında **FastComments - Recent Discussions**'ı seçin.
-5. **Save**'e tıklayın.
+2. Yayını istediğiniz şablonu açın; örneğin bir kenar çubuğu, alt bilgi, blog dizini veya ana sayfa bölümü.
+3. Bloğu barındırması gereken bölümde **Add block** (Bloğu ekle) seçeneğine tıklayın.
+4. **Apps** (Uygulamalar) altında **FastComments - Recent Discussions** seçeneğini seçin.
+5. **Save** (Kaydet) seçeneğine tıklayın.
 
-### Settings
+### Ayarlar
 
-| Setting | What it does | Default |
+| Ayar | Ne yapar | Varsayılan |
 |---|---|---|
-| Tenant ID (optional) | Hangi FastComments tenant'ından beslemenin okunduğunu geçersiz kılar. Mağazanın otomatik yapılandırılmış tenant'ını kullanmak için boş bırakın. | (blank) |
-| Number of comments | Gösterilecek en son tartışma sayısı. Aralık 1 ile 50 arasındadır. | 20 |
+| Tenant ID (isteğe bağlı) | Yayının hangi FastComments tenant'ından okuyacağını geçersiz kılar. Mağazanın otomatik olarak yapılandırılmış tenant'ını kullanmak için boş bırakın. | (boş) |
+| Number of comments | Kaç tane son tartışmanın gösterileceği. Aralık 1 ile 50 arası. | 20 |
 
-### Recent Discussions vs Recent Comments
+### Recent Discussions ve Recent Comments karşılaştırması
 
-Her iki blok da aynı veriden beslenir, ancak farklı görünümler gösterir:
+Her iki blok da aynı veriden yararlanır, ancak farklı görünümler gösterir:
 
-- **Recent Comments**: en son bireysel yorumların düz bir listesi. "Az önce ne söylendi" için en uygunudur.
-- **Recent Discussions**: sayfa başına bir giriş, en son etkinliğe göre sıralanmış. "Hangi konular şu anda aktif" için en uygunudur.
+- **Recent Comments**: en son bireysel yorumların düz bir listesi. "Az önce ne söylendi" için idealdir.
+- **Recent Discussions**: sayfa başına bir giriş, en son etkinliğe göre sıralanır. "Şu anda hangi tartışmalar canlı" için idealdir.
 
-Aynı mağazada her ikisini de kullanabilirsiniz. Örneğin, blog yan çubuğunda Recent Comments ve ana sayfada Recent Discussions.
+Her ikisini de aynı mağazada kullanabilirsiniz. Örneğin, blog kenar çubuğunda Recent Comments ve ana sayfada Recent Discussions.

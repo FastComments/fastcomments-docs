@@ -1,45 +1,42 @@
----
-The **FastComments - Reviews Summary** block shows an aggregated star rating and review breakdown for a page. Pair it with the **FastComments** block on product templates for the standard reviews layout: summary up top, review form and reviews below.
+Блок **FastComments - Reviews Summary** приказује агрегирану звездичасту оцену и преглед расподеле рецензија за страницу. Упарите га са блоком **FastComments** на шаблонима производа за стандардни распоред рецензија: сажетак на врху, образац за рецензије и рецензије испод.
 
-### Претпоставка: подесите Ratings & Reviews
+### Предуслов: подесите Ratings & Reviews
 
-The Reviews Summary block displays the rating questions you configured for your store. Set those up first:
+Блок Reviews Summary приказује питања за оцењивање која сте конфигурисали за своју продавницу. Прво их подесите:
 
-1. Отворите апликацију FastComments у вашем Shopify администраторском панелу.
-2. Кликните плочицу **Ratings & Reviews Helper** (или отворите [Ratings & Reviews Helper](https://fastcomments.com/auth/my-account/ratings-reviews-helper?source=shopify) директно).
-3. Додајте питања на која желите да сваки рецензент одговори (укупна оцена у звездама, "како је пристајало", итд.).
+1. Отворите FastComments апликацију у свом Shopify админ панелу.
+2. Кликните на плочицу **Ratings & Reviews Helper** (или отворите [Ratings & Reviews Helper](https://fastcomments.com/auth/my-account/ratings-reviews-helper?source=shopify) директно).
+3. Додајте питања на која желите да сваки рецензент одговори (укупна звездичаста оцена, „како је стајала величина", итд.).
 
-Without questions configured, the summary block has nothing to aggregate.
+Без конфигурисаних питања, блок сажетка нема шта да агрегира.
 
-### Додавање блока
+### Додајте блок
 
-1. Отворите уређивач теме у Shopify-у.
+1. Отворите Shopify уређивач теме.
 2. Отворите шаблон **Product** (или шаблон странице на којој желите сажетак).
-3. Кликните **Add block** близу врха секције странице, изнад места где ће бити блок **FastComments**.
-4. Испод **Apps**, изаберите **FastComments - Reviews Summary**.
-5. Додајте блок **FastComments** ниже на истој страници ако то већ нисте урадили, како би посетиоци могли да остављају рецензије.
+3. Кликните **Add block** близу врха одељка странице, изнад места где ће бити блок **FastComments**.
+4. Под **Apps**, изаберите **FastComments - Reviews Summary**.
+5. Додајте блок **FastComments** ниже на истој страници ако га још немате, како би посетиоци могли да оставе рецензије.
 6. Кликните **Save**.
 
 ### Подешавања
 
 | Подешавање | Шта ради | Подразумевано |
 |---|---|---|
-| Tenant ID (optional) | Одредите из којег FastComments tenant-а сажетак преузима податке. Оставите празно да бисте користили tenant који је аутоматски конфигурисан за продавницу. | (blank) |
-| Custom URL ID | Одредите идентификатор странице против којег сажетак агрегира податке. Користите ово када се сажетак налази на другој страници од оне на којој је блок FastComments који он одражава. | (auto-detected) |
+| Tenant ID (опционо) | Замењује од ког FastComments тенанта сажетак чита. Оставите празно да бисте користили аутоматски конфигурисаног тенанта продавнице. | (празно) |
+| Custom URL ID | Замењује идентификатор странице према којем се сажетак агрегира. Користите ово када се сажетак налази на другачијој страници од FastComments блока који одражава. | (аутоматски детектовано) |
 
-### Како се сажетак поклапа са рецензијама
+### Како сажетак упарује рецензије
 
-The Reviews Summary block uses the same auto-detection logic as the **FastComments** block:
+Блок Reviews Summary користи исту логику аутоматске детекције као блок **FastComments**:
 
 - Шаблон производа: `shopify-product-{product.id}`
-- Шаблон блога: `shopify-article-{article.id}`
+- Шаблон блог поста: `shopify-article-{article.id}`
 - Остали шаблони: путања захтева
 
-For a normal product page, the summary and the comment thread share a URL ID automatically, with no configuration needed.
+За уобичајену страницу производа, сажетак и нит коментара аутоматски деле URL ID, без икакве конфигурације.
 
 ### Савети
 
-- Сажетак је само за читање. Да бисте прикупили рецензије, потребан вам је блок **FastComments** на истој страници.
-- Ако промените питања за оцењивање у Ratings & Reviews Helper након прикупљања рецензија, сажетак ће се прерачунати у складу са новим скупом питања.
-
----
+- Сажетак је само за читање. Да бисте прикупљали рецензије, потребан вам је блок **FastComments** на истој страници.
+- Ако промените питања за оцењивање у Ratings & Reviews Helper након прикупљања рецензија, сажетак се поново израчунава према новом скупу питања.

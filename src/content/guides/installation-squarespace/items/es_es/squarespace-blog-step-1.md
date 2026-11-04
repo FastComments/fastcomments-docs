@@ -1,4 +1,3 @@
----
 Comenzaremos abriendo Páginas en la parte izquierda del Editor:
 
 <div class="screenshot white-bg">
@@ -26,5 +25,3 @@ Debería ver un área de código en blanco como la siguiente:
     <div class="title">Área de código vacía</div>
     <img class="screenshot-image" src="/images/installation-guides/squarespace-step-1-4-code-area.png" alt="Área de código vacía" />
 </div>
-
----

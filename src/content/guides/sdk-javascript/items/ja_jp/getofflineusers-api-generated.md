@@ -1,4 +1,3 @@
----
 ページ上の過去のコメント投稿者で、現在オンラインではないもの。displayName でソートされます。  
 `/users/online` をすべて取得した後に、"Members" セクションを表示するために使用します。  
 commenterName に対するカーソルページネーション: サーバーは部分的な `{tenantId, urlId, commenterName}` インデックスを `afterName` から `$gt` で前方に進め、`$skip` コストはかかりません。
@@ -36,5 +35,3 @@ async function fetchOfflineUsers(): Promise<void> {
   console.log(offlineResponse);
 }
 [inline-code-end]
-
----

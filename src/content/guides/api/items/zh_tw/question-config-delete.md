@@ -1,4 +1,3 @@
----
 [api-resource-header-start name = 'QuestionConfig'; route = 'DELETE /api/v1/question-configs/:id'; creditsCost = 100; api-resource-header-end]
 
 此路由提供透過 id 刪除 `QuestionConfig`。
@@ -29,5 +28,3 @@ interface QuestionConfigResponse {
     reason?: string
 }
 [inline-code-end]
-
----

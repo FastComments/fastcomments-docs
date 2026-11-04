@@ -6,5 +6,3 @@ Maintenant que nous avons le thème ouvert dans notre éditeur, ouvrez `package.
 </div>
 
 Si vous utilisez un IDE, il s'enregistrera automatiquement après avoir effectué ce changement.
-
----

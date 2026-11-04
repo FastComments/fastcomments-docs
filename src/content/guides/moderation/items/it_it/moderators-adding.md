@@ -1,4 +1,3 @@
----
 Per gli amministratori, nella parte superiore della pagina di moderazione dei commenti è presente un pulsante Aggiungi moderatori.
 
 [app-screenshot-start url='/auth/my-account/moderate-comments?filter=&text-search=&page=1&count=3&demo=true'; linkUrl='/auth/my-account/moderate-comments'; selector = '.moderation-settings-options'; alt='Riga di pulsanti nella parte superiore della pagina di moderazione dei commenti, inclusi il pulsante Aggiungi moderatori'; title='Pulsanti delle impostazioni di moderazione dei commenti' app-screenshot-end]
@@ -19,5 +18,3 @@ Verrà inviato un link di invito al moderatore, che può accedere automaticament
 <a href="https://fastcomments.com/auth/login" target="_blank">pagina di login</a> e inserire il nome/email che hai fornito in precedenza. Questo gli invierà un link per accedere.
 
 A meno che non effettuino il logout, rimarranno connessi per trenta giorni.
-
----

@@ -1,24 +1,23 @@
-Translates the given comments into the widget locale. Only available when the matching widget
-customization rule has Comment Translation set to Automatic or Manual.
+Traduce los comentarios dados al idioma del widget. Solo disponible cuando la regla de personalización del widget correspondiente tiene Comment Translation configurado en Automatic o Manual.
 
-## Parameters
+## Parámetros
 
-| Name | Type | Location | Required | Description |
+| Nombre | Tipo | Ubicación | Requerido | Descripción |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| urlId | string | query | Yes |  |
+| tenantId | string | path | Sí |  |
+| urlId | string | query | Sí |  |
 | sso | string | query | No |  |
 | locale | string | query | No |  |
 
-## Response
+## Respuesta
 
-Returns: [`CommentTranslationsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CommentTranslationsResponse.swift)
+Devuelve: [`CommentTranslationsResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CommentTranslationsResponse.swift)
 
-## Example
+## Ejemplo
 
 [inline-code-attrs-start title = 'Ejemplo de translateComments'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Los siguientes ejemplos de código aún están en beta. Para cualquier problema, por favor informe a través de http://github.com/OpenAPITools/openapi-generator/issues/new
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -38,5 +37,3 @@ PublicAPI.translateComments(tenantId: tenantId, urlId: urlId, commentTranslation
     }
 }
 [inline-code-end]
-
----

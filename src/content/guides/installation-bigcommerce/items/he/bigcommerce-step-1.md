@@ -41,5 +41,3 @@
     <div class="title">ערוך קבצי התמה</div>
     <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-1-edit-theme-files.png" alt="ערוך קבצי התמה" />
 </div>
-
----

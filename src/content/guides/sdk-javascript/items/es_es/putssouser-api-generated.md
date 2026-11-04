@@ -28,5 +28,3 @@ Devuelve: [`PutSSOUserAPIResponse`](https://github.com/FastComments/fastcomments
   const response: PutSSOUserAPIResponse = await putSSOUser(tenantId, userId, updateData, true);
 })();
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 ## パラメータ
 
 | 名前 | タイプ | 必須 | 説明 |
@@ -24,5 +23,3 @@ let (apiResponseOpt, httpResp) = client.postRemoveComment(
 if apiResponseOpt.isSome:
   let apiResponse = apiResponseOpt.get()
 [inline-code-end]
-
----

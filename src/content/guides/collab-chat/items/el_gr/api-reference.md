@@ -200,5 +200,3 @@ curl -X DELETE "https://fastcomments.com/comment-collab-chats/demo/conv789" \
 ### Παρακολούθηση χρήσης
 
 Η δημιουργία συνομιλιών αυξάνει το usage metric `conversationCreateCount`. Όλη η δραστηριότητα συγχρονισμού WebSocket αυξάνει τα `pubSubMessageCount` και `pubSubBandwidth`. Μπορείτε να παρακολουθείτε αυτά τα metrics στο dashboard του FastComments κάτω από τα usage analytics.
-
----

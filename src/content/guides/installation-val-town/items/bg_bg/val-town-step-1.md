@@ -1,6 +1,6 @@
-The widget is a script tag and a container element, so it drops into whatever your val already renders. This example uses Hono JSX, which is what Val Town's HTTP templates use.
+Уиджетът е скрипт таг и контейнерен елемент, така че се вмъква в това, което вашият val вече рендира. Този пример използва Hono JSX, което е това, което HTTP шаблоните на Val Town използват.
 
-[inline-code-attrs-start title = 'Уиджет за коментари в HTTP вал'; type='javascript' inline-code-attrs-end]
+[inline-code-attrs-start title = 'Коментар уиджет в HTTP val'; type='javascript' inline-code-attrs-end]
 [inline-code-start]
 /** @jsxImportSource npm:hono@4/jsx */
 import { Hono } from "npm:hono@4";
@@ -37,15 +37,15 @@ app.get("/:slug", (c) => {
 export default app.fetch;
 [inline-code-end]
 
-## Изберете urlId преди да пуснете
+## Изберете urlId, преди да пуснете
 
-`urlId` decides which thread a comment lands in. Leave it unset and it defaults to a cleaned version of the current page URL, which is exactly the thing that changes on Val Town: a val has a long `*.web.val.run` hostname until you claim a subdomain, branches get their own URLs, and renaming a page changes the path. Each variation silently becomes a separate, empty thread, and the symptom reads as "my comments disappeared".
+`urlId` определя в коя нишка попада даден коментар. Ако го оставите непоправен, той по подразбиране е почистена версия на URL адреса на текущата страница, което е точно нещото, което се променя в Val Town: val има дълго `*.web.val.run` име на хост, докато не заявите поддомейн, клоновете получават собствени URL адреси, а преименуването на страница променя пътя. Всяка вариация тихо става отделна, празна нишка, а симптомът изглежда като „коментарите ми изчезнаха".
 
-Set it to something stable that you control, like the post slug or a database id, as above. Pass `url` too, so notification emails and the moderation tools can link back to the real page.
+Задайте го на нещо стабилно, което контролирате, като slug на публикацията или идентификатор от база данни, както по-горе. Подайте и `url`, така че имейлите за известия и инструментите за модериране да могат да линкват обратно към реалната страница.
 
-## Запазване на коментари без JavaScript
+## Запазване на коментарите без JavaScript
 
-FastComments renders a full thread server-side, which a val can drop into a `<noscript>` block:
+FastComments рендира пълна нишка от страна на сървъра, която val може да вмъкне в блок `<noscript>`:
 
 [inline-code-attrs-start title = 'Резервен вариант без JavaScript'; type='html' inline-code-attrs-end]
 [inline-code-start]
@@ -56,4 +56,4 @@ FastComments renders a full thread server-side, which a val can drop into a `<no
 </noscript>
 [inline-code-end]
 
-URL-encode the parameters. The server-side version supports anonymous and logged-in commenting, SSO, and nested replies.
+Кодирайте параметрите с URL encoding. Версията от страна на сървъра поддържа анонимно коментиране и коментиране с влизане, SSO и вложени отговори.

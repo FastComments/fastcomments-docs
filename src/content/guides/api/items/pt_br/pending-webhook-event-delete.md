@@ -1,4 +1,3 @@
----
 [api-resource-header-start name = 'PendingWebhookEvent'; route = 'DELETE /api/v1/pending-webhook-events/:id'; creditsCost = 1; api-resource-header-end]
 
 Esta rota permite a exclusão de um único `PendingWebhookEvent`.
@@ -29,5 +28,3 @@ interface PendingWebhookEventDeleteResponse {
     reason?: string
 }
 [inline-code-end]
-
----

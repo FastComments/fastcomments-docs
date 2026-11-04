@@ -61,5 +61,3 @@ interface PageMigrationUndoResult {
 #### Pokušaji ponovnog izvršavanja
 
 Ako se server koji izvršava posao migracije stranice restartuje, posao se vraća u red i nastavlja nakon poslednje završene migracije. Posao se pokušava najviše 3 puta, nakon čega njegov `status` postaje `failed`.
-
----

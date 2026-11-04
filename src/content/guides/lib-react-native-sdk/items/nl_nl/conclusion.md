@@ -8,5 +8,3 @@ Als u problemen ondervindt of vragen heeft over de React Native SDK, kunt u het 
 ## Bijdragen
 
 Bijdragen zijn welkom! Bezoek de [GitHub-repository](https://github.com/FastComments/fastcomments-react-native-sdk) voor richtlijnen voor bijdragen.
-
----

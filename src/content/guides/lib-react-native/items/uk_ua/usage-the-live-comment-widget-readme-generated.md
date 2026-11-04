@@ -23,4 +23,3 @@ import { FastCommentsCommentWidget } from 'fastcomments-react-native';
       <FastCommentsCommentWidget config={config}/>
   );
 ```
----

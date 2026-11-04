@@ -1,4 +1,3 @@
----
 [related-parameter-start name = 'url'; type = 'string'; related-parameter-end]
 
 При отправке уведомлений по электронной почте или при отображении комментариев в пользовательских интерфейсах, таких как страница модерации, полезно иметь возможность ссылаться из комментария на страницу, где он размещён.
@@ -12,5 +11,3 @@
 [code-example-start config = {url: 'https://example.com/article-5', urlId: 'article-5'}; linesToHighlight = [6, 7]; title = 'Defining Custom URL and URL IDs together'; code-example-end]
 
 URL не очищается от распространённых маркетинговых параметров. По умолчанию, какой бы ни был URL текущей страницы, именно он сохраняется вместе с комментарием.
-
----

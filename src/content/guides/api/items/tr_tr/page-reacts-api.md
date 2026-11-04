@@ -1,40 +1,40 @@
-Page Reacts, kullanıcılarınızın bir sayfayı beğenmesine veya kendi reaksiyon görselleri setinizle ona tepki vermesine olanak tanır. The [Page Reacts widget](/guide-page-reacts.html) and the Floating Likes widget are built on these endpoints, and you can call them yourself to build your own like button.
+Page Reacts, kullanıcılarınızın bir sayfayı beğenmesini veya kendi tepki görselleri setinizle tepki vermesini sağlar. [Page Reacts widget'ı](/guide-page-reacts.html) ve Floating Likes widget'ı bu endpoint'ler üzerine kuruludur ve kendi beğenme butonunuzu oluşturmak için bunları kendiniz çağırabilirsiniz.
 
-Unlike the rest of this guide, the Page Reacts endpoints are public. They are called from your users' browsers, take no API key, and cost no API credits. Every react belongs to the user making the request, so a user can only add or remove their own.
+Bu kılavuzun geri kalanının aksine, Page Reacts endpoint'leri herkese açıktır. Bunlar kullanıcılarınızın tarayıcılarından çağrılır, API anahtarı gerektirmez ve API kredisi harcamaz. Her tepki, isteği yapan kullanıcıya aittir, dolayısıyla bir kullanıcı yalnızca kendi tepkisini ekleyebilir veya kaldırabilir.
 
-There are two sets of endpoints:
+İki endpoint seti vardır:
 
-- `/page-reacts/v1/likes/:tenantId` - bir sayfa başına kullanıcı başına tek bir "like". Use these for a like button.
-- `/page-reacts/v2/:tenantId` - bir sayfa başına birden fazla reaksiyon, her biri sizin seçtiğiniz kısa bir `id` ile tanımlanır (örneğin `heart` veya `laugh`).
+- `/page-reacts/v1/likes/:tenantId` - kullanıcı başına sayfa başına tek bir "beğeni". Bunları bir beğenme butonu için kullanın.
+- `/page-reacts/v2/:tenantId` - sayfa başına birden fazla tepki, her biri sizin seçtiğiniz kısa bir `id` ile tanımlanır (örneğin `heart` veya `laugh`).
 
-Both are also available in our SDKs as part of the `PublicApi`, for example `getV1PageLikes`, `createV1PageReact`, and `deleteV1PageReact` in the [JavaScript SDK](/guide-sdk-javascript.html).
+Her ikisi de SDK'larımızda `PublicApi`'nin bir parçası olarak mevcuttur; örneğin [JavaScript SDK](/guide-sdk-javascript.html)'sında `getV1PageLikes`, `createV1PageReact` ve `deleteV1PageReact`.
 
-### Showing Who Reacted
+### Kimin Tepki Verdiğini Gösterme
 
-Pass `includeUserInfo=public` to the `GET` endpoints to also get the users who liked or reacted, with their usernames and avatars, most recent first. Users who have made their profile activity private are left out, as are anonymous users. Up to 100 reacts are returned.
+Beğenen veya tepki veren kullanıcıları, kullanıcı adları ve avatarlarıyla birlikte en yeniden eskiye doğru almak için `GET` endpoint'lerine `includeUserInfo=public` parametresini iletin. Profil etkinliğini gizli yapmış kullanıcılar ve anonim kullanıcılar bu listede yer almaz. En fazla 100 tepki döndürülür.
 
-SSO users are created with private profile activity unless your SSO payload sets `isProfileActivityPrivate` to `false`, so set it for the users you want to appear in these lists.
+SSO kullanıcıları, SSO payload'ınız `isProfileActivityPrivate` değerini `false` olarak ayarlamadıkça gizli profil etkinliğiyle oluşturulur; bu nedenle bu listelerde görünmesini istediğiniz kullanıcılar için bunu ayarlayın.
 
-On pages that require SSO, only SSO users who can view the page can list who reacted. Others get a `403` with the code `sso-required` or `page-forbidden`.
+SSO gerektiren sayfalarda, yalnızca sayfayı görüntüleyebilen SSO kullanıcıları kimin tepki verdiğini listeleyebilir. Diğerleri `sso-required` veya `page-forbidden` koduyla bir `403` hatası alır.
 
-From your server, [`GET /api/v1/pages/likes`](/guide-api.html#pages-likes-get) and [`GET /api/v1/pages/reacts`](/guide-api.html#pages-reacts-get) return the same lists with an API key, and also accept `includeUserInfo=include-private` to include users with private profiles.
+Sunucunuzdan, [`GET /api/v1/pages/likes`](/guide-api.html#pages-likes-get) ve [`GET /api/v1/pages/reacts`](/guide-api.html#pages-reacts-get) endpoint'leri bir API anahtarıyla aynı listeleri döndürür ve ayrıca gizli profilli kullanıcıları dahil etmek için `includeUserInfo=include-private` parametresini kabul eder.
 
-### Identifying the User
+### Kullanıcıyı Tanımlama
 
-Reacts are tied to the user making the request:
+Tepkiler, isteği yapan kullanıcıya bağlıdır:
 
-- **SSO users:** pass the `sso` query parameter, set to the URI encoded JSON of the same SSO object you give the comment widget. See [SSO](/guide-customizations-and-configuration.html#sso).
-- **Anonymous users:** when there is no `sso` parameter and no FastComments login, the server assigns the browser an anonymous id stored in the FastComments session cookie. Send requests with `credentials: 'include'` so the cookie is kept between requests. Browsers that block third-party cookies will not keep the anonymous id, so use SSO when each user must be recognized reliably.
+- **SSO kullanıcıları:** yorum widget'ına verdiğiniz aynı SSO nesnesinin URI kodlanmış JSON'u olarak ayarlanmış `sso` sorgu parametresini iletin. Bkz. [SSO](/guide-customizations-and-configuration.html#sso).
+- **Anonim kullanıcılar:** `sso` parametresi ve FastComments oturumu olmadığında, sunucu tarayıcıya FastComments oturum çerezinde saklanan anonim bir id atar. Çerezin istekler arasında korunması için istekleri `credentials: 'include'` ile gönderin. Üçüncü taraf çerezlerini engelleyen tarayıcılar anonim id'yi korumaz, bu nedenle her kullanıcının güvenilir bir şekilde tanınması gerekiyorsa SSO kullanın.
 
-### The urlId
+### urlId
 
-`urlId` identifies the page, the same as it does for comments. Use the same `urlId` you give the comment widget so likes and comments are counted on the same page. Remember to URI encode it.
+`urlId`, yorumlarda olduğu gibi sayfayı tanımlar. Beğenilerin ve yorumların aynı sayfada sayılması için yorum widget'ına verdiğiniz aynı `urlId`'yi kullanın. URI kodlamasını yapmayı unutmayın.
 
-[inline-code-attrs-start title = 'Beğen Düğmesi Örneği'; type = 'javascript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Beğenme Butonu Örneği'; type = 'javascript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 const tenantId = 'demo';
 const urlId = 'https://example.com/my-article';
-// Optional, for SSO users. The same object you give the comment widget's "sso" option.
+// İsteğe bağlı, SSO kullanıcıları için. Yorum widget'ının "sso" seçeneğine verdiğiniz aynı nesne.
 const sso = null;
 
 function likesUrl() {

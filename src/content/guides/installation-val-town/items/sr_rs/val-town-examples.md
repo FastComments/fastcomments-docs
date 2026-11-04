@@ -1,11 +1,11 @@
-Four public vals you can remix, each covering one piece of this guide.
+Четири јавна vals-а које можете ремиксовати, сваки покрива по један део овог водича.
 
-**[Blog with comments](https://www.val.town/x/fastcomments/blog-with-comments)** ([live](https://fastcomments-blog.val.run)) је Markdown блог са темом испод сваког поста и збирним бројем коментара на индексу. Ради одмах када га ремиксате, а једна променљива окружења указује на ваш налог.
+**[Блог са коментарима](https://www.val.town/x/fastcomments/blog-with-comments)** ([уживо](https://fastcomments-blog.val.run)) је Markdown блог са нитима коментара испод сваког поста и укупним бројевима коментара на индексу. Ради чим га ремиксујете, а једна променљива окружења усмерава га на ваш налог.
 
-**[SSO demo](https://www.val.town/x/fastcomments/sso-demo)** ([live](https://fastcomments-sso.val.run)) пријављује посетиоца помоћу њиховог Val Town налога и прослеђује тај идентитет виџету, тако да не постоји друга пријава.
+**[SSO демо](https://www.val.town/x/fastcomments/sso-demo)** ([уживо](https://fastcomments-sso.val.run)) пријављује посетиоца преко његовог Val Town налога и предаје тај идентитет виџету, тако да нема друге пријаве.
 
-**[Webhook receiver](https://www.val.town/x/fastcomments/webhook-receiver)** ([live](https://fastcomments-webhooks.val.run)) верификује HMAC потпис на свакој испоруци и чува догађаје у SQLite. Има дугме које потписује тестни податак и испоручује га самом себи, тако да можете видети да верификација успе пре него што подесите прави вебхоок.
+**[Пријемник webhook-ова](https://www.val.town/x/fastcomments/webhook-receiver)** ([уживо](https://fastcomments-webhooks.val.run)) верификује HMAC потпис на свакој достави и чува догађаје у SQLite. Има дугме које потписује тестни payload и доставља га самом себи, тако да можете видети успешну верификацију пре него што конфигуришете стварни webhook.
 
-**[Agent skills](https://www.val.town/x/fastcomments/skills)** ([live](https://fastcomments-skills.val.run)) је библиотека FastComments агентских вештина које обухватају виџет, SSO, REST API, модерацију и миграцију са Disqus‑а. Ремиксујте је и агент Val Town‑а, Townie, аутоматски преузима вештине из `skills/`, тако да ваш агент зна како да постави коментаре без да ви лепите документацију у ћаскање.
+**[Agent skills](https://www.val.town/x/fastcomments/skills)** ([уживо](https://fastcomments-skills.val.run)) је библиотека FastComments agent skills-ова који покривају виџет, SSO, REST API, модерацију и миграцију са Disqus-а. Ремиксујте га и Val Town-ов агент, Townie, аутоматски преузима skills-ове из `skills/`, тако да ваш агент зна како да повеже коментаре без тога да лепите документацију у ћаскање.
 
-The same skills install anywhere else with `npx skills add fastcomments/skills`.
+Исти skills-ови се инсталирају било где другде са `npx skills add fastcomments/skills`.

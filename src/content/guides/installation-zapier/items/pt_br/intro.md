@@ -1,4 +1,3 @@
----
 O aplicativo FastComments para Zapier conecta seus comentários a milhares de outros aplicativos sem escrever código.
 
 Use-o para enviar uma mensagem ao Slack quando alguém comentar, registrar cada comentário em uma planilha, criar um
@@ -9,5 +8,3 @@ nome.
 Este guia assume que você tem uma conta FastComments. [Você pode criar uma aqui.](https://fastcomments.com/auth/tenant-signup?packageId=flex)
 
 Este guia cobre o uso do aplicativo Zapier. Os endpoints que ele chama, juntamente com os formatos de requisição e resposta e o fluxo OAuth por trás da conexão, estão documentados na [referência da API](./guide-api.html).
-
----

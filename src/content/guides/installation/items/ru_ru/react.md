@@ -35,5 +35,3 @@ class Example extends Component {
 [inline-code-end]
 
 Вы можете найти конфигурацию, которую поддерживает React-компонент, <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">здесь</a>.
-
----

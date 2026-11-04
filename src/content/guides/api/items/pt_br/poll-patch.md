@@ -65,5 +65,3 @@ interface PollPatchResponse {
 - Ao contrário de criar uma enquete, `closesAt` pode estar no passado aqui – é assim que você fecha uma enquete imediatamente.
 - A privacidade da enquete pode ser restringida, mas não ampliada, depois que ela tem votos.
 - Um comentário bloqueado não pode ter sua enquete alterada, e falha com `locked`.
-
----

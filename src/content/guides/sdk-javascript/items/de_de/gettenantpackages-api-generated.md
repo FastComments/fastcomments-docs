@@ -1,4 +1,3 @@
----
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
@@ -22,5 +21,3 @@ async function fetchPackages() {
   const resultWithoutSkip: GetTenantPackagesResponse = await getTenantPackages(tenantId);
 }
 [inline-code-end]
-
----

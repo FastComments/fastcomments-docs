@@ -1,4 +1,3 @@
----
 ### Proste SSO
 
 ```cpp
@@ -36,4 +35,3 @@ int main() {
     return 0;
 }
 ```
----

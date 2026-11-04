@@ -1,3 +1,1 @@
----
 Odobrite, izbrišite, blokirajte i masovno upravljajte komentarima sa jedne kontrolne table, uz otkrivanje spama, maskiranje psovki, grupe moderacije i moderaciju putem e‑maila.
----

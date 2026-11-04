@@ -55,5 +55,3 @@ try {
     echo 'Exception when calling DefaultApi->aggregate: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

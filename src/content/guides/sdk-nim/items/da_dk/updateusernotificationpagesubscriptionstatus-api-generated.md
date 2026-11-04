@@ -1,4 +1,3 @@
----
 Aktiver eller deaktiver meddelelser for en side. Når brugere er abonneret på en side, oprettes meddelelser for nye rodkommentarer, og også
 
 ## Parametre
@@ -33,5 +32,3 @@ if optResp.isSome:
   let resp = optResp.get()
   # yderligere behandling med resp
 [inline-code-end]
-
----

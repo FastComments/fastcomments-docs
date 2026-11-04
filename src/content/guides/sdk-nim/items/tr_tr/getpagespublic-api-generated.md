@@ -1,23 +1,19 @@
-List pages for a tenant. Used by the FChat desktop client to populate its room list.  
-Requires `enableFChat` to be true on the resolved custom config for each page.  
-Pages that require SSO are filtered against the requesting user's group access.
+Bir kiracı (tenant) için sayfaları listeler. FChat masaüstü istemcisi tarafından oda listesini doldurmak için kullanılır.
+Her sayfa için çözümlenen özel yapılandırmada `enableFChat` değerinin true olması gerekir.
+SSO gerektiren sayfalar, istekte bulunan kullanıcının grup erişimine göre filtrelenir.
 
-Kiralayan bir tenant için sayfaları listeler. FChat masaüstü istemcisi tarafından oda listesini doldurmak için kullanılır.  
-Her sayfa için çözümlenen özel yapılandırmada `enableFChat` değerinin true olması gerekir.  
-SSO gerektiren sayfalar, talep eden kullanıcının grup erişimine göre filtrelenir.
+## Parametreler
 
-## Parameters
-
-| Ad | Tür | Gereklidir | Açıklama |
+| Ad | Tür | Zorunlu | Açıklama |
 |------|------|----------|-------------|
 | tenantId | string | Evet |  |
 | options | GetPagesPublicOptions | Hayır |  |
 
-## Response
+## Yanıt
 
-Döndürür: [`Option[GetPublicPagesResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_public_pages_response.nim)
+Döndürülen değer: [`Option[GetPublicPagesResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_public_pages_response.nim)
 
-## Example
+## Örnek
 
 [inline-code-attrs-start title = 'getPagesPublic Örneği'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

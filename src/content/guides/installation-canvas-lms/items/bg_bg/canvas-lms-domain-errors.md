@@ -12,5 +12,3 @@
 <a href="https://fastcomments.com/auth/my-account/configure-domains" target="_blank">Отидете тук, за да добавите сайта си към акаунта си.</a>
 
 Добавете домейна на Canvas (e.g. `yourschool.instructure.com`) и коментарите ще се зареждат правилно.
-
----

@@ -1,36 +1,31 @@
-Past commenters on the page who are NOT currently online. Sorted by displayName.  
-页面上过去的评论者（当前不在线）。按 displayName 排序。
+当前不在线的页面历史评论者。按 displayName 排序。
+在用完 /users/online 之后，使用此接口渲染“成员”部分。
+基于 commenterName 的游标分页：服务器通过 $gt 从 afterName 开始沿部分索引 {tenantId, urlId, commenterName} 向前遍历，没有 $skip 开销。
 
-Use this after exhausting /users/online to render a "Members" section.  
-在用尽 /users/online 之后使用，以呈现 “Members” 部分。
+## 参数
 
-Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName} index from afterName forward via $gt, no $skip cost.  
-在 commenterName 上使用游标分页：服务器从 afterName 向前遍历部分 {tenantId, urlId, commenterName} 索引，使用 $gt，没有 $skip 成本。
-
-## Parameters
-
-| Name | Type | Location | Required | Description |
+| 名称 | 类型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| urlId | string | query | Yes | 页面 URL 标识符（服务器端已清理）。 |
-| afterName | string | query | No | 游标：从上一次响应中传递 nextAfterName。（可选） |
-| afterUserId | string | query | No | 游标分割键：从上一次响应中传递 nextAfterUserId。当设置 afterName 时需要，以防名称相同导致条目被忽略。（可选） |
+| tenantId | string | path | 是 |  |
+| urlId | string | query | 是 | 页面 URL 标识符（在服务端进行清理）。 |
+| afterName | string | query | 否 | 游标：传入上一次响应中的 nextAfterName。 |
+| afterUserId | string | query | 否 | 游标决胜键：传入上一次响应中的 nextAfterUserId。当设置了 afterName 时必须提供，以避免同名条目被丢弃。 |
 
-## Response
+## 响应
 
-Returns: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PageUsersOfflineResponse.swift)
+返回：[`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PageUsersOfflineResponse.swift)
 
-## Example
+## 示例
 
 [inline-code-attrs-start title = 'getOfflineUsers 示例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 以下代码示例仍处于测试阶段。如有问题，请通过 http://github.com/OpenAPITools/openapi-generator/issues/new 报告
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let urlId = "urlId_example" // String | 页面 URL 标识符（服务器端已清理）。
-let afterName = "afterName_example" // String | 游标：从上一次响应中传递 nextAfterName。（可选）
-let afterUserId = "afterUserId_example" // String | 游标分割键：从上一次响应中传递 nextAfterUserId。当设置 afterName 时需要，以防名称相同导致条目被忽略。（可选）
+let urlId = "urlId_example" // String | 页面 URL 标识符（在服务端进行清理）。
+let afterName = "afterName_example" // String | 游标：传入上一次响应中的 nextAfterName。 (optional)
+let afterUserId = "afterUserId_example" // String | 游标决胜键：传入上一次响应中的 nextAfterUserId。当设置了 afterName 时必须提供，以避免同名条目被丢弃。 (optional)
 
 PublicAPI.getOfflineUsers(tenantId: tenantId, urlId: urlId, options: PublicAPI.GetOfflineUsersOptions(afterName: afterName, afterUserId: afterUserId)) { (response, error) in
     guard error == nil else {

@@ -1,19 +1,19 @@
-Bulk user info for a tenant. Given userIds, return display info from User / SSOUser.  
-Used by the comment widget to enrich users that just appeared via a presence event.  
-No page context: privacy is enforced uniformly (private profiles are masked).
+Informacije o množičnih uporabnikih za najemnika. Ob podanih userIds vrne prikazne informacije iz User / SSOUser.
+Uporablja widget za komentarje za obogatitev uporabnikov, ki so se pravkar pojavili prek prisotnostnega dogodka.
+Brez konteksta strani: zasebnost se uveljavlja enotno (zasebni profili so maskirani).
 
-## Parameters
+## Parametri
 
 | Ime | Vrsta | Obvezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| ids | string | Yes |  |
+| tenantId | string | Da |  |
+| ids | string | Da |  |
 
-## Response
+## Odgovor
 
-Returns: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersInfoResponse.ts)
+Vrne: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersInfoResponse.ts)
 
-## Example
+## Primer
 
 [inline-code-attrs-start title = 'Primer getUsersInfo'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

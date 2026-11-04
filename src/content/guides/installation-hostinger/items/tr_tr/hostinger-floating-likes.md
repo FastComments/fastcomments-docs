@@ -1,4 +1,3 @@
----
 FastComments ayrıca Hostinger için Sayfa Beğenileri (diğer adıyla Yüzen Beğeni düğmesi) bileşenini destekler.
 
 Bunu bu sayfanın sağ alt köşesinde çalışırken görebilirsiniz!
@@ -36,5 +35,3 @@ Bu talimatlar Hostinger Site Builder içindir. Eğer Hostinger *WordPress* kulla
 4. Entegrasyonlar'ı seçin.
 5. Yeni kodu `Custom code` alanının *sonuna* ekleyin ve sitenizi yayınlayın.
 6. Önizleme modunda bileşeni görmeyeceksiniz, ancak sitenin yayınlanmış sürümünde görünecektir.
-
----

@@ -23,5 +23,3 @@ Retourneert: [`GetUserPresenceStatusesResponse`](https://github.com/FastComments
   console.log(presence);
 })();
 [inline-code-end]
-
----

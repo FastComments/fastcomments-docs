@@ -19,5 +19,3 @@ Entonces, Aprobado significa que el comentario puede ser visto por otros usuario
 Revisado es simplemente una herramienta para administradores y moderadores, y no tiene impacto en la visibilidad de un comentario.
 
 La marca Revisado facilita encontrar los comentarios que has revisado.
-
----

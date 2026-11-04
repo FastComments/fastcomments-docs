@@ -1,19 +1,19 @@
-#### Población del autocompletado
+#### Completando el autocompletado
 
-HashTags se pueden rellenar de dos maneras.
+Los HashTags se pueden completar de dos maneras.
 
-First, by default users can type the `#` symbol and some text - and if there are existing hashtags an autocomplete UI will be shown.
+Primero, por defecto los usuarios pueden escribir el símbolo `#` y algo de texto - y si existen hashtags existentes, se mostrará una interfaz de autocompletado.
 
 Si un usuario introduce un hashtag nuevo, [a menos que esté deshabilitado](/guide-customizations-and-configuration.html#disable-automatic-hashtag-creation), el hashtag
-se creará automáticamente y se resaltará.
+se creará automáticamente y quedará resaltado.
 
-La segunda forma es definir manualmente cada hashtag. Esto se trata en este documento.
+La segunda manera es definir manualmente cada hashtag. Esto se cubre en este documento.
 
 #### Casos de uso
 
-HashTags son útiles para que los miembros de la comunidad naveguen y encuentren discusiones relevantes. También son útiles para etiquetar piezas relevantes
-de información, como enlaces, que pueden definirse a través de nuestra API. Por ejemplo, los hashtags podrían usarse para etiquetar:
+Los HashTags son útiles para que los miembros de la comunidad naveguen y encuentren discusiones relevantes. También son útiles para etiquetar
+piezas de información relevantes, como enlaces, que se pueden definir a través de nuestra API. Por ejemplo, los hashtags podrían usarse para etiquetar:
 
 - Tickets en un sistema de tickets.
-- Documentos o páginas en CRM.
+- Documentos o Páginas en un CRM.
 - Archivos.

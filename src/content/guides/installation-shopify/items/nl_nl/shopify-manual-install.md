@@ -1,4 +1,3 @@
----
 Als je de [Shopify App Store-app](https://apps.shopify.com/fastcomments) niet kunt installeren, kun je FastComments nog steeds toevoegen door je thema te bewerken. Dit pad is nuttig wanneer je een FastComments-tenant die je al bezit wilt aansluiten, of wanneer je embedt op een Shopify-winkel waar de app geen optie is.
 
 De installatie via de app is de ondersteunde methode voor de meeste winkels. Gebruik deze methode alleen als de app niet geschikt is.
@@ -45,5 +44,3 @@ Open een blogbericht op je live winkel. Als je in plaats van de commentaarwidget
 ### FastComments toevoegen aan andere pagina's
 
 Dezelfde snippet werkt op elk Liquid-sjabloon, inclusief productpagina's, aangepaste pagina's en de startpagina. Plak het waar je wilt dat reacties verschijnen en pas `urlId` aan als je een stabiele identifier per pagina wilt (bijvoorbeeld, `urlId: "{{ product.id }}"` in een producttemplate).
-
----

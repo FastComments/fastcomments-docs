@@ -1,4 +1,3 @@
----
 ### ID-ji za oddajanje
 
 Videli boste, da morate v nekaterih klicih API posredovati `broadcastId`. Ko prejmete dogodke, boste ta ID dobili nazaj, tako da boste vedeli, da ga lahko prezrete, če nameravate optimistično uporabiti spremembe na odjemalcu (kar boste verjetno želeli storiti, saj nudi najboljšo izkušnjo). Tukaj posredujte UUID. ID naj bo dovolj edinstven, da se v eni seji ne pojavi dvakrat.
@@ -6,4 +5,3 @@ Videli boste, da morate v nekaterih klicih API posredovati `broadcastId`. Ko pre
 ```swift
 let broadcastId = UUID().uuidString
 ```
----

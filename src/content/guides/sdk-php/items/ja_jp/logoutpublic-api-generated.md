@@ -1,4 +1,3 @@
----
 ## レスポンス
 
 戻り値: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APIEmptyResponse.php)
@@ -27,5 +26,3 @@ try {
     echo 'Exception when calling PublicApi->logoutPublic: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

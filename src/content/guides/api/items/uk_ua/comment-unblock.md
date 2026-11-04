@@ -1,4 +1,3 @@
----
 [api-resource-header-start name = 'Comment'; route = 'POST /api/v1/comments/:id/un-block'; creditsCost = 1; api-resource-header-end]
 
 Цей API-ендпоінт надає можливість розблокувати користувача, який написав певний коментар. Підтримується розблокування коментарів, написаних користувачами FastComments.com, SSO Users та Tenant Users.
@@ -49,5 +48,3 @@ interface CommentUnBlockResponse {
     commentStatuses?: Record<string, boolean>;
 }
 [inline-code-end]
-
----

@@ -12,5 +12,3 @@
 [code-example-start config = {url: 'https://example.com/article-5', urlId: 'article-5'}; linesToHighlight = [6, 7]; title = 'Defining Custom URL and URL IDs together'; code-example-end]
 
 URL адресът не се почиства от общи маркетингови параметри. По подразбиране какъвто е текущият URL на страницата, такъв се съхранява с коментара.
-
----

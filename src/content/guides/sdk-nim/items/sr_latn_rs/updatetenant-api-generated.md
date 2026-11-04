@@ -30,5 +30,3 @@ let (apiResp, httpResp) = client.updateTenant(
 if apiResp.isSome:
   let emptyResp = apiResp.get()
 [inline-code-end]
-
----

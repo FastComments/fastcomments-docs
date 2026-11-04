@@ -1,4 +1,3 @@
----
 Uspešno! Sada bi trebalo da vidite FastComments Comment Widget.
 
 <div class="screenshot white-bg">
@@ -7,5 +6,3 @@ Uspešno! Sada bi trebalo da vidite FastComments Comment Widget.
 </div>
 
 Čestitamo na podešavanju FastComments sa ThriveCart! Ako ste naišli na Domain Error, ili želite da naučite kako da prilagodite oblast komentara, nastavite čitati!
-
----

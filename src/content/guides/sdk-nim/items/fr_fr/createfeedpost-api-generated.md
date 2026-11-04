@@ -23,5 +23,3 @@ let (respOpt, httpResp) = client.createFeedPost(
 if respOpt.isSome:
   let feedPost = respOpt.get()
 [inline-code-end]
-
----

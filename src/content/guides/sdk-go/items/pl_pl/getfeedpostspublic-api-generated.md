@@ -1,4 +1,3 @@
----
 req
 tenantId
 afterId
@@ -52,5 +51,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.GetFeedPostsPublic`: %v\n", resp)
 }
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 req
 tenantId
 urlId
@@ -49,5 +48,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.GetGlobalEventLog`: %v\n", resp)
 }
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 Seneste kommentarer i præcis den form, som webhook-leverancer bruger, til at bygge integrationer (for eksempel Zapier‑eksempeldata). Hver begivenhed leverer det samme kommentarobjekt, så `event` kun behøver at være gyldig.
 
 ## Parameters
@@ -35,5 +34,3 @@ DefaultAPI.getWebhookSamplePayloads(tenantId: tenantId, options: DefaultAPI.GetW
     }
 }
 [inline-code-end]
-
----

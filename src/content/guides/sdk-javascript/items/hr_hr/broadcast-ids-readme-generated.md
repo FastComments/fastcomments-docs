@@ -1,4 +1,3 @@
----
 Vidjet ćete da trebate proslijediti `broadcastId` u nekim API pozivima. Kada primite događaje, dobit ćete ovaj ID natrag, tako da znate zanemariti događaj ako planirate optimistično primijeniti promjene na klijentu (što ćete vjerojatno htjeti učiniti jer pruža najbolji doživljaj). Ovdje proslijedite UUID. ID bi trebao biti dovoljno jedinstven da se ne pojavi dva puta u istoj sesiji preglednika.
 
 ```typescript
@@ -13,4 +12,3 @@ const response = await sdk.publicApi.createCommentPublic({
   }
 });
 ```
----

@@ -1,9 +1,8 @@
-Enable or disable notifications for a page. When users are subscribed to a page, notifications are created
-for new root comments, and also
+啟用或停用某個頁面的通知。當使用者訂閱了某個頁面時，系統會為新的根留言建立通知，同時也會
 
-## Parameters
+## 參數
 
-| 名稱 | 型別 | 必填 | 描述 |
+| 名稱 | 類型 | 必填 | 說明 |
 |------|------|----------|-------------|
 | tenant_id | String | 是 |  |
 | url_id | String | 是 |  |
@@ -12,9 +11,9 @@ for new root comments, and also
 | subscribed_or_unsubscribed | String | 是 |  |
 | sso | String | 否 |  |
 
-## Response
+## 回應
 
-返回: [`UpdateUserNotificationPageSubscriptionResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/update_user_notification_page_subscription_status_response.rs)
+回傳：[`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/update_user_notification_page_subscription_status_response.rs)
 
 ## 範例
 

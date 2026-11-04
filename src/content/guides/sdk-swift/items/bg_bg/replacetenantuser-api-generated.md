@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Име | Тип | Местоположение | Задължителен | Описание |
@@ -34,5 +33,3 @@ DefaultAPI.replaceTenantUser(tenantId: tenantId, id: id, replaceTenantUserBody: 
     }
 }
 [inline-code-end]
-
----

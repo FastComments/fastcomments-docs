@@ -15,5 +15,3 @@ Acción de un moderador humano. Las marcas de spam originadas por agentes (vía 
 - **Registro de memoria** - hacer que un agente guarde una nota de memoria sobre el usuario marcado como spam (p. ej., "anteriormente marcado como spam por X por un moderador") para que los futuros agentes de moderación tengan contexto.
 - **Aplicación a nivel de usuario** - que un moderador marque un comentario como spam puede ser la señal para que un agente también emita una advertencia o una suspensión breve, condicionada a la aprobación.
 - **Espejo en sistemas externos** vía [Webhooks](#webhooks-overview).
-
----

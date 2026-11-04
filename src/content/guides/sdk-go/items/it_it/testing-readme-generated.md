@@ -1,4 +1,3 @@
----
 Imposta le variabili d'ambiente richieste:
 
 ```bash
@@ -11,4 +10,3 @@ Esegui i test:
 ```bash
 go test ./tests
 ```
----

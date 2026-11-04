@@ -1,4 +1,3 @@
----
 ### Uso de Recursos
 
 Deve‑se observar que a obtenção de dados da API é contabilizada como uso em sua conta.
@@ -16,5 +15,3 @@ Recomendamos ler a documentação de Pages primeiro, para ajudar a limitar a con
 ### Webhooks
 
 As assinaturas de Webhook têm seu próprio guia. `POST`, `GET` e `DELETE /api/v1/webhooks`, e `GET /api/v1/webhooks/sample-payloads`, estão documentados em [Gerenciando Assinaturas via API](/guide-webhooks.html#webhooks-api-subscriptions), e as cargas úteis de eventos em [Estruturas de Webhook](/guide-webhooks.html#webhooks-structures).
-
----

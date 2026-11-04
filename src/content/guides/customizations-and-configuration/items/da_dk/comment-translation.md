@@ -1,4 +1,3 @@
----
 Som standard oversætter FastComments widgetens eget interface (knapper, etiketter, fejlmeddelelser) til seerens sprog, men kommentarer vises præcis som de blev skrevet.
 
 Kommentaroversættelse tilføjer oversættelse af selve kommentarerne, så et fællesskab, der skriver på mere end ét sprog, kan læse hver kommentar på sit eget sprog.
@@ -19,5 +18,3 @@ Oversættelse er en server-side indstilling. At videregive `commentTranslation` 
 Hver kommentar oversættes højst én gang pr. målsprog, og resultatet gemmes sammen med kommentaren, så en kommentar læst af tusind spanske brugere kun oversættes én gang. Hvis forfatteren eller en moderator redigerer kommentaren, forkastes den gemte oversættelse, og kommentaren oversættes igen ved næste visning. Oversat tekst gennemgår den samme saniterings- og linkregler som den originale kommentar. Kommentarer, der er for lange, eller hvis sproget ikke kan detekteres, vises uoversat.
 
 Brug faktureres som LLM‑tokens til samme pris som [AI Agents](/guide-ai-agents.html#plans-and-eligibility) og vises på samme sted i dine faktureringsdetaljer.
-
----

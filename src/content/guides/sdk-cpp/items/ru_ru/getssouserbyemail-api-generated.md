@@ -25,5 +25,3 @@ api->getSSOUserByEmail(
     }
 });
 [inline-code-end]
-
----

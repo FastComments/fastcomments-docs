@@ -52,5 +52,3 @@ try {
     echo 'Виняток під час виклику DefaultApi->getQuestionResults: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

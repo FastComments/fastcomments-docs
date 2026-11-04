@@ -8,5 +8,3 @@ Vue 3 Kütüphanesi ile ilgili herhangi bir sorunla karşılaşırsanız veya so
 ## Katkıda Bulunma
 
 Katkılar memnuniyetle karşılanır! Katkı yönergeleri için lütfen [GitHub deposunu](https://github.com/FastComments/fastcomments-vue-next) ziyaret edin.
-
----

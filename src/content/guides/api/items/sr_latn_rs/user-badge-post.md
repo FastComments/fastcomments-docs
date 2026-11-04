@@ -1,4 +1,3 @@
----
 Ovaj endpoint vam omogućava da kreirate novu dodelu korisničkog bedža.
 
 Primer zahteva:
@@ -95,4 +94,3 @@ Mogući odgovori sa greškom:
   "reason": "You can only add badges to users who belong to your tenant or have commented on your site."
 }
 [inline-code-end]
----

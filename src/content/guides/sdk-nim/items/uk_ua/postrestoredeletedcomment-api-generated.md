@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Назва | Тип | Обов’язково | Опис |
@@ -25,5 +24,3 @@ if respOpt.isSome:
   let empty = respOpt.get()
   echo "Comment restored"
 [inline-code-end]
-
----

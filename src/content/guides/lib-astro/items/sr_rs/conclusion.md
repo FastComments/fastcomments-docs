@@ -8,5 +8,3 @@
 ## Како допринети
 
 Допринеси су добродошли! Молимо посетите [GitHub репозиторијум](https://github.com/FastComments/fastcomments-astro) за смернице о доприносу.
-
----

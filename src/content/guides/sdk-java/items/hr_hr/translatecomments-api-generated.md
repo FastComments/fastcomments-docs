@@ -1,14 +1,13 @@
-Translates the given comments into the widget locale. Only available when the matching widget
-customization rule has Comment Translation set to Automatic or Manual.
+Prevodi dane komentare na jezik widgeta. Dostupno samo kada odgovarajuće pravilo prilagodbe widgeta ima Comment Translation postavljeno na Automatic ili Manual.
 
 ## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
-|------|------|----------|----------|------|
-| tenantId | string | path | Yes |  |
-| urlId | string | query | Yes |  |
-| sso | string | query | No |  |
-| locale | string | query | No |  |
+|------|------|----------|----------|-------------|
+| tenantId | string | path | Da |  |
+| urlId | string | query | Da |  |
+| sso | string | query | Ne |  |
+| locale | string | query | Ne |  |
 
 ## Odgovor
 
@@ -16,9 +15,9 @@ Vraća: [`CommentTranslationsResponse`](https://github.com/FastComments/fastcomm
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer translateComments'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer za translateComments'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Uvezi klase:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;

@@ -19,5 +19,3 @@ Yani, Onaylanmış yorum sitenizdeki diğer kullanıcılar tarafından görünt�
 İncelendi, yalnızca yöneticiler ve moderatörler için bir araçtır ve bir yorumun görünürlüğü üzerinde hiçbir etkisi yoktur.
 
 İncelendi bayrağı, incelediğiniz yorumları bulmayı kolaylaştırır.
-
----

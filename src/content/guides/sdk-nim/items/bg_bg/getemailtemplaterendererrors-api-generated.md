@@ -27,5 +27,3 @@ else:
   # обработете липсващия отговор
   discard
 [inline-code-end]
-
----

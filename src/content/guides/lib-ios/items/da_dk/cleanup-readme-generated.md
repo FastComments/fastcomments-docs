@@ -1,4 +1,3 @@
----
 Når du er færdig med en SDK-instans (f.eks. når visningen lukkes), kald `cleanup()` for at lukke WebSocket-forbindelsen og annullere baggrundsopgaver:
 
 ```swift

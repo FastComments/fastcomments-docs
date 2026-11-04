@@ -1,4 +1,3 @@
----
 [api-resource-header-start name = 'QuestionResult'; route = 'POST /api/v1/question-results'; creditsCost = 1; api-resource-header-end]
 
 このAPIエンドポイントは、`QuestionResult` を作成する機能を提供します。
@@ -44,5 +43,3 @@ interface QuestionResultPostResponse {
     questionResult?: QuestionResult
 }
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 Yorumları silerken dikkate alınması gereken birkaç şey var.
 
 1. Yorumu orijinal olarak yazan kullanıcının gördükleri.
@@ -9,5 +8,3 @@ Bir yorumu sildiğinizde, o yorum orijinal olarak yazan kullanıcı için de kay
 Ayrıca, o yorumu okuyan tüm kullanıcıların ekranlarından kaldırılır.
 
 Bu yorumun yanıtları ve bu yanıtların yanıtları varsa, onlar da hemen silinir. İletideki ebeveyn yorumlar korunur.
-
----

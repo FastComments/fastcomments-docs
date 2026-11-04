@@ -6,5 +6,3 @@ Er zijn twee soorten widgets voor het aantal reacties beschikbaar:
 2. **Bulk-widget voor aantal reacties** - Voor het efficiënt weergeven van aantallen reacties van meerdere pagina's op dezelfde pagina
 
 Dit artikel behandelt de VanillaJS-widgets. Onze React/Angular/etc bibliotheken hebben ook hun eigen widgets.
-
----

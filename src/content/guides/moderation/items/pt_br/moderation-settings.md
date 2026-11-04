@@ -1,4 +1,3 @@
----
 Enquanto o FastComments oferece suporte à detecção de palavrões e spam, ele pode ser personalizado. A detecção de palavrões ou spam pode ser desativada individualmente na página de Configurações de Moderação de Comentários.
 
 Esta também é a página onde você encontrará a configuração para aprovação automática de comentários, ou a configuração da expiração de comentários não verificados.

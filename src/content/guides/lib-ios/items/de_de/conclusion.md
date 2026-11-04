@@ -8,5 +8,3 @@ Wenn Sie auf Probleme stoßen oder Fragen zur iOS-Bibliothek haben, bitte:
 ## Mitwirken
 
 Beiträge sind willkommen! Bitte besuchen Sie das [GitHub-Repository](https://github.com/FastComments/fastcomments-ios) für Richtlinien zur Mitwirkung.
-
----

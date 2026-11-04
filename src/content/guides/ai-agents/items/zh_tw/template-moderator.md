@@ -29,5 +29,3 @@ Moderator 範本是建議的起點，如果你的目標是減少人工審核負�
 ### 建議的試運行時段
 
 在將此範本切換為啟用前，先以 [dry-run](#dry-run-mode) 模式對實際流量執行至少一週。也可使用 [Test Runs (Replays)](#test-runs-replays) 來預覽過去 30 天的結果。
-
----

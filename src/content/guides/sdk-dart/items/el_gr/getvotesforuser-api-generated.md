@@ -34,5 +34,3 @@ try {
     print('Exception when calling DefaultApi->getVotesForUser: $e\n');
 }
 [inline-code-end]
-
----

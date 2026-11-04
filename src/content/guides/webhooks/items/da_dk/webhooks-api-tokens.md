@@ -110,5 +110,3 @@ function verifyWebhookSignature($headers, $body, $apiSecret) {
 ## Ældre autentificering
 
 `token`-headeren, der indeholder din API Secret, sendes stadig for bagudkompatibilitet. Vi anbefaler dog at migrere til HMAC-verifikation for forbedret sikkerhed, da det beskytter mod replay-angreb.
-
----

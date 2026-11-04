@@ -1,11 +1,11 @@
-Status, progress and, once done, the result of one batch job.
+Stanje, napredek in, ko je opravljeno, rezultat enega paketnega opravila.
 
 ## Parametri
 
-| Ime | Tip | Lokacija | Obvezno | Opis |
-|------|------|----------|----------|------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
+| Ime | Vrsta | Lokacija | Obvezno | Opis |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Da |  |
+| id | string | path | Da |  |
 
 ## Odgovor
 
@@ -13,9 +13,9 @@ Vrne: [`GetBatchJobAPIResponse`](https://github.com/FastComments/fastcomments-sw
 
 ## Primer
 
-[inline-code-attrs-start title = 'getBatchJob Primer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getBatchJob'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Naslednji vzorci kode so še v beta različici. Za morebitne težave jih prosimo prijavite preko http://github.com/OpenAPITools/openapi-generator/issues/new
+// Naslednji vzorci kode so še v beta fazi. Za morebitne težave jih prijavite na http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 

@@ -1,4 +1,3 @@
----
 Modül, `Structure > Block layout` (`/admin/structure/block`) üzerinden yerleştirebileceğiniz birkaç blok ile birlikte gelir.
 
 - **FastComments Widget** - Ana yorum widget'ı. Mevcut varlığı otomatik algılar. FastComments alanı zaten eklenmiş varlıkları atlar, böylece aynı sayfada yinelenen widget'lar görmezsiniz.
@@ -9,5 +8,3 @@ Modül, `Structure > Block layout` (`/admin/structure/block`) üzerinden yerleş
 - **FastComments Top Pages** - Sitenizde en çok yoruma sahip sayfaları gösterir.
 
 İçerik merkezli bloklar (Live Chat, Collab Chat, Image Chat) mevcut varlığı otomatik algılar ve varlık olmayan sayfalarda yol tabanlı bir tanımlayıcıya başvurur. Bu, taksonomi sayfalarında, görünümlerde ve özel rotalarda herhangi bir ekstra kurulum gerektirmeden çalıştıkları anlamına gelir.
-
----

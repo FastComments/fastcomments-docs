@@ -6,5 +6,3 @@ Erfolgreich! Sie sollten jetzt das FastComments-Kommentar-Widget in allen Ihren 
 </div>
 
 Herzlichen Glückwunsch zur Einrichtung von FastComments mit Squarespace! Wenn Sie auf einen Domain-Fehler gestoßen sind oder erfahren möchten, wie Sie den Kommentarbereich anpassen können, lesen Sie weiter!
-
----

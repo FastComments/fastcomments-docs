@@ -1,4 +1,3 @@
----
 테넌트에 구성된 웹훅을 나열합니다. 대시보드에서 관리되는 행과 API 구독 모두 포함됩니다.
 
 ## 매개변수
@@ -39,5 +38,3 @@ DefaultAPI.getWebhooks(tenantId: tenantId, options: DefaultAPI.GetWebhooksOption
     }
 }
 [inline-code-end]
-
----

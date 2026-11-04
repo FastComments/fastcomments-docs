@@ -1,4 +1,3 @@
----
 ## Parámetros
 
 | Nombre | Tipo | Requerido | Descripción |
@@ -24,5 +23,3 @@ Devuelve: [`ModerationAPIGetLogsResponse`](https://github.com/FastComments/fastc
   const logsWithoutSso: ModerationAPIGetLogsResponse = await getLogs(tenantId, commentId);
 })();
 [inline-code-end]
-
----

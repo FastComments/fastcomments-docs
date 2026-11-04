@@ -13,5 +13,3 @@ Canvas uloge se automatski mapiraju na FastComments uloge tijekom LTI pokretanja
 Kada korisnik pokrene FastComments iz Canvasa, LTI 1.3 protokol uključuje njegovu Canvas ulogu. FastComments čita tu ulogu i automatski dodjeljuje odgovarajuće dozvole.
 
 Ako korisnik ima više uloga (npr. an Instructor koji je također Admin), koristi se uloga s najvećim privilegijama.
-
----

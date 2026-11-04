@@ -1,31 +1,31 @@
-#### LTI Yapılandırmasına Gidin
+#### LTI Yapılandırmasına Git
 
-Go to <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">your FastComments LTI Config</a>.
+<a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">FastComments LTI Yapılandırmanıza</a> gidin.
 
-Kurulum sayfası, her adımı adım adım yönlendiren bir sihirbaz kullanır. You will start at **Step 1: Create**.
+Kurulum sayfası, her adımda size rehberlik eden yönlendirilmiş bir sihirbaz kullanır. **Adım 1: Oluştur** ile başlayacaksınız.
 
-#### Create a New LTI Configuration
+#### Yeni Bir LTI Yapılandırması Oluşturun
 
 Aşağıdaki alanları doldurun:
 
-- **Configuration Name** - an optional label to identify this configuration (useful if you connect multiple Canvas instances).
-- **Platform URL** - your Canvas instance URL (e.g. `https://yourschool.instructure.com`). This field is required.
+- **Configuration Name** - bu yapılandırmayı tanımlamak için isteğe bağlı bir etiket (birden fazla Canvas örneği bağlarsanız kullanışlıdır).
+- **Platform URL** - Canvas örnekinizin URL'si (örn. `https://yourschool.instructure.com`). Bu alan zorunludur.
 
-#### Choose Placements
+#### Yerleşimleri Seçin
 
-Platform URL'nin altında, FastComments'in Canvas kurslarınızda nerede görüneceğini seçebilirsiniz. Both placements are enabled by default:
+Platform URL'nin altında, FastComments'un Canvas derslerinizde nerede görüneceğini seçebilirsiniz. Her iki yerleşim de varsayılan olarak etkindir:
 
-- **Assignment View** - comments appear automatically below assignments.
-- **Rich Content Editor Button** - instructors can embed FastComments in Pages, Quizzes, and Announcements using the toolbar button in the Rich Content Editor.
+- **Assignment View** - yorumlar ödevlerin altında otomatik olarak görünür.
+- **Rich Content Editor Button** - eğitmenler, Zengin İçerik Düzenleyici'deki araç çubuğu düğmesini kullanarak FastComments'u Sayfalara, Sınavlara ve Duyurulara gömebilir.
 
-Bunlardan birini veya her ikisini etkinleştirebilirsiniz. En az bir yerleştirme etkin olmalıdır.
+Birini veya her ikisini de etkinleştirebilirsiniz. En az bir yerleşim etkin olmalıdır.
 
-Click **Create Configuration**.
+**Create Configuration** düğmesine tıklayın.
 
-#### Copy the Configuration URL
+#### Yapılandırma URL'sini Kopyalayın
 
-Yapılandırmayı oluşturduktan sonra, sihirbaz **Step 2: Connect** aşamasına ilerler. Sayfanın üst kısmında belirgin bir **Configuration URL** bir **Copy** düğmesi ile birlikte görüntülenir.
+Yapılandırmayı oluşturduktan sonra sihirbaz **Adım 2: Bağlan** adımına ilerler. Sayfanın üstünde bir **Kopyala** düğmesiyle birlikte belirgin bir **Configuration URL** görüntülenir.
 
-Bu URL'yi kopyalayın. Canvas'ta bir Developer Key oluşturmak için bir sonraki adımda buna ihtiyacınız olacak.
+Bu URL'yi kopyalayın. Bir sonraki adımda Canvas'ta bir Developer Key oluşturmak için buna ihtiyacınız olacak.
 
-Sayfa ayrıca Canvas'ta ne yapmanız gerektiğine dair numaralandırılmış talimatlar ve elinizde olduğunda girebileceğiniz **Client ID** ve isteğe bağlı **Deployment ID** alanlarını gösterir.
+Sayfa ayrıca Canvas'ta yapılacaklar için numaralandırılmış talimatlar ve bunlara sahip olduğunuzda **Client ID** ile isteğe bağlı **Deployment ID** girmek için alanlar gösterir.

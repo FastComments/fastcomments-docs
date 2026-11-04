@@ -41,5 +41,3 @@
     <div class="title">테마 파일 편집</div>
     <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-1-edit-theme-files.png" alt="테마 파일 편집" />
 </div>
-
----

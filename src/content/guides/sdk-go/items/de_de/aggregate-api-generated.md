@@ -1,4 +1,3 @@
----
 Fasst Dokumente zusammen, indem sie gruppiert werden (falls groupBy angegeben ist) und mehrere Operationen angewendet werden.
 Verschiedene Operationen (z. B. sum, countDistinct, avg usw.) werden unterstützt.
 
@@ -44,5 +43,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.Aggregate`: %v\n", resp)
 }
 [inline-code-end]
-
----

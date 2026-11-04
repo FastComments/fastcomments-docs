@@ -32,5 +32,3 @@ Returnerer: [`SavePollResponse`](https://github.com/FastComments/fastcomments-sd
   console.log(response);
 })();
 [inline-code-end]
-
----

@@ -1,17 +1,14 @@
-When users comment or vote, and they are not logged in, they will be asked to provide their email and username.
+Kullanıcılar yorum yaptığında veya oy verdiğinde, oturum açmamışlarsa e-posta adreslerini ve kullanıcı adlarını girmeleri istenir.
 
-In the case of anonymous commenting, sometimes it is desirable to define a default username to reduce the friction
-when commenting. This can be done from the Customization UI. Anonymous Commenting must be enabled first.
+Anonim yorum durumunda, yorum yaparken sürtünmeyi azaltmak için varsayılan bir kullanıcı adı tanımlamak bazen istenebilir. Bu, Özelleştirme arayüzünden yapılabilir. Öncelikle Anonim Yorum etkinleştirilmelidir.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allow-anonymous-comments']; selector = '.default-username-label'; alt='Anonim yorumlama etkinleştirildiğinde özelleştirme UI\'sinde görünen varsayılan kullanıcı adı alanı'; title='Varsayılan Kullanıcı Adını Ayarlama' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allow-anonymous-comments']; selector = '.default-username-label'; alt='Anonim yorum etkinleştirildiğinde özelleştirme arayüzünde görünen varsayılan kullanıcı adı alanı'; title='Varsayılan Kullanıcı Adını Ayarlama' app-screenshot-end]
 
-#### Sharing The Default Username
+#### Varsayılan Kullanıcı Adının Paylaşılması
 
-The default username is a shared display name, not an identity. A visitor who keeps the default and enters their email
-gets their own account, with the default shown as their public name. Any number of visitors can keep the same default,
-so "Anonymous" is never reported as already taken.
+Varsayılan kullanıcı adı, bir kimlik değil, paylaşılan bir görünen addır. Varsayılanı koruyan ve e-posta adresini giren bir ziyaretçi, varsayılanı herkese açık adı olarak gösterilen kendi hesabını alır. Sınırsız sayıda ziyaretçi aynı varsayılanı koruyabilir, bu nedenle "Anonymous" (Anonim) hiçbir zaman zaten alınmış olarak bildirilmez.
 
-Usernames that a visitor types themselves still have to be unique.
+Ziyaretçinin kendisinin yazdığı kullanıcı adları ise yine benzersiz olmak zorundadır.
 
-If you would rather each visitor get a distinct name without having to think of one, see
-[Generate Usernames Automatically](/guide-customizations-and-configuration.html#auto-generate-username).
+Her ziyaretçinin bir ad düşünmek zorunda kalmadan farklı bir ad almasını tercih ederseniz, bkz.
+[Kullanıcı Adlarını Otomatik Oluşturma](/guide-customizations-and-configuration.html#auto-generate-username).

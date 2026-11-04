@@ -1,4 +1,3 @@
----
 ## Параметры
 
 | Name | Type | Required | Description |
@@ -24,5 +23,3 @@ async function runSearch() {
   const resultWithTenantOnly: ModerationUserSearchResponse = await getSearchUsers(tenantId);
 }
 [inline-code-end]
-
----

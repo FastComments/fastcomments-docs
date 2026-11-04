@@ -23,5 +23,3 @@ async fn fetch_votes(configuration: &configuration::Configuration) -> Result<(),
     Ok(())
 }
 [inline-code-end]
-
----

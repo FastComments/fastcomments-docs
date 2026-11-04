@@ -1,4 +1,3 @@
----
 Vous pouvez rencontrer une erreur d'autorisation, comme la suivante :
 
 <div class="screenshot white-bg">
@@ -11,4 +10,3 @@ C'est parce que FastComments ne sait pas qu'il doit autoriser l'utilisation de v
 Dans ce cas, la solution est simple. Vous devez simplement ajouter votre site à votre compte FastComments.com.
 
 [Allez ici pour ajouter votre site à votre compte.](https://fastcomments.com/auth/my-account/configure-domains)
----

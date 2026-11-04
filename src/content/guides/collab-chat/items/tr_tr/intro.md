@@ -1,4 +1,3 @@
----
 ## Belgeler, Kitaplar vb. İçin Satır İçi Canlı Yorumlar Ekleme
 
 FastComments Collab Chat, kullanıcıların web sitenizdeki herhangi bir metin içeriğini vurgulayıp not eklemelerine olanak tanır ve belirli metin seçimlerine bağlı konu dizileri şeklinde tartışmalar oluşturur. Kullanıcılar kelimeleri, cümleleri veya tüm paragrafları seçerek içeriğiniz içinde doğrudan işbirlikçi konuşmalar başlatabilir.
@@ -10,5 +9,3 @@ thread-per-page, **without using collab chat**. FastComments also does not charg
 want to allow users to select text and comment on the highlighted section of text.
 
 You can see [an example here](https://fastcomments.com/product/collab-chat).
-
----

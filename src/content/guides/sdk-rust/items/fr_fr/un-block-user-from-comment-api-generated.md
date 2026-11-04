@@ -28,5 +28,3 @@ async fn example(config: &configuration::Configuration) -> Result<UnblockSuccess
     Ok(result)
 }
 [inline-code-end]
-
----

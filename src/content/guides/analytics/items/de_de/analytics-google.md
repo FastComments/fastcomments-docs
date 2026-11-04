@@ -35,5 +35,3 @@ Dadurch werden zwei Ereignisse hinzugefügt:
 
 - Bezeichnung: `Comment Posted`, Kategorie: `Engagement`, ID: `post_comment`
 - Bezeichnung: `User Voted on a Comment`, Kategorie: `Engagement`, ID: `vote_comment`
-
----

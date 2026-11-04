@@ -60,5 +60,3 @@
 ### Фронтенд библиотеке
 
 Све FastComments фронтенд библиотеке (react, vue, angular, итд.) имају Collab Chat.
-
----

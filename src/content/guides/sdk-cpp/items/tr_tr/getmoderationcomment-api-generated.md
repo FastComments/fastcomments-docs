@@ -29,5 +29,3 @@ api->getModerationComment(tenantId, commentId, options)
         }
     });
 [inline-code-end]
-
----

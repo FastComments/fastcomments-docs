@@ -29,5 +29,3 @@ async function main(): Promise<void> {
   const resultWithUser: APIEmptyResponse = await updateNotification(tenantId, notificationId, updateBody, userId);
 }
 [inline-code-end]
-
----

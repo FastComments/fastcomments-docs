@@ -1,4 +1,3 @@
----
 req
 tenantId
 urlId
@@ -28,5 +27,3 @@ api->getCommentsPublic(tenantId, urlId, opts).then([](std::shared_ptr<GetComment
     (void)resp;
 });
 [inline-code-end]
-
----

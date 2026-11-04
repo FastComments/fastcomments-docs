@@ -1,33 +1,33 @@
-Il widget Recent Discussions mostra le pagine del tuo sito con l'attività di commento più recente. È utile per evidenziare thread che stanno ancora ricevendo contributi, così i visitatori possono tornare alle conversazioni attive invece di approdare su pagine silenziose.
+Il widget Recent Discussions mostra le pagine del tuo sito con l'attività di commenti più recente. È utile per mettere in evidenza le discussioni che ricevono ancora nuovi commenti, così i visitatori possono tornare nelle conversazioni attive invece di atterrare su pagine silenziose.
 
-## Options
+## Opzioni
 
-- **Title** (optional): The heading shown above the list. Defaults to "Discussioni recenti".
-- **Count** (optional): How many discussions to show. Range 1 to 50. Defaults to 20.
+- **Title** (opzionale): Il titolo mostrato sopra l'elenco. Il valore predefinito è "Recent Discussions".
+- **Count** (opzionale): Quante discussioni mostrare. Intervallo da 1 a 50. Il valore predefinito è 20.
 
-## How to Add It
+## Come Aggiungerlo
 
-### Inside a Post or Page
+### Dentro un Articolo o una Pagina
 
-In the block editor, add a **Shortcode** block and paste:
+Nell'editor a blocchi, aggiungi un blocco **Shortcode** e incolla:
 
-[inline-code-attrs-start title = 'Shortcode Discussioni Recenti'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Shortcode Recent Discussions'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 [fastcomments_recent_discussions count="20"]
 [inline-code-end]
 
-The `count` attribute accepts any value between 1 and 50.
+L'attributo `count` accetta qualsiasi valore tra 1 e 50.
 
-### In a Sidebar or Footer (Classic Themes)
+### In una Sidebar o nel Footer (Temi Classici)
 
-Go to **Appearance > Widgets** in your WordPress admin. From the block inserter, search for "FastComments" and choose **FastComments: Recent Discussions**. Drag it into a sidebar, header, or footer area, then configure the title and count from the widget panel.
+Vai su **Aspetto > Widget** nell'amministrazione di WordPress. Dall'inseritore di blocchi, cerca "FastComments" e scegli **FastComments: Recent Discussions**. Trascinalo in un'area sidebar, header o footer, poi configura il titolo e il conteggio dal pannello del widget.
 
-### In a Block Theme (Full Site Editing)
+### In un Tema a Blocchi (Full Site Editing)
 
-Open the **Site Editor** under **Appearance > Editor**. Navigate to the template part where the widget should appear, insert a **Legacy Widget** block, and select **FastComments: Recent Discussions** from the dropdown.
+Apri l'**Editor del Sito** sotto **Aspetto > Editor**. Naviga fino alla parte del template in cui il widget dovrebbe apparire, inserisci un blocco **Legacy Widget** e seleziona **FastComments: Recent Discussions** dal menu a tendina.
 
-## Troubleshooting
+## Risoluzione dei Problemi
 
-The widget only renders after FastComments setup is complete and a tenant ID is stored. If the widget area is blank, complete setup under **FastComments** in the WordPress admin and reload the page.
+Il widget viene visualizzato solo dopo che la configurazione di FastComments è stata completata e un tenant ID è stato salvato. Se l'area del widget è vuota, completa la configurazione sotto **FastComments** nell'amministrazione di WordPress e ricarica la pagina.
 
-If discussion ordering looks stale, check that the underlying pages have finished syncing in the FastComments dashboard. The widget reads live data, so freshly imported comments may take a moment to surface.
+Se l'ordinamento delle discussioni sembra non aggiornato, verifica che le pagine sottostanti abbiano completato la sincronizzazione nella dashboard di FastComments. Il widget legge dati in tempo reale, quindi i commenti appena importati potrebbero richiedere un momento per apparire.

@@ -8,5 +8,3 @@
 ## Вклад
 
 Вклады приветствуются! Пожалуйста, посетите [GitHub repository](https://github.com/FastComments/fastcomments-dart), чтобы ознакомиться с правилами вклада.
-
----

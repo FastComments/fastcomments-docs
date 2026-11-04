@@ -1,31 +1,31 @@
-#### Navegar para a Configuração LTI
+#### Navegue até a Configuração LTI
 
-Vá para <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">sua Configuração LTI do FastComments</a>.
+Acesse <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">sua Configuração LTI do FastComments</a>.
 
-A página de configuração usa um assistente guiado que o conduz por cada etapa. Você começará em **Step 1: Create**.
+A página de configuração usa um assistente guiado que o conduz por cada etapa. Você começará na **Etapa 1: Criar**.
 
-#### Create a New LTI Configuration
+#### Criar uma Nova Configuração LTI
 
 Preencha os seguintes campos:
 
-- **Configuration Name** - um rótulo opcional para identificar esta configuração (útil se você conectar múltiplas instâncias do Canvas).
-- **Platform URL** - a URL da sua instância do Canvas (por exemplo `https://yourschool.instructure.com`). Este campo é obrigatório.
+- **Nome da Configuração** - um rótulo opcional para identificar esta configuração (útil se você conectar várias instâncias do Canvas).
+- **URL da Plataforma** - a URL da sua instância do Canvas (ex.: `https://yourschool.instructure.com`). Este campo é obrigatório.
 
-#### Choose Placements
+#### Escolher Posicionamentos
 
-Abaixo do Platform URL, você pode escolher onde o FastComments aparece em seus cursos no Canvas. Ambos os placements são habilitados por padrão:
+Abaixo da URL da Plataforma, você pode escolher onde o FastComments aparece em seus cursos do Canvas. Ambos os posicionamentos estão habilitados por padrão:
 
-- **Assignment View** - os comentários aparecem automaticamente abaixo das tarefas.
-- **Rich Content Editor Button** - os instrutores podem incorporar o FastComments em Páginas, Quizzes e Anúncios usando o botão na barra de ferramentas do Rich Content Editor.
+- **Visualização de Atividade** - os comentários aparecem automaticamente abaixo das atividades.
+- **Botão do Editor de Conteúdo Rico** - os instrutores podem incorporar o FastComments em Páginas, Questionários e Anúncios usando o botão da barra de ferramentas no Editor de Conteúdo Rico.
 
-Você pode habilitar um ou ambos. Pelo menos um placement deve estar habilitado.
+Você pode habilitar um ou ambos. Pelo menos um posicionamento deve estar habilitado.
 
-Clique em **Create Configuration**.
+Clique em **Criar Configuração**.
 
-#### Copy the Configuration URL
+#### Copiar a URL de Configuração
 
-Após criar a configuração, o assistente avança para **Step 2: Connect**. Uma **Configuration URL** em destaque é exibida no topo da página com um botão **Copy**.
+Após criar a configuração, o assistente avança para a **Etapa 2: Conectar**. Uma **URL de Configuração** em destaque é exibida no topo da página com um botão **Copiar**.
 
-Copie essa URL. Você irá precisar dela na próxima etapa para criar uma Developer Key no Canvas.
+Copie esta URL. Você precisará dela na próxima etapa para criar uma Chave de Desenvolvedor no Canvas.
 
-A página também mostra instruções numeradas sobre o que fazer no Canvas, além de campos para inserir o **Client ID** e o opcional **Deployment ID** assim que você os tiver.
+A página também mostra instruções numeradas sobre o que fazer no Canvas, além de campos para inserir o **Client ID** e o **Deployment ID** opcional assim que você os tiver.

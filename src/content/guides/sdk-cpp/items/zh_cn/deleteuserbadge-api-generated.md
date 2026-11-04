@@ -23,5 +23,3 @@ api->deleteUserBadge(tenantId.value(), badgeId)
         try{ t.get(); } catch(const std::exception&){ }
     });
 [inline-code-end]
-
----

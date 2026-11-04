@@ -1,4 +1,3 @@
----
 ## パラメータ
 
 | 名前 | 型 | 必須 | 説明 |
@@ -26,5 +25,3 @@ api->setTrustFactor(utility::conversions::to_string_t("my-tenant-123"), opts)
         }
     });
 [inline-code-end]
-
----

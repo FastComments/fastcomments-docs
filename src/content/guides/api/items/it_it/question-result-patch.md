@@ -45,5 +45,3 @@ interface QuestionResultPatchResponse {
     reason?: string
 }
 [inline-code-end]
-
----

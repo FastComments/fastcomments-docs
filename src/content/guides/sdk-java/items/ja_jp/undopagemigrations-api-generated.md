@@ -1,26 +1,23 @@
-Queues a batch job that reverses every migration from one migrate-pages job, newest first. Available for 90 days.  
-1つの migrate‑pages ジョブからのすべてのマイグレーションを逆順（最新のものから）に取り消すバッチジョブをキューに入れます。利用可能期間は 90 日です。  
-Records changed since the migration are left alone, so a later edit is never overwritten.  
-マイグレーション以降に変更されたレコードはそのまま残るため、後からの編集が上書きされることはありません。  
-Poll GET /api/v1/batch-jobs/{batchJobId} for the restored/skipped counts.  
-復元/スキップされた件数を取得するには、GET /api/v1/batch-jobs/{batchJobId} をポーリングしてください。
+1つのmigrate-pagesジョブからのすべての移行を、新しいものから順に元に戻すバッチジョブをキューに入れます。90日間利用可能です。
+移行以降に変更されたレコードはそのまま維持されるため、後からの修正が上書きされることはありません。
+復元済み/スキップ数を確認するには、GET /api/v1/batch-jobs/{batchJobId} をポーリングしてください。
 
-## Parameters
+## パラメータ
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | はい |  |
 | undoId | string | path | はい |  |
 
-## Response
+## レスポンス
 
-返却: [`QueuePageMigrationJobAPIResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/QueuePageMigrationJobAPIResponse.java)
+戻り値: [`QueuePageMigrationJobAPIResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/QueuePageMigrationJobAPIResponse.java)
 
-## Example
+## 例
 
 [inline-code-attrs-start title = 'undoPageMigrations の例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// クラスをインポート:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -33,10 +30,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // API キー認証を設定: api_key
+    // Configure API key authorization: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // 以下の行のコメントを外すと、API キーにプレフィックス（例: "Token"）を設定できます（デフォルトは null）
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -56,5 +53,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

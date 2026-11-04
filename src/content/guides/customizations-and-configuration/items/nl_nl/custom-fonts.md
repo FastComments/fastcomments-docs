@@ -19,5 +19,3 @@ Om het lettertype te overschrijven raden we aan je CSS te definiëren met de `.f
     font-family: 'Roboto', sans-serif;
 }
 [inline-code-end]
-
----

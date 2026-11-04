@@ -1,53 +1,53 @@
-FastCommentsはEU地域のテナントに対してEUデジタルサービス法（DSA）第17条を適用します：**完全自動化されたユーザー停止は許可されていません**。
+FastCommentsは、EUリージョンのテナントに対してEUデジタルサービス法(DSA)第17条を施行しています:**完全自動化されたユーザー停止処理は許可されていません**。
 
-### What that means in practice
+### 実際にどうなるか
 
-When your tenant is in the EU region, on the agent edit form:
+テナントがEUリージョンにある場合、エージェント編集フォームでは:
 
-- The **Approvals** checkbox for `ban_user` is **locked on** and cannot be unticked.
-- The label reads: "EU DSA Article 17: user suspensions require human review. 'Ban a user' is locked on and cannot be fully automated in the EU region."
-- A tooltip on the approval column reads: "Locked on by EU DSA Article 17 - fully-automated bans are not permitted in the EU region."
+- `ban_user` の **Approvals** チェックボックスは**ロックされてオン**になり、チェックを外すことができません。
+- ラベルには次のように表示されます:「EU DSA第17条:ユーザーの停止処理には人間によるレビューが必要です。EUリージョンでは「ユーザーのBAN」をロックオンにして完全自動化することはできません。」
+- 承認列のツールチップには次のように表示されます:「EU DSA第17条によりロックオン - EUリージョンでは完全自動化されたBANは許可されていません。」
 
-Whatever else you configure, every `ban_user` call from any agent on a EU-region tenant goes to the [approvals inbox](#approval-workflow) for human review. The ban does not happen until a human approves it.
+他に何を設定しても、EUリージョンのテナント上の任意のエージェントからのすべての `ban_user` 呼び出しは、人間によるレビューのために[承認受信箱](#approval-workflow)に送られます。人間が承認するまでBANは実行されません。
 
-### Why this is enforced at the platform level, not the prompt level
+### なぜプロンプトレベルではなくプラットフォームレベルで強制されるのか
 
-System prompts can be ignored or worked around by a sufficiently misbehaving model. Article 17 compliance is too important to rely on the model's good behavior; it has to be a hard server-side gate that the tool dispatcher itself enforces. Which is what we do.
+システムプロンプトは、十分に不正な動作をするモデルによって無視されたり回避されたりする可能性があります。第17条のコンプライアンスはモデルの良好な動作に依存するには重要すぎるため、ツールディスパッチャー自体が強制する厳格なサーバーサイドのゲートである必要があります。それが私たちの実装です。
 
-### What does and does not go through approval
+### 承認を経由するものとしないもの
 
-- **`ban_user`**: always gated in the EU. Including:
-  - Visible bans (`shadowBan: false`).
-  - Shadow bans (`shadowBan: true`).
-  - Bans with `deleteAllUsersComments: true`.
-  - Bans with `banIP: true`.
-- All ban variants land in the approvals inbox with the agent's reasoning and confidence; a human approves or rejects.
+- **`ban_user`**: EUでは常にゲートされます。以下を含みます:
+  - 通常のBAN(`shadowBan: false`)。
+  - シャドウBAN(`shadowBan: true`)。
+  - `deleteAllUsersComments: true` を伴うBAN。
+  - `banIP: true` を伴うBAN。
+- すべてのBANのバリエーションは、エージェントの推論と信頼度とともに承認受信箱に届き、人間が承認または拒否します。
 
-The other agent tools (`mark_comment_spam`, `warn_user`, `lock_comment`, etc.) are **not** affected by Article 17. You can still automate them. Article 17 is specifically about user suspensions.
+その他のエージェントツール(`mark_comment_spam`、`warn_user`、`lock_comment` など)は第17条の影響を**受けません**。これらは引き続き自動化できます。第17条は特にユーザーの停止処理に関するものです。
 
-### What about non-EU tenants
+### EU以外のテナントの場合
 
-The lock does not apply outside the EU region. You can choose to gate `ban_user` behind approval anyway - we strongly recommend it for the first weeks of any moderation agent's life - but it is not enforced.
+このロックはEUリージョンの外では適用されません。`ban_user` を承認の背後に置くことを選択することもできます(モデレーションエージェントの運用開始後数週間は強くお勧めします)が、強制ではありません。
 
-### Shadow bans
+### シャドウBAN
 
-Shadow bans count as suspensions for Article 17 purposes (the user can post but their content is hidden). They are gated identically to visible bans.
+シャドウBANは、第17条の目的上、停止処理とみなされます(ユーザーは投稿できますが、そのコンテンツは非表示になります)。通常のBANと同じようにゲートされます。
 
-### Region detection
+### リージョンの検出
 
-Region is determined at the process level by the `REGION` environment variable on the FastComments deployment (read by `isEURegion()` in `models/constants.ts`). There is no per-tenant region field - the lock applies to every tenant on an EU-deployed instance. If you migrate your data from a non-EU deployment to an EU deployment, the lock takes effect for all tenants on that instance.
+リージョンは、FastCommentsデプロイメントの `REGION` 環境変数によってプロセスレベルで決定されます(`models/constants.ts` の `isEURegion()` が読み取ります)。テナントごとのリージョンフィールドは存在せず、ロックはEUにデプロイされたインスタンス上のすべてのテナントに適用されます。EU以外のデプロイメントからEUのデプロイメントにデータを移行した場合、そのインスタンス上のすべてのテナントに対してロックが有効になります。
 
-### What if all reviewers are unavailable
+### レビュアーが全員不在の場合
 
-The approval will sit in the inbox until decided. It auto-expires 90 days after creation. There is no "no reviewer available, fall through to automated decision" path - that would defeat the point of Article 17.
+承認は決定されるまで受信箱に残ります。作成から90日後に自動的に失効します。「レビュアーが利用できないため自動判断にフォールバックする」パスは存在しません。それでは第17条の趣旨が損なわれるためです。
 
-If your community is so high-volume that EU bans cannot be reviewed in a reasonable time, consider:
+コミュニティのボリュームが大きすぎてEUのBANを妥当な時間内にレビューできない場合は、以下を検討してください:
 
-- Adding more reviewers (see [Approval Notifications](#approval-notifications)).
-- Switching the agent to use [`warn_user`](#tool-warn-user) more aggressively, since warnings are not subject to Article 17.
-- Lowering the agent's appetite for banning by tightening the [community guidelines](#community-guidelines) or [initial prompt](#personality-prompt).
+- レビュアーを追加する([承認通知](#approval-notifications)を参照)。
+- 警告は第17条の対象外であるため、エージェントを [`warn_user`](#tool-warn-user) をより積極的に使用するように切り替える。
+- [コミュニティガイドライン](#community-guidelines)や[初期プロンプト](#personality-prompt)を厳格化して、エージェントのBANへの傾斜を下げる。
 
-### See also
+### 関連項目
 
-- [Tool: ban_user](#tool-ban-user) for what `ban_user` does and the destructive options behind extra opt-ins.
-- [Approval Workflow](#approval-workflow) for the full approval lifecycle.
+- `ban_user` の機能と追加オプトインの背後にある破壊的なオプションについては、[ツール: ban_user](#tool-ban-user) を参照してください。
+- 承認の完全なライフサイクルについては、[承認ワークフロー](#approval-workflow) を参照してください。

@@ -1,23 +1,23 @@
-List pages for a tenant. Used by the FChat desktop client to populate its room list.  
-Requires `enableFChat` to be true on the resolved custom config for each page.  
-Pages that require SSO are filtered against the requesting user's group access.
+列出租户的页面。由 FChat 桌面客户端用于填充其房间列表。
+要求每个页面的已解析自定义配置中 `enableFChat` 为 true。
+需要 SSO 的页面会根据请求用户的组访问权限进行过滤。
 
-## Parameters
+## 参数
 
-| Name | Type | Location | Required | Description |
+| 名称 | 类型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| cursor | string | query | No | 不透明分页游标，从先前请求的 `nextCursor` 返回。与相同的 `sortBy` 关联。 |
-| limit | integer | query | No | 1..200，默认 50 |
-| q | string | query | No | 可选的大小写不敏感标题前缀过滤。 |
-| sortBy | string | query | No | 排序方式。`updatedAt`（默认，最新的在前），`commentCount`（评论最多的在前），或 `title`（字母顺序）。 |
-| hasComments | boolean | query | No | 若为 true，则只返回至少有一条评论的页面。 |
+| tenantId | string | path | 是 |  |
+| cursor | string | query | 否 | 上一次请求返回的 `nextCursor` 不透明分页游标。与相同的 `sortBy` 绑定。 |
+| limit | integer | query | 否 | 1..200，默认 50 |
+| q | string | query | 否 | 可选的不区分大小写的标题前缀过滤器。 |
+| sortBy | string | query | 否 | 排序方式。`updatedAt`（默认，最新优先）、`commentCount`（评论最多优先）或 `title`（按字母顺序）。 |
+| hasComments | boolean | query | 否 | 如果为 true，则仅返回至少有一条评论的页面。 |
 
-## Response
+## 响应
 
-Returns: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetPublicPagesResponse.php)
+返回：[`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetPublicPagesResponse.php)
 
-## Example
+## 示例
 
 [inline-code-attrs-start title = 'getPagesPublic 示例'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -27,18 +27,18 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
+    // 如果你想使用自定义 http 客户端，请传入实现了 `GuzzleHttp\ClientInterface` 的客户端。
+    // 这是可选的，默认将使用 `GuzzleHttp\Client`。
     new GuzzleHttp\Client()
 );
 
 $tenant_id = 'tenant_id_example'; // string
 $options = [
-    'cursor' => 'cursor_example', // string | Opaque pagination cursor returned as `nextCursor` from a prior request. Tied to the same `sortBy`.
-    'limit' => 56, // int | 1..200, default 50
-    'q' => 'q_example', // string | Optional case-insensitive title prefix filter.
-    'sort_by' => new \FastComments\Client\Model\\FastComments\Client\Model\PagesSortBy(), // \FastComments\Client\Model\PagesSortBy | Sort order. `updatedAt` (default, newest first), `commentCount` (most comments first), or `title` (alphabetical).
-    'has_comments' => True, // bool | If true, only return pages with at least one comment.
+    'cursor' => 'cursor_example', // string | 上一次请求返回的 `nextCursor` 不透明分页游标。与相同的 `sortBy` 绑定。
+    'limit' => 56, // int | 1..200，默认 50
+    'q' => 'q_example', // string | 可选的不区分大小写的标题前缀过滤器。
+    'sort_by' => new \FastComments\Client\Model\\FastComments\Client\Model\PagesSortBy(), // \FastComments\Client\Model\PagesSortBy | 排序方式。`updatedAt`（默认，最新优先）、`commentCount`（评论最多优先）或 `title`（按字母顺序）。
+    'has_comments' => True, // bool | 如果为 true，则仅返回至少有一条评论的页面。
 ];
 
 

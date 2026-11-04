@@ -28,5 +28,3 @@ api->getEmailTemplateRenderErrors(tenantId, id, skip)
         }
     });
 [inline-code-end]
-
----

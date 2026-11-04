@@ -32,5 +32,3 @@ DefaultAPI.getEmailTemplateRenderErrors(tenantId: tenantId, id: id, skip: skip) 
     }
 }
 [inline-code-end]
-
----

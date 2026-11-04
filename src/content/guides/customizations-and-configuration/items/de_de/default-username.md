@@ -1,20 +1,14 @@
----
-When users comment or vote, and they are not logged in, they will be asked to provide their email and username.
+Wenn Nutzer kommentieren oder abstimmen und nicht angemeldet sind, werden sie gebeten, ihre E-Mail-Adresse und ihren Benutzernamen anzugeben.
 
-In the case of anonymous commenting, sometimes it is desirable to define a default username to reduce the friction
-when commenting. This can be done from the Customization UI. Anonymous Commenting must be enabled first.
+Im Fall von anonymem Kommentieren ist es manchmal wünschenswert, einen Standard-Benutzernamen festzulegen, um die Reibung beim Kommentieren zu reduzieren. Dies kann über die Anpassungs-UI erfolgen. Anonymes Kommentieren muss zuerst aktiviert werden.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allow-anonymous-comments']; selector = '.default-username-label'; alt='Standard‑Benutzernamenfeld, das in der Anpassungs‑UI erscheint, sobald anonyme Kommentare aktiviert sind'; title='Festlegen des Standard‑Benutzernamens' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allow-anonymous-comments']; selector = '.default-username-label'; alt='Standard-Benutzernamen-Feld, das in der Anpassungs-UI erscheint, sobald anonymes Kommentieren aktiviert ist'; title='Festlegen des Standard-Benutzernamens' app-screenshot-end]
 
-#### Sharing The Default Username
+#### Teilen des Standard-Benutzernamens
 
-The default username is a shared display name, not an identity. A visitor who keeps the default and enters their email
-gets their own account, with the default shown as their public name. Any number of visitors can keep the same default,
-so "Anonymous" is never reported as already taken.
+Der Standard-Benutzername ist ein geteilter Anzeigename, keine Identität. Ein Besucher, der den Standard-Benutzernamen beibehält und seine E-Mail-Adresse eingibt, erhält sein eigenes Konto, wobei der Standard-Benutzername als sein öffentlicher Name angezeigt wird. Beliebig viele Besucher können denselben Standard-Benutzernamen beibehalten, daher wird „Anonymous" nie als bereits vergeben gemeldet.
 
-Usernames that a visitor types themselves still have to be unique.
+Benutzernamen, die ein Besucher selbst eingibt, müssen weiterhin eindeutig sein.
 
-If you would rather each visitor get a distinct name without having to think of one, see
-[Generate Usernames Automatically](/guide-customizations-and-configuration.html#auto-generate-username).
-
----
+Wenn Sie lieber möchten, dass jeder Besucher einen eigenen Namen erhält, ohne einen ausdenken zu müssen, siehe
+[Benutzernamen automatisch generieren](/guide-customizations-and-configuration.html#auto-generate-username).

@@ -1,23 +1,20 @@
-Creates a new trial account for an AI agent without a human signup. No API key is needed to call this.
+Crea un nuovo account di prova per un agente AI senza una registrazione umana. Non è necessaria alcuna API key per chiamare questo endpoint.
 
-The response contains the tenant id, an API key that works immediately against the REST API and the
-MCP server, and a claim URL. Give the claim URL to the human you are working for: opening it while
-logged in to FastComments attaches the account to them. Unclaimed accounts, and their keys, are
-deleted 72 hours after creation. Until claimed, the account has the standard trial limits.
+La risposta contiene il tenant id, una API key che funziona immediatamente con la REST API e il server MCP, e un claim URL. Fornisci il claim URL alla persona per cui stai lavorando: aprendolo mentre si è connessi a FastComments, l'account viene associato a lei. Gli account non rivendicati, e le loro chiavi, vengono eliminati 72 ore dopo la creazione. Fino alla rivendicazione, l'account ha i limiti standard della versione di prova.
 
-## Parameters
+## Parametri
 
-| Name | Type | Required | Description |
+| Nome | Tipo | Obbligatorio | Descrizione |
 |------|------|----------|-------------|
-| createAgentTenantBody | CreateAgentTenantBody | Yes |  |
+| createAgentTenantBody | CreateAgentTenantBody | Sì |  |
 
-## Response
+## Risposta
 
-Returns: [`CreateAgentTenantResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateAgentTenantResponse.ts)
+Restituisce: [`CreateAgentTenantResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateAgentTenantResponse.ts)
 
-## Example
+## Esempio
 
-[inline-code-attrs-start title = 'Esempio createAgentTenant'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio di createAgentTenant'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 const tenantBody: CreateAgentTenantBody = {
   name: "Acme Corp",
@@ -28,5 +25,3 @@ const tenantBody: CreateAgentTenantBody = {
 
 const result: CreateAgentTenantResponse = await createAgentTenant(tenantBody);
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 購読解除 (REST フックの購読解除)。この API を通じて作成されたサブスクリプションのみがここで削除でき
 ます; ダッシュボードで管理されている Webhook はダッシュボードで編集されます。
 
@@ -22,5 +21,3 @@ const webhookId: string = "wh_98765";
 
 const result: APIEmptyResponse = await deleteWebhook(tenantId, webhookId);
 [inline-code-end]
-
----

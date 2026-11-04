@@ -8,5 +8,3 @@ For example, the following use case:
 - Moderator A najde nekaj zanimivega na drugi strani rezultatov iskanih komentarjev.
 - Moderator A lahko **deli povezavo** te strani neposredno z Moderatorjem B.
 - Moderator B lahko vidi, kaj je naredil Moderator A.
-
----

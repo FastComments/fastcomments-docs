@@ -1,15 +1,15 @@
-Edit a poll in place, keeping its tallies: change the question, relabel an option, close or reopen it,
-or change who may see the voters. Options are addressed by id - to add, remove or reorder them, PUT the full list.
+Izmenite anketu na licu mesta, zadržavajući njene rezultate: promenite pitanje, preimenujte opciju, zatvorite je ili je ponovo otvorite,
+ili promenite ko može da vidi glasače. Opcijama se adresira preko id - da biste ih dodali, uklonili ili preuredili, pošaljite PUT sa celom listom.
 
-## Parameters
+## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Yes |  |
-| commentId | string | Yes |  |
-| commentPollPatch | CommentPollPatch | Yes |  |
+|------|------|----------|-------------|
+| tenantId | string | Da |  |
+| commentId | string | Da |  |
+| commentPollPatch | CommentPollPatch | Da |  |
 
-## Response
+## Odgovor
 
 Vraća: [`SavePollResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/SavePollResponse.ts)
 

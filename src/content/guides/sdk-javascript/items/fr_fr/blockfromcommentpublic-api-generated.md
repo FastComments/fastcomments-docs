@@ -28,5 +28,3 @@ async function demoBlock() {
   const resultWithoutSso: BlockSuccess = await blockFromCommentPublic(tenantId, commentId, blockParams);
 }
 [inline-code-end]
-
----

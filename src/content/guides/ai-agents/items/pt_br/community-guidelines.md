@@ -45,5 +45,3 @@ O campo é limitado a **4000 caracteres** (aplicado tanto pelo formulário quant
 ### Versionamento
 
 Não há histórico de versão embutido para o documento de diretrizes - o último valor salvo é o que o agente usa. Se você quiser histórico, copie o documento para seu próprio sistema de controle antes de cada edição importante. O fluxo [Refine Prompts](#refining-prompts) pode registrar mudanças no *prompt inicial* mas não versiona o documento de diretrizes.
-
----

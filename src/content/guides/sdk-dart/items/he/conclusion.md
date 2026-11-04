@@ -1,10 +1,10 @@
-## Need Help?
+## צריכים עזרה?
 
-אם אתה נתקל בבעיות או שיש לך שאלות לגבי ה‑Dart SDK, אנא:
+אם נתקלתם בבעיות או יש לכם שאלות לגבי ה-Dart SDK, אנא:
 
-- [Open an issue on GitHub](https://github.com/FastComments/fastcomments-dart/issues)
-- [Contact FastComments Support](https://fastcomments.com/auth/my-account/help)
+- [פתחו issue ב-GitHub](https://github.com/FastComments/fastcomments-dart/issues)
+- [צרו קשר עם תמיכת FastComments](https://fastcomments.com/auth/my-account/help)
 
-## Contributing
+## תרומה לפרויקט
 
-תרומות מוזמנות! אנא בקרו ב-[GitHub repository](https://github.com/FastComments/fastcomments-dart) לקבלת הנחיות תרומה.
+תרומות מתקבלות בברכה! אנא בקרו ב[מאגר ב-GitHub](https://github.com/FastComments/fastcomments-dart) לקבלת הנחיות לתרומה.

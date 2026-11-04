@@ -1,18 +1,18 @@
 [api-resource-header-start name = 'Page'; route = 'POST /api/v1/pages'; creditsCost = 1; api-resource-header-end]
 
-This API endpoint provides the ability to create pages.
+Ten punkt końcowy API umożliwia tworzenie stron.
 
-A common use cases is access control.
+Typowym przypadkiem użycia jest kontrola dostępu.
 
-Notes:
+Uwagi:
 
-- If you've commented on a comment thread, or called the API to create a `Comment`, you've already created a `Page` object! You can try fetching it via
-  the `/by-url-id` `Page` route, passing in the same `urlId` passed to the comment widget.
-- The `Page` structure contains some **calculated** values.
-  Currently, these are `commentCount` and `rootCommentCount`.
-  They are populated automatically and cannot be set by the API. Attempting to do so will cause the API to return an error.
+- Jeśli skomentowałeś wątek komentarzy lub wywołałeś API w celu utworzenia `Comment`, to już utworzyłeś obiekt `Page`! Możesz spróbować pobrać go za pomocą
+  trasy `Page` `/by-url-id`, przekazując ten sam `urlId`, który został przekazany do widżetu komentarzy.
+- Struktura `Page` zawiera niektóre wartości **obliczane**.
+  Obecnie są to `commentCount` i `rootCommentCount`.
+  Są one wypełniane automatycznie i nie można ich ustawić przez API. Próba zrobienia tego spowoduje zwrócenie błędu przez API.
 
-[inline-code-attrs-start title = 'Przykład żądania cURL dla Page POST'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Przykład cURL POST dla Page'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request POST \
   --url 'https://fastcomments.com/api/v1/pages?tenantId=demo&API_KEY=DEMO_API_SECRET' \
@@ -25,7 +25,7 @@ curl --request POST \
 }'
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Struktura żądania Page POST'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Struktura żądania POST Page'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface PagePostQueryParams {
     tenantId: string
@@ -33,18 +33,16 @@ interface PagePostQueryParams {
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Struktura odpowiedzi Page POST'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Struktura odpowiedzi POST Page'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 
 interface PagePostResponse {
     status: 'success' | 'failed'
-    /** Zwracane w przypadku niepowodzenia. **/
+    /** Dołączane w przypadku niepowodzenia. **/
     code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-url-id' | 'empty-request' | 'internal' | 'invalid-input' | 'invalid-title' | 'extra-params' | 'accessible-by-group-ids-not-array' | 'too-many-group-ids' | 'group-id-too-large';  
-    /** Zwracane w przypadku niepowodzenia. **/
+    /** Dołączane w przypadku niepowodzenia. **/
     reason?: string
     /** Utworzona strona. **/
     page?: Page
 }
 [inline-code-end]
-
----

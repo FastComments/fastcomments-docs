@@ -1,4 +1,3 @@
----
 Questo endpoint consente di recuperare i badge degli utenti in base a vari criteri.
 
 Esempio di richiesta:
@@ -80,4 +79,3 @@ Possibili risposte di errore:
   "reason": "The limit (query param: limit) is too large (> 200)."
 }
 [inline-code-end]
----

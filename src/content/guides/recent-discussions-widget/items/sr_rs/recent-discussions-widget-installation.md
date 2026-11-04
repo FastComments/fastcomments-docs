@@ -1,8 +1,8 @@
-The Recent Discussions Widget shows pages on your site that have the most recent comment activity. Each entry displays the page title, last activity date, and total comment count. It automatically detects dark backgrounds and adjusts its styling accordingly.
+Виџет Недавних дискусија приказује странице на вашем сајту које имају најскорију активност коментара. Сваки унос приказује наслов странице, датум последње активности и укупан број коментара. Аутоматски детектује тамне позадине и прилагођава свој стил сходно томе.
 
 ## Основна инсталација
 
-[inline-code-attrs-start title = 'Инсталација видгета Недавне дискусије'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Инсталација виџета Недавних дискусија'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/widget-recent-discussions-v2.min.js"></script>
 <div id="fastcomments-widget-recent-discussions"></div>
@@ -15,11 +15,11 @@ The Recent Discussions Widget shows pages on your site that have the most recent
 
 ## Опције конфигурације
 
-The `FastCommentsRecentDiscussionsV2` function accepts the following configuration options:
+Функција `FastCommentsRecentDiscussionsV2` прихвата следеће опције конфигурације:
 
-- **tenantId** (required): Ваш FastComments tenant ID
-- **count** (optional): Број страница за приказ. Подразумевано је `20`, максимум `100`
-- **hasDarkBackground** (optional): Приморава стил тамног режима. Ако није подешено, аутоматски се детектује из позадине странице
+- **tenantId** (обавезно): Ваш FastComments tenant ID
+- **count** (опционо): Број страница за приказивање. Подразумевано је `20`, максимум `100`
+- **hasDarkBackground** (опционо): Форсира стил тамног режима. Аутоматски се детектује из позадине странице ако није постављено
 
 ## Напредни примери
 
@@ -39,7 +39,7 @@ The `FastCommentsRecentDiscussionsV2` function accepts the following configurati
 
 ### Форсирање тамног режима
 
-[inline-code-attrs-start title = 'Недавне дискусије у тамном режиму'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Недавне дискусије са тамним режимом'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/widget-recent-discussions-v2.min.js"></script>
 <div id="fastcomments-widget-recent-discussions"></div>
@@ -50,5 +50,3 @@ The `FastCommentsRecentDiscussionsV2` function accepts the following configurati
     });
 </script>
 [inline-code-end]
-
----

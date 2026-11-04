@@ -1,4 +1,3 @@
----
 El sistema de feed es un SDK separado (`FastCommentsFeedSDK`) con su propia vista.
 
 ### Carga y visualización del feed

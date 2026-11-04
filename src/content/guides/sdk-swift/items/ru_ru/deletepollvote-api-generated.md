@@ -1,4 +1,3 @@
----
 Отозвать голос. Опция, на которую он был отдан, возвращает свой подсчёт.
 
 ## Параметры
@@ -33,5 +32,3 @@ DefaultAPI.deletePollVote(tenantId: tenantId, id: id) { (response, error) in
     }
 }
 [inline-code-end]
-
----

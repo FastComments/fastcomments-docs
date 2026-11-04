@@ -45,5 +45,3 @@ Hver kørsel registrerer sit rå tokenantal og omkostning pr. kørsel. Daglige o
 - [Choosing a Model](#choosing-a-model) - den største indflydelse på omkostninger.
 - [Context Options](#context-options) - hvor de ekstra omkostninger kommer fra.
 - [Budgets Overview](#budgets-overview) - hårde grænser der forhindrer ukontrollerede omkostninger.
-
----

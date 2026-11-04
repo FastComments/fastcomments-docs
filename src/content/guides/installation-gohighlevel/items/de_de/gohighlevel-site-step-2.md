@@ -1,4 +1,3 @@
----
 Es ist Zeit, unseren Code zu kopieren. Kopieren Sie den folgenden Code:
 
 [inline-code-attrs-start title = 'GoHighLevel Site-Kommentare Code'; type = 'html'; isFunctional = false; inline-code-attrs-end]
@@ -201,5 +200,3 @@ Fügen Sie das in das von uns geöffnete Editorfenster ein:
 Wir können jetzt auf `Yes, Save` unten rechts in diesem Fenster klicken.
 
 Oben auf der Seite klicken Sie nun auf `Save` und dann auf `Preview`.
-
----

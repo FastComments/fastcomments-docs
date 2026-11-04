@@ -33,5 +33,3 @@ try {
     print('Exception when calling DefaultApi->replaceTenantUser: $e\n');
 }
 [inline-code-end]
-
----

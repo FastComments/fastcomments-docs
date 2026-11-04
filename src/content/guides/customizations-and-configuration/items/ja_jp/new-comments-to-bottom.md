@@ -1,15 +1,15 @@
 [related-parameter-start name = 'newCommentsToBottom'; type = 'boolean'; related-parameter-end]
 
-デフォルトでは、新しいライブコメントはリアルタイムで投稿されるとコメント一覧の上部に表示されます。
+デフォルトでは、新しいライブコメントはリアルタイムで投稿されると、コメントリストの上部に表示されます。
 
-このオプションを有効にすると、新しいライブコメントは代わりに一覧の下部に追加されます。これは、ユーザーがコメントスレッドを閲覧している間にコメントがライブで投稿されたときの表示方法に影響します。
+このオプションを有効にすると、新しいライブコメントはリストの下部に追加されるようになります。これは、ユーザーがコメントスレッドを閲覧している間にコメントがライブで投稿された場合の表示方法に影響します。
 
-[code-example-start config = {newCommentsToBottom: true}; linesToHighlight = [6]; title = 'New Live Comments to Bottom'; code-example-end]
+[code-example-start config = {newCommentsToBottom: true}; linesToHighlight = [6]; title = '新しいライブコメントを下部に表示'; code-example-end]
 
-With this setting enabled:
-- 他のユーザーが投稿した新しいライブコメントはコメント一覧の下部に表示されます
-- ユーザーは既存のコメントの下に新しいコメントがリアルタイムで表示されるのを確認できます
-- これはライブコメントの更新にのみ影響し - 初回のページ読み込みには影響しません
-- ユーザーが議論を追っているときに読み進める流れを維持するのに役立ちます
+この設定を有効にした場合:
+- 他のユーザーが投稿した新しいライブコメントは、コメントリストの下部に表示されます
+- ユーザーは、新しいコメントが既存のコメントの下にリアルタイムで表示されるのを見ることができます
+- これはライブコメントの更新にのみ影響し、ページの初回読み込みには影響しません
+- ディスカッションをフォローしているユーザーの読書フローを維持するのに役立ちます
 
-Note that this setting only affects where new live comments are placed as they arrive in real-time. It does not affect the initial sort order when the page loads.
+この設定は、リアルタイムで届く新しいライブコメントの配置場所にのみ影響することに注意してください。ページ読み込み時の初期ソート順には影響しません。

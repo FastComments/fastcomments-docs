@@ -26,5 +26,3 @@ const createQuestionResultBody: CreateQuestionResultBody = {
 
 const result: CreateQuestionResultResponse = await createQuestionResult(tenantId, createQuestionResultBody);
 [inline-code-end]
-
----

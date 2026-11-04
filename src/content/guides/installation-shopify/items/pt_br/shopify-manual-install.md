@@ -1,28 +1,28 @@
-Se você não conseguir instalar o [Shopify App Store app](https://apps.shopify.com/fastcomments), ainda pode adicionar o FastComments editando seu tema. Esse caminho é útil quando você quer conectar um tenant do FastComments que você já possui, ou quando estiver incorporando em uma vitrine Shopify onde o aplicativo não é uma opção.
+Se você não consegue instalar o [app da Shopify App Store](https://apps.shopify.com/fastcomments), ainda é possível adicionar o FastComments editando seu tema. Este caminho é útil quando você deseja conectar um tenant do FastComments que já possui, ou quando está incorporando em uma vitrine Shopify onde o app não é uma opção.
 
-A instalação via aplicativo é o caminho suportado para a maioria das lojas. Use este método apenas se o aplicativo não for adequado.
+A instalação via app é o caminho suportado para a maioria das lojas. Use este método apenas se o app não for adequado.
 
-### Step 1: Disable Shopify's native comments
+### Passo 1: Desativar os comentários nativos da Shopify
 
-In your Shopify admin, go to **Blog posts > Manage blogs**, open each blog, and set **Comments are disabled** in the right-hand panel. Save.
+No admin da Shopify, vá para **Blog posts > Manage blogs**, abra cada blog e defina **Comments are disabled** no painel à direita. Salve.
 
-This stops Shopify's built-in commenting from showing alongside FastComments.
+Isso impede que o sistema de comentários integrado da Shopify apareça junto com o FastComments.
 
-### Step 2: Open the blog theme template
+### Passo 2: Abrir o template de blog do tema
 
-In your Shopify admin:
+No admin da Shopify:
 
-1. Go to **Online Store > Themes**.
-2. Under your current theme, click **Actions > Edit code**.
-3. In the file browser on the left, open **Sections** and click `main-article.liquid`.
+1. Vá para **Online Store > Themes**.
+2. Sob o seu tema atual, clique em **Actions > Edit code**.
+3. No navegador de arquivos à esquerda, abra **Sections** e clique em `main-article.liquid`.
 
-This is the template Shopify renders for a single blog article.
+Este é o template que a Shopify renderiza para um artigo de blog individual.
 
-### Step 3: Paste the FastComments snippet
+### Passo 3: Colar o snippet do FastComments
 
-Scroll to roughly line 100 of `main-article.liquid`, just after the closing `</div>` of the article body. Paste the following snippet:
+Role até aproximadamente a linha 100 de `main-article.liquid`, logo após o `</div>` de fechamento do corpo do artigo. Cole o seguinte snippet:
 
-[inline-code-attrs-start title = 'Trecho do FastComments para Shopify'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Snippet do FastComments para Shopify'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget" class="page-width page-width--narrow"></div>
@@ -35,12 +35,12 @@ Scroll to roughly line 100 of `main-article.liquid`, just after the closing `</d
 </script>
 [inline-code-end]
 
-Replace `"demo"` with your own Tenant ID from [fastcomments.com/auth/my-account/api-secret](https://fastcomments.com/auth/my-account/api-secret). Click **Save**.
+Substitua `"demo"` pelo seu próprio Tenant ID obtido em [fastcomments.com/auth/my-account/api-secret](https://fastcomments.com/auth/my-account/api-secret). Clique em **Save**.
 
-### Step 4: Authorize your shop domain
+### Passo 4: Autorizar o domínio da sua loja
 
-Open a blog post on your live store. If you see an authorization error instead of the comment widget, FastComments needs to know your store is allowed to use this tenant. See [Erros de domínio](/guide-installation-shopify.html#shopify-domain-errors).
+Abra uma postagem do blog na sua loja publicada. Se você vir um erro de autorização em vez do widget de comentários, o FastComments precisa saber que sua loja está autorizada a usar este tenant. Veja [Erros de Domínio](/guide-installation-shopify.html#shopify-domain-errors).
 
-### Adding FastComments to other pages
+### Adicionando o FastComments a outras páginas
 
-The same snippet works on any Liquid template, including product pages, custom pages, and the home page. Paste it where you want comments to appear and adjust `urlId` if you want a stable identifier per page (for example, `urlId: "{{ product.id }}"` on a product template).
+O mesmo snippet funciona em qualquer template Liquid, incluindo páginas de produtos, páginas personalizadas e a página inicial. Cole-o onde quiser que os comentários apareçam e ajuste `urlId` se desejar um identificador estável por página (por exemplo, `urlId: "{{ product.id }}"` em um template de produto).

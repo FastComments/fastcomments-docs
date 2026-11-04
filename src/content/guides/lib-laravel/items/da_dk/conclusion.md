@@ -8,5 +8,3 @@ Hvis du støder på problemer eller har spørgsmål om Laravel-pakken, så:
 ## Bidrag
 
 Bidrag er velkomne! Besøg venligst [GitHub-repositoriet](https://github.com/FastComments/fastcomments-laravel) for retningslinjer for bidrag.
-
----

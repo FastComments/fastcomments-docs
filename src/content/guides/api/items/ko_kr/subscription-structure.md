@@ -23,5 +23,3 @@ interface Subscription {
     createdAt: string // 날짜 문자열
 }
 [inline-code-end]
-
----

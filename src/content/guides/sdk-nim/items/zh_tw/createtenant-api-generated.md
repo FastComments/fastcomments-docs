@@ -19,5 +19,3 @@ if maybeResp.isSome:
   discard resp
 discard httpResp
 [inline-code-end]
-
----

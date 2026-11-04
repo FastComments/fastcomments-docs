@@ -59,5 +59,3 @@ Il link di disiscrizione nel footer dell'email e la funzionalità di disiscrizio
 ### Per DKIM
 
 Dopo aver definito i record DNS DKIM, aggiorna semplicemente il DomainConfig con la tua configurazione DKIM utilizzando la struttura definita.
-
----

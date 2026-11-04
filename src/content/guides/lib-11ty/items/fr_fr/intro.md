@@ -5,5 +5,3 @@ Intégrez des widgets de commentaires en direct, de chat et d'avis sur votre sit
 ## Dépôt
 
 [Voir sur GitHub](https://github.com/FastComments/fastcomments-11ty)
-
----

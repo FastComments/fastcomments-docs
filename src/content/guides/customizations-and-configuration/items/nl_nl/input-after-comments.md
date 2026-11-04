@@ -1,12 +1,10 @@
 [related-parameter-start name = 'inputAfterComments'; type = 'boolean'; related-parameter-end]
 
-By default the comment input area is **before** the comment thread. However, by setting this configuration parameter
-to true we can move it to **after**.
+Standaard staat het commentaar-invoergebied **vóór** de commentaardraad. Door deze configuratieparameter
+op true in te stellen kunnen we het echter **achteraan** plaatsen.
 
-[code-example-start config = {inputAfterComments: true}; linesToHighlight = [6]; title = 'Het verplaatsen van het antwoordvak naar de onderkant'; code-example-end]
+[code-example-start config = {inputAfterComments: true}; linesToHighlight = [6]; title = 'Het antwoordvak naar de onderkant verplaatsen'; code-example-end]
 
-This can be customized without code, on the widget customization page:
+Dit kan zonder code worden aangepast op de widget-aanpassingspagina:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.input-after-comments'; alt='Widget-aanpassingspagina-optie die het invoerveld voor reacties na de reactiedraad plaatst in plaats van ervoor'; title='Het verplaatsen van het antwoordvak naar de onderkant' app-screenshot-end]
-
----
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.input-after-comments'; alt='Optie op de widget-aanpassingspagina die het commentaar-invoergebied achter de commentaardraad plaatst in plaats van ervoor'; title='Het antwoordvak naar de onderkant verplaatsen' app-screenshot-end]

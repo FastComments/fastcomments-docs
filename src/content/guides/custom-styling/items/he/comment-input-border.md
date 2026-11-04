@@ -1,19 +1,19 @@
-The border around the comment box is made of the text area's own border plus a few thin lines the widget draws around it. To change its color or corner roundness, set these CSS variables instead of styling the `textarea` directly. The variables restyle every part of the border at once, so the corners and colors always line up.
+הגבול סביב תיבת התגובות מורכב מהמסגרת של אזור הטקסט עצמו ועוד כמה קווים דקים שהווידג\'ט מצייר סביבו. כדי לשנות את הצבע או עיגול הפינות שלו, הגדירו את משתני ה-CSS הבאים במקום לעצב את ה-`textarea` ישירות. המשתנים מעצבים מחדש את כל חלקי הגבול בבת אחת, כך שהפינות והצבעים תמיד יתאימו.
 
 | משתנה | מה הוא משנה | ברירת מחדל |
 |---|---|---|
-| `--fc-input-border-color` | צבע גבול | `#bfbfbf` |
-| `--fc-input-border-color-focus` | צבע גבול בזמן שהמשתמש מקליד | `#555` |
-| `--fc-input-border-radius` | עיגול של הפינות המעוגלות | `11px` |
-| `--fc-input-border-start-start-radius` | עיגול של הפינה הריבועית למעלה-שמאל (למעלה-ימין בשפות מימין לשמאל) | `0` |
+| `--fc-input-border-color` | צבע הגבול | `#bfbfbf` |
+| `--fc-input-border-color-focus` | צבע הגבול בזמן שהמשתמש מקליד | `#555` |
+| `--fc-input-border-radius` | עיגול הפינות המעוגלות | `11px` |
+| `--fc-input-border-start-start-radius` | עיגול הפינה המרובעת השמאלית-עליונה (הימנית-עליונה בשפות מימין לשמאל) | `0` |
 
-Add the CSS to the **Custom CSS** box on the [Widget Customization page](https://fastcomments.com/auth/my-account/customize-widget), or pass it with the `customCSS` option. You only need to set the variables you want to change.
+הוסיפו את ה-CSS לתיבת **Custom CSS** ב[דף התאמה אישית של הווידג\'ט](https://fastcomments.com/auth/my-account/customize-widget), או העבירו אותו עם האפשרות `customCSS`. צריך להגדיר רק את המשתנים שרוצים לשנות.
 
-You can also use the **Comment box border** helper right under the Custom CSS box, which writes this CSS for you.
+אפשר גם להשתמש בכלי העזר **Comment box border** ממש מתחת לתיבת ה-Custom CSS, שכותב את ה-CSS הזה עבורכם.
 
 ## שינוי צבע הגבול
 
-[inline-code-attrs-start title = 'צבע גבול'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'צבע הגבול'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 :root {
     --fc-input-border-color: #d1d5db;
@@ -22,18 +22,18 @@ You can also use the **Comment box border** helper right under the Custom CSS bo
 
 ## שינוי צבע הגבול בזמן הקלדה
 
-[inline-code-attrs-start title = 'צבע גבול בזמן הקלדה'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'צבע הגבול בזמן הקלדה'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 :root {
     --fc-input-border-color-focus: #2563eb;
 }
 [inline-code-end]
 
-## עיגול כל ארבעת הפינות
+## עיגול כל ארבע הפינות
 
-By default the top-left corner is square. Set both radius variables to round all four corners the same:
+כברירת מחדל הפינה השמאלית-עליונה מרובעת. הגדירו את שני משתני הרדיוס כדי לעגל את כל ארבע הפינות באופן זהה:
 
-[inline-code-attrs-start title = 'עיגול כל ארבעת הפינות'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'עיגול כל ארבע הפינות'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 :root {
     --fc-input-border-radius: 12px;
@@ -41,18 +41,18 @@ By default the top-left corner is square. Set both radius variables to round all
 }
 [inline-code-end]
 
-## פינות ריבועיות
+## פינות מרובעות
 
-[inline-code-attrs-start title = 'פינות ריבועיות'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'פינות מרובעות'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 :root {
     --fc-input-border-radius: 0;
 }
 [inline-code-end]
 
-## התאמה למותג שלך
+## התאמה למותג שלכם
 
-[inline-code-attrs-start title = 'צבעי מותג ופינות'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'צבעים ופינות של המותג'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 :root {
     --fc-input-border-color: #c7d2fe;
@@ -62,11 +62,11 @@ By default the top-left corner is square. Set both radius variables to round all
 }
 [inline-code-end]
 
-## צבעים שונים במצב חשוך
+## צבעים שונים במצב כהה
 
-When the widget is in dark mode it has the `dark` class, so you can set different values for dark mode:
+כשהווידג\'ט נמצא במצב כהה יש לו את המחלקה `dark`, ולכן אפשר להגדיר ערכים שונים למצב הכהה:
 
-[inline-code-attrs-start title = 'צבעי גבול במצב חשוך'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'צבעי גבול במצב כהה'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 :root {
     --fc-input-border-color: #d1d5db;
@@ -79,4 +79,4 @@ When the widget is in dark mode it has the `dark` class, so you can set differen
 
 ## למה לא לעצב את אזור הטקסט ישירות?
 
-The widget draws part of the comment box border itself, around the text area. If you set `border-color` or `border-radius` only on the `textarea`, those lines keep the default style and the border looks mismatched, for example a square line running through a rounded corner. The variables above change both at once.
+הווידג\'ט מצייר בעצמו חלק מהגבול של תיבת התגובות, סביב אזור הטקסט. אם תגדירו `border-color` או `border-radius` רק על ה-`textarea`, הקווים האלה יישארו בסגנון ברירת המחדל והגבול ייראה לא אחיד, למשל קו מרובע שחוצה פינה מעוגלת. המשתנים לעיל משנים את שניהם בבת אחת.

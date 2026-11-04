@@ -18,5 +18,3 @@ if response.isSome:
   let data = response.get()
   echo data
 [inline-code-end]
-
----

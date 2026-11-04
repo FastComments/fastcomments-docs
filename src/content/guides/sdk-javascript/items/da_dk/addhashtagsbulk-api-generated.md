@@ -26,5 +26,3 @@ const resultWithBody: BulkCreateHashTagsResponse = await addHashTagsBulk(tenantI
 
 const resultWithoutBody: BulkCreateHashTagsResponse = await addHashTagsBulk(tenantId);
 [inline-code-end]
-
----

@@ -13,5 +13,3 @@ Cela fonctionne avec tous les filtres — si vous ne consultez que les commentai
 commentaires contenant une phrase spécifique, seules les correspondances déclenchent la notification.
 
 Si votre connexion est temporairement interrompue, le système rattrape automatiquement tous les commentaires que vous avez manqués lorsqu'elle se reconnecte.
-
----

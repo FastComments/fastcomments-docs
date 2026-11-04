@@ -178,5 +178,3 @@ Collab Chat lahko inicializirate na več ločenih odsekih vaše strani. Vsak ods
     });
 </script>
 [inline-code-end]
-
----

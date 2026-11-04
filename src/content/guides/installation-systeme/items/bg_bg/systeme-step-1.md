@@ -27,5 +27,3 @@
     <div class="title">Редактиране на кода</div>
     <img class="screenshot-image" src="/images/installation-guides/systeme-edit-block-button.png" alt="Редактиране на кода" />
 </div>
-
----

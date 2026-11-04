@@ -1,4 +1,4 @@
-Για να εμφανίσετε τον αριθμό σχολίων δίπλα σε πολλές σελίδες ταυτόχρονα (ένα ευρετήριο ιστολογίου, μια λίστα ενότητας), χρησιμοποιήστε το widget μαζικής καταμέτρησης. Αυτό ανακτά κάθε μέτρηση στη σελίδα με ένα μόνο αίτημα. Υπάρχουν δύο μέρη: ένας δείκτης δίπλα σε κάθε στοιχείο, και μία κλήση init μετά τη λίστα.
+Για να εμφανίσετε έναν μετρητή σχολίων δίπλα σε πολλές σελίδες ταυτόχρονα (ευρετήριο blog, λίστα ενότητας), χρησιμοποιήστε το widget μαζικής μέτρησης. Ανακτά όλες τις μετρήσεις της σελίδας σε ένα μόνο αίτημα. Αποτελείται από δύο μέρη: έναν δείκτη δίπλα σε κάθε στοιχείο και μία κλήση αρχικοποίησης μετά τη λίστα.
 
 Σε ένα πρότυπο λίστας (`layouts/_default/list.html`):
 
@@ -14,9 +14,9 @@
 \{{ partial "fastcomments/bulk-count.html" (dict "page" .) }}
 ```
 
-`count-marker.html` renders `<span class="fast-comments-count" data-fast-comments-url-id="..."></span>`, using the same identifier the comments widget uses for that page (its `urlId`, or its permalink when no `urlId` is set), so the counts line up with the real threads. `bulk-count.html` αποστέλλει το μοναδικό αίτημα που τις συμπληρώνει.
+Το `count-marker.html` αποδίδει `<span class="fast-comments-count" data-fast-comments-url-id="..."></span>`, χρησιμοποιώντας το ίδιο αναγνωριστικό που χρησιμοποιεί το widget σχολίων για τη συγκεκριμένη σελίδα (το `urlId` της, ή το permalink της όταν δεν έχει οριστεί `urlId`), ώστε οι μετρήσεις να αντιστοιχούν στα πραγματικά νήματα συζητήσεων. Το `bulk-count.html` εκπέμπει το μοναδικό αίτημα που τις συμπληρώνει.
 
-If you write the markers yourself (for example in a page's Markdown), use the shortcode to emit the init call instead:
+Αν γράφετε τους δείκτες μόνοι σας (για παράδειγμα στο Markdown μιας σελίδας), χρησιμοποιήστε το shortcode για να εκπέμψετε την κλήση αρχικοποίησης:
 
 ```text
 <span class="fast-comments-count" data-fast-comments-url-id="article-1"></span>

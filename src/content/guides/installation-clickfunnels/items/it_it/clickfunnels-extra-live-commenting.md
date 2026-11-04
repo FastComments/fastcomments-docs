@@ -31,5 +31,3 @@ Se stai cercando lo snippet per i commenti live di ClickFunnels, prova questo:
     })();
 </script>
 [inline-code-end]
-
----

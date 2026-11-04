@@ -9,5 +9,3 @@ Die Moderationsseite unterstützt außerdem [Keyboard Shortcuts](#keyboard-short
 Die Seite ist zudem **live** — wenn neue Kommentare eintreffen, die Ihren aktuellen Filtern entsprechen, erscheint oben ein Banner, das Sie benachrichtigt. Siehe [Live Moderating](#comment-actions-live) für Details.
 
 Lassen Sie uns die hier gezeigten Funktionen genauer betrachten.
-
----

@@ -1,4 +1,3 @@
----
 주어진 댓글을 위젯 로케일로 번역합니다. 일치하는 위젯
 사용자 정의 규칙에서 댓글 번역이 자동 또는 수동으로 설정된 경우에만 사용할 수 있습니다.
 
@@ -39,5 +38,3 @@ PublicAPI.translateComments(tenantId: tenantId, urlId: urlId, commentTranslation
     }
 }
 [inline-code-end]
-
----

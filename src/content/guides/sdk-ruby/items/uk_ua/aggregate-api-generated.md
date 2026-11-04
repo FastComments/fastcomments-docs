@@ -1,4 +1,3 @@
----
 Агрегує документи шляхом їх групування (якщо вказано groupBy) та застосування кількох операцій. Підтримуються різні операції (наприклад, sum, countDistinct, avg тощо).
 
 ## Параметри
@@ -43,5 +42,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->aggregate: #{e}"
 end
 [inline-code-end]
-
----

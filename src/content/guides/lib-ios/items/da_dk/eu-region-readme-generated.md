@@ -1,4 +1,3 @@
----
 For at bruge EU-datacenteret skal du sætte feltet `region` i din konfiguration:
 
 ```swift

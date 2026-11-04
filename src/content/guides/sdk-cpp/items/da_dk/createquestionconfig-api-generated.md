@@ -24,5 +24,3 @@ api->createQuestionConfig(tenantId, configBody).then([](pplx::task<std::shared_p
     }catch(const std::exception&){}
 });
 [inline-code-end]
-
----

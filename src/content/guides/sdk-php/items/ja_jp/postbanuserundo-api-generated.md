@@ -36,5 +36,3 @@ try {
     echo 'Exception when calling ModerationApi->postBanUserUndo: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

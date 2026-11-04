@@ -17,5 +17,3 @@ let (badgeRespOpt, httpResp) = client.createUserBadge(tenantId = "my-tenant-123"
 if badgeRespOpt.isSome:
   let badgeResp = badgeRespOpt.get()
 [inline-code-end]
-
----

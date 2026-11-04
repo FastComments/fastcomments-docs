@@ -1,4 +1,3 @@
----
 ## Potrzebujesz pomocy?
 
 Jeśli napotkasz jakiekolwiek problemy lub masz pytania dotyczące biblioteki Vue 2, prosimy:
@@ -9,5 +8,3 @@ Jeśli napotkasz jakiekolwiek problemy lub masz pytania dotyczące biblioteki Vu
 ## Współtworzenie
 
 Wkłady są mile widziane! Prosimy odwiedzić [repozytorium GitHub](https://github.com/FastComments/fastcomments-vue) w celu zapoznania się z wytycznymi dotyczącymi kontrybucji.
-
----

@@ -1,4 +1,3 @@
----
 Følg de samme trin for `localhost`, som du ville gøre for produktion. Sørg for, at du har produktionsdomæner og API-hemmeligheder konfigureret.
 
 Først, naviger til [Webhooks admin](https://fastcomments.com/auth/my-account/manage-data/webhooks). Dette er tilgængeligt via Manage Data -> Webhooks.
@@ -18,5 +17,3 @@ Før du gemmer, klik på **Send Test Payload** for at kontrollere, at endpointet
 Fra listen kan du redigere, deaktivere, genaktivere eller slette en webhook. Deaktivering bevarer køede hændelser, indtil webhooken genaktiveres; sletning kasserer dem.
 
 Webhooks kan også oprettes via API'en, for eksempel af Zapier. Disse vises i den samme liste med kilden **API**. Se Managing Webhooks via the API.
-
----

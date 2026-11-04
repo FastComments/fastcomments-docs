@@ -15,5 +15,3 @@ Se quiséssemos que a contagem refletisse apenas os comentários de nível super
 [code-example-start config = {countAll: false}; linesToHighlight = [6]; title = 'Counting Top Level Comments'; code-example-end]
 
 Atualmente, isso não pode ser personalizado sem alterações no código.
-
----

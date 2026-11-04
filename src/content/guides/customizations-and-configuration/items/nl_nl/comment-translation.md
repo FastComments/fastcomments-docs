@@ -1,20 +1,20 @@
-By default, FastComments translates the widget's own interface (buttons, labels, error messages) into the viewer's language, but comments are shown exactly as they were written.
+Standaard vertaalt FastComments de eigen interface van de widget (knoppen, labels, foutmeldingen) naar de taal van de kijker, maar reacties worden precies getoond zoals ze zijn geschreven.
 
-Comment Translation adds translation of the comments themselves, so a community that writes in more than one language can read every comment in its own.
+Comment Translation voegt vertaling van de reacties zelf toe, zodat een community die in meer dan één taal schrijft elke reactie in de eigen taal kan lezen.
 
-There are two modes:
+Er zijn twee modi:
 
-- **Automatic**: comments written in a language other than the widget's language are shown translated. A "Translated from Spanish" line appears under the comment with a **Show original** link that switches between the translation and the untranslated text.
-- **Manual**: every comment gets a **Translate** link. Clicking it translates that one comment into the viewer's language, with the same **Show original** toggle afterwards. Comments that are already in the viewer's language say so instead.
+- **Automatisch**: reacties die in een andere taal dan de taal van de widget zijn geschreven, worden vertaald getoond. Onder de reactie verschijnt een regel "Vertaald uit het Spaans" met een **Show original**-link die wisselt tussen de vertaling en de onvertaalde tekst.
+- **Handmatig**: elke reactie krijgt een **Translate**-link. Door erop te klikken wordt die ene reactie vertaald naar de taal van de kijker, met daarna dezelfde **Show original**-schakelaar. Reacties die al in de taal van de kijker zijn, zeggen dat in plaats daarvan.
 
-The target language is the widget's language: the [Locale / Language](#locale) setting on the same customization rule if it is set, otherwise the visitor's browser language. Nothing is required from the visitor, no account, extension or extra software, and it works the same in the embedded widget and on standalone comment pages.
+De doeltaal is de taal van de widget: de instelling [Locale / Language](#locale) op dezelfde aanpassingsregel als die is ingesteld, anders de browsertaal van de bezoeker. Er wordt niets van de bezoeker vereist, geen account, extensie of extra software, en het werkt hetzelfde in de ingesloten widget en op standalone reactiepagina's.
 
-This is turned on per <a href="https://fastcomments.com/auth/my-account/customize-widget" target="_blank">customization rule</a>, so it can apply to your whole site, one domain, or a single page. It is off by default.
+Dit wordt per <a href="https://fastcomments.com/auth/my-account/customize-widget" target="_blank">aanpassingsregel</a> ingeschakeld, dus het kan van toepassing zijn op je hele site, één domein of één pagina. Het staat standaard uit.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.comment-translation']; selector = '.comment-translation'; alt='Commentaarvertaling dropdown op de widget-aanpassingspagina met Uit, Automatisch en Handmatig opties'; title='Commentaarvertaling' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.comment-translation']; selector = '.comment-translation'; alt='Comment Translation dropdown op de widget-aanpassingspagina met de opties Off, Automatic en Manual'; title='Comment Translation' app-screenshot-end]
 
-Translation is a server-side setting. Passing `commentTranslation` in the widget's JavaScript configuration does not enable it; the rule does.
+Vertaling is een server-side instelling. Het doorgeven van `commentTranslation` in de JavaScript-configuratie van de widget schakelt het niet in; de regel doet dat.
 
-Each comment is translated at most once per target language and the result is stored with the comment, so a comment read by a thousand Spanish speakers is translated once. If the author or a moderator edits the comment, the stored translation is discarded and the comment is translated again on the next view. Translated text goes through the same sanitization and link rules as the original comment. Comments that are too long, or whose language cannot be detected, are shown untranslated.
+Elke reactie wordt maximaal één keer per doeltaal vertaald en het resultaat wordt bij de reactie opgeslagen, zodat een reactie die door duizend Spaanstaligen wordt gelezen maar één keer wordt vertaald. Als de auteur of een moderator de reactie bewerkt, wordt de opgeslagen vertaling verwijderd en wordt de reactie bij de volgende weergave opnieuw vertaald. Vertaalde tekst gaat door dezelfde sanitization- en linkregels als de originele reactie. Reacties die te lang zijn, of waarvan de taal niet kan worden gedetecteerd, worden onvertaald getoond.
 
-Usage is billed as LLM tokens at the same rate as [AI Agents](/guide-ai-agents.html#plans-and-eligibility) and appears in the same place in your billing details.
+Gebruik wordt gefactureerd als LLM-tokens tegen hetzelfde tarief als [AI Agents](/guide-ai-agents.html#plans-and-eligibility) en verschijnt op dezelfde plek in je factureringsgegevens.

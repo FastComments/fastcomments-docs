@@ -1,52 +1,51 @@
-There are two ways to ban users from commenting on your site with FastComments.
+有兩種方式可以使用 FastComments 禁止使用者對您的網站發表評論。
 
-The first is if you already know their email, you can enter it on the <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">被封鎖使用者</a> page.
+第一種是如果您已經知道他們的電子郵件，您可以在 <a href="https://fastcomments.com/auth/my-account/moderate-comments/banned-users" target="_blank">被禁用使用者</a> 頁面上輸入它。
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .account-block'; alt='在「Moderate Comments」下的被封鎖使用者清單，顯示被封鎖的電子郵件地址，並有新增封鎖的按鈕'; title='被封鎖使用者頁面' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .account-block'; alt='Moderate Comments 下的被禁用使用者清單，包含被禁用的電子郵件地址以及新增禁用的按鈕'; title='被禁用使用者頁面' app-screenshot-end]
 
-This page can be accessed via Moderate Comments -> Banned Users
+此頁面可透過 Moderate Comments -> Banned Users 存取
 
-When we go to ban a user, we can pick a type, either Permanent or Permanent Shadow Ban:
+當我們要禁用使用者時，我們可以選擇類型，即永久或永久影子禁用：
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users/new'; selector = '.content .account-block'; alt='新封鎖表單，包含電子郵件欄位以及永久或永久陰影封鎖的封鎖類型選擇'; title='封鎖使用者' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users/new'; selector = '.content .account-block'; alt='新增禁用表單，包含電子郵件欄位以及永久或永久影子禁用的禁用類型選擇'; title='禁用使用者' app-screenshot-end]
 
-The second way to ban a user is by clicking the ban button that is placed on each comment on the Comment Moderation page.
+第二種禁用使用者的方法是點擊評論審核頁面上每條評論旁的禁用按鈕。
 
-When we click the ban button, you'll be presented with some options, where we can specify the ban type and duration.
+當我們點擊禁用按鈕時，您將看到一些選項，我們可以在其中指定禁用類型和持續時間。
 
-### Email Aliases
+### 電子郵件別名
 
-When banning a user by email, FastComments automatically ignores `+` aliases. For example, banning `user+alias@gmail.com` will
-also ban `user@gmail.com` and any other `+` variation of that address, such as `user+other@gmail.com`.
+透過電子郵件禁用使用者時，FastComments 會自動忽略 `+` 別名。例如，禁用 `user+alias@gmail.com` 也會禁用 `user@gmail.com` 以及該地址的任何其他 `+` 變體，例如 `user+other@gmail.com`。
 
-### Shadow Bans
+### 影子禁用
 
-A shadow-ban is a type of ban that makes it appear that the user's comment or vote was saved successfully, when in fact it was not. This may be desirable in certain situations.
+影子禁用是一種禁用類型，它會讓使用者看起來其評論或投票已成功保存，但實際上並未保存。在某些情況下這可能是理想的選擇。
 
-### Banning Via IP Address
+### 透過 IP 位址禁用
 
-Unless a tenant wishes to opt out, FastComments supports banning via IP by storing a hashed version of the commenter's IP address.
+除非租戶希望退出，FastComments 支援透過儲存評論者 IP 位址的雜湊版本來進行 IP 禁用。
 
-### Searching Banned Users
+### 搜尋被禁用使用者
 
-Once your list grows past a page or two, you can narrow it with the search row above the table.
+當您的清單增長超過一兩頁時，您可以使用表格上方的搜尋列來縮小範圍。
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .filter-form'; alt='被封鎖使用者頁面的搜尋列，包含「搜尋依據」下拉選單、「匹配」下拉選單，以及「值」輸入框'; title='搜尋被封鎖使用者' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/banned-users'; selector = '.content .filter-form'; alt='被禁用使用者頁面上的搜尋列，包含 Search By 下拉選單、Match 下拉選單和 Value 輸入框'; title='搜尋被禁用使用者' app-screenshot-end]
 
-There are three controls:
+有三個控制項：
 
-- **Search By** picks which field to look in: Any Field, Email, Name, Banned By, or Banned For Saying. The last four correspond to the columns of the same name in the table.
-- **Match** picks how to compare. **Contains** finds your value anywhere in the field, and **Equals** matches the whole field.
-- **Value** is the text to look for.
+- **Search By** 選擇要在哪個欄位中搜尋：Any Field、Email、Name、Banned By 或 Banned For Saying。後四個對應於表格中同名的欄位。
+- **Match** 選擇比較方式。**Contains** 會在欄位中的任何位置尋找您的值，而 **Equals** 則匹配整個欄位。
+- **Value** 是要搜尋的文字。
 
-Every field is matched without regard to case, so searching for `SPAMMER@EXAMPLE.COM` finds a ban stored as `spammer@example.com`.
+每個欄位的匹配都不區分大小寫，因此搜尋 `SPAMMER@EXAMPLE.COM` 會找到儲存為 `spammer@example.com` 的禁用。
 
-A few things worth knowing:
+一些值得了解的事項：
 
-- **Banned For Saying** searches the text of the comment that got the user banned. This is how you find everyone banned over a particular phrase.
-- **Banned By** searches the name of the moderator who issued the ban, which is useful for reviewing another moderator's decisions.
-- Wildcard bans are stored with their `*`, so a **Contains** search for `bademail.com` finds a `*@bademail.com` ban.
-- **Name** matches the name shown in the Name column, so it finds a user even if they have changed their name since being banned, and even if you created the ban by entering an email address and no name was recorded at the time. The name recorded on the ban still matches too, so searching for either the old or the current name works.
-- **Any Field** searches the email, name, banned-by moderator, and banned comment text together.
+- **Banned For Saying** 會搜尋導致使用者被禁用的評論文字。這是您找出所有因特定短語而被禁用者的方法。
+- **Banned By** 會搜尋發出禁用的審核員姓名，這對於審查其他審核員的決定很有用。
+- 萬用字元禁用會與其 `*` 一起儲存，因此對 `bademail.com` 進行 **Contains** 搜尋會找到 `*@bademail.com` 的禁用。
+- **Name** 匹配 Name 欄位中顯示的姓名，因此即使使用者在被禁用後更改了姓名，即使您在建立禁用時只輸入了電子郵件地址而當時沒有記錄姓名，也能找到該使用者。禁用中記錄的姓名仍然會匹配，因此搜尋舊姓名或目前姓名都可以。
+- **Any Field** 會同時搜尋電子郵件、姓名、禁用審核員以及被禁用的評論文字。
 
-Your search is part of the page URL, so you can share a filtered list with other moderators the same way you share other moderation links. Paging through results keeps the search applied, starting a new search returns you to the first page, and **Clear** returns to the full list.
+您的搜尋是頁面 URL 的一部分，因此您可以像分享其他審核連結一樣，與其他審核員分享篩選後的清單。翻頁瀏覽結果時搜尋條件會保持套用，開始新的搜尋會將您帶回第一頁，而 **Clear** 則會返回完整清單。

@@ -1,4 +1,3 @@
----
 | Component | Beschrijving |
 | --- | --- |
 | `FastComments` | Reactie-widget met antwoorden, stemmen en meer |
@@ -16,4 +15,3 @@ Alle componenten worden geëxporteerd vanuit de root van het pakket:
 import { FastComments, FastCommentsLiveChat } from 'fastcomments-astro';
 ---
 ```
----

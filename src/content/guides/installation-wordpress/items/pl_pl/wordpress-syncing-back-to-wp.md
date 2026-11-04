@@ -1,17 +1,15 @@
----
-Domyślnie FastComments synchronizuje dane z powrotem z Twoją stroną WordPress codziennie. Służy to wyłącznie celom tworzenia kopii zapasowej, abyś nadal miał kopię danych, oraz dla wtyczek, które mogą od tego zależeć.
+Domyślnie FastComments synchronizuje dane z powrotem do Twojej witryny WordPress codziennie. Służy to wyłącznie celom tworzenia kopii zapasowych, dzięki czemu nadal posiadasz kopię danych, a także dla wtyczek, które mogą od tego zależeć.
 
-To nie dzieje się natychmiast przy każdym zapisanym komentarzu ze względu na to, że niektóre strony potrafią obsługiwać duży ruch odczytu, a ich wdrożenia baz danych nie zawsze radzą sobie z dużym ruchem zapisu (stąd oddelegowanie tej pracy do FastComments).
+Nie dzieje się to natychmiast przy każdym zapisanym komentarzu, ponieważ ze względu na naturę niektórych witryn, które są w stanie obsłużyć duży ruch odczytu, ich wdrożenia baz danych nie zawsze są w stanie obsłużyć duży ruch zapisu (stąd przeniesienie tej pracy do FastComments).
 
-Harmonogram synchronizacji z powrotem do WordPress można dostosować, instalując wtyczkę. Zalecamy [WP Crontrol](https://wordpress.org/plugins/wp-crontrol/#description).
+Harmonogram synchronizacji z powrotem do WordPressa można dostosować, instalując wtyczkę. Polecamy [WP Crontrol](https://wordpress.org/plugins/wp-crontrol/#description).
 
-Steps:
+Kroki:
 
-1. Install WP Crontrol
-2. Go to `Settings -> Cron Schedules`.
-3. Go to the `Cron Events` tab.
-4. Search for `fastcomments_cron_hook`.
-5. Edit the event. You can configure the hook to run hourly, twice a day, daily (default), or once a week.
+1. Zainstaluj WP Crontrol
+2. Przejdź do `Settings -> Cron Schedules`.
+3. Przejdź do zakładki `Cron Events`.
+4. Wyszukaj `fastcomments_cron_hook`.
+5. Edytuj zdarzenie. Możesz skonfigurować hook tak, aby uruchamiał się co godzinę, dwa razy dziennie, codziennie (domyślnie) lub raz w tygodniu.
 
-Synchronizację z powrotem do WordPress można również wykonać ręcznie w dowolnym momencie, przechodząc do panelu wtyczki FastComments i wybierając `Manually Sync`. Będziesz miał opcję zsynchronizowania danych z powrotem do swojej instalacji WP lub ponownego przesłania komentarzy WP na serwery FastComments.
----
+Synchronizację z powrotem do WordPressa można również wykonać w dowolnym momencie ręcznie, przechodząc do panelu wtyczki FastComments i wybierając `Manually Sync`. Będziesz mieć opcję synchronizacji z powrotem do swojej instalacji WP lub ponownego przesłania komentarzy WP na serwery FastComments.

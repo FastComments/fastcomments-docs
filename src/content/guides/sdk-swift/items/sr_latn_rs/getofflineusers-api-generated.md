@@ -1,31 +1,32 @@
-Past commenters on the page who are NOT currently online. Sorted by displayName.  
-Use this after exhausting /users/online to render a "Members" section.  
-Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName} index from afterName forward via $gt, no $skip cost.
+Prošli komentatori na stranici koji trenutno NISU na mreži. Sortirano po displayName.
+Koristite ovo nakon što iscrpite /users/online za prikaz sekcije "Members".
+Kursorska paginacija po commenterName: server prolazi kroz parcijalni {tenantId, urlId, commenterName}
+indeks od afterName naprijed putem $gt, bez troška $skip.
 
-## Parameters
+## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Da |  |
-| urlId | string | query | Da | Identifikator URL-a stranice (čišćen na serveru). |
-| afterName | string | query | Ne | Kursor: prosledite nextAfterName iz prethodnog odgovora. |
-| afterUserId | string | query | Ne | Kursor razbijanje vezanosti: prosledite nextAfterUserId iz prethodnog odgovora. Potrebno kada je afterName postavljen kako bi se izbeglo izostavljanje unosa pri podudaranju imena. |
+| urlId | string | query | Da | Identifikator URL-a stranice (očišćen na serveru). |
+| afterName | string | query | Ne | Kursor: proslijedite nextAfterName iz prethodnog odgovora. |
+| afterUserId | string | query | Ne | Kursorski tiebreaker: proslijedite nextAfterUserId iz prethodnog odgovora. Obavezno kada je afterName postavljen kako se unosi sa istim imenom ne bi izgubili. |
 
-## Response
+## Odgovor
 
 Vraća: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/PageUsersOfflineResponse.swift)
 
-## Example
+## Primjer
 
-[inline-code-attrs-start title = 'Primer getOfflineUsers'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getOfflineUsers Primjer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Sledeći kod primeri su još u beta fazi. Za sve probleme, molimo vas da ih prijavite putem http://github.com/OpenAPITools/openapi-generator/issues/new
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let urlId = "urlId_example" // String | Identifikator URL-a stranice (čišćen na serveru).
-let afterName = "afterName_example" // String | Kursor: prosledite nextAfterName iz prethodnog odgovora. (opciono)
-let afterUserId = "afterUserId_example" // String | Kursor razbijanje vezanosti: prosledite nextAfterUserId iz prethodnog odgovora. Potrebno kada je afterName postavljen kako bi se izbeglo izostavljanje unosa pri podudaranju imena. (opciono)
+let urlId = "urlId_example" // String | Identifikator URL-a stranice (očišćen na serveru).
+let afterName = "afterName_example" // String | Kursor: proslijedite nextAfterName iz prethodnog odgovora. (optional)
+let afterUserId = "afterUserId_example" // String | Kursorski tiebreaker: proslijedite nextAfterUserId iz prethodnog odgovora. Obavezno kada je afterName postavljen kako se unosi sa istim imenom ne bi izgubili. (optional)
 
 PublicAPI.getOfflineUsers(tenantId: tenantId, urlId: urlId, options: PublicAPI.GetOfflineUsersOptions(afterName: afterName, afterUserId: afterUserId)) { (response, error) in
     guard error == nil else {

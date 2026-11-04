@@ -1,12 +1,6 @@
-A `FeedPost` object represents a post in a FastComments feed. A feed is a stream of posts with their own comment
-threads, rendered by the Feed widget. Every post has an author, optional rich content, media, and links, and can be
-tagged so that a feed can be filtered.
+Об'єкт `FeedPost` представляє допис у стрічці FastComments. Стрічка — це потік дописів з власними гілками коментарів, який відображається віджетом Feed. Кожен допис має автора, необов'язковий розширений вміст, медіа та посилання, і може бути позначений тегами, щоб стрічку можна було фільтрувати.
 
-Об’єкт `FeedPost` представляє пост у стрічці FastComments. Стрічка — це потік постів зі своїми власними гілками коментарів, які відображаються за допомогою віджету Feed. Кожен пост має автора, необов’язковий багатий вміст, медіа та посилання, і може бути позначений тегами, щоб стрічку можна було фільтрувати.
-
-The structure for the `FeedPost` object is as follows:
-
-Структура об’єкта `FeedPost` виглядає наступним чином:
+Структура об'єкта `FeedPost` виглядає так:
 
 [inline-code-attrs-start title = 'Структура FeedPost'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -16,19 +10,19 @@ interface FeedPost {
     /** READONLY **/
     tenantId: string
     title?: string
-    /** Ідентифікатор користувача FastComments або SSO, який створив пост. **/
+    /** The id of the FastComments or SSO user that authored the post. **/
     fromUserId?: string
-    /** Заповнюється з даних користувача, якщо не встановлено. **/
+    /** Filled from the user when not set. **/
     fromUserDisplayName?: string | null
-    /** READONLY. Заповнюється з даних користувача. **/
+    /** READONLY. Filled from the user. **/
     fromUserAvatar?: string | null
-    /** Використовується для фільтрації стрічки. **/
+    /** Used to filter a feed. **/
     tags?: string[]
-    /** Вага сортування в межах стрічки. Вищі значення сортуються першими. **/
+    /** Sort weight within a feed. Higher values sort first. **/
     weight?: number
-    /** Пари ключ/значення довільного формату для вашого використання. **/
+    /** Free-form key/value pairs for your own use. **/
     meta?: Record<string, string>
-    /** Очищений HTML. **/
+    /** Sanitized HTML. **/
     contentHTML?: string
     media?: FeedPostMediaItem[]
     links?: FeedPostLink[]
@@ -42,9 +36,9 @@ interface FeedPost {
 
 interface FeedPostMediaItem {
     title?: string
-    /** Куди посилається медіа‑елемент при кліку. **/
+    /** Where the media item links to when clicked. **/
     linkUrl?: string
-    /** Один запис на кожну варіацію. Віджет вибирає найкращий варіант. **/
+    /** One entry per rendition. The widget picks the best fit. **/
     sizes: FeedPostMediaItemAsset[]
 }
 
@@ -55,19 +49,17 @@ interface FeedPostMediaItemAsset {
 }
 
 interface FeedPostLink {
-    /** Текст посилання, наприклад "Sign up now". **/
+    /** The link text, like "Sign up now". **/
     text?: string
-    /** Заголовок, що відображається разом з посиланням. **/
+    /** A heading shown with the link. **/
     title?: string
-    /** Опис, що відображається разом з посиланням. **/
+    /** A description shown with the link. **/
     description?: string
     url?: string
 }
 [inline-code-end]
 
-Notes:
-
 Примітки:
 
-- Деякі з цих полів позначені `READONLY` — вони повертаються API, але не можуть бути встановлені.
-- Коментарі до поста є звичайними коментарями, у яких `urlId` має вигляд `post:` + `_id` поста. Використовуйте це значення з Comment API, щоб читати або створювати коментарі до поста.
+- Деякі з цих полів позначені як `READONLY` — вони повертаються API, але їх не можна встановлювати.
+- Коментарі до допису — це звичайні коментарі, чиї `urlId` мають вигляд `post:` з наступним `_id` допису. Використовуйте це значення з Comment API, щоб читати або створювати коментарі до допису.

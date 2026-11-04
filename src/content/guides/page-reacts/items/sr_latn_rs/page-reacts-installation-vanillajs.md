@@ -1,4 +1,3 @@
----
 Za Reakcije na stranici moramo da odlučimo o dve stvari:
 
 - Koje slike reakcija koristiti.
@@ -32,5 +31,3 @@ Opcionalno:
 [inline-code-end]
 
 Konfiguracija za React, Angular i ostale front-end biblioteke je ista.
-
----

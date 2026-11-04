@@ -82,5 +82,3 @@ Copia el siguiente código y pégalo en la sección `Body` de los ajustes de tu 
 - Cada página obtiene su propio hilo de comentarios único basado en la ruta de la URL
 - Asegúrate de reemplazar `"demo"` con tu ID de tenant real de tu cuenta de FastComments
 - El widget gestiona automáticamente la carga dinámica de páginas de Super.so
-
----

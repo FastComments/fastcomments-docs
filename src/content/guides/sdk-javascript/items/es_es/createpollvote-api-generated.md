@@ -1,22 +1,23 @@
-Record a vote on a poll, or move an existing one to a different option. A voter has at most one vote per
-poll, so calling this again for the same voter moves their vote rather than adding one.
+Registra un voto en una encuesta, o mueve uno existente a una opción diferente. Un votante tiene como máximo un voto por
+encuesta, por lo que llamar a esto de nuevo para el mismo votante mueve su voto en lugar de añadir uno.
 
-Esto respeta la configuración de encuestas del sitio: si la votación está configurada solo para usuarios registrados, un voto con solo un anonUserId es rechazado, y los votos anónimos están limitados por tasa por IP por encuesta.
+Esto respeta la configuración de encuestas del sitio: si la votación está configurada solo para usuarios conectados, un voto con solo un
+anonUserId es rechazado, y los votos anónimos tienen límites de frecuencia por IP por encuesta.
 
-## Parameters
+## Parámetros
 
 | Nombre | Tipo | Requerido | Descripción |
 |------|------|----------|-------------|
 | tenantId | string | Sí |  |
 | createPollVoteBody | CreatePollVoteBody | Sí |  |
 
-## Response
+## Respuesta
 
-Returns: [`CreatePollVoteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreatePollVoteResponse.ts)
+Devuelve: [`CreatePollVoteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreatePollVoteResponse.ts)
 
-## Example
+## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo createPollVote'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo de createPollVote'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 (async () => {
   const tenantId: string = "acme-corp-tenant";

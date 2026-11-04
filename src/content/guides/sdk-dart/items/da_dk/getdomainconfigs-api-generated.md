@@ -1,4 +1,3 @@
----
 ## Parametre
 
 | Name | Type | Location | Required | Description |
@@ -29,5 +28,3 @@ try {
     print('Exception when calling DefaultApi->getDomainConfigs: $e\n');
 }
 [inline-code-end]
-
----

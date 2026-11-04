@@ -21,5 +21,3 @@ interface QuestionResult {
     meta?: QuestionResultMeta[]
 }
 [inline-code-end]
-
----

@@ -13,5 +13,3 @@ Vloge v Canvasu so med zagonom LTI samodejno preslikane v vloge FastComments. Ro
 Ko uporabnik zažene FastComments iz Canvasa, protokol LTI 1.3 vključuje njegovo vlogo v Canvasu. FastComments prebere to vlogo in samodejno dodeli ustrezna dovoljenja.
 
 Če ima uporabnik več vlog (npr. Instructor, ki je tudi Admin), se uporabi vloga z najvišjimi pooblastili.
-
----

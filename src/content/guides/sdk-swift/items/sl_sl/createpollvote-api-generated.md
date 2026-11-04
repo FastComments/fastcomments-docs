@@ -1,4 +1,3 @@
----
 Zapišite glas na anketi ali premaknite obstoječ glas na drugo možnost. Glasovalec ima največ en glas na anketo, zato se ob ponovnem klicu za istega glasovalca glas premakne namesto da bi se dodal nov.
 
 To upošteva nastavitve anket na spletnem mestu: če je glasovanje nastavljeno le za prijavljene uporabnike, se glas z le anonUserId zavrne, anonimni glasovi pa so omejeni po IP-ju na anketo.
@@ -34,5 +33,3 @@ DefaultAPI.createPollVote(tenantId: tenantId, createPollVoteBody: createPollVote
     }
 }
 [inline-code-end]
-
----

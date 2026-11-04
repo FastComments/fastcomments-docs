@@ -8,5 +8,3 @@ Tako bi moralo izgledati - morali bi biti sposobni izbrati del besedila in o nje
 </div>
 
 Čestitamo za nastavitev FastComments s Super! Če ste naleteli na Domain Error, ali bi se radi naučili, kako prilagoditi območje komentarjev, berite naprej!
-
----

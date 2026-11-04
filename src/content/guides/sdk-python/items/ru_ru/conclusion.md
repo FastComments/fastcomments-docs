@@ -1,12 +1,10 @@
 ## Нужна помощь?
 
-Если вы столкнулись с какими-либо проблемами или у вас есть вопросы о Python SDK, пожалуйста:
+Если вы столкнулись с проблемами или у вас есть вопросы по Python SDK, пожалуйста:
 
 - [Откройте issue на GitHub](https://github.com/FastComments/fastcomments-python/issues)
-- [Свяжитесь со службой поддержки FastComments](https://fastcomments.com/auth/my-account/help)
+- [Обратитесь в поддержку FastComments](https://fastcomments.com/auth/my-account/help)
 
-## Contributing
+## Участие в разработке
 
-Contributions are welcome! Please visit the [GitHub repository](https://github.com/FastComments/fastcomments-python) for contribution guidelines.
-
----
+Мы приветствуем ваш вклад! Пожалуйста, посетите [репозиторий на GitHub](https://github.com/FastComments/fastcomments-python), чтобы ознакомиться с правилами участия.

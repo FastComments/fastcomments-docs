@@ -60,5 +60,3 @@ async function fetchAuditLogs(): Promise<void> {
 
 fetchAuditLogs();
 [inline-code-end]
-
----

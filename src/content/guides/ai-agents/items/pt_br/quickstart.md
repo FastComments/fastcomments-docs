@@ -1,54 +1,54 @@
-Este é o caminho de cinco minutos de "temos Agentes de IA" até "um agente está respondendo ao tráfego ao vivo, sujeito a aprovações." Se quiser a versão detalhada, cada etapa tem um link para a página que a aborda em profundidade.
+Este é o caminho de cinco minutos de "temos AI Agents" para "um agente está respondendo a tráfego real, controlado por aprovações". Se preferir a versão completa, cada etapa contém um link para a página que a cobre em profundidade.
 
-### 1. Open the AI Agents page
+### 1. Abra a página de AI Agents
 
-Go to [Agentes de IA](https://fastcomments.com/auth/my-account/ai-agents) in your account. The first time you land here you will see either:
+Acesse [AI Agents](https://fastcomments.com/auth/my-account/ai-agents) na sua conta. Na primeira vez que você chegar aqui, verá uma das opções:
 
-- A blank-state with a **Explorar modelos** and **Começar do zero** button (you have agents available to create), or
-- An upsell page if your plan does not include agents - see [Planos e Elegibilidade](#plans-and-eligibility).
+- Um estado em branco com os botões **Browse templates** e **Start from scratch** (você tem agentes disponíveis para criar), ou
+- Uma página de upsell se o seu plano não incluir agentes - veja [Plans and Eligibility](#plans-and-eligibility).
 
-### 2. Pick a starter template
+### 2. Escolha um template inicial
 
-Click **Explorar modelos**. Pick one of:
+Clique em **Browse templates**. Escolha um dos:
 
-- [Moderador](#template-moderator) - revisa comentários sinalizados ou novos, avisa usuários de primeira vez, escala para banir somente após um aviso.
-- [Agente de Boas-vindas](#template-welcome-greeter) - responde a comentaristas de primeira vez.
-- [Fixador de Comentários Principais](#template-top-comment-pinner) - fixa comentários substanciais quando ultrapassam um limite de votos.
-- [Resumidor de Discussões](#template-thread-summarizer) - publica um resumo neutro em threads longas.
+- [Moderator](#template-moderator) - revisa comentários sinalizados ou novos, avisa os iniciantes e só escala para banimento após um aviso.
+- [Welcome Greeter](#template-welcome-greeter) - responde a comentaristas de primeira viagem.
+- [Top Comment Pinner](#template-top-comment-pinner) - fixa comentários relevantes quando eles ultrapassam um limite de votos.
+- [Thread Summarizer](#template-thread-summarizer) - publica um resumo neutro em threads longas.
 
-Each template lands on a pre-filled edit form with **Status: Simulação** already selected.
+Cada template abre um formulário de edição pré-preenchido com **Status: Dry Run** já selecionado.
 
-### 3. Review and save
+### 3. Revise e salve
 
-On the edit form, do at minimum:
+No formulário de edição, faça no mínimo:
 
-- **Nome interno.** Um identificador curto usado nos painéis de administração.
-- **Nome de exibição.** O que aparece publicamente quando o agente publica um comentário.
-- **Prompt inicial.** Edite o prompt do modelo para combinar com sua voz e suas regras específicas.
-- **Aprovações.** Marque as ações que devem exigir revisão humana antes de entrarem em vigor. Recomendamos pelo menos `ban_user` para qualquer agente de moderação. Veja [Fluxo de Aprovação](#approval-workflow).
+- **Internal name.** Um identificador curto usado nos painéis administrativos.
+- **Display name.** O que aparece publicamente quando o agente posta um comentário.
+- **Initial prompt.** Edite o prompt do template para corresponder ao seu tom de voz e às suas regras específicas.
+- **Approvals.** Marque as ações que devem exigir revisão humana antes de entrar em vigor. Recomendamos pelo menos `ban_user` para qualquer agente de moderação. Veja [Approval Workflow](#approval-workflow).
 
-Click **Salvar agente**.
+Clique em **Save agent**.
 
-### 4. Watch it in dry-run
+### 4. Acompanhe em dry-run
 
-O agente está agora ativo em **Simulação**. Ele receberá seus gatilhos, chamará o modelo e registrará ações na página [Histórico de Execuções](#run-history) - com o selo **Simulação** em cada linha - mas não executa ações reais. Visite alguns detalhes das execuções (veja [Visualização de Detalhe da Execução](#run-detail-view)) e verifique:
+O agente agora está ativo em **Dry Run**. Ele receberá seus gatilhos, chamará o modelo e registrará ações na página [Run History](#run-history) - com o selo **Dry Run** em cada linha - mas não executará ações reais. Visite alguns detalhes de execução (veja [Run Detail View](#run-detail-view)) e observe:
 
 - As ações que o agente escolheu.
-- A justificativa e o nível de confiança para cada ação.
-- A transcrição completa do LLM.
+- A justificativa e a confiança de cada ação.
+- O transcript completo do LLM.
 
 Se o agente estiver tomando decisões com as quais você discorda, edite o prompt inicial ou marque mais aprovações.
 
-### 5. Run a test against past comments
+### 5. Execute um teste contra comentários antigos
 
-From the agents list page, click **Executar teste** on the agent's row. The form has a single **Dias** numeric input (1 to 90). Sample size and the hard cap on comments evaluated are shown informationally - they are computed server-side, not user-set. The replay runs against historical comments without taking real actions and reports what the agent **would** have done versus what actually happened (was the comment later approved, marked spam, deleted, and so on). See [Execuções de Teste (Reproduções)](#test-runs-replays).
+Na página de lista de agentes, clique em **Test run** na linha do agente. O formulário tem um único campo numérico **Days** (1 a 90). O tamanho da amostra e o limite máximo de comentários avaliados são exibidos apenas informativamente - eles são calculados no servidor, não definidos pelo usuário. O replay roda contra comentários históricos sem executar ações reais e informa o que o agente **teria** feito versus o que realmente aconteceu (o comentário foi aprovado depois, marcado como spam, excluído, e assim por diante). Veja [Test Runs (Replays)](#test-runs-replays).
 
-### 6. Flip to Enabled
+### 6. Ative como Enabled
 
-When you are happy with the dry-run and replay output, edit the agent and change **Status** to **Habilitado**. From here on, real actions land. The Run History page now shows live runs without the dry-run badge, and any action you marked for approval appears in the [caixa de entrada de aprovações](#approval-workflow).
+Quando estiver satisfeito com o dry-run e o resultado do replay, edite o agente e altere o **Status** para **Enabled**. A partir daí, ações reais passam a acontecer. A página Run History agora mostra execuções reais sem o selo de dry-run, e qualquer ação que você marcou para aprovação aparecerá na [caixa de entrada de aprovações](#approval-workflow).
 
-### What's next
+### Próximos passos
 
-- Set [Orçamentos](#budgets-overview) and [Alertas de Orçamento](#budget-alerts).
-- Configure [Webhooks](#webhooks-overview) if you want external systems to react to agent events.
-- Add [Diretrizes da Comunidade](#community-guidelines) to keep agent decisions aligned with your written policy.
+- Configure [Budgets](#budgets-overview) e [Budget Alerts](#budget-alerts).
+- Configure [Webhooks](#webhooks-overview) se quiser que sistemas externos reajam a eventos dos agentes.
+- Adicione [Community Guidelines](#community-guidelines) para manter as decisões dos agentes alinhadas com a sua política escrita.

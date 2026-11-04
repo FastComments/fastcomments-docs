@@ -33,5 +33,3 @@ interface PollVoteDeleteResponse {
 
 - Brisanje istog glasa dva puta vraća `not-found` drugi put, a brojevi ostaju nepromijenjeni.
 - Ako je anketa zamijenjena od kada je glas izabran, glas se uklanja, ali se brojevi ne mijenjaju, jer je zamjena započela od nule.
-
----

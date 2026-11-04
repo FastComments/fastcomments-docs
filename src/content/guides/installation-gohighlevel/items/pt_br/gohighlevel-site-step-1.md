@@ -40,6 +40,3 @@ Agora selecione nosso novo elemento e clique em `Open Code Editor` à esquerda:
     <div class="title">Abrir Editor de Código</div>
     <img class="screenshot-image" src="/images/installation-guides/gohighlevel-site-step-6-open-code-editor.png" alt="Abrir Editor de Código" />
 </div>
-
-
----

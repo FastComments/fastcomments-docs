@@ -1,4 +1,3 @@
----
 Pokreće se kada je komentar automatski označen kao spam od strane ugrađenog spam motora FastComments — **ne** od strane moderatora i ne od drugog agenta.
 
 ### Kontekst koji agent prima
@@ -20,5 +19,3 @@ Spam pipeline platforme. Pogledajte [Otkrivanje spama](/guide-moderation.html#sp
 - Okidač se **ne** pokreće za spam označen od strane moderatora (koristite [Okidač: Moderatorom označen spam](#trigger-moderator-spammed)) niti za spam označen od strane drugog agenta.
 - Komentar koji je automatski označen kao spam, a kasnije moderator označi kao 'Nije spam', neće ponovo pokrenuti okidač.
 - Pretplata na ovaj okidač je najkorisnija u tenantima gde je režim automatskog spamovanja motora omogućen u Podešavanjima moderacije. U suprotnom okidač se neće pokrenuti.
-
----

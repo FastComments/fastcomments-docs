@@ -29,5 +29,3 @@ Nun können wir die Datei speichern:
     <div class="title">Editor bearbeiten</div>
     <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-3-exit.png" alt="Editor bearbeiten" />
 </div>
-
----

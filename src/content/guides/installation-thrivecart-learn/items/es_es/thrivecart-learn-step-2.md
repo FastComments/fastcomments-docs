@@ -119,5 +119,3 @@ Ahora pégalo en el bloque de código a la izquierda en el editor de ThriveCart.
 
 Si tienes los comentarios anónimos desactivados, que es la configuración por defecto, no podrás dejar comentarios en `Preview` mode as the `John Smith` user. Recibirás un error de autenticación
 ya que el usuario por defecto `John Smith` no tiene correo electrónico. Si quieres probar, te sugerimos que uses un código de cupón y navegues por tu sitio como un usuario real.
-
----

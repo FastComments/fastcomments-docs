@@ -28,5 +28,3 @@ try {
     print('Exception when calling PublicApi->getUsersInfo: $e\n');
 }
 [inline-code-end]
-
----

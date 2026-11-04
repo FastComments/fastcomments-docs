@@ -32,5 +32,3 @@ interface HashTagPostResponse {
     hashTag?: HashTag; // 成功時に作成されたハッシュタグ全体を返します。
 }
 [inline-code-end]
-
----

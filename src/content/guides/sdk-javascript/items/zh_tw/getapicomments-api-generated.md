@@ -1,4 +1,3 @@
----
 ## 參數
 
 | 名稱 | 類型 | 必填 | 說明 |
@@ -50,5 +49,3 @@ async function fetchComments(): Promise<void> {
 
 fetchComments();
 [inline-code-end]
-
----

@@ -68,5 +68,3 @@ export class AppModule { }
 该小部件使用变更检测，因此更改配置对象的任何属性将导致其重新加载。
 
 您可以在 <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">此处</a> 找到 Angular 组件支持的配置。 
-
----

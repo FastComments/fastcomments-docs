@@ -1,7 +1,7 @@
-Past commenters on the page who are NOT currently online. Sorted by displayName.  
-השתמשו בזה לאחר שנצלו /users/online כדי להציג סעיף "Members".  
-Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName} index from afterName forward via $gt, no $skip cost.  
-דפדוף עם סמן על commenterName: השרת מעביר את האינדקס החלקי {tenantId, urlId, commenterName} אחרי afterName קדימה באמצעות $gt, ללא עלות $skip.
+מגיבים בעבר בדף שאינם מחוברים כרגע. ממוינים לפי displayName.
+השתמשו בזה לאחר אזילת /users/online כדי להציג מקטע "Members".
+עימוד באמצעות סמן על commenterName: השרת ממשיך לאורך האינדקס החלקי {tenantId, urlId, commenterName}
+מ-afterName קדימה באמצעות $gt, ללא עלות $skip.
 
 ## Parameters
 
@@ -18,7 +18,7 @@ Cursor pagination on commenterName: server walks the partial {tenantId, urlId, c
 
 ## Example
 
-[inline-code-attrs-start title = 'get_offline_users דוגמה'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל-get_offline_users'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn fetch_offline(config: &configuration::Configuration) -> Result<(), Error> {
     let params = GetOfflineUsersParams {

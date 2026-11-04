@@ -1,28 +1,28 @@
-First, open up your site in the Website Builder.
+Prvo otvorite svoju stranicu u Website Builderu.
 
-Now if you don't already have a section where you want the comments to go, add a blank section:
-
-<div class="screenshot white-bg">
-    <div class="title">Dodavanje odjeljka</div>
-    <img class="screenshot-image" src="/images/installation-guides/hostinger-step-1-add-section.png" alt="Dodavanje odjeljka" />
-</div>
-<div class="screenshot white-bg">
-    <div class="title">Dodavanje odjeljka</div>
-    <img class="screenshot-image" src="/images/installation-guides/hostinger-step-1-add-section-2.png" alt="Dodavanje odjeljka" />
-</div>
-
-Now add the Hostinger Embed widget by clicking our new section and clicking `Add element` in the top and then `Embed code`:
+Ako već nemate sekciju gdje želite komentare, dodajte praznu sekciju:
 
 <div class="screenshot white-bg">
-    <div class="title">Umetni kod</div>
-    <img class="screenshot-image" src="/images/installation-guides/hostinger-step-1-add-section-3.png" alt="Umetni kod" />
+    <div class="title">Dodavanje sekcije</div>
+    <img class="screenshot-image" src="/images/installation-guides/hostinger-step-1-add-section.png" alt="Dodavanje sekcije" />
+</div>
+<div class="screenshot white-bg">
+    <div class="title">Dodavanje sekcije</div>
+    <img class="screenshot-image" src="/images/installation-guides/hostinger-step-1-add-section-2.png" alt="Dodavanje sekcije" />
 </div>
 
-You'll get something like this:
+Sada dodajte Hostinger Embed widget klikom na našu novu sekciju, zatim kliknite `Add element` gore, a potom `Embed code`:
 
 <div class="screenshot white-bg">
-    <div class="title">Dodani odjeljak s kodom</div>
-    <img class="screenshot-image" src="/images/installation-guides/hostinger-step-1-add-section-4.png" alt="Dodani odjeljak s kodom" />
+    <div class="title">Embed code</div>
+    <img class="screenshot-image" src="/images/installation-guides/hostinger-step-1-add-section-3.png" alt="Embed code" />
 </div>
 
-Now we're ready for `Step 2`.
+Dobit ćete nešto poput ovoga:
+
+<div class="screenshot white-bg">
+    <div class="title">Sekcija s kodom dodana</div>
+    <img class="screenshot-image" src="/images/installation-guides/hostinger-step-1-add-section-4.png" alt="Sekcija s kodom dodana" />
+</div>
+
+Sada smo spremni za `Step 2`.

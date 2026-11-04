@@ -1,14 +1,14 @@
-FastComments, mevcut kullanıcı kimlik doğrulama sisteminizle entegre etmek için SSO'yu destekler. **SSO functionality is only available in the server export** since it requires Node.js crypto features.
+FastComments, mevcut kullanıcı kimlik doğrulama sisteminizle entegre olmak için SSO'yu destekler. **SSO işlevselliği yalnızca server export'ta kullanılabilir** çünkü Node.js crypto özellikleri gerektirir.
 
-### Simple SSO (Server-Side Only)
+### Basit SSO (Yalnızca Sunucu Tarafı)
 
 Basit SSO sunucu tarafında oluşturulmalı ve istemciye gönderilmelidir:
 
 ```typescript
-// Sunucu tarafı kodu (Node.js/backend)
+// Server-side code (Node.js/backend)
 import { FastCommentsSSO, PublicApi } from 'fastcomments-sdk/server';
 
-// Yerleşik yardımcıyı kullanarak basit SSO oluştur  
+// Create simple SSO using the built-in helper  
 const userData = {
   username: 'john_doe',
   email: 'john@example.com',
@@ -23,19 +23,19 @@ const sso = FastCommentsSSO.createSimple(userData, {
 
 const ssoToken = sso.createToken();
 
-// ssoToken'ı istemci tarafı kodunuza gönderin
-// İstemci tarafı kodu daha sonra bu token'ı tarayıcı SDK'sı ile kullanabilir
+// Send ssoToken to your client-side code
+// Client-side code can then use this token with the browser SDK
 ```
 
-### Secure SSO (Server-Side, Recommended)
+### Güvenli SSO (Sunucu Tarafı, Önerilen)
 
-Güvenli SSO sunucu tarafında uygulanmalı ve daha iyi güvenlik sağlar:
+Güvenli SSO sunucu tarafında uygulanmalıdır ve daha iyi güvenlik sağlar:
 
 ```typescript
-// Sunucu tarafı kodu (Node.js/backend)
+// Server-side code (Node.js/backend)
 import { FastCommentsSSO, PublicApi } from 'fastcomments-sdk/server';
 
-// Yerleşik yardımcıyı kullanarak güvenli SSO oluştur
+// Create secure SSO using the built-in helper
 const userData = {
   id: 'user-123',
   email: 'john@example.com',
@@ -53,7 +53,7 @@ const sso = FastCommentsSSO.createSecure('your-api-key', userData, {
 
 const ssoConfig = sso.prepareToSend();
 
-// Sunucuda API çağrılarıyla kullanın
+// Use with API calls on the server
 const publicApi = new PublicApi();
 const response = await publicApi.getCommentsPublic({
   tenantId: 'your-tenant-id',
@@ -61,16 +61,16 @@ const response = await publicApi.getCommentsPublic({
   sso: JSON.stringify(ssoConfig)
 });
 
-// Veya tarayıcı kullanımı için ssoConfig'i istemciye gönderin
+// Or send ssoConfig to client for browser usage
 ```
 
-### Using SSO from Browser (with Server-Generated Token)
+### Tarayıcıdan SSO Kullanımı (Sunucu Tarafında Oluşturulmuş Token ile)
 
 ```typescript
-// İstemci tarafı kodu (tarayıcı)
+// Client-side code (browser)
 import { PublicApi } from 'fastcomments-sdk/browser';
 
-// Sunucu uç noktanızdan SSO token'ını alın
+// Get SSO token from your server endpoint
 const ssoToken = await fetch('/api/sso-token').then(r => r.json());
 
 const publicApi = new PublicApi();
@@ -81,10 +81,10 @@ const response = await publicApi.getCommentsPublic({
 });
 ```
 
-### SSO with Comment Creation
+### Yorum Oluşturma ile SSO
 
 ```typescript
-// Sunucu tarafı: SSO ve yorum oluştur
+// Server-side: Create SSO and comment
 import { FastCommentsSSO, PublicApi } from 'fastcomments-sdk/server';
 
 const sso = FastCommentsSSO.createSecure('your-api-key', userData);

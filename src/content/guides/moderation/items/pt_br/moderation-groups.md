@@ -1,4 +1,3 @@
----
 Os moderadores podem ser colocados em grupos para moderar diferentes páginas ou categorias de conteúdo.
 
 Quando um moderador pertence a um ou mais grupos, ele verá apenas comentários desses grupos na página Moderar Comentários.
@@ -14,5 +13,3 @@ Ao adicionarmos um moderador, agora temos a opção de selecionar um ou mais gru
 Finalmente, os comentários precisam ser vinculados a um ou mais grupos para que os moderadores corretos os vejam.
 
 Isso pode ser configurado ao [adicionando alguns grupos](https://fastcomments.com/auth/my-account/moderate-comments/moderation-groups) e então especificar os IDs de `Moderation Group` correspondentes no widget de comentários, [conforme instruído aqui](/guide-customizations-and-configuration.html#moderation-group-ids).
-
----

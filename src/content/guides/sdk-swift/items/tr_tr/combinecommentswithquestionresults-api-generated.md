@@ -44,5 +44,3 @@ DefaultAPI.combineCommentsWithQuestionResults(tenantId: tenantId, options: Defau
     }
 }
 [inline-code-end]
-
----

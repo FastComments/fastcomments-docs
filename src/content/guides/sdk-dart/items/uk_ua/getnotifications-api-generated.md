@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Назва | Тип | Розташування | Необхідно | Опис |
@@ -41,5 +40,3 @@ try {
     print('Exception when calling DefaultApi->getNotifications: $e\n');
 }
 [inline-code-end]
-
----

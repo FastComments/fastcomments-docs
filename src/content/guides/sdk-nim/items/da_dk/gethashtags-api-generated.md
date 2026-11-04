@@ -20,5 +20,3 @@ if hashTagsOpt.isSome:
 else:
   echo "No hashtags found"
 [inline-code-end]
-
----

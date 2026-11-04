@@ -1,4 +1,3 @@
----
 | Komponenta | Opis |
 | --- | --- |
 | `FastComments` | Widget za komentiranje s odgovorima, glasovanjem i više |
@@ -16,4 +15,3 @@ Sve komponente se izvoze iz korijena paketa:
 import { FastComments, FastCommentsLiveChat } from 'fastcomments-astro';
 ---
 ```
----

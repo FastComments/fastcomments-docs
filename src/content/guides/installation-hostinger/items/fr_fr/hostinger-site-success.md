@@ -1,4 +1,3 @@
----
 C'est tout ! Vous devriez désormais avoir des commentaires en direct ajoutés à votre site Hostinger.
 
 <div class="screenshot white-bg">
@@ -7,5 +6,3 @@ C'est tout ! Vous devriez désormais avoir des commentaires en direct ajoutés �
 </div>
 
 Si vous avez rencontré une erreur "Accès refusé", ou souhaitez personnaliser FastComments, lisez la suite.
-
----

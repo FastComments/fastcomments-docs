@@ -18,5 +18,3 @@ The **FastComments - Najpopularnije stranice** blok navodi stranice u vašoj trg
 
 - **Najpopularnije stranice** rangira prema ukupnom angažmanu, pa isti postovi obično ostaju pri vrhu neko vrijeme. Dobro za bočnu traku „popularne objave“.
 - **Nedavne rasprave** rangira prema najnovijoj aktivnosti, pa se popis često mijenja. Dobro za panel „što je trenutno popularno“.
-
----

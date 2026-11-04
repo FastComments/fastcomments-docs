@@ -1,16 +1,16 @@
-Past commenters on the page who are NOT currently online. Sorted by displayName.  
-Използвайте това след като изчерпите /users/online, за да покажете секция „Members“.  
-Cursor pagination on commenterName: server walks the partial `{tenantId, urlId, commenterName}` index from afterName forward via $gt, no $skip cost.  
-Курсорна пагинация по commenterName: сървърът обхожда частичния `{tenantId, urlId, commenterName}` индекс от afterName напред чрез $gt, без разход за $skip.
+Минали коментатори на страницата, които в момента НЕ са онлайн. Подредени по displayName.
+Използвайте това след изчерпване на /users/online, за да визуализирате секция "Членове".
+Пагинация с курсор по commenterName: сървърът обхожда частичния индекс {tenantId, urlId, commenterName}
+от afterName напред чрез $gt, без разход за $skip.
 
 ## Параметри
 
-| Име | Тип | Местоположение | Задължително | Описание |
-|------|------|----------------|--------------|----------|
-| tenantId | string | path | Yes |  |
-| urlId | string | query | Yes | Идентификатор за URL на страницата (почистен от сървъра). |
-| afterName | string | query | No | Курсор: предайте nextAfterName от предишния отговор. |
-| afterUserId | string | query | No | Курсор за разрешаване на равенства: предайте nextAfterUserId от предишния отговор. Задължително, когато е зададен afterName, за да равенствата по име не премахват записите. |
+| Име | Тип | Местоположение | Задължителен | Описание |
+|------|------|----------|----------|-------------|
+| tenantId | string | path | Да |  |
+| urlId | string | query | Да | Идентификатор на URL на страницата (изчиства се от сървъра). |
+| afterName | string | query | Не | Курсор: подайте nextAfterName от предишния отговор. |
+| afterUserId | string | query | Не | Допълнителен критерий за курсора: подайте nextAfterUserId от предишния отговор. Задължителен, когато afterName е зададен, така че съвпаденията по име да не пропуснат записи. |
 
 ## Отговор
 
@@ -23,10 +23,10 @@ Cursor pagination on commenterName: server walks the partial `{tenantId, urlId, 
 import 'package:fastcomments_dart/api.dart';
 
 final api_instance = PublicApi();
-final tenantId = tenantId_example; // String |
-final urlId = urlId_example; // String | Идентификатор за URL на страницата (почистен от сървъра).
-final afterName = afterName_example; // String | Курсор: предайте nextAfterName от предишния отговор.
-final afterUserId = afterUserId_example; // String | Курсор за разрешаване на равенства: предайте nextAfterUserId от предишния отговор. Задължително, когато е зададен afterName, за да равенствата по име не премахват записите.
+final tenantId = tenantId_example; // String | 
+final urlId = urlId_example; // String | Идентификатор на URL на страницата (изчиства се от сървъра).
+final afterName = afterName_example; // String | Курсор: подайте nextAfterName от предишния отговор.
+final afterUserId = afterUserId_example; // String | Допълнителен критерий за курсора: подайте nextAfterUserId от предишния отговор. Задължителен, когато afterName е зададен, така че съвпаденията по име да не пропуснат записи.
 
 try {
     final result = api_instance.getOfflineUsers(tenantId, urlId, GetOfflineUsersOptions(afterName: afterName, afterUserId: afterUserId));

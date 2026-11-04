@@ -1,14 +1,14 @@
-FastComments 支援 SSO 以整合您現有的使用者認證系統。 **SSO 功能僅在伺服器端匯出時可用**，因為它需要 Node.js 的 crypto 功能。
+FastComments 支援 SSO,以便與您現有的使用者驗證系統整合。**SSO 功能僅在伺服器匯出版本中提供**,因為它需要 Node.js 的加密功能。
 
-### Simple SSO (Server-Side Only)
+### 簡單 SSO(僅限伺服器端)
 
-簡易 SSO 應在伺服器端產生並傳送給客戶端：
+簡單 SSO 應在伺服器端產生並傳送至用戶端:
 
 ```typescript
-// 伺服器端程式碼（Node.js/backend）
+// Server-side code (Node.js/backend)
 import { FastCommentsSSO, PublicApi } from 'fastcomments-sdk/server';
 
-// 使用內建輔助函式建立簡易 SSO  
+// Create simple SSO using the built-in helper  
 const userData = {
   username: 'john_doe',
   email: 'john@example.com',
@@ -23,19 +23,19 @@ const sso = FastCommentsSSO.createSimple(userData, {
 
 const ssoToken = sso.createToken();
 
-// 將 ssoToken 傳送到你的客戶端程式碼
-// 客戶端程式碼之後可以使用此 token 與瀏覽器 SDK
+// Send ssoToken to your client-side code
+// Client-side code can then use this token with the browser SDK
 ```
 
-### Secure SSO (Server-Side, Recommended)
+### 安全 SSO(伺服器端,建議使用)
 
-安全 SSO 應在伺服器端實作，並提供較佳的安全性：
+安全 SSO 應在伺服器端實作,並提供更好的安全性:
 
 ```typescript
-// 伺服器端程式碼（Node.js/backend）
+// Server-side code (Node.js/backend)
 import { FastCommentsSSO, PublicApi } from 'fastcomments-sdk/server';
 
-// 使用內建輔助函式建立安全 SSO
+// Create secure SSO using the built-in helper
 const userData = {
   id: 'user-123',
   email: 'john@example.com',
@@ -53,7 +53,7 @@ const sso = FastCommentsSSO.createSecure('your-api-key', userData, {
 
 const ssoConfig = sso.prepareToSend();
 
-// 用於伺服器上的 API 呼叫
+// Use with API calls on the server
 const publicApi = new PublicApi();
 const response = await publicApi.getCommentsPublic({
   tenantId: 'your-tenant-id',
@@ -61,30 +61,30 @@ const response = await publicApi.getCommentsPublic({
   sso: JSON.stringify(ssoConfig)
 });
 
-// 或將 ssoConfig 傳送給客戶端供瀏覽器使用
+// Or send ssoConfig to client for browser usage
 ```
 
-### Using SSO from Browser (with Server-Generated Token)
+### 從瀏覽器使用 SSO(搭配伺服器產生的權杖)
 
 ```typescript
-// 客戶端程式碼（瀏覽器）
+// Client-side code (browser)
 import { PublicApi } from 'fastcomments-sdk/browser';
 
-// 從你的伺服器端點取得 SSO token
+// Get SSO token from your server endpoint
 const ssoToken = await fetch('/api/sso-token').then(r => r.json());
 
 const publicApi = new PublicApi();
 const response = await publicApi.getCommentsPublic({
   tenantId: 'your-tenant-id',
   urlId: 'page-url-id',
-  sso: ssoToken // 使用伺服器產生的 SSO token
+  sso: ssoToken // Use the server-generated SSO token
 });
 ```
 
-### SSO with Comment Creation
+### 建立留言時使用 SSO
 
 ```typescript
-// 伺服器端：建立 SSO 與留言
+// Server-side: Create SSO and comment
 import { FastCommentsSSO, PublicApi } from 'fastcomments-sdk/server';
 
 const sso = FastCommentsSSO.createSecure('your-api-key', userData);

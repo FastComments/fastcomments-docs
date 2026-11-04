@@ -1,4 +1,3 @@
----
 ## Parametry
 
 | Nazwa | Typ | Wymagane | Opis |
@@ -24,5 +23,3 @@ Zwraca: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js
   const resultWithoutEmail: APIEmptyResponse = await deleteModerator(tenantId, moderatorId);
 })();
 [inline-code-end]
-
----

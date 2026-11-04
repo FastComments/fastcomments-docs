@@ -1,4 +1,3 @@
----
 Popis webhookova konfiguriranih za najamnika, kako redaka upravljanih putem nadzorne ploče, tako i pretplata na API.
 
 ## Parametri
@@ -39,5 +38,3 @@ DefaultAPI.getWebhooks(tenantId: tenantId, options: DefaultAPI.GetWebhooksOption
     }
 }
 [inline-code-end]
-
----

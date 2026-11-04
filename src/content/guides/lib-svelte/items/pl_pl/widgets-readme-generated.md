@@ -1,4 +1,3 @@
----
 Ta biblioteka obecnie zawiera następujące widżety:
 
 - [Czat współpracy](https://github.com/FastComments/fastcomments-svelte/blob/main/src/lib/CollabChatWidget.svelte)
@@ -16,4 +15,3 @@ Zawiera również przykłady dla:
 - [Stronicowanie produktów lub wpisów na blogu](https://github.com/FastComments/fastcomments-svelte/blob/main/src/routes/paginated-example/+page.svelte)
 - [Bezpieczne SSO](https://github.com/FastComments/fastcomments-svelte/blob/main/src/routes/secure-sso-example/+page.svelte)
 - [Proste SSO](https://github.com/FastComments/fastcomments-svelte/blob/main/src/routes/simple-sso-example/+page.svelte)
----

@@ -1,10 +1,10 @@
-Queues a batch job that moves comments, pages and related records from one urlId or domain to another.  
-"urlId" migrations only match the exact urlId. "domain" migrations find/replace the value inside every urlId and url.  
-Poll GET /api/v1/batch-jobs/{batchJobId}: once it is done it carries per-migration results and an undoId.
+Met en file d'attente un traitement par lots qui déplace les commentaires, les pages et les enregistrements associés d'un urlId ou d'un domaine vers un autre.
+Les migrations "urlId" ne correspondent qu'au urlId exact. Les migrations "domain" recherchent/remplacent la valeur dans chaque urlId et url.
+Interrogez GET /api/v1/batch-jobs/{batchJobId} : une fois terminé, il contient les résultats par migration et un undoId.
 
 ## Paramètres
 
-| Nom | Type | Emplacement | Obligatoire | Description |
+| Nom | Type | Emplacement | Requis | Description |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Oui |  |
 
@@ -52,5 +52,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

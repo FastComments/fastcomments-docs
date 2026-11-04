@@ -29,5 +29,3 @@ if addPageResp.isSome:
   let resp = addPageResp.get()
   echo resp
 [inline-code-end]
-
----

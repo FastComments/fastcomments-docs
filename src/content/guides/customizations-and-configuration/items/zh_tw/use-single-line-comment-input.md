@@ -1,4 +1,3 @@
----
 [related-parameter-start name = 'useSingleLineCommentInput'; type = 'boolean'; related-parameter-end]
 
 預設情況下，FastComments 允許使用者輸入任意行數的評論，直至預設的字元限制。
@@ -14,5 +13,3 @@
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.single-line-comment-input'; selector = '.single-line-comment-input'; alt='在小工具自訂頁面中開啟的單行評論輸入核取方塊，將輸入限制為單行'; title='啟用單行評論輸入' app-screenshot-end]
 
 請注意，每個頁面在每個排序方向的評論都是預先計算的，因此所有排序方向的效能相同。
-
----

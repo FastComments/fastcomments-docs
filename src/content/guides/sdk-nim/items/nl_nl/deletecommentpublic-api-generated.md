@@ -1,4 +1,3 @@
----
 ## Parameters
 
 | Naam | Type | Verplicht | Beschrijving |
@@ -25,5 +24,3 @@ if responseOpt.isSome:
   let resp = responseOpt.get()
   echo resp
 [inline-code-end]
-
----

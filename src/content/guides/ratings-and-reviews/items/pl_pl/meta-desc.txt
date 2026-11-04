@@ -1,3 +1,1 @@
----
 Zbieraj oceny w postaci gwiazdek i pisemne recenzje, definiuj własne pytania i wyświetlaj wyniki za pomocą widżetu podsumowania lub pobieraj je przez API.
----

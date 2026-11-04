@@ -48,5 +48,3 @@ try {
     echo 'Exception when calling DefaultApi->getTenantDailyUsages: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

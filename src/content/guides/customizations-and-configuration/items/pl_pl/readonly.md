@@ -17,5 +17,3 @@ Od listopada 2022 r. wątki mogą być blokowane lub odblokowywane **na żywo** 
 Spowoduje to zapobieganie nowym komentarzom, jednocześnie umożliwiając głosowanie oraz pozwalając użytkownikom usuwać ich komentarze, jeśli zechcą, podczas gdy `readonly` nie pozwala na te czynności. 
 
 Odpowiada to polu `isClosed` w API `Page`.
-
----

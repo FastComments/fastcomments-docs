@@ -7,4 +7,3 @@ import { FastComments } from 'fastcomments-astro';
 ```
 
 將 `"demo"` 換成你的 FastComments 租戶 ID。
----

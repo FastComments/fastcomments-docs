@@ -1,4 +1,3 @@
----
 De FastComments-app voor Zapier verbindt uw opmerkingen met duizenden andere apps zonder code te schrijven.
 
 Gebruik het om een Slack-bericht te plaatsen wanneer iemand een opmerking maakt, elke opmerking naar een spreadsheet te loggen, een
@@ -10,4 +9,3 @@ Deze gids gaat ervan uit dat u een FastComments-account heeft. [U kunt er hier e
 
 Deze gids behandelt het gebruik van de Zapier-app. De eindpunten die het aanroept, samen met de aanvraag- en responsformaten en de OAuth
 stroom achter de verbinding, zijn gedocumenteerd in de [API-referentie](./guide-api.html).
----

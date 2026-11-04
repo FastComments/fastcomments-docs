@@ -1,12 +1,12 @@
-An `AuditLog` is an object that represents an audited event for tenants that have access to this feature.
+`AuditLog` — це об'єкт, який представляє аудитову подію для орендарів, що мають доступ до цієї функції.
 
-The structure for the AuditLog object is as follows:
+Структура об'єкта AuditLog виглядає наступним чином:
 
 [inline-code-attrs-start title = 'Структура AuditLog'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface AuditLog {
     id: string;
-    /** Who performed the event. **/
+    /** Хто виконав подію. **/
     userId?: string;
     username?: string;
     resourceName: string;
@@ -14,23 +14,23 @@ interface AuditLog {
     from: string;
     url?: string;
     ip?: string;
-    /** The browser that performed the event, when it came from one. **/
+    /** Браузер, з якого виконано подію, якщо вона надійшла з нього. **/
     ua?: string;
-    /** A hash of the session the event came from, for correlating one person's actions. Never the session itself. **/
+    /** Хеш сесії, з якої надійшла подія, для співвіднесення дій однієї людини. Ніколи не містить саму сесію. **/
     sIdHashed?: string;
     when: string;
     description?: string;
     serverStartDate: string;
-    /** The id of the object the event was performed on, as opposed to who performed it. **/
+    /** Ідентифікатор об'єкта, над яким виконано подію, на відміну від того, хто її виконав. **/
     targetId?: string;
-    /** A human-readable label for that object, e.g. "jsmith (jsmith@example.com)". **/
+    /** Зрозуміла для людини мітка цього об'єкта, наприклад "jsmith (jsmith@example.com)". **/
     targetLabel?: string;
     objectDetails?: object;
 }
 [inline-code-end]
 
-`targetId` і `targetLabel` описують, на що була виконана подія; `userId` і `username` описують, хто її виконав. Для оновлень `objectDetails.changes` містить карту `{field: {from, to}}`, що показує, що саме змінилося.
+`targetId` і `targetLabel` описують, над чим було виконано подію; `userId` і `username` описують, хто її виконав. Для оновлень `objectDetails.changes` містить карту `{field: {from, to}}` того, що фактично змінилося.
 
-Журнал аудиту є незмінним. Його також не можна записувати вручну. FastComments.com може вирішувати, коли записувати в журнал аудиту. Однак ви можете читати його за допомогою цього API.
+Журнал аудиту є незмінним. Його також не можна записувати вручну. Лише FastComments.com може вирішувати, коли здійснювати запис до журналу аудиту. Однак ви можете читати з нього через цей API.
 
-Події в журналі аудиту видаляються через два роки.
+Події в журналі аудиту спливають через два роки.

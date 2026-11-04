@@ -1,4 +1,3 @@
----
 At definere, hvordan flere brugere interagerer, og teste det, er kompliceret. Her er den følgende specifikation, som vi følger for adgangskontrol,
 som du kan bruge til at teste din implementering:
 
@@ -29,4 +28,3 @@ som du kan bruge til at teste din implementering:
     SSO-bruger A = Gruppe-id'er = [a].
     SSO-bruger B = Gruppe-id'er = [a, b].
     A kan @B.
----

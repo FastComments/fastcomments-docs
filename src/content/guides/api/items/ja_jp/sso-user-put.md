@@ -38,6 +38,3 @@ interface SSOUserPutResponse {
     user?: SSOUser; // 成功時に更新されたユーザーを返します。
 }
 [inline-code-end]
-
-
----

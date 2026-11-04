@@ -1,4 +1,3 @@
----
 Per aggiungere commenti a un sito realizzato con Angular, puoi trovare la nostra libreria Angular su NPM <a href="https://www.npmjs.com/package/ngx-fastcomments" target="_blank">qui</a>.
 
 Il widget di commenti FastComments per Angular supporta tutte le stesse funzionalità di quello VanillaJS - commenti in tempo reale, SSO, e così via.
@@ -70,5 +69,3 @@ Poiché la configurazione può diventare piuttosto complicata, possiamo passare 
 Il widget utilizza il rilevamento delle modifiche, quindi modificare qualsiasi proprietà dell'oggetto di configurazione ne causerà il ricaricamento.
 
 Puoi trovare la configurazione supportata dal componente Angular <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">qui</a>.
-
----

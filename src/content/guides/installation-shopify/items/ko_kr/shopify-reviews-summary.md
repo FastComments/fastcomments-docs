@@ -40,5 +40,3 @@ Reviews Summary 블록은 **FastComments** 블록과 동일한 자동 감지 로
 
 - 요약은 읽기 전용입니다. 리뷰를 수집하려면 같은 페이지에 **FastComments** 블록이 필요합니다.
 - 리뷰를 수집한 후 Ratings & Reviews Helper에서 평점 질문을 변경하면, 요약은 새로운 질문 세트에 따라 다시 계산됩니다.
-
----

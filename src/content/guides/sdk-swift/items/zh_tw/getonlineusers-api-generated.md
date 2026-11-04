@@ -1,4 +1,3 @@
----
 目前在線的頁面檢視者：指目前已訂閱該頁面的 websocket 會話使用者。  
 返回 anonCount + totalCount（全房間訂閱者，包括我們未列舉的匿名檢視者）。
 
@@ -38,5 +37,3 @@ PublicAPI.getOnlineUsers(tenantId: tenantId, urlId: urlId, options: PublicAPI.Ge
     }
 }
 [inline-code-end]
-
----

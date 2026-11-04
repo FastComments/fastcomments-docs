@@ -1,13 +1,13 @@
-Bulk user info for a tenant. Given userIds, return display info from User / SSOUser.  
-Used by the comment widget to enrich users that just appeared via a presence event.  
-No page context: privacy is enforced uniformly (private profiles are masked).
+מידע משתמשים בכמות גדולה עבור טננט. בהינתן userIds, מחזיר מידע תצוגה מ-User / SSOUser.
+משמש את ווידג'ט התגובות להעשרת משתמשים שהופיעו זה עתה באמצעות אירוע נוכחות.
+ללא הקשר עמוד: הפרטיות נאכפת באופן אחיד (פרופילים פרטיים מוסתרים).
 
 ## פרמטרים
 
-| שם | סוג | מיקום | נדרש | תיאור |
+| שם | סוג | מיקום | חובה | תיאור |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | כן |  |
-| ids | string | query | כן | מופרדים בפסיקים userIds. |
+| ids | string | query | כן | userIds מופרדים בפסיקים. |
 
 ## תגובה
 
@@ -15,7 +15,7 @@ No page context: privacy is enforced uniformly (private profiles are masked).
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'getUsersInfo דוגמה'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל-getUsersInfo'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -29,7 +29,7 @@ $apiInstance = new FastComments\Client\Api\PublicApi(
 );
 
 $tenant_id = 'tenant_id_example'; // string
-$ids = 'ids_example'; // string | Comma-delimited userIds.
+$ids = 'ids_example'; // string | userIds מופרדים בפסיקים.
 
 
 try {

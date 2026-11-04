@@ -1,4 +1,3 @@
----
 Agora, vamos adicionar um bloco `Embed`.
 
 Vá para `Insert` no canto superior esquerdo:
@@ -41,5 +40,3 @@ Agora vamos alterar o tipo do widget `Embed` para `HTML`:
 </div>
 
 Agora você está pronto para o trecho de código FastComments Framer no próximo passo.
-
----

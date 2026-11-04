@@ -1,4 +1,3 @@
----
 获取租户的批量用户信息。给定 userIds，返回 User / SSOUser 的显示信息。
 由评论小部件使用，以丰富通过在线状态事件刚出现的用户信息。
 无页面上下文：隐私统一强制执行（私有档案将被屏蔽）。
@@ -42,5 +41,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.GetUsersInfo`: %v\n", resp)
 }
 [inline-code-end]
-
----

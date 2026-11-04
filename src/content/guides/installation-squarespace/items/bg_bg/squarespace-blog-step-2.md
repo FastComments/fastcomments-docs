@@ -31,5 +31,3 @@
     <div class="title">Поставете и запазете</div>
     <img class="screenshot-image" src="/images/installation-guides/squarespace-step-2-1-add-code-and-save.png" alt="Поставете и запазете" />
 </div>
-
----

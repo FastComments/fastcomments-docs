@@ -33,5 +33,3 @@ interface SubscriptionsGetResponse {
     subscriptions?: Subscription[]
 }
 [inline-code-end]
-
----

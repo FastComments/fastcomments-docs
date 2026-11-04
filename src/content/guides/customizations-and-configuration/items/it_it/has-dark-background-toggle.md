@@ -40,5 +40,3 @@ della modalità scura con il widget VanillaJS.
     }
 </style>
 [inline-code-end]
-
----

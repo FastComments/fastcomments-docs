@@ -20,5 +20,3 @@ if responseOpt.isSome:
   let resp = responseOpt.get()
   # использовать resp по необходимости
 [inline-code-end]
-
----

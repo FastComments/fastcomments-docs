@@ -1,4 +1,3 @@
----
 Sada kada smo preuzeli zip fajl, raspakujte ga u folder. Preuzeo sam podrazumevani `casper.zip` i raspakovao u `Downloads\casper` na Windows.
 
 Zatim, treba да се уверите да имате инсталирану LTS или новију верзију NodeJS-а. Možete je preuzeti ovde: https://nodejs.org/en/download/
@@ -24,5 +23,3 @@ Uspešan izlaz komande npm install će izgledati ovako (možete zanemariti upozo
 </div>
 
 Ovo će podesiti zavisnosti teme за naredne komande koje ћемо покренути. Такође, експорт зависи од тога да су зависности теме инсталиране; у супротном поновни увоз неће правилно радити.
-
----

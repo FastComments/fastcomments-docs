@@ -7,8 +7,8 @@ Ustvarjanje `TenantPackage` ima naslednje omejitve:
 - Naslednji parametri so obvezni:
     - `name`
     - `tenantId`
-    - `monthlyCostUSD` - Can be null.
-    - `yearlyCostUSD` - Can be null.
+    - `monthlyCostUSD` - Lahko je null.
+    - `yearlyCostUSD` - Lahko je null.
     - `maxMonthlyPageLoads`
     - `maxMonthlyAPICredits`
     - `maxMonthlyComments`
@@ -20,18 +20,18 @@ Ustvarjanje `TenantPackage` ima naslednje omejitve:
     - `hasDebranding`
     - `forWhoText`
     - `featureTaglines`
-    - `hasFlexPricing` - If true, then all `flex*` parameters are required.
-- The `name` may not be longer than `50 characters`.
-- Vsak element `forWhoText` ne sme biti daljši od `200 characters`.
-- Vsak element `featureTaglines` ne sme biti daljši od `100 characters`.
-- `TenantPackage` mora biti "manjši" od nadrejenega najemnika. Na primer, vsi `max*` parametri morajo imeti nižje vrednosti kot pri nadrejenem najemniku. 
-- White-label najemnik lahko ima **največ pet paketov**.
-- Samo najemniki z dostopom do white-label lahko ustvarijo `TenantPackage`.
-- Paketov ne smete dodajati svojemu najemniku. :)
+    - `hasFlexPricing` - Če je true, so obvezni vsi parametri `flex*`.
+- `name` ne sme biti daljši od `50 znakov`.
+- Vsak element `forWhoText` ne sme biti daljši od `200 znakov`.
+- Vsak element `featureTaglines` ne sme biti daljši od `100 znakov`.
+- `TenantPackage` mora biti "manjši" od nadrejenega najemnika. Na primer, vsi parametri `max*` morajo imeti nižje vrednosti kot nadrejeni najemnik. 
+- Najemnik z white labeling ima lahko **največ pet paketov**.
+- Samo najemniki z dostopom do white labeling lahko ustvarijo `TenantPackage`.
+- Paketov ne morete dodati svojemu najemniku. :)
 
-`TenantPackage` lahko ustvarimo na naslednji način:
+`TenantPackage` lahko ustvarimo takole:
 
-[inline-code-attrs-start title = 'Primer cURL zahteve za ustvarjanje TenantPackage prek e-pošte'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer ustvarjanja TenantPackage prek cURL'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request PATCH \
   --url 'https://fastcomments.com/api/v1/tenant-packages?tenantId=demo&API_KEY=DEMO_API_SECRET' \
@@ -87,10 +87,10 @@ interface TenantPackagePostQueryParams {
 [inline-code-start]
 interface TenantPackagePostResponse {
     status: 'success' | 'failed'
-    /** Vključeno ob neuspehu. **/
+    /** Included on failure. **/
     code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'unexpected-param' | 'not-found' 'white-labeling-not-allowed' | 'name-too-long' | 'for-who-text-too-long' | 'feature-tag-lines-too-long' | 'no-package' | 'invalid-package' | 'unauthorized' | 'child-tenant-too-large' | 'flex-param-missing' | 'unexpected-flex-param' | 'package-limit-reached' | 'flex-param-missing' | 'unexpected-flex-param'
-    /** Vključeno ob neuspehu. **/
+    /** Included on failure. **/
     reason?: string
-    tenantPackage?: TenantPackage; // Na uspeh vrnemo popoln ustvarjen paket najemnika.
+    tenantPackage?: TenantPackage; // Ob uspehu vrnemo celotno ustvarjeni paket najemnika.
 }
 [inline-code-end]

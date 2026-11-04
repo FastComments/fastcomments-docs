@@ -59,5 +59,3 @@ Oto działający przykład, w którym zmieniamy fragment strony (hash) i aktuali
     })();
 </script>
 [inline-code-end]
-
----

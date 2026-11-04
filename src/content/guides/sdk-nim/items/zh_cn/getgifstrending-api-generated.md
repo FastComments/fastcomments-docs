@@ -22,5 +22,3 @@ if maybeResponse.isSome:
   let gifs = maybeResponse.get()
   echo gifs
 [inline-code-end]
-
----

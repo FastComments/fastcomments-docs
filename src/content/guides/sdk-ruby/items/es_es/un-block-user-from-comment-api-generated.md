@@ -42,5 +42,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->un_block_user_from_comment: #{e}"
 end
 [inline-code-end]
-
----

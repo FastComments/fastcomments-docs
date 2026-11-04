@@ -1,4 +1,3 @@
----
 FastComments viser fremgang via badges på flere måder.
 
 For følgende eksempler vil vi have disse badges opsat:
@@ -20,4 +19,3 @@ Vi kan konfigurere `Newbie` til at erstatte `New User` og `Top Member` til at er
 ### Tjek af fremgang
 
 En bruger kan se fremgangen med at tjene en badge på deres profil. Øverst på deres profil vises, hvor langt de er i forhold til at opnå en badge (for eksempel hvor mange kommentarer de har skrevet og hvor mange de mangler at skrive, eller hvor længe de har været medlem, osv).
----

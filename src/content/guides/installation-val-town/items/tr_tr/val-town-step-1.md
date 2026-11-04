@@ -1,4 +1,4 @@
-The widget is a script tag and a container element, so it drops into whatever your val already renders. This example uses Hono JSX, which is what Val Town's HTTP templates use.
+Widget bir script etiketi ve bir konteyner elemanından oluşur, bu nedenle val'inizin zaten render ettiği her şeye doğrudan yerleştirilebilir. Bu örnek, Val Town'un HTTP şablonlarının kullandığı Hono JSX'i kullanır.
 
 [inline-code-attrs-start title = 'HTTP val içinde yorum widget\'ı'; type='javascript' inline-code-attrs-end]
 [inline-code-start]
@@ -37,17 +37,17 @@ app.get("/:slug", (c) => {
 export default app.fetch;
 [inline-code-end]
 
-## Göndermeden önce bir urlId seçin
+## Yayınlamadan önce bir urlId seçin
 
-`urlId` decides which thread a comment lands in. Leave it unset and it defaults to a cleaned version of the current page URL, which is exactly the thing that changes on Val Town: a val has a long `*.web.val.run` hostname until you claim a subdomain, branches get their own URLs, and renaming a page changes the path. Each variation silently becomes a separate, empty thread, and the symptom reads as "my comments disappeared".
+`urlId`, bir yorumun hangi konuya düşeceğini belirler. Ayarlanmamış bırakılırsa, geçerli sayfa URL'sinin temizlenmiş bir sürümüne varsayılan olur — bu da tam olarak Val Town'da değişen şeydir: bir val, bir alt alan adı talep edene kadar uzun bir `*.web.val.run` ana makine adına sahiptir, dallar kendi URL'lerini alır ve bir sayfayı yeniden adlandırmak yolu değiştirir. Her varyasyon sessizce ayrı ve boş bir konu haline gelir ve belirti "yorumlarım kayboldu" şeklinde okunur.
 
-Set it to something stable that you control, like the post slug or a database id, as above. Pass `url` too, so notification emails and the moderation tools can link back to the real page.
+Yukarıdaki gibi, kontrol ettiğiniz sabit bir değere ayarlayın; örneğin yazı slug'ı veya bir veritabanı kimliği. Ayrıca `url` değerini de iletin, böylece bildirim e-postaları ve moderasyon araçları gerçek sayfaya bağlantı verebilir.
 
-## JavaScript olmadan yorumları koruma
+## JavaScript olmadan yorumları korumak
 
-FastComments renders a full thread server-side, which a val can drop into a `<noscript>` block:
+FastComments, tam bir konuyu sunucu tarafında render eder; bir val bunu bir `<noscript>` bloğuna yerleştirebilir:
 
-[inline-code-attrs-start title = 'JavaScript\'siz geri dönüş'; type='html' inline-code-attrs-end]
+[inline-code-attrs-start title = 'JavaScript olmadan yedek'; type='html' inline-code-attrs-end]
 [inline-code-start]
 <noscript>
   <iframe src="https://fastcomments.com/ssr/comments?tenantId=demo&urlId=POST_SLUG&url=PAGE_URL"
@@ -56,6 +56,4 @@ FastComments renders a full thread server-side, which a val can drop into a `<no
 </noscript>
 [inline-code-end]
 
-URL-encode the parameters. The server-side version supports anonymous and logged-in commenting, SSO, and nested replies.
-
----
+Parametreleri URL-encode edin. Sunucu tarafı sürüm, anonim ve oturum açmış yorum yapmayı, SSO'yu ve iç içe yanıtları destekler.

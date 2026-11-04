@@ -33,5 +33,3 @@ api->createCommentPublic(
         auto commentId = res->commentId;
     });
 [inline-code-end]
-
----

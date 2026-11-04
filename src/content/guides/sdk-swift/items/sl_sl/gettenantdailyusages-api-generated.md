@@ -36,5 +36,3 @@ DefaultAPI.getTenantDailyUsages(tenantId: tenantId, options: DefaultAPI.GetTenan
     }
 }
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 Standaard staat FastComments gebruikers toe hun reacties te bewerken.
 
 Het is echter mogelijk dit te voorkomen.
@@ -9,5 +8,3 @@ Op de widget‑aanpassingspagina, zie de optie "Bewerken uitschakelen".
 
 - Dit heeft alleen invloed op gewone reageerders en niet op moderators of beheerders, die nog steeds kunnen bewerken.
 - Dit zal ook invloed hebben op API‑integraties wanneer `contextUserId` wordt doorgegeven. 
-
----

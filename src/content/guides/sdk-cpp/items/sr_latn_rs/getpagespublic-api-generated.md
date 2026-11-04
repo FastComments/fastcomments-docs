@@ -1,13 +1,13 @@
-List pages for a tenant. Used by the FChat desktop client to populate its room list.  
-Requires `enableFChat` to be true on the resolved custom config for each page.  
-Pages that require SSO are filtered against the requesting user's group access.
+Nabera stranice za zakupca (tenant). Koristi FChat desktop klijent za popunjavanje liste soba.
+Zahteva da `enableFChat` bude true na razrešenoj prilagođenoj konfiguraciji za svaku stranicu.
+Stranice koje zahtevaju SSO se filtriraju prema pristupu grupama korisnika koji šalje zahtev.
 
 ## Parametri
 
-| Name | Type | Required | Description |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| options | const GetPagesPublicOptions& | Yes |  |
+| tenantId | string | Da |  |
+| options | const GetPagesPublicOptions& | Da |  |
 
 ## Odgovor
 
@@ -15,7 +15,7 @@ Vraća: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-
 
 ## Primer
 
-[inline-code-attrs-start title = 'Primer getPagesPublic'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getPagesPublic Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
 GetPagesPublicOptions options;

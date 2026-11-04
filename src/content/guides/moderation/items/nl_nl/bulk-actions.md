@@ -1,14 +1,9 @@
-Bij moderatie komt het soms voor dat we een reeks acties in één keer willen uitvoeren. Bijvoorbeeld misschien vind je een
-reeks reacties die je wilt verwijderen, als spam wilt markeren, de goedkeuring wilt intrekken, of simpelweg als beoordeeld wilt markeren. In plaats van op "verwijderen" en "bevestigen" te klikken
-op elke reactie, is er een betere manier.
+Bij het modereren zijn er soms een reeks acties die we allemaal tegelijk willen uitvoeren. Misschien vind je bijvoorbeeld een reeks reacties die je wilt verwijderen, als spam markeren, de goedkeuring ongedaan maken, of simpelweg als bekeken markeren. In plaats van op "verwijderen" en "bevestigen" te klikken bij elke reactie, is er een betere manier.
 
-Next to each comment is a checkbox, which we can click to start a bulk action. From there we can pick a bulk action and confirm it.
+Naast elke reactie bevindt zich een selectievakje dat we kunnen aanklikken om een bulkactie te starten. Van daaruit kunnen we een bulkactie kiezen en bevestigen.
 
-Je ziet de voortgang terwijl je bulkacties worden uitgevoerd, en je kunt ctrl+z gebruiken om elke bulkactie ongedaan te maken. Bulkacties kunnen ook
-gepauzeerd, gestopt of hervat worden.
+Je ziet de voortgang terwijl je bulkacties worden uitgevoerd, en je kunt ctrl+z gebruiken om een bulkactie ongedaan te maken. Bulkacties kunnen ook worden gepauzeerd, gestopt of hervat.
 
-### Selecteren buiten de zichtbare reacties
+### Selecteren voorbij zichtbare reacties
 
-Als je het selectievakje "Alles selecteren" aanklikt, selecteert het standaard alleen de zichtbare reacties op de pagina, maar het zal
-je een optie bieden om alle reacties op de server te selecteren die overeenkomen met je filters. Dus zelfs als je moet goedkeuren, verwijderen, enz
-miljoenen reacties, kun je dat met een paar klikken doen.
+Als je het selectievakje "Alles selecteren" aanvinkt, worden standaard alleen de zichtbare reacties op de pagina geselecteerd, maar je krijgt de optie om alle reacties op de server te selecteren die aan je filters voldoen. Dus zelfs als je miljoenen reacties moet goedkeuren, verwijderen, enz., kun je dat met een paar klikken doen.

@@ -32,5 +32,3 @@ try {
     print('Exception when calling PublicApi->deleteCommentPublic: $e\n');
 }
 [inline-code-end]
-
----

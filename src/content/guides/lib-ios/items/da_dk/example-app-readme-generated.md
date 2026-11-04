@@ -1,4 +1,3 @@
----
 Dette repository indeholder en komplet eksempel-app i `ExampleApp/` med demonstrationer af:
 
 - Trådede kommentarer med SSO og brugerdefinerede temaer
@@ -6,4 +5,3 @@ Dette repository indeholder en komplet eksempel-app i `ExampleApp/` med demonstr
 - Live chat
 - Enkle og sikre SSO-forløb
 - Brugerdefinerede værktøjsknapper (kommentarer og feed)
----

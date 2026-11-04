@@ -7,5 +7,3 @@ een nieuw tabblad om die afbeelding volledig weer te geven. Het instellen van de
 
 Als u niet van plan bent de klik op de afbeelding zelf af te handelen (zie [onImageClicked](#callbacks)), raden we aan dit te combineren met wat styling
 om te voorkomen dat het lijkt alsof de afbeelding aangeklikt kan worden.
-
----

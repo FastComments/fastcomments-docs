@@ -1,4 +1,3 @@
----
 Zbiorcze informacje o użytkownikach dla tenant'a. Dla podanych userIds zwraca informacje wyświetlane z User / SSOUser.
 Używane przez widget komentarzy do wzbogacenia użytkowników, którzy właśnie pojawili się poprzez zdarzenie obecności.
 Brak kontekstu strony: prywatność jest egzekwowana jednolicie (prywatne profile są maskowane).
@@ -47,5 +46,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

@@ -5,5 +5,3 @@
 ## Αποθετήριο
 
 [Δείτε στο GitHub](https://github.com/FastComments/fastcomments-laravel)
-
----

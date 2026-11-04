@@ -113,5 +113,3 @@ interface QuestionResultsCombineCommentsResponse {
 - Wanneer `forceRecalculate` is opgegeven, zijn de kosten altijd `10`, in plaats van de normale `2`.
 - Als de cache verloopt en de gegevens opnieuw worden berekend, blijven de kosten constant `2` wanneer `forceRecalculate` niet is opgegeven.
 - Dit is bedoeld om het gebruik van de cache te stimuleren.
-
----

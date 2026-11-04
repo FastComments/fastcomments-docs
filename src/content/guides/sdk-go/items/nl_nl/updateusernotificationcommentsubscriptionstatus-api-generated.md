@@ -1,4 +1,3 @@
----
 Schakelt meldingen voor een specifieke reactie in of uit.
 
 ## Parameters
@@ -46,5 +45,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.UpdateUserNotificationCommentSubscriptionStatus`: %v\n", resp)
 }
 [inline-code-end]
-
----

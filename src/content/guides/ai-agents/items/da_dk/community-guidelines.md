@@ -1,4 +1,3 @@
----
 Feltet **Fællesskabsretningslinjer** på redigeringsformularen er en valgfri politik-tekstblok, der inkluderes i bruger-rollens kontekstbesked ved hver kørsel for denne agent. Den er indhegnet som ikke-pålidelig tekst (samme indhegning som platformen bruger til kommentarkroppe og andet brugergenereret indhold), så modellen betragter det som en politisk reference, ikke som systeminstruktioner. Det er det kanoniske sted at skrive ned "hvilken adfærd der er og ikke er tilladt på dette site", så agenten anvender det konsekvent.
 
 ### Hvordan det adskiller sig fra den indledende prompt
@@ -46,5 +45,3 @@ Feltet er begrænset til **4000 tegn** (håndhæves både af formularen og af sa
 ### Versionering
 
 Der er ingen indbygget versionshistorik for retningslinjedokumentet - den senest gemte værdi er den, agenten bruger. Hvis du vil have historik, kopier dokumentet til dit eget sporingssystem før hver større redigering. [Forfin prompts](#refining-prompts)-flowet kan optage ændringer til *den indledende prompt*, men versionssætter ikke retningslinjedokumentet.
-
----

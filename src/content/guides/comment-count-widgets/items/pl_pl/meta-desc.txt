@@ -1,3 +1,1 @@
----
 Wyświetl licznik komentarzy w czasie rzeczywistym obok dowolnego wpisu lub produktu za pomocą samodzielnego widgetu, pojedynczo na stronie lub masowo w całej liście.
----

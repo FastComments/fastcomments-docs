@@ -1,13 +1,13 @@
-Bulk user info for a tenant. Given userIds, return display info from User / SSOUser.
-Used by the comment widget to enrich users that just appeared via a presence event.
-No page context: privacy is enforced uniformly (private profiles are masked).
+Обавештаји о корисницима у групи за једног станара (tenant). За дате userIds, враћа приказ информација из User / SSOUser.
+Користи га виџет за коментаре да обогати кориснике који су управо појавили преко догађаја присуства.
+Без контекста странице: приватност се спроводи једнолико (приватни профили су маскирани).
 
 ## Параметри
 
-| Име | Тип | Обавезно | Опис |
-|------|------|----------|------|
-| tenantId | string | Yes |  |
-| ids | string | No |  |
+| Назив | Тип | Обавезно | Опис |
+|------|------|----------|-------------|
+| tenantId | string | Да |  |
+| ids | string | Не |  |
 
 ## Одговор
 

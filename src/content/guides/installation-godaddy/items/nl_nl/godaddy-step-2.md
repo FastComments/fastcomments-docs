@@ -39,5 +39,3 @@ Klik op Done rechtsboven:
 </div>
 
 Dat is alles voor stap twee!
-
----

@@ -1,4 +1,3 @@
----
 Par défaut, la taille de page FastComments est `30`. Cela inclut les réponses dans les fils de discussion.
 
 La taille de page peut être personnalisée dans l[Widget Configuration UI](https://fastcomments.com/auth/my-account/customize-widget) avec des tailles variables allant de `10` à `200`.
@@ -14,5 +13,3 @@ Un exemple de configuration est affiché ci‑dessous :
 Les tailles de page peuvent être personnalisées globalement, ou par domaine, ou par page, en créant différentes règles de personnalisation.
 
 Cela affectera tous les clients, intégrations et frameworks que vous pourriez utiliser pour afficher les commentaires via notre plateforme.
-
----

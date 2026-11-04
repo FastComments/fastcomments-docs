@@ -30,5 +30,3 @@ try {
     print('Exceptie bij het aanroepen van DefaultApi->getPageByURLId: $e\n');
 }
 [inline-code-end]
-
----

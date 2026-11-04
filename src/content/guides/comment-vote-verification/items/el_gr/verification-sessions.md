@@ -1,11 +1,9 @@
-FastComments εφαρμόζει μια μοναδική λύση για την επαλήθευση χρηστών για να μειώσει τον αριθμό των ηλεκτρονικών μηνυμάτων
-που αποστέλλονται στους χρήστες σας — τις ονομάζουμε Συνεδρίες Επαλήθευσης.
+Το FastComments υλοποιεί μια μοναδική λύση επαλήθευσης χρηστών για τη μείωση των email που αποστέλλονται στους χρήστες σας, την οποία ονομάζουμε Verification Sessions.
 
-If a new user leaves ten comments and votes twice on the same page, in the same browser window, there is no
-need to send them a dozen confirmation emails.
+Αν ένας νέος χρήστης αφήνει δέκα σχόλια και ψηφίζει δύο φορές στην ίδια σελίδα, στο ίδιο παράθυρο περιήγησης, δεν υπάρχει λόγος να του σταλούν μια ντουζίνα email επιβεβαίωσης.
 
-Αντίθετα, το FastComments θα στείλει μόνο ένα μήνυμα επαλήθευσης σε αυτό το σενάριο.
+Αντ' αυτού, το FastComments θα στείλει μόνο ένα email επαλήθευσης σε αυτό το σενάριο.
 
-This does not require cookies.
+Αυτό δεν απαιτεί cookies.
 
-If the browser window is closed, or the user navigates away, that is considered the end of the verification session.
+Αν το παράθυρο περιήγησης κλείσει ή ο χρήστης μεταβεί αλλού, αυτό θεωρείται το τέλος της συνεδρίας επαλήθευσης.

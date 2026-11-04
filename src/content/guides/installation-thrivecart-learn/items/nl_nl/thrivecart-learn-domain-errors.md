@@ -1,4 +1,3 @@
----
 U kunt een autorisatiefout krijgen, zoals het volgende:
 
 <div class="screenshot white-bg">
@@ -13,5 +12,3 @@ Dit komt omdat FastComments niet weet dat uw account op dit domein gebruikt mag 
 In dit geval is de oplossing eenvoudig. U hoeft alleen uw site toe te voegen aan uw FastComments.com account.
 
 [Ga hierheen om uw site aan uw account toe te voegen.](https://fastcomments.com/auth/my-account/configure-domains)
-
----

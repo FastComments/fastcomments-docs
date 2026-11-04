@@ -1,4 +1,3 @@
----
 Če želite izvedeti omejitev števila domen v vašem računu, obiščite [Stran za obračunavanje](https://fastcomments.com/auth/my-account/billing-info).
 
 ### Cenik
@@ -19,5 +18,3 @@ V primeru, da ste na ravni z petimi milijoni mesečnih prikazov strani in imate 
 Povzetek: omejitve prometa veljajo na ravni računa, ne na ravni domene.
 
 Upoštevajte, da nudimo tudi prilagojene pakete za spletna mesta različnih velikosti; preprosto se obrnite na podporo.
-
----

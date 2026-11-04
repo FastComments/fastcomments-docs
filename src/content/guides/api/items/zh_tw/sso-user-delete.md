@@ -64,5 +64,3 @@ interface SSOUsersResponse {
     user?: SSOUser; // 成功時會回傳被移除的使用者。
 }
 [inline-code-end]
-
----

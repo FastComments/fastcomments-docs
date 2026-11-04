@@ -1,27 +1,27 @@
-Custom react counts for a page, optionally with the users who reacted.
+自訂頁面的反應計數，可選擇包含做出反應的使用者。
 
-## Parameters
+## 參數
 
 | 名稱 | 類型 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| urlId | string | query | Yes |  |
-| includeUserInfo | string | query | No | "\"public\" 會省略具有私人檔案的使用者，\"include-private\" 會包含他們。" |
+| tenantId | string | query | 是 |  |
+| urlId | string | query | 是 |  |
+| includeUserInfo | string | query | 否 | "public" 會省略私人個人資料的使用者，"include-private" 則會包含他們。 |
 
-## Response
+## 回應
 
-Returns: [`GetPageReactsAPIResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetPageReactsAPIResponse.swift)
+回傳：[`GetPageReactsAPIResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetPageReactsAPIResponse.swift)
 
-## Example
+## 範例
 
 [inline-code-attrs-start title = 'getPageReacts 範例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 以下程式碼範例仍屬測試版。若有任何問題，請透過 http://github.com/OpenAPITools/openapi-generator/issues/new 回報
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let urlId = "urlId_example" // String | 
-let includeUserInfo = PageReactIncludeUserInfo() // PageReactIncludeUserInfo | \"public\" 會省略具有私人檔案的使用者，\"include-private\" 會包含他們。（可選）
+let includeUserInfo = PageReactIncludeUserInfo() // PageReactIncludeUserInfo | \"public\" 會省略私人個人資料的使用者，\"include-private\" 則會包含他們。(optional)
 
 DefaultAPI.getPageReacts(tenantId: tenantId, urlId: urlId, includeUserInfo: includeUserInfo) { (response, error) in
     guard error == nil else {

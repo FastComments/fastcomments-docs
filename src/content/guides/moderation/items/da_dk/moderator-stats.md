@@ -10,5 +10,3 @@ Denne side vil spore forskellige statistikker:
 - Kommentarer markeret som spam
 - Brugere udelukket
 - Deres invitationsstatus (Accepteret eller afventende)
-
----

@@ -1,163 +1,163 @@
-A `Comment` object represents a comment left by a user.
+Bir `Comment` nesnesi, bir kullanıcı tarafından bırakılan bir yorumu temsil eder.
 
-The relationship between parent and child comments is defined via `parentId`.
+Üst ve alt yorumlar arasındaki ilişki `parentId` üzerinden tanımlanır.
 
-The structure for the Comment object is as follows:
+Comment nesnesinin yapısı aşağıdaki gibidir:
 
-[inline-code-attrs-start title = 'Yorum Yapısı'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Comment Yapısı'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface Comment {
-    /** READONLY: Set to true if the spam engine determined the comment was spam. **/
+    /** READONLY: Spam motoru yorumun spam olduğunu belirlediyse true olarak ayarlanır. **/
     aiDeterminedSpam?: boolean
-    /** Whether the comment is approved to show. Set to true when saving the comment, else it will be hidden. **/
+    /** Yorumun gösterilmesi onaylandı mı. Yorum kaydedilirken true olarak ayarlanır, aksi halde gizlenir. **/
     approved?: boolean
-    /** The user's avatar. **/
+    /** Kullanıcının avatarı. **/
     avatarSrc?: string
-    /** Child comments. Not populated in all scenarios. Used when asTree is set to true via the API. **/
+    /** Alt yorumlar. Her senaryoda doldurulmaz. API üzerinden asTree true olarak ayarlandığında kullanılır. **/
     children: Comment[]
-    /** The commenter's raw comment. **/
+    /** Yorum yapan kişinin ham yorumu. **/
     comment: string
-    /** READONLY: The commenter's comment parsed into HTML. **/
+    /** READONLY: Yorum yapan kişinin yorumu HTML'e dönüştürülmüş hali. **/
     commentHTML?: string
-    /** The commenter's email. Required if anonymous commenting is off. **/
+    /** Yorum yapan kişinin e-postası. Anonim yorumlama kapalıysa gereklidir. **/
     commenterEmail?: string
-    /** The commenter's link (for example, their blog). **/
+    /** Yorum yapan kişinin bağlantısı (örneğin blogu). **/
     commenterLink?: string
-    /** The commenter's name. Always required. If not available, set to something like "Anonymous". **/
+    /** Yorum yapan kişinin adı. Her zaman gereklidir. Mevcut değilse "Anonymous" gibi bir değere ayarlanır. **/
     commenterName: string
-    /** The date the comment was left, in UTC epoch. **/
+    /** Yorumun bırakıldığı tarih, UTC epoch cinsinden. **/
     date: number
-    /** The "display label" for the comment - for example "Admin", "Moderator", or something like "VIP User". **/
+    /** Yorum için "görüntüleme etiketi" - örneğin "Admin", "Moderator" veya "VIP User" gibi. **/
     displayLabel?: string
-    /** The domain the comment was posted on. **/
+    /** Yorumun gönderildiği alan adı. **/
     domain?: string
-    /** READONLY: The number of times the comment was flagged. **/
+    /** READONLY: Yorumun bayrak eklenme sayısı. **/
     flagCount?: number
-    /** The #hashtags written in the comment that were successfully parsed. You can also manually add hashtags, for querying, but they won't display in the comment text automatically. **/
+    /** Yorumda yazılan ve başarıyla ayrıştırılan #hashtags. Sorgulama amacıyla manuel olarak da hashtag ekleyebilirsiniz, ancak bunlar yorum metninde otomatik olarak görüntülenmez. **/
     hashTags?: CommentHashTag[]
-    /** READONLY: Does the comment contain images? **/
+    /** READONLY: Yorum görseller içeriyor mu? **/
     hasImages?: boolean
-    /** READONLY: Does the comment contain links? **/
+    /** READONLY: Yorum bağlantılar içeriyor mu? **/
     hasLinks?: boolean
-    /** READONLY: The unique comment id. **/
+    /** READONLY: Benzersiz yorum kimliği. **/
     id: string
-    /** Only on create! This is hashed for storage. **/
+    /** Sadece oluşturma sırasında! Bu değer depolama için hash'lenir. **/
     ip?: string
-    /** READONLY: Did the current user block the user that wrote this comment? **/
+    /** READONLY: Mevcut kullanıcı, bu yorumu yazan kullanıcıyı engelledi mi? **/
     isBlocked?: boolean
-    /** READONLY: Is the comment by an admin? Automatically set based on userId. **/
+    /** READONLY: Yorum bir yönetici tarafından mı yapıldı? userId'ye göre otomatik olarak ayarlanır. **/
     isByAdmin?: boolean
-    /** READONLY: Is the comment by a moderator? Automatically set based on userId. **/
+    /** READONLY: Yorum bir moderatör tarafından mı yapıldı? userId'ye göre otomatik olarak ayarlanır. **/
     isByModerator?: boolean
-    /** Set to true if the comment was soft deleted (placeholder had to be left due to some other configuration). **/
+    /** Yorum yumuşak silindi ise true olarak ayarlanır (başka bir yapılandırma nedeniyle yer tutucu bırakılması gerekti). **/
     isDeleted?: boolean
-    /** Set to true if the user's account was deleted and the comment had to be retained. **/
+    /** Kullanıcının hesabı silindiğinde ve yorumun korunması gerektiğinde true olarak ayarlanır. **/
     isDeletedUser?: boolean
-    /** READONLY: Is the flagged by the currently logged-in user (contextUserId)? **/
+    /** READONLY: Şu anda oturum açmış kullanıcı (contextUserId) tarafından bayraklandı mı? **/
     isFlagged?: boolean
-    /** Is the comment pinned? **/
+    /** Yorum sabitlendi mi? **/
     isPinned?: boolean
-    /** Is the comment locked? When true, no one (including moderators) can reply, edit, or delete it until it is unlocked. **/
+    /** Yorum kilitli mi? True olduğunda, kilidi açılana kadar kimse (moderatörler dahil) yanıt veremez, düzenleyemez veya silemez. **/
     isLocked?: boolean
-    /** Is the comment spam? **/
+    /** Yorum spam mi? **/
     isSpam?: boolean
-    /** READONLY: Is the comment voted down for the current user (contextUserId)? **/
+    /** READONLY: Yorum, mevcut kullanıcı (contextUserId) için aşağı oylandı mı? **/
     isVotedDown?: boolean
-    /** READONLY: Is the comment voted up for the current user (contextUserId)? **/
+    /** READONLY: Yorum, mevcut kullanıcı (contextUserId) için yukarı oylandı mı? **/
     isVotedUp?: boolean
-    /** The locale the comment is in. If not provided, will be derived from the language accept HTTP header. **/
+    /** Yorumun bulunduğu yerel ayar. Sağlanmazsa, HTTP accept-language başlığından türetilir. **/
     locale?: 'de_de' | 'en_us' | 'es_es' | 'fr_fr' | 'it_it' | 'ja_jp' | 'ko_kr' | 'pl_pl' | 'pt_br' | 'ru_ru' | 'tr_tr' | 'zh_cn' | 'zh_tw'
-    /** READONLY: The @mentions written in the comment that were successfully parsed. **/
+    /** READONLY: Yorumda yazılan ve başarıyla ayrıştırılan @mentions. **/
     mentions?: CommentUserMention[]
-    /** Optional metadata associated with the comment. **/
+    /** Yorumla ilişkili isteğe bağlı meta veriler. **/
     meta?: Record<string, string | number | boolean>
-    /** The optional list of moderation group ids associated with this comment. **/
+    /** Bu yorumla ilişkili isteğe bağlı moderasyon grubu kimlikleri listesi. **/
     moderationGroupIds?: string[]|null
-    /** READONLY: The id of the vote object that corresponds to the vote from the current user (contextUserId) on this comment. **/
+    /** READONLY: Bu yorum üzerindeki mevcut kullanıcının (contextUserId) oylamasına karşılık gelen oy nesnesinin kimliği. **/
     myVoteId?: string
-    /** Whether notifications were sent for this comment for commenters. To prevent notifications being sent on imports, set this to true. **/
+    /** Bu yorum için yorum yapanlara bildirim gönderilip gönderilmediği. İçe aktarımlarda bildirim gönderilmesini önlemek için bunu true olarak ayarlayın. **/
     notificationSentForParent?: boolean
-    /** Whether notifications were sent for this comment for tenant users. To prevent notifications being sent on imports, set this to true. **/
+    /** Bu yorum için kiracı (tenant) kullanıcılarına bildirim gönderilip gönderilmediği. İçe aktarımlarda bildirim gönderilmesini önlemek için bunu true olarak ayarlayın. **/
     notificationSentForParentTenant?: boolean
-    /** The title of the page this comment was on. **/
+    /** Bu yorumun bulunduğu sayfanın başlığı. **/
     pageTitle?: string
-    /** If we're replying to a comment, this is the ID that we are replying to. **/
+    /** Bir yoruma yanıt veriyorsak, bu yanıt verdiğimiz yorumun kimliğidir. **/
     parentId?: string|null
-    /** Whether the comment is marked reviewed. **/
+    /** Yorum incelendi olarak işaretlendi mi. **/
     reviewed: boolean
-    /** The tenant id where the comment belongs. **/
+    /** Yorumun ait olduğu kiracı (tenant) kimliği. **/
     tenantId: string
-    /** The user that wrote the comment. Created automatically when saving a comment with a name/email. **/
+    /** Yorumu yazan kullanıcı. Ad/e-posta ile bir yorum kaydedilirken otomatik olarak oluşturulur. **/
     userId?: string|null
-    /** The URL to the location that this comment is visible, like a blog post. **/
+    /** Bu yorumun göründüğü konumun URL'si, örneğin bir blog yazısı. **/
     url: string
-    /** A "cleaned" version of the urlId you passed us. When saving, you specify this field, but when you fetch the comment back this will be "cleaned" and your original value moved to "urlIdRaw". **/
+    /** Bize ilettiğiniz urlId'nin "temizlenmiş" bir sürümü. Kaydederken bu alanı belirtirsiniz, ancak yorumu geri getirdiğinizde bu "temizlenmiş" olur ve orijinal değeriniz "urlIdRaw" alanına taşınır. **/
     urlId: string
-    /** READONLY: The original urlId you passed us. **/
+    /** READONLY: Bize ilettiğiniz orijinal urlId. **/
     urlIdRaw?: string
-    /** Is the user and this comment verified? **/
+    /** Kullanıcı ve bu yorum doğrulanmış mı? **/
     verified: boolean
-    /** Number of votes up. **/
+    /** Yukarı oy sayısı. **/
     votesUp?: number
-    /** Number of votes down. **/
+    /** Aşağı oy sayısı. **/
     votesDown?: number
-    /** The "karma" of the comment (= votes up - votes down). **/
+    /** Yorumun "karma" değeri (= yukarı oylar - aşağı oylar). **/
     votes?: number
 }
 [inline-code-end]
 
-Some of these fields are marked `READONLY` - these are returned by the API but cannot be set.
+Bu alanlardan bazıları `READONLY` olarak işaretlenmiştir - bunlar API tarafından döndürülür ancak ayarlanamaz.
 
 ### Yorum Metni Yapısı
 
-Comments are written in a FastComments flavor of markdown, which is just markdown plus traditional `bbcode` style tags for images, like `[img]path[/img]`.
+Yorumlar, FastComments'a özgü bir markdown lehçesiyle yazılır; bu, markdown'a artı görseller için geleneksel `bbcode` tarzı etiketlerin eklenmiş halidir, örneğin `[img]path[/img]`.
 
-Text is stored in two fields. The text the user entered is stored unmodified in the `comment` field. This is rendered and stored in the `commentHTML` field.
+Metin iki alanda saklanır. Kullanıcının girdiği metin, `comment` alanında değiştirilmeden saklanır. Bu, işlenip `commentHTML` alanında saklanır.
 
-The allowed HTML tags are `b, u, i, strike, pre, span, code, img, a, strong, ul, ol, li, and br`.
+İzin verilen HTML etiketleri `b, u, i, strike, pre, span, code, img, a, strong, ul, ol, li, ve br`'dir.
 
-It's recommended to render the HTML, since it is a very small subset of HTML, building a renderer is pretty straightforward. There are multiple libraries for React Native and Flutter, for instance, to help with this
+HTML'i işlemesi önerilir, çünkü çok küçük bir HTML alt kümesidir ve bir işleyici (renderer) oluşturmak oldukça basittir. Örneğin, React Native ve Flutter için bununla yardımcı olabilecek birden fazla kütüphane vardır.
 
-You may choose to render the un-normalized value of the `comment` field. [An example parser is here.](https://github.com/FastComments/fastcomments-code-examples/blob/master/custom-client/client/parse-comment.js).
+`comment` alanının normalize edilmemiş değerini işlemeyi seçebilirsiniz. [Örnek bir ayrıştırıcı burada.](https://github.com/FastComments/fastcomments-code-examples/blob/master/custom-client/client/parse-comment.js).
 
-The example parser could also be adjusted to work with HTML, and transform the HTML tags into expected elements to render for your platform. 
+Örnek ayrıştırıcı, HTML ile çalışacak ve HTML etiketlerini platformunuz için işlenecek beklenen öğelere dönüştürecek şekilde de uyarlanabilir.
 
 ### Etiketleme
 
-When users are tagged in a comment, the information is stored in a list called `mentions`. Each object in that list
-has the following structure.
+Kullanıcılar bir yorumda etiketlendiğinde, bilgi `mentions` adlı bir listede saklanır. Bu listedeki her nesne
+aşağıdaki yapıya sahiptir.
 
-[inline-code-attrs-start title = 'Yorum Etiketleme Nesnesi'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Comment Mentions Nesnesi'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentUserMention {
-    /** The user id. For SSO users, this will have your tenant id prefixed. **/
+    /** Kullanıcı kimliği. SSO kullanıcıları için, bu önüne kiracı (tenant) kimliğiniz eklenmiş şekilde olur. **/
     id: string
-    /** The final @mention tag text, including the @ symbol. **/
+    /** @ sembolü dahil, nihai @mention etiket metni. **/
     tag: string
-    /** The original @mention tag text, including the @ symbol. **/
+    /** @ sembolü dahil, orijinal @mention etiket metni. **/
     rawTag: string
-    /** What type of user was tagged. user = FastComments.com account. sso = SSOUser. **/
+    /** Etiketlenen kullanıcı türü. user = FastComments.com hesabı. sso = SSOUser. **/
     type: 'user'|'sso'
-    /** If the user opts out of notifications, this will still be set to true. **/
+    /** Kullanıcı bildirimlerden çıkış yapmış olsa bile, bu yine de true olarak ayarlanır. **/
     sent: boolean
 }
 [inline-code-end]
 
 ### HashTags
 
-When hashtags are used and successfully parsed, the information is stored in a list called `hashTags`. Each object in that list
-has the following structure. Hashtags can also be manually added to the comment `hashTags` array for querying, if `retain` is set.
+Hashtag'ler kullanıldığında ve başarıyla ayrıştırıldığında, bilgi `hashTags` adlı bir listede saklanır. Bu listedeki her nesne
+aşağıdaki yapıya sahiptir. `retain` ayarlanmışsa, hashtag'ler sorgulama amacıyla yorumun `hashTags` dizisine manuel olarak da eklenebilir.
 
-[inline-code-attrs-start title = 'Yorum HashTag Nesnesi'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Comment HashTag Nesnesi'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentHashTag {
-    /** The hashtag id. **/
+    /** Hashtag kimliği. **/
     id: string
-    /** The final #hashtag tag text, including the # symbol. **/
+    /** # sembolü dahil, nihai #hashtag etiket metni. **/
     tag: string
-    /** If the hashtag is associated with a custom URL, this will be defined. **/
+    /** Hashtag özel bir URL ile ilişkilendirilmişse, bu tanımlı olacaktır. **/
     url?: string
-    /** If we should retain the hashtag, even if it does not exist in the comment text, when the comment is updated. Useful for tagging comments without changing comment text. **/
+    /** Yorum güncellendiğinde, hashtag yorum metninde bulunmasa bile korunması gerekiyorsa. Yorum metnini değiştirmeden yorumları etiketlemek için kullanışlıdır. **/
     retain?: boolean
 }
 [inline-code-end]

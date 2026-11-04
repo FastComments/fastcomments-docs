@@ -5,5 +5,3 @@
 ## Хранилище
 
 [Вижте в GitHub](https://github.com/FastComments/fastcomments-11ty)
-
----

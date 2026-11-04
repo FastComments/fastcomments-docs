@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Ime | Tip | Obavezno | Opis |
@@ -24,5 +23,3 @@ let (apiRes, httpRes) = client.deleteEmailTemplateRenderError(
 if apiRes.isSome:
   let empty = apiRes.get()
 [inline-code-end]
-
----

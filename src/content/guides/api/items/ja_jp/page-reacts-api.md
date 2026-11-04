@@ -1,40 +1,40 @@
-Page Reactsは、ユーザーがページに「いいね」したり、独自のリアクション画像セットでリアクションできるようにします。The [Page Reacts widget](/guide-page-reacts.html) と the Floating Likes widget はこれらのエンドポイント上に構築されており、独自のいいねボタンを作成するために自分で呼び出すこともできます。
+Page Reacts(ページリアクション)を使用すると、ユーザーがページに「いいね」をしたり、独自のリアクション画像セットで反応したりできるようになります。[Page Reactsウィジェット](/guide-page-reacts.html)とFloating Likesウィジェットはこれらのエンドポイントを基盤としており、独自の「いいね」ボタンを構築するために自分で呼び出すこともできます。
 
-このガイドの他の部分とは異なり、Page Reacts のエンドポイントは公開されています。ユーザーのブラウザから呼び出され、API キーは不要で、API クレジットも消費しません。各リアクションはリクエストを行ったユーザーに紐づくため、ユーザーは自分のリアクションのみを追加または削除できます。
+このガイドの他の部分とは異なり、Page Reactsのエンドポイントは公開されています。これらはユーザーのブラウザから呼び出され、APIキーを必要とせず、APIクレジットも消費しません。すべてのリアクションはリクエストを行ったユーザーに紐付けられるため、ユーザーは自分自身のリアクションのみ追加または削除できます。
 
-エンドポイントは2つのセットがあります：
+エンドポイントには2種類あります:
 
-- `/page-reacts/v1/likes/:tenantId` - ユーザーごとにページあたり1つの「like」。いいねボタンに使用します。
-- `/page-reacts/v2/:tenantId` - ページごとに複数のリアクションが可能で、短い `id`（例: `heart` や `laugh`）で識別します。
+- `/page-reacts/v1/likes/:tenantId` - ユーザーごと・ページごとに1つの「いいね」。いいねボタンに使用します。
+- `/page-reacts/v2/:tenantId` - ページごとに複数のリアクション。それぞれ、あなたが選んだ短い`id`(例:`heart`や`laugh`)で識別されます。
 
-これらは `PublicApi` の一部として SDK でも利用可能で、例えば [JavaScript SDK](/guide-sdk-javascript.html) の `getV1PageLikes`、`createV1PageReact`、`deleteV1PageReact` があります。
+どちらもSDKの`PublicApi`の一部として利用可能です。例えば、[JavaScript SDK](/guide-sdk-javascript.html)の`getV1PageLikes`、`createV1PageReact`、`deleteV1PageReact`などがあります。
 
-### Showing Who Reacted
+### リアクションしたユーザーの表示
 
-`includeUserInfo=public` を `GET` エンドポイントに渡すと、いいねまたはリアクションしたユーザーのユーザー名とアバターを取得でき、最新のものが先に返されます。プロフィールのアクティビティを非公開にしているユーザーや匿名ユーザーは除外されます。最大 100 件のリアクションが返されます。
+`GET`エンドポイントに`includeUserInfo=public`を渡すと、いいねやリアクションをしたユーザーの情報(ユーザー名とアバター、新しい順)も取得できます。プロフィールアクティビティを非公開にしているユーザーや、匿名ユーザーは除外されます。最大100件のリアクションが返されます。
 
-SSO ユーザーは、SSO ペイロードで `isProfileActivityPrivate` を `false` に設定しない限り、プロフィールのアクティビティが非公開として作成されます。リストに表示させたいユーザーのためにこのフラグを設定してください。
+SSOユーザーは、SSOペイロードで`isProfileActivityPrivate`を`false`に設定しない限り、非公開のプロフィールアクティビティとして作成されます。これらのリストに表示したいユーザーに対しては、この設定を行ってください。
 
-SSO が必要なページでは、ページを閲覧できる SSO ユーザーだけがリアクションしたユーザーの一覧を取得できます。その他のユーザーは `403` エラーとコード `sso-required` または `page-forbidden` が返されます。
+SSOが必要なページでは、ページを閲覧できるSSOユーザーのみがリアクションしたユーザーを一覧表示できます。それ以外のユーザーは、`sso-required`または`page-forbidden`というコードを含む`403`を受け取ります。
 
-サーバー側からは、[`GET /api/v1/pages/likes`](/guide-api.html#pages-likes-get) と [`GET /api/v1/pages/reacts`](/guide-api.html#pages-reacts-get) が API キーで同じ一覧を返し、`includeUserInfo=include-private` を指定すると非公開プロフィールのユーザーも含められます。
+サーバーからは、APIキーを使用して[`GET /api/v1/pages/likes`](/guide-api.html#pages-likes-get)と[`GET /api/v1/pages/reacts`](/guide-api.html#pages-reacts-get)で同じリストを取得でき、さらに`includeUserInfo=include-private`を指定して非公開プロフィールのユーザーを含めることもできます。
 
-### Identifying the User
+### ユーザーの識別
 
-リアクションはリクエストを行ったユーザーに紐づきます：
+リアクションはリクエストを行ったユーザーに紐付けられます:
 
-- **SSO ユーザー:** `sso` クエリパラメータに、コメントウィジェットに渡すのと同じ SSO オブジェクトを URI エンコードした JSON を設定して送ります。詳細は [SSO](/guide-customizations-and-configuration.html#sso) を参照してください。
-- **匿名ユーザー:** `sso` パラメータも FastComments のログインもない場合、サーバーはブラウザに FastComments セッションクッキーに保存された匿名 ID を割り当てます。リクエストは `credentials: 'include'` を付けてクッキーが保持されるようにしてください。サードパーティクッキーをブロックするブラウザでは匿名 ID が保持されないため、確実にユーザーを認識させる必要がある場合は SSO を使用してください。
+- **SSOユーザー:** `sso`クエリパラメータに、コメントウィジェットに渡すのと同じSSOオブジェクトのURIエンコードされたJSONを設定して渡します。[SSO](/guide-customizations-and-configuration.html#sso)を参照してください。
+- **匿名ユーザー:** `sso`パラメータがなく、FastCommentsへのログインもない場合、サーバーはFastCommentsのセッションCookieに保存された匿名IDをブラウザに割り当てます。Cookieをリクエスト間で保持するため、`credentials: 'include'`を付けてリクエストを送信してください。サードパーティCookieをブロックするブラウザでは匿名IDが保持されないため、各ユーザーを確実に識別する必要がある場合はSSOを使用してください。
 
-### The urlId
+### urlIdについて
 
-`urlId` はページを識別します。コメントと同じ方式です。コメントウィジェットに渡すのと同じ `urlId` を使用すれば、いいねとコメントが同じページでカウントされます。URI エンコードを忘れずに行ってください。
+`urlId`はページを識別するもので、コメントの場合と同じです。いいねとコメントが同じページでカウントされるよう、コメントウィジェットに渡すのと同じ`urlId`を使用してください。URIエンコードすることを忘れないでください。
 
 [inline-code-attrs-start title = 'いいねボタンの例'; type = 'javascript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 const tenantId = 'demo';
 const urlId = 'https://example.com/my-article';
-// Optional, for SSO users. The same object you give the comment widget's "sso" option.
+// 任意、SSOユーザーの場合。コメントウィジェットの"sso"オプションに渡すのと同じオブジェクト。
 const sso = null;
 
 function likesUrl() {

@@ -45,5 +45,3 @@ try {
     // Undtagelse ved kald af DefaultApi->createTenantPackage: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

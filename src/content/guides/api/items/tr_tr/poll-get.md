@@ -31,5 +31,3 @@ interface PollGetResponse {
 [inline-code-end]
 
 Anketi olmayan bir yorum, silinmiş bir yorum ve var olmayan bir yorum kimliği hepsi aynı şekilde yanıt verir, `poll-not-found` ile.
-
----

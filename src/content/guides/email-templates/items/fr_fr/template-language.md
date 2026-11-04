@@ -1,4 +1,3 @@
----
 FastComments Email Templates utilise le [langage de templates EJS](https://ejs.co/#docs).
 
 La syntaxe d'exemple est `<%= object.someValue %>` pour afficher des variables, et les instructions conditionnelles peuvent être écrites ainsi :
@@ -12,5 +11,3 @@ La syntaxe d'exemple est `<%= object.someValue %>` pour afficher des variables, 
 Pour afficher du HTML brut, comme le contenu d'un commentaire, on utilise : `<%- comment.commentHTML %>`. Notez le `-` au lieu du `=`.
 
 Consultez le lien ci-dessus pour plus de documentation sur la syntaxe.
-
----

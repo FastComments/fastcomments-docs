@@ -40,5 +40,3 @@ tam çalışır bir örneği.
     }
 </style>
 [inline-code-end]
-
----

@@ -1,23 +1,23 @@
-FastComments SDK obezbeđuje dve vrste API krajnjih tačaka:
+FastComments SDK pruža dve vrste API endpointa:
 
-### PublicAPI - Krajnje tačke sigurne za klijentski kod
+### PublicAPI - Endpointi bezbedni za klijenta
 
-The `PublicAPI` contains endpoints that are safe to call from client-side code (iOS/macOS aplikacija). These endpoints:
-- Ne zahtevaju API key
+`PublicAPI` sadrži endpointe koji su bezbedni za pozivanje iz klijentskog koda (iOS/macOS aplikacije). Ovi endpointi:
+- Ne zahtevaju API ključ
 - Mogu koristiti SSO tokene za autentifikaciju
-- Imaju ograničenja brzine po korisniku/uređaju
-- Pogodne su za aplikacije namenjene krajnjim korisnicima
+- Imaju ograničenje broja zahteva po korisniku/uređaju
+- Su pogodni za aplikacije namenjene krajnjim korisnicima
 
-**Primer upotrebe**: Preuzimanje i kreiranje komentara u vašoj iOS aplikaciji
+**Primer upotrebe**: Dohvatanje i kreiranje komentara u vašoj iOS aplikaciji
 
-### DefaultAPI - Krajnje tačke za serversku stranu
+### DefaultAPI - Endpointi na serverskoj strani
 
-The `DefaultAPI` contains authenticated endpoints that require an API key. These endpoints:
-- Zahtevaju vaš FastComments API key
-- Treba ih pozivati ISKLJUČIVO iz serverskog koda
+`DefaultAPI` sadrži autentifikovane endpointe koji zahtevaju API ključ. Ovi endpointi:
+- Zahtevaju vaš FastComments API ključ
+- Treba da se pozivaju SAMO iz serverskog koda
 - Pružaju pun pristup vašim FastComments podacima
-- Imaju ograničenja brzine po tenantu
+- Imaju ograničenje broja zahteva po tenantu
 
 **Primer upotrebe**: Administrativne operacije, masovni izvoz podataka, alati za moderaciju
 
-**IMPORTANT**: Nikada ne izlažite vaš API key u klijentskom kodu. API keys bi trebalo da se koriste samo na serverskoj strani.
+**VAŽNO**: Nikada ne otkrivajte svoj API ključ u klijentskom kodu. API ključevi treba da se koriste samo na serverskoj strani.

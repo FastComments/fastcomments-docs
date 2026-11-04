@@ -1,4 +1,3 @@
----
 ## Paramètres
 
 | Name | Type | Location | Required | Description |
@@ -31,5 +30,3 @@ DefaultAPI.getQuestionConfigs(tenantId: tenantId, skip: skip) { (response, error
     }
 }
 [inline-code-end]
-
----

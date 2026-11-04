@@ -1,6 +1,6 @@
-A `TenantDailyUsage` 객체는 특정 날짜에 대한 테넌트의 사용량을 나타냅니다. 특정 테넌트가 해당 날짜에 활동이 없었다면 그 날짜에는 `TenantDailyUsage` 객체가 생성되지 않습니다.
+`TenantDailyUsage` 객체는 특정 날짜의 테넌트 사용량을 나타냅니다. 특정 날짜에 테넌트의 활동이 없었다면, 그 날짜에는 `TenantDailyUsage` 객체가 존재하지 않습니다.
 
-The `TenantDailyUsage` object is **not** real time and may be minutes behind actual usage.
+`TenantDailyUsage` 객체는 실시간이 **아니며**, 실제 사용량보다 몇 분 늦을 수 있습니다.
 
 `TenantDailyUsage` 객체의 구조는 다음과 같습니다:
 
@@ -22,9 +22,7 @@ export interface TenantDailyUsage {
     apiCreditsUsed?: number
     createdAt: string
     billed: boolean
-    /** 청구에서 무시됩니다. **/
+    /** Ignored for billing. **/
     ignored: boolean
 }
 [inline-code-end]
-
----

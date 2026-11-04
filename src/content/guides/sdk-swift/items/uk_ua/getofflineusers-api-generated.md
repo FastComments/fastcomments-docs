@@ -1,4 +1,3 @@
----
 Колишні коментатори на сторінці, які НЕ перебувають онлайн. Впорядковано за displayName.  
 Використовуйте це після вичерпання /users/online, щоб відобразити розділ “Members”.  
 Пагінація курсором за commenterName: сервер проходить частковий {tenantId, urlId, commenterName} індекс від afterName вперед за допомогою $gt, без витрат $skip.
@@ -39,5 +38,3 @@ PublicAPI.getOfflineUsers(tenantId: tenantId, urlId: urlId, options: PublicAPI.G
     }
 }
 [inline-code-end]
-
----

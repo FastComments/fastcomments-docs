@@ -1,4 +1,3 @@
----
 Belirli bir yorum için bildirimleri etkinleştirir veya devre dışı bırakır.
 
 ## Parametreler
@@ -39,5 +38,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->update_user_notification_comment_subscription_status: #{e}"
 end
 [inline-code-end]
-
----

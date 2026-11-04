@@ -1,29 +1,29 @@
-Every agent webhook is signed with HMAC-SHA256 using your tenant's API secret. The same signing scheme is used for FastComments' comment webhooks - if you have already integrated those, the agent webhooks reuse the same signature header and verification flow.
+Cada webhook de agente é assinado com HMAC-SHA256 usando o segredo de API do seu tenant. O mesmo esquema de assinatura é usado para os webhooks de comentários do FastComments - se você já integrou esses, os webhooks de agente reutilizam o mesmo cabeçalho de assinatura e fluxo de verificação.
 
 ### Por que assinar
 
-Sem uma assinatura, um atacante que conhece a URL do seu webhook poderia POSTar eventos forjados que parecem ter vindo do FastComments. Assinar significa que seu endpoint pode verificar se cada entrega é autêntica antes de agir sobre ela.
+Sem uma assinatura, um atacante que conheça a URL do seu webhook poderia enviar eventos forjados via POST que pareçam vir do FastComments. A assinatura permite que seu endpoint verifique se cada entrega é autêntica antes de agir sobre ela.
 
 ### Como as assinaturas funcionam
 
-For each delivery:
+Para cada entrega:
 
-1. The platform looks up the API secret for the tenant + matched domain (see [Visão geral de Webhooks](#webhooks-overview)).
-2. It emits the current Unix timestamp (in milliseconds) in the `X-FastComments-Timestamp` header.
-3. It computes `HMAC-SHA256(api_secret, "${timestamp}.${raw_request_body}")` (estilo Stripe) and emits the result as `sha256=<hex>` in the `X-FastComments-Signature` header.
-4. Your endpoint reads the timestamp header, recomputes the HMAC over `${timestamp}.${body}` it received, compares to the `sha256=<hex>` value in the signature header, and rejects mismatches.
+1. A plataforma busca o segredo de API para o tenant + domínio correspondente (veja [Visão Geral dos Webhooks](#webhooks-overview)).
+2. Ela emite o timestamp Unix atual (em milissegundos) no cabeçalho `X-FastComments-Timestamp`.
+3. Ela calcula `HMAC-SHA256(api_secret, "${timestamp}.${raw_request_body}")` (estilo Stripe) e emite o resultado como `sha256=<hex>` no cabeçalho `X-FastComments-Signature`.
+4. Seu endpoint lê o cabeçalho de timestamp, recalcula o HMAC sobre `${timestamp}.${body}` que recebeu, compara com o valor `sha256=<hex>` no cabeçalho de assinatura e rejeita divergências.
 
-The body that is signed is the **exact bytes** the platform sent, prefixed with `${timestamp}.` - your verifier must use the raw request body, not a re-serialized JSON string (key ordering and whitespace would otherwise differ).
+O corpo que é assinado são os **bytes exatos** que a plataforma enviou, prefixados com `${timestamp}.` - seu verificador deve usar o corpo bruto da requisição, não uma string JSON re-serializada (a ordem das chaves e os espaços em branco seriam diferentes).
 
-### API secret
+### Segredo de API
 
-The same API Secret used by [webhooks de comentário](/guide-webhooks.html). It is per (tenant, domain) and managed in your tenant's API settings. If you rotate the secret, you should re-deploy your verifier to read the new value before the next delivery.
+O mesmo Segredo de API usado pelos [webhooks de comentários](/guide-webhooks.html). Ele é por (tenant, domínio) e gerenciado nas configurações de API do seu tenant. Se você rotacionar o segredo, deve reimplantar seu verificador para ler o novo valor antes da próxima entrega.
 
-When the platform finds **no API secret** for the matched domain, the delivery does not happen. The webhook log records the failure with reason "no API secret".
+Quando a plataforma não encontra **nenhum segredo de API** para o domínio correspondente, a entrega não acontece. O log do webhook registra a falha com o motivo "no API secret".
 
-### Verification example (Node.js)
+### Exemplo de verificação (Node.js)
 
-[inline-code-attrs-start title = 'Exemplo de verificação da assinatura de webhook'; type='javascript' inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo de Verificação de Assinatura de Webhook'; type='javascript' inline-code-attrs-end]
 [inline-code-start]
 import crypto from 'crypto';
 
@@ -39,28 +39,28 @@ function verifyAgentWebhook(rawBody, signatureHeader, timestampHeader, secret) {
 }
 [inline-code-end]
 
-Use `timingSafeEqual` rather than `===` to avoid timing-channel leaks of the signature.
+Use `timingSafeEqual` em vez de `===` para evitar vazamentos de canal de temporização da assinatura.
 
-### O que há no corpo assinado
+### O que está no corpo assinado
 
-The full envelope plus the event-specific `data` block. See [Payloads de Webhook](#webhook-payloads).
+O envelope completo mais o bloco `data` específico do evento. Veja [Payloads de Webhook](#webhook-payloads).
 
 ### Recomendações
 
-- **Verify on every delivery.** If your endpoint accepts unsigned requests, you have no integrity guarantee.
-- **Reject on signature mismatch.** Return 401 or 403; do not 200 OK on a bad signature, or you will mask attacks in your delivery logs.
-- **Use HTTPS.** Signatures protect integrity; TLS protects confidentiality (both your secret and the comment text in the payload).
-- **Rotate secrets** when team members with access leave, or on a schedule.
+- **Verifique em cada entrega.** Se seu endpoint aceita requisições não assinadas, você não tem garantia de integridade.
+- **Rejeite em caso de divergência de assinatura.** Retorne 401 ou 403; não retorne 200 OK com uma assinatura inválida, ou você mascarará ataques em seus logs de entrega.
+- **Use HTTPS.** As assinaturas protegem a integridade; o TLS protege a confidencialidade (tanto o seu segredo quanto o texto dos comentários no payload).
+- **Rotacione os segredos** quando membros da equipe com acesso saírem, ou em um cronograma.
 
 ### Proteção contra replay
 
-Signing alone does not prevent replay attacks - an attacker who captured a real signed delivery can re-send it. Replay protection is up to your endpoint:
+A assinatura por si só não previne ataques de replay - um atacante que capturou uma entrega assinada real pode reenviá-la. A proteção contra replay fica a cargo do seu endpoint:
 
-- Use the `occurredAt` envelope field and reject deliveries older than, say, 5 minutes.
-- Use the `triggerId` or `approvalId` as a dedup key - if you have already processed it, ignore the duplicate.
+- Use o campo de envelope `occurredAt` e rejeite entregas mais antigas que, digamos, 5 minutos.
+- Use o `triggerId` ou `approvalId` como chave de deduplicação - se você já o processou, ignore a duplicata.
 
 ### Veja também
 
-- [Visão geral de Webhooks](#webhooks-overview).
+- [Visão Geral dos Webhooks](#webhooks-overview).
 - [Payloads de Webhook](#webhook-payloads).
-- The main [Guia de Webhooks](/guide-webhooks.html) for the broader signing infrastructure.
+- O [guia principal de Webhooks](/guide-webhooks.html) para a infraestrutura de assinatura mais ampla.

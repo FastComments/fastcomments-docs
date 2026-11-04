@@ -1,17 +1,15 @@
----
-Jeśli masz już komentarze na wpisach swojego bloga na Shopify i chcesz je zachować, zaimportuj je do FastComments zanim wyłączysz natywne komentarze Shopify.
+Jeśli masz już komentarze pod postami na blogu Shopify i chcesz je zachować, zaimportuj je do FastComments, zanim wyłączysz natywne komentowanie Shopify.
 
-Import musi zostać wykonany, gdy natywne komentarze Shopify są nadal aktywne i widoczne. Po ich wyłączeniu FastComments nie będzie już w stanie ich odczytać.
+Import musi zostać uruchomiony, dopóki natywne komentarze Shopify są nadal aktywne i widoczne. Po ich wyłączeniu FastComments nie może ich już odczytać.
 
-### How to start an import
+### Jak rozpocząć import
 
 1. Upewnij się, że aplikacja FastComments jest zainstalowana w Twoim sklepie.
-2. Na razie pozostaw natywne komentarze Shopify **włączone**.
-3. [Open a support ticket](https://fastcomments.com/auth/my-account/tickets) i przekaż nam, które blogi zaimportować.
+2. Na razie pozostaw natywne komentowanie Shopify **włączone**.
+3. [Otwórz zgłoszenie do pomocy technicznej](https://fastcomments.com/auth/my-account/tickets) i poinformuj nas, które blogi zaimportować.
 
-Import zajmuje mniej niż dzień.
+Import trwa mniej niż jeden dzień.
 
-Gdy Twoje istniejące komentarze znajdą się w FastComments, dodaj blok **FastComments** do szablonu wpisu na blogu i usuń lub wyłącz natywne komentarze Shopify. Zobacz [Add Comments to Blog Posts and Products](/guide-installation-shopify.html#shopify-add-comments).
+Gdy Twoje istniejące komentarze znajdą się w FastComments, dodaj blok **FastComments** do szablonu postu na blogu i usuń lub wyłącz natywne komentarze Shopify. Zobacz [Dodawanie komentarzy do postów na blogu i produktów](/guide-installation-shopify.html#shopify-add-comments).
 
-Jeśli nie musisz zachowywać istniejących komentarzy, możesz pominąć tę stronę.
----
+Jeśli nie potrzebujesz zachować istniejących komentarzy, możesz pominąć tę stronę.

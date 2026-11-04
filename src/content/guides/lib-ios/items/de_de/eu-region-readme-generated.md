@@ -1,4 +1,3 @@
----
 Um das EU-Rechenzentrum zu verwenden, setzen Sie das Feld `region` in Ihrer Konfiguration:
 
 ```swift

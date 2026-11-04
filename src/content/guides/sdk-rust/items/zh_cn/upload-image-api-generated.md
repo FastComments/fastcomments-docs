@@ -1,4 +1,3 @@
----
 上传并调整图像大小
 
 ## 参数
@@ -29,5 +28,3 @@ async fn example() -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
-
----

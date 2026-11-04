@@ -1,4 +1,3 @@
----
 Liste les pages d'un locataire. Utilisé par le client de bureau FChat pour remplir sa liste de salles.
 Nécessite que `enableFChat` soit vrai dans la configuration personnalisée résolue pour chaque page.
 Les pages qui nécessitent SSO sont filtrées en fonction de l'accès aux groupes de l'utilisateur demandeur.
@@ -41,5 +40,3 @@ async function fetchPublicPages() {
   console.log(response);
 }
 [inline-code-end]
-
----

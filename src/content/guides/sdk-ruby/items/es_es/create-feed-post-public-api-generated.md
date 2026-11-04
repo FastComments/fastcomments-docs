@@ -33,5 +33,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->create_feed_post_public: #{e}"
 end
 [inline-code-end]
-
----

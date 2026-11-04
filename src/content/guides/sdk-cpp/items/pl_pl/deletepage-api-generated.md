@@ -26,5 +26,3 @@ api->deletePage(tenantId, pageId)
        }
    });
 [inline-code-end]
-
----

@@ -35,5 +35,3 @@ Dette vil tilføje to begivenheder:
 
 - Etiket: `Comment Posted`, Kategori: `Engagement`, ID: `post_comment`
 - Etiket: `User Voted on a Comment`, Kategori: `Engagement`, ID: `vote_comment`
-
----

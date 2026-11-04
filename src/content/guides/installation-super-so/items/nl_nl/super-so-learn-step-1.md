@@ -15,5 +15,3 @@ Selecteer nu het tabblad `Body`. **Dit is belangrijk!** Het installeren van het 
 </div>
 
 Nu ben je klaar voor stap 2.
-
----

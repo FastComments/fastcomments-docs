@@ -24,5 +24,3 @@ async function removeComment(): Promise<void> {
 }
 removeComment();
 [inline-code-end]
-
----

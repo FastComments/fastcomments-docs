@@ -1,4 +1,3 @@
----
 req
 tenantId
 afterId
@@ -45,5 +44,3 @@ PublicAPI.getFeedPostsPublic(tenantId: tenantId, options: PublicAPI.GetFeedPosts
     }
 }
 [inline-code-end]
-
----

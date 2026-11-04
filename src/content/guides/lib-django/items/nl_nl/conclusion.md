@@ -8,5 +8,3 @@ Als je problemen ondervindt of vragen hebt over het Django-pakket, kun je:
 ## Bijdragen
 
 Bijdragen zijn welkom! Bezoek de [GitHub-repository](https://github.com/FastComments/fastcomments-django) voor richtlijnen voor bijdragen.
-
----

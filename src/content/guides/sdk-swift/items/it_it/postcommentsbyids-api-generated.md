@@ -31,5 +31,3 @@ ModerationAPI.postCommentsByIds(tenantId: tenantId, commentsByIdsParams: comment
     }
 }
 [inline-code-end]
-
----

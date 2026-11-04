@@ -1,29 +1,29 @@
 ### Pregled API-ja
 
-Collab Chat pruža tri REST API krajnje točke za programsko upravljanje tekstualnim razgovorima. Ove krajnje točke omogućuju dohvaćanje, stvaranje i brisanje bilješki bez korištenja widgeta u pregledniku.
+Collab Chat pruža tri REST API endpointa za programsko upravljanje tekstualnim razgovorima. Ovi endpointi omogućuju dohvaćanje, stvaranje i brisanje napomena bez korištenja widgeta u pregledniku.
 
-Ovo su javne krajnje točke koje provjeravaju korisnike putem kolačića preglednika. Ne koriste API ključeve. Korisnici moraju biti prijavljeni u FastComments u svom pregledniku da bi pristupili ovim krajnjim točkama.
+Ovo su javni endpointi koji autentificiraju korisnike putem kolačića preglednika. Ne koriste API ključeve. Korisnici moraju biti prijavljeni u FastComments u svom pregledniku kako bi pristupili ovim endpointima.
 
-### Base URL
+### Osnovni URL
 
-Sve Collab Chat API krajnje točke nalaze se na:
+Svi Collab Chat API endpointi nalaze se pod:
 
 [inline-code-attrs-start title = 'Osnovni URL'; type = 'text'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 https://fastcomments.com/comment-collab-chats
 [inline-code-end]
 
-### Autentikacija
+### Autentifikacija
 
-Ove krajnje točke provjeravaju korisnike putem kolačića preglednika. Ne koriste API ključeve. Korisnici moraju biti prijavljeni u FastComments u svom pregledniku da bi pristupili ovim krajnjim točkama.
+Ovi endpointi autentificiraju korisnike putem kolačića preglednika. Ne koriste API ključeve. Korisnici moraju biti prijavljeni u FastComments u svom pregledniku kako bi pristupili ovim endpointima.
 
 ### Dohvati sve razgovore
 
-Dohvatite sve tekstualne razgovore za određenu stranicu.
+Dohvaća sve tekstualne razgovore za određenu stranicu.
 
-#### Krajnja točka
+#### Endpoint
 
-[inline-code-attrs-start title = 'GET krajnja točka'; type = 'text'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'GET Endpoint'; type = 'text'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 GET /comment-collab-chats/:tenantId?urlId=<urlId>
 [inline-code-end]
@@ -32,11 +32,11 @@ GET /comment-collab-chats/:tenantId?urlId=<urlId>
 
 `tenantId` (parametar putanje, obavezan) je vaš FastComments Tenant ID.
 
-`urlId` (parametar upita, obavezan) je identifikator stranice za koju želite dohvatiti razgovore.
+`urlId` (query parametar, obavezan) je identifikator stranice za koju želite dohvatiti razgovore.
 
 #### Odgovor
 
-Odgovor uključuje status API-ja, informacije o trenutnoj korisničkoj sesiji ako je autentificiran, polje razgovora s njihovim ID-evima, URL-ovima i rasponima teksta, očišćeni identifikator URL-a, zastavicu koja pokazuje je li trenutni korisnik administrator stranice ili moderator, te detalje WebSocket veze za sinkronizaciju uživo koji uključuju `tenantIdWS`, `urlIdWS` i `userIdWS`.
+Odgovor uključuje status API-ja, informacije o trenutnoj korisničkoj sesiji ako je korisnik autentificiran, niz razgovora s njihovim ID-jevima, URL-ovima i tekstualnim rasponima, očišćeni URL identifikator, zastavicu koja označava je li trenutni korisnik administrator stranice ili moderator, te detalje WebSocket veze za sinkronizaciju u stvarnom vremenu uključujući `tenantIdWS`, `urlIdWS` i `userIdWS`.
 
 #### Primjer zahtjeva
 
@@ -76,13 +76,13 @@ curl "https://fastcomments.com/comment-collab-chats/demo?urlId=my-article-page" 
 }
 [inline-code-end]
 
-### Kreiranje razgovora
+### Stvori razgovor
 
-Stvorite novi tekstualni razgovor za određeni odabir teksta.
+Stvara novi tekstualni razgovor za određeni odabir teksta.
 
-#### Krajnja točka
+#### Endpoint
 
-[inline-code-attrs-start title = 'POST krajnja točka'; type = 'text'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'POST Endpoint'; type = 'text'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 POST /comment-collab-chats/:tenantId
 [inline-code-end]
@@ -91,25 +91,25 @@ POST /comment-collab-chats/:tenantId
 
 `tenantId` (parametar putanje, obavezan) je vaš FastComments Tenant ID.
 
-Tijelo zahtjeva mora biti JSON i sadržavati sljedeća obavezna polja.
+Tijelo zahtjeva mora biti JSON i mora uključivati ove obavezne polja.
 
-`urlId` (string, obavezno) je osnovni identifikator stranice.
+`urlId` (string, obavezan) je osnovni identifikator stranice.
 
-`urlIdWithRange` (string, obavezno) je URL kombiniran s rasponom teksta, na primjer `my-page:p:0:15,0:45{abc123}`.
+`urlIdWithRange` (string, obavezan) je URL kombiniran s tekstualnim rasponom, na primjer `my-page:p:0:15,0:45{abc123}`.
 
-`pageTitle` (string, obavezno) je naslov stranice.
+`pageTitle` (string, obavezan) je naslov stranice.
 
-`selector` (string, obavezno) je DOM putanja do elementa koji sadrži odabrani tekst.
+`selector` (string, obavezan) je DOM putanja do elementa koji sadrži odabrani tekst.
 
-`range` (string, obavezno) je serijalizirani raspon teksta u formatu `startOffset:endOffset,startOffset:endOffset{checksum}`.
+`range` (string, obavezan) je serializirani tekstualni raspon u formatu `startOffset:endOffset,startOffset:endOffset{checksum}`.
 
-`createdFromCommentId` (string, obavezno) je ID komentara koji je pokrenuo ovaj razgovor.
+`createdFromCommentId` (string, obavezan) je ID komentara koji je pokrenuo ovaj razgovor.
 
-`broadcastId` (string, obavezno) je UUID za sinkronizaciju uživo kako bi se spriječili efekti odjeka.
+`broadcastId` (string, obavezan) je UUID za sinkronizaciju u stvarnom vremenu radi sprječavanja efekata odjeka.
 
 #### Odgovor
 
-Odgovor uključuje status API-ja i ID novo stvorenog razgovora.
+Odgovor uključuje status API-ja i ID novostvorenog razgovora.
 
 #### Primjer zahtjeva
 
@@ -139,13 +139,13 @@ curl -X POST "https://fastcomments.com/comment-collab-chats/demo" \
 }
 [inline-code-end]
 
-### Brisanje razgovora
+### Izbriši razgovor
 
-Obrišite postojeći tekstualni razgovor. Ova krajnja točka zahtijeva dozvole administratora ili moderatora, ili razgovor mora biti stvoren od strane prijavljenog korisnika.
+Briše postojeći tekstualni razgovor. Ovaj endpoint zahtijeva administratorske ili moderatorske dozvole, ili razgovor mora biti stvorio autentificirani korisnik.
 
-#### Krajnja točka
+#### Endpoint
 
-[inline-code-attrs-start title = 'DELETE krajnja točka'; type = 'text'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'DELETE Endpoint'; type = 'text'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 DELETE /comment-collab-chats/:tenantId/:chatId
 [inline-code-end]
@@ -154,9 +154,9 @@ DELETE /comment-collab-chats/:tenantId/:chatId
 
 `tenantId` (parametar putanje, obavezan) je vaš FastComments Tenant ID.
 
-`chatId` (parametar putanje, obavezan) je ID razgovora koji treba obrisati.
+`chatId` (parametar putanje, obavezan) je ID razgovora koji treba izbrisati.
 
-`broadcastId` (tijelo zahtjeva, obavezno) je UUID za sinkronizaciju uživo.
+`broadcastId` (tijelo zahtjeva, obavezan) je UUID za sinkronizaciju u stvarnom vremenu.
 
 #### Primjer zahtjeva
 
@@ -181,15 +181,15 @@ curl -X DELETE "https://fastcomments.com/comment-collab-chats/demo/conv789" \
 
 ### Ograničenje brzine
 
-Ove krajnje točke podliježu standardnom ograničavanju brzine FastComments API-ja. Middleware za ograničenje brzine primjenjuje se po tenantu kako bi se spriječila zlouporaba, a istovremeno omogućili normalni obrasci korištenja.
+Ovi endpointi podliježu standardnom ograničenju brzine FastComments API-ja. Middleware za ograničenje brzine primjenjuje se po najmoprimcu (tenant) kako bi se spriječila zloupotreba uz omogućavanje uobičajenih obrazaca korištenja.
 
-### Odgovori s pogreškom
+### Odgovori o pogreškama
 
-Sve krajnje točke vraćaju standardne HTTP statusne kodove. Odgovor 400 označava nevažeće parametre zahtjeva. Odgovor 401 znači da autentikacija nije uspjela. Odgovor 403 označava nedostatak dozvola. Odgovor 404 znači da razgovor nije pronađen. Odgovor 429 označava prekoračenje ograničenja stope.
+Svi endpointi vraćaju standardne HTTP statusne kodove. Odgovor 400 označava nevažeće parametre zahtjeva. Odgovor 401 znači da je autentifikacija nije uspjela. Odgovor 403 označava nedovoljne dozvole. Odgovor 404 znači da razgovor nije pronađen. Odgovor 429 označava prekoračenje ograničenja brzine.
 
-Odgovori s pogreškom uključuju JSON tijelo s detaljima:
+Odgovori o pogreškama uključuju JSON tijelo s detaljima:
 
-[inline-code-attrs-start title = 'Primjer odgovora s pogreškom'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer odgovora o pogrešci'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "error",
@@ -197,8 +197,6 @@ Odgovori s pogreškom uključuju JSON tijelo s detaljima:
 }
 [inline-code-end]
 
-### Praćenje upotrebe
+### Praćenje korištenja
 
-Stvaranje razgovora povećava vašu metriku upotrebe `conversationCreateCount`. Sva aktivnost sinkronizacije putem WebSocket-a povećava `pubSubMessageCount` i `pubSubBandwidth`. Te metrike možete pratiti u vašoj FastComments nadzornoj ploči pod analizom upotrebe.
-
----
+Stvaranje razgovora povećava vašu metriku korištenja `conversationCreateCount`. Sva aktivnost WebSocket sinkronizacije povećava `pubSubMessageCount` i `pubSubBandwidth`. Ove metrike možete pratiti u svojoj FastComments upravljačkoj ploči pod analitikom korištenja.

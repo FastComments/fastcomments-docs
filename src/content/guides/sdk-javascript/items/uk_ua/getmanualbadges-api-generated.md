@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Назва | Тип | Обов’язковий | Опис |
@@ -22,5 +21,3 @@ async function fetchBadges() {
   const badgesWithoutSso: GetTenantManualBadgesResponse = await getManualBadges(tenantId);
 }
 [inline-code-end]
-
----

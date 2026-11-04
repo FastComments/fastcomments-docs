@@ -1,4 +1,3 @@
----
 Wanneer gebruikers reageren of stemmen en ze niet zijn ingelogd, worden ze gevraagd hun e‑mail en gebruikersnaam op te geven.
 
 In het geval van anonieme reacties is het soms wenselijk een standaardgebruikersnaam te definiëren om de wrijving
@@ -14,5 +13,3 @@ Gebruikersnamen die een bezoeker zelf invoert, moeten nog steeds uniek zijn.
 
 Als je liever wilt dat elke bezoeker een unieke naam krijgt zonder er zelf over na te denken, zie
 [Gebruikersnamen automatisch genereren](/guide-customizations-and-configuration.html#auto-generate-username).
-
----

@@ -1,77 +1,75 @@
----
-The FastComments LTI 1.3 integracija sledi princip najmanjih privilegija: koristi samo launch claim-ove potrebne da identifikuje korisnika, prikači komentare na odgovarajući kurs i resurs, i primeni dozvole zasnovane na ulozi.
+FastComments LTI 1.3 integracija sledi princip najmanjih privilegija: koristi samo launch claim podatke potrebne za identifikaciju korisnika, povezivanje komentara sa ispravnim kursom i resursom, i primenu dozvola zasnovanih na ulogama.
 
-Ostatak ove stranice mapira svaki claim koji integracija koristi, svaki LTI Advantage servis koji ne zahteva, i svaku kategoriju podataka koju ne prikuplja. Recenzenti za bezbednost i nabavku mogu direktno preuzeti odgovore iz tabela ispod.
+Ostatak ove stranice mapira svaki claim koji integracija koristi, svaku LTI Advantage uslugu koju ne zahteva, i svaku kategoriju podataka koje ne prikuplja. Recenzenti bezbednosti i nabavke mogu preuzeti odgovore direktno iz tabela ispod.
 
-## Data Elements Received From the LMS
+## Elementi Podataka Primljeni od LMS-a
 
-Svako LTI 1.3 pokretanje nosi potpisani JWT od LMS-a. FastComments izdvajaju sledeće claim-ove iz tog JWT-a i ne koriste ništa drugo:
+Svako LTI 1.3 lansiranje nosi potpisani JWT od LMS-a. FastComments izdvaja sledeće claim podatke iz tog JWT-a i ne koristi ništa drugo:
 
-| Polje | LTI claim | Svrha | Potrebno | Skladišteno |
-|-------|-----------|--------|----------|-------------|
-| User identifier | `sub` | Dosledno identifikuje korisnika preko pokretanja tako da ista osoba odgovara istom FastComments SSO korisniku | Yes | Yes, as part of a stable internal SSO ID |
-| Display name | `name` | Pripis prikazan pored korisnikovih komentara | Yes (falls back to "LMS User" if absent) | Yes |
-| Email | `email` | Poklapanje naloga, notifikacije, moderacija, korespondencija podrške | Optional (the integration works without it) | Yes when provided |
-| Avatar URL | `picture` | Prikazano na korisnikovim komentarima | Optional | URL only; FastComments does not download or rehost the image |
-| Roles | `https://purl.imsglobal.org/spec/lti/claim/roles` | Određuje da li je korisnik administrator, instruktor (moderator) ili polaznik | Yes | Derived `isAdmin` / `isModerator` flags on the SSO session |
-| Course context | `https://purl.imsglobal.org/spec/lti/claim/context` (`id`, `title`) | Povezuje nit komentara sa odgovarajućim LMS kursom | Yes | Yes, as part of the resolved page identifier |
-| Resource link | `https://purl.imsglobal.org/spec/lti/claim/resource_link` (`id`) | Povezuje komentare sa odgovarajućom aktivnošću ili pozicijom alata unutar kursa | Yes when present | Yes, as part of the resolved page identifier |
-| Deployment ID | `https://purl.imsglobal.org/spec/lti/claim/deployment_id` | Usmerava pokretanje na odgovarajuću FastComments tenant konfiguraciju | Yes | Yes, on the FastComments LTI configuration record |
+| Polje | LTI claim | Svrha | Obavezno | Čuva se |
+|-------|-----------|---------|----------|--------|
+| Identifikator korisnika | `sub` | Identifikuje korisnika dosledno kroz lansiranja tako da ista osoba bude povezana sa istim FastComments SSO korisnikom | Da | Da, kao deo stabilnog internog SSO ID-ja |
+| Ime za prikaz | `name` | Autorstvo prikazano pored komentara korisnika | Da (vraća se na "LMS User" ako nedostaje) | Da |
+| Email | `email` | Uparivanje naloga, notifikacije, moderacija, korespondencija podrške | Opciono (integracija radi i bez njega) | Da kada je dostavljen |
+| URL avatara | `picture` | Prikazuje se na komentarima korisnika | Opciono | Samo URL; FastComments ne preuzima ni ne re-hostuje sliku |
+| Uloge | `https://purl.imsglobal.org/spec/lti/claim/roles` | Određuje da li je korisnik administrator, instruktor (moderator) ili učenik | Da | Izvedeni `isAdmin` / `isModerator` flagovi na SSO sesiji |
+| Kontekst kursa | `https://purl.imsglobal.org/spec/lti/claim/context` (`id`, `title`) | Povezuje nit komentara sa ispravnim LMS kursom | Da | Da, kao deo razrešenog identifikatora stranice |
+| Link resursa | `https://purl.imsglobal.org/spec/lti/claim/resource_link` (`id`) | Povezuje komentare sa ispravnom aktivnošću ili plasmanom alata unutar kursa | Da kada je prisutan | Da, kao deo razrešenog identifikatora stranice |
+| Deployment ID | `https://purl.imsglobal.org/spec/lti/claim/deployment_id` | Usmerava lansiranje ka ispravnoj FastComments tenant konfiguraciji | Da | Da, na FastComments LTI konfiguracionom zapisu |
 
-## Claims and Scopes Declared at Registration
+## Claim Podaci i Opsezi Deklarisani pri Registraciji
 
-Tokom LTI 1.3 Dynamic Registration, FastComments se registruje sa `scope: ""` (bez dodatnih OAuth scope-ova) i deklariše samo ove OpenID Connect claim-ove:
+Tokom LTI 1.3 Dynamic Registration, FastComments registruje sebe sa `scope: ""` (bez dodatnih OAuth opsega) i deklariše samo ove OpenID Connect claim podatke:
 
 `iss`, `sub`, `name`, `email`, `picture`
 
-Registrovana su dva tipa poruka:
+Registruje dva tipa poruka:
 
-- `LtiResourceLinkRequest` - standardno pokretanje kursa u FastComments.
-- `LtiDeepLinkingRequest` - omogućava instruktorima da postave FastComments alat unutar kursa.
+- `LtiResourceLinkRequest` - standardno lansiranje kursa u FastComments.
+- `LtiDeepLinkingRequest` - omogućava instruktorima da plasiraju FastComments alat unutar kursa.
 
-Nema zahtevanih dodatnih access token-a od LMS-a.
+Nisu zahtevani dodatni access tokeni od LMS-a.
 
-## LTI Advantage Services Not Requested
+## LTI Advantage Usluge koje Nisu Zahtevane
 
-| Service / scope | Requested? | Reason |
+| Usluga / opseg | Zahtevana? | Razlog |
 |------------------|------------|--------|
-| Names and Role Provisioning Services (NRPS) | No | The integration does not need a course roster; user identity arrives with each launch |
-| Assignment and Grade Services (AGS) - lineitem, score, result scopes | No | The integration is not gradebook-aware |
-| Deep Linking beyond the standard placement return | No additional data | Deep Linking is used only for instructor placement of the tool; no course content is enumerated |
+| Names and Role Provisioning Services (NRPS) | Ne | Integracija ne treba spisak kursa; identitet korisnika stiže sa svakim lansiranjem |
+| Assignment and Grade Services (AGS) - lineitem, score, result opsezi | Ne | Integracija nije svesna evidencije ocena |
+| Deep Linking van standardnog povratka plasmana | Bez dodatnih podataka | Deep linking se koristi samo za plasman alata od strane instruktora; sadržaj kursa se ne nabraja |
 
-## Data Not Collected
+## Podaci koji se Ne Prikupljaju
 
-Pored samog LTI-ja, FastComments ne zahteva niti prima sledeće od LMS-a ili korisnika:
+Van samog LTI-ja, FastComments ne zahteva ni ne prima sledeće od LMS-a ili korisnika:
 
-| Kategorija | Prikuplja se? |
+| Kategorija | Prikupljeno? |
 |----------|------------|
-| Student grades | No |
-| Assignment submissions | No |
-| Attendance records | No |
-| Full course rosters | No |
-| Government identifiers | No |
-| Date of birth | No |
-| Postal address or phone number | No |
-| Financial information | No |
-| LMS administrator credentials | No |
+| Ocene studenata | Ne |
+| Predaje zadataka | Ne |
+| Evidencije prisustva | Ne |
+| Kompletni spiskovi kursa | Ne |
+| Državni identifikatori | Ne |
+| Datum rođenja | Ne |
+| Poštana adresa ili broj telefona | Ne |
+| Finansijske informacije | Ne |
+| Administratorski kredencijali LMS-a | Ne |
 
-## Access Boundaries
+## Granice Pristupa
 
-- FastComments prima podatke samo unutar autorizovanog LTI 1.3 pokretanja potpisanog registrovanim ključevima LMS-a. Integracija ne poziva LMS radi dodatnih informacija.
-- Launch tokeni su jednokratni i kratkotrajni. Ponovo upotrebljeni ili istekli tokeni se odbacuju.
-- Administratori LMS-a kontrolišu gde je alat postavljen unutar njihove platforme. D2L Brightspace, na primer, podržava per-deployment org-unit scoping i per-deployment security settings, što omogućava administratorima da ograniče alat na određene kurseve ili org unit-e umesto da ga učine dostupnim globalno. Moodle, Blackboard, Sakai i Schoology nude ekvivalentne kontrole po deploymentu u svojim LTI 1.3 implementacijama.
+- FastComments prima podatke samo unutar autorizovanog LTI 1.3 lansiranja potpisanog registrovanim ključevima LMS-a. Integracija ne poziva nazad LMS za dodatne informacije.
+- Launch tokeni su jednokratni i kratkotrajni. Replicirani ili istekli tokeni se odbacuju.
+- LMS administratori kontrolišu gde je alat raspoređen unutar svoje platforme. D2L Brightspace, na primer, podržava per-deployment org-unit scoping i per-deployment bezbednosne postavke, što omogućava administratorima da ograniče alat na konkretne kurseve ili org jedinice umesto da ga učine globalno dostupnim. Moodle, Blackboard, Sakai i Schoology nude ekvivalentne per-deployment kontrole u svojim LTI 1.3 implementacijama.
 
-## Storage and Retention
+## Čuvanje i Zadržavanje
 
-FastComments zadržava LTI-izvedene podatke tokom trajanja aktivne usluge komentarisanja i u skladu sa podešavanjima zadržavanja koja konfiguriše kupac. Podaci o komentarima se čuvaju u produkcijskom skladištu šifrovanom u mirovanju. Po prestanku naloga ili na pisani zahtev za brisanje, FastComments briše ili anonimizuje podatke kupca u skladu sa važećim ugovorom.
+FastComments zadržava LTI-izvedene podatke tokom trajanja aktivne usluge komentara i prema postavkama zadržavanja koje konfiguriše kupac. Podaci komentara se čuvaju u produkcionom skladištu šifrovanom u mirovanju. Po prestanku naloga ili pisanom zahtevu za brisanje, FastComments briše ili anonimizuje podatke kupca prema važećem ugovoru.
 
-Za potpune detalje o skladištenju i rukovanju podacima, pogledajte <a href="https://fastcomments.com/privacy-policy" target="_blank">Politika privatnosti FastComments</a>.
+Za kompletne detalje o čuvanju i rukovanju podacima, pogledajte <a href="https://fastcomments.com/privacy-policy" target="_blank">FastComments Politiku Privatnosti</a>.
 
-## Review Cadence
+## Kadencija Pregleda
 
-Svaka nova LTI funkcija koja bi zahtevala dodatne claim-ove, scope-ove, ili LTI Advantage servise se pregleda pre objavljivanja kako bi se potvrdilo da je traženi pristup neophodan i proporcionalan funkciji koja se isporučuje.
+Svaka nova LTI funkcija koja bi zahtevala dodatne claim podatke, opsege ili LTI Advantage usluge se pregleda pre objavljivanja kako bi se potvrdilo da je traženi pristup neophodan i srazmeran funkciji koja se isporučuje.
 
-## Short Statement for Security Questionnaires
+## Kratka Izjava za Bezbednosne Upitnike
 
-> FastComments primenjuje princip najmanjih privilegija i minimizaciju podataka za svoju LTI 1.3 integraciju. Integracija koristi samo LTI launch claim-ove potrebne za autentifikaciju korisnika (`sub`, `name`, `email`, `picture`), određivanje njihove uloge, i identifikovanje kursa i resursa kome komentari pripadaju. FastComments ne traži Names and Role Provisioning Services, Assignment and Grade Services, podatke iz knjige ocena, evidenciju prisustva, potpune spiskove učesnika, niti administratorski pristup LMS-u. Administratori LMS-a zadržavaju kontrolu nad tim u kojim org unit-ima, kursevima i deployment-ima je alat dostupan.
----
+> FastComments primenjuje najmanje privilegije i minimizaciju podataka na svoju LTI 1.3 integraciju. Integracija koristi samo LTI launch claim podatke potrebne za autentifikaciju korisnika (`sub`, `name`, `email`, `picture`), određivanje njihove uloge, i identifikaciju kursa i resursa kojima komentari pripadaju. FastComments ne zahteva Names and Role Provisioning Services, Assignment and Grade Services, podatke o ocenama, prisustvo, kompletne spiskove, ni administrativni pristup LMS-u. LMS administratori zadržavaju kontrolu nad org jedinicama, kursevima i deploymentima u kojima je alat dostupan.

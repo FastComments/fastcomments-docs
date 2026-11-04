@@ -1,4 +1,3 @@
----
 ## Παράμετροι
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
@@ -28,5 +27,3 @@ api->getSubscriptions(tenant, user).then(
     }
 );
 [inline-code-end]
-
----

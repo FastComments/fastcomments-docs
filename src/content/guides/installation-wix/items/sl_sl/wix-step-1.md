@@ -10,5 +10,3 @@ Nato moramo poskrbeti, da urejamo pravo stran.
     <div class="title">Korak 1: Uredi dinamično stran objave</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-1-open-page.png" alt="Uredi dinamično stran objave" />
 </div>
-
----

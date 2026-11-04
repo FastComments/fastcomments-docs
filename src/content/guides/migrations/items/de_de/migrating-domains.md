@@ -19,5 +19,3 @@ Während der Job läuft, wird er die Anzahl der zu migrierenden Kommentare sowie
 ### Migration von Domains über die API
 
 Domains können auch mit [`POST /api/v1/pages/migrations`](/guide-api.html#pages-migrations-post) migriert werden, wobei `type` auf `domain` gesetzt wird. Der Fortschritt ist über [`GET /api/v1/batch-jobs/:id`](/guide-api.html#batch-job-get-by-id) verfügbar, und die Migration kann für 90 Tage rückgängig gemacht werden.
-
----

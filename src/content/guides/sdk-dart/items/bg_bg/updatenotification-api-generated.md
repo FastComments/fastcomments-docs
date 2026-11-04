@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Име | Тип | Местоположение | Задължително | Описание |
@@ -34,5 +33,3 @@ try {
     print('Exception when calling DefaultApi->updateNotification: $e\n');
 }
 [inline-code-end]
-
----

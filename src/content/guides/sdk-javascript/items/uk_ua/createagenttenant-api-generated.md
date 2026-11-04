@@ -1,17 +1,13 @@
-Creates a new trial account for an AI agent without a human signup. No API key is needed to call this.
+Створює новий пробний обліковий запис для AI-агента без участі людини в реєстрації. Для виклику не потрібен API-ключ.
 
-Створює новий пробний обліковий запис для AI‑агента без реєстрації людини. Для виклику цього не потрібен API‑ключ.
-
-The response contains the tenant id, an API key that works immediately against the REST API and the
-MCP server, and a claim URL. Give the claim URL to the human you are working for: opening it while
-logged in to FastComments attaches the account to them. Unclaimed accounts, and their keys, are
-deleted 72 hours after creation. Until claimed, the account has the standard trial limits.
-
-Відповідь містить ідентифікатор орендаря, API‑ключ, який одразу працює з REST API та сервером MCP, а також URL‑адресу для підтвердження. Передайте URL‑адресу підтвердження людині, для якої ви працюєте: відкриття її під час входу в FastComments прив’язує обліковий запис до неї. Непідтверджені облікові записи та їхні ключі видаляються через 72 години після створення. Поки обліковий запис не підтверджено, він має стандартні пробні обмеження.
+Відповідь містить ідентифікатор тенанта, API-ключ, який одразу працює з REST API та
+MCP-сервером, а також URL для привласнення облікового запису. Передайте цей URL людині, на яку ви працюєте: відкриття його,
+коли ви увійшли в FastComments, прив'язує обліковий запис до неї. Непривласнені облікові записи та їхні ключі
+видаляються через 72 години після створення. До привласнення обліковий запис має стандартні обмеження пробного періоду.
 
 ## Параметри
 
-| Назва | Тип | Обов'язково | Опис |
+| Назва | Тип | Обов'язковий | Опис |
 |------|------|----------|-------------|
 | createAgentTenantBody | CreateAgentTenantBody | Так |  |
 
@@ -26,8 +22,8 @@ deleted 72 hours after creation. Until claimed, the account has the standard tri
 const tenantBody: CreateAgentTenantBody = {
   name: "Acme Corp",
   domain: "acme.example.com",
-  contactEmail: "admin@acme.example.com", // optional
-  planId: 3 // optional
+  contactEmail: "admin@acme.example.com", // необов'язково
+  planId: 3 // необов'язково
 };
 
 const result: CreateAgentTenantResponse = await createAgentTenant(tenantBody);

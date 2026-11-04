@@ -1,3 +1,1 @@
----
 Opsæt SAML 2.0 single sign-on, så medarbejdere og medlemmer får adgang til FastComments via din virksomheds identitetsudbyder. Rollekortlægning, testning og almindelige fejl.
----

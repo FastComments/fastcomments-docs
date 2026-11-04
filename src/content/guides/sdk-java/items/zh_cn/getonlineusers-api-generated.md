@@ -1,4 +1,3 @@
----
 当前在线的页面查看者：指当前其 websocket 会话已订阅该页面的人。返回 anonCount + totalCount（房间范围的订阅者，包括我们不逐一列举的匿名查看者）。
 
 ## 参数
@@ -51,5 +50,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

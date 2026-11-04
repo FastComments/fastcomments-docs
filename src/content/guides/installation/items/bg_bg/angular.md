@@ -69,5 +69,3 @@ export class AppModule { }
 Уиджът използва откриване на промени (change detection), така че промяната на произволно свойство на конфигурационния обект ще го презареди.
 
 Можете да намерите конфигурацията, която Angular компонентът поддържа <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">тук</a>.
-
----

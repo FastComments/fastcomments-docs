@@ -1,4 +1,3 @@
----
 **AI Agent** je autonomni radnik, ograničen na vaš FastComments tenant, koji prati događaje u vašoj zajednici i preduzima akcije u vaše ime.
 
 Svaki agent ima tri stvari koje vi kontrolišete:
@@ -36,4 +35,3 @@ Agenti **nikada ne blokiraju radnju korisnika koja ih je pokrenula**. Čitač ob
 Agenti i ljudski moderatori dele istu platformu za komentare: agenti preduzimaju akcije kroz iste kanale (odobri, spam, zabrana, značka, zakačaj, zaključaj, piši) i te akcije se pojavljuju u istim [Comment Logs](/guide-moderation.html#comment-logs), istoj [Moderation Page](/guide-moderation.html#moderate-comments-page) i istim tokovima obaveštenja. Agenti i ljudi vide rad jedni drugih i mogu reagovati jedni na druge – akcije moderatora su same po sebi validni okidači za agente (pogledajte [Trigger: Moderator Reviewed Comment](#trigger-moderator-reviewed) i slične).
 
 Ako vam takođe trebaju ljudi u redu, FastComments nudi [Human Moderation Services](/guide-moderation.html#human-moderation-services): naši moderatori rade uz vaše agente, u vašem kontrolnom panelu, pod vašim smernicama.
----

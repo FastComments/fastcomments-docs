@@ -10,5 +10,3 @@
     <div class="title">Άνοιγμα του προτύπου</div>
     <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-2-open-blog-post-template.png" alt="Άνοιγμα του προτύπου" />
 </div>
-
----

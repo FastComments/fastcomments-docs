@@ -35,5 +35,3 @@ try {
     echo 'Exception when calling PublicApi->getV2PageReacts: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

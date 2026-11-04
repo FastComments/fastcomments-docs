@@ -23,5 +23,3 @@ const tagPayload: CreateHashTagBody = {
 const responseWithBody: CreateHashTagResponse = await addHashTag(tenantId, tagPayload);
 const responseWithoutBody: CreateHashTagResponse = await addHashTag(tenantId);
 [inline-code-end]
-
----

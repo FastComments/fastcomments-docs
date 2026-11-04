@@ -8,5 +8,3 @@ Wenn Sie auf Probleme stoßen oder Fragen zum JavaScript-/TypeScript-SDK haben, 
 ## Mitwirken
 
 Beiträge sind willkommen! Bitte besuchen Sie das [GitHub-Repository](https://github.com/FastComments/fastcomments-sdk-js) für Richtlinien zur Mitarbeit.
-
----

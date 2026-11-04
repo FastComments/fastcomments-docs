@@ -1,4 +1,3 @@
----
 구독 취소 (REST hook 구독 취소). 이 API를 통해 생성된 구독만 여기서 삭제할 수 있습니다; 대시보드에서 관리되는 웹훅은 대시보드에서 편집합니다.
 
 ## Parameters
@@ -52,5 +51,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

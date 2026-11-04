@@ -46,5 +46,3 @@ FastComments trenutno podržava isticanje sintakse za 39 uobičajenih jezika:
 - YAML
 
 Kada delite fragment koda u jeziku koji ne podržavamo, on će i dalje biti prikazan kao kod - ali neće biti primenjeno isticanje sintakse niti preformatiranje.
-
----

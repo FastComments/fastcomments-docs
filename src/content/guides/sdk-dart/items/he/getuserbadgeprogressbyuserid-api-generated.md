@@ -1,4 +1,3 @@
----
 ## פרמטרים
 
 | שם | סוג | מיקום | נדרש | תיאור |
@@ -31,5 +30,3 @@ try {
     print('Exception when calling DefaultApi->getUserBadgeProgressByUserId: $e\n');
 }
 [inline-code-end]
-
----

@@ -33,5 +33,3 @@ if optResp.isSome:
   let resp = optResp.get()
   # further processing with resp
 [inline-code-end]
-
----

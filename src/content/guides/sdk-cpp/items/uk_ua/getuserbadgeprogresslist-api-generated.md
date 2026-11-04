@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Назва | Тип | Обов'язково | Опис |
@@ -27,5 +26,3 @@ api->getUserBadgeProgressList(tenantId, options)
         }
     });
 [inline-code-end]
-
----

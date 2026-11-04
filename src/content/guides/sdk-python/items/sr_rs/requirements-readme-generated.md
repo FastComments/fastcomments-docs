@@ -1,4 +1,3 @@
----
 - Python >= 3.8
 
 Основна инсталација је чисто стандардна библиотека и пружа SSO алате. Генерисани
@@ -9,4 +8,3 @@ API клијент (`DefaultApi`/`PublicApi`/`ModerationApi`) захтева `cl
 ```bash
 pip install "fastcomments[client] @ git+https://github.com/fastcomments/fastcomments-python.git@v3.1.0"
 ```
----

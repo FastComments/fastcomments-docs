@@ -1,4 +1,4 @@
-Remove a poll from its comment, along with every vote cast on it. The comment itself is left alone.
+Verwijder een poll van de bijbehorende reactie, samen met alle uitgebrachte stemmen. De reactie zelf blijft onaangetast.
 
 ## Parameters
 
@@ -7,7 +7,7 @@ Remove a poll from its comment, along with every vote cast on it. The comment it
 | tenantId | string | query | Ja |  |
 | commentId | string | path | Ja |  |
 
-## Respons
+## Response
 
 Retourneert: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APIEmptyResponse.swift)
 
@@ -15,7 +15,7 @@ Retourneert: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-s
 
 [inline-code-attrs-start title = 'deletePoll Voorbeeld'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// De volgende codevoorbeelden zijn nog in de bèta. Meld eventuele problemen via http://github.com/OpenAPITools/openapi-generator/issues/new
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -32,5 +32,3 @@ DefaultAPI.deletePoll(tenantId: tenantId, commentId: commentId) { (response, err
     }
 }
 [inline-code-end]
-
----

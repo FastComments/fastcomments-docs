@@ -1,4 +1,3 @@
----
 - Python >= 3.8
 
 La instalación base es pure-stdlib y proporciona las utilidades SSO.  
@@ -7,4 +6,3 @@ El cliente API generado (`DefaultApi`/`PublicApi`/`ModerationApi`) necesita el e
 ```bash
 pip install "fastcomments[client] @ git+https://github.com/fastcomments/fastcomments-python.git@v3.1.0"
 ```
----

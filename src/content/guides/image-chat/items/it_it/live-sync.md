@@ -53,5 +53,3 @@ Per pagine con centinaia di utenti simultanei e alta attività di creazione marc
 La sincronizzazione in tempo reale rende Image Chat particolarmente potente per flussi di lavoro collaborativi. I team di design possono rivedere insieme i mockup con tutti che vedono le posizioni dei marcatori in tempo reale. I team di supporto clienti possono annotare collaborativamente screenshot per identificare problemi. I gruppi educativi possono discutere diagrammi con tutti i partecipanti che vedono i marcatori degli altri mentre vengono creati.
 
 Il feedback immediato crea un'esperienza collaborativa più coinvolgente e produttiva rispetto ai sistemi di commento tradizionali in cui gli utenti devono aggiornare la pagina per vedere gli aggiornamenti.
-
----

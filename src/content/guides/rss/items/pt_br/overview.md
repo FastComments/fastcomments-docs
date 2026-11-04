@@ -1,4 +1,3 @@
----
 FastComments fornece feeds RSS que permitem assinar seus comentários usando qualquer aplicativo leitor de RSS.
 
 Seu feed RSS contém:
@@ -11,5 +10,3 @@ Seu feed RSS contém:
 O feed é fornecido no formato RSS 2.0, que é compatível com todos os principais leitores de RSS.
 
 O feed RSS é atualizado em tempo real à medida que novos comentários são adicionados ao seu site. O feed inclui metadados indicando quando foi atualizado pela última vez, permitindo que os leitores de RSS verifiquem de forma eficiente a existência de novo conteúdo.
-
----

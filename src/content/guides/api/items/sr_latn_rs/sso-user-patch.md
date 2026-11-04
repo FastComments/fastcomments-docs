@@ -33,6 +33,3 @@ interface SSOUserPatchResponse {
     user?: SSOUser; // U slučaju uspeha vraćamo kompletno ažuriranog korisnika.
 }
 [inline-code-end]
-
-
----

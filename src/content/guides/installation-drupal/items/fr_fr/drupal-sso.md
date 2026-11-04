@@ -19,5 +19,3 @@ L'identité de l'utilisateur est transmise à FastComments chaque fois qu'un uti
 <sup>(Optionnel)</sup> Ajoutez vos administrateurs à [Utilisateurs & Administrateurs](https://fastcomments.com/auth/my-account/users) et vos modérateurs à [Modérateurs de commentaires](https://fastcomments.com/auth/my-account/moderate-comments/moderators) pour améliorer leur expérience et activer le suivi des statistiques pour les modérateurs.
 
 Pour une analyse plus approfondie du fonctionnement du SSO, consultez la [section SSO](/guide-customizations-and-configuration.html#sso) de la documentation sur les personnalisations.
-
----

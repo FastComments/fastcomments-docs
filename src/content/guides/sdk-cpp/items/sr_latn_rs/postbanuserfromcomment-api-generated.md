@@ -28,5 +28,3 @@ api->postBanUserFromComment(tenantId, commentId, options)
         try { t.get(); } catch (const std::exception& e) { /* obrada greške */ }
     });
 [inline-code-end]
-
----

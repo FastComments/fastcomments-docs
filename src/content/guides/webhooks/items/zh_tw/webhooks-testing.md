@@ -22,5 +22,3 @@
 - **Delete Event**：當評論被刪除時觸發。
 
 每個 webhook 皆綁定單一事件與單一 HTTP 方法（POST、PUT 或 DELETE）。每個事件在請求主體中包含完整的評論資料（請參閱 [Data Structures](/guide-webhooks.html#webhooks-structures) 了解 payload 格式）。
-
----

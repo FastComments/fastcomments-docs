@@ -1,29 +1,29 @@
-The FastComments SDK provides three API clients:
+Το FastComments SDK παρέχει τρεις API clients:
 
-### PublicAPI - Μέθοδοι Ασφαλείς για Πελάτες
+### PublicAPI - Μέθοδοι Ασφαλείς για Client
 
-The `PublicAPI` contains methods that are safe to call from client-side code (iOS/macOS apps). These methods:
-- Do not require an API key → Δεν απαιτούν κλειδί API
-- Can use SSO tokens for authentication → Μπορούν να χρησιμοποιήσουν διακριτικά SSO για έλεγχο ταυτότητας
-- Are rate-limited per user/device → Έχουν περιορισμό ρυθμού ανά χρήστη/συσκευή
-- Are suitable for end-user facing applications → Είναι κατάλληλες για εφαρμογές που προορίζονται για τελικούς χρήστες
+Το `PublicAPI` περιέχει μεθόδους που είναι ασφαλείς για κλήση από κώδικα client-side (εφαρμογές iOS/macOS). Αυτές οι μέθοδοι:
+- Δεν απαιτούν API key
+- Μπορούν να χρησιμοποιήσουν SSO tokens για αυθεντικοποίηση
+- Έχουν όριο ρυθμού ανά χρήστη/συσκευή
+- Είναι κατάλληλες για εφαρμογές που απευθύνονται σε τελικούς χρήστες
 
-**Παράδειγμα χρήσης**: Fetching and creating comments in your iOS app
+**Παράδειγμα χρήσης**: Ανάκτηση και δημιουργία σχολίων στην εφαρμογή iOS σας
 
-### DefaultAPI - Μέθοδοι Πλευράς Διακομιστή
+### DefaultAPI - Μέθοδοι Server-Side
 
-The `DefaultAPI` contains authenticated methods that require an API key. These methods:
-- Require your FastComments API key → Απαιτούν το κλειδί API του FastComments
-- Should ONLY be called from server-side code → Πρέπει να κλήνονται ΜΟΝΟ από κώδικα στην πλευρά του διακομιστή
-- Provide full access to your FastComments data → Παρέχουν πλήρη πρόσβαση στα δεδομένα του FastComments
-- Are rate-limited per tenant → Έχουν περιορισμό ρυθμού ανά ενοικιαστή
+Το `DefaultAPI` περιέχει μεθόδους με αυθεντικοποίηση που απαιτούν API key. Αυτές οι μέθοδοι:
+- Απαιτούν το API key του FastComments σας
+- Πρέπει να καλούνται ΜΟΝΟ από κώδικα server-side
+- Παρέχουν πλήρη πρόσβαση στα δεδομένα FastComments σας
+- Έχουν όριο ρυθμού ανά tenant
 
-**Παράδειγμα χρήσης**: Administrative operations, bulk data export, user management
+**Παράδειγμα χρήσης**: Διαχειριστικές λειτουργίες, μαζική εξαγωγή δεδομένων, διαχείριση χρηστών
 
-### ModerationAPI - Μέθοδοι Πίνακα Ελέγχου Συντονιστών
+### ModerationAPI - Μέθοδοι Πίνακα Ελέγχου Συντονιστή
 
-The `ModerationAPI` provides an extensive suite of live and fast moderation APIs. Every `ModerationAPI` method accepts an `sso` parameter and can authenticate via SSO or a FastComments.com session cookie.
+Το `ModerationAPI` παρέχει ένα εκτεταμένο σύνολο live και γρήγορων APIs συντονισμού. Κάθε μέθοδος του `ModerationAPI` δέχεται μια παράμετρο `sso` και μπορεί να αυθεντικοποιηθεί μέσω SSO ή ενός session cookie του FastComments.com.
 
-**Παράδειγμα χρήσης**: Building a moderation experience for moderators of your community
+**Παράδειγμα χρήσης**: Δημιουργία εμπειρίας συντονισμού για τους συντονιστές της κοινότητάς σας
 
-**ΣΗΜΑΝΤΙΚΟ**: Never expose your API key in client-side code. API keys should only be used server-side.
+**ΣΗΜΑΝΤΙΚΟ**: Ποτέ μην εκθέτετε το API key σας σε κώδικα client-side. Τα API keys πρέπει να χρησιμοποιούνται μόνο server-side.

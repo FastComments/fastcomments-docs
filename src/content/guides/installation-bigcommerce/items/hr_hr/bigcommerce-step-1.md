@@ -41,5 +41,3 @@ Sada možemo uređivati našu novu temu kako bismo dodali FastComments.
     <div class="title">Uredite datoteke teme</div>
     <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-1-edit-theme-files.png" alt="Uredite datoteke teme" />
 </div>
-
----

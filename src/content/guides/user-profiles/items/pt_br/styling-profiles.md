@@ -1,4 +1,3 @@
----
 Quando Perfis de Usuário são abertos no contexto do seu site (via o widget de comentários), quaisquer estilos CSS personalizados que você aplicou ao seu widget FastComments são automaticamente injetados no modal de perfil.
 
 ### Como Funciona
@@ -64,5 +63,3 @@ Dark mode uses the `.dark` class modifier on `.user-profile`.
     border-radius: 12px 0 0 12px;
 }
 ```
-
----

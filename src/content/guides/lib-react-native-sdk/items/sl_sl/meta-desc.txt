@@ -1,3 +1,1 @@
----
 Pokličite API FastComments neposredno iz aplikacije React Native, da ustvarite, pridobite in moderirate komentarje, ne da bi šli skozi gradnik.
----

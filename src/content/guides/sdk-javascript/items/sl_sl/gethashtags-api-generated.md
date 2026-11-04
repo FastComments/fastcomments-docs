@@ -20,5 +20,3 @@ Vrne: [`GetHashTagsResponse`](https://github.com/FastComments/fastcomments-sdk-j
     console.log(result);
 })();
 [inline-code-end]
-
----

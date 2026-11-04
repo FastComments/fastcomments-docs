@@ -1,23 +1,24 @@
-Past commenters on the page who are NOT currently online. Sorted by displayName.  
-Use this after exhausting /users/online to render a "Members" section.  
-Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName} index from afterName forward via $gt, no $skip cost.
+Коментатори, які раніше залишали коментарі на сторінці, але наразі НЕ в мережі. Відсортовані за displayName.
+Використовуйте це після вичерпання /users/online для відображення розділу «Учасники».
+Курсорна пагінація за commenterName: сервер проходить частковим індексом {tenantId, urlId, commenterName}
+від afterName вперед за допомогою $gt, без витрат на $skip.
 
 ## Параметри
 
-| Назва | Тип | Розташування | Обов’язково | Опис |
-|------|------|--------------|--------------|------|
+| Назва | Тип | Розташування | Обов'язковий | Опис |
+|------|------|----------|----------|-------------|
 | tenantId | string | path | Так |  |
-| urlId | string | query | Так | Ідентифікатор URL сторінки (очищений на сервері). |
+| urlId | string | query | Так | Ідентифікатор URL сторінки (очищається на сервері). |
 | afterName | string | query | Ні | Курсор: передайте nextAfterName з попередньої відповіді. |
-| afterUserId | string | query | Ні | Тай-брейкер курсора: передайте nextAfterUserId з попередньої відповіді. Потрібно, коли встановлено afterName, щоб уникнути пропуску записів через однакові імена. |
+| afterUserId | string | query | Ні | Додатковий критерій курсора: передайте nextAfterUserId з попередньої відповіді. Обов'язковий, коли вказано afterName, щоб записи з однаковими іменами не втрачалися. |
 
 ## Відповідь
 
-Returns: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/page_users_offline_response.py)
+Повертає: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/page_users_offline_response.py)
 
 ## Приклад
 
-[inline-code-attrs-start title = 'get_offline_users Приклад'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад get_offline_users'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
 from client.api.public_api import GetOfflineUsersOptions
@@ -25,21 +26,21 @@ from client.models.page_users_offline_response import PageUsersOfflineResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Визначення хосту є необов’язковим і за замовчуванням https://fastcomments.com
-# Див. configuration.py для списку всіх підтримуваних параметрів конфігурації.
+# Defining the host is optional and defaults to https://fastcomments.com
+# See configuration.py for a list of all supported configuration parameters.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Відкрити контекст з екземпляром API клієнта
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # Створити екземпляр класу API
+    # Create an instance of the API class
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    url_id = 'url_id_example' # str | Ідентифікатор URL сторінки (очищений на сервері).
-    after_name = 'after_name_example' # str | Курсор: передайте nextAfterName з попередньої відповіді. (необов’язково)
-    after_user_id = 'after_user_id_example' # str | Тай-брейкер курсора: передайте nextAfterUserId з попередньої відповіді. Потрібно, коли afterName встановлений, щоб уникнути пропуску записів через однакові імена. (необов’язково)
+    url_id = 'url_id_example' # str | Ідентифікатор URL сторінки (очищається на сервері).
+    after_name = 'after_name_example' # str | Курсор: передайте nextAfterName з попередньої відповіді. (optional)
+    after_user_id = 'after_user_id_example' # str | Додатковий критерій курсора: передайте nextAfterUserId з попередньої відповіді. Обов'язковий, коли вказано afterName, щоб записи з однаковими іменами не втрачалися. (optional)
 
     try:
         api_response = api_instance.get_offline_users(tenant_id, url_id, GetOfflineUsersOptions(after_name=after_name, after_user_id=after_user_id))

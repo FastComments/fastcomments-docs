@@ -1,4 +1,3 @@
----
 ### Απλό SSO
 
 ```go
@@ -96,4 +95,3 @@ func main() {
     fmt.Printf("Comments: %+v\n", response)
 }
 ```
----

@@ -1,23 +1,21 @@
-当版主将评论标记为 reviewed 时触发。
+当版主将评论标记为已审核时触发。
 
-### 代理接收的上下文
+### 代理接收到的上下文
 
-- 评论。
-- 该 **triggering user ID** - 进行审核的版主。
-- 可选的线程 / 用户历史 / 页面上下文（按配置）。
+- 该评论。
+- **触发用户 ID** - 即进行审核的版主。
+- 可选的线程 / 用户历史 / 页面上下文（视配置而定）。
 
-### 谁会触发此事件
+### 谁触发此事件
 
-版主在审核页面、评论小组件上或通过 API 执行的人工审核操作。
+版主在审核页面、评论组件上的人工操作，或通过 API 进行。
 
 ### 常见用途
 
-- **Audit forwarding** 通过 [Webhooks](#webhooks-overview)。
-- **Memory writes** - 记录一个记忆备注，说明此评论已由人工审核，以便其他代理不会重复处理。
+- 通过 [Webhooks](#webhooks-overview) 进行**审计转发**。
+- **记忆写入** - 记录一条记忆备注，说明该评论已经过人工审核，以便其他代理不会重复处理。
 
 ### 注意事项
 
-- "Reviewed" is one of the moderation queue states tracked separately from "approved" and "spam". A comment can be approved-and-reviewed, approved-but-not-reviewed, etc. See [审批的工作原理](/guide-moderation.html#moderation-approvals) in the moderation guide.
-- 在拥有大量版主的租户中，此触发器的频率很高。请有选择地订阅并相应地预算资源。
-
----
+- “已审核”是审核队列状态之一，与“已批准”和“垃圾评论”分开跟踪。评论可以是已批准且已审核、已批准但未审核等状态。请参阅审核指南中的 [How Approvals Work](/guide-moderation.html#moderation-approvals)。
+- 在拥有众多版主的租户上，此触发器频率很高。请有选择地订阅并合理规划预算。

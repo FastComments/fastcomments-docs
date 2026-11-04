@@ -1,4 +1,3 @@
----
 Liste les webhooks configurés pour le locataire, à la fois les lignes gérées via le tableau de bord et les abonnements API.
 
 ## Paramètres
@@ -39,5 +38,3 @@ DefaultAPI.getWebhooks(tenantId: tenantId, options: DefaultAPI.GetWebhooksOption
     }
 }
 [inline-code-end]
-
----

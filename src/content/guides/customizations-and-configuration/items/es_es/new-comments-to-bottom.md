@@ -13,4 +13,3 @@ Con esta configuración habilitada:
 - Esto puede ayudar a mantener el flujo de lectura cuando los usuarios siguen una discusión
 
 Tenga en cuenta que esta configuración solo afecta al lugar donde se colocan los nuevos comentarios en vivo cuando llegan en tiempo real. No afecta al orden de clasificación inicial cuando se carga la página.
----

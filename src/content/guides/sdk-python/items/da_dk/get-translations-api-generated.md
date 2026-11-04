@@ -44,5 +44,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Undtagelse ved kald af PublicApi->get_translations: %s\n" % e)
 [inline-code-end]
-
----

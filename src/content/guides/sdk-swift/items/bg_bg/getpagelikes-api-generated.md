@@ -1,4 +1,3 @@
----
 Брой харесвания за страница, по избор с потребителите, които я харесаха.
 
 ## Параметри
@@ -35,5 +34,3 @@ DefaultAPI.getPageLikes(tenantId: tenantId, urlId: urlId, includeUserInfo: inclu
     }
 }
 [inline-code-end]
-
----

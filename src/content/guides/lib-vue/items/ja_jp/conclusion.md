@@ -8,5 +8,3 @@ Vue 2 ライブラリについて問題が発生した場合や質問がある�
 ## 貢献
 
 貢献は歓迎します！貢献ガイドラインについては、[GitHub リポジトリ](https://github.com/FastComments/fastcomments-vue) をご覧ください。
-
----

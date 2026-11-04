@@ -6,5 +6,3 @@
 </div>
 
 HTML 要素を使って、FastComments ウィジェットをあなたの Bubble アプリに直接埋め込むことができます。
-
----

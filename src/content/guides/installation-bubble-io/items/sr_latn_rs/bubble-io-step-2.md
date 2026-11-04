@@ -1,4 +1,3 @@
----
 Kliknite na HTML element koji ste upravo dodali. U uređivaču svojstava koji se pojavi, zalepite sledeći kod u HTML polje:
 
 [inline-code-attrs-start title = 'Bubble.io kod za komentarisanje uživo'; type = 'html'; isFunctional = false; inline-code-attrs-end]
@@ -44,5 +43,3 @@ Napomena: Ovaj kod uključuje mehanizam ponovnog pokušaja da bi se osiguralo da
 Ostali isječci koda neće raditi.
 
 Ne zaboravite da zamenite `'demo'` vašim stvarnim FastComments tenant ID-jem nakon prijave. Ako ste prijavljeni na FastComments.com, trebalo bi da je već zamenjeno.
-
----

@@ -8,5 +8,3 @@
 ## 貢獻
 
 歡迎您提交貢獻！請造訪 [GitHub 儲存庫](https://github.com/FastComments/fastcomments-ruby) 以查看貢獻指南。
-
----

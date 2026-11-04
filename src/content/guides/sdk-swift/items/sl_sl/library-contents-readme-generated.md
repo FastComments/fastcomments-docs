@@ -1,4 +1,3 @@
----
 FastComments Swift SDK je sestavljen iz več modulov:
 
 - **Client Module** - API odjemalec za FastComments REST API-je
@@ -11,4 +10,3 @@ FastComments Swift SDK je sestavljen iz več modulov:
   - Varen postopek generiranja žetonov za preverjanje pristnosti uporabnika
   - Podpora tako za preprost kot varen način SSO
   - Podpisovanje žetonov, temelječe na HMAC-SHA256, z uporabo CryptoKit
----

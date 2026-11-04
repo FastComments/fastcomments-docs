@@ -26,5 +26,3 @@
   const response: PatchPageAPIResponse = await patchPage(tenantId, pageId, updateData);
 })();
 [inline-code-end]
-
----

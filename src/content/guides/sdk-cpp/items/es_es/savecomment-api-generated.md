@@ -1,4 +1,3 @@
----
 ## Parámetros
 
 | Nombre | Tipo | Requerido | Descripción |
@@ -28,5 +27,3 @@ api->saveComment(utility::string_t(U("my-tenant-123")), commentParams, options)
         auto commentId = response->commentId;
     });
 [inline-code-end]
-
----

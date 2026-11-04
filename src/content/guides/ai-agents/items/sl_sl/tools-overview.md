@@ -1,79 +1,79 @@
-Agentova **orodja** so dejanja, ki jih lahko izvede. Oblika za urejanje agenta ima razdelek **Allowed tool calls**, kjer označite orodja, ki jih sme agent uporabljati, in razdelek **Approvals**, kjer označite dejanja, ki morajo pred uveljavitvijo dobiti človeško odobritev.
+**Orodja** agenta so dejanja, ki jih lahko izvede. Obrazec za urejanje agenta ima razdelek **Dovoljena klicanja orodij**, kjer označite orodja, ki jih ta agent sme uporabljati, ter razdelek **Potrditve**, kjer označite dejanja, ki morajo pred uveljavitvijo dobiti človeško odobritev.
 
-Obstajajo tri ravni za katerokoli orodje:
+Vsako orodje ima tri ravni:
 
-- **Disallowed** - agent ga ne more videti ali uporabiti.
-- **Allowed, no approval** - agent ga uporablja neposredno. Zabeleženo v zgodovini zagona.
-- **Allowed, with approval** - klic agenta se uvrsti v čakalnik za človekov pregled in se izvede šele, ko človek odobri.
+- **Nedovoljeno** - agent ga ne vidi in ne more uporabiti.
+- **Dovoljeno, brez odobritve** - agent ga uporabi neposredno. Zabeleženo v zgodovini zagonov.
+- **Dovoljeno, z odobritvijo** - klic agenta je postavljen v čakalno vrsto za človeški pregled in se izvede šele, ko ga človek odobri.
 
-Onemogočena orodja so tiha: agent jih ne more zahtevati in jih platforma popolnoma zavrne. Orodja, ki zahtevajo odobritev, vedno gredo skozi [approvals inbox](#approval-workflow).
+Nedovoljena orodja so tiha: agent jih ne more zahtevati, platforma pa jih zavrne na mestu. Orodja z odobritvijo vedno gredo skozi [vhodni predal odobritev](#approval-workflow).
 
-### Revizijska sled pri vsakem dejanju
+### Sled revizije pri vsakem dejanju
 
-Vsako dejanje, ki ga agent izvede, je zabeleženo s kratko utemeljitvijo (1–2 stavka, ki pojasnita zakaj) in oceno zaupanja (0.0–1.0). Obe se prikažeta v [Run Detail View](#run-detail-view) in pri vsakem [approval](#approval-workflow). Iskanje v memoriji je edina izjema, ki je samo za branje: ni zabeleženo kot dejanje in je vedno na voljo ne glede na seznam dovoljenih.
+Vsako dejanje agenta je zabeleženo s kratko utemeljitvijo (1-2 stavka, ki pojasnjujeta razlog) in oceno zaupanja (0.0-1.0). Oboje je prikazano v [Pogledu podrobnosti zagona](#run-detail-view) in pri vsaki [odobritvi](#approval-workflow). Iskanje po spominu je edina izjema, ki je samo za branje: ni zabeleženo kot dejanje in je vedno na voljo ne glede na seznam dovoljenih orodij.
 
 ### Referenca orodij
 
 #### Objavljanje komentarjev
 
-Dovoljuje agentu, da objavi komentar v svojem imenu. Komentar se javno prikaže pod prikaznim imenom agenta. Uporablja se pri agentih za pozdravljanje in povzemanje. Razveljavljivo - vsak moderator lahko odstrani neustrezen komentar. Če vaša skupnost zahteva, da vsako javno sporočilo pregleda človek, ga zaklenite za odobritvijo.
+Agentu omogoča objavo komentarja v svojem imenu. Komentar je javno prikazan pod prikaznim imenom agenta. Uporabljajo ga agenti pozdravljalnik in povzetkovalec. Razveljavi se - vsak moderator lahko odstrani slab komentar. Omogočite odobritev, če vaša skupnost zahteva, da je vsaka javno vidna sporočila pregledal človek.
 
 #### Urejanje komentarja
 
-Dovoljuje agentu, da prepiše besedilo komentarja znotraj obsega. Izvirno besedilo ostane v revizijskem zapisu komentarja. Rezervirajte za ozka področja - cenzura osebnih podatkov, ki jih je uporabnik pomotoma razkril, ali popravek lastnega prejšnjega odgovora agenta. Ne za preoblikovanje mnenj ali omilitev tona. Celotno stran si oglejte pri [Edit comment](#tool-edit-comment).
+Agentu omogoča prepis besedila komentarja v obsegu. Izvirno besedilo je ohranjeno v revizijskem dnevniku komentarja. Rezervirajte za ozke primere - odstranjevanje osebnih podatkov, ki jih je uporabnik razkril, ali popravek prejšnjega odgovora agenta samega. Ni namenjeno prepisovanju mnenj ali omiljanju tona. Glejte [Urejanje komentarja](#tool-edit-comment) za celotno stran.
 
 #### Glasovanje o komentarjih
 
-Dovoljuje agentu, da da glas za ali proti komentarju. Glas se šteje v skupno število glasov komentarja enako kot kateri koli drug glas. Večina skupnosti raje nima botov, ki glasujejo; v nobeni začetni predlogi to ni omogočeno. Če to dovolite, je glasovanje razveljavljivo.
+Agentu omogoča glasovanje za ali proti komentarju. Glas se prišteva k skupnemu številu glasov komentarja kot vsak drug glas. Večina skupnosti ne želi, da boti glasujejo; v nobeni začetni predlogi ni omogočeno. Če to dovolite, je glasovanje razveljavljivo.
 
 #### Pripni / odpni komentar
 
-Dovoljuje agentu, da pripne komentar na vrh strani ali odpniti že pripet komentar. Platforma ne uveljavlja pravila ene pripetosti na nit, zato bi morali agenta, namenjenega pripenjanju, navoditi, naj najprej odpne prejšnji pripeti komentar. Da odkrije, kaj je že pripeto na isti strani, lahko agent pokliče orodje samo za branje `get_pinned_comments` (glej spodaj). Uporablja se v predlogi Top Comment Pinner.
+Agentu omogoča pripeti komentar na vrh strani ali odpeti že pripetega. Platforma ne uveljavlja pravila enega pripetega komentarja na nit, zato je treba agenta za pripinanje navoditi, da najprej odpine prejšnji pripeti komentar. Da ugotovi, kaj je na isti strani že pripeto, lahko agent pokliče orodje samo za branje `get_pinned_comments` (glejte spodaj). Uporablja ga predloga Top Comment Pinner.
 
 #### Zakleni / odkleni komentar
 
-Dovoljuje agentu, da prepreči nadaljnje odgovore pod komentarjem ali obnovi odgovarjanje. Zaklenjen komentar ostane viden. Uporabno za ohlajanje razgrete debata, pogosto v kombinaciji z zamikom za odklep. Da odkrije, kaj je trenutno zaklenjeno na isti strani, lahko agent pokliče orodje samo za branje `get_locked_comments` (glej spodaj).
+Agentu omogoča preprečevanje nadaljnjih odgovorov pod komentarjem ali njihovo obnovo. Zaklenjeni komentar ostane viden. Uporabno za ohlajevanje vročih niti, skupaj z odloženim odklepanjem. Da ugotovi, kaj je na isti strani trenutno zaklenjeno, lahko agent pokliče orodje samo za branje `get_locked_comments` (glejte spodaj).
 
-#### Oznaka / odstranitev oznake za spam
+#### Označi / odznači kot spam
 
-Dovoljuje agentu, da označi komentar kot spam (skrije ga pred bralci in poda kot vhod za klasifikator spama) ali odstrani to oznako. Temeljno orodje za vsakega moderatorja. Razveljavljivo.
+Agentu omogoča označiti komentar kot spam (skrije ga pred bralci in ga posreduje klasifikatorju spama) ali odstraniti to oznako. Osnovno orodje za vsakega moderatorskega agenta. Razveljavi se.
 
-#### Odobri / odstrani odobritev komentarja
+#### Odobri / prekliči odobritev komentarja
 
-Dovoljuje agentu, da prikaže zadržan komentar bralcem ali skrije že videnega. Najbolj uporabno pri najemnikih, ki zadržujejo nove komentarje za pregled moderatorja.
+Agentu omogoča prikaz zadržanega komentarja bralcem ali skriti že videnega. Najbolj uporabno na najemnikih, ki zadržijo nove komentarje za moderatorski pregled.
 
 #### Označi komentar kot pregledan
 
-Orodje za stanje v vrsti: označi komentar kot "moderator (ali agent) si ga je ogledal." Ne spremeni vidljivosti. Nizek vložek; redko pogojevano.
+Orodje za stanje čakalne vrste: označi komentar kot "moderator (ali agent) si je to ogledal." Ne spremeni vidnosti. Nizka tveganja; redko omejeno z odobritvijo.
 
 #### Podeli značko
 
-Dovoljuje agentu, da uporabniku podeli značko, ki ste jo konfigurirali za vašega najemnika. Moderator jo lahko razveljavi. Ko je to orodje omogočeno, agent vidi značke vašega najemnika in sam izbere pravo, zato vam ni treba vnašati identifikatorjev značk v smernice skupnosti ali začetni poziv. Da usmerite katera značka se podeli za katero vedenje, v pozivu sklicujte značke po njihovem **Display Label**.
+Agentu omogoča podeliti uporabniku značko, ki ste jo nastavili za svojega najemnika. Moderator jo lahko razveljavi. Ko je to orodje omogočeno, agent lahko vidi značke vašega najemnika in sam izbere pravo, zato vsmeho vodnikih skupnosti ali začetnem pozivu ni treba prilepiti identifikatorjev značk. Da usmerite, katera značka se podeli za katero vedenje, se v pozivu sklicujte na značke po njihovi **Prikazni oznaki**.
 
 #### Pošlji e-pošto
 
-Dovoljuje agentu, da pošlje navadno besedilo e-pošte avtorju komentarja v obsegu sprožilca. Agent nikoli ne vidi e-poštnega naslova prejemnika - izbere komentar in platforma dostavi na naslov, ki ga je avtor vnesel ob objavi. Od-naslov je v imenu vaše blagovne znamke (z DKIM), če domena komentarja ustreza konfigurirani domeni, sicer uporabi privzeto platformo. Uporabljajte varčno - e-pošta je orodje z največjo trenjem in slabe e-pošte je težko razveljaviti.
+Agentu omogoča poslati e-poštno sporočilo v obliki navadnega besedila avtorju komentarja v obsegu sprožilca. Agent nikoli ne vidi e-poštnega naslova prejemnika - izbere komentar, platforma pa dostavi na naslov, ki ga je komentator pustil ob objavi. Naslov pošiljatelja je vašega najemnika blagovna znamka pošiljatelja (z DKIM), ko se domena komentarja ujema z nastavljeno domeno, sicer pa privzeti naslov platforme. Uporabljajte zmerno - e-pošta je orodje z najvišjo stopnjo trenja, slaba e-poštna sporočila pa je težko razveljaviti.
 
-#### Shrani / poišči agentovo pomnilnik
+#### Shrani / išči spomin agenta
 
-Dve soparno orodji, ki bereta in zapisujeta skupni sklad zapiskov o uporabniku, za katerega je sprožilec deloval. Pomnilnik je deljen med vsemi agenti v vašem najemniku, zato zapiski triažnega agenta obveščajo odločitve moderatornega agenta. Iskanje je samo za branje in vedno na voljo; shranjevanje je redko pogojevano. Celoten dizajn si oglejte pri [Agent Memory System](#agent-memory-system).
+Dva povezana orodja, ki bereta in pišeta v skupni zbirko opomb o uporabniku, za katerega se je sprožilec aktiviral. Spomin je v skupni rabi med vsemi agenti v vašem najemniku, zato opombe agenta za razvrščanje obveščajo odločitve moderatorskega agenta. Iskanje je samo za branje in vedno na voljo; shranjevanje je redko omejeno z odobritvijo. Glejte [Sistem spomina agenta](#agent-memory-system) za celotno zasnovo.
 
-#### Get pinned comments / Get locked comments
+#### Pridobi pripete komentarje / Pridobi zaklenjene komentarje
 
-Dve orodji samo za branje, ki izpišeta pripete (ali zaklenjene) komentarje na isti strani (`urlId`), na kateri se je sprožilec aktiviral. Ne sprejemata argumentov - stran se bere iz konteksta sprožilca, zato se agent ne more preusmeriti na druge strani. Uporabite jih, kadar agent potrebuje ukrep nad komentarjem, ki je že pripet ali zaklenjen - običajno prvi klic pred `unpin_comment` ali `unlock_comment`, ali pred pripenjanjem novega komentarja, da se lahko najprej odpne obstoječega.
+Dve orodji za odkrivanje, ki sta samo za branje, in izpišeta pripete (ali zaklenjene) komentarje na isti strani (`urlId`), na kateri se je sprožilec aktiviral. Ne sprejemata argumentov - stran se prebere iz konteksta sprožilca, zato agent ne more preklopiti na druge strani. Uporabite ju, ko mora agent ukrepati glede komentarja, ki je že pripet ali zaklenjen - tipično kot prvi klic pred `unpin_comment` ali `unlock_comment`, ali pred pripetjem novega komentarja, da se obstoječi najprej odpihne.
 
-Vsako orodje je posamezno omogočeno v razdelku **Allowed tool calls** (administrator označi `List pinned comments on the current page` ali `List locked comments on the current page`). Ne morejo biti pogojevana z odobritvijo - orodja samo za branje nimajo stranskih učinkov, ki bi zahtevali odobritev. Klicanje le-teh ni zabeleženo kot dejanje v zgodovini zagona; le posledični klic `unpin_comment` / `unlock_comment` / `pin_comment` (če do njega pride) se pojavi. Seznam je omejen na zadnjih 20 zadetkov na klic.
+Vsako orodje je v **Dovoljenih klicanjih orodij** ločeno omejeno (skrbnik označi `List pinned comments on the current page` ali `List locked comments on the current page`). Ne moreta biti omejena z odobritvijo - orodja samo za branje nimajo stranskih učinkov za odobriti. Njuno klicanje ni zabeleženo kot dejanje v zgodovini zagonov; prikaže se le posledični klic `unpin_comment` / `unlock_comment` / `pin_comment` (če pride do njega). Seznam je omejen na največ 20 najnovejših zadetkov na klic.
 
-Pomembno za razumevanje: ko eno od teh orodij vrne commentId, se ta commentId doda v obseg agenta za posamezen zagon, zato se naslednji klic `unpin_comment` / `unlock_comment` preveri glede na varnostno kontrolo ciljev orodij platforme. Brez prejšnjega klica na orodje za odkrivanje agent ne more ukrepati nad komentarji, ki niso že v neposrednem obsegu sprožilca. Zato agent, ki odpne pripete komentarje, običajno dobi omogočeni obe orodji (npr. `get_pinned_comments` skupaj z `unpin_comment`).
+Pomembno za razumevanje: ko eno od teh orodij vrne commentId, se ta commentId doda v obseg agenta za ta zagon, tako da se nadaljnji klic `unpin_comment` / `unlock_comment` preveri proti varnostnemu preverjanju cilja orodja na platformi. Brez predhodnega klica orodja za odkrivanje agent ne more ukrepati glede komentarjev, ki niso že v neposrednem obsegu sprožilca. Torej agent za odpinjanje tipično dobi omogočeni oba orodji (npr. `get_pinned_comments` plus `unpin_comment`).
 
 #### Opozori uporabnika
 
-Pošlje zasebno sporočilo (DM) z opozorilom uporabniku o določenem komentarju in atomarno zabeleži opozorilo v agentovem pomnilniku. Politika stopnjevanja platforme je zgrajena okoli tega orodja - najprej opozori, prepove šele, če uporabnik ponovi kršitev. Celotna stran pri [Warn user](#tool-warn-user).
+Pošlje zasebno opozorilo v DM uporabniku glede določenega komentarja in atomično zabeleži opozorilo v spomin agenta. Politika eskalacije platforme je zgrajena okoli tega orodja - najprej opozori, prepovej šele, če uporabnik ponovi prekršek. Glejte [Opozori uporabnika](#tool-warn-user) za celotno stran.
 
-#### Prepove uporabnika
+#### Prepovej uporabnika
 
-Najusodnejše orodje, ki ga lahko agent pokliče. Prepove uporabnika za določen čas, po potrebi kot shadow ban, po potrebi tudi prepove IP, po potrebi tudi izbriše vse uporabnikove komentarje. Dve uničujoči možnosti (IP, izbris-vseh) sta omogočeni le z dodatnima potrdiloma na obrazcu za urejanje. V regiji EU vse prepovedi zahtevajo človeško odobritev (glej [EU DSA Article 17 Compliance](#eu-dsa-compliance)). Celotna stran pri [Ban user](#tool-ban-user).
+Najbolj obsežno orodje, ki ga agent lahko pokliče. Prepove uporabnika s fiksno trajanjem, po možnosti kot senčno prepoved, po možnosti tudi prepove IP naslov in po možnosti tudi izbriše vse komentarje uporabnika. Dve destruktivni možnosti (IP, izbriši-vse) so omejene z dodatnimi privolitvami na obrazcu za urejanje. V regiji EU vse prepovedi zahtevajo človeško odobritev (glejte [Skladnost z EU DSA člen 17](#eu-dsa-compliance)). Glejte [Prepovej uporabnika](#tool-ban-user) za celotno stran.
 
-### Podmožnosti orodja Ban
+### Podmožnosti orodja za prepoved
 
-Orodje Ban izpostavi dve uničujoči možnosti - delete-all-comments in ban-by-IP - ki sta modelu popolnoma skriti, dokler jih ne vklopite preko razdelka **Ban options** na obrazcu za urejanje. Tudi če model navidezno "izumi" parameter, platforma zavrne vrednosti, ki jih niste izbrali. Oglejte si [Ban user](#tool-ban-user).
+Orodje za prepoved razkriva dve destruktivni možnosti - izbriši-vse-komentarje in prepoved-po-IP - ki so modelu popolnoma skrite, dokler jih ne omogočite v razdelku **Možnosti prepovedi** na obrazcu za urejanje. Tudi če model halucinira parameter, platforma zavre vrednosti, ki jih niste omogočili. Glejte [Prepovej uporabnika](#tool-ban-user).

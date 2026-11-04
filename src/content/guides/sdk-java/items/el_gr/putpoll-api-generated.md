@@ -1,28 +1,26 @@
-Attach a poll to a comment, or set the full state of the poll it already has.
+Επισυνάψτε μια δημοσκόπηση σε ένα σχόλιο, ή ορίστε την πλήρη κατάσταση της δημοσκόπησης που ήδη έχει.
 
-Options are matched by id: an option sent with the id of an existing option keeps its votes (and takes the
-new label and position), an option sent without an id is added, and existing options left out of the list
-are removed along with the votes cast on them.
+Οι επιλογές αντιστοιχίζονται με βάση το id: μια επιλογή που αποστέλλεται με το id μιας υπάρχουσας επιλογής διατηρεί τις ψήφους της (και λαμβάνει τη νέα ετικέτα και θέση), μια επιλογή που αποστέλλεται χωρίς id προστίθεται, και οι υπάρχουσες επιλογές που παραλείπονται από τη λίστα αφαιρούνται μαζί με τις ψήφους που έχουν καταψηφιστεί σε αυτές.
 
-Keeping no existing option ids on a poll that has votes deletes all of them, so that needs replaceVotes=true.
+Η διατήρηση καμία υπάρχοντος id επιλογής σε μια δημοσκόπηση που έχει ψήφους διαγράφει όλες αυτές, οπότε αυτό απαιτεί replaceVotes=true.
 
-## Parameters
+## Παράμετροι
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
-|------|------|----------|------------|------------|
-| tenantId | string | query | Yes |  |
-| commentId | string | path | Yes |  |
-| replaceVotes | boolean | query | No |  |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Ναι |  |
+| commentId | string | path | Ναι |  |
+| replaceVotes | boolean | query | Όχι |  |
 
-## Response
+## Απάντηση
 
-Returns: [`SavePollResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/SavePollResponse.java)
+Επιστρέφει: [`SavePollResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/SavePollResponse.java)
 
-## Example
+## Παράδειγμα
 
 [inline-code-attrs-start title = 'Παράδειγμα putPoll'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Εισαγωγή κλάσεων:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -35,10 +33,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Διαμόρφωση εξουσιοδότησης κλειδιού API: api_key
+    // Configure API key authorization: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Αφαιρέστε το σχόλιο στην παρακάτω γραμμή για να ορίσετε ένα πρόθεμα για το κλειδί API, π.χ. "Token" (defaults to null)
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);

@@ -49,5 +49,3 @@ Eğer AB içindeyseniz, `region` değerini `EU` olarak ayarlamak isteyebilirsini
 `fastcomments-vue` ve `fastcomments-vue-next` kütüphaneleri, VanillaJS yorum bileşeniyle aynı yapılandırmayı destekler.
 
 Vue bileşeninin desteklediği yapılandırmayı <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">burada</a> bulabilirsiniz.
-
----

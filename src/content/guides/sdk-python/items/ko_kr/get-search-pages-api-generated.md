@@ -42,5 +42,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("ModerationApi->get_search_pages 호출 중 예외 발생: %s\n" % e)
 [inline-code-end]
-
----

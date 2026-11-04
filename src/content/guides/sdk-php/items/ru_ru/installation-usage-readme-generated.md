@@ -1,11 +1,11 @@
 ### Требования
 
-PHP 7.4 и новее.
+PHP 7.4 и выше.
 Также должно работать с PHP 8.0.
 
 ### Composer
 
-Чтобы установить биндинги через [Composer](https://getcomposer.org/), добавьте следующее в `composer.json`:
+Чтобы установить библиотеку через [Composer](https://getcomposer.org/), добавьте следующее в `composer.json`:
 
 ```json
 {
@@ -23,7 +23,7 @@ PHP 7.4 и новее.
 
 Затем выполните `composer install`
 
-### Manual Installation
+### Ручная установка
 
 Скачайте файлы и подключите `autoload.php`:
 

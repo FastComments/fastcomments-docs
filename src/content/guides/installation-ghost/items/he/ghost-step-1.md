@@ -36,5 +36,3 @@
     <div class="title">הורד את התבנית</div>
     <img class="screenshot-image" src="/images/installation-guides/ghost-step-1-5-download.png" alt="הורד את התבנית" />
 </div>
-
----

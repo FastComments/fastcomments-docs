@@ -19,5 +19,3 @@ For at tilsidesætte skrifttypen anbefaler vi, at du definerer din CSS ved hjæl
     font-family: 'Roboto', sans-serif;
 }
 [inline-code-end]
-
----

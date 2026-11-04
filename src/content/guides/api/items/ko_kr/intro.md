@@ -1,4 +1,3 @@
----
 ### FastComments API
 
 FastComments는 다양한 리소스와 상호 작용할 수 있는 API를 제공합니다. 우리 플랫폼과 통합을 구축하거나 직접 클라이언트를 만들 수도 있습니다!
@@ -63,5 +62,3 @@ FastComments는 Active-Active 가용성을 제공합니다. 데이터센터에�
 - eudc-france.fastcomments.com
 
 이렇게 할 경우 과거에 엔트리포인트 노드가 폐기되고 전환을 위해 새로운 이름을 사용했으므로, 폴백을 정의하는 것이 좋습니다.
-
----

@@ -1,8 +1,8 @@
-All API methods in this SDK return `pplx::task<std::shared_ptr<ResponseType>>` from the C++ REST SDK. This gives you flexibility in how you handle API responses.
+Alle API-metoder i denne SDK returnerer `pplx::task<std::shared_ptr<ResponseType>>` fra C++ REST SDK. Dette giver dig fleksibilitet i, hvordan du håndterer API-svar.
 
 ### Synkrone kald med `.get()`
 
-Use `.get()` to block the calling thread until the request completes and retrieve the result synchronously:
+Brug `.get()` til at blokere den kaldende tråd, indtil anmodningen er fuldført, og hent resultatet synkront:
 
 ```cpp
 auto config = std::make_shared<org::openapitools::client::api::ApiConfiguration>();
@@ -13,15 +13,15 @@ config->setApiKey(utility::conversions::to_string_t("api_key"),
 auto apiClient = std::make_shared<org::openapitools::client::api::ApiClient>(config);
 org::openapitools::client::api::DefaultApi api(apiClient);
 
-// Required parameters are positional; optional ones go in the options struct
+// Påkrævede parametre er positionelle; valgfrie placeres i options-strukturen
 org::openapitools::client::api::GetCommentsOptions options;
 options.urlId = utility::conversions::to_string_t("your-url-id");
 
-// Call .get() to block and get the result synchronously
+// Kald .get() for at blokere og hente resultatet synkront
 auto response = api.getComments(
     utility::conversions::to_string_t("your-tenant-id"),
     options
-).get();  // Blocks until the HTTP request completes
+).get();  // Blokerer, indtil HTTP-anmodningen er fuldført
 
 if (response && response->comments) {
     std::cout << "Found " << response->comments->size() << " comments" << std::endl;
@@ -30,7 +30,7 @@ if (response && response->comments) {
 
 ### Asynkrone kald med `.then()`
 
-Use `.then()` for non-blocking asynchronous execution with callbacks:
+Brug `.then()` til ikke-blokerende asynkron udførelse med callbacks:
 
 ```cpp
 auto config = std::make_shared<org::openapitools::client::api::ApiConfiguration>();
@@ -41,40 +41,40 @@ config->setApiKey(utility::conversions::to_string_t("api_key"),
 auto apiClient = std::make_shared<org::openapitools::client::api::ApiClient>(config);
 org::openapitools::client::api::DefaultApi api(apiClient);
 
-// Required parameters are positional; optional ones go in the options struct
+// Påkrævede parametre er positionelle; valgfrie placeres i options-strukturen
 org::openapitools::client::api::GetCommentsOptions options;
 options.urlId = utility::conversions::to_string_t("your-url-id");
 
-// Use .then() for asynchronous callback-based execution
+// Brug .then() til asynkron callback-baseret udførelse
 api.getComments(
     utility::conversions::to_string_t("your-tenant-id"),
     options
 ).then([](std::shared_ptr<GetComments_200_response> response) {
-    // This runs asynchronously when the request completes
+    // Dette køres asynkront, når anmodningen er fuldført
     if (response && response->comments) {
         std::cout << "Found " << response->comments->size() << " comments" << std::endl;
     }
 });
 
-// Execution continues immediately without blocking
+// Udførelsen fortsætter straks uden at blokere
 std::cout << "Request sent, continuing..." << std::endl;
 ```
 
 ### Valg mellem synkron og asynkron
 
-The choice depends on your runtime environment and application architecture:
+Valget afhænger af dit runtime-miljø og din applikationsarkitektur:
 
 **`.get()` (Synkron blokering)**
-- Blokerer den kaldende tråd indtil HTTP-anmodningen er fuldført
-- Enklere kodeflow, lettere at forstå
-- Egnet til dedikerede worker-tråde, batchbehandling eller kommandolinjeværktøjer
-- **Ikke egnet** til event loops, GUI-tråde eller enkelttrådede servere
+- Blokerer den kaldende tråd, indtil HTTP-anmodningen er fuldført
+- Simpler kodeflow, lettere at ræsonnere om
+- Velegnet til dedikerede worker-tråde, batchbehandling eller kommandolinjeværktøjer
+- **Ikke velegnet** til event loops, GUI-tråde eller single-threaded servere
 
 **`.then()` (Asynkron ikke-blokerende)**
-- Returnerer straks, callback udføres når anmodningen er fuldført
+- Returnerer straks, callback udføres, når anmodningen er fuldført
 - Blokerer ikke den kaldende tråd
-- Påkrævet for hændelsesdrevet arkitektur, GUI-applikationer eller enkelttrådede event loops
-- Tillader kædning af flere operationer
+- Påkrævet til begivenhedsdrevne arkitekturer, GUI-applikationer eller single-threaded event loops
+- Muliggør kædning af flere operationer
 - Mere komplekst kontrolflow
 
-The SDK's test suite uses `.get()` exclusively, but this is appropriate for the test environment where blocking is acceptable.
+SDK'ens testpakke bruger udelukkende `.get()`, men det er passende i testmiljøet, hvor blokering er acceptabelt.

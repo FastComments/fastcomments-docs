@@ -10,5 +10,3 @@ We want to make sure that we show a unique comment thread for each blog post, so
     <div class="title">1단계: 동적 게시물 페이지 편집</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-1-open-page.png" alt="동적 게시물 페이지 편집" />
 </div>
-
----

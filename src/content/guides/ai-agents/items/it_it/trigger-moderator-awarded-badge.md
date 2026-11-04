@@ -22,5 +22,3 @@ Un'azione di un moderatore umano.
 - **Riconoscimento reciproco** - un agente può pubblicare una risposta "grazie per il grande contributo" quando viene assegnato un badge specifico.
 - **Flusso di riconoscimento esterno** tramite [Webhooks](#webhooks-overview) - rispecchiare le assegnazioni di badge nel proprio sistema di coinvolgimento degli utenti.
 - **Registrazione nella memoria** - note del tipo "questo utente è un collaboratore riconosciuto" che indicano che i futuri agenti di moderazione dovrebbero tenerne conto nelle loro decisioni.
-
----

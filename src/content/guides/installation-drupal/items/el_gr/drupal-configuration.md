@@ -39,5 +39,3 @@ All settings live under `Administration > Configuration > Content > FastComments
 - **Email notifications** - Στέλνει email σε συγγραφέα περιεχομένου όταν δημοσιεύεται νέο σχόλιο στο περιεχόμενό του.
 
 Για κατοικία δεδομένων EU, δείτε την ενότητα `EU Data Residency`.
-
----

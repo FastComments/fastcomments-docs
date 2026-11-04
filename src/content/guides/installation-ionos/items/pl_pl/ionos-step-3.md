@@ -20,5 +20,3 @@ To wszystko! FastComments powinien być aktywny na Twojej stronie. Powinieneś z
     <div class="title">Done!</div>
     <img class="screenshot-image" src="/images/installation-guides/ionos-step-3-done.png" alt="Done!" />
 </div>
-
----

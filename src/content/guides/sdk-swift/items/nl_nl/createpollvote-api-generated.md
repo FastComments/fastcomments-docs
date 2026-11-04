@@ -1,24 +1,24 @@
-Record a vote on a poll, or move an existing one to a different option. A voter has at most one vote per
-poll, so calling this again for the same voter moves their vote rather than adding one.
+Stem op een poll, of verplaats een bestaande stem naar een andere optie. Een stemmer heeft maximaal één stem per
+poll, dus het opnieuw aanroepen voor dezelfde stemmer verplaatst hun stem in plaats van er één toe te voegen.
 
-This obeys the site's poll settings: if voting is set to logged-in users only, a vote with just an
-anonUserId is rejected, and anonymous votes are rate limited per IP per poll.
+Dit volgt de poll-instellingen van de site: als stemmen alleen is ingesteld voor ingelogde gebruikers, wordt een stem met alleen een
+anonUserId geweigerd, en anonieme stemmen worden per IP per poll beperkt in snelheid.
 
 ## Parameters
 
 | Naam | Type | Locatie | Verplicht | Beschrijving |
-|------|------|----------|-----------|--------------|
+|------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 
 ## Response
 
-Retourneert: [`CreatePollVoteResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreatePollVoteResponse.swift)
+Geeft terug: [`CreatePollVoteResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreatePollVoteResponse.swift)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'createPollVote Voorbeeld'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// De volgende codevoorbeelden zijn nog in bèta. Voor eventuele problemen, rapporteer via http://github.com/OpenAPITools/openapi-generator/issues/new
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -35,5 +35,3 @@ DefaultAPI.createPollVote(tenantId: tenantId, createPollVoteBody: createPollVote
     }
 }
 [inline-code-end]
-
----

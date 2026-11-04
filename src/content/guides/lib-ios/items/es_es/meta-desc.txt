@@ -1,3 +1,1 @@
----
 Agrega comentarios nativos en hilos, chat en vivo y feeds sociales a una aplicación iOS, con SSO, temas, carga de imágenes, menciones y actualizaciones en tiempo real.
----

@@ -1,4 +1,3 @@
----
 Abonniert eine URL für ein Kommentarereignis (REST‑Hook‑Abonnement). Das erneute Abonnieren derselben URL für dasselbe Ereignis und dieselbe Domain gibt das bestehende Abonnement zurück. Lieferungen sind HMAC‑signiert, siehe den Webhooks‑Leitfaden; der veraltete `token`‑Header wird bei API‑Abonnements niemals gesendet.
 
 ## Parameters
@@ -32,5 +31,3 @@ DefaultAPI.createWebhook(tenantId: tenantId, createWebhookParams: createWebhookP
     }
 }
 [inline-code-end]
-
----

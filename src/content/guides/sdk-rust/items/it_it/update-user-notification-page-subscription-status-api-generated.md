@@ -1,15 +1,15 @@
-Enable or disable notifications for a page. When users are subscribed to a page, notifications are created
-for new root comments, and also
+Abilita o disabilita le notifiche per una pagina. Quando gli utenti sono iscritti a una pagina, le notifiche vengono create
+per i nuovi commenti principali, e anche
 
 ## Parametri
 
 | Nome | Tipo | Obbligatorio | Descrizione |
-|------|------|--------------|-------------|
-| tenant_id | String | Yes |  |
-| url_id | String | Yes |  |
-| url | String | Yes |  |
-| page_title | String | Yes |  |
-| subscribed_or_unsubscribed | String | Yes |  |
+|------|------|----------|-------------|
+| tenant_id | String | Sì |  |
+| url_id | String | Sì |  |
+| url | String | Sì |  |
+| page_title | String | Sì |  |
+| subscribed_or_unsubscribed | String | Sì |  |
 | sso | String | No |  |
 
 ## Risposta
@@ -32,5 +32,3 @@ async fn example() -> Result<UpdateUserNotificationPageSubscriptionStatusRespons
     update_user_notification_page_subscription_status(&configuration, params).await
 }
 [inline-code-end]
-
----

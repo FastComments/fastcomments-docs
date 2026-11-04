@@ -1,15 +1,14 @@
-Enable SSO and choose a mode in `settings.py`. Secure SSO signs the user
-server-side with HMAC-SHA256 using your API secret and is recommended.
+Aktiviere SSO und wähle einen Modus in `settings.py`. Secure SSO signiert den Benutzer serverseitig mit HMAC-SHA256 unter Verwendung deines API-Secrets und wird empfohlen.
 
 ```python
 FASTCOMMENTS = {
     "TENANT_ID": os.environ["FASTCOMMENTS_TENANT_ID"],
-    "API_KEY": os.environ["FASTCOMMENTS_API_KEY"],   # Ihr API-Geheimschlüssel; signiert Secure SSO
+    "API_KEY": os.environ["FASTCOMMENTS_API_KEY"],   # dein API-Secret; signiert Secure SSO
     "SSO": {
         "ENABLED": True,
         "MODE": "secure",                            # "secure" | "simple"
-        # FastComments-Felder auf Ihr Benutzermodell abbilden. Werte können ein Attribut
-        # Name, ein Pfad mit Punkten ("profile.avatar_url"), ein aufrufbares(user) oder None.
+        # Ordne FastComments-Felder deinem Benutzermodell zu. Werte können ein Attributname,
+        # ein gepunkteter Pfad ("profile.avatar_url"), eine callable(user) oder None sein.
         "USER_MAP": {
             "id": "id",
             "email": "email",
@@ -18,33 +17,33 @@ FASTCOMMENTS = {
             "display_name": None,
             "website_url": None,
         },
-        "IS_ADMIN": lambda user: user.is_staff,      # aufrufbares(user) -> bool, oder Pfad mit Punkten
+        "IS_ADMIN": lambda user: user.is_staff,      # callable(user) -> bool, oder gepunkteter Pfad
         "IS_MODERATOR": None,
-        "GROUP_IDS": None,                           # aufrufbares(user) -> list, oder Pfad mit Punkten
+        "GROUP_IDS": None,                           # callable(user) -> list, oder gepunkteter Pfad
     },
 }
 ```
 
-> **Choose the SSO `id` deliberately.** The FastComments `id` is the permanent
-> handle for a user's comment history. The default `USER_MAP` maps it to your
-> Django primary key for zero-config convenience, but sequential integer PKs are
-> enumerable and hard to change later (changing a user's `id` splits their
-> history into a new account). For anything beyond a demo, map `id` to a stable,
-> opaque value chosen up front (a UUID or a dedicated public id), and never put
-> private data in it. The example app uses a username-based id for this reason.
+> **Wähle die SSO-`id` bewusst.** Die FastComments-`id` ist der permanente
+> Handle für den Kommentarverlauf eines Benutzers. Die Standard-`USER_MAP` ordnet sie deinem
+> Django-Primärschlüssel zu, um eine Zero-Config-Bequemlichkeit zu bieten, aber sequenzielle Integer-PKs sind
+> aufzählbar und später schwer zu ändern (das Ändern der `id` eines Benutzers teilt seinen
+> Verlauf in ein neues Konto auf). Für alles über eine Demo hinaus, ordne `id` einem stabilen,
+> opaken Wert zu, der von vornherein gewählt wird (eine UUID oder eine dedizierte öffentliche ID), und lege
+> niemals private Daten darin ab. Die Beispiel-App verwendet aus diesem Grund eine benutzernamebasierte ID.
 
-SSO is injected automatically into `{% fastcomments %}`, `{% fastcomments_live_chat %}`,
-`{% fastcomments_collab_chat %}`, `{% fastcomments_image_chat %}`, and
-`{% fastcomments_user_activity %}` for the current user.
+SSO wird automatisch in `{% fastcomments %}`, `{% fastcomments_live_chat %}`,
+`{% fastcomments_collab_chat %}`, `{% fastcomments_image_chat %}` und
+`{% fastcomments_user_activity %}` für den aktuellen Benutzer injiziert.
 
-Login/logout URLs shown to signed-out visitors default to `reverse("login")` /
-`reverse("logout")`; override them with `SSO["LOGIN_URL"]` / `SSO["LOGOUT_URL"]`.
+An- und Abmelde-URLs, die abgemeldeten Besuchern angezeigt werden, sind standardmäßig `reverse("login")` /
+`reverse("logout")`; überschreibe sie mit `SSO["LOGIN_URL"]` / `SSO["LOGOUT_URL"]`.
 
-### Custom mapping
+### Benutzerdefiniertes Mapping
 
-Two higher-precedence options beat `USER_MAP`:
+Zwei Optionen mit höherer Priorität schlagen `USER_MAP`:
 
-- **Eine Methode in Ihrem Benutzermodell** (die pythonische Analogie zu einem Interface):
+- **Eine Methode auf deinem Benutzermodell** (das Python-Analogon zu einem Interface):
 
   ```python
   class User(AbstractUser):
@@ -52,10 +51,10 @@ Two higher-precedence options beat `USER_MAP`:
           return {"id": self.pk, "email": self.email, "username": self.get_username()}
   ```
 
-- **Ein globaler Mapper**, ein Pfad mit Punkten zu `callable(user) -> dict`:
+- **Ein globaler Mapper**, ein gepunkteter Pfad zu `callable(user) -> dict`:
 
   ```python
   FASTCOMMENTS = {"SSO": {"USER_MAPPER": "myapp.sso.map_user"}}
   ```
 
-Precedence is `USER_MAPPER` > `to_fastcomments_user_data()` > `USER_MAP`.
+Die Priorität ist `USER_MAPPER` > `to_fastcomments_user_data()` > `USER_MAP`.

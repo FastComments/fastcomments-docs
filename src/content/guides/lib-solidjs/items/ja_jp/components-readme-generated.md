@@ -1,22 +1,21 @@
----
-`fastcomments-react` のすべてのウィジェットは同じ名前で利用できます：
+`fastcomments-react` からのすべてのウィジェットは、同じ名前で利用可能です:
 
-| Component | Handle type | Embed loaded |
+| コンポーネント | ハンドル型 | 埋め込みの説明 |
 | --- | --- | --- |
-| `FastCommentsCommentWidget` | `FastCommentsCommentWidgetHandle` | フラグシップのライブコメントウィジェット |
-| `FastCommentsCommentCountWidget` | `FastCommentsCommentCountWidgetHandle` | インラインのコメント数バッジ |
-| `FastCommentsLiveChatWidget` | `FastCommentsLiveChatWidgetHandle` | ストリーミングのライブチャットウィジェット |
-| `FastCommentsCollabChatWidget` | `FastCommentsCollabChatWidgetHandle` | テキストに紐づく共同チャット |
+| `FastCommentsCommentWidget` | `FastCommentsCommentWidgetHandle` | フラッグシップのライブコメントウィジェット |
+| `FastCommentsCommentCountWidget` | `FastCommentsCommentCountWidgetHandle` | インラインコメント数バッジ |
+| `FastCommentsLiveChatWidget` | `FastCommentsLiveChatWidgetHandle` | ストリーミングライブチャットウィジェット |
+| `FastCommentsCollabChatWidget` | `FastCommentsCollabChatWidgetHandle` | テキストアンカー型コラボレーションチャット |
 | `FastCommentsImageChatWidget` | `FastCommentsImageChatWidgetHandle` | 領域ベースの画像コメント |
 | `FastCommentsRecentCommentsWidget` | `FastCommentsRecentCommentsWidgetHandle` | 最近のコメントフィード |
 | `FastCommentsRecentDiscussionsWidget` | `FastCommentsRecentDiscussionsWidgetHandle` | 最近のディスカッションフィード |
-| `FastCommentsReviewsSummaryWidget` | `FastCommentsReviewsSummaryWidgetHandle` | 星評価の概要 |
-| `FastCommentsTopPagesWidget` | `FastCommentsTopPagesWidgetHandle` | コメント数上位ページのランキング |
+| `FastCommentsReviewsSummaryWidget` | `FastCommentsReviewsSummaryWidgetHandle` | 星評価のサマリー |
+| `FastCommentsTopPagesWidget` | `FastCommentsTopPagesWidgetHandle` | コメント数の多いページのランキング |
 | `FastCommentsUserActivityFeedWidget` | `FastCommentsUserActivityFeedWidgetHandle` | ユーザーごとのアクティビティタイムライン |
 
-### Widgets that attach to an existing element
+### 既存の要素にアタッチするウィジェット
 
-`FastCommentsCollabChatWidget` と `FastCommentsImageChatWidget` は、呼び出し元が提供する要素にマウントされます。マウント後にその要素を返す `targetRef` アクセサを渡してください：
+`FastCommentsCollabChatWidget` と `FastCommentsImageChatWidget` は、呼び出し側が指定した要素にマウントされます。マウント後に要素を返す `targetRef` アクセサーを渡してください:
 
 ```tsx
 import { FastCommentsImageChatWidget } from 'fastcomments-solidjs';
@@ -38,5 +37,4 @@ export default function ImageChat() {
 
 ### リージョン
 
-ウィジェットのトラフィックをEUクラスター経由にするには `region="eu"` を渡します。
----
+`region="eu"` を渡すと、ウィジェットのトラフィックが EU クラスター経由でルーティングされます。

@@ -1,4 +1,3 @@
----
 ## Trebate pomoć?
 
 Ako naiđete na bilo kakve probleme ili imate pitanja o React biblioteci, molimo:
@@ -9,5 +8,3 @@ Ako naiđete na bilo kakve probleme ili imate pitanja o React biblioteci, molimo
 ## Doprinosi
 
 Doprinosi su dobrodošli! Posjetite [spremište na GitHubu](https://github.com/FastComments/fastcomments-react) za smjernice o doprinosu.
-
----

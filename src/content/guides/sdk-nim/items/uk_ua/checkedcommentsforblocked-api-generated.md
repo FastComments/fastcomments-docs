@@ -24,5 +24,3 @@ if maybeResponse.isSome:
   let response = maybeResponse.get()
   discard response
 [inline-code-end]
-
----

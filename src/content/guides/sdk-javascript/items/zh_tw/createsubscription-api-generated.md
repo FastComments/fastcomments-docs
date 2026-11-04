@@ -27,5 +27,3 @@ Returns: [`CreateSubscriptionAPIResponse`](https://github.com/FastComments/fastc
     console.log(result);
 })();
 [inline-code-end]
-
----

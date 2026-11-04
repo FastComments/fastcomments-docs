@@ -1,4 +1,3 @@
----
 テーマをエディタで開いた状態で、`package.json` を開き、`name` フィールドを別の値に変更してください。今回は末尾に `-fastcomments` を追加します:
 
 <div class="screenshot white-bg">
@@ -7,5 +6,3 @@
 </div>
 
 IDE を使用している場合、この変更は自動的に保存されます。
-
----

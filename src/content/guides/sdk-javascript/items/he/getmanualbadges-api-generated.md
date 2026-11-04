@@ -1,4 +1,3 @@
----
 ## פרמטרים
 
 | Name | Type | Required | Description |
@@ -22,5 +21,3 @@ async function fetchBadges() {
   const badgesWithoutSso: GetTenantManualBadgesResponse = await getManualBadges(tenantId);
 }
 [inline-code-end]
-
----

@@ -69,5 +69,3 @@ Budući da konfiguracija može postati prilično složena, možemo proslijediti 
 Widget koristi detekciju promjena, tako da će promjena bilo koje svojstva objekta konfiguracije uzrokovati njegovo ponovno učitavanje.
 
 Konfiguraciju koju Angular komponenta podržava možete pronaći <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">ovdje</a>.
-
----

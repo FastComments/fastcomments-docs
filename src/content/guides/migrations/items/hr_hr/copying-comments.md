@@ -1,25 +1,26 @@
-In the event that data needs to be moved around, FastComments provides a self‑service tool for moving comments between pages and articles.
+U slučaju da je potrebno premjestiti podatke, FastComments nudi alat za samoposluživanje za premještanje komentara
+između stranica i članaka.
 
-Here's what the comment copy page form looks like:
+Evo kako izgleda obrazac stranice za kopiranje komentara:
 
-[app-screenshot-start url='/auth/my-account/manage-data/copy-comments'; selector = '.account-block'; alt='Obrazac za kopiranje komentara s poljem From URL ID i poljima To URL ID i URL'; title='Obrazac za kopiranje komentara' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/copy-comments'; selector = '.account-block'; alt='Obrazac za kopiranje komentara s poljem From URL ID te poljima To URL ID i URL'; title='Obrazac za kopiranje komentara' app-screenshot-end]
 
-### Filling out the "From" Fields
+### Ispunjavanje polja "From"
 
-To decide where to move comments from, we simply need to know the source `URL ID`.
+Da bismo odlučili odakle premjestiti komentare, jednostavno trebamo znati izvorni `URL ID`.
 
-If you aren't passing a value for `urlId` in the comment widget configuration, then this will be a "clean" version of the page URL.
+Ako ne prosljeđujete vrijednost za `urlId` u konfiguraciji widgeta za komentare, tada će to biti "očišćena" verzija URL-a stranice.
 
-You can see what values your comments have for `URL ID` by exporting them.
+Možete vidjeti koje vrijednosti vaši komentari imaju za `URL ID` izvozom istih.
 
-### Filling out the "To" Fields
+### Ispunjavanje polja "To"
 
-To decide where to move comments to, we need to know the target `URL ID` and `URL`.
+Da bismo odlučili kamo premjestiti komentare, trebamo znati odredišni `URL ID` i `URL`.
 
-The `URL ID` will be the bucket that the comment goes in. The `URL` field is used so that you can navigate directly
-to the comment from emails and moderation tools.
+`URL ID` bit će grupa u koju komentar ide. Polje `URL` se koristi kako biste mogli izravno
+navigirati do komentara iz e-poruka i alata za moderiranje.
 
 #### WordPress
 
-If you are using WordPress, you would for example enter the Article IDs in the To/From `URL ID` fields in the migration tool,
-rather than a URL.
+Ako koristite WordPress, na primjer biste unijeli ID-jeve članaka u polja To/From `URL ID` u alatu za migraciju,
+umjesto URL-a.

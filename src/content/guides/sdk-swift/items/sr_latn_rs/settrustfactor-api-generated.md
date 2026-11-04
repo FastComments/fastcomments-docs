@@ -34,5 +34,3 @@ ModerationAPI.setTrustFactor(tenantId: tenantId, options: ModerationAPI.SetTrust
     }
 }
 [inline-code-end]
-
----

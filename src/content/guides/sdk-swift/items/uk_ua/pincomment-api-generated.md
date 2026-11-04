@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Назва | Тип | Location | Обов'язкове | Опис |
@@ -35,5 +34,3 @@ PublicAPI.pinComment(tenantId: tenantId, commentId: commentId, broadcastId: broa
     }
 }
 [inline-code-end]
-
----

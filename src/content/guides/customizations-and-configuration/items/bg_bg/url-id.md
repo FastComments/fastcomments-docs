@@ -1,37 +1,37 @@
 [related-parameter-start name = 'urlId'; type = 'string'; related-parameter-end]
 
-When rendering a comment thread, or leaving a comment, FastComments needs to know what page, or article, or product
-those comments belong to.
+Когато визуализира нишка с коментари или когато потребител оставя коментар, FastComments трябва да знае към коя страница, статия или продукт
+принадлежат тези коментари.
 
-To do this, we use something we call the "URL ID". It's either an identifier, like a string or a number, or a URL.
+За целта използваме нещо, което наричаме "URL ID". То може да бъде идентификатор, като низ или число, или URL адрес.
 
-By default, if you do not specify the urlId, it will become the page URL. We will take the current page URL, and clean it to remove
-any common marketing parameters or tracking identifiers.
+По подразбиране, ако не посочите urlId, той става URL адресът на страницата. Ще вземем текущия URL адрес на страницата и ще го почистим, за да премахнем
+често срещани маркетингови параметри или проследяващи идентификатори.
 
-In the case of third party integrations, like WordPress, our plugin will usually use the identifier that represents the current information being viewed as
-the URL ID, for example the article/page id.
+В случая с интеграции на трети страни, като WordPress, нашият плъгин обикновено използва идентификатора, който представлява текущо преглежданата информация, като
+URL ID, например идентификатора на статията/страницата.
 
-[code-example-start config = {urlId: 'https://example.com/page'}; linesToHighlight = [6]; title = 'Определяне на персонализиран URL ID'; code-example-end]
+[code-example-start config = {urlId: 'https://example.com/page'}; linesToHighlight = [6]; title = 'Дефиниране на персонализиран URL ID'; code-example-end]
 
-One thing that we'll often reference in this document is the <a href="https://fastcomments.com/auth/my-account/customize-widget/new">Потребителски интерфейс за персонализиране на уиджета</a>.
+Едно нещо, което често ще споменаваме в този документ, е <a href="https://fastcomments.com/auth/my-account/customize-widget/new">Widget Customization UI</a>.
 
-This UI can be used to make many changes to the comment widget without using code.
+Този интерфейс може да се използва за извършване на много промени в уиджета за коментари без писане на код.
 
-When creating a customization rule, we'll often want it to apply to all pages to our site. However, in some cases we want to customize the comment widget
-on a particular page, either to apply custom styling, or maybe make comments for that particular page anonymous. You could also, for example, have live comments
-appear right away on some pages, while hiding them under notification buttons on others.
+Когато създавате правило за персонализиране, често ще искате то да се прилага към всички страници на вашия сайт. В някои случаи обаче искате да персонализирате уиджета за коментари
+на конкретна страница – или за да приложите персонализирано стилизиране, или може би да направите коментарите за тази конкретна страница анонимни. Можете например също да накарате
+коментарите на живо да се показват веднага на някои страници, докато на други да са скрити под бутони за известия.
 
-This is all possible via the URL ID input field on this page, which looks like as follows:
+Всичко това е възможно чрез полето URL ID на тази страница, което изглежда по следния начин:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.url-id'; alt='Поле URL ID, използвано за обхващане на правило за персонализиране към една страница или към шаблон като */blog/*'; title='Въвеждане на URL ID в страницата за персонализиране на уиджета' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.url-id'; alt='Поле URL ID, използвано за обхват на правило за персонализиране към една страница или към шаблон като */blog/*'; title='Поле URL ID в страницата за персонализиране на уиджета' app-screenshot-end]
 
-The value in this field should match the *urlId* parameter passed into the comment widget. If you want your customization rule to be *urlId* agnostic, leave this field empty or enter *.
+Стойността в това поле трябва да съответства на параметъра *urlId*, подаден към уиджета за коментари. Ако искате вашето правило за персонализиране да не зависи от *urlId*, оставете това поле празно или въведете *.
 
-As of 2023 the `URL ID` field in widget customization now also takes patterns! For example you may
-have `*/blog/*` to add styling specific to your blog and `*/store/*` to have styling specific to your store,
-all while using the same domain.
+От 2023 г. полето `URL ID` в персонализирането на уиджета приема и шаблони! Например можете
+да имате `*/blog/*` за стилизиране, специфично за вашия блог, и `*/store/*` за стилизиране, специфично за вашия магазин,
+като използвате един и същ домейн.
 
-### Gotchas
+### Внимание
 
-1. If your page has hash parameters (like example.com#page-1) - this will become part of the URL ID, by default.
-2. During migrations, for example from WordPress to Gatsby, you may have to migrate the URL ID comment values after the initial migration. For that, reach out to us.
+1. Ако вашата страница има хеш параметри (като example.com#page-1) – те ще станат част от URL ID по подразбиране.
+2. По време на миграции, например от WordPress към Gatsby, може да се наложи да мигрирате стойностите на URL ID на коментарите след първоначалната миграция. За целта се свържете с нас.

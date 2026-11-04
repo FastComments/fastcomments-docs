@@ -1,4 +1,3 @@
----
 Możesz otrzymać błąd autoryzacji, taki jak poniżej:
 
 <div class="screenshot white-bg">
@@ -13,5 +12,3 @@ W takim przypadku naprawa jest prosta. Musisz jedynie dodać swoją witrynę do 
 [Przejdź tutaj, aby dodać swoją witrynę do konta.](https://fastcomments.com/auth/my-account/configure-domains)
 
 Domeny są automatycznie dodawane do twojego konta w okresie próbnym, ale może się to zdarzyć przy dodawaniu nowych witryn do konta FastComments.
-
----

@@ -1,4 +1,3 @@
----
 Questo endpoint ti consente di aggiornare l'assegnazione di un badge utente.
 
 Attualmente, l'unica proprietà che può essere aggiornata è `displayedOnComments`, che controlla se il badge viene mostrato nei commenti dell'utente.
@@ -51,4 +50,3 @@ Possibili risposte di errore:
   "reason": "The user badge badge123 was not found."
 }
 [inline-code-end]
----

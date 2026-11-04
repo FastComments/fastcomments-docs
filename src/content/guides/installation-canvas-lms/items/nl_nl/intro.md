@@ -6,5 +6,3 @@ FastComments integreert met Canvas LMS via de LTI 1.3-standaard. Dit voegt live 
 </div>
 
 Reacties verschijnen automatisch onder opdrachten, en instructeurs kunnen FastComments insluiten in Pagina's, Quizzen en Aankondigingen via de Rich Content Editor. SSO wordt automatisch afgehandeld via de LTI-launch - studenten reageren met hun Canvas-accounts zonder aparte aanmelding. De integratie ondersteunt geneste reacties, real-time samenwerkende chat met tekstmarkering en automatische roltoewijzing.
-
----

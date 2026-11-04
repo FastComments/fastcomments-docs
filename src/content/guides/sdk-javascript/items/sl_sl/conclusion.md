@@ -8,5 +8,3 @@
 ## Sodelovanje
 
 Prispevki so dobrodošli! Prosimo, obiščite [GitHub repozitorij](https://github.com/FastComments/fastcomments-sdk-js) za smernice za prispevanje.
-
----

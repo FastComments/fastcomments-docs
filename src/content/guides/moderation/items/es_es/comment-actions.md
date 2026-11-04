@@ -17,5 +17,3 @@ Además, los Administradores y Moderadores pueden anclar comentarios, pero esto 
 Todas las acciones anteriores también están disponibles mediante atajos de teclado. Consulte la sección [Atajos de teclado](#keyboard-shortcuts) para más detalles.
 
 *<sup>1</sup> No almacenamos direcciones IP en bruto para esta función.
-
----

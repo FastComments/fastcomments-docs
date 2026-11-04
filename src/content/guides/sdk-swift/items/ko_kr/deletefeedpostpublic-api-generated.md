@@ -34,5 +34,3 @@ PublicAPI.deleteFeedPostPublic(tenantId: tenantId, postId: postId, options: Publ
     }
 }
 [inline-code-end]
-
----

@@ -57,5 +57,3 @@ Ionos의 경우 FastComments 위젯 코드의 **특별한 버전**이 필요합�
     <div class="title">붙여넣기 및 저장</div>
     <img class="screenshot-image" src="/images/installation-guides/ionos-step-2-paste-and-save.png" alt="붙여넣기 및 저장" />
 </div>
-
----

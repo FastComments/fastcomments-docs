@@ -1,4 +1,3 @@
----
 Sve se ovo radi konfigurišući [urlId](/guide-customizations-and-configuration.html#url-id) i povezane parametre i pozivanjem `update()` na instancama widgeta da ih zamenite drugom niti.
 
 Ispod je interaktivni primer (pritisnite Run u gornjem levom uglu) koji vam omogućava da po potrebi dodajete i zamenjujete niti komentara.
@@ -120,5 +119,3 @@ Ovo je slično načinu na koji paginacija funkcioniše.
 Sa React-om i srodnim bibliotekama možemo jednostavno ažurirati konfiguraciju i biblioteka (React, Angular, Vue) će se pobrinuti za osvežavanje widgeta za nas. Sa VanillaJS moramo to sami da upravljamo kao što je prikazano.
 
 Slobodno postavite pitanja ispod i učinićemo sve što možemo da pomognemo!
-
----

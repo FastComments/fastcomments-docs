@@ -9,5 +9,3 @@
 この設定はコードを書かずに、ウィジェットカスタマイズページの「高度なオプション」セクションでカスタマイズできます。まず、UI でこのオプションを表示させるために「絶対日時」を有効にする必要があります。
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.show-advanced-option', '.absolute-dates', '.relative-and-absolute-dates']; selector = '.relative-and-absolute-dates'; alt='ウィジェットカスタマイズページの高度なオプションで、絶対日時と相対日時の組み合わせ設定が有効になっている状態'; title='絶対日時と相対日時の両方を使用' app-screenshot-end]
-
----

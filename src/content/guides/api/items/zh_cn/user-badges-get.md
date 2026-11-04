@@ -1,4 +1,3 @@
----
 此端点允许您根据各种条件获取用户徽章。
 
 示例请求：
@@ -80,4 +79,3 @@ curl -X GET "https://fastcomments.com/api/v1/user-badges?tenantId=demo&API_KEY=D
   "reason": "The limit (query param: limit) is too large (> 200)."
 }
 [inline-code-end]
----

@@ -1,4 +1,3 @@
----
 **FastComments - Top Pages** bloğu, mağazanızdaki genel olarak en fazla yorum etkinliğine sahip sayfaları listeler. En çok tartışılan gönderi veya ürünlerinizi ön plana çıkarmak için kullanın.
 
 ### Bloğu ekleyin
@@ -19,5 +18,3 @@
 
 - **Top Pages**, toplam etkileşime göre sıralama yapar; bu yüzden aynı gönderiler bir süre üst sıralarda kalma eğilimindedir. 'Popüler gönderiler' kenar çubuğu için uygundur.
 - **Recent Discussions**, en son etkinliğe göre sıralama yapar; bu yüzden liste hızla değişir. 'Şu anda neler popüler' paneli için uygundur.
-
----

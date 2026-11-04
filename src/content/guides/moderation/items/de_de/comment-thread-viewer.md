@@ -1,4 +1,3 @@
----
 Beim Moderieren und Anzeigen von Kommentar‑Threads ist es wünschenswert, direkt zu einem Thread springen zu können, um während der Moderation Kontext zu erhalten.
 
 Das bedeutet, dass der Nutzerfluss auf der Seite „Kommentar‑Moderation“ beginnt und dann von einem einzelnen Kommentar zur Seite, die diesen Kommentar enthält, wechseln muss, warten, bis diese Seite geladen ist, warten, bis die Kommentare geladen sind, und anschließend zu diesem Kommentar scrollen muss.
@@ -14,5 +13,3 @@ Dieser Button führt Sie zum **Comment Thread Viewer**.
 Der Comment Thread Viewer ist eine kleine, schnell ladende Anwendung, die von FastComments gehostet wird und den Kommentar‑Thread für die Seite, auf der sich der Kommentar befindet, rendert und zu diesem Kommentar scrollt.
 
 Damit können Moderatoren den benötigten Kontext schnell erfassen, ohne auf das Laden einer weiteren Seite warten zu müssen.
-
----

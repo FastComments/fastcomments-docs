@@ -27,5 +27,3 @@ export const CDN = REGION === "eu"
 ## EU 帳戶
 
 一個帳戶、其資料與金鑰都位於同一區域。如果您的帳戶是在 `eu.fastcomments.com` 建立的，則每個小工具設定也需要 `region: "eu"`，且腳本會從 `cdn-eu.fastcomments.com` 載入。否則請保持兩者不變。
-
----

@@ -1,23 +1,19 @@
-Bulk user info for a tenant. Given userIds, return display info from User / SSOUser.  
-Used by the comment widget to enrich users that just appeared via a presence event.  
-No page context: privacy is enforced uniformly (private profiles are masked).
+Μαζικές πληροφορίες χρηστών για έναν tenant. Δεδομένων των userIds, επιστρέφει πληροφορίες εμφάνισης από το User / SSOUser.
+Χρησιμοποιείται από το widget σχολίων για τον εμπλουτισμό χρηστών που μόλις εμφανίστηκαν μέσω ενός presence event.
+Χωρίς πλαίσιο σελίδας: το απόρρητο επιβάλλεται ομοιόμορφα (τα ιδιωτικά προφίλ καλύπτονται).
 
-Μαζική πληροφορία χρηστών για έναν ενοικιαστή. Δεδομένων των userIds, επιστρέφει πληροφορίες εμφάνισης από User / SSOUser.  
-Χρησιμοποιείται από το widget σχολίων για να εμπλουτίσει χρήστες που μόλις εμφανίστηκαν μέσω ενός γεγονότος παρουσίας.  
-Χωρίς πλαίσιο σελίδας: η ιδιωτικότητα εφαρμόζεται ομοιόμορφα (τα ιδιωτικά προφίλ είναι καλυμμένα).
-
-## Parameters
+## Παράμετροι
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
-|------|------|------------|-----------|
-| tenantId | string | Yes |  |
-| ids | string | Yes |  |
+|------|------|----------|-------------|
+| tenantId | string | Ναι |  |
+| ids | string | Ναι |  |
 
-## Response
+## Απάντηση
 
-Returns: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PageUsersInfoResponse.h)
+Επιστρέφει: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PageUsersInfoResponse.h)
 
-## Example
+## Παράδειγμα
 
 [inline-code-attrs-start title = 'Παράδειγμα getUsersInfo'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -30,7 +26,7 @@ api->getUsersInfo(tenantId, ids).then([](pplx::task<std::shared_ptr<PageUsersInf
         auto response = t.get();
         // επεξεργασία απάντησης
     }catch(const std::exception&){
-        // χειρισμός σφάλματος
+        // διαχείριση σφάλματος
     }
 });
 [inline-code-end]

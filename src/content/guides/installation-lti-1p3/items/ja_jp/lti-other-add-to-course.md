@@ -124,5 +124,3 @@ Schoology は Course Options を通じてセクションごとにツールの利
 - **Deep Linking disabled by tenant default.** 一部の Schoology テナントは組織レベルで Deep Linking 配置を制限しています。この場合、インストラクターは **Add Materials** > **External Tool** フローのみを見、リッチテキストエディタの External Tool ボタンは表示されません。インライン埋め込みを有効にするには、システム管理者が **System Settings** > **Integration** > **LTI 1.3** > **FastComments** に移動し、**Content Item / Deep Linking** 配置を有効にして保存します。
 - **Per-section assignment override.** FastComments がエンタープライズレベルで割り当てられているが、インストラクターが **Add Materials** で見えない場合、コースのセクションが組織レベルの割り当てから除外されています。システム管理者にセクションを FastComments アプリの割り当てに追加するよう依頼してください。
 - **Material name vs. thread identity.** Schoology で教材名を変更しても、コメントスレッドは移動しません。スレッドは LTI リソースリンク ID でキー付けされるため、名前変更は同じスレッドを保持します。教材を削除して再作成すると、新しい空のスレッドが作成されます。
-
----

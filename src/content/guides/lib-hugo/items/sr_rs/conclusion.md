@@ -8,5 +8,3 @@
 ## Допринес
 
 Допринеси су добродошли! Посетите [репозиторијум на GitHub-у](https://github.com/FastComments/fastcomments-hugo) за упутства о доприносу.
-
----

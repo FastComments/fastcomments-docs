@@ -1,4 +1,3 @@
----
 Moderatorer kan placeres i grupper for at moderere forskellige sider eller indholdskategorier.
 
 Når en moderator tilhører en eller flere grupper, vil de kun se kommentarer fra de grupper på siden Moderer kommentarer.
@@ -15,5 +14,3 @@ Endelig skal kommentarer knyttes til en eller flere grupper, så de korrekte mod
 
 Dette kan opsættes ved at [tilføje nogle grupper](https://fastcomments.com/auth/my-account/moderate-comments/moderation-groups) og derefter angive de tilsvarende `Moderation Group` id'er i kommentarfunktionen,
 [såsom beskrevet her](/guide-customizations-and-configuration.html#moderation-group-ids).
-
----

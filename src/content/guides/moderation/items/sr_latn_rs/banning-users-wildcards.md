@@ -1,22 +1,27 @@
-Moguće je blokirati korisnike koji koriste određene provajdere e‑mailova koristeći džokere.
+Moguće je banovati korisnike koji koriste određene email provajdere pomoću džoker znakova.
 
-Na primer, ako otkrijete da su svi komentari sa **@bademail.com** spam, možete jednostavno blokirati celog provajdera e‑maila unosom "*@bademail.com" u polje za e‑mail prilikom dodavanja blokiranog korisnika.
+Na primer, ako ustanovite da su svi komentari sa adrese **@bademail.com** spam, možete jednostavno banovati
+celog tog email provajdera unosom "*@bademail.com" u polje za email prilikom dodavanja banovanog korisnika.
 
-Obratite pažnju na „*“ pre @ u e‑mail adresi.
+Obratite pažnju na "*" pre @ u email adresi.
 
-### Subdomains
+### Poddomeni
 
-Zabrana domena takođe pokriva svaki poddomen tog domena. Blokiranje `*@bademail.com` takođe blokira `someone@mail.bademail.com` i `someone@eu.mail.bademail.com`, pa nije potrebno dodavati zasebnu zabranu za svaki poddomen.
+Ban domena pokriva i sve poddomene tog domena. Banovanje `*@bademail.com` banuje i
+`someone@mail.bademail.com` i `someone@eu.mail.bademail.com`, tako da nije potrebno dodavati poseban ban za svaki poddomen.
 
-Ako želite da blokirate samo određeni poddomen, unesite taj poddomen, na primer `*@mail.bademail.com`. Ta zabrana ne utiče na `someone@bademail.com`.
+Ako želite da banujete samo određeni poddomen, unesite taj poddomen umesto toga, na primer `*@mail.bademail.com`. Taj ban
+ne utiče na `someone@bademail.com`.
 
-### Banning a Domain From a Comment
+### Banovanje domena iz komentara
 
-Ne morate ručno unositi obrazac. Kada blokirate korisnika iz komentara na stranici Moderate Comments page, dijalog za blokiranje ima polje za potvrdu "Ban All @domain Users" koje kreira istu `*@domain` zabranu za domen e‑mail adrese komentatora.
+Ne morate sami da kucate šablon. Kada banujete korisnika iz komentara na stranici Moderate Comments, dijalog za banovanje
+ima polje za potvrdu "Ban All @domain Users" koje kreira isti ban `*@domain` za email domen komentatora.
 
-### Supported Patterns
+### Podržani šabloni
 
-Jedini podržani oblik džokera je pojedinačni `*` umesto celog dela imena, praćen `@` i domenom. Ostali oblici se odbacuju kada pokušate da ih sačuvate:
+Jedini podržani oblik džoker znaka je jedan `*` umesto celog dela imena, praćen znakom `@` i domenom. Ostali oblici
+se odbijaju kada pokušate da ih sačuvate:
 
 - `*@*.bademail.com` nije potreban, jer `*@bademail.com` već pokriva poddomene.
 - `name*@bademail.com` i `*bademail.com` nisu podržani.

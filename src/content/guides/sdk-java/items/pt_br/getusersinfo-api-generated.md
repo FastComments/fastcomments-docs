@@ -1,4 +1,3 @@
----
 Informações em massa de usuários para um tenant. Dado userIds, retorna as informações de exibição de User / SSOUser.
 Usado pelo widget de comentários para enriquecer usuários que acabaram de aparecer via um evento de presença.
 Sem contexto de página: a privacidade é aplicada de forma uniforme (perfis privados são mascarados).
@@ -47,5 +46,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

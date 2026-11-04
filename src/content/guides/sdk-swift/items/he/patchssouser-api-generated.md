@@ -1,4 +1,3 @@
----
 ## פרמטרים
 
 | שם | סוג | מיקום | חובה | תיאור |
@@ -34,5 +33,3 @@ DefaultAPI.patchSSOUser(tenantId: tenantId, id: id, updateAPISSOUserData: update
     }
 }
 [inline-code-end]
-
----

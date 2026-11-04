@@ -26,5 +26,3 @@ async fn unflag_example(configuration: &configuration::Configuration) -> Result<
     Ok(())
 }
 [inline-code-end]
-
----

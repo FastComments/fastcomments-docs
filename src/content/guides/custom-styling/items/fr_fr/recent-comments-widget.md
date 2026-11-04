@@ -100,5 +100,3 @@ Le widget s'affiche avec la structure HTML suivante :
     box-shadow: none !important;
 }
 [inline-code-end]
-
----

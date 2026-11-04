@@ -19,5 +19,3 @@ Da biste nadjačali font, preporučujemo da svoj CSS definirate koristeći selek
     font-family: 'Roboto', sans-serif;
 }
 [inline-code-end]
-
----

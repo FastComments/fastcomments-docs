@@ -19,5 +19,3 @@ Wird ausgelöst, wenn ein Kommentar gelöscht wird.
 ### Hinweis zur Betriebsbelastung
 
 Wenn Sie eine Website mit hoher Löschrate haben (intensive manuelle Moderation), kann dieser Trigger häufig ausgelöst werden.
-
----

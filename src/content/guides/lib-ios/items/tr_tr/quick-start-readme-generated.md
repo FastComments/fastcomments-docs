@@ -1,4 +1,4 @@
-Bir yorum widget'ını görüntülemek için minimum kurulum:
+Bir yorum widget'ı görüntülemek için gereken minimum kurulum:
 
 ```swift
 import SwiftUI
@@ -23,7 +23,4 @@ struct ContentView: View {
 }
 ```
 
-Replace `"demo"` with your FastComments tenant ID. The `urlId` identifies the page or thread where comments are stored.
-
----
----
+`"demo"` değerini kendi FastComments tenant ID'nizle değiştirin. `urlId`, yorumların saklandığı sayfayı veya thread'i tanımlar.

@@ -14,5 +14,3 @@ Kommentarer kan søges med følgende eksempelsyntaks:
 
 Du kan dele søgeresultater med andre moderatorer eller administratorer ved at dele side-URL'en fra moderationssiden. Søgefeltets
 værdi vil blive inkluderet i URL'en i din browser efter du klikker på "Go".
-
----

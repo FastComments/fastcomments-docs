@@ -1,19 +1,17 @@
-Önce kod düzenleyicisini açmamız gerekiyor. FastComments'i tüm sayfalara eklemek istiyorsanız, sol alt köşeden Code öğesini seçin:
+Öncelikle kod düzenleyiciyi açmamız gerekiyor. FastComments'i tüm sayfalara eklemek istiyorsanız, sol alttaki Code seçeneğini seçmeniz yeterli:
 
 <div class="screenshot white-bg">
-    <div class="title">Kod Ayarlarını Açın</div>
-    <img class="screenshot-image" src="/images/installation-guides/super-so-step-1-code-tab.png" alt="Kod Ayarlarını Açın" />
+    <div class="title">Kod Ayarlarını Aç</div>
+    <img class="screenshot-image" src="/images/installation-guides/super-so-step-1-code-tab.png" alt="Kod Ayarlarını Aç" />
 </div>
 
-If you want to add it to a specific page, then select `Edit Custom Code` in that page's settings.
+Belirli bir sayfaya eklemek istiyorsanız, o sayfanın ayarlarında `Edit Custom Code` seçeneğini seçin.
 
-Now let's select the `Body` tab. **Bu önemli!**. Installing the code snippet in `Head` **çalışmaz**.
+Şimdi `Body` sekmesini seçelim. **Bu önemlidir!** Kod parçacığını `Head` bölümüne yüklemek **çalışmaz**.
 
 <div class="screenshot white-bg">
-    <div class="title">Body Sekmesini Seçin</div>
-    <img class="screenshot-image" src="/images/installation-guides/super-so-step-2-body.png" alt="Body Sekmesini Seçin" />
+    <div class="title">Body Seç</div>
+    <img class="screenshot-image" src="/images/installation-guides/super-so-step-2-body.png" alt="Body Seç" />
 </div>
 
-Now you're ready for step 2.
-
----
+Artık 2. adıma hazırsınız.

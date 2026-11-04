@@ -1,18 +1,18 @@
-When users comment or vote, and they are not logged in, they will be asked to provide their email and username.
+Gdy użytkownicy komentują lub głosują, a nie są zalogowani, zostaną poproszeni o podanie swojego adresu e-mail i nazwy użytkownika.
 
-For some sites, asking a visitor to invent a unique username is a hurdle, particularly on mobile. FastComments can
-generate a neutral username for each new visitor and prefill it in the username field, like `BraveOtter4172`.
+Dla niektórych stron proszenie odwiedzającego o wymyślenie unikalnej nazwy użytkownika jest barierą, szczególnie na urządzeniach mobilnych. FastComments może
+wygenerować neutralną nazwę użytkownika dla każdego nowego odwiedzającego i wstępnie ją wypełnić w polu nazwy użytkownika, np. `BraveOtter4172`.
 
-The visitor can leave it as-is, or replace it with a name of their choosing.
+Odwiedzający może zostawić ją bez zmian lub zastąpić ją nazwą według własnego wyboru.
 
-This can be enabled from the Customization UI, under the setting called `Generate Usernames Automatically`:
+Można to włączyć z interfejsu Customization, w ustawieniu o nazwie `Generate Usernames Automatically`:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.auto-generate-username'; alt='Opcja Generuj nazwy użytkowników automatycznie w interfejsie dostosowywania widgetu'; title='Generuj nazwy użytkowników automatycznie' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.auto-generate-username'; alt='Opcja Generate Usernames Automatically w interfejsie dostosowywania widżetu'; title='Generate Usernames Automatically' app-screenshot-end]
 
 #### Jak to działa
 
-- Each generated name is unique. It is checked against existing accounts and reserved for that visitor's browser session, so two visitors are not offered the same name.
-- The name is only generated for visitors who do not have one yet. Logged in users, SSO users, and visitors who have already commented keep their existing name.
-- It works with or without [anonymous commenting](/guide-customizations-and-configuration.html#allow-anon). With anonymous commenting off, the visitor still enters their email, but no longer has to think of a username.
-- A returning visitor who enters an email they have used before is matched to their existing account, and keeps the name on that account.
-- If a [Default Username](/guide-customizations-and-configuration.html#default-username) is also set, the generated name takes precedence.
+- Każda wygenerowana nazwa jest unikalna. Jest sprawdzana względem istniejących kont i zarezerwowana dla sesji przeglądarki danego odwiedzającego, więc dwóm odwiedzającym nie zostanie zaproponowana ta sama nazwa.
+- Nazwa jest generowana tylko dla odwiedzających, którzy jeszcze jej nie mają. Zalogowani użytkownicy, użytkownicy SSO oraz odwiedzający, którzy już komentowali, zachowują swoją istniejącą nazwę.
+- Działa z komentowaniem anonimowym lub bez niego ([anonymous commenting](/guide-customizations-and-configuration.html#allow-anon)). Przy wyłączonym komentowaniu anonimowym odwiedzający nadal podaje swój adres e-mail, ale nie musi już wymyślać nazwy użytkownika.
+- Powracający odwiedzający, który poda adres e-mail używany wcześniej, zostanie dopasowany do swojego istniejącego konta i zachowa nazwę z tego konta.
+- Jeśli ustawiona jest również opcja [Default Username](/guide-customizations-and-configuration.html#default-username), wygenerowana nazwa ma pierwszeństwo.

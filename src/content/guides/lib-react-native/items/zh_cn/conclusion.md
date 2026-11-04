@@ -8,5 +8,3 @@
 ## 贡献
 
 欢迎贡献！有关贡献指南，请访问 [GitHub 仓库](https://github.com/FastComments/fastcomments-react-native)。
-
----

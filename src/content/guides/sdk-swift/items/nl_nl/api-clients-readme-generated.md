@@ -1,29 +1,29 @@
-The FastComments SDK provides three API clients:
+De FastComments SDK biedt drie API-clients:
 
-### PublicAPI - Client‑veilige methoden
+### PublicAPI - Client-Safe Methoden
 
-The `PublicAPI` contains methods that are safe to call from client-side code (iOS/macOS apps). These methods:
-- Do not require an API key
-- Can use SSO tokens for authentication
-- Are rate‑limited per user/device
-- Are suitable for end‑user facing applications
+De `PublicAPI` bevat methoden die veilig kunnen worden aangeroepen vanuit client-side code (iOS/macOS-apps). Deze methoden:
+- Vereisen geen API-sleutel
+- Kunnen SSO-tokens gebruiken voor authenticatie
+- Zijn rate-limited per gebruiker/apparaat
+- Zijn geschikt voor applicaties gericht op eindgebruikers
 
-**Voorbeeld gebruikssituatie**: Fetching and creating comments in your iOS app
+**Voorbeeld use case**: Het ophalen en maken van opmerkingen in je iOS-app
 
-### DefaultAPI - Server‑side methoden
+### DefaultAPI - Server-Side Methoden
 
-The `DefaultAPI` contains authenticated methods that require an API key. These methods:
-- Require your FastComments API key
-- Should ONLY be called from server-side code
-- Provide full access to your FastComments data
-- Are rate‑limited per tenant
+De `DefaultAPI` bevat geauthenticeerde methoden die een API-sleutel vereisen. Deze methoden:
+- Vereisen je FastComments API-sleutel
+- Mogen ALLEEN worden aangeroepen vanuit server-side code
+- Bieden volledige toegang tot je FastComments-gegevens
+- Zijn rate-limited per tenant
 
-**Voorbeeld gebruikssituatie**: Administrative operations, bulk data export, user management
+**Voorbeeld use case**: Administratieve bewerkingen, bulkdata-export, gebruikersbeheer
 
-### ModerationAPI - Moderator‑dashboard methoden
+### ModerationAPI - Moderator Dashboard Methoden
 
-The `ModerationAPI` provides an extensive suite of live and fast moderation APIs. Every `ModerationAPI` method accepts an `sso` parameter and can authenticate via SSO or a FastComments.com session cookie.
+De `ModerationAPI` biedt een uitgebreide suite van live en snelle moderatie-API's. Elke `ModerationAPI`-methode accepteert een `sso`-parameter en kan authenticeren via SSO of een FastComments.com-sessiecookie.
 
-**Voorbeeld gebruikssituatie**: Building a moderation experience for moderators of your community
+**Voorbeeld use case**: Het bouwen van een moderatie-ervaring voor moderators van jouw community
 
-**BELANGRIJK**: Never expose your API key in client-side code. API keys should only be used server-side.
+**BELANGRIJK**: Stel je API-sleutel nooit bloot in client-side code. API-sleutels mogen alleen server-side worden gebruikt.

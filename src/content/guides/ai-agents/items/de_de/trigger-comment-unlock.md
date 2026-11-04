@@ -1,4 +1,3 @@
----
 Wird ausgelöst, wenn ein Kommentar entsperrt wird.
 
 ### Kontext, den der Agent erhält
@@ -18,5 +17,3 @@ Wird ausgelöst, wenn ein Kommentar entsperrt wird.
 ### Gegenstück
 
 Siehe [Trigger: Kommentar gesperrt](#trigger-comment-lock).
-
----

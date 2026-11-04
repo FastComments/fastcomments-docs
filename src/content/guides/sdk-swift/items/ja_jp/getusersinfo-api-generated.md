@@ -1,4 +1,3 @@
----
 テナントの複数ユーザー情報。userIds を受け取り、User / SSOUser から表示情報を返します。
 コメントウィジェットが、プレゼンスイベントで新たに現れたユーザーの情報を補完するために使用します。
 ページコンテキストがないため、プライバシーは一律に適用されます（非公開プロファイルはマスクされます）。
@@ -35,5 +34,3 @@ PublicAPI.getUsersInfo(tenantId: tenantId, ids: ids) { (response, error) in
     }
 }
 [inline-code-end]
-
----

@@ -1,10 +1,14 @@
-Un `Poll` è associato a un commento, piuttosto che essere un oggetto a sé stante. Viene creato insieme al commento (vedi `POST /api/v1/comments`), o aggiunto a un commento esistente in seguito con `PUT /api/v1/polls/:commentId`.
+Un `Poll` è collegato a un commento, anziché essere un oggetto a sé stante. Viene creato insieme al commento
+(vedi `POST /api/v1/comments`), oppure aggiunto successivamente a un commento esistente con `PUT /api/v1/polls/:commentId`.
 
-Il conteggio dei voti è conservato direttamente sul sondaggio, quindi leggere un sondaggio fornisce i risultati senza doverli sommare. I singoli voti dietro quei conteggi sono oggetti `PollVote`.
+I conteggi dei voti sono conservati direttamente sul sondaggio, quindi la lettura di un sondaggio fornisce i risultati
+senza dover sommare nulla. I singoli voti alla base di quei conteggi sono oggetti `PollVote`.
 
-Ogni opzione ha un `id` generato al momento della creazione del sondaggio. Quell'id è quello che usi per esprimere un voto, per rinominare un'opzione e per mantenere un'opzione (e i suoi voti) quando esegui `PUT` sul sondaggio con opzioni aggiunte o rimosse. È l'unico modo sicuro per fare riferimento a un'opzione – mai la sua posizione nella lista.
+Ogni opzione ha un `id` generato quando il sondaggio viene creato. Quell'id è ciò che usi per esprimere un voto,
+per rinominare un'opzione e per mantenere un'opzione (e i suoi voti) quando esegui un `PUT` del sondaggio con opzioni
+aggiunte o rimosse. È l'unico modo sicuro per riferirsi a un'opzione - mai alla sua posizione nell'elenco.
 
-[inline-code-attrs-start title = 'Struttura del sondaggio'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Struttura del Poll'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface CommentPollOption {
     id: string
@@ -16,27 +20,27 @@ interface CommentPoll {
     question: string
     options: CommentPollOption[]
     totalVotes: number
-    /** When set and in the past, the poll is closed and no longer accepts votes. **/
+    /** Se impostato e nel passato, il sondaggio è chiuso e non accetta più voti. **/
     closesAt?: string | null
-    /** 0 anonymous (the default), 1 admins and moderators, 2 everyone. Absent means anonymous. **/
+    /** 0 anonimo (predefinito), 1 amministratori e moderatori, 2 tutti. Assente significa anonimo. **/
     privacy?: 0 | 1 | 2 | null
-    /** When true, the counts are hidden from anyone who has not voted yet. Absent means false. **/
+    /** Se true, i conteggi sono nascosti a chiunque non abbia ancora votato. Assente significa false. **/
     requireVoteToSeeResults?: boolean | null
 }
 [inline-code-end]
 
-### Limits
+### Limiti
 
-- È richiesta una domanda, e può contenere al massimo 200 caratteri.
-- Un sondaggio deve avere tra 2 e 10 opzioni.
-- È obbligatorio fornire un'etichetta per l'opzione, può contenere al massimo 100 caratteri e deve essere univoca all'interno del sondaggio (ignorando maiuscole/minuscole).
-- `closesAt` deve essere nel futuro al momento della creazione del sondaggio. Per chiudere un sondaggio immediatamente, esegui `PATCH` con una data nel passato.
+- Una domanda è obbligatoria e ha al massimo 200 caratteri.
+- Un sondaggio ha tra 2 e 10 opzioni.
+- L'etichetta di un'opzione è obbligatoria, ha al massimo 100 caratteri e deve essere unica all'interno del sondaggio (ignorando maiuscole/minuscole).
+- `closesAt` deve essere nel futuro quando il sondaggio viene creato. Per chiudere immediatamente un sondaggio, esegui un `PATCH` con
+  una data nel passato.
 
-### Site Settings
+### Impostazioni del Sito
 
-I sondaggi rispettano la configurazione del tuo sito, che puoi modificare in Personalizza Widget:
+I sondaggi rispettano la configurazione del tuo sito, che puoi modificare sotto Customize Widget:
 
-- I sondaggi devono essere abilitati prima che possa essere creato un sondaggio, altrimenti l'API risponde con `polls-disabled`.
-- Il voto può essere limitato agli utenti autenticati; in tal caso un voto inviato con solo un `anonUserId` viene rifiutato con `poll-login-required`.
-
----
+- I sondaggi devono essere abilitati prima che sia possibile crearne uno, altrimenti l'API risponde con `polls-disabled`.
+- Il voto può essere limitato agli utenti registrati, nel qual caso un voto inviato con solo un `anonUserId` viene rifiutato
+  con `poll-login-required`.

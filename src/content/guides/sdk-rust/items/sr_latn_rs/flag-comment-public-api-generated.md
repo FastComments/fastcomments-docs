@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
@@ -27,5 +26,3 @@ async fn run(configuration: &configuration::Configuration) -> Result<(), Error> 
     Ok(())
 }
 [inline-code-end]
-
----

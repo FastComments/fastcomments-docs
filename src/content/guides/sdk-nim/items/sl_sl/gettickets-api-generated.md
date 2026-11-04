@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Ime | Tip | Obvezno | Opis |
@@ -19,5 +18,3 @@ if ticketsOpt.isSome:
   let tickets = ticketsOpt.get()
   # uporabite vstopnice po potrebi
 [inline-code-end]
-
----

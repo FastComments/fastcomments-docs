@@ -1,4 +1,3 @@
----
 Para criar uma enquete, clique no botão de enquete na barra de ferramentas do editor de comentários. Um editor de enquete abre abaixo da entrada de texto, onde você pode definir:
 
 - **A pergunta**, até 200 caracteres.
@@ -10,4 +9,3 @@ Para criar uma enquete, clique no botão de enquete na barra de ferramentas do e
 Escreva seu comentário como de costume e publique‑o. A enquete é publicada junto com o comentário. Enquetes podem ser adicionadas a novos comentários e a respostas.
 
 Para descartar uma enquete antes de publicar, clique em **Remover enquete**.
----

@@ -1,4 +1,3 @@
----
 Cuando los usuarios comentan y no han iniciado sesión, se les pedirá que proporcionen su correo electrónico.
 
 Esto creará una "sesión no verificada" para ese usuario, y le pediremos que verifique esa sesión mediante correo electrónico.
@@ -16,5 +15,3 @@ Ten en cuenta que, con esta configuración, todos los comentarios serán no veri
 https://fastcomments.com.
 
 Puede que desees considerar [desactivar la etiqueta no verificada](/guide-customizations-and-configuration.html#disable-unverified-label).
-
----

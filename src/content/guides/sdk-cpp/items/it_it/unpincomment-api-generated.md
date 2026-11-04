@@ -25,5 +25,3 @@ task.then([](std::shared_ptr<ChangeCommentPinStatusResponse> resp){
     auto result = std::make_shared<ChangeCommentPinStatusResponse>(*resp);
 });
 [inline-code-end]
-
----

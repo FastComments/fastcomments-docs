@@ -5,5 +5,3 @@
 ## Репозиторий
 
 [Посмотреть на GitHub](https://github.com/FastComments/fastcomments-php)
-
----

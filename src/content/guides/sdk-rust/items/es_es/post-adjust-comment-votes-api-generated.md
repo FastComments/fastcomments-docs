@@ -28,5 +28,3 @@ async fn adjust_votes_example(configuration: &configuration::Configuration) -> R
     Ok(())
 }
 [inline-code-end]
-
----

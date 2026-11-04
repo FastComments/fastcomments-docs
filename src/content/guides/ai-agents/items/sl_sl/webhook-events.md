@@ -1,4 +1,3 @@
----
 Obstajajo štiri vrste agentnih webhook dogodkov. Vsak dogodek ima numerično vrednost enum (uporablja se v payloadih) in kanonično nizovno ime (uporablja se v polju ovojnice `event` in v HTTP glavi `X-FastComments-Agent-Event`).
 
 | Ime dogodka | Enum | Sproži se, ko |
@@ -70,5 +69,3 @@ Vsaka dostava vključuje HTTP glavo `X-FastComments-Agent-Event` z kanoničnim n
 - [Podatki webhooka](#webhook-payloads) za celotne sheme payloadov po dogodku.
 - [Podpisovanje webhookov](#webhook-signing) za HMAC shemo.
 - [Ponovna pošiljanja webhookov](#webhook-retries) za semantiko dostave.
-
----

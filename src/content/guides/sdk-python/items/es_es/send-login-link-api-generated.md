@@ -1,4 +1,3 @@
----
 ## Parámetros
 
 | Nombre | Tipo | Location | Requerido | Descripción |
@@ -52,5 +51,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling DefaultApi->send_login_link: %s\n" % e)
 [inline-code-end]
-
----

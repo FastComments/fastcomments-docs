@@ -1,4 +1,3 @@
----
 ## Parametreler
 
 | Ad | Tip | Konum | Gerekli | Açıklama |
@@ -39,5 +38,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.BulkAggregateQuestionResults`: %v\n", resp)
 }
 [inline-code-end]
-
----

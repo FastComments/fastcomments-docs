@@ -1,170 +1,170 @@
-Benutzernotizen ermöglichen es Ihnen, private, persönliche Anmerkungen über andere FastComments-Benutzer zu speichern. Diese Notizen sind völlig privat und nur für Sie sichtbar.
+Benutzer-Notizen ermöglichen es dir, private, persönliche Anmerkungen über andere FastComments-Benutzer zu speichern. Diese Notizen sind vollständig privat und nur für dich sichtbar.
 
-### Was sind Benutzernotizen?
+### Was sind Benutzer-Notizen?
 
-Benutzernotizen sind:
-- **Private Anmerkungen**, die Sie über andere Benutzer erstellen
-- **Nur für Sie sichtbar** – der Benutzer, über den Sie schreiben, kann sie nicht sehen
-- **Persistente** – gespeichert und zugänglich, wann immer Sie das Profil dieses Benutzers aufrufen
-- **Hilfreich zum Erinnern** von Kontext, Interaktionen oder wichtigen Details über Benutzer
+Benutzer-Notizen sind:
+- **Private Anmerkungen**, die du über andere Benutzer erstellst
+- **Nur für dich sichtbar** – der Benutzer, über den du schreibst, kann sie nicht sehen
+- **Persistent** – gespeichert und jederzeit abrufbar, wenn du das Profil dieses Benutzers ansiehst
+- **Hilfreich zum Erinnern** an Kontext, Interaktionen oder wichtige Details über Benutzer
 
-### Warum Benutzernotizen verwenden?
+### Warum Benutzer-Notizen verwenden?
 
-Benutzernotizen sind nützlich für:
+Benutzer-Notizen sind nützlich für:
 
 **Moderatoren:**
-- Verfolgung der Interaktionshistorie mit bestimmten Benutzern
-- Dokumentation von Warnmustern oder Verhaltensbeobachtungen
-- Erinnerung an den Kontext für Moderationsentscheidungen
-- Dokumentation, warum bestimmte Maßnahmen ergriffen wurden
+- Verlauf der Interaktionen mit bestimmten Benutzern nachverfolgen
+- Warnmuster oder Verhaltensbeobachtungen festhalten
+- Kontext für Moderationsentscheidungen merken
+- Dokumentieren, warum bestimmte Maßnahmen ergriffen wurden
 
 **Community-Manager:**
-- Erinnerung an wertvolle Mitwirkende und deren Fachwissen
-- Kennzeichnung von Benutzern, die gute Kandidaten für besondere Rollen sein könnten
-- Nachverfolgung von erforderlichen Folgemaßnahmen mit Community-Mitgliedern
+- Wertvolle Beitragende und deren Expertise merken
+- Benutzer notieren, die gute Kandidaten für besondere Rollen sein könnten
+- Nachverfolgungen mit Community-Mitgliedern im Auge behalten
 
-**Reguläre Benutzer:**
-- Erinnerung, wie Sie jemanden über verschiedene Communities hinweg kennen
-- Notieren von Themen, die Sie mit bestimmten Benutzern besprochen haben
-- Verfolgung hilfreicher Beitragender in Ihren Interessengebieten
-- Erinnerung an persönliche Details, die in Gesprächen geteilt wurden (innerhalb angemessener Grenzen)
+**Normale Benutzer:**
+- Merken, wie du jemanden aus verschiedenen Communities kennst
+- Themen notieren, die du mit bestimmten Benutzern besprochen hast
+- Hilfreiche Beitragende in deinen Interessengebieten im Blick behalten
+- Persönliche Details aus Gesprächen merken (in angemessenem Rahmen)
 
-### Erstellen einer Benutzernotiz
+### Eine Benutzer-Notiz erstellen
 
 Um eine Notiz über einen Benutzer hinzuzufügen:
 
-1. Besuchen Sie die Profilseite des Benutzers
-2. Suchen Sie den Bereich „Benutzernotiz“ oder „Notiz hinzufügen“
-3. Klicken Sie, um eine neue Notiz zu erstellen
-4. Geben Sie Ihre Notiz ein (bis zu 1000 Zeichen)
-5. Speichern Sie die Notiz
+1. Besuche die Profilseite des Benutzers
+2. Suche nach dem Bereich „User Note" oder „Add Note"
+3. Klicke, um eine neue Notiz zu erstellen
+4. Tippe deine Notiz ein (bis zu 1000 Zeichen)
+5. Speichere die Notiz
 
-Die Notiz wird gespeichert und erscheint, wann immer Sie das Profil dieses Benutzers aufrufen.
+Die Notiz wird gespeichert und erscheint immer, wenn du das Profil dieses Benutzers ansiehst.
 
-### Anzeigen von Benutzernotizen
+### Benutzer-Notizen anzeigen
 
-Ihre Notizen werden beim Anzeigen des zugehörigen Benutzerprofils angezeigt:
+Deine Notizen erscheinen, wenn du das Profil des betreffenden Benutzers ansiehst:
 
-- **Ort:** In der Regel in einem eigenen Bereich auf der Profilseite
-- **Sichtbarkeit:** Nur für Sie sichtbar, wenn Sie eingeloggt sind
-- **Kontext:** Erscheint zusammen mit den öffentlichen Informationen des Benutzers
+- **Position:** Normalerweise in einem eigenen Bereich auf der Profilseite
+- **Sichtbarkeit:** Nur für dich sichtbar, wenn du angemeldet bist
+- **Kontext:** Erscheint neben den öffentlichen Informationen des Benutzers
 
-So ist es einfach, sich an wichtigen Kontext über Benutzer zu erinnern, mit denen Sie regelmäßig interagieren.
+So fällt es leicht, sich wichtige Details über Benutzer zu merken, mit denen du regelmäßig interagierst.
 
-### Bearbeiten von Benutzernotizen
+### Benutzer-Notizen bearbeiten
 
-Um eine vorhandene Notiz zu aktualisieren:
+Um eine bestehende Notiz zu aktualisieren:
 
-1. Besuchen Sie das Profil des Benutzers
-2. Finden Sie Ihre vorhandene Notiz
-3. Klicken Sie auf „Bearbeiten“ oder klicken Sie in das Notizfeld
-4. Nehmen Sie Ihre Änderungen vor
-5. Speichern Sie die aktualisierte Notiz
+1. Besuche das Profil des Benutzers
+2. Finde deine bestehende Notiz
+3. Klicke auf „Bearbeiten" oder klicke in das Notizfeld
+4. Nimm deine Änderungen vor
+5. Speichere die aktualisierte Notiz
 
-### Löschen von Benutzernotizen
+### Benutzer-Notizen löschen
 
 Um eine Notiz zu entfernen:
 
-1. Besuchen Sie das Profil des Benutzers
-2. Finden Sie Ihre Notiz
-3. Klicken Sie auf „Löschen“ oder die Entfernen-Option
-4. Bestätigen Sie die Löschung
+1. Besuche das Profil des Benutzers
+2. Finde deine Notiz
+3. Klicke auf „Löschen" oder die Entfernen-Option
+4. Bestätige die Löschung
 
-Nach der Löschung wird die Notiz dauerhaft entfernt und kann nicht wiederhergestellt werden.
+Nach dem Löschen wird die Notiz dauerhaft entfernt und kann nicht wiederhergestellt werden.
 
 ### Zeichenbegrenzung
 
-Benutzernotizen sind auf **1000 Zeichen** begrenzt. Das fördert:
+Benutzer-Notizen sind auf **1000 Zeichen** begrenzt. Dies fördert:
 - Prägnante, fokussierte Notizen
-- Wichtige Punkte statt langer Erzählungen
-- Schnell zugängliche Informationen
+- Kernpunkte statt langer Ausführungen
+- Schnell abrufbare Informationen
 
-Wenn Sie mehr Platz benötigen, sollten Sie in Erwägung ziehen, separate Dokumentation außerhalb von FastComments zu führen.
+Wenn du mehr Platz benötigst, erwäge, separate Dokumentationen außerhalb von FastComments zu führen.
 
 ### Datenschutz und Sicherheit
 
 **Vollständige Privatsphäre:**
-- Notizen werden mit Ihrer Benutzer-ID gespeichert
-- Nur Sie können die Notizen sehen, die Sie erstellt haben
-- Der Benutzer, über den Sie schreiben, kann Ihre Notizen nicht sehen
-- Andere Benutzer können Ihre Notizen nicht sehen
-- Site-Administratoren können Ihre persönlichen Notizen nicht sehen (sie werden getrennt von Moderationsprotokollen gespeichert)
+- Notizen werden mit deiner Benutzer-ID gespeichert
+- Nur du kannst die von dir erstellten Notizen sehen
+- Der Benutzer, über den du schreibst, kann deine Notizen nicht sehen
+- Andere Benutzer können deine Notizen nicht sehen
+- Website-Administratoren können deine persönlichen Notizen nicht sehen (sie werden separat von Moderationsprotokollen gespeichert)
 
 **Hinweis zur Moderation:**
-Benutzernotizen unterscheiden sich von Moderationsnotizen oder Meldungen:
-- Verwenden Sie Benutzernotizen für persönliche Referenz
-- Verwenden Sie Moderationsmeldetools für Verstöße oder Probleme
-- Benutzernotizen lösen keine Aktionen oder Warnungen aus
+Benutzer-Notizen unterscheiden sich von Moderationsnotizen oder Flaggen:
+- Verwende Benutzer-Notizen für persönliche Referenzen
+- Verwende Moderations- und Meldetools für Verstöße oder Probleme
+- Benutzer-Notizen lösen keine Aktionen oder Warnungen aus
 
-### Best Practices
+### Bewährte Praktiken
 
-**Was einzuschließen ist:**
-- Wie Sie den Benutzer kennengelernt haben oder kennen
-- Themen, zu denen er/sie Kenntnisse hat
+**Was du aufnehmen solltest:**
+- Wie du den Benutzer kennengelernt hast oder kennst
+- Themen, in denen er sich auskennt
 - Frühere hilfreiche Interaktionen
 - Kontext aus vergangenen Gesprächen
-- Fachgebiete oder Interessengebiete
-- Erinnerungen für Folgeaktionen
+- Fachgebiete oder Interessen
+- Erinnerungen für Nachverfolgungen
 
-**Was zu vermeiden ist:**
-- Verwenden Sie Notizen nicht zur Speicherung sensibler persönlicher Informationen
-- Vermeiden Sie auch in privaten Notizen beleidigende oder unangemessene Inhalte
-- Verlassen Sie sich nicht auf Notizen für kritische Informationen (halten Sie Sicherungen anderswo)
-- Denken Sie daran, dass Notizen nur für Ihre Referenz gedacht sind, nicht als offizielle Aufzeichnungen
+**Was du vermeiden solltest:**
+- Keine sensiblen persönlichen Informationen in Notizen speichern
+- Vermeide anstößige oder unangemessene Inhalte, auch in privaten Notizen
+- Verlasse dich nicht auf Notizen für kritische Informationen (erstelle Backups an anderer Stelle)
+- Denke daran: Notizen dienen nur deiner Referenz, sind keine offiziellen Aufzeichnungen
 
 **Professionelle Nutzung:**
 Für Moderatoren und Community-Manager:
-- Halten Sie Notizen sachlich und objektiv
-- Fügen Sie Daten für zeitkritische Informationen hinzu
-- Dokumentieren Sie Muster statt einzelner Vorfälle
-- Verwenden Sie Notizen als Ergänzung (nicht als Ersatz) zu offiziellen Moderationsprotokollen
+- Halte Notizen sachlich und objektiv
+- Füge Daten bei zeitkritischen Informationen hinzu
+- Notiere Muster statt einzelner Vorfälle
+- Verwende Notizen zur Ergänzung (nicht als Ersatz) offizieller Moderationsprotokolle
 
 ### Anwendungsfälle
 
 **Beispiel 1: Community-Manager**
-> "Aktiv in technischen Diskussionen. Arbeitet als Backend-Entwickler. Hat angeboten, bei der Dokumentation zu helfen. Folge auf wegen Beitrag zum Wiki."
+> „Aktiv in Tech-Diskussionen. Arbeitet als Backend-Entwickler. Hat angeboten, bei der Dokumentation zu helfen. Nachfragen zum Beitrag im Wiki."
 
 **Beispiel 2: Moderator**
-> "Hilfreicher Benutzer, gerät aber manchmal in hitzige Debatten. Im Allgemeinen respektvoll. Reagierte gut auf vorherige Erinnerung an Höflichkeit."
+> „Hilfsbereiter Benutzer, gerät aber manchmal in hitzige Debatten. Grundsätzlich respektvoll. Hat gut auf frühere Ermahnung zur Höflichkeit reagiert."
 
-**Beispiel 3: Regulärer Benutzer**
-> "Getroffen in Gaming-Threads. Spielt dieselben Spiele wie ich. Teilte hilfreichen Tutorial-Link. In der britischen Zeitzone ansässig."
+**Beispiel 3: Normaler Benutzer**
+> „In Gaming-Threads kennengelernt. Spielt dieselben Spiele wie ich. Hat hilfreichen Tutorial-Link geteilt. Basiert in der UK-Zeitzone."
 
 ### Einschränkungen
 
-**Was Benutzernotizen nicht tun:**
-- Sie synchronisieren nicht geräteübergreifend (es sei denn, Sie sind mit demselben Konto eingeloggt)
+**Was Benutzer-Notizen nicht tun:**
+- Sie synchronisieren nicht geräteübergreifend (es sei denn, du bist mit demselben Konto angemeldet)
 - Sie erscheinen nicht in Kommentaren oder anderen Kontexten, nur in Profilen
-- Sie beeinflussen weder das Profil des Benutzers noch dessen Sichtbarkeit
-- Sie sind derzeit nicht durchsuchbar
+- Sie beeinflussen das Profil oder die Sichtbarkeit des Benutzers in keiner Weise
+- Sie sind (derzeit) nicht durchsuchbar
 - Sie lösen keine Benachrichtigungen oder Aktionen aus
 
 **Speicherung:**
-- Notizen werden unbegrenzt gespeichert, es sei denn, Sie löschen sie
+- Notizen werden unbegrenzt gespeichert, bis du sie löschst
 - Maximal 1000 Zeichen pro Notiz
-- Eine Notiz pro Benutzer (aktualisieren Sie die vorhandene Notiz statt mehrere zu erstellen)
+- Eine Notiz pro Benutzer (aktualisiere die bestehende Notiz, statt mehrere zu erstellen)
 
 ### Technische Details
 
-Benutzernotizen sind:
-- In der Datenbank gespeichert mit Ihrer Benutzer-ID als Ersteller
-- Mit der ID des Zielbenutzers verknüpft
-- Verschlüsselt während der Übertragung (HTTPS)
-- Unterliegen den Standard-Datenaufbewahrungsrichtlinien von FastComments
+Benutzer-Notizen werden:
+- In der Datenbank mit deiner Benutzer-ID als Ersteller gespeichert
+- Mit der Benutzer-ID des Zielbenutzers verknüpft
+- Bei der Übertragung verschlüsselt (HTTPS)
+- Den standardmäßigen FastComments-Datenaufbewahrungsrichtlinien unterworfen
 - Nicht in öffentlichen Datenexporten oder API-Antworten enthalten
 
 ### Fehlerbehebung
 
 **Notiz wird nicht gespeichert:**
-- Prüfen Sie, ob Sie eingeloggt sind
-- Stellen Sie sicher, dass die Notiz unter 1000 Zeichen liegt
-- Versuchen Sie, die Seite zu aktualisieren und erneut hinzuzufügen
-- Prüfen Sie Ihre Internetverbindung
+- Prüfe, ob du angemeldet bist
+- Stelle sicher, dass die Notiz unter 1000 Zeichen ist
+- Versuche, die Seite zu aktualisieren und erneut hinzuzufügen
+- Prüfe deine Internetverbindung
 
-**Notiz wird nicht angezeigt:**
-- Vergewissern Sie sich, dass Sie in dem Konto eingeloggt sind, das die Notiz erstellt hat
-- Aktualisieren Sie die Profilseite des Benutzers
-- Löschen Sie gegebenenfalls den Browser-Cache
+**Notiz erscheint nicht:**
+- Stelle sicher, dass du mit dem Konto angemeldet bist, das die Notiz erstellt hat
+- Aktualisiere die Profilseite des Benutzers
+- Lösche bei Bedarf den Browser-Cache
 
-**Aus Versehen gelöschte Notiz:**
-Leider können gelöschte Notizen nicht wiederhergestellt werden. Erwägen Sie, wichtige Informationen außerhalb von FastComments zu sichern.
+**Notiz versehentlich gelöscht:**
+Leider können gelöschte Notizen nicht wiederhergestellt werden. Erwäge, Backups wichtiger Informationen außerhalb von FastComments zu führen.

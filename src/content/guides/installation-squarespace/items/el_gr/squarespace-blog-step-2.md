@@ -1,15 +1,15 @@
-Τώρα μπορούμε να αντιγράψουμε το ακόλουθο απόσπασμα κώδικα (χρησιμοποιήστε το κουμπί αντιγραφής επάνω δεξιά στο απόσπασμα):
+Τώρα μπορούμε να αντιγράψουμε το παρακάτω απόσπασμα κώδικα (χρησιμοποιήστε το κουμπί αντιγραφής στην πάνω δεξιά γωνία του αποσπάσματος):
 
-[inline-code-attrs-start title = 'Κώδικας σχολίων για το Squarespace Blog'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Κώδικας Σχολίων Blog Squarespace'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
 <div id="fastcomments-widget"></div>
 <script>
     (function () {
-        const tenantId = 'demo'; // το αναγνωριστικό του λογαριασμού σας
+        const tenantId = 'demo'; // your account id
 
         function tryLoad() {
-            // προσπαθεί να φορτώσει για διαφορετικές διατάξεις
+            // try to load for different layouts
             let targetDiv = document.querySelector('.blog-item-comments-content');
             if (!targetDiv) {
                 targetDiv = document.getElementById('fastcomments-widget');
@@ -25,7 +25,7 @@
 
 [inline-code-end]
 
-...then paste in the code area and click save:
+...και μετά επικολλήστε στην περιοχή κώδικα και πατήστε αποθήκευση:
 
 <div class="screenshot white-bg">
     <div class="title">Επικόλληση και Αποθήκευση</div>

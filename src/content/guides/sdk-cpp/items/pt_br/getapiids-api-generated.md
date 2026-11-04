@@ -25,5 +25,3 @@ api->getApiIds(tenantId, options).then([](pplx::task<std::shared_ptr<ModerationA
     }
 });
 [inline-code-end]
-
----

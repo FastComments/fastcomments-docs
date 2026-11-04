@@ -1,4 +1,3 @@
----
 Vorige commenters op de pagina die NIET momenteel online zijn. Gesorteerd op **displayName**.  
 Gebruik dit nadat /users/online is uitgeput om een "Members"-sectie weer te geven.  
 Cursor-paginering op **commenterName**: de server doorloopt de partiële `{tenantId, urlId, commenterName}` index vanaf **afterName** voortzetten via `$gt`, zonder `$skip`‑kosten.
@@ -28,5 +27,3 @@ if offlineResp.isSome:
   let offline = offlineResp.get()
   echo offline)
 [inline-code-end]
-
----

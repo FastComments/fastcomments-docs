@@ -1,31 +1,31 @@
-#### "Kayıt belirteci bulunamadı, süresi doldu veya zaten kullanıldı"
+#### "Kayıt token'ı bulunamadı, süresi doldu veya zaten kullanıldı"
 
-Kayıt URL'nizdeki belirteç (<a href="https://fastcomments.com/auth/my-account/lti-config" target="_blank">buradan alabilirsiniz</a>) 30 dakika için geçerlidir ve yalnızca bir kez kullanılabilir. LMS'iniz bunun üzerinde sürdüyse veya kayıt başarıyla gerçekleştirildikten sonra yeniden denendiyse, belirteç reddedilir. FastComments LTI 1.3 Yapılandırma sayfasından yeni bir URL oluşturun ve yeniden başlayın.
+Kayıt URL'nizdeki token (<a href="https://fastcomments.com/auth/my-account/lti-config" target="_blank">buradan alın</a>) 30 dakika geçerlidir ve yalnızca bir kez kullanılabilir. LMS'iniz bundan daha uzun sürdüyse veya kayıt başarılı olduktan sonra tekrar denendiyse, token reddedilecektir. FastComments LTI 1.3 Yapılandırma sayfasında yeni bir URL oluşturun ve baştan başlayın.
 
 #### "Platform kaydı reddetti"
 
 LMS'iniz kayıt el sıkışmasını reddetti. En yaygın nedenler:
 
-- **Aynı istemci adıyla araç zaten kayıtlı.** Bazı platformlar (özellikle D2L), önceki silinene kadar "FastComments" için yapılan ikinci kaydı reddeder. LMS'inizdeki eski aracı kaldırın, ardından yeniden deneyin.
-- **LMS'de yanlış alan.** URL'yi launch URL veya login URL alanına değil, **registration / tool initiation registration endpoint** alanına yapıştırdığınızdan emin olun.
-- **LMS gerçekte Dynamic Registration'ı desteklemiyor.** Eski Moodle ve Blackboard sürümleri LTI 1.3'ü ilan eder ancak yalnızca manuel yapılandırmaya izin verir. Platformunuzun belgelerini kontrol edin.
+- **Araç aynı istemci adıyla zaten kayıtlı.** Bazı platformlar (özellikle D2L), önceki kayıt silinene kadar ikinci bir "FastComments" kaydını reddeder. LMS'inizdeki eski aracı kaldırın ve tekrar deneyin.
+- **LMS'te yanlış alan.** URL'yi başlatma URL'si veya oturum açma URL'si alanına değil, **kayıt / araç başlatma kayıt uç noktası** alanına yapıştırdığınızdan emin olun.
+- **LMS aslında Dinamik Kayıt'ı desteklemiyor.** Eski Moodle ve Blackboard sürümleri LTI 1.3'ü duyurur ancak yalnızca manuel yapılandırmaya izin verir. Platformunuzun belgelerini kontrol edin.
 
 #### "Platform yapılandırması alınamadı"
 
-FastComments, LMS'inizin openid-configuration belgesini okuyamadı. Bu nadirdir ve genellikle LMS'in hatalı biçimlendirilmiş veya ulaşılamayan bir discovery URL'si sağladığı anlamına gelir. LMS destek ekibinizle iletişime geçin.
+FastComments, LMS'inizin openid-configuration belgesini okuyamadı. Bu nadir görülür ve genellikle LMS'in bozuk veya erişilemez bir keşif URL'si sağladığı anlamına gelir. LMS destek ekibinizle iletişime geçin.
 
-#### Launch shows "Configuration not found"
+#### Başlatma "Configuration not found" gösteriyor
 
-Ya FastComments içindeki yapılandırma silindi, ya da başlatma bizim tanımadığımız bir `iss`/`client_id` çiftinden geldi. Eğer sildiyseniz ve yeniden kaydettiyseniz, LMS'inize eski FastComments aracını kaldırıp yeniden eklemesini söyleyin, böylece yeni client_id alınır.
+Ya FastComments'teki yapılandırma silindi ya da başlatma, tanımadığımız bir `iss`/`client_id` çiftinden geldi. Silip yeniden kaydettiyseniz, LMS'inize FastComments aracını kaldırmasını ve yeniden eklemesini söyleyin, böylece yeni client_id'yi alır.
 
-#### Launch shows "Deployment not registered"
+#### Başlatma "Deployment not registered" gösteriyor
 
-FastComments'i ilk başlatıldığı dağıtımdan farklı bir Brightspace/Moodle/Blackboard dağıtımından başlattınız. FastComments ilk başlatmada bir güvenlik kontrolü olarak `deployment_id`'yi sabitler. Aynı client altında yeni bir dağıtım eklemek için destek ile iletişime geçin - yapılandırmaya deployment ID'sini ekleyeceğiz.
+FastComments'i, ilk başlatıldığı dağıtımdan farklı bir Brightspace/Moodle/Blackboard dağıtımından başlattınız. FastComments, güvenlik kontrolü olarak `deployment_id`'yi ilk başlatmada sabitler. Aynı istemci altına yeni bir dağıtım eklemek için destek ekibiyle iletişime geçin - dağıtım ID'sini yapılandırmaya ekleyeceğiz.
 
-#### Launch shows "Unsupported message_type"
+#### Başlatma "Unsupported message_type" gösteriyor
 
-LMS, FastComments'in işleyemediği bir LTI mesajı gönderdi (ör. `LtiSubmissionReviewRequest`). FastComments yalnızca standart resource-link başlatmasını ve deep-linking akışlarını destekler. Belirli bir mesaj türünün eklenmesini istiyorsanız bize ulaşın.
+LMS, FastComments'in işlemediği bir LTI mesajı gönderdi (örn. `LtiSubmissionReviewRequest`). FastComments yalnızca standart kaynak bağlantısı başlatma ve derin bağlantı akışlarını destekler. Belirli bir mesaj türünün eklenmesini gerektiriyorsanız bize ulaşın.
 
-#### Iframe doesn't resize
+#### Iframe yeniden boyutlandırılmıyor
 
-Çoğu LMS, LTI iframe'lerini otomatik boyutlandırır. Eğer sizinki yapmıyorsa, LMS'in başlatma ayarlarının aracın üst çerçeveye postMessage olayları göndermesine izin verdiğini kontrol edin. FastComments hem Canvas tarzı (`lti.frameResize`) hem de IMS belirtimi (`org.imsglobal.lti.frameResize`) yeniden boyutlandırma mesajları gönderir.
+Çoğu LMS, LTI iframe'lerini otomatik boyutlandırır. Sizin LMS'iniz yapmıyorsa, LMS'in başlatma ayarlarının aracın üst çerçeveye postMessage olayları göndermesine izin verip vermediğini kontrol edin. FastComments hem Canvas tarzı (`lti.frameResize`) hem de IMS-spec (`org.imsglobal.lti.frameResize`) yeniden boyutlandırma mesajları gönderir.

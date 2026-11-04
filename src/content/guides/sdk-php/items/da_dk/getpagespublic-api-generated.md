@@ -49,5 +49,3 @@ try {
     echo 'Exception when calling PublicApi->getPagesPublic: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

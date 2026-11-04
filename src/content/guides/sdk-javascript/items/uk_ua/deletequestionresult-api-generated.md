@@ -21,5 +21,3 @@ async function runDelete() {
   console.log(response);
 }
 [inline-code-end]
-
----

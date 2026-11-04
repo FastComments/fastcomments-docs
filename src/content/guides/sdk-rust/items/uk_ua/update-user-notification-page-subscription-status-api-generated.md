@@ -1,20 +1,20 @@
-Enable or disable notifications for a page. When users are subscribed to a page, notifications are created
-for new root comments, and also
+Увімкніть або вимкніть сповіщення для сторінки. Коли користувачі підписані на сторінку, сповіщення створюються
+для нових кореневих коментарів, а також
 
-## Parameters
+## Параметри
 
-| Назва | Тип | Обов’язково | Опис |
+| Назва | Тип | Обов'язково | Опис |
 |------|------|----------|-------------|
-| tenant_id | String | Yes |  |
-| url_id | String | Yes |  |
-| url | String | Yes |  |
-| page_title | String | Yes |  |
-| subscribed_or_unsubscribed | String | Yes |  |
-| sso | String | No |  |
+| tenant_id | String | Так |  |
+| url_id | String | Так |  |
+| url | String | Так |  |
+| page_title | String | Так |  |
+| subscribed_or_unsubscribed | String | Так |  |
+| sso | String | Ні |  |
 
-## Response
+## Відповідь
 
-Returns: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/update_user_notification_page_subscription_status_response.rs)
+Повертає: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/update_user_notification_page_subscription_status_response.rs)
 
 ## Приклад
 

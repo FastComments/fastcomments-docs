@@ -1,4 +1,3 @@
----
 Cada widget do `fastcomments-react` está disponível com o mesmo nome:
 
 | Componente | Tipo de handle | Embed carregado |
@@ -40,4 +39,3 @@ export default function ImageChat() {
 ### Regiões
 
 Passe `region="eu"` para rotear o tráfego do widget através do cluster da UE.
----

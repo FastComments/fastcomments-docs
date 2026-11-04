@@ -30,5 +30,3 @@ PublicAPI.resetUserNotificationCount(tenantId: tenantId, sso: sso) { (response, 
     }
 }
 [inline-code-end]
-
----

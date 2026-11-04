@@ -1,4 +1,3 @@
----
 릴리스 태그에서 설치하기 (이 프로젝트는 PyPI가 아니라 git 태그를 통해 배포됩니다):
 
 ```bash
@@ -19,4 +18,3 @@ INSTALLED_APPS = [
     "fastcomments_django",
 ]
 ```
----

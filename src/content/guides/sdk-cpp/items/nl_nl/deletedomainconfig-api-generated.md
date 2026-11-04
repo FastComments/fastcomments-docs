@@ -24,5 +24,3 @@ api->deleteDomainConfig(optTenant.value(), optDomain.value())
         }
     });
 [inline-code-end]
-
----

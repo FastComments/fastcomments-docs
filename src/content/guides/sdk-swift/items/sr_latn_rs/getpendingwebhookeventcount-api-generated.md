@@ -40,5 +40,3 @@ DefaultAPI.getPendingWebhookEventCount(tenantId: tenantId, options: DefaultAPI.G
     }
 }
 [inline-code-end]
-
----

@@ -32,5 +32,3 @@ ModerationAPI.getBanUsersFromComment(tenantId: tenantId, commentId: commentId, s
     }
 }
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 Başka bir sağlayıcıdan geçiş yaparken dikkate alınması gereken birkaç şey vardır:
 
 1. Mevcut yorum verileri, yanıtlar dahil.
@@ -7,5 +6,3 @@ Başka bir sağlayıcıdan geçiş yaparken dikkate alınması gereken birkaç �
 
 Sonraki birkaç bölümde ele alınan self-servis veri içe aktarma ilk ikisini kapsar. Özelleştirme için, bakın
 [özelleştirme kılavuzumuz](/guide-customizations-and-configuration.html).
-
----

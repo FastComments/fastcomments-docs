@@ -1,3 +1,1 @@
----
 Dodaj komentarze na żywo do witryny Framer za pomocą bloku embed i specyficznego fragmentu Framer, plus ustawienia wysokości, które zapobiegają przycinaniu widgetu.
----

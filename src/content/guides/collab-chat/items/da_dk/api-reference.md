@@ -1,54 +1,54 @@
 ### API Oversigt
 
-Collab Chat tilbyder tre REST API-endepunkter til at administrere tekstsamtaler programmatisk. Disse endepunkter giver dig mulighed for at hente, oprette og slette annotationer uden at bruge browser-widget'en.
+Collab Chat tilbyder tre REST API-endpoints til programmatisk håndtering af tekstkonversationer. Disse endpoints giver dig mulighed for at hente, oprette og slette annotationer uden at bruge browser-widgetten.
 
-Disse er offentlige endepunkter, der autentificerer brugere via browser-cookies. De bruger ikke API-nøgler. Brugere skal være logget ind på FastComments i deres browser for at få adgang til disse endepunkter.
+Dette er offentlige endpoints, der autentificerer brugere via browser-cookies. De bruger ikke API-nøgler. Brugere skal være logget ind på FastComments i deres browser for at tilgå disse endpoints.
 
-### Base URL
+### Basis-URL
 
-Alle Collab Chat API-endepunkter findes under:
+Alle Collab Chat API-endpoints findes under:
 
-[inline-code-attrs-start title = 'Base-URL'; type = 'text'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Basis-URL'; type = 'text'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 https://fastcomments.com/comment-collab-chats
 [inline-code-end]
 
-### Authentication
+### Autentificering
 
-Disse endepunkter autentificerer brugere via browser-cookies. De bruger ikke API-nøgler. Brugere skal være logget ind på FastComments i deres browser for at få adgang til disse endepunkter.
+Disse endpoints autentificerer brugere via browser-cookies. De bruger ikke API-nøgler. Brugere skal være logget ind på FastComments i deres browser for at tilgå disse endpoints.
 
-### Get All Conversations
+### Hent Alle Konversationer
 
-Hent alle tekstsamtaler for en bestemt side.
+Hent alle tekstkonversationer for en bestemt side.
 
 #### Endpoint
 
-[inline-code-attrs-start title = 'GET-endepunkt'; type = 'text'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'GET Endpoint'; type = 'text'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 GET /comment-collab-chats/:tenantId?urlId=<urlId>
 [inline-code-end]
 
-#### Parameters
+#### Parametre
 
 `tenantId` (sti-parameter, påkrævet) er dit FastComments Tenant ID.
 
-`urlId` (forespørgselsparameter, påkrævet) er sideidentifikatoren, du vil hente samtaler for.
+`urlId` (query-parameter, påkrævet) er side-id'et, du vil hente konversationer for.
 
-#### Response
+#### Svar
 
-Svaret indeholder API-status, oplysninger om den aktuelle brugers session hvis autentificeret, et array af samtaler med deres ID'er, URL'er og tekstområder, en renset URL-identifikator, et flag der angiver om den aktuelle bruger er site-admin eller moderator, samt WebSocket-forbindelsesdetaljer til live-synkronisering inklusive `tenantIdWS`, `urlIdWS`, og `userIdWS`.
+Svaret indeholder API-status, information om den aktuelle brugersession, hvis autentificeret, et array af konversationer med deres ID'er, URL'er og tekstområder, et rensset URL-identifikator, et flag, der angiver, om den aktuelle bruger er site-administrator eller moderator, samt WebSocket-forbindelsesdetaljer til live-synkronisering, herunder `tenantIdWS`, `urlIdWS` og `userIdWS`.
 
-#### Example Request
+#### Eksempel på Forespørgsel
 
-[inline-code-attrs-start title = 'Eksempel på GET-anmodning'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'GET Forespørgselseksempel'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl "https://fastcomments.com/comment-collab-chats/demo?urlId=my-article-page" \
   --cookie "your-session-cookie"
 [inline-code-end]
 
-#### Example Response
+#### Eksempel på Svar
 
-[inline-code-attrs-start title = 'Eksempel på GET-svar'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'GET Svareksempel'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "success",
@@ -76,44 +76,44 @@ curl "https://fastcomments.com/comment-collab-chats/demo?urlId=my-article-page" 
 }
 [inline-code-end]
 
-### Create Conversation
+### Opret Konversation
 
-Opret en ny tekstsamtale for et bestemt tekstudsnit.
+Opret en ny tekstkonversation for en bestemt tekstmarkering.
 
 #### Endpoint
 
-[inline-code-attrs-start title = 'POST-endepunkt'; type = 'text'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'POST Endpoint'; type = 'text'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 POST /comment-collab-chats/:tenantId
 [inline-code-end]
 
-#### Parameters
+#### Parametre
 
 `tenantId` (sti-parameter, påkrævet) er dit FastComments Tenant ID.
 
-Request-body'en skal være JSON og indeholde disse påkrævede felter.
+Request-body skal være JSON og indeholde disse påkrævede felter.
 
-`urlId` (string, påkrævet) er den grundlæggende sideidentifikator.
+`urlId` (streng, påkrævet) er basis-side-id'et.
 
-`urlIdWithRange` (string, påkrævet) er URL'en kombineret med tekstområdet, for eksempel `my-page:p:0:15,0:45{abc123}`.
+`urlIdWithRange` (streng, påkrævet) er URL'en kombineret med tekstområdet, for eksempel `my-page:p:0:15,0:45{abc123}`.
 
-`pageTitle` (string, påkrævet) er sidens titel.
+`pageTitle` (streng, påkrævet) er sidens titel.
 
-`selector` (string, påkrævet) er DOM-stien til elementet, der indeholder den valgte tekst.
+`selector` (streng, påkrævet) er DOM-stien til elementet, der indeholder den markerede tekst.
 
-`range` (string, påkrævet) er det serialiserede tekstområde i formatet `startOffset:endOffset,startOffset:endOffset{checksum}`.
+`range` (streng, påkrævet) er det serialiserede tekstområde i formatet `startOffset:endOffset,startOffset:endOffset{checksum}`.
 
-`createdFromCommentId` (string, påkrævet) er ID'et på kommentaren, der initierede denne chat.
+`createdFromCommentId` (streng, påkrævet) er ID'et på den kommentar, der startede denne chat.
 
-`broadcastId` (string, påkrævet) er en UUID til live-synkronisering for at forhindre echo-effekter.
+`broadcastId` (streng, påkrævet) er en UUID til live-synkronisering for at forhindre ekko-effekter.
 
-#### Response
+#### Svar
 
-Svaret inkluderer API-status og ID'et på den nyskabte samtale.
+Svaret indeholder API-status og ID'et på den nyoprettede konversation.
 
-#### Example Request
+#### Eksempel på Forespørgsel
 
-[inline-code-attrs-start title = 'Eksempel på POST-anmodning'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'POST Forespørgselseksempel'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl -X POST "https://fastcomments.com/comment-collab-chats/demo" \
   --cookie "your-session-cookie" \
@@ -129,9 +129,9 @@ curl -X POST "https://fastcomments.com/comment-collab-chats/demo" \
   }'
 [inline-code-end]
 
-#### Example Response
+#### Eksempel på Svar
 
-[inline-code-attrs-start title = 'Eksempel på POST-svar'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'POST Svareksempel'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "success",
@@ -139,28 +139,28 @@ curl -X POST "https://fastcomments.com/comment-collab-chats/demo" \
 }
 [inline-code-end]
 
-### Delete Conversation
+### Slet Konversation
 
-Slet en eksisterende tekstsamtale. Dette endepunkt kræver admin- eller moderatorrettigheder, eller samtalen skal være oprettet af den autentificerede bruger.
+Slet en eksisterende tekstkonversation. Dette endpoint kræver administrator- eller moderatorrettigheder, eller at konversationen skal være oprettet af den autentificerede bruger.
 
 #### Endpoint
 
-[inline-code-attrs-start title = 'DELETE-endepunkt'; type = 'text'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'DELETE Endpoint'; type = 'text'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 DELETE /comment-collab-chats/:tenantId/:chatId
 [inline-code-end]
 
-#### Parameters
+#### Parametre
 
 `tenantId` (sti-parameter, påkrævet) er dit FastComments Tenant ID.
 
-`chatId` (sti-parameter, påkrævet) er ID'et på samtalen, der skal slettes.
+`chatId` (sti-parameter, påkrævet) er ID'et på den konversation, der skal slettes.
 
-`broadcastId` (request body, påkrævet) er en UUID til live-synkronisering.
+`broadcastId` (request-body, påkrævet) er en UUID til live-synkronisering.
 
-#### Example Request
+#### Eksempel på Forespørgsel
 
-[inline-code-attrs-start title = 'Eksempel på DELETE-anmodning'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'DELETE Forespørgselseksempel'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl -X DELETE "https://fastcomments.com/comment-collab-chats/demo/conv789" \
   --cookie "your-session-cookie" \
@@ -170,26 +170,26 @@ curl -X DELETE "https://fastcomments.com/comment-collab-chats/demo/conv789" \
   }'
 [inline-code-end]
 
-#### Example Response
+#### Eksempel på Svar
 
-[inline-code-attrs-start title = 'Eksempel på DELETE-svar'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'DELETE Svareksempel'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "success"
 }
 [inline-code-end]
 
-### Rate Limiting
+### Hastighedsbegrænsning
 
-Disse endepunkter er underlagt FastComments' standard ratebegrænsning for API'et. Rate limit-middleware'en gælder per-tenant for at forhindre misbrug, samtidig med at normale brugsmønstre tillades.
+Disse endpoints er underlagt FastComments' standard API-hastighedsbegrænsning. Middlewaren for hastighedsbegrænsning anvendes pr. tenant for at forhindre misbrug, samtidig med at normale brugsmønstre tillades.
 
-### Error Responses
+### Fejlsvær
 
-Alle endepunkter returnerer standard HTTP-statuskoder. Et 400-svar angiver ugyldige anmodningsparametre. Et 401-svar betyder, at autentificeringen mislykkedes. Et 403-svar angiver utilstrækkelige rettigheder. Et 404-svar betyder, at samtalen ikke blev fundet. Et 429-svar angiver, at rategrænsen er overskredet.
+Alle endpoints returnerer standard HTTP-statuskoder. En 400-response angiver ugyldige forespørgselsparametre. En 401-response betyder, at autentificeringen mislykkedes. En 403-response angiver utilstrækkelige rettigheder. En 404-response betyder, at konversationen ikke blev fundet. En 429-response angiver, at hastighedsgrænsen er overskredet.
 
-Fejlsvar indeholder en JSON-krop med detaljer:
+Fejlsvær inkluderer en JSON-body med detaljer:
 
-[inline-code-attrs-start title = 'Eksempel på fejlrespons'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Fejlsvareksempel'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "error",
@@ -197,6 +197,6 @@ Fejlsvar indeholder en JSON-krop med detaljer:
 }
 [inline-code-end]
 
-### Usage Tracking
+### Forbrugssporing
 
-Oprettelse af samtaler øger dit `conversationCreateCount`-brugsmetrik. Al WebSocket-synkroniseringsaktivitet øger `pubSubMessageCount` og `pubSubBandwidth`. Du kan overvåge disse metrics i dit FastComments-dashboard under brugsanalyse.
+Oprettelse af konversationer øger din `conversationCreateCount` forbrugsmetrik. Al WebSocket-synkroniseringsaktivitet øger `pubSubMessageCount` og `pubSubBandwidth`. Du kan overvåge disse metrikker i dit FastComments-dashboard under forbrugsanalyse.

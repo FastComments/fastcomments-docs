@@ -1,4 +1,3 @@
----
 テナントのページ一覧を返します。FChat デスクトップクライアントがルーム一覧を生成するために使用します。
 各ページについて解決されたカスタム設定で `enableFChat` が true である必要があります。
 SSO を必要とするページは、要求元ユーザーのグループアクセスに基づいてフィルタされます。
@@ -50,5 +49,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.GetPagesPublic`: %v\n", resp)
 }
 [inline-code-end]
-
----

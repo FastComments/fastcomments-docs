@@ -57,5 +57,3 @@ Next אנחנו עומדים להוסיף את קוד הווידג'ט של FastC
     <div class="title">הדבק ושמור</div>
     <img class="screenshot-image" src="/images/installation-guides/ionos-step-2-paste-and-save.png" alt="הדבק ושמור" />
 </div>
-
----

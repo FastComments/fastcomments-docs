@@ -13,5 +13,3 @@ Vaš Tenant ID možete pronaći već primijenjen na isječku koda komentarskog w
 Također možete pronaći svoj Tenant ID i upravljati svojim API ključevima [na stranici s API vjerodajnicama](https://fastcomments.com/auth/my-account/api-secret).
 
 Od ovog trenutka, ako ste prijavljeni u FastComments, primjeri koda će koristiti vaš stvarni Tenant ID (ako ste prijavljeni na https://fastcomments.com).
-
----

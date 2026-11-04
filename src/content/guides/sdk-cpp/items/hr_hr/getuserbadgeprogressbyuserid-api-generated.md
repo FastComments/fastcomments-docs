@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
@@ -26,5 +25,3 @@ api->getUserBadgeProgressByUserId(
         }
     });
 [inline-code-end]
-
----

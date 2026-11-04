@@ -1,4 +1,3 @@
----
 Establezca su tenant id una vez en `_config.yml`:
 
 ```yaml
@@ -13,4 +12,3 @@ Luego agregue una etiqueta donde quiera que aparezca el widget, en un layout, un
 ```
 
 Eso es todo. Reemplace `demo` por su tenant id de FastComments (lo encontrará en [Configuración > API/SSO](https://fastcomments.com/auth/my-account/api)).
----

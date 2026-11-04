@@ -28,5 +28,3 @@ api->postVote(tenantId, commentId, options)
         }
     });
 [inline-code-end]
-
----

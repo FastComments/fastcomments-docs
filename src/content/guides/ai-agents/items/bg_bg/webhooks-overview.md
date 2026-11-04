@@ -1,65 +1,65 @@
-Agent webhooks са HTTP обратни повиквания, които платформата изпраща, когато изпълнение на агент приключи или когато заявка за одобрение промени състоянието си. Използвайте ги, за да препращате активността на агентите към собствените си системи — табла за модериране, регистри за одит, Slack канали, инструменти за ескалация.
+Уебкуковете за агенти са HTTP обратни повиквания, които платформата изпраща, когато изпълнението на агент приключи или състоянието на одобрение се промени. Използвайте ги, за да пренасочите активността на агентите към вашите системи - дашборди за модериране, одитни логове, Slack канали, инструменти за ескалация.
 
-Конфигурирани в раздела **Webhooks** на [страницата за AI агенти](https://fastcomments.com/auth/my-account/ai-agents).
+Конфигурират се в раздела **Webhooks** на [страницата AI Agents](https://fastcomments.com/auth/my-account/ai-agents).
 
-### What gets delivered
+### Какво се доставя
 
-Four event types:
+Четири типа събития:
 
-- **`trigger.succeeded`** - an agent run completed successfully.
-- **`trigger.failed`** - an agent run errored.
-- **`approval.requested`** - an action was queued for human approval.
-- **`approval.decided`** - an approval was approved, rejected, or execution-failed.
+- **`trigger.succeeded`** - изпълнението на агент приключи успешно.
+- **`trigger.failed`** - изпълнението на агент приключи с грешка.
+- **`approval.requested`** - действие е поставено на опашка за човешко одобрение.
+- **`approval.decided`** - одобрение е прието, отхвърлено или изпълнението е провалено.
 
-See [Webhook Events](#webhook-events) for which events fire when, and [Webhook Payloads](#webhook-payloads) for the schema of each.
+Вижте [Webhook Events](#webhook-events) за кога кои събития се задействат, и [Webhook Payloads](#webhook-payloads) за схемата на всяко.
 
-### What's not delivered
+### Какво не се доставя
 
-- **Per-tool-action webhooks.** A run that calls `pin_comment` does not fire a separate webhook for the pin - the action is included in the run's `trigger.succeeded` payload. If you want per-action delivery, parse the `actions` array on the trigger payload.
-- **Dropped triggers.** A trigger that does not dispatch (over budget, wrong scope) does not fire a webhook. Drops are visible only in the [Analytics page](#analytics-page).
-- **Replay-produced triggers.** Test runs do not fire webhooks. See [Test Runs (Replays)](#test-runs-replays).
+- **Уебкукове за всяко действие на инструмент.** Изпълнение, което извиква `pin_comment`, не задейства отделен уебкук за закачането - действието е включено в payload-а на `trigger.succeeded` на изпълнението. Ако искате доставка на действие по действие, анализирайте масива `actions` в payload-а на тригера.
+- **Отпаднали тригери.** Тригер, който не се изпраща (над бюджета, грешен обхват), не задейства уебкук. Отпаданията се виждат само в [страницата Analytics](#analytics-page).
+- **Тригери от реплеи.** Тестовите изпълнения не задействат уебкукове. Вижте [Test Runs (Replays)](#test-runs-replays).
 
-### Configuration
+### Конфигурация
 
-For each webhook you set:
+За всеки уебкук задавате:
 
-- **URL** - the HTTPS endpoint to POST to.
-- **Domain** - the comment domain this webhook applies to (your tenant may host multiple domains). `*` matches all domains; `*.example.com` is a glob; an exact domain matches only that one.
-- **Events** - which of the four event types to subscribe to.
-- **Agents** - empty for "all agents", or a list of specific agent IDs to filter.
-- **Method** - POST or PUT (default POST).
-- **No-retry status codes** - HTTP response codes that should be treated as terminal failures, not retried (e.g., 410 Gone, 422 Unprocessable). See [Webhook Retries](#webhook-retries).
+- **URL** - HTTPS крайната точка, към която се прави POST.
+- **Domain** - домейнът на коментарите, за който важи този уебкук (вашият tenant може да хоства няколко домейна). `*` съвпада с всички домейни; `*.example.com` е glob; точен домейн съвпада само с него.
+- **Events** - на кои от четирите типа събития да се абонирате.
+- **Agents** - празно за "всички агенти", или списък с конкретни ID-та на агенти за филтриране.
+- **Method** - POST или PUT (по подразбиране POST).
+- **No-retry status codes** - HTTP кодове за отговор, които да се третират като окончателни провали, без повторен опит (напр. 410 Gone, 422 Unprocessable). Вижте [Webhook Retries](#webhook-retries).
 
-Multiple webhooks can subscribe to the same event - each one queues independently and is delivered to its own URL.
+Няколко уебкука могат да се абонират за едно и също събитие - всеки се поставя в отделна опашка и се доставя на собствения си URL.
 
-### Per-domain matching
+### Съпоставяне по домейн
 
-A given event is delivered to **every webhook whose `domain` field matches the comment's domain**. The matching uses a simple glob:
+Дадено събитие се доставя на **всеки уебкук, чийто `domain` съвпада с домейна на коментара**. Съпоставянето използва прост glob:
 
-- Exact: `example.com` matches only `example.com`.
-- Wildcard star: `*` matches every domain.
-- Subdomain glob: `*.example.com` matches `blog.example.com`, `forum.example.com`, but not `example.com` itself.
+- Точно: `example.com` съвпада само с `example.com`.
+- Заместваща звездичка: `*` съвпада с всеки домейн.
+- Subdomain glob: `*.example.com` съвпада с `blog.example.com`, `forum.example.com`, но не и с `example.com` самия.
 
-The domain on a payload is the first non-null result from: the comment's `domain`, the URL parsed against your tenant's domain configuration, or the `Page` lookup by `urlId`.
+Домейнът в payload-а е първият ненулев резултат от: `domain` на коментара, URL-ът, анализиран спрямо конфигурацията на домейните на вашия tenant, или търсенето на `Page` по `urlId`.
 
-### Per-agent filtering
+### Филтриране по агент
 
-The **Agents** field lets a webhook subscribe to only certain agents. Empty means "all agents". When non-empty, the webhook only fires for agents in the list.
+Полето **Agents** позволява на уебкука да се абонира само за определени агенти. Празно означава "всички агенти". Когато не е празно, уебкукът се задейства само за агентите в списъка.
 
-This is useful when you have one webhook for moderation events and another for engagement events, both routing to different downstream systems.
+Това е полезно, когато имате един уебкук за събития по модериране и друг за събития по ангажираност, насочени към различни системи.
 
-### Test send
+### Тестово изпращане
 
-The webhook config UI has a **Test send** button that posts a fake payload to the URL so you can verify connectivity, signing, and your endpoint's response code without waiting for a real event.
+UI-ят за конфигурация на уебкукове има бутон **Test send**, който изпраща фалшив payload към URL-а, така че да проверите свързаността, подписването и кода на отговора на вашата крайна точка, без да чакате реално събитие.
 
-### Delivery logs
+### Логове за доставка
 
-Every delivery (and every retry) lands in the [Webhook Delivery Logs](#webhook-logs) page so you can see what happened on the wire.
+Всяка доставка (и всеки повторен опит) се записва в страницата [Webhook Delivery Logs](#webhook-logs), така че да видите какво се е случило по мрежата.
 
-### Signing
+### Подписване
 
-Every webhook is signed with HMAC-SHA256 using your tenant's API secret. See [Webhook Signing](#webhook-signing).
+Всеки уебкук е подписан с HMAC-SHA256 с помощта на API секрета на вашия tenant. Вижте [Webhook Signing](#webhook-signing).
 
-### Eligibility
+### Право на ползване
 
-Agent webhooks require valid billing on the tenant. They use the same signing/secret infrastructure as your existing comment webhooks - if you have already integrated comment webhooks (see the [Webhooks guide](/guide-webhooks.html)), the agent webhook integration is the same shape with new event types.
+Уебкуковете за агенти изискват валидно таксуване на tenant-а. Те използват същата инфраструктура за подписване/секрет като съществуващите ви уебкукове за коментари - ако вече сте интегрирали уебкукове за коментари (вижте [ръководството за Webhooks](/guide-webhooks.html)), интеграцията на уебкукове за агенти има същата структура с нови типове събития.

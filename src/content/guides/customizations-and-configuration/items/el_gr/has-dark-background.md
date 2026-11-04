@@ -9,5 +9,3 @@
 Ωστόσο, ο μηχανισμός ανίχνευσης, που βασίζεται στον προσδιορισμό της "φωτεινότητας", ενδέχεται να μην ενεργοποιήσει τη σκοτεινή λειτουργία όταν το επιθυμείτε. Για να την ενεργοποιήσετε υποχρεωτικά, ορίστε τη σημαία *hasDarkBackground* σε true ως εξής:
 
 [code-example-start config = {hasDarkBackground: true}; linesToHighlight = [6]; title = 'Force Dark Background Mode'; additionalDemoCode = '<style>body { background: black; }</style>'; code-example-end]
-
----

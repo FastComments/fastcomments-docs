@@ -1,4 +1,3 @@
----
 Instalirajte sa oznakom izdanja (ovaj projekat se distribuira preko git oznaka, a ne putem PyPI):
 
 ```bash
@@ -19,4 +18,3 @@ INSTALLED_APPS = [
     "fastcomments_django",
 ]
 ```
----

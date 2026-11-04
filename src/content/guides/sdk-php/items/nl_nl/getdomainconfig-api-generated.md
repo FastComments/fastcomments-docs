@@ -41,5 +41,3 @@ try {
     echo 'Exception when calling DefaultApi->getDomainConfig: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

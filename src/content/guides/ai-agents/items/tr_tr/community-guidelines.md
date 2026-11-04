@@ -45,5 +45,3 @@ Alan **4000 karakter** ile sınırlandırılmıştır (hem form hem de kaydetme 
 ### Sürümleme
 
 Yönergeler belgesi için yerleşik bir sürüm geçmişi yoktur - ajan en son kaydedilen değeri kullanır. Geçmiş istiyorsanız, her büyük düzenlemeden önce belgeyi kendi takip sisteminize kopyalayın. [İstemleri Geliştirme](#refining-prompts) akışı *başlangıç istemi* için yapılan değişiklikleri kaydedebilir ancak yönergeler belgesini sürümlendirmez.
-
----

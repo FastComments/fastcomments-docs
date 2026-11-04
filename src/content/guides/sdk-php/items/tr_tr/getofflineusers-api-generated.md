@@ -1,45 +1,41 @@
-Past commenters on the page who are NOT currently online. Sorted by displayName.  
-Sayfada daha önce yorum yapmış ancak şu anda çevrim dışı olan yorumcular. displayName'e göre sıralanır.
+Şu anda çevrimiçi OLMAYAN, sayfadaki geçmiş yorumcular. displayName'e göre sıralanır.
+"Üyeler" bölümünü görüntülemek için /users/online kaynağını tükettikten sonra bunu kullanın.
+commenterName üzerinde imleç sayfalama: sunucu, {tenantId, urlId, commenterName} kısmi indeksini
+afterName'den $gt ile ileriye doğru tarar, $skip maliyeti yoktur.
 
-Use this after exhausting /users/online to render a "Members" section.  
-`/users/online`'ı tükettiğinizde bir "Members" bölümü oluşturmak için bunu kullanın.
+## Parametreler
 
-Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName} index from afterName forward via $gt, no $skip cost.  
-commenterName üzerinde imleç sayfalama: sunucu {tenantId, urlId, commenterName} kısmını afterName'den itibaren $gt ile ilerleterek dolaşır, $skip maliyeti yok.
-
-## Parameters
-
-| Name | Type | Location | Required | Description |
+| Ad | Tür | Konum | Zorunlu | Açıklama |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| urlId | string | query | Yes | Sayfa URL tanımlayıcısı (sunucu tarafında temizlenir). |
-| afterName | string | query | No | İmleç: önceki yanıttan nextAfterName değerini gönderin. |
-| afterUserId | string | query | No | İmleç bağlayıcı: önceki yanıttan nextAfterUserId değerini gönderin. afterName ayarlandığında, isim bağları nedeniyle girişlerin düşmemesi için gereklidir. |
+| tenantId | string | path | Evet |  |
+| urlId | string | query | Evet | Sayfa URL tanımlayıcısı (sunucu tarafında temizlenir). |
+| afterName | string | query | Hayır | İmleç: önceki yanıttan nextAfterName değerini iletin. |
+| afterUserId | string | query | Hayır | İmleç eşitlik kırıcı: önceki yanıttan nextAfterUserId değerini iletin. İsim eşitliklerinde girdilerin düşmemesi için afterName ayarlandığında gereklidir. |
 
-## Response
+## Yanıt
 
-Returns: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PageUsersOfflineResponse.php)
+Döndürür: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PageUsersOfflineResponse.php)
 
-## Example
+## Örnek
 
-[inline-code-attrs-start title = 'getOfflineUsers Örneği'; type = 'php'; isFunctional = false; inline-code-attrs-end]  
-[inline-code-start]  
+[inline-code-attrs-start title = 'getOfflineUsers Örneği'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Özel bir HTTP istemcisi kullanmak isterseniz, `GuzzleHttp\ClientInterface` arayüzünü uygulayan istemcinizi geçirin.
-    // Bu isteğe bağlıdır, `GuzzleHttp\Client` varsayılan olarak kullanılacaktır.
+    // Özel http client kullanmak isterseniz, `GuzzleHttp\ClientInterface` uygulayan client'ınızı iletin.
+    // Bu isteğe bağlıdır, varsayılan olarak `GuzzleHttp\Client` kullanılacaktır.
     new GuzzleHttp\Client()
 );
 
 $tenant_id = 'tenant_id_example'; // string
 $url_id = 'url_id_example'; // string | Sayfa URL tanımlayıcısı (sunucu tarafında temizlenir).
 $options = [
-    'after_name' => 'after_name_example', // string | İmleç: önceki yanıttan nextAfterName değerini gönderin.
-    'after_user_id' => 'after_user_id_example', // string | İmleç bağlayıcı: önceki yanıttan nextAfterUserId değerini gönderin. afterName ayarlandığında, isim bağları nedeniyle girişlerin düşmemesi için gereklidir.
+    'after_name' => 'after_name_example', // string | İmleç: önceki yanıttan nextAfterName değerini iletin.
+    'after_user_id' => 'after_user_id_example', // string | İmleç eşitlik kırıcı: önceki yanıttan nextAfterUserId değerini iletin. İsim eşitliklerinde girdilerin düşmemesi için afterName ayarlandığında gereklidir.
 ];
 
 

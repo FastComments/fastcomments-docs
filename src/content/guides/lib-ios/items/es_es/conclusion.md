@@ -8,5 +8,3 @@ Si encuentra algún problema o tiene preguntas sobre la biblioteca iOS, por favo
 ## Contribuciones
 
 ¡Se aceptan contribuciones! Visite el [repositorio en GitHub](https://github.com/FastComments/fastcomments-ios) para conocer las directrices de contribución.
-
----

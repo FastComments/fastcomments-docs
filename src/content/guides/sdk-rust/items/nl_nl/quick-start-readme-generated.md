@@ -1,4 +1,3 @@
----
 ### Gebruik van de publieke API
 
 ```rust
@@ -165,4 +164,3 @@ fn main() {
     // Geef dit token door aan je frontend voor authenticatie
 }
 ```
----

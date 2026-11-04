@@ -1,12 +1,12 @@
-FastComments supports three authentication modes:
+Το FastComments υποστηρίζει τρεις τρόπους ελέγχου ταυτότητας:
 
-1. **Anonymous** -- χωρίς SSO token; οι χρήστες λαμβάνουν ταυτότητες με βάση τη συνεδρία
-2. **Simple SSO** -- token στην πλευρά του πελάτη για παρουσιάσεις και τοπικές δοκιμές (μη ασφαλές)
-3. **Secure SSO** -- token υπογεγραμμένο από διακομιστή για παραγωγή
+1. **Ανώνυμος** -- χωρίς SSO token· οι χρήστες αποκτούν ταυτότητες βασισμένες σε συνεδρία
+2. **Απλό SSO** -- token από την πλευρά του πελάτη για demos και δοκιμές (δεν είναι ασφαλές)
+3. **Ασφαλές SSO** -- token υπογεγραμμένο από τον διακομιστή για παραγωγή
 
-### Simple SSO
+### Απλό SSO
 
-Χρήσιμο για παρουσιάσεις και τοπικές δοκιμές. Ο οποιοσδήποτε μπορεί να προσποιηθεί οποιονδήποτε χρήστη με το Simple SSO, οπότε μην το χρησιμοποιείτε σε παραγωγή.
+Χρήσιμο για demos και τοπικές δοκιμές. Με το Απλό SSO οποιοσδήποτε μπορεί να υποδυθεί οποιονδήποτε χρήστη, οπότε μην το χρησιμοποιείτε σε περιβάλλον παραγωγής.
 
 ```swift
 import FastCommentsSwift
@@ -27,20 +27,20 @@ let config = FastCommentsWidgetConfig(
 let sdk = FastCommentsSDK(config: config)
 ```
 
-`SimpleSSOUserData` also supports optional fields:
+Το `SimpleSSOUserData` υποστηρίζει επίσης προαιρετικά πεδία:
 
-- `id` -- user ID (defaults to email if not set) -> `id` -- αναγνωριστικό χρήστη (εξ ορισμού το email αν δεν οριστεί)
-- `displayName` -- separate display name -> `displayName` -- ξεχωριστό εμφανιζόμενο όνομα
-- `displayLabel` -- custom label shown next to the name (e.g. "VIP") -> `displayLabel` -- προσαρμοσμένη ετικέτα που εμφανίζεται δίπλα στο όνομα (π.χ. "VIP")
-- `websiteUrl` -- link on the user's name -> `websiteUrl` -- σύνδεσμος στο όνομα του χρήστη
-- `locale` -- locale code -> `locale` -- κωδικός τοπικής ρύθμισης
-- `isProfileActivityPrivate` -- hide profile activity (defaults to true) -> `isProfileActivityPrivate` -- απόκρυψη δραστηριότητας προφίλ (εξ ορισμού true)
+- `id` -- ID χρήστη (προεπιλέγεται στο email αν δεν οριστεί)
+- `displayName` -- ξεχωριστό εμφανιζόμενο όνομα
+- `displayLabel` -- προσαρμοσμένη ετικέτα που εμφανίζεται δίπλα στο όνομα (π.χ. "VIP")
+- `websiteUrl` -- σύνδεσμος στο όνομα του χρήστη
+- `locale` -- κωδικός τοπικών ρυθμίσεων
+- `isProfileActivityPrivate` -- απόκρυψη δραστηριότητας προφίλ (προεπιλογή: true)
 
-### Secure SSO
+### Ασφαλές SSO
 
-Σε παραγωγή, το backend σας δημιουργεί ένα υπογεγραμμένο SSO token χρησιμοποιώντας το API secret σας. Η εφαρμογή iOS ανακτά αυτό το token από τον διακομιστή σας και το περνάει στο config.
+Σε περιβάλλον παραγωγής, το backend σας δημιουργεί ένα υπογεγραμμένο SSO token χρησιμοποιώντας το API secret σας. Η εφαρμογή iOS ανακτά αυτό το token από τον διακομιστή σας και το περνά στη διαμόρφωση.
 
-**On your backend** (using the FastComments Swift SDK or any language):
+**Στο backend σας** (χρησιμοποιώντας το FastComments Swift SDK ή οποιαδήποτε γλώσσα):
 
 ```swift
 let userData = SecureSSOUserData(
@@ -51,10 +51,10 @@ let userData = SecureSSOUserData(
 )
 let sso = try FastCommentsSSO.createSecure(apiKey: "YOUR_API_KEY", secureSSOUserData: userData)
 let token = try sso.prepareToSend()
-// Επιστρέψτε αυτό το token στην εφαρμογή iOS μέσω του API σας
+// Επιστρέψτε αυτό το token στην εφαρμογή iOS σας μέσω του API σας
 ```
 
-**In your iOS app:**
+**Στην εφαρμογή iOS σας:**
 
 ```swift
 struct MyView: View {
@@ -77,7 +77,7 @@ struct MyView: View {
         .task {
             // Ανακτήστε το token από το backend σας
             let token = try? await fetchSSOTokenFromYourBackend()
-            // Δημιουργήστε ένα νέο config με το token, ή ορίστε το πριν το φόρτωμα
+            // Δημιουργήστε μια νέα διαμόρφωση με το token, ή ορίστε το πριν τη φόρτωση
             isLoadingToken = false
             try? await sdk.load()
         }
@@ -85,16 +85,15 @@ struct MyView: View {
 }
 ```
 
-`SecureSSOUserData` supports additional fields:
+Το `SecureSSOUserData` υποστηρίζει επιπλέον πεδία:
 
-- `optedInNotifications` -- email notification opt-in -> `optedInNotifications` -- επιλογή λήψης ειδοποιήσεων μέσω email
-- `displayLabel` -- custom label -> `displayLabel` -- προσαρμοσμένη ετικέτα
-- `displayName` -- display name -> `displayName` -- εμφανιζόμενο όνομα
-- `websiteUrl` -- website URL -> `websiteUrl` -- URL ιστότοπου
-- `groupIds` -- group memberships -> `groupIds` -- συμμετοχές σε ομάδες
-- `isAdmin` -- admin privileges -> `isAdmin` -- προνόμια διαχειριστή
-- `isModerator` -- moderator privileges -> `isModerator` -- προνόμια συντονιστή
-- `isProfileActivityPrivate` -- profile privacy -> `isProfileActivityPrivate` -- ιδιωτικότητα δραστηριότητας προφίλ
+- `optedInNotifications` -- επιλογή λήψης ειδοποιήσεων email
+- `displayLabel` -- προσαρμοσμένη ετικέτα
+- `displayName` -- εμφανιζόμενο όνομα
+- `websiteUrl` -- URL ιστοσελίδας
+- `groupIds` -- συμμετοχές σε ομάδες
+- `isAdmin` -- δικαιώματα διαχειριστή
+- `isModerator` -- δικαιώματα συντονιστή
+- `isProfileActivityPrivate` -- ιδιωτικότητα προφίλ
 
----
 ---

@@ -8,5 +8,3 @@
 ## Како допринети
 
 Допринеси су добродошли! Молимо посетите [репозиторијум на GitHub-у](https://github.com/FastComments/fastcomments-android) за смернице о доприносу.
-
----

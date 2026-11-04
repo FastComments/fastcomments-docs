@@ -56,5 +56,3 @@
     })();
 </script>
 [inline-code-end]
-
----

@@ -1,20 +1,20 @@
-Queues a batch job that moves comments, pages and related records from one urlId or domain to another.  
-"urlId" migrations only match the exact urlId. "domain" migrations find/replace the value inside every urlId and url.  
-Poll GET /api/v1/batch-jobs/{batchJobId}: once it is done it carries per-migration results and an undoId.
+Plaatst een batchtaak in de wachtrij die opmerkingen, pagina's en gerelateerde records verplaatst van de ene urlId of domein naar het andere.
+"urlId"-migraties matchen alleen de exacte urlId. "domein"-migraties zoeken/vervangen de waarde in elke urlId en url.
+Poll GET /api/v1/batch-jobs/{batchJobId}: zodra deze klaar is, bevat deze per-migratie resultaten en een undoId.
 
 ## Parameters
 
-| Name | Type | Location | Required | Description |
+| Naam | Type | Locatie | Verplicht | Beschrijving |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
+| tenantId | string | query | Ja |  |
 
-## Respons
+## Response
 
-Returns: [`QueuePageMigrationJobAPIResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/QueuePageMigrationJobAPIResponse.java)
+Geeft terug: [`QueuePageMigrationJobAPIResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/QueuePageMigrationJobAPIResponse.java)
 
 ## Voorbeeld
 
-[inline-code-attrs-start title = 'Voorbeeld migratePages'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'migratePages Voorbeeld'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Import classes:
 import com.fastcomments.invoker.ApiClient;

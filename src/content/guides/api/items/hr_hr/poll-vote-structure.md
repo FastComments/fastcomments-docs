@@ -32,5 +32,3 @@ Postavka `privacy` ankete primjenjuje se na ovaj API na isti način kao što se 
 - **Everyone**: glasovi se mogu čitati.
 
 Privatnost ankete može se suziti, ali ne i proširiti nakon što ima glasova.
-
----

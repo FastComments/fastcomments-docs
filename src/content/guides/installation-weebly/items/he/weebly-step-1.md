@@ -1,28 +1,28 @@
-ראשית, ודא שיש לך כמה פוסטים בבלוג שנוספו לאתר שלך כדי לראות את תוצאות המדריך הזה.
+ראשית, ודאו שיש לכם כמה פוסטים בבלוג שנוספו לאתר שלכם כדי לראות את התוצאות של המדריך הזה.
 
-Once ready, we can go ahead and open the Weebly editor, and click `Settings` at the top.
-
-<div class="screenshot white-bg">
-    <div class="title">פתח הגדרות</div>
-    <img class="screenshot-image" src="/images/installation-guides/weebly-step-1-1-open-settings.png" alt="פתח הגדרות" />
-</div>
-
-Now let's open the settings for our blog by going to `Blog` on the left:
+ברגע שאתם מוכנים, נוכל להמשיך ולפתוח את עורך Weebly, וללחוץ על `Settings` בחלק העליון.
 
 <div class="screenshot white-bg">
-    <div class="title">פתח את הגדרות הבלוג</div>
-    <img class="screenshot-image" src="/images/installation-guides/weebly-step-1-2-open-blog-settings.png" alt="פתח את הגדרות הבלוג" />
+    <div class="title">פתיחת ההגדרות</div>
+    <img class="screenshot-image" src="/images/installation-guides/weebly-step-1-1-open-settings.png" alt="פתיחת ההגדרות" />
 </div>
 
-כעת עלינו להשבית את מערכת ההערות המוגדרת של Weebly, אותה נחליף.
-
-**הערה** אם ברצונך להעביר הערות קיימות מאתר ה-Weebly שלך ל-FastComments, נציג התמיכה שלנו יכול לסייע בתהליך ההעברה.
-
-Now let's set the `Commenting system` to `Default` and `Comment Default` to `Closed`:
+כעת נפתח את ההגדרות עבור הבלוג שלנו על ידי מעבר אל `Blog` בצד שמאל:
 
 <div class="screenshot white-bg">
-    <div class="title">השבת את מערכת ברירת המחדל</div>
-    <img class="screenshot-image" src="/images/installation-guides/weebly-step-1-3-disable-default.png" alt="השבת את מערכת ברירת המחדל" />
+    <div class="title">פתיחת הגדרות הבלוג</div>
+    <img class="screenshot-image" src="/images/installation-guides/weebly-step-1-2-open-blog-settings.png" alt="פתיחת הגדרות הבלוג" />
 </div>
 
-Next we just have to add the FastComments.com widget code!
+כעת עלינו להשבית את מערכת התגובות המובנית של Weebly, שאותה נחליף.
+
+**הערה** אם ברצונכם להעביר תגובות קיימות מאתר ה-Weebly שלכם אל FastComments, נציג התמיכה שלכם יכול לסייע בהעברה זו.
+
+כעת נגדיר את `Commenting system` ל-`Default` ואת `Comment Default` ל-`Closed`:
+
+<div class="screenshot white-bg">
+    <div class="title">השבתת המערכת המובנית</div>
+    <img class="screenshot-image" src="/images/installation-guides/weebly-step-1-3-disable-default.png" alt="השבתת המערכת המובנית" />
+</div>
+
+לסיום, כל שנותר הוא להוסיף את קוד הווידג'ט של FastComments.com!

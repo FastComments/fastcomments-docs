@@ -15,4 +15,3 @@ bundle install
 ```
 
 (Kompatibilno s Jekyllom 3.7+ i 4.x.)
----

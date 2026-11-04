@@ -32,5 +32,3 @@ ModerationAPI.putCloseThread(tenantId: tenantId, urlId: urlId, sso: sso) { (resp
     }
 }
 [inline-code-end]
-
----

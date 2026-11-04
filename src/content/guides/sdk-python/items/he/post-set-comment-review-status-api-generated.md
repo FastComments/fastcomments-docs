@@ -46,5 +46,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling ModerationApi->post_set_comment_review_status: %s\n" % e)
 [inline-code-end]
-
----

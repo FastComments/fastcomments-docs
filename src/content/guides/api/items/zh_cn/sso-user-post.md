@@ -2,7 +2,7 @@
 
 此路由用于创建单个 SSO 用户。
 
-尝试使用相同 ID 创建两个用户将导致错误。
+尝试创建两个具有相同 ID 的用户将导致错误。
 
 [inline-code-attrs-start title = 'SSOUser 创建 cURL 示例'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -40,12 +40,8 @@ interface SSOUserPostResponse {
 }
 [inline-code-end]
 
-#### Integration Note
+#### 集成说明
 
-通过 API 传递的数据可以通过传递不同的 SSO 用户 HMAC 有效负载来覆盖。例如, if
-you set a username via the API, but then pass a different one via the SSO flow on page load, we will automatically update
-their username.
+通过 API 传递的数据可以被覆盖，只需传递一个不同的 SSO 用户 HMAC 载荷即可。例如，如果您通过 API 设置了用户名，但在页面加载时通过 SSO 流程传递了不同的用户名，我们将自动更新该用户的用户名。
 
-除非您显式指定这些参数或将其设置为 null（而不是 undefined），否则我们不会在此流程中更新用户参数。
-
----
+在此流程中，除非您显式指定用户参数或将其设置为 null（而非 undefined），否则我们不会更新用户参数。

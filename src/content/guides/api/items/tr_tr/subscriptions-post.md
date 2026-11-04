@@ -1,11 +1,10 @@
 [api-resource-header-start name = 'Subscription'; route = 'POST /api/v1/subscriptions'; creditsCost = 1; api-resource-header-end]
 
-This API endpoint provides the ability to create a `Subscription`. Note that a user may only have one subscription per page, as more is redundant, and trying
-to create more than one subscription for the same user for the same page will result in an error.
+Bu API uç noktası bir `Subscription` oluşturma yeteneği sağlar. Bir kullanıcının sayfa başına yalnızca bir aboneliği olabilir, çünkü fazlası gereksizdir; aynı kullanıcı için aynı sayfaya birden fazla abonelik oluşturulmaya çalışılması bir hatayla sonuçlanacaktır.
 
-Creating a subscription will result in `Notification` objects being created when a new comment is left on the root of the subscribed `urlId` (when comment `parentId` is `null`).
+Bir abonelik oluşturmak, abone olunan `urlId`'nin köküne yeni bir yorum bırakıldığında (yorum `parentId`'si `null` olduğunda) `Notification` nesnelerinin oluşturulmasına neden olur.
 
-[inline-code-attrs-start title = 'Abonelik POST cURL Örneği'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Subscription POST cURL Örneği'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request POST \
   --url 'https://fastcomments.com/api/v1/subscriptions?tenantId=demo&API_KEY=DEMO_API_SECRET' \
@@ -18,7 +17,7 @@ curl --request POST \
 }'
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Abonelik POST İstek Yapısı'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Subscription POST İstek Yapısı'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface SubscriptionPostQueryParams {
     tenantId: string
@@ -26,14 +25,14 @@ interface SubscriptionPostQueryParams {
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Abonelik POST Yanıt Yapısı'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Subscription POST Yanıt Yapısı'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 
 interface SubscriptionPostResponse {
     status: 'success' | 'failed'
-    /** Hata durumunda dahil edilir. **/
+    /** Başarısızlık durumunda dahil edilir. **/
     code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'unexpected-param' | 'unauthorized' | 'not-found';  
-    /** Hata durumunda dahil edilir. **/
+    /** Başarısızlık durumunda dahil edilir. **/
     reason?: string
 }
 [inline-code-end]

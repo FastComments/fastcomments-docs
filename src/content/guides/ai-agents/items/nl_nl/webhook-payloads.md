@@ -1,10 +1,10 @@
-Alle agent-webhookpayloads delen een gemeenschappelijke envelop en voegen een gebeurtenisspecifiek `data`-blok toe. Deze pagina geeft het volledige schema voor elk weer.
+Alle agent-webhook-payloads delen een gemeenschappelijke envelope en voegen een eventspecifiek `data`-blok toe. Deze pagina bevat het volledige schema voor elk ervan.
 
-### Envelop (elke gebeurtenis)
+### Envelope (elk event)
 
-Elke payload, ongeacht het gebeurtenistype, heeft deze velden op het hoogste niveau:
+Elke payload heeft, ongeacht het eventtype, deze velden op het hoogste niveau:
 
-[inline-code-attrs-start title = 'Webhook-envelopschema'; type='json' inline-code-attrs-end]
+[inline-code-attrs-start title = 'Webhook Envelope Schema'; type='json' inline-code-attrs-end]
 [inline-code-start]
 {
   "event": "trigger.succeeded | trigger.failed | approval.requested | approval.decided",
@@ -23,7 +23,7 @@ Elke payload, ongeacht het gebeurtenistype, heeft deze velden op het hoogste niv
 
 `data`-schema:
 
-[inline-code-attrs-start title = 'Trigger-gebeurtenisgegevensschema'; type='json' inline-code-attrs-end]
+[inline-code-attrs-start title = 'Trigger Event Data Schema'; type='json' inline-code-attrs-end]
 [inline-code-start]
 {
   "triggerId": "string",
@@ -49,17 +49,17 @@ Elke payload, ongeacht het gebeurtenistype, heeft deze velden op het hoogste niv
 }
 [inline-code-end]
 
-`triggerType` is een numerieke enum uit de [lijst met triggergebeurtenissen](#triggers-overview).
+`triggerType` is een numerieke enum uit de [trigger event list](#triggers-overview).
 
-`actions[].type` is een numerieke enum uit de [lijst met tools](#tools-overview).
+`actions[].type` is een numerieke enum uit de [tool list](#tools-overview).
 
-`actions[].pending` is `true` wanneer de actie in de wachtrij voor [goedkeuring](#approval-workflow) stond in plaats van uitgevoerd.
+`actions[].pending` is `true` wanneer de actie in de wachtrij is geplaatst voor [goedkeuring](#approval-workflow) in plaats van uitgevoerd.
 
 ### `approval.requested`
 
 `data`-schema:
 
-[inline-code-attrs-start title = 'Gegevensschema voor aangevraagde goedkeuring'; type='json' inline-code-attrs-end]
+[inline-code-attrs-start title = 'Approval Requested Data Schema'; type='json' inline-code-attrs-end]
 [inline-code-start]
 {
   "approvalId": "string",
@@ -75,22 +75,22 @@ Elke payload, ongeacht het gebeurtenistype, heeft deze velden op het hoogste niv
 }
 [inline-code-end]
 
-Het **`args`**-object is wat de LLM-toolaanroep meedroeg. De vorm ervan hangt af van de tool:
+Het **`args`**-object bevat wat de LLM-toolcall heeft meegegeven. De vorm ervan hangt af van de tool:
 
 - Voor `ban_user`: `{ userId, commentId, duration, shadowBan, deleteAllUsersComments?, banIP? }`.
 - Voor `mark_comment_spam`: `{ commentId, isSpam }`.
 - Voor `write_comment`: `{ comment, urlId, parentId? }`.
 - ...enzovoort.
 
-De verzameling van vormen voor tool-argumenten behoort **niet tot een stabiel publiek contract**. Tools kunnen in de toekomst worden toegevoegd en het platform geeft args onveranderd door. Consumenten moeten args behandelen als een ondoorzichtig blob tenzij ze de betreffende tool expliciet begrijpen.
+De set tool-argumentvormen is **geen stabiel publiek contract**. Tools kunnen in de toekomst worden toegevoegd en het platform geeft args ongewijzigd door. Consumenten moeten args behandelen als een ondoorzichtig gegevensblok, tenzij ze de betreffende tool expliciet begrijpen.
 
-De **`contextSnapshot`** legt de commentaar-, pagina- en gebruikercontext vast waaruit de goedkeuring werd aangemaakt. De vorm ervan weerspiegelt het contextbericht van de trigger.
+De **`contextSnapshot`** legt de comment-, pagina- en gebruikerscontext vast waaruit de goedkeuring in de wachtrij is geplaatst. De vorm ervan weerspiegelt het contextbericht van de trigger.
 
 ### `approval.decided`
 
 `data`-schema:
 
-[inline-code-attrs-start title = 'Gegevensschema voor goedkeuringsbeslissing'; type='json' inline-code-attrs-end]
+[inline-code-attrs-start title = 'Approval Decided Data Schema'; type='json' inline-code-attrs-end]
 [inline-code-start]
 {
   "approvalId": "string",
@@ -110,7 +110,7 @@ De **`contextSnapshot`** legt de commentaar-, pagina- en gebruikercontext vast w
 
 Binnen `actions[]` in de trigger-payloads heeft elke actie:
 
-[inline-code-attrs-start title = 'TenantAgentAction-schema'; type='json' inline-code-attrs-end]
+[inline-code-attrs-start title = 'TenantAgentAction Schema'; type='json' inline-code-attrs-end]
 [inline-code-start]
 {
   "type": 0,
@@ -123,7 +123,7 @@ Binnen `actions[]` in de trigger-payloads heeft elke actie:
 }
 [inline-code-end]
 
-`type`-enumwaarden komen overeen met `AgentActionType`:
+De `type`-enumwaarden komen overeen met `AgentActionType`:
 
 - 0: `WRITE_COMMENT`
 - 1: `VOTE_COMMENT`
@@ -140,9 +140,9 @@ Binnen `actions[]` in de trigger-payloads heeft elke actie:
 - 12: `WARNED_USER`
 - 13: `SAVED_MEMORY`
 
-`SEARCH_MEMORY` verschijnt niet in `actions[]` omdat het alleen-lezen is en niet wordt geaudit.
+`SEARCH_MEMORY` verschijnt niet in `actions[]` omdat het alleen-lezen is en niet wordt gecontroleerd.
 
-### `triggerType` enum values
+### `triggerType`-enumwaarden
 
 `AgentTriggerReasonType`:
 
@@ -167,11 +167,9 @@ Binnen `actions[]` in de trigger-payloads heeft elke actie:
 
 Elke levering bevat:
 
-- `X-FastComments-Agent-Event` - de canonieke gebeurtenisnaam (`trigger.succeeded`, enz.).
-- `X-FastComments-Signature` - HMAC-SHA256 van de ruwe body met behulp van je API-secret. Zie [Webhook-handtekening](#webhook-signing).
+- `X-FastComments-Agent-Event` - de canonieke eventnaam (`trigger.succeeded`, enz.).
+- `X-FastComments-Signature` - HMAC-SHA256 van de ruwe body met behulp van je API-geheim. Zie [Webhook Signing](#webhook-signing).
 
 ### Stabiliteit
 
-De envelopvelden en de gedocumenteerde `data`-velden per gebeurtenis maken deel uit van het publieke contract. Het toevoegen van nieuwe optionele velden aan bestaande payloads is toegestaan en wordt niet beschouwd als een brekende wijziging - jouw afnemer moet onbekende velden negeren. De vorm van `args` en `contextSnapshot` maakt **geen** deel uit van het contract.
-
----
+De envelope-velden en de gedocumenteerde `data`-velden per event maken deel uit van het publieke contract. Het toevoegen van nieuwe optionele velden aan bestaande payloads is toegestaan en wordt niet als een breaking change beschouwd - je consument zou onbekende velden moeten negeren. De vorm van `args` en `contextSnapshot` is **geen** deel van het contract.

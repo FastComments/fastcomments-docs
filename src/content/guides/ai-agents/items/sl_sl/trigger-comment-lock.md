@@ -1,4 +1,3 @@
----
 Sproži se, ko je komentar zaklenjen.
 
 ### Kontekst, ki ga prejme agent
@@ -18,5 +17,3 @@ Sproži se, ko je komentar zaklenjen.
 ### Par
 
 Oglejte si [Sprožilec: Komentar odklenjen](#trigger-comment-unlock) za zrcalni sprožilec.
-
----

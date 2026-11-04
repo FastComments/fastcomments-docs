@@ -24,5 +24,3 @@ api->createV1PageReact(tenantId, urlId, title).then([](pplx::task<std::shared_pt
     }
 });
 [inline-code-end]
-
----

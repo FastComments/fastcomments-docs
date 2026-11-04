@@ -1,8 +1,8 @@
-The Recent Discussions Widget displays a list of pages sorted by the most recent comment activity. It includes a heading, last activity dates, comment counts with icons, and automatic dark mode detection.
+Recent Discussions-widgeten viser en liste over sider sorteret efter den seneste kommentaraktivitet. Den indeholder en overskrift, datoer for seneste aktivitet, kommentartællinger med ikoner og automatisk detektering af mørk tilstand.
 
-## Basic Installation
+## Grundlæggende installation
 
-[inline-code-attrs-start title = 'Opsætning af styling for widget med seneste diskussioner'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Opsætning af styling for Recent Discussions-widget'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/widget-recent-discussions-v2.min.js"></script>
 <div id="fastcomments-widget-recent-discussions"></div>
@@ -13,17 +13,17 @@ The Recent Discussions Widget displays a list of pages sorted by the most recent
 </script>
 [inline-code-end]
 
-## Configuration Options
+## Konfigurationsmuligheder
 
-- **tenantId** (required): Dit FastComments lejer-ID
-- **count** (optional): Antal sider der skal vises. Standard er `20`, maks `100`
-- **hasDarkBackground** (optional): Tving styling for mørk tilstand. Automatisk registreret ud fra sidens baggrund, hvis ikke angivet
+- **tenantId** (påkrævet): Dit FastComments tenant ID
+- **count** (valgfri): Antal sider, der skal vises. Standard er `20`, maksimum `100`
+- **hasDarkBackground** (valgfri): Tving mørk tilstand-styling. Detekteres automatisk fra sidens baggrund, hvis det ikke er angivet
 
-## Widget Structure
+## Widget-struktur
 
-The widget renders with the following HTML structure:
+Widgeten renderes med følgende HTML-struktur:
 
-[inline-code-attrs-start title = 'HTML-struktur for widget med seneste diskussioner'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'HTML-struktur for Recent Discussions-widget'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <div class="fc-rd2">
     <div class="fc-rd2-heading">Recent Discussions</div>
@@ -39,9 +39,9 @@ The widget renders with the following HTML structure:
 </div>
 [inline-code-end]
 
-## Default CSS Reference
+## Reference til standard-CSS
 
-[inline-code-attrs-start title = 'Standard CSS for widget med seneste diskussioner'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Standard-CSS for Recent Discussions-widget'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rd2 {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -61,11 +61,11 @@ The widget renders with the following HTML structure:
 .fc-rd2-count { font-size: 12px; font-weight: 600; color: #666; }
 [inline-code-end]
 
-## Customization Examples
+## Tilpasningseksempler
 
-### Remove the Container Border
+### Fjern containerens kant
 
-[inline-code-attrs-start title = 'Fjern containerkant'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Fjern containerens kant'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rd2 {
     border: none !important;
@@ -73,13 +73,11 @@ The widget renders with the following HTML structure:
 }
 [inline-code-end]
 
-### Custom Link Color
+### Brugerdefineret linkfarve
 
-[inline-code-attrs-start title = 'Tilpasset linkfarve'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Brugerdefineret linkfarve'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 a.fc-rd2-title:hover {
     color: #e63946 !important;
 }
 [inline-code-end]
-
----

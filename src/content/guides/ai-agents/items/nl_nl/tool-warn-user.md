@@ -1,30 +1,30 @@
-De Warn tool stuurt een privé-DM-waarschuwing naar een gebruiker over een specifiek commentaar, en legt tegelijkertijd de waarschuwing vast in het gedeelde [agent memory](#agent-memory-system). De twee schrijfhandelingen zijn atomair - de gebruiker ziet nooit een waarschuwing die niet ook geregistreerd is.
+De Warn tool stuurt een privé-DM-waarschuwing naar een gebruiker over een specifieke reactie, en registreert tegelijkertijd de waarschuwing in gedeeld [agent memory](#agent-memory-system). De twee schrijfacties zijn atomair - de gebruiker ziet nooit een waarschuwing die niet ook geregistreerd is.
 
-### Why it exists
+### Waarom het bestaat
 
-Het escalatiebeleid van het platform is **eerst waarschuwen, alleen verbannen als de gebruiker opnieuw overtreedt**. De Warn tool maakt dat beleid uitvoerbaar: het geeft de gebruiker de kans zich te corrigeren, en het waarschuwingrecord is wat een toekomstige agent aantreft wanneer hij het geheugen doorzoekt voordat hij een ban overweegt.
+Het escalatiebeleid van het platform is **eerst waarschuwen, alleen bannen als de gebruiker opnieuw de fout ingaat**. De Warn tool maakt dat beleid uitvoerbaar: het geeft de gebruiker de kans om bij te sturen, en de waarschuwingsregistratie is wat een toekomstige agent vindt wanneer het geheugen wordt doorzocht voordat een ban wordt overwogen.
 
-De tool zorgt ook voor deduplicatie: als de agent al een waarschuwing heeft uitgegeven aan dezelfde gebruiker over hetzelfde commentaar, is een tweede waarschuwing een no-op. Dus een LLM die blijft loopen of opnieuw afvuurt op hetzelfde commentaar kan de gebruiker niet spammen met meerdere waarschuwingen.
+De tool dedupliceert ook: als de agent al een waarschuwing heeft gegeven aan dezelfde gebruiker over dezelfde reactie, is een tweede waarschuwing een no-op. Dus een LLM die loopt of opnieuw afgaat op dezelfde reactie kan de gebruiker niet spammen met meerdere waarschuwingen.
 
-### What goes in the warning
+### Wat er in de waarschuwing staat
 
-Een kort bericht (maximaal 1000 tekens) dat aan de gebruiker als DM wordt getoond. Sterke waarschuwingen zijn:
+Een kort bericht (gemaximeerd op 1000 tekens) dat aan de gebruiker wordt getoond als DM. Sterke waarschuwingen zijn:
 
-- **Specific** - "Personal attacks on named users are not allowed in this community" verslaat "your comment was flagged."
-- **Short** - maximaal een paar zinnen.
-- **Actionable** - vertel de gebruiker wat te veranderen. "Please edit your comment to remove the named user, or it will be removed."
+- **Specifiek** - "Persoonlijke aanvallen op benoemde gebruikers zijn niet toegestaan in deze community" is beter dan "je reactie is gemarkeerd."
+- **Kort** - maximaal een paar zinnen.
+- **Uitvoerbaar** - vertel de gebruiker wat er moet veranderen. "Bewerk je reactie om de benoemde gebruiker te verwijderen, anders wordt deze verwijderd."
 
-Je schrijft het bericht niet zelf; de agent doet dat, op basis van de [initial prompt](#personality-prompt) en de [community guidelines](#community-guidelines). Je taak is om een prompt te schrijven die goede waarschuwingen oplevert.
+Je schrijft het bericht niet zelf; dat doet de agent, op basis van de [initial prompt](#personality-prompt) en [community guidelines](#community-guidelines). Jouw taak is het schrijven van een prompt die goede waarschuwingen oplevert.
 
-### When to allow it
+### Wanneer je het toestaat
 
-Voor elke moderatieachtige agent. Het Moderator template schakelt het standaard in.
+Voor elke agent met een moderatietaak. De Moderator template schakelt het standaard in.
 
-### Approvals
+### Goedkeuringen
 
-Minder vaak achter een goedkeuring geplaatst dan [Ban user](#tool-ban-user). Het is de moeite waard om het gedurende de eerste weken van het bestaan van een agent achter een goedkeuring te plaatsen zodat je slechte waarschuwingen kunt opmerken voordat ze worden verzonden, maar de meeste operators halen de goedkeuring weg zodra de agent betrouwbare output produceert.
+Wordt minder vaak afgeschermd dan [Ban user](#tool-ban-user). Het is de moeite waard om het af te schermen tijdens de eerste weken van het leven van een agent, zodat je slechte waarschuwingen kunt opsporen voordat ze de deur uit gaan, maar de meeste beheerders verwijderen de beveiliging zodra de agent betrouwbare output produceert.
 
-### See also
+### Zie ook
 
-- [Ban user](#tool-ban-user) - the next step up in escalation.
-- [Agent Memory System](#agent-memory-system) - where warning records live.
+- [Ban user](#tool-ban-user) - de volgende stap in escalatie.
+- [Agent Memory System](#agent-memory-system) - waar waarschuwingsregistraties worden bewaard.

@@ -1,4 +1,3 @@
----
 Trenutno online gledatelji stranice: osobe čija je websocket sesija trenutno pretplaćena na tu stranicu.
 Vraća anonCount + totalCount (pretplatnici u sobi, uključujući anonimne gledatelje koje ne navodimo).
 
@@ -52,5 +51,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

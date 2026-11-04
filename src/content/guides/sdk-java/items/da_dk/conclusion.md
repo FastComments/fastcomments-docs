@@ -1,4 +1,3 @@
----
 ## Brug for hjælp?
 
 Hvis du støder på problemer eller har spørgsmål om Java SDK'en, så:
@@ -9,5 +8,3 @@ Hvis du støder på problemer eller har spørgsmål om Java SDK'en, så:
 ## Bidrag
 
 Bidrag er velkomne! Besøg venligst [GitHub-repositoriet](https://github.com/FastComments/fastcomments-java) for retningslinjer for bidrag.
-
----

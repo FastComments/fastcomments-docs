@@ -1,4 +1,3 @@
----
 Uspjeh! Sada biste trebali vidjeti da je FastComments instaliran.
 
 Ovo bi trebalo izgledati ovako - trebali biste moći odabrati neki tekst i raspravljati o njemu. Ako ne možete, ili želite promijeniti izgled, [molimo obratite se podršci](https://fastcomments.com/auth/my-account/help).
@@ -9,5 +8,3 @@ Ovo bi trebalo izgledati ovako - trebali biste moći odabrati neki tekst i raspr
 </div>
 
 Čestitamo na postavljanju FastComments s Superom! Ako ste naišli na Domain Error, ili želite naučiti kako prilagoditi područje komentara, nastavite čitati!
-
----

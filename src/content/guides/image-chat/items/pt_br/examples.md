@@ -139,5 +139,3 @@ Você pode inicializar o Image Chat em várias imagens. Cada imagem terá seus p
     });
 </script>
 [inline-code-end]
-
----

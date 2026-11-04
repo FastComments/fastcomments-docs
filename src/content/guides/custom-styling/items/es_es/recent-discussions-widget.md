@@ -1,8 +1,8 @@
-The Recent Discussions Widget displays a list of pages sorted by the most recent comment activity. It includes a heading, last activity dates, comment counts with icons, and automatic dark mode detection.
+El widget de Discusiones Recientes muestra una lista de páginas ordenadas por la actividad de comentarios más reciente. Incluye un encabezado, fechas de última actividad, recuentos de comentarios con iconos y detección automática del modo oscuro.
 
-## Basic Installation
+## Instalación básica
 
-[inline-code-attrs-start title = 'Configuración de estilo del widget de discusiones recientes'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Configuración de estilos del widget de Discusiones Recientes'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/widget-recent-discussions-v2.min.js"></script>
 <div id="fastcomments-widget-recent-discussions"></div>
@@ -13,17 +13,17 @@ The Recent Discussions Widget displays a list of pages sorted by the most recent
 </script>
 [inline-code-end]
 
-## Configuration Options
+## Opciones de configuración
 
-- **tenantId** (required): Tu ID de inquilino de FastComments
-- **count** (optional): Número de páginas a mostrar. El valor predeterminado es `20`, máximo `100`
-- **hasDarkBackground** (optional): Forzar estilo de modo oscuro. Detectado automáticamente a partir del fondo de la página si no se establece
+- **tenantId** (obligatorio): Su ID de inquilino de FastComments
+- **count** (opcional): Número de páginas a mostrar. El valor predeterminado es `20`, máximo `100`
+- **hasDarkBackground** (opcional): Forzar los estilos del modo oscuro. Se detecta automáticamente a partir del fondo de la página si no se establece
 
-## Widget Structure
+## Estructura del widget
 
 El widget se renderiza con la siguiente estructura HTML:
 
-[inline-code-attrs-start title = 'Estructura HTML del widget de discusiones recientes'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Estructura HTML del widget de Discusiones Recientes'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <div class="fc-rd2">
     <div class="fc-rd2-heading">Recent Discussions</div>
@@ -39,9 +39,9 @@ El widget se renderiza con la siguiente estructura HTML:
 </div>
 [inline-code-end]
 
-## Default CSS Reference
+## Referencia de CSS predeterminado
 
-[inline-code-attrs-start title = 'CSS predeterminado del widget de discusiones recientes'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'CSS predeterminado del widget de Discusiones Recientes'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rd2 {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -61,11 +61,11 @@ El widget se renderiza con la siguiente estructura HTML:
 .fc-rd2-count { font-size: 12px; font-weight: 600; color: #666; }
 [inline-code-end]
 
-## Customization Examples
+## Ejemplos de personalización
 
 ### Eliminar el borde del contenedor
 
-[inline-code-attrs-start title = 'Eliminar borde del contenedor'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Eliminar el borde del contenedor'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rd2 {
     border: none !important;

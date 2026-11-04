@@ -5,5 +5,3 @@
 כאשר מוגדר, רק משתמשים מקבוצות אחרות יוצעו בהשלמה האוטומטית לאחר הקלדת התו `@`.
 
 [code-example-start config = {mentionGroupIds: ['yxZAhjzda', 'QT19nXbqB']}; linesToHighlight = [6, 7, 8, 9]; title = 'Limit Groups for Mentions'; code-example-end]
-
----

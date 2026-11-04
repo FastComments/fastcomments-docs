@@ -1,29 +1,29 @@
-Vsi agentni webhook payloadi imajo skupno ovojnico in dodajo dogodek-specifičen blok `data`. Ta stran navaja celotno shemo za vsak dogodek.
+Vsi spletni webhook payloadi agentov imajo skupno ovojnico in dodajo blok `data`, specifičen za dogodek. Ta stran navaja polno shemo za vsakega.
 
-### Envelope (every event)
+### Ovojnica (vsak dogodek)
 
-Every payload, regardless of event type, has these top-level fields:
+Vsak payload, ne glede na vrsto dogodka, ima ta polja na vrhu:
 
-[inline-code-attrs-start title = 'Shema ovojnice webhook'; type='json' inline-code-attrs-end]
+[inline-code-attrs-start title = 'Shema ovojnice webhooka'; type='json' inline-code-attrs-end]
 [inline-code-start]
 {
   "event": "trigger.succeeded | trigger.failed | approval.requested | approval.decided",
   "eventType": 0 | 1 | 2 | 3,
   "tenantId": "string",
-  "domain": "string - ujemajoča se domena za to dostavo",
+  "domain": "string - the matched domain for this delivery",
   "agentId": "string",
   "agentInternalName": "string",
   "agentDisplayName": "string",
-  "occurredAt": "string - časovni žig v formatu ISO 8601",
+  "occurredAt": "string - ISO 8601 timestamp",
   "data": { /* event-specific, see below */ }
 }
 [inline-code-end]
 
 ### `trigger.succeeded` / `trigger.failed`
 
-`data` schema:
+Shema `data`:
 
-[inline-code-attrs-start title = 'Shema podatkov sproženega dogodka'; type='json' inline-code-attrs-end]
+[inline-code-attrs-start title = 'Shema podatkov dogodka trigger'; type='json' inline-code-attrs-end]
 [inline-code-start]
 {
   "triggerId": "string",
@@ -34,32 +34,32 @@ Every payload, regardless of event type, has these top-level fields:
   "actions": [
     {
       "type": 0,
-      "commentId": "string - neobvezno",
-      "userId": "string - neobvezno",
-      "badgeId": "string - neobvezno",
+      "commentId": "string - optional",
+      "userId": "string - optional",
+      "badgeId": "string - optional",
       "pending": false,
       "justification": "string",
       "confidence": 0.92
     }
   ],
-  "errorMessage": "string - prisoten pri trigger.failed",
-  "url": "string - neobvezno",
-  "urlId": "string - neobvezno",
-  "commentId": "string - neobvezno"
+  "errorMessage": "string - present on trigger.failed",
+  "url": "string - optional",
+  "urlId": "string - optional",
+  "commentId": "string - optional"
 }
 [inline-code-end]
 
-`triggerType` is a numeric enum from the [trigger event list](#triggers-overview).
+`triggerType` je številčni enum iz [seznama dogodkov trigger](#triggers-overview).
 
-`actions[].type` is a numeric enum from the [tool list](#tools-overview).
+`actions[].type` je številčni enum iz [seznama orodij](#tools-overview).
 
-`actions[].pending` is `true` when the action was queued for [approval](#approval-workflow) instead of executed.
+`actions[].pending` je `true`, ko je bilo dejanje namesto izvedeno postavljeno v čakalno vrsto za [odobritev](#approval-workflow).
 
 ### `approval.requested`
 
-`data` schema:
+Shema `data`:
 
-[inline-code-attrs-start title = 'Shema podatkov zahteve za odobritev'; type='json' inline-code-attrs-end]
+[inline-code-attrs-start title = 'Shema podatkov approval.requested'; type='json' inline-code-attrs-end]
 [inline-code-start]
 {
   "approvalId": "string",
@@ -67,30 +67,30 @@ Every payload, regardless of event type, has these top-level fields:
   "toolName": "ban_user | mark_comment_spam | ...",
   "actionType": 10,
   "status": "PENDING",
-  "args": { /* glede na orodje, glej spodaj */ },
+  "args": { /* per-tool, see below */ },
   "createdAt": "string - ISO 8601",
-  "justification": "string - neobvezno, utemeljitev agenta",
+  "justification": "string - optional, agent reasoning",
   "confidence": 0.85,
   "contextSnapshot": { /* the comment/page context the approval is about */ }
 }
 [inline-code-end]
 
-The **`args`** object is whatever the LLM tool call carried. Its shape depends on the tool:
+Objekt **`args`** je tisto, kar je prinesel klic orodja LLM. Njegova oblika je odvisna od orodja:
 
-- For `ban_user`: `{ userId, commentId, duration, shadowBan, deleteAllUsersComments?, banIP? }`.
-- For `mark_comment_spam`: `{ commentId, isSpam }`.
-- For `write_comment`: `{ comment, urlId, parentId? }`.
-- ...and so on.
+- Za `ban_user`: `{ userId, commentId, duration, shadowBan, deleteAllUsersComments?, banIP? }`.
+- Za `mark_comment_spam`: `{ commentId, isSpam }`.
+- Za `write_comment`: `{ comment, urlId, parentId? }`.
+- ...in tako naprej.
 
-The set of tool argument shapes is **not a stable public contract**. Tools can be added in future and the platform passes args through verbatim. Consumers should treat args as an opaque blob unless they explicitly understand the tool involved.
+Nabor oblik argumentov orodij **ni stabilna javna pogodba**. Orodja se lahko v prihodnje dodajajo, platforma pa argumente prenaša nespremenjene. Potrošniki naj argumente obravnavajo kot neprozorno blob, razen če izrecno razumejo vpleteno orodje.
 
-The **`contextSnapshot`** captures the comment, page, and user context the approval was queued from. Its shape mirrors the trigger's context message.
+**`contextSnapshot`** zajema kontekst komentarja, strani in uporabnika, iz katerega je bila odobritev postavljena v čakalno vrsto. Njegova oblika odraža kontekstno sporočilo triggerja.
 
 ### `approval.decided`
 
-`data` schema:
+Shema `data`:
 
-[inline-code-attrs-start title = 'Shema podatkov odločitve o odobritvi'; type='json' inline-code-attrs-end]
+[inline-code-attrs-start title = 'Shema podatkov approval.decided'; type='json' inline-code-attrs-end]
 [inline-code-start]
 {
   "approvalId": "string",
@@ -106,24 +106,24 @@ The **`contextSnapshot`** captures the comment, page, and user context the appro
 }
 [inline-code-end]
 
-### TenantAgentAction shape
+### Oblika TenantAgentAction
 
-Inside `actions[]` on the trigger payloads, each action has:
+Znotraj `actions[]` na payloadih trigger ima vsako dejanje:
 
 [inline-code-attrs-start title = 'Shema TenantAgentAction'; type='json' inline-code-attrs-end]
 [inline-code-start]
 {
   "type": 0,
-  "commentId": "string - neobvezno",
-  "userId": "string - neobvezno",
-  "badgeId": "string - neobvezno",
+  "commentId": "string - optional",
+  "userId": "string - optional",
+  "badgeId": "string - optional",
   "pending": false,
   "justification": "string",
   "confidence": 0.92
 }
 [inline-code-end]
 
-`type` enum values match `AgentActionType`:
+Vrednosti enuma `type` ustrezajo `AgentActionType`:
 
 - 0: `WRITE_COMMENT`
 - 1: `VOTE_COMMENT`
@@ -140,9 +140,9 @@ Inside `actions[]` on the trigger payloads, each action has:
 - 12: `WARNED_USER`
 - 13: `SAVED_MEMORY`
 
-`SEARCH_MEMORY` does not appear in `actions[]` because it is read-only and unaudited.
+`SEARCH_MEMORY` se ne pojavlja v `actions[]`, ker je samo za branje in ni reviziran.
 
-### `triggerType` enum values
+### Vrednosti enuma `triggerType`
 
 `AgentTriggerReasonType`:
 
@@ -161,15 +161,15 @@ Inside `actions[]` on the trigger payloads, each action has:
 - 12: `COMMENT_FLAG_THRESHOLD`
 - 13: `NEW_USER_FIRST_COMMENT`
 - 14: `COMMENT_AUTO_SPAMMED`
-- 15: `REPLAY` (internal; not delivered to webhooks)
+- 15: `REPLAY` (interno; ni dostavljeno na webhooke)
 
-### Headers
+### Glave
 
-Every delivery includes:
+Vsaka dostava vključuje:
 
-- `X-FastComments-Agent-Event` - the canonical event name (`trigger.succeeded`, etc.).
-- `X-FastComments-Signature` - HMAC-SHA256 of the raw body using your API secret. See [Podpisovanje webhookov](#webhook-signing).
+- `X-FastComments-Agent-Event` - kanonično ime dogodka (`trigger.succeeded` itd.).
+- `X-FastComments-Signature` - HMAC-SHA256 surovega telesa z vašim API skrivnim ključem. Glejte [Podpisovanje webhookov](#webhook-signing).
 
-### Stability
+### Stabilnost
 
-The envelope fields and the documented `data` fields per event are part of the public contract. Adding new optional fields to existing payloads is allowed and not considered a breaking change - your consumer should ignore unknown fields. The shape of `args` and `contextSnapshot` is **not** part of the contract.
+Polja ovojnice in dokumentirana polja `data` za vsak dogodek so del javne pogodbe. Dodajanje novih neobveznih polj obstoječim payloadom je dovoljeno in se ne šteje za spremembo, ki bi povzročila nezdružljivost - vaš potrošnik naj prezre neznana polja. Oblika `args` in `contextSnapshot` **ni** del pogodbe.

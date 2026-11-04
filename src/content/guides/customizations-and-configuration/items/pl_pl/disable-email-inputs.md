@@ -1,4 +1,3 @@
----
 Kiedy użytkownicy komentują i nie są zalogowani, zostaną poproszeni o podanie swojego adresu e‑mail.
 
 Spowoduje to utworzenie „niezweryfikowanej sesji” dla tego użytkownika i poprosimy go o zweryfikowanie tej sesji za pomocą e‑maila.
@@ -15,5 +14,3 @@ Zauważ, że przy tej konfiguracji wszystkie komentarze będą niezweryfikowane,
 https://fastcomments.com.
 
 Możesz rozważyć [wyłączenie etykiety niezweryfikowanego](/guide-customizations-and-configuration.html#disable-unverified-label).
-
----

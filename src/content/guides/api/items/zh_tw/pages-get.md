@@ -1,14 +1,14 @@
 [api-resource-header-start name = 'Page'; route = 'GET /api/v1/pages'; creditsCost = 10; api-resource-header-end]
 
-你目前只能擷取與你的帳戶相關的所有頁面（或透過 `/by-url-id` 擷取單一頁面）。如果你想要更細緻的搜尋，請[聯絡我們](https://fastcomments.com/auth/my-account/help)。 
+目前您只能取得與您的帳戶關聯的所有頁面(或透過 `/by-url-id` 取得單一頁面)。如果您需要更精細的搜尋功能,請[與我們聯繫](https://fastcomments.com/auth/my-account/help)。
 
-[inline-code-attrs-start title = '頁面 cURL 範例'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Pages cURL 範例'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/pages?tenantId=demo&API_KEY=DEMO_API_SECRET'
 [inline-code-end]
 
-[inline-code-attrs-start title = '頁面請求結構'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Pages 請求結構'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface PagesRequestQueryParams {
     tenantId: string
@@ -16,19 +16,18 @@ interface PagesRequestQueryParams {
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = '頁面回應結構'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Pages 回應結構'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface PagesResponse {
     status: 'success' | 'failed'
-    /** 僅在失敗時包含。 **/
+    /** Included on failure. **/
     code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key'
-    /** 僅在失敗時包含。 **/
+    /** Included on failure. **/
     reason?: string
     pages: Page[]
 }
 [inline-code-end]
 
-#### 有用提示
+#### 實用提示
 
-The `Comment` API requires a `urlId`. You can call the `Pages` API first, to see what the `urlId` values available to you
-look like.
+`Comment` API 需要 `urlId`。您可以先呼叫 `Pages` API,查看您可用的 `urlId` 值的樣子。

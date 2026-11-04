@@ -1,4 +1,3 @@
----
 De module bevat meerdere blokken die je kunt plaatsen via `Structure > Block layout` (`/admin/structure/block`).
 
 - **FastComments Widget** - De hoofdopmerkingen-widget. Detecteert automatisch de huidige entiteit. Het slaat entiteiten over die al het FastComments field hebben gekoppeld, zodat je geen dubbele widgets op dezelfde pagina ziet.
@@ -9,5 +8,3 @@ De module bevat meerdere blokken die je kunt plaatsen via `Structure > Block lay
 - **FastComments Top Pages** - Toont de pagina's op je site met de meeste opmerkingen.
 
 De contentgerichte blokken (Live Chat, Collab Chat, Image Chat) detecteren automatisch de huidige entiteit en vallen terug op een pad-gebaseerde identificatie op niet-entiteitspagina's. Dat betekent dat ze werken op taxonomiepagina's, views en aangepaste routes zonder extra configuratie.
-
----

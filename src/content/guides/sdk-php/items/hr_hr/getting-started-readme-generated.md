@@ -1,4 +1,3 @@
----
 Slijedite [postupak instalacije](#installation-usage-readme-generated) i zatim pokrenite sljedeće:
 
 ```php
@@ -30,4 +29,3 @@ try {
 }
 
 ```
----

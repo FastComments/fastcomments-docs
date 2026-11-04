@@ -1,12 +1,12 @@
-### Overview
+### Огляд
 
-FastComments Collab Chat розширює стандартний віджет коментарів FastComments, тому він успадковує всі параметри конфігурації від базового віджета, додаючи кілька специфічних для текстових анотацій.
+FastComments Collab Chat розширює стандартний віджет коментування FastComments, тому він успадковує всі параметри конфігурації базового віджета, додаючи кілька специфічних для текстових анотацій.
 
-### Required Configuration
+### Необхідна конфігурація
 
 #### tenantId
 
-Ваш FastComments Tenant ID є обов'язковим. Ви можете знайти його у вашій [панелі керування FastComments](https://fastcomments.com/auth/my-account/api-secret).
+Потрібен ваш FastComments Tenant ID. Ви можете знайти його у своєму [дашборді FastComments](https://fastcomments.com/auth/my-account/api-secret).
 
 [inline-code-attrs-start title = "Приклад конфігурації"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -15,11 +15,11 @@ FastCommentsCollabChat(element, {
 });
 [inline-code-end]
 
-### Collab Chat Specific Options
+### Специфічні параметри Collab Chat
 
 #### urlId
 
-За замовчуванням Collab Chat генерує унікальний ідентифікатор для кожної розмови на основі URL сторінки, шляху DOM до елемента та вибраного діапазону тексту. Ви можете перевизначити це за допомогою кастомного `urlId`.
+За замовчуванням Collab Chat генерує унікальний ідентифікатор для кожної розмови на основі URL сторінки, DOM-шляху до елемента та виділеного фрагмента тексту. Ви можете перевизначити це за допомогою власного `urlId`.
 
 [inline-code-attrs-start title = "Приклад конфігурації"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -29,21 +29,21 @@ FastCommentsCollabChat(element, {
 });
 [inline-code-end]
 
-Це корисно, коли структура ваших URL може змінюватися, але ви хочете зберегти ті самі розмови, або коли ви хочете ділитися анотаціями між кількома сторінками.
+Це корисно, коли структура ваших URL може змінитися, але ви хочете зберегти ті самі розмови, або коли хочете ділитися анотаціями між кількома сторінками.
 
 #### topBarTarget
 
-Керує відображенням верхньої панелі, яка показує кількість користувачів та кількість дискусій. Встановіть `null`, щоб повністю вимкнути верхню панель, або передайте DOM-елемент, щоб відобразити її у конкретному місці.
+Керує відображенням верхньої панелі, яка показує кількість користувачів і обговорень. Встановіть значення `null`, щоб повністю вимкнути верхню панель, або надайте DOM-елемент, щоб відобразити її в певному місці.
 
 [inline-code-attrs-start title = "Приклад конфігурації"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Вимкнути верхню панель
+// Disable top bar
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
     topBarTarget: null
 });
 
-// Відобразити верхню панель у користувацькому розташуванні
+// Render top bar in custom location
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
     topBarTarget: document.getElementById('custom-header')
@@ -52,7 +52,7 @@ FastCommentsCollabChat(element, {
 
 #### hasDarkBackground
 
-Увімкніть стиль темного режиму, коли у вашої сторінки темний фон. Це виявлення виконується автоматично, але іноді може бути бажаним перевизначити його.
+Увімкніть стилізацію темного режиму, якщо ваша сторінка має темний фон. Це визначення відбувається автоматично, але може бути бажаним перевизначити його.
 
 [inline-code-attrs-start title = "Приклад конфігурації"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -64,7 +64,7 @@ FastCommentsCollabChat(element, {
 
 #### commentCountUpdated
 
-Функція зворотнього виклику, яка викликається щоразу, коли змінюється кількість коментарів. Це корисно для оновлення елементів інтерфейсу, таких як бейджі або заголовки сторінок.
+Функція зворотного виклику, яка спрацьовує щоразу, коли змінюється кількість коментарів. Це корисно для оновлення елементів інтерфейсу, таких як значки або заголовки сторінок.
 
 [inline-code-attrs-start title = "Приклад конфігурації"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -77,9 +77,9 @@ FastCommentsCollabChat(element, {
 });
 [inline-code-end]
 
-### Inherited Configuration Options
+### Успадковані параметри конфігурації
 
-Оскільки Collab Chat розширює стандартний віджет коментарів, ви можете використовувати будь-яку опцію конфігурації з базового віджета FastComments. Ось деякі часто використовувані опції:
+Оскільки Collab Chat розширює стандартний віджет коментування, ви можете використовувати будь-який параметр конфігурації базового віджета FastComments. Ось деякі часто використовувані параметри:
 
 #### locale
 
@@ -89,13 +89,13 @@ FastCommentsCollabChat(element, {
 [inline-code-start]
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
-    locale: 'es'  // Іспанська
+    locale: 'es'  // Spanish
 });
 [inline-code-end]
 
 #### readonly
 
-Зробіть усі розмови лише для читання. Користувачі можуть переглядати існуючі анотації, але не можуть створювати нові або відповідати.
+Зробіть усі розмови доступними лише для читання. Користувачі можуть переглядати наявні анотації, але не можуть створювати нові чи відповідати.
 
 [inline-code-attrs-start title = "Приклад конфігурації"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -105,43 +105,43 @@ FastCommentsCollabChat(element, {
 });
 [inline-code-end]
 
-#### sso and simpleSSO
+#### sso та simpleSSO
 
-Інтегруйтеся з вашою системою автентифікації за допомогою Single Sign-On.
+Інтегруйтеся зі своєю системою автентифікації за допомогою Single Sign-On.
 
 [inline-code-attrs-start title = "Приклад конфігурації"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
     sso: {
-        // Налаштування SSO
+        // SSO configuration
     }
 });
 [inline-code-end]
 
-Див. документацію SSO для повних деталей щодо параметрів автентифікації.
+Повну інформацію про параметри автентифікації дивіться в документації SSO.
 
 #### maxReplyDepth
 
-Керує тим, скільки рівнів вкладеності дозволено у відповідях. За замовчуванням Collab Chat встановлює це значення в 0, що означає, що всі коментарі плоскі (без вкладених відповідей). Ви можете змінити це, якщо хочете ниткові дискусії.
+Керуйте тим, наскільки рівнів углиб можуть йти відповіді. За замовчуванням Collab Chat встановлює це значення на 0, що означає, що всі коментарі є плоскими (без вкладених відповідей). Ви можете змінити це, якщо хочете мати розмови з гілками.
 
 [inline-code-attrs-start title = "Приклад конфігурації"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
-    maxReplyDepth: 3  // Дозволити 3 рівні вкладеності
+    maxReplyDepth: 3  // Allow 3 levels of nesting
 });
 [inline-code-end]
 
-### Internal Configuration
+### Внутрішня конфігурація
 
-Ці опції автоматично встановлюються Collab Chat та не повинні перевизначатися:
+Ці параметри встановлюються автоматично Collab Chat і їх не слід перевизначати:
 
-The `productId` is automatically set to `3` for Collab Chat. The `floating-chat` extension is automatically loaded to provide the chat window functionality. The widget automatically detects mobile devices (screens under 768px wide) and adjusts the UI accordingly.
+`productId` автоматично встановлюється на `3` для Collab Chat. Розширення `floating-chat` автоматично завантажується для забезпечення функціональності вікна чату. Віджет автоматично визначає мобільні пристрої (екрани шириною менше 768px) і відповідно адаптує інтерфейс.
 
-### Complete Example
+### Повний приклад
 
-Here's an example showing multiple configuration options together:
+Ось приклад, що показує кілька параметрів конфігурації разом:
 
 [inline-code-attrs-start title = "Приклад конфігурації"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -155,10 +155,10 @@ FastCommentsCollabChat(document.getElementById('article'), {
         document.title = count > 0 ? `(${count}) My Article` : 'My Article';
     },
     sso: {
-        // Ваша конфігурація SSO
+        // Your SSO config
     },
     maxReplyDepth: 1
 });
 [inline-code-end]
 
-For a complete list of all available configuration options inherited from the base widget, see the main FastComments configuration documentation.
+Повний список усіх доступних параметрів конфігурації, успадкованих від базового віджета, дивіться в основній документації конфігурації FastComments.

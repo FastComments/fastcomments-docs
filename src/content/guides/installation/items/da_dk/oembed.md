@@ -26,5 +26,3 @@ Tilføjelse af live-kommentarer til en Nimbus Note understøttes også, og fremg
 2. Når du redigerer din note, tilføj en indlejringsblok.
 3. Brug URL'en fra trin 1 som den URL, der skal indlejres.
 4. Færdig!
-
----

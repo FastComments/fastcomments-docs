@@ -1,4 +1,3 @@
----
 Hepsi bu kadar! Artık GoHighLevel kursunuza canlı yorum eklenmiş olmalı.
 
 <div class="screenshot white-bg">
@@ -7,5 +6,3 @@ Hepsi bu kadar! Artık GoHighLevel kursunuza canlı yorum eklenmiş olmalı.
 </div>
 
 Eğer 'permission denied' hatasıyla karşılaştıysanız veya FastComments'i özelleştirmek istiyorsanız, okumaya devam edin.
-
----

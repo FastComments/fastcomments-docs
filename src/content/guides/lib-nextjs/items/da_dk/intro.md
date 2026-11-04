@@ -5,5 +5,3 @@ Integrer live kommentering, chat og anmeldelses-widgets i din Next.js-app.
 ## Repository
 
 [Se på GitHub](https://github.com/FastComments/fastcomments-nextjs)
-
----

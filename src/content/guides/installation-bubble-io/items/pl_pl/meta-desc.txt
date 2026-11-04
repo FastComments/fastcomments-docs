@@ -1,3 +1,1 @@
----
 Dodaj sekcję komentarzy do aplikacji Bubble.io za pomocą bloku HTML, w tym ustawienia szerokości i układu, które zapobiegają przycinaniu widżetu.
----

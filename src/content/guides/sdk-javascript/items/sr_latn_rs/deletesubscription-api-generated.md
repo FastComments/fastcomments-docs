@@ -26,5 +26,3 @@ Vraća: [`DeleteSubscriptionAPIResponse`](https://github.com/FastComments/fastco
   const responseWithoutUser: DeleteSubscriptionAPIResponse = await deleteSubscription(tenantId, subscriptionId);
 })();
 [inline-code-end]
-
----

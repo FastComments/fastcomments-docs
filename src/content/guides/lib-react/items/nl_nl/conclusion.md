@@ -8,5 +8,3 @@ Als u problemen ondervindt of vragen hebt over de React-bibliotheek, gelieve:
 ## Bijdragen
 
 Bijdragen zijn welkom! Bezoek de [GitHub-repository](https://github.com/FastComments/fastcomments-react) voor richtlijnen over bijdragen.
-
----

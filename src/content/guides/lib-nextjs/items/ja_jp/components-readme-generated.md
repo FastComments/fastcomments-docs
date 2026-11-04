@@ -1,4 +1,3 @@
----
 | Component | Description |
 | --- | --- |
 | `FastComments` | 返信、投票などを備えたコメント用ウィジェット |
@@ -18,4 +17,3 @@ import {
     FastCommentsReviewsSummary,
 } from 'fastcomments-nextjs';
 ```
----

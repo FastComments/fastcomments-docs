@@ -39,5 +39,3 @@ We kunnen eenvoudig de update-functie aanroepen telkens wanneer we de configurat
     }
 </style>
 [inline-code-end]
-
----

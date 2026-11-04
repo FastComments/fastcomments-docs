@@ -1,4 +1,3 @@
----
 Para las Reacciones de página tenemos que decidir dos cosas:
 
 - Qué imágenes de reacción usar.
@@ -32,5 +31,3 @@ Opcionalmente:
 [inline-code-end]
 
 La configuración para React, Angular y otras bibliotecas frontend es la misma.
-
----

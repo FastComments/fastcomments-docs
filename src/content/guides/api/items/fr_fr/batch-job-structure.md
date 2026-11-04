@@ -61,5 +61,3 @@ interface PageMigrationUndoResult {
 #### Réessais
 
 Si le serveur exécutant un travail de migration de page redémarre, le travail est remis dans la file d’attente et reprend après la dernière migration terminée. Un travail est tenté jusqu’à 3 fois, après quoi son `status` devient `failed`.
-
----

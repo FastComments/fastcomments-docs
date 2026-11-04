@@ -34,5 +34,3 @@ Zwraca: [`DeleteFeedPostPublicResponse`](https://github.com/FastComments/fastcom
   );
 })();
 [inline-code-end]
-
----

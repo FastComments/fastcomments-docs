@@ -1,21 +1,20 @@
-Edit a poll in place, keeping its tallies: change the question, relabel an option, close or reopen it,
-or change who may see the voters. Options are addressed by id - to add, remove or reorder them, PUT the full list.
+투표 집계를 유지한 채 투표를 그 자리에서 편집합니다: 질문을 변경하거나, 옵션의 라벨을 수정하거나, 투표를 마감 또는 재개하거나, 투표자를 볼 수 있는 대상을 변경할 수 있습니다. 옵션은 id로 식별되며, 옵션을 추가, 삭제 또는 재정렬하려면 전체 목록을 PUT으로 전송해야 합니다.
 
 ## 매개변수
 
-| 이름 | 유형 | 필수 | 설명 |
+| 이름 | 타입 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| commentId | string | Yes |  |
-| commentPollPatch | CommentPollPatch | Yes |  |
+| tenantId | string | 예 |  |
+| commentId | string | 예 |  |
+| commentPollPatch | CommentPollPatch | 예 |  |
 
 ## 응답
 
-반환: [`SavePollResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/SavePollResponse.ts)
+반환값: [`SavePollResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/SavePollResponse.ts)
 
-## 예시
+## 예제
 
-[inline-code-attrs-start title = 'patchPoll 예시'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'patchPoll 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 (async () => {
   const tenantId: string = "acme-corp";

@@ -1,4 +1,3 @@
----
 ## 参数
 
 | 名称 | 类型 | 必填 | 描述 |
@@ -25,5 +24,3 @@ api->deleteSSOUser(tenantId, userId, options).then([](std::shared_ptr<DeleteSSOU
     }
 });
 [inline-code-end]
-
----

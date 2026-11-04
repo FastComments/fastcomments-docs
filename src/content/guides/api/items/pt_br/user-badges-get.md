@@ -1,4 +1,3 @@
----
 Este endpoint permite recuperar as insígnias de usuários com base em vários critérios.
 
 Exemplo de requisição:
@@ -80,4 +79,3 @@ Possíveis respostas de erro:
   "reason": "The limit (query param: limit) is too large (> 200)."
 }
 [inline-code-end]
----

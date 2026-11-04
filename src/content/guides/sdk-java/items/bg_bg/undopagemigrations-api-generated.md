@@ -1,11 +1,11 @@
-Queues a batch job that reverses every migration from one migrate-pages job, newest first. Available for 90 days.  
-Records changed since the migration are left alone, so a later edit is never overwritten.  
-Poll GET /api/v1/batch-jobs/{batchJobId} for the restored/skipped counts.
+Подрежда пакетна задача, която обръща всяка миграция от една задача migrate-pages, започвайки от най-новата. Налична е в продължение на 90 дни.
+Записите, променени след миграцията, не се засягат, така че по-късна редакция никога не се презаписва.
+Изпитвайте GET /api/v1/batch-jobs/{batchJobId} за броя на възстановените/пропуснатите записи.
 
 ## Параметри
 
-| Име | Тип | Местоположение | Задължително | Описание |
-|------|------|----------------|--------------|----------|
+| Име | Тип | Местоположение | Задължителен | Описание |
+|------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | undoId | string | path | Да |  |
 
@@ -15,9 +15,9 @@ Poll GET /api/v1/batch-jobs/{batchJobId} for the restored/skipped counts.
 
 ## Пример
 
-[inline-code-attrs-start title = 'undoPageMigrations Пример'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример за undoPageMigrations'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Импортиране на класове:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -30,10 +30,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Конфигуриране на API ключ за упълномощаване: api_key
+    // Configure API key authorization: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Разкоментирайте следния ред, за да зададете префикс за API ключа, напр. "Token" (по подразбиране null)
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);

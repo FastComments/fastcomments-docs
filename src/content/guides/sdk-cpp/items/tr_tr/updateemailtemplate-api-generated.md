@@ -1,4 +1,3 @@
----
 ## Parametreler
 
 | Ad | Tür | Gerekli | Açıklama |
@@ -29,5 +28,3 @@ api->updateEmailTemplate(tenantId, templateId, body)
         try { t.get(); } catch (const std::exception &) { /* hata işleme */ }
     });
 [inline-code-end]
-
----

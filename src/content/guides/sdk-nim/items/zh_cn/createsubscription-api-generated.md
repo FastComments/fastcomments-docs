@@ -21,5 +21,3 @@ let (respOpt, httpResp) = client.createSubscription(
 if respOpt.isSome:
   let resp = respOpt.get()
 [inline-code-end]
-
----

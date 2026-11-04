@@ -1,4 +1,3 @@
----
 | Bileşen | Açıklama |
 | --- | --- |
 | `FastComments` | Yanıtlar, oy verme ve daha fazlasıyla yorum bileşeni |
@@ -16,4 +15,3 @@ Tüm bileşenler paket kökünden dışa aktarılır:
 import { FastComments, FastCommentsLiveChat } from 'fastcomments-astro';
 ---
 ```
----

@@ -1,23 +1,23 @@
 [api-resource-header-start name = 'Comment'; route = 'PATCH /api/v1/comments/:id'; creditsCost = 1; api-resource-header-end]
 
-This API endpoint provides the ability to update a single comment.
+Este endpoint de API fornece a capacidade de atualizar um único comentário.
 
-Notes:
+Observações:
 
-- This API can update the comment widget "live" if desired (this increases base `creditsCost` from `1` to `2`).
-  - This can make migrating comments between pages "live" (changing `urlId`).
-  - Migrations cost an additional `2` credits as pages are precalculated and this is CPU intensive.
-- Unlike the create API, this API will NOT automatically create user objects in our system if email is provided.
-- Comments updated via this API can still be checked for spam if desired.
-- Configuration such as max comment length, if configured via the Customization Rule admin page, will apply here.
-- To allow users to update their comment text, you can just specify `comment` in the request body. We will generate the resulting `commentHTML`.
-  - If you define both `comment` and `commentHTML` we will not automatically generate the HTML.
-  - If the user adds mentions or hashtags in their new text, it will still be processed like the `POST` API.
-- When updating `commenterEmail` on a comment, it is best to also specify `userId`. Otherwise, you must ensure the user with this email belongs to your tenant, or the request will fail.  
-- If the target comment is locked (`isLocked: true`), the request is rejected with `code: 'locked'`. Unlock the comment first, update it, then re-lock if desired.
+- Esta API pode atualizar o widget de comentários "ao vivo" se desejado (isso aumenta o `creditsCost` base de `1` para `2`).
+  - Isso pode tornar a migração de comentários entre páginas "ao vivo" (alterando `urlId`).
+  - Migrações custam `2` créditos adicionais, pois as páginas são pré-calculadas e isso é intensivo em CPU.
+- Diferente da API de criação, esta API NÃO criará automaticamente objetos de usuário em nosso sistema se o email for fornecido.
+- Comentários atualizados via esta API ainda podem ser verificados quanto a spam, se desejado.
+- Configurações como comprimento máximo do comentário, se configuradas através da página de administração de Regras de Personalização, serão aplicadas aqui.
+- Para permitir que os usuários atualizem o texto de seus comentários, você pode simplesmente especificar `comment` no corpo da requisição. Nós geraremos o `commentHTML` resultante.
+  - Se você definir tanto `comment` quanto `commentHTML`, não geraremos o HTML automaticamente.
+  - Se o usuário adicionar menções ou hashtags em seu novo texto, elas ainda serão processadas como na API `POST`.
+- Ao atualizar `commenterEmail` em um comentário, é melhor também especificar `userId`. Caso contrário, você deve garantir que o usuário com este email pertença ao seu tenant, ou a requisição falhará.
+- Se o comentário de destino estiver bloqueado (`isLocked: true`), a requisição será rejeitada com `code: 'locked'`. Desbloqueie o comentário primeiro, atualize-o e, se desejado, bloqueie novamente.
 
 
-[inline-code-attrs-start title = 'Exemplo mínimo de PATCH cURL para comentário'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo mínimo de cURL para PATCH de comentário'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request PATCH \
   --url 'https://fastcomments.com/api/v1/comments/some-comment-id?tenantId=demo&API_KEY=DEMO_API_SECRET&isLive=true' \
@@ -36,7 +36,7 @@ interface CommentPatchQueryParams {
     contextUserId?: string
 	/** Devemos verificar se o novo comentário parece spam?  **/
     doSpamCheck?: 'true' | 'false'
-	/** Se o comentário deve aparecer "ao vivo" para usuários que visualizam instâncias do widget de comentários com o mesmo urlId. NOTA: Dobra o custo de créditos de 1 para 2. **/
+	/** Se o comentário deve aparecer "ao vivo" para usuários visualizando instâncias do widget de comentários com o mesmo urlId. NOTA: Dobra o custo em créditos de 1 para 2. **/
     isLive?: 'true' | 'false'
 }
 [inline-code-end]
@@ -52,5 +52,3 @@ interface CommentPatchResponse {
     reason?: string
 }
 [inline-code-end]
-
----

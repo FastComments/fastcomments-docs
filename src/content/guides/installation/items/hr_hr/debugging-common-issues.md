@@ -81,5 +81,3 @@ U FastCommentsu ulažemo puno truda kako bismo osigurali da je slanje naših e-p
 
 Ako nam [obratite se](https://fastcomments.com/auth/my-account/help) obično možemo dati
 više informacija zašto možda ne vidite e-poruke od nas.
-
----

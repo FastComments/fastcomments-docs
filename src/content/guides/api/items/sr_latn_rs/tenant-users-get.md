@@ -31,5 +31,3 @@ interface TenantUsersResponse {
     tenantUsers?: TenantUser[]
 }
 [inline-code-end]
-
----

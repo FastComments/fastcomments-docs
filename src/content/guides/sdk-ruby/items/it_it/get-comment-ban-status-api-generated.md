@@ -32,5 +32,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Errore durante la chiamata a ModerationApi->get_comment_ban_status: #{e}"
 end
 [inline-code-end]
-
----

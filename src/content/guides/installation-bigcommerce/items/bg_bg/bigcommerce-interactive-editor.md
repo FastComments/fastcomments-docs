@@ -13,5 +13,3 @@
     }];
 </script>
 [inline-code-end]
-
----

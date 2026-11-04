@@ -10,5 +10,3 @@ Esta página rastreará varias estadísticas:
 - Comentarios marcados como spam
 - Usuarios prohibidos
 - Su estado de invitación (Aceptado o Pendiente)
-
----

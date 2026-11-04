@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Назва | Тип | Обов’язковий | Опис |
@@ -26,5 +25,3 @@ if maybeResp.isSome:
   let resp = maybeResp.get()
   discard resp
 [inline-code-end]
-
----

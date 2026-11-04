@@ -1,10 +1,8 @@
-Subscribes a URL to a comment event (REST hook subscribe). Subscribing the same URL to the same
-event and domain again returns the existing subscription. Deliveries are HMAC signed, see the
-webhooks guide; the legacy `token` header is never sent to API subscriptions.
+Bir URL'yi bir yorum olayına abone eder (REST hook subscribe). Aynı URL'yi aynı olay ve alan adına (domain) tekrar abone etmek, mevcut aboneliği döndürür. Teslimatlar HMAC ile imzalanır, bkz. webhooks rehberi; eski `token` başlığı API aboneliklerine asla gönderilmez.
 
-## Parameters
+## Parametreler
 
-| Ad | Tür | Konum | Gerekli | Açıklama |
+| Ad | Tür | Konum | Zorunlu | Açıklama |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Evet |  |
 
@@ -16,7 +14,7 @@ Döndürür: [`CreateWebhookResponse`](https://github.com/FastComments/fastcomme
 
 [inline-code-attrs-start title = 'createWebhook Örneği'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Aşağıdaki kod örnekleri hâlâ beta sürümündedir. Herhangi bir sorun için lütfen http://github.com/OpenAPITools/openapi-generator/issues/new adresinden bildirin
+// Aşağıdaki kod örnekleri hâlâ beta aşamasındadır. Herhangi bir sorun için lütfen http://github.com/OpenAPITools/openapi-generator/issues/new üzerinden bildirin
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -33,5 +31,3 @@ DefaultAPI.createWebhook(tenantId: tenantId, createWebhookParams: createWebhookP
     }
 }
 [inline-code-end]
-
----

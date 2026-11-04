@@ -8,5 +8,3 @@ Así es como debería verse - deberías poder seleccionar algo de texto para dis
 </div>
 
 ¡Felicidades por configurar FastComments con Super! Si te has encontrado con un Domain Error, o te gustaría aprender cómo personalizar el área de comentarios, continúa leyendo!
-
----

@@ -33,5 +33,3 @@ Retourneert: [`GetTicketsResponse`](https://github.com/FastComments/fastcomments
   );
 })();
 [inline-code-end]
-
----

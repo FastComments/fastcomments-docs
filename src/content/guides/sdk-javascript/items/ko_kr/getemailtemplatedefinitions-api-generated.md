@@ -20,5 +20,3 @@ async function fetchEmailTemplates() {
     console.log(`Status: ${status.code}, Templates: ${definitions.length}`);
 }
 [inline-code-end]
-
----

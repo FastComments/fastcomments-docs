@@ -55,4 +55,3 @@ This page has \{{< fastcomments-comment-count >}} comments.
 ```text
 \{{< fastcomments-user-activity-feed userId="demo:demo-user" >}}
 ```
----

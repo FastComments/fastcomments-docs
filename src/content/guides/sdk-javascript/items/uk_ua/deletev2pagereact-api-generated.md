@@ -28,5 +28,3 @@ async function runDeleteExamples() {
   const resultWithSso: CreateV1PageReact = await deleteV2PageReact(tenantId, urlId, commentId, ssoToken);
 }
 [inline-code-end]
-
----

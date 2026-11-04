@@ -1,4 +1,3 @@
----
 现在我们只需发布网站，就完成了。
 
 通过点击左上角的 `Content` 返回内容编辑器：
@@ -21,5 +20,3 @@
     <div class="title">完成！</div>
     <img class="screenshot-image" src="/images/installation-guides/ionos-step-3-done.png" alt="完成！" />
 </div>
-
----

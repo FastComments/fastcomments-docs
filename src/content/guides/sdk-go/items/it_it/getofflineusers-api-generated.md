@@ -1,4 +1,3 @@
----
 Commentatori passati sulla pagina che NON sono attualmente online. Ordinati per displayName.
 Usare questo dopo aver esaurito /users/online per visualizzare una sezione "Membri".
 Paginazione cursore su commenterName: il server scorre l'indice parziale {tenantId, urlId, commenterName}
@@ -47,5 +46,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.GetOfflineUsers`: %v\n", resp)
 }
 [inline-code-end]
-
----

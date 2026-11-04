@@ -1,4 +1,3 @@
----
 | Συντομοκώδικας | Περιγραφή |
 | --- | --- |
 | `fastcomments` | Εργαλείο σχολιασμού με απαντήσεις, ψήφους και άλλα |
@@ -37,4 +36,3 @@ This page has {% fastcommentsCommentCount { tenantId: "demo" } %} comments.
 {# Ροή δραστηριότητας χρήστη #}
 {% fastcommentsUserActivityFeed { tenantId: "demo", userId: "demo:demo-user" } %}
 ```
----

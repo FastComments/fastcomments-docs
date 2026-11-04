@@ -43,5 +43,3 @@ Active esto bajo "Show Advanced" en la página My Domains, en la sección "Email
 Cuando está habilitado, los enlaces en correos de mención, respuesta, nuevo comentario, página suscrita, comentario de perfil y digest se reescriben a tokens cortos que redirigen a la página original al hacer clic. El destino está vinculado a su inquilino: la redirección solo se envía a URLs cuyo host coincida con uno de sus dominios configurados, y los tokens expiran automáticamente después de 30 días.
 
 La experiencia al hacer clic no cambia. Los lectores siguen llegando a su página con el comentario desplazado a la vista.
-
----

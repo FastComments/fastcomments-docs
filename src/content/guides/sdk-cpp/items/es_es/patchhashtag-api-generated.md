@@ -29,5 +29,3 @@ api->patchHashTag(tenantId, tag, *body)
        }
    });
 [inline-code-end]
-
----

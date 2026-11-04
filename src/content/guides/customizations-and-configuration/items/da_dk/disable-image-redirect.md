@@ -7,5 +7,3 @@ en ny fane for at vise billedet i fuld størrelse. At sætte denne indstilling t
 
 Hvis du ikke planlægger at fange klik på billedet selv (se [onImageClicked](#callbacks)), anbefaler vi, at dette kombineres med noget styling
 for at fjerne indtrykket af, at billedet kan klikkes på.
-
----

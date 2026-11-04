@@ -8,5 +8,3 @@ Se você encontrar algum problema ou tiver perguntas sobre o Laravel Package, po
 ## Contribuindo
 
 Contribuições são bem-vindas! Por favor, visite o [repositório do GitHub](https://github.com/FastComments/fastcomments-laravel) para as diretrizes de contribuição.
-
----

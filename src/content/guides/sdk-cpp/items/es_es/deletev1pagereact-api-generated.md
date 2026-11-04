@@ -23,5 +23,3 @@ api->deleteV1PageReact(tenantId, urlId).then([](pplx::task<std::shared_ptr<Creat
     }
 });
 [inline-code-end]
-
----

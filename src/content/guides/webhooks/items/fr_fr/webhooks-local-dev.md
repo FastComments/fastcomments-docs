@@ -1,36 +1,36 @@
-For Local development, use a tool like [ngrok](https://ngrok.com/).
+Pour le développement local, utilisez un outil comme [ngrok](https://ngrok.com/).
 
-In order to simplify keeping the system secure, local development follows the same process as setting up and securing other environments. 
+Afin de simplifier le maintien de la sécurité du système, le développement local suit le même processus que la configuration et la sécurisation des autres environnements.
 
-### Step 1: Add "localhost" to domains in your account.
+### Étape 1 : Ajoutez "localhost" aux domaines de votre compte.
 
-Add "localhost" [as a domain here](https://fastcomments.com/auth/my-account/configure-domains).
+Ajoutez "localhost" [comme domaine ici](https://fastcomments.com/auth/my-account/configure-domains).
 
-[app-screenshot-start url='https://fastcomments.com/auth/my-account/configure-domains/new'; cacheBuster = 'v3'; selector = '.content .account-block'; alt='Le formulaire d\'ajout de domaine dans les paramètres du compte avec localhost saisi dans le champ des noms de domaine'; title='Add localhost'; actions=[{type: 'set-value', selector: 'input[name=domainNames]', value: 'localhost'}] app-screenshot-end]
+[app-screenshot-start url='https://fastcomments.com/auth/my-account/configure-domains/new'; cacheBuster = 'v3'; selector = '.content .account-block'; alt='Le formulaire d\'ajout de domaine dans les paramètres du compte avec localhost saisi dans le champ des noms de domaine'; title='Ajouter localhost'; actions=[{type: 'set-value', selector: 'input[name=domainNames]', value: 'localhost'}] app-screenshot-end]
 
-### Step 2: Pick an API Key
+### Étape 2 : Choisissez une clé API
 
-We're going to be adding webhook configuration for your domain, so we'll need an API key. [You can do that here.](https://fastcomments.com/auth/my-account/api-secret)
+Nous allons ajouter une configuration de webhook pour votre domaine, nous avons donc besoin d'une clé API. [Vous pouvez le faire ici.](https://fastcomments.com/auth/my-account/api-secret)
 
-[app-screenshot-start url='https://fastcomments.com/auth/my-account/api-secret/add'; cacheBuster = 'v3'; selector = '.content .account-block'; alt='Nouveau formulaire de secret API avec le domaine associé défini sur localhost et la clé nommée Testing'; title='Add Testing API Key'; actions=[{type: 'set-value', selector: 'select[name=domain]', value: 'localhost'}, {type: 'set-value', selector: 'input[name=name]', value: 'Testing'}] app-screenshot-end]
+[app-screenshot-start url='https://fastcomments.com/auth/my-account/api-secret/add'; cacheBuster = 'v3'; selector = '.content .account-block'; alt='Formulaire de nouveau secret API avec le domaine associé défini sur localhost et la clé nommée Testing'; title='Ajouter une clé API de test'; actions=[{type: 'set-value', selector: 'select[name=domain]', value: 'localhost'}, {type: 'set-value', selector: 'input[name=name]', value: 'Testing'}] app-screenshot-end]
 
-Under "Associate with domain" - select your "localhost" domain.
+Sous « Associate with domain » - sélectionnez votre domaine « localhost ».
 
-**NOTE: Alternatively, you can use one API Secret for all testing activity and staging environments. Simply add an API Secret for "All Domains", and give it a name like "test".**
+**REMARQUE : Alternativement, vous pouvez utiliser un seul secret API pour toutes les activités de test et les environnements de staging. Ajoutez simplement un secret API pour « All Domains » et donnez-lui un nom comme « test ».**
 
-Ensure you have an API Secret defined for your production domain(s). Events for all other domains will use the wildcard (testing) secret.
+Assurez-vous d'avoir un secret API défini pour votre ou vos domaines de production. Les événements pour tous les autres domaines utiliseront le secret générique (de test).
 
-### Step 3: Add Your Webhook
+### Étape 3 : Ajoutez votre webhook
 
-While running ngrok or similar tool, set the value for "localhost" [here](https://fastcomments.com/auth/my-account/manage-data/webhooks).
+Pendant que ngrok ou un outil similaire est en cours d'exécution, définissez la valeur pour « localhost » [ici](https://fastcomments.com/auth/my-account/manage-data/webhooks).
 
-[app-screenshot-start url='https://fastcomments.com/auth/my-account/manage-data/webhooks'; cacheBuster = 'v3'; selector = '.content'; alt='Administration des webhooks avec le domaine localhost sélectionné et une URL ngrok remplie dans le point de terminaison de création de commentaire'; title='Add Testing Webhook'; actions=[{type: 'wait', selector: 'button[type=submit]'}, {type: 'set-value', selector: '#domain-select', value: 'localhost'}, {type: 'set-value', selector: 'input[name="comment-created-url"]', value: 'http://xxxx-xxxx-xxxx-xxxx.ngrok.io/some-route'}]; app-screenshot-end]
+[app-screenshot-start url='https://fastcomments.com/auth/my-account/manage-data/webhooks'; cacheBuster = 'v3'; selector = '.content'; alt='Administration des webhooks avec le domaine localhost sélectionné et une URL ngrok saisie dans le point de terminaison de création de commentaire'; title='Ajouter un webhook de test'; actions=[{type: 'wait', selector: 'button[type=submit]'}, {type: 'set-value', selector: '#domain-select', value: 'localhost'}, {type: 'set-value', selector: 'input[name="comment-created-url"]', value: 'http://xxxx-xxxx-xxxx-xxxx.ngrok.io/some-route'}]; app-screenshot-end]
 
-When clicking `Send Test Payload`, we will send two test events to check that you validate the API key.
+En cliquant sur `Send Test Payload`, nous enverrons deux événements de test pour vérifier que vous validez la clé API.
 
-Once it validates, hit `Save`.
+Une fois la validation effectuée, cliquez sur `Save`.
 
-### Step 4: Add A Comment
+### Étape 4 : Ajoutez un commentaire
 
-Now you can add, edit, or delete comments and should see us call your local development machine with the events, using your testing API key. There may be up to 30 seconds delay
-for the events to reach your machine.
+Vous pouvez maintenant ajouter, modifier ou supprimer des commentaires et devriez nous voir appeler votre machine de développement local avec les événements, en utilisant votre clé API de test. Il peut y avoir un délai allant jusqu'à 30 secondes
+pour que les événements atteignent votre machine.

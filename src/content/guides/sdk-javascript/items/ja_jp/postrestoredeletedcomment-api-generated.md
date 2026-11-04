@@ -30,5 +30,3 @@ const resultAll: APIEmptyResponse = await postRestoreDeletedComment(
   sso
 );
 [inline-code-end]
-
----

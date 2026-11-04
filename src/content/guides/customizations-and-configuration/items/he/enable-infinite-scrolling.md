@@ -24,5 +24,3 @@
 [code-example-start config = {enableInfiniteScrolling: true, customCSS: '.comments { max-height: 500px;  overflow-y: auto; }'}; linesToHighlight = [6, 7]; title = 'Enabling Infinite Scrolling'; code-example-end]
 
 בדוגמה שלעיל אנו משתמשים במאפיין `customCSS`, עם זאת מומלץ להשתמש במקום זאת ב-Widget Configuration UI מסיבות ביצועים. [ראה את התיעוד של CSS מותאם אישית.](/guide-customizations-and-configuration.html#custom-css)
-
----

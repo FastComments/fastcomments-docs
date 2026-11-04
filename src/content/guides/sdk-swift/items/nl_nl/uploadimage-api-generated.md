@@ -35,5 +35,3 @@ PublicAPI.uploadImage(tenantId: tenantId, file: file, options: PublicAPI.UploadI
     }
 }
 [inline-code-end]
-
----

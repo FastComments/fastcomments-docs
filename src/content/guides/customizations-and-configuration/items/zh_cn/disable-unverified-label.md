@@ -8,5 +8,3 @@
 此外，您可以在自定义 UI 中使用此功能，而无需编写代码：
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-unverified-comment-label']; selector = '.disable-unverified-comment-label'; alt='已勾选“禁用未验证评论标签”复选框的部件自定义页面'; title='禁用未验证标签' app-screenshot-end]
-
----

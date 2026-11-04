@@ -13,5 +13,3 @@ Ora possiamo dare un'occhiata al nostro sito! Se vai su un post del blog, dovres
     <div class="title">Modifiche pubblicate</div>
     <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-4-live.png" alt="Modifiche pubblicate" />
 </div>
-
----

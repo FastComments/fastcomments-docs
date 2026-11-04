@@ -1,4 +1,3 @@
----
 ## Parameters
 
 | Naam | Type | Locatie | Vereist | Beschrijving |
@@ -54,5 +53,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

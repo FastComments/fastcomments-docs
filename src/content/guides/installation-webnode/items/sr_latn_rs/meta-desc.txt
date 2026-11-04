@@ -1,3 +1,1 @@
----
 Dodajte live komentare na Webnode pomoću HTML bloka. Napomena: blok je od juna 2023. godine plaćena funkcija, pa noviji projekti zahtevaju premium paket.
----

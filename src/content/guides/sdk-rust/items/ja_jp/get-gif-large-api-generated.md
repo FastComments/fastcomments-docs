@@ -20,5 +20,3 @@ let params: GetGifLargeParams = GetGifLargeParams {
 
 let response: GifGetLargeResponse = get_gif_large(&configuration, params).await?;
 [inline-code-end]
-
----

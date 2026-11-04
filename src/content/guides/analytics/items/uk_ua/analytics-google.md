@@ -35,5 +35,3 @@
 
 - Мітка: `Comment Posted`, Категорія: `Engagement`, Ідентифікатор: `post_comment`
 - Мітка: `User Voted on a Comment`, Категорія: `Engagement`, Ідентифікатор: `vote_comment`
-
----

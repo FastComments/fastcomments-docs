@@ -25,5 +25,3 @@ api->getPageByURLId(tenantId, urlId)
         }
     });
 [inline-code-end]
-
----

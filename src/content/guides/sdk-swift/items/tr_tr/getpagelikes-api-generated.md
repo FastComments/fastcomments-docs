@@ -34,5 +34,3 @@ DefaultAPI.getPageLikes(tenantId: tenantId, urlId: urlId, includeUserInfo: inclu
     }
 }
 [inline-code-end]
-
----

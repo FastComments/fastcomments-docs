@@ -8,5 +8,3 @@ Se riscontri problemi o hai domande sullo SDK Swift, per favore:
 ## Contribuire
 
 I contributi sono benvenuti! Visita il [repository GitHub](https://github.com/FastComments/fastcomments-swift) per le linee guida sui contributi.
-
----

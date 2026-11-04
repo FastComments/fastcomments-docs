@@ -1,4 +1,3 @@
----
 이미지를 업로드하고 크기를 조정하기
 
 ## 매개변수
@@ -27,5 +26,3 @@ api->uploadImage(U("my-tenant-123"), file, options).then([](pplx::task<std::shar
     auto resp = t.get();
 });
 [inline-code-end]
-
----

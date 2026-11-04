@@ -8,5 +8,3 @@ Als u problemen ondervindt of vragen heeft over de SolidJS Library, gelieve:
 ## Bijdragen
 
 Bijdragen zijn welkom! Bezoek de [GitHub-repository](https://github.com/FastComments/fastcomments-solidjs) voor richtlijnen voor bijdragen.
-
----

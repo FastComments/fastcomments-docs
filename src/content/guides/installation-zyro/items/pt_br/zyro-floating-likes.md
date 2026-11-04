@@ -30,5 +30,3 @@ Você pode vê-lo em ação no canto inferior direito desta página!
 4. Selecione Integrações.
 5. Adicione o novo código ao *final* do campo `Custom code`, e publique seu site.
 6. Você não verá o widget no modo de visualização, mas ele aparecerá na versão publicada do site.
-
----

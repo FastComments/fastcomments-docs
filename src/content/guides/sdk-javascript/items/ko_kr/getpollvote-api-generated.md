@@ -1,4 +1,3 @@
----
 ## 매개변수
 
 | 이름 | 유형 | 필수 | 설명 |
@@ -22,5 +21,3 @@ async function fetchPollVote(): Promise<void> {
   const vote: PublicPollVote | undefined = result.vote;
 }
 [inline-code-end]
-
----

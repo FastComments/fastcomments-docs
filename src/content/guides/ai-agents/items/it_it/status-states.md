@@ -1,37 +1,37 @@
-Un agente ha uno dei tre stati:
+Un agente ha uno di tre stati:
 
 ### Disabled
 
-L'agente è spento. Nessun trigger viene elaborato e l'agente non appare nel dispatch path. La sua run history, le analytics e la memoria rimangono - se lo riattivi in seguito, i dati storici sono ancora presenti.
+L'agente è disattivato. Nessun trigger viene elaborato e l'agente non appare nel percorso di dispatch. La sua cronologia di esecuzione, le analisi e la memoria rimangono - se lo riattivi in seguito, i dati storici sono ancora presenti.
 
-Use `Disabled` when:
-- Vuoi rimuovere un agente dalla rotazione senza perderlo.
-- Un agente si comporta in modo anomalo e hai bisogno di fermarlo immediatamente mentre indaghi.
-- Stai ruotando stagionalmente gli agenti dentro e fuori (es. un greeter attivo solo per le festività).
+Usa `Disabled` quando:
+- Vuoi togliere un agente dalla rotazione senza perderlo.
+- Un agente sta funzionando male e devi fermarlo immediatamente mentre indaghi.
+- Stai ruotando gli agenti in modo stagionale (ad es. un salutatore solo per le festività).
 
-### Dry Run - default for new agents
+### Dry Run - predefinito per i nuovi agenti
 
-The agent runs end-to-end - it processes triggers, calls the LLM, picks tool calls, computes justifications and confidence - but **no real action is taken**. Each run is recorded with the **Dry Run** badge in [Run History](#run-history).
+L'agente viene eseguito end-to-end - elabora i trigger, chiama l'LLM, seleziona le chiamate agli strumenti, calcola giustificazioni e confidenza - ma **nessuna azione reale viene eseguita**. Ogni esecuzione viene registrata con il badge **Dry Run** in [Run History](#run-history).
 
-Use `Dry Run` when:
-- Un agente nuovo è appena fuori dalla scatola. Every starter template lands in dry-run.
-- Hai modificato il prompt o il set di trigger e vuoi vedere come si comporta la modifica prima di impegnarla.
-- Stai eseguendo una [test run / replay](#test-runs-replays) (replays force dry-run regardless of agent status).
+Usa `Dry Run` quando:
+- Un nuovo agente è appena stato creato. Ogni template di partenza si trova in dry-run.
+- Hai modificato il prompt o cambiato l'insieme di trigger e vuoi vedere come si comporta la modifica prima di confermarla.
+- Stai eseguendo un [test run / replay](#test-runs-replays) (i replay forzano il dry-run indipendentemente dallo stato dell'agente).
 
-The platform charges tokens for dry-run runs - the LLM call still happens, only the side-effects are skipped. Budget caps apply to dry-run too. See [Budgets Overview](#budgets-overview).
+La piattaforma addebita token per le esecuzioni in dry-run - la chiamata all'LLM avviene comunque, vengono solo saltati gli effetti collaterali. I limiti di budget si applicano anche al dry-run. Vedi [Budgets Overview](#budgets-overview).
 
 ### Enabled
 
-L'agente compie azioni reali. Tool calls execute - or get queued for [approval](#approval-workflow) if the action is gated.
+L'agente esegue azioni reali. Le chiamate agli strumenti vengono eseguite - o messe in coda per [approvazione](#approval-workflow) se l'azione è soggetta a controllo.
 
-Use `Enabled` after dry-run output looks correct.
+Usa `Enabled` dopo che l'output del dry-run appare corretto.
 
-### Switching status
+### Cambio di stato
 
-Puoi flip tra qualsiasi coppia di stati nel modulo di modifica. Switching from Dry Run to Enabled does not retroactively re-execute the dry-run actions - those stay as dry-run history. New triggers from that moment forward run live.
+Puoi passare da uno stato all'altro nel modulo di modifica. Il passaggio da Dry Run a Enabled non riesegue retroattivamente le azioni del dry-run - quelle restano come cronologia del dry-run. I nuovi trigger da quel momento in poi vengono eseguiti in modalità live.
 
-Switching from Enabled to Disabled mid-run does **not** abort an in-flight run. The currently-executing trigger finishes (with whatever it has already started); the next trigger is dropped because the agent is now Disabled.
+Il passaggio da Enabled a Disabled durante un'esecuzione **non** interrompe un'esecuzione in corso. Il trigger attualmente in esecuzione viene completato (con tutto ciò che ha già avviato); il trigger successivo viene scartato perché l'agente ora è Disabled.
 
-### Status during billing problems
+### Stato durante problemi di fatturazione
 
-If your tenant's billing becomes invalid, all agents are effectively paused regardless of saved status - triggers are dropped with `BILLING_INVALID` until billing is restored. The saved status field is not changed; the dispatcher just refuses to run. See [Plans and Eligibility](#plans-and-eligibility).
+Se la fatturazione del tuo tenant diventa non valida, tutti gli agenti vengono di fatto messi in pausa indipendentemente dallo stato salvato - i trigger vengono scartati con `BILLING_INVALID` finché la fatturazione non viene ripristinata. Il campo dello stato salvato non viene modificato; il dispatcher si limita a rifiutare l'esecuzione. Vedi [Plans and Eligibility](#plans-and-eligibility).

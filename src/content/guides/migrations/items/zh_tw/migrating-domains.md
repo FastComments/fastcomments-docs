@@ -20,5 +20,3 @@ FastComments 提供了一種自動化方式，讓您可以在不同網域之間�
 ### 透過 API 遷移網域
 
 也可以使用 [`POST /api/v1/pages/migrations`](/guide-api.html#pages-migrations-post) 並將 `type` 設為 `domain` 來遷移網域。可從 [`GET /api/v1/batch-jobs/:id`](/guide-api.html#batch-job-get-by-id) 取得進度，且遷移可在 90 天內撤銷。
-
----

@@ -1,8 +1,8 @@
-Custom react counts for a page, optionally with the users who reacted.
+Пользовательские счётчики реакций для страницы, опционально с пользователями, которые отреагировали.
 
 ## Параметры
 
-| Имя | Тип | Расположение | Обязательно | Описание |
+| Имя | Тип | Расположение | Обязательный | Описание |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Да |  |
 | urlId | string | query | Да |  |
@@ -16,7 +16,7 @@ Custom react counts for a page, optionally with the users who reacted.
 
 [inline-code-attrs-start title = 'Пример getPageReacts'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Следующие образцы кода всё ещё находятся в бета-версии. При возникновении проблем, пожалуйста, сообщайте по адресу http://github.com/OpenAPITools/openapi-generator/issues/new
+// Приведённые ниже примеры кода всё ещё находятся в стадии беты. О любых проблемах сообщайте по адресу http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 

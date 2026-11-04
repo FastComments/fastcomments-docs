@@ -1,6 +1,6 @@
-All API methods in this SDK return tuples of `(Option[ResponseType], Response)`. The first element contains the parsed response if successful, and the second element is the raw HTTP response.
+Sve API metode u ovom SDK-u vraćaju tuple `(Option[ResponseType], Response)`. Prvi element sadrži parsirani odgovor ako je uspješno, a drugi element je sirovi HTTP odgovor.
 
-Required parameters and the request body are passed positionally. The remaining optional parameters are collected into a single `Api<Operation>Options` object, which is the last argument. Operations with no optional parameters take no options object.
+Obavezni parametri i tijelo zahtjeva prosljeđuju se pozicijski. Preostali neobavezni parametri prikupljaju se u jedan objekt `Api<Operation>Options`, koji je posljednji argument. Operacije bez neobaveznih parametara ne primaju objekt opcija.
 
 ### Primjer: Dohvaćanje komentara
 

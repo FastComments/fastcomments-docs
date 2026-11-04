@@ -1,4 +1,3 @@
----
 Spectateurs actuellement en ligne d'une page : personnes dont la session websocket est abonnée à la page en ce moment.
 Renvoie anonCount + totalCount (abonnés de la salle dans son ensemble, y compris les spectateurs anonymes que nous n'énumérons pas).
 
@@ -38,5 +37,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_online_users: #{e}"
 end
 [inline-code-end]
-
----

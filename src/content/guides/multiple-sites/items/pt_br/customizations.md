@@ -1,4 +1,3 @@
----
 O widget de comentários pode ser <a href="/guide-customizations-and-configuration.html#custom-css" target="_blank">personalizado</a> de forma diferente para cada site.
 
 Na página de personalização do widget, você encontrará um menu suspenso rotulado como "domain". Selecionar `All` neste campo aplicará a regra a todos
@@ -10,5 +9,3 @@ Isso permite que o FastComments tenha aparência ou funcionamento completamente 
 
 Um site pode usar texto em negrito e permitir comentários anônimos, e outro site pode
 ter um estilo diferente e exigir que o usuário deixe seu e‑mail ao comentar.
-
----

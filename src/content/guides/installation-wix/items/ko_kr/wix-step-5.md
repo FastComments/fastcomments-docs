@@ -69,5 +69,3 @@ $w.onReady(function () {
     <div class="title">네비게이션 코드 추가</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-7-paste-code.png" alt="네비게이션 코드 추가" />
 </div>
-
----

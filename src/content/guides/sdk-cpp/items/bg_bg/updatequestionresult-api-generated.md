@@ -27,5 +27,3 @@ api->updateQuestionResult(tenantId, questionId, body)
         }
     });
 [inline-code-end]
-
----

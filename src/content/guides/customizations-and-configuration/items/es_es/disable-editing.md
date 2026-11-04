@@ -1,4 +1,3 @@
----
 Por defecto, FastComments permitirá a los usuarios editar sus comentarios.
 
 Sin embargo, es posible evitarlo.
@@ -9,5 +8,3 @@ En la página de personalización del widget, vea la opción "Desactivar edició
 
 - Esto solo afecta a los Comentadores regulares y no a los moderadores o administradores, que aún podrán editar.
 - Esto también afectará a las integraciones de API cuando se pase `contextUserId`. 
-
----

@@ -1,4 +1,3 @@
----
 Мы можем настроить FastComments так, чтобы уведомлять Google Аналитику 4, когда кто-то взаимодействует с виджетом комментариев.
 
 Мы можем отслеживать, когда пользователи:
@@ -36,5 +35,3 @@
 
 - Метка: `Comment Posted`, Категория: `Engagement`, ID: `post_comment`
 - Метка: `User Voted on a Comment`, Категория: `Engagement`, ID: `vote_comment`
-
----

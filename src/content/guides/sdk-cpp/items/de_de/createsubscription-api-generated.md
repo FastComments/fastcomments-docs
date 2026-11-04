@@ -26,5 +26,3 @@ api->createSubscription(tenantId, subscriptionData)
         }
     });
 [inline-code-end]
-
----

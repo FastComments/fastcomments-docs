@@ -39,5 +39,3 @@ const pendingEvents: GetPendingWebhookEventsResponse = await getPendingWebhookEv
   skip
 );
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 Varsayılan olarak, FastComments sayfa boyutu `30`'dur. Bu, dizilerdeki yanıtları da içerir.
 
 Sayfa boyutu, `10` ile `200` arasında değişen boyutlarda, [Widget Configuration UI](https://fastcomments.com/auth/my-account/customize-widget) içinde özelleştirilebilir.
@@ -14,4 +13,3 @@ Aşağıda örnek yapılandırma gösterilmiştir:
 Sayfa boyutları, farklı özelleştirme kuralları oluşturarak global olarak, alan adına göre veya sayfaya göre özelleştirilebilir.
 
 Bu, platformumuz üzerinden yorumları göstermek için kullandığınız tüm istemcileri, entegrasyonları ve çerçeveleri etkileyecektir.
----

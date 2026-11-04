@@ -1,24 +1,21 @@
----
-You may get an authorization error, like the following:
+ייתכן שתקבלו שגיאת הרשאה, כמו זו שלהלן:
 
 <div class="screenshot white-bg">
-    <div class="title">תצורת הדומיין חסרה</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-webflow-step-5.png" alt="תצורת הדומיין חסרה" />
+    <div class="title">הגדרת דומיין חסרה</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-webflow-step-5.png" alt="הגדרת דומיין חסרה" />
 </div>
 
-This is because FastComments doesn't know it's supposed to allow your account to be used on this domain.
+הסיבה לכך היא ש-FastComments אינו יודע שהוא אמור לאפשר לחשבון שלכם לשמש בדומיין זה.
 
-In this case, the fix is simple. You just have to add your site to your FastComments.com account.
+במקרה זה, הפתרון פשוט. כל שעליכם לעשות הוא להוסיף את האתר שלכם לחשבון FastComments.com שלכם.
 
-[Go here to add your site to your account.](https://fastcomments.com/auth/my-account/configure-domains)
+[עברו לכאן כדי להוסיף את האתר שלכם לחשבון.](https://fastcomments.com/auth/my-account/configure-domains)
 
-Add the domain, like the following:
+הוסיפו את הדומיין, כמו בדוגמה הבאה:
 
 <div class="screenshot white-bg">
-    <div class="title">הוסף את הדומיין שלך</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-webflow-step-6.png" alt="הוסף את הדומיין שלך" />
+    <div class="title">הוסיפו את הדומיין שלכם</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-webflow-step-6.png" alt="הוסיפו את הדומיין שלכם" />
 </div>
 
-Now you should have fast, live, commenting added to your Webnode site!
-
----
+כעת אמורה להיות לכם מערכת תגובות מהירה וחיה באתר ה-Webnode שלכם!

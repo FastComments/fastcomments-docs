@@ -77,5 +77,3 @@ window.fcConfigs = [{
 在 FastComments，我們投入大量工作以確保電子郵件的傳遞盡可能可靠。然而，有些電子郵件提供商確實很難穩定地投遞。請檢查您的垃圾郵件資料夾中是否有來自 fastcomments.com 的郵件。
 
 如果您[聯絡我們](https://fastcomments.com/auth/my-account/help)，我們通常可以提供更多關於您可能未看到我們郵件的原因的資訊。
-
----

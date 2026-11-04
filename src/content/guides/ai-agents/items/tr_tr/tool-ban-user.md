@@ -1,4 +1,3 @@
----
 Ban aracı, bir ajanın çağırabileceği en ciddi işlemdir. Topluluğunuzdan bir kullanıcıyı belirli bir süreyle yasaklar ve birkaç seçenek sunar.
 
 ### Ne yapar
@@ -47,5 +46,3 @@ AB bölgesinde, bu araç Dijital Hizmetler Yasası'nın 17. maddesi gereği **on
 
 - Platform genelinde yasaklamaların nasıl çalıştığı hakkında moderasyon kılavuzundaki [Kullanıcıları Yasaklama](/guide-moderation.html#banning-users) ve [Joker Karakterlerle Kullanıcıları Yasaklama](/guide-moderation.html#banning-users-wildcards) bölümlerine bakın.
 - [Kullanıcıyı Uyarmak](#tool-warn-user) - daha hafif bir yükseltme adımı.
-
----

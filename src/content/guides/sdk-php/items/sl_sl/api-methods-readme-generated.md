@@ -1,4 +1,3 @@
----
 Vsi URI so relativni na *https://fastcomments.com*
 
 Razred | Metoda | HTTP zahteva | Opis
@@ -212,4 +211,3 @@ Razred | Metoda | HTTP zahteva | Opis
 *PublicApi* | **updateUserNotificationStatus** | **POST** /user-notifications/{notificationId}/mark/{newStatus} | 
 *PublicApi* | **uploadImage** | **POST** /upload-image/{tenantId} | 
 *PublicApi* | **voteComment** | **POST** /comments/{tenantId}/{commentId}/vote |
----

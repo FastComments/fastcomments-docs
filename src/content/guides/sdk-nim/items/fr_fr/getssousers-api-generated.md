@@ -1,4 +1,3 @@
----
 ## Paramètres
 
 | Nom | Type | Obligatoire | Description |
@@ -22,5 +21,3 @@ else:
   echo "No SSO users found"
 echo httpResponse.statusCode
 [inline-code-end]
-
----

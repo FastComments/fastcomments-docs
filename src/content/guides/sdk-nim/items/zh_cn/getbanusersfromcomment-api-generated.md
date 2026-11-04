@@ -1,4 +1,3 @@
----
 ## 参数
 
 | 名称 | 类型 | 必需 | 描述 |
@@ -20,5 +19,3 @@ if response.isSome:
   let banInfo = response.get()
   echo banInfo
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 Postavite svoj tenant id jednom u `_config.yml`:
 
 ```yaml
@@ -14,4 +13,3 @@ Zatim dodajte tag gdje god želite widget, u layout, objavu ili stranicu:
 
 To je to. Zamijenite `demo` svojim FastComments tenant id-om (pronađite ga pod
 [Postavke > API/SSO](https://fastcomments.com/auth/my-account/api)).
----

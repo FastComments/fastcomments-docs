@@ -15,5 +15,3 @@ Sélectionnons maintenant l'onglet `Body`. **C'est important !**. L'installation
 </div>
 
 Vous êtes maintenant prêt pour l'étape 2.
-
----

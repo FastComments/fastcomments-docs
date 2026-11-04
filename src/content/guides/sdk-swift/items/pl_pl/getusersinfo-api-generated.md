@@ -1,4 +1,3 @@
----
 Zbiorcze informacje o użytkownikach dla najemcy. Dla podanych userIds zwracane są informacje wyświetlane z User / SSOUser.
 Używane przez widget komentarzy do wzbogacenia informacji o użytkownikach, którzy właśnie pojawili się poprzez zdarzenie obecności.
 Brak kontekstu strony: prywatność jest egzekwowana jednolicie (profile prywatne są maskowane).
@@ -35,5 +34,3 @@ PublicAPI.getUsersInfo(tenantId: tenantId, ids: ids) { (response, error) in
     }
 }
 [inline-code-end]
-
----

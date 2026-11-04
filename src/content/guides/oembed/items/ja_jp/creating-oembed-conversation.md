@@ -1,4 +1,3 @@
----
 FastCommentsでは、会話を埋め込む前にまず作成する必要があります。
 
 そのためには、単に [fastcomments.com/create](https://fastcomments.com/create) にアクセスしてください。
@@ -10,5 +9,3 @@ FastCommentsでは、会話を埋め込む前にまず作成する必要があ�
 このリンクはアクセスして独自のチャットとして使用できます。または、oEmbed や https://embed.ly をサポートするアプリケーションに直接提供して、会話を挿入することもできます。
 
 埋め込み会話は、カスタマイズ UI を使用して他の FastComments インストールと同様にカスタマイズできます。コメントウィジェットのカスタマイズについては [こちら](/guide-customizations-and-configuration.html) をご覧ください。
-
----

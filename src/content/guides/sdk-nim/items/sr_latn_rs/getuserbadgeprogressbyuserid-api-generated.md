@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
@@ -19,5 +18,3 @@ if badgeProgressOpt.isSome:
   let progress = badgeProgressOpt.get()
   echo progress
 [inline-code-end]
-
----

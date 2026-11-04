@@ -1,4 +1,3 @@
----
 Edytuj ankietę w miejscu, zachowując jej wyniki: zmień pytanie, zmień etykietę opcji, zamknij lub otwórz ją ponownie,
 lub zmień, kto może zobaczyć wyborców. Opcje są adresowane po identyfikatorze – aby dodać, usunąć lub zmienić ich kolejność, użyj PUT z pełną listą.
 
@@ -34,5 +33,3 @@ Zwraca: [`SavePollResponse`](https://github.com/FastComments/fastcomments-sdk-js
   console.log(response);
 })();
 [inline-code-end]
-
----

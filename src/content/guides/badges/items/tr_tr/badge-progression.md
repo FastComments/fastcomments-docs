@@ -1,23 +1,21 @@
-FastComments, rozetler aracılığıyla ilerlemeyi çeşitli şekillerde gösterir.
+FastComments, ilerlemeyi rozetler aracılığıyla birkaç şekilde gösterir.
 
-For the following examples we'll have the badges setup:
+Aşağıdaki örnekler için rozetlerin şu şekilde kurulduğunu varsayacağız:
 
-1. New User (Yorum Sayısı Rozeti, eşik = 1)
-2. Newbie (Yorum Sayısı Rozeti, eşik = 10)
-3. Top Member (Yorum Sayısı Rozeti, eşik = 100)
+1. Yeni Kullanıcı (eşik = 1 olan Yorum Sayısı Rozeti)
+2. Acemi (eşik = 10 olan Yorum Sayısı Rozeti)
+3. Kıdemli Üye (eşik = 100 olan Yorum Sayısı Rozeti)
 
-### Rozet Yığılması
+### Rozet Yığınlama
 
-Yığma, varsayılan rozet davranışıdır. Bir kullanıcı yeni bir rozet kazandığında, bu rozet profilinde basitçe eklenir ve tüm yorumlarında gösterilir. En fazla 15 rozet görüntülenir.
+Yığınlama varsayılan rozet davranışıdır. Bir kullanıcı yeni bir rozet kazandığında, rozet basitçe profiline eklenir ve tüm yorumlarında görüntülenir. En fazla 15 rozet görüntülenir.
 
-### Rozetlerin Değiştirilmesi
+### Rozetleri Değiştirme
 
-Rozetler, diğer rozetlerin yerini alacak şekilde yapılandırılabilir. Bir rozeti düzenlerken, yeni rozetin hangi rozeti değiştireceğini seçebilirsiniz.
+Rozetler, diğer rozetlerin yerine geçecek şekilde yapılandırılabilir. Bir rozeti düzenlerken, yeni rozetin hangi rozetin yerine geçeceğini seçebilirsiniz.
 
-We can configure `Newbie` to replace `New User` and `Top Member` to replace `Newbie`. Bu şekilde önceki rozet otomatik olarak gizlenir ve yeni parlak rozet gösterilir. Tüm sürümler yine de kullanıcının hesabında kalır. İsterlerse her zaman `Top Member` rozetini gizleyip `Newbie` rozetini gösterebilirler.
+`Acemi` rozetinin `Yeni Kullanıcı` rozetinin, `Kıdemli Üye` rozetinin ise `Acemi` rozetinin yerine geçecek şekilde yapılandırabiliriz. Bu sayede, önceki rozet otomatik olarak gizlenir ve yeni parlak rozet gösterilir. Tüm sürümler kullanıcının hesabında kalır. İsterse `Kıdemli Üye` rozetini her zaman gizleyip `Acemi` rozetini gösterebilir.
 
-### İlerlemenin Görüntülenmesi
+### İlerlemeyi Kontrol Etme
 
-Bir kullanıcı, bir rozeti kazanma ilerlemesini profilinde görebilir. Profilinin üst kısmında, bir rozeti kazanma konusunda ne kadar ileride olduklarını gösterir (örneğin, kaç yorum bıraktıkları ve kaç tane daha bırakmaları gerektiği veya ne kadar süredir üye oldukları gibi).
-
----
+Bir kullanıcı, bir rozet kazanma ilerlemesini profilinde görebilir. Profilinin en üstünde, bir rozet kazanmak için ne kadar ilerlediği gösterilir (örneğin, kaç yorum bıraktığı ve kaç yorum daha bırakması gerektiği veya ne kadar süredir üye olduğu vb.).

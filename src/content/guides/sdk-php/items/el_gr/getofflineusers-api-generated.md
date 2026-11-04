@@ -1,20 +1,20 @@
-Past commenters on the page who are NOT currently online. Sorted by displayName.  
-Use this after exhausting /users/online to render a "Members" section.  
-Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName}  
-index from afterName forward via $gt, no $skip cost.
+Προηγούμενοι σχολιαστές της σελίδας που ΔΕΝ είναι αυτή τη στιγμή συνδεδεμένοι. Ταξινομημένοι κατά displayName.
+Χρησιμοποιήστε το αυτό αφού εξαντλήσετε το /users/online για να εμφανίσετε μια ενότητα "Members".
+Σελιδοποίηση με cursor στο commenterName: ο διακομιστής διασχίζει το μερικό ευρετήριο {tenantId, urlId, commenterName}
+ξεκινώντας από το afterName προς τα εμπρός μέσω $gt, χωρίς κόστος $skip.
 
 ## Παράμετροι
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
-|------|------|----------|------------|------------|
+|------|------|----------|----------|-------------|
 | tenantId | string | path | Ναι |  |
-| urlId | string | query | Ναι | Αναγνωριστικό URL σελίδας (καθαρισμένο από τον διακομιστή). |
-| afterName | string | query | Όχι | Δρομέας: περάστε το nextAfterName από την προηγούμενη απόκριση. |
-| afterUserId | string | query | Όχι | Δρομέας διαλύτης ισοτιμίας: περάστε το nextAfterUserId από την προηγούμενη απόκριση. Απαιτείται όταν το afterName είναι ορισμένο ώστε τα ισοδύναμα ονόματα να μην παραλείπουν εγγραφές. |
+| urlId | string | query | Ναι | Αναγνωριστικό URL της σελίδας (καθαρίζεται από τον διακομιστή). |
+| afterName | string | query | Όχι | Cursor: περάστε το nextAfterName από την προηγούμενη απάντηση. |
+| afterUserId | string | query | Όχι | Cursor ισοβαθμίας: περάστε το nextAfterUserId από την προηγούμενη απάντηση. Απαιτείται όταν ορίζεται το afterName ώστε οι ισοβαθμίες στο όνομα να μην απορρίπτουν εγγραφές. |
 
-## Απόκριση
+## Απάντηση
 
-Returns: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PageUsersOfflineResponse.php)
+Επιστρέφει: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PageUsersOfflineResponse.php)
 
 ## Παράδειγμα
 
@@ -26,16 +26,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Εάν θέλετε να χρησιμοποιήσετε προσαρμοσμένο http client, περάστε το client σας που υλοποιεί `GuzzleHttp\ClientInterface`.
-    // Αυτό είναι προαιρετικό, θα χρησιμοποιηθεί το `GuzzleHttp\Client` ως προεπιλογή.
+    // Αν θέλετε να χρησιμοποιήσετε προσαρμοσμένο http client, περάστε τον δικό σας client που υλοποιεί το `GuzzleHttp\ClientInterface`.
+    // Αυτό είναι προαιρετικό, το `GuzzleHttp\Client` θα χρησιμοποιηθεί ως προεπιλογή.
     new GuzzleHttp\Client()
 );
 
 $tenant_id = 'tenant_id_example'; // string
-$url_id = 'url_id_example'; // string | Αναγνωριστικό URL σελίδας (καθαρισμένο από τον διακομιστή).
+$url_id = 'url_id_example'; // string | Αναγνωριστικό URL της σελίδας (καθαρίζεται από τον διακομιστή).
 $options = [
-    'after_name' => 'after_name_example', // string | Δρομέας: περάστε το nextAfterName από την προηγούμενη απόκριση.
-    'after_user_id' => 'after_user_id_example', // string | Δρομέας διαλύτης ισοτιμίας: περάστε το nextAfterUserId από την προηγούμενη απόκριση. Απαιτείται όταν το afterName είναι ορισμένο ώστε τα ισοδύναμα ονόματα να μην παραλείπουν εγγραφές.
+    'after_name' => 'after_name_example', // string | Cursor: περάστε το nextAfterName από την προηγούμενη απάντηση.
+    'after_user_id' => 'after_user_id_example', // string | Cursor ισοβαθμίας: περάστε το nextAfterUserId από την προηγούμενη απάντηση. Απαιτείται όταν ορίζεται το afterName ώστε οι ισοβαθμίες στο όνομα να μην απορρίπτουν εγγραφές.
 ];
 
 

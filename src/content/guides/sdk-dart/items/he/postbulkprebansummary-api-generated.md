@@ -33,5 +33,3 @@ try {
     print('Exception when calling ModerationApi->postBulkPreBanSummary: $e\n');
 }
 [inline-code-end]
-
----

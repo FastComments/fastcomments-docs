@@ -1,3 +1,1 @@
----
 Adicione comentários ao vivo a um site Framer com um bloco de incorporação e o snippet específico do Framer, além das configurações de altura que evitam que o widget seja cortado.
----

@@ -1,4 +1,3 @@
----
 ## Параметры
 
 | Имя | Тип | Обязательно | Описание |
@@ -24,5 +23,3 @@ let (apiResp, httpResp) = client.updateQuestionConfig(
 if apiResp.isSome:
   let resp = apiResp.get()
 [inline-code-end]
-
----

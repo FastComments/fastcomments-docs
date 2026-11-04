@@ -7,5 +7,3 @@
 Αυτό μπορεί να προσαρμοστεί χωρίς κώδικα, στη σελίδα προσαρμογής widget:
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.input-after-comments'; alt='Επιλογή στη σελίδα προσαρμογής widget που τοποθετεί την περιοχή εισαγωγής σχολίων μετά τη σειρά σχολίων αντί για πριν'; title='Μετακίνηση του πλαισίου απάντησης στο κάτω μέρος' app-screenshot-end]
-
----

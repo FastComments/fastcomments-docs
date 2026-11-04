@@ -26,5 +26,3 @@ Na dnu te strani vidite eno veliko vprašanje za oceno z zvezdami, in nato nekaj
 k urejanju svojega vrhnjega vprašanja in izberete, katera so podvprašanja.
 
 Podvprašanja je mogoče konfigurirati tako, da se prikažejo skupaj z vsako oceno, prikažejo v povzetkovnih gradnikih, ali pa so izpostavljena zgolj interno prek konfiguracije gradnika (prikazano spodaj).
-
----

@@ -1,4 +1,3 @@
----
 ## Parametre
 
 | Navn | Type | Placering | Påkrævet | Beskrivelse |
@@ -30,5 +29,3 @@ try {
     print('Exception when calling DefaultApi->createSubscription: $e\n');
 }
 [inline-code-end]
-
----

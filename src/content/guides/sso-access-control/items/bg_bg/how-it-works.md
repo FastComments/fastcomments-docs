@@ -1,18 +1,16 @@
-FastComments Access Control работи чрез присвояване на `Pages` и `Users` към желаните групи.
+FastComments Access Control работи чрез разпределяне на `Pages` и `Users` в желаните групи.
 
-A group is simply a string identifier, like `GREEN` or `abc-123`.
+Група е просто низов идентификатор, като `GREEN` или `abc-123`.
 
-`Users` and `Pages` are not just limited to one group. They are limited to `100` and `1000` groups, respectively. 
+`Users` и `Pages` не са ограничени само до една група. Те са ограничени съответно до `100` и `1000` групи.
 
 #### Достъп до неоторизирани страници
 
-If a user tries to access a page they don't have access to, they will see an error message, like below:
+Ако потребител се опита да получи достъп до страница, до която няма права, той ще види съобщение за грешка, както е показано по-долу:
 
 <div class="screenshot white-bg">
-    <div class="title">Authorization Failure Example</div>
-    <img class="screenshot-image" src="/images/sso-unauthorized-message.png" alt="Authorization Failure Example" />
+    <div class="title">Пример за неуспешна оторизация</div>
+    <img class="screenshot-image" src="/images/sso-unauthorized-message.png" alt="Пример за неуспешна оторизация" />
 </div>
 
 Текстът на съобщението може да бъде персонализиран.
-
----

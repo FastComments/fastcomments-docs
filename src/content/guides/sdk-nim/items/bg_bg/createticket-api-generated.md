@@ -21,5 +21,3 @@ let (responseOpt, httpResponse) = client.createTicket(tenantId = tenantId, userI
 if responseOpt.isSome:
   let ticketResponse = responseOpt.get()
 [inline-code-end]
-
----

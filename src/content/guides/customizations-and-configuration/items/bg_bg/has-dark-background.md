@@ -11,5 +11,3 @@
 Въпреки това, механизмът за откриване, който разчита на определяне на „луминанс“, може да не активира тъмния режим когато искате. За да го активирате насилствено, задайте флага *hasDarkBackground* на true както следва:
 
 [code-example-start config = {hasDarkBackground: true}; linesToHighlight = [6]; title = 'Force Dark Background Mode'; additionalDemoCode = '<style>body { background: black; }</style>'; code-example-end]
-
----

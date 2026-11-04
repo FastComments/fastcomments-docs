@@ -1,3 +1,1 @@
----
 Formate comentários com negrito, links, código e mídia. O que o analisador de comentários aceita e a sanitização que impede que a marcação se torne um ataque.
----

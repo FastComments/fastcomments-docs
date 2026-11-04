@@ -36,5 +36,3 @@ V zgornjem desnem kotu izberite `Advanced`:
     <div class="title">Prenesite temo</div>
     <img class="screenshot-image" src="/images/installation-guides/ghost-step-1-5-download.png" alt="Prenesite temo" />
 </div>
-
----

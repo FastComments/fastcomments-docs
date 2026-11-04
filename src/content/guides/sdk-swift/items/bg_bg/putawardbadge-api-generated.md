@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Name | Type | Location | Required | Description |
@@ -39,5 +38,3 @@ ModerationAPI.putAwardBadge(tenantId: tenantId, badgeId: badgeId, options: Moder
     }
 }
 [inline-code-end]
-
----

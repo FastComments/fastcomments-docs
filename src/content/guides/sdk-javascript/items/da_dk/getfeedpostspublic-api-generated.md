@@ -40,5 +40,3 @@ const feedResponse: PublicFeedPostsResponse = await getFeedPostsPublic(
   includeUserInfo
 );
 [inline-code-end]
-
----

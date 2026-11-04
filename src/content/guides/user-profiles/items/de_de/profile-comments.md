@@ -126,5 +126,3 @@ Profilkommentare sind ideal für:
 - Profilkommentare unterliegen denselben Community-Richtlinien wie Artikelkommentare
 - Melde unangemessene Profilkommentare, wenn du auf welche stößt
 - Moderatoren können Maßnahmen gegen Profilkommentare ergreifen, die gegen Regeln verstoßen
-
----

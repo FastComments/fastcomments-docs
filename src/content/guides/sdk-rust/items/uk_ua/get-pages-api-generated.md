@@ -20,5 +20,3 @@ async fn fetch_pages(configuration: &configuration::Configuration) -> Result<(),
     Ok(())
 }
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 ## Parametre
 
 | Name | Type | Location | Required | Description |
@@ -42,5 +41,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.FlagComment`: %v\n", resp)
 }
 [inline-code-end]
-
----

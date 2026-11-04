@@ -1,4 +1,3 @@
----
 ## パラメータ
 
 | 名前 | 型 | ロケーション | 必須 | 説明 |
@@ -40,5 +39,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_ticket: #{e}"
 end
 [inline-code-end]
-
----

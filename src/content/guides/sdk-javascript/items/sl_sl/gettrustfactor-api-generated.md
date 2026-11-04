@@ -24,5 +24,3 @@ async function demo() {
   const trustFactorFull: GetUserTrustFactorResponse = await getTrustFactor(tenantId, userId, sso);
 }
 [inline-code-end]
-
----

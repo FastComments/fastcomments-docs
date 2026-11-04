@@ -1,15 +1,17 @@
-Privzeto FastComments sinhronizira nazaj na vašo WordPress stran dnevno. To je izključno za potrebe varnostne kopije, da še vedno posedujete kopijo podatkov, in za vtičnike, ki bi morda odvisni od tega.
+FastComments privzeto vsakodnevno sinhronizira nazaj na vaše WordPress spletno mesto. To je zgolj za namene varnostnega kopiranja, da ostanete lastnik kopije podatkov, ter za vtičnike,
+ki so od njih lahko odvisni.
 
-To se ne zgodi takoj ob vsakem shranjenem komentarju zaradi narave nekaterih strani, ki lahko obvladujejo veliko bralnega prometa, njihovi podatkovni sklopi pa niso vedno sposobni obvladovati velikega pisalnega prometa (zaradi tega to delo preusmerimo na FastComments).
+To se ne zgodi takoj ob vsakem shranjenem komentarju, saj pri nekaterih spletnih mestih, ki zmorejo obdelati veliko bralnega prometa, njihove namestitve baz podatkov niso vedno sposobne obdelati velikega pisalnega prometa (zato se to delo prenese na FastComments).
 
-Urnik sinhronizacije nazaj v WordPress je mogoče prilagoditi z namestitvijo vtičnika. Priporočamo [WP Crontrol](https://wordpress.org/plugins/wp-crontrol/#description).
+Urnik sinhronizacije nazaj na WordPress je mogoče prilagoditi z namestitvijo vtičnika. Priporočamo [WP Crontrol](https://wordpress.org/plugins/wp-crontrol/#description).
 
-Steps:
+Koraki:
 
-1. Install WP Crontrol
-2. Go to `Settings -> Cron Schedules`.
-3. Go to the `Cron Events` tab.
-4. Search for `fastcomments_cron_hook`.
-5. Edit the event. You can configure the hook to run hourly, twice a day, daily (default), or once a week.
+1. Namestite WP Crontrol
+2. Pojdite na `Settings -> Cron Schedules`.
+3. Pojdite na zavihek `Cron Events`.
+4. Poiščite `fastcomments_cron_hook`.
+5. Uredite dogodek. Nastavite lahko, da se koda izvaja vsako uro, dvakrat dnevno, dnevno (privzeto) ali enkrat na teden.
 
-Sinhronizacijo nazaj v WordPress lahko izvedete tudi ročno kadarkoli, tako da odprete nadzorno ploščo vtičnika FastComments in izberete `Manually Sync`. Imeli boste možnost sinhronizirati nazaj na vašo WP namestitev ali ponovno naložiti svoje WP komentarje na strežnike FastComments.
+Sinhronizacijo nazaj na WordPress je mogoče izvesti tudi kadar koli ročno, tako da odprete nadzorno ploščo vtičnika FastComments in izberete `Manually Sync`. Imeli boste
+možnost sinhronizacije nazaj na vašo WP namestitev ali ponovnega nalaganja vaših WP komentarjev na strežnike FastComments.

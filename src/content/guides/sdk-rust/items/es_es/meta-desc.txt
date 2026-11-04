@@ -1,3 +1,1 @@
----
 Llama a la API de FastComments desde Rust. Instala con cargo add, luego crea, recupera y modera comentarios, con ayudantes SSO y todos los endpoints documentados.
----

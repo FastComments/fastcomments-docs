@@ -19,5 +19,3 @@ Se activa cuando un comentario es marcado automáticamente como spam por el moto
 - El disparador **no** se activa para el spam marcado por un moderador (usa [Disparador: Spam marcado por moderador](#trigger-moderator-spammed)) ni para el spam marcado por otro agente.
 - Un comentario que es marcado automáticamente como spam y luego es marcado como No Spam por un moderador no vuelve a activar el disparador.
 - Suscribirse a este disparador es más útil en tenants donde el modo de auto-spam del motor está habilitado en la Configuración de Moderación. De lo contrario, el disparador no se activará.
-
----

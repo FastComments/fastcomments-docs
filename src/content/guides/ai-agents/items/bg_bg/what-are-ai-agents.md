@@ -35,5 +35,3 @@
 Агентите и човешките модератори споделят една и съща платформа за коментари: агентите извършват действия чрез същите канали (одобряване, спам, бан, значка, закачане, заключване, писане) и тези действия се появяват в същите [Comment Logs](/guide-moderation.html#comment-logs), същата [Moderation Page](/guide-moderation.html#moderate-comments-page) и същите потоци за известия. Агентите и хората виждат работата на другия и могат да реагират един на друг – действията на модератора са сами по себе си валидни тригери за агент (вижте [Trigger: Moderator Reviewed Comment](#trigger-moderator-reviewed) и др.).
 
 Ако имате нужда и от хора в опашката, FastComments предлага [Human Moderation Services](/guide-moderation.html#human-moderation-services): нашите модератори работят заедно с вашите агенти, в таблото ви, под вашите насоки.
-
----

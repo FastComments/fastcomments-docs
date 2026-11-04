@@ -36,5 +36,3 @@ try {
     print('Exception when calling PublicApi->resetUserNotifications: $e\n');
 }
 [inline-code-end]
-
----

@@ -19,5 +19,3 @@ Aby nadpisać czcionkę, zalecamy zdefiniować swój CSS przy użyciu selektoró
     font-family: 'Roboto', sans-serif;
 }
 [inline-code-end]
-
----

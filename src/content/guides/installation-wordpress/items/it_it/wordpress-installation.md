@@ -1,19 +1,15 @@
----
-The FastComments WordPress plugin installation is designed to be easy and limit any downtime of availability of commenting on your site. The plugin will not switch over from the WordPress plugin until the sync is complete.
+L'installazione del plugin FastComments per WordPress è progettata per essere semplice e limitare al minimo i tempi di inattività della funzionalità di commenti sul tuo sito. Il plugin non passerà dal plugin WordPress finché la sincronizzazione non sarà completata.
 
-First, you'll want to set the expectation with your moderators according to the details in the below section `Moderation`. Let them know soon they will
-be moderating from FastComments, and not the WordPress dashboard.
+Per prima cosa, ti consigliamo di comunicare le aspettative ai tuoi moderatori secondo i dettagli nella sezione `Moderation` sottostante. Fai sapere loro che presto modereranno i commenti da FastComments, e non dalla dashboard di WordPress.
 
-Next, install the plugin. You can do this by going to the WordPress plugins dashboard, clicking `Add Plugin`, and search for `FastComments`. The plugin is also available for download [here](https://wordpress.org/plugins/fastcomments/#installation).
+Successivamente, installa il plugin. Puoi farlo andando nella dashboard dei plugin di WordPress, cliccando su `Add Plugin` e cercando `FastComments`. Il plugin è anche disponibile per il download [qui](https://wordpress.org/plugins/fastcomments/#installation).
 
-The plugin setup will ask you if you are in the EU. If this is the case, your account will reside in the EU on `eu.fastcomments.com`, otherwise it will be on `fastcomments.com`.
+La configurazione del plugin ti chiederà se ti trovi nell'UE. In tal caso, il tuo account risiederà nell'UE su `eu.fastcomments.com`, altrimenti sarà su `fastcomments.com`.
 
-Next, you have the option of selecting whether you already have a FastComments account. Follow the steps thereafter and your comments can optionally be uploaded during the installation process.
+Successivamente, hai la possibilità di indicare se hai già un account FastComments. Segui i passaggi indicati e, facoltativamente, i tuoi commenti potranno essere caricati durante il processo di installazione.
 
-<sup>Nota!</sup> Do not close the WordPress plugin page while the setup and sync is in progress.
+<sup>Nota!</sup> Non chiudere la pagina del plugin WordPress mentre la configurazione e la sincronizzazione sono in corso.
 
-Comments are uploaded in batches, and sorted using existing indexes in your WordPress database to limit load on your site.
+I commenti vengono caricati in batch e ordinati utilizzando gli indici esistenti nel tuo database WordPress per limitare il carico sul tuo sito.
 
-Once the sync is complete, the default WordPress commenting system will be replaced by FastComments. We hope you love our platform, but if you don't [reach out to us](https://fastcomments.com/auth/my-account/help).  
-
----
+Una volta completata la sincronizzazione, il sistema di commenti predefinito di WordPress verrà sostituito da FastComments. Speriamo che la nostra piattaforma ti piaccia, ma in caso contrario [contattaci](https://fastcomments.com/auth/my-account/help).

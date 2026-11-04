@@ -126,5 +126,3 @@ Les commentaires de profil sont parfaits pour :
 - Les commentaires de profil suivent les mêmes règles de la communauté que les commentaires d'articles
 - Signalez les commentaires de profil inappropriés si vous en rencontrez
 - Les modérateurs peuvent prendre des mesures sur les commentaires de profil qui violent les règles
-
----

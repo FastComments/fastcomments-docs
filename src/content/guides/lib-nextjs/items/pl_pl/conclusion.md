@@ -8,5 +8,3 @@ Jeśli napotkasz jakiekolwiek problemy lub masz pytania dotyczące biblioteki Ne
 ## Wkład
 
 Wkład mile widziany! Odwiedź [repozytorium GitHub](https://github.com/FastComments/fastcomments-nextjs) po wytyczne dotyczące kontrybucji.
-
----

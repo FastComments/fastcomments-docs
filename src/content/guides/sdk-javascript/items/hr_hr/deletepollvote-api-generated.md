@@ -1,4 +1,3 @@
----
 Povuci glas. Opcija na koju je glas bio izabran vraća svoj broj glasova.
 
 ## Parametri
@@ -25,5 +24,3 @@ async function runDeletePollVoteExample(): Promise<void> {
   console.log(result);
 }
 [inline-code-end]
-
----

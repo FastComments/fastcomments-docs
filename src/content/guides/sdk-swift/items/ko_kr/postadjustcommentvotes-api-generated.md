@@ -35,5 +35,3 @@ ModerationAPI.postAdjustCommentVotes(tenantId: tenantId, commentId: commentId, a
     }
 }
 [inline-code-end]
-
----

@@ -69,5 +69,3 @@ Ker je konfiguracija lahko precej zapletena, lahko namesto tega podamo referenco
 Pripomoček uporablja zaznavanje sprememb, zato bo sprememba katerekoli lastnosti konfiguracijskega objekta povzročila njegovo ponovno nalaganje.
 
 Konfiguracijo, ki jo podpira Angular komponenta, najdete <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">tukaj</a>.
-
----

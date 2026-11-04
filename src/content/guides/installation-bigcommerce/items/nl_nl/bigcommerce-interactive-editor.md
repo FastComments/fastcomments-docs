@@ -1,4 +1,3 @@
----
 Het wordt niet aanbevolen om FastComments toe te voegen via de Page Builder van BigCommerce, omdat de code dan handmatig aan elke gewenste pagina moet worden toegevoegd.
 
 Als dit echter gewenst is, moet het volgende codefragment worden gebruikt. Codefragmenten uit andere tutorials werken niet vanwege de aard van BigCommerce:
@@ -14,5 +13,3 @@ Als dit echter gewenst is, moet het volgende codefragment worden gebruikt. Codef
     }];
 </script>
 [inline-code-end]
-
----

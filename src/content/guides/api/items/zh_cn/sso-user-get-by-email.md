@@ -27,5 +27,3 @@ interface SSOUserByEmailResponse {
     user: SSOUser
 }
 [inline-code-end]
-
----

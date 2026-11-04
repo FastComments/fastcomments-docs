@@ -23,5 +23,3 @@ Restituisce: [`CheckBlockedCommentsResponse`](https://github.com/FastComments/fa
     const responseWithoutSso: CheckBlockedCommentsResponse = await checkedCommentsForBlocked(tenantId, commentIds);
 })();
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 Jetzt sollten wir FastComments Live Commenting für unsere Mitglieder aktiviert haben!
 
 <div class="screenshot white-bg">
@@ -7,5 +6,3 @@ Jetzt sollten wir FastComments Live Commenting für unsere Mitglieder aktiviert 
 </div>
 
 Herzlichen Glückwunsch zur Einrichtung von FastComments mit Ghost! Wenn Sie auf einen Domain Error gestoßen sind, oder erfahren möchten, wie Sie den Kommentarbereich anpassen können, lesen Sie weiter!
-
----

@@ -1,23 +1,23 @@
-FastComments webhook requests include multiple authentication mechanisms for security.
+בקשות webhook של FastComments כוללות מספר מנגנוני אימות לצורך אבטחה.
 
-## Headers Sent
+## Headers שנשלחים
 
-| כותרת | תיאור |
+| Header | תיאור |
 |--------|-------------|
-| `token` | סוד ה-API שלך (לתאימות לאחור) |
-| `X-FastComments-Timestamp` | חותמת זמן Unix (שניות) כאשר הבקשה נחתמה |
-| `X-FastComments-Signature` | חתימת HMAC-SHA256 של המטען |
+| `token` | ה-API Secret שלך (לתאימות לאחור) |
+| `X-FastComments-Timestamp` | חותמת זמן Unix (שניות) שבה הבקשה נחתמה |
+| `X-FastComments-Signature` | חתימת HMAC-SHA256 של ה-payload |
 
-## HMAC Signature Verification (Recommended)
+## אימות חתימת HMAC (מומלץ)
 
-אנו ממליצים בחום לאמת את חתימת ה-HMAC כדי להבטיח שמטעני ה-webhook הם אותנטיים ולא שונו.
+אנו ממליצים בחום לאמת את חתימת ה-HMAC כדי לוודא ש-payloads של webhook הם אותנטיים ולא הושחתו.
 
 **פורמט החתימה:** `sha256=<hex-encoded-signature>`
 
-**איך החתימה מחושבת:**
-1. צירוף: `timestamp + "." + JSON_payload_body`
-2. חישוב HMAC-SHA256 באמצעות סוד ה-API שלך כמפתח
-3. קידוד תוצאה כ-hex
+**כיצד החתימה מחושבת:**
+1. שרשור: `timestamp + "." + JSON_payload_body`
+2. חישוב HMAC-SHA256 תוך שימוש ב-API Secret שלך כמפתח
+3. קידוד התוצאה ב-hex
 
 ### דוגמת אימות (Node.js)
 
@@ -32,13 +32,13 @@ function verifyWebhookSignature(req, apiSecret) {
         return false;
     }
 
-    // אימות שהחותמת זמן עדכנית (בתוך 5 דקות)
+    // Verify timestamp is recent (within 5 minutes)
     const now = Math.floor(Date.now() / 1000);
     if (Math.abs(now - parseInt(timestamp, 10)) > 300) {
-        return false;  // מניעת התקפת השמעה
+        return false;  // Replay attack prevention
     }
 
-    // אימות החתימה
+    // Verify signature
     const payload = JSON.stringify(req.body);
     const expectedSignature = crypto
         .createHmac('sha256', apiSecret)
@@ -64,12 +64,12 @@ def verify_webhook_signature(headers, body, api_secret):
     if not timestamp or not signature:
         return False
 
-    # אימות שהחותמת זמן עדכנית
+    # Verify timestamp is recent
     now = int(time.time())
     if abs(now - int(timestamp)) > 300:
         return False
 
-    # אימות החתימה
+    # Verify signature
     payload = json.dumps(body, separators=(',', ':'))
     message = f"{timestamp}.{payload}"
     expected = hmac.new(
@@ -92,13 +92,13 @@ function verifyWebhookSignature($headers, $body, $apiSecret) {
         return false;
     }
 
-    // אימות שהחותמת זמן עדכנית (בתוך 5 דקות)
+    // Verify timestamp is recent (within 5 minutes)
     $now = time();
     if (abs($now - intval($timestamp)) > 300) {
         return false;
     }
 
-    // אימות החתימה
+    // Verify signature
     $payload = json_encode($body, JSON_UNESCAPED_SLASHES);
     $message = $timestamp . '.' . $payload;
     $expectedSignature = 'sha256=' . hash_hmac('sha256', $message, $apiSecret);
@@ -107,8 +107,6 @@ function verifyWebhookSignature($headers, $body, $apiSecret) {
 }
 ```
 
-## Legacy Authentication
+## אימות מדור קודם
 
-כותרת `token` המכילה את סוד ה-API שלך עדיין נשלחת לתאימות לאחור. עם זאת, אנו ממליצים לעבור לאימות HMAC לשיפור האבטחה מכיוון שהיא מגנה מפני התקפות השמעה.
-
----
+ה-header של `token` המכיל את ה-API Secret שלך עדיין נשלח לצורך תאימות לאחור. עם זאת, אנו ממליצים לעבור לאימות HMAC לשיפור האבטחה, מכיוון שהוא מגן מפני התקפות שידור חוזר (replay attacks).

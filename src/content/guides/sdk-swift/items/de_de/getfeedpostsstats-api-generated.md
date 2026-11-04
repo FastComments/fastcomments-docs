@@ -1,4 +1,3 @@
----
 ## Parameter
 
 | Name | Typ | Location | Erforderlich | Beschreibung |
@@ -33,5 +32,3 @@ PublicAPI.getFeedPostsStats(tenantId: tenantId, postIds: postIds, sso: sso) { (r
     }
 }
 [inline-code-end]
-
----

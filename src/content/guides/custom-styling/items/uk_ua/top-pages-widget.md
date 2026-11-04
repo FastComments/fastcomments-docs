@@ -1,8 +1,8 @@
-The Most Discussed Pages Widget displays a ranked list of your most commented pages. It includes a heading, numbered ranks, comment counts with icons, last activity dates, and automatic dark mode detection.
+Віджет «Найбільш обговорювані сторінки» відображає ранжований список ваших сторінок з найбільшою кількістю коментарів. Він містить заголовок, нумеровані позиції, кількість коментарів з іконками, дати останньої активності та автоматичне визначення темного режиму.
 
-## Базова установка
+## Базове встановлення
 
-[inline-code-attrs-start title = 'Встановлення віджета Most Discussed Pages'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Встановлення віджета найбільш обговорюваних сторінок'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/widget-top-pages-v2.min.js"></script>
 <div id="fastcomments-widget-top-pages"></div>
@@ -15,14 +15,14 @@ The Most Discussed Pages Widget displays a ranked list of your most commented pa
 
 ## Параметри конфігурації
 
-- **tenantId** (обов'язково): ідентифікатор вашого орендаря в FastComments
-- **hasDarkBackground** (необов'язково): Примусово застосувати оформлення для темного режиму. Якщо не вказано, визначається автоматично по тлі сторінки
+- **tenantId** (обов\'язково): Ваш ідентифікатор орендаря FastComments
+- **hasDarkBackground** (необов\'язково): Примусово застосувати стилі темного режиму. Автоматично визначається за фоном сторінки, якщо не задано
 
 ## Структура віджета
 
-The widget renders with the following HTML structure:
+Віджет відображається з такою HTML-структурою:
 
-[inline-code-attrs-start title = 'HTML-структура віджета Most Discussed Pages'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'HTML-структура віджета найбільш обговорюваних сторінок'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <div class="fc-tp2">
     <div class="fc-tp2-heading">Most Discussed Pages</div>
@@ -39,9 +39,9 @@ The widget renders with the following HTML structure:
 </div>
 [inline-code-end]
 
-## Приклад CSS за замовчуванням
+## Довідник стандартного CSS
 
-[inline-code-attrs-start title = 'CSS за замовчуванням віджета Most Discussed Pages'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Стандартний CSS віджета найбільш обговорюваних сторінок'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-tp2 {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -64,9 +64,9 @@ The widget renders with the following HTML structure:
 
 ## Приклади налаштування
 
-### Прибрати бейджі рангу
+### Прибрати значки позицій
 
-[inline-code-attrs-start title = 'Прибрати бейджі рангу'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Прибрати значки позицій'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-tp2-rank {
     display: none !important;

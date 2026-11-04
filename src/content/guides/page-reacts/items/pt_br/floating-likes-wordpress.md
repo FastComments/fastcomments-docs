@@ -25,5 +25,3 @@ No WordPress, este recurso pode ser habilitado instalando um plugin como o WPCod
     })();
 </script>
 [inline-code-end]
-
----

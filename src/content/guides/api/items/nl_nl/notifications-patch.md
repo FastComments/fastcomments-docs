@@ -1,4 +1,3 @@
----
 [api-resource-header-start name = 'Notification'; route = 'PATCH /api/v1/notifications/:id'; creditsCost = 1; api-resource-header-end]
 
 Dit API-eindpunt maakt het mogelijk om een `Notification` bij `id` bij te werken.
@@ -38,5 +37,3 @@ interface NotificationPatchResponse {
     reason?: string
 }
 [inline-code-end]
-
----

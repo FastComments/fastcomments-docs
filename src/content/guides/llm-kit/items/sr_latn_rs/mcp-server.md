@@ -1,31 +1,31 @@
-FastComments pokreće hostovani Model Context Protocol (MCP) server kako AI asistenti i agentski klijenti mogu direktno pozivati FastComments API. Svaki alat koji MCP server izlaže automatski je generisan iz javne OpenAPI specifikacije, tako da sve što REST API može, MCP klijent može.
+FastComments vodi hostovani Model Context Protocol (MCP) server kako bi AI asistenti i agentski klijenti mogli direktno da pozivaju FastComments API. Svaki alat koji MCP server izlaže automatski se generiše iz javnog OpenAPI specifikacije, tako da sve što REST API može, MCP klijent može.
 
-Endpoint je stateless i zasnovan na streamable-HTTP. Ne postoji sesija koja se održava i nema server‑side stanja po klijentu.
+Endpoint je bezstanjan (stateless) i zasnovan na streamable-HTTP. Ne postoji sesija koju treba održavati niti server-side stanje po klijentu.
 
 ### Endpoint
 
-[inline-code-attrs-start title = 'MCP krajnja tačka'; type = 'text'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'MCP Endpoint'; type = 'text'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 https://fastcomments.com/mcp
 [inline-code-end]
 
-### Connect with OAuth
+### Povezivanje putem OAuth-a
 
-Bilo koji MCP klijent koji podržava udaljene servere putem OAuth-a (Claude, ChatGPT, Claude Code, Cursor i drugi) može se povezati na gornji endpoint bez ikakvog podešavanja na strani FastComments. Klijent se registruje putem Dynamic Client Registration ili se identifikuje pomoću Client ID Metadata Document, otvara pregledač kako biste se prijavili u FastComments i odobrili pristup, i prima token vezan za nalog na koji ste prijavljeni.
+Svaki MCP klijent koji podržava udaljene servere sa OAuth-om (Claude, ChatGPT, Claude Code, Cursor i drugi) može se povezati na gore navedeni endpoint bez ikakve konfiguracije na strani FastComments-a. Klijent se registruje putem Dynamic Client Registration-a ili se identifikuje pomoću Client ID Metadata Document-a, otvara pregledač kako biste se prijavili na FastComments i odobrili pristup, i dobija token vezan za nalog na koji ste bili prijavljeni.
 
-Dokumenti za otkrivanje se nalaze na standardnim lokacijama:
+Dokumenti za otkrivanje (discovery) nalaze se na standardnim lokacijama:
 
-[inline-code-attrs-start title = 'Otkrivanje'; type = 'text'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Discovery'; type = 'text'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 https://fastcomments.com/.well-known/oauth-protected-resource/mcp
 https://fastcomments.com/.well-known/oauth-authorization-server
 [inline-code-end]
 
-Vaš korisnik treba da ima API Admin dozvolu na nalogu da bi odobrio vezu. Ako upravljate sa više naloga, pre odobravanja prebacite se na pravi nalog u kontrolnoj tabli.
+Vaš korisnik treba da ima API Admin dozvolu na nalogu kako bi odobrio vezu. Ako upravljate više naloga, prebacite se na pravi u kontrolnoj tabli pre odobravanja.
 
-Klijent može zatražiti `read` opseg, `write` opseg, ili oba. Klijent koji ne zatraži ništa dobija oba. Alati koji menjaju podatke nisu dostupni tokenu samo za čitanje.
+Klijent može zahtevati `read` scope, `write` scope ili oba. Klijent koji ne zahteva ništa dobija oba. Alati koji menjaju podaci se ne nude read-only tokenu.
 
-Kontrolna tabla ima pomoćnika za podešavanje sa spremnim isječcima za kopiranje. Otvorite **Integrate -> MCP Server**, ili posetite direktno:
+Kontrolna tabla ima pomoćnika za podešavanje sa gotovim isečcima koda spremnim za lepljenje. Otvorite **Integrate -> MCP Server**, ili posetite direktno:
 
 [inline-code-attrs-start title = 'Stranica za podešavanje'; type = 'text'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -34,18 +34,18 @@ https://fastcomments.com/auth/my-account/mcp-setup
 
 ### Claude Code
 
-Registrujte FastComments server jednim komandama, zatim pokrenite `/mcp` unutar sesije da se prijavite i prikažete dostupne alate:
+Registrujte FastComments server jednom komandom, a zatim pokrenite `/mcp` unutar sesije da se prijavite i izlistate dostupne alate:
 
 [inline-code-attrs-start title = 'Claude Code podešavanje'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 claude mcp add --transport http fastcomments https://fastcomments.com/mcp
 [inline-code-end]
 
-### Cursor and other config-file clients
+### Cursor i drugi klijenti sa konfiguracionim fajlom
 
-Dodajte ovaj blok u konfiguraciju MCP servera vašeg klijenta (`mcp.json` za Cursor). Klijent otvara pregledač da se prijavi pri prvom korišćenju.
+Dodajte ovaj blok u MCP servers konfiguraciju vašeg klijenta (`mcp.json` za Cursor). Klijent otvara pregledač za prijavu pri prvom korišćenju.
 
-[inline-code-attrs-start title = 'MCP konfiguracija klijenta'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'MCP klijent konfiguracija'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "mcpServers": {
@@ -57,32 +57,32 @@ Dodajte ovaj blok u konfiguraciju MCP servera vašeg klijenta (`mcp.json` za Cur
 }
 [inline-code-end]
 
-### Revoking access
+### Opoziv pristupa
 
-Svaka odobrena veza je navedena pod **Integrate -> Connected Apps** u kontrolnoj tabli. Opozivanjem jedne poništava se svaki token koji ta aplikacija drži. Aplikacije se registruju kada se povežu i FastComments ih ne pregledava, zato opozovite sve što ne prepoznajete.
+Svaka odobrena veza je izlistana pod **Integrate -> Connected Apps** u kontrolnoj tabli. Opoziv jedne poništava svaki token koji ta aplikacija drži. Aplikacije se same registruju prilikom povezivanja i FastComments ih ne pregleda, pa opozovite sve što ne prepoznajete.
 
-### Using the token with the REST API
+### Korišćenje tokena sa REST API-jem
 
-Pristupni token koji MCP klijent dobije je regularna FastComments API akreditacija. Radi na svakom `/api/v1` endpointu kao bearer token, tako da aplikacija koja se poveže putem MCP-a može direktno pozivati REST API:
+Access token koji MCP klijent dobije je običan FastComments API kredencijal. Radi na svakom `/api/v1` endpointu kao bearer token, tako da aplikacija koja se povezala putem MCP-a može takođe direktno pozivati REST API:
 
-[inline-code-attrs-start title = 'Bearer token'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Bearer Token'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl -H "Authorization: Bearer fcat_..." https://fastcomments.com/api/v1/comments
 [inline-code-end]
 
-Tenant je impliciran tokenom. `tenantId` se i dalje može proslediti, ali mora da se podudara. `GET` zahtevi zahtevaju `read` opseg, a sve ostalo `write` opseg.
+Tenant je podrazumevan iz tokena. `tenantId` se i dalje može proslediti ali mora da se poklapa. `GET` zahtevi zahtevaju `read` scope a sve ostalo `write` scope.
 
-### Connect with an API key
+### Povezivanje sa API ključem
 
-Klijenti koji ne mogu da završe prijavu putem pregledača, kao što su headless serveri, mogu se autentifikovati pomoću API ključa. Prosledite `tenantId` i `API_KEY` kao parametre upita, ili kao `x-tenant-id` i `x-api-key` HTTP zaglavlja ako vaš klijent podržava prilagođena zaglavlja:
+Klijenti koji ne mogu da završe prijavu kroz pregledač, kao što su headless serveri, mogu se autentifikovati API ključem umesto toga. Prosledite `tenantId` i `API_KEY` kao query parametre, ili kao `x-tenant-id` i `x-api-key` HTTP header-e ako vaš klijent podržava prilagođene header-e:
 
-[inline-code-attrs-start title = 'API ključ endpoint'; type = 'text'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Endpoint sa API ključem'; type = 'text'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 https://fastcomments.com/mcp?tenantId=YOUR_TENANT_ID&API_KEY=YOUR_API_KEY
 [inline-code-end]
 
-Stranica za podešavanje generiše ovaj URL za svaki vaš API ključ.
+Stranica za podešavanje generiše ovaj URL za svaki od vaših API ključeva.
 
-### Security
+### Bezbednost
 
-URL endpointa koji sadrži API ključ je tajna: ne zalepite ga u javne četove, screenshotove ili commit‑ove. Ako je ključ izložen, rotirajte ga na stranici API ključeva u vašoj kontrolnoj tabli. OAuth tokeni ne nose takav rizik jer su vezani za jednu aplikaciju i mogu se opozvati iz Connected Apps.
+URL endpointa koji sadrži API ključ je tajna: ne lepite ga u javne razgovore, screenshot-ove ili commit-ove. Ako je ključ izložen, rotirajte ga na API Keys stranici u vašoj kontrolnoj tabli. OAuth tokeni ne nose takav rizik jer su vezani za jednu aplikaciju i mogu se opozvati iz Connected Apps.

@@ -1,9 +1,10 @@
-Each WordPress site needs its own FastComments account or tenant. WordPress numbers posts separately on each site, so post 5 on one site and post 5 on another would share a single comment thread if both were connected to the same account. For that reason, the plugin's setup refuses to connect a site when the account already has a different one connected.
+Hvert WordPress-site kræver sin egen FastComments-konto eller tenant. WordPress nummererer indlæg separat på hvert site, så indlæg 5 på ét site og indlæg 5 på et andet
+ville dele en enkelt kommentartråd, hvis begge var forbundet til samme konto. Af den grund nægter plugin'ets opsætning at forbinde et site, når kontoen allerede har et andet forbundet.
 
 [Du kan se dine aktive integrationer her.](https://fastcomments.com/auth/my-account/manage-data/integrations)
 
-To run several WordPress sites, create a [tenant](https://fastcomments.com/auth/my-account/tenants) for each one, switch to it, and then connect the site from the plugin's setup page. Tenants are included in plans with white labeling. You can also create a separate FastComments account for each site, using a different email address for each.
+For at køre flere WordPress-sites skal du oprette en [tenant](https://fastcomments.com/auth/my-account/tenants) til hvert af dem, skifte til den og derefter forbinde sitet fra plugin'ets opsætningsside. Tenants er inkluderet i planer med white labeling. Du kan også oprette en separat FastComments-konto til hvert site med en anden e-mailadresse til hver.
 
-If a site has moved, for example from staging to production, deactivate the plugin on the old site and remove the old site from your active integrations. Then connect the new one. Comments already synced from the old site stay on the account, and they show on any post with the same ID on the new site.
+Hvis et site er flyttet, f.eks. fra staging til produktion, skal du deaktivere plugin'et på det gamle site og fjerne det gamle site fra dine aktive integrationer. Derefter forbinder du det nye. Kommentarer, der allerede er synkroniseret fra det gamle site, forbliver på kontoen, og de vises på ethvert indlæg med samme ID på det nye site.
 
-You can use the same FastComments account with a single WordPress installation that spans multiple domains and has the same content on those domains.
+Du kan bruge samme FastComments-konto med en enkelt WordPress-installation, der spænder over flere domæner og har det samme indhold på disse domæner.

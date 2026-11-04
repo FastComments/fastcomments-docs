@@ -19,5 +19,3 @@
 
 - "Reviewed" היא אחת ממדינות תור המודרציה שנעקבות בנפרד מ-"approved" ו-"spam". תגובה יכולה להיות approved-and-reviewed, approved-but-not-reviewed, וכו'. ראה [How Approvals Work](/guide-moderation.html#moderation-approvals) במדריך המודרציה.
 - טריגר זה בעל תדירות גבוהה על tenants עם הרבה ממונים. הירשמו באופן סלקטיבי ותכננו תקציב בהתאם.
-
----

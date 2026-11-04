@@ -1,4 +1,3 @@
----
 FastComments vous permet d'exiger que les commentateurs qui commentent pour la première fois acceptent vos Conditions d\'utilisation avant de soumettre un commentaire.
 
 Lorsqu\'il est activé :
@@ -20,4 +19,3 @@ Accédez à la page de personnalisation du widget et activez la case à cocher �
 - Lorsqu\'un utilisateur accepte les CGU, la date est enregistrée sur son profil utilisateur (par locataire)
 - Si vous définissez une date de « Dernière mise à jour » postérieure à la date d\'acceptation de l\'utilisateur, ils devront réaccepter
 - Pour les utilisateurs anonymes qui ne peuvent pas être suivis, la case à cocher apparaît à chaque soumission de commentaire
----

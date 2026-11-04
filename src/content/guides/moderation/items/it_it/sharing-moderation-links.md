@@ -8,5 +8,3 @@ Per esempio, il seguente caso d'uso:
 - Il Moderatore A trova qualcosa di interessante nella seconda pagina dei commenti risultanti dalla ricerca.
 - Il Moderatore A può **condividere il link** di questa pagina direttamente con il Moderatore B.
 - Il Moderatore B può vedere cosa ha fatto il Moderatore A.
-
----

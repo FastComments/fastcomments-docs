@@ -1,3 +1,1 @@
----
 Dodajte izvorne ugniježdene komentare, live chat i društvene feedove u iOS aplikaciju, s SSO-om, temama, učitavanjem slika, spominjanjem i ažuriranjima u stvarnom vremenu.
----

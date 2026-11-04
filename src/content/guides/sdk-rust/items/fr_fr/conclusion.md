@@ -1,4 +1,3 @@
----
 ## Besoin d'aide ?
 
 Si vous rencontrez des problèmes ou avez des questions concernant le Rust SDK, veuillez :
@@ -9,5 +8,3 @@ Si vous rencontrez des problèmes ou avez des questions concernant le Rust SDK, 
 ## Contribuer
 
 Les contributions sont les bienvenues ! Veuillez visiter le [dépôt GitHub](https://github.com/FastComments/fastcomments-rust) pour les consignes de contribution.
-
----

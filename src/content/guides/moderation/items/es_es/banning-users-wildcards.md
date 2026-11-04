@@ -20,5 +20,3 @@ La única forma de comodín compatible es un único `*` en lugar de la parte com
 
 - `*@*.bademail.com` no es necesario, porque `*@bademail.com` ya cubre los subdominios.
 - `name*@bademail.com` y `*bademail.com` no son compatibles.
-
----

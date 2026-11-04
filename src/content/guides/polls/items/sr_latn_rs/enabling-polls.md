@@ -1,12 +1,9 @@
----
-Polls are off by default. To turn them on, go to the widget customization settings and check **Enable Polls**.
+Ankete su podrazumevano isključene. Da biste ih uključili, idite na podešavanja prilagođavanja vidžeta i čekirajte **Enable Polls**.
 
-This adds a poll button to the comment editor toolbar. Polls render inside the comment and viewers vote in place.
+Ovo dodaje dugme za anketu u traku sa alatkama uređivača komentara. Ankete se prikazuju unutar komentara i posetioci glasaju na mestu.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-polls']; selector = '.enable-polls'; alt='Stranica za prilagođavanje widgeta sa opcijom Enable Polls označenom'; title='Omogući ankete' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-polls']; selector = '.enable-polls'; alt='Stranica prilagođavanja vidžeta sa čekiranom opcijom Enable Polls'; title='Enable Polls' app-screenshot-end]
 
-Like other widget settings, this can be applied to your whole site or only to specific pages or domains.
+Kao i ostala podešavanja vidžeta, ovo se može primeniti na ceo sajt ili samo na određene stranice ili domene.
 
-If you turn polls off later, the poll button goes away and existing polls stop rendering in the widget. The polls and their votes are kept, and show again if you turn polls back on.
-
----
+Ako kasnije isključite ankete, dugme za anketu nestaje i postojeće ankete prestaju da se prikazuju u vidžetu. Ankete i njihovi glasovi se čuvaju i ponovo se prikazuju ako ponovo uključite ankete.

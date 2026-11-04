@@ -1,3 +1,1 @@
----
 FastComments API'sini doğrudan bir React Native uygulamasından çağırarak, widget'ı kullanmadan yorumları oluşturabilir, getirebilir ve denetleyebilirsiniz.
----

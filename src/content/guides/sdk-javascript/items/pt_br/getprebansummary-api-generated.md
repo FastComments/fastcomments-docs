@@ -39,5 +39,3 @@ async function fetchSummary(): Promise<void> {
 
 fetchSummary();
 [inline-code-end]
-
----

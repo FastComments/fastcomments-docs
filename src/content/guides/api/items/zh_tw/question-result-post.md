@@ -43,5 +43,3 @@ interface QuestionResultPostResponse {
     questionResult?: QuestionResult
 }
 [inline-code-end]
-
----

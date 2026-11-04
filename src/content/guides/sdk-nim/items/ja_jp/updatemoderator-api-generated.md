@@ -1,4 +1,3 @@
----
 ## パラメータ
 
 | 名前 | 型 | 必須 | 説明 |
@@ -20,5 +19,3 @@ let (apiResult, httpResp) = client.updateModerator(tenantId = "my-tenant-123", i
 if apiResult.isSome:
   let result = apiResult.get()
 [inline-code-end]
-
----

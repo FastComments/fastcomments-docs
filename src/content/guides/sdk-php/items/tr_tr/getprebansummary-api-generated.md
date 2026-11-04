@@ -45,5 +45,3 @@ try {
     echo 'Exception when calling ModerationApi->getPreBanSummary: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

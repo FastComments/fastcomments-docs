@@ -14,5 +14,3 @@ Si un usuario intenta acceder a una página a la que no tiene acceso, verá un m
 </div>
 
 El texto del mensaje se puede personalizar.
-
----

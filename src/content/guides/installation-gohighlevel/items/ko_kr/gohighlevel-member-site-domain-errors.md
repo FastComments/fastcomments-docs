@@ -12,5 +12,3 @@
 [사이트를 계정에 추가하려면 여기로 이동하세요.](https://fastcomments.com/auth/my-account/configure-domains)
 
 이제 사이트에 빠르고 실시간 댓글 기능이 추가되었을 것입니다!
-
----

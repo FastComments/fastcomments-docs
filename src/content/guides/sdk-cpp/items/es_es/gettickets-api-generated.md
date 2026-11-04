@@ -24,5 +24,3 @@ api->getTickets(U("my-tenant-123"), options).then([](pplx::task<std::shared_ptr<
     }
 });
 [inline-code-end]
-
----

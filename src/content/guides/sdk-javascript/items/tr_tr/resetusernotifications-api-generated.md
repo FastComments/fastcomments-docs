@@ -36,5 +36,3 @@ Döndürür: [`ResetUserNotificationsResponse`](https://github.com/FastComments/
   console.log(response);
 })();
 [inline-code-end]
-
----

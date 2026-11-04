@@ -7,28 +7,28 @@ La struttura della risposta di aggregazione è la seguente:
 [inline-code-attrs-start title = 'Struttura di QuestionResultsAggregationResult'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface QuestionResultDataPoint {
-    /** Una mappa del valore al conteggio delle occorrenze di quel valore per il punto dati corrente (bucket di data o pagina). **/
+    /** A map of value to count of occurrences of that value for the current data point (date bucket or page). **/
     v: Map<ValueAsString, number>
     total: number
 }
 
 interface QuestionResultsAggregationResult {
-    /** Nota - è null quando timeBucket non è specificato. **/
+    /** Note - is null when timeBucket not specified. **/
     dataByDateBucket?: Map<DateString, QuestionResultDataPoint>
     dataByUrlId?: Map<URLIdString, QuestionResultDataPoint>
     countsByValue?: Map<ValueAsString, number>
-    /** Il numero totale di risultati aggregati. **/
+    /** The total number of results aggregated. **/
     total: number
-    /** La media ponderata risultante. È un float, di solito con due decimali o meno. **/
+    /** The resulting weighted average. It is a float, usually two decimals or fewer. **/
     average: number
-    /** Una stringa di data che rappresenta quando questi dati sono stati calcolati, dato che potrebbero provenire dalla cache. **/
+    /** A date string representing when this data was calculated, since it might come from cache. **/
     createdAt: string
 }
 [inline-code-end]
 
-Here are the query parameters available for aggregation:
+Ecco i parametri di query disponibili per l'aggregazione:
 
-[inline-code-attrs-start title = 'Struttura della richiesta QuestionResultsAggregation'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Struttura della richiesta di QuestionResultsAggregation'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface QuestionResultsAggregateRequestQueryParams {
     tenantId: string
@@ -46,7 +46,7 @@ interface QuestionResultsAggregateRequestQueryParams {
 }
 [inline-code-end]
 
-Ecco una richiesta di esempio:
+Ecco un esempio di richiesta:
 
 [inline-code-attrs-start title = 'Esempio di QuestionResultsAggregation'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -92,13 +92,11 @@ interface QuestionResultsAggregationResponse {
 
 ### Note sulle prestazioni
 
-- In caso di cache miss, le aggregazioni generalmente richiedono cinque secondi per milione di risultati.
-- Altrimenti, le richieste sono a tempo costante.
+- In caso di cache miss, le aggregazioni richiedono generalmente cinque secondi per milione di risultati.
+- In caso contrario, le richieste hanno tempo costante.
 
 ### Note su caching e costi
 
-- Quando `forceRecalculate` è specificato il costo è sempre `10`, invece del normale `2`.
-- Se la cache scade e i dati vengono ricalcolati, il costo rimane comunque un valore costante di `2` se `forceRecalculate` non è specificato. La scadenza della cache dipende dalla dimensione del set di dati aggregato (può variare tra 30 secondi e 5 minuti).
-- Questo serve a incentivare l'uso della cache.
-
----
+- Quando viene specificato `forceRecalculate`, il costo è sempre `10`, invece del normale `2`.
+- Se la cache scade e i dati vengono ricalcolati, il costo rimane comunque costante a `2` se `forceRecalculate` non è specificato. La cache scade in base alla dimensione del set di dati aggregato (può variare tra 30 secondi e 5 minuti).
+- Questo per incentivare l'uso della cache.

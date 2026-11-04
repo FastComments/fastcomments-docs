@@ -28,5 +28,3 @@ async function runUpdateTenant() {
   console.log(response);
 }
 [inline-code-end]
-
----

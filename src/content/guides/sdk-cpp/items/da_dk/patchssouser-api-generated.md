@@ -31,5 +31,3 @@ api->patchSSOUser(tenantId, userId, updateData, updateComments)
         }
     });
 [inline-code-end]
-
----

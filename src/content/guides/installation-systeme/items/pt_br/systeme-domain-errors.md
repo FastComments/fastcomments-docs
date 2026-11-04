@@ -1,4 +1,3 @@
----
 Você pode receber um erro de autorização, como o seguinte:
 
 <div class="screenshot white-bg">
@@ -11,5 +10,3 @@ Isso acontece porque o FastComments não sabe que deve permitir que sua conta se
 Nesse caso, a correção é simples. Você só precisa adicionar seu site à sua conta FastComments.com.
 
 [Clique aqui para adicionar seu site à sua conta.](https://fastcomments.com/auth/my-account/configure-domains)
-
----

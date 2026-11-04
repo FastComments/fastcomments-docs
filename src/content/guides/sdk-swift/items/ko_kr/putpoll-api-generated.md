@@ -1,4 +1,3 @@
----
 Comment에 설문을 첨부하거나 이미 존재하는 설문의 전체 상태를 설정합니다.
 
 옵션은 id로 매칭됩니다: 기존 옵션의 id와 함께 전송된 옵션은 투표 수를 유지하고(새 라벨과 위치를 적용), id 없이 전송된 옵션은 추가되며, 목록에 포함되지 않은 기존 옵션은 해당 옵션에 대한 투표와 함께 삭제됩니다.
@@ -40,5 +39,3 @@ DefaultAPI.putPoll(tenantId: tenantId, commentId: commentId, commentPollPutInput
     }
 }
 [inline-code-end]
-
----

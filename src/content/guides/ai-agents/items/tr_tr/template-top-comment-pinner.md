@@ -1,28 +1,28 @@
-**Template ID:** `top_comment_pinner`
+**Şablon Kimliği:** `top_comment_pinner`
 
-The Top Comment Pinner, oy eşiğini geçen en üst düzey yorumları izler ve bunları sabitler - aynı dizide daha önce sabitlenmiş olanın yerini alır.
+Top Comment Pinner, oy eşiğini aşan üst düzey yorumları izler ve bunları sabitler - aynı konuda daha önce sabitlenmiş olanın yerine koyar.
 
-Yerleşik istem, ajana yanıtları atlamasını (sabitleme dizilerde çalıştığından, bir yanıta sabitlemek nadiren yararlıdır) ve tanıtıcı içeriği filtrelemesini söyler (ajanın popüler bağlantı-spam'ini desteklememesi için).
+Yerleşik istem (prompt), ajanı yanıtları atlaması (sabitleme konu bazında çalışır, bu yüzden bir yanıtı sabitlemek nadiren faydalıdır) ve tanıtım içeriklerini filtrelemesi (böylece ajan popüler bağlantı-spam'lerini yükseltmez) konusunda yönlendirir.
 
-### Triggers
+### Tetikleyiciler
 
-- **A comment crosses a vote threshold** (`COMMENT_VOTE_THRESHOLD`, default vote threshold: 10).
+- **Bir yorum oy eşiğini aşar** (`COMMENT_VOTE_THRESHOLD`, varsayılan oy eşiği: 10).
 
-Tetikleyici, yorumun net oyları (`up - down`) yapılandırılmış eşiğe ulaştığında çalışır. Düzenleme formundaki sayıyı, dizilerinizin ne kadar aktif olduğuna göre ayarlayın - 10, orta düzeyde aktif siteler için makul bir varsayılandır.
+Tetikleyici, yorumun net oyu (`up - down`) yapılandırılan eşiğe ulaştığında devreye girer. Sayıyı, konularınızın ne kadar aktif olduğuna göre düzenleme formunda ayarlayın - orta düzeyde aktif siteler için 10 makul bir varsaylandır.
 
-### Allowed tools
+### İzin verilen araçlar
 
 - [`pin_comment`](#tools-overview)
 - [`unpin_comment`](#tools-overview)
 
 Sabitleme yıkıcı değildir - anında geri alınabilir - bu yüzden bu şablon genellikle onay gerektirmeden çalışır.
 
-### Recommended additions before going live
+### Yayına almadan önce önerilen eklemeler
 
-- **Tick "Include parent comment and prior replies in the same thread"** in [Context Options](#context-options). Diziyi bağlamı olmadan ajan, zaten sabitlenmiş bir yorum olup olmadığını güvenilir şekilde söyleyemez.
-- **Adjust the vote threshold** sitenize göre ayarlayın. Yoğun dizilerde 10 çok sık gerçekleşir; sessiz dizilerde 10 hiç olmayabilir.
-- **Consider scoping by URL** yalnızca sitenizin belirli bölümlerinde sabitlenmiş yorumlar istiyorsanız - örneğin haber dizileri, fakat duyuru dizileri değil.
+- [Context Options](#context-options) bölümünde **"Include parent comment and prior replies in the same thread"** seçeneğini işaretleyin. Konu bağlamı olmadan ajan, sabitlenmiş bir yorumun olup olmadığını ve sabitlenmesi gerekeni güvenilir şekilde anlayamaz.
+- **Oy eşiğini sitenize göre ayarlayın.** Yoğun konularda 10 çok sık gerçekleşir; sakin konularda 10 hiç gerçekleşmeyebilir.
+- **URL'e göre kapsamlandırmayı düşünün** - yalnızca sitenizin belirli bölümlerinde sabitlenmiş yorumlar istiyorsanız; örneğin haber konularında, ama duyuru konularında değil.
 
-### Note on duplicate pinning
+### Yinelenen sabitleme hakkında not
 
-Ajana öncelikle sabitlemeyi kaldırması gerektiği öğütlenir, fakat model o adımı kaçırırsa platform kendisi dizide bir tane-sabitli-kuralını uygulamaz (birden fazla olabilir). Eğer sitenizde yinelenen sabitleme bir sorun teşkil ediyorsa, `pin_comment`'i onay arkasına alın ve her birini inceleyin - veya daha sıkı bir istem yazın.
+Ajanın istemi, önce sabitlemeyi kaldırmasını sonra sabitlemesini söyler, ancak model bu adımı kaçırırsa platformun kendisi konu başına tek sabitlenmiş yorum kuralını zorunlu tutmaz (birden fazla olabilir). Sitenizde yinelenen sabitleme bir sorunsa, `pin_comment` aracını onay arkasına alın ve her birini gözden geçirin - ya da daha sıkı bir istem yazın.

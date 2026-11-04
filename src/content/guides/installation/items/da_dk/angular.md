@@ -69,5 +69,3 @@ Da konfigurationen kan blive ret kompliceret, kan vi videregive en objektreferen
 Widget'en bruger change detection, så ændring af nogen egenskaber i konfigurationsobjektet vil få den til at blive genindlæst.
 
 Du kan finde den konfiguration, som Angular-komponenten understøtter <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">her</a>.
-
----

@@ -1,4 +1,3 @@
----
 將投票附加到評論，或設定其已存在投票的完整狀態。
 
 選項會依據 id 進行匹配：若傳送的選項帶有既有選項的 id，則保留其投票（並採用新的標籤與位置）；若傳送的選項未帶 id，則會新增；而在列表中省略的既有選項則會被移除，連同其已投的票一起刪除。
@@ -40,5 +39,3 @@ DefaultAPI.putPoll(tenantId: tenantId, commentId: commentId, commentPollPutInput
     }
 }
 [inline-code-end]
-
----

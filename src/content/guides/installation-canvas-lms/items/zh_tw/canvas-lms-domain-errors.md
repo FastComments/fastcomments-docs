@@ -12,5 +12,3 @@
 <a href="https://fastcomments.com/auth/my-account/configure-domains" target="_blank">點此將您的網站新增到帳戶中。</a>
 
 加入您的 Canvas 網域（例如 `yourschool.instructure.com`），評論應該就會正確載入。
-
----

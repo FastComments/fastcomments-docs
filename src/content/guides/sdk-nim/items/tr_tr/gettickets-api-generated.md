@@ -1,4 +1,3 @@
----
 ## Parametreler
 
 | Ad | Tür | Gerekli | Açıklama |
@@ -19,5 +18,3 @@ if ticketsOpt.isSome:
   let tickets = ticketsOpt.get()
   # ihtiyacınıza göre biletleri kullan
 [inline-code-end]
-
----

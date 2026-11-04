@@ -31,5 +31,3 @@ Se você está procurando o trecho de código para Comentários ao Vivo do Click
     })();
 </script>
 [inline-code-end]
-
----

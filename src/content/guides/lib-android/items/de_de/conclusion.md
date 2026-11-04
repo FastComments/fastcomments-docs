@@ -8,5 +8,3 @@ Wenn Sie auf Probleme stoßen oder Fragen zur Android-Bibliothek haben, bitte:
 ## Mitwirken
 
 Beiträge sind willkommen! Bitte besuchen Sie das [GitHub-Repository](https://github.com/FastComments/fastcomments-android) für Beitragsrichtlinien.
-
----

@@ -1,16 +1,16 @@
-Next, determine where you want to add comments. Mouse over the bottom of the previous content area
-and click to add a section:
+Em seguida, determine onde deseja adicionar comentários. Passe o mouse sobre a parte inferior da área de conteúdo anterior
+e clique para adicionar uma seção:
 
 <div class="screenshot white-bg">
-    <div class="title">Step Two: Add Section</div>
-    <img class="screenshot-image" src="/images/installation-guides/webnode-step-2.png" alt="Add Section" />
+    <div class="title">Passo Dois: Adicionar Seção</div>
+    <img class="screenshot-image" src="/images/installation-guides/webnode-step-2.png" alt="Adicionar Seção" />
 </div>
 
-Now let's put an HTML block in that section, where the code snippet will go. Select `HTML`:
+Agora vamos colocar um bloco HTML nessa seção, onde o trecho de código ficará. Selecione `HTML`:
 
-> **Nota:** A partir de 26 de junho de 2023, o bloco HTML do Webnode é um recurso pago. Não está disponível no plano gratuito e, para projetos criados após essa data, requer um pacote premium. Se você não vir a opção `HTML`, atualize seu plano Webnode para habilitá‑lo.
+> **Observação:** A partir de 26 de junho de 2023, o bloco HTML do Webnode é um recurso pago. Ele não está disponível no plano gratuito e, para projetos criados após essa data, é necessário um pacote premium. Se você não vê a opção `HTML`, faça upgrade do seu plano do Webnode para habilitá-la.
 
 <div class="screenshot white-bg">
-    <div class="title">Step Three: Add Code Block</div>
-    <img class="screenshot-image" src="/images/installation-guides/webnode-step-3.png" alt="Add HTML Block" />
+    <div class="title">Passo Três: Adicionar Bloco de Código</div>
+    <img class="screenshot-image" src="/images/installation-guides/webnode-step-3.png" alt="Adicionar Bloco HTML" />
 </div>

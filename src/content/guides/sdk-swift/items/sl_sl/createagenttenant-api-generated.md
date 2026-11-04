@@ -1,19 +1,19 @@
-Creates a new trial account for an AI agent without a human signup. No API key is needed to call this.
+Ustvari nov preizkusni račun za AI agenta brez človeške prijave. Za klic tega ni potreben API ključ.
 
-The response contains the tenant id, an API key that works immediately against the REST API and the
-MCP server, and a claim URL. Give the claim URL to the human you are working for: opening it while
-logged in to FastComments attaches the account to them. Unclaimed accounts, and their keys, are
-deleted 72 hours after creation. Until claimed, the account has the standard trial limits.
+Odgovor vsebuje ID najemnika (tenant id), API ključ, ki takoj deluje proti REST API in
+MCP strežniku, ter URL za prevzem računa. URL za prevzem posredujte človeku, za katerega delate: če ga odprete,
+medtem ko ste prijavljeni v FastComments, se račun poveže z njim. Neprevzeti računi in njihovi ključi
+se izbrišejo 72 ur po ustvarjanju. Do prevzema ima račun standardne omejitve preizkusnega obdobja.
 
-## Response
+## Odgovor
 
-Returns: [`CreateAgentTenantResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateAgentTenantResponse.swift)
+Vrne: [`CreateAgentTenantResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreateAgentTenantResponse.swift)
 
-## Example
+## Primer
 
-[inline-code-attrs-start title = 'createAgentTenant Primer'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer createAgentTenant'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Naslednji primeri kode so še v beta fazi. Za morebitne težave prosimo, da jih prijavite na http://github.com/OpenAPITools/openapi-generator/issues/new
+// Naslednji vzorci kode so še v beta fazi. V primeru težav jih prijavite prek http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let createAgentTenantBody = CreateAgentTenantBody(name: "name_example", domains: ["domains_example"], agent: "agent_example") // CreateAgentTenantBody | 

@@ -1,4 +1,3 @@
----
 Sayfada daha önce yorum yapmış ancak şu anda çevrimiçi olmayan yorumcular. displayName göre sıralanır.  
 Bu, /users/online kapsamını tükettikten sonra bir “Members” (Üyeler) bölümü oluşturmak için kullanılır.  
 commenterName üzerinde imleç sayfalama: sunucu, {tenantId, urlId, commenterName} kısmını afterName'den itibaren $gt ile ilerleyerek yürütür, $skip maliyeti yok.

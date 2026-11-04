@@ -1,71 +1,71 @@
-יש ארבעה סוגי אירועי webhook של סוכן. לכל אירוע יש ערך enum מספרי (שמשמש במטענים) ושם מחרוזת קנוני (המשמש בשדה המעטפה `event` ובכותרת ה-HTTP `X-FastComments-Agent-Event`).
+ישנם ארבעה סוגי אירועי webhook של סוכן. לכל אירוע יש ערך enum מספרי (המשמש ב-payloads) ושם מחרוזת קנוני (המשמש בשדה ה-`event` של המעטפת ובכותרת ה-HTTP `X-FastComments-Agent-Event`).
 
-| שם האירוע | Enum | מתרחש כאשר |
+| שם האירוע | Enum | מופעל כאשר |
 |---|---|---|
-| `trigger.succeeded` | 0 | ריצת סוכן מסתיימת בסטטוס `SUCCESS`. |
-| `trigger.failed` | 1 | ריצת סוכן מסתיימת בסטטוס `ERROR`. |
-| `approval.requested` | 2 | בקשת אישור מתווספת לתור במצב `PENDING`. |
-| `approval.decided` | 3 | אישור עובר ל-`APPROVED`, `REJECTED`, או `EXECUTION_FAILED`. |
+| `trigger.succeeded` | 0 | ריצת סוכן מסתיימת עם סטטוס `SUCCESS`. |
+| `trigger.failed` | 1 | ריצת סוכן מסתיימת עם סטטוס `ERROR`. |
+| `approval.requested` | 2 | אישור נכנס לתור במצב `PENDING`. |
+| `approval.decided` | 3 | אישור עובר ל-`APPROVED`, `REJECTED` או `EXECUTION_FAILED`. |
 
 ### `trigger.succeeded`
 
-נשלח לאחר שריצת הסוכן מסתיימת ללא שגיאות. שדה `data` במטען כולל:
+מופעל לאחר שריצת הסוכן מסתיימת ללא שגיאה. שדה ה-`data` של ה-payload כולל:
 
-- `triggerId` - מזהה הרצה ייחודי.
-- `triggerType` - ה-[trigger reason enum](#triggers-overview) שהפעיל את הריצה.
+- `triggerId` - מזהה הריצה הייחודי.
+- `triggerType` - ה-[enum של סיבת ההפעלה](#triggers-overview) שהתחיל את הריצה.
 - `status` - `SUCCESS` (מחרוזת).
-- `tokensUsed` - מספר הטוקנים שנצרכו בהרצה זו.
-- `wasDryRun` - true אם הסוכן היה במצב [dry-run mode](#dry-run-mode).
-- `actions` - מערך של רשומות `TenantAgentAction` (ראה [Webhook Payloads](#webhook-payloads)).
-- `commentId`, `url`, `urlId` - אם הטריגר הכיל אותם.
+- `tokensUsed` - הטוקנים שנצרכו בריצה זו.
+- `wasDryRun` - true אם הסוכן היה ב-[מצב dry-run](#dry-run-mode).
+- `actions` - מערך של רשומות `TenantAgentAction` (ראו [Webhook Payloads](#webhook-payloads)).
+- `commentId`, `url`, `urlId` - אם להפעלה היו אלה.
 
-אם הריצה לא ביצעה פעולות, מערך `actions` יהיה ריק - זו ריצה מוצלחת של "הסוכן החליט לא לעשות כלום", וזה שימושי לדעת.
+אם הריצה לא ביצעה פעולות, המערך `actions` יהיה ריק - זו ריצה מוצלחת שבה "הסוכן החליט לא לעשות דבר", דבר שימושי לדעת.
 
 ### `trigger.failed`
 
-נשלח כאשר ריצה נכשלה עם שגיאה. צורת המטען זהה ל-`trigger.succeeded`, עם `status: 'ERROR'` ושדה נוסף `errorMessage` המתאר מה השתבש. שגיאות אפשריות כוללות כשלי קריאות LLM, כשלי שליחת פקודות לכלים, וגמר תקציב באמצע הריצה.
+מופעל כאשר ריצה נכשלת בשגיאה. צורת ה-payload זהה ל-`trigger.succeeded`, עם `status: 'ERROR'` ושדה נוסף `errorMessage` המתאר מה השתבש. שגיאות אפשריות כוללות כשלים בקריאות LLM, כשלים בהפעלת כלים, ואזלת תקציב באמצע ריצה.
 
-למרות זאת, `actions` עדיין עשוי להכיל רשומות של קריאות לכלי שהושלמו לפני השגיאה.
+`actions` עשוי עדיין להכיל רשומות עבור קריאות כלים שהושלמו לפני השגיאה.
 
 ### `approval.requested`
 
-נשלח ברגע שבקשת אישור מתווספת לתור במצב `PENDING`. המטען כולל:
+מופעל ברגע שאישור נכנס לתור במצב `PENDING`. ה-payload כולל:
 
 - `approvalId`, `triggerId`.
 - `toolName`, `actionType`.
 - `status: 'PENDING'`.
-- `args` - ארגומנטים של הכלי **מועברים כפי שהם** מבקשת ה-LLM. המבנה הוא תלוי-כלי ואינו חוזה ציבורי יציב - ההסכמה יכולה להשתנות כאשר נוספים כלים חדשים.
+- `args` - הארגומנטים של הכלי **מועברים כפי שהם** מקריאת ה-LLM. הצורה תלויה בכלי ואינה חוזה ציבורי יציב - הסכמה עשויה להשתנות ככל שנוספים כלים חדשים.
 - `createdAt`.
 - `justification`, `confidence` - אם הסוכן סיפק אותם.
-- `contextSnapshot` - הקשר ההערה/העמוד שקשור לאישור.
+- `contextSnapshot` - הקשר התגובה / העמוד שאליו מתייחס האישור.
 
-שימושי להעברה של אישורים ממתינים לערוץ chat ops: בוט Slack המנוי על `approval.requested` יכול לפרסם את הפעולה והנימוקים בערוץ מודרציה לצפייה מהירה.
+שימושי להעברת אישורים ממתינים לערוץ chat ops: בוט Slack הרשום ל-`approval.requested` יכול לפרסם את הפעולה והנימוק בערוץ מודרציה לסקירה מהירה.
 
 ### `approval.decided`
 
-נשלח כשהאישור יוצא ממצב `PENDING`. המטען כולל:
+מופעל כאשר אישור יוצא מ-`PENDING`. ה-payload כולל:
 
 - `approvalId`, `triggerId`.
 - `toolName`, `actionType`.
-- `status` - `APPROVED`, `REJECTED`, או `EXECUTION_FAILED`.
-- `decidedBy` - מזהה המשתמש של המודרטור שהחליט.
-- `decidedAt` - מתי החליט.
-- `executedAt` - אם `APPROVED`, מתי הפלטפורמה ביצעה את הפעולה המאושרת.
-- `executionResult` - אם `APPROVED`, מחרוזת המתארת את תוצאת הביצוע.
-- `contextSnapshot` - הקשר ההערה/העמוד.
+- `status` - `APPROVED`, `REJECTED` או `EXECUTION_FAILED`.
+- `decidedBy` - מזהה המשתמש של המנחה שקיבל את ההחלטה.
+- `decidedAt` - מתי קיבל את ההחלטה.
+- `executedAt` - אם APPROVED, מתי הפלטפורמה ביצעה את הפעולה המאושרת.
+- `executionResult` - אם APPROVED, מחרוזת המתארת את תוצאת הביצוע.
+- `contextSnapshot` - הקשר התגובה / העמוד.
 
 אירוע זה מכסה את כל תוצאות ההחלטה:
 
-- **מאושר + בוצע בהצלחה** -> `status: APPROVED`, `executedAt` מוגדר, `executionResult` היא הודעת ההצלחה.
-- **מאושר + הביצוע נכשל** -> `status: EXECUTION_FAILED`, `executedAt` מוגדר, `executionResult` מתאר את הכשל.
+- **אושר ובוצע בהצלחה** -> `status: APPROVED`, `executedAt` מוגדר, `executionResult` הוא הודעת ההצלחה.
+- **אושר אך הביצוע נכשל** -> `status: EXECUTION_FAILED`, `executedAt` מוגדר, `executionResult` מתאר את הכשל.
 - **נדחה** -> `status: REJECTED`, `executedAt` הוא null, `executionResult` הוא null.
 
-### Header
+### כותרת (Header)
 
-כל משלוח כולל כותרת HTTP `X-FastComments-Agent-Event` עם שם המחרוזת הקנוני של האירוע (`trigger.succeeded`, וכו'). זה שימושי אם נקודת הקצה שלך היא כתובת URL יחידה המטפלת במספר סוגי אירועים.
+כל משלוח כולל כותרת HTTP `X-FastComments-Agent-Event` עם שם המחרוזת הקנוני של האירוע (`trigger.succeeded` וכו'). שימושי אם נקודת הקצה שלכם היא URL יחיד המטפל במספר סוגי אירועים.
 
-### See also
+### ראו גם
 
-- [Webhook Payloads](#webhook-payloads) עבור סכמות המטען המלאות לכל אירוע.
-- [Webhook Signing](#webhook-signing) עבור סכמת HMAC.
-- [Webhook Retries](#webhook-retries) לגבי סמנטיקת המסירה.
+- [Webhook Payloads](#webhook-payloads) לסכמות payload מלאות לכל אירוע.
+- [Webhook Signing](#webhook-signing) לסכימת ה-HMAC.
+- [Webhook Retries](#webhook-retries) לסמנטיקת המשלוח.

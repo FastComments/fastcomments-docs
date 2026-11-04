@@ -1,4 +1,3 @@
----
 Si attiva quando un moderatore segna un commento come revisionato.
 
 ### Contesto che l'agente riceve
@@ -20,5 +19,3 @@ Un'azione di un moderatore umano nella pagina di moderazione, nel widget dei com
 
 - "Reviewed" è uno degli stati della coda di moderazione tracciati separatamente da "approved" e "spam". Un commento può essere approved-and-reviewed, approved-but-not-reviewed, ecc. Vedi [Come funzionano le approvazioni](/guide-moderation.html#moderation-approvals) nella guida alla moderazione.
 - Questo trigger è ad alta frequenza per tenant con molti moderatori. Iscriviti selettivamente e pianifica il budget di conseguenza.
-
----

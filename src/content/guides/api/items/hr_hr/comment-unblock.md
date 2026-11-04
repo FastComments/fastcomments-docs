@@ -1,14 +1,14 @@
 [api-resource-header-start name = 'Comment'; route = 'POST /api/v1/comments/:id/un-block'; creditsCost = 1; api-resource-header-end]
 
-Ovaj API endpoint omogućuje deblokiranje korisnika koji je napisao određeni komentar. Podržava deblokiranje komentara koje su napisali FastComments.com korisnici, SSO korisnici i Tenant korisnici.
+Ovaj API endpoint omogućava deblokiranje korisnika koji je napisao određeni komentar. Podržava deblokiranje komentara koje su napisali FastComments.com korisnici, SSO korisnici i Tenant korisnici.
 
-Podržava body parametar `commentIdsToCheck` za provjeru trebaju li nakon ove radnje biti blokirani/deblokirani neki drugi potencijalno vidljivi komentari na klijentu.
+Podržava `commentIdsToCheck` body parametar za provjeru trebaju li se drugi potencijalno vidljivi komentari na klijentu blokirati/deblokirati nakon izvođenja ove radnje.
 
 Napomene:
 
 - Ovaj poziv uvijek se mora izvršiti u kontekstu korisnika. Korisnik može biti FastComments.com korisnik, SSO korisnik ili Tenant korisnik.
-- The `userId` in the request is the user that is *doing the un-blocking*. For example: `User A` wants to Un-Block `User B`. Pass `userId=User A` and the comment id that `User B` wrote.
-- Potpuno anonimni komentari (bez ID-a korisnika, bez e-maila) ne mogu biti blokirani i bit će vraćena pogreška.
+- `userId` u zahtjevu je korisnik koji *vrši deblokiranje*. Na primjer: `User A` želi deblokirati `User B`. Proslijedite `userId=User A` i ID komentara koji je `User B` napisao.
+- Potpuno anonimni komentari (bez korisničkog ID-a, bez e-pošte) ne mogu se blokirati i vratit će se pogreška.
 
 [inline-code-attrs-start title = 'Primjer cURL zahtjeva za deblokiranje komentara'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -35,16 +35,16 @@ interface CommentUnBlockQueryParams {
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Struktura odgovora za deblokiranje komentara'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Struktura odgovora na deblokiranje komentara'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 
 interface CommentUnBlockResponse {
     status: 'success' | 'failed'
-    /** Uključeno kod neuspjeha. **/
+    /** Included on failure. **/
     code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-id' | 'not-found' | 'missing-user-id' | 'missing-anon-user-id' | 'comment-cannot-be-blocked'
-    /** Uključeno kod neuspjeha. **/
+    /** Included on failure. **/
     reason?: string
-    /** Ako je commentIdsToCheck definiran, unosi u ovoj mapi s vrijednošću true i dalje su blokirani. Ako su false, možda ćete htjeti ponovno prikazati komentare korisniku kako se ne bi morali osvježavati. **/
+    /** If commentIdsToCheck is defined, entries in this map with true are still blocked. If false, you might want to un-hide the comments from the user so they don't have to refresh. **/
     commentStatuses?: Record<string, boolean>;
 }
 [inline-code-end]

@@ -1,10 +1,9 @@
-Enable or disable notifications for a page. When users are subscribed to a page, notifications are created
-for new root comments, and also
+啟用或停用頁面的通知。當使用者訂閱了某個頁面時,系統會為新的根留言建立通知,並且
 
-## Parameters
+## 參數
 
-| 名稱 | 類型 | 位置 | 必填 | 描述 |
-|------|------|------|------|------|
+| 名稱 | 類型 | 位置 | 必填 | 說明 |
+|------|------|----------|----------|-------------|
 | tenantId | string | query | 是 |  |
 | urlId | string | query | 是 |  |
 | url | string | query | 是 |  |
@@ -12,13 +11,13 @@ for new root comments, and also
 | subscribedOrUnsubscribed | string | path | 是 |  |
 | sso | string | query | 否 |  |
 
-## Response
+## 回應
 
-返回： `UpdateUserNotificationPageSubscriptionStatusResponse`
+回傳:`UpdateUserNotificationPageSubscriptionStatusResponse`
 
-## Example
+## 範例
 
-[inline-code-attrs-start title = 'updateUserNotificationPageSubscriptionStatus 示例'; type = ''; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateUserNotificationPageSubscriptionStatus 範例'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import 'package:fastcomments_dart/api.dart';
 
@@ -37,5 +36,3 @@ try {
     print('Exception when calling PublicApi->updateUserNotificationPageSubscriptionStatus: $e\n');
 }
 [inline-code-end]
-
----

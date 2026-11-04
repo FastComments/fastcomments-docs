@@ -20,5 +20,3 @@ Activeert de agent wanneer een opmerking wordt bewerkt.
 ### Opmerking over kosten
 
 Bewerk-triggers zien twee kopieën van de tekst van de opmerking (de nieuwe versie in het standaard COMMENT-blok, de oude versie in het PREVIOUS_TEXT-blok). Voor lange opmerkingen verdubbelt dit ruwweg het aantal tokens van de run ten opzichte van een `COMMENT_ADD` trigger - houd daar rekening mee bij het budgetteren.
-
----

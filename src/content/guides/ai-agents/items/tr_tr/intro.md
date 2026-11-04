@@ -5,5 +5,3 @@ AI ajanları, topluluğunuzdaki olayları izleyen ve sizin adınıza işlem yapa
 Bu kılavuz uygunluk ve kurulum, tetikleyiciler ve araçların tam kataloğu, güvenlik kontrolleri (kuru çalıştırma, onaylar, AB DSA kısıtlaması, bellek), bütçeler ve maliyet hesaplaması, izleme ve istem iyileştirme ile webhook entegrasyonunu kapsar.
 
 FastComments, verileriniz üzerinde eğitim yapmayan yapay zeka sağlayıcılarını kullanır.
-
----

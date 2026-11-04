@@ -1,15 +1,14 @@
----
-Объект `PendingWebhookEvent` представляет собой поставленное в очередь событие вебхука, ожидающее обработки.
+Объект `PendingWebhookEvent` представляет событие вебхука в очереди, ожидающее обработки.
 
-`PendingWebhookEvent` objects are created automatically and cannot be manually created via the API. They also expire after one year.
-They can be deleted which removes the task from the queue.
+Объекты `PendingWebhookEvent` создаются автоматически и не могут быть созданы вручную через API. Они также истекают через один год.
+Их можно удалить, что уберет задачу из очереди.
 
-There are different event types - check `eventType` (`OutboundSyncEventType`) and `type` (`OutboundSyncType`).
+Существуют разные типы событий — проверьте `eventType` (`OutboundSyncEventType`) и `type` (`OutboundSyncType`).
 
-A common use case for this API is to implement custom monitoring. You may want to call the `/count` endpoint periodically
-to poll the outstanding count for given filters.
+Распространенный вариант использования этого API — реализация пользовательского мониторинга. Возможно, вы захотите периодически вызывать эндпоинт `/count`,
+чтобы опрашивать количество ожидающих событий по заданным фильтрам.
 
-The structure for the `PendingWebhookEvent` object is as follows:
+Структура объекта `PendingWebhookEvent` выглядит следующим образом:
 
 [inline-code-attrs-start title = 'Структура PendingWebhookEvent'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -27,26 +26,24 @@ enum OutboundSyncType {
 
 interface PendingWebhookEvent {
     id: string
-    /** Идентификатор комментария, связанный с событием. **/
+    /** Идентификатор комментария, связанного с событием. **/
     commentId: string
-    /** Объект комментария на момент события. Мы начали добавлять их в ноябре 2023 года. **/
+    /** Объект комментария на момент события. Мы начали добавлять это в ноябре 2023 года. **/
     comment: Comment
     /** Внешний идентификатор, который может быть связан с комментарием. **/
     externalId: string | null
     createdAt: Date
     tenantId: string
     attemptCount: number
-    /** Устанавливается перед первой попыткой и после каждой ошибки. **/
+    /** Устанавливается перед первой попыткой и после каждой неудачи. **/
     nextAttemptAt: Date
-    /** Указывает, является ли это событие созданием, удалением или обновлением... **/
+    /** Является ли это событием создания, удаления или обновления... **/
     eventType: OutboundSyncEventType
-    /** Тип выполняемой синхронизации (WordPress, вызов API и т.д.). **/
+    /** Тип синхронизации для выполнения (WordPress, вызов API и т.д.). **/
     type: OutboundSyncType
-    /** Домен, соответствующий комментарию. Мы используем этот домен для выбора ключа API. **/
+    /** Домен, который совпал с комментарием. Мы используем этот домен для выбора API-ключа. **/
     domain: string
-    /** Последняя произошедшая ошибка. Этот тип не типизирован и представляет собой «дамп» всего произошедшего. Обычно содержит объект с полями statusCode, body и картой headers. **/
+    /** Последняя произошедшая ошибка. Этот тип не типизирован и представляет собой "дамп" того, что произошло. Обычно содержит объект с statusCode, body и картой headers. **/
     lastError: object | null
 }
 [inline-code-end]
-
----

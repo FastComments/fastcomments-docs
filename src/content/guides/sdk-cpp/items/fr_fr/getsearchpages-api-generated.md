@@ -28,5 +28,3 @@ api->getSearchPages(U("my-tenant-123"), options)
         }
     });
 [inline-code-end]
-
----

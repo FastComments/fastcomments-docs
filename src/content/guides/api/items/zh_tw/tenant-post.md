@@ -52,5 +52,3 @@ interface TenantPostResponse {
     tenant?: Tenant; // 成功時會回傳完整的已建立租戶。
 }
 [inline-code-end]
-
----

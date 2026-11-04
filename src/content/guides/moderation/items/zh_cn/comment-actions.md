@@ -1,19 +1,19 @@
-在 FastComments 中，管理员和版主可以对每条评论执行多种操作，具体包括：
+使用 FastComments，管理员和版主可以对每条评论执行多种操作，包括：
 
-- **Deleting** that comment
-- **Delete** that comment + **Ban the user** (Permanent or Shadow, more details later)
-- **Edit** that comment
-- **Adjust the votes** of that comment
-- Mark that comment **Reviewed** or **Not Reviewed**
-- Mark that comment **Approved** or **Not Approved**
-- Mark that comment as **Spam** or **Not Spam**
-- 查看来自相同的 IP address 的所有评论 *<sup>1</sup>.
-- Reset the Flag Count on a comment.
+- **删除**该评论
+- **删除**该评论 + **封禁用户**（永久封禁或影子封禁，稍后详细介绍）
+- **编辑**该评论
+- **调整**该评论的**投票数**
+- 将该评论标记为**已审核**或**未审核**
+- 将该评论标记为**已批准**或**未批准**
+- 将该评论标记为**垃圾信息**或**非垃圾信息**
+- 查看来自同一 IP 地址的所有评论 *<sup>1</sup>。
+- 重置评论的标记计数。
 
-例如，要保留一条评论但将其隐藏，我们可以简单地将其标记为 **Not Approved**。
+例如，如果想保留某条评论但将其隐藏，我们只需将其标记为**未批准**即可。
 
-此外，管理员和版主可以置顶评论，但只能在评论线程中执行此操作。
+此外，管理员和版主可以置顶评论，但这只能在评论线程本身中进行。
 
-以上所有操作也可以通过键盘快捷键完成。详情请参见 [键盘快捷键](#keyboard-shortcuts) 一节。
+以上所有操作也可以通过键盘快捷键完成。详情请参阅[键盘快捷键](#keyboard-shortcuts)部分。
 
-*<sup>1</sup> 我们不会为此功能存储原始 ip addresses。
+*<sup>1</sup> 我们不会为此功能存储原始 IP 地址。

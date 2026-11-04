@@ -80,5 +80,3 @@ Chez FastComments, nous mettons beaucoup d'efforts pour que la livraison de nos 
 
 Si vous [nous contactez](https://fastcomments.com/auth/my-account/help), nous pouvons généralement fournir
 plus d'informations sur la raison pour laquelle vous ne recevez peut-être pas nos e-mails.
-
----

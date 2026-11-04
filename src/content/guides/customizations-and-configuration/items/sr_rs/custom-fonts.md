@@ -19,5 +19,3 @@ FastComments је дизајниран да се прилагоди, и фонт
     font-family: 'Roboto', sans-serif;
 }
 [inline-code-end]
-
----

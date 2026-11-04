@@ -1,10 +1,11 @@
-Identifies the credential in use: the tenant it belongs to and, for OAuth tokens, the user who authorized it. Integrations use this to test a connection and label it.
+Identyfikuje używane poświadczenie: dzierżawcę, do którego należy, oraz — w przypadku tokenów OAuth — użytkownika, który je autoryzował.
+Integracje używają tego do testowania połączenia i jego etykietowania.
 
 ## Parametry
 
 | Nazwa | Typ | Lokalizacja | Wymagane | Opis |
-|------|------|----------|----------|------|
-| tenantId | string | query | Yes |  |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Tak |  |
 
 ## Odpowiedź
 
@@ -14,7 +15,7 @@ Zwraca: [`GetMeResponse`](https://github.com/FastComments/fastcomments-java/blob
 
 [inline-code-attrs-start title = 'Przykład getMe'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importuj klasy:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -27,10 +28,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Skonfiguruj autoryzację klucza API: api_key
+    // Configure API key authorization: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Odkomentuj następującą linię, aby ustawić prefiks dla klucza API, np. "Token" (domyślnie null)
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);

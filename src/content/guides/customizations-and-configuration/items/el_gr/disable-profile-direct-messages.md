@@ -9,5 +9,3 @@
 Αυτό μπορεί επίσης να γίνει χωρίς κώδικα. Στη σελίδα προσαρμογής του widget, δείτε την ενότητα «Απενεργοποίηση Άμεσων Μηνυμάτων».
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-profile-direct-messages']; selector = '.disable-profile-direct-messages'; alt='Σελίδα προσαρμογής widget με το πλαίσιο ελέγχου «Απενεργοποίηση Άμεσων Μηνυμάτων» επιλεγμένο για απόκρυψη της καρτέλας μηνυμάτων προφίλ'; title='Disable Profile Direct Messages' app-screenshot-end]
-
----

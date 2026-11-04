@@ -8,5 +8,3 @@ Si vous rencontrez des problèmes ou avez des questions concernant la SolidJS Li
 ## Contribuer
 
 Les contributions sont les bienvenues ! Veuillez consulter le [dépôt GitHub](https://github.com/FastComments/fastcomments-solidjs) pour les directives de contribution.
-
----

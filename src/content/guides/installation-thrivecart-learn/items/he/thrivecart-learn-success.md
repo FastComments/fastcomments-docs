@@ -1,4 +1,3 @@
----
 הצלחה! כעת אמור להופיע ווידג'ט התגובות של FastComments.
 
 <div class="screenshot white-bg">
@@ -7,5 +6,3 @@
 </div>
 
 ברכות על הגדרת FastComments עם ThriveCart! אם נתקלת ב- Domain Error, או אם ברצונך ללמוד כיצד להתאים אישית את אזור התגובות, המשך לקרוא!
-
----

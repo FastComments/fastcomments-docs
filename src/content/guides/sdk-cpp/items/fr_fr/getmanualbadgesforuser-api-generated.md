@@ -24,5 +24,3 @@ api->getManualBadgesForUser(tenantId, options).then([](pplx::task<std::shared_pt
     }
 });
 [inline-code-end]
-
----

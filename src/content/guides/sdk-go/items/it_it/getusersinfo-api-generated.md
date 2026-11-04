@@ -1,4 +1,3 @@
----
 Informazioni bulk sugli utenti per un tenant. Data una lista di userIds, restituisce le informazioni di visualizzazione da User / SSOUser.
 Utilizzato dal widget dei commenti per arricchire gli utenti che sono appena apparsi tramite un evento di presenza.
 Nessun contesto di pagina: la privacy è applicata in modo uniforme (i profili privati sono oscurati).
@@ -42,5 +41,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.GetUsersInfo`: %v\n", resp)
 }
 [inline-code-end]
-
----

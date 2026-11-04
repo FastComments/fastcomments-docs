@@ -32,5 +32,3 @@ interface NotificationCountGetResponse {
     data?: NotificationCount
 }
 [inline-code-end]
-
----

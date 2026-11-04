@@ -69,5 +69,3 @@ Pošto konfiguracija može postati prilično komplikovana, možemo proslediti re
 Widget koristi detekciju promena, tako da promena bilo koje osobine konfiguracionog objekta izaziva njegovo ponovno učitavanje.
 
 Konfiguraciju koju Angular komponenta podržava možete pronaći <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">ovde</a>.
-
----

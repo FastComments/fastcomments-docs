@@ -1,4 +1,3 @@
----
 Webhook 配信が使用する正確な形状の最近のコメントで、統合（例：Zapier のサンプルデータ）を構築するために使用します。すべてのイベントは同じコメントオブジェクトを配信するため、`event` は有効である必要があります。
 
 ## Parameters
@@ -35,5 +34,3 @@ DefaultAPI.getWebhookSamplePayloads(tenantId: tenantId, options: DefaultAPI.GetW
     }
 }
 [inline-code-end]
-
----

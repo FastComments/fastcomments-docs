@@ -15,5 +15,3 @@ Bu bir insan moderatör eylemidir. Ajan kaynaklı spam işaretlemeleri (aracıl�
 - **Bellek kaydı** - bir ajanın spamlenen kullanıcı hakkında bir hafıza notu kaydetmesini sağlayın (ör. "daha önce moderatör tarafından X nedeniyle spamlenmiş") böylece gelecekteki moderasyon ajanlarının bağlamı olur.
 - **Kullanıcı düzeyinde yaptırım** - bir moderatörün bir yorumu spam olarak işaretlemesi, bir ajanın onaya tabi olacak şekilde ek olarak uyarı veya kısa süreli yasaklama uygulaması için işaret olabilir.
 - **Harici sistem aynası** aracılığıyla [Webhooks](#webhooks-overview).
-
----

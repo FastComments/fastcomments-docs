@@ -10,5 +10,3 @@ At forstå standard-CSS'en gør det muligt for dig at:
 ## Sådan tilsidesætter du stilarter
 
 Måden, du tilsidesætter stilarter på, varierer afhængigt af widgetten. For kommentars-widgetten skal du bruge konfigurationsparameteren `customCSS` for at sende CSS'en ind i `iframe`-en, eller angive CSS'en på Tilpasningssiden i administrationsdashboardet, som vil servere CSS'en fra vores CDN.
-
----

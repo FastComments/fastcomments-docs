@@ -1,4 +1,3 @@
----
 The APIは`fastcomments-react`と比べて若干異なります。ネイティブでは、次の構造に従う設定オブジェクトを渡します: [this structure](https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts#L35)。
 
 ```js
@@ -24,4 +23,3 @@ import { FastCommentsCommentWidget } from 'fastcomments-react-native';
       <FastCommentsCommentWidget config={config}/>
   );
 ```
----

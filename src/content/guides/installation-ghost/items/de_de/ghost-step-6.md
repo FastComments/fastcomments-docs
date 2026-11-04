@@ -8,5 +8,3 @@ Jetzt müssen wir die Theme-Dateien wieder in eine ZIP-Datei verpacken. Verwende
 </div>
 
 Dies verpackt das Theme in eine ZIP-Datei unter `dist/casper-fastcomments.zip` (falls Sie das Theme in `Step Three` so benannt haben).
-
----

@@ -1,23 +1,21 @@
-Da biste saznali limit za broj domena na vašem nalogu, posetite [Stranicu za naplatu](https://fastcomments.com/auth/my-account/billing-info).
+Da biste saznali ograničenje broja domena na svom nalogu, posetite [Stranicu za naplatu](https://fastcomments.com/auth/my-account/billing-info).
 
-### Cene
+### Cenovnik
 
-The pricing varies based on package:
+Cenovnik varira u zavisnosti od paketa:
 
 1. FastComments for Creators
    - Uključeno u cenu paketa. Ograničenje od tri sajta.
 2. FastComments Flex
-   - Prvi sajt je uključen. Svaki dodatni sajt košta $10/mesec.
+   - Prvi sajt je uključen. Svaki dodatni sajt košta $10/mesečno.
 3. FastComments Pro
-   - Veliki broj sajtova (može varirati u zavisnosti od ugovora) je uključen u cenu paketa.
+   - Veliki broj sajtova (može varirati u zavisnosti od dogovora) je uključen u cenu paketa.
 
-### Ograničenja saobraćaja i domena
+### Ograničenja saobraćaja i domeni
 
-In the example where you are on a tier with five million monthly page loads with five domains added to your account, and
-each domain ends up with one million-page loads, you will have met your monthly quota.
+U primeru gde ste na nivou sa pet miliona mesečnih učitavanja stranica sa pet domena dodanih na vaš nalog, i
+svaki domen na kraju ima po milion učitavanja stranica, dostići ćete svoju mesečnu kvotu.
 
-To summarize, traffic limitations are per-account, not per-domain.
+Ukratko, ograničenja saobraćaja važe po nalogu, ne po domenu.
 
-Imajte na umu da nudimo prilagođene pakete za sajtove različitih veličina; jednostavno se obratite podršci.
-
----
+Imajte na umu da nudimo prilagođene pakete za sajtove različitih veličina, jednostavno se obratite podršci.

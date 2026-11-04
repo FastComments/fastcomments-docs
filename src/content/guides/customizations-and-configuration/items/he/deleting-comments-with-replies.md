@@ -1,4 +1,3 @@
----
 בברירת מחדל, משתמשים יכולים למחוק את ההערות שלהם. בנוסף, מחיקת ההערה שלהם מוחקת אוטומטית את כל ההערות הילדיות והזמניות בשרשור. התנהגות זו גם פעילה.
 
 ניתן להגביל זאת בדרכים הבאות:
@@ -10,5 +9,3 @@
 ניתן להגדיר זאת דרך הסעיף `Comment Thread Deletion` בממשק התאמה אישית של הווידג'ט.
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.comment-thread-deletion-mode']; selector = '.comment-thread-deletion-mode'; alt='אפשרויות מחיקת שרשור ההערות בממשק התאמה אישית של הווידג\'ט לאנונימיזציה או להגבלת מחיקות עם תגובות'; title='התאמת התנהגות מחיקה לתגובות' app-screenshot-end]
-
----

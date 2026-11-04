@@ -6,5 +6,3 @@ Yorum bileşenini eklediğimize göre, şimdi sayfamızda düzenleyelim.
 </div>
 
 Bu eğitimle, etkin sayfaya bağlı olarak mevcut konuyu değiştirebileceğiz. Ancak, Wix bu işlevselliği açana kadar yorum bileşenini dinamik olarak yeniden boyutlandıramayacağız. O zamana kadar, sayfanızdaki yorum alanının ne kadar büyük olmasını istediğinize karar vermeniz ve uygun şekilde boyutlandırmanız gerekecek.
-
----

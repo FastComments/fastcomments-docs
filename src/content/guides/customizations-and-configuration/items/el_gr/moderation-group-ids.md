@@ -8,5 +8,3 @@
 θα βλέπουν μόνο τα σχόλια στη σελίδα `Moderate Comments` που σχετίζονται με την ομάδα/τις ομάδες τους.
 
 [code-example-start config = {moderationGroupIds: ['mxZAhjzdb', 'FT19nXbqA']}; linesToHighlight = [6, 7, 8, 9]; title = 'Specify Moderation Groups'; code-example-end]
-
----

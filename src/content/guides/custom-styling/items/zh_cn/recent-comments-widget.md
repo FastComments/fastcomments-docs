@@ -1,8 +1,8 @@
-最新评论小部件显示您站点上或特定页面的最新评论列表。它包括标题、圆形头像、评论预览、可点击的日期（可深度链接到评论），并能自动检测暗色模式。
+最新评论组件（Recent Comments Widget）会在您的整个网站或特定页面上显示最近评论的列表。它包含标题、圆形头像、评论预览、可深度链接到评论的可点击日期，以及自动深色模式检测。
 
 ## 基本安装
 
-[inline-code-attrs-start title = '最新评论小部件 安装'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = '最新评论组件安装'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/widget-recent-comments-v2.min.js"></script>
 <div id="fastcomments-widget-recent-comments"></div>
@@ -15,16 +15,16 @@
 
 ## 配置选项
 
-- **tenantId** (required): Your FastComments tenant ID
-- **urlId** (optional): Filter to a single page. Leave null for all pages
-- **count** (optional): Number of comments to show. Default is `10`
-- **hasDarkBackground** (optional): Force dark mode styling. Auto-detected from the page background if not set
+- **tenantId**（必填）：您的 FastComments 租户 ID
+- **urlId**（可选）：筛选到单个页面。留空 null 则显示所有页面
+- **count**（可选）：显示的评论数量。默认为 `10`
+- **hasDarkBackground**（可选）：强制使用深色模式样式。未设置时会根据页面背景自动检测
 
-## 小部件结构
+## 组件结构
 
-小部件将渲染为以下 HTML 结构：
+该组件渲染为以下 HTML 结构：
 
-[inline-code-attrs-start title = '最新评论小部件 HTML 结构'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = '最新评论组件 HTML 结构'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <div class="fc-rc2">
     <div class="fc-rc2-heading">Recent Comments</div>
@@ -46,7 +46,7 @@
 
 ## 默认 CSS 参考
 
-[inline-code-attrs-start title = '最新评论小部件 默认 CSS'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = '最新评论组件默认 CSS'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rc2 {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -82,9 +82,9 @@
 }
 [inline-code-end]
 
-### 显示更多评论行
+### 显示更多行评论文本
 
-[inline-code-attrs-start title = '显示更多评论行'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = '显示更多评论行数'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rc2-body {
     -webkit-line-clamp: 5 !important;

@@ -1,3 +1,1 @@
----
 Resmi paketle bir SolidJS uygulamasına yorum ekleyin, yeniden yükleme yapmadan widget yapılandırmasını değiştirmek için imperatif bir tutamaç dahil.
----

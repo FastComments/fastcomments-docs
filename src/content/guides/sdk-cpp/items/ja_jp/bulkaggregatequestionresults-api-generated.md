@@ -1,4 +1,3 @@
----
 ## パラメータ
 
 | 名前 | 型 | 必須 | 説明 |
@@ -29,5 +28,3 @@ api->bulkAggregateQuestionResults(tenantId, request, forceRecalc)
        auto resp = t.get();
    });
 [inline-code-end]
-
----

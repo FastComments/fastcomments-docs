@@ -1,4 +1,4 @@
-The Recent Discussions Widget displays a list of pages sorted by the most recent comment activity. It includes a heading, last activity dates, comment counts with icons, and automatic dark mode detection.
+O Widget de Discussões Recentes exibe uma lista de páginas ordenada pela atividade de comentários mais recente. Inclui um título, datas da última atividade, contagens de comentários com ícones e detecção automática do modo escuro.
 
 ## Instalação Básica
 
@@ -15,9 +15,9 @@ The Recent Discussions Widget displays a list of pages sorted by the most recent
 
 ## Opções de Configuração
 
-- **tenantId** (required): Seu ID de locatário FastComments
-- **count** (optional): Número de páginas a exibir. O padrão é `20`, máximo `100`
-- **hasDarkBackground** (optional): Forçar estilo em modo escuro. Detectado automaticamente a partir do fundo da página se não definido
+- **tenantId** (obrigatório): Seu ID de tenant do FastComments
+- **count** (opcional): Número de páginas a exibir. O padrão é `20`, máximo `100`
+- **hasDarkBackground** (opcional): Força o estilo do modo escuro. Detectado automaticamente a partir do fundo da página se não for definido
 
 ## Estrutura do Widget
 
@@ -39,7 +39,7 @@ O widget é renderizado com a seguinte estrutura HTML:
 </div>
 [inline-code-end]
 
-## Referência de CSS Padrão
+## Referência do CSS Padrão
 
 [inline-code-attrs-start title = 'CSS Padrão do Widget de Discussões Recentes'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

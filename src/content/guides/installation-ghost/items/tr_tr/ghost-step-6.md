@@ -8,5 +8,3 @@ Editörünüzün terminalini tekrar açın ve `npm run zip` çalıştırın.
 </div>
 
 Bu, temayı `dist/casper-fastcomments.zip` içinde bir zip dosyasına paketleyecektir (eğer temayı `Step Three`'da böyle adlandırdıysanız).
-
----

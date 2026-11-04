@@ -22,5 +22,3 @@ if respOpt.isSome:
   echo usage
   echo httpResp.statusCode
 [inline-code-end]
-
----

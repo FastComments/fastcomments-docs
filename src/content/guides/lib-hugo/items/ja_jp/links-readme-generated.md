@@ -1,5 +1,3 @@
----
 - [FastComments ドキュメント](https://docs.fastcomments.com)
 - [カスタマイズと構成](https://docs.fastcomments.com/guide-customizations-and-configuration.html)
 - [Hugo ドキュメント](https://gohugo.io/documentation/)
----

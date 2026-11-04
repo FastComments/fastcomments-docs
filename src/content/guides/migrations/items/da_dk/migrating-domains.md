@@ -19,5 +19,3 @@ Når jobbet kører, vil det vise antallet af kommentarer, der er fundet til migr
 ### Migrering af domæner via API
 
 Domæner kan også migreres med [`POST /api/v1/pages/migrations`](/guide-api.html#pages-migrations-post), ved at sætte `type` til `domain`. Fremdrift er tilgængelig fra [`GET /api/v1/batch-jobs/:id`](/guide-api.html#batch-job-get-by-id), og migrationen kan fortrydes i 90 dage.
-
----

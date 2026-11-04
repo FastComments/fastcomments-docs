@@ -1,4 +1,3 @@
----
 ## Jak dostosować style widżetu komentarzy
 
 Możesz dostosować styl widżetu komentarzy na dwa sposoby:
@@ -35,5 +34,3 @@ Twój niestandardowy CSS zostanie zastosowany do wszystkich widżetów komentarz
 - Celuj w konkretne selektory, aby nie wpływać na inne części witryny
 - Testuj swój CSS w różnych przeglądarkach pod kątem zgodności
 - Widżet używa standardowego CSS - nie są wymagane żadne specjalne preprocesory
-
----

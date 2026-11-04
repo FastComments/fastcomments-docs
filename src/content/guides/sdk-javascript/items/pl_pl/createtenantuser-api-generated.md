@@ -29,5 +29,3 @@ async function addTenantUser() {
 }
 addTenantUser();
 [inline-code-end]
-
----

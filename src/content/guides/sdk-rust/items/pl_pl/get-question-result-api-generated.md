@@ -1,4 +1,3 @@
----
 ## Parametry
 
 | Nazwa | Typ | Wymagane | Opis |
@@ -24,5 +23,3 @@ async fn fetch_question_result(config: &configuration::Configuration) -> Result<
     Ok(())
 }
 [inline-code-end]
-
----

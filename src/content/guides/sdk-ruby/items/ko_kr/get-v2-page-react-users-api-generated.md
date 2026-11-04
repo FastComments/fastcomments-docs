@@ -30,5 +30,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_v2_page_react_users: #{e}"
 end
 [inline-code-end]
-
----

@@ -60,5 +60,3 @@ Alcune regole pratiche:
 - [Budget Alerts](#budget-alerts) per le notifiche email.
 - [Cost Model](#cost-model) per come la piattaforma converte i token in dollari.
 - [Drop Reasons](#drop-reasons) per l'elenco completo dei motivi per cui un trigger non viene eseguito.
-
----

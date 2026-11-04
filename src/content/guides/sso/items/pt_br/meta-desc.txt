@@ -1,3 +1,1 @@
----
 Faça login dos seus usuários existentes diretamente na seção de comentários, para que eles nunca criem uma segunda conta ou façam login duas vezes.
----

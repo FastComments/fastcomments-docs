@@ -1,15 +1,10 @@
-List pages for a tenant. Used by the FChat desktop client to populate its room list.  
-Bir kiracı için sayfaları listele. FChat masaüstü istemcisi tarafından oda listesini doldurmak için kullanılır.
+Bir kiracı için sayfaları listeler. FChat masaüstü istemcisi tarafından oda listesini doldurmak için kullanılır.
+Her sayfa için çözümlenen özel yapılandırmada `enableFChat` değerinin true olması gerekir.
+SSO gerektiren sayfalar, istekte bulunan kullanıcının grup erişimine göre filtrelenir.
 
-Requires `enableFChat` to be true on the resolved custom config for each page.  
-Her sayfa için çözülen özel yapılandırmada `enableFChat` değerinin true olması gerekir.
+## Parametreler
 
-Pages that require SSO are filtered against the requesting user's group access.  
-SSO gerektiren sayfalar, istek yapan kullanıcının grup erişimine göre filtrelenir.
-
-## Parameters
-
-| Ad | Tür | Gerekli | Açıklama |
+| Ad | Tür | Zorunlu | Açıklama |
 |------|------|----------|-------------|
 | tenantId | string | Evet |  |
 | cursor | string | Hayır |  |
@@ -18,11 +13,11 @@ SSO gerektiren sayfalar, istek yapan kullanıcının grup erişimine göre filtr
 | sortBy | PagesSortBy | Hayır |  |
 | hasComments | boolean | Hayır |  |
 
-## Response
+## Yanıt
 
-Returns: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPublicPagesResponse.ts)
+Döndürür: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPublicPagesResponse.ts)
 
-## Example
+## Örnek
 
 [inline-code-attrs-start title = 'getPagesPublic Örneği'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

@@ -1,16 +1,16 @@
-Add this line to your application's Gemfile:
+Uygulamanızın Gemfile'ına şu satırı ekleyin:
 
 ```ruby
 gem 'fastcomments'
 ```
 
-And then execute:
+Ardından şunu çalıştırın:
 
 ```bash
 bundle install
 ```
 
-Or install it yourself as:
+Ya da kendiniz şu şekilde kurun:
 
 ```bash
 gem install fastcomments
@@ -18,12 +18,12 @@ gem install fastcomments
 
 ### Kütüphane İçeriği
 
-Bu kütüphane, API ile çalışmayı kolaylaştıran oluşturulmuş API istemcisi ve SSO yardımcı programlarını içerir.
+Bu kütüphane, API ile çalışmayı kolaylaştırmak için üretilmiş API istemcisini ve SSO yardımcı araçlarını içerir.
 
-- [API İstemci Kütüphane Belgeleri](https://github.com/FastComments/fastcomments-ruby/blob/master/client/README.md)
+- [API İstemci Kütüphanesi Dokümantasyonu](https://github.com/FastComments/fastcomments-ruby/blob/master/client/README.md)
 
-### Genel ve Güvenli API'ler
+### Herkese Açık ve Güvenli API'ler
 
-API istemcisi için üç sınıf vardır: `DefaultApi`, `PublicApi` ve `ModerationApi`. `DefaultApi`, API anahtarınızı gerektiren yöntemleri içerirken, `PublicApi` kimlik doğrulama gerektirmeden doğrudan bir tarayıcı/mobil cihaz vb. üzerinden yapılabilecek API çağrılarını içerir. `ModerationApi` ise moderatör kontrol panelini güçlendiren yöntemleri barındırır.
+API istemcisinde üç sınıf bulunur: `DefaultApi`, `PublicApi` ve `ModerationApi`. `DefaultApi`, API anahtarınızı gerektiren metotları içerir; `PublicApi`, kimlik doğrulama gerektirmeden doğrudan bir tarayıcıdan/mobil cihazdan/vb. yapılabilecek API çağrılarını içerir. `ModerationApi`, moderatör panelini çalıştıran metotları içerir.
 
-`ModerationApi`, canlı ve hızlı moderasyon API'lerinden oluşan kapsamlı bir set sunar. Her `ModerationApi` yöntemi bir `sso` parametresi kabul eder ve SSO ya da bir FastComments.com oturum çerezi aracılığıyla kimlik doğrulaması yapabilir.
+`ModerationApi`, canlı ve hızlı moderasyon için kapsamlı bir API paketi sunar. Her `ModerationApi` metodu bir `sso` parametresi kabul eder ve SSO veya bir FastComments.com oturum çerezi aracılığıyla kimlik doğrulaması yapabilir.

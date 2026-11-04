@@ -19,5 +19,3 @@ Die Benutzeridentität wird an FastComments übermittelt, jedes Mal, wenn ein Nu
 <sup>(Optional)</sup> Fügen Sie Ihre Administratoren zu [Benutzer & Administratoren](https://fastcomments.com/auth/my-account/users) und Moderatoren zu [Kommentarmoderatoren](https://fastcomments.com/auth/my-account/moderate-comments/moderators) hinzu, um deren Experience zu verbessern und die Statistikverfolgung für Moderatoren zu aktivieren.
 
 Für einen tieferen Einblick, wie SSO funktioniert, siehe den [SSO-Abschnitt](/guide-customizations-and-configuration.html#sso) der Anpassungsdokumentation.
-
----

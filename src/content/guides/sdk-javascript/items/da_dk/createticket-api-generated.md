@@ -1,4 +1,3 @@
----
 ## Parametre
 
 | Navn | Type | Påkrævet | Beskrivelse |
@@ -33,5 +32,3 @@ async function submitTicket() {
 
 submitTicket();
 [inline-code-end]
-
----

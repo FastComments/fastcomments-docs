@@ -1,4 +1,3 @@
----
 Per impostazione predefinita, FastComments non limita le lingue utilizzate per commentare. 
 
 Potrebbe essere desiderabile limitare le lingue che una community utilizza.
@@ -10,5 +9,3 @@ Questo può essere configurato senza codice, nella pagina di personalizzazione d
 Il sistema analizzerà il commento, ne determinerà la lingua e la confronterà con l'elenco consentito.
 
 Se il commento è scritto in una lingua non consentita, verrà mostrato un messaggio di errore localizzato. 
-
----

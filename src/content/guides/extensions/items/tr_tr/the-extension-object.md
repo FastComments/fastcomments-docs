@@ -1,10 +1,11 @@
-The extension object consists of the following definition:
+Uzantı nesnesi aşağıdaki tanımdan oluşur:
 
-<!-- eğer bunu güncellemek istiyorsanız, comment-ui-core'u güncellemeyi unutmayın -->
+<!-- if you want to update this, remember to update comment-ui-core -->
 [inline-code-attrs-start title = 'Uzantı Nesnesi JSDoc'; type = 'javascript'; inline-code-attrs-end]
 [inline-code-start]
 /**
- * FastCommentsUI uzantı nesnesi. Belirli bileşenlerin tembel yüklenmesi için kullanılır. Örneğin, inceleme sistemi tüm müşteriler tarafından kullanılmaz, bu yüzden bu uzantıyı yalnızca ihtiyacımız olduğunda yükleriz.
+ * FastCommentsUI uzantı nesnesi. Belirli bileşenleri tembel yükleme (lazy-loading) için kullanılır. Örneğin, yorum
+ * (review) sistemi tüm müşteriler tarafından kullanılmadığından, bu uzantıyı yalnızca ihtiyaç duyduğumuzda yükleriz.
  *
  * @typedef {Object} FastCommentsUIExtension
  * @property {string} id
@@ -12,30 +13,28 @@ The extension object consists of the following definition:
  * @property {Element} root - Widget'ın kök DOM düğümü.
  * @property {string} [css]
  * @property {Object} config - FastComments yapılandırma nesnesi.
- * @property {Object} commentsById - Tüm yorumların kimliğe göre bulunduğu bir nesneye referans, güncel tutulur.
- * @property {Object} translations - Tüm çevirilere bir referans.
- * @property {Function} reRenderComment - Bir yorumu yeniden renderlamak için çağrılabilecek bir fonksiyona referans.
- * @property {Function} removeCommentAndReRender - Yorum
-
-u bellekten kaldırmak ve DOM'un ilgili kısmını yeniden renderlamak için çağrılabilecek bir fonksiyona referans.
- * @property {Function} newBroadcastId - Yeni bir yayın kimliği oluşturmak ve bunu yok sayılacak yerel yayın kimliği listesine eklemek için çağrılabilecek bir fonksiyona referans.
+ * @property {Object} commentsById - Tüm yorumları id'ye göre içeren ve güncel tutulan bir nesneye referans.
+ * @property {Object} translations - Tüm çevirilere referans.
+ * @property {Function} reRenderComment - Bir yorumu yeniden render etmek için çağrılabilen bir fonksiyona referans.
+ * @property {Function} removeCommentAndReRender - Bir yorumu bellekten kaldırmak ve DOM'un ilgili bölümünü yeniden render etmek için çağrılabilen bir fonksiyona referans.
+ * @property {Function} newBroadcastId - Yeni bir broadcast id oluşturmak ve yerel yok sayılan broadcast id listesine eklemek için çağrılabilen bir fonksiyona referans.
  * @property {FastCommentsUIExtensionSetupEventHandlers} [setupEventHandlers]
- * @property {FastCommentsUIExtensionPrepareCommentForSavingCallback} [prepareCommentForSaving] - Gönderilmek üzere olan yorumla birlikte çağrılır. Gönderimi iptal etmek için false döndürün (örneğin ekli anket eksik olduğunda).
+ * @property {FastCommentsUIExtensionPrepareCommentForSavingCallback} [prepareCommentForSaving] - Gönderilmek üzere olan yorum ile çağrılır. Gönderimi iptal etmek için false döndürün (örneğin, eklenen anket eksik olduğunda).
  * @property {FastCommentsUIExtensionNewCommentCallback} [newComment]
- * @property {FastCommentsUIExtensionReplyAreaFilter} [replyAreaFilter] - Yorum alanı için HTML'i filtrele.
- * @property {FastCommentsUIExtensionWidgetFilter} [widgetFilter] - Tüm widget'ın render sırasında HTML'ini filtrele.
- * @property {FastCommentsUIExtensionCommentTopFilter} [commentFilter] - Render öncesinde her yorum için HTML'i filtrele.
- * @property {FastCommentsUIExtensionReplyAreaFilter} [commentMenuFilter] - Render öncesinde her yorum menüsü için HTML'i filtrele.
- * @property {FastCommentsUIExtensionMenuFilter} [menuFilter] - Render sırasında tüm widget için HTML'i filtrele.
- * @property {FastCommentsUIExtensionReplyAreaTop} [replyAreaTop] - (ESKİ) Yanıt alanının üstüne eklemek için HTML döndür.
- * @property {FastCommentsUIExtensionWidgetTopCallback} [widgetTop] - (ESKİ) Widget'ın üstüne eklemek için HTML döndür.
- * @property {FastCommentsUIExtensionCommentTopCallback} [commentTop] - (ESKİ) Yorum öğesinin üstüne eklemek için HTML döndür.
- * @property {FastCommentsUIExtensionCommentBottomCallback} [commentBottom] - (ESKİ) Yorum öğesinin altına eklemek için HTML döndür.
- * @property {FastCommentsUIExtensionCommentBottomCallback} [commentContentBottom] - Yorum metninden sonra, yorum içeriği öğesi içinde eklemek için HTML döndür (anketler tarafından kullanılır).
- * @property {Function} [replyAreaInputBottom] - Metin girişinin altında, yorum giriş çerçevesi içinde eklemek için HTML döndür (yerinde anket düzenleyicisi için anketler tarafından kullanılır). Üst yorum kimliğini alır, kök yanıt kutusu için null olabilir.
- * @property {Function} [onPollUpdate] - Sayfadaki bir anketin oy sayıları değiştiğinde canlı olayla birlikte çağrılır.
- * @property {Function} isSiteAdmin - Görüntüleyicinin kiracının yöneticisi veya moderatörü olup olmadığını döndürür. İlk getirme işleminden sonra bilinir.
- * @property {FastCommentsUIExtensionMenuBottomCallback} [menuBottom] - (ESKİ) Her yorum için menü öğesinin altına eklemek için HTML döndür.
+ * @property {FastCommentsUIExtensionReplyAreaFilter} [replyAreaFilter] - Yorum alanı için HTML filtresi.
+ * @property {FastCommentsUIExtensionWidgetFilter} [widgetFilter] - Render sırasında tüm widget için HTML filtresi.
+ * @property {FastCommentsUIExtensionCommentTopFilter} [commentFilter] - Render öncesinde her yorum için HTML filtresi.
+ * @property {FastCommentsUIExtensionReplyAreaFilter} [commentMenuFilter] - Render öncesinde her yorum menüsü için HTML filtresi.
+ * @property {FastCommentsUIExtensionMenuFilter} [menuFilter] - Render sırasında tüm widget için HTML filtresi.
+ * @property {FastCommentsUIExtensionReplyAreaTop} [replyAreaTop] - (ESKİ/LEGACY) Yanıt alanının üstüne eklenecek HTML döndürür.
+ * @property {FastCommentsUIExtensionWidgetTopCallback} [widgetTop] - (ESKİ/LEGACY) Widget'ın üstüne eklenecek HTML döndürür.
+ * @property {FastCommentsUIExtensionCommentTopCallback} [commentTop] - (ESKİ/LEGACY) Yorum öğesinin üstüne eklenecek HTML döndürür.
+ * @property {FastCommentsUIExtensionCommentBottomCallback} [commentBottom] - (ESKİ/LEGACY) Yorum öğesinin altına eklenecek HTML döndürür.
+ * @property {FastCommentsUIExtensionCommentBottomCallback} [commentContentBottom] - Yorum metninden sonra, yorum içerik öğesinin içine eklenecek HTML döndürür (anketler tarafından kullanılır).
+ * @property {Function} [replyAreaInputBottom] - Yorum giriş çerçevesinin içine, metin girişinin altına eklenecek HTML döndürür (anketler tarafından yerinde anket düzenleyicisi için kullanılır). Üst yorumun id'sini alır; kök yanıt kutusu için null alır.
+ * @property {Function} [onPollUpdate] - Sayfadaki bir anketin oy sayıları değiştiğinde canlı etkinlik ile çağrılır.
+ * @property {Function} isSiteAdmin - Görüntüleyicinin kiracının (tenant) yöneticisi veya moderatörü olup olmadığını döndürür. İlk veri çekiminden sonra bilinir.
+ * @property {FastCommentsUIExtensionMenuBottomCallback} [menuBottom] - (ESKİ/LEGACY) Her yorum için menü öğesinin altına eklenecek HTML döndürür.
  * @property {FastCommentsUIExtensionRenderCallback} [onRender]
  * @property {FastCommentsUIExtensionConnectionStatusCallback} [onLiveConnectionStatusUpdate]
  * @property {FastCommentsUIExtensionInitialRenderCallback} [onInitialRenderComplete]
@@ -45,7 +44,7 @@ u bellekten kaldırmak ve DOM'un ilgili kısmını yeniden renderlamak için ça
 /**
  * @callback FastCommentsUIExtensionSetupEventHandlers
  * @param {Element} element - Kök öğe.
- * @param {Object.<string, Function>} clickListeners - Sınıf adına göre tıklama olay işleyicileri, referansla değiştirilebilir.
+ * @param {Object.<string, Function>} clickListeners - Sınıf adına göre tıklama olay işleyicileri; referans yoluyla değiştirilebilir.
  * @returns void
  */
 

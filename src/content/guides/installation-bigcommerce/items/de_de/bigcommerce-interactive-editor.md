@@ -1,4 +1,3 @@
----
 Es wird nicht empfohlen, FastComments über den Page Builder von BigCommerce hinzuzufügen, da der Code dann manuell zu jeder gewünschten Seite hinzugefügt werden muss.
 
 Wenn dies jedoch gewünscht ist, muss der folgende Code-Schnipsel verwendet werden. Code-Schnipsel aus anderen Tutorials funktionieren aufgrund der Eigenheiten von BigCommerce nicht:
@@ -14,5 +13,3 @@ Wenn dies jedoch gewünscht ist, muss der folgende Code-Schnipsel verwendet werd
     }];
 </script>
 [inline-code-end]
-
----

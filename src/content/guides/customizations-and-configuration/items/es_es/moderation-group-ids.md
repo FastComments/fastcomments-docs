@@ -8,5 +8,3 @@ Si un `Moderator` tiene uno o más [Grupos de Moderación](https://fastcomments.
 verán los comentarios en la página `Moderate Comments` asociados con su(s) grupo(s).
 
 [code-example-start config = {moderationGroupIds: ['mxZAhjzdb', 'FT19nXbqA']}; linesToHighlight = [6, 7, 8, 9]; title = 'Specify Moderation Groups'; code-example-end]
-
----

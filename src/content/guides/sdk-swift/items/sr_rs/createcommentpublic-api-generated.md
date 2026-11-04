@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Име | Тип | Локација | Обавезно | Опис |
@@ -40,5 +39,3 @@ PublicAPI.createCommentPublic(tenantId: tenantId, urlId: urlId, broadcastId: bro
     }
 }
 [inline-code-end]
-
----

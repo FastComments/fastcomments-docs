@@ -1,4 +1,3 @@
----
 Bu uç nokta bir kullanıcı rozet atamasını silmenize olanak tanır.
 
 Örnek İstek:
@@ -45,4 +44,3 @@ Olası Hata Yanıtları:
   "reason": "The user badge badge123 was not found."
 }
 [inline-code-end]
----

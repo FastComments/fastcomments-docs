@@ -8,5 +8,3 @@ Next.js ライブラリに関して問題が発生したり質問がある場合
 ## 貢献
 
 貢献は歓迎します！コントリビューションガイドラインについては、[GitHubリポジトリ](https://github.com/FastComments/fastcomments-nextjs)をご覧ください。
-
----

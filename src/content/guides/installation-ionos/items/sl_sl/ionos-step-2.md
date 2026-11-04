@@ -57,5 +57,3 @@ Zdaj kopirajte naslednjo kodo:
     <div class="title">Prilepi in shrani</div>
     <img class="screenshot-image" src="/images/installation-guides/ionos-step-2-paste-and-save.png" alt="Prilepi in shrani" />
 </div>
-
----

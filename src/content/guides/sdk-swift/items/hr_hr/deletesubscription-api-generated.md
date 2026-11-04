@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
@@ -33,5 +32,3 @@ DefaultAPI.deleteSubscription(tenantId: tenantId, id: id, userId: userId) { (res
     }
 }
 [inline-code-end]
-
----

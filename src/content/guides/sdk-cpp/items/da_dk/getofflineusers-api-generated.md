@@ -1,21 +1,21 @@
-Past commenters on the page who are NOT currently online. Sorted by displayName.  
-Use this after exhausting /users/online to render a "Members" section.  
-Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName}  
-index from afterName forward via $gt, no $skip cost.
+Tidligere kommentatorer på siden, som IKKE er online i øjeblikket. Sorteret efter displayName.
+Brug denne, efter du har opbrugt /users/online, for at rendere et "Members"-afsnit.
+Cursor-paginering på commenterName: serveren gennemløber det partielle {tenantId, urlId, commenterName}
+indeks frem fra afterName via $gt, uden $skip-omkostninger.
 
-## Parameters
+## Parametre
 
-| Name | Type | Required | Description |
+| Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| urlId | string | Yes |  |
-| options | const GetOfflineUsersOptions& | Yes |  |
+| tenantId | string | Ja |  |
+| urlId | string | Ja |  |
+| options | const GetOfflineUsersOptions& | Ja |  |
 
-## Response
+## Svar
 
-Returns: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PageUsersOfflineResponse.h)
+Returnerer: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PageUsersOfflineResponse.h)
 
-## Example
+## Eksempel
 
 [inline-code-attrs-start title = 'getOfflineUsers Eksempel'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

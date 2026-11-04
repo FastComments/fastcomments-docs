@@ -32,5 +32,3 @@ ModerationAPI.getUserInternalProfile(tenantId: tenantId, options: ModerationAPI.
     }
 }
 [inline-code-end]
-
----

@@ -30,5 +30,3 @@ try {
     print('Exception when calling ModerationApi->postUnFlagComment: $e\n');
 }
 [inline-code-end]
-
----

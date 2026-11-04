@@ -21,5 +21,3 @@ api->sendLoginLink(
 ).then([](std::shared_ptr<APIEmptyResponse> resp) {
 });
 [inline-code-end]
-
----

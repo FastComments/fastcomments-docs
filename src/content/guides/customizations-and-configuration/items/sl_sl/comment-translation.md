@@ -1,4 +1,3 @@
----
 Privzeto FastComments prevede vmesnik vtičnika (gumba, oznake, sporočila o napakah) v jezik gledalca, vendar so komentarji prikazani natančno takšni, kot so bili napisani.
 
 Prevod komentarjev doda prevajanje samih komentarjev, tako da lahko skupnost, ki piše v več jezikih, prebere vsak komentar v svojem jeziku.
@@ -19,5 +18,3 @@ Prevod je nastavitev na strežniški strani. Posredovanje `commentTranslation` v
 Vsak komentar je preveden največ enkrat na ciljni jezik, rezultat pa je shranjen skupaj s komentarjem, tako da se komentar, ki ga prebere tisoč španskih govorcev, prevede le enkrat. Če avtor ali moderator komentar ureja, se shranjeni prevod zavrže in komentar se ob naslednjem ogledu ponovno prevede. Prevedeno besedilo gre skozi enako čiščenje in pravila za povezave kot izvirni komentar. Komentarji, ki so predolgi ali katerih jezik ni mogoče zaznati, so prikazani neprevedeni.
 
 Uporaba se obračuna kot LLM žetoni po isti ceni kot [AI Agents](/guide-ai-agents.html#plans-and-eligibility) in se prikaže na istem mestu v vaših podrobnostih obračuna.
-
----

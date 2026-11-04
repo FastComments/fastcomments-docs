@@ -1,11 +1,11 @@
-While its name is the Domain Migration tool, it can also be used to migrate comments across individual pages.
+Iako se zove Domain Migration alat, može se koristiti i za migraciju komentara između pojedinačnih stranica.
 
-Simply enter the old and new [urlId](/guide-customizations-and-configuration.html#url-id) values in the `from` and `to` input fields.
+Jednostavno unesite stare i nove [urlId](/guide-customizations-and-configuration.html#url-id) vrednosti u `from` i `to` polja.
 
-### Migriranje stranica putem API-ja
+### Migracija stranica putem API-ja
 
-To migrate many pages at once, use [`POST /api/v1/pages/migrations`](/guide-api.html#pages-migrations-post). It takes up to 100 `from` and `to` pairs per request and runs them as a batch job.
+Za migraciju više stranica odjednom, koristite [`POST /api/v1/pages/migrations`](/guide-api.html#pages-migrations-post). Prihvata do 100 `from` i `to` parova po zahtevu i izvršava ih kao batch posao.
 
-With `type` set to `urlId`, only the page whose `urlId` is exactly `from` is moved, so `post-1` does not match `post-10`. The dashboard tool does not have this option.
+Kada je `type` postavljeno na `urlId`, premešta se samo stranica čiji je `urlId` tačno `from`, tako da `post-1` ne odgovara `post-10`. Alat u kontrolnom panelu nema ovu opciju.
 
-Each API migration can be undone for 90 days with [`POST /api/v1/pages/migrations/:undoId/undo`](/guide-api.html#pages-migrations-undo-post).
+Svaku API migraciju je moguće poništiti u roku od 90 dana pomoću [`POST /api/v1/pages/migrations/:undoId/undo`](/guide-api.html#pages-migrations-undo-post).

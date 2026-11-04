@@ -1,4 +1,3 @@
----
 ## Trebate pomoć?
 
 Ako naiđete na bilo kakve probleme ili imate pitanja u vezi Android knjižnice, molimo:
@@ -9,5 +8,3 @@ Ako naiđete na bilo kakve probleme ili imate pitanja u vezi Android knjižnice,
 ## Doprinos
 
 Doprinosi su dobrodošli! Molimo posjetite [GitHub repozitorij](https://github.com/FastComments/fastcomments-android) za smjernice za doprinos.
-
----

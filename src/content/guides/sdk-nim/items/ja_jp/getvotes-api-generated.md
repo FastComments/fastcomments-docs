@@ -1,4 +1,3 @@
----
 ## パラメータ
 
 | 名前 | タイプ | 必須 | 説明 |
@@ -19,5 +18,3 @@ if optVotes.isSome:
   let votes = optVotes.get()
   discard votes
 [inline-code-end]
-
----

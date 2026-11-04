@@ -40,5 +40,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.UpdateSubscription`: %v\n", resp)
 }
 [inline-code-end]
-
----

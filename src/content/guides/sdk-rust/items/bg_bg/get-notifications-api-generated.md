@@ -30,5 +30,3 @@ async fn fetch_notifications(configuration: &configuration::Configuration) -> Re
     Ok(())
 }
 [inline-code-end]
-
----

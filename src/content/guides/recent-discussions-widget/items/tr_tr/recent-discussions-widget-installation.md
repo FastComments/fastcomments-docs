@@ -1,8 +1,8 @@
-The Recent Discussions Widget, sitenizde en son yorum etkinliğine sahip sayfaları gösterir. Her öğe sayfa başlığını, son etkinlik tarihini ve toplam yorum sayısını gösterir. Koyu arka planları otomatik olarak algılar ve stilini buna göre ayarlar.
+Son Tartışmalar Widget'ı, sitenizde en son yorum etkinliğine sahip sayfaları gösterir. Her giriş, sayfa başlığını, son etkinlik tarihini ve toplam yorum sayısını görüntüler. Koyu arka planları otomatik olarak algılar ve stilini buna göre ayarlar.
 
-## Basic Installation
+## Temel Kurulum
 
-[inline-code-attrs-start title = 'Recent Discussions Widget Kurulumu'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Son Tartışmalar Widget Kurulumu'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/widget-recent-discussions-v2.min.js"></script>
 <div id="fastcomments-widget-recent-discussions"></div>
@@ -13,19 +13,19 @@ The Recent Discussions Widget, sitenizde en son yorum etkinliğine sahip sayfala
 </script>
 [inline-code-end]
 
-## Configuration Options
+## Yapılandırma Seçenekleri
 
 `FastCommentsRecentDiscussionsV2` fonksiyonu aşağıdaki yapılandırma seçeneklerini kabul eder:
 
-- **tenantId** (required): FastComments kiracı kimliğiniz
-- **count** (optional): Gösterilecek sayfa sayısı. Varsayılan `20`, maksimum `100`
-- **hasDarkBackground** (optional): Koyu mod stilini zorlar. Ayarlanmazsa sayfa arka planından otomatik olarak algılanır
+- **tenantId** (zorunlu): FastComments tenant ID'niz
+- **count** (isteğe bağlı): Gösterilecek sayfa sayısı. Varsayılan `20`, maksimum `100`
+- **hasDarkBackground** (isteğe bağlı): Koyu mod stilini zorla. Ayarlanmazsa sayfa arka planından otomatik algılanır
 
-## Advanced Examples
+## Gelişmiş Örnekler
 
-### Custom Count
+### Özel Sayı
 
-[inline-code-attrs-start title = 'Recent Discussions — Özel Sayı'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Özel Sayılı Son Tartışmalar'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/widget-recent-discussions-v2.min.js"></script>
 <div id="fastcomments-widget-recent-discussions"></div>
@@ -37,9 +37,9 @@ The Recent Discussions Widget, sitenizde en son yorum etkinliğine sahip sayfala
 </script>
 [inline-code-end]
 
-### Force Dark Mode
+### Koyu Modu Zorla
 
-[inline-code-attrs-start title = 'Recent Discussions — Koyu Mod'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Koyu Modlu Son Tartışmalar'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/widget-recent-discussions-v2.min.js"></script>
 <div id="fastcomments-widget-recent-discussions"></div>
@@ -50,5 +50,3 @@ The Recent Discussions Widget, sitenizde en son yorum etkinliğine sahip sayfala
     });
 </script>
 [inline-code-end]
-
----

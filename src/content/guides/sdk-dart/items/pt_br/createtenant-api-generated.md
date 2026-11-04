@@ -1,4 +1,3 @@
----
 ## Parâmetros
 
 | Nome | Tipo | Localização | Obrigatório | Descrição |
@@ -30,5 +29,3 @@ try {
     print('Exception when calling DefaultApi->createTenant: $e\n');
 }
 [inline-code-end]
-
----

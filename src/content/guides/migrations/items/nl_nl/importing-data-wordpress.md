@@ -1,23 +1,23 @@
-Onze [WordPress Plugin](https://wordpress.org/plugins/fastcomments/) heeft een krachtig UI‑gebaseerd importmechanisme. Na het installeren van de plugin,
-wordt je begeleid bij het koppelen van je WordPress‑installatie met FastComments en het overzetten van je bestaande commentaargegevens.
+Onze [WordPress Plugin](https://wordpress.org/plugins/fastcomments/) heeft een krachtig importmechanisme op basis van de UI. Na het installeren van de plugin
+wordt u begeleid bij het koppelen van uw WordPress-installatie aan FastComments en het overzetten van uw bestaande commentaargegevens.
 
-**Dit gebeurt zonder handmatig iets te kopiëren of te downloaden.**
+**Dit gebeurt zonder dat u iets handmatig hoeft te kopiëren of te downloaden.**
 
-Het migratieproces wordt via de UI aangegeven tijdens de migratie. De meeste migraties duren slechts een paar minuten.
+Het migratieproces wordt aan u getoond via de UI tijdens de migratie. De meeste migraties duren slechts een paar minuten.
 
-Het mechanisme is ontworpen om geen overmatige belasting op je WordPress‑installatie te veroorzaken tijdens de migratie.
+Het mechanisme is ontworpen om uw WordPress-installatie niet onnodig te belasten tijdens de migratie.
 
-Als je je site van WordPress wilt verplaatsen, kun je een WordPress XML‑ of CSV‑export importeren in plaats van de plugin te gebruiken. Zie
+Als u uw site van WordPress verhuist, kunt u in plaats van de plugin een WordPress XML- of CSV-export importeren. Zie
 [Moving Your Comments to a New Site](/guide-installation-wordpress.html#wordpress-moving-off-wordpress).
 
-### CloudFlare & FireWalls
+### CloudFlare & Firewalls
 
-Om de geautomatiseerde WordPress‑setup te laten werken, moeten we oproepen doen naar je WordPress‑installatie.
-Firewalls zoals Cloudflare kunnen ons blokkeren en de integratie laten mislukken. In dergelijke gevallen [kunnen we je
-voorzien](https://fastcomments.com/auth/my-account/help) van een reeks IP‑adressen om op de whitelist te zetten voor de integratie.
+Om de geautomatiseerde WordPress-installatie te laten werken, moeten we aanroepen doen naar uw WordPress-installatie.
+Firewalls zoals Cloudflare kunnen ons blokkeren en ervoor zorgen dat de integratie mislukt. In dergelijke gevallen kunnen [wij u](https://fastcomments.com/auth/my-account/help) een set IP-adressen verstrekken die u moet whitelisten voor de integratie.
 
-### Data Ownership
+### Datagebruik
 
-In het geval van onze WordPress‑migratie wordt elke nieuwe of bijgewerkte commentaardata automatisch gesynchroniseerd terug naar je WordPress‑installatie
-achter de schermen. Dit betekent dat, terwijl de reacties door FastComments zelf worden geleverd om de belasting van je WordPress‑implementatie te verlagen,
-we **ook** een backup in je database opslaan. Dit betekent ook dat als je wilt overstappen van FastComments, je gegevens al gemigreerd en up‑to‑date zijn.
+In het geval van onze WordPress-migratie worden alle nieuwe of bijgewerkte commentaargegevens automatisch op de achtergrond teruggestynchroniseerd naar uw WordPress-installatie.
+Dit betekent dat, terwijl de reacties door FastComments zelf worden aangeboden om de belasting van uw WordPress-implementatie te verminderen,
+wij ze **ook** opslaan in uw database als back-up. Dit betekent ook dat als u besluit over te stappen van FastComments, uw gegevens
+al zijn gemigreerd en up-to-date zijn.

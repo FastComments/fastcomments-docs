@@ -1,45 +1,45 @@
-Blok **FastComments** je glavni vidžet za komentare. Dodajte ga u šablone objava na blogu, šablone proizvoda ili bilo koju drugu stranicu na kojoj želite nit razgovora ili live chat.
+Blok **FastComments** je glavni vidžet za komentare. Dodajte ga u šablone blog objava, šablone proizvoda ili bilo koju drugu stranicu gde želite nit diskusije ili live chat.
 
-### Add the block
+### Dodavanje bloka
 
-1. Open the Shopify theme editor (**Online Store > Themes > Customize**).
-2. Pick the template you want comments on: **Blog post**, **Product**, or any other page or section template.
-3. In the section where you want comments to appear, click **Add block**.
-4. Under **Apps**, select **FastComments**.
-5. Click **Save**.
+1. Otvorite Shopify editor teme (**Online Store > Themes > Customize**).
+2. Izaberite šablon na kome želite komentare: **Blog post**, **Product** ili bilo koji drugi šablon stranice ili sekcije.
+3. U sekciji gde želite da se komentari pojave, kliknite **Add block**.
+4. Pod **Apps**, izaberite **FastComments**.
+5. Kliknite **Save**.
 
-The block appears immediately. There is no Tenant ID to enter; your store's tenant is wired up automatically when you install the app.
+Blok se pojavljuje odmah. Nema potrebe za unosom Tenant ID-a; tenant vaše prodavnice se povezuje automatski kada instalirate aplikaciju.
 
-### Settings
+### Podešavanja
 
-| Setting | What it does | Default |
+| Podešavanje | Šta radi | Podrazumevano |
 |---|---|---|
-| Tenant ID (optional) | Override which FastComments tenant the block renders against. Leave blank to use the store's automatically-configured tenant. Find a manual tenant ID at fastcomments.com/auth/my-account/api-secret. | (blank) |
-| SSO | Auto-logs the visitor in as their Shopify customer account before commenting. See [Auto-Login Shopify Customers](/guide-installation-shopify.html#shopify-sso). | On |
-| Commenting Style | **Threaded** for nested replies and votes, or **Streaming** for a real-time chat feed. | Threaded |
-| Custom URL ID | Override the auto-detected page identifier. Use this when you want two URLs to share one comment thread. | (auto-detected) |
+| Tenant ID (opciono) | Određuje protiv kog FastComments tenanta će se blok prikazivati. Ostavite prazno da biste koristili automatski konfigurisan tenant prodavnice. Ručni tenant ID možete pronaći na fastcomments.com/auth/my-account/api-secret. | (prazno) |
+| SSO | Automatski prijavljuje posetioca kao njegov Shopify korisnički nalog pre komentara. Pogledajte [Auto-Login Shopify Customers](/guide-installation-shopify.html#shopify-sso). | Uključeno |
+| Commenting Style | **Threaded** za ugnježdene odgovore i glasanje, ili **Streaming** za feed live chata u realnom vremenu. | Threaded |
+| Custom URL ID | Zamenjuje automatski detektovani identifikator stranice. Koristite ovo kada želite da dva URL-a dele jednu nit komentara. | (automatski detektovano) |
 
-### How the page identifier is chosen
+### Kako se bira identifikator stranice
 
-Each comment thread is keyed by a URL ID. The block picks one automatically:
+Svaka nit komentara je vezana za URL ID. Blok ga bira automatski:
 
-- **Blog post template:** `shopify-article-{article.id}`, which is stable across slug and title changes.
-- **Product template:** `shopify-product-{product.id}`, which is stable across slug and title changes.
-- **Other templates:** the request path.
+- **Šablon blog objave:** `shopify-article-{article.id}`, koji je stabilan bez obzira na promene slug-a i naslova.
+- **Šablon proizvoda:** `shopify-product-{product.id}`, koji je stabilan bez obzira na promene slug-a i naslova.
+- **Ostali šabloni:** putanja zahteva.
 
-If you set **Custom URL ID**, that value is used instead. Use the same Custom URL ID across multiple blocks (for example, on a localized variant of a product page) to share one comment thread.
+Ako postavite **Custom URL ID**, ta vrednost se koristi umesto nje. Koristite isti Custom URL ID u više blokova (na primer, na lokalizovanoj varijanti stranice proizvoda) da biste delili jednu nit komentara.
 
 ### Threaded vs Streaming
 
-**Threaded** is the default. Visitors reply to each other, vote, and moderation tools work as expected. Best for blog posts and product reviews.
+**Threaded** je podrazumevano. Posetioci odgovaraju jedni drugima, glasaju, i alati za moderaciju rade kako se očekuje. Najbolje za blog objave i recenzije proizvoda.
 
-**Streaming** drops the threading and shows new comments in real time as they're posted, like a chat feed. Best for product launches, live events, and community pages.
+**Streaming** uklanja nit i prikazuje nove komentare u realnom vremenu kako se objavljuju, kao chat feed. Najbolje za lansiranja proizvoda, live događaje i stranice zajednice.
 
-### Multiple blocks on the same page
+### Više blokova na istoj stranici
 
-The block can be added more than once to the same template. For example, a Reviews Summary at the top of a product page and a FastComments block at the bottom. The blocks share a URL ID, so the summary reflects the comments below.
+Blok se može dodati više puta u isti šablon. Na primer, Reviews Summary na vrhu stranice proizvoda i FastComments blok na dnu. Blokovi dele URL ID, tako da rezime odražava komentare ispod.
 
-### Tips
+### Saveti
 
-- The block hides itself in the theme editor preview with a yellow notice if it can't find a tenant. If that appears in your live store, reinstall the FastComments app.
-- For a product page, the FastComments block doubles as your product reviews widget. Pair it with **FastComments - Reviews Summary** for a star-rating summary at the top of the page.
+- Blok se sakriva u pregledu editora teme sa žutim obaveštenjem ako ne može da pronađe tenant. Ako se to pojavi u vašoj prodavnici, reinstalirajte FastComments aplikaciju.
+- Za stranicu proizvoda, FastComments blok služi i kao vidžet za recenzije proizvoda. Upotrebite ga zajedno sa **FastComments - Reviews Summary** za rezime sa zvezdicama na vrhu stranice.

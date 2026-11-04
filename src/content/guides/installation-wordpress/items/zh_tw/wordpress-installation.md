@@ -1,16 +1,15 @@
-The FastComments WordPress 外掛安裝設計為簡便，並儘量減少您網站留言功能的停機時間。在同步完成之前，外掛不會從 WordPress 外掛切換過來。
+FastComments WordPress 外掛程式的安裝流程設計得十分簡單，並將對您網站留言功能的停機時間降到最低。在同步完成之前，外掛程式不會從 WordPress 外掛程式切換過來。
 
-First, you'll want to set the expectation with your moderators according to the details in the below section `Moderation`. Let them know soon they will
-be moderating from FastComments, and not the WordPress dashboard.
+首先，您需要根據下方 `Moderation` 章節的詳細說明，與您的審核人員設定好預期。請提前告知他們，之後他們將透過 FastComments 進行審核，而不是 WordPress 儀表板。
 
-Next, install the plugin. You can do this by going to the WordPress plugins dashboard, clicking `Add Plugin`, and search for `FastComments`. The plugin is also available for download [這裡](https://wordpress.org/plugins/fastcomments/#installation).
+接下來，安裝外掛程式。您可以前往 WordPress 外掛程式儀表板，點擊 `Add Plugin`，然後搜尋 `FastComments`。此外掛程式也可以從[這裡](https://wordpress.org/plugins/fastcomments/#installation)下載。
 
-The plugin setup will ask you if you are in the EU. If this is the case, your account will reside in the EU on `eu.fastcomments.com`, otherwise it will be on `fastcomments.com`.
+外掛程式設定會詢問您是否位於歐盟。若是，您的帳戶將位於 `eu.fastcomments.com` 的歐盟伺服器上，否則將位於 `fastcomments.com`。
 
-Next, you have the option of selecting whether you already have a FastComments account. Follow the steps thereafter and your comments can optionally be uploaded during the installation process.
+接著，您可以選擇是否已經擁有 FastComments 帳戶。按照後續步驟操作，您的留言可以在安裝過程中選擇性地上傳。
 
-<sup>注意！</sup> 請勿在設定與同步進行中關閉 WordPress 外掛頁面。
+<sup>注意！</sup>在設定與同步進行期間，請勿關閉 WordPress 外掛程式頁面。
 
-Comments are uploaded in batches, and sorted using existing indexes in your WordPress database to limit load on your site.
+留言會分批上傳，並使用 WordPress 資料庫中現有的索引進行排序，以減輕您網站的負載。
 
-Once the sync is complete, the default WordPress commenting system will be replaced by FastComments. We hope you love our platform, but if you don't [聯絡我們](https://fastcomments.com/auth/my-account/help).
+同步完成後，預設的 WordPress 留言系統將被 FastComments 取代。我們希望您會喜歡我們的平台，但如果您不喜歡，請[與我們聯繫](https://fastcomments.com/auth/my-account/help)。

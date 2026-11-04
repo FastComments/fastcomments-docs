@@ -53,5 +53,3 @@ interface PageCustomReactUser {
 #### Astuce utile
 
 N'oubliez pas d'encoder en URI les valeurs comme le `urlId`.
-
----

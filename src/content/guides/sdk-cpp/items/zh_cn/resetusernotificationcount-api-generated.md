@@ -1,4 +1,3 @@
----
 ## 参数
 
 | 名称 | 类型 | 必填 | 描述 |
@@ -20,5 +19,3 @@ auto resetTask = api->resetUserNotificationCount(
 ).then([](std::shared_ptr<ResetUserNotificationsResponse> resp){
 });
 [inline-code-end]
-
----

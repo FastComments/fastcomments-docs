@@ -1,4 +1,3 @@
----
 Niestandardowe liczniki reakcji dla strony, opcjonalnie z użytkownikami, którzy zareagowali.
 
 ## Parametry
@@ -55,5 +54,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

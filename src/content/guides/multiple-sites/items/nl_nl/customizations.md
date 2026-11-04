@@ -1,4 +1,3 @@
----
 De commentaarwidget kan voor elke site <a href="/guide-customizations-and-configuration.html#custom-css" target="_blank">aangepast</a> worden.
 
 Op de widget‑aanpassingspagina vind je een vervolgkeuzelijst met het label "domain". Het selecteren van `All` in dit veld past de regel toe op alle sites in je account; je kunt een specifiek domein invoeren dat de instellingen of aangepaste CSS die je wilt toepassen, beperkt tot alleen dat domein.

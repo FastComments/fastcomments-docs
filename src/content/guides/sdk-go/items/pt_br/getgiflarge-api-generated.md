@@ -1,4 +1,3 @@
----
 ## Parâmetros
 
 | Nome | Tipo | Local | Obrigatório | Descrição |
@@ -38,5 +37,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.GetGifLarge`: %v\n", resp)
 }
 [inline-code-end]
-
----

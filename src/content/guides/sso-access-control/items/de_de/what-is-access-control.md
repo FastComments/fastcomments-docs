@@ -22,5 +22,3 @@ Welche ist also die richtige für Sie?
 
 - Ihre Gruppen spezifische Seiten haben.
 - Zum Beispiel sollten Benutzer in der Gruppe "Public Pages" niemals Artikel der Gruppe "Top Secret" ansehen.
-
----

@@ -1,19 +1,19 @@
-A `NotificationCount` object represents the unread notification count and metadata for a user.
+Bir `NotificationCount` nesnesi, bir kullanıcının okunmamış bildirim sayısını ve meta verilerini temsil eder.
 
-If there are no unread notifications, there will be no `NotificationCount` for the user.
+Okunmamış bildirim yoksa, kullanıcı için bir `NotificationCount` bulunmaz.
 
-`NotificationCount` objects are created automatically and cannot be created via the API. They also expire after one year.
+`NotificationCount` nesneleri otomatik olarak oluşturulur ve API aracılığıyla oluşturulamaz. Ayrıca bir yıl sonra sona ererler.
 
-You can clear a user's unread notification count by deleting their `NotificationCount`.
+Bir kullanıcının okunmamış bildirim sayısını, kullanıcının `NotificationCount` kaydını silerek temizleyebilirsiniz.
 
-The structure for the `NotificationCount` object is as follows:
+`NotificationCount` nesnesinin yapısı aşağıdaki gibidir:
 
 [inline-code-attrs-start title = 'NotificationCount Yapısı'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface NotificationCount {
-    id: string // kullanıcı kimliği
+    id: string // user id
     count: number
-    createdAt: string // tarih dizesi
-    expireAt: string // tarih dizesi
+    createdAt: string // date string
+    expireAt: string // date string
 }
 [inline-code-end]

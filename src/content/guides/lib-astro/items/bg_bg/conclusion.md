@@ -8,5 +8,3 @@
 ## Принос
 
 Приносите са добре дошли! Моля посетете [хранилището в GitHub](https://github.com/FastComments/fastcomments-astro) за указания относно приноса.
-
----

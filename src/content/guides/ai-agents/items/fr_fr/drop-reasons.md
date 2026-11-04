@@ -48,5 +48,3 @@ Les mêmes raisons de drop interrompent aussi les [exécutions de test / relectu
 ### La prévention des boucles est volontairement silencieuse
 
 Il n'y a pas de raison de drop pour « ce déclencheur provient d'un autre agent et a été ignoré pour empêcher une boucle ». Le journaliser encombrerait les analytics sans apporter d'information utile — par conception, la propagation d'agents ne doit jamais entraîner une explosion de déclencheurs. Si vous suspectez qu'une boucle est supprimée alors qu'elle ne devrait pas l'être, vérifiez les [journaux de commentaires](/guide-moderation.html#comment-logs) — le `botId` des commentaires rédigés par le bot est ce sur quoi la vérification de boucle se base.
-
----

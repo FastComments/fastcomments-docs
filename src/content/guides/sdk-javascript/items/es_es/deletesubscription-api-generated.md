@@ -26,5 +26,3 @@ Returns: [`DeleteSubscriptionAPIResponse`](https://github.com/FastComments/fastc
   const responseWithoutUser: DeleteSubscriptionAPIResponse = await deleteSubscription(tenantId, subscriptionId);
 })();
 [inline-code-end]
-
----

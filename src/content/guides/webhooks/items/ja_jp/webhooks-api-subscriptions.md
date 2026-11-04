@@ -1,13 +1,12 @@
----
-Webhooks は REST API を通じても管理できます。これは、Zapier のような統合がダッシュボードに触れずにコメントイベントを購読する方法で、REST Hooks パターン（購読、イベント受信、購読解除）に従います。
+WebhookはREST APIからも管理できます。Zapierなどの統合がダッシュボードを操作せずにコメントイベントを購読する仕組みで、REST Hooksパターン(購読、イベント受信、購読解除)に従います。
 
-API サブスクリプションは、ダッシュボードで設定された Webhooks と共存します。コメントイベントは、ドメインが一致するすべての Webhook に対して個別に配信され、Webhook の作成方法に関係なく配信されます。
+APIによる購読は、ダッシュボードで設定されたWebhookと並んで管理されます。コメントイベントは、Webhookの作成方法にかかわらず、そのドメインに一致するすべてのWebhookに対して、それぞれ個別の配信として送られます。
 
-## Authentication
+## 認証
 
-すべてのリクエストは、`x-api-key` ヘッダー（または `API_KEY` クエリパラメータ）に API キーを、`tenantId` クエリパラメータにテナント ID を含める必要があります。これらはダッシュボードの API Secret ページに表示されています。
+すべてのリクエストには、`x-api-key`ヘッダー(または`API_KEY`クエリパラメーター)にAPIキーを、`tenantId`クエリパラメーターにテナントIDを指定する必要があります。どちらもダッシュボードのAPI Secretページに表示されています。
 
-## Subscribe
+## 購読
 
 ```
 POST https://fastcomments.com/api/v1/webhooks?tenantId=YOUR_TENANT_ID
@@ -20,14 +19,14 @@ Content-Type: application/json
 }
 ```
 
-| Field | Required | Description |
+| フィールド | 必須 | 説明 |
 |-------|----------|-------------|
-| `url` | Yes | 絶対的な http または https の URL。 |
-| `event` | Yes | `comment-created`、`comment-updated`、または `comment-deleted`。 |
-| `domain` | No | アカウント設定からのドメイン。デフォルトは `*` で、すべてのドメインのイベントを受信します。 |
-| `method` | No | `POST`（デフォルト）、`PUT`、または DELETE。 |
+| `url` | はい | 絶対URL(httpまたはhttps)。 |
+| `event` | はい | `comment-created`、`comment-updated`、または`comment-deleted`。 |
+| `domain` | いいえ | アカウント設定に含まれるドメイン。デフォルトは`*`で、すべてのドメインのイベントを受け取ります。 |
+| `method` | いいえ | `POST`(デフォルト)、`PUT`、または`DELETE`。 |
 
-レスポンスにはサブスクリプションが含まれます：
+レスポンスには購読情報が含まれます:
 
 ```json
 {
@@ -45,35 +44,35 @@ Content-Type: application/json
 }
 ```
 
-同じ URL を同じイベントとドメインで再度購読すると、重複を作成せずに既存のサブスクリプションが返されるため、クライアントは安全に再試行できます。各テナントは最大 50 件の API サブスクリプションを持つことができます。
+同じURLを同じイベントとドメインに対して再度購読しようとすると、重複が作成される代わりに既存の購読が返されるため、クライアントは安全にリトライできます。テナントごとに最大50件のAPI購読が可能です。
 
-## List
+## 一覧取得
 
 ```
 GET https://fastcomments.com/api/v1/webhooks?tenantId=YOUR_TENANT_ID
 ```
 
-テナントのすべての Webhook を返します。ダッシュボードで管理されているもの（`"source": "dashboard"`）も含まれます。`event`、`domain`、または `source` でフィルタリングできます。
+テナントのすべてのWebhookを返します。ダッシュボードで管理されているもの(`"source": "dashboard"`)も含まれます。`event`、`domain`、`source`でフィルターできます。
 
-## Unsubscribe
+## 購読解除
 
 ```
 DELETE https://fastcomments.com/api/v1/webhooks/SUBSCRIPTION_ID?tenantId=YOUR_TENANT_ID
 ```
 
-サブスクリプションを削除すると、キューに残っているイベントも破棄されます。この方法で削除できるのは API 経由で作成されたサブスクリプションのみです。ダッシュボードの Webhook や、アカウントに存在しない ID は `404` とコード `not-found` を返します。ダッシュボードの Webhook は Webhooks ページで編集します。
+購読を削除すると、その購読のためにキューに残っているイベントも破棄されます。この方法で削除できるのはAPI経由で作成された購読のみです。ダッシュボードのWebhookや、アカウントに存在しないIDを指定した場合は、コード`not-found`とともに`404`が返されます。ダッシュボードのWebhookはWebhooksページで編集してください。
 
-## Payloads and signing
+## ペイロードと署名
 
-配信はダッシュボードの Webhook と同じペイロードを使用し（Data Structures 参照）、同じ HMAC 方式で署名されます（Security & API Tokens 参照）。API サブスクリプションはレガシーの `token` ヘッダーを受け取らないため、代わりに `X-FastComments-Signature` ヘッダーを検証してください。
+配信にはダッシュボードのWebhookと同じペイロードが使用され(データ構造を参照)、同じHMACスキームで署名されます(セキュリティとAPIトークンを参照)。API購読では従来の`token`ヘッダーは送られないため、代わりに`X-FastComments-Signature`ヘッダーを検証してください。
 
-## Sample payloads
+## サンプルペイロード
 
 ```
 GET https://fastcomments.com/api/v1/webhooks/sample-payloads?tenantId=YOUR_TENANT_ID&event=comment-created&limit=3
 ```
 
-配信が保持する形そのままで、アカウントの最新コメントを返すため、統合は最初のイベントが到着する前に実際のサンプルデータを表示できます。`event` はオプションで、すべてのイベントが同じコメントオブジェクトを配信するため検証のみ行われます。`limit` のデフォルトは 3 で、1 から 10 の範囲で指定可能です。2 API クレジットが消費されます。
+アカウントの最新のコメントを、配信時に含まれるのとまったく同じ形式で返します。これにより、最初のイベントが届く前に統合側で実際のサンプルデータを表示できます。`event`は省略可能で、検証のみ行われます。すべてのイベントで同じコメントオブジェクトが配信されるためです。`limit`のデフォルトは3で、1から10まで指定できます。APIクレジットを2消費します。
 
 ```json
 {
@@ -91,12 +90,10 @@ GET https://fastcomments.com/api/v1/webhooks/sample-payloads?tenantId=YOUR_TENAN
 }
 ```
 
-## Responding with 410 Gone
+## 410 Goneでの応答
 
-API サブスクリプションのエンドポイントが HTTP `410 Gone` を返した場合、FastComments はそれを購読解除とみなし、サブスクリプションとキューに残っているイベントが削除され、以降の配信は行われません。ダッシュボードで設定された Webhook は自動的に削除されることはなく、410 は通常の失敗として扱われます。その他の失敗ステータスは再試行され、最終的に Webhook が無効化されます（How it Works & Handling Retries 参照）。
+API購読のエンドポイントがHTTP `410 Gone`で応答した場合、FastCommentsはそれを購読解除として扱います。購読はキューに残っているイベントとともに削除され、それ以降の配信は試行されません。ダッシュボードで設定されたWebhookが自動的に削除されることはなく、これらにとって410は通常の失敗です。その他の失敗ステータスはリトライされ、最終的にWebhookが無効化されます。詳細は「仕組みとリトライの処理」を参照してください。
 
-## Dashboard
+## ダッシュボード
 
-API サブスクリプションは Webhooks リストに **API** ソースとして表示され、管理者はそれらを編集、無効化、再有効化、または削除できます。
-
----
+API購読は、ソースが**API**としてWebhooks一覧に表示され、管理者はそこで編集、無効化、再有効化、削除を行えます。

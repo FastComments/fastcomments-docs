@@ -8,5 +8,3 @@ Ako naiđete na bilo kakve probleme ili imate pitanja u vezi s Rust SDK-om, moli
 ## Doprinosi
 
 Doprinosi su dobrodošli! Posjetite [GitHub repository](https://github.com/FastComments/fastcomments-rust) za smjernice za doprinos.
-
----

@@ -1,21 +1,19 @@
-#### Populating Autocomplete
+#### Popolamento dell'autocompletamento
 
-HashTags can be populated in two ways.
+Gli HashTags possono essere popolati in due modi.
 
-First, by default users can type the `#` symbol and some text - and if there are existing hashtags an autocomplete UI will be shown.
+In primo luogo, per impostazione predefinita gli utenti possono digitare il simbolo `#` seguito da del testo - e se esistono hashtag già presenti verrà mostrata un'interfaccia di autocompletamento.
 
-If a user enters new hashtag, [a meno che non sia disabilitata](/guide-customizations-and-configuration.html#disable-automatic-hashtag-creation), the hashtag
-verrà automaticamente creato e messo in evidenza.
+Se un utente inserisce un nuovo hashtag, [a meno che non sia disabilitato](/guide-customizations-and-configuration.html#disable-automatic-hashtag-creation), l'hashtag
+verrà creato automaticamente ed evidenziato.
 
-The second way is to manually define each hashtag. Questo è descritto in questo documento.
+Il secondo modo è definire manualmente ogni hashtag. Questo è trattato in questo documento.
 
-#### Use Cases
+#### Casi d'uso
 
-HashTags are useful for members of the community to navigate to find relevant discussions. Sono inoltre utili per etichettare informazioni rilevanti
-come link, che possono essere definiti tramite la nostra API. Ad esempio, gli hashtag potrebbero essere usati per taggare:
+Gli HashTags sono utili affinché i membri della community possano navigare per trovare discussioni pertinenti. Sono utili anche per etichettare
+informazioni rilevanti, come link, che possono essere definite tramite la nostra API. Ad esempio, gli hashtag potrebbero essere usati per etichettare:
 
-- Tickets in a ticketing system.
-- Documents or Pages in CRM.
-- Files.
-
----
+- Ticket in un sistema di ticketing.
+- Documenti o Pagine in un CRM.
+- File.

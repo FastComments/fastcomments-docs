@@ -20,5 +20,3 @@ const moderators: GetModeratorsResponse = await getModerators(tenantId);
 const skip: number = 20;
 const moreModerators: GetModeratorsResponse = await getModerators(tenantId, skip);
 [inline-code-end]
-
----

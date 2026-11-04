@@ -22,5 +22,3 @@ async function runDeletePoll(): Promise<void> {
   console.log(result);
 }
 [inline-code-end]
-
----

@@ -20,5 +20,3 @@ Tečaji so sestavljeni iz različnih predlog. Želimo prikazati komentarje pri l
 </div>
 
 To je to! Zdaj ste pripravljeni na drugi korak.
-
----

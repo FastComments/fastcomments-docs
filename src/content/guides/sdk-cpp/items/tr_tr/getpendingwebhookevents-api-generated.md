@@ -25,5 +25,3 @@ api->getPendingWebhookEvents(tenantId, opts)
         } catch (const std::exception&) {}
     });
 [inline-code-end]
-
----

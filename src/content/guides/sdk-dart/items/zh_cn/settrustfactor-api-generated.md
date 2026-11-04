@@ -30,5 +30,3 @@ try {
     print('Exception when calling ModerationApi->setTrustFactor: $e\n');
 }
 [inline-code-end]
-
----

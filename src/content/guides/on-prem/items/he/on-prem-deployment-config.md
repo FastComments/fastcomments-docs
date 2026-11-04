@@ -90,5 +90,3 @@ FastComments משתמשת במשתני סביבה להגדרות. הרשימה �
 ### DocumentDB
 
 בעת חיבור ל-`DocumentDB` תרצו להגדיר `MONGO_ENABLE_SSL=true MONGO_SSL_CA=/some/path.pem` כדי להיות תואמים להגדרות ברירת המחדל.
-
----

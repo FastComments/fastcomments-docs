@@ -1,4 +1,3 @@
----
 FastComments 也支援 Hostinger 的 Page Reacts（又稱浮動按讚按鈕）小工具。
 
 你可以在本頁的右下角看到其運作！
@@ -35,5 +34,3 @@ FastComments 也支援 Hostinger 的 Page Reacts（又稱浮動按讚按鈕）�
 4. 選擇整合。
 5. 將新程式碼新增到 *末端* 的 `Custom code` 欄位，並發佈你的網站。
 6. 在預覽模式中你將看不到該小工具，但在發佈後的網站版本中它會顯示出來。
-
----

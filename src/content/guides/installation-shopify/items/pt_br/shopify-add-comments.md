@@ -1,45 +1,45 @@
-O bloco **FastComments** é o widget principal de comentários. Adicione-o aos templates de post de blog, templates de produto ou qualquer outra página onde você queira um tópico de discussão ou um chat ao vivo.
+O bloco **FastComments** é o widget principal de comentários. Adicione-o a templates de posts de blog, templates de produtos ou qualquer outra página onde você queira um tópico de discussão ou um chat ao vivo.
 
-### Add the block
+### Adicionar o bloco
 
-1. Open the Shopify theme editor (**Online Store > Themes > Customize**).
-2. Pick the template you want comments on: **Blog post**, **Product**, or any other page or section template.
-3. In the section where you want comments to appear, click **Add block**.
-4. Under **Apps**, select **FastComments**.
-5. Click **Save**.
+1. Abra o editor de temas da Shopify (**Online Store > Themes > Customize**).
+2. Escolha o template onde você quer comentários: **Blog post**, **Product** ou qualquer outro template de página ou seção.
+3. Na seção onde você quer que os comentários apareçam, clique em **Add block**.
+4. Em **Apps**, selecione **FastComments**.
+5. Clique em **Save**.
 
-The block appears immediately. There is no Tenant ID to enter; your store's tenant is wired up automatically when you install the app.
+O bloco aparece imediatamente. Não há Tenant ID para inserir; o tenant da sua loja é configurado automaticamente quando você instala o app.
 
-### Settings
+### Configurações
 
-| Setting | What it does | Default |
+| Configuração | O que faz | Padrão |
 |---|---|---|
-| Tenant ID (optional) | Sobrescreve qual tenant do FastComments o bloco renderiza. Deixe em branco para usar o tenant configurado automaticamente pela loja. Encontre um Tenant ID manual em fastcomments.com/auth/my-account/api-secret. | (blank) |
-| SSO | Faz login automático do visitante como a conta de cliente Shopify antes de comentar. Veja [Auto-Login Shopify Customers](/guide-installation-shopify.html#shopify-sso). | On |
+| Tenant ID (opcional) | Substitui contra qual tenant do FastComments o bloco será renderizado. Deixe em branco para usar o tenant configurado automaticamente da loja. Encontre um tenant ID manual em fastcomments.com/auth/my-account/api-secret. | (em branco) |
+| SSO | Faz login automático do visitante com a conta de cliente Shopify dele antes de comentar. Veja [Auto-Login Shopify Customers](/guide-installation-shopify.html#shopify-sso). | On |
 | Commenting Style | **Threaded** para respostas aninhadas e votos, ou **Streaming** para um feed de chat em tempo real. | Threaded |
-| Custom URL ID | Sobrescreve o identificador de página detectado automaticamente. Use isso quando quiser que duas URLs compartilhem um mesmo tópico de comentários. | (auto-detected) |
+| Custom URL ID | Substitui o identificador de página detectado automaticamente. Use isso quando quiser que duas URLs compartilhem o mesmo tópico de comentários. | (detectado automaticamente) |
 
-### How the page identifier is chosen
+### Como o identificador de página é escolhido
 
-Each comment thread is keyed by a URL ID. The block picks one automatically:
+Cada tópico de comentários é identificado por um URL ID. O bloco escolhe um automaticamente:
 
-- **Blog post template:** `shopify-article-{article.id}`, which is stable across slug and title changes.
-- **Product template:** `shopify-product-{product.id}`, which is stable across slug and title changes.
-- **Other templates:** the request path.
+- **Template de post de blog:** `shopify-article-{article.id}`, que é estável mesmo com mudanças de slug e título.
+- **Template de produto:** `shopify-product-{product.id}`, que é estável mesmo com mudanças de slug e título.
+- **Outros templates:** o caminho da requisição.
 
-If you set **Custom URL ID**, that value is used instead. Use the same Custom URL ID across multiple blocks (for example, on a localized variant of a product page) to share one comment thread.
+Se você definir **Custom URL ID**, esse valor será usado em vez disso. Use o mesmo Custom URL ID em vários blocos (por exemplo, em uma variante localizada de uma página de produto) para compartilhar um único tópico de comentários.
 
 ### Threaded vs Streaming
 
-**Threaded** is the default. Visitors reply to each other, vote, and moderation tools work as expected. Best for blog posts and product reviews.
+**Threaded** é o padrão. Os visitantes respondem uns aos outros, votam, e as ferramentas de moderação funcionam como esperado. Ideal para posts de blog e avaliações de produtos.
 
-**Streaming** drops the threading and shows new comments in real time as they're posted, like a chat feed. Best for product launches, live events, and community pages.
+**Streaming** elimina o encadeamento e mostra novos comentários em tempo real conforme são publicados, como um feed de chat. Ideal para lançamentos de produtos, eventos ao vivo e páginas de comunidade.
 
-### Multiple blocks on the same page
+### Vários blocos na mesma página
 
-The block can be added more than once to the same template. For example, a Reviews Summary at the top of a product page and a FastComments block at the bottom. The blocks share a URL ID, so the summary reflects the comments below.
+O bloco pode ser adicionado mais de uma vez ao mesmo template. Por exemplo, um Resumo de Avaliações no topo de uma página de produto e um bloco FastComments na parte inferior. Os blocos compartilham um URL ID, então o resumo reflete os comentários abaixo.
 
-### Tips
+### Dicas
 
-- The block hides itself in the theme editor preview with a yellow notice if it can't find a tenant. If that appears in your live store, reinstall the FastComments app.
-- For a product page, the FastComments block doubles as your product reviews widget. Pair it with **FastComments - Reviews Summary** for a star-rating summary at the top of the page.
+- O bloco se oculta na pré-visualização do editor de temas com um aviso amarelo se não conseguir encontrar um tenant. Se isso aparecer na sua loja ao vivo, reinstale o app FastComments.
+- Para uma página de produto, o bloco FastComments também funciona como seu widget de avaliações de produto. Combine-o com **FastComments - Reviews Summary** para um resumo com classificação por estrelas no topo da página.

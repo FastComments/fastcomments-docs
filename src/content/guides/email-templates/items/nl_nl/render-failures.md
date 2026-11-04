@@ -1,4 +1,3 @@
----
 Omdat e-mailsjablonen variabelen en logica ondersteunen, is het mogelijk sjablonen te maken
 die niet gerenderd worden, of soms niet gerenderd worden.
 
@@ -26,5 +25,3 @@ niet kon worden gerenderd.
 
 Een resetknop bevindt zich naast elke fout en de bijbehorende telling, zodat we de teller
 kunnen resetten nadat we het probleem hebben opgelost.
-
----

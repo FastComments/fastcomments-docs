@@ -30,5 +30,3 @@ api->updateFeedPost(tenantId, postId, feedPost)
         }
     });
 [inline-code-end]
-
----

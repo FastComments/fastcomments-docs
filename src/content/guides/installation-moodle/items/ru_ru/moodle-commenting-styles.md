@@ -1,8 +1,8 @@
-Плагин поддерживает три стиля комментирования. Вы можете настроить это в параметрах плагина.
+Плагин поддерживает три стиля комментирования. Вы можете настроить это в настройках плагина.
 
-#### Comments
+#### Комментарии
 
-Стандартный виджет FastComments отображается под содержимым страницы. Пользователи могут публиковать древовидные комментарии, отвечать, голосовать и использовать все стандартные функции.
+Стандартный виджет FastComments отображается под содержимым страницы. Пользователи могут оставлять ветвящиеся комментарии, отвечать, голосовать и использовать все стандартные функции.
 
 <div class="screenshot white-bg">
     <div class="title">Виджет комментариев на странице курса</div>
@@ -11,18 +11,18 @@
 
 #### Collab Chat
 
-С помощью Collab Chat пользователи выделяют текст на странице, чтобы начать встроенные обсуждения. Верхняя панель показывает пользователей в сети и количество активных обсуждений.
+В режиме Collab Chat пользователи выделяют текст на странице, чтобы начать обсуждение прямо на месте. Верхняя панель показывает пользователей онлайн и количество активных обсуждений.
 
 <div class="screenshot white-bg">
     <div class="title">Collab Chat</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-collab-chat.png" alt="Collab Chat FastComments на Moodle" />
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-collab-chat.png" alt="FastComments Collab Chat в Moodle" />
 </div>
 
-#### Collab Chat + Comments
+#### Collab Chat + Комментарии
 
-Оба режима активны одновременно. Виджет комментариев отображается под содержимым страницы, и пользователи также могут выделять текст для начала встроенных обсуждений.
+Оба режима активны одновременно. Виджет комментариев отображается под содержимым страницы, а пользователи также могут выделять текст, чтобы начать обсуждение прямо на месте.
 
 <div class="screenshot white-bg">
-    <div class="title">Collab Chat + Комментарии вместе</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-page-comments.png" alt="Collab Chat и комментарии FastComments на Moodle" />
+    <div class="title">Collab Chat и комментарии вместе</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-page-comments.png" alt="FastComments Collab Chat и комментарии в Moodle" />
 </div>

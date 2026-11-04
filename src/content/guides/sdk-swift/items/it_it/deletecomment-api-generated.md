@@ -34,5 +34,3 @@ DefaultAPI.deleteComment(tenantId: tenantId, id: id, options: DefaultAPI.DeleteC
     }
 }
 [inline-code-end]
-
----

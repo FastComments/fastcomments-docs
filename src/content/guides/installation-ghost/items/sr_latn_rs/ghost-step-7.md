@@ -1,4 +1,3 @@
----
 Vratimo se u Ghost kontrolnu tablu, hajde da otpremimo našu temu:
 
 <div class="screenshot white-bg">
@@ -14,4 +13,3 @@ Kod mene se zip fajl nalazi na sledećoj lokaciji. Obratite pažnju na `dist` fo
 </div>
 
 Ne zaboravite da aktivirate upravo otpremljenu temu (Ghost bi vas trebao pitati).
----

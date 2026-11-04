@@ -2,11 +2,11 @@
 go get github.com/fastcomments/fastcomments-go
 ```
 
-### 使用 API 客戶端
+### 使用 API 用戶端
 
-#### 公共 API（無驗證）
+#### 公開 API(無需驗證)
 
-The PublicAPI allows unauthenticated access to public endpoints:
+PublicAPI 允許在未經驗證的情況下存取公開端點:
 
 ```go
 package main
@@ -21,7 +21,7 @@ func main() {
     config := client.NewConfiguration()
     apiClient := client.NewAPIClient(config)
 
-    // Get comments using PublicAPI
+    // 使用 PublicAPI 取得留言
     response, httpResp, err := apiClient.PublicAPI.GetCommentsPublic(
         context.Background(),
         "your-tenant-id",
@@ -36,9 +36,9 @@ func main() {
 }
 ```
 
-#### 預設 API（需要 API 金鑰）
+#### 預設 API(需要 API 金鑰)
 
-The DefaultAPI requires authentication using your API key:
+DefaultAPI 需要使用您的 API 金鑰進行驗證:
 
 ```go
 package main
@@ -53,7 +53,7 @@ func main() {
     config := client.NewConfiguration()
     apiClient := client.NewAPIClient(config)
 
-    // Create authenticated context with API key
+    // 使用 API 金鑰建立已驗證的 context
     auth := context.WithValue(
         context.Background(),
         client.ContextAPIKeys,
@@ -62,7 +62,7 @@ func main() {
         },
     )
 
-    // Get comments using authenticated DefaultAPI
+    // 使用已驗證的 DefaultAPI 取得留言
     response, httpResp, err := apiClient.DefaultAPI.GetComments(auth).
         TenantId("your-tenant-id").
         UrlId("your-page-url-id").
@@ -77,9 +77,9 @@ func main() {
 }
 ```
 
-#### 審核 API（審核員儀表板）
+#### 審核 API(審核儀表板)
 
-The ModerationAPI provides an extensive suite of live and fast moderation APIs. All moderation methods accept an `sso` parameter and can authenticate via SSO or a FastComments.com session cookie:
+ModerationAPI 提供一套完整的即時與快速審核 API。所有審核方法都接受 `sso` 參數,並可透過 SSO 或 FastComments.com 的工作階段 cookie 進行驗證:
 
 ```go
 package main
@@ -94,7 +94,7 @@ func main() {
     config := client.NewConfiguration()
     apiClient := client.NewAPIClient(config)
 
-    // List comments for moderation using ModerationAPI
+    // 使用 ModerationAPI 列出待審核的留言
     response, httpResp, err := apiClient.ModerationAPI.GetApiComments(
         context.Background(),
     ).Sso("your-sso-token").Execute()

@@ -1,28 +1,28 @@
-Attach a poll to a comment, or set the full state of the poll it already has.
+Pripnite anketo k komentarju ali nastavite celotno stanje ankete, ki jo že ima.
 
-Options are matched by id: an option sent with the id of an existing option keeps its votes (and takes the
-new label and position), an option sent without an id is added, and existing options left out of the list
-are removed along with the votes cast on them.
+Možnosti se ujemajo po id: možnost, poslana z id obstoječe možnosti, obdrži svoje glasove (in prevzame nov
+oznako ter pozicijo), možnost, poslana brez id, se doda, obstoječe možnosti, ki jih ni na seznamu, pa se odstranijo
+skupaj z glasovi, oddanimi nanje.
 
-Keeping no existing option ids on a poll that has votes deletes all of them, so that needs replaceVotes=true.
+Če na anketi z glasovi ne obdržite nobenega obstoječega id možnosti, se vsi glasovi izbrišejo, zato je potreben replaceVotes=true.
 
-## Parameters
+## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Vrsta | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| commentId | string | path | Yes |  |
-| replaceVotes | boolean | query | No |  |
+| tenantId | string | query | Da |  |
+| commentId | string | path | Da |  |
+| replaceVotes | boolean | query | Ne |  |
 
-## Response
+## Odgovor
 
-Returns: [`SavePollResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/SavePollResponse.java)
+Vrne: [`SavePollResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/SavePollResponse.java)
 
-## Example
+## Primer
 
 [inline-code-attrs-start title = 'Primer putPoll'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Uvozi razrede:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -35,10 +35,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Nastavi avtorizacijo API ključa: api_key
+    // Configure API key authorization: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Odkomentirajte naslednjo vrstico, da nastavite predpono za API ključ, npr. "Token" (privzeto null)
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);

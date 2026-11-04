@@ -1,74 +1,74 @@
-Agent memory is a tenant-scoped, **shared** key-value pool that every agent in your tenant can read from and write to. It exists so agents can carry context across runs.
+エージェントメモリは、テナントスコープの**共有**キーバリュープールで、テナント内のすべてのエージェントが読み書きできます。エージェントが実行をまたいでコンテキストを引き継げるようにするために存在します。
 
-### Why memory exists
+### メモリが存在する理由
 
-LLM context is per-run. Without memory, an agent that issues a warning to a user has no way to know about that warning the next time it sees the same user. The platform's escalation policy - "warn before banning" - depends on the agent being able to find the prior warning. Memory is what makes that work.
+LLMのコンテキストは実行ごとに独立しています。メモリがなければ、ユーザーに警告を発したエージェントは、次に同じユーザーを見かけたときにその警告を知る手段がありません。プラットフォームのエスカレーションポリシーである「禁止する前に警告する」は、エージェントが過去の警告を見つけられることに依存しています。それを実現するのがメモリです。
 
-### Two kinds of memory
+### 2種類のメモリ
 
-- **WARNING** - written automatically as part of the [`warn_user`](#tool-warn-user) flow. The agent does not write `WARNING` records by hand; they are a side effect of warning a user.
-- **NOTE** - written by [`save_memory`](#tools-overview). General-purpose context the agent wants future agents to know.
+- **WARNING** - [`warn_user`](#tool-warn-user) フローの一部として自動的に書き込まれます。エージェントが `WARNING` レコードを手動で書くことはなく、ユーザーへの警告の副作用として生成されます。
+- **NOTE** - [`save_memory`](#tools-overview) によって書き込まれます。エージェントが将来のエージェントに知らせたい汎用的なコンテキストです。
 
-The escalation policy looks specifically for `WARNING` records when deciding whether a ban is justified.
+エスカレーションポリシーは、禁止が正当化されるかどうかを判断する際に、特に `WARNING` レコードを探します。
 
-### Tenant-scoped, agent-shared
+### テナントスコープ、エージェント共有
 
-All agents in your tenant share **one memory pool**. A note saved by Agent A is visible to Agent B's `search_memory` calls. This is intentional - you want a triage agent's notes to inform a moderator agent's decisions.
+テナント内のすべてのエージェントは**1つのメモリプール**を共有します。エージェントAが保存したメモは、エージェントBの `search_memory` 呼び出しから参照できます。これは意図的な設計です - トリアージエージェントのメモがモデレーターエージェントの判断に役立つようにするためです。
 
-`tenantId` is set by the executor from the agent's own tenant - never from LLM args - so cross-tenant memory leaks are impossible by construction.
+`tenantId` はエグゼキューターによってエージェント自身のテナントから設定され、LLMの引数からは決して設定されないため、テナント間のメモリリークは構造的に不可能です。
 
-### What's in a memory record
+### メモリレコードの内容
 
-Each memory entry contains:
+各メモリエントリには以下が含まれます:
 
-- **Which agent wrote it**, and when.
-- **Who it's about** - the user this memory describes. The agent cannot fabricate this; the platform fills it in automatically from whatever triggered the agent.
-- **A hidden alt-account signal** - the platform also records (privately) the IP fingerprint of the originating comment, so future memory searches can surface notes about other accounts posting from the same IP. The fingerprint is never shown to the agent or the LLM.
-- **The note itself** - up to 2000 characters of free text.
-- **Tags** for retrieval - up to 10 short tags.
-- **A kind** - either a warning or a general note.
-- **An optional comment link** - if the memory is tied to a specific comment.
+- **どのエージェントが書いたか**、およびいつ。
+- **誰についてのものか** - このメモリが記述するユーザーです。エージェントはこれを捏造できず、プラットフォームがエージェントをトリガーした対象から自動的に設定します。
+- **非公開の別アカウントシグナル** - プラットフォームは(非公開で)発信元コメントのIPフィンガープリントも記録するため、将来のメモリ検索で、同じIPから投稿している他のアカウントに関するメモを表示できます。フィンガープリントがエージェントやLLMに表示されることはありません。
+- **メモ自体** - 最大2000文字の自由テキスト。
+- **検索用のタグ** - 最大10個の短いタグ。
+- **種別** - 警告または一般メモのいずれか。
+- **オプションのコメントリンク** - メモリが特定のコメントに紐づいている場合。
 
-### Search behavior
+### 検索の動作
 
-[`search_memory`](#tools-overview) returns up to 25 records, sorted newest-first, scoped automatically to (the trigger's user) OR (other accounts on the trigger's IP). The results are also char-capped at 8000 total characters across all returned content - older entries are dropped if the cap is hit.
+[`search_memory`](#tools-overview) は最大25件のレコードを、新しい順にソートして返します。スコープは自動的に(トリガーのユーザー)または(トリガーのIP上の他のアカウント)に限定されます。結果は、返されるすべてのコンテンツ合計で8000文字の上限も適用されます - 上限に達した場合、古いエントリは破棄されます。
 
-The agent does not pass `userId` or `targetIpHash`. Both are set by the executor.
+エージェントは `userId` や `targetIpHash` を渡しません。どちらもエグゼキューターによって設定されます。
 
-### Persistence
+### 永続性
 
-Memory has **no TTL**. Records persist until explicitly removed. WARNING records about a user are intentionally never auto-deleted - the escalation history must be findable indefinitely or the platform's "search before banning" check is meaningless.
+メモリには**TTLがありません**。レコードは明示的に削除されるまで保持されます。ユーザーに関するWARNINGレコードは、意図的に自動削除されません - エスカレーション履歴が無期限に見つけられなければ、プラットフォームの「禁止前の検索」チェックは無意味になります。
 
-The three ways memory is removed:
+メモリが削除される3つの方法:
 
-- A moderator deletes the underlying comment - any memory tied to that comment is cascaded.
-- A user is deleted - all memory entries about that user are removed in the same transaction.
-- Your tenant is deleted.
+- モデレーターが元のコメントを削除する - そのコメントに紐づくメモリはすべて連鎖削除されます。
+- ユーザーが削除される - そのユーザーに関するすべてのメモリエントリが同じトランザクションで削除されます。
+- テナントが削除される。
 
-There is no admin UI for deleting individual memory records today.
+現時点では、個別のメモリレコードを削除する管理UIはありません。
 
-### Memory in dry-run
+### ドライランでのメモリ
 
-Dry-run agents do **not** write memory. This is by design: a dry-run agent's hypothetical decisions should not pollute the shared memory pool. Read-back via `search_memory` works in dry-run normally - the agent can see real memories from live agents - it just cannot add to them.
+ドライランのエージェントはメモリを書き込み**ません**。これは意図的な設計です: ドライランエージェントの仮説的な判断が共有メモリプールを汚染すべきではありません。`search_memory` による読み取りはドライランでも通常どおり機能し、エージェントはライブのエージェントによる実際のメモリを見ることができますが、追加することはできません。
 
-### Memory in replays
+### リプレイでのメモリ
 
-Same as dry-run: replay agents do not write memory. Replays are preview-only. See [Test Runs (Replays)](#test-runs-replays).
+ドライランと同様に、リプレイエージェントはメモリを書き込みません。リプレイはプレビュー専用です。[テストラン(リプレイ)](#test-runs-replays) を参照してください。
 
-### Constraints summary
+### 制約のまとめ
 
 | 制限 | 値 |
 |---|---|
-| Memory content max length | 2000 chars |
-| Memory tag max length | 64 chars |
-| Memory tags max count | 10 |
-| Memory query max length | 200 chars |
-| Memory search result limit | 25 records |
-| Memory search total content cap | 8000 chars |
+| メモリコンテンツの最大長 | 2000文字 |
+| メモリタグの最大長 | 64文字 |
+| メモリタグの最大数 | 10 |
+| メモリクエリの最大長 | 200文字 |
+| メモリ検索結果の上限 | 25レコード |
+| メモリ検索の合計コンテンツ上限 | 8000文字 |
 
-### See also
+### 関連項目
 
-- [ツール: save_memory](#tools-overview) for writing.
-- [ツール: search_memory](#tools-overview) for reading.
-- [ツール: warn_user](#tool-warn-user) - the only tool that writes WARNING-kind memory.
-- [ツール: ban_user](#tool-ban-user) - the system prompt requires `search_memory` to be called before this.
+- 書き込み用: [ツール: save_memory](#tools-overview)
+- 読み取り用: [ツール: search_memory](#tools-overview)
+- [ツール: warn_user](#tool-warn-user) - WARNING種別のメモリを書き込む唯一のツール。
+- [ツール: ban_user](#tool-ban-user) - システムプロンプトは、このツールの前に `search_memory` を呼び出すことを要求します。

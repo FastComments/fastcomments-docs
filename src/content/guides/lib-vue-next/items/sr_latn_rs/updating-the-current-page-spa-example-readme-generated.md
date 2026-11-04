@@ -14,4 +14,3 @@ Ako se vaš nalog nalazi u EU, postavite `region = 'eu'` u konfiguraciji widgeta
 ```
 
 U suprotnom, ne morate definisati `region`.
----

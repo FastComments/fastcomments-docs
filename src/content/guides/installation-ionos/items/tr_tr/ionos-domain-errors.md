@@ -1,4 +1,3 @@
----
 Aşağıdaki gibi bir yetkilendirme hatası alabilirsiniz:
 
 <div class="screenshot white-bg">
@@ -13,5 +12,3 @@ Bu durumda çözüm basittir. Sitenizi FastComments.com hesabınıza eklemeniz y
 [Sitenizi hesabınıza eklemek için buraya gidin.](https://fastcomments.com/auth/my-account/configure-domains)
 
 Artık Ionos sitenize hızlı, canlı yorum özelliği eklenmiş olmalıdır!
-
----

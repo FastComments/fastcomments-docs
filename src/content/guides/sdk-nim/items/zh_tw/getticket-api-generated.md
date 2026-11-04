@@ -19,5 +19,3 @@ if ticketOpt.isSome:
   let ticket = ticketOpt.get()
   discard ticket
 [inline-code-end]
-
----

@@ -1,54 +1,54 @@
-When the agent queues an approval, the platform notifies reviewers via email. Two settings on the edit form control this: **who** is notified and **how often**.
+Kada agent stavi odobrenje u red, platforma obavještava recenzente putem e-pošte. Dvije postavke na obrascu za uređivanje kontroliraju ovo: **tko** se obavještava i **koliko često**.
 
-### Tko: način obavijesti
+### Tko: način obavještavanja
 
-Two modes:
+Dva načina:
 
-- **Svi administratori i moderatori** (zadano) - svaki vlasnik računa, super administrator i administrator moderiranja komentara na najmodavcu je kandidat recenzent.
-- **Specifični korisnici** - ručno odaberite popis iz dvostrukog odabira na obrascu za uređivanje.
+- **Svi administratori i moderatori** (zadano) - svaki vlasnik računa, super admin i admin moderator komentara na tenantu je kandidat za recenzenta.
+- **Određeni korisnici** - ručno odaberite popis putem dual-list pickera na obrascu za uređivanje.
 
-Either way, a candidate reviewer must have an account on the tenant and a valid email address to receive notifications.
+U svakom slučaju, kandidat-recenzent mora imati račun na tenantu i valjanu adresu e-pošte za primanje obavještenja.
 
-### Koliko često: učestalost po korisniku
+### Koliko često: frekvencija po korisniku
 
-Each candidate reviewer's **own profile** sets their personal notification frequency for agent approvals:
+**Vlastiti profil** svakog kandidata-recenzenta postavlja njegovu osobnu frekvenciju obavještenja za odobrenja agenata:
 
-- **Odmah** (zadano) - jedan e‑mail po čekajućem odobrenju, poslan čim je odobrenje kreirano.
-- **Svakog sata** - jedan sažeti e‑mail po satu koji sumira sva odobrenja stavljena u red u tom satu.
-- **Dnevno** - jedan sažeti e‑mail na svakih 24 sata.
-- **Onemogućeno** - nema e‑mailova. Korisnik i dalje može pregledavati odobrenja putem UI‑ja ulaznog sandučića; samo ne prima obavijesti.
+- **Odmah** (zadano) - jedna e-poruka po čekajućem odobrenju, poslana čim se odobrenje stvori.
+- **Satno** - jedna sažeta e-poruka po satu koja sažima sva odobrenja stavljena u red tijekom tog sata.
+- **Dnevno** - jedna sažeta e-poruka svaka 24 sata.
+- **Onemogućeno** - bez e-poruka. Korisnik i dalje može pregledavati odobrenja putem inbox UI-ja; jednostavno ne dobiva obavještenja.
 
-The user changes this setting on their own profile, not on the agent edit form. This is intentional - one tenant might have ten agents, and a moderator should not have to set their preferred frequency on every agent independently.
+Korisnik mijenja ovu postavku na svom vlastitom profilu, a ne na obrascu za uređivanje agenta. To je namjerno - jedan tenant može imati deset agenata, a moderator ne bi trebao morati postavljati svoju preferiranu frekvenciju na svakom agentu zasebno.
 
-### Cron zadaci koji pokreću sažetke
+### Cron poslovi koji pokreću sažetke
 
-- **`hourly-agent-approval-digest`** - pregledava svaki sat, grupira odobrenja stavljena u red od posljednjeg sažetka svakog korisnika, šalje jedan e‑mail po korisniku.
+- **`hourly-agent-approval-digest`** - prolazi svaki sat, grupira odobrenja stavljena u red od posljednjeg sažetka svakog korisnika, šalje jednu e-poruku po korisniku.
 - **`daily-agent-approval-digest`** - isto, dnevno.
-- **`agent-approval-reaper`** - uklanja odobrenja koja su starija od 90 dana, neovisno o stanju.
+- **`agent-approval-reaper`** - uklanja odobrenja starija od 90 dana bez obzira na stanje.
 
-The hourly and daily digest crons are scoped per-recipient: a user with hourly frequency is processed by the hourly cron and skipped by the daily one (and vice versa). Immediate-frequency users are notified by the approval-create code path, not by the crons.
+Satni i dnevni sažetak cronovi su opsegom vezani po primatelju: korisnik sa satnom frekvencijom obrađuje se satnim cronom i preskače dnevnim (i obrnuto). Korisnici s odmah-frekvencijom obavještavaju se putem koda za stvaranje odobrenja, a ne putem cronova.
 
 ### Stanje deduplikacije
 
-The platform tracks which users have already been emailed about each approval. Once a user has been notified (immediately or in a digest), they will not be emailed again for the same approval - even if they change their frequency from immediate to daily mid-cycle.
+Platforma prati koji su korisnici već obavješteni e-poštom o svakom odobrenju. Jednom kada je korisnik obavješten (odmah ili u sažetku), neće ponovno dobiti e-poruku za isto odobrenje - čak i ako promijeni frekvenciju s odmah na dnevno usred ciklusa.
 
-### Odobravanje iz e‑maila
+### Odobravanje iz e-pošte
 
-Each notification email contains a one-click signed login link that takes the reviewer directly to the approval detail page, already authenticated. They can approve, reject, or open the [Refine Prompts](#refining-prompts) flow from there.
+Svaka e-poruka s obavještenjem sadrži jedno-klik link za prijavu s potpisom koji recenzenta vodi izravno na stranicu s detaljima odobrenja, već autentificiranog. Odatle može odobriti, odbiti ili otvoriti tijek [Refine Prompts](#refining-prompts).
 
-### Što ako ne postoje administratori
+### Što ako nema administratora
 
-If `notifyMode` is `All admins and moderators` but the tenant has no super admins, comment moderator admins, or account owners with valid emails, the platform logs a warning and the approval still queues - just nobody gets notified about it. It will sit in the inbox until someone happens to look.
+Ako je `notifyMode` `All admins and moderators`, ali tenant nema super admine, admine moderatore komentara ili vlasnike računa s valjanom e-poštom, platforma zapisuje upozorenje i odobrenje se i dalje stavlja u red - samo nitko ne dobiva obavještenje o njemu. Ostajat će u inboxu dok ga netko slučajno ne pogleda.
 
-If `notifyMode` is `Specific users` but you have not selected any users, same outcome.
+Ako je `notifyMode` `Specific users`, ali niste odabrali nijednog korisnika, isti ishod.
 
-### Što ako su obavijesti o naplati onemogućene
+### Što ako su obavještenja o naplati onemogućena
 
-[Budget Alerts](#budget-alerts) – e‑mailovi vezani uz proračun – idu administratore naplate **neovisno o postavkama obavijesti po korisniku**. To je namjerno: prekoračenja proračuna utječu na trošak, a vlasnik naplate mora biti obaviješten.
+[Budget Alerts](#budget-alerts) - e-poruke vezane uz proračun - idu adminima za naplatu **bez obzira na preferenciju obavještenja po korisniku**. To je namjerno: prekoračenja proračuna utječu na troškove, a vlasnik naplate to treba znati.
 
-Approval notifications honor only the per-user agent-approval frequency setting. They do not check the broader admin-notifications opt-out - a user who has opted out of admin notifications will still receive approval emails if they are on the reviewer list, unless their agent-approval frequency is set to **Disabled**.
+Obavještenja o odobrenjima poštuju samo postavku frekvencije odobrenja agenata po korisniku. Ne provjeravaju širu odjavu od admin obavještenja - korisnik koji se odjavio od admin obavještenja i dalje će primati e-poruke o odobrenjima ako je na popisu recenzenata, osim ako je njegova frekvencija odobrenja agenata postavljena na **Onemogućeno**.
 
 ### Vidi također
 
 - [Approval Workflow](#approval-workflow) za cijeli životni ciklus odobrenja.
-- [Refining Prompts](#refining-prompts) za radni tok "Stalno odobravam istu vrstu greške".
+- [Refining Prompts](#refining-prompts) za tijek "stalno odobravam istu vrstu greške".

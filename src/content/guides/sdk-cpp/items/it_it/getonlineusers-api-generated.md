@@ -1,4 +1,3 @@
----
 Visualizzatori attualmente online di una pagina: persone la cui sessione WebSocket è attualmente sottoscritta alla pagina.
 Restituisce anonCount + totalCount (abbonati a livello di stanza, inclusi gli spettatori anonimi che non enumeriamo).
 
@@ -30,5 +29,3 @@ api->getOnlineUsers(tenantId, urlId, *options).then([](pplx::task<std::shared_pt
     }
 });
 [inline-code-end]
-
----

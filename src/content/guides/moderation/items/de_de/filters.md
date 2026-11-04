@@ -19,5 +19,3 @@ Genehmigt bedeutet also, dass der Kommentar von anderen Benutzern auf Ihrer Webs
 Überprüft ist einfach ein Werkzeug für Administratoren und Moderatoren und hat keinen Einfluss auf die Sichtbarkeit eines Kommentars.
 
 Das "Überprüft"-Flag erleichtert es, Kommentare zu finden, die Sie überprüft haben.
-
----

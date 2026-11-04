@@ -1,4 +1,3 @@
----
 Bulk-brugeroplysninger for en tenant. Givet userIds returneres visningsoplysninger fra User / SSOUser.
 Bruges af kommentar-widgeten til at berige brugere, der netop dukkede op via en presence-begivenhed.
 Ingen sidekontekst: privatliv håndhæves ensartet (private profiler er maskeret).
@@ -35,5 +34,3 @@ PublicAPI.getUsersInfo(tenantId: tenantId, ids: ids) { (response, error) in
     }
 }
 [inline-code-end]
-
----

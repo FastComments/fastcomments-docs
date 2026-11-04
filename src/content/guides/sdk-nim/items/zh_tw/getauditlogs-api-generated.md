@@ -18,5 +18,3 @@ if auditOpt.isSome:
   let audit = auditOpt.get()
   echo audit
 [inline-code-end]
-
----

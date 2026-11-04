@@ -15,5 +15,3 @@ Puoi trovare la documentazione sulla configurazione del widget <a href="/guide-c
 
 Tutte le versioni del widget FastComments sono dei wrapper attorno alla libreria core VanillaJS. Questo ci consente di aggiungere funzionalità
 e correggere problemi in un unico posto - e le modifiche si propagano automaticamente alle altre varianti del widget dei commenti.
-
----

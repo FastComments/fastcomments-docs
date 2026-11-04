@@ -1,4 +1,3 @@
----
 Ora possiamo copiare lo snippet di codice seguente (usa il pulsante di copia in alto a destra dello snippet):
 
 [inline-code-attrs-start title = 'Codice commenti del blog Squarespace'; type = 'html'; isFunctional = false; inline-code-attrs-end]
@@ -32,5 +31,3 @@ Ora possiamo copiare lo snippet di codice seguente (usa il pulsante di copia in 
     <div class="title">Incolla e salva</div>
     <img class="screenshot-image" src="/images/installation-guides/squarespace-step-2-1-add-code-and-save.png" alt="Incolla e salva" />
 </div>
-
----

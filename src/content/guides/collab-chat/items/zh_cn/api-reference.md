@@ -1,4 +1,3 @@
----
 ### API 概览
 
 Collab Chat 提供三个用于以编程方式管理文本对话的 REST API 端点。 这些端点允许您在不使用浏览器小部件的情况下检索、创建和删除注释。
@@ -201,5 +200,3 @@ curl -X DELETE "https://fastcomments.com/comment-collab-chats/demo/conv789" \
 ### 使用情况跟踪
 
 创建会话会增加您的 `conversationCreateCount` 使用指标。所有 WebSocket 同步活动都会增加 `pubSubMessageCount` 和 `pubSubBandwidth`。您可以在 FastComments 仪表板的使用分析中监控这些指标。
-
----

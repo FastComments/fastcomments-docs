@@ -13,5 +13,3 @@ Sada možemo da pogledamo naš sajt! Ako odete na objavu na blogu, trebalo bi da
     <div class="title">Promene uživo</div>
     <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-4-live.png" alt="Promene uživo" />
 </div>
-
----

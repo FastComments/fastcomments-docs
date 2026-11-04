@@ -1,4 +1,1 @@
----
 Agrega comentarios a una aplicación SolidJS con el paquete oficial, incluyendo un manejador imperativo para cambiar la configuración del widget sin volver a montar.
-
----

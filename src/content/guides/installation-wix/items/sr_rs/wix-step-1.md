@@ -10,5 +10,3 @@
     <div class="title">Корак један: Уредите динамичку страницу објаве</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-1-open-page.png" alt="Уредите динамичку страницу објаве" />
 </div>
-
----

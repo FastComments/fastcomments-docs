@@ -1,4 +1,3 @@
----
 Identifica a credencial em uso: o tenant ao qual pertence e, para tokens OAuth, o usuário que a autorizou.  
 Integrações usam isso para testar uma conexão e rotulá‑la.
 
@@ -24,5 +23,3 @@ Retorna: [`GetMeResponse`](https://github.com/FastComments/fastcomments-sdk-js/b
   const status: APIStatus = me.status;
 })();
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 ## Παράμετροι
 
 | Name | Type | Τοποθεσία | Απαιτείται | Περιγραφή |
@@ -42,5 +41,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetVotesForUser`: %v\n", resp)
 }
 [inline-code-end]
-
----

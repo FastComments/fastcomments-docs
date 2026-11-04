@@ -1,28 +1,24 @@
-Past commenters on the page who are NOT currently online. Sorted by displayName.  
-Commentateurs précédents sur la page qui ne sont PAS actuellement en ligne. Triés par displayName.
-
-Use this after exhausting /users/online to render a "Members" section.  
-Utilisez cela après avoir épuisé /users/online pour afficher une section "Membres".
-
-Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName} index from afterName forward via $gt, no $skip cost.  
-Pagination par curseur sur commenterName : le serveur parcourt l’index partiel {tenantId, urlId, commenterName} à partir de afterName en avant via $gt, sans coût $skip.
+Commentateurs passés sur la page qui ne sont PAS actuellement en ligne. Triés par displayName.
+À utiliser après avoir épuisé /users/online pour afficher une section « Membres ».
+Pagination par curseur sur commenterName : le serveur parcourt l'index partiel {tenantId, urlId, commenterName}
+à partir de afterName via $gt, sans coût de $skip.
 
 ## Paramètres
 
-| Nom | Type | Emplacement | Obligatoire | Description |
+| Nom | Type | Emplacement | Requis | Description |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| urlId | string | query | Yes | Identifiant d'URL de page (nettoyé côté serveur). |
-| afterName | string | query | No | Curseur : passer nextAfterName de la réponse précédente. |
-| afterUserId | string | query | No | Critère de désaccord du curseur : passer nextAfterUserId de la réponse précédente. Requis lorsque afterName est défini afin que les égalités de nom ne suppriment pas d'entrées. |
+| tenantId | string | path | Oui |  |
+| urlId | string | query | Oui | Identifiant de l'URL de la page (nettoyé côté serveur). |
+| afterName | string | query | Non | Curseur : passez nextAfterName de la réponse précédente. |
+| afterUserId | string | query | Non | Départage du curseur : passez nextAfterUserId de la réponse précédente. Requis lorsque afterName est défini afin que les homonymies ne fassent pas perdre d'entrées. |
 
 ## Réponse
 
-Returns: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/page_users_offline_response.py)
+Renvoie : [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/page_users_offline_response.py)
 
 ## Exemple
 
-[inline-code-attrs-start title = 'Exemple get_offline_users'; type = 'python'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemple de get_offline_users'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import client
 from client.api.public_api import GetOfflineUsersOptions
@@ -30,21 +26,21 @@ from client.models.page_users_offline_response import PageUsersOfflineResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Définir l'hôte est facultatif et par défaut https://fastcomments.com
-# Voir configuration.py pour la liste de tous les paramètres de configuration pris en charge.
+# Defining the host is optional and defaults to https://fastcomments.com
+# See configuration.py for a list of all supported configuration parameters.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Entrer dans un contexte avec une instance du client API
+# Enter a context with an instance of the API client
 with client.ApiClient(configuration) as api_client:
-    # Créer une instance de la classe API
+    # Create an instance of the API class
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    url_id = 'url_id_example' # str | Identifiant d'URL de page (nettoyé côté serveur).
-    after_name = 'after_name_example' # str | Curseur : passer nextAfterName de la réponse précédente. (optional)
-    after_user_id = 'after_user_id_example' # str | Critère de désaccord du curseur : passer nextAfterUserId de la réponse précédente. Requis lorsque afterName est défini afin que les égalités de nom ne suppriment pas d'entrées. (optional)
+    url_id = 'url_id_example' # str | Identifiant de l'URL de la page (nettoyé côté serveur).
+    after_name = 'after_name_example' # str | Curseur : passez nextAfterName de la réponse précédente. (optional)
+    after_user_id = 'after_user_id_example' # str | Départage du curseur : passez nextAfterUserId de la réponse précédente. Requis lorsque afterName est défini afin que les homonymies ne fassent pas perdre d'entrées. (optional)
 
     try:
         api_response = api_instance.get_offline_users(tenant_id, url_id, GetOfflineUsersOptions(after_name=after_name, after_user_id=after_user_id))

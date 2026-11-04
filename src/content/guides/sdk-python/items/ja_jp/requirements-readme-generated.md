@@ -1,4 +1,3 @@
----
 - Python >= 3.8
 
 ベースインストールは pure-stdlib で、SSO ユーティリティを提供します。生成された
@@ -8,4 +7,3 @@ API クライアント（`DefaultApi`/`PublicApi`/`ModerationApi`）は `client`
 ```bash
 pip install "fastcomments[client] @ git+https://github.com/fastcomments/fastcomments-python.git@v3.1.0"
 ```
----

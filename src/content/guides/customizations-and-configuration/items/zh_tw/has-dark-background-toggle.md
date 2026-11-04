@@ -40,5 +40,3 @@
     }
 </style>
 [inline-code-end]
-
----

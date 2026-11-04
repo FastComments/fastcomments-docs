@@ -8,5 +8,3 @@
 ## 貢獻
 
 歡迎各種貢獻！請造訪 [GitHub 倉庫](https://github.com/FastComments/fastcomments-react) 以取得貢獻指南。
-
----

@@ -1,6 +1,6 @@
-Solid no realiza un seguimiento automático de mutaciones profundas en objetos arbitrarios, por lo que
-los cambios de configuración después del primer renderizado deben enviarse explícitamente. Every widget
-acepta un `apiRef` que devuelve un handle; llame a `handle.update(partial)` desde
+Solid no rastrea automáticamente las mutaciones profundas en objetos arbitrarios, por lo que
+los cambios de configuración después del primer renderizado deben enviarse explícitamente. Cada widget
+acepta un `apiRef` que devuelve un handle; llama a `handle.update(partial)` desde
 un `createEffect` para impulsar la reactividad:
 
 ```tsx
@@ -26,21 +26,21 @@ export default function Paginated() {
 ```
 
 `update()` es seguro de llamar en cualquier momento:
-- Before the script has loaded: the partial is stashed and applied at init.
-- During an async init (reviews-summary, user-activity-feed): the partial is queued and applied when the callback resolves.
-- After init: it forwards straight to the live widget's `.update()` method.
+- Antes de que el script se haya cargado: el partial se guarda temporalmente y se aplica en la inicialización.
+- Durante una inicialización asíncrona (reviews-summary, user-activity-feed): el partial se encola y se aplica cuando el callback se resuelve.
+- Después de la inicialización: se reenvía directamente al método `.update()` del widget en vivo.
 
-### API imperativa del handle
+### API del handle imperativo
 
 ```ts
 interface WidgetHandle<Config> {
   getInstance: () => WidgetInstance | null;   // última instancia en vivo (o null antes del montaje)
-  onInstance: (cb: (instance: WidgetInstance) => void) => void; // se dispara una vez que la instancia está lista
-  update: (partial: Partial<Config>) => void; // fusiona y empuja la configuración
+  onInstance: (cb: (instance: WidgetInstance) => void) => void; // se dispara una vez cuando la instancia está lista
+  update: (partial: Partial<Config>) => void; // fusiona y envía la configuración
 }
 ```
 
-Utilice `getInstance()` para acciones imperativas que no estén cubiertas por `.update()`, p. ej. `openProfile`:
+Usa `getInstance()` para acciones imperativas que no están cubiertas por `.update()`, por ejemplo `openProfile`:
 
 ```tsx
 const openProfile = () =>

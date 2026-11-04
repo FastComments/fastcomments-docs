@@ -1,4 +1,3 @@
----
 ## 매개변수
 
 | Name | Type | Location | Required | Description |
@@ -33,5 +32,3 @@ ModerationAPI.getCommentChildren(tenantId: tenantId, commentId: commentId, sso: 
     }
 }
 [inline-code-end]
-
----

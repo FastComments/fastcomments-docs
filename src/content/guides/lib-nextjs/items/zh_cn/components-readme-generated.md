@@ -1,4 +1,3 @@
----
 | Component | Description |
 | --- | --- |
 | `FastComments` | 具有回复、投票等功能的评论小部件 |
@@ -18,4 +17,3 @@ import {
     FastCommentsReviewsSummary,
 } from 'fastcomments-nextjs';
 ```
----

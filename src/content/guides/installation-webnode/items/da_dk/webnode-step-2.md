@@ -1,18 +1,16 @@
----
-Next, determine where you want to add comments. Mouse over the bottom of the previous content area  
-and click to add a section:
+Dernæst skal du bestemme, hvor du vil tilføje kommentarer. Hold musen over bunden af det forrige indholdsområde
+og klik for at tilføje en sektion:
 
 <div class="screenshot white-bg">
-    <div class="title">Trin to: Tilføj sektion</div>
-    <img class="screenshot-image" src="/images/installation-guides/webnode-step-2.png" alt="Tilføj sektion" />
+    <div class="title">Trin To: Tilføj Sektion</div>
+    <img class="screenshot-image" src="/images/installation-guides/webnode-step-2.png" alt="Tilføj Sektion" />
 </div>
 
-Now let's put an HTML block in that section, where the code snippet will go. Select `HTML`:
+Lad os nu indsætte en HTML-blok i den sektion, hvor kodestykket skal placeres. Vælg `HTML`:
 
-> **Bemærk:** As of June 26, 2023, Webnode's HTML block is a paid feature. It is not available on the free plan, and for projects created after that date it requires a premium package. If you don't see the `HTML` option, upgrade your Webnode plan to enable it.
+> **Bemærk:** Per den 26. juni 2023 er Webnodes HTML-blok en betalt funktion. Den er ikke tilgængelig på den gratis plan, og for projekter oprettet efter denne dato kræver den en premium-pakke. Hvis du ikke kan se `HTML`-muligheden, skal du opgradere din Webnode-plan for at aktivere den.
 
 <div class="screenshot white-bg">
-    <div class="title">Trin tre: Tilføj kodeblok</div>
+    <div class="title">Trin Tre: Tilføj Kodeblok</div>
     <img class="screenshot-image" src="/images/installation-guides/webnode-step-3.png" alt="Tilføj HTML-blok" />
 </div>
----

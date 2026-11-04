@@ -1,22 +1,22 @@
-Like count for a page, optionally with the users who liked it.
+Кількість лайків для сторінки, опціонально з користувачами, які її лайкнули.
 
-## Parameters
+## Параметри
 
-| Name | Type | Location | Required | Description |
+| Назва | Тип | Розташування | Обов'язковий | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| urlId | string | query | Yes |  |
-| includeUserInfo | string | query | No | "\"public\" пропускає користувачів з приватними профілями, \"include-private\" включає їх." |
+| tenantId | string | query | Так |  |
+| urlId | string | query | Так |  |
+| includeUserInfo | string | query | Ні | "public" виключає користувачів з приватними профілями, "include-private" включає їх. |
 
-## Response
+## Відповідь
 
-Returns: [`GetPageLikesAPIResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetPageLikesAPIResponse.java)
+Повертає: [`GetPageLikesAPIResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetPageLikesAPIResponse.java)
 
-## Example
+## Приклад
 
 [inline-code-attrs-start title = 'Приклад getPageLikes'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Імпорт класів:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -29,16 +29,16 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Налаштування авторизації за API‑ключем: api_key
+    // Configure API key authorization: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Розкоментуйте наступний рядок, щоб встановити префікс для API‑ключа, напр. "Token" (за замовчуванням null)
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
-    PageReactIncludeUserInfo includeUserInfo = PageReactIncludeUserInfo.fromValue("public"); // PageReactIncludeUserInfo | \"public\" пропускає користувачів з приватними профілями, \"include-private\" включає їх.
+    PageReactIncludeUserInfo includeUserInfo = PageReactIncludeUserInfo.fromValue("public"); // PageReactIncludeUserInfo | \"public\" виключає користувачів з приватними профілями, \"include-private\" включає їх.
     try {
       GetPageLikesAPIResponse result = apiInstance.getPageLikes(tenantId, urlId)
             .includeUserInfo(includeUserInfo)

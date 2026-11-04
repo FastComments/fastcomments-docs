@@ -113,5 +113,3 @@ interface QuestionResultsCombineCommentsResponse {
 - Kada je naveden `forceRecalculate`, trošak je uvijek `10`, umjesto uobičajenih `2`.
 - Ako predmemorija istekne i podaci se ponovno izračunaju, trošak je i dalje konstantan `2` ako `forceRecalculate` nije naveden.
 - Ovo potiče korištenje predmemorije.
-
----

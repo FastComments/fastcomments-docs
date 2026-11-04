@@ -1,4 +1,3 @@
----
 Može se pojaviti greška autorizacije, kao u nastavku:
 
 <div class="screenshot white-bg">
@@ -13,5 +12,3 @@ U tom slučaju, rešenje je jednostavno. Potrebno je samo da dodate svoj sajt na
 [Kliknite ovde da dodate svoj sajt na svoj nalog.](https://fastcomments.com/auth/my-account/configure-domains)
 
 Sada biste trebalo da imate brze, uživo komentare na svom sajtu!
-
----

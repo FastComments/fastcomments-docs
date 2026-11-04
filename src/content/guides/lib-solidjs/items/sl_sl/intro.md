@@ -5,5 +5,3 @@ Vdelajte v živo komentiranje, klepet in gradnike za recenzije v vašo SolidJS a
 ## Repozitorij
 
 [Oglejte si na GitHubu](https://github.com/FastComments/fastcomments-solidjs)
-
----

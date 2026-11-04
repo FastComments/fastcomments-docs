@@ -1,8 +1,8 @@
-En el siguiente paso necesitas copiar el código del widget predefinido que aparece a continuación.
+En el siguiente paso debes copiar el código del widget predefinido que aparece abajo.
 
-Mientras hayas iniciado sesión en FastComments.com, el fragmento de código de abajo ya contendrá la información de tu cuenta. Vamos a copiarlo:
+Mientras estés conectado a FastComments.com, el fragmento de código de abajo ya tendrá la información de tu cuenta. Copiémoslo:
 
-[inline-code-attrs-start title = 'Código de Super.so FastComments Collab Chat'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Código de FastComments Collab Chat para Super.so'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-collab-chat.min.js"></script>
 <script>
@@ -23,17 +23,17 @@ Mientras hayas iniciado sesión en FastComments.com, el fragmento de código de 
                 return setTimeout(load, 100);
             }
 
-            // Limpiar la instancia existente
+            // Clean up existing instance
             if (target.fastCommentsInstance) {
                 target.fastCommentsInstance.destroy();
             }
 
-            // Eliminar la barra superior existente si existe
+            // Clean up existing top bar if it exists
             if (currentTopBar && currentTopBar.parentNode) {
                 currentTopBar.parentNode.removeChild(currentTopBar);
             }
 
-            // Crear nueva barra superior
+            // Create new top bar
             const topBarTarget = document.createElement('div');
             target.parentNode.insertBefore(topBarTarget, target);
             topBarTarget.style.maxWidth = 'var(--layout-max-width)';
@@ -41,36 +41,36 @@ Mientras hayas iniciado sesión en FastComments.com, el fragmento de código de 
             currentTopBar = topBarTarget;
             currentWidget = target;
 
-            // Inicializar FastComments Collab Chat
+            // Initialize FastComments Collab Chat
             target.fastCommentsInstance = FastCommentsCollabChat(target, {
                 tenantId: "demo",
                 topBarTarget: topBarTarget
             });
 
-            // Actualizar el pathname actual
+            // Update current pathname
             currentPathname = window.location.pathname;
         }
 
-        // Carga inicial
+        // Initial load
         load();
 
-        // Comprobar cambios cada 500 ms
+        // Check every 500ms for changes
         setInterval(() => {
-            // Recargar si cambió el pathname
+            // Reload if pathname changed
             if (window.location.pathname !== currentPathname) {
                 console.log('Pathname changed, reloading...');
                 load();
                 return;
             }
 
-            // Recargar si se eliminó el widget
+            // Reload if widget was removed
             if (currentWidget && !currentWidget.parentNode) {
                 console.log('Widget removed, reloading...');
                 load();
                 return;
             }
 
-            // Recargar si el contenedor quedó vacío
+            // Reload if container was emptied
             const target = document.querySelector('.super-content');
             if (target && target.innerHTML.length < 100) {
                 console.log('Container emptied, reloading...');
@@ -81,15 +81,15 @@ Mientras hayas iniciado sesión en FastComments.com, el fragmento de código de 
 </script>
 [inline-code-end]
 
-Now paste in the `Body` area:
+Ahora pega en el área `Body`:
 
 <div class="screenshot white-bg">
     <div class="title">Código pegado</div>
     <img class="screenshot-image" src="/images/installation-guides/super-so-step-3-pasted-code.png" alt="Código pegado" />
 </div>
 
-If you see a "this is a demo message" after pasting the code:
+Si ves un "este es un mensaje de demostración" después de pegar el código:
 
-- Asegúrate de haber iniciado sesión en tu cuenta de fastcomments.com.
-- Asegúrate de tener habilitadas las cookies de terceros.
-- Luego actualiza esta página y copia el fragmento de código de nuevo. Debería tener `tenantId` rellenado con el identificador de tu tenant.
+- Asegúrate de estar conectado a tu cuenta de fastcomments.com.
+- Asegúrate de tener las cookies de terceros habilitadas.
+- Luego actualiza esta página y copia el fragmento de código de nuevo. Debería tener `tenantId` completado con el identificador de tu tenant.

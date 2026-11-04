@@ -1,8 +1,8 @@
-The Recent Discussions Widget displays a list of pages sorted by the most recent comment activity. It includes a heading, last activity dates, comment counts with icons, and automatic dark mode detection.
+הווידג'ט Recent Discussions מציג רשימה של עמודים ממוינים לפי פעילות התגובות האחרונה. הוא כולל כותרת, תאריכי פעילות אחרונה, מספרי תגובות עם אייקונים, וזיהוי אוטומטי של מצב כהה.
 
-## Basic Installation
+## התקנה בסיסית
 
-[inline-code-attrs-start title = 'הגדרת עיצוב וידג׳ט דיונים אחרונים'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'הגדרת עיצוב לווידג\'ט Recent Discussions'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/widget-recent-discussions-v2.min.js"></script>
 <div id="fastcomments-widget-recent-discussions"></div>
@@ -13,17 +13,17 @@ The Recent Discussions Widget displays a list of pages sorted by the most recent
 </script>
 [inline-code-end]
 
-## Configuration Options
+## אפשרויות תצורה
 
-- **tenantId** (required): מזהה השוכר שלך ב‑FastComments
-- **count** (optional): מספר הדפים להצגה. ברירת המחדל היא `20`, מקסימום `100`
-- **hasDarkBackground** (optional): כופה עיצוב במצב כהה. מתגלה אוטומטית מרקע העמוד אם לא מוגדר
+- **tenantId** (נדרש): מזהה ה-tenant שלך ב-FastComments
+- **count** (אופציונלי): מספר העמודים להצגה. ברירת המחדל היא `20`, מקסימום `100`
+- **hasDarkBackground** (אופציונלי): כופה עיצוב במצב כהה. מזוהה אוטומטית מרקע העמוד אם לא הוגדר
 
-## Widget Structure
+## מבנה הווידג'ט
 
-The widget renders with the following HTML structure:
+הווידג'ט מוצג עם מבנה ה-HTML הבא:
 
-[inline-code-attrs-start title = 'מבנה HTML של וידג׳ט דיונים אחרונים'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'מבנה HTML של ווידג\'ט Recent Discussions'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <div class="fc-rd2">
     <div class="fc-rd2-heading">Recent Discussions</div>
@@ -39,9 +39,9 @@ The widget renders with the following HTML structure:
 </div>
 [inline-code-end]
 
-## Default CSS Reference
+## הפניה ל-CSS ברירת מחדל
 
-[inline-code-attrs-start title = 'CSS ברירת מחדל של וידג׳ט דיונים אחרונים'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'CSS ברירת מחדל של ווידג\'ט Recent Discussions'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rd2 {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -61,11 +61,11 @@ The widget renders with the following HTML structure:
 .fc-rd2-count { font-size: 12px; font-weight: 600; color: #666; }
 [inline-code-end]
 
-## Customization Examples
+## דוגמאות התאמה אישית
 
-### Remove the Container Border
+### הסרת מסגרת המכולה
 
-[inline-code-attrs-start title = 'הסרת גבול המכולה'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'הסרת מסגרת המכולה'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rd2 {
     border: none !important;
@@ -73,9 +73,9 @@ The widget renders with the following HTML structure:
 }
 [inline-code-end]
 
-### Custom Link Color
+### צבע קישור מותאם אישית
 
-[inline-code-attrs-start title = 'צבע קישור מותאם'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'צבע קישור מותאם אישית'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 a.fc-rd2-title:hover {
     color: #e63946 !important;

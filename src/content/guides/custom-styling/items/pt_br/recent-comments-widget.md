@@ -1,6 +1,6 @@
-O Widget de Comentários Recentes exibe uma lista dos comentários mais recentes em seu site ou para uma página específica. Ele inclui um cabeçalho, avatares arredondados, pré-visualizações dos comentários, datas clicáveis que direcionam diretamente para o comentário e detecção automática do modo escuro.
+O Widget de Comentários Recentes exibe uma lista dos comentários mais recentes em todo o seu site ou em uma página específica. Ele inclui um título, avatares arredondados, prévias de comentários, datas clicáveis que levam diretamente ao comentário e detecção automática do modo escuro.
 
-## Basic Installation
+## Instalação Básica
 
 [inline-code-attrs-start title = 'Instalação do Widget de Comentários Recentes'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
@@ -13,16 +13,16 @@ O Widget de Comentários Recentes exibe uma lista dos comentários mais recentes
 </script>
 [inline-code-end]
 
-## Configuration Options
+## Opções de Configuração
 
-- **tenantId** (required): Your FastComments tenant ID
-- **urlId** (optional): Filter to a single page. Leave null for all pages
-- **count** (optional): Number of comments to show. Default is `10`
-- **hasDarkBackground** (optional): Force dark mode styling. Auto-detected from the page background if not set
+- **tenantId** (obrigatório): Seu ID de tenant do FastComments
+- **urlId** (opcional): Filtra para uma única página. Deixe null para todas as páginas
+- **count** (opcional): Número de comentários a exibir. O padrão é `10`
+- **hasDarkBackground** (opcional): Força o estilo do modo escuro. Detectado automaticamente a partir do fundo da página se não for definido
 
-## Widget Structure
+## Estrutura do Widget
 
-The widget renders with the following HTML structure:
+O widget é renderizado com a seguinte estrutura HTML:
 
 [inline-code-attrs-start title = 'Estrutura HTML do Widget de Comentários Recentes'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -44,7 +44,7 @@ The widget renders with the following HTML structure:
 </div>
 [inline-code-end]
 
-## Default CSS Reference
+## Referência do CSS Padrão
 
 [inline-code-attrs-start title = 'CSS Padrão do Widget de Comentários Recentes'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -70,9 +70,9 @@ The widget renders with the following HTML structure:
 .fc-rc2-page-link:hover { color: #0066cc; text-decoration: underline; }
 [inline-code-end]
 
-## Customization Examples
+## Exemplos de Personalização
 
-### Change Avatar Size
+### Alterar o Tamanho do Avatar
 
 [inline-code-attrs-start title = 'Tamanho Personalizado do Avatar'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -82,18 +82,18 @@ The widget renders with the following HTML structure:
 }
 [inline-code-end]
 
-### Show More Lines of Comment Text
+### Exibir Mais Linhas do Texto do Comentário
 
-[inline-code-attrs-start title = 'Mostrar Mais Linhas do Texto do Comentário'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exibir Mais Linhas do Comentário'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rc2-body {
     -webkit-line-clamp: 5 !important;
 }
 [inline-code-end]
 
-### Remove the Container Border
+### Remover a Borda do Contêiner
 
-[inline-code-attrs-start title = 'Remover Borda do Contêiner'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Remover a Borda do Contêiner'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rc2 {
     border: none !important;

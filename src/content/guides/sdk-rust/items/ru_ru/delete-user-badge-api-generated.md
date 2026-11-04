@@ -22,5 +22,3 @@ async fn remove_badge(config: &configuration::Configuration) -> Result<(), Error
     Ok(())
 }
 [inline-code-end]
-
----

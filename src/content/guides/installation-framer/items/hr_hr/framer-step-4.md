@@ -16,5 +16,3 @@ niti komentara. Zato i to postavimo na `fill`.
 </div>
 
 Možda ćete morati poigrati se visinom stranice da je dovedete onakvom kakvu želite.
-
----

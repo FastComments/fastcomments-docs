@@ -30,5 +30,3 @@ DefaultAPI.deleteNotificationCount(tenantId: tenantId, id: id) { (response, erro
     }
 }
 [inline-code-end]
-
----

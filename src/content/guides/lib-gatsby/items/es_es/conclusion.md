@@ -8,5 +8,3 @@ Si encuentras algún problema o tienes preguntas sobre la biblioteca GatsbyJS, p
 ## Contribuciones
 
 ¡Las contribuciones son bienvenidas! Por favor visita el [repositorio de GitHub](https://github.com/FastComments/fastcomments-gatsbyjs-example) para las directrices de contribución.
-
----

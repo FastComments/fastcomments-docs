@@ -8,5 +8,3 @@ Ako naiđete na bilo kakve probleme ili imate pitanja u vezi Ruby SDK-a, molimo:
 ## Doprinosi
 
 Doprinosi su dobrodošli! Molimo posjetite [spremište na GitHubu](https://github.com/FastComments/fastcomments-ruby) za smjernice o doprinosu.
-
----

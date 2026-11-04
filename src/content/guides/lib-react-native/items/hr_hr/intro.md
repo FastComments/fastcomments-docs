@@ -5,5 +5,3 @@ Ugradite widgete za komentiranje uživo, chat i recenzije u svoju React Native a
 ## Repozitorij
 
 [Prikaži na GitHubu](https://github.com/FastComments/fastcomments-react-native)
-
----

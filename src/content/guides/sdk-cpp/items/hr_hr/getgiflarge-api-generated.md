@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
@@ -28,5 +27,3 @@ api->getGifLarge(tenantId, largeUrl)
         }
    });
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 Nakon poziva `sdk.load()`, SDK se automatski pretplaćuje na WebSocket događaje za konfigurisani `urlId`. Sledeći događaji se obrađuju:
 
 - Novi komentari, izmene i brisanja

@@ -1,15 +1,15 @@
 [related-parameter-start name = 'countAll'; type = 'boolean'; related-parameter-end]
 
-Yorum aracının en üstünde gösterilen yorum sayısı ya tüm "top-level" yorumları gösterebilir; yani doğrudan sayfaya veya makaleye yapılan yanıtları, ya da **tüm** iç içe geçmiş yorumların sayısı olabilir.
+Yorum widget'ının en üstünde görüntülenen yorum sayısı, ya tümüyle "üst düzey" yorumları — yani doğrudan sayfaya veya makaleye yapılan yanıtları — ya da **tüm** iç içe geçmiş yorumların sayısını gösterebilir.
 
-Varsayılan olarak bu `true`'dur - bu, ikinci türün yani tüm yorumların sayısıdır. Eski sürümlerde yorum aracının varsayılan değeri `false` idi.
+Varsayılan olarak bu değer `true`'dur - yani ikincisinin sayacıdır - tüm yorumlar. Yorum widget'ının eski sürümlerinde varsayılan değer `false`'tur.
 
-We can change the behavior, so that it is a count of **all** nested comments by setting the **countAll** flag to true.
+**countAll** bayrağını true olarak ayarlayarak davranışı değiştirebilir, böylece **tüm** iç içe geçmiş yorumların sayısını gösterebiliriz.
 
-[code-example-start config = {countAll: true}; linesToHighlight = [6]; title = 'Counting All Comments'; code-example-end]
+[code-example-start config = {countAll: true}; linesToHighlight = [6]; title = 'Tüm Yorumları Sayma'; code-example-end]
 
-Eğer sayının yalnızca üst seviye yorumları yansıtmasını isteseydik, bayrağı `false` olarak ayarlarız.
+Sayının yalnızca üst düzey yorumları yansıtmasını istiyorsak, bayrağı false olarak ayarlarız.
 
-[code-example-start config = {countAll: false}; linesToHighlight = [6]; title = 'Counting Top Level Comments'; code-example-end]
+[code-example-start config = {countAll: false}; linesToHighlight = [6]; title = 'Üst Düzey Yorumları Sayma'; code-example-end]
 
-Bu şu anda kod değişiklikleri olmadan özelleştirilemiyor.
+Bu şu anda kod değişikliği yapılmadan özelleştirilemez.

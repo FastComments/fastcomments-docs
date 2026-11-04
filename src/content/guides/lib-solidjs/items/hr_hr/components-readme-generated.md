@@ -1,21 +1,22 @@
-Svaki widget iz `fastcomments-react` dostupan je pod istim imenom:
+Svaki widget iz `fastcomments-react` dostupan je pod istim nazivom:
 
-| Component | Handle type | Embed loaded |
+| Komponenta | Tip handlea | Ugrađeni widget |
 | --- | --- | --- |
-| `FastCommentsCommentWidget` | `FastCommentsCommentWidgetHandle` | Glavni widget za komentare uživo |
-| `FastCommentsCommentCountWidget` | `FastCommentsCommentCountWidgetHandle` | Inline bedž s brojačem komentara |
-| `FastCommentsLiveChatWidget` | `FastCommentsLiveChatWidgetHandle` | Streaming widget za chat uživo |
-| `FastCommentsCollabChatWidget` | `FastCommentsCollabChatWidgetHandle` | Kolaborativni chat vezan za tekst |
-| `FastCommentsImageChatWidget` | `FastCommentsImageChatWidgetHandle` | Komentari na slici temeljeni na regijama |
+| `FastCommentsCommentWidget` | `FastCommentsCommentWidgetHandle` | Glavni widget za komentare u stvarnom vremenu |
+| `FastCommentsCommentCountWidget` | `FastCommentsCommentCountWidgetHandle` | Inline oznaka broja komentara |
+| `FastCommentsLiveChatWidget` | `FastCommentsLiveChatWidgetHandle` | Widget za live chat u stvarnom vremenu |
+| `FastCommentsCollabChatWidget` | `FastCommentsCollabChatWidgetHandle` | Kolaborativni chat vezan uz tekst |
+| `FastCommentsImageChatWidget` | `FastCommentsImageChatWidgetHandle` | Komentari na sliku po regijama |
 | `FastCommentsRecentCommentsWidget` | `FastCommentsRecentCommentsWidgetHandle` | Feed nedavnih komentara |
 | `FastCommentsRecentDiscussionsWidget` | `FastCommentsRecentDiscussionsWidgetHandle` | Feed nedavnih rasprava |
 | `FastCommentsReviewsSummaryWidget` | `FastCommentsReviewsSummaryWidgetHandle` | Sažetak ocjena zvjezdicama |
-| `FastCommentsTopPagesWidget` | `FastCommentsTopPagesWidgetHandle` | Ljestvica najkomentiranijih stranica |
-| `FastCommentsUserActivityFeedWidget` | `FastCommentsUserActivityFeedWidgetHandle` | Vremenska linija aktivnosti korisnika |
+| `FastCommentsTopPagesWidget` | `FastCommentsTopPagesWidgetHandle` | Ljestvica stranica s najviše komentara |
+| `FastCommentsUserActivityFeedWidget` | `FastCommentsUserActivityFeedWidgetHandle` | Vremenska linija aktivnosti po korisniku |
 
-### Widgets that attach to an existing element
+### Widgeti koji se pričvršćuju na postojeći element
 
-`FastCommentsCollabChatWidget` i `FastCommentsImageChatWidget` se montiraju u element koji pozivatelj osigura. Proslijedite accessor `targetRef` koji vraća element nakon što je montiran:
+`FastCommentsCollabChatWidget` i `FastCommentsImageChatWidget` montiraju se u element koji
+dodijeli pozivatelj. Proslijedite `targetRef` pristupnik koji vraća element nakon montiranja:
 
 ```tsx
 import { FastCommentsImageChatWidget } from 'fastcomments-solidjs';
@@ -37,4 +38,4 @@ export default function ImageChat() {
 
 ### Regije
 
-Proslijedite `region="eu"` kako biste usmjerili promet widgeta kroz EU klaster.
+Proslijedite `region="eu"` za usmjeravanje prometa widgeta kroz EU klaster.

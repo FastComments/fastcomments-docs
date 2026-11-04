@@ -8,5 +8,3 @@ Se você encontrar quaisquer problemas ou tiver dúvidas sobre a biblioteca Angu
 ## Contribuindo
 
 Contribuições são bem-vindas! Por favor, visite o [repositório no GitHub](https://github.com/FastComments/fastcomments-angular) para as diretrizes de contribuição.
-
----

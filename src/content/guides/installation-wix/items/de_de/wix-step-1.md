@@ -10,5 +10,3 @@ Wir möchten sicherstellen, dass wir für jeden Blog-Beitrag einen eindeutigen K
     <div class="title">Schritt Eins: Die dynamische Beitragsseite bearbeiten</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-1-open-page.png" alt="Die dynamische Beitragsseite bearbeiten" />
 </div>
-
----

@@ -1,4 +1,3 @@
----
 req
 tenantId
 urlId
@@ -42,5 +41,3 @@ PublicAPI.getEventLog(tenantId: tenantId, urlId: urlId, userIdWS: userIdWS, star
     }
 }
 [inline-code-end]
-
----

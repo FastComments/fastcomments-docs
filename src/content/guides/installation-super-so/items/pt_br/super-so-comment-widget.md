@@ -82,5 +82,3 @@ Copie o código a seguir e cole-o na seção `Body` nas configurações do seu s
 - Cada página obtém seu próprio tópico de comentários exclusivo com base no caminho da URL
 - Certifique-se de substituir `"demo"` pelo seu tenant ID real da sua conta FastComments
 - O widget lida automaticamente com o carregamento dinâmico de páginas do Super.so
-
----

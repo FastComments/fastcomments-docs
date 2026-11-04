@@ -1,4 +1,3 @@
----
 Visiteurs actuellement en ligne d'une page : personnes dont la session websocket est abonnée à la page en ce moment.  
 Renvoie anonCount + totalCount (abonnés à l’ensemble de la salle, y compris les visiteurs anonymes que nous n’énumérons pas).
 
@@ -24,5 +23,3 @@ if onlineUsersOpt.isSome:
   let onlineUsers = onlineUsersOpt.get()
   echo onlineUsers
 [inline-code-end]
-
----

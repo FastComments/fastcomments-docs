@@ -5,5 +5,3 @@ Widget di commento di FastComments per Android
 ## Repository
 
 [Visualizza su GitHub](https://github.com/FastComments/fastcomments-android)
-
----

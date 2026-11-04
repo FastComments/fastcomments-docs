@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Назва | Тип | Обов’язковий | Опис |
@@ -29,5 +28,3 @@ async function runUpdate() {
   console.log(response);
 }
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 ## Parameter
 
 | Name | Type | Location | Erforderlich | Beschreibung |
@@ -40,5 +39,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.CheckedCommentsForBlocked`: %v\n", resp)
 }
 [inline-code-end]
-
----

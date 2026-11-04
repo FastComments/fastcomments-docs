@@ -1,4 +1,3 @@
----
 De API verschilt iets in vergelijking met `fastcomments-react`. Bij native geven we een config-object door dat de [volgende structuur](https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts#L35) volgt.
 
 ```js
@@ -24,4 +23,3 @@ import { FastCommentsCommentWidget } from 'fastcomments-react-native';
       <FastCommentsCommentWidget config={config}/>
   );
 ```
----

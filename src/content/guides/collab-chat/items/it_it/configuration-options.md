@@ -1,27 +1,27 @@
 ### Panoramica
 
-FastComments Collab Chat estende il widget di commenti standard di FastComments, ereditando tutte le opzioni di configurazione del widget base e aggiungendo alcune specifiche per le annotazioni di testo.
+FastComments Collab Chat estende il widget di commenti standard di FastComments, quindi eredita tutte le opzioni di configurazione del widget di base, aggiungendone alcune specifiche per le annotazioni testuali.
 
-### Configurazione richiesta
+### Configurazione Richiesta
 
 #### tenantId
 
 È richiesto il tuo Tenant ID di FastComments. Puoi trovarlo nella tua [dashboard FastComments](https://fastcomments.com/auth/my-account/api-secret).
 
-[inline-code-attrs-start title = "Esempio di configurazione"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = "Esempio di Configurazione"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(element, {
     tenantId: 'demo'
 });
 [inline-code-end]
 
-### Opzioni specifiche di Collab Chat
+### Opzioni Specifiche di Collab Chat
 
 #### urlId
 
-Di default, Collab Chat genera un identificatore univoco per ogni conversazione basato sull'URL della pagina, sul percorso DOM dell'elemento e sull'intervallo di testo selezionato. Puoi sovrascriverlo con un `urlId` personalizzato.
+Per impostazione predefinita, Collab Chat genera un identificatore univoco per ogni conversazione basato sull'URL della pagina, sul percorso DOM dell'elemento e sull'intervallo di testo selezionato. Puoi sovrascriverlo con un `urlId` personalizzato.
 
-[inline-code-attrs-start title = "Esempio di configurazione"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = "Esempio di Configurazione"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
@@ -33,9 +33,9 @@ Questo è utile quando la struttura del tuo URL potrebbe cambiare ma vuoi manten
 
 #### topBarTarget
 
-Controlla la visualizzazione della barra superiore che mostra il conteggio utenti e il conteggio delle discussioni. Impostalo su `null` per disabilitare completamente la barra superiore, oppure fornisci un elemento DOM per renderizzarla in una posizione specifica.
+Controlla la visualizzazione della barra superiore che mostra il numero di utenti e di discussioni. Imposta su `null` per disabilitare completamente la barra superiore, oppure fornisci un elemento DOM per renderla in una posizione specifica.
 
-[inline-code-attrs-start title = "Esempio di configurazione"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = "Esempio di Configurazione"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 // Disabilita la barra superiore
 FastCommentsCollabChat(element, {
@@ -43,7 +43,7 @@ FastCommentsCollabChat(element, {
     topBarTarget: null
 });
 
-// Mostra la barra superiore in una posizione personalizzata
+// Renderizza la barra superiore in una posizione personalizzata
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
     topBarTarget: document.getElementById('custom-header')
@@ -52,9 +52,9 @@ FastCommentsCollabChat(element, {
 
 #### hasDarkBackground
 
-Abilita lo stile in modalità scura quando la tua pagina ha uno sfondo scuro. Questa rilevazione è automatica, ma potrebbe essere desiderabile sovrascriverla.
+Abilita lo stile della modalità scura quando la tua pagina ha uno sfondo scuro. Questo rilevamento è automatico, ma potrebbe essere desiderabile sovrascriverlo.
 
-[inline-code-attrs-start title = "Esempio di configurazione"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = "Esempio di Configurazione"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
@@ -64,28 +64,28 @@ FastCommentsCollabChat(element, {
 
 #### commentCountUpdated
 
-Una funzione di callback che viene eseguita ogni volta che il conteggio dei commenti cambia. È utile per aggiornare elementi dell'interfaccia utente come badge o il titolo della pagina.
+Una funzione di callback che viene eseguita ogni volta che il numero di commenti cambia. Questo è utile per aggiornare elementi dell'interfaccia come badge o titoli di pagina.
 
-[inline-code-attrs-start title = "Esempio di configurazione"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = "Esempio di Configurazione"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
     commentCountUpdated: function(count) {
-        console.log('Total comments:', count);
+        console.log('Totale commenti:', count);
         document.getElementById('badge').textContent = count;
     }
 });
 [inline-code-end]
 
-### Opzioni di configurazione ereditate
+### Opzioni di Configurazione Ereditate
 
-Poiché Collab Chat estende il widget di commenti standard, puoi usare qualsiasi opzione di configurazione del widget base di FastComments. Ecco alcune opzioni comunemente usate:
+Poiché Collab Chat estende il widget di commenti standard, puoi usare qualsiasi opzione di configurazione del widget FastComments di base. Ecco alcune opzioni comunemente utilizzate:
 
 #### locale
 
 Imposta la lingua per l'interfaccia del widget. FastComments supporta decine di lingue.
 
-[inline-code-attrs-start title = "Esempio di configurazione"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = "Esempio di Configurazione"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
@@ -95,9 +95,9 @@ FastCommentsCollabChat(element, {
 
 #### readonly
 
-Rendi tutte le conversazioni in sola lettura. Gli utenti possono visualizzare le annotazioni esistenti ma non possono crearne di nuove o rispondere.
+Rende tutte le conversazioni di sola lettura. Gli utenti possono visualizzare le annotazioni esistenti ma non possono crearne di nuove né rispondere.
 
-[inline-code-attrs-start title = "Esempio di configurazione"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = "Esempio di Configurazione"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
@@ -105,11 +105,11 @@ FastCommentsCollabChat(element, {
 });
 [inline-code-end]
 
-#### sso and simpleSSO
+#### sso e simpleSSO
 
-Integra con il tuo sistema di autenticazione usando il Single Sign-On.
+Integra il tuo sistema di autenticazione utilizzando il Single Sign-On.
 
-[inline-code-attrs-start title = "Esempio di configurazione"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = "Esempio di Configurazione"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
@@ -123,9 +123,9 @@ Consulta la documentazione SSO per i dettagli completi sulle opzioni di autentic
 
 #### maxReplyDepth
 
-Controlla quanti livelli di profondità possono avere le risposte. Di default, Collab Chat imposta questo valore a 0, il che significa che tutti i commenti sono piatti (nessuna risposta annidata). Puoi modificarlo se desideri conversazioni threadate.
+Controlla quanti livelli di profondità possono raggiungere le risposte. Per impostazione predefinita, Collab Chat imposta questo valore su 0, il che significa che tutti i commenti sono piatti (nessuna risposta annidata). Puoi modificarlo se desideri conversazioni con thread.
 
-[inline-code-attrs-start title = "Esempio di configurazione"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = "Esempio di Configurazione"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
@@ -133,17 +133,17 @@ FastCommentsCollabChat(element, {
 });
 [inline-code-end]
 
-### Configurazione interna
+### Configurazione Interna
 
 Queste opzioni sono impostate automaticamente da Collab Chat e non dovrebbero essere sovrascritte:
 
 Il `productId` è impostato automaticamente su `3` per Collab Chat. L'estensione `floating-chat` viene caricata automaticamente per fornire la funzionalità della finestra di chat. Il widget rileva automaticamente i dispositivi mobili (schermi con larghezza inferiore a 768px) e adatta l'interfaccia di conseguenza.
 
-### Esempio completo
+### Esempio Completo
 
 Ecco un esempio che mostra più opzioni di configurazione insieme:
 
-[inline-code-attrs-start title = "Esempio di configurazione"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = "Esempio di Configurazione"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(document.getElementById('article'), {
     tenantId: 'demo',
@@ -161,4 +161,4 @@ FastCommentsCollabChat(document.getElementById('article'), {
 });
 [inline-code-end]
 
-Per un elenco completo di tutte le opzioni di configurazione disponibili ereditate dal widget base, consulta la documentazione principale di configurazione di FastComments.
+Per un elenco completo di tutte le opzioni di configurazione disponibili ereditate dal widget di base, consulta la documentazione principale di configurazione di FastComments.

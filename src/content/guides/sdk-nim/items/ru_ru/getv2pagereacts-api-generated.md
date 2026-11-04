@@ -18,5 +18,3 @@ if reactsOpt.isSome:
   let reacts = reactsOpt.get()
   echo reacts
 [inline-code-end]
-
----

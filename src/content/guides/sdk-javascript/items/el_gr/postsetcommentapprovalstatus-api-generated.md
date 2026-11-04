@@ -1,4 +1,3 @@
----
 ## Παράμετροι
 
 | Name | Type | Required | Description |
@@ -38,5 +37,3 @@
   );
 })();
 [inline-code-end]
-
----

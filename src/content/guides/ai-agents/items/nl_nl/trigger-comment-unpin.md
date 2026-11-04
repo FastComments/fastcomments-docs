@@ -1,4 +1,3 @@
----
 Wordt geactiveerd wanneer een reactie wordt ontpind.
 
 ### Context die de agent ontvangt
@@ -13,5 +12,3 @@ Wordt geactiveerd wanneer een reactie wordt ontpind.
 ### Tegenhanger
 
 Zie [Trigger: Reactie Vastgezet](#trigger-comment-pin) voor de tegenhanger.
-
----

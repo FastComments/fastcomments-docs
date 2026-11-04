@@ -8,5 +8,3 @@ Se você encontrar qualquer problema ou tiver dúvidas sobre a Biblioteca Hugo, 
 ## Contribuindo
 
 Contribuições são bem-vindas! Por favor, visite o [repositório no GitHub](https://github.com/FastComments/fastcomments-hugo) para as diretrizes de contribuição.
-
----

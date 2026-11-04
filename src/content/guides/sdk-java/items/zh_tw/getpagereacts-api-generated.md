@@ -1,18 +1,18 @@
-Custom react counts for a page, optionally with the users who reacted.
+自訂頁面的反應計數，可選擇包含做出反應的使用者。
 
-## Parameters
+## 參數
 
-| Name | Type | Location | Required | Description |
+| 名稱 | 類型 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| urlId | string | query | Yes |  |
-| includeUserInfo | string | query | No | "\"public\" 省略具有私人資料的使用者，\"include-private\" 包含它們。" |
+| tenantId | string | query | 是 |  |
+| urlId | string | query | 是 |  |
+| includeUserInfo | string | query | 否 | "public" 會省略私人個人檔案的使用者，"include-private" 則會包含他們。 |
 
-## Response
+## 回應
 
-Returns: [`GetPageReactsAPIResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetPageReactsAPIResponse.java)
+回傳：[`GetPageReactsAPIResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetPageReactsAPIResponse.java)
 
-## Example
+## 範例
 
 [inline-code-attrs-start title = 'getPageReacts 範例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -38,7 +38,7 @@ public class Example {
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
-    PageReactIncludeUserInfo includeUserInfo = PageReactIncludeUserInfo.fromValue("public"); // PageReactIncludeUserInfo | \"public\" 省略具有私人資料的使用者，\"include-private\" 包含它們。
+    PageReactIncludeUserInfo includeUserInfo = PageReactIncludeUserInfo.fromValue("public"); // PageReactIncludeUserInfo | \"public\" 會省略私人個人檔案的使用者，\"include-private\" 則會包含他們。
     try {
       GetPageReactsAPIResponse result = apiInstance.getPageReacts(tenantId, urlId)
             .includeUserInfo(includeUserInfo)
@@ -54,5 +54,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

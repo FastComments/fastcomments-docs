@@ -1,4 +1,3 @@
----
 Instalacija FastComments WordPress plugina je dizajnirana da bude jednostavna i da ograniči bilo kakvo vreme nedostupnosti komentarisanja na vašem sajtu. Plugin se neće prebaciti sa WordPress plugina dok sinhronizacija ne bude završena.
 
 Prvo, želite da postavite očekivanja sa svojim moderatorima u skladu sa detaljima u donjem odeljku `Moderation`. Obavestite ih da će uskoro moderisati preko FastComments, a ne preko WordPress kontrolne table.
@@ -14,5 +13,3 @@ Dalje, imate opciju da izaberete da li već imate FastComments nalog. Pratite ko
 Komentari se otpremaju u paketima i sortiraju koristeći postojeće indekse u vašoj WordPress bazi podataka kako bi se ograničilo opterećenje na vaš sajt.
 
 Kada je sinhronizacija završena, podrazumevani WordPress sistem komentarisanja biće zamenjen od strane FastComments. Nadamo se da ćete voleti našu platformu, ali ako ne, [kontaktirajte nas](https://fastcomments.com/auth/my-account/help).  
-
----

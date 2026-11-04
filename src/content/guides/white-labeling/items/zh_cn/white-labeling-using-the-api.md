@@ -8,5 +8,3 @@
 6. 可选地， [Setup SSO](/guide-customizations-and-configuration.html#sso)。
 
 以上所有操作均可在试用期内完成。
-
----

@@ -13,5 +13,3 @@ Jeśli chcielibyśmy, aby liczba odzwierciedlała tylko komentarze najwyższego 
 [code-example-start config = {countAll: false}; linesToHighlight = [6]; title = 'Counting Top Level Comments'; code-example-end]
 
 Obecnie nie można tego dostosować bez zmiany kodu.
-
----

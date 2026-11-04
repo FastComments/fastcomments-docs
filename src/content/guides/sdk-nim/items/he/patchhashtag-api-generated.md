@@ -1,4 +1,3 @@
----
 ## פרמטרים
 
 | שם | סוג | נדרש | תיאור |
@@ -27,5 +26,3 @@ if optResp.isSome:
 else:
   echo "No response"
 [inline-code-end]
-
----

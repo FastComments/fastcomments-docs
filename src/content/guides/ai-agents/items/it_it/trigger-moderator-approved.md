@@ -1,4 +1,3 @@
----
 Si attiva quando un moderatore approva un commento.
 
 ### Contesto che riceve l'agente
@@ -22,5 +21,3 @@ Un'azione di un moderatore umano.
 - **Benvenuto / coinvolgimento** - un agente può rispondere a chi commenta per la prima volta nel momento in cui un moderatore li approva, anziché al momento della pubblicazione.
 - **Coordinamento tra agenti** - se un agente separato aveva contrassegnato il commento per la revisione, l'approvazione è il segnale che la revisione umana è completata.
 - **Registro di controllo** tramite [Webhooks](#webhooks-overview).
-
----

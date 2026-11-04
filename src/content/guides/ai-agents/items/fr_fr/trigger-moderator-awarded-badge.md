@@ -1,4 +1,3 @@
----
 Se déclenche lorsqu'un modérateur attribue un badge à un utilisateur.
 
 ### Contexte reçu par l'agent
@@ -23,5 +22,3 @@ Une action d'un modérateur humain.
 - **Reconnaissance réciproque** - un agent peut publier une réponse "merci pour cette excellente contribution" lorsqu'un badge spécifique est attribué.
 - **Flux de reconnaissance externe** via [Webhooks](#webhooks-overview) - répliquez les attributions de badges dans votre propre système d'engagement utilisateur.
 - **Enregistrement en mémoire** - des notes telles que "cet utilisateur est un contributeur reconnu" devraient être prises en compte par de futurs agents de modération dans leurs décisions.
-
----

@@ -1,4 +1,3 @@
----
 Dette er det officielle JavaScript/TypeScript SDK til FastComments.
 
 Administrer kommentarer, brugere, SSO og moderering fra Node.js eller i browseren.
@@ -6,5 +5,3 @@ Administrer kommentarer, brugere, SSO og moderering fra Node.js eller i browsere
 ## Arkiv
 
 [Se på GitHub](https://github.com/FastComments/fastcomments-sdk-js)
-
----

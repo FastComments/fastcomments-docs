@@ -1,4 +1,3 @@
----
 請求
 tenantId
 afterId
@@ -41,5 +40,3 @@ const feedResponse: PublicFeedPostsResponse = await getFeedPostsPublic(
   includeUserInfo
 );
 [inline-code-end]
-
----

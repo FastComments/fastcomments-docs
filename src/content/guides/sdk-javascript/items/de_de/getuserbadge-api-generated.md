@@ -1,4 +1,3 @@
----
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
@@ -20,5 +19,3 @@ async function demoGetUserBadge() {
     const badgeResponse: APIGetUserBadgeResponse = await getUserBadge(tenantId, userId);
 }
 [inline-code-end]
-
----

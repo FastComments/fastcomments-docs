@@ -33,5 +33,3 @@ const responseWithoutSso: UpdateUserNotificationStatusResponse = await updateUse
   newStatus
 );
 [inline-code-end]
-
----

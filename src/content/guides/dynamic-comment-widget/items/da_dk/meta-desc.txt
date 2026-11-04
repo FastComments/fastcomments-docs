@@ -1,3 +1,1 @@
----
 Byt en kommentartråd uden at genindlæse siden. Kør flere widgets side om side, peg dem på én tråd for at holde dem synkroniseret, eller på forskellige tråde.
----

@@ -27,5 +27,3 @@ api->addPage(utility::string_t(U("my-tenant-123")), createData)
         }
     });
 [inline-code-end]
-
----

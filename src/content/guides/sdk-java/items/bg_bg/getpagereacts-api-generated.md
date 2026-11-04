@@ -1,12 +1,12 @@
-Custom react counts for a page, optionally with the users who reacted.
+Персонализирани броячки на реакции за страница, по избор с потребителите, които са реагирали.
 
-## Parameters
+## Параметри
 
-| Име | Тип | Местоположение | Задължително | Описание |
-|------|------|----------------|--------------|----------|
-| tenantId | string | query | Yes |  |
-| urlId | string | query | Yes |  |
-| includeUserInfo | string | query | No | "public" пропуска потребители с частни профили, "include-private" ги включва. |
+| Име | Тип | Местоположение | Задължителен | Описание |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Да |  |
+| urlId | string | query | Да |  |
+| includeUserInfo | string | query | Не | "public" пропуска потребителите с лични профили, "include-private" ги включва. |
 
 ## Отговор
 
@@ -16,7 +16,7 @@ Custom react counts for a page, optionally with the users who reacted.
 
 [inline-code-attrs-start title = 'Пример за getPageReacts'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Импорт на класове:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -29,16 +29,16 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Конфигуриране на API ключ за упълномощаване: api_key
+    // Configure API key authorization: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Разкоментирайте следния ред, за да зададете префикс за API ключа, напр. "Token" (по подразбиране null)
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String tenantId = "tenantId_example"; // String | 
     String urlId = "urlId_example"; // String | 
-    PageReactIncludeUserInfo includeUserInfo = PageReactIncludeUserInfo.fromValue("public"); // PageReactIncludeUserInfo | \"public\" пропуска потребители с частни профили, \"include-private\" ги включва.
+    PageReactIncludeUserInfo includeUserInfo = PageReactIncludeUserInfo.fromValue("public"); // PageReactIncludeUserInfo | \"public\" пропуска потребителите с лични профили, \"include-private\" ги включва.
     try {
       GetPageReactsAPIResponse result = apiInstance.getPageReacts(tenantId, urlId)
             .includeUserInfo(includeUserInfo)

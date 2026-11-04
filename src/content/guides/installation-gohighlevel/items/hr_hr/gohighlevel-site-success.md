@@ -1,4 +1,3 @@
----
 To je to! Sada biste trebali imati omogućeno komentiranje uživo na vašoj GoHighLevel stranici.
 
 <div class="screenshot white-bg">
@@ -7,5 +6,3 @@ To je to! Sada biste trebali imati omogućeno komentiranje uživo na vašoj GoHi
 </div>
 
 Ako ste naišli na pogrešku 'permission denied', ili želite prilagoditi FastComments, nastavite čitati.
-
----

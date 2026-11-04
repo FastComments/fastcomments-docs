@@ -1,4 +1,1 @@
----
 Grupna diskusija sa hashtagovima na koje čitaoci mogu kliknuti i filtrirati. Automatsko dovršavanje, prilagođeni simboli umesto #, i unapred popunjavanje tagova iz vašeg koda.
-
----

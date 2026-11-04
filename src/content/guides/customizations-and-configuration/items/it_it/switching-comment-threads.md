@@ -56,5 +56,3 @@ Ecco un esempio funzionale in cui cambiamo l'hash della pagina e aggiorniamo il 
     })();
 </script>
 [inline-code-end]
-
----

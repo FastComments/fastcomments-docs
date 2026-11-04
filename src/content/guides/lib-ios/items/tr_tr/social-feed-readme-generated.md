@@ -1,6 +1,6 @@
-Besleme sistemi kendi görünümüne sahip ayrı bir SDKdır (`FastCommentsFeedSDK`).
+Akış sistemi, kendi görünümüne sahip ayrı bir SDK'dır (`FastCommentsFeedSDK`).
 
-### Beslemeyi Yükleme ve Gösterme
+### Akışı Yükleme ve Görüntüleme
 
 ```swift
 struct FeedPage: View {
@@ -27,10 +27,10 @@ struct FeedPage: View {
                 // Paylaşım sayfasını göster
             }
             .onUserClick { context, userInfo, source in
-                // Kullanıcı profiline yönlendir
+                // Kullanıcı profiline git
             }
             .onMediaClick { mediaItem, index in
-                // Tam ekran resim görüntüleyicisini göster
+                // Tam ekran görüntüleyiciyi göster
             }
             .task {
                 try? await sdk.loadIfNeeded()
@@ -39,17 +39,17 @@ struct FeedPage: View {
 }
 ```
 
-Besleme görünümü otomatik olarak pull-to-refresh ve sonsuz kaydırma içerir.
-Var olan veya geri yüklenmiş bir beslemenin sayfa 1'e sıfırlanmaması için ekran yaşam döngüsüne yeniden girişte `loadIfNeeded()` kullanın.
+Akış görünümü, çek-yenile ve sonsuz kaydırma özelliklerini otomatik olarak içerir.
+Ekran yaşam döngüsüne yeniden girişlerde `loadIfNeeded()` kullanın; böylece mevcut veya geri yüklenmiş bir akış 1. sayfaya sıfırlanmaz.
 
 ### Gönderi Oluşturma
 
-Use `FeedPostCreateView` to present a post creation form:
+Gönderi oluşturma formunu göstermek için `FeedPostCreateView` kullanın:
 
 ```swift
 @State private var showCreatePost = false
 
-// In your view body:
+// Görünüm gövdenizde:
 .sheet(isPresented: $showCreatePost) {
     FeedPostCreateView(
         sdk: sdk,
@@ -66,19 +66,19 @@ Use `FeedPostCreateView` to present a post creation form:
 
 ### Gönderilere Tepki Verme
 
-The SDK handles reactions with optimistic updates:
+SDK, iyimser güncellemelerle tepkileri yönetir:
 
 ```swift
 try await sdk.reactPost(postId: post.id, reactionType: "l")
 
-// Tepki durumunu kontrol edin
+// Tepki durumunu kontrol et
 let hasLiked = sdk.hasUserReacted(postId: post.id, reactType: "l")
 let likeCount = sdk.getLikeCount(postId: post.id)
 ```
 
-### Bir Gönderide Yorumları Açma
+### Bir Gönderideki Yorumları Açma
 
-Use `CommentsSheet` to display comments for a feed post. It creates a `FastCommentsSDK` instance internally using the feed SDK's config:
+Bir akış gönderisinin yorumlarını görüntülemek için `CommentsSheet` kullanın. Akış SDK'sının yapılandırmasını kullanarak dahili olarak bir `FastCommentsSDK` örneği oluşturur:
 
 ```swift
 .sheet(item: $commentsPost) { post in
@@ -88,15 +88,15 @@ Use `CommentsSheet` to display comments for a feed post. It creates a `FastComme
 }
 ```
 
-Not: `.sheet(item:)` için `FeedPost` `Identifiable` protokolüne uymalıdır. Bu uzantıyı ekleyin:
+Not: `.sheet(item:)` için `FeedPost` öğesinin `Identifiable` uyumlu olması gerekir. Şu uzantıyı ekleyin:
 
 ```swift
 extension FeedPost: @retroactive Identifiable {}
 ```
 
-### Etiket Tabanlı Besleme Filtreleme
+### Etiket Tabanlı Akış Filtreleme
 
-Implement the `TagSupplier` protocol to filter feed posts by tags:
+Akış gönderilerini etiketlere göre filtrelemek için `TagSupplier` protokolünü uygulayın:
 
 ```swift
 struct TeamTagSupplier: TagSupplier {
@@ -109,25 +109,28 @@ struct TeamTagSupplier: TagSupplier {
 sdk.tagSupplier = TeamTagSupplier()
 ```
 
-Filtrelenmemiş global bir besleme için `nil` döndürün.
+Filtrelenmemiş genel bir akış için `nil` döndürün.
 
-### Besleme Durumunu Kaydetme ve Geri Yükleme
+### Akış Durumunu Kaydetme ve Geri Yükleme
 
-Preserve pagination state across view lifecycle events:
+Sayfalama durumunu görünüm yaşam döngüsü olayları boyunca koruyun:
 
 ```swift
 let state = sdk.savePaginationState()
-// Later...
+// Daha sonra...
 sdk.restorePaginationState(state)
 try? await sdk.loadIfNeeded()
 ```
 
-Ekranınız geçici olarak kaybolursa, besleme görünümü canlı güncellemeleri otomatik olarak duraklatır ve tekrar görünüşte yüklü gönderileri temizlemeden devam ettirir. SDK örneğiyle işiniz gerçekten bittiğinde yalnızca `sdk.cleanup()` çağırın.
+Ekranınız geçici olarak kaybolursa, akış görünümü canlı güncellemeleri otomatik olarak duraklatır ve yüklenmiş gönderileri temizlemeden yeniden göründüğünde devam ettirir. `sdk.cleanup()` çağrısını yalnızca SDK örneğiyle gerçekten işiniz bittiğinde yapın.
 
-### Gönderileri Silme
+### Gönderi Silme
 
 ```swift
 sdk.onPostDeleted = { postId in
     print("Post \(postId) was deleted")
 }
 ```
+
+---
+---

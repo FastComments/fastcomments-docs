@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
@@ -31,5 +30,3 @@ DefaultAPI.getUserBadgeProgressByUserId(tenantId: tenantId, userId: userId) { (r
     }
 }
 [inline-code-end]
-
----

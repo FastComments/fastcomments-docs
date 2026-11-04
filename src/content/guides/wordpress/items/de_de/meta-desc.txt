@@ -1,3 +1,1 @@
----
 Fügen Sie WordPress Live‑Kommentare mit dem offiziellen Plugin hinzu: Dashboard‑Moderation, SSO für Mitgliedschaftsseiten und Kommentarzähler, die zurück zu den Beiträgen synchronisiert werden.
----

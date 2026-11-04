@@ -1,3 +1,1 @@
----
 Zainstaluj wtyczkę FastComments Moodle, aby dodać komentarze do kursów i działań. SSO jest automatyczne, więc studenci nigdy nie muszą logować się dwa razy.
----

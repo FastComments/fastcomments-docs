@@ -25,5 +25,3 @@ async function replacePackageDemo(): Promise<void> {
   console.log(response);
 }
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Име | Type | Location | Обавезно | Опис |
@@ -51,5 +50,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

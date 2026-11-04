@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Име | Тип | Обавезно | Опис |
@@ -37,5 +36,3 @@ async function fetchComments() {
   );
 }
 [inline-code-end]
-
----

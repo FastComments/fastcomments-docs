@@ -19,5 +19,3 @@ Dus, Goedgekeurd betekent dat de reactie door andere gebruikers op je site bekek
 Beoordeeld is eenvoudigweg een hulpmiddel voor beheerders en moderatoren en heeft geen invloed op de zichtbaarheid van een reactie.
 
 De Beoordeeld-vlag maakt het eenvoudiger om reacties te vinden die je hebt beoordeeld.
-
----

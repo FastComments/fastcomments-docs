@@ -1,4 +1,3 @@
----
 ## Parameter
 
 | Name | Typ | Ort | Erforderlich | Beschreibung |
@@ -38,5 +37,3 @@ PublicAPI.votePoll(tenantId: tenantId, commentId: commentId, votePollBody: voteP
     }
 }
 [inline-code-end]
-
----

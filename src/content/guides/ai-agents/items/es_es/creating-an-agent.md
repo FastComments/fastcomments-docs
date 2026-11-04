@@ -1,70 +1,70 @@
 Desde la [página de Agentes de IA](https://fastcomments.com/auth/my-account/ai-agents) puedes crear un agente de dos maneras:
 
-- **Desde una plantilla.** Haz clic en **Browse templates** y elige uno de los cuatro agentes iniciales incorporados. El formulario aparece con datos precargados y el estado del agente es **Dry Run**. Vea [Starter Templates](#starter-templates).
+- **Desde una plantilla.** Haz clic en **Browse templates** y elige uno de los cuatro agentes iniciales integrados. El formulario aparece prellenado y el estado del agente es **Dry Run**. Consulta [Plantillas iniciales](#starter-templates).
 - **Desde cero.** Haz clic en **Create new agent**. El formulario aparece en blanco.
 
-De cualquier modo, el mismo formulario de edición es lo que guardarás y editarás después. Esta página recorre el formulario de arriba a abajo.
+En cualquier caso, el mismo formulario de edición es el que guardarás y editarás después. Esta página recorre el formulario de arriba a abajo.
 
-### Basics
+### Básicos
 
-- **Internal name.** Un identificador corto usado solo en los paneles de administración (historial de ejecuciones, analítica, registros de auditoría). Funciona bien en minúsculas con guiones bajos: `moderator`, `welcome_greeter`. Si el nombre interno de una plantilla ya está tomado, el formulario le añade un sufijo automáticamente (`tos_enforcer_2`, etc.).
-- **Display name.** Se muestra públicamente cada vez que el agente publica un comentario. Esto es lo que ven tus lectores.
-- **Status.** Disabled, Dry Run, or Enabled. Los agentes nuevos siempre por defecto están en Dry Run. Vea [Status States](#status-states).
+- **Nombre interno.** Un identificador corto usado solo en los paneles de administración (historial de ejecuciones, analíticas, registros de auditoría). Funciona bien en minúsculas con guiones bajos: `moderator`, `welcome_greeter`. Si el nombre interno de una plantilla ya está en uso, el formulario añade automáticamente un sufijo (`tos_enforcer_2`, etc.).
+- **Nombre para mostrar.** Se muestra públicamente cada vez que el agente publica un comentario. Esto es lo que ven tus lectores.
+- **Estado.** Disabled, Dry Run o Enabled. Los agentes nuevos siempre tienen por defecto Dry Run. Consulta [Estados](#status-states).
 
-### Model
+### Modelo
 
-Elige el LLM. Vea [Choosing a Model](#choosing-a-model).
+Elige el LLM. Consulta [Elegir un modelo](#choosing-a-model).
 
-### Budget
+### Presupuesto
 
-Topes diarios y mensuales opcionales en la moneda de tu cuenta, además de una lista de verificación de **Alert thresholds** (por defecto 80% y 100%). Vea [Budgets Overview](#budgets-overview) y [Budget Alerts](#budget-alerts).
+Límites diarios y mensuales opcionales en la moneda de tu cuenta, además de una lista de verificación de **Alert thresholds** (80% y 100% por defecto). Consulta [Descripción general de presupuestos](#budgets-overview) y [Alertas de presupuesto](#budget-alerts).
 
-### Personality
+### Personalidad
 
-El **Initial prompt** es el prompt de sistema que define el tono, el rol y las reglas de decisión. Texto plano, sin sintaxis de plantillas. Vea [Personality and the Initial Prompt](#personality-prompt).
+El **Initial prompt** es el prompt del sistema que define el tono, el rol y las reglas de decisión. Texto plano, sin sintaxis de plantillas. Consulta [Personalidad y el prompt inicial](#personality-prompt).
 
-### Context
+### Contexto
 
-El conjunto de campos Context tiene tres casillas, un área de texto para directrices y los campos de alcance:
+El conjunto de campos de Contexto tiene tres casillas de verificación, un área de texto de directrices y las entradas de alcance:
 
 - Incluir el comentario padre y las respuestas previas en el mismo hilo.
-- Incluir el factor de confianza del comentarista, la antigüedad de la cuenta, historial de prohibiciones y comentarios recientes.
-- Incluir el título de la página, subtítulo, descripción y meta tags.
+- Incluir el factor de confianza del comentarista, la antigüedad de la cuenta, el historial de baneos y los comentarios recientes.
+- Incluir el título de la página, el subtítulo, la descripción y las metaetiquetas.
 - Un bloque de texto opcional de **Community guidelines** que se antepone a cada prompt.
-- **Restrict to specific pages** - lista blanca de patrones de URL (uno por línea). Vacío significa a nivel de tenant.
-- **Restrict to specific locales** - lista blanca de locales mediante un selector de doble lista. Vacío significa todos los locales.
+- **Restrict to specific pages** - lista de permitidos de patrones de URL (uno por línea). Vacío significa para todo el tenant.
+- **Restrict to specific locales** - lista de permitidos de configuraciones regionales mediante un selector de doble lista. Vacío significa todas las configuraciones regionales.
 
-Más contexto produce mejores decisiones pero aumenta el coste en tokens por ejecución. Vea [Context Options](#context-options), [Community Guidelines](#community-guidelines) y [Scope: URL and Locale Filters](#scope-url-locale).
+Más contexto produce mejores decisiones pero aumenta el costo de tokens por ejecución. Consulta [Opciones de contexto](#context-options), [Directrices de la comunidad](#community-guidelines) y [Alcance: filtros de URL y configuración regional](#scope-url-locale).
 
-### Triggers
+### Disparadores
 
-Elige al menos un evento de la lista. Para los triggers de vote-threshold y flag-threshold también debes establecer el umbral. El campo opcional **Delay before running** difiere la ejecución después de que un trigger se dispare (útil para umbrales de flags donde los votos aún se están estabilizando). Vea [Trigger Events Overview](#triggers-overview) y [Deferred Triggers](#trigger-deferred-delay).
+Elige al menos un evento de la lista. Para los disparadores de umbral de votos y umbral de reportes también debes establecer el umbral. El campo opcional **Delay before running** pospone la ejecución después de que se dispare un disparador (útil para umbrales de reportes donde los votos aún se están estabilizando). Consulta [Descripción general de eventos de disparo](#triggers-overview) y [Disparadores diferidos](#trigger-deferred-delay).
 
-### Allowed tool calls
+### Llamadas a herramientas permitidas
 
-Marca **Allow any tool calls** para exponer la paleta completa de herramientas. De lo contrario, marca las herramientas específicas que el agente puede usar; las herramientas no permitidas se eliminan de la paleta del modelo y son rechazadas en tiempo de despacho. La subsección **Ban options** restringe las variantes destructivas de baneo (delete-all-comments, ban-by-IP) detrás de opt-ins explícitos. Vea [Allowed Tool Calls Overview](#tools-overview) y [Herramienta: ban_user](#tool-ban-user).
+Marca **Allow any tool calls** para exponer la paleta completa de herramientas. De lo contrario, marca las herramientas específicas que el agente puede usar - las herramientas no permitidas se eliminan de la paleta del modelo y se rechazan en el momento del despacho. La subsección **Ban options** condiciona las variantes destructivas de baneo (delete-all-comments, ban-by-IP) a una aceptación explícita. Consulta [Descripción general de llamadas a herramientas permitidas](#tools-overview) y [Herramienta: ban_user](#tool-ban-user).
 
-### Approvals
+### Aprobaciones
 
-Marca las acciones que deben ser aprobadas por un humano antes de que el agente las ejecute. Las aprobaciones solo aplican a las herramientas que el agente tiene permitido invocar; las herramientas no permitidas son rechazadas de plano. En la región de la UE, **ban_user** está bloqueada por el Artículo 17 del Digital Services Act. Vea [Approval Workflow](#approval-workflow) y [Cumplimiento del Artículo 17 de la DSA de la UE](#eu-dsa-compliance).
+Marca las acciones que deben ser aprobadas por un humano antes de que el agente las ejecute. Las aprobaciones solo se aplican a las herramientas que el agente puede invocar; las herramientas no permitidas se rechazan directamente. En la región de la UE, **ban_user** está bloqueado en activado por el Artículo 17 de la Ley de Servicios Digitales. Consulta [Flujo de trabajo de aprobación](#approval-workflow) y [Cumplimiento del Artículo 17 del DSA de la UE](#eu-dsa-compliance).
 
-### Approval notifications
+### Notificaciones de aprobación
 
-Si las aprobaciones están habilitadas, elige a quién se le envía un correo:
+Si las aprobaciones están habilitadas, elige a quién se enviará un correo electrónico:
 
-- **All admins and moderators** - propietarios de la cuenta, superadministradores y administradores moderadores de comentarios.
-- **Specific users** - seleccionados manualmente desde un selector de doble lista.
+- **Todos los administradores y moderadores** - propietarios de cuentas, superadministradores y administradores moderadores de comentarios.
+- **Usuarios específicos** - seleccionados manualmente desde un selector de doble lista.
 
-La frecuencia de entrega individual de cada revisor (inmediata, resumen por hora, resumen diario) se configura en su propio perfil. Vea [Approval Notifications](#approval-notifications).
+La frecuencia de entrega individual de cada revisor (inmediata, resumen por hora, resumen diario) se establece en su propio perfil. Consulta [Notificaciones de aprobación](#approval-notifications).
 
-### Stats
+### Estadísticas
 
-Solo lectura. Total de ejecuciones, marca temporal de la última ejecución y el ID del comentario más reciente que escribió el agente (si existe).
+Solo lectura. Total de ejecuciones, marca de tiempo de la última ejecución y el ID del comentario más reciente que escribió el agente (si lo hay).
 
-### Save
+### Guardar
 
-Haz clic en **Save agent**. La página redirige de vuelta a la lista de agentes. Los agentes nuevos son inmediatamente elegibles para recibir triggers en dry-run.
+Haz clic en **Save agent**. La página redirige de vuelta a la lista de agentes. Los agentes nuevos son inmediatamente elegibles para recibir disparadores en modo dry-run.
 
-### Editing later
+### Edición posterior
 
-Cada fila en la página de lista de agentes expone acciones por agente: **Edit**, **Clone**, **Runs**, **Replays**, **Test run**, **Analytics**, **Approvals**, y **Delete**. Editar un agente no afecta retroactivamente a ejecuciones ya registradas: el historial se preserva. Las instantáneas de replay también congelan la configuración del agente en el momento en que se inició el replay, por lo que los resultados de un replay guardado siguen siendo reproducibles incluso después de editar el prompt.
+Cada fila de la página de lista de agentes expone acciones por agente: **Edit**, **Clone**, **Runs**, **Replays**, **Test run**, **Analytics**, **Approvals** y **Delete**. Editar un agente no afecta retroactivamente las ejecuciones ya registradas - el historial se conserva. Las instantáneas de repetición también congelan la configuración del agente en el momento en que se inició la repetición, por lo que los resultados de una repetición guardada permanecen reproducibles incluso después de editar el prompt.

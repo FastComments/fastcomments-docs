@@ -1,21 +1,21 @@
-Bulk user info for a tenant. Given userIds, return display info from User / SSOUser.
-Used by the comment widget to enrich users that just appeared via a presence event.
-No page context: privacy is enforced uniformly (private profiles are masked).
+Masovne informacije o korisnicima za najmoprimca (tenant). Za zadane userIds vraća informacije o prikazu iz User / SSOUser.
+Koristi ga widget za komentare kako bi obogatio korisnike koji su upravo pojavili putem presence eventa.
+Bez konteksta stranice: privatnost se provodi jednoliko (privatni profili su maskirani).
 
-## Parameters
+## Parametri
 
-| Name | Type | Required | Description |
+| Naziv | Tip | Obavezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| ids | string | No |  |
+| tenantId | string | Da |  |
+| ids | string | Ne |  |
 
-## Response
+## Odgovor
 
-Returns: [`Option[PageUsersInfoResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_page_users_info_response.nim)
+Vraća: [`Option[PageUsersInfoResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_page_users_info_response.nim)
 
-## Example
+## Primjer
 
-[inline-code-attrs-start title = 'Primjer getUsersInfo'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getUsersInfo primjer'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (usersInfoOpt, httpResp) = client.getUsersInfo(tenantId = "my-tenant-123", ids = "user42")
 if usersInfoOpt.isSome:

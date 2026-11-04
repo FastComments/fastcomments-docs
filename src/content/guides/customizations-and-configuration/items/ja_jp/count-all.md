@@ -1,17 +1,15 @@
 [related-parameter-start name = 'countAll'; type = 'boolean'; related-parameter-end]
 
-コメントウィジェットの上部に表示されるコメント数は、すべての「トップレベル」コメントを表示することもできます。すなわちページや記事自体に直接返信された返信を表示することも、
-または**すべて**のネストされたコメントの総数を表示することもできます。
+コメントウィジェットの上部に表示されるコメント数は、ページや記事自体への直接の返信である「トップレベル」のコメントのみを表示するか、ネストされた**すべて**のコメントの数を表示するかを選択できます。
 
-By default, this is `true` - it is a count of the latter - all comments. コメントウィジェットの古いバージョンでは、
-デフォルト値は `false` です。
+デフォルトでは、これは `true` です。つまり、後者のすべてのコメントの数を表示します。古いバージョンのコメントウィジェットでは、デフォルト値は `false` です。
 
-We can change the behavior, so that it is a count of **all** nested comments by setting the **countAll** flag to true.
+**countAll** フラグを true に設定することで、ネストされた**すべて**のコメントの数を表示するように動作を変更できます。
 
-[code-example-start config = {countAll: true}; linesToHighlight = [6]; title = 'Counting All Comments'; code-example-end]
+[code-example-start config = {countAll: true}; linesToHighlight = [6]; title = 'すべてのコメントをカウントする'; code-example-end]
 
-If we wanted the count to reflect only the top level comments, we set the flag to false.
+トップレベルのコメントのみをカウントしたい場合は、フラグを false に設定します。
 
-[code-example-start config = {countAll: false}; linesToHighlight = [6]; title = 'Counting Top Level Comments'; code-example-end]
+[code-example-start config = {countAll: false}; linesToHighlight = [6]; title = 'トップレベルのコメントをカウントする'; code-example-end]
 
-This currently cannot be customized without code changes.
+現在、この設定はコードを変更せずにカスタマイズすることはできません。

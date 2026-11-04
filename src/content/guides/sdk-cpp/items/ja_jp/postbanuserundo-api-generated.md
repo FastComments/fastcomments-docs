@@ -24,5 +24,3 @@ api->postBanUserUndo(tenantId, banParams, sso).then([](std::shared_ptr<APIEmptyR
     // 成功を処理
 });
 [inline-code-end]
-
----

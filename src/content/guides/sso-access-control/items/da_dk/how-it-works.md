@@ -14,5 +14,3 @@ Hvis en bruger forsøger at få adgang til en side, de ikke har adgang til, vil 
 </div>
 
 Beskedteksten kan tilpasses.
-
----

@@ -7,5 +7,3 @@ Maintenant que nous avons ajouté le widget de commentaires, arrangeons-le sur n
 
 Avec ce tutoriel nous pourrons modifier le fil de discussion courant en fonction de la page active. Cependant, nous ne pourrons pas redimensionner le widget de commentaires dynamiquement
 jusqu'à ce que Wix ouvre cette fonctionnalité. D'ici là, vous devrez décider de la taille que vous souhaitez pour la zone de commentaires sur votre page et la dimensionner en conséquence.
-
----

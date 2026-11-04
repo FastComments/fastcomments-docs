@@ -56,5 +56,3 @@ Evo funkcionalnog primjera u kojem mijenjamo hash stranice i ažuriramo widget z
     })();
 </script>
 [inline-code-end]
-
----

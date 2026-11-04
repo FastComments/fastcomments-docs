@@ -1,4 +1,3 @@
----
 Modul priloži več blokov, ki jih lahko postavite iz `Structure > Block layout` (`/admin/structure/block`).
 
 - **FastComments Widget** - Glavni pripomoček za komentiranje. Samodejno zazna trenutno entiteto. Preskočil bo entitete, ki imajo že pripeto FastComments polje, zato na isti strani ne boste videli podvojenih pripomočkov.
@@ -9,5 +8,3 @@ Modul priloži več blokov, ki jih lahko postavite iz `Structure > Block layout`
 - **FastComments Top Pages** - Prikaže strani na vašem spletišču z največ komentarji.
 
 Vsebinski bloki (Live Chat, Collab Chat, Image Chat) samodejno zaznavajo trenutno entiteto in se, na straneh brez entitete, zanašajo na identifikator, osnovan na poti. To pomeni, da delujejo na taxonomy pages, views in custom routes brez dodatne nastavitve.
-
----

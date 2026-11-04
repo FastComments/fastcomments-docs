@@ -1,4 +1,3 @@
----
 Commentatori precedenti sulla pagina che NON sono attualmente online. Ordinati per displayName.  
 Usa questo dopo aver esaurito /users/online per rendere una sezione "Members".  
 Paginazione a cursore su commenterName: il server percorre il parziale {tenantId, urlId, commenterName} indice da afterName in avanti tramite $gt, senza costo $skip.
@@ -36,5 +35,3 @@ async function fetchOfflineUsers(): Promise<void> {
   console.log(offlineResponse);
 }
 [inline-code-end]
-
----

@@ -17,5 +17,3 @@ Se déclenche lorsqu'un commentaire est verrouillé.
 ### Événement correspondant
 
 Voir [Déclencheur : Commentaire déverrouillé](#trigger-comment-unlock) pour le déclencheur miroir.
-
----

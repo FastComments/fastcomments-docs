@@ -1,13 +1,13 @@
-Identifies the credential in use: the tenant it belongs to and, for OAuth tokens, the user who authorized it.  
-Integrations use this to test a connection and label it.
+Kullanımda olan kimlik bilgisini tanımlar: ait olduğu kiracıyı (tenant) ve OAuth token'ları için onu yetkilendiren kullanıcıyı.
+Entegrasyonlar bunu bir bağlantıyı test etmek ve etiketlemek için kullanır.
 
-## Parameters
+## Parametreler
 
-| Ad | Tür | Konum | Gerekli | Açıklama |
+| Ad | Tür | Konum | Zorunlu | Açıklama |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Evet |  |
 
-## Response
+## Yanıt
 
 Döndürür: [`GetMeResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetMeResponse.swift)
 
@@ -15,7 +15,7 @@ Döndürür: [`GetMeResponse`](https://github.com/FastComments/fastcomments-swif
 
 [inline-code-attrs-start title = 'getMe Örneği'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Aşağıdaki kod örnekleri hâlâ beta aşamasındadır. Herhangi bir sorun için lütfen http://github.com/OpenAPITools/openapi-generator/issues/new adresine bildirin
+// Aşağıdaki kod örnekleri hâlâ beta aşamasındadır. Herhangi bir sorun için lütfen http://github.com/OpenAPITools/openapi-generator/issues/new üzerinden bildirin
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 

@@ -1,4 +1,3 @@
----
 Nie zaleca się dodawania FastComments za pomocą Page Buildera BigCommerce, ponieważ wówczas kod musi być ręcznie dodawany na każdą wybraną stronę.
 
 Jeśli jednak jest to pożądane, należy użyć poniższego fragmentu kodu. Fragmenty kodu z innych samouczków nie będą działać ze względu na specyfikę BigCommerce:
@@ -14,5 +13,3 @@ Jeśli jednak jest to pożądane, należy użyć poniższego fragmentu kodu. Fra
     }];
 </script>
 [inline-code-end]
-
----

@@ -1,8 +1,6 @@
----
-Al compartir fragmentos de código, FastComments hace todo lo posible para determinar automáticamente qué
-lenguaje de programación utiliza el fragmento de código, para formatearlo automáticamente y aplicar resaltado de sintaxis.
+Al compartir fragmentos de código, FastComments hace todo lo posible para determinar automáticamente en qué lenguaje de programación está el fragmento de código, para formatearlo automáticamente y aplicar resaltado de sintaxis.
 
-FastComments syntax highlighting currently supports 39 common languages:
+El resaltado de sintaxis de FastComments actualmente admite 39 lenguajes comunes:
 
 - .properties
 - Apache
@@ -31,7 +29,7 @@ FastComments syntax highlighting currently supports 39 common languages:
 - PHP
 - PHP Template
 - Perl
-- Plain text
+- Texto sin formato
 - Python
 - Python REPL
 - R
@@ -42,12 +40,10 @@ FastComments syntax highlighting currently supports 39 common languages:
 - Shell
 - Session
 - Swift
-- TOML and INI
+- TOML e INI
 - TypeScript
 - Visual Basic .NET
 - YAML
 
-When sharing a code snippet in a language we don't support, it will still be rendered like code -
-but no syntax highlighting or reformatting will be applied.
-
----
+Al compartir un fragmento de código en un lenguaje que no admitimos, aún se mostrará como código,
+pero no se aplicará resaltado de sintaxis ni reformateo.

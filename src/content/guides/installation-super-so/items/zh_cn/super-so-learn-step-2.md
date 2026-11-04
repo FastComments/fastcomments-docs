@@ -1,6 +1,6 @@
-在下一步，您需要复制下面预先制作的小部件代码。
+在下一步中，你需要复制下面预先制作好的小部件代码。
 
-只要您已登录 FastComments.com，下面的代码片段就会包含您的帐户信息。现在复制它：
+只要你已登录 FastComments.com，下面的代码片段就会自动包含你的账户信息。让我们复制它：
 
 [inline-code-attrs-start title = 'Super.so FastComments 协作聊天代码'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -23,12 +23,12 @@
                 return setTimeout(load, 100);
             }
 
-            // 清理现有实例
+            // 清理已存在的实例
             if (target.fastCommentsInstance) {
                 target.fastCommentsInstance.destroy();
             }
 
-            // 如果存在则清理现有顶部栏
+            // 清理已存在的顶部栏（如果有）
             if (currentTopBar && currentTopBar.parentNode) {
                 currentTopBar.parentNode.removeChild(currentTopBar);
             }
@@ -47,16 +47,16 @@
                 topBarTarget: topBarTarget
             });
 
-            // 更新当前路径名
+            // 更新当前路径
             currentPathname = window.location.pathname;
         }
 
         // 初始加载
         load();
 
-        // 每 500ms 检查是否有变化
+        // 每 500ms 检查一次变化
         setInterval(() => {
-            // 如果路径名改变则重新加载
+            // 如果路径变化则重新加载
             if (window.location.pathname !== currentPathname) {
                 console.log('Pathname changed, reloading...');
                 load();
@@ -81,17 +81,15 @@
 </script>
 [inline-code-end]
 
-Now paste in the `Body` area:
+现在将其粘贴到 `Body` 区域：
 
 <div class="screenshot white-bg">
-    <div class="title">已粘贴的代码</div>
-    <img class="screenshot-image" src="/images/installation-guides/super-so-step-3-pasted-code.png" alt="已粘贴的代码" />
+    <div class="title">粘贴的代码</div>
+    <img class="screenshot-image" src="/images/installation-guides/super-so-step-3-pasted-code.png" alt="粘贴的代码" />
 </div>
 
-If you see a "这是演示消息" after pasting the code:
+如果你在粘贴代码后看到“这是一条演示消息”：
 
-- Ensure you're logged into your fastcomments.com account.
-- Ensure you have 3rd party cookies enabled.
-- Then refresh this page and copy the code snippet again. It should have `tenantId` populated with your tenant's identifier.
-
----
+- 确保你已登录你的 fastcomments.com 账户。
+- 确保你已启用第三方 Cookie。
+- 然后刷新此页面并再次复制代码片段。此时 `tenantId` 应已填充为你租户的标识符。

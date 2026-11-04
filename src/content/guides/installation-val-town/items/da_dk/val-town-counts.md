@@ -1,8 +1,8 @@
-On an index page, don't render one comment-count widget per row. That is one request per post. Use the bulk count, which takes a single request for the whole page.
+På en indeksside skal du ikke gengive én comment-count-widget pr. række. Det er én anmodning pr. opslag. Brug bulk-tællingen, som tager en enkelt anmodning for hele siden.
 
-Mark each row with the `urlId` its thread uses, then load the bulk widget once:
+Markér hver række med den `urlId`, dens tråd bruger, og indlæs derefter bulk-widgetten én gang:
 
-[inline-code-attrs-start title = 'Bulk-kommentarantal på en indeks'; type='javascript' inline-code-attrs-end]
+[inline-code-attrs-start title = 'Bulk-kommentartællinger på en indeksside'; type='javascript' inline-code-attrs-end]
 [inline-code-start]
 <ul>
   {posts.map((post) => (
@@ -23,8 +23,8 @@ Mark each row with the `urlId` its thread uses, then load the bulk widget once:
 <script src="https://cdn.fastcomments.com/js/embed-widget-comment-count-bulk.min.js"></script>
 [inline-code-end]
 
-The script finds every `.fast-comments-count` element on the page and fills in its count.
+Scriptet finder hvert `.fast-comments-count`-element på siden og udfylder dets tælling.
 
-`data-fast-comments-url-id` has to match the `urlId` that post's comment widget uses. If the widget uses the slug, the marker uses the slug. A mismatch shows zero on a thread that has comments.
+`data-fast-comments-url-id` skal matche den `urlId`, som opslagets kommentarwidget bruger. Hvis widgetten bruger slug'en, bruger markøren slug'en. En uoverensstemmelse viser nul på en tråd, der har kommentarer.
 
-The script polls for `window.FastCommentsBulkCountConfig`, so it does not matter whether you set the config before or after the script tag.
+Scriptet poller efter `window.FastCommentsBulkCountConfig`, så det er ligegyldigt, om du angiver konfigurationen før eller efter script-tagget.

@@ -1,4 +1,3 @@
----
 ## Paramètres
 
 | Nom | Type | Obligatoire | Description |
@@ -21,5 +20,3 @@ if optResult.isSome:
   let result = optResult.get()
   echo result
 [inline-code-end]
-
----

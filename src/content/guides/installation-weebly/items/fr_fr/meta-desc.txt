@@ -1,3 +1,1 @@
----
 Ajoutez des commentaires en direct à un blog Weebly en collant le snippet FastComments dans les paramètres de votre blog, puis en publiant le site.
----

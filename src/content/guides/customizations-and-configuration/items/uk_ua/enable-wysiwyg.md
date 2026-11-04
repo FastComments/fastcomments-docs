@@ -10,5 +10,3 @@
 Це також можна зробити без коду. На сторінці налаштування віджета перегляньте параметр "Enable Advanced Formatting" option.
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-wysiwyg']; selector = '.enable-search-label'; alt='Сторінка налаштування віджета з позначеним прапорцем Enable Advanced Formatting для ввімкнення редактора WYSIWYG'; title='Увімкнути WYSIWYG' app-screenshot-end]
-
----

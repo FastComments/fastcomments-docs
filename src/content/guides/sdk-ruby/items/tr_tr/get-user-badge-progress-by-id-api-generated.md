@@ -1,4 +1,3 @@
----
 ## Parametreler
 
 | Ad | Tür | Yer | Gerekli | Açıklama |
@@ -36,5 +35,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->get_user_badge_progress_by_id: #{e}"
 end
 [inline-code-end]
-
----

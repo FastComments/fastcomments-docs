@@ -21,5 +21,3 @@ if maybeResp.isSome:
   let resp = maybeResp.get()
   # use resp conforme necessário
 [inline-code-end]
-
----

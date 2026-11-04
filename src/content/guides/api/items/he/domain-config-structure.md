@@ -61,5 +61,3 @@ interface DomainConfigDKIM {
 ### לגבי DKIM
 
 לאחר שהגדרתם את רשומות ה-DNS של DKIM שלכם, פשוט עדכנו את DomainConfig עם תצורת DKIM שלכם באמצעות המבנה המוגדר.
-
----

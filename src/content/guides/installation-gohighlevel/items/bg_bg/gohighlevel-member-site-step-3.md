@@ -1,26 +1,25 @@
----
-Now we're going to generate your custom FastComments code. Use the wizard below to configure how you want FastComments to work on your GoHighLevel site:
+Сега ще генерираме вашия персонализиран FastComments код. Използвайте съветника по-долу, за да конфигурирате как FastComments да работи на вашия GoHighLevel сайт:
 
 [snippet id="gohighlevel-wizard"]
 
-### Различни типове полета за коментари
+### Различни типове коментарни кутии
 
-You can configure the `TYPE = 'commenting'` line to switch the product used (for example you can change it to `live` for streaming chat or `collab` for collab chat).
+Можете да конфигурирате реда `TYPE = 'commenting'`, за да смените използвания продукт (например можете да го промените на `live` за чат в реално време или `collab` за колаборативен чат).
 
-### Поставяне на полето за коментари там, където искате
+### Поставяне на коментарната кутия там, където искате
 
-Let's say you want to put comment boxes on specific parts of the page and not the default locations.
-Change this line:
+Да речем, че искате да поставите коментарни кутии на конкретни части от страницата, а не на местоположенията по подразбиране.
+Променете този ред:
 
-    const TARGET_ELEMENT_ID = ''; // задайте, за да използвате режим на целеви div
+    const TARGET_ELEMENT_ID = ''; // set to use target div mode
 
-To:
+На:
 
-    const TARGET_ELEMENT_ID = 'fc_box'; // задайте, за да използвате режим на целеви div
+    const TARGET_ELEMENT_ID = 'fc_box'; // set to use target div mode
 
-Then in the GHL editor, click the "code" button and add where you want the comments to go:
+След това в GHL редактора кликнете бутона "code" и добавете там, където искате да се показват коментарите:
 
-[inline-code-attrs-start title = 'FastComments Div за GoHighLevel'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'GoHighLevel FastComments Div'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <div
   id="fc_box"
@@ -29,27 +28,27 @@ Then in the GHL editor, click the "code" button and add where you want the comme
 ></div>
 [inline-code-end]
 
-### Различен тип поле за коментари на страница
+### Различен тип коментарна кутия за всяка страница
 
-Let's say you want users to highlight and discuss pieces of text, or use the streaming chat UI instead.
+Да речем, че искате потребителите да маркират и обсъждат части от текста, или да използват интерфейса за чат в реално време.
 
-First follow the steps above in "Putting The Comment Box Where You Want".
+Първо следвайте стъпките по-горе в "Поставяне на коментарната кутия там, където искате".
 
-Note in that small snippet there's `type="commenting"`.
+Обърнете внимание, че в този малък фрагмент има `type="commenting"`.
 
-If you want to enable collab chat for example change type to `type="collab"`.
+Ако искате да активирате колаборативен чат например, променете типа на `type="collab"`.
 
-### Показвайте само на конкретни страници
+### Показване само на конкретни страници
 
-If you don't set don't set `TARGET_ELEMENT_ID`, you can instead configure the `VALID_PATTERNS` variable, to set which URL routes the comments should show. By default, it will show
-on pages that contain `/post` in the URL.
+Ако не зададете `TARGET_ELEMENT_ID`, можете вместо това да конфигурирате променливата `VALID_PATTERNS`, за да определите на кои URL маршрути да се показват коментарите. По подразбиране те ще се показват
+на страници, чиито URL съдържа `/post`.
 
-### Конфигуриране на Collab Chat
+### Конфигуриране на колаборативен чат
 
-You can tell collab chat to only add collaborative functionality around HTML inside a specific area, for example, let's say you
-add the footer code above and then add this div in the post/page content to enable collab chat:
+Можете да укажете на колаборативния чат да добавя колаборативна функционалност само около HTML в конкретна област, например, да речем, че
+добавите горния код за футъра и след това добавите този div в съдържанието на публикацията/страницата, за да активирате колаборативния чат:
 
-[inline-code-attrs-start title = 'Collab Chat със зададено съдържание'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Колаборативен чат с определено съдържание'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <div
   id="fc_box"
@@ -58,7 +57,5 @@ add the footer code above and then add this div in the post/page content to enab
 ><p>This content will have collab chat!</p></div>
 [inline-code-end]
 
-Then the paragraph element inside the `<div>` will have collab chat enabled, and nothing else on the page. If you don't
-put any content in the `<div>` then it will enable collab chat on the entire post body.
-
----
+Тогава елементът параграф вътре в `<div>` ще има активиран колаборативен чат, а нищо друго на страницата. Ако не
+поставите съдържание в `<div>`, колаборативният чат ще бъде активиран за цялото тяло на публикацията.

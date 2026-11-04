@@ -1,43 +1,43 @@
-If you are moving your site off of WordPress and want FastComments on the new site, you do not need the WordPress plugin. Export your comments from WordPress, then upload the file on the [Stranica za uvoz](https://fastcomments.com/auth/my-account/manage-data/import) in the FastComments dashboard.
+Ako premještate svoju web-lokaciju s WordPressa i želite FastComments na novoj lokaciji, ne treba vam WordPress dodatak. Izvezite svoje komentare iz WordPressa, a zatim prenesite datoteku na [Import page](https://fastcomments.com/auth/my-account/manage-data/import) u FastComments nadzornoj ploči.
 
-We support two WordPress export formats.
+Podržavamo dva formata WordPress izvoza.
 
-### WordPress XML (Preporučeno)
+### WordPress XML (preporučeno)
 
-This is the file from WordPress's built-in exporter, so no extra plugin is needed.
+Ovo je datoteka iz WordPressovog ugrađenog izvoznika, pa nije potreban dodatni dodatak.
 
-1. In your WordPress admin, go to `Tools -> Export`.
-2. Select `All content` and click `Download Export File`.
-3. On the FastComments [Stranica za uvoz](https://fastcomments.com/auth/my-account/manage-data/import), select `WordPress (.xml)` and upload the file.
+1. U svom WordPress administratorskom sučelju idite na `Tools -> Export`.
+2. Odaberite `All content` i kliknite `Download Export File`.
+3. Na FastComments [Import page](https://fastcomments.com/auth/my-account/manage-data/import) odaberite `WordPress (.xml)` i prenesite datoteku.
 
-Each comment is tied to the URL of the post it was left on, which is already in the file.
+Svaki komentar povezan je s URL-om objave na kojoj je ostavljen, a taj URL je već u datoteci.
 
-The import keeps the author name, email, and website, the date, the content, reply threading, and whether the comment was approved. Commenter avatars are brought over from Gravatar. Votes are not part of this format.
+Import zadržava ime autora, e-poštu i web-stranicu, datum, sadržaj, razinu odgovora (threading) te je li komentar odobren. Avatari komentatora preneseni su s Gravatara. Glasovi nisu dio ovog formata.
 
 ### WordPress CSV
 
-This is the file from [WebToffee's WordPress Comments Import & Export plugin](https://wordpress.org/plugins/comments-import-export-woocommerce/).
+Ovo je datoteka iz [WebToffee's WordPress Comments Import & Export plugin](https://wordpress.org/plugins/comments-import-export-woocommerce/).
 
-1. Install the plugin in your WordPress admin and export your comments as CSV.
-2. Replace each `comment_post_ID` value with the post's URL.
-3. On the FastComments [Stranica za uvoz](https://fastcomments.com/auth/my-account/manage-data/import), select `WordPress (.csv)` and upload the file.
+1. Instalirajte dodatak u svom WordPress administratorskom sučelju i izvezite komentare kao CSV.
+2. Zamijenite svaku vrijednost `comment_post_ID` URL-om objave.
+3. Na FastComments [Import page](https://fastcomments.com/auth/my-account/manage-data/import) odaberite `WordPress (.csv)` i prenesite datoteku.
 
-Each comment is tied to the `comment_post_ID` column. WordPress fills this column with the post ID, and your new site does not have WordPress post IDs, so step 2 replaces it with the URL.
+Svaki komentar povezan je sa stupcem `comment_post_ID`. WordPress u taj stupac upisuje ID objave, a vaša nova lokacija nema WordPress ID-jeve objava, pa ga korak 2 zamjenjuje URL-om.
 
-The import keeps the author name, email, and website, the date, the content, reply threading, and whether the comment was approved. Commenter avatars are brought over from Gravatar. It also keeps WordPress's spam flag, and wpDiscuz likes and dislikes when the file includes them.
+Import zadržava ime autora, e-poštu i web-stranicu, datum, sadržaj, razinu odgovora (threading) te je li komentar odobren. Avatari komentatora preneseni su s Gravatara. Također zadržava WordPressovu oznaku za spam te wpDiscuz sviđanja i nesviđanja ako ih datoteka sadrži.
 
-### Usklađivanje komentara s vašim novim stranicama
+### Povezivanje komentara s vašim novim stranicama
 
-If your new site keeps the same URLs as your WordPress site, the comments show up on the matching pages with no extra setup.
+Ako vaša nova lokacija koristi iste URL-ove kao vaša WordPress lokacija, komentari se pojavljuju na odgovarajućim stranicama bez dodatnih postavki.
 
-If the domain changes, run the [Alat za migraciju domena](/guide-migrations.html#migrating-domains) after the import. If individual page URLs change, you can [migrirajte svaku stranicu](/guide-migrations.html#migrating-pages) from its old URL to the new one.
+Ako se domena mijenja, pokrenite [Domain Migration tool](/guide-migrations.html#migrating-domains) nakon importa. Ako se URL-ovi pojedinih stranica mijenjaju, možete [migrirati svaku stranicu](/guide-migrations.html#migrating-pages) sa stare URL adrese na novu.
 
-For bulk page migrations, such as removing the domain from the value you pass to the comment widget's [urlId](/guide-customizations-and-configuration.html#url-id) field, [otvorite tiket za podršku](https://fastcomments.com/auth/my-account/help) and we will handle it for you.
+Za masovne migracije stranica, primjerice uklanjanje domene iz vrijednosti koju prosljeđujete u polje [urlId](/guide-customizations-and-configuration.html#url-id) widgeta za komentare, [otvorite support ticket](https://fastcomments.com/auth/my-account/help) i mi ćemo to riješiti za vas.
 
-### Prije nego što prebacite
+### Prije prelaska
 
-You can run the import as many times as you like. Re-importing the same file [ne stvara duplikate](/guide-migrations.html#importing-data), so you can import once to test the new site, then import again with your latest comments right before switching over.
+Import možete pokrenuti koliko god puta želite. Ponovni import iste datoteke [ne stvara duplikate](/guide-migrations.html#importing-data), pa možete jednom importirati kako biste testirali novu lokaciju, a zatim ponovno importirati s najnovijim komentarima neposredno prije prelaska.
 
-For export files larger than 1GB, [obratite se podršci](https://fastcomments.com/auth/my-account/help).
+Za izvozne datoteke veće od 1GB, [obratite se podršci](https://fastcomments.com/auth/my-account/help).
 
-To add FastComments to your new site, see the [Vodič za instalaciju](/guide-installation.html).
+Za dodavanje FastCommentsa na vašu novu lokaciju pogledajte [Installation guide](/guide-installation.html).

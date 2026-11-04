@@ -1,12 +1,12 @@
-Like count for a page, optionally with the users who liked it.
+Nombre de likes pour une page, éventuellement avec les utilisateurs qui ont aimé.
 
 ## Paramètres
 
-| Nom | Type | Emplacement | Obligatoire | Description |
-|------|------|-------------|-------------|-------------|
+| Nom | Type | Emplacement | Requis | Description |
+|------|------|----------|----------|-------------|
 | tenantId | string | query | Oui |  |
 | urlId | string | query | Oui |  |
-| includeUserInfo | string | query | Non | \"public\" omet les utilisateurs avec des profils privés, \"include-private\" les inclut. |
+| includeUserInfo | string | query | Non | "public" omet les utilisateurs avec des profils privés, "include-private" les inclut. |
 
 ## Réponse
 
@@ -16,7 +16,7 @@ Retourne : [`GetPageLikesAPIResponse`](https://github.com/FastComments/fastcomme
 
 [inline-code-attrs-start title = 'Exemple getPageLikes'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importer les classes :
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -29,10 +29,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configurer l'autorisation de la clé API : api_key
+    // Configure API key authorization: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Décommentez la ligne suivante pour définir un préfixe pour la clé API, par ex. "Token" (valeur par défaut null)
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);

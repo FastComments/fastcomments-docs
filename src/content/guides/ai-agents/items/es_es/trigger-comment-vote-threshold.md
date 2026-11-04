@@ -1,4 +1,3 @@
----
 Se activa cuando el recuento neto de votos de un comentario alcanza el umbral configurado. Los votos netos son `votesUp - votesDown`.
 
 ### Configuración requerida
@@ -28,5 +27,3 @@ Si el umbral es 10 y un comentario pasa de 9 a 10 votos netos, el disparador se 
 ### Ajuste
 
 El umbral adecuado depende de la comunidad. Observe [Run History](#run-history) durante unos días con un umbral bajo (5) para ver con qué frecuencia se activa. Aumente el umbral hasta que la frecuencia de activación coincida con la cadencia que realmente desea.
-
----

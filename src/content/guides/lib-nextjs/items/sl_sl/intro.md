@@ -5,5 +5,3 @@ Vdelajte pripomočke za komentarje v živo, klepet in ocenjevanje v svojo Next.j
 ## Repozitorij
 
 [Oglejte si na GitHubu](https://github.com/FastComments/fastcomments-nextjs)
-
----

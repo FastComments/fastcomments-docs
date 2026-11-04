@@ -209,5 +209,3 @@ FastComments preverja dohodne vloge:
 - Preglejte definicije vlog in zahtevana pooblastila
 - Preverite morebitne sporne dodelitve vlog
 - Preverite, ali se je uporabnik prijavil po spremembah vlog
-
----

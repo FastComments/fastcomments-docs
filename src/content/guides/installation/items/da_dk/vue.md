@@ -1,4 +1,3 @@
----
 For at tilføje kommentarer til dit websted bygget med Vue, kan du finde vores Vue-bibliotek på NPM <a href="https://www.npmjs.com/package/fastcomments-vue" target="_blank">her</a>.
 
 Derudover findes et vue-next-bibliotek på NPM <a href="https://www.npmjs.com/package/fastcomments-vue-next" target="_blank">her</a>
@@ -50,5 +49,3 @@ Hvis du er i EU, skal du sætte `region` til `EU`:
 `fastcomments-vue` og `fastcomments-vue-next` bibliotekerne understøtter den samme konfiguration som VanillaJS-kommentarwidgeten.
 
 Du kan finde den konfiguration, som Vue-komponenten understøtter <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">her</a>.
-
----

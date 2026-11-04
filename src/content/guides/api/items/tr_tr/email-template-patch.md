@@ -38,5 +38,3 @@ interface EmailTemplatePatchResponse {
     emailTemplate?: EmailTemplate
 }
 [inline-code-end]
-
----

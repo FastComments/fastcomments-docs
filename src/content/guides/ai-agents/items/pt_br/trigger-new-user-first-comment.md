@@ -18,5 +18,3 @@ Quando o contexto de histórico do usuário está ativado, a lista de comentári
 - **Saudação de boas-vindas** - o [Welcome Greeter template](#template-welcome-greeter) é baseado neste gatilho.
 - **Onboarding** - envie um [aviso por DM](#tool-warn-user) (usado aqui como um lembrete amigável em vez de uma advertência) apontando o usuário para as diretrizes da comunidade.
 - **Notificação para revisor** - se você quiser que um humano veja o primeiro post de cada novo comentarista, [`mark_comment_reviewed`](#tools-overview) pode marcá-los para revisão.
-
----

@@ -23,5 +23,3 @@ Erfolgreiche Ausgabe sieht folgendermaßen aus (Warnungen können ignoriert werd
 </div>
 
 Dies richtet die Abhängigkeiten des Themes für spätere Befehle ein, die wir ausführen werden. Außerdem hängt der Export davon ab, dass die Abhängigkeiten des Themes installiert sind; andernfalls funktioniert der Re-Import nicht korrekt.
-
----

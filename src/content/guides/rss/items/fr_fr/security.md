@@ -1,4 +1,3 @@
----
 Les flux RSS dans FastComments sont sécurisés à l'aide d'UUIDs uniques et impossibles à deviner. Cependant, lorsque vous activez votre flux RSS, toute personne disposant de l'URL peut accéder à vos commentaires.
 
 Le flux n'est pas protégé par mot de passe, donc l'URL doit être considérée comme une information sensible et partagée uniquement avec des lecteurs RSS ou des services de confiance.
@@ -13,4 +12,3 @@ Bonnes pratiques :
 Le flux RSS contient le texte des commentaires et du contenu HTML, les noms des commentateurs, les dates des commentaires, des liens vers les pages où les commentaires ont été postés, et le nombre de votes.
 
 Le flux **ne** contient **pas** les adresses e-mail des commentateurs, les adresses IP, ni d'autres informations sensibles sur les utilisateurs.
----

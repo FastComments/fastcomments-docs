@@ -1,7 +1,7 @@
 这是 fastcomments-angular 的根工作区。
 
-In "src" you will find an application which is simply a demo app to test the libraries.
+在 "src" 中，你会发现一个应用程序，它只是一个用于测试这些库的演示应用。
 
-In "projects" you will find the fastcomments library.
+在 "projects" 中，你会发现 fastcomments 库。
 
-查看 ngx-fastcomments 的 README，请见 [这里](https://github.com/FastComments/fastcomments-angular/tree/main/projects/fastcomments-angular)
+ngx-fastcomments 的 README 请查看[这里](https://github.com/FastComments/fastcomments-angular/tree/main/projects/fastcomments-angular)

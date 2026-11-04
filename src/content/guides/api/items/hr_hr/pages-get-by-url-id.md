@@ -32,5 +32,3 @@ interface PagesResponse {
 #### Koristan savjet
 
 Zapamtite URI-enkodirati vrijednosti poput `urlId`.
-
----

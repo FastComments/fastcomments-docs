@@ -1,4 +1,3 @@
----
 ## 매개변수
 
 | 이름 | 유형 | 필수 | 설명 |
@@ -23,5 +22,3 @@ const status: APIStatus = configResponse.status;
 const questionConfig?: QuestionConfig = configResponse.question;
 const firstOption?: QuestionConfigCustomOptionsInner = questionConfig?.customOptions?.[0];
 [inline-code-end]
-
----

@@ -1,17 +1,16 @@
-Record a vote on a poll, or move an existing one to a different option. A voter has at most one vote per
-poll, so calling this again for the same voter moves their vote rather than adding one.
+在投票中记录一次投票，或将现有投票移动到不同的选项。每位投票者在每个投票中最多只有一票，因此对同一投票者再次调用此接口会移动其投票，而不是新增一票。
 
-这遵循站点的投票设置：如果投票仅限登录用户，则仅使用 anonUserId 的投票会被拒绝，并且匿名投票会根据每个投票的 IP 进行速率限制。
+此操作遵循站点的投票设置：如果投票设置为仅限已登录用户，则仅使用 anonUserId 的投票将被拒绝，并且匿名投票会按 IP 按投票进行速率限制。
 
 ## 参数
 
-| Name | Type | Location | Required | Description |
+| 名称 | 类型 | 位置 | 必填 | 描述 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
+| tenantId | string | query | 是 |  |
 
 ## 响应
 
-Returns: [`CreatePollVoteResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreatePollVoteResponse.java)
+返回：[`CreatePollVoteResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreatePollVoteResponse.java)
 
 ## 示例
 
@@ -53,5 +52,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

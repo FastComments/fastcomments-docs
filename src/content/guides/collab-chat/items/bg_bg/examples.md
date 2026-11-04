@@ -178,5 +178,3 @@
     });
 </script>
 [inline-code-end]
-
----

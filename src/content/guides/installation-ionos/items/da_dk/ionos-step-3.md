@@ -1,4 +1,3 @@
----
 Nu skal vi bare udgive vores websted, og så er vi færdige.
 
 Gå tilbage til indholdsredigereren ved at klikke på `Content` øverst til venstre:
@@ -21,5 +20,3 @@ Det var det! FastComments burde være live på dit websted. Du skulle se noget l
     <div class="title">Færdig!</div>
     <img class="screenshot-image" src="/images/installation-guides/ionos-step-3-done.png" alt="Færdig!" />
 </div>
-
----

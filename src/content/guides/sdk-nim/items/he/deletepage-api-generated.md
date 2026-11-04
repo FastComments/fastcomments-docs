@@ -19,5 +19,3 @@ if deleteRespOpt.isSome:
   discard deleteResp
 discard httpResp
 [inline-code-end]
-
----

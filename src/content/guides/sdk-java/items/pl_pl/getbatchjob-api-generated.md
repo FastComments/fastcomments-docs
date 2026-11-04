@@ -1,4 +1,3 @@
----
 Status, postęp i, po zakończeniu, wynik jednego zadania wsadowego.
 
 ## Parametry
@@ -52,5 +51,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

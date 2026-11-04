@@ -1,4 +1,3 @@
----
 Bir kiracı için toplu kullanıcı bilgisi. Given userIds, User / SSOUser'dan görüntüleme bilgilerini döndürür.
 Yorum bileşeni tarafından presence etkinliğiyle yeni beliren kullanıcıları zenginleştirmek için kullanılır.
 Sayfa bağlamı yok: gizlilik tutarlı şekilde uygulanır (özel profiller maskelenir).
@@ -42,5 +41,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.GetUsersInfo`: %v\n", resp)
 }
 [inline-code-end]
-
----

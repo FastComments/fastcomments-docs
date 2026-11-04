@@ -8,5 +8,3 @@ Se você encontrar algum problema ou tiver dúvidas sobre o SDK Java, por favor:
 ## Contribuindo
 
 Contribuições são bem-vindas! Por favor, visite o [repositório no GitHub](https://github.com/FastComments/fastcomments-java) para as diretrizes de contribuição.
-
----

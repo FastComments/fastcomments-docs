@@ -30,5 +30,3 @@ DefaultAPI.getUserBadgeProgressById(tenantId: tenantId, id: id) { (response, err
     }
 }
 [inline-code-end]
-
----

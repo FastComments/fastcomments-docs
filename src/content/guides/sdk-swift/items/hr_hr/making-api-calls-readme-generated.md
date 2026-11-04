@@ -1,4 +1,3 @@
----
 Swift SDK koristi modernu async/await sintaksu za sve API pozive:
 
 ```swift
@@ -7,4 +6,3 @@ let response = try await PublicAPI.getCommentsPublic(
     urlId: "page-url-id"
 )
 ```
----

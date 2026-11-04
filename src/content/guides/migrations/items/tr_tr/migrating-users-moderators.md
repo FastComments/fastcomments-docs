@@ -1,4 +1,3 @@
----
 FastComments ile, birçok kullanıcı kiracınıza eklenebilir ve izinleri, kuruluşunuzdaki rollere göre ayarlanabilir.
 
 [app-screenshot-start url='/auth/my-account/users/new/edit'; selector = '.account-block'; alt='Kiracınıza birini eklemek için yeni kullanıcı formu, rolü için izin seçenekleriyle'; title='Kullanıcı Ekleme' app-screenshot-end]

@@ -6,5 +6,3 @@ Postoje dve vrste vidžeta za broj komentara:
 2. **Grupni vidžet broja komentara** - Za efikasno prikazivanje broja komentara za više stranica na jednoj stranici
 
 Ovaj članak pokriva VanillaJS vidžete. Naše React/Angular/etc biblioteke takođe imaju svoje vidžete.
-
----

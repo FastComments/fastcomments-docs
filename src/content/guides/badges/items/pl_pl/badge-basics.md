@@ -1,42 +1,33 @@
----
 Odznaki użytkowników FastComments są konfigurowane przez administratorów z uprawnieniem `Customize Data`.
 
-Odbywa się to przez [Dostosuj -> Odznaki](https://fastcomments.com/auth/my-account/configure-badges) w Twoim panelu administracyjnym.
+Odbywa się to poprzez [Customize -> Badges](https://fastcomments.com/auth/my-account/configure-badges) w panelu administracyjnym.
 
-Kiedy użytkownik otrzyma odznakę, jest ona wyświetlana w jego profilu i przy jego komentarzach.
+Gdy użytkownik otrzyma odznakę, jest ona wyświetlana na jego profilu oraz przy jego komentarzach.
 
-When adding a badge we can setup a `Display Label`, which is the name the user sees associated with the badge. For example, if we add a `Comment Count` badge
-we probably don't want to show that technical name because it's very lame. We might call it `Super Member` or similar. Badges can also stack and replace each other, as we'll cover
-later in this document.
+Podczas dodawania odznaki możemy skonfigurować `Display Label`, czyli nazwę, którą użytkownik widzi w powiązaniu z odznaką. Na przykład, jeśli dodamy odznakę `Comment Count`, prawdopodobnie nie chcemy pokazywać tej technicznej nazwy, ponieważ jest bardzo nijaka. Możemy nazwać ją `Super Member` lub podobnie. Odznaki mogą również się nakładać i zastępować nawzajem, co omówimy później w tym dokumencie.
 
-Odznaki mają też konfigurowalne progi.
+Odznaki mają również konfigurowalne progi.
 
-Odznaki można tworzyć, a następnie wyłączyć przez odznaczenie `Enabled`. Wyłączenie odznaki oznacza, że nie będzie już automatycznie przyznawana i nie pojawi się w menu Award Manual Badge, ale
-użytkownicy zachowają odznakę.
+Odznaki mogą być tworzone, a następnie wyłączane poprzez odznaczenie opcji `Enabled`. Wyłączenie odznaki oznacza, że nie będzie już automatycznie przyznawana i nie pojawi się w menu ręcznego przyznawania odznak (Award Manual Badge), ale użytkownicy zachowają odznakę.
 
 ### Typy wyświetlania odznak
 
-Odznaki mogą być obrazkami lub odznakami tekstowymi, które obsługują podstawowe style (kolor tekstu, kolor tła i kolor obramowania). Możesz też stylować odznaki za pomocą CSS.
+Odznaki mogą być obrazami lub odznakami tekstowymi, które obsługują podstawowe stylowanie (kolor tekstu, kolor tła i kolor obramowania). Możesz również stylować odznaki za pomocą CSS.
 
-Odznaki będące obrazami mogą być plikami GIF, aby pokazywać animowane odznaki.
+Odznaki obrazkowe mogą być obrazami GIF, aby pokazywać animowane odznaki.
 
-### Wskazówka - nie usuwaj odznak!
+### Wskazówka - Nie usuwaj odznak!
 
-Użytkownicy uwielbiają odznaki. Zwykle naprawdę się nimi przejmują, nawet jeśli odznaka pojawiła się na skutek błędu lub została dodana przez pomyłkę, i chcesz zmienić jej ikonę.
+Użytkownicy kochają odznaki. Zwykle naprawdę im na nich zależy, nawet jeśli to błąd, który dodałeś przez pomyłkę, a chcesz zmienić ikonę odznaki.
 
-Jeśli czegoś się nauczyliśmy, to że niezwykle trudno jest odebrać coś użytkownikom. Usunięcie odznaki, ponieważ jako właściciel serwisu przestałeś jej lubić lub chcesz wprowadzić zmiany, może sprowokować bardzo rozgniewaną grupę użytkowników, którzy z frustracji nagle opuszczą Twoją stronę. Z tego powodu
-`Delete` nie była nawet opcją przez pierwsze kilka miesięcy po udostępnieniu tej funkcji - jednak ostatecznie musieliśmy ją dodać. Prosimy jednak o ostrożność przy używaniu opcji usuwania. Widzieliśmy wielu długoletnich, wieloletnich użytkowników, którzy bardzo się sfrustrowali i opuścili swoje społeczności, ponieważ administratorzy zdecydowali się usunąć odznakę.
+Jeśli czegokolwiek się nauczyliśmy, to tego, że niezwykle trudno jest odbierać użytkownikom coś, co już mają. Usunięcie odznaki, ponieważ jako właściciel strony już ci się nie podoba lub chcesz wprowadzić zmiany, może skutkować bardzo rozwścieczoną grupą użytkowników, którzy nagle opuszczą twoją stronę z frustracji. Z tego powodu opcja `Delete` nie była nawet dostępna przez pierwsze kilka miesięcy po wydaniu tej funkcji - jednak ostatecznie musieliśmy ją dodać. Ale proszę, korzystaj z usuwania ostrożnie. Widzieliśmy wielu wieloletnich użytkowników, którzy bardzo się sfrustrowali i opuścili swoje społeczności, ponieważ administratorzy zdecydowali się usunąć odznakę.
 
-Jeśli musisz zaprzestać używania odznaki, zalecamy po prostu ją wyłączyć, aby użytkownicy zachowali swoją odznakę.
+Jeśli musisz przestać używać odznaki, sugerujemy po prostu ją wyłączyć, aby użytkownicy zachowali swoją odznakę.
 
-### Ponowne przetwarzanie odznak
+### Przetwarzanie ponowne odznak
 
-When a badge is added or changed, the system will retroactively check anyone that interacted with your site to see if they should get the badge. This will be
-visible in the Badges page in the admin dashboard, as a spinner will be shown instead of the number of users that have the badge. This is because the number of users
-is being determined.
+Gdy odznaka zostanie dodana lub zmieniona, system retrospektywnie sprawdzi wszystkich, którzy wchodzili w interakcję z twoją stroną, aby ustalić, czy powinni otrzymać odznakę. Będzie to widoczne na stronie Badges w panelu administracyjnym - zamiast liczby użytkowników posiadających odznakę wyświetlany będzie spinner. Wynika to z faktu, że liczba użytkowników jest dopiero ustalana.
 
-### Zobacz, kto ma odznakę
+### Sprawdzanie, kto ma odznakę
 
-Na liście Odznak każdy link ma opcję `View Users`, aby pokazać listę użytkowników, którzy zdobyli lub otrzymali odznakę ręcznie.
-
----
+Na liście Badges każdy link ma opcję `View Users`, aby pokazać listę użytkowników, którzy zdobyli odznakę lub otrzymali ją ręcznie.

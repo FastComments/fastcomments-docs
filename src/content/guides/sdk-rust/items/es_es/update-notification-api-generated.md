@@ -30,5 +30,3 @@ async fn main() -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
-
----

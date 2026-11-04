@@ -15,5 +15,3 @@ Hashtags er nyttige for medlemmer af fællesskabet, når de skal navigere for at
 - Billetter i et billetsystem.
 - Dokumenter eller sider i CRM.
 - Filer.
-
----

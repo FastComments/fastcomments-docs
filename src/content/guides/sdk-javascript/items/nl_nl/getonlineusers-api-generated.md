@@ -1,4 +1,3 @@
----
 Momenteel online kijkers van een pagina: mensen waarvan de websocketsessie momenteel op de pagina is geabonneerd.  
 Retourneert anonCount + totalCount (abonnees in de hele ruimte, inclusief anonieme kijkers die we niet opsommen).
 
@@ -37,5 +36,3 @@ async function fetchOnlineUsers() {
 
 fetchOnlineUsers();
 [inline-code-end]
-
----

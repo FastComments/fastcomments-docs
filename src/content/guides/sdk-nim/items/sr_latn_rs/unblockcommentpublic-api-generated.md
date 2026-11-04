@@ -25,5 +25,3 @@ let (unblockResult, httpResp) = client.unBlockCommentPublic(
 if unblockResult.isSome:
   let result = unblockResult.get()
 [inline-code-end]
-
----

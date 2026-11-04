@@ -1,20 +1,20 @@
-A coding agent such as Claude Code, Cursor, or an MCP-based assistant can set up FastComments for you without you filling in the signup form. This is useful when you ask an agent to "add comments to my site" and you do not have an account yet.
+Агент за кодирање као што су Claude Code, Cursor или асистент заснован на MCP може да подеси FastComments уместо вас, без попуњавања регистрационог обрасца. Ово је корисно када замолите агента да „додаје коментаре на мом сајту“, а још немате налог.
 
-### Како функционише
+### Како то функционише
 
-1. The agent creates a new account and receives an API key and a claim link. The API key works right away, so the agent can configure the account and install the widget on your site.
-2. The agent gives you the claim link. Open it in your browser, log in or create a login, and confirm the claim. The account is then yours: you manage it, its billing, and its API keys from the dashboard. The page lists the API key the agent holds so you can revoke it if you no longer want the agent, or whoever runs it, to have access.
-3. If nobody opens the claim link within 72 hours, the account and its key are deleted. Ask the agent to create a new one.
+1. Агент креира нови налог и добија API кључ и линк за преузимање налога. API кључ одмах ради, тако да агент може да конфигурише налог и инсталира виџет на ваш сајт.
+2. Агент вам даје линк за преузимање налога. Отворите га у прегледачу, пријавите се или направите налог, и потврдите преузимање. Налог је тада ваш: управљате њиме, његовим наплатом и његовим API кључевима са контролне табле. Страница наводи API кључ који агент држи, тако да га можете опозвати ако више не желите да агент, или онај ко га води, има приступ.
+3. Ако нико не отвори линк за преузимање у року од 72 сата, налог и његов кључ се бришу. Замолите агента да направи нови.
 
-Until it is claimed, the account has the same limits as a normal free trial.
+Док се налог не преузме, он има иста ограничења као обичан бесплатни пробни период.
 
 ### Ако већ имате налог
 
-Each login owns one account. If you open a claim link while logged in to an existing account, the page lets you choose:
+Свака пријава поседује један налог. Ако отворите линк за преузимање док сте пријављени на постојећи налог, страница вам омогућава да изаберете:
 
-- **Attach to my account** makes the new account a managed tenant of the one you are logged in to. This needs a paid plan with white labeling, and the new tenant's usage is billed to your account.
-- **Sign out and claim with another login** signs you out and brings you back to the claim page so you can claim it with a different login.
+- **Прикачи на мој налог** чини нови налог управљаним станаром налога на који сте пријављени. Ово захтева плаћени план са white labeling, а потрошња новог станара се наплаћује вашем налогу.
+- **Одјави се и преузми са другим налогом** вас одјављује и враћа на страницу за преузимање како бисте га преузели са другим налогом.
 
 ### За ауторе агената
 
-The agent instructions at [fastcomments.com/agents.md](https://fastcomments.com/agents.md) describe the account creation call, the fields in the response, and how to hand the claim link to the person you are working for. The call needs no API key and is rate limited per IP address.
+Упутства за агенте на [fastcomments.com/agents.md](https://fastcomments.com/agents.md) описују позив за креирање налога, поља у одговору и како да предате линк за преузимање особи за коју радите. Позив не захтева API кључ и ограничен је по IP адреси.

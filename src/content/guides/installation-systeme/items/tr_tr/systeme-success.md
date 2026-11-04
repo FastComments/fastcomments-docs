@@ -1,4 +1,3 @@
----
 Şimdi bir blog gönderisini görüntülersek, FastComments'i görmeliyiz!
 
 <div class="screenshot white-bg">
@@ -7,5 +6,3 @@
 </div>
 
 Systeme.io ile FastComments'i kurduğunuz için tebrikler! Bir Domain Error ile karşılaştıysanız veya yorum alanını nasıl özelleştireceğinizi öğrenmek istiyorsanız, okumaya devam edin!
-
----

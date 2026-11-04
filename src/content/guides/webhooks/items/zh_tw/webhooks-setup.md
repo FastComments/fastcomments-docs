@@ -1,4 +1,3 @@
----
 跟隨在 `localhost` 上的步驟與在正式環境相同。確保已設定正式環境的網域與 API 密鑰。
 
 首先，前往 [Webhooks 管理](https://fastcomments.com/auth/my-account/manage-data/webhooks)。此頁面可於 **管理資料 -> Webhooks** 取得。
@@ -18,5 +17,3 @@
 在列表中，您可以編輯、停用、重新啟用或刪除 webhook。停用會保留排隊的事件，直到 webhook 重新啟用；刪除則會丟棄這些事件。
 
 Webhook 也可以透過 API 建立，例如使用 Zapier。這些會在同一列表中顯示，來源標示為 **API**。請參閱「透過 API 管理 Webhook」以了解更多。
-
----

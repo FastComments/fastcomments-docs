@@ -63,5 +63,3 @@ Tryb ciemny używa modyfikatora klasy `.dark` na `.user-profile`.
     border-radius: 12px 0 0 12px;
 }
 ```
-
----

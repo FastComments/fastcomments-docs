@@ -1,4 +1,3 @@
----
 Bij FastComments is een Goedgekeurde reactie een **zichtbare** reactie. Om een reactie te verbergen, keurt u deze af.
 
 Reacties kunnen automatisch worden goedgekeurd, of moderators kunnen elke reactie handmatig goedkeuren. Er is ook de optie om
@@ -13,4 +12,3 @@ Het verplichten van handmatige goedkeuring van Niet-Geverifieerde reacties kan h
 wilt u automatische goedkeuring van reacties inschakelen maar `Only Auto Approve Verified Comments` inschakelen.
 
 Dit kan allemaal door beheerders worden geconfigureerd via [Moderatie-instellingen](https://fastcomments.com/auth/my-account/moderate-comments/settings).
----

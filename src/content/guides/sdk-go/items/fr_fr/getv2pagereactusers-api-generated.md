@@ -1,4 +1,3 @@
----
 ## Paramètres
 
 | Name | Type | Location | Required | Description |
@@ -40,5 +39,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.GetV2PageReactUsers`: %v\n", resp)
 }
 [inline-code-end]
-
----

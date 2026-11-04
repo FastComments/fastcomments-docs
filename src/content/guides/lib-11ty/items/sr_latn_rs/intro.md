@@ -5,5 +5,3 @@ Umetnite vidžete za komentarisanje uživo, chat i recenzije na vaš Eleventy (1
 ## Repozitorijum
 
 [Pogledajte na GitHubu](https://github.com/FastComments/fastcomments-11ty)
-
----

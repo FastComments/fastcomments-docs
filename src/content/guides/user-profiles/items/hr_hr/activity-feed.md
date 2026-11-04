@@ -1,4 +1,3 @@
----
 Feed aktivnosti na korisničkim profilima prikazuje povijest komentara korisnika, obavijesti i sudjelovanje u zajednicama na svim stranicama koje koriste FastComments.
 
 ### Što je Feed aktivnosti?
@@ -163,5 +162,3 @@ Jedna od snažnih značajki FastComments korisničkih profila je mogućnost prik
 - Očistite predmemoriju preglednika i osvježite
 - Odjavite se i ponovno prijavite
 - Prijavite sve trajne probleme podršci
-
----

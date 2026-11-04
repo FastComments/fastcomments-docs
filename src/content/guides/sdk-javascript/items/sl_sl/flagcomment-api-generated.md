@@ -25,5 +25,3 @@ Vrne: [`FlagCommentResponse`](https://github.com/FastComments/fastcomments-sdk-j
   console.log(response);
 })();
 [inline-code-end]
-
----

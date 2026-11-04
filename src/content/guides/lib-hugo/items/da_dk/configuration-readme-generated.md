@@ -1,4 +1,4 @@
-Alle FastComments-widgetindstillinger indstilles under `[params.fastcomments]` i `hugo.toml`, og kan overskrives per side i front matter under `[fastcomments]`. Prioritet, lavest til højest: site params, page front matter, shortcode-parameter.
+Alle FastComments widget-indstillinger sættes under `[params.fastcomments]` i `hugo.toml`, og kan overskrives pr. side i front matter under `[fastcomments]`. Prioritet, fra lavest til højst: site-parametre, sidens front matter, shortcode-parametre.
 
 ```toml
 # hugo.toml
@@ -10,7 +10,7 @@ Alle FastComments-widgetindstillinger indstilles under `[params.fastcomments]` i
 ```
 
 ```toml
-# a page's front matter
+# en sides front matter
 +++
 title = "Article"
 [fastcomments]
@@ -19,11 +19,11 @@ title = "Article"
 +++
 ```
 
-Når hverken `url` eller `urlId` er angivet, bruges `url` som standard sidens permalink, så kommentartråde forbliver knyttet til en stabil URL.
+Når hverken `url` eller `urlId` er angivet, falder `url` tilbage til sidens permalink, så kommentartråde forbliver knyttet til en stabil URL.
 
-### EU data residency
+### EU-dataresidens
 
-EU-kunder sætter `region = "eu"` for at dirigere widget'en til `cdn-eu.fastcomments.com`:
+EU-kunder sætter `region = "eu"` for at dirigere widgeten til `cdn-eu.fastcomments.com`:
 
 ```toml
 [params.fastcomments]
@@ -31,6 +31,6 @@ EU-kunder sætter `region = "eu"` for at dirigere widget'en til `cdn-eu.fastcomm
   region = "eu"
 ```
 
-### Bemærkning om nøglers store/små bogstaver
+### Bemærkning om nøglecasing
 
-Hugo konverterer alle nøgler til små bogstaver i `hugo.toml` og front matter, men FastComments-widgets kræver camelCase-nøgler (`tenantId`, `hasDarkBackground`). Denne komponent gendanner automatisk den korrekte kapitalisering for hver kendt øverste niveau-indstilling, så skriv indstillinger i deres normale camelCase-form. Nøgler indlejret i en objektværdi (for eksempel nøglerne i et `translations`-map, eller felter i `pageReactConfig`) gendannes ikke. Konfigurer disse i stedet via tilpasningsbrugerfladen i FastComments-dashboardet.
+Hugo konverterer alle nøgler i `hugo.toml` og front matter til små bogstaver, men FastComments-widgets kræver camelCase-nøgler (`tenantId`, `hasDarkBackground`). Denne komponent gendanner automatisk den korrekte casing for alle kendte topniveau-indstillinger, så du kan skrive indstillingerne i deres normale camelCase-form. Nøgler, der er indlejret i en objektværdi (for eksempel nøglerne i et `translations`-map eller felterne i `pageReactConfig`), gendannes ikke. Konfigurér disse via FastComments dashboardets tilpasnings-UI i stedet.

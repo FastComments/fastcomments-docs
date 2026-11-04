@@ -90,5 +90,3 @@ Para melhores resultados, garanta que suas fontes personalizadas sejam carregada
 Os marcadores quadrados têm um design visual sutil que os torna perceptíveis sem sobrecarregar a imagem. Você pode personalizar sua aparência com CSS se quiser um tratamento visual diferente.
 
 Os marcadores incluem estados de hover que fornecem feedback quando os usuários movem o mouse sobre eles. Em dispositivos com touch, a interação por toque fornece feedback imediato abrindo a janela de chat.
-
----

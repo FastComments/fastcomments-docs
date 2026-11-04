@@ -1,4 +1,3 @@
----
 ## Parameters
 
 | Navn | Type | Placering | Påkrævet | Beskrivelse |
@@ -38,5 +37,3 @@ try {
     echo 'Exception when calling PublicApi->getV2PageReactUsers: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

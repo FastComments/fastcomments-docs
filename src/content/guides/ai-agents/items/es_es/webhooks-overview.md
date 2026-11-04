@@ -1,68 +1,65 @@
----
-Los webhooks de agente son callbacks HTTP disparados por la plataforma cuando se completa una ejecución de agente o cuando una aprobación cambia de estado. Úsalos para reenviar la actividad del agente a tus propios sistemas: paneles de moderación, registros de auditoría, canales de Slack y herramientas de escalado.
+Los webhooks de agentes son callbacks HTTP que la plataforma dispara cuando una ejecución de agente se completa o una aprobación cambia de estado. Úsalos para reenviar la actividad de los agentes a tus propios sistemas: paneles de moderación, registros de auditoría, canales de Slack, herramientas de escalado.
 
-Configurado en la pestaña **Webhooks** de la [página de Agentes de IA](https://fastcomments.com/auth/my-account/ai-agents).
+Se configuran en la pestaña **Webhooks** de la [página de AI Agents](https://fastcomments.com/auth/my-account/ai-agents).
 
-### What gets delivered
+### Qué se entrega
 
-Four event types:
+Cuatro tipos de eventos:
 
-- **`trigger.succeeded`** - an agent run completed successfully.
-- **`trigger.failed`** - an agent run errored.
-- **`approval.requested`** - an action was queued for human approval.
-- **`approval.decided`** - an approval was approved, rejected, or execution-failed.
+- **`trigger.succeeded`** - una ejecución de agente se completó con éxito.
+- **`trigger.failed`** - una ejecución de agente falló con error.
+- **`approval.requested`** - una acción fue puesta en cola para aprobación humana.
+- **`approval.decided`** - una aprobación fue aprobada, rechazada o falló en su ejecución.
 
-Consulte [Eventos de webhook](#webhook-events) para saber qué eventos se desencadenan y cuándo, y [Cargas útiles de webhook](#webhook-payloads) para el esquema de cada uno.
+Consulta [Webhook Events](#webhook-events) para saber qué eventos se disparan y cuándo, y [Webhook Payloads](#webhook-payloads) para el esquema de cada uno.
 
-### What's not delivered
+### Qué no se entrega
 
-- **Per-tool-action webhooks.** Una ejecución que llame a `pin_comment` no dispara un webhook separado para el pin: la acción se incluye en la carga útil `trigger.succeeded` de la ejecución. Si quieres entrega por acción, analiza el array `actions` en la carga útil del trigger.
-- **Dropped triggers.** Un disparador que no se envía (por sobrepaso de presupuesto, ámbito incorrecto) no dispara un webhook. Los descartes son visibles solo en la [página de Analytics](#analytics-page).
-- **Replay-produced triggers.** Las ejecuciones de prueba no generan webhooks. Consulte [Test Runs (Replays)](#test-runs-replays).
+- **Webhooks por acción de herramienta.** Una ejecución que llama a `pin_comment` no dispara un webhook separado para el pin; la acción se incluye en el payload `trigger.succeeded` de la ejecución. Si quieres entrega por acción, analiza el array `actions` del payload del trigger.
+- **Triggers descartados.** Un trigger que no se despacha (por encima del presupuesto, ámbito incorrecto) no dispara un webhook. Los descartes solo son visibles en la [página de Analytics](#analytics-page).
+- **Triggers producidos por replay.** Las ejecuciones de prueba no disparan webhooks. Consulta [Test Runs (Replays)](#test-runs-replays).
 
-### Configuration
+### Configuración
 
-Para cada webhook que configures:
+Para cada webhook configuras:
 
-- **URL** - el endpoint HTTPS al que se hará POST.
-- **Domain** - el dominio de comentarios al que se aplica este webhook (tu tenant puede alojar múltiples dominios). `*` matches all domains; `*.example.com` is a glob; an exact domain matches only that one.
+- **URL** - el endpoint HTTPS al que se hace POST.
+- **Domain** - el dominio de comentarios al que aplica este webhook (tu tenant puede alojar varios dominios). `*` coincide con todos los dominios; `*.example.com` es un glob; un dominio exacto coincide solo con ese.
 - **Events** - a cuáles de los cuatro tipos de eventos suscribirse.
-- **Agents** - vacío para "all agents", o una lista de IDs de agentes específicos para filtrar.
+- **Agents** - vacío para "todos los agentes", o una lista de IDs de agentes específicos para filtrar.
 - **Method** - POST o PUT (por defecto POST).
-- **No-retry status codes** - códigos de respuesta HTTP que deben considerarse fallos terminales y no reintentarse (por ejemplo, 410 Gone, 422 Unprocessable). Consulte [Webhook Retries](#webhook-retries).
+- **No-retry status codes** - códigos de respuesta HTTP que deben tratarse como fallos terminales, sin reintentar (por ejemplo, 410 Gone, 422 Unprocessable). Consulta [Webhook Retries](#webhook-retries).
 
-Varios webhooks pueden suscribirse al mismo evento: cada uno se encola de forma independiente y se entrega a su propia URL.
+Varios webhooks pueden suscribirse al mismo evento; cada uno se pone en cola de forma independiente y se entrega a su propia URL.
 
-### Per-domain matching
+### Coincidencia por dominio
 
-Un evento dado se entrega a **cada webhook cuyo campo `domain` coincida con el dominio del comentario**. La coincidencia usa un patrón glob simple:
+Un evento determinado se entrega a **todos los webhooks cuyo campo `domain` coincida con el dominio del comentario**. La coincidencia usa un glob simple:
 
 - Exacto: `example.com` coincide solo con `example.com`.
-- Asterisco comodín: `*` coincide con todos los dominios.
+- Comodín estrella: `*` coincide con todos los dominios.
 - Glob de subdominio: `*.example.com` coincide con `blog.example.com`, `forum.example.com`, pero no con `example.com` en sí.
 
-El dominio en una carga útil es el primer resultado no nulo de: el `domain` del comentario, la URL analizada según la configuración de dominios de tu tenant, o la búsqueda de `Page` por `urlId`.
+El dominio en un payload es el primer resultado no nulo de: el `domain` del comentario, la URL analizada contra la configuración de dominios de tu tenant, o la búsqueda de `Page` por `urlId`.
 
-### Per-agent filtering
+### Filtrado por agente
 
-El campo **Agents** permite que un webhook se suscriba solo a ciertos agentes. Vacío significa "all agents". Cuando no está vacío, el webhook solo se activa para los agentes de la lista.
+El campo **Agents** permite que un webhook se suscriba solo a ciertos agentes. Vacío significa "todos los agentes". Cuando no está vacío, el webhook solo se dispara para los agentes de la lista.
 
-Esto es útil cuando tienes un webhook para eventos de moderación y otro para eventos de interacción, ambos dirigiéndose a sistemas downstream diferentes.
+Esto es útil cuando tienes un webhook para eventos de moderación y otro para eventos de interacción, ambos enrutados a diferentes sistemas posteriores.
 
-### Test send
+### Envío de prueba
 
-La interfaz de configuración de webhooks tiene un botón **Enviar prueba** que envía una carga útil falsa a la URL para que puedas verificar la conectividad, la firma y el código de respuesta de tu endpoint sin esperar a un evento real.
+La interfaz de configuración de webhooks tiene un botón **Test send** que publica un payload falso a la URL para que puedas verificar la conectividad, la firma y el código de respuesta de tu endpoint sin esperar un evento real.
 
-### Delivery logs
+### Registros de entrega
 
-Cada entrega (y cada reintento) aparece en la página de [Webhook Delivery Logs](#webhook-logs) para que puedas ver lo que ocurrió en la transmisión.
+Cada entrega (y cada reintento) queda registrada en la página [Webhook Delivery Logs](#webhook-logs) para que puedas ver qué ocurrió en la comunicación.
 
-### Signing
+### Firma
 
-Cada webhook se firma con HMAC-SHA256 usando el secreto de API de tu tenant. Consulte [Webhook Signing](#webhook-signing).
+Cada webhook se firma con HMAC-SHA256 usando el secreto de API de tu tenant. Consulta [Webhook Signing](#webhook-signing).
 
-### Eligibility
+### Elegibilidad
 
-Los webhooks de agente requieren facturación válida en el tenant. Usan la misma infraestructura de firma/secretos que tus webhooks de comentarios existentes: si ya has integrado los webhooks de comentarios (véase la [guía de Webhooks](/guide-webhooks.html)), la integración de webhooks de agente tiene la misma forma con nuevos tipos de eventos.
-
----
+Los webhooks de agentes requieren una facturación válida en el tenant. Usan la misma infraestructura de firma/secreto que tus webhooks de comentarios existentes; si ya has integrado webhooks de comentarios (consulta la [guía de Webhooks](/guide-webhooks.html)), la integración de webhooks de agentes tiene la misma forma con nuevos tipos de eventos.

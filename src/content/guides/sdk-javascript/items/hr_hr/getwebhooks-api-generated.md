@@ -29,5 +29,3 @@ Vraća: [`GetWebhooksResponse`](https://github.com/FastComments/fastcomments-sdk
   const minimalResponse: GetWebhooksResponse = await getWebhooks(tenantId);
 })();
 [inline-code-end]
-
----

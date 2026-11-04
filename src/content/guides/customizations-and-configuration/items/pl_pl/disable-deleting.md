@@ -1,4 +1,3 @@
----
 Domyślnie FastComments pozwala użytkownikom usuwać ich komentarze.
 
 Jednak możliwe jest zapobieżenie temu.
@@ -9,5 +8,3 @@ Na stronie dostosowywania widgetu zobacz opcję "Disable Deleting".
 
 - To wpływa tylko na zwykłych komentujących, a nie na moderatorów ani administratorów, którzy nadal będą mogli usuwać.
 - To również wpłynie na integracje API, gdy przekazywany jest `contextUserId`. 
-
----

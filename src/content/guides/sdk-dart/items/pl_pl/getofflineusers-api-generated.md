@@ -1,21 +1,22 @@
-Past commenters on the page who are NOT currently online. Sorted by displayName.  
-Use this after exhausting /users/online to render a "Members" section.  
-Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName} index from afterName forward via $gt, no $skip cost.
+Osoby, które komentowały stronę w przeszłości, a które NIE są obecnie online. Sortowane według displayName.
+Użyj tego po wyczerpaniu /users/online, aby wyrenderować sekcję "Members" (Członkowie).
+Paginacja kursorowa po commenterName: serwer przechodzi po częściowym indeksie {tenantId, urlId, commenterName}
+od afterName w przód za pomocą $gt, bez kosztu $skip.
 
-## Parameters
+## Parametry
 
-| Name | Type | Location | Required | Description |
+| Nazwa | Typ | Lokalizacja | Wymagany | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| urlId | string | query | Yes | Identyfikator URL strony (oczyszczony po stronie serwera). |
-| afterName | string | query | No | Kursor: przekaż nextAfterName z poprzedniej odpowiedzi. |
-| afterUserId | string | query | No | Rozstrzygacz kursora: przekaż nextAfterUserId z poprzedniej odpowiedzi. Wymagane, gdy afterName jest ustawione, aby powiązania nazw nie powodowały pomijania wpisów. |
+| tenantId | string | path | Tak |  |
+| urlId | string | query | Tak | Identyfikator URL strony (czyszczony po stronie serwera). |
+| afterName | string | query | Nie | Kursor: przekaż nextAfterName z poprzedniej odpowiedzi. |
+| afterUserId | string | query | Nie | Kursor rozstrzygający remisy: przekaż nextAfterUserId z poprzedniej odpowiedzi. Wymagany, gdy ustawiono afterName, aby remisy nazw nie powodowały utraty wpisów. |
 
-## Response
+## Odpowiedź
 
-Returns: `PageUsersOfflineResponse`
+Zwraca: `PageUsersOfflineResponse`
 
-## Example
+## Przykład
 
 [inline-code-attrs-start title = 'Przykład getOfflineUsers'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -23,9 +24,9 @@ import 'package:fastcomments_dart/api.dart';
 
 final api_instance = PublicApi();
 final tenantId = tenantId_example; // String | 
-final urlId = urlId_example; // String | Identyfikator URL strony (oczyszczony po stronie serwera).
+final urlId = urlId_example; // String | Identyfikator URL strony (czyszczony po stronie serwera).
 final afterName = afterName_example; // String | Kursor: przekaż nextAfterName z poprzedniej odpowiedzi.
-final afterUserId = afterUserId_example; // String | Rozstrzygacz kursora: przekaż nextAfterUserId z poprzedniej odpowiedzi. Wymagane, gdy afterName jest ustawione, aby powiązania nazw nie powodowały pomijania wpisów.
+final afterUserId = afterUserId_example; // String | Kursor rozstrzygający remisy: przekaż nextAfterUserId z poprzedniej odpowiedzi. Wymagany, gdy ustawiono afterName, aby remisy nazw nie powodowały utraty wpisów.
 
 try {
     final result = api_instance.getOfflineUsers(tenantId, urlId, GetOfflineUsersOptions(afterName: afterName, afterUserId: afterUserId));

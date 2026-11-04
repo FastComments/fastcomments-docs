@@ -8,5 +8,3 @@ Ruby SDK ile ilgili herhangi bir sorunla karşılaşırsanız veya sorularınız
 ## Katkıda Bulunma
 
 Katkılar memnuniyetle kabul edilir! Katkı yönergeleri için lütfen [GitHub deposunu](https://github.com/FastComments/fastcomments-ruby) ziyaret edin.
-
----

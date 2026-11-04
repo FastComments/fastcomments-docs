@@ -13,5 +13,3 @@ Međutim, ako je to poželjno, mora se koristiti sljedeći isječak koda. Isječ
     }];
 </script>
 [inline-code-end]
-
----

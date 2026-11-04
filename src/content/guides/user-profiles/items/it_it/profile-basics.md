@@ -1,4 +1,3 @@
----
 I profili utente in FastComments offrono uno spazio dedicato per ogni utente per mostrare la propria identità, attività e contributi nella tua comunità.
 
 ### Che cos'è un profilo utente?
@@ -53,5 +52,3 @@ FastComments supporta due tipi di utenti con profili:
 2. **Utenti SSO** - Utenti che si autenticano tramite l'integrazione Single Sign-On del tuo sito
 
 Entrambi i tipi di utenti hanno accesso al sistema completo di profili, anche se gli utenti SSO potrebbero avere alcune restrizioni nella modifica di campi specifici (come gli avatar) a seconda della configurazione SSO.
-
----

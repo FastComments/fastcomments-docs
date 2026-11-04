@@ -1,20 +1,21 @@
-The only structure sent via webhooks is the WebhookComment object, outlined in TypeScript below.
+La única estructura enviada vía webhooks es el objeto WebhookComment, descrito en TypeScript a continuación.
 
 #### La estructura del objeto WebhookComment
 
 ##### La estructura del evento "Create"
-The "create" event request body is a WebhookComment object.
+El cuerpo de la solicitud del evento "create" es un objeto WebhookComment.
 
 ##### La estructura del evento "Update"
-The "update" event request body is a WebhookComment object.
+El cuerpo de la solicitud del evento "update" es un objeto WebhookComment.
 
 ##### La estructura del evento "Delete"
-The "delete" event request body is a WebhookComment object.
+El cuerpo de la solicitud del evento "delete" es un objeto WebhookComment.
 
-Change as of Nov 14th 2023  
-Previously the "delete" event request body only contained the comment id. It now contains the full comment at the time of deletion.
+    Cambio a partir del 14 de noviembre de 2023
+    Anteriormente, el cuerpo de la solicitud del evento "delete" solo contenía el id del comentario. Ahora contiene el comentario completo en el momento de la eliminación.
 
-Cada clave siempre está presente en el cuerpo. Cuando el comentario no tiene valor para un campo, el cuerpo lleva `null` (or `false` for booleans and `[]` for lists), so the shape of a delivery never varies from one comment to the next.
+Cada clave está siempre presente en el cuerpo. Cuando el comentario no tiene valor para un campo, el cuerpo lleva `null`
+(o `false` para booleanos y `[]` para listas), por lo que la forma de una entrega nunca varía de un comentario a otro.
 
 [inline-code-attrs-start title = 'El objeto WebhookComment'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
@@ -80,9 +81,10 @@ interface WebhookComment {
 }
 [inline-code-end]
 
-Cuando los usuarios son etiquetados en un comentario, la información se almacena en una lista llamada `mentions`. Cada objeto en esa lista tiene la siguiente estructura.
+Cuando se etiqueta a usuarios en un comentario, la información se almacena en una lista llamada `mentions`. Cada objeto de esa lista
+tiene la siguiente estructura.
 
-[inline-code-attrs-start title = 'El objeto de menciones Webhook'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'El objeto Webhook Mentions'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentUserMention {
     /** The user id. For SSO users, this will have your tenant id prefixed. **/
@@ -98,9 +100,9 @@ interface CommentUserMention {
 }
 [inline-code-end]
 
-Cada entrada en la lista `badges` tiene la siguiente estructura. Consulte la [Guía de insignias](/guide-badges.html) para los tipos de insignias.
+Cada entrada de la lista `badges` tiene la siguiente estructura. Consulta la [guía de Badges](/guide-badges.html) para conocer los tipos de badges.
 
-[inline-code-attrs-start title = 'El objeto de insignia Webhook'; type = 'typescript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'El objeto Webhook Badge'; type = 'typescript'; inline-code-attrs-end]
 [inline-code-start]
 interface CommentUserBadgeInfo {
     /** The id of the badge awarded to this user. **/
@@ -123,23 +125,23 @@ interface CommentUserBadgeInfo {
 
 #### Métodos HTTP
 
-Puede configurar el método HTTP para cada tipo de evento webhook en el panel de administración:
+Puedes configurar el método HTTP para cada tipo de evento de webhook en el panel de administración:
 
 - **Evento Create**: POST o PUT (predeterminado: PUT)
 - **Evento Update**: POST o PUT (predeterminado: PUT)
 - **Evento Delete**: DELETE, POST o PUT (predeterminado: DELETE)
 
-Dado que todas las solicitudes contienen un ID, las operaciones Create y Update son idempotentes por defecto (PUT). Repetir la misma solicitud Create o Update no debería crear objetos duplicados en su lado.
+Dado que todas las solicitudes contienen un ID, las operaciones Create y Update son idempotentes por defecto (PUT). Repetir la misma solicitud Create o Update no debería crear objetos duplicados en tu lado.
 
-#### Encabezados de solicitud
+#### Cabeceras de la solicitud
 
-Cada solicitud webhook incluye los siguientes encabezados:
+Cada solicitud de webhook incluye las siguientes cabeceras:
 
-| Header | Description |
+| Cabecera | Descripción |
 |--------|-------------|
 | `Content-Type` | `application/json` |
-| `token` | Su secreto de API |
-| `X-FastComments-Timestamp` | Marca de tiempo Unix (segundos) cuando la solicitud fue firmada |
+| `token` | Tu API Secret |
+| `X-FastComments-Timestamp` | Marca de tiempo Unix (segundos) cuando se firmó la solicitud |
 | `X-FastComments-Signature` | Firma HMAC-SHA256 (`sha256=<hex>`) |
 
-Consulte [Seguridad y tokens de API](/guide-webhooks.html#webhooks-api-tokens) para obtener información sobre la verificación de la firma HMAC.
+Consulta [Seguridad y tokens de API](/guide-webhooks.html#webhooks-api-tokens) para obtener información sobre cómo verificar la firma HMAC.

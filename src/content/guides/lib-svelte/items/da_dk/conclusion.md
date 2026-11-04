@@ -8,5 +8,3 @@ Hvis du støder på problemer eller har spørgsmål om Svelte-biblioteket, så:
 ## Bidrag
 
 Bidrag er velkomne! Besøg venligst [GitHub-repositoriet](https://github.com/FastComments/fastcomments-svelte) for retningslinjer for bidrag.
-
----

@@ -5,5 +5,3 @@ Ugradite widgete za komentiranje uživo, chat i recenzije u svoju SolidJS aplika
 ## Repozitorij
 
 [Pogledajte na GitHubu](https://github.com/FastComments/fastcomments-solidjs)
-
----

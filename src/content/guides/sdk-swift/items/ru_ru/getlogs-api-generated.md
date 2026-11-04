@@ -32,5 +32,3 @@ ModerationAPI.getLogs(tenantId: tenantId, commentId: commentId, sso: sso) { (res
     }
 }
 [inline-code-end]
-
----

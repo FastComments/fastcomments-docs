@@ -1,4 +1,3 @@
----
 Za lokalni razvoj, koristite alat poput [ngrok](https://ngrok.com/).
 
 Kako bi se pojednostavilo održavanje sigurnosti sustava, lokalni razvoj slijedi isti proces kao postavljanje i osiguravanje drugih okruženja. 

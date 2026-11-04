@@ -1,4 +1,3 @@
----
 Pri FastComments je odobren komentar **viden** komentar. Če želite komentar skriti, morate preklicati njegovo odobritev.
 
 Komentarji so lahko samodejno odobreni, ali pa moderatorji ročno odobrijo vsak komentar. Obstaja tudi možnost, da se zahteva odobritev le prvega komentarja uporabnika - v tem primeru so naslednji komentarji samodejno odobreni in ne zahtevajo moderiranja.
@@ -12,4 +11,3 @@ Zahtevanje ročne odobritve nepreverjenih komentarjev lahko pomaga proti nežele
 bi želeli omogočiti samodejno odobritev komentarjev in hkrati omogočiti `Only Auto Approve Verified Comments`.
 
 Vse to lahko konfigurirajo skrbniki v [Nastavitvah moderiranja](https://fastcomments.com/auth/my-account/moderate-comments/settings).
----

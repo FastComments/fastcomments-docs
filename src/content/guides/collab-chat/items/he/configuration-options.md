@@ -1,27 +1,27 @@
-### סקירה
+### סקירה כללית
 
-FastComments Collab Chat מרחיב את ווידג'ט התגובות הסטנדרטי של FastComments, כך שהוא יורש את כל אפשרויות התצורה מהווידג'ט הבסיסי ומוסיף כמה אפשרויות ספציפיות להערות טקסט.
+FastComments Collab Chat מרחיב את ווידג'ט התגובות הרגיל של FastComments, ולכן הוא יורש את כל אפשרויות ההגדרה של הווידג'ט הבסיסי תוך הוספת מספר אפשרויות ייחודיות להערות טקסט.
 
-### תצורה נדרשת
+### הגדרה נדרשת
 
 #### tenantId
 
-נדרש מזהה השוכר (Tenant ID) של FastComments שלך. ניתן למצוא אותו ב[לוח הבקרה של FastComments](https://fastcomments.com/auth/my-account/api-secret).
+נדרש מזהה ה-Tenant שלך ב-FastComments. ניתן למצוא אותו ב-[לוח הבקרה של FastComments](https://fastcomments.com/auth/my-account/api-secret).
 
-[inline-code-attrs-start title = "דוגמת תצורה"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = "דוגמת הגדרה"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(element, {
     tenantId: 'demo'
 });
 [inline-code-end]
 
-### אפשרויות ספציפיות ל-Collab Chat
+### אפשרויות ייחודיות ל-Collab Chat
 
 #### urlId
 
-ברירת המחדל היא ש-Collab Chat מייצר מזהה ייחודי לכל שיחה בהתבסס על כתובת הדף, נתיב ה-DOM לאלמנט וטווח הטקסט שנבחר. ניתן לעקוף זאת עם `urlId` מותאם אישית.
+כברירת מחדל, Collab Chat מייצר מזהה ייחודי לכל שיחה בהתבסס על כתובת ה-URL של הדף, הנתיב ב-DOM לאלמנט, וטווח הטקסט המסומן. ניתן לדרוס זאת עם `urlId` מותאם אישית.
 
-[inline-code-attrs-start title = "דוגמת תצורה"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = "דוגמת הגדרה"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
@@ -29,21 +29,21 @@ FastCommentsCollabChat(element, {
 });
 [inline-code-end]
 
-זה שימושי כאשר מבנה ה-URL שלך עשוי להשתנות ואתה רוצה לשמור על אותן שיחות, או כאשר אתה רוצה לשתף הערות על פני מספר דפים.
+זה שימושי כאשר מבנה ה-URL שלך עשוי להשתנות אך ברצונך לשמור על אותן שיחות, או כאשר ברצונך לשתף הערות בין מספר דפים.
 
 #### topBarTarget
 
-שולט בתצוגת הסרגל העליון שמראה את מספר המשתמשים ומספר הדיונים. הגדר כ-`null` כדי להשבית את הסרגל העליון לחלוטין, או ספק אלמנט DOM כדי להציג אותו במיקום ספציפי.
+שולט בתצוגה של הסרגל העליון המציג את מספר המשתמשים ומספר הדיונים. הגדר ל-`null` כדי להשבית את הסרגל העליון לחלוטין, או ספק אלמנט DOM כדי להציג אותו במיקום ספציפי.
 
-[inline-code-attrs-start title = "דוגמת תצורה"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = "דוגמת הגדרה"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// השבתת סרגל עליון
+// Disable top bar
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
     topBarTarget: null
 });
 
-// הצג את הסרגל העליון במיקום מותאם אישית
+// Render top bar in custom location
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
     topBarTarget: document.getElementById('custom-header')
@@ -52,9 +52,9 @@ FastCommentsCollabChat(element, {
 
 #### hasDarkBackground
 
-הפעל סגנון מצב כהה כשלעמוד שלך יש רקע כהה. זיהוי זה אוטומטי, אך ייתכן שתרצה לעקוף אותו.
+הפעל עיצוב מצב כהה כאשר לדף שלך יש רקע כהה. הזיהוי הזה אוטומטי, אך ייתכן שתרצה לדרוס אותו.
 
-[inline-code-attrs-start title = "דוגמת תצורה"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = "דוגמת הגדרה"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
@@ -64,9 +64,9 @@ FastCommentsCollabChat(element, {
 
 #### commentCountUpdated
 
-פונקציית החזרה שמופעלת בכל פעם שמספר התגובות משתנה. זה שימושי לעדכון רכיבים בממשק המשתמש כמו סיכות או כותרות עמוד.
+פונקציית callback שמופעלת בכל פעם שמספר התגובות משתנה. זה שימושי לעדכון אלמנטים בממשק המשתמש כמו תגים או כותרות דף.
 
-[inline-code-attrs-start title = "דוגמת תצורה"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = "דוגמת הגדרה"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
@@ -77,19 +77,19 @@ FastCommentsCollabChat(element, {
 });
 [inline-code-end]
 
-### אפשרויות תצורה שנירשו
+### אפשרויות הגדרה שהתקבלו בירושה
 
-מכיוון ש-Collab Chat מרחיב את ווידג'ט התגובות הסטנדרטי, ניתן להשתמש בכל אפשרות תצורה מהווידג'ט הבסיסי של FastComments. הנה כמה אפשרויות נפוצות:
+מכיוון ש-Collab Chat מרחיב את ווידג'ט התגובות הרגיל, ניתן להשתמש בכל אפשרות הגדרה מהווידג'ט הבסיסי של FastComments. הנה כמה אפשרויות בשימוש נפוץ:
 
 #### locale
 
-קבע את שפת ממשק הווידג'ט. FastComments תומך בעשרות שפות.
+הגדר את שפת ממשק הווידג'ט. FastComments תומך בעשרות שפות.
 
-[inline-code-attrs-start title = "דוגמת תצורה"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = "דוגמת הגדרה"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
-    locale: 'es'  // ספרדית
+    locale: 'es'  // Spanish
 });
 [inline-code-end]
 
@@ -97,7 +97,7 @@ FastCommentsCollabChat(element, {
 
 הפוך את כל השיחות לקריאה בלבד. משתמשים יכולים לצפות בהערות קיימות אך לא יכולים ליצור חדשות או להגיב.
 
-[inline-code-attrs-start title = "דוגמת תצורה"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = "דוגמת הגדרה"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
@@ -109,41 +109,41 @@ FastCommentsCollabChat(element, {
 
 שלב עם מערכת האימות שלך באמצעות Single Sign-On.
 
-[inline-code-attrs-start title = "דוגמת תצורה"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = "דוגמת הגדרה"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
     sso: {
-        // תצורת SSO
+        // SSO configuration
     }
 });
 [inline-code-end]
 
-עיין בתיעוד SSO לפרטים מלאים על אפשרויות האימות.
+ראה את תיעוד ה-SSO לפרטים מלאים על אפשרויות האימות.
 
 #### maxReplyDepth
 
-שלוט כמה רמות עומק תגובות יכולות להיות. כברירת מחדל, Collab Chat מגדיר זאת כ-0, כלומר כל התגובות שטוחות (ללא תגובות מקוננות). ניתן לשנות זאת אם ברצונך לשוחח בשרשור תגובות.
+שלוט בכמה רמות עומק תגובות יכולות להגיע. כברירת מחדל, Collab Chat מגדיר זאת ל-0, כלומר כל התגובות שטוחות (ללא תגובות מקוננות). ניתן לשנות זאת אם ברצונך בשיחות משורשרות.
 
-[inline-code-attrs-start title = "דוגמת תצורה"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = "דוגמת הגדרה"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
-    maxReplyDepth: 3  // אפשר 3 רמות קינון
+    maxReplyDepth: 3  // Allow 3 levels of nesting
 });
 [inline-code-end]
 
-### תצורה פנימית
+### הגדרה פנימית
 
-אופציות אלה מוגדרות אוטומטית על ידי Collab Chat ולא יש להן לעקוף אותן:
+אפשרויות אלו מוגדרות אוטומטית על ידי Collab Chat ואין לדרוס אותן:
 
-ה-`productId` מוגדר אוטומטית ל-`3` עבור Collab Chat. התוסף `floating-chat` נטען אוטומטית כדי לספק את פונקציונליות חלון הצ'אט. הווידג'ט מזהה אוטומטית מכשירי מובייל (מסכים ברוחב פחות מ-768px) ומתאים את הממשק בהתאם.
+ה-`productId` מוגדר אוטומטית ל-`3` עבור Collab Chat. הרחבת ה-`floating-chat` נטענת אוטומטית כדי לספק את פונקציונליות חלון הצ'אט. הווידג'ט מזהה אוטומטית מכשירים ניידים (מסכים ברוחב פחות מ-768px) ומתאים את ממשק המשתמש בהתאם.
 
 ### דוגמה מלאה
 
-הנה דוגמה המציגה מספר אפשרויות תצורה יחד:
+הנה דוגמה המציגה מספר אפשרויות הגדרה יחד:
 
-[inline-code-attrs-start title = "דוגמת תצורה"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = "דוגמת הגדרה"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(document.getElementById('article'), {
     tenantId: 'demo',
@@ -155,10 +155,10 @@ FastCommentsCollabChat(document.getElementById('article'), {
         document.title = count > 0 ? `(${count}) My Article` : 'My Article';
     },
     sso: {
-        // תצורת SSO שלך
+        // Your SSO config
     },
     maxReplyDepth: 1
 });
 [inline-code-end]
 
-למידע מלא על כל אפשרויות התצורה הזמינות שנירשות מהווידג'ט הבסיסי, עיין בתיעוד התצורה הראשי של FastComments.
+לרשימה מלאה של כל אפשרויות ההגדרה הזמינות שהתקבלו בירושה מהווידג'ט הבסיסי, ראה את תיעוד ההגדרה הראשי של FastComments.

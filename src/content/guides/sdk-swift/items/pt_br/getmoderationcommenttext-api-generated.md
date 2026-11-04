@@ -32,5 +32,3 @@ ModerationAPI.getModerationCommentText(tenantId: tenantId, commentId: commentId,
     }
 }
 [inline-code-end]
-
----

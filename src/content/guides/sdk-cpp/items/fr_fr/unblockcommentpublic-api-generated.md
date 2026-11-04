@@ -1,4 +1,3 @@
----
 ## Paramètres
 
 | Nom | Type | Obligatoire | Description |
@@ -25,5 +24,3 @@ api->unBlockCommentPublic(
     boost::optional<utility::string_t>(U("sso-token-abc"))  
 ).then([](std::shared_ptr<UnblockSuccess> result){ });
 [inline-code-end]
-
----

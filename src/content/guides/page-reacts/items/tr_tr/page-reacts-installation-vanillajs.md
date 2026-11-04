@@ -1,4 +1,3 @@
----
 Sayfa Tepkileri için iki şeye karar vermemiz gerekiyor:
 
 - Hangi tepki görüntülerinin kullanılacağı.
@@ -32,5 +31,3 @@ Sayfa Tepkileri için iki şeye karar vermemiz gerekiyor:
 [inline-code-end]
 
 React, Angular ve benzeri ön uç kütüphaneleri için yapılandırma aynıdır.
-
----

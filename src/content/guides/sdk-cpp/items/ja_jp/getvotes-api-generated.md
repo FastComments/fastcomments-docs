@@ -26,5 +26,3 @@ api->getVotes(tenantId, urlId).then([=](pplx::task<std::shared_ptr<GetVotesRespo
     }
 });
 [inline-code-end]
-
----

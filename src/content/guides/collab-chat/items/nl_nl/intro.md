@@ -8,5 +8,3 @@ Let op dat deze docs specifiek zijn voor de **Collab Chat** functionaliteit. U k
 thread-per-page, **zonder gebruik te maken van collab chat**. FastComments also does not charge per-page or per-thread. Collab Chat is specifiek wanneer u gebruikers wilt toestaan tekst te selecteren en te reageren op het gemarkeerde tekstgedeelte.
 
 U kunt [een voorbeeld hier](https://fastcomments.com/product/collab-chat) bekijken.
-
----

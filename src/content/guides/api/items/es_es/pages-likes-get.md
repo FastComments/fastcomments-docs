@@ -1,21 +1,21 @@
 [api-resource-header-start name = 'Page Likes'; route = 'GET /api/v1/pages/likes'; creditsCost = 1; api-resource-header-end]
 
-Devuelve el número de likes en una página, y opcionalmente los usuarios que le dieron like, los más recientes primero. Esta es la versión del lado del servidor de [`GET /page-reacts/v1/likes/:tenantId`](/guide-api.html#page-likes-get).
+Devuelve el número de likes en una página y, opcionalmente, los usuarios que dieron like, los más recientes primero. Esta es la versión del lado del servidor de [`GET /page-reacts/v1/likes/:tenantId`](/guide-api.html#page-likes-get).
 
 `includeUserInfo` controla qué usuarios se devuelven:
 
-- `public` omite a los usuarios que han hecho privada su actividad de perfil.
-- `include-private` los incluye. Úselo solo cuando la lista no se muestre al público.
+- `public` omite a los usuarios que han hecho privada la actividad de su perfil.
+- `include-private` los incluye. Utilice esta opción solo cuando la lista no se muestre al público.
 
-Los usuarios anónimos nunca se incluyen, y se buscan hasta 100 likes. Las páginas que no existen devuelven un `likeCount` de `0` y una lista `users` vacía.
+Los usuarios anónimos nunca se incluyen y se consultan hasta 100 likes. Las páginas que no existen devuelven un `likeCount` de `0` y una lista `users` vacía.
 
-[inline-code-attrs-start title = 'Ejemplo cURL de Page Likes'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo de cURL de Page Likes'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/pages/likes?tenantId=demo&API_KEY=DEMO_API_SECRET&urlId=example-id-or-url&includeUserInfo=public'
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Estructura de la Solicitud de Page Likes'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Estructura de la solicitud de Page Likes'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface PageLikesRequestQueryParams {
     tenantId: string
@@ -26,7 +26,7 @@ interface PageLikesRequestQueryParams {
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Estructura de la Respuesta de Page Likes'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Estructura de la respuesta de Page Likes'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface PageLikesResponse {
     status: 'success' | 'failed'
@@ -47,6 +47,6 @@ interface PageReactUser {
 }
 [inline-code-end]
 
-#### Helpful Tip
+#### Consejo útil
 
 Recuerde codificar en URI valores como el `urlId`.

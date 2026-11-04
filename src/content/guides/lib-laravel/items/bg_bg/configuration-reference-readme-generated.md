@@ -8,4 +8,3 @@
 | `sso.login_url` | `FASTCOMMENTS_SSO_LOGIN_URL` | `null` | URL за вход (в противен случай използва маршрута на Laravel) |
 | `sso.logout_url` | `FASTCOMMENTS_SSO_LOGOUT_URL` | `null` | URL за изход (в противен случай използва маршрута на Laravel) |
 | `widget_defaults` | — | `[]` | Опции за конфигурация на widget по подразбиране |
----

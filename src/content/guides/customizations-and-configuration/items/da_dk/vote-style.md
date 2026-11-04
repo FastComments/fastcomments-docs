@@ -13,5 +13,3 @@ Vi anbefaler kraftigt, at du gør dette uden kode, da det også aktiverer server
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.vote-style'; selector = '.vote-style'; alt='Afstemningsstil-indstilling på widget‑tilpasningssiden, der tilbyder op- og ned-pile eller hjerteafstemning'; title='Skift afstemningsstil' app-screenshot-end]
 
 Afstemning kan også deaktiveres, se `Disable Voting` over stilindstillingerne.
-
----

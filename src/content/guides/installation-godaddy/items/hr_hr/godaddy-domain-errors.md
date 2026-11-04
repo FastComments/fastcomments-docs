@@ -1,4 +1,3 @@
----
 Možda ćete dobiti grešku autorizacije, poput sljedeće:
 
 <div class="screenshot white-bg">
@@ -11,5 +10,3 @@ To je zato što FastComments ne zna da treba dopustiti korištenje vašeg račun
 U tom slučaju, rješenje je jednostavno. Morate samo dodati svoju stranicu u svoj FastComments.com račun.
 
 [Idite ovdje da dodate svoju stranicu u svoj račun.](https://fastcomments.com/auth/my-account/configure-domains)
-
----

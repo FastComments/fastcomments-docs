@@ -1,4 +1,3 @@
----
 ページの通知を有効または無効にします。ユーザーがページを購読している場合、通知が作成され  
 新しいルートコメントのため、そしてまた
 
@@ -33,5 +32,3 @@ api->updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitl
         // process resp if needed
     });
 [inline-code-end]
-
----

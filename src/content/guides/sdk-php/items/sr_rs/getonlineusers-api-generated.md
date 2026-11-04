@@ -44,5 +44,3 @@ try {
     echo 'Exception when calling PublicApi->getOnlineUsers: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

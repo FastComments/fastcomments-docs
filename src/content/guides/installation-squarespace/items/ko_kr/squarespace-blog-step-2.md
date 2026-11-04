@@ -6,10 +6,10 @@
 <div id="fastcomments-widget"></div>
 <script>
     (function () {
-        const tenantId = 'demo'; // 귀하의 계정 ID
+        const tenantId = 'demo'; // your account id
 
         function tryLoad() {
-            // 다양한 레이아웃에서 로드 시도
+            // try to load for different layouts
             let targetDiv = document.querySelector('.blog-item-comments-content');
             if (!targetDiv) {
                 targetDiv = document.getElementById('fastcomments-widget');
@@ -25,11 +25,9 @@
 
 [inline-code-end]
 
-...then paste in the code area and click save:
+...그런 다음 코드 영역에 붙여넣고 저장을 클릭하세요:
 
 <div class="screenshot white-bg">
-    <div class="title">붙여넣고 저장</div>
-    <img class="screenshot-image" src="/images/installation-guides/squarespace-step-2-1-add-code-and-save.png" alt="붙여넣고 저장" />
+    <div class="title">붙여넣기 및 저장</div>
+    <img class="screenshot-image" src="/images/installation-guides/squarespace-step-2-1-add-code-and-save.png" alt="붙여넣기 및 저장" />
 </div>
-
----

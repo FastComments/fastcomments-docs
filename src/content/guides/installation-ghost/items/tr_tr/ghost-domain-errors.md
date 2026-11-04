@@ -10,5 +10,3 @@ Bunun nedeni, FastComments'ın hesabınızın bu etki alanında kullanılmasına
 Bu durumda çözüm basit. Sitenizi FastComments.com hesabınıza eklemeniz yeterlidir.
 
 [Sitenizi hesabınıza eklemek için buraya gidin.](https://fastcomments.com/auth/my-account/configure-domains)
-
----

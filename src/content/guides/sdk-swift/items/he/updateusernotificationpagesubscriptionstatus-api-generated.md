@@ -1,4 +1,3 @@
----
 הפעל או השבת התראות עבור עמוד. כאשר משתמשים מנויים לעמוד, נוצרות התראות
 להערות שורש חדשות, וגם
 
@@ -42,5 +41,3 @@ PublicAPI.updateUserNotificationPageSubscriptionStatus(tenantId: tenantId, urlId
     }
 }
 [inline-code-end]
-
----

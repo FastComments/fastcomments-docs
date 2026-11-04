@@ -1,22 +1,22 @@
-Queues a batch job that moves comments, pages and related records from one urlId or domain to another.  
-"urlId"-Migrationen passen nur exakt zur urlId. "domain"-Migrationen suchen/ersetzen den Wert in jeder urlId und URL.  
-Abfrage GET /api/v1/batch-jobs/{batchJobId}: Sobald sie abgeschlossen ist, enthält sie Ergebnisse pro Migration und eine undoId.
+Stellt einen Batch-Job in die Warteschlange, der Kommentare, Seiten und zugehörige Datensätze von einer urlId oder Domain auf eine andere verschiebt.
+"urlId"-Migrationen matchen nur die exakte urlId. "domain"-Migrationen suchen und ersetzen den Wert in jeder urlId und url.
+Abfrage von GET /api/v1/batch-jobs/{batchJobId}: Sobald er abgeschlossen ist, enthält er die Ergebnisse der einzelnen Migrationen und eine undoId.
 
 ## Parameter
 
-| Name | Type | Location | Required | Description |
+| Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 
 ## Antwort
 
-Rückgabe: [`QueuePageMigrationJobAPIResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/QueuePageMigrationJobAPIResponse.java)
+Gibt zurück: [`QueuePageMigrationJobAPIResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/QueuePageMigrationJobAPIResponse.java)
 
 ## Beispiel
 
-[inline-code-attrs-start title = 'Beispiel für migratePages'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'migratePages Beispiel'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Klassen importieren:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -29,10 +29,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // API-Schlüssel-Authentifizierung konfigurieren: api_key
+    // Configure API key authorization: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Entfernen Sie das Auskommentieren der folgenden Zeile, um ein Präfix für den API-Schlüssel festzulegen, z. B. "Token" (Standardwert ist null)
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);

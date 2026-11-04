@@ -1,4 +1,3 @@
----
 ## Parameters
 
 | Назив | Тип | Локација | Обавезно | Опис |
@@ -34,5 +33,3 @@ DefaultAPI.updateNotification(tenantId: tenantId, id: id, updateNotificationBody
     }
 }
 [inline-code-end]
-
----

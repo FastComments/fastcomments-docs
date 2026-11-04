@@ -36,5 +36,3 @@ In alto a destra seleziona `Advanced`:
     <div class="title">Scarica Tema</div>
     <img class="screenshot-image" src="/images/installation-guides/ghost-step-1-5-download.png" alt="Scarica Tema" />
 </div>
-
----

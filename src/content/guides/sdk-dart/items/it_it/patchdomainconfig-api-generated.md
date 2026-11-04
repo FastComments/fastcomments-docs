@@ -31,5 +31,3 @@ try {
     print('Exception when calling DefaultApi->patchDomainConfig: $e\n');
 }
 [inline-code-end]
-
----

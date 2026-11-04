@@ -1,16 +1,16 @@
-Add this line to your application's Gemfile:
+Dodajte ovu liniju u Gemfile svoje aplikacije:
 
 ```ruby
 gem 'fastcomments'
 ```
 
-And then execute:
+Zatim izvršite:
 
 ```bash
 bundle install
 ```
 
-Or install it yourself as:
+Ili je instalirajte sami pomoću:
 
 ```bash
 gem install fastcomments
@@ -18,13 +18,13 @@ gem install fastcomments
 
 ### Sadržaj biblioteke
 
-This library contains the generated API client and the SSO utilities to make working with the API easier.
+Ova biblioteka sadrži generirani API klijent i SSO uslužne programe koji olakšavaju rad s API-jem.
 
-- [Dokumentacija biblioteke API klijenta](https://github.com/FastComments/fastcomments-ruby/blob/master/client/README.md)
+- [Dokumentacija API klijentske biblioteke](https://github.com/FastComments/fastcomments-ruby/blob/master/client/README.md)
 
-### Javni vs zaštićeni API-ji
+### Javni naspram osiguranih API-ja
 
-For the API client, there are three classes, `DefaultApi`, `PublicApi`, and `ModerationApi`. The `DefaultApi` contains methods that require your API key, and `PublicApi` contains api calls
-that can be made directly from a browser/mobile device/etc without authentication. The `ModerationApi` contains the methods that power the moderator dashboard.
+Za API klijent postoje tri klase: `DefaultApi`, `PublicApi` i `ModerationApi`. `DefaultApi` sadrži metode koje zahtijevaju vaš API ključ, a `PublicApi` sadrži API pozive
+koji se mogu izvršavati izravno iz preglednika/mobilnog uređaja itd. bez autentifikacije. `ModerationApi` sadrži metode koje pokreću moderatorsku ploču.
 
-The `ModerationApi` provides an extensive suite of live and fast moderation APIs. Every `ModerationApi` method accepts an `sso` parameter and can authenticate via SSO or a FastComments.com session cookie.
+`ModerationApi` pruža opsežan skup API-ja za moderiranje u stvarnom vremenu. Svaka metoda `ModerationApi` prihvaća `sso` parametar i može se autentificirati putem SSO-a ili kolačića sesije FastComments.com.

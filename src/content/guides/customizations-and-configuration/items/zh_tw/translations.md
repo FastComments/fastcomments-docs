@@ -1,4 +1,3 @@
----
 [related-parameter-start name = 'translations'; type = 'Record<string, string>'; related-parameter-end]
 
 使用 FastComments 時，評論小工具中的所有文字皆可自訂。

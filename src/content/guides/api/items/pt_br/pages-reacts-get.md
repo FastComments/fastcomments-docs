@@ -53,5 +53,3 @@ interface PageCustomReactUser {
 #### Dica Útil
 
 Lembre-se de codificar em URI valores como o `urlId`.
-
----

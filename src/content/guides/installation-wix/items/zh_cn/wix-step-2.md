@@ -1,4 +1,3 @@
----
 然后，我们转到 `Add -> Embed Code -> Embed HTML`。
 
 <div class="screenshot white-bg">
@@ -12,5 +11,3 @@
     <div class="title">起始区块</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-1-sad.png" alt="起始区块" />
 </div>
-
----

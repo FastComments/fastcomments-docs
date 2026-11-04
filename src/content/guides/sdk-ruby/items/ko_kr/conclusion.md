@@ -8,5 +8,3 @@ Ruby SDK에 문제가 발생하거나 질문이 있는 경우, 다음을 이용�
 ## 기여
 
 기여를 환영합니다! 기여 지침은 [GitHub 저장소](https://github.com/FastComments/fastcomments-ruby)를 방문해 주세요.
-
----

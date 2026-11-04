@@ -1,4 +1,3 @@
----
 Comentarios recientes en el formato exacto que usan las entregas de webhook, para crear integraciones (por ejemplo datos de muestra de Zapier). Cada evento entrega el mismo objeto de comentario, por lo que `event` solo tiene que ser válido.
 
 ## Parámetros
@@ -35,5 +34,3 @@ DefaultAPI.getWebhookSamplePayloads(tenantId: tenantId, options: DefaultAPI.GetW
     }
 }
 [inline-code-end]
-
----

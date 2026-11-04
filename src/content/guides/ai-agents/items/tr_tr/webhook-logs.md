@@ -1,55 +1,55 @@
-Her bir ajan webhook'unun kendi teslimat günlüğü vardır. Webhook satırındaki **Logs** düğmesi aracılığıyla [webhook list page](https://fastcomments.com/auth/my-account/ai-agents/webhooks) üzerinden erişilebilir.
+Her agent webhook'unun kendi teslimat günlüğü vardır. [webhook liste sayfasından](https://fastcomments.com/auth/my-account/ai-agents/webhooks) her webhook satırındaki **Logs** düğmesi üzerinden erişilebilir.
 
-### What's on the page
+### Sayfada neler var
 
-Sayfalı bir tablo; her teslimat denemesi için bir satır:
+Her teslimat denemesi için bir satır içeren sayfalandırılmış bir tablo:
 
-| Column | Meaning |
+| Sütun | Anlamı |
 |---|---|
-| When | When the attempt happened. |
-| Event | The event type (`trigger.succeeded`, `approval.requested`, etc.). |
-| Status | The delivery status. |
-| StatusCode | HTTP status code returned by your endpoint, when available. |
-| Description | A short description of the outcome. For failed deliveries where no HTTP response was received, the underlying error message is stored as `{error: <message>}`. |
+| When | Denemenin gerçekleştiği zaman. |
+| Event | Olay türü (`trigger.succeeded`, `approval.requested` vb.). |
+| Status | Teslimat durumu. |
+| StatusCode | Uç noktanızın döndürdüğü HTTP durum kodu (varsa). |
+| Description | Sonucun kısa açıklaması. HTTP yanıtı alınmayan başarısız teslimatlarda, altta yatan hata mesajı `{error: <message>}` olarak saklanır. |
 
-Sayfa yalnızca sayfalandırmayı destekler - durum, olay türü veya tarih aralığı filtreleri yoktur.
+Sayfa yalnızca sayfalandırmayı destekler - durum, olay türü veya tarih aralığı filtresi yoktur.
 
-### What you can do from logs
+### Günlüklerden neler yapabilirsiniz
 
-- **Decide whether a status code should be in No-retry.** Eğer uç noktanızın aynı `4xx` hatayı defalarca döndürdüğünü görüyorsanız, platformun yeniden denemeyi durdurması için bunu **No-retry status codes** listesine eklemek istediğinize dair güçlü bir işarettir.
+- **Bir durum kodunun No-retry'da olup olmayacağına karar verin.** Uç noktanızın aynı `4xx` kodunu tekrar tekrar döndürdüğünü görüyorsanız, bu, platformun yeniden denemeyi durdurması için onu **No-retry status codes** listesine eklemek istediğinizin güçlü bir işaretidir.
 
-### Failure information
+### Hata bilgileri
 
-Bir teslimat HTTP yanıtı olmadan başarısız olduğunda (DNS hatası, bağlantı reddedildi, zaman aşımı, TLS hatası vb.), ham hata mesajı `{error: <message>}` olarak kaydedilir. Platform bunları `TIMEOUT` veya `DNS_ERROR` gibi adlandırılmış kategorilere ayırmaz — ne olduğunu görmek için hata mesajını doğrudan okuyun.
+Bir teslimat HTTP yanıtı olmadan başarısız olduğunda (DNS hatası, bağlantı reddedildi, zaman aşımı, TLS hatası vb.), ham hata mesajı `{error: <message>}` olarak kaydedilir. Platform bunları `TIMEOUT` veya `DNS_ERROR` gibi adlandırılmış kategorilere ayırmaz - ne olduğunu görmek için hata mesajını doğrudan okuyun.
 
-HTTP yanıtları için StatusCode sütunu uç noktanızın döndürdüğü kodu gösterir. Yaygın durumlar:
+HTTP yanıtları için StatusCode sütunu, uç noktanızın döndürdüğü kodu gösterir. Yaygın durumlar:
 
-- **All attempts: `401` or `403`** - uç noktanız imzayı reddediyor. HMAC'i `${timestamp}.${body}` üzerinde hesapladığınızdan ve doğru sırrı kullandığınızdan emin olun. Bkz. [Webhook Signing](#webhook-signing).
-- **All attempts: `422`** - uç noktanız yükü geçersiz olarak değerlendiriyor. Ya uç noktanızı düzeltin, ya da reddin belirli etkinlikler için beklenen bir durumsa `422`'yi **No-retry status codes** listesine ekleyin.
+- **Tüm denemeler: `401` veya `403`** - uç noktanız imzayı reddediyor. HMAC'i `${timestamp}.${body}` üzerinde hesapladığınızdan ve doğru gizli anahtarı kullandığınızdan emin olun. Bkz. [Webhook Signing](#webhook-signing).
+- **Tüm denemeler: `422`** - uç noktanız yükün geçersiz olduğunu düşünüyor. Ya uç noktanızı düzeltin ya da reddetme bazı olaylar için bekleniyorsa `422` kodunu **No-retry status codes** listesine ekleyin.
 
-### Per-delivery context
+### Teslimat başına bağlam
 
 Her günlük girdisi şunları taşır:
 
 - `webhookId` - bu teslimatı üreten webhook yapılandırması.
-- `agentId` - teslimatın ilgili olduğu ajan.
-- `triggerId` or `approvalId` - ilgili kayıt.
+- `agentId` - teslimatın ilgili olduğu agent.
+- `triggerId` veya `approvalId` - altta yatan kayıt.
 - `domain` - eşleşen alan adı.
 
-Bunları, başarısız bir teslimatı [Run History](#run-history) içindeki ilgili çalıştırma ile ilişkilendirmek için kullanabilirsiniz.
+Başarısız bir teslimatı, [Run History](#run-history) bölümündeki ilgili çalışmayla ilişkilendirmek için bunları kullanabilirsiniz.
 
-### Retention
+### Saklama
 
-`AgentSyncLog` girdilerinin `createdAt` üzerinde düz 1 yıllık bir saklama süresi (TTL) vardır; sonuç ne olursa olsun başarılı ve başarısız teslimatlar aynı süre boyunca saklanır. Saklama süresi sonrasında günlük girdisi silinir.
+`AgentSyncLog` girdileri, sonuçtan bağımsız olarak `createdAt` üzerinde düz bir 1 yıllık TTL'ye sahiptir - başarılı ve başarısız teslimatlar aynı süre boyunca saklanır. Saklama süresinin ötesinde, günlük girdisi silinir.
 
-Uzun vadeli denetim gerekiyorsa sürdürülebilir desen şudur: teslimatları alan **endpoint'in kendisi** bu teslimatları saklasın. Bu, denetim günlüğünüzü platformun saklama politikasıyla decouple eder.
+Uzun vadeli denetime ihtiyacınız varsa, sürdürülebilir kalıp şudur: **uç noktanın kendisi** aldığı teslimatları kalıcı olarak saklasın. Bu, denetim günlüğünüzü platformun saklama politikasından ayırır.
 
-### Test send
+### Test gönderimi
 
-Webhook yapılandırma formundaki **Test send** düğmesi, gerçek etkinliklere güvenmeden önce bağlantıyı uçtan uca doğrulayabilmeniz için aynı günlük tablosuna sahte bir teslimat yazar. Test teslimatları günlükte açıkça işaretlenir, böylece üretim hata istatistiklerini kirletmezler.
+Webhook yapılandırma formundaki **Test send** düğmesi, gerçek olaylara güvenmeden önce bağlantıyı uçtan uca doğrulayabilmeniz için aynı günlük tablosuna sahte bir teslimat yazar. Test teslimatları, üretim hata istatistiklerini kirletmemeleri için günlükte açıkça etiketlenir.
 
-### See also
+### Ayrıca bkz.
 
 - [Webhooks Overview](#webhooks-overview).
-- [Webhook Retries](#webhook-retries) for the retry semantics that drive these logs.
-- [Webhook Signing](#webhook-signing) for how to verify on your endpoint.
+- Bu günlükleri yönlendiren yeniden deneme semantiği için [Webhook Retries](#webhook-retries).
+- Uç noktanızda nasıl doğrulama yapılacağı için [Webhook Signing](#webhook-signing).

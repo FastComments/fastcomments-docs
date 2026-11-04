@@ -17,5 +17,3 @@ let (moderatorRes, httpResp) = client.createModerator(tenantId = "my-tenant-123"
 if moderatorRes.isSome:
   let moderator = moderatorRes.get()
 [inline-code-end]
-
----

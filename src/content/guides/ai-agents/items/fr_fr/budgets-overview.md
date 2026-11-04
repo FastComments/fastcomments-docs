@@ -1,4 +1,3 @@
----
 Chaque agent a des plafonds de dépenses. La plateforme cesse d'exécuter l'agent lorsqu'un plafond est atteint et reprend une fois la période réinitialisée.
 
 ### Deux périmètres, deux périodes
@@ -61,5 +60,3 @@ Quelques règles empiriques :
 - [Alertes de budget](#budget-alerts) pour les notifications par e-mail.
 - [Modèle de coûts](#cost-model) pour la manière dont la plateforme convertit les tokens en dollars.
 - [Raisons d'abandon](#drop-reasons) pour la liste complète des raisons pour lesquelles un déclencheur ne s'exécute pas.
-
----

@@ -14,5 +14,3 @@ Wenn ein Benutzer versucht, auf eine Seite zuzugreifen, auf die er keinen Zugrif
 </div>
 
 Der Meldungstext kann angepasst werden.
-
----

@@ -1,4 +1,3 @@
----
 ## パラメータ
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
@@ -30,5 +29,3 @@ try {
     print('Exception when calling DefaultApi->createTenantUser: $e\n');
 }
 [inline-code-end]
-
----

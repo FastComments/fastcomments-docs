@@ -90,5 +90,3 @@ For bedste resultat, sørg for at dine tilpassede skrifttyper er indlæst, før 
 De firkantede markører har et subtilt visuelt design, der gør dem bemærkelsesværdige uden at overvælde billedet. Du kan tilpasse deres udseende med CSS, hvis du ønsker en anden visuel behandling.
 
 Markørerne inkluderer hover-tilstande, der giver feedback, når brugere bevæger musen over dem. På touch-enheder giver trykinteraktionen øjeblikkelig feedback ved at åbne chatvinduet.
-
----

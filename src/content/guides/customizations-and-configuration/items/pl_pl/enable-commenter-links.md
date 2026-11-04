@@ -1,4 +1,3 @@
----
 [related-parameter-start name = 'enableCommenterLinks'; type = 'boolean'; related-parameter-end]
 
 Domyślnie FastComments poprosi użytkownika jedynie o komentarz, nazwę użytkownika i adres e‑mail.
@@ -14,5 +13,3 @@ Gdy podany zostanie ten adres URL, konto użytkownika zostanie zaktualizowane, a
 Można to dostosować bez kodu, na stronie dostosowywania widgetu:
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.click-to-show-comments', '.commenter-links']; selector = '.commenter-links'; alt='Strona dostosowywania widgetu z zaznaczonym polem wyboru linków komentującego, aby dodać pole adresu URL strony internetowej do formularza komentarza'; title='Włączanie linków komentującego' app-screenshot-end]
-
----

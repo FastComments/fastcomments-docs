@@ -1,4 +1,3 @@
----
 Ankete omogućavaju komentatorima da prikače pitanje sa 2 do 10 opcija uz komentar. Svi na stranici glasaju na mestu i vide kako se rezultati ažuriraju u realnom vremenu.
 
 Ankete su podrazumevano isključene. Označite **Enable Polls** u podešavanjima prilagođavanja widgeta da biste dodali dugme za anketu u alatnoj traci komentara. Zatim se pojavljuju još dve postavke:

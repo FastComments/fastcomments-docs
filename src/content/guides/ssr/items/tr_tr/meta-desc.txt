@@ -1,3 +1,1 @@
----
 Render yorumları başlangıç HTML'nize, böylece tarayıcılar ve yavaş bağlantılar onları hemen görür. FastComments'un desteklediği şeyler ve SSR'ı nasıl açacağınız.
----

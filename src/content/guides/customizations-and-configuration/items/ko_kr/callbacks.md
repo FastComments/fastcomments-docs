@@ -1,4 +1,3 @@
----
 댓글 위젯용 모든 라이브러리(현재 Angular, React, Vue)는 콜백을 지원합니다.
 
 콜백은 구성 객체(configuration object)에 지정되며, 각 라이브러리에서 동일한 시그니처를 가집니다.
@@ -71,6 +70,3 @@
     }];
 </script>
 [inline-code-end]
-
-
----

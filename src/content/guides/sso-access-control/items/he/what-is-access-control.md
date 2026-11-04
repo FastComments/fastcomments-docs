@@ -1,25 +1,25 @@
-With FastComments SSO Access Control, sometimes referred to as RBAC, users can be restricted to only access certain pages, or comment threads. Additionally,
-users can only `@mention` each other in the same group.
+עם FastComments SSO Access Control, המכונה לפעמים גם RBAC, ניתן להגביל משתמשים כך שיגשו רק לדפים מסוימים או לשרשורי תגובות מסוימים. בנוסף,
+משתמשים יכולים לבצע `@mention` רק זה לזה באותה קבוצה.
 
 ## בפירוט
 
-We can place `Users` and optionally `Pages` into groups.
+אנו יכולים למקם `Users` ובאופן אופציונלי `Pages` לתוך קבוצות.
 
-When `Users` are placed into groups, and `Limit Comments by SSO User Groups` is enabled in Widget Settings, then users
-will only see comments from users in their same groups and will only be able to `@mention` users in the same groups.
+כאשר `Users` ממוקמים בקבוצות, והאפשרות `Limit Comments by SSO User Groups` מופעלת בהגדרות הווידג'ט, משתמשים
+יראו רק תגובות ממשתמשים באותן קבוצות שלהם ויוכלו לבצע `@mention` רק למשתמשים באותן קבוצות.
 
-Additionally, `Pages` can be placed into groups, and then users can only access comments for pages they have access to.
+בנוסף, ניתן למקם `Pages` לתוך קבוצות, ואז משתמשים יוכלו לגשת רק לתגובות של דפים שיש להם גישה אליהם.
 
-We call this "קבוצות ברמת משתמש" verses "קבוצות ברמת דף".
+אנו מכנים זאת קבוצות ברמת "משתמש" ("User-Level") לעומת קבוצות ברמת "דף" ("Page-Level").
 
-So which one is right for you?
+אז איזה מהם מתאים לכם?
 
 #### השתמשו בקבוצות ברמת משתמש אם...
 
-- אתם רוצים להשתמש בערך ה-`urlId` זהה (כתובת הדף, או מזהה המאמר), אך להגביל תגובות לפי קבוצה.
-- לדוגמה, אתם רוצים שיהיו קבוצות "משתמש חדש" ו-"משתמש ותיק", והן לא צריכות לראות לעולם את תגובות זו של זו באותם דפים.
+- אתם רוצים להשתמש באותו ערך `urlId` (כתובת URL של דף, או מזהה מאמר), אך להגביל תגובות לפי קבוצה.
+- לדוגמה, אתם רוצים ליצור קבוצות "משתמש חדש" ו"משתמש ותיק", והם לא אמורים לראות את התגובות זה של זה באותם דפים.
 
 #### השתמשו בקבוצות ברמת דף אם...
 
 - לקבוצות שלכם יש דפים ספציפיים.
-- לדוגמה, משתמשים בקבוצה "Public Pages" לא צריכים לעולם לצפות במאמרים של "Top Secret" articles.
+- לדוגמה, משתמשים בקבוצה "דפים ציבוריים" לא אמורים לצפות במאמרים של "Top Secret".

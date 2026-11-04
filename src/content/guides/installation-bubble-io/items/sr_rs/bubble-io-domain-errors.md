@@ -1,4 +1,3 @@
----
 Можда ћете добити грешку ауторизације, као у следећем примеру:
 
 <div class="screenshot white-bg">
@@ -11,4 +10,3 @@
 У овом случају решење је једноставно. Само треба да додате свој сајт у свој FastComments.com налог.
 
 [Idite ovde da dodate svoj sajt u nalog.](https://fastcomments.com/auth/my-account/configure-domains)
----

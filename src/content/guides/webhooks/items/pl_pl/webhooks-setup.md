@@ -1,4 +1,3 @@
----
 Postępuj zgodnie z tymi samymi krokami dla `localhost`, tak jak w środowisku produkcyjnym. Upewnij się, że masz skonfigurowane domeny produkcyjne i sekrety API.
 
 Najpierw przejdź do [Webhooks admin](https://fastcomments.com/auth/my-account/manage-data/webhooks). Jest to dostępne poprzez Zarządzanie danymi -> Webhooks.
@@ -18,5 +17,3 @@ Przed zapisaniem kliknij **Wyślij testowy ładunek**, aby sprawdzić, czy punkt
 Z listy możesz edytować, wyłączyć, ponownie włączyć lub usunąć webhook. Wyłączenie zachowuje oczekujące zdarzenia, aż webhook zostanie ponownie włączony; usunięcie powoduje ich odrzucenie.
 
 Webhooki mogą być również tworzone za pośrednictwem API, na przykład przez Zapier. Pojawiają się na tej samej liście ze źródłem **API**. Zobacz Zarządzanie webhookami za pomocą API.
-
----

@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Име | Тип | Задължително | Описание |
@@ -20,5 +19,3 @@ if deleteRespOpt.isSome:
   discard deleteResp
 discard httpResp
 [inline-code-end]
-
----

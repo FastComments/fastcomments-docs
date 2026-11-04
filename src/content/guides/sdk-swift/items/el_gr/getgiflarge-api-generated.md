@@ -30,5 +30,3 @@ PublicAPI.getGifLarge(tenantId: tenantId, largeInternalURLSanitized: largeIntern
     }
 }
 [inline-code-end]
-
----

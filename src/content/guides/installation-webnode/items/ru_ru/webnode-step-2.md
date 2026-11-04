@@ -1,4 +1,3 @@
----
 Далее определите, где вы хотите добавить комментарии. Наведите курсор на нижнюю часть предыдущей области содержимого и щелкните, чтобы добавить раздел:
 
 <div class="screenshot white-bg">
@@ -14,5 +13,3 @@
     <div class="title">Step Three: Add Code Block</div>
     <img class="screenshot-image" src="/images/installation-guides/webnode-step-3.png" alt="Add HTML Block" />
 </div>
-
----

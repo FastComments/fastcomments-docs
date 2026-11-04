@@ -1,4 +1,3 @@
----
 ## Parameters
 
 | Naam | Type | Locatie | Vereist | Beschrijving |
@@ -35,5 +34,3 @@ try {
     print('Exception when calling DefaultApi->getUserBadgeProgressList: $e\n');
 }
 [inline-code-end]
-
----

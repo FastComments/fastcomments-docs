@@ -1,9 +1,9 @@
-### Simple SSO
+### SSO פשוט
 
 ```ruby
 require 'fastcomments'
 
-# צור אסימון SSO פשוט
+# Create Simple SSO token
 user = FastComments::SSO::SimpleSSOUserData.new(
   user_id: 'user-123',
   email: 'user@example.com',
@@ -15,7 +15,7 @@ token = sso.create_token
 
 puts "SSO Token: #{token}"
 
-# השתמש באסימון SSO כדי לבצע קריאת API מאומתת
+# Use the SSO token to make an authenticated API call
 config = FastCommentsClient::Configuration.new
 api_client = FastCommentsClient::ApiClient.new(config)
 public_api = FastCommentsClient::PublicApi.new(api_client)
@@ -29,12 +29,12 @@ response = public_api.get_comments_public(
 puts "Status: #{response}"
 ```
 
-### Secure SSO
+### SSO מאובטח
 
 ```ruby
 require 'fastcomments'
 
-# צור אסימון SSO מאובטח
+# Create Secure SSO token
 user = FastComments::SSO::SecureSSOUserData.new(
   user_id: 'user-123',
   email: 'user@example.com',
@@ -48,7 +48,7 @@ token = sso.create_token
 
 puts "Secure SSO Token: #{token}"
 
-# השתמש באסימון SSO כדי לבצע קריאת API מאומתת
+# Use the SSO token to make an authenticated API call
 config = FastCommentsClient::Configuration.new
 api_client = FastCommentsClient::ApiClient.new(config)
 public_api = FastCommentsClient::PublicApi.new(api_client)

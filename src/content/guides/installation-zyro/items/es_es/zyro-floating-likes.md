@@ -1,4 +1,3 @@
----
 FastComments también es compatible con el widget Page Reacts (también conocido como botón Me gusta flotante) para Zyro.
 
 ¡Puedes verlo en acción en la esquina inferior derecha de esta página!
@@ -31,5 +30,3 @@ FastComments también es compatible con el widget Page Reacts (también conocido
 4. Selecciona Integraciones.
 5. Añade el nuevo código al *final* del campo `Custom code`, y publica tu sitio.
 6. No verás el widget en el modo de vista previa, pero aparecerá en la versión publicada del sitio.
-
----

@@ -1,4 +1,3 @@
----
 Bir `EmailTemplate` nesnesi, bir kiracı için özel bir e-posta şablonunun yapılandırmasını temsil eder.
 
 Sistem, kullanılacak e-posta şablonunu şu yolla seçer:
@@ -37,5 +36,3 @@ interface EmailTemplate {
 - Geçerli `emailTemplateId` değerlerini `/definitions` uç noktasından alabilirsiniz.
 - `/definitions` uç noktası ayrıca varsayılan çevirileri ve test verilerini içerir.
 - Geçersiz yapı veya test verileri durumunda şablonlar kaydedilemez.
-
----

@@ -47,5 +47,3 @@ Ako se nalazite u EU, trebalo bi da postavite `region` parametar:
 [inline-code-end]
 
 Konfiguraciju koju React Native komponenta podržava možete pronaći <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">ovde</a>.
-
----

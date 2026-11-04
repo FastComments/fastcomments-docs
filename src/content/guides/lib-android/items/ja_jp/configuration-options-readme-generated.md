@@ -1,4 +1,3 @@
----
 SDKは`CommentWidgetConfig`クラスを使って多くの設定オプションを提供します:
 
 | Option | Description |
@@ -15,4 +14,3 @@ SDKは`CommentWidgetConfig`クラスを使って多くの設定オプション�
 | `readonly` | コメントの投稿を無効にするが、コメントは表示する |
 | `disableVoting` | 投票機能を無効にする |
 | `disableLiveCommenting` | リアルタイム更新を無効にする |
----

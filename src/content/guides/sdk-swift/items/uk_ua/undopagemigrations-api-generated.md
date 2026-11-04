@@ -1,10 +1,10 @@
-Queues a batch job that reverses every migration from one migrate-pages job, newest first. Available for 90 days.  
-Records changed since the migration are left alone, so a later edit is never overwritten.  
-Poll GET /api/v1/batch-jobs/{batchJobId} for the restored/skipped counts.
+Створює пакетне завдання, яке скасовує всі міграції одного завдання migrate-pages, починаючи з найновіших. Доступне протягом 90 днів.
+Записи, змінені після міграції, не змінюються, тому пізніше редагування ніколи не буде перезаписано.
+Опитуйте GET /api/v1/batch-jobs/{batchJobId}, щоб отримати кількість відновлених/пропущених записів.
 
-## Parameters
+## Параметри
 
-| Назва | Тип | Розташування | Обов’язково | Опис |
+| Назва | Тип | Розташування | Обов'язковий | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Так |  |
 | undoId | string | path | Так |  |
@@ -15,9 +15,9 @@ Poll GET /api/v1/batch-jobs/{batchJobId} for the restored/skipped counts.
 
 ## Приклад
 
-[inline-code-attrs-start title = 'undoPageMigrations Приклад'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад undoPageMigrations'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Наступні приклади коду все ще у бета-версії. У разі будь-якої проблеми, будь ласка, повідомте за адресою http://github.com/OpenAPITools/openapi-generator/issues/new
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 

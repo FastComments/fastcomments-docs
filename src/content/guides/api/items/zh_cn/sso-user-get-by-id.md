@@ -27,5 +27,3 @@ interface SSOUserByIdResponse {
     user: SSOUser
 }
 [inline-code-end]
-
----

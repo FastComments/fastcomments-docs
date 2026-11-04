@@ -39,5 +39,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Yanıt `ModerationAPI.GetModerationCommentText`'tan: %v\n", resp)
 }
 [inline-code-end]
-
----

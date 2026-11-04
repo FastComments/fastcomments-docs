@@ -1,8 +1,8 @@
 [api-resource-header-start name = 'TenantDailyUsage'; route = 'GET /api/v1/tenant-daily-usage'; creditsCost = 1; api-resource-header-end]
 
-This route allows searching for the usage of a tenant by year, month, and day. Up to 365 objects can be returned, and the cost is 1 api credit per 10 objects.
+Questa rotta consente di cercare l'utilizzo di un tenant per anno, mese e giorno. È possibile restituire fino a 365 oggetti e il costo è di 1 credito API ogni 10 oggetti.
 
-Response objects are sorted by the date they are created (the oldest first).
+Gli oggetti della risposta sono ordinati per data di creazione (dal più vecchio al più recente).
 
 [inline-code-attrs-start title = 'Esempio cURL di ricerca TenantDailyUsage'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -17,9 +17,9 @@ interface TenantDailyUsageQueryParams {
     API_KEY: string
     /** Basato su UTC. **/
     yearNumber?: number
-    /** Indicizzato a partire da zero. Basato su UTC. **/
+    /** A base zero. Basato su UTC. **/
     monthNumber?: number
-    /** Indicizzato a partire da uno. Basato su UTC. **/
+    /** A base uno. Basato su UTC. **/
     dayNumber?: number
 }
 [inline-code-end]
@@ -28,7 +28,7 @@ interface TenantDailyUsageQueryParams {
 [inline-code-start]
 interface TenantDailyUsageResponse {
     status: 'success' | 'failed'
-    /** Included on failure. **/
+    /** Incluso in caso di errore. **/
     code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-id' | 'not-found'
     /** Incluso in caso di errore. **/
     reason?: string

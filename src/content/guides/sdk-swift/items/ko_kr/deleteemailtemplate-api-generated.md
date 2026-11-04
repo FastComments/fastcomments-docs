@@ -30,5 +30,3 @@ DefaultAPI.deleteEmailTemplate(tenantId: tenantId, id: id) { (response, error) i
     }
 }
 [inline-code-end]
-
----

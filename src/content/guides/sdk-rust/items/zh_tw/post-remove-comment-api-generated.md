@@ -1,4 +1,3 @@
----
 ## 參數
 
 | 名稱 | 類型 | 必填 | 描述 |
@@ -27,5 +26,3 @@ async fn remove_comment_example(config: &configuration::Configuration) -> Result
     Ok(())
 }
 [inline-code-end]
-
----

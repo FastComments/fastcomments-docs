@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Назва | Тип | Обов’язковий | Опис |
@@ -18,5 +17,3 @@ if responseOpt.isSome:
   let definitions = responseOpt.get()
   echo definitions
 [inline-code-end]
-
----

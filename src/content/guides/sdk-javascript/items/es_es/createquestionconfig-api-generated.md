@@ -38,5 +38,3 @@ async function runExample() {
   console.log(response);
 }
 [inline-code-end]
-
----

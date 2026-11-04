@@ -1,4 +1,3 @@
----
 [related-parameter-start name = 'collapseReplies'; type = 'boolean'; related-parameter-end]
 
 בברירת מחדל, תגובות לתגובות ברמה העליונה מוצגות.
@@ -16,5 +15,3 @@
 - ראה את "Show Replies" (29) מתחת לתגובה זו.
 
 אם ברצונך להציג את כל תגובות הרמה העליונה בשילוב עם אפשרות זו, הגדר את [דף התחלה ל‑-1](#starting-page).
-
----

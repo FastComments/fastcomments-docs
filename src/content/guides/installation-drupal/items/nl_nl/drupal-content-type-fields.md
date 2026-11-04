@@ -6,5 +6,3 @@ Elke entiteit die het veld heeft, krijgt:
 - Een optionele **aangepaste identificatie** zodat u een stabiel ID kunt gebruiken dat niet is gekoppeld aan het pad van de Drupal-entiteit.
 
 Het hoofdblok `FastComments Widget` kent dit veld en zal entiteiten overslaan waaraan het al is gekoppeld. Op die manier kunt u per-entiteit reacties combineren met het blok zonder dat u de widget twee keer op dezelfde pagina ziet.
-
----

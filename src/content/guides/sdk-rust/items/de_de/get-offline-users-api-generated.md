@@ -1,4 +1,3 @@
----
 Frühere Kommentatoren auf der Seite, die momentan NICHT online sind. Sortiert nach displayName.  
 Verwenden Sie dies, nachdem /users/online erschöpft wurde, um einen „Members“-Abschnitt zu rendern.  
 Cursor‑Paginierung über commenterName: Der Server durchläuft den Teil {tenantId, urlId, commenterName} Index ab afterName vorwärts via $gt, ohne $skip‑Kosten.
@@ -31,5 +30,3 @@ async fn fetch_offline(config: &configuration::Configuration) -> Result<(), Erro
     Ok(())
 }
 [inline-code-end]
-
----

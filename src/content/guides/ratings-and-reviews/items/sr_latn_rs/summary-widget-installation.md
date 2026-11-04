@@ -1,4 +1,4 @@
-Below is the Vanilla JS code for installing the Summary Widget. The React library also has this widget.
+Ispod je Vanilla JS kod za instalaciju Summary Widget-a. React biblioteka takođe ima ovaj vidžet.
 
 [inline-code-attrs-start title = 'Instalacija Summary Widget-a'; type = 'html'; isFunctional = true; type = 'html';  inline-code-attrs-end]
 [inline-code-start]
@@ -11,12 +11,14 @@ Below is the Vanilla JS code for installing the Summary Widget. The React librar
 </script>
 [inline-code-end]
 
-The widget will automatically find the questions to show in the summary based on the corresponding widget configuration for that page/site.
+Vidžet će automatski pronaći pitanja za prikaz u rezimeu na osnovu odgovarajuće konfiguracije vidžeta za tu stranicu/sajt.
 
-### Filtering Comments by Rating
+### Filtriranje komentara po oceni
 
-When the comment widget for the same page is also on the page, and it is configured to show each commenter's answer on their comment, the rows of the breakdown become clickable. Clicking a row, for example "5", filters the comment widget to the comments that gave that answer. Clicking the row again, or the X on the "Showing only" chip in the comment widget, shows all the comments again. This needs no configuration: the Summary Widget finds the comment widget with the same `tenantId` and `urlId`.
+Kada je vidžet za komentare iste stranice takođe na stranici, i kada je konfigurisan da prikazuje odgovor svakog komentatora na njegovom komentaru, redovi u raspodeli
+postaju klikabilni. Klikom na red, na primer "5", vidžet za komentare se filtrira na komentare koji su dali taj odgovor. Ponovnim klikom na red, ili na X na "Showing only" čipu
+u vidžetu za komentare, ponovo se prikazuju svi komentari. Ovo ne zahteva konfiguraciju: Summary Widget pronalazi vidžet za komentare sa istim `tenantId` i `urlId`.
 
-This works for star, thumbs, emoji, scale and single choice questions. The breakdown the comment widget shows above the comment box can be clicked the same way.
+Ovo funkcioniše za pitanja sa zvezdicama, palcima, emodžijima, skalom i pitanja sa jednim izborom. Raspodelu koju vidžet za komentare prikazuje iznad okvira za komentar može se kliknuti na isti način.
 
-If you require the widget in one of our other libraries that does not have it, file a support ticket so that we know to add it.
+Ako vam je potreban vidžet u jednoj od naših drugih biblioteka koja ga nema, otvorite tiket za podršku kako bismo znali da ga dodamo.

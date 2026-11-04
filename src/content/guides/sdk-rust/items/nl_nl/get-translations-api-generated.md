@@ -1,4 +1,3 @@
----
 ## Parameters
 
 | Naam | Type | Vereist | Beschrijving |
@@ -27,5 +26,3 @@ async fn fetch_translations() -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
-
----

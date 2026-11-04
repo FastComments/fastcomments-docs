@@ -1,4 +1,3 @@
----
 To je to! Zdaj bi morali imeti v vašem GoHighLevel tečaju omogočeno komentiranje v živo.
 
 <div class="screenshot white-bg">
@@ -7,5 +6,3 @@ To je to! Zdaj bi morali imeti v vašem GoHighLevel tečaju omogočeno komentira
 </div>
 
 Če ste naleteli na napako 'permission denied' ali želite prilagoditi FastComments, nadaljujte z branjem.
-
----

@@ -1,4 +1,3 @@
----
 Aby korzystać z centrum danych UE, ustaw pole `region` w swojej konfiguracji:
 
 ```swift

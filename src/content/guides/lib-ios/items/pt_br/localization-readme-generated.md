@@ -1,4 +1,3 @@
----
 Passe um código de localidade na configuração para localizar as strings fornecidas pelo servidor:
 
 ```swift

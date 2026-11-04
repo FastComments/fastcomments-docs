@@ -1,4 +1,3 @@
----
 | 컴포넌트 | 설명 |
 | --- | --- |
 | `FastComments` | 답글, 투표 등 기능을 갖춘 댓글 위젯 |
@@ -18,4 +17,3 @@ import {
     FastCommentsReviewsSummary,
 } from 'fastcomments-nextjs';
 ```
----

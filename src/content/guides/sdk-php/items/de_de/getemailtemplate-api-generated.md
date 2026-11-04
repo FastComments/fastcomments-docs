@@ -41,5 +41,3 @@ try {
     echo 'Ausnahme beim Aufruf von DefaultApi->getEmailTemplate: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

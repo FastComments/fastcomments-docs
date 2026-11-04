@@ -1,4 +1,3 @@
----
 Onze laatste stap is het gebruiken van het nieuwe thema-sjabloon.
 
 Rechtsboven zie je nu `Publish` of `Make Active Theme`. Klik daarop om door te gaan en de wijzigingen live te zetten:
@@ -14,5 +13,3 @@ Nu kunnen we onze site bekijken! Als je naar een blogpost gaat, zou je onderaan 
     <div class="title">Wijzigingen live</div>
     <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-4-live.png" alt="Wijzigingen live" />
 </div>
-
----

@@ -1,4 +1,3 @@
----
 Du kan få en autorisationsfejl, som vist nedenfor:
 
 <div class="screenshot white-bg">
@@ -20,5 +19,3 @@ Tilføj domænet som følger:
 </div>
 
 Nu skulle du have fået hurtige, live-kommentarer på dit Webflow-websted!
-
----

@@ -1,21 +1,19 @@
-Follow the same steps for `localhost` as you would production. Ensure you have production domains and API Secrets setup.
+Za `localhost` sledite istim korakom kot pri produkciji. Poskrbite, da imate nastavljene produkcijske domene in API skrivnosti.
 
-First, navigate to the [Webhooks admin](https://fastcomments.com/auth/my-account/manage-data/webhooks). This is accessible via Manage Data -> Webhooks.
+Najprej odprite [Webhooks admin](https://fastcomments.com/auth/my-account/manage-data/webhooks). Dostopen je prek Manage Data -> Webhooks.
 
-The page lists every webhook on your account:
+Stran prikaže vse webhook-e na vašem računu:
 
-[app-screenshot-start url='/auth/my-account/manage-data/webhooks'; selector = '.content'; alt='Stran za upravljanje webhookov, ki prikazuje vsak webhook z njegovim URL-jem, dogodkom, domeno, metodo, statusom in številom čakajočih dogodkov'; title='Seznam webhookov'; cacheBuster = 'v4' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/webhooks'; selector = '.content'; alt='Stran Webhooks admin s seznamom webhook-ov, ki prikazuje URL, dogodek, domeno, metodo, status in število čakajočih dogodkov'; title='Seznam webhook-ov'; cacheBuster = 'v4' app-screenshot-end]
 
-Click **New Webhook** to add one. Each webhook has a URL, one comment event (created, updated or deleted), a domain, and an HTTP method:
+Kliknite **New Webhook**, da dodate novega. Vsak webhook ima URL, en dogodek komentarja (ustvarjen, posodobljen ali izbrisan), domeno in HTTP metodo:
 
-[app-screenshot-start url='/auth/my-account/manage-data/webhooks/new'; selector = '.content'; alt='Obrazec za nov webhook z polji za URL, dogodek, domeno in HTTP metodo ter gumbom Pošlji testni paket'; title='Nov webhook'; cacheBuster = 'v4' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/webhooks/new'; selector = '.content'; alt='Obrazec za nov webhook s polji URL, dogodek, domena in HTTP metoda ter gumbom Send Test Payload'; title='Nov webhook'; cacheBuster = 'v4' app-screenshot-end]
 
-Every webhook is delivered independently. You can send the same event to several endpoints, and a webhook scoped
-to **All Domains** receives comments from every domain even when a domain-specific webhook exists for the same event.
-The same URL, event and domain cannot be added twice.
+Vsak webhook se dostavlja neodvisno. Isti dogodek lahko pošljete na več končnih točk, webhook, določen na **All Domains**, pa prejema komentarje z vseh domen, tudi če obstaja webhook za določeno domeno za isti dogodek. Istega URL-ja, dogodka in domene ni mogoče dodati dvakrat.
 
-Before saving, click **Send Test Payload** to check the endpoint accepts a signed request. See the next section, "Testing", for details.
+Pred shranjevanjem kliknite **Send Test Payload**, da preverite, ali končna točka sprejema podpisan zahtevek. Podrobnosti si oglejte v naslednjem razdelku »Testiranje«.
 
-From the list you can edit, disable, re-enable or delete a webhook. Disabling keeps queued events until the webhook is re-enabled; deleting discards them.
+S seznama lahko webhook uredite, onemogočite, ponovno omogočite ali izbrišete. Onemogočanje ohrani čakajoče dogodke, dokler webhook ni ponovno omogočen; brisanje jih odstrani.
 
-Webhooks can also be created through the API, for example by Zapier. Those appear in the same list with the source **API**. See Managing Webhooks via the API.
+Webhook-e je mogoče ustvariti tudi prek API-ja, na primer prek Zapierja. Ti se prikažejo v istem seznamu z virom **API**. Glejte Upravljanje webhook-ov prek API-ja.

@@ -41,5 +41,3 @@ try {
     echo 'Exception when calling PublicApi->getGifsTrending: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

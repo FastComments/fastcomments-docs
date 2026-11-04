@@ -1,4 +1,3 @@
----
 Bir sürüm etiketinden kurun (bu proje PyPI yerine git etiketleriyle dağıtılır):
 
 ```bash
@@ -19,4 +18,3 @@ INSTALLED_APPS = [
     "fastcomments_django",
 ]
 ```
----

@@ -1,8 +1,8 @@
-On an index page, don't render one comment-count widget per row. That is one request per post. Use the bulk count, which takes a single request for the whole page.
+Bir dizin sayfasında her satır için ayrı bir yorum sayacı widget'ı oluşturmayın. Bu, her gönderi için bir istek demektir. Tüm sayfa için tek bir istek alan toplu sayacı (bulk count) kullanın.
 
-Mark each row with the `urlId` its thread uses, then load the bulk widget once:
+Her satırı, ilgili thread'in kullandığı `urlId` ile işaretleyin, ardından toplu widget'ı bir kez yükleyin:
 
-[inline-code-attrs-start title = 'Dizin üzerindeki toplu yorum sayıları'; type='javascript' inline-code-attrs-end]
+[inline-code-attrs-start title = 'Bir dizin sayfasında toplu yorum sayaçları'; type='javascript' inline-code-attrs-end]
 [inline-code-start]
 <ul>
   {posts.map((post) => (
@@ -23,8 +23,8 @@ Mark each row with the `urlId` its thread uses, then load the bulk widget once:
 <script src="https://cdn.fastcomments.com/js/embed-widget-comment-count-bulk.min.js"></script>
 [inline-code-end]
 
-The script finds every `.fast-comments-count` element on the page and fills in its count.
+Betik, sayfadaki her `.fast-comments-count` öğesini bulur ve sayacını doldurur.
 
-`data-fast-comments-url-id` has to match the `urlId` that post's comment widget uses. If the widget uses the slug, the marker uses the slug. A mismatch shows zero on a thread that has comments.
+`data-fast-comments-url-id`, ilgili gönderinin yorum widget'ının kullandığı `urlId` ile eşleşmelidir. Widget slug kullanıyorsa, işaretleyici de slug kullanır. Bir uyuşmazlık, yorumları olan bir thread'de sıfır gösterilmesine neden olur.
 
-The script polls for `window.FastCommentsBulkCountConfig`, so it does not matter whether you set the config before or after the script tag.
+Betik, `window.FastCommentsBulkCountConfig` için yoklama yapar, bu nedenle yapılandırmayı script etiketinden önce veya sonra ayarlamanız fark etmez.

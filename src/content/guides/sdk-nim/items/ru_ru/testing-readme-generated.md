@@ -1,4 +1,3 @@
----
 Установите необходимые переменные окружения:
 
 ```bash
@@ -18,4 +17,3 @@ nimble test
 nim c -r tests/test_sso.nim
 nim c -r tests/test_sso_integration.nim
 ```
----

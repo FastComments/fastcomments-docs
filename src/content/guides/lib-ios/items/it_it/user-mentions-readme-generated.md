@@ -1,4 +1,3 @@
----
 Cerca utenti per supportare l'autocompletamento delle @mention:
 
 ```swift

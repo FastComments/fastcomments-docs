@@ -1,4 +1,3 @@
----
 ## 參數
 
 | 名稱 | 類型 | 位置 | 必填 | 說明 |
@@ -32,5 +31,3 @@ try {
     print('Exception when calling DefaultApi->updateModerator: $e\n');
 }
 [inline-code-end]
-
----

@@ -8,5 +8,3 @@
 ## 參與貢獻
 
 歡迎貢獻！請前往 [GitHub 存儲庫](https://github.com/FastComments/fastcomments-dart) 了解貢獻指南。
-
----

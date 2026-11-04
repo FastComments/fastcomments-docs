@@ -1,4 +1,3 @@
----
 ```
 fastcomments-dart/
   client/        generated dart client (do not edit by hand)
@@ -7,4 +6,3 @@ fastcomments-dart/
   config.json    openapi-generator config
   update.py      regenerate the client from the spec
 ```
----

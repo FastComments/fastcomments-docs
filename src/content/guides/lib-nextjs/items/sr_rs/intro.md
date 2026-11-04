@@ -5,5 +5,3 @@
 ## Репозиторијум
 
 [Погледајте на GitHub-у](https://github.com/FastComments/fastcomments-nextjs)
-
----

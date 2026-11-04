@@ -1,4 +1,1 @@
----
 Roep de FastComments API aan vanuit Node.js of de browser. Installeer met npm, maak vervolgens opmerkingen aan en beheer ze, abonneer je op live‑evenementen en stel SSO in.
-
----

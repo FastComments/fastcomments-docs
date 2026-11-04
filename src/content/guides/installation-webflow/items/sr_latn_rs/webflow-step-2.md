@@ -17,5 +17,3 @@ Nakon dodavanja koda, Webflow će vas obavestiti da se widget neće prikazivati 
     <div class="title">Napomena: Komentari se neće pojaviti dok ne objavite</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-webflow-step-3.png" alt="Komentari se neće pojaviti dok ne objavite" />
 </div>
-
----

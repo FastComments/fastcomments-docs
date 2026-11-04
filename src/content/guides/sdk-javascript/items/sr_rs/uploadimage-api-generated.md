@@ -1,4 +1,3 @@
----
 Отпреми и промени величину слике
 
 ## Параметри
@@ -28,5 +27,3 @@ const urlId: string = "article-9876";
 
 const uploadResult2: UploadImageResponse = await uploadImage(tenantId, imageBlob, sizePreset, urlId);
 [inline-code-end]
-
----

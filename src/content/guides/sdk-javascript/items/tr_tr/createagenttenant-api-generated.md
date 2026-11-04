@@ -1,21 +1,18 @@
-Creates a new trial account for an AI agent without a human signup. No API key is needed to call this.
+İnsan kaydı olmadan bir AI ajanı için yeni bir deneme hesabı oluşturur. Bunu çağırmak için API anahtarı gerekmez.
 
-The response contains the tenant id, an API key that works immediately against the REST API and the
-MCP server, and a claim URL. Give the claim URL to the human you are working for: opening it while
-logged in to FastComments attaches the account to them. Unclaimed accounts, and their keys, are
-deleted 72 hours after creation. Until claimed, the account has the standard trial limits.
+Yanıt; tenant id, REST API ve MCP sunucusuna karşı hemen çalışabilen bir API anahtarı ve bir talep (claim) URL'si içerir. Talep URL'sini çalıştığınız kişiye verin: FastComments'a giriş yapmışken açıldığında hesap ona bağlanır. Talep edilmeyen hesaplar ve anahtarları, oluşturulduktan 72 saat sonra silinir. Talep edilene kadar hesap standart deneme sınırlarına sahiptir.
 
-## Parameters
+## Parametreler
 
-| Ad | Tür | Gerekli | Açıklama |
+| Ad | Tür | Zorunlu | Açıklama |
 |------|------|----------|-------------|
 | createAgentTenantBody | CreateAgentTenantBody | Evet |  |
 
-## Response
+## Yanıt
 
-Returns: [`CreateAgentTenantResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateAgentTenantResponse.ts)
+Döndürür: [`CreateAgentTenantResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateAgentTenantResponse.ts)
 
-## Example
+## Örnek
 
 [inline-code-attrs-start title = 'createAgentTenant Örneği'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

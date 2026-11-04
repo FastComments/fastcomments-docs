@@ -28,5 +28,3 @@ interface PollDeleteResponse {
     reason?: string
 }
 [inline-code-end]
-
----

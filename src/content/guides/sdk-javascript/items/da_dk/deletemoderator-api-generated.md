@@ -23,5 +23,3 @@ Returnerer: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sd
   const resultWithoutEmail: APIEmptyResponse = await deleteModerator(tenantId, moderatorId);
 })();
 [inline-code-end]
-
----

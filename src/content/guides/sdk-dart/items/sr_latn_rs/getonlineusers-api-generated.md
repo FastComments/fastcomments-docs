@@ -1,4 +1,3 @@
----
 Trenutno online posmatrači stranice: osobe čija je websocket sesija trenutno pretplaćena na stranicu.
 Vraća anonCount + totalCount (pretplatnici u čitavoj sobi, uključujući anonimne posmatrače koje ne navodimo).
 
@@ -34,5 +33,3 @@ try {
     print('Exception when calling PublicApi->getOnlineUsers: $e\n');
 }
 [inline-code-end]
-
----

@@ -30,5 +30,3 @@ try {
     print('Exception when calling PublicApi->getCommentText: $e\n');
 }
 [inline-code-end]
-
----

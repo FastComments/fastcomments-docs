@@ -1,21 +1,17 @@
-List pages for a tenant. Used by the FChat desktop client to populate its room list.  
-Requires `enableFChat` to be true on the resolved custom config for each page.  
-Pages that require SSO are filtered against the requesting user's group access.
+列出租戶的頁面。由 FChat 桌面用戶端使用，以填入其房間清單。
+每個頁面在解析後的自訂設定中都需要 `enableFChat` 為 true。
+需要 SSO 的頁面會根據請求使用者的群組存取權限進行篩選。
 
-列出租戶的頁面。供 FChat 桌面客戶端用於填充其房間列表。  
-需要在每個頁面的已解析自訂設定中將 `enableFChat` 設為 true。  
-需要 SSO 的頁面會根據請求使用者的群組存取權限進行過濾。
-
-## Parameters
+## 參數
 
 | 名稱 | 類型 | 必填 | 說明 |
-|------|------|------|------|
+|------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | options | const GetPagesPublicOptions& | 是 |  |
 
 ## 回應
 
-返回: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetPublicPagesResponse.h)
+回傳：[`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/GetPublicPagesResponse.h)
 
 ## 範例
 

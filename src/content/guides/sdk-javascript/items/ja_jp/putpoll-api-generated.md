@@ -1,10 +1,8 @@
-Attach a poll to a comment, or set the full state of the poll it already has.
+コメントに投票(ポール)を添付したり、既に添付されている投票の状態全体を設定します。
 
-Options are matched by id: an option sent with the id of an existing option keeps its votes (and takes the
-new label and position), an option sent without an id is added, and existing options left out of the list
-are removed along with the votes cast on them.
+選択肢はidによって照合されます。既存の選択肢と同じidを持つ選択肢を送信すると、その投票数は保持され(新しいラベルと位置が適用され)、idなしで送信された選択肢は追加され、リストに含まれていない既存の選択肢は、それに対して投じられた投票とともに削除されます。
 
-Keeping no existing option ids on a poll that has votes deletes all of them, so that needs replaceVotes=true.
+投票が存在する投票で既存の選択肢のidを1つも保持しない場合、それらはすべて削除されるため、replaceVotes=trueが必要です。
 
 ## パラメータ
 
@@ -17,7 +15,7 @@ Keeping no existing option ids on a poll that has votes deletes all of them, so 
 
 ## レスポンス
 
-返り値: [`SavePollResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/SavePollResponse.ts)
+戻り値: [`SavePollResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/SavePollResponse.ts)
 
 ## 例
 

@@ -85,5 +85,3 @@ Możemy także przekazać dane Secure SSO lub Simple SSO:
     });
 </script>
 [inline-code-end]
-
----

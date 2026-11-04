@@ -15,5 +15,3 @@ interface Vote {
     createdAt: string
 }
 [inline-code-end]
-
----

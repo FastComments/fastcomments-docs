@@ -1,57 +1,60 @@
 [related-parameter-start name = 'customCSS'; type = 'string'; related-parameter-end]
 
-FastComments je zasnovan tako, da ga je mogoče prilagoditi. Sam pripomoček za komentiranje teče v iframeu iz varnostnih razlogov, zato morate za uporabo po meri oblikovanja slediti enemu od dveh pristopov.
+FastComments je zasnovan za prilagajanje. Samo pripomoček za komentarje se iz varnostnih razlogov izvaja znotraj iframe-a, zato morate za uporabo
+sloga po meri slediti enemu od dveh pristopov.
 
-Prvi, najlažji pristop, ki ga mi priporočamo, je uporaba [strani za prilagajanje gradnika](https://fastcomments.com/auth/my-account/customize-widget).
+Prvi, najlažji pristop, ki ga tudi mi priporočamo, je uporaba [strani za prilagajanje pripomočka](https://fastcomments.com/auth/my-account/customize-widget).
 
-Na strani za prilagajanje gradnika poiščite razdelek "Prikaži napredne možnosti", pod katerim je območje označeno kot "Po meri CSS":
+Na strani za prilagajanje pripomočka poglejte razdelek "Show Advanced Options", pod katerim je območje z oznako "Custom CSS":
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.show-advanced-option'; selector = '.custom-css'; alt='Urejevalnik po meri CSS pod Prikaži napredne možnosti na strani za prilagajanje gradnika'; title='Območje vnosa po meri CSS' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.show-advanced-option'; selector = '.custom-css'; alt='Urejevalnik CSS po meri pod Show Advanced Options na strani za prilagajanje pripomočka'; title='Vnosno območje za CSS po meri' app-screenshot-end]
 
 Ta pristop ima nekaj prednosti:
-1. Vneseni CSS je minificiran, preden je poslan uporabniku, oblikovanje pa ostane dosledno v uporabniškem vmesniku za urejanje.
-2. Dobite vse prednosti uporabniškega vmesnika za prilagajanje gradnika, na primer enostavno prilagajanje pripomočka za komentiranje za različna spletna mesta.
-3. Ko naredimo spremembe v pripomočku za komentiranje, bo vaše po meri oblikovanje preizkušeno kot del našega postopka izdajanja.
+1. Vneseni CSS je pred pošiljanjem uporabniku pomanjšan (minificiran), oblika pa je v urejevalnem vmesniku ohranjena dosledna.
+2. Izkoristite vse prednosti vmesnika za prilagajanje pripomočka, na primer enostavno prilagajanje pripomočka za komentarje različno za različne spletne strani.
+3. Ko naredimo spremembe v pripomočku za komentarje, bo vaš slog po meri testiran kot del našega procesa izdaje.
 
-Drugi pristop je, da v konfiguraciji gradnika določite parameter **customCSS**, kot sledi:
+Drugi pristop je določitev parametra **customCSS** v konfiguraciji pripomočka, takole:
 
-[code-example-start config = {customCSS: "button { background: red; }"}; linesToHighlight = [6]; title = 'Posredovanje po meri CSS'; code-example-end]
+[code-example-start config = {customCSS: "button { background: red; }" }; linesToHighlight = [6]; title = 'Posredovanje CSS po meri'; code-example-end]
 
 Vendar ima to *omejitve*:
-1. Obstaja omejitev, koliko po meri CSS lahko pošljemo, preden naši strežniki zavrnejo zahtevo, zaradi velikosti glave.
-2. Morate upravljati po meri CSS v svoji infrastrukturi in sistemu gradnje. To je lahko tudi prednost, ne le slabost.
-3. V tem primeru je dodatna obremenitev pošiljanja po meri CSS po omrežju **dvakrat**, saj mora biti poslan na naše strežnike in nato nazaj v vsebino iframea. Vendar pa za večino velikosti paketov to ni opazno.
-4. Pogosta optimizacija je minifikacija CSS, da se zmanjša njegova velikost po omrežju, vendar boste pri tem pristopu to morali sami upravljati.
-5. Vaš po meri CSS ne bo preizkušen, ko bomo naredili spremembe.
+1. Obstaja omejitev, koliko CSS po meri lahko posredujemo, preden naši strežniki zavrnejo zahtevo, zaradi velikosti glav (headers).
+2. CSS po meri morate upravljati v svoji infrastrukturi in sistemu za gradnjo. To je lahko tudi prednost, ne slabost.
+3. V tem primeru je dodatna obremenitev, ker se CSS po meri pošilja po omrežju **dvakrat**, saj ga je treba poslati našim strežnikom in nato nazaj v vsebino iframe-a. Za večino velikosti podatkov pa tega ni opaziti.
+4. Pogosta optimizacija je pomanjšanje (minificiranje) CSS za zmanjšanje velikosti prenosov, vendar pri tem pristopu morate to urediti sami.
+5. Vaš CSS po meri ne bo testiran, ko naredimo spremembe.
 
-### External CSS Files
+### Zunanje datoteke CSS
 
-Gradniku lahko poveste, naj naloži zunanjo datoteko z uporabo `@import`!
+Pripomočku lahko naročite, naj pridobi zunanjo datoteko z uporabo `@import`!
 
-Priporočamo, da `@import` postavite v pravilo prilagajanja. Na ta način, če bomo kdaj morali spremeniti pripomoček za komentiranje, lahko uporabimo naše avtomatizacijske orodje za preverjanje nastavitve. Na primer, ustvarite pravilo prilagajanja v uporabniškem vmesniku za prilagajanje gradnika, kliknete `Advanced` in vnesete v `Custom CSS`:
+Priporočamo, da `@import` umestite v pravilo prilagajanja. Tako, če bomo kdaj morali narediti spremembo v pripomočku za komentarje, lahko z našo avtomatizacijo
+preverimo vašo nastavitev. Torej bi na primer ustvarili pravilo prilagajanja v vmesniku Widget Customization, kliknili `Advanced` in vnesli v `Custom CSS`:
 
     @import url(https://example.com/styles.css);
 
-#### In Code - Not Recommended
+#### V kodi - ni priporočljivo
 
-Zunanjo CSS datoteko lahko naložite tudi prek lastnosti `customCSS`:
+Zunanjo datoteko CSS lahko naložite tudi prek lastnosti `customCSS`:
 
-[code-example-start config = {customCSS: "@import url(https://example.com/styles.css);"}; linesToHighlight = [6]; title = 'Zunanja CSS datoteka'; code-example-end]
+[code-example-start config = {customCSS: "@import url(https://example.com/styles.css);" }; linesToHighlight = [6]; title = 'Zunanja datoteka CSS'; code-example-end]
 
-Vendar pa se spomnite, da vaš CSS ne bo mogel biti preizkušen s strani nas, če to storite. 
+Vendar ne pozabite, da vašega CSS v tem primeru ne bomo mogli testirati.
 
-### User Profile Modal Styling
+### Slog modala profila uporabnika
 
-Modalna okna uporabniškega profila je mogoče tudi stilizirati s po meri CSS. Vendar pa, da zagotovite, da se po meri oblikovanje uporabi na uporabniških profilih, morajo biti vsi CSS selektorji predpripeti z `.user-profile`. Brez tega predpone bo po meri oblikovanje prezrto za modalna okna uporabniškega profila.
+Tudi modale profilov uporabnikov je mogoče oblikovati s CSS po meri. Vendar, da se slog po meri uporabi na profilih uporabnikov, morajo biti vsi CSS selektorji predponjeni z `.user-profile`. Brez te predpone bo slog po meri pri modalih profilov uporabnikov prezrt.
 
 Na primer:
 
-[code-example-start config = {customCSS: ".user-profile .profile-name { color: blue; }"}; title = 'CSS uporabniškega profila'; code-example-end]
+[code-example-start config = {customCSS: ".user-profile .profile-name { color: blue; }" }; title = 'CSS profila uporabnika'; code-example-end]
 
-### Backwards Compatibility
+### Združljivost z nazaj
 
-Pri FastComments vemo, da naši uporabniki prilagajajo pripomoček za komentiranje. To je po zasnovi – zadnja stvar, ki jo želimo, je, da bi naš izdelek povzročil neskladnosti v oblikovanju vašega izdelka.
+Pri FastComments vemo, da naši stranke prilagajajo pripomoček za komentarje. To je po zasnovi - zadnja stvar, ki si je želimo, je, da bi naš izdelek povzročil
+nedoslednosti v oblikovanju vašega izdelka.
 
-Ker je to pomemben del našega izdelka, imamo gradbeni proces, ki nam omogoča pregled sprememb pripomočka za komentiranje po strankah pri vsaki izdaji.
+Ker je to pomemben del našega izdelka, imamo gradbeni proces (build pipeline), ki nam omogoča pregled sprememb pripomočka za komentarje, za vsako stranko, ob vsaki izdaji.
 
-Če najdemo manjše težave, bomo posodobili vaš račun, da zagotovimo nemoteno izdajo. Če opazimo večje prelomne spremembe, nam to omogoča, da izdajo ustavimo.
+Če odkrijemo manjše težave, bomo posodobili vaš račun, da bo izdaja potekala gladko. Če opazimo večje spremembe, ki bi povzročile težave, nam to omogoča, da izdajo ustavimo.

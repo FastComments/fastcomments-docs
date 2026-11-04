@@ -42,5 +42,3 @@ try {
     print('Exception when calling DefaultApi->getPendingWebhookEvents: $e\n');
 }
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 評論本身並不綁定於特定網域。
 
 它們與您的帳戶，以及提供的 <a href="/guide-customizations-and-configuration.html#url-id" target="_blank">urlId</a> 綁定。
@@ -10,5 +9,3 @@ widget 設定中。
 也會如預期運作。
 
 [您可以在這篇部落格文章中找到範例](https://blog.fastcomments.com/(2-12-2020)-using-fastcomments-in-multiple-places-on-the-same-page.html).
-
----

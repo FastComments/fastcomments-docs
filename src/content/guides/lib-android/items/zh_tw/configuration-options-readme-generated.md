@@ -1,4 +1,3 @@
----
 SDK 提供許多透過 `CommentWidgetConfig` 類別 的設定選項：
 
 | 選項 | 說明 |
@@ -15,4 +14,3 @@ SDK 提供許多透過 `CommentWidgetConfig` 類別 的設定選項：
 | `readonly` | 停用發表評論但顯示評論 |
 | `disableVoting` | 停用投票功能 |
 | `disableLiveCommenting` | 停用即時更新 |
----

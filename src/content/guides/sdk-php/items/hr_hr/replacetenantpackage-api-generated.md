@@ -41,5 +41,3 @@ try {
     echo 'Exception when calling DefaultApi->replaceTenantPackage: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

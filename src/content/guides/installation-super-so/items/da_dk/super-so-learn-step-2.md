@@ -1,4 +1,3 @@
----
 I dette næste trin skal du kopiere den forudlavede widget-kode nedenfor.
 
 Så længe du er logget ind på FastComments.com, vil kodeudsnittet nedenfor allerede indeholde dine kontooplysninger. Lad os kopiere det:
@@ -94,5 +93,3 @@ Hvis du ser en "dette er en demo-meddelelse" efter indsættelse af koden:
 - Sørg for, at du er logget ind på din fastcomments.com-konto.
 - Sørg for, at tredjeparts-cookies er aktiveret.
 - Opdater derefter denne side og kopier kodeudsnittet igen. Det burde have `tenantId` udfyldt med din tenant-identifikator.
-
----

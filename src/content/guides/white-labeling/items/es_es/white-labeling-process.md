@@ -1,4 +1,3 @@
----
 El proceso para configurar la marca blanca es el siguiente:
 
 1. Elige cómo se gestionará la facturación.
@@ -11,5 +10,3 @@ El proceso para configurar la marca blanca es el siguiente:
    2. `TenantUser` es un administrador con un conjunto de privilegios en el `Tenant`.
    3. `TenantPackage` es un paquete con un conjunto de límites y precios disponible para un `Tenant`.
 3. Integra con nuestra [API](/guide-api.html) o usa [scripts](https://github.com/FastComments/fastcomments-code-examples/tree/master/white-labeling) para incorporar tenants.
-
----

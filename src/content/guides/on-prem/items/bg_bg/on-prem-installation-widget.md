@@ -1,4 +1,4 @@
-The front end code snippets and libraries for On-Prem are the same as the SaaS product. However, you must specify `apiHost` and the correct script path:
+Кодовите фрагменти и библиотеки за предната част на On-Prem са същите като при SaaS продукта. Въпреки това трябва да посочите `apiHost` и правилния път до скрипта:
 
 [inline-code-attrs-start title = 'Код за коментари за On Prem'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -9,9 +9,9 @@ The front end code snippets and libraries for On-Prem are the same as the SaaS p
         target: '#fastcomments-widget',
         tenantId: "demo",
         apiHost: "https://my.host.com"
-        // ... може също да предаде SSO полезен товар и т.н.
+        // ... can also pass SSO payload etc.
     }];
 </script>
 [inline-code-end]
 
-Горното е много прост пример. Също така можем да използваме първостранните библиотеки за React, Angular, Vue, Svelte и др.
+Горното е много прост пример. Можем също да използваме първичните библиотеки за React, Angular, Vue, Svelte и др.

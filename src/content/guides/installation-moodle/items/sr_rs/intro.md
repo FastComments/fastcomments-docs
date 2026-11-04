@@ -6,5 +6,3 @@ FastComments има посебан Moodle додатак који додаје �
 </div>
 
 Додатак подржава нитове коментара, колаборативни чат у реалном времену и више режима SSO. Преузмите га из <a href="https://github.com/FastComments/fastcomments-moodle/" target="_blank">репозиторијума на GitHub‑у</a>.
-
----

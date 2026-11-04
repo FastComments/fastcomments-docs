@@ -6,5 +6,3 @@ Upute u nastavku podijeljene su u tri odjeljka, ovisno o tome što želite napra
 3. [Dodajte komentare na određenu stranicu](#squarespace-pages-specific-page-step-0)
 
 Imajte na umu da ovaj vodič zahtijeva FastComments račun. Preporučujemo da se prvo registrirate, a zatim se vratite ovdje. [Možete otvoriti račun ovdje.](https://fastcomments.com/auth/tenant-signup?packageId=flex)
-
----

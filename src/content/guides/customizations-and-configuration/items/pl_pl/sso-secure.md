@@ -115,5 +115,3 @@ Tacy użytkownicy nie będą mogli komentować; zamiast tego zostanie im pokazan
 Więcej szczegółów i przykładów <a href="https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/node-express/routes/index.js#L23" target="_blank">tutaj</a> (js), <a href="https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/java-springboot/src/main/java/com/winricklabs/ssodemo/DemoController.java#L68" target="_blank">tutaj</a> (java) i <a href="https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/php/server.php#L27" target="_blank">tutaj</a> (php).
 
 Rozumiemy, że każda integracja może być skomplikowanym i bolesnym procesem. Nie wahaj się skontaktować ze swoim przedstawicielem lub skorzystać ze <a href="https://fastcomments.com/auth/my-account/help" target="_blank">strony wsparcia</a>.
-
----

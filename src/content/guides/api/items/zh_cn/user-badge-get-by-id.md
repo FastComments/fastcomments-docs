@@ -1,4 +1,3 @@
----
 此端点允许您通过唯一 ID 获取特定用户徽章。
 
 示例请求：
@@ -52,4 +51,3 @@ curl -X GET "https://fastcomments.com/api/v1/user-badges/badge123?tenantId=demo&
   "reason": "The user badge badge123 was not found."
 }
 [inline-code-end]
----

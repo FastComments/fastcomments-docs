@@ -8,5 +8,3 @@ Swift SDK ile ilgili herhangi bir sorunla karşılaşırsanız veya sorularını
 ## Katkıda Bulunma
 
 Katkılar memnuniyetle karşılanır! Katkı yönergeleri için lütfen [GitHub deposunu](https://github.com/FastComments/fastcomments-swift) ziyaret edin.
-
----

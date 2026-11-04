@@ -1,4 +1,4 @@
-Всі параметри віджету FastComments задаються в `[params.fastcomments]` у `hugo.toml`, і можуть бути перевизначені для кожної сторінки у front matter під `[fastcomments]`. Пріоритет, від найнижчого до найвищого: параметри сайту, front matter сторінки, параметри шорткоду.
+Усі параметри віджета FastComments задаються у `[params.fastcomments]` у файлі `hugo.toml`, і їх можна перевизначати на рівні окремої сторінки у front matter у розділі `[fastcomments]`. Пріоритет від найнижчого до найвищого: параметри сайту, front matter сторінки, параметри шорткоду.
 
 ```toml
 # hugo.toml
@@ -19,11 +19,11 @@ title = "Article"
 +++
 ```
 
-When neither `url` nor `urlId` is provided, `url` defaults to the page's permalink so comment threads stay tied to a stable URL.
+Коли не вказано ані `url`, ані `urlId`, параметр `url` за замовчуванням отримує постійне посилання сторінки, щоб гілки коментарів залишалися прив'язаними до стабільного URL.
 
 ### Розміщення даних у ЄС
 
-Клієнти з ЄС вказують `region = "eu"`, щоб направити віджет на `cdn-eu.fastcomments.com`:
+Клієнти з ЄС встановлюють `region = "eu"`, щоб спрямувати віджет на `cdn-eu.fastcomments.com`:
 
 ```toml
 [params.fastcomments]
@@ -33,4 +33,4 @@ When neither `url` nor `urlId` is provided, `url` defaults to the page's permali
 
 ### Примітка щодо регістру ключів
 
-Hugo приводить усі ключі до нижнього регістру в `hugo.toml` та front matter, але віджетам FastComments потрібні ключі в camelCase (`tenantId`, `hasDarkBackground`). Цей компонент автоматично відновлює правильний регістр для кожної відомої верхньорівневої опції, тож записуйте опції у звичному camelCase. Ключі, вкладені в значення об'єкта (наприклад, ключі мапи `translations`, або поля `pageReactConfig`), не відновлюються. Налаштовуйте їх через інтерфейс налаштування панелі FastComments.
+Hugo перетворює всі ключі у `hugo.toml` та front matter на нижній регістр, але віджети FastComments вимагають ключів у camelCase (`tenantId`, `hasDarkBackground`). Цей компонент автоматично відновлює правильний регістр для всіх відомих параметрів верхнього рівня, тому параметри можна записувати у звичайній формі camelCase. Ключі, вкладені всередину об'єктних значень (наприклад, ключі мапи `translations` або поля `pageReactConfig`), не відновлюються. Налаштовуйте їх через інтерфейс кастомізації у панелі керування FastComments.

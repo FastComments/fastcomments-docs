@@ -23,5 +23,3 @@ async function runExamples() {
   const resultWithoutSso: CreateV1PageReact = await deleteV1PageReact(tenantId, urlId);
 }
 [inline-code-end]
-
----

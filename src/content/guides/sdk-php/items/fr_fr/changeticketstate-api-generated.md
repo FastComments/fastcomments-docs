@@ -44,5 +44,3 @@ try {
     echo 'Exception lors de l\'appel de DefaultApi->changeTicketState: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

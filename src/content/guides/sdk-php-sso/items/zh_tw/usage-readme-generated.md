@@ -1,19 +1,19 @@
-### Simple SSO
+### 簡易 SSO
 
-Simple SSO 使用簡單，但安全性低於 Secure SSO：
+簡易 SSO 使用起來很簡單，但安全性低於安全 SSO：
 
 ```php
 use FastComments\SSO\FastCommentsSSO;
 use FastComments\SSO\SimpleSSOUserData;
 
-// Create user data
+// 建立使用者資料
 $userData = SimpleSSOUserData::create(
     'username123',
     'user@example.com',
     'https://example.com/avatar.png'
 );
 
-// With URL-based login/logout
+// 使用基於 URL 的登入/登出
 $sso = FastCommentsSSO::createWithUrls(
     null,
     $userData,
@@ -21,26 +21,26 @@ $sso = FastCommentsSSO::createWithUrls(
     'https://example.com/logout'
 );
 
-// Or with callbacks
+// 或使用回呼函式
 $sso = FastCommentsSSO::createWithCallbacks(
     $userData,
-    function($url) { /* Handle login */ },
-    function($url) { /* Handle logout */ }
+    function($url) { /* 處理登入 */ },
+    function($url) { /* 處理登出 */ }
 );
 
-// Get the token to pass to FastComments
+// 取得要傳遞給 FastComments 的權杖
 $token = $sso->prepareToSend();
 ```
 
-### Secure SSO
+### 安全 SSO
 
-Secure SSO 透過 HMAC 驗證提供更高的安全性：
+安全 SSO 透過 HMAC 驗證提供增強的安全性：
 
 ```php
 use FastComments\SSO\FastCommentsSSO;
 use FastComments\SSO\SecureSSOUserData;
 
-// Create user data
+// 建立使用者資料
 $userData = SecureSSOUserData::create(
     'user-123',
     'user@example.com',
@@ -48,13 +48,13 @@ $userData = SecureSSOUserData::create(
     'https://example.com/avatar.png'
 );
 
-// Add optional data if needed
+// 視需要新增選填資料
 $userData->isAdmin = true;
 $userData->groupIds = ['group-1', 'group-2'];
 
-// Create the SSO object with your API key
+// 使用您的 API 金鑰建立 SSO 物件
 $sso = FastCommentsSSO::createSecure('your-api-key', $userData);
 
-// Get the token to pass to FastComments
+// 取得要傳遞給 FastComments 的權杖
 $token = $sso->prepareToSend();
 ```

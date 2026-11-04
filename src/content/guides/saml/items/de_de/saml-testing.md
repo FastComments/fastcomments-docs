@@ -1,207 +1,207 @@
 Das Testen Ihrer SAML-Konfiguration stellt sicher, dass die Authentifizierung korrekt funktioniert, bevor sie für Produktionsbenutzer bereitgestellt wird.
 
-### Pre-Testing Checklist
+### Checkliste vor dem Testen
 
-Bevor Sie die SAML-Authentifizierung testen, vergewissern Sie sich:
+Bevor Sie die SAML-Authentifizierung testen, überprüfen Sie:
 
 - ✅ SAML ist in FastComments aktiviert
-- ✅ Alle erforderlichen Felder sind ausgefüllt (IdP URL, Zertifikat)
+- ✅ Alle erforderlichen Felder sind ausgefüllt (IdP-URL, Zertifikat)
 - ✅ Der Identitätsanbieter ist mit den FastComments SP-Informationen konfiguriert
-- ✅ Testbenutzerkonto existiert in Ihrem IdP
-- ✅ Dem Testbenutzer sind die entsprechenden Rollen zugewiesen
+- ✅ Ein Testbenutzerkonto existiert in Ihrem IdP
+- ✅ Dem Testbenutzer sind geeignete Rollen zugewiesen
 
-### Testing Methods
+### Testmethoden
 
-#### Method 1: Direct SAML Login URL
+#### Methode 1: Direkte SAML-Login-URL
 
-1. **Get SAML Login URL**:
-   - Kopieren Sie es von Ihrer SAML-Konfigurationsseite
+1. **SAML-Login-URL abrufen**:
+   - Kopieren Sie sie von Ihrer SAML-Konfigurationsseite
    - Format: `https://fastcomments.com/saml/login/{your-tenant-id}`
 
-2. **Test Authentication**:
-   - Öffnen Sie die SAML-Login-URL in einem Inkognito-/Privat-Browserfenster
+2. **Authentifizierung testen**:
+   - Öffnen Sie die SAML-Login-URL in einem Inkognito-/privaten Browserfenster
    - Sie sollten zu Ihrem Identitätsanbieter weitergeleitet werden
-   - Melden Sie sich mit Test-Anmeldedaten an
+   - Melden Sie sich mit Testanmeldeinformationen an
    - Überprüfen Sie die erfolgreiche Weiterleitung zurück zu FastComments
 
-#### Method 2: Admin Dashboard Access
+#### Methode 2: Zugriff auf das Admin-Dashboard
 
-1. **Navigate to FastComments**:
-   - Gehen Sie zum [FastComments admin dashboard](https://fastcomments.com/auth/my-account)
+1. **Zu FastComments navigieren**:
+   - Gehen Sie zum [FastComments Admin-Dashboard](https://fastcomments.com/auth/my-account)
    - Suchen Sie nach der SAML-Login-Option oder verwenden Sie die SAML-Login-URL
 
-2. **Complete Authentication Flow**:
+2. **Authentifizierungsflow abschließen**:
    - Authentifizieren Sie sich über Ihren Identitätsanbieter
-   - Überprüfen Sie den Zugriff auf die entsprechenden Administrationsfunktionen basierend auf den zugewiesenen Rollen
+   - Überprüfen Sie den Zugriff auf die entsprechenden Admin-Funktionen basierend auf den zugewiesenen Rollen
 
-#### Method 3: Widget Integration Testing
+#### Methode 3: Testen der Widget-Integration
 
 Zum Testen von SAML mit Kommentar-Widgets:
 
-1. **Embed Widget**: Verwenden Sie das FastComments-Widget auf einer Testseite
-2. **Authentication**: Klicken Sie auf Login und wählen Sie die SAML-Option (falls verfügbar)
-3. **Verification**: Bestätigen Sie, dass der Benutzer im Widget als authentifiziert angezeigt wird
+1. **Widget einbetten**: Verwenden Sie das FastComments-Widget auf einer Testseite
+2. **Authentifizierung**: Klicken Sie auf „Anmelden" und wählen Sie die SAML-Option (falls verfügbar)
+3. **Verifizierung**: Bestätigen Sie, dass der Benutzer im Widget als authentifiziert angezeigt wird
 
-### What to Verify During Testing
+### Was beim Testen zu überprüfen ist
 
-#### Authentication Flow
+#### Authentifizierungsflow
 
-**Successful Redirect**:
-- Der Benutzer wird zur IdP-Anmeldeseite weitergeleitet
-- Die IdP-Anmeldeseite lädt korrekt
+**Erfolgreiche Weiterleitung**:
+- Der Benutzer wird zur IdP-Login-Seite weitergeleitet
+- Die IdP-Login-Seite lädt korrekt
 - Es treten keine Zertifikats- oder SSL-Fehler auf
 
-**IdP Authentication**:
-- Der Benutzer kann sich mit seinen IdP-Anmeldedaten einloggen
-- Multi-Faktor-Authentifizierung funktioniert (falls konfiguriert)
+**IdP-Authentifizierung**:
+- Der Benutzer kann sich mit seinen IdP-Anmeldeinformationen anmelden
+- Die Multi-Faktor-Authentifizierung funktioniert (falls konfiguriert)
 - Keine Authentifizierungsfehler vom IdP
 
-**Return to FastComments**:
-- Der Benutzer wird nach erfolgreichem IdP-Login zurück zu FastComments geleitet
-- Keine Validierungsfehler der SAML-Assertion
+**Rückkehr zu FastComments**:
+- Der Benutzer wird nach erfolgreicher IdP-Anmeldung zurück zu FastComments weitergeleitet
+- Keine Fehler bei der SAML-Assertion-Validierung
 - Der Benutzer erhält Zugriff auf die entsprechenden FastComments-Funktionen
 
-#### User Information
+#### Benutzerinformationen
 
-**Basic Profile Data**:
+**Grundlegende Profildaten**:
 - Die E-Mail-Adresse wird korrekt erfasst
-- Vor- und Nachname erscheinen, wenn vorhanden
-- Benutzerprofil wird erstellt oder aktualisiert
+- Vor- und Nachname werden angezeigt, sofern angegeben
+- Das Benutzerprofil wird erstellt oder aktualisiert
 
-**Role Assignment**:
+**Rollenzuweisung**:
 - Administrative Rollen werden korrekt zugewiesen
 - Der Benutzer hat Zugriff auf die erwarteten Admin-Funktionen
-- Berechtigungen entsprechen den zugewiesenen Rollen
+- Die Berechtigungen entsprechen den zugewiesenen Rollen
 
-#### SAML Response Validation
+#### Validierung der SAML-Antwort
 
-**Certificate Verification**:
+**Zertifikatsüberprüfung**:
 - Die Signatur der SAML-Antwort wird erfolgreich validiert
-- Keine Zertifikat-Validierungsfehler in den Logs
+- Keine Zertifikatsvalidierungsfehler in den Protokollen
 - Die Antwort wird als authentisch akzeptiert
 
-**Attribute Processing**:
+**Attributverarbeitung**:
 - Erforderliche Attribute (E-Mail) sind vorhanden
 - Optionale Attribute werden korrekt verarbeitet
 - Rollenattribute werden korrekt geparst und angewendet
 
-### Testing Different Scenarios
+### Testen verschiedener Szenarien
 
-#### Standard User Flow
+#### Standard-Benutzerflow
 
-1. **New User**:
-   - Erstmalige SAML-Anmeldung
+1. **Neuer Benutzer**:
+   - Erste SAML-Anmeldung
    - Kontoerstellung
    - Zuweisung grundlegender Berechtigungen
 
-2. **Existing User**:
-   - Anmeldung eines bereits existierenden Benutzers
+2. **Bestehender Benutzer**:
+   - Anmeldung eines zurückkehrenden Benutzers
    - Profilaktualisierungen
-   - Rolländerungen
+   - Rollenänderungen
 
-#### Administrative Access Testing
+#### Testen des administrativen Zugriffs
 
-1. **Admin Roles**:
+1. **Admin-Rollen**:
    - Testbenutzer mit der Rolle `fc-admin-admin`
-   - Überprüfen Sie den Zugriff auf das Admin-Dashboard
-   - Bestätigen Sie administrative Fähigkeiten
+   - Zugriff auf das Admin-Dashboard überprüfen
+   - Administrative Fähigkeiten bestätigen
 
-2. **Specialized Roles**:
-   - Testen Sie den Zugriff von `fc-moderator` auf Moderationsfunktionen
-   - Testen Sie den Zugriff von `fc-analytics-admin` auf Analytics
-   - Testen Sie den Zugriff von `fc-billing-admin` auf Abrechnungsfunktionen
+2. **Spezialisierte Rollen**:
+   - Zugriff von `fc-moderator` auf Moderationsfunktionen testen
+   - Zugriff von `fc-analytics-admin` auf Analysen testen
+   - Zugriff von `fc-billing-admin` auf Abrechnungsfunktionen testen
 
-#### Error Scenarios
+#### Fehlerszenarien
 
-1. **Invalid Certificates**:
-   - Testen Sie mit abgelaufenen oder falschen Zertifikaten
-   - Überprüfen Sie die korrekte Fehlerbehandlung
+1. **Ungültige Zertifikate**:
+   - Testen mit abgelaufenen oder falschen Zertifikaten
+   - Korrekte Fehlerbehandlung überprüfen
 
-2. **Missing Attributes**:
-   - Testen Sie SAML-Antworten ohne das erforderliche E-Mail-Attribut
-   - Überprüfen Sie eine saubere Fehlerbehandlung
+2. **Fehlende Attribute**:
+   - SAML-Antworten ohne erforderliches E-Mail-Attribut testen
+   - Graceful Fehlerbehandlung überprüfen
 
-3. **Network Issues**:
-   - Testen Sie bei Netzwerkverbindungsproblemen
-   - Überprüfen Sie das Timeout-Verhalten
+3. **Netzwerkprobleme**:
+   - Testen mit Verbindungsproblemen
+   - Timeout-Behandlung überprüfen
 
-### Troubleshooting Test Issues
+### Fehlerbehebung bei Testproblemen
 
-#### Common Authentication Problems
+#### Häufige Authentifizierungsprobleme
 
-**Redirect Loop**:
+**Weiterleitungsschleife**:
 - Prüfen Sie, ob die SP Entity ID mit der IdP-Konfiguration übereinstimmt
-- Verifizieren Sie, dass die ACS URL korrekt konfiguriert ist
-- Bestätigen Sie, dass die SAML-Bindungseinstellungen übereinstimmen
+- Überprüfen Sie, ob die ACS-URL korrekt konfiguriert ist
+- Bestätigen Sie, dass die SAML-Binding-Einstellungen übereinstimmen
 
-**Certificate Errors**:
-- Stellen Sie sicher, dass das Zertifikat BEGIN/END-Markierungen enthält
-- Überprüfen Sie, ob das Zertifikat abgelaufen ist
+**Zertifikatsfehler**:
+- Stellen Sie sicher, dass das Zertifikat BEGIN/END-Marker enthält
+- Überprüfen Sie, ob das Zertifikat nicht abgelaufen ist
 - Prüfen Sie auf zusätzliche Leerzeichen oder Formatierungsprobleme
 
-**Attribute Issues**:
+**Attributprobleme**:
 - Bestätigen Sie, dass das E-Mail-Attribut gesendet wird
-- Verifizieren Sie, dass Rollenattribute die richtige Benennung verwenden
-- Prüfen Sie das Attributformat (Array vs. durch Kommas getrennt)
+- Überprüfen Sie, ob die Rollenattribute die korrekte Benennung verwenden
+- Prüfen Sie das Attributformat (Array vs. kommagetrennt)
 
-#### Debugging Tools
+#### Debugging-Tools
 
-**Browser Developer Tools**:
-- Überwachen Sie Netzwerkrequests während des SAML-Flows
-- Prüfen Sie auf HTTP-Fehler oder Weiterleitungen
-- Untersuchen Sie SAML-POST-Daten (falls sichtbar)
+**Browser-Entwicklertools**:
+- Netzwerkanfragen während des SAML-Flows überwachen
+- Auf HTTP-Fehler oder Weiterleitungen prüfen
+- SAML-POST-Daten untersuchen (falls sichtbar)
 
-**IdP Testing Tools**:
-- Die meisten IdPs bieten SAML-Testinterfaces an
-- Verwenden Sie IdP-Tools, um das SAML-Antwortformat zu validieren
+**IdP-Testtools**:
+- Die meisten IdPs bieten SAML-Testoberflächen
+- Verwenden Sie IdP-Tools, um das Format der SAML-Antwort zu validieren
 - Testen Sie die Attributkonfiguration, bevor Sie an FastComments senden
 
-**FastComments Support**:
-- Aktivieren Sie Debug-Logging während der Tests
+**FastComments-Support**:
+- Aktivieren Sie Debug-Protokollierung während des Testens
 - Speichern Sie Fehlermeldungen und Zeitstempel
-- Kontaktieren Sie den Support mit spezifischen Fehlermeldungen
+- Kontaktieren Sie den Support mit spezifischen Fehlerdetails
 
-### Testing Best Practices
+### Best Practices für das Testen
 
-#### Test Environment Setup
+#### Einrichtung der Testumgebung
 
-1. **Dedicated Test Users**:
+1. **Dedizierte Testbenutzer**:
    - Erstellen Sie spezifische Testkonten in Ihrem IdP
    - Weisen Sie verschiedene Rollenkombinationen zu
    - Verwenden Sie leicht identifizierbare Test-E-Mail-Adressen
 
-2. **Isolated Testing**:
-   - Verwenden Sie Inkognito-/Privat-Browserfenster
+2. **Isoliertes Testen**:
+   - Verwenden Sie Inkognito-/private Browserfenster
    - Löschen Sie Cookies zwischen den Tests
    - Testen Sie mit verschiedenen Benutzerkonten
 
-3. **Documentation**:
-   - Dokumentieren Sie Testszenarien und Ergebnisse
-   - Halten Sie etwaige Konfigurationsänderungen fest
-   - Notieren Sie erfolgreiche Konfigurationsdetails
+3. **Dokumentation**:
+   - Halten Sie Testszenarien und Ergebnisse fest
+   - Dokumentieren Sie alle erforderlichen Konfigurationsänderungen
+   - Notieren Sie Details der erfolgreichen Konfiguration
 
-#### Pre-Production Validation
+#### Validierung vor der Produktion
 
-1. **Comprehensive Testing**:
+1. **Umfassendes Testen**:
    - Testen Sie alle Rollenkombinationen
    - Überprüfen Sie Randfälle und Fehlerbedingungen
-   - Stellen Sie sicher, dass die Performance akzeptabel ist
+   - Bestätigen Sie, dass die Leistung akzeptabel ist
 
-2. **User Acceptance**:
-   - Lassen Sie Endbenutzer den Authentifizierungsfluss testen
+2. **Benutzerakzeptanz**:
+   - Lassen Sie Endbenutzer den Authentifizierungsflow testen
    - Sammeln Sie Feedback zur Benutzererfahrung
    - Überprüfen Sie, ob der Workflow die Anforderungen erfüllt
 
-3. **Security Review**:
+3. **Sicherheitsüberprüfung**:
    - Bestätigen Sie, dass die Zertifikatsvalidierung funktioniert
-   - Verifizieren Sie, dass Rollenzuweisungen sicher sind
+   - Überprüfen Sie, ob die Rollenzuweisungen sicher sind
    - Testen Sie die Durchsetzung der Zugriffskontrolle
 
-### Production Deployment
+### Produktionsbereitstellung
 
-Nach erfolgreichem Testing:
+Nach erfolgreichem Testen:
 
-1. **Gradual Rollout**: Ziehen Sie in Betracht, SAML zunächst für eine Teilmenge von Benutzern auszurollen
-2. **Monitoring**: Überwachen Sie Authentifizierungserfolgsraten und Fehlermeldungslogs
-3. **Support Preparation**: Bereiten Sie das Support-Team auf SAML-bezogene Fragen vor
-4. **Documentation**: Stellen Sie Benutzerdokumentation für den SAML-Login-Prozess bereit
+1. **Schrittweiser Rollout**: Erwägen Sie, SAML zunächst für eine Teilmenge der Benutzer bereitzustellen
+2. **Überwachung**: Überwachen Sie Authentifizierungserfolgsraten und Fehlerprotokolle
+3. **Support-Vorbereitung**: Bereiten Sie das Support-Team auf SAML-bezogene Fragen vor
+4. **Dokumentation**: Stellen Sie eine Benutzerdokumentation für den SAML-Login-Prozess bereit

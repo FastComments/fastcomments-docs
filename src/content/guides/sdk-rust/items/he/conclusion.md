@@ -8,5 +8,3 @@
 ## תרומה
 
 תרומות מתקבלות בברכה! אנא בקר ב[מאגר ה-GitHub](https://github.com/FastComments/fastcomments-rust) לקבלת הנחיות לתרומה.
-
----

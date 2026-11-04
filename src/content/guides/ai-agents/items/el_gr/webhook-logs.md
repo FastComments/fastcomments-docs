@@ -1,58 +1,55 @@
----
-Each agent webhook has its own delivery log. Reachable from the [webhook list page](https://fastcomments.com/auth/my-account/ai-agents/webhooks) via the **Logs** button on each webhook row.
+Κάθε webhook πράκτορα έχει το δικό του αρχείο παράδοσης. Προσβάσιμο από τη [σελίδα λίστας webhooks](https://fastcomments.com/auth/my-account/ai-agents/webhooks) μέσω του κουμπιού **Logs** σε κάθε γραμμή webhook.
 
-### What's on the page
+### Τι περιέχει η σελίδα
 
-A paginated table with one row per delivery attempt:
+Ένας πίνακας με σελιδοποίηση, μία γραμμή ανά προσπάθεια παράδοσης:
 
 | Στήλη | Σημασία |
 |---|---|
-| When | Πότε συνέβη η προσπάθεια. |
-| Event | Ο τύπος του συμβάντος (`trigger.succeeded`, `approval.requested`, etc.). |
-| Status | Η κατάσταση παράδοσης. |
-| StatusCode | HTTP status code returned by your endpoint, when available. |
-| Description | Μια σύντομη περιγραφή του αποτελέσματος. Για αποτυχημένες παραδόσεις όπου δεν λήφθηκε HTTP απάντηση, το υποκείμενο μήνυμα σφάλματος αποθηκεύεται ως `{error: <message>}`. |
+| When | Πότε έγινε η προσπάθεια. |
+| Event | Ο τύπος του συμβάντος (`trigger.succeeded`, `approval.requested`, κ.λπ.). |
+| Status | Η κατάσταση της παράδοσης. |
+| StatusCode | Ο κωδικός κατάστασης HTTP που επέστρεψε το endpoint σας, όταν είναι διαθέσιμος. |
+| Description | Σύντομη περιγραφή του αποτελέσματος. Για αποτυχημένες παραδόσεις όπου δεν ελήφθη HTTP απάντηση, το υποκείμενο μήνυμα σφάλματος αποθηκεύεται ως `{error: <message>}`. |
 
-The page supports pagination only - there are no status, event-type, or date-range filters.
+Η σελίδα υποστηρίζει μόνο σελιδοποίηση - δεν υπάρχουν φίλτρα κατάστασης, τύπου συμβάντος ή εύρους ημερομηνιών.
 
-### What you can do from logs
+### Τι μπορείτε να κάνετε από τα logs
 
-- **Decide whether a status code should be in No-retry.** If you see your endpoint returning the same `4xx` over and over, that is a strong signal you want to add it to **No-retry status codes** so the platform stops retrying.
+- **Αποφασίστε αν ένας κωδικός κατάστασης πρέπει να μπει στο No-retry.** Αν βλέπετε το endpoint σας να επιστρέφει συνεχώς το ίδιο `4xx`, αυτό είναι ισχυρό σήμα ότι θέλετε να το προσθέσετε στα **No-retry status codes**, ώστε η πλατφόρμα να σταματήσει τις επαναλήψεις.
 
-### Failure information
+### Πληροφορίες αποτυχίας
 
-When a delivery fails without an HTTP response (DNS failure, connection refused, timeout, TLS error, etc.), the raw error message is recorded as `{error: <message>}`. The platform does not categorize these into named buckets like `TIMEOUT` or `DNS_ERROR` - read the error message directly to see what happened.
+Όταν μια παράδοση αποτυγχάνει χωρίς HTTP απάντηση (αποτυχία DNS, άρνηση σύνδεσης, timeout, σφάλμα TLS, κ.λπ.), το ακατέργαστο μήνυμα σφάλματος καταγράφεται ως `{error: <message>}`. Η πλατφόρμα δεν τα κατηγοριοποιεί σε επώνυμες κατηγορίες όπως `TIMEOUT` ή `DNS_ERROR` - διαβάστε απευθείας το μήνυμα σφάλματος για να δείτε τι συνέβη.
 
-For HTTP responses, the StatusCode column shows the code returned by your endpoint. Common cases:
+Για HTTP απαντήσεις, η στήλη StatusCode δείχνει τον κωδικό που επέστρεψε το endpoint σας. Συνηθισμένες περιπτώσεις:
 
-- **All attempts: `401` or `403`** - your endpoint is rejecting the signature. Check that you are computing the HMAC over `${timestamp}.${body}` and using the right secret. See [Webhook Signing](#webhook-signing).
-- **All attempts: `422`** - your endpoint thinks the payload is invalid. Either fix your endpoint, or add `422` to **No-retry status codes** if the rejection is expected for some events.
+- **Όλες οι προσπάθειες: `401` ή `403`** - το endpoint σας απορρίπτει την υπογραφή. Ελέγξτε ότι υπολογίζετε το HMAC πάνω στο `${timestamp}.${body}` και ότι χρησιμοποιείτε το σωστό μυστικό. Δείτε [Webhook Signing](#webhook-signing).
+- **Όλες οι προσπάθειες: `422`** - το endpoint σας θεωρεί ότι το payload είναι άκυρο. Είτε διορθώστε το endpoint σας, είτε προσθέστε το `422` στα **No-retry status codes** αν η απόρριψη είναι αναμενόμενη για ορισμένα συμβάντα.
 
-### Per-delivery context
+### Πλαίσιο ανά παράδοση
 
-Each log entry carries:
+Κάθε καταχώρηση log περιλαμβάνει:
 
-- `webhookId` - which webhook config produced this delivery.
-- `agentId` - which agent the delivery is about.
-- `triggerId` or `approvalId` - the underlying record.
-- `domain` - the matched domain.
+- `webhookId` - ποια ρύθμιση webhook παρήγαγε αυτή την παράδοση.
+- `agentId` - για ποιον πράκτορα αφορά η παράδοση.
+- `triggerId` ή `approvalId` - το υποκείμενο αρχείο.
+- `domain` - ο αντιστοιχισμένος τομέας.
 
-You can use these to correlate a failed delivery with the run it relates to in [Run History](#run-history).
+Μπορείτε να τα χρησιμοποιήσετε για να συσχετίσετε μια αποτυχημένη παράδοση με την εκτέλεση που την αφορά στο [Run History](#run-history).
 
-### Retention
+### Διατήρηση
 
-`AgentSyncLog` entries have a flat 1-year TTL on `createdAt` regardless of outcome - successful and failed deliveries are retained for the same length of time. Beyond retention, the log entry is gone.
+Οι καταχωρήσεις `AgentSyncLog` έχουν επίπεδο TTL 1 έτους στο `createdAt` ανεξάρτητα από το αποτέλεσμα - επιτυχημένες και αποτυχημένες παραδόσεις διατηρούνται για το ίδιο χρονικό διάστημα. Μετά τη διατήρηση, η καταχώρηση log εξαφανίζεται.
 
-If you need long-term audit, the sustainable pattern is: have the **endpoint itself** persist the deliveries it receives. That decouples your audit log from the platform's retention policy.
+Αν χρειάζεστε μακροπρόθεσμη ελεγκτικότητα, το βιώσιμο μοτίβο είναι: το **ίδιο το endpoint** να αποθηκεύει μόνιμα τις παραδόσεις που λαμβάνει. Έτσι αποσυνδέετε το audit log σας από την πολιτική διατήρησης της πλατφόρμας.
 
-### Test send
+### Δοκιμαστική αποστολή
 
-The webhook config form's **Test send** button writes a fake delivery into the same log table so you can verify connectivity end-to-end before relying on real events. Test deliveries are clearly labeled in the log so they do not pollute production failure stats.
+Το κουμπί **Test send** της φόρμας ρύθμισης webhook γράφει μια εικονική παράδοση στον ίδιο πίνακα log, ώστε να μπορείτε να επαληθεύσετε τη συνδεσιμότητα από άκρο σε άκρο πριν βασιστείτε σε πραγματικά συμβάντα. Οι δοκιμαστικές παραδόσεις επισημαίνονται σαφώς στο log, ώστε να μην αλλοιώνουν τα στατιστικά αποτυχιών παραγωγής.
 
-### See also
+### Δείτε επίσης
 
 - [Webhooks Overview](#webhooks-overview).
-- [Webhook Retries](#webhook-retries) for the retry semantics that drive these logs.
-- [Webhook Signing](#webhook-signing) for how to verify on your endpoint.
-
----
+- [Webhook Retries](#webhook-retries) για τη λογική επαναλήψεων που τροφοδοτεί αυτά τα logs.
+- [Webhook Signing](#webhook-signing) για το πώς να επαληθεύσετε στο endpoint σας.

@@ -1,4 +1,3 @@
----
 Per gli sviluppatori che potresti non voler impostare come `Administrators`, considera di creare un utente `Administrator`
 con le seguenti autorizzazioni:
 
@@ -20,4 +19,3 @@ La motivazione per queste autorizzazioni è la seguente:
 5. **API/SSO Admin**: Questo permetterà loro di recuperare le API keys direttamente dalla nostra piattaforma. Consideriamo
 questo più sicuro rispetto a un `Administrator` che le copia per loro e invia l'API Secret tramite email, il che
    potrebbe non essere molto sicuro.
----

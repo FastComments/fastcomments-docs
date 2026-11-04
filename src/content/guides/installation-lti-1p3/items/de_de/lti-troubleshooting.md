@@ -29,5 +29,3 @@ Das LMS hat eine LTI-Nachricht gesendet, die FastComments nicht verarbeitet (z. 
 #### Iframe passt sich nicht an
 
 Die meisten LMS passen LTI-Iframes automatisch an. Wenn Ihres das nicht tut, prüfen Sie, ob die Starteinstellungen des LMS es dem Tool erlauben, postMessage-Ereignisse an den übergeordneten Frame zu senden. FastComments sendet sowohl Canvas-Style- (`lti.frameResize`) als auch IMS-Spezifikations- (`org.imsglobal.lti.frameResize`) Resize-Nachrichten.
-
----

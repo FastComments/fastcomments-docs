@@ -1,4 +1,3 @@
----
 FastComments, küfür ve spam tespitini desteklese de, özelleştirilebilir. Küfür veya Spam Tespiti  
 Yorum Moderasyon Ayarları sayfası üzerinden ayrı ayrı kapatılabilir.
 

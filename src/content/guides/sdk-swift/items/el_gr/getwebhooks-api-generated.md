@@ -1,16 +1,16 @@
-Lists the webhooks configured for the tenant, both dashboard-managed rows and API subscriptions.
+Εμφανίζει τα webhooks που έχουν ρυθμιστεί για τον tenant, τόσο τις εγγραφές που διαχειρίζεται το dashboard όσο και τις συνδρομές μέσω API.
 
 ## Παράμετροι
 
 | Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
-|------|------|----------|------------|-----------|
+|------|------|----------|----------|-------------|
 | tenantId | string | query | Ναι |  |
 | event | string | query | Όχι |  |
 | domain | string | query | Όχι |  |
 | source | string | query | Όχι |  |
 | skip | number | query | Όχι |  |
 
-## Απόκριση
+## Απάντηση
 
 Επιστρέφει: [`GetWebhooksResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetWebhooksResponse.swift)
 
@@ -18,14 +18,14 @@ Lists the webhooks configured for the tenant, both dashboard-managed rows and AP
 
 [inline-code-attrs-start title = 'Παράδειγμα getWebhooks'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Τα παρακάτω δείγματα κώδικα είναι ακόμη σε beta. Για οποιοδήποτε πρόβλημα, παρακαλούμε αναφέρετε το μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let event = WebhookEventName() // WebhookEventName |  (προαιρετικό)
-let domain = "domain_example" // String |  (προαιρετικό)
-let source = WebhookSource() // WebhookSource |  (προαιρετικό)
-let skip = 987 // Double |  (προαιρετικό)
+let event = WebhookEventName() // WebhookEventName |  (optional)
+let domain = "domain_example" // String |  (optional)
+let source = WebhookSource() // WebhookSource |  (optional)
+let skip = 987 // Double |  (optional)
 
 DefaultAPI.getWebhooks(tenantId: tenantId, options: DefaultAPI.GetWebhooksOptions(event: event, domain: domain, source: source, skip: skip)) { (response, error) in
     guard error == nil else {
@@ -38,5 +38,3 @@ DefaultAPI.getWebhooks(tenantId: tenantId, options: DefaultAPI.GetWebhooksOption
     }
 }
 [inline-code-end]
-
----

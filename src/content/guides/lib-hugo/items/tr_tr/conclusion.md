@@ -1,4 +1,3 @@
----
 ## Yardıma mı ihtiyacınız var?
 
 Hugo Kütüphanesi ile ilgili herhangi bir sorunla karşılaşırsanız veya sorularınız olursa, lütfen:
@@ -9,5 +8,3 @@ Hugo Kütüphanesi ile ilgili herhangi bir sorunla karşılaşırsanız veya sor
 ## Katkıda Bulunma
 
 Katkılar memnuniyetle karşılanır! Katkıda bulunma yönergeleri için lütfen [GitHub deposunu](https://github.com/FastComments/fastcomments-hugo) ziyaret edin.
-
----

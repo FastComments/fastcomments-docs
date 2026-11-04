@@ -1,4 +1,3 @@
----
 ## Paramètres
 
 | Nom | Type | Obligatoire | Description |
@@ -32,5 +31,3 @@ api->updateTenantPackage(utility::conversions::to_string_t("my-tenant-123"),
         }
     });
 [inline-code-end]
-
----

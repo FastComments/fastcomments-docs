@@ -1,4 +1,3 @@
----
 從發行標籤安裝（此專案透過 git 標籤分發，而非 PyPI）：
 
 ```bash
@@ -19,4 +18,3 @@ INSTALLED_APPS = [
     "fastcomments_django",
 ]
 ```
----

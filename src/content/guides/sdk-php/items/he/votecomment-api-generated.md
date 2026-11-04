@@ -46,5 +46,3 @@ try {
     echo 'Exception כאשר קוראים ל‑PublicApi->voteComment: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

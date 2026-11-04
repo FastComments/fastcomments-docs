@@ -1,18 +1,17 @@
-Unsubscribes (REST hook unsubscribe). Only subscriptions created through this API can be  
-usunięte tutaj; dashboard-managed webhooks are edited in the dashboard.
+Anulowanie subskrypcji (REST hook unsubscribe). Tutaj można usuwać tylko subskrypcje utworzone za pomocą tego API; webhooki zarządzane z poziomu pulpitu edytuje się w pulpicie.
 
-## Parameters
+## Parametry
 
-| Nazwa | Typ | Wymagane | Opis |
-|------|------|----------|------|
+| Nazwa | Typ | Wymagany | Opis |
+|------|------|----------|-------------|
 | tenantId | string | Tak |  |
 | id | string | Tak |  |
 
-## Response
+## Odpowiedź
 
 Zwraca: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
 
-## Example
+## Przykład
 
 [inline-code-attrs-start title = 'Przykład deleteWebhook'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -21,5 +20,3 @@ const webhookId: string = "wh_98765";
 
 const result: APIEmptyResponse = await deleteWebhook(tenantId, webhookId);
 [inline-code-end]
-
----

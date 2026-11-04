@@ -1,3 +1,1 @@
----
 Le bloc HTML de Webnode est ce que nous utiliserons pour intégrer le widget de commentaires. Depuis le 26 juin 2023, ce bloc est une fonctionnalité payante de Webnode : il n’est pas disponible sur le forfait gratuit, et les projets créés après cette date nécessitent un forfait premium pour l’utiliser. Si vous ne voyez pas l’option `HTML` dans l’éditeur, passez à un forfait Webnode supérieur et il apparaîtra.
----

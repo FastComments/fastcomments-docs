@@ -34,5 +34,3 @@ rescue FastCommentsClient::ApiError => e
   puts "呼叫 PublicApi->pin_comment 時發生錯誤: #{e}"
 end
 [inline-code-end]
-
----

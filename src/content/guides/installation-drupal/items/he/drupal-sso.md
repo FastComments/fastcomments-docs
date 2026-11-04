@@ -19,5 +19,3 @@ FastComments משתלב עם מערכת המשתמשים של Drupal דרך SSO,
 <sup>(אופציונלי)</sup> הוסף את המנהלים שלך ל-[משתמשים ומנהלים](https://fastcomments.com/auth/my-account/users) ואת המנחים ל-[מנחי תגובות](https://fastcomments.com/auth/my-account/moderate-comments/moderators) כדי לשפר את חווייתם ולהפעיל מעקב סטטיסטי עבור המנחים.
 
 למבט מעמיק יותר על איך SSO עובד, ראו את [סעיף ה‑SSO](/guide-customizations-and-configuration.html#sso) במסמכי ההתאמות האישיות.
-
----

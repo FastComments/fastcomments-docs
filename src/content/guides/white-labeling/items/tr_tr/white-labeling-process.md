@@ -1,4 +1,3 @@
----
 White Labeling'i kurma süreci aşağıdaki gibidir:
 
 1. Faturalamanın nasıl yönetileceğine karar verin.
@@ -11,5 +10,3 @@ White Labeling'i kurma süreci aşağıdaki gibidir:
    2. `TenantUser` `Tenant` içinde belirli ayrıcalıklara sahip bir yöneticidir.
    3. `TenantPackage` bir `Tenant` için mevcut olan belirlenmiş limitler ve fiyatlandırma içeren bir pakettir.
 3. Kiracıları sisteme almak için [API](/guide-api.html) ile entegre olun veya [scripts](https://github.com/FastComments/fastcomments-code-examples/tree/master/white-labeling) kullanın.
-
----

@@ -1,4 +1,3 @@
----
 Identificeert de referentie die in gebruik is: de tenant waartoe deze behoort en, voor OAuth‑tokens, de gebruiker die deze heeft geautoriseerd.  
 Integraties gebruiken dit om een verbinding te testen en te labelen.
 
@@ -32,5 +31,3 @@ DefaultAPI.getMe(tenantId: tenantId) { (response, error) in
     }
 }
 [inline-code-end]
-
----

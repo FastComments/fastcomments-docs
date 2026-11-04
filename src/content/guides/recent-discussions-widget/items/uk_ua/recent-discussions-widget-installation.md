@@ -1,6 +1,6 @@
-The Recent Discussions Widget shows pages on your site that have the most recent comment activity. Each entry displays the page title, last activity date, and total comment count. It automatically detects dark backgrounds and adjusts its styling accordingly.
+Віджет Recent Discussions показує сторінки вашого сайту з найновішою активністю коментарів. Кожен запис відображає назву сторінки, дату останньої активності та загальну кількість коментарів. Він автоматично визначає темний фон і відповідно адаптує своє оформлення.
 
-## Basic Installation
+## Базове встановлення
 
 [inline-code-attrs-start title = 'Встановлення віджета Recent Discussions'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
@@ -13,19 +13,19 @@ The Recent Discussions Widget shows pages on your site that have the most recent
 </script>
 [inline-code-end]
 
-## Configuration Options
+## Параметри конфігурації
 
-The `FastCommentsRecentDiscussionsV2` function accepts the following configuration options:
+Функція `FastCommentsRecentDiscussionsV2` приймає такі параметри конфігурації:
 
-- **tenantId** (required): Ваш ідентифікатор орендаря FastComments
-- **count** (optional): Кількість сторінок для відображення. За замовчуванням `20`, максимум `100`
-- **hasDarkBackground** (optional): Примусово вмикає темний режим стилів. Якщо не встановлено, визначається автоматично за фоном сторінки
+- **tenantId** (обов\'язково): Ваш ідентифікатор tenant у FastComments
+- **count** (необов\'язково): Кількість сторінок для показу. За замовчуванням `20`, максимум `100`
+- **hasDarkBackground** (необов\'язково): Примусове оформлення темного режиму. Автоматично визначається з фону сторінки, якщо не задано
 
-## Advanced Examples
+## Розширені приклади
 
-### Custom Count
+### Власна кількість
 
-[inline-code-attrs-start title = 'Recent Discussions з налаштованою кількістю'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Recent Discussions з власною кількістю'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/widget-recent-discussions-v2.min.js"></script>
 <div id="fastcomments-widget-recent-discussions"></div>
@@ -37,7 +37,7 @@ The `FastCommentsRecentDiscussionsV2` function accepts the following configurati
 </script>
 [inline-code-end]
 
-### Force Dark Mode
+### Примусовий темний режим
 
 [inline-code-attrs-start title = 'Recent Discussions з темним режимом'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
@@ -50,5 +50,3 @@ The `FastCommentsRecentDiscussionsV2` function accepts the following configurati
     });
 </script>
 [inline-code-end]
-
----

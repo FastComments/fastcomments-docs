@@ -1,4 +1,3 @@
----
 VanillaJS različica vtičnika je najenostavnejši način za dodajanje komentarjev na vaše spletno mesto, saj ne zahteva nobenih gradbenih sistemov ali strežniške kode.
 
 Preprosto dodajte naslednji izsek kode na katero koli stran, da na svoje spletno mesto dodate komentarje:
@@ -14,5 +13,3 @@ Veliko aplikacij ima možnost "HTML Embed Code". Izberite to in prilepite zgornj
 Dokumentacijo za konfiguracijo vtičnika najdete <a href="/guide-customizations-and-configuration.html" target="_blank">tukaj</a>.
 
 Vse različice FastComments vtičnika so ovojnice okoli osnovne knjižnice VanillaJS. To nam omogoča dodajanje funkcij in odpravljanje težav na enem mestu - spremembe se samodejno razširijo tudi na druge različice komentarnega vtičnika.
-
----

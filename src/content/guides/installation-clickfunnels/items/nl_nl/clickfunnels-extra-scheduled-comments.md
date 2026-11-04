@@ -1,4 +1,3 @@
----
 FastComments ondersteunt iets dat Auto Play heet. Dit stelt je in staat om een CSV met reacties te importeren en te plannen dat ze worden afgespeeld
 op bepaalde offsets gebaseerd op uren, minuten en seconden vanaf het moment dat de pagina is geladen.
 
@@ -12,5 +11,3 @@ Dit is momenteel inbegrepen in alle FastComments-abonnementen.
 ### Opmerking!
 
 Onthoud dat de `URL ID` kolom in het CSV-bestand moet overeenkomen met de `URL` van de cursus/video. 
-
----

@@ -44,5 +44,3 @@ Quando isso está desativado, o Simple SSO não concede essas permissões. Um pa
 Os payloads Simple SSO não são assinados, portanto, quando isso está ativado, qualquer pessoa que conheça o e‑mail ou ID de usuário de um administrador pode agir como ele. Se isso for importante para o seu site, deixe desativado e use Secure SSO para seus administradores.
 
 Usuários criados pelo Secure SSO ou pela API não podem ser alcançados pelo Simple SSO, independentemente de isso estar ativado ou não.
-
----

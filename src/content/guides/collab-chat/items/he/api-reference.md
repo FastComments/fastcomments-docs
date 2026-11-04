@@ -1,44 +1,44 @@
 ### סקירת API
 
-Collab Chat מספקת שלוש נקודות קצה REST API לניהול שיחות טקסט באופן תכנותי. נקודות קצה אלה מאפשרות לך לאחזר, ליצור ולמחוק הערות מבלי להשתמש בווידג'ט בדפדפן.
+Collab Chat מספק שלושה נקודות קצה (endpoints) של REST API לניהול שיחות טקסט באופן תוכנתי. נקודות קצה אלו מאפשרות לך לאחזר, ליצור ולמחוק הערות (annotations) מבלי להשתמש בווידג'ט הדפדפן.
 
-אלו נקודות קצה ציבוריות שמאמתות משתמשים באמצעות עוגיות הדפדפן. הן אינן משתמשות במפתחות API. משתמשים חייבים להיות מחוברים ל-FastComments בדפדפן שלהם כדי לגשת לנקודות קצה אלה.
+אלו נקודות קצה ציבוריות שמאמתות משתמשים באמצעות עוגיות דפדפן. הן אינן משתמשות במפתחות API. המשתמשים חייבים להיות מחוברים ל-FastComments בדפדפן שלהם כדי לגשת לנקודות קצה אלו.
 
-### Base URL
+### כתובת בסיס (Base URL)
 
-All Collab Chat API endpoints are under:
+כל נקודות הקצה של Collab Chat API נמצאות תחת:
 
 [inline-code-attrs-start title = 'כתובת בסיס'; type = 'text'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 https://fastcomments.com/comment-collab-chats
 [inline-code-end]
 
-### Authentication
+### אימות
 
-These endpoints authenticate users via browser cookies. They do not use API keys. Users must be logged into FastComments in their browser to access these endpoints.
+נקודות קצה אלו מאמתות משתמשים באמצעות עוגיות דפדפן. הן אינן משתמשות במפתחות API. המשתמשים חייבים להיות מחוברים ל-FastComments בדפדפן שלהם כדי לגשת לנקודות קצה אלו.
 
-### Get All Conversations
+### קבלת כל השיחות
 
-החזר את כל שיחות הטקסט עבור דף מסוים.
+אחזר את כל שיחות הטקסט עבור דף ספציפי.
 
-#### Endpoint
+#### נקודת קצה
 
 [inline-code-attrs-start title = 'נקודת קצה GET'; type = 'text'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 GET /comment-collab-chats/:tenantId?urlId=<urlId>
 [inline-code-end]
 
-#### Parameters
+#### פרמטרים
 
-`tenantId` (path parameter, required) הוא מזהה ה-Tenant של FastComments שלך.
+`tenantId` (פרמטר נתיב, נדרש) הוא מזהה ה-Tenant שלך ב-FastComments.
 
-`urlId` (query parameter, required) הוא מזהה הדף שעליו ברצונך לאחזר שיחות.
+`urlId` (פרמטר שאילתה, נדרש) הוא מזהה הדף שעבורו ברצונך לאחזר שיחות.
 
-#### Response
+#### תגובה
 
-התשובה כוללת את סטטוס ה-API, מידע על סשן המשתמש הנוכחי אם מאומת, מערך שיחות עם ה-IDs שלהן, כתובות URL וטווחי טקסט, מזהה URL מנוקה, דגל המציין האם המשתמש הנוכחי הוא מנהל אתר או מודרטור, ופרטי חיבור WebSocket לסנכרון חי הכוללים את `tenantIdWS`, `urlIdWS`, ו-`userIdWS`.
+התגובה כוללת את סטטוס ה-API, מידע על סשן המשתמש הנוכחי אם האימות בוצע, מערך של שיחות עם המזהים, הכתובות וטווחי הטקסט שלהן, מזהה כתובת מנוקה, דגל המציין אם המשתמש הנוכחי הוא מנהל אתר או מנחה (moderator), ופרטי חיבור WebSocket לסנכרון חי כולל `tenantIdWS`, `urlIdWS` ו-`userIdWS`.
 
-#### Example Request
+#### דוגמת בקשה
 
 [inline-code-attrs-start title = 'דוגמת בקשת GET'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -46,7 +46,7 @@ curl "https://fastcomments.com/comment-collab-chats/demo?urlId=my-article-page" 
   --cookie "your-session-cookie"
 [inline-code-end]
 
-#### Example Response
+#### דוגמת תגובה
 
 [inline-code-attrs-start title = 'דוגמת תגובת GET'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -76,42 +76,42 @@ curl "https://fastcomments.com/comment-collab-chats/demo?urlId=my-article-page" 
 }
 [inline-code-end]
 
-### Create Conversation
+### יצירת שיחה
 
-צור שיחת טקסט חדשה עבור בחירת טקסט מסוימת.
+צור שיחת טקסט חדשה עבור בחירת טקסט ספציפית.
 
-#### Endpoint
+#### נקודת קצה
 
 [inline-code-attrs-start title = 'נקודת קצה POST'; type = 'text'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 POST /comment-collab-chats/:tenantId
 [inline-code-end]
 
-#### Parameters
+#### פרמטרים
 
-`tenantId` (path parameter, required) הוא מזהה ה-Tenant של FastComments שלך.
+`tenantId` (פרמטר נתיב, נדרש) הוא מזהה ה-Tenant שלך ב-FastComments.
 
-גוף הבקשה חייב להיות JSON ולכלול את השדות החובה הבאים.
+גוף הבקשה חייב להיות JSON ולכלול את השדות הנדרשים הבאים.
 
-`urlId` (string, required) הוא מזהה הדף הבסיסי.
+`urlId` (מחרוזת, נדרש) הוא מזהה הדף הבסיסי.
 
-`urlIdWithRange` (string, required) הוא ה-URL המשולב עם טווח הטקסט, לדוגמה `my-page:p:0:15,0:45{abc123}`.
+`urlIdWithRange` (מחרוזת, נדרש) הוא הכתובת המשולבת עם טווח הטקסט, לדוגמה `my-page:p:0:15,0:45{abc123}`.
 
-`pageTitle` (string, required) הוא כותרת הדף.
+`pageTitle` (מחרוזת, נדרש) הוא כותרת הדף.
 
-`selector` (string, required) הוא נתיב ה-DOM לאלמנט שמכיל את הטקסט הנבחר.
+`selector` (מחרוזת, נדרש) הוא הנתיב ב-DOM לאלמנט המכיל את הטקסט הנבחר.
 
-`range` (string, required) הוא טווח הטקסט הסריאלי בפורמט `startOffset:endOffset,startOffset:endOffset{checksum}`.
+`range` (מחרוזת, נדרש) הוא טווח הטקסט המסודר בפורמט `startOffset:endOffset,startOffset:endOffset{checksum}`.
 
-`createdFromCommentId` (string, required) הוא ה-ID של ההערה שהחלה את הצ'אט הזה.
+`createdFromCommentId` (מחרוזת, נדרש) הוא המזהה של התגובה שיזמה שיחה זו.
 
-`broadcastId` (string, required) הוא UUID לסנכרון חי כדי למנוע אפקטי הדהוד.
+`broadcastId` (מחרוזת, נדרש) הוא UUID לסנכרון חי למניעת אפקטי הדהוד (echo).
 
-#### Response
+#### תגובה
 
-התשובה כוללת את סטטוס ה-API ואת ה-ID של השיחה שנוצרה זה עתה.
+התגובה כוללת את סטטוס ה-API ואת המזהה של השיחה החדשה שנוצרה.
 
-#### Example Request
+#### דוגמת בקשה
 
 [inline-code-attrs-start title = 'דוגמת בקשת POST'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -129,7 +129,7 @@ curl -X POST "https://fastcomments.com/comment-collab-chats/demo" \
   }'
 [inline-code-end]
 
-#### Example Response
+#### דוגמת תגובה
 
 [inline-code-attrs-start title = 'דוגמת תגובת POST'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -139,26 +139,26 @@ curl -X POST "https://fastcomments.com/comment-collab-chats/demo" \
 }
 [inline-code-end]
 
-### Delete Conversation
+### מחיקת שיחה
 
-מחק שיחת טקסט קיימת. נקודת קצה זו דורשת הרשאות מנהל או מודרטור, או שהשיחה חייבת להיות נוצרה על ידי המשתמש המאומת.
+מחק שיחת טקסט קיימת. נקודת קצה זו דורשת הרשאות מנהל או מנחה (moderator), או שהשיחה חייבת להיות נוצרה על ידי המשתמש המאומת.
 
-#### Endpoint
+#### נקודת קצה
 
 [inline-code-attrs-start title = 'נקודת קצה DELETE'; type = 'text'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 DELETE /comment-collab-chats/:tenantId/:chatId
 [inline-code-end]
 
-#### Parameters
+#### פרמטרים
 
-`tenantId` (path parameter, required) הוא מזהה ה-Tenant של FastComments שלך.
+`tenantId` (פרמטר נתיב, נדרש) הוא מזהה ה-Tenant שלך ב-FastComments.
 
-`chatId` (path parameter, required) הוא ה-ID של השיחה למחיקה.
+`chatId` (פרמטר נתיב, נדרש) הוא המזהה של השיחה שיש למחוק.
 
-`broadcastId` (request body, required) הוא UUID לסנכרון חי.
+`broadcastId` (גוף הבקשה, נדרש) הוא UUID לסנכרון חי.
 
-#### Example Request
+#### דוגמת בקשה
 
 [inline-code-attrs-start title = 'דוגמת בקשת DELETE'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -170,7 +170,7 @@ curl -X DELETE "https://fastcomments.com/comment-collab-chats/demo/conv789" \
   }'
 [inline-code-end]
 
-#### Example Response
+#### דוגמת תגובה
 
 [inline-code-attrs-start title = 'דוגמת תגובת DELETE'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -179,13 +179,13 @@ curl -X DELETE "https://fastcomments.com/comment-collab-chats/demo/conv789" \
 }
 [inline-code-end]
 
-### Rate Limiting
+### הגבלת קצב (Rate Limiting)
 
-נקודות קצה אלה כפופות להגבלת קצב הסטנדרטית של FastComments API. ה-middleware של הגבלת הקצב מופעל לכל Tenant כדי למנוע ניצול לרעה תוך שמירה על דפוסי שימוש רגילים.
+נקודות קצה אלו כפופות להגבלת הקצב הסטנדרטית של FastComments API. תוכנת הביניים (middleware) להגבלת קצב חלה פר-Tenant כדי למנוע שימוש לרעה תוך אפשור דפוסי שימוש תקינים.
 
-### Error Responses
+### תגובות שגיאה
 
-כל נקודות הקצה מחזירות קודי סטטוס HTTP סטנדרטיים. תגובת 400 מעידה על פרמטרי בקשה לא חוקיים. תגובת 401 משמעותה שהאימות נכשל. תגובת 403 מציינת חוסר הרשאות מספיקות. תגובת 404 פירושה שהשיחה לא נמצאה. תגובת 429 מעידה על חריגה ממגבלת הקצב.
+כל נקודות הקצה מחזירות קודי סטטוס HTTP סטנדרטיים. תגובת 400 מציינת פרמטרי בקשה לא תקינים. תגובת 401 פירושה שהאימות נכשל. תגובת 403 מציינת הרשאות לא מספיקות. תגובת 404 פירושה שהשיחה לא נמצאה. תגובת 429 מציינת שהוגבלת הקצב.
 
 תגובות שגיאה כוללות גוף JSON עם פרטים:
 
@@ -197,6 +197,6 @@ curl -X DELETE "https://fastcomments.com/comment-collab-chats/demo/conv789" \
 }
 [inline-code-end]
 
-### Usage Tracking
+### מעקב שימוש
 
-יצירת שיחות מגדילה את מדד השימוש `conversationCreateCount`. כל פעילות סנכרון WebSocket מגדילה את `pubSubMessageCount` ו-`pubSubBandwidth`. ניתן לעקוב אחר מדדים אלה בלוח המחוונים של FastComments תחת ניתוחי שימוש.
+יצירת שיחות מגדילה את מדד השימוש `conversationCreateCount` שלך. כל פעילות סנכרון WebSocket מגדילה את `pubSubMessageCount` ו-`pubSubBandwidth`. באפשרותך לעקוב אחר מדדים אלו בלוח הבקרה שלך ב-FastComments תחת ניתוח שימוש.

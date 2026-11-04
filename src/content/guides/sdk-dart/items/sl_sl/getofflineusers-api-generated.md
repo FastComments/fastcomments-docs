@@ -1,22 +1,22 @@
-Past commenters on the page who are NOT currently online. Sorted by displayName.  
-Use this after exhausting /users/online to render a "Members" section.  
-Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName}  
-index from afterName forward via $gt, no $skip cost.
+Pretekli komentatorji na strani, ki trenutno NISO na spletu. Razvrščeni po displayName.
+Uporabite to po izčrpanju /users/online za prikaz razdelka "Members".
+Straniščna paginacija po commenterName: strežnik prehaja delni indeks {tenantId, urlId, commenterName}
+od afterName naprej prek $gt, brez stroškov $skip.
 
-## Parameters
+## Parametri
 
-| Ime | Tip | Lokacija | Potrebno | Opis |
-|------|------|----------|----------|------|
-| tenantId | string | path | Yes |  |
-| urlId | string | query | Yes | Identifikator URL-ja strani (očistljen na strežniku). |
-| afterName | string | query | No | Kursor: podajte nextAfterName iz prejšnjega odgovora. |
-| afterUserId | string | query | No | Kursor za razreševanje zavezovanja: podajte nextAfterUserId iz prejšnjega odgovora. Potrebno, ko je nastavljen afterName, da se pri enakih imenih ne izpustijo vnosi. |
+| Ime | Vrsta | Lokacija | Obvezno | Opis |
+|------|------|----------|----------|-------------|
+| tenantId | string | path | Da |  |
+| urlId | string | query | Da | Identifikator URL-ja strani (očiščen na strežniku). |
+| afterName | string | query | Ne | Kazalec: posredujte nextAfterName iz prejšnjega odgovora. |
+| afterUserId | string | query | Ne | Kazalni odločilni kriterij: posredujte nextAfterUserId iz prejšnjega odgovora. Obvezen, ko je nastavljen afterName, da vnosi z istim imenom ne izginejo. |
 
-## Response
+## Odgovor
 
 Vrne: `PageUsersOfflineResponse`
 
-## Example
+## Primer
 
 [inline-code-attrs-start title = 'Primer getOfflineUsers'; type = ''; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -24,9 +24,9 @@ import 'package:fastcomments_dart/api.dart';
 
 final api_instance = PublicApi();
 final tenantId = tenantId_example; // String | 
-final urlId = urlId_example; // String | Identifikator URL-ja strani (očistljen na strežniku).
-final afterName = afterName_example; // String | Kursor: podajte nextAfterName iz prejšnjega odgovora.
-final afterUserId = afterUserId_example; // String | Kursor za razreševanje zavezovanja: podajte nextAfterUserId iz prejšnjega odgovora. Potrebno, ko je nastavljen afterName, da se pri enakih imenih ne izpustijo vnosi.
+final urlId = urlId_example; // String | Identifikator URL-ja strani (očiščen na strežniku).
+final afterName = afterName_example; // String | Kazalec: posredujte nextAfterName iz prejšnjega odgovora.
+final afterUserId = afterUserId_example; // String | Kazalni odločilni kriterij: posredujte nextAfterUserId iz prejšnjega odgovora. Obvezen, ko je nastavljen afterName, da vnosi z istim imenom ne izginejo.
 
 try {
     final result = api_instance.getOfflineUsers(tenantId, urlId, GetOfflineUsersOptions(afterName: afterName, afterUserId: afterUserId));

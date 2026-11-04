@@ -1,4 +1,3 @@
----
 ## Παράμετροι
 
 | Name | Type | Required | Description |
@@ -28,5 +27,3 @@ api->putAwardBadge(tenantId, badgeId, opts).then([](pplx::task<std::shared_ptr<A
     }
 });
 [inline-code-end]
-
----

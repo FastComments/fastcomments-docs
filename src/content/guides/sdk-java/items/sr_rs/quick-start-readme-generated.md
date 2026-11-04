@@ -1,6 +1,6 @@
 ### Коришћење аутентификованих API-ја (DefaultApi)
 
-**Important:** You must set your API key on the ApiClient before making authenticated requests. If you don't, requests will fail with a 401 error.
+**Важно:** Морате поставити свој API кључ на ApiClient пре слања аутентификованих захтева. Ако то не урадите, захтеви ће пасти са 401 грешком.
 
 ```java
 import com.fastcomments.invoker.ApiClient;
@@ -10,16 +10,16 @@ import com.fastcomments.model.*;
 
 public class Example {
     public static void main(String[] args) {
-        // Креирајте и конфигуришите ApiClient
+        // Креирање и конфигурисање API клијента
         ApiClient apiClient = new ApiClient();
 
-        // ОБАВЕЗНО: Подесите ваш API кључ (преузмите га са вашe FastComments контролне табле)
+        // ОБАВЕЗНО: Поставите свој API кључ (добавите га из FastComments контролне табле)
         apiClient.setApiKey("YOUR_API_KEY_HERE");
 
-        // Креирајте инстанцу API-ја са конфигурисаним клијентом
+        // Креирање API инстанце са конфигурисаним клијентом
         DefaultApi api = new DefaultApi(apiClient);
 
-        // Сада можете да правите аутентификоване API захтеве
+        // Сада можете упућивати аутентификоване API позиве
         try {
             // Пример: Додавање SSO корисника
             CreateAPISSOUserData userData = new CreateAPISSOUserData();
@@ -43,7 +43,7 @@ public class Example {
 
 ### Коришћење јавних API-ја (PublicApi)
 
-Јавни ендпоинти не захтевају аутентификацију:
+Јавни крајњи тачке не захтевају аутентификацију:
 
 ```java
 import com.fastcomments.api.PublicApi;
@@ -60,9 +60,9 @@ try {
 }
 ```
 
-### Коришћење модерацијских API-ја (ModerationApi)
+### Коришћење API-ја за модерацију (ModerationApi)
 
-Класа `ModerationApi` покреће контролну таблу модератора. Сва метода прихвата параметар `sso` који идентификује SSO-аутентификованог модератора у чије име се захтев обавља:
+`ModerationApi` покреће контролну таблу модератора. Сваки метод прихвата `sso` параметар који идентификује SSO-аутентификованог модератора у чије име се захтев упућује:
 
 ```java
 import com.fastcomments.api.ModerationApi;
@@ -72,7 +72,7 @@ import com.fastcomments.model.*;
 ModerationApi moderationApi = new ModerationApi();
 
 try {
-    // Листа коментара који чекају модерацију
+    // Листање коментара који чекају модерацију
     ModerationAPIGetCommentsResponse response = moderationApi.getApiComments()
         .sso("YOUR_SSO_TOKEN")
         .execute();
@@ -84,6 +84,6 @@ try {
 
 ### Уобичајени проблеми
 
-1. **401 "missing-api-key" error**: Уверите се да позивате `apiClient.setApiKey("YOUR_KEY")` пре него што креирате инстанцу DefaultApi.
-2. **Погрешна класа API-ја**: Користите `DefaultApi` за серверске аутентификоване захтеве, `PublicApi` за клијентске/јавне захтеве.
-3. **Null API key**: SDK ће тихо прескочити аутентификацију ако је API кључ null, што ће довести до 401 грешака.
+1. **401 "missing-api-key" грешка**: Уверите се да позивате `apiClient.setApiKey("YOUR_KEY")` пре креирања DefaultApi инстанце.
+2. **Погрешна API класа**: Користите `DefaultApi` за серверске аутентификоване захтеве, а `PublicApi` за клијентске/јавне захтеве.
+3. **Null API кључ**: SDK ће тихо прескочити аутентификацију ако је API кључ null, што доводи до 401 грешака.

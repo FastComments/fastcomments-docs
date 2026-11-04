@@ -1,12 +1,12 @@
-Once you switch off the `demo` tenant, the widget may refuse to load with an authorization error. This is because FastComments doesn't know it's supposed to allow your account to be used on that domain.
+След като изключите `demo` наемателя, уиджетът може да откаже да зареди с грешка при оторизация. Това е, защото FastComments не знае, че трябва да разреши вашия акаунт да се използва на този домейн.
 
-[Отидете тук, за да добавите вашия сайт към вашия акаунт.](https://fastcomments.com/auth/my-account/configure-domains)
+[Отидете тук, за да добавите сайта си към акаунта си.](https://fastcomments.com/auth/my-account/configure-domains)
 
-Val Town is worth a second look here, because a val can be reachable at more than one hostname:
+Val Town заслужава втори поглед тук, защото val може да бъде достъпен на повече от един hostname:
 
-- Every HTTP val has a long default endpoint, `<org>--<id>.web.val.run`.
-- Claiming a custom subdomain adds `<name>.val.run`.
-- A [персонализиран домейн](https://docs.val.town/vals/http/custom-domains/) adds a third.
-- Branches get their own URLs.
+- Всеки HTTP val има дълъг endpoint по подразбиране, `<org>--<id>.web.val.run`.
+- Задействането на персонализиран поддомейн добавя `<name>.val.run`.
+- А [персонализиран домейн](https://docs.val.town/vals/http/custom-domains/) добавя трети.
+- Клоновете (branches) получават собствени URL адреси.
 
-Add whichever hostnames you actually serve the widget from. If you claim a subdomain after setting things up, add that too, or the widget works on the old URL and fails on the new one.
+Добавете всички hostnames, от които наистина сервирайте уиджета. Ако заявите поддомейн след като сте настроили всичко, добавете и него, в противен случай уиджетът работи на стария URL и се проваля на новия.

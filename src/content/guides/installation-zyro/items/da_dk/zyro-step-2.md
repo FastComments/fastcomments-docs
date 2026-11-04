@@ -1,4 +1,3 @@
----
 Lad os nu tilføje vores widget-kode.
 
 Kopiér koden nedenfor. Sørg for, at du er logget ind på [fastcomments.com](https://fastcomments.com) 
@@ -49,5 +48,3 @@ Træk nu widget'en til den ønskede størrelse, du vil se den dukke op:
 </div>
 
 ...og nu forhåndsvis og gem!
-
----

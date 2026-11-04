@@ -24,5 +24,3 @@ if apiResp.isSome:
   let empty = apiResp.get()
   echo "Moderator removed"
 [inline-code-end]
-
----

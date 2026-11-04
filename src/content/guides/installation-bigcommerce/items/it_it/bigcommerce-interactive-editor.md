@@ -13,5 +13,3 @@ Tuttavia, se questo è desiderato, deve essere utilizzato il seguente snippet di
     }];
 </script>
 [inline-code-end]
-
----

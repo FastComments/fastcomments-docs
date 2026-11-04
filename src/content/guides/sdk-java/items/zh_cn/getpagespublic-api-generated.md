@@ -1,4 +1,3 @@
----
 列出租户的页面。由 FChat 桌面客户端用于填充其房间列表。
 要求每个页面的已解析自定义配置中的 `enableFChat` 为 true。
 需要 SSO 的页面将根据请求用户的组访问权限进行过滤。
@@ -60,5 +59,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

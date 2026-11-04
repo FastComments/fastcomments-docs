@@ -50,5 +50,3 @@ Signale un commentaire pour révision par un modérateur. L'ID de l'utilisateur 
 | Find Page | URL ID | La page, ou rien. |
 
 Une recherche qui ne trouve rien ne fait pas échouer le Zap. Find SSO User et Find Page offrent l'option de Zapier "create if it doesn't exist", qui exécute la création correspondante lorsqu'aucun résultat n'est trouvé.
-
----

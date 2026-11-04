@@ -1,10 +1,10 @@
-### Install Dependencies
+### Инсталиране на зависимости
 
 ```bash
 sudo apt install libcpprest-dev libboost-all-dev
 ```
 
-### Building from Source
+### Компилиране от изходния код
 
 ```bash
 mkdir build
@@ -13,18 +13,18 @@ cmake ..
 make
 ```
 
-### Installing
+### Инсталиране
 
 ```bash
 sudo make install
 ```
 
-### Library Contents
+### Съдържание на библиотеката
 
-Тази библиотека съдържа генерирания API клиент и SSO инструментите, които улесняват работата с API-то.
+Тази библиотека съдържа генерирания API клиент и SSO помощни средства, които улесняват работата с API.
 
-- [API Client Library Docs](https://github.com/FastComments/fastcomments-cpp/blob/master/client/README.md)
+- [Документация на API клиентската библиотека](https://github.com/FastComments/fastcomments-cpp/blob/master/client/README.md)
 
-### Public vs Secured APIs
+### Публични срещу защитени API
 
-За API клиента има три класа, `DefaultApi`, `PublicApi` и `ModerationApi`. `DefaultApi` съдържа методи, които изискват вашия API ключ, а `PublicApi` съдържа методи, които могат да бъдат извикани директно от браузър/мобилно устройство и т.н. без автентикация. `ModerationApi` предоставя обширен набор от живи и бързи API за модериране. Всеки метод на `ModerationApi` приема параметър `sso` и може да се автентицира чрез SSO или бисквитка за сесия от FastComments.com.
+За API клиента има три класа: `DefaultApi`, `PublicApi` и `ModerationApi`. `DefaultApi` съдържа методи, които изискват вашия API ключ, а `PublicApi` съдържа методи, които могат да се извикват директно от браузър/мобилно устройство и т.н. без автентикация. `ModerationApi` предоставя обширен набор от API за жива и бърза модерация. Всеки метод на `ModerationApi` приема параметър `sso` и може да се автентикира чрез SSO или чрез сесийна бисквитка на FastComments.com.

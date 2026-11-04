@@ -1,24 +1,23 @@
-Past commenters on the page who are NOT currently online. Sorted by displayName.  
-Use this after exhausting /users/online to render a "Members" section.  
-Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName}  
-index from afterName forward via $gt, no $skip cost.
+현재 온라인 상태가 아닌, 페이지의 과거 댓글 작성자들입니다. displayName 기준으로 정렬됩니다.
+/users/online을 모두 조회한 후 "멤버" 섹션을 렌더링할 때 이 엔드포인트를 사용하세요.
+commenterName 기준 커서 페이지네이션: 서버가 부분 인덱스 {tenantId, urlId, commenterName}을(를) afterName부터 $gt로 순회하며, $skip 비용이 없습니다.
 
-## Parameters
+## 매개변수
 
 | 이름 | 타입 | 위치 | 필수 | 설명 |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| urlId | string | query | Yes | 페이지 URL 식별자 (cleaned server-side). |
-| afterName | string | query | No | Cursor: pass nextAfterName from the previous response. |
-| afterUserId | string | query | No | Cursor tiebreaker: pass nextAfterUserId from the previous response. Required when afterName is set so name-ties don't drop entries. |
+| tenantId | string | path | 예 |  |
+| urlId | string | query | 예 | 페이지 URL 식별자(서버 측에서 정제됨). |
+| afterName | string | query | 아니요 | 커서: 이전 응답의 nextAfterName을 전달하세요. |
+| afterUserId | string | query | 아니요 | 커서 타이브레이커: 이전 응답의 nextAfterUserId를 전달하세요. afterName이 설정된 경우 필수이며, 이름이 같은 항목이 누락되지 않도록 합니다. |
 
-## Response
+## 응답
 
-반환: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PageUsersOfflineResponse.php)
+반환값: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PageUsersOfflineResponse.php)
 
-## Example
+## 예제
 
-[inline-code-attrs-start title = 'getOfflineUsers 예시'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getOfflineUsers 예제'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -26,16 +25,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // 사용자 정의 HTTP 클라이언트를 사용하려면 `GuzzleHttp\ClientInterface`를 구현하는 클라이언트를 전달하세요.
-    // 이는 선택 사항이며 기본적으로 `GuzzleHttp\Client`가 사용됩니다.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 
 $tenant_id = 'tenant_id_example'; // string
-$url_id = 'url_id_example'; // string | 페이지 URL 식별자 (cleaned server-side).
+$url_id = 'url_id_example'; // string | 페이지 URL 식별자(서버 측에서 정제됨).
 $options = [
-    'after_name' => 'after_name_example', // string | Cursor: pass nextAfterName from the previous response.
-    'after_user_id' => 'after_user_id_example', // string | Cursor tiebreaker: pass nextAfterUserId from the previous response. Required when afterName is set so name-ties don't drop entries.
+    'after_name' => 'after_name_example', // string | 커서: 이전 응답의 nextAfterName을 전달하세요.
+    'after_user_id' => 'after_user_id_example', // string | 커서 타이브레이커: 이전 응답의 nextAfterUserId를 전달하세요. afterName이 설정된 경우 필수이며, 이름이 같은 항목이 누락되지 않도록 합니다.
 ];
 
 

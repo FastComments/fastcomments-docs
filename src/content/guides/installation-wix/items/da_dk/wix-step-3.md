@@ -46,5 +46,3 @@ Du bør nu se en meget lille version af kommentar-widgeten:
 </div>
 
 Herefter vil vi placere og tilpasse størrelsen, så den passer til vores side.
-
----

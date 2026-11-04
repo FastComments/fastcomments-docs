@@ -1,9 +1,8 @@
-Record a vote on a poll, or move an existing one to a different option. A voter has at most one vote per
-poll, so calling this again for the same voter moves their vote rather than adding one.
+投票に票を記録するか、既存の票を別の選択肢に移動します。投票者は1つの投票につき最大1票しか持てないため、同じ投票者に対して再度このAPIを呼び出すと、票が追加されるのではなく移動されます。
 
-この操作はサイトの投票設定に従います。投票がログインユーザーのみに設定されている場合、anonUserId だけの投票は拒否され、匿名投票は投票ごとに IP 単位でレート制限されます。
+サイトの投票設定に従います。ログインユーザーのみ投票可能に設定されている場合、anonUserIdだけの投票は拒否され、匿名投票はIPごと・投票ごとにレート制限されます。
 
-## Parameters
+## パラメータ
 
 | 名前 | 型 | 場所 | 必須 | 説明 |
 |------|------|----------|----------|-------------|
@@ -11,13 +10,13 @@ poll, so calling this again for the same voter moves their vote rather than addi
 
 ## レスポンス
 
-返却: [`CreatePollVoteResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreatePollVoteResponse.swift)
+戻り値: [`CreatePollVoteResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/CreatePollVoteResponse.swift)
 
 ## 例
 
-[inline-code-attrs-start title = 'createPollVote の例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createPollVoteの例'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 以下のコードサンプルはまだベータ版です。問題がある場合は、http://github.com/OpenAPITools/openapi-generator/issues/new へ報告してください。
+// 以下のコードサンプルはまだベータ版です。問題があれば http://github.com/OpenAPITools/openapi-generator/issues/new から報告してください
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -34,5 +33,3 @@ DefaultAPI.createPollVote(tenantId: tenantId, createPollVoteBody: createPollVote
     }
 }
 [inline-code-end]
-
----

@@ -23,5 +23,3 @@ let (maybeResult, httpResp) = client.bulkAggregateQuestionResults(
 if maybeResult.isSome:
   let result = maybeResult.get()
 [inline-code-end]
-
----

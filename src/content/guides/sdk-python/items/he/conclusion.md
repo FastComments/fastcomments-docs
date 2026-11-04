@@ -8,5 +8,3 @@
 ## תרומה
 
 תרומות מוזמנות! אנא בקרו ב-[מאגר ה-GitHub](https://github.com/FastComments/fastcomments-python) לקבלת הנחיות לתרומה.
-
----

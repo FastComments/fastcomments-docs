@@ -9,5 +9,3 @@ Dans ce tutoriel, nous viserons un blog construit avec Ghost, mais avec un peu d
 Ce tutoriel part du point de vue d'un utilisateur très novice sur Ghost. Les utilisateurs expérimentés dans l'édition de leurs thèmes peuvent passer à `Step 4`.
 
 Si vous rencontrez des difficultés, n'hésitez pas à envoyer votre modèle de thème exporté à votre représentant du support (nécessite toujours les étapes 1 - 5).
-
----

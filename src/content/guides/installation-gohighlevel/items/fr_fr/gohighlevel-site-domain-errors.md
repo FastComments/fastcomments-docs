@@ -1,4 +1,3 @@
----
 Vous pouvez obtenir une erreur d'autorisation, comme la suivante :
 
 <div class="screenshot white-bg">
@@ -13,5 +12,3 @@ Dans ce cas, la solution est simple. Vous devez simplement ajouter votre site à
 [Cliquez ici pour ajouter votre site à votre compte.](https://fastcomments.com/auth/my-account/configure-domains)
 
 Vous devriez maintenant avoir un système de commentaires en direct et rapide ajouté à votre site !
-
----

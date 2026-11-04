@@ -39,5 +39,3 @@ Cliquez sur Terminé en haut à droite :
 </div>
 
 C'est tout pour l'étape deux !
-
----

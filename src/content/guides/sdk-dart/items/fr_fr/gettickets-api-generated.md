@@ -36,5 +36,3 @@ try {
     print('Exception lors de l\'appel de DefaultApi->getTickets: $e\n');
 }
 [inline-code-end]
-
----

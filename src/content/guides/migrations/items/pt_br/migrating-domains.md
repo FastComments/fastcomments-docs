@@ -20,5 +20,3 @@ Pode haver um atraso antes que sua migração comece. Isso é normal, pois o sis
 ### Migrando Domínios via API
 
 Domínios também podem ser migrados com [`POST /api/v1/pages/migrations`](/guide-api.html#pages-migrations-post), usando `type` definido como `domain`. O progresso está disponível a partir de [`GET /api/v1/batch-jobs/:id`](/guide-api.html#batch-job-get-by-id), e a migração pode ser desfeita por 90 dias.
-
----

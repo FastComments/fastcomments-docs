@@ -33,5 +33,3 @@ interface PollGetResponse {
 
 Un commento che non ha sondaggio, un commento che è stato eliminato e un ID commento che non esiste rispondono
 allo stesso modo, con `poll-not-found`.
-
----

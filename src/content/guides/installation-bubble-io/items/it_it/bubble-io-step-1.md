@@ -6,5 +6,3 @@ Per prima cosa, vai alla pagina/layout in cui vuoi aggiungere FastComments. Nell
 </div>
 
 L'elemento HTML ci permetterà di incorporare il widget FastComments direttamente nella tua app Bubble.
-
----

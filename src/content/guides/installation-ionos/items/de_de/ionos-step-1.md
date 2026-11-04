@@ -26,5 +26,3 @@ Wenn Sie fertig sind, sollte es wie folgt aussehen:
 </div>
 
 Damit ist Schritt eins abgeschlossen!
-
----

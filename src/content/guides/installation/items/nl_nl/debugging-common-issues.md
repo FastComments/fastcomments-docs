@@ -77,5 +77,3 @@ Houd er rekening mee dat na het aanbrengen van deze wijziging een migratie moet 
 Bij FastComments doen we veel moeite om ervoor te zorgen dat onze e-mailbezorging zo betrouwbaar mogelijk is. Sommige e-mailproviders zijn echter berucht moeilijk te bereiken. Controleer je spammap op berichten van fastcomments.com.
 
 Als je [contact met ons opneemt](https://fastcomments.com/auth/my-account/help), kunnen we gewoonlijk meer inzicht geven in waarom je mogelijk geen e-mails van ons ziet.
-
----

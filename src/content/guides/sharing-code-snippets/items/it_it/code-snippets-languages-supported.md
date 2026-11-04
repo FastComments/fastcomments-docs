@@ -1,6 +1,7 @@
-Quando si condividono frammenti di codice, FastComments cerca di determinare automaticamente in quale linguaggio di programmazione si trova il frammento di codice, per formattarlo e applicare l'evidenziazione della sintassi.
+Quando si condividono frammenti di codice, FastComments fa del suo meglio per determinare automaticamente in quale
+linguaggio di programmazione è scritto il frammento di codice, per formattarlo automaticamente e applicare l'evidenziazione della sintassi.
 
-FastComments syntax highlighting currently supports 39 common languages:
+L'evidenziazione della sintassi di FastComments attualmente supporta 39 linguaggi comuni:
 
 - .properties
 - Apache
@@ -29,7 +30,7 @@ FastComments syntax highlighting currently supports 39 common languages:
 - PHP
 - PHP Template
 - Perl
-- Plain text
+- Testo semplice
 - Python
 - Python REPL
 - R
@@ -40,12 +41,10 @@ FastComments syntax highlighting currently supports 39 common languages:
 - Shell
 - Session
 - Swift
-- TOML and INI
+- TOML e INI
 - TypeScript
 - Visual Basic .NET
 - YAML
 
-When sharing a code snippet in a language we don't support, it will still be rendered like code -
-but no syntax highlighting or reformatting will be applied.
-
----
+Quando si condivide un frammento di codice in un linguaggio non supportato, verrà comunque visualizzato come codice -
+ma non verrà applicata alcuna evidenziazione della sintassi o riformattazione.

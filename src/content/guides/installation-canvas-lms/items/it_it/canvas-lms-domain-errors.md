@@ -1,4 +1,3 @@
----
 Potresti ricevere un errore di autorizzazione, simile al seguente:
 
 <div class="screenshot white-bg">
@@ -13,5 +12,3 @@ In questo caso, la soluzione è semplice. Devi solo aggiungere il dominio della 
 <a href="https://fastcomments.com/auth/my-account/configure-domains" target="_blank">Vai qui per aggiungere il tuo sito al tuo account.</a>
 
 Aggiungi il dominio Canvas (ad es. `yourschool.instructure.com`) e i commenti dovrebbero caricarsi correttamente.
-
----

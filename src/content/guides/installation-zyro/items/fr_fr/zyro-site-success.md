@@ -1,4 +1,3 @@
----
 C'est tout ! Les commentaires en direct devraient maintenant être ajoutés à votre site Zyro.
 
 <div class="screenshot white-bg">
@@ -7,5 +6,3 @@ C'est tout ! Les commentaires en direct devraient maintenant être ajoutés à v
 </div>
 
 Si vous avez rencontré une erreur d'autorisation, ou si vous souhaitez personnaliser FastComments, lisez la suite.
-
----

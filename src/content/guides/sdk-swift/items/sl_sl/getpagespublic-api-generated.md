@@ -1,19 +1,19 @@
-List pages for a tenant. Used by the FChat desktop client to populate its room list.  
-Requires `enableFChat` to be true on the resolved custom config for each page.  
-Pages that require SSO are filtered against the requesting user's group access.
+Navede strani za najemnika. Uporablja namizni odjemalec FChat za polnjenje svojega seznama sob.
+Zahteva, da je `enableFChat` nastavljen na true v razrešeni prilagojeni konfiguraciji za vsako stran.
+Strani, ki zahtevajo SSO, se filtrirajo glede na dostop do skupin zahtevajočega uporabnika.
 
-## Parameters
+## Parametri
 
-| Name | Type | Location | Required | Description |
+| Ime | Vrsta | Lokacija | Obvezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| cursor | string | query | No | Neprozoren kurzor za paginacijo, vrnjen kot `nextCursor` iz prejšnje zahteve. Povezan z istim `sortBy`. |
-| limit | integer | query | No | 1..200, privzeto 50 |
-| q | string | query | No | Neobvezni neobčutljiv na velikost črk filter predpone naslova. |
-| sortBy | string | query | No | Vrstni red. `updatedAt` (privzeto, najnovejše najprej), `commentCount` (največ komentarjev najprej) ali `title` (abecedno). |
-| hasComments | boolean | query | No | Če je true, vrne le strani z vsaj enim komentarjem. |
+| tenantId | string | path | Da |  |
+| cursor | string | query | Ne | Neprozoren kazalec straniščenja, vrnjen kot `nextCursor` iz prejšnje zahteve. Povezan z istim `sortBy`. |
+| limit | integer | query | Ne | 1..200, privzeto 50 |
+| q | string | query | Ne | Neobvezen filter predpone naslova, neobčutljiv na velikost črk. |
+| sortBy | string | query | Ne | Vrstni red sortiranja. `updatedAt` (privzeto, najnovejše najprej), `commentCount` (največ komentarjev najprej) ali `title` (abecedno). |
+| hasComments | boolean | query | Ne | Če je true, vrni samo strani z vsaj enim komentarjem. |
 
-## Response
+## Odgovor
 
 Vrne: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetPublicPagesResponse.swift)
 
@@ -21,15 +21,15 @@ Vrne: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-sw
 
 [inline-code-attrs-start title = 'Primer getPagesPublic'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Naslednji vzorci kode so še beta. Če imate kakršnekoli težave, jih prosim prijavite na http://github.com/OpenAPITools/openapi-generator/issues/new
+// Naslednji vzorci kode so še v beta fazi. Za morebitne težave jih prijavite na http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
-let cursor = "cursor_example" // String | Neprozoren kurzor za paginacijo, vrnjen kot `nextCursor` iz prejšnje zahteve. Povezan z istim `sortBy`. (optional)
+let cursor = "cursor_example" // String | Neprozoren kazalec straniščenja, vrnjen kot `nextCursor` iz prejšnje zahteve. Povezan z istim `sortBy`. (optional)
 let limit = 987 // Int | 1..200, privzeto 50 (optional)
-let q = "q_example" // String | Neobvezni neobčutljiv na velikost črk filter predpone naslova. (optional)
-let sortBy = PagesSortBy() // PagesSortBy | Vrstni red. `updatedAt` (privzeto, najnovejše najprej), `commentCount` (največ komentarjev najprej), ali `title` (abecedno). (optional)
-let hasComments = true // Bool | Če je true, vrne le strani z vsaj enim komentarjem. (optional)
+let q = "q_example" // String | Neobvezen filter predpone naslova, neobčutljiv na velikost črk. (optional)
+let sortBy = PagesSortBy() // PagesSortBy | Vrstni red sortiranja. `updatedAt` (privzeto, najnovejše najprej), `commentCount` (največ komentarjev najprej) ali `title` (abecedno). (optional)
+let hasComments = true // Bool | Če je true, vrni samo strani z vsaj enim komentarjem. (optional)
 
 PublicAPI.getPagesPublic(tenantId: tenantId, options: PublicAPI.GetPagesPublicOptions(cursor: cursor, limit: limit, q: q, sortBy: sortBy, hasComments: hasComments)) { (response, error) in
     guard error == nil else {
@@ -42,5 +42,3 @@ PublicAPI.getPagesPublic(tenantId: tenantId, options: PublicAPI.GetPagesPublicOp
     }
 }
 [inline-code-end]
-
----

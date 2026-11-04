@@ -20,5 +20,3 @@ L'unica forma di carattere jolly supportata è un singolo `*` al posto dell'inte
 
 - `*@*.bademail.com` non è necessario, perché `*@bademail.com` copre già i sottodomini.
 - `name*@bademail.com` e `*bademail.com` non sono supportati.
-
----

@@ -1,4 +1,3 @@
----
 ## פרמטרים
 
 | Name | Type | Required | Description |
@@ -28,5 +27,3 @@ async fn fetch_feed_stats() -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
-
----

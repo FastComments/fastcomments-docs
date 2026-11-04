@@ -1,4 +1,3 @@
----
 Hepsi bu kadar! Artık GoHighLevel sitenize canlı yorum özelliği eklenmiş olmalı.
 
 <div class="screenshot white-bg">
@@ -7,5 +6,3 @@ Hepsi bu kadar! Artık GoHighLevel sitenize canlı yorum özelliği eklenmiş ol
 </div>
 
 Eğer bir 'permission denied' hatasıyla karşılaştıysanız veya FastComments'i özelleştirmek istiyorsanız, okumaya devam edin.
-
----

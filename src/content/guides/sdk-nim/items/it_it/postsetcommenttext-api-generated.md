@@ -25,5 +25,3 @@ let (responseOpt, httpResponse) = client.postSetCommentText(
 if responseOpt.isSome:
   let updatedComment = responseOpt.get()
 [inline-code-end]
-
----

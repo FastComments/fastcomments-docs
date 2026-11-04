@@ -1,3 +1,1 @@
----
 Permita que os leitores reajam a uma página sem escrever um comentário, usando reações de emoji personalizáveis acima do tópico ou o botão flutuante de curtidas.
----

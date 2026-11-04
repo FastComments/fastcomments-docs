@@ -12,5 +12,3 @@ podem ser pausadas, interrompidas ou retomadas.
 Se você marcar a caixa "Selecionar tudo" ela por padrão selecionará apenas os comentários visíveis na página, mas ela
 apresentará a você uma opção para selecionar todos os comentários no servidor que correspondam aos seus filtros. Então mesmo que você precise aprovar, excluir, etc
 milhões de comentários, você pode fazê-lo com alguns cliques.
-
----

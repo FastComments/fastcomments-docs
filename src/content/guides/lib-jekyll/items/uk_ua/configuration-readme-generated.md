@@ -1,38 +1,45 @@
-Конфігурація надходить з трьох місць. Перевага належить пізнішим джерелам:
+Конфігурація надходить з трьох джерел. Пізніші джерела мають пріоритет:
 
 1. **Глобальні значення за замовчуванням** у `_config.yml` під ключем `fastcomments:`.
 2. **Контекст сторінки**, який автоматично визначається для віджетів, прив'язаних до сторінки (див. нижче).
-3. **Атрибути тега**, вказані безпосередньо в самому тегі.
+3. **Атрибути тегу**, вказані безпосередньо на тегу.
 
-Отже, `url_id`, вказаний у тегі, перекриває значення, отримане зі сторінки, яке, у свою чергу, перекриває будь-яке глобальне значення за замовчуванням.
+Тобто `url_id` на тегу перевизначає значення, отримане зі сторінки, яке, у свою чергу, перевизначає будь-яке глобальне значення за замовчуванням.
 
-### Attribute syntax
+### Синтаксис атрибутів
 
-Атрибути — це пари `key=value` у `snake_case`:
+Атрибути — це пари `key=value` у форматі `snake_case`:
 
 ```liquid
 {% raw %}{% fastcomments url_id="my-stable-id" readonly=true count=20 %}{% endraw %}
 ```
 
-- **Quoted** values (`"..."` or `'...'`) are literal strings.
-- **Unquoted** `true`/`false` become booleans, and numbers become numbers.
-- **Unquoted** anything else is resolved as a Liquid variable from the page context, e.g.
-  `url_id=page.slug`. (Liquid does not expand `{% raw %}\{{ ... }}{% endraw %}` inside a tag's
-  attributes, so use the bare `page.slug` form rather than `"{% raw %}\{{ page.slug }}{% endraw %}"`.)
+- **Значення в лапках** (`"..."` або `'...'`) є буквальними рядками.
+- **Без лапок** `true`/`false` перетворюються на булеві значення, а числа — на числа.
+- **Без лапок** будь-що інше розглядається як змінна Liquid з контексту сторінки, наприклад
+  `url_id=page.slug`. (Liquid не розгортає `{% raw %}\{{ ... }}{% endraw %}` всередині
+  атрибутів тегу, тому використовуйте форму без лапок `page.slug`, а не `"{% raw %}\{{ page.slug }}{% endraw %}"`.)
 
-Ключі атрибутів і конфігурації в snake_case автоматично відображаються на camelCase ключі, які очікує FastComments (`tenant_id` → `tenantId`, `url_id` → `urlId`, `page_title` → `pageTitle`, `has_dark_background` → `hasDarkBackground` тощо). Будь-яка інша опція з [widget configuration](https://docs.fastcomments.com/guide-customizations-and-configuration.html) проходить без змін тим самим чином.
+Ключі атрибутів і конфігурації у форматі snake_case автоматично перетворюються на ключі camelCase, які очікує FastComments
+(`tenant_id` → `tenantId`, `url_id` → `urlId`, `page_title` → `pageTitle`,
+`has_dark_background` → `hasDarkBackground` тощо). Будь-яка інша опція з
+[конфігурації віджета](https://docs.fastcomments.com/guide-customizations-and-configuration.html)
+передається напряму таким самим чином.
 
-### Page-derived values
+### Значення, отримані зі сторінки
 
-Для віджетів, прив'язаних до сторінки (`fastcomments`, `fastcomments_comment_count`, `fastcomments_live_chat`, `fastcomments_collab_chat`, `fastcomments_image_chat`), ці значення заповнюються автоматично зі поточної сторінки, якщо ви не встановите їх самі:
+Для віджетів, прив'язаних до сторінки (`fastcomments`, `fastcomments_comment_count`, `fastcomments_live_chat`,
+`fastcomments_collab_chat`, `fastcomments_image_chat`) ці значення заповнюються автоматично з
+поточної сторінки, якщо ви не задали їх самостійно:
 
 - `url_id` ← `page.url` (стабільний ідентифікатор, незалежний від домену відвідувача)
-- `url` ← `site.url` + `page.url` (лише коли `url` встановлено в `_config.yml`)
+- `url` ← `site.url` + `page.url` (лише коли `url` задано у `_config.yml`)
 - `page_title` ← `page.title`
 
-Сайтові віджети (недавні коментарі/обговорення, топ-сторінки, зведення відгуків, стрічка активності користувачів, масові підрахунки) не прив'язані до сторінки і не заповнюють ці значення.
+Віджети для всього сайту (нещодавні коментарі/обговорення, топ сторінок, огляд відгуків, стрічка активності користувачів,
+масовий підрахунок) не прив'язані до сторінки і не отримують ці значення автоматично.
 
-### EU data residency
+### Розміщення даних у ЄС
 
 Клієнти з ЄС додають `region: eu`, або глобально:
 
@@ -42,4 +49,4 @@ fastcomments:
   region: eu
 ```
 
-або для окремого тега: `{% raw %}{% fastcomments region="eu" %}{% endraw %}`. Віджети тоді завантажуються з CDN у ЄС.
+або на рівні тегу: `{% raw %}{% fastcomments region="eu" %}{% endraw %}`. Тоді віджети завантажуються з ЄС CDN.

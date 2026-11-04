@@ -13,5 +13,3 @@ Cependant, si vous souhaitez le faire, le fragment de code suivant doit être ut
     }];
 </script>
 [inline-code-end]
-
----

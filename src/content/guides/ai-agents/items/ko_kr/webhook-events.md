@@ -1,71 +1,71 @@
-There are four agent webhook event types. Each event has a numeric enum value (used in payloads) and a canonical string name (used in the `event` envelope field and in the `X-FastComments-Agent-Event` HTTP header).
+에이전트 웹훅 이벤트 타입은 네 가지가 있습니다. 각 이벤트에는 숫자형 enum 값(페이로드에 사용)과 표준 문자열 이름(`event` 봉투 필드 및 `X-FastComments-Agent-Event` HTTP 헤더에 사용)이 있습니다.
 
-| Event name | Enum | Fires when |
+| 이벤트 이름 | Enum | 발생 시점 |
 |---|---|---|
 | `trigger.succeeded` | 0 | 에이전트 실행이 `SUCCESS` 상태로 완료될 때. |
 | `trigger.failed` | 1 | 에이전트 실행이 `ERROR` 상태로 완료될 때. |
-| `approval.requested` | 2 | 승인이 `PENDING` 상태로 대기열에 들어갈 때. |
-| `approval.decided` | 3 | 승인이 `APPROVED`, `REJECTED`, 또는 `EXECUTION_FAILED` 로 전환될 때. |
+| `approval.requested` | 2 | 승인이 `PENDING` 상태로 대기열에 추가될 때. |
+| `approval.decided` | 3 | 승인이 `APPROVED`, `REJECTED`, 또는 `EXECUTION_FAILED`로 전환될 때. |
 
 ### `trigger.succeeded`
 
-Fires after the agent's run finishes without error. The payload's `data` field includes:
+에이전트의 실행이 오류 없이 완료된 후 발생합니다. 페이로드의 `data` 필드에는 다음이 포함됩니다:
 
-- `triggerId` - 고유 실행 ID.
-- `triggerType` - 실행을 시작한 [trigger reason enum](#triggers-overview).
+- `triggerId` - 고유한 실행 ID.
+- `triggerType` - 실행을 시작한 [트리거 사유 enum](#triggers-overview).
 - `status` - `SUCCESS` (문자열).
-- `tokensUsed` - 이번 실행에서 사용된 토큰.
-- `wasDryRun` - 에이전트가 [dry-run mode](#dry-run-mode)인 경우 true.
-- `actions` - `TenantAgentAction` 레코드 배열 (see [Webhook Payloads](#webhook-payloads)).
-- `commentId`, `url`,`urlId` - 트리거에 해당 항목이 있는 경우.
+- `tokensUsed` - 이 실행에서 소비된 토큰 수.
+- `wasDryRun` - 에이전트가 [드라이런 모드](#dry-run-mode)였으면 true.
+- `actions` - `TenantAgentAction` 레코드 배열 ([웹훅 페이로드](#webhook-payloads) 참조).
+- `commentId`, `url`, `urlId` - 트리거에 해당 값이 있었던 경우.
 
-If the run took zero actions, the `actions` array is empty - this is a successful "the agent decided to do nothing" run, which is useful to know.
+실행에서 아무 작업도 수행하지 않았다면 `actions` 배열은 비어 있습니다 - 이는 "에이전트가 아무것도 하지 않기로 결정했다"는 성공적인 실행이며, 이를 아는 것이 유용합니다.
 
 ### `trigger.failed`
 
-Fires when a run errors. Same payload shape as `trigger.succeeded`, with `status: 'ERROR'` and an additional `errorMessage` field describing what went wrong. Possible errors include LLM call failures, tool dispatch failures, and budget exhaustion mid-run.
+실행 중 오류가 발생할 때 발생합니다. `trigger.succeeded`와 동일한 페이로드 구조이며, `status: 'ERROR'`와 무엇이 잘못되었는지 설명하는 추가 `errorMessage` 필드가 있습니다. 가능한 오류로는 LLM 호출 실패, 도구 디스패치 실패, 실행 중 예산 소진 등이 있습니다.
 
-`actions` may still contain entries for tool calls that completed before the error.
+`actions`에는 오류 발생 전에 완료된 도구 호출 항목이 여전히 포함될 수 있습니다.
 
 ### `approval.requested`
 
-Fires the moment an approval is queued in `PENDING` state. Payload includes:
+승인이 `PENDING` 상태로 대기열에 추가되는 즉시 발생합니다. 페이로드에는 다음이 포함됩니다:
 
 - `approvalId`, `triggerId`.
 - `toolName`, `actionType`.
 - `status: 'PENDING'`.
-- `args` - LLM 호출에서 **그대로 전달된** 도구 인수. 형태는 도구마다 다르며 안정적인 공개 계약이 아니므로 새로운 도구가 추가될 때 스키마가 변경될 수 있습니다.
+- `args` - LLM 호출에서 **그대로 전달된** 도구의 인수. 구조는 도구별로 다르며 안정적인 공개 계약이 아닙니다 - 새로운 도구가 추가됨에 따라 스키마가 변경될 수 있습니다.
 - `createdAt`.
 - `justification`, `confidence` - 에이전트가 제공한 경우.
-- `contextSnapshot` - 승인이 관련된 댓글/페이지 컨텍스트.
+- `contextSnapshot` - 승인과 관련된 댓글/페이지 컨텍스트.
 
-Useful for forwarding pending approvals into a chat ops channel: a Slack bot subscribed to `approval.requested` can post the action and reasoning into a moderation channel for at-a-glance review.
+대기 중인 승인을 채팅 운영 채널로 전달하는 데 유용합니다: `approval.requested`를 구독하는 Slack 봇은 액션과 그 근거를 모더레이션 채널에 게시하여 한눈에 검토할 수 있게 합니다.
 
 ### `approval.decided`
 
-Fires when an approval moves out of `PENDING`. Payload includes:
+승인이 `PENDING`에서 벗어날 때 발생합니다. 페이로드에는 다음이 포함됩니다:
 
 - `approvalId`, `triggerId`.
 - `toolName`, `actionType`.
-- `status` - `APPROVED`, `REJECTED`, or `EXECUTION_FAILED`.
-- `decidedBy` - 결정을 내린 중재자의 사용자 ID.
-- `decidedAt` - 결정을 내린 시점.
-- `executedAt` - APPROVED인 경우, 플랫폼이 승인된 작업을 실행한 시점.
-- `executionResult` - APPROVED인 경우, 실행자의 결과를 설명하는 문자열.
+- `status` - `APPROVED`, `REJECTED`, 또는 `EXECUTION_FAILED`.
+- `decidedBy` - 결정을 내린 모더레이터의 사용자 ID.
+- `decidedAt` - 결정 시각.
+- `executedAt` - APPROVED인 경우, 플랫폼이 승인된 액션을 실행한 시각.
+- `executionResult` - APPROVED인 경우, 실행기의 결과를 설명하는 문자열.
 - `contextSnapshot` - 댓글/페이지 컨텍스트.
 
-This event covers all decision outcomes:
+이 이벤트는 모든 결정 결과를 다룹니다:
 
-- **Approved + executed cleanly** -> `status: APPROVED`, `executedAt` 설정, `executionResult`는 성공 메시지입니다.
-- **Approved + executor failed** -> `status: EXECUTION_FAILED`, `executedAt` 설정, `executionResult`는 실패를 설명합니다.
-- **Rejected** -> `status: REJECTED`, `executedAt`는 null, `executionResult`는 null.
+- **승인 + 정상 실행** -> `status: APPROVED`, `executedAt` 설정됨, `executionResult`는 성공 메시지.
+- **승인 + 실행기 실패** -> `status: EXECUTION_FAILED`, `executedAt` 설정됨, `executionResult`는 실패 내용 설명.
+- **거부** -> `status: REJECTED`, `executedAt`은 null, `executionResult`는 null.
 
-### Header
+### 헤더
 
-Every delivery includes an `X-FastComments-Agent-Event` HTTP header with the event's canonical string name (`trigger.succeeded`, etc.). Useful if your endpoint is a single URL handling multiple event types.
+모든 전송에는 이벤트의 표준 문자열 이름(`trigger.succeeded` 등)이 담긴 `X-FastComments-Agent-Event` HTTP 헤더가 포함됩니다. 여러 이벤트 타입을 처리하는 단일 URL 엔드포인트를 사용하는 경우 유용합니다.
 
-### See also
+### 참고
 
-- [Webhook Payloads](#webhook-payloads) - 각 이벤트별 전체 페이로드 스키마.
-- [Webhook Signing](#webhook-signing) - HMAC 방식.
-- [Webhook Retries](#webhook-retries) - 전달 의미론.
+- 이벤트별 전체 페이로드 스키마는 [웹훅 페이로드](#webhook-payloads).
+- HMAC 방식은 [웹훅 서명](#webhook-signing).
+- 전송 의미론은 [웹훅 재시도](#webhook-retries).

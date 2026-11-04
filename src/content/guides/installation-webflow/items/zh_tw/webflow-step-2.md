@@ -1,4 +1,3 @@
----
 接下來，讓我們複製 FastComments.com 的小工具程式碼：
 
 [code-example-start config = {}; title = 'Installation Code'; isFunctional = false; code-example-end]
@@ -18,5 +17,3 @@
     <div class="title">注意：留言在發佈前不會顯示</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-webflow-step-3.png" alt="留言在發佈前不會顯示" />
 </div>
-
----

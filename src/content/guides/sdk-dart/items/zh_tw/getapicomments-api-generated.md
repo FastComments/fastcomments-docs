@@ -42,5 +42,3 @@ try {
     print('Exception when calling ModerationApi->getApiComments: $e\n');
 }
 [inline-code-end]
-
----

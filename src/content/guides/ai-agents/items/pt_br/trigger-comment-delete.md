@@ -19,5 +19,3 @@
 ### Observação sobre custo de operação
 
 Se você tiver um site com alto volume de exclusões (moderação humana intensa), esse gatilho pode acionar com frequência.
-
----

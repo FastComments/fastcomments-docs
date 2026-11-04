@@ -1,21 +1,21 @@
-Bulk user info for a tenant. Given userIds, return display info from User / SSOUser.  
-Used by the comment widget to enrich users that just appeared via a presence event.  
-No page context: privacy is enforced uniformly (private profiles are masked).
+Masovne informacije o korisnicima za najmoprimca (tenant). Za zadane userIds, vraća informacije o prikazu iz User / SSOUser.
+Koristi je widget za komentare za obogaćivanje korisnika koji su upravo pojavili putem presence eventa.
+Bez konteksta stranice: privatnost se provodi jednoliko (privatni profili su maskirani).
 
-## Parameters
+## Parametri
 
-| Name | Type | Location | Required | Description |
+| Naziv | Tip | Lokacija | Obavezno | Opis |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| ids | string | query | Yes | UserId‑ovi odvojeni zarezom. |
+| tenantId | string | path | Da |  |
+| ids | string | query | Da | userIds odvojeni zarezima. |
 
-## Response
+## Odgovor
 
-Returns: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PageUsersInfoResponse.php)
+Vraća: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PageUsersInfoResponse.php)
 
-## Example
+## Primjer
 
-[inline-code-attrs-start title = 'Primjer getUsersInfo'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getUsersInfo primjer'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -24,12 +24,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
     // Ako želite koristiti prilagođeni http klijent, proslijedite svoj klijent koji implementira `GuzzleHttp\ClientInterface`.
-    // Ovo je opcionalno, `GuzzleHttp\Client` će se koristiti kao zadano.
+    // Ovo je opcionalno, `GuzzleHttp\Client` će se koristiti kao zadani.
     new GuzzleHttp\Client()
 );
 
 $tenant_id = 'tenant_id_example'; // string
-$ids = 'ids_example'; // string | UserId‑ovi odvojeni zarezom.
+$ids = 'ids_example'; // string | userIds odvojeni zarezima.
 
 
 try {

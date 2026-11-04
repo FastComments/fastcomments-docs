@@ -1,4 +1,3 @@
----
 Udløses når en kommentar låses.
 
 ### Kontekst agenten modtager
@@ -18,5 +17,3 @@ Udløses når en kommentar låses.
 ### Par
 
 Se [Trigger: Kommentar oplåst](#trigger-comment-unlock) for den spejlede udløser.
-
----

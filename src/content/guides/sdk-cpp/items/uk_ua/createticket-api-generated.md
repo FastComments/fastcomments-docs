@@ -30,5 +30,3 @@ api->createTicket(tenantId, userId, ticketBody).then([](pplx::task<std::shared_p
     }
 });
 [inline-code-end]
-
----

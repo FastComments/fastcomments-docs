@@ -1,25 +1,25 @@
-List pages for a tenant. Used by the FChat desktop client to populate its room list.
-Requires `enableFChat` to be true on the resolved custom config for each page.
-Pages that require SSO are filtered against the requesting user's group access.
+Наводи странице за закупца (tenant). Користи FChat десктоп клијент да попуни своју листу соба.
+Захтева да `enableFChat` буде true на резолвованој прилагођеној конфигурацији за сваку страницу.
+Странице које захтевају SSO се филтрирају у односу на приступ групама тражеоца.
 
-## Parameters
+## Параметри
 
-| Име | Тип | Локација | Обавезно | Опис |
+| Назив | Тип | Локација | Обавезно | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | path | Да |  |
-| cursor | string | query | Не | Непрозирни курсор за пагинацију који се враћа као `nextCursor` из претходног захтева. Везан за исти `sortBy`. |
+| cursor | string | query | Не | Непрозирни пагинациони курсор враћен као `nextCursor` из претходног захтева. Везан за исти `sortBy`. |
 | limit | integer | query | Не | 1..200, подразумевано 50 |
-| q | string | query | Не | Опционални филтер префикса наслова без разлике величине слова. |
-| sortBy | string | query | Не | Редослед сортирања. `updatedAt` (подразумевано, најновије прво), `commentCount` (највише коментара прво), или `title` (абецедно). |
+| q | string | query | Не | Опциони филтер префикса наслова, неосетљив на велика и мала слова. |
+| sortBy | string | query | Не | Редослед сортирања. `updatedAt` (подразумевано, најновије прво), `commentCount` (највише коментара прво) или `title` (абецедно). |
 | hasComments | boolean | query | Не | Ако је true, враћа само странице са бар једним коментаром. |
 
-## Response
+## Одговор
 
-Returns: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetPublicPagesResponse.php)
+Враћа: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetPublicPagesResponse.php)
 
-## Example
+## Пример
 
-[inline-code-attrs-start title = 'Пример getPagesPublic'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getPagesPublic пример'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
@@ -27,17 +27,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Ако желите да користите прилагођени HTTP клијент, проследите ваш клијент који имплементира `GuzzleHttp\ClientInterface`.
-    // Ово је опционо, `GuzzleHttp\Client` ће се користити као подразумевано.
+    // Ако желите да користите прилагођени http клијент, проследите свој клијент који имплементира `GuzzleHttp\ClientInterface`.
+    // Ово је опционално, `GuzzleHttp\Client` ће бити коришћен као подразумевани.
     new GuzzleHttp\Client()
 );
 
-$tenant_id = 'tenant_id_example'; // стринг
+$tenant_id = 'tenant_id_example'; // string
 $options = [
-    'cursor' => 'cursor_example', // стринг | Непрозирни курсор за пагинацију који се враћа као `nextCursor` из претходног захтева. Везан за исти `sortBy`.
+    'cursor' => 'cursor_example', // string | Непрозирни пагинациони курсор враћен као `nextCursor` из претходног захтева. Везан за исти `sortBy`.
     'limit' => 56, // int | 1..200, подразумевано 50
-    'q' => 'q_example', // стринг | Опционални филтер префикса наслова без разлике величине слова.
-    'sort_by' => new \FastComments\Client\Model\\FastComments\Client\Model\PagesSortBy(), // \FastComments\Client\Model\PagesSortBy | Редослед сортирања. `updatedAt` (подразумевано, најновије прво), `commentCount` (највише коментара прво), или `title` (абецедно).
+    'q' => 'q_example', // string | Опциони филтер префикса наслова, неосетљив на велика и мала слова.
+    'sort_by' => new \FastComments\Client\Model\\FastComments\Client\Model\PagesSortBy(), // \FastComments\Client\Model\PagesSortBy | Редослед сортирања. `updatedAt` (подразумевано, најновије прво), `commentCount` (највише коментара прво) или `title` (абецедно).
     'has_comments' => True, // bool | Ако је true, враћа само странице са бар једним коментаром.
 ];
 

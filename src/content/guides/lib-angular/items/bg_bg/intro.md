@@ -5,5 +5,3 @@
 ## Хранилище
 
 [Вижте на GitHub](https://github.com/FastComments/fastcomments-angular)
-
----

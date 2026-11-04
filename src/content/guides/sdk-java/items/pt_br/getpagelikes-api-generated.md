@@ -1,22 +1,22 @@
-Like count for a page, optionally with the users who liked it.
+Contagem de curtidas de uma página, opcionalmente com os usuários que curtiram.
 
-## Parameters
+## Parâmetros
 
-| Name | Type | Location | Required | Description |
+| Nome | Tipo | Local | Obrigatório | Descrição |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| urlId | string | query | Yes |  |
-| includeUserInfo | string | query | No | "\"public\" omite usuários com perfis privados, \"include-private\" os inclui." |
+| tenantId | string | query | Sim |  |
+| urlId | string | query | Sim |  |
+| includeUserInfo | string | query | Não | "public" omite usuários com perfis privados, "include-private" os inclui. |
 
-## Response
+## Resposta
 
-Returns: [`GetPageLikesAPIResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetPageLikesAPIResponse.java)
+Retorna: [`GetPageLikesAPIResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetPageLikesAPIResponse.java)
 
-## Example
+## Exemplo
 
-[inline-code-attrs-start title = 'Exemplo getPageLikes'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo de getPageLikes'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importar classes:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -29,10 +29,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configurar autorização da chave API: api_key
+    // Configure API key authorization: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Descomente a linha a seguir para definir um prefixo para a chave API, por exemplo "Token" (padrão null)
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -45,13 +45,9 @@ public class Example {
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      // Exceção ao chamar DefaultApi#getPageLikes
       System.err.println("Exception when calling DefaultApi#getPageLikes");
-      // Código de status: " + e.getCode()
       System.err.println("Status code: " + e.getCode());
-      // Motivo: " + e.getResponseBody()
       System.err.println("Reason: " + e.getResponseBody());
-      // Cabeçalhos da resposta: " + e.getResponseHeaders()
       System.err.println("Response headers: " + e.getResponseHeaders());
       e.printStackTrace();
     }

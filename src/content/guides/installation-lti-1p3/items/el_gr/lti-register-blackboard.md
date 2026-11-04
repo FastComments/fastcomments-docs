@@ -1,26 +1,26 @@
-Blackboard Learn SaaS and Ultra support LTI 1.3 Dynamic Registration.
+Το Blackboard Learn SaaS και Ultra υποστηρίζουν LTI 1.3 Dynamic Registration.
 
-#### Άνοιγμα της οθόνης Tool Provider
+#### Ανοίξτε την Οθόνη Παρόχου Εργαλείου
 
-1. Κάντε είσοδο στο Blackboard ως διαχειριστής συστήματος.
+1. Συνδεθείτε στο Blackboard ως διαχειριστής συστήματος.
 2. Μεταβείτε στο **Administrator Panel** > **Integrations** > **LTI Tool Providers**.
 3. Κάντε κλικ στο **Register LTI 1.3 / LTI Advantage Tool**.
 
-If you only see "Register LTI 1.1 Provider", your Blackboard version doesn't support LTI 1.3 yet - upgrade or contact Blackboard support.
+Εάν βλέπετε μόνο το "Register LTI 1.1 Provider", η έκδοση του Blackboard σας δεν υποστηρίζει ακόμη LTI 1.3 - αναβαθμίστε ή επικοινωνήστε με την υποστήριξη του Blackboard.
 
-#### Επικόλληση του URL
+#### Επικολλήστε τη Διεύθυνση URL
 
-Paste the FastComments registration URL (<a href="https://fastcomments.com/auth/my-account/lti-config" target="_blank">λάβετε το εδώ</a>) into the **Client ID** / **Registration URL** field (Blackboard's labeling varies by version). Submit.
+Επικολλήστε τη διεύθυνση URL εγγραφής του FastComments (<a href="https://fastcomments.com/auth/my-account/lti-config" target="_blank">βρείτε την εδώ</a>) στο πεδίο **Client ID** / **Registration URL** (η ονομασία στο Blackboard διαφέρει ανά έκδοση). Υποβάλετε.
 
-Blackboard performs the registration handshake with FastComments and shows you a confirmation screen.
+Το Blackboard εκτελεί τη διαδικασία χειραψίας εγγραφής με το FastComments και σας εμφανίζει μια οθόνη επιβεβαίωσης.
 
-#### Έγκριση και Ενεργοποίηση
+#### Εγκρίνετε και Ενεργοποιήστε
 
-Blackboard marks newly-registered tools as **Approved but excluded** by default:
+Το Blackboard επισημαίνει τα νέα εγγεγραμμένα εργαλεία ως **Approved but excluded** από προεπιλογή:
 
-1. Βρείτε την καταχώρηση FastComments στη λίστα παρόχων εργαλείων.
+1. Βρείτε την καταχώρηση FastComments στη λίστα των παρόχων εργαλείων.
 2. Ανοίξτε το μενού και επιλέξτε **Edit**.
 3. Ορίστε το **Tool Status** σε **Approved**.
 4. Στην ενότητα **Institution Policies**, ελέγξτε ποια δεδομένα χρήστη αποστέλλονται (όνομα, email, ρόλος). Αποθηκεύστε.
 
-The tool is now available to instructors when they add content to courses.
+Το εργαλείο είναι πλέον διαθέσιμο στους εκπαιδευτές όταν προσθέτουν περιεχόμενο στα μαθήματα.

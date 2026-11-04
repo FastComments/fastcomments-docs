@@ -21,5 +21,3 @@
     const responseWithoutUser: GetSubscriptionsAPIResponse = await getSubscriptions(tenantId);
 })();
 [inline-code-end]
-
----

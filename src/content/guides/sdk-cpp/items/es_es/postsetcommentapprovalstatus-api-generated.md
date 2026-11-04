@@ -27,5 +27,3 @@ api->postSetCommentApprovalStatus(tenantId, commentId, *options)
         }
     });
 [inline-code-end]
-
----

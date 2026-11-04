@@ -1,4 +1,3 @@
----
 Aktuelle online‑seere af en side: personer, hvis websocket‑session er abonneret på siden lige nu.  
 Returnerer anonCount + totalCount (rum‑omfattende abonnenter, inklusiv anonyme seere, som vi ikke tæller op).
 
@@ -48,5 +47,3 @@ with client.ApiClient(configuration) as api_client:
     except Exception as e:
         print("Exception when calling PublicApi->get_online_users: %s\n" % e)
 [inline-code-end]
-
----

@@ -1,15 +1,15 @@
-Attach a poll to a comment, or set the full state of the poll it already has.
+Allega un sondaggio a un commento, oppure imposta lo stato completo del sondaggio che possiede già.
 
-Options are matched by id: an option sent with the id of an existing option keeps its votes (and takes the
-new label and position), an option sent without an id is added, and existing options left out of the list
-are removed along with the votes cast on them.
+Le opzioni vengono abbinate tramite id: un'opzione inviata con l'id di un'opzione esistente conserva i suoi voti (e assume la
+nuova etichetta e posizione), un'opzione inviata senza id viene aggiunta, e le opzioni esistenti omesse dall'elenco
+vengono rimosse insieme ai voti espressi su di esse.
 
-Keeping no existing option ids on a poll that has votes deletes all of them, so that needs replaceVotes=true.
+Non mantenere nessun id di opzione esistente su un sondaggio che ha voti li elimina tutti, quindi in quel caso è necessario replaceVotes=true.
 
 ## Parametri
 
 | Nome | Tipo | Posizione | Obbligatorio | Descrizione |
-|------|------|-----------|--------------|-------------|
+|------|------|----------|----------|-------------|
 | tenantId | string | query | Sì |  |
 | commentId | string | path | Sì |  |
 | replaceVotes | boolean | query | No |  |
@@ -20,9 +20,9 @@ Restituisce: [`SavePollResponse`](https://github.com/FastComments/fastcomments-j
 
 ## Esempio
 
-[inline-code-attrs-start title = 'Esempio putPoll'; type = 'java'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esempio di putPoll'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importa classi:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -35,10 +35,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Configura l'autorizzazione della chiave API: api_key
+    // Configure API key authorization: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Decommenta la riga seguente per impostare un prefisso per la chiave API, ad es. "Token" (predefinito a null)
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);

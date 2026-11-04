@@ -1,23 +1,20 @@
-Each instance of the comment widget is isolated. Because of this, FastComments inherently supports more than one instance per page, or multiple  
-instances pointing to the same chat thread.
+Vsak primerek gradnika za komentarje je izoliran. Zaradi tega FastComments po naravi podpira več primerkov na strani ali več primerkov, ki kažejo na isto klepetalno nit.
 
-In the case of the VanillaJS library for example, you simply have to tie the comment widget to different DOM nodes. If you want to simply  
-update the current thread on the page, see [Preklapljanje niti komentarjev brez ponovnega nalaganja strani](guide-customizations-and-configuration.html#switching-comment-threads);
+V primeru knjižnice VanillaJS na primer gradnik za komentarje preprosto povežete z različnimi vozlišči DOM. Če želite preprosto posodobiti trenutno nit na strani, glejte [Preklop niti komentarjev brez ponovnega nalaganja strani](guide-customizations-and-configuration.html#switching-comment-threads);
 
-### Sinhronizacija stanja avtentikacije med več instancami
+### Sinhronizacija stanja overjanja med več primerki
 
-Poglejmo primer po meri enostranske aplikacije, ki je seznam pogosto zastavljenih vprašanj z lastno nitjo komentarjev.
+Poglejmo primer lastne enostranske aplikacije, ki je seznam pogostih vprašanj z lastno nitjo komentarjev za vsako.
 
-In this case, we have multiple instances of FastComments in the DOM at once.
+V tem primeru imamo hkrati več primerkov FastComments v DOM.
 
-This is fine, but it poses some challenges for user experience.
+To je v redu, vendar prinaša nekaj izzivov za uporabniško izkušnjo.
 
-Consider this flow:
+Razmislimo o tem poteku:
 
-1. The user visits the page with a list of questions, each with their own comment widget.
-2. The user enters their username and email and leaves a question on one of the threads.
-3. They see another FAQ item they have a question about.
-4. They go to comment again. Do they have to enter their email and username again?
+1. Uporabnik obišče stran s seznamom vprašanj, od katerih ima vsako svoj gradnik za komentarje.
+2. Uporabnik vnese svoje uporabniško ime in e-poštni naslov ter pusti vprašanje na eni od niti.
+3. Vidi drug element pogostih vprašanj, o katerem ima vprašanje.
+4. Gre komentirati znova. Ali mora znova vnesti svoj e-poštni naslov in uporabniško ime?
 
-In this case, FastComments handles syncing the authentication state across widget instances for you. In step four, the user  
-will already be temporarily authenticated since they entered their username and email on the same page.
+V tem primeru FastComments sinhronizacijo stanja overjanja med primerki gradnikov opravi za vas. V četrtem koraku bo uporabnik že začasno overjen, saj je na isti strani vnesel svoje uporabniško ime in e-poštni naslov.

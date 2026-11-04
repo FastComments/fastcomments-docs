@@ -1,4 +1,3 @@
----
 ## Parâmetros
 
 | Name | Type | Location | Obrigatório | Description |
@@ -32,5 +31,3 @@ DefaultAPI.deleteHashTag(tenantId: tenantId, tag: tag, deleteHashTagRequestBody:
     }
 }
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 Bildirimler birkaç farklı şekilde kapatılabilir. Hesabınız FastComments.com tarafından yönetiliyor ve SSO aracılığıyla değilse, bildirimlerinizi
 [Notifications Settings page](https://fastcomments.com/auth/my-account/edit-notifications) üzerinden yapılandırabilirsiniz.
 
@@ -9,4 +8,3 @@ Ayrıca, her e-postada bir abonelikten çıkma bağlantısı bulunur. Yorum yan�
 Bildirimlerin kapatılması için ayrıca bir abonelikten çıkma bağlantısı ve uygun e-posta üstbilgileri de olacaktır.
 
 E-postalardaki abonelikten çıkma bağlantıları, talep üzerine belirli bir tenant için kaldırılabilir. Ayrıca, bağlantı SSO veya whitelabel entegrasyonları için özelleştirilebilir.
----

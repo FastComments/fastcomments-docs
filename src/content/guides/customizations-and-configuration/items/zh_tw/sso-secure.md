@@ -1,118 +1,118 @@
 [related-parameter-start name = 'sso'; type = 'FastCommentsSSO'; typeLink = 'https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts#L1' related-parameter-end]
 
-FastComments Secure SSO 使用 HMAC-SHA256 作為實作 SSO 的加密機制。首先我們會介紹整體架構、提供範例，以及詳細步驟。
+FastComments 安全 SSO 使用 HMAC-SHA256 加密作為實現 SSO 的機制。我們將先介紹整體架構，提供範例以及詳細步驟。
 
-也有一些關於從其他使用類似 SSO 機制的提供者遷移的文件，以及差異說明。
+另外還有一些關於從其他具有類似 SSO 機制的供應商遷移的文件，以及兩者之間的差異。
 
-流程如下：
+流程如下所示：
 
 <div class="screenshot white-bg">
     <div class="title">安全 SSO 流程</div>
-    <img class="screenshot-image" src="/images/secure-sso-diagram.svg" alt="安全 SSO 圖示" />
+    <img class="screenshot-image" src="/images/secure-sso-diagram.svg" alt="安全 SSO 圖表" />
 </div>
 
-由於 Secure SSO 涉及全端開發，完整的可執行範例程式碼（Java/Spring、NodeJS/Express、以及原生 PHP）目前都放在 <a href="https://github.com/FastComments/fastcomments-code-examples/tree/master/sso" target="_blank">GitHub</a>。
+由於安全 SSO 涉及全端開發，目前 Java/Spring、NodeJS/Express 以及原生 PHP 的完整可運行程式碼範例已發佈在 <a href="https://github.com/FastComments/fastcomments-code-examples/tree/master/sso" target="_blank">GitHub</a> 上。
 
-雖然我們在 NodeJS 範例中使用 ExpressJS，在 Java 範例中使用 Spring，但在這些執行環境中實作 FastComments SSO 並不需要其它框架/函式庫 — 原生的 crypto 套件就足夠了。
+雖然我們在 NodeJS 範例中使用 ExpressJS，在 Java 範例中使用 Spring，但實現 FastComments SSO 在這些執行環境中不需要任何框架/函式庫 - 原生的加密套件即可運作。
 
-使用 FastComments SSO 不需要你新增任何 API 端點。只要用你的 secret key 加密使用者資訊，並將負載傳給留言元件即可。
+使用 FastComments SSO 您不需要撰寫任何新的 API 端點。只需使用您的密鑰加密使用者資訊，並將承載資料傳遞給留言小工具即可。
 
-#### 取得你的 API Secret Key
+#### 取得您的 API 密鑰
 
-你的 API Secret 可從 <a href="https://fastcomments.com/auth/my-account/api-secret" target="_blank">此頁面</a> 取得。你也可以從 我的帳戶（My Account）→ 點選 API/SSO 區塊 → 然後點選「取得 API Secret Key」找到此頁面。
+您的 API 密鑰可以從<a href="https://fastcomments.com/auth/my-account/api-secret" target="_blank">此頁面</a>取得。您也可以透過前往「我的帳戶」，點擊 API/SSO 圖塊，然後點擊「Get API Secret Key」來找到此頁面。
 
-#### 留言元件參數
+#### 留言小工具參數
 
-留言元件的高階 API 文件可在 <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts#L1" target="_blank">這裡</a> 找到。
+留言小工具的高階 API 文件可以在<a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts#L1" target="_blank">這裡</a>找到。
 
-以下更詳細說明這些參數的含義。
+讓我們更詳細地了解這些參數的含義。
 
-留言元件接受一個設定物件 — 如果你已經在使用 FastComments 並傳入 tenantId（稱為 customer id），你應該已經在傳遞該物件。
+留言小工具接受一個設定物件 - 如果您使用 FastComments 傳遞您的客戶 ID（稱為 tenantId），您已經在傳遞此物件了。
 
-要啟用 SSO，傳入一個新的 "sso" 物件，其必須包含下列參數。這些值應該在伺服器端產生。
+要啟用 SSO，請傳遞一個新的「sso」物件，該物件必須包含以下參數。這些值應在伺服器端產生。
 
-- userDataJSONBase64: 使用者的資料（JSON 格式），然後進行 Base64 編碼。
-- verificationHash: 由 UNIX_TIME_MILLIS + userDataJSONBase64 使用 HMAC-SHA256 所產生的雜湊。
-- timestamp: 時間戳記，單位為 **毫秒**。不得為未來時間，且不得早於超過兩天前。
-- loginURL: 留言元件可顯示用來登入使用者的 URL。
-- logoutURL: 留言元件可顯示用來登出使用者的 URL。
-- loginCallback: 當提供此函式而非 login URL 時，留言元件在點擊登入按鈕時會呼叫該函式。
-- logoutCallback: 當提供此函式而非 logout URL 時，留言元件在點擊登出按鈕時會呼叫該函式。
+- userDataJSONBase64: 使用者的資料，以 JSON 格式表示，然後進行 Base64 編碼。
+- verificationHash: 由 UNIX_TIME_MILLIS + userDataJSONBase64 建立的 HMAC-SHA256 雜湊值。
+- timestamp: Epoch 時間戳，以**毫秒**為單位。不得為未來的時間，或超過兩天前。
+- loginURL: 留言小工具可以顯示用於登入使用者的 URL。
+- logoutURL: 留言小工具可以顯示用於登出使用者的 URL。
+- loginCallback: 當提供此項而非登入 URL 時，留言小工具在點擊登入按鈕時將呼叫的函式。
+- logoutCallback: 當提供此項而非登出 URL 時，留言小工具在點擊登出按鈕時將呼叫的函式。
 
-[code-example-start config = {sso: { userDataJSONBase64: '...', verificationHash: '...', timestamp: Date.now(), loginURL: 'https://example.com/login', logoutURL: 'https://example.com/logout', loginCallback: function() { console.log('Log the user in here...'); }, logoutCallback: function() { console.log('Log the user out here...') } }}; linesToHighlight = [6, 7, 8, 9, 10, 11, 12]; title = 'Secure SSO Client Code'; isFunctional = false; code-example-end]
+[code-example-start config = {sso: { userDataJSONBase64: '...', verificationHash: '...', timestamp: Date.now(), loginURL: 'https://example.com/login', logoutURL: 'https://example.com/logout', loginCallback: function() { console.log('Log the user in here...'); }, logoutCallback: function() { console.log('Log the user out here...') } }}; linesToHighlight = [6, 7, 8, 9, 10, 11, 12]; title = '安全 SSO 客戶端程式碼'; isFunctional = false; code-example-end]
 
-#### The User Object
+#### 使用者物件
 
-The User object contains the following schema:
+使用者物件包含以下架構：
 [inline-code-attrs-start title = '使用者物件'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface SSOUser {
-    /** 必填。最多 1k 字元。 **/
+    /** 必填。最多 1k 個字元。 **/
     id: string;
-    /** 必填。最多 1k 字元。註：必須唯一。 **/
+    /** 必填。最多 1k 個字元。注意：必須是唯一的。 **/
     email: string;
-    /** 必填。最多 1k 字元。註：使用者名稱不能是 email。不必唯一。 **/
+    /** 必填。最多 1k 個字元。注意：使用者名稱不能是電子郵件。不必是唯一的。 **/
     username: string;
-    /** 選填。URL 最多 3k 字元。預設根據 email 從 gravatar 取得。支援 64 編碼的圖片，在此情況下限制為 50k 字元。 **/ 
+    /** 選填。URL 最多 3k 個字元。預設是根據電子郵件從 gravatar 取得。支援 64 編碼的圖片，此情況下限制為 50k 個字元。 **/ 
     avatar?: string;
     /** 選填。預設為 false。 **/
     optedInNotifications?: boolean;
     /** 選填。預設為 false。 **/
     optedInSubscriptionNotifications?: boolean;
-    /** 選填。最多 100 字元。此標籤會顯示在使用者名稱旁邊。若適用，預設為 Administrator/Moderator。 **/
+    /** 選填。最多 100 個字元。此標籤將顯示在其名稱旁邊。適用時預設為 Administrator/Moderator。 **/
     displayLabel?: string;
-    /** 選填。最多 500 字元。此內容會取代 username 顯示。 **/
+    /** 選填。最多 500 個字元。將顯示此名稱而非使用者名稱。 **/
     displayName?: string;
-    /** 選填。最多 2k 字元。使用者名稱的連結會指向此處。 **/
+    /** 選填。最多 2k 個字元。使用者的名稱將連結到此。 **/
     websiteUrl?: string;
-    /** 選填。每位使用者最多 100 個群組。群組 id 最長不得超過 50 個字元。 **/
+    /** 選填。每位使用者最多 100 個群組。群組 ID 不得超過 50 個字元。 **/
     groupIds?: string[];
-    /** 選填。將使用者標示為管理員。 **/
+    /** 選填。將該使用者標記為管理員。 **/
     isAdmin?: boolean;
-    /** 選填。將使用者標示為版主。 **/
+    /** 選填。將該使用者標記為版主。 **/
     isModerator?: boolean;
-    /** 選填，預設為 true。設為 false 以啟用使用者個人檔案中的「activity」分頁。 **/
+    /** 選填，預設為 true。設為 false 以啟用使用者個人檔案中的「活動」分頁。 **/
     isProfileActivityPrivate?: boolean;
     /** 選填，預設為 false。設為 true 以停用個人檔案留言。 **/
     isProfileCommentsPrivate?: boolean;
-    /** 選填，預設為 false。設為 true 以停用直接訊息功能。 **/
+    /** 選填，預設為 false。設為 true 以停用傳送私人訊息給此使用者。 **/
     isProfileDMDisabled?: boolean;
     /** 使用者徽章的選填設定。 **/
     badgeConfig?: {
-        /** 指派的全域徽章 ID 陣列。限制為 30 個徽章。順序會被保留。 **/
+        /** 要指派的全球徽章 ID 陣列。限制為 30 個徽章。順序會被保留。 **/
         badgeIds: string[];
-        /** 指派給當前頁面 (urlId) 的徽章 ID 陣列。僅在被指派的頁面顯示。 **/
+        /** 限於當前頁面 (urlId) 的徽章 ID 陣列。僅在指派的頁面上顯示。 **/
         pageBadgeIds?: string[];
-        /** 若為 true，會取代現有顯示的徽章。全域與頁面範圍的徽章分別獨立覆寫。 **/
+        /** 若為 true，則取代現有顯示的徽章。全球與頁面範圍的徽章會分別被覆寫。 **/
         override?: boolean;
-        /** 若為 true，會從租戶設定更新徽章顯示屬性。 **/
+        /** 若為 true，則從租戶設定更新徽章顯示屬性。 **/
         update?: boolean;
     };
 }
 [inline-code-end]
 
-#### Moderators and Administrators
+#### 版主與管理員
 
-For admins and moderators, pass the respective `isAdmin` or `isModerator` flags in the `SSOUser` object.
+對於管理員和版主，請在 `SSOUser` 物件中傳遞相應的 `isAdmin` 或 `isModerator` 旗標。
 
-#### Notifications
+#### 通知
 
-To enable or disable notifications, set the value of `optedInNotifications` to `true` or `false` respectively. The first time the user loads the page with this value in the SSO payload, their notification settings will be updated.
+要啟用或停用通知，請分別將 `optedInNotifications` 的值設為 `true` 或 `false`。當使用者首次載入帶有此 SSO 承載資料值的頁面時，他們的通知設定將會被更新。
 
-Additionally, if you want users to receive notification emails for activity on pages they subscribed to (as opposed to just in-app notifications), then set `optedInSubscriptionNotifications` to `true`.
+此外，如果您希望使用者收到其訂閱頁面上活動的通知電子郵件（而不僅僅是應用程式內通知），請將 `optedInSubscriptionNotifications` 設為 `true`。
 
-#### VIP Users & Special Labels
+#### VIP 使用者與特殊標籤
 
-You can display a special label next to the user's name by using the optional "displayLabel" field.
+您可以透過使用選填的「displayLabel」欄位，在使用者名稱旁邊顯示特殊標籤。
 
-#### Unauthenticated users
+#### 未驗證的使用者
 
-To represent an unauthenticated user, simply do not populate userDataJSONBase64, verificationHash, or timestamp. Provide a loginURL.
+要表示未驗證的使用者，只需不填入 userDataJSONBase64、verificationHash 或 timestamp。並提供一個 loginURL。
 
-These users will not be able to comment, and instead will be presented with a login message (message, link, or button, depending on configuration).
+這些使用者將無法留言，而是會看到登入訊息（訊息、連結或按鈕，取決於設定）。
 
-#### Direct Examples for Serializing and Hashing User Data
+#### 序列化與雜湊使用者資料的直接範例
 
-More details as an examples <a href="https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/node-express/routes/index.js#L23" target="_blank">here</a> (js), <a href="https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/java-springboot/src/main/java/com/winricklabs/ssodemo/DemoController.java#L68" target="_blank">here</a> (java) and <a href="https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/php/server.php#L27" target="_blank">here</a> (php).
+更多詳細資訊的範例請見<a href="https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/node-express/routes/index.js#L23" target="_blank">這裡</a> (js)、<a href="https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/java-springboot/src/main/java/com/winricklabs/ssodemo/DemoController.java#L68" target="_blank">這裡</a> (java) 以及<a href="https://github.com/FastComments/fastcomments-code-examples/blob/master/sso/php/server.php#L27" target="_blank">這裡</a> (php)。
 
-We understand that any integration can be a complicated and painful process. Don't hesitate to reach out to your representative or use the <a href="https://fastcomments.com/auth/my-account/help" target="_blank">support page</a>.
+我們了解任何整合都可能是複雜且痛苦的過程。請隨時聯絡您的業務代表或使用<a href="https://fastcomments.com/auth/my-account/help" target="_blank">支援頁面</a>。

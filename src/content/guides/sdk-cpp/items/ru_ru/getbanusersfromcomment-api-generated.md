@@ -1,4 +1,3 @@
----
 ## Параметры
 
 | Имя | Тип | Обязательно | Описание |
@@ -26,5 +25,3 @@ api->getBanUsersFromComment(tenantId, commentId, sso).then([](pplx::task<std::sh
     }
 });
 [inline-code-end]
-
----

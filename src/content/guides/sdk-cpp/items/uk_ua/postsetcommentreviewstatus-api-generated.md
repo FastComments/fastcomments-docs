@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Назва | Тип | Обов’язковий | Опис |
@@ -28,5 +27,3 @@ api->postSetCommentReviewStatus(tenantId, commentId, opts)
         }
     });
 [inline-code-end]
-
----

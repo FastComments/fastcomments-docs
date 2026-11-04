@@ -1,4 +1,3 @@
----
 | Komponent | Beskrivelse |
 | --- | --- |
 | `FastComments` | Kommenteringswidget med svar, afstemning og mere |
@@ -16,4 +15,3 @@ Alle komponenter eksporteres fra pakkens rod:
 import { FastComments, FastCommentsLiveChat } from 'fastcomments-astro';
 ---
 ```
----

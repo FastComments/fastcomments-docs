@@ -1,4 +1,4 @@
-Ten endpoint umożliwia utworzenie nowego przypisania odznaki użytkownikowi.
+Ten endpoint pozwala na utworzenie nowego przypisania odznaki użytkownika.
 
 Przykładowe żądanie:
 
@@ -13,15 +13,15 @@ curl -X POST "https://fastcomments.com/api/v1/user-badges?tenantId=demo&API_KEY=
 }'
 [inline-code-end]
 
-Ciało żądania musi zawierać następujące parametry:
+Treść żądania musi zawierać następujące parametry:
 
-- `userId` (required) - The ID of the user to assign the badge to
-- `badgeId` (required) - The ID of the badge to assign
-- `displayedOnComments` (optional) - Whether the badge should be displayed on the user's comments (defaults to true)
+- `userId` (wymagany) - ID użytkownika, któremu ma zostać przypisana odznaka
+- `badgeId` (wymagany) - ID odznaki do przypisania
+- `displayedOnComments` (opcjonalny) - Czy odznaka powinna być wyświetlana przy komentarzach użytkownika (domyślnie true)
 
 Ważne uwagi:
-1. Odznaka musi istnieć i być włączona w katalogu odznak twojego tenant
-2. Możesz przypisywać odznaki tylko użytkownikom, którzy należą do twojego tenant lub skomentowali twoją stronę
+1. Odznaka musi istnieć i być włączona w katalogu odznak Twojej tenanta
+2. Możesz przypisywać odznaki tylko użytkownikom, którzy należą do Twojego tenanta lub komentowali na Twojej stronie
 
 Przykładowa odpowiedź:
 
@@ -48,9 +48,9 @@ Przykładowa odpowiedź:
 }
 [inline-code-end]
 
-Możliwe odpowiedzi z błędem:
+Możliwe odpowiedzi z błędami:
 
-[inline-code-attrs-start title = 'Błąd: Brak identyfikatora tenanta'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Błąd: Brak ID tenanta'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",
@@ -59,7 +59,7 @@ Możliwe odpowiedzi z błędem:
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Błąd: Brak identyfikatora użytkownika'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Błąd: Brak ID użytkownika'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",
@@ -68,7 +68,7 @@ Możliwe odpowiedzi z błędem:
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Błąd: Brak identyfikatora odznaki'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Błąd: Brak ID odznaki'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",
@@ -77,7 +77,7 @@ Możliwe odpowiedzi z błędem:
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Błąd: Odznaka nie znaleziona'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Błąd: Nie znaleziono odznaki'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
   "status": "failed",

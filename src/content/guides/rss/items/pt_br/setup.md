@@ -1,15 +1,15 @@
-Navigate to your account dashboard and go to the [RSS Feed page](https://fastcomments.com/auth/my-account/rss).
+Navegue até o painel da sua conta e vá para a [página de RSS Feed](https://fastcomments.com/auth/my-account/rss).
 
-[app-screenshot-start url='/auth/my-account/rss'; selector = '.content'; alt='Página de Feed RSS da conta com a caixa de seleção Habilitar Acesso ao Feed RSS, a URL do feed e os botões Copiar e Ver Feed'; title='Configuração do Feed RSS' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/rss'; selector = '.content'; alt='Página de RSS Feed da conta com a caixa de seleção Enable RSS Feed Access, a URL do feed e os botões Copy e View Feed'; title='Configuração do RSS Feed' app-screenshot-end]
 
-On the RSS Feed page, check the "Enable RSS Feed Access" checkbox to generate your unique RSS feed URL.
+Na página de RSS Feed, marque a caixa de seleção "Enable RSS Feed Access" para gerar sua URL exclusiva de feed RSS.
 
-When you enable the feed, a security notice will appear explaining that anyone with the link can access your comments.
+Ao ativar o feed, um aviso de segurança será exibido explicando que qualquer pessoa com o link pode acessar seus comentários.
 
-Once enabled, your unique RSS feed URL will appear. Click the "Copy" button to copy the URL to your clipboard.
+Uma vez ativado, sua URL exclusiva de feed RSS será exibida. Clique no botão "Copy" para copiar a URL para a área de transferência.
 
-Open your RSS reader application and add the copied URL as a new feed subscription. The exact steps vary by RSS reader, but typically you'll look for an "Add Feed" or "Subscribe" button, paste your RSS feed URL, and give the feed a name.
+Abra seu aplicativo leitor de RSS e adicione a URL copiada como uma nova assinatura de feed. As etapas exatas variam conforme o leitor de RSS, mas normalmente você procurará um botão "Add Feed" ou "Subscribe", colará sua URL de feed RSS e dará um nome ao feed.
 
-You can also click the "View Feed" button on the RSS Feed page to see your feed directly in your browser.
+Você também pode clicar no botão "View Feed" na página de RSS Feed para ver seu feed diretamente no navegador.
 
-To disable access to your RSS feed, simply uncheck the "Enable RSS Feed Access" checkbox. This will prevent the feed from being accessed, though the URL will remain the same if you re-enable it later.
+Para desativar o acesso ao seu feed RSS, basta desmarcar a caixa de seleção "Enable RSS Feed Access". Isso impedirá o acesso ao feed, embora a URL permaneça a mesma se você reativá-lo mais tarde.

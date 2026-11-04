@@ -1,4 +1,3 @@
----
 Ko uporabniki komentirajo in niso prijavljeni, bodo pozvani, da vpišejo svoj e‑mail.
 
 To bo ustvarilo “nepreverjeno sejo” za tega uporabnika, in jih bomo prosili, da to sejo preverijo prek e‑maila.
@@ -14,5 +13,3 @@ Ko je to omogočeno, polja za e‑mail ne bodo prikazana v nobenem od naših pro
 Upoštevajte, da bodo pri tej nastavitvi vsi komentarji nepreverjeni, razen če uporabnik ustvari račun in se prijavi na https://fastcomments.com.
 
 Morda boste želeli razmisliti o [onemogočanju oznake nepreverjenega](/guide-customizations-and-configuration.html#disable-unverified-label).
-
----

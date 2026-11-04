@@ -1,16 +1,12 @@
-Webhooks can also be managed through the REST API. This is how integrations such as Zapier subscribe
-to comment events without touching the dashboard, and it follows the REST Hooks pattern: subscribe,
-receive events, unsubscribe.
+Spletne kljuke (webhooks) je mogoče upravljati tudi prek REST API. Na ta način se integracije, kot je Zapier, naročijo na dogodke komentarjev brez uporabe nadzorne plošče, in sledi vzorcu REST Hooks: naroči se, prejmi dogodke, odjavi se.
 
-API subscriptions live alongside the webhooks configured in the dashboard. A comment event is delivered
-to every webhook that matches its domain, each as its own delivery, whichever way the webhook was created.
+API-naročnine obstajajo poleg spletnih kljuk, konfiguriranih v nadzorni plošči. Dogodek komentarja se dostavi vsaki spletni kljuki, ki se ujema z njeno domeno, vsaka kot svoja dostava, ne glede na to, kako je bila spletna kljuka ustvarjena.
 
 ## Avtentikacija
 
-Every request needs your API Key in the `x-api-key` header (or the `API_KEY` query parameter) and
-your tenant ID in the `tenantId` query parameter. Both are shown on the API Secret page in the dashboard.
+Vsaka zahteva potrebuje vaš API ključ v glavi `x-api-key` (ali parameter poizvedbe `API_KEY`) in vaš ID najemnika v parametru poizvedbe `tenantId`. Oba sta prikazana na strani API Secret v nadzorni plošči.
 
-## Naročanje
+## Naročnina
 
 ```
 POST https://fastcomments.com/api/v1/webhooks?tenantId=YOUR_TENANT_ID
@@ -25,12 +21,12 @@ Content-Type: application/json
 
 | Polje | Obvezno | Opis |
 |-------|----------|-------------|
-| `url` | Da | An absolute http or https URL. |
-| `event` | Da | `comment-created`, `comment-updated` or `comment-deleted`. |
-| `domain` | Ne | A domain from your account configuration. Defaults to `*`, which receives events for every domain. |
-| `method` | Ne | `POST` (default), `PUT` or `DELETE`. |
+| `url` | Da | Absolutni http ali https URL. |
+| `event` | Da | `comment-created`, `comment-updated` ali `comment-deleted`. |
+| `domain` | Ne | Domena iz konfiguracije vašega računa. Privzeto `*`, ki prejema dogodke za vsako domeno. |
+| `method` | Ne | `POST` (privzeto), `PUT` ali `DELETE`. |
 
-The response contains the subscription:
+Odgovor vsebuje naročnino:
 
 ```json
 {
@@ -48,8 +44,7 @@ The response contains the subscription:
 }
 ```
 
-Subscribing the same URL to the same event and domain again returns the existing subscription rather
-than creating a duplicate, so a client can safely retry. Each tenant can have up to 50 API subscriptions.
+Če se isti URL znova naroči na isti dogodek in domeno, se vrne obstoječa naročnina namesto da bi ustvarila podvojeno, tako da lahko odjemalec varno poskusi znova. Vsak najemnik ima lahko do 50 API-naročnin.
 
 ## Seznam
 
@@ -57,8 +52,7 @@ than creating a duplicate, so a client can safely retry. Each tenant can have up
 GET https://fastcomments.com/api/v1/webhooks?tenantId=YOUR_TENANT_ID
 ```
 
-Returns every webhook for the tenant, including those managed in the dashboard (`"source": "dashboard"`).
-Filter with `event`, `domain` or `source`.
+Vrne vsako spletno kljuko za najemnika, vključno s tistimi, ki jih upravlja nadzorna plošča (`"source": "dashboard"`). Filtrirajte z `event`, `domain` ali `source`.
 
 ## Odjava
 
@@ -66,25 +60,19 @@ Filter with `event`, `domain` or `source`.
 DELETE https://fastcomments.com/api/v1/webhooks/SUBSCRIPTION_ID?tenantId=YOUR_TENANT_ID
 ```
 
-Deleting a subscription also discards any events still queued for it. Only subscriptions created
-through the API can be deleted this way; a dashboard webhook, or an id that does not exist on your
-account, answers `404` with code `not-found`. Dashboard webhooks are edited on the Webhooks page.
+Brisanje naročnine tudi zavrže vse dogodke, ki so še v čakalni vrsti zanjo. Na ta način je mogoče izbrisati samo naročnine, ustvarjene prek API; spletna kljuka iz nadzorne plošče ali ID, ki ne obstaja na vašem računu, odgovori z `404` in kodo `not-found`. Spletne kljuke iz nadzorne plošče se urejajo na strani Webhooks.
 
-## Telesa zahtevkov in podpisovanje
+## Tovorni podatki in podpisovanje
 
-Deliveries use the same payload as dashboard webhooks (see Data Structures) and are signed with the same
-HMAC scheme (see Security & API Tokens). API subscriptions never receive the legacy `token` header, so
-verify the `X-FastComments-Signature` header instead.
+Dostave uporabljajo isti tovor kot spletne kljuke iz nadzorne plošče (glejte Data Structures) in so podpisane z isto shemo HMAC (glejte Security & API Tokens). API-naročnine nikoli ne prejmejo zastarele glave `token`, zato namesto tega preverite glavo `X-FastComments-Signature`.
 
-## Vzorčna telesa
+## Vzorčni tovorni podatki
 
 ```
 GET https://fastcomments.com/api/v1/webhooks/sample-payloads?tenantId=YOUR_TENANT_ID&event=comment-created&limit=3
 ```
 
-Returns the account's most recent comments in exactly the shape a delivery carries, so an integration can
-show real sample data before the first event arrives. `event` is optional and only validated, since every
-event delivers the same comment object. `limit` defaults to 3 and accepts 1 to 10. Costs 2 API credits.
+Vrne najnovejše komentarje računa v točno isti obliki, kot jo nosi dostava, tako da lahko integracija prikaže resnične vzorčne podatke, preden prispe prvi dogodek. `event` je neobvezen in se samo preveri, saj vsak dogodek dostavi isti objekt komentarja. `limit` je privzeto 3 in sprejme vrednosti od 1 do 10. Stane 2 API kredita.
 
 ```json
 {
@@ -102,15 +90,10 @@ event delivers the same comment object. `limit` defaults to 3 and accepts 1 to 1
 }
 ```
 
-## Odgovor z 410 Gone
+## Odgovarjanje s 410 Gone
 
-If an API subscription's endpoint responds with HTTP `410 Gone`, FastComments treats that as an
-unsubscribe: the subscription is deleted along with its queued events, and no further deliveries are
-attempted. Webhooks configured in the dashboard are never deleted automatically; for them a 410 is an
-ordinary failure. Any other failure status is retried and eventually disables the webhook, as described
-in How it Works & Handling Retries.
+Če končna točka API-naročnine odgovori s HTTP `410 Gone`, FastComments to obravnava kot odjavo: naročnina se izbriše skupaj s čakajočimi dogodki in nadaljnjih dostav ni več. Spletnih kljuk, konfiguriranih v nadzorni plošči, nikoli ne izbriše samodejno; zanje je 410 običajna napaka. Vsak drug status napake se poskusi znova in sčasoma onemogoči spletno kljuko, kot je opisano v How it Works & Handling Retries.
 
 ## Nadzorna plošča
 
-API subscriptions appear in the Webhooks list with the source **API**, where an administrator can edit,
-disable, re-enable or delete them.
+API-naročnine se prikažejo na seznamu Webhooks z virom **API**, kjer jih skrbnik lahko uredi, onemogoči, ponovno omogoči ali izbriše.

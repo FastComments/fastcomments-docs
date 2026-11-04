@@ -1,8 +1,8 @@
-Interacting with the `Extension` is simple, as we simply define references to functions we want invoked.
+Interagire con l'`Extension` è semplice, poiché definiamo semplicemente riferimenti alle funzioni che vogliamo vengano invocate.
 
-Per basarci sull'esempio precedente, supponiamo di voler aggiungere HTML all'inizio di ogni commento:
+Per continuare l'esempio precedente, diciamo che vogliamo aggiungere HTML in cima a ogni commento:
 
-[inline-code-attrs-start title = 'Una semplice estensione - Continuazione'; type = 'javascript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Una semplice estensione - Continua'; type = 'javascript'; inline-code-attrs-end]
 [inline-code-start]
 (function () {
     const extension = FastCommentsUI.extensions.find((extension) => {
@@ -15,13 +15,13 @@ Per basarci sull'esempio precedente, supponiamo di voler aggiungere HTML all'ini
 })();
 [inline-code-end]
 
-Whenever you return HTML like this, it will get merged into the UI via a dom-diffing algorithm.
+Ogni volta che restituisci HTML come questo, verrà integrato nella UI tramite un algoritmo di dom-diffing.
 
-#### Attivare manualmente il re-render di un commento
+#### Trigger manuale del re-render di un commento
 
-Possiamo attendere il caricamento iniziale della pagina e renderizzare nuovamente un commento manualmente invocando `reRenderComment`:
+Possiamo attendere il caricamento iniziale della pagina e rieseguire manualmente il render di un commento invocando `reRenderComment`:
 
-[inline-code-attrs-start title = 'Re-Rendering di un commento'; type = 'javascript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Re-Render di un Commento'; type = 'javascript'; inline-code-attrs-end]
 [inline-code-start]
 (function () {
     const extension = FastCommentsUI.extensions.find((extension) => {
@@ -40,9 +40,7 @@ Possiamo attendere il caricamento iniziale della pagina e renderizzare nuovament
             extension.reRenderComment(extension.commentsById[Object.keys(extension.commentsById)[0]], function renderDone() {
                 console.log('Comment re-render done.');
             });
-        }, 2000); // timeout non necessario, solo un esempio.
+        }, 2000); // timeout non richiesto, solo un esempio.
     }
 })();
 [inline-code-end]
-
----

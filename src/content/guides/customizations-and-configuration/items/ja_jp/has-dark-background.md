@@ -11,5 +11,3 @@
 しかし、「luminance」を判定する検出メカニズムは、望むときにダークモードを有効にしない場合があります。強制的に有効にするには、次のように *hasDarkBackground* フラグを true に設定してください:
 
 [code-example-start config = {hasDarkBackground: true}; linesToHighlight = [6]; title = 'Force Dark Background Mode'; additionalDemoCode = '<style>body { background: black; }</style>'; code-example-end]
-
----

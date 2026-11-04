@@ -1,4 +1,3 @@
----
 Agregira dokumente grupišući ih (ako je groupBy naveden) i primenjujući više operacija.
 Podržane su različite operacije (npr. sum, countDistinct, avg, itd.).
 
@@ -58,5 +57,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

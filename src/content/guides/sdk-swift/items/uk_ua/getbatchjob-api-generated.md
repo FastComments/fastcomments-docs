@@ -1,11 +1,11 @@
-Status, progress and, once done, the result of one batch job.
+Статус, прогрес та, після завершення, результат одного пакетного завдання.
 
 ## Параметри
 
-| Назва | Тип | Розташування | Обов’язково | Опис |
+| Назва | Тип | Розташування | Обов'язковий | Опис |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| id | string | path | Yes |  |
+| tenantId | string | query | Так |  |
+| id | string | path | Так |  |
 
 ## Відповідь
 
@@ -15,7 +15,7 @@ Status, progress and, once done, the result of one batch job.
 
 [inline-code-attrs-start title = 'Приклад getBatchJob'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Наступні приклади коду ще у бета-версії. У разі будь-якої проблеми, будь ласка, повідомте за адресою http://github.com/OpenAPITools/openapi-generator/issues/new
+// Наступні приклади коду все ще в бета-версії. Про будь-які проблеми, будь ласка, повідомляйте через http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -32,5 +32,3 @@ DefaultAPI.getBatchJob(tenantId: tenantId, id: id) { (response, error) in
     }
 }
 [inline-code-end]
-
----

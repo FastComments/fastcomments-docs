@@ -39,5 +39,3 @@ from pprint import pprint
     except Exception as e:
         print("Exception when calling DefaultApi->get_sso_users: %s\n" % e)
 [inline-code-end]
-
----

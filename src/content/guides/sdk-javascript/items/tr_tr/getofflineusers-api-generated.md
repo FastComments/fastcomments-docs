@@ -1,27 +1,22 @@
-Past commenters on the page who are NOT currently online. Sorted by displayName.  
-Sayfada daha önce yorum yapmış ancak şu anda ONLINE olmayan yorumcular. displayName'e göre sıralanır.
+Sayfada şu anda çevrimiçi OLMAYAN önceki yorumcular. displayName'e göre sıralı.
+"Bir "Üyeler" bölümü oluşturmak için /users/online kaynağını tükettikten sonra bunu kullanın.
+commenterName üzerinde imleç tabanlı sayfalama: sunucu, {tenantId, urlId, commenterName} kısmi indeksini
+afterName'den $gt ile ileri doğru gezinir, $skip maliyeti yoktur.
 
-Use this after exhausting /users/online to render a "Members" section.  
-/users/online'ı tüketip ardından bir "Members" bölümü oluşturmak için bunu kullanın.
+## Parametreler
 
-Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName}  
-index from afterName forward via $gt, no $skip cost.  
-commenterName üzerinde imleç sayfalama: sunucu {tenantId, urlId, commenterName} kısmını yürütür, afterName'den itibaren $gt ile ileriye doğru indeksler, $skip maliyeti yok.
-
-## Parameters
-
-| Ad | Tür | Gerekli | Açıklama |
+| Ad | Tür | Zorunlu | Açıklama |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| urlId | string | Yes |  |
-| afterName | string | No |  |
-| afterUserId | string | No |  |
+| tenantId | string | Evet |  |
+| urlId | string | Evet |  |
+| afterName | string | Hayır |  |
+| afterUserId | string | Hayır |  |
 
-## Response
+## Yanıt
 
 Döndürür: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersOfflineResponse.ts)
 
-## Example
+## Örnek
 
 [inline-code-attrs-start title = 'getOfflineUsers Örneği'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

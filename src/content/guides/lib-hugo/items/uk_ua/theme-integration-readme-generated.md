@@ -1,4 +1,3 @@
----
 Щоб додати коментарі до кожного запису так само, як це робить вбудована підтримка Disqus у Hugo, додайте один рядок до шаблону single вашої теми (`layouts/_default/single.html`):
 
 ```go-html-template
@@ -13,4 +12,3 @@ title = "A page with no comments"
 comments = false
 +++
 ```
----

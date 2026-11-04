@@ -1,4 +1,3 @@
----
 FastComments supporta una funzionalità chiamata Auto Play. Questo ti consente di importare un CSV di commenti e pianificarne la riproduzione
 a determinati offset basati su ore, minuti e secondi dal momento del caricamento della pagina.
 
@@ -12,5 +11,3 @@ Attualmente è incluso in tutti i piani FastComments.
 ### Nota!
 
 Ricorda che la colonna `URL ID` nel file CSV deve corrispondere al `URL` del corso/video. 
-
----

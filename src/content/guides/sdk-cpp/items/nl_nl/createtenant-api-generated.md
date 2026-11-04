@@ -1,4 +1,3 @@
----
 ## Parameters
 
 | Naam | Type | Vereist | Beschrijving |
@@ -25,5 +24,3 @@ api->createTenant(tenantId, body).then([](pplx::task<std::shared_ptr<CreateTenan
     auto resp = t.get();
 });
 [inline-code-end]
-
----

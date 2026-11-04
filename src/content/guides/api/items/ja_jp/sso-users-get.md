@@ -28,5 +28,3 @@ interface SSOUsersResponse {
     users: SSOUser[]
 }
 [inline-code-end]
-
----

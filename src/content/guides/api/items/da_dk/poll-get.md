@@ -33,5 +33,3 @@ interface PollGetResponse {
 
 En kommentar uden afstemning, en kommentar der er blevet slettet, og et kommentar-id der ikke findes, svarer alle
 på samme måde, med `poll-not-found`.
-
----

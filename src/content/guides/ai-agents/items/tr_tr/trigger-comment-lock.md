@@ -17,5 +17,3 @@ Bir yorum kilitlendiğinde tetiklenir.
 ### Eşleşen tetikleyici
 
 Ayna tetikleyici için bkz. [Tetikleyici: Yorumun kilidi açıldı](#trigger-comment-unlock).
-
----

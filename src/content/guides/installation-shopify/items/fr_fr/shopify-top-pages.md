@@ -18,5 +18,3 @@ Le bloc **FastComments - Top Pages** affiche les pages de votre boutique ayant l
 
 - **Top Pages** classe par engagement total, donc les mêmes publications ont tendance à rester en haut pendant un certain temps. Idéal pour une barre latérale "articles populaires".
 - **Recent Discussions** classe par activité la plus récente, donc la liste se renouvelle rapidement. Idéal pour un panneau "ce qui est populaire en ce moment".
-
----

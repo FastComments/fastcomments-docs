@@ -25,5 +25,3 @@ async fn run_example(cfg: &configuration::Configuration) -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
-
----

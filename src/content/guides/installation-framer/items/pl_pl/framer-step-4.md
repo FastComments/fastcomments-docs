@@ -1,4 +1,3 @@
----
 Możemy poprawić pozycjonowanie widżetu, robiąc dwie rzeczy.
 
 Po pierwsze, w lewym panelu ustaw wysokość widżetu na `fill` i `1fr`:
@@ -16,5 +15,3 @@ Następnie musimy poprawić domyślną konfigurację strony we Framerze. Domyśl
 </div>
 
 Może być konieczne poeksperymentowanie z wysokością strony, aby ustawić ją tak, jak chcesz.
-
----

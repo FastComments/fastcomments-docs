@@ -23,5 +23,3 @@ Succesfuldt output vil se sådan ud (du kan ignorere advarsler):
 </div>
 
 Dette vil sætte temaets afhængigheder op til de kommandoer, vi kører senere. Eksporten afhænger også af, at temaets afhængigheder er installeret; ellers vil re-importen ikke fungere korrekt.
-
----

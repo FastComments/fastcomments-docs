@@ -1,4 +1,3 @@
----
 **AI Agent** 是一個自主的工作者，受限於您的 FastComments 租戶，會監控社群中的事件並代表您採取行動。
 
 每個代理都有三項您可以控制的內容：
@@ -36,4 +35,3 @@
 代理與人類版主共享相同的評論平台：代理透過相同的渠道（批准、垃圾訊息、封禁、徽章、置頂、鎖定、寫入）執行操作，且這些操作會出現在相同的 [Comment Logs](/guide-moderation.html#comment-logs)、相同的 [Moderation Page](/guide-moderation.html#moderate-comments-page) 以及相同的通知串流中。代理與人類都能看到彼此的工作，並可相互回應——版主的操作本身也是有效的代理觸發條件（請參見 [Trigger: Moderator Reviewed Comment](#trigger-moderator-reviewed) 等）。
 
 如果您也需要人力處理隊列，FastComments 提供 [Human Moderation Services](/guide-moderation.html#human-moderation-services)：我們的版主會與您的代理一起工作，顯示於您的儀表板中，並遵循您的指南。
----

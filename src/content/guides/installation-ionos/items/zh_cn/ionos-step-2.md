@@ -57,5 +57,3 @@
     <div class="title">粘贴并保存</div>
     <img class="screenshot-image" src="/images/installation-guides/ionos-step-2-paste-and-save.png" alt="粘贴并保存" />
 </div>
-
----

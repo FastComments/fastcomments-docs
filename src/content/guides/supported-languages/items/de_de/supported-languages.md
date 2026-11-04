@@ -40,5 +40,3 @@ Code‑Snippets werden immer von links nach rechts gelesen.
 ### Pluralformen
 
 Text, das eine Zählung enthält, wie „3 Kommentare“, verwendet die korrekte Pluralform für jede Sprache. Zum Beispiel hat Arabisch separate Formen für eins, zwei, wenige und viele, und Russisch sowie Polnisch haben separate Formen für wenige und viele.
-
----

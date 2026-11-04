@@ -1,12 +1,12 @@
 ### Pregled
 
-FastComments Image Chat razširja standardni pripomoček za komentiranje FastComments, zato deduje vse možnosti konfiguracije iz osnovnega pripomočka in dodaja nekaj, specifičnih za oznake na slikah.
+FastComments Image Chat razširja standardni widget za komentarje FastComments, zato podeduje vse konfiguracijske možnosti osnovnega widgeta in doda nekaj specifičnih za slikovne pripombe.
 
 ### Zahtevana konfiguracija
 
 #### tenantId
 
-Za uporabo potrebujete FastComments Tenant ID. Najdete ga v svoji [FastComments nadzorni plošči](https://fastcomments.com/auth/my-account/api-secret).
+Vaš FastComments Tenant ID je obvezen. Najdete ga v svoji [FastComments nadzorni plošči](https://fastcomments.com/auth/my-account/api-secret).
 
 ```javascript
 FastCommentsImageChat(imageElement, {
@@ -18,7 +18,7 @@ FastCommentsImageChat(imageElement, {
 
 #### urlId
 
-Privzeto Image Chat ustvari edinstven identifikator za vsak pogovor na podlagi URL-ja strani, vira slike in X/Y koordinat. To lahko presežete z lastnim `urlId`.
+Privzeto Image Chat ustvari enolični identifikator za vsako pogovor na podlagi URL-ja strani, vira slike ter koordinat X/Y. To lahko preglasite s svojim `urlId`.
 
 ```javascript
 FastCommentsImageChat(imageElement, {
@@ -27,24 +27,24 @@ FastCommentsImageChat(imageElement, {
 });
 ```
 
-To je uporabno, kadar se struktura vaših URL-jev lahko spremeni, vendar želite obdržati iste pogovore, ali kadar želite deliti oznake med več stranmi.
+To je uporabno, kadar se struktura vaših URL-jev lahko spremeni, a želite ohraniti iste pogovore, ali kadar želite pripombe deliti med več stranmi.
 
 #### chatSquarePercentage
 
-Nadzoruje velikost klikabilnih oznak za klepet kot odstotek širine slike. Privzeto je 5 %, kar pomeni, da je vsaka oznaka 5 % širine slike.
+Nadzoruje velikost klikabilnih označevalcev pogovora kot odstotek širine slike. Privzeta vrednost je 5 %, kar pomeni, da je vsak označevalec 5 % širine slike.
 
 ```javascript
 FastCommentsImageChat(imageElement, {
     tenantId: 'demo',
-    chatSquarePercentage: 8  // Večji, bolj vidni markerji
+    chatSquarePercentage: 8  // Večji, bolj vidni označevalci
 });
 ```
 
-Manjše vrednosti ustvarijo manj vsiljive oznake, ki bolje delujejo pri podrobnih slikah. Večje vrednosti naredijo oznake lažje vidne in klikljive na zasedenih slikah ali za uporabnike na mobilnih napravah.
+Manjše vrednosti ustvarijo manj moteče označevalce, ki so bolj primerni za podrobne slike. Večje vrednosti naredijo označevalce lažje vidne in klikljive na gosto poslikanih straneh ali za uporabnike na mobilnih napravah.
 
 #### hasDarkBackground
 
-Omogoči temno oblikovanje, kadar ima vaša stran temno ozadje.
+Omogočite temen slog, kadar ima vaša stran temno ozadje.
 
 ```javascript
 FastCommentsImageChat(imageElement, {
@@ -55,7 +55,7 @@ FastCommentsImageChat(imageElement, {
 
 #### commentCountUpdated
 
-Funkcija povratnega klica, ki se sproži vsakič, ko se število komentarjev spremeni. To je uporabno za posodabljanje elementov uporabniškega vmesnika, kot so značke ali naslovi strani.
+Povratna funkcija, ki se sproži vsakič, ko se spremeni število komentarjev. Uporabna je za posodabljanje elementov vmesnika, kot so značke ali naslovi strani.
 
 ```javascript
 FastCommentsImageChat(imageElement, {
@@ -67,24 +67,24 @@ FastCommentsImageChat(imageElement, {
 });
 ```
 
-### Dedičene možnosti konfiguracije
+### Podedovane konfiguracijske možnosti
 
-Ker Image Chat razširja standardni pripomoček za komentiranje, lahko uporabite katerokoli možnost konfiguracije iz osnovnega pripomočka FastComments. Tukaj je nekaj pogosto uporabljenih možnosti:
+Ker Image Chat razširja standardni widget za komentarje, lahko uporabite katero koli konfiguracijsko možnost osnovnega widgeta FastComments. Tukaj je nekaj pogosto uporabljenih možnosti:
 
 #### locale
 
-Nastavite jezik za uporabniški vmesnik pripomočka. FastComments podpira desetine jezikov.
+Nastavite jezik vmesnika widgeta. FastComments podpira ducate jezikov.
 
 ```javascript
 FastCommentsImageChat(imageElement, {
     tenantId: 'demo',
-    locale: 'es'  // španščina
+    locale: 'es'  // Španščina
 });
 ```
 
 #### readonly
 
-Naredite vse pogovore samo za branje. Uporabniki lahko gledajo obstoječe oznake in razprave, vendar ne morejo ustvarjati novih ali odgovarjati.
+Naredite vse pogovore samo za branje. Uporabniki si lahko ogledajo obstoječe označevalce in razprave, ne morejo pa ustvarjati novih ali odgovarjati.
 
 ```javascript
 FastCommentsImageChat(imageElement, {
@@ -93,55 +93,55 @@ FastCommentsImageChat(imageElement, {
 });
 ```
 
-#### sso and simpleSSO
+#### sso in simpleSSO
 
-Integrirajte z vašim sistemom za overjanje z uporabo enkratnega prijavljanja (Single Sign-On).
+Integrirajte se s svojim sistemom avtentikacije z uporabo enotne prijave (Single Sign-On).
 
 ```javascript
 FastCommentsImageChat(imageElement, {
     tenantId: 'demo',
     sso: {
-        // konfiguracija SSO
+        // Konfiguracija SSO
     }
 });
 ```
 
-Oglejte si dokumentacijo o SSO za podrobnosti o možnostih overjanja.
+Za podrobnosti o možnostih avtentikacije si oglejte dokumentacijo SSO.
 
 #### maxReplyDepth
 
-Nadzoruje, koliko nivojev globoko lahko segajo odgovori. Privzeto je Image Chat nastavil to na 0, kar pomeni, da so vsi komentarji ploski (brez gnezdenih odgovorov). To lahko spremenite, če želite naviti pogovore.
+Nadzorujte, koliko nivojev globoko lahko gredo odgovori. Privzeto Image Chat nastavi to vrednost na 0, kar pomeni, da so vsi komentarji ravni (brez ugnezdenih odgovorov). To lahko spremenite, če želite razvejane pogovore.
 
 ```javascript
 FastCommentsImageChat(imageElement, {
     tenantId: 'demo',
-    maxReplyDepth: 3  // Dovoli 3 ravni gnezdenja
+    maxReplyDepth: 3  // Dovoli 3 nivoje ugnezditev
 });
 ```
 
 ### Notranja konfiguracija
 
-Te možnosti Image Chat samodejno nastavi in jih ne bi smeli preglasiti:
+Te možnosti nastavi Image Chat samodejno in jih ne smete preglasiti:
 
-Vrednost `productId` je samodejno nastavljena na `2` za Image Chat. Razširitev `floating-chat` se samodejno naloži, da zagotovi funkcionalnost okna za klepet. Pripomoček samodejno zazna mobilne naprave (zasloni oz. širine pod 768px) in ustrezno prilagodi uporabniški vmesnik z okni za klepet v celozaslonskem načinu.
+`productId` je samodejno nastavljen na `2` za Image Chat. Razširitev `floating-chat` se samodejno naloži in zagotovi funkcionalnost okna pogovora. Widget samodejno zazna mobilne naprave (zaslone širše manj kot 768px) in ustrezno prilagodi vmesnik s celozaslonskimi okni pogovora.
 
-### Fleksibilnost ciljanega elementa
+### Prilagodljivost ciljnega elementa
 
-Prvi parameter za `FastCommentsImageChat` je lahko bodisi neposredni element `<img>`, bodisi element vsebnika s sliko znotraj:
+Prvi parameter funkcije `FastCommentsImageChat` je lahko neposredno element `<img>` ali vsebnik s sliko znotraj:
 
 ```javascript
-// Neposredni element slike
+// Neposreden element slike
 FastCommentsImageChat(document.getElementById('my-image'), config);
 
-// Kontejner s sliko znotraj
+// Vsebnik s sliko znotraj
 FastCommentsImageChat(document.querySelector('.image-wrapper'), config);
 ```
 
-Pripomoček bo samodejno poiskal sliko, če posredujete element vsebnika.
+Če podate element vsebnika, bo widget sliko našel samodejno.
 
-### Celoten primer
+### Popoln primer
 
-Tukaj je primer, ki prikazuje več možnosti konfiguracije skupaj:
+Tukaj je primer, ki prikazuje več konfiguracijskih možnosti skupaj:
 
 ```javascript
 FastCommentsImageChat(document.getElementById('product-image'), {
@@ -160,4 +160,4 @@ FastCommentsImageChat(document.getElementById('product-image'), {
 });
 ```
 
-Za popoln seznam vseh razpoložljivih možnosti konfiguracije, ki se podedujejo iz osnovnega pripomočka, si oglejte glavno dokumentacijo o konfiguraciji FastComments.
+Za popoln seznam vseh razpoložljivih konfiguracijskih možnosti, podedovanih iz osnovnega widgeta, si oglejte glavno dokumentacijo konfiguracije FastComments.

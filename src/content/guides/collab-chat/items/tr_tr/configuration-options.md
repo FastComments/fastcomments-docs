@@ -1,12 +1,12 @@
-### Overview
+### Genel Bakış
 
-FastComments Collab Chat, standart FastComments yorum bileşenini genişletir; böylece temel bileşenden tüm yapılandırma seçeneklerini miras alır ve metin açıklamalarına özgü birkaç seçenek ekler.
+FastComments Collab Chat, standart FastComments yorum widget'ını genişletir, böylece temel widget'ın tüm yapılandırma seçeneklerini devralır ve metin açıklamalarına özgü birkaç seçenek ekler.
 
-### Required Configuration
+### Gerekli Yapılandırma
 
 #### tenantId
 
-FastComments Tenant ID'niz gereklidir. Bunu [FastComments dashboard](https://fastcomments.com/auth/my-account/api-secret) sayfanızda bulabilirsiniz.
+FastComments Tenant ID'niz gereklidir. Bunu [FastComments panonuzda](https://fastcomments.com/auth/my-account/api-secret) bulabilirsiniz.
 
 [inline-code-attrs-start title = "Yapılandırma Örneği"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -15,11 +15,11 @@ FastCommentsCollabChat(element, {
 });
 [inline-code-end]
 
-### Collab Chat Specific Options
+### Collab Chat'e Özgü Seçenekler
 
 #### urlId
 
-Varsayılan olarak, Collab Chat her konuşma için sayfa URL'si, öğeye giden DOM yolu ve seçili metin aralığına dayanarak benzersiz bir tanımlayıcı oluşturur. Bunu özel bir `urlId` ile geçersiz kılabilirsiniz.
+Varsayılan olarak, Collab Chat her konuşma için sayfa URL'sine, öğeye giden DOM yoluna ve seçili metin aralığına dayalı benzersiz bir tanımlayıcı oluşturur. Bunu özel bir `urlId` ile geçersiz kılabilirsiniz.
 
 [inline-code-attrs-start title = "Yapılandırma Örneği"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -29,21 +29,21 @@ FastCommentsCollabChat(element, {
 });
 [inline-code-end]
 
-Bu, URL yapınız değişse bile aynı konuşmaları korumak istediğinizde veya açıklamaları birden çok sayfa arasında paylaşmak istediğinizde kullanışlıdır.
+Bu, URL yapınız değişebileceğinde ancak aynı konuşmaları korumak istediğinizde veya açıklamaları birden fazla sayfada paylaşmak istediğinizde kullanışlıdır.
 
 #### topBarTarget
 
-Kullanıcı sayısını ve tartışma sayısını gösteren üst çubuğun görüntülenmesini kontrol eder. Üst çubuğu tamamen devre dışı bırakmak için `null` olarak ayarlayın veya belirli bir konuma render etmek için bir DOM öğesi sağlayın.
+Kullanıcı sayısını ve tartışma sayısını gösteren üst çubuğun görüntülenmesini kontrol eder. Üst çubuğu tamamen devre dışı bırakmak için `null` olarak ayarlayın veya belirli bir konumda görüntülemek için bir DOM öğesi sağlayın.
 
 [inline-code-attrs-start title = "Yapılandırma Örneği"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Üst çubuğu devre dışı bırak
+// Disable top bar
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
     topBarTarget: null
 });
 
-// Üst çubuğu özel bir konumda göster
+// Render top bar in custom location
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
     topBarTarget: document.getElementById('custom-header')
@@ -52,7 +52,7 @@ FastCommentsCollabChat(element, {
 
 #### hasDarkBackground
 
-Sayfanız koyu bir arka plana sahip olduğunda koyu mod stilini etkinleştirin. Bu tespit otomatik olarak yapılır, ancak üzerine yazmak isteyebilirsiniz.
+Sayfanız koyu bir arka plana sahip olduğunda koyu mod stilini etkinleştirin. Bu algılama otomatiktir, ancak geçersiz kılmak istenebilir.
 
 [inline-code-attrs-start title = "Yapılandırma Örneği"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -64,7 +64,7 @@ FastCommentsCollabChat(element, {
 
 #### commentCountUpdated
 
-Yorum sayısı her değiştiğinde tetiklenen bir geri çağırma (callback) fonksiyonu. Rozetler veya sayfa başlıkları gibi UI öğelerini güncellemek için faydalıdır.
+Yorum sayısı her değiştiğinde tetiklenen bir geri çağırma işlevi. Bu, rozetler veya sayfa başlıkları gibi UI öğelerini güncellemek için kullanışlıdır.
 
 [inline-code-attrs-start title = "Yapılandırma Örneği"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -77,25 +77,25 @@ FastCommentsCollabChat(element, {
 });
 [inline-code-end]
 
-### Inherited Configuration Options
+### Devralınan Yapılandırma Seçenekleri
 
-Collab Chat, standart yorum bileşenini genişlettiği için temel FastComments bileşeninden herhangi bir yapılandırma seçeneğini kullanabilirsiniz. İşte yaygın olarak kullanılan bazı seçenekler:
+Collab Chat standart yorum widget'ını genişlettiğinden, temel FastComments widget'ından herhangi bir yapılandırma seçeneğini kullanabilirsiniz. İşte yaygın olarak kullanılan bazı seçenekler:
 
 #### locale
 
-Bileşen UI'sı için dili ayarlayın. FastComments onlarca dili destekler.
+Widget UI'si için dili ayarlayın. FastComments düzinelerce dili destekler.
 
 [inline-code-attrs-start title = "Yapılandırma Örneği"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
-    locale: 'es'  // İspanyolca
+    locale: 'es'  // Spanish
 });
 [inline-code-end]
 
 #### readonly
 
-Tüm konuşmaları salt okunur yapın. Kullanıcılar mevcut açıklamaları görüntüleyebilir ancak yeni oluşturamaz veya yanıtlayamaz.
+Tüm konuşmaları salt okunur yapın. Kullanıcılar mevcut açıklamaları görüntüleyebilir ancak yenilerini oluşturamaz veya yanıt veremez.
 
 [inline-code-attrs-start title = "Yapılandırma Örneği"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -105,43 +105,43 @@ FastCommentsCollabChat(element, {
 });
 [inline-code-end]
 
-#### sso and simpleSSO
+#### sso ve simpleSSO
 
-Tek Oturum Açma (Single Sign-On) kullanarak kimlik doğrulama sisteminizle entegrasyon sağlayın.
+Tek Oturum Açma (Single Sign-On) kullanarak kimlik doğrulama sisteminizle entegre olun.
 
 [inline-code-attrs-start title = "Yapılandırma Örneği"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
     sso: {
-        // SSO yapılandırması
+        // SSO configuration
     }
 });
 [inline-code-end]
 
-Kimlik doğrulama seçenekleri hakkında tam detay için SSO belgelerine bakın.
+Kimlik doğrulama seçenekleriyle ilgili tüm ayrıntılar için SSO belgelerine bakın.
 
 #### maxReplyDepth
 
-Yanıtların kaç seviyeye kadar iç içe olabileceğini kontrol edin. Varsayılan olarak, Collab Chat bunu 0 olarak ayarlar; bu, tüm yorumların düz olduğu (iç içe yanıt yok) anlamına gelir. Konu dizileri (threaded conversations) istiyorsanız bunu değiştirebilirsiniz.
+Yanıtların kaç seviye derine gidebileceğini kontrol edin. Varsayılan olarak, Collab Chat bunu 0 olarak ayarlar, yani tüm yorumlar düzdür (iç içe yanıtlar yok). Dallanmış konuşmalar istiyorsanız bunu değiştirebilirsiniz.
 
 [inline-code-attrs-start title = "Yapılandırma Örneği"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
-    maxReplyDepth: 3  // 3 seviyeye kadar iç içe izin ver
+    maxReplyDepth: 3  // Allow 3 levels of nesting
 });
 [inline-code-end]
 
-### Internal Configuration
+### Dahili Yapılandırma
 
-Bu seçenekler Collab Chat tarafından otomatik olarak ayarlanır ve üzerine yazılmamalıdır:
+Bu seçenekler Collab Chat tarafından otomatik olarak ayarlanır ve geçersiz kılınmamalıdır:
 
-`productId` Collab Chat için otomatik olarak `3` olarak ayarlanır. `floating-chat` uzantısı sohbet penceresi işlevselliğini sağlamak için otomatik olarak yüklenir. Bileşen, mobil cihazları (genişliği 768px'in altında olan ekranlar) otomatik olarak algılar ve UI'ı buna göre ayarlar.
+`productId`, Collab Chat için otomatik olarak `3` olarak ayarlanır. Sohbet penceresi işlevselliğini sağlamak için `floating-chat` uzantısı otomatik olarak yüklenir. Widget, mobil cihazları (768px'den dar ekranlar) otomatik olarak algılar ve UI'yi buna göre ayarlar.
 
-### Complete Example
+### Tam Örnek
 
-Aşağıda birden çok yapılandırma seçeneğini bir arada gösteren bir örnek bulunmaktadır:
+Birden fazla yapılandırma seçeneğini birlikte gösteren bir örnek:
 
 [inline-code-attrs-start title = "Yapılandırma Örneği"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -155,10 +155,10 @@ FastCommentsCollabChat(document.getElementById('article'), {
         document.title = count > 0 ? `(${count}) My Article` : 'My Article';
     },
     sso: {
-        // SSO yapılandırmanız
+        // Your SSO config
     },
     maxReplyDepth: 1
 });
 [inline-code-end]
 
-Tüm kullanılabilir yapılandırma seçeneklerinin tam listesi için, temel FastComments yapılandırma belgelerine bakın.
+Temel widget'tan devralınan tüm kullanılabilir yapılandırma seçeneklerinin tam listesi için ana FastComments yapılandırma belgelerine bakın.

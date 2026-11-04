@@ -25,5 +25,3 @@ Vraća: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js
   console.log(result1, result2);
 })();
 [inline-code-end]
-
----

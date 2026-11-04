@@ -1,4 +1,3 @@
----
 Um FastComments SSR zu verwenden, kann der Client HTML vom Endpunkt `https://fastcomments.com/ssr/comments` abrufen.
 
 Dies kann auf verschiedene Weise erfolgen.
@@ -81,5 +80,3 @@ Dementsprechend funktioniert sämtliches benutzerdefiniertes Styling, das für d
 Bei SSR gibt es kein JavaScript, das die Höhe des gerenderten Containers steuert. In Browsern kann bei langen Diskussionen eine vertikale Bildlaufleiste angezeigt werden.
 
 Passen Sie dies entsprechend an.
-
----

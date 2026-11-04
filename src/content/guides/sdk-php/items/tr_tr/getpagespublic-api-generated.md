@@ -1,23 +1,23 @@
-List pages for a tenant. Used by the FChat desktop client to populate its room list.  
-Requires `enableFChat` to be true on the resolved custom config for each page.  
-Pages that require SSO are filtered against the requesting user's group access.
+Bir kiracı için sayfaları listeler. FChat masaüstü istemcisi tarafından oda listesini doldurmak için kullanılır.
+Her sayfa için çözümlenen özel yapılandırmada `enableFChat` değerinin true olması gerekir.
+SSO gerektiren sayfalar, istekte bulunan kullanıcının grup erişimine göre filtrelenir.
 
-## Parameters
+## Parametreler
 
-| Name | Type | Location | Required | Description |
+| Ad | Tür | Konum | Zorunlu | Açıklama |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| cursor | string | query | No | Opak sayfalama imleci, önceki bir istekte `nextCursor` olarak döndürülen. Aynı `sortBy` ile ilişkilidir. |
-| limit | integer | query | No | 1..200, varsayılan 50 |
-| q | string | query | No | İsteğe bağlı, büyük/küçük harfe duyarsız başlık önek filtresi. |
-| sortBy | string | query | No | Sıralama düzeni. `updatedAt` (varsayılan, en yeni önce), `commentCount` (en çok yorum önce), ya da `title` (alfabetik). |
-| hasComments | boolean | query | No | Doğruysa, yalnızca en az bir yorumu olan sayfaları döndür. |
+| tenantId | string | path | Evet |  |
+| cursor | string | query | Hayır | Önceki bir istekten `nextCursor` olarak döndürülen opak sayfalama imleci. Aynı `sortBy` değerine bağlıdır. |
+| limit | integer | query | Hayır | 1..200, varsayılan 50 |
+| q | string | query | Hayır | İsteğe bağlı, büyük/küçük harfe duyarsız başlık öneki filtresi. |
+| sortBy | string | query | Hayır | Sıralama düzeni. `updatedAt` (varsayılan, en yeniden eskiye), `commentCount` (en çok yorumlu önce) veya `title` (alfabetik). |
+| hasComments | boolean | query | Hayır | true ise, yalnızca en az bir yorumu olan sayfaları döndürür. |
 
-## Response
+## Yanıt
 
-Returns: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetPublicPagesResponse.php)
+Döndürür: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetPublicPagesResponse.php)
 
-## Example
+## Örnek
 
 [inline-code-attrs-start title = 'getPagesPublic Örneği'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -27,18 +27,18 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Özel bir HTTP istemcisi kullanmak istiyorsanız, `GuzzleHttp\ClientInterface`'i uygulayan istemcinizi geçirin.
+    // Özel bir http istemcisi kullanmak istiyorsanız, `GuzzleHttp\ClientInterface` uygulayan istemcinizi iletin.
     // Bu isteğe bağlıdır, varsayılan olarak `GuzzleHttp\Client` kullanılacaktır.
     new GuzzleHttp\Client()
 );
 
 $tenant_id = 'tenant_id_example'; // string
 $options = [
-    'cursor' => 'cursor_example', // string | Opak sayfalama imleci, önceki bir istekte `nextCursor` olarak döndürülen. Aynı `sortBy` ile ilişkilidir.
+    'cursor' => 'cursor_example', // string | Önceki bir istekten `nextCursor` olarak döndürülen opak sayfalama imleci. Aynı `sortBy` değerine bağlıdır.
     'limit' => 56, // int | 1..200, varsayılan 50
-    'q' => 'q_example', // string | İsteğe bağlı, büyük/küçük harfe duyarsız başlık önek filtresi.
-    'sort_by' => new \FastComments\Client\Model\\FastComments\Client\Model\PagesSortBy(), // \FastComments\Client\Model\PagesSortBy | Sıralama düzeni. `updatedAt` (varsayılan, en yeni önce), `commentCount` (en çok yorum önce), ya da `title` (alfabetik).
-    'has_comments' => True, // bool | Doğruysa, yalnızca en az bir yorumu olan sayfaları döndür.
+    'q' => 'q_example', // string | İsteğe bağlı, büyük/küçük harfe duyarsız başlık öneki filtresi.
+    'sort_by' => new \FastComments\Client\Model\\FastComments\Client\Model\PagesSortBy(), // \FastComments\Client\Model\PagesSortBy | Sıralama düzeni. `updatedAt` (varsayılan, en yeniden eskiye), `commentCount` (en çok yorumlu önce) veya `title` (alfabetik).
+    'has_comments' => True, // bool | true ise, yalnızca en az bir yorumu olan sayfaları döndürür.
 ];
 
 

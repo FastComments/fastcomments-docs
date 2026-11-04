@@ -67,5 +67,3 @@ Le approvazioni rifiutano di accodare qualsiasi nome di strumento che non sia un
 
 - Non ritardano le altre chiamate a strumenti dell'agente. L'esecuzione dell'agente può invocare diversi strumenti e solo quelli sottoposti a gate vengono accodati - il resto viene eseguito normalmente.
 - Non annullano l'esecuzione dell'agente se l'umano rifiuta. La parte non sottoposta a gate dell'esecuzione è già stata eseguita.
-
----

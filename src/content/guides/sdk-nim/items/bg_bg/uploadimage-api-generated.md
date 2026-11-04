@@ -1,4 +1,3 @@
----
 Качване и преоразмеряване на изображение
 
 ## Параметри
@@ -27,5 +26,3 @@ if uploadResult.isSome:
   let result = uploadResult.get()
   # използвайте резултата, както е необходимо
 [inline-code-end]
-
----

@@ -19,5 +19,3 @@
 
 - "Reviewed" είναι μία από τις καταστάσεις της ουράς μετριοποίησης που παρακολουθούνται ξεχωριστά από τα "approved" και "spam". Ένα σχόλιο μπορεί να είναι approved-and-reviewed, approved-but-not-reviewed, κ.λπ. Δείτε [How Approvals Work](/guide-moderation.html#moderation-approvals) στον οδηγό μετριοποίησης.
 - Αυτό το trigger εμφανίζεται συχνά σε tenants με πολλούς συντονιστές. Εγγραφείτε επιλεκτικά και προϋπολογίστε ανάλογα.
-
----

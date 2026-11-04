@@ -1,4 +1,3 @@
----
 ## パラメータ
 
 | 名前 | 型 | 必須 | 説明 |
@@ -26,5 +25,3 @@ async fn run_example(cfg: &configuration::Configuration) -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
-
----

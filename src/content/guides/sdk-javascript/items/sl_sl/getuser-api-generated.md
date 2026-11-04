@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Ime | Tip | Obvezno | Opis |
@@ -22,5 +21,3 @@ async function main(): Promise<void> {
 }
 main();
 [inline-code-end]
-
----

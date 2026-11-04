@@ -1,4 +1,3 @@
----
 [api-resource-header-start name = 'DomainConfig'; route = 'PATCH /api/v1/domain-configs/:domain'; creditsCost = 1; api-resource-header-end]
 
 Ця кінцева точка API дозволяє оновити конфігурацію домену, вказавши лише домен та атрибут, який потрібно оновити.
@@ -34,5 +33,3 @@ interface DomainConfigPatchResponse {
     configuration?: DomainConfig
 }
 [inline-code-end]
-
----

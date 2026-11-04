@@ -36,5 +36,3 @@ DefaultAPI.getTickets(tenantId: tenantId, options: DefaultAPI.GetTicketsOptions(
     }
 }
 [inline-code-end]
-
----

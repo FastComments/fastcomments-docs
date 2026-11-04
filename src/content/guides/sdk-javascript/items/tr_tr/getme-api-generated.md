@@ -23,5 +23,3 @@ Döndürür: [`GetMeResponse`](https://github.com/FastComments/fastcomments-sdk-
   const status: APIStatus = me.status;
 })();
 [inline-code-end]
-
----

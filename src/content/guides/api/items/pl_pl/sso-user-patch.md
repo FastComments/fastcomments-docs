@@ -33,6 +33,3 @@ interface SSOUserPatchResponse {
     user?: SSOUser; // Zwracamy pełnego zaktualizowanego użytkownika w przypadku powodzenia.
 }
 [inline-code-end]
-
-
----

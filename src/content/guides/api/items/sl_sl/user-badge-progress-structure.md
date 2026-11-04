@@ -54,4 +54,3 @@ export interface UserBadgeProgress {
     }
 }
 [inline-code-end]
----

@@ -38,5 +38,3 @@ Sada promijenimo tip `Embed` widgeta u `HTML`:
 </div>
 
 Sada ste spremni za FastComments Framer isječak koda u sljedećem koraku.
-
----

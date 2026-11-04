@@ -17,5 +17,3 @@ Dispara quando um comentário é bloqueado.
 ### Par
 
 Veja [Acionador: Comentário Desbloqueado](#trigger-comment-unlock) para o acionador espelho.
-
----

@@ -139,5 +139,3 @@ Image Chat lahko inicializirate na več slikah. Vsaka slika bo imela svoje neodv
     });
 </script>
 [inline-code-end]
-
----

@@ -23,5 +23,3 @@ Devuelve: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-
   const resultWithoutSso: APIEmptyResponse = await putCloseThread(tenantId, urlId);
 })();
 [inline-code-end]
-
----

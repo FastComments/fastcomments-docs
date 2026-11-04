@@ -8,5 +8,3 @@ Se você encontrar algum problema ou tiver dúvidas sobre o Pacote Django, por f
 ## Contribuindo
 
 Contribuições são bem‑vindas! Por favor, visite o [repositório GitHub](https://github.com/FastComments/fastcomments-django) para diretrizes de contribuição.
-
----

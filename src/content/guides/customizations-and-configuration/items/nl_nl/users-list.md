@@ -1,4 +1,3 @@
----
 [related-parameter-start name = 'usersListLocation'; type = 'number'; related-parameter-end]
 [related-parameter-start name = 'usersListIncludeOffline'; type = 'boolean'; related-parameter-end]
 
@@ -29,5 +28,3 @@ Dit kan ook worden geconfigureerd zonder code. Op de widget‑aanpassingspagina,
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.users-list-settings'; alt='Gebruikerslijstlocatie ingesteld op Rechts, met het selectievakje \'Inclusief eerdere commentatoren\' eronder weergegeven'; title='Instellingen gebruikerslijst'; actions=[{type: 'set-value', selector: '#users-list-location-input', value: '3'}] app-screenshot-end]
 
 Bij meer dan 500 live gebruikers is de lijst tot 30 seconden verouderd.
-
----

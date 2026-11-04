@@ -2,5 +2,3 @@ FastComments understøtter flere typer reaktioner pr. side. Vi understøtter det
 over kommentarfeltet.
 
 Vi har også Floating Likes-widgeten, som vises i nederste højre hjørne af skærmen. Denne dokumentation dækker begge.
-
----

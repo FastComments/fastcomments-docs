@@ -1,4 +1,3 @@
----
 ## פרמטרים
 
 | שם | סוג | נדרש | תיאור |
@@ -26,5 +25,3 @@ api->getTenantUser(tenantId, userId)
         }
     });
 [inline-code-end]
-
----

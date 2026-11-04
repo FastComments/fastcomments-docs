@@ -12,5 +12,3 @@ Doğrulanmamış yorumların manuel onayını zorunlu kılmak spam ile mücadele
 otomatik yorum onayını etkinleştirip `Only Auto Approve Verified Comments` seçeneğini etkinleştirmeniz gerekir.
 
 Bu ayarların tümü yöneticiler tarafından [Moderasyon Ayarları](https://fastcomments.com/auth/my-account/moderate-comments/settings) üzerinden yapılandırılabilir.
-
----

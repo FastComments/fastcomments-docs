@@ -1,4 +1,3 @@
----
 租戶的批次使用者資訊。給定 userIds，從 User / SSOUser 回傳顯示資訊。
 由評論小工具用來豐富剛透過 presence 事件出現的使用者。
 無頁面上下文：隱私一致性強制執行（私人資料會被遮蔽）。
@@ -33,5 +32,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->get_users_info: #{e}"
 end
 [inline-code-end]
-
----

@@ -10,5 +10,3 @@ Dette skyldes, at FastComments ikke ved, at din konto må bruges på dette domæ
 I dette tilfælde er løsningen simpel. Du skal blot tilføje dit websted til din FastComments.com-konto.
 
 [Gå her for at tilføje dit websted til din konto.](https://fastcomments.com/auth/my-account/configure-domains)
-
----

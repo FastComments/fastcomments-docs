@@ -8,5 +8,3 @@
 ## Допринасяне
 
 Приноси са добре дошли! Моля, посетете [репозитория в GitHub](https://github.com/FastComments/fastcomments-swift) за указания за принос.
-
----

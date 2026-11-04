@@ -41,5 +41,3 @@ interface NotificationsGetResponse {
     notifications?: Notification[]
 }
 [inline-code-end]
-
----

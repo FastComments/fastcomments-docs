@@ -1,4 +1,3 @@
----
 Aktuell online Viewer einer Seite: Personen, deren Websocket‑Sitzung gerade die Seite abonniert.
 Gibt anonCount + totalCount zurück (raumweite Abonnenten, einschließlich anonymer Viewer, die wir nicht aufzählen).
 
@@ -37,5 +36,3 @@ async function fetchOnlineUsers() {
 
 fetchOnlineUsers();
 [inline-code-end]
-
----

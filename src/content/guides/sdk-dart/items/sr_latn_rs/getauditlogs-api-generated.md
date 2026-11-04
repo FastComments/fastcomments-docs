@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Naziv | Tip | Lokacija | Obavezno | Opis |
@@ -39,5 +38,3 @@ try {
     print('Exception when calling DefaultApi->getAuditLogs: $e\n');
 }
 [inline-code-end]
-
----

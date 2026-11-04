@@ -1,12 +1,12 @@
 ### 概要
 
-FastComments Image Chatは標準のFastCommentsコメントウィジェットを拡張しており、ベースウィジェットのすべての設定オプションを継承しつつ、画像注釈に特化したいくつかのオプションを追加します。
+FastComments Image Chat は標準の FastComments コメントウィジェットを拡張したものであり、ベースウィジェットのすべての設定オプションを継承しつつ、画像アノテーションに特化したいくつかのオプションを追加しています。
 
 ### 必須の設定
 
 #### tenantId
 
-FastCommentsのTenant IDが必要です。これは[FastComments dashboard](https://fastcomments.com/auth/my-account/api-secret)で確認できます。
+FastComments のテナント ID(tenantId)が必要です。[FastComments ダッシュボード](https://fastcomments.com/auth/my-account/api-secret) から確認できます。
 
 ```javascript
 FastCommentsImageChat(imageElement, {
@@ -18,7 +18,7 @@ FastCommentsImageChat(imageElement, {
 
 #### urlId
 
-既定では、Image ChatはページのURL、画像のソース、X/Y座標に基づいて各会話のための一意の識別子を生成します。カスタムの`urlId`でこれを上書きできます。
+デフォルトでは、Image Chat はページ URL、画像のソース、X/Y 座標に基づいて会話ごとに一意の識別子を生成します。カスタムの `urlId` を指定してこれを上書きできます。
 
 ```javascript
 FastCommentsImageChat(imageElement, {
@@ -27,24 +27,24 @@ FastCommentsImageChat(imageElement, {
 });
 ```
 
-これは、URL構造が変わる可能性があるが同じ会話を保持したい場合や、複数のページにわたって注釈を共有したい場合に便利です。
+これは、URL 構造が変わる可能性があるが同じ会話を維持したい場合や、複数のページ間でアノテーションを共有したい場合に便利です。
 
 #### chatSquarePercentage
 
-クリック可能なチャットマーカーのサイズを画像幅に対するパーセンテージで制御します。デフォルトは5%で、各マーカーは画像幅の5%になります。
+クリック可能なチャットマーカーのサイズを画像幅に対する割合で制御します。デフォルトは 5% で、各マーカーは画像幅の 5% になります。
 
 ```javascript
 FastCommentsImageChat(imageElement, {
     tenantId: 'demo',
-    chatSquarePercentage: 8  // より大きく、目立つマーカー
+    chatSquarePercentage: 8  // より大きく目立つマーカー
 });
 ```
 
-小さい値は詳細な画像に対して目立ちにくいマーカーを作ります。大きい値は、情報量の多い画像やモバイルデバイスのユーザーにとってマーカーを見やすく、クリックしやすくします。
+小さい値にすると目立ちにくいマーカーになり、細かいディテールのある画像に適しています。大きい値にすると、情報の多い画像やモバイルデバイスのユーザーにとって、マーカーが見やすくクリックしやすくなります。
 
 #### hasDarkBackground
 
-ページにダークな背景がある場合にダークモードのスタイリングを有効にします。
+ページの背景が暗い場合に、ダークモードのスタイリングを有効にします。
 
 ```javascript
 FastCommentsImageChat(imageElement, {
@@ -55,7 +55,7 @@ FastCommentsImageChat(imageElement, {
 
 #### commentCountUpdated
 
-コメント数が変化するたびに発火するコールバック関数です。バッジやページタイトルなどのUI要素を更新するのに便利です。
+コメント数が変わるたびに呼び出されるコールバック関数です。バッジやページタイトルなどの UI 要素の更新に便利です。
 
 ```javascript
 FastCommentsImageChat(imageElement, {
@@ -67,24 +67,24 @@ FastCommentsImageChat(imageElement, {
 });
 ```
 
-### 継承された設定オプション
+### 継承される設定オプション
 
-Image Chatは標準のコメントウィジェットを拡張しているため、ベースのFastCommentsウィジェットの任意の設定オプションを使用できます。以下はよく使われるオプションです：
+Image Chat は標準のコメントウィジェットを拡張しているため、ベースの FastComments ウィジェットの任意の設定オプションを使用できます。よく使われるオプションの例を以下に示します:
 
 #### locale
 
-ウィジェットUIの言語を設定します。FastCommentsは数十の言語をサポートしています。
+ウィジェット UI の言語を設定します。FastComments は数十の言語をサポートしています。
 
 ```javascript
 FastCommentsImageChat(imageElement, {
     tenantId: 'demo',
-    locale: 'es'  // Spanish
+    locale: 'es'  // スペイン語
 });
 ```
 
 #### readonly
 
-すべての会話を読み取り専用にします。ユーザーは既存のマーカーや議論を閲覧できますが、新しいマーカーの作成や返信はできません。
+すべての会話を読み取り専用にします。ユーザーは既存のマーカーやディスカッションを閲覧できますが、新規作成や返信はできません。
 
 ```javascript
 FastCommentsImageChat(imageElement, {
@@ -93,55 +93,55 @@ FastCommentsImageChat(imageElement, {
 });
 ```
 
-#### sso and simpleSSO
+#### sso と simpleSSO
 
-シングルサインオンを使用して認証システムと統合します。
+シングルサインオン(SSO)を使用して、お使いの認証システムと統合できます。
 
 ```javascript
 FastCommentsImageChat(imageElement, {
     tenantId: 'demo',
     sso: {
-        // SSOの設定
+        // SSO 設定
     }
 });
 ```
 
-認証オプションの詳細についてはSSOドキュメントを参照してください。
+認証オプションの詳細については、SSO ドキュメントをご覧ください。
 
 #### maxReplyDepth
 
-返信の深さ（ネストのレベル）を制御します。既定では、Image Chatはこれを0に設定しており、すべてのコメントはフラット（ネストなし）です。スレッド化された会話にしたい場合はこれを変更できます。
+返信が何階層までネストできるかを制御します。デフォルトでは、Image Chat はこれを 0 に設定しており、すべてのコメントがフラット(ネストされた返信なし)になります。スレッド形式の会話が必要な場合は変更できます。
 
 ```javascript
 FastCommentsImageChat(imageElement, {
     tenantId: 'demo',
-    maxReplyDepth: 3  // Allow 3 levels of nesting
+    maxReplyDepth: 3  // 3 階層までのネストを許可
 });
 ```
 
 ### 内部設定
 
-これらのオプションはImage Chatによって自動的に設定され、上書きすべきではありません：
+これらのオプションは Image Chat によって自動的に設定されるため、上書きしないでください:
 
-`productId`はImage Chatでは自動的に`2`に設定されます。チャットウィンドウ機能を提供するために`floating-chat`拡張が自動的に読み込まれます。ウィジェットは自動的にモバイルデバイス（幅768px未満の画面）を検出し、フルスクリーンのチャットウィンドウでUIを調整します。
+Image Chat では `productId` が自動的に `2` に設定されます。チャットウィンドウの機能を提供するために、`floating-chat` 拡張が自動的に読み込まれます。また、ウィジェットはモバイルデバイス(幅 768px 未満の画面)を自動検出し、フルスクリーンのチャットウィンドウを使用するように UI を調整します。
 
-### ターゲット要素の柔軟性
+### 対象要素の柔軟性
 
-`FastCommentsImageChat`の最初のパラメータは、直接の`<img>`要素でも、画像を含むコンテナ要素でもかまいません：
+`FastCommentsImageChat` の最初のパラメータには、`<img>` 要素を直接指定することも、画像を含むコンテナ要素を指定することもできます:
 
 ```javascript
-// 直接の画像要素
+// 画像要素を直接指定
 FastCommentsImageChat(document.getElementById('my-image'), config);
 
-// 画像を含むコンテナ
+// 画像を含むコンテナを指定
 FastCommentsImageChat(document.querySelector('.image-wrapper'), config);
 ```
 
-コンテナ要素を渡した場合、ウィジェットは自動的に画像を見つけます。
+コンテナ要素を渡した場合、ウィジェットが自動的に画像を見つけます。
 
 ### 完全な例
 
-複数の設定オプションを組み合わせた例を示します：
+複数の設定オプションを組み合わせた例を以下に示します:
 
 ```javascript
 FastCommentsImageChat(document.getElementById('product-image'), {
@@ -154,10 +154,10 @@ FastCommentsImageChat(document.getElementById('product-image'), {
         document.title = count > 0 ? `(${count}) Product Photo` : 'Product Photo';
     },
     sso: {
-        // あなたのSSO設定
+        // お使いの SSO 設定
     },
     maxReplyDepth: 1
 });
 ```
 
-利用可能なすべての設定オプションの完全なリストについては、ベースウィジェットから継承された設定に関するメインのFastComments構成ドキュメントを参照してください。
+ベースウィジェットから継承されるすべての利用可能な設定オプションの一覧については、FastComments のメイン設定ドキュメントをご覧ください。

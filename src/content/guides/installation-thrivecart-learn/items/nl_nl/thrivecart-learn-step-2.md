@@ -118,5 +118,3 @@ Dat is alles! Je zou nu het opmerkingenvak op je cursus moeten zien wanneer je e
 ### Testopmerking!
 
 Als je anoniem reageren uitgeschakeld hebt, wat standaard het geval is, kun je geen opmerkingen plaatsen in de `Preview`-modus als de gebruiker `John Smith` is. Je krijgt een authenticatiefout omdat de standaardgebruiker `John Smith` geen e-mailadres heeft. Als je wilt testen, raden we aan een kortingscode te gebruiken en je site te doorlopen alsof je een echte gebruiker bent.
-
----

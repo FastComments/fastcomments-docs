@@ -26,5 +26,3 @@ api->blockFromCommentPublic(tenantId, commentId, blockParams, sso)
         auto successCopy = std::make_shared<BlockSuccess>(*result);
     });
 [inline-code-end]
-
----

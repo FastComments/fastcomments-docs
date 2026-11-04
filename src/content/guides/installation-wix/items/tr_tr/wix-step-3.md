@@ -1,15 +1,15 @@
-Bu örnek, Wix ile uyumlu olması için özel kod kullanır. **Diğer öğreticilerdeki FastComments kod parçacıklarını kullanamayacaksınız.**
+Bu örnek, Wix ile uyumlu olmak için özel kod kullanır. **Diğer eğitimlerden aldığınız FastComments kod parçacıklarını kullanamayacaksınız.**
 
-Open the form to add our custom HTML dialog by clicking `Enter Code` and selecting `HTML`:
+Özel HTML iletişim kutumuzu eklemek için formu açın; bunun için `Enter Code` seçeneğine tıklayıp `HTML` seçeneğini seçin:
 
 <div class="screenshot white-bg">
-    <div class="title">Adım 3: HTML Diyaloğunu Açın</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-3-open-form.png" alt="Adım 3: HTML Diyaloğunu Açın" />
+    <div class="title">Adım 3: HTML İletişim Kutusunu Aç</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-3-open-form.png" alt="Adım 3: HTML İletişim Kutusunu Aç" />
 </div>
 
-Copy the following HTML snippet and paste it into the dialog, and click Update:
+Aşağıdaki HTML parçacığını kopyalayın, iletişim kutusuna yapıştırın ve Update'e tıklayın:
 
-[inline-code-attrs-start title = 'Wix Yorumları Kod Parçası'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Wix Yorumlar Kod Parçacığı'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
 <div id="fastcomments-widget"></div>
@@ -33,18 +33,16 @@ Copy the following HTML snippet and paste it into the dialog, and click Update:
 </script>
 [inline-code-end]
 
+Artık yorum bileşeninin çok küçük bir versiyonunu görmelisiniz:
+
 <div class="screenshot white-bg">
     <div class="title">Adım 3: Yapıştır ve Kaydet</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-3-paste-and-save.png" alt="Adım 3: Yapıştır ve Kaydet" />
 </div>
-
-Şimdi yorum bileşeninin çok küçük bir sürümünü görmelisiniz:
 
 <div class="screenshot white-bg">
     <div class="title">Adım 3: Sonuç</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-3-result.png" alt="Adım 3: Sonuç" />
 </div>
 
-Sonraki adımda bunu sayfamıza sığacak şekilde konumlandıracak ve boyutlandıracağız.
-
----
+Sırada, bunu sayfamıza uygun şekilde konumlandırıp boyutlandıracağız.

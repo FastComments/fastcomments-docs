@@ -1,4 +1,3 @@
----
 Reacties zelf zijn niet gebonden aan een specifiek domein.
 
 Ze zijn gekoppeld aan uw account en aan de opgegeven <a href="/guide-customizations-and-configuration.html#url-id" target="_blank">urlId</a>.
@@ -10,4 +9,3 @@ In dit scenario verschijnen reacties die op pagina A worden geplaatst onmiddelli
 werkt ook zoals verwacht.
 
 [U kunt een voorbeeld vinden in deze blogpost](https://blog.fastcomments.com/(2-12-2020)-using-fastcomments-in-multiple-places-on-the-same-page.html).
----

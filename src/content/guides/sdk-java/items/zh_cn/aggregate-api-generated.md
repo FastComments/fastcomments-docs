@@ -1,4 +1,3 @@
----
 按组聚合文档（如果提供了 groupBy），并应用多个操作。支持不同的操作（例如 sum、countDistinct、avg 等）。
 
 ## 参数
@@ -57,5 +56,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

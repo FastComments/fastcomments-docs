@@ -1,4 +1,3 @@
----
 ### Resourcegebruik
 
 Het moet worden opgemerkt dat het ophalen van gegevens van de API wordt geteld als gebruik op uw account.
@@ -16,5 +15,3 @@ We raden aan eerst de Pages‑documentatie te lezen, om verwarring te beperken b
 ### Webhooks
 
 Webhook‑abonnementen hebben hun eigen gids. `POST`, `GET` en `DELETE /api/v1/webhooks`, en `GET /api/v1/webhooks/sample-payloads`, worden gedocumenteerd onder [Beheer van abonnementen via API](/guide-webhooks.html#webhooks-api-subscriptions), en de gebeurtenispayloads onder [Webhook‑structuren](/guide-webhooks.html#webhooks-structures).
-
----

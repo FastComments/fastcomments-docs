@@ -1,4 +1,3 @@
----
 Düzenle aracı, ajanın mevcut bir yorumun metnini değiştirmesine olanak tanır. Çoğu diğer moderasyon aracının yapmadığı şekilde tahrip edicidir: kullanıcı tarafından yazılan içeriğin üzerine yazar. Bunu dar ve net vakalar için ayırın.
 
 ### Neler yapar
@@ -27,5 +26,3 @@ PII (kişisel olarak tanımlanabilir bilgiler) kırpmasını (redaction) yapan a
 
 - [Trigger: Comment Edited](#trigger-comment-edit) - bir yorumun metni değiştiğinde tetiklenen tetikleyici.
 - [Approval Workflow](#approval-workflow) - aracı insan incelemesi arkasına nasıl koyacağınız.
-
----

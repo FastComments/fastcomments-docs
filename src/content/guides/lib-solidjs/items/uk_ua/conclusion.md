@@ -8,5 +8,3 @@
 ## Участь
 
 Внески вітаються! Будь ласка, відвідайте [репозиторій GitHub](https://github.com/FastComments/fastcomments-solidjs) для інструкцій щодо внесення.
-
----

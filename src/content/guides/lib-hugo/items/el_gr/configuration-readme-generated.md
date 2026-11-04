@@ -1,5 +1,4 @@
----
-Όλες οι επιλογές του widget FastComments ορίζονται κάτω από `[params.fastcomments]` στο `hugo.toml`, και μπορούν να παρακαμφθούν ανά σελίδα στο front matter κάτω από `[fastcomments]`. Προτεραιότητα, από τη χαμηλότερη στη υψηλότερη: παράμετροι ιστότοπου, front matter της σελίδας, παράμετροι shortcode.
+Όλες οι επιλογές του widget FastComments ορίζονται κάτω από `[params.fastcomments]` στο `hugo.toml` και μπορούν να παρακαμφθούν ανά σελίδα στο front matter κάτω από `[fastcomments]`. Σειρά προτεραιότητας, από τη χαμηλότερη στην υψηλότερη: παράμετροι site, front matter σελίδας, παράμετροι shortcode.
 
 ```toml
 # hugo.toml
@@ -20,11 +19,11 @@ title = "Article"
 +++
 ```
 
-When neither `url` nor `urlId` is provided, `url` defaults to the page's permalink so comment threads stay tied to a stable URL.
+Όταν δεν παρέχεται ούτε `url` ούτε `urlId`, το `url` ορίζεται από προεπιλογή στο permalink της σελίδας, ώστε τα νήματα σχολίων να παραμένουν συνδεδεμένα με ένα σταθερό URL.
 
 ### Διαμονή δεδομένων στην ΕΕ
 
-Οι πελάτες στην ΕΕ ορίζουν `region = "eu"` για να δρομολογήσουν το widget στο `cdn-eu.fastcomments.com`:
+Οι πελάτες ΕΕ ορίζουν `region = "eu"` για να δρομολογείται το widget στο `cdn-eu.fastcomments.com`:
 
 ```toml
 [params.fastcomments]
@@ -32,7 +31,6 @@ When neither `url` nor `urlId` is provided, `url` defaults to the page's permali
   region = "eu"
 ```
 
-### Σημείωση σχετικά με τη χρήση πεζών/κεφαλαίων στα κλειδιά
+### Σημείωση για την πεζογραφία των κλειδιών
 
-Το Hugo μετατρέπει κάθε κλειδί σε πεζά στο `hugo.toml` και στο front matter, αλλά τα widgets FastComments απαιτούν κλειδιά σε camelCase (`tenantId`, `hasDarkBackground`). Αυτό το component αποκαθιστά αυτόματα τη σωστή χρήση πεζών/κεφαλαίων για κάθε γνωστή κορυφαίου επιπέδου επιλογή, οπότε γράψτε τις επιλογές στη συνήθη μορφή camelCase. Τα κλειδιά που είναι φωλιασμένα μέσα σε μια τιμή αντικειμένου (για παράδειγμα τα κλειδιά ενός χάρτη `translations`, ή πεδία του `pageReactConfig`) δεν αποκαθίστανται. Διαμορφώστε αυτά μέσω του UI προσαρμογής του πίνακα ελέγχου FastComments.
----
+Το Hugo μετατρέπει όλα τα κλειδιά στο `hugo.toml` και στο front matter σε πεζά, αλλά τα widgets του FastComments απαιτούν κλειδιά σε camelCase (`tenantId`, `hasDarkBackground`). Αυτό το component επαναφέρει αυτόματα τη σωστή πεζογραφία για κάθε γνωστή επιλογή κορυφαίου επιπέδου, οπότε γράφετε τις επιλογές στην κανονική τους μορφή camelCase. Τα κλειδιά που είναι εμφωλευμένα μέσα σε τιμή αντικειμένου (για παράδειγμα τα κλειδιά ενός map `translations` ή τα πεδία του `pageReactConfig`) δεν επαναφέρονται. Ρυθμίστε αυτά μέσω του UI προσαρμογής του dashboard του FastComments.

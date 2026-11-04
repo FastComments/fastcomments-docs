@@ -31,5 +31,3 @@ Klik på det tomme kodeområde, du har tilføjet. Nederst til højre vil du nu s
 </div>
 
 Det var det for trin et! I trin to vil vi tilføje vores Godaddy-specifikke kode.
-
----

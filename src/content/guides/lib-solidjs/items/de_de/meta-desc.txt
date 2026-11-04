@@ -1,3 +1,1 @@
----
 Fügen Sie Kommentare zu einer SolidJS‑App mit dem offiziellen Paket hinzu, einschließlich eines imperativen Handles zum Ändern der Widget‑Konfiguration ohne erneutes Remount.
----

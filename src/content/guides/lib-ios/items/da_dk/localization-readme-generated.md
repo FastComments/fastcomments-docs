@@ -1,4 +1,3 @@
----
 Angiv en lokalekode i konfigurationen for at lokalisere server-leverede strenge:
 
 ```swift

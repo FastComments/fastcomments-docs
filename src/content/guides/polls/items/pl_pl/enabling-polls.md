@@ -1,9 +1,9 @@
-Polls are off by default. To turn them on, go to the widget customization settings and check **Włącz ankiety**.
+Ankiety są domyślnie wyłączone. Aby je włączyć, przejdź do ustawień dostosowywania widżetu i zaznacz **Enable Polls**.
 
-This adds a poll button to the comment editor toolbar. Polls render inside the comment and viewers vote in place.
+To dodaje przycisk ankiety do paska narzędzi edytora komentarzy. Ankiety są wyświetlane wewnątrz komentarza, a widzowie głosują na miejscu.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-polls']; selector = '.enable-polls'; alt='Strona dostosowywania widgetu z zaznaczoną opcją Włącz ankiety'; title='Włącz ankiety' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-polls']; selector = '.enable-polls'; alt='Strona dostosowywania widżetu z zaznaczoną opcją Enable Polls'; title='Enable Polls' app-screenshot-end]
 
-Like other widget settings, this can be applied to your whole site or only to specific pages or domains.
+Podobnie jak inne ustawienia widżetu, można to zastosować do całej witryny lub tylko do określonych stron lub domen.
 
-If you turn polls off later, the poll button goes away and existing polls stop rendering in the widget. The polls and their votes are kept, and show again if you turn polls back on.
+Jeśli później wyłączysz ankiety, przycisk ankiety zniknie, a istniejące ankiety przestaną być wyświetlane w widżecie. Ankiety i ich głosy są zachowywane i pojawią się ponownie, jeśli ponownie włączysz ankiety.

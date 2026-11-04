@@ -1,4 +1,3 @@
----
 從其評論中移除投票調查，並刪除所有已投的票。評論本身保持不變。
 
 ## 參數
@@ -23,5 +22,3 @@ async function runDeletePoll(): Promise<void> {
   console.log(result);
 }
 [inline-code-end]
-
----

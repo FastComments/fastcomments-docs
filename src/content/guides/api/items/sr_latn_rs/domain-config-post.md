@@ -46,5 +46,3 @@ interface DomainConfigPostResponse {
     configuration?: DomainConfig
 }
 [inline-code-end]
-
----

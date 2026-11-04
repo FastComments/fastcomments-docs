@@ -1,4 +1,3 @@
----
 Поставите потребне променљиве окружења:
 
 ```bash
@@ -11,4 +10,3 @@ export FASTCOMMENTS_TENANT_ID="your-tenant-id"
 ```bash
 bundle exec rspec
 ```
----

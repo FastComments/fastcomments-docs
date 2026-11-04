@@ -1,8 +1,8 @@
-Interacting with the `Extension` is simple, as we simply define references to functions we want invoked.
+Interakcija z `Extension` je preprosta, saj le definiramo reference na funkcije, ki jih želimo izvesti.
 
-To build off the example earlier, let's say we want to add HTML to the top of each comment:
+Če nadaljujemo prejšnji primer, recimo, da želimo dodati HTML na vrh vsakega komentarja:
 
-[inline-code-attrs-start title = 'Preprosta razširitev - Nadaljevanje'; type = 'javascript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Preprosta razširitev - nadaljevanje'; type = 'javascript'; inline-code-attrs-end]
 [inline-code-start]
 (function () {
     const extension = FastCommentsUI.extensions.find((extension) => {
@@ -15,13 +15,13 @@ To build off the example earlier, let's say we want to add HTML to the top of ea
 })();
 [inline-code-end]
 
-Whenever you return HTML like this, it will get merged into the UI via a dom-diffing algorithm.
+Kadar koli vrnete HTML takole, bo vgrajen v uporabniški vmesnik prek algoritma za dom-diffing.
 
-#### Manually triggering the re-render of a comment
+#### Ročno sprožitev ponovnega izrisa komentarja
 
-We can wait for the initial page load and manually re-render a comment by invoking `reRenderComment`:
+Lahko počakamo na začetno nalaganje strani in ročno ponovno izrišemo komentar z uporabo `reRenderComment`:
 
-[inline-code-attrs-start title = 'Ponovno upodabljanje komentarja'; type = 'javascript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ponovni izris komentarja'; type = 'javascript'; inline-code-attrs-end]
 [inline-code-start]
 (function () {
     const extension = FastCommentsUI.extensions.find((extension) => {
@@ -40,9 +40,7 @@ We can wait for the initial page load and manually re-render a comment by invoki
             extension.reRenderComment(extension.commentsById[Object.keys(extension.commentsById)[0]], function renderDone() {
                 console.log('Comment re-render done.');
             });
-        }, 2000); // timeout ni potreben, le primer.
+        }, 2000); // timeout ni obvezen, samo primer.
     }
 })();
 [inline-code-end]
-
----

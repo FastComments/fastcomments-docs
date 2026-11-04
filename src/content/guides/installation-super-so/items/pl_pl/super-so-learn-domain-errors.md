@@ -10,5 +10,3 @@ Dzieje się tak, ponieważ FastComments nie wie, że powinien zezwolić na użyc
 W takim przypadku rozwiązanie jest proste. Wystarczy dodać swoją witrynę do konta FastComments.com.
 
 [Przejdź tutaj, aby dodać swoją witrynę do konta.](https://fastcomments.com/auth/my-account/configure-domains)
-
----

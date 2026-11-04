@@ -1,4 +1,3 @@
----
 ## 參數
 
 | 名稱 | 類型 | 必填 | 描述 |
@@ -18,5 +17,3 @@ let (maybeResult, httpResp) = client.deleteQuestionResult(tenantId = "my-tenant-
 if maybeResult.isSome:
   let result = maybeResult.get()
 [inline-code-end]
-
----

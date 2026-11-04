@@ -1,37 +1,37 @@
-The **FastComments** 區塊支援單一登入（SSO），讓你的 Shopify 客戶可以使用自身帳號發表留言，而無需建立獨立的 FastComments 帳戶。
+**FastComments** 區塊支援單一登入(SSO),讓您的 Shopify 顧客能以自己的身分留言,無需另外建立 FastComments 帳號。
 
-### How it works
+### 運作方式
 
-When a visitor who is logged into your store opens a page with the **FastComments** block:
+當已登入您商店的訪客開啟含有 **FastComments** 區塊的頁面時:
 
-1. The block detects the Shopify `customer` object.
-2. It sends the customer's name and email to FastComments through a signed app proxy request.
-3. FastComments creates or matches a user keyed by `shopify-{customerId}`, so the same customer always maps to the same FastComments user across sessions and re-installs.
-4. The visitor's name shows up on their comments. They are not prompted to log in again.
+1. 區塊會偵測 Shopify 的 `customer` 物件。
+2. 它會透過已簽署的 app proxy 請求,將顧客的姓名與電子郵件傳送至 FastComments。
+3. FastComments 會以 `shopify-{customerId}` 為鍵值建立或比對使用者,因此同一位顧客在不同工作階段與重新安裝後,始終對應到同一個 FastComments 使用者。
+4. 訪客的姓名會顯示在其留言上。系統不會再要求他們重新登入。
 
-If the visitor is not logged into the store, the block falls back to anonymous commenting (or the FastComments sign-in flow, depending on your widget configuration).
+如果訪客未登入商店,區塊會退回匿名留言模式(或 FastComments 的登入流程,視您的小工具設定而定)。
 
-### Turning SSO off
+### 關閉 SSO
 
-SSO is on by default for every **FastComments** block. To turn it off on a specific block:
+每個 **FastComments** 區塊預設都會啟用 SSO。若要在特定區塊上關閉它:
 
-1. Open the Shopify theme editor.
-2. Open the template that contains the block and click the block to select it.
-3. Uncheck **SSO**.
-4. Click **Save**.
+1. 開啟 Shopify 佈景主題編輯器。
+2. 開啟包含該區塊的範本,並點擊該區塊以選取它。
+3. 取消勾選 **SSO**。
+4. 點擊 **儲存**。
 
-Turn SSO off if you want commenters to choose a separate identity for the conversation. For example, an internal community page where staff comment under a different display name.
+如果您希望留言者在對話中選擇不同的身分,可以關閉 SSO。例如,在內部社群頁面上,員工以不同的顯示名稱留言。
 
-### What FastComments receives
+### FastComments 會收到什麼
 
-The SSO payload sent for each customer contains:
+針對每位顧客傳送的 SSO 資料包含:
 
-- A user ID derived from the Shopify customer ID (`shopify-{customerId}`).
-- The customer's email (used to identify the user; not displayed publicly).
-- The customer's display name (used as their comment author name).
+- 由 Shopify 顧客 ID 衍生的使用者 ID(`shopify-{customerId}`)。
+- 顧客的電子郵件(用於識別使用者;不會公開顯示)。
+- 顧客的顯示名稱(用作其留言作者名稱)。
 
-No order history, payment, or address data is sent. The payload is signed server-side; the customer's browser never sees a credential.
+不會傳送任何訂單紀錄、付款或地址資料。此資料由伺服器端簽署;顧客的瀏覽器永遠不會看到憑證。
 
-### Login and logout links
+### 登入與登出連結
 
-When SSO is on, the comment widget's sign-in and sign-out links point at `/account/login` and `/account/logout`, the standard Shopify customer account routes. There is nothing to configure. The links work for any store with customer accounts enabled.
+當 SSO 開啟時,留言小工具的登入與登出連結會指向 `/account/login` 與 `/account/logout`,即 Shopify 標準的顧客帳號路由。無需進行任何設定。只要商店啟用了顧客帳號功能,這些連結即可正常運作。

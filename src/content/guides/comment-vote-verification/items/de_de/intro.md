@@ -4,5 +4,3 @@ FastComments bietet eine Reihe von Mechanismen, um Spam zu verhindern, Benutzerk
 für neue Benutzer, Kommentare zu hinterlassen und gleichzeitig ein Konto zu erstellen.
 
 In diesem Dokument erfahren Sie mehr über einen wichtigen Aspekt von FastComments - Kommentar- und Abstimmungsüberprüfung.
-
----

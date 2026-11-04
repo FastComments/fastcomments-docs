@@ -1,33 +1,33 @@
-The Recent Discussionsウィジェットは、サイト上で最新のコメント活動のあったページを表示します。まだコメントが追加されているスレッドを強調表示するのに便利で、訪問者が静かなページにたどり着くのではなく、活発な会話に戻って参加できるようにします。
+「最近のディスカッション」ウィジェットは、サイト内で最近コメントのアクティビティがあったページを表示します。まだ書き込みが続いているスレッドを目立たせるのに便利で、訪問者は静かなページではなく、活発な会話にすぐに戻ることができます。
 
-## Options
+## オプション
 
-- **Title**（optional）：リストの上に表示される見出し。デフォルトは "Recent Discussions"。
-- **Count**（optional）：表示するディスカッションの数。範囲は1から50。デフォルトは20。
+- **タイトル**(任意): リストの上に表示される見出し。デフォルトは「Recent Discussions」です。
+- **件数**(任意): 表示するディスカッションの数。範囲は1〜50。デフォルトは20です。
 
-## How to Add It
+## 追加方法
 
-### Inside a Post or Page
+### 投稿またはページ内
 
-In the block editor, add a **Shortcode** block and paste:
+ブロックエディターで **ショートコード** ブロックを追加し、以下を貼り付けます:
 
-[inline-code-attrs-start title = '最近のディスカッション ショートコード'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Recent Discussions ショートコード'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 [fastcomments_recent_discussions count="20"]
 [inline-code-end]
 
-The `count` attribute accepts any value between 1 and 50.
+`count` 属性には1から50までの任意の値を指定できます。
 
-### In a Sidebar or Footer (Classic Themes)
+### サイドバーまたはフッター内(クラシックテーマ)
 
-WordPress 管理画面で **外観 > ウィジェット** に移動します。ブロック挿入ツールから「FastComments」を検索し、**FastComments: Recent Discussions** を選択します。サイドバー、ヘッダー、またはフッター領域にドラッグし、ウィジェットパネルでタイトルとカウントを設定します。
+WordPress管理画面で **外観 > ウィジェット** に移動します。ブロックインサーターで「FastComments」を検索し、**FastComments: Recent Discussions** を選択します。サイドバー、ヘッダー、またはフッターエリアにドラッグし、ウィジェットパネルからタイトルと件数を設定します。
 
-### In a Block Theme (Full Site Editing)
+### ブロックテーマ内(フルサイト編集)
 
-**外観 > エディター** の下にある **サイトエディター** を開きます。ウィジェットを表示させたいテンプレートパーツに移動し、**Legacy Widget** ブロックを挿入して、ドロップダウンから **FastComments: Recent Discussions** を選択します。
+**外観 > エディター** から **サイトエディター** を開きます。ウィジェットを表示したいテンプレートパートに移動し、**レガシーウィジェット** ブロックを挿入して、ドロップダウンから **FastComments: Recent Discussions** を選択します。
 
-## Troubleshooting
+## トラブルシューティング
 
-ウィジェットは、FastComments のセットアップが完了してテナント ID が保存された後にのみレンダリングされます。ウィジェット領域が空白の場合は、WordPress 管理画面の **FastComments** でセットアップを完了し、ページを再読み込みしてください。
+このウィジェットは、FastCommentsのセットアップが完了し、テナントIDが保存された後にのみ表示されます。ウィジェットエリアが空白の場合は、WordPress管理画面の **FastComments** でセットアップを完了し、ページを再読み込みしてください。
 
-ディスカッションの順序が古く見える場合は、基になるページが FastComments ダッシュボードで同期を完了しているか確認してください。ウィジェットはライブデータを読み込むため、最近インポートされたコメントが反映されるまでしばらく時間がかかることがあります。
+ディスカッションの順序が古く見える場合は、FastCommentsダッシュボードで基となるページの同期が完了しているか確認してください。このウィジェットはライブデータを読み込むため、新しくインポートされたコメントが表示されるまで少し時間がかかることがあります。

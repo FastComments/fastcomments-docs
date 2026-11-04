@@ -1,4 +1,3 @@
----
 ### De client opnieuw genereren
 
 Om de API-client te regenereren vanaf de nieuwste OpenAPI-specificatie:
@@ -14,4 +13,3 @@ Dit zal:
 - Download de nieuwste OpenAPI-specificatie
 - Genereer de Swift-clientcode (met API-documentatie in client/docs)
 - Bouw het pakket om te verifiëren dat alles werkt
----

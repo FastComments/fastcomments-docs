@@ -1,4 +1,1 @@
----
 Pozwól czytelnikom kliknąć w miejsce na obrazie i rozpocząć rozmowę na jego temat. Wizualne znaczniki przypinają każdy wątek do dokładnego punktu i synchronizują się na żywo między widzami.
-
----

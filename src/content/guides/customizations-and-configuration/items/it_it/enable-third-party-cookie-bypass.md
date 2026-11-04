@@ -15,5 +15,3 @@ Possiamo fare questo nel codice impostando il flag **enableThirdPartyCookieBypas
 Possiamo anche configurarlo tramite l'interfaccia di personalizzazione del widget, sotto `Enable Third-Party Cookie Popup`:
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.enable-third-party-cookie-bypass'; clickSelectors = ['.enable-third-party-cookie-bypass']; alt='Pagina di personalizzazione del widget con la casella Enable Third-Party Cookie Popup selezionata'; title='Abilitazione del bypass dei cookie di terze parti' app-screenshot-end]
-
----

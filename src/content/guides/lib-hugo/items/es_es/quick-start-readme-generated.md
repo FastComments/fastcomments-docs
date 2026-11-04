@@ -1,4 +1,3 @@
----
 Establece tu tenant ID una vez en `hugo.toml`:
 
 ```toml
@@ -11,4 +10,3 @@ Then either wire the comments widget into your theme (see [Integración del tema
 ```text
 \{{< fastcomments >}}
 ```
----

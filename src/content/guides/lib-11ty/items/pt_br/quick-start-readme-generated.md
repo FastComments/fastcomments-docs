@@ -1,4 +1,3 @@
----
 Registre o plugin na sua configuração do Eleventy (`.eleventy.js` ou `eleventy.config.js`):
 
 ```js
@@ -32,4 +31,3 @@ No Liquid (`.liquid`):
 ```
 
 Substitua `"demo"` pelo ID do seu tenant do FastComments.
----

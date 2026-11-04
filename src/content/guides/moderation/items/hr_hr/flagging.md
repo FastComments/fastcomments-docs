@@ -1,4 +1,3 @@
----
 Uz FastComments, korisnici mogu označiti komentare, što povećava unutarnji brojač povezan s tim komentarom.
 
 Moderatori mogu pregledati označene komentare i odgovarajući brojač oznaka za taj komentar na stranici za moderiranje komentara koristeći filtar 'Označeno'.
@@ -18,5 +17,3 @@ Sa stranice za moderiranje komentara, moderatori mogu ukloniti oznaku s komentar
 Ako je komentar bio skriven zbog broja puta koliko je bio označen, uklanjanje oznake će uzrokovati da se komentar ponovno pojavi.
 
 Ponovno odobravanje komentara koji je bio poništen (skriven) zbog označavanja također će resetirati brojač oznaka povezan s tim komentarom.
-
----

@@ -25,5 +25,3 @@ Vraća: [`ChangeCommentPinStatusResponse`](https://github.com/FastComments/fastc
   const resultWithoutSso: ChangeCommentPinStatusResponse = await unPinComment(tenantId, commentId, broadcastId);
 })();
 [inline-code-end]
-
----

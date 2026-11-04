@@ -5,5 +5,3 @@ Ugradite interaktivne komentare uživo, chat i widgete za recenzije u vašu Next
 ## Repozitorijum
 
 [Pogledajte na GitHubu](https://github.com/FastComments/fastcomments-nextjs)
-
----

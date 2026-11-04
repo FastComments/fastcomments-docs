@@ -1,45 +1,42 @@
----
-The **FastComments - Reviews Summary** block shows an aggregated star rating and review breakdown for a page. Pair it with the **FastComments** block on product templates for the standard reviews layout: summary up top, review form and reviews below.
+בלוק **FastComments - Reviews Summary** מציג דירוג כוכבים מצטבר ופירוק ביקורות עבור עמוד. שלבו אותו עם בלוק **FastComments** בתבניות מוצר לפריסת הביקורות הרגילה: סיכום למעלה, טופס ביקורת וביקורות למטה.
 
-### Prerequisite: set up Ratings & Reviews
+### דרישה מקדימה: הגדרת דירוגים וביקורות
 
-The Reviews Summary block displays the rating questions you configured for your store. Set those up first:
+בלוק הסיכום מציג את שאלות הדירוג שהגדרתם עבור החנות שלכם. הגדירו אותן קודם:
 
-1. Open the FastComments app in your Shopify admin.
-2. Click the **Ratings & Reviews Helper** tile (or open [Ratings & Reviews Helper](https://fastcomments.com/auth/my-account/ratings-reviews-helper?source=shopify) directly).
-3. Add the questions you want each reviewer to answer (overall star rating, "how was the fit", etc.).
+1. פתחו את אפליקציית FastComments ב-Shopify admin.
+2. לחצו על האריח **Ratings & Reviews Helper** (או פתחו ישירות את [Ratings & Reviews Helper](https://fastcomments.com/auth/my-account/ratings-reviews-helper?source=shopify)).
+3. הוסיפו את השאלות שכל מבקר יענה עליהן (דירוג כוכבים כללי, "איך ההתאמה" וכו').
 
-Without questions configured, the summary block has nothing to aggregate.
+ללא שאלות מוגדרות, לבלוק הסיכום אין מה לצבור.
 
-### Add the block
+### הוספת הבלוק
 
-1. Open the Shopify theme editor.
-2. Open the **Product** template (or the page template where you want the summary).
-3. Click **Add block** near the top of the page section, above where the **FastComments** block will be.
-4. Under **Apps**, select **FastComments - Reviews Summary**.
-5. Add a **FastComments** block lower on the same page if you haven't already, so visitors can leave reviews.
-6. Click **Save**.
+1. פתחו את עורך התבניות של Shopify.
+2. פתחו את תבנית **Product** (או תבנית העמוד שבה תרצו את הסיכום).
+3. לחצו על **Add block** ליד ראש המקטע של העמוד, מעל המקום שבו יהיה בלוק **FastComments**.
+4. תחת **Apps**, בחרו **FastComments - Reviews Summary**.
+5. הוסיפו בלוק **FastComments** נמוך יותר באותו עמוד אם עדיין לא עשיתם זאת, כדי שמבקרים יוכלו להשאיר ביקורות.
+6. לחצו על **Save**.
 
-### Settings
+### הגדרות
 
-| Setting | What it does | Default |
+| הגדרה | מה היא עושה | ברירת מחדל |
 |---|---|---|
-| Tenant ID (optional) | מגדיר מאיזה tenant של FastComments הבלוק הסיכום קורא. השאר ריק כדי להשתמש ב-tenant שהוגדר אוטומטית לחנות. | (ריק) |
-| Custom URL ID | מחליף את מזהה הדף שלפיו הבלוק הסיכום מבצע אגירה. השתמש בכך כאשר הסיכום נמצא בדף שונה מהבלוק FastComments שהוא משקף. | (זוהה אוטומטית) |
+| Tenant ID (אופציונלי) | עוקף מאיזה tenant של FastComments הסיכום קורא. השאירו ריק כדי להשתמש ב-tenant שהוגדר אוטומטית עבור החנות. | (ריק) |
+| Custom URL ID | עוקף את מזהה העמוד שהסיכום מצטבר מולו. השתמשו בזה כאשר הסיכום נמצא בעמוד שונה מהבלוק FastComments שהוא משקף. | (זוהה אוטומטית) |
 
-### How the summary matches the reviews
+### כיצד הסיכום מתאים את הביקורות
 
-The Reviews Summary block uses the same auto-detection logic as the **FastComments** block:
+בלוק הסיכום משתמש באותה לוגיקת זיהוי אוטומטי כמו בלוק **FastComments**:
 
 - תבנית מוצר: `shopify-product-{product.id}`
 - תבנית פוסט בבלוג: `shopify-article-{article.id}`
 - תבניות אחרות: נתיב הבקשה
 
-For a normal product page, the summary and the comment thread share a URL ID automatically, with no configuration needed.
+בעמוד מוצר רגיל, הסיכום ושרשור התגובות חולקים URL ID אוטומטית, ללא צורך בהגדרה.
 
-### Tips
+### טיפים
 
-- הסיכום הוא לקריאה בלבד. כדי לאסוף חוות דעת, יש להציב בלוק **FastComments** באותו דף.
-- אם תשנה את שאלות הדירוג ב-Ratings & Reviews Helper לאחר שאספת חוות דעת, הסיכום יחושב מחדש בהתאם לערכת השאלות החדשה.
-
----
+- הסיכום הוא לקריאה בלבד. כדי לאסוף ביקורות, נדרש בלוק **FastComments** באותו עמוד.
+- אם תשנו שאלות דירוג ב-Ratings & Reviews Helper לאחר איסוף ביקורות, הסיכום יחושב מחדש מול סט השאלות החדש.

@@ -1,4 +1,3 @@
----
 Ova biblioteka trenutno sadrži sledeće widžete:
 
 - [Collab Chat](https://github.com/FastComments/fastcomments-svelte/blob/main/src/lib/CollabChatWidget.svelte)
@@ -16,4 +15,3 @@ Takođe sadrži primere za:
 - [Paginating Products or Blog Posts](https://github.com/FastComments/fastcomments-svelte/blob/main/src/routes/paginated-example/+page.svelte)
 - [Secure SSO](https://github.com/FastComments/fastcomments-svelte/blob/main/src/routes/secure-sso-example/+page.svelte)
 - [Simple SSO](https://github.com/FastComments/fastcomments-svelte/blob/main/src/routes/simple-sso-example/+page.svelte)
----

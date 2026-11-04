@@ -14,5 +14,3 @@ We kunnen dit echter uitschakelen:
 Dit kan ook zonder code worden gedaan. Op de widget-aanpassingspagina, zie de sectie "Live commentaar uitschakelen".
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-live-commenting']; selector = '.disable-live-commenting'; alt='Sectie \'Live commentaar uitschakelen\' van de widget-aanpassingspagina, waarmee realtime thread-updates worden uitgeschakeld'; title='Live commentaar uitschakelen' app-screenshot-end]
-
----

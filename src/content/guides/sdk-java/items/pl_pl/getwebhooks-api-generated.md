@@ -1,4 +1,3 @@
----
 Wyświetla listę webhooków skonfigurowanych dla najemcy, zarówno wierszy zarządzanych z panelu, jak i subskrypcji API.
 
 ## Parameters
@@ -62,5 +61,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

@@ -100,5 +100,3 @@ interface QuestionResultsAggregationResponse {
 - Ko je `forceRecalculate` določen, je strošek vedno `10`, namesto običajnih `2`.
 - Če predpomnilnik poteče in se podatki ponovno izračunajo, je strošek še vedno konstanten `2`, če `forceRecalculate` ni naveden. Predpomnilnik poteče glede na velikost agregiranega nabora podatkov (lahko se giblje med 30 sekundami in 5 minutami).
 - To spodbuja uporabo predpomnilnika.
-
----

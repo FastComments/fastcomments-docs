@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Име | Тип | Задължително | Описание |
@@ -27,5 +26,3 @@ api->createSubscription(tenantId, subscriptionData)
         }
     });
 [inline-code-end]
-
----

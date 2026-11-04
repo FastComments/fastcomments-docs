@@ -1,4 +1,3 @@
----
 Para usar o datacenter da UE, defina o campo `region` na sua configuração:
 
 ```swift

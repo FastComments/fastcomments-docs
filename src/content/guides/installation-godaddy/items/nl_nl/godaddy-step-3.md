@@ -1,4 +1,3 @@
----
 Ten slotte kunnen we onze wijzigingen publiceren.
 
 Klik bovenaan de pagina op de knop `Publish`:
@@ -7,5 +6,3 @@ Klik bovenaan de pagina op de knop `Publish`:
     <div class="title">Publiceren</div>
     <img class="screenshot-image" src="/images/installation-guides/godaddy-step-3-publish.png" alt="Publiceren" />
 </div>
-
----

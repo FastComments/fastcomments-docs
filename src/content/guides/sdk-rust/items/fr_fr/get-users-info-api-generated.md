@@ -1,4 +1,3 @@
----
 Informations utilisateur en masse pour un locataire. Étant donné des userIds, renvoie les informations d'affichage depuis User / SSOUser.  
 Utilisé par le widget de commentaires pour enrichir les utilisateurs qui viennent d'apparaître via un événement de présence.  
 Pas de contexte de page : la confidentialité est appliquée uniformément (les profils privés sont masqués).
@@ -24,5 +23,3 @@ let params = GetUsersInfoParams {
 };
 let page: PageUsersInfoResponse = get_users_info(&configuration, params).await?;
 [inline-code-end]
-
----

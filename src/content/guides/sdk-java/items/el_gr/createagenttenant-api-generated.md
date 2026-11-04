@@ -1,9 +1,6 @@
-Creates a new trial account for an AI agent without a human signup. No API key is needed to call this.
+Δημιουργεί έναν νέο δοκιμαστικό λογαριασμό για έναν πράκτορα AI χωρίς ανθρώπινη εγγραφή. Δεν απαιτείται κλειδί API για την κλήση αυτού.
 
-The response contains the tenant id, an API key that works immediately against the REST API and the
-MCP server, and a claim URL. Give the claim URL to the human you are working for: opening it while
-logged in to FastComments attaches the account to them. Unclaimed accounts, and their keys, are
-deleted 72 hours after creation. Until claimed, the account has the standard trial limits.
+Η απάντηση περιέχει το tenant id, ένα κλειδί API που λειτουργεί αμέσως με το REST API και τον διακομιστή MCP, καθώς και ένα URL διεκδίκησης. Δώστε το URL διεκδίκησης στον άνθρωπο για τον οποίο εργάζεστε: το άνοιγμά του ενώ είναι συνδεδεμένος στο FastComments συνδέει τον λογαριασμό με αυτόν. Οι μη διεκδικημένοι λογαριασμοί, και τα κλειδιά τους, διαγράφονται 72 ώρες μετά τη δημιουργία. Μέχρι να διεκδικηθεί, ο λογαριασμός έχει τα τυπικά όρια δοκιμαστικής περιόδου.
 
 ## Απάντηση
 
@@ -41,5 +38,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

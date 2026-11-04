@@ -1,14 +1,14 @@
-### 概觀
+### 概覽
 
-FastComments Collab Chat 擴充了標準的 FastComments 留言小工具，因此它繼承了基礎小工具的所有設定選項，同時新增了一些專屬於文字註解的選項。
+FastComments Collab Chat 擴展了標準的 FastComments 留言小工具，因此它繼承了基礎小工具的所有配置選項，同時新增了幾個專屬於文字標註的選項。
 
-### 必要的設定
+### 必要配置
 
 #### tenantId
 
-需要提供您的 FastComments Tenant ID。您可以在您的 [FastComments 控制台](https://fastcomments.com/auth/my-account/api-secret) 找到它。
+必須提供您的 FastComments Tenant ID。您可以在 [FastComments 儀表板](https://fastcomments.com/auth/my-account/api-secret) 中找到它。
 
-[inline-code-attrs-start title = "設定範例"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = "配置範例"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(element, {
     tenantId: 'demo'
@@ -19,9 +19,9 @@ FastCommentsCollabChat(element, {
 
 #### urlId
 
-預設情況下，Collab Chat 會基於頁面 URL、元素的 DOM 路徑以及所選文字範圍，自動產生每個對話的唯一識別符。您可以用自訂的 `urlId` 覆寫此行為。
+預設情況下，Collab Chat 會根據頁面 URL、元素的 DOM 路徑以及選取的文字範圍，為每個對話產生一個唯一識別碼。您可以使用自訂的 `urlId` 來覆蓋此行為。
 
-[inline-code-attrs-start title = "設定範例"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = "配置範例"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
@@ -29,21 +29,21 @@ FastCommentsCollabChat(element, {
 });
 [inline-code-end]
 
-當您的 URL 結構可能會變動但仍想保留相同對話，或想要在多個頁面之間共用註解時，這會非常有用。
+當您的 URL 結構可能會變更但您希望保留相同的對話，或者您想在多個頁面之間共享標註時，這會很有用。
 
 #### topBarTarget
 
-控制顯示頂部工具列（顯示使用者數與討論數）。設為 `null` 可完全停用頂部工具列，或提供一個 DOM 元素以在特定位置渲染它。
+控制頂部列的顯示，該列會顯示使用者人數與討論數量。設為 `null` 可完全停用頂部列，或提供一個 DOM 元素以將其渲染在特定位置。
 
-[inline-code-attrs-start title = "設定範例"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = "配置範例"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// 停用頂部工具列
+// 停用頂部列
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
     topBarTarget: null
 });
 
-// 在自訂位置呈現頂部工具列
+// 在自訂位置渲染頂部列
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
     topBarTarget: document.getElementById('custom-header')
@@ -52,9 +52,9 @@ FastCommentsCollabChat(element, {
 
 #### hasDarkBackground
 
-當您的頁面具有深色背景時，啟用深色模式樣式。此偵測為自動，但有時您可能想要覆寫它。
+當您的頁面具有深色背景時，啟用深色模式樣式。此偵測是自動進行的，但您可能希望覆蓋它。
 
-[inline-code-attrs-start title = "設定範例"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = "配置範例"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
@@ -64,9 +64,9 @@ FastCommentsCollabChat(element, {
 
 #### commentCountUpdated
 
-當留言數量變動時會觸發的回呼函式。這對於更新像是徽章或頁面標題等 UI 元素非常有用。
+每當留言數量變更時觸發的回呼函式。這對於更新 UI 元素（例如徽章或頁面標題）很有用。
 
-[inline-code-attrs-start title = "設定範例"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = "配置範例"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
@@ -77,27 +77,27 @@ FastCommentsCollabChat(element, {
 });
 [inline-code-end]
 
-### 繼承的設定選項
+### 繼承的配置選項
 
-由於 Collab Chat 擴充了標準留言小工具，您可以使用任何來自基礎 FastComments 小工具的設定選項。以下是一些常用的選項：
+由於 Collab Chat 擴展了標準留言小工具，您可以使用基礎 FastComments 小工具的任何配置選項。以下是一些常用的選項：
 
 #### locale
 
 設定小工具 UI 的語言。FastComments 支援數十種語言。
 
-[inline-code-attrs-start title = "設定範例"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = "配置範例"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
-    locale: 'es'  // 西班牙語
+    locale: 'es'  // 西班牙文
 });
 [inline-code-end]
 
 #### readonly
 
-將所有對話設為唯讀。使用者可以檢視現有註解，但無法建立新註解或回覆。
+將所有對話設為唯讀。使用者可以檢視現有的標註，但無法建立新的標註或回覆。
 
-[inline-code-attrs-start title = "設定範例"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = "配置範例"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
@@ -105,27 +105,27 @@ FastCommentsCollabChat(element, {
 });
 [inline-code-end]
 
-#### sso and simpleSSO
+#### sso 與 simpleSSO
 
-使用單一登入（Single Sign-On）整合您的驗證系統。
+使用單一登入（Single Sign-On）與您的驗證系統整合。
 
-[inline-code-attrs-start title = "設定範例"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = "配置範例"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
     sso: {
-        // SSO 設定
+        // SSO 配置
     }
 });
 [inline-code-end]
 
-完整的驗證選項請參閱 SSO 文件。
+有關驗證選項的完整詳細資訊，請參閱 SSO 文件。
 
 #### maxReplyDepth
 
-控制回覆的最大層數。預設情況下，Collab Chat 將此設定為 0，表示所有留言為平面式（不允許巢狀回覆）。若想要使用討論串式對話，可更改此設定。
+控制回覆可以巢狀到多少層。預設情況下，Collab Chat 將此設為 0，表示所有留言都是扁平的（沒有巢狀回覆）。如果您想要有討論串形式的對話，可以更改此設定。
 
-[inline-code-attrs-start title = "設定範例"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = "配置範例"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(element, {
     tenantId: 'demo',
@@ -133,17 +133,17 @@ FastCommentsCollabChat(element, {
 });
 [inline-code-end]
 
-### 內部設定
+### 內部配置
 
-這些選項會由 Collab Chat 自動設定，且不應被覆寫：
+這些選項由 Collab Chat 自動設定，不應被覆蓋：
 
-The `productId` is automatically set to `3` for Collab Chat. The `floating-chat` extension is automatically loaded to provide the chat window functionality. The widget automatically detects mobile devices (screens under 768px wide) and adjusts the UI accordingly.
+`productId` 會自動設為 `3` 以用於 Collab Chat。`floating-chat` 擴充功能會自動載入以提供聊天視窗功能。小工具會自動偵測行動裝置（寬度低於 768px 的螢幕）並相應調整 UI。
 
 ### 完整範例
 
-以下示範多個設定項目一起使用的範例：
+以下是一個同時展示多個配置選項的範例：
 
-[inline-code-attrs-start title = "設定範例"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = "配置範例"; type = "javascript"; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 FastCommentsCollabChat(document.getElementById('article'), {
     tenantId: 'demo',
@@ -155,10 +155,10 @@ FastCommentsCollabChat(document.getElementById('article'), {
         document.title = count > 0 ? `(${count}) My Article` : 'My Article';
     },
     sso: {
-        // 您的 SSO 設定
+        // 您的 SSO 配置
     },
     maxReplyDepth: 1
 });
 [inline-code-end]
 
-欲查詢從基礎小工具繼承的所有可用設定選項之完整清單，請參閱主 FastComments 設定文件。
+有關從基礎小工具繼承的所有可用配置選項的完整清單，請參閱 FastComments 主要配置文件。

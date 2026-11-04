@@ -11,5 +11,3 @@ Isso nos dará uma caixa com aparência triste para começar:
     <div class="title">O Bloco Inicial</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-1-sad.png" alt="O Bloco Inicial" />
 </div>
-
----

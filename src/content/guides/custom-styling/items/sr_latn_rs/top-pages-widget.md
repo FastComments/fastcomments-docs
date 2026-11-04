@@ -82,5 +82,3 @@ Vidžet se renderuje sa sledećom HTML strukturom:
     box-shadow: none !important;
 }
 [inline-code-end]
-
----

@@ -25,5 +25,3 @@ api->getVotesForUser(tenantId, urlId, options).then([](std::shared_ptr<GetVotesF
     }
 });
 [inline-code-end]
-
----

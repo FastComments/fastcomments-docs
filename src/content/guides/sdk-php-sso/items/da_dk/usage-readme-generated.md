@@ -1,4 +1,3 @@
----
 ### Simpel SSO
 
 Simpel SSO er let at bruge, men giver mindre sikkerhed end Sikker SSO:
@@ -59,4 +58,3 @@ $sso = FastCommentsSSO::createSecure('your-api-key', $userData);
 // Hent tokenet, der skal sendes til FastComments
 $token = $sso->prepareToSend();
 ```
----

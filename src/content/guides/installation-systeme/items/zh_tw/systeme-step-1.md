@@ -27,5 +27,3 @@
     <div class="title">編輯程式碼</div>
     <img class="screenshot-image" src="/images/installation-guides/systeme-edit-block-button.png" alt="Edit Code" />
 </div>
-
----

@@ -61,5 +61,3 @@ Link za odjavu u podnožju e-pošte, i funkcija jednim klikom za odjavu koju nud
 ### Za DKIM
 
 Nakon što definišete DKIM DNS zapise, jednostavno ažurirajte DomainConfig sa vašom DKIM konfiguracijom koristeći definisanu strukturu. 
-
----

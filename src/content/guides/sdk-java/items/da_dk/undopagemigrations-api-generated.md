@@ -1,13 +1,13 @@
-Queues a batch job that reverses every migration from one migrate-pages job, newest first. Available for 90 days.  
-Records changed since the migration are left alone, so a later edit is never overwritten.  
-Poll GET /api/v1/batch-jobs/{batchJobId} for the restored/skipped counts.
+Sætter et batch-job i kø, der tilbagefører hver migration fra ét migrate-pages-job, nyeste først. Tilgængelig i 90 dage.
+Poster, der er ændret siden migrationen, efterlades urørt, så en senere redigering aldrig bliver overskrevet.
+Poll GET /api/v1/batch-jobs/{batchJobId} for at se antallet af gendannede/sprunne-over.
 
-## Parameters
+## Parametre
 
 | Navn | Type | Placering | Påkrævet | Beskrivelse |
-|------|------|-----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| undoId | string | path | Yes |  |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | Ja |  |
+| undoId | string | path | Ja |  |
 
 ## Svar
 
@@ -17,7 +17,7 @@ Returnerer: [`QueuePageMigrationJobAPIResponse`](https://github.com/FastComments
 
 [inline-code-attrs-start title = 'undoPageMigrations Eksempel'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Importer klasser:
+// Importér klasser:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -30,10 +30,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Konfigurer API-nøgle autorisation: api_key
+    // Konfigurér API-nøgleautorisation: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Fjern kommentaren på følgende linje for at sætte et præfiks for API-nøglen, f.eks. "Token" (defaults to null)
+    // Udkommentér følgende linje for at sætte et præfiks for API-nøglen, f.eks. "Token" (standard er null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -44,15 +44,12 @@ public class Example {
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      // Undtagelse ved kald af DefaultApi#undoPageMigrations
-      System.err.println("Exception when calling DefaultApi#undoPageMigrations");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
+      System.err.println("Exception ved kald af DefaultApi#undoPageMigrations");
+      System.err.println("Statuskode: " + e.getCode());
+      System.err.println("Årsag: " + e.getResponseBody());
+      System.err.println("Svarheadere: " + e.getResponseHeaders());
       e.printStackTrace();
     }
   }
 }
 [inline-code-end]
-
----

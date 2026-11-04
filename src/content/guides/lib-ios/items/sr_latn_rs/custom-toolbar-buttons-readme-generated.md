@@ -1,19 +1,19 @@
-### Comment Toolbar Buttons
+### Dugmad trake sa alatima za komentare
 
-Implementirajte `CustomToolbarButton` protokol da biste dodali dugmad u traku za unos komentara:
+Implementirajte protokol `CustomToolbarButton` da biste dodali dugmad na traku sa alatima za unos komentara:
 
 ```swift
 struct EmojiButton: CustomToolbarButton {
     let id = "emoji"
-    let iconSystemName = "face.smiling"       // Ime SF simbola
+    let iconSystemName = "face.smiling"       // SF Symbol name
     let contentDescription = "Add Emoji"
-    let badgeText: String? = nil              // Opcioni broj na bedžu
+    let badgeText: String? = nil              // Optional badge count
 
     func onClick(text: Binding<String>) {
         text.wrappedValue += "\u{1F44D}"
     }
 
-    // Opcione override metode (podrazumevano: true)
+    // Optional overrides (default to true)
     func isEnabled() -> Bool { true }
     func isVisible() -> Bool { true }
 }
@@ -28,7 +28,7 @@ FastCommentsView(
 )
 ```
 
-Ili ih dodajte globalno na SDK (važi za sve instance):
+Ili ih dodajte globalno na SDK (primenjuje se na sve instance):
 
 ```swift
 sdk.addGlobalCustomToolbarButton(EmojiButton())
@@ -36,9 +36,9 @@ sdk.removeGlobalCustomToolbarButton(id: "emoji")
 sdk.clearGlobalCustomToolbarButtons()
 ```
 
-### Feed Toolbar Buttons
+### Dugmad trake sa alatima za feed
 
-Implementirajte `FeedCustomToolbarButton` za formu za kreiranje objave:
+Implementirajte `FeedCustomToolbarButton` za formu kreiranja objave:
 
 ```swift
 struct HashtagButton: FeedCustomToolbarButton {
@@ -52,7 +52,7 @@ struct HashtagButton: FeedCustomToolbarButton {
 }
 ```
 
-Prosledite ih prikazu za kreiranje objave:
+Prosledite ih prikazu za kreiranje:
 
 ```swift
 FeedPostCreateView(

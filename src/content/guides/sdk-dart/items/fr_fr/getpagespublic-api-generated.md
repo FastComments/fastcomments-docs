@@ -38,5 +38,3 @@ try {
     print('Exception when calling PublicApi->getPagesPublic: $e\n');
 }
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 ## 매개변수
 
 | Name | Type | Location | Required | Description |
@@ -31,5 +30,3 @@ try {
     print('Exception when calling PublicApi->unPinComment: $e\n');
 }
 [inline-code-end]
-
----

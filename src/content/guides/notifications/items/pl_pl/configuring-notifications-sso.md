@@ -17,5 +17,3 @@ Dla SSO należy wziąć pod uwagę następującą konfigurację dotyczącą powi
   - Odbywa się to przez właściwość `footerUnsubscribeURL` w obiekcie `DomainConfig`.
   - Można to ustawić za pomocą API.
   - Możesz także rozważyć ustawienie odpowiednich nagłówków rezygnacji za pomocą `emailHeaders` w tym samym obiekcie.
-
----

@@ -35,5 +35,3 @@ const commentsResponse: GetCommentsForUserResponse = await getCommentsForUser(
   isCrawler
 );
 [inline-code-end]
-
----

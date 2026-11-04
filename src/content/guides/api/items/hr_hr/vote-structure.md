@@ -1,4 +1,3 @@
----
 Objekt `Vote` predstavlja glas koji je ostavio korisnik.
 
 Odnos između komentara i glasa definiran je putem `commentId`.
@@ -16,5 +15,3 @@ interface Vote {
     createdAt: string
 }
 [inline-code-end]
-
----

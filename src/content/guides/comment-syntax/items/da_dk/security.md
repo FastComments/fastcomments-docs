@@ -1,29 +1,28 @@
----
 Der er flere aspekter af sikkerhed, når man lader folk tilføje indhold til en hjemmeside
-og så gengive det indhold på mange forskellige typer enheder.
+og derefter renderer det indhold på mange forskellige typer enheder.
 
 ### Forebyggelse af misbrug af formatering
 
 Folk kan skrive indhold, der bevidst er visuelt forstyrrende
 og reducerer værdien af diskussioner ved at misbruge tekstformatering.
 
-FastComments gør flere ting for at forhindre misbrug i forbindelse med formatering:
+FastComments gør en række ting for at forebygge misbrug i forhold til formatering:
 
-- Store gentagne sammenhængende linjeskift bliver slået sammen.
-- Vi gengiver ikke overskrifter (de bliver almindelig tekst).
+- Store gentagne sekvenser af linjeskift sammenlægges.
+- Vi renderer ikke overskrifter (de bliver til normal tekst).
 - Vi tillader ikke CSS eller brugerdefinerede farver.
 
-### Forebyggelse af udnyttelser
+### Forebyggelse af exploits
 
-Udnyttelser kan opstå i systemer, der gengiver HTML. FastComments gør flere ting for at forhindre dette:
+Exploits kan oprettes i systemer, der renderer HTML. FastComments gør flere ting for at forebygge dette:
 
 - Vi tillader kun et eksplicit defineret sæt af HTML-tags.
 - Vi tillader kun et eksplicit defineret sæt af HTML-tag-attributter.
-- Vi rensker og sanerer alle input.
-  - Dette gøres via [DOMPurify](https://www.npmjs.com/package/dompurify) og [sanitizeHtml](https://www.npmjs.com/package/sanitize-html) bibliotekerne.
-  - Vi valgte disse biblioteker, da de er velafprøvede (med over 4 millioner og 1 million downloads pr. uge, henholdsvis).
+- Vi renser og saniterer alle input.
+  - Dette gøres via bibliotekerne [DOMPurify](https://www.npmjs.com/package/dompurify) og [sanitizeHtml](https://www.npmjs.com/package/sanitize-html).
+  - Vi valgte disse biblioteker, fordi de er velafprøvede (med henholdsvis over 4 og 1 millioner downloads pr. uge).
 
-Det betyder, at brugere ikke kan gøre ting som at skrive `<script>` eller `<style>` tags, eller forsøge at tilføje `onload=alert()`-type scripts til billeder eller andet indhold.
+Det betyder, at brugere ikke kan gøre ting som at skrive `<script>`- eller `<style>`-tags, eller forsøge at tilføje `onload=alert()`-type scripts til billeder eller andet indhold.
 
 De HTML-tags, vi tillader, er som følger:
 
@@ -43,6 +42,4 @@ De HTML-tags, vi tillader, er som følger:
 - `<li>`
 - `<br>`
 
-The `<iframe>` tag is not allowed by default. If you turn on Allow Media Embeds, iframes are also permitted, but only when their source is one of a built-in list of trusted providers (such as YouTube, Vimeo, SoundCloud, and Spotify) or a hostname you have explicitly added. Iframes from any other source are removed.
-
----
+Tagget `<iframe>` er ikke tilladt som standard. Hvis du aktiverer Allow Media Embeds, tillades iframes også, men kun når deres kilde er en af en indbygget liste over betroede udbydere (såsom YouTube, Vimeo, SoundCloud og Spotify) eller et hostname, du eksplicit har tilføjet. Iframes fra enhver anden kilde fjernes.

@@ -39,5 +39,3 @@ interface CommentDeleteResponse {
     reason?: string
 }
 [inline-code-end]
-
----

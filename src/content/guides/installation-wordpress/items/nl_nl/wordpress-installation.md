@@ -1,18 +1,15 @@
----
-De installatie van de FastComments WordPress-plugin is ontworpen om eenvoudig te zijn en eventuele downtime van de beschikbaarheid van reacties op uw site te beperken. De plugin schakelt niet over vanaf de WordPress-plugin totdat de synchronisatie is voltooid.
+De installatie van de FastComments WordPress-plugin is ontworpen om eenvoudig te zijn en de downtime van de beschikbaarheid van reacties op je site tot een minimum te beperken. De plugin zal niet overschakelen van de WordPress-plugin totdat de synchronisatie is voltooid.
 
-First, you'll want to set the expectation with your moderators according to the details in the below section `Moderation`. Laat hen weten dat zij binnenkort zullen modereren via FastComments en niet via het WordPress-dashboard.
+Stel eerst de verwachtingen met je moderators vast aan de hand van de details in de onderstaande sectie `Moderatie`. Laat hen weten dat ze binnenkort zullen modereren vanuit FastComments, en niet vanuit het WordPress-dashboard.
 
-Next, install the plugin. You can do this by going to the WordPress plugins dashboard, clicking `Add Plugin`, and search for `FastComments`. The plugin is also available for download [hier](https://wordpress.org/plugins/fastcomments/#installation).
+Installeer vervolgens de plugin. Dit kun je doen door naar het WordPress-plugins-dashboard te gaan, op `Plugin toevoegen` te klikken en te zoeken naar `FastComments`. De plugin is ook beschikbaar voor download [hier](https://wordpress.org/plugins/fastcomments/#installation).
 
-De pluginsetup zal u vragen of u zich in de EU bevindt. Als dit het geval is, wordt uw account ondergebracht in de EU op `eu.fastcomments.com`, anders zal het op `fastcomments.com` staan.
+Tijdens de installatie van de plugin wordt je gevraagd of je in de EU bent. Als dit het geval is, zal je account in de EU staan op `eu.fastcomments.com`, anders op `fastcomments.com`.
 
-Next, you have the option of selecting whether you already have a FastComments account. Follow the steps thereafter and your comments can optionally be uploaded during the installation process.
+Vervolgens heb je de optie om aan te geven of je al een FastComments-account hebt. Volg de daaropvolgende stappen en je reacties kunnen optioneel worden geüpload tijdens het installatieproces.
 
 <sup>Let op!</sup> Sluit de WordPress-pluginpagina niet terwijl de installatie en synchronisatie bezig zijn.
 
-Reacties worden in batches geüpload en gesorteerd met behulp van bestaande indexen in uw WordPress-database om de belasting van uw site te beperken.
+Reacties worden in batches geüpload en gesorteerd met behulp van bestaande indexen in je WordPress-database om de belasting van je site te beperken.
 
-Zodra de synchronisatie voltooid is, wordt het standaard WordPress-reactiesysteem vervangen door FastComments. We hopen dat u blij bent met ons platform, maar als dat niet het geval is, [neem contact met ons op](https://fastcomments.com/auth/my-account/help).  
-
----
+Zodra de synchronisatie is voltooid, wordt het standaard WordPress-reactiesysteem vervangen door FastComments. We hopen dat je ons platform geweldig vindt, maar zo niet, [neem contact met ons op](https://fastcomments.com/auth/my-account/help).

@@ -23,5 +23,3 @@ let (maybeResp, httpResp) = client.postUnFlagComment(
 if maybeResp.isSome:
   let emptyResp = maybeResp.get()
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 [api-resource-header-start name = 'Page React Users'; route = 'GET /page-reacts/v2/:tenantId/list'; creditsCost = 0; api-resource-header-end]
 
 페이지에 반응을 추가한 사용자의 이름을 알파벳 순으로 반환합니다. 최대 100개의 반응을 조회하며, 익명 사용자와 비공개 프로필 활동을 가진 사용자는 포함되지 않습니다. SSO가 필요한 페이지에서는 페이지를 볼 수 없는 사용자가 `403`과 코드 `sso-required` 또는 `page-forbidden`을 받습니다.
@@ -33,5 +32,3 @@ interface PageReactUsersResponse {
     userNames: string[]
 }
 [inline-code-end]
-
----

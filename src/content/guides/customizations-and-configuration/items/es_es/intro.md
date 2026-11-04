@@ -1,4 +1,3 @@
----
 ## Personalizaciones y Configuración
 
 ### Contexto
@@ -12,5 +11,3 @@ Se proporcionarán ejemplos de código, con las líneas relevantes resaltadas. S
 Los ejemplos de código usarán nuestra biblioteca de JavaScript puro; sin embargo, las opciones de configuración usan exactamente los mismos nombres para todas las versiones del widget de comentarios (React, Vue, etc.).
 
 La mayoría de las configuraciones y funciones descritas en esta guía no requieren escribir código.
-
----

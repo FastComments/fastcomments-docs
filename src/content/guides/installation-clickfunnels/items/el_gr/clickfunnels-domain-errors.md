@@ -1,12 +1,12 @@
-You may get an authorization error, like the following:
+Ενδέχεται να λάβετε ένα σφάλμα εξουσιοδότησης, όπως το παρακάτω:
 
 <div class="screenshot white-bg">
-    <div class="title">Λείπει η διαμόρφωση του τομέα</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-webflow-step-5.png" alt="Λείπει η διαμόρφωση του τομέα" />
+    <div class="title">Λείπει η Διαμόρφωση Τομέα</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-webflow-step-5.png" alt="Λείπει η Διαμόρφωση Τομέα" />
 </div>
 
-This is because FastComments doesn't know it's supposed to allow your account to be used on this domain.
+Αυτό συμβαίνει επειδή το FastComments δεν γνωρίζει ότι πρέπει να επιτρέπει τη χρήση του λογαριασμού σας σε αυτόν τον τομέα.
 
-In this case, the fix is simple. You just have to add your site to your FastComments.com account.
+Σε αυτή την περίπτωση, η λύση είναι απλή. Απλώς πρέπει να προσθέσετε τον ιστότοπό σας στον λογαριασμό σας στο FastComments.com.
 
-[Μεταβείτε εδώ για να προσθέσετε τον ιστότοπό σας στον λογαριασμό σας.](https://fastcomments.com/auth/my-account/configure-domains)
+[Πηγαίνετε εδώ για να προσθέσετε τον ιστότοπό σας στον λογαριασμό σας.](https://fastcomments.com/auth/my-account/configure-domains)

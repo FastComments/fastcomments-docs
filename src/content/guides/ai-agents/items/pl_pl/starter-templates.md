@@ -1,31 +1,31 @@
-FastComments dostarcza pięć szablonów startowych, abyś nie musiał pisać działającego agenta od podstaw. Można do nich przejść ze [strony Agentów AI](https://fastcomments.com/auth/my-account/ai-agents) klikając **Przeglądaj szablony**.
+FastComments dostarcza pięć szablonów startowych, dzięki czemu nie musisz pisać działającego agenta od zera. Są one dostępne na [stronie AI Agents](https://fastcomments.com/auth/my-account/ai-agents) po kliknięciu **Browse templates**.
 
-When you pick a template:
+Gdy wybierzesz szablon:
 
-1. The agent is created with **Status: Tryb próbny** and an internal name based on the template (`tos_enforcer`, `welcome_greeter`, `top_comment_pinner`, `thread_summarizer`, `gaslight_detector`). If that name is taken on your tenant, a numeric suffix is added.
-2. You land directly on the edit form with everything pre-filled - prompt, triggers, allowed actions, and any thresholds. A banner across the top reads "Utworzono na podstawie szablonu {templateName}. Przejrzyj ustawienia poniżej, a gdy będziesz gotowy, zmień status na Włączony."
-3. Nothing is enabled yet. The agent will not act until you save and either keep dry-run on (to observe) or flip to Enabled.
+1. Agent jest tworzony ze statusem **Status: Dry Run** oraz wewnętrzną nazwą opartą na szablonie (`tos_enforcer`, `welcome_greeter`, `top_comment_pinner`, `thread_summarizer`, `gaslight_detector`). Jeśli ta nazwa jest już zajęta w Twojej tenancie, dodawany jest sufiks numeryczny.
+2. Trafiasz bezpośrednio na formularz edycji z wszystkimi wypełnionymi polami - prompt, wyzwalacze, dozwolone akcje oraz wszelkie progi. Baner na górze strony informuje: "Created from the {templateName} template. Review the settings below, then change status to Enabled when you're ready."
+3. Nic nie jest jeszcze włączone. Agent nie podejmie żadnych działań, dopóki nie zapiszesz konfiguracji i nie pozostawisz trybu dry-run (aby obserwować) lub nie przełączysz na Enabled.
 
 ### Pięć szablonów
 
-- **[Moderator](#template-moderator)** - przegląda nowe i oznaczone komentarze, ostrzega użytkowników przy pierwszym przewinieniu, eskaluje do zbanowania dopiero po ostrzeżeniu. Uruchamia się przy nowych komentarzach oraz gdy przekroczony zostanie próg oznaczeń (domyślny próg oznaczeń: 3). Dozwolone narzędzia: `mark_comment_approved`, `mark_comment_spam`, `warn_user`, `ban_user`.
+- **[Moderator](#template-moderator)** - przegląda nowe i oflagowane komentarze, ostrzega pierwszorazowych sprawców, eskaluje do bana dopiero po ostrzeżeniu. Wyzwalany przez nowe komentarze oraz przekroczenia progu flagowania (domyślny próg flagowania: 3). Dozwolone narzędzia: `mark_comment_approved`, `mark_comment_spam`, `warn_user`, `ban_user`.
 
-- **[Welcome Greeter](#template-welcome-greeter)** - odpowiada serdecznie pierwszym komentującym krótkim, osobistym powitaniem. Uruchamia się przy pierwszym komentarzu nowego użytkownika. Dozwolone narzędzie: `write_comment`.
+- **[Welcome Greeter](#template-welcome-greeter)** - ciepło odpowiada pierwszorazowym komentującym krótkim, osobistym powitaniem. Wyzwalany przez new-user-first-comment. Dozwolone narzędzie: `write_comment`.
 
-- **[Top Comment Pinner](#template-top-comment-pinner)** - przypina merytoryczne komentarze najwyższego poziomu, gdy przekroczą próg głosów (domyślnie: 10), najpierw odpinając poprzednio przypięty komentarz. Uruchamia się przy przekroczeniu progu głosów. Dozwolone narzędzia: `pin_comment`, `unpin_comment`.
+- **[Top Comment Pinner](#template-top-comment-pinner)** - przypina wartościowe komentarze najwyższego poziomu po przekroczeniu progu głosów (domyślnie: 10), najpierw odpinając wcześniej przypięty komentarz. Wyzwalany przez przekroczenia progu głosów. Dozwolone narzędzia: `pin_comment`, `unpin_comment`.
 
-- **[Thread Summarizer](#template-thread-summarizer)** - publikuje neutralne, jednoakapitowe podsumowanie długich wątków po opóźnieniu, a następnie je przypina. Uruchamia się przy nowych komentarzach z 30-minutowym opóźnieniem, aby wątek się ustabilizował przed podsumowaniem. Dozwolone narzędzia: `write_comment`, `pin_comment`, `unpin_comment`.
+- **[Thread Summarizer](#template-thread-summarizer)** - publikuje neutralne, jednoakapitowe podsumowanie na długich wątkach po opóźnieniu, a następnie je przypina. Wyzwalany przez nowe komentarze z 30-minutowym odroczeniem, aby wątek „osiadł" przed podsumowaniem. Dozwolone narzędzia: `write_comment`, `pin_comment`, `unpin_comment`.
 
-- **[Gaslight Detector](#template-gaslight-detector)** - monitoruje edycje komentarzy pod kątem modyfikacji w środku wątku, które wypaczają odpowiedzi, przywraca oryginalny tekst i wysyła wiadomość prywatną do autora. Uruchamia się przy edycjach komentarzy. Dozwolone narzędzia: `edit_comment`, `warn_user`, `send_dm`.
+- **[Gaslight Detector](#template-gaslight-detector)** - obserwuje edycje komentarzy pod kątem zmian w trakcie wątku, które wypaczają odpowiedzi, przywraca oryginalny tekst i wysyła wiadomość DM do autora. Wyzwalany przez edycje komentarzy. Dozwolone narzędzia: `edit_comment`, `warn_user`, `send_dm`.
 
 ### Dostosowywanie szablonu
 
-Szablony to punkty wyjścia, a nie zobowiązania. Oczekuje się, że:
+Szablony to punkty wyjścia, a nie sztywne reguły. Oczekuje się, że:
 
-- Dostosujesz **Początkowy prompt** do tonu twojej społeczności.
-- Dodasz lub usuniesz **Wyzwalacze**, aby dopasować, jak często agent ma się uruchamiać.
-- Dodasz **Zatwierdzenia** dla każdej wrażliwej akcji — zdecydowanie zalecamy zabezpieczenie `ban_user` za pomocą zatwierdzenia w szablonach typu moderator.
-- Dodasz **Zasady społeczności**, aby agent stosował twoją pisemną politykę konsekwentnie. Zobacz [Zasady społeczności](#community-guidelines).
-- Ustawisz dla każdego agenta **Budżety** odpowiednie do oczekiwanej liczby wyzwalaczy.
+- Dostosujesz **Initial prompt**, aby pasował do głosu Twojej społeczności.
+- Dodasz lub usuniesz **Triggers**, aby dopasować częstotliwość działania agenta.
+- Dodasz **Approvals** dla każdej wrażliwej akcji - zdecydowanie zalecamy zabezpieczenie `ban_user` zatwierdzeniem w przypadku szablonów typu moderator.
+- Dodasz **Community guidelines**, aby agent konsekwentnie stosował Twoją spisaną politykę. Zobacz [Community Guidelines](#community-guidelines).
+- Ustawisz **Budgets** dla poszczególnych agentów odpowiednio do oczekiwanej liczby wyzwalaczy.
 
-Szablon to tylko narzędzie, które wstępnie uzupełnia sensowne wartości domyślne; po zapisaniu agent należy do ciebie.
+Szablon to jedynie nośnik, który wypełnia rozsądne wartości domyślne; po zapisaniu agent należy do Ciebie.

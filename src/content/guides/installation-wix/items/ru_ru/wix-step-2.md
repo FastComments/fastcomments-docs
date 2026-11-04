@@ -1,13 +1,13 @@
-Затем перейдём в `Add -> Embed Code -> Embed HTML`.
+Затем перейдем в `Add -> Embed Code -> Embed HTML`.
 
 <div class="screenshot white-bg">
-    <div class="title">Шаг второй: Добавьте блок Embed HTML</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-1.png" alt="Добавьте блок Embed HTML" />
+    <div class="title">Шаг второй: добавление блока Embed HTML</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-1.png" alt="Добавление блока Embed HTML" />
 </div>
 
-This will give us a sad looking box to start with:
+В результате мы получим вот такой невзрачный блок для начала:
 
 <div class="screenshot white-bg">
-    <div class="title">Начальный блок</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-1-sad.png" alt="Начальный блок" />
+    <div class="title">Исходный блок</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-1-sad.png" alt="Исходный блок" />
 </div>

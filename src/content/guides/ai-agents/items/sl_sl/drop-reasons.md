@@ -1,50 +1,50 @@
-When a trigger fires for an agent but does **not** result in an LLM call, the platform records a "drop" with a reason. Drops appear in the [Analytics page](#analytics-page) under "Triggers skipped (this month)".
+Ko se sprožilec (trigger) zažene za agenta, a **ne** povzroči klica LLM, platforma zabeleži "izpust" (drop) z razlogom. Izpusti so prikazani na [strani Analytics](#analytics-page) pod "Triggers skipped (this month)".
 
-### The full list of drop reasons
+### Celoten seznam razlogov za izpust
 
 | Razlog | Kaj se je zgodilo |
 |---|---|
-| `agentDaily` | Dosežen je bil dnevni proračunski limit agenta. |
-| `agentMonthly` | Dosežen je bil mesečni proračunski limit agenta. |
-| `tenantDaily` | Dosežen je bil dnevni proračunski limit najemnika. |
-| `tenantMonthly` | Dosežen je bil mesečni proračunski limit najemnika. |
-| `qps` | Dosežena je bila agentova omejitev hitrosti na minuto (drseče okno 60 s). |
-| `concurrency` | Maksimalno število sočasnih zagonov agenta je bilo že zasedeno. |
+| `agentDaily` | Dosežen je dnevni proračunski strop agenta. |
+| `agentMonthly` | Dosežen je mesečni proračunski strop agenta. |
+| `tenantDaily` | Dosežen je dnevni proračunski strop najemnika (tenant). |
+| `tenantMonthly` | Dosežen je mesečni proračunski strop najemnika (tenant). |
+| `qps` | Dosežena je omejitev hitrosti agenta na minuto (drseče 60-sekundno okno). |
+| `concurrency` | Največje število sočasnih izvedb agenta je že bilo zapolnjeno. |
 
-### What's not in this list
+### Kaj ni na tem seznamu
 
-A trigger that never reaches the dispatch path is not "dropped" with a reason - it is just not dispatched. That includes:
+Sprožilec, ki nikoli ne doseže poti odpošiljanja (dispatch), ni "izpuščen" z razlogom - preprosto ni odpošlan. To vključuje:
 
-- Agent is **Disabled**.
-- The triggering comment does not match the agent's [URL/locale scope](#scope-url-locale).
-- The triggering action was made by the same agent (loop prevention).
-- The tenant has invalid billing.
-- The agent is not in the tenant's plan.
+- Agent je **Onemogočen** (Disabled).
+- Komentar, ki je sprožil akcijo, ne ustreza [obsegu URL/jezikovne oznake](#scope-url-locale) agenta.
+- Sprožilno akcijo je izvedel isti agent (preprečevanje zank).
+- Najemnik ima neveljavno obračunavanje.
+- Agent ni v paketu najemnika.
 
-These are silent skips, not drops. They do not appear in the drops chart on Analytics.
+To so tihe preskočitve, ne izpusti. Ne pojavljajo se v grafu izpustov na Analytics.
 
-### Reading drops on Analytics
+### Branje izpustov na Analytics
 
-The [Analytics page](#analytics-page) shows:
+[Stran Analytics](#analytics-page) prikazuje:
 
-- **Triggers skipped (this month)** - counts grouped by drop reason.
-- **Agents at or near their cap** - per-agent breakdown of which agents are pushing the cap, with a count of dropped triggers in the current period.
+- **Triggers skipped (this month)** - števila, združena po razlogu izpusta.
+- **Agents at or near their cap** - razčlenitev po agentih, kateri agenti omejujejo strop, s številom izpuščenih sprožilcev v trenutnem obdobju.
 
-### What to do when you see drops
+### Kaj storiti, ko opazite izpuste
 
-- **`agentDaily` / `agentMonthly`** - the agent's own cap is too tight. Either raise the cap on the edit form or scope the agent down (URL/locale, narrower triggers).
-- **`tenantDaily` / `tenantMonthly`** - the account-level cap is too tight. Raise it on tenant billing settings, or distribute spend across fewer agents.
-- **`qps`** - traffic is hitting the per-minute rolling-window limit. Often a sign of a viral thread fanning out triggers faster than the agent can run them. The agent's `maxTriggersPerMinute` and `maxConcurrent` fields cap this; raising them increases throughput but also increases burst cost.
-- **`concurrency`** - same root cause as `qps` but at the in-flight count. Raise `maxConcurrent` if you need more parallelism.
+- **`agentDaily` / `agentMonthly`** - lastni strop agenta je pretesen. Bodisi dvignite strop na obrazcu za urejanje bodisi zožite obseg agenta (URL/jezikovna oznaka, ožji sprožilci).
+- **`tenantDaily` / `tenantMonthly`** - strop na ravni računa je pretesen. Dvignite ga v nastavitvah obračunavanja najemnika ali porazdelite porabo med manj agentov.
+- **`qps`** - promet dosega omejitev na minuto z drsečim oknom. Pogosto znak viralne niti, ki sproža sprožilce hitreje, kot jih agent zmore izvesti. Polji agenta `maxTriggersPerMinute` in `maxConcurrent` to omejujeta; njuno povečanje poveča prepustnost, a tudi strošek sunkovitosti (burst).
+- **`concurrency`** - ista korenita vzroka kot pri `qps`, a pri številu izvedb v teku. Povečajte `maxConcurrent`, če potrebujete več vzporednosti.
 
-### Drops vs errors
+### Izpusti v primerjavi z napakami
 
-A drop is "the trigger never ran". An **error** is "the trigger ran but the LLM call or tool dispatch failed". Errors are tracked separately on the [Run History](#run-history) page (status `Error`).
+Izpust pomeni "sprožilec se ni nikoli izvedel". **Napaka** pomeni "sprožilec se je izvedel, a klic LLM ali odpošiljanje orodja ni uspelo". Napake se beležijo ločeno na strani [Run History](#run-history) (status `Error`).
 
-### Drops can also stop replays
+### Izpusti lahko ustavijo tudi ponovitve (replays)
 
-The same drop reasons stop in-flight [test runs / replays](#test-runs-replays). The replay stops with an Error status and a message that names which budget was hit (for example, the agent's daily budget).
+Isti razlogi za izpust ustavijo [testne izvedbe / ponovitve](#test-runs-replays) v teku. Ponovitev se ustavi s statusom Error in sporočilom, ki poimenuje, kateri proračun je bil dosežen (na primer dnevni proračun agenta).
 
-### Loop prevention is silent on purpose
+### Preprečevanje zank je namenoma tiho
 
-There is no drop reason for "this trigger came from another agent and was skipped to prevent a loop". Logging it would clutter the analytics for no useful signal - by design, agent fan-out should never result in trigger explosion. If you suspect a loop is being suppressed where it should not be, check [Dnevnike komentarjev](/guide-moderation.html#comment-logs) - the `botId` on bot-authored comments is what the loop check keys on.
+Ni razloga za izpust za "ta sprožilec je prišel od drugega agenta in je bil preskočen, da se prepreči zanka". Beleženje tega bi zamašilo analitiko brez koristnega signala - po zasnovi razvejanje agentov ne bi nikoli smelo povzročiti eksplozije sprožilcev. Če sumite, da je zanka zatirana, čeprav ne bi smela biti, preverite [Comment Logs](/guide-moderation.html#comment-logs) - preverjanje zank se opira na `botId` pri komentarjih, ki jih je napisal bot.

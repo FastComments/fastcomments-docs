@@ -36,5 +36,3 @@ ModerationAPI.deleteModerationVote(tenantId: tenantId, commentId: commentId, vot
     }
 }
 [inline-code-end]
-
----

@@ -41,5 +41,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Respons fra `ModerationAPI.GetManualBadgesForUser`: %v\n", resp)
 }
 [inline-code-end]
-
----

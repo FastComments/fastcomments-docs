@@ -1,18 +1,17 @@
-Past commenters on the page who are NOT currently online. Sorted by displayName.  
-Use this after exhausting /users/online to render a "Members" section.  
-Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName}  
-index from afterName forward via $gt, no $skip cost.
+Минали коментатори на страницата, които в момента НЕ са онлайн. Подредени по displayName.
+Използвайте това след изчерпване на /users/online, за да визуализирате секция "Members".
+Пагинация с курсор по commenterName: сървърът обхожда частичния индекс {tenantId, urlId, commenterName} от afterName напред чрез $gt, без разход за $skip.
 
-## Parameters
+## Параметри
 
-| Име | Тип | Задължително | Описание |
+| Име | Тип | Задължителен | Описание |
 |------|------|----------|-------------|
-| tenant_id | String | Yes |  |
-| url_id | String | Yes |  |
-| after_name | String | No |  |
-| after_user_id | String | No |  |
+| tenant_id | String | Да |  |
+| url_id | String | Да |  |
+| after_name | String | Не |  |
+| after_user_id | String | Не |  |
 
-## Response
+## Отговор
 
 Връща: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/page_users_offline_response.rs)
 

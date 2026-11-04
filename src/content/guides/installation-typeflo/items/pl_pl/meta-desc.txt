@@ -1,3 +1,1 @@
----
 Dodaj komentarze na żywo do bloga Typeflo.io, wklejając fragment FastComments do pola kodu, a następnie przystylizuj widżet, aby pasował do Twojego motywu.
----

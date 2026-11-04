@@ -1,4 +1,3 @@
----
 列出為租戶配置的 webhook，包括儀表板管理的行和 API 訂閱。
 
 ## Parameters
@@ -30,5 +29,3 @@
   const minimalResponse: GetWebhooksResponse = await getWebhooks(tenantId);
 })();
 [inline-code-end]
-
----

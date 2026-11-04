@@ -30,5 +30,3 @@ api->getUsersInfo(tenantId, ids).then([](pplx::task<std::shared_ptr<PageUsersInf
     }
 });
 [inline-code-end]
-
----

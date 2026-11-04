@@ -52,5 +52,3 @@ interface TenantPostResponse {
     tenant?: Tenant; // 成功時に作成された完全な tenant を返します。
 }
 [inline-code-end]
-
----

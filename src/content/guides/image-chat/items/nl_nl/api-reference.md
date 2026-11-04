@@ -1,12 +1,12 @@
-### API Overzicht
+### API-overzicht
 
-Image Chat biedt drie REST API-eindpunten voor het programatisch beheren van gesprekken bij afbeeldingen. Deze eindpunten stellen je in staat gesprekken op te halen, aan te maken en te verwijderen zonder de browserwidget te gebruiken.
+Image Chat biedt drie REST API-endpoints voor het programmatisch beheren van afbeeldingsgesprekken. Met deze endpoints kunt u markers ophalen, aanmaken en verwijderen zonder de browser-widget te gebruiken.
 
-Alle API-eindpunten vereisen authenticatie en volgen de standaard FastComments API-patronen. Dit zijn openbare eindpunten die authenticeren via browsercookies, niet via API-sleutels.
+Alle API-endpoints vereisen authenticatie en volgen de standaard FastComments API-patronen. Dit zijn publieke endpoints die via browsercookies worden geauthenticeerd, niet via API-sleutels.
 
 ### Basis-URL
 
-Alle Image Chat API-eindpunten bevinden zich onder:
+Alle Image Chat API-endpoints vallen onder:
 
 ```
 https://fastcomments.com/comment-image-chats
@@ -14,13 +14,13 @@ https://fastcomments.com/comment-image-chats
 
 ### Authenticatie
 
-Deze eindpunten authenticeren gebruikers via browsercookies. Ze gebruiken geen API-sleutels. Gebruikers moeten ingelogd zijn bij FastComments in hun browser om toegang te krijgen tot deze eindpunten.
+Deze endpoints authenticeren gebruikers via browsercookies. Ze gebruiken geen API-sleutels. Gebruikers moeten in hun browser ingelogd zijn bij FastComments om toegang te krijgen tot deze endpoints.
 
 ### Alle gesprekken ophalen
 
-Haal alle beeldgesprekken op voor een specifieke afbeelding.
+Haal alle afbeeldingsgesprekken op voor een specifieke afbeelding.
 
-#### Eindpunt
+#### Endpoint
 
 ```
 GET /comment-image-chats/:tenantId?urlId=<urlId>
@@ -28,13 +28,13 @@ GET /comment-image-chats/:tenantId?urlId=<urlId>
 
 #### Parameters
 
-`tenantId` (padparameter, verplicht) is je FastComments Tenant ID.
+`tenantId` (padparameter, vereist) is uw FastComments Tenant ID.
 
-`urlId` (queryparameter, verplicht) is de afbeeldingsidentificatie waarvoor je gesprekken wilt ophalen.
+`urlId` (queryparameter, vereist) is de afbeeldingsidentificatie waarvoor u gesprekken wilt ophalen.
 
 #### Respons
 
-De respons bevat de API-status, informatie over de huidige gebruikerssessie als geauthenticeerd, een array met gesprekken inclusief hun IDs, URL's en X/Y-coördinaten, een opgeschoonde URL-identificatie, een vlag die aangeeft of de huidige gebruiker sitebeheerder of moderator is, en WebSocket-verbindinggegevens voor live-synchronisatie inclusief `tenantIdWS`, `urlIdWS`, en `userIdWS`.
+De respons bevat de API-status, informatie over de huidige gebruikerssessie indien geauthenticeerd, een array met gesprekken inclusief hun ID's, URL's en X/Y-coördinaten, een opgeschoonde URL-identificatie, een vlag die aangeeft of de huidige gebruiker een sitebeheerder of moderator is, en WebSocket-verbindingsdetails voor live synchronisatie, waaronder `tenantIdWS`, `urlIdWS` en `userIdWS`.
 
 #### Voorbeeldverzoek
 
@@ -76,9 +76,9 @@ curl "https://fastcomments.com/comment-image-chats/demo?urlId=my-product-image" 
 
 ### Gesprek aanmaken
 
-Maak een nieuw beeldgesprek aan voor een specifieke locatie op een afbeelding.
+Maak een nieuw afbeeldingsgesprek aan voor een specifieke locatie op een afbeelding.
 
-#### Eindpunt
+#### Endpoint
 
 ```
 POST /comment-image-chats/:tenantId
@@ -86,9 +86,9 @@ POST /comment-image-chats/:tenantId
 
 #### Parameters
 
-`tenantId` (padparameter, verplicht) is je FastComments Tenant ID.
+`tenantId` (padparameter, vereist) is uw FastComments Tenant ID.
 
-De request body moet JSON zijn en de volgende verplichte velden bevatten.
+De request body moet JSON zijn en deze verplichte velden bevatten.
 
 `urlId` (string, verplicht) is de basispagina-identificatie.
 
@@ -96,15 +96,15 @@ De request body moet JSON zijn en de volgende verplichte velden bevatten.
 
 `pageTitle` (string, verplicht) is de titel van de pagina.
 
-`src` (string, verplicht) is de afbeeldingsbron-URL.
+`src` (string, verplicht) is de URL van de afbeeldingsbron.
 
-`x` (number, verplicht) is de X-coördinaat als percentage (0-100).
+`x` (getal, verplicht) is de X-coördinaat als percentage (0-100).
 
-`y` (number, verplicht) is de Y-coördinaat als percentage (0-100).
+`y` (getal, verplicht) is de Y-coördinaat als percentage (0-100).
 
-`createdFromCommentId` (string, verplicht) is de ID van de opmerking die dit gesprek heeft gestart.
+`createdFromCommentId` (string, verplicht) is de ID van de reactie die deze chat heeft gestart.
 
-`broadcastId` (string, verplicht) is een UUID voor live-synchronisatie om echo-effecten te voorkomen.
+`broadcastId` (string, verplicht) is een UUID voor live synchronisatie om echo-effecten te voorkomen.
 
 #### Respons
 
@@ -139,9 +139,9 @@ curl -X POST "https://fastcomments.com/comment-image-chats/demo" \
 
 ### Gesprek verwijderen
 
-Verwijder een bestaand beeldgesprek. Dit eindpunt vereist admin- of moderatorrechten, of het gesprek moet zijn aangemaakt door de geauthenticeerde gebruiker.
+Verwijder een bestaand afbeeldingsgesprek. Dit endpoint vereist beheerder- of moderatorrechten, of het gesprek moet zijn aangemaakt door de geauthenticeerde gebruiker.
 
-#### Eindpunt
+#### Endpoint
 
 ```
 DELETE /comment-image-chats/:tenantId/:chatId
@@ -149,11 +149,11 @@ DELETE /comment-image-chats/:tenantId/:chatId
 
 #### Parameters
 
-`tenantId` (padparameter, verplicht) is je FastComments Tenant ID.
+`tenantId` (padparameter, vereist) is uw FastComments Tenant ID.
 
-`chatId` (padparameter, verplicht) is de ID van het gesprek dat verwijderd moet worden.
+`chatId` (padparameter, vereist) is de ID van het te verwijderen gesprek.
 
-`broadcastId` (request body, verplicht) is een UUID voor live-synchronisatie.
+`broadcastId` (request body, vereist) is een UUID voor live synchronisatie.
 
 #### Voorbeeldverzoek
 
@@ -174,21 +174,21 @@ curl -X DELETE "https://fastcomments.com/comment-image-chats/demo/conv789" \
 }
 ```
 
-### Coördinatenstelsel
+### Coördinatensysteem
 
-De X- en Y-coördinaten worden opgeslagen als percentages van de afbeeldingsafmetingen. X geeft de horizontale positie vanaf de linkerkant aan (0 = linker rand, 100 = rechter rand). Y geeft de verticale positie vanaf de bovenkant aan (0 = bovenrand, 100 = onderrand).
+De X- en Y-coördinaten worden opgeslagen als percentages van de afmetingen van de afbeelding. X vertegenwoordigt de horizontale positie vanaf de linkerrand (0 = linkerrand, 100 = rechterrand). Y vertegenwoordigt de verticale positie vanaf de bovenrand (0 = bovenrand, 100 = onderrand).
 
-Deze procentwaarden kunnen decimalen bevatten voor precisie. Bijvoorbeeld, x: 25.5 betekent 25.5% vanaf de linkerrand van de afbeelding.
+Deze percentagewaarden kunnen decimalen bevatten voor precisie. Bijvoorbeeld, x: 25.5 betekent 25,5% vanaf de linkerrand van de afbeelding.
 
-### Rate Limiting
+### Rate limiting
 
-Deze eindpunten vallen onder de standaard FastComments API rate limiting. De rate limit-middleware wordt per tenant toegepast om misbruik te voorkomen en tegelijk normaal gebruik toe te staan.
+Deze endpoints vallen onder de standaard FastComments API rate limiting. De rate limit-middleware geldt per tenant om misbruik te voorkomen terwijl normaal gebruik mogelijk blijft.
 
-### Foutantwoorden
+### Foutresponsen
 
-Alle eindpunten geven standaard HTTP-statuscodes terug. Een 400-respons duidt op ongeldige aanvraagparameters. Een 401-respons betekent dat authenticatie is mislukt. Een 403-respons geeft aan dat de machtigingen onvoldoende zijn. Een 404-respons betekent dat het gesprek niet is gevonden. Een 429-respons geeft aan dat het tarieflimiet is overschreden.
+Alle endpoints geven standaard HTTP-statuscodes terug. Een 400-respons geeft ongeldige verzoekparameters aan. Een 401-respons betekent dat de authenticatie is mislukt. Een 403-respons geeft onvoldoende rechten aan. Een 404-respons betekent dat het gesprek niet is gevonden. Een 429-respons geeft aan dat de rate limit is overschreden.
 
-Foutantwoorden bevatten een JSON-body met details:
+Foutresponsen bevatten een JSON-body met details:
 
 ```json
 {
@@ -197,6 +197,6 @@ Foutantwoorden bevatten een JSON-body met details:
 }
 ```
 
-### Gebruikstracering
+### Gebruiksbewaking
 
-Het aanmaken van gesprekken verhoogt je `conversationCreateCount` gebruiksmetric. Alle WebSocket-synchronisatie-activiteit verhoogt `pubSubMessageCount` en `pubSubBandwidth`. Je kunt deze metrics monitoren in je FastComments-dashboard onder gebruiksanalyse.
+Het aanmaken van gesprekken verhoogt uw `conversationCreateCount` gebruiksstatistiek. Alle WebSocket-synchronisatieactiviteit verhoogt `pubSubMessageCount` en `pubSubBandwidth`. U kunt deze statistieken monitoren in uw FastComments-dashboard onder gebruiksanalyse.

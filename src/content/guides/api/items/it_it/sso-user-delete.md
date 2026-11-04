@@ -1,4 +1,3 @@
----
 [api-resource-header-start name = 'SSOUser'; route = 'DELETE /api/v1/sso-users/:id'; creditsCost = 1; api-resource-header-end]
 
 Questa route fornisce la rimozione di un singolo utente SSO tramite il suo id.
@@ -65,5 +64,3 @@ interface SSOUsersResponse {
     user?: SSOUser; // Restituiamo l'utente rimosso in caso di successo.
 }
 [inline-code-end]
-
----

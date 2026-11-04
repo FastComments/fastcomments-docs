@@ -1,4 +1,3 @@
----
 Det var det! Du skulle nu have live-kommentarer tilføjet til dit Hostinger-websted.
 
 <div class="screenshot white-bg">
@@ -7,5 +6,3 @@ Det var det! Du skulle nu have live-kommentarer tilføjet til dit Hostinger-webs
 </div>
 
 Hvis du er stødt på en fejl med 'permission denied', eller gerne vil tilpasse FastComments, så læs videre.
-
----

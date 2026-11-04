@@ -1,9 +1,12 @@
-A `Poll` je priložen komentaru, umjesto da bude samostalni objekt. Stvara se zajedno s komentarom  
-(pogledajte `POST /api/v1/comments`), ili se kasnije može dodati postojećem komentaru pomoću `PUT /api/v1/polls/:commentId`.
+`Poll` je vezan uz komentar, a ne da je samostalan objekt. Stvara se zajedno s komentarom
+(vidi `POST /api/v1/comments`), ili se kasnije dodaje postojećem komentaru putem `PUT /api/v1/polls/:commentId`.
 
-Broj glasova se čuva na samoj anketi, pa čitanje ankete daje rezultate bez potrebe za dodatnim zbrajanjem. Pojedinačni glasovi koji stoje iza tih brojeva su objekti `PollVote`.
+Brojevi glasova čuvaju se na samom anketu, pa čitanje ankete daje rezultate bez potrebe za zbrajanjem
+bilo čega. Pojedinačni glasovi iza tih brojeva su `PollVote` objekti.
 
-Svaka opcija ima `id` koji se generira prilikom stvaranja ankete. Taj id koristite za glasanje, za preimenovanje opcije i za zadržavanje opcije (i njenih glasova) kada `PUT`-ate anketu s dodanim ili uklonjenim opcijama. To je jedini siguran način referenciranja opcije – nikada ne koristite njen položaj u popisu.
+Svaka opcija ima `id` koji se generira prilikom stvaranja ankete. Taj id koristite za davanje glasa,
+za preimenovanje opcije i za zadržavanje opcije (i njenih glasova) kada `PUT`-ate anketu s dodanim ili
+uklonjenim opcijama. To je jedini siguran način referenciranja opcije - nikada njen položaj u listi.
 
 [inline-code-attrs-start title = 'Struktura ankete'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -26,16 +29,18 @@ interface CommentPoll {
 }
 [inline-code-end]
 
-### Limits
+### Ograničenja
 
-- Pitanje je obavezno i smije imati najviše 200 znakova.
-- Ankete moraju imati između 2 i 10 opcija.
-- Oznaka opcije je obavezna, smije imati najviše 100 znakova i mora biti jedinstvena unutar ankete (ignorirajući veličinu slova).
-- `closesAt` mora biti u budućnosti kada se anketa kreira. Za trenutno zatvaranje ankete, `PATCH`‑ajte je s datumom u prošlosti.
+- Pitanje je obavezno i ima najviše 200 znakova.
+- Anketa ima između 2 i 10 opcija.
+- Oznaka opcije je obavezna, ima najviše 100 znakova i mora biti jedinstvena unutar ankete (zanemarujući velika/mala slova).
+- `closesAt` mora biti u budućnosti prilikom stvaranja ankete. Za trenutno zatvaranje ankete, `PATCH`-ajte je s
+  datumom u prošlosti.
 
-### Site Settings
+### Postavke stranice
 
-Ankete poštuju konfiguraciju vaše stranice, koju možete promijeniti pod **Customize Widget**:
+Ankete poštuju konfiguraciju vaše stranice, koju možete promijeniti pod Customize Widget:
 
-- Ankete moraju biti omogućene prije nego što se anketa može stvoriti, inače API odgovara s `polls-disabled`.
-- Glasanje se može ograničiti na prijavljene korisnike; u tom slučaju glas poslan samo s `anonUserId` odbija se s `poll-login-required`.
+- Ankete moraju biti omogućene prije stvaranja ankete, inače API odgovara s `polls-disabled`.
+- Glasovanje može biti ograničeno na prijavljene korisnike, u kojem slučaju glas poslan samo s `anonUserId` se odbija
+  s `poll-login-required`.

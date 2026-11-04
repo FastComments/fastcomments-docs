@@ -1,4 +1,3 @@
----
 [related-parameter-start name = 'showBadgesInTopBar'; type = 'boolean'; related-parameter-end]
 
 Standardmäßig zeigt FastComments Benutzer‑Badges nur in deren Kommentaren innerhalb des Kommentar‑Threads an.
@@ -12,4 +11,3 @@ Damit werden die Badges des Benutzers neben seinem Namen im oberen Leistenbereic
 Beachten Sie, dass diese Funktion in der UI zur Widget‑Anpassung aktiviert sein muss, um zu funktionieren. Sie können optional das Flag **showBadgesInTopBar** in Ihrer Code‑Konfiguration auf false setzen, um es selektiv zu deaktivieren, selbst wenn es auf Serverebene aktiviert ist:
 
 [code-example-start config = {showBadgesInTopBar: false}; linesToHighlight = [6]; title = 'Disable Show Badges in Top Bar'; code-example-end]
----

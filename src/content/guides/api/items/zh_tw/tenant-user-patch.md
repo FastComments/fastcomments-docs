@@ -43,5 +43,3 @@ interface TenantUserPatchResponse {
     reason?: string
 }
 [inline-code-end]
-
----

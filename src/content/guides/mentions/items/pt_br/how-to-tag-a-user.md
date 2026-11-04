@@ -1,4 +1,3 @@
----
 Ao escrever, ou editar, um comentário, simplesmente digite o símbolo `@` e o início do nome do usuário.
 
 <div class="text-center">
@@ -12,5 +11,3 @@ Além disso, você pode usar as teclas de seta para cima e para baixo para naveg
 Sabemos que você pode querer usar o símbolo `@` sem mencionar um usuário. FastComments detectará isso e não interferirá na sua experiência de digitação.
 
 Observe que o autocompletar prefere primeiro correspondências sensíveis a maiúsculas/minúsculas, e depois também tentará buscar resultados sem diferenciar maiúsculas de minúsculas.
-
----

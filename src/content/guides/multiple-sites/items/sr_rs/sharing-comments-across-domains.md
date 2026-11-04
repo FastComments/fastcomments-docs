@@ -1,4 +1,3 @@
----
 Коментари сами по себи нису везани за одређени домен.
 
 Они су повезани са вашим налогом и са наведеним <a href="/guide-customizations-and-configuration.html#url-id" target="_blank">urlId</a>.
@@ -8,5 +7,3 @@
 У овом сценарију, коментари постављени на страници A одмах ће се појавити на страници B, и обрнуто. Коментарисање уживо такође ради као што се очекује.
 
 [Можете пронаћи пример у овом посту на блогу](https://blog.fastcomments.com/(2-12-2020)-using-fastcomments-in-multiple-places-on-the-same-page.html).
-
----

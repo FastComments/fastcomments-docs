@@ -1,17 +1,17 @@
-The border around the comment box is made of the text area's own border plus a few thin lines the widget draws around it. To change its color or corner roundness, set these CSS variables instead of styling the `textarea` directly. The variables restyle every part of the border at once, so the corners and colors always line up.
+Obroba okoli polja za komentar je sestavljena iz lastne obrobe besedilnega polja in nekaj tankih črt, ki jih vtičnik nariše okoli njega. Če želite spremeniti njeno barvo ali zaobljenost kotov, nastavite te CSS spremenljivke namesto da oblikujete `textarea` neposredno. Spremenljivke hkrati preoblikujejo celotno obrobo, zato se koti in barve vedno ujemajo.
 
 | Spremenljivka | Kaj spreminja | Privzeto |
 |---|---|---|
 | `--fc-input-border-color` | Barva obrobe | `#bfbfbf` |
 | `--fc-input-border-color-focus` | Barva obrobe med tipkanjem | `#555` |
 | `--fc-input-border-radius` | Zaobljenost zaobljenih kotov | `11px` |
-| `--fc-input-border-start-start-radius` | Zaobljenost kvadratnega zgornjega levega kota (zgornjega desnega v jezikih z desno-levo usmerjenostjo) | `0` |
+| `--fc-input-border-start-start-radius` | Zaobljenost kvadratnega zgornjega levega kota (zgornji desni v jezikih, ki pišejo od desne proti levi) | `0` |
 
-Add the CSS to the **Custom CSS** box on the [Widget Customization page](https://fastcomments.com/auth/my-account/customize-widget), or pass it with the `customCSS` option. You only need to set the variables you want to change.
+CSS dodajte v polje **Custom CSS** na [strani za prilagoditev vtičnika](https://fastcomments.com/auth/my-account/customize-widget), ali ga posredujte z možnostjo `customCSS`. Nastaviti morate le spremenljivke, ki jih želite spremeniti.
 
-You can also use the **Comment box border** helper right under the Custom CSS box, which writes this CSS for you.
+Prav tako lahko uporabite pomočnik **Comment box border** tik pod poljem Custom CSS, ki ta CSS zapiše namesto vas.
 
-## Spremeni barvo obrobe
+## Sprememba barve obrobe
 
 [inline-code-attrs-start title = 'Barva obrobe'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -20,7 +20,7 @@ You can also use the **Comment box border** helper right under the Custom CSS bo
 }
 [inline-code-end]
 
-## Spremeni barvo obrobe med tipkanjem
+## Sprememba barve obrobe med tipkanjem
 
 [inline-code-attrs-start title = 'Barva obrobe med tipkanjem'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -29,11 +29,11 @@ You can also use the **Comment box border** helper right under the Custom CSS bo
 }
 [inline-code-end]
 
-## Zaobli vse štiri kote
+## Zaobljenje vseh štirih kotov
 
-By default the top-left corner is square. Set both radius variables to round all four corners the same:
+Privzeto je zgornji levi kot kvadraten. Nastavite obe spremenljivki za polmer, da zaoblite vse štiri kote enako:
 
-[inline-code-attrs-start title = 'Zaobli vse štiri kote'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Zaobljenje vseh štirih kotov'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 :root {
     --fc-input-border-radius: 12px;
@@ -50,9 +50,9 @@ By default the top-left corner is square. Set both radius variables to round all
 }
 [inline-code-end]
 
-## Uskladite z vašo blagovno znamko
+## Prilagoditev vaši blagovni znamki
 
-[inline-code-attrs-start title = 'Barve blagovne znamke in koti'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Barve in koti blagovne znamke'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 :root {
     --fc-input-border-color: #c7d2fe;
@@ -64,7 +64,7 @@ By default the top-left corner is square. Set both radius variables to round all
 
 ## Različne barve v temnem načinu
 
-When the widget is in dark mode it has the `dark` class, so you can set different values for dark mode:
+Ko je vtičnik v temnem načinu, ima razred `dark`, zato lahko za temni način nastavite različne vrednosti:
 
 [inline-code-attrs-start title = 'Barve obrobe v temnem načinu'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -77,6 +77,6 @@ When the widget is in dark mode it has the `dark` class, so you can set differen
 }
 [inline-code-end]
 
-## Zakaj ne stilizirati besedilnega polja neposredno?
+## Zakaj ne oblikovati besedilnega polja neposredno?
 
-The widget draws part of the comment box border itself, around the text area. If you set `border-color` or `border-radius` only on the `textarea`, those lines keep the default style and the border looks mismatched, for example a square line running through a rounded corner. The variables above change both at once.
+Vtičnik del obrobe polja za komentar nariše sam, okoli besedilnega polja. Če nastavite `border-color` ali `border-radius` le na `textarea`, te črte obdržijo privzeti slog in obroba izgleda neusklajeno, na primer kvadratna črta, ki teče skozi zaobljeni kot. Zgornje spremenljivke spremenijo oboje hkrati.

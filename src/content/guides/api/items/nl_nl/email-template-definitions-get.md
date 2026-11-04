@@ -38,5 +38,3 @@ interface GetEmailTemplateDefinitionsResponse {
     definitions?: EmailTemplateDefinition[]
 }
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 Habilita SSO en tu `.env`:
 
 ```env
@@ -55,4 +54,3 @@ Cuando se implementa la interfaz, esta tiene prioridad sobre el mapeo basado en 
 ### SSO en Blade
 
 Cuando SSO está habilitado, el `<x-fastcomments />` component inyecta automáticamente los datos de SSO para el usuario autenticado.
----

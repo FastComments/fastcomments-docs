@@ -28,5 +28,3 @@ const pageData: CreateAPIPageData = {
 
 const response: AddPageAPIResponse = await addPage(tenantId, pageData);
 [inline-code-end]
-
----

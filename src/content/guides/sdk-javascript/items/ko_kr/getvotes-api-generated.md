@@ -22,5 +22,3 @@ const urlId: string = "article-67890";
   const firstVote: PublicVote | undefined = votesResponse.votes?.[0];
 })();
 [inline-code-end]
-
----

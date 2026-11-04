@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Ime | Tip | Lokacija | Obvezno | Opis |
@@ -61,5 +60,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

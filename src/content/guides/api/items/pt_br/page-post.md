@@ -46,5 +46,3 @@ interface PagePostResponse {
     page?: Page
 }
 [inline-code-end]
-
----

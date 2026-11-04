@@ -30,5 +30,3 @@ try {
     print('Exception when calling PublicApi->pinComment: $e\n');
 }
 [inline-code-end]
-
----

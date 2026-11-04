@@ -17,5 +17,3 @@ Pokreće se kada je komentar zaključan.
 ### Pair
 
 Pogledajte [Trigger: Comment Unlocked](#trigger-comment-unlock) za odgovarajući okidač.
-
----

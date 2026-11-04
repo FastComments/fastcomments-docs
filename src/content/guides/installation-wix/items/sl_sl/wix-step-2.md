@@ -11,5 +11,3 @@ To nam bo za začetek dalo dolgočasen okvir:
     <div class="title">Začetni blok</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-1-sad.png" alt="Začetni blok" />
 </div>
-
----

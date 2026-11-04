@@ -1,22 +1,22 @@
-Past commenters on the page who are NOT currently online. Sorted by displayName.  
-Use this after exhausting /users/online to render a "Members" section.  
-Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName}  
-index from afterName forward via $gt, no $skip cost.
+Комментаторы страницы, которые сейчас НЕ в сети. Отсортированы по displayName.
+Используйте этот метод после исчерпания /users/online для отображения раздела «Участники».
+Курсорная пагинация по commenterName: сервер проходит по частичному индексу {tenantId, urlId, commenterName}
+от afterName вперёд через $gt, без затрат на $skip.
 
-## Parameters
+## Параметры
 
-| Name | Type | Location | Required | Description |
+| Имя | Тип | Расположение | Обязательный | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| urlId | string | query | Yes | Идентификатор URL страницы (очищенный на сервере). |
-| afterName | string | query | No | Курсор: передайте nextAfterName из предыдущего ответа. |
-| afterUserId | string | query | No | Разрешитель конфликтов курсора: передайте nextAfterUserId из предыдущего ответа. Требуется, когда установлен afterName, чтобы записи с одинаковыми именами не удалялись. |
+| tenantId | string | path | Да |  |
+| urlId | string | query | Да | Идентификатор URL страницы (очищается на сервере). |
+| afterName | string | query | Нет | Курсор: передайте nextAfterName из предыдущего ответа. |
+| afterUserId | string | query | Нет | Дополнительный ключ курсора: передайте nextAfterUserId из предыдущего ответа. Обязателен, когда задан afterName, чтобы записи с одинаковыми именами не терялись. |
 
-## Response
+## Ответ
 
-Returns: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/page_users_offline_response.py)
+Возвращает: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-python/blob/main/client/models/page_users_offline_response.py)
 
-## Example
+## Пример
 
 [inline-code-attrs-start title = 'Пример get_offline_users'; type = 'python'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -26,21 +26,21 @@ from client.models.page_users_offline_response import PageUsersOfflineResponse
 from client.rest import ApiException
 from pprint import pprint
 
-# Определение host является необязательным и по умолчанию https://fastcomments.com
-# См. configuration.py для списка всех поддерживаемых параметров конфигурации.
+# Определение хоста необязательно, по умолчанию используется https://fastcomments.com
+# Список всех поддерживаемых параметров конфигурации см. в configuration.py.
 configuration = client.Configuration(
     host = "https://fastcomments.com"
 )
 
 
-# Enter a context with an instance of the API client
+# Войдите в контекст с экземпляром API-клиента
 with client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
+    # Создайте экземпляр класса API
     api_instance = client.PublicApi(api_client)
     tenant_id = 'tenant_id_example' # str | 
-    url_id = 'url_id_example' # str | Идентификатор URL страницы (очищенный на сервере).
-    after_name = 'after_name_example' # str | Курсор: передайте nextAfterName из предыдущего ответа. (опционально)
-    after_user_id = 'after_user_id_example' # str | Разрешитель конфликтов курсора: передайте nextAfterUserId из предыдущего ответа. Требуется, когда установлен afterName, чтобы записи с одинаковыми именами не удалялись. (опционально)
+    url_id = 'url_id_example' # str | Идентификатор URL страницы (очищается на сервере).
+    after_name = 'after_name_example' # str | Курсор: передайте nextAfterName из предыдущего ответа. (optional)
+    after_user_id = 'after_user_id_example' # str | Дополнительный ключ курсора: передайте nextAfterUserId из предыдущего ответа. Обязателен, когда задан afterName, чтобы записи с одинаковыми именами не терялись. (optional)
 
     try:
         api_response = api_instance.get_offline_users(tenant_id, url_id, GetOfflineUsersOptions(after_name=after_name, after_user_id=after_user_id))

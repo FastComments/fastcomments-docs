@@ -11,5 +11,3 @@
     <div class="title">起始區塊</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-1-sad.png" alt="起始區塊" />
 </div>
-
----

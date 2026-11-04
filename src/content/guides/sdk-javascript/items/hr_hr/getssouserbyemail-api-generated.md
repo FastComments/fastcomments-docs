@@ -21,5 +21,3 @@ async function fetchSSOUser() {
   const user: APISSOUser | undefined = result?.user;
 }
 [inline-code-end]
-
----

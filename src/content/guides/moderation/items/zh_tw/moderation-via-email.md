@@ -22,5 +22,3 @@ FastComments 支援每日、每週或每月的電子郵件摘要，供版主與�
 #### 通知類型
 
 FastComments 會向版主與管理員發送多種類型的電子郵件。若需要，您可以選擇取消 `Comment Reply` 通知，同時仍可透過上述 `Edit Notifications` 頁面中的相應選項接收 `New Comment` 通知。
-
----

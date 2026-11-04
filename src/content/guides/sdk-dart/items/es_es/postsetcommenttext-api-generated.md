@@ -31,5 +31,3 @@ try {
     print('Exception when calling ModerationApi->postSetCommentText: $e\n');
 }
 [inline-code-end]
-
----

@@ -1,6 +1,6 @@
-The feed system is a separate SDK (`FastCommentsFeedSDK`) with its own view.
+信息流系统是一个独立的 SDK(`FastCommentsFeedSDK`),拥有自己的视图。
 
-### 加载与显示 Feed
+### 加载和显示信息流
 
 ```swift
 struct FeedPage: View {
@@ -24,10 +24,10 @@ struct FeedPage: View {
                 commentsPost = post
             }
             .onSharePost { post in
-                // 显示分享表单
+                // 显示分享面板
             }
             .onUserClick { context, userInfo, source in
-                // 跳转到用户资料
+                // 跳转到用户资料页
             }
             .onMediaClick { mediaItem, index in
                 // 显示全屏图片查看器
@@ -39,17 +39,17 @@ struct FeedPage: View {
 }
 ```
 
-Feed 视图会自动包含下拉刷新和无限滚动。  
-在屏幕生命周期重新进入时使用 `loadIfNeeded()`，以便已有或恢复的 Feed 不会重置回第 1 页。
+信息流视图自动包含下拉刷新和无限滚动。
+在屏幕生命周期重新进入时使用 `loadIfNeeded()`,这样已存在或已恢复的信息流不会重置回第 1 页。
 
 ### 创建帖子
 
-使用 `FeedPostCreateView` 来展示发帖表单：
+使用 `FeedPostCreateView` 来展示帖子创建表单:
 
 ```swift
 @State private var showCreatePost = false
 
-// 在你的视图主体中:
+// 在你的视图 body 中:
 .sheet(isPresented: $showCreatePost) {
     FeedPostCreateView(
         sdk: sdk,
@@ -64,21 +64,21 @@ Feed 视图会自动包含下拉刷新和无限滚动。
 }
 ```
 
-### 对帖子作出反应
+### 对帖子做出反应
 
-SDK 使用乐观更新来处理反应：
+SDK 通过乐观更新来处理反应:
 
 ```swift
 try await sdk.reactPost(postId: post.id, reactionType: "l")
 
-// Check reaction state
+// 检查反应状态
 let hasLiked = sdk.hasUserReacted(postId: post.id, reactType: "l")
 let likeCount = sdk.getLikeCount(postId: post.id)
 ```
 
-### 打开帖子的评论
+### 在帖子上打开评论
 
-使用 `CommentsSheet` 来显示某个 Feed 帖子的评论。它会内部使用 Feed SDK 的配置创建一个 `FastCommentsSDK` 实例：
+使用 `CommentsSheet` 来显示信息流帖子的评论。它会在内部使用信息流 SDK 的配置创建一个 `FastCommentsSDK` 实例:
 
 ```swift
 .sheet(item: $commentsPost) { post in
@@ -88,15 +88,15 @@ let likeCount = sdk.getLikeCount(postId: post.id)
 }
 ```
 
-注意：对于 `.sheet(item:)`，`FeedPost` 必须遵循 `Identifiable`。添加如下扩展：
+注意:`FeedPost` 必须遵循 `Identifiable` 才能使用 `.sheet(item:)`。添加以下扩展:
 
 ```swift
 extension FeedPost: @retroactive Identifiable {}
 ```
 
-### 基于标签的 Feed 过滤
+### 基于标签的信息流过滤
 
-实现 `TagSupplier` 协议以按标签过滤 Feed 帖子：
+实现 `TagSupplier` 协议以按标签过滤信息流帖子:
 
 ```swift
 struct TeamTagSupplier: TagSupplier {
@@ -109,20 +109,20 @@ struct TeamTagSupplier: TagSupplier {
 sdk.tagSupplier = TeamTagSupplier()
 ```
 
-若要获得不带过滤的全局 Feed，请返回 `nil`。
+返回 `nil` 表示不进行过滤的全局信息流。
 
-### 保存与恢复 Feed 状态
+### 保存和恢复信息流状态
 
-在视图生命周期事件中保留分页状态：
+在视图生命周期事件中保留分页状态:
 
 ```swift
 let state = sdk.savePaginationState()
-// Later...
+// 稍后...
 sdk.restorePaginationState(state)
 try? await sdk.loadIfNeeded()
 ```
 
-如果你的屏幕短暂消失，Feed 视图会自动暂停实时更新，并在重新出现时恢复，而不会清除已加载的帖子。仅在真正不再使用该 SDK 实例时才调用 `sdk.cleanup()`。
+如果你的屏幕暂时消失,信息流视图会自动暂停实时更新,并在重新出现时恢复更新,而不会清除已加载的帖子。只有当你真正不再使用该 SDK 实例时才调用 `sdk.cleanup()`。
 
 ### 删除帖子
 
@@ -131,6 +131,3 @@ sdk.onPostDeleted = { postId in
     print("Post \(postId) was deleted")
 }
 ```
-
----
----

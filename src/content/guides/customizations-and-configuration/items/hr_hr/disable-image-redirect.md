@@ -7,5 +7,3 @@ otvoriti novu karticu kako bi prikazao sliku u punoj veličini. Postavljanje ove
 
 Ako ne planirate sami uhvatiti klik na sliku (vidi [onImageClicked](#callbacks)), preporučujemo da se ovo kombinira s nekim stilovima
 kako bi se uklonio dojam da se slika može kliknuti.
-
----

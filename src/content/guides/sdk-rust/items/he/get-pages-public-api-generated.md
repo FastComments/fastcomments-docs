@@ -1,6 +1,6 @@
-List pages for a tenant. Used by the FChat desktop client to populate its room list.
-Requires `enableFChat` to be true on the resolved custom config for each page.
-Pages that require SSO are filtered against the requesting user's group access.
+רשימת עמודים עבור טננט. משמש את לקוח שולחן העבודה של FChat לאכלוס רשימת החדרים שלו.
+דורש ש-`enableFChat` יהיה true בקונפיגורציה המותאמת שנפתרה עבור כל עמוד.
+עמודים הדורשים SSO מסוננים מול הרשאות הקבוצה של המשתמש המבקש.
 
 ## פרמטרים
 
@@ -19,7 +19,7 @@ Pages that require SSO are filtered against the requesting user's group access.
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'get_pages_public דוגמה'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל-get_pages_public'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 async fn example(configuration: &configuration::Configuration) -> Result<(), Error> {
     let params = GetPagesPublicParams {

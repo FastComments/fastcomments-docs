@@ -24,5 +24,3 @@ Vraća: [`AddDomainConfigResponse`](https://github.com/FastComments/fastcomments
   console.log(response);
 })();
 [inline-code-end]
-
----

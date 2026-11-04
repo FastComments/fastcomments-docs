@@ -1,8 +1,8 @@
-All API methods in this SDK return `pplx::task<std::shared_ptr<ResponseType>>` from the C++ REST SDK. This gives you flexibility in how you handle API responses.
+Всички API методи в този SDK връщат `pplx::task<std::shared_ptr<ResponseType>>` от C++ REST SDK. Това ви дава гъвкавост при обработката на API отговорите.
 
 ### Синхронни извиквания с `.get()`
 
-Use `.get()` to block the calling thread until the request completes and retrieve the result synchronously:
+Използвайте `.get()`, за да блокирате извикващата нишка до завършването на заявката и да получите резултата синхронно:
 
 ```cpp
 auto config = std::make_shared<org::openapitools::client::api::ApiConfiguration>();
@@ -13,15 +13,15 @@ config->setApiKey(utility::conversions::to_string_t("api_key"),
 auto apiClient = std::make_shared<org::openapitools::client::api::ApiClient>(config);
 org::openapitools::client::api::DefaultApi api(apiClient);
 
-// Required parameters are positional; optional ones go in the options struct
+// Задължителните параметри са позиционни; незадължителните се подават в options структурата
 org::openapitools::client::api::GetCommentsOptions options;
 options.urlId = utility::conversions::to_string_t("your-url-id");
 
-// Call .get() to block and get the result synchronously
+// Извикайте .get(), за да блокирате и получите резултата синхронно
 auto response = api.getComments(
     utility::conversions::to_string_t("your-tenant-id"),
     options
-).get();  // Blocks until the HTTP request completes
+).get();  // Блокира до завършването на HTTP заявката
 
 if (response && response->comments) {
     std::cout << "Found " << response->comments->size() << " comments" << std::endl;
@@ -30,7 +30,7 @@ if (response && response->comments) {
 
 ### Асинхронни извиквания с `.then()`
 
-Use `.then()` for non-blocking asynchronous execution with callbacks:
+Използвайте `.then()` за неблокиращо асинхронно изпълнение с callbacks:
 
 ```cpp
 auto config = std::make_shared<org::openapitools::client::api::ApiConfiguration>();
@@ -41,40 +41,40 @@ config->setApiKey(utility::conversions::to_string_t("api_key"),
 auto apiClient = std::make_shared<org::openapitools::client::api::ApiClient>(config);
 org::openapitools::client::api::DefaultApi api(apiClient);
 
-// Required parameters are positional; optional ones go in the options struct
+// Задължителните параметри са позиционни; незадължителните се подават в options структурата
 org::openapitools::client::api::GetCommentsOptions options;
 options.urlId = utility::conversions::to_string_t("your-url-id");
 
-// Use .then() for asynchronous callback-based execution
+// Използвайте .then() за асинхронно изпълнение базирано на callbacks
 api.getComments(
     utility::conversions::to_string_t("your-tenant-id"),
     options
 ).then([](std::shared_ptr<GetComments_200_response> response) {
-    // This runs asynchronously when the request completes
+    // Това се изпълнява асинхронно, когато заявката завърши
     if (response && response->comments) {
         std::cout << "Found " << response->comments->size() << " comments" << std::endl;
     }
 });
 
-// Execution continues immediately without blocking
+// Изпълнението продължава веднага без блокиране
 std::cout << "Request sent, continuing..." << std::endl;
 ```
 
-### Избор между синхронно и асинхронно
+### Избор между синхронно и асинхронно изпълнение
 
-The choice depends on your runtime environment and application architecture:
+Изборът зависи от вашата среда за изпълнение и архитектурата на приложението:
 
 **`.get()` (Синхронно блокиране)**
-- Blocks the calling thread until the HTTP request completes → Блокира извикващата нишка, докато HTTP заявката завърши
-- Simpler code flow, easier to reason about → По‑опростен поток на кода, по‑лесен за разбиране
-- Suitable for dedicated worker threads, batch processing, or command-line tools → Подходящ за специализирани работни нишки, пакетна обработка или инструменти за команден ред
-- **Not suitable** for event loops, GUI threads, or single-threaded servers → **Не е подходящ** за събитийни цикли, GUI нишки или еднонишкови сървъри
+- Блокира извикващата нишка до завършването на HTTP заявката
+- По-прост кодов поток, по-лесен за разбиране
+- Подходящо за отделни worker нишки, пакетна обработка или инструменти за командния ред
+- **Не е подходящо** за event loops, GUI нишки или еднонишкови сървъри
 
 **`.then()` (Асинхронно неблокиращо)**
-- Returns immediately, callback executes when request completes → Връща се незабавно, обратното извикване се изпълнява, когато заявката завърши
-- Does not block the calling thread → Не блокира извикващата нишка
-- Required for event-driven architectures, GUI applications, or single-threaded event loops → Необходимо за събитийно‑ориентирани архитектури, GUI приложения или еднонишкови събитийни цикли
-- Allows chaining multiple operations → Позволява свързване на множество операции
-- More complex control flow → По‑сложен контролен поток
+- Връща веднага, callback се изпълнява при завършване на заявката
+- Не блокира извикващата нишка
+- Задължително за event-driven архитектури, GUI приложения или еднонишкови event loops
+- Позволява верижно свързване на няколко операции
+- По-сложен контролен поток
 
-The SDK's test suite uses `.get()` exclusively, but this is appropriate for the test environment where blocking is acceptable.
+Тестовият набор на SDK използва изключително `.get()`, но това е подходящо за тестовата среда, където блокирането е приемливо.

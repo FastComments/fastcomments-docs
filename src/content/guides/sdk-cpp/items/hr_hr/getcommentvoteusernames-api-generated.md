@@ -26,5 +26,3 @@ auto task = api->getCommentVoteUserNames(
     }catch(const std::exception&){ }
 });
 [inline-code-end]
-
----

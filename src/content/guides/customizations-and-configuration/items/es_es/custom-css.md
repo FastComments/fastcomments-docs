@@ -55,5 +55,3 @@ En FastComments, sabemos que nuestros clientes personalizan el widget de comenta
 Dado que esto es una parte importante de nuestro producto, contamos con una canalización de compilación que nos permite revisar los cambios al widget de comentarios, por cliente, en cada lanzamiento.
 
 Si encontramos problemas menores, actualizaremos tu cuenta para garantizar que nuestro lanzamiento se realice sin problemas. Si vemos cambios importantes que rompan la funcionalidad, esto nos permite detener el lanzamiento.
-
----

@@ -1,21 +1,21 @@
-List pages for a tenant. Used by the FChat desktop client to populate its room list.  
-Requires `enableFChat` to be true on the resolved custom config for each page.  
-Pages that require SSO are filtered against the requesting user's group access.
+Listet Seiten für einen Tenant auf. Wird vom FChat-Desktop-Client verwendet, um seine Raumliste zu füllen.
+Erfordert, dass `enableFChat` in der aufgelösten benutzerdefinierten Konfiguration für jede Seite auf true gesetzt ist.
+Seiten, die SSO erfordern, werden gegen die Gruppenzugriffsrechte des anfragenden Benutzers gefiltert.
 
 ## Parameter
 
-| Name | Type | Location | Required | Description |
+| Name | Typ | Ort | Erforderlich | Beschreibung |
 |------|------|----------|----------|-------------|
-| tenantId | string | path | Yes |  |
-| cursor | string | query | No | Undurchsichtiger Pagination‑Cursor, zurückgegeben als `nextCursor` von einer vorherigen Anfrage. Gebunden an denselben `sortBy`. |
-| limit | integer | query | No | 1..200, Standard 50 |
-| q | string | query | No | Optionaler, case‑insensitiver Titel‑Präfix‑Filter. |
-| sortBy | string | query | No | Sortierreihenfolge. `updatedAt` (Standard, neueste zuerst), `commentCount` (die meisten Kommentare zuerst) oder `title` (alphabetisch). |
-| hasComments | boolean | query | No | Wenn true, werden nur Seiten mit mindestens einem Kommentar zurückgegeben. |
+| tenantId | string | path | Ja |  |
+| cursor | string | query | Nein | Opaker Paginierungs-Cursor, der als `nextCursor` von einer vorherigen Anfrage zurückgegeben wurde. An denselben `sortBy` gebunden. |
+| limit | integer | query | Nein | 1..200, Standard 50 |
+| q | string | query | Nein | Optionaler Filter für Titel-Präfix, Groß-/Kleinschreibung wird ignoriert. |
+| sortBy | string | query | Nein | Sortierreihenfolge. `updatedAt` (Standard, neueste zuerst), `commentCount` (meiste Kommentare zuerst) oder `title` (alphabetisch). |
+| hasComments | boolean | query | Nein | Wenn true, nur Seiten mit mindestens einem Kommentar zurückgeben. |
 
 ## Antwort
 
-Returns: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetPublicPagesResponse.php)
+Gibt zurück: [`GetPublicPagesResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/GetPublicPagesResponse.php)
 
 ## Beispiel
 
@@ -27,18 +27,18 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // Wenn Sie einen benutzerdefinierten HTTP‑Client verwenden möchten, übergeben Sie Ihren Client, der `GuzzleHttp\ClientInterface` implementiert.
-    // Dies ist optional, `GuzzleHttp\Client` wird als Standard verwendet.
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
 
 $tenant_id = 'tenant_id_example'; // string
 $options = [
-    'cursor' => 'cursor_example', // string | Undurchsichtiger Pagination‑Cursor, zurückgegeben als `nextCursor` von einer vorherigen Anfrage. Gebunden an denselben `sortBy`.
+    'cursor' => 'cursor_example', // string | Opaker Paginierungs-Cursor, der als `nextCursor` von einer vorherigen Anfrage zurückgegeben wurde. An denselben `sortBy` gebunden.
     'limit' => 56, // int | 1..200, Standard 50
-    'q' => 'q_example', // string | Optionaler, case‑insensitiver Titel‑Präfix‑Filter.
-    'sort_by' => new \FastComments\Client\Model\\FastComments\Client\Model\PagesSortBy(), // \FastComments\Client\Model\PagesSortBy | Sortierreihenfolge. `updatedAt` (Standard, neueste zuerst), `commentCount` (die meisten Kommentare zuerst) oder `title` (alphabetisch).
-    'has_comments' => True, // bool | Wenn true, werden nur Seiten mit mindestens einem Kommentar zurückgegeben.
+    'q' => 'q_example', // string | Optionaler Filter für Titel-Präfix, Groß-/Kleinschreibung wird ignoriert.
+    'sort_by' => new \FastComments\Client\Model\\FastComments\Client\Model\PagesSortBy(), // \FastComments\Client\Model\PagesSortBy | Sortierreihenfolge. `updatedAt` (Standard, neueste zuerst), `commentCount` (meiste Kommentare zuerst) oder `title` (alphabetisch).
+    'has_comments' => True, // bool | Wenn true, nur Seiten mit mindestens einem Kommentar zurückgeben.
 ];
 
 

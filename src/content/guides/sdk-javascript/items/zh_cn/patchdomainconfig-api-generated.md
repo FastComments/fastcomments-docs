@@ -28,5 +28,3 @@ async function updateDomainConfig() {
 
 updateDomainConfig();
 [inline-code-end]
-
----

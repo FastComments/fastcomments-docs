@@ -70,6 +70,3 @@ Hier ein Beispiel mit allen verwendeten Callbacks:
     }];
 </script>
 [inline-code-end]
-
-
----

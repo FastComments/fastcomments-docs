@@ -21,15 +21,15 @@ interface VoteDeleteQueryParams {
 [inline-code-start]
 interface VoteDeleteResponse {
     status: 'success' | 'failed'
-    /** 失敗時包含。 **/
+    /** 失敗時包含此欄位。 **/
     code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-id'
-    /** 失敗時包含。 **/
+    /** 失敗時包含此欄位。 **/
     reason?: string
 }
 [inline-code-end]
 
-Notes:
+注意事項：
 
-- This API obeys tenant-level settings. For example, if you disable voting for a given page, and you attempt to create a vote via the API, it will fail with error code `voting-disabled`.
-- This API is live by default.
-- This API will update the `votes` of the corresponding `Comment`.
+- 此 API 遵循租戶層級的設定。例如，如果您停用了某個頁面的投票功能，並嘗試透過 API 建立投票，則會失敗並回傳錯誤代碼 `voting-disabled`。
+- 此 API 預設為即時生效。
+- 此 API 會更新對應 `Comment` 的 `votes`。

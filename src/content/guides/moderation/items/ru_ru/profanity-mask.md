@@ -1,10 +1,10 @@
-By default, FastComments comes with a word blacklist of ~450 phrases and words.
+По умолчанию FastComments поставляется с чёрным списком слов, содержащим около 450 фраз и слов.
 
-If text in the word blacklist is found in a new comment that text will be replaced with asterisks (***).
+Если текст из чёрного списка найден в новом комментарии, он будет заменён звёздочками (***).
 
-The page to customize the blacklist can be found via Moderate Comments -> Edit Moderation Settings -> Edit Word Blacklist, or
-by going directly <a href="https://fastcomments.com/auth/my-account/moderate-comments/blacklist" target="_blank">сюда</a>.
+Страницу для настройки чёрного списка можно найти через Moderate Comments -> Edit Moderation Settings -> Edit Word Blacklist, или
+перейдя напрямую <a href="https://fastcomments.com/auth/my-account/moderate-comments/blacklist" target="_blank">сюда</a>.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/blacklist?blurList=true'; linkUrl='/auth/my-account/moderate-comments/blacklist'; selector = '.account-block'; alt='Редактор черного списка слов, где можно добавить или удалить стандартные заблокированные слова и фразы'; title='Черный список слов комментариев' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/blacklist?blurList=true'; linkUrl='/auth/my-account/moderate-comments/blacklist'; selector = '.account-block'; alt='Редактор чёрного списка слов, где можно добавлять или удалять заблокированные слова и фразы по умолчанию'; title='Чёрный список слов в комментариях' app-screenshot-end]
 
-Additionally, you can disable Profanity Detection on the <a href="https://fastcomments.com/auth/my-account/moderate-comments/settings" target="_blank">Редактировать настройки модерации</a> page.
+Кроме того, вы можете отключить определение нецензурной лексики на странице <a href="https://fastcomments.com/auth/my-account/moderate-comments/settings" target="_blank">Edit Moderation Settings</a>.

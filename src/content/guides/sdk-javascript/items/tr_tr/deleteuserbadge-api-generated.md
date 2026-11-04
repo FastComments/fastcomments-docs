@@ -20,5 +20,3 @@ Döndürür: [`APIEmptySuccessResponse`](https://github.com/FastComments/fastcom
   console.log(result);
 })();
 [inline-code-end]
-
----

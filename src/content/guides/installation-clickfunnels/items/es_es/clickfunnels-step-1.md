@@ -20,5 +20,3 @@ Los cursos constan de diferentes plantillas. Queremos mostrar comentarios en las
 </div>
 
 ¡Eso es todo! Ahora estás listo para el paso dos.
-
----

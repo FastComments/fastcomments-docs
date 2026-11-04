@@ -26,5 +26,3 @@ try {
     print('Exception when calling PublicApi->getV2PageReacts: $e\n');
 }
 [inline-code-end]
-
----

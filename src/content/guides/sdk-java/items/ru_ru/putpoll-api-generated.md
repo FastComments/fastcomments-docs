@@ -1,18 +1,17 @@
-Attach a poll to a comment, or set the full state of the poll it already has.
+Прикрепите опрос к комментарию или задайте полное состояние опроса, который уже есть.
 
-Options are matched by id: an option sent with the id of an existing option keeps its votes (and takes the
-new label and position), an option sent without an id is added, and existing options left out of the list
-are removed along with the votes cast on them.
+Опции сопоставляются по id: опция, отправленная с id существующей опции, сохраняет свои голоса (и получает новый
+текст и позицию), опция без id добавляется, а существующие опции, отсутствующие в списке, удаляются вместе с отданными за них голосами.
 
-Keeping no existing option ids on a poll that has votes deletes all of them, so that needs replaceVotes=true.
+Если не сохранить ни один существующий id опции в опросе, за который уже голосовали, все они будут удалены, поэтому требуется replaceVotes=true.
 
 ## Параметры
 
-| Имя | Тип | Расположение | Обязательно | Описание |
+| Имя | Тип | Расположение | Обязательный | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| commentId | string | path | Yes |  |
-| replaceVotes | boolean | query | No |  |
+| tenantId | string | query | Да |  |
+| commentId | string | path | Да |  |
+| replaceVotes | boolean | query | Нет |  |
 
 ## Ответ
 
@@ -22,7 +21,7 @@ Keeping no existing option ids on a poll that has votes deletes all of them, so 
 
 [inline-code-attrs-start title = 'Пример putPoll'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Импорт классов:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -35,17 +34,17 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Настройка авторизации API-ключа: api_key
+    // Configure API key authorization: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Раскомментируйте следующую строку, чтобы задать префикс для API-ключа, например "Token" (по умолчанию null)
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
-    String tenantId = "tenantId_example"; // String |
-    String commentId = "commentId_example"; // String |
-    CommentPollPutInput commentPollPutInput = new CommentPollPutInput(); // CommentPollPutInput |
-    Boolean replaceVotes = true; // Boolean |
+    String tenantId = "tenantId_example"; // String | 
+    String commentId = "commentId_example"; // String | 
+    CommentPollPutInput commentPollPutInput = new CommentPollPutInput(); // CommentPollPutInput | 
+    Boolean replaceVotes = true; // Boolean | 
     try {
       SavePollResponse result = apiInstance.putPoll(tenantId, commentId, commentPollPutInput)
             .replaceVotes(replaceVotes)

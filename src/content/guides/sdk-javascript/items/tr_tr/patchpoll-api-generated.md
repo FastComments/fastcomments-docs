@@ -1,19 +1,19 @@
-Edit a poll in place, keeping its tallies: change the question, relabel an option, close or reopen it,
-or change who may see the voters. Options are addressed by id - to add, remove or reorder them, PUT the full list.
+Anketin sayımlarını koruyarak yerinde düzenleyin: soruyu değiştirin, bir seçeneği yeniden adlandırın, kapatın veya yeniden açın,
+ya da seçmenleri kimlerin görebileceğini değiştirin. Seçenekler id ile adreslenir - eklemek, kaldırmak veya yeniden sıralamak için tam listeyi PUT ile gönderin.
 
-## Parameters
+## Parametreler
 
-| Name | Type | Required | Description |
+| Ad | Tür | Zorunlu | Açıklama |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| commentId | string | Yes |  |
-| commentPollPatch | CommentPollPatch | Yes |  |
+| tenantId | string | Evet |  |
+| commentId | string | Evet |  |
+| commentPollPatch | CommentPollPatch | Evet |  |
 
-## Response
+## Yanıt
 
 Döndürür: [`SavePollResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/SavePollResponse.ts)
 
-## Example
+## Örnek
 
 [inline-code-attrs-start title = 'patchPoll Örneği'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

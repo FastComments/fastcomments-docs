@@ -1,25 +1,23 @@
-Attach a poll to a comment, or set the full state of the poll it already has.
+Einen Umfrage an einen Kommentar anhängen oder den vollständigen Zustand der bereits vorhandenen Umfrage festlegen.
 
-Options are matched by id: an option sent with the id of an existing option keeps its votes (and takes the
-new label and position), an option sent without an id is added, and existing options left out of the list
-are removed along with the votes cast on them.
+Optionen werden anhand der id abgeglichen: Eine Option, die mit der id einer bestehenden Option gesendet wird, behält ihre Stimmen (und übernimmt das neue Label und die Position), eine Option ohne id wird hinzugefügt, und bestehende Optionen, die in der Liste fehlen, werden zusammen mit den auf sie abgegebenen Stimmen entfernt.
 
-Keeping no existing option ids on a poll that has votes deletes all of them, so that needs replaceVotes=true.
+Wenn keine bestehenden Option-Ids auf einer Umfrage beibehalten werden, die bereits Stimmen hat, werden alle gelöscht – dafür ist replaceVotes=true erforderlich.
 
-## Parameters
+## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
-|------|------|--------------|--------------|
+|------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | commentId | string | Ja |  |
 | commentPollPutInput | CommentPollPutInput | Ja |  |
 | replaceVotes | boolean | Nein |  |
 
-## Response
+## Antwort
 
-Returns: [`SavePollResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/SavePollResponse.ts)
+Gibt zurück: [`SavePollResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/SavePollResponse.ts)
 
-## Example
+## Beispiel
 
 [inline-code-attrs-start title = 'putPoll Beispiel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

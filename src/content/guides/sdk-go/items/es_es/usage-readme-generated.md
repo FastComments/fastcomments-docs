@@ -1,4 +1,3 @@
----
 ### SSO simple
 
 ```go
@@ -96,4 +95,3 @@ func main() {
     fmt.Printf("Comments: %+v\n", response)
 }
 ```
----

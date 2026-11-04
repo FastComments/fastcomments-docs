@@ -1,20 +1,20 @@
 [api-resource-header-start name = 'SSOUser'; route = 'DELETE /api/v1/sso-users/:id'; creditsCost = 1; api-resource-header-end]
 
-This route provides the removal of a single SSO user by their id.
+Ta pot omogoča odstranitev posameznega uporabnika SSO po njegovem id.
 
-Note that loading the comment widget again with a payload for this user will simply recreate the user seamlessly.
+Upoštevajte, da bo ponovno nalaganje pripomočka za komentarje s podatki za tega uporabnika preprosto brezhibno ponovno ustvarilo uporabnika.
 
-Deleting the user's comments is possible via the `deleteComments` query parameter. Note that if this is true:
+Brisanje komentarjev uporabnika je mogoče prek parametra poizvedbe `deleteComments`. Upoštevajte, da je ta `true`:
 
-1. All the user's comments will be deleted live.
-2. All __child__ (now orphan) comments will be deleted or anonymized based on each comment's associated page configuration. For example if thread deletion mode is "anonymize", then replies will remain, and the user's comments will be anonymized. This only applies when `commentDeleteMode` is `Remove` (the default value).
-3. The `creditsCost` becomes `2`.
+1. Vsi komentarji uporabnika bodo izbrisani v živo.
+2. Vsi __podrejeni__ (zdaj osiroteli) komentarji bodo izbrisani ali anonimizirani glede na konfiguracijo strani, povezano s posameznim komentarjem. Na primer, če je način brisanja niti "anonymize", bodo odgovori ostali, komentarji uporabnika pa bodo anonimizirani. To velja samo, ko je `commentDeleteMode` nastavljen na `Remove` (privzeta vrednost).
+3. `creditsCost` postane `2`.
 
-### Anonymized Comments
+### Anonimizirani komentarji
 
-You can retain the user's comments but simply anonymize them by setting `commentDeleteMode=1`.
+Komentarje uporabnika lahko ohranite, vendar jih preprosto anonimizirate, tako da nastavite `commentDeleteMode=1`.
 
-If the user's comments are anonymized then the following values are set to null:
+Če so komentarji uporabnika anonimizirani, so naslednje vrednosti nastavljene na null:
 
     - commenterName
     - commenterEmail
@@ -24,11 +24,11 @@ If the user's comments are anonymized then the following values are set to null:
     - mentions
     - badges
 
-`isDeleted` and `isDeletedUser` is set to `true`.
+`isDeleted` in `isDeletedUser` sta nastavljena na `true`.
 
-When rendering, the comment widget will use `DELETED_USER_PLACEHOLDER` (privzeto: "[deleted]") for the user's name and `DELETED_CONTENT_PLACEHOLDER` for the comment. These can be customized via the Widget Customization UI.
+Pri prikazu bo pripomoček za komentarje uporabil `DELETED_USER_PLACEHOLDER` (privzeto: "[deleted]") za ime uporabnika in `DELETED_CONTENT_PLACEHOLDER` za komentar. Te vrednosti je mogoče prilagoditi prek uporabniškega vmesnika za prilagoditve pripomočka.
 
-### Examples
+### Primeri
 
 [inline-code-attrs-start title = 'Primer cURL zahteve za odstranitev SSOUser'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -39,16 +39,16 @@ curl --request DELETE \
 [inline-code-attrs-start title = 'Struktura zahteve za odstranitev SSOUser'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 enum SSOUserCommentDeleteMode {
-    Remove = 0, // privzeto
+    Remove = 0, // default
     Anonymize = 1
 }
 
 interface SSOUsersDeleteQueryParams {
     tenantId: string
     API_KEY: string
-    /** Nastavite to na 'true', če želite tudi izbrisati komentarje uporabnika. To bo podvojilo strošek kreditov. **/
+    /** You can set this to true to also delete the user's comments. This will double the credit cost. **/
     deleteComments?: 'true' | 'false'
-    /** Nastavite to po želji, da določite, kako ravnati s komentarji uporabnika. **/
+    /** You can set this as desired to determine how to handle the user's comments. **/
     commentDeleteMode?: SSOUserCommentDeleteMode
 }
 [inline-code-end]
@@ -57,10 +57,10 @@ interface SSOUsersDeleteQueryParams {
 [inline-code-start]
 interface SSOUsersResponse {
     status: 'success' | 'failed'
-    /** Vključeno ob napaki. **/
+    /** Included on failure. **/
     code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-id' | 'user-does-not-exist'
-    /** Vključeno ob napaki. **/
+    /** Included on failure. **/
     reason?: string
-    user?: SSOUser; // Ob uspehu vrnemo odstranjenega uporabnika.
+    user?: SSOUser; // We return the removed user on success.
 }
 [inline-code-end]

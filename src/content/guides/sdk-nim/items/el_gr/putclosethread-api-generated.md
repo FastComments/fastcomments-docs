@@ -19,5 +19,3 @@ if respOpt.isSome:
   let empty = respOpt.get()
   echo "Thread successfully closed"
 [inline-code-end]
-
----

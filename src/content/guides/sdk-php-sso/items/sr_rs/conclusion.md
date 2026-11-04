@@ -8,5 +8,3 @@
 ## Доприноси
 
 Доприноси су добродошли! Молимо посетите [репозиторијум на GitHub-у](https://github.com/FastComments/fastcomments-php-sso) за смернице о доприносу.
-
----

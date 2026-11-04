@@ -1,4 +1,3 @@
----
 ## Benötigen Sie Hilfe?
 
 Wenn Sie auf Probleme stoßen oder Fragen zur GatsbyJS-Bibliothek haben, bitte:
@@ -9,5 +8,3 @@ Wenn Sie auf Probleme stoßen oder Fragen zur GatsbyJS-Bibliothek haben, bitte:
 ## Mitwirken
 
 Beiträge sind willkommen! Bitte besuchen Sie das [GitHub-Repository](https://github.com/FastComments/fastcomments-gatsbyjs-example) für Richtlinien zur Mitarbeit.
-
----

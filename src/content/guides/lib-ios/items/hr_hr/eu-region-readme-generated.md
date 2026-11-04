@@ -1,4 +1,3 @@
----
 Da biste koristili podatkovni centar EU, postavite polje `region` u vašoj konfiguraciji:
 
 ```swift

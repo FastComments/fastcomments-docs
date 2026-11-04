@@ -1,4 +1,3 @@
----
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
@@ -25,5 +24,3 @@ const requestBody: DeleteHashTagRequestBody = {
 const resultWithBody: APIEmptyResponse = await deleteHashTag(tenantId, tag, requestBody);
 const resultWithoutBody: APIEmptyResponse = await deleteHashTag(tenantId, tag);
 [inline-code-end]
-
----

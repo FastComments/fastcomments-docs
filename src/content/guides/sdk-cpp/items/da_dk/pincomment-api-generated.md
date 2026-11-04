@@ -28,5 +28,3 @@ api->pinComment(tenantId, commentId, broadcastId, sio)
         }
     });
 [inline-code-end]
-
----

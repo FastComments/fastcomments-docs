@@ -21,5 +21,3 @@ api->getNotifications(U("my-tenant-123"), options)
         (void)resp;
     });
 [inline-code-end]
-
----

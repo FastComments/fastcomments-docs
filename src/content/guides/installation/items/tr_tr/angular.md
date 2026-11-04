@@ -69,5 +69,3 @@ Yapılandırma oldukça karmaşık hale gelebileceğinden, bir nesne referansı 
 Bileşen değişiklik algılama kullanır, bu yüzden yapılandırma nesnesinin herhangi bir özelliğini değiştirmek bileşenin yeniden yüklenmesine neden olacaktır.
 
 Angular bileşeninin desteklediği yapılandırmayı <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">burada</a> bulabilirsiniz.
-
----

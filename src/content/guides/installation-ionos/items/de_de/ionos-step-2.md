@@ -58,5 +58,3 @@ Kopieren Sie nun den folgenden Code:
     <div class="title">Einfügen und speichern</div>
     <img class="screenshot-image" src="/images/installation-guides/ionos-step-2-paste-and-save.png" alt="Einfügen und speichern" />
 </div>
-
----

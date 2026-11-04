@@ -1,4 +1,3 @@
----
 Στο FastComments, γράφουμε τις δικές μας επεκτάσεις, χρησιμοποιώντας το ίδιο API. Μπορείτε να δείτε τον μη συμπιεσμένο κώδικα
 για αυτές τις επεκτάσεις στα ακόλουθα σημεία τερματισμού:
 
@@ -22,5 +21,3 @@ https://fastcomments.com/js/comment-ui/extensions/comment-ui.moderation.extensio
 Η επέκταση Ζωντανής Συνομιλίας (σε συνδυασμό με άλλες ρυθμίσεις και στυλ) μετατρέπει το widget σχολίων σε ένα στοιχείο ζωντανής συνομιλίας.
 
 https://fastcomments.com/js/comment-ui/extensions/live-chat.extension.js
-
----

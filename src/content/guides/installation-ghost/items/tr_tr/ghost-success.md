@@ -1,4 +1,3 @@
----
 Artık üyelerimiz için FastComments Live Commenting etkinleştirilmiş olmalı!
 
 <div class="screenshot white-bg">
@@ -7,5 +6,3 @@ Artık üyelerimiz için FastComments Live Commenting etkinleştirilmiş olmalı
 </div>
 
 FastComments'ı Ghost ile kurduğunuz için tebrikler! Bir Domain Error ile karşılaştıysanız veya yorum alanını nasıl özelleştireceğinizi öğrenmek istiyorsanız, okumaya devam edin!
-
----

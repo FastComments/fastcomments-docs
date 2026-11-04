@@ -27,5 +27,3 @@ api->unLockComment(tenantId, commentId, broadcastId, sso).then([](pplx::task<std
     }
 });
 [inline-code-end]
-
----

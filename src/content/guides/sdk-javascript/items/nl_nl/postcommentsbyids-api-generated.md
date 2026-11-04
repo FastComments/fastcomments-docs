@@ -23,5 +23,3 @@ const responseWithoutSso: ModerationAPIChildCommentsResponse = await postComment
 const sso: string = 'sso-abc123def456';
 const responseWithSso: ModerationAPIChildCommentsResponse = await postCommentsByIds(tenantId, commentsByIdsParams, sso);
 [inline-code-end]
-
----

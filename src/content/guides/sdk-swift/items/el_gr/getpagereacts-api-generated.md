@@ -1,27 +1,27 @@
-Custom react counts for a page, optionally with the users who reacted.
+Προσαρμοσμένες μετρήσεις αντιδράσεων react για μια σελίδα, προαιρετικά με τους χρήστες που αντέδρασαν.
 
-## Parameters
+## Παράμετροι
 
-| Name | Type | Location | Required | Description |
+| Όνομα | Τύπος | Τοποθεσία | Απαιτείται | Περιγραφή |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| urlId | string | query | Yes |  |
-| includeUserInfo | string | query | No | "\"public\" παραλείπει χρήστες με ιδιωτικά προφίλ, \"include-private\" τους περιλαμβάνει." |
+| tenantId | string | query | Ναι |  |
+| urlId | string | query | Ναι |  |
+| includeUserInfo | string | query | Όχι | Το "public" παραλείπει χρήστες με ιδιωτικά προφίλ, το "include-private" τους συμπεριλαμβάνει. |
 
-## Response
+## Απάντηση
 
-Returns: [`GetPageReactsAPIResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetPageReactsAPIResponse.swift)
+Επιστρέφει: [`GetPageReactsAPIResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetPageReactsAPIResponse.swift)
 
-## Example
+## Παράδειγμα
 
 [inline-code-attrs-start title = 'Παράδειγμα getPageReacts'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Τα παρακάτω δείγματα κώδικα είναι ακόμη beta. Για οποιοδήποτε πρόβλημα, παρακαλούμε αναφέρετε το μέσω http://github.com/OpenAPITools/openapi-generator/issues/new
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
 let urlId = "urlId_example" // String | 
-let includeUserInfo = PageReactIncludeUserInfo() // PageReactIncludeUserInfo | \"public\" παραλείπει χρήστες με ιδιωτικά προφίλ, \"include-private\" τους περιλαμβάνει. (προαιρετικό)
+let includeUserInfo = PageReactIncludeUserInfo() // PageReactIncludeUserInfo | \"public\" omits users with private profiles, \"include-private\" includes them. (optional)
 
 DefaultAPI.getPageReacts(tenantId: tenantId, urlId: urlId, includeUserInfo: includeUserInfo) { (response, error) in
     guard error == nil else {
@@ -34,5 +34,3 @@ DefaultAPI.getPageReacts(tenantId: tenantId, urlId: urlId, includeUserInfo: incl
     }
 }
 [inline-code-end]
-
----

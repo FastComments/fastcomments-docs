@@ -25,5 +25,3 @@ Dies kann mit einer gewünschten Locale überschrieben werden.
 ### SSO-Hinweis
 
 Wenn Sie SSO verwenden, möchten Sie möglicherweise die Locale des Benutzers im Benutzerobjekt übergeben, damit E-Mails und andere Dinge korrekt für ihn lokalisiert werden.
-
----

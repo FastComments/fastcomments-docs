@@ -1,4 +1,3 @@
----
 Configureer uw tenant in `settings.py`:
 
 ```python
@@ -16,4 +15,3 @@ Plaats de widget in een willekeurige template:
 
 {% fastcomments url_id="my-page" %}
 ```
----

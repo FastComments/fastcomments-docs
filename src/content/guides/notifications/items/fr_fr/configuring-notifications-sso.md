@@ -17,5 +17,3 @@ Pour SSO, il y a la configuration suivante à prendre en compte pour les notific
   - Cela se fait via la propriété `footerUnsubscribeURL` sur l'objet `DomainConfig`.
   - Cela peut être défini via l'API.
   - Vous pouvez également envisager de définir les en-têtes de désabonnement pertinents via `emailHeaders` dans le même objet.
-
----

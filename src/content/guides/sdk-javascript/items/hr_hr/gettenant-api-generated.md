@@ -24,5 +24,3 @@ async function fetchTenant(): Promise<void> {
     const domainConfig: APIDomainConfiguration | undefined = tenantResponse.domainConfiguration;
 }
 [inline-code-end]
-
----

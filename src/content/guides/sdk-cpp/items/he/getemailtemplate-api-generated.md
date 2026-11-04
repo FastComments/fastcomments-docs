@@ -25,5 +25,3 @@ api->getEmailTemplate(tenantId, templateId)
         }
     });
 [inline-code-end]
-
----

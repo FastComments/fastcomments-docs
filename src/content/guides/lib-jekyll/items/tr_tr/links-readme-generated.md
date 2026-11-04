@@ -1,5 +1,3 @@
----
 - [FastComments Dokümantasyonu](https://docs.fastcomments.com)
 - [Özelleştirme ve Yapılandırma](https://docs.fastcomments.com/guide-customizations-and-configuration.html)
 - [Jekyll Dokümantasyonu](https://jekyllrb.com/docs/)
----

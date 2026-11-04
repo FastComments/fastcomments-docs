@@ -1,4 +1,3 @@
----
 Anket oluşturmak için yorum düzenleyici araç çubuğundaki anket düğmesine tıklayın. Metin girişinin altında bir anket düzenleyicisi açılır; burada şunları ayarlayabilirsiniz:
 
 - **Soru**, en fazla 200 karakter.
@@ -10,4 +9,3 @@ Anket oluşturmak için yorum düzenleyici araç çubuğundaki anket düğmesine
 Yorumunuzu her zamanki gibi yazın ve gönderin. Anket, yorumla birlikte gönderilir. Anketler yeni yorumlara ve yanıtlara eklenebilir.
 
 Göndermeden bir anketi iptal etmek için **Anketi Kaldır** düğmesine tıklayın.
----

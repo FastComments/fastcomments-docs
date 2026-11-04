@@ -1,4 +1,3 @@
----
 Die Preisgestaltung basiert auf den Kommentarpreisen, das heißt, Sie werden für Ratings & Reviews wie für Kommentare abgerechnet — je nach Ihrem Paket.
 
 Sie werden (bei Flex) abgerechnet oder (bei festen Plänen) begrenzt anhand der folgenden Kriterien:
@@ -10,5 +9,3 @@ Sie werden (bei Flex) abgerechnet oder (bei festen Plänen) begrenzt anhand der 
 - API-Nutzung (der Credit-Verbrauch für jeden API-Aufruf ist in der jeweiligen Dokumentation enthalten).
 
 Wenn Ergebnisse entweder über die API oder über die Summary-Widgets aggregiert werden, werden Ihnen ebenfalls Kosten berechnet.
-
----

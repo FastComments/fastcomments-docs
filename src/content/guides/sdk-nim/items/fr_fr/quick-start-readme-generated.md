@@ -1,6 +1,6 @@
 ### Utilisation des API authentifiées (DefaultAPI)
 
-**Important :** Authenticated endpoints require your API key to be set as the `x-api-key` header.
+**Important :** les endpoints authentifiés exigent que votre clé API soit définie dans l'en-tête `x-api-key`.
 
 ```nim
 import httpclient
@@ -12,7 +12,8 @@ let client = newHttpClient()
 client.headers["x-api-key"] = "your-api-key"
 
 # Effectuer des appels API authentifiés.
-# Les paramètres requis (et le corps de la requête) sont positionnels ; les paramètres optionnels sont passés via l'objet options de l'opération.
+# Les paramètres requis (et le corps de la requête) sont positionnels ; les
+# paramètres optionnels sont passés via l'objet options de l'opération.
 let (response, httpResponse) = getComments(
   httpClient = client,
   tenantId = "your-tenant-id",
@@ -30,7 +31,7 @@ if response.isSome:
 
 ### Utilisation des API publiques (PublicAPI)
 
-Public endpoints don't require authentication:
+Les endpoints publics ne nécessitent pas d'authentification :
 
 ```nim
 import httpclient
@@ -58,7 +59,7 @@ if response.isSome:
 
 ### Utilisation des API de modération (ModerationAPI)
 
-Moderation endpoints power the moderator dashboard and are authenticated with an SSO token for the acting moderator:
+Les endpoints de modération alimentent le tableau de bord du modérateur et sont authentifiés avec un jeton SSO pour le modérateur agissant :
 
 ```nim
 import httpclient
@@ -85,5 +86,5 @@ if response.isSome:
 
 ### Problèmes courants
 
-1. **401 error d'authentification** : Assurez‑vous de définir l'en-tête `x-api-key` sur votre HttpClient avant d'effectuer des requêtes DefaultAPI : `client.headers["x-api-key"] = "your-api-key"`
-2. **Classe API incorrecte** : Utilisez `api_default` pour les requêtes authentifiées côté serveur, `api_public` pour les requêtes côté client/public, et `api_moderation` pour les requêtes du tableau de bord des modérateurs.
+1. **Erreur d'authentification 401** : assurez-vous de définir l'en-tête `x-api-key` sur votre HttpClient avant d'effectuer des requêtes DefaultAPI : `client.headers["x-api-key"] = "your-api-key"`
+2. **Mauvaise classe API** : utilisez `api_default` pour les requêtes authentifiées côté serveur, `api_public` pour les requêtes côté client/publiques, et `api_moderation` pour les requêtes du tableau de bord de modération.

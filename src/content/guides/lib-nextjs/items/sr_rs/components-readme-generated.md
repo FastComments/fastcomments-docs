@@ -1,4 +1,3 @@
----
 | Компонента | Опис |
 | --- | --- |
 | `FastComments` | Виџет за коментаре са одговорима, гласањем и још много тога |
@@ -18,4 +17,3 @@ import {
     FastCommentsReviewsSummary,
 } from 'fastcomments-nextjs';
 ```
----

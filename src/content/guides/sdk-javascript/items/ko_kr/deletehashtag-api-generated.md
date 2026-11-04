@@ -1,4 +1,3 @@
----
 ## 매개변수
 
 | 이름 | 유형 | 필수 | 설명 |
@@ -25,5 +24,3 @@ const requestBody: DeleteHashTagRequestBody = {
 const resultWithBody: APIEmptyResponse = await deleteHashTag(tenantId, tag, requestBody);
 const resultWithoutBody: APIEmptyResponse = await deleteHashTag(tenantId, tag);
 [inline-code-end]
-
----

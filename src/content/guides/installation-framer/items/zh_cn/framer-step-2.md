@@ -38,5 +38,3 @@
 </div>
 
 现在你已为下一步的 FastComments Framer 代码片段做好准备。
-
----

@@ -30,5 +30,3 @@ DefaultAPI.deleteQuestionConfig(tenantId: tenantId, id: id) { (response, error) 
     }
 }
 [inline-code-end]
-
----

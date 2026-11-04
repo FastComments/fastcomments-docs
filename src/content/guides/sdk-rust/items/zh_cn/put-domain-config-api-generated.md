@@ -1,4 +1,3 @@
----
 ## 参数
 
 | 名称 | 类型 | 必填 | 描述 |
@@ -31,5 +30,3 @@ async fn update_domain(configuration: &configuration::Configuration) -> Result<(
     Ok(())
 }
 [inline-code-end]
-
----

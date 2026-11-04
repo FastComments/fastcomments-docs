@@ -1,4 +1,3 @@
----
 Erfasse eine Stimme zu einer Umfrage oder verschiebe eine bereits vorhandene Stimme zu einer anderen Option. Ein Wähler hat höchstens eine Stimme pro  
 Umfrage, sodass ein erneuter Aufruf für denselben Wähler seine Stimme verschiebt, anstatt eine neue hinzuzufügen.
 
@@ -33,5 +32,3 @@ Rückgabe: [`CreatePollVoteResponse`](https://github.com/FastComments/fastcommen
   console.log(result);
 })();
 [inline-code-end]
-
----

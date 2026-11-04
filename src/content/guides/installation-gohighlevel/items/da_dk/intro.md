@@ -9,5 +9,3 @@ At logge ind først sikrer, at de genererede kodeudsnit allerede er knyttet til 
 Denne vejledning er opdelt i to kategorier: medlemswebsteder og almindelige GoHighLevel-websteder.
 
 Vi starter med instruktionerne for medlemswebsteder.
-
----

@@ -26,5 +26,3 @@ Oba tryby aktywne jednocześnie. Widżet komentarzy pojawia się pod treścią s
     <div class="title">Collab Chat + komentarze razem</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-page-comments.png" alt="FastComments Collab Chat i komentarze na Moodle" />
 </div>
-
----

@@ -1,4 +1,3 @@
----
 ## Parametreler
 
 | Name | Type | Location | Required | Description |
@@ -32,5 +31,3 @@ DefaultAPI.updateEmailTemplate(tenantId: tenantId, id: id, updateEmailTemplateBo
     }
 }
 [inline-code-end]
-
----

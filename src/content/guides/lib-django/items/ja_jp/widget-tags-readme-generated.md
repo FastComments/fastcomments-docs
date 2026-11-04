@@ -1,39 +1,37 @@
-Every widget has its own tag. All of them accept `**extra` keyword arguments,
-which are merged into the widget config as-is (use camelCase keys) for anything
-not covered by the named arguments below.
+すべてのウィジェットにはそれぞれ専用のタグがあります。いずれも `**extra` キーワード引数を受け付けます。これは、以下の名前付き引数でカバーされていない項目について、ウィジェットの設定にそのままマージされます（キーは camelCase を使用してください）。
 
 | タグ | ウィジェット |
 |---|---|
-| `{% fastcomments %}` | Comments |
-| `{% fastcomments_live_chat %}` | Live chat |
-| `{% fastcomments_comment_count %}` | Comment count badge |
-| `{% fastcomments_comment_count_bulk %}` + `{% fastcomments_count_marker %}` | Bulk comment counts |
-| `{% fastcomments_collab_chat target="#el" %}` | Collaborative (inline) chat |
-| `{% fastcomments_image_chat target="#el" %}` | Image annotation chat |
-| `{% fastcomments_recent_comments %}` | Recent comments |
-| `{% fastcomments_recent_discussions %}` | Recent discussions |
-| `{% fastcomments_reviews_summary %}` | Reviews summary |
-| `{% fastcomments_top_pages %}` | Most-discussed pages |
-| `{% fastcomments_user_activity user_id="..." %}` | A user's activity feed |
+| `{% fastcomments %}` | コメント |
+| `{% fastcomments_live_chat %}` | ライブチャット |
+| `{% fastcomments_comment_count %}` | コメント数バッジ |
+| `{% fastcomments_comment_count_bulk %}` + `{% fastcomments_count_marker %}` | 一括コメント数 |
+| `{% fastcomments_collab_chat target="#el" %}` | コラボレーション（インライン）チャット |
+| `{% fastcomments_image_chat target="#el" %}` | 画像アノテーションチャット |
+| `{% fastcomments_recent_comments %}` | 最近のコメント |
+| `{% fastcomments_recent_discussions %}` | 最近のディスカッション |
+| `{% fastcomments_reviews_summary %}` | レビュー概要 |
+| `{% fastcomments_top_pages %}` | 最も議論されたページ |
+| `{% fastcomments_user_activity user_id="..." %}` | ユーザーのアクティビティフィード |
 
-Named arguments map to the widget's camelCase config keys:
+名前付き引数は、ウィジェットの camelCase 設定キーに対応します:
 
 | 引数 | 設定キー | タグ |
 |---|---|---|
-| `url_id` | `urlId` | comments, live chat, comment count, collab/image chat, recent comments, reviews summary |
-| `url` | `url` | comments, live chat, collab/image chat |
-| `readonly` | `readonly` | comments, live chat, collab/image chat |
-| `locale` | `locale` | comments, live chat, collab/image chat, user activity |
-| `has_dark_background` | `hasDarkBackground` | all |
-| `default_sort_direction` | `defaultSortDirection` | comments, live chat, collab/image chat |
-| `number_only` | `numberOnly` | comment count |
-| `is_live` | `isLive` | comment count |
-| `count` | `count` | recent comments, recent discussions |
-| `target` | (querySelector, not sent) | collab chat, image chat |
-| `chat_square_percentage` | `chatSquarePercentage` | image chat |
-| `user_id` | `userId` | user activity |
+| `url_id` | `urlId` | コメント、ライブチャット、コメント数、コラボ/画像チャット、最近のコメント、レビュー概要 |
+| `url` | `url` | コメント、ライブチャット、コラボ/画像チャット |
+| `readonly` | `readonly` | コメント、ライブチャット、コラボ/画像チャット |
+| `locale` | `locale` | コメント、ライブチャット、コラボ/画像チャット、ユーザーアクティビティ |
+| `has_dark_background` | `hasDarkBackground` | すべて |
+| `default_sort_direction` | `defaultSortDirection` | コメント、ライブチャット、コラボ/画像チャット |
+| `number_only` | `numberOnly` | コメント数 |
+| `is_live` | `isLive` | コメント数 |
+| `count` | `count` | 最近のコメント、最近のディスカッション |
+| `target` | (querySelector、送信されません) | コラボチャット、画像チャット |
+| `chat_square_percentage` | `chatSquarePercentage` | 画像チャット |
+| `user_id` | `userId` | ユーザーアクティビティ |
 
-Examples:
+例:
 
 ```django
 {% load fastcomments %}
@@ -44,11 +42,11 @@ Examples:
 
 Comments: {% fastcomments_comment_count url_id="my-page" number_only=True %}
 
-{# Collab chat attaches to an existing element on the page #}
+{# コラボチャットはページ上の既存の要素にアタッチされます #}
 <article id="post-body">...</article>
 {% fastcomments_collab_chat target="#post-body" %}
 
-{# Bulk counts: place markers, then one bulk loader fills them all in #}
+{# 一括コメント数: マーカーを配置すると、一括ローダーがすべてを埋め込みます #}
 {% for post in posts %}
     <a href="\{{ post.url }}">\{{ post.title }}</a>
     {% fastcomments_count_marker url_id=post.url_id %}

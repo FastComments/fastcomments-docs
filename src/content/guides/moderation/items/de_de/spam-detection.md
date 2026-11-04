@@ -1,4 +1,3 @@
----
 Standardmäßig verfügt FastComments über eine trainierbare Spam-Erkennung.
 
 Wenn Sie Kommentare moderieren und sie als **Spam** markieren, oder automatisch als **Spam** erkannte Kommentare als **Nicht Spam** markieren, lernt das Spam-Erkennungssystem aus diesen Aktionen, um genauer zu bestimmen, was Sie als Spam betrachten.
@@ -38,5 +37,3 @@ SSO-Nutzer mit diesen Berechtigungen werden nicht auf Spam überprüft.
 ### Wiederholte Nachrichten
 
 FastComments erkennt und verhindert wiederholte Nachrichten. Es erkennt außerdem wiederholte Nachrichten, die sehr ähnlich sind, um Spam zu verhindern. Dies kann nicht deaktiviert werden, da es verhindert, dass unsere Plattform für Missbrauch verwendet wird. Wenn Sie einen hohen Vertrauensfaktor haben, wird dies bei der Verhinderung wiederholter Nachrichten berücksichtigt.
-
----

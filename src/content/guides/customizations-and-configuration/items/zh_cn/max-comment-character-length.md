@@ -11,5 +11,3 @@
 这可以在小部件自定义页面上无需代码进行设置：
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.max-comment-size'; alt='小部件自定义页面上的最大评论大小字段，用于限制评论可包含的字符数'; title='限制评论长度' app-screenshot-end]
-
----

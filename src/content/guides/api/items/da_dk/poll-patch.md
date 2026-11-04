@@ -68,5 +68,3 @@ interface PollPatchResponse {
 - I modsætning til at oprette en afstemning, kan `closesAt` her være i fortiden – det er sådan du lukker en afstemning med det samme.
 - Afstemningsprivatliv kan indsnævres men ikke udvides, når den har stemmer.
 - En låst kommentar kan ikke få sin afstemning ændret, og fejler med `locked`.
-
----

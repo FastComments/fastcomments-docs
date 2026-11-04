@@ -1,14 +1,13 @@
----
-Lo snippet FastComments per i Live Comments di Framer è riportato qui sotto.
+Lo snippet FastComments per i Live Comments di Framer è riportato di seguito.
 
-[inline-code-attrs-start title = 'Snippet FastComments specifico per Framer (Commenti)'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Snippet Commenti FastComments Specifico per Framer'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
 <div id="fastcomments-widget" style="width: 100%;height: 100%;"></div>
 <script>
     (function fcLoad() {
         function tryLoad() {
-            // alcuni provider modificano lo snippet di codice rendendolo asincrono
+            // some providers change the code snippet to be async
             const container = document.getElementById('fastcomments-widget');
             if (!container) {
                 return waitRetry();
@@ -35,9 +34,9 @@ Lo snippet FastComments per i Live Comments di Framer è riportato qui sotto.
 </script>
 [inline-code-end]
 
-Or, alternatively, you can use the Streaming Chat widget. The Framer Streaming Chat FastComments snippet is:
+In alternativa, puoi utilizzare il widget Streaming Chat. Lo snippet FastComments per lo Streaming Chat di Framer è:
 
-[inline-code-attrs-start title = 'Snippet FastComments specifico per Framer (Streaming Chat)'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Snippet Streaming Chat FastComments Specifico per Framer'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-live-chat.min.js"></script>
 <div id="fastcomments-live-chat-widget" style="width: 100%;height: 100%;"></div>
@@ -45,7 +44,7 @@ Or, alternatively, you can use the Streaming Chat widget. The Framer Streaming C
     (function fcLoad() {
 
         function tryLoad() {
-            // alcuni provider modificano lo snippet di codice rendendolo asincrono
+            // some providers change the code snippet to be async
             const container = document.getElementById('fastcomments-live-chat-widget');
             if (!container) {
                 return waitRetry();
@@ -72,15 +71,13 @@ Or, alternatively, you can use the Streaming Chat widget. The Framer Streaming C
 </script>
 [inline-code-end]
 
-FastComments supports the Framer editor, so you should see something like this once you paste the code in (you might have to click `Publish`):
+FastComments supporta l'editor di Framer, quindi una volta incollato il codice dovresti vedere qualcosa di simile (potresti dover cliccare su `Publish`):
 
 <div class="screenshot white-bg">
-    <div class="title">Anteprima del widget dei commenti</div>
-    <img class="screenshot-image" src="/images/installation-guides/framer-step-3-paste.png" alt="Anteprima del widget dei commenti" />
+    <div class="title">Anteprima del Widget Commenti</div>
+    <img class="screenshot-image" src="/images/installation-guides/framer-step-3-paste.png" alt="Anteprima del Widget Commenti" />
 </div>
 
-Now when you view your site you should see the comment area! In the sidebar of Framer you can set the widget as full width as well, if desired.
+Ora, quando visualizzerai il tuo sito, dovresti vedere l'area dei commenti! Nella barra laterale di Framer puoi anche impostare il widget a larghezza piena, se desiderato.
 
-Note that Framer limits the height of widgets and does not support auto-resizing, so we've chosen the Live Chat
-widget here since it is fixed height.
----
+Tieni presente che Framer limita l'altezza dei widget e non supporta il ridimensionamento automatico, quindi qui abbiamo scelto il widget Live Chat poiché ha un'altezza fissa.

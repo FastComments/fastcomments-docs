@@ -21,5 +21,3 @@ let (maybeResp, httpResp) = client.getPendingWebhookEvents(
 if maybeResp.isSome:
   let resp = maybeResp.get()
 [inline-code-end]
-
----

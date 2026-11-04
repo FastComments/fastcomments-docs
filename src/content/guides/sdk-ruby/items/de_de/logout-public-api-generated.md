@@ -1,4 +1,3 @@
----
 ## Antwort
 
 Gibt zurück: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/api_empty_response.rb)
@@ -20,5 +19,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->logout_public: #{e}"
 end
 [inline-code-end]
-
----

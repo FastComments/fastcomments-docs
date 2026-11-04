@@ -1,10 +1,10 @@
-次に、コメントスレッドが現在のページに応じて変わるように設定します。これにより、ユーザーは現在表示されているコンテンツについて議論できるようになります。
+次に、現在のページに応じてコメントスレッドが切り替わるように設定し、表示中のコンテンツについてユーザーが議論できるようにしましょう。
 
-以下の手順を行わないと、サイト全体で1つのグローバルなコメントスレッドしか持てず、あまり役に立ちません。
+以下の手順を行わない場合、サイト全体で1つのグローバルコメントスレッドしか持てず、あまり有用ではありません。
 
 #### Dev Mode
 
-この機能を追加するには、Wixが `Dev Mode` と呼ぶモードに入る必要があります。
+この機能を追加するには、Wix が `Dev Mode` と呼ぶものに入る必要があります。
 
 画面上部の `Dev Mode` オプションをクリックしてください。
 
@@ -13,38 +13,38 @@
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-5-dev-mode.png" alt="Dev Mode を有効にする" />
 </div>
 
-#### 要素のIDを設定
+#### 要素 ID の設定
 
-これを実現するためにカスタムコードを追加しますが、まず参照するための新しい埋め込み要素にIDを付ける必要があります。
+これを実現するためにカスタムコードを追加しますが、まず新しい埋め込み要素に参照用の ID を付ける必要があります。
 
-名前は `fastcomments` にしましょう。
+`fastcomments` と呼ぶことにしましょう。
 
-追加した新しい埋め込み要素をクリックすると、Dev Mode の右下に `html1` のような値を持つ ID フィールドが表示されます：
+追加した新しい埋め込み要素をクリックすると、Dev Mode で画面右下に `html1` のような値が入った ID フィールドが表示されるはずです:
 
 <div class="screenshot white-bg">
     <div class="title">ID フィールド</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-5-id-0.png" alt="ID フィールド" />
 </div>
 
-これを `fastcomments` に変更して Enter を押します：
+これを `fastcomments` に変更して Enter キーを押してください:
 
 <div class="screenshot white-bg">
-    <div class="title">ID を設定</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-5-id-1.png" alt="ID を設定" />
+    <div class="title">ID の設定</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-5-id-1.png" alt="ID の設定" />
 </div>
 
-これで、コメント領域に現在表示しているページを伝えるカスタムコードを追加できます。
+これで、表示中のページをコメントエリアに伝えるカスタムコードを追加できます。
 
-画面下部に次のようなコードエディタが表示されます：
+画面下部に、次のようなコードエディタが表示されているはずです:
 
 <div class="screenshot white-bg">
     <div class="title">エディタを開く</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-7-open-editor.png" alt="エディタを開く" />
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-7-open-editor.png" alt="ID の設定" />
 </div>
 
-以下のコードをコピーしてそこに貼り付けてください：
+以下のコードをコピーして貼り付けてください:
 
-[inline-code-attrs-start title = 'Wix コメントナビゲーション スニペット'; type = 'javascript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Wix コメントナビゲーションスニペット'; type = 'javascript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import wixLocation from 'wix-location';
 
@@ -66,6 +66,6 @@ $w.onReady(function () {
 [inline-code-end]
 
 <div class="screenshot white-bg">
-    <div class="title">ナビゲーションコードを追加</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-7-paste-code.png" alt="ナビゲーションコードを追加" />
+    <div class="title">ナビゲーションコードの追加</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-7-paste-code.png" alt="ナビゲーションコードの追加" />
 </div>

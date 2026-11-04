@@ -67,5 +67,3 @@ interface PageMigrationsResponse {
 
 - 同一租戶的工作一次只會執行一個，依最舊的先執行。第二個遷移會等待第一個完成。
 - 使用 `PATCH /api/v1/pages/:id` 並提供新的 `urlId` 只會變更頁面本身，不會影響其評論。請使用此路由來移動頁面的評論。
-
----

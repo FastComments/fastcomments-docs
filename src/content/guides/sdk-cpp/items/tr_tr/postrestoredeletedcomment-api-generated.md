@@ -1,4 +1,3 @@
----
 ## Parametreler
 
 | Ad | Tür | Gerekli | Açıklama |
@@ -24,5 +23,3 @@ api->postRestoreDeletedComment(tenantId, commentId, options)
     .then([](std::shared_ptr<APIEmptyResponse> resp){
     });
 [inline-code-end]
-
----

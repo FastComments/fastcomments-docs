@@ -1,11 +1,11 @@
-While its name is the Domain Migration tool, it can also be used to migrate comments across individual pages.
+Selvom navnet er Domain Migration-værktøjet, kan det også bruges til at migrere kommentarer på tværs af individuelle sider.
 
-Simply enter the old and new [urlId](/guide-customizations-and-configuration.html#url-id) values in the `from` and `to` input fields.
+Indtast blot de gamle og nye [urlId](/guide-customizations-and-configuration.html#url-id)-værdier i inputfelterne `from` og `to`.
 
 ### Migrering af sider via API
 
-To migrate many pages at once, use [`POST /api/v1/pages/migrations`](/guide-api.html#pages-migrations-post). It takes up to 100 `from` and `to` pairs per request and runs them as a batch job.
+For at migrere mange sider på én gang, brug [`POST /api/v1/pages/migrations`](/guide-api.html#pages-migrations-post). Den tager op til 100 `from`- og `to`-par pr. anmodning og kører dem som en batchjob.
 
-With `type` set to `urlId`, only the page whose `urlId` is exactly `from` is moved, so `post-1` does not match `post-10`. The dashboard tool does not have this option.
+Med `type` sat til `urlId` flyttes kun siden, hvis `urlId` er præcis `from`, så `post-1` matcher ikke `post-10`. Dashboard-værktøjet har ikke denne mulighed.
 
-Each API migration can be undone for 90 days with [`POST /api/v1/pages/migrations/:undoId/undo`](/guide-api.html#pages-migrations-undo-post).
+Hver API-migrering kan fortrydes i 90 dage med [`POST /api/v1/pages/migrations/:undoId/undo`](/guide-api.html#pages-migrations-undo-post).

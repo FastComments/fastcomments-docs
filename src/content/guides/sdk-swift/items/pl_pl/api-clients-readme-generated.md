@@ -1,31 +1,29 @@
-FastComments SDK udostępnia trzy klienty API:
+SDK FastComments udostępnia trzech klientów API:
 
-### PublicAPI - Client-Safe Methods
+### PublicAPI - Metody bezpieczne dla klienta
 
-The `PublicAPI` contains methods that are safe to call from client-side code (iOS/macOS apps). These methods:
+`PublicAPI` zawiera metody, które można bezpiecznie wywoływać z kodu po stronie klienta (aplikacje iOS/macOS). Te metody:
 - Nie wymagają klucza API
 - Mogą używać tokenów SSO do uwierzytelniania
-- Są ograniczane (rate‑limited) na użytkownika/urządzenie
-- Są odpowiednie dla aplikacji skierowanych do końcowych użytkowników
+- Są ograniczone limitem żądań na użytkownika/urządzenie
+- Nadają się do aplikacji przeznaczonych dla użytkowników końcowych
 
-**Example use case**: Przykładowy przypadek użycia: Pobieranie i tworzenie komentarzy w Twojej aplikacji iOS
+**Przykładowy przypadek użycia**: Pobieranie i tworzenie komentarzy w aplikacji iOS
 
-### DefaultAPI - Server-Side Methods
+### DefaultAPI - Metody po stronie serwera
 
-The `DefaultAPI` contains authenticated methods that require an API key. These methods:
-- Wymagają Twojego klucza API FastComments
-- Powinny być wywoływane TYLKO z kodu po stronie serwera
+`DefaultAPI` zawiera metody uwierzytelniane, które wymagają klucza API. Te metody:
+- Wymagają klucza API FastComments
+- Powinny być wywoływane WYŁĄCZNIE z kodu po stronie serwera
 - Zapewniają pełny dostęp do danych FastComments
-- Są ograniczane (rate‑limited) na najemcę
+- Są ograniczone limitem żądań na najemcę (tenant)
 
-**Example use case**: Przykładowy przypadek użycia: Operacje administracyjne, masowy eksport danych, zarządzanie użytkownikami
+**Przykładowy przypadek użycia**: Operacje administracyjne, masowy eksport danych, zarządzanie użytkownikami
 
-### ModerationAPI - Moderator Dashboard Methods
+### ModerationAPI - Metody panelu moderatora
 
-The `ModerationAPI` provides an extensive suite of live and fast moderation APIs. Every `ModerationAPI` method accepts an `sso` parameter and can authenticate via SSO or a FastComments.com session cookie.
-- Udostępnia rozbudowany zestaw szybkich i bieżących API moderacji
-- Każda metoda `ModerationAPI` przyjmuje parametr `sso` i może uwierzytelnić się za pomocą SSO lub ciasteczka sesji FastComments.com
+`ModerationAPI` oferuje rozbudowany zestaw API do moderacji na żywo i szybkiej moderacji. Każda metoda `ModerationAPI` przyjmuje parametr `sso` i może uwierzytelniać się za pomocą SSO lub ciasteczka sesji FastComments.com.
 
-**Example use case**: Przykładowy przypadek użycia: Tworzenie doświadczenia moderacji dla moderatorów Twojej społeczności
+**Przykładowy przypadek użycia**: Budowanie doświadczenia moderacji dla moderatorów Twojej społeczności
 
-**IMPORTANT**: WAŻNE: Nigdy nie udostępniaj swojego klucza API w kodzie po stronie klienta. Klucze API powinny być używane wyłącznie po stronie serwera.
+**WAŻNE**: Nigdy nie ujawniaj klucza API w kodzie po stronie klienta. Klucze API powinny być używane tylko po stronie serwera.

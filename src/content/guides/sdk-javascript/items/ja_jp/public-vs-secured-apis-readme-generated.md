@@ -1,49 +1,49 @@
-SDK は次の API クラスを提供します:
+SDKは以下のAPIクラスを提供します:
 
-- **`DefaultApi`** - 認証に API キーを必要とする保護されたエンドポイント。サーバー側の操作に使用してください。
-- **`PublicApi`** - API キーなしでアクセスできる公開エンドポイント。ブラウザやモバイル端末などから直接呼び出せます。
-- **`ModerationApi`** - モデレーターダッシュボードのエンドポイント（コメントモデレーション、バン、バッジ、トラストファクター、検索）。モデレーターのセッションで認証されます。SSO 認証されたモデレーターの場合は `sso` クエリパラメータを渡してください。
-- **`HiddenApi`** - 高度なユースケース向けの内部／管理者用エンドポイント。
+- **`DefaultApi`** - 認証にAPIキーが必要なセキュアなエンドポイントです。サーバーサイドの操作に使用します。
+- **`PublicApi`** - APIキーなしでアクセスできる公開エンドポイントです。ブラウザやモバイルデバイスなどから直接呼び出すことができます。
+- **`ModerationApi`** - モデレーターダッシュボードのエンドポイントです(コメントのモデレーション、BAN、バッジ、トラストファクター、検索)。モデレーターのセッションで認証されます。SSO認証されたモデレーターの場合は `sso` クエリパラメーターを渡してください。
+- **`HiddenApi`** - 高度なユースケース向けの内部/管理者エンドポイントです。
 
-### Example: Using Public API (browser-safe)
+### 例: Public APIの使用(ブラウザ対応)
 
 ```typescript
 import { PublicApi } from 'fastcomments-sdk/browser';
 
 const publicApi = new PublicApi();
 
-// ページのコメントを取得（APIキー不要）
+// Get comments for a page (no API key required)
 const response = await publicApi.getCommentsPublic({
   tenantId: 'your-tenant-id',
   urlId: 'page-url-id'
 });
 ```
 
-### Example: Using Default API (server-side only)
+### 例: Default APIの使用(サーバーサイドのみ)
 
 ```typescript
 import { DefaultApi, Configuration } from 'fastcomments-sdk/server';
 
 const config = new Configuration({
-  apiKey: 'your-api-key' // この値は秘密にしてください！
+  apiKey: 'your-api-key' // Keep this secret!
 });
 const defaultApi = new DefaultApi(config);
 
-// 管理者権限でコメントを取得
+// Get comments with full admin access
 const response = await defaultApi.getComments({
   tenantId: 'your-tenant-id',
   urlId: 'page-url-id'
 });
 ```
 
-### Example: Using Moderation API
+### 例: Moderation APIの使用
 
 ```typescript
 import { createFastCommentsSDK } from 'fastcomments-sdk/server';
 
-const sdk = createFastCommentsSDK({ /* basePath など */ });
+const sdk = createFastCommentsSDK({ /* basePath, etc. */ });
 
-// モデレーター認証済みの呼び出し（セッションクッキー、またはSSO認証されたモデレーターの場合は `sso` を渡してください）。
+// Moderator-authenticated calls (session cookie, or pass `sso` for an SSO moderator).
 const comments = await sdk.moderationApi.getApiComments({
   tenantId: 'your-tenant-id'
 });

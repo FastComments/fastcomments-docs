@@ -1,4 +1,3 @@
----
 Ora, se visualizziamo un articolo del blog, dovremmo vedere FastComments!
 
 <div class="screenshot white-bg">
@@ -7,5 +6,3 @@ Ora, se visualizziamo un articolo del blog, dovremmo vedere FastComments!
 </div>
 
 Congratulazioni per aver configurato FastComments con Systeme.io! Se hai riscontrato un errore di dominio, o vorresti imparare come personalizzare l'area dei commenti, continua a leggere!
-
----

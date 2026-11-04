@@ -1,4 +1,3 @@
----
 ### Через фасад
 
 ```php
@@ -44,4 +43,3 @@ class CommentController extends Controller
     }
 }
 ```
----

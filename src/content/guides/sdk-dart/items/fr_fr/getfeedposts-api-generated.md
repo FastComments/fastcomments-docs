@@ -38,5 +38,3 @@ try {
     print('Exception when calling DefaultApi->getFeedPosts: $e\n');
 }
 [inline-code-end]
-
----

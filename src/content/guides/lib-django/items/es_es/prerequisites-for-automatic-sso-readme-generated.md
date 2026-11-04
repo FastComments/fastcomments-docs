@@ -1,4 +1,3 @@
----
 Para pasar el usuario conectado al widget automáticamente, las etiquetas leen el  
 usuario actual de la solicitud. Asegúrate de que tu proyecto tenga ambos (están  
 activados por defecto en un proyecto Django estándar):
@@ -8,4 +7,3 @@ activados por defecto en un proyecto Django estándar):
 
 Sin una solicitud en el contexto de la plantilla, los widgets se renderizan para un  
 visitante anónimo. Siempre puedes pasar un usuario explícitamente: `{% fastcomments user=some_user %}`.
----

@@ -1,4 +1,3 @@
----
 Bir `Vote` nesnesi, bir kullanıcı tarafından bırakılan bir oyu temsil eder.
 
 Yorumlar ile oy arasındaki ilişki `commentId` aracılığıyla tanımlanır.
@@ -16,5 +15,3 @@ interface Vote {
     createdAt: string
 }
 [inline-code-end]
-
----

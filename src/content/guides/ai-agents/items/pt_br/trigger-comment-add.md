@@ -18,5 +18,3 @@ Dispara o agente toda vez que um novo comentário é postado em uma página cobe
 - **Moderação** - verificar o comentário em relação às diretrizes da comunidade, marcar como spam ou advertir usuários de primeira vez.
 - **Saudação de boas-vindas** - embora [Gatilho: Primeiro Comentário de Novo Usuário](#trigger-new-user-first-comment) geralmente seja mais adequado para saudações, já que é acionado uma vez por usuário.
 - **Sumarização do tópico** - geralmente em conjunto com um [atraso do gatilho](#trigger-deferred-delay) para que o tópico se estabilize antes de o agente ser executado.
-
----

@@ -1,18 +1,18 @@
-Custom react counts for a page, optionally with the users who reacted.
+Користувацькі лічильники реакцій для сторінки, опціонально з користувачами, які відреагували.
 
-## Parameters
+## Параметри
 
-| Назва | Тип | Розташування | Обов’язково | Опис |
+| Назва | Тип | Розташування | Обов'язковий | Опис |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Так |  |
 | urlId | string | query | Так |  |
 | includeUserInfo | string | query | Ні | "public" виключає користувачів з приватними профілями, "include-private" включає їх. |
 
-## Response
+## Відповідь
 
 Повертає: [`GetPageReactsAPIResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetPageReactsAPIResponse.java)
 
-## Example
+## Приклад
 
 [inline-code-attrs-start title = 'Приклад getPageReacts'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -54,5 +54,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

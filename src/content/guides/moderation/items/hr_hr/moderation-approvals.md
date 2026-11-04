@@ -1,4 +1,3 @@
----
 S FastCommentsom, odobreni komentar je **vidljiv** komentar. Da biste sakrili komentar, poništite mu odobrenje.
 
 Komentari se mogu automatski odobravati, ili moderatori mogu ručno odobriti svaki komentar. Postoji također opcija da
@@ -13,4 +12,3 @@ Zahtijevanje ručnog odobravanja nepotvrđenih komentara može pomoći protiv sp
 željet ćete omogućiti automatsko odobravanje komentara, ali uključiti `Only Auto Approve Verified Comments`.
 
 Sve se ovo može konfigurirati od strane administratora u [Postavke moderiranja](https://fastcomments.com/auth/my-account/moderate-comments/settings).
----

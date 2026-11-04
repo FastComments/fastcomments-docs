@@ -1,4 +1,3 @@
----
 Dat is alles! Je zou nu live reacties aan je GoHighLevel-cursus toegevoegd moeten hebben.
 
 <div class="screenshot white-bg">
@@ -7,5 +6,3 @@ Dat is alles! Je zou nu live reacties aan je GoHighLevel-cursus toegevoegd moete
 </div>
 
 Als je een 'permission denied' fout bent tegengekomen, of FastComments wilt aanpassen, lees verder.
-
----

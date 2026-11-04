@@ -22,5 +22,3 @@ const status: APIStatus = configResponse.status;
 const questionConfig?: QuestionConfig = configResponse.question;
 const firstOption?: QuestionConfigCustomOptionsInner = questionConfig?.customOptions?.[0];
 [inline-code-end]
-
----

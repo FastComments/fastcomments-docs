@@ -1,4 +1,3 @@
----
 FastComments Rust SDK는 여러 모듈로 구성됩니다:
 
 - **Client Module** - FastComments REST API용 API 클라이언트
@@ -19,4 +18,3 @@ FastComments Rust SDK는 여러 모듈로 구성됩니다:
   - 댓글 모델 및 메타데이터 구조
   - 사용자 및 테넌트 구성
   - 공통 작업을 위한 도우미 함수
----

@@ -1,7 +1,6 @@
----
-Στο επόμενο βήμα πρέπει να αντιγράψετε τον προκατασκευασμένο κώδικα widget παρακάτω.
+Σε αυτό το επόμενο βήμα πρέπει να αντιγράψετε τον έτοιμο κώδικα widget παρακάτω.
 
-Όσο είστε συνδεδεμένοι στο FastComments.com, το παρακάτω απόσπασμα κώδικα θα περιέχει ήδη τις πληροφορίες του λογαριασμού σας. Ας το αντιγράψουμε:
+Εφόσον είστε συνδεδεμένοι στο FastComments.com, το παρακάτω απόσπασμα κώδικα θα περιέχει ήδη τις πληροφορίες του λογαριασμού σας. Ας το αντιγράψουμε:
 
 [inline-code-attrs-start title = 'Κώδικας Super.so FastComments Collab Chat'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -24,17 +23,17 @@
                 return setTimeout(load, 100);
             }
 
-            // Καθαρισμός υπάρχουσας περίπτωσης
+            // Clean up existing instance
             if (target.fastCommentsInstance) {
                 target.fastCommentsInstance.destroy();
             }
 
-            // Καθαρισμός υπάρχουσας πάνω γραμμής αν υπάρχει
+            // Clean up existing top bar if it exists
             if (currentTopBar && currentTopBar.parentNode) {
                 currentTopBar.parentNode.removeChild(currentTopBar);
             }
 
-            // Δημιουργία νέας πάνω γραμμής
+            // Create new top bar
             const topBarTarget = document.createElement('div');
             target.parentNode.insertBefore(topBarTarget, target);
             topBarTarget.style.maxWidth = 'var(--layout-max-width)';
@@ -42,36 +41,36 @@
             currentTopBar = topBarTarget;
             currentWidget = target;
 
-            // Αρχικοποίηση FastComments Collab Chat
+            // Initialize FastComments Collab Chat
             target.fastCommentsInstance = FastCommentsCollabChat(target, {
                 tenantId: "demo",
                 topBarTarget: topBarTarget
             });
 
-            // Ενημέρωση τρέχοντος pathname
+            // Update current pathname
             currentPathname = window.location.pathname;
         }
 
-        // Αρχικό φόρτωμα
+        // Initial load
         load();
 
-        // Έλεγχος για αλλαγές κάθε 500ms
+        // Check every 500ms for changes
         setInterval(() => {
-            // Επαναφόρτωση αν το pathname άλλαξε
+            // Reload if pathname changed
             if (window.location.pathname !== currentPathname) {
                 console.log('Pathname changed, reloading...');
                 load();
                 return;
             }
 
-            // Επαναφόρτωση αν το widget αφαιρέθηκε
+            // Reload if widget was removed
             if (currentWidget && !currentWidget.parentNode) {
                 console.log('Widget removed, reloading...');
                 load();
                 return;
             }
 
-            // Επαναφόρτωση αν το container αδειάστηκε
+            // Reload if container was emptied
             const target = document.querySelector('.super-content');
             if (target && target.innerHTML.length < 100) {
                 console.log('Container emptied, reloading...');
@@ -82,17 +81,15 @@
 </script>
 [inline-code-end]
 
-Now paste in the `Body` area:
+Τώρα επικολλήστε στην περιοχή `Body`:
 
 <div class="screenshot white-bg">
-    <div class="title">Επικολλημένος κώδικας</div>
-    <img class="screenshot-image" src="/images/installation-guides/super-so-step-3-pasted-code.png" alt="Επικολλημένος κώδικας" />
+    <div class="title">Επικολλημένος Κώδικας</div>
+    <img class="screenshot-image" src="/images/installation-guides/super-so-step-3-pasted-code.png" alt="Επικολλημένος Κώδικας" />
 </div>
 
-If you see a "this is a demo message" after pasting the code:
+Αν δείτε ένα μήνυμα "this is a demo message" μετά την επικόλληση του κώδικα:
 
-- Βεβαιωθείτε ότι είστε συνδεδεμένοι στο λογαριασμό σας στο fastcomments.com.
-- Βεβαιωθείτε ότι έχετε ενεργοποιημένα τα cookies τρίτων.
-- Έπειτα ανανεώστε αυτή τη σελίδα και αντιγράψτε ξανά το απόσπασμα κώδικα. Θα πρέπει να έχει το `tenantId` συμπληρωμένο με το αναγνωριστικό του tenant σας.
-
----
+- Βεβαιωθείτε ότι είστε συνδεδεμένοι στον λογαριασμό σας στο fastcomments.com.
+- Βεβαιωθείτε ότι έχετε ενεργοποιήσει τα cookies τρίτων.
+- Στη συνέχεια ανανεώστε αυτή τη σελίδα και αντιγράψτε ξανά το απόσπασμα κώδικα. Θα πρέπει να έχει το `tenantId` συμπληρωμένο με το αναγνωριστικό του tenant σας.

@@ -9,8 +9,8 @@ dependencies: [
 ```
 
 Of in Xcode:
-1. Bestand > Pakketten toevoegen...
-2. Voer de repository-URL in: `https://github.com/fastcomments/fastcomments-swift.git`
+1. File > Add Packages...
+2. Voer de repository URL in: `https://github.com/fastcomments/fastcomments-swift.git`
 3. Selecteer de versie die je wilt gebruiken
 
 ### Vereisten

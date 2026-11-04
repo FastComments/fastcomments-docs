@@ -1,4 +1,3 @@
----
 Encola un trabajo por lotes que revierte cada migración de un trabajo migrate‑pages, de más reciente a más antiguo. Disponible durante 90 días.  
 Los registros modificados desde la migración se dejan sin cambios, de modo que una edición posterior nunca se sobrescribe.  
 Realice una solicitud GET a `/api/v1/batch-jobs/{batchJobId}` para obtener los recuentos de restaurados/omitidos.
@@ -35,5 +34,3 @@ DefaultAPI.undoPageMigrations(tenantId: tenantId, undoId: undoId) { (response, e
     }
 }
 [inline-code-end]
-
----

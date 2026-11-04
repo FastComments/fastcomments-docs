@@ -1,22 +1,22 @@
-Queues a batch job that moves comments, pages and related records from one urlId or domain to another.  
-"urlId"-migrationer matcher kun den præcise urlId. "domain"-migrationer finder/erstatter værdien inde i hver urlId og url.  
-Poll GET /api/v1/batch-jobs/{batchJobId}: når den er færdig, indeholder den resultater pr. migration og et undoId.
+Sætter et batch-job i kø, der flytter kommentarer, sider og relaterede poster fra én urlId eller et domæne til et andet.
+"urlId"-migreringer matcher kun den præcise urlId. "domain"-migreringer finder/erstatter værdien i hver urlId og url.
+Poll GET /api/v1/batch-jobs/{batchJobId}: når jobbet er færdigt, indeholder det resultater for hver migrering samt et undoId.
 
-## Parameters
+## Parametre
 
-| Name | Type | Location | Required | Description |
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
+| tenantId | string | query | Ja |  |
 
-## Response
+## Svar
 
 Returnerer: [`QueuePageMigrationJobAPIResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/QueuePageMigrationJobAPIResponse.swift)
 
-## Example
+## Eksempel
 
 [inline-code-attrs-start title = 'migratePages Eksempel'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Følgende kodeeksempler er stadig i beta. For eventuelle problemer, rapporter venligst via http://github.com/OpenAPITools/openapi-generator/issues/new
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -33,5 +33,3 @@ DefaultAPI.migratePages(tenantId: tenantId, migrateAPIPagesData: migrateAPIPages
     }
 }
 [inline-code-end]
-
----

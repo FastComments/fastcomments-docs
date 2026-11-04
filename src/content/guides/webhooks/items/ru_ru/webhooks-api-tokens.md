@@ -1,25 +1,25 @@
-Запросы вебхуков FastComments включают несколько механизмов аутентификации для безопасности.
+Запросы вебхуков FastComments включают несколько механизмов аутентификации для обеспечения безопасности.
 
-## Headers Sent
+## Отправляемые заголовки
 
-| Header | Description |
+| Заголовок | Описание |
 |--------|-------------|
 | `token` | Ваш API Secret (для обратной совместимости) |
-| `X-FastComments-Timestamp` | Unix-временная метка (в секундах), когда запрос был подписан |
-| `X-FastComments-Signature` | HMAC-SHA256 подпись полезной нагрузки |
+| `X-FastComments-Timestamp` | Unix-время (в секундах), когда запрос был подписан |
+| `X-FastComments-Signature` | Подпись HMAC-SHA256 полезной нагрузки |
 
-## HMAC Signature Verification (Recommended)
+## Проверка подписи HMAC (рекомендуется)
 
-Мы настоятельно рекомендуем проверять HMAC-подпись, чтобы убедиться, что полезные данные вебхука подлинны и не были изменены.
+Мы настоятельно рекомендуем проверять подпись HMAC, чтобы убедиться, что полезная нагрузка вебхука подлинная и не была изменена.
 
-**Signature Format:** `sha256=<hex-encoded-signature>`
+**Формат подписи:** `sha256=<hex-encoded-signature>`
 
-**How the signature is computed:**
-1. Concatenate: `timestamp + "." + JSON_payload_body`
-2. Compute HMAC-SHA256 using your API Secret as the key
-3. Hex-encode the result
+**Как вычисляется подпись:**
+1. Конкатенация: `timestamp + "." + JSON_payload_body`
+2. Вычисление HMAC-SHA256 с использованием вашего API Secret в качестве ключа
+3. Кодирование результата в hex
 
-### Example Verification (Node.js)
+### Пример проверки (Node.js)
 
 ```javascript
 const crypto = require('crypto');
@@ -32,10 +32,10 @@ function verifyWebhookSignature(req, apiSecret) {
         return false;
     }
 
-    // Проверяет, что метка времени свежая (в пределах 5 минут)
+    // Проверка, что временная метка свежая (в пределах 5 минут)
     const now = Math.floor(Date.now() / 1000);
     if (Math.abs(now - parseInt(timestamp, 10)) > 300) {
-        return false;  // Защита от повторного воспроизведения (replay-атаки)
+        return false;  // Защита от атак повторного воспроизведения
     }
 
     // Проверка подписи
@@ -49,7 +49,7 @@ function verifyWebhookSignature(req, apiSecret) {
 }
 ```
 
-### Example Verification (Python)
+### Пример проверки (Python)
 
 ```python
 import hmac
@@ -64,7 +64,7 @@ def verify_webhook_signature(headers, body, api_secret):
     if not timestamp or not signature:
         return False
 
-    # Проверяет, что метка времени свежая
+    # Проверка, что временная метка свежая
     now = int(time.time())
     if abs(now - int(timestamp)) > 300:
         return False
@@ -81,7 +81,7 @@ def verify_webhook_signature(headers, body, api_secret):
     return signature == f"sha256={expected}"
 ```
 
-### Example Verification (PHP)
+### Пример проверки (PHP)
 
 ```php
 function verifyWebhookSignature($headers, $body, $apiSecret) {
@@ -92,7 +92,7 @@ function verifyWebhookSignature($headers, $body, $apiSecret) {
         return false;
     }
 
-    // Проверяет, что метка времени свежая (в пределах 5 минут)
+    // Проверка, что временная метка свежая (в пределах 5 минут)
     $now = time();
     if (abs($now - intval($timestamp)) > 300) {
         return false;
@@ -107,8 +107,6 @@ function verifyWebhookSignature($headers, $body, $apiSecret) {
 }
 ```
 
-## Legacy Authentication
+## Устаревшая аутентификация
 
-The `token` header containing your API Secret is still sent for backwards compatibility. However, we recommend migrating to HMAC verification for improved security as it protects against replay attacks.
-
----
+Заголовок `token`, содержащий ваш API Secret, по-прежнему отправляется для обратной совместимости. Однако мы рекомендуем перейти на проверку HMAC для повышения безопасности, так как она защищает от атак повторного воспроизведения.

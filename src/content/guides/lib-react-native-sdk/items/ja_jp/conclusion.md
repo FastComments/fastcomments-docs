@@ -8,5 +8,3 @@ React Native SDK に関して問題が発生したり質問がある場合は、
 ## 貢献
 
 ご貢献は歓迎です！貢献ガイドラインについては[GitHubリポジトリ](https://github.com/FastComments/fastcomments-react-native-sdk)をご覧ください。
-
----

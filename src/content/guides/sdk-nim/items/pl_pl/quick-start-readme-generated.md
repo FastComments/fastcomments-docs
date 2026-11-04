@@ -1,6 +1,6 @@
-### Using Authenticated APIs (DefaultAPI)
+### Korzystanie z uwierzytelnianych API (DefaultAPI)
 
-**Important:** Authenticated endpoints require your API key to be set as the `x-api-key` header.
+**Ważne:** Uwierzytelniane endpointy wymagają ustawienia klucza API w nagłówku `x-api-key`.
 
 ```nim
 import httpclient
@@ -12,8 +12,8 @@ let client = newHttpClient()
 client.headers["x-api-key"] = "your-api-key"
 
 # Wykonaj uwierzytelnione wywołania API.
-# Wymagane parametry (i ciało żądania) są pozycyjne; opcjonalne
-# parametry są przekazywane za pomocą obiektu opcji operacji.
+# Parametry wymagane (oraz treść żądania) są pozycyjne; parametry
+# opcjonalne przekazuje się przez obiekt opcji danej operacji.
 let (response, httpResponse) = getComments(
   httpClient = client,
   tenantId = "your-tenant-id",
@@ -29,9 +29,9 @@ if response.isSome:
     echo "Found ", resp.comments.get().len, " comments"
 ```
 
-### Using Public APIs (PublicAPI)
+### Korzystanie z publicznych API (PublicAPI)
 
-Public endpoints don't require authentication:
+Publiczne endpointy nie wymagają uwierzytelnienia:
 
 ```nim
 import httpclient
@@ -57,9 +57,9 @@ if response.isSome:
     echo "Found ", resp.comments.get().len, " comments"
 ```
 
-### Using Moderation APIs (ModerationAPI)
+### Korzystanie z API moderacji (ModerationAPI)
 
-Moderation endpoints power the moderator dashboard and are authenticated with an SSO token for the acting moderator:
+Endpointy moderacji obsługują panel moderatora i są uwierzytelniane tokenem SSO działającego moderatora:
 
 ```nim
 import httpclient
@@ -68,7 +68,7 @@ import fastcomments/apis/api_moderation
 
 let client = newHttpClient()
 
-# Lista komentarzy w panelu moderacji.
+# Wyświetl komentarze w panelu moderacji.
 # Ta operacja nie ma wymaganych parametrów, więc wszystko jest opcjonalne.
 let (response, httpResponse) = getApiComments(
   httpClient = client,
@@ -84,7 +84,7 @@ if response.isSome:
   echo "Found ", resp.comments.len, " comments"
 ```
 
-### Common Issues
+### Częste problemy
 
-1. **401 authentication error**: Make sure you set the `x-api-key` header on your HttpClient before making DefaultAPI requests: `client.headers["x-api-key"] = "your-api-key"`
-2. **Wrong API class**: Use `api_default` for server-side authenticated requests, `api_public` for client-side/public requests, and `api_moderation` for moderator dashboard requests.
+1. **Błąd uwierzytelniania 401**: Upewnij się, że ustawiłeś nagłówek `x-api-key` w swoim HttpClient przed wykonywaniem żądań DefaultAPI: `client.headers["x-api-key"] = "your-api-key"`
+2. **Zła klasa API**: Użyj `api_default` dla uwierzytelnianych żądań po stronie serwera, `api_public` dla żądań po stronie klienta/publicznych oraz `api_moderation` dla żądań panelu moderatora.

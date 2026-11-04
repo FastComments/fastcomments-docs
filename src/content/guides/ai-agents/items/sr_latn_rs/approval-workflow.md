@@ -67,5 +67,3 @@ Odobrenja odbijaju da stave u red čekanja bilo koje ime alata koje nije prepozn
 
 - Ne odlažu ostale pozive alata agenta. Izvršavanje agenta može pozvati više alata, i samo oni pod kontrolom se stavljaju u red čekanja - ostali se izvršavaju normalno.
 - Ne poništavaju izvršavanje agenta ako čovek odbije. Deo izvršavanja koji nije pod kontrolom je već završen.
-
----

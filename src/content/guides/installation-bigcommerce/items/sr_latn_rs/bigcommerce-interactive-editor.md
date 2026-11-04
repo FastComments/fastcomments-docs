@@ -1,4 +1,3 @@
----
 Ne preporučuje se dodavanje FastComments-a preko BigCommerce Page Builder-a, jer se tada kod mora ručno dodavati na svaku željenu stranicu.
 
 Međutim, ako je to poželjno, mora se koristiti sledeći isječak koda. Isječci koda iz drugih tutorijala neće raditi zbog prirode BigCommerce-a:
@@ -14,5 +13,3 @@ Međutim, ako je to poželjno, mora se koristiti sledeći isječak koda. Isječc
     }];
 </script>
 [inline-code-end]
-
----

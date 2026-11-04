@@ -1,6 +1,6 @@
 ## Parametre
 
-| Name | Type | Location | Required | Description |
+| Navn | Type | Placering | Påkrævet | Beskrivelse |
 |------|------|----------|----------|-------------|
 | tenantId | string | query | Ja |  |
 | isLive | boolean | query | Nej |  |
@@ -15,11 +15,6 @@ Returnerer: [`SaveCommentsBulkResponse`](https://github.com/FastComments/fastcom
 ## Eksempel
 
 [inline-code-attrs-start title = 'saveCommentsBulk Eksempel'; type = 'java'; isFunctional = false; inline-code-attrs-end]
-[inline-code-start]
-// Importer klasser:
-// Konfigurer API-nøgleautorisation: api_key
-// Fjern kommentaren fra følgende linje for at angive et præfiks for API-nøglen, f.eks. "Token" (standard er null)
-    [inline-code-end]
 [inline-code-start]
 // Import classes:
 import com.fastcomments.invoker.ApiClient;

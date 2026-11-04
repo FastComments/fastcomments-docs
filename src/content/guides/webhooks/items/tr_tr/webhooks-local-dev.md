@@ -1,35 +1,35 @@
-For Local development, use a tool like [ngrok](https://ngrok.com/).
+Yerel geliştirme için [ngrok](https://ngrok.com/) gibi bir araç kullanın.
 
-In order to simplify keeping the system secure, local development follows the same process as setting up and securing other environments. 
+Sistemi güvenli tutmayı basitleştirmek için, yerel geliştirme diğer ortamları kurma ve güvenli hale getirme sürecinin aynısını takip eder.
 
-### Adım 1: Add "localhost" to domains in your account.
+### Adım 1: Hesabınızdaki alan adlarına "localhost" ekleyin.
 
-Add "localhost" [buradan bir alan adı olarak ekleyin](https://fastcomments.com/auth/my-account/configure-domains).
+"localhost" alan adını [buradan ekleyin](https://fastcomments.com/auth/my-account/configure-domains).
 
-[app-screenshot-start url='https://fastcomments.com/auth/my-account/configure-domains/new'; cacheBuster = 'v3'; selector = '.content .account-block'; alt='Hesap ayarlarında alan adı ekleme formu, alan adı alanına localhost girilmiş'; title='localhost ekle'; actions=[{type: 'set-value', selector: 'input[name=domainNames]', value: 'localhost'}] app-screenshot-end]
+[app-screenshot-start url='https://fastcomments.com/auth/my-account/configure-domains/new'; cacheBuster = 'v3'; selector = '.content .account-block'; alt='Alan adı alanına localhost girilmiş hesap ayarlarındaki alan adı ekleme formu'; title='Add localhost'; actions=[{type: 'set-value', selector: 'input[name=domainNames]', value: 'localhost'}] app-screenshot-end]
 
-### Adım 2: Pick an API Key
+### Adım 2: Bir API Anahtarı Seçin
 
-We're going to be adding webhook configuration for your domain, so we'll need an API key. [Bunu burada yapabilirsiniz.](https://fastcomments.com/auth/my-account/api-secret)
+Alan adınız için webhook yapılandırması ekleyeceğiz, bu yüzden bir API anahtarına ihtiyacımız olacak. [Bunu buradan yapabilirsiniz.](https://fastcomments.com/auth/my-account/api-secret)
 
-[app-screenshot-start url='https://fastcomments.com/auth/my-account/api-secret/add'; cacheBuster = 'v3'; selector = '.content .account-block'; alt='İlgili alan adı localhost olarak ayarlanmış ve anahtar adı Testing olan yeni API gizli formu'; title='Test API Anahtarı Ekle'; actions=[{type: 'set-value', selector: 'select[name=domain]', value: 'localhost'}, {type: 'set-value', selector: 'input[name=name]', value: 'Testing'}] app-screenshot-end]
+[app-screenshot-start url='https://fastcomments.com/auth/my-account/api-secret/add'; cacheBuster = 'v3'; selector = '.content .account-block'; alt='İlişkili alan adı localhost olarak ayarlanmış ve anahtara Testing adı verilmiş yeni API gizli anahtarı formu'; title='Add Testing API Key'; actions=[{type: 'set-value', selector: 'select[name=domain]', value: 'localhost'}, {type: 'set-value', selector: 'input[name=name]', value: 'Testing'}] app-screenshot-end]
 
-Under "Associate with domain" - select your "localhost" domain.
+"Associate with domain" altında - "localhost" alan adınızı seçin.
 
-**NOT: Alternatif olarak, tüm test etkinlikleri ve hazırlık ortamları için tek bir API Gizli anahtarı kullanabilirsiniz. "Tüm Alan Adları" için bir API Gizli anahtarı ekleyin ve ona "test" gibi bir ad verin.**
+**NOT: Alternatif olarak, tüm test etkinlikleri ve hazırlık (staging) ortamları için tek bir API Gizli Anahtarı kullanabilirsiniz. Sadece "All Domains" için bir API Gizli Anahtarı ekleyin ve ona "test" gibi bir ad verin.**
 
-Ensure you have an API Secret defined for your production domain(s). Events for all other domains will use the wildcard (testing) secret.
+Üretim alan ad(lar)ınız için tanımlanmış bir API Gizli Anahtarı olduğundan emin olun. Diğer tüm alan adlarının etkinlikleri joker (test) gizli anahtarını kullanacaktır.
 
-### Adım 3: Add Your Webhook
+### Adım 3: Webhook'unuzu Ekleyin
 
-While running ngrok or similar tool, set the value for "localhost" [burada](https://fastcomments.com/auth/my-account/manage-data/webhooks).
+ngrok veya benzeri bir araç çalışırken, "localhost" için değeri [buradan](https://fastcomments.com/auth/my-account/manage-data/webhooks) ayarlayın.
 
-[app-screenshot-start url='https://fastcomments.com/auth/my-account/manage-data/webhooks'; cacheBuster = 'v3'; selector = '.content'; alt='Webhooks yönetim paneli, localhost alan adı seçili ve bir ngrok URL\'si yorum oluşturulan uç noktaya girilmiş'; title='Test Webhook\'u Ekle'; actions=[{type: 'wait', selector: 'button[type=submit]'}, {type: 'set-value', selector: '#domain-select', value: 'localhost'}, {type: 'set-value', selector: 'input[name="comment-created-url"]', value: 'http://xxxx-xxxx-xxxx-xxxx.ngrok.io/some-route'}]; app-screenshot-end]
+[app-screenshot-start url='https://fastcomments.com/auth/my-account/manage-data/webhooks'; cacheBuster = 'v3'; selector = '.content'; alt='localhost alan adının seçilmiş olduğu ve comment created uç noktasına bir ngrok URL\'si girilmiş webhooks yönetim ekranı'; title='Add Testing Webhook'; actions=[{type: 'wait', selector: 'button[type=submit]'}, {type: 'set-value', selector: '#domain-select', value: 'localhost'}, {type: 'set-value', selector: 'input[name="comment-created-url"]', value: 'http://xxxx-xxxx-xxxx-xxxx.ngrok.io/some-route'}]; app-screenshot-end]
 
-When clicking `Send Test Payload`, we will send two test events to check that you validate the API key.
+`Send Test Payload` tıklandığında, API anahtarını doğruladığınızı kontrol etmek için size iki test etkinliği göndereceğiz.
 
-Once it validates, hit `Save`.
+Doğrulama tamamlandıktan sonra `Save` tuşuna basın.
 
-### Adım 4: Add A Comment
+### Adım 4: Bir Yorum Ekleyin
 
-Now you can add, edit, or delete comments and should see us call your local development machine with the events, using your testing API key. There may be up to 30 seconds delay for the events to reach your machine.
+Artık yorum ekleyebilir, düzenleyebilir veya silebilirsiniz ve etkinliklerle birlikte test API anahtarınızı kullanarak yerel geliştirme makinenizi aradığımızı görmelisiniz. Etkinliklerin makinenize ulaşması 30 saniye kadar sürebilir.

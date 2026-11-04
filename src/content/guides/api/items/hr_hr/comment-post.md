@@ -1,24 +1,24 @@
 [api-resource-header-start name = 'Comment'; route = 'POST /api/v1/comments'; creditsCost = 1; api-resource-header-end]
 
-This API endpoint provides the ability to create comments.
+Ovaj API endpoint omogućava stvaranje komentara.
 
-Common use cases are custom UIs, integrations, or imports.
+Uobičajeni slučajevi upotrebe su prilagođena korisnička sučelja, integracije ili uvozi.
 
-Notes:
+Napomene:
 
-- This API can update the comment widget "live" if desired (this increases `creditsCost` from `1` to `2`).
-- This API will automatically create user objects in our system if email is provided.
-- Trying to save two comments with different emails, but the same username, will result in an error for the second comment. 
-- If you are specifying `parentId`, and a child comment has `notificationSentForParent` as false, **we will send notifications for the parent comment**. This is done every hour (we batch the notifications together to decrease the number of emails sent).
-- If you want to send welcome emails when creating users, or comment verification emails, set `sendEmails` to `true` in query parameters.
-- Comments created via this API will show up in the Analytics and Moderation pages of the admin app.
-- "bad words" are still masked in the commenter names and comment text if the setting is turned on.
-- Comments created via this API can still be checked for spam if desired.
-- Configuration such as max comment length, if configured via the Customization Rule admin page, will apply here.
+- Ovaj API može po želji ažurirati widget za komentare "uživo" (to povećava `creditsCost` s `1` na `2`).
+- Ovaj API će automatski stvoriti korisničke objekte u našem sustavu ako je naveden email.
+- Pokušaj spremanja dva komentara s različitim emailovima, ali istim korisničkim imenom, rezultirat će greškom za drugi komentar.
+- Ako navodite `parentId`, a podređeni komentar ima `notificationSentForParent` postavljeno na false, **poslat ćemo obavijesti za nadređeni komentar**. To se radi svaki sat (obavijesti grupiramo kako bismo smanjili broj poslanih emailova).
+- Ako želite slati dobrodošlice prilikom stvaranja korisnika, ili emailove za potvrdu komentara, postavite `sendEmails` na `true` u query parametrima.
+- Komentari stvoreni putem ovog API-ja prikazat će se na stranicama Analytics i Moderation u admin aplikaciji.
+- "loše riječi" i dalje se maskiraju u imenima komentatora i tekstu komentara ako je ta postavka uključena.
+- Komentari stvoreni putem ovog API-ja mogu se po želji i dalje provjeravati na spam.
+- Konfiguracija poput maksimalne duljine komentara, ako je postavljena putem admin stranice Customization Rule, primjenjuje se i ovdje.
 
-The minimum data required to submit that will show in the comment widget, is as follows:
+Minimalni podaci potrebni za slanje koji će se prikazati u widgetu za komentare su sljedeći:
 
-[inline-code-attrs-start title = 'Minimalni primjer POST cURL zahtjeva za komentar'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primjer minimalnog POST cURL zahtjeva za komentar'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request POST \
   --url 'https://fastcomments.com/api/v1/comments?tenantId=demo&API_KEY=DEMO_API_SECRET&isLive=true' \
@@ -34,7 +34,7 @@ curl --request POST \
 }'
 [inline-code-end]
 
-A more realistic request may look like:
+Realističniji zahtjev može izgledati ovako:
 
 [inline-code-attrs-start title = 'Primjer POST cURL zahtjeva za komentar'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -69,7 +69,7 @@ interface CommentPostQueryParams {
     tenantId: string
     API_KEY: string
     doSpamCheck?: 'true' | 'false'
-	/** Treba li komentar biti vidljiv "uživo" korisnicima koji gledaju instance widgeta komentara s istim urlId-om. NAPOMENA: Udvostručuje trošak kredita s 1 na 2. **/
+	/** Treba li se komentar prikazati "uživo" korisnicima koji gledaju instance widgeta za komentare s istim urlId. NAPOMENA: Udvostručuje cijenu kredita s 1 na 2. **/
     isLive?: 'true' | 'false'
     sendEmails?: 'true' | 'false'
     populateNotifications?: 'true' | 'false'
@@ -87,9 +87,7 @@ interface CommentPostResponse {
     reason?: string
     /** Stvoreni komentar. **/
     comment?: Comment
-    /** Povezani korisnik, koji je možda već postojao ili nije. **/
+    /** Pridruženi korisnik, koji možda već postoji ili ne. **/
     user?: User
 }
 [inline-code-end]
-
----

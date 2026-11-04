@@ -35,5 +35,3 @@ Questo aggiungerà due eventi:
 
 - Etichetta: `Comment Posted`, Categoria: `Engagement`, ID: `post_comment`
 - Etichetta: `User Voted on a Comment`, Categoria: `Engagement`, ID: `vote_comment`
-
----

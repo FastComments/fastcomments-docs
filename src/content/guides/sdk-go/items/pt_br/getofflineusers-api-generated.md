@@ -1,4 +1,3 @@
----
 Comentadores anteriores na página que NÃO estão atualmente online. Ordenados por displayName.
 Use isto após esgotar /users/online para renderizar uma seção "Membros".
 Paginação por cursor em commenterName: o servidor percorre o índice parcial {tenantId, urlId, commenterName}
@@ -47,5 +46,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.GetOfflineUsers`: %v\n", resp)
 }
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 Quando gli utenti commentano o votano e non sono connessi, verrà chiesto loro di fornire l'email e il nome utente.
 
 Nel caso di commenti anonimi, a volte è desiderabile definire un nome utente predefinito per ridurre l'attrito
@@ -14,5 +13,3 @@ I nomi utente che un visitatore digita personalmente devono comunque essere unic
 
 Se preferisci che ogni visitatore ottenga un nome distinto senza doverne pensare uno, vedi
 [Genera nomi utente automaticamente](/guide-customizations-and-configuration.html#auto-generate-username).
-
----

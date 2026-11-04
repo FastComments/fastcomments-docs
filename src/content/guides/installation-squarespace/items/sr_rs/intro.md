@@ -6,5 +6,3 @@
 3. [Додајте коментаре на одређену страницу](#squarespace-pages-specific-page-step-0)
 
 Имајте на уму да овај туторијал захтева FastComments налог. Препоручујемо да се прво региструјете, па потом вратите овде. [Можете да креирате налог овде.](https://fastcomments.com/auth/tenant-signup?packageId=flex)
-
----

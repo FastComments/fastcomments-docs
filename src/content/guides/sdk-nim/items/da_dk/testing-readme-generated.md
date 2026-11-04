@@ -1,4 +1,3 @@
----
 Indstil de nødvendige miljøvariabler:
 
 ```bash
@@ -18,4 +17,3 @@ Eller kør specifikke tests:
 nim c -r tests/test_sso.nim
 nim c -r tests/test_sso_integration.nim
 ```
----

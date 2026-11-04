@@ -26,5 +26,3 @@ async fn update_trust() -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
-
----

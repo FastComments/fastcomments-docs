@@ -1,20 +1,21 @@
-Past commenters on the page who are NOT currently online. Sorted by displayName.  
-Используйте это после исчерпания /users/online, чтобы отобразить раздел «Участники».  
-Курсорная пагинация по commenterName: сервер проходит частичный {tenantId, urlId, commenterName} индекс от afterName вперёд через $gt, без затрат $skip.
+Прошлые комментаторы страницы, которые сейчас НЕ в сети. Отсортированы по displayName.
+Используйте это после исчерпания /users/online для отображения раздела «Участники».
+Курсорная пагинация по commenterName: сервер проходит по частичному индексу {tenantId, urlId, commenterName}
+от afterName вперёд через $gt, без затрат на $skip.
 
-## Parameters
+## Параметры
 
-| Имя | Тип | Обязательно | Описание |
+| Имя | Тип | Обязательный | Описание |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | urlId | string | Да |  |
 | options | const GetOfflineUsersOptions& | Да |  |
 
-## Response
+## Ответ
 
 Возвращает: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PageUsersOfflineResponse.h)
 
-## Example
+## Пример
 
 [inline-code-attrs-start title = 'Пример getOfflineUsers'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -32,5 +33,3 @@ api->getOfflineUsers(tenantId, urlId, options)
         }
     });
 [inline-code-end]
-
----

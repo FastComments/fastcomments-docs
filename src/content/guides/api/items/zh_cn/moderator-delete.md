@@ -1,4 +1,3 @@
----
 [api-resource-header-start name = 'Moderator'; route = 'DELETE /api/v1/moderators/:id'; creditsCost = 5; api-resource-header-end]
 
 此路由用于通过 id 删除 `Moderator`。
@@ -27,5 +26,3 @@ interface ModeratorDeleteResponse {
     reason?: string
 }
 [inline-code-end]
-
----

@@ -1,23 +1,23 @@
-FastComments SDK, iki tür API uç noktası sağlar:
+FastComments SDK iki tür API uç noktası sağlar:
 
-### `PublicAPI` - İstemci tarafı için güvenli uç noktalar
+### PublicAPI - İstemci Tarafında Güvenli Uç Noktalar
 
-The `PublicAPI` contains endpoints that are safe to call from client-side code (iOS/macOS apps). These endpoints:
-- Bir API key gerektirmez
-- Kimlik doğrulama için SSO tokens kullanabilir
-- Her kullanıcı/cihaz için istek sınırlaması vardır
+`PublicAPI`, istemci tarafı kodundan (iOS/macOS uygulamaları) çağrılması güvenli olan uç noktaları içerir. Bu uç noktalar:
+- API anahtarı gerektirmez
+- Kimlik doğrulama için SSO token'ları kullanabilir
+- Kullanıcı/cihaz başına hız sınırına tabidir
 - Son kullanıcıya yönelik uygulamalar için uygundur
 
-**Örnek kullanım**: iOS uygulamanızda yorumları getirme ve oluşturma
+**Örnek kullanım senaryosu**: iOS uygulamanızda yorumları getirme ve oluşturma
 
-### `DefaultAPI` - Sunucu tarafı uç noktalar
+### DefaultAPI - Sunucu Tarafı Uç Noktaları
 
-The `DefaultAPI` contains authenticated endpoints that require an API key. These endpoints:
-- FastComments API key'inizi gerektirir
-- SADECE sunucu tarafı kodundan çağrılmalıdır
+`DefaultAPI`, API anahtarı gerektiren kimlik doğrulamalı uç noktaları içerir. Bu uç noktalar:
+- FastComments API anahtarınızı gerektirir
+- YALNIZCA sunucu tarafı kodundan çağrılmalıdır
 - FastComments verilerinize tam erişim sağlar
-- tenant başına istek sınırlaması uygulanır
+- Kiracı (tenant) başına hız sınırına tabidir
 
-**Örnek kullanım**: Yönetimsel işlemler, toplu veri dışa aktarma, moderasyon araçları
+**Örnek kullanım senaryosu**: Yönetimsel işlemler, toplu veri dışa aktarma, moderasyon araçları
 
-**ÖNEMLİ**: API key'inizi istemci tarafı kodunda asla açığa çıkarmayın. API key'ler yalnızca sunucu tarafında kullanılmalıdır.
+**ÖNEMLİ**: API anahtarınızı asla istemci tarafı kodunda göstermeyin. API anahtarları yalnızca sunucu tarafında kullanılmalıdır.

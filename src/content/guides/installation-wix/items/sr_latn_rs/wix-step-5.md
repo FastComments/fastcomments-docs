@@ -1,30 +1,29 @@
----
-Sledeće, hajde da podesimo stvari tako da se nit komentara menja u zavisnosti od trenutne stranice, omogućavajući korisnicima da diskutuju o sadržaju koji je trenutno prikazan.
+Zatim ćemo podesiti stvari tako da se nit komentara menja u zavisnosti od trenutne stranice, čime korisnicima omogućavamo da diskutuju o trenutno prikazanom sadržaju.
 
-Bez sledećih koraka imaćete samo jednu globalnu nit komentara za ceo sajt — što nije naročito korisno.
+Bez sledećih koraka, imaćete samo jedan globalni nit komentara za ceo sajt - što nije baš korisno.
 
 #### Dev Mode
 
 Da bismo dodali ovu funkcionalnost, moraćemo da uđemo u ono što Wix naziva `Dev Mode`.
 
-Kliknite opciju `Dev Mode` na vrhu ekrana.
+Kliknite na opciju `Dev Mode` na vrhu ekrana.
 
 <div class="screenshot white-bg">
-    <div class="title">Omogući Dev Mode</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-5-dev-mode.png" alt="Omogući Dev Mode" />
+    <div class="title">Omogućite Dev Mode</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-5-dev-mode.png" alt="Omogućite Dev Mode" />
 </div>
 
-#### Podesite ID elementa
+#### Postavite ID elementa
 
-Dodaćemo prilagođeni kod da bismo to postigli, ali prvo moramo novom embed elementu dodeliti ID po kojem ćemo se na njega pozivati.
+Dodaćemo prilagođeni kod da bismo ovo postigli, ali prvo moramo da damo novom ugnježdenom elementu ID na koji ćemo se pozivati.
 
-Nazovimo ga `fastcomments`.
+Nazvaćemo ga `fastcomments`.
 
-Kliknite novi embed element koji smo dodali, i u `Dev Mode` u donjem desnom uglu trebalo bi da vidite polje za ID sa vrednošću poput `html1`:
+Kliknite na novi ugnježdeni element koji smo dodali, i u dev režimu u donjem desnom uglu trebalo bi da vidite polje ID sa vrednošću poput `html1`:
 
 <div class="screenshot white-bg">
-    <div class="title">Polje za ID</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-5-id-0.png" alt="Polje za ID" />
+    <div class="title">Polje ID</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-5-id-0.png" alt="Polje ID" />
 </div>
 
 Promenite ovo u `fastcomments` i pritisnite enter:
@@ -34,18 +33,18 @@ Promenite ovo u `fastcomments` i pritisnite enter:
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-5-id-1.png" alt="Postavite ID" />
 </div>
 
-Sada možemo dodati naš prilagođeni kod koji polju komentara govori koju stranicu trenutno prikazujemo.
+Sada možemo da dodamo naš prilagođeni kod koji govori oblasti komentara koju stranicu gledamo.
 
 Na dnu ekrana trebalo bi da vidite editor koda poput ovog:
 
 <div class="screenshot white-bg">
-    <div class="title">Otvorite editor</div>
+    <div class="title">Otvorite Editor</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-7-open-editor.png" alt="Postavite ID" />
 </div>
 
 Kopirajte sledeći kod i nalepite ga tamo:
 
-[inline-code-attrs-start title = 'Wix navigacioni isječak za komentare'; type = 'javascript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Wix Snippet za Navigaciju Komentara'; type = 'javascript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 import wixLocation from 'wix-location';
 
@@ -67,8 +66,6 @@ $w.onReady(function () {
 [inline-code-end]
 
 <div class="screenshot white-bg">
-    <div class="title">Dodajte navigacioni kod</div>
-    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-7-paste-code.png" alt="Dodajte navigacioni kod" />
+    <div class="title">Dodajte Kod za Navigaciju</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-7-paste-code.png" alt="Dodajte Kod za Navigaciju" />
 </div>
-
----

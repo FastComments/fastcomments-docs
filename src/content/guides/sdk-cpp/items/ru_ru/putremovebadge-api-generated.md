@@ -22,5 +22,3 @@ api->putRemoveBadge(tenantId, badgeId, options).then([](std::shared_ptr<RemoveUs
     (void)resp;
 });
 [inline-code-end]
-
----

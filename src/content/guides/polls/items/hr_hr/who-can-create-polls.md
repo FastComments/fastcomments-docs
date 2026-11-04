@@ -1,8 +1,8 @@
-Once polls are enabled, the **Tko može kreirati ankete** setting controls who sees the poll button in the comment toolbar:
+Nakon što su ankete omogućene, postavka **Tko Može Stvarati Ankete** kontrolira tko vidi gumb za anketu u alatnoj traci komentara:
 
-- **Samo administratori/moderatori** (the default): only your site's admins and moderators can attach a poll to a comment.
-- **Svi**: any commenter can attach a poll to their comment.
+- **Samo Admini/Moderatori** (zadano): samo admini i moderatori vaše stranice mogu priložiti anketu komentaru.
+- **Svi**: svaki komentator može priložiti anketu svom komentaru.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-polls']; selector = '.poll-creation'; alt='Padajući izbornik Tko može kreirati ankete postavljen na Samo administratori/moderatori'; title='Tko može kreirati ankete' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-polls']; selector = '.poll-creation'; alt='Padajući izbornik Tko Može Stvarati Ankete postavljen na Samo Admini/Moderatori'; title='Tko Može Stvarati Ankete' app-screenshot-end]
 
-This setting only controls who can create polls. Who can vote is set separately, see the next section.
+Ova postavka kontrolira samo tko može stvarati ankete. Tko može glasati postavlja se odvojeno, vidi sljedeći odjeljak.

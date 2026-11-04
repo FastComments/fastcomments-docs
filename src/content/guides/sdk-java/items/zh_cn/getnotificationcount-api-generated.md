@@ -1,4 +1,3 @@
----
 ## 参数
 
 | 名称 | 类型 | 位置 | 必需 | 描述 |
@@ -63,5 +62,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

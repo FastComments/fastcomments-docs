@@ -29,5 +29,3 @@ let (response, httpResponse) = client.deleteCommentVote(
 if response.isSome:
   let voteDelete = response.get()
 [inline-code-end]
-
----

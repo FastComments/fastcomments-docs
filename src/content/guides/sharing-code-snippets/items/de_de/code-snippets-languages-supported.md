@@ -1,4 +1,3 @@
----
 Beim Teilen von Code-Snippets versucht FastComments so gut wie möglich, automatisch zu erkennen, in welcher Programmiersprache sich das Code-Snippet befindet, um es entsprechend zu formatieren und die Syntaxhervorhebung anzuwenden.
 
 Die Syntax-Hervorhebung von FastComments unterstützt derzeit 39 gängige Sprachen:
@@ -47,4 +46,3 @@ Die Syntax-Hervorhebung von FastComments unterstützt derzeit 39 gängige Sprach
 - YAML
 
 Wenn ein Code-Snippet in einer Sprache geteilt wird, die wir nicht unterstützen, wird es weiterhin als Code gerendert – allerdings ohne Syntaxhervorhebung oder Neuformatierung.
----

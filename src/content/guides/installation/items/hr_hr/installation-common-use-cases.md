@@ -1,29 +1,28 @@
-### Showing Live Comments Right Away
+### Prikazivanje komentara uživo odmah
 
-The comment widget is live by default, however live comments appear under a "Show N New Comments" button to prevent
-the page content from moving around.
+Widget za komentare je uživo po defaultu, međutim komentari uživo pojavljuju se pod gumbom "Prikaži N novih komentara" kako se sadržaj stranice ne bi pomicao.
 
-In some cases, it's still desirable to show the new comments right away, without having to click a button.
+U nekim slučajevima i dalje je poželjno odmah prikazati nove komentare, bez potrebe za klikom na gumb.
 
-In this case, you want to enable the `showLiveRightAway` flag, which you can find documentation for [ovdje](/guide-customizations-and-configuration.html#show-live-right-away).
+U tom slučaju želite omogućiti zastavicu `showLiveRightAway`, za koju možete pronaći dokumentaciju [ovdje](/guide-customizations-and-configuration.html#show-live-right-away).
 
-### Allowing Anonymous Commenting (Not Requiring Email)
+### Omogućavanje anonimnog komentiranja (bez obvezne e-pošte)
 
-By default, FastComments requires the user to leave an email when they comment.
+Po defaultu FastComments zahtijeva da korisnik ostavi e-adresu prilikom komentiranja.
 
-This can be disabled, [upute su ovdje](/guide-customizations-and-configuration.html#allow-anon).
+To se može onemogućiti, [upute su ovdje](/guide-customizations-and-configuration.html#allow-anon).
 
-To also spare visitors from choosing a username, FastComments can [generirati jedno za svakog posjetitelja](/guide-customizations-and-configuration.html#auto-generate-username).
+Da biste posjetitelje oslobodili i odabira korisničkog imena, FastComments može [generirati jedno za svakog posjetitelja](/guide-customizations-and-configuration.html#auto-generate-username).
 
-### Custom Styling
+### Prilagođeno stiliziranje
 
-Many of our customers apply their own styling to the comment widget. You can find the documentation [ovdje](/guide-customizations-and-configuration.html#custom-css).
+Mnogi naši kupci primjenjuju vlastito stiliziranje na widget za komentare. Dokumentaciju možete pronaći [ovdje](/guide-customizations-and-configuration.html#custom-css).
 
-### Showing The Same Comments on Multiple Domains
+### Prikaz istih komentara na više domena
 
-Showing the same comments on multiple sites is something FastComments supports out of the box. See our
-[documentation on this subject](/guide-multiple-sites.html#sharing-comments-across-domains).
+Prikazivanje istih komentara na više stranica nešto je što FastComments podržava odmah. Pogledajte našu
+[dokumentaciju o ovoj temi](/guide-multiple-sites.html#sharing-comments-across-domains).
 
-### Changing The Current Page
+### Promjena trenutne stranice
 
-FastComments supports SPAs and complex applications. Changing the current page is easy, and covered [ovdje](/guide-customizations-and-configuration.html#switching-comment-threads).
+FastComments podržava SPA-ove i složene aplikacije. Promjena trenutne stranice jednostavna je i pokrivena je [ovdje](/guide-customizations-and-configuration.html#switching-comment-threads).

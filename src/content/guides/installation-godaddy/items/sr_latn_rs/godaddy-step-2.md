@@ -39,5 +39,3 @@ Pritisnite Done u gornjem desnom uglu:
 </div>
 
 To je sve za drugi korak!
-
----

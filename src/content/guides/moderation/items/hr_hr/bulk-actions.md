@@ -9,5 +9,3 @@ Vidjet ćete tijek izvođenja dok se grupne radnje izvršavaju, i možete pritis
 
 Ako odaberete potvrdni okvir "Odaberi sve" on će prema zadanim postavkama odabrati samo vidljive komentare na stranici, ali prikazat će vam opciju za odabir svih komentara na serveru koji odgovaraju vašim filtrima. Dakle, čak i ako trebate odobriti, izbrisati, itd.
 milijune komentara, to možete učiniti s nekoliko klikova.
-
----

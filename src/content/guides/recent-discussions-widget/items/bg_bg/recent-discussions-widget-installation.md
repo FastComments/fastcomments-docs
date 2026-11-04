@@ -1,8 +1,8 @@
-The Recent Discussions Widget shows pages on your site that have the most recent comment activity. Each entry displays the page title, last activity date, and total comment count. It automatically detects dark backgrounds and adjusts its styling accordingly.
+Уиджетът „Скорошни дискусии“ показва страниците на вашия сайт с най-скорошна коментарна активност. Всеки запис показва заглавието на страницата, датата на последната активност и общия брой коментари. Той автоматично разпознава тъмен фон и съответно адаптира своя стил.
 
 ## Основна инсталация
 
-[inline-code-attrs-start title = 'Инсталиране на уиджет за последни дискусии'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Инсталация на уиджет „Скорошни дискусии“'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/widget-recent-discussions-v2.min.js"></script>
 <div id="fastcomments-widget-recent-discussions"></div>
@@ -19,13 +19,13 @@ The Recent Discussions Widget shows pages on your site that have the most recent
 
 - **tenantId** (задължително): Вашият FastComments tenant ID
 - **count** (по избор): Брой страници за показване. По подразбиране е `20`, максимум `100`
-- **hasDarkBackground** (по избор): Принудително прилагане на стилизация за тъмен режим. Автоматично се открива от фона на страницата, ако не е зададено
+- **hasDarkBackground** (по избор): Принудително прилагане на тъмен режим. Автоматично се разпознава от фона на страницата, ако не е зададено
 
 ## Разширени примери
 
 ### Персонализиран брой
 
-[inline-code-attrs-start title = 'Последни дискусии с персонализиран брой'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Скорошни дискусии с персонализиран брой'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/widget-recent-discussions-v2.min.js"></script>
 <div id="fastcomments-widget-recent-discussions"></div>
@@ -39,7 +39,7 @@ The Recent Discussions Widget shows pages on your site that have the most recent
 
 ### Принудителен тъмен режим
 
-[inline-code-attrs-start title = 'Последни дискусии с тъмен режим'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Скорошни дискусии с тъмен режим'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/widget-recent-discussions-v2.min.js"></script>
 <div id="fastcomments-widget-recent-discussions"></div>

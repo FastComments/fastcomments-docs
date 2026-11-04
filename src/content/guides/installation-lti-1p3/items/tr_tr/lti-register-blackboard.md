@@ -1,12 +1,12 @@
-Blackboard Learn SaaS ve Ultra, LTI 1.3 Dinamik Kaydı destekler.
+Blackboard Learn SaaS ve Ultra, LTI 1.3 Dynamic Registration'ı destekler.
 
-#### Araç Sağlayıcı Ekranını Açın
+#### Tool Provider Ekranını Açın
 
 1. Blackboard'a sistem yöneticisi olarak giriş yapın.
-2. Şuraya gidin: **Administrator Panel** > **Integrations** > **LTI Tool Providers**.
-3. Tıklayın **Register LTI 1.3 / LTI Advantage Tool**.
+2. **Administrator Panel** > **Integrations** > **LTI Tool Providers** bölümüne gidin.
+3. **Register LTI 1.3 / LTI Advantage Tool** seçeneğine tıklayın.
 
-If you only see "Register LTI 1.1 Provider", your Blackboard version doesn't support LTI 1.3 yet - upgrade or contact Blackboard support.
+Yalnızca "Register LTI 1.1 Provider" seçeneğini görüyorsanız, Blackboard sürümünüz henüz LTI 1.3'ü desteklemiyor - yükseltme yapın veya Blackboard desteğiyle iletişime geçin.
 
 #### URL'yi Yapıştırın
 
@@ -16,11 +16,11 @@ Blackboard, FastComments ile kayıt el sıkışmasını gerçekleştirir ve size
 
 #### Onaylayın ve Etkinleştirin
 
-Blackboard varsayılan olarak yeni kaydedilen araçları **Approved but excluded** olarak işaretler:
+Blackboard, yeni kaydedilen araçları varsayılan olarak **Approved but excluded** olarak işaretler:
 
 1. Araç sağlayıcı listesinde FastComments girdisini bulun.
-2. Menüyü açın ve **Edit**'i seçin.
-3. **Tool Status**'u **Approved** olarak ayarlayın.
-4. **Institution Policies** altında hangi kullanıcı verilerinin gönderildiğini (name, email, role) gözden geçirin. Kaydedin.
+2. Menüyü açın ve **Edit** seçeneğini seçin.
+3. **Tool Status** değerini **Approved** olarak ayarlayın.
+4. **Institution Policies** altında, hangi kullanıcı verilerinin gönderildiğini (ad, e-posta, rol) inceleyin. Kaydedin.
 
-Araç artık eğitmenlerin derslere içerik eklediklerinde kullanılabilir.
+Araç artık eğitmenler kurslara içerik eklerken kullanılabilir durumdadır.

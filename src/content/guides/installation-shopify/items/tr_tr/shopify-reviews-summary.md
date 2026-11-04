@@ -1,4 +1,3 @@
----
 The **FastComments - İncelemeler Özeti** bloğu bir sayfa için toplu yıldız puanını ve inceleme dökümünü gösterir. Standart inceleme düzeni için ürün şablonlarındaki **FastComments** bloğuyla eşleştirin: özet yukarıda, inceleme formu ve incelemeler aşağıda.
 
 ### Önkoşul: Derecelendirmeler & İncelemeler'i ayarlama
@@ -41,5 +40,3 @@ Normal bir ürün sayfası için özet ile yorum dizisi otomatik olarak bir URL 
 
 - Özet salt okunurdur. İnceleme toplamak için aynı sayfada bir **FastComments** bloğuna ihtiyacınız vardır.
 - İncelemeleri topladıktan sonra Derecelendirmeler & İncelemeler Yardımcısı'nda değerlendirme sorularını değiştirirseniz, özet yeni soru kümesine göre yeniden hesaplanır.
-
----

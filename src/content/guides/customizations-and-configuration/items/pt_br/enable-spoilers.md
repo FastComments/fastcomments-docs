@@ -1,4 +1,3 @@
----
 [related-parameter-start name = 'enableSpoilers'; type = 'boolean'; related-parameter-end]
 
 Podemos habilitar o suporte a spoilers definindo a flag **enableSpoilers** como true:
@@ -12,5 +11,3 @@ Isso também pode ser feito sem código. Na página de personalização do widge
 Quando o texto está destacado e o botão `SPOILER` agora visível é clicado, o texto será mascarado até que o usuário passe o mouse sobre ele. No modo escuro fazemos o mesmo, com cores diferentes que combinam melhor com o modo escuro.
 
 Isso também é compatível com o editor WYSIWYG.
-
----

@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
@@ -22,5 +21,3 @@ api->resetUserNotifications(tenantId, options)
         // Obradi odgovor
     });
 [inline-code-end]
-
----

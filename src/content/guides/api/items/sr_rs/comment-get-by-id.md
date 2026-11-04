@@ -28,5 +28,3 @@ interface CommentGetByIdResponse {
     comment?: Comment
 }
 [inline-code-end]
-
----

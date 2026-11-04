@@ -28,5 +28,3 @@ api->updateEmailTemplate(tenantId, templateId, body)
         try { t.get(); } catch (const std::exception &) { /* 오류 처리 */ }
     });
 [inline-code-end]
-
----

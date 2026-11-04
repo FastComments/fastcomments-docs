@@ -1,4 +1,3 @@
----
 ## パラメータ
 
 | 名前 | 型 | Location | 必須 | 説明 |
@@ -40,5 +39,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.GetUserPresenceStatuses`: %v\n", resp)
 }
 [inline-code-end]
-
----

@@ -1,22 +1,21 @@
-Enable or disable notifications for a page. When users are subscribed to a page, notifications are created
-for new root comments, and also
+啟用或停用某個頁面的通知。當使用者訂閱了某個頁面時，新的根層級留言會產生通知，並且
 
-## Parameters
+## 參數
 
-| 名稱 | 類型 | 位置 | 必填 | 描述 |
+| 名稱 | 類型 | 位置 | 必填 | 說明 |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| urlId | string | query | Yes |  |
-| url | string | query | Yes |  |
-| pageTitle | string | query | Yes |  |
-| subscribedOrUnsubscribed | string | path | Yes |  |
-| sso | string | query | No |  |
+| tenantId | string | query | 是 |  |
+| urlId | string | query | 是 |  |
+| url | string | query | 是 |  |
+| pageTitle | string | query | 是 |  |
+| subscribedOrUnsubscribed | string | path | 是 |  |
+| sso | string | query | 否 |  |
 
-## Response
+## 回應
 
-Returns: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/UpdateUserNotificationPageSubscriptionStatusResponse.php)
+回傳：[`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/UpdateUserNotificationPageSubscriptionStatusResponse.php)
 
-## Example
+## 範例
 
 [inline-code-attrs-start title = 'updateUserNotificationPageSubscriptionStatus 範例'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -26,8 +25,8 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 $apiInstance = new FastComments\Client\Api\PublicApi(
-    // 如果您想使用自訂的 HTTP 用戶端，請傳入實作 `GuzzleHttp\ClientInterface` 的客戶端。
-    // 這是可選的，預設會使用 `GuzzleHttp\Client`。
+    // 如果您想使用自訂的 http client，請傳入實作了 `GuzzleHttp\ClientInterface` 的 client。
+    // 這是選填的，預設會使用 `GuzzleHttp\Client`。
     new GuzzleHttp\Client()
 );
 

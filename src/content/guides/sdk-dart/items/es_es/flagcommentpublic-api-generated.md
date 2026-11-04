@@ -1,4 +1,3 @@
----
 ## Parámetros
 
 | Nombre | Tipo | Ubicación | Requerido | Descripción |
@@ -31,5 +30,3 @@ try {
     print('Exception when calling PublicApi->flagCommentPublic: $e\n');
 }
 [inline-code-end]
-
----

@@ -30,5 +30,3 @@ let params = CreateQuestionResultParams {
 
 let response = create_question_result(&configuration, params).await?;
 [inline-code-end]
-
----

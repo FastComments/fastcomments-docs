@@ -38,5 +38,3 @@ Ora cambiamo il tipo di widget `Embed` in `HTML`:
 </div>
 
 Ora sei pronto per lo snippet di codice FastComments per Framer nel passo successivo.
-
----

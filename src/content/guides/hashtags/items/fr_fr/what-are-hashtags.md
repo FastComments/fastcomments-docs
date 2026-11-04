@@ -1,4 +1,3 @@
----
 Les #hashtags FastComments offrent un moyen pour un utilisateur d'étiqueter son commentaire comme pertinent pour un sujet ou un groupe particuliers. De plus, les hashtags
 peuvent être utilisés pour créer des liens vers d'autres pages ou documents.
 

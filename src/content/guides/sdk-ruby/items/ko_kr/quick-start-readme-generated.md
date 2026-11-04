@@ -1,4 +1,3 @@
----
 ### 인​증​된​ API​ 사용 (DefaultApi)
 
 **중요:** 인증된 요청을 만들기 전에 ApiClient에 API 키를 설정해야 합니다. 설정하지 않으면 요청이 401 오류와 함께 실패합니다.
@@ -81,4 +80,3 @@ end
 1. **401 "missing-api-key" 오류**: DefaultApi 인스턴스를 만들기 전에 `config.api_key['x-api-key'] = 'YOUR_KEY'`를 설정했는지 확인하십시오.
 2. **잘못된 API 클래스**: 서버 측 인증 요청에는 `DefaultApi`를, 클라이언트 측/공개 요청에는 `PublicApi`를, 모더레이터 대시보드 요청에는 `ModerationApi`를 사용하세요.
 3. **Null API 키**: API 키가 null이면 SDK가 인증을 조용히 건너뛰게 되며, 이로 인해 401 오류가 발생합니다.
----

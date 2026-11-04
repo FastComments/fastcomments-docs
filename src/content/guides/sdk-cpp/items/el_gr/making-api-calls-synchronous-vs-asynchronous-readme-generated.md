@@ -1,8 +1,8 @@
-All API methods in this SDK return `pplx::task<std::shared_ptr<ResponseType>>` from the C++ REST SDK. This gives you flexibility in how you handle API responses.
+Όλες οι μέθοδοι API σε αυτό το SDK επιστρέφουν `pplx::task<std::shared_ptr<ResponseType>>` από το C++ REST SDK. Αυτό σας δίνει ευελιξία στον τρόπο χειρισμού των απαντήσεων του API.
 
-### Συγχρονικές κλήσεις με `.get()`
+### Σύγχρονες κλήσεις με `.get()`
 
-Χρησιμοποιήστε το `.get()` για να μπλοκάρετε το νήμα που καλεί μέχρι να ολοκληρωθεί το αίτημα και να λάβετε το αποτέλεσμα συγχρονικά:
+Χρησιμοποιήστε το `.get()` για να μπλοκάρετε το νήμα κλήσης μέχρι να ολοκληρωθεί το αίτημα και να ανακτήσετε το αποτέλεσμα σύγχρονα:
 
 ```cpp
 auto config = std::make_shared<org::openapitools::client::api::ApiConfiguration>();
@@ -13,15 +13,15 @@ config->setApiKey(utility::conversions::to_string_t("api_key"),
 auto apiClient = std::make_shared<org::openapitools::client::api::ApiClient>(config);
 org::openapitools::client::api::DefaultApi api(apiClient);
 
-// Required parameters are positional; optional ones go in the options struct
+// Οι υποχρεωτικές παράμετροι είναι θέσης· οι προαιρετικές μπαίνουν στο struct options
 org::openapitools::client::api::GetCommentsOptions options;
 options.urlId = utility::conversions::to_string_t("your-url-id");
 
-// Call .get() to block and get the result synchronously
+// Καλέστε .get() για να μπλοκάρει και να λάβει το αποτέλεσμα σύγχρονα
 auto response = api.getComments(
     utility::conversions::to_string_t("your-tenant-id"),
     options
-).get();  // Μπλοκάρει μέχρι να ολοκληρωθεί το αίτημα HTTP
+).get();  // Μπλοκάρει μέχρι να ολοκληρωθεί το HTTP αίτημα
 
 if (response && response->comments) {
     std::cout << "Found " << response->comments->size() << " comments" << std::endl;
@@ -30,7 +30,7 @@ if (response && response->comments) {
 
 ### Ασύγχρονες κλήσεις με `.then()`
 
-Χρησιμοποιήστε το `.then()` για μη-μπλοκαριστική ασύγχρονη εκτέλεση με callbacks:
+Χρησιμοποιήστε το `.then()` για μη μπλοκαρισμένη ασύγχρονη εκτέλεση με callbacks:
 
 ```cpp
 auto config = std::make_shared<org::openapitools::client::api::ApiConfiguration>();
@@ -41,11 +41,11 @@ config->setApiKey(utility::conversions::to_string_t("api_key"),
 auto apiClient = std::make_shared<org::openapitools::client::api::ApiClient>(config);
 org::openapitools::client::api::DefaultApi api(apiClient);
 
-// Required parameters are positional; optional ones go in the options struct
+// Οι υποχρεωτικές παράμετροι είναι θέσης· οι προαιρετικές μπαίνουν στο struct options
 org::openapitools::client::api::GetCommentsOptions options;
 options.urlId = utility::conversions::to_string_t("your-url-id");
 
-// Use .then() for asynchronous callback-based execution
+// Χρησιμοποιήστε .then() για ασύγχρονη εκτέλεση με callbacks
 api.getComments(
     utility::conversions::to_string_t("your-tenant-id"),
     options
@@ -56,25 +56,25 @@ api.getComments(
     }
 });
 
-// Execution continues immediately without blocking
+// Η εκτέλεση συνεχίζεται αμέσως χωρίς μπλοκάρισμα
 std::cout << "Request sent, continuing..." << std::endl;
 ```
 
-### Επιλογή μεταξύ Συγχρονισμού και Ασύγχρονης Εκτέλεσης
+### Επιλογή μεταξύ Συγχρόνου και Ασύγχρονου
 
 Η επιλογή εξαρτάται από το περιβάλλον εκτέλεσης και την αρχιτεκτονική της εφαρμογής σας:
 
-**`.get()` (Synchronous blocking)**
-- Μπλοκάρει το νήμα που καλεί μέχρι να ολοκληρωθεί το αίτημα HTTP
-- Απλούστερη ροή κώδικα, πιο εύκολο να λογιστεί κανείς
-- Κατάλληλο για αποκλειστικά νήματα εργασίας, επεξεργασία παρτίδων ή εργαλεία γραμμής εντολών
-- **Μη κατάλληλο** για βρόχους γεγονότων, νήματα GUI ή εξυπηρετητές μονής λειτουργίας
+**`.get()` (Σύγχρονο με μπλοκάρισμα)**
+- Μπλοκάρει το νήμα κλήσης μέχρι να ολοκληρωθεί το HTTP αίτημα
+- Απλούστερη ροή κώδικα, πιο εύκολος συλλογισμός
+- Κατάλληλο για αποκλειστικά νήματα εργασίας, μαζική επεξεργασία ή εργαλεία γραμμής εντολών
+- **Δεν είναι κατάλληλο** για event loops, νήματα GUI ή μονονηματικούς servers
 
-**`.then()` (Asynchronous non-blocking)**
-- Επιστρέφει άμεσα, η callback εκτελείται όταν ολοκληρωθεί το αίτημα
-- Δεν μπλοκάρει το νήμα που καλεί
-- Απαιτείται για αρχιτεκτονικές βάσει γεγονότων, εφαρμογές GUI ή βρόχους γεγονότων μονής λειτουργίας
-- Επιτρέπει την αθροίωση πολλαπλών λειτουργιών
+**`.then()` (Ασύγχρονο χωρίς μπλοκάρισμα)**
+- Επιστρέφει αμέσως, το callback εκτελείται όταν ολοκληρωθεί το αίτημα
+- Δεν μπλοκάρει το νήμα κλήσης
+- Απαιτείται για αρχιτεκτονικές βασισμένες σε events, εφαρμογές GUI ή μονονηματικά event loops
+- Επιτρέπει την αλυσιδωτή σύνδεση πολλαπλών λειτουργιών
 - Πιο σύνθετη ροή ελέγχου
 
-Η σειρά δοκιμών του SDK χρησιμοποιεί αποκλειστικά το `.get()`, αλλά αυτό είναι κατάλληλο για το περιβάλλον δοκιμών όπου η μπλοκάρισμα είναι αποδεκτή.
+Η σουίτα δοκιμών του SDK χρησιμοποιεί αποκλειστικά το `.get()`, κάτι που είναι κατάλληλο για το περιβάλλον δοκιμών όπου το μπλοκάρισμα είναι αποδεκτό.

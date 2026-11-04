@@ -1,21 +1,21 @@
-Subscribes a URL to a comment event (REST hook subscribe). Subscribing the same URL to the same  
-event and domain again returns the existing subscription. Deliveries are HMAC signed, see the  
-webhooks guide; the legacy `token` header is never sent to API subscriptions.
+Συνδέει ένα URL σε ένα συμβάν σχολίου (REST hook subscribe). Η επανασύνδεση του ίδιου URL στο ίδιο
+συμβάν και domain επιστρέφει την υπάρχουσα συνδρομή. Οι παραδόσεις υπογράφονται με HMAC, δείτε τον
+οδηγό webhooks· η παλαιού τύπου κεφαλίδα `token` δεν αποστέλλεται ποτέ σε συνδρομές μέσω API.
 
-## Parameters
+## Παράμετροι
 
-| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
+| Όνομα | Τύπος | Απαραίτητο | Περιγραφή |
 |------|------|----------|-------------|
 | tenantId | string | Ναι |  |
 | createWebhookParams | CreateWebhookParams | Ναι |  |
 
-## Response
+## Απάντηση
 
 Επιστρέφει: [`CreateWebhookResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateWebhookResponse.ts)
 
-## Example
+## Παράδειγμα
 
-[inline-code-attrs-start title = 'createWebhook Παράδειγμα'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Παράδειγμα createWebhook'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 const tenantId: string = "tenant_9f8b7c6d";
 
@@ -24,7 +24,7 @@ const webhookParams: CreateWebhookParams = {
   method: "POST" as WebhookHTTPMethod,
   url: "https://myapp.example.com/webhook",
   source: "comment" as WebhookSource,
-  // προαιρετικό μυστικό για επαλήθευση payload
+  // προαιρετικό μυστικό για επαλήθευση του payload
   secret: "s3cr3tK3y123",
 };
 

@@ -1,12 +1,11 @@
-With FastComments, a conversation has to be first created before it can be embedded.
+S FastComments mora biti pogovor najprej ustvarjen, preden ga je mogoče vgraditi.
 
-To do so, simply visit [fastcomments.com/create](https://fastcomments.com/create).
+To naredite tako, da preprosto obiščete [fastcomments.com/create](https://fastcomments.com/create).
 
-[app-screenshot-start url='/create'; selector = '.content'; alt='Stran fastcomments.com/create s poljem za ime pogovora in gumbom, ki ustvari varen povezavo'; title='Obrazec za ustvarjanje pogovora' app-screenshot-end]
+[app-screenshot-start url='/create'; selector = '.content'; alt='Stran fastcomments.com/create s poljem za ime pogovora in gumbom, ki ustvari varno povezavo'; title='Obrazec za ustvarjanje pogovora' app-screenshot-end]
 
-Once choosing a name, a secure link will be created. 
+Ko izberete ime, bo ustvarjena varna povezava.
 
-This link can be visited and used as its own chat. Or, it can be provided directly to an application that supports oEmbed, or https://embed.ly, to
-insert the conversation.
+To povezavo lahko obiščete in uporabite kot svoj klepet. Ali pa jo lahko neposredno posredujete aplikaciji, ki podpira oEmbed, ali https://embed.ly, da vstavi pogovor.
 
-Embedded conversations can be customized just like any other FastComments installation using the Customization UI. Read about customizing the comment widget [here](/guide-customizations-and-configuration.html).
+Vgrajene pogovore je mogoče prilagoditi tako kot katero koli drugo namestitev FastComments z uporabo UI za prilagajanje. O prilagajanju pripomočka za komentarje preberite [tukaj](/guide-customizations-and-configuration.html).

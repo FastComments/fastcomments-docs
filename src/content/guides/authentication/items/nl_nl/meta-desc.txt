@@ -1,3 +1,1 @@
----
 Laat lezers zonder wrijving reageren. Vergelijk wachtwoordloze inloglinks, wachtwoorden, SSO en SAML om de inlogmethode te kiezen die uw publiek accepteert.
----

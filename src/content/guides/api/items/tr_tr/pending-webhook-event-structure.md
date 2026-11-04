@@ -1,14 +1,13 @@
-A `PendingWebhookEvent` object represents a queued webhook event that is pending.
+Bir `PendingWebhookEvent` nesnesi, bekleyen kuyruğa alınmış bir webhook olayını temsil eder.
 
-`PendingWebhookEvent` objects are created automatically and cannot be manually created via the API. They also expire after one year.
-They can be deleted which removes the task from the queue.
+`PendingWebhookEvent` nesneleri otomatik olarak oluşturulur ve API üzerinden manuel olarak oluşturulamaz. Ayrıca bir yıl sonra son kullanma tarihine ulaşırlar.
+Silinebilirler, bu da görevi kuyruktan kaldırır.
 
-There are different event types - check `eventType` (`OutboundSyncEventType`) and `type` (`OutboundSyncType`).
+Farklı olay türleri vardır - `eventType` (`OutboundSyncEventType`) ve `type` (`OutboundSyncType`) alanlarını kontrol edin.
 
-A common use case for this API is to implement custom monitoring. You may want to call the `/count` endpoint periodically
-to poll the outstanding count for given filters.
+Bu API'nin yaygın bir kullanım senaryosu özel izleme uygulamaktır. Belirli filtreler için bekleyen sayıyı yoklamak amacıyla `/count` uç noktasını düzenli olarak çağırmak isteyebilirsiniz.
 
-The structure for the `PendingWebhookEvent` object is as follows:
+`PendingWebhookEvent` nesnesinin yapısı aşağıdaki gibidir:
 
 [inline-code-attrs-start title = 'PendingWebhookEvent Yapısı'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -19,7 +18,7 @@ enum OutboundSyncEventType {
 }
 
 enum OutboundSyncType {
-    /** WordPress'e özgü senkronizasyon görevi. **/
+    /** WordPress'e özel senkronizasyon görevi. **/
     WP: 0,
     Webhook: 1
 }
@@ -28,24 +27,22 @@ interface PendingWebhookEvent {
     id: string
     /** Olayla ilişkili yorum kimliği. **/
     commentId: string
-    /** Olay anındaki yorum nesnesi. Bunları Kasım 2023'te eklemeye başladık. **/
+    /** Olay anındaki olaya ait yorum nesnesi. Bunları eklemeye Kasım 2023'te başladık. **/
     comment: Comment
-    /** Yorumla ilişkilendirilebilecek harici bir kimlik. **/
+    /** Yorumla ilişkilendirilmiş olabilecek harici bir kimlik. **/
     externalId: string | null
     createdAt: Date
     tenantId: string
     attemptCount: number
-    /** İlk denemeden önce ve her hata sonrası ayarlanır. **/
+    /** İlk denemeden önce ve her başarısızlıktan sonra ayarlanır. **/
     nextAttemptAt: Date
     /** Bunun bir oluşturma, silme veya güncelleme olayı olup olmadığı... **/
     eventType: OutboundSyncEventType
-    /** Yapılacak senkronizasyon türü (WordPress, API çağrısı, vb.). **/
+    /** Gerçekleştirilecek senkronizasyonun türü (WordPress, API çağrısı vb). **/
     type: OutboundSyncType
     /** Yorumla eşleşen alan adı. API anahtarını seçmek için bu alan adını kullanıyoruz. **/
     domain: string
-    /** Oluşan son hata. Bu tür tiplenmemiştir ve olanların bir "dump"ıdır. Genellikle statusCode, body ve bir headers haritası içeren bir nesne içerir. **/
+    /** Oluşan son hata. Bu tür tiplenmemiştir ve olan her şeyin bir "dökümüdür". Genellikle statusCode, body ve bir headers haritası içeren bir nesne içerir. **/
     lastError: object | null
 }
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 Seznam strani za najemnika. Uporablja ga namizni odjemalec FChat za polnjenje svojega seznama sob.
 Zahteva, da je `enableFChat` v razrešeni prilagojeni konfiguraciji za vsako stran nastavljen na true.
 Strani, ki zahtevajo SSO, so filtrirane glede na dostop skupin uporabnika, ki pošilja zahtevo.
@@ -50,5 +49,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.GetPagesPublic`: %v\n", resp)
 }
 [inline-code-end]
-
----

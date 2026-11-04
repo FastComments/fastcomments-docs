@@ -1,4 +1,3 @@
----
 Configurez votre tenant dans `settings.py` :
 
 ```python
@@ -16,4 +15,3 @@ Déposez le widget dans n'importe quel modèle :
 
 {% fastcomments url_id="my-page" %}
 ```
----

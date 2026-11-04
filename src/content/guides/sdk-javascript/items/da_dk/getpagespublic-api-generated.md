@@ -40,5 +40,3 @@ async function fetchPublicPages() {
   console.log(response);
 }
 [inline-code-end]
-
----

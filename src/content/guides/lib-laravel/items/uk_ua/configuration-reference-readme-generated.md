@@ -1,4 +1,3 @@
----
 | Ключ | Змінна середовища | За замовчуванням | Опис |
 |-----|-------------|---------|-------------|
 | `tenant_id` | `FASTCOMMENTS_TENANT_ID` | `''` | Ідентифікатор вашого орендаря FastComments |
@@ -9,4 +8,3 @@
 | `sso.login_url` | `FASTCOMMENTS_SSO_LOGIN_URL` | `null` | URL входу (за замовчуванням використовується маршрут Laravel) |
 | `sso.logout_url` | `FASTCOMMENTS_SSO_LOGOUT_URL` | `null` | URL виходу (за замовчуванням використовується маршрут Laravel) |
 | `widget_defaults` | — | `[]` | Параметри конфігурації віджету за замовчуванням |
----

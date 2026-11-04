@@ -1,4 +1,3 @@
----
 Le FastComments SDK fournit deux types de points de terminaison d'API :
 
 ### PublicAPI - Points de terminaison sécurisés côté client
@@ -22,4 +21,3 @@ Le `DefaultAPI` contient des points de terminaison authentifiés qui requièrent
 **Exemple d'utilisation** : Opérations administratives, exportation de données en masse, outils de modération
 
 **IMPORTANT** : N'exposez jamais votre API key dans du code côté client. Les API keys ne doivent être utilisées que côté serveur.
----

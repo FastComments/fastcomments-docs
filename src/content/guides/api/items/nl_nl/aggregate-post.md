@@ -400,5 +400,3 @@ De volgende resources kunnen worden geaggregeerd:
 - UserSubscription
 - UserUsage
 - Vote
-
----

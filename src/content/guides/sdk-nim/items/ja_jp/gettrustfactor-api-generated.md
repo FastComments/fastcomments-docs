@@ -1,4 +1,3 @@
----
 ## パラメータ
 
 | 名前 | 型 | 必須 | 説明 |
@@ -19,5 +18,3 @@ if trustOpt.isSome:
   let trust = trustOpt.get()
   discard trust
 [inline-code-end]
-
----

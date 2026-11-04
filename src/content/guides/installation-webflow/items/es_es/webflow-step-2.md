@@ -17,5 +17,3 @@ Tras añadir el código, Webflow le informará de que el widget no se mostrará 
     <div class="title">Nota: Los comentarios no aparecerán hasta que se publique</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-webflow-step-3.png" alt="Los comentarios no aparecerán hasta que se publique" />
 </div>
-
----

@@ -22,5 +22,3 @@ Puede usar herramientas como [webhook.site](https://webhook.site) o [ngrok](http
 - **Delete Event**: Se dispara cuando se elimina un comentario.  
 
 Cada webhook está asociado a un evento y a un método HTTP (POST, PUT o DELETE). Cada evento incluye los datos completos del comentario en el cuerpo de la solicitud (vea [Data Structures](/guide-webhooks.html#webhooks-structures) para el formato de la carga).
-
----

@@ -18,5 +18,3 @@ if optResult.isSome:
   let result = optResult.get()
   discard result
 [inline-code-end]
-
----

@@ -1,12 +1,12 @@
-### Overview
+### סקירה כללית
 
-FastComments Image Chat מרחיב את ווידג'ט התגובות הסטנדרטי של FastComments, כך שהוא יורש את כל אפשרויות התצורה מהווידג'ט הבסיסי תוך הוספת כמה אפשרויות ייעודיות להערות על תמונות.
+FastComments Image Chat מרחיב את ווידג'ט התגובות הרגיל של FastComments, ולכן הוא יורש את כל אפשרויות ההגדרה של הווידג'ט הבסיסי תוך הוספת מספר אפשרויות ייחודיות להערות על תמונות.
 
-### Required Configuration
+### הגדרות נדרשות
 
 #### tenantId
 
-נדרש ה-Tenant ID של FastComments שלך. ניתן למצוא זאת ב-[FastComments dashboard](https://fastcomments.com/auth/my-account/api-secret).
+נדרש מזהה ה-Tenant שלך ב-FastComments. תוכל למצוא אותו ב-[לוח הבקרה של FastComments](https://fastcomments.com/auth/my-account/api-secret).
 
 ```javascript
 FastCommentsImageChat(imageElement, {
@@ -14,11 +14,11 @@ FastCommentsImageChat(imageElement, {
 });
 ```
 
-### Image Chat Specific Options
+### אפשרויות ייחודיות ל-Image Chat
 
 #### urlId
 
-ברירת המחדל, Image Chat מייצר מזהה ייחודי לכל שיחה בהתבסס על כתובת הדף, מקור התמונה וקואורדינטות X/Y. ניתן להחליף זאת ב-`urlId` מותאם אישית.
+כברירת מחדל, Image Chat מייצר מזהה ייחודי לכל שיחה על בסיס כתובת ה-URL של הדף, מקור התמונה וקואורדינטות ה-X/Y. תוכל לדרוס זאת עם `urlId` מותאם אישית.
 
 ```javascript
 FastCommentsImageChat(imageElement, {
@@ -27,24 +27,24 @@ FastCommentsImageChat(imageElement, {
 });
 ```
 
-זה שימושי כאשר מבנה ה-URL שלך עשוי להשתנות אך אתה רוצה לשמור על אותן שיחות, או כאשר אתה רוצה לשתף הערות בין כמה דפים.
+זה שימושי כאשר מבנה ה-URL שלך עשוי להשתנות אך ברצונך לשמור על אותן שיחות, או כאשר ברצונך לשתף הערות בין מספר דפים.
 
 #### chatSquarePercentage
 
-שולט בגודל הסמנים הניתנים ללחיצה כאחוז מרוחב התמונה. ברירת המחדל היא 5%, כלומר כל סמן הוא 5% מרוחב התמונה.
+שולט בגודל סמני הצ'אט הלחיצים כאחוז מרוחב התמונה. ברירת המחדל היא 5%, כלומר כל סמן הוא 5% מרוחב התמונה.
 
 ```javascript
 FastCommentsImageChat(imageElement, {
     tenantId: 'demo',
-    chatSquarePercentage: 8  // סמנים גדולים יותר וברורים יותר
+    chatSquarePercentage: 8  // סמנים גדולים ובולטים יותר
 });
 ```
 
-ערכים קטנים יותר יוצרים סמנים פחות חודרניים שעובדים טוב יותר לתמונות מפורטות. ערכים גדולים יותר מקלים על ראייה ולחיצה על תמונות עמוסות או עבור משתמשים במכשירים ניידים.
+ערכים קטנים יוצרים סמנים פחות פולשניים שמתאימים יותר לתמונות מפורטות. ערכים גדולים מקלים על ראיית הסמנים ולחיצה עליהם בתמונות עמוסות או עבור משתמשים במכשירים ניידים.
 
 #### hasDarkBackground
 
-הפעל עיצוב מצב כהה כאשר לעמוד שלך יש רקע כהה.
+הפעלת עיצוב מצב כהה כאשר לדף שלך יש רקע כהה.
 
 ```javascript
 FastCommentsImageChat(imageElement, {
@@ -55,7 +55,7 @@ FastCommentsImageChat(imageElement, {
 
 #### commentCountUpdated
 
-פונקציית callback שמתבצעת בכל פעם שמספר ההערות משתנה. זה שימושי לעדכון אלמנטים בממשק המשתמש כמו סמלונים או כותרות דפים.
+פונקציית callback שמופעלת בכל פעם שמספר התגובות משתנה. זה שימושי לעדכון רכיבי ממשק משתמש כמו תגיות (badges) או כותרות דף.
 
 ```javascript
 FastCommentsImageChat(imageElement, {
@@ -67,13 +67,13 @@ FastCommentsImageChat(imageElement, {
 });
 ```
 
-### Inherited Configuration Options
+### אפשרויות הגדרה שהתקבלו בירושה
 
-מכיוון ש-Image Chat מרחיב את ווידג'ט התגובות הסטנדרטי, ניתן להשתמש בכל אפשרות תצורה מהווידג'ט הבסיסי של FastComments. הנה כמה אפשרויות נפוצות:
+מכיוון ש-Image Chat מרחיב את ווידג'ט התגובות הרגיל, תוכל להשתמש בכל אפשרות הגדרה מהווידג'ט הבסיסי של FastComments. הנה כמה אפשרויות בשימוש נפוץ:
 
 #### locale
 
-קבע את השפה לממשק הווידג'ט. FastComments תומכת בעשרות שפות.
+הגדרת שפת ממשק הווידג'ט. FastComments תומך בעשרות שפות.
 
 ```javascript
 FastCommentsImageChat(imageElement, {
@@ -84,7 +84,7 @@ FastCommentsImageChat(imageElement, {
 
 #### readonly
 
-הפוך את כל השיחות לקריאה בלבד. משתמשים יכולים לצפות בסמנים ובדיונים הקיימים אך לא יכולים ליצור חדשים או להשיב.
+הפיכת כל השיחות לקריאה בלבד. משתמשים יכולים לצפות בסמנים ובדיונים קיימים אך אינם יכולים ליצור חדשים או להגיב.
 
 ```javascript
 FastCommentsImageChat(imageElement, {
@@ -93,55 +93,55 @@ FastCommentsImageChat(imageElement, {
 });
 ```
 
-#### sso and simpleSSO
+#### sso ו-simpleSSO
 
-שלב עם מערכת האימות שלך באמצעות Single Sign-On.
+שילוב עם מערכת האימות שלך באמצעות Single Sign-On.
 
 ```javascript
 FastCommentsImageChat(imageElement, {
     tenantId: 'demo',
     sso: {
-        // תצורת SSO
+        // הגדרות SSO
     }
 });
 ```
 
-עיין בתיעוד ה-SSO לפרטים מלאים על אפשרויות האימות.
+ראה את תיעוד ה-SSO לפרטים מלאים על אפשרויות האימות.
 
 #### maxReplyDepth
 
-שלוט בכמה רמות עמוקות התגובות יכולות להגיע. כברירת מחדל, Image Chat מקבע זאת ל-0, כלומר כל ההערות שטוחות (לא תגובות מקוננות). ניתן לשנות זאת אם ברצונך שיחות בשרשור.
+שליטה בעומק התגובות המקוננות. כברירת מחדל, Image Chat מגדיר זאת ל-0, כלומר כל התגובות שטוחות (ללא תגובות מקוננות). תוכל לשנות זאת אם ברצונך בשיחות משורשרות.
 
 ```javascript
 FastCommentsImageChat(imageElement, {
     tenantId: 'demo',
-    maxReplyDepth: 3  // אפשר 3 רמות קיבוץ
+    maxReplyDepth: 3  // אפשר 3 רמות של קינון
 });
 ```
 
-### Internal Configuration
+### הגדרות פנימיות
 
-אפשרויות אלה מוגדרות אוטומטית על ידי Image Chat ולא יש לשנות אותן:
+אפשרויות אלו מוגדרות אוטומטית על ידי Image Chat ואין לדרוס אותן:
 
-The `productId` is automatically set to `2` for Image Chat. The `floating-chat` extension is automatically loaded to provide the chat window functionality. The widget automatically detects mobile devices (screens under 768px wide) and adjusts the UI accordingly with fullscreen chat windows.
+ה-`productId` מוגדר אוטומטית ל-`2` עבור Image Chat. ההרחבה `floating-chat` נטענת אוטומטית כדי לספק את פונקציונליות חלון הצ'אט. הווידג'ט מזהה אוטומטית מכשירים ניידים (מסכים ברוחב פחות מ-768px) ומתאים את ממשק המשתמש בהתאם עם חלונות צ'אט במסך מלא.
 
-### Target Element Flexibility
+### גמישות רכיב היעד
 
-הפרמטר הראשון ל-`FastCommentsImageChat` יכול להיות או אלמנט `<img>` ישירות או אלמנט מיכל עם תמונה בפנים:
+הפרמטר הראשון של `FastCommentsImageChat` יכול להיות רכיב `<img>` ישירות או רכיב מכל המכיל תמונה:
 
 ```javascript
-// אלמנט תמונה ישיר
+// רכיב תמונה ישיר
 FastCommentsImageChat(document.getElementById('my-image'), config);
 
-// מיכל עם תמונה בתוך
+// מכל עם תמונה בפנים
 FastCommentsImageChat(document.querySelector('.image-wrapper'), config);
 ```
 
-הווידג'ט ימצא את התמונה אוטומטית אם תעביר אלמנט מיכל.
+הווידג'ט ימצא את התמונה אוטומטית אם תעביר רכיב מכל.
 
-### Complete Example
+### דוגמה מלאה
 
-הנה דוגמה שמציגה כמה אפשרויות תצורה יחד:
+הנה דוגמה המציגה מספר אפשרויות הגדרה יחד:
 
 ```javascript
 FastCommentsImageChat(document.getElementById('product-image'), {
@@ -154,10 +154,10 @@ FastCommentsImageChat(document.getElementById('product-image'), {
         document.title = count > 0 ? `(${count}) Product Photo` : 'Product Photo';
     },
     sso: {
-        // תצורת ה-SSO שלך
+        // הגדרות ה-SSO שלך
     },
     maxReplyDepth: 1
 });
 ```
 
-For a complete list of all available configuration options inherited from the base widget, see the main FastComments configuration documentation.
+לרשימה מלאה של כל אפשרויות ההגדרה הזמינות שהתקבלו מהווידג'ט הבסיסי, ראה את תיעוד ההגדרות הראשי של FastComments.

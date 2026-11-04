@@ -1,4 +1,3 @@
----
 Se déclenche lorsqu'un commentaire est désépinglé.
 
 ### Contexte que reçoit l'agent
@@ -13,5 +12,3 @@ Se déclenche lorsqu'un commentaire est désépinglé.
 ### Équivalent
 
 Voir [Déclencheur : Commentaire Épinglé](#trigger-comment-pin) pour le déclencheur miroir.
-
----

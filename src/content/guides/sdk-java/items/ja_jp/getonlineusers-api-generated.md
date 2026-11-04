@@ -1,4 +1,3 @@
----
 現在オンラインのページ閲覧者: 現在 websocket セッションがそのページを購読している人々。
 anonCount + totalCount を返します（部屋全体の購読者数、列挙しない匿名閲覧者を含む）。
 
@@ -52,5 +51,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

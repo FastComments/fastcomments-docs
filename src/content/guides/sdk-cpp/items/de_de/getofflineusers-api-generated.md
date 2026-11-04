@@ -1,18 +1,19 @@
-Past commenters on the page who are NOT currently online. Sorted by displayName.  
-Verwenden Sie dies, nachdem /users/online erschöpft wurde, um einen „Members“-Abschnitt darzustellen.  
-Cursor-Paginierung auf commenterName: Der Server durchläuft den partiellen {tenantId, urlId, commenterName} Index ab afterName vorwärts mittels $gt, ohne $skip‑Kosten.
+Frühere Kommentatoren auf der Seite, die NICHT aktuell online sind. Sortiert nach displayName.
+Verwenden Sie dies, nachdem /users/online erschöpft ist, um einen „Members“-Abschnitt darzustellen.
+Cursor-Paginierung über commenterName: Der Server durchläuft den partiellen {tenantId, urlId, commenterName}
+Index ab afterName vorwärts via $gt, ohne $skip-Kosten.
 
-## Parameters
+## Parameter
 
-| Name | Type | Required | Description |
+| Name | Typ | Erforderlich | Beschreibung |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| urlId | string | Yes |  |
-| options | const GetOfflineUsersOptions& | Yes |  |
+| tenantId | string | Ja |  |
+| urlId | string | Ja |  |
+| options | const GetOfflineUsersOptions& | Ja |  |
 
-## Response
+## Antwort
 
-Returns: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PageUsersOfflineResponse.h)
+Gibt zurück: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PageUsersOfflineResponse.h)
 
 ## Beispiel
 
@@ -32,5 +33,3 @@ api->getOfflineUsers(tenantId, urlId, options)
         }
     });
 [inline-code-end]
-
----

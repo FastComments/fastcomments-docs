@@ -1,13 +1,13 @@
-The Framer Live Comments FastComments snippet is below.
+FastComments snippet-ът за Framer Live Comments е по-долу.
 
-[inline-code-attrs-start title = 'FastComments фрагмент за коментари, специфичен за Framer'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'FastComments Framer-специфичен snippet за коментари'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
 <div id="fastcomments-widget" style="width: 100%;height: 100%;"></div>
 <script>
     (function fcLoad() {
         function tryLoad() {
-            // някои доставчици променят фрагмента с кода, за да бъде async
+            // някои доставчици правят кодовия snippet асинхронен
             const container = document.getElementById('fastcomments-widget');
             if (!container) {
                 return waitRetry();
@@ -34,9 +34,9 @@ The Framer Live Comments FastComments snippet is below.
 </script>
 [inline-code-end]
 
-Or, alternatively, you can use the Streaming Chat widget. The Framer Streaming Chat FastComments snippet is:
+Или, като алтернатива, можете да използвате уиджета Streaming Chat. FastComments snippet-ът за Framer Streaming Chat е:
 
-[inline-code-attrs-start title = 'FastComments фрагмент за потоков чат, специфичен за Framer'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'FastComments Framer-специфичен snippet за Streaming Chat'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-live-chat.min.js"></script>
 <div id="fastcomments-live-chat-widget" style="width: 100%;height: 100%;"></div>
@@ -44,7 +44,7 @@ Or, alternatively, you can use the Streaming Chat widget. The Framer Streaming C
     (function fcLoad() {
 
         function tryLoad() {
-            // някои доставчици променят фрагмента с кода, за да бъде async
+            // някои доставчици правят кодовия snippet асинхронен
             const container = document.getElementById('fastcomments-live-chat-widget');
             if (!container) {
                 return waitRetry();
@@ -71,14 +71,13 @@ Or, alternatively, you can use the Streaming Chat widget. The Framer Streaming C
 </script>
 [inline-code-end]
 
-FastComments supports the Framer editor, so you should see something like this once you paste the code in (you might have to click `Publish`):
+FastComments поддържа редактора Framer, така че след като поставите кода, трябва да видите нещо подобно (може да се наложи да кликнете `Publish`):
 
 <div class="screenshot white-bg">
-    <div class="title">Преглед на джаджата за коментари</div>
-    <img class="screenshot-image" src="/images/installation-guides/framer-step-3-paste.png" alt="Преглед на джаджата за коментари" />
+    <div class="title">Преглед на уиджета за коментари</div>
+    <img class="screenshot-image" src="/images/installation-guides/framer-step-3-paste.png" alt="Преглед на уиджета за коментари" />
 </div>
 
-Now when you view your site you should see the comment area! In the sidebar of Framer you can set the widget as full width as well, if desired.
+Сега, когато видите сайта си, трябва да видите зоната за коментари! В страничната лента на Framer можете, ако желаете, да зададете и уиджета на пълна ширина.
 
-Note that Framer limits the height of widgets and does not support auto-resizing, so we've chosen the Live Chat
-widget here since it is fixed height.
+Имайте предвид, че Framer ограничава височината на уиджетите и не поддържа автоматично преоразмеряване, затова тук избрахме уиджета Live Chat, тъй като той е с фиксирана височина.

@@ -18,5 +18,3 @@ Kada je uključen kontekst povijesti korisnika, popis nedavnih komentara korisni
 - **Pozdrav dobrodošlice** - [Predložak Welcome Greeter](#template-welcome-greeter) je izgrađen oko ovog okidača.
 - **Uvođenje** - pošaljite [DM upozorenje](#tool-warn-user) (ovdje se koristi kao prijateljski podsjetnik, a ne kao upozorenje) koje korisnika usmjerava na smjernice zajednice.
 - **Obavijest recenzenta** - ako želite da čovjek pogleda prvu objavu svakog novog komentatora, [`mark_comment_reviewed`](#tools-overview) ih može označiti za pregled.
-
----

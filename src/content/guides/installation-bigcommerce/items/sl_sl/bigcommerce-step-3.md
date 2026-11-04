@@ -29,5 +29,3 @@ Zdaj lahko shranimo datoteko:
     <div class="title">Uredi urejevalnik</div>
     <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-3-exit.png" alt="Uredi urejevalnik" />
 </div>
-
----

@@ -1,14 +1,13 @@
-FastComments протестовано в браузерах, які становлять переважну більшість ринкової частки браузерів.
+FastComments протестовано з браузерами, які охоплюють переважну більшість частки ринку браузерів.
 
-This includes:
+Це включає:
 
 - Microsoft Edge
 - FireFox
 - Chrome
 - Safari
 - iOS Safari
-- Chrome for Android
+- Chrome для Android
 - Samsung Internet
 
-For the sake of security and providing the best experience for the majority of our customers, we do not
-support browsers that no longer receive security updates or have a very small amount of traffic.
+Заради безпеки та забезпечення найкращого досвіду для більшості наших клієнтів ми не підтримуємо браузери, які більше не отримують оновлень безпеки або мають дуже малий обсяг трафіку.

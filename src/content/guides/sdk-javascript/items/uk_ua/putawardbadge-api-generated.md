@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Назва | Тип | Обов'язковий | Опис |
@@ -34,5 +33,3 @@ async function awardBadgeExample(): Promise<void> {
   console.log(result);
 }
 [inline-code-end]
-
----

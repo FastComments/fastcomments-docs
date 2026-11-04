@@ -35,5 +35,3 @@
 
 - Етикет: `Comment Posted`, Категория: `Engagement`, ID: `post_comment`
 - Етикет: `User Voted on a Comment`, Категория: `Engagement`, ID: `vote_comment`
-
----

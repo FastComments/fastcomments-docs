@@ -1,6 +1,6 @@
-Встановлення просте:
+Встановлення дуже просте:
 
-[inline-code-attrs-start title = 'Приклад коду плаваючих вподобань'; type = 'html'; isFunctional = false; type = 'html';  inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад коду плаваючих лайків'; type = 'html'; isFunctional = false; type = 'html';  inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-page-likes-floating.min.js"></script>
 <div id="fastcomments-page-likes-floating"></div>
@@ -11,7 +11,7 @@
 </script>
 [inline-code-end]
 
-The type signature of the constructor is:
+Сигнатура типу конструктора:
 
 [inline-code-attrs-start title = 'Конфігурація'; useDemoTenant = true; isFunctional = false; type = 'javascript';  inline-code-attrs-end]
 [inline-code-start]
@@ -20,20 +20,20 @@ The type signature of the constructor is:
  * @param {HTMLElement} targetElement
  * @param config
  * @property {string} tenantId
- * @property {string} urlId - Змініть це, щоб встановити ідентифікатор сторінки/статті. За замовчуванням це URL сторінки.
+ * @property {string} urlId - Change this to set page/article id. By default, it is the page URL.
  * @property {() => void} [onOpenComments]
  * @property {object} [sso]
  * @constructor
  */
 [inline-code-end]
 
-It supports sso to tie the reacts to the user's account for authentication.
+Він підтримує SSO, щоб прив'язати реакції до облікового запису користувача для автентифікації.
 
-Currently, only VanillaJS is supported. If you'd like this widget to be added to one of our client libraries, let us know! 
+Наразі підтримується лише VanillaJS. Якщо ви хочете, щоб цей віджет було додано до однієї з наших клієнтських бібліотек, повідомте нам!
 
 ### Асинхронна версія
 
-[inline-code-attrs-start title = 'Асинхронний приклад коду плаваючих вподобань'; isFunctional = false; type = 'html';  inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад асинхронного коду плаваючих лайків'; isFunctional = false; type = 'html';  inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-page-likes-floating.min.js?v=2" async></script>
 <div id="fastcomments-page-likes-floating"></div>
@@ -56,21 +56,21 @@ Currently, only VanillaJS is supported. If you'd like this widget to be added to
 
 ### З SSO
 
-Ми також можемо передавати Secure SSO або Simple SSO дані:
+Ми також можемо передавати payload-и Secure SSO або Simple SSO:
 
-[inline-code-attrs-start title = 'Приклад коду плаваючих вподобань зі Secure SSO'; type = 'html'; isFunctional = false; type = 'html';  inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад коду плаваючих лайків з Secure SSO'; type = 'html'; isFunctional = false; type = 'html';  inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-page-likes-floating.min.js"></script>
 <div id="fastcomments-page-likes-floating"></div>
 <script>
     window.FastCommentsEmbedPageLikesFloating(document.getElementById('fastcomments-page-likes-floating'), {
         tenantId: 'demo',
-        sso // передайте об'єкт sso
+        sso // pass sso object
     });
 </script>
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Приклад коду плаваючих вподобань зі Simple SSO'; type = 'html'; isFunctional = false; type = 'html';  inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад коду плаваючих лайків з Simple SSO'; type = 'html'; isFunctional = false; type = 'html';  inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/embed-page-likes-floating.min.js"></script>
 <div id="fastcomments-page-likes-floating"></div>
@@ -85,5 +85,3 @@ Currently, only VanillaJS is supported. If you'd like this widget to be added to
     });
 </script>
 [inline-code-end]
-
----

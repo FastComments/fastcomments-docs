@@ -30,5 +30,3 @@ try {
     print('Exception when calling ModerationApi->postRemoveComment: $e\n');
 }
 [inline-code-end]
-
----

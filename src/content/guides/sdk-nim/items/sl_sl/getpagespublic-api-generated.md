@@ -1,23 +1,19 @@
-List pages for a tenant. Used by the FChat desktop client to populate its room list.
-Requires `enableFChat` to be true on the resolved custom config for each page.
-Pages that require SSO are filtered against the requesting user's group access.
+Izpiše strani za najemnika. Uporablja namizni odjemalec FChat za polnjenje svojega seznama sob.
+Zahteva, da je `enableFChat` nastavljen na true v razrešeni prilagojeni konfiguraciji vsake strani.
+Strani, ki zahtevajo SSO, so filtrirane glede na skupinski dostop zahtevajočega uporabnika.
 
-Seznam strani za najemnika. Uporablja ga namizni odjemalec FChat za napolnitev seznama sob.  
-Zahteva, da je `enableFChat` nastavljen na true v razrešenih prilagojenih nastavitvah za vsako stran.  
-Strani, ki zahtevajo SSO, so filtrirane glede na dostop do skupine zahtevajočega uporabnika.
+## Parametri
 
-## Parameters
-
-| Name | Type | Required | Description |
+| Ime | Vrsta | Obvezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| options | GetPagesPublicOptions | No |  |
+| tenantId | string | Da |  |
+| options | GetPagesPublicOptions | Ne |  |
 
-## Response
+## Odgovor
 
-Returns: [`Option[GetPublicPagesResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_public_pages_response.nim)
+Vrne: [`Option[GetPublicPagesResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_public_pages_response.nim)
 
-## Example
+## Primer
 
 [inline-code-attrs-start title = 'Primer getPagesPublic'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]

@@ -21,5 +21,3 @@ async function executeDeletion() {
 }
 executeDeletion();
 [inline-code-end]
-
----

@@ -26,5 +26,3 @@ Entrambe le modalità attive contemporaneamente. Il widget dei commenti appare s
     <div class="title">Collab Chat + Commenti insieme</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-moodle-page-comments.png" alt="Collab Chat e Commenti di FastComments su Moodle" />
 </div>
-
----

@@ -1,4 +1,3 @@
----
 ## Parametre
 
 | Navn | Type | Påkrævet | Beskrivelse |
@@ -19,5 +18,3 @@ if questionConfigOpt.isSome:
   let config = questionConfigOpt.get()
   echo config
 [inline-code-end]
-
----

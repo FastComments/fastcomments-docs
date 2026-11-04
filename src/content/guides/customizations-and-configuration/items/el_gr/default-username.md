@@ -1,17 +1,14 @@
-When users comment or vote, and they are not logged in, they will be asked to provide their email and username.
+Όταν οι χρήστες σχολιάζουν ή ψηφίζουν και δεν είναι συνδεδεμένοι, θα τους ζητηθεί να δώσουν το email και το όνομα χρήστη τους.
 
-In the case of anonymous commenting, sometimes it is desirable to define a default username to reduce the friction
-when commenting. This can be done from the Customization UI. Anonymous Commenting must be enabled first.
+Στην περίπτωση της ανώνυμης σχολίασης, μερικές φορές είναι επιθυμητό να οριστεί ένα προεπιλεγμένο όνομα χρήστη για τη μείωση της τριβής κατά τη σχολίαση. Αυτό μπορεί να γίνει από το UI προσαρμογής. Πρώτα πρέπει να είναι ενεργοποιημένη η Ανώνυμη Σχολίαση.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allow-anonymous-comments']; selector = '.default-username-label'; alt='Πεδίο προεπιλεγμένου ονόματος χρήστη που εμφανίζεται στη διεπαφή προσαρμογής όταν ενεργοποιείται ο ανώνυμος σχολιασμός'; title='Ορισμός του προεπιλεγμένου ονόματος χρήστη' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.allow-anonymous-comments']; selector = '.default-username-label'; alt='Το πεδίο προεπιλεγμένου ονόματος χρήστη που εμφανίζεται στο UI προσαρμογής μόλις ενεργοποιηθεί η ανώνυμη σχολίαση'; title='Ορισμός του Προεπιλεγμένου Ονόματος Χρήστη' app-screenshot-end]
 
-#### Sharing The Default Username
+#### Κοινή Χρήση του Προεπιλεγμένου Ονόματος Χρήστη
 
-The default username is a shared display name, not an identity. A visitor who keeps the default and enters their email
-gets their own account, with the default shown as their public name. Any number of visitors can keep the same default,
-so "Anonymous" is never reported as already taken.
+Το προεπιλεγμένο όνομα χρήστη είναι ένα κοινό εμφανιζόμενο όνομα, όχι μια ταυτότητα. Ένας επισκέπτης που κρατά το προεπιλεγμένο και εισάγει το email του αποκτά τον δικό του λογαριασμό, με το προεπιλεγμένο να εμφανίζεται ως το δημόσιο όνομά του. Απεριόριστοι επισκέπτες μπορούν να κρατήσουν το ίδιο προεπιλεγμένο, οπότε το "Anonymous" δεν αναφέρεται ποτέ ως ήδη κατειλημμένο.
 
-Usernames that a visitor types themselves still have to be unique.
+Τα ονόματα χρήστη που πληκτρολογεί ο ίδιος ο επισκέπτης πρέπει εξακολουθούν να είναι μοναδικά.
 
-If you would rather each visitor get a distinct name without having to think of one, see
-[Δημιουργία ονομάτων χρήστη αυτόματα](/guide-customizations-and-configuration.html#auto-generate-username).
+Αν προτιμάτε κάθε επισκέπτης να αποκτά διακριτό όνομα χωρίς να χρειάζεται να το σκεφτεί, δείτε το
+[Αυτόματη Δημιουργία Ονομάτων Χρήστη](/guide-customizations-and-configuration.html#auto-generate-username).

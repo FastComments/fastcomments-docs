@@ -1,8 +1,8 @@
-Lists the webhooks configured for the tenant, both dashboard-managed rows and API subscriptions.
+Изброява уебхоуковете, конфигурирани за наемателя (tenant), както редовете, управлявани от таблото, така и API абонаментите.
 
-## Parameters
+## Параметри
 
-| Име | Тип | Задължително | Описание |
+| Име | Тип | Задължителен | Описание |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | event | WebhookEventName | Не |  |
@@ -10,11 +10,11 @@ Lists the webhooks configured for the tenant, both dashboard-managed rows and AP
 | source | WebhookSource | Не |  |
 | skip | number | Не |  |
 
-## Response
+## Отговор
 
 Връща: [`GetWebhooksResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetWebhooksResponse.ts)
 
-## Example
+## Пример
 
 [inline-code-attrs-start title = 'Пример за getWebhooks'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -29,5 +29,3 @@ Lists the webhooks configured for the tenant, both dashboard-managed rows and AP
   const minimalResponse: GetWebhooksResponse = await getWebhooks(tenantId);
 })();
 [inline-code-end]
-
----

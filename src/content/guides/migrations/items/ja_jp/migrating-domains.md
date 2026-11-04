@@ -19,5 +19,3 @@ FastComments は、コメントをドメイン間で移行する自動化され�
 ### API を使用したドメインの移行
 
 ドメインは、`type` を `domain` に設定して、[`POST /api/v1/pages/migrations`](/guide-api.html#pages-migrations-post) を使用しても移行できます。進捗は [`GET /api/v1/batch-jobs/:id`](/guide-api.html#batch-job-get-by-id) から取得でき、移行は 90 日間取り消すことが可能です。
-
----

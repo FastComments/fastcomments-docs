@@ -1,4 +1,3 @@
----
 Derzeit online Viewer einer Seite: Personen, deren Websocket‑Session gerade die Seite abonniert.  
 Gibt **anonCount + totalCount** zurück (raumweite Abonnenten, einschließlich anonymer Viewer, die wir nicht aufzählen).
 
@@ -34,5 +33,3 @@ try {
     print('Exception when calling PublicApi->getOnlineUsers: $e\n');
 }
 [inline-code-end]
-
----

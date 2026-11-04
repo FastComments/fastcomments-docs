@@ -1,4 +1,3 @@
----
 Información de usuarios en bloque para un inquilino. Dado userIds, devuelve la información de visualización de User / SSOUser.  
 Utilizado por el widget de comentarios para enriquecer a los usuarios que acaban de aparecer mediante un evento de presencia.  
 Sin contexto de página: la privacidad se aplica de manera uniforme (los perfiles privados se enmascaran).
@@ -26,5 +25,3 @@ async function fetchUsersInfo(): Promise<void> {
 }
 fetchUsersInfo();
 [inline-code-end]
-
----

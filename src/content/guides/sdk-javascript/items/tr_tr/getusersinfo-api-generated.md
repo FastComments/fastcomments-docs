@@ -1,24 +1,19 @@
-Bulk user info for a tenant. Given userIds, return display info from User / SSOUser.  
-Bir kiracı için toplu kullanıcı bilgisi. userIds verildiğinde, User / SSOUser'dan görüntüleme bilgilerini döndürür.
+Bir kiracı (tenant) için toplu kullanıcı bilgisi. Verilen userIds değerlerine göre, User / SSOUser kaynaklarından görüntüleme bilgilerini döndürür.
+Yorum widget'ı tarafından, bir varlık (presence) olayı aracılığıyla yeni görünen kullanıcıları zenginleştirmek için kullanılır.
+Sayfa bağlamı yoktur: gizlilik tek tip şekilde uygulanır (özel profiller maskelenir).
 
-Used by the comment widget to enrich users that just appeared via a presence event.  
-Yorum widget'ı tarafından, bir varlık olayıyla yeni ortaya çıkan kullanıcıları zenginleştirmek için kullanılır.
+## Parametreler
 
-No page context: privacy is enforced uniformly (private profiles are masked).  
-Sayfa bağlamı yok: gizlilik tutarlı bir şekilde uygulanır (özel profiller maskeleme yapılır).
-
-## Parameters
-
-| Ad | Tür | Gerekli | Açıklama |
+| Ad | Tür | Zorunlu | Açıklama |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| ids | string | Yes |  |
+| tenantId | string | Evet |  |
+| ids | string | Evet |  |
 
-## Response
+## Yanıt
 
-Döndürür: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersInfoResponse.ts)
+Döndürülen değer: [`PageUsersInfoResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/PageUsersInfoResponse.ts)
 
-## Example
+## Örnek
 
 [inline-code-attrs-start title = 'getUsersInfo Örneği'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -30,5 +25,3 @@ async function fetchUsersInfo(): Promise<void> {
 }
 fetchUsersInfo();
 [inline-code-end]
-
----

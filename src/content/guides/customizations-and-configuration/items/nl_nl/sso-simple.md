@@ -44,5 +44,3 @@ Wanneer dit is uitgeschakeld, verleent Simple SSO deze rechten niet. Een Simple 
 Simple SSO‑payloads zijn niet ondertekend, dus wanneer dit is ingeschakeld, kan iedereen die de e‑mail of gebruikers‑ID van een beheerder kent, zich voordoen als die persoon. Als dat van belang is voor je site, laat dit dan uitgeschakeld en gebruik Secure SSO voor je beheerders.
 
 Gebruikers die zijn aangemaakt door Secure SSO of de API kunnen niet worden bereikt door Simple SSO, ongeacht of dit is ingeschakeld.
-
----

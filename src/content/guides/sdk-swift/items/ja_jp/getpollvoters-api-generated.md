@@ -42,5 +42,3 @@ PublicAPI.getPollVoters(tenantId: tenantId, commentId: commentId, options: Publi
 }
 ```
 [inline-code-end]
-
----

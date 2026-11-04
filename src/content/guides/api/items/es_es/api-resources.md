@@ -1,4 +1,3 @@
----
 ### Uso de recursos
 
 Debe tenerse en cuenta que la obtención de datos de la API se cuenta como uso en su cuenta.
@@ -16,5 +15,3 @@ Sugerimos leer primero la documentación de Pages, para ayudar a limitar la conf
 ### Webhooks
 
 Las suscripciones a Webhooks tienen su propia guía. `POST`, `GET` y `DELETE /api/v1/webhooks`, y `GET /api/v1/webhooks/sample-payloads`, están documentados bajo [Managing Subscriptions via API](/guide-webhooks.html#webhooks-api-subscriptions), y las cargas útiles de eventos bajo [Webhook Structures](/guide-webhooks.html#webhooks-structures).
-
----

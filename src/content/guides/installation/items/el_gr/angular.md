@@ -69,5 +69,3 @@ export class AppModule { }
 Το widget χρησιμοποιεί ανίχνευση αλλαγών, οπότε η αλλαγή οποιασδήποτε ιδιότητας του αντικειμένου διαμόρφωσης θα προκαλέσει την επαναφόρτωσή του.
 
 Μπορείτε να βρείτε τη διαμόρφωση που υποστηρίζει το Angular component <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">εδώ</a>.
-
----

@@ -8,5 +8,3 @@ Vue 2 Kitaplığı ile ilgili herhangi bir sorunla karşılaşırsanız veya sor
 ## Katkıda Bulunma
 
 Katkılar memnuniyetle karşılanır! Lütfen katkı yönergeleri için [GitHub deposunu](https://github.com/FastComments/fastcomments-vue) ziyaret edin.
-
----

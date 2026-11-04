@@ -1,31 +1,31 @@
-#### Navigate to LTI Config
+#### Accéder à la configuration LTI
 
-Go to <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">votre FastComments LTI Config</a>.
+Rendez-vous sur <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">votre configuration LTI FastComments</a>.
 
-The setup page uses a guided wizard that walks you through each step. You will start at **Step 1: Create**.
+La page de configuration utilise un assistant guidé qui vous accompagne à chaque étape. Vous commencerez à l'**Étape 1 : Créer**.
 
-#### Create a New LTI Configuration
+#### Créer une nouvelle configuration LTI
 
-Fill in the following fields:
+Remplissez les champs suivants :
 
-- **Configuration Name** - an optional label to identify this configuration (useful if you connect multiple Canvas instances).
-- **Platform URL** - your Canvas instance URL (e.g. `https://yourschool.instructure.com`). This field is required.
+- **Nom de la configuration** - une étiquette facultative pour identifier cette configuration (utile si vous connectez plusieurs instances Canvas).
+- **URL de la plateforme** - l'URL de votre instance Canvas (par exemple `https://yourschool.instructure.com`). Ce champ est obligatoire.
 
-#### Choose Placements
+#### Choisir les emplacements
 
-Below the Platform URL, you can choose where FastComments appears in your Canvas courses. Both placements are enabled by default:
+Sous l'URL de la plateforme, vous pouvez choisir où FastComments apparaît dans vos cours Canvas. Les deux emplacements sont activés par défaut :
 
-- **Assignment View** - comments appear automatically below assignments.
-- **Rich Content Editor Button** - instructors can embed FastComments in Pages, Quizzes, and Announcements using the toolbar button in the Rich Content Editor.
+- **Vue Devoir** - les commentaires apparaissent automatiquement sous les devoirs.
+- **Bouton de l'éditeur de contenu enrichi** - les instructeurs peuvent intégrer FastComments dans les Pages, les Quiz et les Annonces à l'aide du bouton de la barre d'outils de l'éditeur de contenu enrichi.
 
-You can enable one or both. At least one placement must be enabled.
+Vous pouvez activer l'un ou les deux. Au moins un emplacement doit être activé.
 
-Click **Create Configuration**.
+Cliquez sur **Créer la configuration**.
 
-#### Copy the Configuration URL
+#### Copier l'URL de configuration
 
-After creating the configuration, the wizard advances to **Step 2: Connect**. A prominent **Configuration URL** is displayed at the top of the page with a **Copy** button.
+Après avoir créé la configuration, l'assistant passe à l'**Étape 2 : Connecter**. Une **URL de configuration** bien visible s'affiche en haut de la page avec un bouton **Copier**.
 
-Copy this URL. You will need it in the next step to create a Developer Key in Canvas.
+Copiez cette URL. Vous en aurez besoin à l'étape suivante pour créer une clé de développeur dans Canvas.
 
-The page also shows numbered instructions for what to do in Canvas, plus fields to enter the **Client ID** and optional **Deployment ID** once you have them.
+La page affiche également des instructions numérotées sur ce qu'il faut faire dans Canvas, ainsi que des champs pour saisir le **Client ID** et le **Deployment ID** facultatif une fois que vous les avez.

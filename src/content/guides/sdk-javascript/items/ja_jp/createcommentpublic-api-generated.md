@@ -28,5 +28,3 @@ async function runExample() {
   const resultNoOpt: SaveCommentsResponseWithPresence = await createCommentPublic(tenantId, urlId, broadcastId, commentData);
 }
 [inline-code-end]
-
----

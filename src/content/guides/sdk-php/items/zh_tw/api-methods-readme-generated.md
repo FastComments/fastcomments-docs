@@ -1,4 +1,3 @@
----
 所有 URI 均相對於 *https://fastcomments.com*
 
 Class | Method | HTTP 請求 | 描述
@@ -212,4 +211,3 @@ Class | Method | HTTP 請求 | 描述
 *PublicApi* | **updateUserNotificationStatus** | **POST** /user-notifications/{notificationId}/mark/{newStatus} | 
 *PublicApi* | **uploadImage** | **POST** /upload-image/{tenantId} | 
 *PublicApi* | **voteComment** | **POST** /comments/{tenantId}/{commentId}/vote |
----

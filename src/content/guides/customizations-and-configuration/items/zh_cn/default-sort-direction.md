@@ -1,4 +1,3 @@
----
 [related-parameter-start name = 'defaultSortDirection'; type = 'string'; related-parameter-end]
 
 默认情况下，FastComments 会按“最相关”排序方向对评论进行排序。
@@ -28,5 +27,3 @@
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.default-sort-direction'; alt='提供“最相关”“最新优先”和“最旧优先”的默认排序方向选择器'; title='更改默认排序方向' app-screenshot-end]
 
 请注意，每个页面针对每种排序方向的评论都是预先计算好的，因此所有排序方向的性能相同。
-
----

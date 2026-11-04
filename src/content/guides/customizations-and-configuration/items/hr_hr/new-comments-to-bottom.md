@@ -1,4 +1,3 @@
----
 [related-parameter-start name = 'newCommentsToBottom'; type = 'boolean'; related-parameter-end]
 
 Po zadanim postavkama, novi komentari uživo pojavljuju se na vrhu popisa komentara kako se objavljuju u stvarnom vremenu.
@@ -14,4 +13,3 @@ Kada je ova postavka omogućena:
 - To može pomoći u održavanju toka čitanja kada korisnici prate raspravu
 
 Imajte na umu da ova postavka utječe samo na mjesto na koje se novi komentari uživo smještaju kada stignu u stvarnom vremenu. Ne utječe na početni redoslijed sortiranja pri učitavanju stranice.
----

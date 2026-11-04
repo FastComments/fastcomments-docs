@@ -1,4 +1,3 @@
----
 ## Παράμετροι
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
@@ -21,5 +20,3 @@ async function runDeletion() {
   console.log(result);
 }
 [inline-code-end]
-
----

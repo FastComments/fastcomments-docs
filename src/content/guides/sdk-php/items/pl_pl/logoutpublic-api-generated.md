@@ -26,5 +26,3 @@ try {
     echo 'Exception when calling PublicApi->logoutPublic: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

@@ -1,19 +1,17 @@
-When a user leaves a comment, or vote, and they are not logged in, or their account is
-unverified, they will receive an email asking them to verify this action.
+Коли користувач залишає коментар або голос, і він не авторизований, або його обліковий запис не підтверджено, він отримає електронний лист із проханням підтвердити цю дію.
 
-However, we do our best not to spam your users with emails, and won't send more than one
-verification email per session. See the Sessions section for more details.
+Однак ми робимо все можливе, щоб не надсилати вашим користувачам займі листи, і не надсилаємо більше одного листа для підтвердження за сесію. Дивіться розділ Sessions для отримання додаткової інформації.
 
-By default, the comment verification emails look like the following:
+За замовчуванням листи підтвердження коментарів виглядають так:
 
-[app-screenshot-start url='/test-e2e/email/commenter-verify-post?comment=%7B"commenterName"%3A"Alexander"%2C"comment"%3A"This%20is%20my%20comment."%2C"commentHTML"%3A"This%20is%20my%20comment."%2C"date"%3A1588812198540%7D&removedInDays=3&removedInDaysCount=3&FC_DOMAIN=https%3A%2F%2Ffastcomments.com&tenant=%7B"removeUnverifiedComments"%3Atrue%7D&verifyPostUrl=http%3A%2F%2Fexample.com&locale=en_us&API_KEY=T0ph%20123!'; linkUrl=false; selector = '.content'; alt='Типове тіло листа підтвердження, що цитує коментар Олександра з кнопкою підтвердження публікації'; title='Лист підтвердження коментаря' app-screenshot-end]
+[app-screenshot-start url='/test-e2e/email/commenter-verify-post?comment=%7B"commenterName"%3A"Alexander"%2C"comment"%3A"This%20is%20my%20comment."%2C"commentHTML"%3A"This%20is%20my%20comment."%2C"date"%3A1588812198540%7D&removedInDays=3&removedInDaysCount=3&FC_DOMAIN=https%3A%2F%2Ffastcomments.com&tenant=%7B"removeUnverifiedComments"%3Atrue%7D&verifyPostUrl=http%3A%2F%2Fexample.com&locale=en_us&API_KEY=T0ph%20123!'; linkUrl=false; selector = '.content'; alt='Тіло листа підтвердження за замовчуванням із цитуванням коментаря Александра та кнопкою для підтвердження публікації'; title='Лист підтвердження коментаря' app-screenshot-end]
 
-By default, the vote verification emails look like the following:
+За замовчуванням листи підтвердження голосів виглядають так:
 
-[app-screenshot-start url='/test-e2e/email/commenter-verify-vote?vote=%7B"commenterName"%3A"Devon"%2C"comment"%3A"This%20is%20my%20comment.%20I%20totally%20left%20it%20intentionally.%20Yup."%2C"date"%3A1588812198540%7D&commenterName=Devon&url=some%20-%20url&removedInDays=3&FC_DOMAIN=https%3A%2F%2Ffastcomments.com&tenant=%7B"removeUnverifiedComments"%3Atrue%7D&verifyUrl=http%3A%2F%2Fexample.com&locale=en_us&API_KEY=T0ph%20123!'; linkUrl=false; selector = '.content'; alt='Типовий лист, що просить Девона підтвердити голос, показуючи коментар, за який проголосували, та кнопку підтвердження'; title='Лист підтвердження голосу' app-screenshot-end]
+[app-screenshot-start url='/test-e2e/email/commenter-verify-vote?vote=%7B"commenterName"%3A"Devon"%2C"comment"%3A"This%20is%20my%20comment.%20I%20totally%20left%20it%20intentionally.%20Yup."%2C"date"%3A1588812198540%7D&commenterName=Devon&url=some%20-%20url&removedInDays=3&FC_DOMAIN=https%3A%2F%2Ffastcomments.com&tenant=%7B"removeUnverifiedComments"%3Atrue%7D&verifyUrl=http%3A%2F%2Fexample.com&locale=en_us&API_KEY=T0ph%20123!'; linkUrl=false; selector = '.content'; alt='Лист за замовчуванням із проханням до Девона підтвердити голос, що показує прокоментований коментар та кнопку підтвердження'; title='Лист підтвердження голосу' app-screenshot-end]
 
-By default, FastComments will show its logo and name in the footer of these emails:
+За замовчуванням FastComments показує свій логотип і назву у нижньому колонтитулі цих листів:
 
-[app-screenshot-start url='/test-e2e/email/commenter-verify-vote?vote=%7B"commenterName"%3A"Devon"%2C"comment"%3A"This%20is%20my%20comment.%20I%20totally%20left%20it%20intentionally.%20Yup."%2C"date"%3A1588812198540%7D&commenterName=Devon&url=some%20-%20url&removedInDays=3&FC_DOMAIN=https%3A%2F%2Ffastcomments.com&tenant=%7B"removeUnverifiedComments"%3Atrue%7D&verifyUrl=http%3A%2F%2Fexample.com&locale=en_us&API_KEY=T0ph%20123!'; linkUrl=false; selector = '.footer'; width = 700; alt='Нижня частина листа підтвердження, що показує типове лого та назву FastComments у підвалі'; title='Підвал листа' app-screenshot-end]
+[app-screenshot-start url='/test-e2e/email/commenter-verify-vote?vote=%7B"commenterName"%3A"Devon"%2C"comment"%3A"This%20is%20my%20comment.%20I%20totally%20left%20it%20intentionally.%20Yup."%2C"date"%3A1588812198540%7D&commenterName=Devon&url=some%20-%20url&removedInDays=3&FC_DOMAIN=https%3A%2F%2Ffastcomments.com&tenant=%7B"removeUnverifiedComments"%3Atrue%7D&verifyUrl=http%3A%2F%2Fexample.com&locale=en_us&API_KEY=T0ph%20123!'; linkUrl=false; selector = '.footer'; width = 700; alt='Низ листа підтвердження із логотипом і назвою FastComments за замовчуванням у нижньому колонтитулі'; title='Нижній колонтитул листа' app-screenshot-end]
 
-If you are on the Flex or Pro tiers, [Ім'я відправника, електронна пошта та брендинг можна налаштувати](/guide-multiple-sites.html#from-name-email-logo).
+Якщо ви використовуєте тарифи Flex або Pro, [ім\'я відправника, електронна пошта та брендинг можна налаштувати](/guide-multiple-sites.html#from-name-email-logo).

@@ -19,5 +19,3 @@
     font-family: 'Roboto', sans-serif;
 }
 [inline-code-end]
-
----

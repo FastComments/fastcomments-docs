@@ -8,5 +8,3 @@ Odprite terminal urejevalnika znova in zaženite `npm run zip`.
 </div>
 
 To bo temo zapakiralo v zip datoteko v `dist/casper-fastcomments.zip` (če ste temo tako poimenovali v `Step Three`).
-
----

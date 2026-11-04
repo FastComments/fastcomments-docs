@@ -19,5 +19,3 @@ Ręczna akcja moderatora na stronie moderacji, w widżecie komentarzy lub za po�
 
 - "Przejrzany" jest jednym ze stanów kolejki moderacji śledzonym oddzielnie od "zatwierdzony" i "spam". Komentarz może być zatwierdzony-i-przejrzany, zatwierdzony-ale-nieprzejrzany, itd. Zobacz [Jak działają zatwierdzenia](/guide-moderation.html#moderation-approvals) w przewodniku moderacji.
 - To wyzwalacz o dużej częstotliwości działania w tenantach z wieloma moderatorami. Subskrybuj selektywnie i odpowiednio zaplanuj budżet.
-
----

@@ -45,5 +45,3 @@ Retourne : [`APIGetUserBadgesResponse`](https://github.com/FastComments/fastcomm
   console.log(fullResponse, limitedResponse);
 })();
 [inline-code-end]
-
----

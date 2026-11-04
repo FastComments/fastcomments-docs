@@ -1,4 +1,3 @@
----
 Ao compartilhar trechos de código, o FastComments faz o possível para determinar automaticamente em qual linguagem de programação o trecho está, a fim de formatá-lo automaticamente e aplicar realce de sintaxe.
 
 O realce de sintaxe do FastComments atualmente oferece suporte a 39 linguagens comuns:
@@ -47,5 +46,3 @@ O realce de sintaxe do FastComments atualmente oferece suporte a 39 linguagens c
 - YAML
 
 Ao compartilhar um trecho de código em uma linguagem que não suportamos, ele ainda será renderizado como código - mas nenhum realce de sintaxe ou reformatamento será aplicado.
-
----

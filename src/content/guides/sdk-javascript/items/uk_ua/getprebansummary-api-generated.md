@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Назва | Тип | Обов’язковий | Опис |
@@ -40,5 +39,3 @@ async function fetchSummary(): Promise<void> {
 
 fetchSummary();
 [inline-code-end]
-
----

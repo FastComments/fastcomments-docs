@@ -29,5 +29,3 @@ Ne more objavljati komentarjev, glasovati, pripenjati, zaklepati, podeljevati zn
 ### Priporočeno obdobje suhega zagona
 
 Zaženite to predlogo v [dry-run](#dry-run-mode) vsaj en teden na vašem resničnem prometu, preden preklopite na Omogočeno. Uporabite [Test Runs (Replays)](#test-runs-replays) za predogled tudi na podatkih iz prejšnjih 30 dni.
-
----

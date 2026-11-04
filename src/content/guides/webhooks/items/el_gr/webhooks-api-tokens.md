@@ -1,24 +1,23 @@
----
-Τα αιτήματα webhook του FastComments περιλαμβάνουν πολλούς μηχανισμούς πιστοποίησης για λόγους ασφάλειας.
+Τα αιτήματα webhook του FastComments περιλαμβάνουν πολλαπλούς μηχανισμούς ελέγχου ταυτότητας για λόγους ασφαλείας.
 
-## Κεφαλίδες που αποστέλλονται
+## Headers που Αποστέλλονται
 
-| Κεφαλίδα | Περιγραφή |
+| Header | Περιγραφή |
 |--------|-------------|
-| `token` | Το API Secret σας (για συμβατότητα προς τα πίσω) |
-| `X-FastComments-Timestamp` | Unix timestamp (δευτερόλεπτα) όταν υπογράφηκε το αίτημα |
-| `X-FastComments-Signature` | HMAC-SHA256 υπογραφή του payload |
+| `token` | Το API Secret σας (για συμβατότητα με παλαιότερες εκδόσεις) |
+| `X-FastComments-Timestamp` | Unix timestamp (δευτερόλεπτα) κατά τη στιγμή της υπογραφής του αιτήματος |
+| `X-FastComments-Signature` | Υπογραφή HMAC-SHA256 του payload |
 
 ## Επαλήθευση Υπογραφής HMAC (Συνιστάται)
 
-Συνιστούμε θερμά την επαλήθευση της υπογραφής HMAC για να διασφαλίσετε ότι τα payloads των webhook είναι αυθεντικά και δεν έχουν παραποιηθεί.
+Συνιστούμε ανεπιφύλακτα την επαλήθευση της υπογραφής HMAC για να διασφαλίσετε ότι τα payloads του webhook είναι γνήσια και δεν έχουν παραποιηθεί.
 
-**Signature Format:** `sha256=<hex-encoded-signature>`
+**Μορφή Υπογραφής:** `sha256=<hex-encoded-signature>`
 
 **Πώς υπολογίζεται η υπογραφή:**
-1. Concatenate: `timestamp + "." + JSON_payload_body`
-2. Compute HMAC-SHA256 using your API Secret as the key
-3. Hex-encode the result
+1. Συνένωση: `timestamp + "." + JSON_payload_body`
+2. Υπολογισμός HMAC-SHA256 χρησιμοποιώντας το API Secret σας ως κλειδί
+3. Κωδικοποίηση του αποτελέσματος σε hex
 
 ### Παράδειγμα Επαλήθευσης (Node.js)
 
@@ -33,13 +32,13 @@ function verifyWebhookSignature(req, apiSecret) {
         return false;
     }
 
-    // Επαλήθευση ότι το timestamp είναι πρόσφατο (εντός 5 λεπτών)
+    // Verify timestamp is recent (within 5 minutes)
     const now = Math.floor(Date.now() / 1000);
     if (Math.abs(now - parseInt(timestamp, 10)) > 300) {
-        return false;  // Πρόληψη επίθεσης επανάληψης
+        return false;  // Replay attack prevention
     }
 
-    // Επαλήθευση υπογραφής
+    // Verify signature
     const payload = JSON.stringify(req.body);
     const expectedSignature = crypto
         .createHmac('sha256', apiSecret)
@@ -65,12 +64,12 @@ def verify_webhook_signature(headers, body, api_secret):
     if not timestamp or not signature:
         return False
 
-    # Επαλήθευση ότι το timestamp είναι πρόσφατο
+    # Verify timestamp is recent
     now = int(time.time())
     if abs(now - int(timestamp)) > 300:
         return False
 
-    # Επαλήθευση υπογραφής
+    # Verify signature
     payload = json.dumps(body, separators=(',', ':'))
     message = f"{timestamp}.{payload}"
     expected = hmac.new(
@@ -93,13 +92,13 @@ function verifyWebhookSignature($headers, $body, $apiSecret) {
         return false;
     }
 
-    // Επαλήθευση ότι το timestamp είναι πρόσφατο (εντός 5 λεπτών)
+    // Verify timestamp is recent (within 5 minutes)
     $now = time();
     if (abs($now - intval($timestamp)) > 300) {
         return false;
     }
 
-    // Επαλήθευση υπογραφής
+    // Verify signature
     $payload = json_encode($body, JSON_UNESCAPED_SLASHES);
     $message = $timestamp . '.' . $payload;
     $expectedSignature = 'sha256=' . hash_hmac('sha256', $message, $apiSecret);
@@ -108,8 +107,6 @@ function verifyWebhookSignature($headers, $body, $apiSecret) {
 }
 ```
 
-## Παλιός Τρόπος Πιστοποίησης
+## Παλαιού Τύπου Ελέγχος Ταυτότητας
 
-Η κεφαλίδα `token` που περιέχει το API Secret σας εξακολουθεί να αποστέλλεται για συμβατότητα προς τα πίσω. Ωστόσο, συνιστούμε τη μετάβαση στην επαλήθευση HMAC για βελτιωμένη ασφάλεια καθώς προστατεύει από επιθέσεις επανάληψης.
-
----
+Το header `token` που περιέχει το API Secret σας εξακολουθεί να αποστέλλεται για συμβατότητα με παλαιότερες εκδόσεις. Ωστόσο, συνιστούμε τη μετάβαση στην επαλήθευση HMAC για βελτιωμένη ασφάλεια, καθώς προστατεύει από επιθέσεις replay.

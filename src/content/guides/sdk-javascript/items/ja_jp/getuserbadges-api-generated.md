@@ -45,5 +45,3 @@
   console.log(fullResponse, limitedResponse);
 })();
 [inline-code-end]
-
----

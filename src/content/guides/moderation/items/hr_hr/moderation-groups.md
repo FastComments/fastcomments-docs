@@ -1,4 +1,3 @@
----
 Moderatori se mogu smjestiti u grupe kako bi moderirali različite stranice ili kategorije sadržaja.
 
 Kada moderator pripada jednoj ili više grupa, vidjet će samo komentare iz tih grupa na stranici Moderiraj komentare.

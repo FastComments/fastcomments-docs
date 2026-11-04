@@ -61,5 +61,3 @@ Der Abmeldelink in der E-Mail-Fußzeile und die One-Click-Abmeldefunktion, die v
 ### Für DKIM
 
 Nachdem Sie Ihre DKIM-DNS-Einträge definiert haben, aktualisieren Sie einfach das DomainConfig mit Ihrer DKIM-Konfiguration unter Verwendung der definierten Struktur.
-
----

@@ -1,4 +1,3 @@
----
 ## פרמטרים
 
 | שם | Type | Location | נדרש | תיאור |
@@ -50,5 +49,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `DefaultAPI.GetPendingWebhookEvents`: %v\n", resp)
 }
 [inline-code-end]
-
----

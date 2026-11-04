@@ -1,4 +1,3 @@
----
 The FastComments WordPress 플러그인 설치는 쉽도록 설계되었으며 사이트의 댓글 이용 불가 시간(다운타임)을 최소화하도록 되어 있습니다. 플러그인은 동기화가 완료될 때까지 WordPress 플러그인에서 전환되지 않습니다.
 
 먼저, 아래 섹션 `Moderation`에 있는 세부사항에 따라 모더레이터들에게 기대 사항을 알리는 것이 좋습니다. 곧 FastComments에서 모더레이팅을 하게 되며 WordPress 대시보드에서는 하지 않을 것임을 알려주십시오.
@@ -14,5 +13,3 @@ The FastComments WordPress 플러그인 설치는 쉽도록 설계되었으며 �
 댓글은 배치 단위로 업로드되며, 사이트에 가해지는 부하를 제한하기 위해 WordPress 데이터베이스에 있는 기존 인덱스를 사용하여 정렬됩니다.
 
 동기화가 완료되면 기본 WordPress 댓글 시스템은 FastComments로 대체됩니다. 저희 플랫폼을 마음에 들어하셨으면 좋겠지만, 그렇지 않다면 [문의해 주세요](https://fastcomments.com/auth/my-account/help).  
-
----

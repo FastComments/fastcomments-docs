@@ -1,8 +1,8 @@
-Le widget Recent Discussions affiche une liste de pages triées par l'activité de commentaires la plus récente. Il comprend un titre, les dates de la dernière activité, le nombre de commentaires avec des icônes, et la détection automatique du mode sombre.
+Le widget Discussions récentes affiche une liste de pages triées selon l'activité de commentaires la plus récente. Il comprend un titre, les dates de dernière activité, le nombre de commentaires avec icônes, et la détection automatique du mode sombre.
 
-## Basic Installation
+## Installation de base
 
-[inline-code-attrs-start title = 'Configuration du style du widget Recent Discussions'; type = 'html'; isFunctional = true; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Configuration du style du widget Discussions récentes'; type = 'html'; isFunctional = true; inline-code-attrs-end]
 [inline-code-start]
 <script src="https://cdn.fastcomments.com/js/widget-recent-discussions-v2.min.js"></script>
 <div id="fastcomments-widget-recent-discussions"></div>
@@ -13,17 +13,17 @@ Le widget Recent Discussions affiche une liste de pages triées par l'activité 
 </script>
 [inline-code-end]
 
-## Configuration Options
+## Options de configuration
 
-- **tenantId** (obligatoire) : Votre identifiant de locataire FastComments
+- **tenantId** (requis) : Votre ID de tenant FastComments
 - **count** (optionnel) : Nombre de pages à afficher. La valeur par défaut est `20`, maximum `100`
-- **hasDarkBackground** (optionnel) : Force le style du mode sombre. Détecté automatiquement à partir de l'arrière‑plan de la page si non défini
+- **hasDarkBackground** (optionnel) : Force le style du mode sombre. Détecté automatiquement à partir de l'arrière-plan de la page si non défini
 
-## Widget Structure
+## Structure du widget
 
-Le widget se rend avec la structure HTML suivante :
+Le widget est rendu avec la structure HTML suivante :
 
-[inline-code-attrs-start title = 'Structure HTML du widget Recent Discussions'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Structure HTML du widget Discussions récentes'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <div class="fc-rd2">
     <div class="fc-rd2-heading">Recent Discussions</div>
@@ -41,7 +41,7 @@ Le widget se rend avec la structure HTML suivante :
 
 ## Référence CSS par défaut
 
-[inline-code-attrs-start title = 'CSS par défaut du widget Recent Discussions'; type = 'css'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'CSS par défaut du widget Discussions récentes'; type = 'css'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 .fc-rd2 {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;

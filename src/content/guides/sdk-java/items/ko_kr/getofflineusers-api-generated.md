@@ -1,4 +1,3 @@
----
 현재 온라인 상태가 아닌 페이지의 과거 댓글 작성자들입니다. displayName으로 정렬됩니다.
 /users/online을 모두 사용한 후 "Members" 섹션을 렌더링할 때 이것을 사용하세요.
 commenterName에 대한 커서 페이지네이션: 서버는 부분 {tenantId, urlId, commenterName} 인덱스를 순회합니다.
@@ -54,5 +53,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

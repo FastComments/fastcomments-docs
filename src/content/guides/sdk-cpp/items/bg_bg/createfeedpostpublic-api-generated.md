@@ -31,5 +31,3 @@ api->createFeedPostPublic(tenantId, params, options)
         }
     });
 [inline-code-end]
-
----

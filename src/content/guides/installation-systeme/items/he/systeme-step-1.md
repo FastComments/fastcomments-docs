@@ -27,5 +27,3 @@
     <div class="title">ערוך קוד</div>
     <img class="screenshot-image" src="/images/installation-guides/systeme-edit-block-button.png" alt="ערוך קוד" />
 </div>
-
----

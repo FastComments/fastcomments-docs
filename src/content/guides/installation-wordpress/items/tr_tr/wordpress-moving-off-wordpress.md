@@ -1,43 +1,43 @@
-If you are moving your site off of WordPress and want FastComments on the new site, you do not need the WordPress plugin. Export your comments from WordPress, then upload the file on the [İçe Aktarım sayfası](https://fastcomments.com/auth/my-account/manage-data/import) in the FastComments dashboard.
+Sitenizi WordPress'ten taşıyorsanız ve yeni sitenizde FastComments kullanmak istiyorsanız, WordPress eklentisine ihtiyacınız yoktur. Yorumlarınızı WordPress'ten dışa aktarın, ardından dosyayı FastComments panelindeki [İçe Aktarma sayfasına](https://fastcomments.com/auth/my-account/manage-data/import) yükleyin.
 
-We support two WordPress export formats.
+İki WordPress dışa aktarma formatını destekliyoruz.
 
 ### WordPress XML (Önerilen)
 
-This is the file from WordPress's built-in exporter, so no extra plugin is needed.
+Bu, WordPress'in yerleşik dışa aktarıcısından gelen dosyadır, bu nedenle ek bir eklentiye gerek yoktur.
 
-1. In your WordPress admin, go to `Tools -> Export`.
-2. Select `All content` and click `Download Export File`.
-3. On the FastComments [İçe Aktarım sayfası](https://fastcomments.com/auth/my-account/manage-data/import), select `WordPress (.xml)` and upload the file.
+1. WordPress yönetim panelinizde `Tools -> Export` bölümüne gidin.
+2. `All content` seçeneğini seçin ve `Download Export File` düğmesine tıklayın.
+3. FastComments [İçe Aktarma sayfasında](https://fastcomments.com/auth/my-account/manage-data/import), `WordPress (.xml)` seçeneğini seçin ve dosyayı yükleyin.
 
-Each comment is tied to the URL of the post it was left on, which is already in the file.
+Her yorum, bırakıldığı yazının URL'sine bağlıdır ve bu URL dosyada zaten mevcuttur.
 
-The import keeps the author name, email, and website, the date, the content, reply threading, and whether the comment was approved. Commenter avatars are brought over from Gravatar. Votes are not part of this format.
+İçe aktarma; yazar adını, e-postayı ve web sitesini, tarihi, içeriği, yanıt dizilerini ve yorumun onaylanıp onaylanmadığını korur. Yorumcu avatarları Gravatar'dan taşınır. Oylar bu formatın bir parçası değildir.
 
 ### WordPress CSV
 
-This is the file from [WebToffee's WordPress Comments Import & Export plugin](https://wordpress.org/plugins/comments-import-export-woocommerce/).
+Bu, [WebToffee'nin WordPress Comments Import & Export eklentisinden](https://wordpress.org/plugins/comments-import-export-woocommerce/) gelen dosyadır.
 
-1. Install the plugin in your WordPress admin and export your comments as CSV.
-2. Replace each `comment_post_ID` value with the post's URL.
-3. On the FastComments [İçe Aktarım sayfası](https://fastcomments.com/auth/my-account/manage-data/import), select `WordPress (.csv)` and upload the file.
+1. Eklentiyi WordPress yönetim panelinize yükleyin ve yorumlarınızı CSV olarak dışa aktarın.
+2. Her `comment_post_ID` değerini yazının URL'si ile değiştirin.
+3. FastComments [İçe Aktarma sayfasında](https://fastcomments.com/auth/my-account/manage-data/import), `WordPress (.csv)` seçeneğini seçin ve dosyayı yükleyin.
 
-Each comment is tied to the `comment_post_ID` column. WordPress fills this column with the post ID, and your new site does not have WordPress post IDs, so step 2 replaces it with the URL.
+Her yorum `comment_post_ID` sütununa bağlıdır. WordPress bu sütunu yazı kimliği (post ID) ile doldurur ve yeni sitenizde WordPress yazı kimlikleri bulunmadığından, 2. adım bunu URL ile değiştirir.
 
-The import keeps the author name, email, and website, the date, the content, reply threading, and whether the comment was approved. Commenter avatars are brought over from Gravatar. It also keeps WordPress's spam flag, and wpDiscuz likes and dislikes when the file includes them.
+İçe aktarma; yazar adını, e-postayı ve web sitesini, tarihi, içeriği, yanıt dizilerini ve yorumun onaylanıp onaylanmadığını korur. Yorumcu avatarları Gravatar'dan taşınır. Ayrıca dosyada bulunması durumunda WordPress'in spam işaretini ve wpDiscuz beğeni/beğenmeylerini de korur.
 
-### Matching Comments to Your New Pages
+### Yorumları Yeni Sayfalarınızla Eşleştirme
 
-If your new site keeps the same URLs as your WordPress site, the comments show up on the matching pages with no extra setup.
+Yeni siteniz WordPress sitenizle aynı URL'leri koruyorsa, yorumlar ek bir kurulum yapmadan eşleşen sayfalarda görünür.
 
-If the domain changes, run the [Domain Migration tool](/guide-migrations.html#migrating-domains) after the import. If individual page URLs change, you can [migrate each page](/guide-migrations.html#migrating-pages) from its old URL to the new one.
+Alan adı değişirse, içe aktarmadan sonra [Alan Adı Taşıma aracını](/guide-migrations.html#migrating-domains) çalıştırın. Tek tek sayfa URL'leri değişirse, her sayfayı eski URL'sinden yeni URL'sine [taşıyabilirsiniz](/guide-migrations.html#migrating-pages).
 
-For bulk page migrations, such as removing the domain from the value you pass to the comment widget's [urlId](/guide-customizations-and-configuration.html#url-id) field, [open a support ticket](https://fastcomments.com/auth/my-account/help) and we will handle it for you.
+Yorum widget'ının [urlId](/guide-customizations-and-configuration.html#url-id) alanına ilettiğiniz değerden alan adını kaldırmak gibi toplu sayfa taşımaları için [bir destek talebi açın](https://fastcomments.com/auth/my-account/help), biz sizin için hallederiz.
 
-### Before You Switch
+### Geçiş Yapmadan Önce
 
-You can run the import as many times as you like. Re-importing the same file [does not create duplicates](/guide-migrations.html#importing-data), so you can import once to test the new site, then import again with your latest comments right before switching over.
+İçe aktarmayı istediğiniz kadar çalıştırabilirsiniz. Aynı dosyayı yeniden içe aktarmak [yinelenen kayıtlar oluşturmaz](/guide-migrations.html#importing-data), böylece yeni siteyi test etmek için bir kez içe aktarabilir, ardından geçiş yapmadan hemen önce en son yorumlarınızla tekrar içe aktarabilirsiniz.
 
-For export files larger than 1GB, [reach out to support](https://fastcomments.com/auth/my-account/help).
+1GB'dan büyük dışa aktarma dosyaları için [desteğe ulaşın](https://fastcomments.com/auth/my-account/help).
 
-To add FastComments to your new site, see the [Installation guide](/guide-installation.html).
+Yeni sitenize FastComments eklemek için [Kurulum rehberine](/guide-installation.html) bakın.

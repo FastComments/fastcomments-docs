@@ -1,4 +1,3 @@
----
 Administratorsko območje za ustvarjanje predlog najdete tako, da pojdite na [Prilagodi -> Predloge e-pošte](https://fastcomments.com/auth/my-account/customize-email-templates).
 
 Tukaj boste videli seznam različnih vrst e-poštnih sporočil, ki jih pošilja platforma, z opisom
@@ -9,5 +8,3 @@ Na primer, lahko prilagodimo e-poštno sporočilo `Commenter Comment Notificatio
 Klik na `Create Template` sprememb ne bo takoj uporabil. Lahko odprete urejevalnik
 za privzeto predlogo in se poigrate s predogledom, pri čemer spremembe ne bodo imele učinka
 dokler ne pritisnete `Save`.
-
----

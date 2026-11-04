@@ -1,4 +1,3 @@
----
 Successivamente, configuriamo le cose in modo che il thread dei commenti cambi in base alla pagina corrente, permettendo agli utenti di discutere il contenuto attualmente visualizzato.
 
 Senza i passaggi seguenti, avrai solo un unico thread di commenti globale per l'intero sito - il che non è molto utile.
@@ -70,5 +69,3 @@ $w.onReady(function () {
     <div class="title">Aggiungi il codice di navigazione</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-7-paste-code.png" alt="Aggiungi il codice di navigazione" />
 </div>
-
----

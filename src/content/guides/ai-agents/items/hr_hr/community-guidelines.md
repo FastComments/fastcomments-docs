@@ -1,49 +1,47 @@
-The **Community guidelines** field on the edit form is an optional policy text block included in the user-role context message on every run for this agent. It is fenced as untrusted text (the same fencing the platform applies to comment bodies and other user-supplied content), so the model treats it as policy reference, not as system instructions. It is the canonical place to write down "what behavior is and is not allowed on this site" so the agent applies it consistently.
+Polje **Smjernice zajednice** na obrascu za uređivanje je neobavezan blok teksta pravila koji se uključuje u poruku konteksta korisničke uloge pri svakom pokretanju ovog agenta. Označen je kao nepouzdani tekst (istim označavanjem koje platforma primjenjuje na tijela komentara i drugi korisnički sadržaj), tako da ga model tretira kao referencu pravila, a ne kao sistemske upute. To je kanonsko mjesto za zapisivanje "koje je ponašanje dopušteno, a koje nije na ovom sajtu" kako bi agent dosljedno primjenjivao ta pravila.
 
-### How it differs from the initial prompt
+### Kako se razlikuje od početnog prompta
 
-- **Initial prompt** - the agent's role and decision-making style. "You are a moderator. Prefer warning over banning."
-- **Community guidelines** - the rules of your community, in policy language. "No personal attacks. No promotional links from accounts under 24 hours old. Off-topic comments may be removed if a thread is heated."
+- **Početni prompt** - uloga agenta i stil donošenja odluka. "Ti si moderator. Daj prednost upozorenju umjesto banovanja."
+- **Smjernice zajednice** - pravila vaše zajednice, u jeziku pravila. "Nema osobnih napada. Nema promotivnih poveznica s računa starijih od 24 sata. Komentari izvan teme mogu se ukloniti ako je nit razgorena."
 
-Both flow into the same context window, but they enter at different layers - the initial prompt is part of the system role, the guidelines doc is fenced text inside the user-role context message. The split makes editing easier when you want to update one without re-reading the other.
+Oba ulaze u isti kontekstni prozor, ali ulaze na različitim razinama - početni prompt je dio sistemske uloge, a dokument smjernica je označeni tekst unutar poruke konteksta korisničke uloge. Ta podjela olakšava uređivanje kada želite ažurirati jedno bez ponovnog čitanja drugoga.
 
-### What's a good guidelines doc
+### Kako izgleda dobar dokument smjernica
 
-A short, specific, written-by-a-human document. Lists work better than prose:
+Kratak, specifičan dokument koji je napisao čovjek. Popisi bolje funkcioniraju od proznog teksta:
 
 [inline-code-attrs-start title = 'Primjer smjernica zajednice'; type='text' inline-code-attrs-end]
 [inline-code-start]
-Allowed:
-- Substantive disagreement, even strongly worded.
-- Links to original sources, even from new accounts.
-- Off-topic asides if the parent thread permits them.
+Dopušteno:
+- Suštinsko neslaganje, čak i oštro izraženo.
+- Poveznice na izvorne izvore, čak i s novih računa.
+- Sporedne digresije ako glavna nit to dopušta.
 
-Not allowed:
-- Personal attacks against specific named users.
-- Doxxing or sharing of private information.
-- Coordinated promotional activity (multiple comments pushing the same external link).
-- Comments that exist only to derail discussion.
+Nije dopušteno:
+- Osobni napadi na konkretne, imenovane korisnike.
+- Doxxing ili dijeljenje privatnih informacija.
+- Koordinirana promotivna aktivnost (više komentara koji guraju istu vanjsku poveznicu).
+- Komentari koji postoje samo radi ometanja rasprave.
 
-Borderline:
-- Strong language without a target. Allowed if not directed at a person.
-- Political topics outside the page subject. Off-topic; warn first, don't remove unless persistent.
+Granični slučajevi:
+- Snažan jezik bez ciljane osobe. Dopušteno ako nije usmjeren na osobu.
+- Političke teme izvan teme stranice. Izvan teme; prvo upozoriti, ne uklanjati osim ako se nastavi.
 [inline-code-end]
 
-The agent applies this on every run. If you change the guidelines, the change takes effect on the next trigger - past runs are not retroactively re-evaluated.
+Agent ovo primjenjuje pri svakom pokretanju. Ako promijenite smjernice, promjena stupa na snagu pri sljedećem okidanju - prošla pokretanja se ne preispituju retroaktivno.
 
-### What not to put here
+### Što ne stavljati ovdje
 
-- **Output formatting instructions** ("reply in HTML", "use emoji"). Those belong in the [initial prompt](#personality-prompt).
-- **Localized text.** The guidelines doc, like the prompt, is **English-only** for the same reason - machine translation can change agent behavior silently. If you have policies that vary by locale, write them all in English in this one document and structure the doc as "for German-language pages: ..."
-- **Long quotations of external policies.** Paraphrase. Long context costs tokens on every run.
-- **PII or secrets.** This text is sent to the LLM provider on every run.
+- **Upute za formatiranje izlaza** ("odgovori u HTML-u", "koristi emojije"). To pripada u [početni prompt](#personality-prompt).
+- **Lokalizirani tekst.** Dokument smjernica, kao i prompt, je **samo na engleskom** iz istog razloga - strojno prevođenje može tiho promijeniti ponašanje agenta. Ako imate pravila koja variraju po jeziku, napišite ih sve na engleskom u ovom jednom dokumentu i strukturirajte dokument kao "za stranice na njemačkom jeziku: ..."
+- **Dugi citati vanjskih pravila.** Parafrazirajte. Dugi kontekst košta tokene pri svakom pokretanju.
+- **Osobni podaci ili tajne.** Ovaj tekst se šalje davatelju LLM usluge pri svakom pokretanju.
 
-### Length
+### Duljina
 
-The field is capped at **4000 characters** (enforced both by the form and the save route). Token cost on every run is proportional to length, so even within the cap a few hundred words is usually plenty. If your community policies run to many pages, summarize the parts the agent needs into a brief specifically for this field.
+Polje je ograničeno na **4000 znakova** (provjerava i obrazac i ruta za spremanje). Trošak tokena pri svakom pokretanju proporcionalan je duljini, pa je čak i unutar ograničenja nekoliko stotina riječi obično dovoljno. Ako se pravila vaše zajednice protežu na više stranica, sažmite dijelove koje agent treba u sažetak namijenjen posebno ovom polju.
 
-### Versioning
+### Verzioniranje
 
-There is no built-in version history for the guidelines doc - the latest saved value is what the agent uses. If you want history, copy the doc into your own tracking system before each major edit. The [Refine Prompts](#refining-prompts) flow can record changes to the *initial prompt* but does not version the guidelines doc.
-
----
+Ne postoji ugrađena povijest verzija za dokument smjernica - agent koristi zadnju spremljenu vrijednost. Ako želite povijest, kopirajte dokument u vlastiti sustav praćenja prije svake veće izmjene. Tok [Refine Prompts](#refining-prompts) može zapisati promjene *početnog prompta*, ali ne verzionira dokument smjernica.

@@ -85,5 +85,3 @@ Također možemo poslati Sigurni SSO ili Jednostavni SSO podatke:
     });
 </script>
 [inline-code-end]
-
----

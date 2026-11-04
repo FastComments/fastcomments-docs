@@ -1,12 +1,12 @@
-FastComments 支持三种认证模式：
+FastComments 支持三种身份验证模式：
 
-1. **Anonymous** -- 无 SSO 令牌；用户获得基于会话的身份
-2. **Simple SSO** -- 客户端令牌，用于演示和测试（不安全）
-3. **Secure SSO** -- 服务器签名的令牌，用于生产环境
+1. **匿名** -- 无 SSO 令牌；用户获得基于会话的身份
+2. **简单 SSO** -- 用于演示和测试的客户端令牌（不安全）
+3. **安全 SSO** -- 用于生产环境的服务器签名令牌
 
-### Simple SSO
+### 简单 SSO
 
-适用于演示和本地测试。任何人都可以使用 Simple SSO 冒充任何用户，因此不要在生产环境中使用它。
+适用于演示和本地测试。任何人都可以通过简单 SSO 冒充任何用户，因此请勿在生产环境中使用。
 
 ```swift
 import FastCommentsSwift
@@ -27,20 +27,20 @@ let config = FastCommentsWidgetConfig(
 let sdk = FastCommentsSDK(config: config)
 ```
 
-`SimpleSSOUserData` 也支持可选字段：
+`SimpleSSOUserData` 还支持可选字段：
 
-- `id` -- user ID（如果未设置则默认为 email）
+- `id` -- 用户 ID（未设置时默认为邮箱）
 - `displayName` -- 单独的显示名称
-- `displayLabel` -- 在姓名旁显示的自定义标签（例如 "VIP"）
-- `websiteUrl` -- 用户姓名上的链接
-- `locale` -- 区域代码
-- `isProfileActivityPrivate` -- 隐藏个人资料活动（默认值为 true）
+- `displayLabel` -- 显示在名称旁边的自定义标签（例如 "VIP"）
+- `websiteUrl` -- 用户名称上的链接
+- `locale` -- 区域设置代码
+- `isProfileActivityPrivate` -- 隐藏个人资料活动（默认为 true）
 
-### Secure SSO
+### 安全 SSO
 
-在生产环境中，你的后端使用你的 API 密钥生成签名的 SSO 令牌。iOS 应用从你的服务器获取该令牌并将其传递给配置。
+在生产环境中，您的后端使用 API 密钥生成签名的 SSO 令牌。iOS 应用从您的服务器获取此令牌并将其传递给配置。
 
-**在你的后端**（使用 FastComments Swift SDK 或任意语言）:
+**在您的后端**（使用 FastComments Swift SDK 或任何语言）：
 
 ```swift
 let userData = SecureSSOUserData(
@@ -51,10 +51,10 @@ let userData = SecureSSOUserData(
 )
 let sso = try FastCommentsSSO.createSecure(apiKey: "YOUR_API_KEY", secureSSOUserData: userData)
 let token = try sso.prepareToSend()
-// 通过你的 API 将此令牌返回给你的 iOS 应用
+// 通过您的 API 将此令牌返回给您的 iOS 应用
 ```
 
-**在你的 iOS 应用中：**
+**在您的 iOS 应用中：**
 
 ```swift
 struct MyView: View {
@@ -75,9 +75,9 @@ struct MyView: View {
             }
         }
         .task {
-            // 从你的后端获取令牌
+            // 从您的后端获取令牌
             let token = try? await fetchSSOTokenFromYourBackend()
-            // 使用令牌创建新的配置，或在加载前设置它
+            // 使用该令牌创建新配置，或在加载前设置
             isLoadingToken = false
             try? await sdk.load()
         }
@@ -85,16 +85,13 @@ struct MyView: View {
 }
 ```
 
-`SecureSSOUserData` 支持额外字段：
+`SecureSSOUserData` 支持其他字段：
 
-- `optedInNotifications` -- email 通知的选择加入
+- `optedInNotifications` -- 邮件通知选择加入
 - `displayLabel` -- 自定义标签
 - `displayName` -- 显示名称
 - `websiteUrl` -- 网站 URL
-- `groupIds` -- 组成员身份
+- `groupIds` -- 群组成员身份
 - `isAdmin` -- 管理员权限
 - `isModerator` -- 版主权限
 - `isProfileActivityPrivate` -- 个人资料隐私
-
----
----

@@ -1,113 +1,116 @@
-SSO, odnosno single-sign-on, je skup konvencija koji omogućava vama ili vašim korisnicima da koriste FastComments bez potrebe za kreiranjem još jednog naloga.
+SSO, ili single-sign-on, je skup konvencija koje vam ili vašim korisnicima omogućavaju da koristite FastComments bez potrebe za kreiranjem novog naloga.
 
-Pod pretpostavkom da ne dozvoljavate anonimno komentarisanje, nalog je potreban da bi se komentarisalo sa FastComments. Mi ovaj proces prijave činimo vrlo jednostavnim — korisnik samo ostavi svoj email kada komentariše.
-Međutim, razumemo da je čak i to dodatna prepreka koju neke stranice žele da izbegnu.
+Pod pretpostavkom da ne dozvoljavate anonimno komentiranje, nalog je potreban za komentiranje putem FastComments. Proces registracije činimo vrlo jednostavnim - korisnik samo ostavlja svoj email prilikom komentiranja.
+Ipak, razumemo da i to predstavlja dodatnu prepreku koju neke sajtove žele da izbegnu.
 
-Možemo smanjiti tu prepreku tako što ćemo imati samo jedan tok prijave za ceo vaš sajt.
+Tu prepreku možemo smanjiti tako da postoji samo jedan tok prijave za ceo vaš sajt.
 
-### How do I get it?
-Svi tipovi naloga trenutno dobijaju pristup SSO. Međutim, maksimalan broj SSO korisnika varira u zavisnosti od vašeg paketa. Kao i kod drugih funkcija, Pro planovi i viši obezbeđuju direktnu razvojnu podršku.
+### Kako da ga dobijem?
+Svi tipovi naloga trenutno imaju pristup SSO-u. Međutim, maksimalan broj SSO korisnika varira u zavisnosti od vašeg paketa. Kao i kod drugih funkcionalnosti, Pro planovi i viši pružaju direktnu razvojnu podršku.
 
-Uporedićemo opcije, a zatim ćemo ući u detalje svake.
+Uporedimo opcije, a zatim uđimo u detalje svake od njih.
 
-### User and Comment Migrations
+### Migracija korisnika i komentara
 
-Kada migrirate sa platforme koja ima SSO, poput Disqus, već ćete imati korisnike i njihove komentare.
+Prilikom migracije sa platforme koja koristi SSO, poput Disqus-a, već ćete imati korisnike i njihove komentare.
 
-Komentari se uvoze kao deo vaše migracije, bilo preko API-ja, našeg Import UI ili korisničke podrške. Import UI je poželjan ako podržava platformu sa koje migrirate, jer uključuje rukovanje greškama, ekstrakciju i upload avatara i medija, kao i sistem praćenja batch poslova.
+Komentari se uvoze kao deo vaše migracije, bilo putem API-ja, našeg Import UI-ja, ili korisničke podrške. Import UI je preferiran ako podržava platformu sa koje
+se migrirate, jer uključuje rukovanje greškama, ekstrakciju i otpremanje avatara i medija, kao i sistem za praćenje batch poslova.
 
-Sami korisnici se dodaju automatski prilikom prvog pregleda niti komentara. Alternativno, mogu biti unapred dodati preko API-ja, ali taj rad nema mnogo prednosti.
+Sam korisnici se dodaju automatski prilikom prvog pregledanja niti komentara. Alternativno, mogu se unapred dodati putem API-ja, ali taj posao nema
+mnogo prednosti.
 
-Ako su komentari importovani, a SSO korisnici nisu ručno dodatii preko API-ja, komentari će biti automatski dodeljeni korisničkom nalogu prvi put kada se nalog kreira kada korisnik pogleda bilo koju nit komentara. Oni će tada moći da upravljaju, uređuju i brišu komentare koje su prvobitno napisali.
+Ako se komentari uvezu, a SSO korisnici nisu ručno dodati putem API-ja, komentari će automatski biti migrirani na nalog korisnika prilikom
+njegovog prvog kreiranja kada pregleda bilo koju nit komentara. Tada će moći da upravljaju, uređuju i brišu komentare koje su prvobitno napisali.
 
-Automatska migracija se radi putem email-a ili korisničkog imena. Neke platforme ne obezbeđuju emailove pri exportu, kao Disqus, pa se u tom slučaju oslanjamo na korisničko ime.
-- Sve dok prosledite odgovarajuće korisničko ime i email u SSO payload-u, dodaćemo email u pojedinačne objekte komentara tako da obaveštenja i pominjanja funkcionišu.
+Automatska migracija se vrši putem email-a ili korisničkog imena. Neke platforme ne pružaju email adrese pri eksportu, poput Disqus-a, pa u tom slučaju koristimo korisničko ime.
+- Sve dok prosledite odgovarajuće korisničko ime, i email u SSO payload-u, dodaćemo email pojedinačnim objektima komentara kako bi notifikacije i pominjanja radili.
 
-Ako želite da importujete komentare i korisnike odjednom, radite sa podrškom kako biste preneli komentare na odgovarajuće korisničke naloge nakon što su korisnici importovani
-preko API-ja.
+Ako želite da uvezete komentare i korisnike odjednom, sarađujte sa podrškom da se komentari migriraju na odgovarajuće naloge korisnika nakon što se korisnici uvezu
+putem API-ja.
 
-Dakle, da sumiramo najlakši put za migraciju:
+Dakle, da rezimiramo najlakši put za migraciju:
 
-1. Importujte komentare.
-   1. Avatari i drugi mediji se automatski migriraju ako koristite Import UI u `Manage Data -> Imports`.
+1. Uvezite komentare.
+   1. Avatari i ostali mediji se migriraju automatski ako koristite Import UI u `Manage Data -> Imports`.
 2. Podesite Secure ili Simple SSO.
-3. Dozvolite da se migracija desi po korisniku automatski kada se prvi put prijave.
-   1. Ovo obično dodaje manje od sekunde na vreme učitavanja stranice ako korisnik ima manje od 50k komentara.
+3. Dozvolite da migracija obavi automatski po korisniku kada se prvi put prijavi.
+   1. Ovo obično dodaje manje od sekunde vremenu učitavanja stranice ako korisnik ima manje od 50k komentara.
 
-### WordPress Users
-Ako koristite naš <a href="https://wordpress.org/plugins/fastcomments/" target="_blank">WordPress dodatak</a>, nema potrebe za pisanjem koda! Jednostavno idite na administratorsku stranicu dodatka, kliknite SSO Settings, i zatim Enable.
+### WordPress korisnici
+Ako koristite naš <a href="https://wordpress.org/plugins/fastcomments/" target="_blank">WordPress plugin</a>, ne morate pisati kod! Jednostavno idite na Admin stranicu plugina, kliknite SSO Settings, a zatim Enable.
 
-Ovo će vas odvesti do čarobnjaka sa jednim klikom koji će kreirati vaš API ključ, poslati ga na vašu WordPress instalaciju i uključiti SSO. Konsolidovali smo ovo u jedan klik za vas.
+Ovo će vas odvesti na čarobnjak sa jednim klikom dugmetom koji će kreirati vaš API ključ, poslati ga na vašu WordPress instalaciju i uključiti SSO. Ovo smo konsolidovali u jedan klik dugmeta za vas.
 
-Obratite pažnju da ako instalirate dodatak po prvi put moraćete da završite proces podešavanja pre nego što vidite administratorsku stranicu sa dugmetom SSO Settings.
+Imajte na umu da ako instalirate plugin prvi put, moraćete da završite proces podešavanja pre nego što vidite admin stranicu sa dugmetom SSO Settings.
 
-#### WordPress SSO - Moderators
+#### WordPress SSO - Moderatori
 
-Obratite pažnju da trenutno, da bi se bedž "Moderator" prikazao pored vaših moderatora kada komentarišu koristeći FastComments WordPress dodatak,
-oni takođe moraju biti dodati kao Moderator u FastComments kontrolnoj tabli, i imati svoj email verifikovan.
+Imajte na umu da trenutno, kako bi se "Moderator" bedž prikazao pored vaših moderatora kada komentiraju putem FastComments WordPress plugina,
+oni takođe moraju biti dodati kao Moderator u FastComments kontrolnoj tabli, i imati verifikovan email.
 
-### Custom Integrations
+### Prilagođene integracije
 
-Za prilagođene integracije postoje dve opcije.
+Za prilagođene integracije, postoje dve opcije.
 
-### Option One - Secure SSO
+### Opcija jedan - Secure SSO
 
-Sa Secure SSO, FastComments zna da je korisnik koji komentariše, glasa i čita komentare stvarni korisnik na vašem sajtu.
+Sa Secure SSO-om, FastComments zna da korisnik koji komentariše, glasa i čita komentare je stvaran korisnik na vašem sajtu.
 
-Sve dok kreirate validan payload, korisnik će uvek imati besprekorno iskustvo komentarisanja.
+Sve dok kreirate validan payload, korisnik će uvek imati besprekorno iskustvo komentiranja.
 
-Sa Secure SSO, SSO payload se kreira server-side koristeći HMAC autentifikaciju i zatim se prosleđuje widgetu na client-u.
+Sa Secure SSO-om, SSO payload se kreira **server-side** koristeći HMAC autentikaciju, a zatim se prosleđuje vidžetu na **klijentu**.
 
-Sa Secure SSO, korisnički nalog je potpuno odvojen od ostatka FastComments baze korisnika. To znači da ako imamo dva partnera
-Company A i Company B, svaki može imati SSO korisnika sa korisničkim imenom "Bob".
+Sa Secure SSO-om, nalog korisnika je **potpuno odvojen** od ostatka FastComments korisničke baze. To znači da ako imamo dva partnera,
+Kompanija A i Kompanija B, svaka može imati SSO korisnika sa korisničkim imenom "Bob".
 
-#### Requirements
+#### Zahtevi
 - Osnovno znanje o backend razvoju.
-- Osnovno znanje o rukovanju tajnim API ključevima.
-- Osnovno znanje o razvoju API-ja ili server-side renderovanju.
+- Osnovno znanje o radu sa tajnim API ključevima.
+- Osnovno znanje o API razvoju ili server-side renderovanju.
 
-#### Pros
-- Sigurno.
-- Besprekorno iskustvo komentarisanja.
+#### Prednosti
+- Bezbedno.
+- Besprekorno iskustvo komentiranja.
 
-#### Cons
-- Zahteva razvoj na backend-u.
+#### Nedostaci
+- Zahteva backend razvoj.
 
-#### Updating User Data
+#### Ažuriranje podataka korisnika
 
-Sa Secure SSO, svaki put kada prosledite sso user payload, mi ćemo ažurirati njihov nalog najnovijim informacijama. Na primer, ako
-korisnik ima korisničko ime `X`, i vi prosledite `Y` u SSO payload-u, njihovo korisničko ime će postati `Y`.
+Sa Secure SSO-om, svaki put kada prosledite sso user payload, ažuriraćemo njihovog korisnika sa najnovijim informacijama. Na primer, ako
+korisnik ima korisničko ime `X`, a vi prosledite `Y` u SSO payload-u, njihovo korisničko ime će postati `Y`.
 
-Ako želite da uklonite vrednosti koristeći ovaj pristup, postavite ih na `null` (ne `undefined`).
+Ako želite da uklonite vrednosti ovim pristupom, postavite ih na `null` (ne `undefined`).
 
 #### Secure SSO API
 
-Takođe obezbeđujemo API za interakciju sa SSO korisnicima. Pogledajte [the docs](/guide-api.html#sso-user-structure).
+Takođe pružamo API za interakciju sa SSO korisnicima. Pogledajte [dokumentaciju](/guide-api.html#sso-user-structure).
 
-Napomena da kada koristite Secure SSO, korisnici se automatski kreiraju u pozadini prilikom učitavanja stranice. Ne morate masovno importovati svoje korisnike.
+Imajte na umu da prilikom korišćenja Secure SSO-a, korisnici se automatski kreiraju u pozadini pri učitavanju stranice. Ne morate masovno uvoziti svoje korisnike.
 
-### Option Two - Simple SSO
+### Opcija dva - Simple SSO
 
-Alternativa Secure SSO je jednostavno prosleđivanje informacija o korisniku widgetu za komentarisanje.
+Alternativa Secure SSO-u je jednostavno prosleđivanje informacija o korisniku vidžetu za komentiranje.
 
-Nije obavezno proslediti email sa Simple SSO, međutim bez njega njihovi komentari će se prikazivati kao "Unverified".
+Prosleđivanje email-a sa Simple SSO-om nije obavezno, međutim bez toga njihovi komentari će se prikazivati kao "Unverified".
 
-<sup>Napomena!</sup> Od početka 2022. korisnička imena sa Simple SSO ne moraju biti jedinstvena preko celog FastComments.com.
+<sup>Napomena!</sup> Od početka 2022. korisnička imena sa Simple SSO-om ne moraju biti jedinstvena na celom FastComments.com.
 
-Idealno, Simple SSO bi trebalo da se bira samo kada razvijate na platformi koja ne obezbeđuje pristup backend-u.
+Idealno, Simple SSO bi trebalo birati samo prilikom razvoja na platformi koja ne pruža backend pristup.
 
-#### Requirements
+#### Zahtevi
 - Osnovno znanje o client-side razvoju.
-- Morate bar poznavati email korisnika.
+- Potrebno je znati barem email korisnika.
 
-#### Pros
+#### Prednosti
 - Jednostavno.
-- Sva aktivnost je i dalje verifikovana.
+- Sva aktivnost se i dalje verifikuje.
 - Korisnik nikada ne unosi svoje korisničko ime ili email.
 
-#### Cons
-- Manje sigurno od Secure SSO jer se client-side payload može falsifikovati da postane bilo koji korisnik.
+#### Nedostaci
+- Manje bezbedno od Secure SSO-a jer client-side payload može biti falsifikovan da postane bilo koji korisnik.
 
 #### Simple SSO API
 
-Korisnici koji su automatski kreirani putem Simple SSO toka sačuvani su kao `SSOUser` objekti. Može im se pristupiti i upravljati preko `SSOUser` API-ja. Pogledajte [the docs](/guide-api.html#sso-user-structure).
+Korisnici automatski kreirani putem Simple SSO toka čuvaju se kao `SSOUser` objekti. Mogu se pristupiti i upravljati njima putem `SSOUser` API-ja. Pogledajte [dokumentaciju](/guide-api.html#sso-user-structure).

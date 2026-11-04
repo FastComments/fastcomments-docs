@@ -1,4 +1,3 @@
----
 ## パラメータ
 
 | 名前 | 型 | Location | 必須 | 説明 |
@@ -37,5 +36,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling DefaultApi->update_email_template: #{e}"
 end
 [inline-code-end]
-
----

@@ -45,5 +45,3 @@ try {
     echo 'Exception when calling DefaultApi->addDomainConfig: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

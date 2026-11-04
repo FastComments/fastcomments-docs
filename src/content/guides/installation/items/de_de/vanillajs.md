@@ -1,4 +1,3 @@
----
 Die VanillaJS-Version des Widgets ist die einfachste Möglichkeit, Kommentare zu Ihrer Website hinzuzufügen, ohne Build-Systeme oder serverseitigen Code zu benötigen.
 
 Fügen Sie einfach den folgenden Codeausschnitt in jede Seite ein, um Kommentare zu Ihrer Website hinzuzufügen:
@@ -16,5 +15,3 @@ Die Dokumentation zur Konfiguration des Widgets finden Sie <a href="/guide-custo
 
 Alle Versionen des FastComments-Widgets sind Wrapper um die zentrale VanillaJS-Bibliothek. Dadurch können wir Funktionen hinzufügen
 und Probleme an einer Stelle beheben - und die Änderungen werden automatisch auf die anderen Varianten des Kommentar-Widgets übertragen.
-
----

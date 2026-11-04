@@ -25,5 +25,3 @@ Je zou een leeg codegebied zoals het volgende moeten zien:
     <div class="title">Leeg codegebied</div>
     <img class="screenshot-image" src="/images/installation-guides/squarespace-step-1-4-code-area.png" alt="Leeg codegebied" />
 </div>
-
----

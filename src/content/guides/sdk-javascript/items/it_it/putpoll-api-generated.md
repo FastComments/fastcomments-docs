@@ -1,4 +1,3 @@
----
 Allega un sondaggio a un commento, o imposta lo stato completo del sondaggio che ha già.
 
 Le opzioni sono abbinate per id: un'opzione inviata con l'id di un'opzione esistente mantiene i suoi voti (e prende la nuova etichetta e posizione), un'opzione inviata senza un id viene aggiunta, e le opzioni esistenti omesse dalla lista vengono rimosse insieme ai voti espressi su di esse.
@@ -37,5 +36,3 @@ const replaceVotes: boolean = true;
 
 const result: SavePollResponse = await putPoll(tenantId, commentId, pollInput, replaceVotes);
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 El SDK de FastComments proporciona tres clientes API:
 
 ### PublicAPI - Métodos seguros para el cliente
@@ -28,4 +27,3 @@ El `ModerationAPI` ofrece un conjunto extenso de APIs de moderación en vivo y r
 **Caso de uso ejemplo**: Construir una experiencia de moderación para los moderadores de tu comunidad
 
 **IMPORTANTE**: Nunca expongas tu clave API en código del lado del cliente. Las claves API solo deben usarse del lado del servidor.
----

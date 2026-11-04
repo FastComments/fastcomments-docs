@@ -9,9 +9,9 @@ dependencies: [
 ```
 
 Oppure in Xcode:
-1. File > Aggiungi pacchetti...
+1. File > Add Packages...
 2. Inserisci l'URL del repository: `https://github.com/fastcomments/fastcomments-swift.git`
-3. Seleziona la versione che desideri utilizzare
+3. Seleziona la versione che vuoi utilizzare
 
 ### Requisiti
 

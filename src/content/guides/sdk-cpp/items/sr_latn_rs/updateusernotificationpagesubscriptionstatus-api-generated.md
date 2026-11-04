@@ -31,5 +31,3 @@ api->updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitl
         // process resp if needed
     });
 [inline-code-end]
-
----

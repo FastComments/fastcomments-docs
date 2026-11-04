@@ -139,5 +139,3 @@
     });
 </script>
 [inline-code-end]
-
----

@@ -1,8 +1,8 @@
-On an index page, don't render one comment-count widget per row. That is one request per post. Use the bulk count, which takes a single request for the whole page.
+Na strani z indeksom ne upodabljajte enega gradnika za štetje komentarjev na vsako vrstico. To je ena zahteva na objavo. Uporabite množično štetje, ki za celotno stran vzame eno samo zahtevo.
 
-Mark each row with the `urlId` its thread uses, then load the bulk widget once:
+Vsako vrstico označite z `urlId`, ki ga uporablja njena nit, nato pa gradnik za množično štetje naložite enkrat:
 
-[inline-code-attrs-start title = 'Masovni števci komentarjev na indeksni strani'; type='javascript' inline-code-attrs-end]
+[inline-code-attrs-start title = 'Množično štetje komentarjev na indeksu'; type='javascript' inline-code-attrs-end]
 [inline-code-start]
 <ul>
   {posts.map((post) => (
@@ -23,8 +23,8 @@ Mark each row with the `urlId` its thread uses, then load the bulk widget once:
 <script src="https://cdn.fastcomments.com/js/embed-widget-comment-count-bulk.min.js"></script>
 [inline-code-end]
 
-The script finds every `.fast-comments-count` element on the page and fills in its count.
+Skript poišče vse elemente `.fast-comments-count` na strani in izpolni njihove številke.
 
-`data-fast-comments-url-id` has to match the `urlId` that post's comment widget uses. If the widget uses the slug, the marker uses the slug. A mismatch shows zero on a thread that has comments.
+`data-fast-comments-url-id` se mora ujemati z `urlId`, ki ga uporablja gradnik komentarjev te objave. Če gradnik uporablja slug, oznaka uporablja slug. Neujemljenost prikaže nič pri niti, ki ima komentarje.
 
-The script polls for `window.FastCommentsBulkCountConfig`, so it does not matter whether you set the config before or after the script tag.
+Skript anketira `window.FastCommentsBulkCountConfig`, zato ni pomembno, ali nastavite konfiguracijo pred ali za oznako skripta.

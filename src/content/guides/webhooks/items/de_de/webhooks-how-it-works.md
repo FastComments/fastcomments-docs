@@ -1,4 +1,3 @@
----
 Alle Änderungen am Comment-Objekt im System lösen ein Ereignis aus, das in eine Warteschlange gelangt.
 
 Das initiale Webhook-Ereignis wird normalerweise innerhalb von sechs Sekunden nach dem Auftreten der Ereignisquelle gesendet.
@@ -12,5 +11,3 @@ einer Minute erneut versucht. Wenn er zweimal fehlschlägt, wird er anschließen
 API nicht zu überlasten, falls sie aufgrund von Lastproblemen ausfällt.
 
 Webhooks können über die [Protokollseite](https://fastcomments.com/auth/my-account/manage-data/webhooks/logs) abgebrochen werden.
-
----

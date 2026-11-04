@@ -7,5 +7,3 @@
 Ово се такође може урадити без кода. На страници за прилагођавање виџета, погледајте опцију "Enable Advanced Formatting" option.
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-wysiwyg']; selector = '.enable-search-label'; alt='Страница за прилагођавање виџета са означеним пољетом Enable Advanced Formatting за укључивање WYSIWYG уређивача'; title='Омогући WYSIWYG' app-screenshot-end]
-
----

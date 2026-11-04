@@ -8,5 +8,3 @@ Ako naiđete na bilo kakve probleme ili imate pitanja u vezi Swift SDK-a, molimo
 ## Doprinosi
 
 Doprinosi su dobrodošli! Molimo posetite [GitHub repository](https://github.com/FastComments/fastcomments-swift) za smernice za doprinos.
-
----

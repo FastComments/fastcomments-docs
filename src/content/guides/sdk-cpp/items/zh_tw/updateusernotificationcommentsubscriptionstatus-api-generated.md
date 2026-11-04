@@ -1,4 +1,3 @@
----
 為特定評論啟用或停用通知。
 
 ## 參數
@@ -29,5 +28,3 @@ auto updateTask = api->updateUserNotificationCommentSubscriptionStatus(
     (void)resp;
 });
 [inline-code-end]
-
----

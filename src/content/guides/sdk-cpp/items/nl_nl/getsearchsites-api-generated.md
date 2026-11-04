@@ -31,5 +31,3 @@ api->getSearchSites(tenantId, options)
        }
    });
 [inline-code-end]
-
----

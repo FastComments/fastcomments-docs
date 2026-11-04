@@ -1,4 +1,3 @@
----
 ## Parametry
 
 | Nazwa | Typ | Wymagane | Opis |
@@ -21,5 +20,3 @@ const tenantId: string = "tenant_12345";
   console.log(firstPage?.title);
 })();
 [inline-code-end]
-
----

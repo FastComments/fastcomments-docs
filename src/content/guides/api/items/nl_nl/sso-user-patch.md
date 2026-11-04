@@ -1,4 +1,3 @@
----
 [api-resource-header-start name = 'SSOUser'; route = 'PATCH /api/v1/sso-users/:id'; creditsCost = 1; api-resource-header-end]
 
 Deze route biedt de mogelijkheid om een enkele SSO-gebruiker bij te werken.
@@ -34,6 +33,3 @@ interface SSOUserPatchResponse {
     user?: SSOUser; // We geven de volledig bijgewerkte gebruiker terug bij succes.
 }
 [inline-code-end]
-
-
----

@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Назва | Тип | Обов’язково | Опис |
@@ -24,5 +23,3 @@ let (voteOpt, httpResp) = client.postVote(
 if voteOpt.isSome:
   let vote = voteOpt.get()
 [inline-code-end]
-
----

@@ -42,5 +42,3 @@ interface DomainConfigPutResponse {
     configuration?: DomainConfig
 }
 [inline-code-end]
-
----

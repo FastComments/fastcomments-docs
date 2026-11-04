@@ -8,5 +8,3 @@
 </div>
 
 这会将主题打包成一个位于 `dist/casper-fastcomments.zip` 的 zip 文件（如果这是你在 `Step Three` 中为主题命名的名称）。
-
----

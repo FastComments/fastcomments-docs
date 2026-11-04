@@ -61,5 +61,3 @@ interface PageMigrationUndoResult {
 #### Wiederholungen
 
 Wenn der Server, der einen Seitenmigrations-Job ausführt, neu startet, wird der Job zurück in die Warteschlange gestellt und nach der letzten abgeschlossenen Migration wieder aufgenommen. Ein Job wird bis zu 3 Mal versucht, danach ist sein `status` `failed`.
-
----

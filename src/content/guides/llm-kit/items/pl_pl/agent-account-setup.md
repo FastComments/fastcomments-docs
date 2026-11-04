@@ -1,4 +1,3 @@
----
 Agent programistyczny, taki jak Claude Code, Cursor lub asystent oparty na MCP, może skonfigurować FastComments za Ciebie, bez wypełniania formularza rejestracji. Jest to przydatne, gdy prosisz agenta o "add comments to my site" i nie masz jeszcze konta.
 
 ### Jak to działa
@@ -19,5 +18,3 @@ Każde logowanie posiada jedno konto. Jeśli otworzysz link do przejęcia będą
 ### Dla autorów agentów
 
 Instrukcje dla agentów dostępne pod adresem [fastcomments.com/agents.md](https://fastcomments.com/agents.md) opisują wywołanie tworzenia konta, pola w odpowiedzi oraz sposób przekazania linku do przejęcia osobie, dla której pracujesz. Wywołanie nie wymaga klucza API i jest limitowane pod względem liczby żądań na adres IP.
-
----

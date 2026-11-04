@@ -50,5 +50,3 @@ interface PageReactUser {
 #### Praktisk tip
 
 Husk at URI‑enkode værdier som `urlId`.
-
----

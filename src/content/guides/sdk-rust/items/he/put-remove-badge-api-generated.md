@@ -30,5 +30,3 @@ async fn remove_badge_example(configuration: &configuration::Configuration) -> R
     Ok(())
 }
 [inline-code-end]
-
----

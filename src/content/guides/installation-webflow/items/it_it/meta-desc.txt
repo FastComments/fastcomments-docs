@@ -1,3 +1,1 @@
----
 Aggiungi commenti in tempo reale a Webflow con un blocco embed, su una pagina statica o su un'intera collezione, quindi pubblica per renderli attivi.
----

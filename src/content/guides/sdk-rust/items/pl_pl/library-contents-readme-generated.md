@@ -1,4 +1,3 @@
----
 The FastComments Rust SDK consists of several modules:
 
 - **Client Module** - Klient API dla FastComments REST APIs
@@ -19,4 +18,3 @@ The FastComments Rust SDK consists of several modules:
   - Modele komentarzy i struktury metadanych
   - Konfiguracje użytkowników i najemców
   - Funkcje pomocnicze dla typowych operacji
----

@@ -32,5 +32,3 @@ ModerationAPI.getSearchUsers(tenantId: tenantId, options: ModerationAPI.GetSearc
     }
 }
 [inline-code-end]
-
----

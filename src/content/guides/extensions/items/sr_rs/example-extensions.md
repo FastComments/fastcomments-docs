@@ -1,4 +1,3 @@
----
 У FastComments-у, ми пишемо сопствене екстензије користећи исти API. Можете погледати неминификовани код
 за ове екстензије на следећим крајњим тачкама:
 
@@ -22,5 +21,3 @@ https://fastcomments.com/js/comment-ui/extensions/comment-ui.moderation.extensio
 Екстензија Уживо чет (у комбинацији са другом конфигурацијом и стиловањем) претвара виџет коментара у компоненту за уживо чет.
 
 https://fastcomments.com/js/comment-ui/extensions/live-chat.extension.js
-
----

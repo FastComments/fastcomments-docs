@@ -7,5 +7,3 @@ Per impostazione predefinita FastComments consente il caricamento di immagini. Q
 Questo può essere personalizzato senza codice, nella pagina di personalizzazione del widget:
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.disable-image-uploads'; selector = '.disable-image-uploads'; alt='Casella di controllo per disabilitare il caricamento di immagini attivata nelle impostazioni della pagina di personalizzazione del widget'; title='Disabilitare il caricamento di immagini' app-screenshot-end]
-
----

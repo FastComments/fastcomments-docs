@@ -1,4 +1,3 @@
----  
 Şu anda çevrimiçi izleyiciler: Websocket oturumu şu anda sayfaya abone olan kişiler.  
 anonCount + totalCount değerini döndürür (odadaki tüm aboneler, numaralandırmadığımız anonim izleyiciler dahil).
 
@@ -30,5 +29,3 @@ api->getOnlineUsers(tenantId, urlId, *options).then([](pplx::task<std::shared_pt
     }
 });
 [inline-code-end]
-
----

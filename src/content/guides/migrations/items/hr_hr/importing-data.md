@@ -1,6 +1,7 @@
-While FastComments Support can help with migrations, most can be performed and monitored easily without any intervention of support staff.
+Iako FastComments podrška može pomoći s migracijama, većina njih može se izvesti i pratiti jednostavno bez ikakve intervencije
+osoblja podrške.
 
-We natively support importing exports from the following providers:
+Izvorno podržavamo uvoz izvoza sljedećih pružatelja usluga:
 
 - Commento
 - Disqus
@@ -9,29 +10,33 @@ We natively support importing exports from the following providers:
 - IntenseDebate
 - Just-Comments
 - Cusdis
-- WordPress (via the plugin, or an XML or CSV export)
-- AnyComment (Via WordPress Import/Export)
+- WordPress (putem dodatka ili XML ili CSV izvoza)
+- AnyComment (putem WordPress Import/Export)
 
-By navigating [here](https://fastcomments.com/auth/my-account/manage-data/import) we can upload the file containing the data to migrate.
+Navigacijom [ovdje](https://fastcomments.com/auth/my-account/manage-data/import) možemo učitati datoteku koja sadrži podatke za migraciju.
 
-[app-screenshot-start url='/auth/my-account/manage-data/import'; selector = '.account-block'; alt='FastComments stranica za uvoz s odabirom pružatelja i poljima za učitavanje datoteke za izvoz'; title='Obrazac stranice uvoza' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/import'; selector = '.account-block'; alt='Stranica za uvoz FastComments s odabirom pružatelja usluge i poljima za učitavanje datoteke izvoza'; title='Obrazac stranice za uvoz' app-screenshot-end]
 
-### Monitoring Imports
+### Praćenje uvoza
 
-FastComments uses a job processing system for processing imports and exports. Once the system has picked up your job, it will periodically report the status of the job in the import or export UI.
+FastComments koristi sustav obrade poslova za obradu uvoza i izvoza. Nakon što sustav preuzme vaš posao, on će
+povremeno prijavljivati status posla u sučelju za uvoz ili izvoz.
 
-[app-screenshot-start url='/auth/my-account/manage-data/import?demo=true'; selector = '.content'; alt='Stranica uvoza koja prikazuje pokrenuti posao uvoza i status koji izvještava sustav obrade poslova'; title='Status posla uvoza' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/manage-data/import?demo=true'; selector = '.content'; alt='Stranica uvoza koja prikazuje posao uvoza u tijeku i status koji prijavljuje sustav obrade poslova'; title='Status posla uvoza' app-screenshot-end]
 
-Note that the status for Imports and Export are viewable by all administrators in the account.
+Imajte na umu da status uvoza i izvoza mogu vidjeti svi administratori u računu.
 
-If your job fails, it will not automatically be restarted. The import will have to be attempted again. If any import or export fails, our system administrators are automatically notified. If we identify an issue, we'll reach out to you to see if we can help.
+Ako vaš posao ne uspije, neće se automatski ponovno pokrenuti. Uvoz će se morati ponovno pokušati. Ako bilo koji uvoz ili izvoz ne uspije,
+naši administratori sustava automatski su obavješteni. Ako uočimo problem, kontaktirat ćemo vas kako bismo vidjeli možemo li pomoći.
 
-### Re-Running The Import
+### Ponovno pokretanje uvoza
 
-During some migrations, it is necessary to run the import multiple times. For example, it is common to do a first pass migration for testing, and then run the import again with the latest data before flipping the switch.
+Tijekom nekih migracija potrebno je pokrenuti uvoz više puta. Na primjer, uobičajeno je prvo izvršiti migraciju
+za testiranje, a zatim ponovno pokrenuti uvoz s najnovijim podacima prije prebacivanja prekidača.
 
-Re-importing the same content **will not create duplicates**.
+Ponovni uvoz istog sadržaja **neće stvoriti duplikate**.
 
-### Data Security and Expiration
+### Sigurnost podataka i isteka
 
-Import files are not accessible via outside requests in any way, and import files are deleted from our system as soon as the import completes.
+Datoteke uvoza nisu na bilo koji način dostupne putem vanjskih zahtjeva, a datoteke uvoza brišu se iz našeg sustava čim
+se uvoz dovrši.

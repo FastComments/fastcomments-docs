@@ -1,28 +1,28 @@
-If you can't install the [Shopify App Store app](https://apps.shopify.com/fastcomments), you can still add FastComments by editing your theme. This path is useful when you want to wire up a FastComments tenant you already own, or when you're embedding on a Shopify storefront where the app isn't an option.
+[Shopify App Store uygulamasını](https://apps.shopify.com/fastcomments) yükleyemiyorsanız, temanızı düzenleyerek FastComments'i yine de ekleyebilirsiniz. Bu yol, zaten sahip olduğunuz bir FastComments tenant'ını bağlamak istediğinizde veya uygulamanın bir seçenek olmadığı bir Shopify mağazasına gömme yaptığınızda kullanışlıdır.
 
-The app-based install is the supported path for most stores. Reach for this only if the app doesn't fit.
+Uygulama tabanlı kurulum, çoğu mağaza için desteklenen yoldur. Buna yalnızca uygulama uygun değilse başvurun.
 
-### Adım 1: Shopify'ın yerleşik yorumlarını devre dışı bırakın
+### Adım 1: Shopify'ın yerel yorumlarını devre dışı bırakın
 
-Shopify yönetiminizde, **Blog posts > Manage blogs** bölümüne gidin, her blogu açın ve sağ panelde **Comments are disabled** seçeneğini ayarlayın. Kaydedin.
+Shopify yönetim panelinizde **Blog posts > Manage blogs** bölümüne gidin, her blogu açın ve sağ panelde **Comments are disabled** seçeneğini ayarlayın. Kaydedin.
 
-Bu, Shopify'ın yerleşik yorum sisteminin FastComments ile birlikte gösterilmesini durdurur.
+Bu, Shopify'ın yerleşik yorumlama özelliğinin FastComments ile birlikte gösterilmesini engeller.
 
 ### Adım 2: Blog tema şablonunu açın
 
-Shopify yönetiminizde:
+Shopify yönetim panelinizde:
 
-1. Go to **Online Store > Themes**.
-2. Under your current theme, click **Actions > Edit code**.
-3. In the file browser on the left, open **Sections** and click `main-article.liquid`.
+1. **Online Store > Themes** bölümüne gidin.
+2. Mevcut temanızın altında **Actions > Edit code** seçeneğine tıklayın.
+3. Soldaki dosya tarayıcısında **Sections** bölümünü açın ve `main-article.liquid` dosyasına tıklayın.
 
-Bu, Shopify'ın tek bir blog makalesi için render ettiği şablondur.
+Bu, Shopify'ın tek bir blog yazısı için oluşturduğu şablondur.
 
 ### Adım 3: FastComments kod parçacığını yapıştırın
 
-`main-article.liquid` dosyasının yaklaşık 100. satırına, makale gövdesinin kapanış `</div>` etiketinin hemen sonrasına gidin. Aşağıdaki kod parçacığını yapıştırın:
+`main-article.liquid` dosyasında yaklaşık 100. satıra, makale gövdesinin kapanış `</div>` etiketinin hemen sonrasına gidin. Aşağıdaki kod parçacığını yapıştırın:
 
-[inline-code-attrs-start title = 'Shopify FastComments Kod Parçası'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Shopify FastComments Kod Parçacığı'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <script async src="https://cdn.fastcomments.com/js/embed-v2-async.min.js"></script>
 <div id="fastcomments-widget" class="page-width page-width--narrow"></div>
@@ -35,11 +35,11 @@ Bu, Shopify'ın tek bir blog makalesi için render ettiği şablondur.
 </script>
 [inline-code-end]
 
-Replace `"demo"` with your own Tenant ID from [fastcomments.com/auth/my-account/api-secret](https://fastcomments.com/auth/my-account/api-secret). Click **Save**.
+`"demo"` değerini, [fastcomments.com/auth/my-account/api-secret](https://fastcomments.com/auth/my-account/api-secret) adresinden alacağınız kendi Tenant ID'niz ile değiştirin. **Save** seçeneğine tıklayın.
 
 ### Adım 4: Mağaza alan adınızı yetkilendirin
 
-Canlı mağazanızda bir blog gönderisini açın. Eğer yorum bileşeni yerine bir yetkilendirme hatası görürseniz, FastComments'in mağazanızın bu tenant'ı kullanmasına izin verildiğini bilmesi gerekir. Bakınız [Alan Adı Hataları](/guide-installation-shopify.html#shopify-domain-errors).
+Canlı mağazanızda bir blog yazısı açın. Yorum widget'ı yerine bir yetkilendirme hatası görüyorsanız, FastComments'in mağazanızın bu tenant'ı kullanmaya yetkili olduğunu bilmesi gerekir. Bkz. [Alan Adı Hataları](/guide-installation-shopify.html#shopify-domain-errors).
 
 ### FastComments'i diğer sayfalara ekleme
 

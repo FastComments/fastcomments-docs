@@ -26,5 +26,3 @@ if pinResult.isSome:
   let response = pinResult.get()
   echo response
 [inline-code-end]
-
----

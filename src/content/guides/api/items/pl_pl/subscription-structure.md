@@ -24,5 +24,3 @@ interface Subscription {
     createdAt: string // łańcuch daty
 }
 [inline-code-end]
-
----

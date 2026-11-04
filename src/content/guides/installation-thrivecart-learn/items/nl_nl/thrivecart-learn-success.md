@@ -1,4 +1,3 @@
----
 Succes! U zou nu de FastComments Comment Widget moeten zien.
 
 <div class="screenshot white-bg">
@@ -7,5 +6,3 @@ Succes! U zou nu de FastComments Comment Widget moeten zien.
 </div>
 
 Gefeliciteerd met het instellen van FastComments voor ThriveCart! Als u een Domain Error tegenkomt, of wilt leren hoe u het reactiegebied kunt aanpassen, lees verder!
-
----

@@ -1,17 +1,13 @@
-FastComments ile, `username` tüm siteler ve topluluklar arasında benzersiz olmalıdır. Bunun nedeni bu değerin sizi fastcomments.com'a giriş yapmak için kullanılıyor olmasıdır.
+FastComments ile, `username` tüm siteler ve topluluklar genelinde benzersiz olmalıdır. Bunun nedeni, fastcomments.com'a giriş yapmak için kullanılmasıdır.
 
-The exception is SSO - since SSO users are tied to a specific FastComments.com Tenant - they can have any username within that community.
+Bunun istisnası SSO'dur - SSO kullanıcıları belirli bir FastComments.com Tenant'a bağlı olduğundan, o topluluk içinde istedikleri kullanıcı adına sahip olabilirler.
 
-#### Görünen İsimler
+#### Görünen Adlar
 
-FastComments ayrıca `Display Name`'i destekler. Görünen isimlerin benzersiz olması gerekmez ve emoji içerebilirler. Görünen isminizi
-[Hesap Ayrıntıları](https://fastcomments.com/auth/my-account/edit-details) sayfasından ayarlayabilirsiniz.
+FastComments ayrıca `Display Name` (Görünen Ad) özelliğini de destekler. Görünen adların benzersiz olması gerekmez ve emojiler içerebilir. Görünen adınızı [Hesap Detayları](https://fastcomments.com/auth/my-account/edit-details) sayfasından ayarlayabilirsiniz.
 
-#### Görünen İsimlerin Benzersizliği
+#### Görünen Ad Benzersizliği
 
-Eğer iki FastComments.com kullanıcısı, iki çok farklı büyük toplulukta benzer isimlere sahipse, o zaman onların
-tercih ettikleri görünen ismi ayarlayabilmelerini isteriz. Ancak, insanların küresel FastComments hesaplarıyla nerede yorum yapabileceklerini kısıtlayamıyoruz, bu yüzden bazen bu durum
-kafa karışıklığına yol açabilir.
+İki çok farklı büyük toplulukta yer alan iki FastComments.com kullanıcısının benzer isimlere sahip olması durumunda, tercih ettikleri görünen adı ayarlayabilmelerini isteriz. Ancak, insanların global FastComments hesaplarıyla nerede yorum yapacağını kısıtlayamayız, bu nedenle bazen bu durum kafa karışıklığına yol açabilir.
 
-Başka bir kullanıcıya, veya bir moderatöre benzer bir isme sahip olmak tek başına kötüye kullanım sayılmaz. Ancak, bunu kasıtlı olarak diğer kullanıcıları taklit etmek için kötüye kullanırsanız, biz bu özelliği hesabınızda
-devre dışı bırakabiliriz, ve sadece `username` kullanmakla sınırlı kalırsınız.
+Başka bir kullanıcıya veya moderatöre benzer bir isme sahip olmak, tek başına bir kötüye kullanım vakası değildir. Ancak, diğer kullanıcıları kasıtlı olarak taklit ederek bunu kötüye kullanırsanız, bu özelliği hesabınızda devre dışı bırakabiliriz ve yalnızca `username` kullanmanızla sınırlı kalırsınız.

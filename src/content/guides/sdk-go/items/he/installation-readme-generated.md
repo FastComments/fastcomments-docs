@@ -2,11 +2,11 @@
 go get github.com/fastcomments/fastcomments-go
 ```
 
-### שימוש בלקוח ה‑API
+### שימוש בלקוח ה-API
 
 #### API ציבורי (ללא אימות)
 
-The PublicAPI allows unauthenticated access to public endpoints:
+ה-PublicAPI מאפשר גישה לא מאומתת לנקודות קצה ציבוריות:
 
 ```go
 package main
@@ -21,7 +21,7 @@ func main() {
     config := client.NewConfiguration()
     apiClient := client.NewAPIClient(config)
 
-    // קבל תגובות באמצעות PublicAPI
+    // קבלת תגובות באמצעות PublicAPI
     response, httpResp, err := apiClient.PublicAPI.GetCommentsPublic(
         context.Background(),
         "your-tenant-id",
@@ -38,7 +38,7 @@ func main() {
 
 #### API ברירת מחדל (דורש מפתח API)
 
-The DefaultAPI requires authentication using your API key:
+ה-DefaultAPI דורש אימות באמצעות מפתח ה-API שלך:
 
 ```go
 package main
@@ -53,7 +53,7 @@ func main() {
     config := client.NewConfiguration()
     apiClient := client.NewAPIClient(config)
 
-    // צור הקשר מאומת עם מפתח API
+    // יצירת הקשר מאומת עם מפתח API
     auth := context.WithValue(
         context.Background(),
         client.ContextAPIKeys,
@@ -62,7 +62,7 @@ func main() {
         },
     )
 
-    // קבל תגובות באמצעות DefaultAPI מאומת
+    // קבלת תגובות באמצעות DefaultAPI מאומת
     response, httpResp, err := apiClient.DefaultAPI.GetComments(auth).
         TenantId("your-tenant-id").
         UrlId("your-page-url-id").
@@ -77,9 +77,9 @@ func main() {
 }
 ```
 
-#### API מודרציה (לוח מודרטור)
+#### API לניהול (לוח בקרה של מנחה)
 
-The ModerationAPI provides an extensive suite of live and fast moderation APIs. All moderation methods accept an `sso` parameter and can authenticate via SSO or a FastComments.com session cookie:
+ה-ModerationAPI מספק חבילה נרחבת של APIs לניהול חי ומהיר. כל שיטות הניהול מקבלות פרמטר `sso` ויכולות לבצע אימות באמצעות SSO או קוקי סשן של FastComments.com:
 
 ```go
 package main
@@ -94,7 +94,7 @@ func main() {
     config := client.NewConfiguration()
     apiClient := client.NewAPIClient(config)
 
-    // רשום תגובות למודרציה באמצעות ModerationAPI
+    // רשימת תגובות לניהול באמצעות ModerationAPI
     response, httpResp, err := apiClient.ModerationAPI.GetApiComments(
         context.Background(),
     ).Sso("your-sso-token").Execute()

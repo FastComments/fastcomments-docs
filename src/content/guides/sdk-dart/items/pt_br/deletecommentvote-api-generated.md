@@ -1,4 +1,3 @@
----
 ## Parâmetros
 
 | Nome | Tipo | Localização | Obrigatório | Descrição |
@@ -37,5 +36,3 @@ try {
     print('Exception when calling PublicApi->deleteCommentVote: $e\n');
 }
 [inline-code-end]
-
----

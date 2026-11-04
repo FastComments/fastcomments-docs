@@ -1,4 +1,3 @@
----
 これは FastComments の公式の React Native SDK です。
 
 React Native アプリケーションから FastComments API に直接アクセスできます。
@@ -6,5 +5,3 @@ React Native アプリケーションから FastComments API に直接アクセ�
 ## リポジトリ
 
 [GitHubで表示](https://github.com/FastComments/fastcomments-react-native-sdk)
-
----

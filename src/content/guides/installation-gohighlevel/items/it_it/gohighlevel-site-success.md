@@ -1,4 +1,3 @@
----
 Ecco fatto! Ora dovresti avere i commenti live aggiunti al tuo sito GoHighLevel.
 
 <div class="screenshot white-bg">
@@ -7,5 +6,3 @@ Ecco fatto! Ora dovresti avere i commenti live aggiunti al tuo sito GoHighLevel.
 </div>
 
 Se hai riscontrato un errore di 'permesso negato' o desideri personalizzare FastComments, continua a leggere.
-
----

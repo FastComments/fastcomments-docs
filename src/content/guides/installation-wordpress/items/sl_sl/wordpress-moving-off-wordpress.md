@@ -1,4 +1,3 @@
----
 Če selite svoje spletno mesto iz WordPressa in želite FastComments na novem mestu, WordPress vtičnika ne potrebujete. Izvozite svoje komentarje iz WordPressa, nato naložite datoteko na [Stran za uvoz](https://fastcomments.com/auth/my-account/manage-data/import) v nadzorni plošči FastComments.
 
 Podpiramo dva formata izvoza iz WordPressa.
@@ -47,5 +46,3 @@ uvozite enkrat za testiranje novega spletnega mesta, nato pa ponovno uvozite z n
 Za izvozne datoteke, večje od 1 GB, [stopite v stik s podporo](https://fastcomments.com/auth/my-account/help).
 
 Za dodajanje FastComments na vaše novo spletno mesto, si oglejte [Namestitveni vodnik](/guide-installation.html).
-
----

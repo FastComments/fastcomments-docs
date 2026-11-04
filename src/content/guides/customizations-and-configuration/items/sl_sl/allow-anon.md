@@ -1,12 +1,9 @@
-By default, FastComments will require an email to comment. It does not have to be a valid email, however until the user clicks a link sent to them,
-their comment will display an "Unverified Comment" label.
+Privzeto FastComments zahteva e-pošto za komentiranje. Vendar ni nujno, da je veljavna — dokler uporabnik ne klikne povezave, ki mu je bila poslana, bo njegov komentar prikazan z oznako "Nepreverjen komentar".
 
-However, we can remove the email requirement. The email input field will still show, but it will no longer be required.
+Vendar pa lahko zahtevo po e-pošti odstranimo. Vnosno polje za e-pošto se bo še vedno prikazalo, ne bo pa več obvezno.
 
-This can be configured via the widget customization UI:
+To je mogoče nastaviti v uporabniškem vmesniku za prilagoditev pripomočka:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.allow-anonymous-comments'; alt='Možnost anonimnih komentarjev v uporabniškem vmesniku prilagajanja gradnika, ki naredi polje za e‑pošto neobvezno'; title='Omogočanje anonimnih komentarjev' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.allow-anonymous-comments'; alt='Možnost anonimnih komentarjev v vmesniku za prilagoditev pripomočka, ki naredi polje za e-pošto neobvezno'; title='Omogočanje anonimnih komentarjev' app-screenshot-end]
 
-A username is still required. To remove that step as well, you can
-[nastavite privzeto uporabniško ime](/guide-customizations-and-configuration.html#default-username) that everyone shares, or have FastComments
-[ustvari edinstveno uporabniško ime](/guide-customizations-and-configuration.html#auto-generate-username) for each visitor.
+Uporabniško ime je še vedno obvezno. Da odstranite tudi ta korak, lahko [nastavite privzeto uporabniško ime](/guide-customizations-and-configuration.html#default-username), ki ga delijo vsi, ali pa pustite, da FastComments [samodejno ustvari edinstveno uporabniško ime](/guide-customizations-and-configuration.html#auto-generate-username) za vsakega obiskovalca.

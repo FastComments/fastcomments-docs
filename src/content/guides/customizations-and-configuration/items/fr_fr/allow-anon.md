@@ -1,4 +1,3 @@
----
 Par défaut, FastComments exigera une adresse e‑mail pour commenter. Elle n’a pas besoin d’être valide, cependant tant que l’utilisateur ne clique pas sur le lien qui lui est envoyé,
 son commentaire affichera l’étiquette « Commentaire non vérifié ».
 
@@ -11,4 +10,3 @@ Cela peut être configuré via l’interface de personnalisation du widget :
 Un nom d’utilisateur est toujours requis. Pour supprimer également cette étape, vous pouvez
 [definir un nom d’utilisateur par défaut](/guide-customizations-and-configuration.html#default-username) que tout le monde partage, ou faire en sorte que FastComments
 [génère un nom d’utilisateur unique](/guide-customizations-and-configuration.html#auto-generate-username) pour chaque visiteur.
----

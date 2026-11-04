@@ -45,5 +45,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "`ModerationAPI.PutRemoveBadge`'den Yanıt: %v\n", resp)
 }
 [inline-code-end]
-
----

@@ -24,5 +24,3 @@ const ssoToken: string = "user-789-token";
 const fullResult: CreateV1PageReact = await createV1PageReact(tenantId, urlId, pageTitle, ssoToken);
 const minimalResult: CreateV1PageReact = await createV1PageReact(tenantId, urlId);
 [inline-code-end]
-
----

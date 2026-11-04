@@ -10,5 +10,3 @@
     <div class="title">Отворете шаблона</div>
     <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-2-open-blog-post-template.png" alt="Отворете шаблона" />
 </div>
-
----

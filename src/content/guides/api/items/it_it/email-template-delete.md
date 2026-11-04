@@ -26,5 +26,3 @@ interface EmailTemplateDeleteResponse {
     reason?: string
 }
 [inline-code-end]
-
----

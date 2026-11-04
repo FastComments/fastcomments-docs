@@ -1,3 +1,1 @@
----
 Beloon commentatoren automatisch met badges voor commentaartelling, up‑votes, antwoorden, veteranenstatus en nachtuil‑activiteit, of wijs badges handmatig toe.
----

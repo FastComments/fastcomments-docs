@@ -31,5 +31,3 @@ api->updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitl
         // עיבוד resp אם נדרש
     });
 [inline-code-end]
-
----

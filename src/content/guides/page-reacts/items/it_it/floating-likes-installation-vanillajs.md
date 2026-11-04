@@ -85,5 +85,3 @@ Possiamo anche passare payload Secure SSO o Simple SSO:
     });
 </script>
 [inline-code-end]
-
----

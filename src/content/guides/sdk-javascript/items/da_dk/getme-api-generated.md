@@ -1,4 +1,3 @@
----
 Identificerer den legitimationsoplysning i brug: den lejer den tilhører, og for OAuth‑tokens, brugeren der har autoriseret den.  
 Integrationer bruger dette til at teste en forbindelse og mærke den.
 
@@ -24,5 +23,3 @@ Returnerer: [`GetMeResponse`](https://github.com/FastComments/fastcomments-sdk-j
   const status: APIStatus = me.status;
 })();
 [inline-code-end]
-
----

@@ -5,5 +5,3 @@ Incorpora widget di commenti in tempo reale, chat e recensioni nella tua app Sve
 ## Repository
 
 [Visualizza su GitHub](https://github.com/FastComments/fastcomments-svelte)
-
----

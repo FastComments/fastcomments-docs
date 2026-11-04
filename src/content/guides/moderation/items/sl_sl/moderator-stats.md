@@ -10,5 +10,3 @@ Ta stran bo spremljala različne statistike:
 - Komentarji označeni kot neželeni
 - Prepovedani uporabniki
 - Njihovo stanje povabila (sprejeto ali v čakanju)
-
----

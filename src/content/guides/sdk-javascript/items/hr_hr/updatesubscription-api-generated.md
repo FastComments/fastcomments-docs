@@ -33,5 +33,3 @@ const response: UpdateSubscriptionAPIResponse = await updateSubscription(
   userId
 );
 [inline-code-end]
-
----

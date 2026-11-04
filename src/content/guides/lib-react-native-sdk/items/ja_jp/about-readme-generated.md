@@ -1,4 +1,3 @@
----
 このライブラリは [FastComments](https://fastcomments.com) の完全な react-native 実装です。
 
 ライブコメント、チャット、スレッド、絵文字、通知、SSO、スキン、およびスタイルシートオブジェクトを渡すことでの完全なカスタマイズをサポートします。すべてのアセットもカスタマイズ可能で、ダークモードに応じて異なるアセットを切り替えることができます。
@@ -14,4 +13,3 @@
 さらに詳しい例は [example/src](https://github.com/FastComments/fastcomments-react-native-sdk/tree/main/example/src) を参照してください。
 
 既存の React Native アプリケーションにライブチャットを追加するか、あるいはソーシャルネットワークを構築することもできます！
----

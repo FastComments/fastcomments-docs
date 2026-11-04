@@ -1,16 +1,16 @@
-Next, determine where you want to add comments. Mouse over the bottom of the previous content area
-and click to add a section:
+Στη συνέχεια, καθορίστε πού θέλετε να προσθέσετε σχόλια. Μετακινήστε το ποντίκι στο κάτω μέρος της προηγούμενης περιοχής περιεχομένου
+και κάντε κλικ για να προσθέσετε μια ενότητα:
 
 <div class="screenshot white-bg">
-    <div class="title">Βήμα Δύο: Προσθήκη Ενότητας</div>
+    <div class="title">Βήμα Δεύτερο: Προσθήκη Ενότητας</div>
     <img class="screenshot-image" src="/images/installation-guides/webnode-step-2.png" alt="Προσθήκη Ενότητας" />
 </div>
 
-Now let's put an HTML block in that section, where the code snippet will go. Select `HTML`:
+Τώρα ας τοποθετήσουμε ένα μπλοκ HTML σε αυτή την ενότητα, εκεί όπου θα μπει το απόσπασμα κώδικα. Επιλέξτε `HTML`:
 
-> **Σημείωση:** Από τις 26 Ιουνίου 2023, το μπλοκ HTML του Webnode είναι μια επί πληρωμή λειτουργία. Δεν είναι διαθέσιμο στο δωρεάν πρόγραμμα, και για έργα που δημιουργήθηκαν μετά από αυτήν την ημερομηνία απαιτείται πακέτο premium. Εάν δεν βλέπετε την επιλογή `HTML`, αναβαθμίστε το πρόγραμμα Webnode σας για να το ενεργοποιήσετε.
+> **Σημείωση:** Από τις 26 Ιουνίου 2023, το μπλοκ HTML του Webnode είναι πληρωμένο χαρακτηριστικό. Δεν είναι διαθέσιμο στο δωρεάν πλάνο, και για έργα που δημιουργήθηκαν μετά από αυτή την ημερομηνία απαιτεί premium πακέτο. Αν δεν βλέπετε την επιλογή `HTML`, αναβαθμίστε το πλάνο σας στο Webnode για να την ενεργοποιήσετε.
 
 <div class="screenshot white-bg">
-    <div class="title">Βήμα Τρία: Προσθήκη Μπλοκ Κώδικα</div>
+    <div class="title">Βήμα Τρίτο: Προσθήκη Μπλοκ Κώδικα</div>
     <img class="screenshot-image" src="/images/installation-guides/webnode-step-3.png" alt="Προσθήκη Μπλοκ HTML" />
 </div>

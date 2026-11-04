@@ -1,4 +1,3 @@
----
 **Template ID:** `thread_summarizer`
 
 O Thread Summarizer publica um resumo neutro, em um único parágrafo, ao final de um tópico longo. Ele usa um adiamento de 30 minutos para que o tópico se estabilize antes que o agente o analise.
@@ -34,5 +33,3 @@ O agente publica um novo comentário com `write_comment`, depois chama `pin_comm
 ### Evitando resumos repetidos
 
 O agente tem acesso a [`save_memory`](#tools-overview) e [`search_memory`](#tools-overview) — você pode estender o prompt para instruí-lo a registrar notas do tipo "summarized {thread urlId}" e verificá-las antes de publicar novamente. A memória é compartilhada entre todos os agentes do seu tenant.
-
----

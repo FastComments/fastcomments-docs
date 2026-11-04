@@ -1,14 +1,11 @@
-Webhooks can also be managed through the REST API. This is how integrations such as Zapier subscribe
-to comment events without touching the dashboard, and it follows the REST Hooks pattern: subscribe,
-receive events, unsubscribe.
+Уебхуковете могат да се управляват и чрез REST API. Така интеграции като Zapier се абонират за събития от коментари, без да докосват таблото, и това следва модела REST Hooks: абониране, получаване на събития, отписване.
 
-API subscriptions live alongside the webhooks configured in the dashboard. A comment event is delivered
-to every webhook that matches its domain, each as its own delivery, whichever way the webhook was created.
+API абонаментите съществуват редом с уебхуците, конфигурирани в таблото. Събитие от коментар се доставя на всеки уебхук, който съответства на неговия домейн, всяко като отделна доставка, независимо как е създаден уебхукът.
 
-## Удостоверяване
+## Автентикация
 
-Every request needs your API Key in the `x-api-key` header (or the `API_KEY` query parameter) and
-your tenant ID in the `tenantId` query parameter. Both are shown on the API Secret page in the dashboard.
+Всяка заявка се нуждае от вашия API Key в хедъра `x-api-key` (или параметъра `API_KEY` в заявката) и
+вашия tenant ID в параметъра `tenantId` на заявката. И двата се показват на страницата API Secret в таблото.
 
 ## Абониране
 
@@ -26,11 +23,11 @@ Content-Type: application/json
 | Поле | Задължително | Описание |
 |-------|----------|-------------|
 | `url` | Да | Абсолютен http или https URL. |
-| `event` | Да | `comment-created`, `comment-updated` or `comment-deleted`. |
-| `domain` | Не | Домейн от конфигурацията на вашия акаунт. По подразбиране е `*`, което получава събития за всеки домейн. |
-| `method` | Не | `POST` (по подразбиране), `PUT` or `DELETE`. |
+| `event` | Да | `comment-created`, `comment-updated` или `comment-deleted`. |
+| `domain` | Не | Домейн от конфигурацията на вашия акаунт. По подразбиране е `*`, който получава събития за всеки домейн. |
+| `method` | Не | `POST` (по подразбиране), `PUT` или `DELETE`. |
 
-The response contains the subscription:
+Отговорът съдържа абонамента:
 
 ```json
 {
@@ -48,7 +45,8 @@ The response contains the subscription:
 }
 ```
 
-Абонирането на същия URL за същото събитие и домейн отново връ връща съществуващия абонамент, вместо да създава дубликат, така че клиентът може безопасно да опита отново. Всеки наемател може да има до 50 API абонамента.
+Повторно абониране на същия URL за същото събитие и домейн връща съществуващия абонамент, вместо да
+създава дубликат, така че клиентът може безопасно да повтори заявката. Всеки tenant може да има до 50 API абонамента.
 
 ## Списък
 
@@ -56,7 +54,8 @@ The response contains the subscription:
 GET https://fastcomments.com/api/v1/webhooks?tenantId=YOUR_TENANT_ID
 ```
 
-Returns every webhook for the tenant, including those managed in the dashboard (`"source": "dashboard"`). Filter with `event`, `domain` or `source`.
+Връща всеки уебхук за tenant-а, включително тези, управлявани в таблото (`"source": "dashboard"`).
+Филтрирайте с `event`, `domain` или `source`.
 
 ## Отписване
 
@@ -64,24 +63,25 @@ Returns every webhook for the tenant, including those managed in the dashboard (
 DELETE https://fastcomments.com/api/v1/webhooks/SUBSCRIPTION_ID?tenantId=YOUR_TENANT_ID
 ```
 
-Deleting a subscription also discards any events still queued for it. Only subscriptions created
-through the API can be deleted this way; a dashboard webhook, or an id that does not exist on your
-account, answers `404` with code `not-found`. Dashboard webhooks are edited on the Webhooks page.
+Изтриването на абонамент също отхвърля всички събития, все още чакащи за него. Само абонаменти, създадени
+чрез API, могат да се изтриват по този начин; уебхук от таблото или идентификатор, който не съществува във
+вашия акаунт, отговаря с `404` и код `not-found`. Уебхуците от таблото се редактират на страницата Webhooks.
 
-## Полезни данни и подписване
+## Полетна информация и подписване
 
-Deliveries use the same payload as dashboard webhooks (see Data Structures) and are signed with the same
-HMAC scheme (see Security & API Tokens). API subscriptions never receive the legacy `token` header, so verify the `X-FastComments-Signature` header instead.
+Доставките използват същия payload като уебхуците от таблото (вижте Data Structures) и са подписани със същата
+HMAC схема (вижте Security & API Tokens). API абонаментите никога не получават остарелия хедър `token`, така че
+проверявайте хедъра `X-FastComments-Signature` вместо него.
 
-## Примерни полезни данни
+## Примерни payloads
 
 ```
 GET https://fastcomments.com/api/v1/webhooks/sample-payloads?tenantId=YOUR_TENANT_ID&event=comment-created&limit=3
 ```
 
-Returns the account's most recent comments in exactly the shape a delivery carries, so an integration can
-show real sample data before the first event arrives. `event` is optional and only validated, since every
-event delivers the same comment object. `limit` defaults to 3 and accepts 1 to 10. Costs 2 API credits.
+Връща най-скорошните коментари на акаунта в точно формата, който носи една доставка, така че интеграцията може
+да покаже реални примерни данни, преди да пристигне първото събитие. `event` е по избор и само се валидира, тъй като
+всяко събитие доставя един и същ обект на коментар. `limit` по подразбиране е 3 и приема от 1 до 10. Струва 2 API кредита.
 
 ```json
 {
@@ -101,13 +101,13 @@ event delivers the same comment object. `limit` defaults to 3 and accepts 1 to 1
 
 ## Отговор с 410 Gone
 
-If an API subscription's endpoint responds with HTTP `410 Gone`, FastComments treats that as an
-unsubscribe: the subscription is deleted along with its queued events, and no further deliveries are
-attempted. Webhooks configured in the dashboard are never deleted automatically; for them a 410 is an
-ordinary failure. Any other failure status is retried and eventually disables the webhook, as described
-in How it Works & Handling Retries.
+Ако крайната точка на API абонамент отговори с HTTP `410 Gone`, FastComments третира това като
+отписване: абонаментът се изтрива заедно с чакащите му събития и не се правят по-нататъшни доставки.
+Уебхуците, конфигурирани в таблото, никога не се изтриват автоматично; за тях 410 е обикновен неуспех.
+Всеки друг статус на неуспех се повтаря и в крайна сметка деактивира уебхука, както е описано
+в How it Works & Handling Retries.
 
 ## Табло
 
-API subscriptions appear in the Webhooks list with the source **API**, where an administrator can edit,
-disable, re-enable or delete them.
+API абонаментите се появяват в списъка Webhooks с източник **API**, където администратор може да ги редактира,
+деактивира, активира отново или изтрие.

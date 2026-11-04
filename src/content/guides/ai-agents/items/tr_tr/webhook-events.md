@@ -1,71 +1,71 @@
-There are four agent webhook event types. Each event has a numeric enum value (used in payloads) and a canonical string name (used in the `event` envelope field and in the `X-FastComments-Agent-Event` HTTP header).
+Dört adet ajan webhook olay türü vardır. Her olayın sayısal bir enum değeri (payload'larda kullanılır) ve kanonik bir dize adı vardır (`event` zarf alanında ve `X-FastComments-Agent-Event` HTTP başlığında kullanılır).
 
-| Event name | Enum | Fires when |
+| Olay adı | Enum | Ne zaman tetiklenir |
 |---|---|---|
-| `trigger.succeeded` | 0 | An agent run completes with status `SUCCESS`. |
-| `trigger.failed` | 1 | An agent run completes with status `ERROR`. |
-| `approval.requested` | 2 | An approval is queued in `PENDING` state. |
-| `approval.decided` | 3 | An approval transitions to `APPROVED`, `REJECTED`, or `EXECUTION_FAILED`. |
+| `trigger.succeeded` | 0 | Bir ajan çalıştırması `SUCCESS` durumuyla tamamlandığında. |
+| `trigger.failed` | 1 | Bir ajan çalıştırması `ERROR` durumuyla tamamlandığında. |
+| `approval.requested` | 2 | Bir onay `PENDING` durumunda kuyruğa alındığında. |
+| `approval.decided` | 3 | Bir onay `APPROVED`, `REJECTED` veya `EXECUTION_FAILED` durumuna geçtiğinde. |
 
 ### `trigger.succeeded`
 
-Ajan çalıştırması hatasız sona erdikten sonra tetiklenir. Yükün `data` alanı şunları içerir:
+Ajanın çalıştırması hatasız bittikten sonra tetiklenir. Payload'ın `data` alanı şunları içerir:
 
-- `triggerId` - benzersiz çalıştırma kimliği.
-- `triggerType` - çalıştırmayı başlatan [trigger reason enum](#triggers-overview).
-- `status` - `SUCCESS` (string).
+- `triggerId` - benzersiz çalıştırma ID'si.
+- `triggerType` - çalıştırmayı başlatan [tetikleme nedeni enum'u](#triggers-overview).
+- `status` - `SUCCESS` (dize).
 - `tokensUsed` - bu çalıştırmada tüketilen token sayısı.
-- `wasDryRun` - ajanın [dry-run mode](#dry-run-mode) modunda olması durumunda true.
-- `actions` - `TenantAgentAction` kayıtlarından oluşan dizi (bkz. [Webhook Payloads](#webhook-payloads)).
-- `commentId`, `url`, `urlId` - eğer tetikleyicide bunlar varsa.
+- `wasDryRun` - ajan [dry-run modunda](#dry-run-mode) idiyse true.
+- `actions` - `TenantAgentAction` kayıtları dizisi (bkz. [Webhook Payloads](#webhook-payloads)).
+- `commentId`, `url`, `urlId` - tetiklemede varsa.
 
-Eğer çalıştırma sıfır işlem yaptıysa, `actions` dizisi boştur - bu, başarılı bir "ajan hiçbir şey yapmamaya karar verdi" çalıştırmasıdır; bilinmesi faydalıdır.
+Çalıştırma hiçbir eylem almadıysa, `actions` dizisi boştur - bu, "ajan hiçbir şey yapmaya karar verdi" anlamına gelen başarılı bir çalıştırmadır ve bunu bilmek faydalıdır.
 
 ### `trigger.failed`
 
-Bir çalıştırma hata verdiğinde tetiklenir. Yük biçimi `trigger.succeeded` ile aynıdır; ancak `status: 'ERROR'` olur ve neyin yanlış gittiğini açıklayan ek bir `errorMessage` alanı bulunur. Olası hatalar arasında LLM çağrısı hataları, araç yürütme hataları ve çalıştırma ortasında bütçe tükenmesi sayılabilir.
+Bir çalıştırma hata verdiğinde tetiklenir. `trigger.succeeded` ile aynı payload yapısına sahiptir, ancak `status: 'ERROR'` ve neyin yanlış gittiğini açıklayan ek bir `errorMessage` alanı bulunur. Olası hatalar arasında LLM çağrısı başarısızlıkları, araç gönderim (dispatch) başarısızlıkları ve çalıştırma ortasında bütçe tükenmesi yer alır.
 
-`actions` yine de hatadan önce tamamlanan araç çağrılarına ait girdiler içerebilir.
+`actions`, hata gerçekleşmeden önce tamamlanan araç çağrıları için girişler içerebilir.
 
 ### `approval.requested`
 
-Bir onay `PENDING` durumuna alındığı anda tetiklenir. Yük şunları içerir:
+Bir onay `PENDING` durumunda kuyruğa alındığı anda tetiklenir. Payload şunları içerir:
 
 - `approvalId`, `triggerId`.
 - `toolName`, `actionType`.
 - `status: 'PENDING'`.
-- `args` - aracın LLM çağrısından **harfi harfine geçen** argümanları. Şekil araç başına değişir ve kararlı bir genel sözleşme değildir - yeni araçlar eklendikçe şema değişebilir.
+- `args` - LLM çağrısından **birebir geçirilen** aracın argümanları. Yapı araca göre değişir ve kararlı bir genel sözleşme değildir - yeni araçlar eklendikçe şema değişebilir.
 - `createdAt`.
 - `justification`, `confidence` - ajan bunları sağladıysa.
 - `contextSnapshot` - onayın ilişkili olduğu yorum / sayfa bağlamı.
 
-Bekleyen onayları bir chat ops kanalına iletmek için kullanışlıdır: `approval.requested` aboneliğine sahip bir Slack botu, eylemi ve gerekçeyi moderasyon kanalına anlık inceleme için gönderebilir.
+Bekleyen onayları bir chat ops kanalına iletmek için faydalıdır: `approval.requested` olayına abone olan bir Slack botu, eylemi ve gerekçeyi bir moderasyon kanalına göndererek tek bakışta inceleme sağlayabilir.
 
 ### `approval.decided`
 
-Bir onay `PENDING` dışına çıktığında tetiklenir. Yük şunları içerir:
+Bir onay `PENDING` durumundan çıktığında tetiklenir. Payload şunları içerir:
 
 - `approvalId`, `triggerId`.
 - `toolName`, `actionType`.
-- `status` - `APPROVED`, `REJECTED`, veya `EXECUTION_FAILED`.
-- `decidedBy` - kararı veren moderatörün kullanıcı kimliği.
-- `decidedAt` - karar verme zamanı.
-- `executedAt` - ONAYLANDI ise, platformun onaylanan eylemi ne zaman yürüttüğü.
-- `executionResult` - ONAYLANDI ise, yürütücünün sonucunu açıklayan bir string.
+- `status` - `APPROVED`, `REJECTED` veya `EXECUTION_FAILED`.
+- `decidedBy` - kararı veren moderatörün kullanıcı ID'si.
+- `decidedAt` - kararın verildiği zaman.
+- `executedAt` - APPROVED ise, platformun onaylanan eylemi gerçekleştirdiği zaman.
+- `executionResult` - APPROVED ise, gerçekleştiricinin sonucunu açıklayan bir dize.
 - `contextSnapshot` - yorum / sayfa bağlamı.
 
 Bu olay tüm karar sonuçlarını kapsar:
 
-- **Approved + executed cleanly** -> `status: APPROVED`, `executedAt` ayarlanmış, `executionResult` başarı mesajıdır.
-- **Approved + executor failed** -> `status: EXECUTION_FAILED`, `executedAt` ayarlanmış, `executionResult` hatayı açıklar.
-- **Rejected** -> `status: REJECTED`, `executedAt` null, `executionResult` null.
+- **Onaylandı + sorunsuz gerçekleştirildi** -> `status: APPROVED`, `executedAt` ayarlı, `executionResult` başarı mesajıdır.
+- **Onaylandı + gerçekleştirici başarısız oldu** -> `status: EXECUTION_FAILED`, `executedAt` ayarlı, `executionResult` başarısızlığı açıklar.
+- **Reddedildi** -> `status: REJECTED`, `executedAt` null, `executionResult` null.
 
 ### Header
 
-Her teslimat, olayın kanonik string adıyla (`trigger.succeeded`, vb.) bir `X-FastComments-Agent-Event` HTTP başlığı içerir. Birden fazla olay türünü işleyen tek bir URL'niz varsa bu faydalıdır.
+Her teslimat, olayın kanonik dize adını (`trigger.succeeded`, vb.) içeren bir `X-FastComments-Agent-Event` HTTP başlığı içerir. Uç noktanız birden fazla olay türünü işleyen tek bir URL ise faydalıdır.
 
 ### See also
 
-- [Webhook Payloads](#webhook-payloads) for full per-event payload schemas.
-- [Webhook Signing](#webhook-signing) for the HMAC scheme.
-- [Webhook Retries](#webhook-retries) for delivery semantics.
+- Olay başına tam payload şemaları için [Webhook Payloads](#webhook-payloads).
+- HMAC şeması için [Webhook Signing](#webhook-signing).
+- Teslimat semantiği için [Webhook Retries](#webhook-retries).

@@ -19,5 +19,3 @@ api->getModerators(tenantId, skip).then([](pplx::task<std::shared_ptr<GetModerat
     auto response = t.get();
 });
 [inline-code-end]
-
----

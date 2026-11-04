@@ -13,5 +13,3 @@ Il tuo Tenant ID può essere trovato già applicato nello snippet di codice del 
 Puoi anche trovare il tuo Tenant ID e gestire le tue chiavi API [nella pagina delle credenziali API](https://fastcomments.com/auth/my-account/api-secret).
 
 Da questo momento in poi, se sei connesso a FastComments, gli esempi di codice utilizzeranno il tuo Tenant ID reale (se hai effettuato l'accesso su https://fastcomments.com).
-
----

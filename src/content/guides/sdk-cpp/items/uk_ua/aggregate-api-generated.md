@@ -38,5 +38,3 @@ api->aggregate(tenantId, aggregationRequest, options)
         }
     });
 [inline-code-end]
-
----

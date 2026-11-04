@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Назва | Тип | Обов’язковий | Опис |
@@ -30,5 +29,3 @@ let (optResp, httpResp) = client.createEmailTemplate(
 if optResp.isSome:
   let emailTemplate = optResp.get()
 [inline-code-end]
-
----

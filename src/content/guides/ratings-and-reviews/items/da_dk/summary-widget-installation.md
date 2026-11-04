@@ -1,4 +1,4 @@
-Below is the Vanilla JS code for installing the Summary Widget. The React library also has this widget.
+Nedenfor er Vanilla JS-koden til installation af Summary Widget. React-biblioteket har også denne widget.
 
 [inline-code-attrs-start title = 'Installation af Summary Widget'; type = 'html'; isFunctional = true; type = 'html';  inline-code-attrs-end]
 [inline-code-start]
@@ -11,12 +11,14 @@ Below is the Vanilla JS code for installing the Summary Widget. The React librar
 </script>
 [inline-code-end]
 
-The widget will automatically find the questions to show in the summary based on the corresponding widget configuration for that page/site.
+Widgeten finder automatisk de spørgsmål, der skal vises i oversigten, baseret på den tilsvarende widget-konfiguration for den pågældende side/hjemmeside.
 
-### Filtrering af kommentarer efter bedømmelse
+### Filtrering af kommentarer efter vurdering
 
-When the comment widget for the same page is also on the page, and it is configured to show each commenter's answer on their comment, the rows of the breakdown become clickable. Clicking a row, for example "5", filters the comment widget to the comments that gave that answer. Clicking the row again, or the X on the "Showing only" chip in the comment widget, shows all the comments again. This needs no configuration: the Summary Widget finds the comment widget with the same `tenantId` and `urlId`.
+Når kommentar-widgetten for den samme side også er på siden, og den er konfigureret til at vise hver kommentators svar på deres kommentar, bliver rækkerne i opdelingen
+klikbare. Ved at klikke på en række, f.eks. "5", filtreres kommentar-widgetten til de kommentarer, der gav det svar. Ved at klikke på rækken igen, eller på X'et på "Viser kun"-chippen
+i kommentar-widgetten, vises alle kommentarerne igen. Dette kræver ingen konfiguration: Summary Widget finder kommentar-widgetten med samme `tenantId` og `urlId`.
 
-This works for star, thumbs, emoji, scale and single choice questions. The breakdown the comment widget shows above the comment box can be clicked the same way.
+Dette virker for stjerne-, tommelfinger-, emoji-, skala- og enkeltvalg-spørgsmål. Opdelingen, som kommentar-widgetten viser over kommentarboksen, kan klikkes på på samme måde.
 
-If you require the widget in one of our other libraries that does not have it, file a support ticket so that we know to add it.
+Hvis du har brug for widgetten i et af vores andre biblioteker, der ikke har den, så opret en supportticket, så vi ved, at vi skal tilføje den.

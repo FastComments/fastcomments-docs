@@ -23,5 +23,3 @@
   const resultWithoutSso: APIEmptyResponse = await putCloseThread(tenantId, urlId);
 })();
 [inline-code-end]
-
----

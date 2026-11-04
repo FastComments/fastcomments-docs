@@ -1,25 +1,21 @@
-FastComments muestra el progreso mediante insignias de varias maneras.
+FastComments muestra la progresión mediante insignias de varias maneras.
 
-Para los siguientes ejemplos tendremos las insignias configuradas:
+Para los siguientes ejemplos tendremos las insignias configuradas así:
 
-1. New User (Comment Count Badge with threshold = 1)
-2. Newbie (Comment Count Badge with threshold = 10)
-3. Top Member (Comment Count Badge with threshold = 100)
+1. New User (Insignia de recuento de comentarios con threshold = 1)
+2. Newbie (Insignia de recuento de comentarios con threshold = 10)
+3. Top Member (Insignia de recuento de comentarios con threshold = 100)
 
-### Badge Stacking
+### Apilamiento de insignias
 
-El apilado es el comportamiento predeterminado de las insignias. Cuando un usuario obtiene una nueva insignia, simplemente se añade a su perfil y se muestra
-en todos sus comentarios. Se muestran hasta 15 insignias.
+El apilamiento es el comportamiento predeterminado de las insignias. Cuando un usuario gana una nueva insignia, simplemente se añade a su perfil y se muestra en todos sus comentarios. Se muestran hasta 15 insignias.
 
-### Replacing Badges
+### Reemplazo de insignias
 
-Las insignias se pueden configurar para reemplazar otras insignias. Al editar una insignia, puedes seleccionar qué insignia reemplaza la nueva insignia.
+Las insignias pueden configurarse para reemplazar otras insignias. Al editar una insignia, puedes seleccionar qué insignia reemplaza la nueva.
 
-We can configure `Newbie` to replace `New User` and `Top Member` to replace `Newbie`. This way, the previous badge
-is automatically hidden and the new shiny badge is shown. All versions still remain in the user's account. They can always
-hide the `Top Member` badge if they want and show the `Newbie` badge.
+Podemos configurar `Newbie` para que reemplace a `New User` y `Top Member` para que reemplace a `Newbie`. De esta forma, la insignia anterior se oculta automáticamente y se muestra la nueva e brillante insignia. Todas las versiones permanecen en la cuenta del usuario. Siempre pueden ocultar la insignia `Top Member` si lo desean y mostrar la insignia `Newbie`.
 
-### Checking Progress
+### Comprobación del progreso
 
-Un usuario puede ver el progreso para obtener una insignia en su perfil. Mostrará, en la parte superior de su perfil, qué tan avanzado está
-para obtener una insignia (por ejemplo, cuántos comentarios ha dejado y cuántos necesita dejar, o cuánto tiempo lleva siendo miembro, etc).
+Un usuario puede ver el progreso de la obtención de una insignia en su perfil. Se mostrará, en la parte superior de su perfil, cuánto le falta para obtener una insignia (por ejemplo, cuántos comentarios ha dejado y cuántos le faltan por dejar, o cuánto tiempo lleva siendo miembro, etc).

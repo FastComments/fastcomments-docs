@@ -51,5 +51,3 @@ try {
     echo 'Exception when calling DefaultApi->aggregateQuestionResults: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

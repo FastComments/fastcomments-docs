@@ -1,4 +1,3 @@
----
 ### Zahtevane komponente
 
 Za On-Prem je FastComments sestavljen le iz aplikacijskega strežnika in baze podatkov. Poenostavili smo namestitev, tako da aplikacija lahko neposredno obdeluje ves promet brez dodajanja drugih komponent.
@@ -47,4 +46,3 @@ Spodaj je splošno vodilo za velikosti instanc baze podatkov. **Upoštevajte, da
 | 1M                 | 5M                   | 32                 | 32gb                 |
 
 Zgornje tabele so konservativne ocene. Dejanske zahteve se lahko razlikujejo glede na vašo specifično konfiguracijo (velikost strani, volumen komentarjev itd.).
----

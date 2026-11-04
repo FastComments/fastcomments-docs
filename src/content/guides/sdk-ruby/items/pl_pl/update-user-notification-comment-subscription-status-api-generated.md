@@ -1,4 +1,3 @@
----
 Włącz lub wyłącz powiadomienia dla konkretnego komentarza.
 
 ## Parametry
@@ -39,5 +38,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Error when calling PublicApi->update_user_notification_comment_subscription_status: #{e}"
 end
 [inline-code-end]
-
----

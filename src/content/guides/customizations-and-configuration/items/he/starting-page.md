@@ -8,5 +8,3 @@
 [code-example-start config = {startingPage: 1}; linesToHighlight = [6]; title = 'Specifying The Page to Render'; code-example-end]
 
 שים לב שמספרי העמודים מתחילים מ-0, ולכן הדוגמה שלמעלה מציגה את העמוד השני.
-
----

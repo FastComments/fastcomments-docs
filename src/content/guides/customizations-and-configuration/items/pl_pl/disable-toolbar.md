@@ -10,5 +10,3 @@ Ten pasek narzędzi można wyłączyć w kodzie lub za pomocą interfejsu UI dos
 Można to również zrobić bez kodu. Na stronie dostosowywania widgetu zobacz opcję „Disable The Reply Toolbar”.
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.disable-toolbar']; selector = '.disable-toolbar'; alt='Strona dostosowywania widgetu z zaznaczonym polem wyboru Disable The Reply Toolbar, aby usunąć skróty formatowania'; title='Wyłączanie paska narzędzi' app-screenshot-end]
-
----

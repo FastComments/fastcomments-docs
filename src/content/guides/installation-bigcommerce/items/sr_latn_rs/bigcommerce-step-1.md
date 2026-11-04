@@ -41,5 +41,3 @@ Sada možemo da izmenimo našu novu temu kako bismo dodali FastComments.
     <div class="title">Izmenite fajlove teme</div>
     <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-1-edit-theme-files.png" alt="Edit Theme Files" />
 </div>
-
----

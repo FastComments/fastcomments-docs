@@ -1,4 +1,3 @@
----
 Registrer en stemme i en afstemning, eller flyt en eksisterende til en anden mulighed. En vælger har højst én stemme pr. afstemning, så hvis du kalder dette igen for den samme vælger, flyttes deres stemme i stedet for at tilføje en.
 
 Dette overholder sidens afstemningsindstillinger: hvis afstemning kun er tilladt for loggede brugere, afvises en stemme kun med et anonUserId, og anonyme stemmer er hastighedsbegrænsede pr. IP pr. afstemning.
@@ -34,5 +33,3 @@ DefaultAPI.createPollVote(tenantId: tenantId, createPollVoteBody: createPollVote
     }
 }
 [inline-code-end]
-
----

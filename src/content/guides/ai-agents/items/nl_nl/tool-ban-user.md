@@ -1,4 +1,3 @@
----
 De Ban-tool is de meest ingrijpende actie die een agent kan uitvoeren. Het verbant een gebruiker uit je community, voor een vaste duur en met een paar opties.
 
 ### Wat het doet
@@ -47,5 +46,3 @@ In de EU-regio is deze tool volgens Artikel 17 van de Digital Services Act **ver
 
 - [Banning Users](/guide-moderation.html#banning-users) en [Banning Users With Wildcards](/guide-moderation.html#banning-users-wildcards) in de moderatiegids voor hoe bans platformbreed werken.
 - [Waarschuw gebruiker](#tool-warn-user) - de mildere escalatiestap.
-
----

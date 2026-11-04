@@ -8,5 +8,3 @@ Ako naiđete na bilo kakve probleme ili imate pitanja u vezi sa GatsbyJS bibliot
 ## Doprinos
 
 Doprinosi su dobrodošli! Molimo posetite [GitHub repozitorijum](https://github.com/FastComments/fastcomments-gatsbyjs-example) za smernice o doprinosu.
-
----

@@ -1,4 +1,4 @@
-Les méthodes du SDK lèvent `FastCommentsError`, qui est conforme à `LocalizedError`:
+Les méthodes du SDK lèvent une `FastCommentsError`, qui est conforme à `LocalizedError` :
 
 ```swift
 do {
@@ -10,13 +10,12 @@ do {
 }
 ```
 
-`FastCommentsError` properties:
+Propriétés de `FastCommentsError` :
 
-- `code` -- code d'erreur provenant de l'API
+- `code` -- code d'erreur renvoyé par l'API
 - `reason` -- description de l'erreur en anglais
 - `translatedError` -- message d'erreur localisé fourni par le serveur
 
-Blocking errors are also surfaced automatically via `sdk.blockingErrorMessage`, which the built-in views display to the user.
+Les erreurs de blocage sont également remontées automatiquement via `sdk.blockingErrorMessage`, que les vues intégrées affichent à l'utilisateur.
 
----
 ---

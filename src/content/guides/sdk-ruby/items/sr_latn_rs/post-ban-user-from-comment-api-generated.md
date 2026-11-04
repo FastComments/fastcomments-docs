@@ -48,5 +48,3 @@ rescue FastCommentsClient::ApiError => e
   puts "Greška pri pozivanju ModerationApi->post_ban_user_from_comment: #{e}"
 end
 [inline-code-end]
-
----

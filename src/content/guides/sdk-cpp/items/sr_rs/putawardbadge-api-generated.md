@@ -1,10 +1,10 @@
 ## Параметри
 
-| Име | Тип | Обавезно | Опис |
+| Назив | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| badgeId | string | Yes |  |
-| options | const PutAwardBadgeOptions& | Yes |  |
+| tenantId | string | Да |  |
+| badgeId | string | Да |  |
+| options | const PutAwardBadgeOptions& | Да |  |
 
 ## Одговор
 
@@ -12,7 +12,7 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'putAwardBadge Primer'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'putAwardBadge пример'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 auto tenantId = utility::conversions::to_string_t("my-tenant-123");
 auto badgeId = utility::conversions::to_string_t("badge-456");
@@ -26,4 +26,4 @@ api->putAwardBadge(tenantId, badgeId, opts).then([](pplx::task<std::shared_ptr<A
     }catch(const std::exception& e){
     }
 });
-[inline-end]
+[inline-code-end]

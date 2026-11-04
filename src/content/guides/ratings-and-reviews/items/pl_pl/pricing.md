@@ -1,4 +1,3 @@
----
 Cennik opiera się na cenach komentarzy, to znaczy, że za oceny i recenzje jesteś rozliczany tak samo jak za komentarze - w zależności od Twojego pakietu.
 
 Jesteś rozliczany (on Flex) lub ograniczany (on fixed plans) na podstawie następujących kryteriów:
@@ -10,5 +9,3 @@ Jesteś rozliczany (on Flex) lub ograniczany (on fixed plans) na podstawie nast�
 - Użycie API (zużycie kredytów dla każdego wywołania API jest opisane w odpowiedniej dokumentacji).
 
 Gdy wyniki są agregowane przez API lub za pomocą widgetów podsumowania, również jesteś za to rozliczany.
-
----

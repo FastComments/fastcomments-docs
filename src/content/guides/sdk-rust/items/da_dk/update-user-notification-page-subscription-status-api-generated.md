@@ -32,5 +32,3 @@ async fn example() -> Result<UpdateUserNotificationPageSubscriptionStatusRespons
     update_user_notification_page_subscription_status(&configuration, params).await
 }
 [inline-code-end]
-
----

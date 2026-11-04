@@ -1,4 +1,3 @@
----
 Um den generierten Client aus der OpenAPI-Spezifikation zu aktualisieren:
 
 ```bash
@@ -6,4 +5,3 @@ Um den generierten Client aus der OpenAPI-Spezifikation zu aktualisieren:
 ```
 
 Dies lädt die neueste OpenAPI-Spezifikation von einem laufenden FastComments-Server herunter (oder verwendet eine lokale Kopie) und regeneriert den Client-Code.
----

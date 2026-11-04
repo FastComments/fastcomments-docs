@@ -28,5 +28,3 @@ Mindre ofte gate'et end [Udeluk bruger](#tool-ban-user). Det er værd at gate'e 
 
 - [Udeluk bruger](#tool-ban-user) - næste trin i eskaleringen.
 - [Agent-hukommelsessystem](#agent-memory-system) - hvor advarselsregistre gemmes.
-
----

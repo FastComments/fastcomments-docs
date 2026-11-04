@@ -6,5 +6,3 @@ Nous devrions maintenant avoir FastComments Live Commenting activé pour nos mem
 </div>
 
 Félicitations pour la configuration de FastComments avec Ghost ! Si vous avez rencontré une Domain Error, ou si vous souhaitez apprendre à personnaliser la zone des commentaires, poursuivez votre lecture !
-
----

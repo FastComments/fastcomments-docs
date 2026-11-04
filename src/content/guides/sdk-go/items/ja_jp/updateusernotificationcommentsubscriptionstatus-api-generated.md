@@ -1,4 +1,3 @@
----
 特定のコメントに対する通知を有効化または無効化します。
 
 ## パラメータ
@@ -46,5 +45,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.UpdateUserNotificationCommentSubscriptionStatus`: %v\n", resp)
 }
 [inline-code-end]
-
----

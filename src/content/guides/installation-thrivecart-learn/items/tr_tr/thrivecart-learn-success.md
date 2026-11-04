@@ -1,4 +1,3 @@
----
 Başarılı! Artık FastComments Comment Widget'ını görmelisiniz.
 
 <div class="screenshot white-bg">
@@ -7,5 +6,3 @@ Başarılı! Artık FastComments Comment Widget'ını görmelisiniz.
 </div>
 
 FastComments'i ThriveCart ile kurduğunuz için tebrikler! Eğer bir Domain Error ile karşılaştıysanız veya yorum alanını nasıl özelleştireceğinizi öğrenmek istiyorsanız, okumaya devam edin!
-
----

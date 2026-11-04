@@ -11,7 +11,7 @@ dependencies: [
 Или в Xcode:
 1. File > Add Packages...
 2. Введите URL репозитория: `https://github.com/fastcomments/fastcomments-swift.git`
-3. Выберите версию, которую хотите использовать
+3. Выберите нужную версию
 
 ### Требования
 

@@ -1,4 +1,3 @@
----
 **ID predloge:** `thread_summarizer`
 
 Povzemalnik nití objavi nevtralen povzetek v enem odstavku na koncu dolge niti. Uporablja 30-minutni odlog, da se nit umiri, preden agent nanjo pogleda.
@@ -34,4 +33,3 @@ Agent najprej objavi nov komentar z `write_comment`, nato pokliče `pin_comment`
 ### Izogibanje ponavljajočim se povzetkom
 
 Agent ima dostop do [`save_memory`](#tools-overview) in [`search_memory`](#tools-overview) - v poziv lahko dodate navodilo, naj zapiše opombe "summarized {thread urlId}" in jih preveri, preden ponovno objavi. Pomnilnik je deljen med vsemi agenti v vašem najemu.
----

@@ -1,4 +1,3 @@
----
 ### Utilisation des ressources
 
 Il convient de noter que la récupération de données depuis l'API est comptée comme utilisation sur votre compte.
@@ -17,5 +16,3 @@ Nous vous suggérons de lire d'abord la documentation des Pages, afin de limiter
 ### Webhooks
 
 Les abonnements aux webhooks ont leur propre guide. `POST`, `GET` et `DELETE /api/v1/webhooks`, ainsi que `GET /api/v1/webhooks/sample-payloads`, sont documentés sous [Gestion des abonnements via l'API](/guide-webhooks.html#webhooks-api-subscriptions), et les charges utiles d'événement sous [Structures des webhooks](/guide-webhooks.html#webhooks-structures).
-
----

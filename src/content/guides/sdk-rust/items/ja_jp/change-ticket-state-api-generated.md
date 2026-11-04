@@ -30,5 +30,3 @@ async fn example(config: &configuration::Configuration) -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
-
----

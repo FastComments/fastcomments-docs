@@ -1,4 +1,3 @@
----
 Sproži se, ko je komentar pripet.
 
 ### Kontekst, ki ga prejme agent
@@ -16,5 +15,3 @@ Preprečevanje zank: dogodki pripenjanja, ki izvirajo od agenta, ne sprožijo no
 ### Opomba o paru
 
 Dogodki pripenjanja in odpenjanja so ločeni sprožilci. Naročite se na oba, če želite simetrično vedenje. Oglejte si [Sprožilec: Komentar odpet](#trigger-comment-unpin).
-
----

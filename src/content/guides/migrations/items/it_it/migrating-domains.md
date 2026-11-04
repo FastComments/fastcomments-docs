@@ -19,5 +19,3 @@ Man mano che il job viene eseguito, mostrerà il numero di commenti trovati da m
 ### Migrazione dei domini tramite API
 
 I domini possono anche essere migrati con [`POST /api/v1/pages/migrations`](/guide-api.html#pages-migrations-post), impostando `type` su `domain`. Lo stato di avanzamento è disponibile tramite [`GET /api/v1/batch-jobs/:id`](/guide-api.html#batch-job-get-by-id), e la migrazione può essere annullata per 90 giorni.
-
----

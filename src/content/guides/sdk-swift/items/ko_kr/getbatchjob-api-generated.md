@@ -1,4 +1,3 @@
----
 배치 작업의 상태, 진행 상황 및 완료 시 결과.
 
 ## Parameters
@@ -33,5 +32,3 @@ DefaultAPI.getBatchJob(tenantId: tenantId, id: id) { (response, error) in
     }
 }
 [inline-code-end]
-
----

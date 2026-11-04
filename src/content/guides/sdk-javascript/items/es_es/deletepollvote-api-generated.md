@@ -1,4 +1,3 @@
----
 Retirar un voto. La opción en la que se emitió devuelve su recuento.
 
 ## Parámetros
@@ -25,5 +24,3 @@ async function runDeletePollVoteExample(): Promise<void> {
   console.log(result);
 }
 [inline-code-end]
-
----

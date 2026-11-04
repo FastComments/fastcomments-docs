@@ -41,5 +41,3 @@
     <div class="title">Редактировать файлы темы</div>
     <img class="screenshot-image" src="/images/installation-guides/bigcommerce-step-1-edit-theme-files.png" alt="Edit Theme Files" />
 </div>
-
----

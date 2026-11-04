@@ -1,20 +1,21 @@
-Objekt `HashTag` predstavlja oznaku koju može ostaviti korisnik. HashTagovi se mogu koristiti za povezivanje na vanjski sadržaj ili za povezivanje srodnih komentara.
+Objekt `HashTag` predstavlja oznaku (tag) koju korisnik može ostaviti. HashTagovi se mogu koristiti za povezivanje s vanjskim sadržajem ili za
+povezivanje srodnih komentara.
 
-Struktura za objekt `HashTag` je sljedeća:
+Struktura objekta `HashTag` je sljedeća:
 
-[inline-code-attrs-start title = 'Struktura HashTag-a'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Struktura HashTaga'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface HashTag {
-    /** Treba počinjati znakom "#" ili željenim znakom. **/
+    /** Treba početi s znakom "#" ili željenim znakom. **/
     tag: string
-    /** Opcionalni URL na koji hashtag može pokazivati. Umjesto filtriranja komentara po hashtag-u, korisničko sučelje će pri kliku preusmjeriti na ovu adresu. **/
+    /** Opcionalni URL na koji hashtag može upućivati. Umjesto filtriranja komentara po hashtagu, UI će pri kliku preusmjeriti na ovaj URL. **/
     url?: string
-    /** SAMO ZA ČITANJE **/
+    /** READONLY **/
     createdAt: string
 }
 [inline-code-end]
 
-Notes:
+Napomene:
 
-- In some API endpoints you will see that the hashtag is used in the URL. Remember to URI-Encoded values. For example, `#` should instead be represented as `%23`.
-- Some of these fields are marked `READONLY` - these are returned by the API but cannot be set.
+- U nekim API endpointima vidjet ćete da se hashtag koristi u URL-u. Ne zaboravite URI-kodirane vrijednosti. Na primjer, `#` treba umjesto toga predstaviti kao `%23`.
+- Neka od ovih polja označena su kao `READONLY` - API ih vraća, ali se ne mogu postaviti.

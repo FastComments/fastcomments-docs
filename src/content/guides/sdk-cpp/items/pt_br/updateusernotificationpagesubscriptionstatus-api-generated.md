@@ -1,10 +1,10 @@
-Enable or disable notifications for a page. When users are subscribed to a page, notifications are created
-for new root comments, and also
+Ativar ou desativar notificações para uma página. Quando os usuários estão inscritos em uma página, notificações são criadas
+para novos comentários raiz, e também
 
-## Parameters
+## Parâmetros
 
 | Nome | Tipo | Obrigatório | Descrição |
-|------|------|-------------|-----------|
+|------|------|----------|-------------|
 | tenantId | string | Sim |  |
 | urlId | string | Sim |  |
 | url | string | Sim |  |
@@ -12,13 +12,13 @@ for new root comments, and also
 | subscribedOrUnsubscribed | string | Sim |  |
 | sso | string | Não |  |
 
-## Response
+## Resposta
 
 Retorna: [`UpdateUserNotificationPageSubscriptionStatusResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/UpdateUserNotificationPageSubscriptionStatusResponse.h)
 
 ## Exemplo
 
-[inline-code-attrs-start title = 'updateUserNotificationPageSubscriptionStatus Exemplo'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Exemplo de updateUserNotificationPageSubscriptionStatus'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
 utility::string_t urlId = U("page-456");
@@ -29,8 +29,6 @@ boost::optional<utility::string_t> sso = boost::make_optional<utility::string_t>
 
 api->updateUserNotificationPageSubscriptionStatus(tenantId, urlId, url, pageTitle, subscription, sso)
     .then([](std::shared_ptr<UpdateUserNotificationPageSubscriptionStatusResponse> resp) {
-        // processar resp se necessário
+        // process resp if needed
     });
 [inline-code-end]
-
----

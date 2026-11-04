@@ -200,5 +200,3 @@ Foutreacties bevatten een JSON-body met details:
 ### Gebruikstracering
 
 Het aanmaken van gesprekken verhoogt uw gebruiksmetric `conversationCreateCount`. Alle WebSocket-synchronisatie-activiteit verhoogt `pubSubMessageCount` en `pubSubBandwidth`. U kunt deze metrics volgen in uw FastComments-dashboard onder gebruiksanalyses.
-
----

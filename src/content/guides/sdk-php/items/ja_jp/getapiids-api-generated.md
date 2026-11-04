@@ -1,4 +1,3 @@
----
 ## パラメータ
 
 | 名前 | タイプ | 場所 | 必須 | 説明 |
@@ -50,5 +49,3 @@ try {
     echo 'Exception when calling ModerationApi->getApiIds: ', $e->getMessage(), PHP_EOL;
 }
 [inline-code-end]
-
----

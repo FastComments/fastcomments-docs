@@ -23,5 +23,3 @@ let (response, httpResponse) = client.deleteFeedPostPublic(
 if response.isSome:
   let deleteResp = response.get()
 [inline-code-end]
-
----

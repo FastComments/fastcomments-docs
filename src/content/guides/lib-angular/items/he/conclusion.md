@@ -8,5 +8,3 @@
 ## תרומות
 
 תרומות מתקבלות בברכה! אנא בקרו ב[מאגר GitHub](https://github.com/FastComments/fastcomments-angular) לקבלת הנחיות לתרומה.
-
----

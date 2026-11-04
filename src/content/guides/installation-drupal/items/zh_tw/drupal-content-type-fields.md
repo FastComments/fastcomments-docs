@@ -1,10 +1,8 @@
----
-對於大多數網站，新增評論最簡單的方法是將 `FastComments` 欄位附加到您的內容類型。前往 `Structure > Content types > [type] > Manage fields` 並新增該欄位。
+對大多數網站而言，新增留言最簡單的方式是將 `FastComments` 欄位附加到您的內容類型。前往 `Structure > Content types > [type] > Manage fields` 並新增該欄位。
 
-Each entity that has the field gets:
+每個具有此欄位的實體都會獲得：
 
-- 一個 **狀態切換**，讓編輯可以對每個實體啟用或停用評論。
-- 一個可選的 **自訂識別符**，讓您可以使用不綁定於 Drupal 實體路徑的穩定 ID。
+- 一個**狀態開關**，讓編輯者可以針對每個實體開啟或關閉留言功能。
+- 一個可選的**自訂識別碼**，讓您可以使用不綁定於 Drupal 實體路徑的穩定 ID。
 
-The main `FastComments Widget` block knows about this field, and will skip entities that already have it attached. That way you can mix per-entity comments with the block without seeing the widget twice on the same page.
----
+主要的 `FastComments Widget` 區塊會偵測此欄位，並跳過已附加該欄位的實體。如此一來，您可以將每個實體的留言與區塊混合使用，而不會在同一個頁面上看到重複的 widget。

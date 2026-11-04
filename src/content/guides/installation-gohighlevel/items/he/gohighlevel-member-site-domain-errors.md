@@ -1,4 +1,3 @@
----
 ייתכן שתקבל שגיאת הרשאה, כמו הבאה:
 
 <div class="screenshot white-bg">
@@ -13,4 +12,3 @@
 [עבור לכאן כדי להוסיף את האתר שלך לחשבונך.](https://fastcomments.com/auth/my-account/configure-domains)
 
 כעת אמורה להיות לך במערכת תגובות חיה ומהירה באתר שלך!
----

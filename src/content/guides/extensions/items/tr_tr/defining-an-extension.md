@@ -1,4 +1,3 @@
----
 Olabilecek en küçük uzantı şöyle olur:
 
 [inline-code-attrs-start title = 'Basit Bir Uzantı'; type = 'javascript'; inline-code-attrs-end]
@@ -21,5 +20,3 @@ Sonraki adım, uzantımızı yüklemek için yorum widget'ına bunu bildirmektir
 [code-example-start config = {extensions: [{id: "my-extension", path: "https://example.com/my-extension.min.js"}]}; linesToHighlight = [6,7,8,9,10,11]; title = 'Using a Custom Extension'; code-example-end]
 
 İşlevsel örnekler için bir sonraki bölüme bakın.
-
----

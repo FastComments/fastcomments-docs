@@ -1,3 +1,1 @@
----
 Voeg live reacties toe aan een Val Town-app: de widget in een HTTP-val, bulkreactietellingen, Secure SSO van std/oauth, en het verifiëren van webhooks.
----

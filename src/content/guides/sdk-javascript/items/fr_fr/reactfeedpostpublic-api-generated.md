@@ -34,5 +34,3 @@ async function demoReact() {
   );
 }
 [inline-code-end]
-
----

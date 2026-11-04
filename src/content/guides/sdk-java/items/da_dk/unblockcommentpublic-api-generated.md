@@ -1,4 +1,3 @@
----
 ## Parametre
 
 | Navn | Type | Placering | Påkrævet | Beskrivelse |
@@ -47,5 +46,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----

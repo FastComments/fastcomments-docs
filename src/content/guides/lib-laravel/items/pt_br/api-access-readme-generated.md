@@ -3,10 +3,10 @@
 ```php
 use FastComments\Laravel\Facades\FastComments;
 
-// API de administrador (requer chave de API)
+// Admin API (requer chave de API)
 $comments = FastComments::admin()->getComments('tenant-id');
 
-// API pública
+// Public API
 $comments = FastComments::publicApi()->getCommentsPublic('tenant-id', 'url-id');
 
 // SSO

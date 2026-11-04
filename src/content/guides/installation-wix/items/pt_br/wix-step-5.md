@@ -69,5 +69,3 @@ $w.onReady(function () {
     <div class="title">Adicionar o Código de Navegação</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-7-paste-code.png" alt="Adicionar o Código de Navegação" />
 </div>
-
----

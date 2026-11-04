@@ -1,4 +1,3 @@
----
 ## Parameters
 
 | Naam | Type | Locatie | Vereist | Beschrijving |
@@ -31,5 +30,3 @@ DefaultAPI.getEmailTemplate(tenantId: tenantId, id: id) { (response, error) in
     }
 }
 [inline-code-end]
-
----

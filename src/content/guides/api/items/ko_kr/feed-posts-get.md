@@ -1,4 +1,3 @@
----
 [api-resource-header-start name = 'FeedPost'; route = 'GET /api/v1/feed-posts'; creditsCost = 1; api-resource-header-end]
 
 피드의 게시물을 최신 순으로 가져옵니다. 페이지네이션은 커서 기반이며, 마지막으로 받은 게시물의 `_id`를 `afterId`로 전달하여 다음 페이지를 가져옵니다.
@@ -36,5 +35,3 @@ interface FeedPostsResponse {
     feedPosts: FeedPost[]
 }
 [inline-code-end]
-
----

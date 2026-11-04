@@ -1,14 +1,14 @@
-For adding comments to a site built with React, you can find our React library on NPM <a href="https://www.npmjs.com/package/fastcomments-react" target="_blank">burada</a>.
+React ile oluşturulmuş bir siteye yorum eklemek için React kütüphanemizi NPM üzerinde <a href="https://www.npmjs.com/package/fastcomments-react" target="_blank">burada</a> bulabilirsiniz.
 
-The FastComments React commenting widget supports all of the same features of the VanillaJS one - canlı yorum, sso ve benzeri.
+FastComments React yorum widget'ı, VanillaJS sürümünün tüm özelliklerini destekler - canlı yorumlama, sso ve benzeri.
 
-[inline-code-attrs-start title = 'FastComments React NPM üzerinden'; type = 'shell'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'NPM ile FastComments React'; type = 'shell'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 npm install --save fastcomments-react
 [inline-code-end]
 
 
-[inline-code-attrs-start title = 'FastComments React Yarn üzerinden'; type = 'shell'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Yarn ile FastComments React'; type = 'shell'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 yarn add fastcomments-react
 [inline-code-end]
@@ -27,13 +27,11 @@ class Example extends Component {
 }
 [inline-code-end]
 
-Eğer AB'deyseniz, `region` parametresini şöyle ayarlamak isteyebilirsiniz:
+AB'deyseniz, `region` parametresini şu şekilde ayarlamanız gerekecek:
 
 [inline-code-attrs-start title = 'React Örneği - AB'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
     <FastCommentsCommentWidget tenantId="demo" region="eu" />
 [inline-code-end]
 
-You can find the configuration the React component supports <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">burada</a>.
-
----
+React bileşeninin desteklediği yapılandırmayı <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">burada</a> bulabilirsiniz.

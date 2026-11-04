@@ -27,5 +27,3 @@ api->createTenantUser(utility::conversions::to_string_t("my-tenant-123"), body)
         }
     });
 [inline-code-end]
-
----

@@ -1,4 +1,3 @@
----
 リリースタグからインストールします（このプロジェクトは PyPI ではなく git タグで配布されています）:
 
 ```bash
@@ -19,4 +18,3 @@ INSTALLED_APPS = [
     "fastcomments_django",
 ]
 ```
----

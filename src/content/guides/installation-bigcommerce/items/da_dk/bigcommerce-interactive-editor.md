@@ -1,4 +1,3 @@
----
 Det anbefales ikke at tilføje FastComments via BigCommerce's Page Builder, da koden så skal tilføjes manuelt til hver ønskede side.
 
 Hvis dette ønskes, skal følgende kodeudsnit bruges. Kodeudsnit fra andre vejledninger vil ikke fungere på grund af måden BigCommerce er opbygget på:
@@ -14,5 +13,3 @@ Hvis dette ønskes, skal følgende kodeudsnit bruges. Kodeudsnit fra andre vejle
     }];
 </script>
 [inline-code-end]
-
----

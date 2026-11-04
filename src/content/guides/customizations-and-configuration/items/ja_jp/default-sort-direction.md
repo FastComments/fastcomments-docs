@@ -27,5 +27,3 @@
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; selector = '.default-sort-direction'; alt='「Default Sort Direction」セレクタは「最も関連性が高い」「最新順」「最も古い順」を提供します'; title='デフォルトのソート方向を変更する' app-screenshot-end]
 
 各ページの各ソート方向のコメントは事前に計算されているため、すべてのソート方向で同じパフォーマンスになります。
-
----

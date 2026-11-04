@@ -8,5 +8,3 @@
 ## Како допринети
 
 Допринеси су добродошли! Посетите [репозиторијум на GitHub-у](https://github.com/FastComments/fastcomments-jekyll) за смернице о доприносу.
-
----

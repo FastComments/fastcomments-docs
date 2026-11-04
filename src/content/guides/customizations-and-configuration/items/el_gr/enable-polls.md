@@ -1,10 +1,10 @@
-Polls let commenters attach a question with 2 to 10 options to a comment. Everyone on the page votes in place and sees the results update live.
+Οι δημοσκοπήσεις επιτρέπουν στους σχολιαστές να επισυνάπτουν μια ερώτηση με 2 έως 10 επιλογές σε ένα σχόλιο. Όλοι στη σελίδα ψηφίζουν επιτόπου και βλέπουν τα αποτελέσματα να ενημερώνονται ζωντανά.
 
-Polls are off by default. Check **Enable Polls** in the widget customization settings to add a poll button to the comment toolbar. Two more settings then appear:
+Οι δημοσκοπήσεις είναι απενεργοποιημένες από προεπιλογή. Επιλέξτε **Enable Polls** στις ρυθμίσεις προσαρμογής του widget για να προσθέσετε ένα κουμπί δημοσκόπησης στη γραμμή εργαλείων των σχολίων. Στη συνέχεια εμφανίζονται δύο ακόμη ρυθμίσεις:
 
-- **Who Can Create Polls**: Μόνο διαχειριστές/συντονιστές (η προεπιλογή), ή Όλοι.
-- **Allow Anonymous Poll Votes**: όταν δεν είναι επιλεγμένο (η προεπιλογή), μόνο οι συνδεδεμένοι χρήστες μπορούν να ψηφίσουν.
+- **Who Can Create Polls**: Μόνο Διαχειριστές/Συντονιστές (η προεπιλογή), ή Όλοι.
+- **Allow Anonymous Poll Votes**: όταν είναι αποεπιλεγμένο (η προεπιλογή), μόνο οι συνδεδεμένοι χρήστες μπορούν να ψηφίσουν.
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-polls']; selector = '.enable-polls'; alt='Σελίδα προσαρμογής widget με την επιλογή Ενεργοποίηση δημοσκοπήσεων ενεργοποιημένη'; title='Ενεργοποίηση δημοσκοπήσεων' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-polls']; selector = '.enable-polls'; alt='Σελίδα προσαρμογής widget με επιλεγμένη την επιλογή Enable Polls'; title='Enable Polls' app-screenshot-end]
 
-Δείτε τον [Οδηγός Δημοσκοπήσεων](/guide-polls.html) για το πώς λειτουργούν η δημιουργία, η ψηφοφορία, η ιδιωτικότητα και οι ειδοποιήσεις δημοσκοπήσεων.
+Δείτε τον [Οδηγό δημοσκοπήσεων](/guide-polls.html) για το πώς λειτουργούν η δημιουργία, η ψηφοφορία, το απόρρητο και οι ειδοποιήσεις δημοσκοπήσεων.

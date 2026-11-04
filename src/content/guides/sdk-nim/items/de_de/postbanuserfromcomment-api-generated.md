@@ -24,5 +24,3 @@ if banResult.isSome:
   let result = banResult.get()
   echo result
 [inline-code-end]
-
----

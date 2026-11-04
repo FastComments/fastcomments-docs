@@ -43,4 +43,3 @@ override fun onDestroy() {
     sdk.cleanup()
 }
 ```
----

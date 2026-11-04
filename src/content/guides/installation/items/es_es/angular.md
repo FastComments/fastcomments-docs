@@ -69,5 +69,3 @@ Dado que la configuración puede volverse bastante complicada, podemos pasar una
 El widget utiliza la detección de cambios, por lo que modificar cualquier propiedad del objeto de configuración provocará que se recargue.
 
 Puede encontrar la configuración que admite el componente Angular <a href="https://github.com/FastComments/fastcomments-typescript/blob/main/src/fast-comments-comment-widget-config.ts" target="_blank">aquí</a>.
-
----

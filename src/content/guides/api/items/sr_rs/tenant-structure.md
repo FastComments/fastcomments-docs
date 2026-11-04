@@ -77,5 +77,3 @@ export interface Tenant {
     meta?: Record<string, string | null>
 }
 [inline-code-end]
-
----

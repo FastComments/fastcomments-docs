@@ -1,4 +1,3 @@
----
 Potresti ricevere un errore di autorizzazione, come il seguente:
 
 <div class="screenshot white-bg">
@@ -13,5 +12,3 @@ In questo caso, la soluzione è semplice. Devi solo aggiungere il tuo sito al tu
 [Vai qui per aggiungere il tuo sito al tuo account.](https://fastcomments.com/auth/my-account/configure-domains)
 
 I domini vengono aggiunti automaticamente al tuo account durante il periodo di prova, ma questo può verificarsi quando aggiungi nuovi siti al tuo account FastComments.
-
----

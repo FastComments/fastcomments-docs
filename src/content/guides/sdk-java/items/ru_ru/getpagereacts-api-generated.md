@@ -1,22 +1,22 @@
-Custom react counts for a page, optionally with the users who reacted.
+Пользовательские счётчики реакций для страницы, опционально с пользователями, которые отреагировали.
 
-## Parameters
+## Параметры
 
-| Имя | Тип | Местоположение | Обязательно | Описание |
+| Имя | Тип | Расположение | Обязательный | Описание |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| urlId | string | query | Yes |  |
-| includeUserInfo | string | query | No | "public" исключает пользователей с приватными профилями, "include-private" включает их. |
+| tenantId | string | query | Да |  |
+| urlId | string | query | Да |  |
+| includeUserInfo | string | query | Нет | "public" исключает пользователей с приватными профилями, "include-private" включает их. |
 
-## Response
+## Ответ
 
 Возвращает: [`GetPageReactsAPIResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/GetPageReactsAPIResponse.java)
 
-## Example
+## Пример
 
 [inline-code-attrs-start title = 'Пример getPageReacts'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// Импорт классов:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;
@@ -29,10 +29,10 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://fastcomments.com");
     
-    // Настройка авторизации API-ключа: api_key
+    // Configure API key authorization: api_key
     ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
     api_key.setApiKey("YOUR API KEY");
-    // Раскомментируйте следующую строку, чтобы установить префикс для API-ключа, например "Token" (по умолчанию null)
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
@@ -45,13 +45,9 @@ public class Example {
             .execute();
       System.out.println(result);
     } catch (ApiException e) {
-      // Исключение при вызове DefaultApi#getPageReacts
       System.err.println("Exception when calling DefaultApi#getPageReacts");
-      // Код состояния: " + e.getCode()
       System.err.println("Status code: " + e.getCode());
-      // Причина: " + e.getResponseBody()
       System.err.println("Reason: " + e.getResponseBody());
-      // Заголовки ответа: " + e.getResponseHeaders()
       System.err.println("Response headers: " + e.getResponseHeaders());
       e.printStackTrace();
     }

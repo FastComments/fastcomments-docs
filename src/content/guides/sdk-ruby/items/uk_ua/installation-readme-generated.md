@@ -1,30 +1,29 @@
-Add this line to your application's Gemfile:
+Додайте цей рядок до Gemfile вашого застосунку:
 
 ```ruby
 gem 'fastcomments'
 ```
 
-And then execute:
+А потім виконайте:
 
 ```bash
 bundle install
 ```
 
-Or install it yourself as:
+Або встановіть його самостійно:
 
 ```bash
 gem install fastcomments
 ```
 
-### Library Contents
+### Вміст бібліотеки
 
-This library contains the generated API client and the SSO utilities to make working with the API easier.
+Ця бібліотека містить згенерований API-клієнт та утиліти SSO, щоб спростити роботу з API.
 
-- [Документація бібліотеки клієнта API](https://github.com/FastComments/fastcomments-ruby/blob/master/client/README.md)
+- [Документація бібліотеки API-клієнта](https://github.com/FastComments/fastcomments-ruby/blob/master/client/README.md)
 
-### Public vs Secured APIs
+### Публічні та захищені API
 
-For the API client, there are three classes, `DefaultApi`, `PublicApi`, and `ModerationApi`. The `DefaultApi` contains methods that require your API key, and `PublicApi` contains api calls
-that can be made directly from a browser/mobile device/etc without authentication. The `ModerationApi` contains the methods that power the moderator dashboard.
+Для API-клієнта є три класи: `DefaultApi`, `PublicApi` та `ModerationApi`. `DefaultApi` містить методи, які вимагають ваш API-ключ, а `PublicApi` містить API-виклики, які можна виконувати безпосередньо з браузера/мобільного пристрою тощо без автентифікації. `ModerationApi` містить методи, на яких працює панель модератора.
 
-The `ModerationApi` provides an extensive suite of live and fast moderation APIs. Every `ModerationApi` method accepts an `sso` parameter and can authenticate via SSO or a FastComments.com session cookie.
+`ModerationApi` надає розширений набір швидких API для модерації в реальному часі. Кожен метод `ModerationApi` приймає параметр `sso` і може автентифікуватися через SSO або cookie сесії FastComments.com.

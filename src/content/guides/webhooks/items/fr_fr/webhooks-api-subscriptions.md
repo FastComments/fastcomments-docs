@@ -97,5 +97,3 @@ Si le point de terminaison d’un abonnement API répond avec HTTP `410 Gone`, F
 ## Tableau de bord
 
 Les abonnements API apparaissent dans la liste des Webhooks avec la source **API**, où un administrateur peut les modifier, les désactiver, les réactiver ou les supprimer.
-
----

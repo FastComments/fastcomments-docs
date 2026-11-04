@@ -33,5 +33,3 @@ Zodra het gevalideerd is, klik op `Save`.
 ### Stap 4: Voeg een reactie toe
 
 Nu kunt u reacties toevoegen, bewerken of verwijderen en zou moeten zien dat we uw lokale ontwikkelmachine aanroepen met de gebeurtenissen, met behulp van uw test-API-sleutel. Er kan een vertraging van maximaal 30 seconden zijn voordat de gebeurtenissen uw machine bereiken.
-
----

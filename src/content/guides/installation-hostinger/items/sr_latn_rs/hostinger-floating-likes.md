@@ -34,5 +34,3 @@ Ova uputstva su za Hostinger Site Builder. Ako koristite Hostinger *WordPress*, 
 4. Izaberite Integracije.
 5. Dodajte novi kod na *kraj* polja `Custom code`, i objavite svoj sajt.
 6. Nećete videti vidžet u režimu pregleda, ali će se pojaviti u objavljenoj verziji sajta.
-
----

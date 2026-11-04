@@ -1,4 +1,3 @@
----
 ## Parametreler
 
 | Ad | Tür | Gerekli | Açıklama |
@@ -19,5 +18,3 @@ if pageOpt.isSome:
   let page = pageOpt.get()
   echo page
 [inline-code-end]
-
----

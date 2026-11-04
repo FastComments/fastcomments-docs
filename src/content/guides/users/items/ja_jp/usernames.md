@@ -1,17 +1,13 @@
-With FastComments, `username` must be unique across all sites and communities. This is because it used to log you in to fastcomments.com.
+FastCommentsでは、`username`はすべてのサイトおよびコミュニティ全体で一意である必要があります。これは、fastcomments.comへのログインに使用されるためです。
 
-The exception is SSO - since SSO users are tied to a specific FastComments.com Tenant - they can have any username within that community.
+例外はSSOです。SSOユーザーは特定のFastComments.comテナントに紐付けられているため、そのコミュニティ内であれば任意のユーザー名を使用できます。
 
 #### 表示名
 
-FastComments also supports `Display Name`. Display names do not have to be unique, and may contain emojis. You can set your display name
-on the [アカウントの詳細](https://fastcomments.com/auth/my-account/edit-details) page.
+FastCommentsは`Display Name`（表示名）もサポートしています。表示名は一意である必要はなく、絵文字を含めることもできます。表示名は[アカウント詳細](https://fastcomments.com/auth/my-account/edit-details)ページで設定できます。
 
 #### 表示名の一意性
 
-If two FastComments.com users, on two very different major communities both have similar names, then we'd like
-them to just be able to set their preferred display name. However, we can't restrict where people comment with their global FastComments account, so sometimes this may
-result in confusion.
+異なる大規模コミュニティにいる2人のFastComments.comユーザーが似た名前を持っている場合、それぞれが希望する表示名を設定できるようにしたいと考えています。しかし、グローバルなFastCommentsアカウントでのコメント場所を制限することはできないため、場合によっては混乱が生じることがあります。
 
-Having a similar name to another user, or a moderator, by itself is not a case for abuse. However, if you abuse this by intentionally impersonating other users, we may
-disable this feature on your account, and you will be limited to just using `username`.
+他のユーザーやモデレーターと似た名前を持つこと自体は、不正行為には該当しません。しかし、意図的に他のユーザーになりすますなどしてこれを悪用した場合、お客様のアカウントでこの機能を無効にし、`username`のみを使用するよう制限することがあります。

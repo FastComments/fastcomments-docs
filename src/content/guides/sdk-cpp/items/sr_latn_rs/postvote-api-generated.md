@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
@@ -29,5 +28,3 @@ api->postVote(tenantId, commentId, options)
         }
     });
 [inline-code-end]
-
----

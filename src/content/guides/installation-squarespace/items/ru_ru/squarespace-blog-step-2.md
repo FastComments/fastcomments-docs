@@ -6,10 +6,10 @@
 <div id="fastcomments-widget"></div>
 <script>
     (function () {
-        const tenantId = 'demo'; // идентификатор вашей учётной записи
+        const tenantId = 'demo'; // идентификатор вашего аккаунта
 
         function tryLoad() {
-            // попытаться загрузить для различных макетов
+            // пробуем загрузить для разных макетов
             let targetDiv = document.querySelector('.blog-item-comments-content');
             if (!targetDiv) {
                 targetDiv = document.getElementById('fastcomments-widget');
@@ -25,7 +25,7 @@
 
 [inline-code-end]
 
-...then paste in the code area and click save:
+...затем вставьте код в область кода и нажмите сохранить:
 
 <div class="screenshot white-bg">
     <div class="title">Вставьте и сохраните</div>

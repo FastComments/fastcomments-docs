@@ -1,18 +1,24 @@
 [api-resource-header-start name = 'Poll'; route = 'PUT /api/v1/polls/:commentId'; creditsCost = 1; api-resource-header-end]
 
-Vedhæfter en afstemning til en eksisterende kommentar, eller indstiller den fulde tilstand af den afstemning, den allerede har.
+Vedhæfter en afstemning til en eksisterende kommentar, eller sætter den fulde tilstand for den afstemning, den allerede har.
 
-Kroppen er den komplette afstemning, og de muligheder du sender bliver afstemningens muligheder i den rækkefølge. Hver mulighed matches med dens `id`:
+Body'en er den komplette afstemning, og de indstillinger, du sender, bliver afstemningens indstillinger, i den rækkefølge. Hver indstilling
+matches via dens `id`:
 
-- En mulighed sendt med `id` for en eksisterende mulighed bevarer den mulighed og dens stemmer. Dens etiket og position opdateres til det, du sendte.
-- En mulighed sendt uden et `id` tilføjes, uden stemmer.
-- En eksisterende mulighed du udelader fjernes, sammen med de stemmer der er afgivet på den. `totalVotes` falder med samme beløb.
+- En indstilling sendt med `id` for en eksisterende indstilling bevarer den indstilling og dens stemmer. Dens label og position
+  opdateres til det, du sendte.
+- En indstilling sendt uden et `id` tilføjes uden stemmer.
+- En eksisterende indstilling, du udelader, fjernes sammen med de afgivne stemmer på den. `totalVotes` falder med det samme
+  beløb.
 
-Så for at tilføje en mulighed, send de aktuelle muligheder med deres id'er plus den nye uden et id. For at fjerne en, send listen uden den. Muligheds-id'erne findes på afstemningen returneret af `GET /api/v1/polls/:commentId`.
+Så for at tilføje en indstilling, send de nuværende indstillinger med deres ids plus den nye uden et id. For at fjerne en,
+send listen uden den. Indstillings-id'erne findes på afstemningen returneret af `GET /api/v1/polls/:commentId`.
 
-At sende ingen id'er overhovedet erstatter hver mulighed og sletter hver stemme, der allerede er afgivet på afstemningen. Hvis afstemningen har stemmer, kræver dette `replaceVotes=true`, og uden det svarer API'en med `replace-votes-required`.
+Hvis du slet ikke sender nogen id'er, erstattes alle indstillinger, og alle allerede afgivne stemmer på afstemningen slettes. Hvis afstemningen har
+stemmer, kræver dette `replaceVotes=true`, og uden det svarer API'en med `replace-votes-required`.
 
-De andre felter erstattes også: at udelade `closesAt`, `privacy` eller `requireVoteToSeeResults` nulstiller dem til standardværdien. For at ændre et enkelt felt og lade resten være uændret, brug `PATCH /api/v1/polls/:commentId`.
+De andre felter erstattes også: udeladelse af `closesAt`, `privacy` eller `requireVoteToSeeResults` nulstiller det til
+dets standardværdi. For at ændre et enkelt felt og lade resten være, brug `PATCH /api/v1/polls/:commentId`.
 
 [inline-code-attrs-start title = 'Poll Put cURL Eksempel'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -29,49 +35,51 @@ curl --request PUT \
 }'
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Poll Put Anmodningsstruktur'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Poll Put Request Struktur'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface PollPutQueryParams {
     tenantId: string
     API_KEY: string
-    /** Påkrævet for at beholde ingen af de eksisterende muligheds-id'er, når afstemningen har stemmer, da det sletter dem alle. **/
+    /** Required to keep none of the existing option ids when the poll has votes, since that deletes them all. **/
     replaceVotes?: boolean
 }
 
 interface PollPutOption {
-    /** Id'et for en eksisterende mulighed, for at beholde den og dens stemmer. Udelad for at tilføje en ny mulighed. **/
+    /** The id of an existing option, to keep it and its votes. Omit to add a new option. **/
     id?: string | null
     label: string
 }
 
 interface PollPutBody {
     question: string
-    /** Den komplette, ordnede liste. Eksisterende muligheder, der udelades, fjernes sammen med deres stemmer. **/
+    /** The complete, ordered list. Existing options left out are removed with their votes. **/
     options: PollPutOption[]
-    /** Skal være i fremtiden, når kommentaren endnu ikke har en afstemning. Udelad for en afstemning, der forbliver åben. **/
+    /** Must be in the future when the comment has no poll yet. Omit for a poll that stays open. **/
     closesAt?: string | null
-    /** 0 anonym (standard), 1 administratorer og moderatorer, 2 alle. **/
+    /** 0 anonymous (the default), 1 admins and moderators, 2 everyone. **/
     privacy?: 0 | 1 | 2 | null
     requireVoteToSeeResults?: boolean | null
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Poll Put Responsstruktur'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Poll Put Svar Struktur'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface PollPutResponse {
     status: 'success' | 'failed'
-    /** Inkluderet ved fejl. **/
+    /** Included on failure. **/
     code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'not-found' | 'polls-disabled' | 'poll-invalid' | 'replace-votes-required' | 'poll-privacy-locked' | 'locked'
-    /** Inkluderet ved fejl. **/
+    /** Included on failure. **/
     reason?: string
     poll: CommentPoll
 }
 [inline-code-end]
 
-### Other Notes
+### Andre Bemærkninger
 
-- Et `id`, der ikke findes på afstemningen, eller det samme `id` givet to gange, fejler med `poll-invalid`. En kommentar uden afstemning har endnu ingen muligheds-id'er, så hver mulighed, der sendes til den, skal udelade `id`.
-- Afstemningsprivatliv kan indsnævres men ikke udvides, når den har stemmer.
-- Dette API overholder dine sideindstillinger. Hvis afstemninger ikke er aktiveret for siden eller siden, fejler det med `polls-disabled`.
-- En låst kommentar kan ikke få sin afstemning ændret, og fejler med `locked`.
-- Forbundne widgets opdateres live, så seere ser den nye afstemning uden at genindlæse.
+- Et `id`, der ikke findes på afstemningen, eller det samme `id` givet to gange, fejler med `poll-invalid`. En kommentar uden
+  afstemning har endnu ingen indstillings-id'er, så alle indstillinger sendt til den skal udelade `id`.
+- Afstemningens privatliv kan indsnævres, men ikke udvides, når den har stemmer.
+- Denne API følger dine webstedsindstillinger. Hvis afstemninger ikke er aktiveret for webstedet eller siden, fejler den med
+  `polls-disabled`.
+- En låst kommentar kan ikke få sin afstemning ændret og fejler med `locked`.
+- Tilsluttede widgets opdateres live, så seere ser den nye afstemning uden at genindlæse.

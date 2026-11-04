@@ -1,4 +1,3 @@
----
 ## Parametri
 
 | Ime | Vrsta | Obvezno | Opis |
@@ -27,5 +26,3 @@ api->getCommentChildren(tenantId, commentId, sso)
         }
     });
 [inline-code-end]
-
----

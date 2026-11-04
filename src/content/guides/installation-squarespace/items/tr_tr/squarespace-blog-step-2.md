@@ -1,4 +1,4 @@
-Now we can copy the following code snippet (use the copy button in the top right of the snippet):
+Şimdi aşağıdaki kod parçacığını kopyalayabiliriz (parçacığın sağ üst köşesindeki kopyala düğmesini kullanın):
 
 [inline-code-attrs-start title = 'Squarespace Blog Yorumları Kodu'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -6,7 +6,7 @@ Now we can copy the following code snippet (use the copy button in the top right
 <div id="fastcomments-widget"></div>
 <script>
     (function () {
-        const tenantId = 'demo'; // hesabınızın kimliği
+        const tenantId = 'demo'; // hesap kimliğiniz
 
         function tryLoad() {
             // farklı düzenler için yüklemeyi dene
@@ -25,11 +25,9 @@ Now we can copy the following code snippet (use the copy button in the top right
 
 [inline-code-end]
 
-...then paste in the code area and click save:
+...ardından kodu kod alanına yapıştırın ve kaydet'e tıklayın:
 
 <div class="screenshot white-bg">
     <div class="title">Yapıştır ve Kaydet</div>
     <img class="screenshot-image" src="/images/installation-guides/squarespace-step-2-1-add-code-and-save.png" alt="Yapıştır ve Kaydet" />
 </div>
-
----

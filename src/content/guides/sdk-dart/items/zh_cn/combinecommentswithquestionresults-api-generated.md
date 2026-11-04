@@ -44,5 +44,3 @@ try {
     print('Exception when calling DefaultApi->combineCommentsWithQuestionResults: $e\n');
 }
 [inline-code-end]
-
----

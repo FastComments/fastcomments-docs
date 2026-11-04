@@ -1,4 +1,3 @@
----
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
@@ -34,5 +33,3 @@ api->createCommentPublic(
         auto commentId = res->commentId;
     });
 [inline-code-end]
-
----

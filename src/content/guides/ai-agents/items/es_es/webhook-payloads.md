@@ -1,22 +1,21 @@
----
-Todos los payloads de webhook del agente comparten un envoltorio común y agregan un bloque `data` específico del evento. Esta página enumera el esquema completo para cada uno.
+Todos los payloads de webhook de agente comparten un sobre común y añaden un bloque `data` específico del evento. Esta página lista el esquema completo de cada uno.
 
-### Envoltorio (cada evento)
+### Sobre (todos los eventos)
 
 Cada payload, independientemente del tipo de evento, tiene estos campos de nivel superior:
 
-[inline-code-attrs-start title = 'Esquema del envoltorio del webhook'; type='json' inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esquema del Sobre de Webhook'; type='json' inline-code-attrs-end]
 [inline-code-start]
 {
   "event": "trigger.succeeded | trigger.failed | approval.requested | approval.decided",
   "eventType": 0 | 1 | 2 | 3,
   "tenantId": "string",
-  "domain": "string - el dominio coincidente para esta entrega",
+  "domain": "string - the matched domain for this delivery",
   "agentId": "string",
   "agentInternalName": "string",
   "agentDisplayName": "string",
-  "occurredAt": "string - marca de tiempo ISO 8601",
-  "data": { /* específico del evento, ver abajo */ }
+  "occurredAt": "string - ISO 8601 timestamp",
+  "data": { /* event-specific, see below */ }
 }
 [inline-code-end]
 
@@ -24,7 +23,7 @@ Cada payload, independientemente del tipo de evento, tiene estos campos de nivel
 
 Esquema de `data`:
 
-[inline-code-attrs-start title = 'Esquema de datos del evento Trigger'; type='json' inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esquema de Datos del Evento Trigger'; type='json' inline-code-attrs-end]
 [inline-code-start]
 {
   "triggerId": "string",
@@ -35,32 +34,32 @@ Esquema de `data`:
   "actions": [
     {
       "type": 0,
-      "commentId": "string - opcional",
-      "userId": "string - opcional",
-      "badgeId": "string - opcional",
+      "commentId": "string - optional",
+      "userId": "string - optional",
+      "badgeId": "string - optional",
       "pending": false,
       "justification": "string",
       "confidence": 0.92
     }
   ],
-  "errorMessage": "string - presente en trigger.failed",
-  "url": "string - opcional",
-  "urlId": "string - opcional",
-  "commentId": "string - opcional"
+  "errorMessage": "string - present on trigger.failed",
+  "url": "string - optional",
+  "urlId": "string - optional",
+  "commentId": "string - optional"
 }
 [inline-code-end]
 
-`triggerType` es un enum numérico de la [lista de eventos trigger](#triggers-overview).
+`triggerType` es un enum numérico de la [lista de eventos de trigger](#triggers-overview).
 
 `actions[].type` es un enum numérico de la [lista de herramientas](#tools-overview).
 
-`actions[].pending` es `true` cuando la acción fue encolada para [aprobación](#approval-workflow) en lugar de ejecutada.
+`actions[].pending` es `true` cuando la acción se puso en cola para [aprobación](#approval-workflow) en lugar de ejecutarse.
 
 ### `approval.requested`
 
 Esquema de `data`:
 
-[inline-code-attrs-start title = 'Esquema de datos de solicitud de aprobación'; type='json' inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esquema de Datos de Approval Requested'; type='json' inline-code-attrs-end]
 [inline-code-start]
 {
   "approvalId": "string",
@@ -68,30 +67,30 @@ Esquema de `data`:
   "toolName": "ban_user | mark_comment_spam | ...",
   "actionType": 10,
   "status": "PENDING",
-  "args": { /* por herramienta, ver abajo */ },
+  "args": { /* per-tool, see below */ },
   "createdAt": "string - ISO 8601",
-  "justification": "string - opcional, razonamiento del agente",
+  "justification": "string - optional, agent reasoning",
   "confidence": 0.85,
-  "contextSnapshot": { /* el contexto del comentario/página sobre el que trata la aprobación */ }
+  "contextSnapshot": { /* the comment/page context the approval is about */ }
 }
 [inline-code-end]
 
-El objeto **`args`** es lo que haya llevado la llamada a la herramienta LLM. Su forma depende de la herramienta:
+El objeto **`args`** es lo que la llamada a la herramienta del LLM llevó. Su forma depende de la herramienta:
 
-- For `ban_user`: `{ userId, commentId, duration, shadowBan, deleteAllUsersComments?, banIP? }`.
-- For `mark_comment_spam`: `{ commentId, isSpam }`.
-- For `write_comment`: `{ comment, urlId, parentId? }`.
-- ...and so on.
+- Para `ban_user`: `{ userId, commentId, duration, shadowBan, deleteAllUsersComments?, banIP? }`.
+- Para `mark_comment_spam`: `{ commentId, isSpam }`.
+- Para `write_comment`: `{ comment, urlId, parentId? }`.
+- ...y así sucesivamente.
 
-El conjunto de formas de argumentos de las herramientas **no es un contrato público estable**. Se pueden añadir herramientas en el futuro y la plataforma pasa `args` tal cual. Los consumidores deben tratar `args` como un blob opaco a menos que entiendan explícitamente la herramienta implicada.
+El conjunto de formas de argumentos de las herramientas **no es un contrato público estable**. Se pueden añadir herramientas en el futuro y la plataforma pasa los args tal cual. Los consumidores deben tratar los args como un blob opaco a menos que entiendan explícitamente la herramienta involucrada.
 
-El **`contextSnapshot`** captura el contexto del comentario, la página y el usuario desde el que se encoló la aprobación. Su forma refleja el mensaje de contexto del trigger.
+El **`contextSnapshot`** captura el contexto de comentario, página y usuario desde el que se puso en cola la aprobación. Su forma refleja el mensaje de contexto del trigger.
 
 ### `approval.decided`
 
 Esquema de `data`:
 
-[inline-code-attrs-start title = 'Esquema de datos de decisión de aprobación'; type='json' inline-code-attrs-end]
+[inline-code-attrs-start title = 'Esquema de Datos de Approval Decided'; type='json' inline-code-attrs-end]
 [inline-code-start]
 {
   "approvalId": "string",
@@ -99,32 +98,32 @@ Esquema de `data`:
   "toolName": "ban_user | mark_comment_spam | ...",
   "actionType": 10,
   "status": "APPROVED | REJECTED | EXECUTION_FAILED",
-  "decidedBy": "string - el userId del moderador que decidió",
-  "decidedAt": "string - ISO 8601 - opcional, presente solo una vez decidido",
-  "executedAt": "string - ISO 8601 - presente cuando APPROVED y la ejecución haya finalizado",
-  "executionResult": "string - mensaje de resultado del ejecutor - presente después de la ejecución",
-  "contextSnapshot": { /* mismo que approval.requested */ }
+  "decidedBy": "string - the userId of the moderator who decided",
+  "decidedAt": "string - ISO 8601 - optional, only present once decided",
+  "executedAt": "string - ISO 8601 - present when APPROVED and execution finished",
+  "executionResult": "string - executor result message - present after execute",
+  "contextSnapshot": { /* same as approval.requested */ }
 }
 [inline-code-end]
 
-### TenantAgentAction shape
+### Forma de TenantAgentAction
 
-Inside `actions[]` on the trigger payloads, each action has:
+Dentro de `actions[]` en los payloads de trigger, cada acción tiene:
 
 [inline-code-attrs-start title = 'Esquema de TenantAgentAction'; type='json' inline-code-attrs-end]
 [inline-code-start]
 {
   "type": 0,
-  "commentId": "string - opcional",
-  "userId": "string - opcional",
-  "badgeId": "string - opcional",
+  "commentId": "string - optional",
+  "userId": "string - optional",
+  "badgeId": "string - optional",
   "pending": false,
   "justification": "string",
   "confidence": 0.92
 }
 [inline-code-end]
 
-`type` enum values match `AgentActionType`:
+Los valores del enum `type` coinciden con `AgentActionType`:
 
 - 0: `WRITE_COMMENT`
 - 1: `VOTE_COMMENT`
@@ -141,7 +140,7 @@ Inside `actions[]` on the trigger payloads, each action has:
 - 12: `WARNED_USER`
 - 13: `SAVED_MEMORY`
 
-`SEARCH_MEMORY` no aparece en `actions[]` porque es de solo lectura y no auditado.
+`SEARCH_MEMORY` no aparece en `actions[]` porque es de solo lectura y no se audita.
 
 ### Valores del enum `triggerType`
 
@@ -164,15 +163,13 @@ Inside `actions[]` on the trigger payloads, each action has:
 - 14: `COMMENT_AUTO_SPAMMED`
 - 15: `REPLAY` (interno; no se entrega a los webhooks)
 
-### Encabezados
+### Cabeceras
 
 Cada entrega incluye:
 
 - `X-FastComments-Agent-Event` - el nombre canónico del evento (`trigger.succeeded`, etc.).
-- `X-FastComments-Signature` - HMAC-SHA256 del cuerpo bruto usando tu secreto de API. Ver [Firma del webhook](#webhook-signing).
+- `X-FastComments-Signature` - HMAC-SHA256 del cuerpo sin procesar usando tu secreto de API. Ver [Firma de Webhooks](#webhook-signing).
 
 ### Estabilidad
 
-Los campos del envoltorio y los campos documentados de `data` por evento son parte del contrato público. Añadir nuevos campos opcionales a los payloads existentes está permitido y no se considera un cambio incompatible: tu consumidor debe ignorar los campos desconocidos. La forma de `args` y `contextSnapshot` **no** forma parte del contrato.
-
----
+Los campos del sobre y los campos `data` documentados por evento forman parte del contrato público. Añadir nuevos campos opcionales a los payloads existentes está permitido y no se considera un cambio disruptivo - tu consumidor debe ignorar los campos desconocidos. La forma de `args` y `contextSnapshot` **no** forma parte del contrato.

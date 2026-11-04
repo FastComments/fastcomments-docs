@@ -1,4 +1,3 @@
----
 Maintenant, copiez cet extrait de code :
 
 [code-example-start config = {}; title = 'Code d\'installation'; isFunctional = false; code-example-end]
@@ -18,5 +17,3 @@ Cela devrait ressembler à ceci dans l'éditeur :
 </div>
 
 Webnode ne rend pas les blocs HTML dans l'éditeur, vous verrez donc un espace réservé indiquant que le contenu ne peut pas être affiché pour des raisons de sécurité. C’est prévu. Le widget de commentaire n’apparaît que lorsque vous publiez, ce que nous ferons ensuite.
-
----

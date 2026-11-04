@@ -1,4 +1,3 @@
----
 Оттегляне на глас. Опцията, върху която е даден, връща обратно своя брой.
 
 ## Параметри
@@ -33,5 +32,3 @@ DefaultAPI.deletePollVote(tenantId: tenantId, id: id) { (response, error) in
     }
 }
 [inline-code-end]
-
----

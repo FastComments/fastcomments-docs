@@ -8,5 +8,3 @@
 ## השתתפות
 
 תרומות מתקבלות בברכה! אנא בקרו ב-[מאגר ה-GitHub](https://github.com/FastComments/fastcomments-solidjs) להנחיות לתרומה.
-
----

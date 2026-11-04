@@ -1,4 +1,3 @@
----
 您可能会遇到如下授权错误：
 
 <div class="screenshot white-bg">
@@ -13,4 +12,3 @@
 [在此将您的站点添加到您的帐户。](https://fastcomments.com/auth/my-account/configure-domains)
 
 现在，您的网站应该已经添加了快速、实时的评论功能！
----

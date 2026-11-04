@@ -25,5 +25,3 @@ api->getLogs(tenantId, commentId, sso).then([](pplx::task<std::shared_ptr<Modera
     }
 });
 [inline-code-end]
-
----

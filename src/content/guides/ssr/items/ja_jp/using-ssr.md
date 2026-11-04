@@ -1,16 +1,16 @@
-FastComments SSR を使用するには、クライアントが `https://fastcomments.com/ssr/comments` エンドポイントから HTML を取得できます。
+FastComments SSR を利用するには、クライアントが `https://fastcomments.com/ssr/comments` エンドポイントから HTML を取得します。
 
-これはいくつかの方法で行うことができます。
+これにはいくつかの方法があります。
 
-### With WordPress
+### WordPress の場合
 
-SSR は、WordPress プラグインのフォールバックとして JS が無効なユーザー向けにバージョン `3.10.2` 以降でデフォルトで有効になっています。
+WordPress プラグインでは、バージョン `3.10.2` 以降、JS が無効なユーザー向けのフォールバックとして、SSR がデフォルトで有効になっています。
 
-### In a Webpage
+### Web ページの場合
 
-既存のアプリケーションでも、使用言語が PHP と仮定すると、[以下の例](https://github.com/FastComments/fastcomments-code-examples/tree/master/sso/php/ssr) を使って SSR を追加できます:
+既存のアプリケーションでは、使用している言語が PHP であると仮定して、[次の例](https://github.com/FastComments/fastcomments-code-examples/tree/master/sso/php/ssr)のように SSR を追加できます。
 
-[inline-code-attrs-start title = 'PHPベースのSSR例'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'PHP を使用した SSR の例'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 $tenantId = rawurlencode("my-tenant-id");
@@ -31,9 +31,9 @@ $fastcomments_url = "https://fastcomments.com/ssr/comments?tenantId=$tenantId&ur
 ></iframe>
 [inline-code-end]
 
-ユーザーが JS を無効にしている場合のみ SSR UI を表示することもできます:
+ユーザーが JS を無効にしている場合にのみ SSR UI を表示することもできます:
 
-[inline-code-attrs-start title = 'PHPベースのSSRフォールバック例'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'PHP を使用した SSR フォールバックの例'; type = 'php'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 <?php
 $tenantId = rawurlencode("my-tenant-id");
@@ -56,27 +56,27 @@ $fastcomments_url = "https://fastcomments.com/ssr/comments?tenantId=$tenantId&ur
 </noscript>
 [inline-code-end]
 
-SSO を使用した例については、[こちらを参照してください](https://github.com/FastComments/fastcomments-code-examples/tree/master/sso/php/ssr)。
+SSO を使用した例については、[こちら](https://github.com/FastComments/fastcomments-code-examples/tree/master/sso/php/ssr)を参照してください。
 
-### With Pre-Rendered Content
+### 事前レンダリングされたコンテンツの場合
 
-当社のブログはビルド時に生成されており、Handlebars を使った SSR の[良い例](https://github.com/FastComments/fastcomments-blog/blob/master/src/templates/post.html#L51) を示しています。
+私たちのブログはビルド時に生成されており、[Handlebars を使用した SSR の良い例](https://github.com/FastComments/fastcomments-blog/blob/master/src/templates/post.html#L51)を提供しています。
 
-### The Basic Parameters
+### 基本パラメーター
 
-渡す必要がある基本的なパラメータは次のとおりです:
-- `tenantId` - これはあなたを顧客として識別します。
-- `urlId` - これはコメントを読み込むページや記事を識別し、保存先を定義します。
-- `url` - これは通知や関連機能でコメントスレッドに戻るリンクとして使用されます。
+渡す必要がある基本パラメーターは以下の通りです:
+- `tenantId` - 顧客としてあなたを識別します。
+- `urlId` - コメントを読み込むページまたは記事を識別し、コメントの保存先を定義します。
+- `url` - 通知や関連機能でコメントスレッドへのリンクに使用されます。
 
-### Custom Styling
+### カスタムスタイリング
 
-コメントウィジェットの SSR バージョンは、JavaScript のものと同じ構造およびレンダリングエンジンを使用します。
+コメントウィジェットの SSR 版は、JavaScript 版と同じ構造とレンダリングエンジンを使用しています。
 
-したがって、JavaScript コメントウィジェットで動作するすべてのカスタムスタイリングは SSR でも動作します。 
+そのため、JavaScript コメントウィジェットで機能するすべてのカスタムスタイリングは、SSR でも機能します。
 
-### Notes
+### 注意事項
 
-SSR では、レンダリングされたコンテナの高さを制御する JavaScript がありません。ブラウザでは、長い議論の場合に垂直スクロールバーが表示されることがあります。
+SSR では、レンダリングされたコンテナの高さを制御する JavaScript がありません。ブラウザでは、長いディスカッションの場合に垂直スクロールバーが表示されることがあります。
 
-そのため、必要に応じてこれを調整してください。
+そのため、必要に応じて調整する必要があります。

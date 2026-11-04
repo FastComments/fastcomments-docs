@@ -29,5 +29,3 @@ try {
     print('Exception when calling DefaultApi->addHashTag: $e\n');
 }
 [inline-code-end]
-
----

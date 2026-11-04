@@ -8,5 +8,3 @@
 ## Внесок
 
 Внески вітаються! Будь ласка, відвідайте [репозиторій на GitHub](https://github.com/FastComments/fastcomments-java) для інструкцій щодо внесків.
-
----

@@ -10,5 +10,3 @@ Questo perché FastComments non sa che deve consentire l'utilizzo del tuo accoun
 In questo caso, la soluzione è semplice. Devi semplicemente aggiungere il tuo sito al tuo account FastComments.com.
 
 [Vai qui per aggiungere il tuo sito al tuo account.](https://fastcomments.com/auth/my-account/configure-domains)
-
----

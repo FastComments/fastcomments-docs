@@ -8,5 +8,3 @@
 ## Допринес
 
 Доприноси су добродошли! Молимо посетите [GitHub репозиторијум](https://github.com/FastComments/fastcomments-sdk-js) за смернице за допринос.
-
----

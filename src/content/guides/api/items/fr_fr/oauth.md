@@ -189,5 +189,3 @@ curl --request POST \
 Révoquer un jeton de rafraîchissement révoque chaque jeton d'accès émis à partir du même octroi. Révoquer un jeton d'accès ne révoque que ce jeton. Le point de terminaison renvoie HTTP 200 avec un objet JSON vide que le jeton soit trouvé ou non, selon la RFC 7009.
 
 Les utilisateurs peuvent également révoquer une connexion depuis **Connected Apps** dans le tableau de bord FastComments. Tous les jetons pour cette application cessent de fonctionner immédiatement.
-
----

@@ -1,44 +1,44 @@
-A `FeedPost` object represents a post in a FastComments feed. A feed is a stream of posts with their own comment threads, rendered by the Feed widget. Every post has an author, optional rich content, media, and links, and can be tagged so that a feed can be filtered.
+Een `FeedPost`-object vertegenwoordigt een bericht in een FastComments-feed. Een feed is een stroom van berichten met hun eigen commentaarthreads, gerenderd door de Feed-widget. Elk bericht heeft een auteur, optionele rich content, media en links, en kan worden getagd zodat een feed kan worden gefilterd.
 
-The structure for the `FeedPost` object is as follows:
+De structuur van het `FeedPost`-object is als volgt:
 
-[inline-code-attrs-start title = 'FeedPost-structuur'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'FeedPost Structuur'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface FeedPost {
-    /** ALLEEN-LEZEN **/
+    /** READONLY **/
     _id: string
-    /** ALLEEN-LEZEN **/
+    /** READONLY **/
     tenantId: string
     title?: string
-    /** De id van de FastComments- of SSO-gebruiker die het bericht heeft geschreven. **/
+    /** The id of the FastComments or SSO user that authored the post. **/
     fromUserId?: string
-    /** Gevuld vanuit de gebruiker wanneer niet ingesteld. **/
+    /** Filled from the user when not set. **/
     fromUserDisplayName?: string | null
-    /** ALLEEN-LEZEN. Gevuld vanuit de gebruiker. **/
+    /** READONLY. Filled from the user. **/
     fromUserAvatar?: string | null
-    /** Gebruikt om een feed te filteren. **/
+    /** Used to filter a feed. **/
     tags?: string[]
-    /** Sorteergewicht binnen een feed. Hogere waarden sorteren eerst. **/
+    /** Sort weight within a feed. Higher values sort first. **/
     weight?: number
-    /** Vrije sleutel/waarde-paren voor eigen gebruik. **/
+    /** Free-form key/value pairs for your own use. **/
     meta?: Record<string, string>
-    /** Gesaniteerde HTML. **/
+    /** Sanitized HTML. **/
     contentHTML?: string
     media?: FeedPostMediaItem[]
     links?: FeedPostLink[]
-    /** ALLEEN-LEZEN **/
+    /** READONLY **/
     createdAt: string
-    /** ALLEEN-LEZEN. Reactietype om te tellen. **/
+    /** READONLY. Reaction type to count. **/
     reacts?: Record<string, number>
-    /** ALLEEN-LEZEN **/
+    /** READONLY **/
     commentCount?: number | null
 }
 
 interface FeedPostMediaItem {
     title?: string
-    /** Waar het media-item naartoe linkt wanneer erop geklikt wordt. **/
+    /** Where the media item links to when clicked. **/
     linkUrl?: string
-    /** Eén entry per weergave. De widget kiest de beste. **/
+    /** One entry per rendition. The widget picks the best fit. **/
     sizes: FeedPostMediaItemAsset[]
 }
 
@@ -49,17 +49,17 @@ interface FeedPostMediaItemAsset {
 }
 
 interface FeedPostLink {
-    /** De linktekst, zoals "Meld je nu aan". **/
+    /** The link text, like "Sign up now". **/
     text?: string
-    /** Een kop die wordt getoond bij de link. **/
+    /** A heading shown with the link. **/
     title?: string
-    /** Een beschrijving die wordt getoond bij de link. **/
+    /** A description shown with the link. **/
     description?: string
     url?: string
 }
 [inline-code-end]
 
-Notes:
+Opmerkingen:
 
-- Sommige van deze velden zijn gemarkeerd als `ALLEEN-LEZEN` - deze worden door de API geretourneerd maar kunnen niet worden ingesteld.
-- De opmerkingen op een bericht zijn reguliere opmerkingen waarvan de `urlId` `post:` is, gevolgd door de bericht `_id`. Gebruik die waarde met de Comment API om opmerkingen op een bericht te lezen of te maken.
+- Sommige van deze velden zijn gemarkeerd als `READONLY` - deze worden door de API geretourneerd maar kunnen niet worden ingesteld.
+- De comments op een bericht zijn gewone comments waarvan de `urlId` `post:` is gevolgd door de `_id` van het bericht. Gebruik die waarde met de Comment API om comments op een bericht te lezen of aan te maken.

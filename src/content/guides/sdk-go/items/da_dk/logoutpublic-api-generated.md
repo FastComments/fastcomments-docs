@@ -1,4 +1,3 @@
----
 ## Svar
 
 Returnerer: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-go/blob/master/client/model_api_empty_response.go)
@@ -29,5 +28,3 @@ func main() {
 	fmt.Fprintf(os.Stdout, "Response from `PublicAPI.LogoutPublic`: %v\n", resp)
 }
 [inline-code-end]
-
----

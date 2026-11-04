@@ -113,5 +113,3 @@ interface QuestionResultsCombineCommentsResponse {
 - Gdy podano `forceRecalculate`, koszt zawsze wynosi `10`, zamiast normalnego `2`.
 - Jeśli pamięć podręczna wygaśnie i dane zostaną przeliczone, koszt nadal wynosi `2`, jeśli nie podano `forceRecalculate`.
 - Ma to na celu zachęcenie do korzystania z pamięci podręcznej.
-
----

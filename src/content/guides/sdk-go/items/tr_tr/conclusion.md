@@ -8,5 +8,3 @@ Go SDK ile ilgili herhangi bir sorunla karşılaşırsanız veya sorularınız v
 ## Katkıda Bulunma
 
 Katkılar memnuniyetle karşılanır! Katkı yönergeleri için lütfen [GitHub deposunu](https://github.com/FastComments/fastcomments-go) ziyaret edin.
-
----

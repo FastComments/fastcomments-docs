@@ -1,4 +1,3 @@
----
 ### Installation aus dem Shopify App Store
 
 1. Öffnen Sie das [FastComments listing on the Shopify App Store](https://apps.shopify.com/fastcomments).

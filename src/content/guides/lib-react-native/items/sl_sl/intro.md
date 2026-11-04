@@ -5,5 +5,3 @@ Vdelajte gradnike za komentiranje v živo, klepet in recenzije v vašo aplikacij
 ## Repozitorij
 
 [Ogled na GitHubu](https://github.com/FastComments/fastcomments-react-native)
-
----

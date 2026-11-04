@@ -1,14 +1,14 @@
 [related-parameter-start name = 'enableSpoilers'; type = 'boolean'; related-parameter-end]
 
-We can enable spoiler support by setting the **enableSpoilers** flag to true:
+We kunnen spoiler-ondersteuning inschakelen door de vlag **enableSpoilers** op true te zetten:
 
 [code-example-start config = {enableSpoilers: true}; linesToHighlight = [6]; title = 'Spoilers inschakelen'; code-example-end]
 
-This can also be done without code. In the widget customization page, see the "Enable Spoilers" option.
+Dit kan ook zonder code. Zie op de widget-aanpassingspagina de optie "Enable Spoilers".
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-spoilers']; selector = '.enable-spoilers'; alt='Widget-aanpassingspagina met het selectievakje Spoilers inschakelen aangevinkt om de SPOILER-knop aan de editor toe te voegen'; title='Spoilers inschakelen' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.enable-spoilers']; selector = '.enable-spoilers'; alt='Widget-aanpassingspagina met het selectievakje Enable Spoilers aangevinkt om de SPOILER-knop aan de editor toe te voegen'; title='Enable Spoilers' app-screenshot-end]
 
-When text is highlighted, and the now visible `SPOILER` button is clicked, text will be masked until the user mouses over it. For dark mode we do the same thing, with different
-colors that better match dark mode.
+Wanneer tekst is gemarkeerd en de nu zichtbare `SPOILER`-knop wordt aangeklikt, wordt de tekst gemaskeerd totdat de gebruiker er met de muis overheen beweegt. Voor de donkere modus doen we hetzelfde, met andere
+kleuren die beter passen bij de donkere modus.
 
-This is also compatible with the WYSIWYG editor.
+Dit is ook compatibel met de WYSIWYG-editor.

@@ -1,4 +1,3 @@
----
 Zabilježite glas na anketi ili premjestite postojeći glas na drugu opciju. Glasač ima najviše jedan glas po anketi, pa ponovno pozivanje ove funkcije za istog glasača premješta njihov glas umjesto da doda novi.
 
 Ovo poštuje postavke ankete na stranici: ako je glasanje omogućeno samo za prijavljene korisnike, glas s samo anonUserId-om se odbija, a anonimni glasovi su ograničeni po IP-u po anketi.
@@ -31,5 +30,3 @@ Vraća: [`CreatePollVoteResponse`](https://github.com/FastComments/fastcomments-
   console.log(result);
 })();
 [inline-code-end]
-
----

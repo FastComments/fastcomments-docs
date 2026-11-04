@@ -1,4 +1,3 @@
----
 [related-parameter-start name = 'enableCommenterLinks'; type = 'boolean'; related-parameter-end]
 
 Подразумевано, FastComments ће тражити од корисника само њихов коментар, корисничко име и имејл.
@@ -14,5 +13,3 @@
 Ово се може прилагодити без кода, на страници за прилагођавање виџета:
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.click-to-show-comments', '.commenter-links']; selector = '.commenter-links'; alt='Widget customization page with the commenter links checkbox checked to add a website URL field to the comment form'; title='Enabling Commenter Links' app-screenshot-end]
-
----

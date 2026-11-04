@@ -24,5 +24,3 @@ if approvedOpt.isSome:
   let approved = approvedOpt.get()
   echo approved
 [inline-code-end]
-
----

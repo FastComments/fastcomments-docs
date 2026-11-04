@@ -28,5 +28,3 @@ interface PageDeleteResponse {
     reason?: string
 }
 [inline-code-end]
-
----

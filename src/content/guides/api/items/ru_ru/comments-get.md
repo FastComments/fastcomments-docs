@@ -1,89 +1,90 @@
 [api-resource-header-start name = 'Comment'; route = 'GET /api/v1/comments'; creditsCost = 1; api-resource-header-end]
 
-Этот API используется для получения комментариев для отображения пользователю. Например, он автоматически фильтрует неутверждённые или спам‑комментарии.
+Этот API используется для получения комментариев для отображения пользователю. Например, он автоматически отфильтровывает
+неодобренные и спам-комментарии.
 
-### Pagination
+### Пагинация
 
-Пагинацию можно выполнить одним из двух способов, в зависимости от требований к производительности и сценария использования:
+Пагинация может выполняться одним из двух способов, в зависимости от требований к производительности и сценария использования:
 
-1. **Самый быстрый:** **Precalculated Pagination**:
+1. Самый быстрый: **Предвычисленная пагинация (Precalculated Pagination)**:
    1. Так работает FastComments, когда вы используете наши готовые виджеты и клиенты.
-   2. Нажатие «next» просто увеличивает номер страницы.
-   3. Можно представить это как получение из хранилища ключ‑значение.
-   4. Таким образом, просто задайте параметр `page`, начиная с `0`, и направление сортировки как `direction`.
+   2. Нажатие «далее» просто увеличивает номер страницы.
+   3. Это можно представить как получение данных из хранилища «ключ-значение».
+   4. В этом случае просто задайте параметр `page`, начиная с `0`, и направление сортировки как `direction`.
    5. Размеры страниц можно настраивать с помощью правил кастомизации.
-2. **Самый гибкий:** **Flexible Pagination**:
-   1. Таким образом вы можете задать пользовательские параметры `limit` и `skip`. Не передавайте `page`.
-   2. Сортировка `direction` также поддерживается.
-   3. `limit` — общее количество элементов, которое следует вернуть после применения `skip`.
-      - Пример: установите `skip = 200, limit = 100`, когда `page size = 100` и `page = 2`.
-   4. Дочерние комментарии всё ещё учитываются в пагинации. Можно обойти это, используя опцию `asTree`.
-      - Можно пагинировать дочерние элементы с помощью `limitChildren` и `skipChildren`.
-      - Можно ограничить глубину возвращаемых веток с помощью `maxTreeDepth`.
+2. Самый гибкий: **Гибкая пагинация (Flexible Pagination)**:
+   1. В этом случае вы можете задать собственные параметры `limit` и `skip`. Не передавайте `page`.
+   2. Направление сортировки `direction` также поддерживается.
+   3. `limit` — это общее количество возвращаемых записей после применения `skip`.
+      - Пример: задайте `skip = 200, limit = 100` при `page size = 100` и `page = 2`.
+   4. Дочерние комментарии также учитываются в пагинации. Обойти это можно с помощью опции `asTree`.
+      - Дочерние комментарии можно пагинировать через `limitChildren` и `skipChildren`.
+      - Глубину возвращаемых веток можно ограничить через `maxTreeDepth`.
 
-### Threads
+### Ветки (Threads)
 
-1. При использовании `Precalculated Pagination` комментарии группируются по *странице*, и комментарии в ветках влияют на общую страницу.
-   1. Таким образом, ветки можно определить на клиенте, основываясь на `parentId`.
-   2. Например, на странице с одним корневым комментарием и 29 ответами, при установке `page=0` в API вы получите только корневый комментарий и 29 дочерних.
+1. При использовании `Precalculated Pagination` комментарии группируются по *страницам*, и комментарии в ветках влияют на страницу в целом.
+   1. В этом случае ветки могут определяться на клиенте на основе `parentId`.
+   2. Например, для страницы с одним комментарием верхнего уровня и 29 ответами при установке `page=0` в API — вы получите только комментарий верхнего уровня и 29 дочерних комментариев.
 2. При использовании `Flexible Pagination` вы можете задать параметр `parentId`.
-   1. Установите его в null, чтобы получать только корневые комментарии.
-   2. Затем, чтобы просмотреть ветки, вызовите API снова и передайте `parentId`.
-   3. Распространённое решение — выполнить запрос API для корневых комментариев, а затем параллельно запросить комментарии для дочерних элементов каждого комментария.
-3. __NEW С февраля 2023!__ Получайте в виде дерева, используя `&asTree=true`.
-   1. Можно рассматривать это как `Flexible Pagination as a Tree`.
-   2. Только корневые комментарии учитываются в пагинации.
-   3. Установите `parentId=null`, чтобы начать дерево с корня (необходимо задать `parentId`).
-   4. Задайте `skip` и `limit` для пагинации.
+   1. Установите его в null, чтобы получить только комментарии верхнего уровня.
+   2. Затем для просмотра веток снова вызовите API, передав `parentId`.
+   3. Распространённое решение — сделать вызов API для комментариев верхнего уровня, а затем параллельные вызовы API для получения комментариев дочерних элементов каждого комментария.
+3. __НОВОЕ с февраля 2023!__ Получение в виде дерева с помощью `&asTree=true`.
+   1. Это можно представить как `Flexible Pagination as a Tree`.
+   2. В пагинации учитываются только комментарии верхнего уровня.
+   3. Установите `parentId=null`, чтобы начать дерево с корня (вы должны установить `parentId`).
+   4. Установите `skip` и `limit` для пагинации.
    5. Установите `asTree` в `true`.
-   6. Стоимость в кредитах увеличивается в `2x`, так как наш бекенд должен выполнить гораздо больше работы в этом сценарии.
-   7. Установите `maxTreeDepth`, `limitChildren` и `skipChildren` по необходимости.
+   6. Стоимость в кредитах увеличивается в `2x` раза, так как наш бэкенд выполняет гораздо больше работы в этом сценарии.
+   7. Установите `maxTreeDepth`, `limitChildren` и `skipChildren` по мере необходимости.
 
-### Trees Explained
+### Деревья: пояснение
 
-При использовании `asTree` может быть сложно понять пагинацию. Вот удобная графика:
+При использовании `asTree` пагинацию бывает сложно представить. Вот наглядная схема:
 
 <div class="screenshot white-bg">
-    <div class="title">Диаграмма пагинации дерева</div>
-    <img class="screenshot-image" src="/images/fastcomments-comments-api-tree.png" alt="Диаграмма пагинации дерева" />
+    <div class="title">Диаграмма пагинации в виде дерева</div>
+    <img class="screenshot-image" src="/images/fastcomments-comments-api-tree.png" alt="Диаграмма пагинации в виде дерева" />
 </div>
 
-### Fetching Comments in The Context of a User
+### Получение комментариев в контексте пользователя
 
-API `/comments` может использоваться в двух контекстах для разных сценариев:
+API `/comments` может использоваться в двух контекстах, для разных сценариев:
 
-- Для возврата комментариев, отсортированных и помеченных информацией для построения собственного клиента.
+- Для возврата комментариев, отсортированных и снабжённых информацией для создания собственного клиента.
   - В этом случае задайте параметр запроса `contextUserId`.
-- Для получения комментариев из вашего бекенда для пользовательских интеграций.
-  - Платформа будет использовать это по умолчанию без `contextUserId`.
+- Для получения комментариев из вашего бэкенда для кастомных интеграций.
+  - Платформа по умолчанию использует этот режим без `contextUserId`.
 
-[inline-code-attrs-start title = 'Комментарии с предрассчитанной пагинацией'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Предвычисленная пагинация комментариев'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/comments?tenantId=demo&page=0&urlId=test&API_KEY=DEMO_API_SECRET&direction=MR'
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Комментарии с гибкой пагинацией'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Гибкая пагинация комментариев'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/comments?tenantId=demo&urlId=test&API_KEY=DEMO_API_SECRET&direction=MR&skip=20&limit=10'
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Комментарии с гибкой пагинацией в контексте пользователя'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Гибкая пагинация комментариев в контексте пользователя'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/comments?tenantId=demo&urlId=test&API_KEY=DEMO_API_SECRET&direction=MR&skip=20&limit=10&contextUserId=my-user-id'
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Комментарии с гибкой пагинацией в контексте пользователя только для комментариев верхнего уровня'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Гибкая пагинация комментариев в контексте пользователя, только комментарии верхнего уровня'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/comments?tenantId=demo&urlId=test&API_KEY=DEMO_API_SECRET&direction=MR&skip=20&limit=10&contextUserId=my-user-id&parentId=null'
 [inline-code-end]
 
-### Get Comments as a Tree
+### Получение комментариев в виде дерева
 
-Можно получить комментарии в виде дерева, при этом в пагинацию учитываются только корневые комментарии.
+Можно получить комментарии в виде дерева, где в пагинации учитываются только комментарии верхнего уровня.
 
 [inline-code-attrs-start title = 'Комментарии в виде дерева в контексте пользователя'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -91,7 +92,7 @@ curl --request GET \
   --url 'https://fastcomments.com/api/v1/comments?tenantId=demo&urlId=test&API_KEY=DEMO_API_SECRET&direction=MR&skip=20&limit=10&contextUserId=my-user-id&parentId=null&asTree=true'
 [inline-code-end]
 
-Хотите получить только корневые комментарии и их непосредственных потомков? Вот один из способов:
+Хотите получить только комментарии верхнего уровня и непосредственные ответы? Вот один из способов:
 
 [inline-code-attrs-start title = 'Комментарии в виде дерева с максимальной глубиной'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -99,87 +100,86 @@ curl --request GET \
   --url 'https://fastcomments.com/api/v1/comments?tenantId=demo&urlId=test&API_KEY=DEMO_API_SECRET&direction=MR&skip=20&limit=10&contextUserId=my-user-id&parentId=null&asTree=true&maxTreeDepth=1&limitChildren=10'
 [inline-code-end]
 
-Однако в вашем UI может потребоваться знать, показывать ли кнопку «показать ответы» у каждого комментария. При получении комментариев в виде дерева к комментариям добавляется свойство `hasChildren`, если это применимо.
+Однако в вашем интерфейсе может потребоваться знать, показывать ли кнопку «показать ответы»
+на каждом комментарии. При получении комментариев в виде дерева к комментариям, где это применимо, добавляется свойство `hasChildren`.
 
-### Get Comments as a Tree, Searching by Hash Tag
+### Получение комментариев в виде дерева с поиском по хэштегу
 
-Можно выполнять поиск по хештегу с помощью API по всему вашему арендатору (не ограничено одной страницей или `urlId`).
+С помощью API можно выполнять поиск по хэштегу во всём вашем тенанте (не ограничиваясь одной страницей или `urlId`).
 
-В этом примере мы опускаем `urlId` и ищем по нескольким хештегам. API вернёт только те комментарии, которые содержат все запрошенные хештеги.
+В этом примере мы опускаем `urlId` и выполняем поиск по нескольким хэштегам. API вернёт только те комментарии, которые содержат все запрошенные хэштеги.
 
-[inline-code-attrs-start title = 'Комментарии в виде дерева в контексте пользователя, по хештегу'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Комментарии в виде дерева в контексте пользователя, по хэштегу'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/comments?tenantId=demo&API_KEY=DEMO_API_SECRET&direction=MR&skip=20&limit=10&contextUserId=my-user-id&parentId=null&asTree=true&hashTag=TestTag&hashTag=OtherTestTag'
 [inline-code-end]
 
-### All Request Params
+### Все параметры запроса
 
 [inline-code-attrs-start title = 'Структура запроса комментариев'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface CommentsRequestQueryParams {
     tenantId: string
     API_KEY: string
-    /** urlId (URL страницы или идентификатор статьи), с которым связаны комментарии. **/
+    /** The urlId (page url, or article id) the comments are associated with. **/
     urlId?: string
-    /** Ограничить комментарии, возвращаемые этим пользователем. **/
+    /** Limit the comments returned by this user. **/
     userId?: string
-    /** Используйте это для поиска по хештегу. Чтобы сузить до пересечения нескольких хештегов, используйте &hashTag=a&hashTag=b. **/
+    /** Use this to search by hashtag. To drill down to the intersection of multiple hashtags, do &hashTag=a&hashTag=b. **/
     hashTag?: string
-    /** Направление сортировки. По умолчанию MR (Most Relevant). Другие варианты: OF (Oldest First) и NF (Newest First). **/
+    /** The sort direction. Default is MR (Most Relevant). Other options are OF (Oldest First) and NF (Newest First). **/
     direction?: 'MR' | 'OF' | 'NF'
-    /** Precalculated Pagination: Страница для получения, начиная с 0. Передайте -1 для всех комментариев (до 250). **/
+    /** Precalculated Pagination: The page to fetch, starting with 0. Pass -1 for all comments (up to 250). **/
     page?: number
-    /** Flexible Pagination: Сколько комментариев следует вернуть? **/
+    /** Flexible Pagination: How many comments should we return? **/
     limit?: number
-    /** Flexible Pagination: Сколько дочерних комментариев вернуть для каждого родителя? **/
+    /** Flexible Pagination: How many child comments should we return for each parent? **/
     limitChildren?: number
-    /** Flexible Pagination: Сколько комментариев следует пропустить? **/
+    /** Flexible Pagination: How many comments should we skip? **/
     skip?: number
-    /** Flexible Pagination: Сколько дочерних комментариев следует пропустить для каждого родителя? **/
+    /** Flexible Pagination: How many child comments should we skip for each parent? **/
     skipChildren?: number
-    /** Для определения заблокированных и отмеченных комментариев. **/
+    /** For determining blocked and flagged comments. **/
     contextUserId?: string
-    /** Для определения заблокированных и отмеченных комментариев. **/
+    /** For determining blocked and flagged comments. **/
     anonUserId?: string
-    /** Для получения дочерних комментариев. **/
+    /** For fetching child comments. **/
     parentId?: string
-    /** Для получения в виде дерева. **/
+    /** For fetching as a tree. **/
     asTree?: boolean
-    /** Насколько глубоко в дерево следует возвращать данные? 0 — без дочерних элементов. 1 — только непосредственные дочерние, и т.д. **/
+    /** How far into the tree should we return data? 0 returns no children. 1 returns immediate children, etc. **/
     maxTreeDepth?: number
 }
 [inline-code-end]
 
-### The Response
+### Ответ
 
 [inline-code-attrs-start title = 'Структура ответа комментариев'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface CommentsResponse {
     status: 'success' | 'failed'
-    /** Присутствует при ошибке. **/
+    /** Included on failure. **/
     code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'missing-url-id' | 'missing-date' | 'unauthorized-page' | 'invalid-pagination-request' | 'invalid-limit' | 'invalid-limit-children' | 'invalid-skip' | 'invalid-skip-children' | 'invalid-max-tree-depth'
-    /** Присутствует при ошибке. **/
+    /** Included on failure. **/
     reason?: string
-    /** Комментарии! **/
+    /** The comments! **/
     comments: Comment[]
 }
 [inline-code-end]
 
-### Helpful Tips
+### Полезные советы
 
 #### URL ID
 
-Вероятно, вам следует использовать API `Comment` с параметром `urlId`. Вы можете сначала вызвать API `Pages`, чтобы увидеть, какие значения `urlId` доступны.
+Вероятно, вы захотите использовать API `Comment` с параметром `urlId`. Вы можете сначала вызвать API `Pages`, чтобы посмотреть, как выглядят доступные вам значения `urlId`.
 
-#### Anonymous Actions
+#### Анонимные действия
 
-Для анонимных комментариев, вероятно, вам следует передавать `anonUserId` при получении комментариев, а также при пометке и блокировке.
+Для анонимного комментирования вам, вероятно, потребуется передавать `anonUserId` при получении комментариев, а также при отправке жалоб и блокировке.
 
-(!) Это требуется во многих магазинах приложений, поскольку пользователи должны иметь возможность помечать пользовательский контент, который они видят, даже если они не вошли в систему. Отсутствие этой возможности может привести к удалению вашего приложения из соответствующего магазина.
+(!) Это требуется во многих магазинах приложений, так как пользователи должны иметь возможность отправлять жалобы на видимый им пользовательский контент, даже если они не авторизованы. Несоблюдение этого требования может привести к удалению вашего приложения из соответствующего магазина.
 
-#### Comments Not Being Returned
+#### Комментарии не возвращаются
 
-Убедитесь, что ваши комментарии одобрены и не являются спамом.
-
----
+Проверьте, что ваши комментарии одобрены и не помечены как спам.

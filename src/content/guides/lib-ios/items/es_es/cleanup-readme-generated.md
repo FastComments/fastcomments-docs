@@ -1,4 +1,3 @@
----
 Cuando haya terminado con una instancia del SDK (por ejemplo, cuando se descarta la vista), llame a `cleanup()` para cerrar la conexión WebSocket y cancelar tareas en segundo plano:
 
 ```swift

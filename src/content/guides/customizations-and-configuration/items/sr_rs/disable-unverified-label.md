@@ -1,4 +1,3 @@
----
 [related-parameter-start name = 'disableUnverifiedLabel'; type = 'boolean'; related-parameter-end]
 
 Подразумевано, FastComments ће приказати ознаку „Неоверификован коментар“ за коментаре који су остављени за корисника који има неоверификовану сесију прегледача. Прочитајте више о неоверификованом коментарисању [овде](https://docs.fastcomments.com/guide-comment-vote-verification.html).

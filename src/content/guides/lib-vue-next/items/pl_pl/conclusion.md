@@ -8,5 +8,3 @@ Jeśli napotkasz jakiekolwiek problemy lub masz pytania dotyczące biblioteki Vu
 ## Wkład
 
 Wkład jest mile widziany! Odwiedź [repozytorium GitHub](https://github.com/FastComments/fastcomments-vue-next) aby zapoznać się z wytycznymi dotyczącymi wkładu.
-
----

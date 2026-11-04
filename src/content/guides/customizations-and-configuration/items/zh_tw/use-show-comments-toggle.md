@@ -17,5 +17,3 @@
 可以透過建立自訂規則並啟用「點擊以顯示評論」來在不撰寫程式碼的情況下啟用此功能：
 
 [app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelectors = ['.click-to-show-comments']; selector = '.click-to-show-comments'; alt='在小工具自訂頁面中，已勾選「點擊以顯示評論」的核取方塊的自訂規則'; title='啟用點擊以顯示評論' app-screenshot-end]
-
----

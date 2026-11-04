@@ -35,5 +35,3 @@ stran navedena in omejena pred prvim komentarjem.
 
 **Arhiviraj izbrisane komentarje.** Izbrisan komentar, nato Airtable "Create Record" s celotnim komentarjem za
 skladnost in hrambo.
-
----

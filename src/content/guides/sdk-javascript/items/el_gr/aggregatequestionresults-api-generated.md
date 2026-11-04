@@ -1,4 +1,3 @@
----
 ## Παράμετροι
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
@@ -38,5 +37,3 @@ async function runAggregation() {
   );
 }
 [inline-code-end]
-
----

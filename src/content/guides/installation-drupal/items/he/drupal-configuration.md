@@ -1,41 +1,41 @@
-All settings live under `Administration > Configuration > Content > FastComments` (`/admin/config/content/fastcomments`).
+כל ההגדרות נמצאות תחת `Administration > Configuration > Content > FastComments` (`/admin/config/content/fastcomments`).
 
 ## נדרש
 
-- **Tenant ID** - מזהה השוכר שלך ב‑FastComments. מצא זאת תחת [Settings > API/SSO](https://fastcomments.com/auth/my-account/api) ([EU](https://eu.fastcomments.com/auth/my-account/api)).
-- **API Secret** - נדרש עבור Secure SSO, אימות webhook, וסנכרון דף. נמצא תחת [Settings > API/SSO](https://fastcomments.com/auth/my-account/api) ([EU](https://eu.fastcomments.com/auth/my-account/api)).
+- **מזהה דייר (Tenant ID)** - מזהה הדייר שלך ב-FastComments. ניתן למצוא אותו תחת [Settings > API/SSO](https://fastcomments.com/auth/my-account/api) ([EU](https://eu.fastcomments.com/auth/my-account/api)).
+- **סוד API (API Secret)** - נדרש עבור SSO מאובטח, אימות webhooks וסנכרון דפים. נמצא תחת [Settings > API/SSO](https://fastcomments.com/auth/my-account/api) ([EU](https://eu.fastcomments.com/auth/my-account/api)).
 
-## שמירת סוד ה‑API
+## אחסון סוד ה-API
 
-The module reads the API Secret from the first of these sources that has a value:
+המודול קורא את סוד ה-API מהמקור הראשון מבין אלה שיש לו ערך:
 
-1. **Key module** - התקן את [Key](https://www.drupal.org/project/key), צור מפתח *Authentication*, ובחר אותו תחת **API Secret key** בטופס ההגדרות. המפתח יכול להיות מגובה במשתנה סביבתי או בקובץ מחוץ לשורש האינטרנט.
-2. **settings.php** - הוסף `$config['fastcomments.settings']['api_secret'] = 'your-secret';` ל‑`settings.php` או `settings.local.php`. הסוד לעולם לא נכנס לתצורת הייצוא.
-3. **The settings form** - הזן אותו בשדה **API Secret**. זה מאחסן את הערך ב‑`fastcomments.settings`, ולכן הוא מופיע בייצואי התצורה. דוח המצב של Drupal מזהיר כאשר זהו המקור הפעיל.
+1. **מודול Key** - התקן את [Key](https://www.drupal.org/project/key), צור מפתח מסוג *Authentication*, ובחר אותו תחת **API Secret key** בטופס ההגדרות. המפתח יכול להתבסס על משתנה סביבה או קובץ מחוץ לשורש האתר.
+2. **settings.php** - הוסף `$config['fastcomments.settings']['api_secret'] = 'your-secret';` ל-`settings.php` או ל-`settings.local.php`. הסוד לעולם לא נכנס לתצורה המיוצאת.
+3. **טופס ההגדרות** - הזן אותו בשדה **API Secret**. פעולה זו שומרת את הערך ב-`fastcomments.settings`, ולכן הוא יופיע בייצואי התצורה. דוח המצב של Drupal מציג אזהרה כאשר זהו המקור הפעיל.
 
-The form shows which source is active. Leaving the field blank keeps the stored secret. Tick **Remove the API Secret stored in configuration** to delete it after moving the secret to the Key module or `settings.php`.
+הטופס מציג איזה מקור פעיל. השארת השדה ריק שומרת על הסוד הקיים. סמן את **Remove the API Secret stored in configuration** כדי למחוק אותו לאחר העברת הסוד למודול Key או ל-`settings.php`.
 
 ## סגנון תגובות
 
-Pick the widget that matches how you want people to talk on your site.
+בחר את הווידג'ט המתאים לאופן שבו אתה רוצה שאנשים ידברו באתר שלך.
 
-- **Live Comments** - תגובות בזמן אמת עם שרשור.
-- **Streaming Chat** - ממשק צ'אט חי, טוב לאירועים ושידורים חיים.
-- **Collab Chat** - אנוטציה של בחירת טקסט באזור התוכן הראשי. מבקרים מדגישים טקסט ומתחילים דיון בהקשר.
-- **Collab Chat + Comments** - גם צ'אט שיתופי וגם תגובות סטנדרטיות באותה העמוד.
+- **Live Comments** - תגובות משורשרות בזמן אמת.
+- **Streaming Chat** - ממשק צ'אט חי, מתאים לאירועים ולשידורים חיים.
+- **Collab Chat** - הערות על בחירת טקסט באזור התוכן הראשי. מבקרים מסמנים טקסט ופותחים דיון בהקשר.
+- **Collab Chat + Comments** - גם צ'אט שיתופי וגם תגובות רגילות באותו עמוד.
 
 ## מצב SSO
 
 - **None** - ללא SSO. משתמשים מגיבים כאורחים או יוצרים חשבון FastComments.
-- **Simple** - מעביר מידע משתמש של Drupal (שם, אימייל, תמונת פרופיל) ל‑FastComments ללא אימות בצד השרת.
-- **Secure** - משתמש ב‑HMAC‑SHA256 כדי לאמת משתמשי Drupal עם FastComments. מומלץ כאשר סוד ה‑API מוגדר.
+- **Simple** - מעביר מידע על משתמש Drupal (שם, אימייל, אווטאר) ל-FastComments ללא אימות בצד השרת.
+- **Secure** - משתמש ב-HMAC-SHA256 לאימות משתמשי Drupal מול FastComments. מומלץ כאשר מוגדר אצלך סוד API.
 
-See the `Single Sign-On (SSO)` section for details.
+ראה את הסעיף `Single Sign-On (SSO)` לפרטים נוספים.
 
-## הגדרות נוספות
+## הגדרות אחרות
 
-- **CDN URL** - ברירת מחדל היא `https://cdn.fastcomments.com`.
-- **Site URL** - ברירת מחדל היא `https://fastcomments.com`.
-- **Email notifications** - שלח אימייל למחבר התוכן כאשר תגובה חדשה מתפרסמת על התוכן שלו.
+- **CDN URL** - ברירת מחדל: `https://cdn.fastcomments.com`.
+- **Site URL** - ברירת מחדל: `https://fastcomments.com`.
+- **התראות אימייל** - שליחת אימייל למחבר התוכן כאשר מתפרסמת תגובה חדשה על התוכן שלו.
 
-For EU data residency, see the `EU Data Residency` section.
+עבור אחסון נתונים ב-EU, ראה את הסעיף `EU Data Residency`.

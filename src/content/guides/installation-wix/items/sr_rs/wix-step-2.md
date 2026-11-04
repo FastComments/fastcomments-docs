@@ -11,5 +11,3 @@
     <div class="title">Почетни блок</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-1-sad.png" alt="Почетни блок" />
 </div>
-
----

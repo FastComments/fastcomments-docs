@@ -1,4 +1,3 @@
----
 Por padrão, o FastComments não limita os idiomas usados para comentar. 
 
 Pode ser desejável limitar os idiomas que uma comunidade usa.
@@ -10,5 +9,3 @@ Isso pode ser configurado sem código, na página de personalização do widget:
 O sistema analisará o comentário e determinará seu idioma, e então o comparará com a lista de permitidos.
 
 Se o comentário for escrito em um idioma que não é permitido, uma mensagem de erro localizada será exibida. 
-
----

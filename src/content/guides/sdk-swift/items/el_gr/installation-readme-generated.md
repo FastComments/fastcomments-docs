@@ -1,6 +1,6 @@
 ### Swift Package Manager
 
-Προσθέστε τα παρακάτω στο αρχείο `Package.swift` σας:
+Προσθέστε τα εξής στο αρχείο `Package.swift` σας:
 
 ```swift
 dependencies: [
@@ -10,7 +10,7 @@ dependencies: [
 
 Ή στο Xcode:
 1. File > Add Packages...
-2. Εισαγάγετε τη διεύθυνση URL του αποθετηρίου: `https://github.com/fastcomments/fastcomments-swift.git`
+2. Εισάγετε το URL του repository: `https://github.com/fastcomments/fastcomments-swift.git`
 3. Επιλέξτε την έκδοση που θέλετε να χρησιμοποιήσετε
 
 ### Απαιτήσεις

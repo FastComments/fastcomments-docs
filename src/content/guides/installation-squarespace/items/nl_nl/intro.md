@@ -6,5 +6,3 @@ De onderstaande instructies zijn verdeeld in drie secties, afhankelijk van wat u
 3. [Reacties toevoegen aan een specifieke pagina](#squarespace-pages-specific-page-step-0)
 
 Houd er rekening mee dat deze handleiding een FastComments-account vereist. Het is aan te raden dat u zich eerst aanmeldt en daarna hier terugkomt. [U kunt hier een account aanmaken.](https://fastcomments.com/auth/tenant-signup?packageId=flex)
-
----

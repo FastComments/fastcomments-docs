@@ -1,55 +1,55 @@
-Each agent webhook has its own delivery log. Reachable from the [webhook list page](https://fastcomments.com/auth/my-account/ai-agents/webhooks) via the **Logs** button on each webhook row.
+各エージェントWebhookには、それぞれ独自の配信ログがあります。[Webhook一覧ページ](https://fastcomments.com/auth/my-account/ai-agents/webhooks)から、各Webhook行の**Logs**ボタン経由でアクセスできます。
 
-### ページにあるもの
+### ページの内容
 
-A paginated table with one row per delivery attempt:
+配信の試行ごとに1行が表示される、ページネーション対応のテーブルです:
 
-| Column | Meaning |
+| カラム | 意味 |
 |---|---|
-| When | 試行が発生した時刻。 |
-| Event | イベントの種類（`trigger.succeeded`、`approval.requested`など）。 |
+| When | 試行が発生した日時。 |
+| Event | イベントタイプ(`trigger.succeeded`、`approval.requested` など)。 |
 | Status | 配信ステータス。 |
-| StatusCode | 利用可能な場合にエンドポイントが返したHTTPステータスコード。 |
-| Description | 結果の短い説明。HTTPレスポンスが得られなかった失敗配信の場合、基底のエラーメッセージは `{error: <message>}` として格納されます。 |
+| StatusCode | 利用可能な場合、エンドポイントが返したHTTPステータスコード。 |
+| Description | 結果の簡単な説明。HTTPレスポンスが受信されなかった失敗した配信の場合、根本的なエラーメッセージが `{error: <message>}` として保存されます。 |
 
-The page supports pagination only - there are no status, event-type, or date-range filters.
+このページはページネーションのみをサポートしており、ステータス、イベントタイプ、日付範囲のフィルターはありません。
 
 ### ログからできること
 
-- **Decide whether a status code should be in No-retry.** If you see your endpoint returning the same `4xx` over and over, that is a strong signal you want to add it to **No-retry status codes** so the platform stops retrying.
+- **ステータスコードをNo-retryに追加すべきか判断する。** エンドポイントが同じ `4xx` を繰り返し返している場合、**No-retry status codes** に追加してプラットフォームのリトライを停止させるべきという強いシグナルです。
 
 ### 失敗情報
 
-When a delivery fails without an HTTP response (DNS failure, connection refused, timeout, TLS error, etc.), the raw error message is recorded as `{error: <message>}`. The platform does not categorize these into named buckets like `TIMEOUT` or `DNS_ERROR` - read the error message directly to see what happened.
+HTTPレスポンスなしで配信が失敗した場合(DNS障害、接続拒否、タイムアウト、TLSエラーなど)、生のエラーメッセージが `{error: <message>}` として記録されます。プラットフォームはこれらを `TIMEOUT` や `DNS_ERROR` のような名前付きカテゴリに分類しません - 何が起きたかを確認するには、エラーメッセージを直接読んでください。
 
-For HTTP responses, the StatusCode column shows the code returned by your endpoint. Common cases:
+HTTPレスポンスの場合、StatusCodeカラムにはエンドポイントが返したコードが表示されます。よくあるケース:
 
-- **All attempts: `401` or `403`** - your endpoint is rejecting the signature. Check that you are computing the HMAC over `${timestamp}.${body}` and using the right secret. See [Webhook Signing](#webhook-signing).
-- **All attempts: `422`** - your endpoint thinks the payload is invalid. Either fix your endpoint, or add `422` to **No-retry status codes** if the rejection is expected for some events.
+- **すべての試行で `401` または `403`** - エンドポイントがシグネチャを拒否しています。`${timestamp}.${body}` に対してHMACを正しく計算し、正しいシークレットを使用しているか確認してください。[Webhook Signing](#webhook-signing) を参照してください。
+- **すべての試行で `422`** - エンドポイントがペイロードを無効と判断しています。エンドポイントを修正するか、一部のイベントで拒否が想定される場合は `422` を **No-retry status codes** に追加してください。
 
 ### 配信ごとのコンテキスト
 
-Each log entry carries:
+各ログエントリには以下が含まれます:
 
-- `webhookId` - which webhook config produced this delivery.
-- `agentId` - which agent the delivery is about.
-- `triggerId` or `approvalId` - the underlying record.
-- `domain` - the matched domain.
+- `webhookId` - この配信を生成したWebhook設定。
+- `agentId` - 配信の対象となるエージェント。
+- `triggerId` または `approvalId` - 元のレコード。
+- `domain` - マッチしたドメイン。
 
-You can use these to correlate a failed delivery with the run it relates to in [Run History](#run-history).
+これらを使用して、失敗した配信を [Run History](#run-history) の関連する実行と紐付けることができます。
 
 ### 保持期間
 
-`AgentSyncLog` entries have a flat 1-year TTL on `createdAt` regardless of outcome - successful and failed deliveries are retained for the same length of time. Beyond retention, the log entry is gone.
+`AgentSyncLog` エントリには、結果に関係なく `createdAt` に対して一律1年のTTLが設定されています - 成功した配信も失敗した配信も同じ期間保持されます。保持期間を過ぎると、ログエントリは削除されます。
 
-If you need long-term audit, the sustainable pattern is: have the **endpoint itself** persist the deliveries it receives. That decouples your audit log from the platform's retention policy.
+長期的な監査が必要な場合、持続可能なパターンは、**エンドポイント自身**が受信した配信を永続化することです。これにより、監査ログがプラットフォームの保持ポリシーから切り離されます。
 
 ### テスト送信
 
-The webhook config form's **Test send** button writes a fake delivery into the same log table so you can verify connectivity end-to-end before relying on real events. Test deliveries are clearly labeled in the log so they do not pollute production failure stats.
+Webhook設定フォームの**Test send**ボタンは、実際のイベントに依存する前に接続性をエンドツーエンドで検証できるよう、同じログテーブルに偽の配信を書き込みます。テスト配信はログ内で明確にラベル付けされているため、本番環境の失敗統計を汚染しません。
 
-### 参照
+### 関連項目
 
-- [Webhooks Overview](#webhooks-overview).
-- [Webhook Retries](#webhook-retries) for the retry semantics that drive these logs.
-- [Webhook Signing](#webhook-signing) for how to verify on your endpoint.
+- [Webhooks Overview](#webhooks-overview)。
+- これらのログを駆動するリトライのセマンティクスについては [Webhook Retries](#webhook-retries)。
+- エンドポイントでの検証方法については [Webhook Signing](#webhook-signing)。

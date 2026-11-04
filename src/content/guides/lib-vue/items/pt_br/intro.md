@@ -5,5 +5,3 @@ Incorpore widgets de comentários em tempo real, chat e avaliações no seu app 
 ## Repositório
 
 [Ver no GitHub](https://github.com/FastComments/fastcomments-vue)
-
----

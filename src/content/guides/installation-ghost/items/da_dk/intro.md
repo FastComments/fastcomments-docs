@@ -9,5 +9,3 @@ I denne vejledning vil vi målrette en blog bygget med Ghost, men med lidt erfar
 Denne vejledning starter ud fra perspektivet af en bruger, der er helt ny til Ghost. Brugere med erfaring i at redigere deres temaer kan springe til `Step 4`.
 
 Hvis du har problemer, er du velkommen til at sende din eksporterede tema-skabelon til din supportrepræsentant (kræver stadig trin 1 - 5).
-
----

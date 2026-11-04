@@ -1,4 +1,3 @@
----
 이 엔드포인트를 사용하면 사용자 ID로 사용자의 배지 진행 기록을 가져올 수 있습니다.
 
 요청 예제:
@@ -63,4 +62,3 @@ curl -X GET "https://fastcomments.com/api/v1/user-badge-progress/user/user456?te
   "reason": "No badge progress found for user user456 in tenant tenant001."
 }
 [inline-code-end]
----

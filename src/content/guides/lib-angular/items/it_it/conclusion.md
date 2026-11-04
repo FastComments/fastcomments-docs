@@ -8,5 +8,3 @@ Se riscontri problemi o hai domande sulla libreria Angular, per favore:
 ## Contribuire
 
 I contributi sono benvenuti! Visita il [repository GitHub](https://github.com/FastComments/fastcomments-angular) per le linee guida sui contributi.
-
----

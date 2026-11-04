@@ -10,5 +10,3 @@ Das liegt daran, dass FastComments nicht weiß, dass Ihr Konto auf dieser Domain
 In diesem Fall ist die Lösung einfach. Sie müssen lediglich Ihre Website zu Ihrem FastComments.com-Konto hinzufügen.
 
 [Klicken Sie hier, um Ihre Website zu Ihrem Konto hinzuzufügen.](https://fastcomments.com/auth/my-account/configure-domains)
-
----

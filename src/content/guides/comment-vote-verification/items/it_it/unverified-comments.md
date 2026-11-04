@@ -1,4 +1,3 @@
----
 I commenti non verificati verranno visualizzati con una piccola etichetta "Commento non verificato:" e appariranno leggermente
 attenuati.
 
@@ -10,5 +9,3 @@ I commenti anonimi sono sempre non verificati - poiché l'utente non ha lasciato
 essere usata per la verifica.
 
 Consentire commenti anonimi non rimuove l'etichetta 'Non verificato', tuttavia questa può essere rimossa tramite stile o [configurazione](/guide-customizations-and-configuration.html#disable-unverified-label).
-
----

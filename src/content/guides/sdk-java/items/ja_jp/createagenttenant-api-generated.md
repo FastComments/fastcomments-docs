@@ -1,19 +1,16 @@
-Creates a new trial account for an AI agent without a human signup. No API key is needed to call this.
+人間のサインアップなしで、AIエージェント用の新しいトライアルアカウントを作成します。この呼び出しにAPIキーは必要ありません。
 
-The response contains the tenant id, an API key that works immediately against the REST API and the
-MCP server, and a claim URL. Give the claim URL to the human you are working for: opening it while
-logged in to FastComments attaches the account to them. Unclaimed accounts, and their keys, are
-deleted 72 hours after creation. Until claimed, the account has the standard trial limits.
+レスポンスには、テナントID、REST APIおよびMCPサーバーに対して即座に使用できるAPIキー、そしてクレームURLが含まれます。クレームURLは、あなたが作業している人間に渡してください。FastCommentsにログインした状態でこのURLを開くと、そのアカウントがその人に紐付けられます。クレームされていないアカウントとそのキーは、作成から72時間後に削除されます。クレームされるまで、アカウントには標準のトライアル制限が適用されます。
 
 ## レスポンス
 
-Returns: [`CreateAgentTenantResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateAgentTenantResponse.java)
+戻り値: [`CreateAgentTenantResponse`](https://github.com/FastComments/fastcomments-java/blob/main/client/src/main/java/com/fastcomments/model/CreateAgentTenantResponse.java)
 
 ## 例
 
 [inline-code-attrs-start title = 'createAgentTenant の例'; type = 'java'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// クラスをインポート:
+// Import classes:
 import com.fastcomments.invoker.ApiClient;
 import com.fastcomments.invoker.ApiException;
 import com.fastcomments.invoker.Configuration;

@@ -1,22 +1,22 @@
-Custom react counts for a page, optionally with the users who reacted.
+Aangepaste react-tellingen voor een pagina, optioneel met de gebruikers die hebben gereageerd.
 
 ## Parameters
 
-| Name | Type | Location | Required | Description |
+| Naam | Type | Locatie | Verplicht | Beschrijving |
 |------|------|----------|----------|-------------|
-| tenantId | string | query | Yes |  |
-| urlId | string | query | Yes |  |
-| includeUserInfo | string | query | No | "\"public\" laat gebruikers met privéprofielen weg, \"include-private\" neemt ze op." |
+| tenantId | string | query | Ja |  |
+| urlId | string | query | Ja |  |
+| includeUserInfo | string | query | Nee | "public" laat gebruikers met privéprofielen weg, "include-private" neemt ze op. |
 
 ## Response
 
-Returns: [`GetPageReactsAPIResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetPageReactsAPIResponse.swift)
+Retourneert: [`GetPageReactsAPIResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/GetPageReactsAPIResponse.swift)
 
-## Example
+## Voorbeeld
 
 [inline-code-attrs-start title = 'getPageReacts Voorbeeld'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-// De volgende codevoorbeelden zijn nog in de bètafase. Meld eventuele problemen via http://github.com/OpenAPITools/openapi-generator/issues/new
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import FastCommentsSwift
 
 let tenantId = "tenantId_example" // String | 
@@ -34,5 +34,3 @@ DefaultAPI.getPageReacts(tenantId: tenantId, urlId: urlId, includeUserInfo: incl
     }
 }
 [inline-code-end]
-
----

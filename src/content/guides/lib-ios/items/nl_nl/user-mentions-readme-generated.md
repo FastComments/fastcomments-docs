@@ -1,4 +1,3 @@
----
 Zoek naar gebruikers ter ondersteuning van @mention-autocompletie:
 
 ```swift

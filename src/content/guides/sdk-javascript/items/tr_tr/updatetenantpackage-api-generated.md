@@ -1,4 +1,3 @@
----
 ## Parametreler
 
 | Ad | Tür | Gerekli | Açıklama |
@@ -26,5 +25,3 @@ const updateBody: UpdateTenantPackageBody = {
 
 const result: APIEmptyResponse = await updateTenantPackage(tenantId, packageId, updateBody);
 [inline-code-end]
-
----

@@ -30,5 +30,3 @@
   const responseWithBody: UpdateHashTagResponse = await patchHashTag(tenantId, tag, updateBody);
 })();
 [inline-code-end]
-
----

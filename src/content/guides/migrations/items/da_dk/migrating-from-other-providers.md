@@ -1,4 +1,3 @@
----
 Når du migrerer fra en anden udbyder, er der nogle ting at overveje:
 
 1. Eksisterende kommentardata, inklusive svar.
@@ -7,5 +6,3 @@ Når du migrerer fra en anden udbyder, er der nogle ting at overveje:
 
 Den selvbetjente dataimport, der omtales i de næste afsnit, dækker de to første. For tilpasning, se vores
 [tilpasningsvejledning](/guide-customizations-and-configuration.html).
-
----

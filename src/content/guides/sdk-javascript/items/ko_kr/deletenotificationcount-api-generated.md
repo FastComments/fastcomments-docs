@@ -1,4 +1,3 @@
----
 ## 매개변수
 
 | 이름 | 유형 | 필수 | 설명 |
@@ -19,5 +18,3 @@ let notificationId: string = "notif-7e3a9d4f";
 
 const result: APIEmptyResponse = await deleteNotificationCount(tenantId, notificationId);
 [inline-code-end]
-
----

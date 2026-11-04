@@ -1,4 +1,3 @@
----
 Angiv de krævede miljøvariabler:
 
 ```bash
@@ -11,4 +10,3 @@ Kør testene:
 ```bash
 bundle exec rspec
 ```
----

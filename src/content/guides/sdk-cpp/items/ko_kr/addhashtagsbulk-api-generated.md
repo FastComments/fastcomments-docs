@@ -24,5 +24,3 @@ api->addHashTagsBulk(tenantId, bulkBody).then([](pplx::task<std::shared_ptr<Bulk
     }
 });
 [inline-code-end]
-
----

@@ -6,5 +6,3 @@
 3. [向特定页面添加评论](#squarespace-pages-specific-page-step-0)
 
 请注意，本教程需要一个 FastComments 帐户。建议您先注册，然后再回到此处。[您可以在此创建帐户。](https://fastcomments.com/auth/tenant-signup?packageId=flex)
-
----

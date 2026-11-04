@@ -47,5 +47,3 @@ Teraz przeciągnij widżet, aby ustawić żądany rozmiar — zobaczysz, jak si�
 </div>
 
 ...a teraz wyświetl podgląd i zapisz!
-
----

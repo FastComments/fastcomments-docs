@@ -85,5 +85,3 @@ Nous pouvons également transmettre des payloads SSO sécurisé ou SSO simple :
     });
 </script>
 [inline-code-end]
-
----

@@ -1,18 +1,17 @@
----
-При FastComments, `username` трябва да е уникален в рамките на всички сайтове и общности. Това е защото се използваше за влизане в fastcomments.com.
+С FastComments, `username` трябва да бъде уникално във всички сайтове и общности. Това е така, защото се използва за влизане в fastcomments.com.
 
-The exception is SSO - since SSO users are tied to a specific FastComments.com Tenant - they can have any username within that community.
+Изключение е SSO - тъй като SSO потребителите са обвързани с конкретен FastComments.com Tenant - те могат да имат всякакво потребителско име в рамките на тази общност.
 
-#### Имена за показване
+#### Показвани имена
 
-FastComments също поддържа `Display Name`. Имената за показване не е нужно да са уникални и могат да съдържат емоджита. Можете да зададете вашето име за показване на страницата [Детайли на акаунта](https://fastcomments.com/auth/my-account/edit-details).
+FastComments също поддържа `Display Name`. Показваните имена не трябва да са уникални и могат да съдържат емоджита. Можете да зададете показваното си име
+на страницата [Данни на акаунта](https://fastcomments.com/auth/my-account/edit-details).
 
-#### Уникалност на името за показване
+#### Уникалност на показваните имена
 
-If two FastComments.com users, on two very different major communities both have similar names, then we'd like
-them to just be able to set their preferred display name. However, we can't restrict where people comment with their global FastComments account, so sometimes this may
-result in confusion.
+Ако двама потребители на FastComments.com, в две съвсем различни големи общности, имат сходни имена, бихме искали
+те просто да могат да зададат предпочитаното от тях показвано име. Обаче не можем да ограничим къде хората коментират с глобалния си FastComments акаунт, така че понякога това може
+да доведе до объркване.
 
-Having a similar name to another user, or a moderator, by itself is not a case for abuse. However, if you abuse this by intentionally impersonating other users, we may
-disable this feature on your account, and you will be limited to just using `username`.
----
+Подобно име на друг потребител или модератор само по себе си не е случай на злоупотреба. Но ако злоупотребите с това, като се представяте умишлено за други потребители, можем
+да деактивираме тази функция за вашия акаунт и ще бъдете ограничени до използване само на `username`.

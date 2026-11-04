@@ -1,4 +1,3 @@
----
 ## Paramètres
 
 | Nom | Type | Requis | Description |
@@ -27,5 +26,3 @@ async fn example() -> Result<(), Error> {
     Ok(())
 }
 [inline-code-end]
-
----

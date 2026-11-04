@@ -6,5 +6,3 @@
 </div>
 
 该 HTML 元素允许我们将 FastComments 小部件直接嵌入到您的 Bubble 应用中。
-
----

@@ -12,5 +12,3 @@ En este caso, la solución es sencilla. Solo tienes que agregar tu sitio a tu cu
 [Ve aquí para agregar tu sitio a tu cuenta.](https://fastcomments.com/auth/my-account/configure-domains)
 
 ¡Ahora deberías tener comentarios en vivo y rápidos en tu sitio!
-
----

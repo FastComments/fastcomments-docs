@@ -1,4 +1,3 @@
----
 Next, נעתיק את קוד הווידג'ט של FastComments.com:
 
 [code-example-start config = {}; title = 'Installation Code'; isFunctional = false; code-example-end]
@@ -18,5 +17,3 @@ Next, נעתיק את קוד הווידג'ט של FastComments.com:
     <div class="title">הערה: התגובות לא יופיעו עד לפרסום</div>
     <img class="screenshot-image" src="/images/installation-guides/installation-guide-webflow-step-3.png" alt="התגובות לא יופיעו עד לפרסום" />
 </div>
-
----

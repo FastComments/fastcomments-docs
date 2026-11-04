@@ -19,5 +19,3 @@ Blok **FastComments - Recent Comments** prikazuje najnovije komentare u celoj va
 
 - Svaki komentar sadrži link ka stranici na kojoj je objavljen, tako da blok služi i kao navigaciona naznaka „o čemu ljudi trenutno pričaju“.
 - Feed obuhvata celu prodavnicu. Da biste prikazali najnovije komentare samo za jednu stranicu, umesto toga koristite **FastComments** blok na toj stranici.
-
----

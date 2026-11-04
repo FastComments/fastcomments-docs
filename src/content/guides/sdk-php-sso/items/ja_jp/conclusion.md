@@ -8,5 +8,3 @@ PHP SSO SDK に関して問題が発生した場合や質問がある場合は�
 ## 貢献
 
 ご貢献を歓迎します！ 貢献ガイドラインについては [GitHubリポジトリ](https://github.com/FastComments/fastcomments-php-sso) をご覧ください。
-
----

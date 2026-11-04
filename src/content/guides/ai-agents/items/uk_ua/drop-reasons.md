@@ -1,50 +1,50 @@
-When a trigger fires for an agent but does **not** result in an LLM call, the platform records a "drop" with a reason. Drops appear in the [Analytics page](#analytics-page) under "Triggers skipped (this month)".
+Коли тригер спрацьовує для агента, але **не** призводить до виклику LLM, платформа фіксує «відкидання» (drop) із причиною. Відкидання відображаються на [сторінці Analytics](#analytics-page) у розділі «Triggers skipped (this month)».
 
-### The full list of drop reasons
+### Повний список причин відкидання
 
-| Reason | What happened |
+| Причина | Що сталося |
 |---|---|
-| `agentDaily` | Досягнуто щоденний ліміт бюджету агента. |
-| `agentMonthly` | Досягнуто місячний ліміт бюджету агента. |
-| `tenantDaily` | Досягнуто щоденний ліміт бюджету орендаря. |
-| `tenantMonthly` | Досягнуто місячний ліміт бюджету орендаря. |
-| `qps` | Перевищено обмеження агента на кількість запитів за хвилину (ковзне вікно 60 с). |
-| `concurrency` | Максимальна кількість одночасних запусків агента вже була вичерпана. |
+| `agentDaily` | Вичерпано денний ліміт бюджету агента. |
+| `agentMonthly` | Вичерпано місячний ліміт бюджету агента. |
+| `tenantDaily` | Вичерпано денний ліміт бюджету орендаря. |
+| `tenantMonthly` | Вичерпано місячний ліміт бюджету орендаря. |
+| `qps` | Спрацювало обмеження частоти запитів агента за хвилину (ковзне вікно 60 с). |
+| `concurrency` | Максимальна кількість одночасних запусків агента вже вичерпана. |
 
-### What's not in this list
+### Чого немає в цьому списку
 
-A trigger that never reaches the dispatch path is not "dropped" with a reason - it is just not dispatched. That includes:
+Тригер, який взагалі не потрапляє на шлях відправлення, не «відкидається» з причиною — він просто не відправляється. Це включає:
 
-- Agent is **Disabled**.
-- The triggering comment does not match the agent's [URL/locale scope](#scope-url-locale).
-- The triggering action was made by the same agent (loop prevention).
-- The tenant has invalid billing.
-- The agent is not in the tenant's plan.
+- Агент **Disabled** (вимкнено).
+- Тригерний коментар не відповідає [області URL/локалі](#scope-url-locale) агента.
+- Тригерну дію виконав той самий агент (запобігання циклам).
+- Орендар має недійсне виставлення рахунків.
+- Агента немає в тарифному плані орендаря.
 
-These are silent skips, not drops. They do not appear in the drops chart on Analytics.
+Це тихі пропуски, а не відкидання. Вони не відображаються на графіку відкидань в Analytics.
 
-### Reading drops on Analytics
+### Перегляд відкидань в Analytics
 
-The [Analytics page](#analytics-page) shows:
+[Сторінка Analytics](#analytics-page) показує:
 
-- **Triggers skipped (this month)** - counts grouped by drop reason.
-- **Agents at or near their cap** - per-agent breakdown of which agents are pushing the cap, with a count of dropped triggers in the current period.
+- **Triggers skipped (this month)** — кількість, згрупована за причиною відкидання.
+- **Agents at or near their cap** — розбивка по агентах, які досягають ліміту, з кількістю відкинутих тригерів у поточному періоді.
 
-### What to do when you see drops
+### Що робити, коли ви бачите відкидання
 
-- **`agentDaily` / `agentMonthly`** - the agent's own cap is too tight. Either raise the cap on the edit form or scope the agent down (URL/locale, narrower triggers).
-- **`tenantDaily` / `tenantMonthly`** - the account-level cap is too tight. Raise it on tenant billing settings, or distribute spend across fewer agents.
-- **`qps`** - traffic is hitting the per-minute rolling-window limit. Often a sign of a viral thread fanning out triggers faster than the agent can run them. The agent's `maxTriggersPerMinute` and `maxConcurrent` fields cap this; raising them increases throughput but also increases burst cost.
-- **`concurrency`** - same root cause as `qps` but at the in-flight count. Raise `maxConcurrent` if you need more parallelism.
+- **`agentDaily` / `agentMonthly`** — власний ліміт агента задто суворий. Або підніміть ліміт у формі редагування, або звузьте область агента (URL/локаль, вужчі тригери).
+- **`tenantDaily` / `tenantMonthly`** — ліміт на рівні облікового запису задто суворий. Підніміть його в налаштуваннях виставлення рахунків орендаря або розподіліть витрати між меншою кількістю агентів.
+- **`qps`** — трафік досягає хвилинного ліміту з ковзним вікном. Часто це ознака вірусної гілки, яка генерує тригери швидше, ніж агент може їх виконати. Поля агента `maxTriggersPerMinute` і `maxConcurrent` обмежують це; їхнє підвищення збільшує пропускну здатність, але також збільшує пікові витрати.
+- **`concurrency`** — та сама першопричина, що й у `qps`, але на рівні кількості активних запусків. Підніміть `maxConcurrent`, якщо вам потрібна більша паралельність.
 
-### Drops vs errors
+### Відкидання та помилки
 
-A drop is "the trigger never ran". An **error** is "the trigger ran but the LLM call or tool dispatch failed". Errors are tracked separately on the [Run History](#run-history) page (status `Error`).
+Відкидання — це «тригер ніколи не виконувався». **Помилка** — це «тригер виконався, але виклик LLM або відправлення інструменту зазнали невдачі». Помилки відстежуються окремо на сторінці [Run History](#run-history) (статус `Error`).
 
-### Drops can also stop replays
+### Відкидання також зупиняють повторні запуски
 
-The same drop reasons stop in-flight [test runs / replays](#test-runs-replays). The replay stops with an Error status and a message that names which budget was hit (for example, the agent's daily budget).
+Ті самі причини відкидання зупиняють активні [тестові запуски / повторні запуски](#test-runs-replays). Повторний запуск зупиняється зі статусом Error і повідомленням, яке вказує, який бюджет було вичерпано (наприклад, денний бюджет агента).
 
-### Loop prevention is silent on purpose
+### Запобігання циклам є тихим навмисно
 
-There is no drop reason for "this trigger came from another agent and was skipped to prevent a loop". Logging it would clutter the analytics for no useful signal - by design, agent fan-out should never result in trigger explosion. If you suspect a loop is being suppressed where it should not be, check [Comment Logs](/guide-moderation.html#comment-logs) - the `botId` on bot-authored comments is what the loop check keys on.
+Не існує причини відкидання на кшталт «цей тригер надійшов від іншого агента і був пропущений для запобігання циклу». Логування цього засмітило б аналітику без корисного сигналу — за задумом, розгалуження агентів ніколи не має призводити до вибуху тригерів. Якщо ви підозрюєте, що цикл пригнічується там, де цього не повинно бути, перевірте [Comment Logs](/guide-moderation.html#comment-logs) — перевірка циклів спирається на `botId` у коментарях, написаних ботами.

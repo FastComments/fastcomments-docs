@@ -1,4 +1,3 @@
----
 取消訂閱（REST 鉤子取消訂閱）。僅能刪除透過此 API 建立的訂閱；在儀表板中管理的 webhook 必須在儀表板內編輯。
 
 ## Parameters
@@ -33,5 +32,3 @@ DefaultAPI.deleteWebhook(tenantId: tenantId, id: id) { (response, error) in
     }
 }
 [inline-code-end]
-
----

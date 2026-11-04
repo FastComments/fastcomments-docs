@@ -1,10 +1,10 @@
-By default, FastComments comes with a word blacklist of ~450 phrases and words.
+Privzeto FastComments vsebuje črno listo besed s približno 450 frazami in besedami.
 
-If text in the word blacklist is found in a new comment that text will be replaced with asterisks (***).
+Če se besedilo s črne liste pojavi v novem komentarju, bo to besedilo zamenjano z zvezdicami (***).
 
-The page to customize the blacklist can be found via Moderate Comments -> Edit Moderation Settings -> Edit Word Blacklist, or
-by going directly <a href="https://fastcomments.com/auth/my-account/moderate-comments/blacklist" target="_blank">tukaj</a>.
+Stran za prilagoditev črne liste lahko najdete prek Moderate Comments -> Edit Moderation Settings -> Edit Word Blacklist, ali
+tako, da greste neposredno <a href="https://fastcomments.com/auth/my-account/moderate-comments/blacklist" target="_blank">sem</a>.
 
-[app-screenshot-start url='/auth/my-account/moderate-comments/blacklist?blurList=true'; linkUrl='/auth/my-account/moderate-comments/blacklist'; selector = '.account-block'; alt='Urejevalnik črne liste besed, kjer je mogoče dodajati ali odstranjevati privzeto blokirane besede in fraze'; title='Črna lista besed komentarjev' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/moderate-comments/blacklist?blurList=true'; linkUrl='/auth/my-account/moderate-comments/blacklist'; selector = '.account-block'; alt='Urejevalnik črne liste besed, kjer je mogoče privzete blokirane besede in fraze dodati ali odstraniti'; title='Črna lista besed v komentarjih' app-screenshot-end]
 
-Additionally, you can disable Profanity Detection on the <a href="https://fastcomments.com/auth/my-account/moderate-comments/settings" target="_blank">Uredi nastavitve moderiranja</a> page.
+Poleg tega lahko onemogočite zaznavanje sovražnega jezika (Profanity Detection) na strani <a href="https://fastcomments.com/auth/my-account/moderate-comments/settings" target="_blank">Edit Moderation Settings</a>.

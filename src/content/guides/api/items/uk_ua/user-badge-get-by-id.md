@@ -1,4 +1,3 @@
----
 Ця кінцева точка дозволяє отримати конкретний значок користувача за його унікальним ідентифікатором.
 
 Приклад запиту:
@@ -52,4 +51,3 @@ curl -X GET "https://fastcomments.com/api/v1/user-badges/badge123?tenantId=demo&
   "reason": "The user badge badge123 was not found."
 }
 [inline-code-end]
----

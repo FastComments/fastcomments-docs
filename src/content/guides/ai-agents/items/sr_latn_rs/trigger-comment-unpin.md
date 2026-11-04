@@ -12,5 +12,3 @@ Pokreće se kada je komentar otkačen.
 ### Par
 
 Pogledajte [Okidač: Komentar prikačen](#trigger-comment-pin) za zrcalni okidač.
-
----

@@ -31,5 +31,3 @@ api->setCommentText(tenantId, commentId, broadcastId, updateReq, opts)
     .then([](std::shared_ptr<PublicAPISetCommentTextResponse> resp) {
     });
 [inline-code-end]
-
----

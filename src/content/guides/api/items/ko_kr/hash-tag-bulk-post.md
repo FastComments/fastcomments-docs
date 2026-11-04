@@ -36,5 +36,3 @@ interface HashTagBulkPostResponse {
     results?: HashTagPostResponse[]; // 제공된 각 태그에 대해 HashTagPostResponse 객체의 목록을 반환합니다.
 }
 [inline-code-end]
-
----

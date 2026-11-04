@@ -1,4 +1,3 @@
----
 Konfiguracija potiče iz tri izvora. Kasniji izvori imaju prednost:
 
 1. **Globalne podrazumevane vrednosti** u `_config.yml` pod ključem `fastcomments:`.
@@ -42,4 +41,3 @@ fastcomments:
 ```
 
 ili po tagu: `{% raw %}{% fastcomments region="eu" %}{% endraw %}`. Widgeti se tada učitavaju sa EU CDN-a.
----

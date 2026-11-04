@@ -8,5 +8,3 @@ React Native SDK ile ilgili herhangi bir sorunla karşılaşırsanız veya sorul
 ## Katkıda Bulunma
 
 Katkılar memnuniyetle karşılanır! Lütfen katkı yönergeleri için [GitHub deposunu](https://github.com/FastComments/fastcomments-react-native-sdk) ziyaret edin.
-
----

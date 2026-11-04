@@ -1,7 +1,7 @@
-Enable or disable notifications for a page. When users are subscribed to a page, notifications are created
-for new root comments, and also
+Ενεργοποίηση ή απενεργοποίηση ειδοποιήσεων για μια σελίδα. Όταν οι χρήστες είναι εγγεγραμμένοι σε μια σελίδα, δημιουργούνται ειδοποιήσεις
+για νέα σχόλια ρίζας, καθώς και
 
-## Parameters
+## Παράμετροι
 
 | Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
@@ -12,13 +12,13 @@ for new root comments, and also
 | subscribedOrUnsubscribed | string | Όχι |  |
 | sso | string = "" | Όχι |  |
 
-## Απόκριση
+## Απάντηση
 
 Επιστρέφει: [`Option[UpdateUserNotificationPageSubscriptionStatusResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_update_user_notification_page_subscription_status_response.nim)
 
 ## Παράδειγμα
 
-[inline-code-attrs-start title = 'updateUserNotificationPageSubscriptionStatus Παράδειγμα'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Παράδειγμα updateUserNotificationPageSubscriptionStatus'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let (optResp, httpResp) = client.updateUserNotificationPageSubscriptionStatus(
   tenantId = "my-tenant-123",
@@ -31,7 +31,5 @@ let (optResp, httpResp) = client.updateUserNotificationPageSubscriptionStatus(
 
 if optResp.isSome:
   let resp = optResp.get()
-  # περαιτέρω επεξεργασία με resp
+  # περαιτέρω επεξεργασία με το resp
 [inline-code-end]
-
----

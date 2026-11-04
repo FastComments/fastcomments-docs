@@ -31,5 +31,3 @@ interface PollGetResponse {
 [inline-code-end]
 
 沒有投票調查的評論、已被刪除的評論，以及不存在的評論 ID，都會以相同的方式回應，返回 `poll-not-found`。
-
----

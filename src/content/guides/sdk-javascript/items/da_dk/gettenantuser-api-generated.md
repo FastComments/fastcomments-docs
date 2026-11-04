@@ -1,4 +1,3 @@
----
 ## Parametre
 
 | Navn | Type | Påkrævet | Beskrivelse |
@@ -21,5 +20,3 @@ Returnerer: [`GetTenantUserResponse`](https://github.com/FastComments/fastcommen
     console.log(response);
 })();
 [inline-code-end]
-
----

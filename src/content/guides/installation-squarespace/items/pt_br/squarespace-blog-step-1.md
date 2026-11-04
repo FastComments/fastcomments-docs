@@ -25,5 +25,3 @@ Você verá uma área de código em branco como a seguinte:
     <div class="title">Área de código vazia</div>
     <img class="screenshot-image" src="/images/installation-guides/squarespace-step-1-4-code-area.png" alt="Empty Code Area" />
 </div>
-
----

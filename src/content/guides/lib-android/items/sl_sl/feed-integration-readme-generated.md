@@ -1,4 +1,3 @@
----
 Prikaži vir v slogu družbenih omrežij s komentarji:
 
 ```java
@@ -42,4 +41,3 @@ feedView.setFeedViewInteractionListener(new FastCommentsFeedView.OnFeedViewInter
 // Naloži vir
 feedView.load();
 ```
----

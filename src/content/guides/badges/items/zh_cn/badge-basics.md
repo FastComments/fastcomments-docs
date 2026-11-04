@@ -1,38 +1,33 @@
-FastComments 用户徽章由具有 `Customize Data` 权限的管理员配置。
+FastComments 用户徽章由拥有 `Customize Data` 权限的管理员进行配置。
 
-This is done via [Customize -> Badges](https://fastcomments.com/auth/my-account/configure-badges) in your admin dashboard。
+配置通过您管理后台中的 [Customize -> Badges](https://fastcomments.com/auth/my-account/configure-badges) 完成。
 
-当用户被授予徽章时，该徽章会显示在他们的个人资料和评论上。
+当用户获得徽章后，徽章将显示在其个人资料和评论上。
 
-When adding a badge we can setup a `Display Label`, which is the name the user sees associated with the badge. For example, if we add a `Comment Count` badge
-我们可能不想显示那个技术性名称，因为听起来很乏味。我们可能会称之为 `Super Member` 或类似名字。徽章也可以叠加或相互替换，正如我们将在
-本文档后面所述。
+添加徽章时，我们可以设置 `Display Label`，即用户看到的与徽章关联的名称。例如，如果我们添加一个 `Comment Count` 徽章，我们可能不希望显示这个技术名称，因为它太无趣了。我们可以将其命名为 `Super Member` 或类似的名称。徽章还可以堆叠和相互替换，我们将在本文档后面介绍。
 
 徽章还具有可配置的阈值。
 
-徽章可以创建，之后通过取消选中 `Enabled` 将其禁用。禁用徽章意味着它将不再被自动授予，也不会在 Award Manual Badge 菜单中显示，但用户会保留该徽章。
+徽章可以创建，之后可以通过取消勾选 `Enabled` 来禁用。禁用徽章意味着它将不再被自动授予，也不会显示在 Award Manual Badge 菜单中，但用户将保留该徽章。
 
-### Badge Display Types
+### 徽章显示类型
 
-徽章可以是图片或文本徽章，支持一些基本样式（文本颜色、背景颜色和边框颜色）。您也可以通过 CSS 对徽章进行样式设置。
+徽章可以是图片或文本徽章，文本徽章支持一些基本样式（文本颜色、背景颜色和边框颜色）。您也可以通过 CSS 设置徽章样式。
 
-图片徽章可以是 GIF 图像以显示动画徽章。
+图片徽章可以使用 GIF 图片来展示动画徽章。
 
-### Tip - Do Not Remove Badges!
+### 提示 - 不要删除徽章！
 
-用户喜爱徽章。他们往往非常在意徽章，即使某个徽章是你无意中添加的错误，你想要更改徽章图标，用户也会在意。
+用户喜爱徽章。他们往往非常在意徽章，即使它是您误添加的一个 bug，或者您想更改徽章图标。
 
-If we've learned anything, it's extremely difficult to take something away from users. Removing a badge because you as an owner of the site no
-longer like it, or want to make changes, may result in a very angry crowd of users that suddenly leave your site out of frustration. For this reason
-`Delete` was not even an option for the first few months we released this feature - however we ended up having to add it. But please, use delete with caution. We have
-seen many long time, multi-year, users get very frustrated and leave their communities because administrators decided to delete a badge.
+如果说我们学到了什么，那就是从用户手中夺走某样东西是极其困难的。仅仅因为您作为网站所有者不再喜欢某个徽章，或想进行更改而删除它，可能会导致用户非常愤怒，并因沮丧而突然离开您的网站。因此，在该功能发布的最初几个月里，`Delete` 甚至都不是一个选项——但最终我们不得不添加它。但请谨慎使用删除功能。我们见过许多多年老用户因为管理员决定删除徽章而感到非常沮丧并离开他们的社区。
 
-如果你必须停止使用某个徽章，建议你仅将其禁用，以便用户保留他们的徽章。
+如果您必须停止使用某个徽章，建议您只需将其禁用，以便用户保留他们的徽章。
 
-### Badge Reprocessing
+### 徽章重新处理
 
-当徽章被添加或更改时，系统将回溯检查与您站点互动的用户，以确定他们是否应获得该徽章。这将在管理仪表板的徽章页面中可见，因为在显示拥有该徽章的用户数量的位置会显示一个加载指示器（spinner）。这是因为用户数量正在被确定。
+当徽章被添加或更改时，系统将追溯检查所有与您的网站有过互动的用户，以确定他们是否应该获得该徽章。这将在管理后台的 Badges 页面中可见，因为将显示一个加载动画，而不是拥有该徽章的用户数量。这是因为用户数量正在计算中。
 
-### Seeing Who Has a Badge
+### 查看谁拥有徽章
 
-在徽章列表中，每个链接都有一个 `View Users` 选项，用于显示已获得或被手动授予该徽章的用户列表。
+在 Badges 列表中，每个链接都有一个 `View Users` 选项，用于显示已获得或被手动授予该徽章的用户列表。

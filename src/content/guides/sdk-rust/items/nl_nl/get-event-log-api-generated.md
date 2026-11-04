@@ -33,5 +33,3 @@ async fn fetch_event_log(configuration: &configuration::Configuration) -> Result
     Ok(())
 }
 [inline-code-end]
-
----

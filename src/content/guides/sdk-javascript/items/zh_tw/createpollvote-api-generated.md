@@ -1,8 +1,6 @@
-Record a vote on a poll, or move an existing one to a different option. A voter has at most one vote per
-poll, so calling this again for the same voter moves their vote rather than adding one.
+在投票中記錄一票，或將現有的票移至不同的選項。每位投票者在每個投票中最多只有一票，因此對同一投票者再次呼叫此方法會移動其票，而不是新增一票。
 
-This obeys the site's poll settings: if voting is set to logged-in users only, a vote with just an
-anonUserId is rejected, and anonymous votes are rate limited per IP per poll.
+此操作遵循網站的投票設定：若投票設定為僅限已登入使用者，僅帶有 anonUserId 的投票將被拒絕，且匿名投票會依 IP 並按每個投票進行速率限制。
 
 ## 參數
 
@@ -13,7 +11,7 @@ anonUserId is rejected, and anonymous votes are rate limited per IP per poll.
 
 ## 回應
 
-返回：[`CreatePollVoteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreatePollVoteResponse.ts)
+回傳：[`CreatePollVoteResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreatePollVoteResponse.ts)
 
 ## 範例
 
@@ -25,7 +23,7 @@ anonUserId is rejected, and anonymous votes are rate limited per IP per poll.
   const vote: CreatePollVoteBody = {
     pollId: "poll-2024-09",
     optionId: "option-A"
-    // userId is optional and omitted here
+    // userId 為選填，此處予以省略
   };
 
   const result: CreatePollVoteResponse = await createPollVote(tenantId, vote);

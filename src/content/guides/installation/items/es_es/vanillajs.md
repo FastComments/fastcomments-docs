@@ -13,5 +13,3 @@ Muchas aplicaciones tienen una opción "HTML Embed Code". Selecciónala y pega e
 Puedes encontrar documentación sobre cómo configurar el widget <a href="/guide-customizations-and-configuration.html" target="_blank">aquí</a>.
 
 Todas las versiones del widget FastComments son envoltorios alrededor de la biblioteca núcleo VanillaJS. Esto nos permite añadir funciones y corregir problemas en un solo lugar; los cambios se propagan automáticamente a las demás variantes del widget de comentarios.
-
----

@@ -5,5 +5,3 @@ Ugradite widgete za komentarisanje uživo, čet i recenzije u vašu Vue aplikaci
 ## Repozitorijum
 
 [Pogledajte na GitHub-u](https://github.com/FastComments/fastcomments-vue-next)
-
----

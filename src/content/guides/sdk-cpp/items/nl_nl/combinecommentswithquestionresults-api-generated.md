@@ -27,5 +27,3 @@ api->combineCommentsWithQuestionResults(tenantId, options).then(
         }
     });
 [inline-code-end]
-
----

@@ -17,5 +17,3 @@ let (apiResponse, httpResponse) = client.deleteTenantPackage(tenantId = "my-tena
 if apiResponse.isSome:
   let emptyResponse = apiResponse.get()
 [inline-code-end]
-
----

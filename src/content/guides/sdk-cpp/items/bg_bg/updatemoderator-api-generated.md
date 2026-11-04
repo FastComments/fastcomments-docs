@@ -1,4 +1,3 @@
----
 ## Параметри
 
 | Име | Тип | Задължително | Описание |
@@ -25,5 +24,3 @@ api->updateModerator(tenantId, moderatorId, body)
     .then([](std::shared_ptr<APIEmptyResponse>) {})
     .then([](pplx::task<void> t) { try { t.get(); } catch (const std::exception&) {} });
 [inline-code-end]
-
----

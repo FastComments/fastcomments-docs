@@ -22,5 +22,3 @@ if maybeResp.isSome:
   let resp = maybeResp.get()
   # използвайте resp при нужда
 [inline-code-end]
-
----

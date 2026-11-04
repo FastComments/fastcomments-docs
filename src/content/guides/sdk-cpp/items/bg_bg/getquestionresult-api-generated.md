@@ -25,5 +25,3 @@ api->getQuestionResult(tenantId, questionId)
         }
     });
 [inline-code-end]
-
----

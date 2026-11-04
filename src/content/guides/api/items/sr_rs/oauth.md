@@ -1,17 +1,17 @@
-FastComments је OAuth 2.1 сервер за ауторизацију. Апликација може добити токен који је везан за један FastComments налог и користити га на сваком крајњем тачком у овом водичу уместо API кључа. Овако се Zapier апликација, MCP сервер и остале интеграције трећих страна повезују.
+FastComments је OAuth 2.1 сервер за ауторизацију. Апликација може добити токен који је везан за један FastComments налог и користити га на сваком крајњем тачки у овом водичу уместо API кључа. На овај начин се Zapier апликација, MCP сервер и друге интеграције трећих страна повезују.
 
-Токени се издају кроз токен кодни токен (authorization code) током са PKCE. Не постоје client credentials или implicit grant.
+Токени се издају путем authorization code тока са PKCE. Не постоји client credentials нити implicit grant.
 
 ### Откривање
 
-Endpoint locations, supported grants, and auth methods are published at the standard metadata URL:
+Локације крајњих тачака, подржани грантови и методе аутентификације објављени су на стандардној metadata URL адреси:
 
-[inline-code-attrs-start title = 'Метаподаци сервера за ауторизацију'; type = 'text'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Metadata сервера за ауторизацију'; type = 'text'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 https://fastcomments.com/.well-known/oauth-authorization-server
 [inline-code-end]
 
-The endpoints it describes:
+Крајње тачке које описује:
 
 [inline-code-attrs-start title = 'OAuth крајње тачке'; type = 'text'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -21,30 +21,30 @@ POST https://fastcomments.com/oauth/revoke
 POST https://fastcomments.com/oauth/register
 [inline-code-end]
 
-Accounts on the EU region use `https://eu.fastcomments.com` as the issuer, with the same paths.
+Налози у EU региону користе `https://eu.fastcomments.com` као issuer, са истим путањама.
 
 ### Регистрација клијента
 
-A client needs a `client_id` and a registered `redirect_uri` before it can start the flow. There are two ways to get one:
+Клијенту су потребни `client_id` и регистровани `redirect_uri` пре него што може покренути ток. Постоје два начина да их добије:
 
-- **Dynamic Client Registration.** `POST /oauth/register` with a JSON body per RFC 7591 (`redirect_uris`, `client_name`, `client_uri`, `logo_uri`, `token_endpoint_auth_method`). The response carries the `client_id` and, for confidential clients, the `client_secret`. Registration is unauthenticated and rate limited per IP.
-- **Client ID Metadata Document.** The client uses an `https` URL it controls as its `client_id`. FastComments fetches that URL and reads the same metadata fields from it. No registration call is needed.
+- **Динамичка регистрација клијента.** `POST /oauth/register` са JSON телом према RFC 7591 (`redirect_uris`, `client_name`, `client_uri`, `logo_uri`, `token_endpoint_auth_method`). Одговор садржи `client_id` и, за поверљиве клијенте, `client_secret`. Регистрација је неаутентификована и ограничена по IP адреси.
+- **Client ID Metadata Document.** Клијент користи `https` URL који контролише као свој `client_id`. FastComments преузима тај URL и чита иста metadata поља из њега. Није потребан позив за регистрацију.
 
-Partner applications listed in the FastComments dashboard, such as Zapier, are registered by FastComments directly. Contact support if you are building a marketplace listing and need a first-party client.
+Партнерске апликације наведене у FastComments контролном панелу, као што је Zapier, региструје директно FastComments. Контактирајте подршку ако градите marketplace листинг и треба вам first-party клијент.
 
-### Обим
+### Scopes
 
-[inline-code-attrs-start title = 'Обим'; type = 'text'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Scopes'; type = 'text'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 read   GET and HEAD requests
 write  every other method
 [inline-code-end]
 
-A request that asks for no scope is granted both. The user sees the requested scopes on the consent page. A request for a scope other than these two fails with `invalid_scope`.
+Захтев који не тражи ниједан scope добија оба. Корисник види тражене scopes на страници за сагласност. Захтев за scope који није један од ова два неуспева са `invalid_scope`.
 
-### Корак 1 – Захтев за ауторизацију
+### Корак 1 - Захтев за ауторизацију
 
-Send the user's browser to the authorize endpoint. PKCE with the `S256` method is required for every client.
+Пошаљите прегледач корисника на authorize крајњу тачку. PKCE са методом `S256` је обавезан за све клијенте.
 
 [inline-code-attrs-start title = 'Захтев за ауторизацију'; type = 'text'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -63,29 +63,29 @@ GET https://fastcomments.com/oauth/authorize
 interface OAuthAuthorizeQueryParams {
     response_type: 'code'
     client_id: string
-    /** Мора тачно да се поклапа са једном од регистрованих redirect URI-ја клијента. **/
+    /** Мора тачно одговарати једном од регистрованих redirect URI адреса клијента. **/
     redirect_uri: string
-    /** Раздвојено размаком. Изоставите за захтев за оба обима. **/
+    /** Раздвојени размаком. Изоставите да тражите оба scope-а. **/
     scope?: 'read' | 'write' | 'read write'
-    /** Враћено неизмењено у редиректу. Користите га за везу повратног позива за сесију која је покренула ток. **/
+    /** Враћа се непромењен при преусмерењу. Користите га да вежете callback за сесију која је покренула ток. **/
     state?: string
     /** base64url(sha256(code_verifier)). **/
     code_challenge: string
     code_challenge_method: 'S256'
-    /** Опционални RFC 8707 индикатор ресурса. Ако се пошаље, иста вредност мора бити послата токен крајњој тачки. **/
+    /** Опциони RFC 8707 resource индикатор. Ако се пошаље, иста вредност мора бити послата на token крајњу тачку. **/
     resource?: string
 }
 [inline-code-end]
 
-The user signs in to FastComments if needed and sees a consent page naming your application, the account it will be connected to, and the scopes requested. The user must hold the **API Admin** permission on that account; anyone else sees a permission error instead of the consent form. Approving redirects the browser to your `redirect_uri` with `code` and `state`. Denying redirects with `error=access_denied`.
+Корисник се пријављује на FastComments ако је потребно и види страницу за сагласност која наводи вашу апликацију, налог на који ће бити повезана и тражене scopes. Корисник мора имати дозволу **API Admin** на том налогу; свако други види грешку о дозволама уместо обрасца за сагласност. Одобравање преусмерава прегледач на вашу `redirect_uri` са `code` и `state`. Одбијање преусмерава са `error=access_denied`.
 
-The authorization code is valid for 10 minutes and can be exchanged once. A second exchange of the same code revokes every token the first exchange produced.
+Authorization code важи 10 минута и може се заменити само једном. Друга замена истог кода опозива све токене које је прва замена произвела.
 
-### Корак 2 – Захтев за токен
+### Корак 2 - Захтев за токен
 
-Exchange the code for tokens. The body is form encoded. Confidential clients authenticate with `client_secret_basic` (HTTP Basic) or `client_secret_post` (secret in the body). Public clients send only `client_id`.
+Замените код за токене. Тело је form encoded. Поверљиви клијенти се аутентификују са `client_secret_basic` (HTTP Basic) или `client_secret_post` (тајна у телу). Јавни клијенти шаљу само `client_id`.
 
-[inline-code-attrs-start title = 'Пример cURL захтева за токен'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'cURL пример захтева за токен'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request POST \
   --url 'https://fastcomments.com/oauth/token' \
@@ -103,49 +103,49 @@ curl --request POST \
 interface OAuthTokenRequestAuthorizationCode {
     grant_type: 'authorization_code'
     client_id: string
-    /** Само за поверљиве клијенте. Може се послати као HTTP Basic аутентикација уместо тога. **/
+    /** Само поверљиви клијенти. Може бити послато као HTTP Basic auth уместо тога. **/
     client_secret?: string
     code: string
     code_verifier: string
-    /** Мора да се поклапа са захтевом за ауторизацију када се пошаље. **/
+    /** Мора одговарати захтеву за ауторизацију када се шаље. **/
     redirect_uri?: string
     resource?: string
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Структура одговора токена'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Структура одговора са токеном'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface OAuthTokenResponse {
     /** Префикс fcat_. Важи један сат. **/
     access_token: string
     token_type: 'bearer'
-    /** Секунди до истека приступног токена. 3600. **/
+    /** Секунди до истека access токена. 3600. **/
     expires_in: number
     /** Префикс fcrt_. Важи 30 дана од издавања. **/
     refresh_token: string
-    /** Раздвојени размаком одобрени обими. **/
+    /** Раздвојени размаком додељени scopes. **/
     scope: string
 }
 [inline-code-end]
 
-Errors follow RFC 6749: a JSON body with `error` and `error_description`, HTTP 400 for `invalid_request`, `invalid_grant`, `invalid_scope`, `invalid_target` and `unsupported_grant_type`, HTTP 401 for `invalid_client`, HTTP 429 when rate limited.
+Грешке прате RFC 6749: JSON тело са `error` и `error_description`, HTTP 400 за `invalid_request`, `invalid_grant`, `invalid_scope`, `invalid_target` и `unsupported_grant_type`, HTTP 401 за `invalid_client`, HTTP 429 када је ограничење захтева активано.
 
-### Корак 3 – Позивање API‑ја
+### Корак 3 - Позивање API-ја
 
-Send the access token as a bearer token. The tenant is implied by the token, so `tenantId` is optional. When given it must match the token or the request fails.
+Пошаљите access токен као bearer токен. Тенант је имплициран токеном, тако да је `tenantId` опциони. Ако је дат, мора одговарати токену или захтев неуспева.
 
-[inline-code-attrs-start title = 'Пример cURL захтева за носио токен'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'cURL пример са Bearer токеном'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/me' \
   --header 'Authorization: Bearer fcat_...'
 [inline-code-end]
 
-`GET /api/v1/me` returns the tenant, the authorizing user, and the granted scopes, which makes it the right call for a connection test. A request with an expired or revoked token gets HTTP 401. A request whose method needs a scope the token does not hold gets HTTP 403.
+`GET /api/v1/me` враћа тенант, ауторизујућег корисника и додељене scopes, што га чини правим позивом за тестирање везе. Захтев са истеклим или опозваним токеном добија HTTP 401. Захтев чија метода захтева scope који токен не поседује добија HTTP 403.
 
-### Корак 4 – Освежавање
+### Корак 4 - Освежавање
 
-[inline-code-attrs-start title = 'Пример cURL захтева за освежавање'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'cURL пример захтева за освежавање'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request POST \
   --url 'https://fastcomments.com/oauth/token' \
@@ -163,19 +163,19 @@ interface OAuthTokenRequestRefreshToken {
     client_id: string
     client_secret?: string
     refresh_token: string
-    /** Опционално. Сужава на подскуп оригинално одобрених обима. **/
+    /** Опциони. Сужава на подскуп првобитно додељених scope-ова. **/
     scope?: string
     resource?: string
 }
 [inline-code-end]
 
-The response has the same shape as the code exchange. Refresh tokens rotate: each refresh returns a new `refresh_token` and revokes the old one after a 30 second grace window for concurrent requests. Presenting a refresh token that was rotated more than 30 seconds ago is treated as replay and revokes the whole grant. Partner applications registered by FastComments are exempt from rotation and get back the same refresh token with its expiry extended by another 30 days.
+Одговор има исти облик као замена кода. Refresh токени ротирају: свако освежавање враћа нови `refresh_token` и опозива стари након 30-секундног периода милости за конкурентне захтеве. Приказивање refresh токена који је ротиран пре више од 30 секунди третира се као replay и опозива цео грант. Партнерске апликације регистроване од стране FastComments изузете су од ротације и добијају назад исти refresh токен са роком трајања продуженим за још 30 дана.
 
-A refresh also re-checks that the authorizing user still holds API Admin on the account. If not, the grant is revoked and the response is `invalid_grant`.
+Освежавање такође поново проверава да ли ауторизујући корисник још увек има API Admin на налогу. Ако нема, грант се опозива и одговор је `invalid_grant`.
 
 ### Опозив
 
-[inline-code-attrs-start title = 'Пример cURL захтева за опозив'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'cURL пример захтева за опозив'; type = 'bash'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request POST \
   --url 'https://fastcomments.com/oauth/revoke' \
@@ -186,8 +186,6 @@ curl --request POST \
   --data 'token_type_hint=refresh_token'
 [inline-code-end]
 
-Revoking a refresh token revokes every access token issued from the same grant. Revoking an access token revokes only that token. The endpoint returns HTTP 200 with an empty JSON object whether or not the token was found, per RFC 7009.
+Опозив refresh токена опозива све access токене издате из истог гранта. Опозив access токена опозива само тај токен. Крајња тачка враћа HTTP 200 са празним JSON објектом без обзира да ли је токен пронађен, према RFC 7009.
 
-Users can also revoke a connection from **Connected Apps** in the FastComments dashboard. Every token for that application stops working immediately.
-
----
+Корисници такође могу опозвати везу из **Connected Apps** у FastComments контролном панелу. Сви токени за ту апликацију престају да раде одмах.

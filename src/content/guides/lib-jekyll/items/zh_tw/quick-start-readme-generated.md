@@ -1,4 +1,3 @@
----
 在 `_config.yml` 中設定你的租戶 ID（只需一次）：
 
 ```yaml
@@ -14,4 +13,3 @@ fastcomments:
 
 就這樣。將 `demo` 替換成你的 FastComments 租戶 ID（可在
 [設定 > API/SSO](https://fastcomments.com/auth/my-account/api) 找到）。
----

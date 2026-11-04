@@ -1,30 +1,30 @@
-The Top Pages widget displays the most-commented pages on your site. It's useful for surfacing your most-engaging content to new visitors and increasing time on site.
+Widget Top Pages prikazuje najkomentarisane stranice na vašem sajtu. Koristan je za isticanje vašeg najprivlačnijeg sadržaja novim posetiocima i povećanje vremena provedenog na sajtu.
 
 ## Opcije
 
-- **Title** (optional): Naslov koji se prikazuje iznad liste. Podrazumevano je "Top Pages".
+- **Title** (opciono): Naslov koji se prikazuje iznad liste. Podrazumevano je "Top Pages".
 
-The Top Pages widget chooses its own layout based on available data and does not accept a count attribute.
+Widget Top Pages sam bira svoj raspored na osnovu dostupnih podataka i ne prihvata count atribut.
 
-## Kako ga dodati
+## Kako da ga dodate
 
-### Inside a Post or Page
+### Unutar posta ili stranice
 
-In the block editor, add a **Shortcode** block and paste:
+U blok editoru dodajte blok **Shortcode** i nalepite:
 
-[inline-code-attrs-start title = 'Shortcode za Top Pages'; type = 'html'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Top Pages shortcode'; type = 'html'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 [fastcomments_top_pages]
 [inline-code-end]
 
-### In a Sidebar or Footer (Classic Themes)
+### U bočnoj traci ili podnožju (klasične teme)
 
-Go to **Appearance > Widgets** in your WordPress admin. From the block inserter, search for "FastComments" and choose **FastComments: Top Pages**. Drag it into a sidebar, header, or footer area, then set the title from the widget panel.
+Idite na **Appearance > Widgets** u vašem WordPress admin panelu. Iz blok ubacivača pretražite "FastComments" i izaberite **FastComments: Top Pages**. Prevucite ga u bočnu traku, zaglavlje ili oblast podnožja, a zatim podesite naslov iz panela widgeta.
 
-### In a Block Theme (Full Site Editing)
+### U blok temi (Full Site Editing)
 
-Open the **Site Editor** under **Appearance > Editor**. Navigate to the template part where the widget should appear, insert a **Legacy Widget** block, and select **FastComments: Top Pages** from the dropdown.
+Otvorite **Site Editor** pod **Appearance > Editor**. Idite do dela šablona gde widget treba da se pojavi, ubacite blok **Legacy Widget** i izaberite **FastComments: Top Pages** iz padajuće liste.
 
 ## Rešavanje problema
 
-The widget only renders after FastComments setup is complete and a tenant ID is stored. If the widget area is blank, complete setup under **FastComments** in the WordPress admin and reload the page.
+Widget se prikazuje tek nakon što je FastComments podešavanje završeno i tenant ID je sačuvan. Ako je oblast widgeta prazna, završite podešavanje pod **FastComments** u WordPress admin panelu i ponovo učitajte stranicu.

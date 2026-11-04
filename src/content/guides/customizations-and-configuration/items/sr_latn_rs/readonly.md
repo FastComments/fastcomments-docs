@@ -1,4 +1,3 @@
----
 [related-parameter-start name = 'readonly'; type = 'boolean'; related-parameter-end]
 
 Komentarisanje se može zaključati tako da se ne mogu ostavljati novi komentari ili glasovi postavljanjem flag-a readonly na true.
@@ -18,5 +17,3 @@ Od novembra 2022, niti se mogu zaključati ili otključati **uživo** od strane 
 Ovo će sprečiti nove komentare, dok i dalje omogućava glasanje i omogućava korisnicima da izbrišu svoje komentare ako to žele, dok `readonly` ne dozvoljava ove stvari. 
 
 Ovo odgovara polju `isClosed` u `Page` API-ju.
-
----

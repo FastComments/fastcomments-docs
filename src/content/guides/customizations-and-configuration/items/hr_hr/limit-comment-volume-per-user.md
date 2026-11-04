@@ -1,4 +1,3 @@
----
 Prema zadanim postavkama, svaki korisnik može poslati najviše `5 komentara` u istoj minuti.
 
 Ovo se prati prema ID-u korisnika, anonimnom ID-u korisnika i IP adresi (hashirana).
@@ -9,5 +8,3 @@ Ovo se može prilagoditi bez koda, na stranici za prilagodbu widgeta:
 
 Napomena da ako koristite API za stvaranje komentara, možda ćete htjeti proslijediti originalnu `ip` adresu korisnika u zahtjevu našem backendu kako bi se ograničavanje brzine primijenilo
 po korisniku i ne globalno na vaš račun.
-
----

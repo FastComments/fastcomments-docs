@@ -1,4 +1,3 @@
----
 ### Wymagania
 
 PHP 7.4 lub nowszy.
@@ -32,4 +31,3 @@ Pobierz pliki i dołącz `autoload.php`:
 <?php
 require_once('/path/to/fastcomments/client/vendor/autoload.php');
 ```
----

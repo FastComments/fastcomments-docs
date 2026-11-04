@@ -1,27 +1,22 @@
-Past commenters on the page who are NOT currently online. Sorted by displayName.  
-המגיבים הקודמים בעמוד שאינם מחוברים כעת. ממוין לפי displayName.  
-
-Use this after exhausting /users/online to render a "Members" section.  
-השתמש בזה אחרי שמיצינו את /users/online כדי להציג סעיף "Members".  
-
-Cursor pagination on commenterName: server walks the partial {tenantId, urlId, commenterName} index from afterName forward via $gt, no $skip cost.  
-דפדוף עם סמן על commenterName: השרת נע דרך החלק {tenantId, urlId, commenterName} מהאינדקס אחרי afterName קדימה באמצעות $gt, ללא עלות של $skip.  
+מגיבים קודמים בעמוד שאינם מחוברים כרגע. ממוינים לפי displayName.
+השתמשו בזה לאחר אזילת /users/online כדי להציג מקטע "Members".
+עימוד באמצעות סמן על commenterName: השרת ממשיך לאורך האינדקס החלקי {tenantId, urlId, commenterName} מ-afterName קדימה באמצעות $gt, ללא עלות $skip.
 
 ## פרמטרים
 
-| שם | סוג | נדרש | תיאור |
+| שם | סוג | חובה | תיאור |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| urlId | string | Yes |  |
-| options | const GetOfflineUsersOptions& | Yes |  |
+| tenantId | string | כן |  |
+| urlId | string | כן |  |
+| options | const GetOfflineUsersOptions& | כן |  |
 
-## תגובה
+## תשובה
 
 מחזיר: [`PageUsersOfflineResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/PageUsersOfflineResponse.h)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמת getOfflineUsers'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל-getOfflineUsers'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 utility::string_t tenantId = U("my-tenant-123");
 utility::string_t urlId = U("page-456");

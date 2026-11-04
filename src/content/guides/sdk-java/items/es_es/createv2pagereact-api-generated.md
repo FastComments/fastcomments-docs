@@ -1,4 +1,3 @@
----
 ## Parámetros
 
 | Nombre | Tipo | Ubicación | Requerido | Descripción |
@@ -51,5 +50,3 @@ public class Example {
   }
 }
 [inline-code-end]
-
----
