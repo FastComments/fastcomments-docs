@@ -1,8 +1,8 @@
 [api-resource-header-start name = 'BatchJob'; route = 'GET /api/v1/batch-jobs/:id'; creditsCost = 1; api-resource-header-end]
 
-此路由會回傳單一批次作業的狀態、進度，且在完成後回傳結果。可用來追蹤由 [`POST /api/v1/pages/migrations`](#pages-migrations-post) 或 [`POST /api/v1/pages/migrations/:undoId/undo`](#pages-migrations-undo-post) 所啟動的作業。
+此路由會回傳單一批次工作的狀態、進度，以及完成後的結果。請使用它來追蹤由 [`POST /api/v1/pages/migrations`](#pages-migrations-post) 或 [`POST /api/v1/pages/migrations/:undoId/undo`](#pages-migrations-undo-post) 啟動的工作。
 
-當作業的 `status` 為 `success` 或 `failed` 時，即表示已完成。每次呼叫會消耗 `1` 點額度，建議每隔幾秒輪詢一次，而非持續不斷呼叫。
+當工作的 `status` 為 `success` 或 `failed` 時，即表示工作已完成。每次呼叫會消耗 `1` 個點數，因此請每隔幾秒輪詢一次，而不是持續不斷地輪詢。
 
 [inline-code-attrs-start title = 'BatchJob By Id cURL 範例'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
@@ -30,7 +30,7 @@ interface BatchJobResponse {
 }
 [inline-code-end]
 
-[inline-code-attrs-start title =已完成的頁面遷移作業範例; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = '已完成的頁面遷移工作範例'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
     "status": "success",

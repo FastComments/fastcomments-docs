@@ -1,10 +1,10 @@
 ## Параметри
 
-| Име | Тип | Обавезно | Опис |
+| Назив | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| commentsByIdsParams | CommentsByIdsParams | No |  |
-| sso | string = "" | No |  |
+| tenantId | string | Да |  |
+| commentsByIdsParams | CommentsByIdsParams | Не |  |
+| sso | string = "" | Не |  |
 
 ## Одговор
 
@@ -12,12 +12,12 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'postCommentsByIds Пример'; type = 'nim; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример за postCommentsByIds'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 let tenantId = "my-tenant-123"
 let params = CommentsByIdsParams(commentIds = @["cmt-001", "cmt-002"])
 let (maybeResp, httpResp) = client.postCommentsByIds(tenantId = tenantId, commentsByIdsParams = params, sso = "")
 if maybeResp.isSome:
   let resp = maybeResp.get()
-  # use resp as needed
+  # користи resp по потреби
 [inline-code-end]

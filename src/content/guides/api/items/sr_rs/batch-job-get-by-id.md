@@ -1,16 +1,16 @@
 [api-resource-header-start name = 'BatchJob'; route = 'GET /api/v1/batch-jobs/:id'; creditsCost = 1; api-resource-header-end]
 
-Ова рута враћа статус, напредак и, када се заврши, резултат једног пакетног посла. Користите је за праћење посла покренутог помоћу [`POST /api/v1/pages/migrations`](#pages-migrations-post) или [`POST /api/v1/pages/migrations/:undoId/undo`](#pages-migrations-undo-post).
+Ова рута враћа статус, напредак и, када се заврши, резултат једног batch посла. Користите је да пратите посао покренут преко [`POST /api/v1/pages/migrations`](#pages-migrations-post) или [`POST /api/v1/pages/migrations/:undoId/undo`](#pages-migrations-undo-post).
 
-Посао је завршен када је његов `status` `success` или `failed`. Сваки позив кошта `1` кредит, па зато пратите сваких неколико секунди уместо континуирано.
+Посао је завршен када је његов `status` `success` или `failed`. Сваки позив кошта `1` кредит, тако да проверавајте сваких неколико секунди, а не непрекидно.
 
-[inline-code-attrs-start title = 'BatchJob По ИД-у cURL пример'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'BatchJob по Id cURL пример'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/batch-jobs/my-batch-job-id?tenantId=demo&API_KEY=DEMO_API_SECRET'
 [inline-code-end]
 
-[inline-code-attrs-start title = 'BatchJob По ИД-у структура захтева'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'BatchJob по Id структура захтева'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface BatchJobQueryParams {
     tenantId: string
@@ -18,19 +18,19 @@ interface BatchJobQueryParams {
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'BatchJob По ИД-у структура одговора'; type = 'typescript' isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'BatchJob по Id структура одговора'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface BatchJobResponse {
     status: 'success' | 'failed'
-    /** Укључено у случају неуспеха. **/
+    /** Included on failure. **/
     code?: 'missing-tenant-id' | 'invalid-tenant-id' | 'invalid-api-key' | 'missing-api-key' | 'not-found' | 'internal'
-    /** Укључено у случају неуспеха. **/
+    /** Included on failure. **/
     reason?: string
     batchJob?: BatchJob
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Завршени пример посла миграције странице'; type = 'json' isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример завршеног посла миграције страница'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
     "status": "success",

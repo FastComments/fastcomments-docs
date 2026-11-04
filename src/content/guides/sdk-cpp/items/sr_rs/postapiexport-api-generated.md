@@ -1,9 +1,9 @@
 ## Параметри
 
-| Име | Тип | Обавезно | Опис |
+| Назив | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| options | const PostApiExportOptions& | Yes |  |
+| tenantId | string | Да |  |
+| options | const PostApiExportOptions& | Да |  |
 
 ## Одговор
 
@@ -11,7 +11,7 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'postApiExport Пример'; type = 'cpp; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример за postApiExport'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 auto tenantId = utility::string_t(U("my-tenant-123"));
 PostApiExportOptions options;
@@ -23,7 +23,7 @@ options.endDate = boost::optional<utility::datetime>(utility::datetime::from_str
 api->postApiExport(tenantId, options)
     .then([](std::shared_ptr<ModerationExportResponse> response) {
         if (response) {
-            // обради успешан одговор извоза
+            // обрада успешног одговора на извоз
         }
     })
     .wait();

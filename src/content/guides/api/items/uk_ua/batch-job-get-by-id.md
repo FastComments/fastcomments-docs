@@ -1,16 +1,16 @@
 [api-resource-header-start name = 'BatchJob'; route = 'GET /api/v1/batch-jobs/:id'; creditsCost = 1; api-resource-header-end]
 
-Цей маршрут повертає статус, прогрес і, після завершення, результат однієї пакетної роботи. Використовуйте його, щоб відстежувати роботу, запущену за допомогою [`POST /api/v1/pages/migrations`](#pages-migrations-post) або [`POST /api/v1/pages/migrations/:undoId/undo`](#pages-migrations-undo-post).
+Цей маршрут повертає статус, прогрес та, після завершення, результат одного пакетного завдання. Використовуйте його, щоб відстежувати завдання, запущене через [`POST /api/v1/pages/migrations`](#pages-migrations-post) або [`POST /api/v1/pages/migrations/:undoId/undo`](#pages-migrations-undo-post).
 
-Робота вважається завершеною, коли її `status` дорівнює `success` або `failed`. Кожний виклик коштує `1` кредит, тому опитуйте кожні кілька секунд, а не безперервно.
+Завдання завершено, коли його `status` має значення `success` або `failed`. Кожен запит коштує `1` кредит, тому опитуйте кожні кілька секунд, а не безперервно.
 
-[inline-code-attrs-start title = 'Приклад cURL для BatchJob за Id'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад cURL-запиту BatchJob за ідентифікатором'; type = 'bash'; useDemoTenant = true; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 curl --request GET \
   --url 'https://fastcomments.com/api/v1/batch-jobs/my-batch-job-id?tenantId=demo&API_KEY=DEMO_API_SECRET'
 [inline-code-end]
 
-[inline-code-attrs title = 'Структура запиту BatchJob за Id'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Структура запиту BatchJob за ідентифікатором'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface BatchJobQueryParams {
     tenantId: string
@@ -18,7 +18,7 @@ interface BatchJobQueryParams {
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Структура відповіді BatchJob за Id'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Структура відповіді BatchJob за ідентифікатором'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 interface BatchJobResponse {
     status: 'success' | 'failed'
@@ -30,7 +30,7 @@ interface BatchJobResponse {
 }
 [inline-code-end]
 
-[inline-code-attrs-start title = 'Приклад завершеної роботи міграції сторінок'; type = 'json'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Приклад завершеного завдання міграції сторінок'; type = 'json'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
 {
     "status": "success",

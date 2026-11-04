@@ -1,41 +1,41 @@
-FastComments SSO (<a href="#sso">details hier</a>) biedt uw gebruikers een manier om te reageren zonder zich bij een ander platform te hoeven aanmelden.
+FastComments SSO (<a href="#sso">details hier</a>) biedt je gebruikers een manier om te reageren zonder dat ze hoeven in te loggen op een ander platform.
 
-Echter, dit alleen maakt uw discussies niet veilig, aangezien standaard commentaargegevens publiekelijk beschikbare informatie zijn – iedereen die de pagina kan bekijken, kan de reacties zien.
+Dit alleen beveiligt je commentaarthreads echter niet, omdat commentaargegevens standaard publiek beschikbare informatie zijn - iedereen die de pagina kan bekijken, kan de reacties bekijken.
 
-Door een instelling te wijzigen, kunnen we beperken dat reacties worden opgehaald, tenzij dit gebeurt door een beheerder of een geldige SSO‑gebruiker.
+Door een instelling te wijzigen, kunnen we voorkomen dat reacties worden opgehaald, tenzij dit door een beheerder of geldige SSO-gebruiker gebeurt.
 
-#### Instelling zonder code
+#### No-Code Setup
 
-We kunnen het bekijken en interactie met onze discussies voorkomen, wanneer SSO is ingesteld, door een <a href="https://fastcomments.com/auth/my-account/customize-widget" target="_blank">aanpassingsregel</a> te maken.
+We kunnen voorkomen dat onze commentaarthreads worden bekeken en dat er interactie mee plaatsvindt wanneer SSO is ingesteld, door een <a href="https://fastcomments.com/auth/my-account/customize-widget" target="_blank">customization rule</a> aan te maken.
 
-Zoek bij het doen naar SSO, en u zult deze optie vinden:
+Zoek bij het doen daarvan naar SSO, en je vindt deze optie:
 
-[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.require-sso'; selector = '.require-sso'; alt='Optie \'Require SSO to view comments\' ingeschakeld in een aanpassingsregel, met de keuze voor beveiligingsniveau'; title='Require SSO om reacties te bekijken' app-screenshot-end]
+[app-screenshot-start url='/auth/my-account/customize-widget/new'; clickSelector = '.require-sso'; selector = '.require-sso'; alt='Optie Vereis SSO om reacties te bekijken ingeschakeld in een customization rule, met de keuze voor beveiligingsniveau'; title='Vereis SSO Om Reacties Te Bekijken' app-screenshot-end]
 
-Schakel het in en sla de aanpassingsregel op.
+Schakel deze in en sla de customization rule op.
 
-#### Bescherm alleen een bepaald domein of pagina
+#### Alleen een Bepaald Domein of Pagina Beveiligen
 
-Om alleen een bepaald domein of pagina te beschermen, configureren we eenvoudigweg de aanpassingsregel hiervoor.
+Om alleen een bepaald domein of pagina te beveiligen, configureren we de customization rule eenvoudigweg om dit te doen.
 
-Bovenaan de aanpassings‑UI vinden we twee invoervelden, Domein en URL‑ID.
+Bovenaan de customization-UI vinden we twee invoervelden: Domain en URL ID.
 
-Om alleen een specifiek domein te beschermen, voert u het betreffende domein in het veld "domain" in.
+Om alleen een bepaald domein te beveiligen, voer je het betreffende domein in het veld "domain" in.
 
-Om een specifieke pagina te beschermen, voert u een pagin URL in het veld "URL ID" in. Als u een aangepaste integratie met FastComments heeft, kunt u hier in plaats van een URL een type ID invoeren.
+Om een bepaalde pagina te beveiligen, voer je een pagina-URL in het veld "URL ID" in. Als je een aangepaste integratie met FastComments hebt, kun je hier in plaats van een URL een soort ID invoeren.
 
 #### Beveiligingsniveaus
 
-Wanneer SSO vereist is, wilt u beslissen of u Simple SSO of Secure SSO vereist. Als u Simple SSO vereist, dan zijn beide toegestaan, maar als u Secure SSO vereist, moet de inhoud worden opgehaald met een Secure SSO‑payload die is gehasht met uw API‑sleutel om bekeken te kunnen worden.
+Wanneer je SSO vereist, moet je beslissen of je Simple SSO of Secure SSO vereist. Als je Simple SSO vereist, zijn beide toegestaan, maar als je Secure SSO vereist, dan moet de content worden opgehaald met een Secure SSO-payload die is gehasht met je API-sleutel om bekeken te kunnen worden.
 
-De beveiligingsniveau‑optie verschijnt wanneer u "Require SSO To View Comments" selecteert, en is alleen van kracht zolang die optie aan staat.
+De optie voor het beveiligingsniveau verschijnt wanneer je "Require SSO To View Comments" selecteert, en heeft alleen effect terwijl die optie aan staat.
 
-De <a href="#sso-simple">Auto Verify Comments via Simple SSO and Allow Simple SSO Admins</a>-instellingen zijn afzonderlijk, en gelden ongeacht of deze optie aan staat.
+De instellingen <a href="#sso-simple">Auto Verify Comments via Simple SSO en Allow Simple SSO Admins</a> zijn apart, en gelden ongeacht of deze optie aan staat.
 
-#### Bescherming verder dan lezen
+#### Bescherming Buiten het Lezen
 
-Het inschakelen van deze optie beschermt de pagina of het domein tegen reacties, tenzij de gebruiker via SSO is aangemeld.
+Het inschakelen van deze optie beschermt de pagina of het domein tegen reacties, tenzij de gebruiker is ingelogd via SSO.
 
-#### Valkuilen
+#### Aandachtspunten
 
-Gebruikers die vóór uw SSO‑integratie reacties hebben gemaakt, kunnen deze niet meer zien, tenzij ze zich aanmelden via uw SSO‑integratie.
+Gebruikers die reacties hebben geplaatst vóór je SSO-integratie kunnen deze niet zien, tenzij ze inloggen via je SSO-integratie.
