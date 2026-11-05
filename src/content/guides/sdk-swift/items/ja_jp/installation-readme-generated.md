@@ -1,19 +1,19 @@
-### Swift パッケージマネージャ
+### Swift Package Manager
 
-`Package.swift` ファイルに以下を追加してください:
+`Package.swift` ファイルに以下を追加します:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/fastcomments/fastcomments-swift.git", from: "3.1.1")
+    .package(url: "https://github.com/fastcomments/fastcomments-swift.git", from: "3.1.2")
 ]
 ```
 
-Xcode で追加する場合:
-1. File > Add Packages...
-2. リポジトリ URL を入力してください: `https://github.com/fastcomments/fastcomments-swift.git`
-3. 使用したいバージョンを選択してください
+または、Xcode では:
+1. File > Add Packages... を選択
+2. リポジトリの URL を入力: `https://github.com/fastcomments/fastcomments-swift.git`
+3. 使用したいバージョンを選択
 
-### 必要条件
+### 要件
 
 - Swift 5.9+
 - iOS 13.0+ / macOS 10.15+ / tvOS 13.0+ / watchOS 6.0+

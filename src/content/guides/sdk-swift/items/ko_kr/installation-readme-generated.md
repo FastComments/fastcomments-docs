@@ -1,17 +1,17 @@
-### Swift 패키지 매니저
+### Swift Package Manager
 
-다음 코드를 `Package.swift` 파일에 추가하세요:
+`Package.swift` 파일에 다음을 추가하세요:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/fastcomments/fastcomments-swift.git", from: "3.1.1")
+    .package(url: "https://github.com/fastcomments/fastcomments-swift.git", from: "3.1.2")
 ]
 ```
 
 또는 Xcode에서:
-1. File > 패키지 추가...
+1. File > Add Packages... 선택
 2. 저장소 URL 입력: `https://github.com/fastcomments/fastcomments-swift.git`
-3. 사용하려는 버전을 선택하세요
+3. 사용하려는 버전 선택
 
 ### 요구 사항
 

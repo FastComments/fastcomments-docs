@@ -1,10 +1,10 @@
 ### Swift Package Manager
 
-Προσθέστε τα εξής στο αρχείο `Package.swift` σας:
+Προσθέστε τα εξής στο αρχείο `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/fastcomments/fastcomments-swift.git", from: "3.1.1")
+    .package(url: "https://github.com/fastcomments/fastcomments-swift.git", from: "3.1.2")
 ]
 ```
 

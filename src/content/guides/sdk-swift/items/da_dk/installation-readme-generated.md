@@ -1,15 +1,15 @@
-### Swift-pakkehåndtering
+### Swift Package Manager
 
-Tilføj følgende til din `Package.swift`-fil:
+Tilføj følgende til din `Package.swift` fil:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/fastcomments/fastcomments-swift.git", from: "3.1.1")
+    .package(url: "https://github.com/fastcomments/fastcomments-swift.git", from: "3.1.2")
 ]
 ```
 
 Eller i Xcode:
-1. Fil > Tilføj pakker...
+1. File > Add Packages...
 2. Indtast repository-URL'en: `https://github.com/fastcomments/fastcomments-swift.git`
 3. Vælg den version, du vil bruge
 

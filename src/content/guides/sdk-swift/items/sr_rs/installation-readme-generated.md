@@ -1,10 +1,10 @@
-### Swift пакет менаџер
+### Swift Package Manager
 
-Додајте следеће у ваш `Package.swift` фајл:
+Додајте следеће у вашу `Package.swift` датотеку:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/fastcomments/fastcomments-swift.git", from: "3.1.1")
+    .package(url: "https://github.com/fastcomments/fastcomments-swift.git", from: "3.1.2")
 ]
 ```
 

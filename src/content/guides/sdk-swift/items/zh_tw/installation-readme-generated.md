@@ -1,10 +1,10 @@
 ### Swift Package Manager
 
-在您的 `Package.swift` 檔案中加入以下內容：
+將以下內容加入您的 `Package.swift` 檔案：
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/fastcomments/fastcomments-swift.git", from: "3.1.1")
+    .package(url: "https://github.com/fastcomments/fastcomments-swift.git", from: "3.1.2")
 ]
 ```
 

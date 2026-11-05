@@ -1,17 +1,17 @@
-### Upravljalnik paketov Swift
+### Swift Package Manager
 
-Dodajte naslednje v vašo datoteko `Package.swift`:
+Dodajte naslednje v svojo datoteko `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/fastcomments/fastcomments-swift.git", from: "3.1.1")
+    .package(url: "https://github.com/fastcomments/fastcomments-swift.git", from: "3.1.2")
 ]
 ```
 
-Ali v Xcode-u:
-1. Datoteka > Dodaj pakete...
+Ali v Xcode:
+1. File > Add Packages...
 2. Vnesite URL repozitorija: `https://github.com/fastcomments/fastcomments-swift.git`
-3. Izberite različico, ki jo želite uporabiti
+3. Izberite želeno različico
 
 ### Zahteve
 

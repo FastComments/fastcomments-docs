@@ -1,17 +1,17 @@
-### מנהל חבילות Swift
+### Swift Package Manager
 
-הוסף את הקוד הבא לקובץ `Package.swift` שלך:
+הוסיפו את הבא לקובץ `Package.swift` שלכם:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/fastcomments/fastcomments-swift.git", from: "3.1.1")
+    .package(url: "https://github.com/fastcomments/fastcomments-swift.git", from: "3.1.2")
 ]
 ```
 
-או ב‑Xcode:
-1. קובץ > הוסף חבילות...
-2. הזן את כתובת ה‑URL של המאגר: `https://github.com/fastcomments/fastcomments-swift.git`
-3. בחר את הגרסה שברצונך להשתמש בה
+או ב-Xcode:
+1. File > Add Packages...
+2. הזינו את כתובת ה-URL של המאגר: `https://github.com/fastcomments/fastcomments-swift.git`
+3. בחרו את הגרסה שבה ברצונכם להשתמש
 
 ### דרישות
 
