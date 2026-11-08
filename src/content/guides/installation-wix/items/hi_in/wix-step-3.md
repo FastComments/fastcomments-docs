@@ -33,6 +33,11 @@
 </script>
 [inline-code-end]
 
+<div class="screenshot white-bg">
+    <div class="title">चरण 3: पेस्ट करें और सहेजें</div>
+    <img class="screenshot-image" src="/images/installation-guides/installation-guide-wix-step-3-paste-and-save.png" alt="चरण 3: पेस्ट करें और सहेजें" />
+</div>
+
 अब आपको कमेंट विजेट का एक बहुत छोटा संस्करण दिखाई देगा:
 
 <div class="screenshot white-bg">
