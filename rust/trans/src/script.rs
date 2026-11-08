@@ -43,6 +43,11 @@ const HEBREW: Script = Script {
     ranges: &[(0x0590, 0x05FF)],
 };
 
+const DEVANAGARI: Script = Script {
+    name: "Devanagari",
+    ranges: &[(0x0900, 0x097F), (0xA8E0, 0xA8FF)],
+};
+
 // Kana plus Han: a Japanese sentence can be Han-heavy, so requiring kana
 // specifically would flag legitimate output.
 const JAPANESE: Script = Script {
@@ -71,6 +76,7 @@ pub fn expected_for(locale: &str) -> Option<&'static Script> {
         "bg_bg" | "ru_ru" | "uk_ua" | "sr_rs" => Some(&CYRILLIC),
         "el_gr" => Some(&GREEK),
         "he" => Some(&HEBREW),
+        "hi_in" => Some(&DEVANAGARI),
         "ja_jp" => Some(&JAPANESE),
         "ko_kr" => Some(&HANGUL),
         "zh_cn" | "zh_tw" => Some(&HAN),
@@ -105,6 +111,7 @@ mod tests {
             ("zh_cn", "在 Gatsby 网站中添加评论"),
             ("el_gr", "Προσθέστε σχόλια σε έναν ιστότοπο"),
             ("he", "הוסיפו תגובות לאתר"),
+            ("hi_in", "अपनी साइट पर टिप्पणियाँ जोड़ें"),
             ("bg_bg", "Добавяне на коментари към вашия сайт"),
         ];
         for (locale, text) in cases {

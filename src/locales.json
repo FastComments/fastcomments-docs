@@ -67,6 +67,12 @@
       "hreflang": "he",
       "flag": "🇮🇱"
     },
+    "hi_in": {
+      "name": "Hindi (India)",
+      "nativeName": "हिन्दी",
+      "hreflang": "hi-IN",
+      "flag": "🇮🇳"
+    },
     "it_it": {
       "name": "Italian (Italy)",
       "nativeName": "Italiano",

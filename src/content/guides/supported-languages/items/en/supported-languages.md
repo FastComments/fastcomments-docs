@@ -13,6 +13,7 @@ FastComments supports a number of languages, across different locales.
 - `el_cy`: Greek (Cyprus)
 - `el_gr`: Greek (Greece)
 - `he`: Hebrew
+- `hi_in`: Hindi (India)
 - `it_it`: Italian (Italy)
 - `ja_jp`: Japanese (Japan)
 - `ko_kr`: Korean (Korea)
