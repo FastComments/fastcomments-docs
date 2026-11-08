@@ -1,0 +1,17 @@
+{
+  "name": "oEmbed",
+  "pageHeader": "oEmbed के रूप में टिप्पणियाँ एम्बेड करें",
+  "icon": "oembed.png",
+  "itemsOrdered": [
+    {
+      "name": "oEmbed क्या है?",
+      "file": "about-oembed.md",
+      "subCat": "पृष्ठभूमि"
+    },
+    {
+      "name": "oEmbed बातचीत बनाना",
+      "file": "creating-oembed-conversation.md",
+      "subCat": "उपयोग"
+    }
+  ]
+}

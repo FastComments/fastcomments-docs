@@ -1,0 +1,31 @@
+{
+  "name": "पेज रिएक्ट्स",
+  "icon": "heart.svg",
+  "itemsOrdered": [
+    {
+      "name": "पेज रिएक्शन्स",
+      "file": "page-reacts-about.md",
+      "subCat": "पेज रिएक्शन्स"
+    },
+    {
+      "name": "इंस्टॉलेशन - VanillaJS",
+      "file": "page-reacts-installation-vanillajs.md",
+      "subCat": "पेज रिएक्शन्स"
+    },
+    {
+      "name": "फ्लोटिंग लाइक्स विजेट",
+      "file": "floating-likes-about.md",
+      "subCat": "फ्लोटिंग लाइक्स विजेट"
+    },
+    {
+      "name": "इंस्टॉलेशन - VanillaJS",
+      "file": "floating-likes-installation-vanillajs.md",
+      "subCat": "फ्लोटिंग लाइक्स विजेट"
+    },
+    {
+      "name": "इंस्टॉलेशन - WordPress",
+      "file": "floating-likes-wordpress.md",
+      "subCat": "फ्लोटिंग लाइक्स विजेट"
+    }
+  ]
+}

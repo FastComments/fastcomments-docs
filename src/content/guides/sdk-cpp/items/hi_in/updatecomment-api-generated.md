@@ -1,0 +1,28 @@
+## पैरामीटर
+
+| नाम | प्रकार | आवश्यक | विवरण |
+|------|------|----------|-------------|
+| tenantId | string | हाँ |  |
+| id | string | हाँ |  |
+| updatableCommentParams | UpdatableCommentParams | हाँ |  |
+| options | const UpdateCommentOptions& | हाँ |  |
+
+## प्रतिक्रिया
+
+लौटाता है: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/APIEmptyResponse.h)
+
+## उदाहरण
+
+[inline-code-attrs-start title = 'updateComment उदाहरण'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+auto tenantId = utility::string_t("my-tenant-123");
+auto commentId = utility::string_t("cmt-789");
+UpdatableCommentParams updatable;
+updatable.body = utility::string_t("संपादित टिप्पणी सामग्री");
+updatable.isSpam = boost::optional<bool>(false);
+UpdateCommentOptions options;
+options.notify = boost::optional<bool>(true);
+api->updateComment(tenantId, commentId, updatable, options)
+    .then([](std::shared_ptr<APIEmptyResponse>) {})
+    .then([](pplx::task<void> t) { try { t.get(); } catch(const std::exception&) {} });
+[inline-code-end]

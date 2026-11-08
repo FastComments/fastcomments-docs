@@ -1,0 +1,31 @@
+{
+  "name": "SSO एक्सेस कंट्रोल",
+  "icon": "sso-access-control.png",
+  "itemsOrdered": [
+    {
+      "name": "एक्सेस कंट्रोल क्या है?",
+      "file": "what-is-access-control.md",
+      "subCat": "पृष्ठभूमि"
+    },
+    {
+      "name": "यह कैसे काम करता है",
+      "file": "how-it-works.md",
+      "subCat": "पृष्ठभूमि"
+    },
+    {
+      "name": "विनिर्देश",
+      "file": "access-control-spec.md",
+      "subCat": "कार्यान्वयन"
+    },
+    {
+      "name": "कार्यान्वयन",
+      "file": "implementation.md",
+      "subCat": "कार्यान्वयन"
+    },
+    {
+      "name": "उदाहरण API कॉल",
+      "file": "api-example.md",
+      "subCat": "कार्यान्वयन"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+यह FastComments के लिए आधिकारिक Android लाइब्रेरी है।
+
+अपने Android ऐप में लाइव कमेंटिंग, चैट और रिव्यू विजेट एम्बेड करें।
+
+## रिपॉज़िटरी
+
+[GitHub पर देखें](https://github.com/FastComments/fastcomments-android)

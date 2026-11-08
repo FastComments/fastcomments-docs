@@ -1,0 +1,36 @@
+{
+  "name": "React Native SDK",
+  "pageHeader": "अपने React Native ऐप में टिप्पणियाँ जोड़ें",
+  "itemsOrdered": [
+    {
+      "name": "AI कोडिंग एजेंट",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "दस्तावेज़ीकरण",
+      "type": "readme"
+    },
+    {
+      "name": "लाइव डेमो",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "दस्तावेज़ीकरण",
+      "type": "readme"
+    },
+    {
+      "name": "इंस्टॉलेशन",
+      "file": "installation-readme-generated.md",
+      "subCat": "शुरुआत करें",
+      "type": "readme"
+    },
+    {
+      "name": "परिचय",
+      "file": "about-readme-generated.md",
+      "subCat": "दस्तावेज़ीकरण",
+      "type": "readme"
+    },
+    {
+      "name": "स्क्रीनशॉट",
+      "file": "screenshots-readme-generated.md",
+      "subCat": "दस्तावेज़ीकरण",
+      "type": "readme"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "name": "उपयोगकर्ता",
+  "icon": "users.png",
+  "itemsOrdered": [
+    {
+      "name": "उपयोगकर्ताओं के प्रकार",
+      "file": "types-of-users.md",
+      "subCat": "पृष्ठभूमि"
+    },
+    {
+      "name": "उपयोगकर्ता नाम",
+      "file": "usernames.md",
+      "subCat": "पृष्ठभूमि"
+    },
+    {
+      "name": "व्यवस्थापक उपयोगकर्ता",
+      "file": "administrator-users.md",
+      "subCat": "पृष्ठभूमि"
+    },
+    {
+      "name": "टिप्पणीकार उपयोगकर्ता",
+      "file": "commenter-users.md",
+      "subCat": "पृष्ठभूमि"
+    },
+    {
+      "name": "व्यवस्थापक जोड़ना",
+      "file": "adding-administrators.md",
+      "subCat": "सेटअप"
+    },
+    {
+      "name": "मॉडरेटर जोड़ना",
+      "file": "adding-moderators.md",
+      "subCat": "सेटअप"
+    },
+    {
+      "name": "व्यवस्थापक अनुमतियाँ अपडेट करना",
+      "file": "updating-administrator-permissions.md",
+      "subCat": "सेटअप"
+    },
+    {
+      "name": "डेवलपर्स",
+      "file": "developers.md",
+      "subCat": "सेटअप"
+    }
+  ]
+}

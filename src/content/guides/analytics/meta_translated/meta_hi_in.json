@@ -1,0 +1,31 @@
+{
+  "name": "एनालिटिक्स",
+  "icon": "analytics.png",
+  "itemsOrdered": [
+    {
+      "name": "पृष्ठभूमि",
+      "file": "analytics-background.md",
+      "subCat": "एनालिटिक्स"
+    },
+    {
+      "name": "बिलिंग एनालिटिक्स",
+      "file": "analytics-billing.md",
+      "subCat": "एनालिटिक्स"
+    },
+    {
+      "name": "साइट एनालिटिक्स",
+      "file": "analytics-site.md",
+      "subCat": "एनालिटिक्स"
+    },
+    {
+      "name": "अन्य प्लेटफ़ॉर्म की तुलना में एनालिटिक्स सटीकता",
+      "file": "analytics-vs-other-platforms.md",
+      "subCat": "एनालिटिक्स"
+    },
+    {
+      "name": "गूगल एनालिटिक्स",
+      "file": "analytics-google.md",
+      "subCat": "ट्रैकिंग"
+    }
+  ]
+}

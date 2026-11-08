@@ -1,0 +1,33 @@
+{
+  "name": "Zapier इंटीग्रेशन",
+  "pageHeader": "FastComments को Zapier से कनेक्ट करें",
+  "icon": "3rd-party-products/zapier.svg",
+  "description": "Connect FastComments to thousands of apps with Zapier. Trigger workflows from new comments and create comments, pages, and users from any other app, with no code.",
+  "itemsOrdered": [
+    {
+      "name": "अपना खाता कनेक्ट करें",
+      "file": "zapier-connect.md",
+      "subCat": "Zapier इंटीग्रेशन"
+    },
+    {
+      "name": "ट्रिगर्स",
+      "file": "zapier-triggers.md",
+      "subCat": "Zapier इंटीग्रेशन"
+    },
+    {
+      "name": "एक्शन और सर्च",
+      "file": "zapier-actions.md",
+      "subCat": "Zapier इंटीग्रेशन"
+    },
+    {
+      "name": "उदाहरण Zaps",
+      "file": "zapier-examples.md",
+      "subCat": "Zapier इंटीग्रेशन"
+    },
+    {
+      "name": "समस्या निवारण",
+      "file": "zapier-troubleshooting.md",
+      "subCat": "Zapier इंटीग्रेशन"
+    }
+  ]
+}

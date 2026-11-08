@@ -1,0 +1,32 @@
+## पैरामीटर
+
+| नाम | प्रकार | आवश्यक | विवरण |
+|------|------|----------|-------------|
+| tenant_id | String | हाँ |  |
+| comment_id | String | हाँ |  |
+| set_comment_text_params | models::SetCommentTextParams | हाँ |  |
+| broadcast_id | String | नहीं |  |
+| sso | String | नहीं |  |
+
+## प्रतिक्रिया
+
+लौटाता है: [`SetCommentTextResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/set_comment_text_response.rs)
+
+## उदाहरण
+
+[inline-code-attrs-start title = 'post_set_comment_text उदाहरण'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+async fn update_comment(config: &configuration::Configuration) -> Result<(), Error> {
+    let params = PostSetCommentTextParams {
+        tenant_id: "acme-corp".to_string(),
+        comment_id: "comment-9876".to_string(),
+        set_comment_text_params: models::SetCommentTextParams {
+            text: "Revised comment content".to_string(),
+        },
+        broadcast_id: Some("broadcast-2023".to_string()),
+        sso: Some("sso-token-abc".to_string()),
+    };
+    let _response = post_set_comment_text(config, params).await?;
+    Ok(())
+}
+[inline-code-end]

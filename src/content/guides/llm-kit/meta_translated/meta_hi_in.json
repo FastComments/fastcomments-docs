@@ -1,0 +1,21 @@
+{
+  "name": "LLM किट",
+  "icon": "ai.png",
+  "itemsOrdered": [
+    {
+      "name": "LLM किट प्राप्त करें",
+      "file": "llm-kit-snippet.md",
+      "subCat": "LLM एकीकरण"
+    },
+    {
+      "name": "MCP सर्वर",
+      "file": "mcp-server.md",
+      "subCat": "MCP सर्वर"
+    },
+    {
+      "name": "एजेंट से अपना खाता सेट अप करवाएं",
+      "file": "agent-account-setup.md",
+      "subCat": "एजेंट खाता सेटअप"
+    }
+  ]
+}

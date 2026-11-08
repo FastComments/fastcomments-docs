@@ -1,0 +1,31 @@
+## पैरामीटर
+
+| नाम | प्रकार | आवश्यक | विवरण |
+|------|------|----------|-------------|
+| tenantId | string | हाँ |  |
+| id | string | हाँ |  |
+
+## प्रतिक्रिया
+
+रिटर्न करता है: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/APIEmptyResponse.ts)
+
+## उदाहरण
+
+[inline-code-attrs-start title = 'deleteEmailTemplate उदाहरण'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+interface APIStatus {
+  code: number;
+  message: string;
+}
+
+interface APIEmptyResponse {
+  status?: APIStatus;
+}
+
+(async () => {
+  const tenantId: string = "tenant_12345";
+  const templateId: string = "template_987";
+
+  const result: APIEmptyResponse = await deleteEmailTemplate(tenantId, templateId);
+})();
+[inline-code-end]

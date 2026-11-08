@@ -1,0 +1,451 @@
+{
+  "name": "अनुकूलन और कॉन्फ़िगरेशन",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "अपना खाता पहचानना",
+      "file": "tenant-id.md",
+      "subCat": "मूल बातें"
+    },
+    {
+      "name": "टिप्पणियाँ पृष्ठों और लेखों से कैसे जुड़ी होती हैं",
+      "file": "url-id.md",
+      "subCat": "मूल बातें"
+    },
+    {
+      "name": "अलग-अलग पृष्ठों पर वही टिप्पणियाँ दिखाना",
+      "file": "url-id-same-comments-different-pages.md",
+      "subCat": "मूल बातें"
+    },
+    {
+      "name": "कस्टम स्टाइलिंग",
+      "file": "custom-css.md",
+      "subCat": "रूप-रंग"
+    },
+    {
+      "name": "कस्टम फ़ॉन्ट",
+      "file": "custom-fonts.md",
+      "subCat": "रूप-रंग"
+    },
+    {
+      "name": "ब्रांडिंग हटाना",
+      "file": "remove-branding.md",
+      "subCat": "रूप-रंग"
+    },
+    {
+      "name": "गहरे बैकग्राउंड का समर्थन (डार्क मोड)",
+      "file": "has-dark-background.md",
+      "subCat": "रूप-रंग"
+    },
+    {
+      "name": "डार्क मोड टॉगल करना",
+      "file": "has-dark-background-toggle.md",
+      "subCat": "रूप-रंग"
+    },
+    {
+      "name": "टेक्स्ट ओवरराइड करना",
+      "file": "translations.md",
+      "subCat": "रूप-रंग"
+    },
+    {
+      "name": "डिफ़ॉल्ट अवतार बदलना",
+      "file": "default-avatar-src.md",
+      "subCat": "रूप-रंग"
+    },
+    {
+      "name": "अवतार अक्षम करना",
+      "file": "hide-avatars.md",
+      "subCat": "रूप-रंग"
+    },
+    {
+      "name": "सभी डिफ़ॉल्ट स्टाइल अक्षम करना",
+      "file": "no-styles.md",
+      "subCat": "रूप-रंग"
+    },
+    {
+      "name": "टिप्पणियों से पृष्ठों का लिंक करना",
+      "file": "url.md",
+      "subCat": "रूप-रंग"
+    },
+    {
+      "name": "डिफ़ॉल्ट रूप से उत्तर संकुचित करना",
+      "file": "collapse-replies.md",
+      "subCat": "रूप-रंग"
+    },
+    {
+      "name": "WYSIWYG सक्षम करें",
+      "file": "enable-wysiwyg.md",
+      "subCat": "रूप-रंग"
+    },
+    {
+      "name": "टूलबार अक्षम करना",
+      "file": "disable-toolbar.md",
+      "subCat": "रूप-रंग"
+    },
+    {
+      "name": "ब्लॉकिंग अक्षम करना",
+      "file": "disable-blocking.md",
+      "subCat": "रूप-रंग"
+    },
+    {
+      "name": "कौन सा पृष्ठ रेंडर करना है यह निर्धारित करना",
+      "file": "starting-page.md",
+      "subCat": "रूप-रंग"
+    },
+    {
+      "name": "पृष्ठ पुनः लोड किए बिना टिप्पणी थ्रेड बदलना",
+      "file": "switching-comment-threads.md",
+      "subCat": "रूप-रंग"
+    },
+    {
+      "name": "पूर्ण तिथियाँ (मानव-अनुकूल टाइमस्टैम्प अक्षम करें)",
+      "file": "absolute-dates.md",
+      "subCat": "रूप-रंग"
+    },
+    {
+      "name": "पूर्ण और सापेक्ष दोनों तिथियाँ दिखाना",
+      "file": "absolute-and-relative-dates.md",
+      "subCat": "रूप-रंग"
+    },
+    {
+      "name": "हेडर टेक्स्ट जोड़ना",
+      "file": "header-html.md",
+      "subCat": "रूप-रंग"
+    },
+    {
+      "name": "लिंक को टेक्स्ट के रूप में दिखाना",
+      "file": "render-links-as-text.md",
+      "subCat": "रूप-रंग"
+    },
+    {
+      "name": "बटन से टिप्पणियाँ टॉगल करना",
+      "file": "use-show-comments-toggle.md",
+      "subCat": "रूप-रंग"
+    },
+    {
+      "name": "टिप्पणी संख्या टेक्स्ट को अनुकूलित करना",
+      "file": "comment-count-format.md",
+      "subCat": "रूप-रंग"
+    },
+    {
+      "name": "छवि रीडायरेक्ट अक्षम करें",
+      "file": "disable-image-redirect.md",
+      "subCat": "रूप-रंग"
+    },
+    {
+      "name": "स्वचालित हैशटैग निर्माण अक्षम करें",
+      "file": "disable-automatic-hashtag-creation.md",
+      "subCat": "रूप-रंग"
+    },
+    {
+      "name": "सूचना घंटी अक्षम करें",
+      "file": "disable-notification-bell.md",
+      "subCat": "रूप-रंग"
+    },
+    {
+      "name": "प्रोफ़ाइल अक्षम करें",
+      "file": "disable-profiles.md",
+      "subCat": "रूप-रंग"
+    },
+    {
+      "name": "प्रोफ़ाइल टिप्पणियाँ अक्षम करें",
+      "file": "disable-profile-comments.md",
+      "subCat": "रूप-रंग"
+    },
+    {
+      "name": "प्रोफ़ाइल डायरेक्ट संदेश अक्षम करें",
+      "file": "disable-profile-direct-messages.md",
+      "subCat": "रूप-रंग"
+    },
+    {
+      "name": "सफलता संदेश अक्षम करें",
+      "file": "disable-success-message.md",
+      "subCat": "रूप-रंग"
+    },
+    {
+      "name": "GIF की सामग्री रेटिंग बदलना",
+      "file": "gif-rating.md",
+      "subCat": "रूप-रंग"
+    },
+    {
+      "name": "छवि सामग्री मॉडरेशन",
+      "file": "image-content-moderation.md",
+      "subCat": "रूप-रंग"
+    },
+    {
+      "name": "वोटिंग शैली बदलना",
+      "file": "vote-style.md",
+      "subCat": "रूप-रंग"
+    },
+    {
+      "name": "हटाना अक्षम करें",
+      "file": "disable-deleting.md",
+      "subCat": "रूप-रंग"
+    },
+    {
+      "name": "संपादन अक्षम करें",
+      "file": "disable-editing.md",
+      "subCat": "रूप-रंग"
+    },
+    {
+      "name": "नई टिप्पणियों को हाइलाइट करना",
+      "file": "highlighting-new-comments.md",
+      "subCat": "रूप-रंग"
+    },
+    {
+      "name": "पृष्ठ आकार",
+      "file": "page-size.md",
+      "subCat": "रूप-रंग"
+    },
+    {
+      "name": "ईमेल टेम्पलेट",
+      "file": "email-templates.md",
+      "subCat": "रूप-रंग"
+    },
+    {
+      "name": "उपयोगकर्ता नाम प्रारूप",
+      "file": "user-name-formats.md",
+      "subCat": "रूप-रंग"
+    },
+    {
+      "name": "छवि अपलोड अक्षम करना",
+      "file": "no-image-uploads.md",
+      "subCat": "रूप-रंग"
+    },
+    {
+      "name": "मीडिया एम्बेड की अनुमति दें",
+      "file": "allow-media-embeds.md",
+      "subCat": "रूप-रंग"
+    },
+    {
+      "name": "खोज बॉक्स सक्षम करें",
+      "file": "enable-search.md",
+      "subCat": "रूप-रंग"
+    },
+    {
+      "name": "स्पॉइलर सक्षम करें",
+      "file": "enable-spoilers.md",
+      "subCat": "रूप-रंग"
+    },
+    {
+      "name": "टिप्पणी देखने की संख्या सक्षम करें",
+      "file": "enable-comment-view-counts.md",
+      "subCat": "रूप-रंग"
+    },
+    {
+      "name": "लाइव टिप्पणियाँ तुरंत दिखाएँ",
+      "file": "show-live-right-away.md",
+      "subCat": "लाइव टिप्पणी"
+    },
+    {
+      "name": "लाइव टिप्पणी अक्षम करना",
+      "file": "disable-live-commenting.md",
+      "subCat": "लाइव टिप्पणी"
+    },
+    {
+      "name": "नई लाइव टिप्पणियाँ नीचे दिखाएँ",
+      "file": "new-comments-to-bottom.md",
+      "subCat": "लाइव टिप्पणी"
+    },
+    {
+      "name": "अनंत स्क्रॉलिंग सक्षम करना",
+      "file": "enable-infinite-scrolling.md",
+      "subCat": "पृष्ठांकन और क्रमबद्धता"
+    },
+    {
+      "name": "डिफ़ॉल्ट क्रम दिशा बदलना",
+      "file": "default-sort-direction.md",
+      "subCat": "पृष्ठांकन और क्रमबद्धता"
+    },
+    {
+      "name": "सभी टिप्पणियाँ एक साथ दिखाना - पृष्ठांकन अक्षम करें",
+      "file": "starting-page-disable-pagination.md",
+      "subCat": "पृष्ठांकन और क्रमबद्धता"
+    },
+    {
+      "name": "उत्तर बॉक्स को टिप्पणियों के बाद ले जाना",
+      "file": "input-after-comments.md",
+      "subCat": "उत्तर बॉक्स"
+    },
+    {
+      "name": "टिप्पणी की लंबाई सीमित करना",
+      "file": "max-comment-character-length.md",
+      "subCat": "उत्तर बॉक्स"
+    },
+    {
+      "name": "बहु-पंक्ति टिप्पणी अक्षम करें",
+      "file": "use-single-line-comment-input.md",
+      "subCat": "उत्तर बॉक्स"
+    },
+    {
+      "name": "प्रति उपयोगकर्ता टिप्पणी सीमा",
+      "file": "limit-comment-volume-per-user.md",
+      "subCat": "उत्तर बॉक्स"
+    },
+    {
+      "name": "नई शीर्ष-स्तरीय टिप्पणियाँ रोकें",
+      "file": "no-new-root-comments.md",
+      "subCat": "उत्तर बॉक्स"
+    },
+    {
+      "name": "अधिकतम उत्तर गहराई",
+      "file": "max-reply-depth.md",
+      "subCat": "उत्तर बॉक्स"
+    },
+    {
+      "name": "सेवा की शर्तों की स्वीकृति आवश्यक करें",
+      "file": "terms-of-service.md",
+      "subCat": "उत्तर बॉक्स"
+    },
+    {
+      "name": "अनभेजी टिप्पणी के साथ छोड़ने से पहले चेतावनी दें",
+      "file": "warn-on-unsaved-comment.md",
+      "subCat": "उत्तर बॉक्स"
+    },
+    {
+      "name": "पोल सक्षम करना",
+      "file": "enable-polls.md",
+      "subCat": "उत्तर बॉक्स"
+    },
+    {
+      "name": "सिंगल साइन ऑन (SSO) अवलोकन",
+      "file": "sso.md",
+      "subCat": "SSO"
+    },
+    {
+      "name": "कस्टम एकीकरण - सुरक्षित सिंगल साइन ऑन (SSO)",
+      "file": "sso-secure.md",
+      "subCat": "SSO"
+    },
+    {
+      "name": "कस्टम एकीकरण - सरल सिंगल साइन ऑन (SSO)",
+      "file": "sso-simple.md",
+      "subCat": "SSO"
+    },
+    {
+      "name": "कस्टम एकीकरण - Disqus SSO से माइग्रेशन",
+      "file": "sso-disqus.md",
+      "subCat": "SSO"
+    },
+    {
+      "name": "कस्टम एकीकरण - Commento SSO से माइग्रेशन",
+      "file": "sso-commento.md",
+      "subCat": "SSO"
+    },
+    {
+      "name": "सिंगल-साइन-ऑन से टिप्पणी थ्रेड की सुरक्षा",
+      "file": "sso-require-to-view-comments.md",
+      "subCat": "SSO"
+    },
+    {
+      "name": "गुमनाम टिप्पणी की अनुमति दें",
+      "file": "allow-anon.md",
+      "subCat": "गुमनाम टिप्पणी"
+    },
+    {
+      "name": "गुमनाम टिप्पणियों को समाप्त होने से रोकना",
+      "file": "allow-anon-retain-comments.md",
+      "subCat": "गुमनाम टिप्पणी"
+    },
+    {
+      "name": "ईमेल इनपुट अक्षम करें",
+      "file": "disable-email-inputs.md",
+      "subCat": "गुमनाम टिप्पणी"
+    },
+    {
+      "name": "असत्यापित लेबल अक्षम करें",
+      "file": "disable-unverified-label.md",
+      "subCat": "गुमनाम टिप्पणी"
+    },
+    {
+      "name": "गुमनाम वोटिंग की अनुमति दें",
+      "file": "allow-anon-votes.md",
+      "subCat": "गुमनाम टिप्पणी"
+    },
+    {
+      "name": "डिफ़ॉल्ट उपयोगकर्ता नाम सेट करना",
+      "file": "default-username.md",
+      "subCat": "गुमनाम टिप्पणी"
+    },
+    {
+      "name": "उपयोगकर्ता नाम स्वचालित रूप से बनाएँ",
+      "file": "auto-generate-username.md",
+      "subCat": "गुमनाम टिप्पणी"
+    },
+    {
+      "name": "कॉलबैक",
+      "file": "callbacks.md",
+      "subCat": "विविध"
+    },
+    {
+      "name": "उपयोगकर्ता की लोकेल मैन्युअल रूप से परिभाषित करना",
+      "file": "locale.md",
+      "subCat": "विविध"
+    },
+    {
+      "name": "अनुमत भाषाओं को सीमित करना",
+      "file": "allowed-languages.md",
+      "subCat": "विविध"
+    },
+    {
+      "name": "टिप्पणी अनुवाद",
+      "file": "comment-translation.md",
+      "subCat": "विविध"
+    },
+    {
+      "name": "पृष्ठ शीर्षक",
+      "file": "page-title.md",
+      "subCat": "विविध"
+    },
+    {
+      "name": "नए उत्तर रोकें और वोट अक्षम करें",
+      "file": "readonly.md",
+      "subCat": "विविध"
+    },
+    {
+      "name": "लिंक डोमेन प्रतिबंधित करना",
+      "file": "restricting-link-domains.md",
+      "subCat": "विविध"
+    },
+    {
+      "name": "टिप्पणी संख्या और सभी नेस्टेड उत्तरों की गिनती",
+      "file": "count-all.md",
+      "subCat": "विविध"
+    },
+    {
+      "name": "टिप्पणीकार लिंक सक्षम करना",
+      "file": "enable-commenter-links.md",
+      "subCat": "विविध"
+    },
+    {
+      "name": "मॉडरेशन समूह",
+      "file": "moderation-group-ids.md",
+      "subCat": "विविध"
+    },
+    {
+      "name": "मेंशन समूह आईडी",
+      "file": "mention-group-ids.md",
+      "subCat": "विविध"
+    },
+    {
+      "name": "थर्ड पार्टी कुकी बायपास",
+      "file": "enable-third-party-cookie-bypass.md",
+      "subCat": "विविध"
+    },
+    {
+      "name": "उत्तरों सहित टिप्पणियाँ हटाना",
+      "file": "deleting-comments-with-replies.md",
+      "subCat": "विविध"
+    },
+    {
+      "name": "टॉप बार में बैज दिखाएँ",
+      "file": "show-badges-in-top-bar.md",
+      "subCat": "रूप-रंग"
+    },
+    {
+      "name": "ऑनलाइन उपयोगकर्ताओं की सूची दिखाएँ",
+      "file": "users-list.md",
+      "subCat": "रूप-रंग"
+    }
+  ]
+}

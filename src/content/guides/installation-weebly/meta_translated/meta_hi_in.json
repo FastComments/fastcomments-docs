@@ -1,0 +1,42 @@
+{
+  "name": "Weebly इंस्टॉलेशन",
+  "pageHeader": "Weebly साइटों में टिप्पणियाँ जोड़ें",
+  "icon": "3rd-party-products/weebly.svg",
+  "itemsOrdered": [
+    {
+      "name": "चरण 1: ब्लॉग सेटिंग्स खोलें",
+      "file": "weebly-step-1.md",
+      "subCat": "Weebly इंस्टॉलेशन"
+    },
+    {
+      "name": "चरण 2: The FastComments.com कोड जोड़ें",
+      "file": "weebly-step-2.md",
+      "subCat": "Weebly इंस्टॉलेशन"
+    },
+    {
+      "name": "चरण 3: प्रकाशित करें!",
+      "file": "weebly-step-3.md",
+      "subCat": "Weebly इंस्टॉलेशन"
+    },
+    {
+      "name": "सफलता",
+      "file": "weebly-success.md",
+      "subCat": "Weebly इंस्टॉलेशन"
+    },
+    {
+      "name": "डोमेन त्रुटियाँ",
+      "file": "weebly-domain-errors.md",
+      "subCat": "Weebly इंस्टॉलेशन"
+    },
+    {
+      "name": "अनुकूलन",
+      "file": "weebly-customize.md",
+      "subCat": "Weebly इंस्टॉलेशन"
+    },
+    {
+      "name": "अपनी Weebly साइट में पोल जोड़ें",
+      "file": "weebly-polls.md",
+      "subCat": "पोल"
+    }
+  ]
+}

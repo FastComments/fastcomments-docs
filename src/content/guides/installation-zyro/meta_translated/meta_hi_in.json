@@ -1,0 +1,42 @@
+{
+  "name": "Zyro इंस्टॉलेशन",
+  "pageHeader": "Zyro साइटों में लाइव कमेंटिंग जोड़ें",
+  "icon": "3rd-party-products/zyro.png",
+  "itemsOrdered": [
+    {
+      "name": "चरण 1: कोड विजेट जोड़ें",
+      "file": "zyro-step-1.md",
+      "subCat": "Zyro साइट इंस्टॉलेशन"
+    },
+    {
+      "name": "चरण 2: कोड जोड़ें",
+      "file": "zyro-step-2.md",
+      "subCat": "Zyro साइट इंस्टॉलेशन"
+    },
+    {
+      "name": "सफलता",
+      "file": "zyro-site-success.md",
+      "subCat": "Zyro साइट इंस्टॉलेशन"
+    },
+    {
+      "name": "साइट डोमेन त्रुटियाँ",
+      "file": "zyro-site-domain-errors.md",
+      "subCat": "Zyro साइट इंस्टॉलेशन"
+    },
+    {
+      "name": "साइट अनुकूलन",
+      "file": "zyro-site-customize.md",
+      "subCat": "Zyro साइट इंस्टॉलेशन"
+    },
+    {
+      "name": "फ्लोटिंग लाइक्स बटन",
+      "file": "zyro-floating-likes.md",
+      "subCat": "Zyro फ्लोटिंग लाइक्स"
+    },
+    {
+      "name": "अपनी Zyro साइट में पोल जोड़ें",
+      "file": "zyro-polls.md",
+      "subCat": "पोल"
+    }
+  ]
+}

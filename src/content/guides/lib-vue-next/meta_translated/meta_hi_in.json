@@ -1,0 +1,66 @@
+{
+  "name": "Vue 3 लाइब्रेरी",
+  "pageHeader": "अपने Vue 3 ऐप में टिप्पणियाँ जोड़ें",
+  "itemsOrdered": [
+    {
+      "name": "AI कोडिंग एजेंट",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "दस्तावेज़ीकरण",
+      "type": "readme"
+    },
+    {
+      "name": "लाइव डेमो",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "दस्तावेज़ीकरण",
+      "type": "readme"
+    },
+    {
+      "name": "लाइव शोकेस",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "दस्तावेज़ीकरण",
+      "type": "readme"
+    },
+    {
+      "name": "इंस्टॉलेशन",
+      "file": "installation-readme-generated.md",
+      "subCat": "शुरुआत करें",
+      "type": "readme"
+    },
+    {
+      "name": "उपयोग",
+      "file": "usage-readme-generated.md",
+      "subCat": "उपयोग",
+      "type": "readme"
+    },
+    {
+      "name": "वर्तमान पेज अपडेट करना (SPA उदाहरण)",
+      "file": "updating-the-current-page-spa-example-readme-generated.md",
+      "subCat": "उपयोग",
+      "type": "readme"
+    },
+    {
+      "name": "प्रोडक्शन में",
+      "file": "in-production-readme-generated.md",
+      "subCat": "दस्तावेज़ीकरण",
+      "type": "readme"
+    },
+    {
+      "name": "सभी विजेट और दस्तावेज़ीकरण",
+      "file": "all-widgets-and-documentation-readme-generated.md",
+      "subCat": "दस्तावेज़ीकरण",
+      "type": "readme"
+    },
+    {
+      "name": "मेंटेनेंस स्थिति",
+      "file": "maintenance-status-readme-generated.md",
+      "subCat": "दस्तावेज़ीकरण",
+      "type": "readme"
+    },
+    {
+      "name": "FastComments",
+      "file": "fastcomments-readme-generated.md",
+      "subCat": "दस्तावेज़ीकरण",
+      "type": "readme"
+    }
+  ]
+}

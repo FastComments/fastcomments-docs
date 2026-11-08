@@ -1,0 +1,26 @@
+{
+  "name": "लॉगिन लिंक",
+  "icon": "login-links.png",
+  "itemsOrdered": [
+    {
+      "name": "लॉगिन लिंक क्या हैं?",
+      "file": "login-links-what-are.md",
+      "subCat": "पृष्ठभूमि"
+    },
+    {
+      "name": "पासवर्ड की तुलना में लॉगिन लिंक के लाभ",
+      "file": "login-links-benefits.md",
+      "subCat": "पृष्ठभूमि"
+    },
+    {
+      "name": "हम लॉगिन लिंक की सुरक्षा कैसे सुनिश्चित करते हैं",
+      "file": "login-links-ensuring-security.md",
+      "subCat": "सुरक्षा"
+    },
+    {
+      "name": "लॉगिन लिंक किसे भेजे जाते हैं?",
+      "file": "login-links-who-gets-sent.md",
+      "subCat": "उपयोग"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "शेड्यूल किए गए कमेंट",
+  "icon": "upload-clock.svg",
+  "itemsOrdered": [
+    {
+      "name": "पृष्ठभूमि",
+      "file": "background.md",
+      "subCat": "शेड्यूल किए गए कमेंट"
+    },
+    {
+      "name": "कैसे करें",
+      "file": "howto.md",
+      "subCat": "शेड्यूल किए गए कमेंट"
+    },
+    {
+      "name": "इंपोर्ट प्रारूप",
+      "file": "import-format.md",
+      "subCat": "शेड्यूल किए गए कमेंट"
+    }
+  ]
+}

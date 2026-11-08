@@ -1,0 +1,41 @@
+{
+  "name": "इमेज चैट",
+  "icon": "image-chat-icon.svg",
+  "itemsOrdered": [
+    {
+      "name": "शुरुआत करें",
+      "file": "getting-started.md",
+      "subCat": "शुरुआत करें"
+    },
+    {
+      "name": "उदाहरण",
+      "file": "examples.md",
+      "subCat": "शुरुआत करें"
+    },
+    {
+      "name": "कॉन्फ़िगरेशन विकल्प",
+      "file": "configuration-options.md",
+      "subCat": "कॉन्फ़िगरेशन"
+    },
+    {
+      "name": "रिस्पॉन्सिव डिज़ाइन",
+      "file": "responsive-design.md",
+      "subCat": "कॉन्फ़िगरेशन"
+    },
+    {
+      "name": "अनुकूलन",
+      "file": "customization.md",
+      "subCat": "अनुकूलन"
+    },
+    {
+      "name": "लाइव सिंक",
+      "file": "live-sync.md",
+      "subCat": "उन्नत"
+    },
+    {
+      "name": "API संदर्भ",
+      "file": "api-reference.md",
+      "subCat": "उन्नत"
+    }
+  ]
+}

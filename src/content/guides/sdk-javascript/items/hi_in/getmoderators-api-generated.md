@@ -1,0 +1,22 @@
+## पैरामीटर
+
+| नाम | प्रकार | आवश्यक | विवरण |
+|------|------|----------|-------------|
+| tenantId | string | हाँ |  |
+| skip | number | नहीं |  |
+
+## प्रतिक्रिया
+
+रिटर्न करता है: [`GetModeratorsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetModeratorsResponse.ts)
+
+## उदाहरण
+
+[inline-code-attrs-start title = 'getModerators उदाहरण'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+const tenantId: string = "tenant_987654321";
+
+const moderators: GetModeratorsResponse = await getModerators(tenantId);
+
+const skip: number = 20;
+const moreModerators: GetModeratorsResponse = await getModerators(tenantId, skip);
+[inline-code-end]

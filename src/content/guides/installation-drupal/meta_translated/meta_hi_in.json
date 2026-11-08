@@ -1,0 +1,67 @@
+{
+  "name": "Drupal इंस्टॉलेशन",
+  "pageHeader": "Drupal साइटों में लाइव कमेंटिंग जोड़ें",
+  "icon": "3rd-party-products/drupal.png",
+  "itemsOrdered": [
+    {
+      "name": "क्विक स्टार्ट",
+      "file": "drupal-quick-start.md",
+      "subCat": "TLDR"
+    },
+    {
+      "name": "इंस्टॉलेशन",
+      "file": "drupal-installation.md",
+      "subCat": "Drupal इंस्टॉलेशन"
+    },
+    {
+      "name": "कॉन्फ़िगरेशन",
+      "file": "drupal-configuration.md",
+      "subCat": "Drupal इंस्टॉलेशन"
+    },
+    {
+      "name": "विजेट ब्लॉक्स",
+      "file": "drupal-widget-blocks.md",
+      "subCat": "Drupal इंस्टॉलेशन"
+    },
+    {
+      "name": "कंटेंट टाइप फ़ील्ड्स",
+      "file": "drupal-content-type-fields.md",
+      "subCat": "Drupal इंस्टॉलेशन"
+    },
+    {
+      "name": "सिंगल साइन-ऑन (SSO)",
+      "file": "drupal-sso.md",
+      "subCat": "Drupal इंस्टॉलेशन"
+    },
+    {
+      "name": "अनुमतियाँ",
+      "file": "drupal-permissions.md",
+      "subCat": "Drupal इंस्टॉलेशन"
+    },
+    {
+      "name": "बहुभाषी",
+      "file": "drupal-multilingual.md",
+      "subCat": "Drupal इंस्टॉलेशन"
+    },
+    {
+      "name": "EU डेटा रेसिडेंसी",
+      "file": "drupal-eu-data-residency.md",
+      "subCat": "Drupal इंस्टॉलेशन"
+    },
+    {
+      "name": "अनुकूलन",
+      "file": "drupal-customize.md",
+      "subCat": "Drupal इंस्टॉलेशन"
+    },
+    {
+      "name": "आवश्यकताएँ",
+      "file": "drupal-requirements.md",
+      "subCat": "Drupal इंस्टॉलेशन"
+    },
+    {
+      "name": "अपनी Drupal साइट में पोल जोड़ें",
+      "file": "drupal-polls.md",
+      "subCat": "पोल"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "name": "Laravel पैकेज",
+  "pageHeader": "अपने Laravel ऐप में टिप्पणियाँ जोड़ें",
+  "itemsOrdered": [
+    {
+      "name": "AI कोडिंग एजेंट",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "दस्तावेज़ीकरण",
+      "type": "readme"
+    },
+    {
+      "name": "आवश्यकताएँ",
+      "file": "requirements-readme-generated.md",
+      "subCat": "दस्तावेज़ीकरण",
+      "type": "readme"
+    },
+    {
+      "name": "इंस्टॉलेशन",
+      "file": "installation-readme-generated.md",
+      "subCat": "शुरुआत करें",
+      "type": "readme"
+    },
+    {
+      "name": "Blade कंपोनेंट्स",
+      "file": "blade-components-readme-generated.md",
+      "subCat": "दस्तावेज़ीकरण",
+      "type": "readme"
+    },
+    {
+      "name": "SSO",
+      "file": "sso-readme-generated.md",
+      "subCat": "दस्तावेज़ीकरण",
+      "type": "readme"
+    },
+    {
+      "name": "API एक्सेस",
+      "file": "api-access-readme-generated.md",
+      "subCat": "API संदर्भ",
+      "type": "readme"
+    },
+    {
+      "name": "कॉन्फ़िगरेशन संदर्भ",
+      "file": "configuration-reference-readme-generated.md",
+      "subCat": "API संदर्भ",
+      "type": "readme"
+    },
+    {
+      "name": "व्यूज़ कस्टमाइज़ करना",
+      "file": "customizing-views-readme-generated.md",
+      "subCat": "दस्तावेज़ीकरण",
+      "type": "readme"
+    }
+  ]
+}

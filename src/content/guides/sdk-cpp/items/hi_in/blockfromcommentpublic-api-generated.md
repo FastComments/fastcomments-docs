@@ -1,0 +1,28 @@
+## पैरामीटर
+
+| नाम | प्रकार | आवश्यक | विवरण |
+|------|------|----------|-------------|
+| tenantId | string | हाँ |  |
+| commentId | string | हाँ |  |
+| publicBlockFromCommentParams | PublicBlockFromCommentParams | हाँ |  |
+| sso | string | नहीं |  |
+
+## प्रतिक्रिया
+
+लौटाता है: [`BlockSuccess`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/BlockSuccess.h)
+
+## उदाहरण
+
+[inline-code-attrs-start title = 'blockFromCommentPublic उदाहरण'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+auto tenantId = utility::conversions::to_string_t("my-tenant-123");
+auto commentId = utility::conversions::to_string_t("comment-987654");
+PublicBlockFromCommentParams blockParams;
+blockParams.reason = utility::conversions::to_string_t("spam");
+blockParams.durationHours = 24;
+boost::optional<utility::string_t> sso = utility::conversions::to_string_t("sso-token-abc123");
+api->blockFromCommentPublic(tenantId, commentId, blockParams, sso)
+    .then([](std::shared_ptr<BlockSuccess> result){
+        auto successCopy = std::make_shared<BlockSuccess>(*result);
+    });
+[inline-code-end]

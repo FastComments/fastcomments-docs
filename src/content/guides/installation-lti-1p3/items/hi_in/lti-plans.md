@@ -1,0 +1,1 @@
+FastComments LTI 1.3 इंटीग्रेशन Flex और Pro प्लान्स में बिना किसी अतिरिक्त लागत के शामिल है। यह IMS LTI 1.3 Advantage स्पेक का समर्थन करने वाले किसी भी LMS के साथ काम करता है, जिसमें Dynamic Registration शामिल है।

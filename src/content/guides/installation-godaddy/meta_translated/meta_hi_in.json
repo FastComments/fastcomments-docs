@@ -1,0 +1,42 @@
+{
+  "name": "Godaddy इंस्टॉलेशन",
+  "pageHeader": "Godaddy साइटों पर टिप्पणियाँ जोड़ें",
+  "icon": "3rd-party-products/godaddy.svg",
+  "itemsOrdered": [
+    {
+      "name": "चरण 1: कोड एरिया जोड़ें",
+      "file": "godaddy-step-1.md",
+      "subCat": "Godaddy इंस्टॉलेशन"
+    },
+    {
+      "name": "चरण 2: FastComments.com कोड जोड़ें",
+      "file": "godaddy-step-2.md",
+      "subCat": "Godaddy इंस्टॉलेशन"
+    },
+    {
+      "name": "चरण 3: प्रकाशित करें",
+      "file": "godaddy-step-3.md",
+      "subCat": "Godaddy इंस्टॉलेशन"
+    },
+    {
+      "name": "सफलता",
+      "file": "godaddy-success.md",
+      "subCat": "Godaddy इंस्टॉलेशन"
+    },
+    {
+      "name": "डोमेन त्रुटियाँ",
+      "file": "godaddy-domain-errors.md",
+      "subCat": "Godaddy इंस्टॉलेशन"
+    },
+    {
+      "name": "अनुकूलन",
+      "file": "godaddy-customize.md",
+      "subCat": "Godaddy इंस्टॉलेशन"
+    },
+    {
+      "name": "अपनी Godaddy साइट पर पोल जोड़ें",
+      "file": "godaddy-polls.md",
+      "subCat": "पोल"
+    }
+  ]
+}

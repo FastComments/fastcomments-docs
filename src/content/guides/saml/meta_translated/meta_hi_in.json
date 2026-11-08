@@ -1,0 +1,51 @@
+{
+  "name": "SAML",
+  "icon": "sso.png",
+  "itemsOrdered": [
+    {
+      "name": "SAML क्या है?",
+      "file": "saml-overview.md",
+      "subCat": "मूल बातें"
+    },
+    {
+      "name": "SAML बनाम SSO",
+      "file": "saml-vs-sso.md",
+      "subCat": "मूल बातें"
+    },
+    {
+      "name": "SAML सेट अप करना",
+      "file": "saml-setup.md",
+      "subCat": "कॉन्फ़िगरेशन"
+    },
+    {
+      "name": "आइडेंटिटी प्रोवाइडर कॉन्फ़िगरेशन",
+      "file": "saml-idp-config.md",
+      "subCat": "कॉन्फ़िगरेशन"
+    },
+    {
+      "name": "सर्विस प्रोवाइडर जानकारी",
+      "file": "saml-sp-info.md",
+      "subCat": "कॉन्फ़िगरेशन"
+    },
+    {
+      "name": "उपयोगकर्ता भूमिकाएँ और अनुमतियाँ",
+      "file": "saml-user-roles.md",
+      "subCat": "उपयोगकर्ता प्रबंधन"
+    },
+    {
+      "name": "SAML प्रमाणीकरण का परीक्षण",
+      "file": "saml-testing.md",
+      "subCat": "समस्या निवारण"
+    },
+    {
+      "name": "सामान्य समस्याएँ",
+      "file": "saml-troubleshooting.md",
+      "subCat": "समस्या निवारण"
+    },
+    {
+      "name": "सुरक्षा सर्वोत्तम प्रथाएँ",
+      "file": "saml-security.md",
+      "subCat": "उन्नत"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+## पैरामीटर
+
+| नाम | प्रकार | स्थान | आवश्यक | विवरण |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | हाँ |  |
+| isLive | boolean | query | नहीं |  |
+| doSpamCheck | boolean | query | नहीं |  |
+| sendEmails | boolean | query | नहीं |  |
+| populateNotifications | boolean | query | नहीं |  |
+
+## प्रतिक्रिया
+
+रिटर्न करता है: [`APISaveCommentResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/APISaveCommentResponse.php)
+
+## उदाहरण
+
+[inline-code-attrs-start title = 'saveComment उदाहरण'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// API की ऑथराइज़ेशन कॉन्फ़िगर करें: api_key
+$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+// यदि आवश्यक हो तो API की के लिए प्रीफ़िक्स (जैसे Bearer) सेटअप करने के लिए नीचे को अनकमेंट करें
+// $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+
+
+$apiInstance = new FastComments\Client\Api\DefaultApi(
+    // यदि आप कस्टम http क्लाइंट उपयोग करना चाहते हैं, तो अपना क्लाइंट पास करें जो `GuzzleHttp\ClientInterface` इम्प्लीमेंट करता हो।
+    // यह वैकल्पिक है, डिफ़ॉल्ट रूप से `GuzzleHttp\Client` उपयोग किया जाएगा।
+    new GuzzleHttp\Client(),
+    $config
+);
+
+$tenant_id = 'tenant_id_example'; // string
+$create_comment_params = new \FastComments\Client\Model\CreateCommentParams(); // \FastComments\Client\Model\CreateCommentParams
+$options = [
+    'is_live' => True, // bool
+    'do_spam_check' => True, // bool
+    'send_emails' => True, // bool
+    'populate_notifications' => True, // bool
+];
+
+
+try {
+    $result = $apiInstance->saveComment($tenant_id, $create_comment_params, $options);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->saveComment: ', $e->getMessage(), PHP_EOL;
+}
+[inline-code-end]

@@ -1,0 +1,48 @@
+{
+  "name": "React लाइब्रेरी",
+  "pageHeader": "अपने React ऐप में टिप्पणियाँ जोड़ें",
+  "itemsOrdered": [
+    {
+      "name": "एआई कोडिंग एजेंट",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "दस्तावेज़ीकरण",
+      "type": "readme"
+    },
+    {
+      "name": "लाइव डेमो",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "दस्तावेज़ीकरण",
+      "type": "readme"
+    },
+    {
+      "name": "इंस्टॉलेशन",
+      "file": "installation-readme-generated.md",
+      "subCat": "शुरुआत करें",
+      "type": "readme"
+    },
+    {
+      "name": "लाइव शोकेस",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "दस्तावेज़ीकरण",
+      "type": "readme"
+    },
+    {
+      "name": "उदाहरण",
+      "file": "examples-readme-generated.md",
+      "subCat": "उपयोग",
+      "type": "readme"
+    },
+    {
+      "name": "उपयोग",
+      "file": "usage-readme-generated.md",
+      "subCat": "उपयोग",
+      "type": "readme"
+    },
+    {
+      "name": "रखरखाव स्थिति",
+      "file": "maintenance-status-readme-generated.md",
+      "subCat": "दस्तावेज़ीकरण",
+      "type": "readme"
+    }
+  ]
+}

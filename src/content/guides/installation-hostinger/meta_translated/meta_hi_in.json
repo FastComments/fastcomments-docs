@@ -1,0 +1,42 @@
+{
+  "name": "Hostinger इंस्टॉलेशन",
+  "pageHeader": "Hostinger साइटों में लाइव कमेंटिंग जोड़ें",
+  "icon": "3rd-party-products/hostinger.png",
+  "itemsOrdered": [
+    {
+      "name": "चरण 1: कोड विजेट जोड़ें",
+      "file": "hostinger-step-1.md",
+      "subCat": "Hostinger साइट इंस्टॉलेशन"
+    },
+    {
+      "name": "चरण 2: कोड जोड़ें",
+      "file": "hostinger-step-2.md",
+      "subCat": "Hostinger साइट इंस्टॉलेशन"
+    },
+    {
+      "name": "सफलता",
+      "file": "hostinger-site-success.md",
+      "subCat": "Hostinger साइट इंस्टॉलेशन"
+    },
+    {
+      "name": "साइट डोमेन त्रुटियाँ",
+      "file": "hostinger-site-domain-errors.md",
+      "subCat": "Hostinger साइट इंस्टॉलेशन"
+    },
+    {
+      "name": "साइट कस्टमाइज़ेशन",
+      "file": "hostinger-site-customize.md",
+      "subCat": "Hostinger साइट इंस्टॉलेशन"
+    },
+    {
+      "name": "फ्लोटिंग लाइक्स बटन",
+      "file": "hostinger-floating-likes.md",
+      "subCat": "Hostinger फ्लोटिंग लाइक्स"
+    },
+    {
+      "name": "अपनी Hostinger साइट में पोल जोड़ें",
+      "file": "hostinger-polls.md",
+      "subCat": "पोल"
+    }
+  ]
+}

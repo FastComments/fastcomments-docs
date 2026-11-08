@@ -1,0 +1,27 @@
+{
+  "name": "Memberstack इंस्टॉलेशन",
+  "pageHeader": "Memberstack के साथ टिप्पणियाँ जोड़ें",
+  "icon": "3rd-party-products/memberstack.png",
+  "itemsOrdered": [
+    {
+      "name": "कोड",
+      "file": "memberstack-step-1.md",
+      "subCat": "Memberstack इंस्टॉलेशन"
+    },
+    {
+      "name": "डोमेन त्रुटियाँ",
+      "file": "memberstack-domain-errors.md",
+      "subCat": "Memberstack इंस्टॉलेशन"
+    },
+    {
+      "name": "अनुकूलन",
+      "file": "memberstack-customize.md",
+      "subCat": "Memberstack इंस्टॉलेशन"
+    },
+    {
+      "name": "अपनी Memberstack साइट में पोल जोड़ें",
+      "file": "memberstack-polls.md",
+      "subCat": "पोल"
+    }
+  ]
+}

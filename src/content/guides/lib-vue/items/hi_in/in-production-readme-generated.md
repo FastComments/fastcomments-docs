@@ -1,0 +1,3 @@
+यदि आप callbacks आदि पास कर रहे हैं तो शायद आप config को inline परिभाषित नहीं करना चाहेंगे। इसके बजाय, आपको config को एक [inline-code-start]`computed`[inline-code-end] ब्लॉक में परिभाषित करना चाहिए, अन्यथा हर बार जब आपका callback आदि इनवोक किया जाएगा, पूरा widget री-रेंडर हो जाएगा।
+
+[यह कैसे करना है, इसके लिए spinner उदाहरण देखें।](https://github.com/FastComments/fastcomments-vue/blob/master/dev/serve-spinner.vue)

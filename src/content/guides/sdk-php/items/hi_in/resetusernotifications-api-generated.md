@@ -1,0 +1,49 @@
+## पैरामीटर
+
+| नाम | प्रकार | स्थान | आवश्यक | विवरण |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | हाँ |  |
+| afterId | string | query | नहीं |  |
+| afterCreatedAt | integer | query | नहीं |  |
+| unreadOnly | boolean | query | नहीं |  |
+| dmOnly | boolean | query | नहीं |  |
+| noDm | boolean | query | नहीं |  |
+| sso | string | query | नहीं |  |
+
+## प्रतिक्रिया
+
+रिटर्न करता है: [`ResetUserNotificationsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ResetUserNotificationsResponse.php)
+
+## उदाहरण
+
+[inline-code-attrs-start title = 'resetUserNotifications उदाहरण'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new FastComments\Client\Api\PublicApi(
+    // यदि आप कस्टम http क्लाइंट का उपयोग करना चाहते हैं, तो अपना क्लाइंट पास करें जो `GuzzleHttp\ClientInterface` को इम्प्लीमेंट करता हो।
+    // यह वैकल्पिक है, डिफ़ॉल्ट रूप से `GuzzleHttp\Client` का उपयोग किया जाएगा।
+    new GuzzleHttp\Client()
+);
+
+$tenant_id = 'tenant_id_example'; // string
+$options = [
+    'after_id' => 'after_id_example', // string
+    'after_created_at' => 56, // int
+    'unread_only' => True, // bool
+    'dm_only' => True, // bool
+    'no_dm' => True, // bool
+    'sso' => 'sso_example', // string
+];
+
+
+try {
+    $result = $apiInstance->resetUserNotifications($tenant_id, $options);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling PublicApi->resetUserNotifications: ', $e->getMessage(), PHP_EOL;
+}
+[inline-code-end]

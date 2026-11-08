@@ -1,0 +1,46 @@
+{
+  "name": "हैशटैग",
+  "icon": "hashtags.png",
+  "itemsOrdered": [
+    {
+      "name": "हैशटैग क्या हैं",
+      "file": "what-are-hashtags.md",
+      "subCat": "पृष्ठभूमि"
+    },
+    {
+      "name": "हैशटैग का उपयोग कैसे करें",
+      "file": "how-to-use-hashtags.md",
+      "subCat": "हैशटैग का उपयोग"
+    },
+    {
+      "name": "हैशटैग द्वारा टिप्पणियाँ फ़िल्टर करना",
+      "file": "filtering-comments-by-hashtag.md",
+      "subCat": "हैशटैग का उपयोग"
+    },
+    {
+      "name": "मान्य बनाम अमान्य हैशटैग",
+      "file": "valid-vs-invalid-hashtags.md",
+      "subCat": "हैशटैग का उपयोग"
+    },
+    {
+      "name": "# के अलावा अन्य प्रतीकों का उपयोग",
+      "file": "hashtags-using-other-symbols.md",
+      "subCat": "हैशटैग सेट करना"
+    },
+    {
+      "name": "हैशटैग पहले से भरना",
+      "file": "pre-populating-hashtags.md",
+      "subCat": "हैशटैग सेट करना"
+    },
+    {
+      "name": "हैशटैग के माध्यम से सामग्री से लिंक करना",
+      "file": "linking-to-content-via-hashtags.md",
+      "subCat": "हैशटैग सेट करना"
+    },
+    {
+      "name": "हैशटैग ऑटोकम्प्लीट कैसे काम करता है",
+      "file": "how-hashtags-autocomplete-works.md",
+      "subCat": "हैशटैग पृष्ठभूमि"
+    }
+  ]
+}

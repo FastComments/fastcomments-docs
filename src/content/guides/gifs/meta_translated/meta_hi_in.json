@@ -1,0 +1,22 @@
+{
+  "name": "जिफ़्स",
+  "pageHeader": "कमेंटिंग सिस्टम में जिफ़्स का एकीकरण",
+  "icon": "gifs.png",
+  "itemsOrdered": [
+    {
+      "name": "समर्थित एनिमेटेड छवियों के प्रकार",
+      "file": "types-of-animated-images-supported.md",
+      "subCat": "जिफ़्स और एनिमेटेड छवियाँ"
+    },
+    {
+      "name": "उपयोगकर्ता द्वारा अपलोड की गई एनिमेटेड छवियाँ",
+      "file": "user-uploaded-animated-images.md",
+      "subCat": "जिफ़्स का उपयोग"
+    },
+    {
+      "name": "जिफ़् पिकर",
+      "file": "gif-picker.md",
+      "subCat": "जिफ़्स का उपयोग"
+    }
+  ]
+}

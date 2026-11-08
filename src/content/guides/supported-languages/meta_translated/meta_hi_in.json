@@ -1,0 +1,21 @@
+{
+  "name": "समर्थित भाषाएँ",
+  "icon": "supported-languages.png",
+  "itemsOrdered": [
+    {
+      "name": "समर्थित भाषाएँ",
+      "file": "supported-languages.md",
+      "subCat": "समर्थित भाषाएँ"
+    },
+    {
+      "name": "FastComments के कौन से हिस्से स्थानीयकृत हैं?",
+      "file": "what-parts-of-fastcomments-are-localized.md",
+      "subCat": "समर्थित भाषाएँ"
+    },
+    {
+      "name": "नई भाषा समर्थन का अनुरोध",
+      "file": "requesting-new-language-support.md",
+      "subCat": "समर्थित भाषाएँ"
+    }
+  ]
+}

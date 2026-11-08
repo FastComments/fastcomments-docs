@@ -1,0 +1,97 @@
+{
+  "name": "बैज",
+  "pageHeader": "कमेंटिंग सिस्टम बैज",
+  "icon": "badge.svg",
+  "itemsOrdered": [
+    {
+      "name": "मूल बातें",
+      "file": "badge-basics.md",
+      "subCat": "मूल बातें"
+    },
+    {
+      "name": "प्रगति",
+      "file": "badge-progression.md",
+      "subCat": "मूल बातें"
+    },
+    {
+      "name": "मैनुअल बैज",
+      "file": "badge-type-manual.md",
+      "subCat": "बैज के प्रकार"
+    },
+    {
+      "name": "कमेंट संख्या",
+      "file": "badge-type-comment-count.md",
+      "subCat": "बैज के प्रकार"
+    },
+    {
+      "name": "अप-वोट",
+      "file": "badge-type-up-votes.md",
+      "subCat": "बैज के प्रकार"
+    },
+    {
+      "name": "उत्तर",
+      "file": "badge-type-replies.md",
+      "subCat": "बैज के प्रकार"
+    },
+    {
+      "name": "पिन किए गए कमेंट",
+      "file": "badge-type-pinned-comments.md",
+      "subCat": "बैज के प्रकार"
+    },
+    {
+      "name": "अनुभवी",
+      "file": "badge-type-veteran.md",
+      "subCat": "बैज के प्रकार"
+    },
+    {
+      "name": "नाइट आउल",
+      "file": "badge-type-night-owl.md",
+      "subCat": "बैज के प्रकार"
+    },
+    {
+      "name": "तेज़ उत्तर समय",
+      "file": "badge-type-fast-reply-time.md",
+      "subCat": "बैज के प्रकार"
+    },
+    {
+      "name": "विशिष्ट पेज को उत्तर",
+      "file": "badge-type-reply-to-specific-page.md",
+      "subCat": "बैज के प्रकार"
+    },
+    {
+      "name": "मॉडरेटर बैज का परिचय",
+      "file": "moderator-badges.md",
+      "subCat": "मॉडरेटर बैज के प्रकार"
+    },
+    {
+      "name": "कमेंट हटाए गए",
+      "file": "moderator-comments-deleted.md",
+      "subCat": "मॉडरेटर बैज के प्रकार"
+    },
+    {
+      "name": "कमेंट स्वीकृत",
+      "file": "moderator-comments-approved.md",
+      "subCat": "मॉडरेटर बैज के प्रकार"
+    },
+    {
+      "name": "कमेंट अस्वीकृत",
+      "file": "moderator-comments-un-approved.md",
+      "subCat": "मॉडरेटर बैज के प्रकार"
+    },
+    {
+      "name": "कमेंट समीक्षित",
+      "file": "moderator-comments-reviewed.md",
+      "subCat": "मॉडरेटर बैज के प्रकार"
+    },
+    {
+      "name": "कमेंट स्पैम चिह्नित",
+      "file": "moderator-comments-spam.md",
+      "subCat": "मॉडरेटर बैज के प्रकार"
+    },
+    {
+      "name": "कमेंट गैर-स्पैम चिह्नित",
+      "file": "moderator-comments-not-spam.md",
+      "subCat": "मॉडरेटर बैज के प्रकार"
+    }
+  ]
+}

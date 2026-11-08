@@ -1,0 +1,3 @@
+- [दस्तावेज़ीकरण](https://docs.fastcomments.com)
+- [GitHub समस्याएँ](https://github.com/fastcomments/fastcomments-python/issues)
+- [FastComments सहायता](https://fastcomments.com/auth/my-account/help)

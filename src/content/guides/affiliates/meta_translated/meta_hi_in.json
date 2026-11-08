@@ -1,0 +1,37 @@
+{
+  "name": "सहयोगी",
+  "pageHeader": "सहयोगी के रूप में आवर्ती आय अर्जित करें",
+  "icon": "affiliates.png",
+  "itemsOrdered": [
+    {
+      "name": "FastComments सहयोगी क्यों बनें?",
+      "file": "why-to-be-fastcomments-affiliate.md",
+      "subCat": "सहयोगी"
+    },
+    {
+      "name": "शुरुआत कैसे करें",
+      "file": "getting-started.md",
+      "subCat": "सहयोगी"
+    },
+    {
+      "name": "कमीशन",
+      "file": "commission.md",
+      "subCat": "सहयोगी"
+    },
+    {
+      "name": "सहयोगी डैशबोर्ड",
+      "file": "dashboard.md",
+      "subCat": "सहयोगी"
+    },
+    {
+      "name": "भुगतान अनुसूची",
+      "file": "payout-schedule.md",
+      "subCat": "सहयोगी"
+    },
+    {
+      "name": "मार्केटिंग सामग्री",
+      "file": "marketing-materials.md",
+      "subCat": "सहयोगी"
+    }
+  ]
+}

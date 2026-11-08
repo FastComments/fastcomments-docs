@@ -1,0 +1,4 @@
+- Python 3.10+
+- Django 4.2, 5.0, 5.1, या 5.2
+- एक FastComments tenant ID (बिना खाते के आज़माने के लिए `demo` का उपयोग करें)
+- API secret केवल Secure SSO के लिए आवश्यक है

@@ -1,0 +1,28 @@
+## पैरामीटर
+
+| नाम | प्रकार | आवश्यक | विवरण |
+|------|------|----------|-------------|
+| tenantId | string | हाँ |  |
+| urlId | string | हाँ |  |
+| id | string | हाँ |  |
+| title | string | नहीं |  |
+
+## प्रतिक्रिया
+
+रिटर्न करता है: [`CreateV1PageReact`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/CreateV1PageReact.h)
+
+## उदाहरण
+
+[inline-code-attrs-start title = 'createV2PageReact उदाहरण'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+api->createV2PageReact(
+    utility::string_t(U("my-tenant-789")),
+    utility::string_t(U("https://example.com/articles/12345")),
+    utility::string_t(U("user-42")),
+    boost::optional<utility::string_t>(U("Helpful"))
+).then([](pplx::task<std::shared_ptr<CreateV1PageReact>> task){
+    try{
+        auto response = task.get();
+    }catch(const std::exception&){ }
+});
+[inline-code-end]

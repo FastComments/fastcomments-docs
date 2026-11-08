@@ -1,0 +1,17 @@
+{
+  "name": "फ़ीड्स",
+  "pageHeader": "सोशल फ़ीड घटक और API",
+  "icon": "feed.svg",
+  "itemsOrdered": [
+    {
+      "name": "फ़ीड्स का वैयक्तिकरण",
+      "file": "personalizing-feeds.md",
+      "subCat": "अनुकूलन"
+    },
+    {
+      "name": "क्षेत्रीय फ़ीड्स",
+      "file": "regional-feeds.md",
+      "subCat": "अनुकूलन"
+    }
+  ]
+}

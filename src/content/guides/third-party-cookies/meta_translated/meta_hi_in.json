@@ -1,0 +1,21 @@
+{
+  "name": "थर्ड-पार्टी कुकीज़",
+  "icon": "cookie.png",
+  "itemsOrdered": [
+    {
+      "name": "थर्ड-पार्टी कुकीज़ क्या हैं",
+      "file": "what-are-3rd-party-cookies.md",
+      "subCat": "पृष्ठभूमि"
+    },
+    {
+      "name": "FastComments थर्ड-पार्टी कुकीज़ का उपयोग कैसे करता है",
+      "file": "how-fastcomments-uses-3rd-party-cookies.md",
+      "subCat": "पृष्ठभूमि"
+    },
+    {
+      "name": "थर्ड-पार्टी कुकीज़ सक्षम करें",
+      "file": "enable-3rd-party-cookies.md",
+      "subCat": "सक्षम करना"
+    }
+  ]
+}

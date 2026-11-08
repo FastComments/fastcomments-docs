@@ -1,0 +1,17 @@
+{
+  "name": "WooCommerce इंस्टॉलेशन",
+  "pageHeader": "WooCommerce साइटों में लाइव कमेंटिंग जोड़ें",
+  "icon": "3rd-party-products/woocommerce.svg",
+  "itemsOrdered": [
+    {
+      "name": "WordPress प्लगइन सेटअप",
+      "file": "woocommerce.md",
+      "subCat": "WooCommerce इंस्टॉलेशन"
+    },
+    {
+      "name": "अपने WooCommerce स्टोर में पोल जोड़ें",
+      "file": "woocommerce-polls.md",
+      "subCat": "पोल"
+    }
+  ]
+}

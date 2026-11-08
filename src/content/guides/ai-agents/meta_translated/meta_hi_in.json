@@ -1,0 +1,292 @@
+{
+  "name": "AI एजेंट",
+  "pageHeader": "कमेंट मॉडरेशन के लिए AI एजेंट",
+  "icon": "ai.png",
+  "itemsOrdered": [
+    {
+      "name": "AI एजेंट क्या हैं",
+      "file": "what-are-ai-agents.md",
+      "subCat": "परिचय"
+    },
+    {
+      "name": "प्लान और पात्रता",
+      "file": "plans-and-eligibility.md",
+      "subCat": "परिचय"
+    },
+    {
+      "name": "क्विकस्टार्ट",
+      "file": "quickstart.md",
+      "subCat": "परिचय"
+    },
+    {
+      "name": "एजेंट बनाना",
+      "file": "creating-an-agent.md",
+      "subCat": "एजेंट बनाना"
+    },
+    {
+      "name": "स्टार्टर टेम्पलेट",
+      "file": "starter-templates.md",
+      "subCat": "एजेंट बनाना"
+    },
+    {
+      "name": "टेम्पलेट: मॉडरेटर",
+      "file": "template-moderator.md",
+      "subCat": "एजेंट बनाना"
+    },
+    {
+      "name": "टेम्पलेट: स्वागत संदेशवाहक",
+      "file": "template-welcome-greeter.md",
+      "subCat": "एजेंट बनाना"
+    },
+    {
+      "name": "टेम्पलेट: शीर्ष कमेंट पिनर",
+      "file": "template-top-comment-pinner.md",
+      "subCat": "एजेंट बनाना"
+    },
+    {
+      "name": "टेम्पलेट: थ्रेड सारांशकार",
+      "file": "template-thread-summarizer.md",
+      "subCat": "एजेंट बनाना"
+    },
+    {
+      "name": "टेम्पलेट: गैसलाइट डिटेक्टर",
+      "file": "template-gaslight-detector.md",
+      "subCat": "एजेंट बनाना"
+    },
+    {
+      "name": "मॉडल चुनना",
+      "file": "choosing-a-model.md",
+      "subCat": "व्यक्तित्व और संदर्भ"
+    },
+    {
+      "name": "व्यक्तित्व और प्रारंभिक प्रॉम्प्ट",
+      "file": "personality-prompt.md",
+      "subCat": "व्यक्तित्व और संदर्भ"
+    },
+    {
+      "name": "संदर्भ विकल्प",
+      "file": "context-options.md",
+      "subCat": "व्यक्तित्व और संदर्भ"
+    },
+    {
+      "name": "सामुदायिक दिशानिर्देश",
+      "file": "community-guidelines.md",
+      "subCat": "व्यक्तित्व और संदर्भ"
+    },
+    {
+      "name": "स्कोप: URL और लोकेल फ़िल्टर",
+      "file": "scope-url-locale.md",
+      "subCat": "व्यक्तित्व और संदर्भ"
+    },
+    {
+      "name": "ट्रिगर इवेंट का अवलोकन",
+      "file": "triggers-overview.md",
+      "subCat": "ट्रिगर इवेंट"
+    },
+    {
+      "name": "ट्रिगर: कमेंट जोड़ा गया",
+      "file": "trigger-comment-add.md",
+      "subCat": "ट्रिगर इवेंट"
+    },
+    {
+      "name": "ट्रिगर: कमेंट संपादित हुआ",
+      "file": "trigger-comment-edit.md",
+      "subCat": "ट्रिगर इवेंट"
+    },
+    {
+      "name": "ट्रिगर: कमेंट हटाया गया",
+      "file": "trigger-comment-delete.md",
+      "subCat": "ट्रिगर इवेंट"
+    },
+    {
+      "name": "ट्रिगर: कमेंट पिन हुआ",
+      "file": "trigger-comment-pin.md",
+      "subCat": "ट्रिगर इवेंट"
+    },
+    {
+      "name": "ट्रिगर: कमेंट अनपिन हुआ",
+      "file": "trigger-comment-unpin.md",
+      "subCat": "ट्रिगर इवेंट"
+    },
+    {
+      "name": "ट्रिगर: कमेंट लॉक हुआ",
+      "file": "trigger-comment-lock.md",
+      "subCat": "ट्रिगर इवेंट"
+    },
+    {
+      "name": "ट्रिगर: कमेंट अनलॉक हुआ",
+      "file": "trigger-comment-unlock.md",
+      "subCat": "ट्रिगर इवेंट"
+    },
+    {
+      "name": "ट्रिगर: वोट सीमा",
+      "file": "trigger-comment-vote-threshold.md",
+      "subCat": "ट्रिगर इवेंट"
+    },
+    {
+      "name": "ट्रिगर: फ़्लैग सीमा",
+      "file": "trigger-comment-flag-threshold.md",
+      "subCat": "ट्रिगर इवेंट"
+    },
+    {
+      "name": "ट्रिगर: नए उपयोगकर्ता का पहला कमेंट",
+      "file": "trigger-new-user-first-comment.md",
+      "subCat": "ट्रिगर इवेंट"
+    },
+    {
+      "name": "ट्रिगर: ऑटो-स्पैम किया गया कमेंट",
+      "file": "trigger-comment-auto-spammed.md",
+      "subCat": "ट्रिगर इवेंट"
+    },
+    {
+      "name": "ट्रिगर: मॉडरेटर द्वारा समीक्षित कमेंट",
+      "file": "trigger-moderator-reviewed.md",
+      "subCat": "ट्रिगर इवेंट"
+    },
+    {
+      "name": "ट्रिगर: मॉडरेटर द्वारा स्वीकृत कमेंट",
+      "file": "trigger-moderator-approved.md",
+      "subCat": "ट्रिगर इवेंट"
+    },
+    {
+      "name": "ट्रिगर: मॉडरेटर ने स्पैम चिह्नित किया",
+      "file": "trigger-moderator-spammed.md",
+      "subCat": "ट्रिगर इवेंट"
+    },
+    {
+      "name": "ट्रिगर: मॉडरेटर ने बैज दिया",
+      "file": "trigger-moderator-awarded-badge.md",
+      "subCat": "ट्रिगर इवेंट"
+    },
+    {
+      "name": "स्थगित ट्रिगर",
+      "file": "trigger-deferred-delay.md",
+      "subCat": "ट्रिगर इवेंट"
+    },
+    {
+      "name": "टूल्स संदर्भ",
+      "file": "tools-overview.md",
+      "subCat": "अनुमत टूल कॉल"
+    },
+    {
+      "name": "उपयोगकर्ता को बैन करें",
+      "file": "tool-ban-user.md",
+      "subCat": "अनुमत टूल कॉल"
+    },
+    {
+      "name": "उपयोगकर्ता को चेतावनी दें",
+      "file": "tool-warn-user.md",
+      "subCat": "अनुमत टूल कॉल"
+    },
+    {
+      "name": "कमेंट संपादित करें",
+      "file": "tool-edit-comment.md",
+      "subCat": "अनुमत टूल कॉल"
+    },
+    {
+      "name": "स्थिति अवस्थाएँ",
+      "file": "status-states.md",
+      "subCat": "सुरक्षा और निगरानी"
+    },
+    {
+      "name": "ड्राई-रन मोड",
+      "file": "dry-run-mode.md",
+      "subCat": "सुरक्षा और निगरानी"
+    },
+    {
+      "name": "अनुमोदन वर्कफ़्लो",
+      "file": "approval-workflow.md",
+      "subCat": "सुरक्षा और निगरानी"
+    },
+    {
+      "name": "अनुमोदन सूचनाएँ",
+      "file": "approval-notifications.md",
+      "subCat": "सुरक्षा और निगरानी"
+    },
+    {
+      "name": "EU DSA अनुच्छेद 17 अनुपालन",
+      "file": "eu-dsa-compliance.md",
+      "subCat": "सुरक्षा और निगरानी"
+    },
+    {
+      "name": "एजेंट मेमोरी सिस्टम",
+      "file": "agent-memory-system.md",
+      "subCat": "सुरक्षा और निगरानी"
+    },
+    {
+      "name": "बजट का अवलोकन",
+      "file": "budgets-overview.md",
+      "subCat": "बजट और लागत"
+    },
+    {
+      "name": "बजट अलर्ट",
+      "file": "budget-alerts.md",
+      "subCat": "बजट और लागत"
+    },
+    {
+      "name": "लागत मॉडल",
+      "file": "cost-model.md",
+      "subCat": "बजट और लागत"
+    },
+    {
+      "name": "ड्रॉप कारण",
+      "file": "drop-reasons.md",
+      "subCat": "बजट और लागत"
+    },
+    {
+      "name": "रन इतिहास",
+      "file": "run-history.md",
+      "subCat": "मॉनिटरिंग और ट्यूनिंग"
+    },
+    {
+      "name": "रन विवरण दृश्य",
+      "file": "run-detail-view.md",
+      "subCat": "मॉनिटरिंग और ट्यूनिंग"
+    },
+    {
+      "name": "एनालिटिक्स पेज",
+      "file": "analytics-page.md",
+      "subCat": "मॉनिटरिंग और ट्यूनिंग"
+    },
+    {
+      "name": "टेस्ट रन (रीप्ले)",
+      "file": "test-runs-replays.md",
+      "subCat": "मॉनिटरिंग और ट्यूनिंग"
+    },
+    {
+      "name": "प्रॉम्प्ट परिष्कृत करना",
+      "file": "refining-prompts.md",
+      "subCat": "मॉनिटरिंग और ट्यूनिंग"
+    },
+    {
+      "name": "वेबहुक का अवलोकन",
+      "file": "webhooks-overview.md",
+      "subCat": "वेबहुक"
+    },
+    {
+      "name": "वेबहुक इवेंट",
+      "file": "webhook-events.md",
+      "subCat": "वेबहुक"
+    },
+    {
+      "name": "वेबहुक पेलोड",
+      "file": "webhook-payloads.md",
+      "subCat": "वेबहुक"
+    },
+    {
+      "name": "वेबहुक साइनिंग",
+      "file": "webhook-signing.md",
+      "subCat": "वेबहुक"
+    },
+    {
+      "name": "वेबहुक पुनः प्रयास",
+      "file": "webhook-retries.md",
+      "subCat": "वेबहुक"
+    },
+    {
+      "name": "वेबहुक डिलीवरी लॉग",
+      "file": "webhook-logs.md",
+      "subCat": "वेबहुक"
+    }
+  ]
+}

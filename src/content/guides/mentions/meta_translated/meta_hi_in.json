@@ -1,0 +1,31 @@
+{
+  "name": "उल्लेख",
+  "icon": "mentions.png",
+  "itemsOrdered": [
+    {
+      "name": "उल्लेख क्या हैं",
+      "file": "what-are-mentions.md",
+      "subCat": "पृष्ठभूमि"
+    },
+    {
+      "name": "उपयोगकर्ता को कैसे टैग करें",
+      "file": "how-to-tag-a-user.md",
+      "subCat": "उल्लेखों का उपयोग"
+    },
+    {
+      "name": "सूचनाएँ",
+      "file": "mentions-notifications.md",
+      "subCat": "उल्लेखों का उपयोग"
+    },
+    {
+      "name": "उल्लेख ऑटोकम्प्लीट कैसे काम करता है",
+      "file": "how-mentions-autocomplete-works.md",
+      "subCat": "उल्लेखों का उपयोग"
+    },
+    {
+      "name": "उल्लेखों को पॉप्युलेट करना",
+      "file": "populating-mentions.md",
+      "subCat": "उल्लेख सेट अप करना"
+    }
+  ]
+}

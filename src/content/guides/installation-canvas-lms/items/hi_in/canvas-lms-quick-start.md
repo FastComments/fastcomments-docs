@@ -1,0 +1,6 @@
+1. <a href="https://fastcomments.com/auth/my-account/canvas-lti-config" target="_blank">अपने FastComments LTI Config</a> पर जाएँ।
+2. एक **Configuration Name** और अपना **Platform URL** (जैसे `https://yourschool.instructure.com`) दर्ज करें। कौन से **Placements** सक्षम करने हैं, चुनें (Assignment View और/या Editor Button — दोनों डिफ़ॉल्ट रूप से चालू हैं)। **Create Configuration** पर क्लिक करें। विज़ार्ड स्टेप 2 पर आगे बढ़ेगा और आपका **Configuration URL** दिखाएगा।
+3. Canvas में, **Admin > Developer Keys > + Developer Key > LTI Key** पर जाएँ। **Method** को "Enter URL" पर सेट करें और Configuration URL पेस्ट करें। कुंजी सहेजें, फिर उसकी **State** को **ON** पर सेट करें और प्रेरित होने पर **Allow** पर क्लिक करें।
+4. Canvas की Developer Keys तालिका से **Client ID** नंबर कॉपी करें। FastComments पर वापस जाकर इसे **Client ID** फ़ील्ड में पेस्ट करें और **Save & Continue** पर क्लिक करें।
+5. कॉन्फ़िगरेशन सारांश की समीक्षा करें और लाइव जाने के लिए **Enable Integration** पर क्लिक करें।
+6. Canvas में External App इंस्टॉल करें (**Admin > Settings > Apps > + App > By Client ID**)। टिप्पणियाँ असाइनमेंट के नीचे स्वतः दिखाई देंगी, और शिक्षक Rich Content Editor टूलबार बटन के माध्यम से Pages, Quizzes, और Announcements में FastComments एम्बेड कर सकते हैं।

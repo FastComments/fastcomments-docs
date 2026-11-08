@@ -1,0 +1,21 @@
+{
+  "name": "आरएसएस फ़ीड",
+  "icon": "rss.svg",
+  "itemsOrdered": [
+    {
+      "name": "अवलोकन",
+      "file": "overview.md",
+      "subCat": "शुरुआत करना"
+    },
+    {
+      "name": "अपना आरएसएस फ़ीड सेट करना",
+      "file": "setup.md",
+      "subCat": "शुरुआत करना"
+    },
+    {
+      "name": "सुरक्षा संबंधी विचार",
+      "file": "security.md",
+      "subCat": "कार्यान्वयन"
+    }
+  ]
+}

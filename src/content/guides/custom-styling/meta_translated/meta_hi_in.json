@@ -1,0 +1,42 @@
+{
+  "name": "कस्टम स्टाइलिंग",
+  "pageHeader": "कस्टम स्टाइलिंग गाइड",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "स्टाइल को कैसे कस्टमाइज़ करें",
+      "file": "comment-widget-instructions.md",
+      "subCat": "शुरुआत करना"
+    },
+    {
+      "name": "कमेंट बॉक्स बॉर्डर को कस्टमाइज़ करना",
+      "file": "comment-input-border.md",
+      "subCat": "विजेट स्टाइलिंग"
+    },
+    {
+      "name": "कमेंट विजेट कस्टम CSS संदर्भ (v2, नवीनतम)",
+      "file": "generated/css-v2-generated.md",
+      "subCat": "विजेट स्टाइलिंग"
+    },
+    {
+      "name": "हाल की टिप्पणियाँ विजेट स्टाइलिंग",
+      "file": "recent-comments-widget.md",
+      "subCat": "विजेट स्टाइलिंग"
+    },
+    {
+      "name": "सर्वाधिक चर्चित पृष्ठ विजेट स्टाइलिंग",
+      "file": "top-pages-widget.md",
+      "subCat": "विजेट स्टाइलिंग"
+    },
+    {
+      "name": "हाल की चर्चाएँ विजेट स्टाइलिंग",
+      "file": "recent-discussions-widget.md",
+      "subCat": "विजेट स्टाइलिंग"
+    },
+    {
+      "name": "अन्य फ्रंटएंड लाइब्रेरीज़",
+      "file": "other-frontend-libraries.md",
+      "subCat": "अन्य फ्रंटएंड लाइब्रेरीज़"
+    }
+  ]
+}

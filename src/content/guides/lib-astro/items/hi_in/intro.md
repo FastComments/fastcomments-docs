@@ -1,0 +1,7 @@
+यह FastComments की आधिकारिक Astro लाइब्रेरी है।
+
+अपनी Astro साइट में लाइव कमेंटिंग, चैट और रिव्यू विजेट एम्बेड करें।
+
+## रिपॉज़िटरी
+
+[GitHub पर देखें](https://github.com/FastComments/fastcomments-astro)

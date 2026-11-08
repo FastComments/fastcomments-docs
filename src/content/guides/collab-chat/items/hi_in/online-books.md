@@ -1,0 +1,1 @@
+आप चाहें तो Collab Chat को प्रति पेज इनिशियलाइज़ कर सकते हैं और प्रत्येक पेज के लिए अलग थ्रेड रख सकते हैं — बस [inline-code-start]urlId[inline-code-end] पैरामीटर को [inline-code-start]book-one-page1[inline-code-end] जैसा कोई मान दें। यह कॉन्फ़िगरेशन सामान्य कमेंटिंग विजेट के लिए भी काम करता है।

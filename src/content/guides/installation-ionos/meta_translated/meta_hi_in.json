@@ -1,0 +1,42 @@
+{
+  "name": "Ionos इंस्टॉलेशन",
+  "pageHeader": "Ionos साइटों पर टिप्पणियाँ जोड़ें",
+  "icon": "3rd-party-products/ionos.svg",
+  "itemsOrdered": [
+    {
+      "name": "चरण 1: संपर्क फ़ॉर्म जोड़ें",
+      "file": "ionos-step-1.md",
+      "subCat": "Ionos इंस्टॉलेशन"
+    },
+    {
+      "name": "चरण 2: FastComments.com कोड जोड़ें",
+      "file": "ionos-step-2.md",
+      "subCat": "Ionos इंस्टॉलेशन"
+    },
+    {
+      "name": "चरण 3: प्रकाशित करें",
+      "file": "ionos-step-3.md",
+      "subCat": "Ionos इंस्टॉलेशन"
+    },
+    {
+      "name": "सफलता",
+      "file": "ionos-success.md",
+      "subCat": "Ionos इंस्टॉलेशन"
+    },
+    {
+      "name": "डोमेन त्रुटियाँ",
+      "file": "ionos-domain-errors.md",
+      "subCat": "Ionos इंस्टॉलेशन"
+    },
+    {
+      "name": "अनुकूलन",
+      "file": "ionos-customize.md",
+      "subCat": "Ionos इंस्टॉलेशन"
+    },
+    {
+      "name": "अपनी Ionos साइट पर पोल जोड़ें",
+      "file": "ionos-polls.md",
+      "subCat": "पोल"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "name": "ThriveCart Learn+ इंस्टॉलेशन",
+  "pageHeader": "ThriveCart Learn+ कोर्स में टिप्पणियाँ जोड़ें",
+  "icon": "3rd-party-products/thrivecart-pro-learn-plus.png",
+  "itemsOrdered": [
+    {
+      "name": "चरण 1: कोर्स तैयार करें",
+      "file": "thrivecart-learn-step-1.md",
+      "subCat": "ThriveCart Learn+ इंस्टॉलेशन"
+    },
+    {
+      "name": "चरण 2: कस्टम कोड जोड़ें",
+      "file": "thrivecart-learn-step-2.md",
+      "subCat": "ThriveCart Learn+ इंस्टॉलेशन"
+    },
+    {
+      "name": "सफलता",
+      "file": "thrivecart-learn-success.md",
+      "subCat": "ThriveCart Learn+ इंस्टॉलेशन"
+    },
+    {
+      "name": "डोमेन त्रुटियाँ",
+      "file": "thrivecart-learn-domain-errors.md",
+      "subCat": "ThriveCart Learn+ इंस्टॉलेशन"
+    },
+    {
+      "name": "अनुकूलन",
+      "file": "thrivecart-learn-customize.md",
+      "subCat": "ThriveCart Learn+ इंस्टॉलेशन"
+    },
+    {
+      "name": "अपने ThriveCart Learn+ कोर्स में पोल जोड़ें",
+      "file": "thrivecart-learn-polls.md",
+      "subCat": "पोल"
+    }
+  ]
+}

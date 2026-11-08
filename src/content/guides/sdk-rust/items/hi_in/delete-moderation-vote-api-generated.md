@@ -1,0 +1,30 @@
+## पैरामीटर
+
+| नाम | प्रकार | आवश्यक | विवरण |
+|------|------|----------|-------------|
+| tenant_id | String | हाँ |  |
+| comment_id | String | हाँ |  |
+| vote_id | String | हाँ |  |
+| broadcast_id | String | नहीं |  |
+| sso | String | नहीं |  |
+
+## प्रतिक्रिया
+
+लौटाता है: [`VoteDeleteResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/vote_delete_response.rs)
+
+## उदाहरण
+
+[inline-code-attrs-start title = 'delete_moderation_vote उदाहरण'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+async fn example() -> Result<(), Error> {
+    let params = DeleteModerationVoteParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        comment_id: "news/article-42".to_string(),
+        vote_id: "vote-12345".to_string(),
+        broadcast_id: Some("broadcast-987".to_string()),
+        sso: None,
+    };
+    let _response: VoteDeleteResponse = delete_moderation_vote(&configuration, params).await?;
+    Ok(())
+}
+[inline-code-end]

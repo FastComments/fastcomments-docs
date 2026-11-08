@@ -1,0 +1,31 @@
+## पैरामीटर
+
+| नाम | प्रकार | आवश्यक | विवरण |
+|------|------|----------|-------------|
+| tenant_id | String | हाँ |  |
+| url_id | String | हाँ |  |
+| broadcast_id | String | हाँ |  |
+| comment_data | models::CommentData | हाँ |  |
+| session_id | String | नहीं |  |
+| sso | String | नहीं |  |
+
+## प्रतिक्रिया
+
+रिटर्न करता है: [`SaveCommentsResponseWithPresence`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/save_comments_response_with_presence.rs)
+
+## उदाहरण
+
+[inline-code-attrs-start title = 'create_comment_public उदाहरण'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+let params = CreateCommentPublicParams {
+    tenant_id: "acme-corp-tenant".to_string(),
+    url_id: "news/article-123".to_string(),
+    broadcast_id: "broadcast-2023-09-01".to_string(),
+    comment_data: models::CommentData {
+        text: "Great read!".to_string(),
+    },
+    session_id: Some("session-abc123".to_string()),
+    sso: Some("sso-token-xyz".to_string()),
+};
+let response = create_comment_public(&configuration, params).await?;
+[inline-code-end]

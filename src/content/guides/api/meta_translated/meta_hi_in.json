@@ -1,0 +1,890 @@
+{
+  "name": "API",
+  "pageHeader": "लाइव टिप्पणी APIs",
+  "icon": "api.png",
+  "itemsOrdered": [
+    {
+      "name": "API संसाधन",
+      "file": "api-resources.md",
+      "subCat": "API संसाधन"
+    },
+    {
+      "name": "OAuth प्राधिकरण",
+      "file": "oauth.md",
+      "subCat": "प्रमाणीकरण"
+    },
+    {
+      "name": "अपना डेटा एकत्रित करें",
+      "file": "aggregate-post.md",
+      "subCat": "एकत्रीकरण"
+    },
+    {
+      "name": "AuditLog संरचना",
+      "file": "audit-log-structure.md",
+      "subCat": "AuditLogs"
+    },
+    {
+      "name": "GET /api/v1/audit-logs",
+      "file": "audit-logs-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "AuditLogs"
+    },
+    {
+      "name": "BatchJob संरचना",
+      "file": "batch-job-structure.md",
+      "subCat": "बैच जॉब"
+    },
+    {
+      "name": "GET /api/v1/batch-jobs",
+      "file": "batch-jobs-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "बैच जॉब"
+    },
+    {
+      "name": "GET /api/v1/batch-jobs/:id",
+      "file": "batch-job-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "बैच जॉब"
+    },
+    {
+      "name": "Comment संरचना",
+      "file": "comment-structure.md",
+      "subCat": "टिप्पणियाँ"
+    },
+    {
+      "name": "GET /api/v1/comments",
+      "file": "comments-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "टिप्पणियाँ"
+    },
+    {
+      "name": "GET /api/v1/comments/:id",
+      "file": "comment-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "टिप्पणियाँ"
+    },
+    {
+      "name": "POST /api/v1/comments",
+      "file": "comment-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "टिप्पणियाँ"
+    },
+    {
+      "name": "PATCH /api/v1/comments/:id",
+      "file": "comment-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "टिप्पणियाँ"
+    },
+    {
+      "name": "DELETE /api/v1/comments/:id",
+      "file": "comment-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "टिप्पणियाँ"
+    },
+    {
+      "name": "POST /api/v1/comments/:id/flag",
+      "file": "comment-flag.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "टिप्पणियाँ"
+    },
+    {
+      "name": "POST /api/v1/comments/:id/un-flag",
+      "file": "comment-unflag.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "टिप्पणियाँ"
+    },
+    {
+      "name": "POST /api/v1/comments/:id/block",
+      "file": "comment-block.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "टिप्पणियाँ"
+    },
+    {
+      "name": "POST /api/v1/comments/:id/un-block",
+      "file": "comment-unblock.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "टिप्पणियाँ"
+    },
+    {
+      "name": "ईमेल टेम्पलेट संरचना",
+      "file": "email-template-structure.md",
+      "subCat": "EmailTemplates"
+    },
+    {
+      "name": "GET /api/v1/email-templates/:id",
+      "file": "email-template-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "EmailTemplates"
+    },
+    {
+      "name": "GET /api/v1/email-templates",
+      "file": "email-templates-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "EmailTemplates"
+    },
+    {
+      "name": "PATCH /api/v1/email-templates/:id",
+      "file": "email-template-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "EmailTemplates"
+    },
+    {
+      "name": "POST /api/v1/email-templates",
+      "file": "email-template-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "EmailTemplates"
+    },
+    {
+      "name": "POST /api/v1/email-templates/render",
+      "file": "email-template-render.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "EmailTemplates"
+    },
+    {
+      "name": "DELETE /api/v1/email-templates/:id",
+      "file": "email-template-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "EmailTemplates"
+    },
+    {
+      "name": "FeedPost संरचना",
+      "file": "feed-post-structure.md",
+      "subCat": "फ़ीड पोस्ट"
+    },
+    {
+      "name": "GET /api/v1/feed-posts",
+      "file": "feed-posts-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "फ़ीड पोस्ट"
+    },
+    {
+      "name": "POST /api/v1/feed-posts",
+      "file": "feed-post-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "फ़ीड पोस्ट"
+    },
+    {
+      "name": "PATCH /api/v1/feed-posts/:id",
+      "file": "feed-post-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "फ़ीड पोस्ट"
+    },
+    {
+      "name": "HashTag संरचना",
+      "file": "hash-tag-structure.md",
+      "subCat": "हैशटैग"
+    },
+    {
+      "name": "GET /api/v1/hash-tags",
+      "file": "hash-tags-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "हैशटैग"
+    },
+    {
+      "name": "PATCH /api/v1/hash-tags/:tag",
+      "file": "hash-tag-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "हैशटैग"
+    },
+    {
+      "name": "POST /api/v1/hash-tags",
+      "file": "hash-tag-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "हैशटैग"
+    },
+    {
+      "name": "POST /api/v1/hash-tags/bulk",
+      "file": "hash-tag-bulk-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "हैशटैग"
+    },
+    {
+      "name": "DELETE /api/v1/hash-tags/:tag",
+      "file": "hash-tag-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "हैशटैग"
+    },
+    {
+      "name": "GET /api/v1/me",
+      "file": "me-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "मैं"
+    },
+    {
+      "name": "मॉडरेटर संरचना",
+      "file": "moderator-structure.md",
+      "subCat": "मॉडरेटर"
+    },
+    {
+      "name": "GET /api/v1/moderators/:id",
+      "file": "moderator-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "मॉडरेटर"
+    },
+    {
+      "name": "GET /api/v1/moderators",
+      "file": "moderators-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "मॉडरेटर"
+    },
+    {
+      "name": "PATCH /api/v1/moderators/:id",
+      "file": "moderator-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "मॉडरेटर"
+    },
+    {
+      "name": "POST /api/v1/moderators",
+      "file": "moderator-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "मॉडरेटर"
+    },
+    {
+      "name": "POST /api/v1/moderators/:id/send-invite",
+      "file": "moderator-send-invite.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "मॉडरेटर"
+    },
+    {
+      "name": "DELETE /api/v1/moderators/:id",
+      "file": "moderator-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "मॉडरेटर"
+    },
+    {
+      "name": "सूचना संख्या संरचना",
+      "file": "notification-count-structure.md",
+      "subCat": "सूचना संख्या"
+    },
+    {
+      "name": "GET /api/v1/notification-count/:user_id",
+      "file": "notification-count-get.md",
+      "subCat": "सूचना संख्या"
+    },
+    {
+      "name": "DELETE /api/v1/notification-count/:user_id",
+      "file": "notification-count-delete.md",
+      "subCat": "सूचना संख्या"
+    },
+    {
+      "name": "सूचना संरचना",
+      "file": "notification-structure.md",
+      "subCat": "सूचनाएँ"
+    },
+    {
+      "name": "GET /api/v1/notifications",
+      "file": "notifications-get.md",
+      "subCat": "सूचनाएँ"
+    },
+    {
+      "name": "GET /api/v1/notifications/count",
+      "file": "notifications-get-count.md",
+      "subCat": "सूचनाएँ"
+    },
+    {
+      "name": "PATCH /api/v1/notifications/:id",
+      "file": "notifications-patch.md",
+      "subCat": "सूचनाएँ"
+    },
+    {
+      "name": "पेज रिएक्ट्स सार्वजनिक API",
+      "file": "page-reacts-api.md",
+      "subCat": "पेज रिएक्ट्स"
+    },
+    {
+      "name": "GET /page-reacts/v1/likes/:tenantId",
+      "file": "page-likes-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "पेज रिएक्ट्स"
+    },
+    {
+      "name": "POST /page-reacts/v1/likes/:tenantId",
+      "file": "page-like-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "पेज रिएक्ट्स"
+    },
+    {
+      "name": "DELETE /page-reacts/v1/likes/:tenantId",
+      "file": "page-like-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "पेज रिएक्ट्स"
+    },
+    {
+      "name": "GET /page-reacts/v2/:tenantId",
+      "file": "page-reacts-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "पेज रिएक्ट्स"
+    },
+    {
+      "name": "GET /page-reacts/v2/:tenantId/list",
+      "file": "page-react-users-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "पेज रिएक्ट्स"
+    },
+    {
+      "name": "POST /page-reacts/v2/:tenantId",
+      "file": "page-react-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "पेज रिएक्ट्स"
+    },
+    {
+      "name": "DELETE /page-reacts/v2/:tenantId",
+      "file": "page-react-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "पेज रिएक्ट्स"
+    },
+    {
+      "name": "पेज संरचना",
+      "file": "page-structure.md",
+      "subCat": "पेज"
+    },
+    {
+      "name": "GET /api/v1/pages",
+      "file": "pages-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "पेज"
+    },
+    {
+      "name": "GET /api/v1/pages/by-url-id",
+      "file": "pages-get-by-url-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "पेज"
+    },
+    {
+      "name": "GET /api/v1/pages/likes",
+      "file": "pages-likes-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "पेज"
+    },
+    {
+      "name": "GET /api/v1/pages/reacts",
+      "file": "pages-reacts-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "पेज"
+    },
+    {
+      "name": "PATCH /api/v1/pages/:id",
+      "file": "page-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "पेज"
+    },
+    {
+      "name": "POST /api/v1/pages",
+      "file": "page-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "पेज"
+    },
+    {
+      "name": "DELETE /api/v1/pages/:id",
+      "file": "page-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "पेज"
+    },
+    {
+      "name": "POST /api/v1/pages/migrations",
+      "file": "pages-migrations-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "पेज"
+    },
+    {
+      "name": "POST /api/v1/pages/migrations/:undoId/undo",
+      "file": "pages-migrations-undo-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "पेज"
+    },
+    {
+      "name": "पोल संरचना",
+      "file": "poll-structure.md",
+      "subCat": "पोल"
+    },
+    {
+      "name": "GET /api/v1/polls/:commentId",
+      "file": "poll-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "पोल"
+    },
+    {
+      "name": "PUT /api/v1/polls/:commentId",
+      "file": "poll-put.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "पोल"
+    },
+    {
+      "name": "PATCH /api/v1/polls/:commentId",
+      "file": "poll-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "पोल"
+    },
+    {
+      "name": "DELETE /api/v1/polls/:commentId",
+      "file": "poll-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "पोल"
+    },
+    {
+      "name": "पोल वोट संरचना",
+      "file": "poll-vote-structure.md",
+      "subCat": "पोल वोट"
+    },
+    {
+      "name": "GET /api/v1/poll-votes",
+      "file": "poll-votes-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "पोल वोट"
+    },
+    {
+      "name": "GET /api/v1/poll-votes/:id",
+      "file": "poll-vote-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "पोल वोट"
+    },
+    {
+      "name": "POST /api/v1/poll-votes",
+      "file": "poll-vote-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "पोल वोट"
+    },
+    {
+      "name": "DELETE /api/v1/poll-votes/:id",
+      "file": "poll-vote-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "पोल वोट"
+    },
+    {
+      "name": "PendingWebhookEvent संरचना",
+      "file": "pending-webhook-event-structure.md",
+      "subCat": "PendingWebhookEvents"
+    },
+    {
+      "name": "GET /api/v1/pending-webhook-events",
+      "file": "pending-webhook-events-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "PendingWebhookEvents"
+    },
+    {
+      "name": "GET /api/v1/pending-webhook-events/count",
+      "file": "pending-webhook-events-count.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "PendingWebhookEvents"
+    },
+    {
+      "name": "DELETE /api/v1/pending-webhook-events/:id",
+      "file": "pending-webhook-event-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "PendingWebhookEvents"
+    },
+    {
+      "name": "SSO उपयोगकर्ता संरचना",
+      "file": "sso-user-structure.md",
+      "subCat": "SSO उपयोगकर्ता"
+    },
+    {
+      "name": "GET /api/v1/sso-users",
+      "file": "sso-users-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "SSO उपयोगकर्ता"
+    },
+    {
+      "name": "GET /api/v1/sso-users/by-id/:id",
+      "file": "sso-user-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "SSO उपयोगकर्ता"
+    },
+    {
+      "name": "GET /api/v1/sso-users/by-email/:email",
+      "file": "sso-user-get-by-email.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "SSO उपयोगकर्ता"
+    },
+    {
+      "name": "PATCH /api/v1/sso-users/:id",
+      "file": "sso-user-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "SSO उपयोगकर्ता"
+    },
+    {
+      "name": "POST /api/v1/sso-users",
+      "file": "sso-user-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "SSO उपयोगकर्ता"
+    },
+    {
+      "name": "PUT /api/v1/sso-users/:id",
+      "file": "sso-user-put.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "SSO उपयोगकर्ता"
+    },
+    {
+      "name": "DELETE /api/v1/sso-users/:id",
+      "file": "sso-user-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "SSO उपयोगकर्ता"
+    },
+    {
+      "name": "सदस्यता संरचना",
+      "file": "subscription-structure.md",
+      "subCat": "सदस्यताएँ"
+    },
+    {
+      "name": "GET /api/v1/subscriptions/:id",
+      "file": "subscriptions-get.md",
+      "subCat": "सदस्यताएँ"
+    },
+    {
+      "name": "POST /api/v1/subscriptions",
+      "file": "subscriptions-post.md",
+      "subCat": "सदस्यताएँ"
+    },
+    {
+      "name": "DELETE /api/v1/subscriptions/:id",
+      "file": "subscriptions-delete.md",
+      "subCat": "सदस्यताएँ"
+    },
+    {
+      "name": "TenantDailyUsage संरचना",
+      "file": "tenant-daily-usage-structure.md",
+      "subCat": "टेनेंट दैनिक उपयोग"
+    },
+    {
+      "name": "GET /api/v1/tenant-daily-usage",
+      "file": "tenant-daily-usages-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "टेनेंट दैनिक उपयोग"
+    },
+    {
+      "name": "टेनेंट संरचना",
+      "file": "tenant-structure.md",
+      "subCat": "टेनेंट"
+    },
+    {
+      "name": "GET /api/v1/tenants/:id",
+      "file": "tenant-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "टेनेंट"
+    },
+    {
+      "name": "GET /api/v1/tenants",
+      "file": "tenants-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "टेनेंट"
+    },
+    {
+      "name": "POST /api/v1/tenants",
+      "file": "tenant-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "टेनेंट"
+    },
+    {
+      "name": "PATCH /api/v1/tenants/:id",
+      "file": "tenant-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "टेनेंट"
+    },
+    {
+      "name": "DELETE /api/v1/tenants/:id",
+      "file": "tenant-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "टेनेंट"
+    },
+    {
+      "name": "टेनेंट पैकेज संरचना",
+      "file": "tenant-package-structure.md",
+      "subCat": "टेनेंट पैकेज"
+    },
+    {
+      "name": "GET /api/v1/tenant-packages/:id",
+      "file": "tenant-package-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "टेनेंट पैकेज"
+    },
+    {
+      "name": "GET /api/v1/tenant-packages",
+      "file": "tenant-packages-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "टेनेंट पैकेज"
+    },
+    {
+      "name": "POST /api/v1/tenant-packages",
+      "file": "tenant-package-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "टेनेंट पैकेज"
+    },
+    {
+      "name": "PATCH /api/v1/tenant-packages/:id",
+      "file": "tenant-package-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "टेनेंट पैकेज"
+    },
+    {
+      "name": "DELETE /api/v1/tenant-packages/:id",
+      "file": "tenant-package-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "टेनेंट पैकेज"
+    },
+    {
+      "name": "टेनेंट उपयोगकर्ता संरचना",
+      "file": "tenant-user-structure.md",
+      "subCat": "टेनेंट उपयोगकर्ता"
+    },
+    {
+      "name": "GET /api/v1/tenant-users/:id",
+      "file": "tenant-user-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "टेनेंट उपयोगकर्ता"
+    },
+    {
+      "name": "GET /api/v1/tenant-users",
+      "file": "tenant-users-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "टेनेंट उपयोगकर्ता"
+    },
+    {
+      "name": "POST /api/v1/tenant-users",
+      "file": "tenant-user-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "टेनेंट उपयोगकर्ता"
+    },
+    {
+      "name": "POST /api/v1/tenant-users/:id/send-login-link",
+      "file": "tenant-user-send-login-link.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "टेनेंट उपयोगकर्ता"
+    },
+    {
+      "name": "PATCH /api/v1/tenant-users/:id",
+      "file": "tenant-user-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "टेनेंट उपयोगकर्ता"
+    },
+    {
+      "name": "DELETE /api/v1/tenant-users/:id",
+      "file": "tenant-user-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "टेनेंट उपयोगकर्ता"
+    },
+    {
+      "name": "उपयोगकर्ता संरचना",
+      "file": "user-structure.md",
+      "subCat": "उपयोगकर्ता"
+    },
+    {
+      "name": "GET /api/v1/users/:id",
+      "file": "user-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "उपयोगकर्ता"
+    },
+    {
+      "name": "वोट संरचना",
+      "file": "vote-structure.md",
+      "subCat": "वोट"
+    },
+    {
+      "name": "GET /api/v1/votes",
+      "file": "votes-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "वोट"
+    },
+    {
+      "name": "GET /api/v1/votes/for-user",
+      "file": "votes-get-for-user.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "वोट"
+    },
+    {
+      "name": "POST /api/v1/votes",
+      "file": "vote-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "वोट"
+    },
+    {
+      "name": "DELETE /api/v1/votes/:id",
+      "file": "vote-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "वोट"
+    },
+    {
+      "name": "DomainConfig संरचना",
+      "file": "domain-config-structure.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "डोमेन कॉन्फ़िग"
+    },
+    {
+      "name": "GET /api/v1/domain-configs",
+      "file": "domain-configs-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "डोमेन कॉन्फ़िग"
+    },
+    {
+      "name": "GET /api/v1/domain-configs/:domain",
+      "file": "domain-config-get-by-domain.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "डोमेन कॉन्फ़िग"
+    },
+    {
+      "name": "POST /api/v1/domain-configs",
+      "file": "domain-config-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "डोमेन कॉन्फ़िग"
+    },
+    {
+      "name": "PATCH /api/v1/domain-configs/:domain",
+      "file": "domain-config-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "डोमेन कॉन्फ़िग"
+    },
+    {
+      "name": "PUT /api/v1/domain-configs/:domain",
+      "file": "domain-config-put.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "डोमेन कॉन्फ़िग"
+    },
+    {
+      "name": "DELETE /api/v1/domain-configs/:domain",
+      "file": "domain-config-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "डोमेन कॉन्फ़िग"
+    },
+    {
+      "name": "QuestionConfig संरचना",
+      "file": "question-config-structure.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "प्रश्न कॉन्फ़िग"
+    },
+    {
+      "name": "GET /api/v1/question-configs",
+      "file": "question-configs-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "प्रश्न कॉन्फ़िग"
+    },
+    {
+      "name": "GET /api/v1/question-configs/:id",
+      "file": "question-config-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "प्रश्न कॉन्फ़िग"
+    },
+    {
+      "name": "POST /api/v1/question-configs",
+      "file": "question-config-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "प्रश्न कॉन्फ़िग"
+    },
+    {
+      "name": "PATCH /api/v1/question-configs/:id",
+      "file": "question-config-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "प्रश्न कॉन्फ़िग"
+    },
+    {
+      "name": "DELETE /api/v1/question-configs/:id",
+      "file": "question-config-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "प्रश्न कॉन्फ़िग"
+    },
+    {
+      "name": "QuestionResult संरचना",
+      "file": "question-result-structure.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "प्रश्न परिणाम"
+    },
+    {
+      "name": "GET /api/v1/question-results",
+      "file": "question-results-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "प्रश्न परिणाम"
+    },
+    {
+      "name": "GET /api/v1/question-results/:id",
+      "file": "question-result-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "प्रश्न परिणाम"
+    },
+    {
+      "name": "POST /api/v1/question-results",
+      "file": "question-result-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "प्रश्न परिणाम"
+    },
+    {
+      "name": "PATCH /api/v1/question-results/:id",
+      "file": "question-result-patch.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "प्रश्न परिणाम"
+    },
+    {
+      "name": "DELETE /api/v1/question-results/:id",
+      "file": "question-result-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "प्रश्न परिणाम"
+    },
+    {
+      "name": "GET /api/v1/question-results-aggregate",
+      "file": "question-results-aggregate.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "प्रश्न परिणाम एकत्रीकरण"
+    },
+    {
+      "name": "GET /api/v1/question-results-aggregate/combine/comments",
+      "file": "question-results-combine-comments.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "प्रश्न परिणाम एकत्रीकरण"
+    },
+    {
+      "name": "UserBadge संरचना",
+      "file": "user-badge-structure.md",
+      "subCat": "उपयोगकर्ता बैज"
+    },
+    {
+      "name": "GET /api/v1/user-badges",
+      "file": "user-badges-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "उपयोगकर्ता बैज"
+    },
+    {
+      "name": "GET /api/v1/user-badges/:id",
+      "file": "user-badge-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "उपयोगकर्ता बैज"
+    },
+    {
+      "name": "POST /api/v1/user-badges",
+      "file": "user-badge-post.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "उपयोगकर्ता बैज"
+    },
+    {
+      "name": "PUT /api/v1/user-badges/:id",
+      "file": "user-badge-put.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "उपयोगकर्ता बैज"
+    },
+    {
+      "name": "DELETE /api/v1/user-badges/:id",
+      "file": "user-badge-delete.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "उपयोगकर्ता बैज"
+    },
+    {
+      "name": "UserBadgeProgress संरचना",
+      "file": "user-badge-progress-structure.md",
+      "subCat": "उपयोगकर्ता बैज प्रगति"
+    },
+    {
+      "name": "GET /api/v1/user-badge-progress",
+      "file": "user-badge-progress-get.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "उपयोगकर्ता बैज प्रगति"
+    },
+    {
+      "name": "GET /api/v1/user-badge-progress/:id",
+      "file": "user-badge-progress-get-by-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "उपयोगकर्ता बैज प्रगति"
+    },
+    {
+      "name": "GET /api/v1/user-badge-progress/user/:userId",
+      "file": "user-badge-progress-get-by-user-id.md",
+      "sidebarItemClasses": "retain-case",
+      "subCat": "उपयोगकर्ता बैज प्रगति"
+    }
+  ]
+}

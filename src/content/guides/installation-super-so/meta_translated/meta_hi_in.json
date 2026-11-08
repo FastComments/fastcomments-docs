@@ -1,0 +1,42 @@
+{
+  "name": "Super.so इंस्टॉलेशन",
+  "pageHeader": "Super.So साइटों में लाइव चर्चाएँ जोड़ें",
+  "icon": "3rd-party-products/super-so.svg",
+  "itemsOrdered": [
+    {
+      "name": "चरण 1: सेटिंग्स खोलें",
+      "file": "super-so-learn-step-1.md",
+      "subCat": "Super.so इंस्टॉलेशन"
+    },
+    {
+      "name": "चरण 2: पूर्व-निर्मित कोड जोड़ें",
+      "file": "super-so-learn-step-2.md",
+      "subCat": "Super.so इंस्टॉलेशन"
+    },
+    {
+      "name": "यह भी देखें: सामान्य कमेंट विजेट",
+      "file": "super-so-comment-widget.md",
+      "subCat": "Super.so इंस्टॉलेशन"
+    },
+    {
+      "name": "सफलता",
+      "file": "super-so-learn-success.md",
+      "subCat": "Super.so इंस्टॉलेशन"
+    },
+    {
+      "name": "डोमेन त्रुटियाँ",
+      "file": "super-so-learn-domain-errors.md",
+      "subCat": "Super.so इंस्टॉलेशन"
+    },
+    {
+      "name": "अनुकूलन",
+      "file": "super-so-learn-customize.md",
+      "subCat": "Super.so इंस्टॉलेशन"
+    },
+    {
+      "name": "अपनी Super.so साइट में पोल जोड़ें",
+      "file": "super-so-polls.md",
+      "subCat": "पोल"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+## पैरामीटर
+
+| नाम | प्रकार | आवश्यक | विवरण |
+|------|------|----------|-------------|
+| tenantId | string | हाँ |  |
+| urlId | string | हाँ |  |
+
+## प्रतिक्रिया
+
+रिटर्न करता है: [`Option[GetVotesResponse]`](https://github.com/FastComments/fastcomments-nim/blob/master/client/fastcomments/models/model_get_votes_response.nim)
+
+## उदाहरण
+
+[inline-code-attrs-start title = 'getVotes उदाहरण'; type = 'nim'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+let (optVotes, httpResp) = client.getVotes(tenantId = "my-tenant-123", urlId = "news/article-42")
+if optVotes.isSome:
+  let votes = optVotes.get()
+  discard votes
+[inline-code-end]

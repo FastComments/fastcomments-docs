@@ -1,0 +1,42 @@
+{
+  "name": "ClickFunnels इंस्टॉलेशन",
+  "pageHeader": "ClickFunnels कोर्सेस में लाइव चैट जोड़ें",
+  "icon": "3rd-party-products/clickfunnels.svg",
+  "itemsOrdered": [
+    {
+      "name": "चरण एक: टेम्पलेट खोजें",
+      "file": "clickfunnels-step-1.md",
+      "subCat": "ClickFunnels इंस्टॉलेशन"
+    },
+    {
+      "name": "चरण दो: कोड जोड़ें",
+      "file": "clickfunnels-step-2.md",
+      "subCat": "ClickFunnels इंस्टॉलेशन"
+    },
+    {
+      "name": "डोमेन त्रुटियाँ",
+      "file": "clickfunnels-domain-errors.md",
+      "subCat": "ClickFunnels इंस्टॉलेशन"
+    },
+    {
+      "name": "कस्टमाइज़ेशन",
+      "file": "clickfunnels-customize.md",
+      "subCat": "ClickFunnels इंस्टॉलेशन"
+    },
+    {
+      "name": "अतिरिक्त: लाइव कमेंटिंग के लिए कोड स्निपेट",
+      "file": "clickfunnels-extra-live-commenting.md",
+      "subCat": "लाइव कमेंटिंग कोड स्निपेट"
+    },
+    {
+      "name": "अतिरिक्त: ऑटो प्ले कमेंट्स",
+      "file": "clickfunnels-extra-scheduled-comments.md",
+      "subCat": "ऑटो प्ले कमेंट्स"
+    },
+    {
+      "name": "अपने ClickFunnels कोर्स में पोल जोड़ें",
+      "file": "clickfunnels-polls.md",
+      "subCat": "पोल्स"
+    }
+  ]
+}

@@ -435,5 +435,24 @@
     "NEXT_GUIDE": "Sonraki Rehber",
     "CONTRIBUTE_TO_GUIDE": "Bu rehbere katkıda bulunun",
     "NO_RESULTS": "Bu anahtar kelimeler için sonuç bulunamadı."
+  },
+  "hi_in": {
+    "DOCUMENTATION_TITLE": "दस्तावेज़ीकरण",
+    "DOCUMENTATION_DESCRIPTION": "FastComments के बारे में जानने योग्य सभी चीज़ें खोजने के लिए आप सही जगह पर आए हैं। खोज आज़माएँ, या नीचे दिए गए हमारे किसी तैयार गाइड का उपयोग करें।",
+    "SEARCH_PLACEHOLDER": "खोजें",
+    "LOADING": "लोड हो रहा है...",
+    "GETTING_STARTED": "शुरुआत करें",
+    "ALL_GUIDES": "सभी गाइड",
+    "OTHER_PLATFORMS": "अन्य प्लेटफ़ॉर्म",
+    "SDKS": "SDKs",
+    "DOCUMENTATION_LAST_UPDATED": "दस्तावेज़ीकरण अंतिम बार अपडेट किया गया",
+    "CONTRIBUTE": "योगदान दें",
+    "LLM_KIT_BANNER": "AI सहायता प्राप्त डेवलपमेंट के लिए FastComments LLM Kit प्राप्त करें",
+    "LANGUAGE": "भाषा",
+    "TRANSLATION_NOTICE": "यह सामग्री अभी तक आपकी भाषा में उपलब्ध नहीं है। अंग्रेज़ी संस्करण दिखाया जा रहा है।",
+    "PREVIOUS_GUIDE": "पिछली गाइड",
+    "NEXT_GUIDE": "अगली गाइड",
+    "CONTRIBUTE_TO_GUIDE": "इस गाइड में योगदान दें",
+    "NO_RESULTS": "इन कीवर्ड के लिए कोई परिणाम नहीं मिले।"
   }
 }

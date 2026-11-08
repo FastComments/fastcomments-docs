@@ -1,0 +1,26 @@
+{
+  "name": "समर्थित ब्राउज़र",
+  "icon": "supported-browsers.png",
+  "itemsOrdered": [
+    {
+      "name": "समर्थित ब्राउज़र",
+      "file": "supported-browsers.md",
+      "subCat": "समर्थित ब्राउज़र"
+    },
+    {
+      "name": "इंटरनेट एक्सप्लोरर",
+      "file": "internet-explorer.md",
+      "subCat": "समर्थित ब्राउज़र"
+    },
+    {
+      "name": "हम कैसे परीक्षण करते हैं",
+      "file": "how-we-test.md",
+      "subCat": "समर्थित ब्राउज़र"
+    },
+    {
+      "name": "जावास्क्रिप्ट आवश्यकताएँ",
+      "file": "no-javascript.md",
+      "subCat": "समर्थित ब्राउज़र"
+    }
+  ]
+}

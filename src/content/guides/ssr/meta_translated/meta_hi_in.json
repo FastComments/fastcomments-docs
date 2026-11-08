@@ -1,0 +1,36 @@
+{
+  "name": "SSR (सर्वर-साइड-रेंडरिंग)",
+  "icon": "ssr.png",
+  "itemsOrdered": [
+    {
+      "name": "SSR क्या है?",
+      "file": "what-is-ssr.md",
+      "subCat": "पृष्ठभूमि"
+    },
+    {
+      "name": "SSR के लाभ",
+      "file": "benefits-of-ssr.md",
+      "subCat": "पृष्ठभूमि"
+    },
+    {
+      "name": "FastComments SSR समर्थित सुविधाएँ",
+      "file": "fastcomments-ssr-supported-features.md",
+      "subCat": "पृष्ठभूमि"
+    },
+    {
+      "name": "उपयोग के मामले",
+      "file": "ssr-use-cases.md",
+      "subCat": "SSR का उपयोग"
+    },
+    {
+      "name": "FastComments SSR का उपयोग कहाँ करता है",
+      "file": "ssr-where-used.md",
+      "subCat": "SSR का उपयोग"
+    },
+    {
+      "name": "SSR का उपयोग",
+      "file": "using-ssr.md",
+      "subCat": "SSR का उपयोग"
+    }
+  ]
+}

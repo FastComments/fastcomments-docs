@@ -1,0 +1,21 @@
+{
+  "name": "डार्क मोड",
+  "icon": "dark-mode.png",
+  "itemsOrdered": [
+    {
+      "name": "स्वतः पहचान",
+      "file": "dark-mode-auto-detect.md",
+      "subCat": "कॉन्फ़िगरेशन"
+    },
+    {
+      "name": "मैन्युअल कॉन्फ़िगरेशन",
+      "file": "dark-mode-manual.md",
+      "subCat": "कॉन्फ़िगरेशन"
+    },
+    {
+      "name": "WordPress नेटवर्कर थीम डार्क मोड समर्थन",
+      "file": "wp-networker-theme-dark-mode.md",
+      "subCat": "WordPress थीम्स"
+    }
+  ]
+}

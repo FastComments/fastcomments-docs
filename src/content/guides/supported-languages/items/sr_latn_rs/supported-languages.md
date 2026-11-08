@@ -12,7 +12,8 @@ FastComments podržava veliki broj jezika, u različitim lokalizacijama.
 - `de_de`: Nemački (Nemačka)
 - `el_cy`: Grčki (Kipar)
 - `el_gr`: Grčki (Grčka)
-- `he`: Jevrejski
+- `he`: Hebrejski
+- `hi_in`: Hindi (Indija)
 - `it_it`: Italijanski (Italija)
 - `ja_jp`: Japanski (Japan)
 - `ko_kr`: Korejski (Koreja)

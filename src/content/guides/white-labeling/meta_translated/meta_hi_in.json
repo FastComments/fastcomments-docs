@@ -1,0 +1,36 @@
+{
+  "name": "व्हाइट लेबलिंग",
+  "icon": "white-labeling.png",
+  "itemsOrdered": [
+    {
+      "name": "व्हाइट लेबलिंग क्या है",
+      "file": "white-labeling-background.md",
+      "subCat": "पृष्ठभूमि"
+    },
+    {
+      "name": "व्हाइट लेबलिंग कैसे प्राप्त करें",
+      "file": "white-labeling-how-to-get.md",
+      "subCat": "शुरुआत करना"
+    },
+    {
+      "name": "व्हाइट लेबलिंग सेट अप करना",
+      "file": "white-labeling-process.md",
+      "subCat": "कार्यान्वयन"
+    },
+    {
+      "name": "डैशबोर्ड का उपयोग करना",
+      "file": "white-labeling-using-the-dashboard.md",
+      "subCat": "कार्यान्वयन"
+    },
+    {
+      "name": "API का उपयोग करना",
+      "file": "white-labeling-using-the-api.md",
+      "subCat": "कार्यान्वयन"
+    },
+    {
+      "name": "व्हाइट लेबल किए गए टेनेंट्स का प्रबंधन",
+      "file": "white-labeling-managing.md",
+      "subCat": "टेनेंट प्रबंधन"
+    }
+  ]
+}

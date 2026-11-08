@@ -1,0 +1,1 @@
+FastComments SSO के लिए पूर्ण दस्तावेज़ीकरण के लिए, कृपया [FastComments दस्तावेज़ीकरण](https://docs.fastcomments.com/guide-customizations-and-configuration.html#sso) देखें।

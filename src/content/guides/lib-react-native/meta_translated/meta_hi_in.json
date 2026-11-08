@@ -1,0 +1,60 @@
+{
+  "name": "React Native लाइब्रेरी",
+  "pageHeader": "अपने React Native ऐप में कमेंट विजेट जोड़ें",
+  "itemsOrdered": [
+    {
+      "name": "AI कोडिंग एजेंट",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "दस्तावेज़ीकरण",
+      "type": "readme"
+    },
+    {
+      "name": "लाइव शोकेस",
+      "file": "live-showcase-readme-generated.md",
+      "subCat": "दस्तावेज़ीकरण",
+      "type": "readme"
+    },
+    {
+      "name": "इंस्टॉलेशन",
+      "file": "installation-readme-generated.md",
+      "subCat": "शुरुआत करें",
+      "type": "readme"
+    },
+    {
+      "name": "नेटिव SDK पर विचार करें",
+      "file": "consider-the-native-sdk-readme-generated.md",
+      "subCat": "दस्तावेज़ीकरण",
+      "type": "readme"
+    },
+    {
+      "name": "उपयोग - लाइव कमेंट विजेट",
+      "file": "usage-the-live-comment-widget-readme-generated.md",
+      "subCat": "उपयोग",
+      "type": "readme"
+    },
+    {
+      "name": "उपयोग - लाइव चैट विजेट",
+      "file": "usage-the-live-chat-widget-readme-generated.md",
+      "subCat": "उपयोग",
+      "type": "readme"
+    },
+    {
+      "name": "उपयोग - SSO",
+      "file": "usage-sso-readme-generated.md",
+      "subCat": "उपयोग",
+      "type": "readme"
+    },
+    {
+      "name": "पीयर डिपेंडेंसीज़",
+      "file": "peer-dependencies-readme-generated.md",
+      "subCat": "दस्तावेज़ीकरण",
+      "type": "readme"
+    },
+    {
+      "name": "मेंटेनेंस स्थिति",
+      "file": "maintenance-status-readme-generated.md",
+      "subCat": "दस्तावेज़ीकरण",
+      "type": "readme"
+    }
+  ]
+}

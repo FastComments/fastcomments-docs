@@ -1,0 +1,59 @@
+## पैरामीटर
+
+| नाम | प्रकार | स्थान | आवश्यक | विवरण |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | हाँ |  |
+| questionId | string | query | नहीं |  |
+| questionIds | array | query | नहीं |  |
+| urlId | string | query | नहीं |  |
+| startDate | string | query | नहीं |  |
+| forceRecalculate | boolean | query | नहीं |  |
+| minValue | number | query | नहीं |  |
+| maxValue | number | query | नहीं |  |
+| limit | number | query | नहीं |  |
+
+## प्रतिक्रिया
+
+रिटर्न करता है: [`CombineQuestionResultsWithCommentsResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/CombineQuestionResultsWithCommentsResponse.php)
+
+## उदाहरण
+
+[inline-code-attrs-start title = 'combineCommentsWithQuestionResults उदाहरण'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// API की ऑथराइज़ेशन कॉन्फ़िगर करें: api_key
+$config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+// यदि आवश्यक हो तो API की के लिए प्रीफ़िक्स (जैसे Bearer) सेटअप करने के लिए नीचे को अनकमेंट करें
+// $config = FastComments\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+
+
+$apiInstance = new FastComments\Client\Api\DefaultApi(
+    // यदि आप कस्टम http क्लाइंट का उपयोग करना चाहते हैं, तो अपना क्लाइंट पास करें जो `GuzzleHttp\ClientInterface` को इम्प्लीमेंट करता हो।
+    // यह वैकल्पिक है, `GuzzleHttp\Client` डिफ़ॉल्ट रूप से उपयोग किया जाएगा।
+    new GuzzleHttp\Client(),
+    $config
+);
+
+$tenant_id = 'tenant_id_example'; // string
+$options = [
+    'question_id' => 'question_id_example', // string
+    'question_ids' => array('question_ids_example'), // string[]
+    'url_id' => 'url_id_example', // string
+    'start_date' => new \DateTime('2013-10-20T19:20:30+01:00'), // \DateTime
+    'force_recalculate' => True, // bool
+    'min_value' => 3.4, // float
+    'max_value' => 3.4, // float
+    'limit' => 3.4, // float
+];
+
+
+try {
+    $result = $apiInstance->combineCommentsWithQuestionResults($tenant_id, $options);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->combineCommentsWithQuestionResults: ', $e->getMessage(), PHP_EOL;
+}
+[inline-code-end]

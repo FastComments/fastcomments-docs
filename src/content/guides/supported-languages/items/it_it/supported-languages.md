@@ -1,4 +1,4 @@
-FastComments supporta un numero di lingue, in diversi locali.
+FastComments supporta numerosi linguaggi, in diverse località.
 
 - `ar`: Arabo
 - `bg_bg`: Bulgaro (Bulgaria)
@@ -13,6 +13,7 @@ FastComments supporta un numero di lingue, in diversi locali.
 - `el_cy`: Greco (Cipro)
 - `el_gr`: Greco (Grecia)
 - `he`: Ebraico
+- `hi_in`: Hindi (India)
 - `it_it`: Italiano (Italia)
 - `ja_jp`: Giapponese (Giappone)
 - `ko_kr`: Coreano (Corea)
@@ -20,8 +21,8 @@ FastComments supporta un numero di lingue, in diversi locali.
 - `pt_br`: Portoghese (Brasiliano)
 - `ru_ru`: Russo (Russia)
 - `ru_ua`: Russo (Ucraina)
-- `sr_ba`: Serbo (Bosnia & Herzegovina)
-- `sr_latn_rs`: Serbo (Serbia latina)
+- `sr_ba`: Serbo (Bosnia ed Erzegovina)
+- `sr_latn_rs`: Serbo (Serbia Latina)
 - `sr_me`: Serbo (Montenegro)
 - `sr_rs`: Serbo (Serbia)
 - `sl_sl`: Sloveno (Slovenia)
@@ -31,12 +32,15 @@ FastComments supporta un numero di lingue, in diversi locali.
 
 ### Lingue da destra a sinistra
 
-L'arabo (`ar`) e l'ebraico (`he`) sono lingue da destra a sinistra. Quando uno di questi locali è utilizzato, FastComments dispone il widget dei commenti, le email e la dashboard da destra a sinistra. Non è necessaria alcuna configurazione aggiuntiva.
+L'arabo (`ar`) e l'ebraico (`he`) sono lingue da destra a sinistra. Quando viene utilizzata una di queste località, FastComments dispone
+il widget dei commenti, le email e la dashboard da destra a sinistra. Non è necessaria alcuna configurazione aggiuntiva.
 
-Ogni commento e nome utente segue la direzione del proprio testo. Un commento in inglese si legge da sinistra a destra su una pagina araba, e un commento arabo si legge da destra a sinistra su una pagina inglese.
+Ogni commento e nome utente segue la direzione del proprio testo. Un commento in inglese si legge da sinistra a destra su una pagina
+in arabo, e un commento in arabo si legge da destra a sinistra su una pagina in inglese.
 
-Gli snippet di codice si leggono sempre da sinistra a destra.
+I frammenti di codice si leggono sempre da sinistra a destra.
 
 ### Forme plurali
 
-Il testo che include un conteggio, come "3 commenti", utilizza la forma plurale corretta per ogni lingua. Per esempio, l'arabo ha forme separate per uno, due, pochi e molti, e il russo e il polacco hanno forme separate per pochi e molti.
+Il testo che include un conteggio, come "3 commenti", utilizza la forma plurale corretta per ogni lingua. Ad esempio, l'arabo
+ha forme separate per uno, due, alcuni e molti, e il russo e il polacco hanno forme separate per alcuni e molti.

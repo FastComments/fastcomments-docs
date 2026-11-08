@@ -1,0 +1,56 @@
+{
+  "name": "ऑन-प्रिमाइसेस",
+  "icon": "on-prem.png",
+  "itemsOrdered": [
+    {
+      "name": "क्या शामिल है",
+      "file": "on-prem-whats-included.md",
+      "subCat": "पृष्ठभूमि"
+    },
+    {
+      "name": "कहाँ से शुरू करें",
+      "file": "on-prem-where-to-start.md",
+      "subCat": "शुरुआत करना"
+    },
+    {
+      "name": "इंस्टेंस",
+      "file": "on-prem-deployment-instances.md",
+      "subCat": "डिप्लॉयमेंट"
+    },
+    {
+      "name": "कॉन्फ़िग",
+      "file": "on-prem-deployment-config.md",
+      "subCat": "डिप्लॉयमेंट"
+    },
+    {
+      "name": "डेटाबेस डाउनटाइम और मेंटेनेंस मोड",
+      "file": "on-prem-database-downtime-maintenance-mode.md",
+      "subCat": "आर्किटेक्चर"
+    },
+    {
+      "name": "लॉक",
+      "file": "on-prem-locks.md",
+      "subCat": "आर्किटेक्चर"
+    },
+    {
+      "name": "विजेट कोड",
+      "file": "on-prem-installation-widget.md",
+      "subCat": "इंस्टॉलेशन और इंटीग्रेशन"
+    },
+    {
+      "name": "एपीआई",
+      "file": "on-prem-installation-api.md",
+      "subCat": "इंस्टॉलेशन और इंटीग्रेशन"
+    },
+    {
+      "name": "एकाधिक डोमेन",
+      "file": "on-prem-installation-multiple-domains.md",
+      "subCat": "इंस्टॉलेशन और इंटीग्रेशन"
+    },
+    {
+      "name": "सुरक्षा",
+      "file": "on-prem-security.md",
+      "subCat": "सुरक्षा टिप्स"
+    }
+  ]
+}

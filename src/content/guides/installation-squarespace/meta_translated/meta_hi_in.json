@@ -1,0 +1,82 @@
+{
+  "name": "Squarespace इंस्टॉलेशन",
+  "pageHeader": "Squarespace साइटों में टिप्पणियाँ जोड़ें",
+  "icon": "3rd-party-products/squarespace.svg",
+  "itemsOrdered": [
+    {
+      "name": "अपने ब्लॉग में लाइव टिप्पणी जोड़ें",
+      "file": "squarespace-blog-step-0.md",
+      "subCat": "अपने ब्लॉग में टिप्पणियाँ जोड़ें"
+    },
+    {
+      "name": "चरण 1: ब्लॉग सेटिंग्स खोलें",
+      "file": "squarespace-blog-step-1.md",
+      "subCat": "अपने ब्लॉग में टिप्पणियाँ जोड़ें"
+    },
+    {
+      "name": "चरण 2: अपना FastComments.com कोड पेस्ट करें",
+      "file": "squarespace-blog-step-2.md",
+      "subCat": "अपने ब्लॉग में टिप्पणियाँ जोड़ें"
+    },
+    {
+      "name": "सफलता",
+      "file": "squarespace-blog-success.md",
+      "subCat": "अपने ब्लॉग में टिप्पणियाँ जोड़ें"
+    },
+    {
+      "name": "सभी पेजों में लाइव टिप्पणी जोड़ें",
+      "file": "squarespace-pages-all-pages-step-0.md",
+      "subCat": "सभी पेजों में टिप्पणियाँ जोड़ें"
+    },
+    {
+      "name": "चरण 1: डेवलपर टूल्स खोलें",
+      "file": "squarespace-pages-all-pages-step-1.md",
+      "subCat": "सभी पेजों में टिप्पणियाँ जोड़ें"
+    },
+    {
+      "name": "चरण 2: अपना FastComments.com कोड पेस्ट करें",
+      "file": "squarespace-pages-all-pages-step-2.md",
+      "subCat": "सभी पेजों में टिप्पणियाँ जोड़ें"
+    },
+    {
+      "name": "सफलता",
+      "file": "squarespace-pages-all-pages-success.md",
+      "subCat": "सभी पेजों में टिप्पणियाँ जोड़ें"
+    },
+    {
+      "name": "किसी विशेष पेज में लाइव टिप्पणी जोड़ें",
+      "file": "squarespace-pages-specific-page-step-0.md",
+      "subCat": "किसी विशेष पेज में टिप्पणियाँ जोड़ें"
+    },
+    {
+      "name": "चरण 1: कोड ब्लॉक जोड़ें",
+      "file": "squarespace-pages-specific-page-step-1.md",
+      "subCat": "किसी विशेष पेज में टिप्पणियाँ जोड़ें"
+    },
+    {
+      "name": "चरण 2: अपना FastComments.com कोड पेस्ट करें",
+      "file": "squarespace-pages-specific-page-step-2.md",
+      "subCat": "किसी विशेष पेज में टिप्पणियाँ जोड़ें"
+    },
+    {
+      "name": "सफलता",
+      "file": "squarespace-pages-specific-page-success.md",
+      "subCat": "किसी विशेष पेज में टिप्पणियाँ जोड़ें"
+    },
+    {
+      "name": "डोमेन त्रुटियाँ",
+      "file": "squarespace-domain-errors.md",
+      "subCat": "Squarespace अगले कदम"
+    },
+    {
+      "name": "अनुकूलन",
+      "file": "squarespace-customize.md",
+      "subCat": "Squarespace अगले कदम"
+    },
+    {
+      "name": "अपनी Squarespace साइट में पोल जोड़ें",
+      "file": "squarespace-polls.md",
+      "subCat": "पोल"
+    }
+  ]
+}

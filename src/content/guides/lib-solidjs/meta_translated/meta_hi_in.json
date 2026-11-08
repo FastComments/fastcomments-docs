@@ -1,0 +1,54 @@
+{
+  "name": "SolidJS लाइब्रेरी",
+  "pageHeader": "अपने SolidJS ऐप में टिप्पणियाँ जोड़ें",
+  "itemsOrdered": [
+    {
+      "name": "AI कोडिंग एजेंट",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "दस्तावेज़ीकरण",
+      "type": "readme"
+    },
+    {
+      "name": "लाइव डेमो",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "दस्तावेज़ीकरण",
+      "type": "readme"
+    },
+    {
+      "name": "इंस्टॉल",
+      "file": "install-readme-generated.md",
+      "subCat": "शुरुआत करें",
+      "type": "readme"
+    },
+    {
+      "name": "उपयोग",
+      "file": "usage-readme-generated.md",
+      "subCat": "उपयोग",
+      "type": "readme"
+    },
+    {
+      "name": "कॉन्फ़िग बदलावों पर प्रतिक्रिया (इम्पेरेटिव हैंडल)",
+      "file": "reacting-to-config-changes-imperative-handle-readme-generated.md",
+      "subCat": "कॉन्फ़िगरेशन",
+      "type": "readme"
+    },
+    {
+      "name": "कंपोनेंट्स",
+      "file": "components-readme-generated.md",
+      "subCat": "दस्तावेज़ीकरण",
+      "type": "readme"
+    },
+    {
+      "name": "शोकेस",
+      "file": "showcase-readme-generated.md",
+      "subCat": "दस्तावेज़ीकरण",
+      "type": "readme"
+    },
+    {
+      "name": "बिल्ड",
+      "file": "build-readme-generated.md",
+      "subCat": "दस्तावेज़ीकरण",
+      "type": "readme"
+    }
+  ]
+}

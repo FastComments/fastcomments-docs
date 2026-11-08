@@ -1,0 +1,46 @@
+{
+  "name": "माइग्रेशन",
+  "icon": "migrate.png",
+  "itemsOrdered": [
+    {
+      "name": "अन्य प्रदाताओं से माइग्रेट करना",
+      "file": "migrating-from-other-providers.md",
+      "subCat": "अन्य प्रदाताओं से"
+    },
+    {
+      "name": "डेटा इम्पोर्ट करना",
+      "file": "importing-data.md",
+      "subCat": "अन्य प्रदाताओं से"
+    },
+    {
+      "name": "वर्डप्रेस टिप्पणियाँ इम्पोर्ट करना",
+      "file": "importing-data-wordpress.md",
+      "subCat": "अन्य प्रदाताओं से"
+    },
+    {
+      "name": "उपयोगकर्ताओं और मॉडरेटर्स का माइग्रेशन",
+      "file": "migrating-users-moderators.md",
+      "subCat": "अन्य प्रदाताओं से"
+    },
+    {
+      "name": "डोमेन का माइग्रेशन",
+      "file": "migrating-domains.md",
+      "subCat": "डेटा माइग्रेशन"
+    },
+    {
+      "name": "पेजों का माइग्रेशन",
+      "file": "migrating-pages.md",
+      "subCat": "डेटा माइग्रेशन"
+    },
+    {
+      "name": "टिप्पणियों की कॉपी करना",
+      "file": "copying-comments.md",
+      "subCat": "डेटा माइग्रेशन"
+    },
+    {
+      "name": "डेटा एक्सपोर्ट करना",
+      "file": "exporting-data.md",
+      "subCat": "अन्य प्रदाताओं को"
+    }
+  ]
+}

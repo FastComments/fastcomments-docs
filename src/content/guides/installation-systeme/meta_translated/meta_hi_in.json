@@ -1,0 +1,37 @@
+{
+  "name": "Systeme.io इंस्टॉलेशन",
+  "pageHeader": "Systeme.io ब्लॉग में टिप्पणियाँ जोड़ें",
+  "icon": "3rd-party-products/systeme_io.png",
+  "itemsOrdered": [
+    {
+      "name": "चरण 1: ब्लॉग थीम टेम्पलेट खोलें",
+      "file": "systeme-step-1.md",
+      "subCat": "Systeme.io इंस्टॉलेशन"
+    },
+    {
+      "name": "चरण 2: FastComments.com कोड जोड़ें",
+      "file": "systeme-step-2.md",
+      "subCat": "Systeme.io इंस्टॉलेशन"
+    },
+    {
+      "name": "सफलता",
+      "file": "systeme-success.md",
+      "subCat": "Systeme.io इंस्टॉलेशन"
+    },
+    {
+      "name": "डोमेन त्रुटियाँ",
+      "file": "systeme-domain-errors.md",
+      "subCat": "Systeme.io इंस्टॉलेशन"
+    },
+    {
+      "name": "अनुकूलन",
+      "file": "systeme-customize.md",
+      "subCat": "Systeme.io इंस्टॉलेशन"
+    },
+    {
+      "name": "अपने Systeme.io ब्लॉग में पोल जोड़ें",
+      "file": "systeme-polls.md",
+      "subCat": "पोल"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+## पैरामीटर
+
+| नाम | प्रकार | स्थान | आवश्यक | विवरण |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | हाँ |  |
+| isLive | boolean | query | नहीं |  |
+| doSpamCheck | boolean | query | नहीं |  |
+| sendEmails | boolean | query | नहीं |  |
+| populateNotifications | boolean | query | नहीं |  |
+
+## प्रतिक्रिया
+
+रिटर्न करता है: [`APISaveCommentResponse`](https://github.com/FastComments/fastcomments-swift/blob/main/client/FastCommentsSwift/Models/APISaveCommentResponse.swift)
+
+## उदाहरण
+
+[inline-code-attrs-start title = 'saveComment उदाहरण'; type = 'swift'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+// निम्नलिखित कोड सैंपल अभी भी बीटा हैं। किसी भी समस्या के लिए, कृपया http://github.com/OpenAPITools/openapi-generator/issues/new पर रिपोर्ट करें
+import FastCommentsSwift
+
+let tenantId = "tenantId_example" // String | 
+let createCommentParams = CreateCommentParams(date: 123, localDateString: "localDateString_example", localDateHours: 123, commenterName: "commenterName_example", commenterEmail: "commenterEmail_example", commenterLink: "commenterLink_example", comment: "comment_example", productId: 123, userId: "userId_example", avatarSrc: "avatarSrc_example", parentId: "parentId_example", mentions: [CommentUserMentionInfo(id: "id_example", tag: "tag_example", rawTag: "rawTag_example", type: "type_example", sent: false)], hashTags: [CommentUserHashTagInfo(id: "id_example", tag: "tag_example", url: "url_example", retain: false)], pageTitle: "pageTitle_example", isFromMyAccountPage: false, url: "url_example", urlId: "urlId_example", meta: 123, moderationGroupIds: ["moderationGroupIds_example"], rating: 123, fromOfflineRestore: false, autoplayDelayMS: 123, feedbackIds: ["feedbackIds_example"], questionValues: "TODO", poll: CommentPollInput(question: "question_example", options: ["options_example"], closesAt: "closesAt_example", privacy: 123, requireVoteToSeeResults: false), tos: false, botId: "botId_example", approved: false, domain: "domain_example", ip: "ip_example", isPinned: false, locale: "locale_example", reviewed: false, verified: false, votes: 123, votesDown: 123, votesUp: 123) // CreateCommentParams | 
+let isLive = true // Bool |  (वैकल्पिक)
+let doSpamCheck = true // Bool |  (वैकल्पिक)
+let sendEmails = true // Bool |  (वैकल्पिक)
+let populateNotifications = true // Bool |  (वैकल्पिक)
+
+DefaultAPI.saveComment(tenantId: tenantId, createCommentParams: createCommentParams, options: DefaultAPI.SaveCommentOptions(isLive: isLive, doSpamCheck: doSpamCheck, sendEmails: sendEmails, populateNotifications: populateNotifications)) { (response, error) in
+    guard error == nil else {
+        print(error)
+        return
+    }
+
+    if (response) {
+        dump(response)
+    }
+}
+[inline-code-end]

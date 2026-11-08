@@ -1,0 +1,25 @@
+## पैरामीटर
+
+| नाम | प्रकार | आवश्यक | विवरण |
+|------|------|----------|-------------|
+| tenantId | string | हाँ |  |
+| id | string | हाँ |  |
+
+## प्रतिक्रिया
+
+रिटर्न करता है: [`APIGetUserBadgeResponse`](https://github.com/FastComments/fastcomments-cpp/blob/master/client/include/FastCommentsClient/model/APIGetUserBadgeResponse.h)
+
+## उदाहरण
+
+[inline-code-attrs-start title = 'getUserBadge उदाहरण'; type = 'cpp'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+utility::string_t tenantId = U("my-tenant-123");
+utility::string_t userId = U("user-456");
+api->getUserBadge(tenantId, userId).then([](pplx::task<std::shared_ptr<APIGetUserBadgeResponse>> t){
+    try{
+        auto resp = t.get();
+        boost::optional<std::string> badgeUrl = resp->badge_url ? boost::optional<std::string>(*resp->badge_url) : boost::none;
+    }catch(const std::exception&){
+    }
+});
+[inline-code-end]

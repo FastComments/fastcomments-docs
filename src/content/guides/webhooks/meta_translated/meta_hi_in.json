@@ -1,0 +1,51 @@
+{
+  "name": "वेबहुक्स",
+  "icon": "pipe.png",
+  "itemsOrdered": [
+    {
+      "name": "वेबहुक्स क्या हैं",
+      "file": "what-are-webhooks.md",
+      "subCat": "अवलोकन"
+    },
+    {
+      "name": "समर्थित घटनाएँ और संसाधन",
+      "file": "webhooks-supported-events-resources.md",
+      "subCat": "अवलोकन"
+    },
+    {
+      "name": "स्थानीय विकास सेटअप",
+      "file": "webhooks-local-dev.md",
+      "subCat": "कार्यान्वयन"
+    },
+    {
+      "name": "सेटअप",
+      "file": "webhooks-setup.md",
+      "subCat": "कार्यान्वयन"
+    },
+    {
+      "name": "परीक्षण",
+      "file": "webhooks-testing.md",
+      "subCat": "कार्यान्वयन"
+    },
+    {
+      "name": "डेटा संरचनाएँ",
+      "file": "webhooks-structures.md",
+      "subCat": "कार्यान्वयन"
+    },
+    {
+      "name": "सुरक्षा और API टोकन",
+      "file": "webhooks-api-tokens.md",
+      "subCat": "कार्यान्वयन"
+    },
+    {
+      "name": "API के माध्यम से वेबहुक्स प्रबंधित करना",
+      "file": "webhooks-api-subscriptions.md",
+      "subCat": "कार्यान्वयन"
+    },
+    {
+      "name": "यह कैसे काम करता है और पुनः प्रयासों को संभालना",
+      "file": "webhooks-how-it-works.md",
+      "subCat": "पर्दे के पीछे"
+    }
+  ]
+}

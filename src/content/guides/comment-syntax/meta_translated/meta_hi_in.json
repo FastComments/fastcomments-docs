@@ -1,0 +1,16 @@
+{
+  "name": "कमेंट सिंटैक्स",
+  "icon": "pencil.svg",
+  "itemsOrdered": [
+    {
+      "name": "बेसिक फ़ॉर्मेटिंग",
+      "file": "basic-formatting.md",
+      "subCat": "फ़ॉर्मेटिंग"
+    },
+    {
+      "name": "सुरक्षा",
+      "file": "security.md",
+      "subCat": "सुरक्षा"
+    }
+  ]
+}

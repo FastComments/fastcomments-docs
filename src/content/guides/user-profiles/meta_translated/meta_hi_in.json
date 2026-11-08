@@ -1,0 +1,51 @@
+{
+  "name": "उपयोगकर्ता प्रोफ़ाइल",
+  "icon": "users.png",
+  "itemsOrdered": [
+    {
+      "name": "प्रोफ़ाइल मूल बातें",
+      "file": "profile-basics.md",
+      "subCat": "शुरुआत करना"
+    },
+    {
+      "name": "अपनी प्रोफ़ाइल को अनुकूलित करना",
+      "file": "customizing-profiles.md",
+      "subCat": "अनुकूलन"
+    },
+    {
+      "name": "गोपनीयता सेटिंग्स",
+      "file": "privacy-settings.md",
+      "subCat": "अनुकूलन"
+    },
+    {
+      "name": "बैज",
+      "file": "badges.md",
+      "subCat": "विशेषताएँ"
+    },
+    {
+      "name": "प्रोफ़ाइल टिप्पणियाँ",
+      "file": "profile-comments.md",
+      "subCat": "विशेषताएँ"
+    },
+    {
+      "name": "सीधा संदेश",
+      "file": "direct-messaging.md",
+      "subCat": "विशेषताएँ"
+    },
+    {
+      "name": "गतिविधि फ़ीड",
+      "file": "activity-feed.md",
+      "subCat": "विशेषताएँ"
+    },
+    {
+      "name": "उपयोगकर्ता नोट्स",
+      "file": "user-notes.md",
+      "subCat": "विशेषताएँ"
+    },
+    {
+      "name": "प्रोफ़ाइल स्टाइलिंग",
+      "file": "styling-profiles.md",
+      "subCat": "डेवलपर्स के लिए"
+    }
+  ]
+}

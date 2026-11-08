@@ -1,0 +1,1 @@
+सभी FastComments पैकेज Feedback मॉड्यूल का उपयोग कर सकते हैं, जिसमें Ratings & Reviews शामिल हैं।

@@ -1,0 +1,51 @@
+{
+  "name": "एकाधिक साइटें",
+  "icon": "domains.png",
+  "itemsOrdered": [
+    {
+      "name": "प्रारंभिक सेटअप",
+      "file": "add-domains-to-account.md",
+      "subCat": "शुरुआत करना"
+    },
+    {
+      "name": "सीमाएँ और मूल्य निर्धारण",
+      "file": "domain-limits.md",
+      "subCat": "शुरुआत करना"
+    },
+    {
+      "name": "नाम, ईमेल और लोगो से",
+      "file": "from-name-email-logo.md",
+      "subCat": "प्रति-साइट अनुकूलन"
+    },
+    {
+      "name": "डोमेन का नाम/ईमेल काम नहीं कर रहा",
+      "file": "custom-domain-settings-not-working.md",
+      "subCat": "प्रति-साइट अनुकूलन"
+    },
+    {
+      "name": "प्रति वातावरण टेनेंट",
+      "file": "tenant-per-environment.md",
+      "subCat": "प्रति-साइट अनुकूलन"
+    },
+    {
+      "name": "अनुकूलन",
+      "file": "customizations.md",
+      "subCat": "प्रति-साइट अनुकूलन"
+    },
+    {
+      "name": "टिप्पणी मॉडरेशन",
+      "file": "moderation.md",
+      "subCat": "डेटा और खोज"
+    },
+    {
+      "name": "डोमेन के बीच टिप्पणियाँ साझा करना",
+      "file": "sharing-comments-across-domains.md",
+      "subCat": "डेटा और खोज"
+    },
+    {
+      "name": "WordPress के साथ",
+      "file": "wordpress.md",
+      "subCat": "एकीकरण नोट्स"
+    }
+  ]
+}

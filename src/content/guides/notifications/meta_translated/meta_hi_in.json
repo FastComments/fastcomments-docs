@@ -1,0 +1,31 @@
+{
+  "name": "सूचनाएँ",
+  "icon": "notifications.png",
+  "itemsOrdered": [
+    {
+      "name": "FastComments कब सूचनाएँ भेजता है?",
+      "file": "when-does-fastcomments-send-notifications.md",
+      "subCat": "पृष्ठभूमि"
+    },
+    {
+      "name": "सूचना के प्रकार",
+      "file": "notification-types.md",
+      "subCat": "पृष्ठभूमि"
+    },
+    {
+      "name": "ऑप्ट आउट करना",
+      "file": "opting-out-notifications.md",
+      "subCat": "कॉन्फ़िगरेशन"
+    },
+    {
+      "name": "SSO के लिए सूचनाएँ कॉन्फ़िगर करना",
+      "file": "configuring-notifications-sso.md",
+      "subCat": "कॉन्फ़िगरेशन"
+    },
+    {
+      "name": "ईमेल सप्रेशन प्रबंधन",
+      "file": "email-suppression-management.md",
+      "subCat": "कॉन्फ़िगरेशन"
+    }
+  ]
+}

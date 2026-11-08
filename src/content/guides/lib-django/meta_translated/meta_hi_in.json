@@ -1,0 +1,78 @@
+{
+  "name": "Django पैकेज",
+  "pageHeader": "अपने Django ऐप में टिप्पणियाँ जोड़ें",
+  "itemsOrdered": [
+    {
+      "name": "AI कोडिंग एजेंट",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "दस्तावेज़ीकरण",
+      "type": "readme"
+    },
+    {
+      "name": "आवश्यकताएँ",
+      "file": "requirements-readme-generated.md",
+      "subCat": "दस्तावेज़ीकरण",
+      "type": "readme"
+    },
+    {
+      "name": "इंस्टॉलेशन",
+      "file": "installation-readme-generated.md",
+      "subCat": "शुरुआत करें",
+      "type": "readme"
+    },
+    {
+      "name": "क्विकस्टार्ट",
+      "file": "quickstart-readme-generated.md",
+      "subCat": "उपयोग",
+      "type": "readme"
+    },
+    {
+      "name": "स्वचालित SSO के लिए पूर्वापेक्षाएँ",
+      "file": "prerequisites-for-automatic-sso-readme-generated.md",
+      "subCat": "दस्तावेज़ीकरण",
+      "type": "readme"
+    },
+    {
+      "name": "विजेट टैग",
+      "file": "widget-tags-readme-generated.md",
+      "subCat": "दस्तावेज़ीकरण",
+      "type": "readme"
+    },
+    {
+      "name": "SSO (सिंगल साइन-ऑन)",
+      "file": "sso-single-sign-on-readme-generated.md",
+      "subCat": "दस्तावेज़ीकरण",
+      "type": "readme"
+    },
+    {
+      "name": "सर्वर-साइड API एक्सेस",
+      "file": "server-side-api-access-readme-generated.md",
+      "subCat": "API संदर्भ",
+      "type": "readme"
+    },
+    {
+      "name": "EU क्षेत्र",
+      "file": "eu-region-readme-generated.md",
+      "subCat": "दस्तावेज़ीकरण",
+      "type": "readme"
+    },
+    {
+      "name": "एम्बेड मार्कअप को अनुकूलित करना",
+      "file": "customizing-the-embed-markup-readme-generated.md",
+      "subCat": "दस्तावेज़ीकरण",
+      "type": "readme"
+    },
+    {
+      "name": "सेटिंग्स संदर्भ",
+      "file": "settings-reference-readme-generated.md",
+      "subCat": "API संदर्भ",
+      "type": "readme"
+    },
+    {
+      "name": "उदाहरण प्रोजेक्ट",
+      "file": "example-project-readme-generated.md",
+      "subCat": "उपयोग",
+      "type": "readme"
+    }
+  ]
+}

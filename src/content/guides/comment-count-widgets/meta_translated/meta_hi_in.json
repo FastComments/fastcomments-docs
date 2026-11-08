@@ -1,0 +1,21 @@
+{
+  "name": "कमेंट काउंट विजेट",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "कमेंट काउंट विजेट इंस्टॉलेशन",
+      "file": "comment-count-widget-installation.md",
+      "subCat": "इंस्टॉलेशन"
+    },
+    {
+      "name": "बल्क कमेंट काउंट विजेट इंस्टॉलेशन",
+      "file": "bulk-comment-count-widget-installation.md",
+      "subCat": "इंस्टॉलेशन"
+    },
+    {
+      "name": "कमेंट काउंट APIs",
+      "file": "comment-count-apis.md",
+      "subCat": "कमेंट काउंट APIs"
+    }
+  ]
+}

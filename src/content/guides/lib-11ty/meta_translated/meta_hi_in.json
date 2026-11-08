@@ -1,0 +1,66 @@
+{
+  "name": "Eleventy (11ty) लाइब्रेरी",
+  "pageHeader": "अपनी Eleventy (11ty) साइट में टिप्पणियाँ जोड़ें",
+  "itemsOrdered": [
+    {
+      "name": "AI कोडिंग एजेंट",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "दस्तावेज़ीकरण",
+      "type": "readme"
+    },
+    {
+      "name": "लाइव डेमो",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "दस्तावेज़ीकरण",
+      "type": "readme"
+    },
+    {
+      "name": "इंस्टॉल",
+      "file": "install-readme-generated.md",
+      "subCat": "शुरुआत करें",
+      "type": "readme"
+    },
+    {
+      "name": "क्विक स्टार्ट",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "दस्तावेज़ीकरण",
+      "type": "readme"
+    },
+    {
+      "name": "शॉर्टकोड्स",
+      "file": "shortcodes-readme-generated.md",
+      "subCat": "दस्तावेज़ीकरण",
+      "type": "readme"
+    },
+    {
+      "name": "प्लगइन विकल्प",
+      "file": "plugin-options-readme-generated.md",
+      "subCat": "कॉन्फ़िगरेशन",
+      "type": "readme"
+    },
+    {
+      "name": "मैनुअल उपयोग (प्लगइन के बिना)",
+      "file": "manual-usage-without-the-plugin-readme-generated.md",
+      "subCat": "उपयोग",
+      "type": "readme"
+    },
+    {
+      "name": "उदाहरण प्रोजेक्ट",
+      "file": "example-project-readme-generated.md",
+      "subCat": "उपयोग",
+      "type": "readme"
+    },
+    {
+      "name": "लिंक",
+      "file": "links-readme-generated.md",
+      "subCat": "दस्तावेज़ीकरण",
+      "type": "readme"
+    },
+    {
+      "name": "रखरखाव स्थिति",
+      "file": "maintenance-status-readme-generated.md",
+      "subCat": "दस्तावेज़ीकरण",
+      "type": "readme"
+    }
+  ]
+}

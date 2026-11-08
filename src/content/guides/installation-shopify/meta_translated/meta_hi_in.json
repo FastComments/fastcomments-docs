@@ -1,0 +1,72 @@
+{
+  "name": "Shopify इंस्टॉलेशन",
+  "pageHeader": "Shopify साइटों पर टिप्पणियाँ जोड़ें",
+  "icon": "3rd-party-products/shopify.svg",
+  "itemsOrdered": [
+    {
+      "name": "FastComments ऐप इंस्टॉल करें",
+      "file": "shopify-install.md",
+      "subCat": "Shopify इंस्टॉलेशन"
+    },
+    {
+      "name": "ब्लॉग पोस्ट और उत्पादों पर टिप्पणियाँ जोड़ें",
+      "file": "shopify-add-comments.md",
+      "subCat": "Shopify इंस्टॉलेशन"
+    },
+    {
+      "name": "टिप्पणी संख्या बैज जोड़ें",
+      "file": "shopify-comment-count.md",
+      "subCat": "Shopify इंस्टॉलेशन"
+    },
+    {
+      "name": "हाल की टिप्पणियों की फ़ीड जोड़ें",
+      "file": "shopify-recent-comments.md",
+      "subCat": "Shopify इंस्टॉलेशन"
+    },
+    {
+      "name": "हाल की चर्चाओं की फ़ीड जोड़ें",
+      "file": "shopify-recent-discussions.md",
+      "subCat": "Shopify इंस्टॉलेशन"
+    },
+    {
+      "name": "शीर्ष पृष्ठों की सूची जोड़ें",
+      "file": "shopify-top-pages.md",
+      "subCat": "Shopify इंस्टॉलेशन"
+    },
+    {
+      "name": "समीक्षा सारांश जोड़ें",
+      "file": "shopify-reviews-summary.md",
+      "subCat": "Shopify इंस्टॉलेशन"
+    },
+    {
+      "name": "Shopify ग्राहकों को ऑटो-लॉगिन करें",
+      "file": "shopify-sso.md",
+      "subCat": "Shopify इंस्टॉलेशन"
+    },
+    {
+      "name": "मौजूदा टिप्पणियाँ आयात करें",
+      "file": "shopify-import.md",
+      "subCat": "Shopify इंस्टॉलेशन"
+    },
+    {
+      "name": "अनुकूलन",
+      "file": "shopify-customize.md",
+      "subCat": "Shopify इंस्टॉलेशन"
+    },
+    {
+      "name": "डोमेन त्रुटियाँ",
+      "file": "shopify-domain-errors.md",
+      "subCat": "Shopify इंस्टॉलेशन"
+    },
+    {
+      "name": "मैन्युअल इंस्टॉल (उन्नत)",
+      "file": "shopify-manual-install.md",
+      "subCat": "Shopify इंस्टॉलेशन"
+    },
+    {
+      "name": "अपनी Shopify स्टोर में पोल जोड़ें",
+      "file": "shopify-polls.md",
+      "subCat": "पोल"
+    }
+  ]
+}

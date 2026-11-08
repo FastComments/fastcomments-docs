@@ -1,0 +1,27 @@
+{
+  "name": "MemberSpace इंस्टॉलेशन",
+  "pageHeader": "MemberSpace के साथ टिप्पणियाँ जोड़ें",
+  "icon": "3rd-party-products/memberspace.webp",
+  "itemsOrdered": [
+    {
+      "name": "कोड",
+      "file": "memberspace-step-1.md",
+      "subCat": "MemberSpace इंस्टॉलेशन"
+    },
+    {
+      "name": "डोमेन त्रुटियाँ",
+      "file": "memberspace-domain-errors.md",
+      "subCat": "MemberSpace इंस्टॉलेशन"
+    },
+    {
+      "name": "अनुकूलन",
+      "file": "memberspace-customize.md",
+      "subCat": "MemberSpace इंस्टॉलेशन"
+    },
+    {
+      "name": "अपनी MemberSpace साइट में पोल जोड़ें",
+      "file": "memberspace-polls.md",
+      "subCat": "पोल"
+    }
+  ]
+}

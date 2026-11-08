@@ -1,0 +1,35 @@
+{
+  "name": "Typeflo.io",
+  "pageHeader": "Typeflo.io ब्लॉग में लाइव कमेंटिंग जोड़ें",
+  "icon": "3rd-party-products/typeflo.svg",
+  "itemsOrdered": [
+    {
+      "name": "1. कोड इनपुट खोजें",
+      "file": "typeflo-step-1.md",
+      "subCat": "इंस्टॉलेशन"
+    },
+    {
+      "name": "2. कोड डालें",
+      "file": "typeflo-step-2.md",
+      "subCat": "इंस्टॉलेशन"
+    },
+    {
+      "name": "सफलता",
+      "file": "typeflo-success.md",
+      "subCat": "इंस्टॉलेशन"
+    },
+    {
+      "name": "कस्टमाइज़ेशन",
+      "file": "typeflo-customize.md"
+    },
+    {
+      "name": "डोमेन त्रुटियाँ",
+      "file": "typeflo-domain-errors.md"
+    },
+    {
+      "name": "अपने Typeflo.io ब्लॉग में पोल जोड़ें",
+      "file": "typeflo-polls.md",
+      "subCat": "पोल"
+    }
+  ]
+}

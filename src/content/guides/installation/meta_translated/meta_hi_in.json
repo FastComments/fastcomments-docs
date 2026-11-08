@@ -1,0 +1,77 @@
+{
+  "name": "इंस्टॉलेशन",
+  "pageHeader": "वेबसाइट पर कमेंट्स जोड़ें",
+  "icon": "download.png",
+  "description": "Add a fast, lightweight comment section to any website in under 5 minutes. Works with WordPress, React, Vue, Angular, and plain HTML.",
+  "faq": [
+    {
+      "question": "How do I add comments to my website?",
+      "answer": "Add a comment section by copying a simple code snippet into your HTML page. FastComments works with any website - WordPress, React, Vue, Angular, or plain HTML. Just add the script tag and a target div element."
+    },
+    {
+      "question": "What is the easiest way to add a comment section to a website?",
+      "answer": "The easiest way is to use a comment widget like FastComments. Copy and paste a small JavaScript snippet into your page - no server-side code or build tools required. It takes under 5 minutes."
+    },
+    {
+      "question": "Can I add comments to a static HTML website?",
+      "answer": "Yes. FastComments provides a VanillaJS snippet that works on any static HTML page. Just add the script tag and a div element where you want comments to appear."
+    }
+  ],
+  "itemsOrdered": [
+    {
+      "name": "Wordpress",
+      "file": "wordpress.md",
+      "subCat": "थर्ड-पार्टी प्लगइन्स"
+    },
+    {
+      "name": "VanillaJS / HTML स्निपेट",
+      "file": "vanillajs.md",
+      "subCat": "कस्टम इंस्टॉलेशन"
+    },
+    {
+      "name": "Angular",
+      "file": "angular.md",
+      "subCat": "कस्टम इंस्टॉलेशन"
+    },
+    {
+      "name": "React",
+      "file": "react.md",
+      "subCat": "कस्टम इंस्टॉलेशन"
+    },
+    {
+      "name": "React Native",
+      "file": "react-native.md",
+      "subCat": "कस्टम इंस्टॉलेशन"
+    },
+    {
+      "name": "Vue",
+      "file": "vue.md",
+      "subCat": "कस्टम इंस्टॉलेशन"
+    },
+    {
+      "name": "TypeScript",
+      "file": "typescript.md",
+      "subCat": "कस्टम इंस्टॉलेशन"
+    },
+    {
+      "name": "एक ही पेज पर एकाधिक इंस्टेंस",
+      "file": "multiple-instances.md",
+      "subCat": "कस्टम इंस्टॉलेशन"
+    },
+    {
+      "name": "सामान्य उपयोग के मामले",
+      "file": "installation-common-use-cases.md",
+      "subCat": "कस्टम इंस्टॉलेशन"
+    },
+    {
+      "name": "सामान्य समस्याओं का डिबगिंग",
+      "file": "debugging-common-issues.md",
+      "subCat": "कस्टम इंस्टॉलेशन"
+    },
+    {
+      "name": "Notion और Google Sites",
+      "file": "oembed.md",
+      "subCat": "दस्तावेज़ों में एम्बेडिंग"
+    }
+  ]
+}

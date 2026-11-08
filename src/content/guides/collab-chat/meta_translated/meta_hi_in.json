@@ -1,0 +1,46 @@
+{
+  "name": "कोलैब चैट",
+  "icon": "collab-chat-icon.svg",
+  "itemsOrdered": [
+    {
+      "name": "शुरुआत करना",
+      "file": "getting-started.md",
+      "subCat": "शुरुआत करना"
+    },
+    {
+      "name": "उदाहरण",
+      "file": "examples.md",
+      "subCat": "शुरुआत करना"
+    },
+    {
+      "name": "ऑनलाइन बुक्स में लाइव कमेंटिंग जोड़ना",
+      "file": "online-books.md",
+      "subCat": "शुरुआत करना"
+    },
+    {
+      "name": "कॉन्फ़िगरेशन विकल्प",
+      "file": "configuration-options.md",
+      "subCat": "कॉन्फ़िगरेशन"
+    },
+    {
+      "name": "टेक्स्ट चयन व्यवहार",
+      "file": "text-selection-behavior.md",
+      "subCat": "कॉन्फ़िगरेशन"
+    },
+    {
+      "name": "अनुकूलन",
+      "file": "customization.md",
+      "subCat": "अनुकूलन"
+    },
+    {
+      "name": "लाइव सिंक",
+      "file": "live-sync.md",
+      "subCat": "उन्नत"
+    },
+    {
+      "name": "API संदर्भ",
+      "file": "api-reference.md",
+      "subCat": "उन्नत"
+    }
+  ]
+}

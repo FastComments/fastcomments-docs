@@ -1,0 +1,61 @@
+{
+  "name": "रेटिंग और समीक्षाएँ",
+  "icon": "ratings-and-reviews.png",
+  "itemsOrdered": [
+    {
+      "name": "विशेषताएँ",
+      "file": "features.md",
+      "subCat": "पृष्ठभूमि"
+    },
+    {
+      "name": "इसे कौन प्राप्त करता है",
+      "file": "who-gets-it.md",
+      "subCat": "पृष्ठभूमि"
+    },
+    {
+      "name": "मूल्य निर्धारण",
+      "file": "pricing.md",
+      "subCat": "पृष्ठभूमि"
+    },
+    {
+      "name": "निर्देशित सहायक",
+      "file": "guided-helper.md",
+      "subCat": "सेटअप"
+    },
+    {
+      "name": "डिस्प्ले प्रकार चुनें",
+      "file": "choose-display-type.md",
+      "subCat": "सेटअप"
+    },
+    {
+      "name": "अपने प्रश्न परिभाषित करें",
+      "file": "define-your-questions.md",
+      "subCat": "सेटअप"
+    },
+    {
+      "name": "कॉन्फ़िगरेशन कैसे काम करता है",
+      "file": "how-configuration-works.md",
+      "subCat": "सेटअप"
+    },
+    {
+      "name": "सारांश विजेट",
+      "file": "summary-widget-installation.md",
+      "subCat": "सेटअप"
+    },
+    {
+      "name": "रेटिंग देखना",
+      "file": "viewing-ratings.md",
+      "subCat": "रिपोर्टिंग"
+    },
+    {
+      "name": "API के माध्यम से एकीकरण",
+      "file": "integrating-via-the-api.md",
+      "subCat": "रिपोर्टिंग"
+    },
+    {
+      "name": "सारांश डेमो",
+      "file": "summary-demo.md",
+      "subCat": "सारांश डेमो"
+    }
+  ]
+}

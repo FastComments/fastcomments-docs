@@ -1,0 +1,47 @@
+{
+  "name": "Webnode इंस्टॉलेशन",
+  "pageHeader": "Webnode साइटों पर टिप्पणियाँ जोड़ें",
+  "icon": "3rd-party-products/webnode.png",
+  "itemsOrdered": [
+    {
+      "name": "चरण 1: अपना पेज संपादित करें",
+      "file": "webnode-step-1.md",
+      "subCat": "Webnode इंस्टॉलेशन"
+    },
+    {
+      "name": "चरण 2: सेक्शन और HTML ब्लॉक जोड़ें",
+      "file": "webnode-step-2.md",
+      "subCat": "Webnode इंस्टॉलेशन"
+    },
+    {
+      "name": "चरण 3: कोड स्निपेट कॉपी और पेस्ट करें",
+      "file": "webnode-step-3.md",
+      "subCat": "Webnode इंस्टॉलेशन"
+    },
+    {
+      "name": "चरण 4: प्रकाशित करें",
+      "file": "webnode-step-4.md",
+      "subCat": "Webnode इंस्टॉलेशन"
+    },
+    {
+      "name": "सफलता",
+      "file": "webnode-success.md",
+      "subCat": "Webnode इंस्टॉलेशन"
+    },
+    {
+      "name": "डोमेन त्रुटियाँ",
+      "file": "webnode-domain-errors.md",
+      "subCat": "Webnode इंस्टॉलेशन"
+    },
+    {
+      "name": "अनुकूलन",
+      "file": "webnode-customize.md",
+      "subCat": "Webnode इंस्टॉलेशन"
+    },
+    {
+      "name": "अपनी Webnode साइट पर पोल जोड़ें",
+      "file": "webnode-polls.md",
+      "subCat": "पोल"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+## पैरामीटर
+
+| नाम | प्रकार | स्थान | आवश्यक | विवरण |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | हाँ |  |
+| value | string | query | नहीं |  |
+| filters | string | query | नहीं |  |
+| searchFilters | string | query | नहीं |  |
+| sso | string | query | नहीं |  |
+
+## प्रतिक्रिया
+
+रिटर्न करता है: [`ModerationCommentSearchResponse`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/ModerationCommentSearchResponse.php)
+
+## उदाहरण
+
+[inline-code-attrs-start title = 'getSearchCommentsSummary उदाहरण'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new FastComments\Client\Api\ModerationApi(
+    // यदि आप कस्टम http क्लाइंट का उपयोग करना चाहते हैं, तो अपना क्लाइंट पास करें जो `GuzzleHttp\ClientInterface` को इम्प्लीमेंट करता है।
+    // यह वैकल्पिक है, `GuzzleHttp\Client` डिफ़ॉल्ट रूप से उपयोग किया जाएगा।
+    new GuzzleHttp\Client()
+);
+
+$tenant_id = 'tenant_id_example'; // string
+$options = [
+    'value' => 'value_example', // string
+    'filters' => 'filters_example', // string
+    'search_filters' => 'search_filters_example', // string
+    'sso' => 'sso_example', // string
+];
+
+
+try {
+    $result = $apiInstance->getSearchCommentsSummary($tenant_id, $options);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ModerationApi->getSearchCommentsSummary: ', $e->getMessage(), PHP_EOL;
+}
+[inline-code-end]

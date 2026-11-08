@@ -1,0 +1,31 @@
+{
+  "name": "कोड स्निपेट साझा करना",
+  "icon": "sharing-code-snippets.png",
+  "itemsOrdered": [
+    {
+      "name": "कोड स्निपेट क्या हैं?",
+      "file": "code-snippets-what-are.md",
+      "subCat": "पृष्ठभूमि"
+    },
+    {
+      "name": "कोडिंग समुदाय",
+      "file": "code-snippets-communities.md",
+      "subCat": "पृष्ठभूमि"
+    },
+    {
+      "name": "समर्थित प्रोग्रामिंग भाषाएँ",
+      "file": "code-snippets-languages-supported.md",
+      "subCat": "पृष्ठभूमि"
+    },
+    {
+      "name": "कोड स्निपेट साझाकरण सेट करना",
+      "file": "code-snippets-setup.md",
+      "subCat": "सेटअप"
+    },
+    {
+      "name": "कोड स्निपेट साझा करना",
+      "file": "code-snippets-usage.md",
+      "subCat": "उपयोग"
+    }
+  ]
+}

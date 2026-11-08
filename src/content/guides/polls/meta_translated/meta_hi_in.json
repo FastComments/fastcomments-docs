@@ -1,0 +1,52 @@
+{
+  "name": "लाइव पोल",
+  "pageHeader": "टिप्पणियों में लाइव पोल",
+  "icon": "poll.svg",
+  "itemsOrdered": [
+    {
+      "name": "लाइव पोल क्या हैं",
+      "file": "what-are-polls.md",
+      "subCat": "पृष्ठभूमि"
+    },
+    {
+      "name": "पोल सक्षम करना",
+      "file": "enabling-polls.md",
+      "subCat": "पोल सेट अप करना"
+    },
+    {
+      "name": "पोल कौन बना सकता है",
+      "file": "who-can-create-polls.md",
+      "subCat": "पोल सेट अप करना"
+    },
+    {
+      "name": "गुमनाम पोल वोट की अनुमति देना",
+      "file": "anonymous-poll-votes.md",
+      "subCat": "पोल सेट अप करना"
+    },
+    {
+      "name": "पोल बनाना",
+      "file": "creating-a-poll.md",
+      "subCat": "पोल का उपयोग करना"
+    },
+    {
+      "name": "वोटिंग और लाइव परिणाम",
+      "file": "voting-and-live-results.md",
+      "subCat": "पोल का उपयोग करना"
+    },
+    {
+      "name": "मतदाता गोपनीयता",
+      "file": "poll-voter-privacy.md",
+      "subCat": "पोल का उपयोग करना"
+    },
+    {
+      "name": "पोल सूचनाएं",
+      "file": "poll-notifications.md",
+      "subCat": "पोल का उपयोग करना"
+    },
+    {
+      "name": "पोल API",
+      "file": "polls-api.md",
+      "subCat": "डेवलपर्स के लिए"
+    }
+  ]
+}

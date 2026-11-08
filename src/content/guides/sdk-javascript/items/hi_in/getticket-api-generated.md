@@ -1,0 +1,25 @@
+## पैरामीटर
+
+| नाम | प्रकार | आवश्यक | विवरण |
+|------|------|----------|-------------|
+| tenantId | string | हाँ |  |
+| id | string | हाँ |  |
+| userId | string | नहीं |  |
+
+## प्रतिक्रिया
+
+रिटर्न करता है: [`GetTicketResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetTicketResponse.ts)
+
+## उदाहरण
+
+[inline-code-attrs-start title = 'getTicket उदाहरण'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+async function fetchTickets() {
+  const tenantId: string = "acme-corp";
+  const ticketId: string = "ticket-12345";
+  const userId: string = "user-9876";
+
+  const ticketWithUser: GetTicketResponse = await getTicket(tenantId, ticketId, userId);
+  const ticketWithoutUser: GetTicketResponse = await getTicket(tenantId, ticketId);
+}
+[inline-code-end]

@@ -1,0 +1,24 @@
+{
+  "name": "GatsbyJS लाइब्रेरी",
+  "pageHeader": "अपनी GatsbyJS साइट में टिप्पणियाँ जोड़ें",
+  "itemsOrdered": [
+    {
+      "name": "लाइव डेमो",
+      "file": "live-demo-readme-generated.md",
+      "subCat": "दस्तावेज़ीकरण",
+      "type": "readme"
+    },
+    {
+      "name": "🚀 त्वरित प्रारंभ",
+      "file": "quick-start-readme-generated.md",
+      "subCat": "दस्तावेज़ीकरण",
+      "type": "readme"
+    },
+    {
+      "name": "उदाहरण",
+      "file": "examples-readme-generated.md",
+      "subCat": "उपयोग",
+      "type": "readme"
+    }
+  ]
+}

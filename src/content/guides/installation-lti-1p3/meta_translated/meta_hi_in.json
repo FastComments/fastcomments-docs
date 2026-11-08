@@ -1,0 +1,82 @@
+{
+  "name": "LMS इंस्टॉलेशन (LTI 1.3)",
+  "pageHeader": "LTI 1.3 के माध्यम से अपने LMS में टिप्पणियाँ जोड़ें",
+  "icon": "3rd-party-products/lti.png",
+  "itemsOrdered": [
+    {
+      "name": "मूल्य निर्धारण",
+      "file": "lti-plans.md",
+      "subCat": "TLDR"
+    },
+    {
+      "name": "त्वरित प्रारंभ",
+      "file": "lti-quick-start.md",
+      "subCat": "TLDR"
+    },
+    {
+      "name": "समर्थित प्लेटफ़ॉर्म",
+      "file": "lti-supported-platforms.md",
+      "subCat": "TLDR"
+    },
+    {
+      "name": "पंजीकरण URL जेनरेट करें",
+      "file": "lti-generate-url.md",
+      "subCat": "FastComments सेटअप"
+    },
+    {
+      "name": "D2L Brightspace में पंजीकरण करें",
+      "file": "lti-register-d2l.md",
+      "subCat": "टूल पंजीकृत करें"
+    },
+    {
+      "name": "Moodle में पंजीकरण करें",
+      "file": "lti-register-moodle.md",
+      "subCat": "टूल पंजीकृत करें"
+    },
+    {
+      "name": "Blackboard Learn में पंजीकरण करें",
+      "file": "lti-register-blackboard.md",
+      "subCat": "टूल पंजीकृत करें"
+    },
+    {
+      "name": "Sakai या Schoology में पंजीकरण करें",
+      "file": "lti-register-other.md",
+      "subCat": "टूल पंजीकृत करें"
+    },
+    {
+      "name": "D2L कोर्स सामग्री में जोड़ें",
+      "file": "lti-d2l-add-to-course.md",
+      "subCat": "कोर्स में जोड़ें"
+    },
+    {
+      "name": "Moodle कोर्स सामग्री में जोड़ें",
+      "file": "lti-moodle-add-to-course.md",
+      "subCat": "कोर्स में जोड़ें"
+    },
+    {
+      "name": "Blackboard कोर्स सामग्री में जोड़ें",
+      "file": "lti-blackboard-add-to-course.md",
+      "subCat": "कोर्स में जोड़ें"
+    },
+    {
+      "name": "Sakai या Schoology कोर्स सामग्री में जोड़ें",
+      "file": "lti-other-add-to-course.md",
+      "subCat": "कोर्स में जोड़ें"
+    },
+    {
+      "name": "समस्या निवारण",
+      "file": "lti-troubleshooting.md",
+      "subCat": "टूल का उपयोग करें"
+    },
+    {
+      "name": "न्यूनतम विशेषाधिकार और डेटा न्यूनीकरण",
+      "file": "lti-least-privilege.md",
+      "subCat": "सुरक्षा और अनुपालन"
+    },
+    {
+      "name": "अपने LMS कोर्स में पोल जोड़ें",
+      "file": "lti-polls.md",
+      "subCat": "पोल"
+    }
+  ]
+}

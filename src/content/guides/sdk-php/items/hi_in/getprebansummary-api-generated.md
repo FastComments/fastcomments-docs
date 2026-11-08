@@ -1,0 +1,47 @@
+## पैरामीटर
+
+| नाम | प्रकार | स्थान | आवश्यक | विवरण |
+|------|------|----------|----------|-------------|
+| tenantId | string | query | हाँ |  |
+| commentId | string | path | हाँ |  |
+| includeByUserIdAndEmail | boolean | query | नहीं |  |
+| includeByIP | boolean | query | नहीं |  |
+| includeByEmailDomain | boolean | query | नहीं |  |
+| sso | string | query | नहीं |  |
+
+## प्रतिक्रिया
+
+लौटाता है: [`PreBanSummary`](https://github.com/FastComments/fastcomments-php/blob/main/lib/Model/PreBanSummary.php)
+
+## उदाहरण
+
+[inline-code-attrs-start title = 'getPreBanSummary उदाहरण'; type = 'php'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new FastComments\Client\Api\ModerationApi(
+    // यदि आप कस्टम http क्लाइंट का उपयोग करना चाहते हैं, तो अपना क्लाइंट पास करें जो `GuzzleHttp\ClientInterface` को इम्प्लीमेंट करता है।
+    // यह वैकल्पिक है, डिफ़ॉल्ट रूप से `GuzzleHttp\Client` का उपयोग किया जाएगा।
+    new GuzzleHttp\Client()
+);
+
+$tenant_id = 'tenant_id_example'; // string
+$comment_id = 'comment_id_example'; // string
+$options = [
+    'include_by_user_id_and_email' => True, // bool
+    'include_by_ip' => True, // bool
+    'include_by_email_domain' => True, // bool
+    'sso' => 'sso_example', // string
+];
+
+
+try {
+    $result = $apiInstance->getPreBanSummary($tenant_id, $comment_id, $options);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ModerationApi->getPreBanSummary: ', $e->getMessage(), PHP_EOL;
+}
+[inline-code-end]

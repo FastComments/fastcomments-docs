@@ -1,0 +1,16 @@
+{
+  "name": "अपना खाता हटाना",
+  "icon": "crying.svg",
+  "itemsOrdered": [
+    {
+      "name": "अपना खाता हटाना",
+      "file": "deleting-your-account.md",
+      "subCat": "टिप्पणीकार और किरायेदार"
+    },
+    {
+      "name": "अपनी सदस्यता रद्द करना",
+      "file": "cancelling-your-subscription.md",
+      "subCat": "किरायेदार"
+    }
+  ]
+}

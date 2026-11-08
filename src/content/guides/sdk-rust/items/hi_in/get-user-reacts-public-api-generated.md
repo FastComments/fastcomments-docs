@@ -1,0 +1,29 @@
+## पैरामीटर
+
+| नाम | प्रकार | आवश्यक | विवरण |
+|------|------|----------|-------------|
+| tenant_id | String | हाँ |  |
+| post_ids | Vec<String> | नहीं |  |
+| sso | String | नहीं |  |
+
+## प्रतिक्रिया
+
+रिटर्न करता है: [`UserReactsResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/user_reacts_response.rs)
+
+## उदाहरण
+
+[inline-code-attrs-start title = 'get_user_reacts_public उदाहरण'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+async fn fetch_user_reacts() -> Result<(), Error> {
+    let params = GetUserReactsPublicParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        post_ids: Some(vec![
+            "news/article-123".to_string(),
+            "blog/post-456".to_string(),
+        ]),
+        sso: Some("sso-token-xyz".to_string()),
+    };
+    let _response = get_user_reacts_public(&configuration, params).await?;
+    Ok(())
+}
+[inline-code-end]

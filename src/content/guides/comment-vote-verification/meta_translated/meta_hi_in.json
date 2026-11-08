@@ -1,0 +1,36 @@
+{
+  "name": "टिप्पणी और वोट सत्यापन",
+  "icon": "comment-vote-verification.png",
+  "itemsOrdered": [
+    {
+      "name": "पृष्ठभूमि",
+      "file": "background.md",
+      "subCat": "मूल बातें"
+    },
+    {
+      "name": "असत्यापित टिप्पणियाँ",
+      "file": "unverified-comments.md",
+      "subCat": "मूल बातें"
+    },
+    {
+      "name": "असत्यापित वोट",
+      "file": "unverified-votes.md",
+      "subCat": "मूल बातें"
+    },
+    {
+      "name": "सत्यापन ईमेल",
+      "file": "verification-emails.md",
+      "subCat": "सत्यापन"
+    },
+    {
+      "name": "सत्र",
+      "file": "verification-sessions.md",
+      "subCat": "सत्यापन"
+    },
+    {
+      "name": "लाइव टिप्पणी",
+      "file": "verification-live-commenting.md",
+      "subCat": "सत्यापन"
+    }
+  ]
+}

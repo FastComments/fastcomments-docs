@@ -1,0 +1,41 @@
+{
+  "name": "ईमेल टेम्पलेट",
+  "icon": "text-editor.svg",
+  "itemsOrdered": [
+    {
+      "name": "टेम्पलेट बनाना",
+      "file": "creating-templates.md",
+      "subCat": "ईमेल टेम्पलेट"
+    },
+    {
+      "name": "टेम्पलेट भाषा",
+      "file": "template-language.md",
+      "subCat": "ईमेल टेम्पलेट"
+    },
+    {
+      "name": "स्थानीयकरण और कस्टम टेक्स्ट",
+      "file": "localizing.md",
+      "subCat": "ईमेल टेम्पलेट"
+    },
+    {
+      "name": "प्रति-डोमेन टेम्पलेट",
+      "file": "per-domain-templates.md",
+      "subCat": "ईमेल टेम्पलेट"
+    },
+    {
+      "name": "डेटा और वेरिएबल",
+      "file": "data-variables.md",
+      "subCat": "ईमेल टेम्पलेट"
+    },
+    {
+      "name": "रेंडर विफलताएँ",
+      "file": "render-failures.md",
+      "subCat": "ईमेल टेम्पलेट"
+    },
+    {
+      "name": "परिवर्तन लागू करना",
+      "file": "time-to-apply-changes.md",
+      "subCat": "ईमेल टेम्पलेट"
+    }
+  ]
+}

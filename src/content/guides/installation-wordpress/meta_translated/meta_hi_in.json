@@ -1,0 +1,97 @@
+{
+  "name": "WordPress इंस्टॉलेशन",
+  "pageHeader": "WordPress साइटों में लाइव कमेंटिंग जोड़ें",
+  "icon": "3rd-party-products/wordpress.png",
+  "itemsOrdered": [
+    {
+      "name": "क्विक स्टार्ट",
+      "file": "wordpress-quick-start.md",
+      "subCat": "TLDR"
+    },
+    {
+      "name": "इंस्टॉलेशन",
+      "file": "wordpress-installation.md",
+      "subCat": "WordPress इंस्टॉलेशन"
+    },
+    {
+      "name": "कस्टमाइज़ेशन",
+      "file": "wordpress-customize.md",
+      "subCat": "WordPress इंस्टॉलेशन"
+    },
+    {
+      "name": "मॉडरेशन",
+      "file": "wordpress-moderation.md",
+      "subCat": "WordPress इंस्टॉलेशन"
+    },
+    {
+      "name": "उपयोगकर्ता, मॉडरेटर और एडमिन",
+      "file": "wordpress-users-moderators-admins.md",
+      "subCat": "WordPress इंस्टॉलेशन"
+    },
+    {
+      "name": "केवल-सदस्यता साइटें (SSO)",
+      "file": "wordpress-membership-sites.md",
+      "subCat": "WordPress इंस्टॉलेशन"
+    },
+    {
+      "name": "सूचनाएं",
+      "file": "wordpress-notifications.md",
+      "subCat": "WordPress इंस्टॉलेशन"
+    },
+    {
+      "name": "कस्टम थीम",
+      "file": "wordpress-custom-themes.md",
+      "subCat": "WordPress इंस्टॉलेशन"
+    },
+    {
+      "name": "WordPress में वापस सिंक करना",
+      "file": "wordpress-syncing-back-to-wp.md",
+      "subCat": "WordPress इंस्टॉलेशन"
+    },
+    {
+      "name": "कमेंट काउंट",
+      "file": "wordpress-comment-counts.md",
+      "subCat": "WordPress इंस्टॉलेशन"
+    },
+    {
+      "name": "WordPress इंस्टॉलेशन <> FastComment सर्वर संचार",
+      "file": "wordpress-server-communication.md",
+      "subCat": "WordPress इंस्टॉलेशन"
+    },
+    {
+      "name": "डोमेन त्रुटियां",
+      "file": "wordpress-domain-errors.md",
+      "subCat": "WordPress इंस्टॉलेशन"
+    },
+    {
+      "name": "हाल की टिप्पणियां विजेट",
+      "file": "wordpress-recent-comments-widget.md",
+      "subCat": "अन्य विजेट"
+    },
+    {
+      "name": "हाल की चर्चाएं विजेट",
+      "file": "wordpress-recent-discussions-widget.md",
+      "subCat": "अन्य विजेट"
+    },
+    {
+      "name": "शीर्ष पेज विजेट",
+      "file": "wordpress-top-pages-widget.md",
+      "subCat": "अन्य विजेट"
+    },
+    {
+      "name": "अपनी टिप्पणियां नई साइट पर ले जाना",
+      "file": "wordpress-moving-off-wordpress.md",
+      "subCat": "WordPress से हटना"
+    },
+    {
+      "name": "प्लगइन को डिएक्टिवेट बनाम अनइंस्टॉल करना",
+      "file": "wordpress-deactivating-vs-uninstalling.md",
+      "subCat": "प्लगइन हटाना"
+    },
+    {
+      "name": "अपनी WordPress साइट में पोल जोड़ें",
+      "file": "wordpress-polls.md",
+      "subCat": "पोल"
+    }
+  ]
+}

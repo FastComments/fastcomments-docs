@@ -1,0 +1,62 @@
+{
+  "name": "Ghost इंस्टॉलेशन",
+  "pageHeader": "Ghost साइटों पर केवल-सदस्यों के लिए लाइव कमेंटिंग जोड़ें",
+  "icon": "3rd-party-products/ghost.png",
+  "itemsOrdered": [
+    {
+      "name": "चरण 1: अपनी थीम डाउनलोड करें",
+      "file": "ghost-step-1.md",
+      "subCat": "Ghost इंस्टॉलेशन"
+    },
+    {
+      "name": "चरण 2: अपनी थीम लोकल इंस्टॉल करें",
+      "file": "ghost-step-2.md",
+      "subCat": "Ghost इंस्टॉलेशन"
+    },
+    {
+      "name": "चरण 3: नई थीम का नाम रखें",
+      "file": "ghost-step-3.md",
+      "subCat": "Ghost इंस्टॉलेशन"
+    },
+    {
+      "name": "चरण 4: पोस्ट टेम्पलेट खोलें",
+      "file": "ghost-step-4.md",
+      "subCat": "Ghost इंस्टॉलेशन"
+    },
+    {
+      "name": "चरण 5: FastComments कोड जोड़ें",
+      "file": "ghost-step-5.md",
+      "subCat": "Ghost इंस्टॉलेशन"
+    },
+    {
+      "name": "चरण 6: अपनी थीम एक्सपोर्ट करें",
+      "file": "ghost-step-6.md",
+      "subCat": "Ghost इंस्टॉलेशन"
+    },
+    {
+      "name": "चरण 7: थीम को Ghost पर अपलोड करें",
+      "file": "ghost-step-7.md",
+      "subCat": "Ghost इंस्टॉलेशन"
+    },
+    {
+      "name": "सफलता!",
+      "file": "ghost-success.md",
+      "subCat": "Ghost इंस्टॉलेशन"
+    },
+    {
+      "name": "डोमेन त्रुटियाँ",
+      "file": "ghost-domain-errors.md",
+      "subCat": "Ghost इंस्टॉलेशन"
+    },
+    {
+      "name": "कस्टमाइज़ेशन",
+      "file": "ghost-customize.md",
+      "subCat": "Ghost इंस्टॉलेशन"
+    },
+    {
+      "name": "अपनी Ghost साइट पर पोल जोड़ें",
+      "file": "ghost-polls.md",
+      "subCat": "पोल"
+    }
+  ]
+}

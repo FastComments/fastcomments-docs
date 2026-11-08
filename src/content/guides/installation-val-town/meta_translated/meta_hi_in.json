@@ -1,0 +1,46 @@
+{
+  "name": "Val Town इंस्टॉलेशन",
+  "pageHeader": "Val Town ऐप्स में लाइव कमेंटिंग जोड़ें",
+  "itemsOrdered": [
+    {
+      "name": "चरण 1: विजेट जोड़ें",
+      "file": "val-town-step-1.md",
+      "subCat": "Val Town इंस्टॉलेशन"
+    },
+    {
+      "name": "चरण 2: अपना खुद का खाता उपयोग करें",
+      "file": "val-town-step-2.md",
+      "subCat": "Val Town इंस्टॉलेशन"
+    },
+    {
+      "name": "इंडेक्स पेज पर कमेंट काउंट",
+      "file": "val-town-counts.md",
+      "subCat": "Val Town इंस्टॉलेशन"
+    },
+    {
+      "name": "std/oauth के साथ सुरक्षित SSO",
+      "file": "val-town-sso.md",
+      "subCat": "Val Town इंस्टॉलेशन"
+    },
+    {
+      "name": "वेबहुक प्राप्त करना",
+      "file": "val-town-webhooks.md",
+      "subCat": "Val Town इंस्टॉलेशन"
+    },
+    {
+      "name": "उदाहरण Vals",
+      "file": "val-town-examples.md",
+      "subCat": "Val Town इंस्टॉलेशन"
+    },
+    {
+      "name": "डोमेन त्रुटियाँ",
+      "file": "val-town-domain-errors.md",
+      "subCat": "Val Town इंस्टॉलेशन"
+    },
+    {
+      "name": "अपने Val Town ऐप में पोल जोड़ें",
+      "file": "val-town-polls.md",
+      "subCat": "पोल"
+    }
+  ]
+}

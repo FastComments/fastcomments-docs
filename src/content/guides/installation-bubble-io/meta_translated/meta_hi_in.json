@@ -1,0 +1,45 @@
+{
+  "name": "Bubble.io",
+  "pageHeader": "Bubble.io साइटों में लाइव कमेंटिंग जोड़ें",
+  "icon": "3rd-party-products/bubble-io.png",
+  "itemsOrdered": [
+    {
+      "name": "1. HTML ब्लॉक जोड़ें",
+      "file": "bubble-io-step-1.md",
+      "subCat": "इंस्टॉलेशन"
+    },
+    {
+      "name": "2. कोड डालें",
+      "file": "bubble-io-step-2.md",
+      "subCat": "इंस्टॉलेशन"
+    },
+    {
+      "name": "3. चौड़ाई सेटिंग खोजें",
+      "file": "bubble-io-step-3.md",
+      "subCat": "इंस्टॉलेशन"
+    },
+    {
+      "name": "4. लेआउट समायोजित करें",
+      "file": "bubble-io-step-4.md",
+      "subCat": "इंस्टॉलेशन"
+    },
+    {
+      "name": "सफलता",
+      "file": "bubble-io-success.md",
+      "subCat": "इंस्टॉलेशन"
+    },
+    {
+      "name": "कस्टमाइज़ेशन",
+      "file": "bubble-io-customize.md"
+    },
+    {
+      "name": "डोमेन त्रुटियाँ",
+      "file": "bubble-io-domain-errors.md"
+    },
+    {
+      "name": "अपने Bubble.io ऐप में पोल जोड़ें",
+      "file": "bubble-io-polls.md",
+      "subCat": "पोल"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "name": "एक्सटेंशन लिखना",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "एक्सटेंशन लाइफसाइकल",
+      "file": "the-extension-lifecycle.md",
+      "subCat": "पृष्ठभूमि"
+    },
+    {
+      "name": "एक्सटेंशन की परिभाषा",
+      "file": "defining-an-extension.md",
+      "subCat": "पृष्ठभूमि"
+    },
+    {
+      "name": "उदाहरण एक्सटेंशन",
+      "file": "example-extensions.md",
+      "subCat": "पृष्ठभूमि"
+    },
+    {
+      "name": "एक्सटेंशन ऑब्जेक्ट",
+      "file": "the-extension-object.md",
+      "subCat": "API"
+    },
+    {
+      "name": "एक्सटेंशन API",
+      "file": "the-extension-api.md",
+      "subCat": "API"
+    }
+  ]
+}

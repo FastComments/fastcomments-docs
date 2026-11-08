@@ -1,0 +1,62 @@
+{
+  "name": "Canvas LMS इंस्टॉलेशन",
+  "pageHeader": "LTI 1.3 के माध्यम से Canvas LMS में टिप्पणियाँ जोड़ें",
+  "icon": "3rd-party-products/canvas-lms.svg",
+  "itemsOrdered": [
+    {
+      "name": "मूल्य निर्धारण",
+      "file": "canvas-lms-plans.md",
+      "subCat": "TLDR"
+    },
+    {
+      "name": "त्वरित प्रारंभ",
+      "file": "canvas-lms-quick-start.md",
+      "subCat": "TLDR"
+    },
+    {
+      "name": "FastComments डैशबोर्ड सेटअप",
+      "file": "canvas-lms-dashboard-setup.md",
+      "subCat": "Canvas LTI 1.3 सेटअप"
+    },
+    {
+      "name": "Canvas डेवलपर कुंजी",
+      "file": "canvas-lms-developer-key.md",
+      "subCat": "Canvas LTI 1.3 सेटअप"
+    },
+    {
+      "name": "कनेक्शन पूरा करें",
+      "file": "canvas-lms-complete-connection.md",
+      "subCat": "Canvas LTI 1.3 सेटअप"
+    },
+    {
+      "name": "कोर्स में जोड़ें",
+      "file": "canvas-lms-add-to-course.md",
+      "subCat": "Canvas LTI 1.3 सेटअप"
+    },
+    {
+      "name": "टिप्पणी शैलियाँ",
+      "file": "canvas-lms-commenting-styles.md",
+      "subCat": "कॉन्फ़िगरेशन"
+    },
+    {
+      "name": "भूमिका मैपिंग",
+      "file": "canvas-lms-role-mapping.md",
+      "subCat": "कॉन्फ़िगरेशन"
+    },
+    {
+      "name": "अनुकूलन",
+      "file": "canvas-lms-customize.md",
+      "subCat": "कॉन्फ़िगरेशन"
+    },
+    {
+      "name": "डोमेन त्रुटियाँ",
+      "file": "canvas-lms-domain-errors.md",
+      "subCat": "समस्या निवारण"
+    },
+    {
+      "name": "अपने Canvas कोर्स में पोल जोड़ें",
+      "file": "canvas-lms-polls.md",
+      "subCat": "पोल"
+    }
+  ]
+}

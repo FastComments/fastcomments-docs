@@ -1,0 +1,42 @@
+{
+  "name": "Webflow इंस्टॉलेशन",
+  "pageHeader": "Webflow साइटों में टिप्पणियाँ जोड़ें",
+  "icon": "3rd-party-products/webflow.svg",
+  "itemsOrdered": [
+    {
+      "name": "चरण 1: एक एम्बेड ब्लॉक जोड़ें",
+      "file": "webflow-step-1.md",
+      "subCat": "Webflow इंस्टॉलेशन"
+    },
+    {
+      "name": "चरण 2: अपना FastComments.com कोड पेस्ट करें",
+      "file": "webflow-step-2.md",
+      "subCat": "Webflow इंस्टॉलेशन"
+    },
+    {
+      "name": "चरण 3: प्रकाशित करें",
+      "file": "webflow-step-3.md",
+      "subCat": "Webflow इंस्टॉलेशन"
+    },
+    {
+      "name": "सफलता",
+      "file": "webflow-success.md",
+      "subCat": "Webflow इंस्टॉलेशन"
+    },
+    {
+      "name": "डोमेन त्रुटियाँ",
+      "file": "webflow-domain-errors.md",
+      "subCat": "Webflow इंस्टॉलेशन"
+    },
+    {
+      "name": "अनुकूलन",
+      "file": "webflow-customize.md",
+      "subCat": "Webflow इंस्टॉलेशन"
+    },
+    {
+      "name": "अपनी Webflow साइट में पोल जोड़ें",
+      "file": "webflow-polls.md",
+      "subCat": "पोल"
+    }
+  ]
+}

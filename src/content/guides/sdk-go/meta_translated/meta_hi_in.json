@@ -1,0 +1,1278 @@
+{
+  "name": "Go SDK",
+  "pageHeader": "FastComments Go SDK",
+  "itemsOrdered": [
+    {
+      "name": "AI कोडिंग एजेंट",
+      "file": "ai-coding-agents-readme-generated.md",
+      "subCat": "दस्तावेज़ीकरण",
+      "type": "readme"
+    },
+    {
+      "name": "इंस्टॉलेशन",
+      "file": "installation-readme-generated.md",
+      "subCat": "शुरुआत करें",
+      "type": "readme"
+    },
+    {
+      "name": "उपयोग",
+      "file": "usage-readme-generated.md",
+      "subCat": "उपयोग",
+      "type": "readme"
+    },
+    {
+      "name": "Aggregate",
+      "file": "aggregate-api-generated.md",
+      "subCat": "एग्रीगेट",
+      "type": "api"
+    },
+    {
+      "name": "GetAuditLogs",
+      "file": "getauditlogs-api-generated.md",
+      "subCat": "ऑडिट लॉग",
+      "type": "api"
+    },
+    {
+      "name": "LogoutPublic",
+      "file": "logoutpublic-api-generated.md",
+      "subCat": "प्रमाणीकरण",
+      "type": "api"
+    },
+    {
+      "name": "BlockFromCommentPublic",
+      "file": "blockfromcommentpublic-api-generated.md",
+      "subCat": "कमेंट से ब्लॉक",
+      "type": "api"
+    },
+    {
+      "name": "UnBlockCommentPublic",
+      "file": "unblockcommentpublic-api-generated.md",
+      "subCat": "कमेंट से ब्लॉक",
+      "type": "api"
+    },
+    {
+      "name": "CheckedCommentsForBlocked",
+      "file": "checkedcommentsforblocked-api-generated.md",
+      "subCat": "ब्लॉक किए गए कमेंट जांचें",
+      "type": "api"
+    },
+    {
+      "name": "BlockUserFromComment",
+      "file": "blockuserfromcomment-api-generated.md",
+      "subCat": "कमेंट",
+      "type": "api"
+    },
+    {
+      "name": "CreateCommentPublic",
+      "file": "createcommentpublic-api-generated.md",
+      "subCat": "कमेंट",
+      "type": "api"
+    },
+    {
+      "name": "DeleteComment",
+      "file": "deletecomment-api-generated.md",
+      "subCat": "कमेंट",
+      "type": "api"
+    },
+    {
+      "name": "DeleteCommentPublic",
+      "file": "deletecommentpublic-api-generated.md",
+      "subCat": "कमेंट",
+      "type": "api"
+    },
+    {
+      "name": "DeleteCommentVote",
+      "file": "deletecommentvote-api-generated.md",
+      "subCat": "कमेंट",
+      "type": "api"
+    },
+    {
+      "name": "FlagComment",
+      "file": "flagcomment-api-generated.md",
+      "subCat": "कमेंट",
+      "type": "api"
+    },
+    {
+      "name": "GetComment",
+      "file": "getcomment-api-generated.md",
+      "subCat": "कमेंट",
+      "type": "api"
+    },
+    {
+      "name": "GetComments",
+      "file": "getcomments-api-generated.md",
+      "subCat": "कमेंट",
+      "type": "api"
+    },
+    {
+      "name": "GetCommentsPublic",
+      "file": "getcommentspublic-api-generated.md",
+      "subCat": "कमेंट",
+      "type": "api"
+    },
+    {
+      "name": "GetCommentText",
+      "file": "getcommenttext-api-generated.md",
+      "subCat": "कमेंट",
+      "type": "api"
+    },
+    {
+      "name": "GetCommentVoteUserNames",
+      "file": "getcommentvoteusernames-api-generated.md",
+      "subCat": "कमेंट",
+      "type": "api"
+    },
+    {
+      "name": "LockComment",
+      "file": "lockcomment-api-generated.md",
+      "subCat": "कमेंट",
+      "type": "api"
+    },
+    {
+      "name": "PinComment",
+      "file": "pincomment-api-generated.md",
+      "subCat": "कमेंट",
+      "type": "api"
+    },
+    {
+      "name": "SaveComment",
+      "file": "savecomment-api-generated.md",
+      "subCat": "कमेंट",
+      "type": "api"
+    },
+    {
+      "name": "SaveCommentsBulk",
+      "file": "savecommentsbulk-api-generated.md",
+      "subCat": "कमेंट",
+      "type": "api"
+    },
+    {
+      "name": "SetCommentText",
+      "file": "setcommenttext-api-generated.md",
+      "subCat": "कमेंट",
+      "type": "api"
+    },
+    {
+      "name": "UnBlockUserFromComment",
+      "file": "unblockuserfromcomment-api-generated.md",
+      "subCat": "कमेंट",
+      "type": "api"
+    },
+    {
+      "name": "UnFlagComment",
+      "file": "unflagcomment-api-generated.md",
+      "subCat": "कमेंट",
+      "type": "api"
+    },
+    {
+      "name": "UnLockComment",
+      "file": "unlockcomment-api-generated.md",
+      "subCat": "कमेंट",
+      "type": "api"
+    },
+    {
+      "name": "UnPinComment",
+      "file": "unpincomment-api-generated.md",
+      "subCat": "कमेंट",
+      "type": "api"
+    },
+    {
+      "name": "UpdateComment",
+      "file": "updatecomment-api-generated.md",
+      "subCat": "कमेंट",
+      "type": "api"
+    },
+    {
+      "name": "VoteComment",
+      "file": "votecomment-api-generated.md",
+      "subCat": "कमेंट",
+      "type": "api"
+    },
+    {
+      "name": "GetCommentsForUser",
+      "file": "getcommentsforuser-api-generated.md",
+      "subCat": "उपयोगकर्ता के लिए कमेंट",
+      "type": "api"
+    },
+    {
+      "name": "AddDomainConfig",
+      "file": "adddomainconfig-api-generated.md",
+      "subCat": "डोमेन कॉन्फ़िग",
+      "type": "api"
+    },
+    {
+      "name": "DeleteDomainConfig",
+      "file": "deletedomainconfig-api-generated.md",
+      "subCat": "डोमेन कॉन्फ़िग",
+      "type": "api"
+    },
+    {
+      "name": "GetDomainConfig",
+      "file": "getdomainconfig-api-generated.md",
+      "subCat": "डोमेन कॉन्फ़िग",
+      "type": "api"
+    },
+    {
+      "name": "GetDomainConfigs",
+      "file": "getdomainconfigs-api-generated.md",
+      "subCat": "डोमेन कॉन्फ़िग",
+      "type": "api"
+    },
+    {
+      "name": "PatchDomainConfig",
+      "file": "patchdomainconfig-api-generated.md",
+      "subCat": "डोमेन कॉन्फ़िग",
+      "type": "api"
+    },
+    {
+      "name": "PutDomainConfig",
+      "file": "putdomainconfig-api-generated.md",
+      "subCat": "डोमेन कॉन्फ़िग",
+      "type": "api"
+    },
+    {
+      "name": "CreateEmailTemplate",
+      "file": "createemailtemplate-api-generated.md",
+      "subCat": "ईमेल टेम्पलेट",
+      "type": "api"
+    },
+    {
+      "name": "DeleteEmailTemplate",
+      "file": "deleteemailtemplate-api-generated.md",
+      "subCat": "ईमेल टेम्पलेट",
+      "type": "api"
+    },
+    {
+      "name": "DeleteEmailTemplateRenderError",
+      "file": "deleteemailtemplaterendererror-api-generated.md",
+      "subCat": "ईमेल टेम्पलेट",
+      "type": "api"
+    },
+    {
+      "name": "GetEmailTemplate",
+      "file": "getemailtemplate-api-generated.md",
+      "subCat": "ईमेल टेम्पलेट",
+      "type": "api"
+    },
+    {
+      "name": "GetEmailTemplateDefinitions",
+      "file": "getemailtemplatedefinitions-api-generated.md",
+      "subCat": "ईमेल टेम्पलेट",
+      "type": "api"
+    },
+    {
+      "name": "GetEmailTemplateRenderErrors",
+      "file": "getemailtemplaterendererrors-api-generated.md",
+      "subCat": "ईमेल टेम्पलेट",
+      "type": "api"
+    },
+    {
+      "name": "GetEmailTemplates",
+      "file": "getemailtemplates-api-generated.md",
+      "subCat": "ईमेल टेम्पलेट",
+      "type": "api"
+    },
+    {
+      "name": "RenderEmailTemplate",
+      "file": "renderemailtemplate-api-generated.md",
+      "subCat": "ईमेल टेम्पलेट",
+      "type": "api"
+    },
+    {
+      "name": "UpdateEmailTemplate",
+      "file": "updateemailtemplate-api-generated.md",
+      "subCat": "ईमेल टेम्पलेट",
+      "type": "api"
+    },
+    {
+      "name": "GetEventLog",
+      "file": "geteventlog-api-generated.md",
+      "subCat": "इवेंट लॉग",
+      "type": "api"
+    },
+    {
+      "name": "GetGlobalEventLog",
+      "file": "getglobaleventlog-api-generated.md",
+      "subCat": "इवेंट लॉग",
+      "type": "api"
+    },
+    {
+      "name": "CreateFeedPost",
+      "file": "createfeedpost-api-generated.md",
+      "subCat": "फ़ीड पोस्ट",
+      "type": "api"
+    },
+    {
+      "name": "CreateFeedPostPublic",
+      "file": "createfeedpostpublic-api-generated.md",
+      "subCat": "फ़ीड पोस्ट",
+      "type": "api"
+    },
+    {
+      "name": "DeleteFeedPostPublic",
+      "file": "deletefeedpostpublic-api-generated.md",
+      "subCat": "फ़ीड पोस्ट",
+      "type": "api"
+    },
+    {
+      "name": "GetFeedPosts",
+      "file": "getfeedposts-api-generated.md",
+      "subCat": "फ़ीड पोस्ट",
+      "type": "api"
+    },
+    {
+      "name": "GetFeedPostsPublic",
+      "file": "getfeedpostspublic-api-generated.md",
+      "subCat": "फ़ीड पोस्ट",
+      "type": "api"
+    },
+    {
+      "name": "GetFeedPostsStats",
+      "file": "getfeedpostsstats-api-generated.md",
+      "subCat": "फ़ीड पोस्ट",
+      "type": "api"
+    },
+    {
+      "name": "GetUserReactsPublic",
+      "file": "getuserreactspublic-api-generated.md",
+      "subCat": "फ़ीड पोस्ट",
+      "type": "api"
+    },
+    {
+      "name": "ReactFeedPostPublic",
+      "file": "reactfeedpostpublic-api-generated.md",
+      "subCat": "फ़ीड पोस्ट",
+      "type": "api"
+    },
+    {
+      "name": "UpdateFeedPost",
+      "file": "updatefeedpost-api-generated.md",
+      "subCat": "फ़ीड पोस्ट",
+      "type": "api"
+    },
+    {
+      "name": "UpdateFeedPostPublic",
+      "file": "updatefeedpostpublic-api-generated.md",
+      "subCat": "फ़ीड पोस्ट",
+      "type": "api"
+    },
+    {
+      "name": "FlagCommentPublic",
+      "file": "flagcommentpublic-api-generated.md",
+      "subCat": "कमेंट फ़्लैग करें",
+      "type": "api"
+    },
+    {
+      "name": "GetGifLarge",
+      "file": "getgiflarge-api-generated.md",
+      "subCat": "GIF",
+      "type": "api"
+    },
+    {
+      "name": "GetGifsSearch",
+      "file": "getgifssearch-api-generated.md",
+      "subCat": "GIF",
+      "type": "api"
+    },
+    {
+      "name": "GetGifsTrending",
+      "file": "getgifstrending-api-generated.md",
+      "subCat": "GIF",
+      "type": "api"
+    },
+    {
+      "name": "AddHashTag",
+      "file": "addhashtag-api-generated.md",
+      "subCat": "हैश टैग",
+      "type": "api"
+    },
+    {
+      "name": "AddHashTagsBulk",
+      "file": "addhashtagsbulk-api-generated.md",
+      "subCat": "हैश टैग",
+      "type": "api"
+    },
+    {
+      "name": "DeleteHashTag",
+      "file": "deletehashtag-api-generated.md",
+      "subCat": "हैश टैग",
+      "type": "api"
+    },
+    {
+      "name": "GetHashTags",
+      "file": "gethashtags-api-generated.md",
+      "subCat": "हैश टैग",
+      "type": "api"
+    },
+    {
+      "name": "PatchHashTag",
+      "file": "patchhashtag-api-generated.md",
+      "subCat": "हैश टैग",
+      "type": "api"
+    },
+    {
+      "name": "DeleteModerationVote",
+      "file": "deletemoderationvote-api-generated.md",
+      "subCat": "मॉडरेशन",
+      "type": "api"
+    },
+    {
+      "name": "GetApiComments",
+      "file": "getapicomments-api-generated.md",
+      "subCat": "मॉडरेशन",
+      "type": "api"
+    },
+    {
+      "name": "GetApiExportStatus",
+      "file": "getapiexportstatus-api-generated.md",
+      "subCat": "मॉडरेशन",
+      "type": "api"
+    },
+    {
+      "name": "GetApiIds",
+      "file": "getapiids-api-generated.md",
+      "subCat": "मॉडरेशन",
+      "type": "api"
+    },
+    {
+      "name": "GetBanUsersFromComment",
+      "file": "getbanusersfromcomment-api-generated.md",
+      "subCat": "मॉडरेशन",
+      "type": "api"
+    },
+    {
+      "name": "GetCommentBanStatus",
+      "file": "getcommentbanstatus-api-generated.md",
+      "subCat": "मॉडरेशन",
+      "type": "api"
+    },
+    {
+      "name": "GetCommentChildren",
+      "file": "getcommentchildren-api-generated.md",
+      "subCat": "मॉडरेशन",
+      "type": "api"
+    },
+    {
+      "name": "GetCount",
+      "file": "getcount-api-generated.md",
+      "subCat": "मॉडरेशन",
+      "type": "api"
+    },
+    {
+      "name": "GetCounts",
+      "file": "getcounts-api-generated.md",
+      "subCat": "मॉडरेशन",
+      "type": "api"
+    },
+    {
+      "name": "GetLogs",
+      "file": "getlogs-api-generated.md",
+      "subCat": "मॉडरेशन",
+      "type": "api"
+    },
+    {
+      "name": "GetManualBadges",
+      "file": "getmanualbadges-api-generated.md",
+      "subCat": "मॉडरेशन",
+      "type": "api"
+    },
+    {
+      "name": "GetManualBadgesForUser",
+      "file": "getmanualbadgesforuser-api-generated.md",
+      "subCat": "मॉडरेशन",
+      "type": "api"
+    },
+    {
+      "name": "GetModerationComment",
+      "file": "getmoderationcomment-api-generated.md",
+      "subCat": "मॉडरेशन",
+      "type": "api"
+    },
+    {
+      "name": "GetModerationCommentText",
+      "file": "getmoderationcommenttext-api-generated.md",
+      "subCat": "मॉडरेशन",
+      "type": "api"
+    },
+    {
+      "name": "GetPreBanSummary",
+      "file": "getprebansummary-api-generated.md",
+      "subCat": "मॉडरेशन",
+      "type": "api"
+    },
+    {
+      "name": "GetSearchCommentsSummary",
+      "file": "getsearchcommentssummary-api-generated.md",
+      "subCat": "मॉडरेशन",
+      "type": "api"
+    },
+    {
+      "name": "GetSearchPages",
+      "file": "getsearchpages-api-generated.md",
+      "subCat": "मॉडरेशन",
+      "type": "api"
+    },
+    {
+      "name": "GetSearchSites",
+      "file": "getsearchsites-api-generated.md",
+      "subCat": "मॉडरेशन",
+      "type": "api"
+    },
+    {
+      "name": "GetSearchSuggest",
+      "file": "getsearchsuggest-api-generated.md",
+      "subCat": "मॉडरेशन",
+      "type": "api"
+    },
+    {
+      "name": "GetSearchUsers",
+      "file": "getsearchusers-api-generated.md",
+      "subCat": "मॉडरेशन",
+      "type": "api"
+    },
+    {
+      "name": "GetTrustFactor",
+      "file": "gettrustfactor-api-generated.md",
+      "subCat": "मॉडरेशन",
+      "type": "api"
+    },
+    {
+      "name": "GetUserBanPreference",
+      "file": "getuserbanpreference-api-generated.md",
+      "subCat": "मॉडरेशन",
+      "type": "api"
+    },
+    {
+      "name": "GetUserInternalProfile",
+      "file": "getuserinternalprofile-api-generated.md",
+      "subCat": "मॉडरेशन",
+      "type": "api"
+    },
+    {
+      "name": "PostAdjustCommentVotes",
+      "file": "postadjustcommentvotes-api-generated.md",
+      "subCat": "मॉडरेशन",
+      "type": "api"
+    },
+    {
+      "name": "PostApiExport",
+      "file": "postapiexport-api-generated.md",
+      "subCat": "मॉडरेशन",
+      "type": "api"
+    },
+    {
+      "name": "PostBanUserFromComment",
+      "file": "postbanuserfromcomment-api-generated.md",
+      "subCat": "मॉडरेशन",
+      "type": "api"
+    },
+    {
+      "name": "PostBanUserUndo",
+      "file": "postbanuserundo-api-generated.md",
+      "subCat": "मॉडरेशन",
+      "type": "api"
+    },
+    {
+      "name": "PostBulkPreBanSummary",
+      "file": "postbulkprebansummary-api-generated.md",
+      "subCat": "मॉडरेशन",
+      "type": "api"
+    },
+    {
+      "name": "PostCommentsByIds",
+      "file": "postcommentsbyids-api-generated.md",
+      "subCat": "मॉडरेशन",
+      "type": "api"
+    },
+    {
+      "name": "PostFlagComment",
+      "file": "postflagcomment-api-generated.md",
+      "subCat": "मॉडरेशन",
+      "type": "api"
+    },
+    {
+      "name": "PostRemoveComment",
+      "file": "postremovecomment-api-generated.md",
+      "subCat": "मॉडरेशन",
+      "type": "api"
+    },
+    {
+      "name": "PostRestoreDeletedComment",
+      "file": "postrestoredeletedcomment-api-generated.md",
+      "subCat": "मॉडरेशन",
+      "type": "api"
+    },
+    {
+      "name": "PostSetCommentApprovalStatus",
+      "file": "postsetcommentapprovalstatus-api-generated.md",
+      "subCat": "मॉडरेशन",
+      "type": "api"
+    },
+    {
+      "name": "PostSetCommentReviewStatus",
+      "file": "postsetcommentreviewstatus-api-generated.md",
+      "subCat": "मॉडरेशन",
+      "type": "api"
+    },
+    {
+      "name": "PostSetCommentSpamStatus",
+      "file": "postsetcommentspamstatus-api-generated.md",
+      "subCat": "मॉडरेशन",
+      "type": "api"
+    },
+    {
+      "name": "PostSetCommentText",
+      "file": "postsetcommenttext-api-generated.md",
+      "subCat": "मॉडरेशन",
+      "type": "api"
+    },
+    {
+      "name": "PostUnFlagComment",
+      "file": "postunflagcomment-api-generated.md",
+      "subCat": "मॉडरेशन",
+      "type": "api"
+    },
+    {
+      "name": "PostVote",
+      "file": "postvote-api-generated.md",
+      "subCat": "मॉडरेशन",
+      "type": "api"
+    },
+    {
+      "name": "PutAwardBadge",
+      "file": "putawardbadge-api-generated.md",
+      "subCat": "मॉडरेशन",
+      "type": "api"
+    },
+    {
+      "name": "PutCloseThread",
+      "file": "putclosethread-api-generated.md",
+      "subCat": "मॉडरेशन",
+      "type": "api"
+    },
+    {
+      "name": "PutRemoveBadge",
+      "file": "putremovebadge-api-generated.md",
+      "subCat": "मॉडरेशन",
+      "type": "api"
+    },
+    {
+      "name": "PutReopenThread",
+      "file": "putreopenthread-api-generated.md",
+      "subCat": "मॉडरेशन",
+      "type": "api"
+    },
+    {
+      "name": "SetTrustFactor",
+      "file": "settrustfactor-api-generated.md",
+      "subCat": "मॉडरेशन",
+      "type": "api"
+    },
+    {
+      "name": "CreateModerator",
+      "file": "createmoderator-api-generated.md",
+      "subCat": "मॉडरेटर",
+      "type": "api"
+    },
+    {
+      "name": "DeleteModerator",
+      "file": "deletemoderator-api-generated.md",
+      "subCat": "मॉडरेटर",
+      "type": "api"
+    },
+    {
+      "name": "GetModerator",
+      "file": "getmoderator-api-generated.md",
+      "subCat": "मॉडरेटर",
+      "type": "api"
+    },
+    {
+      "name": "GetModerators",
+      "file": "getmoderators-api-generated.md",
+      "subCat": "मॉडरेटर",
+      "type": "api"
+    },
+    {
+      "name": "SendInvite",
+      "file": "sendinvite-api-generated.md",
+      "subCat": "मॉडरेटर",
+      "type": "api"
+    },
+    {
+      "name": "UpdateModerator",
+      "file": "updatemoderator-api-generated.md",
+      "subCat": "मॉडरेटर",
+      "type": "api"
+    },
+    {
+      "name": "DeleteNotificationCount",
+      "file": "deletenotificationcount-api-generated.md",
+      "subCat": "नोटिफिकेशन संख्या",
+      "type": "api"
+    },
+    {
+      "name": "GetCachedNotificationCount",
+      "file": "getcachednotificationcount-api-generated.md",
+      "subCat": "नोटिफिकेशन संख्या",
+      "type": "api"
+    },
+    {
+      "name": "GetNotificationCount",
+      "file": "getnotificationcount-api-generated.md",
+      "subCat": "नोटिफिकेशन",
+      "type": "api"
+    },
+    {
+      "name": "GetNotifications",
+      "file": "getnotifications-api-generated.md",
+      "subCat": "नोटिफिकेशन",
+      "type": "api"
+    },
+    {
+      "name": "UpdateNotification",
+      "file": "updatenotification-api-generated.md",
+      "subCat": "नोटिफिकेशन",
+      "type": "api"
+    },
+    {
+      "name": "CreateV1PageReact",
+      "file": "createv1pagereact-api-generated.md",
+      "subCat": "पेज रिएक्ट",
+      "type": "api"
+    },
+    {
+      "name": "CreateV2PageReact",
+      "file": "createv2pagereact-api-generated.md",
+      "subCat": "पेज रिएक्ट",
+      "type": "api"
+    },
+    {
+      "name": "DeleteV1PageReact",
+      "file": "deletev1pagereact-api-generated.md",
+      "subCat": "पेज रिएक्ट",
+      "type": "api"
+    },
+    {
+      "name": "DeleteV2PageReact",
+      "file": "deletev2pagereact-api-generated.md",
+      "subCat": "पेज रिएक्ट",
+      "type": "api"
+    },
+    {
+      "name": "GetV1PageLikes",
+      "file": "getv1pagelikes-api-generated.md",
+      "subCat": "पेज रिएक्ट",
+      "type": "api"
+    },
+    {
+      "name": "GetV2PageReacts",
+      "file": "getv2pagereacts-api-generated.md",
+      "subCat": "पेज रिएक्ट",
+      "type": "api"
+    },
+    {
+      "name": "GetV2PageReactUsers",
+      "file": "getv2pagereactusers-api-generated.md",
+      "subCat": "पेज रिएक्ट",
+      "type": "api"
+    },
+    {
+      "name": "AddPage",
+      "file": "addpage-api-generated.md",
+      "subCat": "पेज",
+      "type": "api"
+    },
+    {
+      "name": "DeletePage",
+      "file": "deletepage-api-generated.md",
+      "subCat": "पेज",
+      "type": "api"
+    },
+    {
+      "name": "GetOfflineUsers",
+      "file": "getofflineusers-api-generated.md",
+      "subCat": "पेज",
+      "type": "api"
+    },
+    {
+      "name": "GetOnlineUsers",
+      "file": "getonlineusers-api-generated.md",
+      "subCat": "पेज",
+      "type": "api"
+    },
+    {
+      "name": "GetPageByURLId",
+      "file": "getpagebyurlid-api-generated.md",
+      "subCat": "पेज",
+      "type": "api"
+    },
+    {
+      "name": "GetPages",
+      "file": "getpages-api-generated.md",
+      "subCat": "पेज",
+      "type": "api"
+    },
+    {
+      "name": "GetPagesPublic",
+      "file": "getpagespublic-api-generated.md",
+      "subCat": "पेज",
+      "type": "api"
+    },
+    {
+      "name": "GetUsersInfo",
+      "file": "getusersinfo-api-generated.md",
+      "subCat": "पेज",
+      "type": "api"
+    },
+    {
+      "name": "PatchPage",
+      "file": "patchpage-api-generated.md",
+      "subCat": "पेज",
+      "type": "api"
+    },
+    {
+      "name": "DeletePendingWebhookEvent",
+      "file": "deletependingwebhookevent-api-generated.md",
+      "subCat": "लंबित वेबहुक इवेंट",
+      "type": "api"
+    },
+    {
+      "name": "GetPendingWebhookEventCount",
+      "file": "getpendingwebhookeventcount-api-generated.md",
+      "subCat": "लंबित वेबहुक इवेंट",
+      "type": "api"
+    },
+    {
+      "name": "GetPendingWebhookEvents",
+      "file": "getpendingwebhookevents-api-generated.md",
+      "subCat": "लंबित वेबहुक इवेंट",
+      "type": "api"
+    },
+    {
+      "name": "CreateQuestionConfig",
+      "file": "createquestionconfig-api-generated.md",
+      "subCat": "प्रश्न कॉन्फ़िग",
+      "type": "api"
+    },
+    {
+      "name": "DeleteQuestionConfig",
+      "file": "deletequestionconfig-api-generated.md",
+      "subCat": "प्रश्न कॉन्फ़िग",
+      "type": "api"
+    },
+    {
+      "name": "GetQuestionConfig",
+      "file": "getquestionconfig-api-generated.md",
+      "subCat": "प्रश्न कॉन्फ़िग",
+      "type": "api"
+    },
+    {
+      "name": "GetQuestionConfigs",
+      "file": "getquestionconfigs-api-generated.md",
+      "subCat": "प्रश्न कॉन्फ़िग",
+      "type": "api"
+    },
+    {
+      "name": "UpdateQuestionConfig",
+      "file": "updatequestionconfig-api-generated.md",
+      "subCat": "प्रश्न कॉन्फ़िग",
+      "type": "api"
+    },
+    {
+      "name": "CreateQuestionResult",
+      "file": "createquestionresult-api-generated.md",
+      "subCat": "प्रश्न परिणाम",
+      "type": "api"
+    },
+    {
+      "name": "DeleteQuestionResult",
+      "file": "deletequestionresult-api-generated.md",
+      "subCat": "प्रश्न परिणाम",
+      "type": "api"
+    },
+    {
+      "name": "GetQuestionResult",
+      "file": "getquestionresult-api-generated.md",
+      "subCat": "प्रश्न परिणाम",
+      "type": "api"
+    },
+    {
+      "name": "GetQuestionResults",
+      "file": "getquestionresults-api-generated.md",
+      "subCat": "प्रश्न परिणाम",
+      "type": "api"
+    },
+    {
+      "name": "UpdateQuestionResult",
+      "file": "updatequestionresult-api-generated.md",
+      "subCat": "प्रश्न परिणाम",
+      "type": "api"
+    },
+    {
+      "name": "AggregateQuestionResults",
+      "file": "aggregatequestionresults-api-generated.md",
+      "subCat": "प्रश्न परिणाम एग्रीगेशन",
+      "type": "api"
+    },
+    {
+      "name": "BulkAggregateQuestionResults",
+      "file": "bulkaggregatequestionresults-api-generated.md",
+      "subCat": "प्रश्न परिणाम एग्रीगेशन",
+      "type": "api"
+    },
+    {
+      "name": "CombineCommentsWithQuestionResults",
+      "file": "combinecommentswithquestionresults-api-generated.md",
+      "subCat": "प्रश्न परिणाम एग्रीगेशन",
+      "type": "api"
+    },
+    {
+      "name": "AddSSOUser",
+      "file": "addssouser-api-generated.md",
+      "subCat": "SSO उपयोगकर्ता",
+      "type": "api"
+    },
+    {
+      "name": "DeleteSSOUser",
+      "file": "deletessouser-api-generated.md",
+      "subCat": "SSO उपयोगकर्ता",
+      "type": "api"
+    },
+    {
+      "name": "GetSSOUserByEmail",
+      "file": "getssouserbyemail-api-generated.md",
+      "subCat": "SSO उपयोगकर्ता",
+      "type": "api"
+    },
+    {
+      "name": "GetSSOUserById",
+      "file": "getssouserbyid-api-generated.md",
+      "subCat": "SSO उपयोगकर्ता",
+      "type": "api"
+    },
+    {
+      "name": "GetSSOUsers",
+      "file": "getssousers-api-generated.md",
+      "subCat": "SSO उपयोगकर्ता",
+      "type": "api"
+    },
+    {
+      "name": "PatchSSOUser",
+      "file": "patchssouser-api-generated.md",
+      "subCat": "SSO उपयोगकर्ता",
+      "type": "api"
+    },
+    {
+      "name": "PutSSOUser",
+      "file": "putssouser-api-generated.md",
+      "subCat": "SSO उपयोगकर्ता",
+      "type": "api"
+    },
+    {
+      "name": "CreateSubscription",
+      "file": "createsubscription-api-generated.md",
+      "subCat": "सदस्यताएँ",
+      "type": "api"
+    },
+    {
+      "name": "DeleteSubscription",
+      "file": "deletesubscription-api-generated.md",
+      "subCat": "सदस्यताएँ",
+      "type": "api"
+    },
+    {
+      "name": "GetSubscriptions",
+      "file": "getsubscriptions-api-generated.md",
+      "subCat": "सदस्यताएँ",
+      "type": "api"
+    },
+    {
+      "name": "UpdateSubscription",
+      "file": "updatesubscription-api-generated.md",
+      "subCat": "सदस्यताएँ",
+      "type": "api"
+    },
+    {
+      "name": "GetTenantDailyUsages",
+      "file": "gettenantdailyusages-api-generated.md",
+      "subCat": "टेनेंट दैनिक उपयोग",
+      "type": "api"
+    },
+    {
+      "name": "CreateTenantPackage",
+      "file": "createtenantpackage-api-generated.md",
+      "subCat": "टेनेंट पैकेज",
+      "type": "api"
+    },
+    {
+      "name": "DeleteTenantPackage",
+      "file": "deletetenantpackage-api-generated.md",
+      "subCat": "टेनेंट पैकेज",
+      "type": "api"
+    },
+    {
+      "name": "GetTenantPackage",
+      "file": "gettenantpackage-api-generated.md",
+      "subCat": "टेनेंट पैकेज",
+      "type": "api"
+    },
+    {
+      "name": "GetTenantPackages",
+      "file": "gettenantpackages-api-generated.md",
+      "subCat": "टेनेंट पैकेज",
+      "type": "api"
+    },
+    {
+      "name": "ReplaceTenantPackage",
+      "file": "replacetenantpackage-api-generated.md",
+      "subCat": "टेनेंट पैकेज",
+      "type": "api"
+    },
+    {
+      "name": "UpdateTenantPackage",
+      "file": "updatetenantpackage-api-generated.md",
+      "subCat": "टेनेंट पैकेज",
+      "type": "api"
+    },
+    {
+      "name": "CreateTenantUser",
+      "file": "createtenantuser-api-generated.md",
+      "subCat": "टेनेंट उपयोगकर्ता",
+      "type": "api"
+    },
+    {
+      "name": "DeleteTenantUser",
+      "file": "deletetenantuser-api-generated.md",
+      "subCat": "टेनेंट उपयोगकर्ता",
+      "type": "api"
+    },
+    {
+      "name": "GetTenantUser",
+      "file": "gettenantuser-api-generated.md",
+      "subCat": "टेनेंट उपयोगकर्ता",
+      "type": "api"
+    },
+    {
+      "name": "GetTenantUsers",
+      "file": "gettenantusers-api-generated.md",
+      "subCat": "टेनेंट उपयोगकर्ता",
+      "type": "api"
+    },
+    {
+      "name": "ReplaceTenantUser",
+      "file": "replacetenantuser-api-generated.md",
+      "subCat": "टेनेंट उपयोगकर्ता",
+      "type": "api"
+    },
+    {
+      "name": "SendLoginLink",
+      "file": "sendloginlink-api-generated.md",
+      "subCat": "टेनेंट उपयोगकर्ता",
+      "type": "api"
+    },
+    {
+      "name": "UpdateTenantUser",
+      "file": "updatetenantuser-api-generated.md",
+      "subCat": "टेनेंट उपयोगकर्ता",
+      "type": "api"
+    },
+    {
+      "name": "CreateTenant",
+      "file": "createtenant-api-generated.md",
+      "subCat": "टेनेंट",
+      "type": "api"
+    },
+    {
+      "name": "DeleteTenant",
+      "file": "deletetenant-api-generated.md",
+      "subCat": "टेनेंट",
+      "type": "api"
+    },
+    {
+      "name": "GetTenant",
+      "file": "gettenant-api-generated.md",
+      "subCat": "टेनेंट",
+      "type": "api"
+    },
+    {
+      "name": "GetTenants",
+      "file": "gettenants-api-generated.md",
+      "subCat": "टेनेंट",
+      "type": "api"
+    },
+    {
+      "name": "UpdateTenant",
+      "file": "updatetenant-api-generated.md",
+      "subCat": "टेनेंट",
+      "type": "api"
+    },
+    {
+      "name": "ChangeTicketState",
+      "file": "changeticketstate-api-generated.md",
+      "subCat": "टिकट",
+      "type": "api"
+    },
+    {
+      "name": "CreateTicket",
+      "file": "createticket-api-generated.md",
+      "subCat": "टिकट",
+      "type": "api"
+    },
+    {
+      "name": "GetTicket",
+      "file": "getticket-api-generated.md",
+      "subCat": "टिकट",
+      "type": "api"
+    },
+    {
+      "name": "GetTickets",
+      "file": "gettickets-api-generated.md",
+      "subCat": "टिकट",
+      "type": "api"
+    },
+    {
+      "name": "GetTranslations",
+      "file": "gettranslations-api-generated.md",
+      "subCat": "अनुवाद",
+      "type": "api"
+    },
+    {
+      "name": "UploadImage",
+      "file": "uploadimage-api-generated.md",
+      "subCat": "इमेज अपलोड करें",
+      "type": "api"
+    },
+    {
+      "name": "GetUserBadgeProgressById",
+      "file": "getuserbadgeprogressbyid-api-generated.md",
+      "subCat": "उपयोगकर्ता बैज प्रगति",
+      "type": "api"
+    },
+    {
+      "name": "GetUserBadgeProgressByUserId",
+      "file": "getuserbadgeprogressbyuserid-api-generated.md",
+      "subCat": "उपयोगकर्ता बैज प्रगति",
+      "type": "api"
+    },
+    {
+      "name": "GetUserBadgeProgressList",
+      "file": "getuserbadgeprogresslist-api-generated.md",
+      "subCat": "उपयोगकर्ता बैज प्रगति",
+      "type": "api"
+    },
+    {
+      "name": "CreateUserBadge",
+      "file": "createuserbadge-api-generated.md",
+      "subCat": "उपयोगकर्ता बैज",
+      "type": "api"
+    },
+    {
+      "name": "DeleteUserBadge",
+      "file": "deleteuserbadge-api-generated.md",
+      "subCat": "उपयोगकर्ता बैज",
+      "type": "api"
+    },
+    {
+      "name": "GetUserBadge",
+      "file": "getuserbadge-api-generated.md",
+      "subCat": "उपयोगकर्ता बैज",
+      "type": "api"
+    },
+    {
+      "name": "GetUserBadges",
+      "file": "getuserbadges-api-generated.md",
+      "subCat": "उपयोगकर्ता बैज",
+      "type": "api"
+    },
+    {
+      "name": "UpdateUserBadge",
+      "file": "updateuserbadge-api-generated.md",
+      "subCat": "उपयोगकर्ता बैज",
+      "type": "api"
+    },
+    {
+      "name": "GetUserNotificationCount",
+      "file": "getusernotificationcount-api-generated.md",
+      "subCat": "उपयोगकर्ता नोटिफिकेशन",
+      "type": "api"
+    },
+    {
+      "name": "GetUserNotifications",
+      "file": "getusernotifications-api-generated.md",
+      "subCat": "उपयोगकर्ता नोटिफिकेशन",
+      "type": "api"
+    },
+    {
+      "name": "ResetUserNotificationCount",
+      "file": "resetusernotificationcount-api-generated.md",
+      "subCat": "उपयोगकर्ता नोटिफिकेशन",
+      "type": "api"
+    },
+    {
+      "name": "ResetUserNotifications",
+      "file": "resetusernotifications-api-generated.md",
+      "subCat": "उपयोगकर्ता नोटिफिकेशन",
+      "type": "api"
+    },
+    {
+      "name": "UpdateUserNotificationCommentSubscriptionStatus",
+      "file": "updateusernotificationcommentsubscriptionstatus-api-generated.md",
+      "subCat": "उपयोगकर्ता नोटिफिकेशन",
+      "type": "api"
+    },
+    {
+      "name": "UpdateUserNotificationPageSubscriptionStatus",
+      "file": "updateusernotificationpagesubscriptionstatus-api-generated.md",
+      "subCat": "उपयोगकर्ता नोटिफिकेशन",
+      "type": "api"
+    },
+    {
+      "name": "UpdateUserNotificationStatus",
+      "file": "updateusernotificationstatus-api-generated.md",
+      "subCat": "उपयोगकर्ता नोटिफिकेशन",
+      "type": "api"
+    },
+    {
+      "name": "GetUserPresenceStatuses",
+      "file": "getuserpresencestatuses-api-generated.md",
+      "subCat": "उपयोगकर्ता उपस्थिति स्थिति",
+      "type": "api"
+    },
+    {
+      "name": "SearchUsers",
+      "file": "searchusers-api-generated.md",
+      "subCat": "उपयोगकर्ता खोज",
+      "type": "api"
+    },
+    {
+      "name": "GetUser",
+      "file": "getuser-api-generated.md",
+      "subCat": "उपयोगकर्ता",
+      "type": "api"
+    },
+    {
+      "name": "CreateVote",
+      "file": "createvote-api-generated.md",
+      "subCat": "वोट",
+      "type": "api"
+    },
+    {
+      "name": "DeleteVote",
+      "file": "deletevote-api-generated.md",
+      "subCat": "वोट",
+      "type": "api"
+    },
+    {
+      "name": "GetVotes",
+      "file": "getvotes-api-generated.md",
+      "subCat": "वोट",
+      "type": "api"
+    },
+    {
+      "name": "GetVotesForUser",
+      "file": "getvotesforuser-api-generated.md",
+      "subCat": "वोट",
+      "type": "api"
+    }
+  ]
+}

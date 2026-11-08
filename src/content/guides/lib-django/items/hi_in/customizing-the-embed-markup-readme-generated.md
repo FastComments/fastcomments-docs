@@ -1,0 +1,1 @@
+टेम्पलेट सर्च पाथ पर अपनी खुद की कॉपी पहले रखकर `fastcomments/widget.html` को ओवरराइड करें (प्रोजेक्ट का `templates/fastcomments/widget.html`)। यह Laravel के `vendor:publish --tag=fastcomments-views` का Django समतुल्य है।

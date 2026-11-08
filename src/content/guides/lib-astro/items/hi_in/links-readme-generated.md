@@ -1,0 +1,3 @@
+- [FastComments दस्तावेज़ीकरण](https://docs.fastcomments.com)
+- [कस्टमाइज़ेशन और कॉन्फ़िगरेशन](https://docs.fastcomments.com/guide-customizations-and-configuration.html)
+- [Astro दस्तावेज़ीकरण](https://docs.astro.build)

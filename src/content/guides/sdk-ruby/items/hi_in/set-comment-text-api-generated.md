@@ -1,0 +1,39 @@
+## पैरामीटर
+
+| नाम | प्रकार | स्थान | आवश्यक | विवरण |
+|------|------|----------|----------|-------------|
+| tenantId | string | path | हाँ |  |
+| commentId | string | path | हाँ |  |
+| broadcastId | string | query | हाँ |  |
+| editKey | string | query | नहीं |  |
+| sso | string | query | नहीं |  |
+
+## प्रतिक्रिया
+
+रिटर्न: [`PublicAPISetCommentTextResponse`](https://github.com/FastComments/fastcomments-ruby/blob/master/client/lib/fastcomments-client/models/public_api_set_comment_text_response.rb)
+
+## उदाहरण
+
+[inline-code-attrs-start title = 'set_comment_text उदाहरण'; type = 'ruby'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+require 'time'
+require 'fastcomments-client'
+
+api_instance = FastCommentsClient::PublicApi.new
+tenant_id = 'tenant_id_example' # String | 
+comment_id = 'comment_id_example' # String | 
+broadcast_id = 'broadcast_id_example' # String | 
+comment_text_update_request = FastCommentsClient::CommentTextUpdateRequest.new({comment: 'comment_example'}) # CommentTextUpdateRequest | 
+opts = {
+  edit_key: 'edit_key_example', # String | 
+  sso: 'sso_example' # String | 
+}
+
+begin
+  
+  result = api_instance.set_comment_text(tenant_id, comment_id, broadcast_id, comment_text_update_request, opts)
+  p result
+rescue FastCommentsClient::ApiError => e
+  puts "Error when calling PublicApi->set_comment_text: #{e}"
+end
+[inline-code-end]

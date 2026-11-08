@@ -1,0 +1,42 @@
+{
+  "name": "Framer इंस्टॉलेशन",
+  "pageHeader": "Framer साइटों में लाइव कमेंटिंग जोड़ें",
+  "icon": "3rd-party-products/framer.png",
+  "itemsOrdered": [
+    {
+      "name": "चरण 1: एडिटर खोलें",
+      "file": "framer-step-1.md",
+      "subCat": "Framer इंस्टॉलेशन"
+    },
+    {
+      "name": "चरण 2: एम्बेड ब्लॉक जोड़ें",
+      "file": "framer-step-2.md",
+      "subCat": "Framer इंस्टॉलेशन"
+    },
+    {
+      "name": "चरण 3: Framer-विशिष्ट FastComments कोड कॉपी और पेस्ट करें",
+      "file": "framer-step-3.md",
+      "subCat": "Framer इंस्टॉलेशन"
+    },
+    {
+      "name": "चरण 4: विजेट और पेज की ऊंचाई समायोजित करें",
+      "file": "framer-step-4.md",
+      "subCat": "Framer इंस्टॉलेशन"
+    },
+    {
+      "name": "डोमेन त्रुटियाँ",
+      "file": "framer-domain-errors.md",
+      "subCat": "Framer इंस्टॉलेशन"
+    },
+    {
+      "name": "अनुकूलन",
+      "file": "framer-customize.md",
+      "subCat": "Framer इंस्टॉलेशन"
+    },
+    {
+      "name": "अपनी Framer साइट में पोल जोड़ें",
+      "file": "framer-polls.md",
+      "subCat": "पोल"
+    }
+  ]
+}

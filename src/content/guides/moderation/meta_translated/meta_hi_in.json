@@ -1,0 +1,141 @@
+{
+  "name": "मॉडरेशन",
+  "icon": "moderator.png",
+  "itemsOrdered": [
+    {
+      "name": "कमेंट मॉडरेशन पेज",
+      "file": "moderate-comments-page.md",
+      "subCat": "परिचय"
+    },
+    {
+      "name": "मॉडरेटर",
+      "file": "moderators.md",
+      "subCat": "मॉडरेटर"
+    },
+    {
+      "name": "मॉडरेटर जोड़ना",
+      "file": "moderators-adding.md",
+      "subCat": "मॉडरेटर"
+    },
+    {
+      "name": "मॉडरेटर आंकड़े",
+      "file": "moderator-stats.md",
+      "subCat": "मॉडरेटर"
+    },
+    {
+      "name": "मॉडरेटर हटाना",
+      "file": "moderators-removing.md",
+      "subCat": "मॉडरेटर"
+    },
+    {
+      "name": "अनुमोदन कैसे काम करता है",
+      "file": "moderation-approvals.md",
+      "subCat": "मॉडरेशन वर्कफ़्लो"
+    },
+    {
+      "name": "ईमेल के माध्यम से मॉडरेशन",
+      "file": "moderation-via-email.md",
+      "subCat": "मॉडरेशन वर्कफ़्लो"
+    },
+    {
+      "name": "फ़िल्टरिंग",
+      "file": "filters.md",
+      "subCat": "मॉडरेशन वर्कफ़्लो"
+    },
+    {
+      "name": "खोज",
+      "file": "search.md",
+      "subCat": "मॉडरेशन वर्कफ़्लो"
+    },
+    {
+      "name": "मॉडरेशन लिंक साझा करना",
+      "file": "sharing-moderation-links.md",
+      "subCat": "मॉडरेशन वर्कफ़्लो"
+    },
+    {
+      "name": "कमेंट थ्रेड व्यूअर",
+      "file": "comment-thread-viewer.md",
+      "subCat": "मॉडरेशन वर्कफ़्लो"
+    },
+    {
+      "name": "मॉडरेशन कार्रवाइयाँ",
+      "file": "comment-actions.md",
+      "subCat": "मॉडरेशन वर्कफ़्लो"
+    },
+    {
+      "name": "कमेंट हटाना",
+      "file": "deleting-comments.md",
+      "subCat": "मॉडरेशन वर्कफ़्लो"
+    },
+    {
+      "name": "कमेंट विजेट से मॉडरेशन कार्रवाइयाँ",
+      "file": "comment-actions-from-comment-widget.md",
+      "subCat": "मॉडरेशन वर्कफ़्लो"
+    },
+    {
+      "name": "लाइव मॉडरेशन",
+      "file": "comment-actions-live.md",
+      "subCat": "मॉडरेशन वर्कफ़्लो"
+    },
+    {
+      "name": "उपयोगकर्ताओं को बैन करना",
+      "file": "banning-users.md",
+      "subCat": "मॉडरेशन वर्कफ़्लो"
+    },
+    {
+      "name": "वाइल्डकार्ड के साथ उपयोगकर्ताओं को बैन करना",
+      "file": "banning-users-wildcards.md",
+      "subCat": "मॉडरेशन वर्कफ़्लो"
+    },
+    {
+      "name": "फ़्लैगिंग",
+      "file": "flagging.md",
+      "subCat": "मॉडरेशन वर्कफ़्लो"
+    },
+    {
+      "name": "बल्क कार्रवाइयाँ",
+      "file": "bulk-actions.md",
+      "subCat": "मॉडरेशन वर्कफ़्लो"
+    },
+    {
+      "name": "मॉडरेशन समूह",
+      "file": "moderation-groups.md",
+      "subCat": "मॉडरेशन समूह"
+    },
+    {
+      "name": "मॉडरेशन सेटिंग्स",
+      "file": "moderation-settings.md",
+      "subCat": "कॉन्फ़िगरेशन"
+    },
+    {
+      "name": "स्पैम पहचान",
+      "file": "spam-detection.md",
+      "subCat": "स्पैम और अश्लीलता"
+    },
+    {
+      "name": "अश्लीलता छिपाना",
+      "file": "profanity-mask.md",
+      "subCat": "स्पैम और अश्लीलता"
+    },
+    {
+      "name": "कमेंट लॉग",
+      "file": "comment-logs.md",
+      "subCat": "मॉडरेशन वर्कफ़्लो"
+    },
+    {
+      "name": "कीबोर्ड शॉर्टकट",
+      "file": "keyboard-shortcuts.md",
+      "subCat": "मॉडरेशन वर्कफ़्लो"
+    },
+    {
+      "name": "AI एजेंट",
+      "file": "ai-agents-pointer.md",
+      "subCat": "मॉडरेशन वर्कफ़्लो"
+    },
+    {
+      "name": "मानव मॉडरेशन सेवाएँ",
+      "file": "human-moderation-services.md",
+      "subCat": "मॉडरेशन वर्कफ़्लो"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+## पैरामीटर
+
+| नाम | प्रकार | आवश्यक | विवरण |
+|------|------|----------|-------------|
+| tenant_id | String | हाँ |  |
+| comment_id | String | नहीं |  |
+| external_id | String | नहीं |  |
+| event_type | String | नहीं |  |
+| domain | String | नहीं |  |
+| attempt_count_gt | f64 | नहीं |  |
+
+## प्रतिक्रिया
+
+रिटर्न करता है: [`GetPendingWebhookEventCountResponse`](https://github.com/FastComments/fastcomments-rust/blob/main/client/src/models/get_pending_webhook_event_count_response.rs)
+
+## उदाहरण
+
+[inline-code-attrs-start title = 'get_pending_webhook_event_count उदाहरण'; type = 'rust'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+async fn example() -> Result<(), Error> {
+    let params = GetPendingWebhookEventCountParams {
+        tenant_id: "acme-corp-tenant".to_string(),
+        comment_id: Some("comment-12345".to_string()),
+        external_id: Some("ext-98765".to_string()),
+        event_type: Some("comment_created".to_string()),
+        domain: Some("news.example.com".to_string()),
+        attempt_count_gt: Some(2.0),
+    };
+    let _response = get_pending_webhook_event_count(&configuration, params).await?;
+    Ok(())
+}
+[inline-code-end]

@@ -1,0 +1,52 @@
+{
+  "name": "BigCommerce इंस्टॉलेशन",
+  "pageHeader": "BigCommerce साइटों पर टिप्पणियाँ जोड़ें",
+  "icon": "3rd-party-products/bigcommerce.svg",
+  "itemsOrdered": [
+    {
+      "name": "चरण एक: अपनी थीम तैयार करें",
+      "file": "bigcommerce-step-1.md",
+      "subCat": "BigCommerce इंस्टॉलेशन"
+    },
+    {
+      "name": "चरण दो: सही टेम्पलेट संपादित करें",
+      "file": "bigcommerce-step-2.md",
+      "subCat": "BigCommerce इंस्टॉलेशन"
+    },
+    {
+      "name": "चरण तीन: विजेट कोड जोड़ें",
+      "file": "bigcommerce-step-3.md",
+      "subCat": "BigCommerce इंस्टॉलेशन"
+    },
+    {
+      "name": "चरण चार: नई थीम सक्रिय करें",
+      "file": "bigcommerce-step-4.md",
+      "subCat": "BigCommerce इंस्टॉलेशन"
+    },
+    {
+      "name": "सफलता",
+      "file": "bigcommerce-success.md",
+      "subCat": "BigCommerce इंस्टॉलेशन"
+    },
+    {
+      "name": "डोमेन त्रुटियाँ",
+      "file": "bigcommerce-domain-errors.md",
+      "subCat": "BigCommerce इंस्टॉलेशन"
+    },
+    {
+      "name": "अनुकूलन",
+      "file": "bigcommerce-customize.md",
+      "subCat": "BigCommerce इंस्टॉलेशन"
+    },
+    {
+      "name": "अतिरिक्त: पेज बिल्डर के लिए कोड स्निपेट",
+      "file": "bigcommerce-interactive-editor.md",
+      "subCat": "पेज बिल्डर का उपयोग करना"
+    },
+    {
+      "name": "अपने BigCommerce स्टोर में पोल जोड़ें",
+      "file": "bigcommerce-polls.md",
+      "subCat": "पोल"
+    }
+  ]
+}
