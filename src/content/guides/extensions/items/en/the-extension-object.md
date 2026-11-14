@@ -18,7 +18,8 @@ The extension object consists of the following definition:
  * @property {Function} reRenderComment - A reference to a function that can be invoked to re-render a comment.
  * @property {Function} removeCommentAndReRender - A reference to a function that can be invoked to remove a comment from memory and re-render the appropriate part of the DOM.
  * @property {Function} newBroadcastId - A reference to a function that can be invoked create a new broadcast id and add it to the local list of broadcast ids to ignore.
- * @property {Function} [withSessionId] - Call with a request URL and a callback. Invokes the callback with the URL plus the viewer's session id appended when third-party cookies are blocked (same path comment and vote requests use), or the URL unchanged otherwise. Not used for SSO.
+ * @property {Function} [withSessionId] - Call with a request URL and a callback. Invokes the callback with the URL plus the viewer's session id appended when third-party cookies are blocked (same path comment and vote requests use), or the URL unchanged otherwise. When no session id is available that way, appends the anonymous session id last given to rememberAnonSessionId, if any. Not used for SSO.
+ * @property {Function} [rememberAnonSessionId] - Call with the anonSessionId a response returned. The server only returns one to a guest whose request had no session cookie, and never for a logged in session. It is kept in localStorage (or memory when storage is unavailable) so withSessionId sends it on later requests and the guest keeps one identity.
  * @property {FastCommentsUIExtensionSetupEventHandlers} [setupEventHandlers]
  * @property {FastCommentsUIExtensionPrepareCommentForSavingCallback} [prepareCommentForSaving] - Called with the comment about to be posted. Return false to cancel the submit (for example when an attached poll is incomplete).
  * @property {FastCommentsUIExtensionNewCommentCallback} [newComment]
