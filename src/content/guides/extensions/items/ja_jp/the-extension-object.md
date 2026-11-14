@@ -1,11 +1,11 @@
-拡張オブジェクトは以下の定義で構成されています:
+extension オブジェクトは以下の定義で構成されています:
 
-<!-- これを更新したい場合は、comment-ui-core を更新することを忘れないでください -->
-[inline-code-attrs-start title = '拡張オブジェクト JSDoc'; type = 'javascript'; inline-code-attrs-end]
+<!-- if you want to update this, remember to update comment-ui-core -->
+[inline-code-attrs-start title = 'Extension Object JSDoc'; type = 'javascript'; inline-code-attrs-end]
 [inline-code-start]
 /**
- * FastCommentsUI の拡張オブジェクトです。特定のコンポーネントを遅延ロードするために使用されます。例えば、レビューシステムは
- * すべての顧客が使用するわけではないため、必要なときにだけこの拡張をロードします。
+ * FastCommentsUI の extension オブジェクト。特定のコンポーネントを遅延読み込みするために使用されます。例えば、レビュー
+ * システムはすべての顧客が使用するわけではないため、必要になった時点でその extension のみを読み込みます。
  *
  * @typedef {Object} FastCommentsUIExtension
  * @property {string} id
@@ -13,28 +13,29 @@
  * @property {Element} root - ウィジェットのルート DOM ノード。
  * @property {string} [css]
  * @property {Object} config - FastComments の設定オブジェクト。
- * @property {Object} commentsById - ID 別にすべてのコメントを保持するオブジェクトへの参照で、常に最新の状態が保たれます。
+ * @property {Object} commentsById - すべてのコメントを id で保持するオブジェクトへの参照。常に最新の状態に保たれます。
  * @property {Object} translations - すべての翻訳への参照。
- * @property {Function} reRenderComment - コメントを再描画するために呼び出せる関数への参照。
- * @property {Function} removeCommentAndReRender - コメントをメモリから削除し、DOM の該当部分を再描画するために呼び出せる関数への参照。
- * @property {Function} newBroadcastId - 新しいブロードキャスト ID を作成し、無視するローカルリストに追加できる関数への参照。
+ * @property {Function} reRenderComment - 呼び出すことでコメントを再レンダリングできる関数への参照。
+ * @property {Function} removeCommentAndReRender - 呼び出すことでコメントをメモリから削除し、DOM の該当部分を再レンダリングできる関数への参照。
+ * @property {Function} newBroadcastId - 呼び出すことで新しい broadcast id を作成し、無視対象のローカル broadcast id リストに追加できる関数への参照。
+ * @property {Function} [withSessionId] - リクエスト URL とコールバックを渡して呼び出します。サードパーティ Cookie がブロックされている場合(コメント送信および投票リクエストと同じ経路)、閲覧者のセッション id を URL に付加してコールバックを呼び出し、それ以外の場合は URL をそのまま渡します。SSO には使用されません。
  * @property {FastCommentsUIExtensionSetupEventHandlers} [setupEventHandlers]
- * @property {FastCommentsUIExtensionPrepareCommentForSavingCallback} [prepareCommentForSaving] - 投稿される直前のコメントが渡されます。false を返すと送信がキャンセルされます（例：添付された投票が未完了の場合）。
+ * @property {FastCommentsUIExtensionPrepareCommentForSavingCallback} [prepareCommentForSaving] - 投稿されようとしているコメントと共に呼び出されます。false を返すと送信をキャンセルできます(例:添付された投票が未完了の場合)。
  * @property {FastCommentsUIExtensionNewCommentCallback} [newComment]
- * @property {FastCommentsUIExtensionReplyAreaFilter} [replyAreaFilter] - コメントエリアの HTML をフィルタリングします。
- * @property {FastCommentsUIExtensionWidgetFilter} [widgetFilter] - ウィジェット全体のレンダリング時に HTML をフィルタリングします。
- * @property {FastCommentsUIExtensionCommentTopFilter} [commentFilter] - 各コメントのレンダリング前に HTML をフィルタリングします。
- * @property {FastCommentsUIExtensionReplyAreaFilter} [commentMenuFilter] - 各コメントメニューのレンダリング前に HTML をフィルタリングします。
- * @property {FastCommentsUIExtensionMenuFilter} [menuFilter] - ウィジェット全体のレンダリング時に HTML をフィルタリングします。
- * @property {FastCommentsUIExtensionReplyAreaTop} [replyAreaTop] - (LEGACY) 返信エリアの上部に追加する HTML を返します。
- * @property {FastCommentsUIExtensionWidgetTopCallback} [widgetTop] - (LEGACY) ウィジェットの上部に追加する HTML を返します。
- * @property {FastCommentsUIExtensionCommentTopCallback} [commentTop] - (LEGACY) コメント要素の上部に追加する HTML を返します。
- * @property {FastCommentsUIExtensionCommentBottomCallback} [commentBottom] - (LEGACY) コメント要素の下部に追加する HTML を返します。
- * @property {FastCommentsUIExtensionCommentBottomCallback} [commentContentBottom] - コメントテキストの後、コメントコンテンツ要素内に追加する HTML を返します（投票で使用）。
- * @property {Function} [replyAreaInputBottom] - テキスト入力の下に、コメント入力フレーム内に追加する HTML を返します（インライン投票エディタで使用）。親コメント ID、またはルート返信ボックスの場合は null が渡されます。
- * @property {Function} [onPollUpdate] - ページ上の投票の票数が変化したときにライブイベントとして呼び出されます。
- * @property {Function} isSiteAdmin - ビューアがテナントの管理者またはモデレーターかどうかを返します。最初の取得後に判明します。
- * @property {FastCommentsUIExtensionMenuBottomCallback} [menuBottom] - (LEGACY) 各コメントのメニュー要素の下部に追加する HTML を返します。
+ * @property {FastCommentsUIExtensionReplyAreaFilter} [replyAreaFilter] - コメントエリアの HTML をフィルターします。
+ * @property {FastCommentsUIExtensionWidgetFilter} [widgetFilter] - レンダリング時にウィジェット全体の HTML をフィルターします。
+ * @property {FastCommentsUIExtensionCommentTopFilter} [commentFilter] - レンダリング前に各コメントの HTML をフィルターします。
+ * @property {FastCommentsUIExtensionReplyAreaFilter} [commentMenuFilter] - レンダリング前に各コメントメニューの HTML をフィルターします。
+ * @property {FastCommentsUIExtensionMenuFilter} [menuFilter] - レンダリング時にウィジェット全体の HTML をフィルターします。
+ * @property {FastCommentsUIExtensionReplyAreaTop} [replyAreaTop] - (レガシー)返信エリアの上部に追加する HTML を返します。
+ * @property {FastCommentsUIExtensionWidgetTopCallback} [widgetTop] - (レガシー)ウィジェットの上部に追加する HTML を返します。
+ * @property {FastCommentsUIExtensionCommentTopCallback} [commentTop] - (レガシー)コメント要素の上部に追加する HTML を返します。
+ * @property {FastCommentsUIExtensionCommentBottomCallback} [commentBottom] - (レガシー)コメント要素の下部に追加する HTML を返します。
+ * @property {FastCommentsUIExtensionCommentBottomCallback} [commentContentBottom] - コメントテキストの後、コメントコンテンツ要素の内側に追加する HTML を返します(投票で使用)。
+ * @property {Function} [replyAreaInputBottom] - コメント入力フレームの内側、テキスト入力の下に追加する HTML を返します(投票のインプレース投票エディターで使用)。親コメントの id を受け取ります。ルートの返信ボックスの場合は null が渡されます。
+ * @property {Function} [onPollUpdate] - ページ上の投票の票数が変化したときにライブイベントと共に呼び出されます。
+ * @property {Function} isSiteAdmin - 閲覧者がテナントの管理者またはモデレーターであるかどうかを返します。最初のフェッチ後に判明します。
+ * @property {FastCommentsUIExtensionMenuBottomCallback} [menuBottom] - (レガシー)各コメントのメニュー要素の下部に追加する HTML を返します。
  * @property {FastCommentsUIExtensionRenderCallback} [onRender]
  * @property {FastCommentsUIExtensionConnectionStatusCallback} [onLiveConnectionStatusUpdate]
  * @property {FastCommentsUIExtensionInitialRenderCallback} [onInitialRenderComplete]
@@ -44,7 +45,7 @@
 /**
  * @callback FastCommentsUIExtensionSetupEventHandlers
  * @param {Element} element - ルート要素。
- * @param {Object.<string, Function>} clickListeners - クラス名ごとのクリックイベントハンドラで、参照によって変更可能です。
+ * @param {Object.<string, Function>} clickListeners - クリックのイベントハンドラー。クラス名をキーとし、参照経由で変更可能です。
  * @returns void
  */
 

@@ -1,25 +1,26 @@
 Uzantı nesnesi aşağıdaki tanımdan oluşur:
 
 <!-- if you want to update this, remember to update comment-ui-core -->
-[inline-code-attrs-start title = 'Uzantı Nesnesi JSDoc'; type = 'javascript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Extension Object JSDoc'; type = 'javascript'; inline-code-attrs-end]
 [inline-code-start]
 /**
  * FastCommentsUI uzantı nesnesi. Belirli bileşenleri tembel yükleme (lazy-loading) için kullanılır. Örneğin, yorum
- * (review) sistemi tüm müşteriler tarafından kullanılmadığından, bu uzantıyı yalnızca ihtiyaç duyduğumuzda yükleriz.
+ * (review) sistemi tüm müşteriler tarafından kullanılmadığından, bu uzantıyı yalnızca istediğimizde yüklüyoruz.
  *
  * @typedef {Object} FastCommentsUIExtension
  * @property {string} id
  * @property {Element} scriptNode
- * @property {Element} root - Widget'ın kök DOM düğümü.
+ * @property {Element} root - Widget'ın kök dom düğümü.
  * @property {string} [css]
- * @property {Object} config - FastComments yapılandırma nesnesi.
+ * @property {Object} config - FastComments yapılandırma (config) nesnesi.
  * @property {Object} commentsById - Tüm yorumları id'ye göre içeren ve güncel tutulan bir nesneye referans.
  * @property {Object} translations - Tüm çevirilere referans.
  * @property {Function} reRenderComment - Bir yorumu yeniden render etmek için çağrılabilen bir fonksiyona referans.
  * @property {Function} removeCommentAndReRender - Bir yorumu bellekten kaldırmak ve DOM'un ilgili bölümünü yeniden render etmek için çağrılabilen bir fonksiyona referans.
- * @property {Function} newBroadcastId - Yeni bir broadcast id oluşturmak ve yerel yok sayılan broadcast id listesine eklemek için çağrılabilen bir fonksiyona referans.
+ * @property {Function} newBroadcastId - Yeni bir broadcast id oluşturmak ve yok sayılacak yerel broadcast id listesine eklemek için çağrılabilen bir fonksiyona referans.
+ * @property {Function} [withSessionId] - Bir istek URL'si ve bir callback ile çağrılır. Üçüncü taraf çerezleri engellendiğinde (yorum ve oylama isteklerinin kullandığı aynı yol ile) URL'ye izleyicinin session id'si eklenmiş haliyle callback'i çağırır, aksi halde URL'yi değiştirmeden iletir. SSO için kullanılmaz.
  * @property {FastCommentsUIExtensionSetupEventHandlers} [setupEventHandlers]
- * @property {FastCommentsUIExtensionPrepareCommentForSavingCallback} [prepareCommentForSaving] - Gönderilmek üzere olan yorum ile çağrılır. Gönderimi iptal etmek için false döndürün (örneğin, eklenen anket eksik olduğunda).
+ * @property {FastCommentsUIExtensionPrepareCommentForSavingCallback} [prepareCommentForSaving] - Gönderilmek üzere olan yorum ile çağrılır. Gönderimi iptal etmek için false döndürün (örneğin eklenen anket tamamlanmadığında).
  * @property {FastCommentsUIExtensionNewCommentCallback} [newComment]
  * @property {FastCommentsUIExtensionReplyAreaFilter} [replyAreaFilter] - Yorum alanı için HTML filtresi.
  * @property {FastCommentsUIExtensionWidgetFilter} [widgetFilter] - Render sırasında tüm widget için HTML filtresi.
@@ -30,10 +31,10 @@ Uzantı nesnesi aşağıdaki tanımdan oluşur:
  * @property {FastCommentsUIExtensionWidgetTopCallback} [widgetTop] - (ESKİ/LEGACY) Widget'ın üstüne eklenecek HTML döndürür.
  * @property {FastCommentsUIExtensionCommentTopCallback} [commentTop] - (ESKİ/LEGACY) Yorum öğesinin üstüne eklenecek HTML döndürür.
  * @property {FastCommentsUIExtensionCommentBottomCallback} [commentBottom] - (ESKİ/LEGACY) Yorum öğesinin altına eklenecek HTML döndürür.
- * @property {FastCommentsUIExtensionCommentBottomCallback} [commentContentBottom] - Yorum metninden sonra, yorum içerik öğesinin içine eklenecek HTML döndürür (anketler tarafından kullanılır).
- * @property {Function} [replyAreaInputBottom] - Yorum giriş çerçevesinin içine, metin girişinin altına eklenecek HTML döndürür (anketler tarafından yerinde anket düzenleyicisi için kullanılır). Üst yorumun id'sini alır; kök yanıt kutusu için null alır.
- * @property {Function} [onPollUpdate] - Sayfadaki bir anketin oy sayıları değiştiğinde canlı etkinlik ile çağrılır.
- * @property {Function} isSiteAdmin - Görüntüleyicinin kiracının (tenant) yöneticisi veya moderatörü olup olmadığını döndürür. İlk veri çekiminden sonra bilinir.
+ * @property {FastCommentsUIExtensionCommentBottomCallback} [commentContentBottom] - Yorum metninden sonra, yorum içerik öğesinin içinde eklenecek HTML döndürür (anketler tarafından kullanılır).
+ * @property {Function} [replyAreaInputBottom] - Yorum giriş çerçevesinin içinde, metin girişinin altına eklenecek HTML döndürür (anketler tarafından yerinde anket düzenleyicisi için kullanılır). Üst yorumun id'sini alır; kök yanıt kutusu için null alır.
+ * @property {Function} [onPollUpdate] - Sayfadaki bir anketin oy sayıları değiştiğinde canlı olay ile çağrılır.
+ * @property {Function} isSiteAdmin - İzleyicinin tenant için admin veya moderatör olup olmadığını döndürür. İlk fetch'ten sonra bilinir.
  * @property {FastCommentsUIExtensionMenuBottomCallback} [menuBottom] - (ESKİ/LEGACY) Her yorum için menü öğesinin altına eklenecek HTML döndürür.
  * @property {FastCommentsUIExtensionRenderCallback} [onRender]
  * @property {FastCommentsUIExtensionConnectionStatusCallback} [onLiveConnectionStatusUpdate]
@@ -44,7 +45,7 @@ Uzantı nesnesi aşağıdaki tanımdan oluşur:
 /**
  * @callback FastCommentsUIExtensionSetupEventHandlers
  * @param {Element} element - Kök öğe.
- * @param {Object.<string, Function>} clickListeners - Sınıf adına göre tıklama olay işleyicileri; referans yoluyla değiştirilebilir.
+ * @param {Object.<string, Function>} clickListeners - Sınıf adına göre tıklama olay işleyicileri; referans üzerinden değiştirilebilir.
  * @returns void
  */
 

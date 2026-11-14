@@ -18,6 +18,7 @@ Das Extension-Objekt besteht aus der folgenden Definition:
  * @property {Function} reRenderComment - Eine Referenz auf eine Funktion, die aufgerufen werden kann, um einen Kommentar neu zu rendern.
  * @property {Function} removeCommentAndReRender - Eine Referenz auf eine Funktion, die aufgerufen werden kann, um einen Kommentar aus dem Speicher zu entfernen und den entsprechenden Teil des DOM neu zu rendern.
  * @property {Function} newBroadcastId - Eine Referenz auf eine Funktion, die aufgerufen werden kann, um eine neue Broadcast-ID zu erstellen und sie zur lokalen Liste der zu ignorierenden Broadcast-IDs hinzuzufügen.
+ * @property {Function} [withSessionId] - Aufruf mit einer Request-URL und einem Callback. Ruft den Callback mit der URL plus der angehängten Session-ID des Betrachters auf, wenn Third-Party-Cookies blockiert werden (derselbe Pfad, den Kommentar- und Vote-Requests verwenden), andernfalls mit der unveränderten URL. Wird nicht für SSO verwendet.
  * @property {FastCommentsUIExtensionSetupEventHandlers} [setupEventHandlers]
  * @property {FastCommentsUIExtensionPrepareCommentForSavingCallback} [prepareCommentForSaving] - Wird mit dem Kommentar aufgerufen, der gerade gepostet werden soll. Gib false zurück, um das Absenden abzubrechen (z. B. wenn eine angehängte Umfrage unvollständig ist).
  * @property {FastCommentsUIExtensionNewCommentCallback} [newComment]
@@ -26,15 +27,15 @@ Das Extension-Objekt besteht aus der folgenden Definition:
  * @property {FastCommentsUIExtensionCommentTopFilter} [commentFilter] - Filtert HTML für jeden Kommentar vor dem Rendern.
  * @property {FastCommentsUIExtensionReplyAreaFilter} [commentMenuFilter] - Filtert HTML für das Menü jedes Kommentars vor dem Rendern.
  * @property {FastCommentsUIExtensionMenuFilter} [menuFilter] - Filtert HTML für das gesamte Widget beim Rendern.
- * @property {FastCommentsUIExtensionReplyAreaTop} [replyAreaTop] - (LEGACY) Gibt HTML zurück, das oben im Antwortbereich hinzugefügt wird.
- * @property {FastCommentsUIExtensionWidgetTopCallback} [widgetTop] - (LEGACY) Gibt HTML zurück, das oben am Widget hinzugefügt wird.
- * @property {FastCommentsUIExtensionCommentTopCallback} [commentTop] - (LEGACY) Gibt HTML zurück, das oben am Kommentar-Element hinzugefügt wird.
- * @property {FastCommentsUIExtensionCommentBottomCallback} [commentBottom] - (LEGACY) Gibt HTML zurück, das unten am Kommentar-Element hinzugefügt wird.
+ * @property {FastCommentsUIExtensionReplyAreaTop} [replyAreaTop] - (LEGACY) Gibt HTML zurück, das am oberen Rand des Antwortbereichs hinzugefügt wird.
+ * @property {FastCommentsUIExtensionWidgetTopCallback} [widgetTop] - (LEGACY) Gibt HTML zurück, das am oberen Rand des Widgets hinzugefügt wird.
+ * @property {FastCommentsUIExtensionCommentTopCallback} [commentTop] - (LEGACY) Gibt HTML zurück, das am oberen Rand des Kommentar-Elements hinzugefügt wird.
+ * @property {FastCommentsUIExtensionCommentBottomCallback} [commentBottom] - (LEGACY) Gibt HTML zurück, das am unteren Rand des Kommentar-Elements hinzugefügt wird.
  * @property {FastCommentsUIExtensionCommentBottomCallback} [commentContentBottom] - Gibt HTML zurück, das nach dem Kommentartext innerhalb des Inhalts-Elements des Kommentars hinzugefügt wird (von Umfragen verwendet).
- * @property {Function} [replyAreaInputBottom] - Gibt HTML zurück, das innerhalb des Kommentar-Eingaberahmens unterhalb des Texteingabefelds hinzugefügt wird (von Umfragen für den Inline-Umfrage-Editor verwendet). Erhält die ID des übergeordneten Kommentars oder null für das Antwortfeld auf der obersten Ebene.
+ * @property {Function} [replyAreaInputBottom] - Gibt HTML zurück, das innerhalb des Rahmens des Kommentar-Eingabefelds unterhalb der Texteingabe hinzugefügt wird (von Umfragen für den Inline-Umfrage-Editor verwendet). Erhält die ID des übergeordneten Kommentars oder null für das Antwortfeld auf der obersten Ebene.
  * @property {Function} [onPollUpdate] - Wird mit dem Live-Event aufgerufen, wenn sich die Stimmenzahlen einer Umfrage auf der Seite ändern.
  * @property {Function} isSiteAdmin - Gibt zurück, ob der Betrachter ein Admin oder Moderator des Tenants ist. Erst nach dem ersten Abruf bekannt.
- * @property {FastCommentsUIExtensionMenuBottomCallback} [menuBottom] - (LEGACY) Gibt HTML zurück, das unten am Menü-Element jedes Kommentars hinzugefügt wird.
+ * @property {FastCommentsUIExtensionMenuBottomCallback} [menuBottom] - (LEGACY) Gibt HTML zurück, das am unteren Rand des Menü-Elements für jeden Kommentar hinzugefügt wird.
  * @property {FastCommentsUIExtensionRenderCallback} [onRender]
  * @property {FastCommentsUIExtensionConnectionStatusCallback} [onLiveConnectionStatusUpdate]
  * @property {FastCommentsUIExtensionInitialRenderCallback} [onInitialRenderComplete]

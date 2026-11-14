@@ -1,40 +1,41 @@
-Το αντικείμενο επέκτασης αποτελείται από τον ακόλουθο ορισμό:
+Το αντικείμενο extension αποτελείται από τον παρακάτω ορισμό:
 
 <!-- if you want to update this, remember to update comment-ui-core -->
-[inline-code-attrs-start title = 'Αντικείμενο Επέκτασης JSDoc'; type = 'javascript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'JSDoc του αντικειμένου Extension'; type = 'javascript'; inline-code-attrs-end]
 [inline-code-start]
 /**
- * Το αντικείμενο επέκτασης FastCommentsUI. Χρησιμοποιείται για lazy-loading ορισμένων στοιχείων. Για παράδειγμα, το σύστημα αξιολογήσεων δεν
- * χρησιμοποιείται από όλους τους πελάτες, έτσι φορτώνουμε αυτήν την επέκταση μόνο όταν τη χρειαζόμαστε.
+ * Το αντικείμενο extension του FastCommentsUI. Χρησιμοποιείται για lazy-loading ορισμένων components. Για παράδειγμα, το σύστημα κριτικών δεν
+ * χρησιμοποιείται από όλους τους πελάτες, οπότε φορτώνουμε αυτό το extension μόνο όταν το χρειαζόμαστε.
  *
  * @typedef {Object} FastCommentsUIExtension
  * @property {string} id
  * @property {Element} scriptNode
- * @property {Element} root - Ο ριζικός κόμβος DOM του widget.
+ * @property {Element} root - Ο ριζικός DOM κόμβος του widget.
  * @property {string} [css]
- * @property {Object} config - Το αντικείμενο ρυθμίσεων FastComments.
- * @property {Object} commentsById - Μια αναφορά σε ένα αντικείμενο με όλα τα σχόλια κατά id, το οποίο διατηρείται ενημερωμένο.
- * @property {Object} translations - Μια αναφορά σε όλες τις μεταφράσεις.
- * @property {Function} reRenderComment - Μια αναφορά σε μια συνάρτηση που μπορεί να κληθεί για επανασχεδίαση ενός σχολίου.
- * @property {Function} removeCommentAndReRender - Μια αναφορά σε μια συνάρτηση που μπορεί να κληθεί για αφαίρεση ενός σχολίου από τη μνήμη και επανασχεδίαση του κατάλληλου τμήματος του DOM.
- * @property {Function} newBroadcastId - Μια αναφορά σε μια συνάρτηση που μπορεί να κληθεί για δημιουργία νέου broadcast id και προσθήκη του στη τοπική λίστα των broadcast ids προς παράβλεψη.
+ * @property {Object} config - Το αντικείμενο config του FastComments.
+ * @property {Object} commentsById - Αναφορά σε αντικείμενο με όλα τα σχόλια ανά id, το οποίο διατηρείται ενημερωμένο.
+ * @property {Object} translations - Αναφορά σε όλες τις μεταφράσεις.
+ * @property {Function} reRenderComment - Αναφορά σε συνάρτηση που μπορεί να κληθεί για να επανεμφανίσει ένα σχόλιο.
+ * @property {Function} removeCommentAndReRender - Αναφορά σε συνάρτηση που μπορεί να κληθεί για να αφαιρέσει ένα σχόλιο από τη μνήμη και να επανεμφανίσει το κατάλληλο τμήμα του DOM.
+ * @property {Function} newBroadcastId - Αναφορά σε συνάρτηση που μπορεί να κληθεί για να δημιουργήσει ένα νέο broadcast id και να το προσθέσει στην τοπική λίστα των broadcast ids προς αγνόηση.
+ * @property {Function} [withSessionId] - Καλείται με ένα URL αιτήματος και ένα callback. Καλεί το callback με το URL συν το session id του θεατή προσαρτημένο όταν τα third-party cookies είναι μπλοκαρισμένα (ίδια διαδρομή που χρησιμοποιούν τα αιτήματα σχολίων και ψήφων), ή το URL αμετάβλητο διαφορετικά. Δεν χρησιμοποιείται για SSO.
  * @property {FastCommentsUIExtensionSetupEventHandlers} [setupEventHandlers]
- * @property {FastCommentsUIExtensionPrepareCommentForSavingCallback} [prepareCommentForSaving] - Καλείται με το σχόλιο που πρόκειται να δημοσιευθεί. Επιστρέφει false για ακύρωση της υποβολής (π.χ. όταν μια συνημμένη δημοσκόπηση είναι ημιτελής).
+ * @property {FastCommentsUIExtensionPrepareCommentForSavingCallback} [prepareCommentForSaving] - Καλείται με το σχόλιο που πρόκειται να δημοσιευτεί. Επιστρέψτε false για να ακυρώσετε την υποβολή (για παράδειγμα όταν μια συνημμένη ψηφοφορία είναι ελλιπής).
  * @property {FastCommentsUIExtensionNewCommentCallback} [newComment]
  * @property {FastCommentsUIExtensionReplyAreaFilter} [replyAreaFilter] - Φιλτράρει το HTML για την περιοχή σχολίων.
- * @property {FastCommentsUIExtensionWidgetFilter} [widgetFilter] - Φιλτράρει το HTML για ολόκληρο το widget κατά την απόδοση.
- * @property {FastCommentsUIExtensionCommentTopFilter} [commentFilter] - Φιλτράρει το HTML για κάθε σχόλιο πριν την απόδοση.
- * @property {FastCommentsUIExtensionReplyAreaFilter} [commentMenuFilter] - Φιλτράρει το HTML για κάθε μενού σχολίου πριν την απόδοση.
- * @property {FastCommentsUIExtensionMenuFilter} [menuFilter] - Φιλτράρει το HTML για ολόκληρο το widget κατά την απόδοση.
- * @property {FastCommentsUIExtensionReplyAreaTop} [replyAreaTop] - (ΠΑΡΑΚΑΤΑΓΩΓΗ) Επιστρέφει HTML για προσθήκη στην κορυφή της περιοχής απαντήσεων.
- * @property {FastCommentsUIExtensionWidgetTopCallback} [widgetTop] - (ΠΑΡΑΚΑΤΑΓΩΓΗ) Επιστρέφει HTML για προσθήκη στην κορυφή του widget.
- * @property {FastCommentsUIExtensionCommentTopCallback} [commentTop] - (ΠΑΡΑΚΑΤΑΓΩΓΗ) Επιστρέφει HTML για προσθήκη στην κορυφή του στοιχείου σχολίου.
- * @property {FastCommentsUIExtensionCommentBottomCallback} [commentBottom] - (ΠΑΡΑΚΑΤΑΓΩΓΗ) Επιστρέφει HTML για προσθήκη στο κάτω μέρος του στοιχείου σχολίου.
- * @property {FastCommentsUIExtensionCommentBottomCallback} [commentContentBottom] - Επιστρέφει HTML για προσθήκη μετά το κείμενο του σχολίου, μέσα στο στοιχείο περιεχομένου σχολίου (χρησιμοποιείται από δημοσκοπήσεις).
- * @property {Function} [replyAreaInputBottom] - Επιστρέφει HTML για προσθήκη μέσα στο πλαίσιο εισαγωγής σχολίου, κάτω από το πεδίο κειμένου (χρησιμοποιείται από δημοσκοπήσεις για τον ενσωματωμένο επεξεργαστή δημοσκόπησης). Λαμβάνει το id του γονικού σχολίου ή null για το ριζικό πλαίσιο απάντησης.
- * @property {Function} [onPollUpdate] - Καλείται με το ζωντανό γεγονός όταν αλλάζουν οι μετρήσεις ψήφων μιας δημοσκόπησης στη σελίδα.
- * @property {Function} isSiteAdmin - Επιστρέφει αν ο θεατής είναι διαχειριστής ή συντονιστής του ενοικιαστή. Γνωρίζεται μετά το πρώτο fetch.
- * @property {FastCommentsUIExtensionMenuBottomCallback} [menuBottom] - (ΠΑΡΑΚΑΤΑΓΩΓΗ) Επιστρέφει HTML για προσθήκη στο κάτω μέρος του στοιχείου μενού για κάθε σχόλιο.
+ * @property {FastCommentsUIExtensionWidgetFilter} [widgetFilter] - Φιλτράρει το HTML για ολόκληρο το widget κατά την εμφάνιση.
+ * @property {FastCommentsUIExtensionCommentTopFilter} [commentFilter] - Φιλτράρει το HTML για κάθε σχόλιο πριν την εμφάνιση.
+ * @property {FastCommentsUIExtensionReplyAreaFilter} [commentMenuFilter] - Φιλτράρει το HTML για το μενού κάθε σχολίου πριν την εμφάνιση.
+ * @property {FastCommentsUIExtensionMenuFilter} [menuFilter] - Φιλτράρει το HTML για ολόκληρο το widget κατά την εμφάνιση.
+ * @property {FastCommentsUIExtensionReplyAreaTop} [replyAreaTop] - (LEGACY) Επιστρέφει HTML για προσθήκη στην κορυφή της περιοχής απάντησης.
+ * @property {FastCommentsUIExtensionWidgetTopCallback} [widgetTop] - (LEGACY) Επιστρέφει HTML για προσθήκη στην κορυφή του widget.
+ * @property {FastCommentsUIExtensionCommentTopCallback} [commentTop] - (LEGACY) Επιστρέφει HTML για προσθήκη στην κορυφή του στοιχείου σχολίου.
+ * @property {FastCommentsUIExtensionCommentBottomCallback} [commentBottom] - (LEGACY) Επιστρέφει HTML για προσθήκη στο τέλος του στοιχείου σχολίου.
+ * @property {FastCommentsUIExtensionCommentBottomCallback} [commentContentBottom] - Επιστρέφει HTML για προσθήκη μετά το κείμενο του σχολίου, μέσα στο στοιχείο περιεχομένου του σχολίου (χρησιμοποιείται από ψηφοφορίες).
+ * @property {Function} [replyAreaInputBottom] - Επιστρέφει HTML για προσθήκη μέσα στο πλαίσιο εισαγωγής σχολίου, κάτω από το πεδίο κειμένου (χρησιμοποιείται από ψηφοφορίες για τον επεξεργαστή ψηφοφορίας επί τόπου). Λαμβάνει το id του γονικού σχολίου, ή null για το κύριο πλαίσιο απάντησης.
+ * @property {Function} [onPollUpdate] - Καλείται με το live event όταν αλλάζουν οι μετρητές ψήφων μιας ψηφοφορίας στη σελίδα.
+ * @property {Function} isSiteAdmin - Επιστρέφει αν ο θεατής είναι διαχειριστής ή συντονιστής του tenant. Γίνεται γνωστό μετά το πρώτο fetch.
+ * @property {FastCommentsUIExtensionMenuBottomCallback} [menuBottom] - (LEGACY) Επιστρέφει HTML για προσθήκη στο τέλος του στοιχείου μενού για κάθε σχόλιο.
  * @property {FastCommentsUIExtensionRenderCallback} [onRender]
  * @property {FastCommentsUIExtensionConnectionStatusCallback} [onLiveConnectionStatusUpdate]
  * @property {FastCommentsUIExtensionInitialRenderCallback} [onInitialRenderComplete]
@@ -44,7 +45,7 @@
 /**
  * @callback FastCommentsUIExtensionSetupEventHandlers
  * @param {Element} element - Το ριζικό στοιχείο.
- * @param {Object.<string, Function>} clickListeners - Οι χειριστές συμβάντων για κλικ, κατά όνομα κλάσης, οι οποίοι μπορούν να τροποποιηθούν με αναφορά.
+ * @param {Object.<string, Function>} clickListeners - Οι handlers συμβάντων για κλικ, ανά όνομα κλάσης, οι οποίοι μπορούν να τροποποιηθούν κατ' αναφορά.
  * @returns void
  */
 

@@ -1,38 +1,40 @@
 Obiekt rozszerzenia składa się z następującej definicji:
 
-<!-- jeśli chcesz zaktualizować to, pamiętaj, aby zaktualizować comment-ui-core -->
-[inline-code-attrs-start title = 'Obiekt Rozszerzenia JSDoc'; type = 'javascript'; inline-code-attrs-end]
+<!-- if you want to update this, remember to update comment-ui-core -->
+[inline-code-attrs-start title = 'Dokumentacja JSDoc obiektu Extension'; type = 'javascript'; inline-code-attrs-end]
 [inline-code-start]
 /**
- * Obiekt rozszerzenia FastCommentsUI. Używany do leniwego ładowania niektórych komponentów. Na przykład system recenzji nie jest używany przez wszystkich klientów, więc ładujemy to rozszerzenie tylko wtedy, gdy jest potrzebne.
+ * Obiekt rozszerzenia FastCommentsUI. Używany do leniwego ładowania określonych komponentów. Na przykład system recenzji nie jest
+ * używany przez wszystkich klientów, więc ładujemy to rozszerzenie tylko wtedy, gdy jest potrzebne.
  *
  * @typedef {Object} FastCommentsUIExtension
  * @property {string} id
  * @property {Element} scriptNode
- * @property {Element} root - Główny węzeł DOM widżetu.
+ * @property {Element} root - Węzeł DOM będący korzeniem widżetu.
  * @property {string} [css]
  * @property {Object} config - Obiekt konfiguracyjny FastComments.
- * @property {Object} commentsById - Odniesienie do obiektu zawierającego wszystkie komentarze według identyfikatora, który jest na bieżąco aktualizowany.
- * @property {Object} translations - Odniesienie do wszystkich tłumaczeń.
- * @property {Function} reRenderComment - Odniesienie do funkcji, którą można wywołać, aby ponownie wyrenderować komentarz.
- * @property {Function} removeCommentAndReRender - Odniesienie do funkcji, którą można wywołać, aby usunąć komentarz z pamięci i ponownie wyrenderować odpowiednią część DOM.
- * @property {Function} newBroadcastId - Odniesienie do funkcji, którą można wywołać, aby utworzyć nowy identyfikator transmisji i dodać go do lokalnej listy identyfikatorów transmisji do ignorowania.
+ * @property {Object} commentsById - Referencja do obiektu zawierającego wszystkie komentarze według id, który jest na bieżąco aktualizowany.
+ * @property {Object} translations - Referencja do wszystkich tłumaczeń.
+ * @property {Function} reRenderComment - Referencja do funkcji, którą można wywołać w celu ponownego wyrenderowania komentarza.
+ * @property {Function} removeCommentAndReRender - Referencja do funkcji, którą można wywołać w celu usunięcia komentarza z pamięci i ponownego wyrenderowania odpowiedniej części DOM.
+ * @property {Function} newBroadcastId - Referencja do funkcji, którą można wywołać, aby utworzyć nowy broadcast id i dodać go do lokalnej listy broadcast id do zignorowania.
+ * @property {Function} [withSessionId] - Wywołaj z adresem URL żądania i funkcją zwrotną. Wywołuje funkcję zwrotną z adresem URL plus dołączonym identyfikatorem sesji widza, gdy ciasteczka stron trzecich są blokowane (ta sama ścieżka, której używają żądania komentarzy i głosowania), lub niezmienionym adresem URL w przeciwnym razie. Nieużywane dla SSO.
  * @property {FastCommentsUIExtensionSetupEventHandlers} [setupEventHandlers]
- * @property {FastCommentsUIExtensionPrepareCommentForSavingCallback} [prepareCommentForSaving] - Wywoływany z komentarzem, który ma zostać opublikowany. Zwróć false, aby anulować wysyłkę (na przykład gdy dołączona ankieta jest niekompletna).
+ * @property {FastCommentsUIExtensionPrepareCommentForSavingCallback} [prepareCommentForSaving] - Wywoływana z komentarzem, który ma zostać opublikowany. Zwróć false, aby anulować wysyłanie (na przykład gdy dołączona ankieta jest niekompletna).
  * @property {FastCommentsUIExtensionNewCommentCallback} [newComment]
- * @property {FastCommentsUIExtensionReplyAreaFilter} [replyAreaFilter] - Filtruje HTML dla obszaru komentarza.
+ * @property {FastCommentsUIExtensionReplyAreaFilter} [replyAreaFilter] - Filtruje HTML dla obszaru komentarzy.
  * @property {FastCommentsUIExtensionWidgetFilter} [widgetFilter] - Filtruje HTML dla całego widżetu podczas renderowania.
  * @property {FastCommentsUIExtensionCommentTopFilter} [commentFilter] - Filtruje HTML dla każdego komentarza przed renderowaniem.
- * @property {FastCommentsUIExtensionReplyAreaFilter} [commentMenuFilter] - Filtruje HTML dla każdego menu komentarza przed renderowaniem.
+ * @property {FastCommentsUIExtensionReplyAreaFilter} [commentMenuFilter] - Filtruje HTML dla menu każdego komentarza przed renderowaniem.
  * @property {FastCommentsUIExtensionMenuFilter} [menuFilter] - Filtruje HTML dla całego widżetu podczas renderowania.
  * @property {FastCommentsUIExtensionReplyAreaTop} [replyAreaTop] - (LEGACY) Zwraca HTML do dodania na górze obszaru odpowiedzi.
  * @property {FastCommentsUIExtensionWidgetTopCallback} [widgetTop] - (LEGACY) Zwraca HTML do dodania na górze widżetu.
  * @property {FastCommentsUIExtensionCommentTopCallback} [commentTop] - (LEGACY) Zwraca HTML do dodania na górze elementu komentarza.
  * @property {FastCommentsUIExtensionCommentBottomCallback} [commentBottom] - (LEGACY) Zwraca HTML do dodania na dole elementu komentarza.
- * @property {FastCommentsUIExtensionCommentBottomCallback} [commentContentBottom] - Zwraca HTML do dodania po tekście komentarza, wewnątrz elementu zawartości komentarza (używane w ankietach).
- * @property {Function} [replyAreaInputBottom] - Zwraca HTML do dodania wewnątrz ramki wprowadzania komentarza, pod polem tekstowym (używane w ankietach dla edytora ankiet w miejscu). Otrzymuje identyfikator komentarza nadrzędnego lub null dla głównego pola odpowiedzi.
- * @property {Function} [onPollUpdate] - Wywoływany przy zdarzeniu na żywo, gdy liczby głosów w ankiecie na stronie się zmieniają.
- * @property {Function} isSiteAdmin - Zwraca, czy oglądający jest administratorem lub moderatorem najemcy. Znane po pierwszym pobraniu.
+ * @property {FastCommentsUIExtensionCommentBottomCallback} [commentContentBottom] - Zwraca HTML do dodania po tekście komentarza, wewnątrz elementu treści komentarza (używane przez ankiety).
+ * @property {Function} [replyAreaInputBottom] - Zwraca HTML do dodania wewnątrz ramki pola komentarza, pod polem tekstowym (używane przez ankiety dla edytora ankiety w miejscu). Otrzymuje id komentarza nadrzędnego lub null dla głównego pola odpowiedzi.
+ * @property {Function} [onPollUpdate] - Wywoływana ze zdarzeniem live, gdy zmieniają się liczby głosów ankiety na stronie.
+ * @property {Function} isSiteAdmin - Zwraca informację, czy widz jest administratorem lub moderatorem dzierżawy. Znane po pierwszym pobraniu.
  * @property {FastCommentsUIExtensionMenuBottomCallback} [menuBottom] - (LEGACY) Zwraca HTML do dodania na dole elementu menu dla każdego komentarza.
  * @property {FastCommentsUIExtensionRenderCallback} [onRender]
  * @property {FastCommentsUIExtensionConnectionStatusCallback} [onLiveConnectionStatusUpdate]
@@ -42,8 +44,8 @@ Obiekt rozszerzenia składa się z następującej definicji:
    
 /**
  * @callback FastCommentsUIExtensionSetupEventHandlers
- * @param {Element} element - Główny element.
- * @param {Object.<string, Function>} clickListeners - Obsługa zdarzeń kliknięć, według nazwy klasy, które mogą być modyfikowane przez referencję.
+ * @param {Element} element - Element główny.
+ * @param {Object.<string, Function>} clickListeners - Obsługa zdarzeń kliknięć, według nazwy klasy, którą można modyfikować przez referencję.
  * @returns void
  */
 
