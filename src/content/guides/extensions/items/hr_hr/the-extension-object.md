@@ -1,16 +1,16 @@
 Objekt proširenja sastoji se od sljedeće definicije:
 
 <!-- if you want to update this, remember to update comment-ui-core -->
-[inline-code-attrs-start title = 'JSDoc dokumentacija objekta proširenja'; type = 'javascript'; inline-code-attrs-end]
+[inline-code-attrs-start title = 'JSDoc dokumentacija objekta Extension'; type = 'javascript'; inline-code-attrs-end]
 [inline-code-start]
 /**
  * Objekt proširenja FastCommentsUI. Koristi se za lazy-loading određenih komponenti. Na primjer, sustav recenzija ne
- * koriste svi korisnici, pa taj extension učitavamo samo kada nam treba.
+ * koriste svi kupci, pa taj extension učitavamo samo kada nam treba.
  *
  * @typedef {Object} FastCommentsUIExtension
  * @property {string} id
  * @property {Element} scriptNode
- * @property {Element} root - Root DOM čvor widgeta.
+ * @property {Element} root - Korijenski DOM čvor widgeta.
  * @property {string} [css]
  * @property {Object} config - FastComments config objekt.
  * @property {Object} commentsById - Referenca na objekt sa svim komentarima po id-u, koji se stalno ažurira.
@@ -18,9 +18,10 @@ Objekt proširenja sastoji se od sljedeće definicije:
  * @property {Function} reRenderComment - Referenca na funkciju koja se može pozvati za ponovno renderiranje komentara.
  * @property {Function} removeCommentAndReRender - Referenca na funkciju koja se može pozvati za uklanjanje komentara iz memorije i ponovno renderiranje odgovarajućeg dijela DOM-a.
  * @property {Function} newBroadcastId - Referenca na funkciju koja se može pozvati za stvaranje novog broadcast id-a i dodavanje u lokalni popis broadcast id-ova koje treba ignorirati.
- * @property {Function} [withSessionId] - Poziva se s URL-om zahtjeva i callback funkcijom. Poziva callback s URL-om plus dodanim session id-om gledatelja kada su third-party kolačići blokirani (isti put koji koriste zahtjevi za komentare i glasovanje), ili s nepromijenjenim URL-om inače. Ne koristi se za SSO.
+ * @property {Function} [withSessionId] - Poziva se s URL-om zahtjeva i callback funkcijom. Poziva callback s URL-om plus viewerovim session id-om dodanim kada su third-party kolačići blokirani (isti put koji koriste zahtjevi za komentare i glasove), ili s nepromijenjenim URL-om inače. Kada session id nije na taj način dostupan, dodaje zadnji anonimni session id dan funkciji rememberAnonSessionId, ako postoji. Ne koristi se za SSO.
+ * @property {Function} [rememberAnonSessionId] - Poziva se s anonSessionId koji je odgovor vratio. Server ga vraća samo gostu čiji zahtjev nije imao session kolačić, i nikada za prijavljenu sesiju. Čuva se u localStorage (ili u memoriji kada pohrana nije dostupna) tako da withSessionId šalje id u kasnijim zahtjevima i gost zadržava jedan identitet.
  * @property {FastCommentsUIExtensionSetupEventHandlers} [setupEventHandlers]
- * @property {FastCommentsUIExtensionPrepareCommentForSavingCallback} [prepareCommentForSaving] - Poziva se s komentarom koji se sprema objaviti. Vratite false za otkazivanje slanja (na primjer kada je priložena anketa nepotpuna).
+ * @property {FastCommentsUIExtensionPrepareCommentForSavingCallback} [prepareCommentForSaving] - Poziva se s komentarom koji će biti objavljen. Vratite false za otkazivanje slanja (na primjer kada je priložena anketa nepotpuna).
  * @property {FastCommentsUIExtensionNewCommentCallback} [newComment]
  * @property {FastCommentsUIExtensionReplyAreaFilter} [replyAreaFilter] - Filtrira HTML za područje komentara.
  * @property {FastCommentsUIExtensionWidgetFilter} [widgetFilter] - Filtrira HTML za cijeli widget prilikom renderiranja.
@@ -31,10 +32,10 @@ Objekt proširenja sastoji se od sljedeće definicije:
  * @property {FastCommentsUIExtensionWidgetTopCallback} [widgetTop] - (LEGACY) Vraća HTML koji se dodaje na vrh widgeta.
  * @property {FastCommentsUIExtensionCommentTopCallback} [commentTop] - (LEGACY) Vraća HTML koji se dodaje na vrh elementa komentara.
  * @property {FastCommentsUIExtensionCommentBottomCallback} [commentBottom] - (LEGACY) Vraća HTML koji se dodaje na dno elementa komentara.
- * @property {FastCommentsUIExtensionCommentBottomCallback} [commentContentBottom] - Vraća HTML koji se dodaje nakon teksta komentara, unutar elementa sadržaja komentara (koriste se ankete).
- * @property {Function} [replyAreaInputBottom] - Vraća HTML koji se dodaje unutar okvira za unos komentara, ispod polja za unos teksta (koriste se ankete za uređivač ankete na mjestu). Prima id nadređenog komentara ili null za glavni okvir za odgovor.
+ * @property {FastCommentsUIExtensionCommentBottomCallback} [commentContentBottom] - Vraća HTML koji se dodaje nakon teksta komentara, unutar elementa sadržaja komentara (koriste se u anketama).
+ * @property {Function} [replyAreaInputBottom] - Vraća HTML koji se dodaje unutar okvira za unos komentara, ispod polja za unos teksta (koriste se u anketama za uređivač ankete na mjestu). Prima id roditeljskog komentara ili null za glavni okvir za odgovor.
  * @property {Function} [onPollUpdate] - Poziva se s live eventom kada se promijene brojevi glasova ankete na stranici.
- * @property {Function} isSiteAdmin - Vraća je li gledatelj admin ili moderator tenant-a. Poznato nakon prvog dohvaćanja.
+ * @property {Function} isSiteAdmin - Vraća je li gledatelj admin ili moderator tenant-a. Poznato nakon prvog dohvata.
  * @property {FastCommentsUIExtensionMenuBottomCallback} [menuBottom] - (LEGACY) Vraća HTML koji se dodaje na dno elementa izbornika za svaki komentar.
  * @property {FastCommentsUIExtensionRenderCallback} [onRender]
  * @property {FastCommentsUIExtensionConnectionStatusCallback} [onLiveConnectionStatusUpdate]
@@ -44,8 +45,8 @@ Objekt proširenja sastoji se od sljedeće definicije:
    
 /**
  * @callback FastCommentsUIExtensionSetupEventHandlers
- * @param {Element} element - Root element.
- * @param {Object.<string, Function>} clickListeners - Event handleri za klikove, po nazivu klase, koje je moguće mijenjati po referenci.
+ * @param {Element} element - Korijenski element.
+ * @param {Object.<string, Function>} clickListeners - Rukovatelji događajima za klikove, po nazivu klase, koje se mogu mijenjati po referenci.
  * @returns void
  */
 

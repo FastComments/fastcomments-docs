@@ -1,7 +1,7 @@
 एक्सटेंशन ऑब्जेक्ट निम्नलिखित परिभाषा से मिलकर बना है:
 
-<!-- यदि आप इसे अपडेट करना चाहते हैं, तो comment-ui-core को अपडेट करना न भूलें -->
-[inline-code-attrs-start title = 'Extension Object JSDoc'; type = 'javascript'; inline-code-attrs-end]
+<!-- if you want to update this, remember to update comment-ui-core -->
+[inline-code-attrs-start title = 'एक्सटेंशन ऑब्जेक्ट JSDoc'; type = 'javascript'; inline-code-attrs-end]
 [inline-code-start]
 /**
  * FastCommentsUI एक्सटेंशन ऑब्जेक्ट। कुछ कंपोनेंट्स को lazy-load करने के लिए उपयोग किया जाता है। उदाहरण के लिए, रिव्यू सिस्टम सभी
@@ -13,12 +13,13 @@
  * @property {Element} root - विजेट का रूट DOM नोड।
  * @property {string} [css]
  * @property {Object} config - FastComments कॉन्फ़िग ऑब्जेक्ट।
- * @property {Object} commentsById - आईडी के अनुसार सभी कमेंट्स वाले ऑब्जेक्ट का संदर्भ, जो अपडेट रखा जाता है।
+ * @property {Object} commentsById - id द्वारा सभी कमेंट्स वाले ऑब्जेक्ट का संदर्भ, जो अपडेट रखा जाता है।
  * @property {Object} translations - सभी अनुवादों का संदर्भ।
- * @property {Function} reRenderComment - एक फ़ंक्शन का संदर्भ जिसे किसी कमेंट को फिर से रेंडर करने के लिए कॉल किया जा सकता है।
- * @property {Function} removeCommentAndReRender - एक फ़ंक्शन का संदर्भ जिसे किसी कमेंट को मेमोरी से हटाने और DOM के उपयुक्त भाग को फिर से रेंडर करने के लिए कॉल किया जा सकता है।
- * @property {Function} newBroadcastId - एक फ़ंक्शन का संदर्भ जिसे नया broadcast id बनाने और उसे अनदेखा करने के लिए स्थानीय broadcast ids की सूची में जोड़ने के लिए कॉल किया जा सकता है।
- * @property {Function} [withSessionId] - एक रिक्वेस्ट URL और एक कॉलबैक के साथ कॉल करें। जब थर्ड-पार्टी कुकीज़ ब्लॉक हों (वही पाथ जो कमेंट और वोट रिक्वेस्ट उपयोग करते हैं) तो URL के साथ व्यूअर की session id जोड़कर कॉलबैक को इनवोक करता है, अन्यथा URL अपरिवर्तित रहता है। SSO के लिए उपयोग नहीं किया जाता।
+ * @property {Function} reRenderComment - एक फ़ंक्शन का संदर्भ जिसे किसी कमेंट को फिर से रेंडर करने के लिए इनवोक किया जा सकता है।
+ * @property {Function} removeCommentAndReRender - एक फ़ंक्शन का संदर्भ जिसे किसी कमेंट को मेमोरी से हटाने और DOM के उपयुक्त हिस्से को फिर से रेंडर करने के लिए इनवोक किया जा सकता है।
+ * @property {Function} newBroadcastId - एक फ़ंक्शन का संदर्भ जिसे नया broadcast id बनाने और उसे अनदेखा करने के लिए लोकल broadcast ids की सूची में जोड़ने के लिए इनवोक किया जा सकता है।
+ * @property {Function} [withSessionId] - एक request URL और एक callback के साथ कॉल करें। जब थर्ड-पार्टी कुकीज़ ब्लॉक हों (वही पाथ जो कमेंट और वोट रिक्वेस्ट उपयोग करते हैं) तो callback को URL के साथ व्यूअर की session id जोड़कर इनवोक करता है, अन्यथा URL अपरिवर्तित रहता है। जब उस तरह कोई session id उपलब्ध न हो, तो rememberAnonSessionId को दी गई अंतिम anonymous session id जोड़ता है, यदि कोई हो। SSO के लिए उपयोग नहीं होता।
+ * @property {Function} [rememberAnonSessionId] - किसी response द्वारा लौटाए गए anonSessionId के साथ कॉल करें। सर्वर इसे केवल उस गेस्ट को लौटाता है जिसकी request में कोई session cookie नहीं थी, और लॉग इन सेशन के लिए कभी नहीं। इसे localStorage में रखा जाता है (या स्टोरेज अनुपलब्ध होने पर मेमोरी में) ताकि withSessionId बाद की requests में इसे भेजे और गेस्ट की एक ही पहचान बनी रहे।
  * @property {FastCommentsUIExtensionSetupEventHandlers} [setupEventHandlers]
  * @property {FastCommentsUIExtensionPrepareCommentForSavingCallback} [prepareCommentForSaving] - पोस्ट होने वाले कमेंट के साथ कॉल किया जाता है। सबमिट रद्द करने के लिए false लौटाएं (उदाहरण के लिए जब जुड़ा पोल अधूरा हो)।
  * @property {FastCommentsUIExtensionNewCommentCallback} [newComment]
@@ -32,9 +33,9 @@
  * @property {FastCommentsUIExtensionCommentTopCallback} [commentTop] - (LEGACY) कमेंट एलिमेंट के शीर्ष पर जोड़ने के लिए HTML लौटाएं।
  * @property {FastCommentsUIExtensionCommentBottomCallback} [commentBottom] - (LEGACY) कमेंट एलिमेंट के निचले भाग पर जोड़ने के लिए HTML लौटाएं।
  * @property {FastCommentsUIExtensionCommentBottomCallback} [commentContentBottom] - कमेंट टेक्स्ट के बाद, कमेंट कंटेंट एलिमेंट के अंदर जोड़ने के लिए HTML लौटाएं (पोल्स द्वारा उपयोग किया जाता है)।
- * @property {Function} [replyAreaInputBottom] - कमेंट इनपुट फ्रेम के अंदर, टेक्स्ट इनपुट के नीचे जोड़ने के लिए HTML लौटाएं (इन-प्लेस पोल एडिटर के लिए पोल्स द्वारा उपयोग किया जाता है)। पैरेंट कमेंट आईडी प्राप्त करता है, या रूट रिप्लाई बॉक्स के लिए null।
+ * @property {Function} [replyAreaInputBottom] - कमेंट इनपुट फ्रेम के अंदर, टेक्स्ट इनपुट के नीचे जोड़ने के लिए HTML लौटाएं (पोल्स द्वारा इन-प्लेस पोल एडिटर के लिए उपयोग किया जाता है)। पैरेंट कमेंट id प्राप्त करता है, या रूट रिप्लाई बॉक्स के लिए null।
  * @property {Function} [onPollUpdate] - पेज पर किसी पोल के वोट काउंट बदलने पर लाइव इवेंट के साथ कॉल किया जाता है।
- * @property {Function} isSiteAdmin - लौटाता है कि व्यूअर टेनेंट का एडमिन या मॉडरेटर है या नहीं। पहली फ़ेच के बाद ज्ञात होता है।
+ * @property {Function} isSiteAdmin - लौटाता है कि व्यूअर टेनेंट का एडमिन या मॉडरेटर है या नहीं। पहली fetch के बाद ज्ञात होता है।
  * @property {FastCommentsUIExtensionMenuBottomCallback} [menuBottom] - (LEGACY) प्रत्येक कमेंट के लिए मेनू एलिमेंट के निचले भाग पर जोड़ने के लिए HTML लौटाएं।
  * @property {FastCommentsUIExtensionRenderCallback} [onRender]
  * @property {FastCommentsUIExtensionConnectionStatusCallback} [onLiveConnectionStatusUpdate]
@@ -45,7 +46,7 @@
 /**
  * @callback FastCommentsUIExtensionSetupEventHandlers
  * @param {Element} element - रूट एलिमेंट।
- * @param {Object.<string, Function>} clickListeners - क्लिक के लिए इवेंट हैंडलर, क्लास नाम के अनुसार, जिन्हें संदर्भ द्वारा संशोधित किया जा सकता है।
+ * @param {Object.<string, Function>} clickListeners - क्लिक के लिए इवेंट हैंडलर, क्लास नाम द्वारा, जिन्हें संदर्भ द्वारा संशोधित किया जा सकता है।
  * @returns void
  */
 

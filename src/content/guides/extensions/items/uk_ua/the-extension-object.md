@@ -4,8 +4,8 @@
 [inline-code-attrs-start title = 'JSDoc об\'єкта розширення'; type = 'javascript'; inline-code-attrs-end]
 [inline-code-start]
 /**
- * Об'єкт розширення FastCommentsUI. Використовується для лінивої загрузки певних компонентів. Наприклад, система відгуків
- * використовується не всіма клієнтами, тому ми завантажуємо це розширення лише тоді, коли воно потрібне.
+ * Об'єкт розширення FastCommentsUI. Використовується для лінивого завантаження певних компонентів. Наприклад, систему відгуків
+ * використовують не всі клієнти, тому ми завантажуємо це розширення лише тоді, коли воно потрібне.
  *
  * @typedef {Object} FastCommentsUIExtension
  * @property {string} id
@@ -18,24 +18,25 @@
  * @property {Function} reRenderComment - Посилання на функцію, яку можна викликати для повторного рендерингу коментаря.
  * @property {Function} removeCommentAndReRender - Посилання на функцію, яку можна викликати, щоб видалити коментар з пам'яті та повторно відрендерити відповідну частину DOM.
  * @property {Function} newBroadcastId - Посилання на функцію, яку можна викликати, щоб створити новий broadcast id і додати його до локального списку broadcast id, які слід ігнорувати.
- * @property {Function} [withSessionId] - Викликається з URL запиту та callback-функцією. Викликає callback з URL, до якого додано id сесії глядача, коли сторонні cookie заблоковані (той самий шлях, який використовують запити коментарів і голосувань), або з незміненим URL в іншому випадку. Не використовується для SSO.
+ * @property {Function} [withSessionId] - Викликається з URL запиту та колбеком. Викликає колбек з URL, до якого додано ідентифікатор сесії глядача, коли сторонні cookie заблоковані (той самий шлях, який використовують запити коментарів і голосів), або з незміненим URL в іншому випадку. Коли ідентифікатор сесії таким чином недоступний, додає останній анонімний ідентифікатор сесії, переданий до rememberAnonSessionId, якщо він є. Не використовується для SSO.
+ * @property {Function} [rememberAnonSessionId] - Викликається з anonSessionId, який повернула відповідь. Сервер повертає його лише гостю, чий запит не містив cookie сесії, і ніколи для авторизованої сесії. Він зберігається в localStorage (або в пам'яті, коли сховище недоступне), щоб withSessionId надсилав його в наступних запитах і гість зберігав одну ідентичність.
  * @property {FastCommentsUIExtensionSetupEventHandlers} [setupEventHandlers]
- * @property {FastCommentsUIExtensionPrepareCommentForSavingCallback} [prepareCommentForSaving] - Викликається з коментарем, який готується до публікації. Поверніть false, щоб скасувати відправку (наприклад, коли прикріплене опитування є неповним).
+ * @property {FastCommentsUIExtensionPrepareCommentForSavingCallback} [prepareCommentForSaving] - Викликається з коментарем, який готується до публікації. Поверніть false, щоб скасувати надсилання (наприклад, коли прикріплене опитування не завершене).
  * @property {FastCommentsUIExtensionNewCommentCallback} [newComment]
- * @property {FastCommentsUIExtensionReplyAreaFilter} [replyAreaFilter] - Фільтрує HTML для області коментарів.
- * @property {FastCommentsUIExtensionWidgetFilter} [widgetFilter] - Фільтрує HTML для всього віджета під час рендерингу.
- * @property {FastCommentsUIExtensionCommentTopFilter} [commentFilter] - Фільтрує HTML для кожного коментаря перед рендерингом.
- * @property {FastCommentsUIExtensionReplyAreaFilter} [commentMenuFilter] - Фільтрує HTML для меню кожного коментаря перед рендерингом.
- * @property {FastCommentsUIExtensionMenuFilter} [menuFilter] - Фільтрує HTML для всього віджета під час рендерингу.
+ * @property {FastCommentsUIExtensionReplyAreaFilter} [replyAreaFilter] - Фільтр HTML для області коментарів.
+ * @property {FastCommentsUIExtensionWidgetFilter} [widgetFilter] - Фільтр HTML для всього віджета під час рендерингу.
+ * @property {FastCommentsUIExtensionCommentTopFilter} [commentFilter] - Фільтр HTML для кожного коментаря перед рендерингом.
+ * @property {FastCommentsUIExtensionReplyAreaFilter} [commentMenuFilter] - Фільтр HTML для меню кожного коментаря перед рендерингом.
+ * @property {FastCommentsUIExtensionMenuFilter} [menuFilter] - Фільтр HTML для всього віджета під час рендерингу.
  * @property {FastCommentsUIExtensionReplyAreaTop} [replyAreaTop] - (LEGACY) Повертає HTML, який додається у верхню частину області відповіді.
  * @property {FastCommentsUIExtensionWidgetTopCallback} [widgetTop] - (LEGACY) Повертає HTML, який додається у верхню частину віджета.
  * @property {FastCommentsUIExtensionCommentTopCallback} [commentTop] - (LEGACY) Повертає HTML, який додається у верхню частину елемента коментаря.
- * @property {FastCommentsUIExtensionCommentBottomCallback} [commentBottom] - (LEGACY) Повертає HTML, який додається у нижню частину елемента коментаря.
+ * @property {FastCommentsUIExtensionCommentBottomCallback} [commentBottom] - (LEGACY) Повертає HTML, який додається в нижню частину елемента коментаря.
  * @property {FastCommentsUIExtensionCommentBottomCallback} [commentContentBottom] - Повертає HTML, який додається після тексту коментаря, всередині елемента вмісту коментаря (використовується опитуваннями).
  * @property {Function} [replyAreaInputBottom] - Повертає HTML, який додається всередині рамки поля коментаря, під текстовим полем (використовується опитуваннями для вбудованого редактора опитувань). Отримує id батьківського коментаря або null для кореневого поля відповіді.
- * @property {Function} [onPollUpdate] - Викликається з live-подією, коли змінюється кількість голосів в опитуванні на сторінці.
+ * @property {Function} [onPollUpdate] - Викликається з live-подією, коли змінюються кількості голосів опитування на сторінці.
  * @property {Function} isSiteAdmin - Повертає, чи є глядач адміністратором або модератором орендаря. Відомо після першого запиту.
- * @property {FastCommentsUIExtensionMenuBottomCallback} [menuBottom] - (LEGACY) Повертає HTML, який додається у нижню частину елемента меню для кожного коментаря.
+ * @property {FastCommentsUIExtensionMenuBottomCallback} [menuBottom] - (LEGACY) Повертає HTML, який додається в нижню частину елемента меню для кожного коментаря.
  * @property {FastCommentsUIExtensionRenderCallback} [onRender]
  * @property {FastCommentsUIExtensionConnectionStatusCallback} [onLiveConnectionStatusUpdate]
  * @property {FastCommentsUIExtensionInitialRenderCallback} [onInitialRenderComplete]

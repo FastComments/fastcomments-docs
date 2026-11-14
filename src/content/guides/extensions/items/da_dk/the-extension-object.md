@@ -1,16 +1,16 @@
 Udvidelsesobjektet består af følgende definition:
 
-<!-- hvis du vil opdatere denne, så husk at opdatere comment-ui-core -->
+<!-- if you want to update this, remember to update comment-ui-core -->
 [inline-code-attrs-start title = 'Extension Object JSDoc'; type = 'javascript'; inline-code-attrs-end]
 [inline-code-start]
 /**
- * FastCommentsUI-udvidelsesobjektet. Bruges til lazy-loading af visse komponenter. For eksempel bruger ikke alle
- * kunder anmeldessystemet, så vi indlæser kun den udvidelse, når vi har brug for den.
+ * FastCommentsUI-udvidelsesobjektet. Bruges til lazy-loading af bestemte komponenter. For eksempel bruges anmeldelsessystemet
+ * ikke af alle kunder, så vi indlæser kun den udvidelse, når vi har brug for den.
  *
  * @typedef {Object} FastCommentsUIExtension
  * @property {string} id
  * @property {Element} scriptNode
- * @property {Element} root - Widgettens rod-DOM-node.
+ * @property {Element} root - Widgetens rod-DOM-node.
  * @property {string} [css]
  * @property {Object} config - FastComments config-objektet.
  * @property {Object} commentsById - En reference til et objekt med alle kommentarer efter id, som holdes opdateret.
@@ -18,23 +18,25 @@ Udvidelsesobjektet består af følgende definition:
  * @property {Function} reRenderComment - En reference til en funktion, der kan kaldes for at re-rendere en kommentar.
  * @property {Function} removeCommentAndReRender - En reference til en funktion, der kan kaldes for at fjerne en kommentar fra hukommelsen og re-rendere den relevante del af DOM'en.
  * @property {Function} newBroadcastId - En reference til en funktion, der kan kaldes for at oprette et nyt broadcast-id og tilføje det til den lokale liste over broadcast-id'er, der skal ignoreres.
- * @property {Function} [withSessionId] - Kald med en request-URL og et callback. Kalder callbacket med URL'en plus seerens session-id tilføjet, når tredjepartscookies er blokeret (samme sti som kommentar- og vote-requests bruger), ellers uændret URL. Bruges ikke til SSO.
+ * @property {Function} [withSessionId] - Kald med en request-URL og et callback. Kalder callbacket med URL'en plus seerens session-id tilføjet, når tredjepartscookies er blokeret (samme sti som kommentar- og stemme-requests bruger), ellers uændret URL. Når der ikke er noget session-id tilgængeligt på den måde, tilføjes det anonyme session-id, der sidst blev givet til rememberAnonSessionId, hvis der er et. Bruges ikke til SSO.
+ * @property {Function} [rememberAnonSessionId] - Kald med det anonSessionId, som et svar returnerede. Serveren returnerer kun ét til en gæst, hvis request ikke havde nogen session-cookie, og aldrig for en logget ind-session. Det gemmes i localStorage (eller i hukommelsen, når lager ikke er tilgængeligt), så withSessionId sender det ved senere requests, og gæsten beholder én identitet.
  * @property {FastCommentsUIExtensionSetupEventHandlers} [setupEventHandlers]
- * @property {FastCommentsUIExtensionPrepareCommentForSavingCallback} [prepareCommentForSaving] - Kaldes med kommentaren, der er ved at blive sendt. Returner false for at annullere afsendelsen (f.eks. når en vedhæftet afstemning er ufuldstændig).
+ * @property {FastCommentsUIExtensionPrepareCommentForSavingCallback} [prepareCommentForSaving] - Kaldes med kommentaren, der er ved at blive sendt. Returner false for at annullere indsendelsen (f.eks. når en vedhæftet afstemning er ufuldstændig).
  * @property {FastCommentsUIExtensionNewCommentCallback} [newComment]
  * @property {FastCommentsUIExtensionReplyAreaFilter} [replyAreaFilter] - Filtrerer HTML for kommentarområdet.
- * @property {FastCommentsUIExtensionWidgetFilter} [widgetFilter] - Filtrerer HTML for hele widgetten ved render.
+ * @property {FastCommentsUIExtensionWidgetFilter} [widgetFilter] - Filtrerer HTML for hele widgeten ved render.
  * @property {FastCommentsUIExtensionCommentTopFilter} [commentFilter] - Filtrerer HTML for hver kommentar før render.
  * @property {FastCommentsUIExtensionReplyAreaFilter} [commentMenuFilter] - Filtrerer HTML for hver kommentarmenu før render.
- * @property {FastCommentsUIExtensionMenuFilter} [menuFilter] - Filtrerer HTML for hele widgetten ved render.
- * @property {FastCommentsUIExtensionWidgetTopCallback} [widgetTop] - (LEGACY) Returner HTML, der skal tilføjes i toppen af widgetten.
- * @property {FastCommentsUIExtensionCommentTopCallback} [commentTop] - (LEGACY) Returner HTML, der skal tilføjes i toppen af kommentarelementet.
- * @property {FastCommentsUIExtensionCommentBottomCallback} [commentBottom] - (LEGACY) Returner HTML, der skal tilføjes i bunden af kommentarelementet.
- * @property {FastCommentsUIExtensionCommentBottomCallback} [commentContentBottom] - Returner HTML, der skal tilføjes efter kommentarteksten, inde i kommentarens indholdselement (bruges af afstemninger).
- * @property {Function} [replyAreaInputBottom] - Returner HTML, der skal tilføjes inde i kommentarens inputramme, under tekstinputtet (bruges af afstemninger til den indbyggede afstemningseditor). Modtager den overordnede kommentars id, eller null for roden svarboks.
- * @property {Function} [onPollUpdate] - Kaldes med live-eventet, når stemmetallene for en afstemning på siden ændrer sig.
+ * @property {FastCommentsUIExtensionMenuFilter} [menuFilter] - Filtrerer HTML for hele widgeten ved render.
+ * @property {FastCommentsUIExtensionReplyAreaTop} [replyAreaTop] - (LEGACY) Returnerer HTML, der skal tilføjes i toppen af svarområdet.
+ * @property {FastCommentsUIExtensionWidgetTopCallback} [widgetTop] - (LEGACY) Returnerer HTML, der skal tilføjes i toppen af widgeten.
+ * @property {FastCommentsUIExtensionCommentTopCallback} [commentTop] - (LEGACY) Returnerer HTML, der skal tilføjes i toppen af kommentarelementet.
+ * @property {FastCommentsUIExtensionCommentBottomCallback} [commentBottom] - (LEGACY) Returnerer HTML, der skal tilføjes i bunden af kommentarelementet.
+ * @property {FastCommentsUIExtensionCommentBottomCallback} [commentContentBottom] - Returnerer HTML, der skal tilføjes efter kommentarteksten, inde i kommentarens indholdselement (bruges af afstemninger).
+ * @property {Function} [replyAreaInputBottom] - Returnerer HTML, der skal tilføjes inde i kommentarinputrammen, under tekstinputtet (bruges af afstemninger til den indbyggede afstemningseditor). Modtager forældrekommentarens id eller null for roden af svarboksen.
+ * @property {Function} [onPollUpdate] - Kaldes med live-eventet, når stemmetallene for en afstemning på siden ændres.
  * @property {Function} isSiteAdmin - Returnerer, om seeren er admin eller moderator for tenanten. Kendes efter det første fetch.
- * @property {FastCommentsUIExtensionMenuBottomCallback} [menuBottom] - (LEGACY) Returner HTML, der skal tilføjes i bunden af menuelementet for hver kommentar.
+ * @property {FastCommentsUIExtensionMenuBottomCallback} [menuBottom] - (LEGACY) Returnerer HTML, der skal tilføjes i bunden af menuelementet for hver kommentar.
  * @property {FastCommentsUIExtensionRenderCallback} [onRender]
  * @property {FastCommentsUIExtensionConnectionStatusCallback} [onLiveConnectionStatusUpdate]
  * @property {FastCommentsUIExtensionInitialRenderCallback} [onInitialRenderComplete]
@@ -43,8 +45,8 @@ Udvidelsesobjektet består af følgende definition:
    
 /**
  * @callback FastCommentsUIExtensionSetupEventHandlers
- * @param {Element} element - Rod-elementet.
- * @param {Object.<string, Function>} clickListeners - Eventhandlerne for klik, efter klassenavn, som kan ændres ved reference.
+ * @param {Element} element - rodelementet.
+ * @param {Object.<string, Function>} clickListeners - Eventhandlers for klik, efter klassenavn, som kan ændres ved reference.
  * @returns void
  */
 

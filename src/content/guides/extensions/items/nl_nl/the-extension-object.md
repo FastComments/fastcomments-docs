@@ -1,11 +1,11 @@
-Het extension-object bestaat uit de volgende definitie:
+Het extension object bestaat uit de volgende definitie:
 
 <!-- if you want to update this, remember to update comment-ui-core -->
 [inline-code-attrs-start title = 'Extension Object JSDoc'; type = 'javascript'; inline-code-attrs-end]
 [inline-code-start]
 /**
- * Het FastCommentsUI extension-object. Wordt gebruikt voor het lazy-loaden van bepaalde componenten. Het reviewsysteem wordt bijvoorbeeld
- * niet door alle klanten gebruikt, dus we laden die extensie alleen wanneer we die nodig hebben.
+ * Het FastCommentsUI extension object. Wordt gebruikt voor het lazy-loaden van bepaalde componenten. Het reviewsysteem wordt bijvoorbeeld
+ * niet door alle klanten gebruikt, dus we laden die extensie alleen wanneer we deze nodig hebben.
  *
  * @typedef {Object} FastCommentsUIExtension
  * @property {string} id
@@ -17,10 +17,11 @@ Het extension-object bestaat uit de volgende definitie:
  * @property {Object} translations - Een verwijzing naar alle vertalingen.
  * @property {Function} reRenderComment - Een verwijzing naar een functie die kan worden aangeroepen om een reactie opnieuw te renderen.
  * @property {Function} removeCommentAndReRender - Een verwijzing naar een functie die kan worden aangeroepen om een reactie uit het geheugen te verwijderen en het juiste deel van de DOM opnieuw te renderen.
- * @property {Function} newBroadcastId - Een verwijzing naar een functie die kan worden aangeroepen om een nieuwe broadcast-id aan te maken en deze toe te voegen aan de lokale lijst met broadcast-ids die genegeerd moeten worden.
- * @property {Function} [withSessionId] - Aanroepen met een request-URL en een callback. Roept de callback aan met de URL plus de sessie-id van de kijker toegevoegd wanneer third-party cookies worden geblokkeerd (zelfde pad dat commentaar- en stemverzoeken gebruiken), of de URL ongewijzigd anders. Niet gebruikt voor SSO.
+ * @property {Function} newBroadcastId - Een verwijzing naar een functie die kan worden aangeroepen om een nieuwe broadcast id aan te maken en toe te voegen aan de lokale lijst met broadcast ids die genegeerd moeten worden.
+ * @property {Function} [withSessionId] - Aanroepen met een request-URL en een callback. Roept de callback aan met de URL plus de sessie-id van de kijker toegevoegd wanneer cookies van derden worden geblokkeerd (zelfde pad als comment- en vote-requests), of met de URL ongewijzigd anders. Wanneer er op die manier geen sessie-id beschikbaar is, wordt de anonieme sessie-id toegevoegd die als laatste aan rememberAnonSessionId is doorgegeven, indien aanwezig. Niet gebruikt voor SSO.
+ * @property {Function} [rememberAnonSessionId] - Aanroepen met de anonSessionId die een response heeft teruggegeven. De server geeft er slechts één terug aan een gast waarvan het verzoek geen sessiecookie had, en nooit voor een ingelogde sessie. Deze wordt bewaard in localStorage (of in het geheugen wanneer opslag niet beschikbaar is), zodat withSessionId deze bij latere verzoeken meestuurt en de gast één identiteit behoudt.
  * @property {FastCommentsUIExtensionSetupEventHandlers} [setupEventHandlers]
- * @property {FastCommentsUIExtensionPrepareCommentForSavingCallback} [prepareCommentForSaving] - Aangeroepen met de reactie die op het punt staat geplaatst te worden. Geef false terug om het verzenden te annuleren (bijvoorbeeld wanneer een bijgevoegde poll onvolledig is).
+ * @property {FastCommentsUIExtensionPrepareCommentForSavingCallback} [prepareCommentForSaving] - Wordt aangeroepen met de reactie die geplaatst gaat worden. Geef false terug om het verzenden te annuleren (bijvoorbeeld wanneer een bijgevoegde poll onvolledig is).
  * @property {FastCommentsUIExtensionNewCommentCallback} [newComment]
  * @property {FastCommentsUIExtensionReplyAreaFilter} [replyAreaFilter] - Filtert HTML voor het reactiegebied.
  * @property {FastCommentsUIExtensionWidgetFilter} [widgetFilter] - Filtert HTML voor de hele widget bij het renderen.
@@ -32,9 +33,9 @@ Het extension-object bestaat uit de volgende definitie:
  * @property {FastCommentsUIExtensionCommentTopCallback} [commentTop] - (LEGACY) Geef HTML terug om bovenaan het reactie-element toe te voegen.
  * @property {FastCommentsUIExtensionCommentBottomCallback} [commentBottom] - (LEGACY) Geef HTML terug om onderaan het reactie-element toe te voegen.
  * @property {FastCommentsUIExtensionCommentBottomCallback} [commentContentBottom] - Geef HTML terug om na de reactietekst toe te voegen, binnen het content-element van de reactie (gebruikt door polls).
- * @property {Function} [replyAreaInputBottom] - Geef HTML terug om binnen het invoerkader van de reactie toe te voegen, onder het tekstinvoerveld (gebruikt door polls voor de poll-editor op zijn plek). Ontvangt de id van de bovenliggende reactie, of null voor het hoofdreactievak.
- * @property {Function} [onPollUpdate] - Aangeroepen met het live-event wanneer de stemaantallen van een poll op de pagina veranderen.
- * @property {Function} isSiteAdmin - Geeft terug of de kijker een admin of moderator is van de tenant. Bekend na de eerste fetch.
+ * @property {Function} [replyAreaInputBottom] - Geef HTML terug om binnen het invoerkader van de reactie toe te voegen, onder de tekstinvoer (gebruikt door polls voor de poll-editor op zijn plek). Ontvangt de id van de bovenliggende reactie, of null voor het hoofdreactievak.
+ * @property {Function} [onPollUpdate] - Wordt aangeroepen met het live event wanneer de stemtellingen van een poll op de pagina veranderen.
+ * @property {Function} isSiteAdmin - Geeft terug of de kijker een admin of moderator van de tenant is. Bekend na de eerste fetch.
  * @property {FastCommentsUIExtensionMenuBottomCallback} [menuBottom] - (LEGACY) Geef HTML terug om onderaan het menu-element van elke reactie toe te voegen.
  * @property {FastCommentsUIExtensionRenderCallback} [onRender]
  * @property {FastCommentsUIExtensionConnectionStatusCallback} [onLiveConnectionStatusUpdate]
@@ -45,7 +46,7 @@ Het extension-object bestaat uit de volgende definitie:
 /**
  * @callback FastCommentsUIExtensionSetupEventHandlers
  * @param {Element} element - Het root-element.
- * @param {Object.<string, Function>} clickListeners - De event-handlers voor klikken, op klassenaam, die via referentie gewijzigd kunnen worden.
+ * @param {Object.<string, Function>} clickListeners - De event handlers voor klikken, op klassenaam, die by reference gewijzigd kunnen worden.
  * @returns void
  */
 

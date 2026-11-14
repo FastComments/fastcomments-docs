@@ -4,7 +4,7 @@
 [inline-code-attrs-start title = 'JSDoc объекта расширения'; type = 'javascript'; inline-code-attrs-end]
 [inline-code-start]
 /**
- * Объект расширения FastCommentsUI. Используется для ленивой загрузки определённых компонентов. Например, система отзывов
+ * Объект расширения FastCommentsUI. Используется для ленивой загрузки отдельных компонентов. Например, система отзывов
  * используется не всеми клиентами, поэтому мы загружаем это расширение только тогда, когда оно нужно.
  *
  * @typedef {Object} FastCommentsUIExtension
@@ -13,29 +13,30 @@
  * @property {Element} root - Корневой DOM-узел виджета.
  * @property {string} [css]
  * @property {Object} config - Объект конфигурации FastComments.
- * @property {Object} commentsById - Ссылка на объект со всеми комментариями по id, который постоянно обновляется.
+ * @property {Object} commentsById - Ссылка на объект со всеми комментариями по id, который постоянно актуализируется.
  * @property {Object} translations - Ссылка на все переводы.
- * @property {Function} reRenderComment - Ссылка на функцию, которую можно вызвать для повторного рендера комментария.
- * @property {Function} removeCommentAndReRender - Ссылка на функцию, которую можно вызвать для удаления комментария из памяти и повторного рендера соответствующей части DOM.
- * @property {Function} newBroadcastId - Ссылка на функцию, которую можно вызвать для создания нового broadcast id и добавления его в локальный список broadcast id для игнорирования.
- * @property {Function} [withSessionId] - Вызывается с URL запроса и колбэком. Вызывает колбэк с URL, к которому добавлен id сессии зрителя, когда сторонние cookie заблокированы (тот же путь, что используют запросы комментариев и голосования), либо с неизменённым URL в противном случае. Не используется для SSO.
+ * @property {Function} reRenderComment - Ссылка на функцию, которую можно вызвать для повторного рендеринга комментария.
+ * @property {Function} removeCommentAndReRender - Ссылка на функцию, которую можно вызвать для удаления комментария из памяти и повторного рендеринга соответствующей части DOM.
+ * @property {Function} newBroadcastId - Ссылка на функцию, которую можно вызвать для создания нового broadcast id и добавления его в локальный список broadcast id, которые нужно игнорировать.
+ * @property {Function} [withSessionId] - Вызывается с URL запроса и колбэком. Вызывает колбэк с URL, к которому добавлен id сессии зрителя, когда сторонние cookie заблокированы (тот же путь, что используют запросы комментариев и голосования), либо с неизменённым URL в противном случае. Если id сессии таким способом недоступен, добавляет последний переданный в rememberAnonSessionId анонимный id сессии, если он есть. Не используется для SSO.
+ * @property {Function} [rememberAnonSessionId] - Вызывается с anonSessionId, который вернул ответ. Сервер возвращает его только гостю, чей запрос не содержал cookie сессии, и никогда для авторизованной сессии. Он сохраняется в localStorage (или в памяти, если хранилище недоступно), чтобы withSessionId отправлял его в последующих запросах и гость сохранял одну идентичность.
  * @property {FastCommentsUIExtensionSetupEventHandlers} [setupEventHandlers]
- * @property {FastCommentsUIExtensionPrepareCommentForSavingCallback} [prepareCommentForSaving] - Вызывается с комментарием, который собирается быть отправлен. Верните false, чтобы отменить отправку (например, когда прикреплённый опрос не заполнен).
+ * @property {FastCommentsUIExtensionPrepareCommentForSavingCallback} [prepareCommentForSaving] - Вызывается с комментарием, который собирается быть отправленным. Верните false, чтобы отменить отправку (например, когда прикреплённый опрос не заполнен).
  * @property {FastCommentsUIExtensionNewCommentCallback} [newComment]
  * @property {FastCommentsUIExtensionReplyAreaFilter} [replyAreaFilter] - Фильтр HTML для области комментариев.
- * @property {FastCommentsUIExtensionWidgetFilter} [widgetFilter] - Фильтр HTML для всего виджета при рендере.
- * @property {FastCommentsUIExtensionCommentTopFilter} [commentFilter] - Фильтр HTML для каждого комментария перед рендером.
- * @property {FastCommentsUIExtensionReplyAreaFilter} [commentMenuFilter] - Фильтр HTML для меню каждого комментария перед рендером.
- * @property {FastCommentsUIExtensionMenuFilter} [menuFilter] - Фильтр HTML для всего виджета при рендере.
- * @property {FastCommentsUIExtensionReplyAreaTop} [replyAreaTop] - (УСТАРЕВШЕЕ) Возвращает HTML для добавления в верхнюю часть области ответов.
- * @property {FastCommentsUIExtensionWidgetTopCallback} [widgetTop] - (УСТАРЕВШЕЕ) Возвращает HTML для добавления в верхнюю часть виджета.
- * @property {FastCommentsUIExtensionCommentTopCallback} [commentTop] - (УСТАРЕВШЕЕ) Возвращает HTML для добавления в верхнюю часть элемента комментария.
- * @property {FastCommentsUIExtensionCommentBottomCallback} [commentBottom] - (УСТАРЕВШЕЕ) Возвращает HTML для добавления в нижнюю часть элемента комментария.
+ * @property {FastCommentsUIExtensionWidgetFilter} [widgetFilter] - Фильтр HTML для всего виджета при рендеринге.
+ * @property {FastCommentsUIExtensionCommentTopFilter} [commentFilter] - Фильтр HTML для каждого комментария перед рендерингом.
+ * @property {FastCommentsUIExtensionReplyAreaFilter} [commentMenuFilter] - Фильтр HTML для меню каждого комментария перед рендерингом.
+ * @property {FastCommentsUIExtensionMenuFilter} [menuFilter] - Фильтр HTML для всего виджета при рендеринге.
+ * @property {FastCommentsUIExtensionReplyAreaTop} [replyAreaTop] - (УСТАРЕЛО) Возвращает HTML для добавления в верхнюю часть области ответов.
+ * @property {FastCommentsUIExtensionWidgetTopCallback} [widgetTop] - (УСТАРЕЛО) Возвращает HTML для добавления в верхнюю часть виджета.
+ * @property {FastCommentsUIExtensionCommentTopCallback} [commentTop] - (УСТАРЕЛО) Возвращает HTML для добавления в верхнюю часть элемента комментария.
+ * @property {FastCommentsUIExtensionCommentBottomCallback} [commentBottom] - (УСТАРЕЛО) Возвращает HTML для добавления в нижнюю часть элемента комментария.
  * @property {FastCommentsUIExtensionCommentBottomCallback} [commentContentBottom] - Возвращает HTML для добавления после текста комментария, внутри элемента содержимого комментария (используется опросами).
  * @property {Function} [replyAreaInputBottom] - Возвращает HTML для добавления внутри рамки ввода комментария, под текстовым полем (используется опросами для встроенного редактора опроса). Получает id родительского комментария или null для корневого поля ответа.
- * @property {Function} [onPollUpdate] - Вызывается с событием в реальном времени, когда изменяются счётчики голосов опроса на странице.
+ * @property {Function} [onPollUpdate] - Вызывается с событием в реальном времени, когда меняются счётчики голосов опроса на странице.
  * @property {Function} isSiteAdmin - Возвращает, является ли зритель администратором или модератором тенанта. Известно после первого запроса данных.
- * @property {FastCommentsUIExtensionMenuBottomCallback} [menuBottom] - (УСТАРЕВШЕЕ) Возвращает HTML для добавления в нижнюю часть элемента меню для каждого комментария.
+ * @property {FastCommentsUIExtensionMenuBottomCallback} [menuBottom] - (УСТАРЕЛО) Возвращает HTML для добавления в нижнюю часть элемента меню для каждого комментария.
  * @property {FastCommentsUIExtensionRenderCallback} [onRender]
  * @property {FastCommentsUIExtensionConnectionStatusCallback} [onLiveConnectionStatusUpdate]
  * @property {FastCommentsUIExtensionInitialRenderCallback} [onInitialRenderComplete]

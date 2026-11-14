@@ -1,11 +1,11 @@
 L'objet extension est constitué de la définition suivante :
 
-<!-- si vous souhaitez le mettre à jour, pensez à mettre à jour comment-ui-core -->
+<!-- if you want to update this, remember to update comment-ui-core -->
 [inline-code-attrs-start title = 'JSDoc de l\'objet Extension'; type = 'javascript'; inline-code-attrs-end]
 [inline-code-start]
 /**
- * L'objet extension de FastCommentsUI. Utilisé pour le chargement différé de certains composants. Par exemple, le système d'avis n'est pas
- * utilisé par tous les clients, nous ne chargeons donc cette extension que lorsque nous en avons besoin.
+ * L'objet extension FastCommentsUI. Utilisé pour le chargement différé de certains composants. Par exemple, le système d'avis n'est pas
+ * utilisé par tous les clients, donc nous ne chargeons cette extension que lorsque nous en avons besoin.
  *
  * @typedef {Object} FastCommentsUIExtension
  * @property {string} id
@@ -18,11 +18,12 @@ L'objet extension est constitué de la définition suivante :
  * @property {Function} reRenderComment - Une référence vers une fonction qui peut être invoquée pour re-rendre un commentaire.
  * @property {Function} removeCommentAndReRender - Une référence vers une fonction qui peut être invoquée pour supprimer un commentaire de la mémoire et re-rendre la partie appropriée du DOM.
  * @property {Function} newBroadcastId - Une référence vers une fonction qui peut être invoquée pour créer un nouvel identifiant de diffusion et l'ajouter à la liste locale des identifiants de diffusion à ignorer.
- * @property {Function} [withSessionId] - Appelé avec une URL de requête et un callback. Invoque le callback avec l'URL plus l'identifiant de session du visiteur ajouté lorsque les cookies tiers sont bloqués (même chemin que les requêtes de commentaire et de vote), ou l'URL inchangée sinon. Non utilisé pour le SSO.
+ * @property {Function} [withSessionId] - À appeler avec une URL de requête et un callback. Invoque le callback avec l'URL plus l'identifiant de session du visiteur ajouté lorsque les cookies tiers sont bloqués (même chemin que les requêtes de commentaire et de vote), ou l'URL inchangée sinon. Lorsqu'aucun identifiant de session n'est disponible de cette manière, ajoute le dernier identifiant de session anonyme donné à rememberAnonSessionId, le cas échéant. Non utilisé pour le SSO.
+ * @property {Function} [rememberAnonSessionId] - À appeler avec l'anonSessionId renvoyé par une réponse. Le serveur n'en renvoie un qu'à un invité dont la requête n'avait pas de cookie de session, et jamais pour une session connectée. Il est conservé dans localStorage (ou en mémoire lorsque le stockage est indisponible) afin que withSessionId l'envoie lors des requêtes suivantes et que l'invité conserve une seule identité.
  * @property {FastCommentsUIExtensionSetupEventHandlers} [setupEventHandlers]
- * @property {FastCommentsUIExtensionPrepareCommentForSavingCallback} [prepareCommentForSaving] - Appelé avec le commentaire sur le point d'être publié. Retourner false pour annuler l'envoi (par exemple lorsqu'un sondage joint est incomplet).
+ * @property {FastCommentsUIExtensionPrepareCommentForSavingCallback} [prepareCommentForSaving] - Appelé avec le commentaire sur le point d'être publié. Retourner false pour annuler la soumission (par exemple lorsqu'un sondage joint est incomplet).
  * @property {FastCommentsUIExtensionNewCommentCallback} [newComment]
- * @property {FastCommentsUIExtensionReplyAreaFilter} [replyAreaFilter] - Filtre le HTML de la zone de commentaires.
+ * @property {FastCommentsUIExtensionReplyAreaFilter} [replyAreaFilter] - Filtre le HTML de la zone de commentaire.
  * @property {FastCommentsUIExtensionWidgetFilter} [widgetFilter] - Filtre le HTML de l'ensemble du widget lors du rendu.
  * @property {FastCommentsUIExtensionCommentTopFilter} [commentFilter] - Filtre le HTML de chaque commentaire avant le rendu.
  * @property {FastCommentsUIExtensionReplyAreaFilter} [commentMenuFilter] - Filtre le HTML du menu de chaque commentaire avant le rendu.
