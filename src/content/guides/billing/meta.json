@@ -1,0 +1,31 @@
+{
+  "name": "Billing",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Credits",
+      "file": "credits.md",
+      "subCat": "Credits"
+    },
+    {
+      "name": "Adding Credit",
+      "file": "adding-credit.md",
+      "subCat": "Credits"
+    },
+    {
+      "name": "How Credit Is Applied",
+      "file": "how-credit-is-applied.md",
+      "subCat": "Credits"
+    },
+    {
+      "name": "Past Top-ups",
+      "file": "past-top-ups.md",
+      "subCat": "Credits"
+    },
+    {
+      "name": "Accounts That Cannot Add Credit",
+      "file": "accounts-that-cannot-add-credit.md",
+      "subCat": "Credits"
+    }
+  ]
+}
