@@ -1,0 +1,31 @@
+{
+  "name": "Facturación",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Créditos",
+      "file": "credits.md",
+      "subCat": "Créditos"
+    },
+    {
+      "name": "Añadir crédito",
+      "file": "adding-credit.md",
+      "subCat": "Créditos"
+    },
+    {
+      "name": "Cómo se aplica el crédito",
+      "file": "how-credit-is-applied.md",
+      "subCat": "Créditos"
+    },
+    {
+      "name": "Recargas anteriores",
+      "file": "past-top-ups.md",
+      "subCat": "Créditos"
+    },
+    {
+      "name": "Cuentas que no pueden añadir crédito",
+      "file": "accounts-that-cannot-add-credit.md",
+      "subCat": "Créditos"
+    }
+  ]
+}

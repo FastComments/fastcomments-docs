@@ -1,0 +1,31 @@
+{
+  "name": "Наплата",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Кредити",
+      "file": "credits.md",
+      "subCat": "Кредити"
+    },
+    {
+      "name": "Додавање кредита",
+      "file": "adding-credit.md",
+      "subCat": "Кредити"
+    },
+    {
+      "name": "Како се кредит примењује",
+      "file": "how-credit-is-applied.md",
+      "subCat": "Кредити"
+    },
+    {
+      "name": "Претходне доплате",
+      "file": "past-top-ups.md",
+      "subCat": "Кредити"
+    },
+    {
+      "name": "Налози који не могу да додају кредит",
+      "file": "accounts-that-cannot-add-credit.md",
+      "subCat": "Кредити"
+    }
+  ]
+}

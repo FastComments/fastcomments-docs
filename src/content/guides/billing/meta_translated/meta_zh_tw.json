@@ -1,0 +1,31 @@
+{
+  "name": "帳單",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "點數",
+      "file": "credits.md",
+      "subCat": "點數"
+    },
+    {
+      "name": "儲值點數",
+      "file": "adding-credit.md",
+      "subCat": "點數"
+    },
+    {
+      "name": "點數如何套用",
+      "file": "how-credit-is-applied.md",
+      "subCat": "點數"
+    },
+    {
+      "name": "過往儲值紀錄",
+      "file": "past-top-ups.md",
+      "subCat": "點數"
+    },
+    {
+      "name": "無法儲值點數的帳戶",
+      "file": "accounts-that-cannot-add-credit.md",
+      "subCat": "點數"
+    }
+  ]
+}

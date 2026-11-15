@@ -1,0 +1,31 @@
+{
+  "name": "Zaračunavanje",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Krediti",
+      "file": "credits.md",
+      "subCat": "Krediti"
+    },
+    {
+      "name": "Dodajanje kredita",
+      "file": "adding-credit.md",
+      "subCat": "Krediti"
+    },
+    {
+      "name": "Kako se kredit uporabi",
+      "file": "how-credit-is-applied.md",
+      "subCat": "Krediti"
+    },
+    {
+      "name": "Pretekli polog",
+      "file": "past-top-ups.md",
+      "subCat": "Krediti"
+    },
+    {
+      "name": "Računi, ki ne morejo dodati kredita",
+      "file": "accounts-that-cannot-add-credit.md",
+      "subCat": "Krediti"
+    }
+  ]
+}

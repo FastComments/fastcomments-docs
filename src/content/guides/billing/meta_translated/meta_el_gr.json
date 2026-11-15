@@ -1,0 +1,31 @@
+{
+  "name": "Χρέωση",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Πιστώσεις",
+      "file": "credits.md",
+      "subCat": "Πιστώσεις"
+    },
+    {
+      "name": "Προσθήκη Πίστωσης",
+      "file": "adding-credit.md",
+      "subCat": "Πιστώσεις"
+    },
+    {
+      "name": "Πώς Εφαρμόζεται η Πίστωση",
+      "file": "how-credit-is-applied.md",
+      "subCat": "Πιστώσεις"
+    },
+    {
+      "name": "Προηγούμενες Επαναφορές",
+      "file": "past-top-ups.md",
+      "subCat": "Πιστώσεις"
+    },
+    {
+      "name": "Λογαριασμοί που Δεν Μπορούν να Προσθέσουν Πίστωση",
+      "file": "accounts-that-cannot-add-credit.md",
+      "subCat": "Πιστώσεις"
+    }
+  ]
+}

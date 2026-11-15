@@ -1,0 +1,31 @@
+{
+  "name": "Виставлення рахунків",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Кредити",
+      "file": "credits.md",
+      "subCat": "Кредити"
+    },
+    {
+      "name": "Додавання кредиту",
+      "file": "adding-credit.md",
+      "subCat": "Кредити"
+    },
+    {
+      "name": "Як застосовується кредит",
+      "file": "how-credit-is-applied.md",
+      "subCat": "Кредити"
+    },
+    {
+      "name": "Попередні поповнення",
+      "file": "past-top-ups.md",
+      "subCat": "Кредити"
+    },
+    {
+      "name": "Облікові записи, які не можуть додавати кредит",
+      "file": "accounts-that-cannot-add-credit.md",
+      "subCat": "Кредити"
+    }
+  ]
+}

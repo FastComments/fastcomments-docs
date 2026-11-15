@@ -1,0 +1,31 @@
+{
+  "name": "Facturering",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Credits",
+      "file": "credits.md",
+      "subCat": "Credits"
+    },
+    {
+      "name": "Credit toevoegen",
+      "file": "adding-credit.md",
+      "subCat": "Credits"
+    },
+    {
+      "name": "Hoe credit wordt toegepast",
+      "file": "how-credit-is-applied.md",
+      "subCat": "Credits"
+    },
+    {
+      "name": "Eerdere opwaarderingen",
+      "file": "past-top-ups.md",
+      "subCat": "Credits"
+    },
+    {
+      "name": "Accounts die geen credit kunnen toevoegen",
+      "file": "accounts-that-cannot-add-credit.md",
+      "subCat": "Credits"
+    }
+  ]
+}

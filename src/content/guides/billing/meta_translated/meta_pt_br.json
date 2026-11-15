@@ -1,0 +1,31 @@
+{
+  "name": "Faturamento",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Créditos",
+      "file": "credits.md",
+      "subCat": "Créditos"
+    },
+    {
+      "name": "Adicionando Crédito",
+      "file": "adding-credit.md",
+      "subCat": "Créditos"
+    },
+    {
+      "name": "Como o Crédito é Aplicado",
+      "file": "how-credit-is-applied.md",
+      "subCat": "Créditos"
+    },
+    {
+      "name": "Recargas Anteriores",
+      "file": "past-top-ups.md",
+      "subCat": "Créditos"
+    },
+    {
+      "name": "Contas Que Não Podem Adicionar Crédito",
+      "file": "accounts-that-cannot-add-credit.md",
+      "subCat": "Créditos"
+    }
+  ]
+}

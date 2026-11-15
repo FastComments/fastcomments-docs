@@ -1,0 +1,31 @@
+{
+  "name": "請求",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "クレジット",
+      "file": "credits.md",
+      "subCat": "クレジット"
+    },
+    {
+      "name": "クレジットの追加",
+      "file": "adding-credit.md",
+      "subCat": "クレジット"
+    },
+    {
+      "name": "クレジットの適用方法",
+      "file": "how-credit-is-applied.md",
+      "subCat": "クレジット"
+    },
+    {
+      "name": "過去のチャージ履歴",
+      "file": "past-top-ups.md",
+      "subCat": "クレジット"
+    },
+    {
+      "name": "クレジットを追加できないアカウント",
+      "file": "accounts-that-cannot-add-credit.md",
+      "subCat": "クレジット"
+    }
+  ]
+}

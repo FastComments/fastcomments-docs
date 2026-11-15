@@ -1,0 +1,31 @@
+{
+  "name": "Fatturazione",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Credito",
+      "file": "credits.md",
+      "subCat": "Credito"
+    },
+    {
+      "name": "Aggiunta di credito",
+      "file": "adding-credit.md",
+      "subCat": "Credito"
+    },
+    {
+      "name": "Come viene applicato il credito",
+      "file": "how-credit-is-applied.md",
+      "subCat": "Credito"
+    },
+    {
+      "name": "Ricariche passate",
+      "file": "past-top-ups.md",
+      "subCat": "Credito"
+    },
+    {
+      "name": "Account che non possono aggiungere credito",
+      "file": "accounts-that-cannot-add-credit.md",
+      "subCat": "Credito"
+    }
+  ]
+}

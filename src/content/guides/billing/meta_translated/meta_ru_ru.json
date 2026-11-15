@@ -1,0 +1,31 @@
+{
+  "name": "Биллинг",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Кредиты",
+      "file": "credits.md",
+      "subCat": "Кредиты"
+    },
+    {
+      "name": "Пополнение кредита",
+      "file": "adding-credit.md",
+      "subCat": "Кредиты"
+    },
+    {
+      "name": "Как применяется кредит",
+      "file": "how-credit-is-applied.md",
+      "subCat": "Кредиты"
+    },
+    {
+      "name": "Прошлые пополнения",
+      "file": "past-top-ups.md",
+      "subCat": "Кредиты"
+    },
+    {
+      "name": "Аккаунты, которые не могут пополнить кредит",
+      "file": "accounts-that-cannot-add-credit.md",
+      "subCat": "Кредиты"
+    }
+  ]
+}

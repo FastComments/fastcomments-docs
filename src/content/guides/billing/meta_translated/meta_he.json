@@ -1,0 +1,31 @@
+{
+  "name": "חיוב",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "קרדיטים",
+      "file": "credits.md",
+      "subCat": "קרדיטים"
+    },
+    {
+      "name": "הוספת קרדיט",
+      "file": "adding-credit.md",
+      "subCat": "קרדיטים"
+    },
+    {
+      "name": "כיצד מוחל קרדיט",
+      "file": "how-credit-is-applied.md",
+      "subCat": "קרדיטים"
+    },
+    {
+      "name": "טעינות קודמות",
+      "file": "past-top-ups.md",
+      "subCat": "קרדיטים"
+    },
+    {
+      "name": "חשבונות שאינם יכולים להוסיף קרדיט",
+      "file": "accounts-that-cannot-add-credit.md",
+      "subCat": "קרדיטים"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "name": "बिलिंग",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "क्रेडिट",
+      "file": "credits.md",
+      "subCat": "क्रेडिट"
+    },
+    {
+      "name": "क्रेडिट जोड़ना",
+      "file": "adding-credit.md",
+      "subCat": "क्रेडिट"
+    },
+    {
+      "name": "क्रेडिट कैसे लागू होता है",
+      "file": "how-credit-is-applied.md",
+      "subCat": "क्रेडिट"
+    },
+    {
+      "name": "पिछले टॉप-अप",
+      "file": "past-top-ups.md",
+      "subCat": "क्रेडिट"
+    },
+    {
+      "name": "वे खाते जो क्रेडिट नहीं जोड़ सकते",
+      "file": "accounts-that-cannot-add-credit.md",
+      "subCat": "क्रेडिट"
+    }
+  ]
+}

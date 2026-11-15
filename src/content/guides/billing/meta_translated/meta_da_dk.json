@@ -1,0 +1,31 @@
+{
+  "name": "Fakturering",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Kredit",
+      "file": "credits.md",
+      "subCat": "Kredit"
+    },
+    {
+      "name": "Tilføjelse af kredit",
+      "file": "adding-credit.md",
+      "subCat": "Kredit"
+    },
+    {
+      "name": "Sådan anvendes kredit",
+      "file": "how-credit-is-applied.md",
+      "subCat": "Kredit"
+    },
+    {
+      "name": "Tidligere indbetalinger",
+      "file": "past-top-ups.md",
+      "subCat": "Kredit"
+    },
+    {
+      "name": "Konti der ikke kan tilføje kredit",
+      "file": "accounts-that-cannot-add-credit.md",
+      "subCat": "Kredit"
+    }
+  ]
+}

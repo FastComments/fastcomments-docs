@@ -1,0 +1,31 @@
+{
+  "name": "Faturalandırma",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Krediler",
+      "file": "credits.md",
+      "subCat": "Krediler"
+    },
+    {
+      "name": "Kredi Ekleme",
+      "file": "adding-credit.md",
+      "subCat": "Krediler"
+    },
+    {
+      "name": "Kredi Nasıl Uygulanır",
+      "file": "how-credit-is-applied.md",
+      "subCat": "Krediler"
+    },
+    {
+      "name": "Geçmiş Yüklemeler",
+      "file": "past-top-ups.md",
+      "subCat": "Krediler"
+    },
+    {
+      "name": "Kredi Ekleyemeyen Hesaplar",
+      "file": "accounts-that-cannot-add-credit.md",
+      "subCat": "Krediler"
+    }
+  ]
+}

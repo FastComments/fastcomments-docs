@@ -1,0 +1,31 @@
+{
+  "name": "账单",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "积分",
+      "file": "credits.md",
+      "subCat": "积分"
+    },
+    {
+      "name": "充值积分",
+      "file": "adding-credit.md",
+      "subCat": "积分"
+    },
+    {
+      "name": "积分如何抵扣",
+      "file": "how-credit-is-applied.md",
+      "subCat": "积分"
+    },
+    {
+      "name": "历史充值记录",
+      "file": "past-top-ups.md",
+      "subCat": "积分"
+    },
+    {
+      "name": "无法充值的账户",
+      "file": "accounts-that-cannot-add-credit.md",
+      "subCat": "积分"
+    }
+  ]
+}

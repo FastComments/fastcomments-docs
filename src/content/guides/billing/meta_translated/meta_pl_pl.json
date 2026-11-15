@@ -1,0 +1,31 @@
+{
+  "name": "Rozliczenia",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Kredyty",
+      "file": "credits.md",
+      "subCat": "Kredyty"
+    },
+    {
+      "name": "Dodawanie kredytu",
+      "file": "adding-credit.md",
+      "subCat": "Kredyty"
+    },
+    {
+      "name": "Jak stosowany jest kredyt",
+      "file": "how-credit-is-applied.md",
+      "subCat": "Kredyty"
+    },
+    {
+      "name": "Poprzednie doładowania",
+      "file": "past-top-ups.md",
+      "subCat": "Kredyty"
+    },
+    {
+      "name": "Konta, które nie mogą dodawać kredytu",
+      "file": "accounts-that-cannot-add-credit.md",
+      "subCat": "Kredyty"
+    }
+  ]
+}

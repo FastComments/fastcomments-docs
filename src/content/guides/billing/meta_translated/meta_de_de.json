@@ -1,0 +1,31 @@
+{
+  "name": "Abrechnung",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Guthaben",
+      "file": "credits.md",
+      "subCat": "Guthaben"
+    },
+    {
+      "name": "Guthaben hinzufügen",
+      "file": "adding-credit.md",
+      "subCat": "Guthaben"
+    },
+    {
+      "name": "Wie Guthaben angewendet wird",
+      "file": "how-credit-is-applied.md",
+      "subCat": "Guthaben"
+    },
+    {
+      "name": "Frühere Aufladungen",
+      "file": "past-top-ups.md",
+      "subCat": "Guthaben"
+    },
+    {
+      "name": "Konten, die kein Guthaben hinzufügen können",
+      "file": "accounts-that-cannot-add-credit.md",
+      "subCat": "Guthaben"
+    }
+  ]
+}

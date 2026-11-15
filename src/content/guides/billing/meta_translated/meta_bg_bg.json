@@ -1,0 +1,31 @@
+{
+  "name": "Фактуриране",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "Кредити",
+      "file": "credits.md",
+      "subCat": "Кредити"
+    },
+    {
+      "name": "Добавяне на кредит",
+      "file": "adding-credit.md",
+      "subCat": "Кредити"
+    },
+    {
+      "name": "Как се прилага кредитът",
+      "file": "how-credit-is-applied.md",
+      "subCat": "Кредити"
+    },
+    {
+      "name": "Минали допълвания",
+      "file": "past-top-ups.md",
+      "subCat": "Кредити"
+    },
+    {
+      "name": "Акаунти, които не могат да добавят кредит",
+      "file": "accounts-that-cannot-add-credit.md",
+      "subCat": "Кредити"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "name": "결제",
+  "icon": "feature.png",
+  "itemsOrdered": [
+    {
+      "name": "크레딧",
+      "file": "credits.md",
+      "subCat": "크레딧"
+    },
+    {
+      "name": "크레딧 추가하기",
+      "file": "adding-credit.md",
+      "subCat": "크레딧"
+    },
+    {
+      "name": "크레딧 적용 방식",
+      "file": "how-credit-is-applied.md",
+      "subCat": "크레딧"
+    },
+    {
+      "name": "이전 충전 내역",
+      "file": "past-top-ups.md",
+      "subCat": "크레딧"
+    },
+    {
+      "name": "크레딧을 추가할 수 없는 계정",
+      "file": "accounts-that-cannot-add-credit.md",
+      "subCat": "크레딧"
+    }
+  ]
+}
