@@ -8,7 +8,7 @@ This covers every invoice FastComments issues for your account:
 
 If your balance is larger than the invoice, the whole invoice is paid from credit and the rest stays on your account for the next one. If the balance is smaller, the credit is used up and your card is charged the difference.
 
-Credit is applied to invoices only. It does not change your plan, your limits, or the prices you pay, and it is not a spend limit. Flex spend limits are configured separately on the [Billing Info](https://fastcomments.com/auth/my-account/billing-info) page.
+Credit is applied to invoices only. It does not change your plan, your limits, or the prices you pay, and it is not a spend limit. Flex spend limits are configured separately, see [Flex Spend Limits](#flex-spend-limits).
 
 Each invoice shows the credit that was applied to it. You can review invoices from `View Invoices` on the Billing Info page.
 

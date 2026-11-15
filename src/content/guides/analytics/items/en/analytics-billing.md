@@ -15,7 +15,7 @@ Some example metrics that are tracked:
 For the `Creators` and `Pro` plans, these metrics simply serve as a guide to know if you are close to or have hit the limits of your account.
 
 For the `Flex` plan, this page will show a cost breakdown of current usage for the **next** invoice. This makes it easy to understand how you
-will be billed before it happens. You can see past invoices in [Billing History](https://fastcomments.com/auth/my-account/billing-history).
+will be billed before it happens. You can see past invoices in [Billing History](https://fastcomments.com/auth/my-account/billing-history). How each line is counted, and when the invoice is charged, is explained in the [Billing guide](/guide-billing.html#how-flex-usage-is-measured).
 
 The metrics `Page Loads`, `API Credits`, and `New Comments Stored` may be up to one minute out of date. The other metrics are realtime.
 

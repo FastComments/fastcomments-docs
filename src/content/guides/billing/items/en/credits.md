@@ -16,4 +16,4 @@ Once you have a balance, the `Billing Info` page also shows a `Credit balance` l
 
 ### Who Can Add Credit
 
-Only the `Account Owner` or a user with the `Billing Admin` permission can add credit, the same users who can change the plan or payment method. Other administrators do not see the `Manage Credits` button. See [Updating Administrator Permissions](/guide-users.html#updating-administrator-permissions) for how to grant the permission.
+Only the `Account Owner` or a user with the `Billing Admin` permission can add credit, the same users who can change the plan or payment method. Other administrators do not see the `Manage Credits` button. See [Who Can Manage Billing](#who-can-manage-billing).

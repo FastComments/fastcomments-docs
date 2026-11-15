@@ -3,6 +3,71 @@
   "icon": "feature.png",
   "itemsOrdered": [
     {
+      "name": "Plans and Billing Pages",
+      "file": "plans-and-billing-pages.md",
+      "subCat": "Plans and Charges"
+    },
+    {
+      "name": "Free Trial",
+      "file": "free-trial.md",
+      "subCat": "Plans and Charges"
+    },
+    {
+      "name": "When You Are Charged",
+      "file": "when-you-are-charged.md",
+      "subCat": "Plans and Charges"
+    },
+    {
+      "name": "Changing Your Plan",
+      "file": "changing-your-plan.md",
+      "subCat": "Plans and Charges"
+    },
+    {
+      "name": "Cancelling Your Subscription",
+      "file": "cancelling-your-subscription.md",
+      "subCat": "Plans and Charges"
+    },
+    {
+      "name": "How Flex Usage Is Measured",
+      "file": "how-flex-usage-is-measured.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "Admin and Moderator Seats",
+      "file": "admin-and-moderator-seats.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "Flex Spend Limits",
+      "file": "flex-spend-limits.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "Invoices and Receipts",
+      "file": "invoices-and-receipts.md",
+      "subCat": "Invoices"
+    },
+    {
+      "name": "Invoice Settings",
+      "file": "invoice-settings.md",
+      "subCat": "Invoices"
+    },
+    {
+      "name": "Currencies",
+      "file": "currencies.md",
+      "subCat": "Invoices"
+    },
+    {
+      "name": "Updating Your Card",
+      "file": "updating-your-card.md",
+      "subCat": "Cards and Failed Payments"
+    },
+    {
+      "name": "Failed Payments and Deactivation",
+      "file": "failed-payments-and-deactivation.md",
+      "subCat": "Cards and Failed Payments"
+    },
+    {
       "name": "Credits",
       "file": "credits.md",
       "subCat": "Credits"
@@ -26,6 +91,11 @@
       "name": "Accounts That Cannot Add Credit",
       "file": "accounts-that-cannot-add-credit.md",
       "subCat": "Credits"
+    },
+    {
+      "name": "Who Can Manage Billing",
+      "file": "who-can-manage-billing.md",
+      "subCat": "Permissions"
     }
   ]
 }

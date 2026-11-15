@@ -5,3 +5,5 @@ You may cancel your account [here](https://fastcomments.com/auth/my-account/canc
 You can re-activate your account by re-entering your billing information [My Account -> Billing Info](https://fastcomments.com/auth/my-account/billing-info).
 
 If you have a past due invoice, it will be charged at this time. You can see invoices in [Billing History](https://fastcomments.com/auth/my-account/billing-history).
+
+For what cancelling does to your widget and billing, and how to reactivate, see [Cancelling Your Subscription](/guide-billing.html#cancelling-your-subscription) in the Billing guide.

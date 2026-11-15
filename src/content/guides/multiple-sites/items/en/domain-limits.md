@@ -19,3 +19,5 @@ each domain ends up with one million-page loads, you will have met your monthly 
 To summarize, traffic limitations are per-account, not per-domain.
 
 Note that we do offer custom packages for different size sites, simply reach out to support.
+
+For how sites and the rest of a Flex invoice are counted, see [How Flex Usage Is Measured](/guide-billing.html#how-flex-usage-is-measured) in the Billing guide.
