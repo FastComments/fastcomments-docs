@@ -3,12 +3,77 @@
   "icon": "feature.png",
   "itemsOrdered": [
     {
+      "name": "Pages Offres et Facturation",
+      "file": "plans-and-billing-pages.md",
+      "subCat": "Offres et tarifs"
+    },
+    {
+      "name": "Essai gratuit",
+      "file": "free-trial.md",
+      "subCat": "Offres et tarifs"
+    },
+    {
+      "name": "Quand vous êtes facturé",
+      "file": "when-you-are-charged.md",
+      "subCat": "Offres et tarifs"
+    },
+    {
+      "name": "Modifier votre offre",
+      "file": "changing-your-plan.md",
+      "subCat": "Offres et tarifs"
+    },
+    {
+      "name": "Annuler votre abonnement",
+      "file": "cancelling-your-subscription.md",
+      "subCat": "Offres et tarifs"
+    },
+    {
+      "name": "Comment l'utilisation Flex est mesurée",
+      "file": "how-flex-usage-is-measured.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "Sièges administrateur et modérateur",
+      "file": "admin-and-moderator-seats.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "Limites de dépenses Flex",
+      "file": "flex-spend-limits.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "Factures et reçus",
+      "file": "invoices-and-receipts.md",
+      "subCat": "Factures"
+    },
+    {
+      "name": "Paramètres de facturation",
+      "file": "invoice-settings.md",
+      "subCat": "Factures"
+    },
+    {
+      "name": "Devises",
+      "file": "currencies.md",
+      "subCat": "Factures"
+    },
+    {
+      "name": "Mettre à jour votre carte",
+      "file": "updating-your-card.md",
+      "subCat": "Cartes et paiements échoués"
+    },
+    {
+      "name": "Paiements échoués et désactivation",
+      "file": "failed-payments-and-deactivation.md",
+      "subCat": "Cartes et paiements échoués"
+    },
+    {
       "name": "Crédits",
       "file": "credits.md",
       "subCat": "Crédits"
     },
     {
-      "name": "Ajout de crédit",
+      "name": "Ajouter du crédit",
       "file": "adding-credit.md",
       "subCat": "Crédits"
     },
@@ -26,6 +91,11 @@
       "name": "Comptes ne pouvant pas ajouter de crédit",
       "file": "accounts-that-cannot-add-credit.md",
       "subCat": "Crédits"
+    },
+    {
+      "name": "Qui peut gérer la facturation",
+      "file": "who-can-manage-billing.md",
+      "subCat": "Autorisations"
     }
   ]
 }

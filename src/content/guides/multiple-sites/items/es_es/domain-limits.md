@@ -1,8 +1,8 @@
-Para averiguar el límite para el número de dominios en su cuenta, visite la [Página de facturación](https://fastcomments.com/auth/my-account/billing-info).
+Para conocer el límite de dominios en tu cuenta, visita la [Página de Facturación](https://fastcomments.com/auth/my-account/billing-info).
 
 ### Precios
 
-Los precios varían según el paquete:
+El precio varía según el paquete:
 
 1. FastComments for Creators
    - Incluido en el precio del paquete. Límite de tres sitios.
@@ -11,11 +11,13 @@ Los precios varían según el paquete:
 3. FastComments Pro
    - Un gran número de sitios (puede variar según el acuerdo) está incluido en el precio del paquete.
 
-### Límites de tráfico y dominios
+### Límites de Tráfico y Dominios
 
-En el ejemplo donde está en un nivel con cinco millones de cargas de página mensuales con cinco dominios añadidos a su cuenta, y
-cada dominio termina con un millón de cargas de página, habrá alcanzado su cuota mensual.
+En el ejemplo en el que estás en un plan con cinco millones de cargas de página mensuales con cinco dominios añadidos a tu cuenta, y
+cada dominio termina con un millón de cargas de página, habrás alcanzado tu cuota mensual.
 
 En resumen, las limitaciones de tráfico son por cuenta, no por dominio.
 
-Tenga en cuenta que ofrecemos paquetes personalizados para sitios de distintos tamaños; simplemente póngase en contacto con el soporte.
+Ten en cuenta que ofrecemos paquetes personalizados para sitios de diferentes tamaños; simplemente contacta con soporte.
+
+Para saber cómo se contabilizan los sitios y el resto de una factura Flex, consulta [Cómo se Mide el Uso de Flex](/guide-billing.html#how-flex-usage-is-measured) en la guía de Facturación.

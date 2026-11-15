@@ -3,29 +3,99 @@
   "icon": "feature.png",
   "itemsOrdered": [
     {
-      "name": "קרדיטים",
+      "name": "דפי תוכניות וחיוב",
+      "file": "plans-and-billing-pages.md",
+      "subCat": "תוכניות וחיובים"
+    },
+    {
+      "name": "ניסיון חינם",
+      "file": "free-trial.md",
+      "subCat": "תוכניות וחיובים"
+    },
+    {
+      "name": "מתי נגבה התשלום",
+      "file": "when-you-are-charged.md",
+      "subCat": "תוכניות וחיובים"
+    },
+    {
+      "name": "שינוי התוכנית שלך",
+      "file": "changing-your-plan.md",
+      "subCat": "תוכניות וחיובים"
+    },
+    {
+      "name": "ביטול המנוי שלך",
+      "file": "cancelling-your-subscription.md",
+      "subCat": "תוכניות וחיובים"
+    },
+    {
+      "name": "כיצד נמדד השימוש ב-Flex",
+      "file": "how-flex-usage-is-measured.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "מושבי מנהלים ומפקחים",
+      "file": "admin-and-moderator-seats.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "מגבלות הוצאה של Flex",
+      "file": "flex-spend-limits.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "חשבוניות וקבלות",
+      "file": "invoices-and-receipts.md",
+      "subCat": "חשבוניות"
+    },
+    {
+      "name": "הגדרות חשבונית",
+      "file": "invoice-settings.md",
+      "subCat": "חשבוניות"
+    },
+    {
+      "name": "מטבעות",
+      "file": "currencies.md",
+      "subCat": "חשבוניות"
+    },
+    {
+      "name": "עדכון הכרטיס שלך",
+      "file": "updating-your-card.md",
+      "subCat": "כרטיסים ותשלומים שנכשלו"
+    },
+    {
+      "name": "תשלומים שנכשלו והשבתה",
+      "file": "failed-payments-and-deactivation.md",
+      "subCat": "כרטיסים ותשלומים שנכשלו"
+    },
+    {
+      "name": "קרדיט",
       "file": "credits.md",
-      "subCat": "קרדיטים"
+      "subCat": "קרדיט"
     },
     {
       "name": "הוספת קרדיט",
       "file": "adding-credit.md",
-      "subCat": "קרדיטים"
+      "subCat": "קרדיט"
     },
     {
-      "name": "כיצד מוחל קרדיט",
+      "name": "כיצד מוחל הקרדיט",
       "file": "how-credit-is-applied.md",
-      "subCat": "קרדיטים"
+      "subCat": "קרדיט"
     },
     {
       "name": "טעינות קודמות",
       "file": "past-top-ups.md",
-      "subCat": "קרדיטים"
+      "subCat": "קרדיט"
     },
     {
       "name": "חשבונות שאינם יכולים להוסיף קרדיט",
       "file": "accounts-that-cannot-add-credit.md",
-      "subCat": "קרדיטים"
+      "subCat": "קרדיט"
+    },
+    {
+      "name": "מי יכול לנהל את החיוב",
+      "file": "who-can-manage-billing.md",
+      "subCat": "הרשאות"
     }
   ]
 }

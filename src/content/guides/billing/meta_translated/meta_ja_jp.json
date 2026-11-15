@@ -3,6 +3,71 @@
   "icon": "feature.png",
   "itemsOrdered": [
     {
+      "name": "プランと請求ページ",
+      "file": "plans-and-billing-pages.md",
+      "subCat": "プランと料金"
+    },
+    {
+      "name": "無料トライアル",
+      "file": "free-trial.md",
+      "subCat": "プランと料金"
+    },
+    {
+      "name": "請求のタイミング",
+      "file": "when-you-are-charged.md",
+      "subCat": "プランと料金"
+    },
+    {
+      "name": "プランの変更",
+      "file": "changing-your-plan.md",
+      "subCat": "プランと料金"
+    },
+    {
+      "name": "サブスクリプションのキャンセル",
+      "file": "cancelling-your-subscription.md",
+      "subCat": "プランと料金"
+    },
+    {
+      "name": "Flex 使用量の測定方法",
+      "file": "how-flex-usage-is-measured.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "管理者とモデレーターのシート",
+      "file": "admin-and-moderator-seats.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "Flex 支出上限",
+      "file": "flex-spend-limits.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "請求書と領収書",
+      "file": "invoices-and-receipts.md",
+      "subCat": "請求書"
+    },
+    {
+      "name": "請求書設定",
+      "file": "invoice-settings.md",
+      "subCat": "請求書"
+    },
+    {
+      "name": "通貨",
+      "file": "currencies.md",
+      "subCat": "請求書"
+    },
+    {
+      "name": "カード情報の更新",
+      "file": "updating-your-card.md",
+      "subCat": "カードと支払い失敗"
+    },
+    {
+      "name": "支払い失敗とアカウント停止",
+      "file": "failed-payments-and-deactivation.md",
+      "subCat": "カードと支払い失敗"
+    },
+    {
       "name": "クレジット",
       "file": "credits.md",
       "subCat": "クレジット"
@@ -26,6 +91,11 @@
       "name": "クレジットを追加できないアカウント",
       "file": "accounts-that-cannot-add-credit.md",
       "subCat": "クレジット"
+    },
+    {
+      "name": "請求を管理できるユーザー",
+      "file": "who-can-manage-billing.md",
+      "subCat": "権限"
     }
   ]
 }

@@ -3,12 +3,77 @@
   "icon": "feature.png",
   "itemsOrdered": [
     {
+      "name": "플랜 및 결제 페이지",
+      "file": "plans-and-billing-pages.md",
+      "subCat": "플랜 및 요금"
+    },
+    {
+      "name": "무료 체험",
+      "file": "free-trial.md",
+      "subCat": "플랜 및 요금"
+    },
+    {
+      "name": "청구 시점",
+      "file": "when-you-are-charged.md",
+      "subCat": "플랜 및 요금"
+    },
+    {
+      "name": "플랜 변경",
+      "file": "changing-your-plan.md",
+      "subCat": "플랜 및 요금"
+    },
+    {
+      "name": "구독 취소",
+      "file": "cancelling-your-subscription.md",
+      "subCat": "플랜 및 요금"
+    },
+    {
+      "name": "Flex 사용량 측정 방식",
+      "file": "how-flex-usage-is-measured.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "관리자 및 중재자 좌석",
+      "file": "admin-and-moderator-seats.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "Flex 지출 한도",
+      "file": "flex-spend-limits.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "인보이스 및 영수증",
+      "file": "invoices-and-receipts.md",
+      "subCat": "인보이스"
+    },
+    {
+      "name": "인보이스 설정",
+      "file": "invoice-settings.md",
+      "subCat": "인보이스"
+    },
+    {
+      "name": "통화",
+      "file": "currencies.md",
+      "subCat": "인보이스"
+    },
+    {
+      "name": "카드 업데이트",
+      "file": "updating-your-card.md",
+      "subCat": "카드 및 결제 실패"
+    },
+    {
+      "name": "결제 실패 및 비활성화",
+      "file": "failed-payments-and-deactivation.md",
+      "subCat": "카드 및 결제 실패"
+    },
+    {
       "name": "크레딧",
       "file": "credits.md",
       "subCat": "크레딧"
     },
     {
-      "name": "크레딧 추가하기",
+      "name": "크레딧 추가",
       "file": "adding-credit.md",
       "subCat": "크레딧"
     },
@@ -26,6 +91,11 @@
       "name": "크레딧을 추가할 수 없는 계정",
       "file": "accounts-that-cannot-add-credit.md",
       "subCat": "크레딧"
+    },
+    {
+      "name": "결제를 관리할 수 있는 사용자",
+      "file": "who-can-manage-billing.md",
+      "subCat": "권한"
     }
   ]
 }

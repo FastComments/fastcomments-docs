@@ -3,29 +3,99 @@
   "icon": "feature.png",
   "itemsOrdered": [
     {
-      "name": "Πιστώσεις",
+      "name": "Σελίδες Πακέτων και Χρέωσης",
+      "file": "plans-and-billing-pages.md",
+      "subCat": "Πακέτα και Χρεώσεις"
+    },
+    {
+      "name": "Δωρεάν Δοκιμή",
+      "file": "free-trial.md",
+      "subCat": "Πακέτα και Χρεώσεις"
+    },
+    {
+      "name": "Πότε Χρεώνεστε",
+      "file": "when-you-are-charged.md",
+      "subCat": "Πακέτα και Χρεώσεις"
+    },
+    {
+      "name": "Αλλαγή του Πακέτου σας",
+      "file": "changing-your-plan.md",
+      "subCat": "Πακέτα και Χρεώσεις"
+    },
+    {
+      "name": "Ακύρωση της Συνδρομής σας",
+      "file": "cancelling-your-subscription.md",
+      "subCat": "Πακέτα και Χρεώσεις"
+    },
+    {
+      "name": "Πώς Μετράται η Χρήση του Flex",
+      "file": "how-flex-usage-is-measured.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "Θέσεις Διαχειριστών και Συντονιστών",
+      "file": "admin-and-moderator-seats.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "Όρια Δαπανών Flex",
+      "file": "flex-spend-limits.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "Τιμολόγια και Αποδείξεις",
+      "file": "invoices-and-receipts.md",
+      "subCat": "Τιμολόγια"
+    },
+    {
+      "name": "Ρυθμίσεις Τιμολογίων",
+      "file": "invoice-settings.md",
+      "subCat": "Τιμολόγια"
+    },
+    {
+      "name": "Νομίσματα",
+      "file": "currencies.md",
+      "subCat": "Τιμολόγια"
+    },
+    {
+      "name": "Ενημέρωση της Κάρτας σας",
+      "file": "updating-your-card.md",
+      "subCat": "Κάρτες και Αποτυχημένες Πληρωμές"
+    },
+    {
+      "name": "Αποτυχημένες Πληρωμές και Απενεργοποίηση",
+      "file": "failed-payments-and-deactivation.md",
+      "subCat": "Κάρτες και Αποτυχημένες Πληρωμές"
+    },
+    {
+      "name": "Πιστωτικό Υπόλοιπο",
       "file": "credits.md",
-      "subCat": "Πιστώσεις"
+      "subCat": "Πιστωτικό Υπόλοιπο"
     },
     {
       "name": "Προσθήκη Πίστωσης",
       "file": "adding-credit.md",
-      "subCat": "Πιστώσεις"
+      "subCat": "Πιστωτικό Υπόλοιπο"
     },
     {
       "name": "Πώς Εφαρμόζεται η Πίστωση",
       "file": "how-credit-is-applied.md",
-      "subCat": "Πιστώσεις"
+      "subCat": "Πιστωτικό Υπόλοιπο"
     },
     {
-      "name": "Προηγούμενες Επαναφορές",
+      "name": "Προηγούμενες Επαναφορτώσεις",
       "file": "past-top-ups.md",
-      "subCat": "Πιστώσεις"
+      "subCat": "Πιστωτικό Υπόλοιπο"
     },
     {
       "name": "Λογαριασμοί που Δεν Μπορούν να Προσθέσουν Πίστωση",
       "file": "accounts-that-cannot-add-credit.md",
-      "subCat": "Πιστώσεις"
+      "subCat": "Πιστωτικό Υπόλοιπο"
+    },
+    {
+      "name": "Ποιοι Μπορούν να Διαχειρίζονται τη Χρέωση",
+      "file": "who-can-manage-billing.md",
+      "subCat": "Δικαιώματα"
     }
   ]
 }

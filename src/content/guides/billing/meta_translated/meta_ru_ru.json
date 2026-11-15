@@ -3,6 +3,71 @@
   "icon": "feature.png",
   "itemsOrdered": [
     {
+      "name": "Тарифы и страницы биллинга",
+      "file": "plans-and-billing-pages.md",
+      "subCat": "Тарифы и платежи"
+    },
+    {
+      "name": "Бесплатный пробный период",
+      "file": "free-trial.md",
+      "subCat": "Тарифы и платежи"
+    },
+    {
+      "name": "Когда списывается оплата",
+      "file": "when-you-are-charged.md",
+      "subCat": "Тарифы и платежи"
+    },
+    {
+      "name": "Смена тарифа",
+      "file": "changing-your-plan.md",
+      "subCat": "Тарифы и платежи"
+    },
+    {
+      "name": "Отмена подписки",
+      "file": "cancelling-your-subscription.md",
+      "subCat": "Тарифы и платежи"
+    },
+    {
+      "name": "Как измеряется использование Flex",
+      "file": "how-flex-usage-is-measured.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "Места администраторов и модераторов",
+      "file": "admin-and-moderator-seats.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "Лимиты расходов Flex",
+      "file": "flex-spend-limits.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "Счета и квитанции",
+      "file": "invoices-and-receipts.md",
+      "subCat": "Счета"
+    },
+    {
+      "name": "Настройки счетов",
+      "file": "invoice-settings.md",
+      "subCat": "Счета"
+    },
+    {
+      "name": "Валюты",
+      "file": "currencies.md",
+      "subCat": "Счета"
+    },
+    {
+      "name": "Обновление карты",
+      "file": "updating-your-card.md",
+      "subCat": "Карты и неоплаченные платежи"
+    },
+    {
+      "name": "Неоплаченные платежи и деактивация",
+      "file": "failed-payments-and-deactivation.md",
+      "subCat": "Карты и неоплаченные платежи"
+    },
+    {
       "name": "Кредиты",
       "file": "credits.md",
       "subCat": "Кредиты"
@@ -23,9 +88,14 @@
       "subCat": "Кредиты"
     },
     {
-      "name": "Аккаунты, которые не могут пополнить кредит",
+      "name": "Аккаунты, которые не могут пополнять кредит",
       "file": "accounts-that-cannot-add-credit.md",
       "subCat": "Кредиты"
+    },
+    {
+      "name": "Кто может управлять биллингом",
+      "file": "who-can-manage-billing.md",
+      "subCat": "Разрешения"
     }
   ]
 }

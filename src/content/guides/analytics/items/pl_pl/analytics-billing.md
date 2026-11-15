@@ -1,21 +1,21 @@
-Wszystkie metryki, za które możesz być ograniczony lub obciążony, są raportowane na stronie [Billing Analytics](https://fastcomments.com/auth/my-account/analytics/billing).
+Wszystkie metryki, dla których możesz podlegać limitom lub rozliczeniom, są raportowane na [stronie Analityki Rozliczeniowej](https://fastcomments.com/auth/my-account/analytics/billing).
 
-Niektóre przykładowe metryki, które są śledzone:
+Przykładowe śledzone metryki:
 
-- Ładowania stron (za bieżący miesiąc)
-- Kredyty API (za bieżący miesiąc)
-- Nowe zapisane komentarze (za bieżący miesiąc)
-- Użytkownicy dzierżawcy
+- Odsłony stron (w bieżącym miesiącu)
+- Kredyty API (w bieżącym miesiącu)
+- Nowe zapisane komentarze (w bieżącym miesiącu)
+- Użytkownicy tenanta
 - Użytkownicy SSO (zwykli użytkownicy SSO bez uprawnień administratora/moderatora)
-- Administratorzy SSO (użytkownicy SSO z flagami administratora `isAccountOwner` lub `isAdminAdmin` - rozliczani oddzielnie od zwykłych użytkowników SSO)
+- Administratorzy SSO (użytkownicy SSO z flagami `isAccountOwner` lub `isAdminAdmin` - rozliczani oddzielnie od zwykłych użytkowników SSO)
 - Moderatorzy SSO (użytkownicy SSO z flagą `isCommentModeratorAdmin` - rozliczani oddzielnie od zwykłych użytkowników SSO)
 - Moderatorzy
 - Domeny
 
-Dla planów `Creators` i `Pro` te metryki służą po prostu jako wskazówka, czy jesteś blisko lub osiągnąłeś limity swojego konta.
+W przypadku planów `Creators` i `Pro` metryki te służą jedynie jako wskazówka, czy zbliżasz się do limitów swojego konta lub je przekroczyłeś.
 
-Dla planu `Flex` ta strona pokaże podział kosztów bieżącego użycia na **następną** fakturę. Ułatwia to zrozumienie, jak zostaniesz obciążony, zanim to nastąpi. Możesz zobaczyć poprzednie faktury w [Billing History](https://fastcomments.com/auth/my-account/billing-history).
+W przypadku planu `Flex` ta strona pokaże zestawienie kosztów bieżącego użycia dla **następnej** faktury. Dzięki temu łatwo zrozumiesz, jak zostaniesz rozliczony, zanim to nastąpi. Poprzednie faktury możesz zobaczyć w [Historii Rozliczeń](https://fastcomments.com/auth/my-account/billing-history). Sposób liczenia poszczególnych pozycji oraz moment naliczania faktury są opisane w [przewodniku rozliczeniowym](/guide-billing.html#how-flex-usage-is-measured).
 
-Metryki `Page Loads`, `API Credits` i `New Comments Stored` mogą być opóźnione do jednej minuty. Pozostałe metryki są w czasie rzeczywistym.
+Metryki `Page Loads`, `API Credits` i `New Comments Stored` mogą być nieaktualne do jednej minuty. Pozostałe metryki są aktualizowane w czasie rzeczywistym.
 
-Te informacje są przechowywane miesięcznie przez rok lub do momentu usunięcia dzierżawcy, dla celów historycznych, ale interfejs użytkownika będzie pokazywał tylko bieżący okres.
+Te informacje są przechowywane w ujęciu miesięcznym przez jeden rok, lub do momentu usunięcia swojego tenanta, w celach historycznych, ale interfejs użytkownika pokazuje tylko bieżący okres.

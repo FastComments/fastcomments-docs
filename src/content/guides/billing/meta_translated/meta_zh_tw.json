@@ -1,7 +1,72 @@
 {
-  "name": "帳單",
+  "name": "帳務",
   "icon": "feature.png",
   "itemsOrdered": [
+    {
+      "name": "方案與帳務頁面",
+      "file": "plans-and-billing-pages.md",
+      "subCat": "方案與費用"
+    },
+    {
+      "name": "免費試用",
+      "file": "free-trial.md",
+      "subCat": "方案與費用"
+    },
+    {
+      "name": "扣款時間",
+      "file": "when-you-are-charged.md",
+      "subCat": "方案與費用"
+    },
+    {
+      "name": "變更您的方案",
+      "file": "changing-your-plan.md",
+      "subCat": "方案與費用"
+    },
+    {
+      "name": "取消您的訂閱",
+      "file": "cancelling-your-subscription.md",
+      "subCat": "方案與費用"
+    },
+    {
+      "name": "Flex 用量如何計算",
+      "file": "how-flex-usage-is-measured.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "管理員與版主席位",
+      "file": "admin-and-moderator-seats.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "Flex 消費限額",
+      "file": "flex-spend-limits.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "發票與收據",
+      "file": "invoices-and-receipts.md",
+      "subCat": "發票"
+    },
+    {
+      "name": "發票設定",
+      "file": "invoice-settings.md",
+      "subCat": "發票"
+    },
+    {
+      "name": "貨幣",
+      "file": "currencies.md",
+      "subCat": "發票"
+    },
+    {
+      "name": "更新您的卡片",
+      "file": "updating-your-card.md",
+      "subCat": "卡片與付款失敗"
+    },
+    {
+      "name": "付款失敗與停用",
+      "file": "failed-payments-and-deactivation.md",
+      "subCat": "卡片與付款失敗"
+    },
     {
       "name": "點數",
       "file": "credits.md",
@@ -26,6 +91,11 @@
       "name": "無法儲值點數的帳戶",
       "file": "accounts-that-cannot-add-credit.md",
       "subCat": "點數"
+    },
+    {
+      "name": "誰可以管理帳務",
+      "file": "who-can-manage-billing.md",
+      "subCat": "權限"
     }
   ]
 }

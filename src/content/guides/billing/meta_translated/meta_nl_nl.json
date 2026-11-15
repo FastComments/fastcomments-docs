@@ -1,31 +1,101 @@
 {
-  "name": "Facturering",
+  "name": "Facturatie",
   "icon": "feature.png",
   "itemsOrdered": [
     {
-      "name": "Credits",
+      "name": "Abonnementen- en facturatiepagina's",
+      "file": "plans-and-billing-pages.md",
+      "subCat": "Abonnementen en kosten"
+    },
+    {
+      "name": "Gratis proefperiode",
+      "file": "free-trial.md",
+      "subCat": "Abonnementen en kosten"
+    },
+    {
+      "name": "Wanneer u wordt gefactureerd",
+      "file": "when-you-are-charged.md",
+      "subCat": "Abonnementen en kosten"
+    },
+    {
+      "name": "Uw abonnement wijzigen",
+      "file": "changing-your-plan.md",
+      "subCat": "Abonnementen en kosten"
+    },
+    {
+      "name": "Uw abonnement opzeggen",
+      "file": "cancelling-your-subscription.md",
+      "subCat": "Abonnementen en kosten"
+    },
+    {
+      "name": "Hoe Flex-gebruik wordt gemeten",
+      "file": "how-flex-usage-is-measured.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "Beheerders- en moderatorenstoelen",
+      "file": "admin-and-moderator-seats.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "Flex-uitgavenlimieten",
+      "file": "flex-spend-limits.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "Facturen en bonnen",
+      "file": "invoices-and-receipts.md",
+      "subCat": "Facturen"
+    },
+    {
+      "name": "Factuurinstellingen",
+      "file": "invoice-settings.md",
+      "subCat": "Facturen"
+    },
+    {
+      "name": "Valuta's",
+      "file": "currencies.md",
+      "subCat": "Facturen"
+    },
+    {
+      "name": "Uw kaart bijwerken",
+      "file": "updating-your-card.md",
+      "subCat": "Kaarten en mislukte betalingen"
+    },
+    {
+      "name": "Mislukte betalingen en deactivering",
+      "file": "failed-payments-and-deactivation.md",
+      "subCat": "Kaarten en mislukte betalingen"
+    },
+    {
+      "name": "Krediet",
       "file": "credits.md",
-      "subCat": "Credits"
+      "subCat": "Krediet"
     },
     {
-      "name": "Credit toevoegen",
+      "name": "Krediet toevoegen",
       "file": "adding-credit.md",
-      "subCat": "Credits"
+      "subCat": "Krediet"
     },
     {
-      "name": "Hoe credit wordt toegepast",
+      "name": "Hoe krediet wordt toegepast",
       "file": "how-credit-is-applied.md",
-      "subCat": "Credits"
+      "subCat": "Krediet"
     },
     {
       "name": "Eerdere opwaarderingen",
       "file": "past-top-ups.md",
-      "subCat": "Credits"
+      "subCat": "Krediet"
     },
     {
-      "name": "Accounts die geen credit kunnen toevoegen",
+      "name": "Accounts die geen krediet kunnen toevoegen",
       "file": "accounts-that-cannot-add-credit.md",
-      "subCat": "Credits"
+      "subCat": "Krediet"
+    },
+    {
+      "name": "Wie kan facturatie beheren",
+      "file": "who-can-manage-billing.md",
+      "subCat": "Machtigingen"
     }
   ]
 }

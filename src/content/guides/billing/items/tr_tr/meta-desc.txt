@@ -1,1 +1,1 @@
-FastComments faturanızı kredi ile ön ödeme yapın. Faturalandırma sayfasından kredi ekleyin, yenilemelere ve Flex kullanımına nasıl uygulandığını görün ve geçmiş yüklemeleri takip edin.
+FastComments faturalandırması nasıl çalışır: planlar, deneme süresi, Flex ve sabit planların ne zaman ücretlendirdiği, değiştirme veya iptal etme, faturalar ve KDV, para birimleri, kartlar, başarısız ödemeler, kredi.

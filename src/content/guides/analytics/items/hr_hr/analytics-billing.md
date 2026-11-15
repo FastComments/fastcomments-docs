@@ -1,21 +1,21 @@
-Sve metrike za koje možete biti ograničeni ili naplaćeni prijavljuju se na stranici [Billing Analytics](https://fastcomments.com/auth/my-account/analytics/billing).
+Sve metrike za koje možete biti ograničeni ili naplaćeni prikazane su na [Stranici analitike naplate](https://fastcomments.com/auth/my-account/analytics/billing).
 
 Neki primjeri metrika koje se prate:
 
 - Učitavanja stranica (za tekući mjesec)
 - API krediti (za tekući mjesec)
 - Novi pohranjeni komentari (za tekući mjesec)
-- Korisnici zakupca
-- SSO korisnici (obični SSO korisnici bez administratorskih/moderatorskih ovlasti)
-- SSO administratori (SSO korisnici s administratorskim zastavicama `isAccountOwner` ili `isAdminAdmin` - naplaćuju se odvojeno od običnih SSO korisnika)
-- SSO moderatori (SSO korisnici sa zastavicom `isCommentModeratorAdmin` - naplaćuju se odvojeno od običnih SSO korisnika)
+- Korisnici tenanta
+- SSO korisnici (redovni SSO korisnici bez administratorskih/moderatorskih ovlasti)
+- SSO administratori (SSO korisnici s oznakama `isAccountOwner` ili `isAdminAdmin` - naplaćuju se odvojeno od redovnih SSO korisnika)
+- SSO moderatori (SSO korisnici s oznakom `isCommentModeratorAdmin` - naplaćuju se odvojeno od redovnih SSO korisnika)
 - Moderatori
 - Domene
 
-Za planove `Creators` i `Pro`, ove metrike jednostavno služe kao vodič da znate jeste li blizu ili ste dosegli ograničenja svog računa.
+Za pakete `Creators` i `Pro`, ove metrike služe jednostavno kao vodič da biste znali jeste li blizu ili ste dostigli ograničenja svog računa.
 
-Za plan `Flex`, ova stranica će prikazati raščlambu troškova trenutne upotrebe za **sljedeću** fakturu. To olakšava razumijevanje kako ćete biti naplaćeni prije nego što se to dogodi. Prošle fakture možete vidjeti u [Billing History](https://fastcomments.com/auth/my-account/billing-history).
+Za paket `Flex`, ova stranica prikazuje raščlambu troškova trenutne upotrebe za **sljedeću** fakturu. To olakšava razumijevanje kako ćete biti naplaćeni prije nego što se to dogodi. Prošle fakture možete vidjeti u [Povijesti naplate](https://fastcomments.com/auth/my-account/billing-history). Kako se svaki redak računa i kada se faktura naplaćuje, objašnjeno je u [Vodiču za naplatu](/guide-billing.html#how-flex-usage-is-measured).
 
-Metrike `Page Loads`, `API Credits` i `New Comments Stored` mogu kasniti do jedne minute. Ostale metrike su u stvarnom vremenu.
+Metrike `Page Loads`, `API Credits` i `New Comments Stored` mogu biti zastarjele do jedne minute. Ostale metrike su u stvarnom vremenu.
 
-Ove informacije pohranjuju se na mjesečnoj bazi godinu dana, ili dok ne izbrišete svog zakupca, u povijesne svrhe, ali korisničko sučelje će prikazati samo trenutno razdoblje.
+Ove informacije pohranjuju se mjesečno tijekom jedne godine, ili dok ne izbrišete svoj tenant, u svrhu povijesnih podataka, ali korisničko sučelje prikazuje samo tekuće razdoblje.

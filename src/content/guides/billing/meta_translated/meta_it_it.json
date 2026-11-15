@@ -3,29 +3,99 @@
   "icon": "feature.png",
   "itemsOrdered": [
     {
-      "name": "Credito",
+      "name": "Pagine Piani e Fatturazione",
+      "file": "plans-and-billing-pages.md",
+      "subCat": "Piani e Addebiti"
+    },
+    {
+      "name": "Prova Gratuita",
+      "file": "free-trial.md",
+      "subCat": "Piani e Addebiti"
+    },
+    {
+      "name": "Quando Vieni Addebitato",
+      "file": "when-you-are-charged.md",
+      "subCat": "Piani e Addebiti"
+    },
+    {
+      "name": "Modifica del Piano",
+      "file": "changing-your-plan.md",
+      "subCat": "Piani e Addebiti"
+    },
+    {
+      "name": "Annullamento dell'Abbonamento",
+      "file": "cancelling-your-subscription.md",
+      "subCat": "Piani e Addebiti"
+    },
+    {
+      "name": "Come Viene Misurato l'Utilizzo di Flex",
+      "file": "how-flex-usage-is-measured.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "Postazioni Amministratore e Moderatore",
+      "file": "admin-and-moderator-seats.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "Limiti di Spesa Flex",
+      "file": "flex-spend-limits.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "Fatture e Ricevute",
+      "file": "invoices-and-receipts.md",
+      "subCat": "Fatture"
+    },
+    {
+      "name": "Impostazioni Fattura",
+      "file": "invoice-settings.md",
+      "subCat": "Fatture"
+    },
+    {
+      "name": "Valute",
+      "file": "currencies.md",
+      "subCat": "Fatture"
+    },
+    {
+      "name": "Aggiornamento della Carta",
+      "file": "updating-your-card.md",
+      "subCat": "Carte e Pagamenti Falliti"
+    },
+    {
+      "name": "Pagamenti Falliti e Disattivazione",
+      "file": "failed-payments-and-deactivation.md",
+      "subCat": "Carte e Pagamenti Falliti"
+    },
+    {
+      "name": "Crediti",
       "file": "credits.md",
-      "subCat": "Credito"
+      "subCat": "Crediti"
     },
     {
-      "name": "Aggiunta di credito",
+      "name": "Aggiunta di Credito",
       "file": "adding-credit.md",
-      "subCat": "Credito"
+      "subCat": "Crediti"
     },
     {
-      "name": "Come viene applicato il credito",
+      "name": "Come Viene Applicato il Credito",
       "file": "how-credit-is-applied.md",
-      "subCat": "Credito"
+      "subCat": "Crediti"
     },
     {
-      "name": "Ricariche passate",
+      "name": "Ricariche Precedenti",
       "file": "past-top-ups.md",
-      "subCat": "Credito"
+      "subCat": "Crediti"
     },
     {
-      "name": "Account che non possono aggiungere credito",
+      "name": "Account Che Non Possono Aggiungere Credito",
       "file": "accounts-that-cannot-add-credit.md",
-      "subCat": "Credito"
+      "subCat": "Crediti"
+    },
+    {
+      "name": "Chi Può Gestire la Fatturazione",
+      "file": "who-can-manage-billing.md",
+      "subCat": "Permessi"
     }
   ]
 }

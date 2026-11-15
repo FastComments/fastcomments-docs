@@ -1,12 +1,12 @@
 Credit is geld dat op uw FastComments-account staat, in uw factureringsvaluta. Het wordt automatisch toegepast op uw toekomstige facturen, inclusief abonnementsverlengingen en Flex-gebruik, voordat uw kaart wordt belast.
 
-Credit is vooruitbetaling, geen korting of een puntenstelsel. Het toevoegen van `$50` aan credit betekent dat uw volgende `$50` aan facturen wordt betaald vanuit die credit in plaats van vanaf uw kaart. Het saldo wordt als credit aangehouden op uw account bij Stripe, onze betalingsverwerker, en blijft op uw account staan totdat een factuur het gebruikt.
+Credit is vooruitbetaling, geen korting of een puntenstelsel. Het toevoegen van `$50` aan credit betekent dat uw volgende `$50` aan facturen wordt betaald vanuit dat credit in plaats van vanaf uw kaart. Het saldo wordt als credit op uw account gehouden bij Stripe, onze betalingsverwerker, en het blijft op uw account staan totdat een factuur het gebruikt.
 
 Enkele redenen om een creditsaldo aan te houden:
 
 - Betaal vooraf voor een periode, bijvoorbeeld wanneer een financiële afdeling de voorkeur geeft aan één grotere betaling boven een maandelijkse kaartbelasting.
-- Houd een buffer aan op een Flex-abonnement zodat een drukke maand gedekt is voordat de factuur binnenkomt.
-- Betaal één keer vanaf een kaart en laat verlengingen vervolgens uit het saldo trekken.
+- Houd een buffer aan op een Flex-plan zodat een drukke maand gedekt is voordat de factuur arriveert.
+- Betaal één keer vanaf een kaart en laat verlengingen vervolgens vanuit het saldo trekken.
 
 ### Waar U Het Vindt
 
@@ -16,4 +16,4 @@ Zodra u een saldo heeft, toont de `Billing Info`-pagina ook een `Credit balance`
 
 ### Wie Credit Kan Toevoegen
 
-Alleen de `Account Owner` of een gebruiker met de `Billing Admin`-machtiging kan credit toevoegen, dezelfde gebruikers die het abonnement of de betaalmethode kunnen wijzigen. Andere beheerders zien de knop `Manage Credits` niet. Zie [Updating Administrator Permissions](/guide-users.html#updating-administrator-permissions) voor hoe u de machtiging verleent.
+Alleen de `Account Owner` of een gebruiker met de `Billing Admin`-machtiging kan credit toevoegen, dezelfde gebruikers die het plan of de betaalmethode kunnen wijzigen. Andere beheerders zien de knop `Manage Credits` niet. Zie [Who Can Manage Billing](#who-can-manage-billing).

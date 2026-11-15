@@ -3,6 +3,71 @@
   "icon": "feature.png",
   "itemsOrdered": [
     {
+      "name": "Páginas de Planos e Faturamento",
+      "file": "plans-and-billing-pages.md",
+      "subCat": "Planos e Cobranças"
+    },
+    {
+      "name": "Avaliação Gratuita",
+      "file": "free-trial.md",
+      "subCat": "Planos e Cobranças"
+    },
+    {
+      "name": "Quando Você É Cobrado",
+      "file": "when-you-are-charged.md",
+      "subCat": "Planos e Cobranças"
+    },
+    {
+      "name": "Alterando Seu Plano",
+      "file": "changing-your-plan.md",
+      "subCat": "Planos e Cobranças"
+    },
+    {
+      "name": "Cancelando Sua Assinatura",
+      "file": "cancelling-your-subscription.md",
+      "subCat": "Planos e Cobranças"
+    },
+    {
+      "name": "Como o Uso do Flex É Medido",
+      "file": "how-flex-usage-is-measured.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "Assentos de Administrador e Moderador",
+      "file": "admin-and-moderator-seats.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "Limites de Gasto do Flex",
+      "file": "flex-spend-limits.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "Faturas e Recibos",
+      "file": "invoices-and-receipts.md",
+      "subCat": "Faturas"
+    },
+    {
+      "name": "Configurações de Fatura",
+      "file": "invoice-settings.md",
+      "subCat": "Faturas"
+    },
+    {
+      "name": "Moedas",
+      "file": "currencies.md",
+      "subCat": "Faturas"
+    },
+    {
+      "name": "Atualizando Seu Cartão",
+      "file": "updating-your-card.md",
+      "subCat": "Cartões e Pagamentos Falhos"
+    },
+    {
+      "name": "Pagamentos Falhos e Desativação",
+      "file": "failed-payments-and-deactivation.md",
+      "subCat": "Cartões e Pagamentos Falhos"
+    },
+    {
       "name": "Créditos",
       "file": "credits.md",
       "subCat": "Créditos"
@@ -13,7 +78,7 @@
       "subCat": "Créditos"
     },
     {
-      "name": "Como o Crédito é Aplicado",
+      "name": "Como o Crédito É Aplicado",
       "file": "how-credit-is-applied.md",
       "subCat": "Créditos"
     },
@@ -26,6 +91,11 @@
       "name": "Contas Que Não Podem Adicionar Crédito",
       "file": "accounts-that-cannot-add-credit.md",
       "subCat": "Créditos"
+    },
+    {
+      "name": "Quem Pode Gerenciar o Faturamento",
+      "file": "who-can-manage-billing.md",
+      "subCat": "Permissões"
     }
   ]
 }

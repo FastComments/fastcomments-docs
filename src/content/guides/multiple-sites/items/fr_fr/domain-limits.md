@@ -1,20 +1,23 @@
-Pour connaître la limite du nombre de domaines dans votre compte, rendez-vous sur la [Page de facturation](https://fastcomments.com/auth/my-account/billing-info).
+Pour connaître la limite du nombre de domaines de votre compte, consultez la [Page de Facturation](https://fastcomments.com/auth/my-account/billing-info).
 
 ### Tarification
 
-Les tarifs varient selon le forfait :
+La tarification varie selon le forfait :
 
 1. FastComments for Creators
-   - Inclus dans le tarif du forfait. Limite de trois sites.
+   - Inclus dans le prix du forfait. Limite de trois sites.
 2. FastComments Flex
    - Le premier site est inclus. Chaque site supplémentaire coûte 10 $/mois.
 3. FastComments Pro
-   - Un grand nombre de sites (peut varier selon l'accord) est inclus dans le tarif du forfait.
+   - Un grand nombre de sites (peut varier selon l'accord) est inclus dans le prix du forfait.
 
-### Limites de trafic et domaines
+### Limites de Trafic & Domaines
 
-Dans l'exemple où vous êtes sur un palier offrant cinq millions de chargements de page par mois avec cinq domaines ajoutés à votre compte, et que chaque domaine atteint un million de chargements de page, vous aurez atteint votre quota mensuel.
+Dans l'exemple où vous êtes sur un palier avec cinq millions de chargements de pages mensuels avec cinq domaines ajoutés à votre compte, et
+chaque domaine finit avec un million de chargements de pages, vous aurez atteint votre quota mensuel.
 
-En résumé, les limitations de trafic s'appliquent par compte, et non par domaine.
+En résumé, les limitations de trafic sont par compte, et non par domaine.
 
-Notez que nous proposons des forfaits personnalisés pour des sites de tailles différentes ; contactez simplement le support.
+Notez que nous proposons des forfaits personnalisés pour les sites de différentes tailles, contactez simplement le support.
+
+Pour savoir comment les sites et le reste d'une facture Flex sont comptabilisés, voir [Comment l'Utilisation Flex Est Mesurée](/guide-billing.html#how-flex-usage-is-measured) dans le guide de Facturation.

@@ -1,20 +1,22 @@
-Hesabınızdaki alan adı sayısı limitini öğrenmek için, [Fatura Sayfası](https://fastcomments.com/auth/my-account/billing-info) ziyaret edin.
+Hesabınızdaki alan adı sayısı sınırını öğrenmek için [Faturalandırma Sayfası](https://fastcomments.com/auth/my-account/billing-info) adresini ziyaret edin.
 
 ### Fiyatlandırma
 
 Fiyatlandırma pakete göre değişir:
 
 1. FastComments for Creators
-   - Paket fiyatlandırmasına dahildir. Üç site ile sınırlıdır.
+   - Paket fiyatlandırmasına dahildir. Üç site sınırı vardır.
 2. FastComments Flex
-   - İlk site dahil. Her ek site aylık 10$'dır.
+   - İlk site dahildir. Her ek site için aylık 10 $ ücret alınır.
 3. FastComments Pro
-   - Paket fiyatlandırmasına çok sayıda site dahildir (anlaşmaya bağlı olarak değişebilir).
+   - Büyük sayıda site (anlaşmaya göre değişebilir) paket fiyatlandırmasına dahildir.
 
-### Trafik Limitleri & Alan Adları
+### Trafik Sınırları ve Alan Adları
 
-Örneğin, hesabınızda beş milyon aylık sayfa yüklemesi olan bir seviyede beş alan adı ekliyse ve her alan adı bir milyon sayfa yüklemesine ulaşırsa, aylık kotanızı doldurmuş olursunuz.
+Aylık beş milyon sayfa yüklemesi olan bir pakette olduğunuz ve hesabınıza beş alan adı eklediğiniz, her alan adının birer milyon sayfa yüklemesine ulaştığı örnek durumda, aylık kotanıza ulaşmış olursunuz.
 
-Özetle, trafik sınırlamaları hesap bazındadır, alan adı bazında değildir.
+Özetlemek gerekirse, trafik sınırlamaları alan adı başına değil, hesap başınadır.
 
-Farklı büyüklükte siteler için özel paketler sunmaktayız; destek ile iletişime geçin.
+Farklı boyuttaki siteler için özel paketler sunduğumuzu unutmayın; destek ekibiyle iletişime geçmeniz yeterlidir.
+
+Sitelerin ve Flex faturasının geri kalanının nasıl sayıldığı hakkında bilgi için Faturalandırma rehberindeki [Flex Kullanımı Nasıl Ölçülür](/guide-billing.html#how-flex-usage-is-measured) bölümüne bakın.

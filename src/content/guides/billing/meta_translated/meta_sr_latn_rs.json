@@ -3,6 +3,71 @@
   "icon": "feature.png",
   "itemsOrdered": [
     {
+      "name": "Stranice planova i naplate",
+      "file": "plans-and-billing-pages.md",
+      "subCat": "Planovi i naknade"
+    },
+    {
+      "name": "Besplatno probno razdoblje",
+      "file": "free-trial.md",
+      "subCat": "Planovi i naknade"
+    },
+    {
+      "name": "Kada se naplaćuje",
+      "file": "when-you-are-charged.md",
+      "subCat": "Planovi i naknade"
+    },
+    {
+      "name": "Promena plana",
+      "file": "changing-your-plan.md",
+      "subCat": "Planovi i naknade"
+    },
+    {
+      "name": "Otkazivanje pretplate",
+      "file": "cancelling-your-subscription.md",
+      "subCat": "Planovi i naknade"
+    },
+    {
+      "name": "Kako se meri Flex korišćenje",
+      "file": "how-flex-usage-is-measured.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "Mesta za administratore i moderatore",
+      "file": "admin-and-moderator-seats.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "Ograničenja Flex potrošnje",
+      "file": "flex-spend-limits.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "Fakture i računi",
+      "file": "invoices-and-receipts.md",
+      "subCat": "Fakture"
+    },
+    {
+      "name": "Podešavanja faktura",
+      "file": "invoice-settings.md",
+      "subCat": "Fakture"
+    },
+    {
+      "name": "Valute",
+      "file": "currencies.md",
+      "subCat": "Fakture"
+    },
+    {
+      "name": "Ažuriranje kartice",
+      "file": "updating-your-card.md",
+      "subCat": "Kartice i neuspešna plaćanja"
+    },
+    {
+      "name": "Neuspešna plaćanja i deaktivacija",
+      "file": "failed-payments-and-deactivation.md",
+      "subCat": "Kartice i neuspešna plaćanja"
+    },
+    {
       "name": "Krediti",
       "file": "credits.md",
       "subCat": "Krediti"
@@ -26,6 +91,11 @@
       "name": "Nalozi koji ne mogu da dodaju kredit",
       "file": "accounts-that-cannot-add-credit.md",
       "subCat": "Krediti"
+    },
+    {
+      "name": "Ko može da upravlja naplatom",
+      "file": "who-can-manage-billing.md",
+      "subCat": "Dozvole"
     }
   ]
 }

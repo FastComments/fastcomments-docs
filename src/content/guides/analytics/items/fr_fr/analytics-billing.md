@@ -1,21 +1,21 @@
-Toutes les métriques pour lesquelles vous pourriez être limité ou facturé sont rapportées sur la [Page d'analytique de facturation](https://fastcomments.com/auth/my-account/analytics/billing).
+Toutes les métriques pour lesquelles vous pouvez être limité en débit ou facturé sont présentées sur la [Page d'analyse de facturation](https://fastcomments.com/auth/my-account/analytics/billing).
 
-Quelques exemples de métriques suivies:
+Voici quelques exemples de métriques suivies :
 
 - Chargements de pages (pour le mois en cours)
 - Crédits API (pour le mois en cours)
 - Nouveaux commentaires stockés (pour le mois en cours)
-- Utilisateurs du locataire
+- Utilisateurs du tenant
 - Utilisateurs SSO (utilisateurs SSO réguliers sans permissions d'administrateur/modérateur)
-- Administrateurs SSO (utilisateurs SSO avec les indicateurs d'administrateur `isAccountOwner` ou `isAdminAdmin` - facturés séparément des utilisateurs SSO réguliers)
+- Administrateurs SSO (utilisateurs SSO avec les indicateurs `isAccountOwner` ou `isAdminAdmin` - facturés séparément des utilisateurs SSO réguliers)
 - Modérateurs SSO (utilisateurs SSO avec l'indicateur `isCommentModeratorAdmin` - facturés séparément des utilisateurs SSO réguliers)
 - Modérateurs
 - Domaines
 
-Pour les plans `Creators` et `Pro`, ces métriques servent simplement de guide pour savoir si vous êtes proche ou avez atteint les limites de votre compte.
+Pour les plans `Creators` et `Pro`, ces métriques servent simplement de repère pour savoir si vous êtes proche des limites de votre compte ou si vous les avez atteintes.
 
-Pour le plan `Flex`, cette page affichera une ventilation des coûts de l'utilisation actuelle pour la **prochaine** facture. Cela facilite la compréhension de comment vous serez facturé avant que cela n'arrive. Vous pouvez voir les factures passées dans [Historique de facturation](https://fastcomments.com/auth/my-account/billing-history).
+Pour le plan `Flex`, cette page affiche une ventilation des coûts de l'utilisation actuelle pour la **prochaine** facture. Cela permet de comprendre facilement comment vous serez facturé avant que cela ne se produise. Vous pouvez consulter les factures passées dans [Historique de facturation](https://fastcomments.com/auth/my-account/billing-history). La façon dont chaque ligne est comptabilisée, ainsi que le moment où la facture est débitée, sont expliqués dans le [Guide de facturation](/guide-billing.html#how-flex-usage-is-measured).
 
-Les métriques `Chargements de pages`, `Crédits API` et `Nouveaux commentaires stockés` peuvent être décalées jusqu'à une minute. Les autres métriques sont en temps réel.
+Les métriques `Page Loads`, `API Credits` et `New Comments Stored` peuvent avoir jusqu'à une minute de retard. Les autres métriques sont en temps réel.
 
-Ces informations sont stockées mensuellement pendant un an, ou jusqu'à ce que vous supprimiez votre locataire, à des fins historiques, mais l'interface n'affichera que la période en cours.
+Ces informations sont stockées sur une base mensuelle pendant un an, ou jusqu'à ce que vous supprimiez votre tenant, à des fins historiques, mais l'interface n'affichera que la période en cours.

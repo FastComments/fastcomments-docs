@@ -3,6 +3,71 @@
   "icon": "feature.png",
   "itemsOrdered": [
     {
+      "name": "Stranice planova i naplate",
+      "file": "plans-and-billing-pages.md",
+      "subCat": "Planovi i naknade"
+    },
+    {
+      "name": "Besplatno probno razdoblje",
+      "file": "free-trial.md",
+      "subCat": "Planovi i naknade"
+    },
+    {
+      "name": "Kada se naplaćuje",
+      "file": "when-you-are-charged.md",
+      "subCat": "Planovi i naknade"
+    },
+    {
+      "name": "Promjena plana",
+      "file": "changing-your-plan.md",
+      "subCat": "Planovi i naknade"
+    },
+    {
+      "name": "Otkazivanje pretplate",
+      "file": "cancelling-your-subscription.md",
+      "subCat": "Planovi i naknade"
+    },
+    {
+      "name": "Kako se mjeri Flex upotreba",
+      "file": "how-flex-usage-is-measured.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "Administratorska i moderatorska mjesta",
+      "file": "admin-and-moderator-seats.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "Ograničenja potrošnje Flexa",
+      "file": "flex-spend-limits.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "Fakture i računi",
+      "file": "invoices-and-receipts.md",
+      "subCat": "Fakture"
+    },
+    {
+      "name": "Postavke faktura",
+      "file": "invoice-settings.md",
+      "subCat": "Fakture"
+    },
+    {
+      "name": "Valute",
+      "file": "currencies.md",
+      "subCat": "Fakture"
+    },
+    {
+      "name": "Ažuriranje kartice",
+      "file": "updating-your-card.md",
+      "subCat": "Kartice i neuspjele uplate"
+    },
+    {
+      "name": "Neuspjele uplate i deaktivacija",
+      "file": "failed-payments-and-deactivation.md",
+      "subCat": "Kartice i neuspjele uplate"
+    },
+    {
       "name": "Krediti",
       "file": "credits.md",
       "subCat": "Krediti"
@@ -18,7 +83,7 @@
       "subCat": "Krediti"
     },
     {
-      "name": "Prošla dopunjavanja",
+      "name": "Prethodna dopunjavanja",
       "file": "past-top-ups.md",
       "subCat": "Krediti"
     },
@@ -26,6 +91,11 @@
       "name": "Računi koji ne mogu dodati kredit",
       "file": "accounts-that-cannot-add-credit.md",
       "subCat": "Krediti"
+    },
+    {
+      "name": "Tko može upravljati naplatom",
+      "file": "who-can-manage-billing.md",
+      "subCat": "Dozvole"
     }
   ]
 }

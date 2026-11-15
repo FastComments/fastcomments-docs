@@ -3,12 +3,77 @@
   "icon": "feature.png",
   "itemsOrdered": [
     {
+      "name": "Tarif- und Abrechnungsseiten",
+      "file": "plans-and-billing-pages.md",
+      "subCat": "Tarife und Gebühren"
+    },
+    {
+      "name": "Kostenlose Testphase",
+      "file": "free-trial.md",
+      "subCat": "Tarife und Gebühren"
+    },
+    {
+      "name": "Zeitpunkt der Abbuchung",
+      "file": "when-you-are-charged.md",
+      "subCat": "Tarife und Gebühren"
+    },
+    {
+      "name": "Änderung Ihres Tarifs",
+      "file": "changing-your-plan.md",
+      "subCat": "Tarife und Gebühren"
+    },
+    {
+      "name": "Kündigung Ihres Abonnements",
+      "file": "cancelling-your-subscription.md",
+      "subCat": "Tarife und Gebühren"
+    },
+    {
+      "name": "Wie die Flex-Nutzung gemessen wird",
+      "file": "how-flex-usage-is-measured.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "Admin- und Moderator-Plätze",
+      "file": "admin-and-moderator-seats.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "Flex-Ausgabenlimits",
+      "file": "flex-spend-limits.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "Rechnungen und Quittungen",
+      "file": "invoices-and-receipts.md",
+      "subCat": "Rechnungen"
+    },
+    {
+      "name": "Rechnungseinstellungen",
+      "file": "invoice-settings.md",
+      "subCat": "Rechnungen"
+    },
+    {
+      "name": "Währungen",
+      "file": "currencies.md",
+      "subCat": "Rechnungen"
+    },
+    {
+      "name": "Aktualisierung Ihrer Karte",
+      "file": "updating-your-card.md",
+      "subCat": "Karten und fehlgeschlagene Zahlungen"
+    },
+    {
+      "name": "Fehlgeschlagene Zahlungen und Deaktivierung",
+      "file": "failed-payments-and-deactivation.md",
+      "subCat": "Karten und fehlgeschlagene Zahlungen"
+    },
+    {
       "name": "Guthaben",
       "file": "credits.md",
       "subCat": "Guthaben"
     },
     {
-      "name": "Guthaben hinzufügen",
+      "name": "Guthaben aufladen",
       "file": "adding-credit.md",
       "subCat": "Guthaben"
     },
@@ -26,6 +91,11 @@
       "name": "Konten, die kein Guthaben hinzufügen können",
       "file": "accounts-that-cannot-add-credit.md",
       "subCat": "Guthaben"
+    },
+    {
+      "name": "Wer kann die Abrechnung verwalten",
+      "file": "who-can-manage-billing.md",
+      "subCat": "Berechtigungen"
     }
   ]
 }

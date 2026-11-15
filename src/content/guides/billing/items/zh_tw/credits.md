@@ -1,19 +1,19 @@
-點數（Credit）是保存在您 FastComments 帳戶中的款項，以您的帳單貨幣計算。它會在您的卡片被扣款之前，自動用於您未來的帳單，包括訂閱續訂與 Flex 用量。
+點數是保存在您的 FastComments 帳戶中的金額，以您的帳單貨幣計算。在您的卡片被扣款之前，點數會自動套用於您未來的發票，包括訂閱續訂與 Flex 用量。
 
-點數是預付款，不是折扣或積分系統。儲值 `$50` 的點數，意味著您接下來 `$50` 的帳單將從該點數中支付，而不是從您的卡片扣款。餘額由我們的支付處理商 Stripe 以點數形式保存在您的帳戶中，並會一直保留在您的帳戶上，直到被某筆帳單使用為止。
+點數是預付款，不是折扣或積分系統。儲值 `$50` 的點數意味著您接下來 `$50` 的發票將從該點數中支付，而不是從您的卡片扣款。餘額以點數形式保存在我們的支付處理商 Stripe 中您的帳戶上，並會一直保留在您的帳戶中，直到有發票使用它。
 
 保留點數餘額的一些原因：
 
-- 預先支付一段期間的費用，例如財務部門偏好一次較大的付款，而不是每月刷卡。
-- 在 Flex 方案上保留緩衝點數，以便在帳單到來前應對繁忙的月份。
+- 預先支付一段期間的費用，例如當財務部門偏好一次較大的付款而非每月刷卡扣款時。
+- 在 Flex 方案上保留緩衝點數，以便在發票到來前就能涵蓋繁忙月份的用量。
 - 用卡片付款一次，然後讓續訂從餘額中扣款。
 
-### 在哪裡找到它
+### 在哪裡可以找到
 
-開啟 [My Account -> Billing Info](https://fastcomments.com/auth/my-account/billing-info)，然後點擊 `Manage Credits`，它位於 `View Invoices` 和 `Invoice Settings` 旁邊。這會開啟 `Credits` 頁面，其中顯示您目前的 `Credit balance`、`Add credit` 表單，以及您的 `Past top-ups`。
+開啟 [My Account -> Billing Info](https://fastcomments.com/auth/my-account/billing-info)，然後在 `View Invoices` 與 `Invoice Settings` 旁邊點擊 `Manage Credits`。這會開啟 `Credits` 頁面，其中顯示您目前的 `Credit balance`、`Add credit` 表單，以及您的 `Past top-ups`。
 
-一旦您有餘額，`Billing Info` 頁面也會顯示一行 `Credit balance`，讓您無需開啟 Credits 頁面即可查看。
+一旦您有餘額，`Billing Info` 頁面也會顯示一個 `Credit balance` 行，讓您無需開啟 Credits 頁面即可查看。
 
 ### 誰可以儲值點數
 
-只有 `Account Owner` 或具有 `Billing Admin` 權限的使用者可以儲值點數，與可以變更方案或付款方式的使用者相同。其他管理員不會看到 `Manage Credits` 按鈕。有關如何授予該權限，請參閱 [Updating Administrator Permissions](/guide-users.html#updating-administrator-permissions)。
+只有 `Account Owner` 或具有 `Billing Admin` 權限的使用者可以儲值點數，也就是可以變更方案或付款方式的同一批使用者。其他管理員看不到 `Manage Credits` 按鈕。請參閱 [Who Can Manage Billing](#who-can-manage-billing)。

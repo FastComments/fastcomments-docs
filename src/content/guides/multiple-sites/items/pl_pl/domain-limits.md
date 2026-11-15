@@ -1,20 +1,22 @@
-Aby sprawdzić limit liczby domen w Twoim koncie, odwiedź [Stronę rozliczeń](https://fastcomments.com/auth/my-account/billing-info).
+Aby sprawdzić limit liczby domen w Twoim koncie, odwiedź [Stronę Rozliczeń](https://fastcomments.com/auth/my-account/billing-info).
 
 ### Cennik
 
-Ceny różnią się w zależności od pakietu:
+Cennik różni się w zależności od pakietu:
 
 1. FastComments for Creators
-   - Wliczone w cenę pakietu. Limit trzech witryn.
+   - Zawarty w cenie pakietu. Limit trzech witryn.
 2. FastComments Flex
-   - Pierwsza witryna jest wliczona. Każda dodatkowa witryna kosztuje $10/mies.
+   - Pierwsza witryna jest zawarta. Każda dodatkowa witryna to 10 USD/mies.
 3. FastComments Pro
-   - Duża liczba witryn (może się różnić w zależności od umowy) jest wliczona w cenę pakietu.
+   - Duża liczba witryn (może się różnić w zależności od umowy) jest zawarta w cenie pakietu.
 
-### Limity ruchu i domeny
+### Limity Ruchu i Domeny
 
-W przykładzie, gdy masz poziom z pięcioma milionami miesięcznych odsłon i pięcioma domenami dodanymi do Twojego konta, a każda domena ma po jednym milionie odsłon, osiągniesz swój miesięczny limit.
+W przykładzie, w którym znajdujesz się na planie z pięcioma milionami miesięcznych odsłon stron z pięcioma domenami dodanymi do Twojego konta, a każda domena kończy z milionem odsłon stron, osiągniesz swój miesięczny limit.
 
-Podsumowując, ograniczenia ruchu dotyczą konta, a nie domeny.
+Podsumowując, limity ruchu dotyczą całego konta, a nie poszczególnych domen.
 
-Zauważ, że oferujemy niestandardowe pakiety dla witryn o różnej wielkości — po prostu skontaktuj się z obsługą.
+Zauważ, że oferujemy niestandardowe pakiety dla witryn o różnych rozmiarach — po prostu skontaktuj się z pomocą techniczną.
+
+Aby dowiedzieć się, jak liczone są witryny i pozostałe elementy faktury Flex, zobacz [Jak Mierzysz Jest Wykorzystanie Flex](/guide-billing.html#how-flex-usage-is-measured) w przewodniku Rozliczeń.

@@ -6,15 +6,15 @@ Esto cubre cada factura que FastComments emite para tu cuenta:
 - Cargos de uso de Flex, facturados al final de cada período.
 - Cambios de plan que generen una factura.
 
-Si tu saldo es mayor que la factura, toda la factura se paga con crédito y el resto permanece en tu cuenta para la siguiente. Si el saldo es menor, el crédito se agota y la diferencia se cobra a tu tarjeta.
+Si tu saldo es mayor que la factura, toda la factura se paga con crédito y el resto queda en tu cuenta para la siguiente. Si el saldo es menor, el crédito se agota y se cobra a tu tarjeta la diferencia.
 
-El crédito se aplica solo a las facturas. No cambia tu plan, tus límites ni los precios que pagas, y no es un límite de gasto. Los límites de gasto de Flex se configuran por separado en la página [Billing Info](https://fastcomments.com/auth/my-account/billing-info).
+El crédito se aplica solo a las facturas. No cambia tu plan, tus límites ni los precios que pagas, y no es un límite de gasto. Los límites de gasto de Flex se configuran por separado, consulta [Límites de gasto de Flex](#flex-spend-limits).
 
-Cada factura muestra el crédito que se le aplicó. Puedes revisar las facturas desde `View Invoices` en la página Billing Info.
+Cada factura muestra el crédito que se le aplicó. Puedes revisar las facturas desde `View Invoices` en la página de Información de facturación.
 
 ### Consultar tu saldo
 
-La página `Credits` siempre muestra tu `Credit balance` actual. Cuando es superior a cero, la página [Billing Info](https://fastcomments.com/auth/my-account/billing-info) también muestra una línea de `Credit balance`.
+La página `Credits` siempre muestra tu `Credit balance` actual. Cuando está por encima de cero, la página [Billing Info](https://fastcomments.com/auth/my-account/billing-info) también muestra una línea de `Credit balance`.
 
 ### Reembolsos
 

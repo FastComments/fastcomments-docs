@@ -1,20 +1,23 @@
-Če želite izvedeti omejitev števila domen v vašem računu, obiščite [Stran za obračunavanje](https://fastcomments.com/auth/my-account/billing-info).
+Če želite izvedeti omejitev za število domen v vašem računu, obiščite [Stran za obračunavanje](https://fastcomments.com/auth/my-account/billing-info).
 
-### Cenik
+### Ceniki
 
-Cene se razlikujejo glede na paket:
+Cenik se razlikuje glede na paket:
 
 1. FastComments for Creators
-   - Vključeno v ceni paketa. Omejitev treh spletnih mest.
+   - Vključeno v ceno paketa. Omejitev treh spletnih mest.
 2. FastComments Flex
-   - Prvo spletno mesto je vključeno. Vsako dodatno spletno mesto stane $10/mo.
+   - Prvo spletno mesto je vključeno. Vsako dodatno spletno mesto stane 10 $/mesec.
 3. FastComments Pro
-   - V ceni paketa je vključeno veliko število spletnih mest (lahko se razlikuje glede na dogovor).
+   - Veliko število spletnih mest (se lahko razlikuje glede na dogovor) je vključeno v ceno paketa.
 
 ### Omejitve prometa in domene
 
-V primeru, da ste na ravni z petimi milijoni mesečnih prikazov strani in imate v račun dodanih pet domen, pri čemer vsaka domena doseže en milijon prikazov strani, boste izpolnili svojo mesečno kvoto.
+V primeru, ko ste na ravni s petimi milijoni mesečnih nalaganja strani s petimi domenami, dodanimi v vaš račun, in
+vsaka domena doseže en milijon nalaganja strani, boste izpolnili svojo mesečno kvoto.
 
-Povzetek: omejitve prometa veljajo na ravni računa, ne na ravni domene.
+Povzetek: omejitve prometa veljajo za celoten račun, ne za posamezno domeno.
 
-Upoštevajte, da nudimo tudi prilagojene pakete za spletna mesta različnih velikosti; preprosto se obrnite na podporo.
+Upoštevajte, da nudimo prilagojene pakete za spletna mesta različnih velikosti; preprosto se obrnite na podporo.
+
+Za več o tem, kako se štejejo spletna mesta in preostanek računa za Flex, glejte [Kako se meri poraba Flex](/guide-billing.html#how-flex-usage-is-measured) v vodiču za obračunavanje.

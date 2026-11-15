@@ -1,12 +1,12 @@
-Il credito è denaro detenuto sul tuo account FastComments, nella tua valuta di fatturazione. Viene applicato automaticamente alle tue future fatture, inclusi i rinnovi degli abbonamenti e l'utilizzo di Flex, prima che la tua carta venga addebitata.
+Il credito è denaro detenuto sul tuo account FastComments, nella tua valuta di fatturazione. Viene applicato automaticamente alle tue future fatture, inclusi i rinnovi degli abbonamenti e l'utilizzo di Flex, prima che venga addebitata la tua carta.
 
-Il credito è un prepagamento, non uno sconto o un sistema di punti. Aggiungere `$50` di credito significa che le prossime `$50` di fatture vengono pagate da quel credito invece che dalla tua carta. Il saldo è mantenuto come credito sul tuo account in Stripe, il nostro processore di pagamenti, e rimane sul tuo account finché una fattura non lo utilizza.
+Il credito è un prepagamento, non uno sconto né un sistema di punti. Aggiungere `$50` di credito significa che le prossime `$50` di fatture vengono pagate da quel credito invece che dalla tua carta. Il saldo è mantenuto come credito sul tuo account in Stripe, il nostro processore di pagamenti, e rimane sul tuo account finché una fattura non lo utilizza.
 
 Alcuni motivi per mantenere un saldo di credito:
 
-- Prepagare un periodo in anticipo, ad esempio quando un dipartimento finanziario preferisce un pagamento unico più grande a un addebito mensile sulla carta.
+- Prepagare un periodo in anticipo, ad esempio quando un dipartimento finanziario preferisce un unico pagamento più grande a un addebito mensile sulla carta.
 - Mantenere una riserva su un piano Flex in modo che un mese intenso sia coperto prima che arrivi la fattura.
-- Pagare con la carta una sola volta, poi lasciare che i rinnovi attingano dal saldo.
+- Pagare una volta con la carta, poi lasciare che i rinnovi attingano dal saldo.
 
 ### Dove Trovarlo
 
@@ -16,4 +16,4 @@ Una volta che hai un saldo, la pagina `Billing Info` mostra anche una riga `Cred
 
 ### Chi Può Aggiungere Credito
 
-Solo l'`Account Owner` o un utente con il permesso `Billing Admin` può aggiungere credito, gli stessi utenti che possono modificare il piano o il metodo di pagamento. Gli altri amministratori non vedono il pulsante `Manage Credits`. Consulta [Updating Administrator Permissions](/guide-users.html#updating-administrator-permissions) per come concedere il permesso.
+Solo l'`Account Owner` o un utente con il permesso `Billing Admin` può aggiungere credito, gli stessi utenti che possono modificare il piano o il metodo di pagamento. Gli altri amministratori non vedono il pulsante `Manage Credits`. Vedi [Who Can Manage Billing](#who-can-manage-billing).

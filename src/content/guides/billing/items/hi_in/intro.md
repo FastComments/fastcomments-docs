@@ -1,5 +1,7 @@
 ## बिलिंग
 
-यह गाइड आपके FastComments बिल के उन हिस्सों को कवर करती है जिन्हें आप स्वयं डैशबोर्ड से प्रबंधित करते हैं, जिसकी शुरुआत प्रीपेड क्रेडिट से होती है।
+यह गाइड बताती है कि FastComments आपको कैसे बिल करता है और आपके बिल के उन हिस्सों के बारे में जिन्हें आप डैशबोर्ड से स्वयं प्रबंधित करते हैं: प्लान क्या हैं, आपके कार्ड से भुगतान कब लिया जाता है, Flex उपयोग कैसे मापा जाता है, इनवॉइस और कर विवरण, भुगतान विफल होने पर क्या होता है, प्रीपेड क्रेडिट, और आपकी टीम में कौन इन सबका प्रबंधन कर सकता है।
 
-आपकी प्लान, भुगतान विधि और इनवॉइस [Billing Info](https://fastcomments.com/auth/my-account/billing-info) पेज पर होती हैं। आपकी प्लान की सीमाओं के मुकाबले वर्तमान उपयोग, और अगली Flex इनवॉइस की लागत का विवरण, [Billing Analytics](https://fastcomments.com/auth/my-account/analytics/billing) पेज पर होता है, जिसे [Analytics गाइड](/guide-analytics.html#analytics-billing) में कवर किया गया है।
+आपका प्लान, भुगतान विधि, और इनवॉइस [Billing Info](https://fastcomments.com/auth/my-account/billing-info) पेज पर होते हैं। आपके प्लान की सीमाओं के मुकाबले वर्तमान उपयोग, और अगली Flex इनवॉइस की लागत का ब्यौरा [Billing Analytics](https://fastcomments.com/auth/my-account/analytics/billing) पेज पर है, जिसे [Analytics गाइड](/guide-analytics.html#analytics-billing) में कवर किया गया है।
+
+कीमतें यहाँ दोहराई नहीं गई हैं क्योंकि वे बदलती रहती हैं। [प्राइसिंग पेज](https://fastcomments.com/traffic-pricing) पर हमेशा वर्तमान दरें उपलब्ध हैं।

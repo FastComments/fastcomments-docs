@@ -3,6 +3,71 @@
   "icon": "feature.png",
   "itemsOrdered": [
     {
+      "name": "Planlar ve Faturalandırma Sayfaları",
+      "file": "plans-and-billing-pages.md",
+      "subCat": "Planlar ve Ücretler"
+    },
+    {
+      "name": "Ücretsiz Deneme",
+      "file": "free-trial.md",
+      "subCat": "Planlar ve Ücretler"
+    },
+    {
+      "name": "Ücretlendirildiğiniz Zaman",
+      "file": "when-you-are-charged.md",
+      "subCat": "Planlar ve Ücretler"
+    },
+    {
+      "name": "Planınızı Değiştirme",
+      "file": "changing-your-plan.md",
+      "subCat": "Planlar ve Ücretler"
+    },
+    {
+      "name": "Aboneliğinizi İptal Etme",
+      "file": "cancelling-your-subscription.md",
+      "subCat": "Planlar ve Ücretler"
+    },
+    {
+      "name": "Flex Kullanımı Nasıl Ölçülür",
+      "file": "how-flex-usage-is-measured.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "Yönetici ve Moderatör Koltukları",
+      "file": "admin-and-moderator-seats.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "Flex Harcama Limitleri",
+      "file": "flex-spend-limits.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "Faturalar ve Makbuzlar",
+      "file": "invoices-and-receipts.md",
+      "subCat": "Faturalar"
+    },
+    {
+      "name": "Fatura Ayarları",
+      "file": "invoice-settings.md",
+      "subCat": "Faturalar"
+    },
+    {
+      "name": "Para Birimleri",
+      "file": "currencies.md",
+      "subCat": "Faturalar"
+    },
+    {
+      "name": "Kartınızı Güncelleme",
+      "file": "updating-your-card.md",
+      "subCat": "Kartlar ve Başarısız Ödemeler"
+    },
+    {
+      "name": "Başarısız Ödemeler ve Devre Dışı Bırakma",
+      "file": "failed-payments-and-deactivation.md",
+      "subCat": "Kartlar ve Başarısız Ödemeler"
+    },
+    {
       "name": "Krediler",
       "file": "credits.md",
       "subCat": "Krediler"
@@ -26,6 +91,11 @@
       "name": "Kredi Ekleyemeyen Hesaplar",
       "file": "accounts-that-cannot-add-credit.md",
       "subCat": "Krediler"
+    },
+    {
+      "name": "Faturalandırmayı Kim Yönetebilir",
+      "file": "who-can-manage-billing.md",
+      "subCat": "İzinler"
     }
   ]
 }

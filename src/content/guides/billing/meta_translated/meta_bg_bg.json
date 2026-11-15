@@ -3,6 +3,71 @@
   "icon": "feature.png",
   "itemsOrdered": [
     {
+      "name": "Страници за планове и фактуриране",
+      "file": "plans-and-billing-pages.md",
+      "subCat": "Планове и такси"
+    },
+    {
+      "name": "Безплатен пробен период",
+      "file": "free-trial.md",
+      "subCat": "Планове и такси"
+    },
+    {
+      "name": "Кога се таксувате",
+      "file": "when-you-are-charged.md",
+      "subCat": "Планове и такси"
+    },
+    {
+      "name": "Промяна на вашия план",
+      "file": "changing-your-plan.md",
+      "subCat": "Планове и такси"
+    },
+    {
+      "name": "Отмяна на абонамента",
+      "file": "cancelling-your-subscription.md",
+      "subCat": "Планове и такси"
+    },
+    {
+      "name": "Как се измерва използването на Flex",
+      "file": "how-flex-usage-is-measured.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "Места за администратори и модератори",
+      "file": "admin-and-moderator-seats.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "Лимити на разходите за Flex",
+      "file": "flex-spend-limits.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "Фактури и разписки",
+      "file": "invoices-and-receipts.md",
+      "subCat": "Фактури"
+    },
+    {
+      "name": "Настройки на фактурите",
+      "file": "invoice-settings.md",
+      "subCat": "Фактури"
+    },
+    {
+      "name": "Валути",
+      "file": "currencies.md",
+      "subCat": "Фактури"
+    },
+    {
+      "name": "Актуализиране на вашата карта",
+      "file": "updating-your-card.md",
+      "subCat": "Карти и неуспешни плащания"
+    },
+    {
+      "name": "Неуспешни плащания и деактивиране",
+      "file": "failed-payments-and-deactivation.md",
+      "subCat": "Карти и неуспешни плащания"
+    },
+    {
       "name": "Кредити",
       "file": "credits.md",
       "subCat": "Кредити"
@@ -26,6 +91,11 @@
       "name": "Акаунти, които не могат да добавят кредит",
       "file": "accounts-that-cannot-add-credit.md",
       "subCat": "Кредити"
+    },
+    {
+      "name": "Кой може да управлява фактурирането",
+      "file": "who-can-manage-billing.md",
+      "subCat": "Разрешения"
     }
   ]
 }

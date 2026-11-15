@@ -1,12 +1,12 @@
 Le crédit est de l'argent détenu sur votre compte FastComments, dans votre devise de facturation. Il est appliqué automatiquement à vos futures factures, y compris les renouvellements d'abonnement et l'utilisation de Flex, avant que votre carte ne soit débitée.
 
-Le crédit est un prépaiement, pas une remise ni un système de points. Ajouter `$50` de crédit signifie que vos prochaines factures d'un montant de `$50` seront payées à partir de ce crédit plutôt qu'avec votre carte. Le solde est conservé sous forme de crédit sur votre compte chez Stripe, notre processeur de paiements, et il reste sur votre compte jusqu'à ce qu'une facture l'utilise.
+Le crédit est un prépaiement, et non une remise ou un système de points. Ajouter `$50` de crédit signifie que vos prochaines factures d'un montant de `$50` seront payées à partir de ce crédit plutôt qu'avec votre carte. Le solde est conservé sous forme de crédit sur votre compte chez Stripe, notre processeur de paiement, et il reste sur votre compte jusqu'à ce qu'une facture l'utilise.
 
 Quelques raisons de conserver un solde de crédit :
 
-- Prépayer une période à l'avance, par exemple lorsqu'un service financier préfère un paiement plus important à un débit mensuel de carte.
+- Prépayer une période à l'avance, par exemple lorsqu'un service financier préfère un paiement plus important à un débit mensuel par carte.
 - Conserver une réserve sur un plan Flex afin qu'un mois chargé soit couvert avant l'arrivée de la facture.
-- Payer une fois avec une carte, puis laisser les renouvellements être prélevés sur le solde.
+- Payer une fois par carte, puis laisser les renouvellements être prélevés sur le solde.
 
 ### Où le trouver
 
@@ -16,4 +16,4 @@ Une fois que vous avez un solde, la page `Billing Info` affiche également une l
 
 ### Qui peut ajouter du crédit
 
-Seul le `Account Owner` ou un utilisateur disposant de la permission `Billing Admin` peut ajouter du crédit, c'est-à-dire les mêmes utilisateurs qui peuvent modifier le plan ou le moyen de paiement. Les autres administrateurs ne voient pas le bouton `Manage Credits`. Consultez [Updating Administrator Permissions](/guide-users.html#updating-administrator-permissions) pour savoir comment accorder cette permission.
+Seul le `Account Owner` ou un utilisateur disposant de la permission `Billing Admin` peut ajouter du crédit, c'est-à-dire les mêmes utilisateurs qui peuvent modifier le plan ou le moyen de paiement. Les autres administrateurs ne voient pas le bouton `Manage Credits`. Voir [Qui peut gérer la facturation](#who-can-manage-billing).

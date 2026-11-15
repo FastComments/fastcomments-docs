@@ -3,6 +3,71 @@
   "icon": "feature.png",
   "itemsOrdered": [
     {
+      "name": "Сторінки тарифів і виставлення рахунків",
+      "file": "plans-and-billing-pages.md",
+      "subCat": "Тарифи та платежі"
+    },
+    {
+      "name": "Безкоштовний пробний період",
+      "file": "free-trial.md",
+      "subCat": "Тарифи та платежі"
+    },
+    {
+      "name": "Коли списується оплата",
+      "file": "when-you-are-charged.md",
+      "subCat": "Тарифи та платежі"
+    },
+    {
+      "name": "Зміна тарифного плану",
+      "file": "changing-your-plan.md",
+      "subCat": "Тарифи та платежі"
+    },
+    {
+      "name": "Скасування підписки",
+      "file": "cancelling-your-subscription.md",
+      "subCat": "Тарифи та платежі"
+    },
+    {
+      "name": "Як вимірюється використання Flex",
+      "file": "how-flex-usage-is-measured.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "Місця адміністраторів і модераторів",
+      "file": "admin-and-moderator-seats.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "Ліміти витрат Flex",
+      "file": "flex-spend-limits.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "Рахунки та квитанції",
+      "file": "invoices-and-receipts.md",
+      "subCat": "Рахунки"
+    },
+    {
+      "name": "Налаштування рахунків",
+      "file": "invoice-settings.md",
+      "subCat": "Рахунки"
+    },
+    {
+      "name": "Валюти",
+      "file": "currencies.md",
+      "subCat": "Рахунки"
+    },
+    {
+      "name": "Оновлення картки",
+      "file": "updating-your-card.md",
+      "subCat": "Картки та невдалі платежі"
+    },
+    {
+      "name": "Невдалі платежі та деактивація",
+      "file": "failed-payments-and-deactivation.md",
+      "subCat": "Картки та невдалі платежі"
+    },
+    {
       "name": "Кредити",
       "file": "credits.md",
       "subCat": "Кредити"
@@ -26,6 +91,11 @@
       "name": "Облікові записи, які не можуть додавати кредит",
       "file": "accounts-that-cannot-add-credit.md",
       "subCat": "Кредити"
+    },
+    {
+      "name": "Хто може керувати виставленням рахунків",
+      "file": "who-can-manage-billing.md",
+      "subCat": "Дозволи"
     }
   ]
 }

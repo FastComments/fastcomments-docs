@@ -3,6 +3,71 @@
   "icon": "feature.png",
   "itemsOrdered": [
     {
+      "name": "प्लान और बिलिंग पेज",
+      "file": "plans-and-billing-pages.md",
+      "subCat": "प्लान और शुल्क"
+    },
+    {
+      "name": "मुफ़्त ट्रायल",
+      "file": "free-trial.md",
+      "subCat": "प्लान और शुल्क"
+    },
+    {
+      "name": "आपसे कब शुल्क लिया जाता है",
+      "file": "when-you-are-charged.md",
+      "subCat": "प्लान और शुल्क"
+    },
+    {
+      "name": "अपना प्लान बदलना",
+      "file": "changing-your-plan.md",
+      "subCat": "प्लान और शुल्क"
+    },
+    {
+      "name": "अपनी सदस्यता रद्द करना",
+      "file": "cancelling-your-subscription.md",
+      "subCat": "प्लान और शुल्क"
+    },
+    {
+      "name": "Flex उपयोग कैसे मापा जाता है",
+      "file": "how-flex-usage-is-measured.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "एडमिन और मॉडरेटर सीटें",
+      "file": "admin-and-moderator-seats.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "Flex खर्च सीमाएँ",
+      "file": "flex-spend-limits.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "इनवॉइस और रसीदें",
+      "file": "invoices-and-receipts.md",
+      "subCat": "इनवॉइस"
+    },
+    {
+      "name": "इनवॉइस सेटिंग्स",
+      "file": "invoice-settings.md",
+      "subCat": "इनवॉइस"
+    },
+    {
+      "name": "मुद्राएँ",
+      "file": "currencies.md",
+      "subCat": "इनवॉइस"
+    },
+    {
+      "name": "अपना कार्ड अपडेट करना",
+      "file": "updating-your-card.md",
+      "subCat": "कार्ड और असफल भुगतान"
+    },
+    {
+      "name": "असफल भुगतान और निष्क्रियता",
+      "file": "failed-payments-and-deactivation.md",
+      "subCat": "कार्ड और असफल भुगतान"
+    },
+    {
       "name": "क्रेडिट",
       "file": "credits.md",
       "subCat": "क्रेडिट"
@@ -26,6 +91,11 @@
       "name": "वे खाते जो क्रेडिट नहीं जोड़ सकते",
       "file": "accounts-that-cannot-add-credit.md",
       "subCat": "क्रेडिट"
+    },
+    {
+      "name": "बिलिंग कौन प्रबंधित कर सकता है",
+      "file": "who-can-manage-billing.md",
+      "subCat": "अनुमतियाँ"
     }
   ]
 }

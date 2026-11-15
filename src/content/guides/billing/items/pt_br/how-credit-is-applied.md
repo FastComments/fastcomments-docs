@@ -1,14 +1,14 @@
 Você não precisa fazer nada para usar seu crédito. Quando uma fatura é criada para sua conta, o crédito disponível é aplicado a ela primeiro, e apenas o restante, se houver, é cobrado no seu cartão.
 
-Isso cobre todas as faturas que o FastComments emite para sua conta:
+Isso cobre todas as faturas que a FastComments emite para sua conta:
 
 - Renovações mensais ou anuais de assinatura.
-- Cobranças de uso Flex, faturadas no final de cada período.
+- Cobranças de uso do Flex, faturadas no final de cada período.
 - Mudanças de plano que geram uma fatura.
 
-Se o seu saldo for maior que a fatura, toda a fatura é paga com crédito e o restante fica na sua conta para a próxima. Se o saldo for menor, o crédito é esgotado e a diferença é cobrada no seu cartão.
+Se o seu saldo for maior que a fatura, a fatura inteira é paga com crédito e o restante fica na sua conta para a próxima. Se o saldo for menor, o crédito é esgotado e a diferença é cobrada no seu cartão.
 
-O crédito é aplicado apenas a faturas. Ele não altera seu plano, seus limites ou os preços que você paga, e não é um limite de gastos. Os limites de gastos do Flex são configurados separadamente na página [Billing Info](https://fastcomments.com/auth/my-account/billing-info).
+O crédito é aplicado apenas às faturas. Ele não altera seu plano, seus limites ou os preços que você paga, e não é um limite de gastos. Os limites de gastos do Flex são configurados separadamente, veja [Limites de Gastos do Flex](#flex-spend-limits).
 
 Cada fatura mostra o crédito que foi aplicado a ela. Você pode revisar as faturas em `View Invoices` na página Billing Info.
 

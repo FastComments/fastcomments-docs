@@ -3,29 +3,99 @@
   "icon": "feature.png",
   "itemsOrdered": [
     {
-      "name": "积分",
+      "name": "套餐与账单页面",
+      "file": "plans-and-billing-pages.md",
+      "subCat": "套餐与费用"
+    },
+    {
+      "name": "免费试用",
+      "file": "free-trial.md",
+      "subCat": "套餐与费用"
+    },
+    {
+      "name": "扣费时间",
+      "file": "when-you-are-charged.md",
+      "subCat": "套餐与费用"
+    },
+    {
+      "name": "更改您的套餐",
+      "file": "changing-your-plan.md",
+      "subCat": "套餐与费用"
+    },
+    {
+      "name": "取消订阅",
+      "file": "cancelling-your-subscription.md",
+      "subCat": "套餐与费用"
+    },
+    {
+      "name": "Flex 用量如何计算",
+      "file": "how-flex-usage-is-measured.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "管理员和版主席位",
+      "file": "admin-and-moderator-seats.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "Flex 消费限额",
+      "file": "flex-spend-limits.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "发票与收据",
+      "file": "invoices-and-receipts.md",
+      "subCat": "发票"
+    },
+    {
+      "name": "发票设置",
+      "file": "invoice-settings.md",
+      "subCat": "发票"
+    },
+    {
+      "name": "货币",
+      "file": "currencies.md",
+      "subCat": "发票"
+    },
+    {
+      "name": "更新您的银行卡",
+      "file": "updating-your-card.md",
+      "subCat": "银行卡与付款失败"
+    },
+    {
+      "name": "付款失败与账户停用",
+      "file": "failed-payments-and-deactivation.md",
+      "subCat": "银行卡与付款失败"
+    },
+    {
+      "name": "余额",
       "file": "credits.md",
-      "subCat": "积分"
+      "subCat": "余额"
     },
     {
-      "name": "充值积分",
+      "name": "充值",
       "file": "adding-credit.md",
-      "subCat": "积分"
+      "subCat": "余额"
     },
     {
-      "name": "积分如何抵扣",
+      "name": "余额如何抵扣",
       "file": "how-credit-is-applied.md",
-      "subCat": "积分"
+      "subCat": "余额"
     },
     {
       "name": "历史充值记录",
       "file": "past-top-ups.md",
-      "subCat": "积分"
+      "subCat": "余额"
     },
     {
       "name": "无法充值的账户",
       "file": "accounts-that-cannot-add-credit.md",
-      "subCat": "积分"
+      "subCat": "余额"
+    },
+    {
+      "name": "谁可以管理账单",
+      "file": "who-can-manage-billing.md",
+      "subCat": "权限"
     }
   ]
 }

@@ -1,20 +1,22 @@
-Um das Limit für die Anzahl der Domains in Ihrem Konto herauszufinden, besuchen Sie die [Abrechnungsseite](https://fastcomments.com/auth/my-account/billing-info).
+Um das Limit für die Anzahl der Domains in Ihrem Konto herauszufinden, besuchen Sie die [Billing-Seite](https://fastcomments.com/auth/my-account/billing-info).
 
-### Preisgestaltung
+### Preise
 
 Die Preise variieren je nach Paket:
 
 1. FastComments for Creators
-   - Im Paketpreis enthalten. Begrenzung auf drei Websites.
+   - In den Paketpreisen enthalten. Limit von drei Websites.
 2. FastComments Flex
-   - Die erste Website ist enthalten. Jede zusätzliche Website kostet $10/Monat.
+   - Die erste Website ist enthalten. Jede zusätzliche Website kostet 10 $/Monat.
 3. FastComments Pro
-   - Eine große Anzahl von Websites (kann je nach Vereinbarung variieren) ist im Paketpreis enthalten.
+   - Eine große Anzahl von Websites (kann je nach Vereinbarung variieren) ist in den Paketpreisen enthalten.
 
 ### Traffic-Limits & Domains
 
-In dem Beispiel, in dem Sie sich auf einer Stufe mit fünf Millionen monatlichen Seitenaufrufen befinden und fünf Domains zu Ihrem Konto hinzugefügt sind, und jede Domain am Ende eine Million Seitenaufrufe hat, hätten Sie Ihr monatliches Kontingent erreicht.
+Wenn Sie sich in dem Beispiel auf einem Tarif mit fünf Millionen monatlichen Seitenaufrufen befinden und fünf Domains zu Ihrem Konto hinzugefügt haben, und jede Domain am Ende eine Million Seitenaufrufe erhält, haben Sie Ihr monatliches Kontingent erreicht.
 
-Zusammenfassend sind die Verkehrsbegrenzungen kontoweit, nicht pro Domain.
+Zusammengefasst: Traffic-Begrenzungen gelten pro Konto, nicht pro Domain.
 
-Beachten Sie, dass wir maßgeschneiderte Pakete für Websites unterschiedlicher Größe anbieten; wenden Sie sich einfach an den Support.
+Beachten Sie, dass wir benutzerdefinierte Pakete für Websites unterschiedlicher Größe anbieten – kontaktieren Sie einfach den Support.
+
+Wie Websites und der Rest einer Flex-Rechnung abgerechnet werden, erfahren Sie unter [Wie die Flex-Nutzung gemessen wird](/guide-billing.html#how-flex-usage-is-measured) im Billing-Leitfaden.

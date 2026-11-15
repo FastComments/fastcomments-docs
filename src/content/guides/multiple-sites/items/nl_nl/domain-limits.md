@@ -1,20 +1,23 @@
-Om de limiet voor het aantal domeinen in uw account te achterhalen, bezoekt u de [Facturatiepagina](https://fastcomments.com/auth/my-account/billing-info).
+Om de limiet voor het aantal domeinen in je account te achterhalen, ga je naar de [Factureringspagina](https://fastcomments.com/auth/my-account/billing-info).
 
 ### Prijzen
 
-De prijsstelling varieert per pakket:
+De prijzen variëren per pakket:
 
 1. FastComments for Creators
-   - Inbegrepen in het pakket. Limiet van drie websites.
+   - Inbegrepen bij de pakketprijs. Limiet van drie sites.
 2. FastComments Flex
-   - De eerste website is inbegrepen. Elke extra website kost $10/maand.
+   - De eerste site is inbegrepen. Elke extra site kost $10/maand.
 3. FastComments Pro
-   - Een groot aantal websites (kan variëren op basis van de overeenkomst) is inbegrepen in het pakket.
+   - Een groot aantal sites (kan variëren afhankelijk van de overeenkomst) is inbegrepen bij de pakketprijs.
 
 ### Verkeerslimieten & Domeinen
 
-In het voorbeeld waarin u op een niveau zit met vijf miljoen maandelijkse paginaweergaven en vijf domeinen aan uw account hebt toegevoegd, en elk domein krijgt één miljoen paginaweergaven, heeft u uw maandelijkse limiet bereikt.
+In het voorbeeld waarin je op een tier zit met vijf miljoen maandelijkse paginaladingen met vijf domeinen toegevoegd aan je account, en
+elk domein uiteindelijk een miljoen paginaladingen krijgt, heb je je maandelijkse quota bereikt.
 
-Samengevat: verkeersbeperkingen gelden per account, niet per domein.
+Samengevat: verkeerslimieten gelden per account, niet per domein.
 
-Let op dat we aangepaste pakketten aanbieden voor websites van verschillende groottes; neem gewoon contact op met ondersteuning.
+Let op: we bieden ook aangepaste pakketten aan voor sites van verschillende groottes; neem gewoon contact op met de support.
+
+Voor informatie over hoe sites en de rest van een Flex-factuur worden berekend, zie [Hoe Flex-gebruik wordt gemeten](/guide-billing.html#how-flex-usage-is-measured) in de Factureringsgids.

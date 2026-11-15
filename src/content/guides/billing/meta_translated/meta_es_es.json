@@ -3,6 +3,71 @@
   "icon": "feature.png",
   "itemsOrdered": [
     {
+      "name": "Páginas de planes y facturación",
+      "file": "plans-and-billing-pages.md",
+      "subCat": "Planes y cargos"
+    },
+    {
+      "name": "Prueba gratuita",
+      "file": "free-trial.md",
+      "subCat": "Planes y cargos"
+    },
+    {
+      "name": "Cuándo se te cobra",
+      "file": "when-you-are-charged.md",
+      "subCat": "Planes y cargos"
+    },
+    {
+      "name": "Cambiar tu plan",
+      "file": "changing-your-plan.md",
+      "subCat": "Planes y cargos"
+    },
+    {
+      "name": "Cancelar tu suscripción",
+      "file": "cancelling-your-subscription.md",
+      "subCat": "Planes y cargos"
+    },
+    {
+      "name": "Cómo se mide el uso de Flex",
+      "file": "how-flex-usage-is-measured.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "Asientos de administrador y moderador",
+      "file": "admin-and-moderator-seats.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "Límites de gasto de Flex",
+      "file": "flex-spend-limits.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "Facturas y recibos",
+      "file": "invoices-and-receipts.md",
+      "subCat": "Facturas"
+    },
+    {
+      "name": "Configuración de facturas",
+      "file": "invoice-settings.md",
+      "subCat": "Facturas"
+    },
+    {
+      "name": "Monedas",
+      "file": "currencies.md",
+      "subCat": "Facturas"
+    },
+    {
+      "name": "Actualizar tu tarjeta",
+      "file": "updating-your-card.md",
+      "subCat": "Tarjetas y pagos fallidos"
+    },
+    {
+      "name": "Pagos fallidos y desactivación",
+      "file": "failed-payments-and-deactivation.md",
+      "subCat": "Tarjetas y pagos fallidos"
+    },
+    {
       "name": "Créditos",
       "file": "credits.md",
       "subCat": "Créditos"
@@ -26,6 +91,11 @@
       "name": "Cuentas que no pueden añadir crédito",
       "file": "accounts-that-cannot-add-credit.md",
       "subCat": "Créditos"
+    },
+    {
+      "name": "Quién puede gestionar la facturación",
+      "file": "who-can-manage-billing.md",
+      "subCat": "Permisos"
     }
   ]
 }

@@ -1,1 +1,1 @@
-Forudbetal din FastComments-regning med kredit. Tilføj kredit fra faktureringssiden, se hvordan den anvendes på fornyelser og Flex-forbrug, og følg tidligere indbetalinger.
+Sådan fungerer FastComments fakturering: planer, prøveperiode, hvornår Flex- og faste planer opkræver betaling, ændring eller opsigelse, fakturaer og moms, valutaer, kort, mislykkede betalinger, kredit.

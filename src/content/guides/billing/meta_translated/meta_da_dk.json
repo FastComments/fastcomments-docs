@@ -3,6 +3,71 @@
   "icon": "feature.png",
   "itemsOrdered": [
     {
+      "name": "Planer og faktureringssider",
+      "file": "plans-and-billing-pages.md",
+      "subCat": "Planer og gebyrer"
+    },
+    {
+      "name": "Gratis prøveperiode",
+      "file": "free-trial.md",
+      "subCat": "Planer og gebyrer"
+    },
+    {
+      "name": "Hvornår du bliver opkrævet",
+      "file": "when-you-are-charged.md",
+      "subCat": "Planer og gebyrer"
+    },
+    {
+      "name": "Ændring af din plan",
+      "file": "changing-your-plan.md",
+      "subCat": "Planer og gebyrer"
+    },
+    {
+      "name": "Opsigelse af dit abonnement",
+      "file": "cancelling-your-subscription.md",
+      "subCat": "Planer og gebyrer"
+    },
+    {
+      "name": "Sådan måles Flex-forbrug",
+      "file": "how-flex-usage-is-measured.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "Admin- og moderatorpladser",
+      "file": "admin-and-moderator-seats.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "Flex-forbrugsgrænser",
+      "file": "flex-spend-limits.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "Fakturaer og kvitteringer",
+      "file": "invoices-and-receipts.md",
+      "subCat": "Fakturaer"
+    },
+    {
+      "name": "Fakturaindstillinger",
+      "file": "invoice-settings.md",
+      "subCat": "Fakturaer"
+    },
+    {
+      "name": "Valutaer",
+      "file": "currencies.md",
+      "subCat": "Fakturaer"
+    },
+    {
+      "name": "Opdatering af dit kort",
+      "file": "updating-your-card.md",
+      "subCat": "Kort og mislykkede betalinger"
+    },
+    {
+      "name": "Mislykkede betalinger og deaktivering",
+      "file": "failed-payments-and-deactivation.md",
+      "subCat": "Kort og mislykkede betalinger"
+    },
+    {
       "name": "Kredit",
       "file": "credits.md",
       "subCat": "Kredit"
@@ -26,6 +91,11 @@
       "name": "Konti der ikke kan tilføje kredit",
       "file": "accounts-that-cannot-add-credit.md",
       "subCat": "Kredit"
+    },
+    {
+      "name": "Hvem kan administrere fakturering",
+      "file": "who-can-manage-billing.md",
+      "subCat": "Tilladelser"
     }
   ]
 }

@@ -3,17 +3,82 @@
   "icon": "feature.png",
   "itemsOrdered": [
     {
-      "name": "Kredyty",
+      "name": "Plany i strony rozliczeń",
+      "file": "plans-and-billing-pages.md",
+      "subCat": "Plany i opłaty"
+    },
+    {
+      "name": "Bezpłatny okres próbny",
+      "file": "free-trial.md",
+      "subCat": "Plany i opłaty"
+    },
+    {
+      "name": "Kiedy następuje obciążenie",
+      "file": "when-you-are-charged.md",
+      "subCat": "Plany i opłaty"
+    },
+    {
+      "name": "Zmiana planu",
+      "file": "changing-your-plan.md",
+      "subCat": "Plany i opłaty"
+    },
+    {
+      "name": "Anulowanie subskrypcji",
+      "file": "cancelling-your-subscription.md",
+      "subCat": "Plany i opłaty"
+    },
+    {
+      "name": "Jak mierzone jest użycie Flex",
+      "file": "how-flex-usage-is-measured.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "Miejsca dla administratorów i moderatorów",
+      "file": "admin-and-moderator-seats.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "Limity wydatków Flex",
+      "file": "flex-spend-limits.md",
+      "subCat": "Flex"
+    },
+    {
+      "name": "Faktury i paragony",
+      "file": "invoices-and-receipts.md",
+      "subCat": "Faktury"
+    },
+    {
+      "name": "Ustawienia faktur",
+      "file": "invoice-settings.md",
+      "subCat": "Faktury"
+    },
+    {
+      "name": "Waluty",
+      "file": "currencies.md",
+      "subCat": "Faktury"
+    },
+    {
+      "name": "Aktualizacja karty",
+      "file": "updating-your-card.md",
+      "subCat": "Karty i nieudane płatności"
+    },
+    {
+      "name": "Nieudane płatności i dezaktywacja",
+      "file": "failed-payments-and-deactivation.md",
+      "subCat": "Karty i nieudane płatności"
+    },
+    {
+      "name": "Środki (kredyty)",
       "file": "credits.md",
       "subCat": "Kredyty"
     },
     {
-      "name": "Dodawanie kredytu",
+      "name": "Dodawanie środków",
       "file": "adding-credit.md",
       "subCat": "Kredyty"
     },
     {
-      "name": "Jak stosowany jest kredyt",
+      "name": "Jak stosowane są środki",
       "file": "how-credit-is-applied.md",
       "subCat": "Kredyty"
     },
@@ -23,9 +88,14 @@
       "subCat": "Kredyty"
     },
     {
-      "name": "Konta, które nie mogą dodawać kredytu",
+      "name": "Konta, które nie mogą dodawać środków",
       "file": "accounts-that-cannot-add-credit.md",
       "subCat": "Kredyty"
+    },
+    {
+      "name": "Kto może zarządzać rozliczeniami",
+      "file": "who-can-manage-billing.md",
+      "subCat": "Uprawnienia"
     }
   ]
 }
