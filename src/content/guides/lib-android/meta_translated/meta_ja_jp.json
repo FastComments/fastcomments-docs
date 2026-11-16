@@ -27,13 +27,13 @@
       "type": "readme"
     },
     {
-      "name": "基本的な使用方法",
+      "name": "基本的な使い方",
       "file": "basic-usage-readme-generated.md",
       "subCat": "使用方法",
       "type": "readme"
     },
     {
-      "name": "安全な SSO 認証",
+      "name": "セキュアな SSO 認証",
       "file": "secure-sso-authentication-readme-generated.md",
       "subCat": "認証",
       "type": "readme"
@@ -60,6 +60,12 @@
       "name": "設定オプション",
       "file": "configuration-options-readme-generated.md",
       "subCat": "設定",
+      "type": "readme"
+    },
+    {
+      "name": "投票",
+      "file": "polls-readme-generated.md",
+      "subCat": "ドキュメント",
       "type": "readme"
     },
     {

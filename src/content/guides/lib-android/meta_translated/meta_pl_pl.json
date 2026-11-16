@@ -23,7 +23,7 @@
     {
       "name": "Instalacja",
       "file": "installation-readme-generated.md",
-      "subCat": "Rozpoczęcie",
+      "subCat": "Pierwsze kroki",
       "type": "readme"
     },
     {
@@ -33,19 +33,19 @@
       "type": "readme"
     },
     {
-      "name": "Bezpieczna autoryzacja SSO",
+      "name": "Bezpieczne uwierzytelnianie SSO",
       "file": "secure-sso-authentication-readme-generated.md",
       "subCat": "Uwierzytelnianie",
       "type": "readme"
     },
     {
-      "name": "Integracja kanału",
+      "name": "Integracja z kanałem",
       "file": "feed-integration-readme-generated.md",
       "subCat": "Dokumentacja",
       "type": "readme"
     },
     {
-      "name": "Integracja czatu na żywo",
+      "name": "Integracja z czatem na żywo",
       "file": "live-chat-integration-readme-generated.md",
       "subCat": "Dokumentacja",
       "type": "readme"
@@ -60,6 +60,12 @@
       "name": "Opcje konfiguracji",
       "file": "configuration-options-readme-generated.md",
       "subCat": "Konfiguracja",
+      "type": "readme"
+    },
+    {
+      "name": "Ankiety",
+      "file": "polls-readme-generated.md",
+      "subCat": "Dokumentacja",
       "type": "readme"
     },
     {

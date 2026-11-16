@@ -2,11 +2,11 @@
 
 ```kotlin
 dependencies {
-    implementation("com.fastcomments:sdk:2.0.0")
+    implementation("com.fastcomments:android-sdk:2.1.0")
 }
 ```
 
-Βεβαιωθείτε ότι έχετε το αποθετήριο Repsy στο `settings.gradle.kts` του έργου σας:
+Βεβαιωθείτε ότι έχετε το Repsy repository στο `settings.gradle.kts` του project σας:
 
 ```kotlin
 dependencyResolutionManagement {

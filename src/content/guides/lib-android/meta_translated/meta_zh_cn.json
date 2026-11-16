@@ -1,21 +1,21 @@
 {
   "name": "Android 库",
-  "pageHeader": "在您的 Android 应用中添加评论",
+  "pageHeader": "为您的 Android 应用添加评论",
   "itemsOrdered": [
     {
-      "name": "AI 编码代理",
+      "name": "AI 编程助手",
       "file": "ai-coding-agents-readme-generated.md",
       "subCat": "文档",
       "type": "readme"
     },
     {
-      "name": "功能",
+      "name": "功能特性",
       "file": "features-readme-generated.md",
       "subCat": "文档",
       "type": "readme"
     },
     {
-      "name": "要求",
+      "name": "系统要求",
       "file": "requirements-readme-generated.md",
       "subCat": "文档",
       "type": "readme"
@@ -23,19 +23,19 @@
     {
       "name": "安装",
       "file": "installation-readme-generated.md",
-      "subCat": "入门",
+      "subCat": "快速入门",
       "type": "readme"
     },
     {
-      "name": "基本使用",
+      "name": "基本用法",
       "file": "basic-usage-readme-generated.md",
       "subCat": "使用",
       "type": "readme"
     },
     {
-      "name": "安全单点登录认证",
+      "name": "安全 SSO 身份验证",
       "file": "secure-sso-authentication-readme-generated.md",
-      "subCat": "认证",
+      "subCat": "身份验证",
       "type": "readme"
     },
     {
@@ -63,7 +63,13 @@
       "type": "readme"
     },
     {
-      "name": "全面的主题定制",
+      "name": "投票",
+      "file": "polls-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "全面的主题自定义",
       "file": "comprehensive-theme-customization-readme-generated.md",
       "subCat": "文档",
       "type": "readme"

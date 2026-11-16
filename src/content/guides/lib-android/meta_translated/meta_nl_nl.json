@@ -1,9 +1,9 @@
 {
-  "name": "Android Bibliotheek",
-  "pageHeader": "Voeg opmerkingen toe aan uw Android-app",
+  "name": "Android-bibliotheek",
+  "pageHeader": "Voeg opmerkingen toe aan je Android-app",
   "itemsOrdered": [
     {
-      "name": "AI-coderingsagenten",
+      "name": "AI-codeeragenten",
       "file": "ai-coding-agents-readme-generated.md",
       "subCat": "Documentatie",
       "type": "readme"
@@ -60,6 +60,12 @@
       "name": "Configuratieopties",
       "file": "configuration-options-readme-generated.md",
       "subCat": "Configuratie",
+      "type": "readme"
+    },
+    {
+      "name": "Polls",
+      "file": "polls-readme-generated.md",
+      "subCat": "Documentatie",
       "type": "readme"
     },
     {

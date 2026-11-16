@@ -1,10 +1,11 @@
-- 🔄 Commenti in tempo reale con aggiornamenti in diretta
+- 🔄 Commenti in tempo reale con aggiornamenti live
 - 📱 Componenti UI Android nativi
-- 🧵 Discussioni a thread con risposte
+- 🧵 Discussioni in thread con risposte
 - 👤 Autenticazione SSO sicura
 - 👍 Sistema di votazione con stili personalizzabili
-- 🔔 Notifiche e presenza degli utenti
+- 📊 Sondaggi nei commenti con risultati in tempo reale
+- 🔔 Notifiche utente e presenza
 - 🔍 Funzionalità di moderazione dei commenti
 - 📱 Integrazione con feed social
-- ♾️ Paginazione con scorrimento infinito
-- 🎨 Personalizzazione completa del tema
+- ♾️ Paginazione con scroll infinito
+- 🎨 Theming completo

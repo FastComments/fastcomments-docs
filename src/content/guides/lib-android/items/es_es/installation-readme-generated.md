@@ -1,12 +1,12 @@
-Agrega el SDK de FastComments al archivo `build.gradle.kts` de tu aplicación:
+Añade el SDK de FastComments al archivo `build.gradle.kts` de tu aplicación:
 
 ```kotlin
 dependencies {
-    implementation("com.fastcomments:sdk:2.0.0")
+    implementation("com.fastcomments:android-sdk:2.1.0")
 }
 ```
 
-Asegúrate de que tengas el repositorio Repsy en el `settings.gradle.kts` de tu proyecto:
+Asegúrate de tener el repositorio de Repsy en el archivo `settings.gradle.kts` de tu proyecto:
 
 ```kotlin
 dependencyResolutionManagement {
@@ -14,7 +14,7 @@ dependencyResolutionManagement {
         maven {
             url = uri("https://repo.repsy.io/mvn/winrid/fastcomments")
         }
-        // other repositories...
+        // otros repositorios...
     }
 }
 ```

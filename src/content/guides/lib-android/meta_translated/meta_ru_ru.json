@@ -1,15 +1,15 @@
 {
-  "name": "Библиотека Android",
-  "pageHeader": "Добавьте комментарии в ваше Android приложение",
+  "name": "Библиотека для Android",
+  "pageHeader": "Добавьте комментарии в своё Android-приложение",
   "itemsOrdered": [
     {
-      "name": "AI‑агенты программирования",
+      "name": "ИИ-агенты для программирования",
       "file": "ai-coding-agents-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
     },
     {
-      "name": "Функции",
+      "name": "Возможности",
       "file": "features-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
@@ -33,7 +33,7 @@
       "type": "readme"
     },
     {
-      "name": "Безопасная SSO‑аутентификация",
+      "name": "Безопасная SSO-аутентификация",
       "file": "secure-sso-authentication-readme-generated.md",
       "subCat": "Аутентификация",
       "type": "readme"
@@ -51,7 +51,7 @@
       "type": "readme"
     },
     {
-      "name": "Примерные проекты",
+      "name": "Примеры проектов",
       "file": "example-projects-readme-generated.md",
       "subCat": "Использование",
       "type": "readme"
@@ -60,6 +60,12 @@
       "name": "Параметры конфигурации",
       "file": "configuration-options-readme-generated.md",
       "subCat": "Конфигурация",
+      "type": "readme"
+    },
+    {
+      "name": "Опросы",
+      "file": "polls-readme-generated.md",
+      "subCat": "Документация",
       "type": "readme"
     },
     {

@@ -1,6 +1,6 @@
 {
   "name": "Android библиотека",
-  "pageHeader": "Додајте коментаре у вашу Android апликацију",
+  "pageHeader": "Додајте коментаре у своју Android апликацију",
   "itemsOrdered": [
     {
       "name": "AI агенти за кодирање",
@@ -23,7 +23,7 @@
     {
       "name": "Инсталација",
       "file": "installation-readme-generated.md",
-      "subCat": "Започните",
+      "subCat": "Први кораци",
       "type": "readme"
     },
     {
@@ -33,7 +33,7 @@
       "type": "readme"
     },
     {
-      "name": "Безбедна SSO аутентификација",
+      "name": "Сигурна SSO аутентификација",
       "file": "secure-sso-authentication-readme-generated.md",
       "subCat": "Аутентификација",
       "type": "readme"
@@ -51,7 +51,7 @@
       "type": "readme"
     },
     {
-      "name": "Пример пројеката",
+      "name": "Примери пројеката",
       "file": "example-projects-readme-generated.md",
       "subCat": "Употреба",
       "type": "readme"
@@ -63,7 +63,13 @@
       "type": "readme"
     },
     {
-      "name": "Свеобухватно прилагођавање теме",
+      "name": "Анкете",
+      "file": "polls-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
+      "name": "Свеобухватна прилагођавања теме",
       "file": "comprehensive-theme-customization-readme-generated.md",
       "subCat": "Документација",
       "type": "readme"

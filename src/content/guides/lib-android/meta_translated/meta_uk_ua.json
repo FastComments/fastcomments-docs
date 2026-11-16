@@ -1,9 +1,9 @@
 {
   "name": "Бібліотека Android",
-  "pageHeader": "Додайте коментарі до вашого Android-додатку",
+  "pageHeader": "Додайте коментарі до свого Android-застосунку",
   "itemsOrdered": [
     {
-      "name": "AI агенти кодування",
+      "name": "AI-агенти для програмування",
       "file": "ai-coding-agents-readme-generated.md",
       "subCat": "Документація",
       "type": "readme"
@@ -33,7 +33,7 @@
       "type": "readme"
     },
     {
-      "name": "Безпечна SSO автентифікація",
+      "name": "Безпечна SSO-автентифікація",
       "file": "secure-sso-authentication-readme-generated.md",
       "subCat": "Автентифікація",
       "type": "readme"
@@ -51,25 +51,31 @@
       "type": "readme"
     },
     {
-      "name": "Прикладні проєкти",
+      "name": "Приклади проєктів",
       "file": "example-projects-readme-generated.md",
       "subCat": "Використання",
       "type": "readme"
     },
     {
-      "name": "Опції конфігурації",
+      "name": "Параметри конфігурації",
       "file": "configuration-options-readme-generated.md",
       "subCat": "Конфігурація",
       "type": "readme"
     },
     {
-      "name": "Всеохоплююче налаштування теми",
+      "name": "Опитування",
+      "file": "polls-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Комплексна кастомізація тем",
       "file": "comprehensive-theme-customization-readme-generated.md",
       "subCat": "Документація",
       "type": "readme"
     },
     {
-      "name": "Управління пам'яттю",
+      "name": "Керування пам'яттю",
       "file": "memory-management-readme-generated.md",
       "subCat": "Документація",
       "type": "readme"

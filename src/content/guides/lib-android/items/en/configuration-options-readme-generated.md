@@ -14,3 +14,5 @@ The SDK provides many configuration options through the `CommentWidgetConfig` cl
 | `readonly` | Disable commenting but show comments |
 | `disableVoting` | Disable voting functionality |
 | `disableLiveCommenting` | Disable real-time updates |
+| `pollCreation` | Who can attach a poll to a comment: `NUMBER_0` disabled, `NUMBER_1` admins and moderators, `NUMBER_2` everyone |
+| `pollVoting` | Who can vote on polls: `NUMBER_0` logged in users, `NUMBER_1` anyone |

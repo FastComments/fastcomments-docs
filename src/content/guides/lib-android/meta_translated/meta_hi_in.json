@@ -63,6 +63,12 @@
       "type": "readme"
     },
     {
+      "name": "पोल",
+      "file": "polls-readme-generated.md",
+      "subCat": "दस्तावेज़ीकरण",
+      "type": "readme"
+    },
+    {
       "name": "व्यापक थीम अनुकूलन",
       "file": "comprehensive-theme-customization-readme-generated.md",
       "subCat": "दस्तावेज़ीकरण",

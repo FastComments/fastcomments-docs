@@ -1,9 +1,9 @@
 {
-  "name": "ספריית Android",
-  "pageHeader": "הוסף תגובות לאפליקציית Android שלך",
+  "name": "ספריית אנדרואיד",
+  "pageHeader": "הוספת תגובות לאפליקציית האנדרואיד שלך",
   "itemsOrdered": [
     {
-      "name": "סוכני קידוד AI",
+      "name": "סוכני קידוד מבוססי AI",
       "file": "ai-coding-agents-readme-generated.md",
       "subCat": "תיעוד",
       "type": "readme"
@@ -23,7 +23,7 @@
     {
       "name": "התקנה",
       "file": "installation-readme-generated.md",
-      "subCat": "התחלה",
+      "subCat": "תחילת עבודה",
       "type": "readme"
     },
     {
@@ -63,7 +63,13 @@
       "type": "readme"
     },
     {
-      "name": "התאמה מקיפה של ערכת נושא",
+      "name": "סקרים",
+      "file": "polls-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
+      "name": "התאמה אישית מקיפה של ערכת נושא",
       "file": "comprehensive-theme-customization-readme-generated.md",
       "subCat": "תיעוד",
       "type": "readme"

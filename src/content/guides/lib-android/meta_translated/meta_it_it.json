@@ -1,6 +1,6 @@
 {
   "name": "Libreria Android",
-  "pageHeader": "Aggiungi commenti alla tua app Android",
+  "pageHeader": "Aggiungi Commenti alla Tua App Android",
   "itemsOrdered": [
     {
       "name": "Agenti di codifica AI",
@@ -9,7 +9,7 @@
       "type": "readme"
     },
     {
-      "name": "Caratteristiche",
+      "name": "Funzionalità",
       "file": "features-readme-generated.md",
       "subCat": "Documentazione",
       "type": "readme"
@@ -23,53 +23,59 @@
     {
       "name": "Installazione",
       "file": "installation-readme-generated.md",
-      "subCat": "Iniziare",
+      "subCat": "Per Iniziare",
       "type": "readme"
     },
     {
-      "name": "Uso di base",
+      "name": "Utilizzo di Base",
       "file": "basic-usage-readme-generated.md",
       "subCat": "Utilizzo",
       "type": "readme"
     },
     {
-      "name": "Autenticazione SSO sicura",
+      "name": "Autenticazione SSO Sicura",
       "file": "secure-sso-authentication-readme-generated.md",
       "subCat": "Autenticazione",
       "type": "readme"
     },
     {
-      "name": "Integrazione del feed",
+      "name": "Integrazione Feed",
       "file": "feed-integration-readme-generated.md",
       "subCat": "Documentazione",
       "type": "readme"
     },
     {
-      "name": "Integrazione della chat in tempo reale",
+      "name": "Integrazione Chat in Diretta",
       "file": "live-chat-integration-readme-generated.md",
       "subCat": "Documentazione",
       "type": "readme"
     },
     {
-      "name": "Progetti di esempio",
+      "name": "Progetti di Esempio",
       "file": "example-projects-readme-generated.md",
       "subCat": "Utilizzo",
       "type": "readme"
     },
     {
-      "name": "Opzioni di configurazione",
+      "name": "Opzioni di Configurazione",
       "file": "configuration-options-readme-generated.md",
       "subCat": "Configurazione",
       "type": "readme"
     },
     {
-      "name": "Personalizzazione completa del tema",
+      "name": "Sondaggi",
+      "file": "polls-readme-generated.md",
+      "subCat": "Documentazione",
+      "type": "readme"
+    },
+    {
+      "name": "Personalizzazione Completa del Tema",
       "file": "comprehensive-theme-customization-readme-generated.md",
       "subCat": "Documentazione",
       "type": "readme"
     },
     {
-      "name": "Gestione della memoria",
+      "name": "Gestione della Memoria",
       "file": "memory-management-readme-generated.md",
       "subCat": "Documentazione",
       "type": "readme"

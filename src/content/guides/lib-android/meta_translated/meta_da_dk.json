@@ -1,5 +1,5 @@
 {
-  "name": "Android-bibliotek",
+  "name": "Android Library",
   "pageHeader": "Tilføj kommentarer til din Android-app",
   "itemsOrdered": [
     {
@@ -23,7 +23,7 @@
     {
       "name": "Installation",
       "file": "installation-readme-generated.md",
-      "subCat": "Kom i gang",
+      "subCat": "Kom godt i gang",
       "type": "readme"
     },
     {
@@ -33,9 +33,9 @@
       "type": "readme"
     },
     {
-      "name": "Sikker SSO-autentificering",
+      "name": "Sikker SSO-godkendelse",
       "file": "secure-sso-authentication-readme-generated.md",
-      "subCat": "Autentificering",
+      "subCat": "Godkendelse",
       "type": "readme"
     },
     {
@@ -45,7 +45,7 @@
       "type": "readme"
     },
     {
-      "name": "Integration af live chat",
+      "name": "Live chat-integration",
       "file": "live-chat-integration-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"
@@ -60,6 +60,12 @@
       "name": "Konfigurationsmuligheder",
       "file": "configuration-options-readme-generated.md",
       "subCat": "Konfiguration",
+      "type": "readme"
+    },
+    {
+      "name": "Afstemninger",
+      "file": "polls-readme-generated.md",
+      "subCat": "Dokumentation",
       "type": "readme"
     },
     {

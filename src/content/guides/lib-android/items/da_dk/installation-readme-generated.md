@@ -1,12 +1,12 @@
-Tilføj FastComments SDK til din apps `build.gradle.kts` fil:
+Tilføj FastComments SDK til din apps `build.gradle.kts`-fil:
 
 ```kotlin
 dependencies {
-    implementation("com.fastcomments:sdk:2.0.0")
+    implementation("com.fastcomments:android-sdk:2.1.0")
 }
 ```
 
-Sørg for, at du har Repsy-repositoriet i dit projekts `settings.gradle.kts`:
+Sørg for, at du har Repsy-repositoryet i dit projekts `settings.gradle.kts`:
 
 ```kotlin
 dependencyResolutionManagement {
@@ -14,7 +14,7 @@ dependencyResolutionManagement {
         maven {
             url = uri("https://repo.repsy.io/mvn/winrid/fastcomments")
         }
-        // other repositories...
+        // andre repositories...
     }
 }
 ```

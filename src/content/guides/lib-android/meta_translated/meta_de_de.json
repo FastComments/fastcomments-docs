@@ -27,7 +27,7 @@
       "type": "readme"
     },
     {
-      "name": "Grundlegende Nutzung",
+      "name": "Grundlegende Verwendung",
       "file": "basic-usage-readme-generated.md",
       "subCat": "Verwendung",
       "type": "readme"
@@ -63,7 +63,13 @@
       "type": "readme"
     },
     {
-      "name": "Umfassende Themenanpassung",
+      "name": "Umfragen",
+      "file": "polls-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "Umfassende Theme-Anpassung",
       "file": "comprehensive-theme-customization-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"

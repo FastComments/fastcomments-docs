@@ -1,6 +1,6 @@
 {
-  "name": "Android knjižnica",
-  "pageHeader": "Dodajte komentarje v svojo Android aplikacijo",
+  "name": "Knjižnica za Android",
+  "pageHeader": "Dodajanje komentarjev v vašo aplikacijo za Android",
   "itemsOrdered": [
     {
       "name": "AI kodirni agenti",
@@ -9,7 +9,7 @@
       "type": "readme"
     },
     {
-      "name": "Značilnosti",
+      "name": "Funkcije",
       "file": "features-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
@@ -23,7 +23,7 @@
     {
       "name": "Namestitev",
       "file": "installation-readme-generated.md",
-      "subCat": "Začetek",
+      "subCat": "Uvod",
       "type": "readme"
     },
     {
@@ -57,9 +57,15 @@
       "type": "readme"
     },
     {
-      "name": "Možnosti konfiguracije",
+      "name": "Možnosti nastavitve",
       "file": "configuration-options-readme-generated.md",
       "subCat": "Konfiguracija",
+      "type": "readme"
+    },
+    {
+      "name": "Ankete",
+      "file": "polls-readme-generated.md",
+      "subCat": "Dokumentacija",
       "type": "readme"
     },
     {

@@ -1,9 +1,9 @@
 {
   "name": "Android 函式庫",
-  "pageHeader": "為您的 Android 應用程式添加評論",
+  "pageHeader": "為您的 Android 應用程式新增留言",
   "itemsOrdered": [
     {
-      "name": "AI 程式編寫代理",
+      "name": "AI 編碼代理",
       "file": "ai-coding-agents-readme-generated.md",
       "subCat": "文件",
       "type": "readme"
@@ -15,7 +15,7 @@
       "type": "readme"
     },
     {
-      "name": "需求",
+      "name": "系統需求",
       "file": "requirements-readme-generated.md",
       "subCat": "文件",
       "type": "readme"
@@ -23,23 +23,23 @@
     {
       "name": "安裝",
       "file": "installation-readme-generated.md",
-      "subCat": "入門",
+      "subCat": "快速入門",
       "type": "readme"
     },
     {
-      "name": "基本使用",
+      "name": "基本用法",
       "file": "basic-usage-readme-generated.md",
-      "subCat": "使用",
+      "subCat": "使用方式",
       "type": "readme"
     },
     {
-      "name": "安全單點登入驗證",
+      "name": "安全 SSO 驗證",
       "file": "secure-sso-authentication-readme-generated.md",
       "subCat": "驗證",
       "type": "readme"
     },
     {
-      "name": "資訊流整合",
+      "name": "Feed 整合",
       "file": "feed-integration-readme-generated.md",
       "subCat": "文件",
       "type": "readme"
@@ -53,13 +53,19 @@
     {
       "name": "範例專案",
       "file": "example-projects-readme-generated.md",
-      "subCat": "使用",
+      "subCat": "使用方式",
       "type": "readme"
     },
     {
       "name": "設定選項",
       "file": "configuration-options-readme-generated.md",
       "subCat": "設定",
+      "type": "readme"
+    },
+    {
+      "name": "投票",
+      "file": "polls-readme-generated.md",
+      "subCat": "文件",
       "type": "readme"
     },
     {

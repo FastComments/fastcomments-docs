@@ -3,6 +3,7 @@
 - 🧵 Threaded discussions with replies
 - 👤 Secure SSO authentication
 - 👍 Voting system with customizable styles
+- 📊 Polls in comments with live results
 - 🔔 User notifications and presence
 - 🔍 Comment moderation capabilities
 - 📱 Social feed integration

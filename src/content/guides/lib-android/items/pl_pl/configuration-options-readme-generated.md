@@ -1,16 +1,18 @@
-SDK udostępnia wiele opcji konfiguracyjnych za pomocą klasy `CommentWidgetConfig`:
+SDK zapewnia wiele opcji konfiguracji poprzez klasę `CommentWidgetConfig`:
 
 | Opcja | Opis |
 |--------|-------------|
-| `tenantId` | Twoje ID konta FastComments |
-| `urlId` | ID reprezentujące bieżącą stronę |
+| `tenantId` | Identyfikator Twojego konta FastComments |
+| `urlId` | Identyfikator reprezentujący bieżącą stronę |
 | `sso` | Token SSO do uwierzytelniania |
-| `allowAnon` | Zezwalaj na anonimowe komentowanie |
-| `voteStyle` | Styl głosowania: UpDown lub Heart |
-| `hideAvatars` | Ukryj awatary użytkowników |
+| `allowAnon` | Zezwala na anonimowe komentowanie |
+| `voteStyle` | Styl głosowania UpDown lub Heart |
+| `hideAvatars` | Ukrywa awatary użytkowników |
 | `hasDarkBackground` | Wskazuje tryb ciemny |
-| `customCSS` | Własne style CSS |
-| `enableInfiniteScrolling` | Włącz przewijanie nieskończone |
-| `readonly` | Wyłącz komentowanie, ale wyświetlaj komentarze |
-| `disableVoting` | Wyłącz funkcję głosowania |
-| `disableLiveCommenting` | Wyłącz aktualizacje w czasie rzeczywistym |
+| `customCSS` | Niestandardowe style CSS |
+| `enableInfiniteScrolling` | Włącza paginację z nieskończonym przewijaniem |
+| `readonly` | Wyłącza komentowanie, ale pokazuje komentarze |
+| `disableVoting` | Wyłącza funkcję głosowania |
+| `disableLiveCommenting` | Wyłącza aktualizacje w czasie rzeczywistym |
+| `pollCreation` | Kto może dołączyć ankietę do komentarza: `NUMBER_0` wyłączone, `NUMBER_1` administratorzy i moderatorzy, `NUMBER_2` wszyscy |
+| `pollVoting` | Kto może głosować w ankietach: `NUMBER_0` zalogowani użytkownicy, `NUMBER_1` ktokolwiek |

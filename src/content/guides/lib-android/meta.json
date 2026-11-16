@@ -63,6 +63,12 @@
       "type": "readme"
     },
     {
+      "name": "Polls",
+      "file": "polls-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
       "name": "Comprehensive Theme Customization",
       "file": "comprehensive-theme-customization-readme-generated.md",
       "subCat": "Documentation",

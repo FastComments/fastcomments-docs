@@ -1,9 +1,9 @@
 {
   "name": "Android библиотека",
-  "pageHeader": "Добавете коментари към вашето Android приложение",
+  "pageHeader": "Добавяне на коментари към вашето Android приложение",
   "itemsOrdered": [
     {
-      "name": "AI агенти за кодиране",
+      "name": "AI агенти за програмиране",
       "file": "ai-coding-agents-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
@@ -23,29 +23,29 @@
     {
       "name": "Инсталация",
       "file": "installation-readme-generated.md",
-      "subCat": "Започване",
+      "subCat": "Първи стъпки",
       "type": "readme"
     },
     {
-      "name": "Основно използване",
+      "name": "Основна употреба",
       "file": "basic-usage-readme-generated.md",
-      "subCat": "Използване",
+      "subCat": "Употреба",
       "type": "readme"
     },
     {
-      "name": "Сигурно SSO удостоверяване",
+      "name": "Сигурна SSO автентикация",
       "file": "secure-sso-authentication-readme-generated.md",
-      "subCat": "Удостоверяване",
+      "subCat": "Автентикация",
       "type": "readme"
     },
     {
-      "name": "Интеграция на лентата",
+      "name": "Интеграция на емисии",
       "file": "feed-integration-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
     },
     {
-      "name": "Интеграция на жив чат",
+      "name": "Интеграция на чат на живо",
       "file": "live-chat-integration-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
@@ -53,7 +53,7 @@
     {
       "name": "Примерни проекти",
       "file": "example-projects-readme-generated.md",
-      "subCat": "Използване",
+      "subCat": "Употреба",
       "type": "readme"
     },
     {
@@ -63,7 +63,13 @@
       "type": "readme"
     },
     {
-      "name": "Всеобхватно персонализиране на темата",
+      "name": "Анкети",
+      "file": "polls-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Изчерпателна персонализация на темата",
       "file": "comprehensive-theme-customization-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"

@@ -3,13 +3,13 @@
   "pageHeader": "Adicione Comentários ao Seu Aplicativo Android",
   "itemsOrdered": [
     {
-      "name": "Agentes de codificação de IA",
+      "name": "Agentes de codificação com IA",
       "file": "ai-coding-agents-readme-generated.md",
       "subCat": "Documentação",
       "type": "readme"
     },
     {
-      "name": "Recursos",
+      "name": "Funcionalidades",
       "file": "features-readme-generated.md",
       "subCat": "Documentação",
       "type": "readme"
@@ -63,7 +63,13 @@
       "type": "readme"
     },
     {
-      "name": "Personalização Abrangente de Tema",
+      "name": "Enquetes",
+      "file": "polls-readme-generated.md",
+      "subCat": "Documentação",
+      "type": "readme"
+    },
+    {
+      "name": "Personalização Abrangente de Temas",
       "file": "comprehensive-theme-customization-readme-generated.md",
       "subCat": "Documentação",
       "type": "readme"

@@ -23,7 +23,7 @@
     {
       "name": "Instalacija",
       "file": "installation-readme-generated.md",
-      "subCat": "Početak",
+      "subCat": "Početak rada",
       "type": "readme"
     },
     {
@@ -63,7 +63,13 @@
       "type": "readme"
     },
     {
-      "name": "Sveobuhvatna prilagodba tema",
+      "name": "Ankete",
+      "file": "polls-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Sveobuhvatna prilagoda teme",
       "file": "comprehensive-theme-customization-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"

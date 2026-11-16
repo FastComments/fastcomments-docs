@@ -15,7 +15,7 @@
       "type": "readme"
     },
     {
-      "name": "Exigences",
+      "name": "Prérequis",
       "file": "requirements-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"
@@ -39,7 +39,7 @@
       "type": "readme"
     },
     {
-      "name": "Intégration du flux",
+      "name": "Intégration du fil d'actualité",
       "file": "feed-integration-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"
@@ -60,6 +60,12 @@
       "name": "Options de configuration",
       "file": "configuration-options-readme-generated.md",
       "subCat": "Configuration",
+      "type": "readme"
+    },
+    {
+      "name": "Sondages",
+      "file": "polls-readme-generated.md",
+      "subCat": "Documentation",
       "type": "readme"
     },
     {

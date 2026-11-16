@@ -1,10 +1,11 @@
-- 🔄 Live reageren met realtime updates
+- 🔄 Live reacties met real-time updates
 - 📱 Native Android UI-componenten
-- 🧵 Geneste discussies met reacties
+- 🧵 Gestructureerde discussies met antwoorden
 - 👤 Veilige SSO-authenticatie
-- 👍 Stemsysteem met aanpasbare stijlen
+- 👍 Stemmingssysteem met aanpasbare stijlen
+- 📊 Peilingen in reacties met live resultaten
 - 🔔 Gebruikersmeldingen en aanwezigheid
-- 🔍 Mogelijkheden voor moderatie van opmerkingen
+- 🔍 Mogelijkheden voor commentaarmoderatie
 - 📱 Integratie met sociale feeds
-- ♾️ Oneindige scroll-paginering
+- ♾️ Paginering met oneindig scrollen
 - 🎨 Uitgebreide themamogelijkheden
