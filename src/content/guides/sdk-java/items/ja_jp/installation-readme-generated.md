@@ -1,6 +1,6 @@
 ### Maven
 
-プロジェクトの POM に Repsy リポジトリを追加します:
+プロジェクトのPOMにRepsyリポジトリを追加します:
 
 ```xml
 <repositories>
@@ -16,32 +16,32 @@
 
 ```xml
 <dependencies>
-    <!-- API Client -->
+    <!-- APIクライアント -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>client</artifactId>
-        <version>3.1.1</version>
+        <version>3.1.2</version>
     </dependency>
     
-    <!-- Core Library (includes SSO) -->
+    <!-- コアライブラリ(SSOを含む) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>core</artifactId>
-        <version>3.1.1</version>
+        <version>3.1.2</version>
     </dependency>
     
-    <!-- PubSub Library (for live events) -->
+    <!-- PubSubライブラリ(ライブイベント用) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>pubsub</artifactId>
-        <version>3.1.1</version>
+        <version>3.1.2</version>
     </dependency>
 </dependencies>
 ```
 
 ### Gradle
 
-build.gradle ファイルに Repsy リポジトリを追加します:
+build.gradleファイルにRepsyリポジトリを追加します:
 
 ```groovy
 repositories {
@@ -52,27 +52,27 @@ repositories {
 }
 
 dependencies {
-    // API Client
-    implementation "com.fastcomments:client:3.1.1"
+    // APIクライアント
+    implementation "com.fastcomments:client:3.1.2"
     
-    // Core Library (includes SSO)
-    implementation "com.fastcomments:core:3.1.1"
+    // コアライブラリ(SSOを含む)
+    implementation "com.fastcomments:core:3.1.2"
     
-    // PubSub Library (for live events)
-    implementation "com.fastcomments:pubsub:3.1.1"
+    // PubSubライブラリ(ライブイベント用)
+    implementation "com.fastcomments:pubsub:3.1.2"
 }
 ```
 
 ### ライブラリの内容
 
-このライブラリは 3 つのモジュールで構成されています。生成された API クライアント、API の利用を容易にする手書きユーティリティを含むコア Java ライブラリ、そして変更フィードの購読用ライブラリである `pubsub` モジュールです。
+このライブラリには3つのモジュールが含まれています。生成されたAPIクライアント、APIの操作を容易にするための手書きユーティリティを含むコアJavaライブラリ、そして変更フィードを購読するためのライブラリである`pubsub`モジュールです。
 
-- [API クライアント ライブラリ ドキュメント](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
-- [コア ライブラリ ドキュメント（SSO の例を含む）](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
-- [PubSub ライブラリ ドキュメント](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
+- [APIクライアントライブラリのドキュメント](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
+- [SSOの例を含むコアライブラリのドキュメント](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
+- [PubSubライブラリのドキュメント](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
-### 公開 API と保護された API
+### 公開APIとセキュアAPI
 
-API クライアントには `DefaultApi`、`PublicApi`、`ModerationApi` の 3 つのクラスがあります。`DefaultApi` には API キーが必要なメソッドが含まれ、`PublicApi` には認証なしでブラウザやモバイルデバイスなどから直接呼び出せるメソッドが含まれます。
+APIクライアントには、`DefaultApi`、`PublicApi`、`ModerationApi`の3つのクラスがあります。`DefaultApi`にはAPIキーが必要なメソッドが含まれており、`PublicApi`には認証なしでブラウザやモバイルデバイスなどから直接実行できるメソッドが含まれています。
 
-`ModerationApi` はライブかつ高速なモデレーション API の豊富なスイートを提供します。すべての `ModerationApi` メソッドは `sso` パラメータを受け取り、SSO または FastComments.com のセッションクッキーを使用して認証できます。
+`ModerationApi`は、ライブかつ高速なモデレーションAPIの充実したスイートを提供します。すべての`ModerationApi`メソッドは`sso`パラメータを受け入れ、SSOまたはFastComments.comのセッションクッキー経由で認証できます。

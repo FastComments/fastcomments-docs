@@ -20,21 +20,21 @@ Następnie dodaj potrzebne zależności:
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>client</artifactId>
-        <version>3.1.1</version>
+        <version>3.1.2</version>
     </dependency>
     
     <!-- Biblioteka Core (zawiera SSO) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>core</artifactId>
-        <version>3.1.1</version>
+        <version>3.1.2</version>
     </dependency>
     
     <!-- Biblioteka PubSub (dla zdarzeń na żywo) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>pubsub</artifactId>
-        <version>3.1.1</version>
+        <version>3.1.2</version>
     </dependency>
 </dependencies>
 ```
@@ -53,20 +53,19 @@ repositories {
 
 dependencies {
     // Klient API
-    implementation "com.fastcomments:client:3.1.1"
+    implementation "com.fastcomments:client:3.1.2"
     
     // Biblioteka Core (zawiera SSO)
-    implementation "com.fastcomments:core:3.1.1"
+    implementation "com.fastcomments:core:3.1.2"
     
     // Biblioteka PubSub (dla zdarzeń na żywo)
-    implementation "com.fastcomments:pubsub:3.1.1"
+    implementation "com.fastcomments:pubsub:3.1.2"
 }
 ```
 
 ### Zawartość biblioteki
 
-Ta biblioteka zawiera trzy moduły: wygenerowanego klienta API, podstawową bibliotekę Java zawierającą ręcznie pisane narzędzia
-ułatwiające pracę z API oraz moduł `pubsub`, który jest biblioteką do subskrybowania kanałów zmian.
+Ta biblioteka zawiera trzy moduły: wygenerowanego klienta API, podstawową bibliotekę Java zawierającą narzędzia pisane ręcznie, które ułatwiają pracę z API, oraz moduł `pubsub`, będący biblioteką do subskrybowania kanałów zmian.
 
 - [Dokumentacja biblioteki klienta API](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
 - [Dokumentacja biblioteki Core, w tym przykłady SSO](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
@@ -74,7 +73,6 @@ ułatwiające pracę z API oraz moduł `pubsub`, który jest biblioteką do subs
 
 ### API publiczne vs zabezpieczone
 
-W przypadku klienta API dostępne są trzy klasy: `DefaultApi`, `PublicApi` i `ModerationApi`. Klasa `DefaultApi` zawiera metody wymagające klucza API, a `PublicApi` zawiera metody,
-które mogą być wywoływane bezpośrednio z przeglądarki/urządzenia mobilnego itp. bez uwierzytelniania.
+W przypadku klienta API dostępne są trzy klasy: `DefaultApi`, `PublicApi` oraz `ModerationApi`. Klasa `DefaultApi` zawiera metody wymagające klucza API, a `PublicApi` zawiera metody, które mogą być wywoływane bezpośrednio z przeglądarki/urządzenia mobilnego itp. bez uwierzytelniania.
 
-Klasa `ModerationApi` zapewnia rozbudowany zestaw szybkich API do moderacji na żywo. Każda metoda `ModerationApi` przyjmuje parametr `sso` i może uwierzytelniać za pomocą SSO lub ciasteczka sesji FastComments.com.
+Klasa `ModerationApi` zapewnia rozbudowany zestaw szybkich API do moderacji na żywo. Każda metoda klasy `ModerationApi` przyjmuje parametr `sso` i może uwierzytelniać za pomocą SSO lub ciasteczka sesji FastComments.com.

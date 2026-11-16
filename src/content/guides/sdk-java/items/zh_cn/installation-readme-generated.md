@@ -20,21 +20,21 @@
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>client</artifactId>
-        <version>3.1.1</version>
+        <version>3.1.2</version>
     </dependency>
     
     <!-- 核心库（包含 SSO） -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>core</artifactId>
-        <version>3.1.1</version>
+        <version>3.1.2</version>
     </dependency>
     
     <!-- PubSub 库（用于实时事件） -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>pubsub</artifactId>
-        <version>3.1.1</version>
+        <version>3.1.2</version>
     </dependency>
 </dependencies>
 ```
@@ -53,26 +53,26 @@ repositories {
 
 dependencies {
     // API 客户端
-    implementation "com.fastcomments:client:3.1.1"
+    implementation "com.fastcomments:client:3.1.2"
     
     // 核心库（包含 SSO）
-    implementation "com.fastcomments:core:3.1.1"
+    implementation "com.fastcomments:core:3.1.2"
     
     // PubSub 库（用于实时事件）
-    implementation "com.fastcomments:pubsub:3.1.1"
+    implementation "com.fastcomments:pubsub:3.1.2"
 }
 ```
 
 ### 库内容
 
-该库包含三个模块：生成的 API 客户端、包含手写工具类以便更轻松使用 API 的核心 Java 库，以及用于订阅变更数据流的 `pubsub` 模块。
+该库包含三个模块：生成的 API 客户端、包含手写实用工具以便更轻松使用 API 的核心 Java 库，以及用于订阅变更流的 `pubsub` 模块。
 
 - [API 客户端库文档](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
-- [核心库文档（包括 SSO 示例）](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
+- [核心库文档，包括 SSO 示例](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
 - [PubSub 库文档](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
 ### 公开 API 与受保护 API
 
-对于 API 客户端，有三个类：`DefaultApi`、`PublicApi` 和 `ModerationApi`。`DefaultApi` 包含需要您的 API 密钥的方法，而 `PublicApi` 包含可以直接从浏览器/移动设备等发起且无需身份验证的方法。
+对于 API 客户端，有三个类：`DefaultApi`、`PublicApi` 和 `ModerationApi`。`DefaultApi` 包含需要您的 API 密钥的方法，而 `PublicApi` 包含可以直接从浏览器/移动设备等发起而无需身份验证的方法。
 
 `ModerationApi` 提供了一套广泛且快速的实时审核 API。每个 `ModerationApi` 方法都接受一个 `sso` 参数，可以通过 SSO 或 FastComments.com 会话 Cookie 进行身份验证。

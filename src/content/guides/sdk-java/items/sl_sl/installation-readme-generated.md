@@ -1,6 +1,6 @@
 ### Maven
 
-Dodajte Repsy repozitorij v POM vašega projekta:
+V POM datoteko vašega projekta dodajte Repsy repozitorij:
 
 ```xml
 <repositories>
@@ -12,7 +12,7 @@ Dodajte Repsy repozitorij v POM vašega projekta:
 </repositories>
 ```
 
-Nato dodajte potrebne odvisnosti:
+Nato dodajte odvisnosti, ki jih potrebujete:
 
 ```xml
 <dependencies>
@@ -20,28 +20,28 @@ Nato dodajte potrebne odvisnosti:
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>client</artifactId>
-        <version>3.1.1</version>
+        <version>3.1.2</version>
     </dependency>
     
-    <!-- Jedrni knjižnici (vključuje SSO) -->
+    <!-- Osnovna knjižnica (vključuje SSO) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>core</artifactId>
-        <version>3.1.1</version>
+        <version>3.1.2</version>
     </dependency>
     
-    <!-- PubSub knjižnica (za žive dogodke) -->
+    <!-- PubSub knjižnica (za dogodke v živo) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>pubsub</artifactId>
-        <version>3.1.1</version>
+        <version>3.1.2</version>
     </dependency>
 </dependencies>
 ```
 
 ### Gradle
 
-Dodajte Repsy repozitorij v datoteko **build.gradle**:
+V datoteko build.gradle dodajte Repsy repozitorij:
 
 ```groovy
 repositories {
@@ -53,26 +53,28 @@ repositories {
 
 dependencies {
     // API odjemalec
-    implementation "com.fastcomments:client:3.1.1"
+    implementation "com.fastcomments:client:3.1.2"
     
-    // Jedrni knjižnici (vključuje SSO)
-    implementation "com.fastcomments:core:3.1.1"
+    // Osnovna knjižnica (vključuje SSO)
+    implementation "com.fastcomments:core:3.1.2"
     
-    // PubSub knjižnica (za žive dogodke)
-    implementation "com.fastcomments:pubsub:3.1.1"
+    // PubSub knjižnica (za dogodke v živo)
+    implementation "com.fastcomments:pubsub:3.1.2"
 }
 ```
 
 ### Vsebina knjižnice
 
-Ta knjižnica vsebuje tri module: ustvarjenega API odjemalca, jedrno Java knjižnico, ki vsebuje ročno napisane pripomočke za lažje delo z API-jem, in modul `pubsub`, ki je knjižnica za naročanje na spremembe.
+Ta knjižnica vsebuje tri module. Generiranega odjemalca API-ja, osnovno Java knjižnico, ki vsebuje ročno napisane pripomočke
+za lažje delo z API-jem, ter modul `pubsub`, ki je knjižnica za naročanje na vire sprememb.
 
 - [Dokumentacija knjižnice API odjemalca](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
-- [Dokumentacija jedrne knjižnice, vključno s primeri SSO](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
-- [Dokumentacija PubSub knjižnice](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
+- [Dokumentacija osnovne knjižnice, vključno s primeri SSO](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
+- [Dokumentacija knjižnice PubSub](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
-### Javni vs. zaščiteni API-ji
+### Javni v primerjavi z zavarovanimi API-ji
 
-Za API odjemalca obstajajo trije razredi: `DefaultApi`, `PublicApi` in `ModerationApi`. `DefaultApi` vsebuje metode, ki zahtevajo vaš API ključ, medtem ko `PublicApi` vsebuje metode, ki jih je mogoče klicati neposredno iz brskalnika/mobilne naprave itd. brez avtentikacije.
+Za odjemalca API-ja obstajajo trije razredi: `DefaultApi`, `PublicApi` in `ModerationApi`. `DefaultApi` vsebuje metode, ki zahtevajo vaš API ključ, `PublicApi` pa vsebuje metode,
+ki jih je mogoče klicati neposredno iz brskalnika/mobilne naprave/ipd. brez overjanja.
 
-`ModerationApi` ponuja obsežen nabor živih in hitrih moderacijskih API-jev. Vsaka metoda `ModerationApi` sprejme parameter `sso` in se lahko avtenticira prek SSO ali piškotka seje FastComments.com.
+`ModerationApi` ponuja obsežen nabor API-jev za moderiranje v živo in hitro moderiranje. Vsaka metoda `ModerationApi` sprejme parameter `sso` in se lahko overi prek SSO ali piškotka seje FastComments.com.

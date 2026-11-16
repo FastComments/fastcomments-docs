@@ -20,21 +20,21 @@
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>client</artifactId>
-        <version>3.1.1</version>
+        <version>3.1.2</version>
     </dependency>
     
     <!-- Core Library (includes SSO) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>core</artifactId>
-        <version>3.1.1</version>
+        <version>3.1.2</version>
     </dependency>
     
     <!-- PubSub Library (for live events) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>pubsub</artifactId>
-        <version>3.1.1</version>
+        <version>3.1.2</version>
     </dependency>
 </dependencies>
 ```
@@ -53,26 +53,26 @@ repositories {
 
 dependencies {
     // API Client
-    implementation "com.fastcomments:client:3.1.1"
+    implementation "com.fastcomments:client:3.1.2"
     
     // Core Library (includes SSO)
-    implementation "com.fastcomments:core:3.1.1"
+    implementation "com.fastcomments:core:3.1.2"
     
     // PubSub Library (for live events)
-    implementation "com.fastcomments:pubsub:3.1.1"
+    implementation "com.fastcomments:pubsub:3.1.2"
 }
 ```
 
 ### Вміст бібліотеки
 
-Ця бібліотека містить три модулі: згенерований API-клієнт, основну Java-бібліотеку з написаними вручну утилітами для спрощення роботи з API, а також модуль `pubsub` — бібліотеку для підписки на стрічки змін.
+Ця бібліотека містить три модулі: згенерований API-клієнт, основну Java-бібліотеку з вручну написаними утилітами для спрощення роботи з API, а також модуль `pubsub` — бібліотеку для підписки на стрічки змін.
 
-- [Документація бібліотеки API-клієнта](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
+- [Документація бібліотеки API Client](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
 - [Документація основної бібліотеки, включно з прикладами SSO](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
 - [Документація бібліотеки PubSub](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
 ### Публічні та захищені API
 
-В API-клієнті є три класи: `DefaultApi`, `PublicApi` та `ModerationApi`. `DefaultApi` містить методи, які потребують ваш API-ключ, а `PublicApi` — методи, які можна викликати безпосередньо з браузера/мобільного пристрою тощо без автентифікації.
+Для API-клієнта є три класи: `DefaultApi`, `PublicApi` та `ModerationApi`. `DefaultApi` містить методи, що вимагають ваш API-ключ, а `PublicApi` містить методи, які можна викликати безпосередньо з браузера/мобільного пристрою тощо без автентифікації.
 
-`ModerationApi` надає розширений набір швидких API для модерації в реальному часі. Кожен метод `ModerationApi` приймає параметр `sso` і може автентифікуватися через SSO або cookie сесії FastComments.com.
+`ModerationApi` надає розширений набір швидких API для модерації в реальному часі. Кожен метод `ModerationApi` приймає параметр `sso` і може автентифікуватися через SSO або сесійний cookie FastComments.com.

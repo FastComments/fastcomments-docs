@@ -1,6 +1,6 @@
 ### Maven
 
-Προσθέστε το repository του Repsy στο POM του project σας:
+Προσθέστε το repository Repsy στο POM του project σας:
 
 ```xml
 <repositories>
@@ -12,7 +12,7 @@
 </repositories>
 ```
 
-Στη συνέχεια, προσθέστε τις εξαρτήσεις που χρειάζεστε:
+Στη συνέχεια, προσθέστε τις dependencies που χρειάζεστε:
 
 ```xml
 <dependencies>
@@ -20,28 +20,28 @@
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>client</artifactId>
-        <version>3.1.1</version>
+        <version>3.1.2</version>
     </dependency>
     
     <!-- Core Library (περιλαμβάνει SSO) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>core</artifactId>
-        <version>3.1.1</version>
+        <version>3.1.2</version>
     </dependency>
     
     <!-- PubSub Library (για live events) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>pubsub</artifactId>
-        <version>3.1.1</version>
+        <version>3.1.2</version>
     </dependency>
 </dependencies>
 ```
 
 ### Gradle
 
-Προσθέστε το repository του Repsy στο αρχείο build.gradle σας:
+Προσθέστε το repository Repsy στο αρχείο build.gradle σας:
 
 ```groovy
 repositories {
@@ -53,13 +53,13 @@ repositories {
 
 dependencies {
     // API Client
-    implementation "com.fastcomments:client:3.1.1"
+    implementation "com.fastcomments:client:3.1.2"
     
     // Core Library (περιλαμβάνει SSO)
-    implementation "com.fastcomments:core:3.1.1"
+    implementation "com.fastcomments:core:3.1.2"
     
     // PubSub Library (για live events)
-    implementation "com.fastcomments:pubsub:3.1.1"
+    implementation "com.fastcomments:pubsub:3.1.2"
 }
 ```
 
@@ -74,7 +74,7 @@ dependencies {
 
 ### Δημόσια vs Ασφαλισμένα APIs
 
-Για το API client, υπάρχουν τρεις κλάσεις, `DefaultApi`, `PublicApi`, και `ModerationApi`. Το `DefaultApi` περιέχει μεθόδους που απαιτούν το API key σας, και το `PublicApi` περιέχει μεθόδους
+Για το API client, υπάρχουν τρεις κλάσεις, `DefaultApi`, `PublicApi`, και `ModerationApi`. Η `DefaultApi` περιέχει μεθόδους που απαιτούν το API key σας, και η `PublicApi` περιέχει μεθόδους
 που μπορούν να κληθούν απευθείας από browser/κινητή συσκευή/κ.λπ. χωρίς αυθεντικοποίηση.
 
-Το `ModerationApi` παρέχει ένα εκτεταμένο σύνολο live και γρήγορων APIs για συντονισμό. Κάθε μέθοδος του `ModerationApi` δέχεται μια παράμετρο `sso` και μπορεί να αυθεντικοποιηθεί μέσω SSO ή μέσω session cookie του FastComments.com.
+Η `ModerationApi` παρέχει ένα εκτεταμένο σύνολο live και γρήγορων APIs για συντονισμό (moderation). Κάθε μέθοδος της `ModerationApi` δέχεται μια παράμετρο `sso` και μπορεί να αυθεντικοποιηθεί μέσω SSO ή μέσω session cookie του FastComments.com.

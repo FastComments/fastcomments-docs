@@ -1,6 +1,6 @@
 ### Maven
 
-Tilføj Repsy-repositoriet til dit projekts POM:
+Tilføj Repsy-repositoryet til dit projekts POM:
 
 ```xml
 <repositories>
@@ -12,7 +12,7 @@ Tilføj Repsy-repositoriet til dit projekts POM:
 </repositories>
 ```
 
-Tilføj derefter de afhængigheder, du har brug for:
+Tilføj derefter de dependencies, du har brug for:
 
 ```xml
 <dependencies>
@@ -20,28 +20,28 @@ Tilføj derefter de afhængigheder, du har brug for:
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>client</artifactId>
-        <version>3.1.1</version>
+        <version>3.1.2</version>
     </dependency>
     
-    <!-- Core Library (includes SSO) -->
+    <!-- Core Library (inkluderer SSO) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>core</artifactId>
-        <version>3.1.1</version>
+        <version>3.1.2</version>
     </dependency>
     
-    <!-- PubSub Library (for live events) -->
+    <!-- PubSub Library (til live events) -->
     <dependency>
         <groupId>com.fastcomments</groupId>
         <artifactId>pubsub</artifactId>
-        <version>3.1.1</version>
+        <version>3.1.2</version>
     </dependency>
 </dependencies>
 ```
 
 ### Gradle
 
-Tilføj Repsy-repositoriet til din build.gradle-fil:
+Tilføj Repsy-repositoryet til din build.gradle-fil:
 
 ```groovy
 repositories {
@@ -53,26 +53,28 @@ repositories {
 
 dependencies {
     // API Client
-    implementation "com.fastcomments:client:3.1.1"
+    implementation "com.fastcomments:client:3.1.2"
     
-    // Core Library (includes SSO)
-    implementation "com.fastcomments:core:3.1.1"
+    // Core Library (inkluderer SSO)
+    implementation "com.fastcomments:core:3.1.2"
     
-    // PubSub Library (for live events)
-    implementation "com.fastcomments:pubsub:3.1.1"
+    // PubSub Library (til live events)
+    implementation "com.fastcomments:pubsub:3.1.2"
 }
 ```
 
-### Biblioteksindhold
+### Bibliotekets indhold
 
-Dette bibliotek indeholder tre moduler. Den genererede API-klient, kernebiblioteket til Java, som indeholder håndskrevne værktøjer for at gøre arbejdet med API'et lettere, og `pubsub`-modulet, som er et bibliotek til at abonnere på ændringsfeeds.
+Dette bibliotek indeholder tre moduler. Den genererede API-klient, core Java-biblioteket, som indeholder håndskrevne utilities
+der gør det lettere at arbejde med API'et, samt `pubsub`-modulet, som er et bibliotek til at abonnere på change feeds.
 
-- [API-klientbibliotek Docs](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
-- [Kernebibliotek Docs, inklusiv SSO-eksempler](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
-- [PubSub-bibliotek Docs](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
+- [API Client Library Docs](https://github.com/FastComments/fastcomments-java/blob/main/client/README.md)
+- [Core Library Docs, inklusive SSO-eksempler](https://github.com/FastComments/fastcomments-java/blob/main/core/README.md)
+- [PubSub Library Docs](https://github.com/FastComments/fastcomments-java/blob/main/pubsub/README.md)
 
-### Offentlige vs Sikrede API'er
+### Offentlige vs. sikrede API'er
 
-For API-klienten er der tre klasser, `DefaultApi`, `PublicApi` og `ModerationApi`. `DefaultApi` indeholder metoder, der kræver din API-nøgle, og `PublicApi` indeholder metoder, som kan kaldes direkte fra en browser/mobil enhed osv. uden godkendelse.
+For API-klienten er der tre klasser: `DefaultApi`, `PublicApi` og `ModerationApi`. `DefaultApi` indeholder metoder, der kræver din API-nøgle, og `PublicApi` indeholder metoder,
+der kan kaldes direkte fra en browser/mobil enhed/osv. uden autentificering.
 
-`ModerationApi` leverer en omfattende suite af live og hurtige moderations-API'er. Hver `ModerationApi`-metode accepterer en `sso`-parameter og kan autentificere via SSO eller en FastComments.com sessionscookie.
+`ModerationApi` giver en omfattende pakke af live- og hurtige moderations-API'er. Hver `ModerationApi`-metode accepterer en `sso`-parameter og kan autentificere via SSO eller en FastComments.com-session-cookie.
