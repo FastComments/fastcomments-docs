@@ -1,10 +1,10 @@
 ## Parametri
 
-| Ime | Tip | Obvezno | Opis |
+| Ime | Vrsta | Obvezno | Opis |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
-| updateQuestionConfigBody | UpdateQuestionConfigBody | Yes |  |
+| tenantId | string | Da |  |
+| id | string | Da |  |
+| updateQuestionConfigBody | UpdateQuestionConfigBody | Da |  |
 
 ## Odgovor
 
@@ -12,18 +12,35 @@ Vrne: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-sdk-js/b
 
 ## Primer
 
-[inline-code-attrs-start title = 'updateQuestionConfig Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer updateQuestionConfig'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = "acme-corp-tenant";
-  const questionId: string = "question-42";
+const tenantId: string = "5a5c8f6e8f6e8f6e8f6e8f6e";
 
-  const updateBody: UpdateQuestionConfigBody = {
-    title: "Revised FAQ Question"
-    // isActive, customOptions, itd. so neobvezni in izpuščeni
-  };
+const updateBody: UpdateQuestionConfigBody = {
+  question: "How satisfied are you with our service?",
+  type: "multiple_choice",
+  required: true,
+  order: 1,
+  customOptions: [
+    { label: "Very satisfied", value: "5" },
+    { label: "Neutral", value: "3" },
+    { label: "Very dissatisfied", value: "1" }
+  ],
+  subQuestions: [
+    {
+      question: "What can we improve?",
+      type: "text",
+      condition: {
+        operator: "matches",
+        optionValue: "1"
+      }
+    }
+  ]
+};
 
-  const response: APIEmptyResponse = await updateQuestionConfig(tenantId, questionId, updateBody);
-  console.log(response);
-})();
+const response: APIEmptyResponse = await updateQuestionConfig(
+  tenantId,
+  "q-config-98765",
+  updateBody
+);
 [inline-code-end]

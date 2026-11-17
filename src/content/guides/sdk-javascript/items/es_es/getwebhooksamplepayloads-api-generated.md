@@ -1,35 +1,39 @@
-Comentarios recientes en exactamente la forma que usan las entregas de webhook, para crear integraciones (por ejemplo datos de muestra de Zapier). Cada evento entrega el mismo objeto de comentario, por lo que `event` solo tiene que ser válido.
+Comentarios recientes exactamente en la forma que usan las entregas de webhooks, para construir integraciones (por ejemplo, datos de muestra de Zapier). Cada evento entrega el mismo objeto de comentario, por lo que `event` solo tiene que ser válido.
 
-## Parameters
+## Parámetros
 
-| Name | Type | Required | Description |
+| Nombre | Tipo | Requerido | Descripción |
 |------|------|----------|-------------|
 | tenantId | string | Sí |  |
 | event | WebhookEventName | No |  |
 | limit | number | No |  |
 
-## Response
+## Respuesta
 
 Devuelve: [`GetWebhookSamplePayloadsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetWebhookSamplePayloadsResponse.ts)
 
-## Example
+## Ejemplo
 
-[inline-code-attrs-start title = 'Ejemplo getWebhookSamplePayloads'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Ejemplo de getWebhookSamplePayloads'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "c1a2b3d4-5678-90ab-cdef-1234567890ab";
+declare function getWebhookSamplePayloads(
+  tenantId: string,
+  event?: WebhookEventName,
+  limit?: number
+): Promise<GetWebhookSamplePayloadsResponse>;
 
-const responseAll: GetWebhookSamplePayloadsResponse = await getWebhookSamplePayloads(
+const tenantId: string = '5f8d9b3e2a1b4c6d7e8f9a0b';
+
+// Obtener payloads de muestra para un tipo de evento específico
+const commentPayloads: GetWebhookSamplePayloadsResponse = await getWebhookSamplePayloads(
   tenantId,
-  "comment.created",
+  WebhookEventName.COMMENT_SUCCESS_PAGE,
   10
 );
 
-const responseWithEvent: GetWebhookSamplePayloadsResponse = await getWebhookSamplePayloads(
-  tenantId,
-  "comment.created"
-);
+// Obtener todos los payloads de muestra (sin parámetros opcionales)
+const allPayloads: GetWebhookSamplePayloadsResponse = await getWebhookSamplePayloads(tenantId);
 
-const responseBasic: GetWebhookSamplePayloadsResponse = await getWebhookSamplePayloads(
-  tenantId
-);
+console.log(`Comment payload status: ${commentPayloads.status}`);
+console.log(`Fetched ${allPayloads.payloads.length} sample payloads`);
 [inline-code-end]

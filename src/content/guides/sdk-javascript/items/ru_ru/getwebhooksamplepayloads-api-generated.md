@@ -1,8 +1,8 @@
-Последние комментарии в точно таком же виде, как используют поставки вебхуков, для создания интеграций (например, образцы данных Zapier). Каждое событие передаёт один и тот же объект комментария, поэтому `event` должен быть действительным.
+Недавние комментарии в точно таком виде, в каком они используются при доставке вебхуков, для построения интеграций (например, пример данных для Zapier). Каждое событие доставляет один и тот же объект комментария, поэтому `event` должен быть только валидным.
 
 ## Параметры
 
-| Имя | Тип | Обязательно | Описание |
+| Имя | Тип | Обязательный | Описание |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | event | WebhookEventName | Нет |  |
@@ -16,20 +16,24 @@
 
 [inline-code-attrs-start title = 'Пример getWebhookSamplePayloads'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "c1a2b3d4-5678-90ab-cdef-1234567890ab";
+declare function getWebhookSamplePayloads(
+  tenantId: string,
+  event?: WebhookEventName,
+  limit?: number
+): Promise<GetWebhookSamplePayloadsResponse>;
 
-const responseAll: GetWebhookSamplePayloadsResponse = await getWebhookSamplePayloads(
+const tenantId: string = '5f8d9b3e2a1b4c6d7e8f9a0b';
+
+// Получить примеры payload для конкретного типа события
+const commentPayloads: GetWebhookSamplePayloadsResponse = await getWebhookSamplePayloads(
   tenantId,
-  "comment.created",
+  WebhookEventName.COMMENT_SUCCESS_PAGE,
   10
 );
 
-const responseWithEvent: GetWebhookSamplePayloadsResponse = await getWebhookSamplePayloads(
-  tenantId,
-  "comment.created"
-);
+// Получить все примеры payload (без необязательных параметров)
+const allPayloads: GetWebhookSamplePayloadsResponse = await getWebhookSamplePayloads(tenantId);
 
-const responseBasic: GetWebhookSamplePayloadsResponse = await getWebhookSamplePayloads(
-  tenantId
-);
+console.log(`Comment payload status: ${commentPayloads.status}`);
+console.log(`Fetched ${allPayloads.payloads.length} sample payloads`);
 [inline-code-end]

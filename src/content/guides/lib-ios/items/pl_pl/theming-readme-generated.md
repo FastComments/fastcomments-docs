@@ -1,18 +1,18 @@
-### Presety motywów
+### Gotowe motywy
 
-Dostępne są cztery wbudowane presety:
+Dostępne są cztery wbudowane motywy:
 
 ```swift
 // Ustawienia domyślne systemu
 sdk.theme = FastCommentsTheme.default
 
-// Karty z cieniami i dużymi zaokrąglonymi narożnikami
+// Karty z cieniami i dużymi zaokrąglonymi rogami
 sdk.theme = FastCommentsTheme.modern
 
-// Płaski, bez cieni, mały promień narożników, bez linii wątków
+// Płaski styl, bez cieni, mały promień zaokrąglenia, bez linii wątków
 sdk.theme = FastCommentsTheme.minimal
 
-// Ustaw wszystkie kolory akcji na pojedynczy kolor marki
+// Ustawia wszystkie kolory akcji na jeden kolor marki
 sdk.theme = FastCommentsTheme.allPrimary(.indigo)
 ```
 
@@ -20,14 +20,14 @@ sdk.theme = FastCommentsTheme.allPrimary(.indigo)
 
 ```swift
 var theme = FastCommentsTheme()
-theme.commentStyle = .flat    // Lista płaska z separatorami (domyślnie)
+theme.commentStyle = .flat    // Płaska lista z separatorami (domyślny)
 theme.commentStyle = .card    // Zaokrąglone karty z cieniami
 theme.commentStyle = .bubble  // Styl dymków czatu
 ```
 
 ### Kolory
 
-Wszystkie właściwości kolorów są opcjonalne. Nieustawione wartości domyślnie użyją sensownych ustawień systemowych.
+Wszystkie właściwości kolorów są opcjonalne. Nieustawione wartości powracają do rozsądnych domyślnych ustawień systemu.
 
 ```swift
 var theme = FastCommentsTheme()
@@ -87,8 +87,8 @@ theme.actionFont = .caption.weight(.medium)
 theme.cornerRadius = .large       // .none, .small, .medium, .large
 theme.commentSpacing = 4          // Punkty między wierszami komentarzy
 theme.nestingIndent = 20          // Punkty wcięcia na poziom zagnieżdżenia
-theme.avatarSize = 36             // Średnica avatara dla komentarzy głównych
-theme.replyAvatarSize = 28        // Średnica avatara dla zagnieżdżonych odpowiedzi
+theme.avatarSize = 36             // Średnica awatara dla komentarzy głównych
+theme.replyAvatarSize = 28        // Średnica awatara dla zagnieżdżonych odpowiedzi
 ```
 
 ### Efekty wizualne
@@ -96,21 +96,41 @@ theme.replyAvatarSize = 28        // Średnica avatara dla zagnieżdżonych odpo
 ```swift
 theme.showShadows = true          // Subtelne cienie na kartach
 theme.showThreadLine = true       // Pionowa linia łącząca zagnieżdżone odpowiedzi
-theme.animateVotes = true         // Animacja sprężynowa przy zmianie głosów
+theme.animateVotes = true         // Animacja sprężynowa przy zmianach głosów
 ```
 
-### Zastosowanie motywów
+### Stosowanie motywów
 
-Dwa sposoby:
+Dwa podejścia:
 
 ```swift
-// Poprzez środowisko SwiftUI (zalecane dla hierarchii widoków)
+// Przez środowisko SwiftUI (zalecane dla hierarchii widoków)
 FastCommentsView(sdk: sdk)
     .fastCommentsTheme(theme)
 
-// Bezpośrednio w SDK
+// Bezpośrednio na SDK
 sdk.theme = theme
 ```
 
 ---
----
+
+
+### Kolory ankiet
+
+Ankiety domyślnie używają kolorów karty ankiety z widżetu webowego, w trybie jasnym i ciemnym. Ustawienie `primaryColor` zmienia również kolor akcentu oraz pasek wybranej opcji. Aby ustawić je bezpośrednio:
+
+```swift
+var theme = FastCommentsTheme()
+theme.pollAccentColor = .indigo
+```
+
+| Właściwość | Zastosowanie |
+|----------|----------|
+| `pollAccentColor` | Obramowanie i zaznaczenie wybranej opcji, wybrany czas trwania, "Twój głos został oddany" |
+| `pollAccentTextColor` | Znak zaznaczenia i tekst rysowany na kolorze akcentu |
+| `pollOptionBackgroundColor` | Tło opcji |
+| `pollOptionPressedBackgroundColor` | Tło opcji podczas naciśnięcia |
+| `pollBarColor` | Pasek wyników dla opcji, których nie wybrano |
+| `pollSelectedBarColor` | Pasek wyników dla wybranej opcji |
+| `pollBorderColor` | Znak pola wyboru i konturowe pigułki |
+| `pollDangerColor` | Błędy i "Usuń ankietę" |

@@ -1,15 +1,16 @@
-- Árvores de comentários encadeados com respostas aninhadas e paginação
-- Feed social com criação de postagens, reações e anexos de mídia
+- Árvores de comentários encadeadas com respostas aninhadas e paginação
+- Feed social com criação de posts, reações e anexos de mídia
 - Modo de chat ao vivo com rolagem automática e separadores de data
 - Atualizações em tempo real via WebSocket (novos comentários, votos, presença)
-- Single Sign-On (SSO simples para testes, SSO seguro para produção)
-- Edição de texto rico com negrito, itálico, código e menções @
+- Single Sign-On (Simple SSO para testes, Secure SSO para produção)
+- Edição de texto rico com negrito, itálico, código e @menções
 - Votação com estilos configuráveis (setas para cima/baixo ou corações)
-- Ações de moderação: sinalizar, fixar, trancar, bloquear
+- Enquetes em comentários com resultados ao vivo
+- Ações de moderação: sinalizar, fixar, bloquear, banir
 - Temas abrangentes com predefinições e personalização completa
-- Botões de barra de ferramentas personalizados para criação de comentários e publicações no feed
+- Botões de barra de ferramentas personalizados para comentários e criação de posts no feed
 - Upload de imagens
 - Suporte à região da UE
 - Presença do usuário (indicadores online/offline)
-- Filtragem do feed baseada em tags
+- Filtragem de feed baseada em tags
 - Suporte à localização

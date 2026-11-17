@@ -1,6 +1,6 @@
 {
   "name": "iOS knjižnica",
-  "pageHeader": "Dodajte komentarje v vašo iOS aplikacijo",
+  "pageHeader": "Dodajanje komentarjev v vašo iOS aplikacijo",
   "itemsOrdered": [
     {
       "name": "AI kodirni agenti",
@@ -9,7 +9,7 @@
       "type": "readme"
     },
     {
-      "name": "Značilnosti",
+      "name": "Funkcije",
       "file": "features-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
@@ -23,47 +23,53 @@
     {
       "name": "Namestitev",
       "file": "installation-readme-generated.md",
-      "subCat": "Začetek",
+      "subCat": "Uvod",
       "type": "readme"
     },
     {
-      "name": "Hiter začetek",
+      "name": "Hitri začetek",
       "file": "quick-start-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
     },
     {
-      "name": "Avtentikacija (SSO)",
+      "name": "Overjanje (SSO)",
       "file": "authentication-sso-readme-generated.md",
-      "subCat": "Avtentikacija",
+      "subCat": "Overjanje",
       "type": "readme"
     },
     {
-      "name": "Komentarji v nitih",
+      "name": "Nitkani komentarji",
       "file": "threaded-comments-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
     },
     {
-      "name": "Živi klepet",
+      "name": "Ankete",
+      "file": "polls-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Klepet v živo",
       "file": "live-chat-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
     },
     {
-      "name": "Družbeni tok",
+      "name": "Družbeni vir",
       "file": "social-feed-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
     },
     {
-      "name": "Tematizacija",
+      "name": "Prilagajanje teme",
       "file": "theming-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
     },
     {
-      "name": "Prilagojeni gumbi v orodni vrstici",
+      "name": "Gumbi orodne vrstice po meri",
       "file": "custom-toolbar-buttons-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
@@ -81,7 +87,7 @@
       "type": "readme"
     },
     {
-      "name": "Paginacija",
+      "name": "Stranjenje",
       "file": "pagination-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
@@ -93,7 +99,7 @@
       "type": "readme"
     },
     {
-      "name": "EU regija",
+      "name": "Regija EU",
       "file": "eu-region-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
@@ -111,7 +117,7 @@
       "type": "readme"
     },
     {
-      "name": "Omenjanje uporabnikov",
+      "name": "Omembe uporabnikov",
       "file": "user-mentions-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"

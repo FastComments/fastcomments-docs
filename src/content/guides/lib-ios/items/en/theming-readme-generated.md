@@ -113,3 +113,24 @@ sdk.theme = theme
 ```
 
 ---
+
+
+### Poll Colors
+
+Polls default to the web widget's poll card colors, in light and dark mode. Setting `primaryColor` also changes the accent and the bar of the option you picked. To set them directly:
+
+```swift
+var theme = FastCommentsTheme()
+theme.pollAccentColor = .indigo
+```
+
+| Property | Used for |
+|----------|----------|
+| `pollAccentColor` | Selected option border and check, chosen duration, "Your vote is in" |
+| `pollAccentTextColor` | Check mark and text drawn on the accent color |
+| `pollOptionBackgroundColor` | Option chip background |
+| `pollOptionPressedBackgroundColor` | Option chip background while pressed |
+| `pollBarColor` | Result bar for options you did not pick |
+| `pollSelectedBarColor` | Result bar for the option you picked |
+| `pollBorderColor` | Checkbox mark and outlined pills |
+| `pollDangerColor` | Errors and "Remove poll" |

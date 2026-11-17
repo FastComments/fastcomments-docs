@@ -1,13 +1,13 @@
 ## Параметри
 
-| Име | Тип | Задължително | Описание |
+| Име | Тип | Задължителен | Описание |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| createCommentParams | Array<CreateCommentParams> | Yes |  |
-| isLive | boolean | No |  |
-| doSpamCheck | boolean | No |  |
-| sendEmails | boolean | No |  |
-| populateNotifications | boolean | No |  |
+| tenantId | string | Да |  |
+| createCommentParams | Array<CreateCommentParams> | Да |  |
+| isLive | boolean | Не |  |
+| doSpamCheck | boolean | Не |  |
+| sendEmails | boolean | Не |  |
+| populateNotifications | boolean | Не |  |
 
 ## Отговор
 
@@ -17,51 +17,31 @@
 
 [inline-code-attrs-start title = 'Пример за saveCommentsBulk'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_12345";
+const tenantId: string = 'demo-rowy';
 
-const mention1: CommentUserMentionInfo = {
-  userId: "user_002",
-  start: 10,
-  end: 20,
+const commentParams: CreateCommentParams = {
+  url: 'https://blog.example.com/announcing-v2-release',
+  pageTitle: 'Announcing v2 Release',
+  email: 'sarah.johnson@gmail.com',
+  author: 'Sarah Johnson',
+  comment: 'This update looks amazing! Just tried it on our staging site.',
+  zmqUid: '177244808120441',
+  userMentions: [{
+    email: 'dev.lead@company.com',
+    author: 'Alex Lead'
+  }] as unknown as CommentUserMentionInfo[]
 };
 
-const hashtag1: CommentUserHashTagInfo = {
-  tag: "news",
-  start: 30,
-  end: 35,
-};
+const createCommentParams: Array<CreateCommentParams> = [commentParams];
 
-const poll1: CommentPollInput = {
-  question: "Did you find this helpful?",
-  options: ["Yes", "No"],
-};
-
-const commentA: CreateCommentParams = {
-  content: "This is a great article!",
-  userId: "user_001",
-  mentions: [mention1],
-  hashtags: [hashtag1],
-  poll: poll1,
-};
-
-const commentB: CreateCommentParams = {
-  content: "I have a question about the topic.",
-  userId: "user_003",
-};
-
-const createCommentParams: CreateCommentParams[] = [commentA, commentB];
-
-const isLive: boolean = true;
-const doSpamCheck: boolean = false;
-const sendEmails: boolean = true;
-const populateNotifications: boolean = false;
-
-const results: SaveCommentsBulkResponse[] = await saveCommentsBulk(
+const responses: Array<SaveCommentsBulkResponse> = await saveCommentsBulk(
   tenantId,
   createCommentParams,
-  isLive,
-  doSpamCheck,
-  sendEmails,
-  populateNotifications
+  true,   // isLive
+  true,   // doSpamCheck
+  false,  // sendEmails
+  true    // populateNotifications
 );
+
+const firstResponse: SaveCommentsBulkResponse = responses[0];
 [inline-code-end]

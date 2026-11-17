@@ -1,39 +1,41 @@
-αίτηση  
-tenantId  
-urlId  
+req
+tenantId
+urlId
 
 ## Παράμετροι
 
-| Name | Type | Required | Description |
+| Όνομα | Τύπος | Απαιτείται | Περιγραφή |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| urlId | string | Yes |  |
-| page | number | No |  |
-| direction | SortDirections | No |  |
-| sso | string | No |  |
-| skip | number | No |  |
-| skipChildren | number | No |  |
-| limit | number | No |  |
-| limitChildren | number | No |  |
-| countChildren | boolean | No |  |
-| fetchPageForCommentId | string | No |  |
-| includeConfig | boolean | No |  |
-| countAll | boolean | No |  |
-| includei10n | boolean | No |  |
-| locale | string | No |  |
-| modules | string | No |  |
-| isCrawler | boolean | No |  |
-| includeNotificationCount | boolean | No |  |
-| asTree | boolean | No |  |
-| maxTreeDepth | number | No |  |
-| useFullTranslationIds | boolean | No |  |
-| parentId | string | No |  |
-| searchText | string | No |  |
-| hashTags | Array<string> | No |  |
-| userId | string | No |  |
-| customConfigStr | string | No |  |
-| afterCommentId | string | No |  |
-| beforeCommentId | string | No |  |
+| tenantId | string | Ναι |  |
+| urlId | string | Ναι |  |
+| page | number | Όχι |  |
+| direction | SortDirections | Όχι |  |
+| sso | string | Όχι |  |
+| skip | number | Όχι |  |
+| skipChildren | number | Όχι |  |
+| limit | number | Όχι |  |
+| limitChildren | number | Όχι |  |
+| countChildren | boolean | Όχι |  |
+| fetchPageForCommentId | string | Όχι |  |
+| includeConfig | boolean | Όχι |  |
+| countAll | boolean | Όχι |  |
+| includei10n | boolean | Όχι |  |
+| locale | string | Όχι |  |
+| modules | string | Όχι |  |
+| isCrawler | boolean | Όχι |  |
+| includeNotificationCount | boolean | Όχι |  |
+| asTree | boolean | Όχι |  |
+| maxTreeDepth | number | Όχι |  |
+| useFullTranslationIds | boolean | Όχι |  |
+| parentId | string | Όχι |  |
+| searchText | string | Όχι |  |
+| hashTags | Array<string> | Όχι |  |
+| userId | string | Όχι |  |
+| customConfigStr | string | Όχι |  |
+| afterCommentId | string | Όχι |  |
+| beforeCommentId | string | Όχι |  |
+| questionId | string | Όχι |  |
+| questionValue | number | Όχι |  |
 
 ## Απάντηση
 
@@ -43,47 +45,45 @@ urlId
 
 [inline-code-attrs-start title = 'Παράδειγμα getCommentsPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function loadComments(): Promise<void> {
-  const tenantId: string = "tenant-42",
-        urlId: string = "post-2023-09-15",
-        page: number = 1,
-        direction: SortDirections = "desc",
-        limit: number = 30,
-        includeConfig: boolean = true,
-        locale: string = "en-US",
-        isCrawler: boolean = false,
-        asTree: boolean = true,
-        maxTreeDepth: number = 2,
-        searchText: string = "fastcomments",
-        hashTags: string[] = ["fastcomments","typescript"],
-        userId: string = "user-123";
+const tenantId: string = 'abc123def456';
+const urlId: string = 'https://example.com/blog/my-post';
 
-  const result: GetCommentsResponseWithPresencePublicComment = await getCommentsPublic(
-    tenantId,
-    urlId,
-    page,
-    direction,
-    undefined,
-    undefined,
-    undefined,
-    limit,
-    undefined,
-    undefined,
-    undefined,
-    includeConfig,
-    undefined,
-    undefined,
-    locale,
-    undefined,
-    isCrawler,
-    undefined,
-    asTree,
-    maxTreeDepth,
-    undefined,
-    undefined,
-    searchText,
-    hashTags,
-    userId
-  );
-}
+const response: GetCommentsResponseWithPresencePublicComment = await getCommentsPublic(
+  tenantId,
+  urlId,
+  1,
+  'DESC' as SortDirections,
+  undefined,
+  0,
+  undefined,
+  25,
+  undefined,
+  true,
+  undefined,
+  undefined,
+  true,
+  true,
+  false,
+  'en-US',
+  undefined,
+  false,
+  true,
+  undefined,
+  true,
+  3,
+  undefined,
+  undefined,
+  'root',
+  'authentication',
+  ['announcement', 'qna'],
+  undefined,
+  undefined,
+  undefined,
+  undefined,
+  undefined
+);
+
+const comments: PublicComment[] = response.comments;
+const presenceCount: number = response.presence?.userCount ?? 0;
+console.log(`Fetched ${comments.length} comments, ${presenceCount} users online`);
 [inline-code-end]

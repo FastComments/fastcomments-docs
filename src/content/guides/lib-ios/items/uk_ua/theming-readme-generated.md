@@ -1,15 +1,15 @@
-### Пресети тем
+### Готові теми
 
 Доступні чотири вбудовані пресети:
 
 ```swift
-// Системні налаштування за замовчуванням
+// Системні значення за замовчуванням
 sdk.theme = FastCommentsTheme.default
 
 // Картки з тінями та великими заокругленими кутами
 sdk.theme = FastCommentsTheme.modern
 
-// Плоский, без тіней, невеликий радіус заокруглення, без ліній розгалуження
+// Плоский стиль, без тіней, малий радіус кутів, без ліній гілок
 sdk.theme = FastCommentsTheme.minimal
 
 // Встановити всі кольори дій в один фірмовий колір
@@ -20,14 +20,14 @@ sdk.theme = FastCommentsTheme.allPrimary(.indigo)
 
 ```swift
 var theme = FastCommentsTheme()
-theme.commentStyle = .flat    // Плоский список з роздільниками (за замовчуванням)
-theme.commentStyle = .card    // Картки з заокругленими кутами та тінями
+theme.commentStyle = .flat    // Плоский список з розділювачами (за замовчуванням)
+theme.commentStyle = .card    // Заокруглені картки з тінями
 theme.commentStyle = .bubble  // Стиль чат-бульбашок
 ```
 
 ### Кольори
 
-Усі властивості кольорів необов'язкові. Незадані значення використовують адекватні системні значення за замовчуванням.
+Усі властивості кольорів є необов'язковими. Невстановлені значення повертаються до розумних системних значень за замовчуванням.
 
 ```swift
 var theme = FastCommentsTheme()
@@ -47,7 +47,7 @@ theme.replyButtonColor = .indigo
 theme.toggleRepliesButtonColor = .indigo.opacity(0.8)
 theme.loadMoreButtonTextColor = .indigo
 
-// Голоси
+// Голосування
 theme.voteActiveColor = .red
 theme.voteCountColor = .primary
 theme.voteCountZeroColor = .secondary
@@ -61,7 +61,7 @@ theme.linkColorPressed = .indigo.opacity(0.5)
 theme.dialogHeaderBackgroundColor = .indigo
 theme.dialogHeaderTextColor = .white
 
-// Панель вводу
+// Панель введення
 theme.inputBarBackgroundColor = Color(.systemBackground)
 theme.inputBarBorderColor = Color(.separator)
 
@@ -85,8 +85,8 @@ theme.actionFont = .caption.weight(.medium)
 
 ```swift
 theme.cornerRadius = .large       // .none, .small, .medium, .large
-theme.commentSpacing = 4          // Пункти між рядками коментарів
-theme.nestingIndent = 20          // Відступ у пунктах на кожен рівень вкладення
+theme.commentSpacing = 4          // Відстань у пунктах між рядками коментарів
+theme.nestingIndent = 20          // Відступ у пунктах на кожен рівень вкладеності
 theme.avatarSize = 36             // Діаметр аватара для кореневих коментарів
 theme.replyAvatarSize = 28        // Діаметр аватара для вкладених відповідей
 ```
@@ -96,7 +96,7 @@ theme.replyAvatarSize = 28        // Діаметр аватара для вкл
 ```swift
 theme.showShadows = true          // Легкі тіні на картках
 theme.showThreadLine = true       // Вертикальна лінія, що з'єднує вкладені відповіді
-theme.animateVotes = true         // Пружинна анімація при зміні голосів
+theme.animateVotes = true         // Пружна анімація при зміні голосів
 ```
 
 ### Застосування тем
@@ -104,13 +104,33 @@ theme.animateVotes = true         // Пружинна анімація при з
 Два підходи:
 
 ```swift
-// Через середовище SwiftUI (рекомендується для ієрархії представлень)
+// Через середовище SwiftUI (рекомендовано для ієрархії представлень)
 FastCommentsView(sdk: sdk)
     .fastCommentsTheme(theme)
 
-// Безпосередньо в SDK
+// Безпосередньо на SDK
 sdk.theme = theme
 ```
 
 ---
----
+
+
+### Кольори опитувань
+
+Опитування за замовчуванням використовують кольори картки опитування веб-віджета у світлому та темному режимах. Встановлення `primaryColor` також змінює акцент і смугу обраного вами варіанта. Щоб встановити їх безпосередньо:
+
+```swift
+var theme = FastCommentsTheme()
+theme.pollAccentColor = .indigo
+```
+
+| Властивість | Використовується для |
+|----------|----------|
+| `pollAccentColor` | Межа та позначка обраного варіанта, обрана тривалість, "Ваш голос враховано" |
+| `pollAccentTextColor` | Позначка та текст, намальовані на акцентному кольорі |
+| `pollOptionBackgroundColor` | Фон чипа варіанта |
+| `pollOptionPressedBackgroundColor` | Фон чипа варіанта під час натискання |
+| `pollBarColor` | Смуга результату для варіантів, які ви не обрали |
+| `pollSelectedBarColor` | Смуга результату для обраного вами варіанта |
+| `pollBorderColor` | Позначка чекбокса та контурні пігулки |
+| `pollDangerColor` | Помилки та "Видалити опитування" |

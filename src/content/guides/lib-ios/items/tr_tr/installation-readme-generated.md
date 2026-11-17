@@ -6,7 +6,7 @@ Ya da `Package.swift` dosyanıza ekleyin:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/fastcomments/fastcomments-ios.git", from: "2.0.0")
+    .package(url: "https://github.com/fastcomments/fastcomments-ios.git", from: "2.1.0")
 ]
 ```
 
@@ -21,7 +21,7 @@ Ardından ürünü hedefinize (target) ekleyin:
 )
 ```
 
-Gerektiği yerde her iki modülü de içe aktarın:
+Her iki modülü de ihtiyaç duyulan yerlerde içe aktarın:
 
 ```swift
 import FastCommentsUI

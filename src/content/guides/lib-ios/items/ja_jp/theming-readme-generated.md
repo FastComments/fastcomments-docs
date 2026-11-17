@@ -1,12 +1,12 @@
 ### テーマプリセット
 
-4つの組み込みプリセットが利用可能です:
+4つの組み込みプリセットが用意されています:
 
 ```swift
 // システムのデフォルト
 sdk.theme = FastCommentsTheme.default
 
-// 影付きのカード、大きな角丸
+// 影と大きな角丸を持つカード
 sdk.theme = FastCommentsTheme.modern
 
 // フラット、影なし、小さな角丸、スレッド線なし
@@ -20,14 +20,14 @@ sdk.theme = FastCommentsTheme.allPrimary(.indigo)
 
 ```swift
 var theme = FastCommentsTheme()
-theme.commentStyle = .flat    // 仕切り付きのフラットリスト（デフォルト）
+theme.commentStyle = .flat    // 区切り線付きのフラットなリスト(デフォルト)
 theme.commentStyle = .card    // 影付きの角丸カード
 theme.commentStyle = .bubble  // チャットバブルスタイル
 ```
 
 ### カラー
 
-すべてのカラー属性は任意です。未設定の値は適切なシステムのデフォルトにフォールバックします。
+すべてのカラープロパティはオプションです。未設定の値は適切なシステムデフォルトにフォールバックします。
 
 ```swift
 var theme = FastCommentsTheme()
@@ -81,12 +81,12 @@ theme.captionFont = .caption
 theme.actionFont = .caption.weight(.medium)
 ```
 
-### レイアウトと間隔
+### レイアウトとスペーシング
 
 ```swift
-theme.cornerRadius = .large       // 使用可能: .none, .small, .medium, .large
+theme.cornerRadius = .large       // .none、.small、.medium、.large
 theme.commentSpacing = 4          // コメント行間のポイント数
-theme.nestingIndent = 20          // ネストレベルごとのインデント量（ポイント）
+theme.nestingIndent = 20          // ネストレベルごとのインデントのポイント数
 theme.avatarSize = 36             // ルートコメントのアバター直径
 theme.replyAvatarSize = 28        // ネストされた返信のアバター直径
 ```
@@ -94,20 +94,43 @@ theme.replyAvatarSize = 28        // ネストされた返信のアバター直�
 ### 視覚効果
 
 ```swift
-theme.showShadows = true          // カードに薄い影を表示
-theme.showThreadLine = true       // ネストされた返信をつなぐ垂直線
+theme.showShadows = true          // カードのさりげない影
+theme.showThreadLine = true       // ネストされた返信を結ぶ縦線
 theme.animateVotes = true         // 投票変更時のスプリングアニメーション
 ```
 
 ### テーマの適用
 
-2つの方法:
+2つのアプローチがあります:
 
 ```swift
-// SwiftUI の環境経由（ビュー階層には推奨）
+// SwiftUI環境経由(ビュー階層に推奨)
 FastCommentsView(sdk: sdk)
     .fastCommentsTheme(theme)
 
-// SDK に直接設定
+// SDKに直接設定
 sdk.theme = theme
 ```
+
+---
+
+
+### 投票のカラー
+
+投票は、ライトモードとダークモードの両方で、Webウィジェットの投票カードのカラーをデフォルトとします。`primaryColor` を設定すると、アクセントと選択したオプションのバーも変更されます。直接設定するには:
+
+```swift
+var theme = FastCommentsTheme()
+theme.pollAccentColor = .indigo
+```
+
+| プロパティ | 用途 |
+|----------|----------|
+| `pollAccentColor` | 選択したオプションの枠線とチェック、選択した期間、「投票が記録されました」 |
+| `pollAccentTextColor` | アクセントカラー上に描かれるチェックマークとテキスト |
+| `pollOptionBackgroundColor` | オプションチップの背景 |
+| `pollOptionPressedBackgroundColor` | 押下中のオプションチップの背景 |
+| `pollBarColor` | 選択しなかったオプションの結果バー |
+| `pollSelectedBarColor` | 選択したオプションの結果バー |
+| `pollBorderColor` | チェックボックスのマークと枠線付きのピル |
+| `pollDangerColor` | エラーと「投票を削除」 |

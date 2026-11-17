@@ -4,36 +4,38 @@ urlId
 
 ## פרמטרים
 
-| שם | סוג | נדרש | תיאור |
+| Name | Type | Required | Description |
 |------|------|----------|-------------|
-| tenantId | string | כן |  |
-| urlId | string | כן |  |
-| page | number | לא |  |
-| direction | SortDirections | לא |  |
-| sso | string | לא |  |
-| skip | number | לא |  |
-| skipChildren | number | לא |  |
-| limit | number | לא |  |
-| limitChildren | number | לא |  |
-| countChildren | boolean | לא |  |
-| fetchPageForCommentId | string | לא |  |
-| includeConfig | boolean | לא |  |
-| countAll | boolean | לא |  |
-| includei10n | boolean | לא |  |
-| locale | string | לא |  |
-| modules | string | לא |  |
-| isCrawler | boolean | לא |  |
-| includeNotificationCount | boolean | לא |  |
-| asTree | boolean | לא |  |
-| maxTreeDepth | number | לא |  |
-| useFullTranslationIds | boolean | לא |  |
-| parentId | string | לא |  |
-| searchText | string | לא |  |
-| hashTags | Array<string> | לא |  |
-| userId | string | לא |  |
-| customConfigStr | string | לא |  |
-| afterCommentId | string | לא |  |
-| beforeCommentId | string | לא |  |
+| tenantId | string | Yes |  |
+| urlId | string | Yes |  |
+| page | number | No |  |
+| direction | SortDirections | No |  |
+| sso | string | No |  |
+| skip | number | No |  |
+| skipChildren | number | No |  |
+| limit | number | No |  |
+| limitChildren | number | No |  |
+| countChildren | boolean | No |  |
+| fetchPageForCommentId | string | No |  |
+| includeConfig | boolean | No |  |
+| countAll | boolean | No |  |
+| includei10n | boolean | No |  |
+| locale | string | No |  |
+| modules | string | No |  |
+| isCrawler | boolean | No |  |
+| includeNotificationCount | boolean | No |  |
+| asTree | boolean | No |  |
+| maxTreeDepth | number | No |  |
+| useFullTranslationIds | boolean | No |  |
+| parentId | string | No |  |
+| searchText | string | No |  |
+| hashTags | Array<string> | No |  |
+| userId | string | No |  |
+| customConfigStr | string | No |  |
+| afterCommentId | string | No |  |
+| beforeCommentId | string | No |  |
+| questionId | string | No |  |
+| questionValue | number | No |  |
 
 ## תגובה
 
@@ -41,49 +43,47 @@ urlId
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמת getCommentsPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל-getCommentsPublic'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function loadComments(): Promise<void> {
-  const tenantId: string = "tenant-42",
-        urlId: string = "post-2023-09-15",
-        page: number = 1,
-        direction: SortDirections = "desc",
-        limit: number = 30,
-        includeConfig: boolean = true,
-        locale: string = "en-US",
-        isCrawler: boolean = false,
-        asTree: boolean = true,
-        maxTreeDepth: number = 2,
-        searchText: string = "fastcomments",
-        hashTags: string[] = ["fastcomments","typescript"],
-        userId: string = "user-123";
+const tenantId: string = 'abc123def456';
+const urlId: string = 'https://example.com/blog/my-post';
 
-  const result: GetCommentsResponseWithPresencePublicComment = await getCommentsPublic(
-    tenantId,
-    urlId,
-    page,
-    direction,
-    undefined,
-    undefined,
-    undefined,
-    limit,
-    undefined,
-    undefined,
-    undefined,
-    includeConfig,
-    undefined,
-    undefined,
-    locale,
-    undefined,
-    isCrawler,
-    undefined,
-    asTree,
-    maxTreeDepth,
-    undefined,
-    undefined,
-    searchText,
-    hashTags,
-    userId
-  );
-}
+const response: GetCommentsResponseWithPresencePublicComment = await getCommentsPublic(
+  tenantId,
+  urlId,
+  1,
+  'DESC' as SortDirections,
+  undefined,
+  0,
+  undefined,
+  25,
+  undefined,
+  true,
+  undefined,
+  undefined,
+  true,
+  true,
+  false,
+  'en-US',
+  undefined,
+  false,
+  true,
+  undefined,
+  true,
+  3,
+  undefined,
+  undefined,
+  'root',
+  'authentication',
+  ['announcement', 'qna'],
+  undefined,
+  undefined,
+  undefined,
+  undefined,
+  undefined
+);
+
+const comments: PublicComment[] = response.comments;
+const presenceCount: number = response.presence?.userCount ?? 0;
+console.log(`Fetched ${comments.length} comments, ${presenceCount} users online`);
 [inline-code-end]

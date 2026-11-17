@@ -1,9 +1,9 @@
 {
   "name": "Biblioteka iOS",
-  "pageHeader": "Dodaj komentarze do swojej aplikacji iOS",
+  "pageHeader": "Dodawaj komentarze do swojej aplikacji iOS",
   "itemsOrdered": [
     {
-      "name": "Agenci kodowania AI",
+      "name": "Agenci AI do kodowania",
       "file": "ai-coding-agents-readme-generated.md",
       "subCat": "Dokumentacja",
       "type": "readme"
@@ -23,7 +23,7 @@
     {
       "name": "Instalacja",
       "file": "installation-readme-generated.md",
-      "subCat": "Rozpoczęcie",
+      "subCat": "Pierwsze kroki",
       "type": "readme"
     },
     {
@@ -39,8 +39,14 @@
       "type": "readme"
     },
     {
-      "name": "Wątkowane komentarze",
+      "name": "Komentarze wątkowane",
       "file": "threaded-comments-readme-generated.md",
+      "subCat": "Dokumentacja",
+      "type": "readme"
+    },
+    {
+      "name": "Ankiety",
+      "file": "polls-readme-generated.md",
       "subCat": "Dokumentacja",
       "type": "readme"
     },
@@ -51,13 +57,13 @@
       "type": "readme"
     },
     {
-      "name": "Kanał społecznościowy",
+      "name": "Feed społecznościowy",
       "file": "social-feed-readme-generated.md",
       "subCat": "Dokumentacja",
       "type": "readme"
     },
     {
-      "name": "Tematyzacja",
+      "name": "Motywy",
       "file": "theming-readme-generated.md",
       "subCat": "Dokumentacja",
       "type": "readme"
@@ -81,7 +87,7 @@
       "type": "readme"
     },
     {
-      "name": "Paginacja",
+      "name": "Stronicowanie",
       "file": "pagination-readme-generated.md",
       "subCat": "Dokumentacja",
       "type": "readme"
@@ -111,13 +117,13 @@
       "type": "readme"
     },
     {
-      "name": "Wzmianki o użytkownikach",
+      "name": "Wzmianki użytkowników",
       "file": "user-mentions-readme-generated.md",
       "subCat": "Dokumentacja",
       "type": "readme"
     },
     {
-      "name": "Edycja i usuwanie komentarzy",
+      "name": "Edytowanie i usuwanie komentarzy",
       "file": "editing-and-deleting-comments-readme-generated.md",
       "subCat": "Dokumentacja",
       "type": "readme"
@@ -135,7 +141,7 @@
       "type": "readme"
     },
     {
-      "name": "Aplikacja przykładowa",
+      "name": "Przykładowa aplikacja",
       "file": "example-app-readme-generated.md",
       "subCat": "Użycie",
       "type": "readme"

@@ -2,22 +2,21 @@
 
 | 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| urlId | string | Yes |  |
-| sso | string | No |  |
+| tenantId | string | はい |  |
+| urlId | string | はい |  |
+| sso | string | いいえ |  |
+| includeUserInfo | PageReactIncludeUserInfo | いいえ |  |
 
 ## レスポンス
 
-返却: [`GetV2PageReacts`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetV2PageReacts.ts)
+戻り値: [`GetV2PageReacts`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetV2PageReacts.ts)
 
 ## 例
 
 [inline-code-attrs-start title = 'getV2PageReacts の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant-42";
-const urlId: string = "article-9876";
-const ssoToken: string = "sso-abc123";
+const tenantId: string = 'abc1234567890';
+const urlId: string = '/blog/my-article';
 
-const reactsWithSso: GetV2PageReacts = await getV2PageReacts(tenantId, urlId, ssoToken);
-const reactsWithoutSso: GetV2PageReacts = await getV2PageReacts(tenantId, urlId);
+const result: GetV2PageReacts = await getV2PageReacts(tenantId, urlId, 'sso-token-value', 'basic');
 [inline-code-end]

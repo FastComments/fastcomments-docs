@@ -17,20 +17,24 @@ Returns: [`GetWebhookSamplePayloadsResponse`](https://github.com/FastComments/fa
 
 [inline-code-attrs-start title = 'getWebhookSamplePayloads Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "c1a2b3d4-5678-90ab-cdef-1234567890ab";
+declare function getWebhookSamplePayloads(
+  tenantId: string,
+  event?: WebhookEventName,
+  limit?: number
+): Promise<GetWebhookSamplePayloadsResponse>;
 
-const responseAll: GetWebhookSamplePayloadsResponse = await getWebhookSamplePayloads(
+const tenantId: string = '5f8d9b3e2a1b4c6d7e8f9a0b';
+
+// Get sample payloads for a specific event type
+const commentPayloads: GetWebhookSamplePayloadsResponse = await getWebhookSamplePayloads(
   tenantId,
-  "comment.created",
+  WebhookEventName.COMMENT_SUCCESS_PAGE,
   10
 );
 
-const responseWithEvent: GetWebhookSamplePayloadsResponse = await getWebhookSamplePayloads(
-  tenantId,
-  "comment.created"
-);
+// Get all sample payloads (no optional parameters)
+const allPayloads: GetWebhookSamplePayloadsResponse = await getWebhookSamplePayloads(tenantId);
 
-const responseBasic: GetWebhookSamplePayloadsResponse = await getWebhookSamplePayloads(
-  tenantId
-);
+console.log(`Comment payload status: ${commentPayloads.status}`);
+console.log(`Fetched ${allPayloads.payloads.length} sample payloads`);
 [inline-code-end]

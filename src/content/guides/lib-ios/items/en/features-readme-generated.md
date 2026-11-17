@@ -5,6 +5,7 @@
 - Single Sign-On (Simple SSO for testing, Secure SSO for production)
 - Rich text editing with bold, italic, code, and @mentions
 - Voting with configurable styles (up/down arrows or hearts)
+- Polls in comments with live results
 - Moderation actions: flag, pin, lock, block
 - Comprehensive theming with presets and full customization
 - Custom toolbar buttons for comments and feed post creation

@@ -1,8 +1,8 @@
-Последни коментари точно във формата, който използват доставките на webhook, за създаване на интеграции (например примерни данни за Zapier). Всеки събитие доставя един и същи обект на коментар, така че `event` трябва само да бъде валиден.
+Скорошни коментари в точно същия формат, който се използва при доставките на уебкутове, за изграждане на интеграции (например примерни данни за Zapier). Всяко събитие доставя един и същ обект коментар, така че `event` само трябва да е валиден.
 
 ## Параметри
 
-| Име | Тип | Задължително | Описание |
+| Име | Тип | Задължителен | Описание |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | event | WebhookEventName | Не |  |
@@ -14,22 +14,26 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'getWebhookSamplePayloads Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Пример за getWebhookSamplePayloads'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "c1a2b3d4-5678-90ab-cdef-1234567890ab";
+declare function getWebhookSamplePayloads(
+  tenantId: string,
+  event?: WebhookEventName,
+  limit?: number
+): Promise<GetWebhookSamplePayloadsResponse>;
 
-const responseAll: GetWebhookSamplePayloadsResponse = await getWebhookSamplePayloads(
+const tenantId: string = '5f8d9b3e2a1b4c6d7e8f9a0b';
+
+// Получаване на примерни payload-и за конкретен тип събитие
+const commentPayloads: GetWebhookSamplePayloadsResponse = await getWebhookSamplePayloads(
   tenantId,
-  "comment.created",
+  WebhookEventName.COMMENT_SUCCESS_PAGE,
   10
 );
 
-const responseWithEvent: GetWebhookSamplePayloadsResponse = await getWebhookSamplePayloads(
-  tenantId,
-  "comment.created"
-);
+// Получаване на всички примерни payload-и (без незадължителни параметри)
+const allPayloads: GetWebhookSamplePayloadsResponse = await getWebhookSamplePayloads(tenantId);
 
-const responseBasic: GetWebhookSamplePayloadsResponse = await getWebhookSamplePayloads(
-  tenantId
-);
+console.log(`Comment payload status: ${commentPayloads.status}`);
+console.log(`Fetched ${allPayloads.payloads.length} sample payloads`);
 [inline-code-end]

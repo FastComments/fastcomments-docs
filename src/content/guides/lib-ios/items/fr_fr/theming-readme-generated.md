@@ -3,13 +3,13 @@
 Quatre préréglages intégrés sont disponibles :
 
 ```swift
-// Paramètres système par défaut
+// Valeurs par défaut du système
 sdk.theme = FastCommentsTheme.default
 
 // Cartes avec ombres et grands coins arrondis
 sdk.theme = FastCommentsTheme.modern
 
-// Plat, sans ombres, petit rayon de coins, pas de lignes de discussion
+// Plat, sans ombres, petit rayon de coin, sans lignes de fil
 sdk.theme = FastCommentsTheme.minimal
 
 // Définir toutes les couleurs d'action sur une seule couleur de marque
@@ -22,17 +22,17 @@ sdk.theme = FastCommentsTheme.allPrimary(.indigo)
 var theme = FastCommentsTheme()
 theme.commentStyle = .flat    // Liste plate avec séparateurs (par défaut)
 theme.commentStyle = .card    // Cartes arrondies avec ombres
-theme.commentStyle = .bubble  // Style bulle de chat
+theme.commentStyle = .bubble  // Style bulle de discussion
 ```
 
 ### Couleurs
 
-Toutes les propriétés de couleur sont optionnelles. Les valeurs non définies reviennent aux paramètres par défaut du système.
+Toutes les propriétés de couleur sont facultatives. Les valeurs non définies reviennent à des valeurs par défaut système sensées.
 
 ```swift
 var theme = FastCommentsTheme()
 
-// Couleurs de la marque
+// Couleurs de marque
 theme.primaryColor = .indigo
 theme.primaryLightColor = .indigo.opacity(0.6)
 theme.primaryDarkColor = Color(red: 0.2, green: 0.1, blue: 0.5)
@@ -57,7 +57,7 @@ theme.voteDividerColor = Color(.separator)
 theme.linkColor = .indigo
 theme.linkColorPressed = .indigo.opacity(0.5)
 
-// Dialogues
+// Boîtes de dialogue
 theme.dialogHeaderBackgroundColor = .indigo
 theme.dialogHeaderTextColor = .white
 
@@ -85,10 +85,10 @@ theme.actionFont = .caption.weight(.medium)
 
 ```swift
 theme.cornerRadius = .large       // .none, .small, .medium, .large
-theme.commentSpacing = 4          // points entre les lignes de commentaires
-theme.nestingIndent = 20          // points d'indentation par niveau d'imbrication
-theme.avatarSize = 36             // diamètre de l'avatar pour les commentaires racines
-theme.replyAvatarSize = 28        // diamètre de l'avatar pour les réponses imbriquées
+theme.commentSpacing = 4          // Points entre les lignes de commentaires
+theme.nestingIndent = 20          // Points d'indentation par niveau d'imbrication
+theme.avatarSize = 36             // Diamètre de l'avatar pour les commentaires racine
+theme.replyAvatarSize = 28        // Diamètre de l'avatar pour les réponses imbriquées
 ```
 
 ### Effets visuels
@@ -104,10 +104,33 @@ theme.animateVotes = true         // Animation à ressort lors des changements d
 Deux approches :
 
 ```swift
-// Via l'environnement SwiftUI (recommandé pour la hiérarchie des vues)
+// Via l'environnement SwiftUI (recommandé pour la hiérarchie de vues)
 FastCommentsView(sdk: sdk)
     .fastCommentsTheme(theme)
 
 // Directement sur le SDK
 sdk.theme = theme
 ```
+
+---
+
+
+### Couleurs des sondages
+
+Les sondages utilisent par défaut les couleurs de carte de sondage du widget web, en mode clair et sombre. Définir `primaryColor` modifie également l'accent et la barre de l'option que vous avez choisie. Pour les définir directement :
+
+```swift
+var theme = FastCommentsTheme()
+theme.pollAccentColor = .indigo
+```
+
+| Propriété | Utilisée pour |
+|----------|----------|
+| `pollAccentColor` | Bordure et coche de l'option sélectionnée, durée choisie, « Votre vote est enregistré » |
+| `pollAccentTextColor` | Coche et texte dessinés sur la couleur d'accent |
+| `pollOptionBackgroundColor` | Arrière-plan de la pastille d'option |
+| `pollOptionPressedBackgroundColor` | Arrière-plan de la pastille d'option pendant l'appui |
+| `pollBarColor` | Barre de résultat pour les options que vous n'avez pas choisies |
+| `pollSelectedBarColor` | Barre de résultat pour l'option que vous avez choisie |
+| `pollBorderColor` | Marque de case à cocher et pastilles contourées |
+| `pollDangerColor` | Erreurs et « Supprimer le sondage » |

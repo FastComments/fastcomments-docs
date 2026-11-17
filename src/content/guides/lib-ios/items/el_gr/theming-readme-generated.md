@@ -1,6 +1,6 @@
-### Προεπιλογές Θέματος
+### Προεπιλογές Θεμάτων
 
-Τέσσερις ενσωματωμένες προεπιλογές είναι διαθέσιμες:
+Τέσσερα ενσωματωμένα presets είναι διαθέσιμα:
 
 ```swift
 // Προεπιλογές συστήματος
@@ -9,30 +9,30 @@ sdk.theme = FastCommentsTheme.default
 // Κάρτες με σκιές και μεγάλες στρογγυλεμένες γωνίες
 sdk.theme = FastCommentsTheme.modern
 
-// Επίπεδο, χωρίς σκιές, μικρή ακτίνα γωνίας, χωρίς γραμμές συνομιλίας
+// Επίπεδο, χωρίς σκιές, μικρή ακτίνα γωνιών, χωρίς γραμμές νημάτων
 sdk.theme = FastCommentsTheme.minimal
 
-// Ορισμός όλων των χρωμάτων ενεργειών σε ένα μόνο χρώμα μάρκας
+// Ορισμός όλων των χρωμάτων ενεργειών σε ένα ενιαίο χρώμα brand
 sdk.theme = FastCommentsTheme.allPrimary(.indigo)
 ```
 
-### Στυλ εμφάνισης σχολίων
+### Στυ Εμφάνισης Σχολίων
 
 ```swift
 var theme = FastCommentsTheme()
 theme.commentStyle = .flat    // Επίπεδη λίστα με διαχωριστικά (προεπιλογή)
 theme.commentStyle = .card    // Στρογγυλεμένες κάρτες με σκιές
-theme.commentStyle = .bubble  // Στυλ φυσαλίδας συνομιλίας
+theme.commentStyle = .bubble  // Στυ φυσαλίδων συνομιλίας
 ```
 
 ### Χρώματα
 
-Όλες οι ιδιότητες χρώματος είναι προαιρετικές. Οι μη ορισμένες τιμές επανέρχονται σε λογικές προεπιλογές του συστήματος.
+Όλες οι ιδιότητες χρωμάτων είναι προαιρετικές. Οι μη ορισμένες τιμές επιστρέφουν σε λογικές προεπιλογές συστήματος.
 
 ```swift
 var theme = FastCommentsTheme()
 
-// Χρώματα μάρκας
+// Χρώματα brand
 theme.primaryColor = .indigo
 theme.primaryLightColor = .indigo.opacity(0.6)
 theme.primaryDarkColor = Color(red: 0.2, green: 0.1, blue: 0.5)
@@ -53,7 +53,7 @@ theme.voteCountColor = .primary
 theme.voteCountZeroColor = .secondary
 theme.voteDividerColor = Color(.separator)
 
-// Συνδέσμοι
+// Σύνδεσμοι
 theme.linkColor = .indigo
 theme.linkColorPressed = .indigo.opacity(0.5)
 
@@ -81,13 +81,13 @@ theme.captionFont = .caption
 theme.actionFont = .caption.weight(.medium)
 ```
 
-### Διάταξη και κενά
+### Διάταξη και Αποστάσεις
 
 ```swift
 theme.cornerRadius = .large       // .none, .small, .medium, .large
-theme.commentSpacing = 4          // Σημεία μεταξύ σειρών σχολίων
+theme.commentSpacing = 4          // Σημεία μεταξύ γραμμών σχολίων
 theme.nestingIndent = 20          // Σημεία εσοχής ανά επίπεδο εμφώλευσης
-theme.avatarSize = 36             // Διάμετρος avatar για σχόλια ρίζας
+theme.avatarSize = 36             // Διάμετρος avatar για ριζικά σχόλια
 theme.replyAvatarSize = 28        // Διάμετρος avatar για εμφωλευμένες απαντήσεις
 ```
 
@@ -96,21 +96,41 @@ theme.replyAvatarSize = 28        // Διάμετρος avatar για εμφωλ
 ```swift
 theme.showShadows = true          // Διακριτικές σκιές στις κάρτες
 theme.showThreadLine = true       // Κάθετη γραμμή που συνδέει εμφωλευμένες απαντήσεις
-theme.animateVotes = true         // Εφέ ελατηρίου στις αλλαγές ψήφων
+theme.animateVotes = true         // Εφέ spring στις αλλαγές ψήφων
 ```
 
-### Εφαρμογή θεμάτων
+### Εφαρμογή Θεμάτων
 
 Δύο προσεγγίσεις:
 
 ```swift
-// Μέσω του περιβάλλοντος SwiftUI (συνιστάται για την ιεραρχία προβολής)
+// Μέσω περιβάλλοντος SwiftUI (προτεινόμενο για ιεραρχία προβολών)
 FastCommentsView(sdk: sdk)
     .fastCommentsTheme(theme)
 
-// Άμεσα στο SDK
+// Απευθείας στο SDK
 sdk.theme = theme
 ```
 
 ---
----
+
+
+### Χρώματα Ψηφοφοριών
+
+Οι ψηφοφορίες χρησιμοποιούν από προεπιλογή τα χρώματα της κάρτας ψηφοφορίας του web widget, σε φωτεινή και σκοτεινή λειτουργία. Ο ορισμός του `primaryColor` αλλάζει επίσης το χρώμα έμφασης και τη μπάρα της επιλογής που επιλέξατε. Για να τα ορίσετε απευθείας:
+
+```swift
+var theme = FastCommentsTheme()
+theme.pollAccentColor = .indigo
+```
+
+| Ιδιότητα | Χρησιμοποιείται για |
+|----------|----------|
+| `pollAccentColor` | Περίγραμμα και σήμα επιλεγμένης επιλογής, επιλεγμένη διάρκεια, "Η ψήφος σας καταχωρήθηκε" |
+| `pollAccentTextColor` | Σήμα επιλογής και κείμενο σε χρώμα έμφασης |
+| `pollOptionBackgroundColor` | Φόντο chip επιλογής |
+| `pollOptionPressedBackgroundColor` | Φόντο chip επιλογής κατά το πάτημα |
+| `pollBarColor` | Μπάρα αποτελεσμάτων για επιλογές που δεν επιλέξατε |
+| `pollSelectedBarColor` | Μπάρα αποτελεσμάτων για την επιλογή που επιλέξατε |
+| `pollBorderColor` | Σήμα checkbox και pills με περίγραμμα |
+| `pollDangerColor` | Σφάλματα και "Αφαίρεση ψηφοφορίας" |

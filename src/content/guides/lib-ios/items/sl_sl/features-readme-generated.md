@@ -1,15 +1,16 @@
-- Gnezdena drevesa komentarjev z odgovori in paginacijo
-- Družbeni tok s ustvarjanjem objav, reakcijami in medijskimi prilogami
-- Način klepeta v živo z avtomatskim pomikanjem in ločili datumov
+- Razvejana drevesa komentarjev z ugnezdjenimi odgovori in paginacijo
+- Družbeni vir s ustvarjanjem objav, reakcijami in medijskimi prilogami
+- Način klepeta v živo s samodejnim pomikanjem in ločevalniki datumov
 - Posodobitve v realnem času prek WebSocket (novi komentarji, glasovi, prisotnost)
-- Enkratna prijava (preprosti SSO za testiranje, varen SSO za produkcijo)
-- Urejanje obogatenega besedila z odebeljenim, poševnim, kodo in @omenami
-- Glasovanje z nastavljivimi slogi (puščice gor/dol ali srca)
-- Moderacijska dejanja: označi, pripni, zakleni, blokiraj
-- Celovito oblikovanje tem s prednastavitvami in popolno prilagoditvijo
-- Prilagojeni gumbi orodne vrstice za komentarje in ustvarjanje objav v toku
+- Enotna prijava (Simple SSO za testiranje, Secure SSO za produkcijo)
+- Urejanje obogatenega besedila s krepko, ležeče, kodo in @omembami
+- Glasovanje s nastavljivimi slogi (puščice gor/dol ali srca)
+- Ankete v komentarjih z rezultati v živo
+- Dejanja moderiranja: prijavi, pripni, zakleni, blokiraj
+- Celovito prilagajanje tem s prednastavitvami in popolno prilagoditvijo
+- Gumbi orodne vrstice po meri za komentarje in ustvarjanje objav v viru
 - Nalaganje slik
 - Podpora za regijo EU
-- Prisotnost uporabnikov (indikatorji na spletu/izven spleta)
-- Filtriranje toka na podlagi oznak
+- Prisotnost uporabnikov (indikatorji online/offline)
+- Filtriranje vira po oznakah
 - Podpora za lokalizacijo

@@ -3,31 +3,31 @@
 Vier integrierte Voreinstellungen sind verfügbar:
 
 ```swift
-// System-Standardeinstellungen
+// Systemstandards
 sdk.theme = FastCommentsTheme.default
 
 // Karten mit Schatten und großen abgerundeten Ecken
 sdk.theme = FastCommentsTheme.modern
 
-// Flach, keine Schatten, kleine Eckradien, keine Thread-Linien
+// Flach, ohne Schatten, kleiner Eckradius, keine Thread-Linien
 sdk.theme = FastCommentsTheme.minimal
 
-// Setzt alle Aktionsfarben auf eine einzelne Markenfarbe
+// Alle Aktionsfarben auf eine einzige Markenfarbe setzen
 sdk.theme = FastCommentsTheme.allPrimary(.indigo)
 ```
 
-### Anzeigeformate für Kommentare
+### Kommentar-Anzeigestile
 
 ```swift
 var theme = FastCommentsTheme()
 theme.commentStyle = .flat    // Flache Liste mit Trennlinien (Standard)
 theme.commentStyle = .card    // Abgerundete Karten mit Schatten
-theme.commentStyle = .bubble  // Chatblasen-Stil
+theme.commentStyle = .bubble  // Chat-Blasen-Stil
 ```
 
 ### Farben
 
-Alle Farb-Eigenschaften sind optional. Nicht festgelegte Werte fallen auf sinnvolle Systemstandardwerte zurück.
+Alle Farbeigenschaften sind optional. Nicht gesetzte Werte fallen auf sinnvolle Systemstandards zurück.
 
 ```swift
 var theme = FastCommentsTheme()
@@ -47,7 +47,7 @@ theme.replyButtonColor = .indigo
 theme.toggleRepliesButtonColor = .indigo.opacity(0.8)
 theme.loadMoreButtonTextColor = .indigo
 
-// Stimmen
+// Abstimmungen
 theme.voteActiveColor = .red
 theme.voteCountColor = .primary
 theme.voteCountZeroColor = .secondary
@@ -87,7 +87,7 @@ theme.actionFont = .caption.weight(.medium)
 theme.cornerRadius = .large       // .none, .small, .medium, .large
 theme.commentSpacing = 4          // Punkte zwischen Kommentarzeilen
 theme.nestingIndent = 20          // Punkte Einrückung pro Verschachtelungsebene
-theme.avatarSize = 36             // Avatar-Durchmesser für oberste Kommentare
+theme.avatarSize = 36             // Avatar-Durchmesser für Stammkommentare
 theme.replyAvatarSize = 28        // Avatar-Durchmesser für verschachtelte Antworten
 ```
 
@@ -96,7 +96,7 @@ theme.replyAvatarSize = 28        // Avatar-Durchmesser für verschachtelte Antw
 ```swift
 theme.showShadows = true          // Dezente Schatten auf Karten
 theme.showThreadLine = true       // Vertikale Linie, die verschachtelte Antworten verbindet
-theme.animateVotes = true         // Federanimation bei Stimmenänderungen
+theme.animateVotes = true         // Spring-Animation bei Abstimmungsänderungen
 ```
 
 ### Themes anwenden
@@ -104,13 +104,33 @@ theme.animateVotes = true         // Federanimation bei Stimmenänderungen
 Zwei Ansätze:
 
 ```swift
-// Über die SwiftUI-Umgebung (für die View-Hierarchie empfohlen)
+// Über die SwiftUI-Umgebung (empfohlen für die View-Hierarchie)
 FastCommentsView(sdk: sdk)
     .fastCommentsTheme(theme)
 
-// Direkt im SDK
+// Direkt am SDK
 sdk.theme = theme
 ```
 
 ---
----
+
+
+### Umfrage-Farben
+
+Umfragen übernehmen standardmäßig die Umfragekarten-Farben des Web-Widgets, im hellen und dunklen Modus. Das Setzen von `primaryColor` ändert auch die Akzentfarbe und den Balken der von Ihnen gewählten Option. Um sie direkt festzulegen:
+
+```swift
+var theme = FastCommentsTheme()
+theme.pollAccentColor = .indigo
+```
+
+| Eigenschaft | Verwendung |
+|----------|----------|
+| `pollAccentColor` | Rahmen und Häkchen der ausgewählten Option, gewählte Dauer, „Ihre Stimme wurde gezählt" |
+| `pollAccentTextColor` | Häkchen und Text, der auf der Akzentfarbe gezeichnet wird |
+| `pollOptionBackgroundColor` | Hintergrund der Options-Chip |
+| `pollOptionPressedBackgroundColor` | Hintergrund der Options-Chip beim Drücken |
+| `pollBarColor` | Ergebnisbalken für Optionen, die Sie nicht gewählt haben |
+| `pollSelectedBarColor` | Ergebnisbalken für die von Ihnen gewählte Option |
+| `pollBorderColor` | Kontrollkästchen-Markierung und umrandete Pills |
+| `pollDangerColor` | Fehler und „Umfrage entfernen" |

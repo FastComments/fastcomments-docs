@@ -2,23 +2,30 @@
 
 | 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
+| tenantId | string | はい |  |
+| id | string | はい |  |
 
 ## レスポンス
 
-返り値: [`GetQuestionConfigResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetQuestionConfigResponse.ts)
+戻り値: [`GetQuestionConfigResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetQuestionConfigResponse.ts)
 
 ## 例
 
 [inline-code-attrs-start title = 'getQuestionConfig の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "acme-corp-tenant";
-const questionId: string = "q-987654321";
+const tenantId: string = 'abc123def456';
+const questionId: string = 'poll-question-789';
 
-const configResponse: GetQuestionConfigResponse = await getQuestionConfig(tenantId, questionId);
+const response: GetQuestionConfigResponse = await getQuestionConfig(tenantId, questionId);
 
-const status: APIStatus = configResponse.status;
-const questionConfig?: QuestionConfig = configResponse.question;
-const firstOption?: QuestionConfigCustomOptionsInner = questionConfig?.customOptions?.[0];
+const status: APIStatus = response.status;
+const config: QuestionConfig = response.config;
+
+const type: string = config.type;
+const customOptions: QuestionConfigCustomOptionsInner[] = config.customOptions || [];
+
+if (customOptions.length > 0) {
+  const firstOptionLabel: string | undefined = customOptions[0].label;
+  console.log(`Config ${config.id} for tenant ${tenantId}, first option: ${firstOptionLabel}`);
+}
 [inline-code-end]

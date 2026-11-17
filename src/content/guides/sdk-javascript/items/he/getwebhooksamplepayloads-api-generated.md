@@ -1,4 +1,5 @@
-תגובות אחרונות בדיוק בצורה שבה משלוחי webhook משתמשים, לבניית אינטגרציות (לדוגמה נתוני דוגמה של Zapier). כל אירוע מספק את אותו אובייקט תגובה, ולכן `event` צריך להיות תקף בלבד.
+תגובות אחרונות בדיוק בצורה שבה משתמשים משלוחי webhook, לצורך בניית אינטגרציות (לדוגמה נתוני דוגמה של
+Zapier). כל אירוע משלח את אותו אובייקט תגובה, ולכן `event` רק צריך להיות תקף.
 
 ## פרמטרים
 
@@ -8,28 +9,32 @@
 | event | WebhookEventName | לא |  |
 | limit | number | לא |  |
 
-## תגובה
+## תשובה
 
 מחזיר: [`GetWebhookSamplePayloadsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetWebhookSamplePayloadsResponse.ts)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמת getWebhookSamplePayloads'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל-getWebhookSamplePayloads'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "c1a2b3d4-5678-90ab-cdef-1234567890ab";
+declare function getWebhookSamplePayloads(
+  tenantId: string,
+  event?: WebhookEventName,
+  limit?: number
+): Promise<GetWebhookSamplePayloadsResponse>;
 
-const responseAll: GetWebhookSamplePayloadsResponse = await getWebhookSamplePayloads(
+const tenantId: string = '5f8d9b3e2a1b4c6d7e8f9a0b';
+
+// Get sample payloads for a specific event type
+const commentPayloads: GetWebhookSamplePayloadsResponse = await getWebhookSamplePayloads(
   tenantId,
-  "comment.created",
+  WebhookEventName.COMMENT_SUCCESS_PAGE,
   10
 );
 
-const responseWithEvent: GetWebhookSamplePayloadsResponse = await getWebhookSamplePayloads(
-  tenantId,
-  "comment.created"
-);
+// Get all sample payloads (no optional parameters)
+const allPayloads: GetWebhookSamplePayloadsResponse = await getWebhookSamplePayloads(tenantId);
 
-const responseBasic: GetWebhookSamplePayloadsResponse = await getWebhookSamplePayloads(
-  tenantId
-);
+console.log(`Comment payload status: ${commentPayloads.status}`);
+console.log(`Fetched ${allPayloads.payloads.length} sample payloads`);
 [inline-code-end]

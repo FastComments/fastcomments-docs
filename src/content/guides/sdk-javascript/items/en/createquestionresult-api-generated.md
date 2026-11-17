@@ -13,16 +13,21 @@ Returns: [`CreateQuestionResultResponse`](https://github.com/FastComments/fastco
 
 [inline-code-attrs-start title = 'createQuestionResult Example'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_12345";
+const tenantId: string = 'abc123def456';
 
 const createQuestionResultBody: CreateQuestionResultBody = {
-  questionId: "q_9876",
-  answer: "Yes",
-  score: 5,
-  meta: [
-    { key: "source", value: "survey" }
-  ]
+  questionId: 'q-789',
+  voterId: 'user-456',
+  answerId: 'answer-yes',
+  meta: { itemId: 'post-1234', itemType: 'blog-post' } as MetaItem
 };
 
-const result: CreateQuestionResultResponse = await createQuestionResult(tenantId, createQuestionResultBody);
+const response: CreateQuestionResultResponse = await createQuestionResult(
+  tenantId,
+  createQuestionResultBody
+);
+
+const status: APIStatus = response.status;
+const questionResult: QuestionResult | undefined = response.questionResult;
+console.log(`Created question result with status: ${status}`);
 [inline-code-end]

@@ -1,41 +1,32 @@
 ## 參數
 
-| Name | Type | Required | Description |
+| 名稱 | 類型 | 必填 | 說明 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| commentId | string | No |  |
-| externalId | string | No |  |
-| eventType | string | No |  |
-| type | string | No |  |
-| domain | string | No |  |
-| attemptCountGT | number | No |  |
-| skip | number | No |  |
+| tenantId | string | 是 |  |
+| commentId | string | 否 |  |
+| externalId | string | 否 |  |
+| eventType | string | 否 |  |
+| type | string | 否 |  |
+| domain | string | 否 |  |
+| attemptCountGT | number | 否 |  |
+| skip | number | 否 |  |
 
 ## 回應
 
-返回：[`GetPendingWebhookEventsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPendingWebhookEventsResponse.ts)
+回傳:[`GetPendingWebhookEventsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPendingWebhookEventsResponse.ts)
 
 ## 範例
 
 [inline-code-attrs-start title = 'getPendingWebhookEvents 範例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "123e4567-e89b-12d3-a456-426614174000";
-const commentId: string = "cmt_987654321";
-const externalId: string = "ext_abc123";
-const eventType: string = "comment_created";
-const type: string = "outbound";
-const domain: string = "myblog.com";
-const attemptCountGT: number = 2;
-const skip: number = 10;
+const tenantId: string = '5a2f4d3c8b9e1a2b3c4d5e6f';
 
-const pendingEvents: GetPendingWebhookEventsResponse = await getPendingWebhookEvents(
-  tenantId,
-  commentId,
-  externalId,
-  eventType,
-  type,
-  domain,
-  attemptCountGT,
-  skip
-);
+const pendingEvents: GetPendingWebhookEventsResponse = await getPendingWebhookEvents(tenantId, {
+    commentId: 'abc123def456',
+    eventType: 'comment-created',
+    attemptCountGT: 2,
+    skip: 0
+});
+
+console.log(`Found ${pendingEvents.items.length} pending webhook events`);
 [inline-code-end]

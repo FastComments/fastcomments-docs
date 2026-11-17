@@ -1,10 +1,11 @@
 ## Parametry
 
-| Nazwa | Typ | Wymagane | Opis |
+| Nazwa | Typ | Wymagany | Opis |
 |------|------|----------|-------------|
 | tenantId | string | Tak |  |
 | urlId | string | Tak |  |
 | sso | string | Nie |  |
+| includeUserInfo | PageReactIncludeUserInfo | Nie |  |
 
 ## Odpowiedź
 
@@ -14,10 +15,8 @@ Zwraca: [`GetV2PageReacts`](https://github.com/FastComments/fastcomments-sdk-js/
 
 [inline-code-attrs-start title = 'Przykład getV2PageReacts'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant-42";
-const urlId: string = "article-9876";
-const ssoToken: string = "sso-abc123";
+const tenantId: string = 'abc1234567890';
+const urlId: string = '/blog/my-article';
 
-const reactsWithSso: GetV2PageReacts = await getV2PageReacts(tenantId, urlId, ssoToken);
-const reactsWithoutSso: GetV2PageReacts = await getV2PageReacts(tenantId, urlId);
+const result: GetV2PageReacts = await getV2PageReacts(tenantId, urlId, 'sso-token-value', 'basic');
 [inline-code-end]

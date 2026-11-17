@@ -39,13 +39,19 @@
       "type": "readme"
     },
     {
-      "name": "스레드형 댓글",
+      "name": "스레드 댓글",
       "file": "threaded-comments-readme-generated.md",
       "subCat": "문서",
       "type": "readme"
     },
     {
-      "name": "실시간 채팅",
+      "name": "설문",
+      "file": "polls-readme-generated.md",
+      "subCat": "문서",
+      "type": "readme"
+    },
+    {
+      "name": "라이브 채팅",
       "file": "live-chat-readme-generated.md",
       "subCat": "문서",
       "type": "readme"
@@ -57,19 +63,19 @@
       "type": "readme"
     },
     {
-      "name": "테마 적용",
+      "name": "테마 설정",
       "file": "theming-readme-generated.md",
       "subCat": "문서",
       "type": "readme"
     },
     {
-      "name": "맞춤 툴바 버튼",
+      "name": "사용자 지정 툴바 버튼",
       "file": "custom-toolbar-buttons-readme-generated.md",
       "subCat": "문서",
       "type": "readme"
     },
     {
-      "name": "중재",
+      "name": "검토",
       "file": "moderation-readme-generated.md",
       "subCat": "문서",
       "type": "readme"
@@ -81,19 +87,19 @@
       "type": "readme"
     },
     {
-      "name": "페이지 매김",
+      "name": "페이지네이션",
       "file": "pagination-readme-generated.md",
       "subCat": "문서",
       "type": "readme"
     },
     {
-      "name": "상태 및 관찰 가능성",
+      "name": "상태 및 관측성",
       "file": "state-and-observability-readme-generated.md",
       "subCat": "문서",
       "type": "readme"
     },
     {
-      "name": "EU 지역",
+      "name": "EU 리전",
       "file": "eu-region-readme-generated.md",
       "subCat": "문서",
       "type": "readme"

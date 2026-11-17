@@ -3,7 +3,7 @@
   "pageHeader": "FastComments JavaScript/TypeScript SDK",
   "itemsOrdered": [
     {
-      "name": "AI コーディングエージェント",
+      "name": "AIコーディングエージェント",
       "file": "ai-coding-agents-readme-generated.md",
       "subCat": "ドキュメント",
       "type": "readme"
@@ -15,9 +15,9 @@
       "type": "readme"
     },
     {
-      "name": "API ドキュメント",
+      "name": "APIドキュメント",
       "file": "api-documentation-readme-generated.md",
-      "subCat": "API リファレンス",
+      "subCat": "APIリファレンス",
       "type": "readme"
     },
     {
@@ -33,9 +33,9 @@
       "type": "readme"
     },
     {
-      "name": "公開 API と保護された API",
+      "name": "公開APIとセキュアAPI",
       "file": "public-vs-secured-apis-readme-generated.md",
-      "subCat": "API リファレンス",
+      "subCat": "APIリファレンス",
       "type": "readme"
     },
     {
@@ -45,7 +45,7 @@
       "type": "readme"
     },
     {
-      "name": "一般的な使用例",
+      "name": "一般的なユースケース",
       "file": "common-use-cases-readme-generated.md",
       "subCat": "ドキュメント",
       "type": "readme"
@@ -57,7 +57,7 @@
       "type": "readme"
     },
     {
-      "name": "ブロードキャスト ID",
+      "name": "ブロードキャストID",
       "file": "broadcast-ids-readme-generated.md",
       "subCat": "ドキュメント",
       "type": "readme"
@@ -84,6 +84,18 @@
       "name": "getAuditLogs",
       "file": "getauditlogs-api-generated.md",
       "subCat": "監査ログ",
+      "type": "api"
+    },
+    {
+      "name": "getBatchJob",
+      "file": "getbatchjob-api-generated.md",
+      "subCat": "バッチジョブ",
+      "type": "api"
+    },
+    {
+      "name": "getBatchJobs",
+      "file": "getbatchjobs-api-generated.md",
+      "subCat": "バッチジョブ",
       "type": "api"
     },
     {
@@ -201,6 +213,12 @@
       "type": "api"
     },
     {
+      "name": "translateComments",
+      "file": "translatecomments-api-generated.md",
+      "subCat": "コメント",
+      "type": "api"
+    },
+    {
       "name": "unBlockUserFromComment",
       "file": "unblockuserfromcomment-api-generated.md",
       "subCat": "コメント",
@@ -239,7 +257,7 @@
     {
       "name": "getCommentsForUser",
       "file": "getcommentsforuser-api-generated.md",
-      "subCat": "ユーザー向けコメント",
+      "subCat": "ユーザーのコメント",
       "type": "api"
     },
     {
@@ -461,7 +479,7 @@
     {
       "name": "getMe",
       "file": "getme-api-generated.md",
-      "subCat": "自分",
+      "subCat": "自分の情報",
       "type": "api"
     },
     {
@@ -761,13 +779,13 @@
     {
       "name": "deleteNotificationCount",
       "file": "deletenotificationcount-api-generated.md",
-      "subCat": "通知カウント",
+      "subCat": "通知数",
       "type": "api"
     },
     {
       "name": "getCachedNotificationCount",
       "file": "getcachednotificationcount-api-generated.md",
-      "subCat": "通知カウント",
+      "subCat": "通知数",
       "type": "api"
     },
     {
@@ -861,6 +879,18 @@
       "type": "api"
     },
     {
+      "name": "getPageLikes",
+      "file": "getpagelikes-api-generated.md",
+      "subCat": "ページ",
+      "type": "api"
+    },
+    {
+      "name": "getPageReacts",
+      "file": "getpagereacts-api-generated.md",
+      "subCat": "ページ",
+      "type": "api"
+    },
+    {
       "name": "getPages",
       "file": "getpages-api-generated.md",
       "subCat": "ページ",
@@ -879,8 +909,20 @@
       "type": "api"
     },
     {
+      "name": "migratePages",
+      "file": "migratepages-api-generated.md",
+      "subCat": "ページ",
+      "type": "api"
+    },
+    {
       "name": "patchPage",
       "file": "patchpage-api-generated.md",
+      "subCat": "ページ",
+      "type": "api"
+    },
+    {
+      "name": "undoPageMigrations",
+      "file": "undopagemigrations-api-generated.md",
       "subCat": "ページ",
       "type": "api"
     },
@@ -929,25 +971,37 @@
     {
       "name": "deletePoll",
       "file": "deletepoll-api-generated.md",
-      "subCat": "投票",
+      "subCat": "アンケート",
       "type": "api"
     },
     {
       "name": "getPoll",
       "file": "getpoll-api-generated.md",
-      "subCat": "投票",
+      "subCat": "アンケート",
+      "type": "api"
+    },
+    {
+      "name": "getPollVoters",
+      "file": "getpollvoters-api-generated.md",
+      "subCat": "アンケート",
       "type": "api"
     },
     {
       "name": "patchPoll",
       "file": "patchpoll-api-generated.md",
-      "subCat": "投票",
+      "subCat": "アンケート",
       "type": "api"
     },
     {
       "name": "putPoll",
       "file": "putpoll-api-generated.md",
-      "subCat": "投票",
+      "subCat": "アンケート",
+      "type": "api"
+    },
+    {
+      "name": "votePoll",
+      "file": "votepoll-api-generated.md",
+      "subCat": "アンケート",
       "type": "api"
     },
     {
@@ -1031,43 +1085,43 @@
     {
       "name": "addSSOUser",
       "file": "addssouser-api-generated.md",
-      "subCat": "SSO ユーザー",
+      "subCat": "SSOユーザー",
       "type": "api"
     },
     {
       "name": "deleteSSOUser",
       "file": "deletessouser-api-generated.md",
-      "subCat": "SSO ユーザー",
+      "subCat": "SSOユーザー",
       "type": "api"
     },
     {
       "name": "getSSOUserByEmail",
       "file": "getssouserbyemail-api-generated.md",
-      "subCat": "SSO ユーザー",
+      "subCat": "SSOユーザー",
       "type": "api"
     },
     {
       "name": "getSSOUserById",
       "file": "getssouserbyid-api-generated.md",
-      "subCat": "SSO ユーザー",
+      "subCat": "SSOユーザー",
       "type": "api"
     },
     {
       "name": "getSSOUsers",
       "file": "getssousers-api-generated.md",
-      "subCat": "SSO ユーザー",
+      "subCat": "SSOユーザー",
       "type": "api"
     },
     {
       "name": "patchSSOUser",
       "file": "patchssouser-api-generated.md",
-      "subCat": "SSO ユーザー",
+      "subCat": "SSOユーザー",
       "type": "api"
     },
     {
       "name": "putSSOUser",
       "file": "putssouser-api-generated.md",
-      "subCat": "SSO ユーザー",
+      "subCat": "SSOユーザー",
       "type": "api"
     },
     {
@@ -1241,25 +1295,25 @@
     {
       "name": "uploadImage",
       "file": "uploadimage-api-generated.md",
-      "subCat": "画像アップロード",
+      "subCat": "画像のアップロード",
       "type": "api"
     },
     {
       "name": "getUserBadgeProgressById",
       "file": "getuserbadgeprogressbyid-api-generated.md",
-      "subCat": "ユーザーバッジ進捗",
+      "subCat": "ユーザーバッジの進捗",
       "type": "api"
     },
     {
       "name": "getUserBadgeProgressByUserId",
       "file": "getuserbadgeprogressbyuserid-api-generated.md",
-      "subCat": "ユーザーバッジ進捗",
+      "subCat": "ユーザーバッジの進捗",
       "type": "api"
     },
     {
       "name": "getUserBadgeProgressList",
       "file": "getuserbadgeprogresslist-api-generated.md",
-      "subCat": "ユーザーバッジ進捗",
+      "subCat": "ユーザーバッジの進捗",
       "type": "api"
     },
     {
@@ -1337,7 +1391,7 @@
     {
       "name": "getUserPresenceStatuses",
       "file": "getuserpresencestatuses-api-generated.md",
-      "subCat": "ユーザー在席状態",
+      "subCat": "ユーザーの在席状況",
       "type": "api"
     },
     {

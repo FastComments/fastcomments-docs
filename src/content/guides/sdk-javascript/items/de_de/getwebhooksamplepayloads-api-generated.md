@@ -1,35 +1,39 @@
-Aktuelle Kommentare exakt in der Form, die Webhook‑Auslieferungen verwenden, zum Erstellen von Integrationen (z. B. Zapier‑Beispieldaten). Jedes Ereignis liefert dasselbe Kommentarobjekt, sodass `event` nur gültig sein muss.
+Neueste Kommentare in genau der Form, wie sie bei Webhook-Zustellungen verwendet werden, zum Aufbau von Integrationen (zum Beispiel Zapier-Beispieldaten). Jedes Ereignis liefert dasselbe Kommentarobjekt, daher muss `event` nur gültig sein.
 
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
-|------|------|--------------|--------------|
+|------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | event | WebhookEventName | Nein |  |
 | limit | number | Nein |  |
 
 ## Antwort
 
-Rückgabe: [`GetWebhookSamplePayloadsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetWebhookSamplePayloadsResponse.ts)
+Gibt zurück: [`GetWebhookSamplePayloadsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetWebhookSamplePayloadsResponse.ts)
 
 ## Beispiel
 
-[inline-code-attrs-start title = 'Beispiel für getWebhookSamplePayloads'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getWebhookSamplePayloads Beispiel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "c1a2b3d4-5678-90ab-cdef-1234567890ab";
+declare function getWebhookSamplePayloads(
+  tenantId: string,
+  event?: WebhookEventName,
+  limit?: number
+): Promise<GetWebhookSamplePayloadsResponse>;
 
-const responseAll: GetWebhookSamplePayloadsResponse = await getWebhookSamplePayloads(
+const tenantId: string = '5f8d9b3e2a1b4c6d7e8f9a0b';
+
+// Get sample payloads for a specific event type
+const commentPayloads: GetWebhookSamplePayloadsResponse = await getWebhookSamplePayloads(
   tenantId,
-  "comment.created",
+  WebhookEventName.COMMENT_SUCCESS_PAGE,
   10
 );
 
-const responseWithEvent: GetWebhookSamplePayloadsResponse = await getWebhookSamplePayloads(
-  tenantId,
-  "comment.created"
-);
+// Get all sample payloads (no optional parameters)
+const allPayloads: GetWebhookSamplePayloadsResponse = await getWebhookSamplePayloads(tenantId);
 
-const responseBasic: GetWebhookSamplePayloadsResponse = await getWebhookSamplePayloads(
-  tenantId
-);
+console.log(`Comment payload status: ${commentPayloads.status}`);
+console.log(`Fetched ${allPayloads.payloads.length} sample payloads`);
 [inline-code-end]

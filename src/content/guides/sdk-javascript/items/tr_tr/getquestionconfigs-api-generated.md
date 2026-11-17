@@ -1,9 +1,9 @@
 ## Parametreler
 
-| Name | Type | Required | Description |
+| Ad | Tür | Zorunlu | Açıklama |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| skip | number | No |  |
+| tenantId | string | Evet |  |
+| skip | number | Hayır |  |
 
 ## Yanıt
 
@@ -13,10 +13,19 @@ Döndürür: [`GetQuestionConfigsResponse`](https://github.com/FastComments/fast
 
 [inline-code-attrs-start title = 'getQuestionConfigs Örneği'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function fetchConfigs() {
-  const tenantId: string = "tenant_12345";
+const tenantId: string = '5a4cd2f75d6b3b001e4b3c2a';
+const skip: number = 10;
 
-  const firstPage: GetQuestionConfigsResponse = await getQuestionConfigs(tenantId);
-  const secondPage: GetQuestionConfigsResponse = await getQuestionConfigs(tenantId, 20);
-}
+const response: GetQuestionConfigsResponse = await getQuestionConfigs(tenantId, skip);
+
+const configs: QuestionConfig[] = response.configs;
+const status: string = response.status;
+
+console.log(`Fetched ${configs.length} question configs`);
+configs.forEach((config: QuestionConfig): void => {
+    const customOptions: QuestionConfigCustomOptionsInner[] | undefined = config.customOptions;
+    const conditions: QuestionCondition[] | undefined = config.conditions;
+    const subConditions: SubQuestionCondition[] | undefined = config.subQuestionConditions;
+    console.log(`Question ${config.id}: status=${status}, options=${customOptions?.length ?? 0}, subQuestions=${subConditions?.length ?? 0}`);
+});
 [inline-code-end]

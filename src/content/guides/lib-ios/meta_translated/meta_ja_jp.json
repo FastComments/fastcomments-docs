@@ -1,6 +1,6 @@
 {
   "name": "iOS ライブラリ",
-  "pageHeader": "iOS アプリにコメントを追加する",
+  "pageHeader": "iOS アプリへのコメントの追加",
   "itemsOrdered": [
     {
       "name": "AI コーディングエージェント",
@@ -33,14 +33,20 @@
       "type": "readme"
     },
     {
-      "name": "認証 (SSO)",
+      "name": "認証（SSO）",
       "file": "authentication-sso-readme-generated.md",
       "subCat": "認証",
       "type": "readme"
     },
     {
-      "name": "スレッドコメント",
+      "name": "スレッド形式のコメント",
       "file": "threaded-comments-readme-generated.md",
+      "subCat": "ドキュメント",
+      "type": "readme"
+    },
+    {
+      "name": "投票",
+      "file": "polls-readme-generated.md",
       "subCat": "ドキュメント",
       "type": "readme"
     },
@@ -87,7 +93,7 @@
       "type": "readme"
     },
     {
-      "name": "状態と観測性",
+      "name": "ステートとオブザーバビリティ",
       "file": "state-and-observability-readme-generated.md",
       "subCat": "ドキュメント",
       "type": "readme"
@@ -111,7 +117,7 @@
       "type": "readme"
     },
     {
-      "name": "ユーザー言及",
+      "name": "ユーザーメンション",
       "file": "user-mentions-readme-generated.md",
       "subCat": "ドキュメント",
       "type": "readme"
@@ -129,7 +135,7 @@
       "type": "readme"
     },
     {
-      "name": "ローカリゼーション",
+      "name": "ローカライゼーション",
       "file": "localization-readme-generated.md",
       "subCat": "ドキュメント",
       "type": "readme"

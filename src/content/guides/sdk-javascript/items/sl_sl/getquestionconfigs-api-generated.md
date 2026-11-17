@@ -11,12 +11,21 @@ Vrne: [`GetQuestionConfigsResponse`](https://github.com/FastComments/fastcomment
 
 ## Primer
 
-[inline-code-attrs-start title = 'getQuestionConfigs Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'Primer getQuestionConfigs'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function fetchConfigs() {
-  const tenantId: string = "tenant_12345";
+const tenantId: string = '5a4cd2f75d6b3b001e4b3c2a';
+const skip: number = 10;
 
-  const firstPage: GetQuestionConfigsResponse = await getQuestionConfigs(tenantId);
-  const secondPage: GetQuestionConfigsResponse = await getQuestionConfigs(tenantId, 20);
-}
+const response: GetQuestionConfigsResponse = await getQuestionConfigs(tenantId, skip);
+
+const configs: QuestionConfig[] = response.configs;
+const status: string = response.status;
+
+console.log(`Pridobljenih ${configs.length} konfiguracij vprašanj`);
+configs.forEach((config: QuestionConfig): void => {
+    const customOptions: QuestionConfigCustomOptionsInner[] | undefined = config.customOptions;
+    const conditions: QuestionCondition[] | undefined = config.conditions;
+    const subConditions: SubQuestionCondition[] | undefined = config.subQuestionConditions;
+    console.log(`Vprašanje ${config.id}: status=${status}, možnosti=${customOptions?.length ?? 0}, podvprašanja=${subConditions?.length ?? 0}`);
+});
 [inline-code-end]

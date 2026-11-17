@@ -1,6 +1,6 @@
 ### 테마 프리셋
 
-네 가지 내장 프리셋이 제공됩니다:
+네 가지 내장 프리셋을 사용할 수 있습니다:
 
 ```swift
 // 시스템 기본값
@@ -9,7 +9,7 @@ sdk.theme = FastCommentsTheme.default
 // 그림자와 큰 둥근 모서리가 있는 카드
 sdk.theme = FastCommentsTheme.modern
 
-// 플랫(그림자 없음), 작은 모서리 반경, 스레드 라인 없음
+// 평면, 그림자 없음, 작은 모서리 반경, 스레드 라인 없음
 sdk.theme = FastCommentsTheme.minimal
 
 // 모든 액션 색상을 단일 브랜드 색상으로 설정
@@ -20,14 +20,14 @@ sdk.theme = FastCommentsTheme.allPrimary(.indigo)
 
 ```swift
 var theme = FastCommentsTheme()
-theme.commentStyle = .flat    // 구분선이 있는 플랫 리스트 (기본)
+theme.commentStyle = .flat    // 구분선이 있는 평면 목록 (기본값)
 theme.commentStyle = .card    // 그림자가 있는 둥근 카드
 theme.commentStyle = .bubble  // 채팅 버블 스타일
 ```
 
 ### 색상
 
-모든 색상 속성은 선택 사항입니다. 설정되지 않은 값은 적절한 시스템 기본값으로 대체됩니다.
+모든 색상 속성은 선택 사항입니다. 설정하지 않은 값은 적절한 시스템 기본값으로 대체됩니다.
 
 ```swift
 var theme = FastCommentsTheme()
@@ -57,7 +57,7 @@ theme.voteDividerColor = Color(.separator)
 theme.linkColor = .indigo
 theme.linkColorPressed = .indigo.opacity(0.5)
 
-// 다이얼로그
+// 대화상자
 theme.dialogHeaderBackgroundColor = .indigo
 theme.dialogHeaderTextColor = .white
 
@@ -85,8 +85,8 @@ theme.actionFont = .caption.weight(.medium)
 
 ```swift
 theme.cornerRadius = .large       // .none, .small, .medium, .large
-theme.commentSpacing = 4          // 댓글 행 사이의 간격(포인트)
-theme.nestingIndent = 20          // 중첩 수준당 들여쓰기(포인트)
+theme.commentSpacing = 4          // 댓글 행 사이의 포인트 간격
+theme.nestingIndent = 20          // 중첩 레벨당 들여쓰기 포인트
 theme.avatarSize = 36             // 루트 댓글의 아바타 지름
 theme.replyAvatarSize = 28        // 중첩된 답글의 아바타 지름
 ```
@@ -94,8 +94,8 @@ theme.replyAvatarSize = 28        // 중첩된 답글의 아바타 지름
 ### 시각 효과
 
 ```swift
-theme.showShadows = true          // 카드에 미묘한 그림자
-theme.showThreadLine = true       // 중첩된 답글을 연결하는 수직선
+theme.showShadows = true          // 카드에 은은한 그림자
+theme.showThreadLine = true       // 중첩된 답글을 연결하는 세로선
 theme.animateVotes = true         // 투표 변경 시 스프링 애니메이션
 ```
 
@@ -104,10 +104,33 @@ theme.animateVotes = true         // 투표 변경 시 스프링 애니메이션
 두 가지 방법:
 
 ```swift
-// Via SwiftUI environment (recommended for view hierarchy)
+// SwiftUI 환경을 통한 방법 (뷰 계층 구조에 권장)
 FastCommentsView(sdk: sdk)
     .fastCommentsTheme(theme)
 
-// Directly on the SDK
+// SDK에 직접 설정
 sdk.theme = theme
 ```
+
+---
+
+
+### 투표 색상
+
+투표는 라이트 및 다크 모드에서 웹 위젯의 투표 카드 색상을 기본값으로 사용합니다. `primaryColor`를 설정하면 강조 색상과 선택한 옵션의 바도 함께 변경됩니다. 직접 설정하려면:
+
+```swift
+var theme = FastCommentsTheme()
+theme.pollAccentColor = .indigo
+```
+
+| 속성 | 용도 |
+|----------|----------|
+| `pollAccentColor` | 선택된 옵션 테두리 및 체크, 선택한 기간, "Your vote is in" |
+| `pollAccentTextColor` | 강조 색상 위에 그려지는 체크 표시 및 텍스트 |
+| `pollOptionBackgroundColor` | 옵션 칩 배경 |
+| `pollOptionPressedBackgroundColor` | 눌렀을 때의 옵션 칩 배경 |
+| `pollBarColor` | 선택하지 않은 옵션의 결과 바 |
+| `pollSelectedBarColor` | 선택한 옵션의 결과 바 |
+| `pollBorderColor` | 체크박스 표시 및 외곽선 필 |
+| `pollDangerColor` | 오류 및 "Remove poll" |

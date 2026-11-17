@@ -1,25 +1,29 @@
 ## Parameters
 
-| Name | Type | Required | Description |
+| Naam | Type | Verplicht | Beschrijving |
 |------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | urlId | string | Ja |  |
 | sso | string | Nee |  |
+| includeUserInfo | PageReactIncludeUserInfo | Nee |  |
 
 ## Response
 
 Retourneert: [`GetV1PageLikes`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetV1PageLikes.ts)
 
-## Example
+## Voorbeeld
 
-[inline-code-attrs-start title = 'getV1PageLikes voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getV1PageLikes Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = "tenant_12345";
-  const urlId: string = "https://myblog.com/post/42";
-  const ssoToken: string = "sso_user_987";
+const tenantId: string = 'abc123def456';
+const urlId: string = 'https://example.com/blog/my-post';
 
-  const likesWithSSO: GetV1PageLikes = await getV1PageLikes(tenantId, urlId, ssoToken);
-  const likesWithoutSSO: GetV1PageLikes = await getV1PageLikes(tenantId, urlId);
-})();
+const result: GetV1PageLikes = await getV1PageLikes(tenantId, urlId, 'sso-token-xyz789', true);
+
+console.log(result.status);
+if (result.likes) {
+  result.likes.forEach((like) => {
+    console.log(like.userId, like.date);
+  });
+}
 [inline-code-end]

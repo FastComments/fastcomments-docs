@@ -1,6 +1,6 @@
 ## פרמטרים
 
-| שם | סוג | נדרש | תיאור |
+| שם | סוג | חובה | תיאור |
 |------|------|----------|-------------|
 | tenantId | string | כן |  |
 | urlId | string | לא |  |
@@ -10,27 +10,39 @@
 | questionIds | string | לא |  |
 | skip | number | לא |  |
 
-## תגובה
+## תשובה
 
 מחזיר: [`GetQuestionResultsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetQuestionResultsResponse.ts)
 
 ## דוגמה
 
-[inline-code-attrs-start title = 'דוגמת getQuestionResults'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'דוגמה ל-getQuestionResults'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function fetchResults() {
-  const tenantId: string = 'c1a2b3d4-5678-90ab-cdef-1234567890ab';
-  const urlId: string = 'blog-post-789';
-  const startDate: string = '2023-01-01T00:00:00Z';
-  const questionIds: string = 'q-abc123,q-def456';
-  const response: GetQuestionResultsResponse = await getQuestionResults(
-    tenantId,
-    urlId,
-    undefined,
-    startDate,
-    undefined,
-    questionIds
-  );
-  console.log(response);
-}
+declare const getQuestionResults: (
+  tenantId: string,
+  urlId?: string,
+  userId?: string,
+  startDate?: string,
+  questionId?: string,
+  questionIds?: string,
+  skip?: number
+) => Promise<GetQuestionResultsResponse>;
+
+const tenantId: string = 'abc123def456';
+const urlId: string = 'https://example.com/blog/my-post';
+const userId: string = 'user_98765';
+const startDate: string = '2024-01-01T00:00:00.000Z';
+const skip: number = 0;
+
+const results: GetQuestionResultsResponse = await getQuestionResults(
+  tenantId,
+  urlId,
+  userId,
+  startDate,
+  undefined,
+  'question_1,question_2',
+  skip
+);
+
+const firstResult: QuestionResult | undefined = results[0];
 [inline-code-end]

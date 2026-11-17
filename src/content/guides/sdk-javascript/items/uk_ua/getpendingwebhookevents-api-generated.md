@@ -1,41 +1,32 @@
 ## Параметри
 
-| Name | Type | Required | Description |
+| Назва | Тип | Обов'язковий | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| commentId | string | No |  |
-| externalId | string | No |  |
-| eventType | string | No |  |
-| type | string | No |  |
-| domain | string | No |  |
-| attemptCountGT | number | No |  |
-| skip | number | No |  |
+| tenantId | string | Так |  |
+| commentId | string | Ні |  |
+| externalId | string | Ні |  |
+| eventType | string | Ні |  |
+| type | string | Ні |  |
+| domain | string | Ні |  |
+| attemptCountGT | number | Ні |  |
+| skip | number | Ні |  |
 
 ## Відповідь
 
-Returns: [`GetPendingWebhookEventsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPendingWebhookEventsResponse.ts)
+Повертає: [`GetPendingWebhookEventsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPendingWebhookEventsResponse.ts)
 
 ## Приклад
 
 [inline-code-attrs-start title = 'Приклад getPendingWebhookEvents'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "123e4567-e89b-12d3-a456-426614174000";
-const commentId: string = "cmt_987654321";
-const externalId: string = "ext_abc123";
-const eventType: string = "comment_created";
-const type: string = "outbound";
-const domain: string = "myblog.com";
-const attemptCountGT: number = 2;
-const skip: number = 10;
+const tenantId: string = '5a2f4d3c8b9e1a2b3c4d5e6f';
 
-const pendingEvents: GetPendingWebhookEventsResponse = await getPendingWebhookEvents(
-  tenantId,
-  commentId,
-  externalId,
-  eventType,
-  type,
-  domain,
-  attemptCountGT,
-  skip
-);
+const pendingEvents: GetPendingWebhookEventsResponse = await getPendingWebhookEvents(tenantId, {
+    commentId: 'abc123def456',
+    eventType: 'comment-created',
+    attemptCountGT: 2,
+    skip: 0
+});
+
+console.log(`Found ${pendingEvents.items.length} pending webhook events`);
 [inline-code-end]

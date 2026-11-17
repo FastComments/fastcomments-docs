@@ -1,6 +1,6 @@
 {
-  "name": "חבילת SDK של JavaScript/TypeScript",
-  "pageHeader": "FastComments SDK של JavaScript/TypeScript",
+  "name": "SDK של JavaScript/TypeScript",
+  "pageHeader": "FastComments JavaScript/TypeScript SDK",
   "itemsOrdered": [
     {
       "name": "סוכני קידוד AI",
@@ -11,13 +11,13 @@
     {
       "name": "התקנה",
       "file": "installation-readme-generated.md",
-      "subCat": "התחלה",
+      "subCat": "תחילת עבודה",
       "type": "readme"
     },
     {
       "name": "תיעוד API",
       "file": "api-documentation-readme-generated.md",
-      "subCat": "הפניות API",
+      "subCat": "אסמכתא ל-API",
       "type": "readme"
     },
     {
@@ -33,19 +33,19 @@
       "type": "readme"
     },
     {
-      "name": "API ציבוריים מול מאובטחים",
+      "name": "APIs ציבוריים מול מאובטחים",
       "file": "public-vs-secured-apis-readme-generated.md",
-      "subCat": "הפניות API",
+      "subCat": "אסמכתא ל-API",
       "type": "readme"
     },
     {
-      "name": "אינטגרציית SSO (כניסה יחידה)",
+      "name": "שילוב SSO (כניסה יחידה)",
       "file": "sso-single-sign-on-integration-readme-generated.md",
       "subCat": "תיעוד",
       "type": "readme"
     },
     {
-      "name": "מקרים נפוצים של שימוש",
+      "name": "מקרי שימוש נפוצים",
       "file": "common-use-cases-readme-generated.md",
       "subCat": "תיעוד",
       "type": "readme"
@@ -71,13 +71,13 @@
     {
       "name": "createAgentTenant",
       "file": "createagenttenant-api-generated.md",
-      "subCat": "שוכרי סוכנים",
+      "subCat": "טננטים של סוכנים",
       "type": "api"
     },
     {
       "name": "aggregate",
       "file": "aggregate-api-generated.md",
-      "subCat": "אגרגציה",
+      "subCat": "צבירה",
       "type": "api"
     },
     {
@@ -87,15 +87,27 @@
       "type": "api"
     },
     {
+      "name": "getBatchJob",
+      "file": "getbatchjob-api-generated.md",
+      "subCat": "משימות אצווה",
+      "type": "api"
+    },
+    {
+      "name": "getBatchJobs",
+      "file": "getbatchjobs-api-generated.md",
+      "subCat": "משימות אצווה",
+      "type": "api"
+    },
+    {
       "name": "blockFromCommentPublic",
       "file": "blockfromcommentpublic-api-generated.md",
-      "subCat": "חסימה מהתגובה",
+      "subCat": "חסימה מתגובה",
       "type": "api"
     },
     {
       "name": "unBlockCommentPublic",
       "file": "unblockcommentpublic-api-generated.md",
-      "subCat": "חסימה מהתגובה",
+      "subCat": "חסימה מתגובה",
       "type": "api"
     },
     {
@@ -201,6 +213,12 @@
       "type": "api"
     },
     {
+      "name": "translateComments",
+      "file": "translatecomments-api-generated.md",
+      "subCat": "תגובות",
+      "type": "api"
+    },
+    {
       "name": "unBlockUserFromComment",
       "file": "unblockuserfromcomment-api-generated.md",
       "subCat": "תגובות",
@@ -245,37 +263,37 @@
     {
       "name": "addDomainConfig",
       "file": "adddomainconfig-api-generated.md",
-      "subCat": "תצורת דומיין",
+      "subCat": "הגדרות דומיין",
       "type": "api"
     },
     {
       "name": "deleteDomainConfig",
       "file": "deletedomainconfig-api-generated.md",
-      "subCat": "תצורת דומיין",
+      "subCat": "הגדרות דומיין",
       "type": "api"
     },
     {
       "name": "getDomainConfig",
       "file": "getdomainconfig-api-generated.md",
-      "subCat": "תצורת דומיין",
+      "subCat": "הגדרות דומיין",
       "type": "api"
     },
     {
       "name": "getDomainConfigs",
       "file": "getdomainconfigs-api-generated.md",
-      "subCat": "תצורת דומיין",
+      "subCat": "הגדרות דומיין",
       "type": "api"
     },
     {
       "name": "patchDomainConfig",
       "file": "patchdomainconfig-api-generated.md",
-      "subCat": "תצורת דומיין",
+      "subCat": "הגדרות דומיין",
       "type": "api"
     },
     {
       "name": "putDomainConfig",
       "file": "putdomainconfig-api-generated.md",
-      "subCat": "תצורת דומיין",
+      "subCat": "הגדרות דומיין",
       "type": "api"
     },
     {
@@ -407,55 +425,55 @@
     {
       "name": "flagCommentPublic",
       "file": "flagcommentpublic-api-generated.md",
-      "subCat": "דגל תגובה",
+      "subCat": "סימון תגובה",
       "type": "api"
     },
     {
       "name": "getGifLarge",
       "file": "getgiflarge-api-generated.md",
-      "subCat": "גיפים",
+      "subCat": "GIFs",
       "type": "api"
     },
     {
       "name": "getGifsSearch",
       "file": "getgifssearch-api-generated.md",
-      "subCat": "גיפים",
+      "subCat": "GIFs",
       "type": "api"
     },
     {
       "name": "getGifsTrending",
       "file": "getgifstrending-api-generated.md",
-      "subCat": "גיפים",
+      "subCat": "GIFs",
       "type": "api"
     },
     {
       "name": "addHashTag",
       "file": "addhashtag-api-generated.md",
-      "subCat": "תגיות",
+      "subCat": "האשטגים",
       "type": "api"
     },
     {
       "name": "addHashTagsBulk",
       "file": "addhashtagsbulk-api-generated.md",
-      "subCat": "תגיות",
+      "subCat": "האשטגים",
       "type": "api"
     },
     {
       "name": "deleteHashTag",
       "file": "deletehashtag-api-generated.md",
-      "subCat": "תגיות",
+      "subCat": "האשטגים",
       "type": "api"
     },
     {
       "name": "getHashTags",
       "file": "gethashtags-api-generated.md",
-      "subCat": "תגיות",
+      "subCat": "האשטגים",
       "type": "api"
     },
     {
       "name": "patchHashTag",
       "file": "patchhashtag-api-generated.md",
-      "subCat": "תגיות",
+      "subCat": "האשטגים",
       "type": "api"
     },
     {
@@ -467,307 +485,307 @@
     {
       "name": "deleteModerationVote",
       "file": "deletemoderationvote-api-generated.md",
-      "subCat": "מודרציה",
+      "subCat": "פיקוח",
       "type": "api"
     },
     {
       "name": "getApiComments",
       "file": "getapicomments-api-generated.md",
-      "subCat": "מודרציה",
+      "subCat": "פיקוח",
       "type": "api"
     },
     {
       "name": "getApiExportStatus",
       "file": "getapiexportstatus-api-generated.md",
-      "subCat": "מודרציה",
+      "subCat": "פיקוח",
       "type": "api"
     },
     {
       "name": "getApiIds",
       "file": "getapiids-api-generated.md",
-      "subCat": "מודרציה",
+      "subCat": "פיקוח",
       "type": "api"
     },
     {
       "name": "getBanUsersFromComment",
       "file": "getbanusersfromcomment-api-generated.md",
-      "subCat": "מודרציה",
+      "subCat": "פיקוח",
       "type": "api"
     },
     {
       "name": "getCommentBanStatus",
       "file": "getcommentbanstatus-api-generated.md",
-      "subCat": "מודרציה",
+      "subCat": "פיקוח",
       "type": "api"
     },
     {
       "name": "getCommentChildren",
       "file": "getcommentchildren-api-generated.md",
-      "subCat": "מודרציה",
+      "subCat": "פיקוח",
       "type": "api"
     },
     {
       "name": "getCount",
       "file": "getcount-api-generated.md",
-      "subCat": "מודרציה",
+      "subCat": "פיקוח",
       "type": "api"
     },
     {
       "name": "getCounts",
       "file": "getcounts-api-generated.md",
-      "subCat": "מודרציה",
+      "subCat": "פיקוח",
       "type": "api"
     },
     {
       "name": "getLogs",
       "file": "getlogs-api-generated.md",
-      "subCat": "מודרציה",
+      "subCat": "פיקוח",
       "type": "api"
     },
     {
       "name": "getManualBadges",
       "file": "getmanualbadges-api-generated.md",
-      "subCat": "מודרציה",
+      "subCat": "פיקוח",
       "type": "api"
     },
     {
       "name": "getManualBadgesForUser",
       "file": "getmanualbadgesforuser-api-generated.md",
-      "subCat": "מודרציה",
+      "subCat": "פיקוח",
       "type": "api"
     },
     {
       "name": "getModerationComment",
       "file": "getmoderationcomment-api-generated.md",
-      "subCat": "מודרציה",
+      "subCat": "פיקוח",
       "type": "api"
     },
     {
       "name": "getModerationCommentText",
       "file": "getmoderationcommenttext-api-generated.md",
-      "subCat": "מודרציה",
+      "subCat": "פיקוח",
       "type": "api"
     },
     {
       "name": "getPreBanSummary",
       "file": "getprebansummary-api-generated.md",
-      "subCat": "מודרציה",
+      "subCat": "פיקוח",
       "type": "api"
     },
     {
       "name": "getSearchCommentsSummary",
       "file": "getsearchcommentssummary-api-generated.md",
-      "subCat": "מודרציה",
+      "subCat": "פיקוח",
       "type": "api"
     },
     {
       "name": "getSearchPages",
       "file": "getsearchpages-api-generated.md",
-      "subCat": "מודרציה",
+      "subCat": "פיקוח",
       "type": "api"
     },
     {
       "name": "getSearchSites",
       "file": "getsearchsites-api-generated.md",
-      "subCat": "מודרציה",
+      "subCat": "פיקוח",
       "type": "api"
     },
     {
       "name": "getSearchSuggest",
       "file": "getsearchsuggest-api-generated.md",
-      "subCat": "מודרציה",
+      "subCat": "פיקוח",
       "type": "api"
     },
     {
       "name": "getSearchUsers",
       "file": "getsearchusers-api-generated.md",
-      "subCat": "מודרציה",
+      "subCat": "פיקוח",
       "type": "api"
     },
     {
       "name": "getTrustFactor",
       "file": "gettrustfactor-api-generated.md",
-      "subCat": "מודרציה",
+      "subCat": "פיקוח",
       "type": "api"
     },
     {
       "name": "getUserBanPreference",
       "file": "getuserbanpreference-api-generated.md",
-      "subCat": "מודרציה",
+      "subCat": "פיקוח",
       "type": "api"
     },
     {
       "name": "getUserInternalProfile",
       "file": "getuserinternalprofile-api-generated.md",
-      "subCat": "מודרציה",
+      "subCat": "פיקוח",
       "type": "api"
     },
     {
       "name": "postAdjustCommentVotes",
       "file": "postadjustcommentvotes-api-generated.md",
-      "subCat": "מודרציה",
+      "subCat": "פיקוח",
       "type": "api"
     },
     {
       "name": "postApiExport",
       "file": "postapiexport-api-generated.md",
-      "subCat": "מודרציה",
+      "subCat": "פיקוח",
       "type": "api"
     },
     {
       "name": "postBanUserFromComment",
       "file": "postbanuserfromcomment-api-generated.md",
-      "subCat": "מודרציה",
+      "subCat": "פיקוח",
       "type": "api"
     },
     {
       "name": "postBanUserUndo",
       "file": "postbanuserundo-api-generated.md",
-      "subCat": "מודרציה",
+      "subCat": "פיקוח",
       "type": "api"
     },
     {
       "name": "postBulkPreBanSummary",
       "file": "postbulkprebansummary-api-generated.md",
-      "subCat": "מודרציה",
+      "subCat": "פיקוח",
       "type": "api"
     },
     {
       "name": "postCommentsByIds",
       "file": "postcommentsbyids-api-generated.md",
-      "subCat": "מודרציה",
+      "subCat": "פיקוח",
       "type": "api"
     },
     {
       "name": "postFlagComment",
       "file": "postflagcomment-api-generated.md",
-      "subCat": "מודרציה",
+      "subCat": "פיקוח",
       "type": "api"
     },
     {
       "name": "postRemoveComment",
       "file": "postremovecomment-api-generated.md",
-      "subCat": "מודרציה",
+      "subCat": "פיקוח",
       "type": "api"
     },
     {
       "name": "postRestoreDeletedComment",
       "file": "postrestoredeletedcomment-api-generated.md",
-      "subCat": "מודרציה",
+      "subCat": "פיקוח",
       "type": "api"
     },
     {
       "name": "postSetCommentApprovalStatus",
       "file": "postsetcommentapprovalstatus-api-generated.md",
-      "subCat": "מודרציה",
+      "subCat": "פיקוח",
       "type": "api"
     },
     {
       "name": "postSetCommentReviewStatus",
       "file": "postsetcommentreviewstatus-api-generated.md",
-      "subCat": "מודרציה",
+      "subCat": "פיקוח",
       "type": "api"
     },
     {
       "name": "postSetCommentSpamStatus",
       "file": "postsetcommentspamstatus-api-generated.md",
-      "subCat": "מודרציה",
+      "subCat": "פיקוח",
       "type": "api"
     },
     {
       "name": "postSetCommentText",
       "file": "postsetcommenttext-api-generated.md",
-      "subCat": "מודרציה",
+      "subCat": "פיקוח",
       "type": "api"
     },
     {
       "name": "postUnFlagComment",
       "file": "postunflagcomment-api-generated.md",
-      "subCat": "מודרציה",
+      "subCat": "פיקוח",
       "type": "api"
     },
     {
       "name": "postVote",
       "file": "postvote-api-generated.md",
-      "subCat": "מודרציה",
+      "subCat": "פיקוח",
       "type": "api"
     },
     {
       "name": "putAwardBadge",
       "file": "putawardbadge-api-generated.md",
-      "subCat": "מודרציה",
+      "subCat": "פיקוח",
       "type": "api"
     },
     {
       "name": "putCloseThread",
       "file": "putclosethread-api-generated.md",
-      "subCat": "מודרציה",
+      "subCat": "פיקוח",
       "type": "api"
     },
     {
       "name": "putRemoveBadge",
       "file": "putremovebadge-api-generated.md",
-      "subCat": "מודרציה",
+      "subCat": "פיקוח",
       "type": "api"
     },
     {
       "name": "putReopenThread",
       "file": "putreopenthread-api-generated.md",
-      "subCat": "מודרציה",
+      "subCat": "פיקוח",
       "type": "api"
     },
     {
       "name": "setTrustFactor",
       "file": "settrustfactor-api-generated.md",
-      "subCat": "מודרציה",
+      "subCat": "פיקוח",
       "type": "api"
     },
     {
       "name": "createModerator",
       "file": "createmoderator-api-generated.md",
-      "subCat": "מנחים",
+      "subCat": "מפקחים",
       "type": "api"
     },
     {
       "name": "deleteModerator",
       "file": "deletemoderator-api-generated.md",
-      "subCat": "מנחים",
+      "subCat": "מפקחים",
       "type": "api"
     },
     {
       "name": "getModerator",
       "file": "getmoderator-api-generated.md",
-      "subCat": "מנחים",
+      "subCat": "מפקחים",
       "type": "api"
     },
     {
       "name": "getModerators",
       "file": "getmoderators-api-generated.md",
-      "subCat": "מנחים",
+      "subCat": "מפקחים",
       "type": "api"
     },
     {
       "name": "sendInvite",
       "file": "sendinvite-api-generated.md",
-      "subCat": "מנחים",
+      "subCat": "מפקחים",
       "type": "api"
     },
     {
       "name": "updateModerator",
       "file": "updatemoderator-api-generated.md",
-      "subCat": "מנחים",
+      "subCat": "מפקחים",
       "type": "api"
     },
     {
       "name": "deleteNotificationCount",
       "file": "deletenotificationcount-api-generated.md",
-      "subCat": "ספירת התראות",
+      "subCat": "מונה התראות",
       "type": "api"
     },
     {
       "name": "getCachedNotificationCount",
       "file": "getcachednotificationcount-api-generated.md",
-      "subCat": "ספירת התראות",
+      "subCat": "מונה התראות",
       "type": "api"
     },
     {
@@ -791,139 +809,163 @@
     {
       "name": "createV1PageReact",
       "file": "createv1pagereact-api-generated.md",
-      "subCat": "תגובות לדף",
+      "subCat": "תגובות עמוד",
       "type": "api"
     },
     {
       "name": "createV2PageReact",
       "file": "createv2pagereact-api-generated.md",
-      "subCat": "תגובות לדף",
+      "subCat": "תגובות עמוד",
       "type": "api"
     },
     {
       "name": "deleteV1PageReact",
       "file": "deletev1pagereact-api-generated.md",
-      "subCat": "תגובות לדף",
+      "subCat": "תגובות עמוד",
       "type": "api"
     },
     {
       "name": "deleteV2PageReact",
       "file": "deletev2pagereact-api-generated.md",
-      "subCat": "תגובות לדף",
+      "subCat": "תגובות עמוד",
       "type": "api"
     },
     {
       "name": "getV1PageLikes",
       "file": "getv1pagelikes-api-generated.md",
-      "subCat": "תגובות לדף",
+      "subCat": "תגובות עמוד",
       "type": "api"
     },
     {
       "name": "getV2PageReacts",
       "file": "getv2pagereacts-api-generated.md",
-      "subCat": "תגובות לדף",
+      "subCat": "תגובות עמוד",
       "type": "api"
     },
     {
       "name": "getV2PageReactUsers",
       "file": "getv2pagereactusers-api-generated.md",
-      "subCat": "תגובות לדף",
+      "subCat": "תגובות עמוד",
       "type": "api"
     },
     {
       "name": "addPage",
       "file": "addpage-api-generated.md",
-      "subCat": "דפים",
+      "subCat": "עמודים",
       "type": "api"
     },
     {
       "name": "deletePage",
       "file": "deletepage-api-generated.md",
-      "subCat": "דפים",
+      "subCat": "עמודים",
       "type": "api"
     },
     {
       "name": "getOfflineUsers",
       "file": "getofflineusers-api-generated.md",
-      "subCat": "דפים",
+      "subCat": "עמודים",
       "type": "api"
     },
     {
       "name": "getOnlineUsers",
       "file": "getonlineusers-api-generated.md",
-      "subCat": "דפים",
+      "subCat": "עמודים",
       "type": "api"
     },
     {
       "name": "getPageByURLId",
       "file": "getpagebyurlid-api-generated.md",
-      "subCat": "דפים",
+      "subCat": "עמודים",
+      "type": "api"
+    },
+    {
+      "name": "getPageLikes",
+      "file": "getpagelikes-api-generated.md",
+      "subCat": "עמודים",
+      "type": "api"
+    },
+    {
+      "name": "getPageReacts",
+      "file": "getpagereacts-api-generated.md",
+      "subCat": "עמודים",
       "type": "api"
     },
     {
       "name": "getPages",
       "file": "getpages-api-generated.md",
-      "subCat": "דפים",
+      "subCat": "עמודים",
       "type": "api"
     },
     {
       "name": "getPagesPublic",
       "file": "getpagespublic-api-generated.md",
-      "subCat": "דפים",
+      "subCat": "עמודים",
       "type": "api"
     },
     {
       "name": "getUsersInfo",
       "file": "getusersinfo-api-generated.md",
-      "subCat": "דפים",
+      "subCat": "עמודים",
+      "type": "api"
+    },
+    {
+      "name": "migratePages",
+      "file": "migratepages-api-generated.md",
+      "subCat": "עמודים",
       "type": "api"
     },
     {
       "name": "patchPage",
       "file": "patchpage-api-generated.md",
-      "subCat": "דפים",
+      "subCat": "עמודים",
+      "type": "api"
+    },
+    {
+      "name": "undoPageMigrations",
+      "file": "undopagemigrations-api-generated.md",
+      "subCat": "עמודים",
       "type": "api"
     },
     {
       "name": "deletePendingWebhookEvent",
       "file": "deletependingwebhookevent-api-generated.md",
-      "subCat": "אירועי וובהוק ממתינים",
+      "subCat": "אירועי Webhook ממתינים",
       "type": "api"
     },
     {
       "name": "getPendingWebhookEventCount",
       "file": "getpendingwebhookeventcount-api-generated.md",
-      "subCat": "אירועי וובהוק ממתינים",
+      "subCat": "אירועי Webhook ממתינים",
       "type": "api"
     },
     {
       "name": "getPendingWebhookEvents",
       "file": "getpendingwebhookevents-api-generated.md",
-      "subCat": "אירועי וובהוק ממתינים",
+      "subCat": "אירועי Webhook ממתינים",
       "type": "api"
     },
     {
       "name": "createPollVote",
       "file": "createpollvote-api-generated.md",
-      "subCat": "הצבעות סקר",
+      "subCat": "הצבעות בסקרים",
       "type": "api"
     },
     {
       "name": "deletePollVote",
       "file": "deletepollvote-api-generated.md",
-      "subCat": "הצבעות סקר",
+      "subCat": "הצבעות בסקרים",
       "type": "api"
     },
     {
       "name": "getPollVote",
       "file": "getpollvote-api-generated.md",
-      "subCat": "הצבעות סקר",
+      "subCat": "הצבעות בסקרים",
       "type": "api"
     },
     {
       "name": "getPollVotes",
       "file": "getpollvotes-api-generated.md",
-      "subCat": "הצבעות סקר",
+      "subCat": "הצבעות בסקרים",
       "type": "api"
     },
     {
@@ -935,6 +977,12 @@
     {
       "name": "getPoll",
       "file": "getpoll-api-generated.md",
+      "subCat": "סקרים",
+      "type": "api"
+    },
+    {
+      "name": "getPollVoters",
+      "file": "getpollvoters-api-generated.md",
       "subCat": "סקרים",
       "type": "api"
     },
@@ -951,33 +999,39 @@
       "type": "api"
     },
     {
+      "name": "votePoll",
+      "file": "votepoll-api-generated.md",
+      "subCat": "סקרים",
+      "type": "api"
+    },
+    {
       "name": "createQuestionConfig",
       "file": "createquestionconfig-api-generated.md",
-      "subCat": "תצורת שאלות",
+      "subCat": "הגדרות שאלות",
       "type": "api"
     },
     {
       "name": "deleteQuestionConfig",
       "file": "deletequestionconfig-api-generated.md",
-      "subCat": "תצורת שאלות",
+      "subCat": "הגדרות שאלות",
       "type": "api"
     },
     {
       "name": "getQuestionConfig",
       "file": "getquestionconfig-api-generated.md",
-      "subCat": "תצורת שאלות",
+      "subCat": "הגדרות שאלות",
       "type": "api"
     },
     {
       "name": "getQuestionConfigs",
       "file": "getquestionconfigs-api-generated.md",
-      "subCat": "תצורת שאלות",
+      "subCat": "הגדרות שאלות",
       "type": "api"
     },
     {
       "name": "updateQuestionConfig",
       "file": "updatequestionconfig-api-generated.md",
-      "subCat": "תצורת שאלות",
+      "subCat": "הגדרות שאלות",
       "type": "api"
     },
     {
@@ -1013,19 +1067,19 @@
     {
       "name": "aggregateQuestionResults",
       "file": "aggregatequestionresults-api-generated.md",
-      "subCat": "אגרגציית תוצאות שאלות",
+      "subCat": "צבירת תוצאות שאלות",
       "type": "api"
     },
     {
       "name": "bulkAggregateQuestionResults",
       "file": "bulkaggregatequestionresults-api-generated.md",
-      "subCat": "אגרגציית תוצאות שאלות",
+      "subCat": "צבירת תוצאות שאלות",
       "type": "api"
     },
     {
       "name": "combineCommentsWithQuestionResults",
       "file": "combinecommentswithquestionresults-api-generated.md",
-      "subCat": "אגרגציית תוצאות שאלות",
+      "subCat": "צבירת תוצאות שאלות",
       "type": "api"
     },
     {
@@ -1073,163 +1127,163 @@
     {
       "name": "createSubscription",
       "file": "createsubscription-api-generated.md",
-      "subCat": "מנויים",
+      "subCat": "מינויים",
       "type": "api"
     },
     {
       "name": "deleteSubscription",
       "file": "deletesubscription-api-generated.md",
-      "subCat": "מנויים",
+      "subCat": "מינויים",
       "type": "api"
     },
     {
       "name": "getSubscriptions",
       "file": "getsubscriptions-api-generated.md",
-      "subCat": "מנויים",
+      "subCat": "מינויים",
       "type": "api"
     },
     {
       "name": "updateSubscription",
       "file": "updatesubscription-api-generated.md",
-      "subCat": "מנויים",
+      "subCat": "מינויים",
       "type": "api"
     },
     {
       "name": "getTenantDailyUsages",
       "file": "gettenantdailyusages-api-generated.md",
-      "subCat": "שימוש יומי של שוכר",
+      "subCat": "שימוש יומי בטננט",
       "type": "api"
     },
     {
       "name": "createTenantPackage",
       "file": "createtenantpackage-api-generated.md",
-      "subCat": "חבילות שוכר",
+      "subCat": "חבילות טננט",
       "type": "api"
     },
     {
       "name": "deleteTenantPackage",
       "file": "deletetenantpackage-api-generated.md",
-      "subCat": "חבילות שוכר",
+      "subCat": "חבילות טננט",
       "type": "api"
     },
     {
       "name": "getTenantPackage",
       "file": "gettenantpackage-api-generated.md",
-      "subCat": "חבילות שוכר",
+      "subCat": "חבילות טננט",
       "type": "api"
     },
     {
       "name": "getTenantPackages",
       "file": "gettenantpackages-api-generated.md",
-      "subCat": "חבילות שוכר",
+      "subCat": "חבילות טננט",
       "type": "api"
     },
     {
       "name": "replaceTenantPackage",
       "file": "replacetenantpackage-api-generated.md",
-      "subCat": "חבילות שוכר",
+      "subCat": "חבילות טננט",
       "type": "api"
     },
     {
       "name": "updateTenantPackage",
       "file": "updatetenantpackage-api-generated.md",
-      "subCat": "חבילות שוכר",
+      "subCat": "חבילות טננט",
       "type": "api"
     },
     {
       "name": "createTenantUser",
       "file": "createtenantuser-api-generated.md",
-      "subCat": "משתמשי שוכר",
+      "subCat": "משתמשי טננט",
       "type": "api"
     },
     {
       "name": "deleteTenantUser",
       "file": "deletetenantuser-api-generated.md",
-      "subCat": "משתמשי שוכר",
+      "subCat": "משתמשי טננט",
       "type": "api"
     },
     {
       "name": "getTenantUser",
       "file": "gettenantuser-api-generated.md",
-      "subCat": "משתמשי שוכר",
+      "subCat": "משתמשי טננט",
       "type": "api"
     },
     {
       "name": "getTenantUsers",
       "file": "gettenantusers-api-generated.md",
-      "subCat": "משתמשי שוכר",
+      "subCat": "משתמשי טננט",
       "type": "api"
     },
     {
       "name": "replaceTenantUser",
       "file": "replacetenantuser-api-generated.md",
-      "subCat": "משתמשי שוכר",
+      "subCat": "משתמשי טננט",
       "type": "api"
     },
     {
       "name": "sendLoginLink",
       "file": "sendloginlink-api-generated.md",
-      "subCat": "משתמשי שוכר",
+      "subCat": "משתמשי טננט",
       "type": "api"
     },
     {
       "name": "updateTenantUser",
       "file": "updatetenantuser-api-generated.md",
-      "subCat": "משתמשי שוכר",
+      "subCat": "משתמשי טננט",
       "type": "api"
     },
     {
       "name": "createTenant",
       "file": "createtenant-api-generated.md",
-      "subCat": "שוכרים",
+      "subCat": "טננטים",
       "type": "api"
     },
     {
       "name": "deleteTenant",
       "file": "deletetenant-api-generated.md",
-      "subCat": "שוכרים",
+      "subCat": "טננטים",
       "type": "api"
     },
     {
       "name": "getTenant",
       "file": "gettenant-api-generated.md",
-      "subCat": "שוכרים",
+      "subCat": "טננטים",
       "type": "api"
     },
     {
       "name": "getTenants",
       "file": "gettenants-api-generated.md",
-      "subCat": "שוכרים",
+      "subCat": "טננטים",
       "type": "api"
     },
     {
       "name": "updateTenant",
       "file": "updatetenant-api-generated.md",
-      "subCat": "שוכרים",
+      "subCat": "טננטים",
       "type": "api"
     },
     {
       "name": "changeTicketState",
       "file": "changeticketstate-api-generated.md",
-      "subCat": "כרטיסים",
+      "subCat": "פניות",
       "type": "api"
     },
     {
       "name": "createTicket",
       "file": "createticket-api-generated.md",
-      "subCat": "כרטיסים",
+      "subCat": "פניות",
       "type": "api"
     },
     {
       "name": "getTicket",
       "file": "getticket-api-generated.md",
-      "subCat": "כרטיסים",
+      "subCat": "פניות",
       "type": "api"
     },
     {
       "name": "getTickets",
       "file": "gettickets-api-generated.md",
-      "subCat": "כרטיסים",
+      "subCat": "פניות",
       "type": "api"
     },
     {
@@ -1247,19 +1301,19 @@
     {
       "name": "getUserBadgeProgressById",
       "file": "getuserbadgeprogressbyid-api-generated.md",
-      "subCat": "התקדמות תג משתמש",
+      "subCat": "התקדמות תגי משתמש",
       "type": "api"
     },
     {
       "name": "getUserBadgeProgressByUserId",
       "file": "getuserbadgeprogressbyuserid-api-generated.md",
-      "subCat": "התקדמות תג משתמש",
+      "subCat": "התקדמות תגי משתמש",
       "type": "api"
     },
     {
       "name": "getUserBadgeProgressList",
       "file": "getuserbadgeprogresslist-api-generated.md",
-      "subCat": "התקדמות תג משתמש",
+      "subCat": "התקדמות תגי משתמש",
       "type": "api"
     },
     {
@@ -1337,7 +1391,7 @@
     {
       "name": "getUserPresenceStatuses",
       "file": "getuserpresencestatuses-api-generated.md",
-      "subCat": "מצב נוכחות משתמש",
+      "subCat": "סטטוס נוכחות משתמש",
       "type": "api"
     },
     {
@@ -1379,25 +1433,25 @@
     {
       "name": "createWebhook",
       "file": "createwebhook-api-generated.md",
-      "subCat": "וובהוקים",
+      "subCat": "Webhooks",
       "type": "api"
     },
     {
       "name": "deleteWebhook",
       "file": "deletewebhook-api-generated.md",
-      "subCat": "וובהוקים",
+      "subCat": "Webhooks",
       "type": "api"
     },
     {
       "name": "getWebhooks",
       "file": "getwebhooks-api-generated.md",
-      "subCat": "וובהוקים",
+      "subCat": "Webhooks",
       "type": "api"
     },
     {
       "name": "getWebhookSamplePayloads",
       "file": "getwebhooksamplepayloads-api-generated.md",
-      "subCat": "וובהוקים",
+      "subCat": "Webhooks",
       "type": "api"
     }
   ]

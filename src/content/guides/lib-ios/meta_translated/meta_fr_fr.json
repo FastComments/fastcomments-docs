@@ -15,7 +15,7 @@
       "type": "readme"
     },
     {
-      "name": "Exigences",
+      "name": "Prérequis",
       "file": "requirements-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"
@@ -39,8 +39,14 @@
       "type": "readme"
     },
     {
-      "name": "Commentaires en fil",
+      "name": "Commentaires en fil de discussion",
       "file": "threaded-comments-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
+      "name": "Sondages",
+      "file": "polls-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"
     },
@@ -51,19 +57,19 @@
       "type": "readme"
     },
     {
-      "name": "Flux social",
+      "name": "Fil social",
       "file": "social-feed-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"
     },
     {
-      "name": "Thématisation",
+      "name": "Personnalisation du thème",
       "file": "theming-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"
     },
     {
-      "name": "Boutons personnalisés de la barre d'outils",
+      "name": "Boutons de barre d'outils personnalisés",
       "file": "custom-toolbar-buttons-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"
@@ -105,7 +111,7 @@
       "type": "readme"
     },
     {
-      "name": "Téléversements d'images",
+      "name": "Téléversement d'images",
       "file": "image-uploads-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"
@@ -117,7 +123,7 @@
       "type": "readme"
     },
     {
-      "name": "Modification et suppression des commentaires",
+      "name": "Modification et suppression de commentaires",
       "file": "editing-and-deleting-comments-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"
@@ -135,7 +141,7 @@
       "type": "readme"
     },
     {
-      "name": "Application d'exemple",
+      "name": "Exemple d'application",
       "file": "example-app-readme-generated.md",
       "subCat": "Utilisation",
       "type": "readme"

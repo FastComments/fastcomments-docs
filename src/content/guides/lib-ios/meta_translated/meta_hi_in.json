@@ -45,6 +45,12 @@
       "type": "readme"
     },
     {
+      "name": "पोल",
+      "file": "polls-readme-generated.md",
+      "subCat": "दस्तावेज़ीकरण",
+      "type": "readme"
+    },
+    {
       "name": "लाइव चैट",
       "file": "live-chat-readme-generated.md",
       "subCat": "दस्तावेज़ीकरण",
@@ -87,7 +93,7 @@
       "type": "readme"
     },
     {
-      "name": "स्थिति और ऑब्ज़र्वेबिलिटी",
+      "name": "स्टेट और ऑब्ज़र्वेबिलिटी",
       "file": "state-and-observability-readme-generated.md",
       "subCat": "दस्तावेज़ीकरण",
       "type": "readme"
@@ -111,7 +117,7 @@
       "type": "readme"
     },
     {
-      "name": "उपयोगकर्ता मेंशन",
+      "name": "यूज़र मेंशन",
       "file": "user-mentions-readme-generated.md",
       "subCat": "दस्तावेज़ीकरण",
       "type": "readme"

@@ -1,9 +1,9 @@
 {
   "name": "Biblioteca iOS",
-  "pageHeader": "Agregar comentarios a tu aplicación iOS",
+  "pageHeader": "Añade Comentarios a Tu App iOS",
   "itemsOrdered": [
     {
-      "name": "Agentes de codificación IA",
+      "name": "Agentes de codificación con IA",
       "file": "ai-coding-agents-readme-generated.md",
       "subCat": "Documentación",
       "type": "readme"
@@ -23,11 +23,11 @@
     {
       "name": "Instalación",
       "file": "installation-readme-generated.md",
-      "subCat": "Primeros pasos",
+      "subCat": "Primeros Pasos",
       "type": "readme"
     },
     {
-      "name": "Inicio rápido",
+      "name": "Inicio Rápido",
       "file": "quick-start-readme-generated.md",
       "subCat": "Documentación",
       "type": "readme"
@@ -39,19 +39,25 @@
       "type": "readme"
     },
     {
-      "name": "Comentarios en hilos",
+      "name": "Comentarios en Hilos",
       "file": "threaded-comments-readme-generated.md",
       "subCat": "Documentación",
       "type": "readme"
     },
     {
-      "name": "Chat en vivo",
+      "name": "Encuestas",
+      "file": "polls-readme-generated.md",
+      "subCat": "Documentación",
+      "type": "readme"
+    },
+    {
+      "name": "Chat en Vivo",
       "file": "live-chat-readme-generated.md",
       "subCat": "Documentación",
       "type": "readme"
     },
     {
-      "name": "Feed social",
+      "name": "Feed Social",
       "file": "social-feed-readme-generated.md",
       "subCat": "Documentación",
       "type": "readme"
@@ -63,7 +69,7 @@
       "type": "readme"
     },
     {
-      "name": "Botones de barra de herramientas personalizados",
+      "name": "Botones Personalizados de la Barra de Herramientas",
       "file": "custom-toolbar-buttons-readme-generated.md",
       "subCat": "Documentación",
       "type": "readme"
@@ -75,7 +81,7 @@
       "type": "readme"
     },
     {
-      "name": "Actualizaciones en tiempo real",
+      "name": "Actualizaciones en Tiempo Real",
       "file": "real-time-updates-readme-generated.md",
       "subCat": "Documentación",
       "type": "readme"
@@ -87,13 +93,13 @@
       "type": "readme"
     },
     {
-      "name": "Estado y observabilidad",
+      "name": "Estado y Observabilidad",
       "file": "state-and-observability-readme-generated.md",
       "subCat": "Documentación",
       "type": "readme"
     },
     {
-      "name": "Región UE",
+      "name": "Región de la UE",
       "file": "eu-region-readme-generated.md",
       "subCat": "Documentación",
       "type": "readme"
@@ -105,25 +111,25 @@
       "type": "readme"
     },
     {
-      "name": "Cargas de imágenes",
+      "name": "Carga de Imágenes",
       "file": "image-uploads-readme-generated.md",
       "subCat": "Documentación",
       "type": "readme"
     },
     {
-      "name": "Menciones de usuarios",
+      "name": "Menciones de Usuarios",
       "file": "user-mentions-readme-generated.md",
       "subCat": "Documentación",
       "type": "readme"
     },
     {
-      "name": "Editar y eliminar comentarios",
+      "name": "Edición y Eliminación de Comentarios",
       "file": "editing-and-deleting-comments-readme-generated.md",
       "subCat": "Documentación",
       "type": "readme"
     },
     {
-      "name": "Manejo de errores",
+      "name": "Manejo de Errores",
       "file": "error-handling-readme-generated.md",
       "subCat": "Documentación",
       "type": "readme"
@@ -135,7 +141,7 @@
       "type": "readme"
     },
     {
-      "name": "Aplicación de ejemplo",
+      "name": "App de Ejemplo",
       "file": "example-app-readme-generated.md",
       "subCat": "Uso",
       "type": "readme"

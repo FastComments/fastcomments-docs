@@ -1,15 +1,15 @@
 {
   "name": "Biblioteca iOS",
-  "pageHeader": "Adicionar Comentários ao Seu App iOS",
+  "pageHeader": "Adicione Comentários ao Seu App iOS",
   "itemsOrdered": [
     {
-      "name": "Agentes de codificação de IA",
+      "name": "Agentes de codificação com IA",
       "file": "ai-coding-agents-readme-generated.md",
       "subCat": "Documentação",
       "type": "readme"
     },
     {
-      "name": "Recursos",
+      "name": "Funcionalidades",
       "file": "features-readme-generated.md",
       "subCat": "Documentação",
       "type": "readme"
@@ -23,7 +23,7 @@
     {
       "name": "Instalação",
       "file": "installation-readme-generated.md",
-      "subCat": "Começando",
+      "subCat": "Primeiros Passos",
       "type": "readme"
     },
     {
@@ -39,8 +39,14 @@
       "type": "readme"
     },
     {
-      "name": "Comentários em Thread",
+      "name": "Comentários Encadeados",
       "file": "threaded-comments-readme-generated.md",
+      "subCat": "Documentação",
+      "type": "readme"
+    },
+    {
+      "name": "Enquetes",
+      "file": "polls-readme-generated.md",
       "subCat": "Documentação",
       "type": "readme"
     },
@@ -63,7 +69,7 @@
       "type": "readme"
     },
     {
-      "name": "Botões Personalizados da Barra de Ferramentas",
+      "name": "Botões Personalizados na Barra de Ferramentas",
       "file": "custom-toolbar-buttons-readme-generated.md",
       "subCat": "Documentação",
       "type": "readme"
@@ -93,7 +99,7 @@
       "type": "readme"
     },
     {
-      "name": "Região UE",
+      "name": "Região da UE",
       "file": "eu-region-readme-generated.md",
       "subCat": "Documentação",
       "type": "readme"
@@ -105,19 +111,19 @@
       "type": "readme"
     },
     {
-      "name": "Envio de Imagens",
+      "name": "Uploads de Imagens",
       "file": "image-uploads-readme-generated.md",
       "subCat": "Documentação",
       "type": "readme"
     },
     {
-      "name": "Menções de Usuário",
+      "name": "Menções de Usuários",
       "file": "user-mentions-readme-generated.md",
       "subCat": "Documentação",
       "type": "readme"
     },
     {
-      "name": "Editar e Excluir Comentários",
+      "name": "Edição e Exclusão de Comentários",
       "file": "editing-and-deleting-comments-readme-generated.md",
       "subCat": "Documentação",
       "type": "readme"

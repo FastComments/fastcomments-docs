@@ -2,40 +2,31 @@
 
 | 名前 | 型 | 必須 | 説明 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| commentId | string | No |  |
-| externalId | string | No |  |
-| eventType | string | No |  |
-| type | string | No |  |
-| domain | string | No |  |
-| attemptCountGT | number | No |  |
-| skip | number | No |  |
+| tenantId | string | はい |  |
+| commentId | string | いいえ |  |
+| externalId | string | いいえ |  |
+| eventType | string | いいえ |  |
+| type | string | いいえ |  |
+| domain | string | いいえ |  |
+| attemptCountGT | number | いいえ |  |
+| skip | number | いいえ |  |
 
 ## レスポンス
 
-返却: [`GetPendingWebhookEventsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPendingWebhookEventsResponse.ts)
+戻り値: [`GetPendingWebhookEventsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPendingWebhookEventsResponse.ts)
 
 ## 例
 
 [inline-code-attrs-start title = 'getPendingWebhookEvents の例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "123e4567-e89b-12d3-a456-426614174000";
-const commentId: string = "cmt_987654321";
-const externalId: string = "ext_abc123";
-const eventType: string = "comment_created";
-const type: string = "outbound";
-const domain: string = "myblog.com";
-const attemptCountGT: number = 2;
-const skip: number = 10;
+const tenantId: string = '5a2f4d3c8b9e1a2b3c4d5e6f';
 
-const pendingEvents: GetPendingWebhookEventsResponse = await getPendingWebhookEvents(
-  tenantId,
-  commentId,
-  externalId,
-  eventType,
-  type,
-  domain,
-  attemptCountGT,
-  skip
-);
+const pendingEvents: GetPendingWebhookEventsResponse = await getPendingWebhookEvents(tenantId, {
+    commentId: 'abc123def456',
+    eventType: 'comment-created',
+    attemptCountGT: 2,
+    skip: 0
+});
+
+console.log(`Found ${pendingEvents.items.length} pending webhook events`);
 [inline-code-end]

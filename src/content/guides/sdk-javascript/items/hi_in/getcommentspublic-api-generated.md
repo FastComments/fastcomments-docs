@@ -34,6 +34,8 @@ urlId
 | customConfigStr | string | नहीं |  |
 | afterCommentId | string | नहीं |  |
 | beforeCommentId | string | नहीं |  |
+| questionId | string | नहीं |  |
+| questionValue | number | नहीं |  |
 
 ## प्रतिक्रिया
 
@@ -43,47 +45,45 @@ urlId
 
 [inline-code-attrs-start title = 'getCommentsPublic उदाहरण'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function loadComments(): Promise<void> {
-  const tenantId: string = "tenant-42",
-        urlId: string = "post-2023-09-15",
-        page: number = 1,
-        direction: SortDirections = "desc",
-        limit: number = 30,
-        includeConfig: boolean = true,
-        locale: string = "en-US",
-        isCrawler: boolean = false,
-        asTree: boolean = true,
-        maxTreeDepth: number = 2,
-        searchText: string = "fastcomments",
-        hashTags: string[] = ["fastcomments","typescript"],
-        userId: string = "user-123";
+const tenantId: string = 'abc123def456';
+const urlId: string = 'https://example.com/blog/my-post';
 
-  const result: GetCommentsResponseWithPresencePublicComment = await getCommentsPublic(
-    tenantId,
-    urlId,
-    page,
-    direction,
-    undefined,
-    undefined,
-    undefined,
-    limit,
-    undefined,
-    undefined,
-    undefined,
-    includeConfig,
-    undefined,
-    undefined,
-    locale,
-    undefined,
-    isCrawler,
-    undefined,
-    asTree,
-    maxTreeDepth,
-    undefined,
-    undefined,
-    searchText,
-    hashTags,
-    userId
-  );
-}
+const response: GetCommentsResponseWithPresencePublicComment = await getCommentsPublic(
+  tenantId,
+  urlId,
+  1,
+  'DESC' as SortDirections,
+  undefined,
+  0,
+  undefined,
+  25,
+  undefined,
+  true,
+  undefined,
+  undefined,
+  true,
+  true,
+  false,
+  'en-US',
+  undefined,
+  false,
+  true,
+  undefined,
+  true,
+  3,
+  undefined,
+  undefined,
+  'root',
+  'authentication',
+  ['announcement', 'qna'],
+  undefined,
+  undefined,
+  undefined,
+  undefined,
+  undefined
+);
+
+const comments: PublicComment[] = response.comments;
+const presenceCount: number = response.presence?.userCount ?? 0;
+console.log(`Fetched ${comments.length} comments, ${presenceCount} users online`);
 [inline-code-end]

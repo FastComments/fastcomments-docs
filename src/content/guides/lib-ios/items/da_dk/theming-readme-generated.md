@@ -1,6 +1,6 @@
-### Tema-præindstillinger
+### Temaforudindstillinger
 
-Fire indbyggede præindstillinger er tilgængelige:
+Fire indbyggede forudindstillinger er tilgængelige:
 
 ```swift
 // Systemstandarder
@@ -9,14 +9,14 @@ sdk.theme = FastCommentsTheme.default
 // Kort med skygger og store afrundede hjørner
 sdk.theme = FastCommentsTheme.modern
 
-// Fladt, ingen skygger, lille hjørneradius, ingen trådlinjer
+// Flad, ingen skygger, lille hjørneradius, ingen trådlinjer
 sdk.theme = FastCommentsTheme.minimal
 
 // Sæt alle handlingsfarver til en enkelt brandfarve
 sdk.theme = FastCommentsTheme.allPrimary(.indigo)
 ```
 
-### Kommentarvisningsstilarter
+### Visningsstilarter for kommentarer
 
 ```swift
 var theme = FastCommentsTheme()
@@ -27,7 +27,7 @@ theme.commentStyle = .bubble  // Chatboble-stil
 
 ### Farver
 
-Alle farveegenskaber er valgfrie. Udefinerede værdier vender tilbage til fornuftige systemstandarder.
+Alle farveegenskaber er valgfrie. Værdier, der ikke er angivet, falder tilbage til fornuftige systemstandarder.
 
 ```swift
 var theme = FastCommentsTheme()
@@ -61,11 +61,11 @@ theme.linkColorPressed = .indigo.opacity(0.5)
 theme.dialogHeaderBackgroundColor = .indigo
 theme.dialogHeaderTextColor = .white
 
-// Indtastningsbjælke
+// Inputlinje
 theme.inputBarBackgroundColor = Color(.systemBackground)
 theme.inputBarBorderColor = Color(.separator)
 
-// Andre
+// Andet
 theme.onlineIndicatorColor = .green
 theme.separatorColor = Color(.separator)
 theme.badgeBackgroundColor = .gray.opacity(0.2)
@@ -81,14 +81,14 @@ theme.captionFont = .caption
 theme.actionFont = .caption.weight(.medium)
 ```
 
-### Layout og mellemrum
+### Layout og afstand
 
 ```swift
 theme.cornerRadius = .large       // .none, .small, .medium, .large
 theme.commentSpacing = 4          // Punkter mellem kommentarrækker
-theme.nestingIndent = 20          // Antal punkter til indrykning pr. niveau
-theme.avatarSize = 36             // Avatardiameter for topniveau-kommentarer
-theme.replyAvatarSize = 28        // Avatardiameter for indlejrede svar
+theme.nestingIndent = 20          // Punkter indrykning per indlejringsniveau
+theme.avatarSize = 36             // Avatar-diameter for rodkommentarer
+theme.replyAvatarSize = 28        // Avatar-diameter for indlejrede svar
 ```
 
 ### Visuelle effekter
@@ -96,7 +96,7 @@ theme.replyAvatarSize = 28        // Avatardiameter for indlejrede svar
 ```swift
 theme.showShadows = true          // Diskrete skygger på kort
 theme.showThreadLine = true       // Lodret linje, der forbinder indlejrede svar
-theme.animateVotes = true         // Spring-animation ved stemmeændringer
+theme.animateVotes = true         // Fjederanimation ved stemmeændringer
 ```
 
 ### Anvendelse af temaer
@@ -104,7 +104,7 @@ theme.animateVotes = true         // Spring-animation ved stemmeændringer
 To tilgange:
 
 ```swift
-// Via SwiftUI-miljøet (anbefales til visningshierarki)
+// Via SwiftUI-miljøet (anbefales til visningshierarkiet)
 FastCommentsView(sdk: sdk)
     .fastCommentsTheme(theme)
 
@@ -113,4 +113,24 @@ sdk.theme = theme
 ```
 
 ---
----
+
+
+### Afstemningsfarver
+
+Afstemninger bruger som standard web-widgetens afstemningskortfarver, i lys og mørk tilstand. Indstilling af `primaryColor` ændrer også accentfarven og bjælken for den valgmulighed, du valgte. For at angive dem direkte:
+
+```swift
+var theme = FastCommentsTheme()
+theme.pollAccentColor = .indigo
+```
+
+| Egenskab | Bruges til |
+|----------|----------|
+| `pollAccentColor` | Kant og flueben for valgt mulighed, valgt varighed, "Din stemme er registreret" |
+| `pollAccentTextColor` | Flueben og tekst tegnet på accentfarven |
+| `pollOptionBackgroundColor` | Baggrund for valgmulighedschip |
+| `pollOptionPressedBackgroundColor` | Baggrund for valgmulighedschip, mens den trykkes |
+| `pollBarColor` | Resultatbjælke for valgmuligheder, du ikke valgte |
+| `pollSelectedBarColor` | Resultatbjælke for den valgmulighed, du valgte |
+| `pollBorderColor` | Afkrydsningsmærke og konturerede piller |
+| `pollDangerColor` | Fejl og "Fjern afstemning" |

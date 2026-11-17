@@ -45,6 +45,12 @@
       "type": "readme"
     },
     {
+      "name": "Polls",
+      "file": "polls-readme-generated.md",
+      "subCat": "Documentation",
+      "type": "readme"
+    },
+    {
       "name": "Live Chat",
       "file": "live-chat-readme-generated.md",
       "subCat": "Documentation",

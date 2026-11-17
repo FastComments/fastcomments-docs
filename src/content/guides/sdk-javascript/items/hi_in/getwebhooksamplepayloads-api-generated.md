@@ -1,5 +1,5 @@
-वेबहुक डिलीवरी द्वारा उपयोग किए जाने वाले बिल्कुल उसी रूप में हाल की टिप्पणियाँ, इंटीग्रेशन बनाने के लिए (उदाहरण के लिए Zapier
-सैंपल डेटा)। हर इवेंट एक ही कमेंट ऑब्जेक्ट डिलीवर करता है, इसलिए `event` को केवल वैध होना ही ज़रूरी है।
+वेबहुक डिलीवरी द्वारा उपयोग किए जाने वाले बिल्कुल उसी रूप में हालिया कमेंट्स, इंटीग्रेशन बनाने के लिए (उदाहरण के लिए Zapier
+सैंपल डेटा)। हर इवेंट एक ही कमेंट ऑब्जेक्ट डिलीवर करता है, इसलिए `event` केवल वैध होना चाहिए।
 
 ## पैरामीटर
 
@@ -17,20 +17,24 @@
 
 [inline-code-attrs-start title = 'getWebhookSamplePayloads उदाहरण'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "c1a2b3d4-5678-90ab-cdef-1234567890ab";
+declare function getWebhookSamplePayloads(
+  tenantId: string,
+  event?: WebhookEventName,
+  limit?: number
+): Promise<GetWebhookSamplePayloadsResponse>;
 
-const responseAll: GetWebhookSamplePayloadsResponse = await getWebhookSamplePayloads(
+const tenantId: string = '5f8d9b3e2a1b4c6d7e8f9a0b';
+
+// किसी विशिष्ट इवेंट प्रकार के लिए सैंपल पेलोड प्राप्त करें
+const commentPayloads: GetWebhookSamplePayloadsResponse = await getWebhookSamplePayloads(
   tenantId,
-  "comment.created",
+  WebhookEventName.COMMENT_SUCCESS_PAGE,
   10
 );
 
-const responseWithEvent: GetWebhookSamplePayloadsResponse = await getWebhookSamplePayloads(
-  tenantId,
-  "comment.created"
-);
+// सभी सैंपल पेलोड प्राप्त करें (कोई वैकल्पिक पैरामीटर नहीं)
+const allPayloads: GetWebhookSamplePayloadsResponse = await getWebhookSamplePayloads(tenantId);
 
-const responseBasic: GetWebhookSamplePayloadsResponse = await getWebhookSamplePayloads(
-  tenantId
-);
+console.log(`Comment payload status: ${commentPayloads.status}`);
+console.log(`Fetched ${allPayloads.payloads.length} sample payloads`);
 [inline-code-end]

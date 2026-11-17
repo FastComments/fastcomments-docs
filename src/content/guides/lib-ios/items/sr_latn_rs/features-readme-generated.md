@@ -1,15 +1,16 @@
-- Ugnježdena stabla komentara sa ugnježdenim odgovorima i paginacijom
-- Društveni feed sa kreiranjem objava, reakcijama i prilozima medija
-- Režim četa uživo sa automatskim skrolovanjem i separatorima datuma
-- Ažuriranja u realnom vremenu preko WebSocket-a (novi komentari, glasovi, prisutnost)
-- Single Sign-On (Simple SSO za testiranje, Secure SSO za produkciju)
-- Uređivanje bogatog teksta sa podebljanim, kurzivom, kodom i @pominjanjima
-- Glasanje sa konfigurisanim stilovima (strelice gore/dole ili srca)
-- Moderacione akcije: prijavi, zakači, zaključaj, blokiraj
-- Sveobuhvatno temiranje sa presetima i potpunom prilagodljivošću
-- Prilagođena dugmad na alatnoj traci za komentare i kreiranje objava u feedu
+- Razgranata stabla komentara sa ugniježđenim odgovorima i paginacijom
+- Društveni feed sa kreiranjem objava, reakcijama i medijskim prilozima
+- Režim uživo ćaskanja sa automatskim skrolovanjem i separatorima datuma
+- Ažuriranja u realnom vremenu putem WebSocket-a (novi komentari, glasovi, prisustvo)
+- Jedinstveno prijavljivanje (Simple SSO za testiranje, Secure SSO za produkciju)
+- Uređivanje bogatog teksta sa podebljano, kurziv, kod i @spominjanja
+- Glasanje sa konfigurabilnim stilovima (strelice gore/dole ili srca)
+- Ankete u komentarima sa rezultatima uživo
+- Moderacione akcije: prijava, zakačivanje, zaključavanje, blokiranje
+- Sveobuhvatna tematika sa presetovima i potpunom prilagodbom
+- Prilagođeni dugmad na traci za komentare i kreiranje feed objava
 - Otpremanje slika
-- Podrška za region EU
-- Prisutnost korisnika (indikatori online/offline)
-- Filtriranje feeda po tagovima
+- Podrška za EU region
+- Prisustvo korisnika (indikatori online/offline)
+- Filtriranje feed-a na osnovu tagova
 - Podrška za lokalizaciju

@@ -6,7 +6,7 @@ Xcode में: **File > Add Package Dependencies**, फिर रिपॉज�
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/fastcomments/fastcomments-ios.git", from: "2.0.0")
+    .package(url: "https://github.com/fastcomments/fastcomments-ios.git", from: "2.1.0")
 ]
 ```
 
@@ -21,7 +21,7 @@ dependencies: [
 )
 ```
 
-जहाँ आवश्यक हो, दोनों मॉड्यूल इम्पोर्ट करें:
+जहाँ आवश्यक हो, दोनों मॉड्यूल इंपोर्ट करें:
 
 ```swift
 import FastCommentsUI

@@ -1,9 +1,9 @@
 {
   "name": "iOS библиотека",
-  "pageHeader": "Добавете коментари към вашето iOS приложение",
+  "pageHeader": "Добавяне на коментари към вашето iOS приложение",
   "itemsOrdered": [
     {
-      "name": "AI агенти за кодиране",
+      "name": "AI агенти за програмиране",
       "file": "ai-coding-agents-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
@@ -33,19 +33,25 @@
       "type": "readme"
     },
     {
-      "name": "Удостоверяване (SSO)",
+      "name": "Автентикация (SSO)",
       "file": "authentication-sso-readme-generated.md",
-      "subCat": "Удостоверяване",
+      "subCat": "Автентикация",
       "type": "readme"
     },
     {
-      "name": "Нишкови коментари",
+      "name": "Коментари с нишки",
       "file": "threaded-comments-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
     },
     {
-      "name": "Жив чат",
+      "name": "Анкети",
+      "file": "polls-readme-generated.md",
+      "subCat": "Документация",
+      "type": "readme"
+    },
+    {
+      "name": "Чат на живо",
       "file": "live-chat-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
@@ -57,7 +63,7 @@
       "type": "readme"
     },
     {
-      "name": "Тематизиране",
+      "name": "Тематизация",
       "file": "theming-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
@@ -69,7 +75,7 @@
       "type": "readme"
     },
     {
-      "name": "Модериране",
+      "name": "Модерация",
       "file": "moderation-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"
@@ -111,7 +117,7 @@
       "type": "readme"
     },
     {
-      "name": "Споменавания на потребители",
+      "name": "Споменаване на потребители",
       "file": "user-mentions-readme-generated.md",
       "subCat": "Документация",
       "type": "readme"

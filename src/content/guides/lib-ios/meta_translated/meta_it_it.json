@@ -3,7 +3,7 @@
   "pageHeader": "Aggiungi commenti alla tua app iOS",
   "itemsOrdered": [
     {
-      "name": "Agenti di programmazione AI",
+      "name": "Agenti di codifica AI",
       "file": "ai-coding-agents-readme-generated.md",
       "subCat": "Documentazione",
       "type": "readme"
@@ -23,7 +23,7 @@
     {
       "name": "Installazione",
       "file": "installation-readme-generated.md",
-      "subCat": "Iniziare",
+      "subCat": "Per iniziare",
       "type": "readme"
     },
     {
@@ -39,31 +39,37 @@
       "type": "readme"
     },
     {
-      "name": "Commenti a thread",
+      "name": "Commenti in thread",
       "file": "threaded-comments-readme-generated.md",
       "subCat": "Documentazione",
       "type": "readme"
     },
     {
-      "name": "Chat dal vivo",
+      "name": "Sondaggi",
+      "file": "polls-readme-generated.md",
+      "subCat": "Documentazione",
+      "type": "readme"
+    },
+    {
+      "name": "Chat in tempo reale",
       "file": "live-chat-readme-generated.md",
       "subCat": "Documentazione",
       "type": "readme"
     },
     {
-      "name": "Feed sociale",
+      "name": "Feed social",
       "file": "social-feed-readme-generated.md",
       "subCat": "Documentazione",
       "type": "readme"
     },
     {
-      "name": "Tematizzazione",
+      "name": "Temi",
       "file": "theming-readme-generated.md",
       "subCat": "Documentazione",
       "type": "readme"
     },
     {
-      "name": "Pulsanti personalizzati della barra degli strumenti",
+      "name": "Pulsanti della barra degli strumenti personalizzati",
       "file": "custom-toolbar-buttons-readme-generated.md",
       "subCat": "Documentazione",
       "type": "readme"
@@ -105,7 +111,7 @@
       "type": "readme"
     },
     {
-      "name": "Caricamenti di immagini",
+      "name": "Caricamento di immagini",
       "file": "image-uploads-readme-generated.md",
       "subCat": "Documentazione",
       "type": "readme"

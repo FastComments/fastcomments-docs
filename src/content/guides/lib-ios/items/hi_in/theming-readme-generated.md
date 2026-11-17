@@ -1,6 +1,6 @@
 ### थीम प्रीसेट्स
 
-चार बिल्ट-इन प्रीसेट्स उपलब्ध हैं:
+चार बिल्ट-इन प्रीसेट उपलब्ध हैं:
 
 ```swift
 // सिस्टम डिफ़ॉल्ट
@@ -12,7 +12,7 @@ sdk.theme = FastCommentsTheme.modern
 // फ्लैट, बिना शैडो, छोटा कॉर्नर रेडियस, बिना थ्रेड लाइन
 sdk.theme = FastCommentsTheme.minimal
 
-// सभी एक्शन रंगों को एक सिंगल ब्रांड रंग पर सेट करें
+// सभी एक्शन रंगों को एक ही ब्रांड रंग पर सेट करें
 sdk.theme = FastCommentsTheme.allPrimary(.indigo)
 ```
 
@@ -21,7 +21,7 @@ sdk.theme = FastCommentsTheme.allPrimary(.indigo)
 ```swift
 var theme = FastCommentsTheme()
 theme.commentStyle = .flat    // डिवाइडर के साथ फ्लैट लिस्ट (डिफ़ॉल्ट)
-theme.commentStyle = .card    // शैडो के साथ गोल कार्ड
+theme.commentStyle = .card    // शैडो वाले गोल कार्ड
 theme.commentStyle = .bubble  // चैट बबल स्टाइल
 ```
 
@@ -87,7 +87,7 @@ theme.actionFont = .caption.weight(.medium)
 theme.cornerRadius = .large       // .none, .small, .medium, .large
 theme.commentSpacing = 4          // कमेंट पंक्तियों के बीच पॉइंट
 theme.nestingIndent = 20          // प्रत्येक नेस्टिंग स्तर पर इंडेंटेशन के पॉइंट
-theme.avatarSize = 36             // रूट कमेंट के लिए अवतार व्यास
+theme.avatarSize = 36             // रूट कमेंट्स के लिए अवतार व्यास
 theme.replyAvatarSize = 28        // नेस्टेड रिप्लाई के लिए अवतार व्यास
 ```
 
@@ -96,7 +96,7 @@ theme.replyAvatarSize = 28        // नेस्टेड रिप्लाई
 ```swift
 theme.showShadows = true          // कार्ड पर हल्की शैडो
 theme.showThreadLine = true       // नेस्टेड रिप्लाई को जोड़ने वाली वर्टिकल लाइन
-theme.animateVotes = true         // वोट परिवर्तन पर स्प्रिंग एनिमेशन
+theme.animateVotes = true         // वोट बदलने पर स्प्रिंग एनिमेशन
 ```
 
 ### थीम लागू करना
@@ -104,10 +104,33 @@ theme.animateVotes = true         // वोट परिवर्तन पर �
 दो तरीके:
 
 ```swift
-// SwiftUI environment के माध्यम से (व्यू हायरार्की के लिए अनुशंसित)
+// SwiftUI एनवायरनमेंट के माध्यम से (व्यू हायरार्की के लिए अनुशंसित)
 FastCommentsView(sdk: sdk)
     .fastCommentsTheme(theme)
 
 // सीधे SDK पर
 sdk.theme = theme
 ```
+
+---
+
+
+### पोल रंग
+
+पोल डिफ़ॉल्ट रूप से वेब विजेट के पोल कार्ड रंगों का उपयोग करते हैं, लाइट और डार्क मोड में। `primaryColor` सेट करने से एक्सेंट और आपके द्वारा चुने गए विकल्प की बार भी बदल जाती है। इन्हें सीधे सेट करने के लिए:
+
+```swift
+var theme = FastCommentsTheme()
+theme.pollAccentColor = .indigo
+```
+
+| प्रॉपर्टी | उपयोग |
+|----------|----------|
+| `pollAccentColor` | चयनित विकल्प का बॉर्डर और चेक, चुनी गई अवधि, "Your vote is in" |
+| `pollAccentTextColor` | एक्सेंट रंग पर बना चेक मार्क और टेक्स्ट |
+| `pollOptionBackgroundColor` | विकल्प चिप का बैकग्राउंड |
+| `pollOptionPressedBackgroundColor` | दबाए जाने के दौरान विकल्प चिप का बैकग्राउंड |
+| `pollBarColor` | उन विकल्पों की परिणाम बार जिन्हें आपने नहीं चुना |
+| `pollSelectedBarColor` | आपके द्वारा चुने गए विकल्प की परिणाम बार |
+| `pollBorderColor` | चेकबॉक्स मार्क और आउटलाइन वाली पिल्स |
+| `pollDangerColor` | त्रुटियाँ और "Remove poll" |

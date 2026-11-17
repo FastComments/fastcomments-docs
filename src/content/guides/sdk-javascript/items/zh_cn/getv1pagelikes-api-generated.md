@@ -1,10 +1,11 @@
 ## 参数
 
 | 名称 | 类型 | 必填 | 描述 |
-|------|------|------|------|
+|------|------|----------|-------------|
 | tenantId | string | 是 |  |
 | urlId | string | 是 |  |
 | sso | string | 否 |  |
+| includeUserInfo | PageReactIncludeUserInfo | 否 |  |
 
 ## 响应
 
@@ -14,12 +15,15 @@
 
 [inline-code-attrs-start title = 'getV1PageLikes 示例'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = "tenant_12345";
-  const urlId: string = "https://myblog.com/post/42";
-  const ssoToken: string = "sso_user_987";
+const tenantId: string = 'abc123def456';
+const urlId: string = 'https://example.com/blog/my-post';
 
-  const likesWithSSO: GetV1PageLikes = await getV1PageLikes(tenantId, urlId, ssoToken);
-  const likesWithoutSSO: GetV1PageLikes = await getV1PageLikes(tenantId, urlId);
-})();
+const result: GetV1PageLikes = await getV1PageLikes(tenantId, urlId, 'sso-token-xyz789', true);
+
+console.log(result.status);
+if (result.likes) {
+  result.likes.forEach((like) => {
+    console.log(like.userId, like.date);
+  });
+}
 [inline-code-end]

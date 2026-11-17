@@ -1,41 +1,32 @@
 ## 매개변수
 
-| 이름 | 유형 | 필수 | 설명 |
+| 이름 | 타입 | 필수 | 설명 |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| commentId | string | No |  |
-| externalId | string | No |  |
-| eventType | string | No |  |
-| type | string | No |  |
-| domain | string | No |  |
-| attemptCountGT | number | No |  |
-| skip | number | No |  |
+| tenantId | string | 예 |  |
+| commentId | string | 아니요 |  |
+| externalId | string | 아니요 |  |
+| eventType | string | 아니요 |  |
+| type | string | 아니요 |  |
+| domain | string | 아니요 |  |
+| attemptCountGT | number | 아니요 |  |
+| skip | number | 아니요 |  |
 
 ## 응답
 
-반환: [`GetPendingWebhookEventsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPendingWebhookEventsResponse.ts)
+반환값: [`GetPendingWebhookEventsResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetPendingWebhookEventsResponse.ts)
 
-## 예시
+## 예제
 
-[inline-code-attrs-start title = 'getPendingWebhookEvents 예시'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getPendingWebhookEvents 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "123e4567-e89b-12d3-a456-426614174000";
-const commentId: string = "cmt_987654321";
-const externalId: string = "ext_abc123";
-const eventType: string = "comment_created";
-const type: string = "outbound";
-const domain: string = "myblog.com";
-const attemptCountGT: number = 2;
-const skip: number = 10;
+const tenantId: string = '5a2f4d3c8b9e1a2b3c4d5e6f';
 
-const pendingEvents: GetPendingWebhookEventsResponse = await getPendingWebhookEvents(
-  tenantId,
-  commentId,
-  externalId,
-  eventType,
-  type,
-  domain,
-  attemptCountGT,
-  skip
-);
+const pendingEvents: GetPendingWebhookEventsResponse = await getPendingWebhookEvents(tenantId, {
+    commentId: 'abc123def456',
+    eventType: 'comment-created',
+    attemptCountGT: 2,
+    skip: 0
+});
+
+console.log(`Found ${pendingEvents.items.length} pending webhook events`);
 [inline-code-end]

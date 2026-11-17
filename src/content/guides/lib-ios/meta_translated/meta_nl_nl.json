@@ -1,9 +1,9 @@
 {
   "name": "iOS-bibliotheek",
-  "pageHeader": "Voeg reacties toe aan uw iOS-app",
+  "pageHeader": "Voeg opmerkingen toe aan je iOS-app",
   "itemsOrdered": [
     {
-      "name": "AI-coderingsagenten",
+      "name": "AI-codeeragenten",
       "file": "ai-coding-agents-readme-generated.md",
       "subCat": "Documentatie",
       "type": "readme"
@@ -27,7 +27,7 @@
       "type": "readme"
     },
     {
-      "name": "Snelle start",
+      "name": "Snelstart",
       "file": "quick-start-readme-generated.md",
       "subCat": "Documentatie",
       "type": "readme"
@@ -39,13 +39,19 @@
       "type": "readme"
     },
     {
-      "name": "Threaded reacties",
+      "name": "Threaded opmerkingen",
       "file": "threaded-comments-readme-generated.md",
       "subCat": "Documentatie",
       "type": "readme"
     },
     {
-      "name": "Livechat",
+      "name": "Polls",
+      "file": "polls-readme-generated.md",
+      "subCat": "Documentatie",
+      "type": "readme"
+    },
+    {
+      "name": "Live chat",
       "file": "live-chat-readme-generated.md",
       "subCat": "Documentatie",
       "type": "readme"
@@ -75,7 +81,7 @@
       "type": "readme"
     },
     {
-      "name": "Realtime-updates",
+      "name": "Realtime updates",
       "file": "real-time-updates-readme-generated.md",
       "subCat": "Documentatie",
       "type": "readme"
@@ -87,7 +93,7 @@
       "type": "readme"
     },
     {
-      "name": "Toestand en observeerbaarheid",
+      "name": "Status en observeerbaarheid",
       "file": "state-and-observability-readme-generated.md",
       "subCat": "Documentatie",
       "type": "readme"
@@ -117,7 +123,7 @@
       "type": "readme"
     },
     {
-      "name": "Bewerken en verwijderen van reacties",
+      "name": "Opmerkingen bewerken en verwijderen",
       "file": "editing-and-deleting-comments-readme-generated.md",
       "subCat": "Documentatie",
       "type": "readme"
@@ -135,7 +141,7 @@
       "type": "readme"
     },
     {
-      "name": "Voorbeeldapp",
+      "name": "Voorbeeld-app",
       "file": "example-app-readme-generated.md",
       "subCat": "Gebruik",
       "type": "readme"

@@ -1,28 +1,41 @@
-## Parameters
+## 매개변수
 
-| Name | Type | Required | Description |
+| 이름 | 타입 | 필수 여부 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
 | createTenantPackageBody | CreateTenantPackageBody | 예 |  |
 
-## Response
+## 응답
 
-반환: [`CreateTenantPackageResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantPackageResponse.ts)
+반환값: [`CreateTenantPackageResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantPackageResponse.ts)
 
-## Example
+## 예제
 
-[inline-code-attrs-start title = 'createTenantPackage 예시'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'createTenantPackage 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function runExample() {
-  const tenantId: string = "tenant_9f8b7c6d";
+async function createTenantPackageExample(): Promise<void> {
+  const tenantId: string = '5f2a9b3c8e4d1a2b3c4d5e6f';
+
   const createTenantPackageBody: CreateTenantPackageBody = {
-    name: "Enterprise Package",
-    priceCents: 49999,
-    // 선택적 필드
-    description: "Full suite of enterprise features"
+    name: 'Premium Support Package',
+    packageId: 'tenant-premium-annual',
+    billingInterval: 'yearly',
+    price: 499.99,
+    currency: 'USD',
+    maxSeats: 25,
+    status: 'active'
   };
-  const result: CreateTenantPackageResponse = await createTenantPackage(tenantId, createTenantPackageBody);
-  console.log(result);
+
+  const result: CreateTenantPackageResponse = await createTenantPackage(
+    tenantId,
+    createTenantPackageBody
+  );
+
+  const status: APIStatus = result.status;
+  const createdPackage: TenantPackage | undefined = result.tenantPackage;
+
+  if (createdPackage) {
+    console.log(`Created package ${createdPackage.name} with status ${status}`);
+  }
 }
-runExample();
 [inline-code-end]

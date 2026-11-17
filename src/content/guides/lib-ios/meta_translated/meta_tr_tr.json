@@ -1,9 +1,9 @@
 {
-  "name": "iOS Kütüphanesi",
-  "pageHeader": "iOS Uygulamanıza Yorum Ekleyin",
+  "name": "iOS Kitaplığı",
+  "pageHeader": "iOS Uygulamanıza Yorumlar Ekleyin",
   "itemsOrdered": [
     {
-      "name": "Yapay Zeka kodlama ajanları",
+      "name": "Yapay zeka kodlama ajanları",
       "file": "ai-coding-agents-readme-generated.md",
       "subCat": "Dokümantasyon",
       "type": "readme"
@@ -39,8 +39,14 @@
       "type": "readme"
     },
     {
-      "name": "Zincirleme Yorumlar",
+      "name": "Dizili Yorumlar",
       "file": "threaded-comments-readme-generated.md",
+      "subCat": "Dokümantasyon",
+      "type": "readme"
+    },
+    {
+      "name": "Anketler",
+      "file": "polls-readme-generated.md",
       "subCat": "Dokümantasyon",
       "type": "readme"
     },
@@ -57,7 +63,7 @@
       "type": "readme"
     },
     {
-      "name": "Tema",
+      "name": "Tema Oluşturma",
       "file": "theming-readme-generated.md",
       "subCat": "Dokümantasyon",
       "type": "readme"
@@ -69,7 +75,7 @@
       "type": "readme"
     },
     {
-      "name": "Denetleme",
+      "name": "Moderasyon",
       "file": "moderation-readme-generated.md",
       "subCat": "Dokümantasyon",
       "type": "readme"
@@ -99,7 +105,7 @@
       "type": "readme"
     },
     {
-      "name": "Temizleme",
+      "name": "Temizlik",
       "file": "cleanup-readme-generated.md",
       "subCat": "Dokümantasyon",
       "type": "readme"
@@ -123,7 +129,7 @@
       "type": "readme"
     },
     {
-      "name": "Hata Yönetimi",
+      "name": "Hata İşleme",
       "file": "error-handling-readme-generated.md",
       "subCat": "Dokümantasyon",
       "type": "readme"

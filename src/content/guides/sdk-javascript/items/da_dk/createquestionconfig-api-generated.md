@@ -2,8 +2,8 @@
 
 | Navn | Type | Påkrævet | Beskrivelse |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| createQuestionConfigBody | CreateQuestionConfigBody | Yes |  |
+| tenantId | string | Ja |  |
+| createQuestionConfigBody | CreateQuestionConfigBody | Ja |  |
 
 ## Svar
 
@@ -13,28 +13,43 @@ Returnerer: [`CreateQuestionConfigResponse`](https://github.com/FastComments/fas
 
 [inline-code-attrs-start title = 'createQuestionConfig Eksempel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function runExample() {
-  const tenantId: string = "acme-corp-123";
+const tenantId: string = 'demo_fastcomments';
 
-  const customOption: QuestionConfigCustomOptionsInner = {
-    key: "maxLength",
-    value: 500,
-  };
+const questionConfigBody: CreateQuestionConfigBody = {
+  label: 'How would you rate this article?',
+  type: 'RATING'
+};
 
-  const createQuestionConfigBody: CreateQuestionConfigBody = {
-    name: "User Feedback",
-    description: "Collect user feedback after purchase",
-    enabled: true,
-    customOptions: [customOption],
-    // valgfrit felt
-    tags: ["feedback", "post-purchase"],
-  };
+const customOptions: QuestionConfigCustomOptionsInner[] = [
+  { label: 'Very helpful', score: 5 },
+  { label: 'Not helpful', score: 1 }
+];
 
-  const response: CreateQuestionConfigResponse = await createQuestionConfig(
-    tenantId,
-    createQuestionConfigBody
-  );
+const subQuestionCondition: SubQuestionCondition = {
+  questionId: 'q-101',
+  operator: 'EQUALS' as QuestionConditionOperator,
+  value: 5
+};
 
-  console.log(response);
-}
+const questionConfig: QuestionConfig = {
+  id: 'qc-8842',
+  tenantId,
+  body: questionConfigBody,
+  customOptions,
+  condition: {
+    operator: 'GREATER_THAN' as QuestionConditionOperator,
+    subQuestionCondition
+  } as QuestionCondition
+};
+
+const response: CreateQuestionConfigResponse = await createQuestionConfig(tenantId, {
+  label: questionConfig.body.label,
+  type: questionConfig.body.type,
+  customOptions,
+  condition: questionConfig.condition
+});
+
+const status: APIStatus = response.status;
+const createdConfigId: string = response.questionConfig.id;
+console.log(`Question config created: ${createdConfigId} (${status})`);
 [inline-code-end]

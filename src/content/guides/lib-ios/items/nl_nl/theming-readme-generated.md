@@ -1,18 +1,18 @@
-### Thema-voorinstellingen
+### Thema-presets
 
-Er zijn vier ingebouwde voorinstellingen beschikbaar:
+Er zijn vier ingebouwde presets beschikbaar:
 
 ```swift
-// Standaardinstellingen van het systeem
+// Systeemstandaarden
 sdk.theme = FastCommentsTheme.default
 
-// Kaarten met schaduwen en grote, afgeronde hoeken
+// Kaarten met schaduwen en grote afgeronde hoeken
 sdk.theme = FastCommentsTheme.modern
 
-// Vlak, geen schaduwen, kleine hoekradius, geen verticale lijn tussen geneste reacties
+// Plat, geen schaduwen, kleine hoekradius, geen discussielijnen
 sdk.theme = FastCommentsTheme.minimal
 
-// Stel alle actiekleuren in op één merkkleur
+// Zet alle actiekleuren op één enkele merkkleur
 sdk.theme = FastCommentsTheme.allPrimary(.indigo)
 ```
 
@@ -20,14 +20,14 @@ sdk.theme = FastCommentsTheme.allPrimary(.indigo)
 
 ```swift
 var theme = FastCommentsTheme()
-theme.commentStyle = .flat    // Vlakke lijst met scheidingslijnen (standaard)
+theme.commentStyle = .flat    // Platte lijst met scheidingslijnen (standaard)
 theme.commentStyle = .card    // Afgeronde kaarten met schaduwen
-theme.commentStyle = .bubble  // Chat-bubbelstijl
+theme.commentStyle = .bubble  // Chatbubbel-stijl
 ```
 
 ### Kleuren
 
-Alle kleur-eigenschappen zijn optioneel. Niet ingestelde waarden vallen terug op zinvolle systeemstandaarden.
+Alle kleureigenschappen zijn optioneel. Niet-ingestelde waarden vallen terug op verstandige systeemstandaarden.
 
 ```swift
 var theme = FastCommentsTheme()
@@ -65,7 +65,7 @@ theme.dialogHeaderTextColor = .white
 theme.inputBarBackgroundColor = Color(.systemBackground)
 theme.inputBarBorderColor = Color(.separator)
 
-// Overige
+// Overig
 theme.onlineIndicatorColor = .green
 theme.separatorColor = Color(.separator)
 theme.badgeBackgroundColor = .gray.opacity(0.2)
@@ -81,14 +81,14 @@ theme.captionFont = .caption
 theme.actionFont = .caption.weight(.medium)
 ```
 
-### Lay-out en ruimte
+### Layout en spatiëring
 
 ```swift
-theme.cornerRadius = .large       // Opties: .none, .small, .medium, .large
-theme.commentSpacing = 4          // Punten tussen reactierijen
-theme.nestingIndent = 20          // Punten inspringing per genest niveau
-theme.avatarSize = 36             // Diameter avatar voor hoofdreacties
-theme.replyAvatarSize = 28        // Diameter avatar voor geneste reacties
+theme.cornerRadius = .large       // .none, .small, .medium, .large
+theme.commentSpacing = 4          // Punten tussen reactieregels
+theme.nestingIndent = 20          // Punten inspringing per nestingsniveau
+theme.avatarSize = 36             // Avatar-diameter voor hoofdreacties
+theme.replyAvatarSize = 28        // Avatar-diameter voor geneste reacties
 ```
 
 ### Visuele effecten
@@ -96,7 +96,7 @@ theme.replyAvatarSize = 28        // Diameter avatar voor geneste reacties
 ```swift
 theme.showShadows = true          // Subtiele schaduwen op kaarten
 theme.showThreadLine = true       // Verticale lijn die geneste reacties verbindt
-theme.animateVotes = true         // Veeranimatie bij stemwijzigingen
+theme.animateVotes = true         // Spring-animatie bij stemwijzigingen
 ```
 
 ### Thema's toepassen
@@ -104,7 +104,7 @@ theme.animateVotes = true         // Veeranimatie bij stemwijzigingen
 Twee benaderingen:
 
 ```swift
-// Via SwiftUI-omgeving (aanbevolen voor de weergave-hiërarchie)
+// Via de SwiftUI-omgeving (aanbevolen voor de view-hiërarchie)
 FastCommentsView(sdk: sdk)
     .fastCommentsTheme(theme)
 
@@ -113,4 +113,24 @@ sdk.theme = theme
 ```
 
 ---
----
+
+
+### Peilingskleuren
+
+Peilingen gebruiken standaard de peilingskaartkleuren van de web-widget, in lichte en donkere modus. Het instellen van `primaryColor` verandert ook de accentkleur en de balk van de optie die je hebt gekozen. Om ze direct in te stellen:
+
+```swift
+var theme = FastCommentsTheme()
+theme.pollAccentColor = .indigo
+```
+
+| Eigenschap | Gebruikt voor |
+|----------|----------|
+| `pollAccentColor` | Rand en vinkje van geselecteerde optie, gekozen duur, "Je stem is binnen" |
+| `pollAccentTextColor` | Vinkje en tekst getekend op de accentkleur |
+| `pollOptionBackgroundColor` | Achtergrond van optiechip |
+| `pollOptionPressedBackgroundColor` | Achtergrond van optiechip tijdens indrukken |
+| `pollBarColor` | Resultatenbalk voor opties die je niet hebt gekozen |
+| `pollSelectedBarColor` | Resultatenbalk voor de optie die je hebt gekozen |
+| `pollBorderColor` | Vinkje van selectievakje en omlijnde pills |
+| `pollDangerColor` | Fouten en "Peiling verwijderen" |

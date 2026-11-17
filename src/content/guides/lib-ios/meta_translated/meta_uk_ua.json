@@ -1,15 +1,15 @@
 {
-  "name": "iOS бібліотека",
-  "pageHeader": "Додайте коментарі до вашого iOS додатку",
+  "name": "Бібліотека iOS",
+  "pageHeader": "Додайте коментарі до свого iOS-застосунку",
   "itemsOrdered": [
     {
-      "name": "AI агенти кодування",
+      "name": "AI-агенти для програмування",
       "file": "ai-coding-agents-readme-generated.md",
       "subCat": "Документація",
       "type": "readme"
     },
     {
-      "name": "Функції",
+      "name": "Можливості",
       "file": "features-readme-generated.md",
       "subCat": "Документація",
       "type": "readme"
@@ -33,14 +33,20 @@
       "type": "readme"
     },
     {
-      "name": "Аутентифікація (SSO)",
+      "name": "Автентифікація (SSO)",
       "file": "authentication-sso-readme-generated.md",
-      "subCat": "Аутентифікація",
+      "subCat": "Автентифікація",
       "type": "readme"
     },
     {
-      "name": "Тематичні коментарі",
+      "name": "Коментарі з гілками",
       "file": "threaded-comments-readme-generated.md",
+      "subCat": "Документація",
+      "type": "readme"
+    },
+    {
+      "name": "Опитування",
+      "file": "polls-readme-generated.md",
       "subCat": "Документація",
       "type": "readme"
     },
@@ -63,7 +69,7 @@
       "type": "readme"
     },
     {
-      "name": "Користувацькі кнопки панелі інструментів",
+      "name": "Власні кнопки панелі інструментів",
       "file": "custom-toolbar-buttons-readme-generated.md",
       "subCat": "Документація",
       "type": "readme"

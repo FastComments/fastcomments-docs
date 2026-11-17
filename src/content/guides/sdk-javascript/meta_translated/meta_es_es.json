@@ -3,7 +3,7 @@
   "pageHeader": "SDK de JavaScript/TypeScript de FastComments",
   "itemsOrdered": [
     {
-      "name": "Agentes de codificación IA",
+      "name": "Agentes de codificación con IA",
       "file": "ai-coding-agents-readme-generated.md",
       "subCat": "Documentación",
       "type": "readme"
@@ -11,17 +11,17 @@
     {
       "name": "Instalación",
       "file": "installation-readme-generated.md",
-      "subCat": "Comenzando",
+      "subCat": "Primeros pasos",
       "type": "readme"
     },
     {
-      "name": "Documentación de API",
+      "name": "Documentación de la API",
       "file": "api-documentation-readme-generated.md",
-      "subCat": "Referencia de API",
+      "subCat": "Referencia de la API",
       "type": "readme"
     },
     {
-      "name": "Compatibilidad Navegador vs Servidor",
+      "name": "Compatibilidad entre navegador y servidor",
       "file": "browser-vs-server-compatibility-readme-generated.md",
       "subCat": "Documentación",
       "type": "readme"
@@ -33,13 +33,13 @@
       "type": "readme"
     },
     {
-      "name": "APIs Públicas vs Seguras",
+      "name": "APIs públicas vs. seguras",
       "file": "public-vs-secured-apis-readme-generated.md",
-      "subCat": "Referencia de API",
+      "subCat": "Referencia de la API",
       "type": "readme"
     },
     {
-      "name": "Integración SSO (Inicio de sesión único)",
+      "name": "Integración de SSO (inicio de sesión único)",
       "file": "sso-single-sign-on-integration-readme-generated.md",
       "subCat": "Documentación",
       "type": "readme"
@@ -57,7 +57,7 @@
       "type": "readme"
     },
     {
-      "name": "IDs de transmisión",
+      "name": "IDs de difusión",
       "file": "broadcast-ids-readme-generated.md",
       "subCat": "Documentación",
       "type": "readme"
@@ -71,19 +71,31 @@
     {
       "name": "createAgentTenant",
       "file": "createagenttenant-api-generated.md",
-      "subCat": "Inquilinos de agente",
+      "subCat": "Inquilinos de agentes",
       "type": "api"
     },
     {
       "name": "aggregate",
       "file": "aggregate-api-generated.md",
-      "subCat": "Agregado",
+      "subCat": "Agregación",
       "type": "api"
     },
     {
       "name": "getAuditLogs",
       "file": "getauditlogs-api-generated.md",
       "subCat": "Registros de auditoría",
+      "type": "api"
+    },
+    {
+      "name": "getBatchJob",
+      "file": "getbatchjob-api-generated.md",
+      "subCat": "Trabajos por lotes",
+      "type": "api"
+    },
+    {
+      "name": "getBatchJobs",
+      "file": "getbatchjobs-api-generated.md",
+      "subCat": "Trabajos por lotes",
       "type": "api"
     },
     {
@@ -201,6 +213,12 @@
       "type": "api"
     },
     {
+      "name": "translateComments",
+      "file": "translatecomments-api-generated.md",
+      "subCat": "Comentarios",
+      "type": "api"
+    },
+    {
       "name": "unBlockUserFromComment",
       "file": "unblockuserfromcomment-api-generated.md",
       "subCat": "Comentarios",
@@ -239,7 +257,7 @@
     {
       "name": "getCommentsForUser",
       "file": "getcommentsforuser-api-generated.md",
-      "subCat": "Comentarios para usuario",
+      "subCat": "Comentarios por usuario",
       "type": "api"
     },
     {
@@ -393,9 +411,9 @@
       "type": "api"
     },
     {
-      "name": "getTranslations",
+      "name": "updateFeedPost",
       "file": "updatefeedpost-api-generated.md",
-      "subCat": "Traducciones",
+      "subCat": "Publicaciones del feed",
       "type": "api"
     },
     {
@@ -407,7 +425,7 @@
     {
       "name": "flagCommentPublic",
       "file": "flagcommentpublic-api-generated.md",
-      "subCat": "Denunciar comentario",
+      "subCat": "Marcar comentario",
       "type": "api"
     },
     {
@@ -431,37 +449,37 @@
     {
       "name": "addHashTag",
       "file": "addhashtag-api-generated.md",
-      "subCat": "Etiquetas",
+      "subCat": "Hashtags",
       "type": "api"
     },
     {
       "name": "addHashTagsBulk",
       "file": "addhashtagsbulk-api-generated.md",
-      "subCat": "Etiquetas",
+      "subCat": "Hashtags",
       "type": "api"
     },
     {
       "name": "deleteHashTag",
       "file": "deletehashtag-api-generated.md",
-      "subCat": "Etiquetas",
+      "subCat": "Hashtags",
       "type": "api"
     },
     {
       "name": "getHashTags",
       "file": "gethashtags-api-generated.md",
-      "subCat": "Etiquetas",
+      "subCat": "Hashtags",
       "type": "api"
     },
     {
       "name": "patchHashTag",
       "file": "patchhashtag-api-generated.md",
-      "subCat": "Etiquetas",
+      "subCat": "Hashtags",
       "type": "api"
     },
     {
       "name": "getMe",
       "file": "getme-api-generated.md",
-      "subCat": "Yo",
+      "subCat": "Mi perfil",
       "type": "api"
     },
     {
@@ -761,13 +779,13 @@
     {
       "name": "deleteNotificationCount",
       "file": "deletenotificationcount-api-generated.md",
-      "subCat": "Conteo de notificaciones",
+      "subCat": "Contador de notificaciones",
       "type": "api"
     },
     {
       "name": "getCachedNotificationCount",
       "file": "getcachednotificationcount-api-generated.md",
-      "subCat": "Conteo de notificaciones",
+      "subCat": "Contador de notificaciones",
       "type": "api"
     },
     {
@@ -861,6 +879,18 @@
       "type": "api"
     },
     {
+      "name": "getPageLikes",
+      "file": "getpagelikes-api-generated.md",
+      "subCat": "Páginas",
+      "type": "api"
+    },
+    {
+      "name": "getPageReacts",
+      "file": "getpagereacts-api-generated.md",
+      "subCat": "Páginas",
+      "type": "api"
+    },
+    {
       "name": "getPages",
       "file": "getpages-api-generated.md",
       "subCat": "Páginas",
@@ -879,8 +909,20 @@
       "type": "api"
     },
     {
+      "name": "migratePages",
+      "file": "migratepages-api-generated.md",
+      "subCat": "Páginas",
+      "type": "api"
+    },
+    {
       "name": "patchPage",
       "file": "patchpage-api-generated.md",
+      "subCat": "Páginas",
+      "type": "api"
+    },
+    {
+      "name": "undoPageMigrations",
+      "file": "undopagemigrations-api-generated.md",
       "subCat": "Páginas",
       "type": "api"
     },
@@ -939,6 +981,12 @@
       "type": "api"
     },
     {
+      "name": "getPollVoters",
+      "file": "getpollvoters-api-generated.md",
+      "subCat": "Encuestas",
+      "type": "api"
+    },
+    {
       "name": "patchPoll",
       "file": "patchpoll-api-generated.md",
       "subCat": "Encuestas",
@@ -947,6 +995,12 @@
     {
       "name": "putPoll",
       "file": "putpoll-api-generated.md",
+      "subCat": "Encuestas",
+      "type": "api"
+    },
+    {
+      "name": "votePoll",
+      "file": "votepoll-api-generated.md",
       "subCat": "Encuestas",
       "type": "api"
     },
@@ -1139,43 +1193,43 @@
     {
       "name": "createTenantUser",
       "file": "createtenantuser-api-generated.md",
-      "subCat": "Usuarios del inquilino",
+      "subCat": "Usuarios de inquilino",
       "type": "api"
     },
     {
       "name": "deleteTenantUser",
       "file": "deletetenantuser-api-generated.md",
-      "subCat": "Usuarios del inquilino",
+      "subCat": "Usuarios de inquilino",
       "type": "api"
     },
     {
       "name": "getTenantUser",
       "file": "gettenantuser-api-generated.md",
-      "subCat": "Usuarios del inquilino",
+      "subCat": "Usuarios de inquilino",
       "type": "api"
     },
     {
       "name": "getTenantUsers",
       "file": "gettenantusers-api-generated.md",
-      "subCat": "Usuarios del inquilino",
+      "subCat": "Usuarios de inquilino",
       "type": "api"
     },
     {
       "name": "replaceTenantUser",
       "file": "replacetenantuser-api-generated.md",
-      "subCat": "Usuarios del inquilino",
+      "subCat": "Usuarios de inquilino",
       "type": "api"
     },
     {
       "name": "sendLoginLink",
       "file": "sendloginlink-api-generated.md",
-      "subCat": "Usuarios del inquilino",
+      "subCat": "Usuarios de inquilino",
       "type": "api"
     },
     {
       "name": "updateTenantUser",
       "file": "updatetenantuser-api-generated.md",
-      "subCat": "Usuarios del inquilino",
+      "subCat": "Usuarios de inquilino",
       "type": "api"
     },
     {
@@ -1235,7 +1289,7 @@
     {
       "name": "getTranslations",
       "file": "gettranslations-api-generated.md",
-      "subCat": "Translations",
+      "subCat": "Traducciones",
       "type": "api"
     },
     {

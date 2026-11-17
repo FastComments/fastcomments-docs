@@ -1,12 +1,13 @@
-Nedavni komentari u točnom obliku koji koriste isporuke webhooka, za izgradnju integracija (na primjer uzorak podataka za Zapier). Svaki događaj isporučuje isti objekt komentara, pa `event` mora biti valjan.
+Nedavni komentari u točno onom obliku koji koriste webhook dostave, za izgradnju integracija (na primjer Zapier
+primjeri podataka). Svaki događaj dostavlja isti objekt komentara, pa `event` samo mora biti valjan.
 
 ## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
-| tenantId | string | Yes |  |
-| event | WebhookEventName | No |  |
-| limit | number | No |  |
+|------|------|----------|-------------|
+| tenantId | string | Da |  |
+| event | WebhookEventName | Ne |  |
+| limit | number | Ne |  |
 
 ## Odgovor
 
@@ -14,22 +15,26 @@ Vraća: [`GetWebhookSamplePayloadsResponse`](https://github.com/FastComments/fas
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer getWebhookSamplePayloads'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getWebhookSamplePayloads primjer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "c1a2b3d4-5678-90ab-cdef-1234567890ab";
+declare function getWebhookSamplePayloads(
+  tenantId: string,
+  event?: WebhookEventName,
+  limit?: number
+): Promise<GetWebhookSamplePayloadsResponse>;
 
-const responseAll: GetWebhookSamplePayloadsResponse = await getWebhookSamplePayloads(
+const tenantId: string = '5f8d9b3e2a1b4c6d7e8f9a0b';
+
+// Get sample payloads for a specific event type
+const commentPayloads: GetWebhookSamplePayloadsResponse = await getWebhookSamplePayloads(
   tenantId,
-  "comment.created",
+  WebhookEventName.COMMENT_SUCCESS_PAGE,
   10
 );
 
-const responseWithEvent: GetWebhookSamplePayloadsResponse = await getWebhookSamplePayloads(
-  tenantId,
-  "comment.created"
-);
+// Get all sample payloads (no optional parameters)
+const allPayloads: GetWebhookSamplePayloadsResponse = await getWebhookSamplePayloads(tenantId);
 
-const responseBasic: GetWebhookSamplePayloadsResponse = await getWebhookSamplePayloads(
-  tenantId
-);
+console.log(`Comment payload status: ${commentPayloads.status}`);
+console.log(`Fetched ${allPayloads.payloads.length} sample payloads`);
 [inline-code-end]

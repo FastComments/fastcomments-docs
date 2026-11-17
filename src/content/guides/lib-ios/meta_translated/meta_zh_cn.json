@@ -1,6 +1,6 @@
 {
   "name": "iOS 库",
-  "pageHeader": "在您的 iOS 应用中添加评论",
+  "pageHeader": "为您的 iOS 应用添加评论",
   "itemsOrdered": [
     {
       "name": "AI 编码代理",
@@ -9,13 +9,13 @@
       "type": "readme"
     },
     {
-      "name": "功能",
+      "name": "功能特性",
       "file": "features-readme-generated.md",
       "subCat": "文档",
       "type": "readme"
     },
     {
-      "name": "要求",
+      "name": "系统要求",
       "file": "requirements-readme-generated.md",
       "subCat": "文档",
       "type": "readme"
@@ -23,7 +23,7 @@
     {
       "name": "安装",
       "file": "installation-readme-generated.md",
-      "subCat": "入门指南",
+      "subCat": "快速上手",
       "type": "readme"
     },
     {
@@ -33,14 +33,20 @@
       "type": "readme"
     },
     {
-      "name": "身份验证（单点登录）",
+      "name": "身份验证（SSO）",
       "file": "authentication-sso-readme-generated.md",
       "subCat": "身份验证",
       "type": "readme"
     },
     {
-      "name": "线程式评论",
+      "name": "嵌套评论",
       "file": "threaded-comments-readme-generated.md",
+      "subCat": "文档",
+      "type": "readme"
+    },
+    {
+      "name": "投票",
+      "file": "polls-readme-generated.md",
       "subCat": "文档",
       "type": "readme"
     },
@@ -87,13 +93,13 @@
       "type": "readme"
     },
     {
-      "name": "状态与可观察性",
+      "name": "状态与可观测性",
       "file": "state-and-observability-readme-generated.md",
       "subCat": "文档",
       "type": "readme"
     },
     {
-      "name": "欧盟地区",
+      "name": "欧盟区域",
       "file": "eu-region-readme-generated.md",
       "subCat": "文档",
       "type": "readme"
@@ -137,7 +143,7 @@
     {
       "name": "示例应用",
       "file": "example-app-readme-generated.md",
-      "subCat": "使用",
+      "subCat": "使用指南",
       "type": "readme"
     }
   ]

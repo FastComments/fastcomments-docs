@@ -1,38 +1,38 @@
-### Предварителни настройки на тема
+### Готови теми
 
-Налични са четири вградени предварителни настройки:
+Налични са четири вградени пресета:
 
 ```swift
 // Системни настройки по подразбиране
 sdk.theme = FastCommentsTheme.default
 
-// Карти с сенки и големи заоблени ъгли
+// Карти със сенки и големи заоблени ъгли
 sdk.theme = FastCommentsTheme.modern
 
-// Плосък, без сенки, малък радиус на ъглите, без линии на нишката
+// Плосък стил, без сенки, малък радиус на ъглите, без линии на нишките
 sdk.theme = FastCommentsTheme.minimal
 
-// Задава всички цветове за действията като един брандов цвят
+// Задаване на всички цветове за действия в един цвят на марката
 sdk.theme = FastCommentsTheme.allPrimary(.indigo)
 ```
 
-### Стилове на показване на коментари
+### Стилове за показване на коментари
 
 ```swift
 var theme = FastCommentsTheme()
 theme.commentStyle = .flat    // Плосък списък с разделители (по подразбиране)
 theme.commentStyle = .card    // Заоблени карти със сенки
-theme.commentStyle = .bubble  // Стил тип чат балон
+theme.commentStyle = .bubble  // Стил на чат балончета
 ```
 
 ### Цветове
 
-Всички цветови свойства са незадължителни. Непопълнените стойности се връщат към разумни системни стойности по подразбиране.
+Всички цветови свойства са по избор. Липсващите стойности се заместват с разумни системни настройки по подразбиране.
 
 ```swift
 var theme = FastCommentsTheme()
 
-// Бранд цветове
+// Цветове на марката
 theme.primaryColor = .indigo
 theme.primaryLightColor = .indigo.opacity(0.6)
 theme.primaryDarkColor = Color(red: 0.2, green: 0.1, blue: 0.5)
@@ -41,7 +41,7 @@ theme.primaryDarkColor = Color(red: 0.2, green: 0.1, blue: 0.5)
 theme.commentBackgroundColor = Color(.secondarySystemGroupedBackground)
 theme.containerBackgroundColor = Color(.systemGroupedBackground)
 
-// Бутони за действие
+// Бутони за действия
 theme.actionButtonColor = .indigo
 theme.replyButtonColor = .indigo
 theme.toggleRepliesButtonColor = .indigo.opacity(0.8)
@@ -81,22 +81,22 @@ theme.captionFont = .caption
 theme.actionFont = .caption.weight(.medium)
 ```
 
-### Оформление и разстояния
+### Оформление и отстояния
 
 ```swift
 theme.cornerRadius = .large       // .none, .small, .medium, .large
 theme.commentSpacing = 4          // Точки между редовете с коментари
-theme.nestingIndent = 20          // Отместване (в точки) за всяко ниво на вложеност
-theme.avatarSize = 36             // Диаметър на аватара за кореновите коментари
+theme.nestingIndent = 20          // Точки отстъп на ниво на влагане
+theme.avatarSize = 36             // Диаметър на аватара за коренни коментари
 theme.replyAvatarSize = 28        // Диаметър на аватара за вложени отговори
 ```
 
 ### Визуални ефекти
 
 ```swift
-theme.showShadows = true          // Нежни сенки върху картите
-theme.showThreadLine = true       // Вертикална линия свързваща вложените отговори
-theme.animateVotes = true         // Пружинна анимация при промяна на гласовете
+theme.showShadows = true          // Фини сенки върху картите
+theme.showThreadLine = true       // Вертикална линия, свързваща вложените отговори
+theme.animateVotes = true         // Пружинна анимация при промяна на гласуванията
 ```
 
 ### Прилагане на теми
@@ -104,13 +104,33 @@ theme.animateVotes = true         // Пружинна анимация при п
 Два подхода:
 
 ```swift
-// Чрез средата на SwiftUI (препоръчително за йерархията на изгледите)
+// Чрез SwiftUI среда (препоръчително за йерархията от изгледи)
 FastCommentsView(sdk: sdk)
     .fastCommentsTheme(theme)
 
-// Директно в SDK
+// Директно върху SDK
 sdk.theme = theme
 ```
 
 ---
----
+
+
+### Цветове на анкетите
+
+Анкетите по подразбиране използват цветовете на картата за анкета от уеб уиджета, както в светъл, така и в тъмен режим. Задаването на `primaryColor` също променя акцента и лентата на избрана от вас опция. За да ги зададете директно:
+
+```swift
+var theme = FastCommentsTheme()
+theme.pollAccentColor = .indigo
+```
+
+| Свойство | Използва се за |
+|----------|----------|
+| `pollAccentColor` | Рамка и отметка на избраната опция, избраната продължителност, „Вашият вот е регистриран" |
+| `pollAccentTextColor` | Отметка и текст, изчертани върху акцентния цвят |
+| `pollOptionBackgroundColor` | Фон на плочката на опцията |
+| `pollOptionPressedBackgroundColor` | Фон на плочката на опцията при натискане |
+| `pollBarColor` | Лента с резултати за опциите, които не сте избрали |
+| `pollSelectedBarColor` | Лента с резултати за избраната от вас опция |
+| `pollBorderColor` | Отметка на квадратчето и контурни капсули |
+| `pollDangerColor` | Грешки и „Премахване на анкетата" |

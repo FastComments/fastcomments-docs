@@ -1,15 +1,16 @@
-- İç içe yanıtlar ve sayfalandırma ile dallanmış yorum ağaçları
-- Gönderi oluşturma, reaksiyonlar ve medya ekleri ile sosyal akış
-- Otomatik kaydırma ve tarih ayırıcıları ile canlı sohbet modu
-- WebSocket üzerinden gerçek zamanlı güncellemeler (yeni yorumlar, oylar, kullanıcı varlığı)
-- Tek Oturum Açma (test için Basit SSO, üretim için Güvenli SSO)
+- İç içe geçmiş yanıtlar ve sayfalama ile iş parçacıklı (threaded) yorum ağaçları
+- Gönderi oluşturma, tepkiler ve medya ekleri ile sosyal akış
+- Otomatik kaydırma ve tarih ayırıcılarla canlı sohbet modu
+- WebSocket üzerinden gerçek zamanlı güncellemeler (yeni yorumlar, oylar, varlık durumu)
+- Tek Oturum Açma (SSO) (test için Basit SSO, üretim için Güvenli SSO)
 - Kalın, italik, kod ve @bahsetmeler ile zengin metin düzenleme
 - Yapılandırılabilir stillerle oylama (yukarı/aşağı oklar veya kalpler)
-- Moderasyon eylemleri: bayraklama, sabitleme, kilitleme, engelleme
+- Canlı sonuçlarla yorumlarda anketler
+- Moderasyon eylemleri: işaretle, sabitle, kilitle, engelle
 - Ön ayarlar ve tam özelleştirme ile kapsamlı tema desteği
 - Yorumlar ve akış gönderisi oluşturma için özel araç çubuğu düğmeleri
-- Resim yüklemeleri
-- AB bölge desteği
-- Kullanıcı varlığı (çevrimiçi/çevrimdışı göstergeler)
+- Görsel yüklemeleri
+- AB bölgesi desteği
+- Kullanıcı varlık durumu (çevrimiçi/çevrimdışı göstergeleri)
 - Etiket tabanlı akış filtreleme
 - Yerelleştirme desteği

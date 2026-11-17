@@ -1,10 +1,10 @@
 ## Параметри
 
-| Име | Тип | Обавезно | Опис |
+| Назив | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
-| tenantId | string | Yes |  |
-| id | string | Yes |  |
-| updateQuestionResultBody | UpdateQuestionResultBody | Yes |  |
+| tenantId | string | Да |  |
+| id | string | Да |  |
+| updateQuestionResultBody | UpdateQuestionResultBody | Да |  |
 
 ## Одговор
 
@@ -12,19 +12,24 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'updateQuestionResult Пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'updateQuestionResult пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "c1f5e8b2-9a4d-4f3a-8d2e-6b7c9d0e1f2a";
-const questionId: string = "qstn_1234567890";
+const tenantId: string = '5a2b6c7f8d9e0a1b2c3d4e5f';
+const questionId: string = 'q-8f3b9a2c-41d7-4e6a-b5c8-9e0f1a2b3c4d';
 
 const updateBody: UpdateQuestionResultBody = {
-  score: 85,
-  comment: "Adjusted based on new criteria",
+  correctAnswer: 'Option B: Blue whale',
+  isAnsweredCorrectly: true,
+  answeredAt: '2024-03-15T14:32:00.000Z',
   meta: [
-    { key: "reviewer", value: "john.doe@example.com" },
-    { key: "timestamp", value: new Date().toISOString() }
+    {
+      key: 'quiz_session',
+      value: 'session_abc123'
+    }
   ]
 };
 
-const response: APIEmptyResponse = await updateQuestionResult(tenantId, questionId, updateBody);
+const result: APIEmptyResponse = await updateQuestionResult(tenantId, questionId, updateBody);
+
+console.log(`Update status: ${result.status}`);
 [inline-code-end]

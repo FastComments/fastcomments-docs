@@ -1,7 +1,7 @@
 ## Parametri
 
 | Naziv | Tip | Obavezno | Opis |
-|------|------|----------|------|
+|------|------|----------|-------------|
 | tenantId | string | Da |  |
 | commentId | string | Ne |  |
 | externalId | string | Ne |  |
@@ -17,25 +17,16 @@ Vraća: [`GetPendingWebhookEventsResponse`](https://github.com/FastComments/fast
 
 ## Primjer
 
-[inline-code-attrs-start title = 'Primjer getPendingWebhookEvents'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getPendingWebhookEvents primjer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "123e4567-e89b-12d3-a456-426614174000";
-const commentId: string = "cmt_987654321";
-const externalId: string = "ext_abc123";
-const eventType: string = "comment_created";
-const type: string = "outbound";
-const domain: string = "myblog.com";
-const attemptCountGT: number = 2;
-const skip: number = 10;
+const tenantId: string = '5a2f4d3c8b9e1a2b3c4d5e6f';
 
-const pendingEvents: GetPendingWebhookEventsResponse = await getPendingWebhookEvents(
-  tenantId,
-  commentId,
-  externalId,
-  eventType,
-  type,
-  domain,
-  attemptCountGT,
-  skip
-);
+const pendingEvents: GetPendingWebhookEventsResponse = await getPendingWebhookEvents(tenantId, {
+    commentId: 'abc123def456',
+    eventType: 'comment-created',
+    attemptCountGT: 2,
+    skip: 0
+});
+
+console.log(`Found ${pendingEvents.items.length} pending webhook events`);
 [inline-code-end]

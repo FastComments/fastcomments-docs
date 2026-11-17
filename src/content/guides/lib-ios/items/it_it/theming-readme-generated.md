@@ -1,15 +1,15 @@
-### Preimpostazioni del tema
+### Preset dei temi
 
-Quattro preimpostazioni integrate sono disponibili:
+Sono disponibili quattro preset integrati:
 
 ```swift
-// Predefiniti di sistema
+// Impostazioni predefinite di sistema
 sdk.theme = FastCommentsTheme.default
 
-// Schede con ombre e angoli arrotondati grandi
+// Schede con ombre e angoli ampiamente arrotondati
 sdk.theme = FastCommentsTheme.modern
 
-// Stile piatto, senza ombre, piccolo raggio degli angoli, senza linee del thread
+// Piatto, senza ombre, raggio degli angoli piccolo, senza linee di thread
 sdk.theme = FastCommentsTheme.minimal
 
 // Imposta tutti i colori delle azioni su un singolo colore del brand
@@ -20,14 +20,14 @@ sdk.theme = FastCommentsTheme.allPrimary(.indigo)
 
 ```swift
 var theme = FastCommentsTheme()
-theme.commentStyle = .flat    // Elenco piatto con divisori (predefinito)
+theme.commentStyle = .flat    // Elenco piatto con separatori (predefinito)
 theme.commentStyle = .card    // Schede arrotondate con ombre
-theme.commentStyle = .bubble  // Stile a bolle di chat
+theme.commentStyle = .bubble  // Stile a fumetti di chat
 ```
 
 ### Colori
 
-Tutte le proprietà colore sono opzionali. I valori non impostati ricadono sui valori predefiniti di sistema sensati.
+Tutte le proprietà dei colori sono opzionali. I valori non impostati ricadono su impostazioni predefinite di sistema sensate.
 
 ```swift
 var theme = FastCommentsTheme()
@@ -57,7 +57,7 @@ theme.voteDividerColor = Color(.separator)
 theme.linkColor = .indigo
 theme.linkColorPressed = .indigo.opacity(0.5)
 
-// Dialog
+// Finestre di dialogo
 theme.dialogHeaderBackgroundColor = .indigo
 theme.dialogHeaderTextColor = .white
 
@@ -86,8 +86,8 @@ theme.actionFont = .caption.weight(.medium)
 ```swift
 theme.cornerRadius = .large       // .none, .small, .medium, .large
 theme.commentSpacing = 4          // Punti tra le righe dei commenti
-theme.nestingIndent = 20          // Punti di indentazione per ogni livello di annidamento
-theme.avatarSize = 36             // Diametro dell'avatar per i commenti di primo livello
+theme.nestingIndent = 20          // Punti di rientro per livello di annidamento
+theme.avatarSize = 36             // Diametro dell'avatar per i commenti principali
 theme.replyAvatarSize = 28        // Diametro dell'avatar per le risposte annidate
 ```
 
@@ -95,7 +95,7 @@ theme.replyAvatarSize = 28        // Diametro dell'avatar per le risposte annida
 
 ```swift
 theme.showShadows = true          // Ombre sottili sulle schede
-theme.showThreadLine = true       // Linea verticale che connette le risposte annidate
+theme.showThreadLine = true       // Linea verticale che collega le risposte annidate
 theme.animateVotes = true         // Animazione a molla sulle modifiche dei voti
 ```
 
@@ -104,10 +104,33 @@ theme.animateVotes = true         // Animazione a molla sulle modifiche dei voti
 Due approcci:
 
 ```swift
-// Tramite ambiente SwiftUI (consigliato per la gerarchia delle viste)
+// Tramite l'ambiente SwiftUI (consigliato per la gerarchia delle viste)
 FastCommentsView(sdk: sdk)
     .fastCommentsTheme(theme)
 
-// Direttamente sul SDK
+// Direttamente sull'SDK
 sdk.theme = theme
 ```
+
+---
+
+
+### Colori dei sondaggi
+
+I sondaggi usano per impostazione predefinita i colori della scheda sondaggio del widget web, sia in modalità chiara che scura. L'impostazione di `primaryColor` modifica anche l'accento e la barra dell'opzione scelta. Per impostarli direttamente:
+
+```swift
+var theme = FastCommentsTheme()
+theme.pollAccentColor = .indigo
+```
+
+| Proprietà | Utilizzata per |
+|----------|----------|
+| `pollAccentColor` | Bordo e spunta dell'opzione selezionata, durata scelta, "Il tuo voto è stato registrato" |
+| `pollAccentTextColor` | Segno di spunta e testo disegnato sul colore d'accento |
+| `pollOptionBackgroundColor` | Sfondo del chip dell'opzione |
+| `pollOptionPressedBackgroundColor` | Sfondo del chip dell'opzione mentre è premuto |
+| `pollBarColor` | Barra dei risultati per le opzioni non scelte |
+| `pollSelectedBarColor` | Barra dei risultati per l'opzione scelta |
+| `pollBorderColor` | Segno della casella di controllo e pillola con contorno |
+| `pollDangerColor` | Errori e "Rimuovi sondaggio" |

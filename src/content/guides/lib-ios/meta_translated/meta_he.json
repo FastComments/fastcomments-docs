@@ -1,6 +1,6 @@
 {
   "name": "ספריית iOS",
-  "pageHeader": "הוספת תגובות לאפליקציית iOS שלך",
+  "pageHeader": "הוספת תגובות לאפליקציית ה-iOS שלך",
   "itemsOrdered": [
     {
       "name": "סוכני קידוד AI",
@@ -23,7 +23,7 @@
     {
       "name": "התקנה",
       "file": "installation-readme-generated.md",
-      "subCat": "התחלה",
+      "subCat": "תחילת עבודה",
       "type": "readme"
     },
     {
@@ -39,8 +39,14 @@
       "type": "readme"
     },
     {
-      "name": "תגובות משורשרות",
+      "name": "תגובות בשרשור",
       "file": "threaded-comments-readme-generated.md",
+      "subCat": "תיעוד",
+      "type": "readme"
+    },
+    {
+      "name": "סקרים",
+      "file": "polls-readme-generated.md",
       "subCat": "תיעוד",
       "type": "readme"
     },
@@ -57,19 +63,19 @@
       "type": "readme"
     },
     {
-      "name": "תמות",
+      "name": "עיצוב והתאמה אישית",
       "file": "theming-readme-generated.md",
       "subCat": "תיעוד",
       "type": "readme"
     },
     {
-      "name": "כפתורי סרגל כלים מותאמים",
+      "name": "כפתורי סרגל כלים מותאמים אישית",
       "file": "custom-toolbar-buttons-readme-generated.md",
       "subCat": "תיעוד",
       "type": "readme"
     },
     {
-      "name": "מודרציה",
+      "name": "ניהול תוכן",
       "file": "moderation-readme-generated.md",
       "subCat": "תיעוד",
       "type": "readme"
@@ -81,19 +87,19 @@
       "type": "readme"
     },
     {
-      "name": "דפדוף",
+      "name": "עימוד",
       "file": "pagination-readme-generated.md",
       "subCat": "תיעוד",
       "type": "readme"
     },
     {
-      "name": "מצב ונצירות",
+      "name": "מצב וניטור",
       "file": "state-and-observability-readme-generated.md",
       "subCat": "תיעוד",
       "type": "readme"
     },
     {
-      "name": "אזור האיחוד האירופי",
+      "name": "אזור ה-EU",
       "file": "eu-region-readme-generated.md",
       "subCat": "תיעוד",
       "type": "readme"
@@ -111,13 +117,13 @@
       "type": "readme"
     },
     {
-      "name": "אזכורי משתמש",
+      "name": "אזכורי משתמשים",
       "file": "user-mentions-readme-generated.md",
       "subCat": "תיעוד",
       "type": "readme"
     },
     {
-      "name": "עריכה ומחיקת תגובות",
+      "name": "עריכה ומחיקה של תגובות",
       "file": "editing-and-deleting-comments-readme-generated.md",
       "subCat": "תיעוד",
       "type": "readme"

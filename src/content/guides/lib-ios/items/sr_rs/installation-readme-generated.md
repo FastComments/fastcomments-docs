@@ -6,11 +6,11 @@
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/fastcomments/fastcomments-ios.git", from: "2.0.0")
+    .package(url: "https://github.com/fastcomments/fastcomments-ios.git", from: "2.1.0")
 ]
 ```
 
-Затим додајте производ у ваш циљ:
+Затим додајте производ у ваш target:
 
 ```swift
 .target(
@@ -21,7 +21,7 @@ dependencies: [
 )
 ```
 
-Увезите оба модула где је потребно:
+Увезите оба модула тамо где је потребно:
 
 ```swift
 import FastCommentsUI

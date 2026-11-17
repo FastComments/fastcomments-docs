@@ -1,9 +1,9 @@
 {
   "name": "iOS 函式庫",
-  "pageHeader": "在您的 iOS 應用程式中加入評論",
+  "pageHeader": "為您的 iOS 應用程式新增留言",
   "itemsOrdered": [
     {
-      "name": "AI 程式編寫代理",
+      "name": "AI 編碼代理",
       "file": "ai-coding-agents-readme-generated.md",
       "subCat": "文件",
       "type": "readme"
@@ -15,7 +15,7 @@
       "type": "readme"
     },
     {
-      "name": "需求",
+      "name": "系統需求",
       "file": "requirements-readme-generated.md",
       "subCat": "文件",
       "type": "readme"
@@ -23,24 +23,30 @@
     {
       "name": "安裝",
       "file": "installation-readme-generated.md",
-      "subCat": "入門指南",
+      "subCat": "快速入門",
       "type": "readme"
     },
     {
-      "name": "快速入門",
+      "name": "快速開始",
       "file": "quick-start-readme-generated.md",
       "subCat": "文件",
       "type": "readme"
     },
     {
-      "name": "驗證（單一登入）",
+      "name": "身分驗證 (SSO)",
       "file": "authentication-sso-readme-generated.md",
-      "subCat": "驗證",
+      "subCat": "身分驗證",
       "type": "readme"
     },
     {
-      "name": "串接式評論",
+      "name": "討論串留言",
       "file": "threaded-comments-readme-generated.md",
+      "subCat": "文件",
+      "type": "readme"
+    },
+    {
+      "name": "投票",
+      "file": "polls-readme-generated.md",
       "subCat": "文件",
       "type": "readme"
     },
@@ -69,7 +75,7 @@
       "type": "readme"
     },
     {
-      "name": "審核",
+      "name": "內容審核",
       "file": "moderation-readme-generated.md",
       "subCat": "文件",
       "type": "readme"
@@ -93,7 +99,7 @@
       "type": "readme"
     },
     {
-      "name": "歐盟區域",
+      "name": "歐盟地區",
       "file": "eu-region-readme-generated.md",
       "subCat": "文件",
       "type": "readme"
@@ -117,7 +123,7 @@
       "type": "readme"
     },
     {
-      "name": "編輯與刪除評論",
+      "name": "編輯與刪除留言",
       "file": "editing-and-deleting-comments-readme-generated.md",
       "subCat": "文件",
       "type": "readme"
@@ -129,7 +135,7 @@
       "type": "readme"
     },
     {
-      "name": "本地化",
+      "name": "在地化",
       "file": "localization-readme-generated.md",
       "subCat": "文件",
       "type": "readme"

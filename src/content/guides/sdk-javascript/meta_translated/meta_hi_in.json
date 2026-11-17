@@ -87,6 +87,18 @@
       "type": "api"
     },
     {
+      "name": "getBatchJob",
+      "file": "getbatchjob-api-generated.md",
+      "subCat": "बैच जॉब",
+      "type": "api"
+    },
+    {
+      "name": "getBatchJobs",
+      "file": "getbatchjobs-api-generated.md",
+      "subCat": "बैच जॉब",
+      "type": "api"
+    },
+    {
       "name": "blockFromCommentPublic",
       "file": "blockfromcommentpublic-api-generated.md",
       "subCat": "कमेंट से ब्लॉक",
@@ -197,6 +209,12 @@
     {
       "name": "setCommentText",
       "file": "setcommenttext-api-generated.md",
+      "subCat": "कमेंट",
+      "type": "api"
+    },
+    {
+      "name": "translateComments",
+      "file": "translatecomments-api-generated.md",
       "subCat": "कमेंट",
       "type": "api"
     },
@@ -413,19 +431,19 @@
     {
       "name": "getGifLarge",
       "file": "getgiflarge-api-generated.md",
-      "subCat": "GIF",
+      "subCat": "Gifs",
       "type": "api"
     },
     {
       "name": "getGifsSearch",
       "file": "getgifssearch-api-generated.md",
-      "subCat": "GIF",
+      "subCat": "Gifs",
       "type": "api"
     },
     {
       "name": "getGifsTrending",
       "file": "getgifstrending-api-generated.md",
-      "subCat": "GIF",
+      "subCat": "Gifs",
       "type": "api"
     },
     {
@@ -861,6 +879,18 @@
       "type": "api"
     },
     {
+      "name": "getPageLikes",
+      "file": "getpagelikes-api-generated.md",
+      "subCat": "पेज",
+      "type": "api"
+    },
+    {
+      "name": "getPageReacts",
+      "file": "getpagereacts-api-generated.md",
+      "subCat": "पेज",
+      "type": "api"
+    },
+    {
       "name": "getPages",
       "file": "getpages-api-generated.md",
       "subCat": "पेज",
@@ -879,8 +909,20 @@
       "type": "api"
     },
     {
+      "name": "migratePages",
+      "file": "migratepages-api-generated.md",
+      "subCat": "पेज",
+      "type": "api"
+    },
+    {
       "name": "patchPage",
       "file": "patchpage-api-generated.md",
+      "subCat": "पेज",
+      "type": "api"
+    },
+    {
+      "name": "undoPageMigrations",
+      "file": "undopagemigrations-api-generated.md",
       "subCat": "पेज",
       "type": "api"
     },
@@ -939,6 +981,12 @@
       "type": "api"
     },
     {
+      "name": "getPollVoters",
+      "file": "getpollvoters-api-generated.md",
+      "subCat": "पोल",
+      "type": "api"
+    },
+    {
       "name": "patchPoll",
       "file": "patchpoll-api-generated.md",
       "subCat": "पोल",
@@ -947,6 +995,12 @@
     {
       "name": "putPoll",
       "file": "putpoll-api-generated.md",
+      "subCat": "पोल",
+      "type": "api"
+    },
+    {
+      "name": "votePoll",
+      "file": "votepoll-api-generated.md",
       "subCat": "पोल",
       "type": "api"
     },
@@ -1013,19 +1067,19 @@
     {
       "name": "aggregateQuestionResults",
       "file": "aggregatequestionresults-api-generated.md",
-      "subCat": "प्रश्न परिणाम एकत्रीकरण",
+      "subCat": "प्रश्न परिणाम एकीकरण",
       "type": "api"
     },
     {
       "name": "bulkAggregateQuestionResults",
       "file": "bulkaggregatequestionresults-api-generated.md",
-      "subCat": "प्रश्न परिणाम एकत्रीकरण",
+      "subCat": "प्रश्न परिणाम एकीकरण",
       "type": "api"
     },
     {
       "name": "combineCommentsWithQuestionResults",
       "file": "combinecommentswithquestionresults-api-generated.md",
-      "subCat": "प्रश्न परिणाम एकत्रीकरण",
+      "subCat": "प्रश्न परिणाम एकीकरण",
       "type": "api"
     },
     {

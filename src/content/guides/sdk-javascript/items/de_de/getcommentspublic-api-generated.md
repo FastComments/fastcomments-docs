@@ -5,85 +5,85 @@ urlId
 ## Parameter
 
 | Name | Typ | Erforderlich | Beschreibung |
-|------|------|--------------|--------------|
-| tenantId | string | Yes |  |
-| urlId | string | Yes |  |
-| page | number | No |  |
-| direction | SortDirections | No |  |
-| sso | string | No |  |
-| skip | number | No |  |
-| skipChildren | number | No |  |
-| limit | number | No |  |
-| limitChildren | number | No |  |
-| countChildren | boolean | No |  |
-| fetchPageForCommentId | string | No |  |
-| includeConfig | boolean | No |  |
-| countAll | boolean | No |  |
-| includei10n | boolean | No |  |
-| locale | string | No |  |
-| modules | string | No |  |
-| isCrawler | boolean | No |  |
-| includeNotificationCount | boolean | No |  |
-| asTree | boolean | No |  |
-| maxTreeDepth | number | No |  |
-| useFullTranslationIds | boolean | No |  |
-| parentId | string | No |  |
-| searchText | string | No |  |
-| hashTags | Array<string> | No |  |
-| userId | string | No |  |
-| customConfigStr | string | No |  |
-| afterCommentId | string | No |  |
-| beforeCommentId | string | No |  |
+|------|------|----------|-------------|
+| tenantId | string | Ja |  |
+| urlId | string | Ja |  |
+| page | number | Nein |  |
+| direction | SortDirections | Nein |  |
+| sso | string | Nein |  |
+| skip | number | Nein |  |
+| skipChildren | number | Nein |  |
+| limit | number | Nein |  |
+| limitChildren | number | Nein |  |
+| countChildren | boolean | Nein |  |
+| fetchPageForCommentId | string | Nein |  |
+| includeConfig | boolean | Nein |  |
+| countAll | boolean | Nein |  |
+| includei10n | boolean | Nein |  |
+| locale | string | Nein |  |
+| modules | string | Nein |  |
+| isCrawler | boolean | Nein |  |
+| includeNotificationCount | boolean | Nein |  |
+| asTree | boolean | Nein |  |
+| maxTreeDepth | number | Nein |  |
+| useFullTranslationIds | boolean | Nein |  |
+| parentId | string | Nein |  |
+| searchText | string | Nein |  |
+| hashTags | Array<string> | Nein |  |
+| userId | string | Nein |  |
+| customConfigStr | string | Nein |  |
+| afterCommentId | string | Nein |  |
+| beforeCommentId | string | Nein |  |
+| questionId | string | Nein |  |
+| questionValue | number | Nein |  |
 
 ## Antwort
 
-Rückgabe: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentsResponseWithPresencePublicComment.ts)
+Gibt zurück: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentsResponseWithPresencePublicComment.ts)
 
 ## Beispiel
 
 [inline-code-attrs-start title = 'getCommentsPublic Beispiel'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function loadComments(): Promise<void> {
-  const tenantId: string = "tenant-42",
-        urlId: string = "post-2023-09-15",
-        page: number = 1,
-        direction: SortDirections = "desc",
-        limit: number = 30,
-        includeConfig: boolean = true,
-        locale: string = "en-US",
-        isCrawler: boolean = false,
-        asTree: boolean = true,
-        maxTreeDepth: number = 2,
-        searchText: string = "fastcomments",
-        hashTags: string[] = ["fastcomments","typescript"],
-        userId: string = "user-123";
+const tenantId: string = 'abc123def456';
+const urlId: string = 'https://example.com/blog/my-post';
 
-  const result: GetCommentsResponseWithPresencePublicComment = await getCommentsPublic(
-    tenantId,
-    urlId,
-    page,
-    direction,
-    undefined,
-    undefined,
-    undefined,
-    limit,
-    undefined,
-    undefined,
-    undefined,
-    includeConfig,
-    undefined,
-    undefined,
-    locale,
-    undefined,
-    isCrawler,
-    undefined,
-    asTree,
-    maxTreeDepth,
-    undefined,
-    undefined,
-    searchText,
-    hashTags,
-    userId
-  );
-}
+const response: GetCommentsResponseWithPresencePublicComment = await getCommentsPublic(
+  tenantId,
+  urlId,
+  1,
+  'DESC' as SortDirections,
+  undefined,
+  0,
+  undefined,
+  25,
+  undefined,
+  true,
+  undefined,
+  undefined,
+  true,
+  true,
+  false,
+  'en-US',
+  undefined,
+  false,
+  true,
+  undefined,
+  true,
+  3,
+  undefined,
+  undefined,
+  'root',
+  'authentication',
+  ['announcement', 'qna'],
+  undefined,
+  undefined,
+  undefined,
+  undefined,
+  undefined
+);
+
+const comments: PublicComment[] = response.comments;
+const presenceCount: number = response.presence?.userCount ?? 0;
+console.log(`Fetched ${comments.length} comments, ${presenceCount} users online`);
 [inline-code-end]

@@ -1,15 +1,16 @@
-- Drzewiaste wątki komentarzy z zagnieżdżonymi odpowiedziami i paginacją
-- Kanał społecznościowy z tworzeniem postów, reakcjami i załącznikami multimedialnymi
+- Drzewa wątków komentarzy z zagnieżdżonymi odpowiedziami i paginacją
+- Feed społecznościowy z tworzeniem postów, reakcjami i załącznikami multimedialnymi
 - Tryb czatu na żywo z automatycznym przewijaniem i separatorami dat
-- Aktualizacje w czasie rzeczywistym poprzez WebSocket (nowe komentarze, głosy, obecność)
-- Logowanie jednokrotne (Simple SSO do testów, Secure SSO do produkcji)
-- Edytor tekstu sformatowanego z pogrubieniem, kursywą, kodem i @wzmiankami
-- Głosowanie z konfigurowalnymi stylami (strzałki góra/dół lub serduszka)
-- Działania moderacyjne: zgłoś, przypnij, zamknij, zablokuj
-- Kompleksowe motywy z presetami i pełną możliwością dostosowania
-- Niestandardowe przyciski paska narzędzi do tworzenia komentarzy i postów w kanale
+- Aktualizacje w czasie rzeczywistym przez WebSocket (nowe komentarze, głosy, obecność)
+- Single Sign-On (Simple SSO do testów, Secure SSO do produkcji)
+- Edycja tekstu sformatowanego: pogrubienie, kursywa, kod i @wzmianki
+- Głosowanie z konfigurowalnymi stylami (strzałki w górę/w dół lub serca)
+- Ankiety w komentarzach z wynikami na żywo
+- Akcje moderacji: zgłoś, przypnij, zablokuj, zbanuj
+- Kompleksowa personalizacja wyglądu z presetami i pełną customizacją
+- Niestandardowe przyciski paska narzędzi dla komentarzy i tworzenia postów w feedzie
 - Przesyłanie obrazów
 - Obsługa regionu UE
-- Obecność użytkowników (wskaźniki online/offline)
-- Filtrowanie kanału oparte na tagach
+- Obecność użytkownika (wskaźniki online/offline)
+- Filtrowanie feedu na podstawie tagów
 - Obsługa lokalizacji

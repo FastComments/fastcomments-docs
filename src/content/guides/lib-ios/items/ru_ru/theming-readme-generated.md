@@ -1,18 +1,18 @@
-### Предустановки темы
+### Готовые темы
 
-Доступны четыре встроенные предустановки:
+Доступны четыре встроенных пресета:
 
 ```swift
-// System defaults
+// Системные настройки по умолчанию
 sdk.theme = FastCommentsTheme.default
 
-// Cards with shadows and large rounded corners
+// Карточки с тенями и большими скруглёнными углами
 sdk.theme = FastCommentsTheme.modern
 
-// Flat, no shadows, small corner radius, no thread lines
+// Плоский стиль, без теней, малый радиус скругления, без линий веток
 sdk.theme = FastCommentsTheme.minimal
 
-// Set all action colors to a single brand color
+// Установить все акцентные цвета в один цвет бренда
 sdk.theme = FastCommentsTheme.allPrimary(.indigo)
 ```
 
@@ -20,52 +20,52 @@ sdk.theme = FastCommentsTheme.allPrimary(.indigo)
 
 ```swift
 var theme = FastCommentsTheme()
-theme.commentStyle = .flat    // Flat list with dividers (default)
-theme.commentStyle = .card    // Rounded cards with shadows
-theme.commentStyle = .bubble  // Chat bubble style
+theme.commentStyle = .flat    // Плоский список с разделителями (по умолчанию)
+theme.commentStyle = .card    // Скруглённые карточки с тенями
+theme.commentStyle = .bubble  // Стиль пузырей чата
 ```
 
 ### Цвета
 
-Все свойства цвета необязательны. Незаполненные значения возвращаются к разумным системным значениям по умолчанию.
+Все свойства цветов необязательны. Неустановленные значения откатываются к разумным системным значениям по умолчанию.
 
 ```swift
 var theme = FastCommentsTheme()
 
-// Brand colors
+// Цвета бренда
 theme.primaryColor = .indigo
 theme.primaryLightColor = .indigo.opacity(0.6)
 theme.primaryDarkColor = Color(red: 0.2, green: 0.1, blue: 0.5)
 
-// Backgrounds
+// Фоны
 theme.commentBackgroundColor = Color(.secondarySystemGroupedBackground)
 theme.containerBackgroundColor = Color(.systemGroupedBackground)
 
-// Action buttons
+// Кнопки действий
 theme.actionButtonColor = .indigo
 theme.replyButtonColor = .indigo
 theme.toggleRepliesButtonColor = .indigo.opacity(0.8)
 theme.loadMoreButtonTextColor = .indigo
 
-// Votes
+// Голоса
 theme.voteActiveColor = .red
 theme.voteCountColor = .primary
 theme.voteCountZeroColor = .secondary
 theme.voteDividerColor = Color(.separator)
 
-// Links
+// Ссылки
 theme.linkColor = .indigo
 theme.linkColorPressed = .indigo.opacity(0.5)
 
-// Dialogs
+// Диалоги
 theme.dialogHeaderBackgroundColor = .indigo
 theme.dialogHeaderTextColor = .white
 
-// Input bar
+// Панель ввода
 theme.inputBarBackgroundColor = Color(.systemBackground)
 theme.inputBarBorderColor = Color(.separator)
 
-// Other
+// Прочее
 theme.onlineIndicatorColor = .green
 theme.separatorColor = Color(.separator)
 theme.badgeBackgroundColor = .gray.opacity(0.2)
@@ -81,12 +81,12 @@ theme.captionFont = .caption
 theme.actionFont = .caption.weight(.medium)
 ```
 
-### Макет и отступы
+### Компоновка и отступы
 
 ```swift
 theme.cornerRadius = .large       // .none, .small, .medium, .large
-theme.commentSpacing = 4          // Точек между строками комментариев
-theme.nestingIndent = 20          // Отступ в точках на уровень вложенности
+theme.commentSpacing = 4          // Отступы между строками комментариев в пунктах
+theme.nestingIndent = 20          // Отступ в пунктах на каждый уровень вложенности
 theme.avatarSize = 36             // Диаметр аватара для корневых комментариев
 theme.replyAvatarSize = 28        // Диаметр аватара для вложенных ответов
 ```
@@ -94,9 +94,9 @@ theme.replyAvatarSize = 28        // Диаметр аватара для вло
 ### Визуальные эффекты
 
 ```swift
-theme.showShadows = true          // Subtle shadows on cards
-theme.showThreadLine = true       // Vertical line connecting nested replies
-theme.animateVotes = true         // Spring animation on vote changes
+theme.showShadows = true          // Лёгкие тени на карточках
+theme.showThreadLine = true       // Вертикальная линия, соединяющая вложенные ответы
+theme.animateVotes = true         // Пружинная анимация при изменении голосов
 ```
 
 ### Применение тем
@@ -104,13 +104,33 @@ theme.animateVotes = true         // Spring animation on vote changes
 Два подхода:
 
 ```swift
-// Via SwiftUI environment (recommended for view hierarchy)
+// Через окружение SwiftUI (рекомендуется для иерархии представлений)
 FastCommentsView(sdk: sdk)
     .fastCommentsTheme(theme)
 
-// Directly on the SDK
+// Напрямую на SDK
 sdk.theme = theme
 ```
 
 ---
----
+
+
+### Цвета опросов
+
+По умолчанию опросы используют цвета карточки опроса веб-виджета в светлой и тёмной темах. Установка `primaryColor` также меняет акцентный цвет и полосу выбранного вами варианта. Чтобы задать их напрямую:
+
+```swift
+var theme = FastCommentsTheme()
+theme.pollAccentColor = .indigo
+```
+
+| Свойство | Используется для |
+|----------|----------|
+| `pollAccentColor` | Рамки и галочки выбранного варианта, выбранной длительности, «Ваш голос учтён» |
+| `pollAccentTextColor` | Галочки и текста, нарисованного на акцентном цвете |
+| `pollOptionBackgroundColor` | Фона плашки варианта |
+| `pollOptionPressedBackgroundColor` | Фона плашки варианта при нажатии |
+| `pollBarColor` | Полосы результата для вариантов, которые вы не выбрали |
+| `pollSelectedBarColor` | Полосы результата для выбранного вами варианта |
+| `pollBorderColor` | Отметки чекбокса и контурных пилюль |
+| `pollDangerColor` | Ошибок и «Удалить опрос» |

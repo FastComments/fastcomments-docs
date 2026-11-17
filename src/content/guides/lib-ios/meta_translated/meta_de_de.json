@@ -3,7 +3,7 @@
   "pageHeader": "Kommentare zu Ihrer iOS-App hinzufügen",
   "itemsOrdered": [
     {
-      "name": "KI-Programmieragenten",
+      "name": "KI-Coding-Agenten",
       "file": "ai-coding-agents-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"
@@ -39,8 +39,14 @@
       "type": "readme"
     },
     {
-      "name": "Verschachtelte Kommentare",
+      "name": "Thread-Kommentare",
       "file": "threaded-comments-readme-generated.md",
+      "subCat": "Dokumentation",
+      "type": "readme"
+    },
+    {
+      "name": "Umfragen",
+      "file": "polls-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"
     },
@@ -51,19 +57,19 @@
       "type": "readme"
     },
     {
-      "name": "Sozialer Feed",
+      "name": "Social Feed",
       "file": "social-feed-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"
     },
     {
-      "name": "Themenanpassung",
+      "name": "Theming",
       "file": "theming-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"
     },
     {
-      "name": "Benutzerdefinierte Symbolleisten-Schaltflächen",
+      "name": "Benutzerdefinierte Toolbar-Schaltflächen",
       "file": "custom-toolbar-buttons-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"
@@ -87,7 +93,7 @@
       "type": "readme"
     },
     {
-      "name": "Zustand und Beobachtbarkeit",
+      "name": "Status und Observability",
       "file": "state-and-observability-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"
@@ -99,7 +105,7 @@
       "type": "readme"
     },
     {
-      "name": "Aufräumen",
+      "name": "Bereinigung",
       "file": "cleanup-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"
@@ -111,13 +117,13 @@
       "type": "readme"
     },
     {
-      "name": "Benutzererwähnungen",
+      "name": "Benutzer-Erwähnungen",
       "file": "user-mentions-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"
     },
     {
-      "name": "Bearbeiten und Löschen von Kommentaren",
+      "name": "Kommentare bearbeiten und löschen",
       "file": "editing-and-deleting-comments-readme-generated.md",
       "subCat": "Dokumentation",
       "type": "readme"

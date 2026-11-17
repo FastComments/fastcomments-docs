@@ -1,28 +1,41 @@
 ## Parameters
 
 | Naam | Type | Verplicht | Beschrijving |
-|------|------|-----------|--------------|
+|------|------|----------|-------------|
 | tenantId | string | Ja |  |
 | createTenantPackageBody | CreateTenantPackageBody | Ja |  |
 
-## Respons
+## Response
 
-Retourneert: [`CreateTenantPackageResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantPackageResponse.ts)
+Geeft terug: [`CreateTenantPackageResponse`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/CreateTenantPackageResponse.ts)
 
 ## Voorbeeld
 
 [inline-code-attrs-start title = 'createTenantPackage Voorbeeld'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-async function runExample() {
-  const tenantId: string = "tenant_9f8b7c6d";
+async function createTenantPackageExample(): Promise<void> {
+  const tenantId: string = '5f2a9b3c8e4d1a2b3c4d5e6f';
+
   const createTenantPackageBody: CreateTenantPackageBody = {
-    name: "Enterprise Package",
-    priceCents: 49999,
-    // optioneel veld
-    description: "Full suite of enterprise features"
+    name: 'Premium Support Package',
+    packageId: 'tenant-premium-annual',
+    billingInterval: 'yearly',
+    price: 499.99,
+    currency: 'USD',
+    maxSeats: 25,
+    status: 'active'
   };
-  const result: CreateTenantPackageResponse = await createTenantPackage(tenantId, createTenantPackageBody);
-  console.log(result);
+
+  const result: CreateTenantPackageResponse = await createTenantPackage(
+    tenantId,
+    createTenantPackageBody
+  );
+
+  const status: APIStatus = result.status;
+  const createdPackage: TenantPackage | undefined = result.tenantPackage;
+
+  if (createdPackage) {
+    console.log(`Created package ${createdPackage.name} with status ${status}`);
+  }
 }
-runExample();
 [inline-code-end]

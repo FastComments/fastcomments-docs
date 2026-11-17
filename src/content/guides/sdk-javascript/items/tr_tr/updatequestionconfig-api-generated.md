@@ -1,6 +1,6 @@
 ## Parametreler
 
-| Name | Type | Required | Description |
+| Ad | Tür | Zorunlu | Açıklama |
 |------|------|----------|-------------|
 | tenantId | string | Evet |  |
 | id | string | Evet |  |
@@ -14,16 +14,33 @@ Döndürür: [`APIEmptyResponse`](https://github.com/FastComments/fastcomments-s
 
 [inline-code-attrs-start title = 'updateQuestionConfig Örneği'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-(async () => {
-  const tenantId: string = "acme-corp-tenant";
-  const questionId: string = "question-42";
+const tenantId: string = "5a5c8f6e8f6e8f6e8f6e8f6e";
 
-  const updateBody: UpdateQuestionConfigBody = {
-    title: "Revised FAQ Question"
-    // isActive, customOptions, vb. isteğe bağlıdır ve atlanmıştır
-  };
+const updateBody: UpdateQuestionConfigBody = {
+  question: "How satisfied are you with our service?",
+  type: "multiple_choice",
+  required: true,
+  order: 1,
+  customOptions: [
+    { label: "Very satisfied", value: "5" },
+    { label: "Neutral", value: "3" },
+    { label: "Very dissatisfied", value: "1" }
+  ],
+  subQuestions: [
+    {
+      question: "What can we improve?",
+      type: "text",
+      condition: {
+        operator: "matches",
+        optionValue: "1"
+      }
+    }
+  ]
+};
 
-  const response: APIEmptyResponse = await updateQuestionConfig(tenantId, questionId, updateBody);
-  console.log(response);
-})();
+const response: APIEmptyResponse = await updateQuestionConfig(
+  tenantId,
+  "q-config-98765",
+  updateBody
+);
 [inline-code-end]

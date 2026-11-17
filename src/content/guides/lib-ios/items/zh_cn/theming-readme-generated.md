@@ -9,10 +9,10 @@ sdk.theme = FastCommentsTheme.default
 // 带阴影和大圆角的卡片
 sdk.theme = FastCommentsTheme.modern
 
-// 扁平，无阴影，小圆角，无回复线
+// 扁平化、无阴影、小圆角、无线程线
 sdk.theme = FastCommentsTheme.minimal
 
-// 将所有操作颜色设置为单一品牌颜色
+// 将所有操作颜色设置为单一品牌色
 sdk.theme = FastCommentsTheme.allPrimary(.indigo)
 ```
 
@@ -84,9 +84,9 @@ theme.actionFont = .caption.weight(.medium)
 ### 布局与间距
 
 ```swift
-theme.cornerRadius = .large       // 可选：.none、.small、.medium、.large
-theme.commentSpacing = 4          // 评论行之间的间距（以点为单位）
-theme.nestingIndent = 20          // 每个嵌套层级的缩进（以点为单位）
+theme.cornerRadius = .large       // .none、.small、.medium、.large
+theme.commentSpacing = 4          // 评论行之间的间距（磅）
+theme.nestingIndent = 20          // 每个嵌套层级的缩进（磅）
 theme.avatarSize = 36             // 根评论的头像直径
 theme.replyAvatarSize = 28        // 嵌套回复的头像直径
 ```
@@ -96,15 +96,15 @@ theme.replyAvatarSize = 28        // 嵌套回复的头像直径
 ```swift
 theme.showShadows = true          // 卡片上的细微阴影
 theme.showThreadLine = true       // 连接嵌套回复的垂直线
-theme.animateVotes = true         // 投票更改时的弹簧动画
+theme.animateVotes = true         // 投票变化时的弹簧动画
 ```
 
 ### 应用主题
 
-两种方法：
+两种方式：
 
 ```swift
-// 通过 SwiftUI 环境（推荐用于视图层次）
+// 通过 SwiftUI 环境（推荐用于视图层级）
 FastCommentsView(sdk: sdk)
     .fastCommentsTheme(theme)
 
@@ -113,4 +113,23 @@ sdk.theme = theme
 ```
 
 ---
----
+
+### 投票颜色
+
+投票功能默认使用 Web 小部件的投票卡片颜色，包括浅色和深色模式。设置 `primaryColor` 也会更改强调色以及你所选选项的进度条颜色。若要直接设置：
+
+```swift
+var theme = FastCommentsTheme()
+theme.pollAccentColor = .indigo
+```
+
+| 属性 | 用途 |
+|----------|----------|
+| `pollAccentColor` | 选中选项的边框和勾选标记、所选时长、“你的投票已提交” |
+| `pollAccentTextColor` | 绘制在强调色上的勾选标记和文本 |
+| `pollOptionBackgroundColor` | 选项卡片背景 |
+| `pollOptionPressedBackgroundColor` | 按下时的选项卡片背景 |
+| `pollBarColor` | 你未选择的选项的结果条 |
+| `pollSelectedBarColor` | 你选择的选项的结果条 |
+| `pollBorderColor` | 复选框标记和描边胶囊 |
+| `pollDangerColor` | 错误和“删除投票” |

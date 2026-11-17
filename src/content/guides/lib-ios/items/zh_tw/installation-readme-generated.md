@@ -2,11 +2,11 @@
 
 在 Xcode 中：**File > Add Package Dependencies**，然後輸入儲存庫 URL。
 
-或將其加入您的 `Package.swift`：
+或者將它加入您的 `Package.swift`：
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/fastcomments/fastcomments-ios.git", from: "2.0.0")
+    .package(url: "https://github.com/fastcomments/fastcomments-ios.git", from: "2.1.0")
 ]
 ```
 

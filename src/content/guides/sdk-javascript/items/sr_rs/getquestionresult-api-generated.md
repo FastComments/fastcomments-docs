@@ -1,6 +1,6 @@
 ## Параметри
 
-| Име | Тип | Обавезно | Опис |
+| Назив | Тип | Обавезно | Опис |
 |------|------|----------|-------------|
 | tenantId | string | Да |  |
 | id | string | Да |  |
@@ -11,16 +11,22 @@
 
 ## Пример
 
-[inline-code-attrs-start title = 'getQuestionResult Primer'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-attrs-start title = 'getQuestionResult пример'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
 [inline-code-start]
-const tenantId: string = "tenant_12345";
-const questionId: string = "question_98765";
+async function fetchQuestionResult(): Promise<void> {
+  const tenantId: string = '5a3b8f9c2d1e4a0001aabbcc';
+  const questionId: string = 'q-7892-hflu-survey';
 
-const response: GetQuestionResultResponse = await getQuestionResult(tenantId, questionId);
+  const response: GetQuestionResultResponse = await getQuestionResult(tenantId, questionId);
 
-const status: APIStatus | undefined = response.status;
-const firstResult: QuestionResult | undefined = response.results?.[0];
-const firstMeta: MetaItem | undefined = response.meta?.[0];
+  const status: APIStatus = response.status;
+  const result: QuestionResult | undefined = response.result;
+  const meta: MetaItem[] | undefined = response.meta;
 
-console.log(response);
+  if (result) {
+    console.log(`Question ${result.id} status: ${status}`);
+  }
+}
+
+fetchQuestionResult();
 [inline-code-end]

@@ -1,6 +1,6 @@
 {
   "name": "SDK JavaScript/TypeScript",
-  "pageHeader": "SDK FastComments JavaScript/TypeScript",
+  "pageHeader": "SDK JavaScript/TypeScript FastComments",
   "itemsOrdered": [
     {
       "name": "Agents de codage IA",
@@ -11,7 +11,7 @@
     {
       "name": "Installation",
       "file": "installation-readme-generated.md",
-      "subCat": "Commencer",
+      "subCat": "Premiers pas",
       "type": "readme"
     },
     {
@@ -21,7 +21,7 @@
       "type": "readme"
     },
     {
-      "name": "Compatibilité Navigateur vs Serveur",
+      "name": "Compatibilité navigateur vs serveur",
       "file": "browser-vs-server-compatibility-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"
@@ -33,25 +33,25 @@
       "type": "readme"
     },
     {
-      "name": "APIs Publiques vs Sécurisées",
+      "name": "API publiques vs sécurisées",
       "file": "public-vs-secured-apis-readme-generated.md",
       "subCat": "Référence API",
       "type": "readme"
     },
     {
-      "name": "Intégration SSO (Authentification Unique)",
+      "name": "Intégration SSO (authentification unique)",
       "file": "sso-single-sign-on-integration-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"
     },
     {
-      "name": "Cas d'utilisation courants",
+      "name": "Cas d'usage courants",
       "file": "common-use-cases-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"
     },
     {
-      "name": "Événements en direct (Mises à jour en temps réel)",
+      "name": "Événements en direct (mises à jour en temps réel)",
       "file": "live-events-real-time-updates-readme-generated.md",
       "subCat": "Documentation",
       "type": "readme"
@@ -71,7 +71,7 @@
     {
       "name": "createAgentTenant",
       "file": "createagenttenant-api-generated.md",
-      "subCat": "Locataires d'agent",
+      "subCat": "Tenants d'agents",
       "type": "api"
     },
     {
@@ -87,21 +87,33 @@
       "type": "api"
     },
     {
+      "name": "getBatchJob",
+      "file": "getbatchjob-api-generated.md",
+      "subCat": "Tâches par lots",
+      "type": "api"
+    },
+    {
+      "name": "getBatchJobs",
+      "file": "getbatchjobs-api-generated.md",
+      "subCat": "Tâches par lots",
+      "type": "api"
+    },
+    {
       "name": "blockFromCommentPublic",
       "file": "blockfromcommentpublic-api-generated.md",
-      "subCat": "Blocage depuis le commentaire",
+      "subCat": "Blocage depuis un commentaire",
       "type": "api"
     },
     {
       "name": "unBlockCommentPublic",
       "file": "unblockcommentpublic-api-generated.md",
-      "subCat": "Blocage depuis le commentaire",
+      "subCat": "Blocage depuis un commentaire",
       "type": "api"
     },
     {
       "name": "checkedCommentsForBlocked",
       "file": "checkedcommentsforblocked-api-generated.md",
-      "subCat": "Vérifier les commentaires bloqués",
+      "subCat": "Vérification des commentaires bloqués",
       "type": "api"
     },
     {
@@ -201,6 +213,12 @@
       "type": "api"
     },
     {
+      "name": "translateComments",
+      "file": "translatecomments-api-generated.md",
+      "subCat": "Commentaires",
+      "type": "api"
+    },
+    {
       "name": "unBlockUserFromComment",
       "file": "unblockuserfromcomment-api-generated.md",
       "subCat": "Commentaires",
@@ -239,7 +257,7 @@
     {
       "name": "getCommentsForUser",
       "file": "getcommentsforuser-api-generated.md",
-      "subCat": "Commentaires pour l'utilisateur",
+      "subCat": "Commentaires d'un utilisateur",
       "type": "api"
     },
     {
@@ -281,151 +299,151 @@
     {
       "name": "createEmailTemplate",
       "file": "createemailtemplate-api-generated.md",
-      "subCat": "Modèles d'email",
+      "subCat": "Modèles d'e-mail",
       "type": "api"
     },
     {
       "name": "deleteEmailTemplate",
       "file": "deleteemailtemplate-api-generated.md",
-      "subCat": "Modèles d'email",
+      "subCat": "Modèles d'e-mail",
       "type": "api"
     },
     {
       "name": "deleteEmailTemplateRenderError",
       "file": "deleteemailtemplaterendererror-api-generated.md",
-      "subCat": "Modèles d'email",
+      "subCat": "Modèles d'e-mail",
       "type": "api"
     },
     {
       "name": "getEmailTemplate",
       "file": "getemailtemplate-api-generated.md",
-      "subCat": "Modèles d'email",
+      "subCat": "Modèles d'e-mail",
       "type": "api"
     },
     {
       "name": "getEmailTemplateDefinitions",
       "file": "getemailtemplatedefinitions-api-generated.md",
-      "subCat": "Modèles d'email",
+      "subCat": "Modèles d'e-mail",
       "type": "api"
     },
     {
       "name": "getEmailTemplateRenderErrors",
       "file": "getemailtemplaterendererrors-api-generated.md",
-      "subCat": "Modèles d'email",
+      "subCat": "Modèles d'e-mail",
       "type": "api"
     },
     {
       "name": "getEmailTemplates",
       "file": "getemailtemplates-api-generated.md",
-      "subCat": "Modèles d'email",
+      "subCat": "Modèles d'e-mail",
       "type": "api"
     },
     {
       "name": "renderEmailTemplate",
       "file": "renderemailtemplate-api-generated.md",
-      "subCat": "Modèles d'email",
+      "subCat": "Modèles d'e-mail",
       "type": "api"
     },
     {
       "name": "updateEmailTemplate",
       "file": "updateemailtemplate-api-generated.md",
-      "subCat": "Modèles d'email",
+      "subCat": "Modèles d'e-mail",
       "type": "api"
     },
     {
       "name": "getEventLog",
       "file": "geteventlog-api-generated.md",
-      "subCat": "Journal d'événements",
+      "subCat": "Journal des événements",
       "type": "api"
     },
     {
       "name": "getGlobalEventLog",
       "file": "getglobaleventlog-api-generated.md",
-      "subCat": "Journal d'événements",
+      "subCat": "Journal des événements",
       "type": "api"
     },
     {
       "name": "createFeedPost",
       "file": "createfeedpost-api-generated.md",
-      "subCat": "Publications du fil",
+      "subCat": "Publications de fil",
       "type": "api"
     },
     {
       "name": "createFeedPostPublic",
       "file": "createfeedpostpublic-api-generated.md",
-      "subCat": "Publications du fil",
+      "subCat": "Publications de fil",
       "type": "api"
     },
     {
       "name": "deleteFeedPostPublic",
       "file": "deletefeedpostpublic-api-generated.md",
-      "subCat": "Publications du fil",
+      "subCat": "Publications de fil",
       "type": "api"
     },
     {
       "name": "getFeedPosts",
       "file": "getfeedposts-api-generated.md",
-      "subCat": "Publications du fil",
+      "subCat": "Publications de fil",
       "type": "api"
     },
     {
       "name": "getFeedPostsPublic",
       "file": "getfeedpostspublic-api-generated.md",
-      "subCat": "Publications du fil",
+      "subCat": "Publications de fil",
       "type": "api"
     },
     {
       "name": "getFeedPostsStats",
       "file": "getfeedpostsstats-api-generated.md",
-      "subCat": "Publications du fil",
+      "subCat": "Publications de fil",
       "type": "api"
     },
     {
       "name": "getUserReactsPublic",
       "file": "getuserreactspublic-api-generated.md",
-      "subCat": "Publications du fil",
+      "subCat": "Publications de fil",
       "type": "api"
     },
     {
       "name": "reactFeedPostPublic",
       "file": "reactfeedpostpublic-api-generated.md",
-      "subCat": "Publications du fil",
+      "subCat": "Publications de fil",
       "type": "api"
     },
     {
       "name": "updateFeedPost",
       "file": "updatefeedpost-api-generated.md",
-      "subCat": "Publications du fil",
+      "subCat": "Publications de fil",
       "type": "api"
     },
     {
       "name": "updateFeedPostPublic",
       "file": "updatefeedpostpublic-api-generated.md",
-      "subCat": "Publications du fil",
+      "subCat": "Publications de fil",
       "type": "api"
     },
     {
       "name": "flagCommentPublic",
       "file": "flagcommentpublic-api-generated.md",
-      "subCat": "Signaler le commentaire",
+      "subCat": "Signalement de commentaire",
       "type": "api"
     },
     {
       "name": "getGifLarge",
       "file": "getgiflarge-api-generated.md",
-      "subCat": "GIFs",
+      "subCat": "GIF",
       "type": "api"
     },
     {
       "name": "getGifsSearch",
       "file": "getgifssearch-api-generated.md",
-      "subCat": "GIFs",
+      "subCat": "GIF",
       "type": "api"
     },
     {
       "name": "getGifsTrending",
       "file": "getgifstrending-api-generated.md",
-      "subCat": "GIFs",
+      "subCat": "GIF",
       "type": "api"
     },
     {
@@ -461,7 +479,7 @@
     {
       "name": "getMe",
       "file": "getme-api-generated.md",
-      "subCat": "Moi",
+      "subCat": "Mon profil",
       "type": "api"
     },
     {
@@ -861,6 +879,18 @@
       "type": "api"
     },
     {
+      "name": "getPageLikes",
+      "file": "getpagelikes-api-generated.md",
+      "subCat": "Pages",
+      "type": "api"
+    },
+    {
+      "name": "getPageReacts",
+      "file": "getpagereacts-api-generated.md",
+      "subCat": "Pages",
+      "type": "api"
+    },
+    {
       "name": "getPages",
       "file": "getpages-api-generated.md",
       "subCat": "Pages",
@@ -879,27 +909,39 @@
       "type": "api"
     },
     {
+      "name": "migratePages",
+      "file": "migratepages-api-generated.md",
+      "subCat": "Pages",
+      "type": "api"
+    },
+    {
       "name": "patchPage",
       "file": "patchpage-api-generated.md",
       "subCat": "Pages",
       "type": "api"
     },
     {
+      "name": "undoPageMigrations",
+      "file": "undopagemigrations-api-generated.md",
+      "subCat": "Pages",
+      "type": "api"
+    },
+    {
       "name": "deletePendingWebhookEvent",
       "file": "deletependingwebhookevent-api-generated.md",
-      "subCat": "Événements webhook en attente",
+      "subCat": "Événements de webhook en attente",
       "type": "api"
     },
     {
       "name": "getPendingWebhookEventCount",
       "file": "getpendingwebhookeventcount-api-generated.md",
-      "subCat": "Événements webhook en attente",
+      "subCat": "Événements de webhook en attente",
       "type": "api"
     },
     {
       "name": "getPendingWebhookEvents",
       "file": "getpendingwebhookevents-api-generated.md",
-      "subCat": "Événements webhook en attente",
+      "subCat": "Événements de webhook en attente",
       "type": "api"
     },
     {
@@ -939,6 +981,12 @@
       "type": "api"
     },
     {
+      "name": "getPollVoters",
+      "file": "getpollvoters-api-generated.md",
+      "subCat": "Sondages",
+      "type": "api"
+    },
+    {
       "name": "patchPoll",
       "file": "patchpoll-api-generated.md",
       "subCat": "Sondages",
@@ -947,6 +995,12 @@
     {
       "name": "putPoll",
       "file": "putpoll-api-generated.md",
+      "subCat": "Sondages",
+      "type": "api"
+    },
+    {
+      "name": "votePoll",
+      "file": "votepoll-api-generated.md",
       "subCat": "Sondages",
       "type": "api"
     },
@@ -1097,115 +1151,115 @@
     {
       "name": "getTenantDailyUsages",
       "file": "gettenantdailyusages-api-generated.md",
-      "subCat": "Utilisation quotidienne du locataire",
+      "subCat": "Utilisation quotidienne du tenant",
       "type": "api"
     },
     {
       "name": "createTenantPackage",
       "file": "createtenantpackage-api-generated.md",
-      "subCat": "Forfaits de locataire",
+      "subCat": "Forfaits de tenant",
       "type": "api"
     },
     {
       "name": "deleteTenantPackage",
       "file": "deletetenantpackage-api-generated.md",
-      "subCat": "Forfaits de locataire",
+      "subCat": "Forfaits de tenant",
       "type": "api"
     },
     {
       "name": "getTenantPackage",
       "file": "gettenantpackage-api-generated.md",
-      "subCat": "Forfaits de locataire",
+      "subCat": "Forfaits de tenant",
       "type": "api"
     },
     {
       "name": "getTenantPackages",
       "file": "gettenantpackages-api-generated.md",
-      "subCat": "Forfaits de locataire",
+      "subCat": "Forfaits de tenant",
       "type": "api"
     },
     {
       "name": "replaceTenantPackage",
       "file": "replacetenantpackage-api-generated.md",
-      "subCat": "Forfaits de locataire",
+      "subCat": "Forfaits de tenant",
       "type": "api"
     },
     {
       "name": "updateTenantPackage",
       "file": "updatetenantpackage-api-generated.md",
-      "subCat": "Forfaits de locataire",
+      "subCat": "Forfaits de tenant",
       "type": "api"
     },
     {
       "name": "createTenantUser",
       "file": "createtenantuser-api-generated.md",
-      "subCat": "Utilisateurs du locataire",
+      "subCat": "Utilisateurs du tenant",
       "type": "api"
     },
     {
       "name": "deleteTenantUser",
       "file": "deletetenantuser-api-generated.md",
-      "subCat": "Utilisateurs du locataire",
+      "subCat": "Utilisateurs du tenant",
       "type": "api"
     },
     {
       "name": "getTenantUser",
       "file": "gettenantuser-api-generated.md",
-      "subCat": "Utilisateurs du locataire",
+      "subCat": "Utilisateurs du tenant",
       "type": "api"
     },
     {
       "name": "getTenantUsers",
       "file": "gettenantusers-api-generated.md",
-      "subCat": "Utilisateurs du locataire",
+      "subCat": "Utilisateurs du tenant",
       "type": "api"
     },
     {
       "name": "replaceTenantUser",
       "file": "replacetenantuser-api-generated.md",
-      "subCat": "Utilisateurs du locataire",
+      "subCat": "Utilisateurs du tenant",
       "type": "api"
     },
     {
       "name": "sendLoginLink",
       "file": "sendloginlink-api-generated.md",
-      "subCat": "Utilisateurs du locataire",
+      "subCat": "Utilisateurs du tenant",
       "type": "api"
     },
     {
       "name": "updateTenantUser",
       "file": "updatetenantuser-api-generated.md",
-      "subCat": "Utilisateurs du locataire",
+      "subCat": "Utilisateurs du tenant",
       "type": "api"
     },
     {
       "name": "createTenant",
       "file": "createtenant-api-generated.md",
-      "subCat": "Locataires",
+      "subCat": "Tenants",
       "type": "api"
     },
     {
       "name": "deleteTenant",
       "file": "deletetenant-api-generated.md",
-      "subCat": "Locataires",
+      "subCat": "Tenants",
       "type": "api"
     },
     {
       "name": "getTenant",
       "file": "gettenant-api-generated.md",
-      "subCat": "Locataires",
+      "subCat": "Tenants",
       "type": "api"
     },
     {
       "name": "getTenants",
       "file": "gettenants-api-generated.md",
-      "subCat": "Locataires",
+      "subCat": "Tenants",
       "type": "api"
     },
     {
       "name": "updateTenant",
       "file": "updatetenant-api-generated.md",
-      "subCat": "Locataires",
+      "subCat": "Tenants",
       "type": "api"
     },
     {
@@ -1241,25 +1295,25 @@
     {
       "name": "uploadImage",
       "file": "uploadimage-api-generated.md",
-      "subCat": "Télécharger une image",
+      "subCat": "Téléversement d'image",
       "type": "api"
     },
     {
       "name": "getUserBadgeProgressById",
       "file": "getuserbadgeprogressbyid-api-generated.md",
-      "subCat": "Progression du badge utilisateur",
+      "subCat": "Progression des badges utilisateur",
       "type": "api"
     },
     {
       "name": "getUserBadgeProgressByUserId",
       "file": "getuserbadgeprogressbyuserid-api-generated.md",
-      "subCat": "Progression du badge utilisateur",
+      "subCat": "Progression des badges utilisateur",
       "type": "api"
     },
     {
       "name": "getUserBadgeProgressList",
       "file": "getuserbadgeprogresslist-api-generated.md",
-      "subCat": "Progression du badge utilisateur",
+      "subCat": "Progression des badges utilisateur",
       "type": "api"
     },
     {

@@ -1,6 +1,6 @@
 {
   "name": "iOS библиотека",
-  "pageHeader": "Додајте коментаре у вашу iOS апликацију",
+  "pageHeader": "Додајте коментаре у своју iOS апликацију",
   "itemsOrdered": [
     {
       "name": "AI агенти за кодирање",
@@ -23,7 +23,7 @@
     {
       "name": "Инсталација",
       "file": "installation-readme-generated.md",
-      "subCat": "Започетак",
+      "subCat": "Први кораци",
       "type": "readme"
     },
     {
@@ -39,13 +39,19 @@
       "type": "readme"
     },
     {
-      "name": "Коментари у нитима",
+      "name": "Коментари са нитима",
       "file": "threaded-comments-readme-generated.md",
       "subCat": "Документација",
       "type": "readme"
     },
     {
-      "name": "Ћаскање уживо",
+      "name": "Анкете",
+      "file": "polls-readme-generated.md",
+      "subCat": "Документација",
+      "type": "readme"
+    },
+    {
+      "name": "Живи ћаскање",
       "file": "live-chat-readme-generated.md",
       "subCat": "Документација",
       "type": "readme"
@@ -63,7 +69,7 @@
       "type": "readme"
     },
     {
-      "name": "Прилагођена дугмад у траци са алаткама",
+      "name": "Прилагођени тастери траке са алаткама",
       "file": "custom-toolbar-buttons-readme-generated.md",
       "subCat": "Документација",
       "type": "readme"
@@ -111,7 +117,7 @@
       "type": "readme"
     },
     {
-      "name": "Помена корисника",
+      "name": "Помињање корисника",
       "file": "user-mentions-readme-generated.md",
       "subCat": "Документација",
       "type": "readme"

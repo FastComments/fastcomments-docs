@@ -1,89 +1,89 @@
-요청  
-tenantId  
-urlId  
+req
+tenantId
+urlId
 
-## 매개변수  
+## 매개변수
 
-| 이름 | 유형 | 필수 | 설명 |
+| 이름 | 타입 | 필수 여부 | 설명 |
 |------|------|----------|-------------|
 | tenantId | string | 예 |  |
 | urlId | string | 예 |  |
-| page | number | 아니오 |  |
-| direction | SortDirections | 아니오 |  |
-| sso | string | 아니오 |  |
-| skip | number | 아니오 |  |
-| skipChildren | number | 아니오 |  |
-| limit | number | 아니오 |  |
-| limitChildren | number | 아니오 |  |
-| countChildren | boolean | 아니오 |  |
-| fetchPageForCommentId | string | 아니오 |  |
-| includeConfig | boolean | 아니오 |  |
-| countAll | boolean | 아니오 |  |
-| includei10n | boolean | 아니오 |  |
-| locale | string | 아니오 |  |
-| modules | string | 아니오 |  |
-| isCrawler | boolean | 아니오 |  |
-| includeNotificationCount | boolean | 아니오 |  |
-| asTree | boolean | 아니오 |  |
-| maxTreeDepth | number | 아니오 |  |
-| useFullTranslationIds | boolean | 아니오 |  |
-| parentId | string | 아니오 |  |
-| searchText | string | 아니오 |  |
-| hashTags | Array<string> | 아니오 |  |
-| userId | string | 아니오 |  |
-| customConfigStr | string | 아니오 |  |
-| afterCommentId | string | 아니오 |  |
-| beforeCommentId | string | 아니오 |  |
+| page | number | 아니요 |  |
+| direction | SortDirections | 아니요 |  |
+| sso | string | 아니요 |  |
+| skip | number | 아니요 |  |
+| skipChildren | number | 아니요 |  |
+| limit | number | 아니요 |  |
+| limitChildren | number | 아니요 |  |
+| countChildren | boolean | 아니요 |  |
+| fetchPageForCommentId | string | 아니요 |  |
+| includeConfig | boolean | 아니요 |  |
+| countAll | boolean | 아니요 |  |
+| includei10n | boolean | 아니요 |  |
+| locale | string | 아니요 |  |
+| modules | string | 아니요 |  |
+| isCrawler | boolean | 아니요 |  |
+| includeNotificationCount | boolean | 아니요 |  |
+| asTree | boolean | 아니요 |  |
+| maxTreeDepth | number | 아니요 |  |
+| useFullTranslationIds | boolean | 아니요 |  |
+| parentId | string | 아니요 |  |
+| searchText | string | 아니요 |  |
+| hashTags | Array<string> | 아니요 |  |
+| userId | string | 아니요 |  |
+| customConfigStr | string | 아니요 |  |
+| afterCommentId | string | 아니요 |  |
+| beforeCommentId | string | 아니요 |  |
+| questionId | string | 아니요 |  |
+| questionValue | number | 아니요 |  |
 
-## 응답  
+## 응답
 
-반환: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentsResponseWithPresencePublicComment.ts)
+반환값: [`GetCommentsResponseWithPresencePublicComment`](https://github.com/FastComments/fastcomments-sdk-js/blob/main/src/generated/src/models/GetCommentsResponseWithPresencePublicComment.ts)
 
-## 예시  
+## 예제
 
-[inline-code-attrs-start title = 'getCommentsPublic 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]  
-[inline-code-start]  
-async function loadComments(): Promise<void> {
-  const tenantId: string = "tenant-42",
-        urlId: string = "post-2023-09-15",
-        page: number = 1,
-        direction: SortDirections = "desc",
-        limit: number = 30,
-        includeConfig: boolean = true,
-        locale: string = "en-US",
-        isCrawler: boolean = false,
-        asTree: boolean = true,
-        maxTreeDepth: number = 2,
-        searchText: string = "fastcomments",
-        hashTags: string[] = ["fastcomments","typescript"],
-        userId: string = "user-123";
+[inline-code-attrs-start title = 'getCommentsPublic 예제'; type = 'typescript'; isFunctional = false; inline-code-attrs-end]
+[inline-code-start]
+const tenantId: string = 'abc123def456';
+const urlId: string = 'https://example.com/blog/my-post';
 
-  const result: GetCommentsResponseWithPresencePublicComment = await getCommentsPublic(
-    tenantId,
-    urlId,
-    page,
-    direction,
-    undefined,
-    undefined,
-    undefined,
-    limit,
-    undefined,
-    undefined,
-    undefined,
-    includeConfig,
-    undefined,
-    undefined,
-    locale,
-    undefined,
-    isCrawler,
-    undefined,
-    asTree,
-    maxTreeDepth,
-    undefined,
-    undefined,
-    searchText,
-    hashTags,
-    userId
-  );
-}
-[inline-code-end]  
+const response: GetCommentsResponseWithPresencePublicComment = await getCommentsPublic(
+  tenantId,
+  urlId,
+  1,
+  'DESC' as SortDirections,
+  undefined,
+  0,
+  undefined,
+  25,
+  undefined,
+  true,
+  undefined,
+  undefined,
+  true,
+  true,
+  false,
+  'en-US',
+  undefined,
+  false,
+  true,
+  undefined,
+  true,
+  3,
+  undefined,
+  undefined,
+  'root',
+  'authentication',
+  ['announcement', 'qna'],
+  undefined,
+  undefined,
+  undefined,
+  undefined,
+  undefined
+);
+
+const comments: PublicComment[] = response.comments;
+const presenceCount: number = response.presence?.userCount ?? 0;
+console.log(`${comments.length}개의 댓글을 가져왔으며, ${presenceCount}명의 사용자가 온라인 상태입니다`);
+[inline-code-end]

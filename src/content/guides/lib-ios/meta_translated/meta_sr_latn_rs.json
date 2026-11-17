@@ -1,6 +1,6 @@
 {
   "name": "iOS biblioteka",
-  "pageHeader": "Dodajte komentare u vašu iOS aplikaciju",
+  "pageHeader": "Dodajte komentare svojoj iOS aplikaciji",
   "itemsOrdered": [
     {
       "name": "AI agenti za kodiranje",
@@ -23,7 +23,7 @@
     {
       "name": "Instalacija",
       "file": "installation-readme-generated.md",
-      "subCat": "Početak",
+      "subCat": "Prvi koraci",
       "type": "readme"
     },
     {
@@ -39,13 +39,19 @@
       "type": "readme"
     },
     {
-      "name": "Ugnježdeni komentari",
+      "name": "Komentari u nitima",
       "file": "threaded-comments-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
     },
     {
-      "name": "Uživo čet",
+      "name": "Ankete",
+      "file": "polls-readme-generated.md",
+      "subCat": "Dokumentacija",
+      "type": "readme"
+    },
+    {
+      "name": "Čet uživo",
       "file": "live-chat-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
@@ -57,13 +63,13 @@
       "type": "readme"
     },
     {
-      "name": "Temiranje",
+      "name": "Teme izgleda",
       "file": "theming-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
     },
     {
-      "name": "Prilagođena dugmad na alatnoj traci",
+      "name": "Prilagođeni dugmići toolbar-a",
       "file": "custom-toolbar-buttons-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
@@ -81,13 +87,13 @@
       "type": "readme"
     },
     {
-      "name": "Pagiranje",
+      "name": "Paginacija",
       "file": "pagination-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
     },
     {
-      "name": "Stanje i posmatljivost",
+      "name": "Stanje i posmatranje",
       "file": "state-and-observability-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
@@ -111,13 +117,13 @@
       "type": "readme"
     },
     {
-      "name": "Pominjanje korisnika",
+      "name": "Pominjanja korisnika",
       "file": "user-mentions-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"
     },
     {
-      "name": "Uređivanje i brisanje komentara",
+      "name": "Izmena i brisanje komentara",
       "file": "editing-and-deleting-comments-readme-generated.md",
       "subCat": "Dokumentacija",
       "type": "readme"

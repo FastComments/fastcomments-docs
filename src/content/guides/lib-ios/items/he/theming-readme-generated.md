@@ -1,18 +1,18 @@
-### תבניות נושא
+### ערכות נושא מוכנות
 
-ארבע תבניות מובנות זמינות:
+ארבע ערכות נושא מובנות זמינות:
 
 ```swift
 // ברירות מחדל של המערכת
 sdk.theme = FastCommentsTheme.default
 
-// קלפים עם צללים ופינות מעוגלות גדולות
+// כרטיסים עם צללים ופינות מעוגלות גדולות
 sdk.theme = FastCommentsTheme.modern
 
 // שטוח, ללא צללים, רדיוס פינות קטן, ללא קווי שרשור
 sdk.theme = FastCommentsTheme.minimal
 
-// קבע את כל צבעי הפעולות לצבע מותג יחיד
+// הגדרת כל צבעי הפעולה לצבע מותג אחד
 sdk.theme = FastCommentsTheme.allPrimary(.indigo)
 ```
 
@@ -21,13 +21,13 @@ sdk.theme = FastCommentsTheme.allPrimary(.indigo)
 ```swift
 var theme = FastCommentsTheme()
 theme.commentStyle = .flat    // רשימה שטוחה עם מפרידים (ברירת מחדל)
-theme.commentStyle = .card    // קלפים מעוגלים עם צללים
-theme.commentStyle = .bubble  // סגנון בועת שיחה
+theme.commentStyle = .card    // כרטיסים מעוגלים עם צללים
+theme.commentStyle = .bubble  // סגנון בועת צ'אט
 ```
 
 ### צבעים
 
-כל מאפייני הצבע אופציונליים. ערכים שלא הוגדרו יחזרו לברירות המחדל הסבירות של המערכת.
+כל מאפייני הצבע אופציונליים. ערכים שלא הוגדרו חוזרים לברירות מחדל סבירות של המערכת.
 
 ```swift
 var theme = FastCommentsTheme()
@@ -57,7 +57,7 @@ theme.voteDividerColor = Color(.separator)
 theme.linkColor = .indigo
 theme.linkColorPressed = .indigo.opacity(0.5)
 
-// תיבות דו-שיח
+// דיאלוגים
 theme.dialogHeaderBackgroundColor = .indigo
 theme.dialogHeaderTextColor = .white
 
@@ -65,7 +65,7 @@ theme.dialogHeaderTextColor = .white
 theme.inputBarBackgroundColor = Color(.systemBackground)
 theme.inputBarBorderColor = Color(.separator)
 
-// אחרים
+// אחר
 theme.onlineIndicatorColor = .green
 theme.separatorColor = Color(.separator)
 theme.badgeBackgroundColor = .gray.opacity(0.2)
@@ -81,22 +81,22 @@ theme.captionFont = .caption
 theme.actionFont = .caption.weight(.medium)
 ```
 
-### פריסה וריווח
+### פריסה ומרווחים
 
 ```swift
-theme.cornerRadius = .large       // אפשרויות: .none, .small, .medium, .large
+theme.cornerRadius = .large       // .none, .small, .medium, .large
 theme.commentSpacing = 4          // נקודות בין שורות תגובות
-theme.nestingIndent = 20          // נקודות הזחה לכל רמת שרשור
-theme.avatarSize = 36             // קוטר האוואטר לתגובות שורש
-theme.replyAvatarSize = 28        // קוטר האוואטר לתגובות מקוננות
+theme.nestingIndent = 20          // נקודות הזחה לכל רמת קינון
+theme.avatarSize = 36             // קוטר האווטאר לתגובות שורש
+theme.replyAvatarSize = 28        // קוטר האווטאר לתשובות מקוננות
 ```
 
-### אפקטים ויזואליים
+### אפקטים חזותיים
 
 ```swift
-theme.showShadows = true          // צללים עדינים על קלפים
-theme.showThreadLine = true       // קו אנכי המחבר תגובות מקוננות
-theme.animateVotes = true         // אנימציית קפיץ בעת שינויי הצבעה
+theme.showShadows = true          // צללים עדינים על כרטיסים
+theme.showThreadLine = true       // קו אנכי המחבר תשובות מקוננות
+theme.animateVotes = true         // אנימציית קפיץ בשינויי הצבעות
 ```
 
 ### החלת ערכות נושא
@@ -104,13 +104,33 @@ theme.animateVotes = true         // אנימציית קפיץ בעת שינוי
 שתי גישות:
 
 ```swift
-// Via SwiftUI environment (recommended for view hierarchy)
+// דרך סביבת SwiftUI (מומלץ עבור היררכיית תצוגות)
 FastCommentsView(sdk: sdk)
     .fastCommentsTheme(theme)
 
-// Directly on the SDK
+// ישירות על ה-SDK
 sdk.theme = theme
 ```
 
 ---
----
+
+
+### צבעי סקרים
+
+סקרים משתמשים כברירת מחדל בצבעי כרטיס הסקר של ווידג'ט האינטרנט, במצב בהיר וכהה. הגדרת `primaryColor` משנה גם את צבע ההדגשה ואת הסרגל של האפשרות שבחרת. כדי להגדיר אותם ישירות:
+
+```swift
+var theme = FastCommentsTheme()
+theme.pollAccentColor = .indigo
+```
+
+| מאפיין | משמש עבור |
+|----------|----------|
+| `pollAccentColor` | גבול וסימון האפשרות הנבחרת, משך הבחירה, "ההצבעה שלך נרשמה" |
+| `pollAccentTextColor` | סימן הוי וטקסט המצויר על צבע ההדגשה |
+| `pollOptionBackgroundColor` | רקע צ'יפ האפשרות |
+| `pollOptionPressedBackgroundColor` | רקע צ'יפ האפשרות בזמן לחיצה |
+| `pollBarColor` | סרגל תוצאות לאפשרויות שלא בחרת |
+| `pollSelectedBarColor` | סרגל תוצאות לאפשרות שבחרת |
+| `pollBorderColor` | סימון תיבת סימון וגלולות מתוחמות |
+| `pollDangerColor` | שגיאות ו"הסרת סקר" |
