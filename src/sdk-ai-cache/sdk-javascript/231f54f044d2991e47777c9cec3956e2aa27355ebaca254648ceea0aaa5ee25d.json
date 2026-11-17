@@ -1,0 +1,7 @@
+{
+  "method": "getCommentsPublic",
+  "signatureHash": "231f54f044d2991e47777c9cec3956e2aa27355ebaca254648ceea0aaa5ee25d",
+  "generatedAt": "2026-11-17T12:34:15.103Z",
+  "codeExample": "const tenantId: string = 'abc123def456';\nconst urlId: string = 'https://example.com/blog/my-post';\n\nconst response: GetCommentsResponseWithPresencePublicComment = await getCommentsPublic(\n  tenantId,\n  urlId,\n  1,\n  'DESC' as SortDirections,\n  undefined,\n  0,\n  undefined,\n  25,\n  undefined,\n  true,\n  undefined,\n  undefined,\n  true,\n  true,\n  false,\n  'en-US',\n  undefined,\n  false,\n  true,\n  undefined,\n  true,\n  3,\n  undefined,\n  undefined,\n  'root',\n  'authentication',\n  ['announcement', 'qna'],\n  undefined,\n  undefined,\n  undefined,\n  undefined,\n  undefined\n);\n\nconst comments: PublicComment[] = response.comments;\nconst presenceCount: number = response.presence?.userCount ?? 0;\nconsole.log(`Fetched ${comments.length} comments, ${presenceCount} users online`);",
+  "model": "zai-org/GLM-5.3-Flash"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getPageLikes",
+  "signatureHash": "6bbe2e6dfc22a9880045dbe98209a147cfb4af6ecc15debb1279ee81674ccba8",
+  "generatedAt": "2026-11-17T12:34:09.251Z",
+  "codeExample": "const tenantId: string = 'a1b2c3d4e5f6';\nconst urlId: string = 'https://mysite.com/blog/best-coffee-2024';\n\n// Basic call with required parameters\nconst likesResponse: GetPageLikesAPIResponse = await getPageLikes(tenantId, urlId);\nconsole.log(`Page has ${likesResponse.pageLikes.length} likes`);\n\n// Include user info for each like\nconst likesWithUsers: GetPageLikesAPIResponse = await getPageLikes(tenantId, urlId, 'true');\nlikesWithUsers.pageLikes.forEach((like: PageReactUser) => {\n  console.log(`${like.name} liked this page on ${like.date}`);\n});",
+  "model": "zai-org/GLM-5.3-Flash"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "saveCommentsBulk",
+  "signatureHash": "59bbad20677c406f831a39499b42e7ea190c32ab4108cde9fe273d77f8b786db",
+  "generatedAt": "2026-11-17T12:34:35.986Z",
+  "codeExample": "const tenantId: string = 'demo-rowy';\n\nconst commentParams: CreateCommentParams = {\n  url: 'https://blog.example.com/announcing-v2-release',\n  pageTitle: 'Announcing v2 Release',\n  email: 'sarah.johnson@gmail.com',\n  author: 'Sarah Johnson',\n  comment: 'This update looks amazing! Just tried it on our staging site.',\n  zmqUid: '177244808120441',\n  userMentions: [{\n    email: 'dev.lead@company.com',\n    author: 'Alex Lead'\n  }] as unknown as CommentUserMentionInfo[]\n};\n\nconst createCommentParams: Array<CreateCommentParams> = [commentParams];\n\nconst responses: Array<SaveCommentsBulkResponse> = await saveCommentsBulk(\n  tenantId,\n  createCommentParams,\n  true,   // isLive\n  true,   // doSpamCheck\n  false,  // sendEmails\n  true    // populateNotifications\n);\n\nconst firstResponse: SaveCommentsBulkResponse = responses[0];",
+  "model": "zai-org/GLM-5.3-Flash"
+}

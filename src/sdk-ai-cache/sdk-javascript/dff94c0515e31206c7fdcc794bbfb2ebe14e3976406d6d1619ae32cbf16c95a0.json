@@ -1,0 +1,7 @@
+{
+  "method": "getPendingWebhookEvents",
+  "signatureHash": "dff94c0515e31206c7fdcc794bbfb2ebe14e3976406d6d1619ae32cbf16c95a0",
+  "generatedAt": "2026-11-17T12:34:07.136Z",
+  "codeExample": "const tenantId: string = '5a2f4d3c8b9e1a2b3c4d5e6f';\n\nconst pendingEvents: GetPendingWebhookEventsResponse = await getPendingWebhookEvents(tenantId, {\n    commentId: 'abc123def456',\n    eventType: 'comment-created',\n    attemptCountGT: 2,\n    skip: 0\n});\n\nconsole.log(`Found ${pendingEvents.items.length} pending webhook events`);",
+  "model": "zai-org/GLM-5.3-Flash"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "createQuestionResult",
+  "signatureHash": "92645262ddb080d08889c44a9f4e3bbc1bbf1afab91ee5ffb41a0ac0aa8c821e",
+  "generatedAt": "2026-11-17T12:34:14.404Z",
+  "codeExample": "const tenantId: string = 'abc123def456';\n\nconst createQuestionResultBody: CreateQuestionResultBody = {\n  questionId: 'q-789',\n  voterId: 'user-456',\n  answerId: 'answer-yes',\n  meta: { itemId: 'post-1234', itemType: 'blog-post' } as MetaItem\n};\n\nconst response: CreateQuestionResultResponse = await createQuestionResult(\n  tenantId,\n  createQuestionResultBody\n);\n\nconst status: APIStatus = response.status;\nconst questionResult: QuestionResult | undefined = response.questionResult;\nconsole.log(`Created question result with status: ${status}`);",
+  "model": "zai-org/GLM-5.3-Flash"
+}

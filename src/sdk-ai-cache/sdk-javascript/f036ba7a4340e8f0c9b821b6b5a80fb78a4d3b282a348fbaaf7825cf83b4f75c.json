@@ -1,0 +1,7 @@
+{
+  "method": "getBatchJob",
+  "signatureHash": "f036ba7a4340e8f0c9b821b6b5a80fb78a4d3b282a348fbaaf7825cf83b4f75c",
+  "generatedAt": "2026-11-17T12:34:14.326Z",
+  "codeExample": "const tenantId: string = 'abc1234567890';\nconst batchJobId: string = 'job_5f8a9b2c3d4e5f6a7b8c9d0e';\n\nconst response: GetBatchJobAPIResponse = await getBatchJob(tenantId, batchJobId);\n\nconst job: APIBatchJob = response.job;\nconst undoCounts: PageMigrationUndoCounts | undefined = job.pageMigrationResults?.[0]?.undoCounts;\n\nconsole.log(`Batch job ${job.id} status: ${job.status}`);\nif (undoCounts) {\n  console.log(`Undo counts: ${JSON.stringify(undoCounts)}`);\n}",
+  "model": "zai-org/GLM-5.3-Flash"
+}

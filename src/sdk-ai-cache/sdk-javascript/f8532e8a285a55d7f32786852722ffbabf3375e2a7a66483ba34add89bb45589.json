@@ -1,0 +1,7 @@
+{
+  "method": "getPageReacts",
+  "signatureHash": "f8532e8a285a55d7f32786852722ffbabf3375e2a7a66483ba34add89bb45589",
+  "generatedAt": "2026-11-17T12:34:14.250Z",
+  "codeExample": "const tenantId: string = 'abc123def456';\nconst urlId: string = 'my-blog-post-42';\nconst includeUserInfo: PageReactIncludeUserInfo = true;\n\nconst response: GetPageReactsAPIResponse = await getPageReacts(\n  tenantId,\n  urlId,\n  includeUserInfo\n);\n\nconst reacts = response.pageReacts;\nconst reactCount: number = reacts.like.count;\nconst users: PageCustomReactUser[] = reacts.like.userDetails ?? [];",
+  "model": "zai-org/GLM-5.3-Flash"
+}

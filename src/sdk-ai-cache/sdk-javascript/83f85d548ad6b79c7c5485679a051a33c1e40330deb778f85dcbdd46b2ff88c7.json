@@ -1,0 +1,7 @@
+{
+  "method": "updateQuestionConfig",
+  "signatureHash": "83f85d548ad6b79c7c5485679a051a33c1e40330deb778f85dcbdd46b2ff88c7",
+  "generatedAt": "2026-11-17T12:34:07.870Z",
+  "codeExample": "const tenantId: string = \"5a5c8f6e8f6e8f6e8f6e8f6e\";\n\nconst updateBody: UpdateQuestionConfigBody = {\n  question: \"How satisfied are you with our service?\",\n  type: \"multiple_choice\",\n  required: true,\n  order: 1,\n  customOptions: [\n    { label: \"Very satisfied\", value: \"5\" },\n    { label: \"Neutral\", value: \"3\" },\n    { label: \"Very dissatisfied\", value: \"1\" }\n  ],\n  subQuestions: [\n    {\n      question: \"What can we improve?\",\n      type: \"text\",\n      condition: {\n        operator: \"matches\",\n        optionValue: \"1\"\n      }\n    }\n  ]\n};\n\nconst response: APIEmptyResponse = await updateQuestionConfig(\n  tenantId,\n  \"q-config-98765\",\n  updateBody\n);",
+  "model": "zai-org/GLM-5.3-Flash"
+}

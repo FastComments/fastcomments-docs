@@ -1,0 +1,7 @@
+{
+  "method": "getTenantPackage",
+  "signatureHash": "227fc39a533e1b7050f7f8bbd32e52fb5d5d777bd2dac78a09a9f98011ae3342",
+  "generatedAt": "2026-11-17T12:34:14.398Z",
+  "codeExample": "const tenantId: string = '5a5b1e4d4f3c2b1a0c9d8e7f';\nconst packageId: string = 'pkg_64f2c9e8a1b3d4';\n\nconst response: GetTenantPackageResponse = await getTenantPackage(tenantId, packageId);\n\nconsole.log(`Status: ${response.status}`);\nconsole.log(`Package plan: ${response.package.plan}`);\nconsole.log(`Comments per month: ${response.package.commentsPerMonth}`);",
+  "model": "zai-org/GLM-5.3-Flash"
+}

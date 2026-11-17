@@ -1,0 +1,7 @@
+{
+  "method": "updateQuestionResult",
+  "signatureHash": "746f7600fa3ed56d399f2deece10061d03f2b8040a7d5d3b985834e8b14f67e3",
+  "generatedAt": "2026-11-17T12:34:07.622Z",
+  "codeExample": "const tenantId: string = '5a2b6c7f8d9e0a1b2c3d4e5f';\nconst questionId: string = 'q-8f3b9a2c-41d7-4e6a-b5c8-9e0f1a2b3c4d';\n\nconst updateBody: UpdateQuestionResultBody = {\n  correctAnswer: 'Option B: Blue whale',\n  isAnsweredCorrectly: true,\n  answeredAt: '2024-03-15T14:32:00.000Z',\n  meta: [\n    {\n      key: 'quiz_session',\n      value: 'session_abc123'\n    }\n  ]\n};\n\nconst result: APIEmptyResponse = await updateQuestionResult(tenantId, questionId, updateBody);\n\nconsole.log(`Update status: ${result.status}`);",
+  "model": "zai-org/GLM-5.3-Flash"
+}

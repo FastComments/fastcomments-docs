@@ -1,0 +1,7 @@
+{
+  "method": "createTenantPackage",
+  "signatureHash": "2dfe14db81ec91553716b703e8d9eb8b0b2154ef090a9e29ded0ee7d13e4879a",
+  "generatedAt": "2026-11-17T12:34:09.044Z",
+  "codeExample": "async function createTenantPackageExample(): Promise<void> {\n  const tenantId: string = '5f2a9b3c8e4d1a2b3c4d5e6f';\n\n  const createTenantPackageBody: CreateTenantPackageBody = {\n    name: 'Premium Support Package',\n    packageId: 'tenant-premium-annual',\n    billingInterval: 'yearly',\n    price: 499.99,\n    currency: 'USD',\n    maxSeats: 25,\n    status: 'active'\n  };\n\n  const result: CreateTenantPackageResponse = await createTenantPackage(\n    tenantId,\n    createTenantPackageBody\n  );\n\n  const status: APIStatus = result.status;\n  const createdPackage: TenantPackage | undefined = result.tenantPackage;\n\n  if (createdPackage) {\n    console.log(`Created package ${createdPackage.name} with status ${status}`);\n  }\n}",
+  "model": "zai-org/GLM-5.3-Flash"
+}

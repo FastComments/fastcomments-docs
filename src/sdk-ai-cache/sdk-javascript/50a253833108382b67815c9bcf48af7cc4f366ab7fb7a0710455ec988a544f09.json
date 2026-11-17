@@ -1,0 +1,7 @@
+{
+  "method": "createQuestionConfig",
+  "signatureHash": "50a253833108382b67815c9bcf48af7cc4f366ab7fb7a0710455ec988a544f09",
+  "generatedAt": "2026-11-17T12:34:10.733Z",
+  "codeExample": "const tenantId: string = 'demo_fastcomments';\n\nconst questionConfigBody: CreateQuestionConfigBody = {\n  label: 'How would you rate this article?',\n  type: 'RATING'\n};\n\nconst customOptions: QuestionConfigCustomOptionsInner[] = [\n  { label: 'Very helpful', score: 5 },\n  { label: 'Not helpful', score: 1 }\n];\n\nconst subQuestionCondition: SubQuestionCondition = {\n  questionId: 'q-101',\n  operator: 'EQUALS' as QuestionConditionOperator,\n  value: 5\n};\n\nconst questionConfig: QuestionConfig = {\n  id: 'qc-8842',\n  tenantId,\n  body: questionConfigBody,\n  customOptions,\n  condition: {\n    operator: 'GREATER_THAN' as QuestionConditionOperator,\n    subQuestionCondition\n  } as QuestionCondition\n};\n\nconst response: CreateQuestionConfigResponse = await createQuestionConfig(tenantId, {\n  label: questionConfig.body.label,\n  type: questionConfig.body.type,\n  customOptions,\n  condition: questionConfig.condition\n});\n\nconst status: APIStatus = response.status;\nconst createdConfigId: string = response.questionConfig.id;\nconsole.log(`Question config created: ${createdConfigId} (${status})`);",
+  "model": "zai-org/GLM-5.3-Flash"
+}

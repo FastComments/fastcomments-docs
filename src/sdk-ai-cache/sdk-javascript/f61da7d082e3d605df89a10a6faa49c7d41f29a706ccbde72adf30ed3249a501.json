@@ -1,0 +1,7 @@
+{
+  "method": "getV2PageReacts",
+  "signatureHash": "f61da7d082e3d605df89a10a6faa49c7d41f29a706ccbde72adf30ed3249a501",
+  "generatedAt": "2026-11-17T12:34:07.845Z",
+  "codeExample": "const tenantId: string = 'abc1234567890';\nconst urlId: string = '/blog/my-article';\n\nconst result: GetV2PageReacts = await getV2PageReacts(tenantId, urlId, 'sso-token-value', 'basic');",
+  "model": "zai-org/GLM-5.3-Flash"
+}

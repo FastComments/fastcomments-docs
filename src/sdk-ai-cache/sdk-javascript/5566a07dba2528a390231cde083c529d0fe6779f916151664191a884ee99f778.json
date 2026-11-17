@@ -1,0 +1,7 @@
+{
+  "method": "votePoll",
+  "signatureHash": "5566a07dba2528a390231cde083c529d0fe6779f916151664191a884ee99f778",
+  "generatedAt": "2026-11-17T12:34:33.271Z",
+  "codeExample": "const tenantId: string = 'abc123def456';\nconst commentId: string = 'comment_9f8e7d6c';\nconst votePollBody: VotePollBody = {\n  optionId: 'option_1a2b3c4d'\n};\nconst urlId: string = 'blog-post-fastcomments-review';\nconst sso: string = 'HMAC-SHA256:5f4dcc3b5aa765d61d8327deb882cf99:user@example.com';\n\nconst response: VotePollResponse = await votePoll(tenantId, commentId, votePollBody, urlId, undefined, sso);\n\nif (response.status === 'success') {\n  const poll: CommentPoll = response.poll;\n  const selectedOption: CommentPollOption | undefined = poll.options.find((option: CommentPollOption) => option.id === votePollBody.optionId);\n  console.log(`Voted for: ${selectedOption?.text ?? 'unknown'}, total votes: ${poll.totalVotes ?? 0}`);\n}",
+  "model": "zai-org/GLM-5.3-Flash"
+}

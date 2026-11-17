@@ -1,0 +1,7 @@
+{
+  "method": "getWebhookSamplePayloads",
+  "signatureHash": "f91aad5cfb5bc5539d8b9d596edd066b22c41fd0738a5475ff3164e62491c900",
+  "generatedAt": "2026-11-17T12:34:06.907Z",
+  "codeExample": "declare function getWebhookSamplePayloads(\n  tenantId: string,\n  event?: WebhookEventName,\n  limit?: number\n): Promise<GetWebhookSamplePayloadsResponse>;\n\nconst tenantId: string = '5f8d9b3e2a1b4c6d7e8f9a0b';\n\n// Get sample payloads for a specific event type\nconst commentPayloads: GetWebhookSamplePayloadsResponse = await getWebhookSamplePayloads(\n  tenantId,\n  WebhookEventName.COMMENT_SUCCESS_PAGE,\n  10\n);\n\n// Get all sample payloads (no optional parameters)\nconst allPayloads: GetWebhookSamplePayloadsResponse = await getWebhookSamplePayloads(tenantId);\n\nconsole.log(`Comment payload status: ${commentPayloads.status}`);\nconsole.log(`Fetched ${allPayloads.payloads.length} sample payloads`);",
+  "model": "zai-org/GLM-5.3-Flash"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "getQuestionConfigs",
+  "signatureHash": "78a6e2c2386344a56b68fc3fa194b81208b3b59369686c8b1142ae2f7f64dce9",
+  "generatedAt": "2026-11-17T12:34:06.865Z",
+  "codeExample": "const tenantId: string = '5a4cd2f75d6b3b001e4b3c2a';\nconst skip: number = 10;\n\nconst response: GetQuestionConfigsResponse = await getQuestionConfigs(tenantId, skip);\n\nconst configs: QuestionConfig[] = response.configs;\nconst status: string = response.status;\n\nconsole.log(`Fetched ${configs.length} question configs`);\nconfigs.forEach((config: QuestionConfig): void => {\n    const customOptions: QuestionConfigCustomOptionsInner[] | undefined = config.customOptions;\n    const conditions: QuestionCondition[] | undefined = config.conditions;\n    const subConditions: SubQuestionCondition[] | undefined = config.subQuestionConditions;\n    console.log(`Question ${config.id}: status=${status}, options=${customOptions?.length ?? 0}, subQuestions=${subConditions?.length ?? 0}`);\n});",
+  "model": "zai-org/GLM-5.3-Flash"
+}

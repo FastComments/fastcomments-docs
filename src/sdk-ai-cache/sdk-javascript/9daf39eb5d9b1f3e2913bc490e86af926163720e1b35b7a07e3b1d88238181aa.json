@@ -1,0 +1,7 @@
+{
+  "method": "getQuestionResults",
+  "signatureHash": "9daf39eb5d9b1f3e2913bc490e86af926163720e1b35b7a07e3b1d88238181aa",
+  "generatedAt": "2026-11-17T12:34:14.560Z",
+  "codeExample": "declare const getQuestionResults: (\n  tenantId: string,\n  urlId?: string,\n  userId?: string,\n  startDate?: string,\n  questionId?: string,\n  questionIds?: string,\n  skip?: number\n) => Promise<GetQuestionResultsResponse>;\n\nconst tenantId: string = 'abc123def456';\nconst urlId: string = 'https://example.com/blog/my-post';\nconst userId: string = 'user_98765';\nconst startDate: string = '2024-01-01T00:00:00.000Z';\nconst skip: number = 0;\n\nconst results: GetQuestionResultsResponse = await getQuestionResults(\n  tenantId,\n  urlId,\n  userId,\n  startDate,\n  undefined,\n  'question_1,question_2',\n  skip\n);\n\nconst firstResult: QuestionResult | undefined = results[0];",
+  "model": "zai-org/GLM-5.3-Flash"
+}

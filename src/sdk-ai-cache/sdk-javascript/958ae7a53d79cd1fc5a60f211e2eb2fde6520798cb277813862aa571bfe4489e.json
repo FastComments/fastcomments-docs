@@ -1,0 +1,7 @@
+{
+  "method": "migratePages",
+  "signatureHash": "958ae7a53d79cd1fc5a60f211e2eb2fde6520798cb277813862aa571bfe4489e",
+  "generatedAt": "2026-11-17T12:34:08.241Z",
+  "codeExample": "const tenantId: string = 'abc123def456';\n\nconst migrations: PageMigration[] = [\n  {\n    type: PageMigrationType.FULL_MIGRATION,\n    url: 'https://myblog.com/posts/react-hooks-guide',\n    title: 'The Complete Guide to React Hooks',\n    comments: 'disqus-comments-export.xml',\n    date: new Date('2024-01-15T10:30:00Z')\n  },\n  {\n    type: PageMigrationType.COMMENT_ONLY,\n    url: 'https://myblog.com/posts/typescript-tips',\n    title: '10 Essential TypeScript Tips',\n    comments: [\n      { id: 'c-101', author: 'jane_doe', message: 'Great article, thanks for sharing!', date: '2024-01-16T08:12:00Z' },\n      { id: 'c-102', author: 'dev_mike', message: 'Very helpful, bookmarked this one.', date: '2024-01-16T14:47:00Z' }\n    ]\n  }\n];\n\nconst migrateAPIPagesData: MigrateAPIPagesData = {\n  source: 'disqus',\n  dryRun: false,\n  pages: migrations\n};\n\nconst response: QueuePageMigrationJobAPIResponse = await migratePages(tenantId, migrateAPIPagesData);\n\nif (response.status === 'success') {\n  console.log(`Queued migration job: ${response.jobId} for ${migrateAPIPagesData.pages.length} pages`);\n}",
+  "model": "zai-org/GLM-5.3-Flash"
+}

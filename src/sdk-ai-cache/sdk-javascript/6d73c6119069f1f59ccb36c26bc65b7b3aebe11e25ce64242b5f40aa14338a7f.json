@@ -1,0 +1,7 @@
+{
+  "method": "translateComments",
+  "signatureHash": "6d73c6119069f1f59ccb36c26bc65b7b3aebe11e25ce64242b5f40aa14338a7f",
+  "generatedAt": "2026-11-17T12:34:14.296Z",
+  "codeExample": "const tenantId: string = 'abc123def456';\nconst urlId: string = 'blog-post-42';\nconst sso: string = 'JWT_TOKEN_HERE';\n\nconst commentTranslationsRequest: CommentTranslationsRequest = {\n  commentIds: ['c_98765', 'c_54321'],\n  targetLocale: 'es'\n};\n\nconst locale: string = 'es-ES';\n\nconst response: CommentTranslationsResponse = await translateComments(\n  tenantId,\n  urlId,\n  commentTranslationsRequest,\n  sso,\n  locale\n);\n\nconsole.log(`Translated ${response.translations.length} comments`);",
+  "model": "zai-org/GLM-5.3-Flash"
+}

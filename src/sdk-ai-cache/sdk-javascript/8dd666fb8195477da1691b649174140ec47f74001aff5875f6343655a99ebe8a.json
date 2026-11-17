@@ -1,0 +1,7 @@
+{
+  "method": "getQuestionResult",
+  "signatureHash": "8dd666fb8195477da1691b649174140ec47f74001aff5875f6343655a99ebe8a",
+  "generatedAt": "2026-11-17T12:34:06.433Z",
+  "codeExample": "async function fetchQuestionResult(): Promise<void> {\n  const tenantId: string = '5a3b8f9c2d1e4a0001aabbcc';\n  const questionId: string = 'q-7892-hflu-survey';\n\n  const response: GetQuestionResultResponse = await getQuestionResult(tenantId, questionId);\n\n  const status: APIStatus = response.status;\n  const result: QuestionResult | undefined = response.result;\n  const meta: MetaItem[] | undefined = response.meta;\n\n  if (result) {\n    console.log(`Question ${result.id} status: ${status}`);\n  }\n}\n\nfetchQuestionResult();",
+  "model": "zai-org/GLM-5.3-Flash"
+}

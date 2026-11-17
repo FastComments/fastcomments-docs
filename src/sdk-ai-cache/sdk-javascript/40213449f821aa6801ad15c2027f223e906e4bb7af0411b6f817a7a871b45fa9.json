@@ -1,0 +1,7 @@
+{
+  "method": "createCommentPublic",
+  "signatureHash": "40213449f821aa6801ad15c2027f223e906e4bb7af0411b6f817a7a871b45fa9",
+  "generatedAt": "2026-11-17T12:34:15.204Z",
+  "codeExample": "const tenantId: string = '5a 团a4b2c3d4e5f6a7b8c9d0e1f2';\nconst urlId: string = 'product-launch-post';\nconst broadcastId: string = 'fc-live-2024-keynote';\n\nconst commentData: CommentData = {\n  comment: 'Great article! Really looking forward to the upcoming release.',\n  email: 'jane.doe@example.com',\n  name: 'Jane Doe',\n  url: 'https://example.com/blog/product-launch-post'\n};\n\nconst sessionId: string = 'sess_8f14e45fceea167a5a36dedd4bea2543';\nconst locale: string = 'en';\n\nconst response: SaveCommentsResponseWithPresence = await createCommentPublic(\n  tenantId,\n  urlId,\n  broadcastId,\n  commentData,\n  sessionId,\n  undefined,\n  locale\n);\n\nconst status: APIStatus = response.status;",
+  "model": "zai-org/GLM-5.3-Flash"
+}

@@ -1,0 +1,7 @@
+{
+  "method": "saveComment",
+  "signatureHash": "3e91f2d8450d16c39247cbbcba5a6746296062d84431472e2dc57ab22af6e6c4",
+  "generatedAt": "2026-11-17T12:34:08.539Z",
+  "codeExample": "const tenantId: string = 'ABC_5a1f8f2e3d4c5b6a7d8e9f0a';\n\nconst createCommentParams: CreateCommentParams = {\n  url: 'https://example-blog.com/posts/fastcomments-review',\n  comment: 'This article really helped me understand performance tuning. Thanks!',\n  handle: 'jane_doe_dev',\n  email: 'jane.doe@example.com',\n  parentId: '123e4567-e89b-12d3-a456-426614174000',\n  mentions: [\n    {\n      handle: 'author_bob',\n      email: 'bob@fastcomments.com'\n    }\n  ]\n};\n\nconst isLive: boolean = true;\nconst doSpamCheck: boolean = true;\nconst sendEmails: boolean = true;\n\nconst response: APISaveCommentResponse = await saveComment(\n  tenantId,\n  createCommentParams,\n  isLive,\n  doSpamCheck,\n  sendEmails,\n  true\n);\n\nconst commentStatus: APIStatus | undefined = response.status;",
+  "model": "zai-org/GLM-5.3-Flash"
+}

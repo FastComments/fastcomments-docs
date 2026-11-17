@@ -1,0 +1,7 @@
+{
+  "method": "getBatchJobs",
+  "signatureHash": "94aba5b8976b8bb0f162a8308ca38aaffdc10737350f433f8b2fe18fcf540bc4",
+  "generatedAt": "2026-11-17T12:34:08.464Z",
+  "codeExample": "declare function getBatchJobs(tenantId: string, type?: string, status?: string, skip?: number): Promise<GetBatchJobsAPIResponse>;\n\nconst tenantId: string = '5ced7a2b4b0af90017623a6b';\n\n// Get all batch jobs\nconst allJobs: GetBatchJobsAPIResponse = await getBatchJobs(tenantId);\n\n// Get failing page-migration jobs, skipping the first 10\nconst failedJobs: GetBatchJobsAPIResponse = await getBatchJobs(tenantId, 'page-migration', 'failed', 10);\n\nconsole.log(`Found ${allJobs.status} response with ${allJobs.batchJobs?.length ?? 0} jobs`);",
+  "model": "zai-org/GLM-5.3-Flash"
+}

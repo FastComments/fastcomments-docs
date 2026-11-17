@@ -1,0 +1,7 @@
+{
+  "method": "getTenantPackages",
+  "signatureHash": "2a2ca86c1358bb06e9673d5679cf62e1697823fd64b88d7a2eecf9641f00a884",
+  "generatedAt": "2026-11-17T12:34:06.823Z",
+  "codeExample": "const tenantId: string = '5ad8b1e4-8c1b-4f2a-9d3e-7f6a1b2c3d4e';\n\n// Get first page of tenant packages\nconst response: GetTenantPackagesResponse = await getTenantPackages(tenantId);\nconst firstPackage: TenantPackage | undefined = response.packages?.[0];\nif (firstPackage?.id) {\n  console.log(`First package: ${firstPackage.id} - active: ${firstPackage.active}`);\n}\n\n// Get next page using skip\nconst skip: number = 10;\nconst nextPage: GetTenantPackagesResponse = await getTenantPackages(tenantId, skip);\nconst status: APIStatus = nextPage.status;\nconsole.log(`Fetched ${nextPage.packages?.length ?? 0} packages, status: ${status}`);",
+  "model": "zai-org/GLM-5.3-Flash"
+}

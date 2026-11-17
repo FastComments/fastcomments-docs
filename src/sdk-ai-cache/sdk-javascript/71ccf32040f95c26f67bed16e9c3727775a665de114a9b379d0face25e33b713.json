@@ -1,0 +1,7 @@
+{
+  "method": "getQuestionConfig",
+  "signatureHash": "71ccf32040f95c26f67bed16e9c3727775a665de114a9b379d0face25e33b713",
+  "generatedAt": "2026-11-17T12:34:06.121Z",
+  "codeExample": "const tenantId: string = 'abc123def456';\nconst questionId: string = 'poll-question-789';\n\nconst response: GetQuestionConfigResponse = await getQuestionConfig(tenantId, questionId);\n\nconst status: APIStatus = response.status;\nconst config: QuestionConfig = response.config;\n\nconst type: string = config.type;\nconst customOptions: QuestionConfigCustomOptionsInner[] = config.customOptions || [];\n\nif (customOptions.length > 0) {\n  const firstOptionLabel: string | undefined = customOptions[0].label;\n  console.log(`Config ${config.id} for tenant ${tenantId}, first option: ${firstOptionLabel}`);\n}",
+  "model": "zai-org/GLM-5.3-Flash"
+}

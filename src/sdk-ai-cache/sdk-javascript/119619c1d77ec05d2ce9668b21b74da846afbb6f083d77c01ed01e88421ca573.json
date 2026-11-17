@@ -1,0 +1,7 @@
+{
+  "method": "getPollVoters",
+  "signatureHash": "119619c1d77ec05d2ce9668b21b74da846afbb6f083d77c01ed01e88421ca573",
+  "generatedAt": "2026-11-17T12:34:14.326Z",
+  "codeExample": "const tenantId: string = 'a1b2c3d4e5f6';\n\nconst result: GetPollVoterNamesSuccessResponse = await getPollVoters(\n  tenantId,\n  'comment_123456',\n  'https://example.com/blog/my-post',\n  1,\n  'jane.doe',\n  'SSO_TOKEN_98765'\n);\n\nconst status: APIStatus = result.status;\nconst voters: PollVoterEntry[] = result.voters;\n\nconsole.log(`Total voters on page: ${voters.length}`);",
+  "model": "zai-org/GLM-5.3-Flash"
+}
