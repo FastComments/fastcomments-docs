@@ -15,4 +15,4 @@ if draft.validate() == nil {
 }
 ```
 
-`sdk.votePoll(commentId:optionId:)` and `sdk.getPollVoters(commentId:page:search:)` cover voting and the voter list. Poll colors are listed under [Poll Colors](#poll-colors-readme-generated).
+`sdk.votePoll(commentId:optionId:)` and `sdk.getPollVoters(commentId:page:search:)` cover voting and the voter list. Poll colors are listed under [Poll Colors](#theming-readme-generated).

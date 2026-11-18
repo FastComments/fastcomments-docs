@@ -93,6 +93,7 @@ fn parse_readme(
         return out;
     }
 
+    let parents = subsection_parents(&content);
     for (i, m) in matches.iter().enumerate() {
         let start = m.start();
         let end = if i < matches.len() - 1 {
@@ -116,6 +117,7 @@ fn parse_readme(
         if should_skip_section(&title) {
             continue;
         }
+        let body = remap_subsection_anchors(&body, &parents);
         out.push(DocSection {
             name: title.clone(),
             file: Some(format!("{}-readme-generated.md", sanitize_filename(&title))),
@@ -126,6 +128,74 @@ fn parse_readme(
         });
     }
     out
+}
+
+/// Map the slug of every h3+ heading to the slug of the h2 section that
+/// contains it. Only h2s become doc items (and link targets), so a README
+/// link to a subsection, like fastcomments-ios's `[Poll Colors](#poll-colors)`
+/// under `## Theming`, has to point at its section instead. Section
+/// boundaries mirror the unfenced `^##` split in `parse_readme`; subsection
+/// headings inside code fences are sample text and are ignored.
+fn subsection_parents(content: &str) -> std::collections::HashMap<String, String> {
+    static HEADING: Lazy<Regex> = Lazy::new(|| Regex::new(r"^(#{2,6})\s+(.+)$").expect("regex"));
+    let mut sections = std::collections::HashSet::new();
+    let mut subsections: Vec<(String, String)> = Vec::new();
+    let mut current: Option<String> = None;
+    let mut fence: Option<(char, usize)> = None;
+    for line in content.lines() {
+        let trimmed = line.trim_start();
+        let marker = if line.len() - trimmed.len() <= 3 {
+            fence_marker(trimmed)
+        } else {
+            None
+        };
+        let in_fence = fence.is_some();
+        match (fence, marker) {
+            (Some((open_ch, open_len)), Some((ch, len))) if ch == open_ch && len >= open_len => {
+                fence = None
+            }
+            (None, Some(m)) => fence = Some(m),
+            _ => {}
+        }
+        let Some(caps) = HEADING.captures(line) else { continue };
+        let slug = sanitize_filename(caps[2].trim());
+        if caps[1].len() == 2 {
+            sections.insert(slug.clone());
+            current = Some(slug);
+        } else if !in_fence && marker.is_none() {
+            if let Some(parent) = &current {
+                subsections.push((slug, parent.clone()));
+            }
+        }
+    }
+    let mut parents = std::collections::HashMap::new();
+    for (slug, parent) in subsections {
+        // A section's own anchor always wins over a same-named subsection.
+        if !sections.contains(&slug) {
+            parents.entry(slug).or_insert(parent);
+        }
+    }
+    parents
+}
+
+/// Repoint `#<subsection>-readme-generated` anchors at their h2 section.
+fn remap_subsection_anchors(
+    body: &str,
+    parents: &std::collections::HashMap<String, String>,
+) -> String {
+    if parents.is_empty() {
+        return body.to_string();
+    }
+    static ANCHOR: Lazy<Regex> =
+        Lazy::new(|| Regex::new(r"\]\(#([a-z0-9-]+)-readme-generated\)").expect("regex"));
+    map_outside_code_fences(body, &|chunk: &str| {
+        ANCHOR
+            .replace_all(chunk, |caps: &regex::Captures| match parents.get(&caps[1]) {
+                Some(parent) => format!("](#{parent}-readme-generated)"),
+                None => caps[0].to_string(),
+            })
+            .into_owned()
+    })
 }
 
 fn parse_docs_dir(
@@ -709,5 +779,31 @@ mod tests {
         // fastcomments-python's README links ./sso/README.md, which
         // doesn't exist — better unlinked text than a 404.
         assert_eq!(convert("[SSO docs](sso/README.md)"), "SSO docs");
+    }
+
+    fn parse(readme: &str) -> Vec<DocSection> {
+        let repo = fixture_repo();
+        parse_readme(readme, REPO, "main", "lib-test", repo.path())
+    }
+
+    #[test]
+    fn subsection_anchor_links_to_its_parent_section() {
+        // fastcomments-ios links `#poll-colors`, an h3 under `## Theming`.
+        // Only h2 sections become doc items, so the anchor must point there.
+        let readme = "## Polls\n\nSee [Poll Colors](#poll-colors) and [Theming](#theming).\n\n## Theming\n\n### Poll Colors\n\nBlue.\n";
+        let sections = parse(readme);
+        assert_eq!(
+            sections[0].content,
+            "See [Poll Colors](#theming-readme-generated) and [Theming](#theming-readme-generated)."
+        );
+    }
+
+    #[test]
+    fn heading_inside_a_code_fence_is_not_a_subsection() {
+        // A `### Foo` line inside a fence is sample text, not a heading, so
+        // `#foo` keeps its default rewrite.
+        let readme = "## Intro\n\n[Foo](#foo)\n\n## Usage\n\n```md\n### Foo\n```\n";
+        let sections = parse(readme);
+        assert_eq!(sections[0].content, "[Foo](#foo-readme-generated)");
     }
 }
