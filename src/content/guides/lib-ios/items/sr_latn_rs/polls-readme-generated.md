@@ -1,10 +1,10 @@
-Ankete rade isto kao u veb vidžetu i uključuju se iz istih podešavanja vidžeta u vašem FastComments kontrolnom panelu: `pollCreation` (ko može da kači anketu: onemogućeno, administratori i moderatori, ili svi) i `pollVoting` (prijavljeni korisnici ili bilo ko).
+Ankete rade isto kao u veb vidžetu i uključuju se iz istih podešavanja vidžeta u vašem FastComments dashboard-u: `pollCreation` (ko može da kači anketu: onemogućeno, admini i moderatori, ili svi) i `pollVoting` (prijavljeni korisnici ili bilo ko).
 
 - Komentari sa anketom prikazuju je ispod teksta. Čitaoci glasaju dodirivanjem opcije, mogu da prikažu ili sakriju rezultate pre glasanja i mogu da promene svoj glas. Zbirovi se ažuriraju uživo dok drugi glasaju.
-- Ankete mogu da se zatvore na datum, da sakriju rezultate dok ne glasate i da učesnike glasanja učine vidljivim administratorima ili svima ("Pogledaj ko je glasao").
-- Kada posmatrač može da kreira ankete, unos komentara u `FastCommentsView` prikazuje dugme za anketu koje otvara kreator ankete. Anketa se objavljuje uz komentar, pa je tekst komentara obavezan. Unos uživo ćaskanja izostavlja to dugme, kao i veb uživo ćaskanje.
+- Ankete mogu da se zatvore na datum, da sakriju rezultate dok ne glasate i da učini glasače vidljivim adminima ili svima ("See who voted").
+- Kada posmatrač može da kreira ankete, unos komentara u `FastCommentsView` prikazuje dugme za anketu koje otvara kreator ankete. Anketa se objavljuje uz komentar, pa je tekst komentara obavezan. Unos uživo četa izostavlja to dugme, kao i veb live chat.
 
-Glasanje zahteva prijavljenog korisnika, pa koristite [SSO](#authentication-sso-readme-generated). Server vezuje anonimni glas za kolačić sesije, koji API klijent ne čuva, pa kada je `pollVoting` postavljeno na "bilo ko", posmatrač bez SSO korisnika vidi "Prijavite se da glasate". Ankete koje sakrivaju rezultate dok ne glasate ne dobijaju ažuriranja zbirova uživo; ti glasači vide nove brojeve pri sledećem učitavanju.
+Glasanje zahteva prijavljenog korisnika, pa koristite [SSO](#authentication-sso-readme-generated). Server vezuje anonimni glas za kolačić sesije, koji API klijent ne čuva, pa kada je `pollVoting` postavljeno na "bilo ko", posmatrač bez SSO korisnika vidi "Log in to vote". Ankete koje sakrivaju rezultate dok ne glasate ne dobijaju ažuriranja zbirova uživo; ti glasači vide nove brojeve pri sledećem učitavanju.
 
 Da biste objavili anketu iz sopstvenog UI-ja, prosledite `CommentPollInput` funkciji `postComment`:
 
@@ -15,4 +15,4 @@ if draft.validate() == nil {
 }
 ```
 
-`sdk.votePoll(commentId:optionId:)` i `sdk.getPollVoters(commentId:page:search:)` pokrivaju glasanje i listu glasača. Boje ankete su navedene pod [Poll Colors](#poll-colors-readme-generated).
+`sdk.votePoll(commentId:optionId:)` i `sdk.getPollVoters(commentId:page:search:)` pokrivaju glasanje i listu glasača. Boje ankete su navedene pod [Poll Colors](#theming-readme-generated).
