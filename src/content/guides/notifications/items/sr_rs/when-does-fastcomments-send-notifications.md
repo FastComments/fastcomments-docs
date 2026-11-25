@@ -1,9 +1,9 @@
-U FastComments znamo da vas već ima dovoljno obaveštenja. Zbog toga preduzimamo određene mere da ograničimo broj obaveštenja koje korisnici primaju, a da ih i dalje držimo u kontaktu sa svojim zajednicama. Takođe želimo da administratori i moderatori budu u toku i da znaju kada je potrebna akcija.
+U FastComments znamo da vas već ima dovoljno obaveštenja. Zbog toga preduzimamo određene mere da ograničimo obaveštenja koja korisnici primaju, a da ih i dalje držimo u vezi sa svojim zajednicama. Takođe želimo da administratori i moderatori budu u toku i da znaju kada je potrebno da preduzmu akciju.
 
-#### Slamo obaveštenja za sledeće događaje za administratore i moderatore:
+#### Slataćemo obaveštenja za sledeće događaje za administratore i moderatore:
 
 - Rezime aktivnosti zajednice (frekvencija je konfigurabilna).
-- Zahtevi za pomoć i podsetnici u zajednici.
+- Zahtevi za pomoć i podsetnici iz zajednice.
 - Novi komentari.
 
 #### Za komentatore:
@@ -12,8 +12,8 @@ U FastComments znamo da vas već ima dovoljno obaveštenja. Zbog toga preduzimam
 - Kada ste pomenuti (obaveštenje u aplikaciji i imejl).
 - Kada neko odgovori u istom nizu (obaveštenje u aplikaciji i imejl).
 - Kada neko odgovori na podređeni komentar u istom nizu (obaveštenje u aplikaciji i imejl).
-- Kada neko odgovori na stranicu koju ste pretplatili (obaveštenje u aplikaciji i imejl, frekvencija konfigurabilna po pretplati: svakog minuta, svakog sata ili dnevno).
-- Kada vam stranica na koju ste pretplatteni pošalje puno imejlova (20 ili više u toku nedelje), pitaćemo vas da li i dalje želite tu frekvenciju, najviše jednom nedeljno.
+- Kada neko odgovori na stranicu koju ste pretplatili (obaveštenje u aplikaciji i imejl, frekvencija konfigurabilna po pretplati: svakog minuta, na svaki sat ili dnevno).
+- Kada vam stranica koju ste pretplatili pošalje puno imejlova (20 ili više u toku nedelje), pitaćemo vas da li i dalje želite tu frekvenciju, najviše jednom nedeljno.
   - Ništa se ne menja osim ako vi to ne promenite. Imejl sadrži link za prelazak na dnevna obaveštenja.
 - Kada neko odgovori na anketu koju ste kreirali (obaveštenje u aplikaciji, plus dnevni imejl). Vidite [Obaveštenja o anketama](/guide-polls.html#poll-notifications).
 - Kada korisnik komentariše prvi put (ali ne sa SSO).
@@ -22,7 +22,7 @@ U FastComments znamo da vas već ima dovoljno obaveštenja. Zbog toga preduzimam
 
 #### Za sve korisnike:
 
-- Kada se otkrije prijava sa nove IP adrese, šalje se imejl sa bezbednosnim upozorenjem sa približnom lokacijom i IP adresom. Ovo ne važi za prvu prijavu korisnika.
+- Kada se otkrije prijava sa nove IP adrese, šalje se imejl sigurnosnog upozorenja sa približnom lokacijom i IP adresom. Ovo ne važi za vrlo prvu prijavu korisnika.
 
 #### ...i na kraju, samo za administratore:
 
