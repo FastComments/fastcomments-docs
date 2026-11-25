@@ -1,19 +1,23 @@
-Para SSO, há a seguinte configuração a considerar para notificações:
+Para SSO há as seguintes configurações a considerar para notificações:
 
 - Se o usuário optou por receber notificações.
   - Isso é feito definindo a flag `optedInNotifications` como `true` ou `false` no objeto `SSOUser`.
   - Isso pode ser definido via API.
-  - Além disso, se você passar um valor para essa flag no payload, o valor será atualizado automaticamente quando o usuário carregar uma thread de comentários.
-- Se o usuário optou por notificações de **assinatura**.
+  - Além disso, se você passar um valor para essa flag no payload, ele será atualizado automaticamente quando o usuário carregar um tópico de comentários.
+- Se o usuário optou por receber notificações de **assinatura**.
   - Isso é feito definindo a flag `optedInSubscriptionNotifications` como `true` ou `false` no objeto `SSOUser`.
   - Isso pode ser definido via API.
-  - Além disso, se você passar um valor para essa flag no payload, o valor será atualizado automaticamente quando o usuário carregar uma thread de comentários.
-- Definição do e-mail.
+  - Além disso, se você passar um valor para essa flag no payload, ele será atualizado automaticamente quando o usuário carregar um tópico de comentários.
+- Com que frequência o usuário recebe notificações de assinatura de página.
+  - Usuários SSO não podem fazer login no FastComments.com para alterar isso, então quando uma assinatura de página envia muitos e-mails para eles (20 ou mais em uma semana), enviamos por e-mail um link, no máximo uma vez por semana.
+  - O link abre uma página onde eles podem alterar a frequência de cada uma de suas assinaturas de página (a cada minuto, por hora ou diariamente), ou cancelar a assinatura de uma página.
+  - O link é válido por 30 dias.
+- Definir o e-mail deles.
   - Se não estiver presente, não podemos enviar notificações por e-mail.
-- Se deve desabilitar os links de cancelamento de inscrição nos e-mails.
-  - Isso é feito através da flag `disableUnsubscribeLinks` no objeto `Tenant`.
+- Se deve desativar os links de cancelamento de assinatura nos e-mails.
+  - Isso é feito via a flag `disableUnsubscribeLinks` no objeto `Tenant`.
   - Isso pode ser definido via API.
-- Se deve usar um link de cancelamento de inscrição personalizado.
-  - Isso é feito por meio da propriedade `footerUnsubscribeURL` no objeto `DomainConfig`.
+- Se deve usar um link de cancelamento de assinatura personalizado.
+  - Isso é feito via a propriedade `footerUnsubscribeURL` no objeto `DomainConfig`.
   - Isso pode ser definido via API.
-  - Você também pode considerar definir os cabeçalhos de cancelamento de inscrição relevantes via `emailHeaders` no mesmo objeto.
+  - Você também pode considerar definir os cabeçalhos de cancelamento de assinatura relevantes via `emailHeaders` no mesmo objeto.

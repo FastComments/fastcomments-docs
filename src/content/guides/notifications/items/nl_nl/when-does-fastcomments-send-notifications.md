@@ -1,35 +1,37 @@
-Bij FastComments weten we dat je al genoeg meldingen krijgt. Daarom nemen we enkele maatregelen om het aantal meldingen dat gebruikers ontvangen te beperken, terwijl we ze toch in contact houden met hun gemeenschappen. We willen ook beheerders en moderators up‑to‑date houden en hen laten weten wanneer er actie ondernomen moet worden.
+Bij FastComments weten we dat je al genoeg meldingen ontvangt. Daarom nemen we enkele maatregelen om het aantal meldingen dat gebruikers ontvangen te beperken, terwijl ze toch op de hoogte blijven van hun communities. We willen ook beheerders en moderators op de hoogte houden en laten weten wanneer actie nodig is.
 
 #### We sturen meldingen voor de volgende gebeurtenissen voor beheerders en moderators:
 
-- Community Digest Samenvatting (frequentie configureerbaar).
-- Community hulpverzoeken en herinneringen.
+- Community Digest Samenvatting (frequentie instelbaar).
+- Hulpverzoeken en herinneringen van de community.
 - Nieuwe reacties.
 
-#### Voor reageerders:
+#### Voor reactiegevers:
 
-- Wanneer iemand op je reactie reageert (via e‑mail).
-- Wanneer je wordt genoemd (in‑app en e‑mailmelding).
-- Wanneer iemand reageert in dezelfde thread (in‑app en e‑mailmelding).
-- Wanneer iemand reageert op een onderliggende reactie in dezelfde thread (in‑app en e‑mailmelding).
-- Wanneer iemand reageert op een pagina waarop je geabonneerd bent (in‑app en e‑mailmelding, frequentie configureerbaar per abonnement: elke minuut, elk uur of dagelijks).
-- Wanneer iemand reageert op een poll die je hebt aangemaakt (in‑app melding, plus een dagelijkse e‑mail). Zie [Poll Notifications](/guide-polls.html#poll-notifications).
-- Wanneer een gebruiker voor de eerste keer reageert (maar niet met SSO).
-- Wanneer een gebruiker een reactie achterlaat in een sessie die niet geverifieerd is (maar niet met SSO).
-  - We sturen in dit geval geen meerdere verificatie‑e‑mails. Alleen de eerste, die alle activiteit in dezelfde sessie verifieert.
+- Wanneer iemand op jouw reactie reageert (via e-mail).
+- Wanneer je wordt genoemd (in-app en e-mailmelding).
+- Wanneer iemand in dezelfde thread reageert (in-app en e-mailmelding).
+- Wanneer iemand op een onderliggende reactie in dezelfde thread reageert (in-app en e-mailmelding).
+- Wanneer iemand reageert op een pagina waarop je bent geabonneerd (in-app en e-mailmelding, frequentie instelbaar per abonnement: elke minuut, elk uur of dagelijks).
+- Wanneer een pagina waarop je bent geabonneerd je veel e-mails stuurt (20 of meer binnen een week), vragen we of je die frequentie nog steeds wilt, maximaal één keer per week.
+  - Er verandert niets tenzij jij het wijzigt. De e-mail bevat een link om over te schakelen naar dagelijkse meldingen.
+- Wanneer iemand reageert op een poll die je hebt aangemaakt (in-app melding, plus een dagelijkse e-mail). Zie [Poll Meldingen](/guide-polls.html#poll-notifications).
+- Wanneer een gebruiker voor het eerst een reactie plaatst (Maar niet met SSO).
+- Wanneer een gebruiker een reactie plaatst in een sessie die niet is geverifieerd (Maar niet met SSO).
+  - We sturen in dit geval geen meerdere verificatie-e-mails. Alleen de eerste, die alle activiteit in dezelfde sessie verifieert.
 
 #### Voor alle gebruikers:
 
-- Wanneer een login vanaf een nieuw IP‑adres wordt gedetecteerd, wordt er een beveiligingswaarschuwing per e‑mail gestuurd met de geschatte locatie en het IP‑adres. Dit geldt niet voor de allereerste login van de gebruiker.
+- Wanneer een aanmelding vanaf een nieuw IP-adres wordt gedetecteerd, wordt er een beveiligingswaarschuwing per e-mail verzonden met de geschatte locatie en het IP-adres. Dit geldt niet voor de allereerste aanmelding van de gebruiker.
 
 #### ...en tenslotte alleen voor beheerders:
 
-- Wanneer integraties voltooid zijn.
-- Wanneer migraties voltooid zijn.
-- Wanneer import‑ of exportprocessen voltooid zijn.
+- Wanneer integraties zijn voltooid.
+- Wanneer migraties zijn voltooid.
+- Wanneer imports of exports klaar zijn.
 - Wanneer er factureringsproblemen zijn.
 - Herinneringen aan het einde van de proefperiode.
 
-Sommige meldingen worden gebatcht om massale verzending van meldingen naar gebruikers te voorkomen. Leer hier meer over in de volgende sectie `Notification Types`.
+Sommige meldingen worden gebundeld om te voorkomen dat er massaal meldingen naar gebruikers worden verzonden. Lees hier meer over in de volgende sectie `Notification Types`.
 
-Antwoord‑ en vermeldings‑e‑mails worden alleen verzonden voor reacties die zijn goedgekeurd. Om te zien of een antwoord‑ of vermeldings‑e‑mail is verzonden voor een specifieke reactie, of waarom dit niet is gebeurd, open de [Comment Logs](/guide-moderation.html#comment-logs) van die reactie vanaf de pagina Reacties modereren.
+Antwoord- en vermeldings-e-mails worden alleen verzonden voor goedgekeurde reacties. Om te zien of er voor een specifieke reactie een antwoord- of vermeldings-e-mail is verzonden, of waarom niet, open je de [Reactie Logboeken](/guide-moderation.html#comment-logs) van die reactie vanaf de pagina Reacties Modereren.

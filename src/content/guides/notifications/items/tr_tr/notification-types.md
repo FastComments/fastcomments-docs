@@ -1,11 +1,12 @@
-FastComments'in bildirim gönderdiği birkaç bildirim türü ve ortamı vardır:
+FastComments'ın bildirim gönderdiği birkaç bildirim türü ve kanalı vardır:
 
 - E-posta ile anında.
   - Yorum yanıtı ve bahsetme bildirimleri her dakika gönderilir.
-- Uygulama ile anında.
-  - Bunlar bildirim çanı simgesinin altında gösterilir.
-- E-posta ile toplu.
-  - Sayfa aboneliği bildirimleri, her dakika, saatlik özet veya günlük özet olarak gönderilmek üzere abonelik başına yapılandırılabilir. Bu zaman diliminde kullanıcı için gönderilecek bir şey yoksa, e-posta gönderilmez.
-  - Anket yanıtı bildirimleri, anketin yazarına günlük e-posta olarak gönderilir.
-- E-posta ile zamanlanmış.
-  - Örnekler arasında günlük, haftalık veya aylık (veya devre dışı) gönderilebilen Topluluk Özeti bulunur.
+- Uygulama üzerinden anında.
+  - Bunlar bildirim zili simgesinin altında gösterilir.
+- E-posta ile toplu olarak.
+  - Sayfa aboneliği bildirimleri, abonelik başına her dakika, saatlik özet veya günlük özet olarak gönderilecek şekilde yapılandırılabilir. Bu zaman aralığında kullanıcı için gönderilecek bir şey yoksa e-posta göndermeyiz.
+  - Günlük özet modunda olmayan bir abonelik bir hafta içinde kullanıcıya 20 veya daha fazla e-posta gönderirse, kullanıcıya hâlâ bu sıklığı isteyip istemediğini soran ve günlük bildirimlere geçmek için bir bağlantı içeren bir onay e-postası göndeririz. Bu, haftada en fazla bir kez gönderilir ve kullanıcı sıklığı değiştirene kadar bildirimler önceki gibi gönderilmeye devam eder.
+  - Anket yanıt bildirimleri, anketin yazarına günlük e-posta olarak gönderilir.
+- Zamanlanmış e-posta.
+  - Örnekler arasında günlük, haftalık veya aylık gönderilebilen (veya devre dışı bırakılabilen) Topluluk Özet Raporu bulunur.

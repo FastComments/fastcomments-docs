@@ -1,19 +1,23 @@
-Pour SSO, il y a la configuration suivante à prendre en compte pour les notifications :
+Pour le SSO, les configurations suivantes sont à prendre en compte pour les notifications :
 
-- Savoir si l'utilisateur a choisi de recevoir des notifications.
-  - Cela se fait en définissant le flag `optedInNotifications` sur `true` ou `false` dans l'objet `SSOUser`.
+- Si l'utilisateur a accepté de recevoir des notifications.
+  - Cela se fait en définissant le flag `optedInNotifications` à `true` ou `false` dans l'objet `SSOUser`.
   - Cela peut être défini via l'API.
-  - De plus, si vous passez une valeur pour ce flag dans la charge utile, elle sera automatiquement mise à jour lorsque l'utilisateur charge un fil de commentaires.
-- Savoir si l'utilisateur a choisi de recevoir des notifications **d'** **abonnement**.
-  - Cela se fait en définissant le flag `optedInSubscriptionNotifications` sur `true` ou `false` dans l'objet `SSOUser`.
+  - De plus, si vous transmettez une valeur pour ce flag dans le payload, elle sera automatiquement mise à jour lorsque l'utilisateur charge un fil de commentaires.
+- Si l'utilisateur a accepté de recevoir des notifications d'**abonnement**.
+  - Cela se fait en définissant le flag `optedInSubscriptionNotifications` à `true` ou `false` dans l'objet `SSOUser`.
   - Cela peut être défini via l'API.
-  - De plus, si vous passez une valeur pour ce flag dans la charge utile, elle sera automatiquement mise à jour lorsque l'utilisateur charge un fil de commentaires.
-- Définir leur adresse email.
-  - S'il est absent, nous ne pouvons pas envoyer de notifications par email.
-- Savoir s'il faut désactiver les liens de désabonnement dans les emails.
+  - De plus, si vous transmettez une valeur pour ce flag dans le payload, elle sera automatiquement mise à jour lorsque l'utilisateur charge un fil de commentaires.
+- La fréquence à laquelle l'utilisateur reçoit les notifications d'abonnement aux pages.
+  - Les utilisateurs SSO ne peuvent pas se connecter à FastComments.com pour modifier ce paramètre, donc lorsqu'un abonnement à une page leur envoie beaucoup d'e-mails (20 ou plus en une semaine), nous leur envoyons un lien par e-mail, au maximum une fois par semaine.
+  - Le lien ouvre une page où ils peuvent modifier la fréquence de chacun de leurs abonnements aux pages (chaque minute, chaque heure ou chaque jour), ou se désabonner d'une page.
+  - Le lien est valable 30 jours.
+- La définition de leur adresse e-mail.
+  - Si elle n'est pas présente, nous ne pouvons pas envoyer de notifications par e-mail.
+- Si les liens de désabonnement dans les e-mails doivent être désactivés.
   - Cela se fait via le flag `disableUnsubscribeLinks` dans l'objet `Tenant`.
   - Cela peut être défini via l'API.
-- Savoir s'il faut utiliser un lien de désabonnement personnalisé.
+- Si un lien de désabonnement personnalisé doit être utilisé.
   - Cela se fait via la propriété `footerUnsubscribeURL` sur l'objet `DomainConfig`.
   - Cela peut être défini via l'API.
-  - Vous pouvez également envisager de définir les en-têtes de désabonnement pertinents via `emailHeaders` dans le même objet.
+  - Vous pouvez également envisager de définir les en-têtes de désabonnement appropriés via `emailHeaders` dans le même objet.

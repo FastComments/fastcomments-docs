@@ -1,19 +1,23 @@
-Za SSO treba razmotriti sledeće konfiguracije za obaveštenja:
+Za SSO postoji sledeća konfiguracija koju treba razmotriti u vezi sa notifikacijama:
 
-- Da li je korisnik pristao na obaveštenja.
-  - Ovo se postiže podešavanjem `optedInNotifications` na `true` ili `false` u objektu `SSOUser`.
-  - Ovo se može podesiti putem API-ja.
-  - Takođe, ako prosledite vrednost za ovaj flag u payload-u, ona će se automatski ažurirati kada korisnik učita nit komentara.
-- Da li je korisnik pristao na obaveštenja o **pretplati**.
-  - Ovo se postiže podešavanjem `optedInSubscriptionNotifications` na `true` ili `false` u objektu `SSOUser`.
-  - Ovo se može podesiti putem API-ja.
-  - Takođe, ako prosledite vrednost za ovaj flag u payload-u, ona će se automatski ažurirati kada korisnik učita nit komentara.
-- Definisanje njihove e-mail adrese.
-  - Ako nije prisutna, ne možemo slati obaveštenja putem e-maila.
-- Da li onemogućiti linkove za odjavu u e-mailovima.
-  - Ovo se radi podešavanjem `disableUnsubscribeLinks` u objektu `Tenant`.
-  - Ovo se može podesiti putem API-ja.
-- Da li koristiti prilagođeni link za odjavu.
-  - Ovo se radi putem svojstva `footerUnsubscribeURL` na objektu `DomainConfig`.
-  - Ovo se može podesiti putem API-ja.
-  - Takođe možete razmotriti postavljanje relevantnih zaglavlja za odjavu putem `emailHeaders` u istom objektu.
+- Da li je korisnik prijavljen za notifikacije.
+  - To se postiže postavljanjem zastavice `optedInNotifications` na `true` ili `false` u objektu `SSOUser`.
+  - Ovo se može postaviti putem API-ja.
+  - Takođe, ako prosledite vrednost za ovu zastavicu u payload-u, ona će se automatski ažurirati kada korisnik učita thread sa komentarima.
+- Da li je korisnik prijavljen za notifikacije o **pretplati**.
+  - To se postiže postavljanjem zastavice `optedInSubscriptionNotifications` na `true` ili `false` u objektu `SSOUser`.
+  - Ovo se može postaviti putem API-ja.
+  - Takođe, ako prosledite vrednost za ovu zastavicu u payload-u, ona će se automatski ažurirati kada korisnik učita thread sa komentarima.
+- Koliko često korisnik prima notifikacije o pretplati na stranicu.
+  - SSO korisnici ne mogu da se prijave na FastComments.com da bi ovo promenili, pa kada im pretplata na stranicu pošalje puno emailova (20 ili više u toku nedelje), šaljemo im link, najviše jednom nedeljno.
+  - Link otvara stranicu na kojoj mogu da promene učestalost svake svoje pretplate na stranicu (svakog minuta, na svaki sat ili dnevno), ili otkažu pretplatu na stranicu.
+  - Link važi 30 dana.
+- Definisanje njihove email adrese.
+  - Ako nije prisutna, ne možemo slati notifikacije putem emaila.
+- Da li se onemogućavaju linkovi za odjavu pretplate u emailovima.
+  - To se postiže zastavicom `disableUnsubscribeLinks` u objektu `Tenant`.
+  - Ovo se može postaviti putem API-ja.
+- Da li se koristi prilagođeni link za odjavu pretplate.
+  - To se postiže svojstvom `footerUnsubscribeURL` na objektu `DomainConfig`.
+  - Ovo se može postaviti putem API-ja.
+  - Takođe možete razmotriti postavljanje odgovarajućih unsubscribe headera putem `emailHeaders` u istom objektu.

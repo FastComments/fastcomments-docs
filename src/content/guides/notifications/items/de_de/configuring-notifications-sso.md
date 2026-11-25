@@ -1,19 +1,23 @@
 Für SSO gibt es die folgende Konfiguration, die für Benachrichtigungen zu berücksichtigen ist:
 
-- Ob der Benutzer sich für Benachrichtigungen angemeldet hat.
-  - Dies geschieht durch Setzen des Flags `optedInNotifications` auf `true` oder `false` im `SSOUser`-Objekt.
+- Ob der Benutzer Benachrichtigungen aktiviert hat.
+  - Dies geschieht durch Setzen des `optedInNotifications`-Flags auf `true` oder `false` im `SSOUser`-Objekt.
   - Dies kann über die API gesetzt werden.
-  - Wenn Sie außerdem einen Wert für dieses Flag im Payload übergeben, wird es automatisch aktualisiert, wenn der Benutzer einen Kommentar-Thread lädt.
-- Ob sich der Benutzer für **subscription**-Benachrichtigungen angemeldet hat.
-  - Dies geschieht durch Setzen des Flags `optedInSubscriptionNotifications` auf `true` oder `false` im `SSOUser`-Objekt.
+  - Wenn Sie außerdem einen Wert für dieses Flag in der Payload übergeben, wird es automatisch aktualisiert, wenn der Benutzer einen Kommentar-Thread lädt.
+- Ob der Benutzer **Abonnement**-Benachrichtigungen aktiviert hat.
+  - Dies geschieht durch Setzen des `optedInSubscriptionNotifications`-Flags auf `true` oder `false` im `SSOUser`-Objekt.
   - Dies kann über die API gesetzt werden.
-  - Wenn Sie außerdem einen Wert für dieses Flag im Payload übergeben, wird es automatisch aktualisiert, wenn der Benutzer einen Kommentar-Thread lädt.
+  - Wenn Sie außerdem einen Wert für dieses Flag in der Payload übergeben, wird es automatisch aktualisiert, wenn der Benutzer einen Kommentar-Thread lädt.
+- Wie oft der Benutzer Seitenabonnement-Benachrichtigungen erhält.
+  - SSO-Benutzer können sich nicht bei FastComments.com anmelden, um dies zu ändern. Wenn ein Seitenabonnement ihnen viele E-Mails sendet (20 oder mehr innerhalb einer Woche), senden wir ihnen daher höchstens einmal pro Woche einen Link per E-Mail.
+  - Der Link öffnet eine Seite, auf der sie die Häufigkeit jedes ihrer Seitenabonnements ändern können (jede Minute, stündlich oder täglich) oder ein Seitenabonnement kündigen können.
+  - Der Link ist 30 Tage gültig.
 - Festlegen ihrer E-Mail-Adresse.
-  - Ist diese nicht vorhanden, können wir keine E-Mail-basierten Benachrichtigungen senden.
+  - Wenn diese nicht vorhanden ist, können wir keine E-Mail-basierten Benachrichtigungen senden.
 - Ob Abmelde-Links in E-Mails deaktiviert werden sollen.
-  - Dies geschieht über das Flag `disableUnsubscribeLinks` im `Tenant`-Objekt.
+  - Dies geschieht über das `disableUnsubscribeLinks`-Flag im `Tenant`-Objekt.
   - Dies kann über die API gesetzt werden.
 - Ob ein benutzerdefinierter Abmelde-Link verwendet werden soll.
-  - Dies geschieht über die Eigenschaft `footerUnsubscribeURL` im `DomainConfig`-Objekt.
+  - Dies geschieht über die `footerUnsubscribeURL`-Eigenschaft des `DomainConfig`-Objekts.
   - Dies kann über die API gesetzt werden.
-  - Sie sollten auch in Betracht ziehen, die entsprechenden Abmelde-Header über `emailHeaders` im selben Objekt zu setzen.
+  - Sie sollten möglicherweise auch in Betracht ziehen, die entsprechenden Abmelde-Header über `emailHeaders` im selben Objekt zu setzen.

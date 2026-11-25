@@ -1,19 +1,23 @@
-Para SSO, hay la siguiente configuración a considerar para las notificaciones:
+Para SSO existe la siguiente configuración a considerar para las notificaciones:
 
 - Si el usuario ha optado por recibir notificaciones.
-  - Esto se realiza estableciendo el indicador `optedInNotifications` en `true` o `false` en el objeto `SSOUser`.
-  - Esto puede configurarse a través de la API.
-  - Además, si envías un valor para este indicador en la carga útil, se actualizará automáticamente cuando el usuario cargue un hilo de comentarios.
-- Si el usuario ha optado por las notificaciones de **suscripción**.
-  - Esto se realiza estableciendo el indicador `optedInSubscriptionNotifications` en `true` o `false` en el objeto `SSOUser`.
-  - Esto puede configurarse a través de la API.
-  - Además, si envías un valor para este indicador en la carga útil, se actualizará automáticamente cuando el usuario cargue un hilo de comentarios.
-- Definir su dirección de correo electrónico.
+  - Esto se hace estableciendo el flag `optedInNotifications` en `true` o `false` en el objeto `SSOUser`.
+  - Esto se puede establecer a través de la API.
+  - Además, si pasas un valor para este flag en el payload, se actualizará automáticamente cuando el usuario cargue un hilo de comentarios.
+- Si el usuario ha optado por recibir notificaciones de **suscripción**.
+  - Esto se hace estableciendo el flag `optedInSubscriptionNotifications` en `true` o `false` en el objeto `SSOUser`.
+  - Esto se puede establecer a través de la API.
+  - Además, si pasas un valor para este flag en el payload, se actualizará automáticamente cuando el usuario cargue un hilo de comentarios.
+- Con qué frecuencia el usuario recibe notificaciones de suscripción de página.
+  - Los usuarios SSO no pueden iniciar sesión en FastComments.com para cambiar esto, así que cuando una suscripción de página les envía muchos correos electrónicos (20 o más dentro de una semana), les enviamos por correo un enlace, como máximo una vez por semana.
+  - El enlace abre una página donde pueden cambiar la frecuencia de cada una de sus suscripciones de página (cada minuto, cada hora o diariamente), o darse de baja de una página.
+  - El enlace es válido durante 30 días.
+- Definir su correo electrónico.
   - Si no está presente, no podemos enviar notificaciones por correo electrónico.
-- Si desactivar los enlaces para darse de baja en los correos electrónicos.
-  - Esto se hace mediante el indicador `disableUnsubscribeLinks` en el objeto `Tenant`.
-  - Esto puede configurarse a través de la API.
-- Si usar un enlace personalizado para darse de baja.
+- Si se deben deshabilitar los enlaces de baja en los correos electrónicos.
+  - Esto se hace mediante el flag `disableUnsubscribeLinks` en el objeto `Tenant`.
+  - Esto se puede establecer a través de la API.
+- Si se debe usar un enlace de baja personalizado.
   - Esto se hace mediante la propiedad `footerUnsubscribeURL` en el objeto `DomainConfig`.
-  - Esto puede configurarse a través de la API.
-  - También puede considerar establecer los encabezados de cancelación de suscripción relevantes mediante `emailHeaders` en el mismo objeto.
+  - Esto se puede establecer a través de la API.
+  - También es posible que desees considerar establecer los encabezados de baja relevantes mediante `emailHeaders` en el mismo objeto.

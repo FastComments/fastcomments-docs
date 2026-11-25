@@ -1,19 +1,23 @@
-Dla SSO należy wziąć pod uwagę następującą konfigurację dotyczącą powiadomień:
+W przypadku SSO należy wziąć pod uwagę następującą konfigurację powiadomień:
 
 - Czy użytkownik wyraził zgodę na powiadomienia.
-  - Odbywa się to przez ustawienie flagi `optedInNotifications` na `true` lub `false` w obiekcie `SSOUser`.
+  - Robi się to poprzez ustawienie flagi `optedInNotifications` na `true` lub `false` w obiekcie `SSOUser`.
   - Można to ustawić za pomocą API.
-  - Ponadto, jeśli przekażesz wartość tej flagi w ładunku (payload), zostanie ona automatycznie zaktualizowana, gdy użytkownik załaduje wątek komentarzy.
-- Czy użytkownik zapisał się na **subskrypcyjne** powiadomienia.
-  - Odbywa się to przez ustawienie flagi `optedInSubscriptionNotifications` na `true` lub `false` w obiekcie `SSOUser`.
+  - Ponadto, jeśli przekażesz wartość tej flagi w payloadzie, zostanie ona automatycznie zaktualizowana, gdy użytkownik załaduje wątek komentarzy.
+- Czy użytkownik wyraził zgodę na powiadomienia **subskrypcyjne**.
+  - Robi się to poprzez ustawienie flagi `optedInSubscriptionNotifications` na `true` lub `false` w obiekcie `SSOUser`.
   - Można to ustawić za pomocą API.
-  - Ponadto, jeśli przekażesz wartość tej flagi w ładunku (payload), zostanie ona automatycznie zaktualizowana, gdy użytkownik załaduje wątek komentarzy.
-- Określenie ich adresu e-mail.
-  - Jeśli nie jest podany, nie możemy wysyłać powiadomień e-mail.
-- Czy wyłączyć linki rezygnacji w e-mailach.
-  - Odbywa się to przez ustawienie flagi `disableUnsubscribeLinks` w obiekcie `Tenant`.
+  - Ponadto, jeśli przekażesz wartość tej flagi w payloadzie, zostanie ona automatycznie zaktualizowana, gdy użytkownik załaduje wątek komentarzy.
+- Jak często użytkownik otrzymuje powiadomienia o subskrypcjach stron.
+  - Użytkownicy SSO nie mogą zalogować się na FastComments.com, aby to zmienić, więc gdy subskrypcja strony wyśle im dużo e-maili (20 lub więcej w ciągu tygodnia), wysyłamy im link, najwyżej raz w tygodniu.
+  - Link otwiera stronę, na której mogą zmienić częstotliwość każdej ze swoich subskrypcji stron (co minutę, co godzinę lub codziennie) albo anulować subskrypcję strony.
+  - Link jest ważny przez 30 dni.
+- Zdefiniowanie adresu e-mail.
+  - Jeśli go nie ma, nie możemy wysyłać powiadomień e-mail.
+- Czy wyłączyć linki do rezygnacji z subskrypcji w e-mailach.
+  - Robi się to za pomocą flagi `disableUnsubscribeLinks` w obiekcie `Tenant`.
   - Można to ustawić za pomocą API.
-- Czy użyć niestandardowego linku do rezygnacji.
-  - Odbywa się to przez właściwość `footerUnsubscribeURL` w obiekcie `DomainConfig`.
+- Czy używać niestandardowego linku do rezygnacji z subskrypcji.
+  - Robi się to za pomocą właściwości `footerUnsubscribeURL` w obiekcie `DomainConfig`.
   - Można to ustawić za pomocą API.
-  - Możesz także rozważyć ustawienie odpowiednich nagłówków rezygnacji za pomocą `emailHeaders` w tym samym obiekcie.
+  - Warto również rozważyć ustawienie odpowiednich nagłówków rezygnacji z subskrypcji za pomocą `emailHeaders` w tym samym obiekcie.

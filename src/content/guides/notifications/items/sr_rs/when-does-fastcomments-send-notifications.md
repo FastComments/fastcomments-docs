@@ -1,35 +1,37 @@
-У FastComments знамо да већ добијате довољно обавештења. Због тога предузимамо одређене мере да ограничимо обавештења која корисници примају, а да их и даље држимо у контакту са својим заједницама. Такође желимо да администраторе и модераторе држимо у току и да их обавестимо када је потребно предузети акцију.
+U FastComments znamo da vas već ima dovoljno obaveštenja. Zbog toga preduzimamo određene mere da ograničimo broj obaveštenja koje korisnici primaju, a da ih i dalje držimo u kontaktu sa svojim zajednicama. Takođe želimo da administratori i moderatori budu u toku i da znaju kada je potrebna akcija.
 
-#### Послаћемо обавештења за следеће догађаје за администраторе и модераторе:
+#### Slamo obaveštenja za sledeće događaje za administratore i moderatore:
 
-- Резиме дигеста заједнице (учесталост се може подесити).
-- Захтеви за помоћ у заједници и подсетници.
-- Нови коментари.
+- Rezime aktivnosti zajednice (frekvencija je konfigurabilna).
+- Zahtevi za pomoć i podsetnici u zajednici.
+- Novi komentari.
 
-#### За коментаторе:
+#### Za komentatore:
 
-- Када неко одговори на ваш коментар (путем имејла).
-- Када сте поменути (обавештење у апликацији и имејлом).
-- Када неко одговори у истој нити (обавештење у апликацији и имејлом).
-- Када неко одговори на подређени коментар у истој нити (обавештење у апликацији и имејлом).
-- Када неко одговори на страницу којој сте се претплатили (обавештење у апликацији и имејлом, учесталост се може подесити по претплати: сваког минута, сваки сат или сваки дан).
-- Када неко одговори на анкету коју сте креирали (обавештење у апликацији, плус дневни имејл). Погледајте [Обавештења о анкетама](/guide-polls.html#poll-notifications).
-- Када корисник коментарише први пут (али не са SSO).
-- Када корисник остави коментар у сесији која није верификована (али не са SSO).
-  - У овом случају не шаљемо више верификационих имејлова. Само први, који ће верификовати сву активност у истој сесији.
+- Kada neko odgovori na vaš komentar (putem imejla).
+- Kada ste pomenuti (obaveštenje u aplikaciji i imejl).
+- Kada neko odgovori u istom nizu (obaveštenje u aplikaciji i imejl).
+- Kada neko odgovori na podređeni komentar u istom nizu (obaveštenje u aplikaciji i imejl).
+- Kada neko odgovori na stranicu koju ste pretplatili (obaveštenje u aplikaciji i imejl, frekvencija konfigurabilna po pretplati: svakog minuta, svakog sata ili dnevno).
+- Kada vam stranica na koju ste pretplatteni pošalje puno imejlova (20 ili više u toku nedelje), pitaćemo vas da li i dalje želite tu frekvenciju, najviše jednom nedeljno.
+  - Ništa se ne menja osim ako vi to ne promenite. Imejl sadrži link za prelazak na dnevna obaveštenja.
+- Kada neko odgovori na anketu koju ste kreirali (obaveštenje u aplikaciji, plus dnevni imejl). Vidite [Obaveštenja o anketama](/guide-polls.html#poll-notifications).
+- Kada korisnik komentariše prvi put (ali ne sa SSO).
+- Kada korisnik ostavi komentar u sesiji koja nije verifikovana (ali ne sa SSO).
+  - U ovom slučaju ne šaljemo više verifikacionih imejlova. Samo prvi, koji će verifikovati svu aktivnost u istoj sesiji.
 
-#### За све кориснике:
+#### Za sve korisnike:
 
-- Када се детектује пријава са нове IP адресе, шаље се безбедносни упозоравајући имејл са приближном локацијом и IP адресом. Ово не важи за прву пријаву корисника.
+- Kada se otkrije prijava sa nove IP adrese, šalje se imejl sa bezbednosnim upozorenjem sa približnom lokacijom i IP adresom. Ovo ne važi za prvu prijavu korisnika.
 
-#### ...и на крају, само за администраторе:
+#### ...i na kraju, samo za administratore:
 
-- Када су интеграције завршене.
-- Када су миграције завршене.
-- Када се увози или извози заврше.
-- Када постоје проблеми са наплатом.
-- Подсетници на крај пробног периода.
+- Kada su integracije završene.
+- Kada su migracije završene.
+- Kada se uvoz ili izvoz završi.
+- Kada postoje problemi sa naplatom.
+- Podsetnici o isteku probnog perioda.
 
-Нека обавештења се груписују како би се спречило масовно слање обавештења корисницима. Сазнајте више о томе у следећем одељку `Notification Types`.
+Neka obaveštenja se grupišu kako bi se sprečilo masovno slanje obaveštenja korisnicima. Saznajte više o tome u sledećem odeljku `Notification Types`.
 
-Имејлови за одговоре и помињања се шаљу само за одобрене коментаре. Да бисте видели да ли је имејл за одговор или помињање послат за одређени коментар, или зашто није, отворите [Евиденцију коментара](/guide-moderation.html#comment-logs) тог коментара са странице Moderate Comments.
+Imejlovi za odgovore i pominjanja se šalju samo za odobrene komentare. Da biste videli da li je imejl za odgovor ili pominjanje poslat za određeni komentar, ili zašto nije, otvorite [Evidencije komentara](/guide-moderation.html#comment-logs) tog komentara sa stranice za moderiranje komentara.

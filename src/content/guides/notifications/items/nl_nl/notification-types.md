@@ -1,11 +1,12 @@
-Er zijn een paar soorten meldingen en kanalen waarin FastComments meldingen verzendt:
+Er zijn een paar soorten meldingen en kanalen waarin FastComments meldingen verstuurt:
 
-- Direct via e‑mail.
-  - Reacties op opmerkingen en vermeldingsmeldingen worden elke minuut verzonden.
-- Direct via app.
-  - Deze worden weergegeven onder het meldingsbel‑icoon.
-- Gegroepeerd via e‑mail.
-  - Pagina‑abonnementsmeldingen kunnen per abonnement worden geconfigureerd om elke minuut, als een uurlijkse samenvatting, of als een dagelijkse samenvatting te verzenden. Als er niets te verzenden is voor de gebruiker in die tijdsperiode, sturen we geen e‑mail.
-  - Poll‑responsmeldingen worden naar de auteur van de poll verzonden als een dagelijkse e‑mail.
-- Getimed via e‑mail.
-  - Voorbeelden zijn de Community Digest Samenvatting die dagelijks, wekelijks of maandelijks kan worden verzonden (of uitgeschakeld).
+- Direct via e-mail.
+  - Meldingen van reactie-antwoorden en vermeldingen worden elke minuut verstuurd.
+- Direct via de app.
+  - Deze worden weergegeven onder het belpictogram voor meldingen.
+- Gebundeld via e-mail.
+  - Meldingen voor paginabonnementen kunnen per abonnement worden geconfigureerd om elke minuut, als uurlijkse samenvatting of als dagelijkse samenvatting te worden verstuurd. Als er in die periode niets te versturen is voor de gebruiker, versturen we geen e-mail.
+  - Als een abonnement dat niet op de dagelijkse samenvatting staat een gebruiker 20 of meer e-mails binnen een week stuurt, sturen we een bevestigingsmail met de vraag of ze die frequentie nog steeds willen, met een link om over te schakelen naar dagelijkse meldingen. Dit wordt maximaal één keer per week verstuurd, en hun meldingen blijven zoals voorheen verstuurd worden totdat ze de frequentie wijzigen.
+  - Meldingen van poll-antwoorden worden dagelijks per e-mail naar de auteur van de poll gestuurd.
+- Op tijden via e-mail.
+  - Voorbeelden hiervan zijn de Community Digest Summary, die dagelijks, wekelijks of maandelijks kan worden verstuurd (of kan worden uitgeschakeld).

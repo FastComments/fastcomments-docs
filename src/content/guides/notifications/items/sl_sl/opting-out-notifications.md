@@ -1,9 +1,11 @@
-Obvestila se lahko odjavijo na več načinov. Če je vaš račun upravljan pri FastComments.com in ne preko SSO, lahko obvestila nastavite na [Strani z nastavitvami obvestil](https://fastcomments.com/auth/my-account/edit-notifications).
+Obvestila je mogoče izklopiti na več načinov. Če vaš račun upravlja FastComments.com in ne prek SSO, lahko obvestila nastavite na [strani z nastavitvami obvestil](https://fastcomments.com/auth/my-account/edit-notifications).
 
-Tukaj lahko nastavite obvestila o odgovorih na komentarje in omembah, pogostost obvestil (vsako minuto, vsako uro ali dnevno), pogostost obvestil o naročninah (vsako minuto, vsako uro ali dnevno) ter druge splošne nastavitve obvestil. Če ste skrbnik strani ali moderator, boste imeli tudi ločeno nastavitev **Pogostost skrbniških obvestil**, ki določa, kako pogosto prejemate e-pošto o novih komentarjih na vaši strani (privzeto vsako uro), ter možnost nastavitve pogostosti e-poštnega povzetka.
+Tu lahko nastavite obvestila o odgovorih na komentarje in omembah, pogostost obvestil (vsako minuto, vsako uro ali dnevno), pogostost obvestil o naročninah (vsako minuto, vsako uro ali dnevno) ter splošno katero koli obvestilo. Če ste skrbnik ali moderator spletnega mesta, imate tudi ločeno nastavitev **Pogostost skrbniških obvestil**, ki določa, kako pogosto prejemate e-pošto o novih komentarjih na vašem spletnem mestu (privzeto vsako uro), ter možnost nastavitve pogostosti e-poštnega povzetka (Digest Email).
 
-Poleg tega vsako e-poštno sporočilo vsebuje povezavo za odjavo. Pri obvestilih o odgovorih na komentarje e-pošta vsebuje povezavo za **odjavo od obvestil za ta komentar**.
+Če vam naročnina na stran pošilja veliko e-pošte, vam bomo poslali e-poštno sporočilo največ enkrat na teden z vprašanjem, ali še vedno želite to pogostost. Povezava v tem sporočilu vas pripelje na stran z nastavitvami obvestil, kjer jo lahko spremenite. Za uporabnike, ki jih upravlja SSO, povezava odpre stran, kjer lahko spremenijo pogostost vsake od svojih naročnin na strani ali se od naročnine na stran odjavijo, brez računa FastComments.com.
 
-Obvestila bodo vsebovala tudi povezavo za odjavo, s katero jih lahko izklopite, pa tudi ustrezne glave e-pošte.
+Poleg tega vsaka e-poštna sporočila vsebujejo povezavo za odjavo. Pri obvestilih o odgovorih na komentarje sporočilo vsebuje povezavo za **odjavo obvestil za ta komentar**.
 
-Povezave za odjavo v e-pošti je mogoče na zahtevo odstraniti za določenega tenant. Poleg tega je povezavo mogoče prilagoditi za SSO ali whitelabel integracije.
+Obvestila vsebujejo tudi povezavo za odjavo, s katero jih lahko izklopite, ter ustrezne e-poštne glave.
+
+Povezave za odjavo v e-pošti je mogoče na zahtevo odstraniti za določenega najemnika (tenant). Poleg tega je mogoče povezavo prilagoditi za integracije SSO ali whitelabel.

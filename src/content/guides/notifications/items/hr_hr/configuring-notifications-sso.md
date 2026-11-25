@@ -1,19 +1,23 @@
-Za SSO postoji sljedeća konfiguracija koju treba razmotriti za obavijesti:
+Za SSO postoje sljedeće postavke koje treba uzeti u obzir za obavijesti:
 
-- Je li se korisnik prijavio za primanje obavijesti.
-  - To se radi postavljanjem zastavice `optedInNotifications` na `true` ili `false` u objektu `SSOUser`.
+- Je li se korisnik uključio u obavijesti.
+  - To se postiže postavljanjem zastavice `optedInNotifications` na `true` ili `false` u objektu `SSOUser`.
   - To se može postaviti putem API-ja.
-  - Također, ako u payloadu pošaljete vrijednost za ovu zastavicu, ona će se automatski ažurirati kada korisnik učita nit komentara.
-- Je li se korisnik prijavio za obavijesti o pretplati.
-  - To se radi postavljanjem zastavice `optedInSubscriptionNotifications` na `true` ili `false` u objektu `SSOUser`.
+  - Također, ako proslijedite vrijednost za ovu zastavicu u payloadu, ona će se automatski ažurirati kada korisnik učita nit komentara.
+- Je li se korisnik uključio u obavijesti o **pretplatama**.
+  - To se postiže postavljanjem zastavice `optedInSubscriptionNotifications` na `true` ili `false` u objektu `SSOUser`.
   - To se može postaviti putem API-ja.
-  - Također, ako u payloadu pošaljete vrijednost za ovu zastavicu, ona će se automatski ažurirati kada korisnik učita nit komentara.
+  - Također, ako proslijedite vrijednost za ovu zastavicu u payloadu, ona će se automatski ažurirati kada korisnik učita nit komentara.
+- Koliko često korisnik prima obavijesti o pretplatama na stranice.
+  - SSO korisnici se ne mogu prijaviti na FastComments.com kako bi to promijenili, pa kada im pretplata na stranicu pošalje puno e-pošte (20 ili više unutar tjedna), šaljemo im poveznicu, najviše jednom tjedno.
+  - Poveznica otvara stranicu na kojoj mogu promijeniti učestalost svake od svojih pretplata na stranice (svake minute, svaki sat ili svaki dan), ili se odjaviti s pretplate na stranicu.
+  - Poveznica vrijedi 30 dana.
 - Definiranje njihove e-pošte.
   - Ako nije prisutna, ne možemo slati obavijesti putem e-pošte.
-- Hoće li se onesposobiti poveznice za odjavu u e-porukama.
-  - To se radi putem zastavice `disableUnsubscribeLinks` u objektu `Tenant`.
+- Treba li onemogućiti poveznice za odjavu pretplate u e-porukama.
+  - To se postiže zastavicom `disableUnsubscribeLinks` u objektu `Tenant`.
   - To se može postaviti putem API-ja.
-- Hoće li se koristiti prilagođena poveznica za odjavu.
-  - To se radi svojstvom `footerUnsubscribeURL` na objektu `DomainConfig`.
+- Treba li koristiti prilagođenu poveznicu za odjavu pretplate.
+  - To se postiže svojstvom `footerUnsubscribeURL` na objektu `DomainConfig`.
   - To se može postaviti putem API-ja.
-  - Možda ćete također htjeti razmotriti postavljanje relevantnih zaglavlja za odjavu putem `emailHeaders` u istom objektu.
+  - Također biste mogli razmotriti postavljanje odgovarajućih zaglavlja za odjavu pretplate putem `emailHeaders` u istom objektu.

@@ -1,9 +1,9 @@
-W FastComments wiemy, że i tak otrzymujesz już wystarczająco dużo powiadomień. Dlatego stosujemy pewne środki, aby ograniczyć liczbę powiadomień otrzymywanych przez użytkowników, jednocześnie pozwalając im pozostać w kontakcie ze swoimi społecznościami. Chcemy również, aby administratorzy i moderatorzy byli na bieżąco i wiedzieli, kiedy należy podjąć działania.
+W FastComments wiemy, że i tak otrzymujesz już wystarczająco dużo powiadomień. Dlatego podejmujemy pewne środki, aby ograniczyć liczbę powiadomień otrzymywanych przez użytkowników, jednocześnie pozwalając im pozostać w kontakcie ze swoimi społecznościami. Chcemy też, aby administratorzy i moderatorzy byli na bieżąco i wiedzieli, kiedy należy podjąć działania.
 
-#### Wysyłamy powiadomienia dla administratorów i moderatorów o następujących zdarzeniach:
+#### Będziemy wysyłać powiadomienia dla administratorów i moderatorów o następujących zdarzeniach:
 
 - Podsumowanie aktywności społeczności (częstotliwość konfigurowalna).
-- Prośby o pomoc w społeczności i przypomnienia.
+- Prośby o pomoc od społeczności i przypomnienia.
 - Nowe komentarze.
 
 #### Dla komentujących:
@@ -13,7 +13,9 @@ W FastComments wiemy, że i tak otrzymujesz już wystarczająco dużo powiadomie
 - Gdy ktoś odpowie w tym samym wątku (powiadomienie w aplikacji i e-mail).
 - Gdy ktoś odpowie na komentarz podrzędny w tym samym wątku (powiadomienie w aplikacji i e-mail).
 - Gdy ktoś odpowie na stronę, którą subskrybujesz (powiadomienie w aplikacji i e-mail, częstotliwość konfigurowalna dla każdej subskrypcji: co minutę, co godzinę lub codziennie).
-- Gdy ktoś odpowie w ankiecie, którą utworzyłeś (powiadomienie w aplikacji, plus dzienny e-mail). Zobacz [Powiadomienia o ankietach](/guide-polls.html#poll-notifications).
+- Gdy strona, którą subskrybujesz, wysyła Ci dużo e-maili (20 lub więcej w ciągu tygodnia), zapytamy, czy nadal chcesz tę częstotliwość, najwyżej raz w tygodniu.
+  - Nic się nie zmienia, dopóki Ty tego nie zmienisz. E-mail zawiera link umożliwiający przełączenie na codzienne powiadomienia.
+- Gdy ktoś odpowie na ankietę, którą utworzyłeś (powiadomienie w aplikacji oraz codzienny e-mail). Zobacz [Powiadomienia ankiet](/guide-polls.html#poll-notifications).
 - Gdy użytkownik komentuje po raz pierwszy (ale nie z SSO).
 - Gdy użytkownik zostawia komentarz w sesji, która nie została zweryfikowana (ale nie z SSO).
   - W tym przypadku nie wysyłamy wielu e-maili weryfikacyjnych. Tylko pierwszy, który zweryfikuje całą aktywność w tej samej sesji.
@@ -30,6 +32,6 @@ W FastComments wiemy, że i tak otrzymujesz już wystarczająco dużo powiadomie
 - Gdy wystąpią problemy z rozliczeniami.
 - Przypomnienia o końcu okresu próbnego.
 
-Niektóre powiadomienia są grupowane, aby zapobiec masowemu wysyłaniu powiadomień do użytkowników. Dowiedz się więcej o tym w następnej sekcji `Notification Types`.
+Niektóre powiadomienia są grupowane w paczki, aby zapobiec masowemu wysyłaniu powiadomień do użytkowników. Dowiedz się więcej o tym w następnej sekcji `Notification Types`.
 
-E-maile z odpowiedziami i wzmiankami są wysyłane tylko dla komentarzy, które zostały zatwierdzone. Aby sprawdzić, czy e-mail z odpowiedzią lub wzmianką został wysłany dla konkretnego komentarza, lub dlaczego nie został, otwórz [Logi komentarzy](/guide-moderation.html#comment-logs) tego komentarza na stronie Moderate Comments.
+E-maile z odpowiedziami i wzmiankami są wysyłane tylko dla komentarzy zatwierdzonych. Aby sprawdzić, czy dla konkretnego komentarza wysłano e-mail z odpowiedzią lub wzmianką, albo dlaczego nie został on wysłany, otwórz [Logi komentarzy](/guide-moderation.html#comment-logs) tego komentarza ze strony Moderowanie komentarzy.

@@ -1,19 +1,23 @@
-Per SSO esiste la seguente configurazione da considerare per le notifiche:
+Per SSO esistono le seguenti configurazioni da considerare per le notifiche:
 
-- Whether the user has opted into notifications.
-  - Questo si ottiene impostando il flag `optedInNotifications` su `true` o `false` nell'oggetto `SSOUser`.
+- Se l'utente ha acconsentito alle notifiche.
+  - Questo viene fatto impostando il flag `optedInNotifications` su `true` o `false` nell'oggetto `SSOUser`.
   - Questo può essere impostato tramite l'API.
-  - Inoltre, se passi un valore per questo flag nel payload, verrà aggiornato automaticamente quando l'utente carica un thread di commenti.
-- Whether the user has opted into **subscription** notifications.
-  - Questo si ottiene impostando il flag `optedInSubscriptionNotifications` su `true` o `false` nell'oggetto `SSOUser`.
+  - Inoltre, se si passa un valore per questo flag nel payload, verrà aggiornato automaticamente quando l'utente carica un thread di commenti.
+- Se l'utente ha acconsentito alle notifiche di **abbonamento**.
+  - Questo viene fatto impostando il flag `optedInSubscriptionNotifications` su `true` o `false` nell'oggetto `SSOUser`.
   - Questo può essere impostato tramite l'API.
-  - Inoltre, se passi un valore per questo flag nel payload, verrà aggiornato automaticamente quando l'utente carica un thread di commenti.
-- Defining their email.
-  - Se non presente, non possiamo inviare notifiche via email.
-- Whether to disable unsubscribe links in emails.
-  - Questo si ottiene tramite il flag `disableUnsubscribeLinks` nell'oggetto `Tenant`.
+  - Inoltre, se si passa un valore per questo flag nel payload, verrà aggiornato automaticamente quando l'utente carica un thread di commenti.
+- Con quale frequenza l'utente riceve le notifiche di abbonamento alla pagina.
+  - Gli utenti SSO non possono accedere a FastComments.com per modificare questa impostazione, quindi quando un abbonamento a una pagina invia loro molte email (20 o più entro una settimana), inviamo loro un link via email, al massimo una volta a settimana.
+  - Il link apre una pagina dove possono modificare la frequenza di ciascuno dei loro abbonamenti alle pagine (ogni minuto, ogni ora o ogni giorno), oppure annullare l'abbonamento a una pagina.
+  - Il link è valido per 30 giorni.
+- La definizione del loro indirizzo email.
+  - Se non presente, non possiamo inviare notifiche basate su email.
+- Se disabilitare i link di annullamento dell'abbonamento nelle email.
+  - Questo viene fatto tramite il flag `disableUnsubscribeLinks` nell'oggetto `Tenant`.
   - Questo può essere impostato tramite l'API.
-- Whether to use a custom unsubscribe link.
-  - Questo si ottiene tramite la proprietà `footerUnsubscribeURL` sull'oggetto `DomainConfig`.
+- Se utilizzare un link di annullamento dell'abbonamento personalizzato.
+  - Questo viene fatto tramite la proprietà `footerUnsubscribeURL` sull'oggetto `DomainConfig`.
   - Questo può essere impostato tramite l'API.
-  - Potresti anche voler considerare di impostare gli header di disiscrizione pertinenti tramite `emailHeaders` nello stesso oggetto.
+  - Potrebbe anche essere opportuno considerare l'impostazione delle intestazioni di annullamento dell'abbonamento pertinenti tramite `emailHeaders` nello stesso oggetto.

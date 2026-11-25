@@ -1,10 +1,11 @@
-Bildirimler birkaç farklı şekilde kapatılabilir. Hesabınız FastComments.com tarafından yönetiliyor ve SSO aracılığıyla değilse, bildirimlerinizi
-[Notifications Settings page](https://fastcomments.com/auth/my-account/edit-notifications) üzerinden yapılandırabilirsiniz.
+Bildirimler birkaç şekilde devre dışı bırakılabilir. Hesabınız FastComments.com tarafından yönetiliyorsa ve SSO üzerinden değilse, bildirimlerinizi [Bildirim Ayarları sayfasından](https://fastcomments.com/auth/my-account/edit-notifications) yapılandırabilirsiniz.
 
-Burada yorum yanıtı ve bahsetme bildirimlerini, bildirim sıklığını (her dakika, saatlik veya günlük), abonelik bildirim sıklığını (her dakika, saatlik veya günlük) ve genel olarak herhangi bir bildirimi yapılandırabilirsiniz. Bir site yöneticisi veya moderatörseniz, sitenizdeki yeni yorumlarla ilgili e-postaları ne sıklıkla alacağınızı kontrol eden ayrı bir **Yönetici Bildirim Sıklığı** ayarına (varsayılan olarak saatlik) ve ayrıca Özet E-posta sıklığını yapılandırma seçeneğine de sahip olursunuz.
+Burada yorum yanıtı ve bahsetme (mention) bildirimlerini, bildirim sıklığını (her dakika, saatlik veya günlük), abonelik bildirim sıklığını (her dakika, saatlik veya günlük) ve genel olarak herhangi bir bildirimi yapılandırabilirsiniz. Site yöneticisi veya moderatörseniz, sitenizdeki yeni yorumlarla ilgili e-postaları ne sıklıkla alacağınızı kontrol eden ayrı bir **Yönetici Bildirim Sıklığı** ayarınız da olur (varsayılanı saatliktir); ayrıca Özet E-posta sıklığını yapılandırma seçeneğiniz de bulunur.
 
-Ayrıca, her e-postada bir abonelikten çıkma bağlantısı bulunur. Yorum yanıtı bildirimleri için, e-posta **o yorum için bildirimleri kapatma** bağlantısı içerir.
+Bir sayfa aboneliği size çok fazla e-posta gönderiyorsa, o sıklığı hâlâ isteyip istemediğinizi soran bir e-postayı haftada en fazla bir kez göndeririz. Bu e-postadaki bağlantı, sıklığı değiştirmek için sizi Bildirim Ayarları sayfasına yönlendirir. SSO üzerinden yönetilen kullanıcılar için bağlantı, FastComments.com hesabı olmadan her sayfa aboneliğinin sıklığını değiştirebilecekleri veya bir sayfanın aboneliğinden çıkabilecekleri bir sayfa açar.
 
-Bildirimlerin kapatılması için ayrıca bir abonelikten çıkma bağlantısı ve uygun e-posta üstbilgileri de olacaktır.
+Ayrıca her e-posta, abonelikten çıkma (opt-out) bağlantısı içerir. Yorum yanıtı bildirimlerinde, e-posta **o yorum için bildirimlerden çıkmak** üzere bir bağlantı içerir.
 
-E-postalardaki abonelikten çıkma bağlantıları, talep üzerine belirli bir tenant için kaldırılabilir. Ayrıca, bağlantı SSO veya whitelabel entegrasyonları için özelleştirilebilir.
+Bildirimlerde ayrıca bunları kapatmak için bir abonelikten çıkma bağlantısı ve uygun e-posta başlıkları bulunur.
+
+E-postalardaki abonelikten çıkma bağlantıları, belirli bir tenant için talep üzerine kaldırılabilir. Ek olarak, bu bağlantı SSO veya whitelabel entegrasyonları için özelleştirilebilir.

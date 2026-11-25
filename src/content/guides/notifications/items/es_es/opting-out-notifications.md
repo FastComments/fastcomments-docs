@@ -1,11 +1,13 @@
-Se puede optar por dejar de recibir notificaciones de varias maneras. Si su cuenta está gestionada por FastComments.com y no mediante SSO, puede configurar sus
-notificaciones a través de la [Página de configuración de notificaciones](https://fastcomments.com/auth/my-account/edit-notifications).
+Las notificaciones se pueden desactivar de varias maneras. Si su cuenta es administrada por FastComments.com y no mediante SSO, puede configurar sus
+notificaciones a través de la [página de configuración de notificaciones](https://fastcomments.com/auth/my-account/edit-notifications).
 
-Aquí puede configurar las notificaciones de respuestas a comentarios y menciones, la frecuencia de notificaciones (cada minuto, cada hora o diariamente), la frecuencia de notificaciones de suscripción (cada minuto, cada hora o diariamente), y cualquier notificación en general. Si es administrador del sitio o
-moderador, también tendrá una configuración separada de **Frecuencia de notificaciones de administrador** que controla con qué frecuencia recibe correos electrónicos sobre nuevos comentarios en su sitio (por defecto cada hora), así como la opción de configurar la frecuencia del correo de resumen.
+Aquí puede configurar las notificaciones de respuestas y menciones a comentarios, la frecuencia de las notificaciones (cada minuto, cada hora o diariamente), la frecuencia de las notificaciones de suscripción (cada minuto, cada hora o diariamente) y cualquier notificación en general. Si es un administrador del sitio o un
+moderador, también tendrá una configuración separada de **Frecuencia de notificaciones de administrador** que controla con qué frecuencia recibe correos electrónicos sobre nuevos comentarios en su sitio (por defecto, cada hora), así como la opción de configurar la frecuencia del correo electrónico de resumen (Digest Email).
 
-Además, cada correo electrónico contiene un enlace para darse de baja. Para las notificaciones de respuesta a comentarios, el correo contiene un enlace para **darse de baja de las notificaciones de ese comentario**.
+Si una suscripción a una página le envía muchos correos electrónicos, le enviaremos un correo como máximo una vez por semana preguntándole si aún desea esa frecuencia. El enlace en ese correo electrónico lo lleva a la página de configuración de notificaciones para cambiarla. Para los usuarios administrados mediante SSO, el enlace abre una página donde pueden cambiar la frecuencia de cada una de sus suscripciones a páginas, o darse de baja de una página, sin una cuenta de FastComments.com.
 
-Las notificaciones también incluirán un enlace para darse de baja para desactivarlas, así como las cabeceras de correo electrónico apropiadas.
+Además, cada correo electrónico contiene un enlace para darse de baja. Para las notificaciones de respuestas a comentarios, el correo electrónico contiene un enlace para **dejar de recibir notificaciones de ese comentario**.
 
-Los enlaces de desuscripción en los correos pueden ser eliminados bajo petición para un tenant determinado. Además, el enlace puede personalizarse para integraciones SSO o whitelabel.
+Las notificaciones también tendrán un enlace de cancelación de suscripción para desactivarlas, así como los encabezados de correo electrónico apropiados.
+
+Los enlaces de cancelación de suscripción en los correos electrónicos se pueden eliminar a petición para un tenant determinado. Además, el enlace se puede personalizar para integraciones SSO o whitelabel.

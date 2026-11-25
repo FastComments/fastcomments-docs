@@ -1,19 +1,23 @@
-SSO için bildirimler söz konusu olduğunda göz önünde bulundurulması gereken yapılandırmalar şunlardır:
+SSO için bildirimler konusunda dikkate alınması gereken şu yapılandırmalar vardır:
 
-- Kullanıcının bildirimlere abone olup olmadığı.
-  - Bu, `SSOUser` nesnesinde `optedInNotifications` bayrağını `true` veya `false` olarak ayarlayarak yapılır.
-  - Bu API aracılığıyla ayarlanabilir.
-  - Ayrıca, bu bayrak için payload içinde bir değer gönderirseniz, kullanıcı bir yorum dizisini yüklediğinde otomatik olarak güncellenecektir.
-- Kullanıcının **abonelik** bildirimlerine abone olup olmadığı.
-  - Bu, `SSOUser` nesnesinde `optedInSubscriptionNotifications` bayrağını `true` veya `false` olarak ayarlayarak yapılır.
-  - Bu API aracılığıyla ayarlanabilir.
-  - Ayrıca, bu bayrak için payload içinde bir değer gönderirseniz, kullanıcı bir yorum dizisini yüklediğinde otomatik olarak güncellenecektir.
-- E-posta adresinin tanımlanması.
-  - Mevcut değilse, e-posta tabanlı bildirimler gönderemeyiz.
-- E-postalardaki abonelikten çıkış bağlantılarını devre dışı bırakıp bırakmama.
-  - Bu, `Tenant` nesnesindeki `disableUnsubscribeLinks` bayrağı ile yapılır.
-  - Bu API aracılığıyla ayarlanabilir.
-- Özel bir abonelikten çıkış bağlantısı kullanıp kullanmama.
-  - Bu, `DomainConfig` nesnesindeki `footerUnsubscribeURL` özelliği ile yapılır.
-  - Bu API aracılığıyla ayarlanabilir.
-  - Ayrıca aynı nesnedeki `emailHeaders` aracılığıyla ilgili abonelikten çıkış başlıklarını ayarlamayı da düşünebilirsiniz.
+- Kullanıcının bildirimlere kaydolup kaydolmadığı.
+  - Bu, `SSOUser` nesnesindeki `optedInNotifications` bayrağının `true` veya `false` olarak ayarlanmasıyla yapılır.
+  - Bu, API üzerinden ayarlanabilir.
+  - Ayrıca, bu bayrak için payload içinde bir değer iletiyorsanız, kullanıcı bir yorum dizisi yüklediğinde otomatik olarak güncellenecektir.
+- Kullanıcının **abonelik** bildirimlerine kaydolup kaydolmadığı.
+  - Bu, `SSOUser` nesnesindeki `optedInSubscriptionNotifications` bayrağının `true` veya `false` olarak ayarlanmasıyla yapılır.
+  - Bu, API üzerinden ayarlanabilir.
+  - Ayrıca, bu bayrak için payload içinde bir değer iletiyorsanız, kullanıcı bir yorum dizisi yüklediğinde otomatik olarak güncellenecektir.
+- Kullanıcının sayfa aboneliği bildirimlerini ne sıklıkla aldığı.
+  - SSO kullanıcıları bunu değiştirmek için FastComments.com'a giriş yapamaz, bu nedenle bir sayfa aboneliği onlara çok fazla e-posta gönderdiğinde (bir hafta içinde 20 veya daha fazla), onlara haftada en fazla bir kez e-posta ile bir bağlantı göndeririz.
+  - Bağlantı, her sayfa aboneliğinin sıklığını (her dakika, saatlik veya günlük) değiştirebilecekleri veya bir sayfanın aboneliğinden çıkabilecekleri bir sayfa açar.
+  - Bağlantı 30 gün geçerlidir.
+- E-postalarının tanımlanması.
+  - Yoksa, e-posta tabanlı bildirim gönderemeyiz.
+- E-postalardaki abonelikten çıkma bağlantılarının devre dışı bırakılıp bırakılmayacağı.
+  - Bu, `Tenant` nesnesindeki `disableUnsubscribeLinks` bayrağı aracılığıyla yapılır.
+  - Bu, API üzerinden ayarlanabilir.
+- Özel bir abonelikten çıkma bağlantısı kullanılıp kullanılmayacağı.
+  - Bu, `DomainConfig` nesnesindeki `footerUnsubscribeURL` özelliği aracılığıyla yapılır.
+  - Bu, API üzerinden ayarlanabilir.
+  - Ayrıca, aynı nesnedeki `emailHeaders` aracılığıyla ilgili abonelikten çıkma başlıklarını ayarlamayı da düşünebilirsiniz.

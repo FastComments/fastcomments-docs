@@ -1,35 +1,37 @@
-At FastComments ved vi, at du allerede får nok meddelelser. Derfor tager vi nogle foranstaltninger for at begrænse de meddelelser, brugerne modtager, samtidig med at de holdes i kontakt med deres fællesskaber. Vi vil også holde administratorer og moderatorer opdateret og informere dem, når der skal træffes handling.
+Hos FastComments ved vi, at du allerede får nok notifikationer. Derfor tager vi nogle forholdsregler for at begrænse de notifikationer, brugerne modtager, samtidig med at de stadig holder kontakten med deres fællesskaber. Vi vil også gerne holde administratorer og moderatorer opdaterede og lade dem vide, når der skal handles.
 
-#### Vi sender meddelelser for følgende begivenheder for administratorer og moderatorer:
+#### Vi sender notifikationer for følgende hændelser til administratorer og moderatorer:
 
-- Community Digest‑oversigt (frekvens kan konfigureres).
-- Fællesskabshjælpsanmodninger og påmindelser.
+- Sammenfatning af fællesskabsaktivitet (frekvens kan konfigureres).
+- Anmodninger om hjælp i fællesskabet og påmindelser.
 - Nye kommentarer.
 
 #### For kommentatorer:
 
-- Når nogen svarer på din kommentar (via e‑mail).
-- Når du bliver nævnt (i appen og via e‑mail).
-- Når nogen svarer i samme tråd (i appen og via e‑mail).
-- Når nogen svarer på en underkommentar i samme tråd (i appen og via e‑mail).
-- Når nogen svarer på en side, du har abonneret på (i appen og via e‑mail, frekvens kan konfigureres pr. abonnement: hvert minut, hver time eller dagligt).
-- Når nogen svarer på en afstemning, du har oprettet (i appen, plus en daglig e‑mail). Se [Poll Notifications](/guide-polls.html#poll-notifications).
+- Når nogen svarer på din kommentar (via e-mail).
+- Når du bliver nævnt (in-app og e-mailnotifikation).
+- Når nogen svarer i samme tråd (in-app og e-mailnotifikation).
+- Når nogen svarer på en underkommentar i samme tråd (in-app og e-mailnotifikation).
+- Når nogen svarer på en side, du har abonneret på (in-app og e-mailnotifikation, frekvens kan konfigureres pr. abonnement: hvert minut, hver time eller dagligt).
+- Når en side, du har abonneret på, sender dig mange e-mails (20 eller flere inden for en uge), spørger vi, om du stadig ønsker den frekvens, højst én gang om ugen.
+  - Intet ændres, medmindre du selv ændrer det. E-mailen indeholder et link til at skifte til daglige notifikationer.
+- Når nogen svarer på en afstemning, du har oprettet (in-app notifikation samt en daglig e-mail). Se [Afstemningsnotifikationer](/guide-polls.html#poll-notifications).
 - Når en bruger kommenterer for første gang (men ikke med SSO).
-- Når en bruger efterlader en kommentar i en session, der ikke er bekræftet (men ikke med SSO).
-  - Vi sender ikke flere bekræftelses‑e‑mails i dette tilfælde. Kun den første, som bekræfter al aktivitet i den samme session.
+- Når en bruger efterlader en kommentar i en session, der ikke er verificeret (men ikke med SSO).
+  - Vi sender ikke flere verifikations-e-mails i dette tilfælde. Kun den første, som vil verificere al aktivitet i samme session.
 
 #### For alle brugere:
 
-- Når et login fra en ny IP‑adresse opdages, sendes en sikkerhedsadvarsel via e‑mail med den omtrentlige placering og IP‑adresse. Dette gælder ikke for brugerens allerførste login.
+- Når et login fra en ny IP-adresse registreres, sendes en sikkerhedsadvarsel via e-mail med den omtrentlige placering og IP-adresse. Dette gælder ikke brugerens allerførste login.
 
 #### ...og endelig kun for administratorer:
 
 - Når integrationer er fuldført.
-- Når migrationer er fuldført.
-- Når import eller eksport er afsluttet.
+- Når migreringer er fuldført.
+- Når import eller eksport afsluttes.
 - Når der er faktureringsproblemer.
-- Påmindelser om trial‑slutning.
+- Påmindelser om afslutning af prøveperiode.
 
-Nogle meddelelser samles for at forhindre masseafsendelse af meddelelser til brugere. Lær mere om dette i næste afsnit `Notification Types`.
+Nogle notifikationer samles i batcher for at forhindre massafsendelse af notifikationer til brugere. Læs om dette i næste afsnit `Notification Types`.
 
-Svar‑ og nævn‑e‑mails sendes kun for kommentarer, der er godkendt. For at se, om en svar‑ eller nævn‑e‑mail blev sendt for en specifik kommentar, eller hvorfor den ikke blev sendt, åbn den kommentars [Comment Logs](/guide-moderation.html#comment-logs) fra siden Moderer kommentarer.
+Svar- og omtale-e-mails sendes kun for kommentarer, der er godkendt. For at se, om en svar- eller omtale-e-mail blev sendt for en bestemt kommentar, eller hvorfor den ikke blev det, skal du åbne kommentarens [Kommentarlogs](/guide-moderation.html#comment-logs) fra siden Moderér kommentarer.

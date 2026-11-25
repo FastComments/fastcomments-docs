@@ -1,11 +1,12 @@
-Der er nogle få typer af notifikationer og medier, som FastComments sender notifikationer gennem:
+Der er et par typer notifikationer og medier, hvori FastComments sender notifikationer:
 
-- Øjeblikkelig via e-mail.
-  - Svar på kommentarer og nævnelsesnotifikationer sendes hvert minut.
-- Øjeblikkelig via app.
-  - Disse vises under notifikationsklokken.
-- Batcheret via e-mail.
-  - Sideabonnementsnotifikationer kan konfigureres pr. abonnement til at sendes hvert minut, som et timeligt sammendrag eller som et dagligt sammendrag. Hvis der ikke er noget at sende til brugeren i den tidsramme, sender vi ikke en e-mail.
-  - Afstemningssvarnotifikationer sendes til afstemningens forfatter som en daglig e-mail.
-- Tidsbestemt via e-mail.
-  - Eksempler inkluderer Community Digest Summary, som kan sendes dagligt, ugentligt eller månedligt (eller deaktiveret).
+- Øjeblikkeligt via e-mail.
+  - Notifikationer om svar på kommentarer og omtaler sendes hvert minut.
+- Øjeblikkeligt via appen.
+  - Disse vises under notifikationsklokke-ikonet.
+- Batchet via e-mail.
+  - Notifikationer om sideabonnementer kan konfigureres pr. abonnement til at sende hvert minut, som en timeoversigt eller som en daglig oversigt. Hvis der ikke er noget at sende til brugeren i den tidsramme, sender vi ingen e-mail.
+  - Hvis et abonnement, der ikke er på daglig oversigt, sender en bruger 20 eller flere e-mails inden for en uge, sender vi dem en bekræftelses-e-mail, hvor vi spørger, om de stadig ønsker den frekvens, med et link til at skifte til daglige notifikationer. Dette sendes højst én gang om ugen, og deres notifikationer fortsætter som før, indtil de ændrer frekvensen.
+  - Notifikationer om afstemningssvar sendes til afstemningens forfatter som en daglig e-mail.
+- Tidsstyret via e-mail.
+  - Eksempler inkluderer Community Digest Summary, som kan sendes dagligt, ugentligt eller månedligt (eller deaktiveres).

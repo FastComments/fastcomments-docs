@@ -1,19 +1,23 @@
-Za SSO obstaja naslednja konfiguracija, ki jo je treba upoštevati za obvestila:
+Za SSO obstaja naslednja konfiguracija, ki jo je treba upoštevati pri obvestilih:
 
-- Ali se je uporabnik odločil za prejemanje obvestil.
-  - To se stori z nastavitvijo zastavice `optedInNotifications` na `true` ali `false` v objektu `SSOUser`.
+- Ali je uporabnik prijavljen na obvestila.
+  - To se nastavi z zastavico `optedInNotifications` na `true` ali `false` v objektu `SSOUser`.
   - To je mogoče nastaviti prek API-ja.
-  - Prav tako, če v payload posredujete vrednost za to zastavico, bo ta samodejno posodobljena, ko uporabnik naloži nit komentarjev.
-- Ali se je uporabnik odločil za prejemanje obvestil o **naročninah**.
-  - To se stori z nastavitvijo zastavice `optedInSubscriptionNotifications` na `true` ali `false` v objektu `SSOUser`.
+  - Poleg tega, če v payload posredujete vrednost za to zastavico, se bo samodejno posodobila, ko uporabnik naloži nit komentarjev.
+- Ali je uporabnik prijavljen na obvestila o **naročninah**.
+  - To se nastavi z zastavico `optedInSubscriptionNotifications` na `true` ali `false` v objektu `SSOUser`.
   - To je mogoče nastaviti prek API-ja.
-  - Prav tako, če v payload posredujete vrednost za to zastavico, bo ta samodejno posodobljena, ko uporabnik naloži nit komentarjev.
+  - Poleg tega, če v payload posredujete vrednost za to zastavico, se bo samodejno posodobila, ko uporabnik naloži nit komentarjev.
+- Kako pogosto uporabnik prejema obvestila o naročninah na strani.
+  - SSO uporabniki se ne morejo prijaviti na FastComments.com, da bi to spremenili, zato ko jih naročnina na stran zasipava z veliko e-pošte (20 ali več sporočil v enem tednu), jim pošljemo povezavo, največkrat enkrat na teden.
+  - Povezava odpre stran, kjer lahko spremenijo pogostost vsake od svojih naročnin na strani (vsako minuto, vsako uro ali dnevno), ali se odjavijo z naročnine na stran.
+  - Povezava je veljavna 30 dni.
 - Določitev njihovega e-poštnega naslova.
-  - Če ni naveden, ne moremo pošiljati obvestil po elektronski pošti.
-- Ali onemogočiti povezave za odjavo v e-pošti.
-  - To se stori z zastavico `disableUnsubscribeLinks` v objektu `Tenant`.
+  - Če ni prisoten, ne moremo pošiljati obvestil po e-pošti.
+- Ali onemogočiti povezave za odjavo v e-poštnih sporočilih.
+  - To se nastavi z zastavico `disableUnsubscribeLinks` v objektu `Tenant`.
   - To je mogoče nastaviti prek API-ja.
-- Ali uporabiti prilagojeno povezavo za odjavo.
-  - To se stori preko lastnosti `footerUnsubscribeURL` na objektu `DomainConfig`.
+- Ali uporabiti povezavo za odjavo po meri.
+  - To se nastavi prek lastnosti `footerUnsubscribeURL` na objektu `DomainConfig`.
   - To je mogoče nastaviti prek API-ja.
-  - Morda boste želeli tudi razmisliti o nastavitvi ustreznih glavic za odjavo prek `emailHeaders` v istem objektu.
+  - Morda boste želeli nastaviti tudi ustrezne glave za odjavo prek `emailHeaders` v istem objektu.

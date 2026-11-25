@@ -1,35 +1,37 @@
-At FastCommentsu znamo da već dobivate dovoljno obavijesti. Zbog toga poduzimamo neke mjere kako bismo ograničili obavijesti koje korisnici primaju, a da ih i dalje držimo u kontaktu s njihovim zajednicama. Također želimo da administratori i moderatori budu informirani i da znaju kada je potrebno poduzeti akciju.
+U FastComments znamo da vas već ima dovoljno obavijesti. Zbog toga poduzimamo određene mjere kako bismo ograničili obavijesti koje korisnici primaju, a da ih i dalje držimo u kontaktu s njihovim zajednicama. Također želimo administratorima i moderatorima pružiti ažurne informacije i obavijestiti ih kada je potrebna akcija.
 
-#### Poslat ćemo obavijesti za sljedeće događaje za administratore i moderatore:
+#### Sljedeće obavijesti šaljemo administratorima i moderatorima:
 
-- Sažetak zajednice (frekvencija konfigurabilna).
-- Zahtjevi za pomoć zajednice i podsjetnici.
+- Sažetak zajednice (Digest Summary) (frekvencija je konfigurabilna).
+- Zahtjevi za pomoć i podsjetnici zajednice.
 - Novi komentari.
 
 #### Za komentatore:
 
-- Kada netko odgovori na vaš komentar (putem e‑maila).
-- Kada ste spomenuti (obavijest u aplikaciji i e‑mail).
-- Kada netko odgovori u istom threadu (obavijest u aplikaciji i e‑mail).
-- Kada netko odgovori na podkomentar u istom threadu (obavijest u aplikaciji i e‑mail).
-- Kada netko odgovori na stranicu na koju ste pretplaćeni (obavijest u aplikaciji i e‑mail, frekvencija konfigurabilna po pretplati: svaka minuta, svakih sat vremena ili dnevno).
-- Kada netko odgovori na anketu koju ste kreirali (obavijest u aplikaciji, plus dnevni e‑mail). Pogledajte [Poll Notifications](/guide-polls.html#poll-notifications).
-- Kada korisnik komentira po prvi put (ali ne putem SSO).
-- Kada korisnik ostavi komentar u sesiji koja nije verificirana (ali ne putem SSO).
-  - Ne šaljemo više verifikacijskih e‑mailova u ovom slučaju. Samo prvi, koji će verificirati svu aktivnost u istoj sesiji.
+- Kada netko odgovori na vaš komentar (putem e-pošte).
+- Kada ste spomenuti (obavijest u aplikaciji i e-poštom).
+- Kada netko odgovori u istoj niti (obavijest u aplikaciji i e-poštom).
+- Kada netko odgovori na podređeni komentar u istoj niti (obavijest u aplikaciji i e-poštom).
+- Kada netko odgovori na stranicu na koju ste pretplaćeni (obavijest u aplikaciji i e-poštom, frekvencija konfigurabilna po pretplati: svake minute, svaki sat ili svakodnevno).
+- Kada vam stranica na koju ste pretplaćeni pošalje puno e-poruka (20 ili više unutar tjedna), pitat ćemo vas želite li i dalje tu frekvenciju, najviše jednom tjedno.
+  - Ništa se ne mijenja osim ako to sami ne promijenite. E-poruka sadrži poveznicu za prebacivanje na dnevne obavijesti.
+- Kada netko odgovori na anketu koju ste stvorili (obavijest u aplikaciji, plus dnevna e-poruka). Pogledajte [Obavijesti o anketama](/guide-polls.html#poll-notifications).
+- Kada korisnik komentira prvi put (ali ne uz SSO).
+- Kada korisnik ostavi komentar u sesiji koja nije verificirana (ali ne uz SSO).
+  - U tom slučaju ne šaljemo više verifikacijskih e-poruka. Samo prvu, koja će verificirati svu aktivnost u istoj sesiji.
 
 #### Za sve korisnike:
 
-- Kada se otkrije prijava s nove IP adrese, šalje se sigurnosni e‑mail s približnom lokacijom i IP adresom. Ovo se ne primjenjuje na prvu prijavu korisnika.
+- Kada se otkrije prijava s nove IP adrese, šalje se sigurnosna e-poruka s približnom lokacijom i IP adresom. Ovo se ne odnosi na prvu prijavu korisnika.
 
-#### ...i na kraju samo za administratore:
+#### ...i na kraju, samo za administratore:
 
 - Kada su integracije dovršene.
 - Kada su migracije dovršene.
-- Kada import ili export završi.
+- Kada se uvoz ili izvoz završi.
 - Kada postoje problemi s naplatom.
-- Podsjetnici o završetku probnog razdoblja.
+- Podsjetnici na kraj probnog razdoblja.
 
-Neke se obavijesti grupiraju kako bi se spriječilo masovno slanje obavijesti korisnicima. Saznajte više o tome u sljedećem odjeljku `Notification Types`.
+Neke se obavijesti grupiraju kako bi se spriječilo masovno slanje obavijesti korisnicima. Saznajte više u sljedećem odjeljku `Vrste obavijesti`.
 
-E‑mailovi s odgovorima i spominjanjima šalju se samo za odobrene komentare. Da biste vidjeli je li e‑mail s odgovorom ili spominjanjem poslan za određeni komentar, ili zašto nije, otvorite [Comment Logs](/guide-moderation.html#comment-logs) tog komentara s stranice Moderate Comments.
+E-poruke o odgovorima i spominjanjima šalju se samo za odobrene komentare. Da biste vidjeli je li e-poruka o odgovoru ili spominjanju poslana za određeni komentar, ili zašto nije, otvorite [Zapise komentara](/guide-moderation.html#comment-logs) tog komentara sa stranice Moderiranje komentara.

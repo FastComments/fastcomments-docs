@@ -1,19 +1,23 @@
-For SSO er følgende konfiguration relevant for notifikationer:
+For SSO er der følgende konfiguration at tage hensyn til for notifikationer:
 
-- Om brugeren har valgt at modtage notifikationer.
-  - Dette angives ved at sætte flaget `optedInNotifications` til `true` eller `false` i `SSOUser`-objektet.
-  - Dette kan sættes via API'en.
-  - Desuden, hvis du medsender en værdi for dette flag i payload'en, opdateres det automatisk, når brugeren indlæser en kommentartråd.
-- Om brugeren har valgt at modtage **abonnementsnotifikationer**.
-  - Dette angives ved at sætte flaget `optedInSubscriptionNotifications` til `true` eller `false` i `SSOUser`-objektet.
-  - Dette kan sættes via API'en.
-  - Desuden, hvis du medsender en værdi for dette flag i payload'en, opdateres det automatisk, når brugeren indlæser en kommentartråd.
-- At definere deres e-mail.
-  - Hvis den ikke er til stede, kan vi ikke sende e-mailbaserede notifikationer.
-- Om man vil deaktivere afmeldingslinks i e-mails.
-  - Dette gøres via flaget `disableUnsubscribeLinks` i `Tenant`-objektet.
-  - Dette kan sættes via API'en.
-- Om man vil bruge et brugerdefineret afmeldingslink.
-  - Dette gøres via egenskaben `footerUnsubscribeURL` på `DomainConfig`-objektet.
-  - Dette kan sættes via API'en.
-  - Du kan også overveje at sætte de relevante afmeldingsheaders via `emailHeaders` i det samme objekt.
+- Om brugeren har tilmeldt sig notifikationer.
+  - Dette gøres ved at sætte `optedInNotifications`-flagget til `true` eller `false` i `SSOUser`-objektet.
+  - Dette kan sættes via API'et.
+  - Hvis du desuden sender en værdi for dette flag i payload'en, opdateres det automatisk, når brugeren indlæser en kommentartråd.
+- Om brugeren har tilmeldt sig **abonnements**-notifikationer.
+  - Dette gøres ved at sætte `optedInSubscriptionNotifications`-flagget til `true` eller `false` i `SSOUser`-objektet.
+  - Dette kan sættes via API'et.
+  - Hvis du desuden sender en værdi for dette flag i payload'en, opdateres det automatisk, når brugeren indlæser en kommentartråd.
+- Hvor ofte brugeren modtager sideabonnements-notifikationer.
+  - SSO-brugere kan ikke logge ind på FastComments.com for at ændre dette, så når et sideabonnement sender dem mange e-mails (20 eller flere inden for en uge), sender vi dem et link, højst én gang om ugen.
+  - Linket åbner en side, hvor de kan ændre frekvensen for hvert af deres sideabonnementer (hvert minut, hver time eller dagligt) eller melde sig af en side.
+  - Linket er gyldigt i 30 dage.
+- Definition af deres e-mail.
+  - Hvis den ikke er angivet, kan vi ikke sende e-mail-baserede notifikationer.
+- Om man skal deaktivere afmeld-links i e-mails.
+  - Dette gøres via `disableUnsubscribeLinks`-flagget i `Tenant`-objektet.
+  - Dette kan sættes via API'et.
+- Om man skal bruge et brugerdefineret afmeld-link.
+  - Dette gøres via `footerUnsubscribeURL`-egenskaben på `DomainConfig`-objektet.
+  - Dette kan sættes via API'et.
+  - Du bør også overveje at sætte de relevante afmeld-headere via `emailHeaders` i samme objekt.

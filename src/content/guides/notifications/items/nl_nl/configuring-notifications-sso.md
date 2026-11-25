@@ -1,19 +1,23 @@
-Voor SSO is de volgende configuratie relevant voor meldingen:
+Voor SSO is er de volgende configuratie om rekening mee te houden voor notificaties:
 
-- Of de gebruiker zich heeft aangemeld voor meldingen.
-  - Dit gebeurt door de vlag `optedInNotifications` op `true` of `false` te zetten in het `SSOUser` object.
+- Of de gebruiker zich heeft aangemeld voor notificaties.
+  - Dit wordt gedaan door de `optedInNotifications` vlag op `true` of `false` te zetten in het `SSOUser` object.
   - Dit kan via de API worden ingesteld.
-  - Als u bovendien een waarde voor deze vlag in de payload meegeeft, wordt deze automatisch bijgewerkt wanneer de gebruiker een reactiedraad laadt.
-- Of de gebruiker zich heeft aangemeld voor **abonnement**meldingen.
-  - Dit gebeurt door de vlag `optedInSubscriptionNotifications` op `true` of `false` te zetten in het `SSOUser` object.
+  - Ook, als je een waarde voor deze vlag in de payload doorgeeft, wordt deze automatisch bijgewerkt wanneer de gebruiker een commentaardraad laadt.
+- Of de gebruiker zich heeft aangemeld voor **abonnements**notificaties.
+  - Dit wordt gedaan door de `optedInSubscriptionNotifications` vlag op `true` of `false` te zetten in het `SSOUser` object.
   - Dit kan via de API worden ingesteld.
-  - Als u bovendien een waarde voor deze vlag in de payload meegeeft, wordt deze automatisch bijgewerkt wanneer de gebruiker een reactiedraad laadt.
-- Het opgeven van hun e-mailadres.
-  - Als dit niet aanwezig is, kunnen we geen e-mailgebaseerde meldingen versturen.
-- Of afmeldlinks in e-mails uitgeschakeld moeten worden.
-  - Dit gebeurt via de vlag `disableUnsubscribeLinks` in het `Tenant` object.
+  - Ook, als je een waarde voor deze vlag in de payload doorgeeft, wordt deze automatisch bijgewerkt wanneer de gebruiker een commentaardraad laadt.
+- Hoe vaak de gebruiker pagina-abonnementsnotificaties ontvangt.
+  - SSO-gebruikers kunnen niet inloggen op FastComments.com om dit te wijzigen, dus wanneer een pagina-abonnement hen veel e-mails stuurt (20 of meer binnen een week), e-mailen wij hen een link, maximaal één keer per week.
+  - De link opent een pagina waar ze de frequentie van elk van hun pagina-abonnementen kunnen wijzigen (elke minuut, elk uur, of dagelijks), of zich kunnen afmelden voor een pagina.
+  - De link is 30 dagen geldig.
+- Het definiëren van hun e-mailadres.
+  - Als dit niet aanwezig is, kunnen we geen e-mailnotificaties versturen.
+- Of afmeldlinks in e-mails moeten worden uitgeschakeld.
+  - Dit wordt gedaan via de `disableUnsubscribeLinks` vlag in het `Tenant` object.
   - Dit kan via de API worden ingesteld.
-- Of er een aangepaste afmeldlink wordt gebruikt.
-  - Dit gebeurt via de eigenschap `footerUnsubscribeURL` op het `DomainConfig` object.
+- Of een aangepaste afmeldlink moet worden gebruikt.
+  - Dit wordt gedaan via de `footerUnsubscribeURL` eigenschap op het `DomainConfig` object.
   - Dit kan via de API worden ingesteld.
-  - U kunt ook overwegen om de relevante afmeldheaders in te stellen via `emailHeaders` in hetzelfde object.
+  - Je wilt wellicht ook overwegen om de relevante afmeldheaders in te stellen via `emailHeaders` in hetzelfde object.
