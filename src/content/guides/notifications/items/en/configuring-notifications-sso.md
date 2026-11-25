@@ -8,6 +8,10 @@ For SSO there is the following configuration to consider for notifications:
   - This is done by setting the `optedInSubscriptionNotifications` flag to `true` or `false` in the `SSOUser` object.
   - This can be set via the API.
   - Also, if you pass a value for this flag in the payload, it will automatically be updated when the user loads a comment thread.
+- How often the user receives page subscription notifications.
+  - SSO users can't log in to FastComments.com to change this, so when a page subscription sends them a lot of emails (20 or more within a week) we email them a link, at most once a week.
+  - The link opens a page where they can change the frequency of each of their page subscriptions (every minute, hourly, or daily), or unsubscribe from a page.
+  - The link is valid for 30 days.
 - Defining their email.
   - If not present, we can't send email based notifications.
 - Whether to disable unsubscribe links in emails.
